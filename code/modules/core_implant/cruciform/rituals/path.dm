@@ -18,6 +18,8 @@
 	cooldown_time = 15 MINUTES
 	cooldown_category = "grepose"
 	power = 60 //stronger healing higher cost
+	hunger_cost_per_use = 40 //10% of hunger basiclly
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/tessellate/heal_heathen_special/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
@@ -32,6 +34,14 @@
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
 		set_personal_cooldown(user)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		return TRUE
 	else
 		fail("Your cruciform sings, alone, unto the void.", user, C)
@@ -52,6 +62,8 @@
 	power = 50
 	cooldown_time = 5 MINUTES
 	cooldown_category = "dhymn" //It shares a cooldown because it replaces divine hymn, not add atop it.
+	hunger_cost_per_use = 80 //20% of hunger for this AOE heal
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/tessellate/heal_heathen_improved/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
@@ -66,6 +78,14 @@
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
 		set_personal_cooldown(user)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		return TRUE
 	else
 		fail("Your cruciform sings, alone, unto the void.", user, C)
@@ -103,6 +123,8 @@
 	cooldown_category = "short_boost"
 	category = "Lemniscate"
 	var/list/stats_to_boost = list()
+	hunger_cost_per_use = 30
+	toxins_cost_per_hungercheck = 5
 
 /datum/ritual/cruciform/lemniscate/long_boost/New()
 	..()
@@ -121,6 +143,14 @@
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			give_boost(participant)
 		set_global_cooldown()
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		return TRUE
 	else
 		fail("Your cruciform sings, alone, unto the void.", user, C)
@@ -186,6 +216,8 @@
 	cooldown_time = 5 MINUTES
 	cooldown_category = "monopain"
 	ignore_stuttering = TRUE
+	hunger_cost_per_use = 40
+	toxins_cost_per_hungercheck = 30 //20, this is 20 do to the self heal.
 
 /datum/ritual/cruciform/monomial/ironskin/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.add_chemical_effect(CE_PAINKILLER, 10000, TRUE)
@@ -193,10 +225,18 @@
 	H.apply_effect(-200, HALLOSS, 0)
 	H.adjustBruteLoss(-10)
 	H.adjustFireLoss(-10)
-	H.adjustToxLoss(-10)
 	H.adjustOxyLoss(-20)
 	H.adjustBrainLoss(-5)
 	H.updatehealth()
+
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)
+
+	H.adjustToxLoss(-10)
 	set_personal_cooldown(H)
 	return TRUE
 
@@ -209,6 +249,8 @@
 	cooldown_category = "pself"
 	effect_time = 15 MINUTES
 	power = 90
+	hunger_cost_per_use = 20 //Perfection at a cost!
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/monomial/perfect_self/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	user.stats.changeStat(STAT_TGH, 10)
@@ -220,6 +262,14 @@
 	to_chat(user, SPAN_NOTICE("You feel at peace with yourself, your body and mind going beyond its limits."))
 	set_personal_cooldown(user)
 	addtimer(CALLBACK(src, .proc/discard_effect, user), src.cooldown_time)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	return TRUE
 
 /datum/ritual/cruciform/monomial/perfect_self/proc/discard_effect(mob/living/carbon/human/user, amount)
@@ -250,12 +300,22 @@
 	cooldown = TRUE
 	cooldown_time = 4 HOURS
 	cooldown_category = "cdefn"
+	hunger_cost_per_use = 50 //The idea here is that you send a relaying request
+	toxins_cost_per_hungercheck = 0 //Why would this even cost toxins?
 
 /datum/ritual/targeted/cruciform/divisor/spawn_con/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	new /obj/item/weapon/gun/energy/taser(usr.loc)
 	new /obj/item/weapon/storage/belt/security/neotheology(usr.loc)
 	new /obj/item/clothing/head/rank/divisor(usr.loc)
 	new /obj/item/clothing/suit/greatcoat/divisor(usr.loc)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	set_personal_cooldown(user)
 
 /datum/ritual/cruciform/divisor/div_flash
@@ -266,6 +326,8 @@
 	cooldown_time = 5 MINUTES
 	cooldown_category = "dflas"
 	power = 50
+	hunger_cost_per_use = 50
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/divisor/div_flash/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	playsound(user.loc, 'sound/effects/cascade.ogg', 65, 1)
@@ -278,5 +340,13 @@
 				victim.Weaken(3)
 			else
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	set_personal_cooldown(user)
 	return TRUE

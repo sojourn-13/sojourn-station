@@ -19,6 +19,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	desc = "Building needs mainly faith but resources as well. Find out what it takes."
 	power = 5
 	category = "Construction"
+	hunger_cost_per_use = 1 //Really unlikely to be ever seen but hey, people fast and work sometimes
+	toxins_cost_per_hungercheck = 1
 
 /datum/ritual/cruciform/priest/blueprint_check/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
@@ -31,12 +33,21 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		listed_components += list("[blueprint.materials[placeholder]] [initial(placeholder.name)]")
 	to_chat(user, SPAN_NOTICE("[blueprint.name] requires: [english_list(listed_components)]."))
 
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 /datum/ritual/cruciform/priest/construction
 	name = "Manifestation"
 	phrase = "Omnia autem quae arguuntur a lumine manifestantur omne enim quod manifestatur lumen est."
 	desc = "Build and expand. Shape your faith into something more sensible."
 	power = 40
 	category = "Construction"
+	hunger_cost_per_use = 10
+	toxins_cost_per_hungercheck = 2
 
 /datum/ritual/cruciform/priest/construction/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
@@ -71,6 +82,13 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	user.visible_message(SPAN_NOTICE("You hear a soft humming sound as [user] finishes his ritual."),SPAN_NOTICE("You take a deep breath as the divine manifestation finishes."))
 	var/build_path = blueprint.build_path
 	new build_path(target_turf)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
 
 /datum/ritual/cruciform/priest/construction/proc/items_check(mob/user,turf/target, datum/nt_blueprint/blueprint)
 	var/list/turf_contents = target.contents

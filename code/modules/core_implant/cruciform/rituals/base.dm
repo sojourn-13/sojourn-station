@@ -17,8 +17,16 @@
 	desc = "A short litany to relieve pain of the afflicted."
 	power = 50
 	ignore_stuttering = TRUE
+	hunger_cost_per_use = 25
+	toxins_cost_per_hungercheck = 5
 
 /datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+	if(H.species?.reagent_tag != IS_SYNTHETIC)//Why would an fpb ever use this?
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)
 	H.add_chemical_effect(CE_PAINKILLER, 30, TRUE)
 	H.apply_effect(-30, AGONY, 0)
 	H.apply_effect(-30, HALLOSS, 0)
@@ -44,6 +52,8 @@
 	cooldown = TRUE
 	cooldown_time = 10 MINUTES
 	cooldown_category = "bglow"
+	hunger_cost_per_use = 10
+	toxins_cost_per_hungercheck = 2
 
 /datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	var/successful = FALSE
@@ -57,6 +67,12 @@
 		)
 		spawn(6000) M.set_light(0)
 		successful = TRUE
+		if(H.species?.reagent_tag != IS_SYNTHETIC)
+			if(H.nutrition >= hunger_cost_per_use)
+				H.nutrition -= hunger_cost_per_use
+			else
+				to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+				H.adjustToxLoss(toxins_cost_per_hungercheck)
 		set_personal_cooldown(H)
 	else
 		to_chat(H, SPAN_DANGER("You need to be holding a ritual book to perfom this rite."))
@@ -70,20 +86,30 @@
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	cooldown_category = "flare"
+	hunger_cost_per_use = 10
+	toxins_cost_per_hungercheck = 2
 
 /datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	playsound(H.loc, 'sound/effects/snap.ogg', 50, 1)
 	new /obj/effect/sparks(H.loc)
 	new /obj/effect/effect/smoke/illumination(H.loc, brightness=max(7), lifetime=12000) //Very bright light.
 	set_personal_cooldown(H)
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)
 	return TRUE
 
 /datum/ritual/cruciform/base/entreaty
 	name = "Entreaty"
 	phrase = "Deus meus ut quid dereliquisti me."
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
-	power = 50
+	power = 25
 	ignore_stuttering = TRUE
+	hunger_cost_per_use = 5
+	toxins_cost_per_hungercheck = 1
 
 /datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	for(var/mob/living/carbon/human/target in disciples)
@@ -95,6 +121,14 @@
 
 		if((istype(CI) && CI.get_module(CRUCIFORM_PRIEST)) || prob(50))
 			to_chat(target, SPAN_DANGER("[H], faithful cruciform follower, cries for salvation at [t.name]!"))
+
+		if(H.species?.reagent_tag != IS_SYNTHETIC)
+			if(H.nutrition >= hunger_cost_per_use)
+				H.nutrition -= hunger_cost_per_use
+			else
+				to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+				H.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	return TRUE
 
 /datum/ritual/cruciform/base/reveal
@@ -102,6 +136,8 @@
 	phrase = "Et fumus tormentorum eorum ascendet in saecula saeculorum: nec habent requiem die ac nocte, qui adoraverunt bestiam, et imaginem ejus, et si quis acceperit caracterem nominis ejus."
 	desc = "Gain knowledge of your surroundings to reveal evil in people and places. This can tell you about hostile creatures around you, rarely can help you spot traps and sometimes let you sense a monster disguised as a person."
 	power = 35
+	hunger_cost_per_use = 25
+	toxins_cost_per_hungercheck = 10 //Why so much? Your doing a powerful seekinng and feedback
 
 /datum/ritual/cruciform/base/reveal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	var/was_triggired = FALSE
@@ -133,6 +169,14 @@
 				break
 	if (!was_triggired)
 		to_chat(H, SPAN_NOTICE("There is nothing here. You feel safe."))
+
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	return TRUE
 
 /datum/ritual/cruciform/base/message
@@ -140,6 +184,8 @@
 	phrase = "Audit, me audit vocationem. Ego nuntius vobis."
 	desc = "Send a message anonymously through the void, straight into the mind of another disciple."
 	power = 30
+	hunger_cost_per_use = 5
+	toxins_cost_per_hungercheck = 0 //Your sending a magic message, no one is going to get hurt by this
 
 /datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/mob/living/carbon/human/H = pick_disciple_global(user, TRUE)
@@ -157,3 +203,10 @@
 	log_and_message_admins("[user.real_name] sent a message to [H] with text \"[text]\"")
 	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 	playsound(H, 'sound/machines/signal.ogg', 50, 1)
+
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)

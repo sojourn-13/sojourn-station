@@ -8,6 +8,8 @@
 	name = "Eternal Brotherhood"
 	phrase = "Ita multi unum corpus sumus in Christo singuli autem alter alterius membra."
 	desc = "Reveals other disciples to speaker."
+	hunger_cost_per_use = 10
+	toxins_cost_per_hungercheck = 1
 
 /datum/ritual/cruciform/crusader/brotherhood/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/datum/core_module/cruciform/neotheologyhud/hud_module = C.get_module(/datum/core_module/cruciform/neotheologyhud)
@@ -17,6 +19,13 @@
 		C.add_module(new /datum/core_module/cruciform/neotheologyhud)
 	return TRUE
 
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 /datum/ritual/cruciform/crusader/battle_call
 	name = "Call to Battle"
 	phrase = "Si exieritis ad bellum de terra vestra contra hostes qui dimicant adversum vos clangetis ululantibus tubis et erit recordatio vestri coram Domino Deo vestro ut eruamini de manibus inimicorum vestrorum."
@@ -25,6 +34,8 @@
 	cooldown_time = 10 MINUTES
 	cooldown_category = "battle call"
 	effect_time = 10 MINUTES
+	hunger_cost_per_use = 10
+	toxins_cost_per_hungercheck = 2
 
 /datum/ritual/cruciform/crusader/battle_call/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/count = 0
@@ -39,6 +50,14 @@
 	to_chat(user, SPAN_NOTICE("You feel an extraordinary burst of energy."))
 	set_personal_cooldown(user)
 	addtimer(CALLBACK(src, .proc/discard_effect, user, count), src.cooldown_time)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	return TRUE
 
 /datum/ritual/cruciform/crusader/battle_call/proc/discard_effect(mob/living/carbon/human/user, amount)
@@ -53,6 +72,8 @@
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	cooldown_category = "flash"
+	hunger_cost_per_use = 20
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/crusader/flash/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	if(prob(100 - user.stats.getStat(STAT_VIG)))
@@ -70,4 +91,12 @@
 			else
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
 	set_personal_cooldown(user)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	return TRUE

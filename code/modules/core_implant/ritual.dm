@@ -12,6 +12,9 @@
 	var/implant_type = /obj/item/weapon/implant/core_implant
 	var/category = "???"
 
+	var/hunger_cost_per_use = 0 //How much nutrition we take form people
+	var/toxins_cost_per_hungercheck = 0 //If we fail the hunger check, we take some toxins
+
 	var/cooldown = FALSE
 	var/cooldown_time = 0
 	var/cooldown_category = ""

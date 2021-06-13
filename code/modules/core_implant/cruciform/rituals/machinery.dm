@@ -5,7 +5,6 @@
 	fail_message = "The Cruciform feels cold against your chest."
 	category = "Machinery"
 
-
 /*
 //Cloning
 /datum/ritual/cruciform/machines/resurrection
@@ -34,16 +33,15 @@
 	return TRUE
 */
 
-
 ////////////////////////BIOMATTER MANIPULATION MULTI MACHINES RITUALS
-
 
 ///////////////>Biogenerator manipulation rite</////////////////
 /datum/ritual/cruciform/machines/power_biogen_awake
 	name = "Power biogenerator song"
 	phrase = "Dixitque Deus: Fiat lux. Et facta est lux.  Et lux in tenebris lucet, et renebrae eam non comprehenderunt."
 	desc = "A ritual, that can activate or deactivate power biogenerator machine. You should be nearby its metrics screen."
-
+	hunger_cost_per_use = 10
+	toxins_cost_per_hungercheck = 1 //Working yourself to death, slow but still able
 
 /datum/ritual/cruciform/machines/power_biogen_awake/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	var/obj/machinery/multistructure/biogenerator_part/console/biogen_screen = locate() in range(4, H)
@@ -53,18 +51,23 @@
 			biogenerator.deactivate()
 		else
 			biogenerator.activate()
+
+		if(H.species?.reagent_tag != IS_SYNTHETIC)
+			if(H.nutrition >= hunger_cost_per_use)
+				H.nutrition -= hunger_cost_per_use
+			else
+				to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+				H.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		return TRUE
 
 	fail("There are no any power biogenerator screen around you.", H, C)
 	return FALSE
 
-
-
 ////////////////Bioreactor commands
 
 /datum/ritual/cruciform/machines/bioreactor
 	name = "Bioreactor command"
-
 
 /datum/ritual/cruciform/machines/bioreactor/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	var/obj/machinery/multistructure/bioreactor_part/console/bioreactor_screen = locate() in range(4, H)
@@ -78,13 +81,10 @@
 	fail("You should be near bioreactor metrics screen.", H, C)
 	return FALSE
 
-
 //There we perform any manipulations with our bioreactor
 //Since console finder code is similar for both rituals
 /datum/ritual/cruciform/machines/bioreactor/proc/perform_command(datum/multistructure/bioreactor/bioreactor)
 	return
-
-
 
 ///////////////>Bioreactor pump solution ritual<//////////////////
 
@@ -92,18 +92,25 @@
 	name = "Bioreactor solution pump's lullaby"
 	phrase = "Nihil igitur fieri de nihilo posse putandum est."
 	desc = "This ritual pump in or pump out solution of bioreactor's chamber. You should stay nearby its screen."
+	hunger_cost_per_use = 15
+	toxins_cost_per_hungercheck = 3
 
-
-/datum/ritual/cruciform/machines/bioreactor/solution/perform_command(datum/multistructure/bioreactor/bioreactor)
+/datum/ritual/cruciform/machines/bioreactor/solution/perform_command(mob/living/carbon/human/H, datum/multistructure/bioreactor/bioreactor)
 	if(!bioreactor.chamber_closed)
 		return FALSE
 	bioreactor.pump_solution()
 	var/obj/machinery/multistructure/bioreactor_part/console/bioreactor_console = bioreactor.metrics_screen
 	bioreactor_console.ping()
 	bioreactor_console.visible_message("Bioreactor produce echoing click and platforms pumps start buzzing.")
+
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	return TRUE
-
-
 
 ///////////////>Bioreactor chamber opening song<////////////////
 
@@ -111,12 +118,21 @@
 	name = "Bioreactor chamber's words"
 	phrase = "Constituit quoque ianitores in portis domus Domini ut non ingrederetur eam inmundus in omni."
 	desc = "This ritual open or close bioreactor chamber. You should stay nearby its screen."
+	hunger_cost_per_use = 10
+	toxins_cost_per_hungercheck = 2
 
 
-/datum/ritual/cruciform/machines/bioreactor/chamber_doors/perform_command(datum/multistructure/bioreactor/bioreactor)
+/datum/ritual/cruciform/machines/bioreactor/chamber_doors/perform_command(mob/living/carbon/human/H, datum/multistructure/bioreactor/bioreactor)
 	if(bioreactor.chamber_solution)
 		return FALSE
 	bioreactor.toggle_platform_door()
 	var/obj/machinery/multistructure/bioreactor_part/console/bioreactor_console = bioreactor.metrics_screen
 	bioreactor_console.ping()
 	bioreactor_console.visible_message("You hear a loud BANG. Then pause... Chamber's door mechanism start working quietly and softly.")
+
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)

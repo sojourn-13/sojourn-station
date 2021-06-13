@@ -21,6 +21,8 @@
 	desc = "Imparts extreme pain on the target disciple. Does no actual harm. Use this on someone who performs a heretical act."
 	power = 35
 	category = "Devotion"
+	hunger_cost_per_use = 30
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -51,6 +53,13 @@
 		log_and_message_admins(" inflicted pain on [H] with penance litany")
 		to_chat(H, SPAN_DANGER("A wave of agony washes over you, the cruciform in your chest searing like a star for a few moments of eternity."))
 
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		H.apply_effect(50, AGONY, 0)
 		H.apply_effect(50, HALLOSS, 0)
 		var/datum/effect/effect/system/spark_spread/s = new
@@ -71,16 +80,27 @@
 	cooldown_time = 300
 	power = 35 //Healing yourself is slightly easier than healing someone else
 	category = "Vitae"
+	hunger_cost_per_use = 60
+	toxins_cost_per_hungercheck = 30 //this is 10 do to the self heal
 
 /datum/ritual/cruciform/priest/selfheal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C,list/targets)
 	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
 	H.add_chemical_effect(CE_PAINKILLER, 20)
 	H.adjustBruteLoss(-20)
 	H.adjustFireLoss(-20)
-	H.adjustToxLoss(-20)
 	H.adjustOxyLoss(-40)
 	H.adjustBrainLoss(-5)
 	H.updatehealth()
+
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= hunger_cost_per_use)
+			H.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			H.adjustToxLoss(toxins_cost_per_hungercheck)
+
+	H.adjustToxLoss(-20)
+
 	set_personal_cooldown(H)
 	return TRUE
 
@@ -92,6 +112,8 @@
 	cooldown_time = 300
 	power = 45
 	category = "Vitae"
+	hunger_cost_per_use = 30
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -126,6 +148,14 @@
 		H.adjustOxyLoss(-40)
 		H.adjustBrainLoss(-5)
 		H.updatehealth()
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(H, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		set_personal_cooldown(user)
 		return TRUE
 
@@ -138,6 +168,8 @@
 	cooldown_category = "dhymn"
 	power = 50
 	category = "Vitae"
+	hunger_cost_per_use = 20
+	toxins_cost_per_hungercheck = 5
 
 /datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
@@ -152,6 +184,14 @@
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
 		set_personal_cooldown(user)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		return TRUE
 	else
 		fail("Your cruciform sings, alone, unto the void.", user, C)
@@ -177,6 +217,8 @@
 	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. This prayer requires power only primes and crusaders have."
 	power = 100
 	category = "Devotion"
+	hunger_cost_per_use = 100 //This is a big spell its going to take a lot of hunger
+	toxins_cost_per_hungercheck = 30
 
 /datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 
@@ -202,6 +244,13 @@
 
 	//After 30 seconds, your view is forced back to yourself
 	addtimer(CALLBACK(user, .mob/proc/reset_view, user), 300)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
 
 	return TRUE
 
@@ -405,6 +454,8 @@
 	desc = "This litany will remove any upgrade from the target's cruciform implant. Usuable only by primes and crusaders."
 	power = 100
 	category = "Devotion"
+	hunger_cost_per_use = 10
+	toxins_cost_per_hungercheck = 5
 
 /datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -425,6 +476,13 @@
 		CU.remove()
 		log_and_message_admins("removed upgrade from [C] cruciform with asacris litany")
 
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	return TRUE
 
 /datum/ritual/targeted/cruciform/priest/upgrade_kit
@@ -433,6 +491,8 @@
 	desc = "Request an upgrade kit to restore a vector or prime's cruciform to its devout stage. This litany requires you to stand next to an altar."
 	power = 50
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a devout upgrade circuit slips out."
+	hunger_cost_per_use = 120
+	toxins_cost_per_hungercheck = 15
 
 /datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/list/OBJS = get_front(user)
@@ -444,6 +504,14 @@
 		return FALSE
 
 	new /obj/item/weapon/coreimplant_upgrade/cruciform/priest(altar.loc)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	set_personal_cooldown(user)
 
 /datum/ritual/cruciform/priest/initiation
@@ -451,6 +519,8 @@
 	phrase = "Habe fiduciam in Domino ex toto corde tuo et ne innitaris prudentiae tuae, in omnibus viis tuis cogita illum et ipse diriget gressus tuos."
 	desc = "The second stage of granting a promotion to a disciple, upgrading them to a devout. The devout ascension kit is the first step."
 	power = 50
+	hunger_cost_per_use = 50 //Its a big thing it should be with a feast
+	toxins_cost_per_hungercheck = 30
 
 /datum/ritual/cruciform/priest/initiation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/obj/item/weapon/implant/core_implant/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -468,6 +538,13 @@
 	if(!PC)
 		fail("Target must have devout upgrade inside his cruciform.",user,C)
 		return FALSE
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
 
 	PC.activate()
 	log_and_message_admins("promoted disciple [C] to devout with initiation litany")
@@ -488,6 +565,8 @@
 	cooldown_category = "short_boost"
 	category = "Words of Power"
 	var/list/stats_to_boost = list()
+	hunger_cost_per_use = 30
+	toxins_cost_per_hungercheck = 3
 
 /datum/ritual/cruciform/priest/short_boost/New()
 	..()
@@ -505,6 +584,14 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			give_boost(participant)
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		set_global_cooldown()
 		return TRUE
 	else
@@ -553,6 +640,8 @@
 	desc = "Requests a copy of the churches local parishoner records from your altar."
 	power = 30
 	success_message = "On the verge of audibility you hear pleasant music, a piece of paper slides out from a slit in the altar."
+	hunger_cost_per_use = 1 //Come on...
+	toxins_cost_per_hungercheck = 0
 
 /datum/ritual/cruciform/priest/records/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
@@ -565,6 +654,14 @@
 
 	if(altar)
 		new /obj/item/weapon/paper/neopaper(altar.loc, disciples.Join("\n"), "Church Record")
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	return TRUE
 
 /datum/ritual/cruciform/priest/new_cruciform
@@ -609,6 +706,8 @@
 	phrase = "Vetus moritur et onus hoc levaverit."
 	desc = "The ritual needed for the reactivation and repair of a cruciform that has been unwillingly separated from the body or destroyed by the bearer's death. The process requires an altar and the cruciform in question to be attached."
 	power = 50
+	hunger_cost_per_use = 50
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/priest/reactivation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
@@ -632,6 +731,13 @@
 	log_and_message_admins("successfully reconsecrated [CI.wearer]")
 	to_chat(CI.wearer, "<span class='info'>Your cruciform vibrates and warms up.</span>")
 
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 	CI.activate()
 
 	return TRUE
@@ -646,6 +752,8 @@
 	cooldown_category = "accelerated_growth"
 	power = 30
 	category = "Vitae"
+	hunger_cost_per_use = 50 //Your food for their food
+	toxins_cost_per_hungercheck = 10
 
 	var/boost_value = 1.5  // How much the aging process of the plant is sped up
 
@@ -661,6 +769,14 @@
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/datum/seed/S in plants_around)
 			give_boost(S)
+
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= hunger_cost_per_use)
+				user.nutrition -= hunger_cost_per_use
+			else
+				to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+				user.adjustToxLoss(toxins_cost_per_hungercheck)
+
 		set_global_cooldown()
 		return TRUE
 	else
@@ -683,6 +799,8 @@
 	desc = "Relieves the pain of a person in front of you."
 	power = 50
 	category = "Vitae"
+	hunger_cost_per_use = 40
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/priest/mercy/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
@@ -692,6 +810,13 @@
 
 	to_chat(T, SPAN_NOTICE("You feel slightly better as your pain eases."))
 	to_chat(user, SPAN_NOTICE("You ease the pain of [T.name]."))
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
 
 	T.add_chemical_effect(CE_PAINKILLER, 50)  // painkiller effect to target
 
@@ -703,6 +828,8 @@
 	desc = "Stabilizes the health of a person in front of you."
 	power = 50
 	category = "Vitae"
+	hunger_cost_per_use = 40
+	toxins_cost_per_hungercheck = 10
 
 /datum/ritual/cruciform/priest/absolution/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
@@ -712,6 +839,13 @@
 
 	to_chat(T, SPAN_NOTICE("You feel a soothing sensation in your veins."))
 	to_chat(user, SPAN_NOTICE("You stabilize [T.name]'s health."))
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
 
 	var/datum/reagents/R = new /datum/reagents(20, null)
 	R.add_reagent("holyinaprovaline", 10)
@@ -726,6 +860,8 @@
 	desc = "Addictions are common afflictions among colony denizens. This litany helps those people by easing or removing their addictions."
 	power = 50
 	category = "Vitae"
+	hunger_cost_per_use = 90
+	toxins_cost_per_hungercheck = 5
 
 /datum/ritual/cruciform/priest/purging/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
@@ -747,6 +883,13 @@
 
 	to_chat(T, SPAN_NOTICE("You feel weird as you progress through your addictions."))
 	to_chat(user, SPAN_NOTICE("You help [T.name] get rid of their addictions."))
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= hunger_cost_per_use)
+			user.nutrition -= hunger_cost_per_use
+		else
+			to_chat(user, SPAN_WARNING("Your fasting becomes harder and harder."))
+			user.adjustToxLoss(toxins_cost_per_hungercheck)
 
 	T.add_chemical_effect(CE_PAINKILLER, 15)  // painkiller effect to target
 

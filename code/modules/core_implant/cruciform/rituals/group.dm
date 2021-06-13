@@ -2,6 +2,8 @@
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
 	success_message = "On the verge of audibility you hear pleasant music, your mind clears up and the spirit grows stronger. Your prayer was heard."
 	fail_message = "The Cruciform feels cold against your chest."
+	hunger_cost_per_use = 30
+	toxins_cost_per_hungercheck = 5
 
 /datum/ritual/group/cruciform/pre_check(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C, targets)
 	if(!..())
