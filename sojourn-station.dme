@@ -2842,4 +2842,5 @@
 #include "maps\submaps\dungeon_rooms\entrances\entrance_templates.dm"
 #include "maps\submaps\dungeon_rooms\exits\exit_templates.dm"
 #include "maps\submaps\dungeon_rooms\rooms\room_templates.dm"
+#include "modular_sojourn\pixelshift.dm"
 // END_INCLUDE
