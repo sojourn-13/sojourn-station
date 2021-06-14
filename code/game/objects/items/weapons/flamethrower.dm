@@ -114,7 +114,7 @@
 		if(previousturf && LinkBlocked(previousturf, T))
 			break
 		var/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel/fuel = new /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel(T)
-		fuel.doDircheck(T, pressure*25, fire_dir, get_turf(src))
+		fuel.doDircheck(T, pressure*5, fire_dir, get_turf(src))
 
 	previousturf = null
 	operating = 0
@@ -131,6 +131,7 @@
 		if(!src)
 			return
 		mytank.reagents.trans_to_obj(D, pressure*5)
+		D.add_reagent("fuel", pressure*10)
 		D.set_color()
 		D.set_up(my_target, round(2.5*pressure), 3)
 	return
