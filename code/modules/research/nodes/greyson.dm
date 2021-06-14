@@ -27,9 +27,10 @@
 	cost = 2500
 
 	unlocks_designs = list(/datum/design/research/item/greyson/manhacks_roomba,
-						   /datum/design/research/item/greyson/manhacks_roomba_tripper,
-						   /datum/design/research/item/greyson/manhacks_roomba_gunne,
-						   /datum/design/research/item/greyson/manhacks_roomba_fbp)
+						   /datum/design/research/item/greyson/manhacks_roomba_tripper
+						   //datum/design/research/item/greyson/manhacks_roomba_gunne,
+						   //datum/design/research/item/greyson/manhacks_roomba_fbp
+						   )
 
 /datum/technology/GP_armor
 	name = "Greyson Positronic Armor Vests"

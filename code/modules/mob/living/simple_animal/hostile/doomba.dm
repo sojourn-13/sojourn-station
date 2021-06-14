@@ -313,7 +313,7 @@
 	name = "Custom Roomba"
 	desc = "A small round roomba that can be customized for various tasks."
 	faction = "neutral"
-	icon = 'icons/mob/custom_roomba.dmi'
+	icon = 'icons/mob/custom_bot.dmi'
 	icon_state = "roomba"
 	melee_damage_lower = 10
 	melee_damage_upper = 15
@@ -336,7 +336,7 @@
 
 	var/panel_locked = TRUE // Is the panel locked?
 	var/panel_open = FALSE // Is the panel open?
-	var/obj/item/weapon/roomba_part/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
+	var/obj/item/weapon/bot_part/roomba/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
 	var/obj/item/weapon/weaponry = null // Hold the roomba armor plating so that we can get it back.
 	var/obj/item/weapon/mine/kamikaze = null // Store the mine the roomba can hold.
 	var/obj/item/weapon/cell/medium/cell = null // Hold the roomba's power cell.
@@ -358,7 +358,7 @@
 			T = W
 
 		// Check if it is a roomba part
-		if(istype(W, /obj/item/weapon/roomba_part))
+		if(istype(W, /obj/item/weapon/bot_part/roomba))
 			T = W
 
 		// Check if it is a gun
@@ -414,7 +414,7 @@
 				return
 
 		// Are we attacking with the roomba plating and is the panel open?
-		else if((istype(T, /obj/item/weapon/roomba_part/roomba_plating)) && (panel_open))
+		else if((istype(T, /obj/item/weapon/bot_part/roomba/roomba_plating)) && (panel_open))
 
 			// Check if the roomba is already armored.
 			if(armored)
@@ -432,7 +432,7 @@
 			return
 
 		// Is it the taped knife and is the panel open?
-		else if((istype(T, /obj/item/weapon/roomba_part/roomba_knife)) && (panel_open))
+		else if((istype(T, /obj/item/weapon/bot_part/roomba/roomba_knife)) && (panel_open))
 
 			// The roomba can only have one weapon at the time.
 			if(weaponry)
@@ -440,7 +440,7 @@
 				return
 
 			// New var to use the knife's unique property bla bla bla you know how it goes.
-			var/obj/item/weapon/roomba_part/roomba_knife/K = W
+			var/obj/item/weapon/bot_part/roomba/roomba_knife/K = W
 
 			src.weaponry = K // Store the knife in the bot
 			to_chat(user, "you tape the [W.name] on [src].")
@@ -542,8 +542,8 @@
 					weaponry.forceMove(src.loc) // Spawn the weapon the roomba had.
 
 					// Was the weapon the knife ?
-					if(istype(weaponry, /obj/item/weapon/roomba_part/roomba_knife))
-						var/obj/item/weapon/roomba_part/roomba_knife/K = weaponry // Unique stat e.t.c.
+					if(istype(weaponry, /obj/item/weapon/bot_part/roomba/roomba_knife))
+						var/obj/item/weapon/bot_part/roomba/roomba_knife/K = weaponry // Unique stat e.t.c.
 
 						// Cancel the melee damage bonus the knife gave to the roomba.
 						melee_damage_lower -= K.damage_boost
@@ -617,12 +617,41 @@
 	wander = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	var/obj/item/weapon/cell/large/cell = null // Hold the drone's power cell.
+
+// For repairing damage to the synths.
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(W, /obj/item/weapon/tool))
+			T = W
+
+		if(QUALITY_WELDING in T.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+	// If nothing was ever triggered, continue as normal
+	..()
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/FindTarget()
 	. = ..()
 	if(.)
 		visible_emote("lets out a buzz as it detects a target!")
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/death()
+	if(cell) // Only if it does have a cell
+		cell.forceMove(src.loc) // Drop the power cell
+		cell = null // No more cell in the drone
+	..()
+	return
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
 	name = "SI Mantis Drone"
