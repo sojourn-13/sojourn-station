@@ -51,6 +51,8 @@
 	new /obj/item/device/scanner/health(src)
 
 /obj/item/weapon/storage/firstaid/outsider
+	name = "scavenged kit"
+	desc = "It's an medical kit made from plastic and put together with a few useful scavenged chemicals."
 	icon_state = "outsider"
 
 /obj/item/weapon/storage/firstaid/outsider/populate_contents()
@@ -60,10 +62,10 @@
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/weapon/reagent_containers/syringe/spaceacillin(src)
-	new /obj/item/weapon/reagent_containers/syringe/inaprovaline(src)
-	new /obj/item/weapon/reagent_containers/syringe/antitoxin(src)
-	new /obj/item/weapon/reagent_containers/syringe/tricordrazine(src)
+	new /obj/item/weapon/reagent_containers/hypospray/autoinjector/spaceacillin(src)
+	new /obj/item/weapon/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/weapon/reagent_containers/hypospray/autoinjector/antitoxin(src)
+	new /obj/item/weapon/reagent_containers/hypospray/autoinjector/tricordrazine(src)
 
 /obj/item/weapon/storage/firstaid/toxin
 	name = "toxin first aid"
