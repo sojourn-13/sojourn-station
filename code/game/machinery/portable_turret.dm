@@ -585,6 +585,15 @@ var/list/turret_icons
 	if(!emagged && colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
+	if(!emagged && !colony_allied_turret && !L.colony_friend) //If were not allied to the colony we dont attack anything thats against the colony
+		return TURRET_NOT_TARGET
+
+	if(!emagged && !colony_allied_turret && L.colony_friend) //If were not allied with the colony we attack them and their pets
+		return TURRET_SECONDARY_TARGET
+
+	if(!emagged && colony_allied_turret && !L.colony_friend) //If were allied with the colony and we attack things that are not are pets
+		return TURRET_SECONDARY_TARGET
+
 	if(!emagged && issilicon(L))	// Don't target silica
 		return TURRET_NOT_TARGET
 
