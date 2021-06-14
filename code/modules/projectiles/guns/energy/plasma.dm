@@ -158,14 +158,15 @@
 	return
 
 /obj/item/weapon/gun/energy/plasma/super_heavy/Fire(mob/user)
-	..() // We shoot the gun before using the coolant.
-	if(!(container) || !(container.reagents.remove_reagent("coolant", coolant_used_per_shot))) // First check if we have a container, if we do, then try to remove the coolant, if it can't, we continue.
-		to_chat(user, SPAN_WARNING("Your [src.name] start to overheat.")) // Warn the user that they ran out.
+	. = ..() // We shoot the gun before using the coolant.
+	if(.) // Only proceed if we successfully shot.
+		if(!(container) || !(container.reagents.remove_reagent("coolant", coolant_used_per_shot))) // First check if we have a container, if we do, then try to remove the coolant, if it can't, we continue.
+			to_chat(user, SPAN_WARNING("Your [src.name] start to overheat.")) // Warn the user that they ran out.
 
-		if(prob(explode_chance)) // This roll the dice to see if the gun explode.
-			var/turf/T = get_turf(src) // Get the turf to decide the explosion in.
-			usr.visible_message(SPAN_DANGER("[usr]'s [src.name] overheat and explode !")) // Obvious Message
-			explosion(T,explosion_d_size,explosion_h_size,explosion_l_size,explosion_f_size) // EXPLOSION !
-			qdel(src) // The gun blew up, it is no more.
-			return
+			if(prob(explode_chance)) // This roll the dice to see if the gun explode.
+				var/turf/T = get_turf(src) // Get the turf to decide the explosion in.
+				usr.visible_message(SPAN_DANGER("[usr]'s [src.name] overheat and explode !")) // Obvious Message
+				explosion(T,explosion_d_size,explosion_h_size,explosion_l_size,explosion_f_size) // EXPLOSION !
+				qdel(src) // The gun blew up, it is no more.
+				return
 	return
