@@ -71,6 +71,7 @@
 				/obj/item/weapon/material/butterfly/frenchman = 1,
 				/obj/item/weapon/tool/wrench/big_wrench/freedom = 1,
 				/obj/item/weapon/tool/saw/hyper/doombringer = 1,
+				/obj/item/weapon/gun/projectile/that_gun = 1,
 				/obj/item/weapon/soap/bluespase = 0.5)) //Ye not a "gun" but still good for this
 
 /obj/random/uplink/low_chance
