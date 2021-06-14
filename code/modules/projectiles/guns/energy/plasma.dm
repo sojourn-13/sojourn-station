@@ -97,6 +97,7 @@
 	cell_type = /obj/item/weapon/cell/medium
 	charge_cost = 100
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 20, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10)
+	damage_multiplier = 1
 
 	var/explode_chance // the % of chance the gun has to explode each time it is fired without coolant. It is random between each gun.
 	var/explode_chance_min = 5 // The mininum of explode_chance
@@ -106,10 +107,10 @@
 	var/obj/item/weapon/reagent_containers/container //Beaker inserted.
 
 	// Value used for the explosion, same as a normal mine.
-	var/explosion_d_size = -1
-	var/explosion_h_size = 1
-	var/explosion_l_size = 2
-	var/explosion_f_size = 15
+	var/explosion_d_size = 0
+	var/explosion_h_size = 0
+	var/explosion_l_size = 3
+	var/explosion_f_size = 5
 
 	init_firemodes = list(
 		list(mode_name="Super-heavy Plasma", projectile_type=/obj/item/projectile/plasma/heavy/super_heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="kill", projectile_color = "#FFFF00"),
@@ -130,9 +131,9 @@
 
 	if(istype(W, /obj/item/weapon/tool)) // Is it a tool?
 		var/obj/item/weapon/tool/T = W // To use tool-only checks
-		if(QUALITY_SCREW_DRIVING) // Can we screw a screw with the tool?
+		if(QUALITY_BOLT_TURNING) // Can we turn bolts with the tool?
 			if(container) // Do we have something to remove?
-				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 					to_chat(user, "You remove the [container.name] from the [src.name].")
 					container.forceMove(user.loc) //Move the container to the floor of the user.
 					container = null // We no longer have a container.
@@ -157,16 +158,15 @@
 	..()
 	return
 
-/obj/item/weapon/gun/energy/plasma/super_heavy/Fire(mob/user)
-	. = ..() // We shoot the gun before using the coolant.
-	if(.) // Only proceed if we successfully shot.
-		if(!(container) || !(container.reagents.remove_reagent("coolant", coolant_used_per_shot))) // First check if we have a container, if we do, then try to remove the coolant, if it can't, we continue.
-			to_chat(user, SPAN_WARNING("Your [src.name] start to overheat.")) // Warn the user that they ran out.
+/obj/item/weapon/gun/energy/plasma/super_heavy/handle_post_fire(mob/user)
+	..() // We shoot the gun before using the coolant.
+	if(!(container) || !(container.reagents.remove_reagent("coolant", coolant_used_per_shot))) // First check if we have a container, if we do, then try to remove the coolant, if it can't, we continue.
+		to_chat(user, SPAN_WARNING("Your [src.name] start to overheat.")) // Warn the user that they ran out.
 
-			if(prob(explode_chance)) // This roll the dice to see if the gun explode.
-				var/turf/T = get_turf(src) // Get the turf to decide the explosion in.
-				usr.visible_message(SPAN_DANGER("[usr]'s [src.name] overheat and explode !")) // Obvious Message
-				explosion(T,explosion_d_size,explosion_h_size,explosion_l_size,explosion_f_size) // EXPLOSION !
-				qdel(src) // The gun blew up, it is no more.
-				return
+		if(prob(explode_chance)) // This roll the dice to see if the gun explode.
+			var/turf/T = get_turf(src) // Get the turf to decide the explosion in.
+			usr.visible_message(SPAN_DANGER("[usr]'s [src.name] overheat and explode !")) // Obvious Message
+			explosion(user, explosion_d_size * damage_multiplier, explosion_h_size * damage_multiplier, explosion_l_size * damage_multiplier, explosion_f_size * damage_multiplier) // EXPLOSION !
+			qdel(src) // The gun blew up, it is no more.
+			return
 	return
