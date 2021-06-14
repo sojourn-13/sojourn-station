@@ -26,6 +26,10 @@
 /obj/item/projectile/plasma/heavy/shell
 	damage_types = list(BURN = 42)
 
+/obj/item/projectile/plasma/heavy/super_heavy
+	name = "superheavy plasma bolt"
+	damage_types = list(BURN = 50)
+
 /obj/item/projectile/plasma/impact
 	name = "plasma impact bolt"
 	damage_types = list(HALLOS = 0)
