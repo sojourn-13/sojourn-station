@@ -370,7 +370,7 @@
 	build_path = /obj/item/weapon/gun/energy/taser
 
 /datum/design/autolathe/gun/ion_pistol
-	name = "GmbH - \"Aedes\" Stun Revolver"
+	name = "GmbH - \"Aedes\" Ion Pistol"
 	build_path = /obj/item/weapon/gun/energy/ionpistol
 
 /datum/design/autolathe/gun/titanica

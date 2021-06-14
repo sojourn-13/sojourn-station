@@ -1153,7 +1153,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ion_pistol
-	disk_name = "GmbH - \"Aedes\" Stun Revolver"
+	disk_name = "GmbH - \"Aedes\" Ion Pistol"
 	icon_state = "frozenstar"
 
 	license = 6//2 guns 2 cells
