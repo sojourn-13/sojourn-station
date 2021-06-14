@@ -295,7 +295,8 @@
 							/datum/design/research/item/mmi_radio,
 							/datum/design/research/item/intellicard,
 							/datum/design/research/item/paicard,
-							/datum/design/research/circuit/robocontrol
+							/datum/design/research/circuit/robocontrol,
+							/datum/design/research/circuit/roomba_board
 							)
 
 /datum/technology/artificial_intelligence
