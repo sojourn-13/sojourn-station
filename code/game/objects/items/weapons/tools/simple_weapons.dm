@@ -124,7 +124,7 @@
 	worksound = WORKSOUND_HARD_SLASH
 	w_class = ITEM_SIZE_SMALL
 	force = WEAPON_FORCE_NORMAL
-	throwforce = WEAPON_FORCE_WEAK
+	throwforce = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_SHALLOW
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
@@ -187,7 +187,7 @@
 	icon_state = "butch"
 	desc = "A huge thing used for chopping and chopping up meat. This includes roaches and roach-by-products."
 	force = WEAPON_FORCE_DANGEROUS
-	throwforce = WEAPON_FORCE_NORMAL
+	throwforce = WEAPON_FORCE_DANGEROUS+2
 	backstab_damage = 8
 	armor_penetration = ARMOR_PEN_MODERATE
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -224,6 +224,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
 	armor_penetration = ARMOR_PEN_MODERATE
+	throwforce = WEAPON_FORCE_LETHAL
 	max_upgrades = 3
 	embed_mult = 0.3
 
@@ -237,6 +238,7 @@
 	force = 13
 	backstab_damage = 15
 	armor_penetration = ARMOR_PEN_HALF
+	throwforce = WEAPON_FORCE_ROBUST
 
 /obj/item/weapon/tool/knife/dagger/skinning
 	name = "skinning knife"
@@ -246,7 +248,6 @@
 	icon_state = "skinning"
 	item_state = "skinning"
 	armor_penetration = ARMOR_PEN_DEEP
-	throwforce = WEAPON_FORCE_WEAK
 	tool_qualities = list(QUALITY_CUTTING = 50)
 
 /obj/item/weapon/tool/knife/dagger/ceremonial
