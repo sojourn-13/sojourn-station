@@ -88,17 +88,17 @@
 	category = CAT_GUNMODS
 
 /datum/design/research/item/powercell/large/grayson
-	name = "GP-SI \"Posi-cell 16000L\""
+	name = "GP-SI \"Posi-cell 14000L\""
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/weapon/cell/large/greyson
 
 /datum/design/research/item/powercell/medium/grayson
-	name = "GP-SI \"Posi-cell 1600M\""
+	name = "GP-SI \"Posi-cell 1200M\""
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/weapon/cell/medium/greyson
 
 /datum/design/research/item/powercell/small/grayson
-	name = "GP-SI \"Posi-cell 400S\""
+	name = "GP-SI \"Posi-cell 300S\""
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/weapon/cell/small/greyson
 

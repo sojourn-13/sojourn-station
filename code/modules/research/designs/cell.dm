@@ -74,7 +74,7 @@
 	build_path = /obj/item/weapon/cell/small/moebius/omega
 
 /datum/design/research/item/powercell/large/nuclear
-	name = "Soteria \"Atomcell 14000L\""
+	name = "Soteria \"Atomcell 8000L\""
 	build_path = /obj/item/weapon/cell/large/moebius/nuclear
 
 /datum/design/research/item/powercell/medium/nuclear
@@ -82,7 +82,7 @@
 	build_path = /obj/item/weapon/cell/medium/moebius/nuclear
 
 /datum/design/research/item/powercell/small/nuclear
-	name = "Soteria \"Atomcell 300S\""
+	name = "Soteria \"Atomcell 200S\""
 	build_path = /obj/item/weapon/cell/small/moebius/nuclear
 
 /datum/design/research/item/powercell/small/nuclear/pda

@@ -65,19 +65,19 @@
 	maxcharge = 20000
 
 /obj/item/weapon/cell/large/moebius/nuclear
-	name = "Soteria \"Atomcell 14000L\""
+	name = "Soteria \"Atomcell 8000L\""
 	desc = "Soteria Institute branded rechargeable L-standardized power cell. This version able to recharge itself over time."
 	icon_state = "meb_b_nu"
 	autorecharging = TRUE
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 6)
-	maxcharge = 14000
+	maxcharge = 8000
 
 /obj/item/weapon/cell/large/greyson
-	name = "GP-SI \"Posi-cell 16000L\""
+	name = "GP-SI \"Posi-cell 14000L\""
 	desc = "GP-SI branded rechargeable L-standardized power cell that recharges itself over time. This type has yet to hit the market!"
 	icon_state = "greyson_b_omega"
-	maxcharge = 16000
+	maxcharge = 14000
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_PLATINUM = 3, MATERIAL_URANIUM = 6)
@@ -192,10 +192,10 @@
 	maxcharge = 1000
 
 /obj/item/weapon/cell/medium/greyson
-	name = "GP-SI \"Posi-cell 1600M\""
+	name = "GP-SI \"Posi-cell 1200M\""
 	desc = "GP-SI branded rechargeable M-standardized power cell that recharges itself over time. This type has yet to hit the market!"
 	icon_state = "greyson_m_omega"
-	maxcharge = 1600
+	maxcharge = 1200
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2, MATERIAL_URANIUM = 4)
@@ -279,13 +279,13 @@
 	maxcharge = 500
 
 /obj/item/weapon/cell/small/moebius/nuclear
-	name = "Soteria \"Atomcell 300S\""
+	name = "Soteria \"Atomcell 250S\""
 	desc = "Soteria Institute branded rechargeable S-standardized microreactor cell. Recharges itself over time."
 	icon_state = "meb_s_nu"
 	autorecharging = TRUE
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_URANIUM = 2)
-	maxcharge = 300
+	maxcharge = 250
 
 /obj/item/weapon/cell/small/moebius/pda
 	name = "Soteria \"Atomcell 50S\""
@@ -300,10 +300,10 @@
 	recharge_time = 1
 
 /obj/item/weapon/cell/small/greyson
-	name = "GP-SI \"Posi-cell 400S\""
+	name = "GP-SI \"Posi-cell 300S\""
 	desc = "GP-SI branded rechargeable S-standardized power cell that recharges itself over time. This type has yet to hit the market!"
 	icon_state = "greyson_s_omega"
-	maxcharge = 400
+	maxcharge = 300
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 2)
