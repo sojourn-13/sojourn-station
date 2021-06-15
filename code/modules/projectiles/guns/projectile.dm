@@ -240,14 +240,16 @@
 
 		if(C.amount > 1)
 			C.amount -= 1
-			var/obj/item/ammo_casing/inserted_casing = new /obj/item/ammo_casing(src)
+			var/type = C.type
+			var/obj/item/ammo_casing/inserted_casing = new type
 			inserted_casing.desc = C.desc
 			inserted_casing.caliber = C.caliber
 			inserted_casing.projectile_type = C.projectile_type
 			inserted_casing.icon_state = C.icon_state
 			inserted_casing.spent_icon = C.spent_icon
-			inserted_casing.maxamount = C.maxamount
 			inserted_casing.is_caseless = C.is_caseless
+			inserted_casing.maxamount = C.maxamount
+			inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
 			if(ispath(inserted_casing.projectile_type) && C.BB)
 				inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
 			C.update_icon()

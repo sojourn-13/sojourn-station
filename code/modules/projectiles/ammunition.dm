@@ -37,7 +37,8 @@
 /obj/item/ammo_casing/attack_hand(mob/user)
 	if((src.amount > 1) && (src == user.get_inactive_hand()))
 		src.amount -= 1
-		var/obj/item/ammo_casing/new_casing = new /obj/item/ammo_casing(get_turf(user))
+		var/type = src.type
+		var/obj/item/ammo_casing/new_casing = new type(get_turf(user))
 		new_casing.desc = src.desc
 		new_casing.caliber = src.caliber
 		new_casing.projectile_type = src.projectile_type
@@ -45,6 +46,7 @@
 		new_casing.spent_icon = src.spent_icon
 		new_casing.is_caseless = src.is_caseless
 		new_casing.maxamount = src.maxamount
+		new_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
 		if(ispath(new_casing.projectile_type) && src.BB)
 			new_casing.BB = new new_casing.projectile_type(new_casing)
 		else
@@ -271,14 +273,16 @@
 		return FALSE
 	if(C.amount > 1)
 		C.amount -= 1
-		var/obj/item/ammo_casing/inserted_casing = new /obj/item/ammo_casing(src)
+		var/type = C.type
+		var/obj/item/ammo_casing/inserted_casing = new type
 		inserted_casing.desc = C.desc
 		inserted_casing.caliber = C.caliber
 		inserted_casing.projectile_type = C.projectile_type
 		inserted_casing.icon_state = C.icon_state
 		inserted_casing.spent_icon = C.spent_icon
-		inserted_casing.maxamount = C.maxamount
 		inserted_casing.is_caseless = C.is_caseless
+		inserted_casing.maxamount = C.maxamount
+		inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
 		if(ispath(inserted_casing.projectile_type) && C.BB)
 			inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
 		C.update_icon()
