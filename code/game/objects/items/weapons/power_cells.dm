@@ -60,7 +60,7 @@
 	name = "Soteria \"Omega-Geyser 20000L\""
 	desc = "Soteria Institute-brand rechargeable L-standardized power cell. This one being part of the Omega line, making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_b_omega"
-	matter = list(MATERIAL_STEEL = 12, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_GOLD = 6)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_GOLD = 6)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 20000
 
@@ -178,7 +178,7 @@
 	name = "Soteria \"Omega-Geyser 1600M\""
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. This one being part of the Omega line, making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_m_omega"
-	matter = list(MATERIAL_STEEL = 9, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 4)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 4)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 1600
 
