@@ -298,6 +298,7 @@
 	melee_damage_upper = 15
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	response_help = "pet"
 
 /mob/living/simple_animal/hostile/roomba/trip/armored/allied
 	name = "SI Armored Roomba"
@@ -308,6 +309,7 @@
 	melee_damage_upper = 17
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	response_help = "pet"
 
 /mob/living/simple_animal/hostile/roomba/custom
 	name = "Custom Roomba"
