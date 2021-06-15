@@ -9,7 +9,7 @@
 	time = 90
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
 	next_vote = 250 MINUTES //Minimum round length before it can be called for the first time
-	cooldown = 30 MINUTES
+	cooldown = 60 MINUTES
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
