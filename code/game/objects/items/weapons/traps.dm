@@ -216,7 +216,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 			user.drop_from_inventory(src)
 			update_icon()
 			anchored = TRUE
-			log_and_message_admins(" - Beartrap set at \the [jumplink(locate)] User:[src]", location = T) //So we can go to it
+			log_and_message_admins(" - Beartrap set at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 
 /***********************************
 	Hurting Mobs
