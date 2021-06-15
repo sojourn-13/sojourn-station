@@ -17,32 +17,6 @@
 	perks = list(/datum/perk/job/butcher)
 	access = list(access_huntmaster)
 
-	known_recipes = list(
-			/datum/craft_recipe/lodge/hunter_crossbow,
-			/datum/craft_recipe/lodge/hunting_halberd,
-			/datum/craft_recipe/lodge/render_gauntlet,
-			/datum/craft_recipe/lodge/skinning_knife,
-			/datum/craft_recipe/lodge/woodsmans_axe,
-			/datum/craft_recipe/lodge/bone_shield,
-			/datum/craft_recipe/lodge/hunter_hood,
-			/datum/craft_recipe/lodge/hunter_armor_basic,
-			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
-			/datum/craft_recipe/lodge/hunter_armor_metalman,
-			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
-			/datum/craft_recipe/lodge/blood_tongue,
-			/datum/craft_recipe/lodge/powder_pouch,
-			/datum/craft_recipe/lodge/tangu_juice,
-			/datum/craft_recipe/lodge/clucker_juice,
-			/datum/craft_recipe/lodge/tahca_antiviral,
-			/datum/craft_recipe/lodge/crossbow_bolts,
-			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
-			/datum/craft_recipe/lodge/crossbow_bolts/speed,
-			/datum/craft_recipe/lodge/duct_tape_weak,
-			/datum/craft_recipe/lodge/duct_tape,
-			/datum/craft_recipe/lodge/chimera_fang,
-			/datum/craft_recipe/lodge/soap,
-			)
-
 	stat_modifiers = list(
 		STAT_BIO = 30,
 		STAT_TGH = 20,
@@ -82,32 +56,6 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 
 	perks = list(/datum/perk/job/butcher)
-
-	known_recipes = list(
-			/datum/craft_recipe/lodge/hunter_crossbow,
-			/datum/craft_recipe/lodge/hunting_halberd,
-			/datum/craft_recipe/lodge/render_gauntlet,
-			/datum/craft_recipe/lodge/skinning_knife,
-			/datum/craft_recipe/lodge/woodsmans_axe,
-			/datum/craft_recipe/lodge/bone_shield,
-			/datum/craft_recipe/lodge/hunter_hood,
-			/datum/craft_recipe/lodge/hunter_armor_basic,
-			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
-			/datum/craft_recipe/lodge/hunter_armor_metalman,
-			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
-			/datum/craft_recipe/lodge/blood_tongue,
-			/datum/craft_recipe/lodge/powder_pouch,
-			/datum/craft_recipe/lodge/tangu_juice,
-			/datum/craft_recipe/lodge/clucker_juice,
-			/datum/craft_recipe/lodge/tahca_antiviral,
-			/datum/craft_recipe/lodge/crossbow_bolts,
-			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
-			/datum/craft_recipe/lodge/crossbow_bolts/speed,
-			/datum/craft_recipe/lodge/duct_tape_weak,
-			/datum/craft_recipe/lodge/duct_tape,
-			/datum/craft_recipe/lodge/chimera_fang,
-			/datum/craft_recipe/lodge/soap,
-			)
 
 	stat_modifiers = list(
 		STAT_BIO = 20,
