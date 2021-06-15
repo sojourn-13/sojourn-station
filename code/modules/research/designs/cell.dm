@@ -82,7 +82,7 @@
 	build_path = /obj/item/weapon/cell/medium/moebius/nuclear
 
 /datum/design/research/item/powercell/small/nuclear
-	name = "Soteria \"Atomcell 200S\""
+	name = "Soteria \"Atomcell 250S\""
 	build_path = /obj/item/weapon/cell/small/moebius/nuclear
 
 /datum/design/research/item/powercell/small/nuclear/pda
