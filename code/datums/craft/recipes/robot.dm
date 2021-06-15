@@ -8,6 +8,7 @@
 /datum/craft_recipe/robotic/custom_board
 	name = "Custom Control Board"
 	result = /obj/item/weapon/bot_part/control
+	icon_state = "electronic"
 	steps = list(
 		list(/obj/item/weapon/circuitboard, 1, "time" = 20),
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 60),
