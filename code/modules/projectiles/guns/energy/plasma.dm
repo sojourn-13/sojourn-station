@@ -164,7 +164,6 @@
 		to_chat(user, SPAN_WARNING("Your [src.name] start to overheat.")) // Warn the user that they ran out.
 
 		if(prob(explode_chance)) // This roll the dice to see if the gun explode.
-			var/turf/T = get_turf(src) // Get the turf to decide the explosion in.
 			usr.visible_message(SPAN_DANGER("[usr]'s [src.name] overheat and explode !")) // Obvious Message
 			explosion(user, explosion_d_size * damage_multiplier, explosion_h_size * damage_multiplier, explosion_l_size * damage_multiplier, explosion_f_size * damage_multiplier) // EXPLOSION !
 			qdel(src) // The gun blew up, it is no more.
