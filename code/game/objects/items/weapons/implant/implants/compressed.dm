@@ -6,6 +6,7 @@
 	var/obj/item/scanned = null
 	is_legal = FALSE
 	origin_tech = list(TECH_MATERIAL=2, TECH_MAGNET=4, TECH_BLUESPACE=5, TECH_ILLEGAL=4)
+	var/entropy_value = 5 //modular for admins to punish people taht scan bigger items
 
 /obj/item/weapon/implant/compressed/trigger(emote, mob/living/source)
 	if(!scanned)
@@ -13,6 +14,9 @@
 
 	if(emote == activation_emote)
 		to_chat(source, "The air glows as \the [scanned.name] uncompresses.")
+		bluespace_entropy(entropy_value, get_turf(src))
+		log_and_message_admins(" - [scanned.name] teleported form a compressed matter implant at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[source]") //So we can go to it
+
 		activate()
 
 /obj/item/weapon/implant/compressed/activate()
@@ -27,7 +31,6 @@
 	if(source.mind)
 		source.mind.store_memory("Compressed matter implant can be activated by using the [src.activation_emote] emote, <B>say *[src.activation_emote]</B> to attempt to activate.", 0, 0)
 	to_chat(source, "The implanted compressed matter implant can be activated by using the [src.activation_emote] emote, <B>say *[src.activation_emote]</B> to attempt to activate.")
-
 
 /obj/item/weapon/implanter/compressed
 	name = "implanter (C)"
@@ -71,4 +74,5 @@
 
 		A.forceMove(c)
 		c.scanned = A
+		log_and_message_admins(" - [A.name] teleported into a compressed matter implant at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 		update_icon()
