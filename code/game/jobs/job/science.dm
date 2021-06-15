@@ -33,22 +33,6 @@
 
 	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
 
-	known_recipes = list(
-			/datum/craft_recipe/robotic/custom_board,
-			/datum/craft_recipe/robotic/roomba_frame,
-			/datum/craft_recipe/robotic/roomba_treads,
-			/datum/craft_recipe/robotic/roomba_knife,
-			/datum/craft_recipe/robotic/roomba_armor,
-			/datum/craft_recipe/robotic/roomba_armor/heavy,
-			/datum/craft_recipe/robotic/sword_frame,
-			/datum/craft_recipe/robotic/mantis_frame,
-			/datum/craft_recipe/robotic/head_frame,
-			/datum/craft_recipe/robotic/left_arm_frame,
-			/datum/craft_recipe/robotic/right_arm_frame,
-			/datum/craft_recipe/robotic/left_leg_frame,
-			/datum/craft_recipe/robotic/right_leg_frame
-			)
-
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							///datum/computer_file/program/aidiag,
@@ -148,22 +132,6 @@
 		STAT_COG = 25,
 		STAT_BIO = 25,
 	)
-
-	known_recipes = list(
-			/datum/craft_recipe/robotic/custom_board,
-			/datum/craft_recipe/robotic/roomba_frame,
-			/datum/craft_recipe/robotic/roomba_treads,
-			/datum/craft_recipe/robotic/roomba_knife,
-			/datum/craft_recipe/robotic/roomba_armor,
-			/datum/craft_recipe/robotic/roomba_armor/heavy,
-			/datum/craft_recipe/robotic/sword_frame,
-			/datum/craft_recipe/robotic/mantis_frame,
-			/datum/craft_recipe/robotic/head_frame,
-			/datum/craft_recipe/robotic/left_arm_frame,
-			/datum/craft_recipe/robotic/right_arm_frame,
-			/datum/craft_recipe/robotic/left_leg_frame,
-			/datum/craft_recipe/robotic/right_leg_frame
-			)
 
 	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
 
