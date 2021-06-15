@@ -186,22 +186,10 @@
 		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			to_chat(user, "You secure the hydraulic system.")
-			step_message = "It is missing plasteel plating." // Next step
+			step_message = "It is missing an energy armblade module." // Next step
 
-	// Step 10, Add the plating
-	else if((istype(W, /obj/item/stack/material/plasteel)) && (build_step == 9))
-		var/obj/item/stack/material/plasteel/P = W // New var to use cable-only procs.
-		if(P.get_amount() < 10) // Is there enough cables?
-			to_chat(user, ("There's not enough material in this stack."))
-			return
-		build_step++ // Go to the next assembly part.
-		to_chat(user, "You install the plasteel plating.")
-		step_message = "It is missing an energy armblade module." // Next step
-		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
-		P.use(10) // Use ten plasteel.
-
-	// Step 11, Add the armblade
-	if((istype(W, /obj/item/organ_module/active/simple/armblade/energy_blade)) && (build_step == 10))
+	// Step 10, Add the armblade
+	if((istype(W, /obj/item/organ_module/active/simple/armblade/energy_blade)) && (build_step == 9))
 		build_step++ // Go to the next assembly part.
 		to_chat(user, "You add the [W.name] to the [src].")
 		step_message = "It is missing a large power cell." // Next step
@@ -211,8 +199,8 @@
 		user.remove_from_mob(W)
 		qdel(W)
 
-	// Step 12, Install the power cell
-	else if((istype(W, /obj/item/weapon/cell/large)) && (build_step == 11))
+	// Step 11, Install the power cell
+	else if((istype(W, /obj/item/weapon/cell/large)) && (build_step == 10))
 		build_step++ // Go to the next assembly part.
 		to_chat(user, "You add the [W.name] to [src].")
 		step_message = "The power cell is unsecured." // Next step
@@ -223,16 +211,16 @@
 		user.remove_from_mob(W)
 		W.forceMove(src)
 
-	// Step 13, Secure the cell
-	else if((QUALITY_SCREW_DRIVING) && (build_step == 12))
+	// Step 12, Secure the cell
+	else if((QUALITY_SCREW_DRIVING) && (build_step == 11))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			to_chat(user, "You secured the power cell.")
 			step_message = "It is missing the circuit board." // Next step
 
-	// Step 14, Add the circuit board
-	if((istype(W, /obj/item/weapon/bot_part/control)) && (build_step == 13))
+	// Step 13, Add the circuit board
+	if((istype(W, /obj/item/weapon/bot_part/control)) && (build_step == 12))
 		build_step++ // Go to the next assembly part.
 		to_chat(user, "You add the [W.name] to the [src].")
 		step_message = "The board is unsecured." // Next step
@@ -242,16 +230,16 @@
 		user.remove_from_mob(W)
 		qdel(W)
 
-	// Step 15, Secure the board
-	else if((QUALITY_SCREW_DRIVING) && (build_step == 14))
+	// Step 14, Secure the board
+	else if((QUALITY_SCREW_DRIVING) && (build_step == 13))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			to_chat(user, "You secured the board.")
 			step_message = "The wiring is missing." // Next step
 
-	// Step 16, Wire the drone
-	else if((istype(W, /obj/item/stack/cable_coil)) && (build_step == 15))
+	// Step 15, Wire the drone
+	else if((istype(W, /obj/item/stack/cable_coil)) && (build_step == 14))
 		var/obj/item/stack/cable_coil/C = W // New var to use cable-only procs.
 		if(C.get_amount() < 10) // Is there enough cables?
 			to_chat(user, ("There's not enough material in this stack."))
@@ -262,24 +250,43 @@
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		C.use(10) // use five cables.
 
-	// Step 17, Program the drone.
-	else if((QUALITY_PULSING) && (build_step == 16))
+	// Step 16, Program the drone.
+	else if((QUALITY_PULSING) && (build_step == 15))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			to_chat(user, "You program the drone.")
 			step_message = "The panel is open." // Next step
 
-	// Step 18, Close the panel.
-	else if((QUALITY_SCREW_DRIVING) && (build_step == 17))
+	// Step 17, Close the panel.
+	else if((QUALITY_SCREW_DRIVING) && (build_step == 16))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			to_chat(user, "You close the panel.")
-			step_message = "The panel is closed, all it need is a swipe of your ID." // Next step
+			step_message = "The panel is closed, it need armor now though." // Next step
 
-	// Step 19, Swipe the ID to activate it.
-	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 18))
+	// Step 18, Add the armor
+	if((istype(W, /obj/item/clothing/suit/armor/vest/soteriasuit)) && (build_step == 17))
+		build_step++ // Go to the next assembly part.
+		to_chat(user, "You add the [W.name] to the [src].")
+		step_message = "The armor isn't welded in place." // Next step
+		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
+
+		// Remove the armor
+		user.remove_from_mob(W)
+		qdel(W)
+
+	// Step 19, Weld the armor.
+	else if((QUALITY_WELDING) && (build_step == 18))
+		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+			build_step++ // Go to the next assembly part.
+			to_chat(user, "You weld the armor in place.")
+			step_message = "All it need is a swipe of your ID." // Next step
+
+	// Step 20, Swipe the ID to activate it.
+	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 19))
 		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
 		if(!access_robotics in C.access) // Are you authorized to start the roomba ?
 			to_chat(user, "You do not have the autorization to start the drone.")
@@ -403,19 +410,18 @@
 			step_message = "It is missing plasteel plating." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
-	// Step 10, Add the plating
-	else if((istype(W, /obj/item/stack/material/plasteel)) && (build_step == 9))
-		var/obj/item/stack/material/plasteel/P = W // New var to use cable-only procs.
-		if(P.get_amount() < 10) // Is there enough cables?
-			to_chat(user, ("There's not enough material in this stack."))
-			return
+	// Step 10, Add the armblade
+	if((istype(W, /obj/item/organ_module/active/simple/armblade)) && (build_step == 9))
 		build_step++ // Go to the next assembly part.
-		to_chat(user, "You install the plasteel plating.")
-		step_message = "It is missing an energy armblade module." // Next step
+		to_chat(user, "You add the [W.name] to the [src].")
+		step_message = "It is missing a large power cell." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
-		P.use(10) // Use ten plasteel.
 
-	// Step 11, Add the armblade
+		// Remove the armblade
+		user.remove_from_mob(W)
+		qdel(W)
+
+	// Step 11, Add the second armblade
 	if((istype(W, /obj/item/organ_module/active/simple/armblade)) && (build_step == 10))
 		build_step++ // Go to the next assembly part.
 		to_chat(user, "You add the [W.name] to the [src].")
@@ -426,19 +432,8 @@
 		user.remove_from_mob(W)
 		qdel(W)
 
-	// Step 12, Add the second armblade
-	if((istype(W, /obj/item/organ_module/active/simple/armblade)) && (build_step == 11))
-		build_step++ // Go to the next assembly part.
-		to_chat(user, "You add the [W.name] to the [src].")
-		step_message = "It is missing a large power cell." // Next step
-		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
-
-		// Remove the armblade
-		user.remove_from_mob(W)
-		qdel(W)
-
-	// Step 13, Install the power cell
-	else if((istype(W, /obj/item/weapon/cell/large)) && (build_step == 12))
+	// Step 12, Install the power cell
+	else if((istype(W, /obj/item/weapon/cell/large)) && (build_step == 11))
 		build_step++ // Go to the next assembly part.
 		to_chat(user, "You add the [W.name] to [src].")
 		step_message = "The power cell is not secured." // Next step
@@ -449,8 +444,8 @@
 		user.remove_from_mob(W)
 		W.forceMove(src)
 
-	// Step 14, Secure the power cell.
-	else if((QUALITY_SCREW_DRIVING) && (build_step == 13))
+	// Step 13, Secure the power cell.
+	else if((QUALITY_SCREW_DRIVING) && (build_step == 12))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
@@ -458,8 +453,8 @@
 			step_message = "It is missing the circuit board." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
-	// Step 15, Add the circuit board
-	if((istype(W, /obj/item/weapon/bot_part/control)) && (build_step == 14))
+	// Step 14, Add the circuit board
+	if((istype(W, /obj/item/weapon/bot_part/control)) && (build_step == 13))
 		build_step++ // Go to the next assembly part.
 		to_chat(user, "You add the [W.name] to the [src].")
 		step_message = "The board is unsecured." // Next step
@@ -469,8 +464,8 @@
 		user.remove_from_mob(W)
 		qdel(W)
 
-	// Step 16, Secure the board
-	else if((QUALITY_SCREW_DRIVING) && (build_step == 15))
+	// Step 15, Secure the board
+	else if((QUALITY_SCREW_DRIVING) && (build_step == 14))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
@@ -478,8 +473,8 @@
 			step_message = "The wiring is missing." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
-	// Step 17, Wire the drone
-	else if((istype(W, /obj/item/stack/cable_coil)) && (build_step == 16))
+	// Step 16, Wire the drone
+	else if((istype(W, /obj/item/stack/cable_coil)) && (build_step == 15))
 		var/obj/item/stack/cable_coil/C = W // New var to use cable-only procs.
 		if(C.get_amount() < 10) // Is there enough cables?
 			to_chat(user, ("There's not enough material in this stack."))
@@ -490,8 +485,8 @@
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		C.use(10) // use five cables.
 
-	// Step 18, Program the drone.
-	else if((QUALITY_PULSING) && (build_step == 17))
+	// Step 17, Program the drone.
+	else if((QUALITY_PULSING) && (build_step == 16))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
@@ -499,8 +494,8 @@
 			step_message = "The panel is open." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
-	// Step 19, Close the panel.
-	else if((QUALITY_SCREW_DRIVING) && (build_step == 18))
+	// Step 18, Close the panel.
+	else if((QUALITY_SCREW_DRIVING) && (build_step == 17))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
@@ -508,8 +503,27 @@
 			step_message = "The panel is closed, all it need is a swipe of your ID." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
-	// Step 20, Swipe the ID to activate it.
-	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 19))
+	// Step 19, Add the armor
+	if((istype(W, /obj/item/clothing/suit/armor/vest/soteriasuit)) && (build_step == 18))
+		build_step++ // Go to the next assembly part.
+		to_chat(user, "You add the [W.name] to the [src].")
+		step_message = "The armor isn't welded in place." // Next step
+		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
+
+		// Remove the armor
+		user.remove_from_mob(W)
+		qdel(W)
+
+	// Step 20, Weld the armor.
+	else if((QUALITY_WELDING) && (build_step == 19))
+		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+			build_step++ // Go to the next assembly part.
+			to_chat(user, "You weld the armor in place.")
+			step_message = "All it need is a swipe of your ID." // Next step
+
+	// Step 21, Swipe the ID to activate it.
+	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 20))
 		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
 		if(!access_robotics in C.access) // Are you authorized to start the roomba ?
 			to_chat(user, "You do not have the autorization to start the drone.")
