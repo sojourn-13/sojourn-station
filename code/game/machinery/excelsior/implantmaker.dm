@@ -19,6 +19,8 @@
 	build_time = max(10, 70-total)
 
 /obj/machinery/complant_maker/attackby(var/obj/item/I, var/mob/user)
+	log_and_message_admins(" - Exc IMPLANT MAKER being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]!!!") //So we can go to it
+
 	if(working)
 		to_chat(user, SPAN_WARNING("[src] is active. Wait for it to finish."))
 		return

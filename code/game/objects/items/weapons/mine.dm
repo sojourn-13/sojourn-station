@@ -67,6 +67,8 @@
 			armed = TRUE
 			update_icon()
 			playsound(loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
+			log_and_message_admins(" - Landmine set at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
+
 	update_icon()
 
 /obj/item/weapon/mine/attack_hand(mob/user as mob)
@@ -110,6 +112,7 @@
 			anchored = FALSE
 			armed = FALSE
 			deployed = FALSE
+			log_and_message_admins(" - Mine disarmed at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 			update_icon()
 		return
 	else

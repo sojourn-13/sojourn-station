@@ -1,4 +1,5 @@
 /obj/item/weapon/implant/carrion_spider/observer
+	name = "observer spider"
 	desc = "A small spider with a giant blue eye. \red It's looking right at you."
 	icon_state = "spiderling_observer"
 	spider_price = 10

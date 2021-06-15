@@ -1,4 +1,5 @@
 /obj/item/weapon/implant/carrion_spider/control
+	name = "control spider"
 	icon_state = "spiderling_control"
 	spider_price = 40
 	var/active = FALSE

@@ -7,7 +7,6 @@
 	w_class = ITEM_SIZE_BULKY
 	var/max_fuel = 350
 
-
 /obj/item/weapon/weldpack/canister
 	name = "canister"
 	desc = "You may need it to keep additional fuel on hand."

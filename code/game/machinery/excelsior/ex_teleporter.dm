@@ -77,6 +77,7 @@ var/global/excelsior_last_draft = 0
 /obj/machinery/complant_teleporter/Initialize()
 	excelsior_teleporters |= src
 	.=..()
+	log_and_message_admins(" - Exc Teleporter made at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z]") //So we can go to it
 
 /obj/machinery/complant_teleporter/Destroy()
 	excelsior_teleporters -= src
@@ -121,6 +122,7 @@ var/global/excelsior_last_draft = 0
 
 
 /obj/machinery/complant_teleporter/attackby(obj/item/I, mob/user)
+	log_and_message_admins(" - Exc Teleporter being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 	if(default_deconstruction(I, user))
 		return
 	..()
@@ -151,7 +153,6 @@ var/global/excelsior_last_draft = 0
 			if (prob(50))
 				qdel(src)
 				return
-
 
  /**
   * The ui_interact proc is used to open and update Nano UIs
@@ -215,7 +216,6 @@ var/global/excelsior_last_draft = 0
 	data["list_of_parts"] = order_list_p
 
 	return data
-
 
 /obj/machinery/complant_teleporter/Topic(href, href_list)
 	if(stat & (NOPOWER|BROKEN))
@@ -289,6 +289,7 @@ var/global/excelsior_last_draft = 0
 	processing_order = FALSE
 
 /obj/machinery/complant_teleporter/attackby(obj/item/I, mob/user)
+	log_and_message_admins(" - Exc Teleporter being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 	for(var/datum/antag_contract/excel/appropriate/M in GLOB.excel_antag_contracts)
 		if(M.completed)
 			continue
