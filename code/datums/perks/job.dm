@@ -410,6 +410,38 @@
 /datum/perk/job/butcher
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
+	var/known_recipes = list(
+			/datum/craft_recipe/lodge/hunter_crossbow,
+			/datum/craft_recipe/lodge/hunting_halberd,
+			/datum/craft_recipe/lodge/render_gauntlet,
+			/datum/craft_recipe/lodge/skinning_knife,
+			/datum/craft_recipe/lodge/woodsmans_axe,
+			/datum/craft_recipe/lodge/bone_shield,
+			/datum/craft_recipe/lodge/hunter_hood,
+			/datum/craft_recipe/lodge/hunter_armor_basic,
+			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
+			/datum/craft_recipe/lodge/hunter_armor_metalman,
+			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
+			/datum/craft_recipe/lodge/blood_tongue,
+			/datum/craft_recipe/lodge/powder_pouch,
+			/datum/craft_recipe/lodge/tangu_juice,
+			/datum/craft_recipe/lodge/clucker_juice,
+			/datum/craft_recipe/lodge/tahca_antiviral,
+			/datum/craft_recipe/lodge/crossbow_bolts,
+			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
+			/datum/craft_recipe/lodge/crossbow_bolts/speed,
+			/datum/craft_recipe/lodge/duct_tape_weak,
+			/datum/craft_recipe/lodge/duct_tape,
+			/datum/craft_recipe/lodge/chimera_fang,
+			/datum/craft_recipe/lodge/soap,
+			)
+
+/datum/perk/job/butcher/assign(mob/living/carbon/human/H)
+	..()
+	holder.mind.knownCraftRecipes.Add(known_recipes)
+
+/datum/perk/job/butcher/remove()
+	holder.mind.knownCraftRecipes.Remove(known_recipes)
 
 /datum/perk/si_sci
 	name = "SI Science Trainning"
