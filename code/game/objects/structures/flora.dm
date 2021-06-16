@@ -100,7 +100,7 @@
 		to_chat(user, SPAN_NOTICE("You start to cut the tree, felling it and turning it into planks..."))
 		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			playsound(loc, 'sound/items/tree_fall.ogg', 80, 1)
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 30 : 2)
+			new /obj/item/stack/material/wood(get_turf(src), 1 ? 10 : 2)
 			to_chat(user, SPAN_NOTICE("You cut down a tree."))
 			qdel(src)
 			return
