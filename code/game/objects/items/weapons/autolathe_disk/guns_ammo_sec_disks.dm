@@ -1113,7 +1113,7 @@ obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/stun_revolver_sci
-	disk_name = "SI - \"Hestia\" Stun Revolver"
+	disk_name = "SI - \"Hera\" Stun Revolver"
 	icon_state = "moebius"
 
 	license = 8 //2 gun 2 cell, or 8 good cells that are bette then normal
