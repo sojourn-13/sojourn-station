@@ -45,6 +45,10 @@
 /mob/living/carbon/superior_animal/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	. = ..()
 
+	if(stance == HOSTILE_STANCE_ATTACK)
+		if(destroy_surroundings)
+			destroySurroundings()
+
 	updatehealth()
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, var/params)
@@ -52,7 +56,12 @@
 		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
 			harvest(user)
 	else
-		. = ..()
+
+		if(stance == HOSTILE_STANCE_ATTACK)
+			if(destroy_surroundings)
+				destroySurroundings()
+			. = ..()
+
 		updatehealth()
 
 /mob/living/carbon/superior_animal/resolve_item_attack(obj/item/I, mob/living/user, var/hit_zone)
