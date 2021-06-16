@@ -299,6 +299,30 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 	response_help = "pet"
+	mob_size = MOB_SMALL
+	stop_automated_movement_when_pulled = 1
+	density = 0
+
+// For repairing damage to the synths.
+/mob/living/simple_animal/hostile/roomba/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(W, /obj/item/weapon/tool))
+			T = W
+
+		if(QUALITY_WELDING in T.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+	// If nothing was ever triggered, continue as normal
+	..()
 
 /mob/living/simple_animal/hostile/roomba/trip/armored/allied
 	name = "SI Armored Roomba"
@@ -310,6 +334,30 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 	response_help = "pet"
+	mob_size = MOB_SMALL
+	stop_automated_movement_when_pulled = 1
+	density = 0
+
+// For repairing damage to the synths.
+/mob/living/simple_animal/hostile/roomba/trip/armored/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(W, /obj/item/weapon/tool))
+			T = W
+
+		if(QUALITY_WELDING in T.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+	// If nothing was ever triggered, continue as normal
+	..()
 
 /mob/living/simple_animal/hostile/roomba/custom
 	name = "Custom Roomba"
@@ -325,6 +373,9 @@
 	friendly_to_colony = TRUE
 	response_help = "pet"
 	can_buckle = TRUE
+	mob_size = MOB_SMALL
+	stop_automated_movement_when_pulled = 1
+	density = 0
 
 	// Default armor values so that we can reference them.
 	var/default_armor = list(
