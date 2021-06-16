@@ -24,11 +24,9 @@
 	var/struggle_prob = 2
 	var/list/aware_mobs = list() //List of refs of mobs that examined this trap. Won't trigger it when walking.
 
-
 /obj/item/weapon/beartrap/Initialize()
 	.=..()
 	update_icon()
-
 
 /***********************************
 	Releasing Mobs
@@ -107,8 +105,6 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 
 	//Play a metal creaking sound
 	playsound(src, 'sound/machines/airlock_creaking.ogg', 10, 1, -3,-3)
-
-
 
 	//Now a do_after
 	if(!do_after(user, time_to_escape))
@@ -220,6 +216,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 			user.drop_from_inventory(src)
 			update_icon()
 			anchored = TRUE
+			log_and_message_admins(" - Beartrap set at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 
 /***********************************
 	Hurting Mobs
@@ -251,8 +248,6 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 		if (user == buckled_mob)
 			to_chat(user, SPAN_NOTICE("Freeing yourself is very difficult. Perhaps you should call for help?"))
 
-
-
 /obj/item/weapon/beartrap/proc/attack_mob(mob/living/L)
 	//Small mobs won't trigger the trap
 	//Imagine a mouse running harmlessly over it
@@ -281,12 +276,9 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 	buckle_mob(L)
 	to_chat(L, SPAN_DANGER("The steel jaws of \the [src] bite into you, trapping you in place!"))
 
-
 	//If the victim is nonhuman and has no client, start processing.
 	if (!ishuman(L) && !L.client)
 		START_PROCESSING(SSobj, src)
-
-
 
 /*
 Beartraps process when a clientless mob is trapped in them.
@@ -309,8 +301,6 @@ Very rarely it might escape
 	//Chance each tick that the mob will attempt to free itself
 	if (prob(struggle_prob))
 		attempt_release(L)
-
-
 
 /obj/item/weapon/beartrap/Crossed(AM as mob|obj)
 	if(deployed && isliving(AM))
@@ -342,7 +332,6 @@ Very rarely it might escape
 		to_chat(user, SPAN_NOTICE("You're aware of this trap, now. You won't set it off when walking carefully."))
 		aware_mobs |= "\ref[user]"
 
-
 /obj/item/weapon/beartrap/update_icon()
 	..()
 
@@ -350,8 +339,6 @@ Very rarely it might escape
 		icon_state = "[initial(icon_state)]0"
 	else
 		icon_state = "[initial(icon_state)]1"
-
-
 
 /**********************************
 	Makeshift Trap
@@ -371,7 +358,6 @@ Very rarely it might escape
 	matter = list(MATERIAL_STEEL = 15)
 	base_damage = 20
 	var/integrity = 100
-
 
 //It takes 5 damage whenever it snaps onto a mob
 /obj/item/weapon/beartrap/makeshift/attack_mob(mob/living/L)
@@ -393,14 +379,12 @@ Very rarely it might escape
 
 	break_apart()
 
-
 /obj/item/weapon/beartrap/makeshift/proc/break_apart()
 	visible_message(SPAN_DANGER("\the [src] shatters into fragments!"))
 	new /obj/item/stack/material/steel(loc, 10)
 	new /obj/item/weapon/material/shard/shrapnel(loc)
 	new /obj/item/weapon/material/shard/shrapnel(loc)
 	qdel(src)
-
 
 /**********************************
 	Armed Subtypes
@@ -413,8 +397,6 @@ Very rarely it might escape
 /obj/item/weapon/beartrap/armed
 	deployed = TRUE
 	anchored = TRUE
-
-
 
 /obj/item/weapon/beartrap/makeshift/armed
 	deployed = TRUE

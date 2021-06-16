@@ -16,7 +16,7 @@
 	category = "Misc"
 
 /datum/design/research/item/weapon/stunrevolver
-	name = "\"Hestia\" Stun Revolver"
+	name = "\"Hera\" Stun Revolver"
 	build_path = /obj/item/weapon/gun/energy/stunrevolver/sci
 
 /datum/design/research/item/weapon/nuclear_gun

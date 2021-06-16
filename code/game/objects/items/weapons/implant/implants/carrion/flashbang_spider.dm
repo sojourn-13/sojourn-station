@@ -1,4 +1,5 @@
 /obj/item/weapon/implant/carrion_spider/flashbang
+	name = "flashbang spider"
 	icon_state = "spiderling_flashbang"
 	spider_price = 15
 	var/det_time = 2 SECONDS

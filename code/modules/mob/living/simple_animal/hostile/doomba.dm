@@ -84,7 +84,7 @@
 	var/trip_odds = 15 //So admins can edit this
 	drop2 = /obj/item/weapon/melee/telebaton
 
-/mob/living/simple_animal/hostile/roomba/trip/AttackTarget(var/atom/A, var/proximity)
+/mob/living/simple_animal/hostile/roomba/trip/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 
@@ -176,7 +176,7 @@
 	var/injection_per_hit = 2
 	var/injection_type = "toxin"
 
-/mob/living/simple_animal/hostile/roomba/chemical/AttackTarget(var/atom/A, var/proximity)
+/mob/living/simple_animal/hostile/roomba/chemical/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if(isliving(A))

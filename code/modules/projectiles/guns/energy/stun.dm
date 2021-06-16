@@ -59,7 +59,7 @@
 	projectile_type = /obj/item/projectile/energy/electrode
 
 /obj/item/weapon/gun/energy/stunrevolver/sci
-	name = "\"Hestia\" stun revolver"
+	name = "\"Hera\" stun revolver"
 	desc = "Also know as stun revolver. Seinemetall Defense GmbH with Soteria Institute solution for non-lethal takedowns, its rather simple deisign has a smaller capacity in exchange for S-cells use. \
 			The now outdated design was the base for the much more successfull \"Counselor\". This verson is almost identical to the \"Zeus\" only being repainted after Seinemetall Defense GmbH moved to ballistics based manufacturing."
 	icon = 'icons/obj/guns/energy/si_stunrevolver.dmi'

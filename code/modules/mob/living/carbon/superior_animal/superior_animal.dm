@@ -110,6 +110,14 @@
 		agony = 0
 	)
 
+	var/ranged = FALSE  //Do we have a range based attack?
+	var/rapid = FALSE   //Do we shoot in 3s?
+	var/projectiletype  //What are we shooting?
+	var/projectilesound //What sound do we make when firing
+	var/casingtype      //Do we leave casings after shooting?
+	var/ranged_cooldown //What is are modular cooldown, in seconds.
+	var/fire_verb       //what does it do when it shoots?
+
 /mob/living/carbon/superior_animal/New()
 	..()
 	if(!icon_living)

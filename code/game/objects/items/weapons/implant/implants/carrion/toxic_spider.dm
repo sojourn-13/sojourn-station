@@ -1,4 +1,5 @@
 /obj/item/weapon/implant/carrion_spider/toxicbomb
+	name = "lexorin gas bomb spider"
 	desc = "A spider bloated with noxious gasses, it looks ready to burst!"
 	icon_state = "spiderling_toxicbomb"
 	spider_price = 35

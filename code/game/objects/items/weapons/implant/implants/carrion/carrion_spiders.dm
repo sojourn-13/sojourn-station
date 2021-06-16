@@ -18,6 +18,7 @@
 /obj/item/weapon/implant/carrion_spider/New()
 	. = ..()
 	START_PROCESSING(SSobj, src)
+	name = "strange spider"
 
 /obj/item/weapon/implant/carrion_spider/Destroy()
 	. = ..()

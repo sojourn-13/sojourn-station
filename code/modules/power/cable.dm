@@ -178,6 +178,7 @@ var/list/possible_cable_coil_colours = list(
 				used_now = FALSE
 				return 		//he didn't
 			if(do_after(user, 20, src))
+				log_and_message_admins(" - Wire splicing trap being added to at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 				var/fail_chance = FAILCHANCE_HARD - user.stats.getStat(STAT_MEC) // 72 for assistant
 				if(prob(fail_chance))
 					if(!shock(user, 100)) //why not

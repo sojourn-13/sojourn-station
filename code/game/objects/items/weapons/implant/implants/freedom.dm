@@ -19,6 +19,7 @@
 	if (emote == src.activation_emote)
 		src.uses--
 		to_chat(source, "You feel a faint click.")
+		log_and_message_admins(" - Freedom implant used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[source]") //So we can go to it
 		if (source.handcuffed && install_organ == INSTALL_HANDS)
 			var/obj/item/weapon/W = source.handcuffed
 			source.handcuffed = null

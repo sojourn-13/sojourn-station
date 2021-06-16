@@ -180,7 +180,7 @@
 "dx" = (/obj/structure/flora/small/grassa2,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/one_star/fo_outside)
 "dy" = (/obj/structure/flora/small/grassa4,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/one_star/fo_outside)
 "dz" = (/obj/structure/flora/small/grassa4,/turf/simulated/mineral/planet,/area/nadezhda/outside/one_star/fo_outside)
-"dA" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
+"dA" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "dB" = (/mob/living/simple_animal/hostile/roomba,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "dC" = (/obj/structure/bed/chair/custom/onestar/red{dir = 8},/obj/structure/extinguisher_cabinet{pixel_x = 24},/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "dD" = (/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_outside)
@@ -221,7 +221,7 @@
 "em" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Greyson Positronic Outpost"; dir = 2},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "en" = (/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_outside)
 "eo" = (/mob/living/simple_animal/hostile/roomba,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
-"ep" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"ep" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "eq" = (/obj/structure/invislight,/turf/simulated/floor/rock/manmade/road,/area/nadezhda/outside/one_star/fo_outside)
 "er" = (/mob/living/simple_animal/hostile/roomba,/turf/simulated/floor/rock/manmade/road,/area/nadezhda/outside/one_star/fo_outside)
 "es" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/tree/jungle/variant1,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/one_star/fo_outside)
@@ -232,7 +232,7 @@
 "ex" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Greyson Positronic Outpost"},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "ey" = (/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/one_star/fo_outside)
 "ez" = (/obj/structure/bed/chair/custom/onestar,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/one_star/fo_outside)
-"eA" = (/obj/structure/extinguisher_cabinet{pixel_x = -24},/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
+"eA" = (/obj/structure/extinguisher_cabinet{pixel_x = -24},/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "eB" = (/obj/random/closet_tech,/turf/simulated/floor/tiled/white/cargo,/area/nadezhda/outside/one_star/fo_internal)
 "eC" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Greyson Positronic Outpost"},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_outside)
 "eD" = (/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/white/cargo,/area/nadezhda/outside/one_star/fo_internal)
@@ -265,7 +265,7 @@
 "fe" = (/obj/structure/flora/small/lavarock1,/turf/simulated/floor/beach/water/ocean{name = "clear water"},/area/nadezhda/outside/one_star/fo_outside)
 "ff" = (/obj/structure/bed/chair/custom/onestar{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/one_star/fo_outside)
 "fg" = (/obj/random/powercell/low_chance,/mob/living/simple_animal/hostile/roomba/gun_ba,/turf/simulated/floor/tiled/steel/cargo,/area/nadezhda/outside/one_star/fo_internal)
-"fh" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/dark,/area/nadezhda/outside/one_star/fo_internal)
+"fh" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/tiled/dark,/area/nadezhda/outside/one_star/fo_internal)
 "fi" = (/obj/structure/table/onestar,/obj/item/weapon/reagent_containers/food/condiment/enzyme,/turf/simulated/floor/tiled/dark,/area/nadezhda/outside/one_star/fo_internal)
 "fj" = (/obj/structure/table/onestar,/obj/item/weapon/reagent_containers/food/condiment/peppermill,/turf/simulated/floor/tiled/dark,/area/nadezhda/outside/one_star/fo_internal)
 "fk" = (/obj/structure/table/onestar,/obj/item/weapon/reagent_containers/food/condiment/sugar,/turf/simulated/floor/tiled/dark,/area/nadezhda/outside/one_star/fo_internal)
@@ -675,7 +675,7 @@
 "mY" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "mZ" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "na" = (/obj/structure/table/rack/shelf,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
-"nb" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/structure/closet/crate/bin,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"nb" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/obj/structure/closet/crate/bin,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "nc" = (/obj/structure/reagent_dispensers/watertank/huge/derelict,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "nd" = (/obj/machinery/mech_recharger,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "ne" = (/obj/item/weapon/folder/black,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
@@ -684,7 +684,7 @@
 "nh" = (/obj/structure/closet/crate/trashcart,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "ni" = (/obj/structure/flora/pottedplant/dead,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "nj" = (/obj/random/booze/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
-"nk" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/mob/living/simple_animal/hostile/roomba/synthetic,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"nk" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/mob/living/simple_animal/hostile/roomba/synthetic,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "nl" = (/obj/structure/invislight,/turf/simulated/floor/rock/manmade/road,/area/nadezhda/outside/one_star/fo_internal)
 "nm" = (/obj/machinery/light,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "nn" = (/obj/structure/sign/misc/toiletfemale{pixel_y = -26},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
@@ -693,7 +693,7 @@
 "nq" = (/obj/machinery/recharge_station,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "nr" = (/obj/structure/bed,/obj/item/weapon/bedsheet/brown,/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "ns" = (/mob/living/simple_animal/hostile/onestar_custodian,/turf/simulated/floor/rock/manmade/road,/area/nadezhda/outside/one_star/fo_outside)
-"nt" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/structure/flora/pottedplant/dead,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"nt" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/obj/structure/flora/pottedplant/dead,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "nu" = (/obj/machinery/door/airlock/multi_tile/metal{locked = 1; name = "Greyson Positronic Outpost"; dir = 2},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "nv" = (/obj/structure/table/onestar,/obj/item/weapon/folder/cyan,/obj/item/weapon/folder/cyan,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "nw" = (/obj/machinery/light/floor{dir = 8; pixel_x = -5},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
@@ -741,7 +741,7 @@
 "om" = (/obj/structure/table/onestar,/obj/structure/mirror{pixel_x = 26},/obj/item/weapon/oddity/common/towel,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "on" = (/obj/machinery/vending/snack,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "oo" = (/obj/effect/window_lwall_spawn/smartspawn/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_outside)
-"op" = (/obj/machinery/door/airlock/vault/bolted{req_access = list(999)},/turf/simulated/floor/tiled/dark/gray_perforated,/area/nadezhda/outside/one_star/fo_internal)
+"op" = (/obj/machinery/door/airlock/vault/bolted{name = "Back door"; req_access = list(999)},/turf/simulated/floor/tiled/dark/gray_perforated,/area/nadezhda/outside/one_star/fo_internal)
 "oq" = (/obj/machinery/light/floor,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/one_star/fo_internal)
 "or" = (/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/one_star/fo_internal)
 "os" = (/mob/living/simple_animal/hostile/roomba,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/one_star/fo_internal)
@@ -758,7 +758,7 @@
 "oD" = (/obj/machinery/photocopier,/obj/item/weapon/paper,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "oE" = (/obj/structure/bed/chair/office/dark,/mob/living/simple_animal/hostile/roomba/synthetic/epistol,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "oF" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 2; locked = 1; name = "Greyson Positronic VIP Dorms"},/turf/simulated/floor/rock/manmade/road,/area/nadezhda/outside/one_star/fo_internal)
-"oG" = (/obj/machinery/vending/cola,/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
+"oG" = (/obj/machinery/vending/cola,/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "oH" = (/obj/structure/table/onestar,/obj/random/common_oddities/low_chance,/obj/machinery/light,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "oI" = (/obj/structure/table/onestar,/obj/machinery/light,/obj/item/weapon/paper_bin,/obj/random/junkfood/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "oJ" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
@@ -778,15 +778,15 @@
 "oX" = (/obj/structure/railing/grey,/turf/simulated/floor/beach/water/ocean{name = "clear water"},/area/nadezhda/outside/one_star/fo_outside)
 "oY" = (/obj/structure/railing/grey,/obj/structure/railing/grey{dir = 4},/turf/simulated/floor/beach/water/ocean{name = "clear water"},/area/nadezhda/outside/one_star/fo_outside)
 "oZ" = (/obj/structure/curtain/open/shower,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
-"pa" = (/obj/machinery/shower{icon_state = "shower"; dir = 8},/obj/machinery/light/small,/obj/effect/floor_decal/floordetail/edgedrain,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"pa" = (/obj/machinery/shower{dir = 8; icon_state = "shower"},/obj/machinery/light/small,/obj/effect/floor_decal/floordetail/edgedrain,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pb" = (/obj/structure/toilet{dir = 8},/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pc" = (/obj/structure/sink{pixel_x = -12; dir = 8},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pd" = (/obj/structure/bed,/obj/item/weapon/bedsheet/brown,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pe" = (/obj/machinery/power/port_gen/pacman/diesel,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pf" = (/obj/structure/table/onestar,/obj/structure/bedsheetbin,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pg" = (/obj/structure/sink{pixel_x = 1; dir = 1; pixel_y = 28},/mob/living/simple_animal/hostile/onestar_custodian,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
-"ph" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/structure/reagent_dispensers/fueltank/derelict,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
-"pi" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/structure/table/onestar,/obj/machinery/microwave,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"ph" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/obj/structure/reagent_dispensers/fueltank/derelict,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"pi" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/obj/structure/table/onestar,/obj/machinery/microwave,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pj" = (/obj/structure/reagent_dispensers/fueltank/derelict,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pk" = (/obj/random/structures/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "pl" = (/obj/machinery/light,/obj/random/structures/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
@@ -863,14 +863,14 @@
 "qE" = (/obj/structure/railing/grey{dir = 4},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star/fo_outside)
 "qF" = (/obj/random/cluster/roaches,/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "qG" = (/mob/living/simple_animal/hostile/hivebot/range{desc = "The personal guard of the on sight CEO... Were is the CEO?"; faction = "onestar"; health = 400; name = "CEO Robo-Gard"},/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
-"qH" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
+"qH" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/obj/item/weapon/storage/deferred/crate/iron_lock_security_uniform,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "qI" = (/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "qJ" = (/obj/structure/table/onestar,/obj/item/weapon/cell/medium/high,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "qK" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/mob/living/simple_animal/hostile/roomba/synthetic/epistol/heavy,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "qL" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol/rifle,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "qM" = (/obj/structure/scrap/food/large,/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "qN" = (/obj/structure/flora/tree/jungle_small/variant5,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star/fo_outside)
-"qO" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
+"qO" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
 "qP" = (/obj/structure/bed/double/padded,/obj/item/weapon/bedsheet/hosdouble,/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
 "qQ" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
 "qR" = (/obj/structure/table/onestar,/obj/random/pack/tech_loot/onestar,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
@@ -926,7 +926,7 @@
 "rP" = (/obj/item/ammo_magazine/highcap_pistol_35/empty,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "rQ" = (/obj/structure/extinguisher_cabinet{pixel_x = 24},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "rR" = (/obj/structure/table/onestar,/obj/item/weapon/oddity/common/paper_omega,/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
-"rS" = (/obj/structure/salvageable/console_os{dir = 4},/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
+"rS" = (/obj/structure/salvageable/console_os{dir = 4},/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "rT" = (/obj/structure/bed/chair/comfy/black{dir = 8},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "rU" = (/obj/structure/bed/chair/custom/onestar/red{dir = 4},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "rV" = (/obj/structure/table/onestar,/obj/item/weapon/tool_upgrade/augment/fuel_tank,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
@@ -939,7 +939,7 @@
 "sc" = (/obj/effect/decal/cleanable/blood/gibs/robot,/obj/machinery/light/floor,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "sd" = (/obj/machinery/door/airlock/glass,/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
 "se" = (/obj/structure/table/onestar,/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
-"sf" = (/obj/structure/cyberplant,/obj/machinery/light{icon_state = "tube1"; dir = 8},/mob/living/simple_animal/hostile/roomba/synthetic/epistol/heavy,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
+"sf" = (/obj/structure/cyberplant,/obj/machinery/light{dir = 8; icon_state = "tube1"},/mob/living/simple_animal/hostile/roomba/synthetic/epistol/heavy,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "sg" = (/obj/structure/extinguisher_cabinet{pixel_x = 24},/mob/living/simple_animal/hostile/roomba/trip/armored,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "sh" = (/obj/structure/table/onestar,/obj/item/weapon/tool_upgrade/augment/dampener,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "si" = (/obj/effect/floor_decal/industrial/hatch/yellow,/turf/simulated/wall/untinted/onestar_reinforced,/area/nadezhda/outside/one_star/fo_internal)
@@ -951,10 +951,10 @@
 "so" = (/obj/structure/salvageable/console_os{dir = 1},/obj/machinery/light,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "sp" = (/obj/machinery/vending/snack,/obj/machinery/light,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "sq" = (/obj/machinery/vending/cigarette,/obj/machinery/light,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
-"sr" = (/obj/structure/toilet,/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/outside/one_star/fo_internal)
+"sr" = (/obj/structure/toilet,/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/outside/one_star/fo_internal)
 "ss" = (/mob/living/simple_animal/hostile/onestar_custodian/chef,/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/outside/one_star/fo_internal)
 "st" = (/obj/structure/table/onestar,/obj/structure/mirror{pixel_y = 30},/obj/item/weapon/haircomb,/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/item/weapon/storage/firstaid/ifak,/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/outside/one_star/fo_internal)
-"su" = (/obj/structure/table/onestar,/obj/machinery/chemical_dispenser/beer,/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
+"su" = (/obj/structure/table/onestar,/obj/machinery/chemical_dispenser/beer,/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "sv" = (/obj/structure/table/onestar,/obj/machinery/chemical_dispenser/soda,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "sw" = (/obj/structure/closet/crate/bin,/obj/machinery/light/floor,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "sx" = (/obj/structure/bed/chair/custom/onestar/red,/mob/living/simple_animal/hostile/roomba/synthetic/epistol/heavy,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
@@ -1049,7 +1049,7 @@
 "ui" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/obj/machinery/light/floor,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "uj" = (/obj/structure/bed/chair/custom/onestar/red{dir = 4},/obj/machinery/light/floor,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "uk" = (/obj/structure/table/onestar,/obj/random/junkfood/onlypizza,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
-"ul" = (/obj/structure/table/onestar,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
+"ul" = (/obj/structure/table/onestar,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "um" = (/obj/structure/table/onestar,/mob/living/simple_animal/hostile/roomba/chemical/med,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "un" = (/obj/machinery/vending/coffee,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "uo" = (/obj/structure/table/onestar,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/paper_bin,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/obj/item/weapon/pen/multi,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
@@ -1060,11 +1060,11 @@
 "ut" = (/obj/structure/table/rack/shelf,/obj/item/weapon/folder/cyan,/obj/random/powercell/low_chance,/obj/item/weapon/storage/briefcase,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "uu" = (/obj/structure/table/rack/shelf,/obj/item/weapon/folder/cyan,/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "uv" = (/obj/structure/table/rack/shelf,/obj/item/weapon/folder/cyan,/obj/random/powercell/low_chance,/obj/item/weapon/storage/secure/briefcase,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
-"uw" = (/obj/structure/table/rack/shelf,/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/item/weapon/folder/cyan,/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
+"uw" = (/obj/structure/table/rack/shelf,/obj/machinery/light{dir = 8; icon_state = "tube1"},/obj/item/weapon/folder/cyan,/obj/random/powercell/low_chance,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "ux" = (/obj/structure/table/onestar,/obj/random/junkfood/low_chance,/obj/random/junkfood/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "uy" = (/obj/structure/table/rack/shelf,/obj/item/weapon/folder/cyan,/obj/item/weapon/folder/cyan,/obj/random/powercell/low_chance,/obj/random/powercell/low_chance,/obj/item/weapon/storage/secure/briefcase,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "uz" = (/obj/structure/table/onestar,/obj/random/tool/advanced/onestar/low_chance,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
-"uA" = (/obj/structure/table/onestar,/obj/random/structures/os,/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
+"uA" = (/obj/structure/table/onestar,/obj/random/structures/os,/obj/machinery/light{dir = 8; icon_state = "tube1"},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "uB" = (/obj/structure/table/onestar,/obj/random/junkfood/onlypizza,/obj/random/junkfood/low_chance,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "uC" = (/obj/structure/flora/ausbushes/fullgrass,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/one_star/fo_internal)
 "uD" = (/obj/structure/sink{pixel_x = 1; dir = 1; pixel_y = 28},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
@@ -1098,6 +1098,7 @@
 "zu" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/door/blast/shutters{name = "Crate Shutter"},/obj/effect/spider/stickyweb,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_internal)
 "zY" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/item/toy/plushie/spider{name = "Fire Fang"},/obj/effect/spider/stickyweb,/obj/effect/spider/stickyweb,/obj/effect/spider/stickyweb,/obj/effect/spider/stickyweb,/obj/item/weapon/tool/tape_roll/web,/obj/item/weapon/tool/silk_wand,/obj/item/weapon/gun_upgrade/mechanism/glass_widow,/obj/random/lathe_disk/advanced/onestar,/obj/item/weapon/storage/box/data_disk,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_internal)
 "Af" = (/obj/effect/spider/stickyweb,/obj/machinery/door/blast/shutters{name = "Crate Shutter"},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
+"Bh" = (/obj/structure/table/onestar,/obj/item/weapon/gun/energy/retro,/obj/item/weapon/cell/medium/high,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
 "BF" = (/obj/random/surgery_tool/low_chance,/obj/structure/salvageable/console_os{dir = 1},/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "BR" = (/obj/machinery/light/floor,/mob/living/simple_animal/hostile/roomba/gun_ba/armored,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "Cg" = (/obj/machinery/light/floor,/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
@@ -1106,6 +1107,7 @@
 "Dt" = (/obj/item/remains/robot,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "Dw" = (/mob/living/simple_animal/hostile/roomba/chemical/med,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "Dx" = (/mob/living/simple_animal/hostile/roomba/trip/armored,/turf/simulated/floor/carpet/blucarpet,/area/nadezhda/outside/one_star/fo_internal)
+"DN" = (/obj/structure/table/onestar,/obj/item/clothing/gloves/thick/ablasive/iron_lock_security,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/outside/one_star/fo_internal)
 "DP" = (/obj/machinery/constructable_frame/machine_frame,/obj/effect/decal/cleanable/blood/oil,/mob/living/simple_animal/hostile/roomba/synthetic/epistol/esmg,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "Eg" = (/mob/living/simple_animal/hostile/roomba/chemical/med,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "Ep" = (/obj/structure/table/onestar,/obj/effect/decal/cleanable/blood,/obj/item/weapon/implantcase,/obj/item/weapon/tool/medmultitool,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
@@ -1113,6 +1115,7 @@
 "EJ" = (/obj/structure/table/onestar,/obj/structure/scrap/medical/large,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "FA" = (/obj/item/device/defib_kit/jumper_kit/loaded,/obj/structure/table/rack/shelf,/obj/structure/scrap/medical/large,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "FL" = (/obj/machinery/light/floor,/mob/living/simple_animal/hostile/roomba/gun_ba/plasma,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
+"FN" = (/obj/effect/decal/cleanable/blood/oil,/mob/living/simple_animal/hostile/roomba/synthetic/epistol{health = 25},/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/outside/one_star/fo_internal)
 "FP" = (/obj/structure/curtain/medical,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "FU" = (/obj/machinery/light/floor,/mob/living/simple_animal/hostile/roomba/trip/armored,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
 "Gh" = (/mob/living/simple_animal/hostile/roomba/trip/armored,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_outside)
@@ -1122,6 +1125,7 @@
 "HM" = (/obj/machinery/light/floor,/obj/item/weapon/implantcase,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "IE" = (/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/hostile/roomba/gun_ba/armored,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_outside)
 "IK" = (/obj/structure/sign/departmentold/medical1,/turf/simulated/wall/untinted/onestar_reinforced,/area/nadezhda/outside/one_star/fo_internal)
+"IQ" = (/obj/machinery/light{dir = 1},/obj/item/clothing/shoes/ablasive/iron_lock_security,/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/outside/one_star/fo_internal)
 "IS" = (/obj/structure/salvageable/implant_container_os,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "JG" = (/obj/structure/table/onestar,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_outside)
 "JZ" = (/mob/living/simple_animal/hostile/roomba/gun_ba/plasma,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/one_star/fo_outside)
@@ -1129,6 +1133,7 @@
 "Lw" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "LH" = (/mob/living/simple_animal/hostile/roomba/gun_ba/armored,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star/fo_outside)
 "Mc" = (/mob/living/simple_animal/hostile/roomba/gun_ba/plasma,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
+"Mw" = (/obj/structure/table/onestar,/obj/structure/mirror{pixel_y = 30},/obj/item/weapon/haircomb,/obj/item/clothing/head/helmet/laserproof/iron_lock_security,/obj/item/clothing/under/iron_lock_security,/turf/simulated/floor/carpet/purcarpet,/area/nadezhda/outside/one_star/fo_internal)
 "MU" = (/obj/structure/flora/big/bush3,/mob/living/simple_animal/hostile/roomba/gun_ba/armored,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star/fo_outside)
 "Nj" = (/mob/living/simple_animal/hostile/roomba/gun_ba/armored,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "Nm" = (/obj/structure/table/onestar,/obj/item/weapon/flame/lighter/zippo/communist,/obj/item/clothing/mask/smokable/cigarette/fortressred,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_outside)
@@ -1146,6 +1151,7 @@
 "St" = (/obj/structure/sign/departmentold/medical2,/turf/simulated/wall/untinted/onestar_reinforced,/area/nadezhda/outside/one_star/fo_internal)
 "SG" = (/obj/item/device/defib_kit/loaded,/obj/structure/table/rack/shelf,/obj/structure/scrap/medical/large,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "SO" = (/obj/structure/sign/misc/toiletfemale{pixel_y = -26},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
+"SR" = (/obj/item/weapon/storage/deferred/crate/iron_lock_security_uniform,/turf/simulated/floor/tiled/steel/brown_perforated,/area/nadezhda/outside/one_star/fo_outside)
 "ST" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "SV" = (/obj/structure/medical_stand/anesthetic,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "SY" = (/obj/item/weapon/tool/onestar_multitool,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
@@ -1157,12 +1163,17 @@
 "UJ" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/item/toy/plushie/spider{name = "Angent Web"},/obj/effect/spider/stickyweb,/obj/effect/spider/stickyweb,/obj/effect/spider/stickyweb,/obj/effect/spider/stickyweb,/obj/effect/decal/cleanable/cobweb,/obj/item/stack/material/silk,/obj/random/lathe_disk/advanced/onestar,/obj/item/weapon/storage/box/data_disk,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_internal)
 "VL" = (/mob/living/simple_animal/hostile/roomba/slayer,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_outside)
 "VT" = (/mob/living/simple_animal/hostile/roomba/gun_ba/plasma,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
+"VZ" = (/obj/machinery/shower,/obj/structure/window/reinforced/tinted{dir = 8},/obj/item/remains,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "Wv" = (/obj/structure/bed/chair/custom/onestar{dir = 1},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star/fo_internal)
+"WL" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol,/turf/simulated/floor/carpet/bcarpet,/area/nadezhda/outside/one_star/fo_internal)
 "WV" = (/mob/living/simple_animal/hostile/roomba/gun_ba/plasma,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star/fo_outside)
+"Xb" = (/obj/structure/table/onestar,/obj/item/clothing/suit/armor/vest/iron_lock_security,/obj/item/ammo_magazine/ammobox/pistol/scrap,/obj/item/weapon/storage/pouch/pistol_holster,/obj/item/weapon/gun/projectile/clarissa,/obj/item/ammo_magazine/highcap_pistol_35/empty,/obj/item/ammo_magazine/highcap_pistol_35/empty,/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
 "Xm" = (/mob/living/simple_animal/hostile/roomba/trip/armored,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/one_star/fo_internal)
 "Xn" = (/obj/structure/bed/padded,/obj/item/weapon/bedsheet/medical,/obj/item/remains/human,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "XR" = (/obj/item/wheelchair,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star/fo_internal)
 "XT" = (/obj/structure/table/onestar,/obj/item/weapon/oddity/common/paper_bundle,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_outside)
+"Yc" = (/obj/structure/table/onestar,/obj/item/weapon/storage/deferred/crate/iron_lock_security_uniform,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_outside)
+"Yq" = (/mob/living/simple_animal/hostile/roomba/synthetic/epistol/rifle,/turf/simulated/floor/carpet,/area/nadezhda/outside/one_star/fo_internal)
 "YC" = (/mob/living/simple_animal/hostile/roomba/trip/armored,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/one_star/fo_outside)
 "YF" = (/obj/structure/table/onestar,/obj/item/weapon/oddity/common/old_radio,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_outside)
 "YX" = (/mob/living/simple_animal/hostile/roomba/gun_ba/armored,/turf/simulated/floor/reinforced,/area/nadezhda/outside/one_star/fo_outside)
@@ -1322,7 +1333,6 @@ aaababababababababababababababababababababababababababababababababababababababab
 aaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbgbgbgbgbgbgbgbgbgbgbgabababababaaaaaaaaaaaaaa
 cXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-
 (1,1,2) = {"
 lMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlM
 lMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlM
@@ -1363,17 +1373,17 @@ cSacdNdNgZgEgEgZdghadNdNhbhbdNgZhcdghbhbhagPgZdghbdgdghdgZgEgEhehfgPaccVdvdWeedv
 cSacgNgNdNgEgEdNgQdNgPdNdNdNdNdNdNdNdNgQdNdNdNgPdNdNgRdNdNhBgEgSdNdNaccVdvhCdvdvdvdvdvdPdvhCdvdveedPdvdHegegegegegdHhDhEhFdHhmhmhmhmdHhGhEhHdHhmhmhmhmhmdHhGhEhHdHhmhmhmhmhmdHhDhEhHdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvhIcTfnfnfncThJencTfnfnfncThKdvdvdvdvdvdvdvhLdvfngzengAdLdLhxhMglgghNhvenhOgggohPencTcThQcTcTcThQcTcTenghgggghRgzhOhPgggeendLdLenenencTcScScScScScScS
 cSacgEgEgEgEgEgEgEgEgEgEgEgEgEgOgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEaccVhidvhSdWhTetdvdveedvdvdvdvdvdvdHegegegegcVcVhUhVhWhXhYhYhYhYhXhZiaibhXhYhYhYhYhYhXicidiehXhYhYhYhYhYhXifigihdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvuTdvdvdvdvdvdvdvdvdvcTcTiiijikilfxeniliminiocTcTdvhLdvdvhidvdvdvdvfnenenendLiphuggiqirhxisgBengrenggencTitdDiucTdDdDivcTgriwenixenengrenengqengXdLgreniycTcVcScScScScScS
 cSacgDacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaccVdviziAdvhgiBiCdvdvdWdvdWiAdvdvdHegegegegcVaciDiDacjbjbjbjbjbaciDiDiDacjbjbjbjbjbaciDiDiDacjbjbjbjbjbaciDiDaciEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEcTiFiGiGiHineneniIiGiJiGiFcTdWdPetdPdWdPetiKdWcTgigwgrdLdLiLggiMiNiOgAgrenengyggiPcTiQdEiRcTiSiTiUcTiVgggreniWgrgwgrfaghendLdLeneniXcTcVcScScScScScS
-cSiYiZcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVdvdPgThCdWdvjadvdvdvhgdvdvdHegegegegcVacjcjdjejfjfjfjfjfjfjgjgjgjfjfjfjfjfjfjfjzjzjzjfjfjfjfjfjfjfjSjSacjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWfniGiGiGiGiGenjkiGiGiGiGiGfndPetdPdWjldWdPetdPcTggeZendLdLhwjmjnjojpGhenjqjrgljsencTjtdDjucTjtiSjvcTgrhPgljrjwenjqjrggggendLdLengrencTcVcScScScScScS
+cSiYiZcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVdvdPgThCdWdvjadvdvdvhgdvdvdHegegegegcVacjcjdjejfjfjfjfjfjfjgjgjgjfjfjfjfjfjfjfjzjzjzjfjfjfjfjfjfjfjSjSacjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWfniGiGiGiGiGenjkiGiGiGiGSRfndPetdPdWjldWdPetdPcTggeZendLdLhwjmjnjojpGhenjqjrgljsencTjtdDjucTjtiSjvcTgrhPgljrjwenjqjrggggendLdLengrencTcVcScScScScScS
 cSiYjxcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVdvdvhCdveehCdvdPdvhTdvdvdHegegegegcVacjfjfjfjfjfjTjfjfjfjgjgjgjfjfjfjfjfjfjfjzjzjWjfjfjfjTjfjfjfjSjSacdPjAdvhTjBdvdvjCjDdPjEdvhTjBdvdvjFjDdPjEdvhTjBdvdvjCjDdPjEdvhTjBdvdvjFdPfniGjGiGiGiGeneniGiGiGiGjGfndWdPjHdPdWdPetjIdWcTgijJjsdLjKRGhyhujLenhvenenenenenencTjMjNjOcTiSjNjPcTenengrenenenengrenhyendLdLenjQjRcTcVcScScScScScS
 cSdvegcVacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaccVdvhCetdvdviKdvhhhgdvdvdvdHegegegegcVackbjckcjfjfjfjfjfkcjWjgjgkckdjfjfkejfkcjWjzkfkcjfjfjfjfjfkcjWjSacjXdPetdvhLdvetiKdWjXdPetdvhLdvetiKdWjXdPetdvhLdvetiKdWjXdPetdvhLdvetjIdWfniGjYjZiGileneniljZiGkaiGfniEiEiEdvdvdvdvhLdvcTcTcTcTeCgIcTcTcTfnfnfnfnfnfnfnfnfncTcTcTcTcTcTcTcTcTfnfnfnfnfnfnfnfnfncTcTeCdLcTcTcTcTcVdvcScScScScS
-cSdvegcVackgkhkikjklackxkykzkAackgkhkikjklackxkykzkAackgkhkikjklackxkykzkAaccVdvdPhTdvdWiCdvdvhCdvdvdvdHegegegegcVacjfjfjfjfkejfjfjfjfjfjfjfjfjfjfjfjfjfkGjfjfjfjfjfjfjfjfjfjfjfkHachXdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHcTkmknkokpkqenenikikkpikkrcTdHdHdHksiEiEiEiEiEiEiEktdHdHkudHksiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEkvdHdHdHdHkwiEcVdvdvcScScScScS
-cSdvegcVackKkKkKkKkLackMkMkMkNackKkKkKkKkLackMkMkMkNackKkKkKkKkLackMkMkMkNaccVdvhgdveedvpWdWkBdvdPdvdvdHegegegegcVacjckbjfjfjfjfjfkdjfjfjfjfjfjfjfjfjfjfjfjfjfjTjfjfkejfjfjfjfjfjfjfhXdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHiGkCiGiGiGkDkDiGiGiGiGiGiGdHdHdHdHdHdHdHdHdHdHdHdHdHkEdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHkFdvdvcScScScScS
+cSdvegcVackgkhMwIQVZackxkykzkAackgkhkikjklackxkykzkAackgkhkikjklackxkykzkAaccVdvdPhTdvdWiCdvdvhCdvdvdvdHegegegegcVacjfjfjfjfkejfjfjfjfjfjfjfjfjfjfjfjfjfkGjfjfjfjfjfjfjfjfjfjfjfkHachXdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHcTkmknkokpkqenenikikkpikkrcTdHdHdHksiEiEiEiEiEiEiEktdHdHkudHksiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEkvdHdHdHdHkwiEcVdvdvcScScScScS
+cSdvegcVackKkKkKFNkLackMYqkMXbackKkKkKkKkLackMkMkMkNackKkKkKkKkLackMkMkMkNaccVdvhgdveedvpWdWkBdvdPdvdvdHegegegegcVacjckbjfjfjfjfjfkdjfjfjfjfjfjfjfjfjfjfjfjfjfjTjfjfkejfjfjfjfjfjfjfhXdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHiGkCiGiGiGkDkDiGiGiGiGiGiGdHdHdHdHdHdHdHdHdHdHdHdHdHkEdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHkFdvdvcScScScScS
 cSdvegcVacacacackOacackOacacacacacacackOacackOacacacacacacackOacackOacacacaccVdvdWdvdvethCdvdviAeedvdvdHegegegegcVacjfjfjfjfjTjfjfkGjfjfjfjfjfkejfjfjfkdjfjfjfjfjfjfjfjfjfjfjfjfjfkUhXdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHkIiGiGkaiGiGeneniGiGkCiGiGkJdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHkFdvdvcScScScScS
 cSdvegcVackVkWkZkZkZkZkZkWkZlaackVkWkZkZkZkZkZkWlblaackVkWkZkZkZkZkZkWkZlaaccViCdvdvdvdvhCdvdvdvdvetdvdHegegegegcVacjejckcjfjfjfjfjfkcjfjfjfkcjfjfjfjfjfkcjfjfjfkcjfjfjfjfjTkcjSjSachXdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHcTilijinikikenenkoinimiIkPcTdHdHdHkQkRkRkRkRkRkRkRkRqBdHdHqCkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRkRqBdHdHqCkRkRdvdvdvcScScScScS
-cSdvegcVacacacackOackZlclhlikZacacacackOackZlclhlikZacacacackOackZlclhlikZaccVdvetdvkXhChCdWkYdvdWdvdvdHegegegegcVacljlkjfjfjfjfjfjfjflllljWjfjfjfjfjfjfjflnlnlnjfjfjfjfjfjfjfjSjWacjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWfniGiGjZiJldenenlejZiJlfiGfnkRkRkRdvdvdvdvlgdvdvdvdvqEdHdHkFdvdvdvdvdvdvdvdvdvdvdvdvdvdviBdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvqEdHdHkFdvdvdvdvdvcScScScScS
-cSdvegcVaclolplqamackZlrlclsltaclolplqamackZlrlclsltaclolplqamackZlrlclsltaccVdvhhlmeedvjadvdvdvdvdvdvdHegegegegcVaclulvlwjWlxlxlylykdlllllljflzlzlzlzlzjfjWlnlnjfjflAlAlAjfjfjSjSacdPjEdvhTjBdvdvjFjDjDjEdvhTjBdvdvjFjDjDjEdvhTjBdvdvjCjDdPjEdvhTjBdvdvjFdPfniGiGiGiGiGfxeniGiGiGiGiGfndvdvlgdvdvdvdvdvcVcVcVcVcVdHdHcVcVdvfofofofofofofofofodvcVcVcVcVcVcVcVdvfofofofofofofofofodvqEdHdHkFcVcVcVcVdvcScScScScS
+cSdvegcVacacacackOackZlclhlikZacacacackOackZlclhlikZacacacackOackZlclhlikZaccVdvetdvkXhChCdWkYdvdWdvdvdHegegegegcVacljlkjfjfjfjfjfjfjflllljWjfjfjfjfjfjfjflnlnlnjfjfjfjfjfjfjfjSjWacjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWjhdPjidvdvdvetjjdWfnSRiGjZiJldenenlejZiJlfiGfnkRkRkRdvdvdvdvlgdvdvdvdvqEdHdHkFdvdvdvdvdvdvdvdvdvdvdvdvdvdviBdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvqEdHdHkFdvdvdvdvdvcScScScScS
+cSdvegcVaclolplqamackZlrDNlsBhaclolplqamackZlrlclsltaclolplqamackZlrlclsltaccVdvhhlmeedvjadvdvdvdvdvdvdHegegegegcVaclulvlwjWlxlxlylykdlllllljflzlzlzlzlzjfjWlnlnjfjflAlAlAjfjfjSjSacdPjEdvhTjBdvdvjFjDjDjEdvhTjBdvdvjFjDjDjEdvhTjBdvdvjCjDdPjEdvhTjBdvdvjFdPfniGiGiGiGiGfxeniGiGiGiGiGfndvdvlgdvdvdvdvdvcVcVcVcVcVdHdHcVcVdvfofofofofofofofofodvcVcVcVcVcVcVcVdvfofofofofofofofofodvqEdHdHkFcVcVcVcVdvcScScScScS
 cSdvegcVaclClDamamackZlElFlEkZaclCamamamackZlElFlEkZaclClDamamackZlElFlEkZaccVdvdWdviBdvdveedvdvhTdvdvdHegegegegcVaclGjflHlIlxlxlylyjflllllLjflzjWlzlzlzjflnlnlnjfjflAjWlAjfjfjWjSacjXdPetdvhLdvetiKdWjXdPetdvhLdvetiKdWjXdPetdvhLdvetiKdWjXdPetdvhLdvetjIdWfnjGiGiGiGlBeneniGiGjGiGiGfndvdvdvdvdvdvdvdvcVacacacaclNlNacacaciDiDiDiDiDiDiDiDiDacacacacacacacacaciDiDiDiDiDiDiDiDiDacaclPlPacacacaccVcVcScScScScS
-cSdvegcVaclSamanlTackZlElUlEkZaclSamanlTackZlElUlEkZaclSamanlTackZlVlUlEkZaccVdvdvdvdvdPdvdviCdvdWdvetdHegegegegcVacaclWacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaciEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEcTiFjYiGlKimeneniklKiGiGiFcTdvdvdvlgdvjldvdvcVaclXlYacexaeaclZmaammbmcmemfmbammgmhmeamammimjmkamamlZmhmlamamlZmmmfamammnacexaeacmompaccVcVcScScScScS
+cSdvegcVaclSamanlTackZWLlUlEkZaclSamanlTackZlElUlEkZaclSamanlTackZlVlUlEkZaccVdvdvdvdvdPdvdviCdvdWdvetdHegegegegcVacaclWacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaciEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEiEcTiFjYiGlKimeneniklKiGiGiFcTdvdvdvlgdvjldvdvcVaclXlYacexaeaclZmaammbmcmemfmbammgmhmeamammimjmkamamlZmhmlamamlZmmmfamammnacexaeacmompaccVcVcScScScScS
 cSdvegcVacmqamamamackZlElElVkZacmqlDamamackZlElElEkZacmqamamamackZlElElEkZaccViAeteedvgTdvdvdPdvdvdvdvdHegegegegegeqeqeqeqhXdvcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvdvcTcTiikpiIlQenenilkpinlRcTcTdvdvdvdvdvdvdvdvcVacmrammsaeaemeammtammulZmvmwmnmxlZeXambRammeamamammnmgamamammumhmymnamamammzaeaeamamamaccVcVcScScScScS
 cSdvegcVacmAameamBaclakZkZkZlaacmAameamBaclakZkZkZlaacmAameamBaclakZkZkZlaaccVdvdvdvdvdPdvdvdvdvdveedvdHegegegegegeqeqeqegcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVcVlgdvcTfnfnfncThJencTfnfnfncTdvlgiBdvdvdvdvdvdvcVacmgamammCaemgmymDmnammEmFmGmzammfmnamamammHeWmnamamlZeXammnammeamamammIamamaemJmKmKmKaccVcVcScScScScS
 cSdvegcVacacacacacacacacmLacacacacacacacacacacmLacacacacacacacacacacmLacacaccVdHdHdHdHdHdHdHdHdHdHdHdHdHegegegegcVcTcTmdcTcTcTcTacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaccVdvdvdvdvdvdHegegegegdHdvdvdvdvdvdvdvdvdvdvlgdvcVacmMeWamaeaeamTPamammtrPmxamamamamamamamamamamammzamamamamamamamamamamamammnaeaeamamamaccVcVcScScScScS
@@ -1475,7 +1485,6 @@ aaaaaaaaaaaaaaaabgbgbgaeaeuJbgtKuLczcaczuMuNcatMuOczcaczuPtKcaczuQczcaaeuRtKcatK
 aabgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgtStStStStStStStStStStStSaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-
 (1,1,3) = {"
 lMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlM
 lMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlMlM
@@ -1522,7 +1531,7 @@ cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsG
 cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmYXhmhmPAhmEwhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmtihmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcS
 cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcS
 cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcTcTcThmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcS
-cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcTsSJGhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcS
+cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcTsSYchmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcS
 cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcThmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcS
 cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcTtkhmhmhmhmhmhmhmhmhmOLhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGtmsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVsVtdsGsGsGsGsGsGcS
 cSsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGcTcTcTsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsYsTsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGsGsGsGsWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmsHsGsGsGsGsGsGcS
