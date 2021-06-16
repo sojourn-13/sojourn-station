@@ -60,7 +60,7 @@
 		if(stance == HOSTILE_STANCE_ATTACK)
 			if(destroy_surroundings)
 				destroySurroundings()
-			. = ..()
+		. = ..()
 
 		updatehealth()
 
