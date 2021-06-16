@@ -20,7 +20,6 @@
 	//25 for all medium (pain relief, reveal, etc)
 	//10 for low importance. (Sending, light spells, etc)
 	//Blood cost when failing will be same as nutrition for now. Can be made more punishing in the future.
-	//Only given to normal spells. !Not given to group or construction!
 
 	var/cooldown = FALSE
 	var/cooldown_time = 0
