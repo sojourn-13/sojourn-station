@@ -17,8 +17,17 @@
 	desc = "A short litany to relieve pain of the afflicted."
 	power = 50
 	ignore_stuttering = TRUE
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+	//var/datum/reagent/bloodhold
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= nutri_cost)
+			H.nutrition -= nutri_cost
+		else
+			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			H.vessel.remove_reagent("blood",blood_cost)
 	H.add_chemical_effect(CE_PAINKILLER, 30, TRUE)
 	H.apply_effect(-30, AGONY, 0)
 	H.apply_effect(-30, HALLOSS, 0)
@@ -44,10 +53,18 @@
 	cooldown = TRUE
 	cooldown_time = 10 MINUTES
 	cooldown_category = "bglow"
+	nutri_cost = 10//low cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	var/successful = FALSE
 	if (istype(H.get_active_hand(), /obj/item/weapon/book/ritual/cruciform))
+		if(H.species?.reagent_tag != IS_SYNTHETIC)
+			if(H.nutrition >= nutri_cost)
+				H.nutrition -= nutri_cost
+			else
+				to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				H.vessel.remove_reagent("blood",blood_cost)
 		var/obj/item/weapon/book/ritual/cruciform/M = H.get_active_hand()
 		M.set_light(5) //Slightly better than as a lantern since you can only hold it in hand or within the belt slot.
 		playsound(H.loc, 'sound/ambience/ambicha2.ogg', 75, 1)
@@ -70,8 +87,16 @@
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	cooldown_category = "flare"
+	nutri_cost = 10//low cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= nutri_cost)
+			H.nutrition -= nutri_cost
+		else
+			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			H.vessel.remove_reagent("blood",blood_cost)
 	playsound(H.loc, 'sound/effects/snap.ogg', 50, 1)
 	new /obj/effect/sparks(H.loc)
 	new /obj/effect/effect/smoke/illumination(H.loc, brightness=max(7), lifetime=12000) //Very bright light.
@@ -82,10 +107,18 @@
 	name = "Entreaty"
 	phrase = "Deus meus ut quid dereliquisti me."
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
-	power = 50
+	power = 25
 	ignore_stuttering = TRUE
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= nutri_cost)
+			H.nutrition -= nutri_cost
+		else
+			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			H.vessel.remove_reagent("blood",blood_cost)
 	for(var/mob/living/carbon/human/target in disciples)
 		if(target == H)
 			continue
@@ -102,9 +135,17 @@
 	phrase = "Et fumus tormentorum eorum ascendet in saecula saeculorum: nec habent requiem die ac nocte, qui adoraverunt bestiam, et imaginem ejus, et si quis acceperit caracterem nominis ejus."
 	desc = "Gain knowledge of your surroundings to reveal evil in people and places. This can tell you about hostile creatures around you, rarely can help you spot traps and sometimes let you sense a monster disguised as a person."
 	power = 35
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/cruciform/base/reveal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	var/was_triggired = FALSE
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= nutri_cost)
+			H.nutrition -= nutri_cost
+		else
+			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			H.vessel.remove_reagent("blood",blood_cost)
 	log_and_message_admins("performed reveal litany")
 	if(prob(5)) //Aditional fail chance that hidded from user
 		to_chat(H, SPAN_NOTICE("There is nothing there. You feel safe."))
@@ -140,9 +181,17 @@
 	phrase = "Audit, me audit vocationem. Ego nuntius vobis."
 	desc = "Send a message anonymously through the void, straight into the mind of another disciple."
 	power = 30
+	nutri_cost = 10//low cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/mob/living/carbon/human/H = pick_disciple_global(user, TRUE)
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	if (!H)
 		return
 
