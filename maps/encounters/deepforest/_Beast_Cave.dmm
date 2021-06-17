@@ -1372,7 +1372,7 @@
 "Mv" = (/obj/structure/flora/small/bushb2,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/beast_cave_light)
 "Mx" = (/obj/structure/flora/small/rock5,/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest/beast_cave_light)
 "My" = (/obj/effect/overlay/water/top{pixel_y = -10},/obj/effect/overlay/water/top{pixel_y = -18},/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/jungle,/area/nadezhda/outside/forest/beast_cave_light)
-"Mz" = (/obj/item/weapon/tool/spear/hunter_halberd,/obj/item/weapon/tool_upgrade/productivity/whetstone,/obj/item/weapon/tool_upgrade/augment/expansion,/turf/simulated/floor/rock,/area/nadezhda/outside/forest/beast_cave_dark)
+"Mz" = (/obj/item/weapon/tool_upgrade/productivity/whetstone,/obj/item/weapon/tool_upgrade/augment/expansion,/obj/item/weapon/tool/sword/saber/cutlass,/turf/simulated/floor/rock,/area/nadezhda/outside/forest/beast_cave_dark)
 "MB" = (/obj/effect/decal/cleanable/rubble,/obj/structure/boulder,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/beast_cave_dark)
 "MF" = (/obj/effect/decal/cleanable/rubble,/turf/simulated/floor/rock,/area/nadezhda/outside/forest/beast_cave_light)
 "MK" = (/obj/random/mob/roaches/low_chance,/turf/simulated/floor/beach/water/swamp,/area/nadezhda/outside/forest/beast_cave_light)
