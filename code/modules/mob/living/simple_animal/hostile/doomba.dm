@@ -729,6 +729,36 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade
+	name = "Custom-made SI Sword Drone"
+	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
+	icon_state = "soteria_mantis"
+	health = 350
+	maxHealth = 350
+	melee_damage_lower = 30
+	melee_damage_upper = 40
+	speed = 3
+	armor = list(melee = 40, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade/examine(mob/user)
+	..()
+	to_chat(user, SPAN_NOTICE("This one was handmade by an expert Roboticist."))
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade
+	name = "Custom-made SI Mantis Drone"
+	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
+	icon_state = "soteria_mantis"
+	health = 450
+	maxHealth = 450
+	melee_damage_lower = 40
+	melee_damage_upper = 50
+	speed = 3
+	armor = list(melee = 50, bullet = 40, energy = 40, bomb = 30, bio = 100, rad = 100)
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade/examine(mob/user)
+	..()
+	to_chat(user, SPAN_NOTICE("This one was handmade by an expert Roboticist."))
+
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/junkbot
 	name = "Prospector Junkbot"
 	desc = "A prospector forged robot, its made from spare parts, love, and duct tape. Using designs 'borrowed' from the Soteria the prospector salvagers made these bots to function as disposable shields or \

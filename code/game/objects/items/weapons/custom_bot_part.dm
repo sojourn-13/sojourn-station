@@ -163,7 +163,7 @@
 	new /obj/item/stack/cable_coil(src, 5, "red")
 
 /obj/item/weapon/storage/box/sword_drone_kit
-	name = "SI Sword Drone Fabrication Kit"
+	name = "Custom Sword Drone Fabrication Kit"
 	desc = "Everything to make your own Soteria-brand Sword Drone! Tools not included."
 
 /obj/item/weapon/storage/box/sword_drone_kit/populate_contents()
@@ -181,7 +181,7 @@
 	new /obj/item/clothing/suit/armor/vest/soteriasuit(src)
 
 /obj/item/weapon/storage/box/mantis_drone_kit
-	name = "SI Mantis Drone Fabrication Kit"
+	name = "Custom Mantis Drone Fabrication Kit"
 	desc = "Everything to make your own Soteria-brand Mantis Drone! Tools not included."
 
 /obj/item/weapon/storage/box/mantis_drone_kit/populate_contents()
