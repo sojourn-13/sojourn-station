@@ -148,8 +148,8 @@
 	maxcharge = 1600
 
 /obj/item/weapon/cell/medium/moebius
-	name = "Lonestar \"Power-Geyser 800M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. This one is as cheap as Lonestar models come."
+	name = "Soteria \"Power-Geyser 800M\""
+	desc = "Soteria branded rechargeable M-standardized power cell. This one is as cheap as Lonestar models come."
 	icon_state = "meb_m_st"
 	maxcharge = 800
 
