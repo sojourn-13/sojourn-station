@@ -50,9 +50,9 @@
 		"Nemo est qui semper vivat et qui huius rei habeat fiduciam melior est canis vivens leone mortuo.",
 		"Viventes enim sciunt se esse morituros mortui vero nihil noverunt amplius nec habent ultra mercedem quia oblivioni tradita est memoria eorum.",
 		"Amor quoque et odium et invidia simul perierunt nec habent partem in hoc saeculo et in opere quod sub sole geritur.",
-		"Vade ergo et comede in laetitia panem tuum et bibe cum gaudio vinum tuum quia Deo placent opera tua.",
+		"Vade ergo et comede in laetitia panem tuum et bibe com gaudio vinum tuum quia Deo placent opera tua.",
 		"Omni tempore sint vestimenta tua candida et oleum de capite tuo non deficiat.",
-		"Perfruere vita cum uxore quam diligis cunctis diebus vitae instabilitatis tuae qui dati sunt tibi sub sole omni tempore vanitatis tuae haec est enim pars in vita et in labore tuo quod laboras sub sole.",
+		"Perfruere vita com uxore quam diligis cunctis diebus vitae instabilitatis tuae qui dati sunt tibi sub sole omni tempore vanitatis tuae haec est enim pars in vita et in labore tuo quod laboras sub sole.",
 		"Amen."
 	)
 	effect_type = /datum/group_ritual_effect/cruciform/stat/mechanical
@@ -104,9 +104,9 @@
 		"Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas.",
 		"Populum magnum atque sublimem filios Enacim quos ipse vidisti et audisti quibus nullus potest ex adverso resistere.",
 		"Scies ergo hodie quod Dominus Deus tuus ipse transibit ante te ignis devorans atque consumens qui conterat eos et deleat atque disperdat ante faciem tuam velociter sicut locutus est tibi.",
-		"Ne dicas in corde tuo cum deleverit eos Dominus Deus tuus in conspectu tuo propter iustitiam meam introduxit me Dominus ut terram hanc possiderem cum propter impietates suas istae deletae sint nationes.",
+		"Ne dicas in corde tuo com deleverit eos Dominus Deus tuus in conspectu tuo propter iustitiam meam introduxit me Dominus ut terram hanc possiderem com propter impietates suas istae deletae sint nationes.",
 		"Neque enim propter iustitias tuas et aequitatem cordis tui ingredieris ut possideas terras eorum sed quia illae egerunt impie te introeunte deletae sunt et ut conpleret verbum suum Dominus quod sub iuramento pollicitus est patribus tuis Abraham Isaac et Iacob.",
-		"Scito igitur quod non propter iustitias tuas Dominus Deus tuus dederit tibi terram hanc optimam in possessionem cum durissimae cervicis sis populus.",
+		"Scito igitur quod non propter iustitias tuas Dominus Deus tuus dederit tibi terram hanc optimam in possessionem com durissimae cervicis sis populus.",
 		"Amen."
 	)
 	effect_type = /datum/group_ritual_effect/cruciform/stat/robustness
