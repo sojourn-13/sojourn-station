@@ -478,6 +478,8 @@
 			armored = W // Store the plating so that we can drop it later.
 			to_chat(user, "you install the [W.name] on [src].")
 			armor = armored.armor_stat // Replace the roomba's armor values with the plating's.
+			maxHealth += armored.health_bonus
+			health += armored.health_bonus
 
 			// Get rid of the plating
 			user.remove_from_mob(W)
@@ -496,7 +498,7 @@
 			var/obj/item/weapon/bot_part/roomba/roomba_knife/K = W
 
 			src.weaponry = K // Store the knife in the bot
-			to_chat(user, "you tape the [W.name] on [src].")
+			to_chat(user, "You tape the [W.name] on [src].")
 
 			// Give the roomba the damage bonus of the knife.
 			melee_damage_lower += K.damage_boost
@@ -529,7 +531,7 @@
 				return
 
 			// We cannot use that gun.
-			to_chat(user, "[src] cannot use this weaponry.")
+			to_chat(user, "[src] cannot use this type of weaponry.")
 			return
 
 		// Are we trying to install a mine?
@@ -550,6 +552,7 @@
 			M.forceMove(src)
 			return
 
+		// Using a welder to repair it.
 		else if(QUALITY_WELDING in T.tool_qualities)
 			if(health < maxHealth)
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
@@ -579,6 +582,9 @@
 					armored.forceMove(src.loc) // Spawn the armor plating on the ground.
 					armored = null // Remove the armor plating from the roomba
 					armor = default_armor // Give the roomba back its default armor values.
+					maxHealth -= armored.health_bonus // Remove the health bonus.
+					if(health > maxHealth)
+						health = maxHealth // If the current health of the roomba is over the current maximum health, reduce it to the maximum health.
 					to_chat(user, "You remove [src]'s armor plating.")
 					return
 
@@ -645,6 +651,12 @@
 		kamikaze = null // No more mine in the roomba
 	..()
 	return
+
+/mob/living/simple_animal/hostile/roomba/custom/FindTarget()
+	. = ..()
+	if(.)
+		visible_emote("lets out a buzz as it detects a target!")
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1, -3)
 
 /mob/living/simple_animal/hostile/roomba/custom/AttackTarget()
 	. = ..()
