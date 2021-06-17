@@ -50,8 +50,8 @@
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 8)
 	price_tag = 1400
 	projectile_type = /obj/item/projectile/ion
-	one_hand_penalty = 5
-	twohanded = TRUE
+	one_hand_penalty = 25 //Ye they can but it can be unwhieldy
+	twohanded = FALSE
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 
 /obj/item/weapon/gun/energy/ionpistol/emp_act(severity)
