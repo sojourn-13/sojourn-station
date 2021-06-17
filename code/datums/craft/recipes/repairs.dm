@@ -90,6 +90,17 @@
 		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
+/datum/craft_recipe/repairs/sts_standard_rifle_blackshield
+	name = "Blackshield STS rifle"
+	result = /obj/item/weapon/gun/projectile/automatic/sts/rifle/blackshield
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn/blackshield, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
+	)
+
 /datum/craft_recipe/repairs/sts_standard_rifle
 	name = "STS battle rifle"
 	result = /obj/item/weapon/gun/projectile/automatic/sts/rifle
@@ -110,6 +121,18 @@
 		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
+/datum/craft_recipe/repairs/strelki_rifle
+	name = "Strelki rifle"
+	result = /obj/item/weapon/gun/projectile/automatic/nordwind/strelki
+	steps = list(
+		list(/obj/item/weapon/gun/projectile/automatic/nordwind/strelki/sawn, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 60)
+	)
+
 /datum/craft_recipe/repairs/scout_boltgun
 	name = "Scout heavy boltgun"
 	result = /obj/item/weapon/gun/projectile/boltgun/scout
@@ -117,6 +140,7 @@
 		list(/obj/item/weapon/gun/projectile/boltgun/sawn/scout, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60)
 	)

@@ -50,6 +50,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/automatic/nordwind/strelki/sawn
 
 /obj/item/weapon/gun/projectile/automatic/nordwind/update_icon()
 	..()
