@@ -45,7 +45,7 @@
 	icon_state = "armorer"
 
 /obj/structure/closet/secure_closet/armorer/populate_contents()
-	new /obj/item/weapon/gun/projectile/boltgun(src)
+	new /obj/item/weapon/gun/projectile/automatic/sts/rifle/blackshield(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
@@ -90,10 +90,8 @@
 
 /obj/structure/closet/secure_closet/personal/trooper/populate_contents()
 	new /obj/item/weapon/gun/projectile/boltgun(src)
-	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/rifle_75(src)
+	new /obj/item/ammo_magazine/rifle_75(src)
 	if(prob(80))
 		new /obj/item/weapon/gun/projectile/colt/ten/dark(src)
 		new /obj/item/ammo_magazine/magnum_40/lethal(src)

@@ -139,6 +139,49 @@
 		FULL_AUTO_400
 		)
 
+/obj/item/weapon/gun/projectile/automatic/sts/rifle/blackshield
+	name = "Blackshield \"STS PARA\" rifle"
+	desc = "A rugged STS-35.  Uses 7.5mm rifle rounds. This one is owned and maintained by Blackshield to be more effective then a normal STS-30 varent."
+	icon = 'icons/obj/guns/projectile/sts35.dmi'
+	icon_state = "stspara"
+	item_state = "stspara"
+	w_class = ITEM_SIZE_HUGE
+	caliber = CAL_RIFLE
+	mag_well = MAG_WELL_RIFLE
+	damage_multiplier = 1.1 //Well oiled
+	recoil_buildup = 3
+	one_hand_penalty = 15
+	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	saw_off = TRUE
+	sawn = /obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn/blackshield
+
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_2_ROUND,
+		FULL_AUTO_400
+		)
+
+/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn/blackshield
+	name = "sawn down Blackshield \"STS PARA\" rifle"
+	desc = "A rugged STS-35 with two round burst.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
+	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
+	icon_state = "sts"
+	item_state = "sts"
+	w_class = ITEM_SIZE_BULKY
+	caliber = CAL_RIFLE
+	mag_well = MAG_WELL_RIFLE
+	damage_multiplier = 0.9 //Rifle was fine
+	recoil_buildup = 5
+	one_hand_penalty = 20 //automatic rifle level
+	saw_off = FALSE
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
+
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_2_ROUND,
+		FULL_AUTO_400
+		)
+
 /obj/item/weapon/gun/projectile/automatic/sts/hrifle
 	name = "\"STS\" heavy rifle"
 	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. If we have to go alone, we'll go alone with pride."
