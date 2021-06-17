@@ -34,8 +34,8 @@
 
 /obj/item/weapon/bot_part/roomba/roomba_frame/examine(mob/user)
 	..() // Default stuff
+	to_chat(user, "It has '[created_name]' written on its nametag.")
 	to_chat(user, "[step_message]") // Let the user know what he need to do next.
-	to_chat(user, "It has /'[created_name]/' written on its nametag.")
 
 /obj/item/weapon/bot_part/roomba/roomba_treads
 	name = "roomba treads"
@@ -102,8 +102,8 @@
 
 /obj/item/weapon/bot_part/sword_part/main_frame/examine(mob/user)
 	..() // Default stuff
+	to_chat(user, "It has '[created_name]' written on its nametag.")
 	to_chat(user, "[step_message]") // Let the user know what he need to do next.
-	to_chat(user, "It has /'[created_name]/' written on its nametag.")
 
 // SI Mantis Drone
 /obj/item/weapon/bot_part/mantis_part
@@ -126,8 +126,8 @@
 
 /obj/item/weapon/bot_part/mantis_part/main_frame/examine(mob/user)
 	..() // Default stuff
+	to_chat(user, "It has '[created_name]' written on its nametag.")
 	to_chat(user, "[step_message]") // Let the user know what he need to do next.
-	to_chat(user, "It has /'[created_name]/' written on its nametag.")
 
 // Drone Limb
 /obj/item/weapon/bot_part/head_frame
@@ -185,7 +185,7 @@
 	desc = "Everything to make your own Soteria-brand Mantis Drone! Tools not included."
 
 /obj/item/weapon/storage/box/mantis_drone_kit/populate_contents()
-	new /obj/item/weapon/bot_part/sword_part/main_frame(src)
+	new /obj/item/weapon/bot_part/mantis_part/main_frame(src)
 	new /obj/item/weapon/bot_part/left_arm_frame(src)
 	new /obj/item/weapon/bot_part/right_arm_frame(src)
 	new /obj/item/weapon/bot_part/left_leg_frame(src)

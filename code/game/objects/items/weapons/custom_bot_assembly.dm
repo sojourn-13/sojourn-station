@@ -363,7 +363,7 @@
 								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
 								SPAN_NOTICE("You add the [W.name] to the [src].")
 							)
-		step_message = "The armor isn't welded in place." // Next step
+		step_message = "The armor need to be welded in place." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the armor
@@ -537,7 +537,7 @@
 								SPAN_NOTICE("[user] secure the hydraulic system."),
 								SPAN_NOTICE("You secure the hydraulic system.")
 							)
-			step_message = "It is missing plasteel plating." // Next step
+			step_message = "It is missing an armblade." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 10, Add the armblade
@@ -547,7 +547,7 @@
 								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
 								SPAN_NOTICE("You add the [W.name] to the [src].")
 							)
-		step_message = "It is missing a large power cell." // Next step
+		step_message = "It is missing another armblade." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the armblade
@@ -657,7 +657,7 @@
 								SPAN_NOTICE("[user] close the panel."),
 								SPAN_NOTICE("You close the panel.")
 							)
-			step_message = "The panel is closed, all it need is a swipe of your ID." // Next step
+			step_message = "The panel is closed, it need armor now though." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 19, Add the armor
@@ -667,7 +667,7 @@
 								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
 								SPAN_NOTICE("You add the [W.name] to the [src].")
 							)
-		step_message = "The armor isn't welded in place." // Next step
+		step_message = "The armor need to be welded in place." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the armor
