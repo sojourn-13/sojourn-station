@@ -1,4 +1,5 @@
 /obj/item/weapon/implant/carrion_spider/healing
+	name = "healing spider"
 	icon_state = "spiderling_healing"
 	spider_price = 25 //Not too strong but can be stacked, if we make a no fun limit to spiders this should be lowered
 

@@ -1,6 +1,6 @@
 /obj/item/weapon/implant/explosive
 	name = "explosive implant"
-	desc = "A military grade micro bio-explosive. Highly dangerous."
+	desc = "A military grade micro bio-explosive. Highly dangerous and EMP proof."
 	var/elevel = "Localized Limb"
 	var/phrase = "supercalifragilisticexpialidocious"
 	icon_state = "implant_evil"
@@ -106,7 +106,8 @@
 			qdel(src)
 
 /obj/item/weapon/implant/explosive/malfunction(severity)
-	if (malfunction)
+	return
+/*	if (malfunction)
 		return
 	malfunction = MALFUNCTION_TEMPORARY
 	switch (severity)
@@ -123,7 +124,7 @@
 					else
 						meltdown()		//50% chance of implant disarming
 	spawn (20)
-		malfunction = MALFUNCTION_NONE
+		malfunction = MALFUNCTION_NONE*/
 
 
 /obj/item/weapon/implantcase/explosive

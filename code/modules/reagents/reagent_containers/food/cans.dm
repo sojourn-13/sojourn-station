@@ -96,3 +96,26 @@
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("melonsoda" = 30)
 
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster
+	name = "\"Nitro\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore."
+	icon_state = "energy_drink_monster"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 40, "sugar" = 20)
+	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster_no_sugar
+	name = "\"Boom\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. This one is favored by the forty and up."
+	icon_state = "energy_drink_nosugar"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 60)
+	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster_orange
+	name = "\"Khaos\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. This one is a mix of orange and mango."
+	icon_state = "energy_drink_orange"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 25, "orangejuice" = 25, "sugar" = 10)
+	volume = 60

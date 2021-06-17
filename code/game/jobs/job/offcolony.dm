@@ -15,32 +15,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 
 	perks = list(/datum/perk/job/butcher)
-
-	known_recipes = list(
-			/datum/craft_recipe/lodge/hunter_crossbow,
-			/datum/craft_recipe/lodge/hunting_halberd,
-			/datum/craft_recipe/lodge/render_gauntlet,
-			/datum/craft_recipe/lodge/skinning_knife,
-			/datum/craft_recipe/lodge/woodsmans_axe,
-			/datum/craft_recipe/lodge/bone_shield,
-			/datum/craft_recipe/lodge/hunter_hood,
-			/datum/craft_recipe/lodge/hunter_armor_basic,
-			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
-			/datum/craft_recipe/lodge/hunter_armor_metalman,
-			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
-			/datum/craft_recipe/lodge/blood_tongue,
-			/datum/craft_recipe/lodge/powder_pouch,
-			/datum/craft_recipe/lodge/tangu_juice,
-			/datum/craft_recipe/lodge/clucker_juice,
-			/datum/craft_recipe/lodge/tahca_antiviral,
-			/datum/craft_recipe/lodge/crossbow_bolts,
-			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
-			/datum/craft_recipe/lodge/crossbow_bolts/speed,
-			/datum/craft_recipe/lodge/duct_tape_weak,
-			/datum/craft_recipe/lodge/duct_tape,
-			/datum/craft_recipe/lodge/chimera_fang,
-			/datum/craft_recipe/lodge/soap,
-			)
+	access = list(access_huntmaster)
 
 	stat_modifiers = list(
 		STAT_BIO = 30,
@@ -82,32 +57,6 @@
 
 	perks = list(/datum/perk/job/butcher)
 
-	known_recipes = list(
-			/datum/craft_recipe/lodge/hunter_crossbow,
-			/datum/craft_recipe/lodge/hunting_halberd,
-			/datum/craft_recipe/lodge/render_gauntlet,
-			/datum/craft_recipe/lodge/skinning_knife,
-			/datum/craft_recipe/lodge/woodsmans_axe,
-			/datum/craft_recipe/lodge/bone_shield,
-			/datum/craft_recipe/lodge/hunter_hood,
-			/datum/craft_recipe/lodge/hunter_armor_basic,
-			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
-			/datum/craft_recipe/lodge/hunter_armor_metalman,
-			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
-			/datum/craft_recipe/lodge/blood_tongue,
-			/datum/craft_recipe/lodge/powder_pouch,
-			/datum/craft_recipe/lodge/tangu_juice,
-			/datum/craft_recipe/lodge/clucker_juice,
-			/datum/craft_recipe/lodge/tahca_antiviral,
-			/datum/craft_recipe/lodge/crossbow_bolts,
-			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
-			/datum/craft_recipe/lodge/crossbow_bolts/speed,
-			/datum/craft_recipe/lodge/duct_tape_weak,
-			/datum/craft_recipe/lodge/duct_tape,
-			/datum/craft_recipe/lodge/chimera_fang,
-			/datum/craft_recipe/lodge/soap,
-			)
-
 	stat_modifiers = list(
 		STAT_BIO = 20,
 		STAT_TGH = 20,
@@ -132,8 +81,8 @@
 
 /datum/job/outsider
 	title = "Outsider"
-	total_positions = 4
-	spawn_positions = 5
+	total_positions = 3
+	spawn_positions = 3
 	flag = OUTSIDER
 	faction = MAP_FACTION
 	department = DEPARTMENT_INDEPENDENT
@@ -147,8 +96,6 @@
 	outfit_type = /decl/hierarchy/outfit/job/outsider
 	difficulty = "Impossible!"
 
-	perks = list(/datum/perk/job/prospector_conditioning)
-
 	stat_modifiers = list(
 		STAT_BIO = 5,
 		STAT_TGH = 6,
@@ -160,7 +107,8 @@
 
 	description = "You're an outsider, disconnected from the lodge and the colony as a whole. Whether you're an exile, stranded pirate, hermit, or just the right man in the wrong place you're \
 	entirely alone out here. What friends you can make and rely on should be cherished, for there are other looters and outsiders there who might be less than friendly short of giving out lead \
-	and ionized laser shots. You better stake your claim, fortify a safe spot, then venture out for supplies and whatever loot you can use, sell, or stockpile."
+	and ionized laser shots. You better stake your claim, fortify a safe spot, then venture out for supplies and whatever loot you can use, sell, or stockpile. Remember, you are not protected by \
+	colony law, few people with care or even raise an eyebrow if you're shot to death for whatever you're carrying."
 
 	duties = "Choose between building a home or becoming nomadic.<br>\
 		Make friends and avoid making enemies, as you're not protected like a colonist or hunter.<br>\

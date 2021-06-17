@@ -56,7 +56,7 @@
 /obj/machinery/computer/shuttle_control/multi/surface_transport
 	name = "surface transport shuttle console"
 	shuttle_tag = "Surface Transport Shuttle"
-	req_one_access = list(access_security, access_heads)
+	req_one_access = list(access_security, access_heads, access_huntmaster)
 	//circuit = /obj/item/weapon/electronics/circuitboard/shuttle/mining
 
 //Skipjack Code

@@ -353,7 +353,8 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	old_x = -16
-	speed = 0.8
+	speed = 3.7
+	var/setspeed = 3.7
 	var/zoomeye = 7
 	see_invisible = 15
 	old_y = 0
@@ -380,7 +381,7 @@
 		to_chat(src, "You gun isnt ready to fire!.")
 		return
 	if(loaded_ammo == 1)
-		projectiletype = /obj/item/projectile/bullet/antim
+		projectiletype = /obj/item/projectile/bullet/rifle_75/hv
 		rapid = 0
 		shooter.OpenFire(targetDD)
 		visible_emote("fires an armor piercing shot!")
@@ -407,7 +408,7 @@
 		return
 	if(loaded_ammo == 3)
 		visible_emote("is preparing to unleash a powerful volley of bullets, take cover! RUN AND HIDE NOW!")
-		speed = 7
+		speed = 8.5
 		animate(src, alpha = 255, color = "#ffffcc", transform = matrix()*1.1, time = 2)
 		playsound(src, 'sound/weapons/guns/interact/chaingun_cock.ogg', 30, 1, -3)
 		sleep(5)
@@ -424,7 +425,7 @@
 		animate(src, alpha = 255, color = "#fffffc", transform = matrix()*1.3, time = 2)
 		sleep(3)
 		animate(src, alpha = 255, color = initial(color), transform = matrix()*1, time = 2)
-		projectiletype = /obj/item/projectile/bullet/rifle_75
+		projectiletype = /obj/item/projectile/bullet/light_rifle_257
 		playsound(src, 'sound/weapons/guns/fire/chaingun_fire.ogg', 30, 1, -3)
 		shooter.OpenFire(targetDD)
 		shooter.OpenFire(get_step_rand(targetDD))
@@ -434,8 +435,9 @@
 		shooter.OpenFire(get_step_rand(targetDD))
 		shooter.OpenFire(get_step_rand(targetDD))
 		shooter.OpenFire(get_step_rand(targetDD))
+		projectiletype = /obj/item/projectile/bullet/pistol_35
 		loaded_ammo = 0
-		speed = initial(speed)
+		speed = setspeed
 		icon_state = "excelatomiton_unpowered"
 		icon_living = "excelatomiton_unpowered"
 		return
@@ -449,7 +451,7 @@
 		loaded_ammo = 0
 		icon_state = "excelatomiton_unpowered"
 		icon_living = "excelatomiton_unpowered"
-		sleep(150)
+		sleep(380)
 		g1.prime()
 		g2.prime()
 		g3.prime()

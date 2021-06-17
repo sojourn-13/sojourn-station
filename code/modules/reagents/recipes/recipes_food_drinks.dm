@@ -64,6 +64,17 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/weapon/reagent_containers/food/snacks/chocolatebar(location)
 
+/datum/chemical_reaction/honey_icecream
+	result = null
+	required_reagents = list("milk" = 10, "sugar" = 5, "ice" = 15, "cream" = 10, "honey" = 5)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/honey_icecream/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/weapon/reagent_containers/food/snacks/honey_icecream(location)
+
 /datum/chemical_reaction/hot_coco
 	result = "hot_coco"
 	required_reagents = list("water" = 5, "coco" = 1)

@@ -134,7 +134,7 @@
 //This should be in its own file...
 /obj/item/weapon/gun/projectile/automatic/lmg/tk
 	name = "\"Takeshi\" suppression machinegun"
-	desc = "The \"Takeshi LMG\" is marshal's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death."
+	desc = "The \"Takeshi LMG\" is Seinemetall Defense GmbH's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death."
 	icon = 'icons/obj/guns/projectile/tk.dmi'
 	icon_base = "tk"
 	icon_state = "tk"

@@ -1,5 +1,3 @@
-#define MOB_SIZE_LARGE 3
-#define LARGE_MOB_LAYER 4.4
 
 /mob/living/simple_animal/hostile/megafauna
 	name = "boss of this gym"
@@ -13,9 +11,9 @@
 	var/atom/target
 	minbodytemp = 0
 	maxbodytemp = INFINITY
-	mob_size = MOB_SIZE_LARGE
+	mob_size = MOB_LARGE
 	status_flags = 0 //No pushing, no stunning, no paralyze and no weaken.
-	layer = LARGE_MOB_LAYER //Looks weird with them slipping under mineral walls and cameras and shit otherwise
+	layer = 4.4 //Looks weird with them slipping under mineral walls and cameras and shit otherwise
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 	leather_amount = 0
 	bones_amount = 0

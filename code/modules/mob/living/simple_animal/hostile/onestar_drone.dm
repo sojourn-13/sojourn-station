@@ -130,6 +130,13 @@
 	melee_damage_upper = 15
 	cleaning = FALSE
 
+/mob/living/simple_animal/hostile/onestar_custodian/engineer/emp_act(severity)
+	..()
+	if(rapid)
+		rapid = FALSE
+	if(prob(95) && ranged)
+		ranged = FALSE
+
 /mob/living/simple_animal/hostile/onestar_custodian/engineer/New()
 	. = ..()
 	if(prob(5))

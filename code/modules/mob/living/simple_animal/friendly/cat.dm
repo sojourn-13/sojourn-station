@@ -267,7 +267,7 @@
 
 //Trilby
 
-/mob/living/simple_animal/cat/trilby_runtime
+/mob/living/simple_animal/cat/runtime
 	name = "Trilby"
 	real_name = "Trilby"
 	desc = "A bluespace denizen that purrs its way into our dimension when the very fabric of reality is teared apart."
@@ -281,7 +281,6 @@
 	maxbodytemp = INFINITY
 	autoseek_food = 0
 	metabolic_factor = 0.0
-
 	harm_intent_damage = 0
 	melee_damage_lower = 0
 	melee_damage_upper = 0
@@ -295,6 +294,9 @@
 
 /mob/living/simple_animal/cat/runtime/attackby(var/obj/item/O, var/mob/user)
 	visible_message(SPAN_DANGER("[user]'s [O.name] harmlessly passes through \the [src]."))
+
+/mob/living/simple_animal/cat/runtime/MouseDrop(atom/over_object)
+	return
 
 /mob/living/simple_animal/cat/runtime/attack_hand(mob/living/carbon/human/M as mob)
 

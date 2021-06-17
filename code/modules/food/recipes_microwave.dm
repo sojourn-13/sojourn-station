@@ -955,6 +955,20 @@ I said no!
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/tofurkey
 
+/datum/recipe/honey_bun
+	reagents = list("sugar" = 3, "honey" = 5, "cream" = 5)
+	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/dough,
+	)
+	result = /obj/item/weapon/reagent_containers/food/snacks/honeybuns
+
+/datum/recipe/honey_pudding
+	reagents = list("sugar" = 3, "honey" = 15, "cream" = 5)
+	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/chocolatebar,
+	)
+	result = /obj/item/weapon/reagent_containers/food/snacks/honeypudding
+
 // Fuck Science!
 /datum/recipe/ruinedvirusdish
 	items = list(

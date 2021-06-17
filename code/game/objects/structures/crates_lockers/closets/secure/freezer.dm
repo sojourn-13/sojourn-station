@@ -57,3 +57,16 @@
 		new /obj/item/weapon/spacecash/bundle/c500(src)
 	for(var/i in 1 to 6)
 		new /obj/item/weapon/spacecash/bundle/c200(src)
+
+/obj/structure/closet/secure_closet/freezer/mini
+	name = "mini freezer"
+	desc = "A smaller than normal freezer."
+	icon_state = "advanced_freezer"
+
+/obj/structure/closet/secure_closet/freezer/mini/populate_contents()
+	for(var/i in 1 to 6)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_no_sugar(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_orange(src)

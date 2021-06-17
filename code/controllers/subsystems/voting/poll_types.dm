@@ -6,19 +6,19 @@
 /datum/poll/restart
 	name = "End Round"
 	question = "End Shift?"
-	time = 60
+	time = 90
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
-	next_vote = 240 MINUTES //Minimum round length before it can be called for the first time
+	next_vote = 250 MINUTES //Minimum round length before it can be called for the first time
 	cooldown = 60 MINUTES
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
 
-	multiple_votes = FALSE
+	multiple_votes = TRUE //Duel votes are fun
 	can_revote = TRUE
-	can_unvote = FALSE
+	can_unvote = TRUE //In case you heck up
 
-	see_votes = TRUE
+	see_votes = FALSE //No swaying
 
 /*To prevent abuse and rule-by-salt, the evac vote weights each player's vote based on a few parameters
 	If you are alive and have been for a while, then you have the normal 1 vote

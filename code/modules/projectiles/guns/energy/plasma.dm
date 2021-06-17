@@ -86,3 +86,86 @@
 		list(mode_name="Stun", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/Taser.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
 		list(mode_name="Melt", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 	)
+
+/obj/item/weapon/gun/energy/plasma/super_heavy
+	name = "\"Ragefire\" Experimental Plasma Gun"
+	desc = "An \"Soteria\" brand experimental weapon that uses coolant to fire deadly plasma projectiles without needing to cool down between shots, however the gun is extremly unstable without cooling."
+	icon = 'icons/obj/guns/energy/plasma.dmi'
+	icon_state = "plasma"
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	projectile_type = /obj/item/projectile/plasma/heavy/super_heavy
+	cell_type = /obj/item/weapon/cell/medium
+	charge_cost = 100
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 20, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10)
+	damage_multiplier = 1
+
+	var/explode_chance // the % of chance the gun has to explode each time it is fired without coolant. It is random between each gun.
+	var/explode_chance_min = 5 // The mininum of explode_chance
+	var/explode_chance_max = 30 // The maximum of explode_chance
+	var/coolant_used_per_shot = 10 // Amount of coolant used per shot.
+
+	var/obj/item/weapon/reagent_containers/container //Beaker inserted.
+
+	// Value used for the explosion, same as a normal mine.
+	var/explosion_d_size = 0
+	var/explosion_h_size = 0
+	var/explosion_l_size = 3
+	var/explosion_f_size = 5
+
+	init_firemodes = list(
+		list(mode_name="Super-heavy Plasma", projectile_type=/obj/item/projectile/plasma/heavy/super_heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="kill", projectile_color = "#FFFF00"),
+		list(mode_name="Super-heavy Plasma", projectile_type=/obj/item/projectile/plasma/heavy/super_heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="kill", projectile_color = "#FFFF00")
+	)
+
+/obj/item/weapon/gun/energy/plasma/super_heavy/examine(mob/user)
+	..()
+	if(container)
+		to_chat(user, SPAN_NOTICE("The [src.name] currently contain [container.reagents.total_volume] of chemicals."))
+
+// We want that every gun got a random chance of exploding.
+/obj/item/weapon/gun/energy/plasma/super_heavy/New()
+	..()
+	explode_chance = rand(explode_chance_min, explode_chance_max) // If there's no coolant, it got a random chance to explode, the chance itself is random.
+
+/obj/item/weapon/gun/energy/plasma/super_heavy/attackby(obj/item/weapon/W, mob/user)
+
+	if(istype(W, /obj/item/weapon/tool)) // Is it a tool?
+		var/obj/item/weapon/tool/T = W // To use tool-only checks
+		if(QUALITY_BOLT_TURNING) // Can we turn bolts with the tool?
+			if(container) // Do we have something to remove?
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+					to_chat(user, "You remove the [container.name] from the [src.name].")
+					container.forceMove(user.loc) //Move the container to the floor of the user.
+					container = null // We no longer have a container.
+					return
+			to_chat(user, "[src.name] doesn't have a container.")
+
+	if(istype(W, /obj/item/weapon/reagent_containers)) // Is it something that hold chems ?
+
+		// Do we already have one inside?
+		if(container)
+			to_chat(user, "The [src.name] already got a beaker.")
+			return
+		else
+			var/obj/item/weapon/reagent_containers/C = W
+
+			// Remove the container from the user and put it in the gun
+			user.remove_from_mob(C) // Remove from the mob's hand before moving it.
+			C.forceMove(src) // Moving the container into the gun.
+			container = C // Assiging a reference variable
+			to_chat(user, "You add the [W.name] to the [src].")
+			return
+	..()
+	return
+
+/obj/item/weapon/gun/energy/plasma/super_heavy/handle_post_fire(mob/user)
+	..() // We shoot the gun before using the coolant.
+	if(!(container) || !(container.reagents.remove_reagent("coolant", coolant_used_per_shot))) // First check if we have a container, if we do, then try to remove the coolant, if it can't, we continue.
+		to_chat(user, SPAN_WARNING("Your [src.name] start to overheat.")) // Warn the user that they ran out.
+
+		if(prob(explode_chance)) // This roll the dice to see if the gun explode.
+			usr.visible_message(SPAN_DANGER("[usr]'s [src.name] overheat and explode !")) // Obvious Message
+			explosion(user, explosion_d_size * damage_multiplier, explosion_h_size * damage_multiplier, explosion_l_size * damage_multiplier, explosion_f_size * damage_multiplier) // EXPLOSION !
+			qdel(src) // The gun blew up, it is no more.
+			return
+	return

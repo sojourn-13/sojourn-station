@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/grenade/lenar
-	name = "FS GL \"Lenar\""
-	desc = "A more than bulky pump-action grenade launcher. Holds up to 6 grenade shells in a revolving magazine."
+	name = "GmbH GL \"Lenar\""
+	desc = "A more than bulky pump-action grenade launcher used by Police during riots. Holds up to 6 grenade shells in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/grenadelauncher.dmi'
 	icon_state = "Grenadelauncher_PMC"
 	item_state = "pneumatic"

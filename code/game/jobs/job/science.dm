@@ -133,6 +133,15 @@
 		STAT_BIO = 25,
 	)
 
+	known_recipes = list(
+			/datum/craft_recipe/robotic/roomba_frame,
+			//datum/craft_recipe/robotic/roomba_board, // Commented out due to being printable.
+			/datum/craft_recipe/robotic/roomba_treads,
+			/datum/craft_recipe/robotic/roomba_knife,
+			/datum/craft_recipe/robotic/roomba_armor,
+			/datum/craft_recipe/robotic/roomba_armor/heavy,
+			)
+
 	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
 
 	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\

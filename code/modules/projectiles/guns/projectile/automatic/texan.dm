@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/texan
 	name = "\"Texan\" SMG"
-	desc = "The Texan is a cheap self-defence weapon, mass-produced by \"Scarborough Arms\" for paramilitary and private use, with a moderate effectiveness against soft body armor. Uses .35 rounds."
+	desc = "The Texan is a reliable assault weapon, mass-produced by \"Scarborough Arms\" for raiding parities in tight ship hall, with a moderate effectiveness against soft body armor. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/texan.dmi'
 	icon_state = "texan"
 	item_state = "texan"

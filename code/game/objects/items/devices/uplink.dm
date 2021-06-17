@@ -270,6 +270,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 	..(loc)
 	hidden_uplink = new(src, mind, crystal_amount)
 	hidden_uplink.uses = DEFAULT_TELECRYSTAL_AMOUNT
+	hidden_uplink.trigger_code = 1445
 
 
 

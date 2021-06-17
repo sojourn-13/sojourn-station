@@ -54,6 +54,14 @@
 		new weapon2 (src.loc)
 		weapon2 = null
 
+/mob/living/simple_animal/hostile/voidwolf/emp_act(severity)
+	..()
+	if(rapid)
+		rapid = FALSE
+	if(prob(95) && ranged)
+		ranged = FALSE
+
+
 /mob/living/simple_animal/hostile/voidwolf/fieldtech
 	name = "Void Wolf Field Tech"
 	desc = "A Void Wolf mercenary wielding an industrial welder."
@@ -156,6 +164,9 @@
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/bulldog
 	weapon2 = null
 
+/mob/living/simple_animal/hostile/voidwolf/elite/bullpup/emp_act(severity)
+	return
+
 /mob/living/simple_animal/hostile/voidwolf/elite/gyrojet
 	icon_state = "reaver_gyro"
 	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
@@ -163,6 +174,9 @@
 	weapon1 = /obj/item/weapon/gun/projectile/gyropistol
 	weapon2 = null
 	rapid = 0
+
+/mob/living/simple_animal/hostile/voidwolf/elite/gyrojet/emp_act(severity)
+	return
 
 /mob/living/simple_animal/hostile/voidwolf/elite/myrmidon
 	icon_state = "reaver_melee"
@@ -183,6 +197,9 @@
 		rad = 0,
 		agony = 1000 //Pain damage proof, and rubber proof.
 	)
+
+/mob/living/simple_animal/hostile/voidwolf/elite/myrmidon/emp_act(severity)
+	return
 
 /mob/living/simple_animal/hostile/voidwolf/elite/myrmidon/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(prob(65))
@@ -210,7 +227,9 @@
 	playsound(src, 'sound/effects/Explosion2.ogg', 75, 1, -3)
 	if(weapon1)
 		new weapon1(src.loc)
+		weapon1 = null
 	if(weapon2)
 		new weapon2(src.loc)
+		weapon2 = null
 	qdel(src)
 	return

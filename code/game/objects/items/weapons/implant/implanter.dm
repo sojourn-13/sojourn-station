@@ -53,7 +53,6 @@
 
 	if(do_mob(user, M, 50) && src && implant)
 
-
 		if(implant.install(M, user.targeted_organ, user))
 			M.visible_message(
 			SPAN_WARNING("[user] has implanted [M] in [affected]."),
@@ -67,3 +66,5 @@
 			)
 			implant = null
 			update_icon()
+			log_and_message_admins(" - [implant.name] injected into [M] at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
+

@@ -10,6 +10,7 @@
 	Knowledge: Checks remaining telecrystals (Inquisitor also has a traitor uplink)
 	Bounty: Calls up the uplink to order supplies
 */
+
 /datum/ritual/cruciform/inquisitor
 	name = "crusader"
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform
@@ -22,13 +23,12 @@
 	category = "Crusader"
 	power = 30
 
-
-
 /*
 /*
 	Penance
 	Deals pain damage to a targeted disciple
 */
+
 /datum/ritual/targeted/cruciform/inquisitor/penance
 	name = "Penance"
 	phrase = "Mihi vindicta \[Target human]"
@@ -68,11 +68,11 @@
 			return target
 */
 
-
 /*
 	Obey
 	Goes with obey module, disabled for now
 */
+
 /*
 /datum/ritual/cruciform/inquisitor/obey
 	name = "Obey"
@@ -152,8 +152,6 @@
 		fail("Cruciform not found.", user, C)
 		return FALSE
 
-
-
 	var/mob/living/carbon/human/H = CI.wearer
 
 	if(!istype(H))
@@ -165,7 +163,6 @@
 	if (!(T.Adjacent(get_turf(H))))
 		to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
 		return
-
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of convalescence")
 	if (do_after(user, 40, H, TRUE))
@@ -184,11 +181,11 @@
 		set_personal_cooldown(user)
 		return TRUE
 
-
 /*
 	Scrying: Remotely look through someone's eyes. Global range, useful to find fugitives or corpses
 	Uses all of your power and has a limited duration
 */
+
 /datum/ritual/cruciform/inquisitor/scrying
 	name = "Scrying"
 	phrase = "Ecce ego ad te et ad caelum. Scio omnes absconditis tuis. Vos can abscondere, tu es coram me: nudus."
@@ -228,11 +225,10 @@
 		if(target.wearer && target.wearer.stat != DEAD)
 			return target
 
-
-
 /*
 	Sends a telepathic message to any disciple
 */
+
 /datum/ritual/cruciform/inquisitor/message
 	name = "Sending"
 	phrase = "Audit, me audit vocationem. Ego nuntius vobis."
@@ -254,11 +250,6 @@
 	log_and_message_admins("sent a message to [H] with text \"[text]\"")
 	to_chat(H, "<span class='notice'>A voice speaks in your mind: \"[text]\"</span>")
 
-
-
-
-
-
 /datum/ritual/cruciform/inquisitor/initiation
 	name = "Initiation"
 	phrase = "Habe fiduciam in Domino ex toto corde tuo et ne innitaris prudentiae tuae, in omnibus viis tuis cogita illum et ipse diriget gressus tuos"
@@ -271,7 +262,6 @@
 	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
 		fail("Cruciform not found",user,C)
 		return FALSE
-
 
 	if(CI.get_module(CRUCIFORM_PRIEST) || CI.get_module(CRUCIFORM_INQUISITOR))
 		fail("The target is already a preacher.",user,C)
@@ -287,8 +277,6 @@
 	log_and_message_admins("promoted disciple [C] to Preacher with initiation litany")
 
 	return TRUE
-
-
 
 /datum/ritual/cruciform/inquisitor/check_telecrystals
 	name = "Knowledge"
@@ -308,7 +296,6 @@
 		return FALSE
 */
 
-
 /datum/ritual/cruciform/inquisitor/brotherhood
 	name = "Eternal Brotherhood"
 	phrase = "Ita multi unum corpus sumus in Christo singuli autem alter alterius membra."
@@ -322,7 +309,6 @@
 	else
 		C.add_module(new /datum/core_module/cruciform/neotheologyhud)
 	return TRUE
-
 
 /datum/ritual/cruciform/inquisitor/battle_call
 	name = "Call to Battle"
@@ -383,6 +369,7 @@
 	Opens the interface for the embedded Uplink, allowing stuff to be purchased
 	Uses all your power, so you can't use abilities for a couple minutes
 */
+
 /datum/ritual/targeted/cruciform/inquisitor/spawn_item
 	name = "Litany of Armaments"
 	phrase = "Supra Domini, bona de te peto. Audi me, et libera vocationem ad me munera tua."
@@ -391,7 +378,6 @@
 	cooldown = TRUE
 	cooldown_time = 12 HOURS
 	cooldown_category = "armaments"
-
 
 /datum/ritual/targeted/cruciform/inquisitor/spawn_item/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	new /obj/item/weapon/tool/sword/crusader(usr.loc)

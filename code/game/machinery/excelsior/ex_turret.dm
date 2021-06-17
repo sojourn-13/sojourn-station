@@ -65,6 +65,7 @@
 	return FALSE
 
 /obj/machinery/porta_turret/excelsior/attackby(obj/item/ammo_magazine/I, mob/user)
+	log_and_message_admins(" - Exc Turret being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 	if(istype(I, ammo_box) && I.stored_ammo.len)
 		if(ammo >= ammo_max)
 			to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))

@@ -579,17 +579,26 @@ var/list/turret_icons
 	if(L.invisibility >= INVISIBILITY_LEVEL_ONE) // Cannot see him. see_invisible is a mob-var
 		return TURRET_NOT_TARGET
 
+	if(L.stat && !emagged)		//if the perp is dead/dying, no need to bother really
+		return TURRET_NOT_TARGET	//move onto next potential victim!
+
 	if(!L)
 		return TURRET_NOT_TARGET
 
 	if(!emagged && colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
-	if(!emagged && issilicon(L))	// Don't target silica
+	if(!emagged && !colony_allied_turret && !L.colony_friend) //If were not allied to the colony we dont attack anything thats against the colony
 		return TURRET_NOT_TARGET
 
-	if(L.stat && !emagged)		//if the perp is dead/dying, no need to bother really
-		return TURRET_NOT_TARGET	//move onto next potential victim!
+	if(!emagged && !colony_allied_turret && L.colony_friend) //If were not allied with the colony we attack them and their pets
+		return TURRET_SECONDARY_TARGET
+
+	if(!emagged && colony_allied_turret && !L.colony_friend) //If were allied with the colony and we attack things that are not are pets
+		return TURRET_SECONDARY_TARGET
+
+	if(!emagged && issilicon(L))	// Don't target silica
+		return TURRET_NOT_TARGET
 
 	if(get_dist(src, L) > 7)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET

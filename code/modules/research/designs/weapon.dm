@@ -16,7 +16,7 @@
 	category = "Misc"
 
 /datum/design/research/item/weapon/stunrevolver
-	name = "\"Hestia\" Stun Revolver"
+	name = "\"Hera\" Stun Revolver"
 	build_path = /obj/item/weapon/gun/energy/stunrevolver/sci
 
 /datum/design/research/item/weapon/nuclear_gun
@@ -122,6 +122,10 @@
 /datum/design/research/item/weapon/laser_ak
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/akl
+
+/datum/design/research/item/weapon/heavy_plasma
+	name = "\"Ragefire\" Experimental Plasma Gun"
+	build_path = /obj/item/weapon/gun/energy/plasma/super_heavy
 
 // Ammo
 /datum/design/research/item/ammo
