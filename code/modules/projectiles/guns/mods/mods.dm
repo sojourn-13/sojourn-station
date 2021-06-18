@@ -44,7 +44,7 @@
 //Makes a gun deal more damage. fire faster but recoil heavy
 /obj/item/weapon/gun_upgrade/barrel/bore
 	name = "Heavy barrel"
-	desc = "A properly forged plasteel barrel that has deep barreling to allow bullets to fly true but make recoil controle a nightmare."
+	desc = "A heavy compensating barrel brake that allows for a more powerful impact due to gas control, but the extra weight impacts recoil and firing speed."
 	icon_state = "Forged_heavy_barrel"
 
 /obj/item/weapon/gun_upgrade/barrel/bore/New()
