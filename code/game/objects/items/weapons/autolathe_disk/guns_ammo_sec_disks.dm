@@ -690,7 +690,7 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/state
 	disk_name = "GmbH - 20mm State Auto Shotgun"
-	desc = "Something odd about the State is that its designs meta data that the shotgun was redone several times."
+	desc = "Known as the state, an odd shotgun, often redesigned every few years in a way few people are fully happy with."
 	icon_state = "frozenstar"
 
 	license = 8
