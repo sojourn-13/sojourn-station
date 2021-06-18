@@ -406,7 +406,7 @@
 								SPAN_NOTICE("[user] activate [created_name]! Beep boop."),
 								SPAN_NOTICE("You activate [created_name]! Beep boop.")
 							)
-		var/mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade/R = new /mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade(get_turf(src)) // Spawn the roomba.
+		var/mob/living/carbon/superior_animal/handmade/sword/R = new /mob/living/carbon/superior_animal/handmade/sword(get_turf(src)) // Spawn the roomba.
 		R.cell = power_cell // Give the roomba the cell used.
 		power_cell.forceMove(R) // Give the cell
 		R.name = created_name // Pass it the custom name
@@ -725,7 +725,7 @@
 								SPAN_NOTICE("You activate [created_name]! Beep boop.")
 							)
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
-		var/mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade/R = new /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade(get_turf(src)) // Spawn the roomba.
+		var/mob/living/carbon/superior_animal/handmade/mantis/R = new /mob/living/carbon/superior_animal/handmade/mantis(get_turf(src)) // Spawn the roomba.
 		R.cell = power_cell // Give the roomba the cell used.
 		power_cell.forceMove(R) // Give the cell
 		R.name = created_name // Pass it the custom name
