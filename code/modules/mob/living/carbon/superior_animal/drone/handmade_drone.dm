@@ -10,9 +10,10 @@
 	colony_friend = TRUE
 	breath_required_type = 0 // Doesn't need to breath
 	breath_poison_type = 0 // Can't be poisoned
-	attacktext = "slash"
+	attacktext = "slashed"
 	meat_amount = 0
 	mob_size = MOB_MEDIUM
+	randpixel = 0
 
 	var/obj/item/weapon/cell/large/cell = /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
 

@@ -8,6 +8,7 @@
 	maxHealth = 450
 	melee_damage_lower = 30
 	melee_damage_upper = 40
+	var/already_slashed = FALSE // So that we don't do the round slash twice in a row.
 
 /mob/living/carbon/superior_animal/handmade/mantis/examine(mob/user)
 	..()
@@ -17,22 +18,26 @@
 	if(!Adjacent(target_mob))
 		return
 
-	//special attacks
-	if(prob(15))
-		splash_slash()
-		return
+	if(!(already_slashed))
+		//special attacks
+		if(prob(15))
+			splash_slash()
+			already_slashed = TRUE
+			return
 
-	if(prob(30))
-		stun_with_claw()
-		return
+		if(prob(30))
+			stun_with_claw()
+			already_slashed = TRUE
+			return
 
+	already_slashed = FALSE
 	return ..() //default attack
 
 /mob/living/carbon/superior_animal/handmade/mantis/proc/splash_slash()
 	src.visible_message(SPAN_DANGER("[src] spins around and slashes in a circle!"))
 	for(var/atom/target in range(1, src))
 		if(target != src)
-			target.attack_generic(src, rand(melee_damage_lower, melee_damage_upper))
+			target.UnarmedAttack(src, rand(melee_damage_lower, melee_damage_upper))
 
 /mob/living/carbon/superior_animal/handmade/mantis/proc/stun_with_claw()
 	if(isliving(target_mob))
