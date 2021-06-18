@@ -83,6 +83,7 @@
 #define FORM_AGSYNTH			"Artificer Guild Synthetic"
 #define FORM_BSSYNTH			"Blackshield Synthetic"
 #define FORM_CHURCHSYNTH		"Absolute Synthetic"
+#define FORM_NASHEF				"Nashef-Agunabi"
 #define FORM_FBP				"Full Body Prosthetic"
 
 #define FORM_BIRD				"Avian"
