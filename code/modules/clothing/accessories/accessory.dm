@@ -460,6 +460,13 @@ obj/item/clothing/accessory/scarf/green
 	icon_state = "tags"
 	item_state = "tags"
 
+/obj/item/clothing/accessory/fractalrosary
+	name = "Fractal Rosary"
+	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
+			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
+	icon_state = "fractal_rosary"
+	item_state = "fractal_rosary"
+
 /obj/item/clothing/accessory/legbrace
 	name = "leg brace"
 	desc = "A lightweight polymer frame designed to hold legs upright comfortably."
