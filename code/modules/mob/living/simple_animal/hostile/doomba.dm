@@ -335,7 +335,7 @@
 	friendly_to_colony = TRUE
 	response_help = "pet"
 	mob_size = MOB_SMALL
-	stop_automated_movement_when_pulled = 1
+	stop_automated_movement_when_pulled = TRUE
 	density = 0
 
 // For repairing damage to the synths.
@@ -374,7 +374,7 @@
 	response_help = "pet"
 	can_buckle = TRUE
 	mob_size = MOB_SMALL
-	stop_automated_movement_when_pulled = 1
+	stop_automated_movement_when_pulled = TRUE
 	density = 0
 
 	// Default armor values so that we can reference them.
@@ -729,21 +729,23 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
+// More armor, HP and damage, but move slower
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade
 	name = "Custom-made SI Sword Drone"
 	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
 	icon_state = "soteria_mantis"
-	health = 350
-	maxHealth = 350
-	melee_damage_lower = 30
-	melee_damage_upper = 40
-	speed = 3
-	armor = list(melee = 40, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
+	health = 600
+	maxHealth = 600
+	melee_damage_lower = 50
+	melee_damage_upper = 60
+	speed = 4
+	armor = list(melee = 50, bullet = 50, energy = 50, bomb = 40, bio = 100, rad = 100)
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade/examine(mob/user)
 	..()
 	to_chat(user, SPAN_NOTICE("This one was handmade by an expert Roboticist."))
 
+// Less HP, less damage, but faster and can attack in an AoE and pin down mobs.
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade
 	name = "Custom-made SI Mantis Drone"
 	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
@@ -752,12 +754,39 @@
 	maxHealth = 450
 	melee_damage_lower = 40
 	melee_damage_upper = 50
-	speed = 3
-	armor = list(melee = 50, bullet = 40, energy = 40, bomb = 30, bio = 100, rad = 100)
+	speed = 5
+	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 20, bio = 100, rad = 100)
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade/examine(mob/user)
 	..()
 	to_chat(user, SPAN_NOTICE("This one was handmade by an expert Roboticist."))
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade/AttackingTarget()
+	if(!Adjacent(target_mob))
+		return
+
+	//special attacks
+	if(prob(15))
+		splash_slash()
+		return
+
+	if(prob(30))
+		stun_with_claw()
+		return
+
+	return ..() //default attack
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade/proc/splash_slash()
+	src.visible_message(SPAN_DANGER("[src] spins around and slashes in a circle!"))
+	for(var/atom/target in range(1, src))
+		if(target != src)
+			target.attack_generic(src, rand(melee_damage_lower, melee_damage_upper))
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade/proc/stun_with_claw()
+	if(isliving(target_mob))
+		var/mob/living/victim = target_mob
+		victim.Weaken(5) //decent-length stun
+		src.visible_message(SPAN_WARNING("[src] pins [victim] to the floor with its blades!"))
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/junkbot
 	name = "Prospector Junkbot"
