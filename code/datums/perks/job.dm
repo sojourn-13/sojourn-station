@@ -376,6 +376,7 @@
 			/datum/craft_recipe/guild/overshooter,
 			/datum/craft_recipe/guild/dangerzone,
 			/datum/craft_recipe/guild/forged,
+			/datum/craft_recipe/guild/heavy_barrel,
 			/datum/craft_recipe/guild/silencer,
 			/datum/craft_recipe/guild/turretcircuit,
 			/datum/craft_recipe/guild/rocket_engine,

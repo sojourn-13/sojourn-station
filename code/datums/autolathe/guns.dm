@@ -186,6 +186,10 @@
 	name = "H&S SG \"Gladstone\""
 	build_path = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone
 
+/datum/design/autolathe/gun/riot_shotgun
+	name = "GmbH SG \"State\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/riot_autoshotgun
+
 /datum/design/autolathe/gun/sbaw
 	name = "SF ASG \"Mjolnir\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/sbaw

@@ -140,8 +140,10 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/sts/rifle/blackshield
-	name = "Blackshield \"STS PARA\" rifle"
-	desc = "A rugged STS-35.  Uses 7.5mm rifle rounds. This one is owned and maintained by Blackshield to be more effective then a normal STS-30 varent."
+	name = "\"STS PARA\" Blackshield rifle"
+	desc = "A lightweight modified variant of the STS-30 that takes 7.5mm rounds, shedding wartime wood for modern plastic polymer. \
+	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified recievers and gas block for better recoil control. \
+	Two stamps are pressed into the side of the receiver: A 'M&C' logo and a blackshield logo."
 	icon = 'icons/obj/guns/projectile/sts35.dmi'
 	icon_state = "stspara"
 	item_state = "stspara"
@@ -149,8 +151,8 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1.1 //Well oiled
-	recoil_buildup = 3
-	one_hand_penalty = 15
+	recoil_buildup = 5
+	one_hand_penalty = 18
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn/blackshield
@@ -171,8 +173,8 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 0.9 //Rifle was fine
-	recoil_buildup = 5
-	one_hand_penalty = 20 //automatic rifle level
+	recoil_buildup = 10
+	one_hand_penalty = 22 //automatic rifle level
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 

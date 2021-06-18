@@ -4380,7 +4380,7 @@
 "gCx" = (/obj/random/mob/spiders,/turf/simulated/floor/tiled/steel,/area/nadezhda/maintenance/undergroundfloor1south)
 "gCI" = (/obj/structure/cable/green{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/extinguisher_cabinet{pixel_x = 0; pixel_y = -30},/turf/simulated/floor/tiled/dark/violetcorener,/area/nadezhda/rnd/docking)
 "gDk" = (/obj/effect/window_lwall_spawn/reinforced,/obj/machinery/door/blast/regular/open{id = "xenobio7"; name = "containment blast door"},/turf/simulated/floor/plating,/area/nadezhda/rnd/xenobiology)
-"gDo" = (/obj/structure/table/rack,/obj/item/weapon/gun/projectile/shotgun/pump{name = "\"Grizzly\" riot shotgun"; pixel_y = 8},/obj/item/weapon/gun/projectile/shotgun/pump{name = "\"Grizzly\" riot shotgun"; pixel_y = 4},/obj/item/weapon/gun/projectile/shotgun/pump{name = "\"Grizzly\" riot shotgun"},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/tactical)
+"gDo" = (/obj/structure/table/rack,/obj/item/weapon/gun/projectile/automatic/riot_autoshotgun{pixel_y = -3},/obj/item/weapon/gun/projectile/automatic/riot_autoshotgun{pixel_y = 3},/obj/item/weapon/gun/projectile/automatic/riot_autoshotgun{pixel_y = 8},/turf/simulated/floor/tiled/dark/gray_platform,/area/nadezhda/security/tactical)
 "gDp" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/nadezhda/rnd/xenobiology/xenoflora)
 "gDw" = (/turf/simulated/wall,/area/nadezhda/maintenance/undergroundfloor1south)
 "gDA" = (/obj/structure/table/woodentable,/obj/item/toy/figure/character/civilian/entertainer{pixel_x = -1; pixel_y = 2},/obj/machinery/button/windowtint{pixel_y = -4},/turf/simulated/floor/wood,/area/nadezhda/crew_quarters/clownoffice)

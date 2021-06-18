@@ -40,6 +40,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone = 2,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/state = 1.6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sbaw = 1,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/roe = 2,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sika = 2,
@@ -110,6 +111,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/grizzly = 8,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator = 6,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/gladstone = 6,
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/state = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/sbaw = 1,
 

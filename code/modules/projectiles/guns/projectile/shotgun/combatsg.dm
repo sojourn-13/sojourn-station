@@ -18,7 +18,6 @@
 	saw_off = TRUE
 	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/combat/sawn
 
-
 /obj/item/weapon/gun/projectile/shotgun/pump/combat/sawn
 	name = "\"Regulator\" stakeout shotgun"
 	desc = "Designed for close encounters, the Regulator is widely regarded as a weapon of choice for protecting against boarders. \
@@ -34,10 +33,3 @@
 	damage_multiplier = 0.9
 	fire_delay = 12
 	saw_off = FALSE
-
-/obj/item/weapon/gun/projectile/shotgun/pump/combat_short/attack_self(mob/living/user as mob)
-	if(wielded)
-		pump(user)
-	else if(world.time >= recentpumpmsg + 30)
-		to_chat(user, SPAN_WARNING("You need to wield this gun to pump it!"))
-		recentpumpmsg = world.time

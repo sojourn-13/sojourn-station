@@ -389,6 +389,21 @@
 		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
 	)
 
+/datum/craft_recipe/guild/heavy_barrel
+	name = "Heavy Forged Barrel"
+	result = /obj/item/weapon/gun_upgrade/barrel/bore
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/weapon/gun_upgrade/barrel/forged, 1, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(QUALITY_DRILLING, 60, "time" = 90),
+		list(/obj/item/weapon/tool_upgrade/refinement/ported_barrel, 1, "time" = 30),
+		list(/obj/item/stack/material/plasteel, 2, "time" = 30),
+		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
+	)
+
 /datum/craft_recipe/guild/silencer
 	name = "Silencer"
 	result = /obj/item/weapon/gun_upgrade/muzzle/silencer
