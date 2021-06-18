@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic/blackguard
 	name = "\"Blackguard\" heavy marksman rifle"
-	desc = "A heavily modded and  \"improved\" omnirifle plateform design by Blackshield and Marshals, chambered in chambered in .408,  \
-	With a knife attached to its exstended barrel that leads no room for added moddification, and a small lens on the top leads the gun to be an all around rifle\
+	desc = "A heavily modded and  \"improved\" omnirifle plateform design by Blackshield and Marshals, chambered in chambered in .408, \
+	With a knife attached to its exstended barrel that leads no room for added moddification, and a small lens on the top leads the gun to be an all around rifle \
 	rather then for a specific task. The mag well has the capability unlike other omni or marksman rifles to take drums as well as magazines."
 	icon = 'icons/obj/guns/projectile/blackguard.dmi'
 	icon_state = "sts_blackguard"
