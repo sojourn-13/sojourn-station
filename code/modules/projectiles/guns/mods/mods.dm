@@ -41,6 +41,23 @@
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
 
+//Makes a gun deal more damage. fire faster but recoil heavy
+/obj/item/weapon/gun_upgrade/barrel/bore
+	name = "Heavy barrel"
+	desc = "A properly forged plasteel barrel that has deep barreling to allow bullets to fly true but make recoil controle a nightmare."
+	icon_state = "Forged_heavy_barrel"
+
+/obj/item/weapon/gun_upgrade/barrel/bore/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.1,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1,
+		GUN_UPGRADE_RECOIL = 1.25
+		)
+	I.gun_loc_tag = GUN_BARREL
+	I.req_gun_tags = list(GUN_PROJECTILE)
+
 //Increases penetration multiplier, projectile speed. Increases fire delay. Acquired via science
 /obj/item/weapon/gun_upgrade/barrel/mag_accel
 	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
@@ -445,6 +462,7 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 	GUN_UPGRADE_AUTOEJECT = TRUE)
+	I.req_gun_tags = list(GUN_MAGWELL)
 	I.gun_loc_tag = GUN_MAGWELL
 
 //Trash mods, for putting on old guns

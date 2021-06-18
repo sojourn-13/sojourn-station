@@ -23,7 +23,7 @@
 
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_400, //0.7 damage_multiplier
 		SEMI_AUTO_NODELAY
 		)
 
