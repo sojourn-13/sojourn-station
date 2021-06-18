@@ -381,8 +381,22 @@
 							)
 			step_message = "All it need is a swipe of your ID." // Next step
 
-	// Step 20, Swipe the ID to activate it.
-	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 19))
+	// Step 20, Add the paint.
+	else if((istype(W, /obj/item/weapon/tool_upgrade/productivity/red_paint)) && (build_step == 19))
+		build_step++ // Go to the next assembly part.
+		user.visible_message(
+								SPAN_NOTICE("[user] paint the [src] red."),
+								SPAN_NOTICE("You paint the [src] red.")
+							)
+		step_message = "All it need is a swipe of your ID." // Next step
+		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
+
+		// Remove the armor
+		user.remove_from_mob(W)
+		qdel(W)
+
+	// Step 21, Swipe the ID to activate it.
+	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 20))
 		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
 		if(!access_robotics in C.access) // Are you authorized to start the roomba ?
 			to_chat(user, "You do not have the autorization to start the drone.")
@@ -685,8 +699,22 @@
 							)
 			step_message = "All it need is a swipe of your ID." // Next step
 
-	// Step 21, Swipe the ID to activate it.
-	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 20))
+	// Step 21, Add the paint.
+	else if((istype(W, /obj/item/weapon/tool_upgrade/productivity/red_paint)) && (build_step == 20))
+		build_step++ // Go to the next assembly part.
+		user.visible_message(
+								SPAN_NOTICE("[user] paint the [src] red."),
+								SPAN_NOTICE("You paint the [src] red.")
+							)
+		step_message = "All it need is a swipe of your ID." // Next step
+		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
+
+		// Remove the armor
+		user.remove_from_mob(W)
+		qdel(W)
+
+	// Step 22, Swipe the ID to activate it.
+	else if((istype(W, /obj/item/weapon/card/id)) && (build_step == 21))
 		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
 		if(!access_robotics in C.access) // Are you authorized to start the roomba ?
 			to_chat(user, "You do not have the autorization to start the drone.")

@@ -179,6 +179,7 @@
 	new /obj/item/weapon/bot_part/control(src)
 	new /obj/item/stack/cable_coil(src, 10, "red")
 	new /obj/item/clothing/suit/armor/vest/soteriasuit(src)
+	new /obj/item/weapon/tool_upgrade/productivity/red_paint(src)
 
 /obj/item/weapon/storage/box/mantis_drone_kit
 	name = "Custom Mantis Drone Fabrication Kit"
@@ -198,3 +199,4 @@
 	new /obj/item/weapon/bot_part/control(src)
 	new /obj/item/stack/cable_coil(src, 10, "red")
 	new /obj/item/clothing/suit/armor/vest/soteriasuit(src)
+	new /obj/item/weapon/tool_upgrade/productivity/red_paint(src)

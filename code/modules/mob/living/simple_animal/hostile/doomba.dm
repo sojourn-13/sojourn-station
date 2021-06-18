@@ -731,9 +731,10 @@
 
 // More armor, HP and damage, but move slower
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade
-	name = "Custom-made SI Sword Drone"
-	desc = "A soteria branded sword drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
-	icon_state = "soteria_mantis"
+	name = "Custom-made Sword Drone"
+	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
+	icon = 'icons/mob/custom_bot.dmi'
+	icon_state = "soteria_sword_handmade"
 	health = 600
 	maxHealth = 600
 	melee_damage_lower = 50
@@ -743,13 +744,14 @@
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade/examine(mob/user)
 	..()
-	to_chat(user, SPAN_NOTICE("This one was handmade by an expert Roboticist."))
+	to_chat(user, SPAN_NOTICE("This one bears a large sword to cut problems in half."))
 
 // Less HP, less damage, but faster and can attack in an AoE and pin down mobs.
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade
-	name = "Custom-made SI Mantis Drone"
-	desc = "A soteria branded heavily armored mantis drone, fully robotic and carrying out its combat duty by slaying animals and non-colony humanoids on sight."
-	icon_state = "soteria_mantis"
+	name = "Custom-made Mantis Drone"
+	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
+	icon = 'icons/mob/custom_bot.dmi'
+	icon_state = "soteria_mantis_handmade"
 	health = 450
 	maxHealth = 450
 	melee_damage_lower = 40
@@ -759,7 +761,7 @@
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade/examine(mob/user)
 	..()
-	to_chat(user, SPAN_NOTICE("This one was handmade by an expert Roboticist."))
+	to_chat(user, SPAN_NOTICE("This one bears mantis blades to pin down it's target"))
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced/handmade/AttackingTarget()
 	if(!Adjacent(target_mob))
@@ -787,6 +789,44 @@
 		var/mob/living/victim = target_mob
 		victim.Weaken(5) //decent-length stun
 		src.visible_message(SPAN_WARNING("[src] pins [victim] to the floor with its blades!"))
+
+// Admin only for now, big hammer, lots of damage, tanky as fuck.
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade_hammer
+	name = "Custom-made Hammer Drone"
+	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
+	icon = 'icons/mob/custom_bot.dmi'
+	icon_state = "soteria_rockethammer_handmade"
+	health = 800
+	maxHealth = 800
+	melee_damage_lower = 70
+	melee_damage_upper = 80
+	speed = 1 // Slow as fuck.
+	armor = list(melee = 70, bullet = 70, energy = 70, bomb = 50, bio = 100, rad = 100)
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade_hammer/examine(mob/user)
+	..()
+	to_chat(user, SPAN_NOTICE("This one appears to wield a stellar-grade engine shaped into a hammer."))
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade_hammer/AttackingTarget()
+	if(!Adjacent(target_mob))
+		return
+
+	//special attacks
+	if(prob(35))
+		hammer_slam()
+		return
+
+	return ..() //default attack
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade_hammer/proc/hammer_slam()
+	src.visible_message(SPAN_DANGER("[src] slam its hammer on the ground!"))
+	for(var/atom/target in range(1, src))
+		if(target != src)
+			target.attack_generic(src, rand(melee_damage_lower, melee_damage_upper))
+
+/mob/living/simple_animal/hostile/roomba/synthetic/allied/handmade_hammer/death()
+	new /obj/item/weapon/tool/hammer/charge(src.loc)
+	..()
 
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/junkbot
 	name = "Prospector Junkbot"
