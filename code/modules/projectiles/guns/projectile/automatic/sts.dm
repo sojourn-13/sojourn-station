@@ -140,9 +140,9 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/sts/rifle/blackshield
-	name = "Blackshield \"STS PARA\" rifle"
+	name = "\"STS PARA\" Blackshield rifle"
 	desc = "A lightweight modified variant of the STS-30 that takes 7.5mm rounds, shedding wartime wood for modern plastic polymer. \
-	Modified with a fixed skeletal stock and a shorter barrel, the gas block and bolt within the receiver has been modified to lessen recoil and weight of the weapon. \
+	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified recievers and gas block for better recoil control. \
 	Two stamps are pressed into the side of the receiver: A 'M&C' logo and a blackshield logo."
 	icon = 'icons/obj/guns/projectile/sts35.dmi'
 	icon_state = "stspara"
