@@ -1,8 +1,8 @@
 /obj/item/weapon/gun/projectile/automatic/riot_autoshotgun
 	name = "\"State\" riot shotgun" //With correct mods this can be better then the pug
-	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deploment in most police fields do to the success of the \"Gladstone\". \
-	In its design its clear that it had to be reworked and redone for a number of reasons do to the confusion in design of its non-used pump receiver. \
-	Can hold up to 8 20mm shells in its tube magazine."
+	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation dye to the success of the \"Gladstone\". \
+	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
+	Holds up to eight 20mm shells in a tube magazine."
 	icon = 'icons/obj/guns/projectile/milshotgun.dmi'
 	icon_state = "cshotgun"
 	item_state = "cshotgun"
