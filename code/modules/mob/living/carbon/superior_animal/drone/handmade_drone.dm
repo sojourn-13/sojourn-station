@@ -22,7 +22,6 @@
 	..()
 	visible_message("<b>[src]</b> blows apart!")
 	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
-	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 
 	if(cell) // Only if it does have a cell
 		cell.forceMove(src.loc) // Drop the power cell
