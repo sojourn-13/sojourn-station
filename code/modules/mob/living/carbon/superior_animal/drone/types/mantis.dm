@@ -18,7 +18,7 @@
 	if(!Adjacent(target_mob))
 		return
 
-	if(!(already_slashed))
+	if(!(already_slashed)) // So that we don't do two splash slash in a row
 		//special attacks
 		if(prob(15))
 			splash_slash()
@@ -36,8 +36,8 @@
 /mob/living/carbon/superior_animal/handmade/mantis/proc/splash_slash()
 	src.visible_message(SPAN_DANGER("[src] spins around and slashes in a circle!"))
 	for(var/atom/target in range(1, src))
-		if(target != src)
-			target.UnarmedAttack(src, rand(melee_damage_lower, melee_damage_upper))
+		if((target != src) && (isValidAttackTarget(target))) // Check if the target is valid and not the mantis
+			UnarmedAttack(target, 1)
 
 /mob/living/carbon/superior_animal/handmade/mantis/proc/stun_with_claw()
 	if(isliving(target_mob))

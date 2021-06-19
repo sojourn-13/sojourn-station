@@ -15,13 +15,20 @@
 	mob_size = MOB_MEDIUM
 	randpixel = 0
 
-	var/obj/item/weapon/cell/large/cell = /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
+	var/obj/item/weapon/cell/large/cell = new /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
+	var/mob/following = null // Who are we following?
 
 /mob/living/carbon/superior_animal/handmade/death()
+	..()
+	visible_message("<b>[src]</b> blows apart!")
+	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+
 	if(cell) // Only if it does have a cell
 		cell.forceMove(src.loc) // Drop the power cell
 		cell = null // No more cell in the drone
-	..()
+
+	qdel(src)
 	return
 
 // For repairing damage to the synths.

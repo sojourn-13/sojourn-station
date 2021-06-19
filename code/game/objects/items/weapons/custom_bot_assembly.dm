@@ -410,6 +410,7 @@
 		R.cell = power_cell // Give the roomba the cell used.
 		power_cell.forceMove(R) // Give the cell
 		R.name = created_name // Pass it the custom name
+		R.friends += user // Make the creator a friend.
 		qdel(src)
 
 	// Change the icon_state based on which build step it is.
@@ -729,6 +730,7 @@
 		R.cell = power_cell // Give the roomba the cell used.
 		power_cell.forceMove(R) // Give the cell
 		R.name = created_name // Pass it the custom name
+		R.friends += user // Make the creator a friend.
 		qdel(src)
 
 	// Change the icon_state based on which build step it is.
