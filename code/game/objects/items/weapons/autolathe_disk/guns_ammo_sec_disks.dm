@@ -688,6 +688,19 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/state
+	disk_name = "GmbH - 20mm State Auto Shotgun"
+	desc = "Known as the state, an odd shotgun, often redesigned every few years in a way few people are fully happy with."
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/riot_shotgun = 3,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination,
+		)
+
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/pug
 	disk_name = "SA - 20mm Pug Auto Shotgun"
 	icon_state = "sa"
