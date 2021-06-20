@@ -63,6 +63,7 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_GOLD = 6)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 20000
+	max_chargerate = 0.24
 
 /obj/item/weapon/cell/large/moebius/nuclear
 	name = "Soteria \"Atomcell 14000L\""
@@ -181,6 +182,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 4)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 1600
+	max_chargerate = 0.24
 
 /obj/item/weapon/cell/medium/moebius/nuclear
 	name = "Soteria \"Atomcell 1000M\""
@@ -277,6 +279,7 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_GOLD = 2)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 500
+	max_chargerate = 0.24
 
 /obj/item/weapon/cell/small/moebius/nuclear
 	name = "Soteria \"Atomcell 300S\""
