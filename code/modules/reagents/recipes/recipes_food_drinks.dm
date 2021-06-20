@@ -66,7 +66,7 @@
 
 /datum/chemical_reaction/honey_icecream
 	result = null
-	required_reagents = list("milk" = 10, "sugar" = 5, "ice" = 15, "cream" = 10, "honey" = 5)
+	required_reagents = list("sugar" = 5, "ice" = 15, "cream" = 10, "honey" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
