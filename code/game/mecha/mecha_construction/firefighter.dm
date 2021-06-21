@@ -40,7 +40,7 @@
 		//4
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="External armor is installed leaving room for a reinforced glass panles."),
+			"desc"="External armor is installed but not bolted down."),
 		//5
 		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
 			//"backkey"=QUALITY_PRYING,
