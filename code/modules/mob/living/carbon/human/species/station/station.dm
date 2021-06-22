@@ -734,6 +734,62 @@
 /datum/species/church_synthetic/get_bodytype()
 	return "Synthetic"
 
+/datum/species/nashef_synthetic
+	name = "Nashef-Agunabi"
+	name_plural = "synthetics"
+	default_form = FORM_NASHEF
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	num_alternate_languages = 3
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+	reagent_tag = IS_SYNTHETIC
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+
+	dark_color = "#FFFFFF"
+	light_color = "#000000"
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/nashef_synthetic,
+		BP_GROIN =  new /datum/organ_description/groin/nashef_synthetic,
+		BP_HEAD =   new /datum/organ_description/head/nashef_synthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/nashef_synthetic,
+		BP_R_ARM =  new /datum/organ_description/arm/right/nashef_synthetic,
+		BP_L_LEG =  new /datum/organ_description/leg/left/nashef_synthetic,
+		BP_R_LEG =  new /datum/organ_description/leg/right/nashef_synthetic
+		)
+
+	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
+		)
+
+	stat_modifiers = list(
+		STAT_BIO = 10
+	)
+
+	spawn_flags = IS_RESTRICTED
+
 /*
 /datum/species/full_body_prosthetic
 	name = "Full Body Prosthetic"

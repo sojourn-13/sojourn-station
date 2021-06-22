@@ -271,7 +271,7 @@
 
 /obj/item/roller/compact
 	name = "compact roller bed"
-	desc = "A more durable and compact version of a collapsed roller bed that can be carried around in bags. Once deployed it can't be refolded due to the cheap design."
+	desc = "A more durable and compact version of a collapsed roller bed that can be carried around in bags."
 	slot_flags = NONE
 	w_class = ITEM_SIZE_NORMAL
 	structure_form_type = /obj/structure/bed/roller/compact

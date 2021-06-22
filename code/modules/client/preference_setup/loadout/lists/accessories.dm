@@ -25,6 +25,10 @@
 	display_name = "metal necklace"
 	path = /obj/item/clothing/accessory/necklace
 
+/datum/gear/accessory/fractalrosary
+	display_name = "Fractal Rosary"
+	path = /obj/item/clothing/accessory/fractalrosary
+
 /datum/gear/accessory/neckbrace
 	display_name = "neck brace"
 	path = /obj/item/clothing/accessory/neckbrace

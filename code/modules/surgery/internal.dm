@@ -231,6 +231,7 @@
 	if(I in implants)
 		implants -= I
 		embedded -= I
+		var/isremoved = 0 //Did we already remove the item?
 		if(isitem(I))
 			var/obj/item/item = I
 			item.on_embed_removal(owner)
@@ -239,18 +240,24 @@
 			var/obj/item/weapon/implant/implant = I
 			if(implant.wearer)
 				implant.uninstall()
+				isremoved = 1
 			else
 				I.forceMove(drop_location())
+				isremoved = 1
 
 		if(istype(I, /obj/item/organ_module))
 			if(I == module)
 				var/obj/item/organ_module/M = I
 				M.remove(src)
+				isremoved = 1
 			else
 				I.forceMove(drop_location())
+				isremoved = 1
 
 		if(owner)
 			owner.update_implants()
+		if(isremoved == 0)
+			I.forceMove(drop_location())
 
 	if(I in internal_organs)
 		var/obj/item/organ/organ = I

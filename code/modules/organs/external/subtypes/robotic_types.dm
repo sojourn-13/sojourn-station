@@ -60,7 +60,7 @@ obj/item/organ/external/robotic/technomancer/groin
 /obj/item/organ/external/robotic/technomancer/head
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
-
+/*
 // Synth-Skin
 /obj/item/organ/external/robotic/full_body_prosthetic
 	name = "Full Body Prosthetic \"Synth-Skin\""
@@ -79,7 +79,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 /obj/item/organ/external/robotic/full_body_prosthetic/head
 	name = "Full Body Prosthetic \"Synth-Skin\" Head"
 	default_description = /datum/organ_description/head
-
+*/
 // Junktech
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""
@@ -248,4 +248,35 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	default_description = /datum/organ_description/leg/left
 
 /obj/item/organ/external/robotic/one_star/r_leg
+	default_description = /datum/organ_description/leg/right
+
+// Greyson
+/obj/item/organ/external/robotic/nashef
+	name = "Nashef-Agunabi"
+	desc = "A robotic limb crafted from metallic hydrogen and gold"
+	force_icon = 'icons/mob/human_races/cyberlimbs/nashef-agunabi.dmi'
+	model = "nashef-agunabi"
+	armor = list(melee = 20, bullet = 20, energy = 35, bomb = 30, bio = 0, rad = 100)
+	matter = list(MATERIAL_HYDROGEN = 5, MATERIAL_GOLD = 4, MATERIAL_PLATINUM = 2)
+	max_damage = 70
+	min_broken_damage = 50
+
+/obj/item/organ/external/robotic/nashef/torso
+	name = "\"Nashef-Agunabi\" Torso"
+	default_description = /datum/organ_description/chest
+
+/obj/item/organ/external/robotic/nashef/head
+	name = "\"Nashef-Agunabi\" Head"
+	default_description = /datum/organ_description/head
+
+/obj/item/organ/external/robotic/nashef/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/nashef/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/nashef/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/nashef/r_leg
 	default_description = /datum/organ_description/leg/right

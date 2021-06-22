@@ -284,6 +284,30 @@
 /datum/organ_description/leg/right/church_synthetic
 	default_type = /obj/item/organ/external/robotic/church
 
+//Nashef
+/datum/organ_description/chest/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/groin/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/head/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+	functions = null
+
+/datum/organ_description/arm/left/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/arm/right/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/leg/left/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/leg/right/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/*
 //FBP
 /datum/organ_description/chest/full_body_prosthetic
 	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
@@ -306,3 +330,4 @@
 
 /datum/organ_description/leg/right/full_body_prosthetic
 	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+*/
