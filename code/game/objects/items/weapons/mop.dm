@@ -170,9 +170,18 @@
 
 		return
 	else
-		src.visible_message(SPAN_NOTICE("The condenser on the [src] shuts off, battery light blinking."))
+		src.visible_message(SPAN_NOTICE("The condenser on the [src] shuts off, its battery light blinking."))
 		condensing = FALSE
 		STOP_PROCESSING(SSobj, src)
+
+/obj/item/weapon/mop/guild/MouseDrop(over_object)
+	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(mycell, usr))
+		mycell = null
+		src.visible_message(SPAN_NOTICE("The condenser on the [src] shuts off as its battery light turns off."))
+		STOP_PROCESSING(SSobj, src)
+	else
+		return ..()
+
 
 /obj/item/weapon/mop/guild/Initialize()
 	. = ..()
