@@ -147,25 +147,6 @@
 	min_n2 = 0
 	max_n2 = 0
 
-/mob/living/simple_animal/hostile/carp/greatwhite
-	name = "great white carp"
-	desc = "A very rare breed of carp and a very aggressive one."
-	icon = 'icons/mob/64x64.dmi'
-	icon_state = "megacarp"
-	icon_dead = "megacarp_dead"
-	maxHealth = 230
-	health = 230
-	//attack_same = 1 We no longer attack are yonger less rare of breeds
-	speed = 1
-	meat_amount = 10
-	melee_damage_lower = 15
-	melee_damage_upper = 25
-	old_y = -16
-	pixel_y = -16
-	leather_amount = 10 //The amount of leather sheets dropped.
-	bones_amount = 10 //The amount of bone sheets dropped.
-	mob_size = MOB_LARGE
-
 /mob/living/simple_animal/hostile/retaliate/hippo
 	name = "hippo"
 	desc = "Mostly know for the spectacular hit of the live action movie Hungry Hungry Hippos."

@@ -47,6 +47,68 @@
 	melee_damage_lower = 4
 	melee_damage_upper = 6
 
+/mob/living/simple_animal/hostile/carp/pike
+	name = "space carp pike"
+	desc = "A bigger, angrier cousin of the space carp."
+	icon = 'icons/mob/spaceshark.dmi'
+	icon_state = "shark"
+	meat_amount = 6
+	turns_per_move = 2
+	move_to_delay = 2
+	speed = 0
+	mob_size = MOB_LARGE
+
+	//pixel_x = -16
+
+	health = 75
+	maxHealth = 75
+	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	harm_intent_damage = 5
+	melee_damage_lower = 20
+	melee_damage_upper = 25
+
+	break_stuff_probability = 100
+
+/mob/living/simple_animal/hostile/carp/shark
+	name = "space shark"
+	desc = "A large carp with sets of sharp teeth and armored scales to be even more deadly."
+	icon = 'icons/mob/mobs-monster.dmi'
+	icon_state = "neocarp"
+	meat_amount = 8
+	turns_per_move = 1
+	move_to_delay = 1
+	mob_size = MOB_LARGE
+
+	health = 275
+	maxHealth = 275
+	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	melee_damage_lower = 40
+	melee_damage_upper = 65
+
+	break_stuff_probability = 100
+
+/mob/living/simple_animal/hostile/carp/greatwhite
+	name = "great white carp"
+	desc = "A very rare breed of carp and a very aggressive one."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "megacarp"
+	icon_dead = "megacarp_dead"
+	maxHealth = 230
+	health = 230
+	//attack_same = 1 We no longer attack are yonger less rare of breeds
+	speed = 1
+	meat_amount = 10
+	melee_damage_lower = 55
+	melee_damage_upper = 65
+	old_y = -16
+	pixel_y = -16
+	leather_amount = 10 //The amount of leather sheets dropped.
+	bones_amount = 10 //The amount of bone sheets dropped.
+	mob_size = MOB_LARGE
+	special_parts = list(/obj/item/animal_part/wolf_tooth,
+						 /obj/item/animal_part/wolf_tooth,
+						 /obj/item/animal_part/wolf_tooth)
+
 /mob/living/simple_animal/hostile/carp/allow_spacemove()
 	return 1	//No drifting in space for space carp!	//original comments do not steal
 

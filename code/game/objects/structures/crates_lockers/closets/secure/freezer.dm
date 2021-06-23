@@ -3,7 +3,7 @@
 
 /obj/structure/closet/secure_closet/freezer/kitchen
 	name = "kitchen cabinet"
-	icon_state = "freezer"
+	icon_state = "frig"
 	req_access = list(access_kitchen)
 
 /obj/structure/closet/secure_closet/freezer/kitchen/populate_contents()
@@ -14,12 +14,12 @@
 		new /obj/item/weapon/reagent_containers/food/snacks/meat/monkey(src)
 
 /obj/structure/closet/secure_closet/freezer/kitchen/mining
-	icon_state = "freezer"
+	icon_state = "frig"
 	req_access = list()
 
 /obj/structure/closet/secure_closet/freezer/meat
 	name = "meat fridge"
-	icon_state = "freezer"
+	icon_state = "frig"
 
 /obj/structure/closet/secure_closet/freezer/meat/populate_contents()
 	for(var/i in 1 to 3)
@@ -35,7 +35,7 @@
 
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
-	icon_state = "freezer"
+	icon_state = "frig"
 
 /obj/structure/closet/secure_closet/freezer/fridge/populate_contents()
 	for(var/i in 1 to 5)
