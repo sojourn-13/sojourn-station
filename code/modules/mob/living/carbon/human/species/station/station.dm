@@ -861,7 +861,7 @@
 	poison_type = "plasma"				// Poisonous air.
 	exhale_type = "oxygen"
 	burn_mod = 2						// Burn damage multiplier.
-	light_dam = 1
+	light_dam = 1 // Same threshold as the Nightcrawler perk
 
 	flags = NO_PAIN
 
@@ -906,3 +906,38 @@
 
 /datum/species/human/get_bodytype()
 	return "Folken"
+
+/datum/species/mycus
+	name = "Mycus"
+	name_plural = "Myci"
+	default_form = FORM_MYCUS
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "N/A"
+	num_alternate_languages = 2
+	name_language = null	// Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+
+	burn_mod = 2						// Burn damage multiplier.
+	light_dam = 1 // Same threshold as the Nightcrawler perk
+
+	dark_color = "#ffffff"
+	light_color = "#000000"
+
+	perks = list(PERK_DARK_HEAL)
+
+	stat_modifiers = list(
+		STAT_BIO = 0,
+		STAT_COG = 0,
+		STAT_MEC = 0,
+		STAT_ROB = 20,
+		STAT_TGH = 0,
+		STAT_VIG = 0
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/human/get_bodytype()
+	return "Mycus"

@@ -74,3 +74,6 @@
 #define PERK_FOLKEN_HEALING /datum/perk/folken_healing
 #define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
 #define PERK_THERMAL /datum/perk/thermal
+#define PERK_DARK_HEAL /datum/perk/dark_heal
+#define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
+#define PERK_SLIME_FOLLOWER /datum/perk/slime_follower

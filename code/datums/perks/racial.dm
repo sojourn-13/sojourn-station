@@ -483,7 +483,7 @@
 	new /obj/item/weapon/tool/tape_roll/repair_goo(usr.loc)
 	return ..()
 
-// Folken Perks
+///////////////////////////// Folken Perks
 
 /datum/perk/oddity_reroll
 	name = "Reroll Oddity"
@@ -512,12 +512,10 @@
 
 /datum/perk/folken_healing
 	name = "Folken Photo-Healing"
-	desc = "Allow you heal yourself"
+	desc = "As a Folken, you can use the light to heal wounds."
 	passivePerk = TRUE
-	var/healing = 5 // Healing by tick
 
 /datum/perk/folken_healing/young
-	healing = 10
 
 /datum/perk/thermal
 	name = "Folken Thermal-Vision"
@@ -535,3 +533,50 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.reagents.add_reagent("folkenium", 5)
 	return ..()
+
+////////////////////////////// Mycus Perks
+
+/datum/perk/dark_heal
+	name = "Mycus Regeneration"
+	desc = "As a mycus, you heal as long as you are in the darkness."
+	passivePerk = TRUE
+
+/datum/perk/mushroom_follower
+	name = "Spawn Mushroom Follower"
+	desc = "Mushroom followers produces random healing chems when fed enough food."
+	active = FALSE
+	passivePerk = FALSE
+	var/list/follower = list(/mob/living/simple_animal/hostile/plant, /mob/living/simple_animal/hostile/plant/alt)
+
+/datum/perk/mushroom_follower/activate()
+	var/mob/living/carbon/human/user = usr
+	var/mob/living/simple_animal/hostile/plant/shroom = pick(follower)
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(user, SPAN_NOTICE("You can't make a follower so soon."))
+		return FALSE
+	cooldown_time = world.time + 15 MINUTES
+	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
+	new shroom(user.loc)
+	..()
+
+/datum/perk/slime_follower
+	name = "Spawn Slime Follower"
+	desc = "Slime followers regenerates and has better stats fit for combat."
+	active = FALSE
+	passivePerk = FALSE
+	var/list/follower = list(/mob/living/simple_animal/hostile/plant, /mob/living/simple_animal/hostile/plant/alt)
+
+/datum/perk/slime_follower/activate()
+	var/mob/living/carbon/human/user = usr
+	var/mob/living/simple_animal/hostile/plant/shroom = pick(follower)
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(user, SPAN_NOTICE("You can't make a follower so soon."))
+		return FALSE
+	cooldown_time = world.time + 15 MINUTES
+	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
+	new shroom(user.loc)
+	..()

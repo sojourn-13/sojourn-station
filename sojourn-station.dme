@@ -441,6 +441,7 @@
 #include "code\datums\setup_option\backgrounds\origin_human.dm"
 #include "code\datums\setup_option\backgrounds\origin_kriosan.dm"
 #include "code\datums\setup_option\backgrounds\origin_marqua.dm"
+#include "code\datums\setup_option\backgrounds\origin_mycus.dm"
 #include "code\datums\setup_option\backgrounds\origin_naramad.dm"
 #include "code\datums\setup_option\backgrounds\origin_opifex.dm"
 #include "code\datums\setup_option\backgrounds\origin_sablekyne.dm"

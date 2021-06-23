@@ -86,6 +86,7 @@
 #define FORM_NASHEF				"Nashef-Agunabi"
 #define FORM_FBP				"Full Body Prosthetic"
 #define FORM_FOLKEN				"Folken"
+#define FORM_MYCUS				"Mycus"
 
 #define FORM_BIRD				"Avian"
 
