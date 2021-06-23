@@ -379,7 +379,7 @@
 								SPAN_NOTICE("[user] weld the armor in place."),
 								SPAN_NOTICE("You weld the armor in place.")
 							)
-			step_message = "All it need is a swipe of your ID." // Next step
+			step_message = "It need to be painted in red." // Next step
 
 	// Step 20, Add the paint.
 	else if((istype(W, /obj/item/weapon/tool_upgrade/productivity/red_paint)) && (build_step == 19))
@@ -698,7 +698,7 @@
 								SPAN_NOTICE("[user] weld the armor in place."),
 								SPAN_NOTICE("You weld the armor in place.")
 							)
-			step_message = "All it need is a swipe of your ID." // Next step
+			step_message = "It need to be painted in red." // Next step
 
 	// Step 21, Add the paint.
 	else if((istype(W, /obj/item/weapon/tool_upgrade/productivity/red_paint)) && (build_step == 20))
