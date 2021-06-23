@@ -862,7 +862,7 @@
 	exhale_type = "oxygen"
 	burn_mod = 2						// Burn damage multiplier.
 	light_dam = 1 // Same threshold as the Nightcrawler perk
-
+	vision_flags = SEE_SELF
 	flags = NO_PAIN
 
 	dark_color = "#ffffff"

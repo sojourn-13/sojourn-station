@@ -783,13 +783,12 @@
 				else
 					heal_overall_damage(2,2)
 
-		if(stats.getPerk(PERK_DARK_HEAL))
+		else if(stats.getPerk(PERK_DARK_HEAL)) // Is the species a Mycus?
 			if(light_amount <= species.light_dam) // Enough light threshold
 				heal_overall_damage(2,2)
 
-		else // They are not folken nor mycus
-			if(light_amount > species.light_dam) //if there's enough light, start dying
-				take_overall_damage(1,1)
+		else if(light_amount > species.light_dam) //if there's enough light, start dying
+			take_overall_damage(1,1)
 
 	// TODO: stomach and bloodstream organ.
 	handle_trace_chems()

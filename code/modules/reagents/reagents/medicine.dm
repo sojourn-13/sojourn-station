@@ -1232,19 +1232,3 @@
 		M.sleeping = max(M.sleeping, 20)
 		M.drowsyness = max(M.drowsyness, 60)
 	M.add_chemical_effect(CE_PULSE, -1)
-
-/datum/reagent/medicine/folkenium
-	name = "Folkenium"
-	id = "folkenium"
-	description = "Folkenium is a highly specialized chemical made by Folkens that allow them to see heat."
-	taste_description = "bitterness"
-	reagent_state = LIQUID
-	color = "#FF3300"
-	nerve_system_accumulations = 0
-	appear_in_default_catalog = FALSE
-	constant_metabolism = TRUE
-	scannable = FALSE
-
-/datum/reagent/medicine/folkenium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	//M.add_chemical_effect(SEE_MOBS, SEE_INVISIBLE_NOLIGHTING) // Commented out and replaced with night vision until I manage to make it work
-	M.add_chemical_effect(CE_DARKSIGHT, SEE_INVISIBLE_NOLIGHTING)
