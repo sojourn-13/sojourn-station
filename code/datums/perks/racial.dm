@@ -482,3 +482,56 @@
 	playsound(usr.loc, 'sound/effects/blobattack.ogg', 50, 1)
 	new /obj/item/weapon/tool/tape_roll/repair_goo(usr.loc)
 	return ..()
+
+// Folken Perks
+
+/datum/perk/oddity_reroll
+	name = "Reroll Oddity"
+	desc = "Allow you to change the stat bonuses of an oddity"
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/oddity_reroll/activate()
+	var/mob/living/carbon/human/user = usr
+	var/obj/item/weapon/oddity/O = user.get_active_hand()
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You can't force change so soon."))
+		return FALSE
+	if(!istype(O, /obj/item/weapon/oddity))
+		to_chat(usr, SPAN_NOTICE("This isn't an oddity !"))
+		return FALSE
+	cooldown_time = world.time + 10 MINUTES
+	user.visible_message("[user] do something to the anomaly in their hand.", "You do something to the anomaly in their hand.")
+	log_and_message_admins("used their [src] perk.")
+	if(O.oddity_stats)
+		if(O.random_stats)
+			for(var/stat in O.oddity_stats)
+				O.oddity_stats[stat] = (rand(1, O.oddity_stats[stat]) + 5)
+
+/datum/perk/folken_healing
+	name = "Folken Photo-Healing"
+	desc = "Allow you heal yourself"
+	passivePerk = TRUE
+	var/healing = 5 // Healing by tick
+
+/datum/perk/folken_healing/young
+	healing = 10
+
+/datum/perk/thermal
+	name = "Folken Thermal-Vision"
+	desc = "Temporarily allow you to see through walls"
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/thermal/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your eyes are too exhausted to do that."))
+		return FALSE
+	cooldown_time = world.time + 15 MINUTES
+	user.reagents.add_reagent("folkenium", 5)
+	return ..()

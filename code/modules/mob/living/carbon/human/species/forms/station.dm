@@ -116,7 +116,6 @@
 	deform = null
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
-
 /datum/species_form/stationxeno
 	playable = FALSE
 	name = FORM_STATIONXENO
@@ -275,3 +274,10 @@
 	knockout_message = "has been knocked offline!"
 	halloss_message = "falls down with a loud clash and seems to be unresponsive."
 	halloss_message_self = "Your systems are rebooting after an overload."
+
+/datum/species_form/folken
+	playable = TRUE
+	name = FORM_FOLKEN
+	base = 'icons/mob/human_races/r_diona.dmi'
+	deform = null
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_SKIN_COLOR

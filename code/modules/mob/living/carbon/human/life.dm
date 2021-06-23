@@ -776,10 +776,18 @@
 			var/turf/T = loc
 			light_amount = round((T.get_lumcount()*10)-5)
 
-		if(light_amount > species.light_dam) //if there's enough light, start dying
-			take_overall_damage(1,1)
-		else //heal in the dark
-			heal_overall_damage(1,1)
+		if(stats.getPerk(PERK_FOLKEN_HEALING) || stats.getPerk(PERK_FOLKEN_HEALING_YOUNG)) // Folken will have this perk
+			if(light_amount >= species.light_dam) // Enough light threshold
+				if(stats.getPerk(PERK_FOLKEN_HEALING_YOUNG)) // They are young Folken and will heal faster
+					heal_overall_damage(5,5)
+				else
+					heal_overall_damage(2,2)
+
+		else // They are not folken
+			if(light_amount > species.light_dam) //if there's enough light, start dying
+				take_overall_damage(1,1)
+			else //heal in the dark
+				heal_overall_damage(1,1)
 
 	// TODO: stomach and bloodstream organ.
 	handle_trace_chems()

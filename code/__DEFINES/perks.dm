@@ -70,3 +70,7 @@
 #define PERK_SECOND_SKIN /datum/perk/second_skin
 #define PERK_IRON_FLESH /datum/perk/iron_flesh
 #define PERK_SI_SCI /datum/perk/si_sci
+#define PERK_ODD_REROLL /datum/perk/oddity_reroll
+#define PERK_FOLKEN_HEALING /datum/perk/folken_healing
+#define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
+#define PERK_THERMAL /datum/perk/thermal
