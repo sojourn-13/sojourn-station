@@ -77,7 +77,7 @@
 	// Step 5, Program the roomba.
 	else if((QUALITY_PULSING) && (build_step == 4))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] program the roomba."),
@@ -89,7 +89,7 @@
 	// Step 6, Close the panel.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 5))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] close the panel."),
@@ -210,7 +210,7 @@
 	// Step 6, Wrenching the bolts.
 	else if((QUALITY_BOLT_TURNING) && (build_step == 5))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] wrench the frames together."),
@@ -221,7 +221,7 @@
 	// Step 7, Securing the screws
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 6))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] tighten the screws."),
@@ -246,7 +246,7 @@
 	// Step 9, Secure the hydraulics.
 	else if((QUALITY_BOLT_TURNING) && (build_step == 8))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] secure the hydraulic system."),
@@ -286,7 +286,7 @@
 	// Step 12, Secure the cell
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 11))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] secure the power cell."),
@@ -311,7 +311,7 @@
 	// Step 14, Secure the board
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 13))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] secured the board."),
@@ -325,6 +325,8 @@
 		if(C.get_amount() < 10) // Is there enough cables?
 			to_chat(user, ("There's not enough material in this stack."))
 			return
+		if(!do_after(user, WORKTIME_DELAYED, src))
+			return
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
 								SPAN_NOTICE("[user] wire the drone."),
@@ -337,7 +339,7 @@
 	// Step 16, Program the drone.
 	else if((QUALITY_PULSING) && (build_step == 15))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] program the drone."),
@@ -348,7 +350,7 @@
 	// Step 17, Close the panel.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 16))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] close the panel."),
@@ -373,7 +375,7 @@
 	// Step 19, Weld the armor.
 	else if((QUALITY_WELDING) && (build_step == 18))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] weld the armor in place."),
@@ -383,6 +385,8 @@
 
 	// Step 20, Add the paint.
 	else if((istype(W, /obj/item/weapon/tool_upgrade/productivity/red_paint)) && (build_step == 19))
+		if(!do_after(user, WORKTIME_DELAYED, src))
+			return
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
 								SPAN_NOTICE("[user] paint the [src] red."),
@@ -391,7 +395,7 @@
 		step_message = "All it need is a swipe of your ID." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
-		// Remove the armor
+		// Remove the paint
 		user.remove_from_mob(W)
 		qdel(W)
 
@@ -508,7 +512,7 @@
 	// Step 6, Wrenching the bolts.
 	else if((QUALITY_BOLT_TURNING) && (build_step == 5))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] wrench the frames together."),
@@ -520,7 +524,7 @@
 	// Step 7, Securing the screws
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 6))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] tighten the screws."),
@@ -546,7 +550,7 @@
 	// Step 9, Secure the hydraulics.
 	else if((QUALITY_BOLT_TURNING) && (build_step == 8))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] secure the hydraulic system."),
@@ -601,7 +605,7 @@
 	// Step 13, Secure the power cell.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 12))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] secure the power cell."),
@@ -627,7 +631,7 @@
 	// Step 15, Secure the board
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 14))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] secured the board."),
@@ -642,6 +646,8 @@
 		if(C.get_amount() < 10) // Is there enough cables?
 			to_chat(user, ("There's not enough material in this stack."))
 			return
+		if(!do_after(user, WORKTIME_DELAYED, src))
+			return
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
 								SPAN_NOTICE("[user] wire the drone."),
@@ -654,7 +660,7 @@
 	// Step 17, Program the drone.
 	else if((QUALITY_PULSING) && (build_step == 16))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] program the drone."),
@@ -666,7 +672,7 @@
 	// Step 18, Close the panel.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 17))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] close the panel."),
@@ -692,7 +698,7 @@
 	// Step 20, Weld the armor.
 	else if((QUALITY_WELDING) && (build_step == 19))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
+		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
 								SPAN_NOTICE("[user] weld the armor in place."),
@@ -702,6 +708,8 @@
 
 	// Step 21, Add the paint.
 	else if((istype(W, /obj/item/weapon/tool_upgrade/productivity/red_paint)) && (build_step == 20))
+		if(!do_after(user, WORKTIME_DELAYED, src))
+			return
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
 								SPAN_NOTICE("[user] paint the [src] red."),
@@ -710,7 +718,7 @@
 		step_message = "All it need is a swipe of your ID." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
-		// Remove the armor
+		// Remove the paint
 		user.remove_from_mob(W)
 		qdel(W)
 

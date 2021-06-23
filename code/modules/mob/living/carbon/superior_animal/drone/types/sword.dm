@@ -8,7 +8,5 @@
 	maxHealth = 500
 	melee_damage_lower = 40
 	melee_damage_upper = 50
-
-/mob/living/carbon/superior_animal/handmade/sword/examine(mob/user)
-	..()
-	to_chat(user, SPAN_NOTICE("This one bears a large sword to cut problems in half."))
+	move_to_delay = 4
+	exam_message = "This one bears a large sword to cut problems in half."

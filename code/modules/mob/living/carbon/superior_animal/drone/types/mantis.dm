@@ -8,11 +8,9 @@
 	maxHealth = 450
 	melee_damage_lower = 30
 	melee_damage_upper = 40
+	move_to_delay = 3
+	exam_message = "This one bears mantis blades to pin down it's target."
 	var/already_slashed = FALSE // So that we don't do the round slash twice in a row.
-
-/mob/living/carbon/superior_animal/handmade/mantis/examine(mob/user)
-	..()
-	to_chat(user, SPAN_NOTICE("This one bears mantis blades to pin down it's target"))
 
 /mob/living/carbon/superior_animal/handmade/mantis/UnarmedAttack()
 	if(!Adjacent(target_mob))
@@ -36,7 +34,7 @@
 /mob/living/carbon/superior_animal/handmade/mantis/proc/splash_slash()
 	src.visible_message(SPAN_DANGER("[src] spins around and slashes in a circle!"))
 	for(var/atom/target in range(1, src))
-		if((target != src) && (isValidAttackTarget(target))) // Check if the target is valid and not the mantis
+		if((target != src) && !(target in friends) && (isValidAttackTarget(target))) // Check if the target is valid and not the mantis or a friend
 			UnarmedAttack(target, 1)
 
 /mob/living/carbon/superior_animal/handmade/mantis/proc/stun_with_claw()

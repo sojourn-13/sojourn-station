@@ -14,21 +14,26 @@
 	meat_amount = 0
 	mob_size = MOB_MEDIUM
 	randpixel = 0
+	var/exam_message = "If you see this, report it to Kaz or R4d6." // Custom message that show when examined and is different for each model.
 
 	var/obj/item/weapon/cell/large/cell = new /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
 	var/mob/following = null // Who are we following?
 
-/mob/living/carbon/superior_animal/handmade/death()
+/mob/living/carbon/superior_animal/handmade/examine(mob/user)
 	..()
-	visible_message("<b>[src]</b> blows apart!")
-	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	to_chat(user, SPAN_NOTICE("[exam_message]"))
 
-	if(cell) // Only if it does have a cell
-		cell.forceMove(src.loc) // Drop the power cell
-		cell = null // No more cell in the drone
+/mob/living/carbon/superior_animal/handmade/death(var/gibbed, var/message = "blows apart!")
+	if (stat != DEAD)
+		new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
 
-	qdel(src)
-	return
+		if(cell) // Only if it does have a cell
+			cell.forceMove(src.loc) // Drop the power cell
+			cell = null // No more cell in the drone
+
+		.=..()
+		if(src)
+			qdel(src)
 
 // For repairing damage to the synths.
 /mob/living/simple_animal/hostile/roomba/synthetic/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
