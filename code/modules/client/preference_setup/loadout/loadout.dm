@@ -313,6 +313,7 @@ var/list/gear_datums = list()
 /datum/gear/New()
 	if(FLAGS_EQUALS(flags, GEAR_HAS_TYPE_SELECTION|GEAR_HAS_SUBTYPE_SELECTION))
 		CRASH("May not have both type and subtype selection tweaks")
+	gear_tweaks = list(gear_tweak_free_name, gear_tweak_free_desc)
 	if(!description)
 		var/obj/O = path
 		description = initial(O.desc)
@@ -322,6 +323,7 @@ var/list/gear_datums = list()
 		gear_tweaks += new/datum/gear_tweak/path/type(path)
 	if(flags & GEAR_HAS_SUBTYPE_SELECTION)
 		gear_tweaks += new/datum/gear_tweak/path/subtype(path)
+
 
 /datum/gear/proc/get_description(var/metadata)
 	. = description
