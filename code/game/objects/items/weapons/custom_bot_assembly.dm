@@ -325,6 +325,10 @@
 		if(C.get_amount() < 10) // Is there enough cables?
 			to_chat(user, ("There's not enough material in this stack."))
 			return
+		user.visible_message(
+								SPAN_NOTICE("[user] start to wire the [src]."),
+								SPAN_NOTICE("You start to wire the [src].")
+							)
 		if(!do_after(user, WORKTIME_DELAYED, src))
 			return
 		build_step++ // Go to the next assembly part.
@@ -385,6 +389,10 @@
 
 	// Step 20, Add the paint.
 	else if((istype(W, /obj/item/weapon/tool_upgrade/productivity/red_paint)) && (build_step == 19))
+		user.visible_message(
+								SPAN_NOTICE("[user] start to paint the [src] red."),
+								SPAN_NOTICE("You start to paint the [src] red.")
+							)
 		if(!do_after(user, WORKTIME_DELAYED, src))
 			return
 		build_step++ // Go to the next assembly part.
@@ -646,6 +654,10 @@
 		if(C.get_amount() < 10) // Is there enough cables?
 			to_chat(user, ("There's not enough material in this stack."))
 			return
+		user.visible_message(
+								SPAN_NOTICE("[user] start to wire the [src]."),
+								SPAN_NOTICE("You start to wire the [src].")
+							)
 		if(!do_after(user, WORKTIME_DELAYED, src))
 			return
 		build_step++ // Go to the next assembly part.
@@ -708,6 +720,10 @@
 
 	// Step 21, Add the paint.
 	else if((istype(W, /obj/item/weapon/tool_upgrade/productivity/red_paint)) && (build_step == 20))
+		user.visible_message(
+								SPAN_NOTICE("[user] start to paint the [src] red."),
+								SPAN_NOTICE("You start to paint the [src] red.")
+							)
 		if(!do_after(user, WORKTIME_DELAYED, src))
 			return
 		build_step++ // Go to the next assembly part.
