@@ -65,6 +65,12 @@
 		if(C.get_amount() < 5) // Is there enough cables?
 			to_chat(user, ("There's not enough material in this stack."))
 			return
+		user.visible_message(
+								SPAN_NOTICE("[user] start to program the [src]."),
+								SPAN_NOTICE("You start to program the [src].")
+							)
+		if(!do_after(user, WORKTIME_FAST, src))
+			return
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
 								SPAN_NOTICE("[user] wire up the roomba."),
@@ -77,6 +83,10 @@
 	// Step 5, Program the roomba.
 	else if((QUALITY_PULSING) && (build_step == 4))
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
+		user.visible_message(
+								SPAN_NOTICE("[user] start to program the [src]."),
+								SPAN_NOTICE("You start to program the [src].")
+							)
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
