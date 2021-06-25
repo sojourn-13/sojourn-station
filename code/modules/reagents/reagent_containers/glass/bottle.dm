@@ -192,3 +192,6 @@
 
 /obj/item/weapon/reagent_containers/glass/bottle/organic/meralyne
 	preloaded_reagents = list("meralyne" = 60)
+
+/obj/item/weapon/reagent_containers/glass/bottle/organic/dermatane
+	preloaded_reagents = list("dermaline" = 30, "kelotane" = 30)

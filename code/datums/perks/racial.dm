@@ -567,11 +567,10 @@
 	desc = "Mushroom followers produces random healing chems when fed enough food."
 	active = FALSE
 	passivePerk = FALSE
-	var/list/follower = list(/mob/living/simple_animal/hostile/plant, /mob/living/simple_animal/hostile/plant/alt)
+	var/follower_type = /mob/living/carbon/superior_animal/fungi/shroom
 
 /datum/perk/mushroom_follower/activate()
 	var/mob/living/carbon/human/user = usr
-	var/mob/living/simple_animal/hostile/plant/shroom = pick(follower)
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
@@ -579,7 +578,9 @@
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
 	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
-	new shroom(user.loc)
+	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
+	mushroom.friends += user
+	mushroom.following = user
 	..()
 
 /datum/perk/slime_follower
@@ -587,11 +588,11 @@
 	desc = "Slime followers regenerates and has better stats fit for combat."
 	active = FALSE
 	passivePerk = FALSE
-	var/list/follower = list(/mob/living/simple_animal/hostile/plant, /mob/living/simple_animal/hostile/plant/alt)
+	var/follower_type = /mob/living/carbon/superior_animal/fungi/slime
 
 /datum/perk/slime_follower/activate()
 	var/mob/living/carbon/human/user = usr
-	var/mob/living/simple_animal/hostile/plant/shroom = pick(follower)
+
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
@@ -599,5 +600,7 @@
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
 	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
-	new shroom(user.loc)
+	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
+	mushroom.friends += user
+	mushroom.following = user
 	..()
