@@ -418,6 +418,28 @@
 /datum/perk/robotics_expert
 	name = "Robotics Expert"
 	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
+	var/known_recipes = list(
+			/datum/craft_recipe/robotic/custom_board,
+			/datum/craft_recipe/robotic/roomba_frame,
+			/datum/craft_recipe/robotic/roomba_treads,
+			/datum/craft_recipe/robotic/roomba_knife,
+			/datum/craft_recipe/robotic/roomba_armor,
+			/datum/craft_recipe/robotic/roomba_armor/heavy,
+			/datum/craft_recipe/robotic/sword_frame,
+			/datum/craft_recipe/robotic/mantis_frame,
+			/datum/craft_recipe/robotic/head_frame,
+			/datum/craft_recipe/robotic/left_arm_frame,
+			/datum/craft_recipe/robotic/right_arm_frame,
+			/datum/craft_recipe/robotic/left_leg_frame,
+			/datum/craft_recipe/robotic/right_leg_frame
+			)
+
+/datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
+	..()
+	holder.mind.knownCraftRecipes.Add(known_recipes)
+
+/datum/perk/robotics_expert/remove()
+	holder.mind.knownCraftRecipes.Remove(known_recipes)
 
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
