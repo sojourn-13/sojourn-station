@@ -141,6 +141,21 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/supermop
+	name = "pneumatic condensing mop"
+	result = /obj/item/weapon/tool/mop/guild
+	steps = list(
+		list(/obj/item/weapon/mop, 1),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 40),
+		list(QUALITY_CUTTING, 20, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(/obj/item/stack/cable_coil, 5, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 20, 30),
+		list(QUALITY_SCREW_DRIVING, 20, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
+	)
+
 //Weapons ------------------------
 /datum/craft_recipe/guild/railgunrifle
 	name = "reductor rail rifle"
