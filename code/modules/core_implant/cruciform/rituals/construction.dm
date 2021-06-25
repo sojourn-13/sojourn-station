@@ -19,6 +19,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	desc = "Building needs mainly faith but resources as well. Find out what it takes."
 	power = 5
 	category = "Construction"
+	nutri_cost = 10
+	blood_cost = 10
 
 /datum/ritual/cruciform/priest/blueprint_check/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
@@ -30,6 +32,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		listed_components += list("[blueprint.materials[placeholder]] [initial(placeholder.name)]")
 	to_chat(user, SPAN_NOTICE("[blueprint.name] requires: [english_list(listed_components)]."))
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 
 /datum/ritual/cruciform/priest/construction
 	name = "Manifestation"
@@ -37,6 +45,9 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	desc = "Build and expand. Shape your faith into something more sensible."
 	power = 40
 	category = "Construction"
+	nutri_cost = 25
+	blood_cost = 25
+
 
 /datum/ritual/cruciform/priest/construction/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
@@ -50,6 +61,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		return
 
 	user.visible_message(SPAN_NOTICE("You see as [user] passes his hands over something."),SPAN_NOTICE("You see your faith take physical form as you concentrate on [blueprint.name] image"))
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 
 	var/obj/effect/overlay/nt_construction/effect = new(target_turf, blueprint.build_time)
 
