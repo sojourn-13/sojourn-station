@@ -135,53 +135,19 @@
 
 /obj/item/weapon/mop/guild
 	name = "articulated mop"
-	desc = "An Artificer's Guild-modified mop. Sports a pistol-actuated mop head, a chemosynthesizer unit and a clean white finish. Uses M cells."
+	desc = "An Artificer's Guild-modified mop. Sports a pistol-actuated mop head making it able to hold more cleaning suds and sweep faster. \
+	The handle is also telescopic allowing for easyer storage."
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "mop"
-	force = WEAPON_FORCE_WEAK
-	throwforce = WEAPON_FORCE_WEAK
+	force = WEAPON_FORCE_WEAK+1
+	throwforce = WEAPON_FORCE_WEAK+1
 	throw_speed = 5
 	throw_range = 10
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
 	matter = list(MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 4, MATERIAL_STEEL = 4)
-	mopspeed  = 10
-	sweep_time = 2
-	var/condensing = FALSE
-	var/obj/item/weapon/cell/medium/mycell
-
-/obj/item/weapon/mop/guild/AltClick(mob/user)
-	if(condensing)
-		STOP_PROCESSING(SSobj, src)
-	else
-		START_PROCESSING(SSobj, src)
-	to_chat(user, SPAN_NOTICE("You flick the condenser switch to the [condensing ? "ON" : "OFF"] position."))
-	condensing = !condensing
-
-/obj/item/weapon/mop/guild/Process()
-	if(reagents.total_volume + 2 >= reagents.maximum_volume)
-		src.visible_message(SPAN_NOTICE("The condenser on the [src] shuts off as its internal tank fills."))
-		condensing = FALSE
-		STOP_PROCESSING(SSobj, src)
-		return
-	else if (mycell && mycell.use(4))
-		reagents.add_reagent("cleaner", 1)
-		reagents.add_reagent("water", 1)
-
-		return
-	else
-		src.visible_message(SPAN_NOTICE("The condenser on the [src] shuts off, its battery light blinking."))
-		condensing = FALSE
-		STOP_PROCESSING(SSobj, src)
-
-/obj/item/weapon/mop/guild/MouseDrop(over_object)
-	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(mycell, usr))
-		mycell = null
-		src.visible_message(SPAN_NOTICE("The condenser on the [src] shuts off as its battery light turns off."))
-		STOP_PROCESSING(SSobj, src)
-	else
-		return ..()
-
+	mopspeed  = 15
+	sweep_time = 4
 
 /obj/item/weapon/mop/guild/Initialize()
 	. = ..()
