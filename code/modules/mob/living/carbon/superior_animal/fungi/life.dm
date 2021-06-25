@@ -8,7 +8,3 @@
 	// Stop following if we got no one to follow and no ennemies nearby
 	if(!following && !findTarget())
 		walk_to(src, 0)
-
-	// Check for food only when no ennemies are nearby
-	if(!findTarget())
-		handle_foodscanning()
