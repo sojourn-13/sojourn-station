@@ -357,7 +357,6 @@
 			/datum/craft_recipe/guild/arcwelder,
 			/datum/craft_recipe/guild/polytool,
 			/datum/craft_recipe/guild/combat_shovel,
-			/datum/craft_recipe/guild/supermop,
 			/datum/craft_recipe/guild/railgunpistol,
 			/datum/craft_recipe/guild/railgunrifle,
 			/datum/craft_recipe/guild/heavypulserifle,
