@@ -23,5 +23,6 @@
 							"[user] feed [src.name] the [S.name].",
 							"You feed [src.name] the [S.name]."
 							)
+		qdel(W)
 		return
 	..()
