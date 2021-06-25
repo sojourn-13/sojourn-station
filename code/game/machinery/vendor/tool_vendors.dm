@@ -245,6 +245,10 @@
 					/obj/item/weapon/tool/crowbar = 5,
 					/obj/item/weapon/weldpack/canister = 2,
 					/obj/item/weapon/weldpack = 1,
+					//Drone Fabrication Kits
+					/obj/item/weapon/storage/box/roomba_kit = 3,
+					/obj/item/weapon/storage/box/sword_drone_kit = 1,
+					/obj/item/weapon/storage/box/mantis_drone_kit = 1,
 					//Ripley
 					/obj/item/device/kit/paint/ripley = 3,
 					/obj/item/device/kit/paint/ripley/death = 3,
@@ -285,6 +289,9 @@
 					/obj/item/device/kit/paint/odysseus/mime = 1,
 					/obj/item/device/kit/paint/gygax = 1,
 					/obj/item/device/kit/paint/ripley/clark_spider = 1)
+	prices = list(	/obj/item/weapon/storage/box/roomba_kit = 250,
+					/obj/item/weapon/storage/box/sword_drone_kit = 750,
+					/obj/item/weapon/storage/box/mantis_drone_kit = 750)
 
 	auto_price = FALSE
 

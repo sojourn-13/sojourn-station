@@ -21,6 +21,8 @@
 	desc = "Imparts extreme pain on the target disciple. Does no actual harm. Use this on someone who performs a heretical act."
 	power = 35
 	category = "Devotion"
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -42,6 +44,12 @@
 		return
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of penance")
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	if (do_after(user, 20, H, TRUE))
 		T = get_turf(user)
 		if (!(T.Adjacent(get_turf(H))))
@@ -71,8 +79,16 @@
 	cooldown_time = 300
 	power = 35 //Healing yourself is slightly easier than healing someone else
 	category = "Vitae"
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/selfheal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C,list/targets)
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= nutri_cost)
+			H.nutrition -= nutri_cost
+		else
+			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			H.vessel.remove_reagent("blood",blood_cost)
 	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
 	H.add_chemical_effect(CE_PAINKILLER, 20)
 	H.adjustBruteLoss(-20)
@@ -92,6 +108,8 @@
 	cooldown_time = 300
 	power = 45
 	category = "Vitae"
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -113,6 +131,12 @@
 		return
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of succor")
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	if (do_after(user, 40, H, TRUE))
 		T = get_turf(user)
 		if (!(T.Adjacent(get_turf(H))))
@@ -138,6 +162,8 @@
 	cooldown_category = "dhymn"
 	power = 50
 	category = "Vitae"
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
@@ -146,6 +172,12 @@
 			people_around.Add(H)
 
 	if(people_around.len > 0)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
 		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration."))
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/mob/living/carbon/human/participant in people_around)
@@ -177,6 +209,8 @@
 	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. This prayer requires power only primes and crusaders have."
 	power = 100
 	category = "Devotion"
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 
@@ -200,6 +234,13 @@
 	eye.owner = eye
 	user.reset_view(eye)
 
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+
 	//After 30 seconds, your view is forced back to yourself
 	addtimer(CALLBACK(user, .mob/proc/reset_view, user), 300)
 
@@ -215,6 +256,8 @@
 	name = "Epiphany"
 	phrase = "In nomine Patris et Filii et Spiritus sancti."
 	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A body, relieved of clothes should be placed on Absolute's special altar."
+	nutri_cost = 10//low cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
@@ -235,6 +278,12 @@
 		fail("It is too late for this one, the soul has already left the vessel", user, C)
 		return FALSE
 
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	log_and_message_admins("successfully baptized [CI.wearer]")
 	to_chat(CI.wearer, "<span class='info'>Your cruciform vibrates and warms up.</span>")
 
@@ -308,6 +357,8 @@
 	name = "Commitment"
 	phrase = "Unde ipse Dominus dabit vobis signum."
 	desc = "This litany will command a cruciform attach to person so you can perform an epiphany. Cruciform must lay near them."
+	nutri_cost = 10//low cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/priest/install/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/mob/living/carbon/human/H = get_victim(user)
@@ -351,6 +402,12 @@
 		return FALSE
 
 	if(ishuman(H))
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
 		var/mob/living/carbon/human/M = H
 		var/obj/item/organ/external/E = M.organs_by_name[BP_CHEST]
 		for (var/i = 0; i < 5;i++)
@@ -367,6 +424,8 @@
 	name = "Deprivation"
 	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum."
 	desc = "This litany will command a cruciform to detach from its bearer, if the one bearing it is dead."
+	nutri_cost = 10//low cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
@@ -382,6 +441,12 @@
 	var/mob/M = CI.wearer
 
 	if(ishuman(M) && M.is_dead())
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/E = H.organs_by_name[BP_CHEST]
 		E.take_damage(15)
@@ -405,6 +470,8 @@
 	desc = "This litany will remove any upgrade from the target's cruciform implant. Usuable only by primes and crusaders."
 	power = 100
 	category = "Devotion"
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -422,6 +489,12 @@
 		return FALSE
 
 	for(var/obj/item/weapon/coreimplant_upgrade/CU in CI.upgrades)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
 		CU.remove()
 		log_and_message_admins("removed upgrade from [C] cruciform with asacris litany")
 
@@ -433,6 +506,8 @@
 	desc = "Request an upgrade kit to restore a vector or prime's cruciform to its devout stage. This litany requires you to stand next to an altar."
 	power = 50
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a devout upgrade circuit slips out."
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/list/OBJS = get_front(user)
@@ -442,7 +517,12 @@
 	if(!altar)
 		fail("This is not your altar, the litany is useless.", user, C)
 		return FALSE
-
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	new /obj/item/weapon/coreimplant_upgrade/cruciform/priest(altar.loc)
 	set_personal_cooldown(user)
 
@@ -451,6 +531,8 @@
 	phrase = "Habe fiduciam in Domino ex toto corde tuo et ne innitaris prudentiae tuae, in omnibus viis tuis cogita illum et ipse diriget gressus tuos."
 	desc = "The second stage of granting a promotion to a disciple, upgrading them to a devout. The devout ascension kit is the first step."
 	power = 50
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/initiation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/obj/item/weapon/implant/core_implant/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
@@ -468,7 +550,12 @@
 	if(!PC)
 		fail("Target must have devout upgrade inside his cruciform.",user,C)
 		return FALSE
-
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	PC.activate()
 	log_and_message_admins("promoted disciple [C] to devout with initiation litany")
 
@@ -488,6 +575,8 @@
 	cooldown_category = "short_boost"
 	category = "Words of Power"
 	var/list/stats_to_boost = list()
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/short_boost/New()
 	..()
@@ -500,6 +589,12 @@
 			people_around.Add(H)
 
 	if(people_around.len > 0)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
 		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration."))
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/mob/living/carbon/human/participant in people_around)
@@ -573,6 +668,8 @@
 	desc = "Request a new cruciform in the event someone wishes to join the fold or the one they had was destroyed. Requires the speaker to stand next to an altar."
 	power = 50
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a new cruciform slips out."
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
@@ -587,18 +684,48 @@
 		var/response = input(user, "Which cruciform do you require?") in list("Lemniscate","Tessellate","Monomial","Divisor","No Path","Cancel Litany")
 		if (response == "Lemniscate")
 			new /obj/item/weapon/implant/core_implant/cruciform/lemniscate(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Tessellate")
 			new /obj/item/weapon/implant/core_implant/cruciform/tessellate(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Monomial")
 			new /obj/item/weapon/implant/core_implant/cruciform/monomial(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Divisor")
 			new /obj/item/weapon/implant/core_implant/cruciform/divisor(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "No Path")
 			new /obj/item/weapon/implant/core_implant/cruciform(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain a cruciform at this time.", user, C)
@@ -609,6 +736,8 @@
 	phrase = "Vetus moritur et onus hoc levaverit."
 	desc = "The ritual needed for the reactivation and repair of a cruciform that has been unwillingly separated from the body or destroyed by the bearer's death. The process requires an altar and the cruciform in question to be attached."
 	power = 50
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/reactivation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
@@ -628,7 +757,12 @@
 	if (CI.wearer.stat == DEAD)
 		fail("The cruciform cannot be bound to a corpse.", user, C)
 		return FALSE
-
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	log_and_message_admins("successfully reconsecrated [CI.wearer]")
 	to_chat(CI.wearer, "<span class='info'>Your cruciform vibrates and warms up.</span>")
 
@@ -646,6 +780,8 @@
 	cooldown_category = "accelerated_growth"
 	power = 30
 	category = "Vitae"
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 	var/boost_value = 1.5  // How much the aging process of the plant is sped up
 
@@ -657,6 +793,12 @@
 			plants_around.Add(H.seed)
 
 	if(plants_around.len > 0)
+		if(user.species?.reagent_tag != IS_SYNTHETIC)
+			if(user.nutrition >= nutri_cost)
+				user.nutrition -= nutri_cost
+			else
+				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+				user.vessel.remove_reagent("blood",blood_cost)
 		to_chat(user, SPAN_NOTICE("You feel the air thrum with an inaudible vibration."))
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/datum/seed/S in plants_around)
@@ -683,13 +825,20 @@
 	desc = "Relieves the pain of a person in front of you."
 	power = 50
 	category = "Vitae"
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/cruciform/priest/mercy/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
 		return FALSE
-
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	to_chat(T, SPAN_NOTICE("You feel slightly better as your pain eases."))
 	to_chat(user, SPAN_NOTICE("You ease the pain of [T.name]."))
 
@@ -703,12 +852,21 @@
 	desc = "Stabilizes the health of a person in front of you."
 	power = 50
 	category = "Vitae"
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/cruciform/priest/absolution/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
 		return FALSE
+
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 
 	to_chat(T, SPAN_NOTICE("You feel a soothing sensation in your veins."))
 	to_chat(user, SPAN_NOTICE("You stabilize [T.name]'s health."))
@@ -726,6 +884,8 @@
 	desc = "Addictions are common afflictions among colony denizens. This litany helps those people by easing or removing their addictions."
 	power = 50
 	category = "Vitae"
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/cruciform/priest/purging/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
@@ -733,6 +893,12 @@
 		fail("No target in front of you.", user, C)
 		return FALSE
 
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	if(T.metabolism_effects.addiction_list.len)
 		for(var/addiction in T.metabolism_effects.addiction_list)
 			var/datum/reagent/R = addiction
@@ -758,6 +924,8 @@
 	desc = "This litany summon a prosthetic limb or implant to install on a follower."
 	power = 50
 	category = "Vitae"
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/cruciform/priest/prosthetic/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
@@ -773,26 +941,68 @@
 		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Longsword", "Ritual Knife", "Bible", "Cancel Litany")
 		if (response == "Right Arm")
 			new /obj/item/organ/external/robotic/church/r_arm(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Left Arm")
 			new /obj/item/organ/external/robotic/church/l_arm(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Right Leg")
 			new /obj/item/organ/external/robotic/church/r_leg(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Left Leg")
 			new /obj/item/organ/external/robotic/church/l_leg(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Longsword")
 			new /obj/item/organ_module/active/simple/armblade/longsword(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			O = "longsword"
 			return TRUE
 		if (response == "Ritual Knife")
 			new /obj/item/organ_module/active/simple/armblade/ritual(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			O = "ritual knife"
 			return TRUE
 		if (response == "Bible")
 			new /obj/item/organ_module/active/simple/bible(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
 			O = "bible"
 			return TRUE
 		if (response == "Cancel Litany")

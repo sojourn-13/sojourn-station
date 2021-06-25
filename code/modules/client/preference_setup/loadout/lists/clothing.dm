@@ -16,6 +16,11 @@
 	slot = slot_wear_mask
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/clothing/balaclava
+	display_name = "balaclava"
+	path = /obj/item/clothing/mask/balaclava
+	slot = slot_wear_mask
+
 /datum/gear/clothing/gasmask
 	display_name = "gas mask"
 	path = /obj/item/clothing/mask/gas

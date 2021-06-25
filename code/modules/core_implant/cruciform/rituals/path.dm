@@ -18,9 +18,17 @@
 	cooldown_time = 15 MINUTES
 	cooldown_category = "grepose"
 	power = 60 //stronger healing higher cost
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/tessellate/heal_heathen_special/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	for(var/mob/living/carbon/human/H in view(user))
 		if(H != user && !isdeaf(H))
 			people_around.Add(H)
@@ -52,9 +60,17 @@
 	power = 50
 	cooldown_time = 5 MINUTES
 	cooldown_category = "dhymn" //It shares a cooldown because it replaces divine hymn, not add atop it.
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/tessellate/heal_heathen_improved/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	for(var/mob/living/carbon/human/H in view(user))
 		if(H != user && !isdeaf(H))
 			people_around.Add(H)
@@ -86,7 +102,6 @@
 	phrase = null
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/lemniscate
 	category = "Lemniscate"
-
 /datum/ritual/targeted/cruciform/lemniscate
 	name = "cruciform targeted"
 	phrase = null
@@ -103,6 +118,8 @@
 	cooldown_category = "short_boost"
 	category = "Lemniscate"
 	var/list/stats_to_boost = list()
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/lemniscate/long_boost/New()
 	..()
@@ -110,6 +127,12 @@
 
 /datum/ritual/cruciform/lemniscate/long_boost/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	var/list/people_around = list()
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	for(var/mob/living/carbon/human/H in view(user))
 		if(H != user && !isdeaf(H))
 			people_around.Add(H)
@@ -186,8 +209,16 @@
 	cooldown_time = 5 MINUTES
 	cooldown_category = "monopain"
 	ignore_stuttering = TRUE
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/monomial/ironskin/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= nutri_cost)
+			H.nutrition -= nutri_cost
+		else
+			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			H.vessel.remove_reagent("blood",blood_cost)
 	H.add_chemical_effect(CE_PAINKILLER, 10000, TRUE)
 	H.apply_effect(-200, AGONY, 0)
 	H.apply_effect(-200, HALLOSS, 0)
@@ -209,8 +240,16 @@
 	cooldown_category = "pself"
 	effect_time = 15 MINUTES
 	power = 90
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/monomial/perfect_self/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	user.stats.changeStat(STAT_TGH, 10)
 	user.stats.changeStat(STAT_ROB, 10)
 	user.stats.changeStat(STAT_VIG, 10)
@@ -250,12 +289,20 @@
 	cooldown = TRUE
 	cooldown_time = 4 HOURS
 	cooldown_category = "cdefn"
+	nutri_cost = 25//med cost
+	blood_cost = 25//med cost
 
 /datum/ritual/targeted/cruciform/divisor/spawn_con/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
 	new /obj/item/weapon/gun/energy/taser(usr.loc)
 	new /obj/item/weapon/storage/belt/security/neotheology(usr.loc)
 	new /obj/item/clothing/head/rank/divisor(usr.loc)
 	new /obj/item/clothing/suit/greatcoat/divisor(usr.loc)
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	set_personal_cooldown(user)
 
 /datum/ritual/cruciform/divisor/div_flash
@@ -266,8 +313,16 @@
 	cooldown_time = 5 MINUTES
 	cooldown_category = "dflas"
 	power = 50
+	nutri_cost = 50//high cost
+	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/divisor/div_flash/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 	playsound(user.loc, 'sound/effects/cascade.ogg', 65, 1)
 	log_and_message_admins("performed an ire litany")
 	for(var/mob/living/victim in view(user))

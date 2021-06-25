@@ -13,6 +13,26 @@
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 90
 
+//Carps
+
+/obj/random/mob/carp
+	name = "random carp"
+	icon_state = "hostilemob-purple"
+	alpha = 128
+
+/obj/random/mob/carp/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/carp = 9,
+		/mob/living/simple_animal/hostile/carp/baby = 7,
+		/mob/living/simple_animal/hostile/carp/pike = 6,
+		/mob/living/simple_animal/hostile/carp/shark = 2,
+		/mob/living/simple_animal/hostile/carp/greatwhite = 0.5
+		))
+
+/obj/random/mob/carp/low_chance
+	name = "low chance random carp"
+	icon_state = "hostilemob-purple-low"
+	spawn_nothing_percentage = 60
+
 //croakers
 /obj/random/mob/croaker
 	name = "random croaker"

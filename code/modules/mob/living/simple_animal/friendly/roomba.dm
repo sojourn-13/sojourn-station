@@ -33,6 +33,27 @@
 	var/drop2 = null
 	var/cell_drop = null
 
+// For repairing damage to the synths.
+/mob/living/simple_animal/soteria_roomba/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(W, /obj/item/weapon/tool))
+			T = W
+
+		if(QUALITY_WELDING in T.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+	// If nothing was ever triggered, continue as normal
+	..()
+
 /mob/living/simple_animal/soteria_roomba/death()
 	..()
 	visible_message("<b>[src]</b> blows apart!")
