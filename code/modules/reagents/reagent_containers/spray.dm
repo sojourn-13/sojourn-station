@@ -161,6 +161,7 @@
 	possible_transfer_amounts = null
 	volume = 600
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_ENGINEERING = 3)
+	var/range = 7
 
 /obj/item/weapon/reagent_containers/spray/chemsprayer/Spray_at(atom/A as mob|obj)
 	var/direction = get_dir(src, A)
@@ -179,8 +180,18 @@
 				return
 			reagents.trans_to_obj(D, amount_per_transfer_from_this)
 			D.set_color()
-			D.set_up(my_target, rand(6, 8), 2)
+			D.set_up(my_target, range, 2)
 	return
+
+/obj/item/weapon/reagent_containers/spray/chemsprayer/industrial
+	name = "industrial chemical sprayer"
+	desc = "A utility used to spray large amounts of reagent in a given area. This is a heavy-duty industrial version, adapted to spraying chemicals such as cleaning compounds and fertilizers."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "chemsprayerI"
+	item_state = "chemsprayerI"
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 8)
+	volume = 150
+	range = 5
 
 /obj/item/weapon/reagent_containers/spray/plantbgone
 	name = "Plant-B-Gone"
