@@ -268,14 +268,14 @@
 					/obj/item/ammo_magazine/ammobox/light_rifle_257 = 30,
 					)
 	prices = list(
-					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 50,
-					/obj/item/weapon/storage/deferred/crate/uniform_green = 2000,
-					/obj/item/weapon/storage/deferred/crate/uniform_brown = 2000,
-					/obj/item/weapon/storage/deferred/crate/uniform_black = 2000,
-					/obj/item/weapon/storage/deferred/crate/uniform_flak = 2200,
-					/obj/item/weapon/storage/deferred/crate/uniform_light = 1800,
-					/obj/item/weapon/gun/projectile/boltgun/sa = 1000,
-					/obj/item/ammo_magazine/ammobox/heavy_rifle_408 = 300,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 5,
+					/obj/item/weapon/storage/deferred/crate/uniform_green = 200,
+					/obj/item/weapon/storage/deferred/crate/uniform_brown = 200,
+					/obj/item/weapon/storage/deferred/crate/uniform_black = 200,
+					/obj/item/weapon/storage/deferred/crate/uniform_flak = 220,
+					/obj/item/weapon/storage/deferred/crate/uniform_light = 180,
+					/obj/item/weapon/gun/projectile/boltgun/sa = 100,
+					/obj/item/ammo_magazine/ammobox/light_rifle_257 = 300,
 					)
 	idle_power_usage = 211
 	auto_price = FALSE

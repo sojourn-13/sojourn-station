@@ -121,6 +121,21 @@
 	)
 	gear_tweaks += new /datum/gear_tweak/path(leisure)
 
+/datum/gear/uniform/stylish_suits
+    display_name = "stylish suits"
+    path = /obj/item/clothing/under/white
+
+/datum/gear/uniform/stylish_suits/New()
+	..()
+	var/stylish = list(
+		"Ivory Suit"				=	/obj/item/clothing/under/white,
+		"Blood-red Suit"			=	/obj/item/clothing/under/red,
+		"Questionable Suit"			=	/obj/item/clothing/under/green,
+		"Ashen Suit"				=	/obj/item/clothing/under/grey,
+		"Charcoal Suit"				=	/obj/item/clothing/under/black,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(stylish)
+
 /datum/gear/uniform/dress
     display_name = "dresses"
     path = /obj/item/clothing/under/dress
@@ -130,13 +145,27 @@
 	var/dress = list(
 		"Gray Dress"			=	/obj/item/clothing/under/dress,
 		"Blue Dress"			=	/obj/item/clothing/under/dress/blue,
-		"Red Dress"				=	/obj/item/clothing/under/dress/red
+		"Red Dress"				=	/obj/item/clothing/under/dress/red,
+		"White Dress" 			=	/obj/item/clothing/under/dress/white,
+		"Black Dress" 			=	/obj/item/clothing/under/dress/black
 	)
 	gear_tweaks += new /datum/gear_tweak/path(dress)
 
 /datum/gear/uniform/cyber
 	display_name = "augmented jumpsuit"
 	path = /obj/item/clothing/under/cyber
+
+/datum/gear/uniform/helltaker
+	display_name = "charming outfit"
+	path = /obj/item/clothing/under/helltaker
+
+/datum/gear/uniform/johnny
+	display_name = "rockerboy clothes"
+	path = /obj/item/clothing/under/johnny
+
+/datum/gear/uniform/raider
+	display_name = "leather outfit"
+	path = /obj/item/clothing/under/raider
 
 /datum/gear/uniform/jersey
 	display_name = "church overalls"

@@ -56,3 +56,10 @@
 	path = /obj/item/clothing/gloves/aerostatic_gloves
 	slot = slot_gloves
 	cost = 1
+
+/datum/gear/gloves/knuckles
+	display_name = "knuckle gloves"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/knuckles
+	slot = slot_gloves
+	cost = 1

@@ -375,6 +375,51 @@
 					/obj/item/clothing/mask/gas/hox = 50,
 					/obj/item/clothing/mask/gas/cha = 50)
 
+/obj/machinery/vending/style
+	name = "Style vendor"
+	desc = "Vendor selling probably salvaged stylish clothing."
+	product_slogans = "Highly stylish clothing for sale!;Latest fashion trends right here!"
+	product_ads = "Contact our consumer department for refunds, fees apply.;Coolness sold here."
+	icon_state = "style"
+	products = list(
+		/obj/item/clothing/gloves/knuckles = 3,
+		/obj/item/clothing/head/ranger = 4,
+		/obj/item/clothing/head/inhaler = 2,
+		/obj/item/clothing/shoes/jackboots/redboot = 4,
+		/obj/item/clothing/shoes/jackboots/longboot = 3,
+		/obj/item/clothing/under/white = 4,
+		/obj/item/clothing/under/red = 4,
+		/obj/item/clothing/under/green = 4,
+		/obj/item/clothing/under/grey = 4,
+		/obj/item/clothing/under/black = 4,
+		/obj/item/clothing/under/dress/black = 4,
+		/obj/item/clothing/under/dress/white = 4,
+		/obj/item/clothing/under/helltaker = 4,
+		/obj/item/clothing/under/johnny = 3,
+		/obj/item/clothing/under/raider = 3,
+		/obj/item/clothing/suit/storage/triad = 2,
+		/obj/item/clothing/suit/storage/akira = 2
+					)
+	prices = list(
+		/obj/item/clothing/gloves/knuckles = 65,
+		/obj/item/clothing/head/ranger = 55,
+		/obj/item/clothing/head/inhaler = 75,
+		/obj/item/clothing/shoes/jackboots/redboot = 45,
+		/obj/item/clothing/shoes/jackboots/longboot = 55,
+		/obj/item/clothing/under/white = 60,
+		/obj/item/clothing/under/red = 60,
+		/obj/item/clothing/under/green = 60,
+		/obj/item/clothing/under/grey = 60,
+		/obj/item/clothing/under/black = 60,
+		/obj/item/clothing/under/dress/black = 60,
+		/obj/item/clothing/under/dress/white = 60,
+		/obj/item/clothing/under/helltaker = 60,
+		/obj/item/clothing/under/johnny = 75,
+		/obj/item/clothing/under/raider = 75,
+		/obj/item/clothing/suit/storage/triad = 120,
+		/obj/item/clothing/suit/storage/akira = 75
+					)
+
 /obj/machinery/vending/kink
 	name = "KinkMate"
 	desc = "A vending machine for all your unmentionable desires."
