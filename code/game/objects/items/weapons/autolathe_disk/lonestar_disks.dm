@@ -166,3 +166,17 @@
 		/datum/design/autolathe/cell/small,
 		/datum/design/autolathe/cell/small/high,
 	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/janitor
+	disk_name = "Lonestar Janitor Pack"
+	icon_state = "guild"
+	license = 8
+	designs = list(
+		/datum/design/autolathe/misc/floor_light = 0,
+		/datum/design/autolathe/misc/tube = 0,
+		/datum/design/autolathe/misc/bulb = 0,
+		/datum/design/autolathe/tool/trashbag,
+		/datum/design/autolathe/container/bucket,
+		/datum/design/autolathe/tool/isprayer = 2,
+		/datum/design/autolathe/tool/mop,
+		)

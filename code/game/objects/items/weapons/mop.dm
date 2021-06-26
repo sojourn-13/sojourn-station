@@ -13,8 +13,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
 	matter = list(MATERIAL_PLASTIC = 3)
-	var/mopping = 0
-	var/mopcount = 0
+	var/mopspeed  = 30
 
 	var/mopmode = MOPMODE_TILE
 	var/sweep_time = 7
@@ -46,7 +45,7 @@
 		if (mopmode == MOPMODE_TILE)
 			//user.visible_message(SPAN_WARNING("[user] begins to clean \the [T]."))
 			user.setClickCooldown(3)
-			if(do_after(user, 30, T))
+			if(do_after(user, mopspeed, T))
 				if(T)
 					T.clean(src, user)
 				to_chat(user, SPAN_NOTICE("You have finished mopping!"))
@@ -134,6 +133,25 @@
 		return
 	..()
 
+/obj/item/weapon/mop/guild
+	name = "articulated mop"
+	desc = "An Artificer's Guild-modified mop. Sports a pistol-actuated mop head making it able to hold more cleaning suds and sweep faster. \
+	The handle is also telescopic allowing for easyer storage."
+	icon = 'icons/obj/janitor.dmi'
+	icon_state = "mop"
+	force = WEAPON_FORCE_WEAK+1
+	throwforce = WEAPON_FORCE_WEAK+1
+	throw_speed = 5
+	throw_range = 10
+	w_class = ITEM_SIZE_SMALL
+	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
+	matter = list(MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 4, MATERIAL_STEEL = 4)
+	mopspeed  = 15
+	sweep_time = 4
+
+/obj/item/weapon/mop/guild/Initialize()
+	. = ..()
+	create_reagents(60)
 
 #undef MOPMODE_TILE
 #undef MOPMODE_SWEEP
