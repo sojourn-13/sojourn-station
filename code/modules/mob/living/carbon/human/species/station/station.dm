@@ -888,7 +888,7 @@
 		STAT_VIG = 10
 	)
 
-	perks = list(PERK_THERMAL)
+	perks = list()
 
 	spawn_flags = IS_RESTRICTED
 

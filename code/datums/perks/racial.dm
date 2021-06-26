@@ -517,43 +517,7 @@
 
 /datum/perk/folken_healing/young
 
-/datum/perk/thermal
-	name = "Thermal Vision"
-	desc = "Temporarily allow you to see through walls"
-	active = FALSE
-	passivePerk = FALSE
-	var/time_left
 
-/datum/perk/thermal/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
-		return ..()
-	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("Your eyes are too exhausted to do that."))
-		return FALSE
-	to_chat(usr, SPAN_NOTICE("You activate your thermal vision."))
-	time_left = world.time + 1 MINUTES
-	cooldown_time = world.time + 1 MINUTES
-	active = TRUE
-	user.species.vision_flags = SEE_SELF | SEE_MOBS
-	return ..()
-
-/datum/perk/thermal/on_process()
-	to_chat(usr, SPAN_NOTICE("Process called."))
-	if(cooldown_time <= world.time) // Deactivate the perk after a minute.
-		to_chat(usr, SPAN_NOTICE("Process called (Yes)."))
-		deactivate()
-	..()
-
-/datum/perk/thermal/deactivate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
-		return ..()
-	to_chat(usr, SPAN_DANGER("You lose your thermal vision."))
-	cooldown_time = world.time + 5 MINUTES
-	active = FALSE
-	user.species.vision_flags = SEE_SELF
-	return ..()
 
 ////////////////////////////// Mycus Perks
 
