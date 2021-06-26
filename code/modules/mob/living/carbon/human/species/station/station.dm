@@ -844,3 +844,100 @@
 /datum/species/full_body_prosthetic/get_bodytype()
 	return "FBP"
 */
+
+/datum/species/folken
+	name = "Folken"
+	name_plural = "Folkens"
+	default_form = FORM_FOLKEN
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "N/A"
+	num_alternate_languages = 2
+	name_language = null	// Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+	breath_type = "nitrogen"			// Non-oxygen gas breathed, if any.
+	poison_type = "plasma"				// Poisonous air.
+	exhale_type = "oxygen"
+	burn_mod = 2						// Burn damage multiplier.
+	light_dam = 1 // Same threshold as the Nightcrawler perk
+	vision_flags = SEE_SELF
+	flags = NO_PAIN
+
+	dark_color = "#ffffff"
+	light_color = "#000000"
+
+	/* Commented out until I figure out how to do the fully body lung.
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/full_body_prosthetic,
+		BP_GROIN =  new /datum/organ_description/groin/full_body_prosthetic,
+		BP_HEAD =   new /datum/organ_description/head/full_body_prosthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/full_body_prosthetic,
+		BP_R_ARM =  new /datum/organ_description/arm/right/full_body_prosthetic,
+		BP_L_LEG =  new /datum/organ_description/leg/left/full_body_prosthetic,
+		BP_R_LEG =  new /datum/organ_description/leg/right/full_body_prosthetic
+		)
+
+	has_process = list(    // which required-organ checks are conducted.
+		OP_HEART =    /obj/item/organ/internal/heart,
+		OP_STOMACH =  /obj/item/organ/internal/stomach,
+		OP_LIVER =    /obj/item/organ/internal/liver,
+		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right,
+		BP_BRAIN =    /obj/item/organ/internal/brain,
+		OP_APPENDIX = /obj/item/organ/internal/appendix,
+		OP_EYES =     /obj/item/organ/internal/eyes
+		)
+	*/
+
+	stat_modifiers = list(
+		STAT_BIO = 10,
+		STAT_COG = 0,
+		STAT_MEC = 0,
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 10
+	)
+
+	perks = list(PERK_THERMAL)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/human/get_bodytype()
+	return "Folken"
+
+/datum/species/mycus
+	name = "Mycus"
+	name_plural = "Myci"
+	default_form = FORM_MYCUS
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "N/A"
+	num_alternate_languages = 2
+	name_language = null	// Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+
+	burn_mod = 2						// Burn damage multiplier.
+	light_dam = 1 // Same threshold as the Nightcrawler perk
+
+	dark_color = "#ffffff"
+	light_color = "#000000"
+
+	perks = list(PERK_DARK_HEAL)
+
+	stat_modifiers = list(
+		STAT_BIO = 0,
+		STAT_COG = 0,
+		STAT_MEC = 0,
+		STAT_ROB = 20,
+		STAT_TGH = 0,
+		STAT_VIG = 0
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/human/get_bodytype()
+	return "Mycus"

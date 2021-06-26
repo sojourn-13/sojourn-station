@@ -482,3 +482,125 @@
 	playsound(usr.loc, 'sound/effects/blobattack.ogg', 50, 1)
 	new /obj/item/weapon/tool/tape_roll/repair_goo(usr.loc)
 	return ..()
+
+///////////////////////////// Folken Perks
+
+/datum/perk/oddity_reroll
+	name = "Reroll Oddity"
+	desc = "Allow you to change the stat bonuses of an oddity"
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/oddity_reroll/activate()
+	var/mob/living/carbon/human/user = usr
+	var/obj/item/weapon/oddity/O = user.get_active_hand()
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You can't force change so soon."))
+		return FALSE
+	if(!istype(O, /obj/item/weapon/oddity))
+		to_chat(usr, SPAN_NOTICE("This isn't an oddity !"))
+		return FALSE
+	cooldown_time = world.time + 10 MINUTES
+	user.visible_message("[user] do something to the anomaly in their hand.", "You do something to the anomaly in their hand.")
+	log_and_message_admins("used their [src] perk.")
+	if(O.oddity_stats)
+		if(O.random_stats)
+			for(var/stat in O.oddity_stats)
+				O.oddity_stats[stat] = (rand(1, O.oddity_stats[stat]) + 5)
+
+/datum/perk/folken_healing
+	name = "Folken Photo-Healing"
+	desc = "As a Folken, you can use the light to heal wounds."
+	passivePerk = TRUE
+
+/datum/perk/folken_healing/young
+
+/datum/perk/thermal
+	name = "Thermal Vision"
+	desc = "Temporarily allow you to see through walls"
+	active = FALSE
+	passivePerk = FALSE
+	var/time_left
+
+/datum/perk/thermal/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your eyes are too exhausted to do that."))
+		return FALSE
+	to_chat(usr, SPAN_NOTICE("You activate your thermal vision."))
+	time_left = world.time + 1 MINUTES
+	cooldown_time = world.time + 1 MINUTES
+	active = TRUE
+	user.species.vision_flags = SEE_SELF | SEE_MOBS
+	return ..()
+
+/datum/perk/thermal/on_process()
+	to_chat(usr, SPAN_NOTICE("Process called."))
+	if(cooldown_time <= world.time) // Deactivate the perk after a minute.
+		to_chat(usr, SPAN_NOTICE("Process called (Yes)."))
+		deactivate()
+	..()
+
+/datum/perk/thermal/deactivate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	to_chat(usr, SPAN_DANGER("You lose your thermal vision."))
+	cooldown_time = world.time + 5 MINUTES
+	active = FALSE
+	user.species.vision_flags = SEE_SELF
+	return ..()
+
+////////////////////////////// Mycus Perks
+
+/datum/perk/dark_heal
+	name = "Mycus Regeneration"
+	desc = "As a mycus, you heal as long as you are in the darkness."
+	passivePerk = TRUE
+
+/datum/perk/mushroom_follower
+	name = "Spawn Mushroom Follower"
+	desc = "Mushroom followers produces random healing chems when fed enough food."
+	active = FALSE
+	passivePerk = FALSE
+	var/follower_type = /mob/living/carbon/superior_animal/fungi/shroom
+
+/datum/perk/mushroom_follower/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(user, SPAN_NOTICE("You can't make a follower so soon."))
+		return FALSE
+	cooldown_time = world.time + 15 MINUTES
+	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
+	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
+	mushroom.friends += user
+	mushroom.following = user
+	..()
+
+/datum/perk/slime_follower
+	name = "Spawn Slime Follower"
+	desc = "Slime followers regenerates and has better stats fit for combat."
+	active = FALSE
+	passivePerk = FALSE
+	var/follower_type = /mob/living/carbon/superior_animal/fungi/slime
+
+/datum/perk/slime_follower/activate()
+	var/mob/living/carbon/human/user = usr
+
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(user, SPAN_NOTICE("You can't make a follower so soon."))
+		return FALSE
+	cooldown_time = world.time + 15 MINUTES
+	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
+	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
+	mushroom.friends += user
+	mushroom.following = user
+	..()
