@@ -324,3 +324,36 @@ obj/item/clothing/suit/fluff/kimono
 	)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/storage/triad
+	name = "triad jacket"//RUINER reference
+	desc = "A well armoured trench coat. The label on the inside claims it comes from somewhere dangerous."
+	icon_state = "triadkillers"
+	item_state = "triadkillers"
+	armor = list(
+		melee = 35,
+		bullet = 35,
+		energy = 35,
+		bomb = 15,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	price_tag = 105
+
+
+/obj/item/clothing/suit/storage/akira
+	name = "red jacket"//Akira, preety obvious
+	desc = "A red jacket designed for riding on a bike. Has a pill icon on the back."
+	icon_state = "akira"
+	item_state = "akira"
+	armor = list(
+		melee = 20,
+		bullet = 10,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+	price_tag = 60

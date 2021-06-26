@@ -2,7 +2,7 @@
 #define CAT_HIDDEN 2
 #define CAT_COIN   4
 
-#define CUSTOM_VENDOMAT_MODELS list("Generic" = "generic", "Security" = "sec", "Electronics" = "cart", "Research" = "robotics", "Medical" = "med", "Engineering" = "engivend", "Engineering 2" = "engi", "Tools" = "tool", "Shady" = "sovietsoda", "Fridge" = "smartfridge", "Alcohol" = "boozeomat", "Frozen Star" = "weapon", "NeoTheo" = "teomat", "Asters Power Cells" = "powermat", "Asters Disks" = "discomat")
+#define CUSTOM_VENDOMAT_MODELS list("Generic" = "generic", "Security" = "sec", "Electronics" = "cart", "Research" = "robotics", "Medical" = "med", "Engineering" = "engivend", "Engineering 2" = "engi", "Tools" = "tool", "Shady" = "sovietsoda", "Fridge" = "smartfridge", "Alcohol" = "boozeomat", "H&S" = "weapon", "Style" = "style", "Stylish Generic" = "trashvend", "Show Case" = "showcase", "Booze-o-mat" = "boozeomat", "Absolute" = "teomat", "Lonestar Power Cells" = "powermat", "Lonestar Disks" = "discomat")
 
 /datum/wires/vending
 	holder_type = /obj/machinery/vending

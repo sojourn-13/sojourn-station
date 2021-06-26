@@ -233,3 +233,29 @@
 	name = "excelsior officer cap"
 	desc = "A peaked commissar cap marked with a red hammer and gear emblem on an orange background at its front."
 	icon_state = "excelsior_officer"
+
+/obj/item/clothing/head/ranger
+	name = "ranger hat"
+	desc = "A rather generic sergeant hat. On second look it's actually a ranger hat."
+	icon_state = "ranger"
+	item_state = "ranger"
+	price_tag = 40
+
+/obj/item/clothing/head/inhaler
+	name = "odd looking helmet"
+	desc = "A confusingly complex helmet. It is capable of protecting you so it's more useful than being a simple decoration."
+	icon_state = "inhaler"
+	item_state = "inhaler"
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	siemens_coefficient = 1
+	price_tag = 600
+	armor = list(
+		melee = 20,
+		bullet = 15,
+		energy = 10,
+		bomb = 0,
+		bio = 20,
+		rad = 25
+	)

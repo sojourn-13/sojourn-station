@@ -19,7 +19,9 @@
 	light_overlay = "helmet_light_dual"
 	camera_networks = list(NETWORK_SECURITY)
 
-
+/obj/item/clothing/head/helmet/space/rig/techno
+	light_overlay = "helmet_light_dual"
+	camera_networks = list(NETWORK_ENGINEERING)
 
 /***************************************
 	Industrial Suit: For Mining
@@ -114,9 +116,9 @@ Advanced Voidsuit: Guild Master
 	desc = "An advanced voidsuit that protects against hazardous, low pressure environments. Shines with a high polish."
 	icon_state = "ce_rig"
 	armor = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee = 40,
+		bullet = 40,
+		energy = 40,
 		bomb = 50,
 		bio = 100,
 		rad = 100
@@ -156,7 +158,57 @@ Advanced Voidsuit: Guild Master
 	siemens_coefficient = 0
 
 /obj/item/clothing/shoes/magboots/rig/ce
-	name = "Advanced Magboots"
+	name = "advanced magboots"
+	desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer."
+	mag_slow = 1
+
+/***************************************
+Technomancer RIG
+***************************************/
+/obj/item/weapon/rig/techno
+	name = "technomancer suit control module"
+	suit_type = "technomancer RIG suit"
+	desc = "An advanced RIG suit that protects against hazardous, low pressure and high temperature environments."
+	icon_state = "techno_rig"
+	armor = list(
+		melee = 30,
+		bullet = 30,
+		energy = 30,
+		bomb = 50,
+		bio = 100,
+		rad = 100
+	)
+	slowdown = 0.3
+	drain = 3
+	offline_slowdown = 3
+	offline_vision_restriction = 0
+
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+
+	helm_type = /obj/item/clothing/head/helmet/space/rig/techno
+	glove_type = /obj/item/clothing/gloves/rig/techno
+	boot_type = /obj/item/clothing/shoes/magboots/rig/techno
+
+	extra_allowed = list(
+		/obj/item/weapon/storage/toolbox,
+		/obj/item/weapon/storage/briefcase/inflatable,
+		/obj/item/device/t_scanner,
+		/obj/item/weapon/rcd
+	)
+
+/obj/item/weapon/rig/techno/equipped
+	initial_modules = list(
+		/obj/item/rig_module/storage,
+		/obj/item/rig_module/maneuvering_jets,
+		)
+
+/obj/item/clothing/gloves/rig/techno
+	name = "insulated gloves"
+	siemens_coefficient = 0
+
+
+/obj/item/clothing/shoes/magboots/rig/techno
+	name = "advanced magboots"
 	desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer."
 	mag_slow = 1
 

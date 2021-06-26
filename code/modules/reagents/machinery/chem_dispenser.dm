@@ -84,6 +84,7 @@
 
 /obj/machinery/chemical_dispenser/power_change()
 	..()
+	update_icon()
 	SSnano.update_uis(src) // update all UIs attached to src
 
 
@@ -140,6 +141,7 @@
 		var/obj/item/weapon/reagent_containers/B = beaker
 		B.loc = loc
 		beaker = null
+		update_icon()
 
 /obj/machinery/chemical_dispenser/AltClick(mob/living/user)
 	if(user.incapacitated())
@@ -219,6 +221,7 @@
 		src.beaker =  B
 		if (user.unEquip(B, src))
 			to_chat(user, "You set [B] on the machine.")
+			update_icon()
 			SSnano.update_uis(src) // update all UIs attached to src
 			return
 
@@ -233,6 +236,7 @@
 	desc = "A drink fabricating machine, capable of producing many sugary drinks with just one touch."
 	layer = OBJ_LAYER
 	ui_title = "Soda Dispens-o-matic"
+	var/icon_on = "soda_dispenser"
 	fancy_hack = TRUE
 	accept_beaker = FALSE
 	density = FALSE
@@ -261,6 +265,16 @@
 			to_chat(user, "You change the mode from 'Pizza King' to 'McNano'.")
 			dispensable_reagents -= hacked_reagents
 			SSnano.update_uis(src)
+
+/obj/machinery/chemical_dispenser/soda/update_icon()
+	cut_overlays()
+	if(stat & (BROKEN|NOPOWER))
+		icon_state = icon_on+"_off"
+	else
+		icon_state = icon_on
+
+	if(beaker)
+		add_overlay(image(icon, icon_on+"_loaded"))
 
 /obj/machinery/chemical_dispenser/coffee_master
 	icon_state = "coffee_master"
