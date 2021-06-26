@@ -367,3 +367,90 @@
 	desc = "A tracksuit lined with red neon fibers. Slightly luminescent."
 	icon_state = "neonr"
 	item_state = "bl_suit"
+
+/obj/item/clothing/under/white
+	name = "ivory white outfit"
+	desc = "White suit, white pants and a white tie. Very stylish."
+	icon_state = "suit_white"
+	item_state = "suit_white"
+	price_tag = 45
+
+/obj/item/clothing/under/red
+	name = "blood red outfit"
+	desc = "Red suit, red pants and a red tie. Very stylish."
+	icon_state = "suit_red"
+	item_state = "suit_red"
+	price_tag = 45
+
+/obj/item/clothing/under/green
+	name = "questionable outfit"//Riddler reference, you probably knew that
+	desc = "Green suit, green pants and a green tie. Quite a riddle to solve."
+	icon_state = "riddler"
+	item_state = "riddler"
+	price_tag = 45
+
+/obj/item/clothing/under/grey
+	name = "ash grey outfit"
+	desc = "Grey suit, grey pants and a grey tie. Very stylish."
+	icon_state = "suit_grey"
+	item_state = "suit_grey"
+	price_tag = 45
+
+/obj/item/clothing/under/black
+	name = "charcoal black outfit"
+	desc = "Black suit, black pants and a black tie. Very stylish."
+	icon_state = "suit_black"
+	item_state = "suit_black"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/black
+	name = "black and purple dress"
+	desc = "A black and purple dress, quite stylish"
+	icon_state = "black_purple"
+	item_state = "black_purple"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/white
+	name = "white and yellow dress"
+	desc = "A white and yellow dress, quite stylish"
+	icon_state = "white_yellow"
+	item_state = "white_yellow"
+	price_tag = 45
+
+
+/obj/item/clothing/under/helltaker
+	name = "charming outfit"//Helltaker reference
+	desc = "A red shirt with a black tie and black pants. Stylish enough to impress the devil."
+	icon_state = "helltaker"
+	item_state = "helltaker"
+	price_tag = 45
+
+/obj/item/clothing/under/johnny
+	name = "rockerboy outfit"//Cyberpunk 2077, Johnny Silverhand's outfit
+	desc = "A padded vest with brown leather pants. Never stop fightin'"
+	icon_state = "johnny"
+	item_state = "johnny"
+	price_tag = 60
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/under/raider
+	name = "leather outfit"
+	desc = "A rather resistant, generic leather outfit. Smells like waste"
+	icon_state = "raider"
+	item_state = "raider"
+	price_tag = 60
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)

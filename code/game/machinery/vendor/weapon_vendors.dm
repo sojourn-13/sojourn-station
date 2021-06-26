@@ -254,7 +254,7 @@
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"
-	desc = "How did this end up here?"
+	desc = "A old world strange vender for some reason still operational."
 	icon_state = "serbomat"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(
@@ -265,17 +265,21 @@
 					/obj/item/weapon/storage/deferred/crate/uniform_flak = 2,
 					/obj/item/weapon/storage/deferred/crate/uniform_light = 2,
 					/obj/item/weapon/gun/projectile/boltgun/sa = 8,
-					/obj/item/ammo_magazine/ammobox/light_rifle_257 = 30,
+					/obj/item/ammo_magazine/ammobox/rifle_75_small = 15,
+					/obj/item/ammo_magazine/ammobox/rifle_75_small/rubber = 15,
+					/obj/item/ammo_magazine/speed_loader_rifle_75 = 20
 					)
 	prices = list(
-					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 50,
-					/obj/item/weapon/storage/deferred/crate/uniform_green = 2000,
-					/obj/item/weapon/storage/deferred/crate/uniform_brown = 2000,
-					/obj/item/weapon/storage/deferred/crate/uniform_black = 2000,
-					/obj/item/weapon/storage/deferred/crate/uniform_flak = 2200,
-					/obj/item/weapon/storage/deferred/crate/uniform_light = 1800,
-					/obj/item/weapon/gun/projectile/boltgun/sa = 1000,
-					/obj/item/ammo_magazine/ammobox/heavy_rifle_408 = 300,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 5,
+					/obj/item/weapon/storage/deferred/crate/uniform_green = 200,
+					/obj/item/weapon/storage/deferred/crate/uniform_brown = 200,
+					/obj/item/weapon/storage/deferred/crate/uniform_black = 200,
+					/obj/item/weapon/storage/deferred/crate/uniform_flak = 220,
+					/obj/item/weapon/storage/deferred/crate/uniform_light = 180,
+					/obj/item/weapon/gun/projectile/boltgun/sa = 100,
+					/obj/item/ammo_magazine/ammobox/rifle_75_small = 100,
+					/obj/item/ammo_magazine/ammobox/rifle_75_small/rubber = 100,
+					/obj/item/ammo_magazine/speed_loader_rifle_75 = 60
 					)
 	idle_power_usage = 211
 	auto_price = FALSE

@@ -88,6 +88,10 @@
 	display_name = "rice hat"
 	path = /obj/item/clothing/head/rice_hat
 
+/datum/gear/head/ranger
+	display_name = "ranger hat"
+	path = /obj/item/clothing/head/ranger
+
 /datum/gear/head/tanker_helmet/color_presets
 	display_name = "tanker helmet, color presets"
 	path = /obj/item/clothing/head/armor/helmet/tanker

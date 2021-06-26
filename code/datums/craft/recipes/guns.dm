@@ -4,15 +4,13 @@
 	related_stats = list(STAT_MEC)
 
 /datum/craft_recipe/gun/ammo_kit
-	name = "ammo kit"
+	name = "scrap ammo kit"
 	result = /obj/item/ammo_kit
 	icon_state = "woodworking"
 	steps = list(
-		list(/obj/item/stack/rods, 10, "time" = 60),
-		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
-		list(CRAFT_MATERIAL, 4, MATERIAL_CARDBOARD, "time" = 60),
-		list(/obj/item/weapon/tool/wrench/improvised, 1, "time" = 60),
-		list(/obj/item/weapon/tool/knife/shiv, 1, "time" = 60),
+		list(/obj/item/stack/rods, 5, "time" = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
 		list(/obj/item/weapon/tool/wirecutters/improvised, 1, "time" = 60),
 		list(QUALITY_WELDING, 15, "time" = 30),
 		list(QUALITY_CUTTING, 10, "time" = 30),
@@ -28,7 +26,7 @@
 	steps = list(
 		list(/obj/item/stack/rods, 3, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 30),
-		list(/obj/item/weapon/crossbowframe, 1, "time" = 20)
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
 	)
 
 /datum/craft_recipe/gun/pistol_magnum
@@ -191,7 +189,7 @@
 		list(/obj/item/weapon/rcd, 1, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 10, 30),
 		list(QUALITY_SAWING, 10, "time" = 60),
-		list(/obj/item/weapon/crossbowframe, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD), //same as the old crossbow frame
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)

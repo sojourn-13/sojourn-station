@@ -6,6 +6,7 @@
 	var/max_blood_storage = 0	//How much blood an organ stores. Base is 5 * blood_req, so the organ can survive without blood for 5 ticks beofre taking damage (+ blood supply of blood vessels)
 	var/current_blood = 100	//How much blood is currently in the organ
 	var/blood_req = 0	//How much blood an organ takes to funcion
+	var/scanner_hidden = FALSE //Does this organ show on a body scanner?
 	var/nutriment_req = 0	//Controls passive nutriment loss
 	var/oxygen_req = 0	//If oxygen reqs are not satisfied, get debuff and brain starts taking damage
 	layer = ABOVE_LYING_MOB_LAYER

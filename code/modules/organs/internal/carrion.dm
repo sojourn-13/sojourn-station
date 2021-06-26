@@ -31,6 +31,7 @@
 
 /obj/item/organ/internal/carrion
 	max_damage = 90 //resilient
+	scanner_hidden = TRUE //sneaky
 
 /obj/item/organ/internal/carrion/chemvessel
 	name = "chemical vessel"

@@ -114,6 +114,20 @@
 	desc = "A sturdy pair of leather shoes."
 	icon_state = "leather"
 
+/obj/item/clothing/shoes/jackboots/redboot
+	name = "red boots"
+	desc = "A pair of stylish red boots."
+	icon_state = "redboots"
+	item_state = "redboots"
+	price_tag = 30
+
+/obj/item/clothing/shoes/jackboots/longboot
+	name = "long boots"
+	desc = "A pair of stylish vertically long boots."
+	icon_state = "longboots"
+	item_state = "longboots"
+	price_tag = 40
+
 /obj/item/clothing/shoes/laceup
 	name = "black dress shoes"
 	desc = "A pair of sleek black polished shoes."

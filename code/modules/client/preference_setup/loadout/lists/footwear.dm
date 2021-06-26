@@ -59,6 +59,14 @@
 	display_name = "brown jackboots"
 	path = /obj/item/clothing/shoes/jackboots/german
 
+/datum/gear/shoes/redboot
+	display_name = "red boots"
+	path = /obj/item/clothing/shoes/jackboots/redboot
+
+/datum/gear/shoes/longboot
+	display_name = "long boots"
+	path = /obj/item/clothing/shoes/jackboots/longboot
+
 /datum/gear/shoes/laced_jackboots
 	display_name = "laced jackboots"
 	path = /obj/item/clothing/shoes/jackboots/laced_jackboots

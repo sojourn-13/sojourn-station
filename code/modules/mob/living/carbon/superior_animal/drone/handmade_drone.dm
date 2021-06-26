@@ -8,7 +8,6 @@
 	wander = FALSE
 	stop_automated_movement_when_pulled = TRUE
 	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
-	colony_friend = TRUE
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	breath_required_type = 0 // Doesn't need to breath
 	breath_poison_type = 0 // Can't be poisoned
@@ -26,6 +25,9 @@
 	light_range = 3
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	var/exam_message = "If you see this, report it to Kaz or R4d6." // Custom message that show when examined and is different for each model.
+
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 	var/obj/item/weapon/cell/large/cell = new /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
 	var/mob/following = null // Who are we following?

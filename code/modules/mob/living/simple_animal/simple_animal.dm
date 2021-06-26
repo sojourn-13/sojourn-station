@@ -53,7 +53,6 @@
 	var/response_harm   = "tries to hurt"
 	var/harm_intent_damage = 3
 	var/cleaning = FALSE //we do clean prase us!
-	var/friendly_to_colony = FALSE //Do we attack colony stuff - Mechs / Turrets regardless of who they are
 
 	//Temperature effect
 	var/minbodytemp = 250

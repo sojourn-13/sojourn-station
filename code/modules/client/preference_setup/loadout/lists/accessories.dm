@@ -26,7 +26,7 @@
 	path = /obj/item/clothing/accessory/necklace
 
 /datum/gear/accessory/fractalrosary
-	display_name = "Fractal Rosary"
+	display_name = "fractal Rosary"
 	path = /obj/item/clothing/accessory/fractalrosary
 
 /datum/gear/accessory/neckbrace
