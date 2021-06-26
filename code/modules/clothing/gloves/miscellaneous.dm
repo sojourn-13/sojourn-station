@@ -95,6 +95,14 @@
 	siemens_coefficient = 0
 	price_tag = 250
 
+/obj/item/clothing/gloves/knuckles
+	name = "knuckle gloves"
+	desc = "Gloves with additional reinforcment on the knuckles."
+	icon_state = "knuckles"
+	item_state = "knuckles"
+	armor = list(melee = 20, bullet = 5, energy = 0, bomb = 0, bio = 0, rad = 0)
+	price_tag = 50
+
 /obj/item/clothing/gloves/evening
 	name = "evening gloves"
 	initial_name = "evening gloves"

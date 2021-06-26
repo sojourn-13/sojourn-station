@@ -133,6 +133,14 @@
 	display_name = "jamrock blazer"
 	path = /obj/item/clothing/suit/storage/jamrock_blazer
 
+/datum/gear/suit/triad
+	display_name = "triad jacket"
+	path = /obj/item/clothing/suit/storage/triad
+
+/datum/gear/suit/akira
+	display_name = "red jacket"
+	path = /obj/item/clothing/suit/storage/akira
+
 /datum/gear/suit/radhat
 	display_name = "radiation hood"
 	path = /obj/item/clothing/head/radiation

@@ -818,6 +818,11 @@
 	maximum_temperature = 270
 	minimum_temperature = 0
 
+/datum/chemical_reaction/rejuvenating_agent
+	result = "rejuvenating_agent"
+	required_reagents = list("cleaner" = 2, "pacid" = 1, "sulfur" = 1)
+	result_amount = 2
+
 /datum/chemical_reaction/glue
 	result = "glue"
 	required_reagents = list("plasticide" = 1, "ethanol" = 1, "carbon" = 1)

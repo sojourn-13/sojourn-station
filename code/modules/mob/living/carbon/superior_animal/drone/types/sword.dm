@@ -4,6 +4,7 @@
 	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
 	icon = 'icons/mob/custom_bot.dmi'
 	icon_state = "soteria_sword_handmade"
+	attack_sound = 'sound/weapons/blade1.ogg'
 	health = 500
 	maxHealth = 500
 	melee_damage_lower = 40

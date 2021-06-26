@@ -137,6 +137,9 @@
 		to_chat(user, (feedback ? feedback : "You short out the lock of \the [src]."))
 		return 1
 
+/obj/item/weapon/storage/secure/briefcase/AltClick(mob/user)
+	return attack_hand(user)
+
 // -----------------------------
 //        Secure Briefcase
 // -----------------------------
