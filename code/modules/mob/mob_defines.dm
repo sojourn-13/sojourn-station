@@ -8,7 +8,8 @@
 
 	//This is here for admins to modife for any player, mob for events or other things. Also antags could
 	//likely use this - I.E Bots with deeper scans could see through into a carrion or a Exl agent
-	var/colony_friend = FALSE //Are we friendly to the colony?
+	var/colony_friend = FALSE //Are we friendly to the colony? Turrets/Mechs vs Mob
+	var/friendly_to_colony = FALSE //Do we attack colony stuff - Mechs / Turrets regardless of who they are
 
 	movement_handlers = list(
 	/datum/movement_handler/mob/relayed_movement,

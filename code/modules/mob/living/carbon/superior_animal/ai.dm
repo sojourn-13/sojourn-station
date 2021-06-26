@@ -48,6 +48,8 @@
 		var/mob/living/L = O
 		if((L.stat != CONSCIOUS) || (L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0)) || (!attack_same && (L.faction == src.faction)) || (L in friends))
 			return
+		if(L.friendly_to_colony && src.friendly_to_colony) //If are target and areselfs have the friendly to colony tag, used for chtmant protection
+			return
 		return 1
 
 	if (istype(O, /obj/mecha))
