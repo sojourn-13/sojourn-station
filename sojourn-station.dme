@@ -1939,6 +1939,8 @@
 #include "code\modules\mob\living\carbon\superior_animal\drone\ai.dm"
 #include "code\modules\mob\living\carbon\superior_animal\drone\handmade_drone.dm"
 #include "code\modules\mob\living\carbon\superior_animal\drone\life.dm"
+#include "code\modules\mob\living\carbon\superior_animal\drone\assembly\mantis.dm"
+#include "code\modules\mob\living\carbon\superior_animal\drone\assembly\sword.dm"
 #include "code\modules\mob\living\carbon\superior_animal\drone\types\hammer.dm"
 #include "code\modules\mob\living\carbon\superior_animal\drone\types\mantis.dm"
 #include "code\modules\mob\living\carbon\superior_animal\drone\types\sword.dm"
