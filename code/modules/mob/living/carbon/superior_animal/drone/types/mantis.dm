@@ -20,7 +20,7 @@
 	if(!(already_slashed)) // So that we don't do two splash slash in a row
 
 		// Special attacks
-		if(prob(15)) // Luck or enough targets
+		if(prob(15))
 			splash_slash()
 			already_slashed = TRUE
 			return

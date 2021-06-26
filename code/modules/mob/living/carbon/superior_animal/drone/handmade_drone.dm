@@ -5,6 +5,7 @@
 	faction = "neutral"
 	turns_per_move = 5
 	see_in_dark = 10
+	wander = FALSE
 	stop_automated_movement_when_pulled = TRUE
 	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
 	colony_friend = TRUE
@@ -33,7 +34,10 @@
 /mob/living/carbon/superior_animal/handmade/examine(mob/user)
 	..()
 	to_chat(user, SPAN_NOTICE("[exam_message]"))
-	if (health < maxHealth * 0.25)
+	var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
+	if(robotics_expert) // Are we an expert in robots?
+		to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
+	else if (health < maxHealth * 0.25)
 		to_chat(user, SPAN_DANGER("It's grievously wounded!"))
 	else if (health < maxHealth * 0.50)
 		to_chat(user, SPAN_DANGER("It's badly wounded!"))
