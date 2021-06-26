@@ -9,10 +9,7 @@
 	melee_damage_lower = 70
 	melee_damage_upper = 80
 	armor = list(melee = 70, bullet = 70, energy = 70, bomb = 50, bio = 100, rad = 100)
-
-/mob/living/carbon/superior_animal/handmade/hammer/examine(mob/user)
-	..()
-	to_chat(user, SPAN_NOTICE("This one appears to wield a stellar-grade engine shaped into a hammer."))
+	exam_message = "This one appears to wield a stellar-grade engine shaped into a hammer."
 
 /mob/living/carbon/superior_animal/handmade/hammer/UnarmedAttack()
 	if(!Adjacent(target_mob))
