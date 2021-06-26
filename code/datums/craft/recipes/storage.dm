@@ -11,9 +11,9 @@
 	steps = list(
 		list(/obj/item/weapon/storage/bag/trash, 1, "time" = 60),
 		list(QUALITY_CUTTING, 20, "time" = 60),
-		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTIC)
+		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTIC),
 		list(/obj/item/weapon/storage/bag/trash, 1, "time" = 60),
-		list(QUALITY_CUTTING, 20, "time" = 60),
+		list(QUALITY_CUTTING, 20, "time" = 60)
 	)
 	related_stats = list(STAT_COG)
 

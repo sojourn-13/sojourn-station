@@ -486,8 +486,8 @@
 ///////////////////////////// Folken Perks
 
 /datum/perk/oddity_reroll
-	name = "Reroll Oddity"
-	desc = "Allow you to change the stat bonuses of an oddity"
+	name = "Modify Oddity"
+	desc = "You reach into your understanding of this natural world to alter the latent effects of an oddity, changing it for better or worse."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -502,7 +502,7 @@
 	if(!istype(O, /obj/item/weapon/oddity))
 		to_chat(usr, SPAN_NOTICE("This isn't an oddity !"))
 		return FALSE
-	cooldown_time = world.time + 10 MINUTES
+	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("[user] do something to the anomaly in their hand.", "You do something to the anomaly in their hand.")
 	log_and_message_admins("used their [src] perk.")
 	if(O.oddity_stats)
@@ -574,9 +574,9 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(user, SPAN_NOTICE("You can't make a follower so soon."))
+		to_chat(user, SPAN_NOTICE("You've already created your companion, you didn't lose them did you?"))
 		return FALSE
-	cooldown_time = world.time + 15 MINUTES
+	cooldown_time = world.time + 12 HOURS
 	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
 	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
 	mushroom.friends += user
@@ -584,7 +584,7 @@
 	..()
 
 /datum/perk/slime_follower
-	name = "Spawn Slime Follower"
+	name = "Spawn Slime-Mold Follower"
 	desc = "Slime followers regenerates and has better stats fit for combat."
 	active = FALSE
 	passivePerk = FALSE
@@ -596,9 +596,9 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(user, SPAN_NOTICE("You can't make a follower so soon."))
+		to_chat(user, SPAN_NOTICE("You've already created your companion, you didn't lose them did you?"))
 		return FALSE
-	cooldown_time = world.time + 15 MINUTES
+	cooldown_time = world.time + 12 HOURS
 	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
 	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
 	mushroom.friends += user

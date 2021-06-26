@@ -868,17 +868,6 @@
 	dark_color = "#ffffff"
 	light_color = "#000000"
 
-	/* Commented out until I figure out how to do the fully body lung.
-	has_limbs = list(
-		BP_CHEST =  new /datum/organ_description/chest/full_body_prosthetic,
-		BP_GROIN =  new /datum/organ_description/groin/full_body_prosthetic,
-		BP_HEAD =   new /datum/organ_description/head/full_body_prosthetic,
-		BP_L_ARM =  new /datum/organ_description/arm/left/full_body_prosthetic,
-		BP_R_ARM =  new /datum/organ_description/arm/right/full_body_prosthetic,
-		BP_L_LEG =  new /datum/organ_description/leg/left/full_body_prosthetic,
-		BP_R_LEG =  new /datum/organ_description/leg/right/full_body_prosthetic
-		)
-
 	has_process = list(    // which required-organ checks are conducted.
 		OP_HEART =    /obj/item/organ/internal/heart,
 		OP_STOMACH =  /obj/item/organ/internal/stomach,
@@ -889,7 +878,6 @@
 		OP_APPENDIX = /obj/item/organ/internal/appendix,
 		OP_EYES =     /obj/item/organ/internal/eyes
 		)
-	*/
 
 	stat_modifiers = list(
 		STAT_BIO = 10,
@@ -902,7 +890,7 @@
 
 	perks = list(PERK_THERMAL)
 
-	spawn_flags = CAN_JOIN
+	spawn_flags = IS_RESTRICTED
 
 /datum/species/human/get_bodytype()
 	return "Folken"
@@ -937,7 +925,7 @@
 		STAT_VIG = 0
 	)
 
-	spawn_flags = CAN_JOIN
+	spawn_flags = IS_RESTRICTED
 
 /datum/species/human/get_bodytype()
 	return "Mycus"

@@ -143,7 +143,7 @@
 
 /datum/craft_recipe/guild/supermop
 	name = "pneumatic condensing mop"
-	result = /obj/item/weapon/tool/mop/guild
+	result = /obj/item/weapon/mop/guild
 	steps = list(
 		list(/obj/item/weapon/mop, 1),
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 40),
