@@ -59,7 +59,7 @@
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
 	mob_size = 3
-	faction = "neutral"
+	faction = "pond"
 	density = 0
 	wander = 1
 	colony_friend = TRUE
@@ -95,7 +95,7 @@
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
 	mob_size = 3
-	faction = "pond"
+	faction = "neutral"
 
 /mob/living/simple_animal/snail
 	name = "snail"
