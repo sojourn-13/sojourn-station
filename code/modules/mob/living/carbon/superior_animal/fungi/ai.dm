@@ -1,11 +1,11 @@
 /mob/living/carbon/superior_animal/fungi/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 	if(speaker in friends) // Is the one talking a friend?
-		if(message == "Follow.") // Is he telling us to follow?
+		if(message == "Follow." && !following) // Is he telling us to follow?
 			following = speaker
-			visible_emote("says, \"I follow friend-[speaker.name].\"")
+			visible_emote("says, \"I follow friend, [speaker.name].\"")
 
-		if(message == "Stop.") // Else, is he telling us to stop?
+		if(message == "Stop." && following) // Else, is he telling us to stop?
 			following = null
 			visible_emote("says, \"I stop follow friend.\"")
 

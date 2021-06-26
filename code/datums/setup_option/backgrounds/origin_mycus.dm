@@ -48,8 +48,6 @@
 
 	restricted_to_species = list(FORM_MYCUS)
 
-	perks = list(PERK_FOLKEN_HEALING)
-
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,

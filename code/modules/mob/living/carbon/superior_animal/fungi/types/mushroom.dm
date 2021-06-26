@@ -1,6 +1,6 @@
 /mob/living/carbon/superior_animal/fungi/shroom
-	name = "Mushroom Follower"
-	desc = "A mushroom follower, made by a Mushroom-born Mycus. It will produce random medicine when fed."
+	name = "Shroomling"
+	desc = "A shroomling, a companion produced by the mycus. It isn't that strong and requires alot of food, but feeding it produces various powerful chemical resins."
 	var/drop_threshold = 90 // Nutrition threshold upon which the shroom drop the med.
 	var/drop_timer = 0 // Timer that prevent to drop like 3 medicine bottle in a second
 	var/drop_time = 15 // How long until the bottle drop.

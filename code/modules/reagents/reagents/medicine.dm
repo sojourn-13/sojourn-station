@@ -196,8 +196,11 @@
 	scannable = 1
 
 /datum/reagent/medicine/dexalinp/holy
+	name = "Helaxin Negative"
+	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
 	id = "holydexalinp"
 	scannable = 0
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.adjustOxyLoss(-30 * effect_multiplier)

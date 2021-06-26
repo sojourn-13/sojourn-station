@@ -22,6 +22,8 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/fungi
 	mob_size = MOB_TINY
 	colony_friend = TRUE
+	randpixel = 0
+	can_burrow = FALSE
 
 	//Hunger/feeding vars
 	max_nutrition = 200
@@ -36,3 +38,20 @@
 /mob/living/carbon/superior_animal/fungi/New()
 	..()
 	nutrition = 20 // Else they make a bottle as soon as they spawn.
+	switch(pick("red","blue","green","gray","purple","yellow","orange","aqua"))
+		if("red")
+			color = "#ca8289"
+		if("blue")
+			color = "#aeccfe"
+		if("green")
+			color = "#72caa6"
+		if("gray")
+			return
+		if("purple")
+			color = "#a4a4c3"
+		if("yellow")
+			color = "#ffd56f"
+		if("orange")
+			color = "#ffba66"
+		if("aqua")
+			color = "#98ffdc"
