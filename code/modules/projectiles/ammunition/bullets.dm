@@ -47,7 +47,7 @@
 	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol_35/scrap
 
-/obj/item/ammo_casing/pistol/scrap/prespawned
+/obj/item/ammo_casing/pistol_35/scrap/prespawned
 	amount = 15
 
 /obj/item/ammo_casing/pistol_35/laser

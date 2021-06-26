@@ -88,10 +88,10 @@
 
 	if(piles)
 		for(var/j = 1 to piles)
-			new /obj/item/ammo_casing/pistol/scrap/prespawned(user.loc)
+			new /obj/item/ammo_casing/pistol_35/scrap/prespawned(user.loc)
 	if(boxxes)
 		for(var/j = 1 to boxxes)
-			new /obj/item/ammo_magazine/ammobox/pistol/scrap(user.loc)
+			new /obj/item/ammo_magazine/ammobox/pistol_35/scrap(user.loc)
 
 //////////////////////////////////////////////////////////////////////////////////////
 
