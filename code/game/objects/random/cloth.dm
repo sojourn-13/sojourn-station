@@ -107,7 +107,9 @@
 				/obj/item/clothing/suit/storage/toggle/labcoat/science = 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/virologist = 3,
 				/obj/item/clothing/suit/storage/rank/qm_coat = 2,
-				/obj/item/clothing/suit/storage/toggle/leather/cyberpunk = 8))
+				/obj/item/clothing/suit/storage/toggle/leather/cyberpunk = 8,
+				/obj/item/clothing/suit/storage/triad = 2,
+				/obj/item/clothing/suit/storage/akira = 2))
 
 /obj/random/cloth/suit/low_chance
 	name = "low chance random suit"
@@ -192,7 +194,17 @@
 				/obj/item/clothing/under/leisure = 5,
 				/obj/item/clothing/under/leisure/white = 5,
 				/obj/item/clothing/under/leisure/pullover = 5,
-				/obj/item/clothing/under/track_suit = 2))
+				/obj/item/clothing/under/track_suit = 2,
+				/obj/item/clothing/under/white = 2,
+				/obj/item/clothing/under/red = 2,
+				/obj/item/clothing/under/green = 2,
+				/obj/item/clothing/under/grey = 2,
+				/obj/item/clothing/under/black = 2,
+				/obj/item/clothing/under/dress/black = 1,
+				/obj/item/clothing/under/dress/white = 1,
+				/obj/item/clothing/under/helltaker = 2,
+				/obj/item/clothing/under/johnny = 2,
+				/obj/item/clothing/under/raider = 1))
 
 /obj/random/cloth/under/low_chance
 	name = "low chance random under"
@@ -277,7 +289,9 @@
 				/obj/item/clothing/head/ushanka = 3,
 				/obj/item/clothing/head/costume/history/anarchist_cap = 2,
 				/obj/item/clothing/head/costume/history/anarchist = 1,
-				/obj/item/clothing/head/welding = 5))
+				/obj/item/clothing/head/welding = 5,
+				/obj/item/clothing/head/ranger = 3,
+				/obj/item/clothing/head/inhaler = 1))
 
 /obj/random/cloth/head/low_chance
 	name = "low chance random head"
@@ -317,7 +331,8 @@
 				/obj/item/clothing/gloves/thick/swat = 2,
 				/obj/item/clothing/gloves/stungloves = 1,
 				/obj/item/clothing/gloves/evening = 2,
-				/obj/item/clothing/gloves/ash_evening = 2))
+				/obj/item/clothing/gloves/ash_evening = 2,
+				/obj/item/clothing/gloves/knuckles = 2))
 
 /obj/random/cloth/gloves/low_chance
 	name = "low chance random gloves"
@@ -363,6 +378,8 @@
 				/obj/item/clothing/shoes/color/yellow = 1,
 				/obj/item/clothing/shoes/galoshes = 8,
 				/obj/item/clothing/shoes/jackboots = 14,
+				/obj/item/clothing/shoes/jackboots/longboot = 7,
+				/obj/item/clothing/shoes/jackboots/redboot = 4,
 				/obj/item/clothing/shoes/leather = 14,
 				/obj/item/clothing/shoes/aerostatic_boots = 10,
 				/obj/item/clothing/shoes/render = 10,
