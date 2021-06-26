@@ -46,10 +46,10 @@
 	ammo_type = /obj/item/ammo_casing/pistol_35
 	max_ammo = 30
 
-/obj/item/ammo_magazine/ammobox/pistol/scrap
+/obj/item/ammo_magazine/ammobox/pistol_35/scrap
 	name = "ammunition packet (old .35 Auto)"
 	icon_state = "pistol_s"
-	ammo_type = /obj/item/ammo_casing/pistol/scrap
+	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
 /obj/item/ammo_magazine/ammobox/pistol_35/practice
 	name = "ammunition packet (.35 Auto practice)"
