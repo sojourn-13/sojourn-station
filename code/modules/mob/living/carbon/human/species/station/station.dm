@@ -892,7 +892,7 @@
 
 	spawn_flags = IS_RESTRICTED
 
-/datum/species/human/get_bodytype()
+/datum/species/folken/get_bodytype()
 	return "Folken"
 
 /datum/species/mycus
@@ -927,5 +927,5 @@
 
 	spawn_flags = IS_RESTRICTED
 
-/datum/species/human/get_bodytype()
+/datum/species/mycus/get_bodytype()
 	return "Mycus"
