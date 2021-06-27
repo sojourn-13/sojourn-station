@@ -119,3 +119,51 @@
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_monster" = 25, "orangejuice" = 25, "sugar" = 10)
 	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster_sol
+	name = "\"Fed\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. With Sol Fed marketing and pineapple juice to give it a sweet tropical flavour and salty acid. Why does drinking this make you want to shoot kriosans?"
+	icon_state = "claw_soyfed"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 25, "pineapplejuice" = 25, "soysauce" = 10)
+	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blood
+	name = "\"Crimson Punch\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. Going full punk rock this Claw drink has a heavy iron and tomato after taste."
+	icon_state = "claw_punch"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 25, "tomatojuice" = 25, "iron" = 10)
+	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster_jungel
+	name = "\"Hay Fever\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. Tropical flavours packed into a can making it exotic mix of biodiverse flavours."
+	icon_state = "claw_tropical"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 25, "limejuice" = 20, "watermelonjuice" = 10, "icetea" = 5)
+	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster_church
+	name = "\"Saint\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. Does not give you golden wings."
+	icon_state = "claw_church"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 25, "melonsoda" = 25, "ntcahors" = 10)
+	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster_red
+	name = "\"Code RED\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. Red cans are drunk faster."
+	icon_state = "claw_red"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 25, "sodawater" = 25, "cherryjelly" = 10)
+	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blue
+	name = "\"Code BLUE\" Claw Energy"
+	desc = "Claw energy, for when you need the focus of a hawk and the energy of a cheetah. A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. Code BLUE being counted as a mellow smooth taste that would be best cold."
+	icon_state = "claw_red"
+	center_of_mass = list("x"=16, "y"=6)
+	preloaded_reagents = list("energy_drink_monster" = 25, "tonic" = 25, "cream" = 10)
+	volume = 60
