@@ -42,7 +42,8 @@
 	var/flesh_color = "#A10808"
 
 	var/obj/item/weapon/tank/internal = null//Human/Monkey
-	colony_friend = TRUE //So we dont attack monkeys/BST/People if we allied
+	colony_friend = TRUE //For mobs to make sure if they are also friendly dont attack humans
+	friendly_to_colony = TRUE //So we dont attack monkeys/BST/People if we allied
 
 	//TODO: move to brain
 
