@@ -5,27 +5,27 @@
 "ae" = (/turf/simulated/wall/r_wall,/area/template_noop)
 "ag" = (/obj/machinery/door/airlock/command,/turf/simulated/floor/plating/under,/area/template_noop)
 "ah" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/simulated/floor/plating/under,/area/template_noop)
-"ai" = (/obj/structure/lattice,/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"ai" = (/obj/structure/lattice,/obj/structure/lattice,/obj/random/junk,/turf/template_noop,/area/template_noop)
 "aj" = (/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "al" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 2},/turf/simulated/floor/plating/under,/area/template_noop)
 "am" = (/obj/machinery/door/airlock/centcom{icon_state = "door_locked"; locked = 1},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "an" = (/mob/living/simple_animal/hostile/hivebot,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "ao" = (/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"ap" = (/obj/item/remains/human,/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/plating/under,/area/template_noop)
+"ap" = (/obj/item/remains/human,/obj/structure/bed/chair/office/light{dir = 8},/mob/living/simple_animal/hostile/hivebot/range,/turf/simulated/floor/plating/under,/area/template_noop)
 "ar" = (/obj/structure/computerframe{anchored = 1; dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "as" = (/obj/machinery/disposal,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "at" = (/obj/item/remains/human,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "au" = (/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/plating/under,/area/template_noop)
 "av" = (/obj/item/remains/human,/turf/simulated/floor/plating/under,/area/template_noop)
 "aw" = (/obj/machinery/light_construct{dir = 4},/turf/simulated/floor/plating/under,/area/template_noop)
-"ax" = (/mob/living/simple_animal/hostile/hivebot,/turf/simulated/floor/plating/under,/area/template_noop)
+"ax" = (/mob/living/simple_animal/hostile/hivebot,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "ay" = (/obj/item/modular_computer/console{dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "az" = (/obj/structure/table/reinforced,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "aA" = (/obj/machinery/light_construct{dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"aB" = (/obj/random/techpart/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"aB" = (/obj/random/techpart/low_chance,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "aD" = (/obj/machinery/light_construct,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "aE" = (/obj/random/junk,/turf/simulated/floor/plating/under,/area/template_noop)
-"aF" = (/obj/structure/lattice,/obj/machinery/light_construct{dir = 1},/turf/template_noop,/area/template_noop)
+"aF" = (/obj/structure/lattice,/obj/machinery/light_construct{dir = 1},/obj/random/junk/low_chance,/turf/template_noop,/area/template_noop)
 "aG" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating/under,/area/template_noop)
 "aH" = (/obj/machinery/telecomms/relay,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "aI" = (/obj/machinery/light_construct,/obj/random/junk,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
@@ -47,52 +47,80 @@
 "aZ" = (/obj/structure/noticeboard,/turf/simulated/wall/r_wall,/area/template_noop)
 "ba" = (/obj/item/weapon/paper,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bb" = (/obj/structure/bed/chair/comfy/blue,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bc" = (/obj/structure/table/reinforced,/obj/item/weapon/pen,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bd" = (/obj/structure/table/reinforced,/obj/item/weapon/paper,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"bc" = (/obj/structure/table/reinforced,/obj/item/weapon/pen,/obj/random/material/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"bd" = (/obj/structure/table/reinforced,/obj/item/weapon/paper,/obj/random/material/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "be" = (/obj/structure/table/reinforced,/obj/item/weapon/paper_bin,/obj/item/weapon/pen,/obj/item/weapon/paper,/turf/simulated/floor/plating/under,/area/template_noop)
-"bf" = (/obj/structure/table/reinforced,/turf/simulated/floor/plating/under,/area/template_noop)
+"bf" = (/obj/structure/table/reinforced,/obj/structure/inflatable,/turf/simulated/floor/plating/under,/area/template_noop)
 "bg" = (/obj/machinery/light{dir = 4},/obj/random/junk,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bh" = (/obj/structure/table/reinforced,/obj/item/weapon/pen,/turf/simulated/floor/plating/under,/area/template_noop)
+"bh" = (/obj/structure/table/reinforced,/obj/item/weapon/pen,/obj/random/material/low_chance,/obj/random/material/low_chance,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "bi" = (/obj/item/remains/human,/obj/random/structures/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bj" = (/obj/structure/bed/chair/comfy/blue{dir = 1; icon_state = "comfychair_preview"},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bk" = (/obj/structure/table/rack,/obj/item/weapon/gun_upgrade,/obj/random/firstaid,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bl" = (/obj/structure/table/rack,/obj/item/weapon/gun_upgrade,/obj/structure/closet/onestar/tier2/normal,/obj/random/techpart/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bm" = (/obj/structure/table/rack,/obj/item/weapon/gun_upgrade,/obj/random/techpart/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"bk" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"bl" = (/obj/structure/table/rack,/obj/structure/closet/onestar/tier2/normal,/obj/random/techpart/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"bm" = (/obj/structure/table/rack,/obj/random/techpart/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bn" = (/obj/structure/bed/chair/office/light,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bo" = (/obj/item/remains,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bp" = (/obj/structure/table/rack,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bq" = (/obj/random/junk,/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"br" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"br" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bs" = (/obj/item/weapon/gun/projectile/glock,/obj/item/ammo_casing/pistol,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bt" = (/obj/structure/table/rack,/obj/item/clothing/mask/gas/ihs,/obj/item/clothing/mask/gas/ihs,/obj/item/clothing/gloves/stungloves,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bw" = (/obj/structure/table/rack,/obj/random/ammo/shotgun,/obj/random/rig_module/low_chance,/obj/random/rig_module/rare/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"dg" = (/obj/random/material/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"dn" = (/mob/living/simple_animal/hostile/hivebot,/turf/simulated/floor/plating/under,/area/template_noop)
+"ej" = (/obj/random/scrap/sparse_even,/obj/random/junk,/turf/simulated/floor/plating/under,/area/template_noop)
+"ep" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"fT" = (/obj/random/structures/low_chance,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"jn" = (/obj/random/material/low_chance,/mob/living/simple_animal/hostile/hivebot,/turf/template_noop,/area/template_noop)
+"lF" = (/obj/structure/lattice,/obj/random/material/low_chance,/mob/living/simple_animal/hostile/hivebot/range,/turf/template_noop,/area/template_noop)
+"lJ" = (/obj/structure/lattice,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
+"oL" = (/obj/machinery/light_construct{dir = 4},/obj/random/junk,/turf/simulated/floor/plating/under,/area/template_noop)
+"pW" = (/obj/structure/bed/chair/comfy/blue{dir = 1; icon_state = "comfychair_preview"},/obj/structure/inflatable,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"sl" = (/obj/random/junk,/turf/template_noop,/area/template_noop)
+"uJ" = (/obj/machinery/light_construct{dir = 8},/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"wz" = (/obj/structure/girder,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"wA" = (/obj/structure/lattice,/obj/random/material/low_chance,/obj/random/material/low_chance,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
+"yy" = (/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"BE" = (/obj/structure/lattice,/mob/living/simple_animal/hostile/hivebot/range,/turf/template_noop,/area/template_noop)
+"Fq" = (/mob/living/simple_animal/hostile/hivebot,/turf/template_noop,/area/template_noop)
+"Fr" = (/obj/random/junk/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"Ix" = (/obj/structure/lattice,/mob/living/simple_animal/hostile/hivebot,/turf/template_noop,/area/template_noop)
+"Pj" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/template_noop,/area/template_noop)
+"PU" = (/mob/living/simple_animal/hostile/hivebot/range,/obj/random/junk/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "Qv" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/template_noop)
+"Ro" = (/obj/random/scrap/sparse_even,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"RE" = (/obj/structure/lattice,/obj/random/junk/low_chance,/turf/template_noop,/area/template_noop)
+"RW" = (/obj/structure/table/reinforced,/obj/structure/inflatable,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"To" = (/obj/structure/inflatable,/turf/simulated/floor/plating/under,/area/template_noop)
 "Uz" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/plating/under,/area/template_noop)
+"Yr" = (/obj/structure/lattice,/obj/random/junk,/turf/template_noop,/area/template_noop)
+"YP" = (/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
+"ZH" = (/obj/random/junk/low_chance,/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaabababaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaa
-aaaeaeaeaeacacacacabababababababaaaaaaabaaaaaaaaaa
-aaaeaVaVadadaBUzacacacacacababadabababadaaaaaaaaaa
-aaaeaKadajahadadaEadadadawaeacacacacacacaGaGaGaaaa
-aaaeaeaeaHajajajaIajadaKaKaeQvadajadadadaoapaGaaaa
-aaaaabaeaeaeaeaeaeaLaeaeaeaeaeadajadajajajaoaGabaa
-abababaeaMaNaNaeajajasaOaPaQaeaRajahadaEadadaSabaa
-aaaaaaaebobsanambqajajaUaUaVaeajaTadadadaWaEaSabaa
-aaaaaaaeaXaXaYaeajanajajajaQaeajajajayadadajaGabaa
-aaabaaaeaeaeaeaZajajajajajajagajaTataradadadaGabab
-abababababaeaRbaajbbbbbbadadagatajajajadaEadaGaaaa
-aaaaUzababaeajajajbcbdazbeajaeaAajajajaEadadacabab
-aaabadadawaeaQaQajajadadbfbgaeajajarajadaWadaGaaaa
-aaabadadadadaQajajadababazaTaeaQajayajadaWadacaaab
-aaaaaaaxadalajaTajadabbhazaTaebiajarajadaWadaGabab
-aaaaabadawaeajaTajaTbjadbjajaeaAajajaTadadadaGaaaa
-aaababadUzaeajajaDajajajajajagajajanayaEadQvacabab
-aaababadabaeaeaeaeaeajajajajagajajatarajajauacabaa
-aaabaeaeaeaebkblbmaeajajbnbnaeaTaEajajaEadavacabaa
-ababUzaebtajajanajambraQaQaQaeasadaEacacaEacacabaa
-aaabadaebpbpbwbmbmaeaeaeaeaeaeacaEabababababababaa
-aaabadaeaeaeaeaeaeaeabababaFabacacababaaaaaaaaaiaa
-aaabadadadabadaaaaabaaaaabaaaaadaaaaabaaaaaaaaaaaa
-aaaaababaaabaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaYPaaaaFqaaaaaaaaZHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaFqYPZHaalJRElJYPaaFqslaalJaaaaaaFqaaaaaaaaFqaaaa
+ZHaeaeaeaeacacacaclJBEREabablJabZHPjaaabZHaaaaaaaa
+aaaeaVaVadadaBUzacacacwzwzYrabadlJYrlJadaaaaaaFqaa
+aaaeaKUzajPUadyyaEyyyyyyawaewzacacacacacaGaGaGaaaa
+PjaeaeaeaHajajajaIajahaKaKaeQvdnajyyyyahaoapaGaaaa
+aaaaabaeaeaeaeaeaeaLaeaeaeaeaeaddgUzajajajaoaGabaa
+ababIxaeaMaNaNaeajajasaOaPaQaeaRajahadaEadahaSREaa
+ZHZHaaaebobsanambqajajaUaUaVaeajaTadyyyyaWaEaSabaa
+aaaaZHaeaXaXaYaeajanajajajaQaeajajajayadadajaGabaa
+aaabaaaeaeaeaeaZajajajajajajagajaTataradFradaGIxab
+IxablJlJlJaeaRbaajbbbbbbyyyyagatajajajadaEadaGaaaa
+aaaaUzlFlJaeajajbkbcbdazbeanaeaAajepajaEadaxacBEab
+YPREadadoLaeaQaQajepToTobfbgaeajanarajadfTadaGYPaa
+YPabaEUzyyadaQajdgTowAwARWaTaeaQajaybkyyaWadwzZHab
+aaYPZHaxadalajaTajTowAbhRWaTaebiajarajadfTadaGabab
+aaaaBEyyawaeajaTajaTpWTobjajaeuJajajaTadadahaGYPZH
+ZHlJREadejaeanajaDdgajajbkajagajajanayaEadQvwzabab
+aalJlJyyabaeaeaeaeaeajandgajagajajatarajajauwzlFaa
+aalJaeaeaeaeaXblbmaeajajbnbnaeaTaEajajaEadavacYraa
+IxabUzaebtajajanajambraQaQaQaeasadaEwzacaEacwzabZH
+YPREaEaebpbpbwbmbmaeaeaeaeaeaeacaEBEabRElJababREaa
+ZHlJahaeaeaeaeaeaeaeIxababaFlJacaclJIxslYPYPFqaiZH
+aaREyyyyFrIxaEYPYPlJaaaaYraaYPRoaaaalJaajnaaZHaaaa
+aaaaREabYPlJaaZHaaabaaaaPjaaaaZHaaZHaaaaaaaaaaaaZH
 "}

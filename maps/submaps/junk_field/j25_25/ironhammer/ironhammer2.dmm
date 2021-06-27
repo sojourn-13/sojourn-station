@@ -10,6 +10,10 @@
 /mob/living/simple_animal/hostile/hivebot,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
+"ap" = (
+/mob/living/simple_animal/hostile/hivebot,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
 "ay" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -18,7 +22,6 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/template_noop)
 "aP" = (
-/obj/structure/table/rack,
 /obj/structure/closet/onestar/tier2/normal,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
@@ -72,6 +75,10 @@
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
+"fj" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
 "fy" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/armor/heavy/riot/ironhammer,
@@ -89,6 +96,10 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
+/area/template_noop)
+"gw" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
 "hy" = (
 /obj/machinery/door/airlock/centcom{
@@ -114,6 +125,14 @@
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
+"kO" = (
+/mob/living/simple_animal/hostile/hivebot/range,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/template_noop)
+"kS" = (
+/obj/random/junk/low_chance,
+/turf/template_noop,
+/area/template_noop)
 "lz" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -137,10 +156,14 @@
 /obj/machinery/light,
 /turf/simulated/floor/carpet,
 /area/template_noop)
+"oP" = (
+/mob/living/simple_animal/hostile/hivebot/range,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
 "oS" = (
 /obj/structure/table/rack,
 /obj/item/clothing/mask/gas/tactical,
-/obj/item/weapon/gun/energy/gun/martin,
+/obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "pa" = (
@@ -151,6 +174,7 @@
 /obj/structure/table/woodentable,
 /obj/item/weapon/material/ashtray,
 /obj/item/weapon/storage/fancy/cigarettes/frozen,
+/obj/random/cloth/belt/low_chance,
 /turf/simulated/floor/carpet,
 /area/template_noop)
 "po" = (
@@ -158,6 +182,11 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
+/area/template_noop)
+"pF" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
 /area/template_noop)
 "qk" = (
 /obj/structure/bed/chair{
@@ -176,6 +205,10 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
+"rI" = (
+/mob/living/simple_animal/hostile/hivebot/range,
+/turf/template_noop,
+/area/template_noop)
 "rN" = (
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
@@ -189,6 +222,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/cargo,
+/area/template_noop)
+"tA" = (
+/mob/living/simple_animal/hostile/hivebot,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "up" = (
 /obj/machinery/vending/cola,
@@ -250,10 +288,11 @@
 /area/template_noop)
 "zc" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/book/manual/wiki/security_ironparagraphs,
 /obj/structure/noticeboard{
 	pixel_x = 30
 	},
+/obj/item/stack/material/cardboard/random,
+/obj/random/cloth/gloves/low_chance,
 /turf/simulated/floor/carpet,
 /area/template_noop)
 "zj" = (
@@ -316,7 +355,6 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "EA" = (
-/obj/structure/table/rack,
 /obj/structure/closet/onestar/tier2/normal,
 /obj/machinery/light{
 	dir = 1
@@ -326,6 +364,11 @@
 "Fb" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/steel/bluecorner,
+/area/template_noop)
+"FY" = (
+/mob/living/simple_animal/hostile/hivebot/range,
+/obj/random/material/low_chance,
+/turf/template_noop,
 /area/template_noop)
 "GD" = (
 /obj/structure/table/reinforced,
@@ -348,6 +391,10 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood,
+/area/template_noop)
+"Hg" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/plating/under,
 /area/template_noop)
 "II" = (
 /mob/living/simple_animal/hostile/hivebot/range,
@@ -411,9 +458,8 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "Mf" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/book/manual/wiki/security_ironparagraphs,
-/turf/simulated/floor/wood,
+/mob/living/simple_animal/hostile/hivebot,
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
 "ME" = (
 /obj/structure/table/woodentable,
@@ -441,6 +487,10 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
+/area/template_noop)
+"NB" = (
+/obj/random/material/low_chance,
+/turf/template_noop,
 /area/template_noop)
 "NH" = (
 /obj/structure/bed/chair/wood{
@@ -498,6 +548,12 @@
 "QE" = (
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
+"RS" = (
+/mob/living/simple_animal/hostile/hivebot/range,
+/obj/random/junk/low_chance,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
 "SV" = (
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda,
 /turf/simulated/floor/tiled/steel/bluecorner,
@@ -529,6 +585,16 @@
 /obj/item/device/lighting/toggleable/lamp/green,
 /turf/simulated/floor/carpet,
 /area/template_noop)
+"Wj" = (
+/obj/random/material/low_chance,
+/turf/simulated/floor/tiled/steel/bluecorner,
+/area/template_noop)
+"Wm" = (
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/hivebot/range,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
 "Wp" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/paper_bin,
@@ -539,6 +605,13 @@
 /mob/living/simple_animal/hostile/hivebot,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
+"XE" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/random/material/low_chance,
+/turf/simulated/floor/tiled/steel/bluecorner,
+/area/template_noop)
 "XL" = (
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
@@ -546,6 +619,11 @@
 /obj/structure/table/woodentable,
 /obj/random/lowkeyrandom,
 /turf/simulated/floor/wood,
+/area/template_noop)
+"Ys" = (
+/obj/structure/lattice,
+/obj/random/junk/low_chance,
+/turf/template_noop,
 /area/template_noop)
 "Yy" = (
 /obj/structure/table/woodentable,
@@ -558,6 +636,7 @@
 /obj/machinery/holoposter{
 	pixel_x = 32
 	},
+/obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "Ze" = (
@@ -566,16 +645,21 @@
 "Zy" = (
 /turf/template_noop,
 /area/template_noop)
+"ZN" = (
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/hivebot/range,
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
 Zy
 Zy
 UT
 ag
-UT
+pF
 Zy
 UT
-ah
+fj
 ag
 UT
 Zy
@@ -583,11 +667,11 @@ Zy
 Zy
 Zy
 Zy
+NB
 Zy
 Zy
 Zy
-Zy
-Zy
+NB
 Zy
 Zy
 Zy
@@ -596,35 +680,35 @@ Zy
 "}
 (2,1,1) = {"
 Zy
+kS
 Zy
-Zy
 Ze
 Ze
 Ze
 Ze
 Ze
 Ze
-ah
+Hg
 UT
 ag
 ah
 ah
 UT
+ZN
+NB
+kS
+Zy
+Zy
+Ys
 UT
-Zy
-Zy
-Zy
-Zy
-UT
-UT
-ah
+fj
 ag
-Zy
+kS
 "}
 (3,1,1) = {"
 Zy
 Zy
-Zy
+kS
 Ze
 pb
 wg
@@ -635,22 +719,22 @@ ah
 ah
 Ze
 PT
+ap
 ah
+Zy
+Zy
+Zy
+NB
+Zy
 ah
-Zy
-Zy
-Zy
-Zy
-Zy
-ah
-ah
+fj
 bb
 ag
 Zy
 "}
 (4,1,1) = {"
 Zy
-Zy
+rI
 Zy
 LE
 VG
@@ -658,18 +742,18 @@ VG
 Av
 VG
 sD
-XL
+zj
 ah
 Ze
 ag
 ag
 UT
 Zy
-Zy
-Zy
-UT
+kS
+FY
+pF
 ah
-ah
+fj
 ah
 XL
 Ze
@@ -687,17 +771,17 @@ nR
 Ze
 XL
 XL
-XL
+zj
 ah
 UT
-Zy
+RS
 Zy
 Zy
 UT
 ah
 ah
-XL
-Xd
+Wj
+tA
 Ur
 Ze
 Zy
@@ -719,7 +803,7 @@ ah
 Zy
 Zy
 UT
-UT
+pF
 bb
 bd
 YE
@@ -759,7 +843,7 @@ Zy
 (8,1,1) = {"
 Zy
 UT
-Zy
+kS
 Ze
 by
 zC
@@ -790,14 +874,14 @@ Zy
 Ze
 bG
 QE
-QE
+gw
 yJ
 bG
 QE
 QE
 yJ
 bG
-QE
+kO
 QE
 Ze
 EA
@@ -812,7 +896,7 @@ Zy
 "}
 (10,1,1) = {"
 Zy
-UT
+ZN
 Zy
 Ze
 qp
@@ -821,7 +905,7 @@ QE
 yJ
 qp
 QE
-QE
+Mf
 yJ
 qp
 QE
@@ -832,7 +916,7 @@ am
 rN
 xN
 Ze
-XL
+zj
 Az
 Ze
 Zy
@@ -845,7 +929,7 @@ Ze
 yJ
 ag
 ah
-ah
+Hg
 ah
 ag
 Pc
@@ -871,11 +955,11 @@ aU
 eD
 zj
 uv
-ah
+fj
 UT
-ah
+oP
 po
-GZ
+XE
 XL
 zj
 JA
@@ -887,9 +971,9 @@ NL
 bm
 bs
 JW
-ah
-UT
-Zy
+fj
+Ys
+kS
 "}
 (13,1,1) = {"
 Zy
@@ -899,7 +983,7 @@ eD
 XL
 Xd
 ah
-UT
+Ys
 UT
 ah
 ah
@@ -913,9 +997,9 @@ GD
 nQ
 NR
 Ze
-XL
+zj
 ah
-UT
+Wm
 Zy
 "}
 (14,1,1) = {"
@@ -925,12 +1009,12 @@ aU
 eD
 SV
 SV
-ah
-ah
+fj
+Hg
 UT
-UT
+Ys
 ah
-XL
+Wj
 XL
 XL
 XL
@@ -967,10 +1051,10 @@ ib
 xf
 ib
 Ze
-ah
-ah
-UT
-Zy
+fj
+fj
+Wm
+kS
 "}
 (16,1,1) = {"
 Zy
@@ -992,9 +1076,9 @@ XL
 JA
 ku
 xp
+zj
 XL
-XL
-XL
+zj
 ah
 UT
 Zy
@@ -1002,7 +1086,7 @@ Zy
 (17,1,1) = {"
 Zy
 Zy
-Zy
+kS
 UT
 Zy
 Zy
@@ -1022,16 +1106,16 @@ XL
 XL
 XL
 XL
-XL
+zj
 LE
 Zy
 "}
 (18,1,1) = {"
 Zy
-Zy
+rI
 Zy
 UT
-Zy
+rI
 Zy
 Ze
 CD
@@ -1054,11 +1138,11 @@ Ze
 Zy
 "}
 (19,1,1) = {"
-Zy
+kS
 Zy
 Zy
 UT
-Zy
+kS
 Zy
 LE
 Ax
@@ -1069,7 +1153,7 @@ ay
 BD
 LE
 Zy
-Zy
+kS
 UT
 UT
 Zy
@@ -1098,34 +1182,34 @@ LE
 Zy
 Zy
 UT
-Zy
+rI
 Zy
 Zy
 Ze
 ww
 Ze
-Zy
+kS
 Zy
 "}
 (21,1,1) = {"
 Zy
 Zy
-Zy
-UT
+kS
+ZN
 Zy
 Zy
 LE
 II
-Mf
+gf
 VG
 VG
 Lz
 Lz
 LE
-Zy
+kS
 UT
 UT
-Zy
+kS
 Zy
 Zy
 Zy
@@ -1136,7 +1220,7 @@ Zy
 "}
 (22,1,1) = {"
 Zy
-Zy
+kS
 Zy
 UT
 Zy
@@ -1150,12 +1234,12 @@ gf
 xO
 LE
 UT
-UT
+ZN
 Zy
 Zy
+kS
 Zy
-Zy
-Zy
+kS
 Zy
 Zy
 Zy
@@ -1166,7 +1250,7 @@ Zy
 Zy
 Zy
 UT
-Zy
+kS
 Zy
 LE
 bE
@@ -1184,7 +1268,7 @@ Zy
 Zy
 Zy
 Zy
-Zy
+kS
 Zy
 Zy
 "}
@@ -1205,11 +1289,11 @@ LE
 Ze
 UT
 Zy
+kS
 Zy
+kS
 Zy
-Zy
-Zy
-Zy
+rI
 Zy
 Zy
 Zy
@@ -1225,6 +1309,9 @@ Zy
 Zy
 Zy
 Zy
+kS
+Zy
+kS
 Zy
 Zy
 Zy
@@ -1234,10 +1321,7 @@ Zy
 Zy
 Zy
 Zy
-Zy
-Zy
-Zy
-Zy
+kS
 Zy
 Zy
 Zy
