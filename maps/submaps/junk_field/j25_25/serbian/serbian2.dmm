@@ -1,13 +1,16 @@
-"aa" = (/mob/living/simple_animal/hostile/carp/pike,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
-"ab" = (/mob/living/simple_animal/hostile/carp/pike,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
-"ac" = (/obj/machinery/light{dir = 8},/mob/living/simple_animal/hostile/carp/pike,/turf/unsimulated/floor{dir = 2; icon_state = "dark"},/area/template_noop)
-"ad" = (/obj/machinery/light{dir = 4},/mob/living/simple_animal/hostile/carp/baby,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
-"ae" = (/mob/living/simple_animal/hostile/carp/baby,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
-"af" = (/mob/living/simple_animal/hostile/carp/baby,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"ag" = (/mob/living/simple_animal/hostile/carp/shark,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
+"aa" = (/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
+"ab" = (/mob/living/carbon/superior_animal/human/voidwolf/ranged,/turf/unsimulated/floor{dir = 2; icon_state = "dark"},/area/template_noop)
+"ac" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/simulated/floor/plating/under,/area/template_noop)
+"ad" = (/obj/machinery/light{dir = 8},/turf/unsimulated/floor{dir = 2; icon_state = "dark"},/area/template_noop)
+"ae" = (/mob/living/carbon/superior_animal/human/voidwolf/ranged,/turf/simulated/floor/plating/under,/area/template_noop)
+"af" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
+"ag" = (/mob/living/carbon/superior_animal/human/voidwolf,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "ah" = (/turf/simulated/floor/plating/under,/area/template_noop)
-"ai" = (/mob/living/simple_animal/hostile/carp/baby,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
-"aj" = (/mob/living/simple_animal/hostile/carp/pike,/turf/simulated/floor/plating/under,/area/template_noop)
+"ai" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"aj" = (/obj/structure/urinal{pixel_y = 32},/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"ak" = (/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
+"al" = (/mob/living/carbon/superior_animal/human/voidwolf/captain,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
+"am" = (/mob/living/carbon/superior_animal/human/voidwolf,/turf/simulated/floor/plating/under,/area/template_noop)
 "ao" = (/obj/structure/closet,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
 "ay" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/template_noop)
 "aP" = (/obj/structure/table/rack,/obj/item/weapon/storage/deferred/meds,/obj/machinery/light,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
@@ -59,7 +62,6 @@
 "ME" = (/obj/machinery/door/firedoor,/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/plating,/area/template_noop)
 "Ns" = (/obj/structure/mirror/antag{pixel_x = -28},/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = -12; pixel_y = 2},/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "NH" = (/obj/machinery/light{dir = 1},/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"NQ" = (/obj/structure/urinal{pixel_y = 32},/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "NR" = (/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "Oz" = (/obj/structure/table/woodentable,/obj/machinery/recharger,/obj/structure/noticeboard{pixel_x = 30},/turf/unsimulated/floor{dir = 2; icon_state = "dark"},/area/template_noop)
 "Pb" = (/obj/structure/lattice,/obj/machinery/light_construct{dir = 4},/turf/template_noop,/area/template_noop)
@@ -88,22 +90,22 @@
 ZyZyZyZyZyUTZyZyZyUTUTLzUTZyZyZyZyZyZyZyZyZyZyZyZy
 ZyZyZyZyZyLzUyZyUTLzahZeayUTZyZyZyUTLzahUTahLzZyZy
 ZyZyZyZyVGZeZeZeZeZeZeZeZeZeZeZeZeZeZeZeZeXLZeZyZy
-ZyZyZyZyZyahNRaUNRbsaaNRNRNRNRbsNRQoNRNRNRNRZeZyZy
+ZyZyZyZyZyahNRaUNRbsNRNRNRNRNRbsNRQoNRaaNRNRZeZyZy
 ZyZyVGZyZyVGahZeZeZeZeZeXLZeZeZeZeZeZeZeZeahZeZyZy
 ZyZyahVGZyZyVGahQEdOOzZeNRZeFbgtahYEXSLELzLaLzZyZy
 ZyZyMEahahZyZyahkunRPcZepaZeXSahqkahahLELzUTUTZyZy
-ZyZyZeaUZeLaVGZyahHcHcXLNRXLabahZyZyahbELzUTZyZyZy
-ZyZyZeNRZeacahZyZyVGwgZeNRZezcuvxpahXSxOZeUyUTZyZy
-ZyZyZeadZenCahLaVGZyUyLzXLZeZeZeizXSabzCZezOLzZyZy
+ZyZyZeaUZeLaVGZyahHcabXLNRXLXSacZyZyahbELzUTZyZyZy
+ZyZyZeNRZeadahZyZyVGwgZeNRZezcuvxpahXSxOZeUyUTZyZy
+ZyZyZeThZenCaeLaVGZyUyLzXLZeZeZeizXSafzCZezOLzZyZy
 ZyZyMENRZeEjAxHcAxahahahNRNRThZeAzXSXSgtZeNRMEZyZy
-ZyZyZeaeZeZeZeXLZeLzahLzMEZeNRZeZeXLZeZeZeNRZeZyZy
-ZyZyZeNRXLNRHdNRNRXLNRMEZyMENRXLNRNRBDNRXLaaZeZyZy
-ZyZyLzahZeZeZebmZeZeaaZeMEZeNRZeZeXLZeZeZeNRZeZyZy
-ZyZyUTahZeJsXSXSMfZepaNRNRNRQoZeNsafNHNQZeNRMEZyZy
+ZyZyZeNRZeZeZeXLZeLzahLzMEZeNRZeZeXLZeZeZeNRZeZyZy
+ZyZyZeNRXLNRHdNRNRXLNRMEZyMENRXLagNRBDNRXLNRZeZyZy
+ZyZyLzahZeZeZebmZeZeaaZeMEZeNRZeZeXLZeZeZeaaZeZyZy
+ZyZyUTahZeJsXSXSMfZepaNRNRNRQoZeNsaiNHajZeNRMEZyZy
 ZyZyZyPbZePTXSXSzcZeZeZeXLZeLzLzZeQnSVnIZepaZeZyZy
-ZyZyZyUTZeUrXSagEAfyfyZeNRLzZyVGLzZeVKafZeQoZeZyZy
-ZyZyUTUyZebbXSuQaiXSXSbmNRXLahZyUyZeZebmZeNRZeZyZy
-ZyZyUTahZexNXSXSXSXSXSZeThZexfxpajYyZeZtZeNRMEZyZy
+ZyZyZyUTZeUrXSXSEAfyfyZeNRLzZyVGLzZeVKnIZeQoZeZyZy
+ZyZyUTUyZebbakuQalXSXSbmNRXLahZyUyZeZebmZeNRZeZyZy
+ZyZyUTahZexNXSXSXSXSakZeThZexfxpamYyZeZtZeNRMEZyZy
 ZyZyLzahZeYEaooSaPxNDyZeNRZeibGtoikGZeAMZezOLzZyZy
 LzZeZeQoZeZeZeZeZeZeZeZeXLZeZeZeZeZeZeZeLzahUTUTZy
 UTahXLaaNRNRNRNRQoHdNRNRNRNRNRXaNRNRNRNRayahahahZy
