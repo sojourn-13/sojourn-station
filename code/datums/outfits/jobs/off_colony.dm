@@ -7,7 +7,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots/german
 	l_ear = null
 	pda_type = null
-	backpack_contents = list(/obj/item/weapon/tool/knife/dagger/skinning = 1, /obj/item/clothing/mask/gas/tactical = 1, /obj/item/clothing/head/helmet/hunter = 1)
+	backpack_contents = list(/obj/item/weapon/tool/knife/dagger/skinning = 1, /obj/item/clothing/mask/gas/tactical = 1, /obj/item/clothing/head/helmet/huntmaster_helmet = 1)
 
 /decl/hierarchy/outfit/job/off_colony/hunter
 	name = OUTFIT_JOB_NAME("Lodge - Hunter")

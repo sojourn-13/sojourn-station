@@ -109,6 +109,46 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/huntmaster_helmet
+	name = "Huntmaster Nomad Helm"
+	desc = "Made from the hide of a render patriarch, this visored helmet made of bone and leather with glass lenses to keep blood and grit from the eyes. \
+			There is a small chimera etched into the bone on the rear of the helmet."
+	item_state = "huntmaster_helmet"
+	icon_state = "huntmaster_helmet"
+	armor = list(
+		melee = 60,
+		bullet = 20,
+		energy = 15,
+		bomb = 15,
+		bio = 15,
+		rad = 0
+	)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+
+/obj/item/clothing/head/helmet/huntmaster_helmet/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["huntmaster nomad helm"] = "huntmaster_helmet"
+	options["huntmaster helm alt"] = "huntmaster_helmet_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/hunter
 	name = "hunter's hood"
 	desc = "A visored helmet made of bone and leather with glass lenses to keep blood and grit from the eyes."
@@ -139,6 +179,7 @@
 	options["stalker hood"] = "hunter_helmet_stalker"
 	options["visored helmet"] = "hunter_helmet_visor"
 	options["nomad hooded-helm"] = "hunter_helmet_nomad"
+	options["nomad helm alt"] = "hunter_helmet_nomad_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
