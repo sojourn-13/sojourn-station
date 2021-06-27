@@ -1,8 +1,13 @@
-"aa" = (/mob/living/simple_animal/hostile/carp/pike,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
-"ab" = (/mob/living/simple_animal/hostile/carp/pike,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
-"ac" = (/mob/living/simple_animal/hostile/carp/baby,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"ad" = (/mob/living/simple_animal/hostile/carp/shark,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"ae" = (/mob/living/simple_animal/hostile/carp/pike,/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
+"aa" = (/mob/living/carbon/superior_animal/human/voidwolf,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
+"ab" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/simulated/floor/plating/under,/area/template_noop)
+"ac" = (/mob/living/carbon/superior_animal/human/voidwolf,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
+"ad" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
+"ae" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
+"af" = (/mob/living/carbon/superior_animal/human/voidwolf,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"ag" = (/mob/living/carbon/superior_animal/human/voidwolf/captain,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"ah" = (/mob/living/carbon/superior_animal/human/voidwolf,/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
+"ai" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
+"aj" = (/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "aw" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/plating/under,/area/template_noop)
 "aH" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/template_noop)
 "aJ" = (/obj/structure/closet,/obj/item/clothing/under/turtleneck,/obj/item/clothing/under/turtleneck,/obj/item/clothing/under/turtleneck,/obj/item/clothing/under/turtleneck,/obj/item/clothing/under/turtleneck,/obj/item/clothing/shoes/magboots/merc,/obj/item/clothing/shoes/magboots/merc,/obj/item/clothing/shoes/magboots/merc,/obj/item/clothing/shoes/magboots/merc,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
@@ -104,31 +109,30 @@
 "YW" = (/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "YZ" = (/turf/simulated/wall/r_wall,/area/template_noop)
 "Zt" = (/obj/structure/table/rack,/obj/structure/closet/onestar/tier2/normal,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
-"ZY" = (/mob/living/simple_animal/hostile/bear,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 
 (1,1,1) = {"
 bibibibibiHnbibibibibiHnHnKmHnbibibibibibibibibibi
 bibibiHnbBKmHnawHnbiHnKmbBYZaHHnbibiHnKmbBHnbibibi
 bibibiYZEgYZYZYZYZYZYZYZEgYZYZYZYZYZYZYZEgYZbibibi
 bibibiYZVtYZaJMbbyDPDPYZYWYZDPBvDPMbcWYZawYZbibibi
-bibibiYZYWYZVJVJVJVJVJYZSyYZbBbBbBVJVJKmdNYZbibibi
-bibibiELYWYZYpVJVJVJVJEgYWEgHnbibibBeoKmHnHnbibibi
-bibibiYZLaYZPNaaVJVJVJYZVtYZbBHnbBaafbKmHnbibibibi
+bibibiYZYWYZVJVJVJaaVJYZSyYZbBbBabVJVJKmdNYZbibibi
+bibibiELacYZYpVJVJVJVJEgYWEgHnbibibBeoKmHnHnbibibi
+bibibiYZLaYZPNaaVJVJVJYZVtYZbBHnbBadfbKmHnbibibibi
 bibibiYZipYZAsiwjsDPrdYZYWYZEoDPjsiweoYZbBHnbibibi
 bibibiKmbBYZYZYZYZYZYZKmEgYZYZYZYZYZYZYZbBKmbibibi
 bibibiHnbBKmkxnuwRoLqAHnXvbBsgjPssZttvYZYWELbibibi
-bibibibiHnEgYWYWYWYWbBHnHnbBYWYWYWabYWEgYWYZbibibi
-bibibibiHnKmYWabumwXBzbBHnbBumzgzJYWYWYZSyYZbibibi
+bibibibiHnEgYWYWYWacbBHnHnbBYWYWYWaeYWEgYWYZbibibi
+bibibibiHnKmYWYWumwXBzbBHnbBumzgzJYWYWYZSyYZbibibi
 bibibiHnawEgYWYWzJzgumbBbBbByJdIumYWYWEgYWYZbibibi
-bibibiHnbBYZmZYWumYjyJYWVtYWumzMumCYDiYZZYELbibibi
+bibibiHnbBYZmZaeumYjyJYWVtYWumzMumCYDiYZacELbibibi
 bibibiKmbBYZYZYZYZYZYZYZEgYZYZYZYZYZYZYZbBKmbibibi
 bibibiYZYWYZFjJpNtOuPaYZYWYZSoSoklGaPHYZbBHnbibibi
-bibibiYZLaYZlAJpacadFSYZSyYZRCaekWkWVqYZWCKmbibibi
-bibibiELYWYZBQtKWjacacwUYWEglOaeqaduduYZYWELbibibi
+bibibiYZLaYZlAJpFSFSafYZSyYZRClOkWkWVqYZWCKmbibibi
+bibibiELYWYZBQtKWjagFSwUYWEgahlOqaduduYZYWELbibibi
 bibiYZYZEgYZrLxNxNFSegYZVtYZRhPOYZYZYZYZEgYZYZbibi
-biYZYZqLYWYZkOfMiYvzaKYZbBKmbBlOqXbGBqYZYWqLYZYZbi
+biYZYZqLYWYZkOfMiYvzaKYZbBKmbBaiqXbGBqYZYWqLYZYZbi
 biYZEesNoXYZYZYZYZYZYZKmHnbBKmYZYZYZYZYZdUsNwXYZbi
-biYZWHYWabPpvtYZYZbiHnHnbiHnHnbiYZYZvtPpabYWWHYZbi
+biYZWHYWaePpvtYZYZbiHnHnbiHnHnbiYZYZvtPpajYWWHYZbi
 biYZrururururuYZHnHnHnbibibiHnHnHnYZrururururuYZbi
 bibigNzTgNzTXmbibibibibibibibibibibigNzTgNzTXmbibi
 bibibibibibibibibibibibibibibibibibibibibibibibibi
