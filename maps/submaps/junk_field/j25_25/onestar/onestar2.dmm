@@ -1,3 +1,9 @@
+"aa" = (/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"ab" = (/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,/turf/simulated/floor/tiled/derelict,/area/template_noop)
+"ac" = (/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
+"ad" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"ae" = (/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,/turf/simulated/floor/tiled/cafe,/area/template_noop)
+"af" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "ag" = (/obj/structure/girder,/turf/simulated/floor/plating/under,/area/template_noop)
 "ah" = (/turf/simulated/floor/plating/under,/area/template_noop)
 "an" = (/obj/structure/window/reinforced{dir = 4},/obj/structure/bed/chair/office/dark,/obj/structure/barricade,/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/tiled/dark/brown_platform,/area/template_noop)
@@ -28,10 +34,10 @@
 "bG" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/table/onestar,/obj/item/weapon/stamp/denied,/obj/item/weapon/pen,/turf/simulated/floor/tiled/dark/brown_perforated,/area/template_noop)
 "bN" = (/turf/simulated/wall/untinted/onestar,/area/template_noop)
 "co" = (/obj/structure/window/reinforced{dir = 6},/obj/structure/window/reinforced{dir = 4},/obj/structure/table/onestar,/obj/item/remains/human,/obj/item/weapon/pen,/turf/simulated/floor/tiled/dark/brown_perforated,/area/template_noop)
-"cK" = (/mob/living/simple_animal/hostile/roomba/gun_ba,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"cK" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "dO" = (/obj/structure/table/onestar,/obj/structure/window/reinforced{dir = 8},/obj/item/weapon/folder/red,/turf/simulated/floor/tiled/dark/techfloor,/area/template_noop)
 "eD" = (/obj/structure/closet/secure_closet/medicine,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
-"fa" = (/mob/living/simple_animal/hostile/roomba/slayer,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
+"fa" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "fy" = (/obj/structure/toilet{dir = 8},/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/cafe,/area/template_noop)
 "gK" = (/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/derelict,/area/template_noop)
 "ib" = (/obj/structure/table/onestar,/turf/simulated/floor/tiled/dark/techfloor,/area/template_noop)
@@ -41,7 +47,7 @@
 "ku" = (/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techmaint_cargo,/area/template_noop)
 "kx" = (/obj/random/junk,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "kF" = (/obj/structure/window/reinforced{dir = 4},/obj/structure/bed/chair/office/dark{dir = 8},/obj/item/weapon/pen,/turf/simulated/floor/tiled/dark/brown_platform,/area/template_noop)
-"lj" = (/mob/living/simple_animal/hostile/roomba/boomba,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
+"lj" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "mJ" = (/obj/random/junk,/turf/simulated/floor/tiled/cafe,/area/template_noop)
 "nC" = (/obj/item/weapon/pen,/turf/simulated/floor/tiled/dark/brown_platform,/area/template_noop)
 "nF" = (/obj/effect/floor_decal/industrial/warning,/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/derelict,/area/template_noop)
@@ -70,11 +76,11 @@
 "zC" = (/obj/structure/medical_stand,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "Ae" = (/obj/structure/window/reinforced{dir = 8},/turf/simulated/floor/tiled/dark/brown_platform,/area/template_noop)
 "Ax" = (/obj/structure/railing/grey{dir = 8},/turf/simulated/floor/asteroid/dirt/dark,/area/template_noop)
-"Bj" = (/mob/living/simple_animal/hostile/roomba/slayer,/turf/simulated/floor/tiled/cafe,/area/template_noop)
+"Bj" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,/turf/simulated/floor/tiled/cafe,/area/template_noop)
 "BH" = (/obj/structure/largecrate,/turf/simulated/floor/tiled/derelict,/area/template_noop)
-"BI" = (/obj/effect/floor_decal/industrial/warning,/mob/living/simple_animal/hostile/roomba/boomba,/turf/simulated/floor/tiled/derelict,/area/template_noop)
+"BI" = (/obj/effect/floor_decal/industrial/warning,/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,/turf/simulated/floor/tiled/derelict,/area/template_noop)
 "Cs" = (/obj/structure/window/reinforced{dir = 4},/obj/machinery/light/floor,/obj/item/remains/human,/obj/effect/decal/cleanable/blood,/obj/machinery/light,/turf/simulated/floor/tiled/dark/brown_platform,/area/template_noop)
-"Dc" = (/mob/living/simple_animal/hostile/roomba/boomba,/turf/simulated/floor/tiled/derelict,/area/template_noop)
+"Dc" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,/turf/simulated/floor/tiled/derelict,/area/template_noop)
 "Ej" = (/obj/structure/table/onestar,/obj/item/weapon/phone,/turf/simulated/floor/tiled/dark/brown_perforated,/area/template_noop)
 "ES" = (/turf/simulated/wall/untinted/onestar_reinforced,/area/template_noop)
 "Fb" = (/obj/machinery/light_construct{dir = 1},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
@@ -96,7 +102,7 @@
 "Lz" = (/obj/structure/railing/grey,/turf/simulated/floor/asteroid/dirt/dark,/area/template_noop)
 "LE" = (/obj/structure/closet/emcloset,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "LY" = (/turf/simulated/floor/tiled/dark/brown_platform,/area/template_noop)
-"ME" = (/obj/structure/sign/department/medbay{pixel_x = 32},/mob/living/simple_animal/hostile/roomba/slayer,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
+"ME" = (/obj/structure/sign/department/medbay{pixel_x = 32},/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "NH" = (/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "NQ" = (/obj/structure/reagent_dispensers/water_cooler,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "Oz" = (/obj/structure/sign/faction/one_star,/turf/simulated/wall/untinted/onestar_reinforced,/area/template_noop)
@@ -108,7 +114,7 @@
 "QE" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 6},/obj/structure/table/onestar,/obj/item/weapon/paper_bin,/turf/simulated/floor/tiled/dark/brown_perforated,/area/template_noop)
 "Rf" = (/obj/machinery/vending,/turf/simulated/floor/tiled/derelict,/area/template_noop)
 "Rn" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/bed/chair/office/dark{dir = 4},/obj/machinery/light/floor,/turf/simulated/floor/tiled/dark/brown_platform,/area/template_noop)
-"Ss" = (/obj/structure/toilet{dir = 8},/obj/machinery/light{dir = 1},/mob/living/simple_animal/hostile/roomba/boomba,/turf/simulated/floor/tiled/cafe,/area/template_noop)
+"Ss" = (/obj/structure/toilet{dir = 8},/obj/machinery/light{dir = 1},/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,/turf/simulated/floor/tiled/cafe,/area/template_noop)
 "SV" = (/obj/structure/table/onestar,/obj/item/device/lighting/toggleable/lamp,/turf/simulated/floor/tiled/dark/brown_perforated,/area/template_noop)
 "UT" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
 "Vu" = (/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
@@ -125,11 +131,11 @@ ZyZyZyZyZyZyZyZyUTZyZyZyZyZyZyZyZyZyZyZyZyZyZyZyZy
 ZyZyZyZyUTahahahahUTZyZyZyZyagUTahZyZyZyZyZyZyZyZy
 ZyZyUTahUTahVuVuKwahUTZyZyUTagahahahUTahUTZyZyZyZy
 ZyagESaJESblaKESESESESESESESESbqVuahagbmahahZyZyZy
-ZyUTESbvpaKWKWbybGqpyJzjHYSVESKXVuVuaKcKbmahUTZyZy
+ZyUTESbvpaKWKWbybGqpyJzjHYSVESKXVuVuaKcKaaahUTZyZy
 ZyKwESVGVKKWKWKWQEkFAecopSkbESVuVuMEbNzCYyeDESZyZy
 ZyUTESnFKWDcKWKWKWtltlKWtlsBESZeVuVubNbNbNbNESagUT
-ZyZyESLYnRBHKWKWKWKWKWKWKWgKESVuVuVuAxbEbEjGESahUT
-ZyZyESsDqwFzFzKWKWBIFzKWKWKWaKVuVuVuAxbEbEwFESZyZy
+ZyZyESLYnRBHKWKWabKWKWKWKWgKESVuVuVuAxbEbEjGESahUT
+ZyZyESsDqwFzFzKWKWBIFzKWKWKWaKVuacVuAxbEbEwFESZyZy
 ZyZyESvLFAnCAeLaGPanaoJAKWjuESfaVuVuAxbEbEbEESZyZy
 ZyUTESPcXmEjRnHcItCsyJGZasRfESVuVuVuaubEbEbEESZyZy
 UTagESESESESESESESESESESESESOzVuVuKXaxayLzLzESZyZy
@@ -137,10 +143,10 @@ UTahahVuVuVuQeVuVuaAVuKXVuVuVuVuVuVuVuVufaVuESUTZy
 ZyUTahahVuKXVuVuVuVuVuVuVuVuVuVuVuVuVuGtocLEESahUT
 ZyZyZyUTahupVufaVuVuVuVuVuVuVuVuVuVubNbNaKbNESESag
 ZyZyZyagESESaKESESESESNQvGXLbNaNbNnIbNbmbmrbESaQah
-ZyZyZyZyESpbBjKmaKSsESGbockxbNaRbNaTibaUcKbtESUTZy
+ZyZyZyZyESpbBjKmaKSsESGbockxbNaRbNaTibaUadbtESUTZy
 ZyZyZyZyESbbmJuQbNbNESbNaKbNbNkubNkudOwgbmbsESZyZy
-ZyZyZyUTESbdKmKmaKfyESbmbmPbxfkubNkubNbNbNbNESUTZy
-ZyZyZyahESahahahbNbNESbmcKQnibaTbNnIbNzcljFbahZyZy
+ZyZyZyUTESbdaeKmaKfyESbmbmPbxfkubNkubNbNbNbNESUTZy
+ZyZyZyahESahahahbNbNESbmafQnibaTbNnIbNzcljFbahZyZy
 ZyZyahahagahUTahaKfyESbsbtrbbNaROVaNbNbuNHahahZyZy
 UTagESESagUTUTagESESESESESESESahahahESESagUTUTZyZy
 UTKwagaQahZyZyZyZyUTahUTZyZyUTahahahahUTZyZyZyZyZy

@@ -3,7 +3,7 @@
 "ac" = (/turf/simulated/floor/plating/under,/area/template_noop)
 "ad" = (/obj/structure/girder,/turf/simulated/floor/plating/under,/area/template_noop)
 "ae" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
-"af" = (/obj/random/junk,/mob/living/simple_animal/hostile/roomba/slayer,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
+"af" = (/obj/random/junk,/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "ag" = (/turf/simulated/wall/untinted/onestar_reinforced,/area/template_noop)
 "ah" = (/turf/simulated/floor/tiled/derelict/white_big_edges,/area/template_noop)
 "ai" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/template_noop)
@@ -15,10 +15,13 @@
 "ao" = (/obj/structure/bed/chair/custom/onestar,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "ap" = (/obj/random/junk,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/template_noop)
 "aq" = (/obj/structure/sign/faction/derelict1,/turf/simulated/wall/untinted/onestar,/area/template_noop)
+"ar" = (/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/template_noop)
 "as" = (/obj/structure/sign/faction/derelict2,/turf/simulated/wall/untinted/onestar,/area/template_noop)
+"at" = (/obj/random/junk,/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "au" = (/obj/effect/window_lwall_spawn/smartspawn/onestar,/turf/simulated/floor/tiled/dark/brown_perforated,/area/template_noop)
 "av" = (/obj/structure/closet/onestar/tier2/mineral,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "aw" = (/obj/item/remains,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
+"ax" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "ay" = (/obj/structure/salvageable/computer_os,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "az" = (/obj/machinery/multistructure/bioreactor_part/console,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "aA" = (/obj/machinery/door/airlock/external{icon_state = "door_locked"; locked = 1},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
@@ -28,6 +31,7 @@
 "aE" = (/obj/effect/floor_decal/industrial/loading{dir = 1},/obj/machinery/door/airlock/external{icon_state = "door_locked"; locked = 1},/turf/simulated/floor/tiled/techmaint_cargo,/area/template_noop)
 "aF" = (/obj/random/pack/machine,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "aG" = (/turf/simulated/wall/untinted/onestar,/area/template_noop)
+"aH" = (/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "aI" = (/obj/structure/catwalk,/obj/structure/ore_box,/turf/template_noop,/area/template_noop)
 "aJ" = (/obj/structure/catwalk,/turf/template_noop,/area/template_noop)
 "aK" = (/obj/structure/lattice,/obj/item/weapon/storage/bag/ore,/turf/template_noop,/area/template_noop)
@@ -48,7 +52,7 @@
 "aZ" = (/obj/random/junk,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "ba" = (/obj/random/structures/os,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "bb" = (/obj/item/weapon/gun/projectile/handmade_pistol,/obj/machinery/power/port_gen/pacman/scrap,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
-"bc" = (/obj/random/junk,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
+"bc" = (/obj/structure/catwalk,/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,/turf/template_noop,/area/template_noop)
 "bd" = (/obj/machinery/door/airlock/centcom{icon_state = "door_locked"; locked = 1},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "be" = (/obj/machinery/door/airlock/centcom{icon_state = "door_locked"; locked = 1},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "bf" = (/obj/item/remains,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
@@ -58,6 +62,7 @@
 "bj" = (/obj/structure/catwalk,/obj/item/weapon/storage/bag/ore,/turf/template_noop,/area/template_noop)
 "bk" = (/obj/structure/inflatable/door,/obj/structure/catwalk,/turf/template_noop,/area/template_noop)
 "bl" = (/obj/structure/lattice,/obj/item/weapon/tool/pickaxe/onestar,/obj/item/remains,/turf/template_noop,/area/template_noop)
+"bm" = (/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "bI" = (/obj/effect/floor_decal/industrial/loading{dir = 1},/turf/simulated/floor/tiled/techmaint_cargo,/area/template_noop)
 "bJ" = (/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "bQ" = (/obj/effect/floor_decal/industrial/loading,/turf/simulated/floor/tiled/techmaint_cargo,/area/template_noop)
@@ -65,35 +70,33 @@
 "bY" = (/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techmaint_cargo,/area/template_noop)
 "ch" = (/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "fR" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
-"jf" = (/mob/living/simple_animal/hostile/roomba/gun_ba,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
+"jf" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "nf" = (/obj/random/junk,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
-"qP" = (/obj/structure/catwalk,/mob/living/simple_animal/hostile/roomba/slayer,/turf/template_noop,/area/template_noop)
-"sD" = (/mob/living/simple_animal/hostile/roomba/gun_ba,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
-"xF" = (/mob/living/simple_animal/hostile/roomba/slayer,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
-"Vr" = (/mob/living/simple_animal/hostile/roomba/boomba,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
+"sD" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"Vr" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 
 (1,1,1) = {"
 aaaaaaaaabaaaaababababababababababababaaaaaaaaaaaa
 aaaaaaababadabadagabacacacacacaiadababaaaaaaaaaaaa
 aaaaababadacacacagagagagakagagagagababaaaaaaaaaaaa
 aaababacacacacacagapamahahahapapagabaaaaaaaaaaaaaa
-aaabacacacacacaiagahahahahahahamagaaaaaaaaaaaaaaaa
+aaabacacacacacaiagahahaharahahamagaaaaaaaaaaaaaaaa
 aaabacacagagagagagagajaXakagagagagagauauauauagaaaa
 aaabacacagawananaGaZchchchchaoaoaochaZaZaZbaagaaaa
-aaabacacagbbafbcbdchchchchjfchchchchchaZaZbaagaaaa
+aaabacacagbbafatbdchchchchjfchchchchchaZaZbaagaaaa
 ababacaiaganananaGchchchchchchchchchchaZaZaZagaaaa
 adabagagagaYaGaGaqaGaGaGakaGaGaGaGchchchchchagaaaa
 acacacaebechchchchchchchchchchchasaGaGakaGaGagaaaa
 abadagagagchchchchchVrchchchchchaubfalalalavagaaaa
 acacababagchchbababachchaZaZchchbJbTalalalavagaaaa
-abababaaagbgaGaGaGaGaGaGaGchchchbJbTalxFalbhagaaaa
+abababaaagbgaGaGaGaGaGaGaGchchchbJbTalaxalbhagaaaa
 aaaaaaaaagalalayayazazalagaAagaAagbialalalbhagaaaa
 aaaaaaaaagalalaBaBaBaBalaubQagbIaualalalalbhagaaaa
-aaaaaaaaagalalalalalalalaubYagbYaubiavavaCaCagaaaa
+aaaaaaaaagalalalalalalaHaubYagbYaubiavavaCaCagaaaa
 aaaaagagagalsDalnfagagagagaDagaEagagagagagagagaaaa
 aaaaagaFnfalalalalbhagaIaIaJaJaJaJaKaLaLababaLaLaa
-aaaaagaFalalalalalbhagaIaIaJqPaJbjaJbkabaLabaLaaaa
-aaaaagaFalalalalalalagaMaNaJaJaOaPaQaLblaLaLaLaaaa
+aaaaagaFalalalalalbhagaIaIaJbcaJbjaJbkabaLabaLaaaa
+aaaaagaFalalbmalalalagaMaNaJaJaOaPaQaLblaLaLaLaaaa
 aaaaagaRalalalalalalagaQaSaTaTaUaVaLaVaLaLaaaaaaaa
 aaaaagaRfRaRaRaRaRfRagaLaLaJaJaLaLaLaLaLaLaLaaaaaa
 aaaaagagagagagagagagagaLaVaWaWaQaVaLaLaLaLaLaaaaaa
