@@ -136,7 +136,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 /datum/nt_blueprint/mob/rook
 	name = "Rook Golem"
-	build_path = /mob/living/simple_animal/hostile/roomba/synthetic/allied/rook
+	build_path = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/rook
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 10,
