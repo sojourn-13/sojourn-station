@@ -44,6 +44,10 @@
 	name = "excelsior shield wall generator"
 	build_path = /obj/item/weapon/circuitboard/excelsiorshieldwallgen
 
+/datum/design/autolathe/circuit/jtb
+	name = "junk tractor beam control console"
+	build_path = /obj/item/weapon/circuitboard/jtb
+
 /datum/design/autolathe/circuit/reconstructor_excelsior
 	name = "excelsior implant reconstructor"
 	build_path = /obj/item/weapon/circuitboard/excelsiorreconstructor

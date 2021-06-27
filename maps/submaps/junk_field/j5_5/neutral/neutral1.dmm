@@ -1,0 +1,16 @@
+"a" = (/mob/living/simple_animal/hostile/carp,/turf/simulated/floor/plating/under,/area/template_noop)
+"b" = (/obj/random/scrap/dense_weighted/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"c" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"d" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating,/area/template_noop)
+"e" = (/turf/simulated/wall/r_wall,/area/template_noop)
+"h" = (/turf/simulated/floor/plating/under,/area/template_noop)
+"x" = (/obj/structure/girder,/turf/simulated/floor/plating/under,/area/template_noop)
+"O" = (/turf/template_noop,/area/template_noop)
+
+(1,1,1) = {"
+OcbcO
+OahcO
+bdehO
+cbcbb
+xdOcx
+"}
