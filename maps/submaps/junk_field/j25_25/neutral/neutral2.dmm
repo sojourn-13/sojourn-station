@@ -28,7 +28,7 @@
 "aC" = (/obj/structure/table/rack,/obj/random/contraband/low_chance,/obj/random/tank,/obj/random/tank,/turf/simulated/floor/plating/under,/area/template_noop)
 "aD" = (/turf/simulated/floor/plating/under,/area/template_noop)
 "aE" = (/obj/random/scrap/sparse_even/low_chance,/obj/structure/scrap/poor/large,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
-"aF" = (/turf/simulated/floor/tiled/steel,/area/template_noop)
+"aF" = (/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/steel,/area/template_noop)
 "aG" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating/under,/area/template_noop)
 "aH" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating/under,/area/template_noop)
 "aI" = (/obj/structure/table/rack,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/turf/simulated/floor/tiled/techmaint_panels,/area/template_noop)
@@ -62,36 +62,41 @@
 "bk" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/mob/living/simple_animal/hostile/carp/baby,/turf/simulated/floor/plating/under,/area/template_noop)
 "bl" = (/obj/random/mob/carp,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "da" = (/obj/random/junk/low_chance,/turf/template_noop,/area/template_noop)
+"dn" = (/obj/structure/lattice,/obj/random/lowkeyrandom/low_chance,/turf/template_noop,/area/template_noop)
+"pF" = (/obj/random/structures/low_chance,/turf/template_noop,/area/template_noop)
+"rE" = (/obj/random/lowkeyrandom/low_chance,/turf/template_noop,/area/template_noop)
 "tL" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/plating/under,/area/template_noop)
 "Bx" = (/obj/effect/decal/cleanable/dirt,/obj/structure/scrap/poor/large,/turf/simulated/floor/plating/under,/area/template_noop)
 "HT" = (/obj/structure/lattice,/obj/random/junk/low_chance,/turf/template_noop,/area/template_noop)
+"LF" = (/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "LP" = (/obj/random/mob/carp,/turf/simulated/floor/tiled/techmaint_panels,/area/template_noop)
+"RB" = (/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "Zk" = (/obj/structure/lattice,/obj/structure/scrap_cube,/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
 aaaadaaaaaaaaaaXaaaaaaaaaadaaaaaaaaaaaaaaaaaaadaaa
-aaaaaaaaaaaaabaXababaXaaaaacacacaaaaaaaaaaaaaaabab
-aaabaaaaaaHTabadaqafagababBxaDaeaDafaiahajaDababaD
-aaaeaaabababaaakalamanabaaaDananadadanaganadadanaX
+rEaaaaaaaaaaabaXababaXaaaaacacacaaaaaaaaaaaaaaabab
+aaabpFaaaaHTabadaqafagababBxaDaeaDafaiahajaDababaD
+aaaeaaabdnabaaakalRBanabaaaDananadadanaganadadanaX
 abaXaoababababakakamanaaaaaDanaqaDaaaaabaaaraaabaX
-afaXabaaaaaaababakaBandaataDanaqaeaaaaababdaababaX
+afaXabaapFardnabakaBandaataDanaqaeaaaaababdaababaX
 aaaaabaadaaaaaabakaDanaaatamanananananagaXanabanan
-aaaaaaaaaaaaaaaXaXaDanacauamanaoavawanasaxanananab
-aaaadaaaaadaaaababaDanayazamagaAababanamaBanaEanab
-aaaaaaaaaaaaaaaaabaXakakagakakanaoaCanaRasanamanan
+aaaaaaaaaaaaaaaXaXaDanacauRBanaoavawanasaxanananab
+aaaadaaaaadaaaababaDanayazamagaAababanRBaBanaEanab
+aaaapFrEaaaaaaaaabaXakakagakakanaoaCanaRasanamanan
 aaaaaaaaaaaXaXakanakaDaHaDaiaBanananaXaGaDagaDaiab
-aadaaaaaaaaHaiaDaeaiaDZkabaYaIanabaaaaababananaGab
-aaaaaaaaaaaiaDafaJaDabababaDaIaXaaaadaaaabLPanaDab
-aaaaaaaaaaaXakakaXabaiajaDaiaiaaaoaaabaDaDamanaoan
+aadaaaaraaaHaiaDaeaiaDZkabaYaIanabrEaaababananaGab
+aaaaaaaaaaaiaDafaJaDabdnabaDaIaXaaaadaaaabLPanaDab
+aaaaaapFaaaXakakaXabaiajaDaiaiaaaoaaabaDaDamanaoan
 abaaaaaaaaaaabababaaaXakaganabaaaaabaoaobdaKanaDan
-abakaXababaXaaHTababakaLaDaXaaaaaaaXanananaXaXaMaN
+abakaXdnabaXaaHTababakaLaDaXaaaaaaaXanananaXaXaMaN
 abakaDaeaDakakakakakakaOaOaaaaabaXaPaQbkaSababaTaX
-abaXaUaxblagaVaVaFbcanaadaaaaXananaZadaOaOdaaaaaaa
+abaXaUaxblagaVaVaFbcanaadaaaaXananaZadaOaOdaaarEaa
 aaaXakakakakbaaDbbbcadaaaaaiasaWaQbeakaaaaaaaaaaaa
-aaaaabdaaaakbfaDaDbgadaaaaaDaDbhaXakakakbibiaXaXaa
-aaaaabababaXababaebjanaaaaaaaOaOaXababaadaabaaabab
+aaaaabdaaaakbfaDaDbgadaaaaLFaDbhaXakakakbibiaXaXaa
+aaaaabababaXdnabaebjanaaaaaaaOaOaXababaadaabaaabab
 abaXaUblababaaabaXaXaXaaaaaaaaaaaXababaaaaaaabafab
-abaktLaDaaaaaaabababaaaaaadaaaaaaaaaabaaababaXaXaD
+abaktLaDaaaaaaabababaaaaaadaaaaarEaaabaaababaXaXaD
 aDaXaXabaaaadaaaaaaaaaaaaaaaaaaaaaaadaaaaaaaabaXab
 ababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaa
 "}

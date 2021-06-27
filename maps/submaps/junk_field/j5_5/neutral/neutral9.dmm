@@ -6,18 +6,20 @@
 "h" = (/obj/structure/railing{dir = 8; tag = "icon-railing0 (WEST)"},/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
 "i" = (/obj/random/junkfood/rotten/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "j" = (/obj/structure/lattice,/obj/structure/railing{dir = 8; tag = "icon-railing0 (WEST)"},/turf/template_noop,/area/template_noop)
+"n" = (/obj/random/scrap/dense_weighted/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "r" = (/turf/template_noop,/area/template_noop)
 "w" = (/obj/structure/girder,/turf/simulated/floor/plating/under,/area/template_noop)
 "F" = (/obj/structure/lattice,/obj/structure/railing,/turf/template_noop,/area/template_noop)
+"G" = (/obj/structure/lattice,/obj/random/lowkeyrandom/low_chance,/turf/template_noop,/area/template_noop)
 "L" = (/obj/structure/lattice,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
 "M" = (/obj/structure/lattice,/obj/structure/railing,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
 "U" = (/obj/structure/girder,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "Y" = (/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
-raYaU
+raYGU
 MFeaa
-bfbhr
+bfnhr
 wdijL
 Lbaba
 "}
