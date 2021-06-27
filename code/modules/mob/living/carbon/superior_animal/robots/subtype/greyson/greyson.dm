@@ -3,7 +3,7 @@
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
 	icon = 'icons/mob/battle_roomba.dmi'
 	icon_state = "roomba"
-	faction = "onestar"
+	faction = "greyson"
 	emp_damage = FALSE // Greyson is immune to EMP
 
 //spawners

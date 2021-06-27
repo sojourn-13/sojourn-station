@@ -3,6 +3,7 @@
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
 	icon_state = "roomba"
 	move_to_delay = 3
+	pass_flags = PASSTABLE
 
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/slayer

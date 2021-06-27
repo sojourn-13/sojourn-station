@@ -3,7 +3,6 @@
 	desc = "Old and weathered Greyson Positronic drone. It seems to be malfunctioning and hostile."
 	icon = 'icons/mob/build_a_drone.dmi'
 	icon_state = "drone_os"
-	faction = "onestar"
 	attacktext = "zapped"
 
 	health = 40
