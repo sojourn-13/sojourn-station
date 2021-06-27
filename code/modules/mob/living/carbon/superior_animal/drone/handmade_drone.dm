@@ -20,7 +20,7 @@
 	mob_size = MOB_MEDIUM
 	can_burrow = FALSE
 	randpixel = 0
-	waring_faction = "onestar"
+	waring_faction = "greyson"
 	waring_faction_multy = 2 // Doesn't like Greyson
 	deathmessage = "blows apart!"
 	light_range = 3

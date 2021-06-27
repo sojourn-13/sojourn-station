@@ -120,7 +120,7 @@
 								SPAN_NOTICE("You activate the Roomba! Beep boop.")
 							)
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
-		var/mob/living/simple_animal/hostile/roomba/custom/R = new /mob/living/simple_animal/hostile/roomba/custom(get_turf(src)) // Spawn the roomba.
+		var/mob/living/carbon/superior_animal/robot/greyson/roomba/custom/R = new /mob/living/carbon/superior_animal/robot/greyson/roomba/custom(get_turf(src)) // Spawn the roomba.
 		R.cell = power_cell // Give the roomba the cell used.
 		power_cell.forceMove(R) // Give the cell
 		R.name = created_name // Pass it the custom name
