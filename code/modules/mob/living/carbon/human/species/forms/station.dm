@@ -276,14 +276,14 @@
 	halloss_message_self = "Your systems are rebooting after an overload."
 
 /datum/species_form/folken
-	playable = TRUE
+	playable = FALSE
 	name = FORM_FOLKEN
 	base = 'icons/mob/human_races/r_folken.dmi'
 	deform = null
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_SKIN_COLOR
 
 /datum/species_form/mycus
-	playable = TRUE
+	playable = FALSE
 	name = FORM_MYCUS
 	base = 'icons/mob/human_races/r_mycus.dmi'
 	deform = null

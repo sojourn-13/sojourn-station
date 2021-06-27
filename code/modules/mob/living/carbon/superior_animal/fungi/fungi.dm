@@ -2,6 +2,7 @@
 	name = "strange fungi"
 	desc = "Is that a mushroom? Maybe it escaped from the Soteria labs? It certainly doesn't look like the usual walking mushrooms one would see in xenoflora."
 	faction = "neutral"
+	pass_flags = PASSTABLE
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "mushroom"
 	icon_living = "mushroom"
@@ -21,9 +22,11 @@
 	meat_amount = 2
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/fungi
 	mob_size = MOB_TINY
-	colony_friend = TRUE
 	randpixel = 0
 	can_burrow = FALSE
+
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 	//Hunger/feeding vars
 	max_nutrition = 200

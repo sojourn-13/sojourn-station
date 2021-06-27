@@ -3,6 +3,7 @@
 	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
 	icon = 'icons/mob/custom_bot.dmi'
 	faction = "neutral"
+	pass_flags = PASSTABLE
 	turns_per_move = 5
 	see_in_dark = 10
 	wander = FALSE
