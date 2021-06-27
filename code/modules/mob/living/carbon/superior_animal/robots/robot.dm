@@ -14,7 +14,6 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	projectiletype = /obj/item/projectile/beam/drone
 	deathmessage = "blows apart!"
-	move_to_delay = 9
 	health = 25
 	maxHealth = 25
 	melee_damage_lower = 5
@@ -22,6 +21,7 @@
 	leather_amount = 0
 	bones_amount = 0
 	randpixel = 0
+	viewRange = 8
 	var/cleaning = TRUE
 	var/emp_damage = TRUE // Does EMP & Ion weapons cause damage?
 
