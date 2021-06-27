@@ -1,0 +1,20 @@
+"a" = (/obj/random/scrap/dense_weighted/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"b" = (/obj/random/scrap/dense_weighted/low_chance,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
+"c" = (/obj/structure/girder,/turf/simulated/floor/plating/under,/area/template_noop)
+"d" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating,/area/template_noop)
+"e" = (/obj/random/junk,/turf/simulated/floor/plating/under,/area/template_noop)
+"f" = (/obj/random/junkfood/rotten/low_chance,/obj/random/scrap/dense_weighted/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"g" = (/mob/living/simple_animal/hostile/carp/pike,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
+"h" = (/turf/simulated/wall,/area/template_noop)
+"i" = (/obj/random/pack/machine,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
+"j" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"k" = (/obj/random/techpart,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
+"T" = (/mob/living/simple_animal/hostile/carp,/turf/simulated/floor/plating/under,/area/template_noop)
+
+(1,1,1) = {"
+Tdjaj
+edbgh
+chikc
+jhhec
+fdefj
+"}

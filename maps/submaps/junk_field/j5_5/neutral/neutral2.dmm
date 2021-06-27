@@ -1,0 +1,18 @@
+"a" = (/mob/living/simple_animal/hostile/carp,/turf/simulated/floor/plating/under,/area/template_noop)
+"b" = (/obj/random/scrap/dense_weighted/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"c" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"d" = (/turf/simulated/wall/r_wall,/area/template_noop)
+"e" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating,/area/template_noop)
+"f" = (/obj/random/junk/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"g" = (/obj/random/techpart/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"h" = (/obj/structure/girder,/turf/simulated/floor/plating/under,/area/template_noop)
+"i" = (/obj/structure/lattice,/obj/random/junkfood/rotten,/turf/template_noop,/area/template_noop)
+"p" = (/turf/template_noop,/area/template_noop)
+
+(1,1,1) = {"
+pchcp
+pahip
+bedfc
+cgdfc
+pehhb
+"}
