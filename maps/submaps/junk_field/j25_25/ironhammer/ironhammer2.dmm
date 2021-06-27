@@ -10,6 +10,10 @@
 /mob/living/simple_animal/hostile/hivebot,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
+"ap" = (
+/mob/living/simple_animal/hostile/hivebot,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
 "ay" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -18,7 +22,6 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/template_noop)
 "aP" = (
-/obj/structure/table/rack,
 /obj/structure/closet/onestar/tier2/normal,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
@@ -114,6 +117,10 @@
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
+"kO" = (
+/mob/living/simple_animal/hostile/hivebot/range,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/template_noop)
 "lz" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -140,7 +147,7 @@
 "oS" = (
 /obj/structure/table/rack,
 /obj/item/clothing/mask/gas/tactical,
-/obj/item/weapon/gun/energy/gun/martin,
+/obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "pa" = (
@@ -151,6 +158,7 @@
 /obj/structure/table/woodentable,
 /obj/item/weapon/material/ashtray,
 /obj/item/weapon/storage/fancy/cigarettes/frozen,
+/obj/random/cloth/belt/low_chance,
 /turf/simulated/floor/carpet,
 /area/template_noop)
 "po" = (
@@ -250,10 +258,11 @@
 /area/template_noop)
 "zc" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/book/manual/wiki/security_ironparagraphs,
 /obj/structure/noticeboard{
 	pixel_x = 30
 	},
+/obj/item/stack/material/cardboard/random,
+/obj/random/cloth/gloves/low_chance,
 /turf/simulated/floor/carpet,
 /area/template_noop)
 "zj" = (
@@ -316,7 +325,6 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "EA" = (
-/obj/structure/table/rack,
 /obj/structure/closet/onestar/tier2/normal,
 /obj/machinery/light{
 	dir = 1
@@ -411,9 +419,8 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "Mf" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/book/manual/wiki/security_ironparagraphs,
-/turf/simulated/floor/wood,
+/mob/living/simple_animal/hostile/hivebot,
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
 "ME" = (
 /obj/structure/table/woodentable,
@@ -635,7 +642,7 @@ ah
 ah
 Ze
 PT
-ah
+ap
 ah
 Zy
 Zy
@@ -797,7 +804,7 @@ QE
 QE
 yJ
 bG
-QE
+kO
 QE
 Ze
 EA
@@ -821,7 +828,7 @@ QE
 yJ
 qp
 QE
-QE
+Mf
 yJ
 qp
 QE
@@ -1116,7 +1123,7 @@ Zy
 Zy
 LE
 II
-Mf
+gf
 VG
 VG
 Lz

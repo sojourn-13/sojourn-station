@@ -8,7 +8,7 @@
 "ah" = (/turf/simulated/floor/tiled/derelict/white_big_edges,/area/template_noop)
 "ai" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/template_noop)
 "aj" = (/obj/structure/sign/faction/derelict2,/turf/simulated/wall/untinted/onestar_reinforced,/area/template_noop)
-"ak" = (/obj/machinery/door/airlock/sandstone{name = "OneStar Airlock"},/turf/simulated/floor/tiled/derelict,/area/template_noop)
+"ak" = (/obj/machinery/door/airlock/sandstone{name = "Greyson Airlock"},/turf/simulated/floor/tiled/derelict,/area/template_noop)
 "al" = (/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "am" = (/obj/random/structures/os,/turf/simulated/floor/tiled/derelict/white_big_edges,/area/template_noop)
 "an" = (/obj/structure/closet/onestar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
@@ -20,10 +20,10 @@
 "at" = (/obj/random/junk,/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "au" = (/obj/effect/window_lwall_spawn/smartspawn/onestar,/turf/simulated/floor/tiled/dark/brown_perforated,/area/template_noop)
 "av" = (/obj/structure/closet/onestar/tier2/mineral,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
-"aw" = (/obj/item/remains,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
+"aw" = (/obj/item/remains,/obj/random/material_rare/low_chance,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "ax" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "ay" = (/obj/structure/salvageable/computer_os,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
-"az" = (/obj/machinery/multistructure/bioreactor_part/console,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"az" = (/obj/structure/salvageable/data_os,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "aA" = (/obj/machinery/door/airlock/external{icon_state = "door_locked"; locked = 1},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "aB" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "aC" = (/obj/structure/closet/onestar/tier1/mineral/empty,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
@@ -69,36 +69,58 @@
 "bT" = (/obj/structure/bed/chair/custom/onestar{dir = 8},/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "bY" = (/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techmaint_cargo,/area/template_noop)
 "ch" = (/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
+"cE" = (/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,/turf/simulated/floor/plating/under,/area/template_noop)
+"dn" = (/obj/random/junk,/turf/template_noop,/area/template_noop)
+"dp" = (/obj/structure/lattice,/obj/random/junk/low_chance,/turf/template_noop,/area/template_noop)
+"fo" = (/obj/structure/lattice,/obj/random/junk,/obj/random/material_rare,/turf/template_noop,/area/template_noop)
+"fp" = (/obj/random/material_rare/low_chance,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "fR" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "jf" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
+"jJ" = (/obj/random/lathe_disk/low_chance,/obj/structure/salvageable/autolathe_os,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"ks" = (/obj/structure/lattice,/obj/random/junk,/turf/template_noop,/area/template_noop)
 "nf" = (/obj/random/junk,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"oA" = (/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"pn" = (/obj/item/stack/material/cardboard/random,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"pS" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/obj/random/lathe_disk/advanced/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "sD" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"uA" = (/obj/random/junk/low_chance,/turf/template_noop,/area/template_noop)
+"vY" = (/obj/random/material_rare/low_chance,/turf/simulated/mineral,/area/template_noop)
+"wu" = (/obj/structure/lattice,/obj/random/material_rare,/turf/template_noop,/area/template_noop)
+"Bx" = (/obj/random/junk,/turf/simulated/floor/plating/under,/area/template_noop)
+"Eh" = (/obj/random/lathe_disk/advanced/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"EP" = (/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"Hx" = (/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
+"Mx" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
+"OL" = (/obj/random/junk,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"Qz" = (/obj/random/lathe_disk/low_chance,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"Rw" = (/obj/structure/bed/chair/custom/onestar/red{dir = 1},/obj/random/junk,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
+"Sr" = (/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 "Vr" = (/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/template_noop)
 
 (1,1,1) = {"
-aaaaaaaaabaaaaababababababababababababaaaaaaaaaaaa
-aaaaaaababadabadagabacacacacacaiadababaaaaaaaaaaaa
-aaaaababadacacacagagagagakagagagagababaaaaaaaaaaaa
-aaababacacacacacagapamahahahapapagabaaaaaaaaaaaaaa
-aaabacacacacacaiagahahaharahahamagaaaaaaaaaaaaaaaa
-aaabacacagagagagagagajaXakagagagagagauauauauagaaaa
-aaabacacagawananaGaZchchchchaoaoaochaZaZaZbaagaaaa
-aaabacacagbbafatbdchchchchjfchchchchchaZaZbaagaaaa
-ababacaiaganananaGchchchchchchchchchchaZaZaZagaaaa
-adabagagagaYaGaGaqaGaGaGakaGaGaGaGchchchchchagaaaa
-acacacaebechchchchchchchchchchchasaGaGakaGaGagaaaa
+aaaaaaHxabaaaaababababababababababababaaHxaaaaaaaa
+aadnaaababadabadagabacoAacBxacaiadabdpaaaauAaauAaa
+aaaadpdpadEPaiacagagagagakagagagagababdnaaaaaaaaaa
+dndpaboABxacacBxagapamahahahapapagabHxaaaauAHxaaaa
+aaabaiacacacacaiagahahaharahahamagaaaauAaaaaaauAaa
+HxaboAcEagagagagagagajaXakagagagagagauauauauagaaaa
+aaabacacagawananaGaZchchchchaoaoaochMxMxMxbaagaauA
+aaabOLacagbbafatbdMxchchfpjfchchchchchaZMxbaagaaaa
+abdpoAaiaganananaGMxMxchchchchchchchchaZMxMxaguAaa
+addpagagagaYaGaGaqaGaGaGakaGaGaGaGchchchchchagdnaa
+accEoAaebechchSrchchchchchchchSrasaGaGakaGaGagHxaa
 abadagagagchchchchchVrchchchchchaubfalalalavagaaaa
-acacababagchchbababachchaZaZchchbJbTalalalavagaaaa
-abababaaagbgaGaGaGaGaGaGaGchchchbJbTalaxalbhagaaaa
-aaaaaaaaagalalayayazazalagaAagaAagbialalalbhagaaaa
-aaaaaaaaagalalaBaBaBaBalaubQagbIaualalalalbhagaaaa
-aaaaaaaaagalalalalalalaHaubYagbYaubiavavaCaCagaaaa
-aaaaagagagalsDalnfagagagagaDagaEagagagagagagagaaaa
-aaaaagaFnfalalalalbhagaIaIaJaJaJaJaKaLaLababaLaLaa
-aaaaagaFalalalalalbhagaIaIaJbcaJbjaJbkabaLabaLaaaa
-aaaaagaFalalbmalalalagaMaNaJaJaOaPaQaLblaLaLaLaaaa
-aaaaagaRalalalalalalagaQaSaTaTaUaVaLaVaLaLaaaaaaaa
-aaaaagaRfRaRaRaRaRfRagaLaLaJaJaLaLaLaLaLaLaLaaaaaa
-aaaaagagagagagagagagagaLaVaWaWaQaVaLaLaLaLaLaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaLaaaaaaaaaaaaaaaaaaaaaaaa
+oAcEabdpagchchbababachchaZaZchchbJbTalalalavagaauA
+abababuAagbgaGaGaGaGaGaGaGchchchbJbTalaxalbhagaaaa
+dnaaaauAagalalayayazazjJagaAagaAagbialalalbhaguAaa
+aaaadnaaagalnfaBaBpSRwalaubQagbIaualalalalbhagaaaa
+uAuAaaaaagQzalalalalalaHaubYagbYaubiavavaCaCaguAuA
+uAuAagagagalsDpnnfagagagagaDagaEagagagagagagagaaaa
+aaaaagaFnfalEhalalbhagaIaIaJaJaJaJaKaLaLwufoaLaLuA
+aaaaagaFalalnfalQzbhagaIaIaJbcaJbjaJbkksaLwuaLaaaa
+dnaaagaFalnfbmalpnalagaMaNaJaJaOaPaQaLblaLaLaLaauA
+aauAagaRQzalalalalalagaQaSaTaTaUaVaLaVaLaLaauAdnaa
+aauAagaRfRaRaRaRaRfRagaLaLaJaJaLaLaLaLaLaLaLuAaaaa
+aaaaagagagagagagagagagaLaVaWaWaQaVaLaLaLvYaLuAuAaa
+aaaadnaauAuAuAaaaadnaaaaaLaaaadnaauAaaaaaaaaaaaaaa
 "}

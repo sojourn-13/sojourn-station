@@ -5,13 +5,17 @@
 "f" = (/obj/structure/girder,/turf/simulated/floor/plating/under,/area/template_noop)
 "g" = (/obj/random/junk/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "i" = (/turf/simulated/floor/plating/under,/area/template_noop)
-"j" = (/mob/living/simple_animal/hostile/carp,/turf/simulated/floor/plating/under,/area/template_noop)
+"j" = (/obj/random/mob/carp/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"p" = (/obj/structure/lattice,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
+"v" = (/obj/random/junk,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "D" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"Q" = (/obj/structure/girder,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"V" = (/obj/random/material/low_chance,/turf/simulated/wall/r_wall,/area/template_noop)
 
 (1,1,1) = {"
-aDfdD
-acgic
+aDQdp
+vcgic
 cijcD
-Ddddf
-cfDbD
+DVdVf
+cQDbD
 "}

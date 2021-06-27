@@ -50,23 +50,28 @@
 "bc" = (/obj/structure/table/reinforced,/obj/item/weapon/pen,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bd" = (/obj/structure/table/reinforced,/obj/item/weapon/paper,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "be" = (/obj/structure/table/reinforced,/obj/item/weapon/paper_bin,/obj/item/weapon/pen,/obj/item/weapon/paper,/turf/simulated/floor/plating/under,/area/template_noop)
-"bf" = (/obj/structure/table/reinforced,/turf/simulated/floor/plating/under,/area/template_noop)
+"bf" = (/obj/structure/table/reinforced,/obj/structure/inflatable,/turf/simulated/floor/plating/under,/area/template_noop)
 "bg" = (/obj/machinery/light{dir = 4},/obj/random/junk,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bh" = (/obj/structure/table/reinforced,/obj/item/weapon/pen,/turf/simulated/floor/plating/under,/area/template_noop)
 "bi" = (/obj/item/remains/human,/obj/random/structures/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bj" = (/obj/structure/bed/chair/comfy/blue{dir = 1; icon_state = "comfychair_preview"},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bk" = (/obj/structure/table/rack,/obj/item/weapon/gun_upgrade,/obj/random/firstaid,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bl" = (/obj/structure/table/rack,/obj/item/weapon/gun_upgrade,/obj/structure/closet/onestar/tier2/normal,/obj/random/techpart/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"bm" = (/obj/structure/table/rack,/obj/item/weapon/gun_upgrade,/obj/random/techpart/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"bk" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"bl" = (/obj/structure/table/rack,/obj/structure/closet/onestar/tier2/normal,/obj/random/techpart/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"bm" = (/obj/structure/table/rack,/obj/random/techpart/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bn" = (/obj/structure/bed/chair/office/light,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bo" = (/obj/item/remains,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bp" = (/obj/structure/table/rack,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bq" = (/obj/random/junk,/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"br" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"br" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bs" = (/obj/item/weapon/gun/projectile/glock,/obj/item/ammo_casing/pistol,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bt" = (/obj/structure/table/rack,/obj/item/clothing/mask/gas/ihs,/obj/item/clothing/mask/gas/ihs,/obj/item/clothing/gloves/stungloves,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "bw" = (/obj/structure/table/rack,/obj/random/ammo/shotgun,/obj/random/rig_module/low_chance,/obj/random/rig_module/rare/low_chance,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"ep" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"pW" = (/obj/structure/bed/chair/comfy/blue{dir = 1; icon_state = "comfychair_preview"},/obj/structure/inflatable,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"uJ" = (/obj/machinery/light_construct{dir = 8},/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "Qv" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/template_noop)
+"RW" = (/obj/structure/table/reinforced,/obj/structure/inflatable,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
+"To" = (/obj/structure/inflatable,/turf/simulated/floor/plating/under,/area/template_noop)
 "Uz" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/plating/under,/area/template_noop)
 
 (1,1,1) = {"
@@ -74,25 +79,25 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaabababaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaa
 aaaeaeaeaeacacacacabababababababaaaaaaabaaaaaaaaaa
 aaaeaVaVadadaBUzacacacacacababadabababadaaaaaaaaaa
-aaaeaKadajahadadaEadadadawaeacacacacacacaGaGaGaaaa
+aaaeaKUzajahadadaEadadadawaeacacacacacacaGaGaGaaaa
 aaaeaeaeaHajajajaIajadaKaKaeQvadajadadadaoapaGaaaa
-aaaaabaeaeaeaeaeaeaLaeaeaeaeaeadajadajajajaoaGabaa
+aaaaabaeaeaeaeaeaeaLaeaeaeaeaeadajUzajajajaoaGabaa
 abababaeaMaNaNaeajajasaOaPaQaeaRajahadaEadadaSabaa
 aaaaaaaebobsanambqajajaUaUaVaeajaTadadadaWaEaSabaa
 aaaaaaaeaXaXaYaeajanajajajaQaeajajajayadadajaGabaa
 aaabaaaeaeaeaeaZajajajajajajagajaTataradadadaGabab
 abababababaeaRbaajbbbbbbadadagatajajajadaEadaGaaaa
-aaaaUzababaeajajajbcbdazbeajaeaAajajajaEadadacabab
-aaabadadawaeaQaQajajadadbfbgaeajajarajadaWadaGaaaa
-aaabadadadadaQajajadababazaTaeaQajayajadaWadacaaab
-aaaaaaaxadalajaTajadabbhazaTaebiajarajadaWadaGabab
-aaaaabadawaeajaTajaTbjadbjajaeaAajajaTadadadaGaaaa
-aaababadUzaeajajaDajajajajajagajajanayaEadQvacabab
-aaababadabaeaeaeaeaeajajajajagajajatarajajauacabaa
-aaabaeaeaeaebkblbmaeajajbnbnaeaTaEajajaEadavacabaa
+aaaaUzababaeajajbkbcbdazbeanaeaAajepajaEadaxacabab
+aaabadadawaeaQaQajepToTobfbgaeajanarajadaWadaGaaaa
+aaabadUzadadaQajajToababRWaTaeaQajaybkadaWadacaaab
+aaaaaaaxadalajaTajToabbhRWaTaebiajarajadaWadaGabab
+aaaaabadawaeajaTajaTpWTobjajaeuJajajaTadadadaGaaaa
+aaababadUzaeanajaDajajajbkajagajajanayaEadQvacabab
+aaababadabaeaeaeaeaeajanajajagajajatarajajauacabaa
+aaabaeaeaeaeaXblbmaeajajbnbnaeaTaEajajaEadavacabaa
 ababUzaebtajajanajambraQaQaQaeasadaEacacaEacacabaa
 aaabadaebpbpbwbmbmaeaeaeaeaeaeacaEabababababababaa
 aaabadaeaeaeaeaeaeaeabababaFabacacababaaaaaaaaaiaa
-aaabadadadabadaaaaabaaaaabaaaaadaaaaabaaaaaaaaaaaa
+aaabadadadabadaaaaabaaaaabaaaaUzaaaaabaaaaaaaaaaaa
 aaaaababaaabaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

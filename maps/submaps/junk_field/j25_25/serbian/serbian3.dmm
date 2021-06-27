@@ -5,7 +5,7 @@
 "ae" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/unsimulated/floor{icon_state = "plating"; name = "plating"},/area/template_noop)
 "af" = (/obj/structure/noticeboard,/turf/simulated/wall/r_wall,/area/template_noop)
 "ag" = (/obj/structure/noticeboard{icon_state = "nboard00"},/turf/simulated/wall/r_wall,/area/template_noop)
-"ah" = (/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"ah" = (/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blood,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "ai" = (/turf/simulated/wall/r_wall,/area/template_noop)
 "aj" = (/obj/machinery/door/airlock/external{icon_state = "door_locked"; locked = 1},/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "ak" = (/obj/machinery/vending/snack{name = "hacked Getmore Chocolate Corp"; prices = list()},/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
@@ -16,16 +16,16 @@
 "ap" = (/obj/random/junk,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
 "aq" = (/obj/item/weapon/material/shard,/obj/random/junk,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
 "ar" = (/obj/structure/bed/chair/comfy/black,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
-"as" = (/obj/structure/table/standard,/obj/item/weapon/storage/box/drinkingglasses{pixel_x = 1; pixel_y = 4},/obj/random/booze/low_chance,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"as" = (/obj/structure/table/standard,/obj/item/weapon/storage/box/drinkingglasses{pixel_x = 1; pixel_y = 4},/obj/random/booze/low_chance,/obj/item/weapon/reagent_containers/food/drinks/cans/monster,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_no_sugar,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "at" = (/obj/structure/table/reinforced,/obj/machinery/microwave{pixel_x = -1; pixel_y = 8},/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "au" = (/obj/item/weapon/storage/deferred/crate/alcohol,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "av" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/template_noop)
-"aw" = (/obj/structure/table/reinforced,/obj/item/weapon/storage/deferred/rations,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"aw" = (/obj/structure/table/reinforced,/obj/item/weapon/storage/deferred/rations,/obj/item/weapon/reagent_containers/food/drinks/cans/monster,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "ax" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
 "ay" = (/obj/structure/bed/chair/comfy/black{dir = 1},/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
-"az" = (/obj/structure/closet/secure_closet/freezer/kitchen{req_access = list(150)},/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"aA" = (/obj/structure/sink/kitchen{pixel_y = 28},/obj/random/junkfood/rotten/low_chance,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"aB" = (/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"az" = (/obj/structure/closet/secure_closet/freezer/kitchen{req_access = list(150)},/obj/item/weapon/reagent_containers/food/drinks/cans/monster_no_sugar,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_no_sugar,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_jungel,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"aA" = (/obj/structure/sink/kitchen{pixel_y = 28},/obj/random/junkfood/rotten/low_chance,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_sol,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"aB" = (/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blue,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "aC" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
 "aD" = (/obj/structure/table/rack,/obj/random/ammo,/obj/random/ammo,/obj/random/ammo,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "aE" = (/obj/structure/table/rack,/obj/random/ammo_fancy,/obj/random/ammo_fancy,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
@@ -49,14 +49,14 @@
 "aW" = (/obj/structure/closet,/obj/item/clothing/shoes/magboots/merc,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
 "aX" = (/obj/structure/closet,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "aY" = (/obj/structure/bed,/obj/item/weapon/bedsheet/hos,/obj/random/toy/plushie,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
-"aZ" = (/mob/living/carbon/superior_animal/human/voidwolf,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
+"aZ" = (/obj/item/weapon/material/shard,/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,/turf/template_noop,/area/template_noop)
 "ba" = (/mob/living/carbon/superior_animal/human/voidwolf/captain,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
 "bb" = (/obj/machinery/door/airlock/maintenance_interior{icon_state = "door_locked"; locked = 1},/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "bc" = (/obj/item/weapon/material/shard,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
 "bd" = (/obj/structure/table/glass,/obj/structure/table/glass,/obj/item/weapon/material/shard,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
 "be" = (/obj/random/structures,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
-"bf" = (/obj/structure/closet/secure_closet/freezer/fridge,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"bg" = (/obj/structure/table/reinforced,/obj/random/junkfood/rotten,/obj/random/booze/low_chance,/obj/random/booze/low_chance,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"bf" = (/obj/structure/closet/secure_closet/freezer/fridge,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blue,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blood,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"bg" = (/obj/structure/table/reinforced,/obj/random/junkfood/rotten,/obj/random/booze/low_chance,/obj/random/booze/low_chance,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blood,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "bh" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
 "bi" = (/obj/structure/girder,/turf/simulated/floor/plating/under,/area/template_noop)
 "bj" = (/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
@@ -65,12 +65,12 @@
 "bm" = (/obj/structure/bed,/obj/item/weapon/bedsheet/hos,/turf/simulated/floor/plating/under,/area/template_noop)
 "bn" = (/obj/item/weapon/paper_bin{pixel_x = -3; pixel_y = 7},/obj/item/weapon/pen{pixel_y = 4},/obj/structure/table/glass,/turf/simulated/floor/plating/under,/area/template_noop)
 "bo" = (/obj/structure/bed/chair/comfy/black{dir = 8},/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
-"bp" = (/obj/random/junkfood/rotten/low_chance,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"bq" = (/obj/random/junkfood/rotten,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"bp" = (/obj/random/junkfood/rotten/low_chance,/obj/random/mob/voidwolf,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_church,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_sol,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"bq" = (/obj/random/junkfood/rotten,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blood,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
 "br" = (/obj/item/weapon/material/shard,/obj/item/weapon/material/shard,/obj/random/junk,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
 "bs" = (/obj/item/weapon/material/shard,/obj/item/weapon/material/shard,/obj/item/weapon/material/shard,/obj/random/junk,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
-"bt" = (/obj/structure/table/reinforced,/obj/item/weapon/tray{pixel_y = 5},/obj/random/junkfood/rotten/low_chance,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
-"bu" = (/obj/random/junk,/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"bt" = (/obj/structure/table/reinforced,/obj/item/weapon/tray{pixel_y = 5},/obj/random/junkfood/rotten/low_chance,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_jungel,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"bu" = (/obj/random/junk,/obj/structure/lattice,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
 "bv" = (/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 0},/obj/random/junk,/obj/structure/mirror/antag{pixel_x = 28},/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
 "bw" = (/obj/random/junk,/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
 "bx" = (/obj/random/junk,/turf/simulated/floor/plating/under,/area/template_noop)
@@ -78,40 +78,57 @@
 "bz" = (/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "bA" = (/obj/structure/closet,/obj/item/weapon/storage/deferred/rations,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "bC" = (/obj/structure/table/rack,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
-"bE" = (/obj/structure/table/rack,/obj/structure/closet/onestar/tier2/normal,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
+"bE" = (/obj/item/weapon/material/shard,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
 "bG" = (/obj/structure/table/rack,/obj/random/techpart/low_chance,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "bH" = (/turf/simulated/floor/plating/under,/area/template_noop)
-"bJ" = (/obj/structure/lattice,/obj/item/weapon/storage/pouch/medium_generic,/turf/template_noop,/area/template_noop)
+"bJ" = (/obj/structure/lattice,/obj/item/weapon/storage/pouch/medium_generic,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
 "bL" = (/obj/item/weapon/storage/pouch/ammo,/turf/simulated/floor/plating/under,/area/template_noop)
 "bN" = (/obj/item/weapon/material/shard,/obj/item/weapon/material/shard,/turf/template_noop,/area/template_noop)
 "bO" = (/obj/structure/girder/low,/turf/simulated/floor/plating/under,/area/template_noop)
 "bP" = (/obj/item/weapon/material/shard,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
 "bQ" = (/obj/item/weapon/material/shard,/turf/simulated/floor/plating/under,/area/template_noop)
+"fI" = (/obj/random/mob/carp,/turf/template_noop,/area/template_noop)
+"js" = (/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
+"nZ" = (/obj/structure/lattice,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
+"py" = (/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
+"qf" = (/obj/item/weapon/material/shard,/obj/item/weapon/material/shard,/obj/random/material/low_chance,/turf/template_noop,/area/template_noop)
+"sM" = (/obj/random/mob/voidwolf,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
+"tl" = (/obj/random/mob/voidwolf,/turf/unsimulated/floor{icon_state = "lino"},/area/template_noop)
+"tt" = (/obj/item/weapon/paper/crumpled,/mob/living/carbon/superior_animal/human/voidwolf,/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
+"wZ" = (/obj/structure/lattice,/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,/turf/template_noop,/area/template_noop)
+"zG" = (/obj/item/weapon/material/shard,/obj/random/material/low_chance,/turf/unsimulated/floor{icon_state = "cult"; name = "plating"},/area/template_noop)
+"zO" = (/obj/random/junkfood/rotten/low_chance,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_orange,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_red,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_no_sugar,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"JU" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,/turf/simulated/floor/plating/under,/area/template_noop)
+"PY" = (/obj/structure/lattice,/obj/random/junk,/turf/template_noop,/area/template_noop)
+"QX" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,/turf/template_noop,/area/template_noop)
+"RM" = (/obj/random/junkfood/rotten/low_chance,/obj/item/weapon/reagent_containers/food/drinks/cans/monster_blood,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"SQ" = (/obj/random/mob/voidwolf,/turf/unsimulated/floor{dir = 2; icon_state = "freezerfloor"},/area/template_noop)
+"Xw" = (/obj/random/junk,/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
-aaaUaaaaaaaUaaaaaUaUaaaaaaaxaxaxaxaaaaaaaaaaaaaaaa
+aaaUaaaaaaaUaaaaaZbEjsaaaaaxaxaxaxaaaaaaaaaaaaaaaa
 aaaiaiaiaiaiaebObOaeaiafaibibHbHbiagaiaiaiaiaiaiaa
-aaajbzbzajbzbPbPbHbPbzaobHbHbHaJaJadadadadadakaiaU
-aaajbzbzajbzbzbPbHbQbPabbHavadapadadadadacadadaeaa
-aaaiaiaiaiaiaibHbzbHbHbzbHaiaSacalamadadadadaqaeaU
+aaajbzaoajbzbPzGpybPbzaobHbHbHaJaJadadadadadakaiaU
+aaajbzsMajbzbzbPbHbQbPabbHavadapadadadadacadadaeaa
+aaaiaiaiaiaiaibHbzbxbHbzbHaiaSacalamtladadadaqaeaU
 aaaianasaAbfaibebzbzbzbHbeaiaSadalamaraRadadbcaebN
-aaaibgbpbpataiaobzabbHbzbeaiaJadadamamambdbcbcbiaU
-aaaiaubqbpawaibzbzbHbHbzbzaiadapadayadayaybrbsbibN
-aaaiazbtahaBaLaobHbebzbzbzaLadadadadadadbcbcbkbiax
-aaaiaiaiaiaibHbHbHaiaiaLaiaiaiaiaiaLaibuaxaxbiaxax
-aaaaaxaxbHbHbHaFaGbvaibzaiaYadadadadbkbHbiaaaxaxaa
-aaaaaaaxavaKaLbwaGaHaibzaiaIadadadbHbxaTaiaaaaaaaa
-aaaaaaaabiaiaiaCaFaiaibzaiaIadaZadbHadblaiaaaaaaaa
-aaaaaaaaaiaKaLaFaFaMaiaoaiaIadadadbHbaaVaiaaaaaaaa
-aaaaaaaaaiaiaiaFbhaMaibzaiaIadbHbHaradaWaiaaaaaaaa
-aaaaaaaaaiaNbbaFaOaMaibzaibmbHbHbnamboaTaiaaaaaaaa
-aaaaaaaiaiaiaiaiaiaiaibbaiaibHbiaiaiaiaiaiaaaaaaaa
-aaaaaaaiaDbzbzbbbzaobzbzbzaXbHbHaXaXaXbAaiaaaaaaaa
+aaaibgbpRMataiaobzsMbHbzbeaiaJadadamamambdbcbcbiaU
+aaaiaubqzOawaibzbzbHbHaobzaiadaptlayadayaybrbsbiqf
+aaaiazbtahaBaLaobHbebzbzbzaLadadadadadadbcbcbkbinZ
+aaaiaiaiaiaibHbHbHaiaiaLaiaiaiaiaiaLaibunZnZbinZnZ
+XwaanZnZpypybHaFaGbvaibzaiaYadadadadbkbHbijsnZaxXw
+aaXwaanZavaKaLbwttaHaibzaiaIadadtlbHbxaTaiXwaaaaaa
+aaaaQXXwbiaiaiaCaFaiaibzaiaIadadadbHadblaiaaaaaaaa
+aaaaaaaaaiaKaLaFSQaMaiaoaiaItladadbHbaaVaiaaaaaaaa
+aaXwaaXwaiaiaiaFbhaMaibzaiaIadaxbHaradaWaiaaaaXwaa
+aaaaaaXwaiaNbbaFaOaMaibzaibmwZaxbnamboaTaiaaXwaaaa
+aaaaaaaiaiaiaiaiaiaiaibbaiaiaxbiaiaiaiaiaiaaaaaaaa
+aaXwaaaiaDsMbzbbbzaoaobzbzaXaxbHaXaXaXbAaiaaaaXwaa
 aaaaaaaiaDbzbzaibCaobzbzbzbHbHbzbzbzbzbzaiaaaaaaaa
-aaaaaaaiaEbjbzaibCbzabbCbzbHbCbCabbzbCbEaiaaaaaaaa
-aaaaaaaiaPbzbyaiaQbHbzbHbHaobzaobzbzbzbzaiaaaaaaaa
-aaaaaaaibGbGbGaiaQbHbHaxbEbCbGbCbCbGbCbEaiaaaaaaaa
-aaaaaaaiaiaiaiaibibHbibbaiaiaiaiaiaiaiaiaiaaaaaaaa
-aaaaaaaxaxaxaabJaxbHbLbHbkaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaxaaaaaaaxaaaxbLaxaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaXwaiaEbjbzaibCbzsMbCbzbHbCbCsMbzbCaQaifIaaXwaa
+aaaaaaaiaPbzbyaiaQbHbzbHbHaobzaobzbzsMbzaiaaaaaaaa
+XwaaaaaibGbGbGaiaQbHbHaxaQbCbGbCbCbGbCaQaiaaaaaaXw
+aaaaaaaiaiaiaiaibibHbibbaiaiaiaiaiaiaiaiaiXwaaaaaa
+aaaaXwaxPYaxaabJnZbHbLJUbkjsjsaaaaXwaaaaaaaaXwaaaa
+aaaaaaaaaxaaaaaanZjsnZbLaxaaaaaaaaaaaaaaaaaaaaaaaa
 "}
