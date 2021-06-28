@@ -4,7 +4,7 @@
 	name = "\improper cryo-sealed hydrogen fuel cell."
 	desc = "A flask full of volatile hydrogen. It cannot be refilled once spent."
 	icon = 'icons/obj/guns/plasma/plasma.dmi'
-	icon_state = "flask"
+	icon_state = "canister"
 	origin_tech = list(TECH_POWER = 1)
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_WEAK
