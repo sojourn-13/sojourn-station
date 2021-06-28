@@ -54,6 +54,10 @@
 	name = "BR .35 \"O Alemao\""
 	build_path = /obj/item/weapon/gun/projectile/automatic/alemao
 
+/datum/design/autolathe/gun/spring
+	name = "GP .35 \"Spring\""
+	build_path = /obj/item/weapon/gun/projectile/spring
+
 ///. 4 0 M A G N U M
 
 /datum/design/autolathe/gun/ladon
@@ -95,6 +99,10 @@
 /datum/design/autolathe/gun/rev10
 	name = "\"Frontier\" Magnum Revolver"
 	build_path = /obj/item/weapon/gun/projectile/revolver/rev10
+
+/datum/design/autolathe/gun/rivet
+	name = "GP .40 Magnum \"Rivet\""
+	build_path = /obj/item/weapon/gun/projectile/rivet
 
 //. 5 0 K U R T Z
 
@@ -252,6 +260,10 @@
 	name = "BR .257 \"zatvor\""
 	build_path = /obj/item/weapon/gun/projectile/boltgun/zatvor
 
+/datum/design/autolathe/gun/nail_gun
+	name = "GP .257 \"Nail\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/nail_gun
+
 ///R I F L E S
 //7 . 5 m m
 
@@ -324,6 +336,10 @@
 	build_path = /obj/item/weapon/gun/projectile/boltgun/lever
 
 // S N O W F L A K E S
+
+/datum/design/autolathe/gun/scaffold
+	name = "GP 10mm Caseless Rifle \"Scaffold\""
+	build_path = /obj/item/weapon/gun/projectile/automatic/scaffold
 
 /datum/design/autolathe/gun/pulse_rifle
 	name = "PAR - 10mm Caseless Pulse Rifle"

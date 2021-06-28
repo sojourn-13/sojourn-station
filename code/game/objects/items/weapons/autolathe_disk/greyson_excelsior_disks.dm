@@ -42,6 +42,57 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/spring
+	disk_name = "Greyson Positronics - Spring"
+	icon_state = "onestar"
+	license = 10
+	designs = list(
+		/datum/design/autolathe/gun/spring = 4,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal = 2,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/rivet
+	disk_name = "Greyson Positronics - Rivet"
+	icon_state = "onestar"
+	license = 10
+	designs = list(
+		/datum/design/autolathe/gun/rivet = 4,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/nail_gun
+	disk_name = "Greyson Positronics - Nail Gun"
+	icon_state = "onestar"
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/nail_gun = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/scaffold
+	disk_name = "Greyson Positronics - Scaffold"
+	icon_state = "onestar"
+	license = 6
+	designs = list(
+		/datum/design/autolathe/gun/scaffold = 2,
+		/datum/design/autolathe/ammo/c10x24,
+		/datum/design/autolathe/ammo/box_10x24 = 2,
+	)
+
+
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/armor
 	disk_name = "Greyson Positronics - Ablative Vest"
 	icon_state = "onestar"
