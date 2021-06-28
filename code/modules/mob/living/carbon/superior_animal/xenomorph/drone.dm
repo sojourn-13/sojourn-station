@@ -55,6 +55,10 @@ var/datum/xenomorph/xenomorph_ai
 	fleshcolor = "#00ff00"
 	bloodcolor = "#00ff00"
 
+	can_burrow = FALSE
+	colony_friend = FALSE
+	friendly_to_colony = FALSE
+
 /mob/living/carbon/superior_animal/xenomorph/slip(var/slipped_on,stun_duration=8)
 	return FALSE
 //Xenos can't be slipped but can be flashed, after all, secondary senses like thermal vision are usually easily overloaded by lights.

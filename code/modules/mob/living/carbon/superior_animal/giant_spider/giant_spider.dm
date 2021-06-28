@@ -36,6 +36,9 @@
 	var/poison_type = "pararein"
 	faction = "spiders"
 
+	colony_friend = FALSE
+	friendly_to_colony = FALSE
+
 /mob/living/carbon/superior_animal/giant_spider/New(var/location, var/atom/parent)
 	get_light_and_color(parent)
 	..()
