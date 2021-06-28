@@ -1,3 +1,4 @@
+/*
 /mob/living/carbon/superior_animal/robot/greyson/synthetic
 	name = "Greyson Positronic FBP-Utility unit"
 	desc = "A full body positronic, tasked with carrying out a variety of duties. This one is unarmed."
@@ -42,3 +43,4 @@
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has an overclocked super cog laser rifle built in his arm."
 	icon_state = "nanotrasen_ert"
 	projectiletype = /obj/item/projectile/beam/heavylaser
+*/

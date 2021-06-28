@@ -1,3 +1,4 @@
+/*
 /mob/living/carbon/superior_animal/robot/greyson/roomba
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
@@ -145,3 +146,4 @@
 	melee_damage_upper = 3
 	injection_per_hit = 3
 	injection_type = "tricordrazine"
+*/

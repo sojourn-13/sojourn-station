@@ -1,3 +1,4 @@
+/*
 /mob/living/carbon/superior_animal/human/excelsior
 	name = "Excelsior Slave"
 	desc = "An excelsior rank and file, often converted unwillingly, making them nothing more than cannon fodder as they fight against the implant controlling them. These ones are too far gone, \
@@ -66,3 +67,4 @@
 		weapon1 = null
 	qdel(src)
 	return
+*/

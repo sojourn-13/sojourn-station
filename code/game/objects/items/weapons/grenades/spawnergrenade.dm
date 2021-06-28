@@ -59,7 +59,7 @@
 	desc = "A shitty rapid 'build-a-bot' grenade produced by prospector salvagers using designs 'borrowed' from the Soteria, handy for a build-a-bot guard or as a disposable decoy."
 	deliveryamt = 1
 	icon_state = "screamer"
-	spawner_type = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/junkbot
+	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied/junkbot
 	matter = list(MATERIAL_STEEL = 5)
 	will_flash = FALSE
 
@@ -69,7 +69,7 @@
 	desc = "Deploys a swarm of roomba that will attack animals and non-colony humanoids nearby."
 	deliveryamt = 3
 	icon_state = "greyson_nade_small"
-	spawner_type = /mob/living/carbon/superior_animal/robot/greyson/roomba/allied
+	spawner_type = /mob/living/simple_animal/hostile/roomba/allied
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1)
 	will_flash = FALSE
 
@@ -78,7 +78,7 @@
 	desc = "Deploys a swarm of armored roomba that will attack animals and non-colony humanoids nearby."
 	deliveryamt = 3
 	icon_state = "greyson_nade_small"
-	spawner_type = /mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied
+	spawner_type = /mob/living/simple_animal/hostile/roomba/trip/armored/allied
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1, MATERIAL_PLASTEEL = 6) //3 plasteel per baton
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/sword
@@ -86,7 +86,7 @@
 	desc = "Deploys a sword-bearing robot enhanced with incredible speed and augments that will attack animals and non-colony humanoids on sight."
 	deliveryamt = 1
 	icon_state = "greyson_nade_medium"
-	spawner_type = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied
+	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_SILVER = 6, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 5)
 
 /obj/item/weapon/grenade/spawnergrenade/manhacks/roomba/mantis
@@ -94,5 +94,5 @@
 	desc = "Deploys a mantis blade-bearing robot enhanced with incredible speed and augments that will attack animals and non-colony humanoids on sight."
 	deliveryamt = 1
 	icon_state = "greyson_nade_large"
-	spawner_type = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/advanced
+	spawner_type = /mob/living/simple_animal/hostile/roomba/synthetic/allied/advanced
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_SILVER = 8, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 9)

@@ -54,12 +54,11 @@
 	alpha = 128
 
 /obj/random/mob/voidwolf/item_to_spawn()
-	return pickweight(list(
-		/mob/living/carbon/superior_animal/human/voidwolf = 9,
-		/mob/living/carbon/superior_animal/human/voidwolf/fieldtech = 2,
-		/mob/living/carbon/superior_animal/human/voidwolf/ranged = 4,
-		/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged = 4,
-		/mob/living/carbon/superior_animal/human/voidwolf/captain = 0.5
+	return pickweight(list(/mob/living/simple_animal/hostile/voidwolf = 9,
+		/mob/living/simple_animal/hostile/voidwolf/fieldtech = 2,
+		/mob/living/simple_animal/hostile/voidwolf/ranged = 4,
+		/mob/living/simple_animal/hostile/voidwolf/fieldtech/ranged = 4,
+		/mob/living/simple_animal/hostile/voidwolf/captain = 0.5
 		))
 
 /obj/random/mob/voidwolf/low_chance

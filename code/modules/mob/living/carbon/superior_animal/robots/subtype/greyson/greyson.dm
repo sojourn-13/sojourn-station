@@ -1,3 +1,4 @@
+/*
 /mob/living/carbon/superior_animal/robot/greyson
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
@@ -39,3 +40,4 @@
 /obj/random/mob/roomba/post_spawn(var/list/spawns)
 	for(var/mob/living/simple_animal/A in spawns)
 		A.stasis = TRUE
+*/

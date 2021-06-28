@@ -5,7 +5,7 @@
 	maxHealth = 20
 	icon = 'icons/mob/build_a_drone.dmi'
 	icon_state = "drone_os"
-	faction = "greyson"
+	faction = "onestar"
 	layer = MOB_LAYER
 	var/obj/item/loot
 	var/attacktext = "drills"

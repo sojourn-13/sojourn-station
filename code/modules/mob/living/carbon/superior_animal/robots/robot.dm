@@ -1,3 +1,4 @@
+/*
 /mob/living/carbon/superior_animal/robot
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
@@ -104,3 +105,4 @@
 		to_chat(user, SPAN_WARNING("It's wounded."))
 	else if (health < maxHealth)
 		to_chat(user, SPAN_WARNING("It's a bit wounded."))
+*/

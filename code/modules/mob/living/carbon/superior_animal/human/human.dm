@@ -1,3 +1,4 @@
+/*
 // For AI-controlled human-like mobs.
 /mob/living/carbon/superior_animal/human
 	name = "Random Guy"
@@ -13,3 +14,4 @@
 
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
+*/
