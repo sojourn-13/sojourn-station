@@ -12,7 +12,15 @@
 
 	waring_faction = ""
 	waring_faction_multy = 1
+/*
+	breath_required_type = NONE
+	breath_poison_type = NONE
+	min_breath_required_type = 0
+	min_breath_poison_type = 0
 
+	min_air_pressure = 0
+	min_bodytemperature = 0
+*/
 	can_burrow = FALSE
 	colony_friend = FALSE
 	friendly_to_colony = FALSE

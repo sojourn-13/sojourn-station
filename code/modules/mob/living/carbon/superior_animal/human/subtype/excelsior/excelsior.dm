@@ -21,6 +21,14 @@
 	meat_type = null
 	leather_amount = 0
 	bones_amount = 0
+//They are all waring suits
+	breath_required_type = NONE
+	breath_poison_type = NONE
+	min_breath_required_type = 0
+	min_breath_poison_type = 0
+
+	min_air_pressure = 0
+	min_bodytemperature = 0
 
 	waring_faction = ""
 	waring_faction_multy = 1
