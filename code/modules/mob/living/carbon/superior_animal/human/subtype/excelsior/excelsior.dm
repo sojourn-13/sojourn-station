@@ -15,6 +15,9 @@
 	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	melee_damage_lower = 10
 	melee_damage_upper = 15
+	breath_required_type = 0 // Doesn't need to breath, in a space suit
+	breath_poison_type = 0 // Can't be poisoned
+	min_air_pressure = 0 // Doesn't need pressure
 	attacktext = "slashed"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	meat_amount = 0

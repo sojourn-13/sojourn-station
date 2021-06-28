@@ -5,8 +5,9 @@
 	icon_state = "roomba"
 	faction = "robot"
 	attacktext = "bonked"
-	breath_required_type = 0 // Doesn't need to breath
+	breath_required_type = 0 // Doesn't need to breath, in a space suit
 	breath_poison_type = 0 // Can't be poisoned
+	min_air_pressure = 0 // Doesn't need pressure
 	move_to_delay = 4
 	turns_per_move = 5
 	light_range = 3
