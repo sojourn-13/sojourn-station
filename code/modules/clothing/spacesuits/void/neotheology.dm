@@ -127,7 +127,6 @@
 	icon_state = "ntvoidhelmet"
 	item_state = "ntvoidhelmet"
 	action_button_name = "Toggle Helmet Light"
-	flags_inv = BLOCKHAIR
 	armor = list(
 		melee = 40,
 		bullet = 30,
@@ -139,6 +138,12 @@
 	siemens_coefficient = 0.35
 	light_overlay = "helmet_light"
 
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	flash_protection = FLASH_PROTECTION_MAJOR
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+
+
 /obj/item/clothing/suit/space/void/NTvoid
 	name = "angel voidsuit"
 	desc = "A voidsuit designed by the church with a most holy mix of biomatter and inorganic matter."
@@ -146,7 +151,6 @@
 	item_state = "ntvoid"
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 29)
 	slowdown = 0.15
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
 	armor = list(
 		melee = 40,
 		bullet = 30,
@@ -158,4 +162,10 @@
 	siemens_coefficient = 0.35
 	breach_threshold = 10
 	resilience = 0.07
+
 	helmet = /obj/item/clothing/head/space/void/NTvoid
+
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	flash_protection = FLASH_PROTECTION_MAJOR
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
