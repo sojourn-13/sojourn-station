@@ -32,18 +32,33 @@
 	if(stance == HOSTILE_STANCE_ATTACK)
 		if(destroy_surroundings)
 			destroySurroundings()
-
-		stop_automated_movement = 1
-		stance = HOSTILE_STANCE_ATTACKING
-		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-		walk_to(src, target_mob, 1, move_to_delay)
-		moved = 1
+		if(!ranged)
+			stop_automated_movement = 1
+			stance = HOSTILE_STANCE_ATTACKING
+			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+			walk_to(src, target_mob, 1, move_to_delay)
+			moved = 1
+		if(ranged)
+			stop_automated_movement = 1
+			if(get_dist(src, target_mob) <= 6)
+				OpenFire(target_mob)
+			else
+				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+				walk_to(src, target_mob, 4, move_to_delay)
+			stance = HOSTILE_STANCE_ATTACKING
 
 	if(stance == HOSTILE_STANCE_ATTACKING)
 		if(destroy_surroundings)
 			destroySurroundings()
-
+		if(!ranged)
 			prepareAttackOnTarget()
+		if(ranged)
+			if(get_dist(src, target_mob) <= 6)
+				OpenFire(target_mob)
+			else
+				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+				walk_to(src, target_mob, 4, move_to_delay)
+				OpenFire(target_mob)
 
 	//random movement
 	if(wander && !stop_automated_movement && !anchored)
