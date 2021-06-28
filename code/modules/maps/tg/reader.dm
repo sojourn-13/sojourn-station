@@ -109,7 +109,8 @@ var/global/use_preloader = FALSE
 				if(cropMap)
 					continue
 				else
-					world.maxz = zcrd //create a new z_level if needed
+					while(world.maxz < zcrd) //create a new z_level if needed
+						world.incrementMaxZ()
 				if(!no_changeturf)
 					WARNING("Z-level expansion occurred without no_changeturf set, this may cause problems")
 
@@ -159,8 +160,8 @@ var/global/use_preloader = FALSE
 						var/model_key = copytext(line, tpos, tpos + key_len)
 						line_keys[++line_keys.len] = model_key
 						#ifdef TESTING
-						else
-							++turfsSkipped
+					else
+						++turfsSkipped
 						#endif
 						CHECK_TICK
 					maxx = max(maxx, xcrd++)

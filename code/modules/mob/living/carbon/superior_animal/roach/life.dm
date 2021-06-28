@@ -18,7 +18,7 @@
 			if(!busy && prob(5))
 				//first, check for potential food nearby
 				var/list/eatTargets = new
-				for(var/mob/living/carbon/C in getObjectsInView())
+				for(var/mob/living/carbon/C in getPotentialTargets())
 					if ((C.stat == DEAD) && ((istype(C, /mob/living/carbon/human)) || (istype(C, /mob/living/carbon/superior_animal))))
 						eatTargets += C
 

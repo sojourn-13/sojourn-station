@@ -8,7 +8,7 @@
 	throwpass = 1
 	use_power = IDLE_POWER_USE
 	layer = 3.3
-	power_channel = EQUIP
+	power_channel = STATIC_EQUIP
 	var/on = 0
 	var/id_tag = null
 
