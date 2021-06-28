@@ -8,8 +8,11 @@
 	speak_chance = 5
 	turns_per_move = 5
 
+	attack_sound = 'sound/weapons/slice.ogg'
+
 	waring_faction = ""
 	waring_faction_multy = 1
 
+	can_burrow = FALSE
 	colony_friend = FALSE
 	friendly_to_colony = FALSE

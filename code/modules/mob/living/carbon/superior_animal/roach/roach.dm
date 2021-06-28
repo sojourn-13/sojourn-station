@@ -42,6 +42,9 @@
 	var/fed = 0 // roach gets fed after eating a corpse
 	var/probability_egg_laying = 25 // probability to lay an egg
 
+	colony_friend = FALSE
+	friendly_to_colony = FALSE
+
 /mob/living/carbon/superior_animal/roach/New()
 	..()
 	add_language(LANGUAGE_CHTMANT)

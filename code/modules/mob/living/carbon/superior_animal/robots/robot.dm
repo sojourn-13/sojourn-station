@@ -13,6 +13,9 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	projectiletype = /obj/item/projectile/beam/drone
+
+	attack_sound = 'sound/weapons/slice.ogg' //So we dont make bite sounds
+
 	deathmessage = "blows apart!"
 	health = 25
 	maxHealth = 25
@@ -25,6 +28,7 @@
 	var/cleaning = TRUE
 	var/emp_damage = TRUE // Does EMP & Ion weapons cause damage?
 
+	can_burrow = FALSE
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
