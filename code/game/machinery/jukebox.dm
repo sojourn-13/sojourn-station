@@ -21,7 +21,7 @@
 	var/state_base = "jukebox"
 	anchored = 1
 	density = 1
-	power_channel = EQUIP
+	power_channel = STATIC_EQUIP
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 100

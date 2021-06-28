@@ -136,8 +136,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["huntmaster nomad helm"] = "huntmaster_helmet"
-	options["huntmaster helm alt"] = "huntmaster_helmet_alt"
+	options["huntmaster horned nomad helm"] = "huntmaster_helmet"
+	options["huntmaster horned helm long snout"] = "huntmaster_helmet_alt"
+	options["huntmaster hornless nomad helm"] = "huntmaster_helmet_hornless"
+	options["huntmaster hornless helm long snout"] = "huntmaster_helmet_hornless_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -179,7 +181,7 @@
 	options["stalker hood"] = "hunter_helmet_stalker"
 	options["visored helmet"] = "hunter_helmet_visor"
 	options["nomad hooded-helm"] = "hunter_helmet_nomad"
-	options["nomad helm alt"] = "hunter_helmet_nomad_alt"
+	options["nomad helm long snout"] = "hunter_helmet_nomad_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

@@ -66,7 +66,7 @@
 	if(obelisk ? obelisk.active : FALSE) //(obelisk && obelisk.active) doesn't work for some reason. //TODO: Revisit this
 		qdel(src)
 		return
-	all_burrows.Add(src)
+	GLOB.all_burrows.Add(src)
 	if (anchor)
 		offset_to(anchor, 8)
 
@@ -94,7 +94,7 @@
 
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
-	all_burrows.Remove(src)
+	GLOB.all_burrows.Remove(src)
 	target = null
 	recieving = null
 	//Eject any mobs that tunnelled through us
@@ -619,6 +619,9 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /obj/structure/burrow/attack_generic(mob/living/L)
 	if (is_valid(L))
 		enter_burrow(L)
+	if (issuperioranimal(L))//So they don't carry burrow's reference and never qdel
+		var/mob/living/carbon/superior_animal/SA = L
+		SA.target_mob = null
 
 
 /obj/structure/burrow/proc/pull_mob(mob/living/L)

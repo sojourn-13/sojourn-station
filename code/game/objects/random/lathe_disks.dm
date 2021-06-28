@@ -74,7 +74,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/exotic_ammo = 3,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 4,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 4,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle = 4,))
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle = 4))
 
 /obj/random/lathe_disk/low_chance
 	name = "low chance random lathe disk"
@@ -164,7 +164,7 @@
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 10,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/lethal_ammo = 8,
 				/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 8,
-				/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle = 8,))
+				/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle = 8))
 
 /obj/random/lathe_disk/advanced/low_chance
 	name = "low chance advanced lathe disk"
@@ -176,10 +176,14 @@
 	icon_state = "tech-green"
 
 /obj/random/lathe_disk/advanced/onestar/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/stockparts = 3,
-						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog = 1,
-						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar = 1,
-						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/armor = 1))
+	return pickweight(list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/stockparts = 8,
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog = 5,
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar = 5,
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/armor = 5,
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/spring = 5,
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/rivet = 4,
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/nail_gun = 3,
+						/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/scaffold = 1))
 
 /obj/random/lathe_disk/advanced/excelsior
 	name = "random any excelsior lathe disk"
