@@ -193,6 +193,8 @@ While it would be entirely possible to check the mob's move handlers list for th
 
 	var/list/progressbars = null
 
+	///The z level this mob is currently registered in
+	var/registered_z
 
 	var/speed_factor = 1.0
 

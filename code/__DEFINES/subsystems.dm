@@ -42,7 +42,7 @@
 // Subsystem init_order, from highest priority to lowest priority
 // Subsystems shutdown in the reverse of the order they initialize in
 // The numbers just define the ordering, they are meaningless otherwise.
-
+#define INIT_ORDER_GARBAGE 99
 #define INIT_ORDER_SKYBOX 20
 #define INIT_ORDER_DBCORE 19
 #define INIT_ORDER_BLACKBOX 18

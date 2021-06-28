@@ -770,3 +770,7 @@ its easier to just keep the beam vertical.
 		G = GLOB.gender_datums[gen] //Convert to the gender using the name given.
 		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite list extraction") //TODO: REMOVE THIS ONCE FIXED
 	return G.word(position)
+
+// Called after we wrench/unwrench this object
+/obj/proc/wrenched_change()
+	return

@@ -84,7 +84,7 @@
 			var/obj/item/trash_mod = new trash_mod_path
 			if(SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
 				break
-			qdel(trash_mod)
+			QDEL_NULL(trash_mod)
 	else
 		fire_delay+= rand(0,3)
 		recoil_buildup+= rand(0,10)
@@ -123,7 +123,7 @@
 		for(var/i = 1 to del_count)
 			var/removed_item = pick(contents)
 			contents -= removed_item
-			qdel(removed_item)
+			QDEL_NULL(removed_item)
 
 		if(storage_slots && prob(75))
 			storage_slots = max(contents.len, max(0, storage_slots - pick(2, 2, 2, 3, 3, 4)))
@@ -167,11 +167,11 @@
 	return
 
 /obj/item/ammo_magazine/make_old()
-	var/del_count = rand(0,contents.len)
+	var/del_count = rand(0, stored_ammo.len)
 	for(var/i = 1 to del_count)
 		var/removed_item = pick(stored_ammo)
 		stored_ammo -= removed_item
-		qdel(removed_item)
+		QDEL_NULL(removed_item)
 	..()
 
 /obj/item/weapon/cell/make_old()
@@ -229,7 +229,7 @@
 			brokenmodule.name = src.name
 			brokenmodule.desc = src.desc
 			brokenmodule.make_old()
-			qdel(src)
+			QDEL_NULL(src)
 
 
 /obj/item/clothing/suit/space/make_old()
@@ -289,7 +289,7 @@
 	IonStorm(0)
 	explosion(sender.loc, 1, 1, 1, 3)
 	sender.drop_from_inventory(src)
-	qdel(src)
+	QDEL_NULL(src)
 
 /obj/item/weapon/dnainjector/make_old()
 	.=..()
@@ -313,7 +313,7 @@
 			brokenhud.icon_state = src.icon_state
 			brokenhud.item_state = src.item_state
 			brokenhud.make_old()
-			qdel(src)
+			QDEL_NULL(src)
 
 /obj/item/clothing/glasses/make_old()
 	.=..()
@@ -485,7 +485,7 @@
 				//Set the noexplode var so it doesn't explode, then just qdel it
 				//The destroy proc handles wreckage generation
 				noexplode = 1
-				qdel(src)
+				QDEL_NULL(src)
 
 		//Finally, so that the exosuit seems like it's been in storage for a while
 		//We will take any malfunctions to their logical conclusion, and set the error states high

@@ -131,6 +131,7 @@
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)
 	pixel_y = RAND_DECIMAL(-randpixel, randpixel)
 
+	GLOB.superior_animal_list += src
 
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
 	.=..()
@@ -140,6 +141,7 @@
 			create_burrow(get_turf(src))
 
 /mob/living/carbon/superior_animal/Destroy()
+	GLOB.superior_animal_list -= src
 	. = ..()
 
 /mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)

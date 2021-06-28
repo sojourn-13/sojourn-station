@@ -9,7 +9,7 @@
 	anchored = 1
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
-	power_channel = LIGHT
+	power_channel = STATIC_LIGHT
 	var/slow_turning_on = FALSE
 	var/forceful_toggle = FALSE
 	var/on = 1
@@ -107,7 +107,7 @@
 /obj/machinery/light_switch/power_change()
 
 	if(!otherarea)
-		if(powered(LIGHT))
+		if(powered(STATIC_LIGHT))
 			stat &= ~NOPOWER
 		else
 			stat |= NOPOWER

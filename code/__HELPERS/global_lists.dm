@@ -5,12 +5,14 @@ var/list/directory = list()							//list of all ckeys with associated client
 //Since it didn't really belong in any other category, I'm putting this here
 //This is for procs to replace all the goddamn 'in world's that are chilling around the code
 
+GLOBAL_LIST_EMPTY(mob_list)					//EVERY single mob, dead or alive
 GLOBAL_LIST_EMPTY(player_list)				//List of all mobs **with clients attached**. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(human_mob_list)				//List of all human mobs and sub-types, including clientless
 GLOBAL_LIST_EMPTY(silicon_mob_list)			//List of all silicon mobs, including clientless
 GLOBAL_LIST_EMPTY(living_mob_list)			//List of all alive mobs, including clientless. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(dead_mob_list)				//List of all dead mobs, including clientless. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(hearing_objects)	//List of all dead mobs, including clientless. Excludes /mob/new_player
+GLOBAL_LIST_EMPTY(superior_animal_list)		//A list of all superior animals; for targeting each other
 var/global/list/current_antags = list()
 var/global/list/current_factions = list()
 var/global/list/antag_team_objectives = list()		//List of shared sets of objectives for antag teams
@@ -21,7 +23,7 @@ GLOBAL_LIST_EMPTY(faxable_factions_list)	//Factions with faxes.
 GLOBAL_LIST_EMPTY(player_factions_list)		//Factions with players in them. Admin factions can have players added.
 GLOBAL_LIST_EMPTY(admin_factions_list)		//Factions with administrative response. All faxes to an admin faction pass through admins first, even with a primary fax.
 
-var/global/list/cable_list = list()					//Index for all cables, so that powernets don't have to look through the entire world all the time
+GLOBAL_LIST_EMPTY(cable_list)					//Index for all cables, so that powernets don't have to look through the entire world all the time
 var/global/list/chemical_reactions_list				//list of all /datum/chemical_reaction datums. Used during chemical reactions
 GLOBAL_LIST_EMPTY(chemical_reactions_list_by_result)					//list of all /datum/chemical_reaction datums. But this one indexed by chemical result instead of reagents
 var/global/list/chemical_reagents_list				//list of all /datum/reagent datums indexed by reagent id. Used by chemistry stuff
@@ -31,6 +33,19 @@ var/global/list/old_surgery_steps = list()			//list of all old-style (not bound 
 GLOBAL_LIST_EMPTY(surgery_steps)					//list of all new organ-based surgery steps
 var/global/list/mechas_list = list()				//list of all mechs. Used by hostile mobs target tracking.
 
+GLOBAL_LIST_EMPTY(all_burrows)				//list of all burrows
+GLOBAL_LIST_EMPTY(all_maintshrooms)			//list of all maintshrooms
+
+//Machinery lists
+GLOBAL_LIST_EMPTY(alarm_list) //List of fire alarms
+GLOBAL_LIST_EMPTY(ai_status_display_list) //List of AI status displays
+GLOBAL_LIST_EMPTY(apc_list) //List of Area Power Controllers
+GLOBAL_LIST_EMPTY(smes_list) //List of SMES
+GLOBAL_LIST_EMPTY(machines) //List of classless machinery. Removed from SSmachinery because that subsystem is half-dead by just existing
+GLOBAL_LIST_EMPTY(firealarm_list) //List of fire alarms
+GLOBAL_LIST_EMPTY(computer_list) //List of all computers
+GLOBAL_LIST_EMPTY(all_doors) //List of all airlocks
+GLOBAL_LIST_EMPTY(atmos_machinery) //All things atmos
 
 //Jobs and economy
 var/global/list/joblist = list()					//list of all jobstypes, minus borg and AI

@@ -339,7 +339,7 @@
 
 /obj/structure/multiz/ladder/up/deepmaint/climb()
 	if(!target)
-		var/obj/structure/burrow/my_burrow = pick(all_burrows)
+		var/obj/structure/burrow/my_burrow = pick(GLOB.all_burrows)
 		var/obj/structure/multiz/ladder/burrow_hole/my_hole = new /obj/structure/multiz/ladder/burrow_hole(my_burrow.loc)
 		my_burrow.deepmaint_entry_point = FALSE
 		target = my_hole
