@@ -10,7 +10,7 @@
 	throwforce = WEAPON_FORCE_WEAK
 	throw_speed = 3
 	throw_range = 5
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	var/plasma = 150
 	var/max_plasma = 150
 
@@ -27,8 +27,10 @@
 
 // Backpack variant.
 /obj/item/weapon/plasma_flask/backpack
-	name = "\improper plasmapack."
+	name = "\improper plasmapack"
 	desc = "A backpack full of volatile hydrogen. It cannot be refilled once spent."
 	icon_state = "plasmapack"
 	plasma = 2000
 	max_plasma = 2000
+	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_HUGE

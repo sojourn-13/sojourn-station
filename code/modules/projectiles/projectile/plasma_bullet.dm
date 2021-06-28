@@ -30,10 +30,10 @@
 	check_armour = ARMOR_ENERGY
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
-	kill_count = 15
+	kill_count = 15 // How long until they disapear
 
 /obj/item/projectile/plasma_bullet/on_impact(atom/target)
-	explosion(loc, 0, 0, 1)
+	explosion(loc, 0, 0, 1) // Smallest possible explosion
 	set_light(0)
 	return TRUE
 
@@ -47,6 +47,6 @@
 	kill_count = 12
 
 /obj/item/projectile/plasma_bullet/cannon/on_impact(atom/target)
-	explosion(loc, 0, 1, 2, 4)
+	explosion(loc, 0, 1, 2, 4) // Same values as the missile.
 	set_light(0)
 	return TRUE

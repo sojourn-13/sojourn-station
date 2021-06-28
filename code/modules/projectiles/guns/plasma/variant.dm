@@ -196,6 +196,19 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	if (damtype == BURN)
 		return heat
 
+/obj/item/weapon/tool/plasmawelder/MouseDrop(over_object)
+	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(flask, usr))
+		flask = null
+		update_icon()
 
+/obj/item/weapon/tool/plasmawelder/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
+
+	if(flask)
+		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
+		return
+
+	if(istype(W, /obj/item/weapon/plasma_flask) && insert_item(W, user))
+		flask = W
+		update_icon()
 
 

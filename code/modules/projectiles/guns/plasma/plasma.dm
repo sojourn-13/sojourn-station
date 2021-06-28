@@ -14,9 +14,9 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 - Heat the gun by firing shots.
 - Lose Heat over time when not firing.
 - Regularly release steam when a Heat threshold is reached, reducing Heat.
-- Cannot constantly vent, random minimal delay between ventings.
-- Manually venting the gun make it happen immediately, but has a delay where the user must stand still and not get shot.
-- Overheat by firing too fast for venting to keep up.
+- Cannot constantly vent_level, random minimal delay between vent_levelings.
+- Manually vent_leveling the gun make it happen immediately, but has a delay where the user must stand still and not get shot.
+- Overheat by firing too fast for vent_leveling to keep up.
 - When overheating, deal 50 burn damage to the active hand.
 
 - When containment fail, give a second warning, destroy the gun and deal 50 burn damage to every bodypart, with a 1-tile explosion.
@@ -32,7 +32,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 - Plasma Grenade : Made from Flasks. Explode and sear everything around them.
 - Plasma Gun : Reasonable rate of fire, can use Maximal Mode. Likely to survive through containment failure.
 - Plasma Cannon : Cannot use Fuel Flasks, Projectile explosion is a 3x3 AoE. Maximal Mode give even bigger boom. More Dangerous Meltdown.
-- Plasma Cannon Mounted Stand : Can accept Plasma Cannons and Fuel Backpack, prevent overheating of the gun thanks to external cooling system. Give one to Blackshield.
+- Plasma Cannon Mounted Stand : Can accept Plasma Cannons and Fuel Backpack, prevent_level overheating of the gun thanks to external cooling system. Give one to Blackshield.
 - Plasma Incinerator : Blue Cross Weapon. ***NO RISK OF OVERHEATING***, Overcharge setting is even deadlier and risk overheating. // Overcharge might not be added
 */
 
@@ -50,18 +50,18 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 	var/projectile_type = /obj/item/projectile/plasma_bullet
 	var/use_plasma_cost = 10 // How much plasma is used per shot
-	var/heat_per_shot = 5
+	var/heat_per_shot = 5 // How much heat is gained each shot
 
 	var/obj/item/weapon/plasma_flask/flask = null // The flask the gun use for ammo
-	var/secured = TRUE
-	var/heat_level = 0 // Current heat var.
-	var/vent = 50 // Threshold at which is automatically vent
-	var/vent_timer = 10 // Timer in second before the next venting can happen
+	var/secured = TRUE // Is the flask secured?
+	var/heat_level = 0 // Current heat level of the gun
+	var/vent_level = 50 // Threshold at which is automatically vent_level
+	var/vent_level_timer = 10 // Timer in second before the next vent_leveling can happen
 	var/overheat = 100 // Max heat before overheating.
 
 /obj/item/weapon/gun/plasma/Initialize()
 	..()
-	flask = new /obj/item/weapon/plasma_flask(src)
+	flask = new /obj/item/weapon/plasma_flask(src) // Give the gun a new flask when mapped in.
 
 /obj/item/weapon/gun/plasma/examine(mob/user)
 	..(user)
@@ -72,6 +72,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	to_chat(user, "Has [shots_remaining] shot\s remaining.")
 	return
 
+// Removing the plasma flask
 /obj/item/weapon/gun/plasma/MouseDrop(over_object)
 	if(secured)
 		to_chat(usr, "The cell is screwed to the gun. You cannot remove it.")
@@ -79,39 +80,55 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 		flask = null
 		update_icon()
 
-/obj/item/weapon/gun/plasma/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/weapon/gun/plasma/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 
+	// Securing or unsecuring the cell
 	if(QUALITY_SCREW_DRIVING)
-		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
-		if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
-			if(secured)
-				user.visible_message(
-										SPAN_NOTICE("[user] unsecure the plasma flask."),
-										SPAN_NOTICE("You unsecure the plasma flask.")
-									)
-				secured = FALSE
-			else
-				user.visible_message(
-										SPAN_NOTICE("[user] secure the plasma flask."),
-										SPAN_NOTICE("You secure the plasma flask.")
-									)
-				secured = TRUE
-			return
-		else if(secured)
-			if(prob(5))
-				user.visible_message(
-										SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burn /his hand."),
-										SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand..")
-									)
-				user.
+		if((flask) && !(istype(W, /obj/item/weapon/plasma_flask/backpack)))
+			var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
+			if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
+				if(secured)
+					user.visible_message(
+											SPAN_NOTICE("[user] unsecure the plasma flask."),
+											SPAN_NOTICE("You unsecure the plasma flask.")
+										)
+					secured = FALSE
+				else
+					user.visible_message(
+											SPAN_NOTICE("[user] secure the plasma flask."),
+											SPAN_NOTICE("You secure the plasma flask.")
+										)
+					secured = TRUE
+				return
+			else // When you fail
+				if(prob(5) && secured) // Get burned.
+					user.visible_message(
+											SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burn /his hand."),
+											SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand.")
+										)
+					if(user.hand == user.l_hand) // Are we using the left arm?
+						user.apply_damage(25, BURN, def_zone = BP_L_ARM)
+					else // If not then it must be the right arm.
+						user.apply_damage(25, BURN, def_zone = BP_R_ARM)
+				return
+		else
+			to_chat(user, "There is no flask.")
 
 	if(flask)
 		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
 		return
 
+	if(istype(W, /obj/item/weapon/plasma_flask/backpack))
+		if(do_after(user, WORKTIME_DELAYED, src))
+			flask = W
+			user.visible_message(	SPAN_NOTICE("[user] connect the [W.name] to the [src.name]."),
+									SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand.")
+								)
+
 	if(istype(W, /obj/item/weapon/plasma_flask) && insert_item(W, user))
 		flask = W
 		update_icon()
+		return
 
 /obj/item/weapon/gun/plasma/Process()
 
@@ -119,20 +136,41 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	if(heat_level > 0)
 		heat_level--
 
-	if(vent_timer > 0)
-		vent_timer--
+	if(vent_level_timer > 0)
+		vent_level_timer--
 
-	if(heat_level >= vent && vent_timer <= 0)
-		venting()
-
-/obj/item/weapon/gun/plasma/proc/venting()
+/obj/item/weapon/gun/plasma/proc/vent_leveling()
 	heat_level = 0 // Remove the heat
-	vent_timer = initial(vent_timer) // Reset the timer
-	src.visible_message("The [src.name]'s vents open and spew super-heated steam, cooling itself down.")
+	vent_level_timer = initial(vent_level_timer) // Reset the timer
+	src.visible_message("The [src.name]'s vent_levels open and spew super-heated steam, cooling itself down.")
 
 /obj/item/weapon/gun/plasma/consume_next_projectile()
 	if(!flask) return null
 	if(!ispath(projectile_type)) return null
 	if(!flask.use(use_plasma_cost)) return null
-	heat_level += heat_per_shot
+	heat_level += heat_per_shot // Increase the heat.
 	return new projectile_type(src)
+
+// The part where the gun blow up.
+/obj/item/weapon/gun/plasma/handle_post_fire(mob/living/user as mob)
+	..()
+	if(!secured) // Blow up if you forgot to secure the cell.
+		src.visible_message(SPAN_DANGER("The [src.name]'s magnetic containment failed, covering its wielder with burning plasma!"))
+
+		// Damage every bodypart
+		user.apply_damage(50, BURN, def_zone = BP_HEAD)
+		user.apply_damage(50, BURN, def_zone = BP_CHEST)
+		user.apply_damage(50, BURN, def_zone = BP_GROIN)
+		user.apply_damage(50, BURN, def_zone = BP_L_ARM)
+		user.apply_damage(50, BURN, def_zone = BP_R_ARM)
+		user.apply_damage(50, BURN, def_zone = BP_L_LEG)
+		user.apply_damage(50, BURN, def_zone = BP_R_LEG)
+
+		return
+
+	// vent_level if possible
+	if(heat_level >= vent_level && vent_level_timer <= 0)
+		vent_leveling()
+
+	return
+
