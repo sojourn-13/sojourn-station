@@ -12,6 +12,9 @@
 	health = 200
 	melee_damage_lower = 30
 	melee_damage_upper = 30
+	breath_required_type = 0 // Doesn't need to breath, in a space suit
+	breath_poison_type = 0 // Can't be poisoned
+	min_air_pressure = 0 // Doesn't need pressure
 	attacktext = "slashed"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	meat_amount = 0

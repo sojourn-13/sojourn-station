@@ -12,6 +12,7 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	breath_required_type = 0 // Doesn't need to breath
 	breath_poison_type = 0 // Can't be poisoned
+	min_air_pressure = 0 // Doesn't need pressure
 	speak_emote = list("state")
 	emote_see = list("looks around for a target.")
 	speak_chance = 1
