@@ -548,7 +548,9 @@ var/global/use_preloader = FALSE
 
 /area/template_noop
 	name = "Area Passthrough"
+	dynamic_lighting = FALSE
 
 /turf/template_noop
 	name = "Turf Passthrough"
 	icon_state = "template_void"
+	dynamic_lighting = FALSE
