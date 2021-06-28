@@ -51,7 +51,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	name = "Plasma Cannon"
 	desc = "A volatile but powerful weapon that use hydrogen flasks to fire powerful bolts."
 	icon = 'icons/obj/guns/plasma/plasma.dmi'
-	icon_state = "plasma"
+	icon_state = "cannon"
 
 	projectile_type = /obj/item/projectile/plasma_bullet/cannon
 	use_plasma_cost = 20 // How much plasma is used per shot
@@ -61,23 +61,20 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 /obj/item/weapon/tool/plasmawelder
 	name = "Plasma Welder"
 	desc = "A welder that use cryo-sealed hydrogen fuel cell to weld with the heat of a sun."
+	icon = 'icons/obj/guns/plasma/plasma.dmi'
+	icon_state = "welder"
+
 	eye_hazard = TRUE
 	degradation = FALSE
 	create_hot_spot = TRUE
 	switched_on_qualities = list(QUALITY_WELDING = 80, QUALITY_CAUTERIZING = 50)
 	toggleable = TRUE
 	max_upgrades = 0
+	heat = 2250
 
 	var/obj/item/weapon/plasma_flask/flask = null // The flask the welder use for ammo
 	var/use_plasma_cost = 1 // Active cost
 	var/passive_cost = 0.3 // Passive cost
-
-/obj/item/weapon/tool/plasmawelder/turn_on(mob/user)
-	.=..()
-	if(.)
-		playsound(loc, 'sound/items/welderactivate.ogg', 50, 1)
-		damtype = BURN
-		START_PROCESSING(SSobj, src)
 
 /obj/item/weapon/tool/plasmawelder/New()
 	..()
@@ -181,6 +178,24 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
 
 	return data
+
+/obj/item/weapon/tool/plasmawelder/turn_on(mob/user)
+	.=..()
+	if(.)
+		playsound(loc, 'sound/items/welderactivate.ogg', 50, 1)
+		damtype = BURN
+		START_PROCESSING(SSobj, src)
+
+/obj/item/weapon/tool/plasmawelder/turn_off(mob/user)
+	item_state = initial(item_state)
+	playsound(loc, 'sound/items/welderdeactivate.ogg', 50, 1)
+	..()
+	damtype = initial(damtype)
+
+/obj/item/weapon/tool/plasmawelder/is_hot()
+	if (damtype == BURN)
+		return heat
+
 
 
 

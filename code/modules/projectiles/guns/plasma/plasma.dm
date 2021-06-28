@@ -80,9 +80,6 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 		update_icon()
 
 /obj/item/weapon/gun/plasma/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(flask)
-		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
-		return
 
 	if(QUALITY_SCREW_DRIVING)
 		var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
@@ -99,6 +96,18 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 										SPAN_NOTICE("You secure the plasma flask.")
 									)
 				secured = TRUE
+			return
+		else if(secured)
+			if(prob(5))
+				user.visible_message(
+										SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burn /his hand."),
+										SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand..")
+									)
+				user.
+
+	if(flask)
+		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
+		return
 
 	if(istype(W, /obj/item/weapon/plasma_flask) && insert_item(W, user))
 		flask = W

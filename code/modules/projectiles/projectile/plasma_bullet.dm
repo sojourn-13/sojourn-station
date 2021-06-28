@@ -26,7 +26,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	damage_types = list(BURN = 100)
-	armor_penetration = 50
+	armor_penetration = 30
 	check_armour = ARMOR_ENERGY
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
@@ -41,10 +41,10 @@
 	kill_count = 10
 
 /obj/item/projectile/plasma_bullet/pistol/welder
-	kill_count = 5
+	kill_count = 7
 
 /obj/item/projectile/plasma_bullet/cannon
-	kill_count = 20
+	kill_count = 12
 
 /obj/item/projectile/plasma_bullet/cannon/on_impact(atom/target)
 	explosion(loc, 0, 1, 2, 4)
