@@ -81,7 +81,11 @@
 	desc = "A makeshift armored helmet you can see the glue holding it, just close enough to be airtight."
 	icon_state = "makeshift_void"
 	item_state = "makeshift_void"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	flash_protection = FLASH_PROTECTION_MAJOR
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+
 
 	armor = list(
 		melee = 40,
@@ -111,6 +115,12 @@
 	siemens_coefficient = 0.8
 	slowdown = 1.6
 	helmet = /obj/item/clothing/head/space/void/riggedvoidsuit
+
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	flash_protection = FLASH_PROTECTION_MAJOR
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+
 
 //Mining rig
 /obj/item/clothing/head/helmet/space/void/mining
