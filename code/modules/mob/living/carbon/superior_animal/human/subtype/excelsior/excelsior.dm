@@ -8,11 +8,19 @@
 	wander = 0
 	maxHealth = 200
 	health = 200
+
+	//range/ammo stuff
 	ranged = 1
 	rapid = 1
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
 	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	limited_ammo = TRUE
+	mag_drop = TRUE
+	rounds_left = 16
+	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/empty
+	mags_left = 2 //2+1
+
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	breath_required_type = 0 // Doesn't need to breath, in a space suit
@@ -48,12 +56,18 @@
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/ppsh
 	projectilesound = 'sound/weapons/guns/fire/grease_fire.ogg'
+	rounds_left = 71
+	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
+	mags_left = 1 //1+1
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak
 	icon_state = "excel_ak"
-	projectiletype = /obj/item/projectile/bullet/light_rifle_257/hv
+	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/ak47
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
+	rounds_left = 20
+	mag_type = /obj/item/ammo_magazine/rifle_75/empty
+	mags_left = 2 //2+1
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_vintorez
 	icon_state = "excel_vintorez"
@@ -61,12 +75,18 @@
 	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/vintorez
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
+	rounds_left = 10
+	mag_type = /obj/item/ammo_magazine/rifle_75_short
+	mags_left = 2 //2+1
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/drozd
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
+	rounds_left = 32
+	mag_type = /obj/item/ammo_magazine/smg_35/empty
+	mags_left = 2 //2+1
 
 /mob/living/carbon/superior_animal/human/excelsior/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()

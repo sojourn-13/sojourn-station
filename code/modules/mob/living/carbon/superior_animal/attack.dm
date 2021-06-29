@@ -53,24 +53,37 @@
 	if(rapid)
 		spawn(1)
 			Shoot(target, loc, src)
-			if(casingtype)
-				new casingtype(get_turf(src))
+			handle_ammo_check()
 		spawn(4)
 			Shoot(target, loc, src)
-			if(casingtype)
-				new casingtype(get_turf(src))
+			handle_ammo_check()
 		spawn(6)
 			Shoot(target, loc, src)
-			if(casingtype)
-				new casingtype(get_turf(src))
+			handle_ammo_check()
 	else
 		Shoot(target, loc, src)
-		if(casingtype)
-			new casingtype
+		handle_ammo_check()
 
 	stance = HOSTILE_STANCE_IDLE
 	target_mob = null
 	return
+
+/mob/living/carbon/superior_animal/proc/handle_ammo_check()
+	if(casingtype)
+		new casingtype(get_turf(src))
+	if(!limited_ammo)
+		return //Quick return
+	rounds_left -= rounds_per_fire //modular, tho likely will always be one
+	if(rounds_left <= 0 && mags_left >= 1) //If were out of ammo and can reload
+		mags_left -= 1
+		rounds_left = initial(rounds_left)
+		visible_message(reload_message)
+		if(mag_drop)
+			new mag_type(get_turf(src))
+		return
+	if(rounds_left <= 0 && mags_left <= 0) //If were out of ammo and can't reload
+		ranged = FALSE
+		rapid = FALSE
 
 /mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
 	if(target == start)
