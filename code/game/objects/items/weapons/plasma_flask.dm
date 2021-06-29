@@ -1,6 +1,6 @@
 // Flask used as ammo for the plasma guns
 
-/obj/item/weapon/plasma_flask //Basic type of the cells, should't be used by itself
+/obj/item/weapon/hydrogen_fuel_cell //Basic type of the cells, should't be used by itself
 	name = "\improper cryo-sealed hydrogen fuel cell."
 	desc = "A flask full of volatile hydrogen. It cannot be refilled once spent."
 	icon = 'icons/obj/guns/plasma/plasma.dmi'
@@ -14,19 +14,29 @@
 	var/plasma = 150
 	var/max_plasma = 150
 
-/obj/item/weapon/plasma_flask/examine(mob/user)
+/obj/item/weapon/hydrogen_fuel_cell/examine(mob/user)
 	..()
 	to_chat(user, "The [src.name] currently hold [plasma] units of plasma fuel.")
 
-/obj/item/weapon/plasma_flask/proc/use(var/amount)
+/obj/item/weapon/hydrogen_fuel_cell/proc/use(var/amount)
 	if(plasma >= amount) // Is there enough plasma left?
 		plasma -= amount
 		return TRUE
 	else
 		return FALSE
 
+// Fuel Cell for the bluecross weapon
+/obj/item/weapon/hydrogen_fuel_cell/infinite
+	name = "Anomalous hydrogen fuel cell"
+	desc = "This fuel cell doesn't seem to run out."
+	plasma = 500
+	max_plasma = 500
+
+/obj/item/weapon/hydrogen_fuel_cell/infinite/use(var/amount)
+	return TRUE // Never runs out.
+
 // Backpack variant.
-/obj/item/weapon/plasma_flask/backpack
+/obj/item/weapon/hydrogen_fuel_cell/backpack
 	name = "\improper plasmapack"
 	desc = "A backpack full of volatile hydrogen. It cannot be refilled once spent."
 	icon_state = "plasmapack"

@@ -52,7 +52,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	var/use_plasma_cost = 10 // How much plasma is used per shot
 	var/heat_per_shot = 5 // How much heat is gained each shot
 
-	var/obj/item/weapon/plasma_flask/flask = null // The flask the gun use for ammo
+	var/obj/item/weapon/hydrogen_fuel_cell/flask = null // The flask the gun use for ammo
 	var/secured = TRUE // Is the flask secured?
 	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
@@ -61,7 +61,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 /obj/item/weapon/gun/plasma/Initialize()
 	..()
-	flask = new /obj/item/weapon/plasma_flask(src) // Give the gun a new flask when mapped in.
+	flask = new /obj/item/weapon/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
 
 /obj/item/weapon/gun/plasma/examine(mob/user)
 	..(user)
@@ -84,7 +84,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 	// Securing or unsecuring the cell
 	if(QUALITY_SCREW_DRIVING)
-		if((flask) && !(istype(W, /obj/item/weapon/plasma_flask/backpack)))
+		if((flask) && !(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack)))
 			var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 			if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
 				if(secured)
@@ -118,14 +118,14 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
 		return
 
-	if(istype(W, /obj/item/weapon/plasma_flask/backpack))
+	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack))
 		if(do_after(user, WORKTIME_DELAYED, src))
 			flask = W
 			user.visible_message(	SPAN_NOTICE("[user] connect the [W.name] to the [src.name]."),
 									SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand.")
 								)
 
-	if(istype(W, /obj/item/weapon/plasma_flask) && insert_item(W, user))
+	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell) && insert_item(W, user))
 		flask = W
 		update_icon()
 		return

@@ -57,6 +57,15 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	use_plasma_cost = 20 // How much plasma is used per shot
 	heat_per_shot = 10
 
+// Blue cross weapon, no overheat and infinite ammo.
+/obj/item/weapon/gun/plasma/incinerator
+	name = "Plasma Incinerator"
+	desc = "A bluecross weapon, this plasma gun doesn't seems to heat up its hydrogen cell doesn't seem to run out"
+	use_plasma_cost = 10
+	heat_per_shot = 0 // No heat gain.
 
+/obj/item/weapon/gun/plasma/incinerator/Initialize()
+	..()
+	flask = new /obj/item/weapon/hydrogen_fuel_cell/infinite(src)
 
 
