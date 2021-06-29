@@ -20,7 +20,7 @@
 - Plasma Incinerator : Blue Cross Weapon. ***NO RISK OF OVERHEATING***, Overcharge setting is even deadlier and risk overheating. // Overcharge might not be added
 */
 
-/obj/item/projectile/plasma_bullet
+/obj/item/projectile/hydrogen
 	name = "plasma bolt"
 	icon_state = "plasma_bolt"
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
@@ -32,21 +32,35 @@
 	impact_type = /obj/effect/projectile/plasma/impact
 	kill_count = 15 // How long until they disapear
 
-/obj/item/projectile/plasma_bullet/on_impact(atom/target)
+/obj/item/projectile/hydrogen/on_impact(atom/target)
 	explosion(loc, 0, 0, 1) // Smallest possible explosion
 	set_light(0)
 	return TRUE
 
-/obj/item/projectile/plasma_bullet/pistol
+/obj/item/projectile/hydrogen/pistol
 	kill_count = 10
 
-/obj/item/projectile/plasma_bullet/pistol/welder
+/obj/item/projectile/hydrogen/pistol/welder
 	kill_count = 7
 
-/obj/item/projectile/plasma_bullet/cannon
+/obj/item/projectile/hydrogen/cannon
 	kill_count = 12
 
-/obj/item/projectile/plasma_bullet/cannon/on_impact(atom/target)
+/obj/item/projectile/hydrogen/cannon/on_impact(atom/target)
 	explosion(loc, 0, 1, 2, 4) // Same values as the missile.
 	set_light(0)
 	return TRUE
+
+// Overcharged Shots
+/obj/item/projectile/hydrogen/max
+	damage_types = list(BURN = 200)
+	armor_penetration = 50
+
+
+/obj/item/projectile/hydrogen/pistol/max
+	damage_types = list(BURN = 200)
+	armor_penetration = 50
+
+/obj/item/projectile/hydrogen/cannon/max
+	damage_types = list(BURN = 200)
+	armor_penetration = 50

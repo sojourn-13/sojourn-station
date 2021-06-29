@@ -36,10 +36,10 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 - Plasma Incinerator : Blue Cross Weapon. ***NO RISK OF OVERHEATING***, Overcharge setting is even deadlier and risk overheating. // Overcharge might not be added
 */
 
-/obj/item/weapon/gun/plasma
+/obj/item/weapon/gun/hydrogen
 	name = "Plasma Gun"
 	desc = "A volatile but powerful weapon that use hydrogen flasks to fire powerful bolts."
-	icon = 'icons/obj/guns/plasma/plasma.dmi'
+	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 5)
 	w_class = ITEM_SIZE_BULKY
@@ -47,8 +47,15 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	recoil_buildup = 1
 	twohanded = TRUE
 	max_upgrades = 0
+	fire_delay = 10
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
-	var/projectile_type = /obj/item/projectile/plasma_bullet
+	init_firemodes = list(
+		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=10, icon="destroy", heat_per_shot = 5, use_plasma_cost = 10),
+		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=30, icon="kill", heat_per_shot = 10, use_plasma_cost = 20)
+	)
+
+	var/projectile_type = /obj/item/projectile/hydrogen
 	var/use_plasma_cost = 10 // How much plasma is used per shot
 	var/heat_per_shot = 5 // How much heat is gained each shot
 
@@ -56,31 +63,46 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	var/secured = TRUE // Is the flask secured?
 	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
+	var/vent_timer = 0 // Keep track of the timer
 	var/vent_level_timer = 10 // Timer in second before the next vent_leveling can happen
 	var/overheat = 100 // Max heat before overheating.
 
-/obj/item/weapon/gun/plasma/Initialize()
+	// Damage dealt when overheating
+	var/contain_fail_damage = 50 // Applied to every bodypart.
+	var/overheat_damage = 25 // Applied to the hand holding the gun.
+
+	var/aerith_aether = 50 // Variable used to repetidely call Process(), which is used for heat management.
+
+/obj/item/weapon/gun/hydrogen/Initialize()
 	..()
 	flask = new /obj/item/weapon/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
 
-/obj/item/weapon/gun/plasma/examine(mob/user)
+/obj/item/weapon/gun/hydrogen/New()
+	..()
+	flask = new /obj/item/weapon/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
+	Process()
+
+/obj/item/weapon/gun/hydrogen/examine(mob/user)
 	..(user)
 	if(!flask)
 		to_chat(user, SPAN_NOTICE("Has no flask inserted."))
 		return
-	var/shots_remaining = round(flask.plasma / use_plasma_cost)
-	to_chat(user, "Has [shots_remaining] shot\s remaining.")
+	if(use_plasma_cost) // So that the bluecross weapon can use 0 plasma
+		var/shots_remaining = round(flask.plasma / use_plasma_cost)
+		to_chat(user, "Has [shots_remaining] shot\s remaining.")
+	if(!secured)
+		to_chat(user, SPAN_DANGER("The fuel cell is not secured!"))
 	return
 
 // Removing the plasma flask
-/obj/item/weapon/gun/plasma/MouseDrop(over_object)
+/obj/item/weapon/gun/hydrogen/MouseDrop(over_object)
 	if(secured)
 		to_chat(usr, "The cell is screwed to the gun. You cannot remove it.")
 	else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(flask, usr))
 		flask = null
 		update_icon()
 
-/obj/item/weapon/gun/plasma/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
+/obj/item/weapon/gun/hydrogen/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 
 	// Securing or unsecuring the cell
 	if(QUALITY_SCREW_DRIVING)
@@ -103,13 +125,10 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 			else // When you fail
 				if(prob(5) && secured) // Get burned.
 					user.visible_message(
-											SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burn /his hand."),
+											SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burn \his hand."),
 											SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand.")
 										)
-					if(user.hand == user.l_hand) // Are we using the left arm?
-						user.apply_damage(25, BURN, def_zone = BP_L_ARM)
-					else // If not then it must be the right arm.
-						user.apply_damage(25, BURN, def_zone = BP_R_ARM)
+					overheating(user)
 				return
 		else
 			to_chat(user, "There is no flask.")
@@ -119,58 +138,88 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 		return
 
 	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack))
+		user.visible_message(	SPAN_NOTICE("[user] start to connect the [W.name] to the [src.name]."),
+								SPAN_NOTICE("You start to connect the [W.name] to the [src.name].")
+								)
 		if(do_after(user, WORKTIME_DELAYED, src))
 			flask = W
 			user.visible_message(	SPAN_NOTICE("[user] connect the [W.name] to the [src.name]."),
-									SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand.")
+									SPAN_NOTICE("You connect the [W.name] to the [src.name].")
 								)
+		return
 
 	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell) && insert_item(W, user))
 		flask = W
 		update_icon()
 		return
 
-/obj/item/weapon/gun/plasma/Process()
-
+/obj/item/weapon/gun/hydrogen/Process()
 	// Lose heat over time.
 	if(heat_level > 0)
 		heat_level--
 
-	if(vent_level_timer > 0)
-		vent_level_timer--
+	if(vent_timer > 0)
+		vent_timer--
 
-/obj/item/weapon/gun/plasma/proc/vent_leveling()
+	src.visible_message("The [src.name] called Process()")
+	spawn(aerith_aether) Process()
+
+/obj/item/weapon/gun/hydrogen/proc/vent_leveling()
 	heat_level = 0 // Remove the heat
-	vent_level_timer = initial(vent_level_timer) // Reset the timer
-	src.visible_message("The [src.name]'s vent_levels open and spew super-heated steam, cooling itself down.")
+	vent_timer = vent_level_timer // Reset the timer
+	src.visible_message("The [src.name]'s vents open and spew super-heated steam, cooling itself down.")
 
-/obj/item/weapon/gun/plasma/consume_next_projectile()
-	if(!flask) return null
-	if(!ispath(projectile_type)) return null
-	if(!flask.use(use_plasma_cost)) return null
+/obj/item/weapon/gun/hydrogen/consume_next_projectile()
+	if(!flask)
+		return null
+	if(!ispath(projectile_type))
+		return null
+	if(!flask.use(use_plasma_cost))
+		return null
 	heat_level += heat_per_shot // Increase the heat.
 	return new projectile_type(src)
 
 // The part where the gun blow up.
-/obj/item/weapon/gun/plasma/handle_post_fire(mob/living/user as mob)
+/obj/item/weapon/gun/hydrogen/handle_post_fire(mob/living/user as mob)
 	..()
 	if(!secured) // Blow up if you forgot to secure the cell.
-		src.visible_message(SPAN_DANGER("The [src.name]'s magnetic containment failed, covering its wielder with burning plasma!"))
-
-		// Damage every bodypart
-		user.apply_damage(50, BURN, def_zone = BP_HEAD)
-		user.apply_damage(50, BURN, def_zone = BP_CHEST)
-		user.apply_damage(50, BURN, def_zone = BP_GROIN)
-		user.apply_damage(50, BURN, def_zone = BP_L_ARM)
-		user.apply_damage(50, BURN, def_zone = BP_R_ARM)
-		user.apply_damage(50, BURN, def_zone = BP_L_LEG)
-		user.apply_damage(50, BURN, def_zone = BP_R_LEG)
-
+		containment_failure(user)
 		return
 
-	// vent_level if possible
-	if(heat_level >= vent_level && vent_level_timer <= 0)
+	// Blow up if it overheat too much
+	if(heat_level >= overheat * 2)
+		containment_failure(user)
+		return
+
+	if(heat_level >= overheat)
+		overheating(user)
+		return
+
+	// Vent the gun if possible
+	if(heat_level >= vent_level && vent_timer <= 0)
 		vent_leveling()
 
 	return
+
+/obj/item/weapon/gun/hydrogen/proc/overheating(mob/living/user as mob)
+	src.visible_message(SPAN_DANGER("The [src.name] overheat, burning its wielder's hands!"))
+
+	// Burn the hand holding the gun
+	if(user.hand == user.l_hand) // Are we using the left arm?
+		user.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+	else // If not then it must be the right arm.
+		user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+
+
+/obj/item/weapon/gun/hydrogen/proc/containment_failure(mob/living/user as mob)
+	src.visible_message(SPAN_DANGER("The [src.name]'s magnetic containment failed, covering its wielder with burning plasma!"))
+	// Damage every bodypart, for a total of 350
+	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_HEAD)
+	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_CHEST)
+	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_GROIN)
+	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_L_ARM)
+	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_ARM)
+	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_L_LEG)
+	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_LEG)
+
 

@@ -1,9 +1,9 @@
 // Flask used as ammo for the plasma guns
 
 /obj/item/weapon/hydrogen_fuel_cell //Basic type of the cells, should't be used by itself
-	name = "\improper cryo-sealed hydrogen fuel cell."
+	name = "\improper cryo-sealed hydrogen fuel cell"
 	desc = "A flask full of volatile hydrogen. It cannot be refilled once spent."
-	icon = 'icons/obj/guns/plasma/plasma.dmi'
+	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "canister"
 	origin_tech = list(TECH_POWER = 1)
 	force = WEAPON_FORCE_WEAK
