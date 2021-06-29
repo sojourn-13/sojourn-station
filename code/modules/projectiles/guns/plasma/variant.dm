@@ -4,6 +4,7 @@
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "pistol"
 	twohanded = FALSE
+	w_class = ITEM_SIZE_NORMAL
 
 	projectile_type = /obj/item/projectile/hydrogen/pistol
 	use_plasma_cost = 10 // How much plasma is used per shot

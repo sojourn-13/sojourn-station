@@ -116,3 +116,13 @@
 
 	else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand))
 		to_chat(usr, SPAN_NOTICE("The [src.name] doesn't have any gun attached to it."))
+
+// The boxes holding the hydrogen cell
+/obj/item/weapon/storage/box/hydrogen_cell
+	name = "Hydrogen Fuel Cell box"
+	desc = "A box full of cryo-sealed hydrogen fuel cells"
+	var/amount_cell = 10 // Number of cell in the box.
+
+/obj/item/weapon/storage/box/hydrogen_cell/populate_contents()
+	for(var/i in 1 to amount_cell)
+		new /obj/item/weapon/hydrogen_fuel_cell(src)
