@@ -8,7 +8,7 @@
 	eye_hazard = TRUE
 	degradation = FALSE
 	create_hot_spot = TRUE
-	switched_on_qualities = list(QUALITY_WELDING = 80, QUALITY_CAUTERIZING = 50)
+	switched_on_qualities = list(QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 60)
 	toggleable = TRUE
 	max_upgrades = 0
 	heat = 2250
