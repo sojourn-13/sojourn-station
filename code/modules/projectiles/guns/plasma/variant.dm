@@ -37,7 +37,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 */
 
 /obj/item/weapon/gun/hydrogen/pistol
-	name = "Plasma Pistol"
+	name = "\improper plasma pistol"
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire powerful bolts."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "pistol"
@@ -53,7 +53,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	)
 
 /obj/item/weapon/gun/hydrogen/cannon
-	name = "Plasma Cannon"
+	name = "\improper plasma cannon"
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire powerful bolts."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "cannon"
@@ -69,7 +69,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 // Blue cross weapon, no overheat and infinite ammo.
 /obj/item/weapon/gun/hydrogen/incinerator
-	name = "Plasma Incinerator"
+	name = "\improper plasma incinerator"
 	desc = "A bluecross weapon, this plasma gun doesn't seems to heat up and its hydrogen cell doesn't seem to run out"
 	icon_state = "incinerator"
 	use_plasma_cost = 0

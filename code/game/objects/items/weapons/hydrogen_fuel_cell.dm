@@ -44,3 +44,64 @@
 	max_plasma = 2000
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_HUGE
+	var/obj/item/weapon/gun/hydrogen/the_gun = null
+
+/obj/item/weapon/hydrogen_fuel_cell/backpack/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
+	..()
+
+	// Is the object a plasma gun?
+	if(istype(W, /obj/item/weapon/gun/hydrogen))
+		if(!the_gun) // Do we have a gun?
+			var/obj/item/weapon/gun/hydrogen/H = W
+			user.visible_message(	SPAN_NOTICE("[user] start to connect the [W.name] to the [src.name]."),
+									SPAN_NOTICE("You start to connect the [W.name] to the [src.name].")
+									)
+			if(do_after(user, WORKTIME_DELAYED, src))
+				user.visible_message(	SPAN_NOTICE("[user] connect the [W.name] to the [src.name]."),
+										SPAN_NOTICE("You connect the [W.name] to the [src.name].")
+									)
+				the_gun = H
+				H.flask = src
+				H.connected = TRUE
+				H.secured = TRUE
+				H.update_icon()
+				insert_item(W, user)
+			return
+		else // We got the gun, and it is connected, put it back it.
+			user.visible_message(
+									SPAN_NOTICE("[user] attach the [the_gun.name] from the [src.name]."),
+									SPAN_NOTICE("You attach the [the_gun.name] from the [src.name].")
+								)
+			insert_item(W, user)
+
+	// Wrench to remove the gun
+	if(QUALITY_BOLT_TURNING)
+		if(the_gun) // Do we have the gun?
+			var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
+			if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_BOLT_TURNING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
+				user.visible_message(
+										SPAN_NOTICE("[user] unsecure the [the_gun.name] from the [src.name]."),
+										SPAN_NOTICE("You unsecure the [the_gun.name] from the [src.name].")
+									)
+				the_gun.secured = FALSE
+				the_gun.connected = FALSE
+				the_gun.flask = null
+				the_gun.update_icon()
+				eject_item(the_gun, user)
+				the_gun = null
+				return
+			return
+		else
+			to_chat(user, "The [src.name] doesn't have any gun connected to it.")
+
+// Removing the gun, but still connected
+/obj/item/weapon/hydrogen_fuel_cell/backpack/MouseDrop(over_object)
+	if(the_gun)
+		usr.visible_message(
+								SPAN_NOTICE("[usr] detach the [the_gun.name] from the [src.name]."),
+								SPAN_NOTICE("You detach the [the_gun.name] from the [src.name].")
+									)
+		eject_item(the_gun, usr)
+
+	else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand))
+		to_chat(usr, SPAN_NOTICE("The [src.name] doesn't have any gun attached to it."))

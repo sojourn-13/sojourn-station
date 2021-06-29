@@ -37,7 +37,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 */
 
 /obj/item/weapon/gun/hydrogen
-	name = "Plasma Gun"
+	name = "\improper plasma gun"
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire powerful bolts."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma"
@@ -58,6 +58,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	var/projectile_type = /obj/item/projectile/hydrogen
 	var/use_plasma_cost = 10 // How much plasma is used per shot
 	var/heat_per_shot = 5 // How much heat is gained each shot
+	var/connected = FALSE // If the gun is connected to a backpack
 
 	var/obj/item/weapon/hydrogen_fuel_cell/flask = null // The flask the gun use for ammo
 	var/secured = TRUE // Is the flask secured?
@@ -79,7 +80,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 /obj/item/weapon/gun/hydrogen/New()
 	..()
-	flask = new /obj/item/weapon/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
+	update_icon()
 	Process()
 
 /obj/item/weapon/gun/hydrogen/examine(mob/user)
@@ -96,11 +97,12 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 // Removing the plasma flask
 /obj/item/weapon/gun/hydrogen/MouseDrop(over_object)
-	if(secured)
-		to_chat(usr, "The cell is screwed to the gun. You cannot remove it.")
-	else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(flask, usr))
-		flask = null
-		update_icon()
+	if(!connected)
+		if(secured)
+			to_chat(usr, "The cell is screwed to the gun. You cannot remove it.")
+		else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(flask, usr))
+			flask = null
+			update_icon()
 
 /obj/item/weapon/gun/hydrogen/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 
@@ -131,21 +133,15 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 					overheating(user)
 				return
 		else
-			to_chat(user, "There is no flask.")
+			to_chat(user, "There is no flask to remove.")
 
-	if(flask)
-		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
+	// We do not want to insert the backpack, thank you very much.
+	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack))
 		return
 
-	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack))
-		user.visible_message(	SPAN_NOTICE("[user] start to connect the [W.name] to the [src.name]."),
-								SPAN_NOTICE("You start to connect the [W.name] to the [src.name].")
-								)
-		if(do_after(user, WORKTIME_DELAYED, src))
-			flask = W
-			user.visible_message(	SPAN_NOTICE("[user] connect the [W.name] to the [src.name]."),
-									SPAN_NOTICE("You connect the [W.name] to the [src.name].")
-								)
+
+	if(flask && istype(W, /obj/item/weapon/hydrogen_fuel_cell))
+		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
 		return
 
 	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell) && insert_item(W, user))
@@ -190,11 +186,12 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 		containment_failure(user)
 		return
 
-	// Blow up if it overheat too much
+	// Burn the user if it overheat too much
 	if(heat_level >= overheat * 2)
 		containment_failure(user)
 		return
 
+	// Gun's too hot, start burning
 	if(heat_level >= overheat)
 		overheating(user)
 		return
@@ -222,4 +219,9 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_L_LEG)
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_LEG)
 
-
+/obj/item/weapon/gun/hydrogen/update_icon()
+	..()
+	if(flask && !connected)
+		add_overlay("[icon_state]_loaded")
+	if(connected)
+		add_overlay("[icon_state]_connected")
