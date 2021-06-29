@@ -56,7 +56,7 @@
 "zO" = (/obj/machinery/light_construct{dir = 8},/turf/simulated/floor/plating/under,/area/template_noop)
 "Ax" = (/obj/item/modular_computer/console{dir = 1},/turf/simulated/floor/reinforced,/area/template_noop)
 "Az" = (/obj/item/weapon/stool,/obj/random/booze/low_chance,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
-"AM" = (/obj/structure/toilet{dir = 1},/obj/item/remains/human,/obj/item/clothing/shoes/magboots/merc,/obj/item/clothing/under/turtleneck,/obj/item/clothing/head/ushanka,/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"AM" = (/obj/structure/toilet{dir = 1},/obj/item/remains/human,/obj/item/clothing/shoes/magboots/merc,/obj/item/clothing/under/turtleneck,/obj/item/clothing/head/ushanka,/turf/simulated/floor/tiled/cafe,/area/template_noop)
 "Bb" = (/obj/random/junkfood/rotten,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "BD" = (/obj/machinery/light,/obj/random/junk,/turf/simulated/floor,/area/template_noop)
 "Dy" = (/obj/structure/table/rack,/obj/item/weapon/gun/projectile/handmade_pistol/shotgun,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
@@ -77,13 +77,13 @@
 "LE" = (/obj/structure/closet,/obj/item/clothing/under/turtleneck,/obj/item/clothing/under/turtleneck,/obj/item/clothing/under/turtleneck,/obj/item/clothing/under/turtleneck,/obj/item/clothing/under/turtleneck,/obj/item/clothing/shoes/magboots/merc,/obj/item/clothing/shoes/magboots/merc,/obj/item/clothing/shoes/magboots/merc,/obj/item/clothing/shoes/magboots/merc,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "Mf" = (/obj/structure/closet/firecloset,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "ME" = (/obj/machinery/door/firedoor,/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/plating,/area/template_noop)
-"Ns" = (/obj/structure/mirror/antag{pixel_x = -28},/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = -12; pixel_y = 2},/turf/simulated/floor/tiled/dark/cargo,/area/template_noop)
+"Ns" = (/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = -12; pixel_y = 2},/obj/structure/mirror{pixel_x = -32},/turf/simulated/floor/tiled/dark/cargo,/area/template_noop)
 "NH" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/cargo,/area/template_noop)
 "NR" = (/turf/simulated/floor,/area/template_noop)
 "Oz" = (/obj/structure/table/woodentable,/obj/machinery/recharger,/obj/structure/noticeboard{pixel_x = 30},/turf/simulated/floor/reinforced,/area/template_noop)
 "Pb" = (/obj/structure/lattice,/obj/machinery/light_construct{dir = 4},/turf/template_noop,/area/template_noop)
 "Pc" = (/obj/structure/table/woodentable,/obj/item/weapon/reagent_containers/food/drinks/flask/barflask,/turf/simulated/floor/reinforced,/area/template_noop)
-"PT" = (/obj/structure/closet,/obj/item/weapon/tool/pickaxe/diamonddrill,/obj/item/weapon/tool/pickaxe/diamonddrill,/obj/item/weapon/storage/backpack/military,/obj/item/weapon/storage/backpack/military,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
+"PT" = (/obj/structure/closet,/obj/item/weapon/tool/pickaxe/diamonddrill,/obj/item/weapon/storage/backpack/military,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "Qn" = (/obj/machinery/shower{dir = 1},/obj/structure/window/basic{dir = 1},/obj/structure/curtain/open/shower,/turf/simulated/floor/tiled/dark/cargo,/area/template_noop)
 "Qo" = (/obj/random/junk,/turf/simulated/floor,/area/template_noop)
 "QE" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/reinforced,/area/template_noop)
@@ -105,8 +105,9 @@
 "YE" = (/obj/structure/table/standard,/obj/item/device/lighting/toggleable/lamp,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "YV" = (/obj/structure/lattice,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "Ze" = (/turf/simulated/wall/r_wall,/area/template_noop)
-"Zt" = (/obj/random/lowkeyrandom,/obj/machinery/light{dir = 4},/turf/unsimulated/floor{icon_state = "white"},/area/template_noop)
+"Zt" = (/obj/random/lowkeyrandom,/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/cafe,/area/template_noop)
 "Zy" = (/turf/template_noop,/area/template_noop)
+"ZI" = (/obj/random/material/low_chance,/obj/structure/lattice,/turf/template_noop,/area/template_noop)
 "ZJ" = (/obj/structure/lattice,/obj/structure/closet/secure_closet/rare_loot,/turf/simulated/floor/plating/under,/area/template_noop)
 
 (1,1,1) = {"
@@ -116,9 +117,9 @@ ZyZyZyZyYVZeZeZeZeZeZeZeZeZeZeZeZeZeZeZeZeXLZeZyZy
 ZyZyhCVgZyahioaUNRbsNRNRNRNRNRbsNRQoNRaaNRNRZeZyZy
 ZyZyYVZyqYVGahZeZeZeZeZeXLZeZeZeZeZeZeZeZeahZeZyZy
 ZyZyahVGZyZyYVacQEdOOzZeNRZeFbgtfjYEXSLELzLaLzqYZy
-ZyZyMEEdahqYZyzFkunRPcZeelZeXSahqkahahLELzEQUTVgZy
-ZyZyZeaUZeLaZJqYahHcabXLkQXLXSacZyZyzFbELzUTqYqYZy
-ZyZyZeNRZeadahZyqYVGwgZeNRZezcuvxpahuPxOZeUyGDZyZy
+ZyZyMEEdahZIUTzFkunRPcZeelZeXSahqkahahLELzEQUTVgZy
+ZyZyZeaUZeLaZJZIahHcabXLkQXLXSacZyZyzFbELzUTqYqYZy
+ZyZyZeNRZeadahUTqYVGwgZeNRZezcuvxpahuPxOZeUyGDZyZy
 ZyZyZeThZenCaeLaVGZyUyLzXLZeZeZeizuPafzCZezOLzqYZy
 ZyZyMEagZeEjAxHcAxahEdahNRkQThZeAzXSXSgtZeNRMEZyZy
 ZyZyZeNRZeZeZemeZeLzahLzMEZeNRZeZeXLZeZeZeNRZeZyZy
