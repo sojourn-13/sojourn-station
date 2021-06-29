@@ -28,6 +28,7 @@
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	var/exam_message = "If you see this, report it to Kaz or R4d6." // Custom message that show when examined and is different for each model.
 
+	do_gibs = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 

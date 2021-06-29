@@ -228,7 +228,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	if (health <= 0)
 		death()
 
-/mob/living/carbon/superior_animal/gib(var/anim = icon_gib, var/do_gibs = 1)
+/mob/living/carbon/superior_animal/gib(var/anim = icon_gib)
 	if (!anim)
 		anim = 0
 
@@ -244,7 +244,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 
 	playsound(src.loc, 'sound/effects/splat.ogg', max(10,min(50,maxHealth)), 1)
 	if (do_gibs)
-		gibs(src.loc, null, /obj/effect/gibspawner/generic, fleshcolor, bloodcolor)
+		gibs(src.loc, null, gibspawner_type, fleshcolor, bloodcolor)
 	. = ..(anim,FALSE)
 
 /mob/living/carbon/superior_animal/dust(var/anim = icon_dust, var/remains = dust_remains)
