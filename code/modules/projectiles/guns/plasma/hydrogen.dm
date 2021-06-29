@@ -58,9 +58,9 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	var/projectile_type = /obj/item/projectile/hydrogen
 	var/use_plasma_cost = 10 // How much plasma is used per shot
 	var/heat_per_shot = 5 // How much heat is gained each shot
-	var/connected = FALSE // If the gun is connected to a backpack
 
 	var/obj/item/weapon/hydrogen_fuel_cell/flask = null // The flask the gun use for ammo
+	var/obj/item/weapon/hydrogen_fuel_cell/backpack/connected = null // The backpack the gun is connected to
 	var/secured = TRUE // Is the flask secured?
 	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
@@ -103,6 +103,12 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 		else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(flask, usr))
 			flask = null
 			update_icon()
+
+/obj/item/weapon/gun/hydrogen/dropped(mob/user)
+	..()
+	if(connected)
+		src.visible_message("The [src.name] reattach itself to the [connected.name].")
+		connected.insert_item(src, user)
 
 /obj/item/weapon/gun/hydrogen/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 
@@ -220,7 +226,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_LEG)
 
 /obj/item/weapon/gun/hydrogen/update_icon()
-	..()
+	cut_overlay()
 	if(flask && !connected)
 		add_overlay("[icon_state]_loaded")
 	if(connected)

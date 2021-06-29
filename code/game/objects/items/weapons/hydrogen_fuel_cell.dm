@@ -62,7 +62,7 @@
 									)
 				the_gun = H
 				H.flask = src
-				H.connected = TRUE
+				H.connected = src
 				H.secured = TRUE
 				H.update_icon()
 				insert_item(W, user)
@@ -84,7 +84,7 @@
 										SPAN_NOTICE("You unsecure the [the_gun.name] from the [src.name].")
 									)
 				the_gun.secured = FALSE
-				the_gun.connected = FALSE
+				the_gun.connected = null
 				the_gun.flask = null
 				the_gun.update_icon()
 				eject_item(the_gun, user)
