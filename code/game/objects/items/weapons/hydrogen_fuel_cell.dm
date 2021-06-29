@@ -1,4 +1,4 @@
-// Flask used as ammo for the plasma guns
+// Flasks used as ammo for the plasma guns
 
 /obj/item/weapon/hydrogen_fuel_cell //Basic type of the cells, should't be used by itself
 	name = "\improper cryo-sealed hydrogen fuel cell"
@@ -46,6 +46,11 @@
 	w_class = ITEM_SIZE_HUGE
 	var/obj/item/weapon/gun/hydrogen/the_gun = null
 
+/obj/item/weapon/hydrogen_fuel_cell/backpack/examine(mob/user)
+	..()
+	if(the_gun)
+		to_chat(user, "The [src.name] is currently attached to [the_gun.name].")
+
 /obj/item/weapon/hydrogen_fuel_cell/backpack/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 	..()
 
@@ -78,15 +83,21 @@
 	if(QUALITY_BOLT_TURNING)
 		if(the_gun) // Do we have the gun?
 			var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
+			user.visible_message(
+									SPAN_NOTICE("[user] start to disconnect the [the_gun.name] from the [src.name]."),
+									SPAN_NOTICE("You start to disconnect the [the_gun.name] from the [src.name].")
+								)
 			if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_BOLT_TURNING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
-				user.visible_message(
-										SPAN_NOTICE("[user] unsecure the [the_gun.name] from the [src.name]."),
-										SPAN_NOTICE("You unsecure the [the_gun.name] from the [src.name].")
-									)
+				// Remove the connectionts between the gun and the backpack
 				the_gun.secured = FALSE
 				the_gun.connected = null
 				the_gun.flask = null
 				the_gun.update_icon()
+
+				// Remove the gun from the user if it is there
+				if(the_gun.loc == user)
+					user.remove_from_mob(the_gun)
+					the_gun.forceMove(src)
 				eject_item(the_gun, user)
 				the_gun = null
 				return

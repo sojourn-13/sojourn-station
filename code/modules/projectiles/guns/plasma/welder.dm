@@ -19,9 +19,9 @@
 
 /obj/item/weapon/tool/plasma_torch/New()
 	..()
-	update_icon()
 	if(!flask)
 		flask = new /obj/item/weapon/hydrogen_fuel_cell(src)
+	update_icon()
 
 /obj/item/weapon/tool/plasma_torch/Process()
 	..()

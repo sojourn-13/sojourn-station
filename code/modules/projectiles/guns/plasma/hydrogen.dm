@@ -1,39 +1,14 @@
 /*
-Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as deadly to the wielder as it is to the target.
-				However, the sheer power and deadliness of Plasma Weapons often outweigh the hazards that come with their use.
+Hydrogen-based Plasma Weaponry got a bunch of quirks that make them very dangerous to use, but even more rewarding.
 
---- AMMO ---
-- Projectile Drop-off for each gun.
-- Make the gun use non-rechargable hydrogen flasks.
-- Each flask hold ~15 shots.
-- Reloaded using a screwdriver to remove and secure the cell. High skill cap and take a long time.
-- Failure when reloading can lead to 20 burn damage to the hand or a containment failure on the first shot.
-- Backpack & Feedline can replace hydrogen flasks.
+The projectile do 100 burn damage on the target, as well as a small explosion, but disapear after traveling a certain distance.
 
---- HEAT MECHANIC ---
-- Heat the gun by firing shots.
-- Lose Heat over time when not firing.
-- Regularly release steam when a Heat threshold is reached, reducing Heat.
-- Cannot constantly vent_level, random minimal delay between vent_levelings.
-- Manually vent_leveling the gun make it happen immediately, but has a delay where the user must stand still and not get shot.
-- Overheat by firing too fast for vent_leveling to keep up.
-- When overheating, deal 50 burn damage to the active hand.
+The core concept of this gun is heat management.
+Keep firing, and eventually the gun will become too hot and burn your hands. If you keep going even more, then containment of the plasma will fail and burn every bodypart.
+Luckily the gun slowly cool down over time, as well as regularly vent its heat.
 
-- When containment fail, give a second warning, destroy the gun and deal 50 burn damage to every bodypart, with a 1-tile explosion.
-
---- PROJECTILE ---
-- Deal 100 burn damage with high armor penetration.
-- Does a 1-tile explosion when hitting a target.
-- Maximal Mode : Use more fuel for more damage, force a delay after firing.
-
---- TYPES ---
-- Plasma Pistol : Same Damage, less range and lower rate of fire. Can use Maximal Mode.
-- Plasma Torch : Welder that use plasma flasks or backpack, can be used as an emergency pistol without the Maximal Mode and less range.
-- Plasma Grenade : Made from Flasks. Explode and sear everything around them.
-- Plasma Gun : Reasonable rate of fire, can use Maximal Mode. Likely to survive through containment failure.
-- Plasma Cannon : Cannot use Fuel Flasks, Projectile explosion is a 3x3 AoE. Maximal Mode give even bigger boom. More Dangerous Meltdown.
-- Plasma Cannon Mounted Stand : Can accept Plasma Cannons and Fuel Backpack, prevent_level overheating of the gun thanks to external cooling system. Give one to Blackshield.
-- Plasma Incinerator : Blue Cross Weapon. ***NO RISK OF OVERHEATING***, Overcharge setting is even deadlier and risk overheating. // Overcharge might not be added
+However, if you fail to secure the hydrogen flask used as ammo, then containment won't be perfect and will get breached on the first shot.
+Securing and unsecuring the flask is a long and hard task, and a failure when unsecuring the flask can burn your hands.
 */
 
 /obj/item/weapon/gun/hydrogen
@@ -65,7 +40,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
 	var/vent_timer = 0 // Keep track of the timer
-	var/vent_level_timer = 30 // Timer in second before the next vent_leveling can happen
+	var/vent_level_timer = 30 // Timer in second before the next venting can happen
 	var/overheat = 100 // Max heat before overheating.
 
 	// Damage dealt when overheating
@@ -103,12 +78,6 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 		else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(flask, usr))
 			flask = null
 			update_icon()
-
-/obj/item/weapon/gun/hydrogen/dropped(mob/user)
-	..()
-	if(connected)
-		src.visible_message("The [src.name] reattach itself to the [connected.name].")
-		connected.insert_item(src, user)
 
 /obj/item/weapon/gun/hydrogen/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 
@@ -165,15 +134,18 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 	// Vent the gun whenever possible
 	if(heat_level >= vent_level && vent_timer <= 0)
-		vent_leveling()
+		venting()
+
+	// Check if the gun is attached
+	if(connected) // Are we connected to something?
+		if(loc != connected) // Are we in the connected object?
+			if(loc != connected.loc) // Are we not in the same place?
+				src.visible_message("The [src.name] reattach itself to the [connected.name].")
+				usr.remove_from_mob(src)
+				forceMove(connected)
 
 	src.visible_message("The [src.name] called Process()") // Trace for testing
 	spawn(aerith_aether) Process()
-
-/obj/item/weapon/gun/hydrogen/proc/vent_leveling()
-	heat_level = 0 // Remove the heat
-	vent_timer = vent_level_timer // Reset the timer
-	src.visible_message("The [src.name]'s vents open and spew super-heated steam, cooling itself down.")
 
 /obj/item/weapon/gun/hydrogen/consume_next_projectile()
 	if(!flask)
@@ -204,6 +176,25 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 	return
 
+/obj/item/weapon/gun/hydrogen/update_icon()
+	cut_overlays()
+	if(flask && !connected)
+		add_overlay("[icon_state]_loaded")
+	if(connected)
+		add_overlay("[icon_state]_connected")
+
+
+/////////////////////
+///  Custom procs ///
+/////////////////////
+
+// Vent the weapon
+/obj/item/weapon/gun/hydrogen/proc/venting()
+	heat_level = 0 // Remove the heat
+	vent_timer = vent_level_timer // Reset the timer
+	src.visible_message("The [src.name]'s vents open and spew super-heated steam, cooling itself down.")
+
+// The weapon is too hot, burns the user's hand.
 /obj/item/weapon/gun/hydrogen/proc/overheating(mob/living/user as mob)
 	src.visible_message(SPAN_DANGER("The [src.name] overheat, burning its wielder's hands!"))
 
@@ -213,7 +204,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	else // If not then it must be the right arm.
 		user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
 
-
+// The weapon's plasma containment has failed, greatly burning the user !
 /obj/item/weapon/gun/hydrogen/proc/containment_failure(mob/living/user as mob)
 	src.visible_message(SPAN_DANGER("The [src.name]'s magnetic containment failed, covering its wielder with burning plasma!"))
 	// Damage every bodypart, for a total of 350
@@ -225,9 +216,8 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_L_LEG)
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_LEG)
 
-/obj/item/weapon/gun/hydrogen/update_icon()
-	cut_overlay()
-	if(flask && !connected)
-		add_overlay("[icon_state]_loaded")
-	if(connected)
-		add_overlay("[icon_state]_connected")
+
+
+
+
+
