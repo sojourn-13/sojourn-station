@@ -38,7 +38,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 /obj/item/weapon/gun/hydrogen
 	name = "Plasma Gun"
-	desc = "A volatile but powerful weapon that use hydrogen flasks to fire powerful bolts."
+	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire powerful bolts."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 5)
@@ -51,8 +51,8 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 	init_firemodes = list(
-		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=10, icon="destroy", heat_per_shot = 5, use_plasma_cost = 10),
-		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=30, icon="kill", heat_per_shot = 10, use_plasma_cost = 20)
+		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=30, icon="destroy", heat_per_shot = 5, use_plasma_cost = 10),
+		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=50, icon="kill", heat_per_shot = 10, use_plasma_cost = 20)
 	)
 
 	var/projectile_type = /obj/item/projectile/hydrogen
@@ -64,14 +64,14 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
 	var/vent_timer = 0 // Keep track of the timer
-	var/vent_level_timer = 10 // Timer in second before the next vent_leveling can happen
+	var/vent_level_timer = 30 // Timer in second before the next vent_leveling can happen
 	var/overheat = 100 // Max heat before overheating.
 
 	// Damage dealt when overheating
 	var/contain_fail_damage = 50 // Applied to every bodypart.
 	var/overheat_damage = 25 // Applied to the hand holding the gun.
 
-	var/aerith_aether = 50 // Variable used to repetidely call Process(), which is used for heat management.
+	var/aerith_aether = 50 // Variable used to repetidely call Process(), which is used for heat management. It is in deciseconds, so 50 = 5 seconds
 
 /obj/item/weapon/gun/hydrogen/Initialize()
 	..()
@@ -161,7 +161,11 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	if(vent_timer > 0)
 		vent_timer--
 
-	src.visible_message("The [src.name] called Process()")
+	// Vent the gun whenever possible
+	if(heat_level >= vent_level && vent_timer <= 0)
+		vent_leveling()
+
+	src.visible_message("The [src.name] called Process()") // Trace for testing
 	spawn(aerith_aether) Process()
 
 /obj/item/weapon/gun/hydrogen/proc/vent_leveling()
@@ -194,10 +198,6 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	if(heat_level >= overheat)
 		overheating(user)
 		return
-
-	// Vent the gun if possible
-	if(heat_level >= vent_level && vent_timer <= 0)
-		vent_leveling()
 
 	return
 

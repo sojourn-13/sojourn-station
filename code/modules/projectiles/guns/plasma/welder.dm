@@ -1,7 +1,7 @@
 // Welder that use plasma flasks
 /obj/item/weapon/tool/plasma_torch
 	name = "Plasma Welder"
-	desc = "A welder that use cryo-sealed hydrogen fuel cell to weld with the heat of a sun."
+	desc = "A welder that uses cryo-sealed hydrogen fuel cell to weld with the heat of a sun."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "welder"
 

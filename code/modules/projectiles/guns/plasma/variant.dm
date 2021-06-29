@@ -38,7 +38,7 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 
 /obj/item/weapon/gun/hydrogen/pistol
 	name = "Plasma Pistol"
-	desc = "A volatile but powerful weapon that use hydrogen flasks to fire powerful bolts."
+	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire powerful bolts."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "pistol"
 	twohanded = FALSE
@@ -48,13 +48,13 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	heat_per_shot = 5
 
 	init_firemodes = list(
-		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen/pistol, fire_sound='sound/weapons/lasercannonfire.ogg', fire_delay=10, icon="destroy", heat_per_shot = 5, use_plasma_cost = 10),
-		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/pistol/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=30, icon="kill", heat_per_shot = 10, use_plasma_cost = 20)
+		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen/pistol, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", heat_per_shot = 5, use_plasma_cost = 10),
+		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/pistol/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 10, use_plasma_cost = 20)
 	)
 
 /obj/item/weapon/gun/hydrogen/cannon
 	name = "Plasma Cannon"
-	desc = "A volatile but powerful weapon that use hydrogen flasks to fire powerful bolts."
+	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire powerful bolts."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "cannon"
 
@@ -63,21 +63,21 @@ Core Concept : 	This unfortunate quality makes a Plasma Weapon potentially as de
 	heat_per_shot = 10
 
 	init_firemodes = list(
-		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen/cannon, fire_sound='sound/weapons/lasercannonfire.ogg', fire_delay=10, icon="destroy", heat_per_shot = 10, use_plasma_cost = 20),
-		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/cannon/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=30, icon="kill", heat_per_shot = 20, use_plasma_cost = 40)
+		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen/cannon, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", heat_per_shot = 10, use_plasma_cost = 20),
+		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/cannon/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 20, use_plasma_cost = 40)
 	)
 
 // Blue cross weapon, no overheat and infinite ammo.
 /obj/item/weapon/gun/hydrogen/incinerator
 	name = "Plasma Incinerator"
-	desc = "A bluecross weapon, this plasma gun doesn't seems to heat up its hydrogen cell doesn't seem to run out"
+	desc = "A bluecross weapon, this plasma gun doesn't seems to heat up and its hydrogen cell doesn't seem to run out"
 	icon_state = "incinerator"
 	use_plasma_cost = 0
 	heat_per_shot = 0 // No heat gain.
 
 	init_firemodes = list(
-		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound='sound/weapons/lasercannonfire.ogg', fire_delay=10, icon="destroy", heat_per_shot = 0, use_plasma_cost = 1),
-		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=30, icon="kill", heat_per_shot = 0, use_plasma_cost = 1)
+		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", heat_per_shot = 0, use_plasma_cost = 1),
+		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 0, use_plasma_cost = 1)
 	)
 
 /obj/item/weapon/gun/hydrogen/incinerator/Initialize()
