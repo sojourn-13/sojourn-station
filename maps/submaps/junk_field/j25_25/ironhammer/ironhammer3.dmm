@@ -7,7 +7,7 @@
 "ah" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/simulated/floor/plating/under,/area/template_noop)
 "ai" = (/obj/structure/lattice,/obj/structure/lattice,/obj/random/junk,/turf/template_noop,/area/template_noop)
 "aj" = (/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
-"al" = (/obj/machinery/door/airlock/multi_tile/metal{dir = 2},/turf/simulated/floor/plating/under,/area/template_noop)
+"al" = (/obj/structure/computerframe{anchored = 1; dir = 8},/turf/simulated/floor/plating/under,/area/template_noop)
 "am" = (/obj/machinery/door/airlock/centcom{icon_state = "door_locked"; locked = 1},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "an" = (/mob/living/simple_animal/hostile/hivebot,/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
 "ao" = (/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/tiled/steel/bluecorner,/area/template_noop)
@@ -108,13 +108,13 @@ aaaaabaeaeaeaeaeaeaLaeaeaeaeaeaddgUzajajajaoaGabaa
 ababIxaeaMaNaNaeajajasaOaPaQaeaRajahadaEadahaSREaa
 ZHZHaaaebobsanambqajajaUaUaVaeajaTadyyyyaWaEaSabaa
 aaaaZHaeaXaXaYaeajanajajajaQaeajajajayadadajaGabaa
-aaabaaaeaeaeaeaZajajajajajajagajaTataradFradaGIxab
+aaabaaaeaeaeaeaZajajajajajajagajaTataladFradaGIxab
 IxablJlJlJaeaRbaajbbbbbbyyyyagatajajajadaEadaGaaaa
-aaaaUzlFlJaeajajbkbcbdazbeanaeaAajepajaEadaxacBEab
-YPREadadoLaeaQaQajepToTobfbgaeajanarajadfTadaGYPaa
-YPabaEUzyyadaQajdgTowAwARWaTaeaQajaybkyyaWadwzZHab
-aaYPZHaxadalajaTajTowAbhRWaTaebiajarajadfTadaGabab
-aaaaBEyyawaeajaTajaTpWTobjajaeuJajajaTadadahaGYPZH
+aaaaUzlFlJaeajajbkbcbdazbeanaeaAajepadaEadaxacBEab
+YPREadadoLaeaQaQajepToTobfbgaeajanaradadfTadaGYPaa
+YPabaEUzyyagaQajdgTowAwARWaTaeaQajaybkyyaWadwzZHab
+aaYPZHaxadagajaTajTowAbhRWaTaebiajaladadfTadaGabab
+aaaaBEyyawaeajaTajaTpWTobjajaeuJajajaEadadahaGYPZH
 ZHlJREadejaeanajaDdgajajbkajagajajanayaEadQvwzabab
 aalJlJyyabaeaeaeaeaeajandgajagajajatarajajauwzlFaa
 aalJaeaeaeaeaXblbmaeajajbnbnaeaTaEajajaEadavacYraa

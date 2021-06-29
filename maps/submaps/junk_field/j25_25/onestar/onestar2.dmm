@@ -14,7 +14,6 @@
 "ay" = (/obj/structure/railing/grey,/obj/machinery/light/floor,/turf/simulated/floor/asteroid/dirt/dark,/area/template_noop)
 "aA" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/derelict/white_small_edges,/area/template_noop)
 "aJ" = (/obj/structure/noticeboard,/turf/simulated/wall/untinted/onestar_reinforced,/area/template_noop)
-"aK" = (/obj/machinery/door/airlock/sandstone{name = "OneStar Airlock"},/turf/simulated/floor/tiled/derelict,/area/template_noop)
 "aN" = (/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "aQ" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/plating/under,/area/template_noop)
 "aR" = (/obj/effect/floor_decal/industrial/loading,/turf/simulated/floor/tiled/techmaint_cargo,/area/template_noop)
@@ -155,7 +154,7 @@ ZyZyTLZyZyZyLKZyUTZyTLZyZyZyLKZyZyZyfITLZyZyZyTLZy
 ZyfIoJZyUTahVXahahUTZyfIZyZyagkjahLKZyZyZyZyZyZyZy
 TLZyUTahmxahVuVuKwahUTZyTLUTagahVXahUTVXUTfITLZyZy
 ZyagESaJESblznESESESESESESESESbqVuVXagbmDRgeZyZyZy
-ZyCVESbvpayEKWbybGqpyJzjHYSVESKXLJVuaKcKaaahCVZyZy
+ZyCVESbvpayEKWbybGqpyJzjHYSVESKXLJVuzncKaaahCVZyZy
 ZyKwESVGVKKWKWSOQEkFAecopSkbESVuVuMEbNzCYyeDESZyZy
 ZyUTESnFKWDcKWyEKWtltlKWtlsBESZeVuVubNbNbNbNESlQUT
 ZyLKESLYnRBHKWKWabKWKWKWyEgKESVuVuEGAxbEbEjGESahUT
