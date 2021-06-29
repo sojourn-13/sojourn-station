@@ -14,6 +14,8 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	projectiletype = /obj/item/projectile/beam/drone
 
+	do_gibs = FALSE
+
 	attack_sound = 'sound/weapons/slice.ogg' //So we dont make bite sounds
 
 	deathmessage = "blows apart!"

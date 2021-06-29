@@ -18,6 +18,7 @@ var/datum/xenomorph/xenomorph_ai
 	maxHealth = 30
 	health = 30
 	randpixel = 0
+	gibspawner_type = /obj/effect/gibspawner/xenomorph
 	gibspawner = /obj/effect/gibspawner/xenomorph
 	attack_sound = list('sound/xenomorph/alien_claw_flesh1.ogg', 'sound/xenomorph/alien_claw_flesh2.ogg', 'sound/xenomorph/alien_claw_flesh3.ogg')
 	attack_sound_chance = 100

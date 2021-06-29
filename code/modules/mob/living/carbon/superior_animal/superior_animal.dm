@@ -15,6 +15,9 @@
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
 
+	var/do_gibs = TRUE //Do we gib?
+	var/gibspawner_type = /obj/effect/gibspawner/generic //what we use as are gib spawner
+	//Not to be confused with - gibspawner
 	var/icon_living
 	var/icon_dead
 	var/icon_rest //resting/unconscious animation
