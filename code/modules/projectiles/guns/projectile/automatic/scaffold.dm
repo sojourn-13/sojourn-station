@@ -2,9 +2,9 @@
 	name = "Greyson Positronic \"Scaffold\" caseless rifle"
 	desc = "A old and lost gun design of a caseless rifle by Greyson Positronic, its high fire rate stopping power and more make it the perfect frame for war. \
 	Its'caliber is 10mm and shockingly can be fitted with a silencer and has room for a scope."
-	icon = 'icons/obj/guns/projectile/scafle.dmi'
-	icon_state = "scafle"
-	item_state = "scafle"
+	icon = 'icons/obj/guns/projectile/scaffold.dmi'
+	icon_state = "scaffold"
+	item_state = "scaffold"
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_PAINFUL
 	caliber = "10x24"
