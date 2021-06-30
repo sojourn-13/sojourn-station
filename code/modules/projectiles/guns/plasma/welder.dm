@@ -1,13 +1,14 @@
 // Welder that use plasma flasks
 /obj/item/weapon/tool/plasma_torch
-	name = "Plasma Welder"
+	name = "Plasma \"Solar\" Welder"
 	desc = "A welder that uses cryo-sealed hydrogen fuel cell to weld with the heat of a sun."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "welder"
-
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 3, MATERIAL_OSMIUM = 2, MATERIAL_TRITIUM = 1)
 	eye_hazard = TRUE
 	degradation = FALSE
 	create_hot_spot = TRUE
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 7, TECH_PLASMA = 7)
 	switched_on_qualities = list(QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 60)
 	toggleable = TRUE
 	max_upgrades = 0
