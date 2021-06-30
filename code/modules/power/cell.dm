@@ -27,10 +27,13 @@
 	var/charge_tick = 0
 	var/charge_delay = 10
 	var/last_charge_status = -1 //used in update_icon optimization
+	//Used for depleted cells, basiclly makes it so map/newly spawned cells can start not at full for mapping or code
+	var/starts_max_charge = TRUE
 
 /obj/item/weapon/cell/Initialize()
 	. = ..()
-	charge = maxcharge
+	if(starts_max_charge)
+		charge = maxcharge
 	update_icon()
 	if(autorecharging)
 		START_PROCESSING(SSobj, src)

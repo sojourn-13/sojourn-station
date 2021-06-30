@@ -138,6 +138,8 @@
 
 	objectsInView = new
 
+	reload_message = "[name] performs a tactical reload!"
+
 	verbs -= /mob/verb/observe
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)
 	pixel_y = RAND_DECIMAL(-randpixel, randpixel)
