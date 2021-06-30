@@ -286,4 +286,4 @@
 
 /obj/item/weapon/paper/cro_pistol
 	name = "Classia Pistol"
-	info = {"This is a gun. Your gun. Very valuable. Do not lose it or else I'll tell Brynn you volonteered as a test subject for our ship-mounted hydrogen-plasma guns. - Mkne"}
+	info = {"This weapon is highly volatile and extremely dangerous if fired too many times to quickly, be sure to allow it to vent properly lest it over heats. This weapon is also explosive, so be aware of contraband laws and potential damage to the colony. A screwdriver is required to remove the hydrogen tanks, do be careful even then, lest you scorch your hand."}
