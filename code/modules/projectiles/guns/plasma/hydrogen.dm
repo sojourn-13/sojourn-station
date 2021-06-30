@@ -12,8 +12,10 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 */
 
 /obj/item/weapon/gun/hydrogen
-	name = "\improper plasma gun"
-	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire powerful bolts."
+	name = "\improper \"Venatori\" hydrogen-plasma gun"
+	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brain child of Soteria Director Nakharan Mkne, meant to compete and exceed the church of the absolutes \
+	own plasma designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapons over heating without being \
+	burnt to a crisp."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 5)
@@ -26,13 +28,13 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 	init_firemodes = list(
-		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=30, icon="destroy", heat_per_shot = 5, use_plasma_cost = 10),
-		list(mode_name = "maximal", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=50, icon="kill", heat_per_shot = 10, use_plasma_cost = 20)
+		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=30, icon="destroy", heat_per_shot = 25, use_plasma_cost = 10),
+		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=50, icon="kill", heat_per_shot = 40, use_plasma_cost = 20)
 	)
 
 	var/projectile_type = /obj/item/projectile/hydrogen
 	var/use_plasma_cost = 10 // How much plasma is used per shot
-	var/heat_per_shot = 5 // How much heat is gained each shot
+	var/heat_per_shot = 25 // How much heat is gained each shot
 
 	var/obj/item/weapon/hydrogen_fuel_cell/flask = null // The flask the gun use for ammo
 	var/obj/item/weapon/hydrogen_fuel_cell/backpack/connected = null // The backpack the gun is connected to
@@ -40,7 +42,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
 	var/vent_timer = 0 // Keep track of the timer
-	var/vent_level_timer = 30 // Timer in second before the next venting can happen
+	var/vent_level_timer = 50 // Timer in second before the next venting can happen
 	var/overheat = 100 // Max heat before overheating.
 
 	// Damage dealt when overheating
@@ -100,10 +102,10 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 					secured = TRUE
 				return
 			else // When you fail
-				if(prob(5) && secured) // Get burned.
+				if(prob(75) && secured) // Get burned.
 					user.visible_message(
-											SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burn \his hand."),
-											SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand.")
+											SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burns \his hand."),
+											SPAN_NOTICE("You make a mistake while unsecuring the flask and burns your hand.")
 										)
 					overheating(user)
 				return
@@ -215,9 +217,3 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_ARM)
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_L_LEG)
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_LEG)
-
-
-
-
-
-
