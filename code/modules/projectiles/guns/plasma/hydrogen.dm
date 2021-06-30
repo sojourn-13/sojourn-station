@@ -85,7 +85,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 	// Securing or unsecuring the cell
 	if(QUALITY_SCREW_DRIVING)
-		if((flask) && !(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack)))
+		if((flask) && !(connected) && !(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack)))
 			var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
 			if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
 				if(secured)
@@ -185,6 +185,15 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	if(connected)
 		add_overlay("[icon_state]_connected")
 
+/obj/item/weapon/gun/hydrogen/attack_self(mob/user as mob)
+	user.visible_message(	SPAN_NOTICE("[user] start to manually vent the [name]."),
+							SPAN_NOTICE("You start to manually vent the [name].")
+						)
+	if(do_after(user, WORKTIME_NORMAL, src))
+		user.visible_message(	SPAN_NOTICE("[user] manually vent the [name]."),
+								SPAN_NOTICE("You manually vent the [name].")
+							)
+		venting()
 
 /////////////////////
 ///  Custom procs ///
