@@ -23,7 +23,7 @@
 	filling_states = list(20,40,60,80,100)
 	volume = 9000
 
-/obj/structure/reagent_dispensers/bidon/singluar
+/obj/structure/reagent_dispensers/bidon/singular
 	name = "trigger stasis B.I.D.O.N. canister"
 	desc = "An advanced B.I.D.O.N. canister with stasis function that can be timed to turned off and on."
 	icon_state = "bidon_adv"
@@ -33,7 +33,7 @@
 	var/timer_till_mixing = 120
 	var/timing = FALSE
 
-/obj/structure/reagent_dispensers/bidon/singluar/attackby(obj/item/I, mob/user)
+/obj/structure/reagent_dispensers/bidon/singular/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/weapon/tool/multitool))
 		if(!timing)
 			to_chat(user, SPAN_NOTICE("You start the timer."))
@@ -44,12 +44,13 @@
 		. = ..()
 	update_icon()
 
-/obj/structure/reagent_dispensers/bidon/singluar/proc/timer_end()
+/obj/structure/reagent_dispensers/bidon/singular/proc/timer_end()
 	reagent_flags &= ~(NO_REACT)
 	spawn(10)
 	reagent_flags |= NO_REACT
+	reagents.process_reactions()
 
-/obj/structure/reagent_dispensers/bidon/singluar/proc/ticktock()
+/obj/structure/reagent_dispensers/bidon/singular/proc/ticktock()
 	if(timing && (timer_till_mixing > 0))
 		timer_till_mixing--
 		spawn(10)
