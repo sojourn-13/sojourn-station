@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/hydrogen/pistol
-	name = "\improper Plasma \"Classia\" hydrogen-plasma pistol"
+	name = "\improper \"Classia\" hydrogen-plasma pistol"
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brain child of Soteria Director Nakharan Mkne, meant to compete and exceed the church of the absolutes \
 	own plasma designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapons over heating without being \
 	burnt to a crisp. This variant is a pistol, capable of fitting a holster for discrete travel and easy drawing."
