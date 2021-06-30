@@ -125,19 +125,19 @@
 
 // Plasma guns
 /datum/design/research/item/weapon/hydrogen_rifle
-	name = "Plasma \"Red Giant\" Rifle"
+	name = "Hydrogen \"Venatori\" Rifle"
 	build_path = /obj/item/weapon/gun/hydrogen
 
 /datum/design/research/item/weapon/hydrogen_pistol
-	name = "Plasma \"Red Dwarf\" Pistol"
+	name = "Hydrogen \"Classia\" Pistol"
 	build_path = /obj/item/weapon/gun/hydrogen/pistol
 
 /datum/design/research/item/weapon/hydrogen_cannon
-	name = "Plasma \"Neutron Star\" Cannon"
+	name = "Hydrogen \"Sollex\" Cannon"
 	build_path = /obj/item/weapon/gun/hydrogen/cannon
 
 /datum/design/research/item/weapon/hydrogen_welder
-	name = "Plasma \"White Dwarfs\" Torch"
+	name = "Hydrogen Torch"
 	build_path = /obj/item/weapon/tool/plasma_torch
 
 // Ammo
