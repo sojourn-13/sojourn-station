@@ -283,3 +283,7 @@
 	<BR>\n\t\tDeep rock scans have shown that from time to time the labor camp may have hidden weapons and tools inside the rock walls.
 	<BR>\n
 	<BR>\n\t\tWARNING: Well Boris Kilmeade has full rights to mining the labor camp sight it may be used by any prisoner that wishes to do labor or a time sentence"}
+
+/obj/item/weapon/paper/cro_pistol
+	name = "Classia Pistol"
+	info = {"This is a gun. Your gun. Very valuable. Do not lose it or else I'll tell Brynn you volonteered as a test subject for our ship-mounted hydrogen-plasma guns. - Mkne"}

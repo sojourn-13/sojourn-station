@@ -54,6 +54,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /obj/item/weapon/gun/hydrogen/Initialize()
 	..()
 	flask = new /obj/item/weapon/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
+	update_icon()
 
 /obj/item/weapon/gun/hydrogen/New()
 	..()
@@ -146,7 +147,6 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 				usr.remove_from_mob(src)
 				forceMove(connected)
 
-	src.visible_message("The [src.name] called Process()") // Trace for testing
 	spawn(aerith_aether) Process()
 
 /obj/item/weapon/gun/hydrogen/consume_next_projectile()
@@ -189,11 +189,13 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	user.visible_message(	SPAN_NOTICE("[user] start to manually vent the [name]."),
 							SPAN_NOTICE("You start to manually vent the [name].")
 						)
-	if(do_after(user, WORKTIME_NORMAL, src))
+	if(do_after(user, WORKTIME_NEAR_INSTANT, src))
 		user.visible_message(	SPAN_NOTICE("[user] manually vent the [name]."),
 								SPAN_NOTICE("You manually vent the [name].")
 							)
 		venting()
+		return
+	..()
 
 /////////////////////
 ///  Custom procs ///
