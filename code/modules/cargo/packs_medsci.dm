@@ -204,3 +204,42 @@
 	cost = 550 //Its STILL cheaper to have rnd print this then buying
 	crate_name ="compact rapid part exchange device crate"
 	group = "Miscellaneous"
+
+/datum/supply_pack/hydrogen
+	name = "Cryo-Sealed Hydrogen Cells"
+	contains = list(
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell,
+		/obj/item/weapon/hydrogen_fuel_cell
+	)
+	cost = 2000 // Not cheap
+	crate_name = "cryo-sealed hydrogen crate"
+	group = "Medical / Science"
+	containertype = /obj/structure/closet/crate
+
+/datum/supply_pack/hydrogen_pack
+	name = "Cryo-Sealed Hydrogen Pack"
+	contains = list(
+		/obj/item/weapon/hydrogen_fuel_cell/backpack
+	)
+	cost = 5000 // Not cheap
+	crate_name = "cryo-sealed hydrogen crate"
+	group = "Medical / Science"
+	containertype = /obj/structure/closet/crate

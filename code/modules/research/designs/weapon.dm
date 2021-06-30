@@ -123,9 +123,22 @@
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	build_path = /obj/item/weapon/gun/projectile/automatic/ak47/akl
 
-/datum/design/research/item/weapon/heavy_plasma
-	name = "\"Ragefire\" Experimental Plasma Gun"
-	build_path = /obj/item/weapon/gun/energy/plasma/super_heavy
+// Plasma guns
+/datum/design/research/item/weapon/hydrogen_rifle
+	name = "Plasma Gun"
+	build_path = /obj/item/weapon/gun/hydrogen
+
+/datum/design/research/item/weapon/hydrogen_pistol
+	name = "Plasma Pistol"
+	build_path = /obj/item/weapon/gun/hydrogen/pistol
+
+/datum/design/research/item/weapon/hydrogen_cannon
+	name = "Plasma Cannon"
+	build_path = /obj/item/weapon/gun/hydrogen/cannon
+
+/datum/design/research/item/weapon/hydrogen_welder
+	name = "Plasma Torch"
+	build_path = /obj/item/weapon/tool/plasma_torch
 
 // Ammo
 /datum/design/research/item/ammo
