@@ -18,7 +18,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	burnt to a crisp."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma"
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 5)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 5, TECH_PLASMA = 8)
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 1)
 	recoil_buildup = 1
@@ -26,7 +26,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	max_upgrades = 0
 	fire_delay = 10
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-
+	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_MHYDROGEN = 5, MATERIAL_OSMIUM = 3, MATERIAL_TRITIUM = 2)
 	init_firemodes = list(
 		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=30, icon="destroy", heat_per_shot = 25, use_plasma_cost = 10),
 		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=50, icon="kill", heat_per_shot = 40, use_plasma_cost = 20)

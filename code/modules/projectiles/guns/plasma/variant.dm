@@ -7,7 +7,8 @@
 	icon_state = "pistol"
 	twohanded = FALSE
 	w_class = ITEM_SIZE_NORMAL
-
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 6, TECH_PLASMA = 5)
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_MHYDROGEN = 3, MATERIAL_OSMIUM = 2, MATERIAL_TRITIUM = 1)
 	projectile_type = /obj/item/projectile/hydrogen/pistol
 	use_plasma_cost = 10 // How much plasma is used per shot
 	heat_per_shot = 25
@@ -24,7 +25,8 @@
 	burnt to a crisp."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "cannon"
-
+	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_MHYDROGEN = 8, MATERIAL_OSMIUM = 6, MATERIAL_TRITIUM = 3)
+	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
 	projectile_type = /obj/item/projectile/hydrogen/cannon
 	use_plasma_cost = 20 // How much plasma is used per shot
 	heat_per_shot = 50
@@ -37,11 +39,13 @@
 // Blue cross weapon, no overheat and infinite ammo.
 /obj/item/weapon/gun/hydrogen/incinerator
 	name = "\improper \"Reclaimator\" hydrogen-plasma gun"
-	desc = "A bluecross weapon, this plasma gun doesn't seems to heat up and its hydrogen cell doesn't seem to run out"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	This plasma gun doesn't seems to heat up and its hydrogen cell doesn't seem to run out."
 	icon_state = "incinerator"
 	use_plasma_cost = 0
 	heat_per_shot = 0 // No heat gain.
-
+	origin_tech = list(TECH_COMBAT = 15, TECH_MATERIAL = 7, TECH_PLASMA = 25)
+	matter = list(MATERIAL_PLASTEEL = 65, MATERIAL_MHYDROGEN = 15, MATERIAL_OSMIUM = 10, MATERIAL_TRITIUM = 5)
 	init_firemodes = list(
 		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", heat_per_shot = 0, use_plasma_cost = 1),
 		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 0, use_plasma_cost = 1)

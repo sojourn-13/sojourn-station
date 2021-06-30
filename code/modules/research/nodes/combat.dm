@@ -291,3 +291,22 @@
 	unlocks_designs = list(/datum/design/research/item/clothing/medarmor,
 							/datum/design/research/item/clothing/armor_laserproof,
 							/datum/design/research/item/clothing/rig_advhazmat)
+
+/datum/technology/advanced_unstable_plasma_weapons
+	name = "Advanced Plasma Weapon Designs"
+	desc = "Advanced plasma designs for space or ground combat, rather unstable designs for unstable minds."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.9
+	y = 0.8
+	icon = "hydrogen"
+
+	required_technologies = list(/datum/technology/advanced_armor,
+								 /datum/technology/laser_weaponry)
+	required_tech_levels = list(RESEARCH_POWERSTORAGE = 12, RESEARCH_ENGINEERING = 20)
+	cost = 7500 //You get back a lot
+
+	unlocks_designs = list(/datum/design/research/item/weapon/hydrogen_rifle,
+							/datum/design/research/item/weapon/hydrogen_pistol,
+							/datum/design/research/item/weapon/hydrogen_cannon,
+							/datum/design/research/item/weapon/hydrogen_welder)
