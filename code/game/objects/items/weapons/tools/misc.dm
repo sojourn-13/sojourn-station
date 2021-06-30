@@ -1,5 +1,5 @@
 /obj/item/weapon/tool/omnitool
-	name = "Lonestar \"Munchkin 5000\""
+	name = "\improper Lonestar \"Munchkin 5000\""
 	desc = "A fuel-powered monster of a tool. Its welder part is the most advanced one, capable of welding things without harmful glow and sparks, so no protection needed. The complexity of this tool means that regular maintenance is required."
 	icon_state = "omnitool"
 	max_health = 200
@@ -34,7 +34,7 @@
 
 /obj/item/weapon/tool/arcwelder
 	name = "arc welder"
-	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, multitool, and incredibly painful taser. Due to its complex design it doesn't require welding goggles nor conduct shocks."
+	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, partial multitool, and incredibly painful taser. Due to its complex design it doesn't require welding goggles nor conduct shocks."
 	icon_state = "arc_welder"
 	item_state = "arc_welder"
 	w_class = ITEM_SIZE_NORMAL

@@ -83,7 +83,7 @@
 	switched_on_qualities = list(QUALITY_WELDING = 100, QUALITY_CAUTERIZING = 100, QUALITY_WIRE_CUTTING = 100)
 
 /obj/item/weapon/tool/weldingtool/onestar
-	name = "Greyson Positronic welding tool"
+	name = "\improper Greyson Positronic welding tool"
 	desc = "An old and legendary Greyson Positronic welding tool. Very powerful and reliable, but its compact design causes it to suffer from a lack of both fuel storage and efficiency."
 	icon_state = "one_star_welder"
 	item_state = "welder"

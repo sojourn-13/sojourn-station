@@ -1,7 +1,7 @@
 // Flasks used as ammo for the plasma guns
 
 /obj/item/weapon/hydrogen_fuel_cell //Basic type of the cells, should't be used by itself
-	name = "\improper cryo-sealed hydrogen fuel cell"
+	name = "cryo-sealed hydrogen fuel cell"
 	desc = "A flask full of volatile hydrogen. It cannot be refilled once spent."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "canister"
@@ -27,7 +27,7 @@
 
 // Fuel Cell for the bluecross weapon
 /obj/item/weapon/hydrogen_fuel_cell/infinite
-	name = "Anomalous hydrogen fuel cell"
+	name = "anomalous hydrogen fuel cell"
 	desc = "This fuel cell doesn't seem to run out."
 	plasma = 500
 	max_plasma = 500
@@ -37,9 +37,11 @@
 
 // Backpack variant.
 /obj/item/weapon/hydrogen_fuel_cell/backpack
-	name = "\improper plasmapack"
+	name = "plasmapack"
 	desc = "A backpack full of volatile hydrogen. It cannot be refilled once spent."
+	icon = 'icons/obj/guns/plasma/plasmapack.dmi'
 	icon_state = "plasmapack"
+	item_state = "plasmapack"
 	plasma = 2000
 	max_plasma = 2000
 	slot_flags = SLOT_BACK
@@ -119,7 +121,7 @@
 
 // The boxes holding the hydrogen cell
 /obj/item/weapon/storage/box/hydrogen_cell
-	name = "Hydrogen Fuel Cell box"
+	name = "\improper Hydrogen Fuel Cell box"
 	desc = "A box full of cryo-sealed hydrogen fuel cells"
 	var/amount_cell = 10 // Number of cell in the box.
 
