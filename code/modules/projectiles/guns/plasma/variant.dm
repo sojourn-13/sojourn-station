@@ -3,7 +3,7 @@
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brain child of Soteria Director Nakharan Mkne, meant to compete and exceed the church of the absolutes \
 	own plasma designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapons over heating without being \
 	burnt to a crisp. This variant is a pistol, capable of fitting a holster for discrete travel and easy drawing."
-  icon = 'icons/obj/guns/plasma/hydrogen.dmi'
+	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "pistol"
 	twohanded = FALSE
 	w_class = ITEM_SIZE_NORMAL
