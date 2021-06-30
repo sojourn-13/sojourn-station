@@ -129,6 +129,7 @@
 
 /obj/item/weapon/cell/medium/depleted
 	charge = 0
+	starts_max_charge = FALSE
 
 /obj/item/weapon/cell/medium/high
 	name = "Lonestar \"Robustcell 800M\""
@@ -139,6 +140,7 @@
 
 /obj/item/weapon/cell/medium/high/depleted
 	charge = 0
+	starts_max_charge = FALSE
 
 /obj/item/weapon/cell/medium/super
 	name = "Lonestar \"Robustcell 1000M\""
@@ -232,6 +234,7 @@
 
 /obj/item/weapon/cell/small/depleted
 	charge = 0
+	starts_max_charge = FALSE
 
 /obj/item/weapon/cell/small/high
 	name = "Lonestar \"Robustcell 200S\""
@@ -242,6 +245,7 @@
 
 /obj/item/weapon/cell/small/high/depleted
 	charge = 0
+	starts_max_charge = FALSE
 
 /obj/item/weapon/cell/small/super
 	name = "Lonestar \"Robustcell 300S\""

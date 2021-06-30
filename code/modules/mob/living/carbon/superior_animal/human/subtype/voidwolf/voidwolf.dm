@@ -93,7 +93,10 @@
 	rounds_left = 16
 	mag_type = /obj/item/weapon/cell/medium/high/depleted
 	mags_left = 1
-	reload_message = "Ejects a depleted cell and rapidly reloads a new one!"
+
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/New()
+	..()
+	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged
 	name = "Void Wolf Field Tech"
@@ -103,7 +106,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 22
 	ranged = TRUE
-	rapid = TRUE
+	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/laser.ogg'
 	weapon2 = /obj/item/weapon/gun/energy/gun/martin
@@ -112,7 +115,10 @@
 	rounds_left = 4
 	mag_type = /obj/item/weapon/cell/small/high/depleted
 	mags_left = 2
-	reload_message = "Ejects a depleted cell and fumbles a new one into their weapon."
+
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged/New()
+	..()
+	reload_message = "[name] ejects a depleted cell and fumbles a new one into their weapon."
 
 /mob/living/carbon/superior_animal/human/voidwolf/aerotrooper
 	name = "Void Wolf Aerotrooper"
@@ -132,7 +138,10 @@
 	rounds_left = 16
 	mag_type = /obj/item/weapon/cell/medium/high/depleted
 	mags_left = 2
-	reload_message = "Ejects a depleted cell and rapidly reloads a new one!"
+
+/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper/New()
+	..()
+	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
 /mob/living/carbon/superior_animal/human/voidwolf/captain
 	name = "Void Wolf Captain"
@@ -145,7 +154,7 @@
 	health = 200
 	ranged_cooldown = 3
 	ranged = TRUE
-	rapid = TRUE
+	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/melee/energy/sword/pirate
 	weapon2 = /obj/item/weapon/gun/energy/gun
@@ -154,7 +163,10 @@
 	rounds_left = 8
 	mag_type = /obj/item/weapon/cell/medium/high/depleted
 	mags_left = 1
-	reload_message = "Ejects a depleted cell and rapidly reloads a new one with one hand!"
+
+/mob/living/carbon/superior_animal/human/voidwolf/captain/New()
+	..()
+	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one with one hand!"
 
 //Reavers, the void wolf elite.
 /mob/living/carbon/superior_animal/human/voidwolf/elite
@@ -177,7 +189,10 @@
 	rounds_left = 20
 	mag_type = /obj/item/weapon/cell/medium/high/depleted
 	mags_left = 3
-	reload_message = "Ejects a depleted cell and rapidly reloads a new one!"
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/New()
+	..()
+	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/c20r
 	icon_state = "reaver_bulldog"
@@ -188,9 +203,12 @@
 	rounds_left = 32
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
 	mags_left = 3
-	reload_message = "Rapidly reloads before the empty mag hits the ground!"
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/bullpup/emp_act(severity)
+/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/New()
+	..()
+	reload_message = "[name] rapidly reloads before the empty mag hits the ground!"
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/emp_act(severity)
 	return
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet
@@ -203,7 +221,10 @@
 	rounds_left = 4
 	mag_type = /obj/item/ammo_magazine/a75/empty
 	mags_left = 0 //no spare mags, they are lethal
-	reload_message = "Rapidly reloads before the empty mag hits the ground!" //What
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/New()
+	..()
+	reload_message = "[name] rapidly reloads before the empty mag hits the ground!"// You should be panicing
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/emp_act(severity)
 	return
@@ -228,7 +249,10 @@
 		rad = 0,
 		agony = 1000 //Pain damage proof, and rubber proof.
 	)
-	reload_message = "Rapidly reloads?!"
+
+/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
+	..()
+	reload_message = "[name] rapidly reloads?!"
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/emp_act(severity)
 	return
