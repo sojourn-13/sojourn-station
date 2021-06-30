@@ -127,12 +127,18 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2)
 	price_tag = 100
 
+/obj/item/weapon/cell/medium/depleted
+	charge = 0
+
 /obj/item/weapon/cell/medium/high
 	name = "Lonestar \"Robustcell 800M\""
 	desc = "Lonestar branded rechargeable M-standardized power cell. Popular and reliable version."
 	icon_state = "m_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 800
+
+/obj/item/weapon/cell/medium/high/depleted
+	charge = 0
 
 /obj/item/weapon/cell/medium/super
 	name = "Lonestar \"Robustcell 1000M\""
@@ -224,12 +230,18 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1)
 	price_tag = 50
 
+/obj/item/weapon/cell/small/depleted
+	charge = 0
+
 /obj/item/weapon/cell/small/high
 	name = "Lonestar \"Robustcell 200S\""
 	desc = "Lonestar branded rechargeable S-standardized power cell. Popular and reliable version."
 	icon_state = "s_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 200
+
+/obj/item/weapon/cell/small/high/depleted
+	charge = 0
 
 /obj/item/weapon/cell/small/super
 	name = "Lonestar \"Robustcell 300S\""

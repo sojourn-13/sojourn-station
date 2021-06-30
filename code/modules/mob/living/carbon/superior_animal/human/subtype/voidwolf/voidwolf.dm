@@ -88,6 +88,12 @@
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/gun/energy/retro
 	weapon2 = null
+	limited_ammo = TRUE
+	mag_drop = TRUE
+	rounds_left = 16
+	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mags_left = 1
+	reload_message = "Ejects a depleted cell and rapidly reloads a new one!"
 
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged
 	name = "Void Wolf Field Tech"
@@ -101,6 +107,12 @@
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/laser.ogg'
 	weapon2 = /obj/item/weapon/gun/energy/gun/martin
+	limited_ammo = TRUE
+	mag_drop = TRUE
+	rounds_left = 4
+	mag_type = /obj/item/weapon/cell/small/high/depleted
+	mags_left = 2
+	reload_message = "Ejects a depleted cell and fumbles a new one into their weapon."
 
 /mob/living/carbon/superior_animal/human/voidwolf/aerotrooper
 	name = "Void Wolf Aerotrooper"
@@ -115,6 +127,12 @@
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/gun/energy/retro
 	weapon2 = null
+	limited_ammo = TRUE
+	mag_drop = TRUE
+	rounds_left = 16
+	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mags_left = 2
+	reload_message = "Ejects a depleted cell and rapidly reloads a new one!"
 
 /mob/living/carbon/superior_animal/human/voidwolf/captain
 	name = "Void Wolf Captain"
@@ -131,6 +149,12 @@
 	projectiletype = /obj/item/projectile/beam
 	weapon1 = /obj/item/weapon/melee/energy/sword/pirate
 	weapon2 = /obj/item/weapon/gun/energy/gun
+	limited_ammo = TRUE
+	mag_drop = TRUE
+	rounds_left = 8
+	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mags_left = 1
+	reload_message = "Ejects a depleted cell and rapidly reloads a new one with one hand!"
 
 //Reavers, the void wolf elite.
 /mob/living/carbon/superior_animal/human/voidwolf/elite
@@ -148,13 +172,23 @@
 	projectiletype = /obj/item/projectile/beam/weak/smg
 	weapon1 = /obj/item/weapon/gun/energy/firestorm
 	weapon2 = null
+	limited_ammo = TRUE
+	mag_drop = TRUE
+	rounds_left = 20
+	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mags_left = 3
+	reload_message = "Ejects a depleted cell and rapidly reloads a new one!"
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/bullpup
+/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r
 	icon_state = "reaver_bulldog"
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
-	projectiletype = /obj/item/projectile/bullet/light_rifle_257
-	weapon1 = /obj/item/weapon/gun/projectile/automatic/bulldog
+	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
 	weapon2 = null
+	rounds_left = 32
+	mag_type = /obj/item/ammo_magazine/smg_35/empty
+	mags_left = 3
+	reload_message = "Rapidly reloads before the empty mag hits the ground!"
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/bullpup/emp_act(severity)
 	return
@@ -166,6 +200,10 @@
 	weapon1 = /obj/item/weapon/gun/projectile/gyropistol
 	weapon2 = null
 	rapid = FALSE
+	rounds_left = 4
+	mag_type = /obj/item/ammo_magazine/a75/empty
+	mags_left = 0 //no spare mags, they are lethal
+	reload_message = "Rapidly reloads before the empty mag hits the ground!" //What
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/emp_act(severity)
 	return
@@ -178,6 +216,7 @@
 	health = 350
 	ranged = FALSE
 	rapid = FALSE
+	limited_ammo = FALSE
 	weapon1 = /obj/item/weapon/tool/sword/saber/cutlass
 	weapon2 = /obj/item/weapon/shield/energy/reaver
 	armor = list(
@@ -189,13 +228,14 @@
 		rad = 0,
 		agony = 1000 //Pain damage proof, and rubber proof.
 	)
+	reload_message = "Rapidly reloads?!"
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/emp_act(severity)
 	return
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(prob(65))
-		visible_message("\red \b [src] blocks the [O]! ")
+		visible_message("\red \b [src] blocks the [O]!")
 		return
 	..()
 
