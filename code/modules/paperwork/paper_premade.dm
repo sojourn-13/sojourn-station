@@ -283,3 +283,7 @@
 	<BR>\n\t\tDeep rock scans have shown that from time to time the labor camp may have hidden weapons and tools inside the rock walls.
 	<BR>\n
 	<BR>\n\t\tWARNING: Well Boris Kilmeade has full rights to mining the labor camp sight it may be used by any prisoner that wishes to do labor or a time sentence"}
+
+/obj/item/weapon/paper/cro_pistol
+	name = "Classia Pistol"
+	info = {"This weapon is highly volatile and extremely dangerous if fired too many times to quickly, be sure to allow it to vent properly lest it over heats. This weapon is also explosive, so be aware of contraband laws and potential damage to the colony. A screwdriver is required to remove the hydrogen tanks, do be careful even then, lest you scorch your hand."}
