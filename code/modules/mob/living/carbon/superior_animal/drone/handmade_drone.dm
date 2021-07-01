@@ -87,6 +87,7 @@
 						heal_overall_damage(50, 50)
 					else
 						heal_overall_damage(rand(30, 50), rand(30, 50))
+					health = maxHealth
 					return
 				return
 			to_chat(user, "[src] doesn't need repairs.")
