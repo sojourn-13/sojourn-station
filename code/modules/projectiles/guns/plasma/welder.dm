@@ -120,12 +120,18 @@
 
 // This is where the welder transform into a gun
 /obj/item/weapon/tool/plasma_torch/verb/switch_to_gun()
-	set name = "Switch to Gun"
-	set desc = "For when you need to shoot, this turn your welder into a gun."
+	set name = "Disable Safeties"
+	set desc = "Disable the safeties, making the plasma torch able to shoot like a gun."
 	set category = "Object"
 
-	var/obj/item/weapon/gun/hydrogen/plasma_torch/da_gun = new /obj/item/weapon/gun/hydrogen/plasma_torch(src.loc)
-	da_gun.flask = flask
-	flask.forceMove(da_gun)
-	flask = null
+	var/obj/item/weapon/gun/hydrogen/plasma_torch/da_gun = new /obj/item/weapon/gun/hydrogen/plasma_torch(src)
+	if(flask)
+		da_gun.flask = flask
+		flask.forceMove(da_gun)
+		flask = null
 	qdel(src)
+	usr.put_in_hands(da_gun)
+	usr.visible_message(
+						SPAN_NOTICE("[usr] deactivate the safeties of the [src.name]."),
+						SPAN_NOTICE("You deactivate the safeties of the [src.name].")
+						)
