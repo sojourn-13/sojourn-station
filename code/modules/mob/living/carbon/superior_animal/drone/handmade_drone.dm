@@ -65,7 +65,7 @@
 
 /mob/living/carbon/superior_animal/handmade/emp_act(severity)
 	..()
-	health -= 50 * severity
+	take_overall_damage(0, 50 * severity)
 
 // For repairing damage to the synths.
 /mob/living/carbon/superior_animal/handmade/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -79,8 +79,15 @@
 		if(QUALITY_WELDING in T.tool_qualities)
 			if(health < maxHealth)
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					user.visible_message(
+										SPAN_NOTICE("[user] [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name]."),
+										SPAN_NOTICE("You [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name].")
+										)
+					if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
+						heal_overall_damage(50, 50)
+					else
+						heal_overall_damage(rand(30, 50), rand(30, 50))
 					health = maxHealth
-					to_chat(user, "You repair the damage to [src].")
 					return
 				return
 			to_chat(user, "[src] doesn't need repairs.")
