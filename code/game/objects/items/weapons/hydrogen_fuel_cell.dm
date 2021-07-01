@@ -49,8 +49,8 @@
 	contained_sprite = TRUE
 	item_state_slots = list(slot_back_str = "plasmapack_back", slot_l_hand_str = "plasma_can_left", slot_r_hand_str = "plasma_can_right")
 
-	plasma = 2000
-	max_plasma = 2000
+	plasma = 5000
+	max_plasma = 5000
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_HUGE
 	var/obj/item/weapon/gun/hydrogen/the_gun = null

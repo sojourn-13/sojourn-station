@@ -40,8 +40,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	var/secured = TRUE // Is the flask secured?
 	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
-	var/vent_timer = 0 // Keep track of the timer
-	var/vent_level_timer = 50 // Timer in second before the next venting can happen
+	var/vent_timer = 0 // Keep track of the timer, decrease by 1 every 5 second
+	var/vent_level_timer = 6 // Timer in 5 second before the next venting can happen. A value of 6 mean that it will take 30 seconds before the gun can vent itself again.
 	var/overheat = 100 // Max heat before overheating.
 
 	// Damage dealt when overheating
