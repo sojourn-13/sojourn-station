@@ -58,3 +58,25 @@
 // Can't remove the cell
 /obj/item/weapon/gun/hydrogen/incinerator/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 	return
+
+/obj/item/weapon/gun/hydrogen/plasma_torch
+	name = "\improper Welder Gun"
+	desc = "A plasma welder converted to shoot plasma bolts. Has less range than a \"Classia\"-Pattern Plasma Pistol."
+	icon_state = "welder"
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 3, MATERIAL_OSMIUM = 2, MATERIAL_TRITIUM = 1)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 7, TECH_PLASMA = 7)
+	projectile_type = /obj/item/projectile/hydrogen/pistol/welder
+	twohanded = FALSE
+	init_firemodes = list()
+
+// This is where the gun turn into a welder
+/obj/item/weapon/gun/hydrogen/plasma_torch/verb/switch_to_welder()
+	set name = "Switch to Welder"
+	set desc = "For when you need to work, this turn your gun into a welder."
+	set category = "Object"
+
+	var/obj/item/weapon/tool/plasma_torch/welder = new /obj/item/weapon/tool/plasma_torch(src.loc)
+	welder.flask = flask
+	flask.forceMove(welder)
+	flask = null
+	qdel(src)

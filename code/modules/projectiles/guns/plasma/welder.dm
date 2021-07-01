@@ -1,6 +1,6 @@
 // Welder that use plasma flasks
 /obj/item/weapon/tool/plasma_torch
-	name = "plasma welder"
+	name = "plasma torch"
 	desc = "A welder that uses a cryo-sealed hydrogen fuel cell to weld with the heat of a sun. While better than a conventional welders and even rivaling greyson prositronics its \
 	costly fuel supply and risks involved stopped the tool from ever seeing commercial success, a choice for a specialist and nobody else."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
@@ -19,10 +19,15 @@
 	var/use_plasma_cost = 1 // Active cost
 	var/passive_cost = 0.3 // Passive cost
 
+	var/gun_mode = FALSE // Determine if the welder act as a gun or not
+
+/obj/item/weapon/tool/plasma_torch/Initialize()
+	..()
+	flask = new /obj/item/weapon/hydrogen_fuel_cell(src) // Give the welder a new flask when mapped in.
+	update_icon()
+
 /obj/item/weapon/tool/plasma_torch/New()
 	..()
-	if(!flask)
-		flask = new /obj/item/weapon/hydrogen_fuel_cell(src)
 	update_icon()
 
 /obj/item/weapon/tool/plasma_torch/Process()
@@ -112,3 +117,15 @@
 	..()
 	if(flask)
 		add_overlay("[icon_state]_loaded")
+
+// This is where the welder transform into a gun
+/obj/item/weapon/tool/plasma_torch/verb/switch_to_gun()
+	set name = "Switch to Gun"
+	set desc = "For when you need to shoot, this turn your welder into a gun."
+	set category = "Object"
+
+	var/obj/item/weapon/gun/hydrogen/plasma_torch/da_gun = new /obj/item/weapon/gun/hydrogen/plasma_torch(src.loc)
+	da_gun.flask = flask
+	flask.forceMove(da_gun)
+	flask = null
+	qdel(src)
