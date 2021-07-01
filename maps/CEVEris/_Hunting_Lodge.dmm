@@ -163,7 +163,7 @@
 "dg" = (/turf/simulated/floor/wood/wild2,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "dh" = (/obj/structure/closet,/turf/simulated/floor/wood/wild2,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "di" = (/obj/structure/multiz/stairs/enter/bottom,/turf/simulated/floor/wood/wild2,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"dj" = (/mob/living/simple_animal/tatonka,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"dj" = (/mob/living/carbon/superior_animal/lodge/tatonka,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dk" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dl" = (/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dm" = (/obj/structure/railing/grey{dir = 4; icon_state = "grey_railing0"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
@@ -192,7 +192,7 @@
 "dJ" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/bag/produce,/obj/item/weapon/storage/bag/produce,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dK" = (/obj/structure/table/rack/shelf,/obj/item/weapon/tool/minihoe,/obj/item/weapon/tool/minihoe,/obj/item/weapon/storage/makeshift_grinder,/obj/item/device/makeshift_centrifuge,/obj/item/device/makeshift_electrolyser,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dL" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"dM" = (/mob/living/simple_animal/hostile/helldiver/cerberus,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"dM" = (/mob/living/carbon/superior_animal/lodge/cerberus,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dN" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Cerberus Pen"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dO" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dP" = (/obj/machinery/power/apc{cell_type = /obj/item/weapon/cell/large/high; dir = 8; name = "West APC"; pixel_x = -28; pixel_y = 0},/obj/structure/cable{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
@@ -200,17 +200,17 @@
 "dR" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dS" = (/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dT" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Clucker Pen"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"dU" = (/mob/living/simple_animal/chick_clucker,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"dU" = (/mob/living/carbon/superior_animal/lodge/chick_clucker,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dV" = (/obj/structure/flora/ausbushes/brflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "dW" = (/obj/structure/flora/ausbushes/leafybush,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "dX" = (/obj/machinery/light{dir = 8},/obj/machinery/biogenerator,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dY" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/machinery/honey_extractor,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"dZ" = (/mob/living/simple_animal/clucker,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"dZ" = (/mob/living/carbon/superior_animal/lodge/clucker,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "ea" = (/obj/structure/closet/crate/hydroponics,/obj/item/weapon/tool/scythe,/obj/item/weapon/tool/minihoe,/obj/item/weapon/tool/minihoe,/obj/item/weapon/tool/silk_wand,/obj/item/weapon/tool/minihoe,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "eb" = (/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "ec" = (/obj/structure/closet/crate/hydroponics,/obj/item/seeds/libertymycelium,/obj/item/seeds/libertymycelium,/obj/item/seeds/wheatseed,/obj/item/seeds/wheatseed,/obj/item/seeds/poppyseed,/obj/item/seeds/poppyseed,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "ed" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"ee" = (/mob/living/simple_animal/hostile/helldiver/cerberus,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"ee" = (/mob/living/carbon/superior_animal/lodge/cerberus,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "ef" = (/obj/machinery/light/floor,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eg" = (/obj/structure/flora/ausbushes/sparsegrass,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "eh" = (/obj/machinery/door/unpowered/simple/wood/saloon{name = "Shed"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
@@ -517,6 +517,7 @@ aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB
 aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 euaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 "}
+
 (1,1,2) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
