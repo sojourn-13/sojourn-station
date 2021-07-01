@@ -229,7 +229,7 @@
 		/obj/item/weapon/hydrogen_fuel_cell,
 		/obj/item/weapon/hydrogen_fuel_cell
 	)
-	cost = 2000 // Not cheap
+	cost = 3000 // Not cheap, but basically 1$ per unit of hydrogen-plasma, this crate contain 3000 hydrogen-plasma
 	crate_name = "cryo-sealed hydrogen crate"
 	group = "Medical / Science"
 	containertype = /obj/structure/closet/crate
@@ -239,7 +239,7 @@
 	contains = list(
 		/obj/item/weapon/hydrogen_fuel_cell/backpack
 	)
-	cost = 5000 // Not cheap
+	cost = 5000 // Not cheap, but basically 1$ per unit of hydrogen-plasma, this crate contain 5000 hydrogen-plasma
 	crate_name = "cryo-sealed hydrogen crate"
 	group = "Medical / Science"
 	containertype = /obj/structure/closet/crate
