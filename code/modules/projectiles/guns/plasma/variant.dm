@@ -76,12 +76,12 @@
 	set category = "Object"
 
 	var/obj/item/weapon/tool/plasma_torch/welder = new /obj/item/weapon/tool/plasma_torch(src)
-	if(flask)
-		welder.flask = flask
-		flask.forceMove(welder)
-		flask = null
-	qdel(src)
-	usr.put_in_hands(welder)
+	if(flask) // Give the welder the same flask the gun has, but only if there's a flask.
+		welder.flask = flask // Link the flask to the welder
+		flask.forceMove(welder) // Give the flask to the welder
+		flask = null // The gun has no more flask
+	qdel(src) // Remove the original gun.
+	usr.put_in_hands(welder) // Put the welder in the user's hand.
 	usr.visible_message(
 						SPAN_NOTICE("[usr] activate the safeties of the [src.name]."),
 						SPAN_NOTICE("You activate the safeties of the [src.name].")
