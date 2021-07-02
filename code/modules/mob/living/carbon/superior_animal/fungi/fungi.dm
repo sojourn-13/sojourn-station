@@ -36,7 +36,8 @@
 	break_stuff_probability = 0
 	leather_amount = 0
 	bones_amount = 0
-	var/mob/following = null // Who are we following?
+	follow_message = "says, \"I follow friend.\""
+	stop_message ="says, \"I stop follow friend.\""
 
 /mob/living/carbon/superior_animal/fungi/New()
 	..()

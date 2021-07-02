@@ -10,4 +10,5 @@
 	stop_automated_movement_when_pulled = TRUE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-	var/mob/following = null // Who are we following?
+	obey_friends = FALSE
+	follow_distance = 3

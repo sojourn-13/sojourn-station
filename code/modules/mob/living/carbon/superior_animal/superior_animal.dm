@@ -129,6 +129,13 @@
 	var/rounds_per_fire = 1 //how many bullets do we eat per shot, NOTE: rapid fire will use rounds_per_fire * 3
 	var/reload_message = "Performs a tactical reload!" //Are reload message.
 
+	// Variables for the following AI
+	var/obey_friends = TRUE // Do we obey only friends ?
+	var/mob/following = null // Who are we following?
+	var/follow_distance = 2 // How close do we stay?
+	var/follow_message = "nods and start following." // Message that the mob emote when they start following. Include the name of the one who follow at the end
+	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
+
 /mob/living/carbon/superior_animal/New()
 	..()
 	if(!icon_living)

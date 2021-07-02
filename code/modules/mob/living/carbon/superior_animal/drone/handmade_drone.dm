@@ -33,7 +33,8 @@
 	friendly_to_colony = TRUE
 
 	var/obj/item/weapon/cell/large/cell = new /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
-	var/mob/following = null // Who are we following?
+	follow_message = "state, \"Beginning Escort Protocol.\""
+	stop_message = "state, \"Ending Escort Protocol.\""
 	var/list/creator = list() // Who's the bot's creator.
 
 /mob/living/carbon/superior_animal/handmade/examine(mob/user)
