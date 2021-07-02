@@ -85,7 +85,7 @@
 
 /obj/structure/closet/secure_closet/freezer/icebox
 	name = "mini icebox"
-	desc = "A smaller than normal icebox, normally used for storing ice and other frozen items, this one is moddifed for storage of drinks."
+	desc = "A smaller than normal icebox, normally used for storing ice and other frozen items, this one made specifically for drinks."
 	icon_state = "simpledf"
 
 /obj/structure/closet/secure_closet/freezer/icebox/populate_contents()
