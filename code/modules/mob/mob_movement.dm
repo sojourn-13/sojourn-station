@@ -132,7 +132,14 @@
 		return TRUE
 	if (check_dense_object())
 		return -1
+
+	//If we have catwalks then we can safely move around without error as if its a lattace with magboots
+	for(var/obj/O in loc)
+		if(istype(O, /obj/structure/catwalk))
+			return TRUE
+
 	return FALSE
+
 
 //return 1 if slipped, 0 otherwise
 /mob/proc/handle_spaceslipping()
