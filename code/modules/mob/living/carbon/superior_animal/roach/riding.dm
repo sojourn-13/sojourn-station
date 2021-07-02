@@ -40,6 +40,8 @@
 				can_buckle = FALSE
 				return FALSE
 		friends += user
+		colony_friend = TRUE
+		friendly_to_colony = TRUE
 		visible_message("[src] reluctantly stops thrashing around...")
 		return TRUE
 	visible_message("[src] snaps out of its trance and rushes at [user]!")

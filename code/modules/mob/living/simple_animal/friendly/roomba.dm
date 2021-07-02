@@ -27,6 +27,7 @@
 	leather_amount = 0
 	bones_amount = 0
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 	//Drops
 	var/drop1 = /obj/item/weapon/scrap_lump

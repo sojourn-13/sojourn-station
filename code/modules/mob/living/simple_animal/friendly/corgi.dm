@@ -38,6 +38,8 @@
 	response_help  = "pets"
 	response_disarm = "bops"
 	response_harm   = "kicks"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/corgi/Life()
 	..()
@@ -122,6 +124,8 @@
 	response_disarm = "bops"
 	response_harm   = "kicks"
 	var/puppies = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 //Lisa already has a cute bow!
 /mob/living/simple_animal/corgi/Lisa/Topic(href, href_list)

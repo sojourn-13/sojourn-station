@@ -21,6 +21,7 @@
 	melee_damage_upper = 5
 	var/datum/reagents/udder = null
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/goat/New()
 	udder = new(50)
@@ -106,6 +107,7 @@
 	beg_for_food = 0
 	var/datum/reagents/udder = null
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/cow/New()
 	udder = new(50)
@@ -170,6 +172,7 @@
 	beg_for_food = 0
 	hunger_enabled = FALSE
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/chick/New()
 	..()
@@ -213,6 +216,7 @@ var/global/chicken_count = 0
 	beg_for_food = 0
 	hunger_enabled = FALSE
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/chicken/New()
 	..()
