@@ -24,7 +24,7 @@
 	else
 		..()
 
-/obj/item/projectile/bullet/grenade/on_hit(atom/target)	//Allows us to cause different effects for each grenade shell on hit
+/obj/item/projectile/bullet/grenade/on_impact(atom/target)	//Allows us to cause different effects for each grenade shell on hit
 	grenade_effect(target)
 
 
