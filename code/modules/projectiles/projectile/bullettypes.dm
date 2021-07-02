@@ -380,9 +380,9 @@
 	damage_types = list(BRUTE = 40)
 	armor_penetration = 40
 
-/obj/item/projectile/bullet/antim/ion/on_hit(atom/target, blocked = FALSE)
+/obj/item/projectile/bullet/antim/ion/on_impact(atom/target, blocked = FALSE)
 	. = ..()
-	empulse(target, 0, 3)
+	empulse(target, 1, 3)
 
 //Shotguns
 //*********************************//
