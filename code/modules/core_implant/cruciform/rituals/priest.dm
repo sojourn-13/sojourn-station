@@ -90,7 +90,7 @@
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
 	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
-	H.add_chemical_effect(CE_PAINKILLER, 20)
+	H.reagents.add_reagent("laudanum", 10)
 	H.adjustBruteLoss(-20)
 	H.adjustFireLoss(-20)
 	H.adjustToxLoss(-20)
@@ -143,7 +143,7 @@
 			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
 			return
 		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
-		H.add_chemical_effect(CE_PAINKILLER, 20)
+		H.reagents.add_reagent("laudanum", 5)
 		H.adjustBruteLoss(-20)
 		H.adjustFireLoss(-20)
 		H.adjustToxLoss(-20)
@@ -191,7 +191,7 @@
 
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
-		participant.add_chemical_effect(CE_PAINKILLER, 15)
+		participant.reagents.add_reagent("laudanum", 5)
 		participant.adjustBruteLoss(-15)
 		participant.adjustFireLoss(-15)
 		participant.adjustToxLoss(-15)
@@ -842,7 +842,7 @@
 	to_chat(T, SPAN_NOTICE("You feel slightly better as your pain eases."))
 	to_chat(user, SPAN_NOTICE("You ease the pain of [T.name]."))
 
-	T.add_chemical_effect(CE_PAINKILLER, 50)  // painkiller effect to target
+	T.reagents.add_reagent("anodyne", 10)
 
 	return TRUE
 
@@ -914,7 +914,7 @@
 	to_chat(T, SPAN_NOTICE("You feel weird as you progress through your addictions."))
 	to_chat(user, SPAN_NOTICE("You help [T.name] get rid of their addictions."))
 
-	T.add_chemical_effect(CE_PAINKILLER, 15)  // painkiller effect to target
+	T.reagents.add_reagent("laudanum", 10)
 
 	return TRUE
 

@@ -47,7 +47,7 @@
 
 /datum/ritual/cruciform/tessellate/heal_heathen_special/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your most of your pain in body and mind</span>")
-		participant.add_chemical_effect(CE_PAINKILLER, 100)
+		participant.reagents.add_reagent("anodyne", 10)
 		participant.adjustCloneLoss(-20)
 		participant.adjustBrainLoss(-20)
 		participant.updatehealth()
@@ -89,7 +89,7 @@
 
 /datum/ritual/cruciform/tessellate/heal_heathen_improved/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
-		participant.add_chemical_effect(CE_PAINKILLER, 20)
+		participant.reagents.add_reagent("laudanum", 10)
 		participant.adjustBruteLoss(-20)
 		participant.adjustFireLoss(-20)
 		participant.adjustToxLoss(-20)
@@ -219,7 +219,7 @@
 		else
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
-	H.add_chemical_effect(CE_PAINKILLER, 10000, TRUE)
+	H.reagents.add_reagent("nepenthe", 10)
 	H.apply_effect(-200, AGONY, 0)
 	H.apply_effect(-200, HALLOSS, 0)
 	H.adjustBruteLoss(-10)
