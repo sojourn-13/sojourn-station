@@ -370,6 +370,52 @@
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.Stun(5)
 
+/* Cruciform litany related painkillers */
+/datum/reagent/medicine/nepenthe  //Monomial super-painkiller
+	name = "Nepenthe"
+	id = "nepenthe"
+	description = "A gift from the Absolute, it allows the user to suffer through all hardships."
+	taste_description = "fading sorrow"
+	reagent_state = LIQUID
+	color = "#AA5656"
+	overdose = 0
+	scannable = 0
+	metabolism = 0.2
+	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/nepenthe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 1000)
+
+/datum/reagent/medicine/anodyne //Standard used around
+	name = "Anodyne"
+	id = "anodyne"
+	description = "A gift from above to survive the present troubles."
+	taste_description = "numbness"
+	reagent_state = LIQUID
+	color = "#BAA845"
+	overdose = 0
+	scannable = 0
+	metabolism = 0.2
+	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/anodyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 40)
+
+/datum/reagent/medicine/laudanum //Weakest available
+	name = "Laudanum"
+	id = "laudanum"
+	description = "A weak painkiller. There to soothe only the most minor of wounds."
+	taste_description = "home"
+	reagent_state = LIQUID
+	color = "#488531"
+	overdose = 0
+	scannable = 0
+	metabolism = 0.5
+	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/laudanum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 15)
+
 /* Other medicine */
 
 /datum/reagent/medicine/synaptizine
