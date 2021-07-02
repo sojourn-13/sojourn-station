@@ -182,7 +182,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/baton
 	name = "\"Taser Bolt\" Baton Energy Soda"
-	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for poilice to have liquid and energy for catching perps on the run. \
+	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
 	A cocktail of sour juices to mix with the soda for to shock your taste buds."
 	icon_state = "bang_lemondrop"
@@ -192,7 +192,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/baton_apple
 	name = "\"Red Ticket\" Baton Energy Soda"
-	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for poilice to have liquid and energy for catching perps on the run. \
+	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
 	Lighter and less tasteful verson of Baton Energy Soda that was designed to be tolerable by anyone. Making it rarely liked by anyone..."
 	icon_state = "bang_apple_crisp"
@@ -202,7 +202,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/baton_cola
 	name = "\"Paddy Wagon\" Baton Energy Soda"
-	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for poilice to have liquid and energy for catching perps on the run. \
+	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
 	This one has a bit of Cola mixed into it for flavour."
 	icon_state = "bang_peach"
@@ -212,7 +212,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/baton_commando
 	name = "\"Commando\" Baton Energy Soda"
-	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for poilice to have liquid and energy for catching perps on the run. \
+	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
 	Commando's mix of Thirteenloko and Baton Energy Soda is designed to keep you on the wire."
 	icon_state = "bang_radical"
@@ -222,7 +222,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/baton_detective
 	name = "\"Case Closer\" Baton Energy Soda"
-	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for poilice to have liquid and energy for catching perps on the run. \
+	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
 	Beloved by Rangers and Detectives this will help keep you awake during long investigations."
 	icon_state = "bang_pina_colada"
@@ -232,11 +232,10 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/baton_rent_a_cop
 	name = "\"On The Beat\" Baton Energy Soda"
-	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for poilice to have liquid and energy for catching perps on the run. \
+	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
 	Shockingly this drink was designed to taste just as good warm as cold do to its marketing for the officer on the side walk or bike."
 	icon_state = "bang_rainbow"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 15, "grapejuice" = 10, "berryjuice" = 10)
 	volume = 60
-
