@@ -345,7 +345,7 @@
 	var/obj/item/weapon/cell/cell = null
 	var/suitable_cell = /obj/item/weapon/cell
 
-/obj/item/device/makeshift_centrifuge/attack_self(mob/user)
+/obj/item/device/manual_charger/attack_self(mob/user)
 	var/obj/item/weapon/cell/cell
 	if(do_after(user, 60 - (1 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))))
 		if(!cell)
