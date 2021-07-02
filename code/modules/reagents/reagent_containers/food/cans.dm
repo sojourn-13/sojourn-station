@@ -204,7 +204,7 @@
 	name = "\"Paddy Wagon\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
-	This one has a bit of Cola mixed into it for flavour."
+	This one has a bit of cola mixed into it for flavor."
 	icon_state = "bang_peach"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 25, "cola" = 10)
@@ -214,7 +214,7 @@
 	name = "\"Commando\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
-	Commando's mix of Thirteenloko and Baton Energy Soda is designed to keep you on the wire."
+	Commando is mix of thirteenloko and standard baton energy designed to keep you wired."
 	icon_state = "bang_radical"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 25, "thirteenloko" = 10)
@@ -224,7 +224,7 @@
 	name = "\"Case Closer\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
-	Beloved by Rangers and Detectives this will help keep you awake during long investigations."
+	Beloved by rangers, detectives, and night owls because it will keep you awake on the middle of the night stake outs."
 	icon_state = "bang_pina_colada"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 15, "espresso" = 10, "sugar" = 10)
@@ -234,7 +234,7 @@
 	name = "\"On The Beat\" Baton Energy Soda"
 	desc = "Baton Energy a subsidiarity of Seinemetall Defense GmbH typically sold on the market for police to have liquid and energy for catching perps on the run. \
 	A warning label says drinking to much may cause heart damage, liver damage, and not living anymore. \
-	Shockingly this drink was designed to taste just as good warm as cold do to its marketing for the officer on the side walk or bike."
+	Shockingly this drink was designed to taste just as good warm as cold due to its target market being bike cops or those on foot patrol."
 	icon_state = "bang_rainbow"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 15, "grapejuice" = 10, "berryjuice" = 10)
