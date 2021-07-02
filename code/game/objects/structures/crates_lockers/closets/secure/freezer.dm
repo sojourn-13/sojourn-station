@@ -82,3 +82,22 @@
 		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_red(src)
 	for(var/i in 1 to 3)
 		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_blue(src)
+
+/obj/structure/closet/secure_closet/freezer/icebox
+	name = "mini icebox"
+	desc = "A smaller than normal icebox, normally used for storing ice and other frozen items, this one made specifically for drinks."
+	icon_state = "simpledf"
+
+/obj/structure/closet/secure_closet/freezer/icebox/populate_contents()
+	for(var/i in 1 to 6)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_rent_a_cop(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_detective(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_commando(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_cola(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_apple(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton(src)

@@ -456,10 +456,20 @@
 		H.sanity.onNonAlcohol(src, effect_multiplier)
 
 /datum/reagent/drink/energy_drink_monster
-	name = "Energy Drink"
+	name = "Claw Energy Drink"
 	id = "energy_drink_monster"
 	description = "The raw essence of a electrolytes."
 	taste_description = "chemical water"
+	color = "#C3AF00"
+	adj_dizzy = -1
+	adj_drowsy = -2
+	adj_sleepy = -10
+
+/datum/reagent/drink/energy_drink_baton
+	name = "Baton Energy Drink"
+	id = "energy_drink_baton"
+	description = "The raw essence of a electrolytes and carbonation."
+	taste_description = "carbonated chemical water"
 	color = "#C3AF00"
 	adj_dizzy = -1
 	adj_drowsy = -2
