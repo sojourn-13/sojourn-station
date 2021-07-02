@@ -207,6 +207,40 @@
 			H.adjustBruteLoss(-healing_power)
 			H.adjustFireLoss(-healing_power)
 
+/datum/perk/nt_oddity/bluespace
+	name = "Bluespace Alinement"
+	desc = "The sci tool is taxing on the mind but rewarding... Along with some other side affects..."
+	gain_text = "With such much look and inside into stablizing bluespace you cant help but feel its affects."
+	lose_text = "Time cures all."
+	//icon_state = "" // - No icon, suggestion, vortex?
+	var/initial_time
+
+/datum/perk/nt_oddity/bluespace/assign(mob/living/carbon/human/H)
+	..()
+	initial_time = world.time
+	cooldown_time = world.time + rand(20, 60) MINUTES
+	holder.stats.changeStat(STAT_COG, 5) //We keep this 5 per use
+	if(!H.stats?.getPerk(PERK_SI_SCI) && prob(60))
+		GLOB.bluespace_entropy += rand(80, 150) //You done fucked it up.
+	if(H.stats?.getPerk(PERK_SI_SCI) && prob(50))
+		GLOB.bluespace_entropy -= rand(20, 30) //High odds to do even better!
+	GLOB.bluespace_entropy -= rand(30, 50)
+
+/datum/perk/nt_oddity/bluespace/remove(mob/living/carbon/human/H)
+	if(!H.stats?.getPerk(PERK_SI_SCI) && prob(30))
+		GLOB.bluespace_entropy += rand(80, 150)
+	if(H.stats?.getPerk(PERK_SI_SCI) && prob(50))
+		GLOB.bluespace_entropy -= rand(20, 30)
+	GLOB.bluespace_entropy += rand(30, 50)
+	..()
+
+/datum/perk/nt_oddity/bluespace/on_process()
+	if(cooldown_time <= world.time)
+		holder.stats.removePerk(type)
+		to_chat(holder, SPAN_NOTICE("[lose_text]"))
+		return
+	if(holder.buckled)
+		cooldown_time -= 5 SECONDS //Resting grately speeds this up
 
 /datum/perk/guild/blackbox_insight
 	name = "Blackbox Tinkering"
@@ -223,3 +257,4 @@
 	holder.stats.changeStat(STAT_COG, -10) //we keep 5 of each
 	holder.stats.changeStat(STAT_MEC, -10)
 	..()
+

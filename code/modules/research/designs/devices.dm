@@ -102,3 +102,9 @@
 	desc = "Using localized pockets of bluespace this ore satchel prototype offers incredible storage capacity with the contents weighting nothing."
 	build_path = /obj/item/weapon/storage/bag/ore/holding
 	category = "Bluespace Telecoms"
+
+/datum/design/research/item/si_bluespace_scanner
+	name = "Bluespace Tuning Device"
+	desc = "A tool used by SI to stablize and get readings of bluespace entropy."
+	build_path = /obj/item/weapon/oddity/si_bluespace_scanner
+	category = "Bluespace Telecoms"
