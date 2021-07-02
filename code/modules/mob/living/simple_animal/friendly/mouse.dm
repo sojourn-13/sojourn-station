@@ -305,6 +305,7 @@
 	real_name = "Tom"
 	desc = "Jerry the cat is not amused."
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/mouse/brown/Tom/Initialize()
 	. = ..()

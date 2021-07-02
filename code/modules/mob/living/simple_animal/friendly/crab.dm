@@ -44,6 +44,8 @@
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
 	faction = "neutral"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/frog
 	name = "frog"
@@ -96,6 +98,8 @@
 	response_harm   = "stomps"
 	mob_size = 3
 	faction = "neutral"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/snail
 	name = "snail"

@@ -236,6 +236,8 @@
 	icon_state = "cat"
 	item_state =  "cat"
 	befriend_job = "Chief Biolab Overseer"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/cat/kitten
 	name = "kitten"
@@ -287,6 +289,7 @@
 	attacktext = "slashed"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/cat/runtime/New(loc)
 	..(loc)
