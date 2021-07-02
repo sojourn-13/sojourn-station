@@ -80,6 +80,16 @@
 	item_cost = 3
 	path = /obj/item/ammo_magazine/ammobox/antim_small
 
+/datum/uplink_item/item/ammo/sniperammo_lethal
+	name = "1 \"Red-Nose\" shell casing"
+	item_cost = 2
+	path = /obj/item/ammo_casing/antim/lethal
+
+/datum/uplink_item/item/ammo/sniperammo_ion
+	name = "1 \"Off-Switch\" shell casing"
+	item_cost = 2
+	path = /obj/item/ammo_casing/antim/ion
+
 //Super-class cells, better than what you'll find in a vendor,
 //but not as good as the best maint loot, so scavenging is still encouraged
 /datum/uplink_item/item/ammo/cell/small

@@ -9,22 +9,29 @@
 				/obj/item/ammo_magazine/ammobox/shotgun = 2,
 				/obj/item/ammo_magazine/ammobox/shotgun = 1,
 				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 3,
+				/obj/item/ammo_casing/shotgun/scrap/prespawned = 2,
+				/obj/item/ammo_casing/shotgun/pellet/scrap/prespawned = 3,
+				/obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned = 4,
 				/obj/item/ammo_magazine/ammobox/magnum_40 = 1,
 				/obj/item/ammo_magazine/ammobox/magnum_40/lethal = 1,
 				/obj/item/ammo_magazine/ammobox/magnum_40/rubber = 1,
+				/obj/item/ammo_magazine/ammobox/magnum/scrap = 1,
 				/obj/item/ammo_magazine/ammobox/kurtz_50 = 1,
 				/obj/item/ammo_magazine/ammobox/kurtz_50/rubber = 1,
 				/obj/item/ammo_magazine/ammobox/kurtz_50/lethal = 1,
 				/obj/item/ammo_magazine/ammobox/light_rifle_257 = 1,
 				/obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber = 2,
 				/obj/item/ammo_magazine/ammobox/light_rifle_257_small/lethal = 1,
+				/obj/item/ammo_magazine/ammobox/light_rifle_257/scrap = 2,
 				/obj/item/ammo_magazine/rifle_75_short = 1,
 				/obj/item/ammo_magazine/rifle_75_short/lethal = 1,
 				/obj/item/ammo_magazine/rifle_75_short/rubber = 2,
+				/obj/item/ammo_magazine/ammobox/rifle_75/scrap = 2,
 				/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small= 1,
 				/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber = 2,
 				/obj/item/ammo_magazine/ammobox/pistol_35 = 2,
 				/obj/item/ammo_magazine/ammobox/pistol_35/rubber = 2,
+				/obj/item/ammo_magazine/ammobox/pistol_35/scrap = 2,
 				/obj/item/ammo_magazine/ammobox/pistol_35/lethal = 1,
 				/obj/item/ammo_magazine/smg_35 = 1,
 				/obj/item/ammo_magazine/smg_35/rubber = 1,
@@ -42,8 +49,8 @@
 				/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 2,
 				/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal = 1,
 				/obj/item/ammo_magazine/speed_loader_pistol_35 = 3,
-				/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 4))
-
+				/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 4,
+				/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap = 1))
 
 /obj/random/ammo/low_chance
 	name = "low chance random ammunition"
@@ -85,15 +92,13 @@
 				/obj/item/ammo_magazine/magnum_40,
 				/obj/item/weapon/cell/medium/high,
 				/obj/item/ammo_magazine/m12,
-				 /obj/item/ammo_magazine/m12/pellet,
+				/obj/item/ammo_magazine/m12/pellet,
 				/obj/item/ammo_magazine/m12/beanbag)
 
 /obj/random/ammo_fancy/low_chance
 	name = "low chance random random ironhammer ammunition"
 	icon_state = "ammo-blue-low"
 	spawn_nothing_percentage = 60
-
-
 
 /obj/random/ammo/shotgun
 	name = "random shotgun ammunition"
@@ -103,9 +108,12 @@
 /obj/random/ammo/shotgun/item_to_spawn()
 	return pickweight(list(
 				/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 4,
+				/obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned = 4,
 				/obj/item/ammo_magazine/ammobox/shotgun = 2,
+				/obj/item/ammo_casing/shotgun/scrap/prespawned = 2,
 				/obj/item/ammo_magazine/ammobox/shotgun/stunshells = 1,
 				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 3,
+				/obj/item/ammo_casing/shotgun/pellet/scrap/prespawned = 3,
 				/obj/item/ammo_magazine/m12/empty = 0.3))
 
 /obj/random/ammo/shotgun/low_chance
@@ -122,14 +130,19 @@
 	return pickweight(list(/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 4,
 				/obj/item/ammo_magazine/ammobox/shotgun = 2,
 				/obj/item/ammo_magazine/ammobox/shotgun = 1,
+				/obj/item/ammo_casing/shotgun/scrap/prespawned = 2,
+				/obj/item/ammo_casing/shotgun/pellet/scrap/prespawned = 3,
+				/obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned = 4,
 				/obj/item/ammo_magazine/ammobox/pistol_35 = 1,
 				/obj/item/ammo_magazine/ammobox/pistol_35/rubber = 6,
+				/obj/item/ammo_magazine/ammobox/pistol_35/scrap = 6,
 				/obj/item/ammo_magazine/highcap_pistol_35 = 2,
 				/obj/item/ammo_magazine/highcap_pistol_35/rubber = 4,
 				/obj/item/ammo_magazine/highcap_pistol_35/practice = 1,
 				/obj/item/ammo_magazine/pistol_35 = 3,
 				/obj/item/ammo_magazine/pistol_35/rubber = 4,
 				/obj/item/ammo_magazine/pistol_35/practice = 1,
+				/obj/item/ammo_magazine/ammobox/magnum/scrap = 1,
 				/obj/item/weapon/cell/medium = 1))
 
 /obj/random/ammo_lowcost/low_chance
@@ -144,17 +157,19 @@
 	icon_state = "ammo-grey"
 
 /obj/random/dungeon_ammo/item_to_spawn()
-	return pickweight(list(/obj/item/ammo_magazine/c10x24 = 1,
-				/obj/item/ammo_magazine/a75 = 1,
-				/obj/item/ammo_magazine/heavy_rifle_408_drum = 1,
-				/obj/item/ammo_magazine/m12/pellet = 2,
-				/obj/item/ammo_magazine/ammobox/rifle_75/lethal = 2,
-				/obj/item/ammo_magazine/smg_35/lethal = 3,
-				/obj/item/ammo_magazine/pistol_35/lethal = 3,
-				/obj/item/ammo_magazine/kurtz_50/lethal = 1,
-				/obj/item/ammo_magazine/ammobox/shotgun/payload = 1,
-				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 2,
-				/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv = 2))
+	return pickweight(list(/obj/item/ammo_magazine/c10x24 = 3,
+				/obj/item/ammo_magazine/a75 = 3,
+				/obj/item/ammo_magazine/heavy_rifle_408_drum = 3,
+				/obj/item/ammo_magazine/m12/pellet = 6,
+				/obj/item/ammo_magazine/ammobox/rifle_75/lethal = 6,
+				/obj/item/ammo_magazine/smg_35/lethal = 9,
+				/obj/item/ammo_magazine/pistol_35/lethal = 9,
+				/obj/item/ammo_magazine/kurtz_50/lethal = 3,
+				/obj/item/ammo_magazine/ammobox/shotgun/payload = 3,
+				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 6,
+				/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv = 6,
+				/obj/item/ammo_casing/antim/lethal/prespawned = 1,
+				/obj/item/ammo_casing/antim/ion/prespawned = 1))
 
 /obj/random/dungeon_ammo/low_chance
 	name = "low chance random special ammunition"

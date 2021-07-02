@@ -185,6 +185,7 @@
 	name = "ammunition packet (old .257 Rifle)"
 	icon_state = "clrifle_s"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
+	max_ammo = 30
 
 ////7.5 Rifle////
 
@@ -329,8 +330,9 @@
 /obj/item/ammo_magazine/ammobox/antim/scrap
 	name = "ammunition box (old .60 Anti Material)"
 	icon_state = "antim_s"
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
 	ammo_type = /obj/item/ammo_casing/antim/scrap
-	max_ammo = 30
+	max_ammo = 5
 
 //// .408 Omni ////
 
@@ -372,6 +374,7 @@
 	name = "ammunition packet (old .408 Rifle)"
 	icon_state = "lrifle_s"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/scrap
+	max_ammo = 30
 
 ////bulk .408////
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408
