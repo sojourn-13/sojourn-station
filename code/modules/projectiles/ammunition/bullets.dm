@@ -361,6 +361,26 @@
 /obj/item/ammo_casing/antim/scrap/prespawned
 	amount = 5
 
+/obj/item/ammo_casing/antim/lethal
+	name = "\"Red-Nose\" shell casing"
+	desc = "A SA .60-06 Anti-Material \"Red-Nose\" shell."
+	icon_state = "atmr_red"
+	spent_icon = "atmr_red-spent"
+	projectile_type = /obj/item/projectile/bullet/antim/lethal
+
+/obj/item/ammo_casing/antim/lethal/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/antim/ion
+	name = "\"Off-Switch\" shell casing"
+	desc = "A SA .60-06 Anti-Material \"Off-Switch\" shell."
+	icon_state = "atmr_red"
+	spent_icon = "atmr_red-spent"
+	projectile_type = /obj/item/projectile/bullet/antim/ion
+
+/obj/item/ammo_casing/antim/ion/prespawned
+	amount = 5
+
 //// Shotgun ammo ////
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"

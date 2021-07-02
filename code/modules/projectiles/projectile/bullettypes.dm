@@ -365,9 +365,24 @@
 	penetrating = 5
 	hitscan = TRUE //so the PTR isn't useless as a sniper weapon
 
+/obj/item/projectile/bullet/antim/lethal
+	damage_types = list(BRUTE = 60)
+	embed = TRUE
+	armor_penetration = 60
+	agony = 70
+	penetrating = 2
+
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 63)
 	armor_penetration = 50
+
+/obj/item/projectile/bullet/antim/ion
+	damage_types = list(BRUTE = 40)
+	armor_penetration = 40
+
+/obj/item/projectile/bullet/antim/ion/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	empulse(target, 0, 3)
 
 //Shotguns
 //*********************************//
@@ -545,7 +560,7 @@
 	armor_penetration = 10
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
-	
+
 
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"

@@ -26,9 +26,9 @@
 	options[".408 Rifle"] = "lrifle"
 	options[".35 Auto"] = "pistol"
 	options[".40 Magnum"] = "magnum"
-	options[".20 Shotgun Buckshot"] = "shot"
-	options[".20 Shotgun Beanbag"] = "bean"
-	options[".20 Shotgun Slug"] = "slug"
+	options["Shotgun Buckshot"] = "shot"
+	options["Shotgun Beanbag"] = "bean"
+	options["Shotgun Slug"] = "slug"
 	options[".60 Anti-Material"] = "antim"
 
 	var/choice = input(user,"What ammo do you want to make?") as null|anything in options
