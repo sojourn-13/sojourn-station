@@ -58,3 +58,31 @@
 // Can't remove the cell
 /obj/item/weapon/gun/hydrogen/incinerator/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 	return
+
+/obj/item/weapon/gun/hydrogen/plasma_torch
+	name = "\improper Welder Gun"
+	desc = "A plasma welder converted to shoot plasma bolts. Has less range than a \"Classia\"-Pattern Plasma Pistol."
+	icon_state = "welder"
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 3, MATERIAL_OSMIUM = 2, MATERIAL_TRITIUM = 1)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 7, TECH_PLASMA = 7)
+	projectile_type = /obj/item/projectile/hydrogen/pistol/welder
+	twohanded = FALSE
+	init_firemodes = list()
+
+// This is where the gun turn into a welder
+/obj/item/weapon/gun/hydrogen/plasma_torch/verb/switch_to_welder()
+	set name = "Enable Safeties"
+	set desc = "Enable the safeties, making the welder gun able to weld once more."
+	set category = "Object"
+
+	var/obj/item/weapon/tool/plasma_torch/welder = new /obj/item/weapon/tool/plasma_torch(src)
+	if(flask) // Give the welder the same flask the gun has, but only if there's a flask.
+		welder.flask = flask // Link the flask to the welder
+		flask.forceMove(welder) // Give the flask to the welder
+		flask = null // The gun has no more flask
+	qdel(src) // Remove the original gun.
+	usr.put_in_hands(welder) // Put the welder in the user's hand.
+	usr.visible_message(
+						SPAN_NOTICE("[usr] activate the safeties of the [src.name]."),
+						SPAN_NOTICE("You activate the safeties of the [src.name].")
+						)

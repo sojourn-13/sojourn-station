@@ -76,7 +76,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /obj/item/weapon/gun/hydrogen/MouseDrop(over_object)
 	if(!connected)
 		if(secured)
-			to_chat(usr, "The cell is screwed to the gun. You cannot remove it.")
+			to_chat(usr, "The fuel cell is screwed to the gun. You cannot remove it.")
 		else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(flask, usr))
 			flask = null
 			update_icon()
