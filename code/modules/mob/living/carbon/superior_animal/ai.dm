@@ -96,3 +96,23 @@
 				if (istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/low_wall) || istype(obstacle, /obj/structure/railing) || istype(obstacle, /obj/mecha) || istype(obstacle, /obj/structure/girder))
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
+
+/mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
+	..()
+	if(obey_friends) // Are we only obeying friends?
+		if(speaker in friends) // Is the one talking a friend?
+			if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following) // Is he telling us to follow?
+				following = speaker
+				visible_emote("[follow_message]")
+
+			if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
+				following = null
+				visible_emote("[stop_message]")
+	else // We are obeying everyone
+		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following) // Is he telling us to follow?
+			following = speaker
+			visible_emote("[follow_message]")
+
+		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
+			following = null
+			visible_emote("[stop_message]")
