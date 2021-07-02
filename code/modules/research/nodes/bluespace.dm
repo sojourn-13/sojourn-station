@@ -157,7 +157,8 @@
 							/datum/design/research/item/part/artificialbscrystal,
 							/datum/design/research/circuit/bssilk/hub,
 							/datum/design/research/circuit/bssilk/console,
-							/datum/design/research/item/bs_snare
+							/datum/design/research/item/bs_snare,
+							/datum/design/research/item/si_bluespace_scanner
 							)
 
 /datum/technology/bluespace_tools
