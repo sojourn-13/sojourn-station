@@ -309,4 +309,5 @@
 	unlocks_designs = list(/datum/design/research/item/weapon/hydrogen_rifle,
 							/datum/design/research/item/weapon/hydrogen_pistol,
 							/datum/design/research/item/weapon/hydrogen_cannon,
+							/datum/design/research/item/mecha/weapon/hydrogen,
 							/datum/design/research/item/weapon/hydrogen_welder)
