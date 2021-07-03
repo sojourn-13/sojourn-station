@@ -147,3 +147,21 @@
 /datum/gear/utility/ducttape
 	display_name = "duct tape"
 	path = /obj/item/weapon/tool/tape_roll
+
+/datum/gear/utility/guitar
+	display_name = "synthesized guitar"
+	path = /obj/item/device/synthesized_instrument/guitar
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/utility/synthesized
+	display_name = "synthesized guitar"
+	path = /obj/item/device/synthesized_instrument/synthesizer
+
+/datum/gear/utility/trumpet
+	display_name = "synthesized trumpet"
+	path = /obj/item/device/synthesized_instrument/trumpet
+
+/datum/gear/utility/violin
+	display_name = "synthesized violin"
+	path = /obj/item/device/synthesized_instrument/violin
+

@@ -541,6 +541,7 @@
 	name = "Bluespace Tuning Device"
 	desc = "A tool used by SI to stablize and get readings of bluespace entropy." //TODO get a better desc, this is horrable the worst even
 	icon_state = "si_scan"
+	item_state = "si_scan"
 	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10, MATERIAL_PLASMAGLASS = 2, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASMA = 5, MATERIAL_DIAMOND = 1)
 	oddity_stats = list(
 		STAT_COG = 2, //trash stats for mass-printed trash
