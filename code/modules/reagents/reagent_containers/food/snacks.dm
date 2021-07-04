@@ -2537,7 +2537,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/honeypudding
 	name = "honey pudding"
 	desc = "A tasty dessert that is made with honey and coca powerder for a delightful pudding."
-	icon_state = "honeypudding"
+	icon_state = "pudding"
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)
 	nutriment_desc = list("coca" = 1, "honey" = 2)

@@ -203,6 +203,14 @@
 	storage_slots = 7
 	allow_quick_empty = TRUE // this function is superceded
 
+/obj/item/weapon/storage/bag/sheetsnatcher/guild
+	name = "advanced sheet snatcher"
+	desc = "An advanced verson of a patented storage system designed for any kind of mineral sheet."
+	icon_state = "sheetsnatcher_guild"
+	item_state = "sheetsnatcher_guild"
+	capacity = 900
+	storage_slots = 21
+
 /obj/item/weapon/storage/bag/sheetsnatcher/can_be_inserted(obj/item/W as obj, stop_messages = 0)
 	if(!istype(W,/obj/item/stack/material))
 		if(!stop_messages)
