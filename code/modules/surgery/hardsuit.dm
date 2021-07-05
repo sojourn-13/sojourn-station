@@ -1,7 +1,8 @@
 //Procedures in this file: hardsuit removal
+// TODO: Refactor this procedure into surgery proper to apply proper overlays since actual surgery has higher priority than this fallback method.
 
 /datum/old_surgery_step/hardsuit
-	required_tool_quality = QUALITY_SAWING // Palliative fix for FBP's dying while wearing one.
+	required_tool_quality = QUALITY_DRILLING // Solves problems for both FBP's and carbons.
 	required_stat = STAT_MEC
 
 	can_infect = 0

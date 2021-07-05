@@ -563,7 +563,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if (owner.germ_level > W.germ_level && W.infection_check())
 			W.germ_level++
 
-	if (antibiotics <= 5)
+	if (antibiotics <= 1) //Make Spaceacillin autoinjectors not useless after using 1 unit out of 5 they have.
 		for(var/datum/wound/W in wounds)
 			//Infected wounds raise the organ's germ level
 			if (W.germ_level > germ_level)

@@ -177,7 +177,7 @@
 
 	if (germ_level >= INFECTION_LEVEL_ONE/2)
 		//aiming for germ level to go from ambient to INFECTION_LEVEL_TWO in an average of 15 minutes
-		if(antibiotics <= 5 && prob(round(germ_level/6)))
+		if(antibiotics <= 1 && prob(round(germ_level/6))) //Make Spaceacillin autoinjectors not useless after using 1 unit out of 5 they have.
 			germ_level++
 
 	if(germ_level >= INFECTION_LEVEL_ONE)

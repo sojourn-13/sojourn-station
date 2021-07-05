@@ -1,7 +1,7 @@
 /**
  * Multitool -- A multitool is used for hacking electronic devices.
  * TO-DO -- Using it as a power measurement tool for cables etc. Nannek.
- *
+ * It already measures power when used on wires, probably not on machines. - DimmaDunk
  */
 
 /obj/item/weapon/tool/multitool
@@ -53,6 +53,16 @@
 	max_upgrades = 4
 	suitable_cell = /obj/item/weapon/cell/medium
 
+/obj/item/weapon/tool/multitool/improvised
+	name = "wire frier"
+	desc = "A haphazardly-put-together machine used for pulsing wires, measuring electrical grids and bypassing security protocols. Its improvised design heavily consumes power, but allows for a greater range of customization."
+	icon_state = "impro_multitool"
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_STEEL = 2) //Needs two rods
+	use_power_cost = 0.1
+	workspeed = 0.9
+	max_upgrades = 5 // As much as every other improvised tool
+	tool_qualities = list(QUALITY_PULSING = 15)
+	worksound = WORKSOUND_WELDING // BZZZZTTTTTT
 
 /obj/item/weapon/tool/multitool/Destroy()
 	unregister_buffer(buffer_object)
