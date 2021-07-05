@@ -507,6 +507,10 @@
 			/datum/craft_recipe/lodge/duct_tape,
 			/datum/craft_recipe/lodge/chimera_fang,
 			/datum/craft_recipe/lodge/soap,
+			/datum/craft_recipe/lodge/hunting_claw,
+			/datum/craft_recipe/lodge/hunter_boots,
+			/datum/craft_recipe/lodge/hunter_gloves,
+			/datum/craft_recipe/lodge/sheath,
 			)
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)

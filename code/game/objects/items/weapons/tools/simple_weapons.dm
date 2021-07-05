@@ -323,6 +323,20 @@
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
 
+/obj/item/weapon/tool/sword/huntingclaw
+	name = "Hunting Claw"
+	desc = "The second best friend a hunter could ask for, this one handed blade is lightweight and razor sharp thanks to its starworks-grade alloy construction.\
+	 The hilt is made out of wood with gold looking trimmings. A Black Bear has been beautifully etched on the wood. All craftsmanship is of the highest quality."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "huntingclaw"
+	item_state = "huntingclaw"
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_WOOD = 2)
+	slot_flags = SLOT_BELT | SLOT_BACK
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Very sharp blade, serrated back
+	force = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_SHALLOW
+	w_class = ITEM_SIZE_NORMAL
+
 /obj/item/weapon/tool/gauntlet
 	name = "render gauntlet"
 	desc = "A crudely made gauntlet consisting of straps, metal reinforcement and render skin - including it's deadly claws."
