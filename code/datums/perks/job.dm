@@ -369,6 +369,7 @@
 			/datum/craft_recipe/guild/technosuit,
 			/datum/craft_recipe/guild/technohelmet,
 			/datum/craft_recipe/guild/webbing,
+			/datum/craft_recipe/guild/sheet_stacker,
 			/datum/craft_recipe/guild/plasmablock,
 			/datum/craft_recipe/guild/rubbermesh,
 			/datum/craft_recipe/guild/booster,
