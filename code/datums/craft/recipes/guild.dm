@@ -305,6 +305,19 @@
 		list(/obj/item/weapon/storage/pouch/medium_generic, 1, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/sheet_stacker
+	name = "advanced sheet snatcher"
+	icon_state = "woodworking"
+	result = /obj/item/weapon/storage/bag/sheetsnatcher/guild
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
+		list(QUALITY_ADHESIVE, 10, "time" = 60),
+		list(/obj/item/stack/cable_coil, 30, "time" = 30),
+		list(/obj/item/stack/material/plasteel, 5, "time" = 30)
+	)
+
 //Tool/Gun Mods ---------------------
 //Reinforcement
 /datum/craft_recipe/guild/plasmablock
