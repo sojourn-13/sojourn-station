@@ -41,7 +41,8 @@
 		if(ranged)
 			stop_automated_movement = 1
 			if(get_dist(src, target_mob) <= 6)
-				OpenFire(target_mob)
+				stance = HOSTILE_STANCE_ATTACKING
+				return //We do a safty return
 			else
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 				walk_to(src, target_mob, 4, move_to_delay)
