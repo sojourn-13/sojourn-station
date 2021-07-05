@@ -95,6 +95,15 @@
 	siemens_coefficient = 0
 	price_tag = 250
 
+/obj/item/clothing/gloves/thick/hunter
+    desc = "Tough, tight fitting and reinforced with bone this pair of leather gloves blend a perfect compromise between durability and comfort thanks to the different materials used."
+    name = "hunter gloves"
+    icon_state = "huntergloves"
+    item_state = "huntergloves"
+    armor = list(melee = 30, bullet = 10, energy = 20, bomb = 10, bio = 5, rad = 0)
+    siemens_coefficient = 0.5
+    price_tag = 200
+
 /obj/item/clothing/gloves/knuckles
 	name = "knuckle gloves"
 	desc = "Gloves with additional reinforcment on the knuckles."

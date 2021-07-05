@@ -242,6 +242,25 @@ Sword holsters
 /obj/item/clothing/accessory/holster/saber/machete/occupied/Initialize()
 	holstered = new holstered_spawn
 
+/obj/item/clothing/accessory/holster/saber/huntingclaw
+	name = "Hunting Claw Sheath"
+	desc = "A sheath specifically made to be occupied by the Hunting Claw. It's made out of locally sourced leather and bone and treated to give it it's characteristic color,\
+	 the modular strapping makes it so that it can be adapted to each hunter's carrying needs across their body and gear comfortably."
+	icon_state = "huntingclaw_holster"
+	overlay_state = "huntingclaw"
+	can_hold = list(/obj/item/weapon/tool/sword/huntingclaw)
+
+/obj/item/clothing/accessory/holster/saber/huntingclaw/update_icon()
+    ..()
+    cut_overlays()
+    if(contents.len)
+        add_overlay(image('icons/inventory/accessory/icon.dmi', "huntingclaw_layer"))
+
+/obj/item/clothing/accessory/holster/saber/huntingclaw/occupied
+    var/holstered_spawn = /obj/item/weapon/tool/sword/huntingclaw
+
+/obj/item/clothing/accessory/holster/saber/huntingclaw/occupied/Initialize()
+    holstered = new holstered_spawn
 
 
 

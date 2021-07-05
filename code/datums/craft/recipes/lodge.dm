@@ -115,6 +115,21 @@
 		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
 	)
 
+/datum/craft_recipe/lodge/hunting_claw
+	name = "Hunting Claw"
+	result = /obj/item/weapon/tool/sword/huntingclaw
+	icon_state = "woodworking"
+	steps = list(
+		list(/obj/item/stack/material/plasteel, 5, "time" = 30),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(QUALITY_HAMMERING, 15, "time" = 60),
+		list(/obj/item/stack/material/steel, 5, "time" = 30),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(/obj/item/stack/material/wood, 2, "time" = 30),
+		list(QUALITY_CUTTING, 15, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
+	)
+
 // Armor --------------------
 /datum/craft_recipe/lodge/hunter_hood
 	name = "Hunter's Hood"
@@ -172,6 +187,29 @@
 		list(/obj/item/clothing/suit/armor/hunter, 1, "time" = 20),
 		list(CRAFT_MATERIAL, 20, MATERIAL_LEATHER, "time" = 60),
 		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 15, 30)
+	)
+
+/datum/craft_recipe/lodge/hunter_boots
+	name = "Hunter Boots"
+	result = /obj/item/clothing/shoes/hunterboots
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 25, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(/obj/item/stack/material/wood, 4, "time" = 30),
+		list(QUALITY_HAMMERING, 15, 30)
+	)
+
+/datum/craft_recipe/lodge/hunter_gloves
+	name = "Hunter Gloves"
+	result = /obj/item/clothing/gloves/thick/hunter
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 15, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(CRAFT_MATERIAL, 5, MATERIAL_BONE, "time" = 10),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
 		list(QUALITY_WIRE_CUTTING, 15, 30)
 	)
@@ -265,4 +303,17 @@
 	steps = list(
 		list(/obj/item/animal_part/chimera_fang, 1, "time" = 10),
 		list(QUALITY_CUTTING, 50, "time" = 90)
+	)
+
+/datum/craft_recipe/lodge/sheath
+	name = "Claw Sheath"
+	result = /obj/item/clothing/accessory/holster/saber/huntingclaw
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 60),
+		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 10, 30),
+		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_CUTTING, 15, "time" = 50)
 	)
