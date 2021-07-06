@@ -2408,6 +2408,7 @@
 #include "code\modules\projectiles\guns\energy\nuclear.dm"
 #include "code\modules\projectiles\guns\energy\plasma.dm"
 #include "code\modules\projectiles\guns\energy\railgun.dm"
+#include "code\modules\projectiles\guns\energy\slimegun.dm"
 #include "code\modules\projectiles\guns\energy\sniperrifle.dm"
 #include "code\modules\projectiles\guns\energy\sst.dm"
 #include "code\modules\projectiles\guns\energy\stun.dm"

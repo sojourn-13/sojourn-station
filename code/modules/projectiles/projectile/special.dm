@@ -5,7 +5,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 
-/obj/item/projectile/ion/on_hit(atom/target)
+/obj/item/projectile/ion/on_impact(atom/target)
 	empulse(target, 1, 1)
 	return TRUE
 
@@ -45,12 +45,39 @@
 	check_armour = ARMOR_ENERGY
 	var/temperature = 300
 
-
-/obj/item/projectile/temp/on_hit(atom/target)//These two could likely check temp protection on the mob
+/obj/item/projectile/temp/on_impact(atom/target)//These two could likely check temp protection on the mob
 	if(isliving(target))
 		var/mob/M = target
 		M.bodytemperature = temperature
 	return TRUE
+
+/obj/item/projectile/temp/cold
+	temperature = 200
+
+/obj/item/projectile/temp/ice
+	temperature = 10 //balance wise this will be 10 rather then 0
+
+/obj/item/projectile/temp/hot
+	temperature = 400
+
+/obj/item/projectile/temp/boil
+	temperature = 500
+
+
+/obj/item/projectile/slime_death
+	name = "core stopper beam"
+	icon_state = "ice_2"
+	damage_types = list(BURN = 0)
+	nodamage = TRUE
+	check_armour = ARMOR_ENERGY
+	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+	hitscan = TRUE
+
+/obj/item/projectile/slime_death/on_impact(atom/target)//These two could likely check temp protection on the mob
+	if(isliving(target))
+		if(isslime(target))
+			nodamage = FALSE
+			damage_types = list(CLONE = 1000) //We die
 
 /obj/item/projectile/meteor
 	name = "meteor"
@@ -88,7 +115,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 
-/obj/item/projectile/energy/floramut/on_hit(atom/target)
+/obj/item/projectile/energy/floramut/on_impact(atom/target)
 	var/mob/living/M = target
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = M
@@ -120,7 +147,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 
-/obj/item/projectile/energy/florayield/on_hit(atom/target)
+/obj/item/projectile/energy/florayield/on_impact(atom/target)
 	var/mob/M = target
 	if(ishuman(target)) //These rays make plantmen fat.
 		var/mob/living/carbon/human/H = M
@@ -138,7 +165,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 
-/obj/item/projectile/energy/floraevolve/on_hit(atom/target)
+/obj/item/projectile/energy/floraevolve/on_impact(atom/target)
 	var/mob/M = target
 	if(ishuman(target)) //These rays make plantmen fat.
 		var/mob/living/carbon/human/H = M
@@ -153,7 +180,7 @@
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"
 
-/obj/item/projectile/beam/mindflayer/on_hit(atom/target)
+/obj/item/projectile/beam/mindflayer/on_impact(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		M.confused += rand(5,8)

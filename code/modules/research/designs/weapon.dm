@@ -49,6 +49,10 @@
 	name = "Prototype: Biological Demolecularizer"
 	build_path = /obj/item/weapon/gun/energy/decloner
 
+/datum/design/research/item/weapon/slimegun
+	name = "Prototype: \"Ranch\" core stopper gun"
+	build_path = /obj/item/weapon/gun/energy/slimegun
+
 /datum/design/research/item/weapon/chemsprayer
 	name = "Chemical Sprayer"
 	desc = "An advanced chem spraying device."
@@ -95,6 +99,10 @@
 /datum/design/research/item/weapon/katana
 	name = "Soteria \"Muramasa\" Katana"
 	build_path = /obj/item/weapon/tool/sword/katana/nano
+
+/datum/design/research/item/weapon/slimebaton
+	name = "Soteria xenobio baton"
+	build_path = /obj/item/weapon/melee/baton/slimebaton
 
 /datum/design/research/item/weapon/bluespace_dagger
 	name = "Soteria \"Displacement Dagger\""

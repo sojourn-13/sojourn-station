@@ -131,7 +131,8 @@
 							/datum/design/research/item/ammo/smg_mag,
 							/datum/design/research/item/ammo/pistol_laser,
 							/datum/design/research/item/ammo/magum_laser,
-							/datum/design/research/item/robot_upgrade/bigknife
+							/datum/design/research/item/robot_upgrade/bigknife,
+							/datum/design/research/item/weapon/slimebaton
 							)
 
 /datum/technology/exotic_weaponry
@@ -148,6 +149,7 @@
 	cost = 3000
 
 	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun,
+							/datum/design/research/item/weapon/slimegun,
 							/datum/design/research/item/ammo/shotgun_fire,
 							/datum/design/research/item/ammo/shotgun_laser
 							)

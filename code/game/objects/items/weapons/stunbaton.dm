@@ -20,6 +20,7 @@
 	var/obj/item/weapon/cell/cell
 	var/obj/item/weapon/cell/starting_cell = /obj/item/weapon/cell/medium/high
 	var/suitable_cell = /obj/item/weapon/cell/medium
+	var/slime_killer = FALSE
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 10)
 
@@ -141,6 +142,9 @@
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
 			H.forcesay(hit_appends)
+		if(isslime(target) && slime_killer)
+			var/mob/living/carbon/slime/S = target
+			S.death()
 
 /obj/item/weapon/melee/baton/emp_act(severity)
 	if(cell)
@@ -207,3 +211,20 @@
 	..()
 	item_state = initial(item_state) + (status ? "_active" : "")
 	update_wear_icon()
+
+/obj/item/weapon/melee/baton/slimebaton
+	name = "xenobio baton"
+	desc = "A stunbaton that is designed against slimes and other lab misstakes."
+	icon_state = "prod_si"
+	item_state = "prod_si"
+	force = WEAPON_FORCE_NORMAL
+	throwforce = WEAPON_FORCE_NORMAL
+	stunforce = 0
+	agonyforce = 50
+	hitcost = 125
+	attack_verb = list("poked")
+	slime_killer = TRUE
+	slot_flags = null
+	starting_cell = null
+	matter = list(MATERIAL_STEEL = 13, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 13)
+
