@@ -3,6 +3,7 @@
 	icon_state = "device"
 	var/datum/craft_recipe/recipe
 	var/step = 1
+	var/building = FALSE //Prevents spamming one recipe requirement to finish the entire recipe
 
 
 /obj/item/craft/New(loc, new_recipe)

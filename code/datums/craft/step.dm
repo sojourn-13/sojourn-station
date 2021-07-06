@@ -2,7 +2,6 @@
 	var/reqed_type
 	var/reqed_quality
 	var/reqed_quality_level = 0//For tools, minimum threshold of a quality
-	var/building = FALSE //Prevents spamming one recipe requirement to finish the entire recipe
 	var/reqed_material
 	var/req_amount = 0
 
@@ -88,28 +87,30 @@
 		msg
 	)
 
-/datum/craft_step/proc/apply(obj/item/I, mob/living/user, atom/target = null, var/datum/craft_recipe/recipe)
-	if(building)
+/datum/craft_step/proc/apply(obj/item/I, mob/living/user, obj/item/craft/target = null, var/datum/craft_recipe/recipe)
+	if(!target)
 		return
-	building = TRUE
+	if(target.building)
+		return
+	target.building = TRUE
 
 	if(reqed_material)
 		if(istype(I, /obj/item/stack/material))
 			var/obj/item/stack/material/M = I
 			if(M.get_default_type() != reqed_material)
 				to_chat(user, "Wrong material!")
-				building = FALSE
+				target.building = FALSE
 				return
 		else
 			to_chat(user, "This isn't a material stack!")
-			building = FALSE
+			target.building = FALSE
 			return
 
 	if(req_amount && istype(I, /obj/item/stack))
 		var/obj/item/stack/S = I
 		if(!S.can_use(req_amount))
 			to_chat(user, "Not enough items in [I]")
-			building = FALSE
+			target.building = FALSE
 			return
 
 	var/new_time = time // for reqed_type or raw materials
@@ -123,56 +124,56 @@
 	if(reqed_type)
 		if(!istype(I, reqed_type))
 			to_chat(user, "Wrong item!")
-			building = FALSE
+			target.building = FALSE
 			return
 		if (!is_valid_to_consume(I, user))
 			to_chat(user, "That item can't be used for crafting!")
-			building = FALSE
+			target.building = FALSE
 			return
 
 		if(req_amount && istype(I, /obj/item/stack))
 			var/obj/item/stack/S = I
 			if(S.get_amount() < req_amount)
 				to_chat(user, "Not enough items in [I]")
-				building = FALSE
+				target.building = FALSE
 				return
 
 		if(target)
 			announce_action(start_msg, user, I, target)
 
 		if(!do_after(user, new_time, target || user))
-			building = FALSE
+			target.building = FALSE
 			return
 
 	else if(reqed_quality)
 		var/q = I.get_tool_quality(reqed_quality)
 		if(!q)
 			to_chat(user, SPAN_WARNING("Wrong type of tool. You need a tool with [reqed_quality] quality"))
-			building = FALSE
+			target.building = FALSE
 			return
 		if(target)
 			announce_action(start_msg, user, I, target)
 		if(!I.use_tool(user, target || user, time, reqed_quality, FAILCHANCE_NORMAL, list(STAT_MEC, STAT_COG)))
 			to_chat(user, SPAN_WARNING("Work aborted"))
-			building = FALSE
+			target.building = FALSE
 			return
 
 		if(q < reqed_quality_level)
 			to_chat(user, SPAN_WARNING("That tool is too crude for the task. You need a tool with [reqed_quality_level] [reqed_quality] quality. This tool only has [q] [reqed_quality]"))
-			building = FALSE
+			target.building = FALSE
 			return
 	else
 		if(!do_after(user, new_time, target || user))
-			building = FALSE
+			target.building = FALSE
 			return
 
 	if (target)
 		if(!recipe.can_build(user, get_turf(target)))
-			building = FALSE
+			target.building = FALSE
 			return
 	else
 		if(!recipe.can_build(user, get_turf(user)))
-			building = FALSE
+			target.building = FALSE
 			return
 
 	if(req_amount)
@@ -180,14 +181,14 @@
 			var/obj/item/stack/S = I
 			if(!S.use(req_amount))
 				to_chat(user, SPAN_WARNING("Not enough items in [S]. It has [S.get_amount()] units and we need [req_amount]"))
-				building = FALSE
+				target.building = FALSE
 				return FALSE
 		else if (reqed_type) //No deleting tools
 			qdel(I)
 
 	if(target)
 		announce_action(end_msg, user, I, target)
-	building = FALSE
+	target.building = FALSE
 	return TRUE
 
 /datum/craft_step/proc/find_item(mob/living/user)
