@@ -36,3 +36,6 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/shield_projector/rectangle/soteria_personal(src)
+	new /obj/item/weapon/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
+	new /obj/item/weapon/computer_hardware/hard_drive/portable/design/rped/rd(src)
+	new /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer/rd(src)

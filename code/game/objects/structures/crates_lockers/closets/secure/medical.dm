@@ -182,6 +182,7 @@
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)
 	new /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/advanced/cmo(src)
+	new /obj/item/weapon/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"
