@@ -60,7 +60,9 @@
 		/datum/design/research/item/medsaw_circular,
 		/datum/design/autolathe/tool/bonegel,
 		/datum/design/research/item/medical/nanopaste = 2,
-		/datum/design/research/item/clothing/health = 2
+		/datum/design/research/item/clothing/health = 2,
+		/datum/design/autolathe/clothing/si_xenobio_hood,
+		/datum/design/autolathe/clothing/si_xenobio_suit
 	)
 
 
@@ -148,4 +150,22 @@
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/rped/rd
 	disk_name = "Soteria Stock Parts Factory"
+	license = -1
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/xenobio
+	disk_name = "Soteria Xenobio Equipment Designs"
+	icon_state = "moebius"
+	license = 10
+	designs = list(
+		/datum/design/research/item/weapon/chemsprayer = 2,
+		/datum/design/research/item/weapon/large_grenade,
+		/datum/design/autolathe/container/syringe,
+		/datum/design/research/item/weapon/slimebaton = 2,
+		/datum/design/research/item/weapon/slimegun = 3,
+		/datum/design/autolathe/clothing/si_xenobio_hood,
+		/datum/design/autolathe/clothing/si_xenobio_suit
+	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/xenobio/rd
+	disk_name = "Soteria Xenobio Equipment Factory"
 	license = -1

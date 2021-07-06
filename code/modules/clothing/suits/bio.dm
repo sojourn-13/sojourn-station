@@ -100,3 +100,16 @@
 
 /obj/item/clothing/head/bio_hood/cmo
 	icon_state = "bio_cmo"
+
+//CMO/CRO biosuit, blue stripe. These ones are made with a disk
+/obj/item/clothing/suit/bio_suit/cmo/si_made
+	matter = list(
+		MATERIAL_PLASTIC = 10,
+		MATERIAL_GLASS = 5
+	)
+
+/obj/item/clothing/head/bio_hood/cmo/si_made
+	matter = list(
+		MATERIAL_PLASTIC = 20,
+		MATERIAL_GLASS = 10
+	)
