@@ -79,7 +79,6 @@
 	emote_see = list("pecks at the ground.","flaps its tiny wings.","cheeps.")
 	speak_chance = 2
 	turns_per_move = 2
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
 	meat_amount = 1
 	health = 1
 	var/amount_grown = 0
