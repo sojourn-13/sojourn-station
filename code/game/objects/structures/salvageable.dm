@@ -351,8 +351,8 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/stock_parts/matter_bin/one_star = 40,
 		/obj/random/lathe_disk/advanced/onestar = 5,
 		/obj/random/prothesis/one_star = 20,
-		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20,
-		/obj/item/weapon/tool_upgrade/augment/randomizer = 40
+		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 5,
+		/obj/item/weapon/tool_upgrade/augment/randomizer = 20
 	)
 
 /obj/structure/salvageable/autolathe_os
@@ -391,8 +391,8 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/stack/material/plasma{amount = 5} = 10,
 		/obj/item/stack/material/uranium{amount = 3} = 5,
 		/obj/item/stack/material/diamond{amount = 1} = 1,
-		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 20,
-		/obj/item/weapon/tool_upgrade/augment/randomizer = 40,
+		/obj/item/weapon/gun_upgrade/mechanism/glass_widow = 5,
+		/obj/item/weapon/tool_upgrade/augment/randomizer = 20,
 		/obj/item/weapon/gun_upgrade/mechanism/greyson_master_catalyst = 0.1 //1 in 1000
 	)
 
@@ -519,7 +519,7 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/scrap_lump = 20,
 		/obj/item/weapon/scrap_lump = 20,
 		/obj/item/weapon/scrap_lump = 10,
-		/obj/item/weapon/implant/uplink = 0.005,
+		/obj/item/weapon/implant/uplink = 0.05,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/weapon/stock_parts/capacitor/one_star = 60,
@@ -529,7 +529,7 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/computer_hardware/network_card/advanced = 40,
-		/obj/random/lathe_disk/advanced/onestar = 10
+		/obj/random/lathe_disk/advanced/onestar = 25
 	)
 
 /obj/structure/salvageable/console_broken_os
@@ -555,5 +555,5 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/computer_hardware/card_slot = 40,
 		/obj/item/weapon/computer_hardware/network_card/advanced = 40,
-		/obj/random/lathe_disk/advanced/onestar = 5
+		/obj/random/lathe_disk/advanced/onestar = 15
 	)
