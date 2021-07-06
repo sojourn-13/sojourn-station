@@ -1,6 +1,6 @@
 /mob/living/carbon/superior_animal/robot
-	name = "Greyson Positronic RMB-A unit"
-	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
+	name = "Robot"
+	desc = "Beep Boop!"
 	icon = 'icons/mob/battle_roomba.dmi'
 	icon_state = "roomba"
 	faction = "robot"
@@ -96,7 +96,7 @@
 	if(prob(95) && ranged)
 		ranged = FALSE
 	if(emp_damage)
-		health -= 50 * severity
+		adjustFireLoss(rand(50,80)*severity)
 
 /mob/living/carbon/superior_animal/robot/examine(mob/user)
 	..()
