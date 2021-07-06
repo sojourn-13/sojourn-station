@@ -40,7 +40,7 @@
 			moved = 1
 		if(ranged)
 			stop_automated_movement = 1
-			if(get_dist(src, target_mob) <= 6)
+			if(get_dist(src, target_mob) <= comfy_range)
 				stance = HOSTILE_STANCE_ATTACKING
 				return //We do a safty return
 			else

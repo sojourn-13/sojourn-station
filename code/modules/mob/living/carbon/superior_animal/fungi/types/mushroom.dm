@@ -4,6 +4,7 @@
 	var/drop_threshold = 90 // Nutrition threshold upon which the shroom drop the med.
 	var/drop_timer = 0 // Timer that prevent to drop like 3 medicine bottle in a second
 	var/drop_time = 15 // How long until the bottle drop.
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/fungi
 
 	// The meds they can drop, weighted for brute -> burn -> toxins -> organ healing -> everything else.
 	var/list/droppable_meds = list(	/obj/item/weapon/reagent_containers/glass/bottle/organic/dexalinp = 2, // Dexalin Plus, heal muscles and O2 damage

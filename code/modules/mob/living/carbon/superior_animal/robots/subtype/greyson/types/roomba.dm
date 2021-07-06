@@ -75,7 +75,13 @@
 	maxHealth = 30
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	ranged = 1
+	ranged = TRUE
+	limited_ammo = TRUE
+	mag_drop = FALSE
+	rounds_left = 16
+	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mags_left = 0
+	reload_message = "Beeps aggressively as it charges the gun!" //in case of addmins givng more then 1 load
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/New()
 	..()
@@ -92,7 +98,7 @@
 	maxHealth = 50
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	ranged = 1
+	rounds_left = 10 //takes more per shot!
 	projectiletype = /obj/item/projectile/plasma/light
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/armored
@@ -103,7 +109,6 @@
 	maxHealth = 70
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	ranged = 1
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/chemical
 	name = "Greyson Positronic RMB-MED unit"

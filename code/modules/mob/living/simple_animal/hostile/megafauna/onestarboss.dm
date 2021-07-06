@@ -26,6 +26,8 @@
 
 	wander = FALSE //No more sleepwalking
 
+	emp_proof = TRUE
+
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 
 /mob/living/simple_animal/hostile/megafauna/one_star/death(gibbed, var/list/force_grant)

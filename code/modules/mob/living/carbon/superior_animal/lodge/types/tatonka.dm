@@ -12,7 +12,6 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
 	meat_amount = 6
 	health = 100
 	old_x = -16
@@ -107,7 +106,6 @@
 	emote_see = list("shakes its heads.","snuffles.","clacks its horns together.")
 	speak_chance = 2
 	turns_per_move = 2
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
 	meat_amount = 1
 	health = 10
 	var/amount_grown = 0

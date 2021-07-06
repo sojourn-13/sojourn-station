@@ -92,7 +92,8 @@
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
-		health += rand(25,100)
+		adjustBruteLoss(rand(-20,-30)) //we heal fast
+		adjustFireLoss(rand(-20,-30))
 		if(!rapid)
 			rapid = TRUE
 		if(prob(95) && !ranged)
@@ -159,7 +160,7 @@
 
 //ion rifle!
 /mob/living/simple_animal/hostile/retaliate/malf_drone/emp_act(severity)
-	health -= rand(3,15) * (severity + 1)
+	adjustFireLoss(rand(20,30)*severity)
 	disabled = rand(150, 600)
 	hostile_drone = 0
 	walk(src,0)

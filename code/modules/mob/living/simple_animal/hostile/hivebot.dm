@@ -34,7 +34,7 @@
 
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
 	..()
-	health -= 30
+	adjustFireLoss(rand(20,30))
 	if(rapid)
 		rapid = FALSE
 	if(prob(95) && ranged)
@@ -100,7 +100,7 @@
 
 /mob/living/simple_animal/hostile/republicon/emp_act(severity)
 	..()
-	health -= 100
+	adjustFireLoss(rand(80,130))
 	if(rapid)
 		rapid = FALSE
 	if(prob(95) && ranged)

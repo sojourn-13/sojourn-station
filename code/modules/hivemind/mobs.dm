@@ -137,8 +137,7 @@
 		if(2)
 			if(malfunction_chance < 25)
 				malfunction_chance = 25
-	health -= 20*severity
-
+	adjustFireLoss(rand(20,80)*severity)
 
 /mob/living/simple_animal/hostile/hivemind/death()
 	if(master) //for spawnable mobs

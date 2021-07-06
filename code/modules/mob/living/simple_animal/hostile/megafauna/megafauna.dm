@@ -23,6 +23,7 @@
 	var/list/attack_action_types = list()
 	var/megafauna_min_cooldown = 10
 	var/megafauna_max_cooldown = 20
+	var/emp_proof = FALSE
 
 /mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
 	. = ..()
@@ -67,15 +68,16 @@
 	return TRUE
 
 /mob/living/simple_animal/hostile/megafauna/ex_act(severity, target)
+	if(emp_proof)
+		return
 	switch (severity)
-		if (1)
-			adjustBruteLoss(250)
 
-		if (2)
-			adjustBruteLoss(100)
-
+		if(1)
+			adjustFireLoss(rand(250,500))
+		if(2)
+			adjustFireLoss(rand(100,250))
 		if(3)
-			adjustBruteLoss(50)
+			adjustFireLoss(rand(50,100))
 
 /mob/living/simple_animal/hostile/megafauna/proc/SetRecoveryTime(buffer_time)
 	recovery_time = world.time + buffer_time

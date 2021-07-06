@@ -35,11 +35,11 @@
 	..()
 	switch(severity)
 		if(1)
-			health -= 500
+			adjustFireLoss(rand(500,700))
 		if(2)
-			health -= 250
+			adjustFireLoss(rand(250,500))
 		if(3)
-			health -= 125
+			adjustFireLoss(rand(125,250))
 
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/death()
 	..()

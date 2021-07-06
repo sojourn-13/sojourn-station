@@ -79,7 +79,8 @@
 	fire_verb = "lobs flame"
 	screen_type = "os_red"
 	projectiletype = /obj/item/projectile/flamer_lob
-	ranged = 1
+	comfy_range = 3 //We fire a projectile thats only 3 tiles far
+	ranged = TRUE
 	cleaning = FALSE
 
 /mob/living/carbon/superior_animal/robot/greyson/custodian/chef/New()
@@ -107,7 +108,7 @@
 	screen_type = "yellow"
 	drop2 = /obj/random/tool/advanced/onestar/low_chance
 	projectiletype = /obj/item/projectile/beam/drone
-	ranged = 1
+	ranged = TRUE
 	melee_damage_lower = 7
 	melee_damage_upper = 15
 	cleaning = FALSE

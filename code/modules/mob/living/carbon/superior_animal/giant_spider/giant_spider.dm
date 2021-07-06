@@ -32,6 +32,9 @@
 	min_breath_required_type = 3
 	min_air_pressure = 15 //below this, brute damage is dealt
 
+	fleshcolor = "#666600"
+	bloodcolor = "#666600"
+
 	var/poison_per_bite = 2
 	var/poison_type = "pararein"
 	faction = "spiders"

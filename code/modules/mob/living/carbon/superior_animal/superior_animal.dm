@@ -32,6 +32,8 @@
 	var/emote_see = list() //chat emotes
 	var/speak_chance = 2 //percentage chance of speaking a line from 'emote_see'
 
+	var/comfy_range = 6 //How far we like to be form are targets when we fire!
+
 	var/turns_per_move = 3 //number of life ticks per random movement
 	var/turns_since_move = 0 //number of life ticks since last random movement
 	var/wander = 1 //perform automated random movement when idle
@@ -100,8 +102,8 @@
 	var/busy = 0 // status of the animal, if it is doing a special task (eating, spinning web) we still want it
 	// in HOSTILE_STANCE_IDLE to react to threat but we don't want stop_automated_movement set back to 0 in Life()
 
-	var/fleshcolor = "#666600"
-	var/bloodcolor = "#666600"
+	var/fleshcolor = "#DB0000"
+	var/bloodcolor = "#DB0000"
 	//Armor values for the mob. Works like normal armor values.
 	var/armor = list(
 		melee = 0,
