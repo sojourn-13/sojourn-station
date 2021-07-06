@@ -12,6 +12,8 @@
 /obj/item/weapon/ore/New()
 	..()
 	if(material_randomly_has)
+		if(prob(1))
+			material = MATERIAL_CARDBOARD
 		if(prob(5))
 			material = MATERIAL_MHYDROGEN
 		if(prob(15))
@@ -182,6 +184,17 @@
 
 /obj/item/weapon/ore/hydrogen/small
 	name = "raw hydrogen nugget" //Its a nugget?
+	sheet_amout = 0.5
+
+/obj/item/weapon/ore/cardboard
+	name = "raw cardored"
+	icon_state = "ore_cardboard"
+	material = MATERIAL_MHYDROGEN
+	crushable = FALSE
+	material_randomly_has = FALSE
+
+/obj/item/weapon/ore/cardboard/small
+	name = "raw cardored shard"
 	sheet_amout = 0.5
 
 /obj/item/weapon/ore/slag

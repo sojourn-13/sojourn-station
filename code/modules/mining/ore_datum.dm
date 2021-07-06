@@ -136,3 +136,19 @@ var/global/list/ore_data = list()
 	spread_chance = 5
 	result_amount = 5
 	ore = /obj/item/weapon/ore/hydrogen
+
+/ore/cardbord
+	name = "cardored"
+	display_name = "cardboard ore"
+	smelts_to = "MATERIAL_CARDBOARD"
+	compresses_to = "MATERIAL_WOOD"
+	scan_icon = "mineral_uncommon"
+	xarch_ages = list(
+		"thousand" = 999,
+		"million" = 999,
+		"billion" = 2,
+		"billion_lower" = 1
+		)
+	spread_chance = 5
+	result_amount = 5
+	ore = /obj/item/weapon/ore/cardboard
