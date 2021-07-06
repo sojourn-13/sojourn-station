@@ -115,9 +115,9 @@
 	result = /obj/item/weapon/beartrap/makeshift
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/weapon/tool/saw, 1, "time" = 120),
+		list(/obj/item/weapon/tool/saw, 1, "time" = 20),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(/obj/item/stack/cable_coil, 2, "time" = 10)
 	)
