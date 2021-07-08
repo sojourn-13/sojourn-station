@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/flamethrower
-	name = "\"Vietnam\"-Pattern Flamethrower"
-	desc = "A flamethrower that launch burning globs of napalm. Perfect for burning down jungles and commiting war crimes."
+	name = "\"Hellfire\" Flamethrower"
+	desc = "A flame thrower that launches globs of scorching flames. For dealing with plants, animals, and people complaining about war crimes."
 	icon = 'icons/obj/guns/launcher/backburner.dmi'
 	icon_state = "backburner"
 	fire_delay = 25
