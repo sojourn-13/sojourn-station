@@ -49,7 +49,7 @@
 
 /obj/item/weapon/weldpack/canister/flamethrower
 	name = "flamethrower canister"
-	desc = "Contains all the fuel needed to burn down and jungle and those strange talking trees."
+	desc = "Contains all the fuel needed to burn down any jungle and those strange talking trees."
 	icon = 'icons/obj/guns/launcher/backburner.dmi'
 	icon_state = "canister_g"
 	max_fuel = 200
