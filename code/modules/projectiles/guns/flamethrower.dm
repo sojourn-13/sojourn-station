@@ -3,8 +3,6 @@
 	desc = "A flamethrower that launch burning globs of napalm. Perfect for burning down jungles and commiting war crimes."
 	icon = 'icons/obj/guns/launcher/backburner.dmi'
 	icon_state = "backburner"
-	fire_sound = 'sound/weapons/punchmiss.ogg' // TODO: Decent THWOK noise.
-	fire_sound_text = "a solid thunk"
 	fire_delay = 25
 	slot_flags = SLOT_BACK // Can only fit in the back
 	twohanded = TRUE // Need two hands to shoot.
