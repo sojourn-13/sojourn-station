@@ -215,4 +215,5 @@
 	if(!life)
 		qdel(src)
 
-
+/obj/item/projectile/flamer_lob/flamethrower
+	life = 5
