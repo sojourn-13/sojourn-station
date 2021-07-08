@@ -2385,6 +2385,7 @@
 #include "code\modules\projectiles\guns\alien.dm"
 #include "code\modules\projectiles\guns\breacher.dm"
 #include "code\modules\projectiles\guns\energy.dm"
+#include "code\modules\projectiles\guns\flamethrower.dm"
 #include "code\modules\projectiles\guns\launcher.dm"
 #include "code\modules\projectiles\guns\matter.dm"
 #include "code\modules\projectiles\guns\oddity_items.dm"
