@@ -76,8 +76,9 @@
 /obj/item/projectile/slime_death/on_impact(atom/target)//These two could likely check temp protection on the mob
 	if(isliving(target))
 		if(isslime(target))
+			var/mob/living/carbon/slime/cute = target
 			nodamage = FALSE
-			damage_types = list(CLONE = 1000) //We die
+			cute.death() // The cute slime dies.
 
 /obj/item/projectile/meteor
 	name = "meteor"
