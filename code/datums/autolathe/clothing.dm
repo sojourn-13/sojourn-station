@@ -20,9 +20,9 @@
 	build_path = /obj/item/clothing/shoes/ablasive/iron_lock_security
 
 /datum/design/autolathe/clothing/si_xenobio_hood
-	name = "SI "
+	name = "SI Bio Hood"
 	build_path = /obj/item/clothing/head/bio_hood/cmo/si_made
 
 /datum/design/autolathe/clothing/si_xenobio_suit
-	name = "SI "
-	build_path = /obj/item/clothing/head/bio_hood/cmo/si_made
+	name = "SI Bio Suit"
+	build_path = /obj/item/clothing/suit/bio_suit/cmo/si_made
