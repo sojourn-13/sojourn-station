@@ -445,6 +445,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		isSealed = FALSE
 		invisibility = 0
 		icon_state = "hole"
+		layer = OPEN_DOOR_LAYER //Basiclly we can see this over most things other then closed doors, and the like
 		name = "burrow"
 		desc = "Some sort of hole that leads inside a wall. It's full of hardened resin and secretions. Collapsing this would require some heavy digging tools"
 		var/turf/simulated/floor/F = loc
@@ -568,6 +569,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			qdel(src)
 			return
 	isSealed = TRUE
+	layer = initial(layer)
 	icon_state = initial(icon_state)
 	name = initial(name)
 	desc = initial(desc)

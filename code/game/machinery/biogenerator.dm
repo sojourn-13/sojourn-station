@@ -40,7 +40,7 @@
 			list(name="Phosmet", cost=75, path=/obj/item/weapon/plantspray/pests/old/phosmet),
 		"Leather",
 			list(name="Cloth Sheet", cost=50, path=/obj/item/stack/material/cloth),
-			list(name="Leather Sheet", cost=100, path=/obj/item/stack/material/cloth),
+			list(name="Leather Sheet", cost=800, path=/obj/item/stack/material/leather),//exspensive to make sure that hunters always have a better deal
 			list(name="Wallet", cost=100, path=/obj/item/weapon/storage/wallet),
 			list(name="Botanical gloves", cost=250, path=/obj/item/clothing/gloves/botanic_leather),
 			list(name="Utility belt", cost=300, path=/obj/item/weapon/storage/belt/utility),

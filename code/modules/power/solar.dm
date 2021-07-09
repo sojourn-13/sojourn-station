@@ -21,7 +21,15 @@
 	var/turn_angle = 0
 	var/obj/machinery/power/solar_control/control = null
 
-/obj/machinery/power/solar/Initialize(mapload) //We want to make them like 20% odds to brake but not when made.
+/obj/machinery/power/solar/examine(mob/user)
+	..()
+	if(glass_power >= 1) //Basiclly lets make sure
+		to_chat(user, "<span class='info'>The pannel reads that its glass power is at : [glass_power]</span>")
+	else
+		to_chat(user, "<span class='info'>The pannel's glass is damage or dirty and generationg : [glass_power] well normal rating is 1x or more!</span>")
+
+
+/obj/machinery/power/solar/Initialize() //We want to make them like 20% odds to brake but not when made.
 	..()
 	if(prob(20))
 		broken()
