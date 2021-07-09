@@ -443,6 +443,13 @@
 	siemens_coefficient = 0.7
 	price_tag = 80
 
+/obj/item/clothing/suit/storage/texan
+	name = "ivory texan jacket"
+	desc = "A jacket fit for a Plasma magnate of southern origin. Yeehaw!" // Now you only need a comically large white top hat.
+	icon_state = "texan_jacket"
+	item_state = "texan_jacket"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
 /*Flannel Shirts*/
 
 /obj/item/clothing/suit/storage/toggle/flannel/aqua

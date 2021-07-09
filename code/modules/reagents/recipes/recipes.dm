@@ -407,6 +407,15 @@
 	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
 	return
 
+/datum/chemical_reaction/cardboardification
+	result = null
+	required_reagents = list("woodpulp" = 5, "water" = 5)
+	result_amount = 1
+
+/datum/chemical_reaction/cardboardification/on_reaction(var/datum/reagents/holder, var/created_volume)
+	new /obj/item/stack/material/cardboard(get_turf(holder.my_atom), created_volume)
+	return
+
 /* Grenade reactions */
 
 /datum/chemical_reaction/explosion_potassium
@@ -785,6 +794,7 @@
 /datum/chemical_reaction/carbon
 	result = "carbon"
 	required_reagents = list("woodpulp" = 3)
+	inhibitors = list("water" = 1) // So that we can make ghetto cardboard
 	result_amount = 2
 	maximum_temperature = INFINITY
 	minimum_temperature = 373

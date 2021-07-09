@@ -131,3 +131,11 @@
 	name = "lonestar miner's jumpsuit"
 	icon_state = "miner"
 	item_state = "lb_suit"
+
+/obj/item/clothing/under/outcast
+	name = "tactical baggy rags"
+	desc = "A jury rugged set of baggy pants with leather reinforcement paddings and other fibers, as comfortable as clothes can get when made by whatever you scavenged off the land."
+	icon_state = "tactical_rags"
+	item_state = "tactical_rags"
+	armor = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 5)
+

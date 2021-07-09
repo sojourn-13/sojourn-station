@@ -15,6 +15,10 @@
 	path = /obj/item/clothing/under/top
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/dismas
+	display_name = "highwayman clothes"
+	path = /obj/item/clothing/under/dismas
+
 /datum/gear/uniform/cheongsam
 	display_name = "cheongsam selection"
 	path = /obj/item/clothing/under/cheongsam
@@ -102,6 +106,10 @@
 	display_name = "swimsuit selection"
 	path = /obj/item/clothing/under/swimsuit
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/texansuit
+	display_name = "ivory texan suit"
+	path = /obj/item/clothing/under/top/dimmadome
 
 /datum/gear/uniform/turtleneck
 	display_name = "turtleneck selection"

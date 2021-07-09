@@ -211,6 +211,13 @@
 	icon_state = "dispatch"
 	item_state = "dispatch"
 
+/obj/item/clothing/under/top/dimmadome
+	name = "ivory texan suit"
+	desc = "An ivory set of pants with white shirt and a black collar, perfect for the haughty southerner Plasma magnate. Howdy!"
+	icon_state = "texan_suit"
+	item_state = "texan_suit"
+	
+
 /*Turtlenecks*/
 
 /obj/item/clothing/under/turtleneck/green
@@ -242,6 +249,13 @@
 	name = "grey tactical turtleneck"
 	icon_state = "blackturtle"
 	item_state = "blackturtle"
+
+/obj/item/clothing/under/dismas
+	name = "highwayman clothes"
+	desc = "A set of clothes for a man of dubious morals who seeks redemption on the old road."
+	icon_state = "dismas"
+	item_state = "dismas"
+
 
 /* Church */
 /obj/item/clothing/under/rank/monashka
