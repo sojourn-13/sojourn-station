@@ -64,7 +64,7 @@
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
 	desc = "A navy blue marshal beret."
-	icon_state = "beret_navy_officer"
+	icon_state = "policeberet"
 
 /obj/item/clothing/head/rank/commander/beret
 	name = "warrant officer beret"

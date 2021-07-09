@@ -63,6 +63,10 @@
 	display_name = "punk vest"
 	path = /obj/item/clothing/suit/storage/punkvest
 
+/datum/gear/suit/texan
+	display_name = "ivory texan jacket"
+	path = /obj/item/clothing/suit/storage/texan
+
 /datum/gear/suit/trackjacket
 	display_name = "jacket sport selection"
 	path = /obj/item/clothing/suit/storage/toggle/track

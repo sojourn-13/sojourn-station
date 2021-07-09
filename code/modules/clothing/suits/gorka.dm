@@ -382,3 +382,4 @@
 	name = "green corpsman hood"
 	desc = "A hood from a gorka jacket, oddly robust."
 	icon_state = "gorka_jacket_ih_med_g_hood"
+	

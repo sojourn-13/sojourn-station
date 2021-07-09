@@ -164,7 +164,9 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)
 
-
+/*
+*Outsider crafts
+*/
 
 /datum/craft_recipe/clothing/woodenarmor
 	name = "wooden armor"
@@ -175,3 +177,36 @@
 		list(/obj/item/stack/material/cloth, 5, time = 30),
 		list(QUALITY_CUTTING, 10, 80)
 	)
+
+/datum/craft_recipe/clothing/tac_clothes
+	name = "tactical baggy rags"
+	result = /obj/item/clothing/under/outcast
+	steps = list(
+		list(/obj/item/clothing, 1, time = 30),
+		list(/obj/item/clothing, 1, time = 30),
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_SAWING, 15, 30)
+		)
+
+/datum/craft_recipe/clothing/outsider_cloak
+	name = "outcast's cloak"
+	result = /obj/item/clothing/suit/storage/raggedcape
+	steps = list(
+		list(/obj/item/clothing, 1, time = 30),
+		list(/obj/item/clothing, 1, time = 30),
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_SAWING, 15, 30)
+		)
+
+/datum/craft_recipe/clothing/outsider_hood
+	name = "outcast's hood"
+	result = /obj/item/clothing/head/outcasthood
+	steps = list(
+		list(/obj/item/clothing, 1, time = 30),
+		list(/obj/item/clothing, 1, time = 30),
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_SAWING, 15, 30)
+		)

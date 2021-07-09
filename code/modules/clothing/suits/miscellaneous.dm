@@ -357,3 +357,15 @@ obj/item/clothing/suit/fluff/kimono
 	)
 	body_parts_covered = UPPER_TORSO|ARMS
 	price_tag = 60
+
+/obj/item/clothing/suit/storage/raggedcape
+	name = "outcast's cloak"
+	desc = "A haphazardly-made cloak made of reclaimed leather and other fiber materials, it's all you have for protection...for now."
+	icon_state = "outcast_cloak"
+	item_state = "outcast_cloak"
+	armor = list(melee = 20, bullet = 0, energy = 20, bomb = 0, bio = 5, rad = 5)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	price_tag = 50
+	

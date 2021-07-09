@@ -25,12 +25,14 @@
 
 /decl/hierarchy/outfit/job/outsider
 	name = OUTFIT_JOB_NAME("Outsider")
-	uniform = /obj/item/clothing/under/jeans/standardripped
-	suit = /obj/item/clothing/suit/hooded/cloak
+	uniform = /obj/item/clothing/under/outcast
+	suit = /obj/item/clothing/suit/storage/raggedcape
+	head = /obj/item/clothing/head/outcasthood
 	belt = /obj/item/weapon/storage/belt/utility/handmade/full
 	gloves = /obj/item/clothing/gloves/thick/brown
 	shoes = /obj/item/clothing/shoes/workboots
-	l_ear = null
+	l_ear = /obj/item/weapon/tool/knife/shiv // Let's see if this frees up backpack content space.
 	id_type = null
 	pda_type = null
-	backpack_contents = list(/obj/item/weapon/storage/firstaid/outsider = 1, /obj/item/weapon/tool/knife/shiv = 1, /obj/item/weapon/reagent_containers/food/drinks/flask/lithium = 1)
+	backpack_contents = list(/obj/item/weapon/storage/firstaid/outsider = 1, /obj/item/weapon/reagent_containers/food/drinks/flask/lithium = 1)
+

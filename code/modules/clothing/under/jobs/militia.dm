@@ -114,7 +114,7 @@
 	name = "tactical turtleneck"
 	desc = "A reinforced military turtleneck, designed to provide moderate combat protection."
 	icon_state = "syndicate"
-
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/instructor
@@ -149,6 +149,7 @@
 	name = "commander's combat uniform"
 	desc = "It's a uniform worn by those few with the dedication to achieve the position of \"Blackshield Commander\". It has additional armor to protect the wearer."
 	icon_state = "gorka_ih"
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0) // Let's not lie anymore about the armored aspect of it.
 
 	siemens_coefficient = 0.8
 
