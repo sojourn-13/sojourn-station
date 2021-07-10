@@ -91,3 +91,40 @@
 
 /datum/perk/proc/deactivate()
 	//log_debug("Ah, fuck, I can't believe you've done this.  Perk [src] without a custom defined deactivate called")
+
+/datum/perk/sing
+	name = "Sing"
+	desc = "Sing a song."
+	active = FALSE
+	passivePerk = FALSE
+	gain_text = "You gain the ability to sing !"
+	lose_text = "You lose the ability to sing."
+	var/list/songs = list() // List of all the songs the user know.
+	var/singing = FALSE // Are we singing right now ?
+	var/datum/sing/current_song // The song we are currently singing.
+
+/datum/perk/sing/assign(mob/living/carbon/human/H)
+	..()
+	if(H.stats.getPerk(PERK_ROBOTICS_EXPERT))
+		songs += SONG_AD_MECH
+
+/datum/perk/sing/remove(mob/living/carbon/human/H)
+	songs = list()
+	..()
+
+/datum/perk/sing/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(singing) // We can't start singing if we're already singing.
+		return ..()
+	var/song = input(usr, "What song do you want to sing?") as null|anything in songs
+	if(song)
+		current_song = new song
+		singing = TRUE
+		to_chat(user, "You start singing [current_song.name].")
+		for(var/line in current_song.song) // Saying each line of the song one by one.
+			user.say(line)
+			sleep(50) // Wait a second between each line
+		singing = FALSE // We are done singing.
+		current_song = null

@@ -76,3 +76,4 @@
 #define PERK_DARK_HEAL /datum/perk/dark_heal
 #define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
+#define PERK_SING /datum/perk/sing
