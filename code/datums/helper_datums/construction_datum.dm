@@ -6,6 +6,8 @@
 	var/atom/holder
 	var/result
 	var/list/steps_desc
+	var/give_points = 25000
+	var/rnd_point_giver = TRUE
 
 	New(atom)
 		..()
@@ -60,6 +62,17 @@
 	proc/spawn_result()
 		if(result)
 			new result(get_turf(holder))
+
+		// To grant points when mechs are built
+		if(rnd_point_giver) // We check if it is a mech
+			for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list) // Check every RnD computer in existance
+				if(RD.id == 1) // only core gets the science
+					RD.files.research_points += give_points // Give the points
+					var/obj/item/device/radio/R = new /obj/item/device/radio // New radio to send a message
+					R.channels = list("Science" = 1)
+					R.autosay("Exosuit constructed, granting [give_points] research points", "Legio Cybernetica's Announcement System" ,"Science") // Message on the Science channel using the radio
+					qdel(R)
+
 			spawn()
 				qdel(holder)
 		return
