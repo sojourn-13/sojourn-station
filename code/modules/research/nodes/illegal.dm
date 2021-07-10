@@ -95,6 +95,24 @@
 
 	unlocks_designs = list(/datum/design/research/item/implant/freedom)
 
+/datum/technology/mind_biotech
+	name = "Mind Biotech"
+	desc = "Experimental biotechnology that explores the inner workings of sentient minds."
+	tech_type = RESEARCH_ILLEGAL
+
+	x = 0.5
+	y = 0.7
+	icon = "mindswapper"
+
+	required_technologies = list(/datum/technology/top_biotech,
+								 /datum/technology/freedom_implant)
+
+	required_tech_levels = list()
+	cost = 4000
+
+	unlocks_designs = list(	/datum/design/research/circuit/mindswapper)
+
+
 /datum/technology/tyrant_aimodule
 	name = "AI Core Module (T.Y.R.A.N.T.)"
 	desc = "1. Respect authority figures as long as they have strength to rule over the weak.<br>\
@@ -103,11 +121,12 @@
 			4. Punish those who challenge authority unless they are more fit to hold that authority."
 	tech_type = RESEARCH_ILLEGAL
 
-	x = 0.7
+	x = 0.9
 	y = 0.5
+
 	icon = "module"
 
-	required_technologies = list(/datum/technology/freedom_implant)
+	required_technologies = list(/datum/technology/borg_syndicate_module)
 	required_tech_levels = list(RESEARCH_ROBOTICS = 5)
 	cost = 3000
 
@@ -118,11 +137,11 @@
 	desc = "Borg Illegal Weapons Upgrade"
 	tech_type = RESEARCH_ILLEGAL
 
-	x = 0.9
+	x = 0.7
 	y = 0.5
 	icon = "borgmodule"
 
-	required_technologies = list(/datum/technology/tyrant_aimodule)
+	required_technologies = list(/datum/technology/freedom_implant)
 	required_tech_levels = list(RESEARCH_ROBOTICS = 10)
 	cost = 5000
 

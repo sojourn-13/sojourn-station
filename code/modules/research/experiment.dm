@@ -54,32 +54,32 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	// Points for special slime cores
 	var/static/list/core_points = list(
 		//Level 0 - Gray
-		/obj/item/slime_extract/grey = 500,
+		/obj/item/slime_extract/grey = 3000,
 		//Level 1
-		/obj/item/slime_extract/metal = 750,
-		/obj/item/slime_extract/purple = 750,
-		/obj/item/slime_extract/orange = 750,
-		/obj/item/slime_extract/blue = 750,
+		/obj/item/slime_extract/metal = 4500,
+		/obj/item/slime_extract/purple = 4500,
+		/obj/item/slime_extract/orange = 4500,
+		/obj/item/slime_extract/blue = 4500,
 		//Level 2
-		/obj/item/slime_extract/yellow = 1000,
-		/obj/item/slime_extract/red = 1000,
-		/obj/item/slime_extract/darkpurple = 1000,
-		/obj/item/slime_extract/silver = 1000,
-		/obj/item/slime_extract/gold = 1000,
-		/obj/item/slime_extract/darkblue = 1000,
-		/obj/item/slime_extract/pink = 1000,
-		/obj/item/slime_extract/green = 1000,
+		/obj/item/slime_extract/yellow = 5750,
+		/obj/item/slime_extract/red = 5750,
+		/obj/item/slime_extract/darkpurple = 5750,
+		/obj/item/slime_extract/silver = 5750,
+		/obj/item/slime_extract/gold = 5750,
+		/obj/item/slime_extract/darkblue = 5750,
+		/obj/item/slime_extract/pink = 5750,
+		/obj/item/slime_extract/green = 5750,
 		//Level 3
-		/obj/item/slime_extract/black = 1250,
-		/obj/item/slime_extract/lightpink = 1250,
-		/obj/item/slime_extract/oil = 1250,
-		/obj/item/slime_extract/adamantine = 1250,
+		/obj/item/slime_extract/black = 7500,
+		/obj/item/slime_extract/lightpink = 7500,
+		/obj/item/slime_extract/oil = 7500,
+		/obj/item/slime_extract/adamantine = 7500,
 		//Fancy/Rare
-		/obj/item/slime_extract/pyrite = 5000,
-		/obj/item/slime_extract/cerulean = 5000,
-		/obj/item/slime_extract/sepia = 5000,
-		/obj/item/slime_extract/bluespace = 7500,
-		/obj/item/slime_extract/rainbow = 15000
+		/obj/item/slime_extract/pyrite = 10000,
+		/obj/item/slime_extract/cerulean = 10000,
+		/obj/item/slime_extract/sepia = 10000,
+		/obj/item/slime_extract/bluespace = 15000,
+		/obj/item/slime_extract/rainbow = 25000 //Lots of work for basiclly 1/4th of what RnD can do with a bit of metal
 	)
 
 /*

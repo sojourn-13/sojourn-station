@@ -304,8 +304,7 @@
 	y = 0.9
 	icon = "scalpelmanager"
 
-	required_technologies = list(	/datum/technology/top_biotech,
-									/datum/technology/mind_biotech
+	required_technologies = list(	/datum/technology/top_biotech
 								)
 	required_tech_levels = list()
 	cost = 2000
@@ -322,23 +321,6 @@
 							/datum/design/research/item/mechfab/modules/hud/sec,
 							/datum/design/research/item/mechfab/modules/hud/welder
 							)
-
-
-/datum/technology/mind_biotech
-	name = "Mind Biotech"
-	desc = "Experimental biotechnology that explores the inner workings of sentient minds."
-	tech_type = RESEARCH_BIOTECH
-
-	x = 0.7
-	y = 0.6
-	icon = "mindswapper"
-
-	required_technologies = list(	/datum/technology/top_biotech)
-
-	required_tech_levels = list()
-	cost = 4000
-
-	unlocks_designs = list(	/datum/design/research/circuit/mindswapper)
 
 /datum/technology/rig_medical_stuff
 	name = "RIG Medical Addaptation"
