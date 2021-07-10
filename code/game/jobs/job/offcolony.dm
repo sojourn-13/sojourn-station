@@ -14,7 +14,7 @@
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 
-	perks = list(/datum/perk/job/butcher)
+	perks = list(/datum/perk/job/butcher, PERK_SING)
 	access = list(access_huntmaster)
 
 	stat_modifiers = list(
@@ -55,7 +55,7 @@
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 
-	perks = list(/datum/perk/job/butcher)
+	perks = list(/datum/perk/job/butcher, PERK_SING)
 
 	stat_modifiers = list(
 		STAT_BIO = 20,
@@ -95,7 +95,7 @@
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/outsider
 	difficulty = "Impossible!"
-
+	perks = list(PERK_SING)
 	stat_modifiers = list(
 		STAT_BIO = 5,
 		STAT_TGH = 6,

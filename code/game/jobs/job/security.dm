@@ -32,7 +32,7 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect, PERK_SING)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -90,7 +90,7 @@
 		STAT_VIG = 30,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect, PERK_SING)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -146,7 +146,7 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, PERK_SING)
 
 	description = "The Supply Specialist is the right hand of the warrant officer and the defacto controller of the armory and armory shop. <br>\
 	Your role is mainly a desk job - with duties rarely taking you outside of the colony or even the armory.<br>\
@@ -193,7 +193,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect, PERK_SING)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -236,7 +236,7 @@
 		access_external_airlocks, access_prospector, access_brig, access_kitchen, access_medical_suits
 	)
 
-	perks = list(/datum/perk/ear_of_quicksilver)
+	perks = list(/datum/perk/ear_of_quicksilver, PERK_SING)
 
 	stat_modifiers = list(
 		STAT_BIO = 15,
@@ -293,7 +293,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise)
+	perks = list(/datum/perk/medicalexpertise, PERK_SING)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/suit_sensors,
@@ -333,7 +333,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
-	perks = list(/datum/perk/job/bolt_reflect,/datum/perk/job/blackshield_conditioning)
+	perks = list(/datum/perk/job/bolt_reflect,/datum/perk/job/blackshield_conditioning, PERK_SING)
 
 	access = list(
 		access_security, access_eva,
@@ -380,6 +380,8 @@
 	//alt_titles = list("Marshal Junior Operative")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+
+	perks = list(PERK_SING)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
 

@@ -30,7 +30,7 @@
 		STAT_COG = 25
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci, PERK_SING)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -82,7 +82,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, PERK_SING)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -118,7 +118,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
 
-	perks = list(/datum/perk/medicalexpertise) //Nurses should be able to get bare bone basics
+	perks = list(/datum/perk/medicalexpertise, PERK_SING) //Nurses should be able to get bare bone basics
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits,
@@ -171,7 +171,7 @@
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)
 
-	perks = list(/datum/perk/medicalexpertise) //Your trained for this.
+	perks = list(/datum/perk/medicalexpertise, PERK_SING) //Your trained for this.
 
 	stat_modifiers = list(
 		STAT_BIO = 25,
@@ -223,7 +223,7 @@
 		STAT_VIG = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise)
+	perks = list(/datum/perk/medicalexpertise, PERK_SING)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,

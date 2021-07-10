@@ -107,6 +107,8 @@
 	..()
 	if(H.stats.getPerk(PERK_ROBOTICS_EXPERT))
 		songs += SONG_AD_MECH
+	if(H.stats.getPerk(PERK_BOLT_REFLECT))
+		songs += SONG_EDF
 
 /datum/perk/sing/remove(mob/living/carbon/human/H)
 	songs = list()
@@ -124,7 +126,8 @@
 		singing = TRUE
 		to_chat(user, "You start singing [current_song.name].")
 		for(var/line in current_song.song) // Saying each line of the song one by one.
-			user.say(line)
+			if(line != "") // So that we can have pauses where we don't say anything.
+				user.say(line)
 			sleep(50) // Wait a second between each line
 		singing = FALSE // We are done singing.
 		current_song = null
