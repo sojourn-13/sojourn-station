@@ -65,7 +65,7 @@
 				listclearnulls(steps);
 				if(!steps.len)
 					spawn_result()
-				return 1
+			return 1
 	return 0
 
 
