@@ -26,6 +26,27 @@
 
 /obj/machinery/recharge_station/Initialize()
 	. = ..()
+	RefreshParts()
+	update_icon()
+
+/obj/machinery/recharge_station/robotics
+
+/obj/machinery/recharge_station/robotics/Initialize()
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/weapon/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/weapon/stock_parts/manipulator/pico(null)
+	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/weapon/cell/large/moebius/super(null) //has better cell do to being for robotics
+	component_parts += new /obj/item/stack/cable_coil{amount = 5}(null)
+	RefreshParts()
+	update_icon()
+
+/obj/machinery/recharge_station/upgraded_t_three
+
+/obj/machinery/recharge_station/upgraded_t_three/Initialize()
+	. = ..()
 	component_parts = list()
 	component_parts += new /obj/item/weapon/stock_parts/capacitor/super(null)
 	component_parts += new /obj/item/weapon/stock_parts/manipulator/pico(null)
