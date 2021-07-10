@@ -260,6 +260,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/tool/robotic_omni_standard(src)
 	src.modules += new /obj/item/weapon/tool/tape_roll/fiber/robotic(src) //Window repair
+	src.modules += new /obj/item/weapon/tool/weldingtool/robotic/weaker(src) //hardsuits.
 	src.modules += new /obj/item/device/scanner/health(src)
 	src.modules += new /obj/item/weapon/gripper(src)
 	src.modules += new /obj/item/device/t_scanner(src)
