@@ -151,10 +151,9 @@
 /datum/gear/utility/guitar
 	display_name = "synthesized guitar"
 	path = /obj/item/device/synthesized_instrument/guitar
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/utility/synthesized
-	display_name = "synthesized guitar"
+	display_name = "synthesizer"
 	path = /obj/item/device/synthesized_instrument/synthesizer
 
 /datum/gear/utility/trumpet
