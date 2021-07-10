@@ -6,8 +6,8 @@
 	var/atom/holder //What object are we apart of?
 	var/result //What do we give at the end of all are steps?
 	var/list/steps_desc //What are the desc for steps?
-	var/give_points = 1 //How many points do we give?
-	var/rnd_point_giver = TRUE //Do we even give points?
+	var/give_points = 0 //How many points do we give?
+	var/rnd_point_giver = FALSE //Do we even give points?
 
 /datum/construction/New(atom)
 	..()
@@ -78,10 +78,10 @@
 		for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list) // Check every RnD computer in existance
 			if(RD.id == 1) // only core gets the science
 				RD.files.research_points += give_points // Give the points
-				var/obj/item/device/radio/R = new /obj/item/device/radio // New radio to send a message
-				R.channels = list("Science" = 1)
-				R.autosay("Exosuit constructed, granting [give_points] research points", "Legio Cybernetica's Announcement System" ,"Science") // Message on the Science channel using the radio
-				qdel(R)
+				var/obj/item/device/radio/radio
+				radio = new /obj/item/device/radio{channels=list("Science")}(src) // Create a new radio
+				radio.autosay("Exosuit constructed, granting [give_points] research points.", "Legio Cybernetica's Announcement System", "Science") // Make the radio say a message.
+				spawn(50) qdel(radio) // Wait 5 seconds before deleting the radio
 
 		spawn()
 			qdel(holder)
