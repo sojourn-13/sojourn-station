@@ -274,7 +274,7 @@
 	name = "cyborg auto-repair platform"
 	desc = "An automated repair system, designed to repair drones and cyborgs that stand on it."
 	icon = 'icons/mecha/mech_bay.dmi'
-	icon_state = "recharge_floor"
+	icon_state = "recharge_floor_robotic"
 	anchored = TRUE
 	density = FALSE
 	layer = TURF_LAYER + 0.1
