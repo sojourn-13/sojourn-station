@@ -8,7 +8,9 @@
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
 
-	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/bigknife)
+	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,
+							  /obj/item/borg/upgrade/jetpack,
+							  /obj/item/borg/upgrade/bigknife)
 
 	health = 210 //Very tanky!
 	speed_factor = 1.1 //Kinda slow
@@ -18,22 +20,22 @@
 		STAT_ROB = 60,
 		STAT_TGH = 60,
 		STAT_BIO = 25,
-		STAT_COG = 60
+		STAT_COG = 120,
+		STAT_MEC = 15 //weldering cracks
 	)
 
 	desc = "Focused on keeping the peace and fighting off threats to the colony, the IH K9 Module is a \
 	heavily armored, though lightly armed battle unit."
 
 /obj/item/weapon/robot_module/robot/knine/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
 	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
-	src.modules += new /obj/item/weapon/tool/knife/tacknife(src) //To deal with bodies and cutting down webs
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //borrows and the like.
+	src.modules += new /obj/item/weapon/tool/robotic_omni_sec(src) //borrows and the like.
+	src.modules += new /obj/item/weapon/tool/weldingtool/robotic/weaker(src) //cracks and the like.
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
@@ -73,14 +75,17 @@
 	channels = list("Medical" = 1)
 	networks = list(NETWORK_MEDICAL)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,
+							  /obj/item/borg/upgrade/jetpack,
+							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 	health = 85 //Fragile
 	speed_factor = 1.0 //Kinda slow
 	power_efficiency = 0.7 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
 		STAT_BIO = 60,
-		STAT_COG = 30
+		STAT_COG = 120,
+		STAT_MEC = 15 //weldering cracks
 	)
 
 	desc = "A versatile medical hound, equipped with all the tools necessary for surgery, chemistry, and \
@@ -94,17 +99,13 @@
 	src.modules += new /obj/item/borg/sight/hud/med(src)
 	src.modules += new /obj/item/device/scanner/health(src)
 	src.modules += new /obj/item/weapon/reagent_containers/borghypo/medical(src)
-	src.modules += new /obj/item/weapon/tool/scalpel(src)
-	src.modules += new /obj/item/weapon/tool/hemostat(src)
-	src.modules += new /obj/item/weapon/tool/retractor(src)
-	src.modules += new /obj/item/weapon/tool/cautery(src)
-	src.modules += new /obj/item/weapon/tool/bonesetter(src)
-	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/tool/tape_roll/bonegel(src)
+	src.modules += new /obj/item/weapon/tool/robotic_omni_surgery(src)
+	src.modules += new /obj/item/weapon/tool/weldingtool/robotic/weaker(src) //hardsuits.
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src) //Two beakers
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
 	src.modules += new /obj/item/roller_holder(src)
@@ -169,7 +170,8 @@
 					)
 	channels = list("Service" = 1)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
+							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 	health = 175 //Bulky
 	speed_factor = 1.1 //Slow
@@ -179,14 +181,14 @@
 		STAT_ROB = 25,
 		STAT_TGH = 25,
 		STAT_BIO = 25,
-		STAT_COG = 60
+		STAT_COG = 120,
+		STAT_MEC = 15 //weldering cracks
 	)
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
 	but requiring a large capacity. The huge chassis consequentially grants it a degree of toughness, \
 	though it is slow and cheaply made"
 
 /obj/item/weapon/robot_module/robot/scrubpup/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/weapon/gripper/service(src)
 	src.modules += new /obj/item/weapon/soap/deluxe(src)
@@ -196,8 +198,7 @@
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src) // a hydroponist's bucket
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //borrows and the like.
+	src.modules += new /obj/item/weapon/tool/robotic_omni_cleaner(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
@@ -247,24 +248,20 @@
 
 	stat_modifiers = list(
 		STAT_BIO = 40,
-		STAT_COG = 80,
+		STAT_COG = 120,
 		STAT_MEC = 30
 	)
 
 /obj/item/weapon/robot_module/robot/science/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/weapon/portable_destructive_analyzer(src)
+	//src.modules += new /obj/item/weapon/portable_destructive_analyzer(src) dosnt work
 	src.modules += new /obj/item/weapon/gripper/research(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
 	src.modules += new /obj/item/device/robotanalyzer(src)
 	src.modules += new /obj/item/weapon/card/robot(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src) //Robotic repair and such
-	src.modules += new /obj/item/weapon/tool/scalpel(src)
-	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro
+	src.modules += new /obj/item/weapon/tool/robotic_omni_sci(src)
+	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro checks for tool rather then use
+	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/weapon/robot_harvester(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
@@ -272,13 +269,12 @@
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
-	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.modules += new /obj/item/weapon/storage/bag/produce(src)
 	src.modules += new /obj/item/device/science_tool(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.modules += new /obj/item/weapon/storage/part_replacer/mini(src)
+	src.modules += new /obj/item/weapon/storage/part_replacer(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag = new /obj/item/weapon/hand_tele(src) //Why
 	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
@@ -308,7 +304,9 @@
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,
+							  /obj/item/borg/upgrade/rcd,
+							  /obj/item/borg/upgrade/jetpack)
 
 	health = 170 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
@@ -319,7 +317,7 @@
 	engineering tasks."
 
 	stat_modifiers = list(
-		STAT_COG = 80,
+		STAT_COG = 120,
 		STAT_MEC = 40,
 		STAT_BIO = 25
 	)
@@ -331,16 +329,9 @@
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/rcd/borg(src)
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/knife(src) //To deal with bodies and cutting down webs
-	src.modules += new /obj/item/weapon/tool/hammer(src)
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //borrows and the like.
-	src.modules += new /obj/item/weapon/tool/saw(src)
-	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
+	src.modules += new /obj/item/weapon/tool/robotic_omni_engi(src)
+	src.modules += new /obj/item/weapon/tool/tape_roll/fiber/robotic(src) //Window repair
 	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/scanner/gas(src)
