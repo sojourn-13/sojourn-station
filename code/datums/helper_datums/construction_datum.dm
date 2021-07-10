@@ -125,7 +125,7 @@
 		var/obj/item/I = used_atom
 		var/selected = I.get_tool_type(user, possibleWays, holder)
 		return selected && possibleWays[selected]
-		return FALSE
+	return FALSE
 
 /datum/construction/reversible/check_step(atom/used_atom, mob/user as mob)
 	var/diff = is_right_key(user, used_atom)
