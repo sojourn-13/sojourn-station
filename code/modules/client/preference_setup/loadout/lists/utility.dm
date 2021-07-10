@@ -149,8 +149,12 @@
 	path = /obj/item/weapon/tool/tape_roll
 
 /datum/gear/utility/guitar
-	display_name = "synthesized guitar"
+	display_name = "guitar"
 	path = /obj/item/device/synthesized_instrument/guitar
+
+/datum/gear/utility/guitar_e
+	display_name = "polyguitar guitar"
+	path = /obj/item/device/synthesized_instrument/guitar/multi
 
 /datum/gear/utility/synthesized
 	display_name = "synthesizer"
