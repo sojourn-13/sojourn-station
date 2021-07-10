@@ -26,7 +26,7 @@
 				"There is no constancy in flesh, only decay.",
 				"There is no certainty in flesh but death.",
 				"",
-				"From the weakness of the mind, Omnissia,h save us.",
+				"From the weakness of the mind, Omnissiah, save us.",
 				"From the lies of the Antipath, Circuit, preserve us.",
 				"From the rage of the Beast, Iron, protect us.",
 				"From the temptations of the Fleshlord, Silica, cleanse us.",
