@@ -36,13 +36,17 @@
 	src.modules += new /obj/item/taperoll/police(src)
 	src.modules += new /obj/item/weapon/tool/robotic_omni_sec(src) //borrows and the like.
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic/weaker(src) //cracks and the like.
+	src.modules += new /obj/item/weapon/tool/knife/tacknife(src)
+	src.modules += new /obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo(src)
+	src.modules += new /obj/item/weapon/gripper/ammo(src)
+	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
 	//src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs - its broken
-	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
+	src.emag += new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
 
 	R.icon 		 = 'icons/mob/robots_wide.dmi'
 	R.pixel_x 	 = -16
@@ -78,9 +82,9 @@
 	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,
 							  /obj/item/borg/upgrade/jetpack,
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
-	health = 85 //Fragile
-	speed_factor = 1.0 //Kinda slow
-	power_efficiency = 0.7 //Very poor, shackled to a charger
+	health = 120 //Fragile
+	speed_factor = 1.25 //Bit faster
+	power_efficiency = 0.9 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
 		STAT_BIO = 60,
@@ -109,11 +113,12 @@
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
 	src.modules += new /obj/item/roller_holder(src)
+	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
+	src.emag += new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
 	src.emag.name = "Polyacid spray"
 
@@ -199,11 +204,12 @@
 	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/weapon/tool/robotic_omni_cleaner(src)
+	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
+	src.emag += new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
 
@@ -236,7 +242,8 @@
 					)
 	channels = list("Science" = 1)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
+							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 	health = 115 //Weak
 	speed_factor = 1.3 //Average
@@ -275,9 +282,10 @@
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/weapon/storage/part_replacer(src)
+	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/hand_tele(src) //Why
-	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
+	src.emag += new /obj/item/weapon/hand_tele(src) //Why
+	src.emag += new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
 	synths += nanite
@@ -327,7 +335,6 @@
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
-	src.modules += new /obj/item/weapon/rcd/borg(src)
 	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
 	src.modules += new /obj/item/weapon/tool/robotic_omni_engi(src)
@@ -346,8 +353,9 @@
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
+	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
+	src.emag += new /obj/item/weapon/tool/saw/hyper(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass(40000)

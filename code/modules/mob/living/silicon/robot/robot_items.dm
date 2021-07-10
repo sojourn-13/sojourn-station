@@ -425,7 +425,6 @@
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
-	max_upgrades = 0
 
 /obj/item/weapon/tool/robotic_omni_standard
 	name = "Standard omni tool"
@@ -440,7 +439,6 @@
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
-	max_upgrades = 0
 
 /obj/item/weapon/tool/robotic_omni_miner
 	name = "Miner omni tool"
@@ -454,7 +452,6 @@
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
-	max_upgrades = 0
 
 /obj/item/weapon/tool/robotic_omni_sec
 	name = "Security omni tool"
@@ -469,7 +466,6 @@
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
-	max_upgrades = 0
 
 /obj/item/weapon/tool/robotic_omni_cleaner
 	name = "Borrow Omni tool"
@@ -484,7 +480,6 @@
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
-	max_upgrades = 0
 
 /obj/item/weapon/tool/robotic_omni_sci
 	name = "Science Omni tool"
@@ -502,7 +497,6 @@
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
-	max_upgrades = 0
 
 /obj/item/weapon/tool/crowbar/robotic
 	icon = 'icons/obj/robot_items.dmi'
@@ -549,7 +543,6 @@
 	use_power_cost = 0 //Dosnt legitmently use power
 	suitable_cell = null
 	degradation = 0
-	max_upgrades = 0
 
 // -----------------------------
 //           Bags

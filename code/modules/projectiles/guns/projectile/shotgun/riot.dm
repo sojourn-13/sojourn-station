@@ -28,3 +28,25 @@
 	init_firemodes = list(
 		list(mode_name="semiauto", burst=1, fire_delay=3, move_delay=null, icon="semi")
 		)
+
+/obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo
+	name = "intergrated \"State\" riot shotgun"
+	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Gladstone\" design. \
+	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
+	Holds up to six 20mm shells in a tube magazine."
+	icon = 'icons/obj/robot_items.dmi'
+	icon_state = "riot_shotgun"
+	item_state = "riot_shotgun"
+	damage_multiplier = 0.7 //Pug has 0.7 do to its fire normal modes
+	recoil_buildup = 0
+	one_hand_penalty = 0
+	max_shells = 6
+
+
+/obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo/single_shot
+	name = "intergrated single barrel shotgun"
+	desc = "A auto ejecting single barrel shotgun for mining borgs to handle pesky critters in the underground."
+	icon_state = "miner_shotgun"
+	item_state = "miner_shotgun"
+	damage_multiplier = 1
+	max_shells = 1
