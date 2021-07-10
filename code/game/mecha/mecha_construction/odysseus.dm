@@ -20,7 +20,7 @@
 		return
 
 /datum/construction/reversible/mecha/odysseus
-	give_points = 25000 //How many points do we give?
+	give_points = 17500 //How many points do we give?
 	rnd_point_giver = TRUE //Do we even give points?
 
 	result = /obj/mecha/medical/odysseus
