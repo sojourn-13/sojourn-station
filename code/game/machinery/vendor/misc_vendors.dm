@@ -526,6 +526,8 @@
 		/obj/item/clothing/under/dress = 5,
 		/obj/item/clothing/under/dress/blue = 5,
 		/obj/item/clothing/under/dress/red = 5,
+		/obj/item/clothing/under/dismas = 5,
+		/obj/item/clothing/under/top/dimmadome = 5,
 		/obj/item/clothing/under/leisure = 5,
 		/obj/item/clothing/under/leisure/white = 5,
 		/obj/item/clothing/under/leisure/pullover = 5,
@@ -537,6 +539,7 @@
 		/obj/item/clothing/under/neon/blue = 5,
 		/obj/item/clothing/under/neon/red = 5,
 		//Over Clothing
+		/obj/item/clothing/suit/storage/texan = 2,
 		/obj/item/clothing/suit/storage/triad = 2,
 		/obj/item/clothing/suit/storage/akira = 2,
 		/obj/item/clothing/suit/storage/aerostatic_bomber_jacket = 3,
@@ -688,6 +691,8 @@
 		/obj/item/clothing/under/dress = 75,
 		/obj/item/clothing/under/dress/blue = 75,
 		/obj/item/clothing/under/dress/red = 75,
+		/obj/item/clothing/under/dismas = 75,
+		/obj/item/clothing/under/top/dimmadome = 75,
 		/obj/item/clothing/under/leisure = 75,
 		/obj/item/clothing/under/leisure/white = 75,
 		/obj/item/clothing/under/leisure/pullover = 75,
@@ -699,6 +704,7 @@
 		/obj/item/clothing/under/neon/blue = 55,
 		/obj/item/clothing/under/neon/red = 55,
 		//Over Clothing
+		/obj/item/clothing/suit/storage/texan = 100,
 		/obj/item/clothing/suit/storage/triad = 120,
 		/obj/item/clothing/suit/storage/akira = 75,
 		/obj/item/clothing/suit/storage/aerostatic_bomber_jacket = 130,
