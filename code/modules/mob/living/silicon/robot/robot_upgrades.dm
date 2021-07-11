@@ -236,6 +236,8 @@
 		for(var/obj/item/weapon/reagent_containers/borghypo/H in R.module.modules)
 			if(H.accepts_reagent_upgrades)
 				H.reagent_ids += additional_reagents
+				return TRUE
+
 
 /obj/item/borg/upgrade/hypospray/medical
 	additional_reagents = list("dermaline", "meralyne", "tricordrazine", "dexalinp")

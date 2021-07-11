@@ -22,6 +22,7 @@
 		/obj/item/weapon/circuitboard,
 		/obj/item/device/assembly,//Primarily for making improved cameras, but opens many possibilities
 		/obj/item/weapon/computer_hardware,
+		/obj/item/weapon/tool_upgrade,
 		/obj/item/stack/tile //Repair floors yay
 		)
 
@@ -276,6 +277,30 @@
 		/obj/item/clothing/mask/smokable/cigarette,
 		///obj/item/weapon/reagent_containers/cooking_container //PArt of cooking overhaul, not yet ported
 		)
+
+/obj/item/weapon/gripper/ammo //Used to boxes, ammo and shells
+	name = "ammo gripper"
+	icon_state = "gripper-ammo"
+	desc = "A gripper used for loading guns and ammo into boxes."
+
+	can_hold = list(
+		/obj/item/ammo_casing,
+		/obj/item/ammo_kit,
+		/obj/item/ammo_magazine,
+		/obj/item/mech_ammo_box
+		)
+
+
+/obj/item/weapon/gripper/upgrade //Used to boxes, ammo and shells
+	name = "tool mod gripper"
+	icon_state = "gripper-toolstuff"
+	desc = "A gripper used to upgrade a borgs tools only holds mods and spare fuel."
+
+	can_hold = list(
+		/obj/item/weapon/tool_upgrade,
+		/obj/item/weapon/weldpack/canister
+		)
+
 
 /obj/item/weapon/gripper/no_use //Used when you want to hold and put items in other things, but not able to 'use' the item
 
