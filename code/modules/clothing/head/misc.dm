@@ -259,3 +259,35 @@
 		bio = 20,
 		rad = 25
 	)
+
+/*
+ * Ushanka
+ */
+/obj/item/clothing/head/ushanka
+	name = "ushanka"
+	desc = "A warm, black fur cap with a soviet design."
+	icon_state = "ushanka"
+	item_state = "ushanka"
+	flags_inv = HIDEEARS
+
+// No more bulky ushanka, no need for this.
+/*
+/obj/item/clothing/head/ushanka/attack_self(mob/user as mob)
+	if(src.icon_state == "ushankadown")
+		src.icon_state = "ushankaup"
+		to_chat(user, "You raise the ear flaps on the ushanka.")
+	else
+		src.icon_state = "ushankadown"
+		to_chat(user, "You lower the ear flaps on the ushanka.")
+*/
+
+// Hood for the Outsider cloak
+
+/obj/item/clothing/head/outcasthood
+	name = "outcast's hood"
+	desc = "A raggedy hood from your trusty cloak, can be used to hide your face from the harmful looks of others."
+	icon_state = "ragged_hood"
+	item_state = "ragged_hood"
+	flags_inv = HIDEEARS|BLOCKHAIR
+	armor = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
+
