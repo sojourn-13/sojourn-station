@@ -25,6 +25,9 @@
 
 
 /datum/construction/reversible/mecha/gygax
+	give_points = 25000 //How many points do we give?
+	rnd_point_giver = TRUE //Do we even give points?
+
 	result = /obj/mecha/combat/gygax
 	steps = list(
 		//1

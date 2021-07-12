@@ -28,6 +28,9 @@
 
 
 /datum/construction/reversible/mecha/durand
+	give_points = 20000 //How many points do we give?
+	rnd_point_giver = TRUE //Do we even give points?
+
 	result = /obj/mecha/combat/durand
 	steps = list(
 		//1
