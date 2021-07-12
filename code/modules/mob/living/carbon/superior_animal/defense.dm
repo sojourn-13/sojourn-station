@@ -52,6 +52,8 @@
 	updatehealth()
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, var/params)
+	if(AI_inactive && health >= 1)
+		activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
 	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities))
 		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
 			harvest(user)
@@ -225,6 +227,8 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 
 /mob/living/carbon/superior_animal/updatehealth()
 	. = ..() //health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
+	if(AI_inactive && health >= 1)
+		activate_ai() //Were getting harmed or something tryed!
 	if (health <= 0)
 		death()
 
@@ -242,6 +246,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
+	AI_inactive = TRUE //Optimation, were dead
 	playsound(src.loc, 'sound/effects/splat.ogg', max(10,min(50,maxHealth)), 1)
 	if (do_gibs)
 		gibs(src.loc, null, gibspawner_type, fleshcolor, bloodcolor)
@@ -252,6 +257,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		anim = 0
 
 	playsound(src.loc, 'sound/effects/Custom_flare.ogg', max(10,min(50,maxHealth)), 1)
+	AI_inactive = TRUE //Optimation, were dead
 	. = ..(anim,remains)
 
 /mob/living/carbon/superior_animal/death(var/gibbed,var/message = deathmessage)
@@ -264,9 +270,13 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		density = 0
 		layer = LYING_MOB_LAYER
 
+	AI_inactive = TRUE //Optimation, were dead
+
 	. = ..()
 
 /mob/living/carbon/superior_animal/rejuvenate()
+	if(AI_inactive)
+		activate_ai() //I LIVE AGAIN
 	density = initial(density)
 	layer = initial(layer)
 
