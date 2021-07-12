@@ -217,7 +217,7 @@
 	icon = "greysonroboticleg"
 
 	required_technologies = list()
-	required_tech_levels = list(RESEARCH_BIOTECH = 14, RESEARCH_ROBOTICS = 15) //Max bio and good robotics
+	required_tech_levels = list(RESEARCH_BIOTECH = 13, RESEARCH_ROBOTICS = 15) //Max bio and good robotics
 
 	unlocks_designs = list(/datum/design/research/item/mechfab/prosthesis_grayson/r_arm,
 						   /datum/design/research/item/mechfab/prosthesis_grayson/l_arm,
