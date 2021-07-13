@@ -11,6 +11,14 @@
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD)
 	)
 
+/datum/craft_recipe/weapon/rollingpin
+	name = "rolling pin"
+	result = /obj/item/weapon/material/kitchen/rollingpin
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD)
+	)
+
 /datum/craft_recipe/weapon/knife_blade
 	name = "butterfly knife blade"
 	result = /obj/item/weapon/material/butterflyblade

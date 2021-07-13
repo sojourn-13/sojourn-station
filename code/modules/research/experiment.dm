@@ -324,6 +324,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			for(var/list/artifact in scanned_artifacts)
 				if(artifact["type"] == report.artifact_type && artifact["first_effect"] == report.artifact_first_effect && artifact["second_effect"] == report.artifact_second_effect)
 					to_chat(user, SPAN_NOTICE("[src] already has data about this artifact report"))
+					flick("science3", src)
 					return
 
 			scanned_artifacts += list(list(
@@ -417,13 +418,16 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	if(scanneddata > 0)
 		datablocks += scanneddata
 		to_chat(user, SPAN_NOTICE("[src] received [scanneddata] data block[scanneddata>1?"s":""] from scanning [O]"))
+		flick("science2", src)
 
 	else if(istype(O, /obj/item))
 		var/science_value = experiments.get_object_research_value(O)
 		if(science_value > 0)
 			to_chat(user, SPAN_NOTICE("Estimated research value of [O.name] is [science_value]"))
+			flick("science2", src)
 		else
 			to_chat(user, SPAN_NOTICE("[O] has no research value"))
+			flick("science3", src)
 
 /obj/item/device/science_tool/proc/clear_data()
 	scanned_autopsy_weapons = list()
