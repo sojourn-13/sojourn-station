@@ -121,6 +121,7 @@
 	var/projectilesound //What sound do we make when firing
 	var/casingtype      //Do we leave casings after shooting?
 	var/ranged_cooldown //What is are modular cooldown, in seconds.
+	var/ranged_middlemouse_cooldown = 0 //For when people are controling them and firing, do we have a cooldown? Modular for admins to tweak.
 	var/fire_verb       //what does it do when it shoots?
 	//ammo stuff
 	var/limited_ammo = FALSE //Do we run out of ammo?

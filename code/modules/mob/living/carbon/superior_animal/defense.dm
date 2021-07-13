@@ -52,8 +52,7 @@
 	updatehealth()
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, var/params)
-	if(AI_inactive && health >= 1)
-		activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
+	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
 	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities))
 		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
 			harvest(user)
@@ -227,8 +226,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 
 /mob/living/carbon/superior_animal/updatehealth()
 	. = ..() //health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
-	if(AI_inactive && health >= 1)
-		activate_ai() //Were getting harmed or something tryed!
+	activate_ai()
 	if (health <= 0)
 		death()
 

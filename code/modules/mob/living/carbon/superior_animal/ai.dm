@@ -116,3 +116,16 @@
 		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
 			following = null
 			visible_emote("[stop_message]")
+
+//Putting this here do to no idea were it would fit other then here
+/mob/living/carbon/superior_animal/verb/toggle_AI()
+	set name = "Toggle AI"
+	set desc = "Toggles on/off the mobs AI."
+	set category = "Mob verbs"
+
+	if (AI_inactive)
+		activate_ai()
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
+	else
+		AI_inactive = TRUE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
