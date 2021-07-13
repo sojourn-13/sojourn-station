@@ -15,7 +15,7 @@
 	var/recent_fail = 0
 
 /obj/item/device/scanner/mass_spectrometer/is_valid_scan_target(atom/O)
-	if(!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 20)) //Takes 15 bio so 20 cog
+	if(!usr.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 20)) //Takes 15 bio so 20 cog
 		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
 		return
 
