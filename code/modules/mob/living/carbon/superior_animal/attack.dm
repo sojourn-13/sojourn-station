@@ -18,6 +18,12 @@
 		if (attack_sound && loc && prob(attack_sound_chance))
 			playsound(loc, attack_sound, attack_sound_volume, 1)
 
+/mob/living/carbon/superior_animal/verb/break_around()
+	set name = "Attack Surroundings "
+	set desc = "Lash out on the your surroundings | Forcefully attack your surroundings."
+	set category = "Mob verbs"
+
+	src.destroySurroundings()
 
 /mob/living/carbon/superior_animal/RangedAttack()
 	if(ranged)
@@ -94,3 +100,11 @@
 	if(!A)	return
 	var/def_zone = get_exposed_defense_zone(target)
 	A.launch(target, def_zone)
+
+/mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
+	var /mob/living/carbon/superior_animal/shooter = src //TODO: Make it work for alt click in perfs like rig code
+	if(ranged_middlemouse_cooldown >= world.time) //Modula for admins to set them at different things
+		to_chat(src, "You gun isnt ready to fire!.")
+		return
+	if(shooter.ranged ==1)
+		shooter.OpenFire(targetDD)

@@ -205,6 +205,7 @@
 
 /mob/living/simple_animal/updatehealth()
 	..()
+	activate_ai()
 	if (health <= 0 && stat != DEAD)
 		death()
 
@@ -395,6 +396,7 @@
 
 /mob/living/simple_animal/rejuvenate()
 	..()
+	activate_ai()
 	health = maxHealth
 	density = initial(density)
 	update_icons()
@@ -509,6 +511,7 @@
 	movement_target = null
 	icon_state = icon_dead
 	density = 0
+	AI_inactive = TRUE //Were dead
 	return ..(gibbed,deathmessage)
 
 /mob/living/simple_animal/ex_act(severity)
@@ -730,6 +733,17 @@
 	to_chat(src, span("notice","You are now [resting ? "resting" : "getting up"]"))
 	update_icons()
 
+/mob/living/simple_animal/verb/toggle_AI()
+	set name = "Toggle AI"
+	set desc = "Toggles on/off the mobs AI."
+	set category = "Mob verbs"
+
+	if (AI_inactive)
+		activate_ai()
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
+	else
+		AI_inactive = TRUE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
 
 //This is called when an animal 'speaks'. It does nothing here, but descendants should override it to add audio
 /mob/living/simple_animal/proc/speak_audio()

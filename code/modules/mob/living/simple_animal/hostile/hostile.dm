@@ -310,3 +310,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
 			if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/railing))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+
+/mob/living/simple_animal/hostile/verb/break_around()
+	set name = "Attack Surroundings "
+	set desc = "Lash out on the your surroundings | Forcefully attack your surroundings."
+	set category = "Mob verbs"
+
+	src.DestroySurroundings()
