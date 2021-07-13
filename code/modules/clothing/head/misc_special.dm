@@ -122,3 +122,10 @@
 		slot_r_hand_str = "norah_briggs1",
 		)
 
+/obj/item/clothing/head/matriarch_cape
+	name = "Matriarch Cape"
+	desc = "A cape made from the hide of a xenomorph queen. The skill and experience required to hunt such a beast shows that the individual wearing this \
+			is none other than the Matriarch of the Hunting Lodge."
+	icon_state = "matriarch_cape"
+	item_state = "matriarch_cape"
+	armor = list(melee = 45, bullet = 25, energy = 25, bomb = 25, bio = 20, rad = 15)
