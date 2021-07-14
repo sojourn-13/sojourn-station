@@ -65,9 +65,10 @@
 
 	var/obj/item/weapon/stock_parts/matter_bin/storage = null
 
-	var/opened = 0
-	var/emagged = 0
-	var/wiresexposed = 0
+	var/opened = FALSE
+	var/emagged = FALSE
+	var/emagged_items_given = TRUE
+	var/wiresexposed = FALSE
 	var/locked = TRUE
 	var/has_power = 1
 	var/death_notified = FALSE

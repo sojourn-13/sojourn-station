@@ -135,6 +135,7 @@ var/global/list/robot_modules = list(
 		R.radio.recalculateChannels()
 
 	R.handle_regular_hud_updates()
+	R.emagged_items_given = TRUE
 
 	R.pixel_x = initial(pixel_x)
 	R.pixel_y = initial(pixel_y)
