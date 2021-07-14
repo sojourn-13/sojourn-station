@@ -273,7 +273,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/weapon/melee/energy/sword(src)
+	src.emag = new /obj/item/weapon/melee/energy/sword(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -354,7 +354,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/weapon/reagent_containers/spray(src)
+	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
 	src.emag.name = "Polyacid spray"
 
@@ -464,7 +464,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag += new /obj/item/weapon/melee/baton(src)
+	src.emag = new /obj/item/weapon/melee/baton(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
 	var/datum/matter_synth/plasteel = new /datum/matter_synth/plasteel(40000)
@@ -605,7 +605,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
 	//src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
-	src.emag += new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
+	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
 	..(R)
 
 /obj/item/weapon/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -670,7 +670,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag += new /obj/item/weapon/reagent_containers/spray(src)
+	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
 	src.emag.name = "Lube spray"
 
@@ -750,8 +750,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/device/synthesized_instrument/synthesizer
-	src.emag += new /obj/item/weapon/stamp/chameleon(src)
-	src.emag += new /obj/item/weapon/pen/chameleon(src)
+	src.emag = new /obj/item/weapon/stamp/chameleon(src)
+	src.emag = new /obj/item/weapon/pen/chameleon(src)
 	..(R)
 
 	var/obj/item/weapon/rsf/M = new /obj/item/weapon/rsf(src)
@@ -766,7 +766,7 @@ var/global/list/robot_modules = list(
 
 	src.modules += new /obj/item/weapon/tray/robotray(src)
 	src.modules += new /obj/item/weapon/reagent_containers/borghypo/service(src)
-	src.emag += new /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer(src)
+	src.emag = new /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer(src)
 
 	var/datum/reagents/Re = new/datum/reagents(50)
 	src.emag.reagents = Re
@@ -836,7 +836,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag += new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
+	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 	..(R)
 
 /obj/item/weapon/robot_module/research
@@ -892,8 +892,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/storage/part_replacer(src)
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/weapon/hand_tele(src) //Why
-	src.emag += new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
+	src.emag = new /obj/item/weapon/hand_tele(src) //Why
+	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
 	synths += nanite
