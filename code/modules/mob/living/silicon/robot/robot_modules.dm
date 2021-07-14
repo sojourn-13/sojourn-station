@@ -584,7 +584,6 @@ var/global/list/robot_modules = list(
 				)
 
 /obj/item/weapon/robot_module/security/general/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/robotic_omni_sec(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
 	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
