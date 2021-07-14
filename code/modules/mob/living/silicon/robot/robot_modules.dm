@@ -749,7 +749,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/stamp/denied(src) //why was this even a emagged item before smh
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/device/synthesized_instrument/synthesizer
+	src.modules += new /obj/item/device/synthesized_instrument/synthesizer(src)
 	src.emag += new /obj/item/weapon/stamp/chameleon(src)
 	src.emag += new /obj/item/weapon/pen/chameleon(src)
 	..(R)
