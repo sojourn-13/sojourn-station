@@ -260,6 +260,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/standard/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/weapon/melee/baton(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/tool/robotic_omni_standard(src)
@@ -350,6 +351,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/reagent_containers/spray/sterilizine(src)
 	src.modules += new /obj/item/roller_holder(src)
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
@@ -458,6 +460,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src)
 	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
@@ -585,6 +588,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/security/general/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
 	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
@@ -653,6 +657,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/custodial/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/weapon/gripper/service(src)
 	src.modules += new /obj/item/weapon/soap/deluxe(src)
 	src.modules += new /obj/item/weapon/storage/bag/robotic/trash/(src)
@@ -722,6 +727,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/service/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/weapon/tool/robotic_omni_standard(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/weapon/gripper/service(src)
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src)
@@ -820,6 +826,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo/single_shot(src)
 	src.modules += new /obj/item/weapon/gripper/ammo(src)
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
@@ -874,6 +881,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/storage/bag/robotic/produce(src)
 	src.modules += new /obj/item/device/science_tool(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
