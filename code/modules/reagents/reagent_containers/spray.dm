@@ -109,6 +109,16 @@
 	desc = "Great for hiding incriminating bloodstains and sterilizing scalpels."
 	preloaded_reagents = list("sterilizine" = 250)
 
+/obj/item/weapon/reagent_containers/spray/acid
+	name = "Polyacid spray"
+	desc = "A spray bottle that has polyacid inside it, good for clearing dead bodies of roaches or spiders..."
+	preloaded_reagents = list("pacid" = 250)
+
+/obj/item/weapon/reagent_containers/spray/lube
+	name = "Lube Spray"
+	desc = "Used for pranks or removing blockages."
+	preloaded_reagents = list("lube" = 250)
+
 /obj/item/weapon/reagent_containers/spray/krag_b_gone
 	name = "window krag-b-gone"
 	desc = "A robust liquid for repairing and reinforcing windows."

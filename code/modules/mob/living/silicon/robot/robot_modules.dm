@@ -41,7 +41,7 @@ var/global/list/robot_modules = list(
 	var/no_slip = 0
 	var/list/modules = list()
 	var/list/datum/matter_synth/synths = list()
-	var/obj/item/emag = null
+	var/list/emag = list()
 	var/obj/item/malfAImodule = null
 	var/obj/item/borg/upgrade/jetpack = null
 	var/list/subsystems = list()
@@ -148,10 +148,9 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/Destroy()
 	QDEL_NULL_LIST(modules)
 	QDEL_NULL_LIST(synths)
-	qdel(emag)
+	QDEL_NULL_LIST(emag)
 	qdel(jetpack)
 	qdel(malfAImodule)
-	emag = null
 	malfAImodule = null
 	jetpack = null
 	return ..()
@@ -161,7 +160,8 @@ var/global/list/robot_modules = list(
 		for(var/obj/O in modules)
 			O.emp_act(severity)
 	if(emag)
-		emag.emp_act(severity)
+		for(var/obj/O in emag)
+			O.emp_act(severity)
 	if(synths)
 		for(var/datum/matter_synth/S in synths)
 			S.emp_act(severity)
@@ -273,7 +273,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/melee/energy/sword(src)
+	src.emag += new /obj/item/weapon/melee/energy/sword(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -354,9 +354,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
-	src.emag.reagents.add_reagent("pacid", 250)
-	src.emag.name = "Polyacid spray"
+	src.emag += new /obj/item/weapon/reagent_containers/spray/acid(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -399,7 +397,7 @@ var/global/list/robot_modules = list(
 	..()
 
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/PS = src.emag
+		var/obj/item/weapon/reagent_containers/spray/acid/PS = locate() in src.emag
 		PS.reagents.add_reagent("pacid", 2 * amount)
 	..()
 
@@ -464,7 +462,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/melee/baton(src)
+	src.emag += new /obj/item/weapon/melee/baton(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
 	var/datum/matter_synth/plasteel = new /datum/matter_synth/plasteel(40000)
@@ -605,7 +603,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
 	//src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
-	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
+	src.emag += new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
 	..(R)
 
 /obj/item/weapon/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -670,10 +668,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
-	src.emag.reagents.add_reagent("lube", 250)
-	src.emag.name = "Lube spray"
-
+	src.emag += new /obj/item/weapon/reagent_containers/spray/lube(src)
 	..(R)
 
 /obj/item/weapon/robot_module/custodial/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -681,7 +676,7 @@ var/global/list/robot_modules = list(
 	var/obj/item/device/lightreplacer/LR = locate() in src.modules
 	LR.Charge(R, amount)
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/S = src.emag
+		var/obj/item/weapon/reagent_containers/spray/lube/S = locate() in src.emag
 		S.reagents.add_reagent("lube", 2 * amount)
 
 /obj/item/weapon/robot_module/service
@@ -750,8 +745,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/device/synthesized_instrument/synthesizer
-	src.emag = new /obj/item/weapon/stamp/chameleon(src)
-	src.emag = new /obj/item/weapon/pen/chameleon(src)
+	src.emag += new /obj/item/weapon/stamp/chameleon(src)
+	src.emag += new /obj/item/weapon/pen/chameleon(src)
 	..(R)
 
 	var/obj/item/weapon/rsf/M = new /obj/item/weapon/rsf(src)
@@ -766,13 +761,7 @@ var/global/list/robot_modules = list(
 
 	src.modules += new /obj/item/weapon/tray/robotray(src)
 	src.modules += new /obj/item/weapon/reagent_containers/borghypo/service(src)
-	src.emag = new /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer(src)
-
-	var/datum/reagents/Re = new/datum/reagents(50)
-	src.emag.reagents = Re
-	Re.my_atom = src.emag
-	Re.add_reagent("beer2", 50)
-	src.emag.name = "Mickey Finn's Special Brew"
+	src.emag += new /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer_two(src)
 
 	..(R)
 
@@ -781,7 +770,7 @@ var/global/list/robot_modules = list(
 	var/obj/item/weapon/reagent_containers/food/condiment/enzyme/E = locate() in src.modules
 	E.reagents.add_reagent("enzyme", 2 * amount)
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer/B = src.emag
+		var/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer_two/B = locate() in src.emag
 		B.reagents.add_reagent("beer2", 2 * amount)
 
 /obj/item/weapon/robot_module/miner
@@ -836,7 +825,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
+	src.emag += new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 	..(R)
 
 /obj/item/weapon/robot_module/research
@@ -892,8 +881,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/storage/part_replacer(src)
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/hand_tele(src) //Why
-	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
+	src.emag += new /obj/item/weapon/hand_tele(src) //Why
+	src.emag += new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
 	synths += nanite
@@ -937,7 +926,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 
-	//src.emag = new /obj/item/weapon/gun/energy/plasmacutter/mounted(src)
+	//src.emag += new /obj/item/weapon/gun/energy/plasmacutter/mounted(src)
 	//src.emag.name = "Plasma Cutter"
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(25000)
