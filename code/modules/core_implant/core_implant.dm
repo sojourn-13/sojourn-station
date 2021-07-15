@@ -214,6 +214,8 @@
 		add_module(new CRUCIFORM_MONO)
 	else if(path == "divi")
 		add_module(new CRUCIFORM_DIVI)
+	else if(path == "fact")
+		add_module(new CRUCIFORM_FACT)
 
 /obj/item/weapon/implant/core_implant/proc/process_modules()
 	for(var/datum/core_module/CM in modules)

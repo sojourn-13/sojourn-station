@@ -42,3 +42,10 @@
 	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Divisor, disciples who promote security of the church and its members, \
 	those who walk this path desire to protect the flock through arms, functioning as an internal guard to the Absolute."
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/divisor
+
+/datum/category_item/setup_option/core_implant/cruciform/factorial
+	name = "Factorial Cruciform"
+	desc = "The beast of metal endures longer than the flesh of men. Those that tend the beasts of metal must labour long to learn its ways, for a single beast must suffer the mastership of \
+	any men until ready to shed its vorpal coils. Those that seek apprenticeship must attended closely to the runes of mobilisation, the rites of maintenance, and the words-of-power that \
+	describe the parts of a beast. Nor must they neglect the tutelage of the Adeptus Prefects, nor the casting of the proper roboscopes."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial
