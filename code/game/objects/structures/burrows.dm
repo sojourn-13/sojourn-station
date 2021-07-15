@@ -450,7 +450,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		name = "burrow"
 		desc = "Some sort of hole that leads inside a wall. It's full of hardened resin and secretions. Collapsing this would require some heavy digging tools."
 		if(deepmaint_entry_point)
-			desc = "Entrance hidden by bricks and rubble."
+			desc = "Entrance hidden by bricks and rubble. Collapsing this would require some heavy digging tools."
 		var/turf/simulated/floor/F = loc
 		if (istype(F) && F.flooring)
 			//This should never be false
