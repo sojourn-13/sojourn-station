@@ -45,7 +45,6 @@
 
 /datum/category_item/setup_option/core_implant/cruciform/factorial
 	name = "Factorial Cruciform"
-	desc = "The beast of metal endures longer than the flesh of men. Those that tend the beasts of metal must labour long to learn its ways, for a single beast must suffer the mastership of \
-	any men until ready to shed its vorpal coils. Those that seek apprenticeship must attended closely to the runes of mobilisation, the rites of maintenance, and the words-of-power that \
-	describe the parts of a beast. Nor must they neglect the tutelage of the Adeptus Prefects, nor the casting of the proper roboscopes."
+	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Factorial, disciples who apprentice themselves to the machines and technology \
+	of the church, so that they may improve upon the foundations of faith. This cruciform is similar to the standard model in power and reserves, but is mainly favored by church aligned synthetics."
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial
