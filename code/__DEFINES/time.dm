@@ -15,6 +15,7 @@
 #define HOURS MINUTES*60
 #define HOUR HOURS
 
+#define DAY *864000
 #define DAYS *864000
 
 #define TimeOfGame (get_game_time())

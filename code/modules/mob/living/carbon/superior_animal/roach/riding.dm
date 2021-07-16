@@ -1,5 +1,3 @@
-/mob/living/carbon/superior_animal/roach
-	var/taming_window = 30 //How long you have to tame this roach, once it's pacified.
 
 /mob/living/carbon/superior_animal/roach/Move()
 	. = ..()
@@ -13,7 +11,7 @@
 		return FALSE
 	if(prob(min(40, 100 - user.stats.getStat(STAT_COG)*2)))
 		visible_message("[src] hesitates for a moment...and then charges at [user]!")
-		return FALSE //Sometimes roach just be like that
+		return TRUE //Setting this to true because the only current usage is attack, and it says it hesitates.
 	//fruits and veggies are not there own type, they are all the grown type and contain certain reagents. This is why it didnt work before
 	if(isnull(thefood.seed.chems["potato"]))
 		return FALSE
