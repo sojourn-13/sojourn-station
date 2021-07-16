@@ -63,6 +63,31 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/botanist/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["botanist default"] = "botanist"
+	options["cosine men yoroi lens"] = "cosine_men_yoroi"
+	options["cosine men yoroi lensless"] = "cosine_men_yoroi_switched"
+	options["cosine men yoroi round lens"] = "cosine_men_yoroi_weeaboomode"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/acolyte
 	name = "vector hood"
 	desc = "Even the most devout deserve head protection."
@@ -73,6 +98,30 @@
 	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+
+/obj/item/clothing/head/helmet/acolyte/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["vector default"] = "acolyte"
+	options["tangent ridge helmet"] = "tangent_ridge_helmet"
+	options["tangent ridge helmet open"] = "tangent_ridge_helmet_switched"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
@@ -108,6 +157,31 @@
 	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+
+/obj/item/clothing/head/helmet/custodian/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default custodian helmet"] = "custodian"
+	options["sine cornette"] = "sine_cornette"
+	options["sine cornette switched"] = "sine_cornette_switched"
+	options["sine cornette switched alternative"] = "sine_cornette_switched_alternative"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/huntmaster_helmet
 	name = "Huntmaster Nomad Helm"
