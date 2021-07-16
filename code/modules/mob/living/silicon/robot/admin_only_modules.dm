@@ -223,9 +223,7 @@
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
-	src.emag.reagents.add_reagent("pacid", 250)
-	src.emag.name = "Polyacid spray"
+	src.emag += new /obj/item/weapon/reagent_containers/spray/acid(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(15000)
 	synths += medicine
@@ -247,7 +245,7 @@
 		S.update_icon()
 
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/PS = src.emag
+		var/obj/item/weapon/reagent_containers/spray/acid/PS = locate() in src.emag
 		PS.reagents.add_reagent("pacid", 2 * amount)
 
 	..()

@@ -40,6 +40,7 @@
 	src.modules += new /obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo(src)
 	src.modules += new /obj/item/weapon/gripper/ammo(src)
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
@@ -114,13 +115,12 @@
 	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
 	src.modules += new /obj/item/roller_holder(src)
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag += new /obj/item/weapon/reagent_containers/spray(src)
-	src.emag.reagents.add_reagent("pacid", 250)
-	src.emag.name = "Polyacid spray"
+	src.emag += new /obj/item/weapon/reagent_containers/spray/acid(src)
 
 	R.icon = 'icons/mob/robots_wide.dmi'
 	R.pixel_x 	 = -16
@@ -164,7 +164,7 @@
 		S.update_icon()
 
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/PS = src.emag
+		var/obj/item/weapon/reagent_containers/spray/acid/PS = locate() in src.emag
 		PS.reagents.add_reagent("pacid", 2 * amount)
 	..()
 
@@ -205,13 +205,12 @@
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/weapon/tool/robotic_omni_cleaner(src)
 	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag += new /obj/item/weapon/reagent_containers/spray(src)
-	src.emag.reagents.add_reagent("lube", 250)
-	src.emag.name = "Lube spray"
+	src.emag += new /obj/item/weapon/reagent_containers/spray/lube(src)
 
 	R.icon = 'icons/mob/robots_wide.dmi'
 	R.pixel_x 	 = -16
@@ -226,7 +225,7 @@
 	var/obj/item/device/lightreplacer/LR = locate() in src.modules
 	LR.Charge(R, amount)
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/S = src.emag
+		var/obj/item/weapon/reagent_containers/spray/lube/S = locate() in src.emag
 		S.reagents.add_reagent("lube", 2 * amount)
 
 	R.icon 		 = 'icons/mob/robots_wide.dmi'
@@ -277,12 +276,13 @@
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/storage/bag/produce(src)
+	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/science_tool(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
 	src.modules += new /obj/item/weapon/storage/part_replacer(src)
-	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag += new /obj/item/weapon/hand_tele(src) //Why
 	src.emag += new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
@@ -350,10 +350,11 @@
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
 	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
+	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/weapon/pen/robopen(src)
 	src.modules += new /obj/item/weapon/form_printer(src)
 	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.modules += new /obj/item/weapon/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag += new /obj/item/weapon/tool/saw/hyper(src)
 

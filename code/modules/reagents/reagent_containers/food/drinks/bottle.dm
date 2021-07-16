@@ -405,6 +405,13 @@
 	center_of_mass = list("x"=16, "y"=12)
 	preloaded_reagents = list("beer" = 30)
 
+/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer_two
+	name = "Mickey Finn's Special Brew"
+	desc = "A bottle of what looks like a beer but is a mix of sleeping agents, malt and hops."
+	icon_state = "beer"
+	center_of_mass = list("x"=16, "y"=12)
+	preloaded_reagents = list("beer" = 30)
+
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale
 	name = "\improper Magm-Ale"
 	desc = "A true dorf's drink of choice."

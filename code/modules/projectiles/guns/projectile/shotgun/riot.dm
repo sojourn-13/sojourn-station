@@ -41,7 +41,7 @@
 	recoil_buildup = 0
 	one_hand_penalty = 0
 	max_shells = 6
-
+	load_method = SINGLE_CASING|SPEEDLOADER //So boxes of ammo work
 
 /obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo/single_shot
 	name = "intergrated single barrel shotgun"

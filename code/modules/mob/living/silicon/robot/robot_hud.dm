@@ -170,12 +170,16 @@
 		//Unfortunately adding the emag module to the list of modules has to be here. This is because a borg can
 		//be emagged before they actually select a module. - or some situation can cause them to get a new module
 		// - or some situation might cause them to get de-emagged or something.
-		if(r.emagged)
+		if(r.emagged && r.emagged_items_given)
 			if(!(r.module.emag in r.module.modules))
+				to_chat(src, SPAN_DANGER("More modules unlocked!"))
 				r.module.modules.Add(r.module.emag)
+				r.emagged_items_given = FALSE
 		else
 			if(r.module.emag in r.module.modules)
+				to_chat(src, SPAN_DANGER("Some modules have been locked!"))
 				r.module.modules.Remove(r.module.emag)
+				r.emagged_items_given = FALSE
 
 		for(var/atom/movable/A in r.module.modules)
 			if( (A != r.module_state_1) && (A != r.module_state_2) && (A != r.module_state_3) )
