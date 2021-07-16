@@ -136,7 +136,7 @@
 	wander = FALSE
 	fire_verb = "spits"
 	ranged = 1
-	projectilesound = 'sound/effects/blobattack.ogg'
+	projectilesound = 'sound/effects/creatures/acid_spit.ogg'
 	projectiletype = /obj/item/projectile/goo
 	minimum_distance = 6
 

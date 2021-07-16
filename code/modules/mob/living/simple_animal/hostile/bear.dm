@@ -20,10 +20,16 @@
 	health = 60
 	melee_damage_lower = 20
 	melee_damage_upper = 30
+	attack_sound = 'sound/effects/creatures/maul.ogg'
 	leather_amount = 6
 	bones_amount = 4
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	faction = "russian"
+
+/mob/living/simple_animal/hostile/bear/FindTarget()
+	. = ..()
+	if(.)
+		playsound(src, 'sound/effects/creatures/bear.ogg', 30, 1, -3)
 
 /mob/living/simple_animal/hostile/bear/hudson
 	name = "Hudson"
@@ -85,7 +91,7 @@
 	maxHealth = 400
 	health = 400
 	melee_damage_lower = 40 //Low health but an extremely powerful hitter
-	melee_damage_upper = 50
+	melee_damage_upper = 50 //You call 400 HP LOW HEALTH?! - Seb
 	leather_amount = 10
 	bones_amount = 10
 	pixel_x = -16
