@@ -128,6 +128,7 @@
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
 	req_access = list(access_medspec)
+	access_occupy = list(access_brig) //So we can claim
 	icon_state = "corpsman"
 
 /obj/structure/closet/secure_closet/personal/corpsman/populate_contents()
