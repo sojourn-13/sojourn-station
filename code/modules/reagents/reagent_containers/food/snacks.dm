@@ -3253,7 +3253,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/mushroompizza
 	name = "mushroom pizza"
-	desc = "Very special pizza"
+	desc = "Very special pizza."
 	icon_state = "mushroompizza"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/mushroompizzaslice
 	slices_num = 6
@@ -3276,7 +3276,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza
 	name = "vegetable pizza"
-	desc = "No one of Tomato Sapiens were harmed during making this pizza"
+	desc = "No one of Tomato Sapiens were harmed during making this pizza."
 	icon_state = "vegetablepizza"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/vegetablepizzaslice
 	slices_num = 6
@@ -3288,12 +3288,35 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/vegetablepizzaslice
 	name = "vegetable pizza slice"
-	desc = "A slice of the most green pizza of all pizzas not containing green ingredients "
+	desc = "A slice of the most green pizza of all pizzas not containing green ingredients."
 	icon_state = "vegetablepizzaslice"
 	filling_color = "#BAA14C"
 	bitesize = 2
 	center_of_mass = list("x"=18, "y"=13)
 	preloaded_reagents = list("nutriment" = 4, "protein" = 1, "tomatojuice" = 1, "imidazoline" = 2)
+	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
+
+/obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/hawaiianpizza
+	name = "hawaiian pizza pizza"
+	desc = "A pizza with added cooked pineapple slices, some sware by it others hate it."
+	icon_state = "hawaiianpizza"
+	slice_path = /obj/item/weapon/reagent_containers/food/snacks/hawaiianpizzaslice
+	slices_num = 6
+	center_of_mass = list("x"=16, "y"=11)
+	nutriment_desc = list("pizza crust" = 10, "tomato" = 10, "cheese" = 5, "pineapple" = 5)
+	nutriment_amt = 25
+	bitesize = 2
+	preloaded_reagents = list("protein" = 5, "tomatojuice" = 6)
+
+/obj/item/weapon/reagent_containers/food/snacks/hawaiianpizzaslice
+	name = "hawaiian pizza slice"
+	desc = "A slice of hawaiian pizza with bits of pineapple cooked atop it."
+	icon_state = "hawaiianpizzaslice"
+	filling_color = "#BAA14C"
+	bitesize = 2
+	center_of_mass = list("x"=18, "y"=13)
+	preloaded_reagents = list("nutriment" = 4, "protein" = 1, "tomatojuice" = 1)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 5)
 
@@ -3470,6 +3493,9 @@
 	pizza = new /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/meatpizza(src)
 	boxtag = "Meatlover's Supreme"
 
+/obj/item/pizzabox/hawaiianpizza/New()
+	pizza = new /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/hawaiianpizza(src)
+	boxtag = "Controversial Pizza"
 
 ///////////////////////////////////////////
 // new old food stuff from bs12
