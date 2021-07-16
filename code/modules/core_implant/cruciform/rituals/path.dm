@@ -340,7 +340,7 @@
 	name = "cruciform"
 	phrase = null
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial
-	fail_message = "The Cruciform's gear grind to a halt."
+	fail_message = "The cruciform's gears grind to a halt."
 	category = "Factorial"
 
 /datum/ritual/targeted/cruciform/factorial
@@ -380,7 +380,7 @@
 // Self-Repair
 /datum/ritual/cruciform/factorial/self_repair
 	name = "Self-Repair"
-	desc = "Use the energy in your cruciform to repair all your mechanical bits."
+	desc = "Use the energy in your cruciform to repair all mechanical parts on the bearer, be they synthetic limbs or organs."
 	phrase = "Sic invocamus Absoluta. Ergo omne quod facimus separabuntur."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
@@ -405,7 +405,7 @@
 // Mass-Repair
 /datum/ritual/cruciform/factorial/mass_repair
 	name = "Mass-Repair"
-	desc = "Use the energy in your cruciform to repair the mechanical bits of everyone in view."
+	desc = "Use the energy in your cruciform to repair all mechanical parts of those around you, be they synthetic limbs or organs."
 	phrase = "Nee tamen carnis denigrant noli haec possunt referri. Tu posse reincarnated - renascentes per voluntatem Dei Absoluta ferro."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
