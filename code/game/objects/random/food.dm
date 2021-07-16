@@ -45,7 +45,8 @@
 	return pick(/obj/item/pizzabox/margherita,\
 				/obj/item/pizzabox/mushroom,\
 				/obj/item/pizzabox/meat,\
-				/obj/item/pizzabox/vegetable)
+				/obj/item/pizzabox/vegetable,\
+				/obj/item/pizzabox/hawaiianpizza)
 
 /obj/random/junkfood/onlyburger
 	name = "random burger"
