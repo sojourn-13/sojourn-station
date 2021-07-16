@@ -206,3 +206,7 @@
 /datum/core_module/rituals/cruciform/divisor
 	ritual_types = list(/datum/ritual/cruciform/divisor,
 	/datum/ritual/targeted/cruciform/divisor)
+
+/datum/core_module/rituals/cruciform/factorial
+	ritual_types = list(/datum/ritual/cruciform/factorial,
+	/datum/ritual/targeted/cruciform/factorial)

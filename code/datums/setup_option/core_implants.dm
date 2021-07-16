@@ -42,3 +42,9 @@
 	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Divisor, disciples who promote security of the church and its members, \
 	those who walk this path desire to protect the flock through arms, functioning as an internal guard to the Absolute."
 	implant_type = /obj/item/weapon/implant/core_implant/cruciform/divisor
+
+/datum/category_item/setup_option/core_implant/cruciform/factorial
+	name = "Factorial Cruciform"
+	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Factorial, disciples who apprentice themselves to the machines and technology \
+	of the church, so that they may improve upon the foundations of faith. This cruciform is similar to the standard model in power and reserves, but is mainly favored by church aligned synthetics."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial

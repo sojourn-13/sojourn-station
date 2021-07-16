@@ -206,6 +206,7 @@
 #define CRUCIFORM_LEMN /datum/core_module/rituals/cruciform/lemniscate
 #define CRUCIFORM_MONO /datum/core_module/rituals/cruciform/monomial
 #define CRUCIFORM_DIVI /datum/core_module/rituals/cruciform/divisor
+#define CRUCIFORM_FACT /datum/core_module/rituals/cruciform/factorial
 
 #define CRUCIFORM_OBEY /datum/core_module/cruciform/obey
 #define CRUCIFORM_PRIEST_CONVERT /datum/core_module/activatable/cruciform/priest_convert

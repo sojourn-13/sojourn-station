@@ -335,3 +335,95 @@
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
 	set_personal_cooldown(user)
 	return TRUE
+
+/datum/ritual/cruciform/factorial
+	name = "cruciform"
+	phrase = null
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial
+	fail_message = "The cruciform's gears grind to a halt."
+	category = "Factorial"
+
+/datum/ritual/targeted/cruciform/factorial
+	name = "cruciform targeted"
+	phrase = null
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial
+	category = "Factorial"
+
+// Battery Charge
+/datum/ritual/cruciform/factorial/charge
+	name = "Power Transfer"
+	desc = "Use the energy in your cruciform to charge the power cell you are holding."
+	phrase = "Observationibus illustrare pio Sine aedificare seris, donec sacra studia cursus ultrices venas et indicia mitte rapinae elit!"
+	cooldown = TRUE
+	cooldown_time = 0 MINUTES
+	cooldown_category = "charging"
+	power = 0 // Do not use the power in one shot
+	var/charge_used = 1 // Amount of cruciform energy used.
+	var/charge_rate = 30 // The delay between each charge? The number is in deciseconds, so 30 is equal to 3 seconds
+
+/datum/ritual/cruciform/factorial/charge/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	set_personal_cooldown(user)
+	var/inhand = user.get_active_hand()
+	if(istype(inhand, /obj/item/weapon/cell))
+		var/obj/item/weapon/cell/P = inhand
+		to_chat(user, "You start charging the [P.name].")
+		while(C.power >= charge_used) // Keep going until we run out of power
+			if(P.fully_charged()) // Leave the loop if the cell is charged.
+				break
+			if(do_after(user, charge_rate)) // Small delay where the user must stand still
+				C.power -= charge_used // We use some juicy cruciform power
+				P.give(charge_used * 10) // Charge the power cell
+		to_chat(user, "You finish charging the [P.name]. It is now [P.percent()]% charged.")
+	else
+		fail("You need a power cell in your active hand to charge it.", user, C)
+
+// Self-Repair
+/datum/ritual/cruciform/factorial/self_repair
+	name = "Self-Repair"
+	desc = "Use the energy in your cruciform to repair all mechanical parts on the bearer, be they synthetic limbs or organs."
+	phrase = "Sic invocamus Absoluta. Ergo omne quod facimus separabuntur."
+	cooldown = TRUE
+	cooldown_time = 5 MINUTES
+	cooldown_category = "repair"
+	power = 25
+	nutri_cost = 25
+	blood_cost = 25
+
+/datum/ritual/cruciform/factorial/self_repair/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	set_personal_cooldown(user)
+	for(var/obj/item/organ/augmentic in user) // Run this loop for every organ the user has
+		if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
+			augmentic.rejuvenate() // Repair the organ
+	to_chat(user, "Your mechanical organs knit themselves back together.")
+
+// Mass-Repair
+/datum/ritual/cruciform/factorial/mass_repair
+	name = "Mass-Repair"
+	desc = "Use the energy in your cruciform to repair all mechanical parts of those around you, be they synthetic limbs or organs."
+	phrase = "Nee tamen carnis denigrant noli haec possunt referri. Tu posse reincarnated - renascentes per voluntatem Dei Absoluta ferro."
+	cooldown = TRUE
+	cooldown_time = 5 MINUTES
+	cooldown_category = "repair"
+	power = 50
+	nutri_cost = 25
+	blood_cost = 25
+
+/datum/ritual/cruciform/factorial/mass_repair/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	set_personal_cooldown(user)
+	for(var/mob/living/carbon/human/H in view(user)) // Affect everyone the user can see.
+		for(var/obj/item/organ/augmentic in H) // Run this loop for every organ the person has
+			if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
+				augmentic.rejuvenate() // Repair the organ
+				to_chat(H, "Your [augmentic.name] repair itself!")

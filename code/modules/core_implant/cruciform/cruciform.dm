@@ -67,6 +67,8 @@ var/list/disciples = list()
 		add_module(new CRUCIFORM_MONO)
 	if(path == "divi")
 		add_module(new CRUCIFORM_DIVI)
+	if(path == "fact")
+		add_module(new CRUCIFORM_FACT)
 	update_data()
 	disciples |= wearer
 	return TRUE
@@ -227,3 +229,13 @@ var/list/disciples = list()
 	max_power = 50
 	power_regen = 0.4
 	path = "divi"
+
+/obj/item/weapon/implant/core_implant/cruciform/factorial
+	name = "factorial cruciform"
+	icon_state = "cruciform_cyan"
+	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
+	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial
+	power = 50
+	max_power = 50
+	power_regen = 0.2
+	path = "fact"
