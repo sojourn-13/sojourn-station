@@ -213,7 +213,7 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 /obj/item/clothing/suit/costume/kinky/alyson
 	name = "bunny suit"
 	desc = "The most famous appeal on every side of the universe, a bunny suit complete with pantyhoses, cuffs, and a puffy tail. Ears not included!"
-	icon_state = "lewd_bunny"
+	icon_state = "lewdbunny"
 	flags_inv = HIDEJUMPSUIT|HIDEGLOVES
 	item_state_slots = list(slot_r_hand_str = "suit_black", slot_l_hand_str = "suit_black")
 
