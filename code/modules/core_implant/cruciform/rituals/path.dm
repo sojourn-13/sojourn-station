@@ -373,6 +373,8 @@
 			if(do_after(user, charge_rate)) // Small delay where the user must stand still
 				C.power -= charge_used // We use some juicy cruciform power
 				P.give(charge_used * 10) // Charge the power cell
+			else
+				break // Leave the loop if we interrupt.
 		to_chat(user, "You finish charging the [P.name]. It is now [P.percent()]% charged.")
 	else
 		fail("You need a power cell in your active hand to charge it.", user, C)
