@@ -46,7 +46,7 @@
 	mag_well = MAG_WELL_PISTOL
 	recoil_buildup = 6
 	damage_multiplier = 1.1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
 
 /obj/item/weapon/gun/projectile/colt/ten/dark
 	name = "\"Stallion\" magnum pistol"
