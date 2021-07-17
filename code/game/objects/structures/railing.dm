@@ -135,8 +135,8 @@
 			if (UpdateNeighbors)
 				R.update_icon(0)
 
-/obj/structure/railing/update_icon(var/UpdateNeighgors = 1)
-	NeighborsCheck(UpdateNeighgors)
+/obj/structure/railing/update_icon(var/UpdateNeighbors = 1)
+	NeighborsCheck(UpdateNeighbors)
 	cut_overlays()
 	if (!check || !anchored)
 		icon_state = "[icon_modifier][reinforced ? "reinforced_": null]railing0"
@@ -160,33 +160,6 @@
 					if (WEST)
 						add_overlay(image ('icons/obj/railing.dmi', src, "[icon_modifier]mcorneroverlay", pixel_y = 32))
 
-/* needs a different pr first
-/obj/structure/railing/on_update_icon(var/UpdateNeighbors = 1)
-	NeighborsCheck(UpdateNeighbors)
-	cut_overlays()
-	if (!check || !anchored)
-		icon_state = "[icon_modifier][reinforced ? "reinforced_": null]railing0"
-	else
-		icon_state = "[icon_modifier][reinforced ? "reinforced_": null]railing1"
-		//left side
-		if (check & 32)
-			add_overlays(image ('icons/obj/railing.dmi', src, "[icon_modifier]corneroverlay"))
-		if ((check & 16) || !(check & 32) || (check & 64))
-			add_overlays(image ('icons/obj/railing.dmi', src, "[icon_modifier]frontoverlay_l"))
-		if (!(check & 2) || (check & 1) || (check & 4))
-			add_overlays(image ('icons/obj/railing.dmi', src, "[icon_modifier]frontoverlay_r"))
-			if(check & 4)
-				switch (src.dir)
-					if (NORTH)
-						add_overlays(image ('icons/obj/railing.dmi', src, "[icon_modifier]mcorneroverlay", pixel_x = 32))
-					if (SOUTH)
-						add_overlays(image ('icons/obj/railing.dmi', src, "[icon_modifier]mcorneroverlay", pixel_x = -32))
-					if (EAST)
-						add_overlays(image ('icons/obj/railing.dmi', src, "[icon_modifier]mcorneroverlay", pixel_y = -32))
-					if (WEST)
-						add_overlays(image ('icons/obj/railing.dmi', src, "[icon_modifier]mcorneroverlay", pixel_y = 32))
-
-*/
 /obj/structure/railing/verb/rotate()
 	set name = "Rotate Railing Counter-Clockwise"
 	set category = "Object"
