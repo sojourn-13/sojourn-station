@@ -89,7 +89,6 @@
 
 /obj/item/device/t_scanner/update_icon()
 	var/iconstring = initial(icon_state)
-	var/itemstring = ""
 
 	if (enabled)
 		iconstring += "1"
