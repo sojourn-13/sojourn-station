@@ -283,6 +283,16 @@
 	price_tag = 25
 	contents_cost = 700
 
+/obj/structure/reagent_dispensers/meadkeg
+	name = "mead keg"
+	desc = "A keg of honey and beer"
+	icon_state = "beertankTEMP"
+	amount_per_transfer_from_this = 10
+	volume = 1000
+	starting_reagent = "mead"
+	price_tag = 25
+	contents_cost = 1200
+
 /obj/structure/reagent_dispensers/cahorsbarrel
 	name = "Absolutism Cahors barrel"
 	desc = "Barrel a day - keeps liver away."
