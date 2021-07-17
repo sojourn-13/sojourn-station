@@ -61,8 +61,8 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["default eris"] = "t-ray0_old"
-	options["default sojourn"] = "t-ray0"
+	options["default eris"] = "t-ray_old"
+	options["default sojourn"] = "t-ray"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
