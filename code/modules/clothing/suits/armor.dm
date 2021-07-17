@@ -35,9 +35,25 @@
 		rad = 0
 	)
 
+/obj/item/clothing/suit/armor/vest/full
+	name = "full body armor"
+	desc = "A generic armor vest, but with shoulderpads and kneepads included to cover all parts of the body. Not designed for serious operations."
+	icon_state = "armor_fullbody"
+	item_state = "armor_fullbody"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
 /obj/item/clothing/suit/armor/vest/security
 	name = "security armor"
 	icon_state = "armor_security"
+	desc = "A tactical armor vest that protects against some damage. Not designed for serious operations."
+
+/obj/item/clothing/suit/armor/vest/security/full
+	name = "full body security armor"
+	desc = "A tactical armor vest, but with shoulderpads and kneepads included to cover all parts of the body. Not designed for serious operations."
+	icon_state = "armor_security_fullbody"
+	item_state = "armor_security_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/vest/detective
 	name = "armor"
@@ -48,6 +64,13 @@
 	name = "security armor"
 	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
+
+/obj/item/clothing/suit/armor/vest/full/ironhammer
+	name = "marshal tactical unit armor"
+	desc = "An armored vest painted in Marshals colors. This one has shoulderpads and kneepads included to protect all parts of the body."
+	icon_state = "armor_ih_fullbody"
+	item_state = "armor_ih_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/vest/handmade
 	name = "handmade armor vest"
@@ -63,6 +86,21 @@
 	)
 	price_tag = 150
 
+/obj/item/clothing/suit/armor/vest/handmade/full
+	name = "full handmade armor vest"
+	desc = "An armored vest of dubious quality. This one has had metal sheets attached to the shoulders and knees to be used as makeshift shoulderpads and kneepads."
+	icon_state = "armor_handmade_fullbody"
+	item_state = "armor_handmade_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	armor = list(
+		melee = 30,
+		bullet = 20,
+		energy = 15,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	) // No gaining stats, just coverage!
+
 /obj/item/clothing/suit/armor/vest/handmade_black
 	name = "handmade black armor vest"
 	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap. This one is black."
@@ -76,6 +114,21 @@
 		rad = 0
 	)
 	price_tag = 150
+
+/obj/item/clothing/suit/armor/vest/handmade_black/full
+	name = "full handmade black armor vest"
+	desc = "An armored vest of dubious quality. This one has had metal sheets attached to the shoulders and knees to be used as makeshift shoulderpads and kneepads. It also comes in black."
+	icon_state = "hm_armorvest_black_full"
+	item_state = "hm_armorvest_black_full"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	armor = list(
+		melee = 30,
+		bullet = 20,
+		energy = 15,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	) // No gaining stats, just coverage!
 
 /obj/item/clothing/suit/armor/vest/iron_lock_security
 	name = "outdated ablative vest"
@@ -262,6 +315,14 @@
 	)
 	price_tag = 250
 
+/obj/item/clothing/suit/armor/bulletproof/full
+	name = "bulletproof suit"
+	desc = "A vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage."
+	icon_state = "bulletproof_fullbody"
+	item_state = "bulletproof_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.6 // Heavier since it now covers more of the body
+
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
 	icon_state = "bulletproof_ironhammer"
 
@@ -440,17 +501,39 @@
 	blood_overlay_type = "armor"
 	armor = list(melee = 35, bullet = 45, energy = 15, bomb = 10, bio = 0, rad = 0)
 
+/obj/item/clothing/suit/armor/platecarrier/full
+	name = "full body plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, in Blackshield colors. It has been improved by adding shoulderpads and kneepads for additional coverage."
+	icon_state = "platecarrier_fullbody"
+	item_state = "platecarrier_fullbody"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
 /obj/item/clothing/suit/armor/platecarrier/ih
 	name = "plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, in security colors."
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, in Marshals colors."
 	icon_state = "platecarrier_ih"
 	item_state = "platecarrier_ih"
+
+/obj/item/clothing/suit/armor/platecarrier/ih/full
+	name = "full body plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, in Marshals colors. It has been improved by adding shoulderpads and kneepads for additional coverage."
+	icon_state = "platecarrier_ih_fullbody"
+	item_state = "platecarrier_ih_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/platecarrier/militia
 	name = "blackshield plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one ears the distinct IFF stripes of the Blackshield."
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
+
+/obj/item/clothing/suit/armor/platecarrier/militia/full
+	name = "blackshield full body plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, as well as additional shoulderpads and kneepads, decorated with the IFF stripes of Blackshield."
+	icon_state = "platecarrier_mil_fullbody"
+	item_state = "platecarrier_mil_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman
 	name = "Corpsman plate carrier"
@@ -459,17 +542,38 @@
 	item_state = "platecarrier_corpsman"
 	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 10, bio = 20, rad = 0)
 
-obj/item/clothing/suit/armor/platecarrier/green
+/obj/item/clothing/suit/armor/platecarrier/corpsman/full
+	name = "Corpsman full body plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman liverly and has a stain resistant coating as well as additional shoulderpads and kneepads for added protection."
+	icon_state = "platecarrier_corpsman_fullbody"
+	item_state = "platecarrier_corpsman_fullbody"
+	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
+/obj/item/clothing/suit/armor/platecarrier/green
 	name = "green plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits wooded areas well."
 	icon_state = "platecarrier_green"
 	item_state = "platecarrier_green"
 
-obj/item/clothing/suit/armor/platecarrier/tan
+/obj/item/clothing/suit/armor/platecarrier/green/full
+	name = "full body green plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits wooded areas well. Has increased coverage due to the prescence of shoulderpads and kneepads."
+	icon_state = "platecarrier_green_fullbody"
+	item_state = "platecarrier_green_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
+/obj/item/clothing/suit/armor/platecarrier/tan
 	name = "tan plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits endless desert warfare well."
 	icon_state = "platecarrier_tan"
 	item_state = "platecarrier_tan"
+
+/obj/item/clothing/suit/armor/platecarrier/tan/full
+	name = "full body tan plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits endless desert warfare well. Has increased coverage due to the prescence of shoulderpads and kneepads."
+	icon_state = "platecarrier_tan_fullbody"
+	item_state = "platecarrier_tan_fullbody"
 
 /obj/item/clothing/suit/armor/platecarrier/hos
 	name = "advanced plate carrier"
@@ -480,7 +584,7 @@ obj/item/clothing/suit/armor/platecarrier/tan
 	slowdown = 0.15
 	armor = list(melee = 40, bullet = 50, energy = 20, bomb = 10, bio = 0, rad = 0)
 
-obj/item/clothing/suit/armor/flackvest
+/obj/item/clothing/suit/armor/flackvest
 	name = "flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel."
 	icon_state = "flakvest"
@@ -489,6 +593,14 @@ obj/item/clothing/suit/armor/flackvest
 	price_tag = 250
 	slowdown = 0.5
 	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/flackvest/full // Sic.
+	name = "full body flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations, it protects well against explosives and shrapnel. This set has had kneepads and shoulderpads attached for more protection."
+	icon_state = "flakvest_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.6 // Bulkier due to protecting more
+	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
 
 obj/item/clothing/suit/armor/flackvest/militia
 	name = "blackshield flak vest"
