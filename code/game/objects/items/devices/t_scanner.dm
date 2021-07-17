@@ -61,7 +61,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["default eris"] = "t-ray_old"
+	options["default eris"] = "t-ray_alt"
 	options["default sojourn"] = "t-ray"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -97,7 +97,6 @@
 		iconstring += "0"
 
 	icon_state = iconstring
-	set_item_state(itemstring)
 
 /******************************************************
 	CORE FUNCTIONALITY: SCANNING AND DRAWING OVERLAYS
