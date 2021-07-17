@@ -192,7 +192,7 @@
 	name = "generic full body armor"
 	result = /obj/item/clothing/suit/armor/vest/full
 	steps = list(
-		list(/obj/item/clothing/suit/armor/vest, 1, "time" = 30) //TODO: a better way to do this, every children of armor/vest will be eligible for crafting this one...
+		list(/obj/item/clothing/suit/armor/vest, 1, "time" = 30), //TODO: a better way to do this, every children of armor/vest will be eligible for crafting this one...
 		list(/obj/item/clothing/under, 1),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
 		list(QUALITY_ADHESIVE, 15, 60)
@@ -238,7 +238,7 @@
 	)
 
 /datum/craft_recipe/clothing/platecarrier_ms
-name = "full body marshal plate carrier"
+	name = "full body marshal plate carrier"
 	result = /obj/item/clothing/suit/armor/platecarrier/ih/full
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier/ih, 1, "time" = 30),

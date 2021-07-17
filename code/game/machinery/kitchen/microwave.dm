@@ -478,6 +478,6 @@
 
 /obj/machinery/microwave/burnbarrel/muck_finish()
 	..()
-	playsound(loc, 'sound/effects/flare.ogg', 50, 1)
+	playsound(loc, 'sound/items/cigs_lighters/cig_snuff.ogg', 50, 1)
 	icon_state = "barrelfire"
 
