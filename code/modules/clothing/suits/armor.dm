@@ -65,7 +65,7 @@
 	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
 
-/obj/item/clothing/suit/armor/vest/full/ironhammer
+/obj/item/clothing/suit/armor/vest/ironhammer/full
 	name = "marshal tactical unit armor"
 	desc = "An armored vest painted in Marshals colors. This one has shoulderpads and kneepads included to protect all parts of the body."
 	icon_state = "armor_ih_fullbody"
@@ -602,21 +602,38 @@
 	slowdown = 0.6 // Bulkier due to protecting more
 	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
 
-obj/item/clothing/suit/armor/flackvest/militia
+/obj/item/clothing/suit/armor/flackvest/militia
 	name = "blackshield flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
 			This one is marked with the distinct IFF stripes of the Blackshield."
 	icon_state = "flakvest_mil"
 	item_state = "flakvest_mil"
 
-obj/item/clothing/suit/armor/flackvest/green
+/obj/item/clothing/suit/armor/flackvest/militia/full
+	name = "blackshield full flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
+			This one is marked with the distinct IFF stripes of the Blackshield, and offers additional coverage through shoulderpads and kneepads."
+	icon_state = "flakvest_mil_fullbody"
+	item_state = "flakvest_mil_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.6 // Bulkier due to protecting more
+
+/obj/item/clothing/suit/armor/flackvest/green
 	name = "flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations.\
 			Some folks are born made to wave the flag."
 	icon_state = "flakvest_green"
 	item_state = "flakvest_green"
 
-obj/item/clothing/suit/armor/flackvest/commander
+/obj/item/clothing/suit/armor/flackvest/green/full
+	name = "full body green flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations.\
+			Some folks are born made to wave the flag. And wear stylish kneepads and shoulderpads."
+	icon_state = "flakvest_green"
+	item_state = "flakvest_green"
+	slowdown = 0.6 // Bulkier due to protecting more
+
+/obj/item/clothing/suit/armor/flackvest/commander
 	name = "commander's flak vest"
 	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. Smells of napalm and the sea."
 	icon_state = "flakvest_mil"
@@ -625,7 +642,7 @@ obj/item/clothing/suit/armor/flackvest/commander
 	slowdown = 0.2
 	armor = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
 
-obj/item/clothing/suit/armor/commander
+/obj/item/clothing/suit/armor/commander
 	name = "commander's armored coat"
 	desc = "A heavily armored combination of menacing style and cutting-edge body armor."
 	icon_state = "commander"

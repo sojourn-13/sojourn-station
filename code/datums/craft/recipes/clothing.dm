@@ -210,7 +210,7 @@
 
 /datum/craft_recipe/clothing/mtua
 	name = "marshal tactical unit armor"
-	result = /obj/item/clothing/suit/armor/vest/full/ironhammer
+	result = /obj/item/clothing/suit/armor/vest/ironhammer/full
 	steps = list(
 		list(/obj/item/clothing/suit/armor/vest/ironhammer, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
@@ -292,6 +292,26 @@
 	result = /obj/item/clothing/suit/armor/flackvest/full
 	steps = list(
 		list(/obj/item/clothing/suit/armor/flackvest, 1, "time" = 30),
+		list(/obj/item/clothing/under, 1),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
+		list(QUALITY_ADHESIVE, 15, 60)
+	)
+
+/datum/craft_recipe/clothing/flakgreen
+	name = "full body green flak vest"
+	result = /obj/item/clothing/suit/armor/flackvest/green/full
+	steps = list(
+		list(/obj/item/clothing/suit/armor/flackvest, 1, "time" = 30),
+		list(/obj/item/clothing/under, 1),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
+		list(QUALITY_ADHESIVE, 15, 60)
+	)
+
+/datum/craft_recipe/clothing/flak_bs
+	name = "blackshield full flak vest"
+	result = /obj/item/clothing/suit/armor/flackvest/militia/full
+	steps = list(
+		list(/obj/item/clothing/suit/armor/flackvest/militia/, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
 		list(QUALITY_ADHESIVE, 15, 60)
