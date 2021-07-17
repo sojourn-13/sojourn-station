@@ -25,7 +25,7 @@
 	fire_sound = 'sound/weapons/Laser.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/riggedlaser
-	equip_cooldown = 30
+	equip_cooldown = 15
 	name = "jury-rigged welder-laser"
 	desc = "While not regulation, this inefficient weapon can be attached to working exo-suits in desperate, or malicious, times."
 	icon_state = "mecha_laser"
