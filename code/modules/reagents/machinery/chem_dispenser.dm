@@ -242,7 +242,7 @@
 	density = FALSE
 	level0 = list(
 		"water","ice","icetea","icegreentea","cola","spacemountainwind","dr_gibb","space_up",
-		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice")
+		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice")
 
 	level1 = list("capsaicin", "carbon")
 	level2 = list("banana", "berryjuice")
@@ -307,7 +307,7 @@
 		"lemon_lime","sugar","orangejuice","limejuice",
 		"sodawater","tonic","beer","kahlua","whiskey",
 		"wine","vodka","gin","rum","tequilla","vermouth",
-		"cognac","ale","mead", "pineapplejuice")
+		"cognac","ale","mead", "fernet")
 
 	level1 = list("melonliquor", "bluecuracao")
 	level2 = list("sake", "irishcream")

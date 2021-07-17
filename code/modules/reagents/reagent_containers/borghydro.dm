@@ -18,7 +18,8 @@
 	var/list/reagent_names = list()
 
 /obj/item/weapon/reagent_containers/borghypo/medical
-	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin", "inaprovaline", "tramadol", "spaceacillin", "stoxin")
+	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin", "inaprovaline", "tramadol", \
+						"spaceacillin", "stoxin")
 	accepts_reagent_upgrades = TRUE
 
 /obj/item/weapon/reagent_containers/borghypo/rescue
@@ -113,7 +114,10 @@
 	recharge_time = 3
 	volume = 60
 	possible_transfer_amounts = list(5, 10, 20, 30)
-	reagent_ids = list("beer", "kahlua", "whiskey", "wine", "vodka", "gin", "rum", "tequilla", "vermouth", "cognac", "ale", "mead", "water", "sugar", "ice", "tea", "greentea", "icetea", "icegreentea", "cola", "spacemountainwind", "dr_gibb", "space_up", "tonic", "sodawater", "lemon_lime", "orangejuice", "limejuice", "watermelonjuice", "honey", "milk")
+	reagent_ids = list("beer", "kahlua", "whiskey", "wine", "vodka", "gin", "rum", "tequilla", "vermouth", \
+						"cognac", "ale", "mead", "water", "sugar", "ice", "tea", "greentea", "icetea", \
+						"icegreentea", "cola", "spacemountainwind", "dr_gibb", "space_up", "tonic", "sodawater", \
+						"lemon_lime", "orangejuice", "limejuice", "watermelonjuice", "honey", "milk", "fernet")
 
 /obj/item/weapon/reagent_containers/borghypo/service/attack(var/mob/M, var/mob/user)
 	return
