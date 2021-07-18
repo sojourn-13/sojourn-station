@@ -19,8 +19,9 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/vest/handmade, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/armorvest_black
@@ -38,8 +39,9 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/vest/handmade_black, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/balaclava
@@ -194,8 +196,10 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/vest, 1, "time" = 30), //TODO: a better way to do this, every children of armor/vest will be eligible for crafting this one...
 		list(/obj/item/clothing/under, 1),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One sheet per limb
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTIC),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/securityfull
@@ -204,8 +208,10 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/vest/security, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One sheet per limb
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTIC),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/mtua
@@ -214,8 +220,9 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/vest/ironhammer, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/iambulletproof
@@ -224,8 +231,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/bulletproof/, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 /datum/craft_recipe/clothing/platecarrier
 	name = "full body plate carrier"
@@ -233,8 +243,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/platecarrier_ms
@@ -243,8 +256,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier/ih, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/platecarrier_bs
@@ -253,8 +269,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier/militia, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/corpsmenplate
@@ -263,8 +282,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier/corpsman, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/doomguy // Closest you'll get next to a SCAF suit
@@ -273,8 +295,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier/green, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/afghan // Just don't tell mom...
@@ -283,8 +308,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier/tan, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/fullmetalflaket
@@ -293,8 +321,12 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/flackvest, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/flakgreen
@@ -303,8 +335,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/flackvest, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/flak_bs
@@ -313,8 +348,11 @@
 	steps = list(
 		list(/obj/item/clothing/suit/armor/flackvest/militia/, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 60)
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /***********************
