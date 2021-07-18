@@ -40,24 +40,26 @@
 /obj/item/weapon/gun/hydrogen/incinerator
 	name = "\improper \"Reclaimator\" hydrogen-plasma gun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	This plasma gun doesn't seems to heat up and its hydrogen cell doesn't seem to run out."
+	This plasma gun doesn't seems to heat up."
 	icon_state = "incinerator"
-	use_plasma_cost = 0
+	use_plasma_cost = 10
 	heat_per_shot = 0 // No heat gain.
 	origin_tech = list(TECH_COMBAT = 15, TECH_MATERIAL = 7, TECH_PLASMA = 25)
 	matter = list(MATERIAL_PLASTEEL = 65, MATERIAL_MHYDROGEN = 15, MATERIAL_OSMIUM = 10, MATERIAL_TRITIUM = 5)
 	init_firemodes = list(
-		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", heat_per_shot = 0, use_plasma_cost = 1),
-		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 0, use_plasma_cost = 1)
+		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", heat_per_shot = 0, use_plasma_cost = 10),
+		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 0, use_plasma_cost = 20)
 	)
 
 /obj/item/weapon/gun/hydrogen/incinerator/Initialize()
 	..()
-	flask = new /obj/item/weapon/hydrogen_fuel_cell/infinite(src)
+	//flask = new /obj/item/weapon/hydrogen_fuel_cell/infinite(src) // Apparently never running out of ammo is too OP.
 
 // Can't remove the cell
+/* It was nerfed back to a normal cell, so there's no reason to not be able to remove it.
 /obj/item/weapon/gun/hydrogen/incinerator/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 	return
+*/
 
 /obj/item/weapon/gun/hydrogen/plasma_torch
 	name = "\improper Welder Gun"
