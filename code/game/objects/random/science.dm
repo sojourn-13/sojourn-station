@@ -21,7 +21,9 @@
 	/obj/item/weapon/rig/hazmat = 2,
 	/obj/item/weapon/rig/hazmat/equipped = 1,
 	/obj/item/weapon/tool/multitool/uplink = 0.001, //REALLY RARE
-	/obj/item/device/radio/headset/uplink = 0.001
+	/obj/item/device/radio/headset/uplink = 0.001,
+	/obj/item/weapon/hydrogen_fuel_cell = 0.1,
+	/obj/item/weapon/hydrogen_fuel_cell/backpack = 0.1
 	))
 
 /obj/random/science/low_chance
