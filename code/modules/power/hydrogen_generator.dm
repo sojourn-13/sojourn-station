@@ -50,8 +50,8 @@
 	return FALSE
 
 /obj/machinery/power/hydrogen_gen/proc/UseFuel() // Consume the fuel, if we can.
-	if(fuel_cells[next_cell] == null) // If there isn't a cell there, switch to the next one
-		SwitchCell()
+	if(fuel_cells[next_cell] == null) // If there isn't a cell in that slot, switch to the next one
+		SwitchCell() // Switch to the next cell
 	for(var/obj/item/weapon/hydrogen_fuel_cell/C in fuel_cells) // Check each cell we have.
 		if(C == fuel_cells[next_cell]) // Is is the cell we're supposed to use the hydrogen from?
 			if(C.use(hydrogen_usage)) // Consume the hydrogen in the cell
