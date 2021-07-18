@@ -19,6 +19,11 @@
 									/obj/item/weapon/reagent_containers/glass/bottle/organic/meralyne = 1, // Meralyne, heal brute damage better than bicaridine
 									)
 
+/mob/living/carbon/superior_animal/fungi/shroom/New()
+	var/picked_name = "[pick("Higgs","Igor","Hipp","Galen","Sina","Vesa","Rene","Edwa","Ig","Curie","Lister","Sigis","Koch","Osler")]"
+	name = "Shroomling [picked_name]"
+	..()
+
 /mob/living/carbon/superior_animal/fungi/shroom/Life()
 	..()
 

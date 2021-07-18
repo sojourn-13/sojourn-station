@@ -115,3 +115,8 @@
 	nutriment_req = 0
 	nature = MODIFICATION_SILICON
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_GOLD = 1)
+
+/obj/item/organ/internal/brain/plant
+	name = "nuclei"
+	desc = "A centralized nuclei functioning as a brain for plantoid species."
+	icon_state = "brain_plant"

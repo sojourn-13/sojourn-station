@@ -1,3 +1,25 @@
+/datum/category_item/setup_option/background/homeworld
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_KRIOSAN, FORM_CINDAR, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH)
+
+/datum/category_item/setup_option/background/homeworld/amereth
+	name = "Amereth"
+	desc = "The great jewel of the frontier, Amereth, the place you have lived formerly as a tribal (or perhaps currently) that contains all the wonder and mystery of the realm. It's \
+	natural splendor has given you an understanding of the potential green wealth on offer, but a world without written history is one of mystery. One that you may or may not know. As someone who \
+	has resided here for quite some time, you've grown accustomed to the dangers and strangeness of the world. While this hasn't quite given you any advantage, surviving in the wilds requires \
+	natural remedies, and as such you instinctively know your way around plants."
+
+	restricted_to_species = list(FORM_MYCUS, FORM_FOLKEN)
+	perks = list(/datum/perk/greenthumb)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
 /datum/category_item/setup_option/background/homeworld/newdamascus
 	name = "New Damascus"
 	desc = "Once a bustling manufacturing world that was rich in oxygen and low in moisture, New Damascus is an arid world slowly bringing itself back from the brink of economic collapse. \
@@ -120,11 +142,13 @@
 	name = "Rankorin"
 	desc = "Rankorin was originally classified as a death world due to its highly toxic atmosphere caused by a combination of natural flora and common storms of poisonous dusts clouds. \
 	However the discovery of immense diamonds deposits lured potential companies to establish colonies on the planet for a highly lucrative mining operation. Much to misfortune of the first \
-	people to settle there the toxic nature of the world proved most disastrous to kriosans and cindarites despite their usual tolerance to such conditions. Through a quirk of biology the flora of \
-	Rankorin developed toxins that attacked the immune system and turned it against the body, as such, races normally suited for this world avoided it as much as possible. \
+	people to settle there the toxic nature of the world proved most disastrous to kriosans, cindarites, and synthetic life forms despite their usual tolerance to such conditions. Through a quirk of biology the flora of \
+	Rankorin developed toxins that attacked the immune system and turned it against the body, as such, races normally suited for this world avoided it as much as possible where in the case of synthetics, the \
+	exceptional amount of pollution, radiation, dust storms, and electromagnetic pulses prevent synthetic individuals from surviving with any kind of ease. \
 	The remaining people who choose to settle here and work the mines adapted over several generations to thrive in bad atmosphere and have almost become dependent on it. \
 	This adaptation, coupled with working the diamond mines, have made them physically tough but comparably weak to people of other home-worlds."
 
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
 	perks = list(/datum/perk/chaingun_smoker)
 
 	stat_modifiers = list(

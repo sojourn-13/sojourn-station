@@ -29,3 +29,8 @@
 		return FALSE
 
 	return owner && (owner.pulse > PULSE_NONE || BP_IS_ROBOTIC(src) || (owner.status_flags & FAKEDEATH)) //TODO: "owner &&" was added as a runtime fix, needs better fix.
+
+/obj/item/organ/internal/heart/plant
+	name = "centralized capillary"
+	desc = "The centralized heart of a plantoid, functioning as little more than a capillary."
+	icon_state = "heart_plant-on"
