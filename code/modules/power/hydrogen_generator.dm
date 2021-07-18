@@ -50,6 +50,8 @@
 	return FALSE
 
 /obj/machinery/power/hydrogen_gen/proc/UseFuel() // Consume the fuel, if we can.
+	if(fuel_cells[next_cell] == null) // If there isn't a cell there, switch to the next one
+		SwitchCell()
 	for(var/obj/item/weapon/hydrogen_fuel_cell/C in fuel_cells) // Check each cell we have.
 		if(C == fuel_cells[next_cell]) // Is is the cell we're supposed to use the hydrogen from?
 			if(C.use(hydrogen_usage)) // Consume the hydrogen in the cell
@@ -70,11 +72,10 @@
 	for(var/i = fuel_cells.len to 1 step -1) // Check each cell we have.
 		var/O = fuel_cells[i]
 		if(O == null) // Check if that cell slot is free
-			fuel_cells[i] = C // Remove the cell from the list.
+			fuel_cells[i] = C // Add the cell to the list.
 			insert_item(C, user)
 			user.visible_message(
-									SPAN_NOTICE("[user] insert the hydrogen flask in the [i]\th slot of the [src.name]."),
-									SPAN_NOTICE("You insert the hydrogen flask in the [i]\th slot of the [src.name].")
+									SPAN_NOTICE("[user] insert the hydrogen flask in the [i]\th slot of the [src.name].") // No need for the user message sine 'insert_item' handle that
 									)
 			break // Leave the loop
 	return
@@ -84,11 +85,10 @@
 	for(var/i = fuel_cells.len to 1 step -1) // Check each cell we have.
 		var/obj/item/weapon/hydrogen_fuel_cell/C = fuel_cells[i]
 		if(response == C) // Check if that cell is the one we chose.
-			C.forceMove(src.loc) // Move the cell out of the generator.
+			eject_item(C, user)
 			fuel_cells[i] = null // Remove the cell from the list.
 			user.visible_message(
-									SPAN_NOTICE("[user] remove the [i]\th hydrogen flask from the [src.name]."),
-									SPAN_NOTICE("You remove the [i]\th hydrogen flask from the [src.name].")
+									SPAN_NOTICE("[user] remove the [i]\th hydrogen flask from the [src.name].") // No need for the user message sine 'insert_item' handle that
 									)
 			break // Leave the loop
 	return
