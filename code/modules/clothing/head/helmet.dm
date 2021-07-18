@@ -110,8 +110,8 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["vector default"] = "acolyte"
-	options["tangent ridge helmet"] = "tangent_ridge_helmet"
-	options["tangent ridge helmet open"] = "tangent_ridge_helmet_switched"
+	options["tangent ridge helmet"] = "tangent_ridge_helmet_switched"
+	options["tangent ridge helmet open"] = "tangent_ridge_helmet"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
