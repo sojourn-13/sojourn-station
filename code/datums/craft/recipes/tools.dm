@@ -74,8 +74,7 @@
 		list(QUALITY_WELDING, 10, 20),
 		list(/obj/item/stack/cable_coil, 2, "time" = 10),
 		list(QUALITY_WIRE_CUTTING, 10, 10),
-		list(QUALITY_ADHESIVE, 15, 20),
-		list(/obj/item/weapon/cell/small, 1) // No obtaining a free cell or silver.
+		list(QUALITY_ADHESIVE, 15, 20)
 	)
 
 //A rod with bits of pointy shrapnel stuck to it. Good weapon

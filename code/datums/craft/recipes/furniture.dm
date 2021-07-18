@@ -116,3 +116,12 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_WOOD)
 	)
+
+/datum/craft_recipe/furniture/burnbarrel
+	name = "burn barrel"
+	result = /obj/machinery/microwave/burnbarrel
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD),
+	)
+
