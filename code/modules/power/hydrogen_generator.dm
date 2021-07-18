@@ -19,7 +19,7 @@
 	var/next_cell = 1 // The next cell which we will use power from. // Apparently BYOND Lists start at 1
 
 /obj/machinery/power/hydrogen_gen/Initialize()
-	. = ..()
+	..()
 	if(anchored)
 		connect_to_network()
 
@@ -52,14 +52,14 @@
 /obj/machinery/power/hydrogen_gen/proc/UseFuel() // Consume the fuel, if we can.
 	for(var/obj/item/weapon/hydrogen_fuel_cell/C in fuel_cells) // Check each cell we have.
 		if(C == fuel_cells[next_cell]) // Is is the cell we're supposed to use the hydrogen from?
-			if(C.plasma >= hydrogen_usage) // Do we have hydrogen left?
-				C.use(hydrogen_usage) // Consume the hydrogen in the cell
-			else // The fuel cell is empty
+			if(C.use(hydrogen_usage)) // Consume the hydrogen in the cell
+				return TRUE
+			else // We don't have enough hydrogen
 				SwitchCell() // Switch to the next cell
 	return
 
 // Switch to the next available cell.
-/obj/machinery/power/hydrogen_gen/SwitchCell()
+/obj/machinery/power/hydrogen_gen/proc/SwitchCell()
 	while(fuel_cells[next_cell] == null) // Keep going as long as the slot is empty
 		next_cell++ // Go to the next cell
 		if(next_cell > fuel_cells.len) // Did we go over the list's length?
@@ -147,3 +147,37 @@
 	if (!anchored)
 		return
 	SwitchOnOff(user) // Switch the generator on or off
+
+/* TEST SHEET : Power Production theory based on capacitor rating
+1. 2 T1 capacitors
+2. 2 T2 capacitors
+3. 2 T3 capacitors
+4. 2 T4 capacitors
+5. 2 T5 capacitors
+
+1 : 2 rating, 2 amount. *= output : 0. += output : 1 = 50 kW
+2 : 4 rating, 2 amount. *= output : 2. += output : 3 = 150 kW
+3 : 6 rating, 2 amount. *= output : 3. += output : 4 = 200 kW
+4 : 8 rating, 2 amount. *= output : 4. += output : 5 = 250 kW
+5 : 10 rating, 2 amount. *= output : 5. += output : 6 = 300 kW
+*/
+
+/obj/machinery/power/hydrogen_gen/RefreshParts()
+	..()
+
+	// Where we modify the power output with the parts
+	power_output = initial(power_output) // Reset the power output to prevent infinite loop
+	var/cap_rating = 0
+	var/cap_amount = 0
+	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+		cap_rating += C.rating
+		cap_amount++
+	cap_rating -= cap_amount
+	power_output += cap_rating
+
+// TODO : Add sprite and overlays for each fuel cell
+/obj/machinery/power/hydrogen_gen/update_icon()
+	if(active)
+		icon_state = "portgen1"
+	else
+		icon_state = "portgen0"
