@@ -3,13 +3,13 @@
 /obj/item/weapon/hydrogen_fuel_cell //Basic type of the cells, should't be used by itself
 	name = "cryo-sealed hydrogen fuel cell"
 	desc = "A flask full of volatile hydrogen. It cannot be refilled once spent."
-
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma_can"
 	item_state = "plasma_can"
 	contained_sprite = TRUE
 	item_state_slots = list(slot_l_hand_str = "plasma_can_left", slot_r_hand_str = "plasma_can_right")
 	origin_tech = list(TECH_POWER = 1)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_MHYDROGEN = 1, MATERIAL_OSMIUM = 1, MATERIAL_TRITIUM = 1)
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_WEAK
 	throw_speed = 3
