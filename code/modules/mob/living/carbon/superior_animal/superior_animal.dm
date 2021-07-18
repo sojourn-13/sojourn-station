@@ -34,6 +34,8 @@
 
 	var/comfy_range = 6 //How far we like to be form are targets when we fire!
 
+	var/grabbed_by_friend = FALSE //is this superior_animal being wrangled?
+
 	var/turns_per_move = 3 //number of life ticks per random movement
 	var/turns_since_move = 0 //number of life ticks since last random movement
 	var/wander = 1 //perform automated random movement when idle
