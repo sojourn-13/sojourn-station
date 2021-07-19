@@ -351,15 +351,15 @@
 
 // Battery Charge
 /datum/ritual/cruciform/factorial/charge
-	name = "Power Transfer"
+	name = "Cant of the craft"
 	desc = "Use the energy in your cruciform to charge the power cell you are holding."
-	phrase = "Observationibus illustrare pio Sine aedificare seris, donec sacra studia cursus ultrices venas et indicia mitte rapinae elit!"
+	phrase = "Observationibus illustrare pio Sine aedificare seris, donec sacra studia cursus ultrices venas et indicia mitte rapinae elit."
 	cooldown = TRUE
 	cooldown_time = 0 MINUTES
 	cooldown_category = "charging"
 	power = 0 // Do not use the power in one shot
-	var/charge_used = 1 // Amount of cruciform energy used.
-	var/charge_rate = 30 // The delay between each charge? The number is in deciseconds, so 30 is equal to 3 seconds
+	var/charge_used = 10 // Amount of cruciform energy used.
+	var/charge_rate = 20 // The delay between each charge? The number is in deciseconds, so 30 is equal to 3 seconds
 
 /datum/ritual/cruciform/factorial/charge/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
 	set_personal_cooldown(user)
@@ -368,7 +368,7 @@
 		var/obj/item/weapon/cell/P = inhand
 		to_chat(user, "You start charging the [P.name].")
 		while(C.power >= charge_used) // Keep going until we run out of power
-			if(!istype(/obj/item/weapon/cell, user.get_active_hand())) // Check if we're still holding a cell. Because rigged cell explode when charging.
+			if(!istype(user.get_active_hand(), /obj/item/weapon/cell)) // Check if we're still holding a cell. Because rigged cell explode when charging.
 				break
 			if(P.fully_charged()) // Leave the loop if the cell is charged.
 				break
@@ -383,7 +383,7 @@
 
 // Self-Repair
 /datum/ritual/cruciform/factorial/self_repair
-	name = "Self-Repair"
+	name = "Litany of the iron soul"
 	desc = "Use the energy in your cruciform to repair all mechanical parts on the bearer, be they synthetic limbs or organs."
 	phrase = "Sic invocamus Absoluta. Ergo omne quod facimus separabuntur."
 	cooldown = TRUE
@@ -408,7 +408,7 @@
 
 // Mass-Repair
 /datum/ritual/cruciform/factorial/mass_repair
-	name = "Mass-Repair"
+	name = "Blessing of the machine"
 	desc = "Use the energy in your cruciform to repair all mechanical parts of those around you, be they synthetic limbs or organs."
 	phrase = "Nee tamen carnis denigrant noli haec possunt referri. Tu posse reincarnated - renascentes per voluntatem Dei Absoluta ferro."
 	cooldown = TRUE
