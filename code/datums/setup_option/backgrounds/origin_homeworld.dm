@@ -3,7 +3,7 @@
 
 /datum/category_item/setup_option/background/homeworld/amereth
 	name = "Amethyn"
-	desc = "The great jewel of the frontier, Amereth, the place you have lived formerly as a tribal (or perhaps currently) that contains all the wonder and mystery of the realm. It's \
+	desc = "The great jewel of the frontier, Amethyn, the place you have lived formerly as a tribal (or perhaps currently) that contains all the wonder and mystery of the realm. It's \
 	natural splendor has given you an understanding of the potential green wealth on offer, but a world without written history is one of mystery. One that you may or may not know. As someone who \
 	has resided here for quite some time, you've grown accustomed to the dangers and strangeness of the world. While this hasn't quite given you any advantage, surviving in the wilds requires \
 	natural remedies, and as such you instinctively know your way around plants."
