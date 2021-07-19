@@ -919,7 +919,7 @@
 	return TRUE
 
 /datum/ritual/cruciform/priest/prosthetic
-	name = "Summon Prosthetic"
+	name = "Litany of wholeness"
 	phrase = "O absolutus! Dona mihi membra novus install a daemone pedisequus vester."
 	desc = "This litany summon a prosthetic limb or implant to install on a follower."
 	power = 50
