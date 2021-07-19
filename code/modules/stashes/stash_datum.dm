@@ -168,7 +168,7 @@ This file contains the underlying code for stash datums
 	var/possible_landmark
 	if(directions & DIRECTION_LANDMARK)
 		possible_landmark = pick_landmark(/obj/landmark/storyevent/midgame_stash_spawn)
- 
+
 
 	//First of all, lets select how we're going to direct the user. This is not purely random
 

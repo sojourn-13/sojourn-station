@@ -22,3 +22,8 @@
 		rad = 10,
 		agony = 10
 	)
+
+/mob/living/carbon/superior_animal/fungi/slime/New()
+	var/picked_name = "[pick("Obsidian","Rock","Iron","Shield","War","Thunk","Brick","Khan","Cutter","Knuck","Kor","Art","Moch","Krak")]"
+	name = "Mold-Slime [picked_name]"
+	..()

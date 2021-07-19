@@ -26,3 +26,8 @@
 	price_tag = 100
 	nature = MODIFICATION_SILICON
 	matter = list(MATERIAL_STEEL = 1)
+
+/obj/item/organ/internal/lungs/plant
+	name = "air sacs"
+	desc = "Lungs made for a plantoid species, works just as well as a normal set."
+	icon_state = "lungs_plant"

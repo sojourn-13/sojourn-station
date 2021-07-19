@@ -487,7 +487,7 @@
 
 /datum/perk/oddity_reroll
 	name = "Modify Oddity"
-	desc = "You reach into your understanding of this natural world to alter the latent effects of an oddity, changing it for better or worse."
+	desc = "You reach into your understanding of this natural world to alter the latent effects of an oddity, enhancing the properties it has."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -497,13 +497,13 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("You can't force change so soon."))
+		to_chat(usr, SPAN_NOTICE("The natural forces around you cannot be manipulated just yet."))
 		return FALSE
 	if(!istype(O, /obj/item/weapon/oddity))
-		to_chat(usr, SPAN_NOTICE("This isn't an oddity !"))
+		to_chat(usr, SPAN_NOTICE("This isn't the correct kind of oddity!"))
 		return FALSE
-	cooldown_time = world.time + 15 MINUTES
-	user.visible_message("[user] do something to the anomaly in their hand.", "You do something to the anomaly in their hand.")
+	cooldown_time = world.time + 45 MINUTES
+	user.visible_message("<b><font color='green'>[user] concentrates on the anomaly in their hand, something about it changing in a subtle way.</font><b>", "<b><font color='green'>You focus on the energies around the object, swaying them to your will and enhancing it!</font><b>")
 	log_and_message_admins("used their [src] perk.")
 	if(O.oddity_stats)
 		if(O.random_stats)
@@ -512,10 +512,12 @@
 
 /datum/perk/folken_healing
 	name = "Folken Photo-Healing"
-	desc = "As a Folken, you can use the light to heal wounds."
+	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration."
 	passivePerk = TRUE
 
 /datum/perk/folken_healing/young
+	name = "Folken Photo-Healing"
+	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration. Due to your comparitively young age, you heal much faster than older folken."
 
 
 
@@ -523,12 +525,13 @@
 
 /datum/perk/dark_heal
 	name = "Mycus Regeneration"
-	desc = "As a mycus, you heal as long as you are in the darkness."
+	desc = "As a mycus, you heal as long as you are in the darkness, increasing your natural regeneration."
 	passivePerk = TRUE
 
 /datum/perk/mushroom_follower
-	name = "Spawn Mushroom Follower"
-	desc = "Mushroom followers produces random healing chems when fed enough food."
+	name = "Spawn Shroomling"
+	desc = "Shroomlings are animal-intelligence mycus capable of following simple orders like 'Shroomling 'Name' Follow.' and 'Shroomling 'Name' Stop.' who will stay by you when ordered. While capable of fighting, they are quite weak, the \
+	major benefit of having one is they may turn any food you feed into them into useful healing chemicals contained in bottles of resin."
 	active = FALSE
 	passivePerk = FALSE
 	var/follower_type = /mob/living/carbon/superior_animal/fungi/shroom
@@ -548,8 +551,9 @@
 	..()
 
 /datum/perk/slime_follower
-	name = "Spawn Slime-Mold Follower"
-	desc = "Slime followers regenerates and has better stats fit for combat."
+	name = "Spawn Slime-Mold"
+	desc = "Slime-mold shroomlings are animal-intelligence mycus capable of following simple orders like 'Slime-Mold 'Name' Follow.' and 'Slimd-Mold 'Name' Stop.' who will stay by you when ordered. Slime-molds are made for combat, being \
+	incredibly sturdy and physically strong, able to regenerate even the worst wounds. Unfortunately they suffer from poor eyesight, requiring threats to get close before they notice them."
 	active = FALSE
 	passivePerk = FALSE
 	var/follower_type = /mob/living/carbon/superior_animal/fungi/slime

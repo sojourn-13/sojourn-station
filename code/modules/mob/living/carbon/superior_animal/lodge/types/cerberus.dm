@@ -3,7 +3,7 @@
 	name = "cerberus"
 	desc = "A domesticated hell diver kept fat, happy, and loyal by the local hunting lodge that breed them as hunting allies and guard animals. Favored especially for their asexual \
 	reproduction after being fed various mushrooms, a fact that baffles some soteria scientists. Unlike a standard hell diver the cerberus isn't as \
-	obsessed with food but gladly lets itself get pulled along. The instinct to attack insectile creatures that makes these attempt to maul cht'mants to death, has been bred out of them."
+	obsessed with food but gladly lets itself get pulled along. Special training allows for them to follow anyone who states 'Cerberus Follow', while 'Cerberus Stop' will make them halt."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "pigrat"
 	icon_living = "pigrat"
@@ -15,6 +15,7 @@
 	var/offspring_left = 0
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	randpixel = 0
 
 /mob/living/carbon/superior_animal/lodge/cerberus/Life()
 	. = ..()
@@ -46,7 +47,7 @@
 /mob/living/carbon/superior_animal/lodge/cerberus/chimera
 	name = "chimera"
 	desc = "A mutated strain of a domesticated cerberus, rarely appearing and much sleeker than their lesser cousins. Chimera are faster, better armored, and much more lethal than a cerberus \
-	thanks to its maw containing a huge singular fang, making them prized companions by all hunters. The instinct to attack insectile creatures that makes these attempt to maul cht'mants to death, has been bred out of them."
+	thanks to its maw containing a huge singular fang, making them prized companions by all hunters. Special training allows for them to follow anyone who states 'Chimera Follow', while 'Chimera Stop' will make them halt."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "nightstalker"
 	icon_living = "nightstalker"
@@ -62,6 +63,7 @@
 	special_parts = list(/obj/item/animal_part/chimera_fang)
 	default_pixel_x = -16
 	pixel_x = -16
+	randpixel = 0
 
 /mob/living/carbon/superior_animal/lodge/cerberus/chimera/Life()
 	. =..()
@@ -87,6 +89,7 @@
 	mob_size = MOB_SMALL
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	randpixel = 0
 
 /mob/living/carbon/superior_animal/lodge/baby_cerberus/New()
 	..()

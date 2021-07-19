@@ -77,7 +77,7 @@
 			)
 		var/med_skill = user.stats.getStat(STAT_BIO)
 		if (do_after(user, 30, M))
-			M.heal_organ_damage((src.heal_brute * (1+med_skill/50)/2), (src.heal_burn * (1+med_skill/50)/2))
+			M.heal_organ_damage((src.heal_brute + (med_skill * 2)), (src.heal_burn + (med_skill * 2)))
 			if(prob(10 + med_skill) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 			else

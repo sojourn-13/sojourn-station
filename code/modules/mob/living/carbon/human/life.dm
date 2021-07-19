@@ -780,12 +780,14 @@
 			if(light_amount >= species.light_dam) // Enough light threshold
 				if(stats.getPerk(PERK_FOLKEN_HEALING_YOUNG)) // They are young Folken and will heal faster
 					heal_overall_damage(5,5)
+					adjustNutrition(2)
 				else
 					heal_overall_damage(2,2)
+					adjustNutrition(1)
 
 		else if(stats.getPerk(PERK_DARK_HEAL)) // Is the species a Mycus?
 			if(light_amount <= species.light_dam) // Enough light threshold
-				heal_overall_damage(2,2)
+				heal_overall_damage(5,5)
 
 		else if(light_amount > species.light_dam) //if there's enough light, start dying
 			take_overall_damage(1,1)
