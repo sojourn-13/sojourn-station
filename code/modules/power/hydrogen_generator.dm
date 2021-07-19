@@ -1,6 +1,6 @@
 // Use hydrogen cells as fuel to make power, like pacmans.
 /obj/machinery/power/hydrogen_gen
-	name = "Hydrogen Generator"
+	name = "hydrogen generator"
 	desc = "A portable generator for emergency backup power, use hydrogen fuel cell."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "portgen0"
