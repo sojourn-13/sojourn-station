@@ -10,8 +10,6 @@
 
 	var/active = FALSE // Is the generator running?
 	var/power_gen = 50000 // How much power does it produce?
-	var/open = 0
-	var/recent_fault = 0
 	var/power_output = 1 // Modifier to the power_gen var.
 	var/hydrogen_usage = 0.1 // How much hydrogen is used per tick.
 
@@ -75,7 +73,8 @@
 			fuel_cells[i] = C // Add the cell to the list.
 			insert_item(C, user)
 			user.visible_message(
-									SPAN_NOTICE("[user] insert the hydrogen flask in the [i]\th slot of the [src.name].") // No need for the user message sine 'insert_item' handle that
+									SPAN_NOTICE("[user] insert the hydrogen flask in the [i]\th slot of the [src.name]."), // No need for the user message sine 'insert_item' handle that
+									""
 									)
 			break // Leave the loop
 	return
@@ -88,7 +87,8 @@
 			eject_item(C, user)
 			fuel_cells[i] = null // Remove the cell from the list.
 			user.visible_message(
-									SPAN_NOTICE("[user] remove the [i]\th hydrogen flask from the [src.name].") // No need for the user message sine 'insert_item' handle that
+									SPAN_NOTICE("[user] remove the [i]\th hydrogen flask from the [src.name]."), // No need for the user message sine 'eject_item' handle that
+									""
 									)
 			break // Leave the loop
 	return
