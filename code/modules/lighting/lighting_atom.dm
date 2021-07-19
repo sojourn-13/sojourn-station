@@ -44,7 +44,8 @@
 			light = new /datum/light_source(src, .)
 
 
-/atom/proc/init_light()
+/atom/New()
+	. = ..()
 
 	if(light_power && light_range)
 		update_light()
@@ -59,7 +60,7 @@
 		light = null
 	return ..()
 
-/atom/movable/init_light()
+/atom/movable/New()
 	. = ..()
 
 	if(opacity && isturf(loc))
