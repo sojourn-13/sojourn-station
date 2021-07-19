@@ -2344,6 +2344,7 @@
 #include "code\modules\power\generator_type2.dm"
 #include "code\modules\power\gravitygenerator.dm"
 #include "code\modules\power\hydroelectric.dm"
+#include "code\modules\power\hydrogen_generator.dm"
 #include "code\modules\power\lighting.dm"
 #include "code\modules\power\port_gen.dm"
 #include "code\modules\power\power.dm"
