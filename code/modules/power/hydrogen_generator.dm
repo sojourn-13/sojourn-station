@@ -7,6 +7,7 @@
 	density = 1
 	anchored = FALSE
 	use_power = NO_POWER_USE
+	circuit = /obj/item/weapon/circuitboard/hydrogen_gen
 
 	var/active = FALSE // Is the generator running?
 	var/power_gen = 50000 // How much power does it produce?
