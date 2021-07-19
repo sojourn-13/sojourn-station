@@ -357,6 +357,123 @@
 	icon_state = "plant-25"
 	needs_to_maintain = TRUE
 
+/obj/structure/flora/pottedplant/bamboo
+	name = "potted bamboo shoots plant"
+	desc = "A small patch of bamboo shoots. Perfect for sipping tea by."
+	icon_state = "plant-27"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/bamboo_red
+	name = "potted red bamboo shoots plant"
+	desc = "A small patch of red bamboo shoots. Perfect for sipping red tea by."
+	icon_state = "plant-28"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/redshoot
+	name = "potted red shoot plant"
+	desc = "A meak and red vine plant that grows bright yellow pettles."
+	icon_state = "plant-29"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/rotwood
+	name = "potted iron rot tree"
+	desc = "A mini red rot tree typically grown in high iron deposits."
+	icon_state = "plant-30"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/rotwood_green
+	name = "potted copper rot tree"
+	desc = "A mini green rot tree typically grown in high copper deposits well it would normally be a copper colour it leaches only off the oxygenation."
+	icon_state = "plant-31"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/rotwood_blue
+	name = "potted copper rot tree" //same as a normal copper rot but different!
+	desc = "A mini azurite rot tree typically grown in high copper deposits being a rare and unique as it only grows in azurite deposet."
+	icon_state = "plant-32"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/bush_buds
+	name = "potted bush bud grove tree"
+	desc = "A round bush that produces large bulbs of silky peddles this ones a deep blue."
+	icon_state = "plant-33"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/bush_buds_yellow
+	name = "potted yellow bush bud grove tree"
+	desc = "A round bush that produces large bulbs of silky peddles this ones a mellow yellow do to lack of propper lighting in its natural habitat."
+	icon_state = "plant-34"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/grave_poppers
+	name = "potted grave poppers"
+	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a mix of red and blue in its pettles."
+	icon_state = "plant-35"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/bush_buds_red
+	name = "potted ruby bush bud grove tree"
+	desc = "A round bush that produces large bulbs of silky peddles this ones a ruby red reflecting on its green base."
+	icon_state = "plant-36"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/grave_poppers_blue
+	name = "potted blue grave poppers"
+	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a light blue in its pettles."
+	icon_state = "plant-37"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/grave_poppers_red
+	name = "potted red grave poppers"
+	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a deep red in its pettles."
+	icon_state = "plant-38"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/barrel_cactus
+	name = "potted barrel cactus"
+	desc = "Small and subby barrel cactus requiring little to not maintains."
+	icon_state = "plant-39"
+	needs_to_maintain = FALSE
+
+/obj/structure/flora/pottedplant/clockcult
+	name = "crafted tesla bolb plant"
+	desc = "Handmade of brass and life like bulb plant pettles it runs on an intenal cell that makes a ticking sound?"
+	icon_state = "plant-40"
+	light_range = 2
+	light_power = 0.6
+	light_color = "#B5A642" //Brass-y
+	needs_to_maintain = FALSE
+
+/obj/structure/flora/pottedplant/bush_ball
+	name = "potted bush ball"
+	desc = "Mini bush trimmed to be in a ball for a generic plant to have in a office setting."
+	icon_state = "plant-41"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/bush_tall
+	name = "potted bush piller"
+	desc = "Mini bush trimmed to be in a piller for a generic plant to have in a office setting."
+	icon_state = "plant-42"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/bush_bullet
+	name = "potted bush cone"
+	desc = "Mini bush trimmed to be in a cone for a generic plant to have in a office setting."
+	icon_state = "plant-43"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/star_root
+	name = "potted star root vine"
+	desc = "A rare star root that grows with a blue tint."
+	icon_state = "plant-44"
+	needs_to_maintain = TRUE
+
+/obj/structure/flora/pottedplant/water_root
+	name = "potted water root vine"
+	desc = "A rather Sol looking water root vine that tends to be able to grow in any climet..."
+	icon_state = "plant-45"
+	needs_to_maintain = TRUE
+
 /obj/structure/flora/pottedplant/decorative
 	name = "decorative potted plant"
 	desc = "This is a decorative shrub. It's been trimmed into the shape of an apple."

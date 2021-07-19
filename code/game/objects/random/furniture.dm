@@ -86,4 +86,24 @@
 				/obj/structure/flora/pottedplant/overgrown,\
 				/obj/structure/flora/pottedplant/fern,\
 				/obj/structure/flora/pottedplant/large,\
-				/obj/structure/flora/pottedplant)
+				/obj/structure/flora/pottedplant,\
+				/obj/structure/flora/pottedplant/bamboo,\
+				/obj/structure/flora/pottedplant/bamboo_red,\
+				/obj/structure/flora/pottedplant/redshoot,\
+				/obj/structure/flora/pottedplant/rotwood,\
+				/obj/structure/flora/pottedplant/rotwood_green,\
+				/obj/structure/flora/pottedplant/rotwood_blue,\
+				/obj/structure/flora/pottedplant/bush_buds,\
+				/obj/structure/flora/pottedplant/bush_buds_yellow,\
+				/obj/structure/flora/pottedplant/grave_poppers,\
+				/obj/structure/flora/pottedplant/bush_buds_red,\
+				/obj/structure/flora/pottedplant/grave_poppers_blue,\
+				/obj/structure/flora/pottedplant/grave_poppers_red,\
+				/obj/structure/flora/pottedplant/barrel_cactus,\
+				/obj/structure/flora/pottedplant/clockcult,\
+				/obj/structure/flora/pottedplant/bush_ball,\
+				/obj/structure/flora/pottedplant/bush_tall,\
+				/obj/structure/flora/pottedplant/bush_bullet,\
+				/obj/structure/flora/pottedplant/star_root,\
+				/obj/structure/flora/pottedplant/water_root)
+
