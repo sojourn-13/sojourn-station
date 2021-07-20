@@ -237,7 +237,7 @@
 			dat += {"<B>[display_name]:</B> [R.volume] unit\s<BR>"}
 
 		if(length(items_counts) == 0 && length(reagents.reagent_list) == 0)
-			dat = {"<B>The [src] is empty</B><BR>"}
+			dat = {"<B>\The [src] is empty</B><BR>"}
 		else
 			dat = {"<b>Ingredients:</b><br>[dat]"}
 		dat += {"<HR><BR>\

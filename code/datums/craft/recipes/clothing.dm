@@ -346,11 +346,24 @@
 	name = "blackshield full flak vest"
 	result = /obj/item/clothing/suit/armor/flackvest/militia/full
 	steps = list(
-		list(/obj/item/clothing/suit/armor/flackvest/militia/, 1, "time" = 30),
+		list(/obj/item/clothing/suit/armor/flackvest/militia, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
 		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
+	)
+
+/datum/craft_recipe/clothing/commanderflak
+	name = "blackshield commander's full flak vest"
+	result = /obj/item/clothing/suit/armor/flackvest/commander/full
+	steps = list(
+		list(/obj/item/clothing/suit/armor/flackvest/commander, 1, "time" = 30),
+		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL), // In accordance to flak vests
 		list(QUALITY_WELDING, 15, 30),
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
@@ -364,9 +377,10 @@
 	result = /obj/item/clothing/suit/armor/vest/handmadewooden
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
-		list(QUALITY_SAWING, 10, 90),
-		list(/obj/item/stack/material/cloth, 5, time = 30),
-		list(QUALITY_CUTTING, 10, 80)
+		list(QUALITY_SAWING, 10, 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+		list(/obj/item/stack/material/cloth, 2, time = 30),
+		list(QUALITY_CUTTING, 10, 30)
 	)
 
 /datum/craft_recipe/clothing/tac_clothes
