@@ -29,7 +29,7 @@
 /mob/living/simple_animal/hostile/bear/FindTarget()
 	. = ..()
 	if(.)
-		playsound(src, 'sound/effects/creatures/bear.ogg', 30, 1, -3)
+		playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
 
 /mob/living/simple_animal/hostile/bear/hudson
 	name = "Hudson"
