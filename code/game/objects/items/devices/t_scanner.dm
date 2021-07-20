@@ -19,6 +19,7 @@
 
 	//Scan range can be changed, and the power costs scale up with it
 	var/scan_range = 1
+	var/icon_swap_to_old = FALSE
 
 	//TODO: Make devices have cell support as an inherent behaviour
 	var/obj/item/weapon/cell/cell = null
@@ -61,14 +62,14 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["default eris"] = "t-ray_alt"
-	options["default sojourn"] = "t-ray"
+	options["default eris"] = TRUE
+	options["default sojourn"] = FALSE
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		icon_swap_to_old = options[choice]
+		to_chat(M, "You adjusted your t-ray scanner's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -89,6 +90,11 @@
 
 /obj/item/device/t_scanner/update_icon()
 	var/iconstring = initial(icon_state)
+
+	if (!icon_swap_to_old)
+		iconstring = "t-ray"
+	else
+		iconstring = "t-ray_alt"
 
 	if (enabled)
 		iconstring += "1"
