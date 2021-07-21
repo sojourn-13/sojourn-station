@@ -244,6 +244,11 @@
 	build_path = /obj/item/weapon/circuitboard/diesel
 	category = CAT_POWER
 
+/datum/design/research/circuit/hydrogen_gen
+	name = "hydrogen-type generator"
+	build_path = /obj/item/weapon/circuitboard/hydrogen_gen
+	category = CAT_POWER
+
 /datum/design/research/circuit/batteryrack
 	name = "cell rack PSU"
 	build_path = /obj/item/weapon/circuitboard/batteryrack
