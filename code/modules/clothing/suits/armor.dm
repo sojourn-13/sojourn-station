@@ -170,7 +170,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -202,7 +202,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -210,7 +210,7 @@
 
 /obj/item/clothing/suit/armor/vest/rosaria
 	name = "rosaria armor"
-	desc = "The rosaria protects."
+	desc = "The Rosaria protects."
 	icon_state = "rosaria_armor"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -220,7 +220,7 @@
 
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
-	desc = "Someone's gotta clean this mess. While this armor is technically church property, lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
+	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies' various dangerous pests."
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -244,7 +244,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -252,7 +252,7 @@
 
 /obj/item/clothing/suit/armor/vest/prime
 	name = "prime armor"
-	desc = "Trust in god but keep your armor on."
+	desc = "Trust in god, but keep your armor on."
 	icon_state = "prime"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -262,7 +262,7 @@
 
 /obj/item/clothing/suit/armor/vest/technomancersuit
 	name = "'Mark V' environmental protection suit"
-	desc = "For working in hazardous environments. While its built for most environments, one of those is not space proof but can be modified more."
+	desc = "For working in hazardous environments. While it is built for most environments, one of those is not space. As a tradeoff, it can be modified more."
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -281,7 +281,7 @@
 /obj/item/clothing/suit/armor/vest/soteriasuit
 	name = "'Mark II' environmental protection suit"
 	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
-	Unlike its superior variant, it offers significantly less armor but it is made out of basic steel, making it a cheaper, easier alternative to build well also being easier to modify."
+	Unlike its superior variant, it offers significantly less armor but it is made out of basic steel, making it a cheaper, easier alternative to build while also being easier to modify."
 	icon_state = "armor_engineering"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -574,6 +574,7 @@
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits endless desert warfare well. Has increased coverage due to the prescence of shoulderpads and kneepads."
 	icon_state = "platecarrier_tan_fullbody"
 	item_state = "platecarrier_tan_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/platecarrier/hos
 	name = "advanced plate carrier"
@@ -631,6 +632,7 @@
 			Some folks are born made to wave the flag. And wear stylish kneepads and shoulderpads."
 	icon_state = "flakvest_green"
 	item_state = "flakvest_green"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	slowdown = 0.6 // Bulkier due to protecting more
 
 /obj/item/clothing/suit/armor/flackvest/commander
@@ -641,6 +643,24 @@
 	blood_overlay_type = "armor"
 	slowdown = 0.2
 	armor = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/flackvest/commander/full
+	name = "commander's full body flak vest"
+	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. \
+			Heavy and bulky, it protects well against explosive and shrapnel. Smells of napalm and the sea. \
+			This model adds shoulder and thighs protection through additional layers of protective armor." // Thighington simps rejoice. - Seb
+	icon_state = "commander_mil_fullbody"
+	item_state = "commander_mil_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.3 // Bulkier due to protecting more
+	armor = list(
+		melee = 45,
+		bullet = 50,
+		energy = 30,
+		bomb = 50,
+		bio = 0,
+		rad = 0
+		)
 
 /obj/item/clothing/suit/armor/commander
 	name = "commander's armored coat"
