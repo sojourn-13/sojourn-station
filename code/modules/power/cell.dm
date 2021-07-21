@@ -201,8 +201,8 @@
 		return
 	//explosion(T, 0, 1, 2, 2)
 
-	log_admin("LOG: Rigged power cell explosion, last touched by [fingerprintslast]")
-	message_admins("LOG: Rigged power cell explosion, last touched by [fingerprintslast]")
+	log_admin("LOG: Rigged power cell explosion, last touched by [fingerprintslast] at [T.x], [T.y], [T.z]")
+	message_admins("LOG: Rigged <a href='?_src_=vars;Vars=\ref[src]'>[src]</a> explosion, last touched by [fingerprintslast] at [T.x], [T.y], [T.z]")
 
 	qdel(src)
 
