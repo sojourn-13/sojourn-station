@@ -19,7 +19,7 @@
 
 	//Scan range can be changed, and the power costs scale up with it
 	var/scan_range = 1
-	var/icon_swap_to_old = FALSE
+	var/icon_swap_to_old = TRUE
 
 	//TODO: Make devices have cell support as an inherent behaviour
 	var/obj/item/weapon/cell/cell = null
