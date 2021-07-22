@@ -66,3 +66,25 @@
 	siemens_coefficient = 0.8
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 100
+
+/obj/item/clothing/head/firefighter/guild_emergency
+	name = "emergency guild helmet"
+	desc = "A heavy plated and radiation protected hard helmet meant for emergency guild repairs in the most dangerous areas."
+	icon_state = "advanced_hardhat"
+	item_flags = STOPPRESSUREDAMAGE
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 8 //luminosity when on
+	light_overlay = "hardhat_light"
+	armor = list(
+		melee = 40,
+		bullet = 60,
+		energy = 50,
+		bomb = 75,
+		bio = 80,
+		rad = 100
+	)
+	siemens_coefficient = 0.8
+	w_class = ITEM_SIZE_NORMAL
+	price_tag = 100

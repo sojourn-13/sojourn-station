@@ -10,7 +10,14 @@
 
 /obj/structure/extinguisher_cabinet/New()
 	..()
-	has_extinguisher = new/obj/item/weapon/extinguisher(src)
+	if(prob(80))
+		has_extinguisher = new/obj/item/weapon/extinguisher(src)
+	else if(prob(20))
+		has_extinguisher = new/obj/item/weapon/extinguisher/mini(src)
+	else
+		has_extinguisher = null //OSHA would flip out
+	update_icon()
+
 
 /obj/structure/extinguisher_cabinet/attackby(obj/item/O, mob/user)
 	if(isrobot(user))
@@ -83,7 +90,13 @@
 
 /obj/structure/extinguisher_cabinet/update_icon()
 	if(!opened)
-		icon_state = "extinguisher_closed"
+		if(has_extinguisher)
+			if(istype(has_extinguisher, /obj/item/weapon/extinguisher/mini))
+				icon_state = "extinguisher_closed_mini"
+			else
+				icon_state = "extinguisher_closed_full"
+		else
+			icon_state = "extinguisher_closed"
 		return
 	if(has_extinguisher)
 		if(istype(has_extinguisher, /obj/item/weapon/extinguisher/mini))

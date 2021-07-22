@@ -248,6 +248,11 @@
 	icon_state = "northtech"
 	has_sensor = 0
 
+/obj/item/clothing/under/os_jumpsuit
+	name = "Greyson Positronic jumpsuit"
+	desc = "An uniform that was produced by Greyson Positronics, cleaning to enginering this over engineered suit was used. Surprisingly the suit senors still work."
+	icon_state = "os_jumpsuit"
+
 //Excelsior
 /obj/item/clothing/under/excelsior
 	name = "white excelsior jumpsuit"

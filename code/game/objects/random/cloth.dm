@@ -485,3 +485,27 @@
 	desc = "This is a random holster."
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
+
+/obj/random/cloth/greyson_clothing
+	name = "random greyson clothing"
+	desc = "This is a random greyson clothing."
+	icon_state = "armor-grey"
+
+/obj/random/cloth/greyson_clothing/low_chance
+	name = "low chance random greyson clothing"
+	desc = "This is a random greyson clothing."
+	icon_state = "armor-grey-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/cloth/greyson_clothing/item_to_spawn()
+	return pickweight(list(/obj/item/clothing/under/os_jumpsuit = 8,
+				/obj/item/clothing/under/iron_lock_security = 5,
+				/obj/item/clothing/shoes/ablasive/iron_lock_security = 1,
+				/obj/item/clothing/gloves/thick/ablasive/iron_lock_security  = 1,
+				/obj/item/clothing/head/soft/iron_lock_security = 1,
+				/obj/item/clothing/head/helmet/laserproof/iron_lock_security = 1,
+				/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
+				/obj/item/clothing/suit/greatcoat/os = 4,
+				/obj/item/clothing/head/os_cap = 4,
+				/obj/item/clothing/head/helmet/space/os = 8,
+				/obj/item/clothing/suit/space/os = 8))
