@@ -88,3 +88,32 @@
 	name = "roboticist's jumpsuit"
 	icon_state = "robotics"
 	item_state = "bl_suit"
+
+/obj/item/clothing/under/rank/engineer/adv
+	desc = "A plastic coated and padded engineering suit warn by guide adepts that know they are going into dangerous areas for repair work. Offers full radiation protection."
+	name = "adept's padded emergency suit"
+	icon_state = "engineadv"
+	item_state = "engineadv"
+	armor = list(
+		melee = 20, //if they are not waring any armor over this then we give *something*
+		bullet = 20,
+		energy = 25,
+		bomb = 40,
+		bio = 50,
+		rad = 100 //Rad proof
+	)
+
+/obj/item/clothing/under/rank/engineer/adv_master
+	desc = "A plastic coated and iron woven engineering suit warn by guide masters that know they are going into dangerous areas for repair work. Offers full radiation protection."
+	name = "adept's padded emergency suit"
+	icon_state = "chiefengineeradv"
+	item_state = "chiefengineeradv"
+	armor = list(
+		melee = 30, //if they are not waring any armor over this then we give *something*
+		bullet = 30,
+		energy = 45,
+		bomb = 80,
+		bio = 70,
+		rad = 100 //Rad proof
+	)
+
