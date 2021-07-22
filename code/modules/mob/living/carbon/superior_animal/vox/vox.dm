@@ -1,6 +1,6 @@
 /mob/living/carbon/superior_animal/vox
 	name = "Matasa sojoji"
-	desc = "A small predictor that is native to the lands. They are known for their limited craftsmanship and manipulation of objects."
+	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects."
 	icon_state = "vox_marsmud"
 	icon = 'icons/mob/mobs-voxy.dmi'
 

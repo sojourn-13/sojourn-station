@@ -211,7 +211,7 @@
 
 /mob/living/simple_animal/hostile/nightmare/dream_daemon
 	name = "dream daemon"
-	desc = "Stalker of nightmare grown in darkness, a rarer mutation has made this verson much more deadly and stronger..."
+	desc = "A creature of primal nightmares, bred in pitchest black... a rare sight of an evolved nightmare stalker, much deadlier, ruthless and agile than the average."
 	icon_state = "arachnid_daemon"
 	icon_living = "arachnid_daemon"
 	icon_rest = "arachnid_daemon_sleeping"
