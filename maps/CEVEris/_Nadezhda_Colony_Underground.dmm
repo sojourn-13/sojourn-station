@@ -5554,7 +5554,7 @@
 "mUx" = (/obj/effect/decal/cleanable/dirt,/obj/item/modular_computer/console/preset/engineering/rcon,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/engineering/engine_room)
 "mVM" = (/obj/structure/table/glass,/obj/item/device/camera,/turf/simulated/floor/carpet/sblucarpet,/area/nadezhda/rnd/rbreakroom)
 "mVW" = (/obj/random/material,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint,/area/colony)
-"mVZ" = (/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction,/turf/simulated/floor/reinforced/nitrogen,/area/nadezhda/engineering/atmos)
+"mVZ" = (/obj/machinery/atmospherics/pipe/simple/visible/yellow,/turf/simulated/floor/reinforced/nitrogen,/area/nadezhda/engineering/atmos)
 "mWq" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/visible,/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/engineering/atmos)
 "mWw" = (/obj/effect/floor_decal/industrial/danger{dir = 1},/turf/simulated/floor/tiled/dark,/area/nadezhda/rnd/xenobiology)
 "mWH" = (/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/tiled/dark/bluecorner,/area/nadezhda/command/swo/quarters)
