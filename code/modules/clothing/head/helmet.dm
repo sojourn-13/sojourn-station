@@ -716,7 +716,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["maska"] = "maska"
-	options["killer"] = "cosine_men_yoroi"
+	options["maska killa"] = "maska_killa"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
