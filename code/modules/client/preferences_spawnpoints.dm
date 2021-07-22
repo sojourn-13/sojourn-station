@@ -193,7 +193,7 @@
 		C.set_occupant(M, FALSE)
 
 		//When spawning in cryo, you start off asleep for a few moments and wake up
-		M.Paralyse(2)
+		//M.Paralyse(2) we were asleep, now awake. No need to paralyse! - Also lasted longer then a few moments do to MC 
 
 		//You can get yourself out of the cryopod, or it will auto-eject after one minute
 		spawn(600)
