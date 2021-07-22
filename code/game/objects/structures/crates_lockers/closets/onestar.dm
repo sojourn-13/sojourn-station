@@ -22,6 +22,7 @@
 	new /obj/random/pack/cloth/low_chance(src)
 	new /obj/random/pack/cloth/low_chance(src)
 	new /obj/random/pack/gun_loot/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 
 // Tier 2
 /obj/structure/closet/onestar/tier2
@@ -68,7 +69,8 @@
 	new /obj/random/pack/cloth/low_chance(src)
 	new /obj/random/pack/gun_loot/low_chance(src)
 	new /obj/random/tool/advanced/onestar/low_chance(src)
-
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
+	new /obj/random/lathe_disk/advanced/onestar/low_chance(src)
 
 ////// Closets
 
@@ -114,6 +116,8 @@
 /obj/structure/closet/onestar/tier1/special/populate_contents()
 	new /obj/random/pack/rare/low_chance(src)
 	new /obj/random/pack/rare/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty
@@ -129,6 +133,8 @@
 /obj/structure/closet/onestar/tier2/special/populate_contents()
 	new /obj/random/pack/rare/low_chance(src)
 	new /obj/random/pack/rare/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty
@@ -144,6 +150,8 @@
 /obj/structure/closet/onestar/tier3/special/populate_contents()
 	new /obj/random/pack/rare/low_chance(src)
 	new /obj/random/pack/rare/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty
@@ -160,6 +168,7 @@
 /obj/structure/closet/onestar/tier1/mineral/populate_contents()
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty
@@ -175,6 +184,7 @@
 /obj/structure/closet/onestar/tier2/mineral/populate_contents()
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty
@@ -190,6 +200,7 @@
 /obj/structure/closet/onestar/tier3/mineral/populate_contents()
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty
@@ -206,6 +217,7 @@
 /obj/structure/closet/onestar/tier1/medical/populate_contents()
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/lowkeyrandom(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty
@@ -221,6 +233,7 @@
 /obj/structure/closet/onestar/tier2/medical/populate_contents()
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/lowkeyrandom(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty
@@ -236,6 +249,7 @@
 /obj/structure/closet/onestar/tier3/medical/populate_contents()
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/lowkeyrandom(src)
+	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	..()
 
 // Empty

@@ -260,6 +260,20 @@
 		rad = 25
 	)
 
+/obj/item/clothing/head/os_cap
+	name = "Greyson Positronic Cap"
+	desc = "A flat brim cap warn by Greyson Positronic office workers to keep out light and sport their logo at the same time."
+	icon_state = "os_cap"
+	item_state = "os_cap"
+	armor = list(
+		melee = 5,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 20,
+		rad = 25
+	)
+
 /*
  * Ushanka
  */

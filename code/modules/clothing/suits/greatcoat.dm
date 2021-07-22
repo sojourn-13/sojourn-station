@@ -198,3 +198,15 @@
 		bio = 0,
 		rad = 0
 	)
+
+/obj/item/clothing/suit/greatcoat/os
+	name = "Greyson Positronic greatcoat"
+	desc = "A thick, heavy coat for workers form pipework to welding."
+	icon_state = "os_overcoat"
+	item_state = "os_overcoat"
+	blood_overlay_type = "coat"
+	armor = list(melee = 30, bullet = 10, energy = 25, bomb = 25, bio = 0, rad = 40)
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
