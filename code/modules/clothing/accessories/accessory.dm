@@ -270,6 +270,18 @@
 	desc = "A cloak lined with gold, and dyed in a noble blue. A proper cape of admirality, for many houses rely on the navy to exist, producing master navigator-captains who lead the otherwise meager Kriosan fleet to greatness. Ad Astra Per Aspera."
 	icon_state = "bleu_cape"
 
+/obj/item/clothing/accessory/cape/outsider
+	name = "outcast's cloak"
+	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
+	icon_state = "outsider"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/cape/black
+	name = "attachable black cloak"
+	desc = "A simple black cloak you can attach to your suit for all your edgy needs."
+	icon_state = "cloak"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
 /*Scarves*/
 
 /obj/item/clothing/accessory/scarf/black

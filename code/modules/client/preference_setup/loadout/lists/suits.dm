@@ -6,6 +6,11 @@
 	sort_category = "Suits and Overwear"
 	cost = 1
 
+/datum/gear/suit/bunnysuit
+	display_name = "bunny suit"
+	path = /obj/item/clothing/suit/costume/kinky/alyson
+	cost = 2 // Pay the horni tax.
+
 /datum/gear/suit/cloakselect
 	display_name = "cloak selection"
 	path = /obj/item/clothing/suit/hooded/cloak/simple
@@ -38,6 +43,14 @@
 /datum/gear/suit/hazard_vest_black
 	display_name = "black hazard vest"
 	path = /obj/item/clothing/suit/storage/hazardvest_black
+
+/datum/gear/suit/ivory
+	display_name = "ivory tabard"
+	path = /obj/item/clothing/suit/ivory
+
+/datum/gear/suit/blacksilk
+	display_name = "blacksilk tabard"
+	path = /obj/item/clothing/suit/blacksilk
 
 /datum/gear/suit/hoodies
 	display_name = "hoodie selection"
