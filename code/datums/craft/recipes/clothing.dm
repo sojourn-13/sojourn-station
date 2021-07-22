@@ -177,6 +177,14 @@
 		list(QUALITY_CUTTING, 10, 60)
 	)
 
+/datum/craft_recipe/clothing/acc_cloak
+	name = "attachable cloak"
+	result = /obj/item/clothing/accessory/cape/black
+	steps = list(
+		list(/obj/item/clothing/suit/hooded/cloak/simple, 1, "time" = 30),
+		list(QUALITY_CUTTING, 10, 30)
+	)
+
 
 /datum/craft_recipe/clothing/sandals
 	name = "wooden sandals"
@@ -415,3 +423,12 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 60),
 		list(QUALITY_SAWING, 15, 30)
 		)
+
+/datum/craft_recipe/clothing/outsider_cape
+	name = "outcast's cape"
+	result = /obj/item/clothing/accessory/cape/outsider
+	steps = list(
+		list(/obj/item/clothing/suit/storage/raggedcape, 1, "time" = 30),
+		list(QUALITY_CUTTING, 15, 30)
+	)
+

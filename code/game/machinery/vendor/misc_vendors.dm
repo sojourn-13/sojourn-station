@@ -720,6 +720,8 @@
 	vend_reply = "Have fun, you shameless pervert!"
 	products = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 5,
+				/obj/item/clothing/suit/ivory = 5,
+				/obj/item/clothing/suit/blacksilk = 5,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 5,
 				/obj/item/clothing/under/costume/kinky/leather = 5,
 				/obj/item/clothing/under/costume/kinky/sexy_clown = 5,
@@ -745,6 +747,8 @@
 				/obj/item/weapon/legcuffs/fuzzy = 5)
 	prices = list(
 				/obj/item/clothing/suit/costume/kinky/alyson = 100,
+				/obj/item/clothing/suit/ivory = 100,
+				/obj/item/clothing/suit/blacksilk = 100,
 				/obj/item/clothing/under/costume/kinky/latex_maid = 100,
 				/obj/item/clothing/under/costume/kinky/leather = 100,
 				/obj/item/clothing/under/costume/kinky/sexy_clown = 100,
