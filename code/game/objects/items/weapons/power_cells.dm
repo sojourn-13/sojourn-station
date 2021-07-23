@@ -95,7 +95,7 @@
 	name = "Absolute \"Spark 13000L\""
 	desc = "Absolute branded non-rechargeable L-standardized power cell."
 	icon_state = "b_nt"
-	matter = list(MATERIAL_STEEL = 7.5, MATERIAL_BIOMATTER = 7.5)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 15)
 	maxcharge = 13000
 	max_chargerate = 0
 	created_max_charge = TRUE
@@ -104,7 +104,7 @@
 	name = "Absolute \"Radiance 20000L\""
 	desc = "Absolute branded non-rechargeable L-standardized power cell. This advanced version can store even more energy."
 	icon_state = "b_nt_pl"
-	matter = list(MATERIAL_STEEL = 7.5, MATERIAL_BIOMATTER = 7.5)
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 7.5)
 	maxcharge = 20000
 
 //Meme cells - for fun
@@ -238,7 +238,7 @@
 	name = "Absolute \"Spark 1000M\""
 	desc = "Absolute branded non-rechargeable M-standardized power cell."
 	icon_state = "m_nt"
-	matter = list(MATERIAL_STEEL = 5, MATERIAL_BIOMATTER = 5)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10)
 	maxcharge = 1000
 	max_chargerate = 0
 	created_max_charge = TRUE
@@ -247,7 +247,7 @@
 	name = "Absolute \"Radiance 1500M\""
 	desc = "Absolute branded non-rechargeable M-standardized power cell. This advanced version can store even more energy."
 	icon_state = "m_nt_pl"
-	matter = list(MATERIAL_STEEL = 5, MATERIAL_BIOMATTER = 5)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 5)
 	maxcharge = 1500
 
 //SMALL CELLS - for small devices, such as flashlights, analyzers and HUDs.
@@ -371,7 +371,7 @@
 	name = "Absolute \"Spark 300S\""
 	desc = "Absolute branded non-rechargeable S-standardized power cell."
 	icon_state = "s_nt"
-	matter = list(MATERIAL_STEEL = 2.5, MATERIAL_BIOMATTER = 2.5)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 2.5)
 	maxcharge = 300
 	max_chargerate = 0
 	created_max_charge = TRUE
@@ -380,7 +380,7 @@
 	name = "Absolute \"Radiance 500S\""
 	desc = "Absolute branded non-rechargeable S-standardized power cell. This advanced version can store even more energy."
 	icon_state = "s_nt_pl"
-	matter = list(MATERIAL_STEEL = 2.5, MATERIAL_BIOMATTER = 2.5)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 2.5)
 	maxcharge = 500
 
 // Hand crank
