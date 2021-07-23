@@ -197,7 +197,7 @@
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))
 
 /obj/item/stack/medical/bruise_pack/handmade
-	name = "non sterile bandage"
+	name = "non sterile bandages"
 	singular_name = "non sterile bandage"
 	desc = "Parts of clothes that can be wrapped around bloody stumps."
 	icon_state = "hm_brutepack"
@@ -261,6 +261,12 @@
 					return
 			else
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a [src]!"))
+
+/obj/item/stack/medical/ointment/handmade
+	name = "spider silk salves"
+	singular_name = "spider silk salve"
+	desc = "Freshly gathered spider webs that you can slather on burns to prevent infection."
+	icon_state = "spidergoo"
 
 /obj/item/stack/medical/advanced/bruise_pack
 	name = "advanced trauma kit"
