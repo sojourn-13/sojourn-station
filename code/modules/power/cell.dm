@@ -29,6 +29,7 @@
 	var/last_charge_status = -1 //used in update_icon optimization
 	//Used for depleted cells, basiclly makes it so map/newly spawned cells can start not at full for mapping or code
 	var/starts_max_charge = TRUE
+	var/created_max_charge = FALSE // Used for cells that are printed fully charged.
 
 /obj/item/weapon/cell/Initialize()
 	. = ..()
@@ -53,7 +54,10 @@
 
 //Newly manufactured cells start off empty. You can't create energy
 /obj/item/weapon/cell/Created()
-	charge = 0
+	if(created_max_charge)
+		charge = maxcharge
+	else
+		charge = 0
 	update_icon()
 
 /obj/item/weapon/cell/drain_power(var/drain_check, var/surge, var/power = 0)
