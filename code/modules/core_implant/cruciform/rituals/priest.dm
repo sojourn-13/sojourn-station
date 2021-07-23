@@ -681,7 +681,7 @@
 		return FALSE
 
 	if(altar)
-		var/response = input(user, "Which cruciform do you require?") in list("Lemniscate","Tessellate","Monomial","Divisor","No Path","Cancel Litany")
+		var/response = input(user, "Which cruciform do you require?") in list("Lemniscate","Tessellate","Monomial","Divisor","Factorial","No Path","Cancel Litany")
 		if (response == "Lemniscate")
 			new /obj/item/weapon/implant/core_implant/cruciform/lemniscate(altar.loc)
 			if(user.species?.reagent_tag != IS_SYNTHETIC)
@@ -711,6 +711,15 @@
 			return TRUE
 		if (response == "Divisor")
 			new /obj/item/weapon/implant/core_implant/cruciform/divisor(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
+			return TRUE
+		if (response == "Factorial")
+			new /obj/item/weapon/implant/core_implant/cruciform/factorial(altar.loc)
 			if(user.species?.reagent_tag != IS_SYNTHETIC)
 				if(user.nutrition >= nutri_cost)
 					user.nutrition -= nutri_cost
