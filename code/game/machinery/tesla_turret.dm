@@ -17,6 +17,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	icon = 'icons/obj/tesla_turret.dmi'
 	icon_state = "coil"
 	circuit = /obj/item/weapon/circuitboard/tesla_turret
+	frame_type = FRAME_VERTICAL
 	var/active = FALSE
 	var/locked = FALSE
 	var/zap_cooldown = 100
