@@ -15,7 +15,7 @@
 	can_transfer = TRUE
 	var/prefix = "upgraded" //Added to the tool's name
 	var/install_time = WORKTIME_FAST
-
+	var/breakable = TRUE //Some mods meant to be tamper-resistant and should be removed only in a hard way
 	//The upgrade can be applied to a tool that has any of these qualities
 	var/list/required_qualities = list()
 
@@ -370,6 +370,17 @@
 			var/mob/user = G.loc
 			user.update_action_buttons()
 
+	if(weapon_upgrades[GUN_UPGRADE_DNALOCK])
+		G.dna_compare_samples = TRUE
+		if(G.dna_lock_sample == "not_set")
+			G.dna_lock_sample = usr.real_name
+
+	if(G.dna_compare_samples == FALSE)
+		G.dna_lock_sample = "not_set"
+
+	if(G.dna_lock_sample == "not_set") //that may look stupid, but without it previous two lines won't trigger on DNALOCK removal.
+		G.dna_compare_samples = FALSE
+
 	if(weapon_upgrades[GUN_UPGRADE_AUTOEJECT])
 		if(G.auto_eject)
 			G.auto_eject = FALSE
@@ -517,6 +528,9 @@
 				to_chat(user, SPAN_WARNING("Slows down the weapons projectile by [amount*100]%"))
 			else
 				to_chat(user, SPAN_NOTICE("Speeds up the weapons projectile by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_DNALOCK] == 1)
+			to_chat(user, SPAN_WARNING("Adds a biometric scanner to the weapon."))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE])
 			to_chat(user, SPAN_NOTICE("Modifies projectile brute damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE]] damage points"))
@@ -669,7 +683,11 @@
 			return 1
 		else
 			//You failed the check, lets see what happens
-			if(prob(50))
+			if(IU.breakable == FALSE)
+				to_chat(user, SPAN_DANGER("You failed to remove \the [toremove]."))
+				upgrade_loc.refresh_upgrades()
+				user.update_action_buttons()
+			else if(prob(50))
 				//50% chance to break the upgrade and remove it
 				to_chat(user, SPAN_DANGER("You successfully remove \the [toremove], but destroy it in the process."))
 				SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)

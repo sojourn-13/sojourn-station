@@ -35,6 +35,11 @@
 	item_cost = 8
 	path = /obj/item/device/chameleon
 
+/datum/uplink_item/item/stealth_items/dna_trigger
+	name = "SI \"DNA lock\" trigger"
+	item_cost = 2 //low do to like being really really unuseful
+	path = /obj/item/weapon/gun_upgrade/trigger/dnalock
+
 /datum/uplink_item/item/stealth_items/tool_dampener
 	name = "Tool Upgrade: Aural Dampener"
 	item_cost = 1

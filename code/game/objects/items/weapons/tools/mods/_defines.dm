@@ -101,6 +101,8 @@
 #define GUN_UPGRADE_RIGGED "rigged"
 #define GUN_UPGRADE_AUTOEJECT "autoeject"
 #define GUN_UPGRADE_CELLMINUS "small cell adapter"
+//#define GUN_UPGRADE_THERMAL "thermal scope"
+#define GUN_UPGRADE_DNALOCK "biocoded"
 //Location Tag defines
 
 #define GUN_UNDERBARREL "underbarrel slot"

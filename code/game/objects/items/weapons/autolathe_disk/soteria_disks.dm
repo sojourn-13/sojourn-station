@@ -27,7 +27,8 @@
 		/datum/design/autolathe/container/syringegun_ammo,
 		/datum/design/autolathe/misc/bodybag,
 		/datum/design/research/item/medical/autopsy_scanner,
-		/datum/design/research/item/medical/roller_bed
+		/datum/design/research/item/medical/roller_bed,
+		/datum/design/autolathe/gun/dnalock_mod
 	)
 
 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/advanced
@@ -62,7 +63,8 @@
 		/datum/design/research/item/medical/nanopaste = 2,
 		/datum/design/research/item/clothing/health = 2,
 		/datum/design/autolathe/clothing/si_xenobio_hood,
-		/datum/design/autolathe/clothing/si_xenobio_suit
+		/datum/design/autolathe/clothing/si_xenobio_suit,
+		/datum/design/autolathe/gun/dnalock_mod
 	)
 
 
