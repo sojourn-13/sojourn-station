@@ -29,6 +29,10 @@ SUBSYSTEM_DEF(job)
 		occupations += job
 		occupations_by_name[job.title] = job
 
+		if(job.alt_titles)
+			for(var/alt_title in job.alt_titles)
+				occupations_by_name[alt_title] = job
+
 	if(!occupations.len)
 		to_chat(world, SPAN_WARNING("Error setting up jobs, no job datums found!"))
 		return FALSE
@@ -62,6 +66,8 @@ SUBSYSTEM_DEF(job)
 			Debug("Player: [player] is now Rank: [rank], JCP:[job.current_positions], JPL:[position_limit]")
 			player.mind.assigned_role = rank
 			player.mind.assigned_job = job
+			if(job.alt_titles)
+				player.mind.role_alt_title = player.client.prefs.GetPlayerAltTitle(job)
 			unassigned -= player
 			job.current_positions++
 			return TRUE
