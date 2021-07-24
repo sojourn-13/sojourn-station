@@ -221,9 +221,33 @@
 	alpha = 128
 
 /obj/random/mob/nightmare/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/nightmare))
+	return pickweight(list(/mob/living/simple_animal/hostile/nightmare = 99,
+			/mob/living/simple_animal/hostile/nightmare/dream_daemon = 1)) //If you get this spawn your unlucky
 
 /obj/random/mob/nightmare/low_chance
 	name = "low chance nightmare"
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 90
+
+
+//Voxy
+/obj/random/mob/vox
+	name = "random vox"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/vox/item_to_spawn()
+	return pickweight(list(/mob/living/carbon/superior_animal/vox = 8,
+		/mob/living/carbon/superior_animal/vox/posin_thrower = 3,
+		/mob/living/carbon/superior_animal/vox/thrower_spear = 4,
+		/mob/living/carbon/superior_animal/vox/armord = 6,
+		/mob/living/carbon/superior_animal/vox/hider = 4,
+		/mob/living/carbon/superior_animal/vox/ashen = 6,
+		/mob/living/carbon/superior_animal/vox/weak = 10,
+		/mob/living/carbon/superior_animal/vox/rage = 4
+		))
+
+/obj/random/mob/vox/low_chance
+	name = "low chance nightmare"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 50 //Coin flip
