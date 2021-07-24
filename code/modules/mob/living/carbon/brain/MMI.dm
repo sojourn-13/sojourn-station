@@ -172,7 +172,8 @@
 	to_chat(brainmob, "\blue Radio is [radio.listening==1 ? "now" : "no longer"] receiving broadcast.")
 
 /obj/item/device/mmi/emp_act(severity)
-	if(!brainmob)
+	return //Turns out this happends well in a borg...
+/*	if(!brainmob)
 		return
 	else
 		switch(severity)
@@ -182,4 +183,4 @@
 				brainmob.emp_damage += rand(10,20)
 			if(3)
 				brainmob.emp_damage += rand(0,10)
-	..()
+	..()*/
