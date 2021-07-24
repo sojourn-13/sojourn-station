@@ -6,7 +6,8 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 
 #define HUMAN /mob/living/carbon/human
 #define SILICON /mob/living/silicon
-#define ANIMAL /mob/living/carbon/superior_animal // /mob/living/simple_animal
+#define SUPERIOR_ANIMAL /mob/living/carbon/superior_animal
+#define SIMPLE_ANIMAL /mob/living/simple_animal
 
 /obj/machinery/power/tesla_turret
 	name = "Defensive Tesla Coil Turret"
@@ -17,10 +18,10 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	icon_state = "coil"
 	circuit = /obj/item/weapon/circuitboard/tesla_turret
 	var/active = FALSE
-	var/locked = TRUE
+	var/locked = FALSE
 	var/zap_cooldown = 100
 	var/last_zap = 0
-	var/list/possible_targets = list(HUMAN, SILICON, ANIMAL)
+	var/list/possible_targets = list(HUMAN, SILICON, SIMPLE_ANIMAL, SUPERIOR_ANIMAL)
 	var/current_target = null
 
 /obj/machinery/power/tesla_turret/anchored
@@ -46,7 +47,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	if(active)
 		to_chat(user, SPAN_NOTICE("You can't work with [src] while its running!"))
 	else
-		var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
+		var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING)
 		var/tool_type = W.get_tool_type(user, usable_qualities, src)
 		switch(tool_type)
 			if(QUALITY_BOLT_TURNING)
@@ -115,8 +116,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	playsound(src, 'sound/effects/lightningshock.ogg', 100, 1, extrarange = 5)
 
 	// The actual Zap
-	var/atom/srcLoc = get_turf(src)
-	srcLoc.Beam(target, icon_state="lightning[rand(1,12)]", time=5, maxdistance = INFINITY)
+	src.Beam(target, icon_state="lightning[rand(1,12)]", time=5, maxdistance = INFINITY)
 	var/zapdir = get_dir(src, target)
 	if(zapdir)
 		. = zapdir
@@ -132,4 +132,5 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 
 #undef HUMAN
 #undef SILICON
-#undef ANIMAL
+#undef SUPERIOR_ANIMAL
+#undef SIMPLE_ANIMAL
