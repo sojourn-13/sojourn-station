@@ -45,6 +45,18 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	if(default_part_replacement(W, user))
 		return
 
+	if(istype(W, /obj/item/weapon/card/id))
+		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
+		if(!access_construction in C.access)
+			to_chat(user, "You do not have the required access to lock the turret.")
+			return
+		user.visible_message(
+							SPAN_NOTICE("[user] [locked ? "un" : ""]lock the [src.name]."),
+							SPAN_NOTICE("You [locked ? "un" : ""]lock the [src.name].")
+							)
+		locked = !locked
+		return
+
 	if(active)
 		to_chat(user, SPAN_NOTICE("You can't work with [src] while its running!"))
 	else
@@ -71,17 +83,6 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 
 			if(ABORT_CHECK)
 				return
-		if(istype(W, /obj/item/weapon/card/id))
-			var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
-			if(!access_construction in C.access)
-				to_chat(user, "You do not have the access to lock the turret.")
-				return
-			user.visible_message(
-								SPAN_NOTICE("[user] [locked ? "un" : ""]lock the [src.name]."),
-								SPAN_NOTICE("You [locked ? "un" : ""]lock the [src.name].")
-							)
-			locked = !locked
-			return
 
 	..()
 
