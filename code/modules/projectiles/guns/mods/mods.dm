@@ -182,6 +182,7 @@
 /obj/item/weapon/gun_upgrade/trigger/dnalock/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.install_time = WORKTIME_INSTANT //For SWAT tatics+
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DNALOCK = TRUE
 		)
