@@ -6,7 +6,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 
 #define HUMAN /mob/living/carbon/human
 #define SILICON /mob/living/silicon
-#define ANIMAL /mob/living/simple_animal || /mob/living/carbon/superior_animal
+#define ANIMAL /mob/living/carbon/superior_animal // /mob/living/simple_animal
 
 /obj/machinery/power/tesla_turret
 	name = "Defensive Tesla Coil Turret"
@@ -58,6 +58,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 			if(QUALITY_PULSING)
 				if(locked)
 					to_chat(user, SPAN_NOTICE("The [src.name]'s panel is locked."))
+					return
 				current_target = input(usr, "What do you want the turret to target?", ANIMAL) in possible_targets
 
 			if(ABORT_CHECK)
@@ -68,11 +69,12 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 /obj/machinery/power/tesla_turret/RefreshParts()
 	zap_cooldown = initial(zap_cooldown)
 	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
-		zap_cooldown -= (C.rating * 20)
+		zap_cooldown -= (C.rating * 15)
 
 /obj/machinery/power/tesla_turret/attack_hand(mob/user)
 	..()
 	if (!anchored)
+		to_chat(user, SPAN_NOTICE("Anchor the [src.name] first!"))
 		return
 	SwitchOnOff(user) // Switch the generator on or off
 
