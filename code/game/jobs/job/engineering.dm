@@ -72,9 +72,9 @@
 	difficulty = "Medium."
 	selection_color = "#d5c88f"
 	wage = WAGE_PROFESSIONAL
-
+        alt_titles = list("Guild Apprentice")
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
-
+        alt_titles = list("Guild Novice")
 	access = list(
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 		access_external_airlocks, access_construction, access_atmospherics
