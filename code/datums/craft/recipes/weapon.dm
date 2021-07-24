@@ -254,3 +254,13 @@
 		list(/obj/item/stack/cable_coil, 2, "time" = 10), //Wire it up
 		list(QUALITY_WIRE_CUTTING, 30, "time" = 50) //Fix the wires
 	)
+
+/datum/craft_recipe/weapon/torch // In radiance may we find victory!
+	name = "torch"
+	result = /obj/item/device/lighting/glowstick/flare/torch
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD),
+		list(/obj/item/stack/material/cloth, 1, time = 15)
+	)
+

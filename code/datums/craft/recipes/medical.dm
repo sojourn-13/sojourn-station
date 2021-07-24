@@ -7,7 +7,14 @@
 	result = /obj/item/stack/medical/bruise_pack/handmade
 	icon_state = "clothing"
 	steps = list(
-		list(/obj/item/clothing, 1, time = 30)
+		list(/obj/item/stack/material/cloth, 5, time = 15) // One sheet per stack
+	)
+
+/datum/craft_recipe/medical/silkointment
+	name = "spider silk ointment"
+	result = /obj/item/stack/medical/ointment/handmade
+	steps = list(
+		list(/obj/item/stack/material/silk, 5, 30) // One sheet per stack
 	)
 
 /datum/craft_recipe/medical/blood_pack
