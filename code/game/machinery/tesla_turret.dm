@@ -62,14 +62,26 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 						connect_to_network()
 					else
 						disconnect_from_network()
+					return
 			if(QUALITY_PULSING)
 				if(locked)
 					to_chat(user, SPAN_NOTICE("The [src.name]'s panel is locked."))
 					return
-				current_target = input(usr, "What do you want the turret to target?", ANIMAL) in possible_targets
+				current_target = input(usr, "What do you want the turret to target?", ANIMAL) as null|anything in possible_targets
 
 			if(ABORT_CHECK)
 				return
+		if(istype(W, /obj/item/weapon/card/id))
+			var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
+			if(!access_construction in C.access)
+				to_chat(user, "You do not have the access to lock the turret.")
+				return
+			user.visible_message(
+								SPAN_NOTICE("[user] [locked ? "un" : ""]lock the [src.name]."),
+								SPAN_NOTICE("You [locked ? "un" : ""]lock the [src.name].")
+							)
+			locked = !locked
+			return
 
 	..()
 
@@ -125,7 +137,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	var/shock_damage = CLAMP(round(power/400), 10, 90) + rand(-5, 5)
 	target.electrocute_act(shock_damage, src)
 	log_game("Tesla Turret([src.x],[src.y],[src.z]) shocked [key_name(target)] for [shock_damage]dmg.")
-	message_admins("Tesla Turret zapped [key_name_admin(target)]!")
+	message_admins("Tesla Turret([src.x],[src.y],[src.z]) zapped [key_name_admin(target)] for [shock_damage]dmg!")
 	if(issilicon(target))
 		var/mob/living/silicon/S = target
 		S.emp_act(3 /*EMP_LIGHT*/)
