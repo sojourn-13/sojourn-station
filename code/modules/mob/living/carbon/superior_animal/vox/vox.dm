@@ -27,6 +27,9 @@
 	melee_damage_lower = 12
 	melee_damage_upper = 16
 
+	colony_friend = FALSE
+	friendly_to_colony = FALSE
+
 	projectiletype = /obj/item/projectile/bullet/rock
 	limited_ammo = TRUE
 	mag_drop = FALSE

@@ -132,7 +132,7 @@
 	var/mag_type = /obj/item/ammo_magazine/pistol_35/empty//What is are mag/cell used?
 	var/mags_left = 3 //How many mags do we have?
 	var/rounds_per_fire = 1 //how many bullets do we eat per shot, NOTE: rapid fire will use rounds_per_fire * 3
-	var/reload_message = "Performs a tactical reload!" //Are reload message.
+	var/reload_message = "performs a tactical reload!" //Are reload message.
 
 	// Variables for the following AI
 	var/obey_friends = TRUE // Do we obey only friends ?
@@ -150,7 +150,7 @@
 
 	objectsInView = new
 
-	reload_message = "[name] performs a tactical reload!"
+	reload_message = "[name] initial(reload_message)"
 
 	verbs -= /mob/verb/observe
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)

@@ -10,8 +10,8 @@
 
 /obj/item/projectile/bullet/spear
 	name = "rock fragements"
-	damage_types = list(BRUTE = 36)
-	agony = 22
+	damage_types = list(BRUTE = 24) //Same as a .40
+	agony = 15
 	armor_penetration = 25
 	step_delay = 0.75
 	can_ricochet = FALSE

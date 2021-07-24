@@ -40,6 +40,8 @@
 	melee_damage_lower = 18
 	melee_damage_upper = 20
 
+	reload_message = "picks up a rock!"
+
 	armor = list(melee = 40, bullet = 30, energy = 10, bomb = 50, bio = 0, rad = 0)
 
 	ranged = FALSE
@@ -54,6 +56,8 @@
 	alpha = 50
 
 	knock_over_odds = 15
+
+	reload_message = "picks up a rock!"
 
 	maxHealth = 70 //Glass cannon
 	health = 70
@@ -83,6 +87,8 @@
 
 	knock_over_odds = 35
 
+	reload_message = "picks up a rock!"
+
 	maxHealth = 180
 	health = 180
 
@@ -94,6 +100,8 @@
 	melee_damage_lower = 12
 	melee_damage_upper = 15
 
+	reload_message = "picks up a rock!"
+
 	knock_over_odds = 15
 
 	maxHealth = 80
@@ -103,6 +111,8 @@
 	name = "Jan barazana"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. Their long arms pack a stronger than normal punch."
 	icon_state = "vox_infrared"
+
+	reload_message = "picks up a rock!"
 
 	melee_damage_lower = 32
 	melee_damage_upper = 35
