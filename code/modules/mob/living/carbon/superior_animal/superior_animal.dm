@@ -133,6 +133,7 @@
 	var/mags_left = 3 //How many mags do we have?
 	var/rounds_per_fire = 1 //how many bullets do we eat per shot, NOTE: rapid fire will use rounds_per_fire * 3
 	var/reload_message = "performs a tactical reload!" //Are reload message.
+	var/full_reload_message = "" //name + reload message above
 
 	// Variables for the following AI
 	var/obey_friends = TRUE // Do we obey only friends ?
@@ -150,7 +151,7 @@
 
 	objectsInView = new
 
-	reload_message = "[name] initial(reload_message)"
+	reload_message = "[name] [full_reload_message]"
 
 	verbs -= /mob/verb/observe
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)

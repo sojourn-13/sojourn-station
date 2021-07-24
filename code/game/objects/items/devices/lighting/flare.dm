@@ -60,8 +60,8 @@
 	desc = "A wooden torch with some cloth wrapped on it. Can work as a decent illumination tool for a while."
 	brightness_on = 5 // Flashlight level
 	light_power = 3
-	color = null
-	light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
+	icon_state = "torch"
+	light_color = COLOR_LIGHTING_ORANGE_MACHINERY
 	max_fuel = 1750 // Below glowstick, more than a flare
 	on_damage = 15 // Mediocre weapon when turned on
 	produce_heat = 2000 // Burns brighter than flare
