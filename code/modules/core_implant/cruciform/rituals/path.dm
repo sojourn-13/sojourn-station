@@ -366,6 +366,9 @@
 	var/inhand = user.get_active_hand()
 	if(istype(inhand, /obj/item/weapon/cell))
 		var/obj/item/weapon/cell/P = inhand
+		if(P.max_chargerate == 0) // Can we even charge the damn thing.
+			fail("This type of cell cannot be charged.", user, C)
+			return
 		to_chat(user, "You start charging the [P.name].")
 		while(C.power >= charge_used) // Keep going until we run out of power
 			if(!istype(user.get_active_hand(), /obj/item/weapon/cell)) // Check if we're still holding a cell. Because rigged cell explode when charging.

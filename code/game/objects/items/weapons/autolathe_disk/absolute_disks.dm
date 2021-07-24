@@ -351,3 +351,17 @@
 		/datum/design/autolathe/ammo/shotgun_plasma_heavy = 2,
 		/datum/design/autolathe/ammo/shotgun_plasma,
 	)
+
+/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_cells
+	disk_name = "Absolute Armory - Power Cells Pack"
+	icon_state = "neotheology"
+
+	license = -1
+	designs = list(
+		/datum/design/bioprinter/nt_cells/large,
+		/datum/design/bioprinter/nt_cells/large/plasma,
+		/datum/design/bioprinter/nt_cells/medium,
+		/datum/design/bioprinter/nt_cells/medium/plasma,
+		/datum/design/bioprinter/nt_cells/small,
+		/datum/design/bioprinter/nt_cells/small/plasma
+		)
