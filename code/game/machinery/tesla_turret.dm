@@ -20,11 +20,16 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	var/locked = TRUE
 	var/zap_cooldown = 100
 	var/last_zap = 0
-	var/list/possible_targets = list(HUMAN = "Humanoids", SILICON = "Cyborgs", ANIMAL = "Animals")
+	var/list/possible_targets = list(HUMAN, SILICON, ANIMAL)
 	var/current_target = null
 
 /obj/machinery/power/tesla_turret/anchored
 	anchored = TRUE
+
+/obj/machinery/power/tesla_turret/Initialize()
+	..()
+	if(anchored)
+		connect_to_network()
 
 /obj/machinery/power/tesla_turret/examine(mob/user)
 	..()
