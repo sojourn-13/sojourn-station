@@ -371,7 +371,7 @@
 	name = "Absolute \"Spark 300S\""
 	desc = "Absolute branded non-rechargeable S-standardized power cell."
 	icon_state = "s_nt"
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 2.5)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_BIOMATTER = 5)
 	maxcharge = 300
 	max_chargerate = 0
 	created_max_charge = TRUE
