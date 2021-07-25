@@ -5,15 +5,15 @@
 	icon_state = "extinguisher_closed"
 	anchored = 1
 	density = 0
-	var/obj/item/weapon/extinguisher/has_extinguisher
+	var/obj/item/extinguisher/has_extinguisher
 	var/opened = 0
 
 /obj/structure/extinguisher_cabinet/New()
 	..()
 	if(prob(80))
-		has_extinguisher = new/obj/item/weapon/extinguisher(src)
+		has_extinguisher = new/obj/item/extinguisher(src)
 	else if(prob(20))
-		has_extinguisher = new/obj/item/weapon/extinguisher/mini(src)
+		has_extinguisher = new/obj/item/extinguisher/mini(src)
 	else
 		has_extinguisher = null //OSHA would flip out
 	update_icon()
@@ -22,7 +22,7 @@
 /obj/structure/extinguisher_cabinet/attackby(obj/item/O, mob/user)
 	if(isrobot(user))
 		return
-	if(istype(O, /obj/item/weapon/extinguisher))
+	if(istype(O, /obj/item/extinguisher))
 		if(!has_extinguisher && opened)
 			user.remove_from_mob(O)
 			contents += O
@@ -91,7 +91,7 @@
 /obj/structure/extinguisher_cabinet/update_icon()
 	if(!opened)
 		if(has_extinguisher)
-			if(istype(has_extinguisher, /obj/item/weapon/extinguisher/mini))
+			if(istype(has_extinguisher, /obj/item/extinguisher/mini))
 				icon_state = "extinguisher_closed_mini"
 			else
 				icon_state = "extinguisher_closed_full"
@@ -99,7 +99,7 @@
 			icon_state = "extinguisher_closed"
 		return
 	if(has_extinguisher)
-		if(istype(has_extinguisher, /obj/item/weapon/extinguisher/mini))
+		if(istype(has_extinguisher, /obj/item/extinguisher/mini))
 			icon_state = "extinguisher_mini"
 		else
 			icon_state = "extinguisher_full"

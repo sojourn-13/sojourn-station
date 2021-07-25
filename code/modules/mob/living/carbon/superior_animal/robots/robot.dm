@@ -36,7 +36,7 @@
 	friendly_to_colony = FALSE
 
 	//Drops
-	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
 	var/cell_drop = null
 

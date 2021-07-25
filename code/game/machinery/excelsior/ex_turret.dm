@@ -9,7 +9,7 @@
 	density = TRUE
 	lethal = TRUE
 	raised = TRUE
-	circuit = /obj/item/weapon/circuitboard/excelsior_turret
+	circuit = /obj/item/circuitboard/excelsior_turret
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
 	var/ammo = 0 // number of bullets left.
@@ -154,12 +154,12 @@
 	lethal = TRUE
 	raised = TRUE
 	colony_allied_turret = TRUE
-	circuit = /obj/item/weapon/circuitboard/artificer_turret
+	circuit = /obj/item/circuitboard/artificer_turret
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 180
-	var/obj/item/weapon/cell/large/cell = null
+	var/obj/item/cell/large/cell = null
 	health = 150
 	auto_repair = 1
 	shot_delay = 3
@@ -240,7 +240,7 @@
 					if(prob(70))
 						to_chat(user, SPAN_NOTICE("You remove the turret and salvage some components."))
 						if(prob(50))
-							new /obj/item/weapon/circuitboard/artificer_turret(loc)
+							new /obj/item/circuitboard/artificer_turret(loc)
 						if(prob(50))
 							new /obj/item/stack/material/steel(loc, rand(1,4))
 						if(prob(50))
@@ -283,7 +283,7 @@
 					update_icon()
 			wrenching = 0
 
-		else if(istype(I, /obj/item/weapon/cell/large))
+		else if(istype(I, /obj/item/cell/large))
 			if(cell)
 				to_chat(user, "<span class='notice'>\the [src] already has a cell.</span>")
 			else
@@ -394,7 +394,7 @@
 /obj/machinery/porta_turret/artificer/opifex
 	name = "opifex scrap turret"
 	desc = "A fully automated battery powered anti-wildlife turret designed by the opifex. It features a three round burst barrel and isn't as sturdy nor as functional as other turrets. Fires 7.5mm rounds and holds only a measly 30 rounds."
-	circuit = /obj/item/weapon/circuitboard/artificer_turret/opifex
+	circuit = /obj/item/circuitboard/artificer_turret/opifex
 	ammo_max = 30
 	health = 75
 
@@ -409,7 +409,7 @@
 					if(prob(70))
 						to_chat(user, SPAN_NOTICE("You remove the turret and salvage some components."))
 						if(prob(50))
-							new /obj/item/weapon/circuitboard/artificer_turret/opifex(loc)
+							new /obj/item/circuitboard/artificer_turret/opifex(loc)
 						if(prob(50))
 							new /obj/item/stack/material/steel(loc, rand(1,4))
 						if(prob(50))
@@ -452,7 +452,7 @@
 					update_icon()
 			wrenching = 0
 
-		else if(istype(I, /obj/item/weapon/cell/large))
+		else if(istype(I, /obj/item/cell/large))
 			if(cell)
 				to_chat(user, "<span class='notice'>\the [src] already has a cell.</span>")
 			else

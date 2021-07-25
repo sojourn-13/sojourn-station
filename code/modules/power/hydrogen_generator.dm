@@ -7,21 +7,21 @@
 	density = 1
 	anchored = FALSE
 	use_power = NO_POWER_USE
-	circuit = /obj/item/weapon/circuitboard/hydrogen_gen
+	circuit = /obj/item/circuitboard/hydrogen_gen
 
 	var/active = FALSE // Is the generator running?
 	var/power_gen = 50000 // How much power does it produce?
 	var/power_output = 1 // Modifier to the power_gen var.
 	var/hydrogen_usage = 0.1 // How much hydrogen is used per tick.
 
-	var/obj/item/weapon/hydrogen_fuel_cell/fuel_cell // Var that hold the fuel cell
+	var/obj/item/hydrogen_fuel_cell/fuel_cell // Var that hold the fuel cell
 
 // This proc run only when the object is mapped in
 /obj/machinery/power/hydrogen_gen/Initialize()
 	..()
 	if(anchored)
 		connect_to_network()
-	fuel_cell = new /obj/item/weapon/hydrogen_fuel_cell(src)
+	fuel_cell = new /obj/item/hydrogen_fuel_cell(src)
 
 // This proc run when the object is created
 /obj/machinery/power/hydrogen_gen/New()
@@ -48,7 +48,7 @@
 	return fuel_cell.use(hydrogen_usage)
 
 // Proc to insert the fuel cell in the generator
-/obj/machinery/power/hydrogen_gen/proc/InsertFuelCell(obj/item/weapon/hydrogen_fuel_cell/C, mob/user)
+/obj/machinery/power/hydrogen_gen/proc/InsertFuelCell(obj/item/hydrogen_fuel_cell/C, mob/user)
 	if(fuel_cell == null) // Check if that cell slot is free
 		fuel_cell = C // Add the cell to the list.
 		insert_item(C, user)
@@ -88,7 +88,7 @@
 	DropFuelCell(usr)
 
 // Proc when attacking the generator with something, used for upgrades, inserting fuel cells & wrenching it to the ground
-/obj/machinery/power/hydrogen_gen/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/power/hydrogen_gen/attackby(obj/item/W, mob/user)
 
 	if(default_deconstruction(W, user))
 		return
@@ -96,7 +96,7 @@
 	if(default_part_replacement(W, user))
 		return
 
-	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell))
+	if(istype(W, /obj/item/hydrogen_fuel_cell))
 		InsertFuelCell(W, user)
 		return
 
@@ -138,7 +138,7 @@
 	power_output = initial(power_output) // Reset the power output to prevent infinite loop
 	var/cap_rating = 0
 	var/cap_amount = 0
-	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		cap_rating += C.rating
 		cap_amount++
 	cap_rating -= cap_amount

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/pug
+/obj/item/gun/projectile/shotgun/pug
 	name = "\"Pug\" auto-shotgun"
 	desc = "It's magazine-fed shotgun designed for close quarters combat, nicknamed 'Striker' by boarding parties. \
 			Robust and reliable design allows you to swap magazines on the go and dump as many shells at your foes as you want... \
@@ -27,7 +27,7 @@
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/shotgun/pug/update_icon()
+/obj/item/gun/projectile/shotgun/pug/update_icon()
 	cut_overlays()
 	icon_state = "[initial(icon_state)]"
 	if(ammo_magazine)
@@ -44,6 +44,6 @@
 	else
 		item_state = initial(item_state)
 
-/obj/item/weapon/gun/projectile/shotgun/pug/Initialize()
+/obj/item/gun/projectile/shotgun/pug/Initialize()
 	. = ..()
 	update_icon()

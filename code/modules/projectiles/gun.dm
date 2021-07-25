@@ -1,5 +1,5 @@
 //Parent gun type. Guns are weapons that can be aimed at mobs and act over a distance
-/obj/item/weapon/gun
+/obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
 	icon = 'icons/obj/guns/projectile.dmi'
@@ -80,15 +80,15 @@
 
 	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
 
-/obj/item/weapon/gun/proc/loadAmmoBestGuess()
+/obj/item/gun/proc/loadAmmoBestGuess()
 	return
 
-/obj/item/weapon/gun/get_item_cost(export)
+/obj/item/gun/get_item_cost(export)
 	if(export)
 		return ..() * 0.5 //Guns should be sold in the player market.
 	..()
 
-/obj/item/weapon/gun/Initialize()
+/obj/item/gun/Initialize()
 	. = ..()
 	initialize_firemodes()
 	initialize_scope()
@@ -97,7 +97,7 @@
 		set_firemode(sel_mode)
 
 	if(!restrict_safety)
-		verbs += /obj/item/weapon/gun/proc/toggle_safety_verb//addint it to all guns
+		verbs += /obj/item/gun/proc/toggle_safety_verb//addint it to all guns
 
 		var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/gun/safety
 		action.owner = src
@@ -119,7 +119,7 @@
 	action.owner = src
 	hud_actions += action
 
-/obj/item/weapon/gun/Destroy()
+/obj/item/gun/Destroy()
 	for(var/i in firemodes)
 		if(!islist(i))
 			qdel(i)
@@ -127,7 +127,7 @@
 	return ..()
 
 
-/obj/item/weapon/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE)
+/obj/item/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE)
 	var/wield_state = null
 	if(wielded_item_state)
 		wield_state = wielded_item_state
@@ -147,7 +147,7 @@
 		item_state_slots[slot_s_store_str]= "onsuit"    + state
 
 
-/obj/item/weapon/gun/update_icon()
+/obj/item/gun/update_icon()
 	if(wielded_item_state)
 		if(icon_contained)//If it has it own icon file then we want to pull from that.
 			if(wielded)
@@ -168,7 +168,7 @@
 //Checks whether a given mob can use the gun
 //Any checks that shouldn't result in handle_click_empty() being called if they fail should go here.
 //Otherwise, if you want handle_click_empty() to be called, check in consume_next_projectile() and return null there.
-/obj/item/weapon/gun/proc/special_check(var/mob/user)
+/obj/item/gun/proc/special_check(var/mob/user)
 
 	if(!isliving(user))
 		return FALSE
@@ -226,22 +226,22 @@
 			return FALSE
 	return TRUE
 
-/obj/item/weapon/gun/emp_act(severity)
+/obj/item/gun/emp_act(severity)
 	for(var/obj/O in contents)
 		O.emp_act(severity)
 
-/obj/item/weapon/gun/afterattack(atom/A, mob/living/user, adjacent, params)
+/obj/item/gun/afterattack(atom/A, mob/living/user, adjacent, params)
 	if(adjacent) return //A is adjacent, is the user, or is on the user's person
 
-	var/obj/item/weapon/gun/off_hand   //DUAL WIELDING
+	var/obj/item/gun/off_hand   //DUAL WIELDING
 	if(ishuman(user) && user.a_intent == "harm")
 		var/mob/living/carbon/human/H = user
 
-		if(H.r_hand == src && istype(H.l_hand, /obj/item/weapon/gun))
+		if(H.r_hand == src && istype(H.l_hand, /obj/item/gun))
 			off_hand = H.l_hand
 			dual_wielding = TRUE
 
-		else if(H.l_hand == src && istype(H.r_hand, /obj/item/weapon/gun))
+		else if(H.l_hand == src && istype(H.r_hand, /obj/item/gun))
 			off_hand = H.r_hand
 			dual_wielding = TRUE
 		else
@@ -257,7 +257,7 @@
 
 	Fire(A,user,params) //Otherwise, fire normally.
 
-/obj/item/weapon/gun/attack(atom/A, mob/living/user, def_zone)
+/obj/item/gun/attack(atom/A, mob/living/user, def_zone)
 	if (A == user && user.targeted_organ == BP_MOUTH && !mouthshoot)
 		handle_suicide(user)
 	else if(user.a_intent == I_HURT) //point blank shooting
@@ -265,7 +265,7 @@
 	else
 		return ..() //Pistolwhippin'
 
-/obj/item/weapon/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
+/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	if(!user || !target) return
 
 	if(world.time < next_fire_time)
@@ -333,11 +333,11 @@
 		set_light(0)
 
 //obtains the next projectile to fire
-/obj/item/weapon/gun/proc/consume_next_projectile()
+/obj/item/gun/proc/consume_next_projectile()
 	return null
 
 //used by aiming code
-/obj/item/weapon/gun/proc/can_hit(atom/target as mob, var/mob/living/user as mob)
+/obj/item/gun/proc/can_hit(atom/target as mob, var/mob/living/user as mob)
 	if(!special_check(user))
 		return 2
 	//just assume we can shoot through glass and stuff. No big deal, the player can just choose to not target someone
@@ -345,7 +345,7 @@
 	return check_trajectory(target, user)
 
 //called if there was no projectile to shoot
-/obj/item/weapon/gun/proc/handle_click_empty(mob/user)
+/obj/item/gun/proc/handle_click_empty(mob/user)
 	if (user)
 		user.visible_message("*click click*", SPAN_DANGER("*click*"))
 	else
@@ -354,7 +354,7 @@
 	update_firemode() //Stops automatic weapons spamming this shit endlessly
 
 //called after successfully firing
-/obj/item/weapon/gun/proc/handle_post_fire(mob/living/user, atom/target, var/pointblank=0, var/reflex=0)
+/obj/item/gun/proc/handle_post_fire(mob/living/user, atom/target, var/pointblank=0, var/reflex=0)
 	if(silenced)
 		//Silenced shots have a lower range and volume
 		playsound(user, fire_sound_silenced, 15, 1, -3)
@@ -395,7 +395,7 @@
 	user.handle_recoil(src)
 	update_icon()
 
-/obj/item/weapon/gun/proc/process_point_blank(var/obj/item/projectile/P, mob/user, atom/target)
+/obj/item/gun/proc/process_point_blank(var/obj/item/projectile/P, mob/user, atom/target)
 	if(!istype(P))
 		return //default behaviour only applies to true projectiles
 
@@ -410,7 +410,7 @@
 		var/mob/M = target
 		if(M.grabbed_by.len)
 			var/grabstate = 0
-			for(var/obj/item/weapon/grab/G in M.grabbed_by)
+			for(var/obj/item/grab/G in M.grabbed_by)
 				grabstate = max(grabstate, G.state)
 			if(grabstate >= GRAB_NECK)
 				damage_mult = 2.5
@@ -420,7 +420,7 @@
 
 
 //does the actual launching of the projectile
-/obj/item/weapon/gun/proc/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
+/obj/item/gun/proc/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
 	if(!istype(P))
 		return FALSE //default behaviour only applies to true projectiles
 
@@ -435,7 +435,7 @@
 	return !P.launch_from_gun(target, user, src, target_zone, angle_offset = offset)
 
 //Suicide handling.
-/obj/item/weapon/gun/proc/handle_suicide(mob/living/user)
+/obj/item/gun/proc/handle_suicide(mob/living/user)
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/M = user
@@ -482,7 +482,7 @@
 		mouthshoot = FALSE
 		return
 
-/obj/item/weapon/gun/proc/toggle_scope(mob/living/user)
+/obj/item/gun/proc/toggle_scope(mob/living/user)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
 	if(!zoom_factor)
@@ -498,7 +498,7 @@
 		user.update_cursor()
 	update_hud_actions()
 
-/obj/item/weapon/gun/examine(mob/user)
+/obj/item/gun/examine(mob/user)
 	..()
 	if(firemodes.len > 1)
 		var/datum/firemode/current_mode = firemodes[sel_mode]
@@ -517,7 +517,7 @@
 	else if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
 		to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands, if you weren't such a skilled shot."))
 
-/obj/item/weapon/gun/proc/initialize_firemodes()
+/obj/item/gun/proc/initialize_firemodes()
 	QDEL_CLEAR_LIST(firemodes)
 
 	for(var/i in 1 to init_firemodes.len)
@@ -534,7 +534,7 @@
 		qdel(action)
 		hud_actions -= action
 
-/obj/item/weapon/gun/proc/initialize_scope()
+/obj/item/gun/proc/initialize_scope()
 	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
 	if(zoom_factor > 0)
 		if(!action)
@@ -551,7 +551,7 @@
 		hud_actions -= action
 		qdel(action)
 
-/obj/item/weapon/gun/proc/add_firemode(var/list/firemode)
+/obj/item/gun/proc/add_firemode(var/list/firemode)
 	//If this var is set, it means spawn a specific subclass of firemode
 	if (firemode["mode_type"])
 		var/newtype = firemode["mode_type"]
@@ -559,7 +559,7 @@
 	else
 		firemodes.Add(new /datum/firemode(src, firemode))
 
-/obj/item/weapon/gun/proc/switch_firemodes()
+/obj/item/gun/proc/switch_firemodes()
 	if(firemodes.len <= 1)
 		return null
 	update_firemode(FALSE) //Disable the old firing mode before we switch away from it
@@ -568,7 +568,7 @@
 		sel_mode = 1
 	return set_firemode(sel_mode)
 
-/obj/item/weapon/gun/proc/set_firemode(var/index)
+/obj/item/gun/proc/set_firemode(var/index)
 	refresh_upgrades()
 	if(index > firemodes.len)
 		index = 1
@@ -578,20 +578,20 @@
 	update_hud_actions()
 	return new_mode
 
-/obj/item/weapon/gun/attack_self(mob/user)
+/obj/item/gun/attack_self(mob/user)
 	if(zoom)
 		toggle_scope(user)
 		return
 
 	toggle_firemode(user)
 
-/obj/item/weapon/gun/proc/toggle_firemode(mob/living/user)
+/obj/item/gun/proc/toggle_firemode(mob/living/user)
 	var/datum/firemode/new_mode = switch_firemodes()
 	if(new_mode)
 		playsound(src.loc, 'sound/weapons/guns/interact/selector.ogg', 100, 1)
 		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
 
-/obj/item/weapon/gun/proc/toggle_safety(mob/living/user)
+/obj/item/gun/proc/toggle_safety(mob/living/user)
 	if(restrict_safety || src != user.get_active_hand())
 		return
 
@@ -612,12 +612,12 @@
 //When safety is toggled
 //When gun is picked up
 //When gun is readied
-/obj/item/weapon/gun/proc/update_firemode(var/force_state = null)
+/obj/item/gun/proc/update_firemode(var/force_state = null)
 	if (sel_mode && firemodes && firemodes.len)
 		var/datum/firemode/new_mode = firemodes[sel_mode]
 		new_mode.update(force_state)
 
-/obj/item/weapon/gun/AltClick(mob/user)
+/obj/item/gun/AltClick(mob/user)
 	if(user.incapacitated())
 		to_chat(user, SPAN_WARNING("You can't do that right now!"))
 		return
@@ -625,30 +625,30 @@
 
 
 //Updating firing modes at appropriate times
-/obj/item/weapon/gun/pickup(mob/user)
+/obj/item/gun/pickup(mob/user)
 	.=..()
 	update_firemode()
 
-/obj/item/weapon/gun/dropped(mob/user)
+/obj/item/gun/dropped(mob/user)
 	.=..()
 	update_firemode(FALSE)
 
-/obj/item/weapon/gun/swapped_from()
+/obj/item/gun/swapped_from()
 	.=..()
 	update_firemode(FALSE)
 
-/obj/item/weapon/gun/swapped_to()
+/obj/item/gun/swapped_to()
 	.=..()
 	update_firemode()
 
-/obj/item/weapon/gun/proc/toggle_safety_verb()
+/obj/item/gun/proc/toggle_safety_verb()
 	set name = "Toggle gun's safety"
 	set category = "Object"
 	set src in view(1)
 
 	toggle_safety(usr)
 
-/obj/item/weapon/gun/ui_data(mob/user)
+/obj/item/gun/ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
@@ -687,7 +687,7 @@
 
 	return data
 
-/obj/item/weapon/gun/Topic(href, href_list, var/datum/topic_state/state)
+/obj/item/gun/Topic(href, href_list, var/datum/topic_state/state)
 	if(..(href, href_list, state))
 		return 1
 
@@ -696,7 +696,7 @@
 		set_firemode(sel_mode)
 		return 1
 
-/obj/item/weapon/gun/refresh_upgrades()
+/obj/item/gun/refresh_upgrades()
 	//First of all, lets reset any var that could possibly be altered by an upgrade
 	damage_multiplier = initial(damage_multiplier)
 	penetration_multiplier = initial(penetration_multiplier)
@@ -727,7 +727,7 @@
 	SSnano.update_uis(src)
 
 /* //Eris has this but it, unsurpriingly, has issues, just gonna comment it out for now incase I use the code for something else later.
-/obj/item/weapon/gun/proc/generate_guntags()
+/obj/item/gun/proc/generate_guntags()
 	if(!zoom_factor && !(slot_flags & SLOT_HOLSTER))
 		gun_tags |= GUN_SCOPE
 */

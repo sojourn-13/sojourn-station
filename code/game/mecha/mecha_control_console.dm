@@ -5,7 +5,7 @@
 	icon_screen = "mecha"
 	light_color = COLOR_LIGHTING_PURPLE_MACHINERY
 	req_access = list(access_robotics)
-	circuit = /obj/item/weapon/circuitboard/mecha_control
+	circuit = /obj/item/circuitboard/mecha_control
 	var/list/located = list()
 	var/screen = FALSE
 	var/stored_data
@@ -121,10 +121,10 @@
 	return M.get_log_html()
 
 
-/obj/item/weapon/storage/box/mechabeacons //Whe is this here?!
+/obj/item/storage/box/mechabeacons //Whe is this here?!
 	name = "Exosuit Tracking Beacons"
 
-/obj/item/weapon/storage/box/mechabeacons/New()
+/obj/item/storage/box/mechabeacons/New()
 	..()
 	new /obj/item/mecha_parts/mecha_tracking(src)
 	new /obj/item/mecha_parts/mecha_tracking(src)

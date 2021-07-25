@@ -3,7 +3,7 @@
 		var/mob/living/L = A
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = L
-			var/obj/item/weapon/reagent_containers/food/snacks/grown/howdoitameahorseinminecraft = H.get_active_hand()
+			var/obj/item/reagent_containers/food/snacks/grown/howdoitameahorseinminecraft = H.get_active_hand()
 			if(istype(howdoitameahorseinminecraft) && howdoitameahorseinminecraft.plantname == "ambrosia")
 				if(try_tame(H, howdoitameahorseinminecraft))
 					return FALSE //If they manage to tame the roach, stop the attack

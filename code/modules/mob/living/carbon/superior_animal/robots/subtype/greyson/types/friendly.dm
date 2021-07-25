@@ -18,12 +18,12 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	density = 1
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/roomba/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/carbon/superior_animal/robot/greyson/roomba/allied/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		if(QUALITY_WELDING in T.tool_qualities)
@@ -59,12 +59,12 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	density = 0
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		if(QUALITY_WELDING in T.tool_qualities)
@@ -115,10 +115,10 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 
 	var/panel_locked = TRUE // Is the panel locked?
 	var/panel_open = FALSE // Is the panel open?
-	var/obj/item/weapon/bot_part/roomba/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
-	var/obj/item/weapon/weaponry = null // Hold the roomba armor plating so that we can get it back.
-	var/obj/item/weapon/mine/kamikaze = null // Store the mine the roomba can hold.
-	var/obj/item/weapon/cell/medium/cell = null // Hold the roomba's power cell.
+	var/obj/item/bot_part/roomba/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
+	var/obj/item/weaponry = null // Hold the roomba armor plating so that we can get it back.
+	var/obj/item/mine/kamikaze = null // Store the mine the roomba can hold.
+	var/obj/item/cell/medium/cell = null // Hold the roomba's power cell.
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/custom/New()
 	armor = default_armor // Give the roomba it's default armor.
@@ -128,28 +128,28 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
  * The attackby() is basically a decision tree with branches.
  * Since most of the branches are binary choices, there will be 'if' which return, and if you don't enter the 'if', consider it the 'else'.
 \*/
-/mob/living/carbon/superior_animal/robot/greyson/roomba/custom/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/carbon/superior_animal/robot/greyson/roomba/custom/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		// Check if it is a roomba part
-		if(istype(W, /obj/item/weapon/bot_part/roomba))
+		if(istype(W, /obj/item/bot_part/roomba))
 			T = W
 
 		// Check if it is a gun
-		if(istype(W, /obj/item/weapon/gun))
+		if(istype(W, /obj/item/gun))
 			T = W
 
 		// Check if it is a mine
-		if(istype(W, /obj/item/weapon/mine))
+		if(istype(W, /obj/item/mine))
 			T = W
 
 		// Check if the weapon is an ID.
-		if(istype(W, /obj/item/weapon/card/id))
+		if(istype(W, /obj/item/card/id))
 
 			// Don't lock or unlock the panel if it is open.
 			if(panel_open)
@@ -157,7 +157,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 				return
 
 			// Make a new ID var so that we can use the ID-unique variable.
-			var/obj/item/weapon/card/id/C = W
+			var/obj/item/card/id/C = W
 
 			// Check for robotic access
 			if(!access_robotics in C.access)
@@ -193,7 +193,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 				return
 
 		// Are we attacking with the roomba plating and is the panel open?
-		else if((istype(T, /obj/item/weapon/bot_part/roomba/roomba_plating)) && (panel_open))
+		else if((istype(T, /obj/item/bot_part/roomba/roomba_plating)) && (panel_open))
 
 			// Check if the roomba is already armored.
 			if(armored)
@@ -213,7 +213,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 			return
 
 		// Is it the taped knife and is the panel open?
-		else if((istype(T, /obj/item/weapon/bot_part/roomba/roomba_knife)) && (panel_open))
+		else if((istype(T, /obj/item/bot_part/roomba/roomba_knife)) && (panel_open))
 
 			// The roomba can only have one weapon at the time.
 			if(weaponry)
@@ -221,7 +221,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 				return
 
 			// New var to use the knife's unique property bla bla bla you know how it goes.
-			var/obj/item/weapon/bot_part/roomba/roomba_knife/K = W
+			var/obj/item/bot_part/roomba/roomba_knife/K = W
 
 			src.weaponry = K // Store the knife in the bot
 			to_chat(user, "You tape the [W.name] on [src].")
@@ -236,7 +236,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 			return
 
 		// Typical 'is it a gun and is the panel open'.
-		else if((istype(T, /obj/item/weapon/gun)) && (panel_open))
+		else if((istype(T, /obj/item/gun)) && (panel_open))
 
 			// Roomba already got a weapon.
 			if(weaponry)
@@ -244,8 +244,8 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 				return
 
 			// Roomba can only use energy guns.
-			if(istype(T, /obj/item/weapon/gun/energy))
-				var/obj/item/weapon/gun/energy/G = W // New variable to use unique var.
+			if(istype(T, /obj/item/gun/energy))
+				var/obj/item/gun/energy/G = W // New variable to use unique var.
 				weaponry = G // Store the weapon
 				projectiletype = G.projectile_type // Allow the roomba to fire the type of laser
 				ranged = TRUE // Let the roomba know it can attack at range.
@@ -261,14 +261,14 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 			return
 
 		// Are we trying to install a mine?
-		else if((istype(T, /obj/item/weapon/mine)) && (panel_open))
+		else if((istype(T, /obj/item/mine)) && (panel_open))
 
 			// Roomba already got a weapon.
 			if(weaponry)
 				to_chat(user, "There is already a weapon on [src].")
 				return
 
-			var/obj/item/weapon/mine/M = W // New variable to use unique var.
+			var/obj/item/mine/M = W // New variable to use unique var.
 			weaponry = M // Store the weapon
 			kamikaze = M // Store the mine itself.
 			to_chat(user, "You install the [W.name] on [src].")
@@ -334,8 +334,8 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 					weaponry.forceMove(src.loc) // Spawn the weapon the roomba had.
 
 					// Was the weapon the knife ?
-					if(istype(weaponry, /obj/item/weapon/bot_part/roomba/roomba_knife))
-						var/obj/item/weapon/bot_part/roomba/roomba_knife/K = weaponry // Unique stat e.t.c.
+					if(istype(weaponry, /obj/item/bot_part/roomba/roomba_knife))
+						var/obj/item/bot_part/roomba/roomba_knife/K = weaponry // Unique stat e.t.c.
 
 						// Cancel the melee damage bonus the knife gave to the roomba.
 						melee_damage_lower -= K.damage_boost
@@ -416,12 +416,12 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	friendly_to_colony = TRUE
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		if(QUALITY_WELDING in T.tool_qualities)
@@ -486,4 +486,4 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	melee_damage_lower = 20 //Big slow things dont deal a lot do to bullet sponges
 	melee_damage_upper = 20
 	drop1 = /obj/item/stack/material/gold/random
-	drop2 = /obj/item/weapon/book/ritual/cruciform
+	drop2 = /obj/item/book/ritual/cruciform

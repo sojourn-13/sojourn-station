@@ -90,7 +90,7 @@
 				/obj/item/ammo_magazine/ammobox/kurtz_50,
 				/obj/item/ammo_magazine/magnum_40/rubber,
 				/obj/item/ammo_magazine/magnum_40,
-				/obj/item/weapon/cell/medium/high,
+				/obj/item/cell/medium/high,
 				/obj/item/ammo_magazine/m12,
 				/obj/item/ammo_magazine/m12/pellet,
 				/obj/item/ammo_magazine/m12/beanbag)
@@ -143,7 +143,7 @@
 				/obj/item/ammo_magazine/pistol_35/rubber = 4,
 				/obj/item/ammo_magazine/pistol_35/practice = 1,
 				/obj/item/ammo_magazine/ammobox/magnum/scrap = 1,
-				/obj/item/weapon/cell/medium = 1))
+				/obj/item/cell/medium = 1))
 
 /obj/random/ammo_lowcost/low_chance
 	name = "low chance random low tier ammunition"

@@ -297,7 +297,7 @@
 	cooldown_time = world.time + 12 HOURS
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up tools out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/belt/utility/opifex/full(usr.loc)
+	new /obj/item/storage/belt/utility/opifex/full(usr.loc)
 	return ..()
 
 /datum/perk/opifex_backup_medical
@@ -316,7 +316,7 @@
 	cooldown_time = world.time + 12 HOURS
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up webbing out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/belt/medical/opifex/full(usr.loc)
+	new /obj/item/storage/belt/medical/opifex/full(usr.loc)
 	return ..()
 
 
@@ -336,7 +336,7 @@
 	cooldown_time = world.time + 12 HOURS
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up belt out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/belt/security/tactical/opifex/full(usr.loc)
+	new /obj/item/storage/belt/security/tactical/opifex/full(usr.loc)
 	return ..()
 
 /datum/perk/opifex_turret
@@ -355,7 +355,7 @@
 	cooldown_time = world.time + 12 HOURS
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your smuggled circuit out from their hiding place, the plastic and metal device clattering on the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/circuitboard/artificer_turret/opifex(usr.loc)
+	new /obj/item/circuitboard/artificer_turret/opifex(usr.loc)
 	return ..()
 
 /datum/perk/opifex_patchkit
@@ -374,7 +374,7 @@
 	cooldown_time = world.time + 12 HOURS
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your smuggled patch kit out from their hiding place, the cloth pouch clattering on the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/firstaid/ifak(usr.loc)
+	new /obj/item/storage/firstaid/ifak(usr.loc)
 	return ..()
 
 ////////////////////////////////////////////Cht'mant perks
@@ -480,7 +480,7 @@
 	user.visible_message("<b><font color='red'>[user] vomits a sticky gray tar onto the floor!</font><b>", "<b><font color='red'>You vomit out your repair goo onto the floor!</font><b>", "<b><font color='red'>You hear a retching noise!</font><b>")
 	log_and_message_admins("used their [src] perk.")
 	playsound(usr.loc, 'sound/effects/blobattack.ogg', 50, 1)
-	new /obj/item/weapon/tool/tape_roll/repair_goo(usr.loc)
+	new /obj/item/tool/tape_roll/repair_goo(usr.loc)
 	return ..()
 
 ///////////////////////////// Folken Perks
@@ -493,13 +493,13 @@
 
 /datum/perk/oddity_reroll/activate()
 	var/mob/living/carbon/human/user = usr
-	var/obj/item/weapon/oddity/O = user.get_active_hand()
+	var/obj/item/oddity/O = user.get_active_hand()
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("The natural forces around you cannot be manipulated just yet."))
 		return FALSE
-	if(!istype(O, /obj/item/weapon/oddity))
+	if(!istype(O, /obj/item/oddity))
 		to_chat(usr, SPAN_NOTICE("This isn't the correct kind of oddity!"))
 		return FALSE
 	cooldown_time = world.time + 45 MINUTES

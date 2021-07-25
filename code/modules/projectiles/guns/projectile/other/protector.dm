@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/grenade
+/obj/item/gun/projectile/grenade
 	name = "NT GL \"Protector\""
 	desc = "A bulky pump-action grenade launcher. Holds up to 6 grenade shells in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/riotgun.dmi'
@@ -23,7 +23,7 @@
 	twohanded = TRUE
 
 /* We no longer fire grenades like this. As we now use internal ammo
-/obj/item/weapon/gun/projectile/grenade/proc/load_grenade(obj/item/weapon/grenade/A, mob/user)  //For loading hand grenades, not ammo
+/obj/item/gun/projectile/grenade/proc/load_grenade(obj/item/grenade/A, mob/user)  //For loading hand grenades, not ammo
 	if(!A.loadable)
 		to_chat(user, SPAN_WARNING("\The [A] doesn't seem to fit in \the [src]!"))
 		return
@@ -37,15 +37,15 @@
 	pump(user)
 	update_icon()
 
-/obj/item/weapon/gun/projectile/grenade/load_ammo(var/obj/item/A, mob/user)  //Allows us to load both hand grenades and grenade shells
-	if(istype(A, /obj/item/weapon/grenade))
+/obj/item/gun/projectile/grenade/load_ammo(var/obj/item/A, mob/user)  //Allows us to load both hand grenades and grenade shells
+	if(istype(A, /obj/item/grenade))
 		load_grenade(A, user)
 	else
 		..()*/
 
 
 //revolves the magazine, allowing players to choose between multiple grenade types
-/obj/item/weapon/gun/projectile/grenade/proc/pump(mob/user as mob)
+/obj/item/gun/projectile/grenade/proc/pump(mob/user as mob)
 	playsound(user, 'sound/weapons/shotgunpump.ogg', 60, 1)
 
 	var/obj/item/ammo_casing/next
@@ -60,12 +60,12 @@
 		to_chat(user, SPAN_WARNING("Mechanism pumps [src], but the magazine is empty."))
 	update_icon()
 
-/obj/item/weapon/gun/projectile/grenade/examine(mob/user)
+/obj/item/gun/projectile/grenade/examine(mob/user)
 	if(..(user, 2))
 		var/grenade_count = loaded.len + (chambered? 1 : 0)
 		to_chat(user, "Has [grenade_count] grenade\s remaining.")
 		if(chambered)
 			to_chat(user, "\A [chambered] is chambered.")
 
-/obj/item/weapon/gun/projectile/grenade/attack_self(mob/user)
+/obj/item/gun/projectile/grenade/attack_self(mob/user)
 	pump(user)

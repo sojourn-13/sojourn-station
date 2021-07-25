@@ -501,9 +501,9 @@
 					contentsList["[itemCount]"] = obj.type
 					//log_debug("logged [itemCount] - [obj.type] to file")
 
-					if(istype(obj, /obj/item/weapon/storage))
+					if(istype(obj, /obj/item/storage))
 						var/storageItemCount = itemCount
-						var/obj/item/weapon/storage/bag = obj
+						var/obj/item/storage/bag = obj
 						for(var/atom/bagObj in bag.contents)
 							itemCount += 1
 							parents["[itemCount]"] = "[storageItemCount]"
@@ -513,9 +513,9 @@
 							descs["[itemCount]"] = bagObj.desc
 							//log_debug("logged [itemCount] - [bagObj.type] to file")
 
-							if(istype(bagObj, /obj/item/weapon/storage))
+							if(istype(bagObj, /obj/item/storage))
 								var/storageItemCount2 = itemCount
-								var/obj/item/weapon/storage/bag2 = bagObj
+								var/obj/item/storage/bag2 = bagObj
 								for(var/atom/bagObj2 in bag2.contents)
 									itemCount += 1
 									parents["[itemCount]"] = "[storageItemCount2]"

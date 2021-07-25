@@ -1,10 +1,10 @@
-/obj/item/weapon/circuitboard/artist_bench
+/obj/item/circuitboard/artist_bench
 	build_name = "artist bench"
 	build_path = /obj/machinery/autolathe/artist_bench
 	board_type = "machine"
 	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	req_components = list(
-		/obj/item/weapon/stock_parts/matter_bin = 3,
-		/obj/item/weapon/stock_parts/manipulator = 1,
-		/obj/item/weapon/stock_parts/console_screen = 1
+		/obj/item/stock_parts/matter_bin = 3,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/console_screen = 1
 	)

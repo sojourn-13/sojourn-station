@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/avasarala
+/obj/item/gun/projectile/avasarala
 	name = "\"Avasarala\" heavy pistol"
 	desc = "An old weapon design, hyped up by its visual 'cool' factor but hardly good in any practical scenario. It's ineffective design and bafflingly badly done specs make it style over function all the way. Uses .50 kurtz."
 	icon = 'icons/obj/guns/projectile/avasarala.dmi'
@@ -20,7 +20,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
-/obj/item/weapon/gun/projectile/avasarala/update_icon()
+/obj/item/gun/projectile/avasarala/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -35,6 +35,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/basilisk/Initialize()
+/obj/item/gun/projectile/basilisk/Initialize()
 	. = ..()
 	update_icon()

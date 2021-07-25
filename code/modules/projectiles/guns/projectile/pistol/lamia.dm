@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/lamia
+/obj/item/gun/projectile/lamia
 	name = "\"Lamia\" heavy pistol"
 	desc = "The \"Lamia\", a massive handgun based on the M6 series, repackaged by Holland & Sullivan for civilian and law enforcement use. Uses .50 Kurtz."
 	icon = 'icons/obj/guns/projectile/lamia.dmi'
@@ -21,7 +21,7 @@
 	one_hand_penalty = 8
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
-/obj/item/weapon/gun/projectile/lamia/update_icon()
+/obj/item/gun/projectile/lamia/update_icon()
 	..()
 
 	if(!ammo_magazine)
@@ -31,19 +31,19 @@
 	else
 		icon_state = initial(icon_state) + "_full"
 
-/obj/item/weapon/gun/projectile/lamia/dark
+/obj/item/gun/projectile/lamia/dark
 	name = "\"Naga\" heavy pistol"
 	desc = "An M6 \"Naga\" heavy pistol, either a copy, surplus, or stolen. It's impossible to tell with the defaced markings. Uses .50 Kurtz."
 	icon_state = "dark_lamia"
 	item_state = "dark_lamia"
 
-/obj/item/weapon/gun/projectile/lamia/dark/sf
+/obj/item/gun/projectile/lamia/dark/sf
 	name = "\"Naga\" heavy pistol"
 	desc = "An M6 \"Naga\" heavy pistol, the mainline heavy sidearm of the galaxy. This one still bears SolFed markings either lost or stolen. Uses .50 Kurtz."
 	icon_state = "sfdark_lamia"
 	item_state = "sfdark_lamia"
 
-/obj/item/weapon/gun/projectile/lamia/scoped
+/obj/item/gun/projectile/lamia/scoped
 	name = "\"Lamia\" advanced heavy pistol"
 	desc = "Seinemetall Defense GmbH handgun .50 \"Lamia\" Based on the \"Naga\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
 	icon_state = "scoped_lamia"
@@ -55,7 +55,7 @@
 	recoil_buildup = 7
 	price_tag = 1250
 
-/obj/item/weapon/gun/projectile/lamia/scoped/dark
+/obj/item/gun/projectile/lamia/scoped/dark
 	name = "\"Naga\" advanced heavy pistol"
 	desc = "The M6D \"Naga\", a heavy pistol manufactured on Mars and given only to SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
 	icon_state = "scoped_dark_lamia"
@@ -70,7 +70,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
 
-/obj/item/weapon/gun/projectile/lamia/socom
+/obj/item/gun/projectile/lamia/socom
 	name = "\"SOCOM\" silenced heavy pistol"
 	desc = "The M6C SOCOM, a variant of the M6 \"Naga\", it's a highly specialized and advanced handgun developed for the Solar Federation Special Operations Command. This one is fitted with a smart-linked optic and integrated suppressor. Uses .50 Kurtz."
 	icon_state = "socom"
@@ -83,7 +83,7 @@
 	penetration_multiplier = 1.2
 	price_tag = 1250
 
-/obj/item/weapon/gun/projectile/lamia/akurra
+/obj/item/gun/projectile/lamia/akurra
 	name = "\"Akurra\" silenced heavy pistol"
 	desc = "The \"Akurra\", a specialized and heavily modified Lamia-pattern pistol that's been shaved down to a sleek gunfighter's tool.  This one is fitted with an integrated suppressor and gutter-sights. Uses .50 Kurtz."
 	icon_state = "akurra"

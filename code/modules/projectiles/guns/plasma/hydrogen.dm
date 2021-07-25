@@ -11,7 +11,7 @@ However, if you fail to secure the hydrogen flask used as ammo, then containment
 Securing and unsecuring the flask is a long and hard task, and a failure when unsecuring the flask can burn your hands.
 */
 
-/obj/item/weapon/gun/hydrogen
+/obj/item/gun/hydrogen
 	name = "\improper \"Venatori\" hydrogen-plasma gun"
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brain child of Soteria Director Nakharan Mkne, meant to compete and exceed the church of the absolutes \
 	own plasma designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapons over heating without being \
@@ -35,8 +35,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	var/use_plasma_cost = 10 // How much plasma is used per shot
 	var/heat_per_shot = 25 // How much heat is gained each shot
 
-	var/obj/item/weapon/hydrogen_fuel_cell/flask = null // The flask the gun use for ammo
-	var/obj/item/weapon/hydrogen_fuel_cell/backpack/connected = null // The backpack the gun is connected to
+	var/obj/item/hydrogen_fuel_cell/flask = null // The flask the gun use for ammo
+	var/obj/item/hydrogen_fuel_cell/backpack/connected = null // The backpack the gun is connected to
 	var/secured = TRUE // Is the flask secured?
 	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
@@ -50,17 +50,17 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 	var/aerith_aether = 50 // Variable used to repetidely call Process(), which is used for heat management. It is in deciseconds, so 50 = 5 seconds
 
-/obj/item/weapon/gun/hydrogen/Initialize()
+/obj/item/gun/hydrogen/Initialize()
 	..()
-	flask = new /obj/item/weapon/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
+	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
 	update_icon()
 
-/obj/item/weapon/gun/hydrogen/New()
+/obj/item/gun/hydrogen/New()
 	..()
 	update_icon()
 	Process()
 
-/obj/item/weapon/gun/hydrogen/examine(mob/user)
+/obj/item/gun/hydrogen/examine(mob/user)
 	..(user)
 	if(!flask)
 		to_chat(user, SPAN_NOTICE("Has no flask inserted."))
@@ -73,7 +73,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	return
 
 // Removing the plasma flask
-/obj/item/weapon/gun/hydrogen/MouseDrop(over_object)
+/obj/item/gun/hydrogen/MouseDrop(over_object)
 	if(!connected)
 		if(secured)
 			to_chat(usr, "The fuel cell is screwed to the gun. You cannot remove it.")
@@ -81,12 +81,12 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 			flask = null
 			update_icon()
 
-/obj/item/weapon/gun/hydrogen/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
+/obj/item/gun/hydrogen/attackby(obj/item/W as obj, mob/living/user as mob)
 
 	// Securing or unsecuring the cell
 	if(QUALITY_SCREW_DRIVING)
-		if((flask) && !(connected) && !(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack)))
-			var/obj/item/weapon/tool/T = W // New var to use tool-only procs.
+		if((flask) && !(connected) && !(istype(W, /obj/item/hydrogen_fuel_cell/backpack)))
+			var/obj/item/tool/T = W // New var to use tool-only procs.
 			if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
 				if(secured)
 					user.visible_message(
@@ -113,20 +113,20 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 			to_chat(user, "There is no flask to remove.")
 
 	// We do not want to insert the backpack, thank you very much.
-	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell/backpack))
+	if(istype(W, /obj/item/hydrogen_fuel_cell/backpack))
 		return
 
 
-	if(flask && istype(W, /obj/item/weapon/hydrogen_fuel_cell))
+	if(flask && istype(W, /obj/item/hydrogen_fuel_cell))
 		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
 		return
 
-	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell) && insert_item(W, user))
+	if(istype(W, /obj/item/hydrogen_fuel_cell) && insert_item(W, user))
 		flask = W
 		update_icon()
 		return
 
-/obj/item/weapon/gun/hydrogen/Process()
+/obj/item/gun/hydrogen/Process()
 	// Lose heat over time.
 	if(heat_level > 0)
 		heat_level--
@@ -148,7 +148,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 	spawn(aerith_aether) Process()
 
-/obj/item/weapon/gun/hydrogen/consume_next_projectile()
+/obj/item/gun/hydrogen/consume_next_projectile()
 	if(!flask)
 		return null
 	if(!ispath(projectile_type))
@@ -159,7 +159,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	return new projectile_type(src)
 
 // The part where the gun blow up.
-/obj/item/weapon/gun/hydrogen/handle_post_fire(mob/living/user as mob)
+/obj/item/gun/hydrogen/handle_post_fire(mob/living/user as mob)
 	..()
 	if(!secured) // Blow up if you forgot to secure the cell.
 		containment_failure(user)
@@ -177,14 +177,14 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 	return
 
-/obj/item/weapon/gun/hydrogen/update_icon()
+/obj/item/gun/hydrogen/update_icon()
 	cut_overlays()
 	if(flask && !connected)
 		add_overlay("[icon_state]_loaded")
 	if(connected)
 		add_overlay("[icon_state]_connected")
 
-/obj/item/weapon/gun/hydrogen/attack_self(mob/user as mob)
+/obj/item/gun/hydrogen/attack_self(mob/user as mob)
 	user.visible_message(	SPAN_NOTICE("[user] start to manually vent the [name]."),
 							SPAN_NOTICE("You start to manually vent the [name].")
 						)
@@ -201,13 +201,13 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /////////////////////
 
 // Vent the weapon
-/obj/item/weapon/gun/hydrogen/proc/venting()
+/obj/item/gun/hydrogen/proc/venting()
 	heat_level = 0 // Remove the heat
 	vent_timer = vent_level_timer // Reset the timer
 	src.visible_message("The [src.name]'s vents open and spew super-heated steam, cooling itself down.")
 
 // The weapon is too hot, burns the user's hand.
-/obj/item/weapon/gun/hydrogen/proc/overheating(mob/living/user as mob)
+/obj/item/gun/hydrogen/proc/overheating(mob/living/user as mob)
 	src.visible_message(SPAN_DANGER("The [src.name] overheat, burning its wielder's hands!"))
 
 	// Burn the hand holding the gun
@@ -217,7 +217,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 		user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
 
 // The weapon's plasma containment has failed, greatly burning the user !
-/obj/item/weapon/gun/hydrogen/proc/containment_failure(mob/living/user as mob)
+/obj/item/gun/hydrogen/proc/containment_failure(mob/living/user as mob)
 	src.visible_message(SPAN_DANGER("The [src.name]'s magnetic containment failed, covering its wielder with burning plasma!"))
 	// Damage every bodypart, for a total of 350
 	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_HEAD)

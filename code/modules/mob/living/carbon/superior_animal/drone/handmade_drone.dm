@@ -32,7 +32,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-	var/obj/item/weapon/cell/large/cell = new /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
+	var/obj/item/cell/large/cell = new /obj/item/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
 	follow_message = "state, \"Beginning Escort Protocol.\""
 	stop_message = "state, \"Ending Escort Protocol.\""
 	var/list/creator = list() // Who's the bot's creator.
@@ -69,12 +69,12 @@
 	take_overall_damage(0, 50 * severity)
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/handmade/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/carbon/superior_animal/handmade/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		if(QUALITY_WELDING in T.tool_qualities)

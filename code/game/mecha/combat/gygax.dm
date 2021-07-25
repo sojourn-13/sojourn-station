@@ -48,7 +48,7 @@
 	return
 
 /obj/mecha/combat/gygax/dark/add_cell()
-	cell = new /obj/item/weapon/cell/large/hyper(src)
+	cell = new /obj/item/cell/large/hyper(src)
 
 /obj/mecha/combat/gygax/verb/overload()
 	set category = "Exosuit Interface"

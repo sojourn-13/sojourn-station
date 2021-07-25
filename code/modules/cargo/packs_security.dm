@@ -4,12 +4,12 @@
 
 /datum/supply_pack/specialops
 	name = "Special Ops Crate"
-	contains = list(/obj/item/weapon/storage/box/emps,
-					/obj/item/weapon/grenade/smokebomb,
-					/obj/item/weapon/grenade/smokebomb,
-					/obj/item/weapon/grenade/smokebomb,
-					/obj/item/weapon/pen/reagent/paralysis,
-					/obj/item/weapon/grenade/chem_grenade/incendiary)
+	contains = list(/obj/item/storage/box/emps,
+					/obj/item/grenade/smokebomb,
+					/obj/item/grenade/smokebomb,
+					/obj/item/grenade/smokebomb,
+					/obj/item/pen/reagent/paralysis,
+					/obj/item/grenade/chem_grenade/incendiary)
 	cost = 1360
 	crate_name = "special ops crate"
 	group = "Security"
@@ -17,9 +17,9 @@
 
 /datum/supply_pack/sts_lrifle
 	name = "STS Carbine(.257) Weapons Crate"
-	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/lrifle,
-				/obj/item/weapon/gun/projectile/automatic/sts/lrifle,
-				/obj/item/weapon/gun/projectile/automatic/sts/lrifle)
+	contains = list(/obj/item/gun/projectile/automatic/sts/lrifle,
+				/obj/item/gun/projectile/automatic/sts/lrifle,
+				/obj/item/gun/projectile/automatic/sts/lrifle)
 	cost = 2500
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "STS Carbine(.257) Weapons Crate"
@@ -27,9 +27,9 @@
 
 /datum/supply_pack/sts_rifle
 	name = "STS Rifle(7.5) Weapons Crate"
-	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/rifle,
-				/obj/item/weapon/gun/projectile/automatic/sts/rifle,
-				/obj/item/weapon/gun/projectile/automatic/sts/rifle)
+	contains = list(/obj/item/gun/projectile/automatic/sts/rifle,
+				/obj/item/gun/projectile/automatic/sts/rifle,
+				/obj/item/gun/projectile/automatic/sts/rifle)
 	cost = 3000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "STS Rifle(7.5) Weapons Crate"
@@ -37,9 +37,9 @@
 
 /datum/supply_pack/sts_hrifle
 	name = "STS Heavy Rifle(.408) Weapons Crate"
-	contains = list(/obj/item/weapon/gun/projectile/automatic/sts/hrifle,
-				/obj/item/weapon/gun/projectile/automatic/sts/hrifle,
-				/obj/item/weapon/gun/projectile/automatic/sts/hrifle)
+	contains = list(/obj/item/gun/projectile/automatic/sts/hrifle,
+				/obj/item/gun/projectile/automatic/sts/hrifle,
+				/obj/item/gun/projectile/automatic/sts/hrifle)
 	cost = 4000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "STS Heavy Rifle(.408) Weapons Crate"
@@ -137,11 +137,11 @@
 
 /datum/supply_pack/fsenergy
 	name = "HS Energy Weapons Crate"
-	contains = list(/obj/item/weapon/gun/energy/pulse/cassad,
-				/obj/item/weapon/gun/energy/gun,
-				/obj/item/weapon/gun/energy/gun,
-				/obj/item/weapon/gun/energy/gun/martin,
-				/obj/item/weapon/gun/energy/gun/martin)
+	contains = list(/obj/item/gun/energy/pulse/cassad,
+				/obj/item/gun/energy/gun,
+				/obj/item/gun/energy/gun,
+				/obj/item/gun/energy/gun/martin,
+				/obj/item/gun/energy/gun/martin)
 	cost = 4800
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "HS energy weapons crate"
@@ -149,9 +149,9 @@
 
 /datum/supply_pack/fssmall
 	name = "HS Sidearms Crate"
-	contains = list(/obj/item/weapon/gun/projectile/colt,
-			/obj/item/weapon/gun/projectile/clarissa,
-			/obj/item/weapon/gun/projectile/olivaw)
+	contains = list(/obj/item/gun/projectile/colt,
+			/obj/item/gun/projectile/clarissa,
+			/obj/item/gun/projectile/olivaw)
 	cost = 2400
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "HS sidearms crate"
@@ -160,9 +160,9 @@
 
 /datum/supply_pack/fsrevolver
 	name = "HS Revolvers Crate"
-	contains = list(/obj/item/weapon/gun/projectile/revolver/detective,
-					/obj/item/weapon/gun/projectile/revolver/detective,
-					/obj/item/weapon/gun/projectile/revolver)
+	contains = list(/obj/item/gun/projectile/revolver/detective,
+					/obj/item/gun/projectile/revolver/detective,
+					/obj/item/gun/projectile/revolver)
 	cost = 2640
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "HS revolvers crate"
@@ -170,7 +170,7 @@
 
 /datum/supply_pack/longrevolver
 	name = "Lonestar Long Revolver Novelty Crate"
-	contains = list(/obj/item/weapon/gun/projectile/revolver/longboi)
+	contains = list(/obj/item/gun/projectile/revolver/longboi)
 	cost = 3000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "long revolver crate"
@@ -178,12 +178,12 @@
 
 /datum/supply_pack/ntweapons
 	name = "CA Energy Weapons Crate"
-	contains = list(/obj/item/weapon/gun/energy/laser,
-				/obj/item/weapon/gun/energy/laser,
-				/obj/item/weapon/gun/energy/taser,
-				/obj/item/weapon/gun/energy/taser,
-				/obj/item/weapon/gun/energy/ntpistol,
-				/obj/item/weapon/gun/energy/ntpistol)
+	contains = list(/obj/item/gun/energy/laser,
+				/obj/item/gun/energy/laser,
+				/obj/item/gun/energy/taser,
+				/obj/item/gun/energy/taser,
+				/obj/item/gun/energy/ntpistol,
+				/obj/item/gun/energy/ntpistol)
 	cost = 4000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "CA energy weapons crate"
@@ -191,13 +191,13 @@
 
 /datum/supply_pack/eweapons
 	name = "Incendiary Weapons Crate"
-	contains = list(/obj/item/weapon/flamethrower/full,
-					/obj/item/weapon/tank/plasma,
-					/obj/item/weapon/tank/plasma,
-					/obj/item/weapon/tank/plasma,
-					/obj/item/weapon/grenade/chem_grenade/incendiary,
-					/obj/item/weapon/grenade/chem_grenade/incendiary,
-					/obj/item/weapon/grenade/chem_grenade/incendiary)
+	contains = list(/obj/item/flamethrower/full,
+					/obj/item/tank/plasma,
+					/obj/item/tank/plasma,
+					/obj/item/tank/plasma,
+					/obj/item/grenade/chem_grenade/incendiary,
+					/obj/item/grenade/chem_grenade/incendiary,
+					/obj/item/grenade/chem_grenade/incendiary)
 	cost = 2000
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "incendiary weapons crate"
@@ -218,18 +218,18 @@
 
 /datum/supply_pack/riot
 	name = "Marshal Riot Gear Crate"
-	contains = list(/obj/item/weapon/melee/baton,
-					/obj/item/weapon/melee/baton,
-					/obj/item/weapon/melee/baton,
-					/obj/item/weapon/shield/riot,
-					/obj/item/weapon/shield/riot,
-					/obj/item/weapon/shield/riot,
-					/obj/item/weapon/storage/box/flashbangs,
-					/obj/item/weapon/storage/box/flashbangs,
-					/obj/item/weapon/storage/box/flashbangs,
-					/obj/item/weapon/handcuffs,
-					/obj/item/weapon/handcuffs,
-					/obj/item/weapon/handcuffs,
+	contains = list(/obj/item/melee/baton,
+					/obj/item/melee/baton,
+					/obj/item/melee/baton,
+					/obj/item/shield/riot,
+					/obj/item/shield/riot,
+					/obj/item/shield/riot,
+					/obj/item/storage/box/flashbangs,
+					/obj/item/storage/box/flashbangs,
+					/obj/item/storage/box/flashbangs,
+					/obj/item/handcuffs,
+					/obj/item/handcuffs,
+					/obj/item/handcuffs,
 					/obj/item/clothing/head/helmet/faceshield/riot,
 					/obj/item/clothing/suit/armor/heavy/riot,
 					/obj/item/clothing/head/helmet/faceshield/riot,
@@ -339,7 +339,7 @@
 
 /datum/supply_pack/littlecomet
 	name = "Little Comet Sidearm Crate"
-	contains = list(/obj/item/weapon/gun/projectile/revolver/little_comet)
+	contains = list(/obj/item/gun/projectile/revolver/little_comet)
 	cost = 12000
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Little Comet Sidearm Crate"
@@ -347,7 +347,7 @@
 
 /datum/supply_pack/survivalrifle
 	name = "\"Bond\" survival rifle"
-	contains = list(/obj/item/weapon/gun/projectile/automatic/survivalrifle,
+	contains = list(/obj/item/gun/projectile/automatic/survivalrifle,
 					/obj/item/ammo_magazine/rifle_10x24,
 					/obj/item/ammo_magazine/rifle_10x24,
 					/obj/item/ammo_magazine/rifle_10x24)
@@ -368,10 +368,10 @@
 //Putting the void wolf stuff here so its easier to remove later, if needed.
 /datum/supply_pack/voidwolfrifles
 	name = "Void Wolf Rifles Crate"
-	contains = list(/obj/item/weapon/gun/projectile/automatic/ak47/sa,
-					/obj/item/weapon/gun/projectile/automatic/ak47/sa,
-					/obj/item/weapon/gun/projectile/automatic/ak47/sa,
-					/obj/item/weapon/gun/projectile/automatic/ak47/sa)
+	contains = list(/obj/item/gun/projectile/automatic/ak47/sa,
+					/obj/item/gun/projectile/automatic/ak47/sa,
+					/obj/item/gun/projectile/automatic/ak47/sa,
+					/obj/item/gun/projectile/automatic/ak47/sa)
 	cost = 6500
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Rifles Crate"
@@ -379,20 +379,20 @@
 
 /datum/supply_pack/voidwolfdrugs
 	name = "Void Wolf Recreations Crate"
-	contains = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs,
-					/obj/item/weapon/reagent_containers/hypospray/autoinjector/drugs,
-					/obj/item/weapon/reagent_containers/syringe/drugs,
-					/obj/item/weapon/reagent_containers/syringe/drugs,
-					/obj/item/weapon/reagent_containers/pill/zoom,
-					/obj/item/weapon/reagent_containers/pill/happy,
+	contains = list(/obj/item/reagent_containers/hypospray/autoinjector/drugs,
+					/obj/item/reagent_containers/hypospray/autoinjector/drugs,
+					/obj/item/reagent_containers/syringe/drugs,
+					/obj/item/reagent_containers/syringe/drugs,
+					/obj/item/reagent_containers/pill/zoom,
+					/obj/item/reagent_containers/pill/happy,
 					/obj/item/seeds/ambrosiadeusseed,
 					/obj/item/seeds/ambrosiavulgarisseed,
-					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
-					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
-					/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris)
+					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris,
+					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris,
+					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris)
 	cost = 1000
 	containertype = /obj/structure/closet/crate/serbcrate
 	crate_name = "Void Wolf Recreations Crate"
@@ -400,11 +400,11 @@
 
 /datum/supply_pack/voidwolfgunmod
 	name = "Void Wolf Gun-Mod Crate"
-	contains = list(/obj/item/weapon/gun_upgrade/scope/killer,
-					/obj/item/weapon/gun_upgrade/trigger/boom,
-					/obj/item/weapon/gun_upgrade/barrel/gauss,
-					/obj/item/weapon/gun_upgrade/mechanism/reverse_loader,
-					/obj/item/weapon/gun_upgrade/trigger/dangerzone)
+	contains = list(/obj/item/gun_upgrade/scope/killer,
+					/obj/item/gun_upgrade/trigger/boom,
+					/obj/item/gun_upgrade/barrel/gauss,
+					/obj/item/gun_upgrade/mechanism/reverse_loader,
+					/obj/item/gun_upgrade/trigger/dangerzone)
 	cost = 1200
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Gun-Mod Crate"
@@ -412,10 +412,10 @@
 
 /datum/supply_pack/voidwolfswords
 	name = "Void Wolf Energy Swords Crate"
-	contains = list(/obj/item/weapon/melee/energy/sword/pirate,
-					/obj/item/weapon/melee/energy/sword/pirate,
-					/obj/item/weapon/melee/energy/sword/pirate,
-					/obj/item/weapon/melee/energy/sword/pirate)
+	contains = list(/obj/item/melee/energy/sword/pirate,
+					/obj/item/melee/energy/sword/pirate,
+					/obj/item/melee/energy/sword/pirate,
+					/obj/item/melee/energy/sword/pirate)
 	cost = 4500
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Energy Swords Crate"
@@ -433,7 +433,7 @@
 
 /datum/supply_pack/voidwolfemporer
 	name = "Void Wolf Emporer Crate"
-	contains = list(/obj/item/weapon/gun/projectile/gyropistol,
+	contains = list(/obj/item/gun/projectile/gyropistol,
 					/obj/item/ammo_magazine/a75,
 					/obj/item/ammo_magazine/a75)
 	cost = 20000

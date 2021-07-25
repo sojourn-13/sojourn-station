@@ -10,7 +10,7 @@
 	melee_damage_upper = 20
 	poison_per_bite = 4
 	move_to_delay = 4
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/hunter
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/hunter
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","bounces in place.")
 
@@ -45,7 +45,7 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one is blood red and pulsating with sacks of irratent gas."
 	icon_state = "pepper"
 	icon_living = "pepper"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/pepper
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/pepper
 	emote_see = list("chitters.","rubs its legs.","vibrates.","belches flames!")
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/pepper/UnarmedAttack(var/atom/A, var/proximity)
@@ -82,7 +82,7 @@
 	poison_per_bite = 2
 	poison_type = "plasma"
 	move_to_delay = 4
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/plasma
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/plasma
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
 
@@ -133,12 +133,12 @@
 			else
 				if(M == src || anchored)
 					return 0
-				for(var/obj/item/weapon/grab/G in src.grabbed_by)
+				for(var/obj/item/grab/G in src.grabbed_by)
 					if(G.assailant == M)
 						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
 						return
 
-				var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
+				var/obj/item/grab/G = new /obj/item/grab(M, src)
 				if(buckled)
 					to_chat(M, SPAN_NOTICE("You cannot grab [src], \he is buckled in!"))
 				if(!G) //the grab will delete itself in New if affecting is anchored
@@ -231,7 +231,7 @@
 	poison_per_bite = 4
 	flash_resistances = 3 //For balance against are speedy fello
 	poison_type = "party drops"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/emperor
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
 	meat_amount = 3
 	emote_see = list("chitters.","rubs its legs.","chitters in something that sounds like speech.")
@@ -256,7 +256,7 @@
 	flash_resistances = 100 //Many large eyes, flashing one doesn't blind the others
 	poison_per_bite = 6
 	poison_type = "stoxin"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/reaper_spider
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider/slip(var/slipped_on)
 	return FALSE
@@ -286,12 +286,12 @@
 			else
 				if(M == src || anchored)
 					return 0
-				for(var/obj/item/weapon/grab/G in src.grabbed_by)
+				for(var/obj/item/grab/G in src.grabbed_by)
 					if(G.assailant == M)
 						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
 						return
 
-				var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(M, src)
+				var/obj/item/grab/G = new /obj/item/grab(M, src)
 				if(buckled)
 					to_chat(M, SPAN_NOTICE("You cannot grab [src], \he is buckled in!"))
 				if(!G) //the grab will delete itself in New if affecting is anchored

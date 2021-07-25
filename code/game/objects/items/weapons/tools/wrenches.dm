@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/wrench
+/obj/item/tool/wrench
 	name = "wrench"
 	desc = "A wrench with many common uses. Can be usually found in your hand."
 	icon_state = "wrench"
@@ -11,12 +11,12 @@
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	tool_qualities = list(QUALITY_BOLT_TURNING = 35, QUALITY_HAMMERING = 10)
 
-/obj/item/weapon/tool/wrench/bs
+/obj/item/tool/wrench/bs
 	name = "bluespace wrench"
 	icon_state = "bs_wrench"
 	tool_qualities = list(QUALITY_BOLT_TURNING = 100)
 
-/obj/item/weapon/tool/wrench/improvised
+/obj/item/tool/wrench/improvised
 	name = "sheet spanner"
 	desc = "A piece of metal cut and twisted to grant bolt-turning capabilities. Would perform better than a regular wrench with some tool mods."
 	icon_state = "impro_wrench"
@@ -26,7 +26,7 @@
 	matter = list(MATERIAL_STEEL = 1)
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
-/obj/item/weapon/tool/wrench/big_wrench
+/obj/item/tool/wrench/big_wrench
 	name = "big wrench"
 	desc = "If everything else failed - bring a bigger wrench."
 	icon_state = "big-wrench"

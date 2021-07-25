@@ -27,9 +27,9 @@
 /obj/structure/displaycase/ex_act(severity)
 	switch(severity)
 		if (1)
-			new /obj/item/weapon/material/shard( src.loc )
+			new /obj/item/material/shard( src.loc )
 			if (occupied)
-				new /obj/item/weapon/gun/energy/captain( src.loc )
+				new /obj/item/gun/energy/captain( src.loc )
 				occupied = FALSE
 			qdel(src)
 		if (2)
@@ -54,7 +54,7 @@
 			src.density = FALSE
 			src.destroyed = TRUE
 			src.locked = FALSE
-			new /obj/item/weapon/material/shard( src.loc )
+			new /obj/item/material/shard( src.loc )
 			playsound(src, "shatter", 70, 1)
 			update_icon()
 	else
@@ -69,7 +69,7 @@
 	return
 
 
-/obj/structure/displaycase/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/displaycase/attackby(obj/item/W as obj, mob/user as mob)
 	if(QUALITY_PULSING in W.tool_qualities)
 		if (!locked)
 			to_chat(user, SPAN_WARNING("The case is already unlocked!"))
@@ -104,7 +104,7 @@
 			src.add_fingerprint(user)
 			update_icon()
 		return
-	if(istype(W, /obj/item/weapon/gun/energy/captain))
+	if(istype(W, /obj/item/gun/energy/captain))
 		if(locked)
 			if(occupied)
 				to_chat(user, SPAN_WARNING("There is already \a gun inside \the [src]."))
@@ -124,14 +124,14 @@
 
 /obj/structure/displaycase/attack_hand(mob/user as mob)
 	if (src.destroyed && src.occupied)
-		new /obj/item/weapon/gun/energy/captain( src.loc )
+		new /obj/item/gun/energy/captain( src.loc )
 		to_chat(user, SPAN_NOTICE("You deactivate the hover field built into the case."))
 		src.occupied = FALSE
 		src.add_fingerprint(user)
 		update_icon()
 		return
 	if (src.occupied && !src.locked)
-		new /obj/item/weapon/gun/energy/captain( src.loc )
+		new /obj/item/gun/energy/captain( src.loc )
 		to_chat(user, SPAN_NOTICE("You deactivate the hover field built into the case."))
 		src.occupied = FALSE
 		src.add_fingerprint(user)

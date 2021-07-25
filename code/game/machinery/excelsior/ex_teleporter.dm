@@ -14,7 +14,7 @@ var/global/excelsior_last_draft = 0
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
 	active_power_usage = 15000
-	circuit = /obj/item/weapon/circuitboard/excelsior_teleporter
+	circuit = /obj/item/circuitboard/excelsior_teleporter
 
 	var/max_energy = 100
 	var/energy_gain = 1
@@ -40,37 +40,37 @@ var/global/excelsior_last_draft = 0
 		)
 
 	var/list/parts_list = list(
-		/obj/item/weapon/stock_parts/console_screen = 50,
-		/obj/item/weapon/stock_parts/capacitor/excelsior = 50,
-		/obj/item/weapon/stock_parts/scanning_module/excelsior = 50,
-		/obj/item/weapon/stock_parts/manipulator/excelsior = 50,
-		/obj/item/weapon/stock_parts/micro_laser/excelsior = 50,
-		/obj/item/weapon/stock_parts/matter_bin/excelsior = 50,
+		/obj/item/stock_parts/console_screen = 50,
+		/obj/item/stock_parts/capacitor/excelsior = 50,
+		/obj/item/stock_parts/scanning_module/excelsior = 50,
+		/obj/item/stock_parts/manipulator/excelsior = 50,
+		/obj/item/stock_parts/micro_laser/excelsior = 50,
+		/obj/item/stock_parts/matter_bin/excelsior = 50,
 		/obj/item/clothing/under/excelsior = 10,
-		/obj/item/weapon/soap/syndie = 25,
-		/obj/item/weapon/circuitboard/excelsior_teleporter = 500,
-		/obj/item/weapon/circuitboard/excelsiorautolathe = 150,
-		/obj/item/weapon/circuitboard/excelsiorreconstructor = 150,
-		/obj/item/weapon/circuitboard/excelsior_turret = 150,
-		/obj/item/weapon/circuitboard/excelsiorshieldwallgen = 150,
-		/obj/item/weapon/circuitboard/excelsior_boombox = 150,
-		/obj/item/weapon/circuitboard/diesel = 150,
-		/obj/item/weapon/melee/baton/excelbaton = 200,
+		/obj/item/soap/syndie = 25,
+		/obj/item/circuitboard/excelsior_teleporter = 500,
+		/obj/item/circuitboard/excelsiorautolathe = 150,
+		/obj/item/circuitboard/excelsiorreconstructor = 150,
+		/obj/item/circuitboard/excelsior_turret = 150,
+		/obj/item/circuitboard/excelsiorshieldwallgen = 150,
+		/obj/item/circuitboard/excelsior_boombox = 150,
+		/obj/item/circuitboard/diesel = 150,
+		/obj/item/melee/baton/excelbaton = 200,
 		/obj/item/device/defib_kit/compact = 500,
-		/obj/item/weapon/storage/firstaid/toxin = 100,
-		/obj/item/weapon/storage/firstaid/adv = 300,
-		/obj/item/weapon/storage/firstaid/surgery/traitor = 500,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior = 1000,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_weapons = 500,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_parts = 450,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_cells = 200,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 100,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_makarov = 50,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez = 200,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_boltgun = 50,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ak = 200,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 300,
-		/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer = 300
+		/obj/item/storage/firstaid/toxin = 100,
+		/obj/item/storage/firstaid/adv = 300,
+		/obj/item/storage/firstaid/surgery/traitor = 500,
+		/obj/item/computer_hardware/hard_drive/portable/design/excelsior = 1000,
+		/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons = 500,
+		/obj/item/computer_hardware/hard_drive/portable/design/ex_parts = 450,
+		/obj/item/computer_hardware/hard_drive/portable/design/ex_cells = 200,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 100,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_makarov = 50,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez = 200,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_boltgun = 50,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak = 200,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 300,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer = 300
 		)
 	var/entropy_value = 8
 
@@ -87,7 +87,7 @@ var/global/excelsior_last_draft = 0
 /obj/machinery/complant_teleporter/RefreshParts()
 	var/man_rating = 0
 	var/man_amount = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
 		entropy_value = initial(entropy_value)/M.rating
 		man_amount++
@@ -98,7 +98,7 @@ var/global/excelsior_last_draft = 0
 	energy_gain = initial(energy_gain) * coef
 	active_power_usage = initial(active_power_usage) * coef
 
-	var/obj/item/weapon/cell/C = locate() in component_parts
+	var/obj/item/cell/C = locate() in component_parts
 	if(C)
 		max_energy = C.maxcharge //Big buff for max energy
 		excelsior_max_energy = 0
@@ -387,8 +387,8 @@ var/global/excelsior_last_draft = 0
 	conscript.equip_to_appropriate_slot(new /obj/item/clothing/under/excelsior())
 	conscript.equip_to_appropriate_slot(new /obj/item/clothing/shoes/workboots())
 	conscript.equip_to_appropriate_slot(new /obj/item/device/radio/headset())
-	conscript.equip_to_appropriate_slot(new /obj/item/weapon/storage/backpack/satchel())
-	var/obj/item/weapon/card/id/card = new(conscript)
+	conscript.equip_to_appropriate_slot(new /obj/item/storage/backpack/satchel())
+	var/obj/item/card/id/card = new(conscript)
 	conscript.set_id_info(card)
 	card.assignment = "Excelsior Conscript"
 	card.access = list(access_maint_tunnels)

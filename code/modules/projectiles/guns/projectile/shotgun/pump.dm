@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/pump
+/obj/item/gun/projectile/shotgun/pump
 	name = "\"Grizzly\" shotgun"
 	desc = "A common open-source pump-action shotgun, a bastard child of the three primary pump shotguns on the market, all rolled together once their patents expired. Can hold up to 4+1 20mm shells in its tube magazine."
 	icon = 'icons/obj/guns/projectile/shotgun.dmi'
@@ -22,19 +22,19 @@
 	recoil_buildup = 15
 	one_hand_penalty = 10 //full sized shotgun level
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/sawn
+	sawn = /obj/item/gun/projectile/shotgun/pump/sawn
 
-/obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
+/obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
 		return chambered.BB
 	return null
 
-/obj/item/weapon/gun/projectile/shotgun/pump/attack_self(mob/living/user as mob)
+/obj/item/gun/projectile/shotgun/pump/attack_self(mob/living/user as mob)
 	if(world.time >= recentpumpmsg + 10)
 		pump(user)
 		recentpumpmsg = world.time
 
-/obj/item/weapon/gun/projectile/shotgun/pump/proc/pump(mob/M as mob)
+/obj/item/gun/projectile/shotgun/pump/proc/pump(mob/M as mob)
 	var/turf/newloc = get_turf(src)
 	playsound(M, pumpshotgun_sound, 60, 1)
 
@@ -49,7 +49,7 @@
 
 	update_icon()
 
-/obj/item/weapon/gun/projectile/shotgun/pump/sawn
+/obj/item/gun/projectile/shotgun/pump/sawn
 	name = "sawn-down \"Grizzly\" shotgun"
 	desc = "A common open-source pump-action shotgun, a bastard child of the three primary pump shotguns on the market, all rolled together once their patents expired. This one has been slightly cut down."
 	icon = 'icons/obj/guns/projectile/sawnoff/shotgun.dmi'
@@ -64,9 +64,9 @@
 	recoil_buildup = 20
 	one_hand_penalty = 15 //full sized shotgun level
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/shotgun/pump/obrez
+	sawn = /obj/item/gun/projectile/shotgun/pump/obrez
 
-/obj/item/weapon/gun/projectile/shotgun/pump/obrez
+/obj/item/gun/projectile/shotgun/pump/obrez
 	name = "obrez \"Grizzly\" shotgun"
 	desc = "A common open-source pump-action shotgun, hacked up, sawn down, and ready to rob a liquor store."
 	icon = 'icons/obj/guns/projectile/sawnoff/shotgunobrez.dmi'

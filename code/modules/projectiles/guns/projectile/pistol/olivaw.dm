@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/olivaw
+/obj/item/gun/projectile/olivaw
 	name = "\"Olivaw\" burst pistol"
 	desc = "That's the second most popular model of civilian pistols produced by H&S. This one seems to have a two-round burst-fire mode. Uses .35 auto."
 	icon = 'icons/obj/guns/projectile/olivawcivil.dmi'
@@ -23,7 +23,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
 
-/obj/item/weapon/gun/projectile/olivaw/update_icon()
+/obj/item/gun/projectile/olivaw/update_icon()
 	..()
 	if(ammo_magazine && ammo_magazine.stored_ammo.len)
 		icon_state = "olivawcivil"

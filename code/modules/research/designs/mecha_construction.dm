@@ -152,13 +152,13 @@
 		desc = "Allows for the construction of \a [item_name]."
 
 /datum/design/research/circuit/mecha/main
-	build_path = /obj/item/weapon/circuitboard/mecha/main
+	build_path = /obj/item/circuitboard/mecha/main
 	sort_string = "NAAAA"
 
 /datum/design/research/circuit/mecha/peripherals
-	build_path = /obj/item/weapon/circuitboard/mecha/peripherals
+	build_path = /obj/item/circuitboard/mecha/peripherals
 	sort_string = "NAAAB"
 
 /datum/design/research/circuit/mecha/targeting
-	build_path = /obj/item/weapon/circuitboard/mecha/targeting
+	build_path = /obj/item/circuitboard/mecha/targeting
 	sort_string = "NAAAÑ"

@@ -25,7 +25,7 @@
 		get_stats = statistics
 	else
 		return COMPONENT_INCOMPATIBLE
-	var/obj/item/weapon/oddity/father = parent
+	var/obj/item/oddity/father = parent
 	perk = father.perk
 	get_power()
 

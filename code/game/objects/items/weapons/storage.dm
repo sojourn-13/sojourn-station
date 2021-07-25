@@ -1,4 +1,4 @@
-/obj/item/weapon/storage/sheath
+/obj/item/storage/sheath
 	name = "absolutism sheath"
 	desc = "Made to store only the swords of the church."
 	icon = 'icons/obj/sheath.dmi'
@@ -12,13 +12,13 @@
 	max_w_class = ITEM_SIZE_HUGE
 
 	can_hold = list(
-		/obj/item/weapon/tool/sword/nt
+		/obj/item/tool/sword/nt
 		)
 	cant_hold = list(
-		/obj/item/weapon/tool/knife/dagger/nt,
-		/obj/item/weapon/tool/spear/halberd
+		/obj/item/tool/knife/dagger/nt,
+		/obj/item/tool/spear/halberd
 		)
-/obj/item/weapon/storage/sheath/attack_hand(mob/living/carbon/human/user)
+/obj/item/storage/sheath/attack_hand(mob/living/carbon/human/user)
 	if(contents.len && (src in user))
 		var/obj/item/I = contents[contents.len]
 		if(istype(I))
@@ -30,9 +30,9 @@
 	else
 		..()
 
-/obj/item/weapon/storage/sheath/update_icon()
+/obj/item/storage/sheath/update_icon()
 	var/icon_to_set
-	for(var/obj/item/weapon/tool/sword/SW in contents)
+	for(var/obj/item/tool/sword/SW in contents)
 		icon_to_set = SW.icon_state
 	icon_state = "sheath_[contents.len ? icon_to_set :"0"]"
 	item_state = "sheath_[contents.len ? icon_to_set :"0"]"

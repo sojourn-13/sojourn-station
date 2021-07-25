@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/mk58
+/obj/item/gun/projectile/mk58
 	name = "\"Thorn\" pistol"
 	desc = "The OT Thorn is a cheap, ubiquitous sidearm, that was one of the Old Testaments few ballistic creations, though it bears a clear resemblance to the Mk-58 Mod 0. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/mk58.dmi'
@@ -18,7 +18,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	one_hand_penalty = 5
 
-/obj/item/weapon/gun/projectile/mk58/update_icon()
+/obj/item/gun/projectile/mk58/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -35,7 +35,7 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/mk58/wood
+/obj/item/gun/projectile/mk58/wood
 	name = "\"Rose\" magnum pistol"
 	desc = "The OT Rose is a cheap, yet ubiquitous sidearm, that was one of the Old Testaments few ballistic creations. Uses .40 Auto-Mag. This one has a finely polished wood furnish."
 	icon = 'icons/obj/guns/projectile/mk58_wood.dmi'
@@ -49,7 +49,7 @@
 	recoil_buildup = 4
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL)
 
-/obj/item/weapon/gun/projectile/mk58/wood/update_icon()
+/obj/item/gun/projectile/mk58/wood/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""

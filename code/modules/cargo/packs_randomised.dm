@@ -6,11 +6,11 @@
 	name = "Contraband Crate"
 	var/num_contained = 5
 	contains = list(/obj/item/seeds/bloodtomatoseed,
-					/obj/item/weapon/storage/pill_bottle/zoom,
+					/obj/item/storage/pill_bottle/zoom,
 					/obj/item/seeds/kudzuseed,
-					/obj/item/weapon/storage/pill_bottle/happy,
-					/obj/item/weapon/contraband/poster,
-					/obj/item/weapon/reagent_containers/food/drinks/bottle/pwine)
+					/obj/item/storage/pill_bottle/happy,
+					/obj/item/contraband/poster,
+					/obj/item/reagent_containers/food/drinks/bottle/pwine)
 	cost = 2400
 	containertype = /obj/structure/closet/crate
 	crate_name = "unlabelled crate"

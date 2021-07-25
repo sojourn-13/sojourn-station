@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/scalpel
+/obj/item/tool/scalpel
 	name = "scalpel"
 	desc = "Cut, cut, and once more cut."
 	icon_state = "scalpel_t3"
@@ -17,7 +17,7 @@
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_WIRE_CUTTING = 10)
 
-/obj/item/weapon/tool/scalpel/advanced
+/obj/item/tool/scalpel/advanced
 	name = "advanced scalpel"
 	desc = "Made of more expensive materials, sharper and generally more reliable."
 	icon_state = "scalpel_t4"
@@ -26,7 +26,7 @@
 	degradation = 0.12
 	max_upgrades = 4
 
-/obj/item/weapon/tool/scalpel/laser
+/obj/item/tool/scalpel/laser
 	name = "laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly searing bleeding cuts through laser cauterization."
 	icon_state = "scalpel_t5"
@@ -37,12 +37,12 @@
 	tool_qualities = list(QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 20, QUALITY_LASER_CUTTING = 60, QUALITY_CAUTERIZING = 20)
 	degradation = 0.11
 	use_power_cost = 0.12
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
 	max_upgrades = 4
 
 
 //A makeshift knife, for doing all manner of cutting and stabbing tasks in a half-assed manner
-/obj/item/weapon/tool/knife/shiv
+/obj/item/tool/knife/shiv
 	name = "shiv"
 	desc = "A pointy piece of glass, abraded to an edge and wrapped in tape for a handle. Could become a decent tool or weapon with right tool mods."
 	icon = 'icons/obj/tools.dmi'

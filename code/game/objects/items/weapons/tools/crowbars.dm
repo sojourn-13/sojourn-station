@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/crowbar
+/obj/item/tool/crowbar
 	name = "crowbar"
 	desc = "Used to remove floors and to pry open doors."
 	icon_state = "crowbar"
@@ -12,13 +12,13 @@
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	tool_qualities = list(QUALITY_PRYING = 35, QUALITY_DIGGING = 10, QUALITY_HAMMERING = 10)
 
-/obj/item/weapon/tool/crowbar/bs
+/obj/item/tool/crowbar/bs
 	name = "bluespace crowbar"
 	icon_state = "bs_crowbar"
 	item_state = "bs_crowbar"
 	tool_qualities = list(QUALITY_PRYING = 100, QUALITY_DIGGING = 100)
 
-/obj/item/weapon/tool/crowbar/improvised
+/obj/item/tool/crowbar/improvised
 	name = "rebar"
 	desc = "A pair of metal rods laboriously twisted into a useful prying and digging tool. Has more space for tool mods because it's hand-made."
 	icon_state = "impro_crowbar"
@@ -27,7 +27,7 @@
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
-/obj/item/weapon/tool/crowbar/onestar
+/obj/item/tool/crowbar/onestar
 	name = "Greyson Positronic crowbar"
 	desc = "Looks like a classic one, but more durable. Has more space for mods too."
 	icon_state = "one_star_crowbar"
@@ -38,7 +38,7 @@
 	degradation = 0.6
 	workspeed = 1.2
 
-/obj/item/weapon/tool/crowbar/pneumatic
+/obj/item/tool/crowbar/pneumatic
 	name = "pneumatic crowbar"
 	desc = "When you really need to crack open something."
 	icon_state = "pneumo_crowbar"
@@ -48,4 +48,4 @@
 	degradation = 0.7
 	use_power_cost = 0.8
 	max_upgrades = 4
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium

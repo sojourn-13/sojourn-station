@@ -7,8 +7,8 @@
 	w_class = ITEM_SIZE_SMALL
 	flags = CONDUCT
 
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	var/obj/item/cell/cell = null
+	var/suitable_cell = /obj/item/cell/small
 	var/emagged = FALSE
 	var/insults = 0
 	var/list/insultmsg = list("FUCK EVERYONE!", "I'M A TATER!", "ALL SECURITY TO SHOOT ME ON SIGHT!", "I HAVE A BOMB!", "CAPTAIN IS A COMDOM!")

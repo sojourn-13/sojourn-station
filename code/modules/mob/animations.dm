@@ -318,7 +318,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 	if (istype(target,/mob))
 		I.dir = target.dir
 
-	if (istype(old_loc,/obj/item/weapon/storage))
+	if (istype(old_loc,/obj/item/storage))
 		I.pixel_x += old_loc.pixel_x
 		I.pixel_y += old_loc.pixel_y
 

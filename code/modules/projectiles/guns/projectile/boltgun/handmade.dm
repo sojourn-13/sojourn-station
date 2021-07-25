@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/boltgun/handmade
+/obj/item/gun/projectile/boltgun/handmade
 	name = "handmade bolt action rifle"
 	desc = "A handmade bolt action rifle, made from junk and some spare parts."
 	icon = 'icons/obj/guns/projectile/makeshift_boltgun.dmi'

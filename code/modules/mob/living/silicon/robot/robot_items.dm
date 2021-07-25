@@ -1,5 +1,5 @@
 //A portable analyzer, for research borgs.  This is better then giving them a gripper which can hold anything and letting them use the normal analyzer.
-/obj/item/weapon/portable_destructive_analyzer
+/obj/item/portable_destructive_analyzer
 	name = "Portable Destructive Analyzer"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "portable_analyzer"
@@ -10,13 +10,13 @@
 	var/datum/research/files 	//The device uses the same datum structure as the R&D computer/server.
 										//This analyzer can only store tech levels, however.
 
-	var/obj/item/weapon/loaded_item	//What is currently inside the analyzer.
+	var/obj/item/loaded_item	//What is currently inside the analyzer.
 
-/obj/item/weapon/portable_destructive_analyzer/Initialize()
+/obj/item/portable_destructive_analyzer/Initialize()
 	. = ..()
 	files = new /datum/research(src) //Setup the research data holder.
 
-/obj/item/weapon/portable_destructive_analyzer/attack_self(user as mob)
+/obj/item/portable_destructive_analyzer/attack_self(user as mob)
 	var/response = alert(user, 	"Analyzing the item inside will *DESTROY* the item for good.\n\
 							Syncing to the research server will send the data that is stored inside to research.\n\
 							Ejecting will place the loaded item onto the floor.",
@@ -77,7 +77,7 @@
 			to_chat(user, "The [src] is already empty.")
 
 
-/obj/item/weapon/portable_destructive_analyzer/afterattack(var/atom/target, var/mob/living/user, proximity)
+/obj/item/portable_destructive_analyzer/afterattack(var/atom/target, var/mob/living/user, proximity)
 	if(!target)
 		return
 	if(!proximity)
@@ -98,20 +98,20 @@
 		icon_state = "portable_analyzer_full"
 
 //This is used to unlock other borg covers.
-/obj/item/weapon/card/robot //This is not a child of id cards, as to avoid dumb typechecks on computers.
+/obj/item/card/robot //This is not a child of id cards, as to avoid dumb typechecks on computers.
 	name = "access code transmission device"
 	icon_state = "id-robot"
 	desc = "A circuit grafted onto the bottom of an ID card.  It is used to transmit access codes into other robot chassis, \
 	allowing you to lock and unlock other robots' panels."
 
 //A harvest item for serviceborgs.
-/obj/item/weapon/robot_harvester
+/obj/item/robot_harvester
 	name = "auto harvester"
 	desc = "A hand-held harvest tool that resembles a sickle.  It uses energy to cut plant matter very efficently."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "autoharvester"
 
-/obj/item/weapon/robot_harvester/afterattack(var/atom/target, var/mob/living/user, proximity)
+/obj/item/robot_harvester/afterattack(var/atom/target, var/mob/living/user, proximity)
 	if(!target)
 		return
 	if(!proximity)
@@ -129,11 +129,11 @@
 // Click on table to unload, click on item to load. Otherwise works identically to a tray.
 // Unlike the base item "tray", robotrays ONLY pick up food, drinks and condiments.
 
-/obj/item/weapon/tray/robotray
+/obj/item/tray/robotray
 	name = "RoboTray"
 	desc = "An autoloading tray specialized for carrying refreshments."
 
-/obj/item/weapon/tray/robotray/afterattack(atom/target, mob/user as mob, proximity)
+/obj/item/tray/robotray/afterattack(atom/target, mob/user as mob, proximity)
 	if(!proximity)
 		return
 	if ( !target )
@@ -147,7 +147,7 @@
 
 		var addedSomething = 0
 
-		for(var/obj/item/weapon/reagent_containers/food/I in pickup)
+		for(var/obj/item/reagent_containers/food/I in pickup)
 
 
 			if( I != src && !I.anchored && !istype(I, /obj/item/clothing/under) && !istype(I, /obj/item/clothing/suit) && !istype(I, /obj/item/projectile) )
@@ -218,12 +218,12 @@
 // A special pen for service droids. Can be toggled to switch between normal writting mode, and paper rename mode
 // Allows service droids to rename paper items.
 
-/obj/item/weapon/pen/robopen
+/obj/item/pen/robopen
 	desc = "A black ink printing attachment with a paper naming mode."
 	name = "Printing Pen"
 	var/mode = 1
 
-/obj/item/weapon/pen/robopen/attack_self(mob/user as mob)
+/obj/item/pen/robopen/attack_self(mob/user as mob)
 
 	var/choice = input("Would you like to change colour or mode?") as null|anything in list("Colour","Mode")
 	if(!choice) return
@@ -248,7 +248,7 @@
 // Copied over from paper's rename verb
 // see code\modules\paperwork\paper.dm line 62
 
-/obj/item/weapon/pen/robopen/proc/RenamePaper(mob/user as mob,obj/paper as obj)
+/obj/item/pen/robopen/proc/RenamePaper(mob/user as mob,obj/paper as obj)
 	if ( !user || !paper )
 		return
 	var/n_name = sanitizeSafe(input(user, "What would you like to label the paper?", "Paper Labelling", null)  as text, 32)
@@ -262,17 +262,17 @@
 	return
 
 //TODO: Add prewritten forms to dispense when you work out a good way to store the strings.
-/obj/item/weapon/form_printer
+/obj/item/form_printer
 	//name = "paperwork printer"
 	name = "paper dispenser"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper_bin1"
 	item_state = "sheet-metal"
 
-/obj/item/weapon/form_printer/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+/obj/item/form_printer/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	return
 
-/obj/item/weapon/form_printer/afterattack(atom/target as mob|obj|turf|area, mob/living/user as mob|obj, flag, params)
+/obj/item/form_printer/afterattack(atom/target as mob|obj|turf|area, mob/living/user as mob|obj, flag, params)
 
 	if(!target || !flag)
 		return
@@ -280,12 +280,12 @@
 	if(istype(target,/obj/structure/table))
 		deploy_paper(get_turf(target))
 
-/obj/item/weapon/form_printer/attack_self(mob/user as mob)
+/obj/item/form_printer/attack_self(mob/user as mob)
 	deploy_paper(get_turf(src))
 
-/obj/item/weapon/form_printer/proc/deploy_paper(var/turf/T)
+/obj/item/form_printer/proc/deploy_paper(var/turf/T)
 	T.visible_message("\blue \The [src.loc] dispenses a sheet of crisp white paper.")
-	new /obj/item/weapon/paper(T)
+	new /obj/item/paper(T)
 
 
 //Personal shielding for the combat module.
@@ -311,7 +311,7 @@
 	icon = 'icons/obj/decals-warning.dmi'
 	icon_state = "shock"
 
-/obj/item/weapon/inflatable_dispenser
+/obj/item/inflatable_dispenser
 	name = "inflatables dispenser"
 	desc = "Small device which allows rapid deployment and removal of inflatables."
 	icon = 'icons/obj/storage.dmi'
@@ -325,17 +325,17 @@
 	var/max_doors = 5
 	var/mode = 0 // 0 - Walls   1 - Doors
 
-/obj/item/weapon/inflatable_dispenser/examine(var/mob/user)
+/obj/item/inflatable_dispenser/examine(var/mob/user)
 	if(!..(user))
 		return
 	to_chat(user, "It has [stored_walls] wall segment\s and [stored_doors] door segment\s stored.")
 	to_chat(user, "It is set to deploy [mode ? "doors" : "walls"]")
 
-/obj/item/weapon/inflatable_dispenser/attack_self()
+/obj/item/inflatable_dispenser/attack_self()
 	mode = !mode
 	to_chat(usr, "You set \the [src] to deploy [mode ? "doors" : "walls"].")
 
-/obj/item/weapon/inflatable_dispenser/afterattack(var/atom/A, var/mob/user)
+/obj/item/inflatable_dispenser/afterattack(var/atom/A, var/mob/user)
 	..(A, user)
 	if(!user)
 		return
@@ -347,7 +347,7 @@
 	if(istype(A, /obj/item/inflatable) || istype(A, /obj/structure/inflatable))
 		pick_up(A, user)
 
-/obj/item/weapon/inflatable_dispenser/proc/try_deploy_inflatable(var/turf/T, var/mob/living/user)
+/obj/item/inflatable_dispenser/proc/try_deploy_inflatable(var/turf/T, var/mob/living/user)
 	if(mode) // Door deployment
 		if(!stored_doors)
 			to_chat(user, "\The [src] is out of doors!")
@@ -369,7 +369,7 @@
 	playsound(T, 'sound/items/zip.ogg', 75, 1)
 	to_chat(user, "You deploy the inflatable [mode ? "door" : "wall"]!")
 
-/obj/item/weapon/inflatable_dispenser/proc/pick_up(var/obj/A, var/mob/living/user)
+/obj/item/inflatable_dispenser/proc/pick_up(var/obj/A, var/mob/living/user)
 	if(istype(A, /obj/structure/inflatable))
 		if(istype(A, /obj/structure/inflatable/wall))
 			if(stored_walls >= max_walls)
@@ -405,12 +405,12 @@
 	to_chat(user, "You fail to pick up \the [A] with \the [src]")
 	return
 
-/obj/item/weapon/tool/tape_roll/fiber/robotic
+/obj/item/tool/tape_roll/fiber/robotic
 	name = "fiber tape roll"
 	desc = "A large roll of fiber tape used by borgs and drones for large repairing projects, mostly windows."
 	max_stock = 2000 //So we dont waste it all on 1 window
 
-/obj/item/weapon/tool/robotic_omni_engi
+/obj/item/tool/robotic_omni_engi
 	name = "Engi omni tool"
 	desc = "Omni tool for Engineering borgs and the like has almost everything you need!"
 	icon_state = "engimplant"
@@ -426,7 +426,7 @@
 	suitable_cell = null
 	degradation = 0
 
-/obj/item/weapon/tool/robotic_omni_standard
+/obj/item/tool/robotic_omni_standard
 	name = "Standard omni tool"
 	desc = "Omni tool for standard borgs and the like has almost everything you need!"
 	icon_state = "engimplant"
@@ -440,7 +440,7 @@
 	suitable_cell = null
 	degradation = 0
 
-/obj/item/weapon/tool/robotic_omni_miner
+/obj/item/tool/robotic_omni_miner
 	name = "Miner omni tool"
 	desc = "Omni tool for mining borgs and the like has almost everything you need other then a way to drill..."
 	icon_state = "engimplant"
@@ -453,7 +453,7 @@
 	suitable_cell = null
 	degradation = 0
 
-/obj/item/weapon/tool/robotic_omni_sec
+/obj/item/tool/robotic_omni_sec
 	name = "Security omni tool"
 	desc = "Omni tool for Security borgs, mostly just for cutting up body and clearing borrows."
 	icon_state = "engimplant"
@@ -467,7 +467,7 @@
 	suitable_cell = null
 	degradation = 0
 
-/obj/item/weapon/tool/robotic_omni_cleaner
+/obj/item/tool/robotic_omni_cleaner
 	name = "Borrow Omni tool"
 	desc = "Omni tool for Janitor borgs, mostly just for cutting up body and clearing borrows."
 	icon_state = "engimplant"
@@ -481,7 +481,7 @@
 	suitable_cell = null
 	degradation = 0
 
-/obj/item/weapon/tool/robotic_omni_sci
+/obj/item/tool/robotic_omni_sci
 	name = "Science Omni tool"
 	desc = "Omni tool for Science borgs, has a bit of everything but also leaves a lot to be wanted."
 	icon_state = "engimplant"
@@ -498,37 +498,37 @@
 	suitable_cell = null
 	degradation = 0
 
-/obj/item/weapon/tool/crowbar/robotic
+/obj/item/tool/crowbar/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_HAMMERING = 10) //We can dig but not that fast!
 
-/obj/item/weapon/tool/wrench/robotic
+/obj/item/tool/wrench/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	tool_qualities = list(QUALITY_BOLT_TURNING = 40)
 
-/obj/item/weapon/tool/screwdriver/robotic
+/obj/item/tool/screwdriver/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	//random_icon = FALSE
 
-/obj/item/weapon/tool/multitool/robotic
+/obj/item/tool/multitool/robotic
 	icon = 'icons/obj/robot_items.dmi'
 
-/obj/item/weapon/tool/wirecutters/robotic
+/obj/item/tool/wirecutters/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 40, QUALITY_CUTTING = 30)
 
-/obj/item/weapon/tool/weldingtool/robotic
+/obj/item/tool/weldingtool/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_CAUTERIZING = 15, QUALITY_WIRE_CUTTING = 15)
 
-/obj/item/weapon/tool/weldingtool/robotic/weaker
+/obj/item/tool/weldingtool/robotic/weaker
 	name = "small welder"
 	desc = "A smaller welder used for seeling cracks or small repairs."
 	icon = 'icons/obj/robot_items.dmi'
 	switched_on_qualities = list(QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 5)
 	max_fuel = 15 //cracks
 
-/obj/item/weapon/tool/robotic_omni_surgery
+/obj/item/tool/robotic_omni_surgery
 	name = "Surgery omni tool"
 	desc = "A surgery omni tool for borgs, uses internal power cell rather then its own."
 	icon_state = "medimplant_sci"
@@ -555,18 +555,18 @@
 		~Ritea
 */
 
-/obj/item/weapon/storage/bag/robotic
+/obj/item/storage/bag/robotic
 	name = "robotic bag"
 	desc = "A bag for robots. It seems more complicated then it needs to be."
 	var/used_storage_space = 0 //Used to keep track of total amount of items, it's here for stacks.
 
-/obj/item/weapon/storage/bag/robotic/attack_self(mob/user as mob)
+/obj/item/storage/bag/robotic/attack_self(mob/user as mob)
 	examine(user)
 
-/obj/item/weapon/storage/bag/robotic/afterattack(obj/target as obj, mob/user as mob)
+/obj/item/storage/bag/robotic/afterattack(obj/target as obj, mob/user as mob)
 	gather_all(target, user)
 
-/obj/item/weapon/storage/bag/robotic/examine(mob/user as mob)
+/obj/item/storage/bag/robotic/examine(mob/user as mob)
 	..()
 	to_chat(user, SPAN_NOTICE("Ctrl + Click: Switch Mode\nAlt + Click: Empty Contents"))
 	if(!Adjacent(user)) //Can only check the contents of ore bags if you can physically reach them.
@@ -585,19 +585,19 @@
 		to_chat(user, SPAN_NOTICE("- [item_count[item]] [item]"))
 	return
 
-/obj/item/weapon/storage/bag/robotic/AltClick(mob/user as mob)
+/obj/item/storage/bag/robotic/AltClick(mob/user as mob)
 	if(src.loc == user)
 		dump_it(user.loc)
 	else
 		..()
 
-/obj/item/weapon/storage/bag/robotic/CtrlClick(mob/user as mob)
+/obj/item/storage/bag/robotic/CtrlClick(mob/user as mob)
 	if(src.loc == user)
 		toggle_gathering_mode()
 	else
 		..()
 
-/obj/item/weapon/storage/bag/robotic/remove_from_storage(obj/item/W as obj, atom/new_location)
+/obj/item/storage/bag/robotic/remove_from_storage(obj/item/W as obj, atom/new_location)
 	if(!istype(W))
 		return FALSE
 	if(new_location)
@@ -617,7 +617,7 @@
 		used_storage_space--
 	return TRUE
 
-/obj/item/weapon/storage/bag/robotic/proc/add_to_storage(obj/item/target_item as obj)
+/obj/item/storage/bag/robotic/proc/add_to_storage(obj/item/target_item as obj)
 	if(used_storage_space < max_storage_space)
 		var/transfer //Used to track how much was transferred between stacks.
 		var/overfill_amount //Used to track just how much the bag would get filled over it's capacity.
@@ -663,7 +663,7 @@
 	else //If item didn't meet condition, we return quietly to avoid spam.
 		return FALSE
 
-/obj/item/weapon/storage/bag/robotic/proc/gather_all(atom/A, mob/user as mob, var/silent = 0)
+/obj/item/storage/bag/robotic/proc/gather_all(atom/A, mob/user as mob, var/silent = 0)
 	var/success = 0
 	if(collection_mode) //If collection_mode is TRUE, we gather from a turf.
 		var/turf/T = A
@@ -677,25 +677,25 @@
 		to_chat(user, "<span class='notice'>You put everything in [src].</span>")
 	else if(!silent) //If transfer didn't succeed, it means no item can be picked up, we notify user here.
 		to_chat(user, "<span class='notice'>There is nothing to pick up with \the [src].</span>")
-	if(istype(user.pulling, /obj/structure/ore_box/) && src.contains(/obj/item/weapon/ore))
+	if(istype(user.pulling, /obj/structure/ore_box/) && src.contains(/obj/item/ore))
 		//This is mainly used for ore bag, there is no point in making this bit universal, so it is only for ores.
 		//If the user is pulling an ore box, the ores from the ore bag will be transferred to it automatically.
 		var/obj/structure/ore_box/O = user.pulling
 		O.attackby(src, user)
 
-/obj/item/weapon/storage/bag/robotic/equipped(mob/user as mob) //Used for assigning event signal tracking for autoload proc when bag is equipped.
+/obj/item/storage/bag/robotic/equipped(mob/user as mob) //Used for assigning event signal tracking for autoload proc when bag is equipped.
 	..()
 	if(user.get_inventory_slot(src) == slot_wear_suit || slot_l_hand || slot_r_hand || slot_belt) //Basically every place they can go. Makes sure it doesn't unregister if moved to other slots.
-		GLOB.moved_event.register(user, src, /obj/item/weapon/storage/bag/robotic/proc/autoload, user)
+		GLOB.moved_event.register(user, src, /obj/item/storage/bag/robotic/proc/autoload, user)
 
-/obj/item/weapon/storage/bag/robotic/dropped(mob/user as mob) //Used to unassign event signal tracking to prevent it from triggering when not worn.
+/obj/item/storage/bag/robotic/dropped(mob/user as mob) //Used to unassign event signal tracking to prevent it from triggering when not worn.
 	..()
 	if(user.get_inventory_slot(src) == slot_wear_suit || slot_l_hand || slot_r_hand || slot_belt) //See above. This should really be a define.
-		GLOB.moved_event.register(user, src, /obj/item/weapon/storage/bag/robotic/proc/autoload, user)
+		GLOB.moved_event.register(user, src, /obj/item/storage/bag/robotic/proc/autoload, user)
 	else
 		GLOB.moved_event.unregister(user, src)
 
-/obj/item/weapon/storage/bag/robotic/proc/autoload(mob/user as mob)
+/obj/item/storage/bag/robotic/proc/autoload(mob/user as mob)
 //This proc is not very efficient, since it can't be triggered if can_hold is empty.
 //However, allowing such bags to pick items automatically would cause problems.
 //~Ritea
@@ -705,7 +705,7 @@
 			gather_all(get_turf(src), user, TRUE)
 			return //Returning to prevent excessive looping, since add_to_storage handles all can_hold and cant_hold lists.
 
-/obj/item/weapon/storage/bag/robotic/proc/get_item_count()
+/obj/item/storage/bag/robotic/proc/get_item_count()
 //This proc is re-used from ore boxes, since borgs can't open storage containers.
 //Ultimately this is only a short-term fix, if possible, someone should fix the borgs' HUD and attack_hand bugs.
 //~Ritea
@@ -728,7 +728,7 @@
 
 	return stored_items //We return the list for use in other procs.
 
-/obj/item/weapon/storage/bag/robotic/ore
+/obj/item/storage/bag/robotic/ore
 	name = "mining satchel compactor"
 	desc = "This little bugger can be used to store and transport ores, comes with extra capacity."
 	icon = 'icons/obj/mining.dmi'
@@ -738,10 +738,10 @@
 	max_storage_space = 500 //Bonus capacity because of specialization.
 	max_w_class = ITEM_SIZE_NORMAL
 	can_hold = list (
-		/obj/item/weapon/ore
+		/obj/item/ore
 	)
 
-/obj/item/weapon/storage/bag/robotic/produce
+/obj/item/storage/bag/robotic/produce
 	name = "heavy-duty produce bag"
 	desc = "A larger capacity produce bag, made specifically for cyborgs. Get out there and gather 'em plants!'"
 	icon = 'icons/obj/hydroponics_machines.dmi'
@@ -751,13 +751,13 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	can_hold = list(
 		/obj/item/seeds,
-		/obj/item/weapon/grown,
-		/obj/item/weapon/reagent_containers/food/snacks/grown,
-		/obj/item/weapon/reagent_containers/food/snacks/egg,
-		/obj/item/weapon/reagent_containers/food/snacks/meat
+		/obj/item/grown,
+		/obj/item/reagent_containers/food/snacks/grown,
+		/obj/item/reagent_containers/food/snacks/egg,
+		/obj/item/reagent_containers/food/snacks/meat
 	)
 
-/obj/item/weapon/storage/bag/robotic/trash
+/obj/item/storage/bag/robotic/trash
 	name = "internal trash container"
 	desc = "An internalized trash container for gathering trash. Become a walking trash can, today!"
 	icon = 'icons/obj/janitor.dmi'
@@ -767,12 +767,12 @@
 	max_storage_space = DEFAULT_BULKY_STORAGE * 2
 	max_w_class = ITEM_SIZE_SMALL
 	can_hold = list()
-	cant_hold = list(/obj/item/weapon/disk/nuclear)
+	cant_hold = list(/obj/item/disk/nuclear)
 
-/obj/item/weapon/storage/bag/robotic/trash/autoload(mob/user as mob)
+/obj/item/storage/bag/robotic/trash/autoload(mob/user as mob)
 	return //Prevent the trash bag from autoloading everything during movement, for sanity.
 
-/obj/item/weapon/storage/bag/robotic/trash/update_icon()
+/obj/item/storage/bag/robotic/trash/update_icon()
 	if(contents.len == 0)
 		icon_state = "trashbag0"
 	else if(contents.len < 24)
@@ -782,7 +782,7 @@
 	else
 		icon_state = "trashbag3"
 
-/obj/item/weapon/storage/bag/robotic/sheetsnatcher
+/obj/item/storage/bag/robotic/sheetsnatcher
 	name = "heavy-duty sheet snatcher"
 	desc = "A patented storage system designed for any kind of mineral sheet, this variation comes with larger capacity and is designed for cyborgs."
 	icon = 'icons/obj/mining.dmi'
@@ -792,7 +792,7 @@
 		/obj/item/stack/material
 	)
 
-/obj/item/weapon/storage/bag/robotic/holding
+/obj/item/storage/bag/robotic/holding
 	name = "satchel of holding"
 	desc = "A revolution in convenience, this satchel allows for immense ore or produce storage even has safty restrictions to stabilize unwanted reactions."
 	icon_state = "satchel_bspace"
@@ -801,14 +801,14 @@
 	max_w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	origin_tech = list(TECH_BLUESPACE = 4)
-	can_hold = list(/obj/item/weapon/ore,
-	                /obj/item/weapon/reagent_containers/food/snacks/grown,
+	can_hold = list(/obj/item/ore,
+	                /obj/item/reagent_containers/food/snacks/grown,
 	                /obj/item/seeds,
-	                /obj/item/weapon/grown,
-	                /obj/item/weapon/reagent_containers/food/snacks/egg,
-	                /obj/item/weapon/reagent_containers/food/snacks/meat)
+	                /obj/item/grown,
+	                /obj/item/reagent_containers/food/snacks/egg,
+	                /obj/item/reagent_containers/food/snacks/meat)
 
-/obj/item/weapon/storage/bag/ore/holding/New()
+/obj/item/storage/bag/ore/holding/New()
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(4, get_turf(src))

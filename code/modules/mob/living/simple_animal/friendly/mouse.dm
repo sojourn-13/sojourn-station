@@ -34,7 +34,7 @@
 	maxbodytemp = 323	//Above 50 Degrees Celcius
 	universal_speak = FALSE
 	universal_understand = TRUE
-	holder_type = /obj/item/weapon/holder/mouse
+	holder_type = /obj/item/holder/mouse
 	digest_factor = 0.05
 	min_scan_interval = 2
 	max_scan_interval = 20
@@ -43,7 +43,7 @@
 	can_pull_size = ITEM_SIZE_TINY
 	can_pull_mobs = MOB_PULL_NONE
 
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
 	meat_amount = 1
 
 	can_burrow = TRUE
@@ -122,15 +122,15 @@
 	icon_rest = "mouse_[body_color]_sleep"
 	icon_dead = "mouse_[body_color]_dead"
 	if (body_color == "brown")
-		holder_type = /obj/item/weapon/holder/mouse/brown
+		holder_type = /obj/item/holder/mouse/brown
 	if (body_color == "gray")
-		holder_type = /obj/item/weapon/holder/mouse/gray
+		holder_type = /obj/item/holder/mouse/gray
 	if (body_color == "white")
-		holder_type = /obj/item/weapon/holder/mouse/white
+		holder_type = /obj/item/holder/mouse/white
 	if (body_color == "hooded")
-		holder_type = /obj/item/weapon/holder/mouse/hooded
+		holder_type = /obj/item/holder/mouse/hooded
 	if (body_color == "irish")
-		holder_type = /obj/item/weapon/holder/mouse/irish
+		holder_type = /obj/item/holder/mouse/irish
 
 	//verbs += /mob/living/simple_animal/mouse/proc/squeak
 	//verbs += /mob/living/simple_animal/mouse/proc/squeak_soft
@@ -274,31 +274,31 @@
 	body_color = "white"
 	icon_state = "mouse_white"
 	icon_rest = "mouse_white_sleep"
-	holder_type = /obj/item/weapon/holder/mouse/white
+	holder_type = /obj/item/holder/mouse/white
 
 /mob/living/simple_animal/mouse/gray
 	body_color = "gray"
 	icon_state = "mouse_gray"
 	icon_rest = "mouse_gray_sleep"
-	holder_type = /obj/item/weapon/holder/mouse/gray
+	holder_type = /obj/item/holder/mouse/gray
 
 /mob/living/simple_animal/mouse/brown
 	body_color = "brown"
 	icon_state = "mouse_brown"
 	icon_rest = "mouse_brown_sleep"
-	holder_type = /obj/item/weapon/holder/mouse/brown
+	holder_type = /obj/item/holder/mouse/brown
 
 /mob/living/simple_animal/mouse/hooded
 	body_color = "hooded"
 	icon_state = "mouse_hooded"
 	icon_rest = "mouse_hooded_sleep"
-	holder_type = /obj/item/weapon/holder/mouse/hooded
+	holder_type = /obj/item/holder/mouse/hooded
 
 /mob/living/simple_animal/mouse/irish
 	body_color = "irish"
 	icon_state = "mouse_irish"
 	icon_rest = "mouse_irish_sleep"
-	holder_type = /obj/item/weapon/holder/mouse/irish
+	holder_type = /obj/item/holder/mouse/irish
 
 /mob/living/simple_animal/mouse/brown/Tom
 	name = "Tom"

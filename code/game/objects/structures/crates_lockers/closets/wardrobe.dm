@@ -85,7 +85,7 @@
 	new /obj/item/clothing/head/soft/white(src)
 	new /obj/item/clothing/head/soft/white(src)
 	new /obj/item/clothing/head/soft/white(src)
-	new /obj/item/weapon/storage/backpack/sport/white(src)
+	new /obj/item/storage/backpack/sport/white(src)
 
 /obj/structure/closet/wardrobe/color/red
 	name = "red wardrobe"
@@ -137,7 +137,7 @@
 	new /obj/item/clothing/head/soft/grey(src)
 	new /obj/item/clothing/head/soft/grey(src)
 	new /obj/item/clothing/head/soft/grey(src)
-	new /obj/item/weapon/storage/backpack/sport(src)
+	new /obj/item/storage/backpack/sport(src)
 
 /obj/structure/closet/wardrobe/color/mixed
 	name = "mixed wardrobe"
@@ -163,10 +163,10 @@
 	new /obj/item/clothing/mask/bandana/yellow(src)
 	new /obj/item/clothing/mask/bandana/purple(src)
 	new /obj/item/clothing/mask/bandana/camo(src)
-	new /obj/item/weapon/storage/backpack/sport/purple(src)
-	new /obj/item/weapon/storage/backpack/sport/green(src)
-	new /obj/item/weapon/storage/backpack/sport/blue(src)
-	new /obj/item/weapon/storage/backpack/sport/orange(src)
+	new /obj/item/storage/backpack/sport/purple(src)
+	new /obj/item/storage/backpack/sport/green(src)
+	new /obj/item/storage/backpack/sport/blue(src)
+	new /obj/item/storage/backpack/sport/orange(src)
 
 /*Jobs*/
 
@@ -352,10 +352,10 @@
 	new /obj/item/clothing/suit/storage/chaplain(src)
 	new /obj/item/clothing/head/rank/chaplain(src)
 	new /obj/item/clothing/under/bride_white(src)
-	new /obj/item/weapon/storage/fancy/candle_box(src)
-	new /obj/item/weapon/storage/fancy/candle_box(src)
-	new /obj/item/weapon/deck/tarot(src)
-	new /obj/item/weapon/talkingcrystal(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/deck/tarot(src)
+	new /obj/item/talkingcrystal(src)
 
 /*Other*/
 
@@ -382,7 +382,7 @@
 	new /obj/item/clothing/suit/armor/heavy(src)
 	new /obj/item/clothing/mask/balaclava/tactical(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
-	new /obj/item/weapon/storage/belt/security(src)
+	new /obj/item/storage/belt/security(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/gloves/thick(src)
 

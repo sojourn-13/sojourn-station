@@ -1,10 +1,10 @@
-/obj/item/weapon/circuitboard/recycler
+/obj/item/circuitboard/recycler
 	build_name = "Recycler"
 	build_path = /obj/machinery/recycler
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 3)
 	req_components = list(
-		/obj/item/weapon/stock_parts/manipulator = 1
+		/obj/item/stock_parts/manipulator = 1
 	)
 
 /obj/machinery/recycler
@@ -18,7 +18,7 @@
 	var/safety_mode = FALSE // Temporality stops the machine if it detects a mob
 	var/grinding = FALSE
 	var/icon_name = "grinder-o"
-	circuit = /obj/item/weapon/circuitboard/recycler
+	circuit = /obj/item/circuitboard/recycler
 	var/blood = FALSE
 	var/eat_dir = WEST
 	var/chance_to_recycle = 33
@@ -30,7 +30,7 @@
 	update_icon()
 
 /obj/machinery/recycler/RefreshParts()
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		chance_to_recycle = 33 * M.rating //% of materials salvaged level 3 parts is 99%
 	chance_to_recycle = min(100, chance_to_recycle)
 
@@ -46,7 +46,7 @@
 
 
 /obj/machinery/recycler/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/weapon/card/emag))
+	if(istype(I, /obj/item/card/emag))
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 
@@ -109,7 +109,7 @@
 	if(sound)
 		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 	var/chance_mod = 1
-	if(!istype(I, /obj/item/weapon/scrap_lump))
+	if(!istype(I, /obj/item/scrap_lump))
 		chance_mod = chance_to_recycle
 	if(prob(chance_to_recycle - chance_mod)) //changes it so that only lumps of scrap can be used to make refined scrap.
 		new /obj/item/stack/sheet/refined_scrap(loc)

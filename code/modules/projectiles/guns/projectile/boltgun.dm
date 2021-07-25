@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/boltgun
+/obj/item/gun/projectile/boltgun
 	name = "\"Kardashev-Mosin\" boltgun"
 	desc = "Weapon for hunting or endless trench warfare. \
 			If you're on a budget, it's a darn good rifle for just about everything."
@@ -27,10 +27,10 @@
 	sharp = TRUE //We have a knife!
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/true
+	sawn = /obj/item/gun/projectile/boltgun/sawn/true
 	var/bolt_training = TRUE
 
-/obj/item/weapon/gun/projectile/boltgun/sawn //subtype for code
+/obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" boltgun"
 	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
@@ -51,9 +51,9 @@
 	saw_off = FALSE
 	bolt_training = FALSE //Trainning didnt cover obrez
 
-/obj/item/weapon/gun/projectile/boltgun/sawn/true //used for the Kardashev-Mosin, so we dont cheat crafting menus
+/obj/item/gun/projectile/boltgun/sawn/true //used for the Kardashev-Mosin, so we dont cheat crafting menus
 
-/obj/item/weapon/gun/projectile/boltgun/update_icon()
+/obj/item/gun/projectile/boltgun/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -70,17 +70,17 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/boltgun/Initialize()
+/obj/item/gun/projectile/boltgun/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/boltgun/attack_self(mob/user) //Someone overrode attackself for this class, soooo.
+/obj/item/gun/projectile/boltgun/attack_self(mob/user) //Someone overrode attackself for this class, soooo.
 	if(zoom)
 		toggle_scope(user)
 		return
 	bolt_act(user)
 
-/obj/item/weapon/gun/projectile/boltgun/handle_post_fire(mob/user)
+/obj/item/gun/projectile/boltgun/handle_post_fire(mob/user)
 	..()
 	if(bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT) && loaded.len>0)
 		to_chat(user, SPAN_NOTICE("Your hands move instinctively to chamber a new round!"))
@@ -92,7 +92,7 @@
 		bolt_act(user)
 		return
 
-/obj/item/weapon/gun/projectile/boltgun/proc/bolt_act(mob/living/user)
+/obj/item/gun/projectile/boltgun/proc/bolt_act(mob/living/user)
 	playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltback.ogg', 75, 1)
 	bolt_open = !bolt_open
 	if(bolt_open)
@@ -111,18 +111,18 @@
 		add_fingerprint(user)
 	update_icon()
 
-/obj/item/weapon/gun/projectile/boltgun/special_check(mob/user)
+/obj/item/gun/projectile/boltgun/special_check(mob/user)
 	if(bolt_open)
 		to_chat(user, SPAN_WARNING("You can't fire [src] while the bolt is open!"))
 		return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/boltgun/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/boltgun/load_ammo(var/obj/item/A, mob/user)
 	if(!bolt_open)
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)
 	if(!bolt_open)
 		return
 	..()

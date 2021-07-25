@@ -1,7 +1,7 @@
 /datum/ritual/cruciform/machines
 	name = "machines"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform
+	implant_type = /obj/item/implant/core_implant/cruciform
 	fail_message = "The Cruciform feels cold against your chest."
 	category = "Machinery"
 
@@ -12,7 +12,7 @@
 	phrase = "Qui fuit, et crediderunt in me non morietur in aeternum"
 	desc = "A ritual of formation of a new body in a speclially designed machine.  Deceased person's cruciform has to be placed on the scanner then a prayer is to be uttered over the apparatus."
 
-/datum/ritual/cruciform/machines/resurrection/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/machines/resurrection/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
 
 	var/obj/machinery/neotheology/cloner/pod = locate(/obj/machinery/neotheology/cloner) in OBJS
@@ -44,7 +44,7 @@
 	nutri_cost = 10
 	blood_cost = 10
 
-/datum/ritual/cruciform/machines/power_biogen_awake/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/machines/power_biogen_awake/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	var/obj/machinery/multistructure/biogenerator_part/console/biogen_screen = locate() in range(4, H)
 	if(biogen_screen && biogen_screen.MS)
 		var/datum/multistructure/biogenerator/biogenerator = biogen_screen.MS
@@ -72,7 +72,7 @@
 	blood_cost = 10
 
 
-/datum/ritual/cruciform/machines/bioreactor/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/machines/bioreactor/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	var/obj/machinery/multistructure/bioreactor_part/console/bioreactor_screen = locate() in range(4, H)
 	if(bioreactor_screen && bioreactor_screen.MS)
 		var/datum/multistructure/bioreactor/bioreactor = bioreactor_screen.MS

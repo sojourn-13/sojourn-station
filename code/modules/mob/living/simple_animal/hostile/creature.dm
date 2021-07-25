@@ -12,11 +12,11 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	faction = "creature"
 	speed = 4
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
 /mob/living/simple_animal/hostile/creature/cult
 	faction = "cult"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0
@@ -43,7 +43,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	attacktext = "hits"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
 /mob/living/simple_animal/hostile/retaliate/spaceman/leader
 	name = "spaceman leader"
@@ -58,7 +58,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 40
 	attacktext = "hits"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
 /mob/living/simple_animal/hostile/madminer
 	name = "thing"
@@ -73,7 +73,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = "hits"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 	attack_sound = 'sound/weapons/rapierhit.ogg'
 
 /mob/living/simple_animal/hostile/madminer/armed

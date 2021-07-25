@@ -35,7 +35,7 @@
 	mag_drop = FALSE
 	ranged = TRUE
 	rounds_left = 1
-	mag_type = /obj/item/weapon/ore
+	mag_type = /obj/item/ore
 	mags_left = 6 //each vox has 6 rocks normally
 	rounds_per_fire = 1
 	reload_message = "picks up a rock!"

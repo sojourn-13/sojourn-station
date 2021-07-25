@@ -48,8 +48,8 @@
 					/obj/random/tool/advanced = 5,\
 					/obj/random/gun_normal = 3,\
 					/obj/random/lathe_disk/advanced = 2,\
-					/obj/item/weapon/cell/small/moebius/nuclear = 1,\
-					/obj/item/weapon/cell/medium/moebius/hyper = 1,\
+					/obj/item/cell/small/moebius/nuclear = 1,\
+					/obj/item/cell/medium/moebius/hyper = 1,\
 					/obj/random/rig = 1.5,\
 					/obj/random/rig/damaged = 1.5,\
 					/obj/random/voidsuit = 4,\

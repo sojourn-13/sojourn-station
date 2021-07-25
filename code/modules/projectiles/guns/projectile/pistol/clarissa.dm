@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/clarissa
+/obj/item/gun/projectile/clarissa
 	name = "\"Clarissa\" pistol"
 	desc = "A small, easily concealable, but somewhat underpowered gun produced by \"H&S\" as a preciser to the \"Giskard\". Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
@@ -18,7 +18,7 @@
 	damage_multiplier = 0.7
 	recoil_buildup = 2 //weakest gun in the damn game
 
-/obj/item/weapon/gun/projectile/clarissa/update_icon()
+/obj/item/gun/projectile/clarissa/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -37,7 +37,7 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/clarissa/makarov
+/obj/item/gun/projectile/clarissa/makarov
 	name = "\"Makarov\" pistol"
 	desc = "Old-designed pistol used by space communists. Small and easily concealable. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/makarov.dmi'

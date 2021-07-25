@@ -13,7 +13,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
 	active_power_usage = 15000
-	circuit = /obj/item/weapon/circuitboard/blackshield_teleporter
+	circuit = /obj/item/circuitboard/blackshield_teleporter
 
 	var/max_energy = 2500
 	var/processing_order = FALSE
@@ -32,23 +32,23 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		)
 
 	var/list/parts_list = list(
-		/obj/item/weapon/gun/projectile/automatic/slaught_o_matic = 15, //So blackshiled can trade with propis :P
-		/obj/item/weapon/gun/projectile/boltgun = 50,
+		/obj/item/gun/projectile/automatic/slaught_o_matic = 15, //So blackshiled can trade with propis :P
+		/obj/item/gun/projectile/boltgun = 50,
 		/obj/item/ammo_magazine/speed_loader_rifle_75 = 30, //More or less for ammo rather then speedloader
-		/obj/item/weapon/gun/projectile/colt/NM_colt = 70,
+		/obj/item/gun/projectile/colt/NM_colt = 70,
 		/obj/item/ammo_magazine/highcap_pistol_35 = 25, //Idea with this is your sending up the mag more then ammo
-		/obj/item/weapon/gun/projectile/automatic/sts/lrifle = 200,
+		/obj/item/gun/projectile/automatic/sts/lrifle = 200,
 		/obj/item/ammo_magazine/light_rifle_257_short = 60,
-		/obj/item/weapon/gun/projectile/automatic/sts/rifle = 300,
+		/obj/item/gun/projectile/automatic/sts/rifle = 300,
 		/obj/item/ammo_magazine/rifle_75_short = 90,
-		/obj/item/weapon/gun/projectile/automatic/sts/hrifle = 500,
+		/obj/item/gun/projectile/automatic/sts/hrifle = 500,
 		/obj/item/ammo_magazine/heavy_rifle_408 = 120,
-		/obj/item/weapon/gun/projectile/automatic/basstet = 250,
+		/obj/item/gun/projectile/automatic/basstet = 250,
 		/obj/item/ammo_magazine/light_rifle_257 = 100,
 		/obj/item/clothing/suit/space/void/security/odst/mil = 300,
 		/obj/item/clothing/suit/space/void/odst/corps = 300,
-		/obj/item/weapon/melee/baton = 200,
-		/obj/item/weapon/storage/firstaid/surgery/traitor = 500, //Advanced tools inside
+		/obj/item/melee/baton = 200,
+		/obj/item/storage/firstaid/surgery/traitor = 500, //Advanced tools inside
 		/obj/item/clothing/suit/space/void/SCAF/blackshield = 1250 //One of the best things we can get
 		)
 	var/entropy_value = 1 //It is still bluespace
@@ -66,7 +66,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 /obj/machinery/blackshield_teleporter/RefreshParts()
 	var/man_rating = 0
 	var/man_amount = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
 		entropy_value = initial(entropy_value)/M.rating
 		man_amount++
@@ -76,7 +76,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 
 	active_power_usage = initial(active_power_usage) * coef
 
-	var/obj/item/weapon/cell/C = locate() in component_parts
+	var/obj/item/cell/C = locate() in component_parts
 	if(C)
 		max_energy = C.maxcharge //Big buff for max energy
 		for (var/obj/machinery/complant_teleporter/t in blackshield_teleporters)
