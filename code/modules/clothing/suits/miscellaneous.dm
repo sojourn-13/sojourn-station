@@ -311,12 +311,12 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/storage/scavengerarmor
 	name = "scavenger armor"
-	desc = "A sturdy, rigged scavenger armor. strong and sturdy as most vests. made fully from junk."
+	desc = "A rigged yet sturdy scavenger armor. Strong and protective as most vests, it is made entirely from reclaimed materials."
 	icon_state = "scav_armor"
 	item_state = "scav_armor"
 	armor = list(
-		melee = 35,
-		bullet = 35,
+		melee = 40,
+		bullet = 40,
 		energy = 35,
 		bomb = 25,
 		bio = 0,
@@ -331,9 +331,9 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "triadkillers"
 	item_state = "triadkillers"
 	armor = list(
-		melee = 35,
-		bullet = 35,
-		energy = 35,
+		melee = 25,
+		bullet = 25,
+		energy = 25,
 		bomb = 15,
 		bio = 0,
 		rad = 0
@@ -363,9 +363,16 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A haphazardly-made cloak made of reclaimed leather and other fiber materials, it's all you have for protection...for now."
 	icon_state = "outcast_cloak"
 	item_state = "outcast_cloak"
-	armor = list(melee = 20, bullet = 0, energy = 20, bomb = 0, bio = 5, rad = 5)
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(
+		melee = 30,
+		bullet = 25,
+		energy = 35, // Made of leather, following hunter's armor design logic
+		bomb = 10,
+		bio = 5,
+		rad = 5
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LOWER_TORSO
 	min_cold_protection_temperature = T0C - 20
 	price_tag = 50
 	

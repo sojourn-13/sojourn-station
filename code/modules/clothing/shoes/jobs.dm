@@ -47,7 +47,7 @@
 	desc = "A pair of steel-toed utility workboots."
 	icon_state = "workboots"
 	item_state = "workboots"
-	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	can_hold_knife = 1
 
