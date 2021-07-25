@@ -151,6 +151,7 @@
 
 	objectsInView = new
 
+	full_reload_message  = "[reload_message]"
 	reload_message = "[name] [full_reload_message]"
 
 	verbs -= /mob/verb/observe
