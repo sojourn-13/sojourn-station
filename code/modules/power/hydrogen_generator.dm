@@ -3,7 +3,7 @@
 	name = "hydrogen generator"
 	desc = "A portable generator for emergency backup power, use hydrogen fuel cell."
 	icon = 'icons/obj/power.dmi'
-	icon_state = "portgen0"
+	icon_state = "hydrogen_generator_OFF"
 	density = 1
 	anchored = FALSE
 	use_power = NO_POWER_USE
@@ -37,10 +37,12 @@
 // Switch the machine on or off.
 /obj/machinery/power/hydrogen_gen/proc/SwitchOnOff(mob/user)
 	active = !active // Switch the generator either on or off.
-	user.visible_message(
+	if(user)
+		user.visible_message(
 							SPAN_NOTICE("[user] turn the [src.name] [active ? "on" : "off"]."),
 							SPAN_NOTICE("You turn the [src.name] [active ? "on" : "off"].")
 							)
+	update_icon()
 
 // Try to use the hydrogen, return true if we used it, false if we couldn't consume it.
 // The hydrogen fuel cell already have a proc that consume the indicated amount and return FALSE if there wasn't enough.
@@ -147,6 +149,6 @@
 // TODO : Add sprite and overlays for each fuel cell
 /obj/machinery/power/hydrogen_gen/update_icon()
 	if(active)
-		icon_state = "portgen1"
+		icon_state = "hydrogen_generator_ON"
 	else
-		icon_state = "portgen0"
+		icon_state = "hydrogen_generator_OFF"
