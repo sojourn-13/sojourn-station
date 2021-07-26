@@ -151,11 +151,11 @@
 	result = /obj/item/clothing/suit/storage/scavengerarmor
 	steps = list(
 		list(/obj/item/clothing/under, 1),
-		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
-		list(QUALITY_ADHESIVE, 15, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 20)
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL), // Melee
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL), // Bullets
+		list(QUALITY_WELDING, 10, 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS), // Reflective plating?
+		list(QUALITY_ADHESIVE, 15, "time" = 60)
 	)
 
 /datum/craft_recipe/clothing/muzzle

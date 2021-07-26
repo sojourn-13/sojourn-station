@@ -4,6 +4,7 @@
 	agony = 12
 	armor_penetration = 5
 	step_delay = 0.75
+	check_armour = ARMOR_MELEE
 	can_ricochet = FALSE
 	embed = FALSE
 	sharp = FALSE
@@ -14,6 +15,7 @@
 	agony = 15
 	armor_penetration = 25
 	step_delay = 0.75
+	check_armour = ARMOR_MELEE
 	can_ricochet = FALSE
 	embed = TRUE
 	sharp = TRUE
