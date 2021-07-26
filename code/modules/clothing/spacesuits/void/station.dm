@@ -106,8 +106,8 @@
 	siemens_coefficient = 0.4
 	armor = list(
 		melee = 40,
-		bullet = 40,
-		energy = 25,
+		bullet = 20,
+		energy = 20,
 		bomb = 25,
 		bio = 100,
 		rad = 0
