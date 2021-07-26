@@ -82,7 +82,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	//alt_titles = list("Hydroponicist")
+	alt_titles = list("Hydroponicist")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
@@ -125,7 +125,7 @@
 	access = list(access_theatre)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/artist
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
-	//alt_titles = list("Artist","Clown","Entertainer","Mime")
+	alt_titles = list("Artist","Clown","Entertainer","Mime")
 	stat_modifiers = list(
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
@@ -162,7 +162,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	//alt_titles = list("Custodian","Sanitation Technician")
+	alt_titles = list("Custodian","Sanitation Technician")
 	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
