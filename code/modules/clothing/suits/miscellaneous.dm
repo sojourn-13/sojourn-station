@@ -364,9 +364,9 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "outcast_cloak"
 	item_state = "outcast_cloak"
 	armor = list(
-		melee = 30,
+		melee = 25,
 		bullet = 25,
-		energy = 35, // Made of leather, following hunter's armor design logic
+		energy = 25, // Made of leather, following hunter's armor design logic
 		bomb = 10,
 		bio = 5,
 		rad = 5
