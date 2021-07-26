@@ -89,7 +89,7 @@
 
 	armor = list(
 		melee = 40,
-		bullet = 15,
+		bullet = 20,
 		energy = 20,
 		bomb = 25,
 		bio = 100,
@@ -174,7 +174,7 @@
 		slot_r_hand_str = "medical_helm",
 		)
 	armor = list(
-		melee = 30,
+		melee = 20, // It's a literal glass cube
 		bullet = 10,
 		energy = 35,
 		bomb = 25,
@@ -195,7 +195,7 @@
 		/obj/item/roller
 	)
 	armor = list(
-		melee = 20,
+		melee = 35,
 		bullet = 10,
 		energy = 35,
 		bomb = 25,
@@ -440,7 +440,7 @@
 
 /obj/item/clothing/head/space/void/assault/void_wolf
 	name = "reaver assault helmet"
-	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in. This one was made for a void wolf reaver."
+	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in. This one was made for a Void Wolf Reaver."
 
 /obj/item/clothing/head/space/void/assault/void_wolf/New()
 	icon_state = "assault_wolf"
@@ -450,14 +450,14 @@
 	name = "reaver assault armor"
 	icon_state = "assault_wolf"
 	item_state = "assault_wolf"
-	desc = "Void wolves prey on Kriosan trade ships and frontier colonies all the time, in rare circumstances they engage military ships, with skilled and ballzy void wolf reavers succeeding \
-	and making off with expensive loot, such as this assault armor given a void wolf paint job."
+	desc = "Void Wolves prey on Kriosan trade ships and frontier colonies all the time, in rare circumstances they engage military ships, with skilled and ballsy Void Wolf Reavers succeeding \
+	and making off with expensive loot, such as this assault armor given a Void Wolf paint job."
 	helmet = /obj/item/clothing/head/space/void/assault/void_wolf
 
 /obj/item/clothing/suit/space/void/assault
 	name = "assault armor"
 	icon_state = "assaultsuit"
-	desc = "A specialty import from the kriosan confederacy, usually imported by the Lonestar thanks to the companies long standing trade agreement. It costs a kings ransom, albiet for a good reason \
+	desc = "A specialty import from the Kriosan Confederacy, usually imported by Lonestar LLC thanks to the companies' long standing trade agreement. It costs a king's ransom, albeit for a good reason \
 	given its sturdy craftmenship and reinforced armor layers."
 	item_state = "assaultsuit"
 	armor = list(
@@ -508,7 +508,7 @@
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	item_state = "armor_medical"
 	armor = list(
-		melee = 30,
+		melee = 35,
 		bullet = 35,
 		energy = 30,
 		bomb = 40,
