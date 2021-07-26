@@ -287,9 +287,9 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	max_upgrades = 2
 	armor = list(melee = 35, bullet = 25, energy = 25, bomb = 30, bio = 50, rad = 50)
-	extra_allowed = list(/obj/item/weapon/extinguisher,
-						 /obj/item/weapon/tool,
-						 /obj/item/weapon/tool_upgrade,
+	extra_allowed = list(/obj/item/extinguisher,
+						 /obj/item/tool,
+						 /obj/item/tool_upgrade,
 						 /obj/item/stack/cable_coil,
 						 /obj/item/device/t_scanner,
 						 /obj/item/device/scanner/gas,
