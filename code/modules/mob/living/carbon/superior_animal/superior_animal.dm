@@ -56,8 +56,6 @@
 	var/light_dam = 0 //0 to disable, minimum amount of lums to cause damage, otherwise heals in darkness
 	var/hunger_factor = 0 //0 to disable, how much nutrition is consumed per life tick
 
-	var/waring_faction = "" //What faction do we hate?
-	var/waring_faction_multy = 1 //How much more damage do we do to our ennemy faction?
 	colony_friend = FALSE
 
 
