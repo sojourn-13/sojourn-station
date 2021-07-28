@@ -41,9 +41,6 @@
 	min_air_pressure = 0
 	min_bodytemperature = 0
 
-	waring_faction = ""
-	waring_faction_multy = 1
-
 //Drops
 	meat_amount = 4
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human

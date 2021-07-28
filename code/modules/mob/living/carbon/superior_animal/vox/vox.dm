@@ -17,8 +17,6 @@
 	mob_size = MOB_MEDIUM
 	can_burrow = FALSE
 	randpixel = 0
-	waring_faction = "spider"
-	waring_faction_multy = 4 // Doesn't like spiders
 	deathmessage = "slumps down and seems to no longer move!"
 
 	has_special_parts = TRUE
