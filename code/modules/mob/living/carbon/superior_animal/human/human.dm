@@ -10,8 +10,6 @@
 
 	attack_sound = 'sound/weapons/slice.ogg'
 
-	waring_faction = ""
-	waring_faction_multy = 1
 /*
 	breath_required_type = NONE
 	breath_poison_type = NONE

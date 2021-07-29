@@ -186,7 +186,6 @@
 /obj/item/tool/knife/dagger/bluespace/on_embed_removal(mob/user)
 	embedded = null
 
-/obj/item/tool/knife/dagger/bluespace/Process()
 	..()
 	if(switched_on && embedded && cell)
 		if(last_teleport + max(3 SECONDS, embedded.mob_size*(cell.charge/cell.maxcharge)) < world.time)

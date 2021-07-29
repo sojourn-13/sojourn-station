@@ -58,6 +58,10 @@
 	name = "Braided Beard"
 	icon_state = "braided"
 
+/datum/sprite_accessory/facial_hair/brokenman
+	name = "Broken Man"
+	icon_state = "facial_brokenman"
+
 /datum/sprite_accessory/facial_hair/chinless
 	name = "Chinless Beard"
 	icon_state = "chinlessbeard"
