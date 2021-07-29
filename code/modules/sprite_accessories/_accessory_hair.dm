@@ -69,6 +69,14 @@
 	name = "Bedhead 3"
 	icon_state = "bedheadv3"
 
+/datum/sprite_accessory/hair/bedhead_long
+	name = "Bedhead Long"
+	icon_state = "long_bedhead"
+
+/datum/sprite_accessory/hair/bedhead_floor
+	name = "Bedhead Floor Long"
+	icon_state = "floorlength_bedhead"
+
 /datum/sprite_accessory/hair/beehive
 	name = "Beehive"
 	icon_state = "beehive"
@@ -76,6 +84,10 @@
 /datum/sprite_accessory/hair/beehive2
 	name = "Beehive 2"
 	icon_state = "beehive2"
+
+/datum/sprite_accessory/hair/begone
+	name = "Begone"
+	icon_state = "begone"
 
 /datum/sprite_accessory/hair/belle
 	name = "Belle"
@@ -156,6 +168,10 @@
 /datum/sprite_accessory/hair/cia
 	name = "CIA"
 	icon_state = "cia"
+
+/datum/sprite_accessory/hair/country
+	name = "Country"
+	icon_state = "country"
 
 /datum/sprite_accessory/hair/combed
 	name = "Combed"
@@ -570,6 +586,10 @@
 	name = "Scully"
 	icon_state = "scully"
 
+/datum/sprite_accessory/hair/sabitsuki
+	name = "Sabitsuki"
+	icon_state = "sabitsuki"
+
 /datum/sprite_accessory/hair/sharppony
 	name = "Sharp Ponytail"
 	icon_state = "sharp_ponytail"
@@ -686,9 +706,17 @@
 	name = "Tress Shoulder"
 	icon_state = "tressshoulder"
 
+/datum/sprite_accessory/hair/tribalbraid
+	name = "Tribal Braid"
+	icon_state = "tribalbraid"
+
 /datum/sprite_accessory/hair/vegeta
 	name = "Vegeta"
 	icon_state = "toriyama2"
+
+/datum/sprite_accessory/hair/vriska_s
+	name = "Vriska"
+	icon_state = "vriska_s"
 
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"
@@ -1022,9 +1050,9 @@
 	name = "Mycus Shroom Collection 4"
 	icon_state = "flatshrooms2"
 
-/datum/sprite_accessory/hair/mycus/penis
+/datum/sprite_accessory/hair/mycus/doom
 	name = "Mycus Single Shroom"
-	icon_state = "penis"
+	icon_state = "doom"
 
 /datum/sprite_accessory/hair/mycus/spore
 	name = "Mycus Spore Cap"
