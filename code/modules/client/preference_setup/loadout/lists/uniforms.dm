@@ -207,6 +207,12 @@
 	display_name = "brown comfortable clothing"
 	path = /obj/item/clothing/under/jamrock_suit
 
+/datum/gear/uniform/hunterformal
+	display_name = "hunting lodge formal clothing"
+	path = /obj/item/clothing/under/costume/misc/hunterformal
+	slot = slot_w_uniform
+	allowed_roles = list("Lodge Hunter", "Lodge Hunt Master")
+
 /datum/gear/uniform/neon
 	display_name = "neon tracksuits, color presets"
 	path = /obj/item/clothing/under/neon
