@@ -72,13 +72,13 @@
 			return
 	if(remove_dead_pets)
 		if(istype(I, /obj/item/weapon/tool/shovel))
-			to_chat(user, "<span class='info'>The harmful pests slowly die out.</span>")
+			to_chat(user, "<span class='info'>The dead pests are no more.</span>")
 			remove_dead_pets = FALSE
 			return
-	if(remove_dead_pets)
+	if(needs_to_be_watered)
 		if(istype(I, /obj/item/weapon/plantspray/water))
 			to_chat(user, "<span class='info'>The water rejuvenates the plants.</span>")
-			remove_dead_pets = FALSE
+			needs_to_be_watered = FALSE
 			return
 
 //trees
