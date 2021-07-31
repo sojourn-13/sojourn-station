@@ -30,9 +30,10 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-	var/obj/item/weapon/cell/large/cell = new /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
+	var/obj/item/weapon/cell/cell = null // Hold the drone's power cell, default to a cheap one.
 	follow_message = "state, \"Beginning Escort Protocol.\""
 	stop_message = "state, \"Ending Escort Protocol.\""
+	follow_distance = 2
 	var/list/creator = list() // Who's the bot's creator.
 
 /mob/living/carbon/superior_animal/handmade/examine(mob/user)
@@ -91,5 +92,12 @@
 				return
 			to_chat(user, "[src] doesn't need repairs.")
 			return
+
+		else if(QUALITY_PULSING in T.tool_qualities)
+			follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(0, 1, 2, 3, 4, 5)
+			if(density && follow_distance < 1)
+				follow_distance = 1 // Making sure that the bot don't try to occupy your tile if it can't share it.
+			return
+
 	// If nothing was ever triggered, continue as normal
 	..()
