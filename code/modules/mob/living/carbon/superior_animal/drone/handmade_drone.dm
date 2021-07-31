@@ -24,7 +24,7 @@
 	deathmessage = "blows apart!"
 	light_range = 3
 	light_color = COLOR_LIGHTING_RED_BRIGHT
-	var/exam_message = "If you see this, report it to Kaz or R4d6." // Custom message that show when examined and is different for each model.
+	var/exam_message = null // Custom message that show when examined and is different for each model.
 
 	do_gibs = FALSE
 	colony_friend = TRUE
@@ -38,7 +38,8 @@
 
 /mob/living/carbon/superior_animal/handmade/examine(mob/user)
 	..()
-	to_chat(user, SPAN_NOTICE("[exam_message]"))
+	if(exam_message)
+		to_chat(user, SPAN_NOTICE("[exam_message]"))
 	var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
 	if(robotics_expert) // Are we an expert in robots?
 		to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.

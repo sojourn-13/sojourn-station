@@ -33,6 +33,7 @@
 
 	follow_message = "emits an affirmative blip and start following."
 	stop_message = "emits an affirmative blip and stop following."
+	exam_message = null
 
 /mob/living/carbon/superior_animal/handmade/roomba/New()
 	armor = default_armor // Give the roomba it's default armor.
