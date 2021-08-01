@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/hemostat
+/obj/item/tool/hemostat
 	name = "hemostat"
 	desc = "You think you have seen this before."
 	icon_state = "hemostat"
@@ -8,7 +8,7 @@
 	attack_verb = list("attacked", "pinched")
 	tool_qualities = list(QUALITY_CLAMPING = 35)
 
-/obj/item/weapon/tool/hemostat/adv
+/obj/item/tool/hemostat/adv
 	name = "precise hemostat"
 	desc = "An advanced hemostat with better vein clamping strength and an adaptive tip tuned to also allow easier extraction of shrapnel, organs, and implants."
 	matter = list(MATERIAL_STEEL = 6)

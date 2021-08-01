@@ -31,8 +31,8 @@
 //Dusting robots does not eject the MMI, so it's a bit more powerful than gib() /N
 /mob/proc/dust(anim = "dust-m", remains = /obj/effect/decal/cleanable/ash, iconfile = 'icons/mob/mob.dmi')
 	death(1)
-	if (istype(loc, /obj/item/weapon/holder))
-		var/obj/item/weapon/holder/H = loc
+	if (istype(loc, /obj/item/holder))
+		var/obj/item/holder/H = loc
 		H.release_mob()
 
 	transforming = TRUE
@@ -71,7 +71,7 @@
 			O.forceMove(loc)
 		embedded = list()
 
-	for(var/obj/item/weapon/implant/carrion_spider/control/C in src)
+	for(var/obj/item/implant/carrion_spider/control/C in src)
 		C.return_mind()
 
 	for(var/mob/living/carbon/human/H in oviewers(src))

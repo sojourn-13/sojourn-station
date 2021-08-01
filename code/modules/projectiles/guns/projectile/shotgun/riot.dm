@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/riot_autoshotgun
+/obj/item/gun/projectile/automatic/riot_autoshotgun
 	name = "\"State\" riot shotgun" //With correct mods this can be better then the pug
 	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Gladstone\" design. \
 	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
@@ -29,7 +29,7 @@
 		list(mode_name="semiauto", burst=1, fire_delay=3, move_delay=null, icon="semi")
 		)
 
-/obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo
+/obj/item/gun/projectile/automatic/riot_autoshotgun/robo
 	name = "intergrated \"State\" riot shotgun"
 	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Gladstone\" design. \
 	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
@@ -43,7 +43,7 @@
 	max_shells = 6
 	load_method = SINGLE_CASING|SPEEDLOADER //So boxes of ammo work
 
-/obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo/single_shot
+/obj/item/gun/projectile/automatic/riot_autoshotgun/robo/single_shot
 	name = "intergrated single barrel shotgun"
 	desc = "A auto ejecting single barrel shotgun for mining borgs to handle pesky critters in the underground."
 	icon_state = "miner_shotgun"

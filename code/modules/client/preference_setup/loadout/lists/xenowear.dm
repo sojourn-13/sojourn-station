@@ -37,7 +37,7 @@
 
 /datum/gear/xenowear/opifexemergencytank
 	display_name = "opifex nitrogen tanks"
-	path = /obj/item/weapon/tank/emergency_nitgen
+	path = /obj/item/tank/emergency_nitgen
 	sort_category = "Xenowear"
 	cost = 0
 

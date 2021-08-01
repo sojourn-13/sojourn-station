@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/wirbelwind
+/obj/item/gun/projectile/automatic/wirbelwind
 	name = "\"Wirbelwind\" SMG"
 	desc = "A compact and lightweight law enforcement PDW produced by Seinemetall Defense GmbH. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/wirbelwind.dmi'
@@ -26,7 +26,7 @@
 		FULL_AUTO_600
 		)
 
-/obj/item/weapon/gun/projectile/automatic/wirbelwind/update_icon()
+/obj/item/gun/projectile/automatic/wirbelwind/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -46,6 +46,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/wirbelwind/Initialize()
+/obj/item/gun/projectile/automatic/wirbelwind/Initialize()
 	. = ..()
 	update_icon()

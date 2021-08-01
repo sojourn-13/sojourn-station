@@ -19,17 +19,17 @@
 
 //Putting this here because blargh it.
 //Not like it needs to be anywhere in particular and I don't want to make an entire new file for a small parent.
-/obj/item/weapon/biogoop
+/obj/item/biogoop
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "biogoop"
 	desc = "A pile of formless biomatter with potential to be made useful, with the right tools."
 	matter = list(MATERIAL_BIOMATTER = 10)
 
-/obj/item/weapon/biogoop/muscle
+/obj/item/biogoop/muscle
 	name = "incomplete organic muscle implant"
 
 
-/obj/item/weapon/biogoop/muscle/attackby(obj/item/I, mob/user)
+/obj/item/biogoop/muscle/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
 		var/obj/item/stack/S = I
 		if(S.use(1))

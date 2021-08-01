@@ -154,7 +154,7 @@
 /area/crawler)
 "G" = (
 /obj/machinery/power/smes/buildable,
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/crawler)
 "L" = (
@@ -168,7 +168,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "W" = (
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 

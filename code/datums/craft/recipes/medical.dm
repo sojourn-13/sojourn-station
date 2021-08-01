@@ -19,7 +19,7 @@
 
 /datum/craft_recipe/medical/blood_pack
 	name = "blood pack"
-	result = /obj/item/weapon/reagent_containers/blood/empty
+	result = /obj/item/reagent_containers/blood/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC)
 	)
@@ -53,9 +53,9 @@
 		list(QUALITY_WELDING, 10, 10),
 		list(/obj/item/stack/cable_coil, 5, "time" = 0),
 		list(QUALITY_WIRE_CUTTING, 10, 10),
-		list(/obj/item/weapon/stock_parts/manipulator, 1),
+		list(/obj/item/stock_parts/manipulator, 1),
 		list(QUALITY_PULSING, 10, 10),
-		list(/obj/item/weapon/reagent_containers/glass/bucket, 1)
+		list(/obj/item/reagent_containers/glass/bucket, 1)
 	)
 	related_stats = list(STAT_MEC)
 
@@ -72,9 +72,9 @@
 		list(QUALITY_WELDING, 10, 10),
 		list(/obj/item/stack/cable_coil, 5, "time" = 0),
 		list(QUALITY_WIRE_CUTTING, 10, 10),
-		list(/obj/item/weapon/stock_parts/manipulator, 1),
+		list(/obj/item/stock_parts/manipulator, 1),
 		list(QUALITY_PULSING, 10, 10),
-		list(/obj/item/weapon/tool/knife/hook, 1)
+		list(/obj/item/tool/knife/hook, 1)
 	)
 	related_stats = list(STAT_MEC)
 

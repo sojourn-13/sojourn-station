@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/luger
+/obj/item/gun/projectile/automatic/luger
 	name = "\"Vintovka Lyugera\" carbine"
 	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Reliable, well crafted but bulky. Amazingly it.. works! The look is hard to describe.. a mix between 'makeshift' and 'amazing'. \
 	While able to take both .35 pistol and SMG magazines the gun appears to lack a proper fire selection. Figures it's made by Nadezhda Marshals gunsmiths."
@@ -20,7 +20,7 @@
 		SEMI_AUTO_NODELAY,
 		)
 
-/obj/item/weapon/gun/projectile/automatic/luger/update_icon()
+/obj/item/gun/projectile/automatic/luger/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""

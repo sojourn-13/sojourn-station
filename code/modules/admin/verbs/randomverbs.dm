@@ -1068,8 +1068,8 @@ ADMIN_VERB_ADD(/client/proc/spawn_mob_template, R_ADMIN, FALSE)
 			var/obj/obj = new objPath
 			createdObjects[i] = obj
 
-			if(istype(obj, /obj/item/weapon/gun))
-				var/obj/item/weapon/gun/weapon = obj
+			if(istype(obj, /obj/item/gun))
+				var/obj/item/gun/weapon = obj
 				weapon.loadAmmoBestGuess()
 
 

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/bren
+/obj/item/gun/projectile/automatic/bren
 	name = "\"Kalashnabren\" light machinegun"
 	desc = "A mutilated Kalash model that has been jury rigged to load its magazines from the top. Why, you may ask? Only god knows. No serial numbers nor publishing logos can even be found on the rifle.\
 		The trigger mechanism is attached by a cord externally to create large bursts of fire. Despite this thing looking like it might explode at any second, it can really shoot fast!"
@@ -32,7 +32,7 @@
 		list(mode_name="suppressing fire",  burst=16, burst_delay=1.2, move_delay=11,  icon="burst")
 		)
 
-/obj/item/weapon/gun/projectile/automatic/bren/update_icon()
+/obj/item/gun/projectile/automatic/bren/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -48,6 +48,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/bren/Initialize()
+/obj/item/gun/projectile/automatic/bren/Initialize()
 	. = ..()
 	update_icon()

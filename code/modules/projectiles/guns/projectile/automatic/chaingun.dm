@@ -2,7 +2,7 @@
 //SOLFED GPMG NOT FOR TYPICAL ROUND USE. SERIOUSLY. IT'S OP AND MEANT FOR EVENTS, SPECIAL LOOT, AND ANTAGS.
 // ====================================================== //
 
-/obj/item/weapon/gun/projectile/automatic/chaingun
+/obj/item/gun/projectile/automatic/chaingun
 	name = "\"Fenrir\" heavy chaingun"
 	desc = "A massive single-barrel chaingun originally intended as a vehicle mounted weapon. Refitted for and commonly seen with SolFed powered infantry, it's a devastating tool for removing those stubborn stains on the universe. \
 	It is chambered in .408 and has feeding systems for drums and linkless ammunition boxes. This one is fitted with a tactical sight and a gyrostabilizer. A weapon fit to slay even the hordes of Hell."
@@ -41,48 +41,48 @@
 
 	var/cover_open = 0
 
-/obj/item/weapon/gun/projectile/automatic/chaingun/special_check(mob/user)
+/obj/item/gun/projectile/automatic/chaingun/special_check(mob/user)
 	if(cover_open)
 		to_chat(user, SPAN_WARNING("[src]'s mechanism is open! Close it before firing!"))
 		return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/automatic/chaingun/proc/toggle_cover(mob/user)
+/obj/item/gun/projectile/automatic/chaingun/proc/toggle_cover(mob/user)
 	cover_open = !cover_open
 	to_chat(user, SPAN_NOTICE("You [cover_open ? "open" : "close"] [src]'s mechanism."))
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/chaingun/attack_self(mob/user as mob)
+/obj/item/gun/projectile/automatic/chaingun/attack_self(mob/user as mob)
 	if(cover_open)
 		toggle_cover(user) //close the cover
 		playsound(src.loc, 'sound/weapons/guns/interact/chaingun_close.ogg', 100, 1)
 	else
 		return ..() //once closed, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/chaingun/attack_hand(mob/user as mob)
+/obj/item/gun/projectile/automatic/chaingun/attack_hand(mob/user as mob)
 	if(!cover_open && user.get_inactive_hand() == src)
 		toggle_cover(user) //open the cover
 		playsound(src.loc, 'sound/weapons/guns/interact/chaingun_open.ogg', 100, 1)
 	else
 		return ..() //once open, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/chaingun/equipped(var/mob/user, var/slot)
+/obj/item/gun/projectile/automatic/chaingun/equipped(var/mob/user, var/slot)
 	.=..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/chaingun/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/automatic/chaingun/load_ammo(var/obj/item/A, mob/user)
 	if(!cover_open)
 		to_chat(user, SPAN_WARNING("You need to open the mechanism to load [src]."))
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/lmg/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/automatic/lmg/unload_ammo(mob/user, var/allow_dump=1)
 	if(!cover_open)
 		to_chat(user, SPAN_WARNING("You need to open the mechanism to unload [src]."))
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/chaingun/update_icon()
+/obj/item/gun/projectile/automatic/chaingun/update_icon()
 	icon_state = "[icon_base][cover_open ? "_open" : "_closed"]"
 	if(ammo_magazine)
 		add_overlay("_mag[ammo_magazine.max_ammo]")

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/sixshot
+/obj/item/gun/projectile/revolver/sixshot
 	name = "\"Six-Shot\" revolving shotgun"
 	desc = "A unique, revolving shotgun using a revolver cylinder. You can't tell if the person who made it deserves an award or to be tried as a criminal."
 	icon = 'icons/obj/guns/projectile/sixshot.dmi'
@@ -16,10 +16,10 @@
 	recoil_buildup = 15
 	one_hand_penalty = 30
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/revolver/sixshot/sawn
+	sawn = /obj/item/gun/projectile/revolver/sixshot/sawn
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 
-/obj/item/weapon/gun/projectile/revolver/sixshot/update_icon()
+/obj/item/gun/projectile/revolver/sixshot/update_icon()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -29,7 +29,7 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/revolver/sixshot/sawn
+/obj/item/gun/projectile/revolver/sixshot/sawn
 	name = "sawn-off \"Six-Shot\" revolving shotgun"
 	desc = "An absolutely mutilated Six-Shot revolving shotgun. The mad-man who did this lobbed off the stock into just a wood pistol grip and shortened the barrel to be barely longer than the cylinder."
 	icon = 'icons/obj/guns/projectile/sawnoff/sixshot.dmi'

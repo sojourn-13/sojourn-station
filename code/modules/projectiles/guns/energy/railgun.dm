@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/laser/railgun
+/obj/item/gun/energy/laser/railgun
 	name = "\"Reductor\" rail rifle"
 	desc = "\"Artificer's Guild\" brand rail gun. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
 	consuming the cell within for an extra bullet or a powerful explosive round."
@@ -17,7 +17,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
 	charge_cost = 500
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
-	suitable_cell = /obj/item/weapon/cell/large
+	suitable_cell = /obj/item/cell/large
 	one_hand_penalty = 10
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
 	recoil_buildup = 12 //Big shots, big recoil.
@@ -30,7 +30,7 @@
 	var/consume_cell = FALSE
 	price_tag = 2250
 
-/obj/item/weapon/gun/energy/laser/railgun/consume_next_projectile()
+/obj/item/gun/energy/laser/railgun/consume_next_projectile()
 	if(!cell) return null
 	if(!ispath(projectile_type)) return null
 	if(consume_cell && !cell.checked_use(charge_cost))
@@ -45,7 +45,7 @@
 	else
 		return new projectile_type(src)
 
-/obj/item/weapon/gun/energy/laser/railgun/attackby(obj/item/I, mob/user)
+/obj/item/gun/energy/laser/railgun/attackby(obj/item/I, mob/user)
 	..()
 	if(I.has_quality(QUALITY_BOLT_TURNING))
 		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
@@ -57,14 +57,14 @@
 				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
 
 
-/obj/item/weapon/gun/energy/laser/railgun/pistol
+/obj/item/gun/energy/laser/railgun/pistol
 	name = "\"Myrmidon\" rail pistol"
 	desc = "\"Artificer's Guild\" brand rail pistol. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
 	consuming the cell within for an extra bullet or a powerful explosive round. For the law abiding engineer because rifles are too hard to hide."
 	icon = 'icons/obj/guns/energy/railpistol.dmi'
 	icon_state = "railpistol"
 	item_state = "railpistol"
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
@@ -83,7 +83,7 @@
 	)
 	price_tag = 1250
 
-/obj/item/weapon/gun/energy/shrapnel
+/obj/item/gun/energy/shrapnel
 	name = "\"Shellshock\" scrap rifle"
 	desc = "A slapped together junk design made as a copy of the far superior Reductor rail gun. It's projectiles fire slower and it has a wider delay between shots with the \
 	same issue of burning batteries out. The matter contained in empty cells can be converted directly into ammunition as well, if the safety bolts are loosened properly."
@@ -100,7 +100,7 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8)
 	charge_cost = 100
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 	one_hand_penalty = 10
 	fire_delay = 14 //Equivalent to a pump then fire time
 	recoil_buildup = 1.2
@@ -113,7 +113,7 @@
 	var/consume_cell = FALSE
 	price_tag = 500
 
-/obj/item/weapon/gun/energy/shrapnel/consume_next_projectile()
+/obj/item/gun/energy/shrapnel/consume_next_projectile()
 	if(!cell) return null
 	if(!ispath(projectile_type)) return null
 	if(consume_cell && !cell.checked_use(charge_cost))
@@ -128,7 +128,7 @@
 	else
 		return new projectile_type(src)
 
-/obj/item/weapon/gun/energy/shrapnel/attackby(obj/item/I, mob/user)
+/obj/item/gun/energy/shrapnel/attackby(obj/item/I, mob/user)
 	..()
 	if(I.has_quality(QUALITY_BOLT_TURNING))
 		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
@@ -139,7 +139,7 @@
 				consume_cell = TRUE
 				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
 
-/obj/item/weapon/gun/energy/laser/railgun/mounted
+/obj/item/gun/energy/laser/railgun/mounted
 	name = "SDF SC \"Schrapnell\""
 	desc = "An energy-based railgun, employing a matter fabricator to pull shotgun rounds from thin air and energy before launching them at faster than light speeds."
 	icon_state = "shrapnel"
@@ -148,7 +148,7 @@
 	safety = FALSE
 	restrict_safety = TRUE
 	consume_cell = FALSE
-	cell_type = /obj/item/weapon/cell/small/high //Two shots
+	cell_type = /obj/item/cell/small/high //Two shots
 	twohanded = FALSE
 	init_firemodes = list(
 		list(mode_name="Buckshot", mode_desc="Fires a buckshot synth-shell", projectile_type=/obj/item/projectile/bullet/pellet/shotgun, charge_cost=100, icon="kill"),

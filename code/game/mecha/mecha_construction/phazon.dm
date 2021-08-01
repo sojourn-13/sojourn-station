@@ -10,9 +10,9 @@
 		list("key"=/obj/item/mecha_parts/part/phazon_right_leg, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//5
 		list("key"=/obj/item/mecha_parts/part/phazon_head, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //6,
 		list("key"=/obj/item/bluespace_crystal/artificial, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //7,
-		list("key"=/obj/item/weapon/stock_parts/smes_coil/super_capacity, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //8,
-		list("key"=/obj/item/weapon/gun_upgrade/mechanism/overdrive, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //9,
-		list("key"=/obj/item/weapon/cell/large/moebius/nuclear, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil.") //10
+		list("key"=/obj/item/stock_parts/smes_coil/super_capacity, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //8,
+		list("key"=/obj/item/gun_upgrade/mechanism/overdrive, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //9,
+		list("key"=/obj/item/cell/large/moebius/nuclear, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil.") //10
 	)
 
 	spawn_result()
@@ -33,7 +33,7 @@
 	result = /obj/mecha/combat/phazon
 	steps = list(
 		//1
-		list("key"=/obj/item/weapon/hand_tele,
+		list("key"=/obj/item/hand_tele,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The hand tele is to be installed."),
 		//2
@@ -69,7 +69,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The bluespace crystal is installed but unwired."),
 		//10
-		list("key"=/obj/item/weapon/stock_parts/subspace/crystal,
+		list("key"=/obj/item/stock_parts/subspace/crystal,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Super capacitor is secured and bluespace crystal is awaiting to be subspace tooned with a crystal."),
 		//12
@@ -77,7 +77,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Super capacitor is installed but unscrewed."),
 		//12
-		list("key"=/obj/item/weapon/stock_parts/capacitor/super,
+		list("key"=/obj/item/stock_parts/capacitor/super,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Phasic scanner module is secured and can connect to a super capacitor."),
 		//13
@@ -85,7 +85,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Phasic scanner module is installed but unscrewed."),
 		//14
-		list("key"=/obj/item/weapon/stock_parts/scanning_module/phasic,
+		list("key"=/obj/item/stock_parts/scanning_module/phasic,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Weapon control module is secured and can connect to a phasic scanning module"),
 		//15
@@ -93,7 +93,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Weapon control is installed and can be screwed down."),
 		//16
-		list("key"=/obj/item/weapon/circuitboard/mecha/targeting,
+		list("key"=/obj/item/circuitboard/mecha/targeting,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Peripherals control module is secured and waiting a targeting board."),
 		//17
@@ -101,7 +101,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed and needs to be screwed down"),
 		//18
-		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
+		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and ready for a peripherals control module."),
 		//19
@@ -109,7 +109,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed, but unscrewed."),
 		//20
-		list("key"=/obj/item/weapon/circuitboard/mecha/main,
+		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted for connecting to a central control board."),
 		//21
@@ -208,7 +208,7 @@
 						"[usr] removes the central control module from the [holder].", \
 						"You remove the central computer mainboard from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/main(get_turf(holder))
+					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "phazon4"
 			if(18)
 				if(diff==FORWARD)
@@ -236,7 +236,7 @@
 						"[usr] removes the peripherals control module from the [holder].", \
 						"You remove the peripherals control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/peripherals(get_turf(holder))
+					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "phazon6"
 			if(16)
 				if(diff==FORWARD)
@@ -264,7 +264,7 @@
 						"[usr] removes the weapon control module from the [holder].", \
 						"You remove the weapon control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/targeting(get_turf(holder))
+					new /obj/item/circuitboard/mecha/targeting(get_turf(holder))
 					holder.icon_state = "phazon8"
 			if(14)
 				if(diff==FORWARD)
@@ -282,7 +282,7 @@
 					holder.icon_state = "phazon9"
 			if(13)
 				if(diff==FORWARD)
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(!S)
 						S = "phasic scanner module"
 					usr.visible_message(
@@ -291,7 +291,7 @@
 					)
 					holder.icon_state = "phazon12"
 				else
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(S)
 						S.forceMove(get_turf(holder))
 					else
@@ -310,7 +310,7 @@
 					qdel(used_atom)
 					holder.icon_state = "phazon13"
 				else
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(!S)
 						S = "phasic scanner module"
 					usr.visible_message(
@@ -320,7 +320,7 @@
 					holder.icon_state = "phazon11"
 			if(11)
 				if(diff==FORWARD)
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(!C)
 						C = "super capacitor"
 					usr.visible_message(
@@ -329,7 +329,7 @@
 					)
 					holder.icon_state = "phazon14"
 				else
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(C)
 						C.forceMove(get_turf(holder))
 					else
@@ -348,7 +348,7 @@
 					qdel(used_atom)
 					holder.icon_state = "phazon15"
 				else
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(!C)
 						C = "super capacitor"
 					usr.visible_message(
@@ -368,7 +368,7 @@
 						"[usr] removes the bluespace crystal from the [holder].", \
 						"You remove the bluespace crystal from the [holder]."
 					)
-					new /obj/item/weapon/stock_parts/subspace/crystal(get_turf(holder))
+					new /obj/item/stock_parts/subspace/crystal(get_turf(holder))
 					holder.icon_state = "phazon14"
 			if(8)
 				if(diff==FORWARD)

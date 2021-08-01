@@ -50,7 +50,7 @@
 	use_power_cost = 0.1
 
 
-	device_type = /obj/item/weapon/tool/pickaxe/diamonddrill/rig
+	device_type = /obj/item/tool/pickaxe/diamonddrill/rig
 
 /obj/item/rig_module/device/anomaly_scanner
 	name = "hardsuit anomaly scanner"
@@ -85,7 +85,7 @@
 	usable = 1
 	engage_string = "Configure RCD"
 
-	device_type = /obj/item/weapon/rcd/mounted
+	device_type = /obj/item/rcd/mounted
 
 /obj/item/rig_module/device/New()
 	..()
@@ -330,7 +330,7 @@
 	interface_name = "maneuvering jets"
 	interface_desc = "An inbuilt EVA maneuvering system that runs off the rig air supply."
 
-	var/obj/item/weapon/tank/jetpack/rig/jets
+	var/obj/item/tank/jetpack/rig/jets
 
 /obj/item/rig_module/maneuvering_jets/engage()
 	if(!..())

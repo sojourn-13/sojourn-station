@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/slimegun
+/obj/item/gun/energy/slimegun
 	name = "\"Ranch\" core stopper gun"
 	desc = "A gun suited for only dealing with slime outbreaks, do to many safety innovations to it the beam when hitting anything other then a slime will be harmless. \
 	On hitting a slime the beam will attack its core shutting it down for an instantaneous death. Do to its small design it only takes small cells."
@@ -9,8 +9,8 @@
 	price_tag = 500
 	charge_cost = 100
 	fire_sound = 'sound/weapons/Taser.ogg'
-	suitable_cell = /obj/item/weapon/cell/small
-	cell_type = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
+	cell_type = /obj/item/cell/small
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	can_dual = TRUE
 	projectile_type = /obj/item/projectile/slime_death

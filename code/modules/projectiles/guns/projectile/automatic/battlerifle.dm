@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/omnirifle
+/obj/item/gun/projectile/automatic/omnirifle
 	name = "\"Hustler\" heavy rifle"
 	desc = "A heavy, inexpensive battle rifle of dubious quality.\
 		 An inexpensive budget rifle, it is a stripped down copy of the M12 Omnirifle, it fires a variety of utility and specialized munitions. \
@@ -30,7 +30,7 @@
 	SEMI_AUTO_NODELAY
 	)
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/update_icon()
+/obj/item/gun/projectile/automatic/omnirifle/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -48,12 +48,12 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/Initialize()
+/obj/item/gun/projectile/automatic/omnirifle/Initialize()
 	. = ..()
 	update_icon()
 
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/standard
+/obj/item/gun/projectile/automatic/omnirifle/standard
 	name = "\"Omnirifle\""
 	desc = "A standard issue battle rifle issued to SolFed Marines, produced across the galaxy by state arsenals. \
 		 A weapon built for versatility and rugged reliability, it fires a variety of utility and specialized munitions. \
@@ -77,7 +77,7 @@
 		FULL_AUTO_400
 		)
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/scoped
+/obj/item/gun/projectile/automatic/omnirifle/scoped
 	name = "\"Longarm\" marksman rifle"
 	desc = "A heavy front line designated marksman rifle manufactured by H&S, also known as the M13A2 Special Purpose Rifle in its generic military form. \
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
@@ -103,7 +103,7 @@
 		BURST_2_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/fancy
+/obj/item/gun/projectile/automatic/omnirifle/fancy
 	name = "\"Osprey\" precision rifle"
 	desc = "Classic, elegant sporting rifle based on proven military technology. \
 		 A police model of the venerable M13A1 Special Purpose Rifle manufactured on Earth by Seinemetall Defense GmbH for both sportsmen and counter-terror agents, it fires a variety of utility and specialized munitions. \
@@ -121,7 +121,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine
 	name = "\"Boar\" heavy carbine"
 	desc = "A heavy second-line carbine manufactured by H&S, as well as number of state arsenals. Designed for close range encounters and support fire. \
 		 A rifle fashioned for cover fire and cramped environments, taking influence from the MK-12 Omnicarbine, chambered in .408 caliber. \
@@ -143,7 +143,7 @@
 		FULL_AUTO_600
 		)
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/rds
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds
 	name = "\"Warthog\" advanced carbine"
 	desc = "A heavy second-line carbine manufactured by H&S, as well as number of state arsenals. Designed for close range encounters and support fire. \
 		 A rifle fashioned for cover fire and cramped environments. Chambered in 10x50mm Omni. \
@@ -163,7 +163,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
 	name = "\"Solarian\" carbine"
 	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
 		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point."
@@ -183,9 +183,9 @@
 		BURST_3_ROUND
 		)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
+	sawn = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
 
-/obj/item/weapon/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
+/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
 	name = "sawn down \"Solarian\" carbine"
 	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
 		 It appears to have been converted at some point to chamber in .257, possibly having taken different rounds at some point. \

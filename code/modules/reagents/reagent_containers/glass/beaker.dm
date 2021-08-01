@@ -1,23 +1,23 @@
-/obj/item/weapon/reagent_containers/glass/beaker
+/obj/item/reagent_containers/glass/beaker
 	name = "beaker"
 	desc = "A beaker."
 	icon_state = "beaker"
 	item_state = "beaker"
 	filling_states = "-10;10;25;50;75;80;100"
 
-/obj/item/weapon/reagent_containers/glass/beaker/Initialize()
+/obj/item/reagent_containers/glass/beaker/Initialize()
 	. = ..()
 	desc += " Can hold up to [volume] units."
 
-/obj/item/weapon/reagent_containers/glass/beaker/pickup(mob/user)
+/obj/item/reagent_containers/glass/beaker/pickup(mob/user)
 	..()
 	playsound(src,'sound/items/Glass_Fragment_take.ogg',50,1)
 
-/obj/item/weapon/reagent_containers/glass/beaker/dropped(mob/user)
+/obj/item/reagent_containers/glass/beaker/dropped(mob/user)
 	..()
 	playsound(src,'sound/items/Glass_Fragment_drop.ogg',50,1)
 
-/obj/item/weapon/reagent_containers/glass/beaker/update_icon()
+/obj/item/reagent_containers/glass/beaker/update_icon()
 	cut_overlays()
 
 	if(has_lid())
@@ -33,7 +33,7 @@
 
 //// Subtypes ////
 
-/obj/item/weapon/reagent_containers/glass/beaker/large
+/obj/item/reagent_containers/glass/beaker/large
 	name = "large beaker"
 	desc = "A large beaker."
 	icon_state = "beakerlarge"
@@ -42,7 +42,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,25,30,60,100,120)
 
-/obj/item/weapon/reagent_containers/glass/beaker/noreact
+/obj/item/reagent_containers/glass/beaker/noreact
 	name = "cryostasis beaker"
 	desc = "A cryostasis beaker that allows for chemical storage without reactions."
 	icon_state = "beakernoreact"
@@ -51,7 +51,7 @@
 	amount_per_transfer_from_this = 10
 	reagent_flags = OPENCONTAINER | NO_REACT
 
-/obj/item/weapon/reagent_containers/glass/beaker/bluespace
+/obj/item/reagent_containers/glass/beaker/bluespace
 	name = "bluespace beaker"
 	desc = "A bluespace beaker, powered by experimental bluespace technology."
 	icon_state = "beakerbluespace"
@@ -61,12 +61,12 @@
 	possible_transfer_amounts = list(5,10,15,25,30,60,100,120,300)
 	lid_icon_state = "lid_beakerlarge"
 
-/obj/item/weapon/reagent_containers/glass/beaker/bluespace/New()
+/obj/item/reagent_containers/glass/beaker/bluespace/New()
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(1, get_turf(src))
 
-/obj/item/weapon/reagent_containers/glass/beaker/vial
+/obj/item/reagent_containers/glass/beaker/vial
 	name = "vial"
 	desc = "A small glass vial."
 	icon_state = "vial"
@@ -76,42 +76,42 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,25)
 
-/obj/item/weapon/reagent_containers/glass/beaker/vial/nanites
+/obj/item/reagent_containers/glass/beaker/vial/nanites
 	preloaded_reagents = list("nanites" = 30)
 
-/obj/item/weapon/reagent_containers/glass/beaker/vial/uncapnanites
+/obj/item/reagent_containers/glass/beaker/vial/uncapnanites
 	preloaded_reagents = list("uncap nanites" = 30)
 
-/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone
+/obj/item/reagent_containers/glass/beaker/cryoxadone
 	preloaded_reagents = list("cryoxadone" = 30)
 
-/obj/item/weapon/reagent_containers/glass/beaker/sulphuric
+/obj/item/reagent_containers/glass/beaker/sulphuric
 	preloaded_reagents = list("sacid" = 60)
 
-/obj/item/weapon/reagent_containers/glass/beaker/vial/vape
+/obj/item/reagent_containers/glass/beaker/vial/vape
 	name = "vape vial"
 	desc = "A small plastic vial."
 	icon_state = "vial_plastic"
 	matter = list(MATERIAL_PLASTIC = 1)
 
 
-/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/berry
+/obj/item/reagent_containers/glass/beaker/vial/vape/berry
 	name = "berry vape vial"
 	preloaded_reagents = list("nicotine" = 20, "berryjuice" = 10)
 
-/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/lemon
+/obj/item/reagent_containers/glass/beaker/vial/vape/lemon
 	name = "lemon vape vial"
 	preloaded_reagents = list("nicotine" = 20, "lemonjuice" = 10)
 
-/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/banana
+/obj/item/reagent_containers/glass/beaker/vial/vape/banana
 	name= "banana vape vial"
 	preloaded_reagents = list("nicotine" = 20, "banana" = 10)
 
-/obj/item/weapon/reagent_containers/glass/beaker/vial/vape/nicotine
+/obj/item/reagent_containers/glass/beaker/vial/vape/nicotine
 	name = "nicotine vape vial"
 	preloaded_reagents = list("nicotine" = 30)
 
-/obj/item/weapon/reagent_containers/glass/bucket
+/obj/item/reagent_containers/glass/bucket
 	desc = "It's a bucket."
 	name = "bucket"
 	icon = 'icons/obj/janitor.dmi'
@@ -124,21 +124,21 @@
 	volume = 200
 	unacidable = 0
 
-/obj/item/weapon/reagent_containers/glass/bucket/attackby(var/obj/D, mob/user as mob)
+/obj/item/reagent_containers/glass/bucket/attackby(var/obj/D, mob/user as mob)
 
 	if(is_proximity_sensor(D))
 		to_chat(user, "You add [D] to [src].")
 		qdel(D)
-		user.put_in_hands(new /obj/item/weapon/bucket_sensor)
+		user.put_in_hands(new /obj/item/bucket_sensor)
 		user.drop_from_inventory(src)
 		qdel(src)
 		return
-	else if(istype(D, /obj/item/weapon/mop))
+	else if(istype(D, /obj/item/mop))
 		return
 	else
 		return ..()
 
-/obj/item/weapon/reagent_containers/glass/bucket/update_icon()
+/obj/item/reagent_containers/glass/bucket/update_icon()
 	cut_overlays()
 	if(reagents.total_volume >= 1)
 		add_overlay("water_bucket")
@@ -146,7 +146,7 @@
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
 		add_overlay(lid)
 
-/obj/item/weapon/reagent_containers/glass/urn
+/obj/item/reagent_containers/glass/urn
 	name = "Urn"
 	desc = "A tall, rounded vase with a base, with a short stem, used for storing the ashes of a cremated person."
 	icon_state = "urn"

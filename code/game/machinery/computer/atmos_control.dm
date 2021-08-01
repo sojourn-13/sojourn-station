@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/atmoscontrol
+/obj/item/circuitboard/atmoscontrol
 	build_name = "central atmospherics computer"
 	build_path = /obj/machinery/computer/atmoscontrol
 
@@ -10,7 +10,7 @@
 	light_color = COLOR_LIGHTING_BLUE_MACHINERY
 	density = 1
 	anchored = 1.0
-	circuit = /obj/item/weapon/circuitboard/atmoscontrol
+	circuit = /obj/item/circuitboard/atmoscontrol
 	req_access = list(access_ce)
 	var/list/monitored_alarm_ids = null
 	var/datum/nano_module/atmos_control/atmos_control

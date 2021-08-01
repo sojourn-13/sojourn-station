@@ -12,7 +12,7 @@
 	melee_damage_lower = 2
 	melee_damage_upper = 3
 
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
 	eating_time = 1200 //Takes longer for small roaches to eat
 	probability_egg_laying = 0

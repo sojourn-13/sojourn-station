@@ -30,17 +30,17 @@
 	friendly_to_colony = TRUE
 
 	//Drops
-	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
 	var/cell_drop = null
 
 // For repairing damage to the synths.
-/mob/living/simple_animal/soteria_roomba/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/simple_animal/soteria_roomba/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		if(QUALITY_WELDING in T.tool_qualities)

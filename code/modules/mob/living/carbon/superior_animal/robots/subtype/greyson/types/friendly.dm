@@ -18,12 +18,12 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	density = 1
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/roomba/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/carbon/superior_animal/robot/greyson/roomba/allied/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		if(QUALITY_WELDING in T.tool_qualities)
@@ -58,12 +58,12 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	density = 0
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		if(QUALITY_WELDING in T.tool_qualities)
@@ -104,12 +104,12 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	friendly_to_colony = TRUE
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/weapon/tool))
+		if(istype(W, /obj/item/tool))
 			T = W
 
 		if(QUALITY_WELDING in T.tool_qualities)
@@ -173,4 +173,4 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	melee_damage_lower = 20 //Big slow things dont deal a lot do to bullet sponges
 	melee_damage_upper = 20
 	drop1 = /obj/item/stack/material/gold/random
-	drop2 = /obj/item/weapon/book/ritual/cruciform
+	drop2 = /obj/item/book/ritual/cruciform

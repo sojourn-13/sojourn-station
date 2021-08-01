@@ -13,7 +13,7 @@
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
 
-	circuit = /obj/item/weapon/circuitboard/matter_nanoforge
+	circuit = /obj/item/circuitboard/matter_nanoforge
 
 	var/list/stored_material = list()
 	var/obj/power_source
@@ -33,7 +33,7 @@
 	var/queue_max = 8
 
 	var/list/disk_list = list(
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforge
+	/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
 	)
 	var/list/design_list = list()
 	var/speed = 2
@@ -62,7 +62,7 @@
 
 /obj/machinery/matter_nanoforge/proc/find_files_by_disk(typepath)
 	var/list/files = list()
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/design/c = new typepath
+	var/obj/item/computer_hardware/hard_drive/portable/design/c = new typepath
 	for(var/f in c.designs)
 		var/datum/design/design_object = new f
 		design_object.AssembleDesignInfo()
@@ -477,7 +477,7 @@
 
 	//And if there's any remainder, we eject that as a shard
 	if (remainder)
-		new /obj/item/weapon/material/shard(drop_location(), MATERIAL_COMPRESSED_MATTER, _amount = remainder)
+		new /obj/item/material/shard(drop_location(), MATERIAL_COMPRESSED_MATTER, _amount = remainder)
 
 	//The stored material gets the amount (whole+remainder) subtracted
 	stored_material[MATERIAL_COMPRESSED_MATTER] -= amount
@@ -560,7 +560,7 @@
 	..()
 	var/mb_rating = 0
 	var/mb_amount = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
 		mb_rating += MB.rating
 		mb_amount++
 
@@ -568,14 +568,14 @@
 
 	var/man_rating = 0
 	var/man_amount = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
 		man_amount++
 	man_rating -= man_amount
 
 	var/las_rating = 0
 	var/las_amount = 0
-	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
 		las_rating += M.rating
 		las_amount++
 	las_rating -= las_amount

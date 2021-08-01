@@ -56,7 +56,7 @@
 	var/resting = 0
 	var/max_resting = INFINITY
 
-	var/list/valid_inspirations = list(/obj/item/weapon/oddity)
+	var/list/valid_inspirations = list(/obj/item/oddity)
 	var/list/desires = list()
 
 	var/positive_prob = 20
@@ -306,7 +306,7 @@
 	if(resting)
 		add_rest(D.type, 3 * multiplier)
 
-/datum/sanity/proc/onEat(obj/item/weapon/reagent_containers/food/snacks/snack, amount_eaten)
+/datum/sanity/proc/onEat(obj/item/reagent_containers/food/snacks/snack, amount_eaten)
 	changeLevel(snack.sanity_gain * amount_eaten / snack.bitesize)
 	if(snack.cooked && resting)
 		add_rest(snack.type, 20 * amount_eaten / snack.bitesize)
@@ -355,7 +355,7 @@
 		if(get_turf(M) in view(get_turf(owner)))
 			M.reg_break(owner)
 
-	/*for(var/obj/item/weapon/implant/carrion_spider/mindboil/S in GLOB.active_mindboil_spiders)
+	/*for(var/obj/item/implant/carrion_spider/mindboil/S in GLOB.active_mindboil_spiders)
 		if(get_turf(S) in view(get_turf(owner)))
 			S.reg_break(owner)*/
 

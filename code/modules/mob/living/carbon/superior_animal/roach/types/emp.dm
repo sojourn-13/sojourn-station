@@ -12,7 +12,7 @@
 	melee_damage_upper = 15 //Rare
 
 	mob_size = MOB_MEDIUM
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
 	knockdown_odds = 1 //its affect shouldnt be stunlocks like this
 
 /mob/living/carbon/superior_animal/roach/elektromagnetisch/UnarmedAttack(var/atom/A, var/proximity)

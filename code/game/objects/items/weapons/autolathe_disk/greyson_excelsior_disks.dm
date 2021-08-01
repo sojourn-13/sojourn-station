@@ -1,7 +1,7 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // To make a design unprotect use -1
 // greyson positronic
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar
+/obj/item/computer_hardware/hard_drive/portable/design/onestar
 	disk_name = "Greyson Positronics Tool Pack"
 	icon_state = "onestar"
 	license = 5
@@ -21,7 +21,7 @@
 		/datum/design/autolathe/part/greyson/ai = 3,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/stockparts
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts
 	disk_name = "Greyson Positronics Stock Parts Pack"
 	icon_state = "onestar"
 	license = 8
@@ -33,7 +33,7 @@
 		/datum/design/autolathe/greyson/manipulator,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog
 	disk_name = "Greyson Positronics - Cog"
 	icon_state = "onestar"
 	license = 6
@@ -42,7 +42,7 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/spring
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/spring
 	disk_name = "Greyson Positronics - Spring"
 	icon_state = "onestar"
 	license = 10
@@ -54,7 +54,7 @@
 		/datum/design/autolathe/ammo/pistol_lethal = 2,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/rivet
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/rivet
 	disk_name = "Greyson Positronics - Rivet"
 	icon_state = "onestar"
 	license = 10
@@ -66,7 +66,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/nail_gun
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/nail_gun
 	disk_name = "Greyson Positronics - Nail Gun"
 	icon_state = "onestar"
 	license = 16
@@ -82,7 +82,7 @@
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/scaffold
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/scaffold
 	disk_name = "Greyson Positronics - Scaffold"
 	icon_state = "onestar"
 	license = 6
@@ -93,7 +93,7 @@
 	)
 
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/armor
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/armor
 	disk_name = "Greyson Positronics - Ablative Vest"
 	icon_state = "onestar"
 	license = 6 //3 sets
@@ -105,7 +105,7 @@
 	)
 
 // Excelsior We also replace "name" for spawning reasons
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior
+/obj/item/computer_hardware/hard_drive/portable/design/excelsior
 	name = "design disk Means of Production"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"This struggle must be organized, according to \"all the rules of the art\", by people who are professionally engaged in revolutionary activity.\""
@@ -172,7 +172,7 @@
 		/datum/design/autolathe/excelsior/manipulator
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_weapons
+/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons
 	name = "design disk Means of Revolution"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\""
@@ -208,7 +208,7 @@
 		/datum/design/autolathe/clothing/excelsior_armor,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_parts
+/obj/item/computer_hardware/hard_drive/portable/design/ex_parts
 	name = "design disk Stocking Revolution"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"Everything can be a part of the revolution!\""
@@ -232,7 +232,7 @@
 	)
 
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_cells
+/obj/item/computer_hardware/hard_drive/portable/design/ex_cells
 	name = "design disk Means of Power"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The power of the people!\""
@@ -245,7 +245,7 @@
 		/datum/design/autolathe/cell/small/excelsior
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_drozd
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd
 	name = "design disk .35 Drozd SMG"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"Nobody is to be blamed for being born a slave; but a slave who not only eschews a striving for freedom but justifies and eulogies his slavery - such a slave is a lickspittle and a boor, who arouses a legitimate feeling of indignation, contempt, and loathing..\""
@@ -258,7 +258,7 @@
 		/datum/design/autolathe/ammo/smg_rubber
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_makarov
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_makarov
 	name = "design disk Makarov"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The Equalizer that fits in your pocket.\""
@@ -271,7 +271,7 @@
 		/datum/design/autolathe/ammo/hpistol_rubber,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez
 	name = "design disk Vintorez"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The gun of long revolution.\""
@@ -284,7 +284,7 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_boltgun
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_boltgun
 	name = "design disk Kardashev-Mosin"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The gun of endless revolution.\""
@@ -297,7 +297,7 @@
 		/datum/design/autolathe/ammo/rifle_ammobox_small,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ak
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak
 	name = "design disk Kalashnikov"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The gun of modern revolution.\""
@@ -311,7 +311,7 @@
 		/datum/design/autolathe/ammo/rifle_ammobox,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer
 	name = "design disk Reclaimer"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The gun of clean revolution.\""
@@ -322,7 +322,7 @@
 		/datum/design/autolathe/gun/reclaimer
 		)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh
 	name = "design disk Shpagin"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"The hammer to break the chains.\""

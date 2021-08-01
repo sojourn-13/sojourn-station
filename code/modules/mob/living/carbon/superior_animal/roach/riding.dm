@@ -6,7 +6,7 @@
 		buckled_mob.forceMove(get_turf(src))
 		buckled_mob.pixel_x = pixel_x
 
-/mob/living/carbon/superior_animal/roach/proc/try_tame(var/mob/living/carbon/user, var/obj/item/weapon/reagent_containers/food/snacks/grown/thefood)
+/mob/living/carbon/superior_animal/roach/proc/try_tame(var/mob/living/carbon/user, var/obj/item/reagent_containers/food/snacks/grown/thefood)
 	if(!istype(thefood) || thefood.plantname != "ambrosia")
 		return FALSE
 	if(prob(min(40, 100 - user.stats.getStat(STAT_COG)*2)))

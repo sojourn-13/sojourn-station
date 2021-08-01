@@ -16,7 +16,7 @@
 
 /datum/design/autolathe/misc/extinguisher
 	name = "extinguisher"
-	build_path = /obj/item/weapon/extinguisher
+	build_path = /obj/item/extinguisher
 
 /datum/design/autolathe/misc/radio_headset
 	name = "radio headset"
@@ -32,11 +32,11 @@
 
 /datum/design/autolathe/misc/ashtray
 	name = "glass ashtray"
-	build_path = /obj/item/weapon/material/ashtray
+	build_path = /obj/item/material/ashtray
 
 /datum/design/autolathe/misc/cane
 	name = "cane"
-	build_path = /obj/item/weapon/cane
+	build_path = /obj/item/cane
 
 /datum/design/autolathe/misc/bodybag
 	name = "body bag"
@@ -44,28 +44,28 @@
 
 /datum/design/autolathe/misc/tube
 	name = "light tube"
-	build_path = /obj/item/weapon/light/tube
+	build_path = /obj/item/light/tube
 
 /datum/design/autolathe/misc/tube_large
 	name = "large light tube"
-	build_path = /obj/item/weapon/light/tube/large
+	build_path = /obj/item/light/tube/large
 
 /datum/design/autolathe/misc/tube_powersaver
 	name = "Artificer \"Power Cord\" light tube"
-	build_path = /obj/item/weapon/light/tube/power_saver
+	build_path = /obj/item/light/tube/power_saver
 
 /datum/design/autolathe/misc/bulb
 	name = "light bulb"
-	build_path = /obj/item/weapon/light/bulb
+	build_path = /obj/item/light/bulb
 
 /datum/design/autolathe/misc/bulb_powersaver
 	name = "Artificer \"Power Cord\" light bulb"
-	build_path = /obj/item/weapon/light/bulb/power_saver
+	build_path = /obj/item/light/bulb/power_saver
 
 /datum/design/autolathe/misc/bulb_spot
 	name = "Artificer \"Seer\" light bulb"
-	build_path = /obj/item/weapon/light/bulb/spotlight
+	build_path = /obj/item/light/bulb/spotlight
 
 /datum/design/autolathe/misc/trashbag
 	name = "trash bag"
-	build_path = /obj/item/weapon/storage/bag/trash
+	build_path = /obj/item/storage/bag/trash

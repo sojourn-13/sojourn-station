@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver
+/obj/item/gun/projectile/revolver
 	name = "\"Minotaur\" magnum revolver"
 	desc = "The \"H&S\" \"Minotaur\" is a revolver of choice when you absolutely, positively need to make a fist-sized hole in someone, but can't afford to do it in style. Uses .40 Magnum bullets... always wanting more."
 	icon = 'icons/obj/guns/projectile/revolver.dmi'
@@ -26,7 +26,7 @@
 	var/drawChargeMeter = TRUE
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 
-/obj/item/weapon/gun/projectile/revolver/verb/spin_cylinder()
+/obj/item/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin revolver"
 	set desc = "Fun when you're bored out of your skull."
 	set category = "Object"
@@ -42,17 +42,17 @@
 	spawn(10)
 		icon_state = "[initial(icon_state)]"
 
-/obj/item/weapon/gun/projectile/revolver/consume_next_projectile()
+/obj/item/gun/projectile/revolver/consume_next_projectile()
 	if(chamber_offset)
 		chamber_offset--
 		return
 	return ..()
 
-/obj/item/weapon/gun/projectile/revolver/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/revolver/load_ammo(var/obj/item/A, mob/user)
 	chamber_offset = 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/revolver/proc/update_charge()
+/obj/item/gun/projectile/revolver/proc/update_charge()
 	if(!drawChargeMeter)
 		return
 	cut_overlays()
@@ -62,10 +62,10 @@
 		add_overlay("[icon_state]_on")
 
 
-/obj/item/weapon/gun/projectile/revolver/update_icon()
+/obj/item/gun/projectile/revolver/update_icon()
 	update_charge()
 
-/obj/item/weapon/gun/projectile/revolver/longboi
+/obj/item/gun/projectile/revolver/longboi
 	name = "\"Long\" revolver"
 	desc = "A novelty revolver made by the Lonestar with a stupidly long barrel favored by those with less sense than style, its extended barrel gives it incredible recoil control but loses stopping power and penetration. Uses .50 Kurtz."
 	icon = 'icons/obj/guns/projectile/Long_Revolver.dmi'

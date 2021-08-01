@@ -11,7 +11,7 @@
 	nutri_cost = 25//low cost
 	blood_cost = 25//low cost
 
-/datum/ritual/cruciform/crusader/brotherhood/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/crusader/brotherhood/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/datum/core_module/cruciform/neotheologyhud/hud_module = C.get_module(/datum/core_module/cruciform/neotheologyhud)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
@@ -36,7 +36,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/crusader/battle_call/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/crusader/battle_call/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/count = 0
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
@@ -45,7 +45,7 @@
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
 	for(var/mob/living/carbon/human/brother in view(user))
-		if(brother.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+		if(brother.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			count += 2
 
 	user.stats.changeStat(STAT_TGH, count)
@@ -72,7 +72,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/crusader/flash/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/crusader/flash/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
 			user.nutrition -= nutri_cost
@@ -87,7 +87,7 @@
 	playsound(user.loc, 'sound/effects/cascade.ogg', 65, 1)
 	log_and_message_admins("performed a searing revelation litany")
 	for(var/mob/living/carbon/human/victim in view(user))
-		if(!victim.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+		if(!victim.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			if(prob(100 - victim.stats.getStat(STAT_VIG)))
 				to_chat(victim, SPAN_WARNING("You feel that your knees bends!"))
 				victim.Weaken(5)

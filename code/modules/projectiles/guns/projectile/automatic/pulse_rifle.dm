@@ -1,6 +1,6 @@
 //It's a good day to die
 
-/obj/item/weapon/gun/projectile/automatic/pulse_rifle
+/obj/item/gun/projectile/automatic/pulse_rifle
 	name = "Pulse Rifle"
 	desc = "A pulse-action air-cooled, caseless, automatic assault rifle made by an unknown manufacturer. This weapon is very rare, but deadly efficient. \
 		It's used by elite mercenaries, assassins, or bald marines. Makes you feel like a space marine when you hold it."
@@ -31,7 +31,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/dallas/update_icon()
+/obj/item/gun/projectile/automatic/dallas/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"

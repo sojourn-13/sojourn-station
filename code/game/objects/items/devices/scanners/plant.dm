@@ -10,8 +10,8 @@
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 
 	var/global/list/valid_targets = list(
-		/obj/item/weapon/reagent_containers/food/snacks/grown,
-		/obj/item/weapon/grown,
+		/obj/item/reagent_containers/food/snacks/grown,
+		/obj/item/grown,
 		/obj/machinery/portable_atmospherics/hydroponics,
 		/obj/machinery/beehive,
 		/obj/item/seeds
@@ -54,17 +54,17 @@
 			dat += "The hive is smoked."
 		return jointext(dat, "<br>")
 
-	else if(istype(target,/obj/item/weapon/reagent_containers/food/snacks/grown))
+	else if(istype(target,/obj/item/reagent_containers/food/snacks/grown))
 
-		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = target
+		var/obj/item/reagent_containers/food/snacks/grown/G = target
 		grown_seed = plant_controller.seeds[G.plantname]
 		loaded_seed = grown_seed
 		grown_reagents = G.reagents
 		loaded_reagents = grown_reagents
 
-	else if(istype(target,/obj/item/weapon/grown))
+	else if(istype(target,/obj/item/grown))
 
-		var/obj/item/weapon/grown/G = target
+		var/obj/item/grown/G = target
 		grown_seed = plant_controller.seeds[G.plantname]
 		loaded_seed = grown_seed
 		grown_reagents = G.reagents
@@ -219,7 +219,7 @@
 	return JOINTEXT(dat)
 
 // A special paper that we can scan with the science tool
-/obj/item/weapon/paper/plant_report
+/obj/item/paper/plant_report
 	var/datum/seed/scanned_seed
 	var/datum/reagents/scanned_reagents
 
@@ -227,7 +227,7 @@
 	if(!scan_data)
 		to_chat(user, "There is no scan data to print.")
 		return
-	var/obj/item/weapon/paper/plant_report/P = new(get_turf(src), scan_data, "paper - [scan_title]")
+	var/obj/item/paper/plant_report/P = new(get_turf(src), scan_data, "paper - [scan_title]")
 	P.scanned_seed = src.loaded_seed
 	P.scanned_reagents = src.loaded_reagents
 	user.put_in_hands(P)

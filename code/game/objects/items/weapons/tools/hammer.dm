@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/hammer
+/obj/item/tool/hammer
 	name = "hammer"
 	desc = "Used for applying blunt force to a surface."
 	icon_state = "hammer"
@@ -12,7 +12,7 @@
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
 	tool_qualities = list(QUALITY_HAMMERING = 35, QUALITY_PRYING = 10)
 
-/obj/item/weapon/tool/hammer/powered_hammer
+/obj/item/tool/hammer/powered_hammer
 	name = "powered sledgehammer"
 	desc = "Used for applying excessive blunt force to a surface."
 	icon_state = "powered_hammer"
@@ -29,10 +29,10 @@
 	armor_penetration = ARMOR_PEN_EXTREME
 	degradation = 0.7
 	use_power_cost = 2
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 	max_upgrades = 4
 
-/obj/item/weapon/tool/hammer/powered_hammer/turn_on(mob/user)
+/obj/item/tool/hammer/powered_hammer/turn_on(mob/user)
 
 	if (cell && cell.charge > 0)
 		item_state = "[initial(item_state)]_on"
@@ -43,13 +43,13 @@
 		item_state = initial(item_state)
 		to_chat(user, SPAN_WARNING("[src] has no power!"))
 
-/obj/item/weapon/tool/hammer/powered_hammer/turn_off(mob/user)
+/obj/item/tool/hammer/powered_hammer/turn_off(mob/user)
 	item_state = initial(item_state)
 	playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
 	to_chat(user, SPAN_NOTICE("You switch [src] off."))
 	..()
 
-/obj/item/weapon/tool/hammer/powered_hammer/onestar_hammer
+/obj/item/tool/hammer/powered_hammer/onestar_hammer
 	name = "Greyson sledgehammer"
 	desc = "Used for applying immeasurable blunt force to anything in your way."
 	icon_state = "onehammer"
@@ -66,7 +66,7 @@
 	workspeed = 1.5
 	max_upgrades = 2
 
-/obj/item/weapon/tool/hammer/foremansledge
+/obj/item/tool/hammer/foremansledge
 	name = "foreman's sledgehammer"
 	desc = "Once a tool used to nail rivets, now a tool used to crush skulls. The signature weapon of the prospector's foreman."
 	icon = 'icons/obj/weapons.dmi'
@@ -86,7 +86,7 @@
 	tool_qualities = list(QUALITY_HAMMERING = 45)
 	price_tag = 2000
 
-/obj/item/weapon/tool/hammer/homewrecker
+/obj/item/tool/hammer/homewrecker
 	name = "homewrecker"
 	desc = "A large steel chunk welded to a long handle. Extremely heavy."
 	icon = 'icons/obj/weapons.dmi'
@@ -101,7 +101,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_upgrades = 5
 
-/obj/item/weapon/tool/hammer/mace
+/obj/item/tool/hammer/mace
 	name = "mace"
 	desc = "Used for applying blunt force trauma to a person's rib cage."
 	icon = 'icons/obj/weapons.dmi'
@@ -114,7 +114,7 @@
 
 	tool_qualities = list(QUALITY_HAMMERING = 20)
 
-/obj/item/weapon/tool/hammer/mace/makeshift
+/obj/item/tool/hammer/mace/makeshift
 	name = "makeshift mace"
 	desc = "Some metal attached to the end of a stick, for applying blunt force trauma to a roach."
 	icon_state = "ghetto_mace"
@@ -126,7 +126,7 @@
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
-/obj/item/weapon/tool/hammer/charge
+/obj/item/tool/hammer/charge
 	name = "rocket hammer"
 	desc = "After many issues with scientists trying to hammer a nail, one bright individual wondered what could be achieved by attaching a stellar-grade ship engine to the back."
 	icon = 'icons/obj/weapons.dmi'
@@ -140,12 +140,12 @@
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)
 	toggleable = TRUE
 	slot_flags = SLOT_BELT|SLOT_BACK
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 	use_power_cost = 15
 	var/datum/effect/effect/system/trail/T
 	var/last_launch
 
-/obj/item/weapon/tool/hammer/charge/turn_on(mob/user)
+/obj/item/tool/hammer/charge/turn_on(mob/user)
 
 	if (cell && cell.charge > 0)
 		item_state = "[initial(item_state)]-on"
@@ -159,7 +159,7 @@
 		item_state = initial(item_state)
 		to_chat(user, SPAN_WARNING("[src] has no power!"))
 
-/obj/item/weapon/tool/hammer/charge/turn_off(mob/user)
+/obj/item/tool/hammer/charge/turn_off(mob/user)
 	item_state = initial(item_state)
 	icon_state = initial(icon_state)
 	if(wielded)
@@ -168,16 +168,16 @@
 	to_chat(user, SPAN_NOTICE("You switch [src] off."))
 	..()
 
-/obj/item/weapon/tool/hammer/charge/New()
+/obj/item/tool/hammer/charge/New()
 	..()
 	T = new /datum/effect/effect/system/trail/fire()
 	T.set_up(src)
 
-/obj/item/weapon/tool/hammer/charge/Destroy()
+/obj/item/tool/hammer/charge/Destroy()
 	QDEL_NULL(T)
 	return ..()
 
-/obj/item/weapon/tool/hammer/charge/afterattack(atom/target, mob/user, proximity_flag, params)
+/obj/item/tool/hammer/charge/afterattack(atom/target, mob/user, proximity_flag, params)
 	if(!switched_on || world.time < last_launch + 3 SECONDS)
 		return
 	var/cost = use_power_cost*get_dist(target, user)

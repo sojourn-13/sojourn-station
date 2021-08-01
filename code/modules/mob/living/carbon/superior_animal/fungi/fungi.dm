@@ -20,7 +20,7 @@
 	speak_chance = 5
 	emote_see = list("emits a low pleasent warble.","bounces.","hops back and forth.")
 	meat_amount = 2
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/fungi
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/fungi
 	mob_size = MOB_TINY
 	randpixel = 0
 	can_burrow = FALSE

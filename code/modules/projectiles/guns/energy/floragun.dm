@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/floragun
+/obj/item/gun/energy/floragun
 	name = "Prototype: floral somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells."
 	icon = 'icons/obj/guns/energy/flora.dmi'
@@ -18,11 +18,11 @@
 		list(mode_name="induce evolution", projectile_type=/obj/item/projectile/energy/floraevolve, modifystate="floraevo", item_modifystate="evo", icon="destroy"),
 		)
 
-/obj/item/weapon/gun/energy/floragun/si
+/obj/item/gun/energy/floragun/si
 	name = "SI Prototype: floral somatoray"
 	icon = 'icons/obj/guns/energy/si_flora.dmi'
 
-/obj/item/weapon/gun/energy/floragun/afterattack(obj/target, mob/user, adjacent_flag)
+/obj/item/gun/energy/floragun/afterattack(obj/target, mob/user, adjacent_flag)
 	//allow shooting into adjacent hydrotrays regardless of intent
 	if(adjacent_flag && istype(target,/obj/machinery/portable_atmospherics/hydroponics))
 		user.visible_message(SPAN_DANGER("\The [user] fires \the [src] into \the [target]!"))

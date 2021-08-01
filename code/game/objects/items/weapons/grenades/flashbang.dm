@@ -1,4 +1,4 @@
-/obj/item/weapon/grenade/flashbang
+/obj/item/grenade/flashbang
 	name = "HS FBG \"Serra\""
 	desc = "A \"Holland & Sullivan\" flashbang grenade. If in any doubt - use it."
 	icon_state = "flashbang"
@@ -6,7 +6,7 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)
 	var/banglet = 0
 
-/obj/item/weapon/grenade/flashbang/prime()
+/obj/item/grenade/flashbang/prime()
 	..()
 	for(var/obj/structure/closet/L in hear(7, get_turf(src)))
 		if(locate(/mob/living/carbon/, L))
@@ -104,7 +104,7 @@
 	M.stats.addTempStat(STAT_MEC, stat_def, 10 SECONDS, "flashbang")
 	M.update_icons()
 
-/obj/item/weapon/grenade/flashbang/nt
+/obj/item/grenade/flashbang/nt
 	name = "NT FBG \"Holy Light\""
 	desc = "An old \"Absolute\" flashbang grenade, modified to spread the light of god."
 	icon_state = "flashbang_nt"

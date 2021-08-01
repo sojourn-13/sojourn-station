@@ -28,7 +28,7 @@
 /datum/design/research/item/medical/autopsy_scanner
 	name = "Autopsy Scanner"
 	desc = "A device used to scan a corpses' wounds for identification of causes of death."
-	build_path = /obj/item/weapon/autopsy_scanner
+	build_path = /obj/item/autopsy_scanner
 
 /datum/design/research/item/medical/robot_scanner
 	name = "Robot Analyzer"
@@ -83,12 +83,12 @@
 /datum/design/research/item/medical/blue
 	name = "Portable Freezer"
 	desc = "A blue-colored, compact cryo box for holding organs for safe transportation while preserving their integrity."
-	build_path = /obj/item/weapon/storage/freezer
+	build_path = /obj/item/storage/freezer
 
 /datum/design/research/item/medical/red
 	name = "Organ Freezer"
 	desc = "A red-colored, compact cryo box for holding organs for safe transportation preserving their integrity. This one has expanded capacity."
-	build_path = /obj/item/weapon/storage/freezer/medical
+	build_path = /obj/item/storage/freezer/medical
 
 /datum/design/research/item/beaker
 	name_category = "beaker prototype"
@@ -97,64 +97,64 @@
 /datum/design/research/item/beaker/noreact
 	name = "Cryostasis Beaker"
 	desc = "A small beaker imprinted with cryostasis technology that allows for chemical storage without reactions. Can hold up to 50 units."
-	build_path = /obj/item/weapon/reagent_containers/glass/beaker/noreact
+	build_path = /obj/item/reagent_containers/glass/beaker/noreact
 
 /datum/design/research/item/beaker/bluespace
 	name = "Bluespace beaker"
 	desc = "A bluespace beaker, powered by experimental bluespace technology and Element Cuban combined with Compound Pete. Can hold up to 300 units."
-	build_path = /obj/item/weapon/reagent_containers/glass/beaker/bluespace
+	build_path = /obj/item/reagent_containers/glass/beaker/bluespace
 
 /datum/design/research/item/beaker/smoll
 	name = "Glass beaker"
-	build_path = /obj/item/weapon/reagent_containers/glass/beaker
+	build_path = /obj/item/reagent_containers/glass/beaker
 
 /datum/design/research/item/beaker/big
 	name = "Large glass beaker"
-	build_path = /obj/item/weapon/reagent_containers/glass/beaker/large
+	build_path = /obj/item/reagent_containers/glass/beaker/large
 
 
 //Surgery tools
 /datum/design/research/item/medical/medimplant_sci
 	name = "Soteria Medical Omnitool"
 	desc = "An all-in-one smart medical tool implant based on the legendary Greyson Positronic model."
-	build_path = /obj/item/weapon/tool/medmultitool/medimplant/sci
+	build_path = /obj/item/tool/medmultitool/medimplant/sci
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 3, MATERIAL_SILVER = 5)
 	category = CAT_TOOLS
 
 /datum/design/research/item/scalpel_laser
 	name = "Laser Scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly searing bleeding cuts through laser cauterization."
-	build_path = /obj/item/weapon/tool/scalpel/laser
+	build_path = /obj/item/tool/scalpel/laser
 	category = CAT_TOOLS
 
 /datum/design/research/item/bonesetter_adv
 	name = "Bone Clamp Setter"
 	desc = "An advanced bone clamping tool, allows for more precise settling of bones with less wrist force required."
-	build_path = /obj/item/weapon/tool/bonesetter/adv
+	build_path = /obj/item/tool/bonesetter/adv
 	category = CAT_TOOLS
 
 /datum/design/research/item/cautery_adv
 	name = "High Power Cautery"
 	desc = "A cautery with self-regulating heat transfer capabilities, allows for quicker and more precise cauterization of surgical incisions."
-	build_path = /obj/item/weapon/tool/cautery/adv
+	build_path = /obj/item/tool/cautery/adv
 	category = CAT_TOOLS
 
 /datum/design/research/item/hemostat_adv
 	name = "Precise Hemostat"
 	desc = "An advanced hemostat with better vein clamping strength and an adaptive tip tuned to also allow easier extraction of shrapnel, organs, and implants."
-	build_path = /obj/item/weapon/tool/hemostat/adv
+	build_path = /obj/item/tool/hemostat/adv
 	category = CAT_TOOLS
 
 /datum/design/research/item/retractor_adv
 	name = "Extended Retractor"
 	desc = "Retracts surgical incisions with greater precision and speed than normal."
-	build_path = /obj/item/weapon/tool/retractor/adv
+	build_path = /obj/item/tool/retractor/adv
 	category = CAT_TOOLS
 
 /datum/design/research/item/medsaw_circular
 	name = "Medical Circular Saw"
 	desc = "For clean bone cutting, but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
-	build_path = /obj/item/weapon/tool/saw/circular/medical
+	build_path = /obj/item/tool/saw/circular/medical
 	category = CAT_TOOLS
 
 /datum/design/research/item/medical/nanopaste
@@ -166,7 +166,7 @@
 /datum/design/research/item/bonegel
 	name = "Bone Gel"
 	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
-	build_path = /obj/item/weapon/tool/tape_roll/bonegel
+	build_path = /obj/item/tool/tape_roll/bonegel
 	materials = list(MATERIAL_PLASTIC = 10)
 	category = CAT_TOOLS
 
