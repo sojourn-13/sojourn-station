@@ -6,11 +6,11 @@
 	y_offset = 10
 
 	var/list/acceptable_items = list(
-	/obj/item/weapon/implant/core_implant/cruciform,
-	/obj/item/weapon/implant/core_implant/cruciform/tessellate,
-	/obj/item/weapon/implant/core_implant/cruciform/lemniscate,
-	/obj/item/weapon/implant/core_implant/cruciform/monomial,
-	/obj/item/weapon/implant/core_implant/cruciform/divisor
+	/obj/item/implant/core_implant/cruciform,
+	/obj/item/implant/core_implant/cruciform/tessellate,
+	/obj/item/implant/core_implant/cruciform/lemniscate,
+	/obj/item/implant/core_implant/cruciform/monomial,
+	/obj/item/implant/core_implant/cruciform/divisor
 	)
 	var/list/available_slots = list()
 

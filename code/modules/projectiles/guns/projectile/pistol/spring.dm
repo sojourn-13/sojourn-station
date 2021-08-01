@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/spring
+/obj/item/gun/projectile/spring
 	name = "Greyson Positronic \"Spring\" pistol"
 	desc = "GP \"Spring\" pistol, lost tech of a high power pistol using only .35 rounds. "
 	icon = 'icons/obj/guns/projectile/spring.dmi'
@@ -22,7 +22,7 @@
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/spring/update_icon()
+/obj/item/gun/projectile/spring/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

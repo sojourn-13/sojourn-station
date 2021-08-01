@@ -3,7 +3,7 @@
 	desc = "It produces items using metal and glass."
 	icon = 'icons/obj/machines/excelsior/autolathe.dmi'
 	icon_state = "stanok"
-	circuit = /obj/item/weapon/circuitboard/excelsiorautolathe
+	circuit = /obj/item/circuitboard/excelsiorautolathe
 
 	have_recycling = TRUE
 	build_type = AUTOLATHE | BIOPRINTER
@@ -13,7 +13,7 @@
 
 /obj/machinery/autolathe/excelsior/Initialize()
 	. = ..()
-	container = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	container = new /obj/item/reagent_containers/glass/beaker/large(src)
 
 /obj/machinery/autolathe/excelsior/update_icon()
 	..()
@@ -39,7 +39,7 @@
 	idle_power_usage = 10
 	active_power_usage = 60
 	use_power = TRUE
-	circuit = /obj/item/weapon/circuitboard/excelsior_boombox
+	circuit = /obj/item/circuitboard/excelsior_boombox
 	var/active = FALSE
 	var/update_time = 0 // Made so callbacks can't be spamed
 

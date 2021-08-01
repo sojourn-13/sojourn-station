@@ -1,4 +1,4 @@
-/obj/item/weapon/implant/carrion_spider/explosive
+/obj/item/implant/carrion_spider/explosive
 	name = "explosive spider"
 	icon_state = "spiderling_explosive"
 	spider_price = 40
@@ -8,7 +8,7 @@
 	var/flash_range = 6
 	var/det_time = 2 SECONDS
 
-/obj/item/weapon/implant/carrion_spider/explosive/activate()
+/obj/item/implant/carrion_spider/explosive/activate()
 	..()
 	if(wearer)
 		src.uninstall()
@@ -20,7 +20,7 @@
 	spawn(det_time)
 		src?.prime()
 
-/obj/item/weapon/implant/carrion_spider/explosive/proc/prime()
+/obj/item/implant/carrion_spider/explosive/proc/prime()
 	var/turf/O = get_turf(src)
 	if(!O) return
 
@@ -28,6 +28,6 @@
 
 	die()
 
-/obj/item/weapon/implant/carrion_spider/explosive/proc/on_explosion(O)
+/obj/item/implant/carrion_spider/explosive/proc/on_explosion(O)
 	visible_message(SPAN_DANGER("[src] explodes!"))
 	explosion(get_turf(src), devastation_range, heavy_range, weak_range, flash_range)

@@ -71,9 +71,9 @@
 /obj/structure/safe/floor{
 	contents = newlist(/obj/random/credits/c1000)
 	},
-/obj/item/weapon/tool/crowbar/onestar,
-/obj/item/weapon/gun/energy/captain,
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/onestar/cog,
+/obj/item/tool/crowbar/onestar,
+/obj/item/gun/energy/captain,
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "s" = (

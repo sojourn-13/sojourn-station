@@ -27,9 +27,9 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee = 35,
+		bullet = 35,
+		energy = 35,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -150,7 +150,7 @@
 	icon_state = "botanist"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 25, bio = 100, rad = 80)
+	armor = list(melee = 30, bullet = 30, energy = 25, bomb = 20, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/botanist/verb/toggle_style()
@@ -266,16 +266,16 @@
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 40, bullet = 40, energy = 35, bomb = 50, bio = 100, rad = 100)
 	max_upgrades = 2
-	extra_allowed = list(/obj/item/weapon/extinguisher,
-						 /obj/item/weapon/tool,
-						 /obj/item/weapon/tool_upgrade,
+	extra_allowed = list(/obj/item/extinguisher,
+						 /obj/item/tool,
+						 /obj/item/tool_upgrade,
 						 /obj/item/stack/cable_coil,
 						 /obj/item/device/t_scanner,
 						 /obj/item/device/scanner/gas,
 						 /obj/item/taperoll/engineering,
-						 /obj/item/weapon/storage/toolbox)
+						 /obj/item/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/soteriasuit
@@ -286,15 +286,15 @@
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	max_upgrades = 2
-	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 30, bio = 50, rad = 50)
-	extra_allowed = list(/obj/item/weapon/extinguisher,
-						 /obj/item/weapon/tool,
-						 /obj/item/weapon/tool_upgrade,
+	armor = list(melee = 35, bullet = 25, energy = 25, bomb = 30, bio = 50, rad = 50)
+	extra_allowed = list(/obj/item/extinguisher,
+						 /obj/item/tool,
+						 /obj/item/tool_upgrade,
 						 /obj/item/stack/cable_coil,
 						 /obj/item/device/t_scanner,
 						 /obj/item/device/scanner/gas,
 						 /obj/item/taperoll/engineering,
-						 /obj/item/weapon/storage/toolbox)
+						 /obj/item/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_STEEL = 40)
 
@@ -403,10 +403,10 @@
 	max_upgrades = 2
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor = list(
-		melee = 35,
+		melee = 40,
 		bullet = 35,
-		energy = 35,
-		bomb = 25,
+		energy = 40,
+		bomb = 30,
 		bio = 0,
 		rad = 0
 	)
@@ -499,7 +499,7 @@
 	icon_state = "platecarrier"
 	item_state = "platecarrier"
 	blood_overlay_type = "armor"
-	armor = list(melee = 35, bullet = 45, energy = 15, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/full
 	name = "full body plate carrier"
@@ -540,14 +540,14 @@
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman liverly and has a stain resistant coating."
 	icon_state = "platecarrier_corpsman"
 	item_state = "platecarrier_corpsman"
-	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 10, bio = 20, rad = 0)
+	armor = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman/full
 	name = "Corpsman full body plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman liverly and has a stain resistant coating as well as additional shoulderpads and kneepads for added protection."
 	icon_state = "platecarrier_corpsman_fullbody"
 	item_state = "platecarrier_corpsman_fullbody"
-	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
+	armor = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/platecarrier/green
@@ -583,7 +583,7 @@
 	item_state = "platecarrier_ih"
 	blood_overlay_type = "armor"
 	slowdown = 0.15
-	armor = list(melee = 40, bullet = 50, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/flackvest
 	name = "flak vest"
@@ -821,11 +821,11 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	icon_state = "hm_woodvest"
 	item_state = "hm_woodvest"
 	armor = list(
-		melee = 35,
-		bullet = 30,
-		energy = 25,
+		melee = 25, //It's made of mostly wood and cloth, shittiest armor in the game easily, but does have bio and rad, giving it a rare but still possible boost over handmade. -Kaz
+		bullet = 15, // Justifying keeping somewhat decent values on bullet just because I changed the recipe to include steel. - Seb
+		energy = 10, // It's mostly made of wood, it will char easily.
 		bomb = 10,
-		bio = 0,
-		rad = 0
+		bio = 25,
+		rad = 25
 	)
 	price_tag = 50

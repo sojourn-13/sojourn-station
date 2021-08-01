@@ -35,7 +35,7 @@
 
 /datum/stash/valueable/pirate
 	base_type = /datum/stash/valueable/pirate
-	contents_list_extra = list(/obj/item/weapon/melee/energy/sword/pirate = 1, /obj/item/clothing/glasses/eyepatch)
+	contents_list_extra = list(/obj/item/melee/energy/sword/pirate = 1, /obj/item/clothing/glasses/eyepatch)
 
 /datum/stash/valueable/pirate/treasure
 	directions = DIRECTION_IMAGE

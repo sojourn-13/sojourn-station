@@ -1,4 +1,4 @@
-/obj/item/weapon/implanter
+/obj/item/implanter
 	name = "implanter"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "implanter0"
@@ -7,16 +7,16 @@
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 1)
-	var/obj/item/weapon/implant/implant = null
+	var/obj/item/implant/implant = null
 
-/obj/item/weapon/implanter/New()
+/obj/item/implanter/New()
 	..()
 	if(ispath(implant))
 		implant = new implant(src)
 		update_icon()
 
 
-/obj/item/weapon/implanter/attack_self(var/mob/user)
+/obj/item/implanter/attack_self(var/mob/user)
 	if(!implant)
 		return ..()
 	user.put_in_hands(implant)
@@ -26,14 +26,14 @@
 	update_icon()
 	return
 
-/obj/item/weapon/implanter/update_icon()
+/obj/item/implanter/update_icon()
 	if(implant)
 		icon_state = "implanter1"
 	else
 		icon_state = "implanter0"
 	return
 
-/obj/item/weapon/implanter/attack(mob/living/M, mob/living/user)
+/obj/item/implanter/attack(mob/living/M, mob/living/user)
 	if(!istype(M) || !implant)
 		return
 	if(!implant.is_external())

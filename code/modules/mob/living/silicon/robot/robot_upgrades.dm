@@ -146,7 +146,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 
-	var/obj/item/weapon/gun/energy/taser/mounted/cyborg/T = locate() in R.module
+	var/obj/item/gun/energy/taser/mounted/cyborg/T = locate() in R.module
 	if(!T)
 		T = locate() in R.module.contents
 	if(!T)
@@ -179,8 +179,8 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/tank/jetpack/carbondioxide
-//		for(var/obj/item/weapon/tank/jetpack/carbondioxide in R.module.modules)
+		R.module.modules += new/obj/item/tank/jetpack/carbondioxide
+//		for(var/obj/item/tank/jetpack/carbondioxide in R.module.modules)
 //			R.internals = src
 		//R.icon_state="Miner+j"
 		R.module.Initialize() //Fixes layering and possible tool issues
@@ -201,7 +201,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/rcd/borg(R.module)
+		R.module.modules += new/obj/item/rcd/borg(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE
 
@@ -220,7 +220,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/tool/arcwelder/cyborg(R.module)
+		R.module.modules += new/obj/item/tool/arcwelder/cyborg(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE
 
@@ -233,7 +233,7 @@
 /obj/item/borg/upgrade/hypospray/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if(.)
-		for(var/obj/item/weapon/reagent_containers/borghypo/H in R.module.modules)
+		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
 			if(H.accepts_reagent_upgrades)
 				H.reagent_ids += additional_reagents
 				return TRUE
@@ -280,7 +280,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/tool/sword/machete(R.module)
+		R.module.modules += new/obj/item/tool/sword/machete(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE
 
@@ -300,6 +300,6 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/weapon/storage/bag/robotic/holding(R.module)
+		R.module.modules += new/obj/item/storage/bag/robotic/holding(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/maxim //This is currently deprecated unless someone can code up heavy machine gun mechanics.
+/obj/item/gun/projectile/automatic/maxim //This is currently deprecated unless someone can code up heavy machine gun mechanics.
 	name = "Excelsior machine gun"
 	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
 	icon = 'icons/obj/guns/projectile/maxim.dmi'
@@ -33,7 +33,7 @@
 
 
 
-/obj/item/weapon/gun/projectile/automatic/maxim/update_icon()
+/obj/item/gun/projectile/automatic/maxim/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"

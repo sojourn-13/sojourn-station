@@ -45,7 +45,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed but not bolted down."),
 		//5
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
+		list("key"=/obj/item/tool_upgrade/reinforcement/heatsink,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor plating leaves a gap for the heatsink."),
 		//6
@@ -73,7 +73,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed but needs to be screwed down"),
 		//12
-		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
+		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and read to be connected to a peripheral control module"),
 		//13
@@ -81,7 +81,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed but not screwed down."),
 		//14
-		list("key"=/obj/item/weapon/circuitboard/mecha/main,
+		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted and ready for a central control module."),
 		//15
@@ -101,15 +101,15 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The hydraulic systems are disconnected but needs some bolting."),
 		//19
-		list("key"=/obj/item/weapon/tool_upgrade/productivity/motor,
+		list("key"=/obj/item/tool_upgrade/productivity/motor,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Hydraulics set inside need to be linked to a eletric moter."),
 		//20
-		list("key"=/obj/item/weapon/tool_upgrade/augment/hydraulic,
+		list("key"=/obj/item/tool_upgrade/augment/hydraulic,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="With the cell mount added it can now have the hydraulics added."),
 		//21
-		list("key"=/obj/item/weapon/tool_upgrade/augment/cell_mount,
+		list("key"=/obj/item/tool_upgrade/augment/cell_mount,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Mech case is made and needs to start with a cell mount."),
 		//22
@@ -157,7 +157,7 @@
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "ripley0"
-					new /obj/item/weapon/tool_upgrade/augment/cell_mount(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/cell_mount(get_turf(holder))
 			if(19)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -171,7 +171,7 @@
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "ripley0"
-					new /obj/item/weapon/tool_upgrade/augment/hydraulic(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/hydraulic(get_turf(holder))
 			if(18)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -185,7 +185,7 @@
 						"You disconnect and remove [holder] form the hydraulic systems."
 					)
 					holder.icon_state = "ripley0"
-					new /obj/item/weapon/tool_upgrade/productivity/motor(get_turf(holder))
+					new /obj/item/tool_upgrade/productivity/motor(get_turf(holder))
 			if(17)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -251,7 +251,7 @@
 						"[usr] removes the central control module from [holder].", \
 						"You remove the central computer mainboard from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/main(get_turf(holder))
+					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "ripley4"
 			if(12)
 				if(diff==FORWARD)
@@ -278,7 +278,7 @@
 						"[usr] removes the peripherals control module from [holder].", \
 						"You remove the peripherals control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/peripherals(get_turf(holder))
+					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "ripley6"
 			if(10)
 				if(diff==FORWARD)
@@ -386,7 +386,7 @@
 						"You disconnect and remove [holder] heat sink."
 					)
 					holder.icon_state = "fireripley13"
-					new /obj/item/weapon/tool_upgrade/reinforcement/heatsink(get_turf(holder))
+					new /obj/item/tool_upgrade/reinforcement/heatsink(get_turf(holder))
 			if(2)
 				if(diff==FORWARD)
 					usr.visible_message(

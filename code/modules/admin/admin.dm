@@ -958,8 +958,8 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_atom, R_DEBUG, FALSE)
 	else
 		var/newItem = new chosen(usr.loc)
 
-		if(istype(newItem, /obj/item/weapon/gun))
-			var/obj/item/weapon/gun/weapon = newItem
+		if(istype(newItem, /obj/item/gun))
+			var/obj/item/gun/weapon = newItem
 			weapon.loadAmmoBestGuess()
 
 

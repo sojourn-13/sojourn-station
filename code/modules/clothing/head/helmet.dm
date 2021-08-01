@@ -279,7 +279,7 @@
 	name = "'Mark V' environmental protection helmet"
 	desc = "You feel like this helmet is rare, for some reason."
 	icon_state = "technohelmet"
-	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100) //Cant have armor mods
+	armor = list(melee = 45, bullet = 45, energy = 40, bomb = 60, bio = 100, rad = 100) //Cant have armor mods
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	flash_protection = FLASH_PROTECTION_MAJOR
@@ -704,6 +704,19 @@
 	desc = "\"I do not know who I am, I don\'t know why I\'m here. All I know is that I must kill.\""
 	icon_state = "maska"
 	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
+	var/icon_swap_to_old = TRUE
+
+/obj/item/clothing/head/helmet/faceshield/altyn/maska/update_icon() //needed for fancy new icon
+	var/iconstring = initial(icon_state)
+	if (!icon_swap_to_old)
+		iconstring = "maska"
+	else
+		iconstring = "maska_killa"
+
+	if (up)
+		iconstring += "_up"
+
+	icon_state = iconstring
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska/verb/toggle_style()
 	set name = "Adjust Style"
@@ -715,13 +728,13 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["maska"] = "maska"
-	options["maska killa"] = "maska_killa"
+	options["maska"] = "TRUE"
+	options["maska killa"] = "FALSE"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
+		icon_swap_to_old = options[choice]
 		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()

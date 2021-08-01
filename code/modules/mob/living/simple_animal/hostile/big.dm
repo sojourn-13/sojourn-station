@@ -52,7 +52,7 @@
 	pixel_y = 0
 	attack_sound = 'sound/weapons/deathclawattack.ogg'
 	meat_amount = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
 	mob_size = 3
 	leather_amount = 16
@@ -180,7 +180,7 @@
 	emote_hear = list("groan")
 	emote_see = list("shakes its head")
 	meat_amount = 10 //Infinite meat!
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
 
 /mob/living/simple_animal/hostile/nightmare
 	name = "nightmare stalker"
@@ -209,6 +209,22 @@
 	bones_amount = 30 //Lots of bone-like chitin
 	mob_size = MOB_LARGE
 
+/mob/living/simple_animal/hostile/nightmare/dream_daemon
+	name = "dream daemon"
+	desc = "A creature of primal nightmares, bred in pitchest black... a rare sight of an evolved nightmare stalker, much deadlier, ruthless and agile than the average."
+	icon_state = "arachnid_daemon"
+	icon_living = "arachnid_daemon"
+	icon_rest = "arachnid_daemon_sleeping"
+	icon_dead = "arachnid_daemon_dead"
+	melee_damage_lower = 40
+	melee_damage_upper = 60
+	maxHealth = 900
+	health = 900
+	move_to_delay = 4
+	turns_per_move = 4
+	vision_range = 8
+	aggro_vision_range = 20
+
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
 	..()
 	playsound(src, pick('sound/hallucinations/i_see_you2.ogg',
@@ -224,7 +240,7 @@
 
 /mob/living/simple_animal/hostile/nightmare/LoseTarget()
 	..()
-	alpha = 50
+	alpha = 30
 
 /mob/living/simple_animal/hostile/nightmare/death()
 	..()

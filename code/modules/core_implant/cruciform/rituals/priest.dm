@@ -24,8 +24,8 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
-	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
+/datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.active || !CI.wearer)
 		fail("Cruciform not found.", user, C)
@@ -82,7 +82,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/selfheal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/priest/selfheal/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C,list/targets)
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
 		if(H.nutrition >= nutri_cost)
 			H.nutrition -= nutri_cost
@@ -111,8 +111,8 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
-	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
+/datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.active || !CI.wearer)
 		fail("Cruciform not found.", user, C)
@@ -165,7 +165,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/people_around = list()
 	for(var/mob/living/carbon/human/H in view(user))
 		if(H != user && !isdeaf(H))
@@ -212,7 +212,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 
 	if(!user.client)
 		return FALSE
@@ -247,7 +247,7 @@
 	return TRUE
 
 
-/datum/ritual/targeted/cruciform/priest/god_eye/process_target(var/index, var/obj/item/weapon/implant/core_implant/target, var/text)
+/datum/ritual/targeted/cruciform/priest/god_eye/process_target(var/index, var/obj/item/implant/core_implant/target, var/text)
 	if(index == 1 && target.address == text && target.active)
 		if(target.wearer && target.wearer.stat != DEAD)
 			return target
@@ -259,8 +259,8 @@
 	nutri_cost = 10//low cost
 	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
-	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
+/datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 
 	if(!CI)
 		fail("There is no cruciform on this one.", user, C)
@@ -306,8 +306,8 @@
 	phrase = "Vetus moritur et onus hoc levaverit"
 	desc = "A reunion of a spirit with it's new body, ritual of activation of a crucifrom, lying on the body. The process requires NeoTheology's special altar on which a body stripped of clothes is to be placed."
 
-/datum/ritual/cruciform/priest/reincarnation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
-	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
+/datum/ritual/cruciform/priest/reincarnation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 
 	if(!CI)
 		fail("There is no cruciform on this one", user, C)
@@ -360,16 +360,16 @@
 	nutri_cost = 10//low cost
 	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/priest/install/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/install/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/H = get_victim(user)
-	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 	if(CI)
 		fail("[H] already have a cruciform installed.", user, C)
 		return FALSE
 
 	var/list/L = get_front(user)
 
-	CI = locate(/obj/item/weapon/implant/core_implant/cruciform) in L
+	CI = locate(/obj/item/implant/core_implant/cruciform) in L
 
 	if(!CI)
 		fail("There is no cruciform on this one", user, C)
@@ -427,8 +427,8 @@
 	nutri_cost = 10//low cost
 	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
-	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
+/datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 
 	if(!CI)
 		fail("There is no cruciform on this one", user, C)
@@ -473,8 +473,8 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
-	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
+/datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI)
 		fail("There is no cruciform on this one.", user, C)
@@ -488,7 +488,7 @@
 		fail("There is no upgrades on this one.", user, C)
 		return FALSE
 
-	for(var/obj/item/weapon/coreimplant_upgrade/CU in CI.upgrades)
+	for(var/obj/item/coreimplant_upgrade/CU in CI.upgrades)
 		if(user.species?.reagent_tag != IS_SYNTHETIC)
 			if(user.nutrition >= nutri_cost)
 				user.nutrition -= nutri_cost
@@ -509,7 +509,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+/datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 	var/list/OBJS = get_front(user)
 
 	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
@@ -523,7 +523,7 @@
 		else
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
-	new /obj/item/weapon/coreimplant_upgrade/cruciform/priest(altar.loc)
+	new /obj/item/coreimplant_upgrade/cruciform/priest(altar.loc)
 	set_personal_cooldown(user)
 
 /datum/ritual/cruciform/priest/initiation
@@ -534,8 +534,8 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/initiation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
-	var/obj/item/weapon/implant/core_implant/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform)
+/datum/ritual/cruciform/priest/initiation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	var/obj/item/implant/core_implant/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
 		fail("Cruciform not found",user,C)
@@ -582,7 +582,7 @@
 	..()
 	desc = "This litany boosts [get_stats_to_text()] stats of everyone who hears you, for about ten minutes."
 
-/datum/ritual/cruciform/priest/short_boost/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/short_boost/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/people_around = list()
 	for(var/mob/living/carbon/human/H in view(user))
 		if(H != user && !isdeaf(H))
@@ -649,7 +649,7 @@
 	power = 30
 	success_message = "On the verge of audibility you hear pleasant music, a piece of paper slides out from a slit in the altar."
 
-/datum/ritual/cruciform/priest/records/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/records/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
 
 	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
@@ -659,7 +659,7 @@
 		return FALSE
 
 	if(altar)
-		new /obj/item/weapon/paper/neopaper(altar.loc, disciples.Join("\n"), "Church Record")
+		new /obj/item/paper/neopaper(altar.loc, disciples.Join("\n"), "Church Record")
 	return TRUE
 
 /datum/ritual/cruciform/priest/new_cruciform
@@ -671,7 +671,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
 
 	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
@@ -681,9 +681,9 @@
 		return FALSE
 
 	if(altar)
-		var/response = input(user, "Which cruciform do you require?") in list("Lemniscate","Tessellate","Monomial","Divisor","No Path","Cancel Litany")
+		var/response = input(user, "Which cruciform do you require?") in list("Lemniscate","Tessellate","Monomial","Divisor","Factorial","No Path","Cancel Litany")
 		if (response == "Lemniscate")
-			new /obj/item/weapon/implant/core_implant/cruciform/lemniscate(altar.loc)
+			new /obj/item/implant/core_implant/cruciform/lemniscate(altar.loc)
 			if(user.species?.reagent_tag != IS_SYNTHETIC)
 				if(user.nutrition >= nutri_cost)
 					user.nutrition -= nutri_cost
@@ -692,7 +692,7 @@
 					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Tessellate")
-			new /obj/item/weapon/implant/core_implant/cruciform/tessellate(altar.loc)
+			new /obj/item/implant/core_implant/cruciform/tessellate(altar.loc)
 			if(user.species?.reagent_tag != IS_SYNTHETIC)
 				if(user.nutrition >= nutri_cost)
 					user.nutrition -= nutri_cost
@@ -701,7 +701,7 @@
 					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Monomial")
-			new /obj/item/weapon/implant/core_implant/cruciform/monomial(altar.loc)
+			new /obj/item/implant/core_implant/cruciform/monomial(altar.loc)
 			if(user.species?.reagent_tag != IS_SYNTHETIC)
 				if(user.nutrition >= nutri_cost)
 					user.nutrition -= nutri_cost
@@ -710,7 +710,16 @@
 					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Divisor")
-			new /obj/item/weapon/implant/core_implant/cruciform/divisor(altar.loc)
+			new /obj/item/implant/core_implant/cruciform/divisor(altar.loc)
+			if(user.species?.reagent_tag != IS_SYNTHETIC)
+				if(user.nutrition >= nutri_cost)
+					user.nutrition -= nutri_cost
+				else
+					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+					user.vessel.remove_reagent("blood",blood_cost)
+			return TRUE
+		if (response == "Factorial")
+			new /obj/item/implant/core_implant/cruciform/factorial(altar.loc)
 			if(user.species?.reagent_tag != IS_SYNTHETIC)
 				if(user.nutrition >= nutri_cost)
 					user.nutrition -= nutri_cost
@@ -719,7 +728,7 @@
 					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "No Path")
-			new /obj/item/weapon/implant/core_implant/cruciform(altar.loc)
+			new /obj/item/implant/core_implant/cruciform(altar.loc)
 			if(user.species?.reagent_tag != IS_SYNTHETIC)
 				if(user.nutrition >= nutri_cost)
 					user.nutrition -= nutri_cost
@@ -739,8 +748,8 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/reactivation/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
-	var/obj/item/weapon/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/weapon/implant/core_implant/cruciform, FALSE)
+/datum/ritual/cruciform/priest/reactivation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 
 	if(!CI)
 		fail("There is no cruciform on this one.", user, C)
@@ -785,7 +794,7 @@
 
 	var/boost_value = 1.5  // How much the aging process of the plant is sped up
 
-/datum/ritual/cruciform/priest/accelerated_growth/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/accelerated_growth/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 
 	var/list/plants_around = list()
 	for(var/obj/machinery/portable_atmospherics/hydroponics/H in view(user))
@@ -828,7 +837,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/priest/mercy/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/mercy/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
@@ -855,7 +864,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/priest/absolution/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/priest/absolution/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
@@ -887,7 +896,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/priest/purging/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/purging/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
@@ -927,7 +936,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/priest/prosthetic/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/priest/prosthetic/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/OBJS = get_front(user)
 	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
 	var/O = "prosthetic limb"

@@ -34,7 +34,7 @@
 	var/timing = FALSE
 
 /obj/structure/reagent_dispensers/bidon/singular/attackby(obj/item/I, mob/user)
-	if(istype(I,/obj/item/weapon/tool/multitool))
+	if(istype(I,/obj/item/tool/multitool))
 		if(!timing)
 			to_chat(user, SPAN_NOTICE("You start the timer."))
 			timing = TRUE

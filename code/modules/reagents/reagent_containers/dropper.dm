@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// Droppers.
 ////////////////////////////////////////////////////////////////////////////////
-/obj/item/weapon/reagent_containers/dropper
+/obj/item/reagent_containers/dropper
 	name = "dropper"
 	desc = "A dropper. Transfers 5 units."
 	icon = 'icons/obj/chemical.dmi'
@@ -14,7 +14,7 @@
 	volume = 5
 	reagent_flags = TRANSPARENT
 
-/obj/item/weapon/reagent_containers/dropper/afterattack(atom/target, mob/user, proximity)
+/obj/item/reagent_containers/dropper/afterattack(atom/target, mob/user, proximity)
 	if(!target.reagents || !proximity)
 		return
 
@@ -94,14 +94,14 @@
 
 	return
 
-/obj/item/weapon/reagent_containers/dropper/update_icon()
+/obj/item/reagent_containers/dropper/update_icon()
 	cut_overlays()
 	if(reagents.total_volume)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "dropper")
 		filling.color = reagents.get_color()
 		add_overlay(filling)
 
-/obj/item/weapon/reagent_containers/dropper/industrial
+/obj/item/reagent_containers/dropper/industrial
 	name = "industrial dropper"
 	desc = "A large dropper. Transfers 10 units."
 	matter = list(MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 1)

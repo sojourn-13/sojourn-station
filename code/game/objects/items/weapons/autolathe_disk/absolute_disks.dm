@@ -1,7 +1,7 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // To make a design unprotect use -1
 // Absolute
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter
+/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
 	disk_name = "Church of Absolute Bioprinter Products and Utilities"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
 	icon_state = "neotheology"
@@ -55,7 +55,7 @@
 		/datum/design/bioprinter/holyvacuum
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioaugment
+/obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment
 	disk_name = "Church of Absolute Bioaugmentation Disk"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
 	icon_state = "neotheology"
@@ -73,7 +73,7 @@
 	)
 
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
+/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
 	disk_name = "Church of Absolute Basic Bioprinter Pack"
 	icon_state = "neotheology"
 
@@ -99,7 +99,7 @@
 	)
 
 // Thorn and Rose Pack - both .40 and .35
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/mk58
+/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack"
 	icon_state = "neotheology"
 
@@ -117,7 +117,7 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lemant
+/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant
 	disk_name = "Absolute Armory - .40/20mm Pilgrim revolver"
 	icon_state = "neotheology"
 
@@ -136,7 +136,7 @@
 		)
 
 //Church shotgun
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/regulator
+/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator
 	disk_name = "Absolute Armory - 20mm Regulator Shotgun"
 	icon_state = "neotheology"
 
@@ -150,7 +150,7 @@
 
 // ENERGY SMALL ARMS
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/counselor
+/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor
 	disk_name = "Absolute Armory - Counselor PDW E"
 	icon_state = "neotheology"
 
@@ -160,7 +160,7 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/nt_counselor
+/obj/item/computer_hardware/hard_drive/portable/design/guns/nt_counselor
 	disk_name = "Absolute Armory - NT LP \"Serenity\""
 	icon_state = "neotheology"
 
@@ -173,7 +173,7 @@
 
 // ENERGY ARMS
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/nemesis
+/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis
 	disk_name = "Absolute Armory - Nemesis Energy Crossbow"
 	icon_state = "neotheology"
 
@@ -182,7 +182,7 @@
 		/datum/design/autolathe/gun/energy_crossbow,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/themis
+/obj/item/computer_hardware/hard_drive/portable/design/guns/themis
 	disk_name = "Absolute Armory - Themis Energy Crossbow"
 	icon_state = "neotheology"
 
@@ -191,7 +191,7 @@
 		/datum/design/autolathe/gun/large_energy_crossbow,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/lightfall
+/obj/item/computer_hardware/hard_drive/portable/design/guns/lightfall
 	disk_name = "Absolute Armory - Lightfall Laser Gun"
 	icon_state = "neotheology"
 
@@ -201,7 +201,7 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/valkirye
+/obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye
 	disk_name = "Absolute Armory - Valkyrie Energy Rifle"
 	icon_state = "neotheology"
 
@@ -211,7 +211,7 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/halicon
+/obj/item/computer_hardware/hard_drive/portable/design/guns/halicon
 	disk_name = "Absolute Armory - Halcyon Ion Rifle"
 	icon_state = "neotheology"
 
@@ -223,7 +223,7 @@
 
 // PLASMA ARMS
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/dominion
+/obj/item/computer_hardware/hard_drive/portable/design/guns/dominion
 	disk_name = "Absolute Armory - Dominion Plasma Rifle"
 	icon_state = "neotheology"
 
@@ -233,7 +233,7 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/purger
+/obj/item/computer_hardware/hard_drive/portable/design/guns/purger
 	disk_name = "Absolute Armory - Purger Plasma Rifle"
 	icon_state = "neotheology"
 
@@ -245,7 +245,7 @@
 
 // Grenade Launchers
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/protector
+/obj/item/computer_hardware/hard_drive/portable/design/guns/protector
 	disk_name = "OT GL - Grenade Launcher"
 	icon_state = "neotheology"
 
@@ -256,7 +256,7 @@
 
 //Absolute Armory gun packs
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_old_guns
+/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns
 	disk_name = "Absolute Armory of the Old Testament"
 	desc = "A rare and expensive disk containing designs for highly advanced energy and ballistic weaponry from the Old Testament, the Absolutes arms division."
 	icon_state = "neotheology"
@@ -270,7 +270,7 @@
 		/datum/design/autolathe/gun/sniperrifle = 6
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_basic_arms
+/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms
 	disk_name = "Absolute Armory - New Testament Armaments"
 	icon_state = "neotheology"
 	license = -1
@@ -312,11 +312,11 @@
 		/datum/design/autolathe/gun_upgrade/barrel/excruciator
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_basic_arms/public
+/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public
 	disk_name = "Absolute Armory - Crusade Starter Kit"
 	license = 8
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_grenades
+/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades
 	disk_name = "Absolute Armory - Grenades Pack"
 	icon_state = "neotheology"
 	license = 12
@@ -327,7 +327,7 @@
 		/datum/design/autolathe/grenade/nt_smokebomb
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_new_guns
+/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns
 	disk_name = "Absolute Armory of the New Testament"
 	desc = "A rare and expensive disk containing designs for highly advanced energy weapons from the Old Testament, the Absolutes arms division. Nicknamed the new testament for containing its latest weaponry designs."
 	icon_state = "neotheology"
@@ -342,7 +342,7 @@
 		/datum/design/autolathe/gun/ionrifle = 3,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nt_plasma_shells
+/obj/item/computer_hardware/hard_drive/portable/design/nt_plasma_shells
 	disk_name = "Absolute Armory - Plasma Shell Pack"
 	desc = "A rare and expensive disk containing designs for highly advanced plasma based shotgun shells."
 	icon_state = "neotheology"
@@ -351,3 +351,17 @@
 		/datum/design/autolathe/ammo/shotgun_plasma_heavy = 2,
 		/datum/design/autolathe/ammo/shotgun_plasma,
 	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt_cells
+	disk_name = "Absolute Armory - Power Cells Pack"
+	icon_state = "neotheology"
+
+	license = -1
+	designs = list(
+		/datum/design/bioprinter/nt_cells/large,
+		/datum/design/bioprinter/nt_cells/large/plasma,
+		/datum/design/bioprinter/nt_cells/medium,
+		/datum/design/bioprinter/nt_cells/medium/plasma,
+		/datum/design/bioprinter/nt_cells/small,
+		/datum/design/bioprinter/nt_cells/small/plasma
+		)

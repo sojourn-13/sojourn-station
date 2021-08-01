@@ -30,15 +30,12 @@
 	min_air_pressure = 0
 	min_bodytemperature = 0
 
-	waring_faction = ""
-	waring_faction_multy = 1
-
 //Drops
 	meat_amount = 4
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
-	var/weapon1 = /obj/item/weapon/melee/energy/sword/pirate
-	var/weapon2 = /obj/item/weapon/shield/riot
+	var/weapon1 = /obj/item/melee/energy/sword/pirate
+	var/weapon2 = /obj/item/shield/riot
 	faction = "pirate"
 
 
@@ -68,7 +65,7 @@
 	icon_dead = "voidengie_dead"
 	attacktext = "burnt"
 	attack_sound = 'sound/items/Welder.ogg'
-	weapon1 = /obj/item/weapon/tool/weldingtool/advanced
+	weapon1 = /obj/item/tool/weldingtool/advanced
 	weapon2 = null
 
 /*Ranged Void Wolfs*/
@@ -86,12 +83,12 @@
 	rapid = TRUE
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/weapon/gun/energy/retro
+	weapon1 = /obj/item/gun/energy/retro
 	weapon2 = null
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 16
-	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 1
 
 /mob/living/carbon/superior_animal/human/voidwolf/ranged/New()
@@ -109,11 +106,11 @@
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/laser.ogg'
-	weapon2 = /obj/item/weapon/gun/energy/gun/martin
+	weapon2 = /obj/item/gun/energy/gun/martin
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 4
-	mag_type = /obj/item/weapon/cell/small/high/depleted
+	mag_type = /obj/item/cell/small/high/depleted
 	mags_left = 2
 
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged/New()
@@ -131,12 +128,12 @@
 	ranged = TRUE
 	rapid = TRUE
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/weapon/gun/energy/retro
+	weapon1 = /obj/item/gun/energy/retro
 	weapon2 = null
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 16
-	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 2
 
 /mob/living/carbon/superior_animal/human/voidwolf/aerotrooper/New()
@@ -156,12 +153,12 @@
 	ranged = TRUE
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/weapon/melee/energy/sword/pirate
-	weapon2 = /obj/item/weapon/gun/energy/gun
+	weapon1 = /obj/item/melee/energy/sword/pirate
+	weapon2 = /obj/item/gun/energy/gun
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 8
-	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 1
 
 /mob/living/carbon/superior_animal/human/voidwolf/captain/New()
@@ -182,12 +179,12 @@
 	rapid = TRUE
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam/weak/smg
-	weapon1 = /obj/item/weapon/gun/energy/firestorm
+	weapon1 = /obj/item/gun/energy/firestorm
 	weapon2 = null
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
-	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 3
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/New()
@@ -198,7 +195,7 @@
 	icon_state = "reaver_bulldog"
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	weapon1 = /obj/item/weapon/gun/projectile/automatic/c20r
+	weapon1 = /obj/item/gun/projectile/automatic/c20r
 	weapon2 = null
 	rounds_left = 32
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
@@ -215,7 +212,7 @@
 	icon_state = "reaver_gyro"
 	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
-	weapon1 = /obj/item/weapon/gun/projectile/gyropistol
+	weapon1 = /obj/item/gun/projectile/gyropistol
 	weapon2 = null
 	rapid = FALSE
 	rounds_left = 4
@@ -238,8 +235,8 @@
 	ranged = FALSE
 	rapid = FALSE
 	limited_ammo = FALSE
-	weapon1 = /obj/item/weapon/tool/sword/saber/cutlass
-	weapon2 = /obj/item/weapon/shield/energy/reaver
+	weapon1 = /obj/item/tool/sword/saber/cutlass
+	weapon2 = /obj/item/shield/energy/reaver
 	armor = list(
 		melee = 0,
 		bullet = 0,

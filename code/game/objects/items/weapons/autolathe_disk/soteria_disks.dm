@@ -2,7 +2,7 @@
 // To make a design unprotect use -1
 
 // Soteria
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical
+/obj/item/computer_hardware/hard_drive/portable/design/medical
 	disk_name = "Soteria Medical Designs"
 	icon_state = "moebius"
 	license = 20
@@ -31,7 +31,7 @@
 		/datum/design/autolathe/gun/dnalock_mod
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/advanced
+/obj/item/computer_hardware/hard_drive/portable/design/medical/advanced
 	disk_name = "Soteria Advanced Medical Designs"
 	icon_state = "moebius"
 	license = 10
@@ -68,15 +68,15 @@
 	)
 
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/cmo
+/obj/item/computer_hardware/hard_drive/portable/design/medical/cmo
 	disk_name = "Soteria Medical Factory"
 	license = -1 //Same disk, but for the CBO exclusively with endless uses.
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/medical/advanced/cmo
+/obj/item/computer_hardware/hard_drive/portable/design/medical/advanced/cmo
 	disk_name = "Soteria Advanced Medical Designs Factory"
 	license = -1 //Same disk, but for the CBO exclusively with endless uses.
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/surgery
+/obj/item/computer_hardware/hard_drive/portable/design/surgery
 	disk_name = "Back Alley Organs"
 	icon_state = "moebius"
 
@@ -85,7 +85,7 @@
 		/datum/design/bioprinter/lungs
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer
+/obj/item/computer_hardware/hard_drive/portable/design/computer
 	disk_name = "Soteria Computer Parts"
 	icon_state = "moebius"
 	license = 20
@@ -122,11 +122,11 @@
 		/datum/design/autolathe/computer_part/scanner/atmos,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/computer/rd
+/obj/item/computer_hardware/hard_drive/portable/design/computer/rd
 	disk_name = "Soteria Computer Factory"
 	license = -1
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/rped
+/obj/item/computer_hardware/hard_drive/portable/design/rped
 	disk_name = "Soteria RnD Stock Parts Designs"
 	icon_state = "moebius"
 	license = 20
@@ -150,11 +150,11 @@
 		/datum/design/autolathe/part/consolescreen
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/rped/rd
+/obj/item/computer_hardware/hard_drive/portable/design/rped/rd
 	disk_name = "Soteria Stock Parts Factory"
 	license = -1
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/xenobio
+/obj/item/computer_hardware/hard_drive/portable/design/xenobio
 	disk_name = "Soteria Xenobio Equipment Designs"
 	icon_state = "moebius"
 	license = 10
@@ -168,6 +168,6 @@
 		/datum/design/autolathe/clothing/si_xenobio_suit
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/xenobio/rd
+/obj/item/computer_hardware/hard_drive/portable/design/xenobio/rd
 	disk_name = "Soteria Xenobio Equipment Factory"
 	license = -1

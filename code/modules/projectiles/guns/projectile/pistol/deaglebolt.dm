@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/deaglebolt
+/obj/item/gun/projectile/deaglebolt
 	name = "\"Triple Primary\" heavy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	This particular pistol is the pinnacle of gunsmithing, featuring an advanced chamber switching magwell capable of fitting pistol, magnum, and kurtz rounds. A bit flashy, but hands down \
@@ -24,7 +24,7 @@
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
-/obj/item/weapon/gun/projectile/deaglebolt/verb/change_caliber()
+/obj/item/gun/projectile/deaglebolt/verb/change_caliber()
 	set name = "Change Caliber"
 	set desc = "For when you need to change your guns caliber, handy when you have more ammo of one type."
 	set category = "Object"

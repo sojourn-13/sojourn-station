@@ -72,11 +72,11 @@ They generally give more random result and can provide more divercity in spawn.
 	desc = "This is a random technical loot."
 
 /obj/random/pack/tech_loot/onestar/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/stock_parts/capacitor/one_star = 2,
-	/obj/item/weapon/stock_parts/scanning_module/one_star = 2,
-	/obj/item/weapon/stock_parts/manipulator/one_star = 2,
-	/obj/item/weapon/stock_parts/micro_laser/one_star = 2,
-	/obj/item/weapon/stock_parts/matter_bin/one_star = 2,
+	return pickweight(list(/obj/item/stock_parts/capacitor/one_star = 2,
+	/obj/item/stock_parts/scanning_module/one_star = 2,
+	/obj/item/stock_parts/manipulator/one_star = 2,
+	/obj/item/stock_parts/micro_laser/one_star = 2,
+	/obj/item/stock_parts/matter_bin/one_star = 2,
 	/obj/random/prothesis/one_star = 1))
 
 
@@ -122,8 +122,8 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/tool/advanced = 5,
 					/obj/random/gun_normal = 2,
 					/obj/random/lathe_disk/advanced = 3,
-					/obj/item/weapon/cell/small/moebius/nuclear = 1,
-					/obj/item/weapon/cell/medium/moebius/hyper = 1,
+					/obj/item/cell/small/moebius/nuclear = 1,
+					/obj/item/cell/medium/moebius/hyper = 1,
 					/obj/random/rig = 1.5,
 					/obj/random/rig/damaged = 1.5,
 					/obj/random/voidsuit = 4,

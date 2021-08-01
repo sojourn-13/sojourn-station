@@ -1,5 +1,5 @@
 // Welder that use plasma flasks
-/obj/item/weapon/tool/plasma_torch
+/obj/item/tool/plasma_torch
 	name = "plasma torch"
 	desc = "A welder that uses a cryo-sealed hydrogen fuel cell to weld with the heat of a sun. While better than a conventional welders and even rivaling greyson prositronics its \
 	costly fuel supply and risks involved stopped the tool from ever seeing commercial success, a choice for a specialist and nobody else."
@@ -15,52 +15,52 @@
 	max_upgrades = 0
 	heat = 2250
 
-	var/obj/item/weapon/hydrogen_fuel_cell/flask = null // The flask the welder use for ammo
+	var/obj/item/hydrogen_fuel_cell/flask = null // The flask the welder use for ammo
 	var/use_plasma_cost = 1 // Active cost
 	var/passive_cost = 0.3 // Passive cost
 
 	var/gun_mode = FALSE // Determine if the welder act as a gun or not
 
-/obj/item/weapon/tool/plasma_torch/Initialize()
+/obj/item/tool/plasma_torch/Initialize()
 	..()
-	flask = new /obj/item/weapon/hydrogen_fuel_cell(src) // Give the welder a new flask when mapped in.
+	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the welder a new flask when mapped in.
 	update_icon()
 
-/obj/item/weapon/tool/plasma_torch/New()
+/obj/item/tool/plasma_torch/New()
 	..()
 	update_icon()
 
-/obj/item/weapon/tool/plasma_torch/Process()
+/obj/item/tool/plasma_torch/Process()
 	..()
 	if(switched_on)
 		if (use_plasma_cost && passive_cost)
 			if(!consume_plasma_fuel(passive_cost))
 				turn_off()
 
-/obj/item/weapon/tool/plasma_torch/proc/consume_plasma_fuel(var/volume)
+/obj/item/tool/plasma_torch/proc/consume_plasma_fuel(var/volume)
 	if (get_plasma_fuel() >= volume)
 		flask.use(volume)
 		return TRUE
 	return FALSE
 
-/obj/item/weapon/tool/plasma_torch/proc/get_plasma_fuel()
+/obj/item/tool/plasma_torch/proc/get_plasma_fuel()
 	return flask.plasma
 
-/obj/item/weapon/tool/plasma_torch/consume_resources(var/timespent, var/user)
+/obj/item/tool/plasma_torch/consume_resources(var/timespent, var/user)
 	..()
 	if(use_plasma_cost)
 		if(!consume_plasma_fuel(use_plasma_cost*timespent))
 			to_chat(user, SPAN_NOTICE("You need more hydrogen fuel to complete this task."))
 			return FALSE
 
-/obj/item/weapon/tool/plasma_torch/check_tool_effects(var/mob/living/user, var/time)
+/obj/item/tool/plasma_torch/check_tool_effects(var/mob/living/user, var/time)
 	if(use_plasma_cost)
 		if(get_plasma_fuel() < (use_plasma_cost*time))
 			to_chat(user, SPAN_NOTICE("You need more hydrogen fuel to complete this task."))
 			return FALSE
 	..()
 
-/obj/item/weapon/tool/plasma_torch/examine(mob/user)
+/obj/item/tool/plasma_torch/examine(mob/user)
 	..(user)
 	if(!flask)
 		to_chat(user, SPAN_NOTICE("Has no fuel flask inserted."))
@@ -69,7 +69,7 @@
 	return
 
 // Copying the superior proc because I don't know how to insert the plasma cost in the middle.
-/obj/item/weapon/tool/plasma_torch/ui_data(mob/user)
+/obj/item/tool/plasma_torch/ui_data(mob/user)
 	var/list/data = ..()
 
 	if(use_plasma_cost)
@@ -81,50 +81,50 @@
 
 	return data
 
-/obj/item/weapon/tool/plasma_torch/turn_on(mob/user)
+/obj/item/tool/plasma_torch/turn_on(mob/user)
 	.=..()
 	if(.)
 		playsound(loc, 'sound/items/welderactivate.ogg', 50, 1)
 		damtype = BURN
 		START_PROCESSING(SSobj, src)
 
-/obj/item/weapon/tool/plasma_torch/turn_off(mob/user)
+/obj/item/tool/plasma_torch/turn_off(mob/user)
 	item_state = initial(item_state)
 	playsound(loc, 'sound/items/welderdeactivate.ogg', 50, 1)
 	..()
 	damtype = initial(damtype)
 
-/obj/item/weapon/tool/plasma_torch/is_hot()
+/obj/item/tool/plasma_torch/is_hot()
 	if (damtype == BURN)
 		return heat
 
-/obj/item/weapon/tool/plasma_torch/MouseDrop(over_object)
+/obj/item/tool/plasma_torch/MouseDrop(over_object)
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(flask, usr))
 		flask = null
 		update_icon()
 
-/obj/item/weapon/tool/plasma_torch/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
+/obj/item/tool/plasma_torch/attackby(obj/item/W as obj, mob/living/user as mob)
 
 	if(flask)
 		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
 		return
 
-	if(istype(W, /obj/item/weapon/hydrogen_fuel_cell) && insert_item(W, user))
+	if(istype(W, /obj/item/hydrogen_fuel_cell) && insert_item(W, user))
 		flask = W
 		update_icon()
 
-/obj/item/weapon/tool/plasma_torch/update_icon()
+/obj/item/tool/plasma_torch/update_icon()
 	..()
 	if(flask)
 		add_overlay("[icon_state]_loaded")
 
 // This is where the welder transform into a gun
-/obj/item/weapon/tool/plasma_torch/verb/switch_to_gun()
+/obj/item/tool/plasma_torch/verb/switch_to_gun()
 	set name = "Disable Safeties"
 	set desc = "Disable the safeties, making the plasma torch able to shoot like a gun."
 	set category = "Object"
 
-	var/obj/item/weapon/gun/hydrogen/plasma_torch/da_gun = new /obj/item/weapon/gun/hydrogen/plasma_torch(src)
+	var/obj/item/gun/hydrogen/plasma_torch/da_gun = new /obj/item/gun/hydrogen/plasma_torch(src)
 	if(flask) // Give the gun the same flask the welder has, but only if there's a flask.
 		da_gun.flask = flask // Link the flask to the gun
 		flask.forceMove(da_gun) // Give the flask to the gun

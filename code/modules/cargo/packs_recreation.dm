@@ -11,46 +11,46 @@
 
 /datum/supply_pack/artscrafts
 	name = "Arts and Crafts Crate"
-	contains = list(/obj/item/weapon/storage/fancy/crayons,
+	contains = list(/obj/item/storage/fancy/crayons,
 					/obj/item/device/camera,
 					/obj/item/device/camera_film,
 					/obj/item/device/camera_film,
-					/obj/item/weapon/storage/photo_album,
-					/obj/item/weapon/packageWrap,
-					/obj/item/weapon/reagent_containers/glass/paint/red,
-					/obj/item/weapon/reagent_containers/glass/paint/green,
-					/obj/item/weapon/reagent_containers/glass/paint/blue,
-					/obj/item/weapon/reagent_containers/glass/paint/yellow,
-					/obj/item/weapon/reagent_containers/glass/paint/purple,
-					/obj/item/weapon/reagent_containers/glass/paint/black,
-					/obj/item/weapon/reagent_containers/glass/paint/white,
-					/obj/item/weapon/contraband/poster,
-					/obj/item/weapon/wrapping_paper,
-					/obj/item/weapon/wrapping_paper,
-					/obj/item/weapon/wrapping_paper)
+					/obj/item/storage/photo_album,
+					/obj/item/packageWrap,
+					/obj/item/reagent_containers/glass/paint/red,
+					/obj/item/reagent_containers/glass/paint/green,
+					/obj/item/reagent_containers/glass/paint/blue,
+					/obj/item/reagent_containers/glass/paint/yellow,
+					/obj/item/reagent_containers/glass/paint/purple,
+					/obj/item/reagent_containers/glass/paint/black,
+					/obj/item/reagent_containers/glass/paint/white,
+					/obj/item/contraband/poster,
+					/obj/item/wrapping_paper,
+					/obj/item/wrapping_paper,
+					/obj/item/wrapping_paper)
 	cost = 560
 	crate_name = "arts and crafts crate"
 	group = "Recreation"
 
 /datum/supply_pack/cardgaming
 	name = "Card Gaming Crate"
-	contains = list(/obj/item/weapon/deck/cards,
-					/obj/item/weapon/deck/cah,
-					/obj/item/weapon/deck/cah/black,
-					/obj/item/weapon/pack/cardemon,
-					/obj/item/weapon/pack/spaceball,
-					/obj/item/weapon/cardholder,
-					/obj/item/weapon/deck/tarot,
-					/obj/item/weapon/storage/pill_bottle/dice)
+	contains = list(/obj/item/deck/cards,
+					/obj/item/deck/cah,
+					/obj/item/deck/cah/black,
+					/obj/item/pack/cardemon,
+					/obj/item/pack/spaceball,
+					/obj/item/cardholder,
+					/obj/item/deck/tarot,
+					/obj/item/storage/pill_bottle/dice)
 	cost = 400
 	crate_name = "card gaming crate"
 	group = "Recreation"
 
 /datum/supply_pack/lasertag
 	name = "Laser Tag Crate"
-	contains = list(/obj/item/weapon/gun/energy/lasertag/red,
+	contains = list(/obj/item/gun/energy/lasertag/red,
 					/obj/item/clothing/suit/fluff/redtag,
-					/obj/item/weapon/gun/energy/lasertag/blue,
+					/obj/item/gun/energy/lasertag/blue,
 					/obj/item/clothing/suit/fluff/bluetag)
 	cost = 560
 	crate_name = "laser tag crate"
@@ -82,11 +82,11 @@
 	contains = list(
 			/obj/item/clothing/mask/muzzle,
 			/obj/item/clothing/glasses/blindfold,
-			/obj/item/weapon/handcuffs/fuzzy,
-			/obj/item/weapon/tool/tape_roll,
+			/obj/item/handcuffs/fuzzy,
+			/obj/item/tool/tape_roll,
 			/obj/item/stack/cable_coil/random,
 			/obj/item/clothing/suit/straight_jacket,
-			/obj/item/weapon/legcuffs/fuzzy,
+			/obj/item/legcuffs/fuzzy,
 			/obj/item/clothing/under/costume/kinky/latex_maid)
 	cost = 560
 	crate_name = "recreational restraints crate"
@@ -103,7 +103,7 @@
 					/obj/item/toy/figure/character/rpg/thief,
 					/obj/item/toy/figure/character/rpg/cleric,
 					/obj/item/toy/figure/character/rpg/warrior,
-					/obj/item/weapon/storage/pill_bottle/dice_nerd)
+					/obj/item/storage/pill_bottle/dice_nerd)
 	cost = 400
 	crate_name = "tabletop gaming crate"
 	group = "Recreation"

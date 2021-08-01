@@ -3,7 +3,7 @@
 	desc = "This machine repurposes implants, robot components and bionics, reworking their circuitry into the Excelsior implant pattern which allows recruitment."
 	icon = 'icons/obj/machines/excelsior/reconstructor.dmi'
 	icon_state = "idle"
-	circuit = /obj/item/weapon/circuitboard/excelsiorreconstructor
+	circuit = /obj/item/circuitboard/excelsiorreconstructor
 	anchored = TRUE
 	density = TRUE
 
@@ -13,7 +13,7 @@
 
 /obj/machinery/complant_maker/RefreshParts()
 	var/total = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		total += M.rating
 
 	build_time = max(10, 70-total)
@@ -36,7 +36,7 @@
 
 	var/accepted = FALSE
 
-	if(istype(I, /obj/item/weapon/implant) || istype(I, /obj/item/robot_parts))
+	if(istype(I, /obj/item/implant) || istype(I, /obj/item/robot_parts))
 	//|| istype(I,/obj/item/stack/material)) //This used to be here and has been orphaned by a merge. Somehow. If you know what the intended behaviour here is, just fix it.
 		user.remove_from_mob(I)
 		qdel(I)
@@ -49,15 +49,15 @@
 			qdel(I)
 			accepted = TRUE
 
-	else if(istype(I, /obj/item/weapon/implantcase))
-		var/obj/item/weapon/implantcase/case = I
+	else if(istype(I, /obj/item/implantcase))
+		var/obj/item/implantcase/case = I
 		if(case.implant)
 			QDEL_NULL(case.implant)
 			case.update_icon()
 			accepted = TRUE
 
-	else if(istype(I, /obj/item/weapon/implanter))
-		var/obj/item/weapon/implanter/implanter = I
+	else if(istype(I, /obj/item/implanter))
+		var/obj/item/implanter/implanter = I
 		if(implanter.implant)
 			QDEL_NULL(implanter.implant)
 			implanter.update_icon()
@@ -82,7 +82,7 @@
 		return
 
 	if(working && world.time >= start_time + build_time)
-		new /obj/item/weapon/implantcase/excelsior(drop_location())
+		new /obj/item/implantcase/excelsior(drop_location())
 		flick(image(icon, "opening"), src)
 		working = FALSE
 		update_icon()

@@ -1,4 +1,4 @@
-/obj/item/weapon/shield/riot/arm
+/obj/item/shield/riot/arm
 	name = "arm shield"
 	desc = "An embedded shield adept at blocking objects from connecting with the torso of the shield wielder."
 	icon_state = "marine_shield"
@@ -15,4 +15,4 @@
 	icon_state = "armshield"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 5)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/shield/riot/arm
+	holding_type = /obj/item/shield/riot/arm

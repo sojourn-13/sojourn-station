@@ -1,13 +1,13 @@
 /datum/ritual/cruciform/tessellate
 	name = "cruciform"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/tessellate
+	implant_type = /obj/item/implant/core_implant/cruciform/tessellate
 	category = "Tessellate"
 
 /datum/ritual/targeted/cruciform/tessellate
 	name = "cruciform targeted"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/tessellate
+	implant_type = /obj/item/implant/core_implant/cruciform/tessellate
 	category = "Tessellate"
 
 /datum/ritual/cruciform/tessellate/heal_heathen_special
@@ -21,7 +21,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/tessellate/heal_heathen_special/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/tessellate/heal_heathen_special/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/people_around = list()
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
@@ -63,7 +63,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/tessellate/heal_heathen_improved/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/tessellate/heal_heathen_improved/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/people_around = list()
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
@@ -100,12 +100,12 @@
 /datum/ritual/cruciform/lemniscate
 	name = "cruciform"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/lemniscate
+	implant_type = /obj/item/implant/core_implant/cruciform/lemniscate
 	category = "Lemniscate"
 /datum/ritual/targeted/cruciform/lemniscate
 	name = "cruciform targeted"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/lemniscate
+	implant_type = /obj/item/implant/core_implant/cruciform/lemniscate
 	category = "Lemniscate"
 
 /datum/ritual/cruciform/lemniscate/long_boost
@@ -125,7 +125,7 @@
 	..()
 	desc = "This litany boosts [get_stats_to_text()] stats of evryone who hears you, for about thirty minutes."
 
-/datum/ritual/cruciform/lemniscate/long_boost/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/lemniscate/long_boost/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/people_around = list()
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
@@ -190,14 +190,14 @@
 /datum/ritual/cruciform/monomial
 	name = "cruciform"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/monomial
+	implant_type = /obj/item/implant/core_implant/cruciform/monomial
 	fail_message = "The Cruciform feels cold against your chest."
 	category = "Monomial"
 
 /datum/ritual/targeted/cruciform/monomial
 	name = "cruciform targeted"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/monomial
+	implant_type = /obj/item/implant/core_implant/cruciform/monomial
 	category = "Monomial"
 
 /datum/ritual/cruciform/monomial/ironskin
@@ -212,7 +212,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/monomial/ironskin/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/monomial/ironskin/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
 		if(H.nutrition >= nutri_cost)
 			H.nutrition -= nutri_cost
@@ -243,7 +243,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/monomial/perfect_self/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/monomial/perfect_self/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
 			user.nutrition -= nutri_cost
@@ -272,13 +272,13 @@
 /datum/ritual/cruciform/divisor
 	name = "cruciform"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/divisor
+	implant_type = /obj/item/implant/core_implant/cruciform/divisor
 	category = "Divisor"
 
 /datum/ritual/targeted/cruciform/divisor
 	name = "cruciform targeted"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/divisor
+	implant_type = /obj/item/implant/core_implant/cruciform/divisor
 	category = "Divisor"
 
 /datum/ritual/targeted/cruciform/divisor/spawn_con
@@ -292,9 +292,9 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/targeted/cruciform/divisor/spawn_con/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
-	new /obj/item/weapon/gun/energy/taser(usr.loc)
-	new /obj/item/weapon/storage/belt/security/neotheology(usr.loc)
+/datum/ritual/targeted/cruciform/divisor/spawn_con/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	new /obj/item/gun/energy/taser(usr.loc)
+	new /obj/item/storage/belt/security/neotheology(usr.loc)
 	new /obj/item/clothing/head/rank/divisor(usr.loc)
 	new /obj/item/clothing/suit/greatcoat/divisor(usr.loc)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
@@ -316,7 +316,7 @@
 	nutri_cost = 50//high cost
 	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/divisor/div_flash/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/divisor/div_flash/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
 			user.nutrition -= nutri_cost
@@ -326,7 +326,7 @@
 	playsound(user.loc, 'sound/effects/cascade.ogg', 65, 1)
 	log_and_message_admins("performed an ire litany")
 	for(var/mob/living/victim in view(user))
-		if(!victim.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+		if(!victim.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			if(prob(100 - (victim.stats.getStat(STAT_VIG) * 3)))
 				to_chat(victim, SPAN_WARNING("You feel a blast of energy that knocks you down!"))
 				victim.Stun(3)
@@ -339,14 +339,14 @@
 /datum/ritual/cruciform/factorial
 	name = "cruciform"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial
+	implant_type = /obj/item/implant/core_implant/cruciform/factorial
 	fail_message = "The cruciform's gears grind to a halt."
 	category = "Factorial"
 
 /datum/ritual/targeted/cruciform/factorial
 	name = "cruciform targeted"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform/factorial
+	implant_type = /obj/item/implant/core_implant/cruciform/factorial
 	category = "Factorial"
 
 // Battery Charge
@@ -361,14 +361,17 @@
 	var/charge_used = 10 // Amount of cruciform energy used.
 	var/charge_rate = 20 // The delay between each charge? The number is in deciseconds, so 30 is equal to 3 seconds
 
-/datum/ritual/cruciform/factorial/charge/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/factorial/charge/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	set_personal_cooldown(user)
 	var/inhand = user.get_active_hand()
-	if(istype(inhand, /obj/item/weapon/cell))
-		var/obj/item/weapon/cell/P = inhand
+	if(istype(inhand, /obj/item/cell))
+		var/obj/item/cell/P = inhand
+		if(P.max_chargerate == 0) // Can we even charge the damn thing.
+			fail("This type of cell cannot be charged.", user, C)
+			return
 		to_chat(user, "You start charging the [P.name].")
 		while(C.power >= charge_used) // Keep going until we run out of power
-			if(!istype(user.get_active_hand(), /obj/item/weapon/cell)) // Check if we're still holding a cell. Because rigged cell explode when charging.
+			if(!istype(user.get_active_hand(), /obj/item/cell)) // Check if we're still holding a cell. Because rigged cell explode when charging.
 				break
 			if(P.fully_charged()) // Leave the loop if the cell is charged.
 				break
@@ -393,7 +396,7 @@
 	nutri_cost = 25
 	blood_cost = 25
 
-/datum/ritual/cruciform/factorial/self_repair/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/factorial/self_repair/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
 			user.nutrition -= nutri_cost
@@ -418,7 +421,7 @@
 	nutri_cost = 25
 	blood_cost = 25
 
-/datum/ritual/cruciform/factorial/mass_repair/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/factorial/mass_repair/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)
 			user.nutrition -= nutri_cost

@@ -56,8 +56,6 @@
 	var/light_dam = 0 //0 to disable, minimum amount of lums to cause damage, otherwise heals in darkness
 	var/hunger_factor = 0 //0 to disable, how much nutrition is consumed per life tick
 
-	var/waring_faction = "" //What faction do we hate?
-	var/waring_faction_multy = 1 //How much more damage do we do to our ennemy faction?
 	colony_friend = FALSE
 
 
@@ -72,7 +70,7 @@
 	var/attack_sound_chance = 100
 	var/attack_sound_volume = 90
 
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	var/meat_amount = 3
 	//Lodge related products
 	var/leather_amount = 0 //The amount of leather sheets dropped.
@@ -132,7 +130,8 @@
 	var/mag_type = /obj/item/ammo_magazine/pistol_35/empty//What is are mag/cell used?
 	var/mags_left = 3 //How many mags do we have?
 	var/rounds_per_fire = 1 //how many bullets do we eat per shot, NOTE: rapid fire will use rounds_per_fire * 3
-	var/reload_message = "Performs a tactical reload!" //Are reload message.
+	var/reload_message = "performs a tactical reload!" //Are reload message.
+	var/full_reload_message = "" //name + reload message above
 
 	// Variables for the following AI
 	var/obey_friends = TRUE // Do we obey only friends ?
@@ -150,7 +149,8 @@
 
 	objectsInView = new
 
-	reload_message = "[name] performs a tactical reload!"
+	full_reload_message  = "[reload_message]"
+	reload_message = "[name] [full_reload_message]"
 
 	verbs -= /mob/verb/observe
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)

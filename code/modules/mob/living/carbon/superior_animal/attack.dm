@@ -9,9 +9,6 @@
 
 	if(moved) damage *= move_attack_mult
 
-	if(waring_faction)
-		damage = damage*waring_faction_multy
-
 	. = A.attack_generic(src, damage, attacktext, environment_smash)
 
 	if(.)

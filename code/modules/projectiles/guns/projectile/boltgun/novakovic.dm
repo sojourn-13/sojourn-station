@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/boltgun/sa
+/obj/item/gun/projectile/boltgun/sa
 	name = "\"Novakovic\" boltgun"
 	desc = "Weapon for hunting, or endless trench warfare. \
 			If you're on a budget, it's a darn good rifle for just about everything. \
@@ -11,9 +11,9 @@
 	recoil_buildup = 20
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/sa
+	sawn = /obj/item/gun/projectile/boltgun/sawn/sa
 
-/obj/item/weapon/gun/projectile/boltgun/sawn/sa
+/obj/item/gun/projectile/boltgun/sawn/sa
 	name = "\"obrez\" boltgun"
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
 	icon_state = "obrez"

@@ -24,8 +24,8 @@
 	name = "Serbian Mercenary combat gear"
 
 	suit = /obj/item/clothing/suit/space/void/SCAF
-	suit_store = /obj/item/weapon/tank/jetpack/oxygen
-	back = /obj/item/weapon/storage/backpack/military
+	suit_store = /obj/item/tank/jetpack/oxygen
+	back = /obj/item/storage/backpack/military
 
 /decl/hierarchy/outfit/antagonist/mercenary/excelsior
 	name = "excelsior fatigues"
@@ -35,7 +35,7 @@
 	name = "excelsior combat gear"
 	uniform = /obj/item/clothing/under/excelsior
 	suit = /obj/item/clothing/suit/space/void/excelsior
-	back = /obj/item/weapon/storage/backpack/military
+	back = /obj/item/storage/backpack/military
 
 /obj/item/clothing/under/kriosansuit
 	name = "kriosan fatigues"

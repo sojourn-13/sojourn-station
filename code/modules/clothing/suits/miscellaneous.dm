@@ -8,7 +8,7 @@
 	item_state = "bluetag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/redtag
@@ -18,7 +18,7 @@
 	item_state = "redtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/greentag
@@ -28,7 +28,7 @@
 	item_state = "greentag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/yellowtag
@@ -38,7 +38,7 @@
 	item_state = "yellowtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/cyborg_suit
@@ -72,7 +72,7 @@ obj/item/clothing/suit/fluff/kimono
 	item_state = "straight_jacket"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
-	allowed = list(/obj/item/weapon/tank)
+	allowed = list(/obj/item/tank)
 
 /*Swimsuit*/
 
@@ -219,17 +219,17 @@ obj/item/clothing/suit/fluff/kimono
 	name = "universal sling"
 	desc = "A generic universal equipment sling for whatever you could need on your back."
 	icon_state = "universal_sling"
-	allowed = list (/obj/item/weapon/gun,
+	allowed = list (/obj/item/gun,
 	/obj/item/device,
-	/obj/item/weapon/material,
-	/obj/item/weapon/storage/pouch,
-	/obj/item/weapon/storage/box,
-	/obj/item/weapon/storage/firstaid,
-	/obj/item/weapon/storage/lockbox,
-	/obj/item/weapon/storage/part_replacer,
-	/obj/item/weapon/storage/secure,
-	/obj/item/weapon/storage/toolbox,
-	/obj/item/weapon/tank,
+	/obj/item/material,
+	/obj/item/storage/pouch,
+	/obj/item/storage/box,
+	/obj/item/storage/firstaid,
+	/obj/item/storage/lockbox,
+	/obj/item/storage/part_replacer,
+	/obj/item/storage/secure,
+	/obj/item/storage/toolbox,
+	/obj/item/tank,
 	/obj/item/ammo_magazine,
 	/obj/item/ammo_magazine/ammobox/
 	)
@@ -311,11 +311,11 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/storage/scavengerarmor
 	name = "scavenger armor"
-	desc = "A sturdy, rigged scavenger armor. strong and sturdy as most vests. made fully from junk."
+	desc = "A rigged yet sturdy scavenger armor. Strong and protective as most vests, it is made entirely from reclaimed materials. It even has pockets!"
 	icon_state = "scav_armor"
 	item_state = "scav_armor"
 	armor = list(
-		melee = 35,
+		melee = 35, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
 		bullet = 35,
 		energy = 35,
 		bomb = 25,
@@ -331,9 +331,9 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "triadkillers"
 	item_state = "triadkillers"
 	armor = list(
-		melee = 35,
-		bullet = 35,
-		energy = 35,
+		melee = 15, //Loadout item with pockets, cool looking and decent protection but easily outclassed. -Kaz
+		bullet = 15,
+		energy = 15,
 		bomb = 15,
 		bio = 0,
 		rad = 0
@@ -360,12 +360,19 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/storage/raggedcape
 	name = "outcast's cloak"
-	desc = "A haphazardly-made cloak made of reclaimed leather and other fiber materials, it's all you have for protection...for now."
+	desc = "A haphazardly-made cloak made of reclaimed leather and other fiber materials, it's all you have for protection... for now."
 	icon_state = "outcast_cloak"
 	item_state = "outcast_cloak"
-	armor = list(melee = 20, bullet = 0, energy = 20, bomb = 0, bio = 5, rad = 5)
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(
+		melee = 20,
+		bullet = 10,
+		energy = 20, //Decent starting armor but intentionally shitty because outsiders are hard mode. Scavenge better. Triumph or die! -Kaz
+		bomb = 10,
+		bio = 5,
+		rad = 5
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LOWER_TORSO
 	min_cold_protection_temperature = T0C - 20
 	price_tag = 50
-	
+

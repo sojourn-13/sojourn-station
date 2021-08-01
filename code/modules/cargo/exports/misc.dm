@@ -3,12 +3,12 @@
 /datum/export/misc/ashtray
 	cost = 5
 	unit_name = "ashtray"
-	export_types = list(/obj/item/weapon/material/ashtray)
+	export_types = list(/obj/item/material/ashtray)
 
 /datum/export/misc/candle
 	cost = 15
 	unit_name = "candle"
-	export_types = list(/obj/item/weapon/flame/candle)
+	export_types = list(/obj/item/flame/candle)
 
 /datum/export/misc/headset
 	cost = 20

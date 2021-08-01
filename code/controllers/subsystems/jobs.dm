@@ -29,6 +29,10 @@ SUBSYSTEM_DEF(job)
 		occupations += job
 		occupations_by_name[job.title] = job
 
+		if(job.alt_titles)
+			for(var/alt_title in job.alt_titles)
+				occupations_by_name[alt_title] = job
+
 	if(!occupations.len)
 		to_chat(world, SPAN_WARNING("Error setting up jobs, no job datums found!"))
 		return FALSE
@@ -62,6 +66,8 @@ SUBSYSTEM_DEF(job)
 			Debug("Player: [player] is now Rank: [rank], JCP:[job.current_positions], JPL:[position_limit]")
 			player.mind.assigned_role = rank
 			player.mind.assigned_job = job
+			if(job.alt_titles)
+				player.mind.role_alt_title = player.client.prefs.GetPlayerAltTitle(job)
 			unassigned -= player
 			job.current_positions++
 			return TRUE
@@ -358,7 +364,7 @@ SUBSYSTEM_DEF(job)
 		var/alt_title = null
 		if(H.mind)
 			H.mind.assigned_role = rank
-		//	alt_title = H.mind.role_alt_title
+			alt_title = H.mind.role_alt_title
 
 			switch(rank)
 				if("Robot")
@@ -397,7 +403,7 @@ SUBSYSTEM_DEF(job)
 				var/obj/item/clothing/glasses/G = H.glasses
 				G.prescription = 1
 
-		var/obj/item/weapon/implant/core_implant/C = H.get_core_implant()
+		var/obj/item/implant/core_implant/C = H.get_core_implant()
 		if(C)
 			C.install_default_modules_by_job(job)
 			C.access.Add(job.cruciform_access)

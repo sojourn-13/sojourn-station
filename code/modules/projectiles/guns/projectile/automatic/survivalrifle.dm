@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/survivalrifle
+/obj/item/gun/projectile/automatic/survivalrifle
 	name = "\"Bond\" survival rifle"
 	desc = "A \"Bond\" marksman carbine manufactured by Hunters Inc. Compact, high velocity and high penetration despite its low fire rate. Uses the obscure 10x24 rounds."
 	icon = 'icons/obj/guns/projectile/survivalrifle.dmi'
@@ -27,7 +27,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY)
 
-/obj/item/weapon/gun/projectile/automatic/survivalrifle/update_icon()
+/obj/item/gun/projectile/automatic/survivalrifle/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"
@@ -37,6 +37,6 @@
 		set_item_state()
 	return
 
-/obj/item/weapon/gun/projectile/automatic/survivalrifle/Initialize()
+/obj/item/gun/projectile/automatic/survivalrifle/Initialize()
 	. = ..()
 	update_icon()

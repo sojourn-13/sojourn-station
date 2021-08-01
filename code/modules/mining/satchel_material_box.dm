@@ -11,12 +11,12 @@
 	var/list/stored_material = list()
 	var/stored_prices
 
-/obj/structure/material_box/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/material_box/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/stack/material))
 		user.remove_from_mob(W)
 		src.contents += W
-	if (istype(W, /obj/item/weapon/storage))
-		var/obj/item/weapon/storage/S = W
+	if (istype(W, /obj/item/storage))
+		var/obj/item/storage/S = W
 		S.hide_from(usr)
 		if (locate(/obj/item/stack/material) in S.contents)
 			for(var/obj/item/stack/material/O in S.contents)

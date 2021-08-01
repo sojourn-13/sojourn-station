@@ -54,7 +54,7 @@
 
 /datum/craft_recipe/clothing/handmadebelt
 	name = "hand-made tool belt"
-	result = /obj/item/weapon/storage/belt/utility/handmade
+	result = /obj/item/storage/belt/utility/handmade
 	steps = list(
 		list(/obj/item/stack/cable_coil, 30, time = 15),
 		list(QUALITY_CUTTING, 10, 60)
@@ -73,7 +73,7 @@
 	name = "bucket-helm"
 	result = /obj/item/clothing/head/helmet/handmade/greathelm
 	steps = list(
-		list(/obj/item/weapon/reagent_containers/glass/bucket, 1, "time" = 30),
+		list(/obj/item/reagent_containers/glass/bucket, 1, "time" = 30),
 		list(QUALITY_CUTTING, 15, 120),
 		list(QUALITY_DRILLING, 10, 60),
 		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL),
@@ -108,7 +108,7 @@
 	name = "combat helmet"
 	result = /obj/item/clothing/head/helmet/handmade
 	steps = list(
-		list(/obj/item/weapon/reagent_containers/glass/bucket, 1, "time" = 30),
+		list(/obj/item/reagent_containers/glass/bucket, 1, "time" = 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
 		list(/obj/item/stack/cable_coil, 2)
 	)
@@ -151,11 +151,11 @@
 	result = /obj/item/clothing/suit/storage/scavengerarmor
 	steps = list(
 		list(/obj/item/clothing/under, 1),
-		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
-		list(QUALITY_ADHESIVE, 15, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
-		list(QUALITY_WELDING, 10, 20)
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL), // Melee
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL), // Bullets
+		list(QUALITY_WELDING, 10, 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS), // Reflective plating?
+		list(QUALITY_ADHESIVE, 15, "time" = 60)
 	)
 
 /datum/craft_recipe/clothing/muzzle
@@ -195,7 +195,7 @@
 	)
 
 /****************************
-* 	Full body armor vests 	
+* 	Full body armor vests
 ****************************/
 
 /datum/craft_recipe/clothing/fullbodyarmor
@@ -377,7 +377,7 @@
 	)
 
 /***********************
-* 	Outsider crafts		
+* 	Outsider crafts
 ************************/
 
 /datum/craft_recipe/clothing/woodenarmor

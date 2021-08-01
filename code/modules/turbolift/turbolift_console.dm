@@ -69,7 +69,7 @@
 
 // Hit it with a PDA or ID to enable priority call mode
 /obj/structure/lift/button/attackby(obj/item/W as obj, mob/user as mob)
-	var/obj/item/weapon/card/id/id = W.GetIdCard()
+	var/obj/item/card/id/id = W.GetIdCard()
 	if(istype(id))
 		if(!check_access(id))
 			playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 0)
@@ -123,7 +123,7 @@
 
 // Hit it with a PDA or ID to enable priority call mode
 /obj/structure/lift/panel/attackby(obj/item/W as obj, mob/user as mob)
-	var/obj/item/weapon/card/id/id = W.GetIdCard()
+	var/obj/item/card/id/id = W.GetIdCard()
 	if(istype(id))
 		if(!check_access(id))
 			playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 0)

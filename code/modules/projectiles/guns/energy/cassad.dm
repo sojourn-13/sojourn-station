@@ -1,5 +1,5 @@
 
-/obj/item/weapon/gun/energy/pulse/cassad
+/obj/item/gun/energy/pulse/cassad
 	name = "\"Cassad\" energy rifle"
 	desc = "\"Holland & Sullivan\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
 	icon = 'icons/obj/guns/energy/cassad.dmi'
@@ -21,6 +21,6 @@
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 
-/obj/item/weapon/gun/energy/pulse/cassad/update_icon()
+/obj/item/gun/energy/pulse/cassad/update_icon()
 	..()
 	set_item_state(null, back = TRUE)

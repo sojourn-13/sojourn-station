@@ -33,7 +33,7 @@
 	pixel_x = -16
 	pixel_y = 0
 	meat_amount = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
 	mob_size =  3  // The same as Hivemind Tyrant
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
@@ -50,19 +50,19 @@
 	var chancedrop = rand(1,3)
 	if(chancedrop == 1)
 		new /obj/item/clothing/suit/armor/vest/technomancersuit (src.loc)
-		new	/obj/item/weapon/gun/energy/laser/railgun/pistol (src.loc)
-		new /obj/item/weapon/storage/belt/utility/full (src.loc)
+		new	/obj/item/gun/energy/laser/railgun/pistol (src.loc)
+		new /obj/item/storage/belt/utility/full (src.loc)
 		qdel(src)
 		return
 	if(chancedrop == 2)
-		new /obj/item/weapon/gun/projectile/boltgun/sa (src.loc)
+		new /obj/item/gun/projectile/boltgun/sa (src.loc)
 		new	/obj/item/ammo_magazine/rifle_75 (src.loc)
 		new /obj/item/ammo_magazine/ammobox/rifle_75 (src.loc)
 		new /obj/item/clothing/suit/space/void/SCAF/blackshield (src.loc)
 		qdel(src)
 		return
 	if(chancedrop == 3)
-		new /obj/item/weapon/tool/sword/katana/nano (src.loc)
+		new /obj/item/tool/sword/katana/nano (src.loc)
 		new /obj/item/clothing/suit/armor/vest/soteriasuit (src.loc)
 		new /obj/item/clothing/head/helmet/soteriasuit (src.loc)
 		qdel(src)
@@ -206,7 +206,7 @@
 
 	else if (!resting)
 		if(ishuman(src))
-			var/obj/item/weapon/bedsheet/BS = locate(/obj/item/weapon/bedsheet) in get_turf(src)
+			var/obj/item/bedsheet/BS = locate(/obj/item/bedsheet) in get_turf(src)
 			// If there is unrolled bedsheet roll and unroll it to get in bed like a proper adult does
 			if(BS && !BS.rolled && !BS.folded)
 				resting = TRUE
@@ -442,11 +442,11 @@
 		icon_living = "excelatomiton_unpowered"
 		return
 	if(loaded_ammo == 4)
-		var/obj/item/weapon/grenade/explosive/artileria/g1 = new /obj/item/weapon/grenade/explosive/artileria(targetDD)
+		var/obj/item/grenade/explosive/artileria/g1 = new /obj/item/grenade/explosive/artileria(targetDD)
 		playsound(src, 'sound/effects/Custom_flare.ogg', 30, 1, -3)
-		var/obj/item/weapon/grenade/explosive/artileria/g2 = new /obj/item/weapon/grenade/explosive/artileria(get_step_rand(targetDD))
+		var/obj/item/grenade/explosive/artileria/g2 = new /obj/item/grenade/explosive/artileria(get_step_rand(targetDD))
 		playsound(src, 'sound/effects/Custom_flare.ogg', 30, 1, -3)
-		var/obj/item/weapon/grenade/explosive/artileria/g3 = new /obj/item/weapon/grenade/explosive/artileria(get_step_rand(targetDD))
+		var/obj/item/grenade/explosive/artileria/g3 = new /obj/item/grenade/explosive/artileria(get_step_rand(targetDD))
 		playsound(src, 'sound/effects/Custom_flare.ogg', 30, 1, -3)
 		loaded_ammo = 0
 		icon_state = "excelatomiton_unpowered"
@@ -532,7 +532,7 @@
 		to_chat(usr, SPAN_NOTICE("You can not release smoke just yet."))
 		return
 	say(pick("Hide from capitalism!", "Run away!", "Dismissing!"))
-	var/obj/item/weapon/grenade/explosive/artileria/s1 = new /obj/item/weapon/grenade/smokebomb(src)
+	var/obj/item/grenade/explosive/artileria/s1 = new /obj/item/grenade/smokebomb(src)
 	s1.prime()
 	smokecooldown = 30 SECONDS + world.time
 

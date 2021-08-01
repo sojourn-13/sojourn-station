@@ -69,7 +69,7 @@
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-
+	alt_titles = list("Soteria Nurse", "Soteria Pharmacist", "Soteria Surgeon", "Soteria Medical Intern")
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 
 	access = list(
@@ -164,7 +164,7 @@
 	supervisors = "the Soteria Biolab Overseer"
 	difficulty = "Soul Crushing."
 	selection_color = "#a8b69a"
-
+	alt_titles = list("Soteria Psychologist")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 
 	access = list(

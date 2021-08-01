@@ -13,13 +13,13 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	var/icontype = "general"
 	icon_state = "small"
 	icon = 'icons/obj/structures/scrap/base.dmi'
-	var/obj/item/weapon/storage/internal/updating/loot	//the visible loot
+	var/obj/item/storage/internal/updating/loot	//the visible loot
 	var/loot_min = 6
 	var/loot_max = 12
 	var/list/loot_list = list(
 		/obj/random/material,
 		/obj/item/stack/rods/random,
-		/obj/item/weapon/material/shard,
+		/obj/item/material/shard,
 		/obj/random/junk/nondense = 2,
 		/obj/random/pack/rare = 0.4
 	)
@@ -64,7 +64,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	switch(severity)
 		if(1)
 			for(var/i in 1 to 12)
-				var/projtype = pick(/obj/item/stack/rods, /obj/item/weapon/material/shard)
+				var/projtype = pick(/obj/item/stack/rods, /obj/item/material/shard)
 				var/obj/item/projectile = new projtype(loc)
 				projectile.throw_at(locate(loc.x + rand(40) - 20, loc.y + rand(40) - 20, loc.z), 81, pick(1,3,80,80))
 		if(2)
@@ -269,7 +269,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap/proc/dig_out_lump(newloc = loc)
 	if(dig_amount > 0)
 		dig_amount--
-		//new /obj/item/weapon/scrap_lump(src) //Todo: uncomment this once purposes and machinery for scrap are implemented
+		//new /obj/item/scrap_lump(src) //Todo: uncomment this once purposes and machinery for scrap are implemented
 		return TRUE
 
 
@@ -338,7 +338,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/medical = 4,
 		/obj/random/surgery_tool,
 		/obj/item/stack/rods/random,
-		/obj/item/weapon/material/shard,
+		/obj/item/material/shard,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3
 	)
@@ -353,7 +353,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/pouch,
 		/obj/item/stack/material/steel/random,
 		/obj/item/stack/rods/random,
-		/obj/item/weapon/material/shard,
+		/obj/item/material/shard,
 		/obj/random/junk/nondense,
 		/obj/random/material_ore,
 		/obj/random/pack/rare = 0.3,
@@ -371,7 +371,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/junkfood,
 		/obj/random/booze,
 		/obj/item/stack/rods/random,
-		/obj/item/weapon/material/shard,
+		/obj/item/material/shard,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3
 	)
@@ -388,7 +388,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/powercell,
 		/obj/random/mecha_equipment = 2,
 		/obj/item/toy/weapon/crossbow,
-		/obj/item/weapon/material/shard,
+		/obj/item/material/shard,
 		/obj/item/stack/material/steel/random,
 		/obj/random/junk/nondense,
 		/obj/random/pack/rare = 0.3
@@ -428,7 +428,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/item/stack/rods/random = 3,
 		/obj/random/common_oddities = 0.5,
 		/obj/random/material_ore,
-		/obj/item/weapon/material/shard,
+		/obj/item/material/shard,
 		/obj/random/pack/rare = 0.3
 	)
 

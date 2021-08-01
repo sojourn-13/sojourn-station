@@ -33,11 +33,11 @@
 	uniform = /obj/item/clothing/under/orange
 	mask = /obj/item/clothing/mask/breath
 	shoes = /obj/item/clothing/shoes/orange
-	r_pocket = /obj/item/weapon/tank/emergency_oxygen
-	back = /obj/item/weapon/storage/backpack/sport/orange
+	r_pocket = /obj/item/tank/emergency_oxygen
+	back = /obj/item/storage/backpack/sport/orange
 
 /decl/hierarchy/outfit/escapedprisoner/hobo
-	belt = /obj/item/weapon/gun/projectile/revolver/handmade
+	belt = /obj/item/gun/projectile/revolver/handmade
 	l_pocket = /obj/item/ammo_casing/magnum/scrap/prespawned
 
 /obj/effect/mob_spawn/human/prisoner_transport/hobo
@@ -62,8 +62,8 @@
 	head = /obj/item/clothing/head/helmet/steelpot
 	shoes = /obj/item/clothing/shoes/color/black
 	suit = /obj/item/clothing/suit/armor/flackvest
-	suit_store = /obj/item/weapon/gun/projectile/boltgun
-	back = /obj/item/weapon/storage/backpack/satchel
+	suit_store = /obj/item/gun/projectile/boltgun
+	back = /obj/item/storage/backpack/satchel
 	r_pocket = /obj/item/ammo_magazine/speed_loader_rifle_75
 	id_slot = slot_wear_id
-	id_type = /obj/item/weapon/card/id
+	id_type = /obj/item/card/id

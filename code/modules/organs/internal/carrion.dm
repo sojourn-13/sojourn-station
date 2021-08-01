@@ -74,7 +74,7 @@
 	set name = "Spawn a spider"
 
 	var/list/options = list()
-	var/obj/item/weapon/implant/carrion_spider/S
+	var/obj/item/implant/carrion_spider/S
 	if (!spiderlist.len)
 		to_chat(owner, SPAN_WARNING("You dont have any spiders evolved!"))
 		return
@@ -89,7 +89,7 @@
 		return
 
 	if(owner.check_ability(initial(S.spider_price), null, initial(S.gene_price)))
-		var/obj/item/weapon/implant/carrion_spider/spider = new S(owner.loc)
+		var/obj/item/implant/carrion_spider/spider = new S(owner.loc)
 		active_spiders += spider
 		spider.owner_core = src
 		spider.update_owner_mob()
@@ -101,7 +101,7 @@
 
 	var/list/spiders_in_list = list()
 	for(var/item in active_spiders)
-		var/obj/item/weapon/implant/carrion_spider/S = item
+		var/obj/item/implant/carrion_spider/S = item
 		var/turf/T = get_turf(S)
 		spiders_in_list += list(
 			list(
@@ -122,13 +122,13 @@
 
 /obj/item/organ/internal/carrion/core/Topic(href, href_list)
 	if(href_list["activate_spider"])
-		var/obj/item/weapon/implant/carrion_spider/activated_spider = locate(href_list["activate_spider"]) in active_spiders
+		var/obj/item/implant/carrion_spider/activated_spider = locate(href_list["activate_spider"]) in active_spiders
 		if(activated_spider)
 			activated_spider.activate()
 
 	if(href_list["activate_all"])
 		for(var/spider in active_spiders)
-			var/obj/item/weapon/implant/carrion_spider/CS = spider
+			var/obj/item/implant/carrion_spider/CS = spider
 			if(istype(CS))
 				CS.activate()
 
@@ -160,7 +160,7 @@
 
 /obj/item/organ/internal/carrion/core/removed(mob/living/user)
 	if(!associated_spider && owner)
-		for(var/obj/item/weapon/implant/carrion_spider/control/CS in active_spiders)
+		for(var/obj/item/implant/carrion_spider/control/CS in active_spiders)
 			CS.return_mind()
 
 		owner.faction = initial(owner.faction)
@@ -273,7 +273,7 @@
 		to_chat(owner, SPAN_WARNING("You can't eat nothing."))
 		return
 
-	if(istype(food, /obj/item/organ) || istype(food, /obj/item/weapon/reagent_containers/food/snacks/meat))
+	if(istype(food, /obj/item/organ) || istype(food, /obj/item/reagent_containers/food/snacks/meat))
 		var/geneticpointgain = 0
 		var/chemgain = 0
 		var/taste_description = ""
@@ -296,12 +296,12 @@
 				chemgain = 15
 				taste_description = "limbs are satisfying"
 
-		else if(istype(food, /obj/item/weapon/reagent_containers/food/snacks/meat/human))
+		else if(istype(food, /obj/item/reagent_containers/food/snacks/meat/human))
 			geneticpointgain = 2
 			chemgain = 15
 			taste_description = "human meat is satisfying"
 
-		else if(istype(food, /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat)) //No spider meat, as carrions can spawn spiders
+		else if(istype(food, /obj/item/reagent_containers/food/snacks/meat/roachmeat)) //No spider meat, as carrions can spawn spiders
 			geneticpointgain = 1
 			chemgain = 10
 			taste_description = "roach meat is okay"
@@ -395,7 +395,7 @@
 		toxin_attack(creature, rand(1, 3))
 
 /obj/effect/decal/cleanable/solid_biomass/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/mop) || istype(I, /obj/item/weapon/soap))
+	if(istype(I, /obj/item/mop) || istype(I, /obj/item/soap))
 		to_chat(user, SPAN_NOTICE("You started cleaning this [src]."))
 		if(do_after(user, 3 SECONDS, src))
 			to_chat(user, SPAN_NOTICE("You clean \The [src]."))

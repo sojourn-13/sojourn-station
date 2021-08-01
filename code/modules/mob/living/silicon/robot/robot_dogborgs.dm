@@ -1,4 +1,4 @@
-/obj/item/weapon/robot_module/robot/knine
+/obj/item/robot_module/robot/knine
 	name = "Security K9 Module"
 	sprites = list(
 					"K9 Hound" = "k9",
@@ -27,27 +27,27 @@
 	desc = "Focused on keeping the peace and fighting off threats to the colony, the IH K9 Module is a \
 	heavily armored, though lightly armed battle unit."
 
-/obj/item/weapon/robot_module/robot/knine/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/robot/knine/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
-	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
-	src.modules += new /obj/item/weapon/melee/baton/robot(src)
-	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
+	src.modules += new /obj/item/handcuffs/cyborg(src)
+	src.modules += new /obj/item/melee/baton/robot(src)
+	src.modules += new /obj/item/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
-	src.modules += new /obj/item/weapon/tool/robotic_omni_sec(src) //borrows and the like.
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic/weaker(src) //cracks and the like.
-	src.modules += new /obj/item/weapon/tool/knife/tacknife(src)
-	src.modules += new /obj/item/weapon/gun/projectile/automatic/riot_autoshotgun/robo(src)
-	src.modules += new /obj/item/weapon/gripper/ammo(src)
-	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/tool/robotic_omni_sec(src) //borrows and the like.
+	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //cracks and the like.
+	src.modules += new /obj/item/tool/knife/tacknife(src)
+	src.modules += new /obj/item/gun/projectile/automatic/riot_autoshotgun/robo(src)
+	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
-	//src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs - its broken
-	src.emag += new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
+	//src.modules += new /obj/item/book/manual/wiki/security_ironparagraphs(src) // book of ironhammer paragraphs - its broken
+	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
 
 	R.icon 		 = 'icons/mob/robots_wide.dmi'
 	R.pixel_x 	 = -16
@@ -56,21 +56,21 @@
 
 	..(R)
 
-/obj/item/weapon/robot_module/robot/knine/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/robot/knine/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
-	var/obj/item/weapon/gun/energy/taser/mounted/cyborg/T = locate() in src.modules
+	var/obj/item/gun/energy/taser/mounted/cyborg/T = locate() in src.modules
 	if(T.cell.charge < T.cell.maxcharge)
 		T.cell.give(T.charge_cost * amount)
 		T.update_icon()
 	else
 		T.charge_tick = 0
-	var/obj/item/weapon/melee/baton/robot/B = locate() in src.modules
+	var/obj/item/melee/baton/robot/B = locate() in src.modules
 	if(B && B.cell)
 		B.cell.give(amount)
 
 	..()
 
-/obj/item/weapon/robot_module/robot/medihound
+/obj/item/robot_module/robot/medihound
 	name = "Soteria Medihound Module"
 	sprites = list(
 					"Medical Hound" = "medihound",
@@ -98,29 +98,29 @@
 	 The medihound is essentially shackled to the medbay and can't afford to stray too far. \
 	 Its low power efficiency means it needs to charge regularly"
 
-/obj/item/weapon/robot_module/robot/medihound/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+/obj/item/robot_module/robot/medihound/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/hud/med(src)
 	src.modules += new /obj/item/device/scanner/health(src)
-	src.modules += new /obj/item/weapon/reagent_containers/borghypo/medical(src)
-	src.modules += new /obj/item/weapon/tool/robotic_omni_surgery(src)
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic/weaker(src) //hardsuits.
-	src.modules += new /obj/item/weapon/gripper/chemistry(src)
-	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
-	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src) //Two beakers
+	src.modules += new /obj/item/reagent_containers/borghypo/medical(src)
+	src.modules += new /obj/item/tool/robotic_omni_surgery(src)
+	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //hardsuits.
+	src.modules += new /obj/item/gripper/chemistry(src)
+	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
+	src.modules += new /obj/item/reagent_containers/syringe(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src) //Two beakers
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
-	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
+	src.modules += new /obj/item/autopsy_scanner(src) // an autopsy scanner
 	src.modules += new /obj/item/roller_holder(src)
-	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag += new /obj/item/weapon/reagent_containers/spray/acid(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.emag += new /obj/item/reagent_containers/spray/acid(src)
 
 	R.icon = 'icons/mob/robots_wide.dmi'
 	R.pixel_x 	 = -16
@@ -155,8 +155,8 @@
 	..(R)
 
 
-/obj/item/weapon/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
-	var/obj/item/weapon/reagent_containers/syringe/S = locate() in src.modules
+/obj/item/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	var/obj/item/reagent_containers/syringe/S = locate() in src.modules
 	if(S.mode == 2)
 		S.reagents.clear_reagents()
 		S.mode = initial(S.mode)
@@ -164,11 +164,11 @@
 		S.update_icon()
 
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/acid/PS = locate() in src.emag
+		var/obj/item/reagent_containers/spray/acid/PS = locate() in src.emag
 		PS.reagents.add_reagent("pacid", 2 * amount)
 	..()
 
-/obj/item/weapon/robot_module/robot/scrubpup
+/obj/item/robot_module/robot/scrubpup
 	name = "Custodial Hound Module"
 	sprites = list(
 					"Custodial Hound" = "scrubpup",
@@ -193,24 +193,24 @@
 	but requiring a large capacity. The huge chassis consequentially grants it a degree of toughness, \
 	though it is slow and cheaply made"
 
-/obj/item/weapon/robot_module/robot/scrubpup/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/robot/scrubpup/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/weapon/gripper/service(src)
-	src.modules += new /obj/item/weapon/soap/deluxe(src)
-	src.modules += new /obj/item/weapon/storage/bag/robotic/trash(src)
-	src.modules += new /obj/item/weapon/mop(src)
+	src.modules += new /obj/item/gripper/service(src)
+	src.modules += new /obj/item/soap/deluxe(src)
+	src.modules += new /obj/item/storage/bag/robotic/trash(src)
+	src.modules += new /obj/item/mop(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src) // a hydroponist's bucket
-	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
+	src.modules += new /obj/item/reagent_containers/glass/bucket(src) // a hydroponist's bucket
+	src.modules += new /obj/item/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/weapon/tool/robotic_omni_cleaner(src)
-	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/tool/robotic_omni_cleaner(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag += new /obj/item/weapon/reagent_containers/spray/lube(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.emag += new /obj/item/reagent_containers/spray/lube(src)
 
 	R.icon = 'icons/mob/robots_wide.dmi'
 	R.pixel_x 	 = -16
@@ -220,12 +220,12 @@
 	..(R)
 
 
-/obj/item/weapon/robot_module/robot/scrubpup/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/robot/scrubpup/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 	var/obj/item/device/lightreplacer/LR = locate() in src.modules
 	LR.Charge(R, amount)
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/lube/S = locate() in src.emag
+		var/obj/item/reagent_containers/spray/lube/S = locate() in src.emag
 		S.reagents.add_reagent("lube", 2 * amount)
 
 	R.icon 		 = 'icons/mob/robots_wide.dmi'
@@ -234,7 +234,7 @@
 	R.default_pixel_x = -16
 	..()
 
-/obj/item/weapon/robot_module/robot/science
+/obj/item/robot_module/robot/science
 	name = "Soteria Science Hound Module"
 	sprites = list(
 					"Research Hound" = "science",
@@ -258,34 +258,34 @@
 		STAT_MEC = 30
 	)
 
-/obj/item/weapon/robot_module/robot/science/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/robot/science/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
-	//src.modules += new /obj/item/weapon/portable_destructive_analyzer(src) dosnt work
-	src.modules += new /obj/item/weapon/gripper/research(src)
-	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
+	//src.modules += new /obj/item/portable_destructive_analyzer(src) dosnt work
+	src.modules += new /obj/item/gripper/research(src)
+	src.modules += new /obj/item/gripper/no_use/loader(src)
 	src.modules += new /obj/item/device/robotanalyzer(src)
-	src.modules += new /obj/item/weapon/card/robot(src)
-	src.modules += new /obj/item/weapon/tool/robotic_omni_sci(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro checks for tool rather then use
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
-	src.modules += new /obj/item/weapon/robot_harvester(src)
-	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
-	src.modules += new /obj/item/weapon/gripper/chemistry(src)
-	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/card/robot(src)
+	src.modules += new /obj/item/tool/robotic_omni_sci(src)
+	src.modules += new /obj/item/tool/multitool/robotic(src) //hydro checks for tool rather then use
+	src.modules += new /obj/item/tool/weldingtool/robotic(src)
+	src.modules += new /obj/item/robot_harvester(src)
+	src.modules += new /obj/item/reagent_containers/syringe(src)
+	src.modules += new /obj/item/gripper/chemistry(src)
+	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
-	src.modules += new /obj/item/weapon/extinguisher(src)
-	src.modules += new /obj/item/weapon/storage/bag/produce(src)
-	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/storage/bag/produce(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/science_tool(src)
 	src.modules += new /obj/item/device/scanner/price(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.modules += new /obj/item/weapon/storage/part_replacer(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/storage/part_replacer(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/weapon/hand_tele(src) //Why
-	src.emag += new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
+	src.emag += new /obj/item/hand_tele(src) //Why
+	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
 	synths += nanite
@@ -302,7 +302,7 @@
 	R.default_pixel_x = -16
 	..()
 
-/obj/item/weapon/robot_module/robot/engiedog
+/obj/item/robot_module/robot/engiedog
 	name = "Artificer Hound Module"
 	sprites = list(
 					"V2 Engihound" = "thottbot",
@@ -331,32 +331,32 @@
 	)
 
 
-/obj/item/weapon/robot_module/robot/engiedog/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/robot/engiedog/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
-	src.modules += new /obj/item/weapon/extinguisher(src)
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/robotic_omni_engi(src)
-	src.modules += new /obj/item/weapon/tool/tape_roll/fiber/robotic(src) //Window repair
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/tool/weldingtool/robotic(src)
+	src.modules += new /obj/item/tool/multitool/robotic(src)
+	src.modules += new /obj/item/tool/robotic_omni_engi(src)
+	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/scanner/gas(src)
 	src.modules += new /obj/item/taperoll/engineering(src)
-	src.modules += new /obj/item/weapon/gripper(src)
-	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
+	src.modules += new /obj/item/gripper(src)
+	src.modules += new /obj/item/gripper/no_use/loader(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
-	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
-	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
-	src.modules += new /obj/item/weapon/gripper/upgrade(src)
+	src.modules += new /obj/item/inflatable_dispenser(src)
+	src.modules += new /obj/item/reagent_containers/spray/krag_b_gone(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/scanner/price(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/weapon/tool/saw/hyper(src)
+	src.emag += new /obj/item/tool/saw/hyper(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass(40000)
@@ -371,7 +371,7 @@
 	synths += wood
 	synths += plastic
 
-	var/obj/item/weapon/matter_decompiler/MD = new /obj/item/weapon/matter_decompiler(src)
+	var/obj/item/matter_decompiler/MD = new /obj/item/matter_decompiler(src)
 	MD.metal = metal
 	MD.glass = glass
 	src.modules += MD
@@ -422,8 +422,8 @@
 	R.default_pixel_x = -16
 	..()
 
-/obj/item/weapon/robot_module/robot/engiedog/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/robot/engiedog/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	if(src.modules)
-		var/obj/item/weapon/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
+		var/obj/item/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
 		KBG.reagents.add_reagent("silicate", 2 * amount)
 	..()

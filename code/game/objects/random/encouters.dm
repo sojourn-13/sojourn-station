@@ -25,7 +25,7 @@
 		return pick(randspawn)
 
 /obj/random/spawner/encouter/mine
-	randspawn = list(/obj/structure/mine/mine_no_primer, /obj/item/weapon/mine, /obj/structure/mine/mine_scraps)
+	randspawn = list(/obj/structure/mine/mine_no_primer, /obj/item/mine, /obj/structure/mine/mine_scraps)
 
 /obj/random/spawner/encouter/miningbot
 	randspawn = list(/mob/living/bot/miningonestar/resources, /mob/living/bot/miningonestar/resources/agressive, /mob/living/bot/miningonestar/resources/agressive/with_support, \

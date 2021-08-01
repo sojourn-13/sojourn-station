@@ -57,7 +57,7 @@
 			origin_tech = null
 		siemens_coefficient += 0.3
 
-/obj/item/weapon/tool/make_old()
+/obj/item/tool/make_old()
 	.=..()
 	if (.)
 		adjustToolHealth(-(rand(20, 60) * degradation))
@@ -66,7 +66,7 @@
 		degradation += rand(0,4)
 		health = rand(10, max_health)
 
-/obj/item/weapon/tool/make_young()
+/obj/item/tool/make_young()
 	if(!oldified)
 		return
 	workspeed = initial(workspeed)
@@ -75,7 +75,7 @@
 	refresh_upgrades() //So we dont null upgrades
 	..()
 
-/obj/item/weapon/gun/make_old()
+/obj/item/gun/make_old()
 	. = ..()
 	if(. && prob(60))
 		var/list/trash_mods = TRASH_GUNMODS
@@ -91,7 +91,7 @@
 		damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
 		penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
 
-/obj/item/weapon/gun/make_young()
+/obj/item/gun/make_young()
 	if(!oldified)
 		return
 	fire_delay = initial(fire_delay)
@@ -101,13 +101,13 @@
 	refresh_upgrades() //So we dont null upgrades
 	..()
 
-/obj/item/weapon/gun/energy/make_old()
+/obj/item/gun/energy/make_old()
 	. = ..()
 	charge_cost+= rand(0,250)
 	overcharge_max-= rand(0,5) //This is infact a number you want to go up
 	overcharge_rate-= rand(0,5)
 
-/obj/item/weapon/gun/energy/make_young()
+/obj/item/gun/energy/make_young()
 	if(!oldified)
 		return
 	charge_cost = initial(charge_cost)
@@ -116,7 +116,7 @@
 	refresh_upgrades() //So we dont null upgrades. Do it again...
 	..()
 
-/obj/item/weapon/storage/make_old()
+/obj/item/storage/make_old()
 	.=..()
 	if (.)
 		var/del_count = rand(0, contents.len)
@@ -131,17 +131,17 @@
 			max_storage_space = max_storage_space / 2
 
 //Old pill bottles get a name that disguises their contents
-/obj/item/weapon/storage/pill_bottle/make_old()
+/obj/item/storage/pill_bottle/make_old()
 	if (prob(85))
 		name = "bottle of [pick("generic ", "unknown ", "")]pills"
 		desc = "Contains pills of some kind. The label has long since worn away"
-		for (var/obj/item/weapon/reagent_containers/pill/P in contents)
+		for (var/obj/item/reagent_containers/pill/P in contents)
 			P.make_old()
 
 	.=..()
 
 //Make sure old pills always hide their contents too
-/obj/item/weapon/reagent_containers/pill/make_old()
+/obj/item/reagent_containers/pill/make_old()
 	name = "pill"
 	desc = "Some kind of pill. The imprints have worn away."
 	.=..()
@@ -153,7 +153,7 @@
 			R.volume = rand(0, R.volume)
 
 
-/obj/item/weapon/reagent_containers/make_old()
+/obj/item/reagent_containers/make_old()
 	.=..()
 	if (.)
 		var/actual_volume = reagents.total_volume
@@ -163,7 +163,7 @@
 
 
 //Sealed survival food, always edible
-/obj/item/weapon/reagent_containers/food/snacks/liquidfood/make_old()
+/obj/item/reagent_containers/food/snacks/liquidfood/make_old()
 	return
 
 /obj/item/ammo_magazine/make_old()
@@ -174,7 +174,7 @@
 		QDEL_NULL(removed_item)
 	..()
 
-/obj/item/weapon/cell/make_old()
+/obj/item/cell/make_old()
 	.=..()
 	if (.)
 		// It's silly to have old self-charging cells spawn partially discharged
@@ -187,7 +187,7 @@
 				charge = maxcharge  //make it BOOM hard
 		update_icon()
 
-/obj/item/weapon/stock_parts/make_old()
+/obj/item/stock_parts/make_old()
 	.=..()
 	if (.)
 		var/degrade = pick(0,1,1,1,2)
@@ -200,20 +200,20 @@
 /obj/item/stack/rods/make_old()
 	return
 
-/obj/item/weapon/ore/make_old()
+/obj/item/ore/make_old()
 	return
 
-/obj/item/weapon/grenade/make_old()
+/obj/item/grenade/make_old()
 	..()
 	det_time = RAND_DECIMAL(0, det_time)
 
-/obj/item/weapon/tank/make_old()
+/obj/item/tank/make_old()
 	.=..()
 	if (.)
 		air_contents.remove(pick(0.2, 0.4 ,0.6, 0.8))
 
 
-/obj/item/weapon/circuitboard/make_old()
+/obj/item/circuitboard/make_old()
 	.=..()
 	if (.)
 		if(prob(75))
@@ -221,11 +221,11 @@
 			build_path = pick(/obj/machinery/washing_machine, /obj/machinery/broken, /obj/machinery/shower, /obj/machinery/holoposter, /obj/machinery/holosign)
 
 
-/obj/item/weapon/aiModule/make_old()
+/obj/item/aiModule/make_old()
 	.=..()
 	if (.)
-		if(prob(75) && !istype(src, /obj/item/weapon/aiModule/broken))
-			var/obj/item/weapon/aiModule/brokenmodule = new /obj/item/weapon/aiModule/broken
+		if(prob(75) && !istype(src, /obj/item/aiModule/broken))
+			var/obj/item/aiModule/brokenmodule = new /obj/item/aiModule/broken
 			brokenmodule.name = src.name
 			brokenmodule.desc = src.desc
 			brokenmodule.make_old()
@@ -271,7 +271,7 @@
 	..()
 
 
-/obj/item/weapon/aiModule/broken
+/obj/item/aiModule/broken
 	name = "\improper broken core AI module"
 	desc = "broken Core AI Module: 'Reconfigures the AI's core laws.'"
 
@@ -284,14 +284,14 @@
 	contents.Cut()
 	return ..()
 
-/obj/item/weapon/aiModule/broken/transmitInstructions(mob/living/silicon/ai/target, mob/sender)
+/obj/item/aiModule/broken/transmitInstructions(mob/living/silicon/ai/target, mob/sender)
 	..()
 	IonStorm(0)
 	explosion(sender.loc, 1, 1, 1, 3)
 	sender.drop_from_inventory(src)
 	QDEL_NULL(src)
 
-/obj/item/weapon/dnainjector/make_old()
+/obj/item/dnainjector/make_old()
 	.=..()
 	if (.)
 		if(prob(75))

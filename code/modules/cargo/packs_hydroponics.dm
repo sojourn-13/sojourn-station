@@ -4,7 +4,7 @@
 
 /datum/supply_pack/monkey
 	name = "Monkey Crate"
-	contains = list (/obj/item/weapon/storage/box/monkeycubes)
+	contains = list (/obj/item/storage/box/monkeycubes)
 	cost = 1200
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "monkey crate"
@@ -12,12 +12,12 @@
 
 /datum/supply_pack/hydroponics // -- Skie
 	name = "Hydroponics Supply Crate"
-	contains = list(/obj/item/weapon/reagent_containers/spray/plantbgone,
-					/obj/item/weapon/reagent_containers/spray/plantbgone,
-					/obj/item/weapon/reagent_containers/glass/bottle/ammonia,
-					/obj/item/weapon/reagent_containers/glass/bottle/ammonia,
-					/obj/item/weapon/tool/hatchet,
-					/obj/item/weapon/tool/minihoe,
+	contains = list(/obj/item/reagent_containers/spray/plantbgone,
+					/obj/item/reagent_containers/spray/plantbgone,
+					/obj/item/reagent_containers/glass/bottle/ammonia,
+					/obj/item/reagent_containers/glass/bottle/ammonia,
+					/obj/item/tool/hatchet,
+					/obj/item/tool/minihoe,
 					/obj/item/device/scanner/plant,
 					/obj/item/clothing/gloves/botanic_leather,
 					/obj/item/clothing/suit/rank/botanist) // Updated with new things
@@ -36,7 +36,7 @@
 					/obj/item/honey_frame,
 					/obj/item/honey_frame,
 					/obj/item/bee_smoker,
-					/obj/item/weapon/circuitboard/honey_extractor)
+					/obj/item/circuitboard/honey_extractor)
 	cost = 800
 	containertype = /obj/structure/closet/crate
 	crate_name = "Bee crate"
@@ -104,10 +104,10 @@
 /datum/supply_pack/weedcontrol
 	name = "Weed Control Crate"
 	contains = list(/obj/item/clothing/mask/gas,
-					/obj/item/weapon/grenade/chem_grenade/antiweed,
-					/obj/item/weapon/grenade/chem_grenade/antiweed,
-					/obj/item/weapon/grenade/chem_grenade/antiweed,
-					/obj/item/weapon/grenade/chem_grenade/antiweed)
+					/obj/item/grenade/chem_grenade/antiweed,
+					/obj/item/grenade/chem_grenade/antiweed,
+					/obj/item/grenade/chem_grenade/antiweed,
+					/obj/item/grenade/chem_grenade/antiweed)
 	cost = 800
 	containertype = /obj/structure/closet/crate/secure/hydrosec
 	crate_name = "weed control crate"

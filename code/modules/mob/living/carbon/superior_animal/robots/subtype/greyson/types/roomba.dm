@@ -14,7 +14,7 @@
 	maxHealth = 35
 	melee_damage_lower = 12
 	melee_damage_upper = 17
-	drop2 = /obj/item/weapon/tool/knife
+	drop2 = /obj/item/tool/knife
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/trip
 	name = "Greyson Positronic RMB-A unit"
@@ -26,7 +26,7 @@
 	melee_damage_lower = 7
 	melee_damage_upper = 12
 	var/trip_odds = 15 //So admins can edit this
-	drop2 = /obj/item/weapon/melee/telebaton
+	drop2 = /obj/item/melee/telebaton
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/trip/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
@@ -79,16 +79,16 @@
 	limited_ammo = TRUE
 	mag_drop = FALSE
 	rounds_left = 16
-	mag_type = /obj/item/weapon/cell/medium/high/depleted
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 0
 	reload_message = "Beeps aggressively as it charges the gun!" //in case of addmins givng more then 1 load
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/New()
 	..()
 	if(prob(10))
-		drop2 = /obj/item/weapon/gun/energy/retro
+		drop2 = /obj/item/gun/energy/retro
 	if(prob(10))
-		cell_drop = /obj/item/weapon/cell/medium
+		cell_drop = /obj/item/cell/medium
 
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/plasma
 	name = "Greyson Positronic RMB-SEC unit"

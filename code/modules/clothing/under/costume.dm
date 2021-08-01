@@ -286,3 +286,10 @@ obj/item/clothing/under/costume/history/pirate
 	desc = "A suit resembling the body of some strange creature."
 	icon_state = "gondola"
 	item_state = "gondola"
+
+/obj/item/clothing/under/costume/misc/hunterformal
+	name = "Hunting Lodge Formal Attire"
+	desc = "A fancier piece of clothing for when members of the Hunter's Lodge needs to dress up. \
+			It consists of a red overshirt, silver shoulder pads, golden buttons, and a black cummerbund and trousers."
+	icon_state = "hunter_formal"
+	item_state = "hunter_formal"

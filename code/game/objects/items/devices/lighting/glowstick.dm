@@ -27,11 +27,11 @@
 	if(ismob(loc))
 		var/mob/M = loc
 		M.visible_message(
-			"[src] slowly burn out.",
-			"[src] slowly burn out in your hand."
+			"[src] slowly burns out.",
+			"[src] slowly burns out in your hand."
 		)
 	else
-		visible_message("[src] slowly burn out")
+		visible_message("[src] slowly burns out")
 
 /obj/item/device/lighting/glowstick/update_icon()
 	cut_overlays()

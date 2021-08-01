@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow
 	name = "bolt lance"
 	desc = "A modified crossbow powered by an internal battery device that rapidly winds up a hydraulic winch to deliver a devastating, superheated bolt shot. \
 	Hand-crafted by the local Hunting Lodge, it uses a design commonly found on Onkarth, the homeworld of the Sablekyne."
@@ -19,11 +19,11 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 	pumpshotgun_sound = 'sound/weapons/guns/interact/hydra_crossbow_load.ogg'
 
-/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/handle_post_fire()
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow/handle_post_fire()
 	..()
 	to_chat(usr, SPAN_WARNING("The bolt inside heats up to a dull red glow before being fired."))
 
-/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/update_icon()
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -36,6 +36,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow/Initialize()
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow/Initialize()
 	. = ..()
 	update_icon()
