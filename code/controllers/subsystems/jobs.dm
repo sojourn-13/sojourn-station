@@ -364,7 +364,7 @@ SUBSYSTEM_DEF(job)
 		var/alt_title = null
 		if(H.mind)
 			H.mind.assigned_role = rank
-		//	alt_title = H.mind.role_alt_title
+			alt_title = H.mind.role_alt_title
 
 			switch(rank)
 				if("Robot")
