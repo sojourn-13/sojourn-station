@@ -209,7 +209,7 @@
 	name = "engineering robot arc welder"
 	desc = "An electric based, safe welder that runs on its own mini reactor. Use during construction operations."
 	icon_state = "cyborg_upgrade3"
-	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASMA = 10, MATERIAL_URANIUM = 10, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_SILVER = 1, MATERIAL_STEEL = 10)
 	require_module = TRUE
 
 /obj/item/borg/upgrade/arc_welder/action(var/mob/living/silicon/robot/R)
@@ -253,7 +253,7 @@
 	name = "illegal equipment module"
 	desc = "Unlocks the hidden, deadlier functions of a robot"
 	icon_state = "cyborg_upgrade3"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 10)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 5)
 	require_module = TRUE
 
 /obj/item/borg/upgrade/syndicate/action(var/mob/living/silicon/robot/R)
