@@ -42,7 +42,7 @@
 	icon = 'icons/obj/guns/energy/retro.dmi'
 	icon_state = "retro"
 	recharge_time = 4 //Time it takes for shots to recharge (in ticks)
-	damage_multiplier = 1
+	damage_multiplier = 0.8
 	projectile_type = /obj/item/projectile/beam/heavylaser
 	cell_type = /obj/item/weapon/cell/medium/moebius/high
 	charge_cost = 50
