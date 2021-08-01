@@ -66,8 +66,8 @@
 //Greyson spawner grenades
 /obj/item/grenade/spawnergrenade/manhacks/roomba
 	name = "\improper GP-SI roomba grenade"
-	desc = "Deploys a swarm of roomba that will attack animals and non-colony humanoids nearby."
-	deliveryamt = 3
+	desc = "Deploys a roomba that will attack animals and non-colony humanoids nearby."
+	deliveryamt = 1
 	icon_state = "greyson_nade_small"
 	spawner_type = /mob/living/carbon/superior_animal/robot/greyson/roomba/allied
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1)
@@ -75,8 +75,8 @@
 
 /obj/item/grenade/spawnergrenade/manhacks/roomba/trippers
 	name = "\improper GP-SI armored roomba grenade"
-	desc = "Deploys a swarm of armored roomba that will attack animals and non-colony humanoids nearby."
-	deliveryamt = 3
+	desc = "Deploys an armored roomba that will attack animals and non-colony humanoids nearby."
+	deliveryamt = 1
 	icon_state = "greyson_nade_small"
 	spawner_type = /mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2, MATERIAL_GOLD = 1, MATERIAL_PLASTEEL = 6) //3 plasteel per baton
