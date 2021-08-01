@@ -24,20 +24,24 @@
 	deathmessage = "blows apart!"
 	light_range = 3
 	light_color = COLOR_LIGHTING_RED_BRIGHT
-	var/exam_message = "If you see this, report it to Kaz or R4d6." // Custom message that show when examined and is different for each model.
+	var/exam_message = null // Custom message that show when examined and is different for each model.
 
 	do_gibs = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-	var/obj/item/cell/large/cell = new /obj/item/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
+	known_languages = list(LANGUAGE_COMMON)
+
+	var/obj/item/cell/cell = null // Hold the drone's power cell, default to a cheap one.
 	follow_message = "state, \"Beginning Escort Protocol.\""
 	stop_message = "state, \"Ending Escort Protocol.\""
+	follow_distance = 2
 	var/list/creator = list() // Who's the bot's creator.
 
 /mob/living/carbon/superior_animal/handmade/examine(mob/user)
 	..()
-	to_chat(user, SPAN_NOTICE("[exam_message]"))
+	if(exam_message)
+		to_chat(user, SPAN_NOTICE("[exam_message]"))
 	var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
 	if(robotics_expert) // Are we an expert in robots?
 		to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
@@ -86,10 +90,16 @@
 						heal_overall_damage(50, 50)
 					else
 						heal_overall_damage(rand(30, 50), rand(30, 50))
-					health = maxHealth
 					return
 				return
 			to_chat(user, "[src] doesn't need repairs.")
 			return
+
+		else if(QUALITY_PULSING in T.tool_qualities)
+			follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(0, 1, 2, 3, 4, 5)
+			if(density && follow_distance < 1)
+				follow_distance = 1 // Making sure that the bot don't try to occupy your tile if it can't share it.
+			return
+
 	// If nothing was ever triggered, continue as normal
 	..()

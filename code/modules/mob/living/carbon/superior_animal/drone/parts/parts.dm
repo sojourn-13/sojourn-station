@@ -1,4 +1,4 @@
-// Parts for the custom roomba located in code\modules\mob\living\simple_animal\hostile\doomba.dm
+// File for all the parts needed for the handmade drones.
 
 // Control Module used in all the custom bots.
 /obj/item/bot_part
@@ -47,7 +47,7 @@
 	name = "roomba plating"
 	desc = "Some steel sheets for attaching on a roomba to give it protection."
 	icon_state = "roomba_armor"
-	var/health_bonus = 50
+	var/health_bonus = 100
 
 	// The total armor it will give to the roomba.
 	var/armor_stat = list(
@@ -63,7 +63,7 @@
 	name = "heavy roomba plating"
 	desc = "Some plasteel sheets for attaching on a roomba to give it extra protection."
 	icon_state = "roomba_armor_heavy"
-	health_bonus = 100
+	health_bonus = 200
 	armor_stat = list(
 		melee = 50,
 		bullet = 50,

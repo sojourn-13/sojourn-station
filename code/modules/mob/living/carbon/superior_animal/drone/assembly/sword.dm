@@ -106,7 +106,7 @@
 								SPAN_NOTICE("[user] tighten the screws."),
 								SPAN_NOTICE("You tighten the screws.")
 							)
-			step_message = "It is missing the hydraulics." // Next step
+			step_message = "The hydraulics system is missing." // Next step
 
 	// Step 8, Adding the hydraulics
 	else if((istype(W, /obj/item/tool_upgrade/augment/hydraulic)) && (build_step == 7))
@@ -159,8 +159,7 @@
 		power_cell = W //Store the power cell for later usage.
 
 		// Remove the cell
-		user.remove_from_mob(W)
-		W.forceMove(src)
+		insert_item(W, user)
 
 	// Step 12, Secure the cell
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 11))
@@ -280,7 +279,6 @@
 								SPAN_NOTICE("You paint the [src] red.")
 							)
 		step_message = "All it need is a swipe of your ID." // Next step
-		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the paint
 		user.remove_from_mob(W)

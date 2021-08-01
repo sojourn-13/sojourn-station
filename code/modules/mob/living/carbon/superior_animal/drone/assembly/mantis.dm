@@ -96,7 +96,6 @@
 								SPAN_NOTICE("You wrench the frames together.")
 							)
 			step_message = "The screws are lose." // Next step
-			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 7, Securing the screws
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 6))
@@ -108,7 +107,6 @@
 								SPAN_NOTICE("You tighten the screws.")
 							)
 			step_message = "The hydraulics system is missing." // Next step
-			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 8, Adding the hydraulics
 	else if((istype(W, /obj/item/tool_upgrade/augment/hydraulic)) && (build_step == 7))
@@ -134,7 +132,6 @@
 								SPAN_NOTICE("You secure the hydraulic system.")
 							)
 			step_message = "It is missing an armblade." // Next step
-			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 10, Add the armblade
 	else if((istype(W, /obj/item/organ_module/active/simple/armblade)) && (build_step == 9))
@@ -176,8 +173,7 @@
 		power_cell = W //Store the power cell for later usage.
 
 		// Remove the cell
-		user.remove_from_mob(W)
-		W.forceMove(src)
+		insert_item(W, user)
 
 	// Step 13, Secure the power cell.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 12))
@@ -189,7 +185,6 @@
 								SPAN_NOTICE("You secure the power cell.")
 							)
 			step_message = "It is missing the circuit board." // Next step
-			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 14, Add the circuit board
 	else if((istype(W, /obj/item/bot_part/control)) && (build_step == 13))
@@ -215,7 +210,6 @@
 								SPAN_NOTICE("You secured the board.")
 							)
 			step_message = "The wiring is missing." // Next step
-			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 16, Wire the drone
 	else if((istype(W, /obj/item/stack/cable_coil)) && (build_step == 15))
@@ -235,7 +229,6 @@
 								SPAN_NOTICE("You wire the drone.")
 							)
 		step_message = "The circuit board is unprogrammed." // Next step
-		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		C.use(10) // use five cables.
 
 	// Step 17, Program the drone.
@@ -248,7 +241,6 @@
 								SPAN_NOTICE("You program the drone.")
 							)
 			step_message = "The panel is open." // Next step
-			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 18, Close the panel.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 17))
@@ -260,7 +252,6 @@
 								SPAN_NOTICE("You close the panel.")
 							)
 			step_message = "The panel is closed, it need armor now though." // Next step
-			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 	// Step 19, Add the armor
 	else if((istype(W, /obj/item/clothing/suit/armor/vest/soteriasuit)) && (build_step == 18))
@@ -301,7 +292,6 @@
 								SPAN_NOTICE("You paint the [src] red.")
 							)
 		step_message = "All it need is a swipe of your ID." // Next step
-		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the paint
 		user.remove_from_mob(W)
@@ -318,7 +308,6 @@
 								SPAN_NOTICE("[user] activate [created_name]! Beep boop."),
 								SPAN_NOTICE("You activate [created_name]! Beep boop.")
 							)
-		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		var/mob/living/carbon/superior_animal/handmade/mantis/R = new /mob/living/carbon/superior_animal/handmade/mantis(get_turf(src)) // Spawn the mantis drone.
 		R.cell = power_cell // Give the roomba the cell used.
 		power_cell.forceMove(R) // Give the cell

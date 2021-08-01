@@ -60,6 +60,8 @@ var/datum/xenomorph/xenomorph_ai
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
+	known_languages = list(LANGUAGE_XENOMORPH)
+
 /mob/living/carbon/superior_animal/xenomorph/slip(var/slipped_on,stun_duration=8)
 	return FALSE
 //Xenos can't be slipped but can be flashed, after all, secondary senses like thermal vision are usually easily overloaded by lights.

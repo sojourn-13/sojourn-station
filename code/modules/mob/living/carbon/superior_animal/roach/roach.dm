@@ -52,9 +52,10 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
+	known_languages = list(LANGUAGE_CHTMANT)
+
 /mob/living/carbon/superior_animal/roach/New()
 	..()
-	add_language(LANGUAGE_CHTMANT)
 
 //When roaches die near a leader, the leader may call for reinforcements
 /mob/living/carbon/superior_animal/roach/death()
