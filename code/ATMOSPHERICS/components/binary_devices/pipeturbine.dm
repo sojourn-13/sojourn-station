@@ -231,6 +231,8 @@
 	New()
 		..()
 		spawn(1)
+			if(anchored)
+				connect_to_network()
 			updateConnection()
 
 	proc/updateConnection()
@@ -254,6 +256,10 @@
 		if (!W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			return ..()
 		anchored = !anchored
+					if(anchored)
+						connect_to_network()
+					else
+						disconnect_from_network()
 		turbine = null
 		to_chat(user, SPAN_NOTICE("You [anchored ? "secure" : "unsecure"] the bolts holding \the [src] to the floor."))
 		updateConnection()
