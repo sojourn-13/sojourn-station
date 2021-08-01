@@ -9,8 +9,8 @@
 		list("key"=/obj/item/mecha_parts/part/gygax_left_leg, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//4
 		list("key"=/obj/item/mecha_parts/part/gygax_right_leg, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//5
 		list("key"=/obj/item/mecha_parts/part/gygax_head, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//6
-		list("key"=/obj/item/weapon/tool_upgrade/productivity/antistaining, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//7 the idea is that its like an oil for its movement
-		list("key"=/obj/item/weapon/stock_parts/smes_coil, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils.")//8 Lots of power and connections to legs
+		list("key"=/obj/item/tool_upgrade/productivity/antistaining, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."),//7 the idea is that its like an oil for its movement
+		list("key"=/obj/item/stock_parts/smes_coil, desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils.")//8 Lots of power and connections to legs
 	)
 
 	spawn_result()
@@ -35,7 +35,7 @@
 			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="External armor is wrenched just needs to be welded."),
 		//2
-		list("key"=/obj/item/weapon/tool_upgrade/productivity/booster,
+		list("key"=/obj/item/tool_upgrade/productivity/booster,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed, just needs the internal booster mod."),
 		//3
@@ -83,7 +83,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Advanced capacitor is installed but not screwed down"),
 		//14
-		list("key"=/obj/item/weapon/stock_parts/capacitor,
+		list("key"=/obj/item/stock_parts/capacitor,
 			"rating" = 2,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Advanced scanner module is secured and ready to connect to an advanced capacitor"),
@@ -92,7 +92,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Advanced scanner module is installed but not screwed down"),
 		//16
-		list("key"=/obj/item/weapon/stock_parts/scanning_module,
+		list("key"=/obj/item/stock_parts/scanning_module,
 			"rating" = 2,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Targeting module is secured down and ready to connect to an advanced scanner"),
@@ -101,7 +101,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Targeting module is installed but unscrewed"),
 		//18
-		list("key"=/obj/item/weapon/circuitboard/mecha/targeting,
+		list("key"=/obj/item/circuitboard/mecha/targeting,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Peripherals control module is secured and ready to connect to a targeting board"),
 		//19
@@ -109,7 +109,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed and need to be screwed down"),
 		//20
-		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
+		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and ready to connect to a peripherals board"),
 		//21
@@ -117,7 +117,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed but is unscrewed"),
 		//22
-		list("key"=/obj/item/weapon/circuitboard/mecha/main,
+		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted and ready for a central control board"),
 		//23
@@ -136,15 +136,15 @@
 		list("key"=QUALITY_BOLT_TURNING,
 			"desc"="The hydraulic systems are disconnected."),
 		//27
-		list("key"=/obj/item/weapon/tool_upgrade/productivity/motor,
+		list("key"=/obj/item/tool_upgrade/productivity/motor,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Hydraulics set inside need to be linked to a eletric moter."),
 		//28
-		list("key"=/obj/item/weapon/tool_upgrade/augment/hydraulic,
+		list("key"=/obj/item/tool_upgrade/augment/hydraulic,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="With the cell mount added it can now have the hydraulics added."),
 		//29
-		list("key"=/obj/item/weapon/tool_upgrade/augment/cell_mount,
+		list("key"=/obj/item/tool_upgrade/augment/cell_mount,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Mech case is made and needs to start with a cell mount."),
 		//30
@@ -190,7 +190,7 @@
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "gygax0"
-					new /obj/item/weapon/tool_upgrade/augment/cell_mount(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/cell_mount(get_turf(holder))
 			if(27)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -204,7 +204,7 @@
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "gygax0"
-					new /obj/item/weapon/tool_upgrade/augment/hydraulic(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/hydraulic(get_turf(holder))
 			if(26)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -218,7 +218,7 @@
 						"You disconnect and remove [holder] form the hydraulic systems."
 					)
 					holder.icon_state = "gygax0"
-					new /obj/item/weapon/tool_upgrade/productivity/motor(get_turf(holder))
+					new /obj/item/tool_upgrade/productivity/motor(get_turf(holder))
 			if(25)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -297,7 +297,7 @@
 						"[usr] removes the central control module from [holder].", \
 						"You remove the central computer mainboard from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/main(get_turf(holder))
+					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "gygax4"
 			if(19)
 				if(diff==FORWARD)
@@ -324,7 +324,7 @@
 						"[usr] removes the peripherals control module from [holder].", \
 						"You remove the peripherals control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/peripherals(get_turf(holder))
+					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "gygax6"
 			if(17)
 				if(diff==FORWARD)
@@ -351,7 +351,7 @@
 						"[usr] removes the weapon control module from [holder].", \
 						"You remove the weapon control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/targeting(get_turf(holder))
+					new /obj/item/circuitboard/mecha/targeting(get_turf(holder))
 					holder.icon_state = "gygax8"
 			if(15)
 				if(diff==FORWARD)
@@ -368,7 +368,7 @@
 					holder.icon_state = "gygax9"
 			if(14)
 				if(diff==FORWARD)
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(!S)
 						S = "advanced scanner module"
 					usr.visible_message(
@@ -377,7 +377,7 @@
 					)
 					holder.icon_state = "gygax12"
 				else
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(S)
 						S.forceMove(get_turf(holder))
 					else
@@ -395,7 +395,7 @@
 					)
 					holder.icon_state = "gygax13"
 				else
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(!S)
 						S = "advanced scanner module"
 					usr.visible_message(
@@ -405,7 +405,7 @@
 					holder.icon_state = "gygax11"
 			if(12)
 				if(diff==FORWARD)
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(!C)
 						C = "advanced capacitor"
 					usr.visible_message(
@@ -414,7 +414,7 @@
 					)
 					holder.icon_state = "gygax14"
 				else
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(C)
 						C.forceMove(get_turf(holder))
 					else
@@ -569,5 +569,5 @@
 						"You take out the booster mod."
 					)
 					holder.icon_state = "gygax19"
-					new /obj/item/weapon/tool_upgrade/productivity/booster (get_turf(holder), 5)
+					new /obj/item/tool_upgrade/productivity/booster (get_turf(holder), 5)
 		return 1

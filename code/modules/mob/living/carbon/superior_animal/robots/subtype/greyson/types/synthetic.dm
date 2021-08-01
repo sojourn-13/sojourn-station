@@ -19,9 +19,9 @@
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/New()
 	..()
 	if(prob(20))
-		drop2 = /obj/item/weapon/gun/energy/retro
+		drop2 = /obj/item/gun/energy/retro
 	if(prob(30))
-		cell_drop = /obj/item/weapon/cell/medium
+		cell_drop = /obj/item/cell/medium
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg
 	name = "Greyson Positronic FBP-SEC Mark II unit"

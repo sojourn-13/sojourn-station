@@ -36,12 +36,12 @@
 		to_chat(user, "The lid is open.")
 
 /obj/machinery/beehive/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/tool/crowbar))
+	if(istype(I, /obj/item/tool/crowbar))
 		closed = !closed
 		user.visible_message("<span class='notice'>\The [user] [closed ? "closes" : "opens"] \the [src].</span>", "<span class='notice'>You [closed ? "close" : "open"] \the [src].</span>")
 		update_icon()
 		return
-	else if(istype(I, /obj/item/weapon/tool/wrench))
+	else if(istype(I, /obj/item/tool/wrench))
 		anchored = !anchored
 		user.visible_message("<span class='notice'>\The [user] [anchored ? "wrenches" : "unwrenches"] \the [src].</span>", "<span class='notice'>You [anchored ? "wrench" : "unwrench"] \the [src].</span>")
 		return
@@ -94,7 +94,7 @@
 			B.fill()
 		update_icon()
 		return
-	else if(istype(I, /obj/item/weapon/tool/screwdriver))
+	else if(istype(I, /obj/item/tool/screwdriver))
 		if(bee_count)
 			to_chat(user, SPAN_NOTICE("You can't dismantle \the [src] with these bees inside."))
 			return
@@ -153,13 +153,13 @@
 	var/processing = 0
 	var/honey = 0
 	var/spin_time = 50
-	circuit = /obj/item/weapon/circuitboard/seed_extractor
+	circuit = /obj/item/circuitboard/seed_extractor
 
 /obj/machinery/honey_extractor/RefreshParts()
 	..()
 	var/sm_rating = 0
 	var/sm_amount = 0
-	for(var/obj/item/weapon/stock_parts/scanning_module/SM in component_parts)
+	for(var/obj/item/stock_parts/scanning_module/SM in component_parts)
 		sm_rating += SM.rating
 		sm_amount++
 
@@ -192,11 +192,11 @@
 			honey += processing
 			processing = 0
 			icon_state = "centrifuge"
-	else if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	else if(istype(I, /obj/item/reagent_containers/glass))
 		if(!honey)
 			to_chat(user, SPAN_NOTICE("There is no honey in \the [src]."))
 			return
-		var/obj/item/weapon/reagent_containers/glass/G = I
+		var/obj/item/reagent_containers/glass/G = I
 		var/transferred = min(G.reagents.maximum_volume - G.reagents.total_volume, honey)
 		G.reagents.add_reagent("honey", transferred)
 		honey -= transferred
@@ -257,7 +257,7 @@
 	recipes = wax_recipes
 
 var/global/list/datum/stack_recipe/wax_recipes = list( \
-	new/datum/stack_recipe("candle", /obj/item/weapon/flame/candle) \
+	new/datum/stack_recipe("candle", /obj/item/flame/candle) \
 )
 
 /obj/item/bee_pack

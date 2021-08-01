@@ -43,15 +43,15 @@
 
 //Drops
 	meat_amount = 4
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
-	var/weapon1 = /obj/item/weapon/gun/projectile/clarissa/makarov
+	var/weapon1 = /obj/item/gun/projectile/clarissa/makarov
 	faction = "excelsior"
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	weapon1 = /obj/item/weapon/gun/projectile/automatic/ppsh
+	weapon1 = /obj/item/gun/projectile/automatic/ppsh
 	projectilesound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	rounds_left = 71
 	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
@@ -60,7 +60,7 @@
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak
 	icon_state = "excel_ak"
 	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
-	weapon1 = /obj/item/weapon/gun/projectile/automatic/ak47
+	weapon1 = /obj/item/gun/projectile/automatic/ak47
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 20
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
@@ -70,7 +70,7 @@
 	icon_state = "excel_vintorez"
 	rapid = 0 //The gun cant rapid fire...
 	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
-	weapon1 = /obj/item/weapon/gun/projectile/automatic/vintorez
+	weapon1 = /obj/item/gun/projectile/automatic/vintorez
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 10
 	mag_type = /obj/item/ammo_magazine/rifle_75_short
@@ -79,7 +79,7 @@
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	weapon1 = /obj/item/weapon/gun/projectile/automatic/drozd
+	weapon1 = /obj/item/gun/projectile/automatic/drozd
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	rounds_left = 32
 	mag_type = /obj/item/ammo_magazine/smg_35/empty

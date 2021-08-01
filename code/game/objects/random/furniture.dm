@@ -4,19 +4,19 @@
 	icon_state = "sheet"
 
 /obj/random/furniture/bedsheet/item_to_spawn()
-	return pick(/obj/item/weapon/bedsheet,\
-				/obj/item/weapon/bedsheet/blue,\
-				/obj/item/weapon/bedsheet/green,\
-				/obj/item/weapon/bedsheet/orange,\
-				/obj/item/weapon/bedsheet/purple,\
-				/obj/item/weapon/bedsheet/rainbow,\
-				/obj/item/weapon/bedsheet/red,\
-				/obj/item/weapon/bedsheet/yellow,\
-				/obj/item/weapon/bedsheet/rd,\
-				/obj/item/weapon/bedsheet/hos,\
-				/obj/item/weapon/bedsheet/hop,\
-				/obj/item/weapon/bedsheet/ce,\
-				/obj/item/weapon/bedsheet/brown)
+	return pick(/obj/item/bedsheet,\
+				/obj/item/bedsheet/blue,\
+				/obj/item/bedsheet/green,\
+				/obj/item/bedsheet/orange,\
+				/obj/item/bedsheet/purple,\
+				/obj/item/bedsheet/rainbow,\
+				/obj/item/bedsheet/red,\
+				/obj/item/bedsheet/yellow,\
+				/obj/item/bedsheet/rd,\
+				/obj/item/bedsheet/hos,\
+				/obj/item/bedsheet/hop,\
+				/obj/item/bedsheet/ce,\
+				/obj/item/bedsheet/brown)
 
 /obj/random/furniture/bedsheetdouble
 	name = "random double bedsheet"
@@ -24,19 +24,19 @@
 	icon_state = "doublesheet"
 
 /obj/random/furniture/bedsheetdouble/item_to_spawn()
-	return pick(/obj/item/weapon/bedsheet/double,\
-				/obj/item/weapon/bedsheet/bluedouble,\
-				/obj/item/weapon/bedsheet/greendouble,\
-				/obj/item/weapon/bedsheet/orangedouble,\
-				/obj/item/weapon/bedsheet/purpledouble,\
-				/obj/item/weapon/bedsheet/rainbowdouble,\
-				/obj/item/weapon/bedsheet/reddouble,\
-				/obj/item/weapon/bedsheet/yellowdouble,\
-				/obj/item/weapon/bedsheet/rddouble,\
-				/obj/item/weapon/bedsheet/hosdouble,\
-				/obj/item/weapon/bedsheet/hopdouble,\
-				/obj/item/weapon/bedsheet/cedouble,\
-				/obj/item/weapon/bedsheet/browndouble)
+	return pick(/obj/item/bedsheet/double,\
+				/obj/item/bedsheet/bluedouble,\
+				/obj/item/bedsheet/greendouble,\
+				/obj/item/bedsheet/orangedouble,\
+				/obj/item/bedsheet/purpledouble,\
+				/obj/item/bedsheet/rainbowdouble,\
+				/obj/item/bedsheet/reddouble,\
+				/obj/item/bedsheet/yellowdouble,\
+				/obj/item/bedsheet/rddouble,\
+				/obj/item/bedsheet/hosdouble,\
+				/obj/item/bedsheet/hopdouble,\
+				/obj/item/bedsheet/cedouble,\
+				/obj/item/bedsheet/browndouble)
 
 /obj/random/furniture/painting /*Ignores monkey painting and the communist portraits*/
 	name = "random painting"

@@ -150,7 +150,7 @@
 "GX" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled/white/techfloor_grid,/area/nadezhda/hallway/main/stairwell)
 "Nc" = (/obj/machinery/door/airlock/maintenance_interior{name = "Service Maintenance"},/turf/simulated/floor/plating/under,/area/nadezhda/hallway/main/stairwell)
 "OJ" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/vending/wallmed{name = "Emergency NanoMed"; pixel_x = 0; pixel_y = -32},/turf/simulated/floor/tiled/white/brown_platform,/area/nadezhda/hallway/main/stairwell)
-"OT" = (/obj/structure/table/rack/shelf,/obj/item/weapon/storage/toolbox/electrical,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
+"OT" = (/obj/structure/table/rack/shelf,/obj/item/storage/toolbox/electrical,/obj/item/storage/toolbox/mechanical,/turf/simulated/floor/tiled/white/brown_perforated,/area/nadezhda/hallway/main/stairwell)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

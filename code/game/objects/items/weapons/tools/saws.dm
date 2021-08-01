@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/saw //tier 2
+/obj/item/tool/saw //tier 2
 	name = "metal saw"
 	desc = "For cutting wood and other objects to pieces. Or sawing bones, in case of emergency."
 	icon_state = "metal_saw"
@@ -14,12 +14,12 @@
 	tool_qualities = list(QUALITY_SAWING = 35, QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 20)
 	embed_mult = 1 //Serrated blades catch on bone more easily
 
-/obj/item/weapon/tool/saw/bs
+/obj/item/tool/saw/bs
 	name = "bluespace metal saw"
 	icon_state = "bs_metal_saw"
 	tool_qualities = list(QUALITY_SAWING = 100, QUALITY_CUTTING = 100, QUALITY_WIRE_CUTTING = 100)
 
-/obj/item/weapon/tool/saw/onestar_saw
+/obj/item/tool/saw/onestar_saw
 	name = "Greyson Positronic saw"
 	desc = "A rather robust hand saw for cutting down trees quickly and cleanly."
 	icon_state = "one_star_metal_saw"
@@ -30,7 +30,7 @@
 	max_upgrades = 2
 	workspeed = 1.2
 
-/obj/item/weapon/tool/saw/improvised
+/obj/item/tool/saw/improvised
 	name = "choppa"
 	desc = "An improvised saw made of twisted, wicked metal. The serrated blade, with ample space for tool mods, is great for cutting."
 	icon_state = "impro_saw"
@@ -39,7 +39,7 @@
 	degradation = 1
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
-/obj/item/weapon/tool/saw/circular //tier 3
+/obj/item/tool/saw/circular //tier 3
 	name = "circular saw"
 	desc = "For heavy duty cutting. Drains power quicker than normal saws."
 	icon_state = "saw"
@@ -51,9 +51,9 @@
 	tool_qualities = list(QUALITY_SAWING = 45, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 30)
 
 	use_power_cost = 0.45
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
 
-/obj/item/weapon/tool/saw/circular/medical
+/obj/item/tool/saw/circular/medical
 	name = "medical circular saw"
 	desc = "For clean bone cutting but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
 	icon_state = "saw"
@@ -62,9 +62,9 @@
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
 	use_power_cost = 0.05
 	degradation = 2.65
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
 
-/obj/item/weapon/tool/saw/circular/advanced
+/obj/item/tool/saw/circular/advanced
 	name = "advanced circular saw"
 	desc = "You think you can cut anything with it. More power efficient than a regular circular saw."
 	icon_state = "advanced_saw"
@@ -75,7 +75,7 @@
 	use_power_cost = 0.29
 	max_upgrades = 4
 
-/obj/item/weapon/tool/saw/chain //tier 4, focusing on damage, fuel variant
+/obj/item/tool/saw/chain //tier 4, focusing on damage, fuel variant
 	name = "chainsaw"
 	desc = "You can cut trees, people, walls, and zombies with it, just watch out for fuel."
 	icon_state = "chainsaw"
@@ -90,7 +90,7 @@
 	use_fuel_cost = 0.1
 	max_fuel = 80
 
-/obj/item/weapon/tool/saw/hyper //tier 4, focusing on damage, cell variant
+/obj/item/tool/saw/hyper //tier 4, focusing on damage, cell variant
 	name = "TM hypersaw"
 	desc = "This eco-friendly chainsaw will Rip and Tear until it is done."
 	icon_state = "hypersaw"
@@ -104,4 +104,4 @@
 	max_upgrades = 2
 	degradation = 0.7
 	use_power_cost = 1
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium

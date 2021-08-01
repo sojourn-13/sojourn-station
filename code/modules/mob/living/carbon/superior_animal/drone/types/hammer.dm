@@ -29,5 +29,5 @@
 			target.attack_generic(src, rand(melee_damage_lower, melee_damage_upper))
 
 /mob/living/carbon/superior_animal/handmade/hammer/death()
-	new /obj/item/weapon/tool/hammer/charge(src.loc)
+	new /obj/item/tool/hammer/charge(src.loc)
 	..()

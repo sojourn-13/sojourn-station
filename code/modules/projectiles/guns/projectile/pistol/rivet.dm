@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/rivet
+/obj/item/gun/projectile/rivet
 	name = "Greyson Positronic \"Rivet\" magnum pistol"
 	desc = "GP \"Rivet\" magnum pistol, lost tech of a high power pistol using only .40 Auto-Mag."
 	icon = 'icons/obj/guns/projectile/rivet_gun.dmi'
@@ -23,7 +23,7 @@
 		)
 
 
-/obj/item/weapon/gun/projectile/rivet/update_icon()
+/obj/item/gun/projectile/rivet/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

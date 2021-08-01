@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/tacticool_revolver
+/obj/item/gun/projectile/revolver/tacticool_revolver
 	name = "\"Tacticool\" heavy revolver"
 	desc = "When people complained that the mataba was impractical due to its wrist snapping recoil Scarborough Arms decided what it really needed was a tactical scope for sniping. Uses .50 kurtz."
 	icon = 'icons/obj/guns/projectile/tacticool_revolver.dmi'

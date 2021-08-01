@@ -238,7 +238,7 @@
 	active = FALSE
 
 /obj/item/shield_projector/proc/update_shield_positions()
-	if (istype(src.loc,/obj/item/weapon/storage) || istype(src.loc,/obj/structure/closet || istype(src.loc,/obj/item/clothing/suit/storage)))	//no point in finding spot for light if flashlight is inside container
+	if (istype(src.loc,/obj/item/storage) || istype(src.loc,/obj/structure/closet || istype(src.loc,/obj/item/clothing/suit/storage)))	//no point in finding spot for light if flashlight is inside container
 		destroy_shields()
 		return
 	for(var/obj/effect/directional_shield/S in active_shields)

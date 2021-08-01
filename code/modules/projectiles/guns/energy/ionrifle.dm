@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/ionrifle
+/obj/item/gun/energy/ionrifle
 	name = "\"Halicon\" ion-rifle"
 	desc = "The OT IR Halicon is a man-portable anti-armor weapon designed to disable mechanical threats, produced by Old Testament. Not the best of its type, but gets the job done."
 	icon = 'icons/obj/guns/energy/iongun.dmi'
@@ -19,10 +19,10 @@
 	twohanded = TRUE
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 
-/obj/item/weapon/gun/energy/ionrifle/emp_act(severity)
+/obj/item/gun/energy/ionrifle/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
 
-/obj/item/weapon/gun/energy/ionrifle/update_icon(ignore_inhands)
+/obj/item/gun/energy/ionrifle/update_icon(ignore_inhands)
 	..(TRUE)
 	if(!cell || cell.charge < charge_cost)
 		set_item_state("-empty", hands = TRUE)
@@ -32,7 +32,7 @@
 	if(!ignore_inhands)
 		update_wear_icon()
 
-/obj/item/weapon/gun/energy/ionpistol
+/obj/item/gun/energy/ionpistol
 	name = "\"Aedes\" ion-pistol"
 	desc = "A compact ion pistol produced by Seinemetall Defense GmbH, used primarly by police specialist units to disable energy weapons or electronics. \
 	It's sleek compact and design allows for it to be holsterable."
@@ -54,10 +54,10 @@
 	twohanded = FALSE
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 
-/obj/item/weapon/gun/energy/ionpistol/emp_act(severity)
+/obj/item/gun/energy/ionpistol/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
 
-/obj/item/weapon/gun/energy/ionpistol/update_icon(ignore_inhands)
+/obj/item/gun/energy/ionpistol/update_icon(ignore_inhands)
 	..(TRUE)
 	if(!cell || cell.charge < charge_cost)
 		set_item_state("-empty", hands = TRUE)

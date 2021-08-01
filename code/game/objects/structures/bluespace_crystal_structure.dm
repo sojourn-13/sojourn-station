@@ -18,10 +18,10 @@
 
 	var/list/explosion_items = list(
 		/obj/item/bluespace_crystal,
-		/obj/item/weapon/hand_tele,
+		/obj/item/hand_tele,
 		/obj/item/device/radio/uplink,
-		/obj/item/weapon/reagent_containers/glass/beaker/bluespace,
-		/obj/item/weapon/bluespace_harpoon,
+		/obj/item/reagent_containers/glass/beaker/bluespace,
+		/obj/item/bluespace_harpoon,
 		/obj/item/seeds/bluespacetomatoseed
 	)
 	var/entropy_value = 8

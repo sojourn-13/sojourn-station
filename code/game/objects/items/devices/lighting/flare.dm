@@ -114,7 +114,7 @@
 	else
 		return
 
-/obj/item/device/lighting/glowstick/flare/torch/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/lighting/glowstick/flare/torch/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	if(isflamesource(W))
 		if(fuel <= 0)

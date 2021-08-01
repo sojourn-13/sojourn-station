@@ -2,7 +2,7 @@
 	name = "exosuit fabricator"
 	desc = "A machine used for construction of robots and mechas."
 	icon_state = "mechfab"
-	circuit = /obj/item/weapon/circuitboard/mechfab
+	circuit = /obj/item/circuitboard/mechfab
 
 	build_type = MECHFAB
 	storage_capacity = 240

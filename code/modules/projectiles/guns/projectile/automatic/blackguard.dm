@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/blackguard
+/obj/item/gun/projectile/automatic/blackguard
 	name = "\"Blackguard\" heavy marksman rifle"
 	desc = "A heavily modded and  \"improved\" omnirifle platform design made by the Blackshield and Marshals, chambered in .408, \
 	With an extended barrel, standard bayonet, and a reflex scope this rifle has less customization than other weapons, but lends itself to a good all \
@@ -33,7 +33,7 @@
 		list(mode_name="semiauto", burst=1, fire_delay=8, move_delay=null, icon="semi")
 		)
 
-/obj/item/weapon/gun/projectile/automatic/blackguard/update_icon()
+/obj/item/gun/projectile/automatic/blackguard/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -51,6 +51,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/blackguard/Initialize()
+/obj/item/gun/projectile/automatic/blackguard/Initialize()
 	. = ..()
 	update_icon()

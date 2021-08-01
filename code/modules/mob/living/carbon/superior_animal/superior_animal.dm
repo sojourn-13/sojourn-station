@@ -70,7 +70,7 @@
 	var/attack_sound_chance = 100
 	var/attack_sound_volume = 90
 
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	var/meat_amount = 3
 	//Lodge related products
 	var/leather_amount = 0 //The amount of leather sheets dropped.

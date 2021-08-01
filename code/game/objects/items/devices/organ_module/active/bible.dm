@@ -5,4 +5,4 @@
 	icon_state = "bible"
 	matter = list(MATERIAL_STEEL = 16)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/book/ritual/cruciform
+	holding_type = /obj/item/book/ritual/cruciform

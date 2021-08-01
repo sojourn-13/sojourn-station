@@ -1,7 +1,7 @@
 /datum/design/research/item/chameleon_kit
 	name = "Chameleon Kit"
 	desc = "A kit containing a full set of clothes and a toy gun with dials to change their appearance. Impersonate anyone!"
-	build_path = /obj/item/weapon/storage/box/syndie_kit/chameleon
+	build_path = /obj/item/storage/box/syndie_kit/chameleon
 
 /datum/design/research/item/binaryencrypt
 	name = "Binary Encryption Key"
@@ -44,4 +44,4 @@
 	name = "SI \"Spot\" Cleaning Pistol"
 	desc = "After extensive study of the cleaner carbine and some schematics obtained under shady circumstances some clean freaks made a lesser but far more compact version of the Old Testament favorite."
 	materials = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 8, MATERIAL_PLASTIC = 20) //No free refills
-	build_path = /obj/item/weapon/gun/matter/launcher/nt_sprayer/mini
+	build_path = /obj/item/gun/matter/launcher/nt_sprayer/mini

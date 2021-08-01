@@ -1,10 +1,10 @@
 /obj/item/modular_computer/console/preset/install_default_hardware()
 	..()
-	processor_unit = new/obj/item/weapon/computer_hardware/processor_unit(src)
-	tesla_link = new/obj/item/weapon/computer_hardware/tesla_link(src)
-	hard_drive = new/obj/item/weapon/computer_hardware/hard_drive/advanced(src)
-	network_card = new/obj/item/weapon/computer_hardware/network_card/wired(src)
-	scanner = new /obj/item/weapon/computer_hardware/scanner/paper(src)
+	processor_unit = new/obj/item/computer_hardware/processor_unit(src)
+	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/advanced(src)
+	network_card = new/obj/item/computer_hardware/network_card/wired(src)
+	scanner = new /obj/item/computer_hardware/scanner/paper(src)
 
 // Engineering
 /obj/item/modular_computer/console/preset/engineering/install_default_programs()
@@ -52,7 +52,7 @@
 // Medical
 /obj/item/modular_computer/console/preset/medical/install_default_hardware()
 	..()
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
+	printer = new/obj/item/computer_hardware/printer(src)
 
 /obj/item/modular_computer/console/preset/medical/install_default_programs()
 	..()
@@ -75,7 +75,7 @@
 // Research
 /obj/item/modular_computer/console/preset/research/install_default_hardware()
 	..()
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
+	printer = new/obj/item/computer_hardware/printer(src)
 
 /obj/item/modular_computer/console/preset/research/install_default_programs()
 	..()
@@ -90,7 +90,7 @@
 /*
 /obj/item/modular_computer/console/preset/research/silicon/install_default_hardware()
 	..()
-	ai_slot = new/obj/item/weapon/computer_hardware/ai_slot(src)
+	ai_slot = new/obj/item/computer_hardware/ai_slot(src)
 
 /obj/item/modular_computer/console/preset/research/silicon/install_default_programs()
 	..()
@@ -106,8 +106,8 @@
 // Command
 /obj/item/modular_computer/console/preset/command/install_default_hardware()
 	..()
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
-	card_slot = new/obj/item/weapon/computer_hardware/card_slot(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	card_slot = new/obj/item/computer_hardware/card_slot(src)
 
 /obj/item/modular_computer/console/preset/command/install_default_programs()
 	..()
@@ -129,7 +129,7 @@
 // Security
 /obj/item/modular_computer/console/preset/security/install_default_hardware()
 	..()
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
+	printer = new/obj/item/computer_hardware/printer(src)
 
 /obj/item/modular_computer/console/preset/security/install_default_programs()
 	..()
@@ -167,7 +167,7 @@
 // Civilian Offices
 /obj/item/modular_computer/console/preset/civilian/professional/install_default_hardware()
 	..()
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
+	printer = new/obj/item/computer_hardware/printer(src)
 
 /obj/item/modular_computer/console/preset/civilian/professional/install_default_programs()
 	..()
@@ -184,7 +184,7 @@
 /*
 /obj/item/modular_computer/console/preset/dock/install_default_hardware()
 	..()
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
+	printer = new/obj/item/computer_hardware/printer(src)
 
 /obj/item/modular_computer/console/preset/dock/install_default_programs()
 	..()
@@ -197,7 +197,7 @@
 // Crew-facing supply ordering computer
 /obj/item/modular_computer/console/preset/supply/install_default_hardware()
 	..()
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
+	printer = new/obj/item/computer_hardware/printer(src)
 
 /obj/item/modular_computer/console/preset/supply/install_default_programs()
 	..()
@@ -207,9 +207,9 @@
 // ERT
 /obj/item/modular_computer/console/preset/ert/install_default_hardware()
 	..()
-	ai_slot = new/obj/item/weapon/computer_hardware/ai_slot(src)
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
-	card_slot = new/obj/item/weapon/computer_hardware/card_slot(src)
+	ai_slot = new/obj/item/computer_hardware/ai_slot(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	card_slot = new/obj/item/computer_hardware/card_slot(src)
 
 /obj/item/modular_computer/console/preset/ert/install_default_programs()
 	..()
@@ -227,9 +227,9 @@
 
 /obj/item/modular_computer/console/preset/mercenary/install_default_hardware()
 	..()
-	ai_slot = new/obj/item/weapon/computer_hardware/ai_slot(src)
-	printer = new/obj/item/weapon/computer_hardware/printer(src)
-	card_slot = new/obj/item/weapon/computer_hardware/card_slot(src)
+	ai_slot = new/obj/item/computer_hardware/ai_slot(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	card_slot = new/obj/item/computer_hardware/card_slot(src)
 
 /obj/item/modular_computer/console/preset/mercenary/install_default_programs()
 	..()

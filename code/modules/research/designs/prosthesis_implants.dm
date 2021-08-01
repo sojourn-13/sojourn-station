@@ -148,15 +148,15 @@ the lims and such to pull out the internal bits for other people if needed
 
 /datum/design/research/item/implant/chemical
 	name = "Chemical Implant"
-	build_path = /obj/item/weapon/implantcase/chem
+	build_path = /obj/item/implantcase/chem
 
 /datum/design/research/item/implant/freedom
 	name = "Freedom Implant"
-	build_path = /obj/item/weapon/implantcase/freedom
+	build_path = /obj/item/implantcase/freedom
 
 /datum/design/research/item/implant/alarm
 	name = "Death Alarm Implant"
-	build_path = /obj/item/weapon/implantcase/death_alarm
+	build_path = /obj/item/implantcase/death_alarm
 
 /datum/design/research/item/mechfab/modules/hud
 
@@ -181,13 +181,13 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Embedded Welder Shades"
 
 /datum/design/research/item/mechfab/modules/hud/thermal_bio
-	build_path = /obj/item/weapon/biogoop/thermal
+	build_path = /obj/item/biogoop/thermal
 	name = "Embedded bio-thermal shades"
 
 /datum/design/research/item/mechfab/modules/hud/welder_bio
-	build_path = /obj/item/weapon/biogoop/welding
+	build_path = /obj/item/biogoop/welding
 	name = "Embedded bio-welder shades"
 
 /datum/design/research/item/mechfab/modules/hud/night_bio
-	build_path = /obj/item/weapon/biogoop/night
+	build_path = /obj/item/biogoop/night
 	name = "Embedded bio-night vision shades"

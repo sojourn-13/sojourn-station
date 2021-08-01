@@ -7,7 +7,7 @@
 	health = 20
 	var/datum/reagents/gas_sac //Stores gas. Can't use the default reagents since that is now bloodstream
 	melee_damage_upper = 3
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/seuche
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche
 	meat_amount = 3
 
 	knockdown_odds = 3

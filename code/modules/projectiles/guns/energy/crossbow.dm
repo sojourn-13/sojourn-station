@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/crossbow
+/obj/item/gun/energy/crossbow
 	name = "\"Nemesis\" energy crossbow"
 	desc = "Mini energy crossbow, produced by Old Testament, discontinued now. Highly favored for a backpack for game hunting."
 	icon = 'icons/obj/guns/energy/crossbow.dmi'
@@ -17,14 +17,14 @@
 	charge_cost = 200
 	price_tag = 1250
 
-/obj/item/weapon/gun/energy/crossbow/ninja
+/obj/item/gun/energy/crossbow/ninja
 	name = "energy dart thrower"
 	desc = "Mini energy crossbow, though this looks black market and doesn't at all resemble existing similar weapons."
 	projectile_type = /obj/item/projectile/energy/dart
 	safety = FALSE
 	restrict_safety = TRUE
 
-/obj/item/weapon/gun/energy/crossbow/largecrossbow
+/obj/item/gun/energy/crossbow/largecrossbow
 	name = "\"Themis\" energy crossbow"
 	desc = "Energy crossbow, produced by old Old Testament, discontinued now. Highly favored for game hunting."
 	w_class = ITEM_SIZE_BULKY

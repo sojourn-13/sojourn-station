@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/flamethrower
+/obj/item/gun/flamethrower
 	name = "\"Hellfire\" flamethrower"
 	desc = "A flamethrower that launches globs of scorching napalm. For dealing with plants, animals, and people complaining about war crimes."
 	icon = 'icons/obj/guns/launcher/backburner.dmi'
@@ -10,16 +10,16 @@
 	var/projectile_type = /obj/item/projectile/flamer_lob/flamethrower // What does it shoot
 	var/use_amount = 10 // How much fuel is used per shot
 	var/fuel_type = "fuel" // What kind of chem do we use?
-	var/obj/item/weapon/weldpack/canister/fuel_can = null // The canister the gun use for ammo
+	var/obj/item/weldpack/canister/fuel_can = null // The canister the gun use for ammo
 
-/obj/item/weapon/gun/flamethrower/Initialize()
+/obj/item/gun/flamethrower/Initialize()
 	..()
-	fuel_can = new /obj/item/weapon/weldpack/canister/flamethrower(src) // Give the gun a new flask when mapped in.
+	fuel_can = new /obj/item/weldpack/canister/flamethrower(src) // Give the gun a new flask when mapped in.
 
-/obj/item/weapon/gun/flamethrower/New()
+/obj/item/gun/flamethrower/New()
 	..()
 
-/obj/item/weapon/gun/flamethrower/examine(mob/user)
+/obj/item/gun/flamethrower/examine(mob/user)
 	..(user)
 	if(!fuel_can)
 		to_chat(user, SPAN_NOTICE("It has no fuel_can inserted."))
@@ -30,22 +30,22 @@
 	return
 
 // Removing the fuel canister
-/obj/item/weapon/gun/flamethrower/MouseDrop(over_object)
+/obj/item/gun/flamethrower/MouseDrop(over_object)
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(fuel_can, usr))
 		fuel_can = null
 		update_icon()
 
-/obj/item/weapon/gun/flamethrower/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
-	if(fuel_can && istype(W, /obj/item/weapon/weldpack/canister))
+/obj/item/gun/flamethrower/attackby(obj/item/W as obj, mob/living/user as mob)
+	if(fuel_can && istype(W, /obj/item/weldpack/canister))
 		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
 		return
 
-	if(istype(W, /obj/item/weapon/weldpack/canister) && insert_item(W, user))
+	if(istype(W, /obj/item/weldpack/canister) && insert_item(W, user))
 		fuel_can = W
 		update_icon()
 		return
 
-/obj/item/weapon/gun/flamethrower/consume_next_projectile()
+/obj/item/gun/flamethrower/consume_next_projectile()
 	if(!fuel_can) // Do we have a fuel can?
 		return null
 	if(!ispath(projectile_type)) // Do we actually shoot something?

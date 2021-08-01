@@ -163,7 +163,7 @@
 "I" = (
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "N" = (
@@ -182,7 +182,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "U" = (
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "Z" = (

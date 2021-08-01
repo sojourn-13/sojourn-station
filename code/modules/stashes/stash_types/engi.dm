@@ -19,9 +19,9 @@
 	/obj/random/material = 50,
 	/obj/random/material_rare = 50,
 	/obj/random/material_rare = 50,
-	/obj/item/weapon/rcd = 1,
-	/obj/item/weapon/rcd_ammo = 10,
-	/obj/item/weapon/rcd_ammo = 5)
+	/obj/item/rcd = 1,
+	/obj/item/rcd_ammo = 10,
+	/obj/item/rcd_ammo = 5)
 
 /datum/stash/engi/inspection
 	contents_list_extra = list(/obj/item/stack/material/steel/full = 2,
@@ -34,8 +34,8 @@
 /datum/stash/engi/illicit_trade
 	contents_list_extra = list(/obj/random/rig/engi = 1,
 	/obj/random/pouch = 1,
-	/obj/item/weapon/hatton = 1,
-	/obj/item/weapon/hatton_magazine = 1,
+	/obj/item/hatton = 1,
+	/obj/item/hatton_magazine = 1,
 	)
 
 /datum/stash/engi/blown
@@ -48,8 +48,8 @@
 
 /datum/stash/engi/handoff
 	contents_list_extra = list(
-	/obj/item/weapon/rcd = 1,
-	/obj/item/weapon/rcd_ammo = 3,
+	/obj/item/rcd = 1,
+	/obj/item/rcd_ammo = 3,
 	/obj/item/stack/material/plasteel/random = 1,
 	)
 

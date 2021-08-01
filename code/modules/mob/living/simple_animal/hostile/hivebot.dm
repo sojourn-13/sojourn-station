@@ -29,7 +29,7 @@
 	leather_amount = 0
 	bones_amount = 0
 	//Drops
-	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
 
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
@@ -79,7 +79,7 @@
 
 	//Death and harvest vars
 	meat_amount = 3
-	meat_type = /obj/item/weapon/scrap_lump
+	meat_type = /obj/item/scrap_lump
 	blood_from_harvest = /obj/effect/decal/cleanable/blood/gibs/robot
 	gibspawner = /obj/effect/gibspawner/robot
 
@@ -157,7 +157,7 @@
 
 	//Death and harvest vars
 	meat_amount = 3
-	meat_type = /obj/item/weapon/scrap_lump
+	meat_type = /obj/item/scrap_lump
 	gibspawner = /obj/effect/gibspawner/robot
 	leather_amount = 0
 	bones_amount = 0

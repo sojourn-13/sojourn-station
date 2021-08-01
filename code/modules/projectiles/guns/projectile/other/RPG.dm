@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/rpg
+/obj/item/gun/projectile/rpg
 	name = "RPG"
 	desc = "A simple, reloadable launcher with roots back to the beginings of anti-armor warfare. \
 			This particular variant is sligtly less devastating, however that's a small price to pay for negligible back-blast."
@@ -25,7 +25,7 @@
 	twohanded = TRUE
 	gun_tags = list(GUN_SCOPE)
 
-/obj/item/weapon/gun/projectile/rpg/update_icon()
+/obj/item/gun/projectile/rpg/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -36,6 +36,6 @@
 //		itemstring += "-he"         disabled until mag fix
 	icon_state = iconstring
 	set_item_state(itemstring)
-/obj/item/weapon/gun/projectile/rpg/Initialize()
+/obj/item/gun/projectile/rpg/Initialize()
 	. = ..()
 	update_icon()
