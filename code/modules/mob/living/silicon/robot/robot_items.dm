@@ -435,7 +435,8 @@
 						  QUALITY_BOLT_TURNING = 40,
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_SAWING = 30,
-						  QUALITY_DIGGING = 40)
+						  QUALITY_DIGGING = 40,
+						  QUALITY_SCREW_DRIVING = 40)
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -448,7 +449,8 @@
 						  QUALITY_HAMMERING = 30,
 						  QUALITY_BOLT_TURNING = 40,
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
-						  QUALITY_SAWING = 30,)
+						  QUALITY_SAWING = 30,
+						  QUALITY_SCREW_DRIVING = 40)
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
