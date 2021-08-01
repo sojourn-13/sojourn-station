@@ -70,6 +70,7 @@
 "zE" = (/turf/simulated/floor/plating/under,/area/template_noop)
 "zJ" = (/obj/structure/table/onestar,/obj/machinery/chemical_dispenser/beer,/turf/simulated/floor/asteroid,/area/template_noop)
 "zM" = (/obj/structure/table/onestar,/obj/machinery/chemical_dispenser/soda,/turf/simulated/floor/asteroid,/area/template_noop)
+"AO" = (/obj/structure/closet/crate/secure/loot,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/template_noop)
 "Bv" = (/obj/structure/railing/grey{dir = 4},/obj/structure/railing/grey,/turf/simulated/floor/plating/under,/area/template_noop)
 "CY" = (/obj/structure/bed/chair/custom/onestar{dir = 8},/turf/simulated/floor/asteroid,/area/template_noop)
 "Di" = (/obj/machinery/door/airlock/sandstone{name = "OneStar Airlock"},/turf/simulated/floor/tiled/derelict,/area/template_noop)
@@ -126,8 +127,8 @@ bihYMqMqWoWoWoWoWoWoWoWoWoWoWoWoWoWoWoWoWozEzEHnbi
 bibiHnWoNdSIaJueWobcaNWobcaNWoaNbcWoaNbcWoGuzEzEbi
 bibibiWoNdSISIZkWobhaYWobhaYWoLjbhWoLjbhWoicbjkObi
 bibibiWoNdSIaabqWobubucVbuabfvuBbucVLkbuWogYgYzEHn
-bibPbiWohOpASIjdWokHpILkbubububububububuWoWoWoWoHn
-bibiHnWohOSISISIWobArdsfWolUlUlUWosfamwXxbzJzMWobi
+bibPbiWoAOpASIjdWokHpILkbubububububububuWoWoWoWoHn
+bibiHnWoAOSISISIWobArdsfWolUlUlUWosfamwXxbzJzMWobi
 bibiWoWoWoWolZWoWoZoaoWoasDWESDWHNlUamRvamJxKzWobi
 bibilUzEEJNGNKTWWoanaolZWADWNyDWYZWoZtacbEacIiWobP
 bibiWoWoBvNGNGjjWofHaoWoasadDUDWYWlUbEDPbEbEbEWobi

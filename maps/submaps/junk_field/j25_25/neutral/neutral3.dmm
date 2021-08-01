@@ -13,7 +13,6 @@
 "am" = (/obj/machinery/atmospherics/pipe/simple/visible/yellow{dir = 9},/turf/simulated/floor/plating/under,/area/template_noop)
 "an" = (/obj/structure/scrap/poor/large,/turf/simulated/floor/plating/under,/area/template_noop)
 "ao" = (/obj/random/scrap/sparse_even/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
-"ap" = (/obj/machinery/camera/network/engineering{dir = 1},/turf/simulated/floor/plating/under,/area/template_noop)
 "aq" = (/obj/random/junk,/turf/simulated/floor/plating/under,/area/template_noop)
 "ar" = (/obj/machinery/atmospherics/pipe/simple/visible/green{dir = 10; tag = "icon-intact (SOUTHWEST)"},/obj/machinery/meter,/mob/living/simple_animal/hostile/carp/baby,/turf/simulated/floor/tiled/dark/danger,/area/template_noop)
 "as" = (/obj/random/junkfood/rotten,/turf/simulated/floor/plating/under,/area/template_noop)
@@ -22,7 +21,6 @@
 "aw" = (/obj/machinery/atmospherics/pipe/simple/visible/yellow{dir = 4},/turf/simulated/floor/plating/under,/area/template_noop)
 "ax" = (/obj/machinery/atmospherics/pipe/simple/visible/green,/obj/machinery/atmospherics/pipe/simple/visible/yellow{dir = 4},/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "ay" = (/obj/machinery/atmospherics/valve/digital/open{dir = 4; name = "Nitrogen Outlet Valve"},/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
-"az" = (/obj/machinery/camera/network/engineering{dir = 1},/obj/random/junk,/turf/simulated/floor/tiled/dark/danger,/area/template_noop)
 "aA" = (/obj/machinery/firealarm{pixel_y = 28},/mob/living/simple_animal/hostile/carp/baby,/turf/simulated/floor/tiled/dark/techfloor,/area/template_noop)
 "aB" = (/obj/machinery/door/firedoor,/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating,/area/template_noop)
 "aC" = (/obj/random/junk,/turf/simulated/floor/tiled/dark/danger,/area/template_noop)
@@ -66,14 +64,14 @@
 "bo" = (/obj/random/junk/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "bp" = (/obj/structure/table/reinforced,/obj/item/stack/material/glass{amount = 120},/obj/random/junk,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "bq" = (/obj/structure/table/reinforced,/obj/item/stack/material/steel{amount = 120},/obj/random/junk,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
-"br" = (/obj/structure/table/reinforced,/obj/item/weapon/tank/emergency_oxygen{pixel_x = -8},/obj/item/weapon/tank/emergency_oxygen{pixel_x = -8},/obj/item/clothing/mask/breath{pixel_x = 4},/obj/item/clothing/mask/breath{pixel_x = 4},/obj/random/junk,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
+"br" = (/obj/structure/table/reinforced,/obj/item/clothing/mask/breath{pixel_x = 4},/obj/item/clothing/mask/breath{pixel_x = 4},/obj/random/junk,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "bs" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/engineering{name = "Wasting Room"},/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "bt" = (/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "bu" = (/obj/machinery/atmospherics/pipe/simple/visible/green,/obj/machinery/door/firedoor,/obj/effect/window_lwall_spawn/plasma,/turf/simulated/floor/plating,/area/template_noop)
 "bv" = (/obj/machinery/door/firedoor,/obj/effect/window_lwall_spawn/plasma,/turf/simulated/floor/plating,/area/template_noop)
 "bw" = (/obj/machinery/atmospherics/pipe/simple/visible/yellow,/obj/machinery/door/firedoor,/obj/effect/window_lwall_spawn/plasma,/turf/simulated/floor/plating,/area/template_noop)
 "bx" = (/obj/machinery/atmospherics/pipe/simple/visible/yellow{dir = 10},/obj/random/techpart,/turf/simulated/floor/plating/under,/area/template_noop)
-"by" = (/obj/structure/table/reinforced,/obj/item/weapon/tank/emergency_oxygen/double,/obj/machinery/light/small,/turf/simulated/floor/plating/under,/area/template_noop)
+"by" = (/obj/structure/table/reinforced,/obj/machinery/light/small,/turf/simulated/floor/plating/under,/area/template_noop)
 "bz" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/plating/under,/area/template_noop)
 "bA" = (/obj/structure/railing{dir = 8; tag = "icon-railing0 (WEST)"},/turf/simulated/floor/plating/under,/area/template_noop)
 "bB" = (/obj/structure/catwalk,/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/plating/under,/area/template_noop)
@@ -81,7 +79,6 @@
 "bD" = (/obj/structure/railing{dir = 1; tag = "icon-railing0 (NORTH)"},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "bE" = (/obj/structure/railing,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/random/scrap/sparse_even/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "bF" = (/obj/structure/railing,/obj/structure/railing{dir = 4; tag = "icon-railing0 (EAST)"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/random/scrap/sparse_even/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
-"bG" = (/obj/machinery/camera/network/engineering{dir = 4},/obj/random/scrap/sparse_even/low_chance,/turf/simulated/floor/plating/under,/area/template_noop)
 "bK" = (/obj/structure/catwalk,/obj/structure/sign/warning/nosmoking/largeburnt{pixel_y = 32},/turf/simulated/floor/plating/under,/area/template_noop)
 "bL" = (/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/template_noop)
 "bM" = (/obj/machinery/atmospherics/pipe/simple/visible/yellow,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/template_noop)
@@ -96,7 +93,6 @@
 "cn" = (/obj/random/structures,/turf/simulated/floor/tiled/techmaint_panels,/area/template_noop)
 "cp" = (/obj/structure/table/rack,/obj/random/lowkeyrandom,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "cv" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/techmaint,/area/template_noop)
-"cx" = (/obj/machinery/camera/network/engineering,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "cz" = (/obj/structure/table/reinforced,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "cA" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/reinforced,/obj/random/tank,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "cB" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/maintenance_engineering{name = "Atmospherics Maintenance"; req_access = list(24)},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/techmaint_cargo,/area/template_noop)
@@ -162,8 +158,8 @@
 (1,1,1) = {"
 iSabaJabfYabfuabaeaafYabaaabaamoaafYaaaaabZOfYaamo
 aJNPbfHEZOaJLsaJaJSnkSakaJajababFCaJakalNXaJababaa
-aeabaekDaJapboaJHEacaJhjauavawawgsaxamjHayQraJaJfY
-aafYaoaeaBdbdbaBdbaDadaFaGaHahazaCaKaLaradaOHEaJab
+aeabaekDaJaJboaJHEacaJhjauavawawgsaxamjHayQraJaJfY
+aafYaoaeaBdbdbaBdbaDadaFaGaHahaCaCaKaLaradaOHEaJab
 moaaaaabaaZOaRfYdbaSaEaOaTaUaTdbaTaVaWaXaYaZdbbaab
 fYdbdbdbaBdbabfudbbcaBbddbbeabaeiSabdbaBaBaBdbaINa
 abdbbkblandbiSabdbbmpPbndbakHESqaJbodbaJiSabaaaafY
@@ -175,12 +171,12 @@ aaaadbdbbWdbdbdmdbdbaeaafYmodbbXtWbfdbdbdbdbdbiSaa
 aaaRiSaebfbtbLbLbLbKabfYaaabdbbMcaCBdbcbwaaAbgfuaa
 aaiSdbdbdbdbbhdbdbdbdbaJaebodbbCdbbiciBpcjckbjabNa
 aafudbcncndbdbdbcncndbdbdbaJdbaodbcpdbbpbqbrbybzae
-aadbdbbfbtcvbBcxcabtczcAdbbWdbaedbdbdbdbdbdbdbcBdb
+aadbdbbfbtcvbBbtcabtczcAdbbWdbaedbdbdbdbdbdbdbcBdb
 fYdbaobDcEcFcGcHoMcHcHcHcIcHcJcKcKcLcMcKcKcOcPcQdb
 aadbaqaPbEbFbLbLbLbLbLbLbLbLcVsXbLcWcXbLbLcYcZdtaT
 fudbdbCBbtcaKVagbtcabfbtdbdcdbaTdbdddedbbiaMbtbtaT
 aafYdbaTaTdbdbdbaTaTdbdfdbaidhdidbdjdkdbbWdbdbdbdb
-aaaaabaaaaNaaaaaaaiSdbdbdbbGdbdbdbiSabdbCBdbiSaaNa
+aaaaabaaaaNaaaaaaaiSdbdbdbaodbdbdbiSabdbCBdbiSaaNa
 aaabfufYaaaaaamoaaaaaafuaeboaeabaamoaadbdbdbZOmoaa
 HEabaaaaaaaaaRaaaaaaaaababababZOaaaaaaaeabFCabanHE
 aeHEfYaamoaaaaaaNaaamofYaaaamoaaaamoaaaaaaaaaeaeHE
