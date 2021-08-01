@@ -44,7 +44,7 @@
 	recharge_time = 4 //Time it takes for shots to recharge (in ticks)
 	damage_multiplier = 1
 	projectile_type = /obj/item/projectile/beam/heavylaser
-	cell_type = /obj/item/weapon/cell/medium/moebius/omega
+	cell_type = /obj/item/weapon/cell/medium/moebius/high
 	charge_cost = 50
 
 /obj/item/weapon/gun/energy/laser/practice
