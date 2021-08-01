@@ -35,6 +35,8 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
+	known_languages = list(LANGUAGE_COMMON)
+
 	//Drops
 	var/drop1 = /obj/item/weapon/scrap_lump
 	var/drop2 = null

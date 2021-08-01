@@ -30,6 +30,8 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
+	known_languages = list(LANGUAGE_COMMON)
+
 	var/obj/item/weapon/cell/cell = null // Hold the drone's power cell, default to a cheap one.
 	follow_message = "state, \"Beginning Escort Protocol.\""
 	stop_message = "state, \"Ending Escort Protocol.\""
