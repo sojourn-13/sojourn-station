@@ -25,6 +25,8 @@
 	hud_actions = list()
 	max_upgrades = 5
 
+	hitsound = "swing_hit"
+
 	var/auto_eject = FALSE			//if the magazine should automatically eject itself when empty.
 	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
 
