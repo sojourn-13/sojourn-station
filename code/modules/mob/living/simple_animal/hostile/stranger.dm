@@ -46,7 +46,7 @@
 
 /mob/living/simple_animal/hostile/stranger/death()
 	. = ..()
-	var/obj/item/weapon/gun/energy/plasma/stranger/S = new (src.loc)
+	var/obj/item/gun/energy/plasma/stranger/S = new (src.loc)
 	S.cell = new S.suitable_cell(S)
 	if(empy_cell)
 		S.cell.use(S.cell.charge)
@@ -120,7 +120,7 @@
 		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 
-/obj/item/weapon/gun/energy/plasma/stranger
+/obj/item/gun/energy/plasma/stranger
 	name = "unknown plasma gun"
 	desc = "A plasma gun from unknown origin"
 	icon = 'icons/obj/guns/energy/lancer.dmi'
@@ -132,7 +132,7 @@
 	fire_delay = 5
 	one_hand_penalty = 5
 	twohanded = FALSE
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
 	can_dual = TRUE
 	w_class = ITEM_SIZE_NORMAL
 
@@ -143,7 +143,7 @@
 		list(mode_name="VAPORIZE", burst=3, projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/unknown_spacegun_vaporize.ogg', fire_delay=5, move_delay=4, charge_cost=11, icon="vaporize", projectile_color = "#FFFFFF", recoil_buildup=3)
 	)
 
-/obj/item/weapon/gun/energy/plasma/stranger/update_icon(ignore_inhands)
+/obj/item/gun/energy/plasma/stranger/update_icon(ignore_inhands)
 	if(charge_meter)
 		var/ratio = 0
 

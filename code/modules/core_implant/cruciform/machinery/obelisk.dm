@@ -102,7 +102,7 @@ GLOBAL_VAR_INIT(miracle_points, 5)
 		H.stats.removePerk(/datum/perk/sanityboost)
 	currently_affected -= no_longer_affected
 	for(var/mob/living/carbon/human/mob in affected)
-		var/obj/item/weapon/implant/core_implant/I = mob.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
+		var/obj/item/implant/core_implant/I = mob.get_core_implant(/obj/item/implant/core_implant/cruciform)
 		if(I && I.active && I.wearer)
 			if(!(mob in currently_affected)) // the mob just entered the range of the obelisk
 				mob.stats.addPerk(/datum/perk/sanityboost)

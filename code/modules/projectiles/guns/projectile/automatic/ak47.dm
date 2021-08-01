@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/ak47
+/obj/item/gun/projectile/automatic/ak47
 	name = "Excelsior \"Kalashnikov\" carbine"
 	desc = "\"We stand for organized terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\"\
 		 A copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 7.5. This is an abysmal, printed copy."
@@ -28,7 +28,7 @@
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/automatic/ak47/update_icon()
+/obj/item/gun/projectile/automatic/ak47/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -44,11 +44,11 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/ak47/Initialize()
+/obj/item/gun/projectile/automatic/ak47/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/ak47/akl
+/obj/item/gun/projectile/automatic/ak47/akl
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 	A modernized experimental version of an old Kalashnikov design, desginated to take .223 laser ammuniton. The future is now, comrade. This modified type is commonly found in use by void wolves and similar ilk."
@@ -73,7 +73,7 @@
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/automatic/ak47/sa
+/obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 		 A copy of the AKM pattern, shortened into a mid-length carbine and chambered in 7.5. The left arm of the unfree world."
@@ -86,9 +86,9 @@
 	recoil_buildup = 8
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/automatic/ak47/sawn
+	sawn = /obj/item/gun/projectile/automatic/ak47/sawn
 
-/obj/item/weapon/gun/projectile/automatic/ak47/sawn
+/obj/item/gun/projectile/automatic/ak47/sawn
 	name = "sawn-off \"Kalashnikov\" carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \
 	A copy of the AKM pattern chambered in 7.5 and crudely sawed down to a shadow of its former self. Rifle was fine. Was."

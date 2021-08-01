@@ -27,11 +27,11 @@
 /datum/supply_pack/mining_supply
 	name = "Jackhammer Mining Supply Crate"
 	contains = list(
-					/obj/item/weapon/reagent_containers/spray/cleaner,
+					/obj/item/reagent_containers/spray/cleaner,
 					/obj/item/device/lighting/toggleable/flashlight/heavy,
-					/obj/item/weapon/cell/medium/high,
-					/obj/item/weapon/storage/bag/ore,
-					/obj/item/weapon/tool/pickaxe/jackhammer)
+					/obj/item/cell/medium/high,
+					/obj/item/storage/bag/ore,
+					/obj/item/tool/pickaxe/jackhammer)
 	cost = 800
 	containertype = /obj/structure/closet/crate/secure/gear
 	crate_name = "mining supply crate"
@@ -40,11 +40,11 @@
 /datum/supply_pack/drill_mining_supply
 	name = "Diesel Drill Supply Crate"
 	contains = list(
-					/obj/item/weapon/reagent_containers/spray/cleaner,
+					/obj/item/reagent_containers/spray/cleaner,
 					/obj/item/device/lighting/toggleable/flashlight/heavy,
-					/obj/item/weapon/weldpack/canister,
-					/obj/item/weapon/storage/bag/ore,
-					/obj/item/weapon/tool/pickaxe/drill)
+					/obj/item/weldpack/canister,
+					/obj/item/storage/bag/ore,
+					/obj/item/tool/pickaxe/drill)
 	cost = 900
 	containertype = /obj/structure/closet/crate/secure/gear
 	crate_name = "mining supply crate"
@@ -53,11 +53,11 @@
 /datum/supply_pack/diamond_drill_mining_supply
 	name = "Diamond Diesel Drill Supply Crate"
 	contains = list(
-					/obj/item/weapon/reagent_containers/spray/cleaner,
+					/obj/item/reagent_containers/spray/cleaner,
 					/obj/item/device/lighting/toggleable/flashlight/heavy,
-					/obj/item/weapon/weldpack/canister,
-					/obj/item/weapon/storage/bag/ore,
-					/obj/item/weapon/tool/pickaxe/diamonddrill)
+					/obj/item/weldpack/canister,
+					/obj/item/storage/bag/ore,
+					/obj/item/tool/pickaxe/diamonddrill)
 	cost = 1100
 	containertype = /obj/structure/closet/crate/secure/gear
 	crate_name = "mining supply crate"

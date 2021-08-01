@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/basstet
+/obj/item/gun/projectile/automatic/basstet
 	name = "\"Basstet\" carbine"
 	desc = "Made by Nadezhda Marshals gunsmiths, the Basstet is the cheapest manufactured carbine on the colony. \
 		 A copy of the Bulldog pattern, shortened into a mid-length carbine, made as cheap as possible while still making sure it will not blow up in your hand, chambered in .257."
@@ -17,7 +17,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 
-/obj/item/weapon/gun/projectile/automatic/basstet/update_icon()
+/obj/item/gun/projectile/automatic/basstet/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

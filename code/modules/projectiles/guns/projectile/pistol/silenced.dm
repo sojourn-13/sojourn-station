@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/silenced
+/obj/item/gun/projectile/silenced
 	name = "\"Rafale\" silenced pistol"
 	desc = "A high quality, specialty handgun exclusively produced (as the markings so proudly state) by Seinemetall Defense GmbH. Commonly used by police and SWAT teams during stealth operations. Uses .40 Auto-Mag. Has an integrated silencer which cannot be removed."
 	icon = 'icons/obj/guns/projectile/rafale.dmi'
@@ -19,7 +19,7 @@
 	penetration_multiplier = 0.8
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
-/obj/item/weapon/gun/projectile/silenced/update_icon()
+/obj/item/gun/projectile/silenced/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -32,6 +32,6 @@
 
 	icon_state = iconstring
 
-/obj/item/weapon/gun/projectile/silenced/Initialize()
+/obj/item/gun/projectile/silenced/Initialize()
 	. = ..()
 	update_icon()

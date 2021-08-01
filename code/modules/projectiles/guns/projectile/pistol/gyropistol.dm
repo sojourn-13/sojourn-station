@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/gyropistol
+/obj/item/gun/projectile/gyropistol
 	name = "SA GP \"Emperor \""
 	desc = "A bulky pistol designed to fire self-propelled rounds. Commonly referred to as the 'man-opener' by void wolves."
 	icon = 'icons/obj/guns/projectile/gyropistol.dmi'
@@ -21,7 +21,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 
-/obj/item/weapon/gun/projectile/gyropistol/update_icon()
+/obj/item/gun/projectile/gyropistol/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "gyropistolloaded"

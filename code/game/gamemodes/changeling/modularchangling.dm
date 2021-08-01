@@ -15,64 +15,64 @@ var/list/datum/power/carrion/powerinstances = list()
 	name = "Flashbang spider"
 	desc = "Creates a spider filled with a strange substance that when activated explodes in a flash of light. Does minor damage to its host."
 	genomecost = 5
-	spiderpath = /obj/item/weapon/implant/carrion_spider/flashbang
+	spiderpath = /obj/item/implant/carrion_spider/flashbang
 
 /datum/power/carrion/control_spider
 	name = "Control spider"
 	desc = "Creates a mind controling spider with a neural link to you, giving you the abilty to control the host, but also making you feel any trauma the host has, and than some."
 	genomecost = 10
-	spiderpath = /obj/item/weapon/implant/carrion_spider/control
+	spiderpath = /obj/item/implant/carrion_spider/control
 
 /datum/power/carrion/infection_spider
 	name = "Infection spider"
 	desc = "Creates a miniature spider, with spider core inside it capable of making more carrions."
 	helptext = "Requires 7 evolution points to produce."
 	genomecost = 0
-	spiderpath = /obj/item/weapon/implant/carrion_spider/infection
+	spiderpath = /obj/item/implant/carrion_spider/infection
 
 /datum/power/carrion/healing_spider
 	name = "Healing spider"
 	desc = "Evolves a spider filled with a mixture of medicinal chemicals."
 	genomecost = 4
-	spiderpath = /obj/item/weapon/implant/carrion_spider/healing
+	spiderpath = /obj/item/implant/carrion_spider/healing
 
 /datum/power/carrion/breeding_spider
 	name = "Breeding spider"
 	desc = "Creates a spider carrying eggs, when it will be put inside a dead host and activated, the eggs will give birth to many lesser ones of your kin."
 	genomecost = 4
-	spiderpath = /obj/item/weapon/implant/carrion_spider/breeding
+	spiderpath = /obj/item/implant/carrion_spider/breeding
 
 /datum/power/carrion/explosive_spider
 	name = "Explosive spider"
 	desc = "Creates an expensive spider that makes a small explosion."
 	genomecost = 10
-	spiderpath = /obj/item/weapon/implant/carrion_spider/explosive
+	spiderpath = /obj/item/implant/carrion_spider/explosive
 
 /datum/power/carrion/toxic_spider
 	name = "Toxin bomb spider"
 	desc = "Creates a spider filled with dangerous lexorin gas, explodes on activation."
 	genomecost = 5
-	spiderpath = /obj/item/weapon/implant/carrion_spider/toxicbomb
+	spiderpath = /obj/item/implant/carrion_spider/toxicbomb
 /*
 /datum/power/carrion/mindboil_spider
 	name = "Mindboil spider"
 	desc = "Creates a horrible spider able to drive everyone around him insane."
 	helptext = "Used to complete derail contracts"
 	genomecost = 5
-	spiderpath = /obj/item/weapon/implant/carrion_spider/mindboil
+	spiderpath = /obj/item/implant/carrion_spider/mindboil
 */
 /datum/power/carrion/observer_spider
 	name = "Observer spider"
 	desc = "Creates a spider with a large monocular eye, useful for spying on others."
 	helptext = "Used to complete recon contracts"
 	genomecost = 3
-	spiderpath = /obj/item/weapon/implant/carrion_spider/observer
+	spiderpath = /obj/item/implant/carrion_spider/observer
 
 /datum/power/carrion/identity_spider
 	name = "Identity spider"
 	desc = "Creates a spider with the ability to extract and transmit human DNA to you."
 	genomecost = 3
-	spiderpath = /obj/item/weapon/implant/carrion_spider/identity
+	spiderpath = /obj/item/implant/carrion_spider/identity
 
 /datum/power/carrion/maw
 	name = "Carrion Maw"

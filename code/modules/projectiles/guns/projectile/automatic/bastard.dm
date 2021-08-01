@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/bastard
+/obj/item/gun/projectile/automatic/bastard
 	name = "\"Bastard\" SMG"
 	desc = "A weapon that invokes conflicting feelings. While the weapon looks to be welded, riveted and otherwise pieced together with scrap. \
 		 The SMG oddly appears to be chambered in .257 and takes box magazines, firing from an open-bolt position. An odd mix of a sub-machine gun and a 'machine'-machine gun. \
@@ -24,7 +24,7 @@
 		FULL_AUTO_600
 		)
 
-/obj/item/weapon/gun/projectile/automatic/bastard/update_icon()
+/obj/item/gun/projectile/automatic/bastard/update_icon()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 	if (ammo_magazine)

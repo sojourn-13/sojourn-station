@@ -5,7 +5,7 @@
 	icon = 'icons/obj/machines/shielding.dmi'
 	icon_state = "hdiffuser_off"
 	var/active_power_use = 10 KILOWATTS * CELLRATE
-	var/obj/item/weapon/cell/small/cell
+	var/obj/item/cell/small/cell
 	var/enabled = 0
 
 /obj/item/device/shield_diffuser/update_icon()
@@ -74,6 +74,6 @@
 		return 1
 
 /obj/item/device/shield_diffuser/attackby(obj/item/C, mob/living/user)
-	if(istype(C, /obj/item/weapon/cell/small) && !cell && insert_item(C, user))
+	if(istype(C, /obj/item/cell/small) && !cell && insert_item(C, user))
 		src.cell = C
 		return 1

@@ -17,7 +17,7 @@
 
 	return ..() + round(contents_cost * ratio)
 
-/obj/structure/reagent_dispensers/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/reagent_dispensers/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.is_refillable())
 		return 0 //so we can refill them via their afterattack.
 	else
@@ -164,7 +164,7 @@
 			test.Shift(EAST,6)
 			add_overlay(test)
 
-	var/obj/item/weapon/tool/T = I
+	var/obj/item/tool/T = I
 	if(istype(T) && T.use_fuel_cost)
 		return 0
 
@@ -238,7 +238,7 @@
 	volume = 500
 	starting_reagent = "water"
 	var/cups = 20
-	var/cup_type = /obj/item/weapon/reagent_containers/food/drinks/sillycup
+	var/cup_type = /obj/item/reagent_containers/food/drinks/sillycup
 
 /obj/structure/reagent_dispensers/water_cooler/attack_hand(var/mob/user)
 	if(cups > 0)

@@ -10,10 +10,10 @@
 		list("key"=/obj/item/mecha_parts/part/durand_right_leg, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//5
 		list("key"=/obj/item/mecha_parts/part/durand_head, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//6
 		list("key"=/obj/item/clothing/shoes/magboots, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//7
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//8
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//9
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//10
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars.")//11
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//8
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//9
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//10
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars.")//11
 	)
 
 	spawn_result()
@@ -38,7 +38,7 @@
 			//"backkey"=QUALITY_BOLT_TURNING,
 			"desc"="External armor is wrenched just needs to be welded."),
 		//2
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/plating,
+		list("key"=/obj/item/tool_upgrade/reinforcement/plating,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="External armor is installed, just needs the internal reinforcement plate mod."),
 		//3
@@ -86,7 +86,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Advanced capacitor is installed but not screwed down"),
 		//14
-		list("key"=/obj/item/weapon/stock_parts/capacitor,
+		list("key"=/obj/item/stock_parts/capacitor,
 			"rating" = 2,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Advanced scanner module is secured and ready to connect to an advanced capacitor"),
@@ -95,7 +95,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Advanced scanner module is installed but not screwed down"),
 		//16
-		list("key"=/obj/item/weapon/stock_parts/scanning_module,
+		list("key"=/obj/item/stock_parts/scanning_module,
 			"rating" = 2,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Targeting module is secured down and ready to connect to an advanced scanner"),
@@ -104,7 +104,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Targeting module is installed but unscrewed"),
 		//18
-		list("key"=/obj/item/weapon/circuitboard/mecha/targeting,
+		list("key"=/obj/item/circuitboard/mecha/targeting,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Peripherals control module is secured and ready to connect to a targeting board"),
 		//19
@@ -112,7 +112,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed and need to be screwed down"),
 		//20
-		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
+		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and ready to connect to a peripherals board"),
 		//21
@@ -120,7 +120,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed but is unscrewed"),
 		//22
-		list("key"=/obj/item/weapon/circuitboard/mecha/main,
+		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted and ready for a central control board"),
 		//23
@@ -139,15 +139,15 @@
 		list("key"=QUALITY_BOLT_TURNING,
 			"desc"="The hydraulic systems are disconnected."),
 		//27
-		list("key"=/obj/item/weapon/tool_upgrade/productivity/motor,
+		list("key"=/obj/item/tool_upgrade/productivity/motor,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Hydraulics set inside need to be linked to a eletric moter."),
 		//28
-		list("key"=/obj/item/weapon/tool_upgrade/augment/hydraulic,
+		list("key"=/obj/item/tool_upgrade/augment/hydraulic,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="With the cell mount added it can now have the hydraulics added."),
 		//29
-		list("key"=/obj/item/weapon/tool_upgrade/augment/cell_mount,
+		list("key"=/obj/item/tool_upgrade/augment/cell_mount,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Mech case is made and needs to start with a cell mount."),
 		//30
@@ -193,7 +193,7 @@
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "durand0"
-					new /obj/item/weapon/tool_upgrade/augment/cell_mount(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/cell_mount(get_turf(holder))
 			if(27)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -207,7 +207,7 @@
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "durand0"
-					new /obj/item/weapon/tool_upgrade/augment/hydraulic(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/hydraulic(get_turf(holder))
 			if(26)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -221,7 +221,7 @@
 						"You disconnect and remove [holder] form the hydraulic systems."
 					)
 					holder.icon_state = "durand0"
-					new /obj/item/weapon/tool_upgrade/productivity/motor(get_turf(holder))
+					new /obj/item/tool_upgrade/productivity/motor(get_turf(holder))
 			if(25)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -300,7 +300,7 @@
 						"[usr] removes the central control module from [holder].", \
 						"You remove the central computer mainboard from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/main(get_turf(holder))
+					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "durand4"
 			if(19)
 				if(diff==FORWARD)
@@ -327,7 +327,7 @@
 						"[usr] removes the peripherals control module from [holder].", \
 						"You remove the peripherals control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/peripherals(get_turf(holder))
+					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "durand6"
 			if(17)
 				if(diff==FORWARD)
@@ -354,7 +354,7 @@
 						"[usr] removes the weapon control module from [holder].", \
 						"You remove the weapon control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/targeting(get_turf(holder))
+					new /obj/item/circuitboard/mecha/targeting(get_turf(holder))
 					holder.icon_state = "durand8"
 			if(15)
 				if(diff==FORWARD)
@@ -371,7 +371,7 @@
 					holder.icon_state = "durand9"
 			if(14)
 				if(diff==FORWARD)
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(!S)
 						S = "advanced scanner module"
 					usr.visible_message(
@@ -380,7 +380,7 @@
 					)
 					holder.icon_state = "durand12"
 				else
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(S)
 						S.forceMove(get_turf(holder))
 					else
@@ -398,7 +398,7 @@
 					)
 					holder.icon_state = "durand13"
 				else
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(!S)
 						S = "advanced scanner module"
 					usr.visible_message(
@@ -408,7 +408,7 @@
 					holder.icon_state = "durand11"
 			if(12)
 				if(diff==FORWARD)
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(!C)
 						C = "advanced capacitor"
 					usr.visible_message(
@@ -417,7 +417,7 @@
 					)
 					holder.icon_state = "durand14"
 				else
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(C)
 						C.forceMove(get_turf(holder))
 					else
@@ -572,5 +572,5 @@
 						"You take out the reinforcement plate mod."
 					)
 					holder.icon_state = "durand19"
-					new /obj/item/weapon/tool_upgrade/reinforcement/plating (get_turf(holder), 5)
+					new /obj/item/tool_upgrade/reinforcement/plating (get_turf(holder), 5)
 		return 1

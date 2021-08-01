@@ -50,9 +50,9 @@
 			else
 				return ..()
 
-	else if(istype(W, /obj/item/weapon/reagent_containers/food/snacks/meat) && grill == TRUE)
+	else if(istype(W, /obj/item/reagent_containers/food/snacks/meat) && grill == TRUE)
 		qdel(W)
-		new /obj/item/weapon/reagent_containers/food/snacks/meatsteak(src.loc)
+		new /obj/item/reagent_containers/food/snacks/meatsteak(src.loc)
 
 	else if(istype(W, /obj/item/stack/material/wood))
 		add_fuel(W, user)

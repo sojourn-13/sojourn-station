@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/rev10
+/obj/item/gun/projectile/revolver/rev10
 	name = "\"Frontier\" magnum revolver"
 	desc = "A well made police revolver used by many departments round the universal frontier. While the design appears to predate its production by H&S it has become iconic to their company for stopping power. \
 	It appears to take .40 magnum rounds loaded via its break-action."
@@ -18,7 +18,7 @@
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 
-/obj/item/weapon/gun/projectile/revolver/rev10/update_icon()
+/obj/item/gun/projectile/revolver/rev10/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -32,11 +32,11 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/revolver/rev10/Initialize()
+/obj/item/gun/projectile/revolver/rev10/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/revolver/rex10
+/obj/item/gun/projectile/revolver/rex10
 	name = "\"Cowboy\" double-action revolver"
 	desc = "A relatively common gun around the frontier of the galaxy. This gun can be found worn by outlaws, criminals and small-time sheriffs or law enforcement. \
 	It lacks any serial markings; it's hard to tell who even produces these guns they're so common. But hey, easy reloading via its break-action!"
@@ -55,7 +55,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	can_dual = TRUE
 
-/obj/item/weapon/gun/projectile/revolver/rex10/update_icon()
+/obj/item/gun/projectile/revolver/rex10/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -69,6 +69,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/revolver/rex10/Initialize()
+/obj/item/gun/projectile/revolver/rex10/Initialize()
 	. = ..()
 	update_icon()

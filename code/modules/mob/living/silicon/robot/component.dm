@@ -106,12 +106,12 @@
 	installed_by_default = FALSE
 	active_usage = 150
 
-	var/obj/item/weapon/tank/jetpack/synthetic/tank = null
+	var/obj/item/tank/jetpack/synthetic/tank = null
 
 
 /datum/robot_component/jetpack/install()
 	..()
-	tank = new/obj/item/weapon/tank/jetpack/synthetic
+	tank = new/obj/item/tank/jetpack/synthetic
 	//owner.internals = tank
 	tank.forceMove(owner)
 	owner.jetpack = tank

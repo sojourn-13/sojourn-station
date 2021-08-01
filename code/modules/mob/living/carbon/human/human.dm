@@ -7,7 +7,7 @@
 
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
-	var/obj/item/weapon/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_lying_buckled_and_verb_status() call.
+	var/obj/item/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_lying_buckled_and_verb_status() call.
 
 /mob/living/carbon/human/New(var/new_loc, var/new_species, var/new_form)
 
@@ -90,8 +90,8 @@
 		//if(P)
 		//	stat(null, "Plasma Stored: [P.stored_plasma]/[P.max_plasma]")
 
-		if(back && istype(back,/obj/item/weapon/rig))
-			var/obj/item/weapon/rig/suit = back
+		if(back && istype(back,/obj/item/rig))
+			var/obj/item/rig/suit = back
 			var/cell_status = "ERROR"
 			if(suit.cell) cell_status = "[suit.cell.charge]/[suit.cell.maxcharge]"
 			stat(null, "Suit charge: [cell_status]")
@@ -103,7 +103,7 @@
 		if(maw_efficiency > 0)
 			stat("Gnawing hunger", "[carrion_hunger]/[round(maw_efficiency/10)]")
 
-		var/obj/item/weapon/implant/core_implant/cruciform/C = get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
+		var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
 		if (C)
 			stat("Cruciform", "[C.power]/[C.max_power]")
 			stat("Channeling Boost", "[C.channeling_boost]")
@@ -202,7 +202,7 @@
 
 	// Do they get an option to set internals?
 	if(istype(wear_mask, /obj/item/clothing/mask) || istype(head, /obj/item/clothing/head/helmet/space))
-		if(istype(back, /obj/item/weapon/tank) || istype(belt, /obj/item/weapon/tank) || istype(s_store, /obj/item/weapon/tank))
+		if(istype(back, /obj/item/tank) || istype(belt, /obj/item/tank) || istype(s_store, /obj/item/tank))
 			dat += "<BR><A href='?src=\ref[src];item=internals'>Toggle internals.</A>"
 
 	// Other incidentals.
@@ -235,7 +235,7 @@
 
 // Get rank from ID, ID inside PDA, PDA, ID in wallet, etc.
 /mob/living/carbon/human/proc/get_authentification_rank(var/if_no_id = "No id", var/if_no_job = "No job")
-	var/obj/item/weapon/card/id/id = GetIdCard()
+	var/obj/item/card/id/id = GetIdCard()
 	if(istype(id))
 		return id.rank ? id.rank : if_no_job
 	else
@@ -244,7 +244,7 @@
 //gets assignment from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
 /mob/living/carbon/human/proc/get_assignment(var/if_no_id = "No id", var/if_no_job = "No job")
-	var/obj/item/weapon/card/id/id = GetIdCard()
+	var/obj/item/card/id/id = GetIdCard()
 	if(istype(id))
 		return id.assignment ? id.assignment : if_no_job
 	else
@@ -253,7 +253,7 @@
 //gets name from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
 /mob/living/carbon/human/proc/get_authentification_name(var/if_no_id = "Unknown")
-	var/obj/item/weapon/card/id/id = GetIdCard()
+	var/obj/item/card/id/id = GetIdCard()
 	if(id)
 		return id.registered_name || if_no_id
 	else
@@ -309,13 +309,13 @@ var/list/rank_prefix = list(\
 //Useful when player is being seen by other mobs
 /mob/living/carbon/human/proc/get_id_name(var/if_no_id = "Unknown")
 	. = if_no_id
-	var/obj/item/weapon/card/id/I = GetIdCard()
+	var/obj/item/card/id/I = GetIdCard()
 	if(istype(I))
 		return I.registered_name
 
 /mob/living/carbon/human/proc/get_id_rank()
 	var/rank
-	var/obj/item/weapon/card/id/id
+	var/obj/item/card/id/id
 	if (istype(wear_id, /obj/item/modular_computer/pda))
 		id = wear_id.GetIdCard()
 	if(!id)
@@ -389,7 +389,7 @@ var/list/rank_prefix = list(\
 			var/perpname = "wot"
 			var/read = 0
 
-			var/obj/item/weapon/card/id/id = GetIdCard()
+			var/obj/item/card/id/id = GetIdCard()
 			if(istype(id))
 				perpname = id.registered_name
 			else
@@ -417,7 +417,7 @@ var/list/rank_prefix = list(\
 			var/perpname = "wot"
 			var/read = 0
 
-			var/obj/item/weapon/card/id/id = GetIdCard()
+			var/obj/item/card/id/id = GetIdCard()
 			if(istype(id))
 				perpname = id.registered_name
 			else
@@ -444,7 +444,7 @@ var/list/rank_prefix = list(\
 		if(hasHUD(usr,"security"))
 			var/perpname = "wot"
 			if(wear_id)
-				var/obj/item/weapon/card/id/id
+				var/obj/item/card/id/id
 				if (istype(wear_id, /obj/item/modular_computer/pda))
 					id = wear_id.GetIdCard()
 				if(!id)
@@ -476,7 +476,7 @@ var/list/rank_prefix = list(\
 			var/perpname = "wot"
 			var/modified = 0
 
-			var/obj/item/weapon/card/id/id = GetIdCard()
+			var/obj/item/card/id/id = GetIdCard()
 			if(istype(id))
 				perpname = id.registered_name
 			else
@@ -513,7 +513,7 @@ var/list/rank_prefix = list(\
 			var/read = 0
 
 			if(wear_id)
-				var/obj/item/weapon/card/id/id
+				var/obj/item/card/id/id
 				if (istype(wear_id, /obj/item/modular_computer/pda))
 					id = wear_id.GetIdCard()
 				if(!id)
@@ -546,7 +546,7 @@ var/list/rank_prefix = list(\
 			var/read = 0
 
 			if(wear_id)
-				var/obj/item/weapon/card/id/id
+				var/obj/item/card/id/id
 				if (istype(wear_id, /obj/item/modular_computer/pda))
 					id = wear_id.GetIdCard()
 				if(!id)
@@ -576,7 +576,7 @@ var/list/rank_prefix = list(\
 		if(hasHUD(usr,"medical"))
 			var/perpname = "wot"
 			if(wear_id)
-				var/obj/item/weapon/card/id/id
+				var/obj/item/card/id/id
 				if (istype(wear_id, /obj/item/modular_computer/pda))
 					id = wear_id.GetIdCard()
 				if(!id)
@@ -1151,7 +1151,7 @@ var/list/rank_prefix = list(\
 			C.removed()
 			organs_to_readd += C
 
-	var/obj/item/weapon/implant/core_implant/CI = get_core_implant()
+	var/obj/item/implant/core_implant/CI = get_core_implant()
 	var/checkprefcruciform = FALSE	// To reset the cruciform to original form
 	if(CI)
 		checkprefcruciform = TRUE
@@ -1200,7 +1200,7 @@ var/list/rank_prefix = list(\
 		var/datum/category_item/setup_option/core_implant/I = Pref.get_option("Core implant")
 		if(I)
 			if(I.implant_type)
-				var/obj/item/weapon/implant/core_implant/C = new I.implant_type
+				var/obj/item/implant/core_implant/C = new I.implant_type
 				C.install(src)
 				C.activate()
 				if(mind)
@@ -1229,7 +1229,7 @@ var/list/rank_prefix = list(\
 			if(client)
 				var/datum/category_item/setup_option/core_implant/I = client.prefs.get_option("Core implant")
 				if(I.implant_type && (!mind || mind.assigned_role != "Robot"))
-					var/obj/item/weapon/implant/core_implant/C = new I.implant_type
+					var/obj/item/implant/core_implant/C = new I.implant_type
 					C.install(src)
 					C.activate()
 					C.install_default_modules_by_job(mind.assigned_job)

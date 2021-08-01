@@ -122,10 +122,10 @@
 
 /datum/perk/merchant/assign(mob/living/carbon/human/H)
 	..()
-	//holder.sanity.valid_inspirations += /obj/item/weapon/spacecash/bundle
+	//holder.sanity.valid_inspirations += /obj/item/spacecash/bundle
 
 /datum/perk/merchant/remove()
-	//holder.sanity.valid_inspirations -= /obj/item/weapon/spacecash/bundle
+	//holder.sanity.valid_inspirations -= /obj/item/spacecash/bundle
 	..()
 */
 /datum/perk/sanityboost

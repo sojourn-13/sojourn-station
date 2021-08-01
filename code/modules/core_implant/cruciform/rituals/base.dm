@@ -1,14 +1,14 @@
 /datum/ritual/cruciform/base
 	name = "cruciform"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform
+	implant_type = /obj/item/implant/core_implant/cruciform
 	fail_message = "The Cruciform feels cold against your chest."
 	category = "Common"
 
 /datum/ritual/targeted/cruciform/base
 	name = "cruciform targeted"
 	phrase = null
-	implant_type = /obj/item/weapon/implant/core_implant/cruciform
+	implant_type = /obj/item/implant/core_implant/cruciform
 	category = "Common"
 
 /datum/ritual/cruciform/base/relief
@@ -20,7 +20,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	//var/datum/reagent/bloodhold
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
 		if(H.nutrition >= nutri_cost)
@@ -40,7 +40,7 @@
 	desc = "Litany of pilgrims that helps better withstand hunger."
 	power = 50
 
-/datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	H.nutrition += 100
 	H.adjustToxLoss(5)
 	return TRUE
@@ -56,16 +56,16 @@
 	nutri_cost = 10//low cost
 	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	var/successful = FALSE
-	if (istype(H.get_active_hand(), /obj/item/weapon/book/ritual/cruciform))
+	if (istype(H.get_active_hand(), /obj/item/book/ritual/cruciform))
 		if(H.species?.reagent_tag != IS_SYNTHETIC)
 			if(H.nutrition >= nutri_cost)
 				H.nutrition -= nutri_cost
 			else
 				to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 				H.vessel.remove_reagent("blood",blood_cost)
-		var/obj/item/weapon/book/ritual/cruciform/M = H.get_active_hand()
+		var/obj/item/book/ritual/cruciform/M = H.get_active_hand()
 		M.set_light(5) //Slightly better than as a lantern since you can only hold it in hand or within the belt slot.
 		playsound(H.loc, 'sound/ambience/ambicha2.ogg', 75, 1)
 		H.visible_message(
@@ -90,7 +90,7 @@
 	nutri_cost = 10//low cost
 	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
 		if(H.nutrition >= nutri_cost)
 			H.nutrition -= nutri_cost
@@ -112,7 +112,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
 		if(H.nutrition >= nutri_cost)
 			H.nutrition -= nutri_cost
@@ -123,7 +123,7 @@
 		if(target == H)
 			continue
 
-		var/obj/item/weapon/implant/core_implant/cruciform/CI = target.get_core_implant()
+		var/obj/item/implant/core_implant/cruciform/CI = target.get_core_implant()
 		var/area/t = get_area(H)
 
 		if((istype(CI) && CI.get_module(CRUCIFORM_PRIEST)) || prob(50))
@@ -138,7 +138,7 @@
 	nutri_cost = 25//med cost
 	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/base/reveal/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
+/datum/ritual/cruciform/base/reveal/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	var/was_triggired = FALSE
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
 		if(H.nutrition >= nutri_cost)
@@ -162,7 +162,7 @@
 				to_chat(H, SPAN_WARNING("Adversaries are near. You can feel something nasty and hostile."))
 				was_triggired = TRUE
 				break
-	if (prob(95) && (locate(/obj/structure/wire_splicing || /obj/item/weapon/mine || /obj/item/weapon/mine_old || /obj/item/weapon/spider_shadow_trap || /obj/item/weapon/beartrap) in view(7, H))) //Add more traps later
+	if (prob(95) && (locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap) in view(7, H))) //Add more traps later
 		to_chat(H, SPAN_WARNING("Something is wrong with this area. Tread carefully."))
 		was_triggired = TRUE
 	if (prob(80))
@@ -184,7 +184,7 @@
 	nutri_cost = 10//low cost
 	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 	var/mob/living/carbon/human/H = pick_disciple_global(user, TRUE)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
 		if(user.nutrition >= nutri_cost)

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/lasersmg
+/obj/item/gun/energy/lasersmg
 	name = "Disco Vazer \"Lasblender\""
 	desc = "This conversion of the \"Texan\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
 	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
@@ -8,7 +8,7 @@
 	item_state = "lasersmg"
 	w_class = ITEM_SIZE_NORMAL
 	fire_sound = 'sound/weapons/Laser.ogg'
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam/weak/smg
 	charge_meter = FALSE
@@ -21,7 +21,7 @@
 	one_hand_penalty = 3
 	init_offset = 7 //makeshift laser
 	projectile_type = /obj/item/projectile/beam
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 	charge_cost = 25 // 4 bursts with a 800m cell
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
@@ -29,18 +29,18 @@
 		FULL_AUTO_400
 		)
 
-/obj/item/weapon/gun/energy/lasersmg/alt
+/obj/item/gun/energy/lasersmg/alt
 	name = "Disco Vazer \"Lasblender\""
 	desc = "This conversion of the \"MAC\" that enables it to shoot lasers. Unlike in other laser weapons, the process of creating a laser is based on a chain reaction of localized micro-explosions. \
 	While this method is charge-effective, it worsens accuracy, and the chain-reaction makes the gun always fire in bursts. A viable choice for those who have lots of batteries and few bullets. \
 	Sometimes jokingly called the \"Disco Vazer\"."
 
-/obj/item/weapon/gun/energy/lasersmg/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
+/obj/item/gun/energy/lasersmg/process_projectile(var/obj/item/projectile/P, mob/living/user, atom/target, var/target_zone, var/params=null)
 	projectile_color = pick(list("#FF0000", "#0000FF", "#00FF00", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"))
 	..()
 	return ..()
 
-/obj/item/weapon/gun/energy/lasersmg/update_icon()
+/obj/item/gun/energy/lasersmg/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -51,18 +51,18 @@
 		itemstring += "_mag"
 
 
-/obj/item/weapon/gun/energy/lasersmg/update_icon()
+/obj/item/gun/energy/lasersmg/update_icon()
 	overlays.Cut()
 	..()
-	if(istype(cell, /obj/item/weapon/cell/medium/moebius/nuclear))
+	if(istype(cell, /obj/item/cell/medium/moebius/nuclear))
 		overlays += image(icon, "nuke_cell")
 
-	else if(istype(cell, /obj/item/weapon/cell/medium/moebius))
+	else if(istype(cell, /obj/item/cell/medium/moebius))
 		overlays += image(icon, "moeb_cell")
 
-	else if(istype(cell, /obj/item/weapon/cell/medium/excelsior))
+	else if(istype(cell, /obj/item/cell/medium/excelsior))
 		overlays += image(icon, "excel_cell")
 
-	else if(istype(cell, /obj/item/weapon/cell/medium))
+	else if(istype(cell, /obj/item/cell/medium))
 		overlays += image(icon, "guild_cell")
 

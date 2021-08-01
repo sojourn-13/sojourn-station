@@ -194,7 +194,7 @@
 /datum/perk/nt_oddity/holy_light/on_process()
 	if(!..())
 		return
-	if(!holder.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+	if(!holder.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		return
 	if(world.time < initial_time + cooldown)
 		return
@@ -202,7 +202,7 @@
 	for(var/mob/living/L in viewers(holder, 7))
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
-			if(H.stat == DEAD || !(H.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)))
+			if(H.stat == DEAD || !(H.get_core_implant(/obj/item/implant/core_implant/cruciform)))
 				continue
 			H.adjustBruteLoss(-healing_power)
 			H.adjustFireLoss(-healing_power)

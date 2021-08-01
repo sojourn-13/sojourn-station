@@ -29,11 +29,11 @@
 
 	return 1
 
-/obj/item/weapon/shield
+/obj/item/shield
 	name = "shield"
 	var/base_block_chance = 50
 
-/obj/item/weapon/shield/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+/obj/item/shield/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(user.incapacitated())
 		return 0
 
@@ -45,12 +45,12 @@
 			return 1
 	return 0
 
-/obj/item/weapon/shield/proc/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+/obj/item/shield/proc/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	return base_block_chance
 
 //TODOKAZ: add ballistic shield
 
-/obj/item/weapon/shield/riot
+/obj/item/shield/riot
 	name = "riot shield"
 	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
 	icon = 'icons/obj/weapons.dmi'
@@ -69,11 +69,11 @@
 	attack_verb = list("shoved", "bashed")
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 
-/obj/item/weapon/shield/riot/handle_shield(mob/user)
+/obj/item/shield/riot/handle_shield(mob/user)
 	. = ..()
 	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
 
-/obj/item/weapon/shield/riot/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+/obj/item/shield/riot/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
 		//thin metal shields do not stop bullets or most lasers, even in space. Will block beanbags, rubber bullets, and stunshots at normal rates tho.
@@ -82,19 +82,19 @@
 			return 0
 	return base_block_chance
 
-/obj/item/weapon/shield/riot/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/melee/baton))
+/obj/item/shield/riot/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/melee/baton))
 		on_bash(W, user)
 	else
 		..()
 
-/obj/item/weapon/shield/riot/proc/on_bash(var/obj/item/weapon/W, var/mob/user)
+/obj/item/shield/riot/proc/on_bash(var/obj/item/W, var/mob/user)
 	if(cooldown < world.time - 25)
 		user.visible_message(SPAN_WARNING("[user] bashes [src] with [W]!"))
 		playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
 		cooldown = world.time
 
-/obj/item/weapon/shield/riot/crusader
+/obj/item/shield/riot/crusader
 	name = "crusader tower shield"
 	desc = "A traditional tower shield meeting the materials and design of the future. It's made from durasteel and the craftsmanship is the highest quality, setting it apart from regular shields. It bears the insignia of the Church. Deus Vult."
 	icon = 'icons/obj/nt_melee.dmi'
@@ -103,11 +103,11 @@
 	price_tag = 2000
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
 
-/obj/item/weapon/shield/riot/crusader/handle_shield(mob/user)
+/obj/item/shield/riot/crusader/handle_shield(mob/user)
 	. = ..()
 	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
 
-/obj/item/weapon/shield/riot/crusader/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+/obj/item/shield/riot/crusader/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
 		if((is_sharp(P) && damage > 15) || istype(P, /obj/item/projectile/beam))
@@ -118,7 +118,7 @@
  * Handmade shield
  */
 
-/obj/item/weapon/shield/riot/handmade
+/obj/item/shield/riot/handmade
 	name = "round handmade shield"
 	desc = "A handmade stout shield, but with a small size."
 	icon_state = "buckler"
@@ -130,17 +130,17 @@
 	base_block_chance = 35
 
 
-/obj/item/weapon/shield/riot/handmade/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+/obj/item/shield/riot/handmade/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	return base_block_chance
 
 
-/obj/item/weapon/shield/riot/handmade/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/extinguisher) || istype(W, /obj/item/weapon/storage/toolbox) || istype(W, /obj/item/weapon/melee))
+/obj/item/shield/riot/handmade/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/extinguisher) || istype(W, /obj/item/storage/toolbox) || istype(W, /obj/item/melee))
 		on_bash(W, user)
 	else
 		..()
 
-/obj/item/weapon/shield/riot/handmade/tray
+/obj/item/shield/riot/handmade/tray
 	name = "tray shield"
 	desc = "This one is thin, but compensate it with a good size."
 	icon_state = "tray_shield"
@@ -152,7 +152,7 @@
 	base_block_chance = 30
 
 
-/obj/item/weapon/shield/riot/handmade/tray/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+/obj/item/shield/riot/handmade/tray/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item))
 		var/obj/item/I = damage_source
 		if((is_sharp(I) && damage > 15) || istype(damage_source, /obj/item/projectile/beam))
@@ -160,7 +160,7 @@
 	return base_block_chance
 
 
-/obj/item/weapon/shield/riot/handmade/lid
+/obj/item/shield/riot/handmade/lid
 	name = "lid shield"
 	desc = "A detached lid from a trash cart, that works well as shield."
 	icon_state = "lid_shield"
@@ -170,7 +170,7 @@
 	matter = list(MATERIAL_STEEL = 8)
 	base_block_chance = 40
 
-/obj/item/weapon/shield/riot/handmade/bone
+/obj/item/shield/riot/handmade/bone
 	name = "bone shield"
 	desc = "A handmade stout shield, but with a small size crafted entirely of bone. Exceptionally good at enduring melee attacks due to its light weight and high density."
 	icon_state = "buckler_bone"
@@ -185,7 +185,7 @@
  * Energy Shield
  */
 
-/obj/item/weapon/shield/energy
+/obj/item/shield/energy
 	name = "energy combat shield"
 	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere."
 	icon = 'icons/obj/weapons.dmi'
@@ -200,12 +200,12 @@
 	attack_verb = list("shoved", "bashed")
 	var/active = 0
 
-/obj/item/weapon/shield/energy/reaver
+/obj/item/shield/energy/reaver
 	name = "reaver combat shield"
 	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere. This one was created for void wolves, generally employed by reavers."
 	icon_state = "voidwolfshield0" // eshield1 for expanded
 
-/obj/item/weapon/shield/energy/reaver/update_icon()
+/obj/item/shield/energy/reaver/update_icon()
 	icon_state = "voidwolfshield[active]"
 	update_wear_icon()
 	if(active)
@@ -213,7 +213,7 @@
 	else
 		set_light(0)
 
-/obj/item/weapon/shield/energy/handle_shield(mob/user)
+/obj/item/shield/energy/handle_shield(mob/user)
 	if(!active)
 		return 0 //turn it on first!
 	. = ..()
@@ -224,14 +224,14 @@
 		spark_system.start()
 		playsound(user.loc, 'sound/weapons/blade1.ogg', 50, 1)
 
-/obj/item/weapon/shield/energy/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+/obj/item/shield/energy/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
 		if((is_sharp(P) && damage > 15) || istype(P, /obj/item/projectile/beam))
 			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
 	return base_block_chance
 
-/obj/item/weapon/shield/energy/attack_self(mob/living/user as mob)
+/obj/item/shield/energy/attack_self(mob/living/user as mob)
 	if ((CLUMSY in user.mutations) && prob(50))
 		to_chat(user, SPAN_WARNING("You beat yourself in the head with [src]."))
 		user.take_organ_damage(5)
@@ -253,7 +253,7 @@
 	add_fingerprint(user)
 	return
 
-/obj/item/weapon/shield/energy/update_icon()
+/obj/item/shield/energy/update_icon()
 	icon_state = "eshield[active]"
 	update_wear_icon()
 	if(active)

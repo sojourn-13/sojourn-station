@@ -4,9 +4,9 @@
 
 /datum/supply_pack/flares
 	name = "Flare Boxes Crate"
-	contains = list(/obj/item/weapon/storage/box/flares,
-					/obj/item/weapon/storage/box/flares,
-					/obj/item/weapon/storage/box/flares)
+	contains = list(/obj/item/storage/box/flares,
+					/obj/item/storage/box/flares,
+					/obj/item/storage/box/flares)
 	cost = 800
 	crate_name = "flare boxes crate"
 	group = "Operations"
@@ -41,12 +41,12 @@
 
 /datum/supply_pack/metal_foam
 	name = "Metal Foam Grenades"
-	contains = list(/obj/item/weapon/grenade/chem_grenade/metalfoam,
-					/obj/item/weapon/grenade/chem_grenade/metalfoam,
-					/obj/item/weapon/grenade/chem_grenade/metalfoam,
-					/obj/item/weapon/grenade/chem_grenade/metalfoam,
-					/obj/item/weapon/grenade/chem_grenade/metalfoam,
-					/obj/item/weapon/grenade/chem_grenade/metalfoam)
+	contains = list(/obj/item/grenade/chem_grenade/metalfoam,
+					/obj/item/grenade/chem_grenade/metalfoam,
+					/obj/item/grenade/chem_grenade/metalfoam,
+					/obj/item/grenade/chem_grenade/metalfoam,
+					/obj/item/grenade/chem_grenade/metalfoam,
+					/obj/item/grenade/chem_grenade/metalfoam)
 	cost = 800
 	crate_name = "metal foam grenades crate"
 	group = "Operations"

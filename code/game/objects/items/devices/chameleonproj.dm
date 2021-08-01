@@ -1,6 +1,6 @@
 #define CHAMELEON_MIN_PIXELS 32
 
-GLOBAL_LIST_INIT(champroj_blacklist, list(/obj/item/weapon/disk/nuclear))
+GLOBAL_LIST_INIT(champroj_blacklist, list(/obj/item/disk/nuclear))
 GLOBAL_LIST_INIT(champroj_whitelist, list())
 
 /obj/item/device/chameleon
@@ -24,8 +24,8 @@ GLOBAL_LIST_INIT(champroj_whitelist, list())
 
 	var/tick_cost = 2 //how much charge is consumed per process tick from the cell
 	var/move_cost = 4 //how much charge is consumed per movement
-	var/obj/item/weapon/cell/cell
-	var/suitable_cell = /obj/item/weapon/cell/small
+	var/obj/item/cell/cell
+	var/suitable_cell = /obj/item/cell/small
 
 /obj/item/device/chameleon/Initialize()
 	.=..()
@@ -76,7 +76,7 @@ GLOBAL_LIST_INIT(champroj_whitelist, list())
 	..()
 
 /obj/item/device/chameleon/afterattack(atom/target, mob/user , proximity)
-	if (istype(target, /obj/item/weapon/storage)) return
+	if (istype(target, /obj/item/storage)) return
 	if(!proximity) return
 	if(!active_dummy)
 		if(scan_item(target))

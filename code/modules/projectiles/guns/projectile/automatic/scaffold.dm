@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/scaffold
+/obj/item/gun/projectile/automatic/scaffold
 	name = "Greyson Positronic \"Scaffold\" caseless rifle"
 	desc = "A old and lost gun design of a caseless rifle by Greyson Positronic, its high fire rate stopping power and more make it the perfect frame for war. \
 	Its'caliber is 10mm and shockingly can be fitted with a silencer and has room for a scope."
@@ -32,7 +32,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/scaffold/update_icon()
+/obj/item/gun/projectile/automatic/scaffold/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

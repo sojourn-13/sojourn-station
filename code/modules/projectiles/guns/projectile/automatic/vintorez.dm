@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/vintorez
+/obj/item/gun/projectile/automatic/vintorez
 	name = "Excelsior \"Vintorez\" silenced carbine"
 	desc = "\"We have no compassion and we ask no compassion from you. When our turn comes, we shall not make excuses for the terror.\"\
 	A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds."
@@ -27,7 +27,7 @@
 		FULL_AUTO_400
 		)
 
-/obj/item/weapon/gun/projectile/automatic/vintorez/update_icon()
+/obj/item/gun/projectile/automatic/vintorez/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -42,6 +42,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/vintorez/Initialize()
+/obj/item/gun/projectile/automatic/vintorez/Initialize()
 	. = ..()
 	update_icon()

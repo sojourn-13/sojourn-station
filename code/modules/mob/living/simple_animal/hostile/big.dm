@@ -52,7 +52,7 @@
 	pixel_y = 0
 	attack_sound = 'sound/weapons/deathclawattack.ogg'
 	meat_amount = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
 	mob_size = 3
 	leather_amount = 16
@@ -180,7 +180,7 @@
 	emote_hear = list("groan")
 	emote_see = list("shakes its head")
 	meat_amount = 10 //Infinite meat!
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
 
 /mob/living/simple_animal/hostile/nightmare
 	name = "nightmare stalker"

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/boltgun/lever
+/obj/item/gun/projectile/boltgun/lever
 	name = "\"Armstrong\" repeater rifle"
 	desc = "Weapon for hunting, or endless open plains. Perfect for horseback!"
 	icon = 'icons/obj/guns/projectile/lever.dmi'

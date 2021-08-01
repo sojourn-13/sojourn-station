@@ -31,13 +31,13 @@
 	screen_type = pick("green", "os_red", "yellow", "cyan", "red", "os")
 	update_icon()
 	if(prob(5))
-		drop2 = /obj/item/weapon/soap
+		drop2 = /obj/item/soap
 	if(prob(10)) //Can override soap
-		drop2 = /obj/item/weapon/reagent_containers/spray/cleaner
+		drop2 = /obj/item/reagent_containers/spray/cleaner
 	if(prob(20)) //Can override soap or spacecleaner
-		drop2 = /obj/item/weapon/reagent_containers/glass/bucket
+		drop2 = /obj/item/reagent_containers/glass/bucket
 	if(prob(10))
-		cell_drop = /obj/item/weapon/cell/medium
+		cell_drop = /obj/item/cell/medium
 
 /mob/living/carbon/superior_animal/robot/greyson/custodian/update_icon()
 	. = ..()
@@ -86,13 +86,13 @@
 /mob/living/carbon/superior_animal/robot/greyson/custodian/chef/New()
 	. = ..()
 	if(prob(5))
-		drop2 = /obj/item/weapon/oddity/common/old_radio
+		drop2 = /obj/item/oddity/common/old_radio
 	if(prob(10)) //Can override radio
 		drop2 = /obj/random/rations
 	if(prob(20)) //Can override radio or snack
 		drop2 = /obj/random/booze
 	if(prob(10))
-		cell_drop = /obj/item/weapon/cell/medium
+		cell_drop = /obj/item/cell/medium
 
 /mob/living/carbon/superior_animal/robot/greyson/custodian/chef/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)
@@ -129,4 +129,4 @@
 	if(prob(20)) //Can override rool mod or materials
 		drop2 = /obj/random/pack/tech_loot/onestar
 	if(prob(10))
-		cell_drop = /obj/item/weapon/cell/medium/high
+		cell_drop = /obj/item/cell/medium/high

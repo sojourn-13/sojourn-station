@@ -1,10 +1,10 @@
-/obj/item/weapon/implant/tracking
+/obj/item/implant/tracking
 	name = "tracking implant"
 	desc = "Track with this."
 	var/id = 1.0
 	origin_tech = list(TECH_MATERIAL=2, TECH_MAGNET=2, TECH_DATA=2, TECH_BIO=2)
 
-/obj/item/weapon/implant/tracking/get_data()
+/obj/item/implant/tracking/get_data()
 	var/data = {"<b>Implant Specifications:</b><BR>
 		<b>Name:</b> Tracking Beacon<BR>
 		<b>Life:</b> 10 minutes after death of host<BR>
@@ -21,7 +21,7 @@
 		Implant Specifics:<BR>"}
 	return data
 
-/obj/item/weapon/implant/tracking/emp_act(severity)
+/obj/item/implant/tracking/emp_act(severity)
 	if (malfunction)	//no, dawg, you can't malfunction while you are malfunctioning
 		return
 	malfunction = MALFUNCTION_TEMPORARY
@@ -38,7 +38,7 @@
 		malfunction = MALFUNCTION_NONE
 
 
-/obj/item/weapon/implantcase/tracking
+/obj/item/implantcase/tracking
 	name = "glass case - 'tracking'"
 	desc = "A case containing a tracking implant."
-	implant = /obj/item/weapon/implant/tracking
+	implant = /obj/item/implant/tracking

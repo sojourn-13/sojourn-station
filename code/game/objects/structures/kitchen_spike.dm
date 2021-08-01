@@ -35,7 +35,7 @@
 		meat_type = H.form.meat_type
 		icon_state = "spikebloody"
 	else if(isalien(victim))
-		meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/xenomeat
+		meat_type = /obj/item/reagent_containers/food/snacks/meat/xenomeat
 		icon_state = "spikebloodygreen"
 	else
 		return 0

@@ -37,15 +37,15 @@
 	if(istype(user))
 		manual_unbuckle(user)
 
-/obj/effect/plant/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/effect/plant/attackby(var/obj/item/W, var/mob/user)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*1.5)
 	plant_controller.add_plant(src)
-	if(istype(W, /obj/item/weapon/reagent_containers/syringe))
+	if(istype(W, /obj/item/reagent_containers/syringe))
 		return
 
 
-	if(istype(W, /obj/item/weapon/tool/wirecutters) || istype(W, /obj/item/weapon/tool/scalpel))
+	if(istype(W, /obj/item/tool/wirecutters) || istype(W, /obj/item/tool/scalpel))
 		if(sampled)
 			to_chat(user, SPAN_WARNING("\The [src] has already been sampled recently."))
 			return

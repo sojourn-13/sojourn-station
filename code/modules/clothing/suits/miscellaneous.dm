@@ -8,7 +8,7 @@
 	item_state = "bluetag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/redtag
@@ -18,7 +18,7 @@
 	item_state = "redtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/greentag
@@ -28,7 +28,7 @@
 	item_state = "greentag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/yellowtag
@@ -38,7 +38,7 @@
 	item_state = "yellowtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO
-	allowed = list (/obj/item/weapon/gun/energy/lasertag)
+	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/cyborg_suit
@@ -72,7 +72,7 @@ obj/item/clothing/suit/fluff/kimono
 	item_state = "straight_jacket"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
-	allowed = list(/obj/item/weapon/tank)
+	allowed = list(/obj/item/tank)
 
 /*Swimsuit*/
 
@@ -219,17 +219,17 @@ obj/item/clothing/suit/fluff/kimono
 	name = "universal sling"
 	desc = "A generic universal equipment sling for whatever you could need on your back."
 	icon_state = "universal_sling"
-	allowed = list (/obj/item/weapon/gun,
+	allowed = list (/obj/item/gun,
 	/obj/item/device,
-	/obj/item/weapon/material,
-	/obj/item/weapon/storage/pouch,
-	/obj/item/weapon/storage/box,
-	/obj/item/weapon/storage/firstaid,
-	/obj/item/weapon/storage/lockbox,
-	/obj/item/weapon/storage/part_replacer,
-	/obj/item/weapon/storage/secure,
-	/obj/item/weapon/storage/toolbox,
-	/obj/item/weapon/tank,
+	/obj/item/material,
+	/obj/item/storage/pouch,
+	/obj/item/storage/box,
+	/obj/item/storage/firstaid,
+	/obj/item/storage/lockbox,
+	/obj/item/storage/part_replacer,
+	/obj/item/storage/secure,
+	/obj/item/storage/toolbox,
+	/obj/item/tank,
 	/obj/item/ammo_magazine,
 	/obj/item/ammo_magazine/ammobox/
 	)
@@ -375,4 +375,4 @@ obj/item/clothing/suit/fluff/kimono
 	cold_protection = UPPER_TORSO|LOWER_TORSO
 	min_cold_protection_temperature = T0C - 20
 	price_tag = 50
-	
+

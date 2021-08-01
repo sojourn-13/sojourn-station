@@ -7,7 +7,7 @@
 		anchored = 0
 		density = 1
 		req_access = list(access_engine_equip)
-		circuit = /obj/item/weapon/circuitboard/shieldwallgen
+		circuit = /obj/item/circuitboard/shieldwallgen
 		var/shield_type = /obj/machinery/shieldwall //Overridden by excelsior variant
 		var/active = 0
 		var/power = 0
@@ -224,7 +224,7 @@
 				src.anchored = 0
 				return
 
-	if(istype(I, /obj/item/weapon/card/id) || istype(I, /obj/item/modular_computer))
+	if(istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
 		if (src.allowed(user))
 			src.locked = !src.locked
 			to_chat(user, "Controls are now [src.locked ? "locked." : "unlocked."]")

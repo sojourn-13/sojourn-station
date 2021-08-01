@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/mateba
+/obj/item/gun/projectile/revolver/mateba
 	name = "\"Mateba\" heavy revolver"
 	desc = "One of the less practical weapons produced by Scarborough Arms, it's an oversized variant of the popular \"Minotaur\" clones that's been scaled up to .50 kurtz, seemingly for the sole purpose of offending your wrist."
 	icon = 'icons/obj/guns/projectile/mateba.dmi'
