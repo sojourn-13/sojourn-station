@@ -39,7 +39,13 @@
 /obj/item/weapon/gun/energy/laser/mounted/cyborg
 	name = "integrated \"Cog\" lasgun"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made."
-	recharge_time = 10 //Time it takes for shots to recharge (in ticks)
+	icon = 'icons/obj/guns/energy/retro.dmi'
+	icon_state = "retro"
+	recharge_time = 4 //Time it takes for shots to recharge (in ticks)
+	damage_multiplier = 1
+	projectile_type = /obj/item/projectile/beam/heavylaser
+	cell_type = /obj/item/weapon/cell/medium/moebius/omega
+	charge_cost = 50
 
 /obj/item/weapon/gun/energy/laser/practice
 	name = "OT LG \"Lightfall\" - P"
