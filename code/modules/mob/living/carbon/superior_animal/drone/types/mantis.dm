@@ -9,7 +9,7 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	move_to_delay = 2
-	cell = new /obj/item/weapon/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
+	cell = new /obj/item/cell/large/moebius // Hold the drone's power cell, default to a cheap one.
 	exam_message = "This one bears mantis blades to pin down it's target."
 	var/already_slashed = FALSE // So that we don't do the round slash twice in a row.
 
