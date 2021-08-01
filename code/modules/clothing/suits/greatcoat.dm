@@ -6,8 +6,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
@@ -19,8 +19,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
@@ -32,8 +32,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
@@ -45,8 +45,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
@@ -58,8 +58,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 5, bio = 0, rad = 0)
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
@@ -71,8 +71,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 5, bio = 0, rad = 0)
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
@@ -84,8 +84,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
@@ -97,8 +97,8 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
