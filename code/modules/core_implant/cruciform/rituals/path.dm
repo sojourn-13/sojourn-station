@@ -202,7 +202,7 @@
 
 /datum/ritual/cruciform/monomial/ironskin
 	name = "Resolution"
-	phrase = "Ut det Dominus virtutem populo suo? Sit Dominus benedicet populo suo in pace."
+	phrase = "Dominus virtutem populo suo dabit; Dominus benedicet populo suo in pace."
 	desc = "A short litany that removes all pain, it is much stronger then the relief litany, but requires more power and has a five minute recharge time between uses."
 	power = 50
 	cooldown = TRUE

@@ -28,7 +28,7 @@
 		else
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
-	H.reagents.add_reagent("anodyne", 10)
+	H.reagents.add_reagent("laudanum", 10)
 	H.apply_effect(-30, AGONY, 0)
 	H.apply_effect(-30, HALLOSS, 0)
 	H.updatehealth()

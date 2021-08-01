@@ -111,7 +111,7 @@
 /datum/chemical_reaction/meatball/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/meatball(location)
+		new /obj/item/weapon/reagent_containers/food/snacks/rawmeatball(location)
 
 /datum/chemical_reaction/dough
 	result = null
@@ -144,6 +144,17 @@
 	result = "hell_ramen"
 	required_reagents = list("capsaicin" = 1, "hot_ramen" = 6)
 	result_amount = 6
+
+/datum/chemical_reaction/butter
+	result = null
+	required_reagents = list("cream" = 5, "sodiumchloride" = 5) // Consider this a placeholder until there's a better way to make butter by churning - Seb
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/butter/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/weapon/reagent_containers/food/snacks/sliceable/butterstick(location)
 
 /* Aurora's Coffee */
 
