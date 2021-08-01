@@ -23,6 +23,7 @@
 		/datum/design/autolathe/gun/cop_mod = 0,
 		/datum/design/autolathe/sec/stunbaton = 5, //balance, we can only make 4
 		/datum/design/autolathe/sec/auto_eject_mod,
+		/datum/design/autolathe/gun/dnalock_mod,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/hos

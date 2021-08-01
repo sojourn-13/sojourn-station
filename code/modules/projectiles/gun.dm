@@ -52,6 +52,9 @@
 
 	var/safety = TRUE//is safety will be toggled on spawn() or not
 	var/restrict_safety = FALSE //To restrict the users ability to toggle the safety
+	var/dna_compare_samples = FALSE //If DNA-lock installed
+	var/dna_lock_sample = "not_set" //real_name from mob who installed DNA-lock
+	var/dna_user_sample = "not_set" //Current user's real_name
 
 	var/next_fire_time = 0
 
@@ -199,6 +202,11 @@
 				recentwield = world.time
 			return FALSE
 
+	if(!dna_check(M))
+		to_chat(user, SPAN_DANGER("The gun's biometric scanner prevents you from firing!"))
+		handle_click_empty(user)
+		return FALSE
+
 	if((CLUMSY in M.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
 		if(P)
@@ -266,6 +274,13 @@
 		Fire(A, user, pointblank=1)
 	else
 		return ..() //Pistolwhippin'
+
+/obj/item/gun/proc/dna_check(user)
+	if(dna_compare_samples)
+		dna_user_sample = usr.real_name
+		if(dna_lock_sample != dna_user_sample)
+			return FALSE
+	return TRUE
 
 /obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	if(!user || !target) return
@@ -717,6 +732,7 @@
 	zoom_factor = initial(zoom_factor)
 	force = initial(force)
 	auto_eject = initial(auto_eject)
+	dna_compare_samples = initial(dna_compare_samples)
 	initialize_scope()
 	initialize_firemodes()
 

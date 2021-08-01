@@ -171,8 +171,28 @@
 		)
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_TRIGGER
+	I.breakable = FALSE
+
+/obj/item/gun_upgrade/trigger/dnalock
+	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
+	desc = "There are many guns, but that one will be yours. Prevents others from using weapon with this trigger."
+	icon_state = "DNA_lock"
+	matter = list(MATERIAL_SILVER = 1, MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3) //DNA stuff needs silver i guess
+
+/obj/item/gun_upgrade/trigger/dnalock/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.install_time = WORKTIME_INSTANT //For SWAT tatics+
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DNALOCK = TRUE
+		)
+	I.removal_time *= 10
+	I.gun_loc_tag = GUN_TRIGGER
+	I.breakable = FALSE
+	I.removal_difficulty = FAILCHANCE_VERY_HARD
 
 /obj/item/gun_upgrade/mechanism
+
 
 //Adds +3 to the internal magazine of a weapon. Acquired through loot spawns.
 /obj/item/gun_upgrade/mechanism/overshooter
@@ -239,6 +259,7 @@
 	I.removal_time *= 5
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
+	I.breakable = FALSE
 
 //obj/item/gun_upgrade/underbarrel
 
@@ -408,6 +429,7 @@
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_TRIGGER
 	I.req_gun_tags = list(GUN_ENERGY)
+	I.breakable = FALSE
 
 /obj/item/gun_upgrade/scope
 //	bad_type = /obj/item/gun_upgrade/scope
