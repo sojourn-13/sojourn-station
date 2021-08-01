@@ -23,7 +23,7 @@
 "ek" = (/obj/machinery/light{dir = 4},/mob/living/carbon/superior_animal/human/voidwolf,/turf/simulated/floor,/area/template_noop)
 "el" = (/obj/machinery/light{dir = 8},/obj/structure/closet/secure_closet/rare_loot,/turf/simulated/floor,/area/template_noop)
 "fj" = (/obj/structure/closet/secure_closet/rare_loot,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
-"fy" = (/obj/structure/largecrate,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
+"fy" = (/obj/structure/closet/crate/secure/loot,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "gt" = (/obj/structure/bed,/obj/item/bedsheet/hos,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/template_noop)
 "hC" = (/obj/structure/closet/secure_closet/rare_loot,/turf/template_noop,/area/template_noop)
 "ib" = (/obj/machinery/microwave{pixel_x = -1; pixel_y = 8},/obj/structure/table/standard,/turf/simulated/floor/tiled/cafe,/area/template_noop)

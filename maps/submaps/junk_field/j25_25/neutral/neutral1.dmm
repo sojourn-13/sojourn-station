@@ -32,7 +32,6 @@
 "aF" = (/obj/structure/catwalk,/turf/template_noop,/area/template_noop)
 "aG" = (/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "aH" = (/obj/random/pack/cloth/low_chance,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
-"aI" = (/obj/machinery/camera/network/second_section,/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "aJ" = (/obj/structure/cable/green{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "aK" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/techmaint,/area/template_noop)
 "aL" = (/obj/machinery/door/airlock/maintenance_common{name = "Service Maintenance"; req_access = list(12)},/turf/simulated/floor/tiled/steel/techfloor_grid,/area/template_noop)
@@ -65,7 +64,6 @@
 "bm" = (/obj/structure/disposalpipe/segment,/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating/under,/area/template_noop)
 "bn" = (/obj/structure/table/rack,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating/under,/area/template_noop)
 "bo" = (/turf/simulated/floor/tiled/steel,/area/template_noop)
-"bp" = (/obj/machinery/camera/network/second_section{dir = 4},/turf/simulated/floor/plating/under,/area/template_noop)
 "bq" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating/under,/area/template_noop)
 "br" = (/obj/machinery/camera/network/second_section{dir = 1},/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/template_noop)
 "bs" = (/obj/structure/disposalpipe/segment,/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating/under,/area/template_noop)
@@ -120,12 +118,12 @@ bcabQPbcbcZYbDaxbDGUaGbDayadadadbDatauaGaGaGaAatbc
 bcILbcQPILabaxaxmWaGbEaBaGaiaGGUasataGaDasbDbDatbc
 bcbcbcbcabadadazadaCaCFEaHagaGataDatXKaMbDabZYILbc
 bcbcpubcbcabadaHatatatatagagaiagatatatatatagagILbc
-bcQPqJbcbNQPadaBajatbDILabILILbDGUaGaIaqaKaGaGaaZY
+bcQPqJbcbNQPadaBajatbDILabILILbDGUaGaGaqaKaGaGaaZY
 abablSlSbNpuadawaGaLXzILmdQPabaPaPaPaPaOuMaPaPaQab
 abagadadadadadadadadagILbcQPabaWaWaWaNaUaWaNaWaXab
 aFagaRaSaTbbadbcQPqJagabILagagadadadadadadatatatag
 aFabbDbDbDaVagQPQPbcabbmbtagatadaYaZbabdadbebjbDab
-aFagbDababatbcQPbcbcadbmbtadBgadbnbDrfboadatatbpZY
+aFagbDababatbcQPbcbcadbmbtadBgadbnbDrfboadatatbDZY
 aFadbqGUFEaJbDagaeadadbsbtadbfbDILAfbDbuadbvbjasab
 abadaGaGaGbwbgbybAbAbAbhbCadaEbDabILabbuagagatbkab
 qJadbGXzasblbradaeadblbJbKagAfILabmdqJabagafbjabab

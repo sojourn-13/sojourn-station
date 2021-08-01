@@ -22,7 +22,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/template_noop)
 "aP" = (
-/obj/structure/closet/onestar/tier2/normal,
+/obj/structure/closet/secure_closet/rare_loot,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "aU" = (
@@ -188,16 +188,6 @@
 /obj/random/material/low_chance,
 /turf/template_noop,
 /area/template_noop)
-"qk" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/obj/machinery/newscaster{
-	pixel_x = -27;
-	pixel_y = 1
-	},
-/turf/simulated/floor/tiled/steel/bluecorner,
-/area/template_noop)
 "qp" = (
 /obj/structure/closet/secure_closet/brig{
 	id = "Cell 4";
@@ -355,10 +345,10 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "EA" = (
-/obj/structure/closet/onestar/tier2/normal,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/secure_closet/rare_loot,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "Fb" = (
@@ -1068,7 +1058,7 @@ iz
 iz
 Ns
 Xd
-qk
+iz
 iz
 Ze
 Js

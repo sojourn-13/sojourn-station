@@ -88,6 +88,7 @@
 "Gs" = (/obj/random/junk/low_chance,/turf/template_noop,/area/template_noop)
 "Hl" = (/mob/living/simple_animal/hostile/hivebot,/turf/template_noop,/area/template_noop)
 "Hn" = (/obj/structure/lattice,/turf/template_noop,/area/template_noop)
+"Hw" = (/obj/structure/closet/secure_closet/rare_loot,/turf/simulated/floor/tiled/dark/cargo,/area/template_noop)
 "IK" = (/mob/living/simple_animal/hostile/hivebot/range,/turf/simulated/floor/wood,/area/template_noop)
 "Jl" = (/obj/structure/table/woodentable,/obj/item/tool/tape_roll,/turf/simulated/floor/wood,/area/template_noop)
 "Jp" = (/obj/machinery/light_construct{dir = 1},/turf/simulated/floor/tiled/steel,/area/template_noop)
@@ -128,7 +129,7 @@ biYZHnFiFwYZYZYZYZYZYZYZayayayayayayYZFiHnHnHnYZbi
 biHnGsbibiYZaJMbaaMbaNYZjvsssFBvDPJlYZbibizmbiHnbi
 bikebibibiYZabMbacMbaYYZLjLjLjLjLjLjYZGsbibibiFibi
 biHnGsbiGsYZYpMbtoSRaXYZkfEgIKoOoABIYZYZayayayYZbi
-biFibiHlbiYZPNMbacMbpIYZLjtvwDlUVJLjYZPaSyyJzMaybi
+biFibiHlbiYZPNMbHwMbpIYZLjtvwDlUVJLjYZPaSyyJzMaybi
 biFibibibiYZAsrpjsMbrdYZLjawEoEoEoLjYZwXxbzJzMaybi
 biHnDfbiQwYZDiMbMbMbDiYZasLjLjLjLjIKYZiwKzKzKzaybi
 biYZHnZtYZYZYZYZwRYZYZYZYZayayjPYZsCZtzEOPOPoLYZGs
