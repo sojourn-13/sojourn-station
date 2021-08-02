@@ -927,6 +927,7 @@
 #include "code\game\objects\items\devices\organ_module\active\surgical.dm"
 #include "code\game\objects\items\devices\organ_module\active\taser.dm"
 #include "code\game\objects\items\devices\organ_module\active\multitool\farmer.dm"
+#include "code\game\objects\items\devices\organ_module\active\multitool\improvised.dm"
 #include "code\game\objects\items\devices\organ_module\active\multitool\miner.dm"
 #include "code\game\objects\items\devices\organ_module\passive\armor.dm"
 #include "code\game\objects\items\devices\organ_module\passive\muscle.dm"
