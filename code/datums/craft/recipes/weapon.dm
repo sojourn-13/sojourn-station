@@ -92,6 +92,9 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 
+// This is absolutely unobtainable, you can't literally pick up any structure children and apply it to the crafting recipe, what were they even thinking?
+
+/*
 /datum/craft_recipe/weapon/handmade_lid_shield
 	name = "handmade lid shield"
 	result = /obj/item/shield/riot/handmade/lid
@@ -100,6 +103,7 @@
 		list(/obj/structure/closet/crate/trashcart, 1, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 10, 60)
 	)
+*/
 
 /datum/craft_recipe/weapon/handmade_tray_shield
 	name = "handmade tray shield"
@@ -153,7 +157,7 @@
 	name = "steel meat hook"
 	result = /obj/item/tool/knife/hook
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
 		list(QUALITY_HAMMERING, 15, 10),
 		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC),
 		list(QUALITY_CUTTING, 10, 10)
@@ -212,6 +216,15 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(/obj/item/stack/rods, 3, "time" = 50)
+	)
+
+/datum/craft_recipe/weapon/spear // Greytiders rejoice.
+	name = "throwing spear"
+	result = /obj/item/tool/spear
+	steps = list(
+		list(/obj/item/stack/rods, 1, "time" = 30),
+		list(/obj/item/material/shard, 1, "time" = 10),
+		list(/obj/item/stack/cable_coil, 5, "time" = 5)
 	)
 
 /datum/craft_recipe/weapon/spoon

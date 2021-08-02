@@ -100,14 +100,15 @@
 					center_of_mass = list("x"=16, "y"=6)
 				if("sugar")
 					name = "Sugar"
+					icon_state = "sugarsmall"
 					desc = "Tasty space sugar!"
 					center_of_mass = list("x"=16, "y"=6)
 				else
 					name = "Misc Condiment Bottle"
 					if (reagents.reagent_list.len==1)
-						desc = "Looks like it is [reagents.get_master_reagent_name()], but you are not sure."
+						desc = "A condiment bottle filled with [reagents.get_master_reagent_name()]."
 					else
-						desc = "A mixture of various condiments. [reagents.get_master_reagent_name()] is one of them."
+						desc = "A mixture of various condiments, [reagents.get_master_reagent_name()] being the most prevalent one on it."
 					icon_state = "mixedcondiments"
 					center_of_mass = list("x"=16, "y"=6)
 		else
@@ -124,7 +125,17 @@
 	preloaded_reagents = list("enzyme" = 50)
 
 /obj/item/reagent_containers/food/condiment/sugar
+	name = "sugar sack"
+	desc = "A big bag of sugar, universal sweetener and cavity generator."
+	icon_state = "sugar"
 	preloaded_reagents = list("sugar" = 50)
+
+/obj/item/reagent_containers/food/condiment/cookingoil
+	name = "cooking oil bottle"
+	desc = "A bottle of corn oil, for all your deep frying needs."
+	icon_state = "oliveoil"
+	possible_transfer_amounts = list(1,2,5,10)
+	preloaded_reagents = list("cornoil" = 50)
 
 //Seperate from above since it's a small shaker rather then a large one.
 /obj/item/reagent_containers/food/condiment/saltshaker
@@ -151,7 +162,7 @@
 	icon = 'icons/obj/food.dmi'
 	icon_state = "flour"
 	item_state = "flour"
-	preloaded_reagents = list("flour" = 30)
+	preloaded_reagents = list("flour" = 50)
 
 
 /obj/item/reagent_containers/food/condiment/pack

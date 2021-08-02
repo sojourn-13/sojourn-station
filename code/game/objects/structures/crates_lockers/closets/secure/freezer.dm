@@ -10,6 +10,7 @@
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/food/condiment/flour(src)
 	new /obj/item/reagent_containers/food/condiment/sugar(src)
+	new /obj/item/reagent_containers/food/condiment/cookingoil(src)
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/food/snacks/meat/monkey(src)
 
@@ -44,6 +45,7 @@
 		new /obj/item/reagent_containers/food/drinks/soymilk(src)
 	for(var/i in 1 to 2)
 		new /obj/item/storage/fancy/egg_box(src)
+		new /obj/item/reagent_containers/food/condiment/cookingoil(src)
 
 /obj/structure/closet/secure_closet/freezer/money
 	name = "freezer"

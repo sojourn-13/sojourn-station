@@ -374,7 +374,7 @@
 /datum/reagent/medicine/nepenthe  //Monomial super-painkiller
 	name = "Nepenthe"
 	id = "nepenthe"
-	description = "A gift from the Absolute, it allows the user to suffer through all hardships."
+	description = "Pain is imperfection leaving the body. Suffer through it, child of the Monomial, so that you may attain the Perfection of Form."
 	taste_description = "fading sorrow"
 	reagent_state = LIQUID
 	color = "#AA5656"
@@ -389,7 +389,7 @@
 /datum/reagent/medicine/anodyne //Standard used around
 	name = "Anodyne"
 	id = "anodyne"
-	description = "A gift from above to survive the present troubles."
+	description = "The power of the Absolute grants a gift of momentary abatement against the dire physical hardships of the body."
 	taste_description = "numbness"
 	reagent_state = LIQUID
 	color = "#BAA845"
@@ -399,12 +399,12 @@
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/anodyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 40)
+	M.add_chemical_effect(CE_PAINKILLER, 90) // Tweaking the numbers here so that they are closer to what litanies used to do, this one is a flat -10 loss to what it used to be...
 
 /datum/reagent/medicine/laudanum //Weakest available
 	name = "Laudanum"
 	id = "laudanum"
-	description = "A weak painkiller. There to soothe only the most minor of wounds."
+	description = "A nostalgic sensation of relief and calm against the faintest aches."
 	taste_description = "home"
 	reagent_state = LIQUID
 	color = "#488531"
@@ -414,7 +414,7 @@
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/laudanum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 15)
+	M.add_chemical_effect(CE_PAINKILLER, 40) // ...yet this one is a buff, making it an acceptably low painkiller range while keeping a 50 difference between tiers like Tram-to-Para ratio - Seb
 
 /* Other medicine */
 

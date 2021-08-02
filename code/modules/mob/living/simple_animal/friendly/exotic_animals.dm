@@ -36,6 +36,8 @@
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird."
 	icon_state = "penguin"
 	icon_dead = "penguin_dead_blood"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 2
 	maxHealth = 20
 	health = 20
 	turns_per_move = 5
@@ -53,6 +55,8 @@
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird. This one is just a baby."
 	icon_state = "penguin_baby"
 	icon_dead = "penguin_baby_dead_blood"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 1 // Why would you? You monster.
 	maxHealth = 10
 	health = 10
 	harm_intent_damage = 10
@@ -64,6 +68,8 @@
 	desc = "A long-necked waterbird."
 	icon_state = "goose"
 	icon_dead = "goose_dead"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 2
 	maxHealth = 20
 	health = 20
 	turns_per_move = 5
