@@ -7,7 +7,7 @@
 	extended_desc = "This program lets the user remotely see the condiction of Cyborgs, remotely lock them down and denate them."
 	size = 9 //Not a lot here but still some
 	requires_ntnet = TRUE
-	required_access = access_heads
+	required_access = access_robotics
 	requires_access_to_run = TRUE
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/remote_cyborg_controle/
