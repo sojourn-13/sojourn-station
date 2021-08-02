@@ -63,6 +63,13 @@
 			if (!src.restrained())
 				message = "claps."
 				m_type = 2
+
+		if ("slowclap")
+			if (!src.restrained())
+				message = "emits a sarcastically slow claps."
+				m_type = 2
+				playsound(loc, 'sound/misc/slowclap.ogg', 80)
+
 		if ("flap")
 			if (!src.restrained())
 				message = "flaps its wings."
@@ -83,6 +90,11 @@
 
 		if ("nod")
 			message = "nods."
+			m_type = 1
+
+		if ("honk")
+			message = "honks."
+			playsound(src.loc, 'sound/items/bikehorn.ogg', 50, 0)
 			m_type = 1
 
 		if ("deathgasp")

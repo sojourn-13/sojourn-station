@@ -7,13 +7,14 @@
 	extended_desc = "This program lets the user remotely see the condiction of Cyborgs, remotely lock them down and denate them."
 	size = 9 //Not a lot here but still some
 	requires_ntnet = TRUE
-	required_access = access_heads
+	required_access = access_robotics
 	requires_access_to_run = TRUE
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/remote_cyborg_controle/
 
 /datum/nano_module/program/remote_cyborg_controle
 	name = "Cyborg Remote Access & Monitor"
+	available_to_ai = TRUE
 
 /datum/nano_module/program/remote_cyborg_controle/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/data[0]
