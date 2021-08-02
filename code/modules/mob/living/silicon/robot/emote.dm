@@ -85,6 +85,11 @@
 			message = "nods."
 			m_type = 1
 
+		if ("honk")
+			message = "honks."
+			playsound(src.loc, 'sound/items/bikehorn.ogg', 50, 0)
+			m_type = 1
+
 		if ("deathgasp")
 			message = "shudders violently for a moment, then becomes motionless, its eyes slowly darkening."
 			m_type = 1
