@@ -190,28 +190,28 @@
 	filling_color = "#BF896B"
 	preloaded_reagents = list("protein" = 6, "dexalinp" = 3, "haloperidol" = 4, "hyronalin" = 5, "vermicetol" = 3, "dermaline" = 2, "kelotane" = 2, "peridaxon" = 2, "varceptol" = 3, "meralyne" = 3, "tricordrazine" = 4, "oxycodone" = 5)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/chicken
+/obj/item/reagent_containers/food/snacks/meat/chicken
 	name = "poultry"
 	desc = "Poultry meat, might be chicken or any other avian species."
 	icon_state = "birdmeat"
 	filling_color = "#EDA897"
 	preloaded_reagents = list("protein" = 8)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/chicken/vox
+/obj/item/reagent_containers/food/snacks/meat/chicken/vox
 	name = "tribal bird meat"
 	desc = "The meat of a tribal bird native to this planet. Their remarkable endurance makes the tissue feel gamey to the mouth, but very rich in protein."
 	icon_state = "voxmeat"
 	filling_color = "#3B8529"
 	preloaded_reagents = list("protein" = 8, "polystem" = 5, "quicklot" = 5)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/chicken/attackby(obj/item/I, mob/user)
+/obj/item/reagent_containers/food/snacks/meat/chicken/attackby(obj/item/I, mob/user)
 	if(QUALITY_CUTTING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_ZERO, required_stat = STAT_BIO))
 			to_chat(user, SPAN_NOTICE("You cut the poultry in smaller pieces."))
-			new /obj/item/weapon/reagent_containers/food/snacks/chickenbreast(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/chickenbreast(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/chickenbreast(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/chickenbreast(src)
+			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
+			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
+			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
+			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
 			qdel(src)
 	else
 		..()

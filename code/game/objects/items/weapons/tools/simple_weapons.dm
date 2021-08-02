@@ -392,6 +392,7 @@
 	name = "spear"
 	desc = "A spiky bit of material tied onto a metal pole with some wire. It's an insult to spears across the galaxy - but it can still do some nasty damage and has some decent armor-piercing capabilities. Spears like these are often seen in the hands of vagrants, muggers, or desperate militias. Due to this weapon - if you could call it that - being so long, you're able to attack enemies from up to a tile away."
 	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_ROBUST // It's meant to be thrown
 	armor_penetration = ARMOR_PEN_MODERATE // It's a SPEAR!
 	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
 	w_class = ITEM_SIZE_HUGE
@@ -401,7 +402,7 @@
 	sharp = TRUE
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	origin_tech = list(TECH_COMBAT = 1)
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/weapons/slice.ogg' // Sounds more like a stab than a cut.
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	embed_mult = 1.5
 	//attack_distance = 2
