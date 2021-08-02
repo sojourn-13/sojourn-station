@@ -115,9 +115,10 @@
 	volume = 60
 	possible_transfer_amounts = list(5, 10, 20, 30)
 	reagent_ids = list("beer", "kahlua", "whiskey", "wine", "vodka", "gin", "rum", "tequilla", "vermouth", \
-						"cognac", "ale", "mead", "water", "sugar", "ice", "tea", "greentea", "icetea", \
-						"icegreentea", "cola", "spacemountainwind", "dr_gibb", "space_up", "tonic", "sodawater", \
-						"lemon_lime", "orangejuice", "limejuice", "watermelonjuice", "honey", "milk", "fernet")
+			   "cognac", "ale", "mead", "water", "sugar", "ice", "tea", "greentea", "icetea", \
+			   "icegreentea", "cola", "spacemountainwind", "dr_gibb", "space_up", "tonic", "sodawater", \
+			   "lemon_lime", "orangejuice", "limejuice", "watermelonjuice", "lemonjuice", "honey", "milk", "fernet", \
+			   "coffee","hot_coco","espresso", "cream", "pineapplejuice", "sodiumchloride") //Salt for rims
 
 /obj/item/reagent_containers/borghypo/service/attack(var/mob/M, var/mob/user)
 	return
