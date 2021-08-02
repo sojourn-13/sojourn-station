@@ -31,6 +31,7 @@
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/firstaid/ifak(src)
 	new /obj/item/storage/belt/webbing/black(src)
+	new /obj/item/storage/box/trackimp(src)
 	if(prob(50))
 		new /obj/item/storage/backpack/satchel/ironhammer(src)
 	else

@@ -90,7 +90,7 @@
 	build_path = /obj/machinery/computer/pod/old/swf
 
 /obj/item/circuitboard/prisoner
-	build_name = "prisoner management console"
+	build_name = "tracker implant management console"
 	build_path = /obj/machinery/computer/prisoner
 
 /obj/item/circuitboard/mecha_control
