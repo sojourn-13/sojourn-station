@@ -374,7 +374,7 @@
 /obj/item/tank/jetpack/synthetic
 	name = "synthetic jet pack"
 	desc = "A tank of compressed air for use as propulsion in zero-gravity areas. Has a built in compressor to refill it in any gaseous environment."
-	default_pressure = 6*ONE_ATMOSPHERE	// kPa. Also the pressure the compressor would fill itself to
+	default_pressure = 50*ONE_ATMOSPHERE	// kPa. Also the pressure the compressor would fill itself to
 	default_gas = "carbon_dioxide"
 	var/processing = FALSE
 	var/compressing = FALSE

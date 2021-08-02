@@ -709,7 +709,7 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_service"
 				  	)
 
-	health = 80 //Ultra fragile
+	health = 130 //fragile
 	speed_factor = 1.2 //Quick
 	power_efficiency = 1 //Base line
 
@@ -740,6 +740,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/robot_harvester(src)
 	src.modules += new /obj/item/material/kitchen/rollingpin(src)
 	src.modules += new /obj/item/reagent_containers/food/condiment/enzyme(src)
+	src.modules += new /obj/item/flame/lighter/zippo(src)
 	src.modules += new /obj/item/soap(src) // a cheap bar of soap
 	src.modules += new /obj/item/reagent_containers/glass/rag(src) // a rag for.. yeah.. the primary tool of bartender
 	src.modules += new /obj/item/pen/robopen(src)
