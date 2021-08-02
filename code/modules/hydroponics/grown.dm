@@ -322,36 +322,37 @@
     return ..()
 
 // Predefined types for placing on the map.
-/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap
-	plantname = "libertycap"
+/obj/plant_spawner
+	name = "plant spawner"
+	var/seedtype = "ambrosia" //default to ambrosia for roach taming
+/*
+/obj/plant_spawner/Initialize(mapload)
+	var/datum/seed/S = plant_controller.seeds[seedtype]
+	S.harvest(loc,0,0,1)
+	spawn(1) if(src) qdel(src)
+*/
+/obj/plant_spawner/New()
+	var/datum/seed/S = plant_controller.seeds[seedtype]
+	S.harvest(loc,0,0,1)
+	spawn(5) if(src) qdel(src)
 
-/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris
-	plantname = "ambrosia"
+/obj/plant_spawner/libertycap
+	seedtype = "libertycap"
 
-//Used in clearing things.
-/obj/item/reagent_containers/food/snacks/grown/grass/cuttings
-	icon_state = "alien4"
-	name = "plant cuttings"
-	plantname = "plant cuttings"
-	desc = "Freshly cut plant clippings."
+/obj/plant_spawner/ambrosiavulgaris
+	seedtype = "ambrosia"
 
-/obj/item/reagent_containers/food/snacks/grown/flower/poppy/wild
-	icon_state = "flower3"
-	name = "wild poppy"
-	plantname = "wild poppy"
-	desc = "Wild grown poppy, domesticated ones are about the same."
+/obj/plant_spawner/grass
+	seedtype = "grass"
 
-/obj/item/reagent_containers/food/snacks/grown/flower/sunflower/wild
-	icon_state = "flower2"
-	name = "wild sunflower"
-	plantname = "wild sunflower"
-	desc = "Wild grown sunflower, not as tall as the domesticated ones."
+/obj/plant_spawner/poppy
+	seedtype = "poppies"
 
-/obj/item/reagent_containers/food/snacks/grown/flower/harebells/wild
-	icon_state = "flower5"
-	name = "wild harebell"
-	plantname = "wild harebell"
-	desc = "Wildly grown harebell, much more blue then domesticated ones."
+/obj/plant_spawner/sunflower
+	seedtype = "sunflowers"
+
+/obj/plant_spawner/harebells
+	seedtype = "harebells"
 
 /obj/item/reagent_containers/food/snacks/fruit_slice
 	name = "fruit slice"
