@@ -1,4 +1,4 @@
-/obj/item/weapon/flame/candle
+/obj/item/flame/candle
 	name = "red candle"
 	desc = "a small pillar candle. Its specially-formulated fuel-oxidizer wax mixture allows continued combustion in airless environments."
 	icon = 'icons/obj/candle.dmi'
@@ -8,11 +8,11 @@
 	light_color = COLOR_LIGHTING_ORANGE_DARK
 	var/wax = 2000
 
-/obj/item/weapon/flame/candle/New()
+/obj/item/flame/candle/New()
 	wax = rand(800, 1000) // Enough for 27-33 minutes. 30 minutes on average.
 	..()
 
-/obj/item/weapon/flame/candle/update_icon()
+/obj/item/flame/candle/update_icon()
 	var/i
 	if(wax > 1500)
 		i = 1
@@ -22,25 +22,25 @@
 	icon_state = "candle[i][lit ? "_lit" : ""]"
 
 
-/obj/item/weapon/flame/candle/attackby(obj/item/I, mob/user)
+/obj/item/flame/candle/attackby(obj/item/I, mob/user)
 	..()
 	if(QUALITY_WELDING in I.tool_qualities) //Badasses dont get blinded by lighting their candle with a welding tool
 		light(SPAN_NOTICE("\The [user] casually lights the [name] with [I]."))
-	else if(istype(I, /obj/item/weapon/flame/lighter))
-		var/obj/item/weapon/flame/lighter/L = I
+	else if(istype(I, /obj/item/flame/lighter))
+		var/obj/item/flame/lighter/L = I
 		if(L.lit)
 			light()
-	else if(istype(I, /obj/item/weapon/flame/match))
-		var/obj/item/weapon/flame/match/M = I
+	else if(istype(I, /obj/item/flame/match))
+		var/obj/item/flame/match/M = I
 		if(M.lit)
 			light()
-	else if(istype(I, /obj/item/weapon/flame/candle))
-		var/obj/item/weapon/flame/candle/C = I
+	else if(istype(I, /obj/item/flame/candle))
+		var/obj/item/flame/candle/C = I
 		if(C.lit)
 			light()
 
 
-/obj/item/weapon/flame/candle/proc/light(var/flavor_text = SPAN_NOTICE("\The [usr] lights the [name]."))
+/obj/item/flame/candle/proc/light(var/flavor_text = SPAN_NOTICE("\The [usr] lights the [name]."))
 	if(!src.lit)
 		src.lit = 1
 		//src.damtype = "fire"
@@ -50,7 +50,7 @@
 		START_PROCESSING(SSobj, src)
 
 
-/obj/item/weapon/flame/candle/Process()
+/obj/item/flame/candle/Process()
 	if(!lit)
 		return
 	wax--
@@ -64,7 +64,7 @@
 		var/turf/T = loc
 		T.hotspot_expose(700, 5)
 
-/obj/item/weapon/flame/candle/attack_self(mob/user as mob)
+/obj/item/flame/candle/attack_self(mob/user as mob)
 	if(lit)
 		lit = 0
 		update_icon()

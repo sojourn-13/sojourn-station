@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/armsmg
+/obj/item/gun/projectile/automatic/armsmg
 	icon = 'icons/obj/guns/projectile/armsmg.dmi'
 	icon_state = "armsmg"
 	item_state = null
@@ -21,8 +21,8 @@
 	recoil_buildup = 2 // Low damage, low recoil, on par with the wirbelwind but less damage and can be used 1 handed.
 	one_hand_penalty = 0
 
-/obj/item/weapon/gun/projectile/automatic/armsmg/blackshield
+/obj/item/gun/projectile/automatic/armsmg/blackshield
 
-/obj/item/weapon/gun/projectile/automatic/armsmg/blackshield/New()
+/obj/item/gun/projectile/automatic/armsmg/blackshield/New()
 	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/drum(src)
 	. =..()

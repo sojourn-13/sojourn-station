@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/dp
+/obj/item/gun/projectile/automatic/dp
 	name = "\"Pulemyot Degtyaryova\" light machinegun"
 	desc = "A cruedly made yet reliable top-loading machine gun manufactured by the local Nadezhda Marshals. It appears to have specifically been made to use spare pan-magazines from Maxims."
 	icon = 'icons/obj/guns/projectile/dp.dmi'
@@ -32,7 +32,7 @@
 		list(mode_name="suppressing fire",  burst=16, burst_delay=1.2, move_delay=11,  icon="burst")
 		)
 
-obj/item/weapon/gun/projectile/automatic/dp/update_icon()
+obj/item/gun/projectile/automatic/dp/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"

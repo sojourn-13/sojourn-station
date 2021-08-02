@@ -74,11 +74,11 @@
 	origin_tech = list(TECH_BIO = 8)
 	matter = list(MATERIAL_BIOMATTER = 1)
 
-/obj/item/weapon/biogoop/thermal
+/obj/item/biogoop/thermal
 	name = "incomplete organic thermal implant"
 	matter = list(MATERIAL_BIOMATTER = 240)
 
-/obj/item/weapon/biogoop/thermal/attackby(obj/item/I, mob/user)
+/obj/item/biogoop/thermal/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
 		var/obj/item/stack/S = I
 		if(S.use(1))
@@ -89,11 +89,11 @@
 			return
 	return ..()
 
-/obj/item/weapon/biogoop/welding
+/obj/item/biogoop/welding
 	name = "incomplete organic welder implant"
 	matter = list(MATERIAL_BIOMATTER = 40)
 
-/obj/item/weapon/biogoop/welding/attackby(obj/item/I, mob/user)
+/obj/item/biogoop/welding/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
 		var/obj/item/stack/S = I
 		if(S.use(1))
@@ -104,11 +104,11 @@
 			return
 	return ..()
 
-/obj/item/weapon/biogoop/night
+/obj/item/biogoop/night
 	name = "incomplete organic night-vision implant"
 	matter = list(MATERIAL_BIOMATTER = 120)
 
-/obj/item/weapon/biogoop/night/attackby(obj/item/I, mob/user)
+/obj/item/biogoop/night/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
 		var/obj/item/stack/S = I
 		if(S.use(1))

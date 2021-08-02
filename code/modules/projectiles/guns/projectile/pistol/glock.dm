@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/glock
+/obj/item/gun/projectile/glock
 	name = "\"Sky\" pistol"
 	desc = "The GmbH sky pistol, a weapon bearing a close resemblance to the traditional police high grade glock, modified for semi-auto, burst, auto-eject mags and coming with a fitting for a silencer. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/glock.dmi'
@@ -24,7 +24,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
 
-/obj/item/weapon/gun/projectile/glock/update_icon()
+/obj/item/gun/projectile/glock/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""

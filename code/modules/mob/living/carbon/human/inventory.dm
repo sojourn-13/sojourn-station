@@ -217,7 +217,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 
 /mob/living/carbon/human/proc/draw_from_suit_storage()
 	var/i = get_equipped_item(slot_s_store)
-	if(!istype(i,/obj/item/weapon/gun))
+	if(!istype(i,/obj/item/gun))
 		return FALSE
 	put_in_active_hand(i)
 	return TRUE

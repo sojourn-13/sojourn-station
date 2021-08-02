@@ -7,7 +7,7 @@
 /*
  * Locator
  */
-/obj/item/weapon/locator
+/obj/item/locator
 	name = "locator"
 	desc = "Used to track those with locater implants."
 	icon = 'icons/obj/device.dmi'
@@ -24,7 +24,7 @@
 	origin_tech = list(TECH_MAGNET = 1)
 	matter = list(MATERIAL_PLASTIC = 2)
 
-/obj/item/weapon/locator/attack_self(mob/user)
+/obj/item/locator/attack_self(mob/user)
 	user.set_machine(src)
 	var/dat
 	if (src.temp)
@@ -43,7 +43,7 @@ Frequency:
 	onclose(user, "radio")
 	return
 
-/obj/item/weapon/locator/Topic(href, href_list)
+/obj/item/locator/Topic(href, href_list)
 	..()
 	if(usr.stat || usr.restrained())
 		return
@@ -78,7 +78,7 @@ Frequency:
 							src.temp += "[W.code]-[dir2text(get_dir(sr, tr))]-[direct]<BR>"
 
 				src.temp += "<B>Extraneous Signals:</B><BR>"
-				for (var/obj/item/weapon/implant/tracking/W in world)
+				for (var/obj/item/implant/tracking/W in world)
 					if (!W.implanted || !(istype(W.loc,/obj/item/organ/external) || ismob(W.loc)))
 						continue
 					else
@@ -122,7 +122,7 @@ Frequency:
 /*
  * Hand-tele
  */
-/obj/item/weapon/hand_tele
+/obj/item/hand_tele
 	name = "NT BSD \"Jumper\""
 	desc = "Also known as a hand teleporter. This is an old and unreliable way to create stable blue-space portals. It was originally popular due its portable size and low energy consumption."
 	icon = 'icons/obj/device.dmi'
@@ -134,28 +134,28 @@ Frequency:
 	throw_range = 5
 	origin_tech = list(TECH_MAGNET = 1, TECH_BLUESPACE = 3)
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1, MATERIAL_URANIUM = 1)
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	var/obj/item/cell/cell = null
+	var/suitable_cell = /obj/item/cell/small
 	var/portal_type = /obj/effect/portal
 	var/portal_fail_chance = null
 	var/cell_charge_per_attempt = 33
 	var/entropy_value = 2  //for bluespace entropy
 
-/obj/item/weapon/hand_tele/Initialize()
+/obj/item/hand_tele/Initialize()
 	. = ..()
 	if(!cell && suitable_cell)
 		cell = new suitable_cell(src)
 
-/obj/item/weapon/hand_tele/get_cell()
+/obj/item/hand_tele/get_cell()
 	return cell
 
-/obj/item/weapon/hand_tele/handle_atom_del(atom/A)
+/obj/item/hand_tele/handle_atom_del(atom/A)
 	..()
 	if(A == cell)
 		cell = null
 		update_icon()
 
-/obj/item/weapon/hand_tele/attack_self(mob/user)
+/obj/item/hand_tele/attack_self(mob/user)
 	if(!cell || !cell.checked_use( cell_charge_per_attempt ))
 		to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 		return
@@ -193,11 +193,11 @@ Frequency:
 		P.failchance = portal_fail_chance
 	src.add_fingerprint(user)
 
-/obj/item/weapon/hand_tele/MouseDrop(over_object)
+/obj/item/hand_tele/MouseDrop(over_object)
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 
-/obj/item/weapon/hand_tele/attackby(obj/item/C, mob/living/user)
+/obj/item/hand_tele/attackby(obj/item/C, mob/living/user)
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
 
@@ -206,7 +206,7 @@ Frequency:
 ////////////HANDMADE TELE-STUFF////////
 ///////////////////////////////////////
 
-/obj/item/weapon/hand_tele/handmade
+/obj/item/hand_tele/handmade
 	name = "Handmade hand-teleporter"
 	desc = "An improvised hand-teleporter. Highly experimental and unstable."
 	icon_state = "hm_hand-tele"
@@ -216,9 +216,9 @@ Frequency:
 	var/calibration_required = TRUE
 	entropy_value = 3 //for bluespace entropy
 
-/obj/item/weapon/hand_tele/handmade/attackby(obj/item/C, mob/living/user)
+/obj/item/hand_tele/handmade/attackby(obj/item/C, mob/living/user)
 	..()
-	if(istype(C, /obj/item/weapon/tool/screwdriver))
+	if(istype(C, /obj/item/tool/screwdriver))
 		if(user.a_intent == I_HURT)
 			if(prob(5))
 				var/turf/teleport_location = pick( getcircle(user.loc, 3) )
@@ -248,7 +248,7 @@ Frequency:
 				else
 					to_chat(user, SPAN_WARNING("[src] is calibrated already. You can decalibrate it to sabotage the device."))
 
-/obj/item/weapon/tele_spear
+/obj/item/tele_spear
 	name = "Telespear"
 	desc = "A crude-looking metal stick with some dodgy device tied to the end."
 	icon = 'icons/obj/weapons.dmi'
@@ -257,7 +257,7 @@ Frequency:
 	slot_flags = SLOT_BACK
 	var/entropy_value = 1
 
-/obj/item/weapon/tele_spear/attack(mob/living/carbon/human/M, mob/living/carbon/user)
+/obj/item/tele_spear/attack(mob/living/carbon/human/M, mob/living/carbon/user)
 	playsound(src.loc, 'sound/effects/EMPulse.ogg', 65, 1)
 	var/turf/teleport_location = pick( getcircle(user.loc, 8) )
 	if(prob(5))

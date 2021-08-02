@@ -1,7 +1,7 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // To make a design unprotect use -1
 // Technomancers
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/components
+/obj/item/computer_hardware/hard_drive/portable/design/components
 	disk_name = "Artificer's ARK-034 Components"
 	icon_state = "technomancers"
 	license = 20
@@ -25,7 +25,7 @@
 		/datum/design/autolathe/part/laserguide,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools
+/obj/item/computer_hardware/hard_drive/portable/design/adv_tools
 	disk_name = "Artificer's IJIRO-451 Advanced Tools"
 	icon_state = "technomancers"
 	license = 10
@@ -53,7 +53,7 @@
 		/datum/design/autolathe/tool/ducttape/glue,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack
+/obj/item/computer_hardware/hard_drive/portable/design/parttoolpack
 	name = "Artificer's PAK-103 Tool Mods"
 	icon_state = "technomancers"
 	license = 10
@@ -87,7 +87,7 @@
 		/datum/design/research/item/weapon/toolmod/plasmablock,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits
+/obj/item/computer_hardware/hard_drive/portable/design/circuits
 	disk_name = "Artificer's ESPO-830 Circuits"
 	icon_state = "technomancers"
 	license = 10
@@ -112,7 +112,7 @@
 		/datum/design/research/circuit/diesel = 3,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics
+/obj/item/computer_hardware/hard_drive/portable/design/logistics
 	disk_name = "Artificer's LAT-018 Logistics"
 	icon_state = "technomancers"
 
@@ -126,7 +126,7 @@
 		/datum/design/autolathe/circuit/pile_ripper = 1,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/engineering
+/obj/item/computer_hardware/hard_drive/portable/design/engineering
 	disk_name = "Artificer's Supply Factory"
 	icon_state = "technomancers"
 	license = -1 //Should make this disk infinite.
@@ -223,7 +223,7 @@
 		/datum/design/autolathe/misc/bulb_powersaver,
 		)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork
+/obj/item/computer_hardware/hard_drive/portable/design/powerwork
 	disk_name = "Artificer's KW-841 Power Setters"
 	icon_state = "technomancers"
 
@@ -257,12 +257,12 @@
 	/datum/design/autolathe/misc/bulb_powersaver,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork/factory
+/obj/item/computer_hardware/hard_drive/portable/design/powerwork/factory
 	disk_name = "Artificer's MW-841 Power Setters"
 	license = -1
 
 //This disk will never be in game as its used as a dummy disk for the nano forge
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforge
+/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
 	name = "Nano-Forge Data Disk"
 	disk_name = "Artificer Data Collection"
 	designs = list(

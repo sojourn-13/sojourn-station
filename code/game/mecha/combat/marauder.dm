@@ -104,7 +104,7 @@
 	return
 
 /obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/add_cell()
-	cell = new /obj/item/weapon/cell/large/moebius/nuclear(src)
+	cell = new /obj/item/cell/large/moebius/nuclear(src)
 
 /obj/mecha/combat/dreadnought/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."

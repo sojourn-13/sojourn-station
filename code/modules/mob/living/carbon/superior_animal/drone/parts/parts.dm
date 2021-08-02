@@ -1,24 +1,24 @@
-// Parts for the custom roomba located in code\modules\mob\living\simple_animal\hostile\doomba.dm
+// File for all the parts needed for the handmade drones.
 
 // Control Module used in all the custom bots.
-/obj/item/weapon/bot_part
+/obj/item/bot_part
 	name = "robot parts"
 	desc = "Parts for the assembly of a robot."
 	icon = 'icons/mob/custom_bot.dmi'
 
-/obj/item/weapon/bot_part/control
+/obj/item/bot_part/control
 	name = "custom control module"
 	desc = "A programable control board for robots."
 	icon_state = "mainboard"
 	origin_tech = list(TECH_DATA = 3)
 
 // Parts for the fabrication of the roomba.
-/obj/item/weapon/bot_part/roomba
+/obj/item/bot_part/roomba
 	name = "roomba parts"
 	desc = "Parts for the assembly of a roomba."
 	icon = 'icons/mob/custom_bot.dmi'
 
-/obj/item/weapon/bot_part/roomba/roomba_frame
+/obj/item/bot_part/roomba/roomba_frame
 	desc = "It's a frame for a roomba."
 	name = "roomba frame"
 	icon_state = "roomba_frame_0"
@@ -30,24 +30,24 @@
 	var/build_step = 0 // Used to know at which part of the assembly process we are.
 	var/created_name = "Roomba" // The name the roomba will start with.
 	var/step_message = "It is missing a control board." // What does the assembly need next.
-	var/obj/item/weapon/cell/medium/power_cell // The power cell the roomba has
+	var/obj/item/cell/medium/power_cell // The power cell the roomba has
 
-/obj/item/weapon/bot_part/roomba/roomba_frame/examine(mob/user)
+/obj/item/bot_part/roomba/roomba_frame/examine(mob/user)
 	..() // Default stuff
 	to_chat(user, "It has '[created_name]' written on its nametag.")
 	to_chat(user, "[step_message]") // Let the user know what he need to do next.
 
-/obj/item/weapon/bot_part/roomba/roomba_treads
+/obj/item/bot_part/roomba/roomba_treads
 	name = "roomba treads"
 	desc = "Treads for the assembly of a roomba."
 	icon_state = "roomba_treads"
 
 // Armor Plating
-/obj/item/weapon/bot_part/roomba/roomba_plating
+/obj/item/bot_part/roomba/roomba_plating
 	name = "roomba plating"
 	desc = "Some steel sheets for attaching on a roomba to give it protection."
 	icon_state = "roomba_armor"
-	var/health_bonus = 50
+	var/health_bonus = 100
 
 	// The total armor it will give to the roomba.
 	var/armor_stat = list(
@@ -59,11 +59,11 @@
 		agony = 100
 	)
 
-/obj/item/weapon/bot_part/roomba/roomba_plating/heavy
+/obj/item/bot_part/roomba/roomba_plating/heavy
 	name = "heavy roomba plating"
 	desc = "Some plasteel sheets for attaching on a roomba to give it extra protection."
 	icon_state = "roomba_armor_heavy"
-	health_bonus = 100
+	health_bonus = 200
 	armor_stat = list(
 		melee = 50,
 		bullet = 50,
@@ -74,7 +74,7 @@
 	)
 
 // Knife
-/obj/item/weapon/bot_part/roomba/roomba_knife
+/obj/item/bot_part/roomba/roomba_knife
 	name = "roomba knife"
 	desc = "A knife with tape on it, for attaching on a roomba."
 	icon_state = "roomba_knife"
@@ -82,11 +82,11 @@
 	var/damage_boost = 30 // The damage bonus it give to the roomba when installed.
 
 // SI Sword Drone
-/obj/item/weapon/bot_part/sword_part
+/obj/item/bot_part/sword_part
 	name = "Sword Drone Parts"
 	desc = "Parts used for the construction of a Soteria Sword Drone."
 
-/obj/item/weapon/bot_part/sword_part/main_frame
+/obj/item/bot_part/sword_part/main_frame
 	name = "Sword Drone Main Frame"
 	desc = "It's a frame for a sword drone."
 	icon_state = "sword_frame_0"
@@ -98,19 +98,19 @@
 	var/build_step = 0 // Used to know at which part of the assembly process we are.
 	var/created_name = "Sword Drone" // The name the drone will start with.
 	var/step_message = "It is missing a left arm." // What does the assembly need next.
-	var/obj/item/weapon/cell/large/power_cell // The power cell the drone has
+	var/obj/item/cell/large/power_cell // The power cell the drone has
 
-/obj/item/weapon/bot_part/sword_part/main_frame/examine(mob/user)
+/obj/item/bot_part/sword_part/main_frame/examine(mob/user)
 	..() // Default stuff
 	to_chat(user, "It has '[created_name]' written on its nametag.")
 	to_chat(user, "[step_message]") // Let the user know what he need to do next.
 
 // SI Mantis Drone
-/obj/item/weapon/bot_part/mantis_part
+/obj/item/bot_part/mantis_part
 	name = "Mantis Drone Parts"
 	desc = "Parts used for the construction of a Soteria Mantis Drone."
 
-/obj/item/weapon/bot_part/mantis_part/main_frame
+/obj/item/bot_part/mantis_part/main_frame
 	name = "Mantis Drone Main Frame"
 	desc = "It's a frame for a mantis drone."
 	icon_state = "mantis_frame_0"
@@ -122,81 +122,81 @@
 	var/build_step = 0 // Used to know at which part of the assembly process we are.
 	var/created_name = "Mantis Drone" // The name the drone will start with.
 	var/step_message = "It is missing a left arm." // What does the assembly need next.
-	var/obj/item/weapon/cell/large/power_cell // The power cell the drone has
+	var/obj/item/cell/large/power_cell // The power cell the drone has
 
-/obj/item/weapon/bot_part/mantis_part/main_frame/examine(mob/user)
+/obj/item/bot_part/mantis_part/main_frame/examine(mob/user)
 	..() // Default stuff
 	to_chat(user, "It has '[created_name]' written on its nametag.")
 	to_chat(user, "[step_message]") // Let the user know what he need to do next.
 
 // Drone Limb
-/obj/item/weapon/bot_part/head_frame
+/obj/item/bot_part/head_frame
 	name = "Head Frame"
 	icon_state = "head_frame"
 
-/obj/item/weapon/bot_part/left_arm_frame
+/obj/item/bot_part/left_arm_frame
 	name = "Left Arm Frame"
 	icon_state = "left_arm_frame"
 
-/obj/item/weapon/bot_part/right_arm_frame
+/obj/item/bot_part/right_arm_frame
 	name = "Right Arm Frame"
 	icon_state = "right_arm_frame"
 
-/obj/item/weapon/bot_part/left_leg_frame
+/obj/item/bot_part/left_leg_frame
 	name = "Left Leg Frame"
 	icon_state = "left_leg_frame"
 
-/obj/item/weapon/bot_part/right_leg_frame
+/obj/item/bot_part/right_leg_frame
 	name = "Right Leg Frame"
 	icon_state = "right_leg_frame"
 
 // Fabrication Kit : Everything to make a Roomba/Drone.
-/obj/item/weapon/storage/box/roomba_kit
+/obj/item/storage/box/roomba_kit
 	name = "Custom Roomba Fabrication Kit"
 	desc = "Everything to make your own Roomba! Tools not included."
 
-/obj/item/weapon/storage/box/roomba_kit/populate_contents()
-	new /obj/item/weapon/bot_part/roomba/roomba_frame(src)
-	new /obj/item/weapon/bot_part/control(src)
-	new /obj/item/weapon/cell/medium/moebius(src)
-	new /obj/item/weapon/bot_part/roomba/roomba_treads(src)
+/obj/item/storage/box/roomba_kit/populate_contents()
+	new /obj/item/bot_part/roomba/roomba_frame(src)
+	new /obj/item/bot_part/control(src)
+	new /obj/item/cell/medium/moebius(src)
+	new /obj/item/bot_part/roomba/roomba_treads(src)
 	new /obj/item/stack/cable_coil(src, 5, "red")
 
-/obj/item/weapon/storage/box/sword_drone_kit
+/obj/item/storage/box/sword_drone_kit
 	name = "Custom Sword Drone Fabrication Kit"
 	desc = "Everything to make your own Soteria-brand Sword Drone! Tools not included."
 
-/obj/item/weapon/storage/box/sword_drone_kit/populate_contents()
-	new /obj/item/weapon/bot_part/sword_part/main_frame(src)
-	new /obj/item/weapon/bot_part/left_arm_frame(src)
-	new /obj/item/weapon/bot_part/right_arm_frame(src)
-	new /obj/item/weapon/bot_part/left_leg_frame(src)
-	new /obj/item/weapon/bot_part/right_leg_frame(src)
-	new /obj/item/weapon/bot_part/head_frame(src)
-	new /obj/item/weapon/tool_upgrade/augment/hydraulic(src)
+/obj/item/storage/box/sword_drone_kit/populate_contents()
+	new /obj/item/bot_part/sword_part/main_frame(src)
+	new /obj/item/bot_part/left_arm_frame(src)
+	new /obj/item/bot_part/right_arm_frame(src)
+	new /obj/item/bot_part/left_leg_frame(src)
+	new /obj/item/bot_part/right_leg_frame(src)
+	new /obj/item/bot_part/head_frame(src)
+	new /obj/item/tool_upgrade/augment/hydraulic(src)
 	new /obj/item/organ_module/active/simple/armblade/energy_blade(src)
-	new /obj/item/weapon/cell/large/moebius(src)
-	new /obj/item/weapon/bot_part/control(src)
+	new /obj/item/cell/large/moebius(src)
+	new /obj/item/bot_part/control(src)
 	new /obj/item/stack/cable_coil(src, 10, "red")
 	new /obj/item/clothing/suit/armor/vest/soteriasuit(src)
-	new /obj/item/weapon/tool_upgrade/productivity/red_paint(src)
+	new /obj/item/tool_upgrade/productivity/red_paint(src)
 
-/obj/item/weapon/storage/box/mantis_drone_kit
+/obj/item/storage/box/mantis_drone_kit
 	name = "Custom Mantis Drone Fabrication Kit"
 	desc = "Everything to make your own Soteria-brand Mantis Drone! Tools not included."
 
-/obj/item/weapon/storage/box/mantis_drone_kit/populate_contents()
-	new /obj/item/weapon/bot_part/mantis_part/main_frame(src)
-	new /obj/item/weapon/bot_part/left_arm_frame(src)
-	new /obj/item/weapon/bot_part/right_arm_frame(src)
-	new /obj/item/weapon/bot_part/left_leg_frame(src)
-	new /obj/item/weapon/bot_part/right_leg_frame(src)
-	new /obj/item/weapon/bot_part/head_frame(src)
-	new /obj/item/weapon/tool_upgrade/augment/hydraulic(src)
+/obj/item/storage/box/mantis_drone_kit/populate_contents()
+	new /obj/item/bot_part/mantis_part/main_frame(src)
+	new /obj/item/bot_part/left_arm_frame(src)
+	new /obj/item/bot_part/right_arm_frame(src)
+	new /obj/item/bot_part/left_leg_frame(src)
+	new /obj/item/bot_part/right_leg_frame(src)
+	new /obj/item/bot_part/head_frame(src)
+	new /obj/item/tool_upgrade/augment/hydraulic(src)
 	new /obj/item/organ_module/active/simple/armblade(src)
 	new /obj/item/organ_module/active/simple/armblade(src)
-	new /obj/item/weapon/cell/large/moebius(src)
-	new /obj/item/weapon/bot_part/control(src)
+	new /obj/item/cell/large/moebius(src)
+	new /obj/item/bot_part/control(src)
 	new /obj/item/stack/cable_coil(src, 10, "red")
 	new /obj/item/clothing/suit/armor/vest/soteriasuit(src)
-	new /obj/item/weapon/tool_upgrade/productivity/red_paint(src)
+	new /obj/item/tool_upgrade/productivity/red_paint(src)

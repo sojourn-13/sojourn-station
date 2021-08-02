@@ -17,7 +17,7 @@
 /datum/uplink_item/item/ewar_voice
 	name = "Electrowarfare Suite and Voice Synthesizer"
 	item_cost = 4
-	path = /obj/item/weapon/storage/box/syndie_kit/ewar_voice
+	path = /obj/item/storage/box/syndie_kit/ewar_voice
 
 /datum/uplink_item/item/chem_injector
 	name = "Mounted chemical injector"

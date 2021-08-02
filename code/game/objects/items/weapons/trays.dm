@@ -1,7 +1,7 @@
 /*
  * Trays - Agouri
  */
-/obj/item/weapon/tray
+/obj/item/tray
 	name = "tray"
 	icon = 'icons/obj/food.dmi'
 	icon_state = "tray"
@@ -24,7 +24,7 @@
 =																			=
 ===============~~~~~================================~~~~~====================
 */
-/obj/item/weapon/tray/proc/calc_carry()
+/obj/item/tray/proc/calc_carry()
 	// calculate the weight of the items on the tray
 	var/val = 0 // value to return
 
@@ -38,7 +38,7 @@
 
 	return val
 
-/obj/item/weapon/tray/pre_pickup(mob/user)
+/obj/item/tray/pre_pickup(mob/user)
 	if(!isturf(loc))
 		return FALSE
 
@@ -60,7 +60,7 @@
 
 	return ..()
 
-/obj/item/weapon/tray/dropped(mob/user)
+/obj/item/tray/dropped(mob/user)
 
 	spawn(1) //why sleep 1? Because forceMove first drops us on the ground.
 		if(!isturf(loc)) //to handle hand switching

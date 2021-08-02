@@ -1,7 +1,7 @@
 /obj/item/clothing/head/helmet/space/rig/combat
 	light_overlay = "helmet_light_dual_green"
 
-/obj/item/weapon/rig/combat
+/obj/item/rig/combat
 	name = "combat hardsuit control module"
 	desc = "A sleek and dangerous hardsuit for active combat."
 	icon_state = "security_rig"
@@ -22,7 +22,7 @@
 	helm_type = /obj/item/clothing/head/helmet/space/rig/combat
 
 
-/obj/item/weapon/rig/combat/equipped
+/obj/item/rig/combat/equipped
 	initial_modules = list(
 		/obj/item/rig_module/mounted,
 		/obj/item/rig_module/vision/thermal,
@@ -38,21 +38,21 @@
 /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
 	light_overlay = "sec_light"
 
-/obj/item/weapon/rig/combat/ironhammer
+/obj/item/rig/combat/ironhammer
 	name = "security hardsuit control module"
 	desc = "Standard operative suit issued to blackshield and marshal operatives alike. Provides balanced overall protection against various threats and widely used on planets surface, space stations or in open space."
 	icon_state = "ihs_rig"
 	helm_type = /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
 	suit_type = "ironhammer hardsuit"
 
-/obj/item/weapon/rig/combat/ironhammer/equipped
+/obj/item/rig/combat/ironhammer/equipped
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/storage
 		)
 //blacksheild
-/obj/item/weapon/rig/combat/blackshield
+/obj/item/rig/combat/blackshield
 	name = "Blackshield Ops control module"
 	desc = "A Blackshield RIG module that has been tailored for CQC. Due to its plating, it's slightly bulkier than normal standard security hardsuits."
 	icon_state = "blackshield_rig"
@@ -75,7 +75,7 @@
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/blackshield
 	glove_type = /obj/item/clothing/gloves/rig/combat/blackshield
 
-/obj/item/weapon/rig/combat/blackshield/equipped
+/obj/item/rig/combat/blackshield/equipped
 	initial_modules = list(
 		/obj/item/rig_module/mounted,
 		/obj/item/rig_module/storage,

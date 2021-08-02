@@ -16,7 +16,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	density = TRUE
 	icon = 'icons/obj/tesla_turret.dmi'
 	icon_state = "coil"
-	circuit = /obj/item/weapon/circuitboard/tesla_turret
+	circuit = /obj/item/circuitboard/tesla_turret
 	frame_type = FRAME_VERTICAL
 	var/active = FALSE
 	var/locked = FALSE
@@ -37,7 +37,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	..()
 	to_chat(user, SPAN_NOTICE("The turret is [active ? "on" : "off"].")) // Is the generator on?
 
-/obj/machinery/power/tesla_turret/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/power/tesla_turret/attackby(obj/item/W, mob/user)
 
 	if(default_deconstruction(W, user))
 		return
@@ -45,8 +45,8 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	if(default_part_replacement(W, user))
 		return
 
-	if(istype(W, /obj/item/weapon/card/id))
-		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
+	if(istype(W, /obj/item/card/id))
+		var/obj/item/card/id/C = W // New var to use ID-only vars.
 		if(!access_construction in C.access)
 			to_chat(user, "You do not have the required access to lock the turret.")
 			return
@@ -88,7 +88,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 
 /obj/machinery/power/tesla_turret/RefreshParts()
 	zap_cooldown = initial(zap_cooldown)
-	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		zap_cooldown -= (C.rating * 15)
 
 /obj/machinery/power/tesla_turret/attack_hand(mob/user)

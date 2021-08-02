@@ -8,11 +8,10 @@
 
 /obj/structure/closet/secure_closet/freezer/kitchen/populate_contents()
 	for(var/i in 1 to 6)
-		new /obj/item/weapon/reagent_containers/food/condiment/flour(src)
-	new /obj/item/weapon/reagent_containers/food/condiment/sugar(src)
-	new /obj/item/weapon/reagent_containers/food/condiment/cookingoil(src)
+		new /obj/item/reagent_containers/food/condiment/flour(src)
+	new /obj/item/reagent_containers/food/condiment/sugar(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/snacks/meat/monkey(src)
+		new /obj/item/reagent_containers/food/snacks/meat/monkey(src)
 
 /obj/structure/closet/secure_closet/freezer/kitchen/mining
 	icon_state = "frig"
@@ -24,7 +23,7 @@
 
 /obj/structure/closet/secure_closet/freezer/meat/populate_contents()
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/snacks/meat/monkey(src)
+		new /obj/item/reagent_containers/food/snacks/meat/monkey(src)
 
 /obj/structure/closet/secure_closet/freezer/blood
 	name = "blood fridge"
@@ -32,7 +31,7 @@
 
 /obj/structure/closet/secure_closet/freezer/blood/populate_contents()
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/blood/OMinus(src)
+		new /obj/item/reagent_containers/blood/OMinus(src)
 
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
@@ -40,12 +39,11 @@
 
 /obj/structure/closet/secure_closet/freezer/fridge/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/weapon/reagent_containers/food/drinks/milk(src)
+		new /obj/item/reagent_containers/food/drinks/milk(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/soymilk(src)
+		new /obj/item/reagent_containers/food/drinks/soymilk(src)
 	for(var/i in 1 to 2)
-		new /obj/item/weapon/storage/fancy/egg_box(src)
-	new /obj/item/weapon/reagent_containers/food/condiment/cookingoil(src)
+		new /obj/item/storage/fancy/egg_box(src)
 
 /obj/structure/closet/secure_closet/freezer/money
 	name = "freezer"
@@ -54,11 +52,11 @@
 
 /obj/structure/closet/secure_closet/freezer/money/populate_contents()
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/spacecash/bundle/c1000(src)
+		new /obj/item/spacecash/bundle/c1000(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/spacecash/bundle/c500(src)
+		new /obj/item/spacecash/bundle/c500(src)
 	for(var/i in 1 to 6)
-		new /obj/item/weapon/spacecash/bundle/c200(src)
+		new /obj/item/spacecash/bundle/c200(src)
 
 /obj/structure/closet/secure_closet/freezer/mini
 	name = "mini freezer"
@@ -67,23 +65,23 @@
 
 /obj/structure/closet/secure_closet/freezer/mini/populate_contents()
 	for(var/i in 1 to 6)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_no_sugar(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster_no_sugar(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_orange(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster_orange(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_sol(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster_sol(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_blood(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster_blood(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_jungel(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster_jungel(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_church(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster_church(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_red(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster_red(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/monster_blue(src)
+		new /obj/item/reagent_containers/food/drinks/cans/monster_blue(src)
 
 /obj/structure/closet/secure_closet/freezer/icebox
 	name = "mini icebox"
@@ -92,14 +90,14 @@
 
 /obj/structure/closet/secure_closet/freezer/icebox/populate_contents()
 	for(var/i in 1 to 6)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_rent_a_cop(src)
+		new /obj/item/reagent_containers/food/drinks/cans/baton_rent_a_cop(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_detective(src)
+		new /obj/item/reagent_containers/food/drinks/cans/baton_detective(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_commando(src)
+		new /obj/item/reagent_containers/food/drinks/cans/baton_commando(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_cola(src)
+		new /obj/item/reagent_containers/food/drinks/cans/baton_cola(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton_apple(src)
+		new /obj/item/reagent_containers/food/drinks/cans/baton_apple(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weapon/reagent_containers/food/drinks/cans/baton(src)
+		new /obj/item/reagent_containers/food/drinks/cans/baton(src)

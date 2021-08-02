@@ -9,7 +9,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
 
-	circuit = /obj/item/weapon/circuitboard/organ_printer
+	circuit = /obj/item/circuitboard/organ_printer
 
 	icon_state = "bioprinter"
 	icon = 'icons/obj/surgery.dmi'
@@ -32,7 +32,7 @@
 	..()
 	var/mb_rating = 0
 	var/mb_amount = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
 		mb_rating += MB.rating
 		mb_amount++
 
@@ -85,11 +85,11 @@
 	else
 		to_chat(user, SPAN_WARNING("There is not enough matter in the printer."))
 
-/obj/machinery/bioprinter/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/bioprinter/attackby(obj/item/W, mob/user)
 
 	// DNA sample from syringe.
-	if(istype(W,/obj/item/weapon/reagent_containers/syringe))
-		var/obj/item/weapon/reagent_containers/syringe/S = W
+	if(istype(W,/obj/item/reagent_containers/syringe))
+		var/obj/item/reagent_containers/syringe/S = W
 		var/datum/reagent/organic/blood/injected = locate() in S.reagents.reagent_list //Grab some blood
 		if(injected && injected.data)
 			loaded_dna = injected.data
@@ -115,7 +115,7 @@
 /obj/machinery/bioprinter/prosthetics
 	name = "prosthetics fabricator"
 	desc = "It's a machine that prints prosthetic organs."
-	circuit = /obj/item/weapon/circuitboard/prosthetics_printer
+	circuit = /obj/item/circuitboard/prosthetics_printer
 
 
 /obj/machinery/bioprinter/prosthetics/New()
@@ -154,7 +154,7 @@
 	else
 		to_chat(user, SPAN_WARNING("There is not enough matter in the printer."))
 
-/obj/machinery/bioprinter/prosthetics/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/bioprinter/prosthetics/attackby(obj/item/W, mob/user)
 	// Steel for matter.
 	if(istype(W, /obj/item/stack/material) && W.get_material_name() == MATERIAL_STEEL)
 		var/obj/item/stack/S = W

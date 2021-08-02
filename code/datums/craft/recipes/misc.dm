@@ -1,6 +1,6 @@
 /datum/craft_recipe/ashtray
 	name = "ashtray"
-	result = /obj/item/weapon/material/ashtray
+	result = /obj/item/material/ashtray
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
 	)
@@ -8,7 +8,7 @@
 
 /datum/craft_recipe/medical/rag
 	name = "rag"
-	result = /obj/item/weapon/reagent_containers/glass/rag
+	result = /obj/item/reagent_containers/glass/rag
 	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30)
@@ -16,7 +16,7 @@
 
 /datum/craft_recipe/tray
 	name = "dinner tray"
-	result = /obj/item/weapon/tray
+	result = /obj/item/tray
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 40),
 		list(QUALITY_WIRE_CUTTING, 10, 120)
@@ -32,23 +32,23 @@
 
 /datum/craft_recipe/folder/blue
 	name = "folder, blue"
-	result = /obj/item/weapon/folder/blue
+	result = /obj/item/folder/blue
 
 /datum/craft_recipe/folder/cyan
 	name = "folder, cyan"
-	result = /obj/item/weapon/folder/cyan
+	result = /obj/item/folder/cyan
 
 /datum/craft_recipe/folder/grey
 	name = "folder, grey"
-	result = /obj/item/weapon/folder
+	result = /obj/item/folder
 
 /datum/craft_recipe/folder/red
 	name = "folder, red"
-	result = /obj/item/weapon/folder/red
+	result = /obj/item/folder/red
 
 /datum/craft_recipe/folder/yellow
 	name = "folder, yellow"
-	result = /obj/item/weapon/folder/yellow
+	result = /obj/item/folder/yellow
 
 /datum/craft_recipe/metal_rod
 	name = "metal rod"

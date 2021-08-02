@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/pitbull
+/obj/item/gun/projectile/automatic/pitbull
 	name = "\"Pitbull\" carbine"
 	desc = "The M7 Pitbull is an older bullpup rifle model manufactured by \"Holland & Sullivan\" primarily for planetary defense forces and private military firms. It includes an underbarrel grenade launcher which is compatible with most modern grenade types. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/pitbull.dmi'
@@ -30,19 +30,19 @@
 		list(mode_name="fire grenades",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
-	var/obj/item/weapon/gun/projectile/underslung/launcher
+	var/obj/item/gun/projectile/underslung/launcher
 
-/obj/item/weapon/gun/projectile/automatic/pitbull/Initialize()
+/obj/item/gun/projectile/automatic/pitbull/Initialize()
 	. = ..()
 	launcher = new(src)
 
-/obj/item/weapon/gun/projectile/automatic/pitbull/attackby(obj/item/I, mob/user)
+/obj/item/gun/projectile/automatic/pitbull/attackby(obj/item/I, mob/user)
 	if((istype(I, /obj/item/ammo_casing/grenade)))
 		launcher.load_ammo(I, user)
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/pitbull/attack_hand(mob/user)
+/obj/item/gun/projectile/automatic/pitbull/attack_hand(mob/user)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(user.get_inactive_hand() == src && cur_mode.settings["use_launcher"])
@@ -50,7 +50,7 @@
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/pitbull/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+/obj/item/gun/projectile/automatic/pitbull/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(cur_mode.settings["use_launcher"])
@@ -60,7 +60,7 @@
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/pitbull/update_icon()
+/obj/item/gun/projectile/automatic/pitbull/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -77,12 +77,12 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/pitbull/Initialize()
+/obj/item/gun/projectile/automatic/pitbull/Initialize()
 	. = ..()
 	update_icon()
 
 
-/obj/item/weapon/gun/projectile/automatic/pitbull/examine(mob/user)
+/obj/item/gun/projectile/automatic/pitbull/examine(mob/user)
 	..()
 	if(launcher.loaded.len)
 		to_chat(user, "\The [launcher] has \a [launcher.chambered] loaded.")

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/nail_gun
+/obj/item/gun/projectile/automatic/nail_gun
 	name = "Greyson Positronic \"Nail\" rifle"
 	desc = "A old and lost gun design of a rifle by Greyson Positronic, its high fire rate stopping power and more make it the perfect tool for war. \
 	Its'caliber is .257 and shockingly can be fitted with a silencer and has room for a scope."
@@ -32,7 +32,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/nail_gun/update_icon()
+/obj/item/gun/projectile/automatic/nail_gun/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

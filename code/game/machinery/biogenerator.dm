@@ -7,9 +7,9 @@
 	anchored = 1
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
-	circuit = /obj/item/weapon/circuitboard/biogenerator
+	circuit = /obj/item/circuitboard/biogenerator
 	var/processing = 0
-	var/obj/item/weapon/reagent_containers/glass/beaker = null
+	var/obj/item/reagent_containers/glass/beaker = null
 	var/points = 0
 	var/menustat = "menu"
 	var/build_eff = 1
@@ -26,31 +26,31 @@
 			list(name="Rice, 30u", cost=600, reagent="rice"), //Got to be really lazy
 			list(name="Salt, 30u", cost=600, reagent="sodiumchloride"), //Got to be really lazy
 			list(name="Sugar, 30u", cost=30, reagent="sugar"),
-			list(name="Slab of meat", cost=50, path=/obj/item/weapon/reagent_containers/food/snacks/meat),
+			list(name="Slab of meat", cost=50, path=/obj/item/reagent_containers/food/snacks/meat),
 		"Nutrient",
 			list(name="EZ-Nutrient, 30u", cost=30, reagent="eznutrient"),
 			list(name="Left4Zed, 30u", cost=60, reagent="left4zed"),
 			list(name="Robust Harvest, 30u", cost=75, reagent="robustharvest"),
-			list(name="Mineral Water", cost=80, path=/obj/item/weapon/plantspray/water),
+			list(name="Mineral Water", cost=80, path=/obj/item/plantspray/water),
 		"Weedkillers",
-			list(name="Weed Killer", cost=30, path=/obj/item/weapon/plantspray/weeds),
-			list(name="Pest Killer", cost=60, path=/obj/item/weapon/plantspray/pests),
-			list(name="Carbaryl", cost=75, path=/obj/item/weapon/plantspray/pests/old/carbaryl),
-			list(name="Lindane", cost=75, path=/obj/item/weapon/plantspray/pests/old/lindane),
-			list(name="Phosmet", cost=75, path=/obj/item/weapon/plantspray/pests/old/phosmet),
+			list(name="Weed Killer", cost=30, path=/obj/item/plantspray/weeds),
+			list(name="Pest Killer", cost=60, path=/obj/item/plantspray/pests),
+			list(name="Carbaryl", cost=75, path=/obj/item/plantspray/pests/old/carbaryl),
+			list(name="Lindane", cost=75, path=/obj/item/plantspray/pests/old/lindane),
+			list(name="Phosmet", cost=75, path=/obj/item/plantspray/pests/old/phosmet),
 		"Leather",
 			list(name="Cloth Sheet", cost=50, path=/obj/item/stack/material/cloth),
 			list(name="Leather Sheet", cost=800, path=/obj/item/stack/material/leather),//exspensive to make sure that hunters always have a better deal
-			list(name="Wallet", cost=100, path=/obj/item/weapon/storage/wallet),
+			list(name="Wallet", cost=100, path=/obj/item/storage/wallet),
 			list(name="Botanical gloves", cost=250, path=/obj/item/clothing/gloves/botanic_leather),
-			list(name="Utility belt", cost=300, path=/obj/item/weapon/storage/belt/utility),
-			list(name="Leather Satchel", cost=400, path=/obj/item/weapon/storage/backpack/satchel/leather),
+			list(name="Utility belt", cost=300, path=/obj/item/storage/belt/utility),
+			list(name="Leather Satchel", cost=400, path=/obj/item/storage/backpack/satchel/leather),
 			list(name="Leather Jacket", cost=400, path=/obj/item/clothing/suit/storage/toggle/leather),
-			list(name="Cash Bag", cost=400, path=/obj/item/weapon/storage/bag/money),
-			list(name="Medical belt", cost=300, path=/obj/item/weapon/storage/belt/medical),
-			list(name="Security belt", cost=300, path=/obj/item/weapon/storage/belt/security),
-			list(name="EMT belt", cost=300, path=/obj/item/weapon/storage/belt/medical/emt),
-			list(name="Champion belt", cost=500, path=/obj/item/weapon/storage/belt/champion),
+			list(name="Cash Bag", cost=400, path=/obj/item/storage/bag/money),
+			list(name="Medical belt", cost=300, path=/obj/item/storage/belt/medical),
+			list(name="Security belt", cost=300, path=/obj/item/storage/belt/security),
+			list(name="EMT belt", cost=300, path=/obj/item/storage/belt/medical/emt),
+			list(name="Champion belt", cost=500, path=/obj/item/storage/belt/champion),
 		"Medicine",
 			list(name="Medical splints", cost=100, path=/obj/item/stack/medical/splint),
 			list(name="Roll of gauze", cost=100, path=/obj/item/stack/medical/bruise_pack),
@@ -67,14 +67,14 @@
 			list(name="Orange Carpet", cost=12, path=/obj/item/stack/tile/carpet/oracarpet),
 		"Misc",
 			list(name="Cardboard", cost=60, path=/obj/item/stack/material/cardboard),
-			list(name="Crayon Box", cost=120, path=/obj/item/weapon/storage/fancy/crayons),
+			list(name="Crayon Box", cost=120, path=/obj/item/storage/fancy/crayons),
 	)
 
 
 /obj/machinery/biogenerator/New()
 	..()
 	create_reagents(1000)
-	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
 
 
 /obj/machinery/biogenerator/on_reagent_change()			//When the reagents change, change the icon as well.
@@ -96,7 +96,7 @@
 
 	if(default_part_replacement(I, user))
 		return
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	if(istype(I, /obj/item/reagent_containers/glass))
 		if(beaker)
 			to_chat(user, SPAN_NOTICE("The [src] is already loaded."))
 		else
@@ -106,14 +106,14 @@
 			updateUsrDialog()
 	else if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
-	else if(istype(I, /obj/item/weapon/storage/bag/produce))
+	else if(istype(I, /obj/item/storage/bag/produce))
 		var/i = 0
-		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
+		for(var/obj/item/reagent_containers/food/snacks/grown/G in contents)
 			i++
 		if(i >= 10)
 			to_chat(user, SPAN_NOTICE("\The [src] is already full! Activate it."))
 		else
-			for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in I.contents)
+			for(var/obj/item/reagent_containers/food/snacks/grown/G in I.contents)
 				G.loc = src
 				i++
 				if(i >= 10)
@@ -123,11 +123,11 @@
 				to_chat(user, SPAN_NOTICE("You empty \the [I] into \the [src]."))
 
 
-	else if(!istype(I, /obj/item/weapon/reagent_containers/food/snacks/grown))
+	else if(!istype(I, /obj/item/reagent_containers/food/snacks/grown))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
 	else
 		var/i = 0
-		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
+		for(var/obj/item/reagent_containers/food/snacks/grown/G in contents)
 			i++
 		if(i >= 10)
 			to_chat(user, SPAN_NOTICE("\The [src] is full! Activate it."))
@@ -195,7 +195,7 @@
 		to_chat(usr, SPAN_NOTICE("The biogenerator is in the process of working."))
 		return
 	var/S = 0
-	for(var/obj/item/weapon/reagent_containers/food/snacks/grown/I in contents)
+	for(var/obj/item/reagent_containers/food/snacks/grown/I in contents)
 		S += 5
 		if(I.reagents.get_reagent_amount("nutriment") < 0.1)
 			points += 1
@@ -280,10 +280,10 @@
 	var/man_rating = 0
 	var/bin_rating = 0
 
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-		if(istype(P, /obj/item/weapon/stock_parts/matter_bin))
+	for(var/obj/item/stock_parts/P in component_parts)
+		if(istype(P, /obj/item/stock_parts/matter_bin))
 			bin_rating += P.rating
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
+		if(istype(P, /obj/item/stock_parts/manipulator))
 			man_rating += P.rating
 
 	build_eff = man_rating

@@ -7,19 +7,19 @@
 
 /datum/design/research/item/tool/combat_shovel
 	name = "combat shovel"
-	build_path = /obj/item/weapon/tool/shovel/combat
+	build_path = /obj/item/tool/shovel/combat
 
 /datum/design/research/item/tool/rcd
 	name = "rapid construction device"
-	build_path = /obj/item/weapon/rcd
+	build_path = /obj/item/rcd
 
 /datum/design/research/item/tool/rcd_ammo
 	name = "matter cartridge"
-	build_path = /obj/item/weapon/rcd_ammo
+	build_path = /obj/item/rcd_ammo
 
 /datum/design/research/item/tool/pneumatic_crowbar
 	name = "pneumatic crowbar"
-	build_path = /obj/item/weapon/tool/crowbar/pneumatic
+	build_path = /obj/item/tool/crowbar/pneumatic
 
 /datum/design/research/item/light_replacer
 	name = "light replacer"
@@ -38,7 +38,7 @@
 
 /datum/design/research/item/botany_disk
 	name = "flora data disk"
-	build_path = /obj/item/weapon/disk/botany
+	build_path = /obj/item/disk/botany
 	category = "Misc"
 
 //Bluespace stuff
@@ -76,35 +76,35 @@
 /datum/design/research/item/bag_holding
 	name = "'Bag of Holding'"
 	desc = "Using localized pockets of bluespace this bag prototype offers incredible storage capacity with the contents weighting nothing. It's a shame the bag itself is pretty heavy."
-	build_path = /obj/item/weapon/storage/backpack/holding
+	build_path = /obj/item/storage/backpack/holding
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/belt_holding
 	name = "'Belt of Holding'"
 	desc = "Using localized pockets of bluespace this belt prototype offers incredible storage capacity with the contents weighting nothing."
-	build_path = /obj/item/weapon/storage/belt/holding
+	build_path = /obj/item/storage/belt/holding
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/pouch_holding
 	name = "'Pouch of Holding'"
 	desc = "Using localized pockets of bluespace this pouch prototype offers incredible storage capacity with the contents weighting nothing."
-	build_path = /obj/item/weapon/storage/pouch/holding
+	build_path = /obj/item/storage/pouch/holding
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/trashbag_holding
 	name = "'Trash Bag of Holding'"
 	desc = "Using localized pockets of bluespace this trashbag prototype offers incredible storage capacity with the contents weighting nothing."
-	build_path = /obj/item/weapon/storage/bag/trash/holding
+	build_path = /obj/item/storage/bag/trash/holding
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/oresatchel_holding
 	name = "'Ore satchel of Holding'"
 	desc = "Using localized pockets of bluespace this ore satchel prototype offers incredible storage capacity with the contents weighting nothing."
-	build_path = /obj/item/weapon/storage/bag/ore/holding
+	build_path = /obj/item/storage/bag/ore/holding
 	category = "Bluespace Telecoms"
 
 /datum/design/research/item/si_bluespace_scanner
 	name = "Bluespace Tuning Device"
 	desc = "A tool used by SI to stablize and get readings of bluespace entropy."
-	build_path = /obj/item/weapon/oddity/si_bluespace_scanner
+	build_path = /obj/item/oddity/si_bluespace_scanner
 	category = "Bluespace Telecoms"

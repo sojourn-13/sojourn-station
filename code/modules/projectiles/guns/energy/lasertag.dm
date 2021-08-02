@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/lasertag
+/obj/item/gun/energy/lasertag
 	name = "plasma tag rifle"
 	item_state = "laser"
 	desc = "Standard-issue weapon of the Imperial Guard."
@@ -13,26 +13,26 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
 	var/required_vest
 
-/obj/item/weapon/gun/energy/lasertag/special_check(var/mob/living/carbon/human/M)
+/obj/item/gun/energy/lasertag/special_check(var/mob/living/carbon/human/M)
 	if(ishuman(M))
 		if(!istype(M.wear_suit, required_vest))
 			to_chat(M, SPAN_WARNING("You need to be wearing your laser tag vest!"))
 			return 0
 	return ..()
 
-/obj/item/weapon/gun/energy/lasertag/shotgun
+/obj/item/gun/energy/lasertag/shotgun
 	name = "plasma tag shotgun"
 	desc = "Standard-issue weapon of the Imperial Guard. This one has a slower fire delay but contains an alternate knock back fire to deny charges."
 	fire_delay = 6
 	sel_mode = 1
 
-/obj/item/weapon/gun/energy/lasertag/sniper
+/obj/item/gun/energy/lasertag/sniper
 	name = "plasma tag sniper"
 	desc = "Standard-issue weapon of the Imperial Guard. This one has a hologram projected scope attached that appears when the user looks down the sight. Fancy, but the gun itself is quite slow to fire as a result."
 	fire_delay = 10
 	zoom_factor = 1.2 //small zome factor so we can't snipe from all the way accross the map
 
-/obj/item/weapon/gun/energy/lasertag/pistol
+/obj/item/gun/energy/lasertag/pistol
 	name = "plasma tag burst-pistol"
 	desc = "Standard-issue weapon of the Imperial Guard. Half the size, half the charge, much faster firing speed. This model also fits a holster."
 	twohanded = FALSE
@@ -46,7 +46,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=6, icon="burst"),
 		)
 
-/obj/item/weapon/gun/energy/lasertag/blue
+/obj/item/gun/energy/lasertag/blue
 	icon = 'icons/obj/guns/energy/bluetag.dmi'
 	icon_state = "bluetag"
 	item_state = "bluetag"
@@ -54,7 +54,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
 	required_vest = /obj/item/clothing/suit/fluff/bluetag
 
-/obj/item/weapon/gun/energy/lasertag/shotgun/blue
+/obj/item/gun/energy/lasertag/shotgun/blue
 	icon = 'icons/obj/guns/energy/bluetag.dmi'
 	icon_state = "bluetag"
 	item_state = "bluetag"
@@ -66,7 +66,7 @@
 		list(mode_name="knockback", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
 		)
 
-/obj/item/weapon/gun/energy/lasertag/sniper/blue
+/obj/item/gun/energy/lasertag/sniper/blue
 	icon = 'icons/obj/guns/energy/bluetag.dmi'
 	icon_state = "bluetag"
 	item_state = "bluetag"
@@ -74,7 +74,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
 	required_vest = /obj/item/clothing/suit/fluff/bluetag
 
-/obj/item/weapon/gun/energy/lasertag/pistol/blue
+/obj/item/gun/energy/lasertag/pistol/blue
 	icon = 'icons/obj/guns/energy/bluetagpistol.dmi'
 	icon_state = "ntpistol"
 	item_state = "ntpistol"
@@ -82,7 +82,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
 	required_vest = /obj/item/clothing/suit/fluff/bluetag
 
-/obj/item/weapon/gun/energy/lasertag/red
+/obj/item/gun/energy/lasertag/red
 	icon = 'icons/obj/guns/energy/redtag.dmi'
 	icon_state = "redtag"
 	item_state = "redtag"
@@ -90,7 +90,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/red
 	required_vest = /obj/item/clothing/suit/fluff/redtag
 
-/obj/item/weapon/gun/energy/lasertag/shotgun/red
+/obj/item/gun/energy/lasertag/shotgun/red
 	icon = 'icons/obj/guns/energy/redtag.dmi'
 	icon_state = "redtag"
 	item_state = "redtag"
@@ -102,7 +102,7 @@
 		list(mode_name="knockback", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
 		)
 
-/obj/item/weapon/gun/energy/lasertag/sniper/red
+/obj/item/gun/energy/lasertag/sniper/red
 	icon = 'icons/obj/guns/energy/redtag.dmi'
 	icon_state = "redtag"
 	item_state = "redtag"
@@ -110,7 +110,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/red
 	required_vest = /obj/item/clothing/suit/fluff/redtag
 
-/obj/item/weapon/gun/energy/lasertag/pistol/red
+/obj/item/gun/energy/lasertag/pistol/red
 	icon = 'icons/obj/guns/energy/redtagpistol.dmi'
 	icon_state = "ntpistol"
 	item_state = "ntpistol"
@@ -118,7 +118,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/red
 	required_vest = /obj/item/clothing/suit/fluff/redtag
 
-/obj/item/weapon/gun/energy/lasertag/green
+/obj/item/gun/energy/lasertag/green
 	icon = 'icons/obj/guns/energy/greentag.dmi'
 	icon_state = "greentag"
 	item_state = "greentag"
@@ -126,7 +126,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/green
 	required_vest = /obj/item/clothing/suit/fluff/greentag
 
-/obj/item/weapon/gun/energy/lasertag/shotgun/green
+/obj/item/gun/energy/lasertag/shotgun/green
 	icon = 'icons/obj/guns/energy/greentag.dmi'
 	icon_state = "greentag"
 	item_state = "greentag"
@@ -138,7 +138,7 @@
 		list(mode_name="knockback", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
 		)
 
-/obj/item/weapon/gun/energy/lasertag/sniper/green
+/obj/item/gun/energy/lasertag/sniper/green
 	icon = 'icons/obj/guns/energy/greentag.dmi'
 	icon_state = "greentag"
 	item_state = "greentag"
@@ -146,7 +146,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/green
 	required_vest = /obj/item/clothing/suit/fluff/greentag
 
-/obj/item/weapon/gun/energy/lasertag/pistol/green
+/obj/item/gun/energy/lasertag/pistol/green
 	icon = 'icons/obj/guns/energy/greentagpistol.dmi'
 	icon_state = "ntpistol"
 	item_state = "ntpistol"
@@ -154,7 +154,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/green
 	required_vest = /obj/item/clothing/suit/fluff/greentag
 
-/obj/item/weapon/gun/energy/lasertag/yellow
+/obj/item/gun/energy/lasertag/yellow
 	icon = 'icons/obj/guns/energy/yellowtag.dmi'
 	icon_state = "yellowtag"
 	item_state = "yellowtag"
@@ -162,7 +162,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/yellow
 	required_vest = /obj/item/clothing/suit/fluff/yellowtag
 
-/obj/item/weapon/gun/energy/lasertag/shotgun/yellow
+/obj/item/gun/energy/lasertag/shotgun/yellow
 	icon = 'icons/obj/guns/energy/yellowtag.dmi'
 	icon_state = "yellowtag"
 	item_state = "yellowtag"
@@ -174,7 +174,7 @@
 		list(mode_name="knockback", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
 		)
 
-/obj/item/weapon/gun/energy/lasertag/sniper/yellow
+/obj/item/gun/energy/lasertag/sniper/yellow
 	icon = 'icons/obj/guns/energy/yellowtag.dmi'
 	icon_state = "yellowtag"
 	item_state = "yellowtag"
@@ -182,7 +182,7 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/yellow
 	required_vest = /obj/item/clothing/suit/fluff/yellowtag
 
-/obj/item/weapon/gun/energy/lasertag/pistol/yellow
+/obj/item/gun/energy/lasertag/pistol/yellow
 	icon = 'icons/obj/guns/energy/yellowtagpistol.dmi'
 	icon_state = "ntpistol"
 	item_state = "ntpistol"

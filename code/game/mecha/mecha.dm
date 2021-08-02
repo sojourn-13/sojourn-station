@@ -51,7 +51,7 @@
 	var/list/damage_absorption = list("brute"=0.8,"fire"=1.2,"bullet"=0.9,"energy"=1,"bomb"=1)
 	// This armor level indicates how fortified the mech's armor is.
 	var/armor_level = MECHA_ARMOR_LIGHT
-	var/obj/item/weapon/cell/large/cell
+	var/obj/item/cell/large/cell
 	var/state = 0
 	var/list/log = new
 	var/last_message = 0
@@ -224,7 +224,7 @@
 	return internal_tank
 
 /obj/mecha/proc/add_cell()
-	cell = new /obj/item/weapon/cell/large/super(src)
+	cell = new /obj/item/cell/large/super(src)
 
 /obj/mecha/proc/add_cabin()
 	cabin_air = new
@@ -1027,7 +1027,7 @@ assassination method if you time it right*/
 			else
 				to_chat(user, "You were unable to attach [I] to [src]")
 		return
-	var/obj/item/weapon/card/id/id_card = I.GetIdCard()
+	var/obj/item/card/id/id_card = I.GetIdCard()
 	if(id_card)
 		if(add_req_access || maint_access)
 			if(internals_access_allowed(usr))
@@ -1048,7 +1048,7 @@ assassination method if you time it right*/
 				to_chat(user, "There's not enough wire to finish the task.")
 		return
 
-	else if(istype(I, /obj/item/weapon/cell/large))
+	else if(istype(I, /obj/item/cell/large))
 		if(state == 4 || (state == 3 && !cell))
 			if(!src.cell)
 				to_chat(user, "You install the powercell")
@@ -1482,7 +1482,7 @@ assassination method if you time it right*/
 	return FALSE
 
 
-/obj/mecha/check_access(obj/item/weapon/card/id/I, list/access_list)
+/obj/mecha/check_access(obj/item/card/id/I, list/access_list)
 	if(!istype(access_list))
 		return TRUE
 	if(!access_list.len) //no requirements
@@ -1663,7 +1663,7 @@ assassination method if you time it right*/
 	return output
 
 
-/obj/mecha/proc/output_access_dialog(obj/item/weapon/card/id/id_card, mob/user)
+/obj/mecha/proc/output_access_dialog(obj/item/card/id/id_card, mob/user)
 	if(!id_card || !user) return
 	var/output = {"<html>
 						<head><style>
@@ -1688,7 +1688,7 @@ assassination method if you time it right*/
 	onclose(user, "exosuit_add_access")
 	return
 
-/obj/mecha/proc/output_maintenance_dialog(obj/item/weapon/card/id/id_card,mob/user)
+/obj/mecha/proc/output_maintenance_dialog(obj/item/card/id/id_card,mob/user)
 	if(!id_card || !user) return
 
 	var/maint_options = "<a href='?src=\ref[src];set_internal_tank_valve=1;user=\ref[user]'>Set Cabin Air Pressure</a>"

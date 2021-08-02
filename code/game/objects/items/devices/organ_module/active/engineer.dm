@@ -4,7 +4,7 @@
 	verb_name = "Deploy engineering omnitool"
 	icon_state = "multitool"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/engimplant
+	holding_type = /obj/item/tool/engimplant
 
 /obj/item/organ_module/active/simple/engineer/organic
 	name = "embedded organic engineering multitool"
@@ -12,14 +12,14 @@
 	verb_name = "Deploy organic engineering omnitool"
 	icon_state = "organicengimplant"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/engimplant/organic
+	holding_type = /obj/item/tool/engimplant/organic
 	matter = list(MATERIAL_BIOMATTER = 10)
 
-/obj/item/weapon/biogoop/engineer
+/obj/item/biogoop/engineer
 	name = "incomplete organic engineering augment"
 
 
-/obj/item/weapon/biogoop/engineer/attackby(obj/item/I, mob/user)
+/obj/item/biogoop/engineer/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
 		var/obj/item/stack/S = I
 		if(S.use(1))

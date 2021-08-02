@@ -1,4 +1,4 @@
-/obj/item/weapon/phone
+/obj/item/phone
 	name = "dial phone"
 	desc = "An old rotary dial phone. Who uses these anymore?"
 	icon = 'icons/obj/items.dmi'

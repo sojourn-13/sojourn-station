@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/ostwind
+/obj/item/gun/projectile/automatic/ostwind
 	name = "\"Ostwind\" carbine"
 	desc = "An \"Ostwind\" high-end police-grade assault rifle manufactured by Seinemetall Defense GmbH. Primarily used by law enforcement, counter-terror units, and private security. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/ostwind.dmi'
@@ -32,7 +32,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/ostwind/update_icon()
+/obj/item/gun/projectile/automatic/ostwind/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -47,6 +47,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/ostwind/Initialize()
+/obj/item/gun/projectile/automatic/ostwind/Initialize()
 	. = ..()
 	update_icon()

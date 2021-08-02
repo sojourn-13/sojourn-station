@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/centurio
+/obj/item/gun/energy/centurio
 	name = "\"Centurio\" plasma pistol"
 	desc = "A specialized firearm designed to fire lethal plasma rounds or a slow wave of ion particals."
 	icon = 'icons/obj/guns/energy/toxgun.dmi'
@@ -17,7 +17,7 @@
 		list(mode_name="ion shot", projectile_type=/obj/item/projectile/ion, fire_sound='sound/effects/supermatter.ogg', fire_delay = 25, icon="stun", projectile_color = "#ff7f24"),
 		)
 
-/obj/item/weapon/gun/energy/plasma/auretian
+/obj/item/gun/energy/plasma/auretian
 	name = "\"Auretian\" energy pistol"
 	desc = "\"Soteria\" brand energy pistol, for personal overprotection. It has the advantage of using laser and plasma firing methods, \
 	with the former firing rapid weaker shots able to pass through glass or grilles and the latter firing slower but higher damage armor penetrating shots."
@@ -30,7 +30,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_PLASMA = 6)
 	can_dual = TRUE
 	sel_mode = 1
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
 	charge_cost = 20
 	damage_multiplier = 1
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
@@ -41,7 +41,7 @@
 		list(mode_name="laser", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/Taser3.ogg', fire_delay=0.5, icon="kill", projectile_color = "#00AAFF"),
 	)
 
-/obj/item/weapon/gun/energy/plasma/auretian/update_icon()
+/obj/item/gun/energy/plasma/auretian/update_icon()
 	overlays.Cut()
 	..()
 	if(cell)

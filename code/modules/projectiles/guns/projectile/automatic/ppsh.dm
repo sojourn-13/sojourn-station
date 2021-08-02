@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/ppsh
+/obj/item/gun/projectile/automatic/ppsh
 	name = "Excelsior \"Shpagin\" assault SMG"
 	desc = "\"We are spiritual wanderers, poor in spirit. What do we live on? We live from the pure hatred we feel. We cannot love anyone. We destroy things, we shout them, we burn them..\"\
 		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 35 Auto; taking only specific drum magizines. For the union, for the future."
@@ -28,7 +28,7 @@
 		BURST_8_ROUND,
 		)
 
-/obj/item/weapon/gun/projectile/automatic/ppsh/update_icon()
+/obj/item/gun/projectile/automatic/ppsh/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"
@@ -38,7 +38,7 @@
 		set_item_state()
 	return
 
-/obj/item/weapon/gun/projectile/automatic/ppsh/ppv
+/obj/item/gun/projectile/automatic/ppsh/ppv
 	name = "\"Semyonovich\" assault SMG"
 	desc = "Some madmans bastardized yet idealized version of the past; improved yet its meaning and worth lost to time. \
 		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in .35 Auto; taking only specific drum magizines. The hammer to break the chains."

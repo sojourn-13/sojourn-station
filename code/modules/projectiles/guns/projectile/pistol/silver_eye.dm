@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/silvereye
+/obj/item/gun/projectile/silvereye
 	name = "\"Silver-Eye\" heavy pistol"
 	desc = "A silver plated Basilisk heavy pistol, customized with specialized counterweights to assist with recoil handling. Gifted to the Foreman by Over-Boss Jeremiah Hogg in exchange for their wrangling of the prospector team. Uses .50 Kurtz rounds."
 	icon = 'icons/obj/guns/projectile/silvereye.dmi'
@@ -20,7 +20,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/reload_silver.ogg'
 	fire_sound = 'sound/weapons/guns/fire/fire_silver.ogg'
 
-/obj/item/weapon/gun/projectile/silvereye/update_icon()
+/obj/item/gun/projectile/silvereye/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -33,6 +33,6 @@
 
 	icon_state = iconstring
 
-/obj/item/weapon/gun/projectile/silvereye/Initialize()
+/obj/item/gun/projectile/silvereye/Initialize()
 	. = ..()
 	update_icon()

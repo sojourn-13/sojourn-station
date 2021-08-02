@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/drozd
+/obj/item/gun/projectile/automatic/drozd
 	name = "Excelsior \"Drozd\" SMG"
 	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters and used by communists groups such as the excelsior. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/drozd.dmi'
@@ -24,7 +24,7 @@
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/automatic/drozd/update_icon()
+/obj/item/gun/projectile/automatic/drozd/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

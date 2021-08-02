@@ -7,12 +7,12 @@
 /datum/craft_recipe/storage/heavytrash
 	name = "big trash bag"
 	icon_state = "clothing"
-	result = /obj/item/weapon/storage/bag/trash/big
+	result = /obj/item/storage/bag/trash/big
 	steps = list(
-		list(/obj/item/weapon/storage/bag/trash, 1, "time" = 60),
+		list(/obj/item/storage/bag/trash, 1, "time" = 60),
 		list(QUALITY_CUTTING, 20, "time" = 60),
 		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTIC),
-		list(/obj/item/weapon/storage/bag/trash, 1, "time" = 60),
+		list(/obj/item/storage/bag/trash, 1, "time" = 60),
 		list(QUALITY_CUTTING, 20, "time" = 60)
 	)
 	related_stats = list(STAT_COG)
@@ -20,7 +20,7 @@
 /datum/craft_recipe/storage/plastic_bag
 	name = "plastic bag"
 	icon_state = "clothing"
-	result = /obj/item/weapon/storage/bag/plastic
+	result = /obj/item/storage/bag/plastic
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC)
 	)
@@ -28,7 +28,7 @@
 
 /datum/craft_recipe/storage/sheet_bag
 	name = "sheet snatcher"
-	result = /obj/item/weapon/storage/bag/sheetsnatcher
+	result = /obj/item/storage/bag/sheetsnatcher
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
@@ -39,7 +39,7 @@
 
 /datum/craft_recipe/storage/ore_bag
 	name = "ore bag"
-	result = /obj/item/weapon/storage/bag/ore
+	result = /obj/item/storage/bag/ore
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
@@ -50,7 +50,7 @@
 
 /datum/craft_recipe/storage/plant_bag
 	name = "plant bag"
-	result = /obj/item/weapon/storage/bag/produce
+	result = /obj/item/storage/bag/produce
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 60),
@@ -60,7 +60,7 @@
 
 /datum/craft_recipe/storage/chem_bag
 	name = "chemistry bag"
-	result = /obj/item/weapon/storage/bag/chemistry
+	result = /obj/item/storage/bag/chemistry
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC, "time" = 30),
@@ -71,7 +71,7 @@
 
 /datum/craft_recipe/storage/leather_backpack
 	name = "leather backpack"
-	result = /obj/item/weapon/storage/backpack/leather
+	result = /obj/item/storage/backpack/leather
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 30),
@@ -81,7 +81,7 @@
 
 /datum/craft_recipe/storage/leather_backsport
 	name = "leather sport backpack"
-	result = /obj/item/weapon/storage/backpack/leather/sport
+	result = /obj/item/storage/backpack/leather/sport
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 30),
@@ -91,7 +91,7 @@
 
 /datum/craft_recipe/storage/leather_satchel
 	name = "leather satchel"
-	result = /obj/item/weapon/storage/backpack/satchel/leather
+	result = /obj/item/storage/backpack/satchel/leather
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 30),
@@ -101,7 +101,7 @@
 
 /datum/craft_recipe/storage/leather_duffel
 	name = "leather duffel bag"
-	result = /obj/item/weapon/storage/backpack/duffelbag/leather
+	result = /obj/item/storage/backpack/duffelbag/leather
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_LEATHER, "time" = 30),
@@ -121,7 +121,7 @@
 /datum/craft_recipe/box
 	category = "Storage"
 	name = "box"
-	result = /obj/item/weapon/storage/box
+	result = /obj/item/storage/box
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
@@ -129,27 +129,27 @@
 
 /datum/craft_recipe/box/adv/syringes
 	name = "box - syringes"
-	result = /obj/item/weapon/storage/box/syringes/empty
+	result = /obj/item/storage/box/syringes/empty
 	avaliableToEveryone = TRUE
 
 /datum/craft_recipe/box/adv/bodybags
 	name = "box - bodybags"
-	result = /obj/item/weapon/storage/box/bodybags/empty
+	result = /obj/item/storage/box/bodybags/empty
 	avaliableToEveryone = TRUE
 
 /datum/craft_recipe/box/adv/condimentbottles
 	name = "box - condiment bottles"
-	result = /obj/item/weapon/storage/box/condimentbottles/empty
+	result = /obj/item/storage/box/condimentbottles/empty
 	avaliableToEveryone = TRUE
 
 /datum/craft_recipe/box/adv/mixed_lights
 	name = "box - light storage"
-	result = /obj/item/weapon/storage/box/lights/mixed/empty
+	result = /obj/item/storage/box/lights/mixed/empty
 	avaliableToEveryone = TRUE
 
 /datum/craft_recipe/box/adv/pillbottles
 	name = "box - pill bottles"
-	result = /obj/item/weapon/storage/box/pillbottles/empty
+	result = /obj/item/storage/box/pillbottles/empty
 	avaliableToEveryone = TRUE
 
 /datum/craft_recipe/storage/bookshelf
@@ -191,7 +191,7 @@
 
 /datum/craft_recipe/storage/bottle
 	name = "bottle"
-	result = /obj/item/weapon/reagent_containers/glass/bottle
+	result = /obj/item/reagent_containers/glass/bottle
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
 		list(QUALITY_WELDING, 10, 70)
@@ -199,7 +199,7 @@
 
 /datum/craft_recipe/storage/beaker
 	name = "beaker"
-	result = /obj/item/weapon/reagent_containers/glass/beaker
+	result = /obj/item/reagent_containers/glass/beaker
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS),
 		list(QUALITY_WELDING, 10, 70)
@@ -207,7 +207,7 @@
 
 /datum/craft_recipe/storage/beaker_large
 	name = "large beaker"
-	result = /obj/item/weapon/reagent_containers/glass/beaker/large
+	result = /obj/item/reagent_containers/glass/beaker/large
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS),
 		list(QUALITY_WELDING, 10, 70)

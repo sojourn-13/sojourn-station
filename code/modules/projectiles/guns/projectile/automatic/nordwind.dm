@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/nordwind
+/obj/item/gun/projectile/automatic/nordwind
 	name = "\"Nordwind\" precision rifle"
 	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.5mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/nordwind.dmi'
@@ -28,7 +28,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/nordwind/strelki
+/obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
 	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
 			Its mostly wooden design and its usage of 7.5 rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
@@ -50,9 +50,9 @@
 		SEMI_AUTO_NODELAY
 		)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/automatic/nordwind/strelki/sawn
+	sawn = /obj/item/gun/projectile/automatic/nordwind/strelki/sawn
 
-/obj/item/weapon/gun/projectile/automatic/nordwind/update_icon()
+/obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -67,11 +67,11 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/nordwind/Initialize()
+/obj/item/gun/projectile/automatic/nordwind/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/nordwind/strelki/sawn
+/obj/item/gun/projectile/automatic/nordwind/strelki/sawn
 	name = "\"Strelki\" precision rifle"
 	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
 			Someone has decided it's a good idea to take off the scope, saw off most of the wood and.. put a barrel shroud on it? Why in Gods name. ."

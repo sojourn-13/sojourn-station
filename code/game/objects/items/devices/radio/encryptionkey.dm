@@ -13,7 +13,7 @@
 	var/list/channels = list()
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 
-/obj/item/device/encryptionkey/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/encryptionkey/attackby(obj/item/W as obj, mob/user as mob)
 
 /obj/item/device/encryptionkey/syndicate
 	icon_state = "cypherkey"

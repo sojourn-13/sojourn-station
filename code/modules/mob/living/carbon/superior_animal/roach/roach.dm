@@ -13,7 +13,7 @@
 	turns_per_move = 4
 	turns_since_move = 0
 
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 2
 	leather_amount = 0
 	bones_amount = 0
@@ -52,9 +52,10 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
+	known_languages = list(LANGUAGE_CHTMANT)
+
 /mob/living/carbon/superior_animal/roach/New()
 	..()
-	add_language(LANGUAGE_CHTMANT)
 
 //When roaches die near a leader, the leader may call for reinforcements
 /mob/living/carbon/superior_animal/roach/death()
