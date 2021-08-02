@@ -516,8 +516,9 @@ I said no!
 	reagents = list("cornoil" = 3)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/bacon,
-		/obj/item/reagent_containers/food/snacks/friedegg
+		/obj/item/reagent_containers/food/snacks/friedegg,
 	)
+	result = /obj/item/reagent_containers/food/snacks/baconeggs
 
 /datum/recipe/benedict
 	reagents = list("egg" = 3, "sodiumchloride" = 1, "blackpepper" = 1)
