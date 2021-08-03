@@ -21,6 +21,7 @@
 	var/list/holdingitems = list()
 	var/list/sheet_reagents = list(
 		/obj/item/stack/material/iron = "iron",
+		/obj/item/stack/material/steel = "iron",
 		/obj/item/stack/material/uranium = "uranium",
 		/obj/item/stack/material/plasma = "plasma",
 		/obj/item/stack/material/gold = "gold",
