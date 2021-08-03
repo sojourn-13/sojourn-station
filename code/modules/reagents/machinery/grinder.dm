@@ -379,7 +379,7 @@
 	create_reagents(60)
 
 /obj/item/storage/makeshift_grinder/attack_self(mob/user)
-	var/time_to_finish = 60 - (40 * user.stats.getMult(STAT_TGH, STAT_LEVEL_ADEPT))
+	var/time_to_finish = 60 - (40 * user.stats.getMult(STAT_BIO, STAT_LEVEL_ADEPT))
 	var/datum/repeating_sound/toolsound = new/datum/repeating_sound(8,time_to_finish,0.15, src, 'sound/effects/impacts/thud2.ogg', 50, 1)
 	user.visible_message(SPAN_NOTICE("[user] grind contents of \the [src]."), SPAN_NOTICE("You starting to grind contents of \the [src]."))
 	if(do_after(user,time_to_finish))

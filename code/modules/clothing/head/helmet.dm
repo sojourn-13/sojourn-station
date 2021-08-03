@@ -241,6 +241,10 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/hunter/stalker
+	item_state = "hunter_helmet_stalker"
+	icon_state = "hunter_helmet_stalker"
+
 /obj/item/clothing/head/helmet/hunter/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"

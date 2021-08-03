@@ -520,6 +520,12 @@
 /datum/perk/job/butcher/remove()
 	holder.mind.knownCraftRecipes.Remove(known_recipes)
 
+/datum/perk/job/master_herbalist
+	name = "Naturalist"
+	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
+	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
+	or plant trays you always harvest an additional bonus!"
+
 /datum/perk/si_sci
 	name = "SI Science Trainning"
 	desc = "You know how to use RnD core consoles and Exosuit Fabs."

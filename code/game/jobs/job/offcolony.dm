@@ -79,6 +79,44 @@
 	icon_state = "player-black"
 	join_tag = /datum/job/off_colony_hunter
 
+/datum/job/off_colony_herbalist
+	title = "Lodge Herbalist"
+	total_positions = 2
+	spawn_positions = 2
+	flag = LODGEHERBALIST
+	faction = MAP_FACTION
+	department = DEPARTMENT_INDEPENDENT
+	department_flag = INDEPENDENT
+	difficulty = "Hard."
+	supervisors = "the hunt master"
+	selection_color = "#9b633e"
+	account_allowed = 0
+	create_record = 0
+	wage = WAGE_NONE
+	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
+
+	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+
+	stat_modifiers = list(
+		STAT_BIO = 40,
+		STAT_MEC = 10,
+		STAT_COG = 10
+	)
+
+	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge herbalist \
+	your primary work is both as gardener and field medic for the lodge. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good lodge members \
+	work as a team under the direction of the hunt master or if present the lodge matriarch. An expert lodge hunter reads the lodge codex for the do's and dont's. While hunters are more combat \
+	focused, your purpose as an herbalist is to attend to the medical needs of your lodge, but additional skills as "
+
+	duties = "Grow plants and harvest them for their medical reagents using your primitive chem lab.<br>\
+		Work as a medic for your lodge, keeping people alive and patching them up.<br>\
+		Build and maintain a thriving lodge in the wilderness."
+
+/obj/landmark/join/start/lodge_herbalist
+	name = "Lodge Herbalist"
+	icon_state = "player-black"
+	join_tag = /datum/job/off_colony_herbalist
+
 /datum/job/outsider
 	title = "Outsider"
 	total_positions = 3
