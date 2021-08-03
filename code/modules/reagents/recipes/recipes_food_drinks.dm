@@ -156,6 +156,39 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/sliceable/butterstick(location)
 
+/datum/chemical_reaction/vanillaicecream
+	result = null
+	required_reagents = list("cream" = 5, "milk" = 5, "sugar" = 5, "ice" = 5)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/vanillaicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/icecream(location)
+
+/datum/chemical_reaction/chocolateicecream
+	result = null
+	required_reagents = list("cream" = 5, "sugar" = 5, "ice" = 5, "coco" = 5)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/chocolateicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/chocoicecream(location)
+
+/datum/chemical_reaction/strawberryicecream
+	result = null
+	required_reagents = list("cream" = 5, "sugar" = 5, "ice" = 5, "berryjuice" = 5)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/strawberryicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/strawberryicecream(location)
+
 /* Aurora's Coffee */
 
 /datum/chemical_reaction/soy_latte

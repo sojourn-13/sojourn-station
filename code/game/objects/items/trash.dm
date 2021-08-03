@@ -57,9 +57,14 @@
 	icon_state = "syndi_cakes"
 
 /obj/item/trash/waffles
-	name = "waffles"
-	desc = "An empty tray of waffles. Trash."
+	name = "dirty tray"
+	desc = "An empty, dirty tray. Trash."
 	icon_state = "waffles"
+
+/obj/item/trash/grease
+	name = "greasy tray"
+	desc = "An empty tray, with stains of something greasy on it. Trash."
+	icon_state = "grease"
 
 /obj/item/trash/pistachios
 	name = "pistachios pack"
@@ -130,3 +135,9 @@
 	name = "peach can"
 	desc = "An empty can of peaches. Trash."
 	icon_state= "peachcan"
+
+/obj/item/trash/icecreambowl
+	name = "icecream bowl"
+	desc = "This used to hold icecream on it, it has even been licked clean!"
+	icon_state = "icecreambowl"
+	matter = list(MATERIAL_GLASS = 1) // It is, after all, made of glass
