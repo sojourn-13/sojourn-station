@@ -12,6 +12,7 @@
 	var/fuel = 0 // How much fuel does it have right now, AKA the plank currently being burned
 	var/fuel_conversion_rate = 1000 // How much fuel does a single plank give?
 	var/fuel_usage_rate = 5 // How much fuel does it use each tick.
+	var/start_fuel_use = 50 // How much fuel does it use when starting?
 
 	var/burn_damage = 4 // How much damage does it deal to the buckled mob? || APPLY TO EVERY BODYPART, MULTIPLY BY 7 TO GET THE REAL AMOUNT OF DAMAGE
 
@@ -140,7 +141,7 @@
 
 // Turn on the fire
 /obj/structure/bonfire/proc/ignite()
-	if(!burning && use_fuel(50)) // Make sure we aren't already on and that we have enough fuel
+	if(!burning && use_fuel(start_fuel_use)) // Make sure we aren't already on and that we have enough fuel
 		burning = TRUE // We're burning now.
 		update_icon()
 		visible_message("<span class='warning'>\The [src] starts burning!</span>")
@@ -177,4 +178,14 @@
 		M.pixel_y += 13
 	else // Just unbuckled someone
 		M.pixel_y -= 13
+	update_icon()
+
+/obj/structure/bonfire/permanent // For bonfires that never stop
+	fuel_usage_rate = 0
+	start_fuel_use = 0
+	burning = TRUE
+
+/obj/structure/bonfire/permanent/New()
+	..()
+	fuel = fuel_conversion_rate
 	update_icon()
