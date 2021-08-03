@@ -19,6 +19,7 @@
 	can_burrow = FALSE
 	randpixel = 0
 	deathmessage = "slumps down and seems to no longer move!"
+	attack_sound = 'sound/weapons/slash.ogg'
 
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)

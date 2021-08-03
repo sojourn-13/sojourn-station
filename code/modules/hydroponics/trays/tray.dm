@@ -253,7 +253,10 @@
 		if(user) to_chat(user, "You can't harvest from the plant while the lid is shut.")
 		return
 
-	if(user)
+	if(user.stats.getPerk(PERK_MASTER_HERBALIST))
+		yield_mod += 2
+		seed.harvest(user,yield_mod)
+	else if(user)
 		seed.harvest(user,yield_mod)
 	else
 		seed.harvest(get_turf(src),yield_mod)

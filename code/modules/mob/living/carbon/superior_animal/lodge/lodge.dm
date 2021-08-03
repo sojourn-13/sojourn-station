@@ -13,3 +13,4 @@
 	obey_friends = FALSE
 	follow_distance = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	attack_sound = 'sound/xenomorph/alien_bite1.ogg'

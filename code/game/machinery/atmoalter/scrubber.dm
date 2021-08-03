@@ -250,6 +250,8 @@
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree"
 	anchored = 1
+	pixel_x = -48
+	pixel_y = -16
 
 	use_power = NO_POWER_USE
 	idle_power_usage = 0

@@ -6,6 +6,7 @@
 #define CAL_RIFLE "7.5mm rifle"
 #define CAL_HRIFLE ".408 heavy rifle"
 #define CAL_ANTIM ".60-06 Anti Material"
+#define CAL_BALL "40mm rolled shot"
 #define CAL_SHOTGUN "Shotgun Shell"
 #define CAL_50	".50 kurtz"
 #define CAL_70 ".70"

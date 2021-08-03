@@ -65,6 +65,7 @@
 #define PERK_BOLT_REFLECT /datum/perk/job/bolt_reflect
 #define PERK_JINGLE_JANGLE /datum/perk/job/jingle_jangle
 #define PERK_BUTCHER /datum/perk/job/butcher
+#define PERK_MASTER_HERBALIST /datum/perk/job/master_herbalist
 #define PERK_PERFECT_SHOT /datum/perk/exceptional_aim
 #define PERK_STAY_HYDRATED /datum/perk/stay_hydrated
 #define PERK_SECOND_SKIN /datum/perk/second_skin

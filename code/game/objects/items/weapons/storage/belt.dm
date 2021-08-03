@@ -70,6 +70,41 @@
 	new /obj/item/tool/wirecutters(src)
 	new /obj/item/stack/cable_coil/random(src)
 
+/obj/item/storage/belt/hunter
+	name = "hunting belt"
+	desc = "Can hold various tools fit for a lodge hunter."
+	icon_state = "hunting"
+	item_state = "hunting"
+	can_hold = list(
+		/obj/item/tool,
+		/obj/item/tool_upgrade,
+		/obj/item/device/radio,
+		/obj/item/stack/cable_coil,
+		/obj/item/tool/minihoe,
+		/obj/item/tool/hatchet,
+		/obj/item/device/scanner/plant,
+		/obj/item/extinguisher/mini,
+		/obj/item/hand_labeler,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+		/obj/item/flame/lighter,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine,
+		/obj/item/melee,
+		/obj/item/reagent_containers/food/snacks,
+		/obj/item/reagent_containers/food/drinks,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/stack/medical,
+		/obj/item/device/scanner/health,
+		/obj/item/soap,
+		/obj/item/oddity/chimeric_fang_trophy
+	)
+
 /obj/item/storage/belt/utility/neotheology
 	name = "Absolutism utility belt"
 	desc = "Waist-held holy items."
@@ -195,7 +230,6 @@
 		/obj/item/clothing/glasses,
 		/obj/item/reagent_containers/blood,
 		/obj/item/taperoll/medical,
-		/obj/item/tool/crowbar,
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses
 	)
