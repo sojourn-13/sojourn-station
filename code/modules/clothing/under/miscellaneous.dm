@@ -459,3 +459,39 @@
 		bio = 0,
 		rad = 0
 	)
+/obj/item/clothing/under/tribalhide
+	name = "Tribal Hides"
+	desc = "Leather and fur stitched together, for your inner unga.You feel like thumping your chest."
+	icon_state = "tribalhide"
+	item_state = "tribalm"
+	price_tag = 50
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+/obj/item/clothing/under/tribalhide/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Exposed Chest"] = "tribalm"
+	options["Covered Chest"] = "tribalf"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your hides into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

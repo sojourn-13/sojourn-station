@@ -431,4 +431,11 @@
 		list(/obj/item/clothing/suit/storage/raggedcape, 1, "time" = 30),
 		list(QUALITY_CUTTING, 15, 30)
 	)
+/datum/craft_recipe/clothing/tribalhide
+	name = "Tribal Hides"
+	result =  /obj/item/clothing/under/tribalhide
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_CUTTING, 15, 30),
+	)
 
