@@ -13,7 +13,7 @@
 	var/fuel_conversion_rate = 1000 // How much fuel does a single plank give?
 	var/fuel_usage_rate = 5 // How much fuel does it use each tick.
 
-	var/burn_damage = 20 // How much damage does it deal to the buckled mob? || APPLY TO EVERY BODYPART, MULTIPLY BY 7 TO GET THE REAL AMOUNT OF DAMAGE
+	var/burn_damage = 4 // How much damage does it deal to the buckled mob? || APPLY TO EVERY BODYPART, MULTIPLY BY 7 TO GET THE REAL AMOUNT OF DAMAGE
 
 	var/obj/item/reagent_containers/food/snacks/meat/current_steak = null // The steak it is currently cooking
 	var/cooking_time = 10 // The number of tick it take to cook the steak
