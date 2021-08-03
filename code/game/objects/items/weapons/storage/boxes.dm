@@ -310,7 +310,7 @@
 
 /obj/item/storage/box/trackimp
 	name = "boxed tracking implant kit"
-	desc = "Box full of scum-bag tracking utensils."
+	desc = "Box full of tracking utensils."
 	illustration = "implant"
 
 /obj/item/storage/box/trackimp/populate_contents()

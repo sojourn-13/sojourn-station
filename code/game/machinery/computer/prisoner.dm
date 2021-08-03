@@ -1,12 +1,12 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 
 /obj/machinery/computer/prisoner
-	name = "prisoner management console"
+	name = "tracker implant management console"
 	icon = 'icons/obj/computer.dmi'
 	icon_keyboard = "security_key"
 	icon_screen = "explosive"
 	light_color = COLOR_LIGHTING_SCI_BRIGHT
-	req_access = list(access_armory)
+	req_access = list(access_security)
 	circuit = /obj/item/circuitboard/prisoner
 	var/id = 0.0
 	var/temp = null

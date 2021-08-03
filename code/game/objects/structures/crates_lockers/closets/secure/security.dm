@@ -82,6 +82,7 @@
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/clothing/suit/greatcoat/ihc(src)
 	new /obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak(src)
+	new /obj/item/storage/box/trackimp(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "supply specialist's locker"
@@ -125,6 +126,7 @@
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/clothing/suit/armor/commander/marshal_coat_ss(src)
+	new /obj/item/storage/box/trackimp(src)
 	if(prob(50))
 		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
 	else
@@ -236,6 +238,7 @@
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
+	new /obj/item/implantpad(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"
