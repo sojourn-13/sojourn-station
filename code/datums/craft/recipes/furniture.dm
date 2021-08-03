@@ -11,6 +11,13 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
+/datum/craft_recipe/furniture/bonfire
+	name = "bonfire"
+	result = /obj/structure/bonfire
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
+	)
+
 //Custom chairs
 /datum/craft_recipe/furniture/bar_chair
 	name = "chair, bar"
