@@ -484,6 +484,7 @@
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
 	var/known_recipes = list(
+			/datum/craft_recipe/lodge/baroqe,
 			/datum/craft_recipe/lodge/hunter_crossbow,
 			/datum/craft_recipe/lodge/hunting_halberd,
 			/datum/craft_recipe/lodge/render_gauntlet,
@@ -511,6 +512,7 @@
 			/datum/craft_recipe/lodge/hunter_boots,
 			/datum/craft_recipe/lodge/hunter_gloves,
 			/datum/craft_recipe/lodge/sheath,
+			/datum/craft_recipe/lodge/hunting_belt
 			)
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)

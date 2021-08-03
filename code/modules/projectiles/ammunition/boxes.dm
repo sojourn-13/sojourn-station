@@ -334,6 +334,18 @@
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5
 
+//// 40mm rolled shot ////
+
+/obj/item/ammo_magazine/ammobox/ball
+	name = "ammunition box (40mm rolled shot)"
+	icon_state = "antim"
+	desc = "A box of 40mm rolled shot."
+	matter = list(MATERIAL_STEEL = 30)
+	w_class = ITEM_SIZE_BULKY
+	caliber = CAL_BALL
+	ammo_type = /obj/item/ammo_casing/ball
+	max_ammo = 30
+
 //// .408 Omni ////
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small

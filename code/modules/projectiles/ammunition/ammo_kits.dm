@@ -30,6 +30,7 @@
 	options["Shotgun Beanbag"] = "bean"
 	options["Shotgun Slug"] = "slug"
 	options[".60 Anti-Material"] = "antim"
+	options["40mm rolled shot"] = "ball"
 
 	var/choice = input(user,"What ammo do you want to make?") as null|anything in options
 
@@ -56,6 +57,8 @@
 			spawn_shotgun(dice_roll,user,2)
 		if("slug")
 			spawn_shotgun(dice_roll,user,3)
+		if("ball")
+			spawn_ball(dice_roll, user)
 
 	if(choice)
 		user.visible_message("[user] makes some [choice] rounds out of [src], using up all the materials in it.")
@@ -204,6 +207,34 @@
 	if(boxxes)
 		for(var/j = 1 to boxxes)
 			new /obj/item/ammo_magazine/ammobox/antim/scrap(user.loc)
+//////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/ammo_kit/proc/spawn_ball(dice = 0, mob/user)	//Shazbot- I know there is probably a better way to do this, but this is easier to code
+
+	var/boxxes = 0
+	var/piles = 0
+
+	switch(dice)
+		if(-99 to 10)	//if someone gets less than -99, they deserve the ammo
+			piles = 1
+		if(10 to 20)
+			piles = 2
+		if(20 to 30)
+			piles = 3
+		if(30 to 40)
+			piles = 4
+		if(40 to 50)
+			piles = 5
+		else
+			boxxes = 1
+			piles = round(dice/10-6,1)
+
+	if(piles)
+		for(var/j = 1 to piles)
+			new /obj/item/ammo_casing/ball/prespawned(user.loc)
+	if(boxxes)
+		for(var/j = 1 to boxxes)
+			new /obj/item/ammo_magazine/ammobox/ball(user.loc)
 
 //////////////////////////////////////////////////////////////////////////////////////
 
