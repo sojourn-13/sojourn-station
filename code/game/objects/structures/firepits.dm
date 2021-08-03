@@ -53,7 +53,7 @@
 	else if(istype(W, MATERIAL_WOOD)) // If it's wood, use it as fuel
 		add_fuel(W, user)
 
-	else if(QUALITY_CAUTERIZING in W.tool_qualities)
+	else if(isflamesource(W))
 		ignite() // Start the fire
 
 	else
