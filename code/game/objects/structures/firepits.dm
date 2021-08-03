@@ -23,6 +23,10 @@
 	fuel = fuel_conversion_rate * 5 // Start with fuel when fabricated
 	return
 
+/obj/structure/bonfire/New()
+	START_PROCESSING(SSobj, src)
+	..()
+
 // Attack stuff
 /obj/structure/bonfire/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill) // Make either a stake or a grill with the rods, not both.
@@ -159,7 +163,7 @@
 			I.layer = MOB_LAYER + 0.1
 			I.appearance_flags = RESET_COLOR
 			overlays += I
-		var/light_strength = max(fuel / 10, 2)
+		var/light_strength = max(clamp(fuel/10, 1, 7), 2)
 		set_light(light_strength, light_strength, "#FF9933")
 	else
 		set_light(0)
