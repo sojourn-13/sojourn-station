@@ -2704,11 +2704,11 @@
 
 /obj/item/reagent_containers/food/snacks/honeypudding
 	name = "honey pudding"
-	desc = "A tasty dessert that is made with honey and coca powerder for a delightful pudding."
+	desc = "A tasty dessert that is made with honey and cocoa powerder for a delightful pudding." // IT'S CHOCOLATE NOT COCAINE! - Seb
 	icon_state = "pudding"
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)
-	nutriment_desc = list("coca" = 1, "honey" = 2)
+	nutriment_desc = list("bitter cocoa powder" = 1, "sweet gooey honey" = 2)
 	nutriment_amt = 8
 	bitesize = 3
 	preloaded_reagents = list("honey" = 5)
@@ -2993,7 +2993,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/carrotcake
 	name = "carrot cake"
-	desc = "A favorite desert of a certain wascally wabbit. Not a lie."
+	desc = "A favorite dessert of a certain wascally wabbit. Not a lie."
 	icon_state = "carrotcake"
 	slice_path = /obj/item/reagent_containers/food/snacks/carrotcakeslice
 	slices_num = 5
@@ -3199,6 +3199,7 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/brownieslice
 	slices_num = 5
 	nutriment_amt = 20
+	nutriment_desc = list("buttery goodness" = 10, "sweetness" = 10, "chocolate" = 15)
 	matter = list(MATERIAL_BIOMATTER = 30)
 
 /obj/item/reagent_containers/food/snacks/brownieslice
@@ -3208,17 +3209,19 @@
 	filling_color = "#362008"
 	trash = /obj/item/trash/plate
 	bitesize = 2
-	preloaded_reagents = list("nutriment" = 4)
+	nutriment_amt = 4
+	nutriment_desc = list("buttery goodness" = 5, "sweetness" = 5, "chocolate" = 10)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/reagent_containers/food/snacks/icecream
 	name = "icecream"
-	desc = "A luxurious yet simple iced cream, the most refreshing desert after a trip through the humid Amethian jungle."
+	desc = "A luxurious yet simple iced cream, the most refreshing dessert after a trip through the humid Amethian jungle."
 	icon_state = "vanillaicecream"
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
-	preloaded_reagents = list("nutriment" = 6)
+	nutriment_amt = 6
+	nutriment_desc = list("vanilla" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/reagent_containers/food/snacks/chocoicecream
@@ -3227,7 +3230,8 @@
 	icon_state = "chocolateicecream"
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
-	preloaded_reagents = list("nutriment" = 6)
+	nutriment_amt = 6
+	nutriment_desc = list("velvety chocolate" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/reagent_containers/food/snacks/strawberryicecream
@@ -3236,7 +3240,8 @@
 	icon_state = "strawberryicecream"
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
-	preloaded_reagents = list("nutriment" = 6)
+	nutriment_amt = 6
+	nutriment_desc = list("strawberry" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/reagent_containers/food/snacks/icecream/attackby(obj/item/W as obj, mob/user as mob) // No way we're microwaving two cookies to make an ICECREAM sandwich. - Seb
@@ -3248,19 +3253,20 @@
 
 /obj/item/reagent_containers/food/snacks/icecreamsandwich
 	name = "icecream sandwich"
-	desc = "A classic icecream sandwiched between two chocolate cookies, an essential desert to have by the dozen."
+	desc = "A classic icecream sandwiched between two chocolate cookies, an essential dessert to have by the dozen."
 	icon_state = "icecreamsandwich"
 	bitesize = 4
-	preloaded_reagents = list("nutriment" = 8)
+	nutriment_amt = 8
+	nutriment_desc = list("icecream" = 10, "cookies" = 5, "perfection" = 15)
 	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/reagent_containers/food/snacks/chocolatepiece
 	name = "chocolate piece"
-	desc = "A luscious milk chocolate piece filled with gooey caramel."
+	desc = "A luscious milk chocolate piece filled with gooey dulce de leche."
 	icon_state =  "chocolatepiece"
 	filling_color = "#7D5F46"
 	nutriment_amt = 1
-	nutriment_desc = list("chocolate" = 3, "caramel" = 2, "lusciousness" = 1)
+	nutriment_desc = list("chocolate" = 3, "dulce de leche" = 2, "lusciousness" = 1)
 	bitesize = 2
 	matter = list(MATERIAL_BIOMATTER = 5)
 
@@ -3281,7 +3287,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel
 	name = "cheese wheel"
-	desc = "A big wheel of delcious Cheddar."
+	desc = "A big wheel of delicious cheese."
 	icon_state = "cheesewheel"
 	slice_path = /obj/item/reagent_containers/food/snacks/cheesewedge
 	slices_num = 5
@@ -3295,7 +3301,7 @@
 
 /obj/item/reagent_containers/food/snacks/cheesewedge
 	name = "cheese wedge"
-	desc = "A wedge of delicious Cheddar. The cheese wheel it was cut from can't have gone far."
+	desc = "A wedge of delicious cheese. The cheese wheel it was cut from can't have gone far."
 	icon_state = "cheesewedge"
 	filling_color = "#FFF700"
 	bitesize = 2
@@ -3304,7 +3310,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/birthdaycake
 	name = "birthday cake"
-	desc = "Happy Birthday..."
+	desc = "Happy Birthday to you..."
 	icon_state = "birthdaycake"
 	slice_path = /obj/item/reagent_containers/food/snacks/birthdaycakeslice
 	slices_num = 5
@@ -3495,7 +3501,7 @@
 
 /obj/item/reagent_containers/food/snacks/margheritaslice
 	name = "margherita slice"
-	desc = "A slice of the classic pizza."
+	desc = "A slice of classic margherita pizza."
 	icon_state = "pizzamargheritaslice"
 	filling_color = "#BAA14C"
 	bitesize = 2
@@ -3506,7 +3512,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizza/meatpizza
 	name = "meat pizza"
-	desc = "A pizza with meat topping."
+	desc = "A pizza with meat toppings."
 	icon_state = "meatpizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/meatpizzaslice
 	slices_num = 6
@@ -3518,7 +3524,7 @@
 
 /obj/item/reagent_containers/food/snacks/meatpizzaslice
 	name = "meat pizza slice"
-	desc = "A slice of a meaty pizza."
+	desc = "A slice of meaty pizza."
 	icon_state = "meatpizzaslice"
 	filling_color = "#BAA14C"
 	bitesize = 2
@@ -3529,7 +3535,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizza/mushroompizza
 	name = "mushroom pizza"
-	desc = "Very special pizza."
+	desc = "Pizza with a hefty topping of mushrooms."
 	icon_state = "mushroompizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/mushroompizzaslice
 	slices_num = 6
@@ -3541,7 +3547,7 @@
 
 /obj/item/reagent_containers/food/snacks/mushroompizzaslice
 	name = "mushroom pizza slice"
-	desc = "Maybe it is the last slice of pizza in your life."
+	desc = "A slice of mushroom topped pizza."
 	icon_state = "mushroompizzaslice"
 	filling_color = "#BAA14C"
 	bitesize = 2
@@ -3552,7 +3558,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza
 	name = "vegetable pizza"
-	desc = "No one of Tomato Sapiens were harmed during making this pizza."
+	desc = "No Tomato Sapiens were harmed during the baking of this pizza."
 	icon_state = "vegetablepizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/vegetablepizzaslice
 	slices_num = 6
@@ -3575,7 +3581,7 @@
 
 /obj/item/reagent_containers/food/snacks/sliceable/pizza/hawaiianpizza
 	name = "hawaiian pizza pizza"
-	desc = "A pizza with added cooked pineapple slices, some sware by it others hate it."
+	desc = "A pizza with added cooked pineapple slices, some swear by it, others hate it."
 	icon_state = "hawaiianpizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/hawaiianpizzaslice
 	slices_num = 6
@@ -3587,7 +3593,7 @@
 
 /obj/item/reagent_containers/food/snacks/hawaiianpizzaslice
 	name = "hawaiian pizza slice"
-	desc = "A slice of hawaiian pizza with bits of pineapple cooked atop it."
+	desc = "A slice of hawaiian pizza with bits of cooked pineapple atop it."
 	icon_state = "hawaiianpizzaslice"
 	filling_color = "#BAA14C"
 	bitesize = 2

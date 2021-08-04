@@ -64,9 +64,16 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
 
+/datum/chemical_reaction/icecreambase
+	/datum/chemical_reaction/icedcream
+	required_reagents = list("sugar" = 1, "ice" = 1, "cream" = 1)
+	result = "icecreambase"
+	result_amount = 3
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
 /datum/chemical_reaction/honey_icecream
 	result = null
-	required_reagents = list("sugar" = 5, "ice" = 15, "cream" = 10, "honey" = 5)
+	required_reagents = list("icecreambase" = 10, "honey" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
@@ -158,7 +165,7 @@
 
 /datum/chemical_reaction/vanillaicecream
 	result = null
-	required_reagents = list("cream" = 5, "milk" = 5, "sugar" = 5, "ice" = 5)
+	required_reagents = list("icecreambase" = 10, "ice" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
@@ -169,7 +176,7 @@
 
 /datum/chemical_reaction/chocolateicecream
 	result = null
-	required_reagents = list("cream" = 5, "sugar" = 5, "ice" = 5, "coco" = 5)
+	required_reagents = list("icecreambase" = 10, "coco" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
@@ -180,7 +187,7 @@
 
 /datum/chemical_reaction/strawberryicecream
 	result = null
-	required_reagents = list("cream" = 5, "sugar" = 5, "ice" = 5, "berryjuice" = 5)
+	required_reagents = list("icecreambase" = 10, "berryjuice" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
@@ -662,8 +669,8 @@
 
 /datum/chemical_reaction/milkshake
 	result = "milkshake"
-	required_reagents = list("cream" = 1, "ice" = 2, "milk" = 2)
-	result_amount = 5
+	required_reagents = list("icecreambase" = 1, "milk" = 1)
+	result_amount = 2
 
 /datum/chemical_reaction/rewriter
 	result = "rewriter"
