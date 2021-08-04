@@ -295,10 +295,14 @@
 
 /obj/item/robot_parts/robot_component/armour/mkii
 	name = "robot Mark II armour plating"
+	icon_state = "armormk2"
+	icon_state_broken = "armormk2_broken"
 	matter = list(MATERIAL_STEEL = 25)
 
 /obj/item/robot_parts/robot_component/armour/mkv
 	name = "robot Mark V armour plating"
+	icon_state = "armormk5"
+	icon_state_broken = "armormk5_broken"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
 
 /obj/item/robot_parts/robot_component/camera
