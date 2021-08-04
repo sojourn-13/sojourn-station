@@ -15,7 +15,7 @@
 		var/mob/living/M = target
 		if(M.stat > 1)
 			return
-		if(chassis.occupant.a_intent == I_HURT)
+		if(chassis.occupant.a_intent != I_HELP) // So that the help intent act as a kind of safety
 			M.take_overall_damage(dam_force)
 			M.adjustOxyLoss(round(dam_force/2))
 			M.updatehealth()
