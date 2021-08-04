@@ -98,6 +98,7 @@
 	var/step_sound = 'sound/mecha/Mech_Step.ogg'
 	var/step_turn_sound = 'sound/mecha/Mech_Rotation.ogg'
 
+	var/list/obj/item/mech_ammo_box/ammo[3] // List to hold the mech's internal ammo.
 
 
 /obj/mecha/can_prevent_fall()
@@ -207,7 +208,26 @@
 		icon_state += "-open"
 
 
-
+/obj/mecha/proc/reload_gun()
+	var/obj/item/mech_ammo_box/MAB
+	if(!istype(selected, /obj/item/mecha_parts/mecha_equipment/weapon/ballistic)) // Does it use bullets?
+		return FALSE
+	var/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/gun = selected
+	for(var/obj/item/mech_ammo_box/M in ammo) // Run through the boxes
+		if(M.ammo_type == gun.ammo_type) // Is it the right ammo?
+			MAB = M
+	if(MAB) // Only proceed if MAB isn't null, AKA we got a valid box to draw from
+		while(gun.max_ammo > gun.projectiles) // Keep loading until we're full or the box's empty
+			if(MAB.ammo_amount_left < MAB.amount_per_click) // Check if there's enough ammo left
+				MAB.forceMove(src.loc) // Drop the empty ammo box
+				for(var/i = ammo.len to 1 step -1) // Check each spot in the ammobox list
+					if(ammo[i] == MAB) // Is it the same box?
+						ammo[i] = null // It is no longer there
+						MAB = null
+				return FALSE
+			MAB.ammo_amount_left -= MAB.amount_per_click // Remove the ammo from the box
+			gun.projectiles += MAB.amount_per_click // Put the ammo in the box
+		return TRUE
 
 ////////////////////////
 ////// Helpers /////////
@@ -1067,6 +1087,14 @@ assassination method if you time it right*/
 		user.visible_message("[user] attaches [I] to [src].", "You attach [I] to [src]")
 		return
 
+	else if(istype(I, /obj/item/mech_ammo_box))
+		for(var/i = ammo.len to 1 step -1) // Check each spot in the ammobox list
+			if(ammo[i] == null) // No box in the way.
+				insert_item(I, user)
+				ammo[i] = I
+				user.visible_message("[user] attaches [I] to [src].", "You attach [I] to [src]")
+				src.log_message("Ammobox [I] inserted by [user]")
+
 	else
 		src.log_message("Attacked by [I]. Attacker - [user]")
 
@@ -1336,6 +1364,15 @@ assassination method if you time it right*/
 	//pr_update_stats.start()
 	src.occupant << browse(src.get_stats_html(), "window=exosuit")
 	return
+
+/obj/mecha/verb/reload()
+	set name = "Reload Gun"
+	set category = "Exosuit Interface"
+	set popup_menu = 0
+	set src = usr.loc
+	if(usr!=src.occupant)
+		return
+	reload_gun() // Reload the mech's active gun
 
 /*
 /obj/mecha/verb/force_eject()

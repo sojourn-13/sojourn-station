@@ -16,7 +16,7 @@
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "boxhrifle-hv"
 	w_class = ITEM_SIZE_BULKY
-	var/ammo_amout_left = 0 //How many shells this box has left
+	var/ammo_amount_left = 0 //How many shells this box has left
 	var/ammo_max_amout = 0 //How many shells can this big box hold?
 	var/amount_per_click = 1 //how many we load per click. Used to
 	var/ammo_type = "mew" //What kinda ammo do we load?
@@ -24,7 +24,7 @@
 
 /obj/item/mech_ammo_box/examine(mob/user)
 	..()
-	to_chat(user, "<span class='info'>Ammo left: [ammo_amout_left]</span>")
+	to_chat(user, "<span class='info'>Ammo left: [ammo_amount_left]</span>")
 	to_chat(user, "<span class='info'>Ammo type: [ammo_type]</span>")
 
 /obj/item/mech_ammo_box/attackby(obj/item/I, mob/user as mob)
@@ -34,14 +34,14 @@
 			if(ammo_type != src.ammo_type)
 				to_chat(user, SPAN_WARNING("Wrong ammo types!"))
 				return 0
-			if(ammo_amout_left <= 0)
+			if(ammo_amount_left <= 0)
 				to_chat(user, SPAN_WARNING("The box is out of ammo."))
 				return 0
-			if(src.ammo_max_amout <= src.ammo_amout_left)
+			if(src.ammo_max_amout <= src.ammo_amount_left)
 				to_chat(user, SPAN_WARNING("The box is full."))
 				return 0
-			ammo_amout_left -= amount_per_click
-			src.ammo_amout_left += amount_per_click
+			ammo_amount_left -= amount_per_click
+			src.ammo_amount_left += amount_per_click
 			return 1
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic
@@ -68,13 +68,13 @@
 			if(ammo_type != src.ammo_type)
 				to_chat(user, SPAN_WARNING("Wrong ammo types!"))
 				return 0
-			if(FMJ.ammo_amout_left <= 0)
+			if(FMJ.ammo_amount_left <= 0)
 				to_chat(user, SPAN_WARNING("The box is out of ammo."))
 				return 0
 			if(src.max_ammo <= src.projectiles)
 				to_chat(user, SPAN_WARNING("The [src] is full."))
 				return 0
-			FMJ.ammo_amout_left -= FMJ.amount_per_click
+			FMJ.ammo_amount_left -= FMJ.amount_per_click
 			src.projectiles += FMJ.amount_per_click
 			return 1
 
@@ -96,7 +96,7 @@
 	desc = "A box of ammo meant for loading into a LBX AC 10."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "boxhrifle-hv"
-	ammo_amout_left = 40
+	ammo_amount_left = 40
 	ammo_max_amout = 40
 	ammo_type = "12g"
 
@@ -138,7 +138,7 @@
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "boxhrifle-practice"
-	ammo_amout_left = 300
+	ammo_amount_left = 300
 	ammo_max_amout = 300
 	amount_per_click = 3 //Hack to make them impossable to go into negitives
 	ammo_type = "5.56"
