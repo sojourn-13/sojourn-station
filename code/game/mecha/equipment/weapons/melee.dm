@@ -17,7 +17,6 @@
 			return
 		if(chassis.occupant.a_intent != I_HELP) // So that the help intent act as a kind of safety
 			M.take_overall_damage(dam_force)
-			M.adjustOxyLoss(round(dam_force/2))
 			M.updatehealth()
 			occupant_message(SPAN_WARNING("You attack [target] with [src.name]. Something cracks."))
 			chassis.visible_message(SPAN_WARNING("[chassis] attacked [target]."))
