@@ -1094,6 +1094,7 @@ assassination method if you time it right*/
 				ammo[i] = I
 				user.visible_message("[user] attaches [I] to [src].", "You attach [I] to [src]")
 				src.log_message("Ammobox [I] inserted by [user]")
+				return
 
 	else
 		src.log_message("Attacked by [I]. Attacker - [user]")
