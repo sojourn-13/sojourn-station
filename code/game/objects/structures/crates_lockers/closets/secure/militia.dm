@@ -141,6 +141,7 @@
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/gun/projectile/colt/ten/dark(src)
 	new /obj/item/ammo_magazine/magnum_40(src)
 	new /obj/item/ammo_magazine/magnum_40(src)
