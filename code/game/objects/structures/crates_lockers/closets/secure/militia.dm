@@ -37,6 +37,8 @@
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/commanderuniform(src)
+if(prob(10))
+		new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/structure/closet/secure_closet/armorer
 	name = "sergeant's locker"
@@ -119,6 +121,8 @@ if(prob(10))
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/trooperuniform(src)
+if(prob(10))
+		new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
@@ -162,6 +166,8 @@ if(prob(10))
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/trooperuniform(src)
+if(prob(10))
+		new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"
