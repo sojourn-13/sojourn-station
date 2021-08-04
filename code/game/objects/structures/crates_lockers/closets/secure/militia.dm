@@ -172,7 +172,7 @@ if(prob(10))
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/trooperuniform(src)
-if(prob(10))
+	if(prob(10))
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/structure/closet/secure_closet/militia/armor
