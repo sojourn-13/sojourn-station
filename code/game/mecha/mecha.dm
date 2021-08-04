@@ -210,9 +210,9 @@
 
 /obj/mecha/proc/reload_gun()
 	var/obj/item/mech_ammo_box/MAB
-	if(!istype(selected, /obj/item/mecha_parts/mecha_equipment/weapon/ballistic)) // Does it use bullets?
+	if(!istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic)) // Does it use bullets?
 		return FALSE
-	var/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/gun = selected
+	var/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/gun = selected
 	for(var/obj/item/mech_ammo_box/M in ammo) // Run through the boxes
 		if(M.ammo_type == gun.ammo_type) // Is it the right ammo?
 			MAB = M
