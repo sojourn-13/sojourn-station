@@ -313,6 +313,21 @@
 	icon_state = "cutlass"
 	item_state = "cutlass"
 
+/obj/item/tool/sword/saber/militiacommander
+	name = "Officer's Saber"
+	desc = "A masterfully forged Saber to be carried by the Blackshield Commander, Despite it fact for Ceremonial use. It can also be used in combat, if they're crazy enough."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "saber"
+	item_state = "saber"
+	armor_penetration = ARMOR_PEN_SHALLOW
+
+/obj/item/tool/sword/saber/militiasergeant
+	name = "Sergeant's Saber"
+	desc = "An Saber made for the Senior Enlisted of Blackshield, Usually used for Ceremonial usage but can also be used in combat, Preferably used by a maniac who likes to charge into battle without helmet or armour."
+	icon_state = "cutlass"
+	item_state = "cutlass"
+	armor_penetration = ARMOR_PEN_SHALLOW
+
 /obj/item/tool/sword/machete
 	name = "machete"
 	desc = "An explorer's best friend and trust back up plan. Or primary plan for those who like to get in there personally."
