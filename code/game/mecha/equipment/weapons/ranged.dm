@@ -1,8 +1,8 @@
 /*
- * Contains mech weapon subtypes
+ * Contains ranged mech weapon subtypes
  */
 
-/obj/item/mecha_parts/mecha_equipment/weapon
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon
 	name = "mecha weapon"
 	range = MECHA_RANGED
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 3)
@@ -17,12 +17,12 @@
 	var/auto_rearm = 0 //Does the weapon reload itself after each shot?
 	required_type = list(/obj/mecha/combat, /obj/mecha/working/hoverpod/combatpod)
 
-/obj/item/mecha_parts/mecha_equipment/weapon/action_checks(atom/target)
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/action_checks(atom/target)
 	if(projectiles <= 0)
 		return 0
 	return ..()
 
-/obj/item/mecha_parts/mecha_equipment/weapon/action(atom/target)
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/action(atom/target)
 	if(!action_checks(target))
 		return
 	var/turf/curloc = chassis.loc
@@ -51,7 +51,7 @@
 	do_after_cooldown()
 	return
 
-/obj/item/mecha_parts/mecha_equipment/weapon/proc/Fire(atom/A, atom/target)
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/proc/Fire(atom/A, atom/target)
 	var/obj/item/projectile/P = A
 	var/def_zone
 	if(chassis && ishuman(chassis.occupant))

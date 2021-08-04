@@ -22,9 +22,9 @@
 
 /obj/mecha/combat/durand/New()
 	..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/loaded(src)
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded(src)
 	ME.attach(src)
 	return
 
@@ -53,11 +53,11 @@
 		for(ME in equipment)
 			ME.detach(src)
 			qdel(ME)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	ME.attach(src)
 	return
 

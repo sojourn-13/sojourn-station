@@ -196,13 +196,13 @@
 
 /datum/craft_recipe/gun/multi_laser
 	name = "Multi-Laser Cannon"
-	result = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
+	result = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
 	steps = list(
-		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
-		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60),
-		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60),
-		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy, 1, "time" = 60),
+		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60)
 	)
