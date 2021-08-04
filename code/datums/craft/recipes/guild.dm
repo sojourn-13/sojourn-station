@@ -194,7 +194,7 @@
 	result = /obj/item/gun/energy/laser/heavypulserifle
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse, 1, "time" = 30),
+		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse, 1, "time" = 30),
 		list(QUALITY_SAWING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40),
 		list(/obj/item/stack/cable_coil, 30, "time" = 30),
