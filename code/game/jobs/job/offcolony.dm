@@ -106,7 +106,7 @@
 	description = "You are not apart of the colony, at least currently, having decided to take a shift with the local lodge hunters either temporarily or permanently. As a lodge herbalist \
 	your primary work is both as gardener and field medic for the lodge. Expeditions should be prepared for using whatever you can craft and make with your fellow hunters. Good lodge members \
 	work as a team under the direction of the hunt master or if present the lodge matriarch. An expert lodge hunter reads the lodge codex for the do's and dont's. While hunters are more combat \
-	focused, your purpose as an herbalist is to attend to the medical needs of your lodge, but additional skills as "
+	focused, your purpose as an herbalist is to attend to the medical needs of your lodge, but additional skills as a crafter, gardener, and chemist are quite handy!"
 
 	duties = "Grow plants and harvest them for their medical reagents using your primitive chem lab.<br>\
 		Work as a medic for your lodge, keeping people alive and patching them up.<br>\
