@@ -70,6 +70,8 @@
 	projectile_type = /obj/item/projectile/hydrogen/pistol/welder
 	twohanded = FALSE
 	init_firemodes = list()
+	safety = FALSE // It's a welder turned into a gun, it doesn't have any nifty safeties, and even if it did, the player had to deactivate them to turn the welder into a gun in the first place.
+	restrict_safety = TRUE // Can't change the safety on something that doesn't have any. Look here ^ - R4d6
 	var/obj/item/tool/plasma_torch/welder = null // Hold the welder the gun turns into.
 
 // This is where the gun turn into a welder
