@@ -19,7 +19,7 @@
 	var/use_plasma_cost = 1 // Active cost
 	var/passive_cost = 0.3 // Passive cost
 
-	var/gun_mode = FALSE // Determine if the welder act as a gun or not
+	var/obj/item/gun/hydrogen/plasma_torch/gun = null // Hold the gun the welder turns into.
 
 /obj/item/tool/plasma_torch/Initialize()
 	..()
@@ -29,6 +29,9 @@
 /obj/item/tool/plasma_torch/New()
 	..()
 	update_icon()
+	if(!gun)
+		gun = new /obj/item/gun/hydrogen/plasma_torch(src)
+		gun.welder = src
 
 /obj/item/tool/plasma_torch/loaded/New()
 	flask = new /obj/item/hydrogen_fuel_cell(src)
@@ -128,13 +131,16 @@
 	set desc = "Disable the safeties, making the plasma torch able to shoot like a gun."
 	set category = "Object"
 
-	var/obj/item/gun/hydrogen/plasma_torch/da_gun = new /obj/item/gun/hydrogen/plasma_torch(src)
+	if(!gun) // Safety check if somehow there isn't a gun.
+		gun = new /obj/item/gun/hydrogen/plasma_torch(src)
+		gun.welder = src
 	if(flask) // Give the gun the same flask the welder has, but only if there's a flask.
-		da_gun.flask = flask // Link the flask to the gun
-		flask.forceMove(da_gun) // Give the flask to the gun
+		gun.flask = flask // Link the flask to the gun
+		flask.forceMove(gun) // Give the flask to the gun
 		flask = null // The Welder got no more flasks
-	qdel(src) // Delete the welder
-	usr.put_in_hands(da_gun) // Put the new gun in the user's hand
+	usr.remove_from_mob(src) // Remove the welder from the user
+	src.forceMove(gun) // Move the welder into the gun
+	usr.put_in_hands(gun) // Put the gun in the user's hand
 	usr.visible_message(
 						SPAN_NOTICE("[usr] deactivate the safeties of the [src.name]."),
 						SPAN_NOTICE("You deactivate the safeties of the [src.name].")

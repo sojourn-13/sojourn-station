@@ -70,6 +70,7 @@
 	projectile_type = /obj/item/projectile/hydrogen/pistol/welder
 	twohanded = FALSE
 	init_firemodes = list()
+	var/obj/item/tool/plasma_torch/welder = null // Hold the welder the gun turns into.
 
 // This is where the gun turn into a welder
 /obj/item/gun/hydrogen/plasma_torch/verb/switch_to_welder()
@@ -77,12 +78,15 @@
 	set desc = "Enable the safeties, making the welder gun able to weld once more."
 	set category = "Object"
 
-	var/obj/item/tool/plasma_torch/welder = new /obj/item/tool/plasma_torch(src)
+	if(!welder) // Safety check if there isn't a welder.
+		welder = new /obj/item/tool/plasma_torch(src)
+		welder.gun = src
 	if(flask) // Give the welder the same flask the gun has, but only if there's a flask.
 		welder.flask = flask // Link the flask to the welder
 		flask.forceMove(welder) // Give the flask to the welder
 		flask = null // The gun has no more flask
-	qdel(src) // Remove the original gun.
+	usr.remove_from_mob(src) // Remove the gun from the user
+	src.forceMove(welder) // Move the gun into the welder
 	usr.put_in_hands(welder) // Put the welder in the user's hand.
 	usr.visible_message(
 						SPAN_NOTICE("[usr] activate the safeties of the [src.name]."),
