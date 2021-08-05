@@ -211,7 +211,7 @@
 	display_name = "hunting lodge formal clothing"
 	path = /obj/item/clothing/under/costume/misc/hunterformal
 	slot = slot_w_uniform
-	allowed_roles = list("Lodge Hunter", "Lodge Hunt Master", "Lodge Herbalist")
+	allowed_roles = list("Lodge Hunter", "Lodge Hunt Master")
 
 /datum/gear/uniform/neon
 	display_name = "neon tracksuits, color presets"

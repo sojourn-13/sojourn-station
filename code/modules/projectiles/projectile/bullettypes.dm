@@ -384,14 +384,6 @@
 	. = ..()
 	empulse(target, 1, 3)
 
-//smoothbore rifles
-/obj/item/projectile/bullet/ball
-	damage_types = list(BRUTE = 60, HALLOS = 190)
-	armor_penetration = 90
-	agony = 60
-	penetrating = 2
-	hitscan = TRUE
-
 //Shotguns
 //*********************************//
 

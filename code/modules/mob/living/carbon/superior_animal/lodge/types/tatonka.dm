@@ -18,7 +18,6 @@
 	old_y = 0
 	default_pixel_x = -16
 	pixel_x = -16
-	randpixel = 0
 	leather_amount = 6 //The amount of leather sheets dropped.
 	bones_amount = 8 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
@@ -113,7 +112,6 @@
 	mob_size = MOB_SMALL
 	default_pixel_x = -16
 	pixel_x = -16
-	randpixel = 0
 
 /mob/living/carbon/superior_animal/lodge/baby_tatonka/New()
 	..()

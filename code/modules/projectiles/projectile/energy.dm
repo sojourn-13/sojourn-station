@@ -95,3 +95,4 @@
 	icon_state = "neurotoxin"
 	damage_types = list(BURN = 5)
 	weaken = 5
+

@@ -79,6 +79,7 @@
 	icon_state = "yithian"
 	icon_living = "yithian"
 	icon_dead = "yithian_dead"
+	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 2
 
@@ -88,6 +89,7 @@
 	icon_state = "tindalos"
 	icon_living = "tindalos"
 	icon_dead = "tindalos_dead"
+	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 1.5
 

@@ -32,20 +32,6 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 1) //Takes a second
 	)
 
-/datum/craft_recipe/lodge/baroqe
-	name = "Bone Rifle"
-	result = /obj/item/gun/projectile/baroque
-	icon_state = "gun"
-	steps = list(
-		list(CRAFT_MATERIAL, 20, MATERIAL_BONE, "time" = 60),
-		list(/obj/item/stack/material/plasteel, 10, "time" = 20),
-		list(QUALITY_CUTTING, 30, "time" = 40),
-		list(QUALITY_HAMMERING, 30, "time" = 40),
-		list(QUALITY_WELDING, 30, "time" = 60),
-		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
-		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
-	)
-
 /datum/craft_recipe/lodge/hunter_crossbow
 	name = "Lodge Hunting Crossbow"
 	result = /obj/item/gun/projectile/shotgun/pump/hunter_crossbow
@@ -329,18 +315,5 @@
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
 		list(QUALITY_WIRE_CUTTING, 10, 30),
 		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 30),
-		list(QUALITY_CUTTING, 15, "time" = 50)
-	)
-
-/datum/craft_recipe/lodge/hunting_belt
-	name = "Hunting Belt"
-	result = /obj/item/storage/belt/hunter
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 8, MATERIAL_LEATHER, "time" = 60),
-		list(QUALITY_CUTTING, 15, "time" = 50),
-		list(/obj/item/stack/cable_coil, 10, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 10, 30),
-		list(CRAFT_MATERIAL, 3, MATERIAL_LEATHER, "time" = 30),
 		list(QUALITY_CUTTING, 15, "time" = 50)
 	)

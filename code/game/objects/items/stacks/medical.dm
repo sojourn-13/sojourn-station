@@ -14,7 +14,6 @@
 	var/automatic_charge_overlays = FALSE	//Do we handle over-lays with base update_icon()? | Stolen from TG egun code
 	var/charge_sections = 5		// How many indicator blips are there?
 	var/charge_x_offset = 2		//The spacing between each charge indicator. Should be 2 to leave a 1px gap between each blip.
-	var/natural_remedy = FALSE
 
 /obj/item/stack/medical/attack(mob/living/M, mob/living/user)
 	var/types = M.get_classification()
@@ -52,8 +51,6 @@
 				)
 				if (do_after(user, 30, M))
 					if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
-						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-					else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
 						use(1)
@@ -183,8 +180,6 @@
 								to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
 					if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-					else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
-						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
 						used++
 				affecting.update_damages()
@@ -247,8 +242,6 @@
 				)
 				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
-					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					use(1)
 				affecting.salve()
@@ -274,7 +267,6 @@
 	singular_name = "spider silk salve"
 	desc = "Freshly gathered spider webs that you can slather on burns to prevent infection."
 	icon_state = "spidergoo"
-	natural_remedy = TRUE
 
 /obj/item/stack/medical/advanced/bruise_pack
 	name = "advanced trauma kit"
@@ -296,7 +288,6 @@
 	automatic_charge_overlays = FALSE
 	consumable = TRUE
 	matter = list(MATERIAL_BIOMATTER = 2.5)
-	natural_remedy = TRUE
 
 /obj/item/stack/medical/advanced/bruise_pack/mending_ichor
 	name = "mending ichor"
@@ -306,7 +297,6 @@
 	automatic_charge_overlays = FALSE
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
 	matter = list(MATERIAL_BIOMATTER = 2.5)
-	natural_remedy = TRUE
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -365,8 +355,6 @@
 				W.heal_damage(heal_brute)
 				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
-					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					used++
 			affecting.update_damages()
@@ -414,7 +402,6 @@
 	automatic_charge_overlays = FALSE
 	consumable = TRUE
 	matter = list(MATERIAL_BIOMATTER = 2.5)
-	natural_remedy = TRUE
 
 /obj/item/stack/medical/advanced/ointment/regenerative_ichor
 	name = "regenerative ichor"
@@ -424,7 +411,6 @@
 	automatic_charge_overlays = FALSE
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
 	matter = list(MATERIAL_BIOMATTER = 2.5)
-	natural_remedy = TRUE
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -459,8 +445,6 @@
 				)
 				affecting.heal_damage(0,heal_burn)
 				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
-					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					use(1)

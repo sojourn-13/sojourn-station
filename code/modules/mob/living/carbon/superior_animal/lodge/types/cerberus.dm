@@ -52,7 +52,6 @@
 	icon_state = "nightstalker"
 	icon_living = "nightstalker"
 	icon_dead = "nightstalker_dead"
-	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	move_to_delay = 3
 	maxHealth = 300
 	health = 300

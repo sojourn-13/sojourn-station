@@ -484,7 +484,6 @@
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
 	var/known_recipes = list(
-			/datum/craft_recipe/lodge/baroqe,
 			/datum/craft_recipe/lodge/hunter_crossbow,
 			/datum/craft_recipe/lodge/hunting_halberd,
 			/datum/craft_recipe/lodge/render_gauntlet,
@@ -512,7 +511,6 @@
 			/datum/craft_recipe/lodge/hunter_boots,
 			/datum/craft_recipe/lodge/hunter_gloves,
 			/datum/craft_recipe/lodge/sheath,
-			/datum/craft_recipe/lodge/hunting_belt
 			)
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)
@@ -521,12 +519,6 @@
 
 /datum/perk/job/butcher/remove()
 	holder.mind.knownCraftRecipes.Remove(known_recipes)
-
-/datum/perk/job/master_herbalist
-	name = "Naturalist"
-	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
-	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
-	or plant trays you always harvest an additional bonus!"
 
 /datum/perk/si_sci
 	name = "SI Science Trainning"

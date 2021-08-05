@@ -286,7 +286,7 @@
 /obj/structure/reagent_dispensers/meadkeg
 	name = "mead keg"
 	desc = "A keg of honey and beer"
-	icon_state = "premiumwhiskey"
+	icon_state = "beertankTEMP"
 	amount_per_transfer_from_this = 10
 	volume = 1000
 	starting_reagent = "mead"
