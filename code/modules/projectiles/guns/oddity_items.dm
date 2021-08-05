@@ -103,6 +103,7 @@
 	price_tag = 2750 //halfed on export as of coding
 	sharp = FALSE
 	saw_off = FALSE
+	eject_animatio = FALSE //We do not have a eject animation.
 
 /obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"
