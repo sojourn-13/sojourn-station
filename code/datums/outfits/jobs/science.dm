@@ -32,11 +32,11 @@
 	name = OUTFIT_JOB_NAME("Soteria - Roboticist")
 	uniform = /obj/item/clothing/under/rank/roboticist
 	suit = /obj/item/clothing/suit/storage/rank/robotech_jacket
-	belt = /obj/item/storage/belt/utility/full
+	belt = /obj/item/storage/belt/utility/roboticist
 	pda_slot = slot_r_store
 	id_type = /obj/item/card/id/dkgrey
 	pda_type = /obj/item/modular_computer/pda/science/roboticist
-	backpack_contents = list(/obj/item/device/robotanalyzer = 1)
+	backpack_contents = list(/obj/item/hydrogen_fuel_cell = 1)
 
 /decl/hierarchy/outfit/job/science/roboticist/New()
 	..()

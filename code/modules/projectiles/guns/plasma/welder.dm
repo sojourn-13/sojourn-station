@@ -30,6 +30,10 @@
 	..()
 	update_icon()
 
+/obj/item/tool/plasma_torch/loaded/New()
+	flask = new /obj/item/hydrogen_fuel_cell(src)
+	..()
+
 /obj/item/tool/plasma_torch/Process()
 	..()
 	if(switched_on)
