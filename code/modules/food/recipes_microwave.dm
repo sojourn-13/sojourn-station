@@ -75,6 +75,7 @@ I said no!
 	items = list(
 		/obj/item/reagent_containers/food/snacks/rawcutlet,
 		/obj/item/reagent_containers/food/snacks/rawcutlet,
+		/obj/item/reagent_containers/food/snacks/doughslice,
 	)
 	result = /obj/item/reagent_containers/food/snacks/dumplings
 
@@ -324,6 +325,15 @@ I said no!
 		/obj/item/reagent_containers/food/snacks/dough
 	)
 	result = /obj/item/reagent_containers/food/snacks/sliceable/bananabread
+
+/datum/recipe/cinnamonroll
+	reagents = list("woodpulp" = 5, "sugar" = 10, "milk" = 5, "egg" = 3) // Due to lack of cinnamon, let's use tower caps bark - Seb
+	items = list(
+		/obj/item/reagent_containers/food/snacks/doughslice,
+		/obj/item/reagent_containers/food/snacks/butterslice,
+		/obj/item/reagent_containers/food/snacks/cheesewedge, // For the frosting, same as 5u more of sugar
+	)
+	result = /obj/item/reagent_containers/food/snacks/cinnamonroll
 
 /datum/recipe/omelette
 	reagents = list("cornoil" = 2)
@@ -741,7 +751,7 @@ I said no!
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishandchips
 
-/datum/recipe/sashimi
+/datum/recipe/sashimi // Ironically, this doesn't get cooked since it's raw fish
 	reagents = list("soysauce" = 5)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/meat/carp,

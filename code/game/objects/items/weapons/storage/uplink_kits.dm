@@ -254,7 +254,7 @@
 
 /obj/item/storage/box/syndie_kit/cigarette
 	name = "\improper tricky smokes"
-	desc = "Comes with the following brands of cigarettes, in this order: 2xFlash, 2xSmoke, 1xMindBreaker, 1xTricordrazine. Avoid mixing them up."
+	desc = "Comes with the following brands of cigarettes, in this order: 2xFlash, 2xSmoke, 1xAntitoxin, 1xMindBreaker, 1xTricordrazine. Avoid mixing them up."
 
 /obj/item/storage/box/syndie_kit/cigarette/populate_contents()
 	var/obj/item/storage/fancy/cigarettes/pack
@@ -292,7 +292,7 @@
 	pack.reagents.add_reagent("tricordrazine", 15 * pack.storage_slots)
 	pack.desc += " 'T' has been scribbled on it."
 
-	new /obj/item/flame/lighter/zippo(src)
+	new /obj/item/flame/lighter/zippo/excelsior(src)
 
 /proc/fill_cigarre_package(var/obj/item/storage/fancy/cigarettes/C, var/list/reagents)
 	for(var/reagent in reagents)
