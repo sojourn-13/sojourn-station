@@ -73,7 +73,6 @@
 /obj/item/storage/belt/utility/roboticist
 	name = "roboticist tool belt"
 	desc = "Can hold various tools."
-	storage_slots = 8
 
 /obj/item/storage/belt/utility/roboticist/populate_contents()
 	new /obj/item/tool/screwdriver/electric(src)
@@ -82,7 +81,6 @@
 	new /obj/item/tool/crowbar(src)
 	new /obj/item/tool/wirecutters(src)
 	new /obj/item/tool/multitool(src)
-	new /obj/item/stack/cable_coil(src)
 	new /obj/item/device/robotanalyzer(src)
 
 /obj/item/storage/belt/hunter
