@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/blackguard
 	name = "\"Blackguard\" heavy marksman rifle"
-	desc = "A heavily modded and  \"improved\" omnirifle platform design made by the Blackshield and Marshals, chambered in .408, \
+	desc = "A heavily modded and  \"improved\" omnirifle platform design made by the Marshals but used by Blackshield, chambered in .408, \
 	With an extended barrel, standard bayonet, and a reflex scope this rifle has less customization than other weapons, but lends itself to a good all \
 	round design and function. Unlike other omni rifles, this one can take standard mags or drum mags of .408 ammo."
 	icon = 'icons/obj/guns/projectile/blackguard.dmi'

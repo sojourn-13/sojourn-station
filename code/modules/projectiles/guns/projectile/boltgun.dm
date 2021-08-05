@@ -19,16 +19,18 @@
 	max_shells = 10
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
+	fire_sound_silenced = 'sound/weapons/guns/fire/hpistol_fire.ogg' //It makes it more quite but still a high caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
 	one_hand_penalty = 15 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
 	sharp = TRUE //We have a knife!
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE, GUN_SILENCABLE)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/true
 	var/bolt_training = TRUE
+	eject_animatio = TRUE //we infact have bullet animations
 
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" boltgun"
@@ -46,7 +48,7 @@
 	damage_multiplier = 0.9
 	fire_delay = 4
 	one_hand_penalty = 10
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
 	bolt_training = FALSE //Trainning didnt cover obrez
@@ -66,6 +68,10 @@
 		iconstring += "_open"
 	else
 		iconstring += "_closed"
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
 
 	icon_state = iconstring
 	set_item_state(itemstring)
@@ -97,6 +103,11 @@
 	bolt_open = !bolt_open
 	if(bolt_open)
 		if(chambered)
+			if(eject_animatio) //Are bullet amination check
+				if(silenced)
+					flick("bullet_eject_s", src)
+				else
+					flick("bullet_eject", src)
 			to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [chambered]!"))
 			chambered.forceMove(get_turf(src))
 			loaded -= chambered

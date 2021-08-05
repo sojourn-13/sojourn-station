@@ -31,7 +31,7 @@
 
 /obj/item/gun/projectile/ladon/hs
 	name = "\"Porton\" magnum pistol"
-	desc = "A popular commercial variant of Mk-68 \"Ladon\" produced by \"H&S\". Often found in police and private use alike. Uses .40 Auto-Mag rounds."
+	desc = "A popular commercial variant of Mk-68 \"Ladon\" produced by \"H&S\". Often found in self defence and private guards. Uses .40 Auto-Mag rounds."
 	icon_state = "ladon"
 	item_state = "ladon"
 	damage_multiplier = 1
