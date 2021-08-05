@@ -69,6 +69,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 7, TECH_PLASMA = 7)
 	projectile_type = /obj/item/projectile/hydrogen/pistol/welder
 	twohanded = FALSE
+	w_class = ITEM_SIZE_SMALL
 	init_firemodes = list()
 	safety = FALSE // It's a welder turned into a gun, it doesn't have any nifty safeties, and even if it did, the player had to deactivate them to turn the welder into a gun in the first place.
 	restrict_safety = TRUE // Can't change the safety on something that doesn't have any. Look here ^ - R4d6
