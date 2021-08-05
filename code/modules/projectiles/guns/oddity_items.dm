@@ -35,7 +35,6 @@
 	item_flags |= BLUESPACE
 	bluespace_entropy(2, get_turf(src)) //Same as the normal bluespace crystal
 
-
 /obj/item/gun/projectile/shotgun/pump/obrez/thunderlord
 	name = "\"Thunderlord\" shotgun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
@@ -101,9 +100,10 @@
 	damage_multiplier = 2.5 //basic shot will 67.6~ damage
 	penetration_multiplier  = 2
 	max_shells = 1
-	price_tag = 750
+	price_tag = 2750 //halfed on export as of coding
 	sharp = FALSE
 	saw_off = FALSE
+	eject_animatio = FALSE //We do not have a eject animation.
 
 /obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"
@@ -120,9 +120,9 @@
 			The weapon's loading port seems skillfully enlarged to allow larger rounds to be loaded into the rifle of .06-06 caliber! \
 			Wild-west styled antimaterial rifle.. who would have thought?"
 	icon = 'icons/obj/guns/projectile/lever.dmi'
-	icon_state = "armstrong"
-	item_state = "armstrong"
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
+	icon_state = "lever"
+	item_state = "lever"
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE) //Dosnt take a silencer cuz thats just mean, also 60-06
 	bolt_training = FALSE
 	caliber = CAL_ANTIM
 	max_shells = 4
@@ -189,7 +189,7 @@
 	max_upgrades = 3
 	tool_qualities = list(QUALITY_HAMMERING = 100)
 
-/obj/item/tool/knife/dagger/assassin/ubersaw
+/obj/item/tool/knife/dagger/assassin/ubersaw //Waiting for code to be done to deal blood damage/take % of blood
 	name = "\"Uber\" syringe-dagger"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			Whoever made this was very pro-active about collecting samples in the middle of active combat. They probably lost their medical license."

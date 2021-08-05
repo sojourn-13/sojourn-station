@@ -14,7 +14,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/light
@@ -50,7 +50,7 @@
 	sharp = FALSE
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_GLASS = 10)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/light_wood
 
