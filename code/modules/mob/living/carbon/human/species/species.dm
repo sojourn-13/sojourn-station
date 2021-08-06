@@ -58,6 +58,7 @@
 	var/radiation_mod = 1                    // Radiation modifier
 	var/flash_mod =     1                    // Stun from blindness modifier.
 	var/vision_flags = SEE_SELF              // Same flags as glasses.
+	var/see_infrared = FALSE
 
 	var/list/hair_styles
 	var/list/facial_hair_styles
@@ -302,6 +303,8 @@
 	H.update_sight()
 	H.sight |= get_vision_flags(H)
 	H.sight |= H.equipment_vision_flags
+
+	H.see_infrared = see_infrared
 
 	if(H.stat == DEAD)
 		return 1

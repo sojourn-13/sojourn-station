@@ -508,7 +508,8 @@
 	max_age = 200
 	burn_mod = 2						// Burn damage multiplier.
 	light_dam = 1 // Same threshold as the Nightcrawler perk
-	vision_flags = SEE_SELF
+	vision_flags = SEE_SELF | SEE_INFRA
+	see_infrared = TRUE
 	flags = NO_PAIN | IS_PLANT
 	taste_sensitivity = TASTE_NUMB
 

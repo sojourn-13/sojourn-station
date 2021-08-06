@@ -1,6 +1,7 @@
 /mob/living
 	see_in_dark = 2
 	see_invisible = SEE_INVISIBLE_LIVING
+	infra_luminosity = 10
 
 	//Health and life related vars
 	maxHealth = 100 //Maximum health that should be possible.
