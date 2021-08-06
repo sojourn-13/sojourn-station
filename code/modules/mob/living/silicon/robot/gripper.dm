@@ -214,7 +214,10 @@
 		/obj/item/paper_bundle,
 		/obj/item/card/id,
 		/obj/item/book,
-		/obj/item/newspaper
+		/obj/item/newspaper,
+		/obj/item/photo,
+		/obj/item/spacecash,
+		/obj/item/coin
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
