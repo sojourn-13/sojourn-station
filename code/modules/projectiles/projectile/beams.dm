@@ -136,13 +136,13 @@
 	impact_type = /obj/effect/projectile/stun/impact
 
 //book "lasers"
-/obj/item/projectile/beam/stun/judgement
+/obj/item/projectile/beam/sniper/judgement
 	name = "lighting"
 	icon_state = "stun"
-	nodamage = FALSE
-	taser_effect = TRUE
 	agony = 5
 	damage_types = list(BURN = 10)
+	armor_penetration = 0
+
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
@@ -153,8 +153,6 @@
 	icon_state = "xray"
 	damage_types = list(TOX = 10)
 	armor_penetration = 0
-	stun = 0
-	weaken = 0
 
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
@@ -163,11 +161,20 @@
 /obj/item/projectile/beam/sniper/healing
 	name = "grace"
 	icon_state = "xray"
-	damage_types = list(TOX = -5, BURN = -5, BRUTE = -5)
+	damage_types = list(TOX = 0)//Shouldnt do anything but just in case its toxin
 	armor_penetration = 0
 	stun = 0
 	weaken = 0
 
-	muzzle_type = /obj/effect/projectile/xray/muzzle
-	tracer_type = /obj/effect/projectile/xray/tracer
-	impact_type = /obj/effect/projectile/xray/impact
+	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
+	tracer_type = /obj/effect/projectile/laser_blue/tracer
+	impact_type = /obj/effect/projectile/laser_blue/impact
+
+/obj/item/projectile/beam/sniper/healing/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjustOxyLoss(-10)
+		L.adjustToxLoss(-5)
+		L.adjustBruteLoss(-5)
+		L.adjustFireLoss(-5)

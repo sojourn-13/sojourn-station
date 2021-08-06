@@ -232,7 +232,11 @@
 
 /obj/item/borg/upgrade/hypospray/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(.)
+	if(!R.module || !(type in R.module.supported_upgrades))
+		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
+		to_chat(usr, "There's no mounting point for the module!")
+		return FALSE
+	else
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
 			if(H.accepts_reagent_upgrades)
 				H.reagent_ids += additional_reagents
