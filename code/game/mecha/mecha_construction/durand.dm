@@ -80,7 +80,7 @@
 		//12
 		list("key"=/obj/item/stack/material/plasteel,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Advanced capacitor is secured and ready for an armor plate"),
+			"desc"="Advanced capacitor is secured and ready for a plasteel armor plate"),
 		//13
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
