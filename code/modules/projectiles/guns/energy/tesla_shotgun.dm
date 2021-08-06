@@ -21,6 +21,7 @@
 /obj/item/gun/energy/tesla_shotgun/manual
 	name = "Manual Tesla Shotgun"
 	desc = "An energy shotgun that drain power from a nearby APC. This one can be pumped to charge faster."
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GOLD = 2.5)
 
 // Charge the cell by pumping it.
 /obj/item/gun/energy/tesla_shotgun/manual/attack_self(mob/user as mob)
@@ -39,11 +40,13 @@
 	desc = "An energy shotgun that drain power from a nearby APC. This one shoot a stronger beam."
 	charge_cost = 200
 	projectile_type = /obj/item/projectile/beam/shotgun/strong
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_PLASMA = 2.5)
 
 /obj/item/gun/energy/tesla_shotgun/atom
 	name = "Atomic Tesla Shotgun"
 	desc = "An energy shotgun that drain power from a nearby APC. This one doesn't need an APC to charge thanks to an Atomcell."
 	cell_type = /obj/item/cell/medium/moebius/nuclear
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2.5)
 
 /obj/item/gun/energy/tesla_shotgun/Process()
 	if(self_recharge) //Every [recharge_time] ticks, recharge a shot for the cyborg
