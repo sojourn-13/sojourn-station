@@ -43,7 +43,7 @@
 	projectile_type = /obj/item/projectile/beam/shotgun/strong
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_PLASMA = 2.5)
 
-/obj/item/gun/energy/tesla_shotgun/atom
+/obj/item/gun/energy/tesla_shotgun/atomic
 	name = "Atomic Tesla Shotgun"
 	desc = "An energy shotgun that drain power from a nearby APC. This one doesn't need an APC to charge thanks to an Atomcell."
 	cell_type = /obj/item/cell/medium/moebius/nuclear
