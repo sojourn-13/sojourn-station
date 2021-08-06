@@ -173,6 +173,69 @@
 	can_dual = TRUE
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 
+
+/obj/item/gun/projectile/that_gun
+	name = "\"That Gun\" revolver pistol"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			What the fuck?"
+	icon = 'icons/obj/guns/projectile/that_gun.dmi'
+	icon_state = "thatgun"
+	item_state = "thatgun"
+	caliber = CAL_PISTOL
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
+	price_tag = 420
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	can_dual = TRUE
+	load_method = MAGAZINE
+	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
+	damage_multiplier = 1.25
+	penetration_multiplier = 1
+	recoil_buildup = 0.1
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
+	one_hand_penalty = 2
+
+	init_firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
+		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
+		)
+
+/obj/item/gun/projectile/that_gun/update_icon()
+	..()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+		itemstring += "_full"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/gun/projectile/colt/cult
+	name = "Brass \"Cult\" pistol"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			A normal looking Colt 35 but made completely out of brass with a small light in its chamber that glows an weary red, listening closely theirs a small ticking sound from inside \
+			as well as warm to the touch."
+	icon = 'icons/obj/guns/projectile/colt.dmi'
+	icon_state = "brass"
+	item_state = "brass"
+	caliber = CAL_PISTOL
+	origin_tech = list(TECH_MAGNET = 10) //3500 points for rnd, eh its meant to stay in player hands not be deconned
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
+	price_tag = 2450
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	can_dual = TRUE
+	load_method = MAGAZINE
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
+	damage_multiplier = 1.5
+	recoil_buildup = 2
+	one_hand_penalty = 3
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
+
 //Melee Weapons
 /obj/item/tool/nailstick/ogre
 	name = "\"Oni\" Greatclub"
@@ -233,47 +296,6 @@
 	degradation = 0.1
 	use_power_cost = 1
 	suitable_cell = /obj/item/cell/medium
-
-/obj/item/gun/projectile/that_gun
-	name = "\"That Gun\" revolver pistol"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			What the fuck?"
-	icon = 'icons/obj/guns/projectile/that_gun.dmi'
-	icon_state = "thatgun"
-	item_state = "thatgun"
-	caliber = CAL_PISTOL
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 420
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	can_dual = TRUE
-	load_method = MAGAZINE
-	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
-	damage_multiplier = 1.25
-	penetration_multiplier = 1
-	recoil_buildup = 0.1
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
-	one_hand_penalty = 2
-
-	init_firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
-		)
-
-/obj/item/gun/projectile/that_gun/update_icon()
-	..()
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (ammo_magazine)
-		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
-		itemstring += "_full"
-
-	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		iconstring += "_slide"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
 
 //Armor
 
