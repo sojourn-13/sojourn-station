@@ -217,7 +217,8 @@
 		/obj/item/newspaper,
 		/obj/item/photo,
 		/obj/item/spacecash,
-		/obj/item/coin
+		/obj/item/coin,
+		/obj/item/device/toner
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
