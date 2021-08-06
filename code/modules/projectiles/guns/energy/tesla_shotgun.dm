@@ -31,9 +31,9 @@
 	else if(cell.charge >= cell.maxcharge) // Does the cell need charging?
 		to_chat(user, "The [src.name] is already charged.")
 		return FALSE
-	else if(do_after(user, WORKTIME_NEAR_INSTANT, src)) // Charge the cell.
+	else if(do_after(user, WORKTIME_INSTANT, src)) // Charge the cell.
 		to_chat(user, "You pump the [src.name].")
-		cell.give(charge_cost / 5) // Only charge a fifth of a shot per pump.
+		cell.give(charge_cost / 2) // Only charge half of a shot per pump.
 
 /obj/item/gun/energy/tesla_shotgun/high_damage
 	name = "High-Output Tesla Shotgun"
