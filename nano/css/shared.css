@@ -824,6 +824,8 @@ th.bot {
 }
 .withToolTip:hover .ImTooltip, .withToolTipInTooltip:hover .ImTooltipInTooltip{
 	display			: block;
+	position		: absolute;
+}
 .sciTechTreeIcon span {
 	visibility		: hidden;
 	opacity			: 0;
