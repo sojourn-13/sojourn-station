@@ -73,7 +73,7 @@
 	weapon1 = /obj/item/gun/projectile/automatic/vintorez
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 10
-	mag_type = /obj/item/ammo_magazine/rifle_75_short
+	mag_type = /obj/item/ammo_magazine/rifle_75_short/empty
 	mags_left = 2 //2+1
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
