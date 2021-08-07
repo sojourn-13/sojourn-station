@@ -1,6 +1,6 @@
 /obj/item/gun/energy/tesla_shotgun
-	name = "Tesla Shotgun"
-	desc = "An energy shotgun that drain power from a nearby APC."
+	name = "\"Nikolai's Fervor\" tesla shotgun"
+	desc = "An energy shotgun that drains power from a nearby APC to shoot electric blasts. May take time to charge and piss off your local guild adept."
 	icon = 'icons/obj/guns/energy/slimegun.dmi'
 	icon_state = "slimepistol"
 	item_state = "slimepistol"
@@ -20,8 +20,8 @@
 	use_external_power = TRUE
 
 /obj/item/gun/energy/tesla_shotgun/manual
-	name = "Manual Tesla Shotgun"
-	desc = "An energy shotgun that drain power from a nearby APC. This one can be pumped to charge faster."
+	name = "\"Edison's Lament\" tesla shotgun"
+	desc = "An energy shotgun that drains power from a nearby APC. This one can be pumped to charge faster. Is it really better?"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GOLD = 2.5)
 
 // Charge the cell by pumping it.
@@ -37,15 +37,15 @@
 		cell.give(charge_cost / 2) // Only charge half of a shot per pump.
 
 /obj/item/gun/energy/tesla_shotgun/high_damage
-	name = "High-Output Tesla Shotgun"
-	desc = "An energy shotgun that drain power from a nearby APC. This one shoot a stronger beam."
+	name = "\"Modern Solutions\" tesla shotgun"
+	desc = "An energy shotgun that drains power from a nearby APC. This one shoots a stronger beam than others."
 	charge_cost = 200
 	projectile_type = /obj/item/projectile/beam/shotgun/strong
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_PLASMA = 2.5)
 
 /obj/item/gun/energy/tesla_shotgun/atomic
-	name = "Atomic Tesla Shotgun"
-	desc = "An energy shotgun that drain power from a nearby APC. This one doesn't need an APC to charge thanks to an Atomcell."
+	name = "\"Atom Bomb\" tesla shotgun"
+	desc = "An energy shotgun that drains power from a nearby APC. This one doesn't need an APC to charge thanks to an atomic power cell. Oh baby!"
 	cell_type = /obj/item/cell/medium/moebius/nuclear
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2.5)
 
