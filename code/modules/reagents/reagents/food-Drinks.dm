@@ -230,7 +230,7 @@
 /datum/reagent/organic/nutriment/hot_ramen
 	name = "Hot Ramen"
 	id = "hot_ramen"
-	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
+	description = "The noodles are boiled, the flavors are artificial, just like being back in college."
 	taste_description = "wet and cheap noodles"
 	reagent_state = LIQUID
 	color = "#302000"
@@ -244,7 +244,7 @@
 /datum/reagent/organic/nutriment/hell_ramen
 	name = "Hell Ramen"
 	id = "hell_ramen"
-	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
+	description = "The noodles are boiled, the flavors are artificial, just like being back in college."
 	taste_description = "wet and cheap noodles on fire"
 	reagent_state = LIQUID
 	nutriment_factor = "#302000"
@@ -658,11 +658,11 @@
 	glass_name = "strawberry milk"
 	glass_desc = "Strawberry sweet and lactose goodness!"
 
-/datum/reagent/drink/milk/coca
+/datum/reagent/drink/milk/choccymilk
 	name = "Chocolate Milk"
 	id = "chocolatemilk"
-	description = "An opaque brown liquid produced by the mammary glands of mammals and coca powerder."
-	taste_description = "strawberry milk"
+	description = "An opaque brown liquid produced by the mammary glands of mammals and cocoa powerder." // No, this is NOT made with cocaine!
+	taste_description = "chocolate milk"
 	color = "#DFDFDF"
 
 	glass_icon_state = "chocolateglass"
@@ -690,6 +690,26 @@
 	glass_icon_state = "glass_white"
 	glass_name = "soy milk"
 	glass_desc = "White and nutritious soy goodness!"
+
+/datum/reagent/drink/milk/milkshake
+	name = "Milkshake"
+	description = "Sweet, cold beverage that is usually made from milk"
+	taste_description = "cold creamy vanilla"
+	id = "milkshake"
+	color = "#AEE5E4"
+	adj_temp = -9
+
+	glass_icon_state = "milkshake"
+	glass_name = "milkshake"
+	glass_desc = "Glorious brain-freezing mixture."
+	glass_center_of_mass = list("x"=16, "y"=7)
+
+/datum/reagent/drink/milk/icedcream
+	name = "icecream base"
+	id = "icecreambase"
+	description = "A slurry of sweetened milk and cream with the consistency of soft serve, the base of every icecream recipe ever. Just chill and serve!"
+	color = "#DFD7AF"
+	taste_description = "melted icecream"
 
 /datum/reagent/drink/tea
 	name = "Tea"
@@ -1043,19 +1063,6 @@
 	glass_icon_state = "brownstar"
 	glass_name = "Brown Star"
 	glass_desc = "It's not what it sounds like..."
-
-/datum/reagent/drink/milkshake
-	name = "Milkshake"
-	description = "Sweet, cold beverage that is usually made from milk"
-	taste_description = "creamy vanilla"
-	id = "milkshake"
-	color = "#AEE5E4"
-	adj_temp = -9
-
-	glass_icon_state = "milkshake"
-	glass_name = "milkshake"
-	glass_desc = "Glorious brain-freezing mixture."
-	glass_center_of_mass = list("x"=16, "y"=7)
 
 /datum/reagent/drink/rewriter
 	name = "Rewriter"

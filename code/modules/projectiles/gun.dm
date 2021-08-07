@@ -83,6 +83,8 @@
 	var/proj_step_multiplier = 1
 	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int)
 
+	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
+
 	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
 
 /obj/item/gun/proc/loadAmmoBestGuess()

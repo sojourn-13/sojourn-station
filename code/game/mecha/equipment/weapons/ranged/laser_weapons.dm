@@ -1,22 +1,22 @@
 
 /*
  * Contains
- * /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
- * /obj/item/mecha_parts/mecha_equipment/weapon/energy/riggedlaser
- * /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
- * /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
- * /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
- * /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
- * /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
- * /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma
+ * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
+ * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser
+ * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
+ * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
+ * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
+ * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
+ * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
+ * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/plasma
  */
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy
 	name = "general energy weapon"
 	auto_rearm = 1
 	range = MECHA_MELEE | MECHA_RANGED
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
 	equip_cooldown = 8
 	name = "\improper CH-PS \"Immolator\" laser"
 	icon_state = "mecha_laser"
@@ -25,7 +25,7 @@
 	fire_sound = 'sound/weapons/Laser.ogg'
 	price_tag = 400
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/riggedlaser
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser
 	equip_cooldown = 15
 	name = "jury-rigged welder-laser"
 	desc = "While not regulation, this inefficient weapon can be attached to working exo-suits in desperate, or malicious, times."
@@ -36,7 +36,7 @@
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 	price_tag = 400
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 	equip_cooldown = 15
 	name = "\improper CH-LC \"Solaris\" laser cannon"
 	icon_state = "mecha_laser"
@@ -44,7 +44,7 @@
 	projectile = /obj/item/projectile/beam/heavylaser
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy/auto
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
 	equip_cooldown = 5
 	name = "\improper Multi-laser Cannon"
 	desc = "Four solaris laser cannons welded together to achieve a higher firerate."
@@ -56,7 +56,7 @@
 	fire_cooldown = 0
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
 	equip_cooldown = 40
 	name = "mkIV ion heavy cannon"
 	icon_state = "mecha_ion"
@@ -65,7 +65,7 @@
 	fire_sound = 'sound/weapons/Laser.ogg'
 	price_tag = 300
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
 	equip_cooldown = 30
 	name = "eZ-13 mk2 heavy pulse rifle"
 	icon_state = "mecha_pulse"
@@ -86,7 +86,7 @@
 			qdel(src)
 		return
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	name = "\improper PBT \"Pacifier\" mounted taser"
 	icon_state = "mecha_taser"
 	energy_drain = 20
@@ -94,7 +94,7 @@
 	projectile = /obj/item/projectile/beam/stun
 	fire_sound = 'sound/weapons/Taser.ogg'
 
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/hydrogen
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/hydrogen
 	name = "\improper Mech-mounted Hydrogen-Plasma Cannon"
 	desc = "A Sollex-Pattern hydrogen-plasma cannon, modified to fit on combat exosuits. Unlike its hand-held counter-part, this one doesn't need cooling, as it use the Exosuit's systems for that purpose."
 	icon_state = "hydrogen_cannon"
@@ -106,7 +106,7 @@
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 /* Commenting this out rather than removing it because it may be useful for reference.
-/obj/item/mecha_parts/mecha_equipment/weapon/honker
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/honker
 	name = "\improper HoNkER BlAsT 5000"
 	icon_state = "mecha_honker"
 	energy_drain = 200

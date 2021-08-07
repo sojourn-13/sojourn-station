@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/olivaw
 	name = "\"Olivaw\" burst pistol"
-	desc = "That's the second most popular model of civilian pistols produced by H&S. This one seems to have a two-round burst-fire mode. Uses .35 auto."
+	desc = "The second most popular model of civilian pistols produced by H&S. This one seems to have a two-round burst-fire mode. Uses .35 auto."
 	icon = 'icons/obj/guns/projectile/olivawcivil.dmi'
 	icon_state = "olivawcivil"
 	item_state = "pistol"
@@ -16,7 +16,7 @@
 	penetration_multiplier = 1.1
 	recoil_buildup = 4
 	one_hand_penalty = 7
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL, GUN_SILENCABLE)
 
 	init_firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
@@ -25,7 +25,16 @@
 
 /obj/item/gun/projectile/olivaw/update_icon()
 	..()
-	if(ammo_magazine && ammo_magazine.stored_ammo.len)
-		icon_state = "olivawcivil"
-	else
-		icon_state = "olivawcivil_empty"
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
