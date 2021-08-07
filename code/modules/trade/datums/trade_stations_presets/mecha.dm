@@ -19,15 +19,15 @@
 		),
 		"Equipment" = list(
 			/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
-			/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
-			/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
+			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,
+			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,
 			/obj/item/mecha_parts/mecha_equipment/tool/rcd,
 			/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
 			/obj/item/mecha_parts/mecha_equipment/tool/drill,
 			/obj/item/mecha_parts/mecha_equipment/tool/extinguisher,
 			/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-			/obj/item/mecha_parts/mecha_equipment/weapon/energy/riggedlaser,
-			/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak/loaded,
+			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser,
+			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/flak/loaded,
 			/obj/item/mecha_parts/mecha_equipment/thruster
 		),
 	)
