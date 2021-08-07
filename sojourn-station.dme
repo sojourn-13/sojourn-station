@@ -2433,6 +2433,7 @@
 #include "code\modules\projectiles\guns\energy\sst.dm"
 #include "code\modules\projectiles\guns\energy\stun.dm"
 #include "code\modules\projectiles\guns\energy\temperature.dm"
+#include "code\modules\projectiles\guns\energy\tesla_shotgun.dm"
 #include "code\modules\projectiles\guns\energy\xray.dm"
 #include "code\modules\projectiles\guns\launcher\crossbow.dm"
 #include "code\modules\projectiles\guns\launcher\makeshift.dm"
