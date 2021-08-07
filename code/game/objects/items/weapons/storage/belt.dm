@@ -70,6 +70,46 @@
 	new /obj/item/tool/wirecutters(src)
 	new /obj/item/stack/cable_coil/random(src)
 
+/obj/item/storage/belt/utility/roboticist
+	name = "roboticist tool belt"
+	desc = "Can hold various tools."
+	can_hold = list(
+		/obj/item/tool,
+		/obj/item/tool_upgrade,
+		/obj/item/device/lightreplacer,
+		/obj/item/rcd,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/device/radio,
+		/obj/item/stack/cable_coil,
+		/obj/item/device/t_scanner,
+		/obj/item/device/scanner/gas,
+		/obj/item/taperoll/engineering,
+		/obj/item/device/robotanalyzer,
+		/obj/item/tool/minihoe,
+		/obj/item/tool/hatchet,
+		/obj/item/device/scanner/plant,
+		/obj/item/extinguisher/mini,
+		/obj/item/hand_labeler,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+		/obj/item/flame/lighter,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/grenade/chem_grenade/cleaner,
+		/obj/item/grenade/chem_grenade/antiweed,
+		/obj/item/grenade/chem_grenade/metalfoam,
+		/obj/item/gun/hydrogen/plasma_torch // Something that can hold a welder should be able to hold the same welder turned into a gun.
+	)
+
+/obj/item/storage/belt/utility/roboticist/populate_contents()
+	new /obj/item/tool/screwdriver/electric(src)
+	new /obj/item/tool/wrench/big_wrench(src)
+	new /obj/item/tool/plasma_torch/loaded(src)
+	new /obj/item/tool/crowbar(src)
+	new /obj/item/tool/wirecutters(src)
+	new /obj/item/tool/multitool(src)
+	new /obj/item/device/robotanalyzer(src)
+
 /obj/item/storage/belt/hunter
 	name = "hunting belt"
 	desc = "Can hold various tools fit for a lodge hunter."
