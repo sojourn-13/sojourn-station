@@ -262,7 +262,7 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/standard/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/device/scanner/price(src)
-	src.modules += new /obj/item/melee/baton(src)
+	src.modules += new /obj/item/melee/baton/robot(src)
 	src.modules += new /obj/item/extinguisher(src)
 	src.modules += new /obj/item/tool/robotic_omni_standard(src)
 	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
@@ -292,6 +292,13 @@ var/global/list/robot_modules = list(
 	src.modules += B
 	src.modules += O
 	..(R)
+
+/obj/item/robot_module/standard/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	..()
+
+	var/obj/item/melee/baton/robot/B = locate() in src.modules
+	if(B && B.cell)
+		B.cell.give(amount)
 
 /obj/item/robot_module/medical
 	name = "medical robot module"
@@ -466,7 +473,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
-	src.emag += new /obj/item/melee/baton(src)
+	src.emag += new /obj/item/melee/baton/robot(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
 	var/datum/matter_synth/plasteel = new /datum/matter_synth/plasteel(40000)
@@ -534,6 +541,11 @@ var/global/list/robot_modules = list(
 		var/obj/item/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
 		KBG.reagents.add_reagent("silicate", 2 * amount)
 	..()
+
+	if(R.emagged)
+		var/obj/item/melee/baton/robot/B = locate() in src.modules
+		if(B && B.cell)
+			B.cell.give(amount)
 
 	//TODO: Insert appropriate tiles here
 	//var/obj/item/stack/tile/floor_white/cyborg/FTW = new (src)
@@ -618,6 +630,15 @@ var/global/list/robot_modules = list(
 		T.update_icon()
 	else
 		T.charge_tick = 0
+
+	if(R.emagged)
+		var/obj/item/gun/energy/laser/mounted/cyborg/L = locate() in src.modules
+		if(L.cell.charge < L.cell.maxcharge)
+			L.cell.give(T.charge_cost * amount)
+			L.update_icon()
+		else
+			L.charge_tick = 0
+
 	var/obj/item/melee/baton/robot/B = locate() in src.modules
 	if(B && B.cell)
 		B.cell.give(amount)

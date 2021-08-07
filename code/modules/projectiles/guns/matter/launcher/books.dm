@@ -10,7 +10,7 @@
 	max_stored_matter = 15
 	stored_matter = 0 //We do not print with free biomatter
 	projectile_cost = 1
-	projectile_type = /obj/item/projectile/beam/stun/judgement
+	projectile_type = /obj/item/projectile/beam/sniper/judgement
 
 /obj/item/gun/matter/holybook/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	var/obj/item/implant/core_implant/I = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
