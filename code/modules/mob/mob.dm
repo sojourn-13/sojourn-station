@@ -1078,6 +1078,14 @@ mob/proc/yank_out_object()
 	else
 		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
 
+/mob/verb/check_playtime()
+	set name = "Check Playtime"
+	set category = "IC"
+	set src = usr
+	for(var/departmentplaytime in src.client.prefs.playtime)
+		if(src.client.prefs.playtime[departmentplaytime])
+			to_chat(src, "You have spent [src.client.prefs.playtime[departmentplaytime]] minutes playing in [departmentplaytime].")
+
 /mob/verb/browse_mine_stats()
 	set name		= "Show stats and perks"
 	set desc		= "Browse your character stats and perks."
