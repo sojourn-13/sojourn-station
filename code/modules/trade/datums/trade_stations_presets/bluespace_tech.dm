@@ -4,11 +4,14 @@
 	assortiment = list(
 		"#$285@$532#$@" = list(
 			/obj/item/circuitboard/teleporter,
-			/obj/item/bluespace_harpoon,
-			/obj/item/tool/knife/dagger/bluespace,
+			/obj/item/hand_tele,
+			/obj/item/tele_spear,
+			/obj/item/seeds/bluespacetomatoseed,
 			/obj/item/reagent_containers/glass/beaker/bluespace,
 			/obj/item/circuitboard/bssilk_hub,
-			/obj/item/biosyphon
+			/obj/item/circuitboard/bssilk_cons,
+			/obj/item/clothing/accessory/bs_silk,
+			/obj/item/rig_module/teleporter
 		)
 	)
 

@@ -542,11 +542,16 @@
 /obj/item/reagent_containers/food/snacks/superbiteburger
 	price_tag = 250
 
+/obj/item/reagent_containers/food/snacks/baconburger
+	price_tag = 55
 
 // Sandwiches //
 
 /obj/item/reagent_containers/food/snacks/sandwich
 	price_tag = 60
+
+/obj/item/reagent_containers/food/snacks/blt
+	price_tag = 75
 
 /obj/item/reagent_containers/food/snacks/toastedsandwich
 	price_tag = 60
@@ -1031,6 +1036,12 @@
 /obj/item/organ
 	price_tag = 500
 
+/mob/living/simple_animal/corgi
+	price_tag = 250
+
+/mob/living/simple_animal/cat
+	price_tag = 150
+
 /mob/living/carbon/superior_animal/roach
 	price_tag = 150
 
@@ -1039,6 +1050,25 @@
 
 /mob/living/carbon/superior_animal/roach/hunter
 	price_tag = 200
+
+/mob/living/simple_animal/hostile/helldiver
+	price_tag = 500
+
+/mob/living/carbon/superior_animal/lodge/clucker
+	price_tag = 300 //Eggs to hatch make this easy to mass do
+
+ //Imagine dragging a loge animals allllll the way to the colony
+/mob/living/carbon/superior_animal/lodge/tatonka
+	price_tag = 800
+
+/mob/living/carbon/superior_animal/lodge/tatonka/tangu
+	price_tag = 1650
+
+/mob/living/carbon/superior_animal/lodge/cerberus
+	price_tag = 1500
+
+/mob/living/carbon/superior_animal/lodge/cerberus/chimera
+	price_tag = 3500
 
 /mob/living/exosuit/get_item_cost(export)
 	. = ..() + SStrade.get_import_cost()
