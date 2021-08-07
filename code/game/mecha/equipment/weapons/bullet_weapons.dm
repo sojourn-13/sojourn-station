@@ -129,6 +129,7 @@
 	projectiles_per_shot = 6
 	deviation = 0.9
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
+	price_tag = 700
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak/loaded
 	loaded = TRUE

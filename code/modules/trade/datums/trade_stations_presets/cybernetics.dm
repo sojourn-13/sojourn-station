@@ -1,4 +1,3 @@
-/*
 /datum/trade_station/cybermoebus
 	name_pool = list("FTS 'PentaOptium'" = "Free Trade Station 'PentaOptium'. \"Oh, you, I think I can sell you some cybernetics.\"")
 	assortiment = list(
@@ -9,11 +8,11 @@
 			/obj/item/organ/external/robotic/moebius/r_leg,
 			/obj/item/organ/external/robotic/moebius/groin
 		),
-		"Salvaged Tech" = list(
-			/obj/item/organ/external/robotic/one_star/l_arm = good_data("What? Left Arm", list(-8, 3)),
-			/obj/item/organ/external/robotic/one_star/r_arm = good_data("What? Right Arm", list(-8, 3)),
-			/obj/item/organ/external/robotic/one_star/l_leg = good_data("What? Left Leg", list(-8, 3)),
-			/obj/item/organ/external/robotic/one_star/r_leg = good_data("What? Right Leg", list(-8, 3))
+		"Salvaged Greyson Tech" = list(
+			/obj/item/organ/external/robotic/one_star/l_arm,
+			/obj/item/organ/external/robotic/one_star/r_arm,
+			/obj/item/organ/external/robotic/one_star/l_leg,
+			/obj/item/organ/external/robotic/one_star/r_leg
 		),
 		"Artificer Guild" = list(
 			/obj/item/organ/external/robotic/technomancer/l_arm,
@@ -26,6 +25,17 @@
 			/obj/item/organ/external/robotic/frozen_star/r_arm,
 			/obj/item/organ/external/robotic/frozen_star/l_leg,
 			/obj/item/organ/external/robotic/frozen_star/r_leg
-		)
+		),
+		"Voidwolf" = list(
+			/obj/item/organ/external/robotic/serbian/l_arm,
+			/obj/item/organ/external/robotic/serbian/r_arm,
+			/obj/item/organ/external/robotic/serbian/l_leg,
+			/obj/item/organ/external/robotic/serbian/r_leg
+		),
+		"Blackmarket Blackshield" = list(
+			/obj/item/organ/external/robotic/blackshield/l_arm,
+			/obj/item/organ/external/robotic/blackshield/r_arm,
+			/obj/item/organ/external/robotic/blackshield/l_leg,
+			/obj/item/organ/external/robotic/blackshield/r_leg
+		),
 	)
-*/

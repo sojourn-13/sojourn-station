@@ -1,4 +1,3 @@
-/*
 /datum/trade_station/caduceus
 	name_pool = list("MAV 'Caduceus'" = "Madinat Yunan Aid Vessel 'Caduceus'. They're sending a message. \"Hello there, we're traveling between frontier locations. We will be leaving the system shortly but we can offer you any medical aid while we are still here.\".")
 	icon_states = "ship"
@@ -16,6 +15,9 @@
 			/obj/item/storage/firstaid/toxin,
 			/obj/item/storage/firstaid/o2,
 			/obj/item/storage/firstaid/adv,
+			/obj/item/stack/medical/bruise_pack,
+			/obj/item/stack/medical/ointment,
+			/obj/item/stack/medical/splint
 		),
 		"Surgery" = list(
 			/obj/item/tool/cautery,
@@ -25,7 +27,7 @@
 			/obj/item/tool/scalpel,
 			/obj/item/tool/retractor,
 			/obj/item/tool/bonesetter,
-			/obj/item/tool/saw/circular,
+			/obj/item/tool/saw/circular
 		),
 		"Blood" = list(
 			/obj/structure/medical_stand,
@@ -35,7 +37,7 @@
 			/obj/item/reagent_containers/blood/BPlus,
 			/obj/item/reagent_containers/blood/BMinus,
 			/obj/item/reagent_containers/blood/OPlus,
-			/obj/item/reagent_containers/blood/OMinus,
+			/obj/item/reagent_containers/blood/OMinus
 		),
 		"Misc" = list(
 			/obj/item/virusdish/random,
@@ -63,5 +65,7 @@
 			/obj/item/storage/firstaid/toxin,
 			/obj/item/storage/firstaid/o2,
 			/obj/item/storage/firstaid/adv,
+			/obj/item/stack/medical/bruise_pack,
+			/obj/item/stack/medical/splint,
+			/obj/item/stack/medical/ointment
 		)
-*/

@@ -995,7 +995,7 @@
 	price_tag = 200
 
 /obj/machinery/power/supermatter
-	price_tag = 5000
+	price_tag = 20000
 
 /obj/machinery/portable_atmospherics/canister/get_item_cost(export)
 	. = price_tag + (price_tag * log(10, air_contents.volume)) //todo, prices of gases

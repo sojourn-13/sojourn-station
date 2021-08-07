@@ -9,6 +9,7 @@
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 5)
 	equip_cooldown = 5
 	energy_drain = 50
+	price_tag = 300
 	var/wait = 0
 	var/obj/item/tank/jetpack/mecha/thrust
 	equip_ready = FALSE

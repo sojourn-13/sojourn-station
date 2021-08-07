@@ -1,44 +1,33 @@
-/*
 /datum/trade_station/mechas
-	name_pool = list("TCCSJ 'Shipyard'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell exosuits. Sensors showing that they have docked vessel, maybe they have one last batch for sale.\
+	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell exosuits. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
 		\"Hey, dudes, it seems you want some mechas? We got a surplus right now, we got parts and circuits.\"")
 	assortiment = list(
 		"Exosuits" = list(
-			/mob/living/exosuit/premade/powerloader/firefighter,
-			/mob/living/exosuit/premade/powerloader/flames_blue,
-			/mob/living/exosuit/premade/powerloader/flames_red,
-			/mob/living/exosuit/premade/light,
-			/mob/living/exosuit/premade/heavy,
-			/mob/living/exosuit/premade/combat/slayer,
+			/obj/mecha/working/ripley/firefighter,
+			/obj/mecha/working/ripley/deathripley,
+			/obj/mecha/working/ripley/mining,
+			/obj/mecha/working/hoverpod,
+			/obj/mecha/medical/odysseus,
+			/obj/mecha/combat/gygax/dark,
+			/obj/mecha/combat/durand
 		),
 		"Mech Armor" = list(
-			/obj/item/robot_parts/robot_component/armour/exosuit,
-			/obj/item/robot_parts/robot_component/armour/exosuit/radproof,
-			/obj/item/robot_parts/robot_component/armour/exosuit/em,
-			/obj/item/robot_parts/robot_component/armour/exosuit/combat,
-		),
-		"Parts" = list(
-			/obj/item/mech_component/chassis,
-			/obj/item/mech_component/manipulators,
-			/obj/item/mech_component/sensors,
-			/obj/item/mech_component/propulsion,
-		),
-		"Soft" = list(
-			/obj/item/weapon/circuitboard/exosystem/engineering,
-			/obj/item/weapon/circuitboard/exosystem/utility,
-			/obj/item/weapon/circuitboard/exosystem/medical,
-			/obj/item/weapon/circuitboard/exosystem/weapons,
+			/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
+			/obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
+			/obj/item/mecha_parts/mecha_equipment/combat_shield,
+			/obj/item/mecha_parts/mecha_equipment/repair_droid
 		),
 		"Equipment" = list(
-			/obj/item/mech_equipment/mounted_system/taser,
-			/obj/item/mech_equipment/mounted_system/taser/ion,
-			/obj/item/mech_equipment/mounted_system/taser/plasma,
-			/obj/item/mech_equipment/mounted_system/rcd,
-			/obj/item/mech_equipment/clamp,
-			/obj/item/mech_equipment/light,
-			/obj/item/mech_equipment/drill,
-			/obj/item/mech_equipment/mounted_system/extinguisher,
-			/obj/item/mech_equipment/sleeper,
+			/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
+			/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
+			/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
+			/obj/item/mecha_parts/mecha_equipment/tool/rcd,
+			/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
+			/obj/item/mecha_parts/mecha_equipment/tool/drill,
+			/obj/item/mecha_parts/mecha_equipment/tool/extinguisher,
+			/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
+			/obj/item/mecha_parts/mecha_equipment/weapon/energy/riggedlaser,
+			/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak/loaded,
+			/obj/item/mecha_parts/mecha_equipment/thruster
 		),
 	)
-*/

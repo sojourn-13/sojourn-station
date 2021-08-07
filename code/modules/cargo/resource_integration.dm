@@ -61,14 +61,14 @@
 /datum/supply_pack/orescanner
 	name = "Hardsuit Mounted Ore Scanner Crate"
 	contains = list(/obj/item/rig_module/device/orescanner)
-	cost = 100
+	cost = 200
 	crate_name = "Hardsuit Mounted Ore Scanner Crate"
 	group = "Resource Integration Gear"
 
 /datum/supply_pack/healthscanner
 	name = "Hardsuit Mounted Health Scanner Crate"
 	contains = list(/obj/item/rig_module/device/healthscanner)
-	cost = 100
+	cost = 200
 	crate_name = "Hardsuit Mounted Health Scanner Crate"
 	group = "Resource Integration Gear"
 
@@ -103,7 +103,7 @@
 /datum/supply_pack/sechud
 	name = "Hardsuit Security Hud Crate"
 	contains = list(/obj/item/rig_module/vision/sechud)
-	cost = 100
+	cost = 200
 	crate_name = "Hardsuit Security Hud Crate"
 	group = "Resource Integration Gear"
 

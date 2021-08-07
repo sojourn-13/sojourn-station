@@ -26,6 +26,7 @@
 
 	interface_name = "integrated grenade launcher"
 	interface_desc = "Discharges loaded grenades against the wearer's location."
+	price_tag = 500
 
 	var/fire_force = 30
 	var/fire_distance = 10
@@ -97,6 +98,7 @@
 	selectable = 1
 	usable = 1
 	module_cooldown = 0
+	price_tag = 750
 
 	icon_state = "lcannon"
 
@@ -129,6 +131,7 @@
 	name = "mounted energy gun"
 	desc = "A forearm-mounted energy projector."
 	icon_state = "egun"
+	price_tag = 500
 
 
 
@@ -159,6 +162,7 @@
 	name = "energy blade projector"
 	desc = "A powerful cutting beam projector."
 	icon_state = "eblade"
+	price_tag = 400
 
 	activate_string = "Project Blade"
 	deactivate_string = "Cancel Blade"
@@ -220,6 +224,7 @@
 	usable = 1
 	use_power_cost = 15
 	icon_state = "enet"
+	price_tag = 1000
 
 	engage_string = "Fabricate Star"
 

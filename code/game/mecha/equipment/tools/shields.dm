@@ -7,6 +7,7 @@
 	equip_cooldown = 5
 	energy_drain = 20
 	range = 0
+	price_tag = 2000
 
 	var/obj/item/shield_projector/line/exosuit/my_shield = null
 	var/my_shield_type = /obj/item/shield_projector/line/exosuit

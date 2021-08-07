@@ -17,6 +17,7 @@ SUBSYSTEM_DEF(trade)
 /datum/controller/subsystem/trade/Initialize()
 	InitStations()
 	. = ..()
+	DiscoverAllTradeStations()
 
 /datum/controller/subsystem/trade/proc/ReInitStations()
 	DeInitStations()

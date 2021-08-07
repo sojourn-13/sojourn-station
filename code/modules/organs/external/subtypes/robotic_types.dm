@@ -42,11 +42,35 @@
 	model = "serbian"
 	price_tag = 400
 
+/obj/item/organ/external/robotic/serbian/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/serbian/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/serbian/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/serbian/r_leg
+	default_description = /datum/organ_description/leg/right
+
 /obj/item/organ/external/robotic/frozen_star
 	name = "\"H&S Augments\""
 	desc = "Tactical \"Holland & Sullivan\" blue and gray prosthesis for dangerous environment."
 	force_icon = 'icons/mob/human_races/cyberlimbs/frozen_star.dmi'
 	model = "frozen_star"
+
+/obj/item/organ/external/robotic/frozen_star/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/frozen_star/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/frozen_star/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/frozen_star/r_leg
+	default_description = /datum/organ_description/leg/right
 
 // Artificer Guild
 /obj/item/organ/external/robotic/technomancer
@@ -55,6 +79,18 @@
 	force_icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi'
 	model = "technomancer"
 	price_tag = 300
+
+/obj/item/organ/external/robotic/technomancer/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/technomancer/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/technomancer/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/technomancer/r_leg
+	default_description = /datum/organ_description/leg/right
 
 /obj/item/organ/external/robotic/technomancer/groin
 	name = "\"Artificer Guild\" Groin"
@@ -158,7 +194,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	max_damage = 60
 	min_broken_damage = 40
 	min_malfunction_damage = 30
-	price_tag = 700
+	price_tag = 800
 
 /obj/item/organ/external/robotic/blackshield/l_arm
 	default_description = /datum/organ_description/arm/left

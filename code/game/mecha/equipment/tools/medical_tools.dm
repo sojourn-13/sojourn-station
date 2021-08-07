@@ -20,6 +20,7 @@
 	var/inject_amount = 10
 	required_type = /obj/mecha/medical
 	salvageable = 0
+	price_tag = 200
 
 	New()
 		..()

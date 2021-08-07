@@ -10,7 +10,7 @@
 					/obj/item/tank/air,
 					/obj/item/tank/air,
 					/obj/item/tank/air)
-	cost = 480
+	cost = 180
 	containertype = /obj/structure/closet/crate/internals
 	crate_name = "internals crate"
 	group = "Engineering"
@@ -18,7 +18,7 @@
 /datum/supply_pack/sleeping_agent
 	name = "Canister: \[N2O\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/sleeping_agent)
-	cost = 1800
+	cost = 180
 	containertype = /obj/structure/largecrate
 	crate_name = "N2O crate"
 	group = "Engineering"
@@ -26,7 +26,7 @@
 /datum/supply_pack/oxygen
 	name = "Canister: \[O2\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/oxygen)
-	cost = 1200
+	cost = 120
 	containertype = /obj/structure/largecrate
 	crate_name = "O2 crate"
 	group = "Engineering"
@@ -34,7 +34,7 @@
 /datum/supply_pack/nitrogen
 	name = "Canister: \[N2\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/nitrogen)
-	cost = 1200
+	cost = 120
 	containertype = /obj/structure/largecrate
 	crate_name = "N2 crate"
 	group = "Engineering"
@@ -42,7 +42,7 @@
 /datum/supply_pack/air
 	name = "Canister \[Air\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/air)
-	cost = 1200
+	cost = 120
 	containertype = /obj/structure/largecrate
 	crate_name = "air crate"
 	group = "Engineering"
@@ -63,7 +63,7 @@
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas)
-	cost = 800
+	cost = 80
 	containertype = /obj/structure/closet/crate/internals
 	crate_name = "emergency equipment crate"
 	group = "Engineering"
@@ -75,7 +75,7 @@
 					/obj/item/storage/briefcase/inflatable,
 					/obj/item/storage/briefcase/inflatable,
 					/obj/item/storage/briefcase/inflatable)
-	cost = 1200
+	cost = 120
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "inflatable barriers crate"
 	group = "Engineering"
@@ -86,7 +86,7 @@
 					/obj/item/storage/box/lights/mixed,
 					/obj/item/storage/box/lights/mixed,
 					/obj/item/storage/box/lights/mixed)
-	cost = 560
+	cost = 120
 	containertype = /obj/structure/closet/crate
 	crate_name = "replacement lights crate"
 	group = "Engineering"

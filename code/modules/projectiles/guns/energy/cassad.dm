@@ -1,4 +1,3 @@
-
 /obj/item/gun/energy/pulse/cassad
 	name = "\"Cassad\" energy rifle"
 	desc = "\"Holland & Sullivan\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
