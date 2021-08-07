@@ -48,6 +48,11 @@
 	icon_state = "pistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
+/obj/item/ammo_magazine/pistol_35/scrap
+	name = "old standard magazine (.35 Auto)"
+	icon_state = "pistol_s"
+	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
+
 /obj/item/ammo_magazine/highcap_pistol_35/drum
 	name = "standard auto drum magazine"
 	icon_state = "ldrum"
@@ -124,7 +129,6 @@
 	name = "highcap magazine (.35 Auto hollow-point)"
 	icon_state = "hpistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
-
 
 /////////////SMG/////////////
 
@@ -209,6 +213,10 @@
 	icon_state = "magnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
+/obj/item/ammo_magazine/magnum_40/old
+	name = "old magazine (.40 Magnum)"
+	icon_state = "magnum_s"
+	ammo_type = /obj/item/ammo_casing/magnum/scrap
 
 ////.257 Carbine////
 
@@ -248,6 +256,11 @@
 	name = "carbine magazine (hollow-point)"
 	icon_state = "lrifle_long_r"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
+
+/obj/item/ammo_magazine/light_rifle_257/scrap
+	name = "old carbine magazine (ball)"
+	icon_state = "srifle_long_s"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
 
 ////short////
 
@@ -326,6 +339,11 @@
 	name = "rifle magazine (hollow-point)"
 	icon_state = "rifle_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
+
+/obj/item/ammo_magazine/rifle_75/scrap
+	name = "old rifle magazine (ball)"
+	icon_state = "rifle_s"
+	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
 ////short////
 
@@ -492,6 +510,11 @@
 	icon_state = "hrifle_l"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
 
+/obj/item/ammo_magazine/heavy_rifle_408/scrap
+	name = "old heavy rifle magazine (ball)"
+	icon_state = "hrifle_s"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/scrap
+
 /obj/item/ammo_magazine/heavy_rifle_408_drum
 	name = "heavy rifle drum magazine"
 	icon_state = "hdrum"
@@ -612,6 +635,11 @@
 	icon_state = "slpistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
+/obj/item/ammo_magazine/speed_loader_pistol_35/scrap
+	name = "old speed loader (.35 Special)"
+	icon_state = "slpistol_s"
+	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
+
 //////// .40 SPEEDLOADERS //////////
 
 /obj/item/ammo_magazine/speed_loader_magnum_40
@@ -644,6 +672,11 @@
 	name = "speed loader (.40 Magnum hollow-point)"
 	icon_state = "slmagnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
+
+/obj/item/ammo_magazine/speed_loader_magnum_40/scrap
+	name = "old speed loader (.40 Magnum)"
+	icon_state = "slmagnum_s"
+	ammo_type = /obj/item/ammo_casing/magnum/scrap
 
 ////.50 speed loader////
 
