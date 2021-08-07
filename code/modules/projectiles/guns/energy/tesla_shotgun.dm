@@ -1,9 +1,9 @@
 /obj/item/gun/energy/tesla_shotgun
 	name = "\"Nikolai's Fervor\" tesla shotgun"
 	desc = "An energy shotgun that drains power from a nearby APC to shoot electric blasts. May take time to charge and piss off your local guild adept."
-	icon = 'icons/obj/guns/energy/slimegun.dmi'
-	icon_state = "slimepistol"
-	item_state = "slimepistol"
+	icon = 'icons/obj/guns/energy/tesla_shotgun.dmi'
+	icon_state = "tesla_shotgun"
+	item_state = "tesla_shotgun"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 	price_tag = 500
 	charge_cost = 100
@@ -22,6 +22,9 @@
 /obj/item/gun/energy/tesla_shotgun/manual
 	name = "\"Edison's Lament\" tesla shotgun"
 	desc = "An energy shotgun that drains power from a nearby APC. This one can be pumped to charge faster. Is it really better?"
+	icon = 'icons/obj/guns/energy/tesla_shotgun_manual.dmi'
+	icon_state = "tesla_shotgun_manual"
+	item_state = "tesla_shotgun_manual"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GOLD = 2.5)
 
 // Charge the cell by pumping it.
@@ -39,6 +42,9 @@
 /obj/item/gun/energy/tesla_shotgun/high_damage
 	name = "\"Modern Solutions\" tesla shotgun"
 	desc = "An energy shotgun that drains power from a nearby APC. This one shoots a stronger beam than others."
+	icon = 'icons/obj/guns/energy/tesla_shotgun_powerful.dmi'
+	icon_state = "tesla_shotgun_powerful"
+	item_state = "tesla_shotgun_powerful"
 	charge_cost = 200
 	projectile_type = /obj/item/projectile/beam/shotgun/strong
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_PLASMA = 2.5)
@@ -46,6 +52,9 @@
 /obj/item/gun/energy/tesla_shotgun/atomic
 	name = "\"Atom Bomb\" tesla shotgun"
 	desc = "An energy shotgun that drains power from a nearby APC. This one doesn't need an APC to charge thanks to an atomic power cell. Oh baby!"
+	icon = 'icons/obj/guns/energy/tesla_shotgun_atomic.dmi'
+	icon_state = "tesla_shotgun_atomic"
+	item_state = "tesla_shotgun_atomic"
 	cell_type = /obj/item/cell/medium/moebius/nuclear
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2.5)
 
