@@ -2,6 +2,7 @@
 	build_name = "bluespace snare console"
 	origin_tech = list(TECH_DATA = 4, TECH_BLUESPACE = 6)
 	build_path = /obj/machinery/computer/bssilk_control
+	price_tag = 150
 
 /obj/item/circuitboard/bssilk_hub
 	build_name = "bluespace snare hub"
@@ -15,3 +16,4 @@
 		/obj/item/stock_parts/subspace/crystal = 1
 	)
 	board_type = "machine"
+	price_tag = 150

@@ -7,6 +7,7 @@
 	origin_tech = list(TECH_BLUESPACE = 6)
 	//var/locking_access = access_rd
 	var/silk_id = "" //using by snare controller to teleport user to controller's mark
+	price_tag = 250
 
 /obj/item/clothing/accessory/bs_silk/New()
 	. = ..()

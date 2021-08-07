@@ -140,6 +140,7 @@ Frequency:
 	var/portal_fail_chance = null
 	var/cell_charge_per_attempt = 33
 	var/entropy_value = 2  //for bluespace entropy
+	price_tag = 780
 
 /obj/item/hand_tele/Initialize()
 	. = ..()
@@ -256,6 +257,7 @@ Frequency:
 	item_state = "telespear"
 	slot_flags = SLOT_BACK
 	var/entropy_value = 1
+	price_tag = 350
 
 /obj/item/tele_spear/attack(mob/living/carbon/human/M, mob/living/carbon/user)
 	playsound(src.loc, 'sound/effects/EMPulse.ogg', 65, 1)

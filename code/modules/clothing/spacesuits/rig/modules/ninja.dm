@@ -84,6 +84,8 @@
 	usable = 1
 	selectable = 1
 
+	price_tag = 3500
+
 	var/realign_time = 0 //Used for skill-less teleports.
 
 	engage_string = "Emergency Leap"

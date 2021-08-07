@@ -5,11 +5,11 @@
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/mac,
 			/obj/item/gun/projectile/automatic/c20r,
-			/obj/item/gun/projectile/automatic/sts,
-			/obj/item/gun/projectile/automatic/straylight,
-			/obj/item/gun/projectile/automatic/wirbelwind,
+			/obj/item/gun/projectile/automatic/sts/lrifle,
+			/obj/item/gun/projectile/automatic/sts/rifle,
+			/obj/item/gun/projectile/automatic/sts/hrifle,
 			/obj/item/gun/projectile/automatic/greasegun,
-			/obj/item/gun/projectile/automatic/bulldog,
+			/obj/item/gun/projectile/automatic/pitbull,
 			/obj/item/gun/projectile/boltgun/scout,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa,
@@ -39,7 +39,7 @@
 			/obj/item/gun/energy/pulse/cassad
 		),
 		"Grenades" = list(
-			/obj/item/gun/projectile/grenade/lenar,
+			/obj/item/gun/projectile/shotgun/pump/china,
 			/obj/item/grenade/chem_grenade/incendiary,
 			/obj/item/grenade/chem_grenade/teargas,
 			/obj/item/grenade/empgrenade,
