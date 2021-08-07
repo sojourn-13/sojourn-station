@@ -33,4 +33,5 @@
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 	name = "mech sword"
 	desc = "A huge sword designed to be wielded by an exosuit. Somehow can't hit walls."
+	icon_state = "mech_sword"
 	dam_force = 40 // Big sword make big boo boo - R4d6
