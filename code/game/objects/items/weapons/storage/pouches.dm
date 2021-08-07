@@ -4,6 +4,7 @@
 	icon = 'icons/inventory/pockets/icon.dmi'
 	icon_state = "pouch"
 	item_state = "pouch"
+	price_tag = 400
 
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT //Pouches can be worn on belt
@@ -57,6 +58,7 @@
 	storage_slots = null //Uses generic capacity
 	max_storage_space = DEFAULT_SMALL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
+	price_tag = 500
 
 /obj/item/storage/pouch/medium_generic/opifex
 	name = "opifex smuggle pouch"
@@ -75,6 +77,7 @@
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_BIOMATTER = 20)
+	price_tag = 1000
 
 /obj/item/storage/pouch/medical_supply
 	name = "medical supply pouch"

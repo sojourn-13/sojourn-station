@@ -90,11 +90,6 @@
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
 
-/obj/item/gun/get_item_cost(export)
-	if(export)
-		return ..() * 0.5 //Guns should be sold in the player market.
-	..()
-
 /obj/item/gun/Initialize()
 	. = ..()
 	initialize_firemodes()

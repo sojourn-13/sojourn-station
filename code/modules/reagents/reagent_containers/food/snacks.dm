@@ -2149,7 +2149,7 @@
 
 /obj/item/reagent_containers/food/snacks/bigbiteburger
 	name = "big bite burger"
-	desc = "Forget the Big Mac. THIS is the future!"
+	desc = "Forget the Big Mac. THIS is the future! It has big \"R\" stamped on it's bun."
 	icon_state = "bigbiteburger"
 	filling_color = "#E3D681"
 	bitesize = 3

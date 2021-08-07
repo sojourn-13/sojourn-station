@@ -482,7 +482,7 @@
 		"Lizard Tail",
 		"Lizard Tail, Short"
 		)
-	permitted_wings = list("Spines,Aquatic",
+	permitted_wings = list("Spines, Aquatic",
 		"Spines, Long",
 		"Spines, Long Membrane",
 		"Spines, Short",

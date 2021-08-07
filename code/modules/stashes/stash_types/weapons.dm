@@ -11,7 +11,7 @@
 
 
 //Contains boomsticks, ie, shotguns
-/datum/stash/weapon/mutiny_boomstick
+/datum/stash/mutiny_boomstick
 	story_type = STORY_MUTINY
 	directions = DIRECTION_COORDS | DIRECTION_LANDMARK
 	contents_list_base = list(/obj/random/gun_shotgun = 2,
@@ -28,14 +28,14 @@
 	lore = "MUTINY TOMORROW 0300 MEET AT %D <br><br>BRING YOUR OWN BOOMSTICK ONLY A FEW SPARES"
 
 //because this one is styled like a telegram, lets capitalise the directions
-/datum/stash/weapon/mutiny_boomstick/create_direction_string(var/data)
+/datum/stash/mutiny_boomstick/create_direction_string(var/data)
 	.=..()
 	direction_string = capitalize(direction_string)
 
 
 
 //Some crewmembers stockpiled anti-synthetic weapons in preparation for overthrowing some mad intelligence
-/datum/stash/weapon/mutiny_AI
+/datum/stash/mutiny_AI
 	story_type = STORY_MALFUNCTION
 	lore = "AI ACTING UP. GO HERE, %D BRING OTHERS. RADIO SILENCE."
 	contents_list_base = list(/obj/item/gun/energy/ionrifle = 1,
@@ -57,7 +57,7 @@
 	/obj/item/storage/belt/utility/full = 70)
 
 //Variant of the above with slightly deeper story
-/datum/stash/weapon/mutiny_AI/robots
+/datum/stash/mutiny_AI/robots
 
 	lore = "THE ROBOTS ARE USING THE INTERCOMM MICROPHONES<br>\
 	 okay got it<br>\
@@ -74,7 +74,7 @@
 
 //Crew get mad and mutiny for various reasons. Stockpile a broad variety of weapons and ammo
 //There are sooo many mutiny stories
-/datum/stash/weapon/mutiny
+/datum/stash/mutiny
 	story_type = STORY_MUTINY
 	contents_list_base = list(/obj/random/gun_cheap = 3,
 	/obj/random/ammo = 8,
@@ -95,7 +95,7 @@
 
 
 //Another mutiny, a crew enraged by atmospheric failures
-/datum/stash/weapon/mutiny/overworked
+/datum/stash/mutiny/overworked
 	contents_list_extra = list(/obj/item/clothing/mask/gas = 3)
 	lore = "Logbook:<br>\
 	 Engineering has worked for six days in pressure suits with the rest of us packed in the upper colony.<br>\
@@ -103,7 +103,7 @@
 A few people are talking about striking out, just like Jeremiah did. I'm in and we're meeting at %D. Fuck this place. Once we find enough guns, that is."
 
 
-/datum/stash/weapon/mutiny/warden
+/datum/stash/mutiny/warden
 	contents_list_extra = list(/obj/random/gun_normal = 3, /obj/random/ammo = 6)
 	directions = DIRECTION_IMAGE
 	lore = "Commander,<br>\
@@ -113,7 +113,7 @@ A few people are talking about striking out, just like Jeremiah did. I'm in and 
 
 
 
-/datum/stash/weapon/mutiny/starvation
+/datum/stash/mutiny/starvation
  	//Make sure there's a shotgun with slugs in the stash, as described in the text.
  	//Also the wardens were hoarding food
  	contents_list_extra = list(/obj/random/gun_shotgun = 1, /obj/item/ammo_magazine/ammobox/shotgun = 1, /obj/random/rations = 6)

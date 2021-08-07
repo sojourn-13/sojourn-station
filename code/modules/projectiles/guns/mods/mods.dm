@@ -161,6 +161,7 @@
 	name = "H&S \"Cop Block\" Trigger"
 	desc = "A trigger guard to force the safety on a gun, used to pacify weapons from targets or trigger happy marshals. A simpler way of making a weapon display-only"
 	icon_state = "Cop_Block"
+	price_tag = 50
 
 /obj/item/gun_upgrade/trigger/cop_block/New()
 	..()

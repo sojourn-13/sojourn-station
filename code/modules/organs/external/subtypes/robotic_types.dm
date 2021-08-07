@@ -3,24 +3,28 @@
 	desc = "Prosthesis with white polymer casing with blue holo-displays."
 	force_icon = 'icons/mob/human_races/cyberlimbs/bishop.dmi'
 	model = "bishop"
+	price_tag = 200
 
 /obj/item/organ/external/robotic/hesphaistos
 	name = "Hesphaistos"
 	desc = "Prosthesis with militaristic black and green casing with gold stripes."
 	force_icon = 'icons/mob/human_races/cyberlimbs/hesphaistos.dmi'
 	model = "hesphaistos"
+	price_tag = 200
 
 /obj/item/organ/external/robotic/zenghu
 	name = "Zeng-Hu"
 	desc = "Prosthesis with rubbery fleshtone covering with visible seams."
 	force_icon = 'icons/mob/human_races/cyberlimbs/zenghu.dmi'
 	model = "zenghu"
+	price_tag = 200
 
 /obj/item/organ/external/robotic/xion
 	name = "Xion"
 	desc = "Prosthesis with minimalist black and red casing."
 	force_icon = 'icons/mob/human_races/cyberlimbs/xion.dmi'
 	model = "xion"
+	price_tag = 200
 
 //Character setup prostheses
 
@@ -29,12 +33,26 @@
 	desc = "Generic gray prostesis for everyday use."
 	force_icon = 'icons/mob/human_races/cyberlimbs/asters.dmi'
 	model = "asters"
+	price_tag = 300
 
 /obj/item/organ/external/robotic/serbian
 	name = "\"Voidwolf Arms\""
 	desc = "Battle hardened green and brown prosthesis rebranded several times."
 	force_icon = 'icons/mob/human_races/cyberlimbs/serbian.dmi'
 	model = "serbian"
+	price_tag = 400
+
+/obj/item/organ/external/robotic/serbian/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/serbian/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/serbian/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/serbian/r_leg
+	default_description = /datum/organ_description/leg/right
 
 /obj/item/organ/external/robotic/frozen_star
 	name = "\"H&S Augments\""
@@ -42,14 +60,39 @@
 	force_icon = 'icons/mob/human_races/cyberlimbs/frozen_star.dmi'
 	model = "frozen_star"
 
+/obj/item/organ/external/robotic/frozen_star/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/frozen_star/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/frozen_star/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/frozen_star/r_leg
+	default_description = /datum/organ_description/leg/right
+
 // Artificer Guild
 /obj/item/organ/external/robotic/technomancer
 	name = "Artificer Guild \"Homebrew\""
 	desc = "Artificer Guild \"branded\" \"functional\" prosthesis."
 	force_icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi'
 	model = "technomancer"
+	price_tag = 300
 
-obj/item/organ/external/robotic/technomancer/groin
+/obj/item/organ/external/robotic/technomancer/l_arm
+	default_description = /datum/organ_description/arm/left
+
+/obj/item/organ/external/robotic/technomancer/r_arm
+	default_description = /datum/organ_description/arm/right
+
+/obj/item/organ/external/robotic/technomancer/l_leg
+	default_description = /datum/organ_description/leg/left
+
+/obj/item/organ/external/robotic/technomancer/r_leg
+	default_description = /datum/organ_description/leg/right
+
+/obj/item/organ/external/robotic/technomancer/groin
 	name = "\"Artificer Guild\" Groin"
 	default_description = /datum/organ_description/groin
 
@@ -90,6 +133,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	min_broken_damage = 30
 	min_malfunction_damage = 15
+	price_tag = 100
 
 /obj/item/organ/external/robotic/junktech/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -114,6 +158,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	max_damage = 60
 	min_broken_damage = 40
 	min_malfunction_damage = 30
+	price_tag = 700
 
 /obj/item/organ/external/robotic/moebius/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -149,6 +194,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	max_damage = 60
 	min_broken_damage = 40
 	min_malfunction_damage = 30
+	price_tag = 800
 
 /obj/item/organ/external/robotic/blackshield/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -180,6 +226,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	force_icon = 'icons/mob/human_races/cyberlimbs/church.dmi'
 	model = "church"
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_BIOMATTER = 30)
+	price_tag = 400
 
 /obj/item/organ/external/robotic/church/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -214,6 +261,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASMA = 0.5) //Plasma needed as a material that excelsiors can't teleport in
 	max_damage = 65
 	min_broken_damage = 45
+	price_tag = 1 //commie garbage
 
 /obj/item/organ/external/robotic/excelsior/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -237,6 +285,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50
+	price_tag = 1200
 
 /obj/item/organ/external/robotic/one_star/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -250,7 +299,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 /obj/item/organ/external/robotic/one_star/r_leg
 	default_description = /datum/organ_description/leg/right
 
-// Greyson
+// Nashef
 /obj/item/organ/external/robotic/nashef
 	name = "Nashef-Agunabi"
 	desc = "A robotic limb crafted from metallic hydrogen and gold"
@@ -260,6 +309,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	matter = list(MATERIAL_HYDROGEN = 5, MATERIAL_GOLD = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50
+	price_tag = 1500 //Still gold, plus R A R E.
 
 /obj/item/organ/external/robotic/nashef/torso
 	name = "\"Nashef-Agunabi\" Torso"

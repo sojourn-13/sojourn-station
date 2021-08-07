@@ -52,23 +52,23 @@
 	else
 		name = "blood pack"
 
-
+#define bloodtypeandpackname(bloodtype) name = "blood pack ("+bloodtype+")"; blood_type = bloodtype;
 /obj/item/reagent_containers/blood/APlus
-	blood_type = "A+"
+	bloodtypeandpackname("A+")
 
 /obj/item/reagent_containers/blood/AMinus
-	blood_type = "A-"
+	bloodtypeandpackname("A-")
 
 /obj/item/reagent_containers/blood/BPlus
-	blood_type = "B+"
+	bloodtypeandpackname("B+")
 
 /obj/item/reagent_containers/blood/BMinus
-	blood_type = "B-"
+	bloodtypeandpackname("B-")
 
 /obj/item/reagent_containers/blood/OPlus
-	blood_type = "O+"
+	bloodtypeandpackname("O+")
 
 /obj/item/reagent_containers/blood/OMinus
-	blood_type = "O-"
+	bloodtypeandpackname("O-")
 
 /obj/item/reagent_containers/blood/empty

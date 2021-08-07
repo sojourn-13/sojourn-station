@@ -15,6 +15,7 @@
 	toggleable = 1
 	disruptable = 1
 	disruptive = 0
+	price_tag = 5000
 
 	use_power_cost = 50
 	active_power_cost = 10

@@ -41,9 +41,10 @@
 	initial_icon = "deathripley"
 	step_in = 1
 	step_energy_drain = 1
-	opacity=0
+	opacity = 0
 	lights_power = 60
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley/deathripley
+	price_tag = 7000
 
 /obj/mecha/working/ripley/deathripley/New()
 	..()

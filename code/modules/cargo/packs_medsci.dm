@@ -14,7 +14,7 @@
 					/obj/item/reagent_containers/glass/bottle/stoxin,
 					/obj/item/storage/box/syringes,
 					/obj/item/storage/box/autoinjectors)
-	cost = 800
+	cost = 500
 	containertype = /obj/structure/closet/crate/medical
 	crate_name = "medical crate"
 	group = "Medical / Science"
@@ -23,7 +23,7 @@
 	name = "Spare Defibrillator Crate"
 	contains = list(/obj/item/device/defib_kit,
 					/obj/item/cell/large/high)
-	cost = 800
+	cost = 300
 	containertype = /obj/structure/closet/crate/medical
 	crate_name = "medical crate"
 	group = "Medical / Science"
@@ -34,7 +34,7 @@
 					/obj/item/virusdish/random,
 					/obj/item/virusdish/random,
 					/obj/item/virusdish/random)
-	cost = 2000
+	cost = 200
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "virus sample crate"
 	access = access_cmo
@@ -43,7 +43,7 @@
 /datum/supply_pack/coolanttank
 	name = "Coolant Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/coolanttank)
-	cost = 1000
+	cost = 100
 	containertype = /obj/structure/largecrate
 	crate_name = "coolant tank crate"
 	group = "Medical / Science"
@@ -62,7 +62,7 @@
 					/obj/item/device/assembly/timer,
 					/obj/item/device/assembly/timer,
 					/obj/item/device/assembly/timer)
-	cost = 1200
+	cost = 120
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
 	crate_name = "plasma assembly crate"
 	access = access_tox_storage
@@ -73,7 +73,7 @@
 	contains = list(/obj/item/clothing/mask/breath/medical,
 					/obj/item/tank/anesthetic,
 					/obj/item/storage/firstaid/surgery)
-	cost = 960
+	cost = 150
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "surgery crate"
 	access = access_moebius
@@ -85,7 +85,7 @@
 	contains = list(/obj/item/clothing/mask/breath/medical,
 					/obj/item/tank/anesthetic,
 					/obj/item/storage/firstaid/surgery/traitor)
-	cost = 1260
+	cost = 300
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "surgery crate"
 	access = access_moebius
@@ -99,14 +99,14 @@
 					/obj/item/clothing/head/surgery/green,
 					/obj/item/storage/box/masks,
 					/obj/item/storage/box/gloves)
-	cost = 720
+	cost = 150
 	containertype = /obj/structure/closet/crate
 	crate_name = "sterile equipment crate"
 	group = "Medical / Science"
 
 /datum/supply_pack/bloodpacks
 	name = "Blood Pack Variety Crate"
-	cost = 1200
+	cost = 200
 	contains = list(/obj/item/reagent_containers/blood/empty,
 					/obj/item/reagent_containers/blood/empty,
 					/obj/item/reagent_containers/blood/APlus,
@@ -121,7 +121,7 @@
 
 /datum/supply_pack/medical_stand
 	name = "Medical Stand Crate"
-	cost = 560
+	cost = 120
 	contains = list(/obj/structure/medical_stand)
 	containertype = /obj/structure/closet/crate/medical
 	crate_name = "medical stand crate"
@@ -129,7 +129,7 @@
 
 /datum/supply_pack/body_bags
 	name = "Body Bags Crate"
-	cost = 480
+	cost = 100
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
@@ -171,7 +171,7 @@
 	contains = list(
 		/obj/item/stack/material/diamond/tenstack
 	)
-	cost = 8000
+	cost = 4000
 	crate_name = "diamond sheet crate"
 	group = "Medical / Science"
 	containertype = /obj/structure/closet/crate
@@ -194,7 +194,7 @@
 					/obj/item/computer_hardware/hard_drive/portable/design,
 					/obj/item/computer_hardware/hard_drive/portable/design)
 	name = "Empty Design Disk Crate"
-	cost = 800
+	cost = 400
 	crate_name ="Empty disks crate"
 	group = "Miscellaneous"
 
@@ -211,25 +211,9 @@
 		/obj/item/hydrogen_fuel_cell,
 		/obj/item/hydrogen_fuel_cell,
 		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
-		/obj/item/hydrogen_fuel_cell,
 		/obj/item/hydrogen_fuel_cell
 	)
-	cost = 3000 // Not cheap, but basically 1$ per unit of hydrogen-plasma, this crate contain 3000 hydrogen-plasma
+	cost = 600 // Not cheap, but basically 1$ per unit of hydrogen-plasma, this crate contain 600 hydrogen-plasma
 	crate_name = "cryo-sealed hydrogen crate"
 	group = "Medical / Science"
 	containertype = /obj/structure/closet/crate

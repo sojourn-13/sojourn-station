@@ -7,7 +7,7 @@
 	contains = list(/obj/item/storage/box/flares,
 					/obj/item/storage/box/flares,
 					/obj/item/storage/box/flares)
-	cost = 800
+	cost = 80
 	crate_name = "flare boxes crate"
 	group = "Operations"
 
@@ -15,10 +15,10 @@
 	name = "Floodlight Crate"
 	contains = list(/obj/machinery/floodlight,
 					/obj/machinery/floodlight)
-	cost = 1120
+	cost = 112
 	crate_name = "floodlight crate"
 	group = "Operations"
-
+/*
 /datum/supply_pack/mule
 	name = "MULEbot Crate"
 	contains = list(/obj/machinery/bot/mulebot)
@@ -26,7 +26,7 @@
 	containertype = /obj/structure/largecrate/mule
 	crate_name = "MULEbot crate"
 	group = "Operations"
-
+*/
 /datum/supply_pack/toner
 	name = "Toner Cartridges Crate"
 	contains = list(/obj/item/device/toner,
@@ -35,7 +35,7 @@
 					/obj/item/device/toner,
 					/obj/item/device/toner,
 					/obj/item/device/toner)
-	cost = 480
+	cost = 48
 	crate_name = "toner cartridges crate"
 	group = "Operations"
 
@@ -47,6 +47,6 @@
 					/obj/item/grenade/chem_grenade/metalfoam,
 					/obj/item/grenade/chem_grenade/metalfoam,
 					/obj/item/grenade/chem_grenade/metalfoam)
-	cost = 800
+	cost = 200
 	crate_name = "metal foam grenades crate"
 	group = "Operations"

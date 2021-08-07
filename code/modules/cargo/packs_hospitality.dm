@@ -73,7 +73,7 @@
 					/obj/item/paper/card/flower,
 					/obj/item/paper/card/flower,
 					/obj/item/clothing/head/costume/misc/cake)
-	cost = 1120
+	cost = 200
 	containertype = /obj/structure/closet/crate
 	crate_name = "birthday catering crate"
 	group = "Hospitality"
@@ -93,7 +93,7 @@
 					/obj/item/reagent_containers/food/drinks/flask/barflask = 2,/obj/item/reagent_containers/food/drinks/bottle/bluecuracao = 2,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 30,/obj/item/reagent_containers/food/drinks/bottle/grenadine = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/melonliquor = 2,/obj/item/reagent_containers/food/drinks/bottle/absinthe = 1)
-	cost = 1120
+	cost = 300
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "bartending resupply crate"
 	group = "Hospitality"
@@ -107,7 +107,7 @@
 					/obj/item/reagent_containers/food/snacks/sliceable/limecake,
 					/obj/item/reagent_containers/food/snacks/sliceable/lemoncake,
 					/obj/item/reagent_containers/food/snacks/sliceable/chocolatecake,)
-	cost = 800
+	cost = 400
 	containertype = /obj/structure/closet/crate
 	crate_name = "Party Cake Box"
 	group = "Hospitality"
@@ -119,7 +119,7 @@
 					/obj/random/junkfood/onlyburger,
 					/obj/random/junkfood/onlyburger,
 					/obj/random/junkfood/onlyburger)
-	cost = 800
+	cost = 400
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "burger crate"
 	group = "Hospitality"
@@ -128,7 +128,7 @@
 	name = "Cake Surprise Crate (x2)"
 	contains = list(/obj/random/junkfood/onlycake,
 					/obj/random/junkfood/onlycake)
-	cost = 800
+	cost = 150
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "cake crate"
 	group = "Hospitality"
@@ -150,7 +150,7 @@
 					/obj/item/reagent_containers/food/snacks/mint,
 					/obj/item/reagent_containers/food/snacks/mint,
 					/obj/item/reagent_containers/food/snacks/mint)
-	cost = 960
+	cost = 150
 	containertype = /obj/structure/closet/crate
 	crate_name = "corporate catering crate"
 	group = "Hospitality"
@@ -171,7 +171,7 @@
 					/obj/item/reagent_containers/food/snacks/meat,
 					/obj/item/reagent_containers/food/snacks/meat)
 
-	cost = 720
+	cost = 100
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "kitchen supply crate"
 	group = "Hospitality"
@@ -190,7 +190,7 @@
 					/obj/item/storage/lunchbox/rainbow,
 					/obj/item/storage/lunchbox/rainbow,
 					/obj/item/storage/lunchbox/rainbow)
-	cost = 320
+	cost = 120
 	containertype = /obj/structure/closet/crate
 	crate_name  = "lunchbox crate"
 	group = "Hospitality"
@@ -210,7 +210,7 @@
 					/obj/item/reagent_containers/food/drinks/bottle/small/beer,
 					/obj/item/reagent_containers/food/drinks/bottle/small/beer,
 					/obj/item/reagent_containers/food/drinks/bottle/small/beer)
-	cost = 960
+	cost = 175
 	containertype = /obj/structure/closet/crate
 	crate_name = "party catering crate"
 	group = "Hospitality"
@@ -222,7 +222,7 @@
 					/obj/random/junkfood/onlypizza,
 					/obj/random/junkfood/onlypizza,
 					/obj/random/junkfood/onlypizza)
-	cost = 800
+	cost = 300
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "pizza crate"
 	group = "Hospitality"
@@ -234,7 +234,7 @@
 					/obj/item/circuitboard/chemical_dispenser/soda,
 					/obj/item/storage/box/drinkingglasses,
 					/obj/item/storage/box/drinkingglasses)
-	cost = 850
+	cost = 500
 	containertype = /obj/structure/closet/crate
 	crate_name = "hospitality dispenser"
 	group = "Hospitality"
@@ -248,7 +248,7 @@
 
 /datum/supply_pack/band
 	name = "Music Cate"
-	cost = 750
+	cost = 550
 	contains = list(/obj/item/device/synthesized_instrument/guitar,
 					/obj/item/device/synthesized_instrument/guitar/multi,
 					/obj/item/device/synthesized_instrument/synthesizer,
