@@ -39,8 +39,10 @@
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/commanderuniform(src)
-	if(prob(10))
+	if(prob(90))
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/armorer
 	name = "sergeant's locker"
@@ -51,9 +53,14 @@
 	new /obj/item/gun/projectile/automatic/sts/rifle/blackshield(src)
 	new /obj/item/ammo_magazine/rifle_75/lethal(src)
 	new /obj/item/ammo_magazine/rifle_75/lethal(src)
-	new /obj/item/gun/projectile/colt/ten/dark(src)
-	new /obj/item/ammo_magazine/magnum_40/lethal(src)
-	new /obj/item/ammo_magazine/magnum_40/lethal(src)
+	if(prob(60))
+		new /obj/item/gun/projectile/colt/ten/dark(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
+	else
+		new /obj/item/gun/projectile/lamia/dark(src)
+		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 	new /obj/item/tool/sword/saber/militiasergeant(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
@@ -83,8 +90,10 @@
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/sergeantuniform(src)
-	if(prob(10))
+	if(prob(80))
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/personal/trooper
 	name = "blackshield trooper's locker"
@@ -99,9 +108,14 @@
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 	new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-	new /obj/item/gun/projectile/colt/ten/dark(src)
-	new /obj/item/ammo_magazine/magnum_40(src)
-	new /obj/item/ammo_magazine/magnum_40(src)
+	if(prob(60))
+		new /obj/item/gun/projectile/colt/ten/dark(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
+		new /obj/item/ammo_magazine/magnum_40/lethal(src)
+	else
+		new /obj/item/gun/projectile/lamia/dark(src)
+		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/accessory/ranks/trooper(src)
@@ -127,8 +141,10 @@
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/trooperuniform(src)
-	if(prob(10))
+	if(prob(50))
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
@@ -173,8 +189,10 @@
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/trooperuniform(src)
-	if(prob(10))
+	if(prob(50))
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/militia/armor
 	name = "blackshield armor locker"
@@ -182,19 +200,24 @@
 	icon_state = "trooper"
 
 /obj/structure/closet/secure_closet/militia/armor/populate_contents()
-	new /obj/item/clothing/head/helmet/ballistic/militia(src)
-	new /obj/item/clothing/head/helmet/ballistic/militia(src)
+///camo green
+	new /obj/item/clothing/head/helmet/ballistic/green(src)
+	new /obj/item/clothing/head/helmet/ballistic/green(src)
+	new /obj/item/clothing/suit/armor/platecarrier/green(src)
+	new /obj/item/clothing/suit/armor/platecarrier/green(src)
+	new /obj/item/storage/belt/webbing/green(src)
+	new /obj/item/storage/belt/webbing/green(src)
+///camo tan
+	new /obj/item/clothing/head/helmet/ballistic/tan(src)
+	new /obj/item/clothing/head/helmet/ballistic/tan(src)
+	new /obj/item/clothing/suit/armor/platecarrier/tan(src)
+	new /obj/item/clothing/suit/armor/platecarrier/tan(src)
+	new /obj/item/storage/belt/webbing(src)
+	new /obj/item/storage/belt/webbing(src)
+///standerd issue
 	new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	new /obj/item/clothing/suit/armor/platecarrier/militia(src)
 	new /obj/item/clothing/suit/armor/platecarrier/militia(src)
-	new /obj/item/clothing/suit/armor/platecarrier/militia(src)
-	new /obj/item/clothing/suit/armor/platecarrier/militia(src)
-	new /obj/item/clothing/suit/armor/flackvest/militia(src)
-	new /obj/item/clothing/suit/armor/flackvest/militia(src)
-	new /obj/item/clothing/suit/armor/flackvest/militia(src)
-	new /obj/item/clothing/suit/armor/flackvest/militia(src)
-	new /obj/item/storage/belt/webbing/black(src)
-	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/webbing/black(src)
