@@ -30,7 +30,7 @@
 	var/itemstring = ""
 
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
-		iconstring += "_slide"
+		iconstring += "_empty"
 
 	if (silenced)
 		iconstring += "_s"

@@ -547,7 +547,7 @@
 		STAT_COG = 2, //trash stats for mass-printed trash
 		STAT_MEC = 2
 	)
-	perk = /datum/perk/nt_oddity/bluespace
+	perk = /datum/perk/bluespace
 
 /obj/item/oddity/si_bluespace_scanner/examine(mob/living/user, distance)
 	. = ..()
