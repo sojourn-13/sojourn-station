@@ -797,31 +797,39 @@ th.bot {
     width: 99%;
     padding: 5px;
 }
+
 #sciTechTreeContainer {
+	position: relative;
 	width: 99%;
-    height: 590px;
+	height: 590px;
+	overflow: hidden;
+	border: 1px solid #40628a;
+	background: url(nanomapBackground.png);
 }
+
 /* [Tooltips of description] */
-.withToolTip .ImTooltip, .withToolTipInTooltip .ImTooltipInTooltip{
-	display			: none;
-	padding			: 10px;
-	margin-left		: 8px;
+.sciTechTreeIcon span {
+	visibility		: hidden;
+	opacity			: 0;
+	transition		: opacity 0.3s linear;
+	padding			: 10px; 
+	margin-left		: 8px; 
 	width			: 200px;
 	z-index			: 999;
-	background      : #717177;
-	border          : 4px solid #666;
-	border-radius   : 0px 5px;
-	color           : #d1d1dd;
-	text-align      : center;
-    white-space     : pre-line;
-    overflow: wrap;
 }
-.withToolTip:hover .ImTooltip, .withToolTipInTooltip:hover .ImTooltipInTooltip{
-	display			: block;
+.sciTechTreeIcon:hover span {
+	visibility		: visible;
+	opacity			: 1;
 	position		: absolute;
+	background		: #717177;
+	border			: 4px solid #666;
+	border-radius	: 5px;
+	color			: #d1d1dd;
+	text-align		: center;
+	white-space		: pre-line;
 }
-.sciTechTreeIcon .ImTooltip img{
-	background-image: url(science.png);
+img.sciTechTreeIconToolTip {
+    background-image: url(science.png);
 }
 /* [/Tooltips of description] */
 .sciTechTreeIcon {
@@ -845,7 +853,7 @@ th.bot {
 
 .sciTechResearched:hover {
     background: #3fB44c;
-}	
+}
 
 .sciTechCantResearch {
 	background: #942f3c;
@@ -900,6 +908,8 @@ th.bot {
 .icon-rapidsyringegun { background-position: -160px -96px; }
 .icon-scalpelmanager { background-position: -192px -96px; }
 .icon-stunbaton { background-position: -224px -96px; }
+.icon-cryobag { background-position: -256px -256px; }
+.icon-omnisurgery { background-position: -288px -96px; }
 
 .icon-seccomputer { background-position: 0px -128px; }
 .icon-flash { background-position: -32px -128px; }
@@ -909,10 +919,17 @@ th.bot {
 .icon-tempgun { background-position: -160px -128px; }
 .icon-teslagun { background-position: -192px -128px; }
 .icon-stunrevolver { background-position: -224px -128px; }
+.icon-armor { background-position: -288px -0px; }
+.icon-void_suit { background-position: -288px -32px; }
+.icon-abnegate { background-position: -320px -256px; }
+.icon-hydrogen { background-position: -320px -320px; }
 
 .icon-supercell { background-position: 0px -160px; }
 .icon-hypercell { background-position: -32px -160px; }
+.icon-omegacell { background-position: -288px -224px; }
+.icon-atomsmall { background-position: -288px -160px; }
 .icon-bluespacecell { background-position: -64px -160px; }
+.icon-atomlarge { background-position: -288px -192px; }
 .icon-solarcontrol { background-position: -96px -160px; }
 .icon-generator { background-position: -128px -160px; }
 .icon-supergenerator { background-position: -160px -160px; }
@@ -945,6 +962,10 @@ th.bot {
 .icon-rigscanner { background-position: -160px -256px; }
 .icon-rigtaser { background-position: -192px -256px; }
 .icon-rignuclearreactor { background-position: -224px -256px; }
+.icon-riglethals { background-position: -256px -96px; }
+.icon-riginjector { background-position: -256px -128px; }
+.icon-rigmining { background-position: -256px -160px; }
+.icon-rigstorage { background-position: -256px -224px; }
 
 .icon-shield { background-position: 0px -288px; }
 .icon-fusion { background-position: -32px -288px; }
@@ -955,6 +976,8 @@ th.bot {
 .icon-freedom { background-position: -160px -288px; }
 .icon-module { background-position: -192px -288px; }
 .icon-borgmodule { background-position: -224px -288px; }
+.icon-combatdefib { background-position: -288px -64px; }
+.icon-cleaner { background-position: -288px -256px; }
 
 .icon-plasmablock { background-position: 0px -320px; }
 .icon-booster { background-position: -32px -320px; }
@@ -963,7 +986,21 @@ th.bot {
 .icon-toxincoater { background-position: -128px -320px; }
 .icon-mindswapper { background-position: -160px -320px; }
 .icon-holdingpouch { background-position: -192px -320px; }
-.icon-spiderlegs { background-position: -224px -320px; }
+
+.icon-cog { background-position: -256px -288px; }
+.icon-window { background-position: -320px -96px; }
+.icon-mastermind { background-position: -320px -64px; }
+.icon-greysoncells { background-position: -288px -128px; }
+.icon-greysonsaw { background-position: -320px -192px; }
+.icon-greysonwelder { background-position: -288px -288px; }
+.icon-greysondrill { background-position: -256px -320px; }
+.icon-greysonai { background-position: -224px -320px; }
+.icon-greysonfuel { background-position: -288px -320px; }
+.icon-greysonstockparts { background-position: -320px 0px; }
+.icon-greysonroboticleg { background-position: -320px -32px; }
+.icon-greysonthermals { background-position: -320px -128px; }
+.icon-greysonarmor { background-position: -320px -160px; }
+.icon-roomba_kit { background-position: -320px -224px; }
 
 .sciMenuButton {
     width: 300px;
