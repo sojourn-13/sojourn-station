@@ -58,7 +58,7 @@
 	var/radiation_mod = 1                    // Radiation modifier
 	var/flash_mod =     1                    // Stun from blindness modifier.
 	var/vision_flags = SEE_SELF              // Same flags as glasses.
-	var/see_infrared = FALSE
+	var/see_infrared = FALSE		 // Can the species see in infrared. (The BYOND kind of infrared, no custom infrared system)
 
 	var/list/hair_styles
 	var/list/facial_hair_styles
