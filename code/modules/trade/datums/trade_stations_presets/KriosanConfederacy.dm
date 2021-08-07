@@ -1,5 +1,5 @@
 /datum/trade_station/kriosanconfederacy
-	name_pool = list("Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself on are stock.\"")
+	name_pool = list("Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself on our stock.\"")
 	assortiment = list(
 		"Hunting Gear" = list(
 			/obj/item/gun/projectile/boltgun/light,
@@ -45,5 +45,4 @@
 		/obj/item/shield/riot/handmade/bone,
 		/obj/item/tool/sword/huntingclaw
 	)
-
 
