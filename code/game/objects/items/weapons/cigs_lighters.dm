@@ -965,8 +965,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 
 /obj/item/flame/lighter/zippo/black
-	name = "\improper holy Zippo lighter"
-	desc = "For lighting the holy spirit."
+	name = "\improper black Zippo lighter"
+	desc = "A pitch black Zippo."
 	icon_state = "blackzippo"
 
 /obj/item/flame/lighter/zippo/blue
@@ -975,11 +975,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/flame/lighter/zippo/engraved
 	name = "\improper engraved Zippo lighter"
+	desc = "A Zippo with embossed engravings on its surface. They do not give any tactical advantage whatsoever, but look pretty good."
 	icon_state = "engravedzippo"
 	item_state = "zippo"
 
 /obj/item/flame/lighter/zippo/gold
 	name = "\improper golden Zippo lighter"
+	desc = "A Shippo fer thoshe that love goooold."
 	icon_state = "goldzippo"
 
 /obj/item/flame/lighter/zippo/moff
@@ -1024,3 +1026,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "\improper bullet lighter"
 	desc = "A lighter fashioned out of an old bullet casing."
 	icon_state = "bulletlighter"
+
+/obj/item/flame/lighter/zippo/absolutism
+	name = "\improper Absolutism Zippo lighter"
+	desc = "A Zippo with a golden pattern, bearing a red wax seal in the center. Its purified flames burn bright."
+	icon_state = "absolutelighter"
+
+/obj/item/flame/lighter/zippo/soyfed
+	name = "\improper SolFed Zippo lighter"
+	desc = "A Zippo with the old crest of the Sol Federation, either a keepsake from old times or a sign of not knowing to let go." // How to detect soyfed SIMPathizers!
+	icon_state = "solfed"
+
+/obj/item/flame/lighter/zippo/excelsior
+	name = "\improper Liberation Zippo lighter"
+	desc = "A cheap, mass produced Zippo for the working masses, its flame - much like the motto - goes ever upwards."
+	icon_state = "excelsior"
+

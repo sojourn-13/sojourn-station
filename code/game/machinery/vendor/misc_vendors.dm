@@ -217,8 +217,11 @@
 				/obj/item/flame/lighter/zippo/capitalist = 4,
 				/obj/item/flame/lighter/zippo/royal = 4,
 				/obj/item/flame/lighter/zippo/gonzo = 4,
-				/obj/item/flame/lighter/zippo/bullet = 4,)
+				/obj/item/flame/lighter/zippo/bullet = 4,
+				/obj/item/flame/lighter/zippo/absolutism = 4)
 	contraband = list(/obj/item/flame/lighter/zippo/communist = 2,
+				/obj/item/flame/lighter/zippo/excelsior = 4,
+				/obj/item/flame/lighter/zippo/soyfed = 2,
 				/obj/item/storage/fancy/cigarettes/khi = 2,
 				/obj/item/storage/fancy/cigarettes/comred = 1)
 	prices = list(/obj/item/storage/fancy/cigarettes = 40,
@@ -247,18 +250,21 @@
 				/obj/item/flame/lighter/zippo/black = 50,
 				/obj/item/flame/lighter/zippo/moff = 50,
 				/obj/item/flame/lighter/zippo/ironic = 50,
-				/obj/item/flame/lighter/zippo/capitalist = 50,
+				/obj/item/flame/lighter/zippo/capitalist = 500, // Item description, meant to be expensive
 				/obj/item/flame/lighter/zippo/royal = 50,
 				/obj/item/flame/lighter/zippo/gonzo = 50,
 				/obj/item/flame/lighter/zippo/bullet = 50,
-				/obj/item/flame/lighter/zippo/communist = 500,
+				/obj/item/flame/lighter/zippo/communist = 250, // Idiot tax, but still affordable
 				/obj/item/storage/fancy/cigar = 250,
 				/obj/item/clothing/mask/vape = 150,
 				/obj/item/clothing/mask/smokable/pipe = 75,
 				/obj/item/clothing/mask/smokable/pipe/cobpipe = 25,
 				/obj/item/clothing/mask/smokable/pipe/glass = 150,
 				/obj/item/storage/fancy/cigarettes/khi = 500,
-				/obj/item/storage/fancy/cigarettes/comred = 525)
+				/obj/item/storage/fancy/cigarettes/comred = 525,
+				/obj/item/flame/lighter/zippo/excelsior = 0, // For the people!
+				/obj/item/flame/lighter/zippo/soyfed = 250,
+				)
 
 
 //FOR ACTORS GUILD - mainly props that cannot be spawned otherwise
