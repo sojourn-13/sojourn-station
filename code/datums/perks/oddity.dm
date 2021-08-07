@@ -182,7 +182,7 @@
 /datum/perk/nt_oddity/holy_light
 	name = "Holy Light"
 	desc = "You have been blessed by the grace of the Absolute. You now provide a weak healing aura, healing both brute and burn damage to any cruciform bearers nearby as well as yourself."
-	icon_state = "third_eye"  //https://game-icons.net/1x1/lorc/third-eye.html
+	//icon_state = "third_eye"  //https://game-icons.net/1x1/lorc/third-eye.html
 	var/healing_power = 0.1
 	var/cooldown = 1 SECONDS // Just to make sure that perk don't go berserk.
 	var/initial_time
@@ -207,7 +207,7 @@
 			H.adjustBruteLoss(-healing_power)
 			H.adjustFireLoss(-healing_power)
 
-/datum/perk/nt_oddity/bluespace
+/datum/perk/bluespace
 	name = "Bluespace Alinement"
 	desc = "The sci tool is taxing on the mind but rewarding... Along with some other side affects..."
 	gain_text = "With such much look and inside into stablizing bluespace you cant help but feel its affects."
@@ -215,7 +215,7 @@
 	//icon_state = "" // - No icon, suggestion, vortex?
 	var/initial_time
 
-/datum/perk/nt_oddity/bluespace/assign(mob/living/carbon/human/H)
+/datum/perk/bluespace/assign(mob/living/carbon/human/H)
 	..()
 	initial_time = world.time
 	cooldown_time = world.time + rand(20, 60) MINUTES
@@ -226,7 +226,7 @@
 		GLOB.bluespace_entropy -= rand(20, 30) //High odds to do even better!
 	GLOB.bluespace_entropy -= rand(30, 50)
 
-/datum/perk/nt_oddity/bluespace/remove(mob/living/carbon/human/H)
+/datum/perk/bluespace/remove(mob/living/carbon/human/H)
 	if(!H.stats?.getPerk(PERK_SI_SCI) && prob(30))
 		GLOB.bluespace_entropy += rand(80, 150)
 	if(H.stats?.getPerk(PERK_SI_SCI) && prob(50))
@@ -234,7 +234,7 @@
 	GLOB.bluespace_entropy += rand(30, 50)
 	..()
 
-/datum/perk/nt_oddity/bluespace/on_process()
+/datum/perk/bluespace/on_process()
 	if(cooldown_time <= world.time)
 		holder.stats.removePerk(type)
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))
