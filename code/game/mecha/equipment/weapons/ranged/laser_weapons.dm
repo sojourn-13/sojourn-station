@@ -23,6 +23,7 @@
 	energy_drain = 30
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
+	price_tag = 400
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser
 	equip_cooldown = 15
@@ -33,6 +34,7 @@
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
+	price_tag = 400
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 	equip_cooldown = 15
@@ -61,6 +63,7 @@
 	energy_drain = 120
 	projectile = /obj/item/projectile/ion
 	fire_sound = 'sound/weapons/Laser.ogg'
+	price_tag = 300
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
 	equip_cooldown = 30

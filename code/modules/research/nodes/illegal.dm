@@ -133,8 +133,8 @@
 	unlocks_designs = list(/datum/design/research/aimodule/core/tyrant)
 
 /datum/technology/borg_syndicate_module
-	name = "Borg Illegal Weapons Upgrade"
-	desc = "Borg Illegal Weapons Upgrade"
+	name = "Borg Overclocking Weapons Upgrade"
+	desc = "Borg Overclocking Weapons Upgrade or addition unregulated tools."
 	tech_type = RESEARCH_ILLEGAL
 
 	x = 0.7

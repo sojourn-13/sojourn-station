@@ -9,7 +9,7 @@
 					/obj/item/contraband/poster,
 					/obj/item/contraband/poster,
 					/obj/item/contraband/poster)
-	cost = 560
+	cost = 100
 	crate_name = "corporate posters crate"
 	group = "Supply"
 
@@ -25,14 +25,14 @@
 	/obj/item/storage/box,
 	/obj/item/storage/box,
 	/obj/item/storage/box)
-	cost = 640
+	cost = 120
 	crate_name = "empty boxes crate"
 	group = "Supply"
 
 /datum/supply_pack/eftpos
 	contains = list(/obj/item/device/eftpos)
 	name = "EFTPOS Scanner Crate"
-	cost = 700
+	cost = 140
 	crate_name = "EFTPOS scanner crate"
 	group = "Supply"
 
@@ -40,7 +40,7 @@
 	name = "Export Scanners Crate"
 	contains = list(/obj/item/device/scanner/price,
 					/obj/item/device/scanner/price)
-	cost = 560
+	cost = 150
 	crate_name = "export scanners crate"
 	group = "Supply"
 
@@ -63,7 +63,7 @@
 					/obj/item/grenade/chem_grenade/cleaner,
 					/obj/item/grenade/chem_grenade/cleaner,
 					/obj/structure/mopbucket)
-	cost = 800
+	cost = 200
 	crate_name = "janitorial supplies crate"
 	group = "Supply"
 
@@ -79,6 +79,6 @@
 					/obj/item/grenade/chem_grenade/cleaner,
 					/obj/item/grenade/chem_grenade/cleaner,
 					/obj/item/grenade/chem_grenade/cleaner)
-	cost = 500
+	cost = 200
 	crate_name = "cleaner grenade crate"
 	group = "Supply"

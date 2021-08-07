@@ -161,6 +161,7 @@
 	name = "H&S \"Cop Block\" Trigger"
 	desc = "A trigger guard to force the safety on a gun, used to pacify weapons from targets or trigger happy marshals. A simpler way of making a weapon display-only"
 	icon_state = "Cop_Block"
+	price_tag = 50
 
 /obj/item/gun_upgrade/trigger/cop_block/New()
 	..()
@@ -310,6 +311,24 @@
 	GUN_UPGRADE_DAMAGE_MULT = 0.90,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.25)
 	I.req_fuel_cell = REQ_CELL
+	I.gun_loc_tag = GUN_MECHANISM
+
+//Just massively reduces recoil like a grip but in the mechanism. Meh tear at best
+/obj/item/gun_upgrade/mechanism/clock_block //Real deal, but admin only atm
+	name = "Unknown Clockwork Mechanism"
+	desc = "It's really not clear what this modification actually does. It appears to effect the attached weapon's recoil, but if it actually helps or hinders the weapon is unclear."
+	icon_state = "Clockblock"
+	price_tag = 0
+
+/obj/item/gun_upgrade/mechanism/clock_block/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL = rand(5, 9)/10, //0.5 -> 0.9 aka 50% reduction to 10% reduction
+	)
+	I.destroy_on_removal = TRUE
+	I.removal_time *= rand(100, 140)/10
+	I.removal_difficulty *= rand(50, 150)/10
 	I.gun_loc_tag = GUN_MECHANISM
 
 // HONK
@@ -547,7 +566,7 @@
 /obj/item/gun_upgrade/mechanism/faulty
 	name = "Unknown Clockwork Mechanism"
 	desc = "It's really not clear what this modification actually does. It appears to effect the attached weapon's recoil, but if it actually helps or hinders the weapon is unclear."
-	icon_state = "Weintraub"
+	icon_state = "Clockblock"
 	price_tag = 0
 
 /obj/item/gun_upgrade/mechanism/faulty/New()

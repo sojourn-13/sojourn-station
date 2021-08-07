@@ -10,6 +10,7 @@
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
 	fire_sound_text = "a metallic thunk"
+	price_tag = 1200
 
 /obj/item/gun/projectile/grenade/lenar/proc/update_charge()
 	var/ratio = loaded.len / max_shells

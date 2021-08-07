@@ -4,6 +4,7 @@
 	desc = "A storage container designed to be installed in a RIG suit. Allows a few items to be stored inside"
 	interface_name = "internal storage compartment"
 	interface_desc = "A storage compartment built directly into the suits back module, accessed through a latching compartment."
+	price_tag = 100
 
 	var/obj/item/storage/internal/container = null
 	w_class = ITEM_SIZE_BULKY

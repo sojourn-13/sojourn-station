@@ -11,7 +11,7 @@
 					/obj/item/storage/pill_bottle/happy,
 					/obj/item/contraband/poster,
 					/obj/item/reagent_containers/food/drinks/bottle/pwine)
-	cost = 2400
+	cost = 1200
 	containertype = /obj/structure/closet/crate
 	crate_name = "unlabelled crate"
 	contraband = TRUE
@@ -24,7 +24,7 @@
                 /obj/random/gun_energy_cheap,
                 /obj/random/gun_shotgun)
 	name = "Surplus Weapons Crate"
-	cost = 4000
+	cost = 800
 	crate_name = "surplus weapons crate"
 	containertype = /obj/structure/closet/crate/secure/weapon
 	group = "Security"
@@ -40,7 +40,7 @@
 				/obj/random/ammo,
 				/obj/random/ammo)
 	name = "Surplus Ammo Crate"
-	cost = 1200
+	cost = 600
 	crate_name = "surplus ammo crate"
 	containertype = /obj/structure/closet/crate/secure/weapon
 	group = "Security"
@@ -53,7 +53,7 @@
 					/obj/random/cloth/holster,
 					/obj/random/cloth/holster)
 	name = "Surplus Uniform Holsters"
-	cost = 800
+	cost = 400
 	crate_name = "Surplus Uniform Holsters Crate"
 	containertype = /obj/structure/closet/crate
 	group = "Clothing"
@@ -78,7 +78,7 @@
 	contains = list(/obj/random/voidsuit,
 					/obj/random/voidsuit/damaged)
 	name = "Surplus Voidsuit Crate"
-	cost = 1200
+	cost = 600
 	crate_name = "surplus voidsuit crate"
 	containertype = /obj/structure/closet/crate
 	group = "Clothing"
@@ -89,7 +89,7 @@
 	contains = list(/obj/random/rig,
 					/obj/random/rig/damaged)
 	name = "Surplus Rig Crate"
-	cost = 4000
+	cost = 750
 	crate_name = "surplus rig crate"
 	containertype = /obj/structure/closet/crate
 	group = "Clothing"
@@ -99,7 +99,7 @@
 	num_contained = 2
 	contains = list(/obj/random/rig_module,
 				/obj/random/rig_module)
-	cost = 2000
+	cost = 500
 	crate_name = "surplus rig modules crate"
 	containertype = /obj/structure/closet/crate
 	group = "Clothing"

@@ -254,8 +254,8 @@
 
 
 /obj/item/borg/upgrade/syndicate
-	name = "illegal equipment module"
-	desc = "Unlocks the hidden, deadlier functions of a robot"
+	name = "Overclocking equipment module"
+	desc = "Unlocks hidden, deadlier functions of a robot or overclocked equipment."
 	icon_state = "cyborg_upgrade3"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 5)
 	require_module = TRUE

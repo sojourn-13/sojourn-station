@@ -54,6 +54,10 @@
 	damage_types = list(BURN = 35) //Normal slugs deal 45
 	armor_penetration = 10
 
+/obj/item/projectile/beam/shotgun/strong
+	damage_types = list(BURN = 54) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
+	armor_penetration = 10
+
 /obj/item/projectile/beam/practice
 	name = "laser"
 	icon_state = "laser"

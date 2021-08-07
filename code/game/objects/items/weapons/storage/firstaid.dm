@@ -15,6 +15,7 @@
 	throw_speed = 2
 	throw_range = 8
 	matter = list(MATERIAL_PLASTIC = 5)
+	price_tag = 200
 	var/empty = 0
 
 

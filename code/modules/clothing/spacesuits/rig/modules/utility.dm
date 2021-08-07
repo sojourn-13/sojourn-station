@@ -24,6 +24,7 @@
 	selectable = 1
 	toggleable = 0
 	disruptive = 0
+	price_tag = 200
 
 
 	var/device_type
@@ -84,6 +85,7 @@
 	interface_desc = "A device for building or removing walls. Cell-powered."
 	usable = 1
 	engage_string = "Configure RCD"
+	price_tag = 1000
 
 	device_type = /obj/item/rcd/mounted
 

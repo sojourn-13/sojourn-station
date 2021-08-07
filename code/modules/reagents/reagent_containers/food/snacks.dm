@@ -2149,7 +2149,7 @@
 
 /obj/item/reagent_containers/food/snacks/bigbiteburger
 	name = "big bite burger"
-	desc = "Forget the Big Mac. THIS is the future!"
+	desc = "Forget the Big Mac. THIS is the future! It has big \"R\" stamped on it's bun."
 	icon_state = "bigbiteburger"
 	filling_color = "#E3D681"
 	bitesize = 3
@@ -3471,6 +3471,7 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/butterslice
 	slices_num = 5
 	nutriment_amt = 10
+	nutriment_desc = list("your arteries clogging themselves" = 10)
 	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/reagent_containers/food/snacks/butterslice // I'm so sorry for this. Wasting an entire stick of butter on a toast is a no.
@@ -3479,6 +3480,15 @@
 	icon_state = "butterslice"
 	bitesize = 2
 	nutriment_amt = 2
+	nutriment_desc = list("butter" = 5)
+
+/obj/item/reagent_containers/food/snacks/cinnamonroll
+	name = "cinnamon roll"
+	desc = "A rolled up pastry with cream cheese frosting and cinnamon sugar filling."
+	icon_state = "cinnamonroll"
+	bitesize = 3
+	nutriment_amt = 6
+	nutriment_desc = list("cinnamon" = 10, "buttery goodness" = 5, "cream cheese" = 3)
 
 /////////////////////////////////////////////////PIZZA////////////////////////////////////////
 

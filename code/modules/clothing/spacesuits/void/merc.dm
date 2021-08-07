@@ -34,6 +34,7 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
+	price_tag = 950
 
 /obj/item/clothing/suit/space/void/SCAF/voidwolf
 	name = "REAVER-SCAF suit"

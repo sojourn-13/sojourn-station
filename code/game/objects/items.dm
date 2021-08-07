@@ -164,7 +164,9 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.stats.getPerk(PERK_MARKET_PROF))
-			message += SPAN_NOTICE("\nThis item cost: [price_tag == null ? 0 : price_tag][CREDITS]")
+			message += SPAN_NOTICE("\nThis item cost: [get_item_cost()][CREDITS]")
+		if(H.stats.getPerk(PERK_MARKET_PROF) && surplus_tag == TRUE)
+			message += SPAN_NOTICE("\nThis item has a surplus tag and is only worth ten percent its usual value on exports.")
 
 	return ..(user, distance, "", message)
 

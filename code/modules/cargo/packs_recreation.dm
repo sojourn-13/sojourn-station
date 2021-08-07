@@ -5,7 +5,7 @@
 					/obj/random/toy/action_figure,
 					/obj/random/toy/action_figure,
 					/obj/random/toy/action_figure)
-	cost = 400
+	cost = 120
 	crate_name = "action figure crate"
 	group = "Recreation"
 
@@ -28,7 +28,7 @@
 					/obj/item/wrapping_paper,
 					/obj/item/wrapping_paper,
 					/obj/item/wrapping_paper)
-	cost = 560
+	cost = 120
 	crate_name = "arts and crafts crate"
 	group = "Recreation"
 
@@ -42,7 +42,7 @@
 					/obj/item/cardholder,
 					/obj/item/deck/tarot,
 					/obj/item/storage/pill_bottle/dice)
-	cost = 400
+	cost = 150
 	crate_name = "card gaming crate"
 	group = "Recreation"
 
@@ -52,7 +52,7 @@
 					/obj/item/clothing/suit/fluff/redtag,
 					/obj/item/gun/energy/lasertag/blue,
 					/obj/item/clothing/suit/fluff/bluetag)
-	cost = 560
+	cost = 300
 	crate_name = "laser tag crate"
 	group = "Recreation"
 
@@ -62,7 +62,7 @@
 					/obj/item/device/pipe_painter,
 					/obj/item/device/floor_painter,
 					/obj/item/device/floor_painter)
-	cost = 560
+	cost = 200
 	crate_name = "painting supplies crate"
 	group = "Recreation"
 
@@ -73,7 +73,7 @@
 					/obj/random/toy/plushie,
 					/obj/random/toy/plushie,
 					/obj/random/toy/plushie)
-	cost = 400
+	cost = 100
 	crate_name = "plushie crate"
 	group = "Recreation"
 
@@ -88,7 +88,7 @@
 			/obj/item/clothing/suit/straight_jacket,
 			/obj/item/legcuffs/fuzzy,
 			/obj/item/clothing/under/costume/kinky/latex_maid)
-	cost = 560
+	cost = 169
 	crate_name = "recreational restraints crate"
 	group = "Recreation"
 
@@ -104,7 +104,7 @@
 					/obj/item/toy/figure/character/rpg/cleric,
 					/obj/item/toy/figure/character/rpg/warrior,
 					/obj/item/storage/pill_bottle/dice_nerd)
-	cost = 400
+	cost = 250
 	crate_name = "tabletop gaming crate"
 	group = "Recreation"
 
@@ -115,7 +115,7 @@
 					/obj/random/toy/arcadejunk,
 					/obj/random/toy/arcadejunk,
 					/obj/random/toy/arcadejunk)
-	cost = 400
+	cost = 150
 	crate_name = "toy crate"
 	group = "Recreation"
 
@@ -127,6 +127,6 @@
 					/obj/item/toy/weapon/katana,
 					/obj/item/toy/weapon/sword,
 					/obj/item/toy/weapon/sword)
-	cost = 400
+	cost = 150
 	crate_name = "toy weapons crate"
 	group = "Recreation"

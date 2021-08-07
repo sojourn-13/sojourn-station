@@ -19,7 +19,7 @@
 	kill_count = 10
 
 /obj/item/projectile/hydrogen/pistol/welder
-	kill_count = 7
+	kill_count = 5
 
 /obj/item/projectile/hydrogen/cannon
 	kill_count = 12

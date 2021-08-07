@@ -48,6 +48,13 @@
 		/datum/design/bioprinter/pouch/tubular,
 		/datum/design/bioprinter/pouch/tubular/vial,
 		/datum/design/bioprinter/sling,
+		//power cells
+		/datum/design/bioprinter/nt_cells/large,
+		/datum/design/bioprinter/nt_cells/large/plasma,
+		/datum/design/bioprinter/nt_cells/medium,
+		/datum/design/bioprinter/nt_cells/medium/plasma,
+		/datum/design/bioprinter/nt_cells/small,
+		/datum/design/bioprinter/nt_cells/small/plasma,
 		//utilities
 		/datum/design/autolathe/gun/nt_sprayer,
 		/datum/design/autolathe/device/grenade/nt_cleaner,

@@ -1,12 +1,9 @@
 // For convenience and easier comparing and maintaining of item prices,
 // all these will be defined here and sorted in different sections.
 
-// The item price in credits. atom/movable so we can also assign a price to animals and other things.
-/atom/movable/var/price_tag
-
 // The proc that is called when the price is being asked for. Use this to refer to another object if necessary.
-/atom/movable/proc/get_item_cost(var/export = FALSE)
-	return price_tag
+/atom/movable/proc/get_item_cost(export)
+	. = price_tag
 
 
 //***************//
@@ -462,6 +459,9 @@
 //***************//
 
 // Snacks //
+
+/obj/item/reagent_containers/food/snacks
+	price_tag = 10
 
 /obj/item/reagent_containers/food/snacks/candy
 	price_tag = 10
@@ -977,3 +977,134 @@
 
 /obj/item/flame/lighter/zippo
 	price_tag = 30
+
+/obj/item/bluespace_crystal
+	price_tag = 500
+
+
+
+/obj/machinery
+	price_tag = 100
+
+/obj/machinery/get_item_cost(export)
+	. = ..()
+	for(var/atom/movable/i in component_parts)
+		. += SStrade.get_new_cost(i)
+
+/obj/machinery/portable_atmospherics
+	price_tag = 200
+
+/obj/machinery/power/supermatter
+	price_tag = 20000
+
+/obj/machinery/portable_atmospherics/canister/get_item_cost(export)
+	. = price_tag + (price_tag * log(10, air_contents.volume)) //todo, prices of gases
+
+/obj/structure/reagent_dispensers/price_tag = 5
+/obj/structure/reagent_dispensers/get_item_cost()
+	var/ratio = reagents.total_volume / reagents.maximum_volume
+
+	return ..() + round(contents_cost * ratio)
+
+
+/obj/item/tank
+	price_tag = 50
+/obj/item/tank/plasma
+	price_tag = 75
+/obj/item/tank/get_item_cost(export)
+	. = price_tag + (price_tag * log(10, air_contents.volume)) //todo, prices of gases
+
+/obj/item/circuitboard
+	price_tag = 150
+
+/obj/item/circuitboard/get_item_cost(export)
+	. = ..()
+	for(var/atom/movable/i in req_components)
+		if(ispath(i))
+			. += SStrade.get_new_cost(i) * log(10, price_tag / 2)
+
+/obj/item/stock_parts
+	price_tag = 100
+/obj/item/stock_parts/get_item_cost(export)
+	. = ..() * rating
+
+/obj/item/organ
+	price_tag = 500
+
+/mob/living/carbon/superior_animal/roach
+	price_tag = 150
+
+/mob/living/carbon/superior_animal/roach/roachling
+	price_tag = 100
+
+/mob/living/carbon/superior_animal/roach/hunter
+	price_tag = 200
+
+/mob/living/exosuit/get_item_cost(export)
+	. = ..() + SStrade.get_import_cost()
+
+/obj/item/stack/get_item_cost(export)
+	return amount * ..()
+
+/obj/item/reagent_containers/blood
+	price_tag = 50
+
+/obj/item/reagent_containers/blood/get_item_cost(export)
+	. = ..()
+	. += (. / 25 * reagents?.total_volume)
+
+/obj/item/ammo_magazine/price_tag = 60
+/obj/item/ammo_magazine/ammobox/price_tag = 40
+
+/obj/item/ammo_magazine/get_item_cost(export)
+	. = ..()
+	for(var/obj/item/ammo_casing/i in stored_ammo)
+		. += i.get_item_cost(export)
+
+/obj/item/ammo_casing/price_tag = 20
+
+/obj/item/ammo_casing/get_item_cost(export)
+	. = ..() * amount
+
+/obj/item/tool/price_tag = 20
+/obj/item/tool/get_item_cost(export)
+	. = 1
+	for(var/i in tool_qualities)
+		. += tool_qualities[i] / 5
+	. *= ..()
+
+/obj/structure/medical_stand/price_tag = 100
+/obj/item/virusdish/price_tag = 300
+
+/obj/item/reagent_containers/price_tag = 20
+/obj/item/reagent_containers/glass/beaker/bluespace/price_tag = 300
+/obj/item/reagent_containers/get_item_cost(export)
+	. = ..()
+	. += reagents.total_volume * .
+
+/obj/item/clothing/price_tag = 30
+/obj/item/solar_assembly/price_tag = 100
+/obj/item/tracker_electronics/price_tag = 150
+/obj/item/handcuffs/price_tag = 30
+/obj/item/handcuffs/get_item_cost(export)
+	. = ..()
+	. += breakouttime / 20
+
+/obj/item/grenade/price_tag = 50
+
+/obj/item/robot_parts/price_tag = 100
+/obj/item/robot_parts/robot_component/armour/exosuit/price_tag = 300
+/obj/item/robot_parts/robot_component/armour/exosuit/radproof/price_tag = 500
+/obj/item/robot_parts/robot_component/armour/exosuit/em/price_tag = 550
+/obj/item/robot_parts/robot_component/armour/exosuit/combat/price_tag = 1000
+
+/obj/item/mech_component/price_tag = 150
+/obj/item/mech_equipment/price_tag = 200
+
+/obj/item/gun/launcher/grenade/price_tag = 1500
+
+/obj/item/storage/briefcase/inflatable/price_tag = 50
+
+/obj/item/inflatable/price_tag = 40
+
+/obj/item/tool/knife/dagger/bluespace/price_tag = 400
