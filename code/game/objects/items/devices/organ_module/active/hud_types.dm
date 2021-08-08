@@ -4,6 +4,7 @@
 	verb_name = "Activate Med Hud"
 	icon_state = "medshades"
 	holding_type = /obj/item/clothing/glasses/hud/health/shades
+	price_tag = 575
 
 /obj/item/organ_module/active/hud/sec
 	name = "embedded security hud shades"
@@ -11,6 +12,7 @@
 	verb_name = "Activate Security Hud"
 	icon_state = "secshades"
 	holding_type = /obj/item/clothing/glasses/hud/security/shades
+	price_tag = 875
 
 /obj/item/organ_module/active/hud/night
 	name = "embedded night vision shades"
@@ -18,6 +20,7 @@
 	verb_name = "Activate Night Vision Goggles"
 	icon_state = "nightshades"
 	holding_type = /obj/item/clothing/glasses/shades/night
+	price_tag = 1275
 
 /obj/item/organ_module/active/hud/thermal
 	name = "embedded thermal shades"
@@ -25,6 +28,7 @@
 	verb_name = "Activate Thermal Goggles"
 	icon_state = "thermalshades"
 	holding_type = /obj/item/clothing/glasses/shades/thermal
+	price_tag = 2550
 
 /obj/item/organ_module/active/hud/welder
 	name = "embedded welder shades"
@@ -32,6 +36,7 @@
 	verb_name = "Activate Welder Goggles"
 	icon_state = "weldershades"
 	holding_type = /obj/item/clothing/glasses/welding/superior/shades
+	price_tag = 675
 
 /obj/item/organ_module/active/hud/thermal_bio
 	name = "embedded bio-thermal overlays"

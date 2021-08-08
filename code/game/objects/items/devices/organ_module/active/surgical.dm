@@ -5,6 +5,7 @@
 	icon_state = "medimplant"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/medmultitool/medimplant
+	price_tag = 685
 
 /obj/item/organ_module/active/simple/surgical/cht_mant
 	name = "surgical omni-gland"

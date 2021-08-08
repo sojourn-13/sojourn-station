@@ -48,3 +48,8 @@
 			/obj/item/reagent_containers/food/drinks/flask/vacuumflask
 		),
 	)
+
+	offer_types = list(
+		/obj/item/tool/knife,
+		/obj/item/reagent_containers/food/snacks/grown = 4
+	)

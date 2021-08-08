@@ -1,5 +1,5 @@
 /datum/trade_station/bluespace_technical
-
+	spawn_probability = 10
 	name_pool = list("B-42-Alpha" = "Unknown signature, bluespace traces interfere with sensors. Unable to triangulate object.")
 	assortiment = list(
 		"#$285@$532#$@" = list(
@@ -20,4 +20,3 @@
 		/obj/item/device/mmi/digital/posibrain,
 		/obj/item/reagent_containers/food/snacks/csandwich = 4
 	)
-	spawn_probability = 10

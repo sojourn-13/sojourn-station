@@ -88,6 +88,7 @@
 	item_state = "hermes"
 	slowdown = SHOES_SLOWDOWN - 0.1 //10% speed buff
 	can_hold_knife = 1//Still boots
+	price_tag = 120
 
 /obj/item/clothing/shoes/hunterboots
     name = "Hunter Boots"

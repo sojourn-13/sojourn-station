@@ -5,7 +5,7 @@
 	icon_state = "tesla_shotgun"
 	item_state = "tesla_shotgun"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
-	price_tag = 500
+	price_tag = 1600
 	charge_cost = 100
 	fire_sound = 'sound/weapons/Taser.ogg'
 	suitable_cell = /obj/item/cell/medium
@@ -25,6 +25,7 @@
 	icon = 'icons/obj/guns/energy/tesla_shotgun_manual.dmi'
 	icon_state = "tesla_shotgun_manual"
 	item_state = "tesla_shotgun_manual"
+	price_tag = 1950
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GOLD = 2.5)
 
 // Charge the cell by pumping it.
@@ -45,6 +46,7 @@
 	icon = 'icons/obj/guns/energy/tesla_shotgun_powerful.dmi'
 	icon_state = "tesla_shotgun_powerful"
 	item_state = "tesla_shotgun_powerful"
+	price_tag = 2500
 	charge_cost = 200
 	projectile_type = /obj/item/projectile/beam/shotgun/strong
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_PLASMA = 2.5)
@@ -56,6 +58,7 @@
 	icon_state = "tesla_shotgun_atomic"
 	item_state = "tesla_shotgun_atomic"
 	cell_type = /obj/item/cell/medium/moebius/nuclear
+	price_tag = 3000
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_URANIUM = 2.5)
 
 /obj/item/gun/energy/tesla_shotgun/Process()

@@ -99,6 +99,7 @@
 	ammo_amount_left = 40
 	ammo_max_amout = 40
 	ammo_type = "12g"
+	price_tag = 30
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
 	name = "\improper LBX AC 10 \"Scattershot\""
@@ -143,6 +144,7 @@
 	ammo_max_amout = 300
 	amount_per_click = 3 //Hack to make them impossable to go into negitives
 	ammo_type = "5.56"
+	price_tag = 30
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg
 	name = "\improper Ultra AC 2"

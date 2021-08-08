@@ -37,3 +37,9 @@
 			/obj/item/rig_module/storage
 		),
 	)
+
+	offer_types = list(
+		/obj/item/tool/tape_roll,
+		/obj/item/tool/surgicaldrill,
+		/obj/item/cell/large
+	)

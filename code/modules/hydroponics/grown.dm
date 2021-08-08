@@ -6,6 +6,7 @@
 	icon_state = "blank"
 	desc = "Nutritious! Probably."
 	slot_flags = SLOT_HOLSTER
+	price_tag = 1
 
 	var/plantname
 	var/datum/seed/seed

@@ -143,6 +143,7 @@
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
 	cleaning_reagent = "holywater"
 	bless_tile = TRUE
+	price_tag = 30
 
 /obj/item/soap/syndie
 	desc = "An untrustworthy bar of soap. Smells of fear."

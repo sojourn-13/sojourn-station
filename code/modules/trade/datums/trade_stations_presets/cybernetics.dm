@@ -39,3 +39,19 @@
 			/obj/item/organ/external/robotic/blackshield/r_leg
 		),
 	)
+
+	offer_types = list(
+		/obj/item/organ_module/active/simple/armblade,
+		/obj/item/organ_module/active/simple/armsmg,
+		/obj/item/organ_module/active/simple/armshield,
+		/obj/item/organ_module/active/simple/engineer,
+		/obj/item/organ_module/active/hud/med,
+		/obj/item/organ_module/active/hud/sec,
+		/obj/item/organ_module/active/hud/night,
+		/obj/item/organ_module/active/hud/thermal,
+		/obj/item/organ_module/active/hud/welder,
+		/obj/item/organ_module/active/multitool,
+		/obj/item/organ_module/active/simple/surgical,
+		/obj/item/organ_module/active/simple/taser
+	)
+
