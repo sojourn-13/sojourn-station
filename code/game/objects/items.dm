@@ -80,6 +80,10 @@
 	var/max_upgrades = 3
 	var/list/prefixes = list()
 
+
+	var/list/effective_faction = list() // Which faction the item is effective against.
+	var/damage_mult = 1 // The damage multiplier the item get when attacking that faction.
+
 /obj/item/Initialize()
 	if(islist(armor))
 		armor = getArmor(arglist(armor))

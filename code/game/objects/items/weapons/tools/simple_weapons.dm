@@ -348,14 +348,8 @@
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_SHALLOW
 	w_class = ITEM_SIZE_BULKY
-	var/list/effective_faction = list("tengo", "tengolo_berserker") // Which faction the cleaver is effective against.
-	var/damage_mult = 2 // The damage multiplier the cleaver get when attacking that faction.
-
-/obj/item/tool/sword/cleaver/attack(mob/living/M as mob, mob/living/carbon/user as mob)
-	if(effective_faction.Find(M.faction)) // Is the mob's in our list of factions we're effective against?
-		force *= damage_mult // Increase the damage
-	..() // Do the actual attack
-	force = initial(force) // Reset the damage once we're done.
+	effective_faction = list("tengo", "tengolo_berserker") // Which faction the cleaver is effective against.
+	damage_mult = 2 // The damage multiplier the cleaver get when attacking that faction.
 
 /obj/item/tool/sword/huntingclaw
 	name = "Hunting Claw"
