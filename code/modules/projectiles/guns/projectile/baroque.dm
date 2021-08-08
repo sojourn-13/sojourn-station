@@ -7,7 +7,7 @@ Own a musket for department defense, since that's what the founding hunters inte
  I have to resort to the queen shotgun mounted at the top of the stairs loaded with buck shot,
  "Tally ho lads" the buck shot shreds two outsiders in the blast, the sound and extra shrapnel set off shuttle alarms.
  Fix bayonet sharpener block and charge the last terrified rapscallion.
- He Bleeds out waiting on the marshals to arrive since triangular wounds are impossible to stitch up.
+ He Bleeds out waiting on the marshals to arrive since triangular wounds are impossible to stitch up without surgery.
  Just as the founding hunters intended.
 */
 /obj/item/gun/projectile/baroque
