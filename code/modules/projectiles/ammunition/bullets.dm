@@ -381,7 +381,7 @@
 /obj/item/ammo_casing/antim/ion/prespawned
 	amount = 5
 
-//// 40mm rolled shot ////
+//// 30mm rolled shot ////
 /obj/item/ammo_casing/ball
 	name = "shell casing"
 	desc = "A 30mm rolled shot casing."

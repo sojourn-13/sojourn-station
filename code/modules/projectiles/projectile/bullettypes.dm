@@ -386,8 +386,8 @@
 
 //smoothbore rifles
 /obj/item/projectile/bullet/ball
-	damage_types = list(BRUTE = 60, HALLOS = 190)
-	armor_penetration = 90
+	damage_types = list(BRUTE = 60, HALLOS = 190) //Grab me musket as the founding fathers intented
+	armor_penetration = 50 //Grape size whole in the blokes chest
 	agony = 60
 	penetrating = 2
 	hitscan = TRUE
