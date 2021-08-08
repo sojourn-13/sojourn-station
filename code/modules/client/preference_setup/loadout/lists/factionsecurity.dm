@@ -19,6 +19,13 @@
 	slot = slot_head
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/berettrooper
+	display_name = "beret, blackshield"
+	path = /obj/item/clothing/head/rank/trooper/beret
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_head
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/beretwarden
 	display_name = "beret, supply specialist"
 	path = /obj/item/clothing/head/rank/warden/beret
@@ -64,6 +71,13 @@
 	display_name = "cap, supply specialist"
 	path = /obj/item/clothing/head/soft/sarge2soft
 	allowed_roles = list("Supply Specialist", "Sergeant")
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/captrooper
+	display_name = "cap, blackshield"
+	path = /obj/item/clothing/head/rank/trooper/cap
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_head
 	sort_category = "Faction: Security"
 
 /datum/gear/factionSecurity/gorka_ih
