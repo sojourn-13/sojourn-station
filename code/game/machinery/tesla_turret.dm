@@ -117,8 +117,10 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	..()
 	if(active)
 		icon_state = "coil_active"
+		set_light(3)
 	else
 		icon_state = "coil"
+		set_light(0)
 
 
 /obj/machinery/power/tesla_turret/proc/zap(mob/living/target)

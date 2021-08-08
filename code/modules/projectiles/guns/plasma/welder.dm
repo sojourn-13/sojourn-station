@@ -11,13 +11,14 @@
 	create_hot_spot = TRUE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 7, TECH_PLASMA = 7)
 	switched_on_qualities = list(QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 25, QUALITY_WIRE_CUTTING = 25)
+	worksound = WORKSOUND_WELDING
 	toggleable = TRUE
 	max_upgrades = 0
 	heat = 2250
 
 	var/obj/item/hydrogen_fuel_cell/flask = null // The flask the welder use for ammo
-	var/use_plasma_cost = 1 // Active cost
-	var/passive_cost = 0.3 // Passive cost
+	var/use_plasma_cost = 0.1 // Active cost
+	var/passive_cost = 0.03 // Passive cost
 
 	var/obj/item/gun/hydrogen/plasma_torch/gun = null // Hold the gun the welder turns into.
 
@@ -59,13 +60,6 @@
 		if(!consume_plasma_fuel(use_plasma_cost*timespent))
 			to_chat(user, SPAN_NOTICE("You need more hydrogen fuel to complete this task."))
 			return FALSE
-
-/obj/item/tool/plasma_torch/check_tool_effects(var/mob/living/user, var/time)
-	if(use_plasma_cost)
-		if(get_plasma_fuel() < (use_plasma_cost*time))
-			to_chat(user, SPAN_NOTICE("You need more hydrogen fuel to complete this task."))
-			return FALSE
-	..()
 
 /obj/item/tool/plasma_torch/examine(mob/user)
 	..(user)

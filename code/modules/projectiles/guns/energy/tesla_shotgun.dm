@@ -14,8 +14,8 @@
 	twohanded = TRUE
 	can_dual = FALSE
 	projectile_type = /obj/item/projectile/beam/shotgun
-	charge_meter = FALSE
-	item_charge_meter = FALSE
+	charge_meter = TRUE
+	item_charge_meter = TRUE
 	self_recharge = TRUE
 	use_external_power = TRUE
 
