@@ -6,7 +6,6 @@
 	armor = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
 	attack_verb = list("bashed")
 	base_block_chance = 50
-	price_tag = 900
 
 /obj/item/organ_module/active/simple/armshield
 	name = "embedded shield"
@@ -16,3 +15,4 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 5)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/shield/riot/arm
+	price_tag = 850

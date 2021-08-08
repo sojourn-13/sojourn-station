@@ -5,6 +5,7 @@
 	icon_state = "multitool"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/engimplant
+	price_tag = 575
 
 /obj/item/organ_module/active/simple/engineer/organic
 	name = "embedded organic engineering multitool"

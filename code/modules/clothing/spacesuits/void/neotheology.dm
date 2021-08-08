@@ -162,6 +162,8 @@
 	siemens_coefficient = 0.35
 	breach_threshold = 10
 	resilience = 0.07
+	price_tag = 300
+
 
 	helmet = /obj/item/clothing/head/space/void/NTvoid
 

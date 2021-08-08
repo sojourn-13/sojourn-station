@@ -14,6 +14,7 @@
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
 	matter = list(MATERIAL_PLASTIC = 3)
 	var/mopspeed  = 30
+	price_tag = 12
 
 	var/mopmode = MOPMODE_TILE
 	var/sweep_time = 7

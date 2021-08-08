@@ -14,6 +14,10 @@
 		"Energiya" = list(
 			/obj/item/cell/large,
 			/obj/item/cell/large/high,
+			/obj/item/cell/medium,
+			/obj/item/cell/medium/high,
+			/obj/item/cell/small,
+			/obj/item/cell/small/high,
 			/obj/item/solar_assembly,
 			/obj/item/circuitboard/solar_control,
 			/obj/item/tracker_electronics,

@@ -20,6 +20,7 @@
 	matter = list(MATERIAL_STEEL = 16)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/armblade
+	price_tag = 200 //Just some metal
 
 
 /obj/item/tool/armblade/claws

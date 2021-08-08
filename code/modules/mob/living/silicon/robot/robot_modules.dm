@@ -953,6 +953,9 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
 	src.modules += new /obj/item/reagent_containers/spray/krag_b_gone(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 

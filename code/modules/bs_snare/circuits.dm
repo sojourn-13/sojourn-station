@@ -1,11 +1,13 @@
 /obj/item/circuitboard/bssilk_cons
-	build_name = "bluespace snare console"
+	name = "bluespace snare console"
+	build_name = ""
 	origin_tech = list(TECH_DATA = 4, TECH_BLUESPACE = 6)
 	build_path = /obj/machinery/computer/bssilk_control
 	price_tag = 150
 
 /obj/item/circuitboard/bssilk_hub
-	build_name = "bluespace snare hub"
+	name = "bluespace snare hub"
+	build_name = ""
 	icon_state = "mainboard"
 	origin_tech = list(TECH_DATA = 4, TECH_BLUESPACE = 6)
 	build_path = /obj/machinery/bssilk_hub

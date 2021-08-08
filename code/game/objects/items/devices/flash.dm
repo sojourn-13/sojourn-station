@@ -10,7 +10,7 @@
 	flags = CONDUCT
 	origin_tech = list(TECH_MAGNET = 2, TECH_COMBAT = 1)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-
+	price_tag = 5
 	var/times_used = 0 //Number of times it's been used.
 	var/broken = 0     //Is the flash burnt out?
 	var/last_used = 0 //last world.time it was used.

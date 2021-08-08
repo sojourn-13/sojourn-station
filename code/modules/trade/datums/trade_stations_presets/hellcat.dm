@@ -16,7 +16,11 @@
 		),
 		"Energy weapons" = list(
 			/obj/item/gun/energy/gun/martin,
-			/obj/item/gun/energy/laser
+			/obj/item/gun/energy/laser,
+			/obj/item/gun/energy/tesla_shotgun,
+			/obj/item/gun/energy/tesla_shotgun/manual,
+			/obj/item/gun/energy/tesla_shotgun/high_damage,
+
 		),
 		"Projectile weapons" = list(
 			/obj/item/gun/projectile/glock,
@@ -51,4 +55,15 @@
 			/obj/item/clothing/suit/armor/bulletproof,
 			/obj/item/clothing/suit/armor/laserproof
 		),
+	)
+
+	offer_types = list(
+		/obj/item/gun/energy/laser/railgun/pistol,
+		/obj/item/gun/energy/laser/railgun,
+		/obj/item/tool/shovel/combat,
+		/obj/item/tool_upgrade/armor/melee,
+		/obj/item/tool_upgrade/armor/bullet,
+		/obj/item/tool_upgrade/armor/bomb,
+		/obj/item/tool_upgrade/armor/energy,
+		/obj/item/tool/arcwelder
 	)

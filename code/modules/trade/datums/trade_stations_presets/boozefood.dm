@@ -10,7 +10,8 @@
 			/obj/item/storage/fancy/egg_box,
 			/obj/item/reagent_containers/food/snacks/tofu,
 			/obj/item/reagent_containers/food/snacks/meat,
-			/obj/item/reagent_containers/food/condiment/enzyme
+			/obj/item/reagent_containers/food/condiment/enzyme,
+			/obj/item/reagent_containers/food/condiment/cookingoil
 		),
 		"Drinks" = list(
 			/obj/item/reagent_containers/food/drinks/bottle/gin,
@@ -46,4 +47,9 @@
 			/obj/item/reagent_containers/food/drinks/flask/barflask,
 			/obj/item/reagent_containers/food/drinks/flask/vacuumflask
 		),
+	)
+
+	offer_types = list(
+		/obj/item/tool/knife,
+		/obj/item/reagent_containers/food/snacks/grown = 4
 	)

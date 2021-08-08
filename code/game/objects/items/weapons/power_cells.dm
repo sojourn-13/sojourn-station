@@ -73,6 +73,7 @@
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 6)
 	maxcharge = 14000
+	price_tag = 400
 
 /obj/item/cell/large/greyson
 	name = "GP-SI \"Posi-cell 16000L\""
@@ -82,6 +83,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_PLATINUM = 3, MATERIAL_URANIUM = 6)
+	price_tag = 600
 
 /obj/item/cell/large/excelsior
 	name = "Excelsior \"Zarya 18000L\""
@@ -118,6 +120,7 @@
 	charge = 100
 	maxcharge = 300
 	minor_fault = 1
+	price_tag = 50
 
 /obj/item/cell/large/slime
 	name = "charged slime core"
@@ -128,6 +131,7 @@
 	autorecharging = TRUE
 	maxcharge = 10000 //We still have a reason to use nukie cells
 	matter = null
+	price_tag = 1000
 
 //MEDIUM CELLS - for energy weapons and large devices
 
@@ -216,6 +220,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 4)
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1000
+	price_tag = 200
 
 /obj/item/cell/medium/greyson
 	name = "GP-SI \"Posi-cell 1600M\""
@@ -225,6 +230,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2, MATERIAL_URANIUM = 4)
+	price_tag = 300
 
 /obj/item/cell/medium/excelsior
 	name = "Excelsior \"Zarya 1100M\""
@@ -337,6 +343,7 @@
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_URANIUM = 2)
 	maxcharge = 300
+	price_tag = 100
 
 /obj/item/cell/small/moebius/pda
 	name = "Soteria \"Atomcell 50S\""
@@ -349,6 +356,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.007
 	recharge_time = 1
+	price_tag = 65
 
 /obj/item/cell/small/greyson
 	name = "GP-SI \"Posi-cell 400S\""
@@ -358,6 +366,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 2)
+	price_tag = 150
 
 /obj/item/cell/small/excelsior
 	name = "Excelsior \"Zarya 400S\""

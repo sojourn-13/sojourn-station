@@ -43,3 +43,9 @@
 			/obj/item/gun/launcher/grenade
 		),
 	)
+
+	offer_types = list(
+		/obj/item/clothing/suit/space/void/NTvoid,
+		/obj/item/clothing/shoes/hermes_shoes,
+		/obj/item/reagent_containers/food/snacks/grown = 4
+	)

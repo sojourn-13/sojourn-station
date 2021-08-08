@@ -48,3 +48,14 @@
 			/obj/item/grenade/smokebomb
 		)
 	)
+
+	offer_types = list(
+		/obj/item/gun/energy/laser/railgun,
+		/obj/item/gun_upgrade/mechanism/overshooter,
+		/obj/item/gun_upgrade/mechanism/weintraub,
+		/obj/item/gun_upgrade/trigger/dangerzone,
+		/obj/item/gun_upgrade/muzzle/silencer,
+		/obj/item/gun_upgrade/barrel/bore,
+		/obj/item/gun_upgrade/barrel/forged,
+		/obj/item/gun_upgrade/magwell/auto_eject
+	)

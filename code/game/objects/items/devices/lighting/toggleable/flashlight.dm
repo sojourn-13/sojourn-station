@@ -339,6 +339,7 @@
 	item_state = "seclite"
 	light_spot_radius = 3
 	light_spot_power = 2.5
+	price_tag = 8
 
 /obj/item/device/lighting/toggleable/flashlight/seclite/update_icon()
 	. = ..()
