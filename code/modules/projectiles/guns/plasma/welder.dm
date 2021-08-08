@@ -61,13 +61,6 @@
 			to_chat(user, SPAN_NOTICE("You need more hydrogen fuel to complete this task."))
 			return FALSE
 
-/obj/item/tool/plasma_torch/check_tool_effects(var/mob/living/user, var/time)
-	if(use_plasma_cost)
-		if(get_plasma_fuel() < (use_plasma_cost*time))
-			to_chat(user, SPAN_NOTICE("You need more hydrogen fuel to complete this task."))
-			return FALSE
-	..()
-
 /obj/item/tool/plasma_torch/examine(mob/user)
 	..(user)
 	if(!flask)
