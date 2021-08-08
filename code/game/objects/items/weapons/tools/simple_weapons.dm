@@ -338,6 +338,19 @@
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
 
+/obj/item/tool/sword/cleaver
+	name = "Cleaver Sustine"
+	desc = "A weapon designed by the Hunting Lodge, this massive sword is especially effective against Tengolos, berserk or not."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "cleaver"
+	item_state = "cleaver"
+	tool_qualities = list(QUALITY_CUTTING = 30)
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	w_class = ITEM_SIZE_BULKY
+	effective_faction = list("tengo", "tengolo_berserker") // Which faction the cleaver is effective against.
+	damage_mult = 2 // The damage multiplier the cleaver get when attacking that faction.
+
 /obj/item/tool/sword/huntingclaw
 	name = "Hunting Claw"
 	desc = "The second best friend a hunter could ask for, this one handed blade is lightweight and razor sharp thanks to its starworks-grade alloy construction.\
