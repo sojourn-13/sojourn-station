@@ -24,6 +24,7 @@
 	throw_range = 20
 	matter = list(MATERIAL_PLASTIC = 3)
 	force = NONE
+	price_tag = 10
 
 
 /*

@@ -28,6 +28,7 @@
 	origin_tech = list(TECH_DATA = 2, TECH_MAGNET = 2)
 
 /obj/item/circuitboard/teleporter
+	name = "teleporter control console"
 	build_name = "teleporter control console"
 	build_path = /obj/machinery/computer/teleporter
 	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
@@ -69,6 +70,7 @@
 	build_path = /obj/machinery/computer/turbine_computer
 
 /obj/item/circuitboard/solar_control
+	name = "solar control console"
 	build_name = "solar control console"
 	build_path = /obj/machinery/power/solar_control
 	origin_tech = list(TECH_DATA = 2, TECH_POWER = 2)

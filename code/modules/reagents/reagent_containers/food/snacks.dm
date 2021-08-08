@@ -604,6 +604,7 @@
 	icon_state = "egg"
 	filling_color = "#FDFFD1"
 	volume = 10
+	price_tag = 3
 	center_of_mass = list("x"=16, "y"=13)
 	preloaded_reagents = list("egg" = 3)
 	matter = list(MATERIAL_BIOMATTER = 9)

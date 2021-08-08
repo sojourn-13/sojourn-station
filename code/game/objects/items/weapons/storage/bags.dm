@@ -33,6 +33,7 @@
 	icon_state = "trashbag0"
 	item_state = "trashbag"
 	display_contents_with_number = TRUE
+	price_tag = 30
 
 	w_class = ITEM_SIZE_BULKY
 	max_w_class = ITEM_SIZE_SMALL
@@ -57,6 +58,7 @@
 	max_w_class = ITEM_SIZE_BULKY
 	max_storage_space = DEFAULT_HUGE_STORAGE * 1.25
 	matter = list(MATERIAL_PLASTIC = 10, MATERIAL_GOLD = 5, MATERIAL_DIAMOND = 1, MATERIAL_URANIUM = 1)
+	price_tag = 300
 
 /obj/item/storage/bag/trash/holding/New()
 	..()
@@ -88,6 +90,7 @@
 	icon_state = "superbag0"
 	item_state = "trashbag"
 	max_storage_space = DEFAULT_BULKY_STORAGE * 1.25
+	price_tag = 60
 
 /obj/item/storage/bag/trash/big/update_icon()
 	if(contents.len == 0)

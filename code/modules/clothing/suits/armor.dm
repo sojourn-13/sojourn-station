@@ -21,7 +21,7 @@
  * Vests
  */
 /obj/item/clothing/suit/armor/vest
-	name = "armor"
+	name = "armor vest"
 	desc = "An armored vest that protects against some damage. Not designed for serious operations."
 	icon_state = "armor"
 	item_state = "armor"
@@ -56,12 +56,12 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/vest/detective
-	name = "armor"
+	name = "ranger armor vest"
 	desc = "An armored vest with a ranger's badge on it."
 	icon_state = "armor_detective"
 
 /obj/item/clothing/suit/armor/vest/ironhammer
-	name = "security armor"
+	name = "security armor vest"
 	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
 

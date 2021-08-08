@@ -1109,11 +1109,13 @@
 /obj/item/reagent_containers/price_tag = 20
 
 /obj/item/reagent_containers/glass/beaker/bluespace/price_tag = 300
-
+/*
+//This is so bad, like no really this is horrable, this should have never been a thing
+//Get a beaker fill 120u of water have it be worth have it be worth 2400 credits.
 /obj/item/reagent_containers/get_item_cost(export)
 	. = ..()
 	. += reagents.total_volume * .
-
+*/
 /obj/item/clothing/price_tag = 30
 
 /obj/item/solar_assembly/price_tag = 100

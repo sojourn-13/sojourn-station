@@ -8,6 +8,7 @@
 	var/material
 	var/material_randomly_has = TRUE
 	var/sheet_amout = 1 //How many sheets do we give?
+	price_tag = 1
 
 /obj/item/ore/New()
 	..()
@@ -63,6 +64,7 @@
 	material = MATERIAL_URANIUM
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 3
 
 /obj/item/ore/uranium/small
 	name = "pitchblende shard"
@@ -121,6 +123,7 @@
 	material = MATERIAL_PLASMA
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 5
 
 /obj/item/ore/plasma/small
 	name = "plasma crystal"
@@ -133,6 +136,7 @@
 	material = MATERIAL_SILVER
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 2
 
 /obj/item/ore/silver/small
 	name = "native silver nugget"
@@ -145,6 +149,7 @@
 	material = MATERIAL_GOLD
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 6
 
 /obj/item/ore/gold/small
 	name = "native gold nugget"
@@ -157,6 +162,7 @@
 	material = MATERIAL_DIAMOND
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 7
 
 /obj/item/ore/diamond/small
 	name = "diamond dust"
@@ -168,6 +174,7 @@
 	material = MATERIAL_PLATINUM
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 9
 
 /obj/item/ore/osmium/small
 	name = "raw platinum shard"
@@ -179,6 +186,7 @@
 	material = MATERIAL_MHYDROGEN
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 10
 
 /obj/item/ore/hydrogen/small
 	name = "raw hydrogen nugget" //Its a nugget?
@@ -189,6 +197,7 @@
 	desc = "Someone screwed up..."
 	icon_state = "slag"
 	material = null
+	price_tag = 0
 
 /obj/item/ore/New()
 	pixel_x = rand(0,16)-8

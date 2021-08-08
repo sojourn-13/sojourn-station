@@ -134,7 +134,7 @@
 	name = "cooking oil bottle"
 	desc = "A bottle of corn oil, for all your deep frying needs."
 	icon_state = "oliveoil"
-	possible_transfer_amounts = list(1,2,5,10)
+	possible_transfer_amounts = list(1,2,3,4,5,10)
 	preloaded_reagents = list("cornoil" = 50)
 
 //Seperate from above since it's a small shaker rather then a large one.

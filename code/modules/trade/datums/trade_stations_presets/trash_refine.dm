@@ -3,13 +3,15 @@
 	assortiment = list(
 		"Trash" = list(/obj/random/scrap/dense_even = custom_good_amount_range(list(6, 80))),
 		"Scrap Lump" = list(/obj/item/scrap_lump = custom_good_amount_range(list(80, 100))),
+		"Salvageable Machines" = list(
+			/obj/structure/salvageable/computer = custom_good_amount_range(list(50, 75)),
+			/obj/structure/salvageable/personal = custom_good_amount_range(list(0, 8)),
+			/obj/structure/salvageable/server = custom_good_amount_range(list(6, 12)),
+			/obj/structure/salvageable/data = custom_good_amount_range(list(6, 10)),
+			/obj/structure/salvageable/implant_container = custom_good_amount_range(list(3, 5)),
+			/obj/structure/salvageable/autolathe = custom_good_amount_range(list(0, 2)),
+		),
 		"Refined Scrap" = list(/obj/item/stack/sheet/refined_scrap = custom_good_amount_range(list(50, 75))),
-		"Broken Computers" = list(/obj/structure/salvageable/computer = custom_good_amount_range(list(6, 12))),
-		"Broken Server Box" = list(/obj/structure/salvageable/server = custom_good_amount_range(list(0, 8))),
-		"Broken Data Black Box" = list(/obj/structure/salvageable/data = custom_good_amount_range(list(6, 10))),
-		"Broken Personal Computers" = list(/obj/structure/salvageable/personal = custom_good_amount_range(list(3, 5))),
-		"Broken Cold Storage Container" = list(/obj/structure/salvageable/implant_container = custom_good_amount_range(list(0, 3))),
-		"Broken Autolathe" = list(/obj/structure/salvageable/autolathe = custom_good_amount_range(list(0, 2)))
 	)
 
 	offer_types = list(
