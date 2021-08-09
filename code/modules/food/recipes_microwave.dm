@@ -398,7 +398,10 @@ I said no!
 /datum/recipe/pie
 	fruit = list("banana" = 1)
 	reagents = list("sugar" = 5)
-	items = list(/obj/item/reagent_containers/food/snacks/sliceable/flatdough)
+	items = list(
+		/obj/item/reagent_containers/food/snacks/sliceable/flatdough,
+		/obj/item/reagent_containers/food/snacks/butterslice,
+		)
 	result = /obj/item/reagent_containers/food/snacks/pie
 
 /datum/recipe/cherrypie
@@ -406,6 +409,7 @@ I said no!
 	reagents = list("sugar" = 10)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/sliceable/flatdough,
+		/obj/item/reagent_containers/food/snacks/butterslice,
 	)
 	result = /obj/item/reagent_containers/food/snacks/cherrypie
 
@@ -413,6 +417,7 @@ I said no!
 	fruit = list("berries" = 1)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/sliceable/flatdough,
+		/obj/item/reagent_containers/food/snacks/butterslice,
 	)
 	result = /obj/item/reagent_containers/food/snacks/berryclafoutis
 
