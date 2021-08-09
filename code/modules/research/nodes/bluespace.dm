@@ -123,7 +123,8 @@
 	required_tech_levels = list()
 	cost = 1500
 
-	unlocks_designs = list(/datum/design/research/circuit/shield/hull)
+	unlocks_designs = list(	/datum/design/research/circuit/shield/hull,
+							/datum/design/research/circuit/telesci/inhibit)
 
 /datum/technology/teleportation
 	name = "Teleportation"
@@ -154,6 +155,7 @@
 
 	unlocks_designs = list(	/datum/design/research/circuit/telesci/console,
 							/datum/design/research/circuit/telesci/hub,
+							/datum/design/research/circuit/telesci/relay,
 							/datum/design/research/item/part/artificialbscrystal,
 							/datum/design/research/circuit/bssilk/hub,
 							/datum/design/research/circuit/bssilk/console,
