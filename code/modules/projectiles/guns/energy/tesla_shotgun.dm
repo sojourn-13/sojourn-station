@@ -10,8 +10,9 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	suitable_cell = /obj/item/cell/medium
 	cell_type = /obj/item/cell/medium/moebius
-	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	twohanded = TRUE
+	slot_flags = SLOT_BELT|SLOT_HOLSTER|SLOT_BACK
+	twohanded = TRUE // It is a shotgun
+	w_class = ITEM_SIZE_BULKY // It's a shotgun
 	can_dual = FALSE
 	projectile_type = /obj/item/projectile/beam/shotgun
 	charge_meter = TRUE
