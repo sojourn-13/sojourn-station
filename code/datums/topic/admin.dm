@@ -1092,10 +1092,10 @@
 		H.show(source.owner)
 
 
-/datum/admin_topic/centcommfaxreply
+/datum/admin_topic/centcomfaxreply
 	keyword = "FaxReply"
 
-/datum/admin_topic/centcommfaxreply/Run(list/input)
+/datum/admin_topic/centcomfaxreply/Run(list/input)
 	var/mob/sender = locate(input["FaxReply"])
 	var/datum/faction/faction = GLOB.factions_list[input["faction"]]
 	var/obj/machinery/photocopier/faxmachine/fax = locate(input["originfax"])
