@@ -49,10 +49,10 @@
 			/obj/item/reagent_containers/hypospray/autoinjector,
 			/obj/item/bodybag,
 			/obj/machinery/suspension_gen,
-			/obj/item/computer_hardware/hard_drive/portable/design
+			/obj/item/computer_hardware/hard_drive/portable/design = custom_good_name("Blank Data Disk")
 		),
 	)
-
+//Todo, make all these uncheeseable
 	offer_types = list(
 			/obj/item/reagent_containers/blood/APlus,
 			/obj/item/reagent_containers/blood/AMinus,
@@ -65,7 +65,7 @@
 			/obj/item/storage/firstaid/toxin,
 			/obj/item/storage/firstaid/o2,
 			/obj/item/storage/firstaid/adv,
-			/obj/item/stack/medical/bruise_pack,
-			/obj/item/stack/medical/splint,
-			/obj/item/stack/medical/ointment
+			/obj/item/stack/medical/bruise_pack = 4,
+			/obj/item/stack/medical/splint = 2,
+			/obj/item/stack/medical/ointment = 4
 		)

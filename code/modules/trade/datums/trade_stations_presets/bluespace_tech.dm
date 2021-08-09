@@ -16,7 +16,7 @@
 	)
 
 	offer_types = list(
-		/obj/item/bluespace_crystal = 0.25,
+		/obj/item/bluespace_crystal = 0.25, //Only get 1/4th the credits with this.
 		/obj/item/device/mmi/digital/posibrain,
-		/obj/item/reagent_containers/food/snacks/csandwich = 4
+		/obj/item/reagent_containers/food/snacks/csandwich = 4 //Its worth 4x as much. "I WAS IN BLUESPACE TOO LONG, GIVE ME THE REAL FOOD, FAST!!!!" - _Elar_
 	)

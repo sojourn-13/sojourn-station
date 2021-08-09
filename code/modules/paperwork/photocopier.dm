@@ -231,3 +231,4 @@
 	name = "toner cartridge"
 	icon_state = "tonercartridge"
 	var/toner_amount = 30
+	price_tag = 3

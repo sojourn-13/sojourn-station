@@ -216,3 +216,67 @@
 	else
 		..()
 
+
+/obj/item/reagent_containers/food/snacks/rawcutlet
+	name = "raw cutlet"
+	desc = "A thin piece of raw meat."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "rawcutlet"
+	bitesize = 1
+	center_of_mass = list("x"=17, "y"=20)
+	preloaded_reagents = list("protein" = 1)
+	matter = list(MATERIAL_BIOMATTER = 3)
+
+/obj/item/reagent_containers/food/snacks/cutlet
+	name = "cutlet"
+	desc = "A tasty meat slice."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "cutlet"
+	bitesize = 2
+	center_of_mass = list("x"=17, "y"=20)
+	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 3)
+
+/obj/item/reagent_containers/food/snacks/rawcutlet/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/material/kitchen/rollingpin))
+		new /obj/item/reagent_containers/food/snacks/patty_raw(src)
+		to_chat(user, "You pound the meat into a patty.") // You can finally pound your own meat.
+		qdel(src)
+
+/obj/item/reagent_containers/food/snacks/patty_raw
+	name = "raw patty"
+	desc = "A raw patty ready to be grilled into a juicy and delicious burger."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "patty_raw"
+	bitesize = 2
+	center_of_mass = list("x"=17, "y"=20)
+	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 3)
+
+/obj/item/reagent_containers/food/snacks/patty
+	name = "patty"
+	desc = "A juicy cooked patty, ready to be slapped between two buns."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "patty"
+	bitesize = 2
+	center_of_mass = list("x"=17, "y"=20)
+	preloaded_reagents = list("protein" = 3) // It's cooked
+	matter = list(MATERIAL_BIOMATTER = 3)
+
+/obj/item/reagent_containers/food/snacks/chickenbreast
+	name = "poultry breast"
+	desc = "The breast meat of an avian species, chicken or otherwise."
+	icon_state = "chickenbreast"
+	bitesize = 2
+	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 3)
+
+/obj/item/reagent_containers/food/snacks/rawmeatball
+	name = "raw meatball"
+	desc = "A raw meatball."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "rawmeatball"
+	bitesize = 2
+	center_of_mass = list("x"=16, "y"=15)
+	preloaded_reagents = list("protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 5)

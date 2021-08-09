@@ -23,7 +23,6 @@
 
 		),
 		"Projectile weapons" = list(
-			/obj/item/gun/projectile/glock,
 			/obj/item/gun/projectile/clarissa,
 			/obj/item/gun/projectile/olivaw,
 			/obj/item/gun/projectile/revolver/detective,
