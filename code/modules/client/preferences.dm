@@ -13,8 +13,6 @@
 	var/last_id
 
 	var/save_load_cooldown
-			//Playtime recorded per department.
-	var/list/playtime = list()
 
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
@@ -40,11 +38,6 @@
 	if(istype(C))
 		client = C
 		client_ckey = C.ckey
-		for(var/departmentplaytime in typesof(/datum/department) - /datum/department)
-			var/datum/department/departmentplaytimevar = new departmentplaytime()
-			if(departmentplaytimevar.id)
-				playtime += departmentplaytimevar.id
-				playtime[departmentplaytimevar.id] = 0
 		SScharacter_setup.preferences_datums[client_ckey] = src
 		if(SScharacter_setup.initialized)
 			setup()
