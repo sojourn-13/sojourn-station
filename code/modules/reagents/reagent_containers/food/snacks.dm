@@ -3225,6 +3225,13 @@
 	nutriment_desc = list("vanilla" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
 
+/obj/item/reagent_containers/food/snacks/icecream/attackby(obj/item/W as obj, mob/user as mob) // No way we're microwaving two cookies to make an ICECREAM sandwich. - Seb
+	if(istype(W,/obj/item/reagent_containers/food/snacks/cookie))
+		new /obj/item/reagent_containers/food/snacks/icecreamsandwich(src)
+		to_chat(user, "You sandwich the icecream between the cookies.")
+		qdel(W)
+		qdel(src)
+
 /obj/item/reagent_containers/food/snacks/chocoicecream
 	name = "chocolate icecream"
 	desc = "A sweet and intense velvety chocolate icecream, for those who love bitter yet sweet tones."
@@ -3245,9 +3252,9 @@
 	nutriment_desc = list("strawberry" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
 
-/obj/item/reagent_containers/food/snacks/icecream/attackby(obj/item/W as obj, mob/user as mob) // No way we're microwaving two cookies to make an ICECREAM sandwich. - Seb
+/obj/item/reagent_containers/food/snacks/strawberryicecream/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/reagent_containers/food/snacks/cookie))
-		new /obj/item/reagent_containers/food/snacks/icecreamsandwich(src)
+		new /obj/item/reagent_containers/food/snacks/strawberrysandwich(src)
 		to_chat(user, "You sandwich the icecream between the cookies.")
 		qdel(W)
 		qdel(src)
@@ -3259,6 +3266,15 @@
 	bitesize = 4
 	nutriment_amt = 8
 	nutriment_desc = list("icecream" = 10, "cookies" = 5, "perfection" = 15)
+	matter = list(MATERIAL_BIOMATTER = 8)
+
+/obj/item/reagent_containers/food/snacks/strawberrysandwich
+	name = "strawberry icecream sandwich"
+	desc = "A classic strawberry icecream sandwiched between two vanilla cookies, an essential treat to have by the dozen."
+	icon_state = "icecreamsandwich_sb"
+	bitesize = 4
+	nutriment_amt = 8
+	nutriment_desc = list("strawberry icecream" = 10, "cookies" = 5, "perfection" = 15)
 	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/reagent_containers/food/snacks/chocolatepiece
