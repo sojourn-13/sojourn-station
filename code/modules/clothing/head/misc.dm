@@ -172,7 +172,7 @@
 
 /*Misc*/
 
-/obj/item/clothing/head/rank/centcomm
+/obj/item/clothing/head/rank/centcom
 	name = "\improper CentComm. hat"
 	icon_state = "centcom"
 	item_state_slots = list(

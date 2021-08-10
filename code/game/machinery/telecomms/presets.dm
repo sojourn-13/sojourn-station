@@ -48,7 +48,7 @@
 	network = "nadezhda"
 	produces_heat = 0
 	autolinkers = list("hub_cent", "c_relay", "s_relay", "m_relay", "r_relay",
-	 "centcomm", "receiverCent", "broadcasterCent")
+	 "centcom", "receiverCent", "broadcasterCent")
 
 //Receivers
 
@@ -110,7 +110,7 @@
 	network = "nadezhda"
 	freq_listening = list(DTH_FREQ)
 	produces_heat = 0
-	autolinkers = list("processorCent", "centcomm")
+	autolinkers = list("processorCent", "centcom")
 
 //Processors
 
@@ -214,11 +214,11 @@
 	freq_listening = list(PRO_FREQ)
 	autolinkers = list("prospector")
 
-/obj/machinery/telecomms/server/presets/centcomm
+/obj/machinery/telecomms/server/presets/centcom
 	id = "CentComm server"
 	freq_listening = list(DTH_FREQ)
 	produces_heat = 0
-	autolinkers = list("centcomm")
+	autolinkers = list("centcom")
 
 /obj/machinery/telecomms/server/presets/nt
 	id = "Church Server"
