@@ -11,7 +11,7 @@
 	var/max_components = IC_COMPONENTS_BASE
 	var/max_complexity = IC_COMPLEXITY_BASE
 	var/opened = 0
-	var/obj/item/cell/small/battery = null // Internal cell which most circuits need to work.
+	var/obj/item/cell/small/battery // Internal cell which most circuits need to work.
 
 /obj/item/device/electronic_assembly/medium
 	name = "electronic mechanism"
@@ -40,7 +40,7 @@
 	w_class = ITEM_SIZE_TINY
 	max_components = IC_COMPONENTS_BASE / 2
 	max_complexity = IC_COMPLEXITY_BASE / 2
-	var/obj/item/implant/integrated_circuit/implant = null
+	var/obj/item/implant/integrated_circuit/implant
 
 /obj/item/device/electronic_assembly/New()
 	..()
@@ -244,7 +244,7 @@
 			opened = !opened
 			to_chat(user, "<span class='notice'>You [opened ? "opened" : "closed"] \the [src].</span>")
 			update_icon()
-	else if(istype(I, /obj/item/device/integrated_electronics/wirer) || istype(I, /obj/item/device/integrated_electronics/debugger) || istype(I, /obj/item/tool/screwdriver))
+	else if(istype(I, /obj/item/device/electronics/integrated/wirer) || istype(I, /obj/item/device/electronics/integrated/debugger) || istype(I, /obj/item/tool/screwdriver))
 		if(opened)
 			interact(user)
 		else

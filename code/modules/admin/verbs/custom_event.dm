@@ -37,7 +37,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_change_server_ad, R_ADMIN|R_FUN, FALSE)
 
 	var/input = input(usr, "Enter the custom advert. Keep it short and sweet. To reset the advert to config, hit cancel.", "Custom Advert", server_ad) as message|null
 	if(!input)
-		world.load_ad()
+		//world.load_ad()
 		log_admin("[usr.key] has reset the server advert.")
 		message_admins("[key_name_admin(usr)] has reset the server advert.")
 		return

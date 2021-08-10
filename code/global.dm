@@ -1,8 +1,3 @@
-//#define TESTING
-#if DM_VERSION < 506
-#warn This compiler is out of date. You may experience issues with projectile animations.
-#endif
-
 
 //duck you byond
 var/global/image/stringbro = new() // Temporarily super-global because of BYOND init order dumbness.

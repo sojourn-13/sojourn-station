@@ -2,7 +2,7 @@
 #define EXTOOLS	(world.GetConfig("env", "EXTOOLS_DLL") || (world.system_type == MS_WINDOWS ? "byond-extools.dll" : "./libbyond-extools.so"))
 #define EXTOOLS_SUCCESS	"SUCCESS"
 #define EXTOOLS_FAILED	"FAIL"
-#define GLOBAL_PROC		"magic BS"
+#define GLOBAL_PROC "some_magic_bullshit" // load order issue, have to place it here.
 
 /*
 	Core - Provides necessary functionality for other modules.

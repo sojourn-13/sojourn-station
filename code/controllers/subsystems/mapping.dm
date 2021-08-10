@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(mapping)
 
 	ghostteleportlocs = sortAssoc(ghostteleportlocs)
 
-	return 1
+	return ..()
 
 /datum/controller/subsystem/mapping/proc/build_overmap()
 	testing("Building overmap...")
