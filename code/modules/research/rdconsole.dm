@@ -209,7 +209,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			var/datum/computer_file/binary/design/file = locate(href_list["download_disk_design"]) in disk.stored_files
 			if(file && !file.copy_protected)
 				files.AddDesign2Known(file.design)
-				griefProtection() //Update CentComm too
+				griefProtection() //Update CentCom too
 	if(href_list["upload_disk_design"]) // User is attempting to upload (rdconsole->disk) a design to the disk.
 		if(disk)
 			var/datum/design/D = locate(href_list["upload_disk_design"]) in files.known_designs
