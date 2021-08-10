@@ -1,4 +1,12 @@
-/datum/unit_test/force_move_trigger_crossed/Run()
+/datum/unit_test/movement
+	name = "MOVEMENT template"
+	async = 0
+	disabled = 0
+
+/datum/unit_test/movement/force_move_shall_trigger_crossed_when_entering_turf
+	name = "MOVEMENT - Force Move Shall Trigger Crossed When Entering Turf"
+
+/datum/unit_test/movement/force_move_shall_trigger_crossed_when_entering_turf/start_test()
 	var/turf/start = locate(20,20,1)
 	var/turf/target = locate(20,21,1)
 
@@ -8,13 +16,20 @@
 	mover.forceMove(target)
 
 	if(!crossed.crossers)
-		Fail("The target object was never crossed.")
-	TEST_ASSERT_EQUAL(crossed.crossers.len, 1, "The target object was crossed multiple times, expected 1.")
+		fail("The target object was never crossed.")
+	else if(crossed.crossers.len != 1)
+		fail("The target object was crossed [crossed.crossers.len] times, expected 1.")
+	else
+		pass("The target was crossed 1 time.")
 
 	qdel(target)
 	qdel(crossed)
+	return TRUE
 
-/datum/unit_test/force_move_trigger_entered/Run()
+/datum/unit_test/movement/force_move_shall_trigger_entered
+	name = "MOVEMENT - Force Move Shall Trigger Entered"
+
+/datum/unit_test/movement/force_move_shall_trigger_entered/start_test()
 	var/turf/start = locate(20,20,1)
 	var/obj/mover = new /obj/test(start, 1)
 	var/obj/test/entered_obj/target = new(start, 1)
@@ -22,16 +37,20 @@
 	mover.forceMove(target)
 
 	if(!target.enterers)
-		Fail("The target object was never entered.")
-	TEST_ASSERT_EQUAL(target.enterers.len, 1, "The target object was entered multiple times, expected 1.")
+		fail("The target object was never entered.")
+	else if(target.enterers.len != 1)
+		fail("The target object was entered [target.enterers.len] times, expected 1.")
+	else
+		pass("The target was entered 1 time.")
 
 	qdel(mover)
 	qdel(target)
+	return TRUE
 
 /obj/test/crossed_obj
 	var/list/crossers
 
-/obj/test/crossed_obj/Crossed(crosser)
+/obj/test/crossed_obj/Crossed(var/crosser)
 	if(!crossers)
 		crossers = list()
 	crossers += crosser
@@ -39,7 +58,7 @@
 /obj/test/entered_obj
 	var/list/enterers
 
-/obj/test/entered_obj/Entered(enterer)
+/obj/test/entered_obj/Entered(var/enterer)
 	if(!enterers)
 		enterers = list()
 	enterers += enterer
