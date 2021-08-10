@@ -89,7 +89,7 @@
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/sergeantuniform(src)
 	if(prob(80))
-		new /obj/item/gun_upgrade/muzzle/silencer(src)
+		new /obj/item/gun_upgrade/muzzle/silencer(src) //The normal side arm can take it + they might swap gun to mosin/marks rifle
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 
