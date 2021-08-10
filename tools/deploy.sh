@@ -19,7 +19,7 @@ if [ -d ".git" ]; then
   cp -r .git/logs/* $1/.git/logs/
 fi
 
-cp cev_eris.dmb cev_eris.rsc $1/
+cp sojourn-station.dmb sojourn-station.rsc $1/
 cp -r maps/* $1/maps/
 cp -r strings/* $1/strings/
 cp -r config/names $1/config/
