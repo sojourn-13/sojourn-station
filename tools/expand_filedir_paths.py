@@ -88,6 +88,6 @@ def rewrite_sources(resources):
                 os.remove(path)
                 os.rename(path + ".tmp", path)
 
-dirs = read_filedirs("cev_eris.dme");
+dirs = read_filedirs("sojourn-station.dme");
 resources = index_files(dirs)
 rewrite_sources(resources)
