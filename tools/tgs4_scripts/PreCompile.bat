@@ -4,7 +4,7 @@ set TG_BOOTSTRAP_CACHE=%cd%
 IF NOT %1 == "" (
 	rem TGS4: we are passed the game directory on the command line
 	cd %1
-) ELSE IF EXIST "..\Game\B\cev_eris.dmb" (
+) ELSE IF EXIST "..\Game\B\sojourn-station.dmb" (
 	rem TGS3: Game/B/cev_eris.dmb exists, so build in Game/A
 	cd ..\Game\A
 ) ELSE (
