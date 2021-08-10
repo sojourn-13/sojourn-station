@@ -246,7 +246,7 @@
 "eL" = (/obj/structure/table/rack,/obj/item/flame/lighter/zippo/ironic,/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled/dark,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eM" = (/obj/structure/table/woodentable,/obj/machinery/light{dir = 1},/obj/machinery/photocopier/faxmachine{department = "Lodge Hunt Master's Office"},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eN" = (/obj/item/stool/padded,/obj/landmark/join/start/lodge_herbalist,/turf/simulated/floor/tiled/dark/brown_platform,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
-"eO" = (/obj/structure/table/woodentable,/obj/item/storage/firstaid/surgery,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eO" = (/obj/structure/table/woodentable,/obj/item/storage/firstaid/surgery,/obj/item/stack/nanopaste,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eP" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/disposalpipe/segment,/turf/simulated/floor/plating/under,/area/nadezhda/outside/forest/hunting_lodge)
 "eQ" = (/obj/structure/table/woodentable,/obj/item/gun/projectile/boltgun/light_wood,/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "eR" = (/obj/structure/flora/rock/variant1,/turf/simulated/floor/beach/water/shallow,/area/nadezhda/outside/forest/hunting_lodge_dark)
