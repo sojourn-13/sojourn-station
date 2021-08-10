@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/reinforced/commander
 	name = "blackshield commander's locker"
-	req_access = list(access_hos)
+	req_access = list(access_hos) //WO is Warden here
 	icon_state = "mc"
 
 /obj/structure/closet/secure_closet/reinforced/commander/populate_contents()
