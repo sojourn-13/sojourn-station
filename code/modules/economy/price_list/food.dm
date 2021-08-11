@@ -476,4 +476,4 @@
 	price_tag = 25
 
 /obj/item/pizzabox //Lets not make a loops
-	price_tag = 5
+	return pizza.get_item_cost()
