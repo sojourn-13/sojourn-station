@@ -476,4 +476,5 @@
 	price_tag = 25
 
 /obj/item/pizzabox/get_item_cost()
+	price_tag = 5
 	return get_item_cost(pizza)
