@@ -327,12 +327,11 @@
 	icon_state = "bulletproof_ironhammer"
 
 /obj/item/clothing/suit/armor/laserproof
-	name = "full ablative armor vest"
+	name = "ablative armor vest"
 	desc = "A vest that excels in protecting the wearer against energy projectiles."
 	icon_state = "ablative"
 	item_state = "ablative"
 	blood_overlay_type = "armor"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	slowdown = 0.5
 	armor = list(
 		melee = 25,
