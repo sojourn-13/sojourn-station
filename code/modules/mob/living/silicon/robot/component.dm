@@ -325,24 +325,24 @@
 	icon_state_broken = "motor_broken"
 
 /obj/item/robot_parts/robot_component/armour
-	name = "robot armour plating"
+	name = "armour plating"
 	icon_state = "armor"
 	icon_state_broken = "armor_broken"
 
 /obj/item/robot_parts/robot_component/armour/mkii
-	name = "robot Mark II armour plating"
+	name = "Mark II armour plating"
 	icon_state = "armormk2"
 	icon_state_broken = "armormk2_broken"
 	matter = list(MATERIAL_STEEL = 25)
 
 /obj/item/robot_parts/robot_component/armour/mkv
-	name = "robot Mark V armour plating"
+	name = "Mark V armour plating"
 	icon_state = "armormk5"
 	icon_state_broken = "armormk5_broken"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
 
 /obj/item/robot_parts/robot_component/camera
-	name = "robot camera"
+	name = "camera"
 	icon_state = "camera"
 	icon_state_broken = "camera_broken"
 
@@ -352,12 +352,12 @@
 	icon_state_broken = "analyser_broken"
 
 /obj/item/robot_parts/robot_component/radio
-	name = "robot radio"
+	name = "radio"
 	icon_state = "radio"
 	icon_state_broken = "radio_broken"
 
 /obj/item/robot_parts/robot_component/jetpack
-	name = "robot jetpack"
+	name = "jetpack"
 	desc = "Self refilling jetpack that makes the unit suitable for EVA work."
 	icon = 'icons/obj/tank.dmi'
 	icon_state = "jetpack-black"
