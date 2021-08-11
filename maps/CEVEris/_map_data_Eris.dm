@@ -9,7 +9,7 @@
 #include "_Hunting_Lodge.dmm"
 #include "../encounters/deepforest/deepforest.dm"
 #include "../encounters/spacefortress/spacefortress.dm"
-#include "centcomm.dmm"
+#include "centcom.dmm"
 
 /obj/map_data/eris
 	name = "Eris"

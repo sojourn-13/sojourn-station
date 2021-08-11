@@ -10,8 +10,9 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	suitable_cell = /obj/item/cell/medium
 	cell_type = /obj/item/cell/medium/moebius
-	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	twohanded = TRUE
+	slot_flags = SLOT_BELT|SLOT_HOLSTER|SLOT_BACK
+	twohanded = TRUE // It is a shotgun
+	w_class = ITEM_SIZE_BULKY // It's a shotgun
 	can_dual = FALSE
 	projectile_type = /obj/item/projectile/beam/shotgun
 	charge_meter = TRUE
@@ -27,6 +28,8 @@
 	item_state = "tesla_shotgun_manual"
 	price_tag = 1950
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_GOLD = 2.5)
+	var/recentpump = 0 // World time so that people can't spam it.
+	var/pump_per_shot = 5 // How many pumps it takes to charge a single shot
 
 // Charge the cell by pumping it.
 /obj/item/gun/energy/tesla_shotgun/manual/attack_self(mob/user as mob)
@@ -36,9 +39,12 @@
 	else if(cell.charge >= cell.maxcharge) // Does the cell need charging?
 		to_chat(user, "The [src.name] is already charged.")
 		return FALSE
-	else if(do_after(user, WORKTIME_INSTANT, src)) // Charge the cell.
+	else if(world.time >= recentpump + 10) // Charge the cell.
 		to_chat(user, "You pump the [src.name].")
-		cell.give(charge_cost / 2) // Only charge half of a shot per pump.
+		playsound(user, pumpshotgun_sound, 60, 1) // Sounds are nice...
+		flick("pumping", src) // ...But animations are even better
+		recentpump = world.time
+		cell.give(charge_cost / pump_per_shot) // So that we don't charge a whole shot each pump
 
 /obj/item/gun/energy/tesla_shotgun/high_damage
 	name = "\"Modern Solutions\" tesla shotgun"

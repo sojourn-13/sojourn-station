@@ -38,14 +38,15 @@
 /obj/item/implant/integrated_circuit/examine(mob/user)
 	IC.examine(user)
 
-/obj/item/implant/integrated_circuit/attackby(var/obj/item/O, var/mob/user)
-	if(istype(O, /obj/item/tool/crowbar) || istype(O, /obj/item/device/integrated_electronics) || istype(O, /obj/item/integrated_circuit) || istype(O, /obj/item/tool/screwdriver) || istype(O, /obj/item/cell/small) )
+/obj/item/implant/integrated_circuit/attackby(obj/item/O, mob/user)
+	if(istype(O, /obj/item/tool/crowbar) || istype(O, /obj/item/device/electronics/integrated) || istype(O, /obj/item/integrated_circuit) || istype(O, /obj/item/tool/screwdriver) || istype(O, /obj/item/cell/small) )
 		IC.attackby(O, user)
 	else
 		..()
 
 /obj/item/implant/integrated_circuit/attack_self(mob/user)
 	IC.attack_self(user)
+
 
 /obj/item/implant/integrated_circuit/hear_talk(mob/M, var/msg, verb, datum/language/speaking, speech_volume)
 	IC.hear_talk(M, msg, speaking, speech_volume = speech_volume)

@@ -23,8 +23,8 @@
 		/obj/item/device/electronic_assembly/drone = 10,
 		/obj/item/device/electronic_assembly/medium = 10,
 		/obj/item/device/electronic_assembly/large = 10,
-		/obj/item/device/integrated_electronics/wirer = 6,
-		/obj/item/device/integrated_electronics/debugger = 6,
+		/obj/item/device/electronics/integrated/wirer = 6,
+		/obj/item/device/electronics/integrated/debugger = 6,
 		/obj/item/tool/screwdriver = 6,
 		/obj/item/tool/crowbar = 6,
 		/obj/item/implanter = 6)

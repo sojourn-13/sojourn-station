@@ -23,8 +23,8 @@ GLOBAL_LIST_EMPTY(circuit_fabricator_recipe_list)
 		)
 
 	GLOB.circuit_fabricator_recipe_list["Tools"] = list(
-		/obj/item/device/integrated_electronics/wirer,
-		/obj/item/device/integrated_electronics/debugger
+		/obj/item/device/electronics/integrated/wirer,
+		/obj/item/device/electronics/integrated/debugger
 		)
 
 
@@ -196,3 +196,4 @@ GLOBAL_LIST_EMPTY(circuit_fabricator_recipe_list)
 /obj/item/disk/integrated_circuit/upgrade/advanced
 	name = "integrated circuit printer upgrade disk - advanced designs"
 	desc = "Install this into your integrated circuit printer to enhance it.  This one adds new, advanced designs to the printer."
+
