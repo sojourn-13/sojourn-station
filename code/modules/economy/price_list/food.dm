@@ -475,5 +475,5 @@
 /obj/item/reagent_containers/food/snacks/dionaroast
 	price_tag = 25
 
-/obj/item/pizzabox //Lets not make a loops
-	return pizza.get_item_cost()
+/obj/item/pizzabox/get_item_cost() //Lets not make a loops
+	. = pizza?.get_item_cost()
