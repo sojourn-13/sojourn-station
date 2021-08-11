@@ -1,49 +1,48 @@
+// cringe comsigs.
 /proc/is_listening_to_movement(var/atom/movable/listening_to, var/listener)
 	return GLOB.moved_event.is_listening(listening_to, listener)
 
 /datum/unit_test/observation
-	name = "OBSERVATION template"
-	async = 0
 	var/list/received_moves
 
-/datum/unit_test/observation/start_test()
+/datum/unit_test/observation/Run()
 	if(!received_moves)
 		received_moves = list()
 	received_moves.Cut()
 
 	sanity_check_events("Pre-Test")
-	. = conduct_test()
+	conduct_test()
 	sanity_check_events("Post-Test")
 
-/datum/unit_test/observation/proc/sanity_check_events(var/phase)
+/datum/unit_test/observation/proc/sanity_check_events(phase)
 	for(var/entry in GLOB.all_observable_events)
 		var/decl/observ/event = entry
 		if(null in event.global_listeners)
-			fail("[phase]: [event] - The global listeners list contains a null entry.")
+			Fail("[phase]: [event] - The global listeners list contains a null entry.")
 
 		for(var/event_source in event.event_sources)
 			for(var/list/list_of_listeners in event.event_sources[event_source])
 				if(isnull(list_of_listeners))
-					fail("[phase]: [event] - The event source list contains a null entry.")
+					Fail("[phase]: [event] - The event source list contains a null entry.")
 				else if(!istype(list_of_listeners))
-					fail("[phase]: [event] - The list of listeners was not of the expected type. Was [list_of_listeners.type].")
+					Fail("[phase]: [event] - The list of listeners was not of the expected type. Was [list_of_listeners.type].")
 				else
 					for(var/listener in list_of_listeners)
 						if(isnull(listener))
-							fail("[phase]: [event] - The event source listener list contains a null entry.")
+							Fail("[phase]: [event] - The event source listener list contains a null entry.")
 						else
 							var/proc_calls = list_of_listeners[listener]
 							if(isnull(proc_calls))
-								fail("[phase]: [event] - [listener] - The proc call list was null.")
+								Fail("[phase]: [event] - [listener] - The proc call list was null.")
 							else
 								for(var/proc_call in proc_calls)
 									if(isnull(proc_call))
-										fail("[phase]: [event] - [listener]- The proc call list contains a null entry.")
+										Fail("[phase]: [event] - [listener]- The proc call list contains a null entry.")
 
 /datum/unit_test/observation/proc/conduct_test()
 	return 0
 
-/datum/unit_test/observation/proc/receive_move(var/atom/movable/am, var/old_loc, var/new_loc)
+/datum/unit_test/observation/proc/receive_move(atom/movable/am, old_loc, new_loc)
 	received_moves[++received_moves.len] =  list(am, old_loc, new_loc)
 
 /datum/unit_test/observation/proc/dump_received_moves()
@@ -184,7 +183,7 @@
 
 /datum/unit_test/observation/moved_shall_only_trigger_for_recursive_drop/conduct_test()
 	var/turf/T = locate(20,20,1)
-	var/obj/mecha/mech = new(T)
+	var/mob/living/exosuit/exosuit = new(T)
 	var/obj/item/tool/wrench/held_item = new(T)
 	var/mob/living/carbon/human/dummy/held_mob = new(T)
 	var/mob/living/carbon/human/dummy/holding_mob = new(T)
@@ -197,9 +196,9 @@
 
 	holding_mob.real_name = "Holding Mob"
 	holding_mob.name = "Holding Mob"
-	holding_mob.forceMove(mech)
+	holding_mob.forceMove(exosuit)
 
-	mech.occupant = holding_mob
+	exosuit.pilots[1] = holding_mob
 
 	GLOB.moved_event.register(held_item, src, /datum/unit_test/observation/proc/receive_move)
 	holding_mob.drop_from_inventory(held_item)
@@ -210,15 +209,16 @@
 		return 1
 
 	var/list/event = received_moves[1]
-	if(event[1] != held_item || event[2] != held_mob || event[3] != mech)
-		fail("Unexpected move event received. Expected [held_item], was [event[1]]. Expected [held_mob], was [event[2]]. Expected [mech], was [event[3]]")
-	else if(!(held_item in mech.dropped_items))
-		fail("Expected \the [held_item] to be in the mechs' dropped item list")
+	if(event[1] != held_item || event[2] != held_mob || event[3] != exosuit)
+		fail("Unexpected move event received. Expected [held_item], was [event[1]]. Expected [held_mob], was [event[2]]. Expected [exosuit], was [event[3]]")
+/*	else if(!(held_item in exosuit.dropped_items))
+		fail("Expected \the [held_item] to be in the exosuits' dropped item list")
+*/
 	else
 		pass("One one moved event with expected arguments raised.")
 
 	GLOB.moved_event.unregister(held_item, src)
-	qdel(mech)
+	qdel(exosuit)
 	qdel(held_item)
 	qdel(held_mob)
 	qdel(holding_mob)
