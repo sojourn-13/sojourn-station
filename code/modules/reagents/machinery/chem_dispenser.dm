@@ -91,6 +91,10 @@
 /obj/machinery/chemical_dispenser/Initialize()
 	. = ..()
 	dispensable_reagents = sortList(dispensable_reagents)
+	if(fancy_hack) // Does the machine start already hacked?
+		hackedcheck = !hackedcheck // Not sure what this var do, but better safe than sorry
+		dispensable_reagents += hacked_reagents // Add the hacked chems
+		SSnano.update_uis(src) // Update the ui to be safe.
 
 
 /obj/machinery/chemical_dispenser/ex_act(severity)
