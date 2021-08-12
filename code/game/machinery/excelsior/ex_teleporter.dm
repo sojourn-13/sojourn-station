@@ -85,6 +85,9 @@ var/global/excelsior_last_draft = 0
 	.=..()
 
 /obj/machinery/complant_teleporter/RefreshParts()
+	if (!component_parts.len)
+		error("[src] \ref[src] had no parts on refresh")
+		return //this has runtimed before
 	var/man_rating = 0
 	var/man_amount = 0
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
