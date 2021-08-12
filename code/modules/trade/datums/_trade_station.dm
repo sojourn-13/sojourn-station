@@ -1,6 +1,12 @@
 #define good_data(nam, rand_list) list("name" = nam, "amount_range" = rand_list)
+/*
+nam is name of the good,
+rand_list is minium to maxium amout of goods generated per trade refresh,
+costmarkup is a added single multiplier to that good, by default its 1 - not in yet
+*/
 #define custom_good_name(nam) good_data(nam, null)
 #define custom_good_amount_range(rand_list) good_data(null, rand_list)
+//#define custom_good_tradecost(tradecost) good_data(null, null, tradecost)
 
 /datum/trade_station
 	var/name
@@ -21,7 +27,7 @@
 
 	var/list/name_pool = list()
 
-	var/markup = 0
+	var/markup = 0 //1.2 gets added to this
 	var/list/assortiment = list()
 	var/list/offer_types = list()
 
@@ -37,7 +43,7 @@
 
 /datum/trade_station/proc/init_src()
 	if(name)
-		crash_with("Some retard gived trade station a name before init_src, not thought name_pool. ([type])")
+		crash_with("Someone gived trade station a name before init_src, not thought name_pool. ([type])")
 	for(var/datum/trade_station/S in SStrade.all_stations)
 		name_pool.Remove(S.name)
 		if(!length(name_pool))
@@ -73,7 +79,7 @@
 		var/list/ass = assortiment[i]
 		if(islist(ass))
 			for(var/path in ass)
-				var/cost = SStrade.get_import_cost(path, src)
+				var/cost = SStrade.get_import_cost(path, src)// * costmarkup
 				var/list/rand_args = list(0, 50 / max(cost/200, 1))
 				var/list/good_packet = ass[path]
 				if(islist(good_packet))
@@ -144,7 +150,7 @@
 	var/atom/movable/AM = offer_type
 
 	var/min_amt = clamp(round(SPECIAL_OFFER_MIN_PRICE / max(1, SStrade.get_new_cost(AM))),1,10)
-	var/max_amt = clamp(round(SPECIAL_OFFER_MAX_PRICE / (max(1, SStrade.get_new_cost(AM)))),11,100)
+	var/max_amt = clamp(round(SPECIAL_OFFER_MAX_PRICE / (max(1, SStrade.get_new_cost(AM)))),11,20)
 	var/randompricehike = rand (10, 1000)
 	offer_amount = rand(min_amt, max_amt)
 #define spec_offer_price_custom_mod (isnum(offer_types[offer_type]) ? offer_types[offer_type] : 1)

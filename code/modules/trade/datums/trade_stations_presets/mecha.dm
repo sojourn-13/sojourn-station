@@ -35,8 +35,8 @@
 	offer_types = list(
 		/obj/item/mech_ammo_box/scattershot,
 		/obj/item/mech_ammo_box/lmg,
-		/obj/item/tool_upgrade/productivity/motor,
-		/obj/item/tool_upgrade/augment/hydraulic,
+		/obj/item/tool_upgrade/productivity/motor = 1.30,
+		/obj/item/tool_upgrade/augment/hydraulic = 1.35, //Requires other faction to work with
 		/obj/item/tool_upgrade/augment/cell_mount,
 		/obj/item/tool_upgrade/reinforcement/plating,
 		/obj/item/gun_upgrade/mechanism/overdrive,

@@ -13,7 +13,7 @@
 			/obj/item/computer_hardware/hard_drive/portable/design/janitor = good_data("Lonestar Janitor Pack", list(1, 10)),
 			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = good_data("H&S Nonlethal Magazines Pack", list(1, 10)),
 			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = good_data("H&S Lethal Magazines Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable
+			/obj/item/computer_hardware/hard_drive/portable = custom_good_name("Blank Data Disk")
 		),
 		"Tools and Equipment" = list(
 			/obj/item/clothing/suit/storage/hazardvest,
@@ -51,7 +51,6 @@
 			/obj/item/toy/weapon/katana,
 			/obj/item/toy/junk/snappop,
 			/obj/item/toy/junk/bosunwhistle,
-			/obj/item/toy/figure/character/bobblehead/excelsior,
 			/obj/item/toy/figure/character/bobblehead/serbian,
 			/obj/item/toy/figure/character/bobblehead/acolyte,
 			/obj/item/toy/figure/character/bobblehead/carrion,

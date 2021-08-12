@@ -40,12 +40,12 @@
 			/obj/item/gun/projectile/mk58/wood,
 			/obj/item/gun/projectile/revolver/lemant,
 			/obj/item/gun/projectile/shotgun/pump/combat,
-			/obj/item/gun/launcher/grenade
+			/obj/item/gun/projectile/grenade
 		),
 	)
 
 	offer_types = list(
 		/obj/item/clothing/suit/space/void/NTvoid,
 		/obj/item/clothing/shoes/hermes_shoes,
-		/obj/item/reagent_containers/food/snacks/grown = 4
+		/obj/item/reagent_containers/food/snacks/grown = 2
 	)

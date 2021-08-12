@@ -18,6 +18,6 @@
 
 	//Types of items the station may ask for
 	offer_types = list(
-		/obj/item/computer_hardware/hard_drive/cluster,
+		/obj/item/computer_hardware/hard_drive/cluster = 2, //This one is worth double its normal price
 		/obj/item/computer_hardware/processor_unit/super,
 	)

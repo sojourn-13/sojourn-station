@@ -96,6 +96,7 @@ var/global/photo_count = 0
 	item_state = "briefcase"
 	can_hold = list(/obj/item/photo)
 	matter = list(MATERIAL_BIOMATTER = 4)
+	price_tag = 5
 
 
 /*********

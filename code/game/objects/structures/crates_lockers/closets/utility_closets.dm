@@ -65,7 +65,7 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/tank/oxygen/red(src)
 	new /obj/item/extinguisher(src)
-	new /obj/item/clothing/head/hardhat(src)
+	new /obj/item/clothing/head/hardhat/red(src)
 	new /obj/item/inflatable/door(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 
@@ -114,7 +114,7 @@
 	if(prob(1))
 		new /obj/item/storage/pouch/engineering_supply(src)
 	if(prob(40))
-		new /obj/item/clothing/head/hardhat(src)
+		new /obj/item/clothing/head/hardhat/yellow(src)
 	new /obj/random/tool_upgrade(src)
 	new /obj/random/tool_upgrade(src)
 	//Every tool closet contains a couple guaranteed toolmods

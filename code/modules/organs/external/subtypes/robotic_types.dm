@@ -43,15 +43,19 @@
 	price_tag = 400
 
 /obj/item/organ/external/robotic/serbian/l_arm
+	price_tag = 400
 	default_description = /datum/organ_description/arm/left
 
 /obj/item/organ/external/robotic/serbian/r_arm
+	price_tag = 400
 	default_description = /datum/organ_description/arm/right
 
 /obj/item/organ/external/robotic/serbian/l_leg
+	price_tag = 400
 	default_description = /datum/organ_description/leg/left
 
 /obj/item/organ/external/robotic/serbian/r_leg
+	price_tag = 400
 	default_description = /datum/organ_description/leg/right
 
 /obj/item/organ/external/robotic/frozen_star
@@ -59,17 +63,22 @@
 	desc = "Tactical \"Holland & Sullivan\" blue and gray prosthesis for dangerous environment."
 	force_icon = 'icons/mob/human_races/cyberlimbs/frozen_star.dmi'
 	model = "frozen_star"
+	price_tag = 350
 
 /obj/item/organ/external/robotic/frozen_star/l_arm
+	price_tag = 350
 	default_description = /datum/organ_description/arm/left
 
 /obj/item/organ/external/robotic/frozen_star/r_arm
+	price_tag = 350
 	default_description = /datum/organ_description/arm/right
 
 /obj/item/organ/external/robotic/frozen_star/l_leg
+	price_tag = 350
 	default_description = /datum/organ_description/leg/left
 
 /obj/item/organ/external/robotic/frozen_star/r_leg
+	price_tag = 350
 	default_description = /datum/organ_description/leg/right
 
 // Artificer Guild
@@ -81,28 +90,40 @@
 	price_tag = 300
 
 /obj/item/organ/external/robotic/technomancer/l_arm
+	price_tag = 300
+
 	default_description = /datum/organ_description/arm/left
 
 /obj/item/organ/external/robotic/technomancer/r_arm
+	price_tag = 300
+
 	default_description = /datum/organ_description/arm/right
 
 /obj/item/organ/external/robotic/technomancer/l_leg
+	price_tag = 300
+
 	default_description = /datum/organ_description/leg/left
 
 /obj/item/organ/external/robotic/technomancer/r_leg
+	price_tag = 300
+
 	default_description = /datum/organ_description/leg/right
 
 /obj/item/organ/external/robotic/technomancer/groin
 	name = "\"Artificer Guild\" Groin"
 	default_description = /datum/organ_description/groin
+	price_tag = 300
 
 /obj/item/organ/external/robotic/technomancer/torso
 	name = "\"Artificer Guild\" Torso"
 	default_description = /datum/organ_description/chest
+	price_tag = 300
 
 /obj/item/organ/external/robotic/technomancer/head
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
+	price_tag = 300
+
 /*
 // Synth-Skin
 /obj/item/organ/external/robotic/full_body_prosthetic
@@ -137,15 +158,19 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/junktech/l_arm
 	default_description = /datum/organ_description/arm/left
+	price_tag = 100
 
 /obj/item/organ/external/robotic/junktech/r_arm
 	default_description = /datum/organ_description/arm/right
+	price_tag = 100
 
 /obj/item/organ/external/robotic/junktech/l_leg
 	default_description = /datum/organ_description/leg/left
+	price_tag = 100
 
 /obj/item/organ/external/robotic/junktech/r_leg
 	default_description = /datum/organ_description/leg/right
+	price_tag = 100
 
 // Soteria
 /obj/item/organ/external/robotic/moebius
@@ -162,26 +187,33 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/moebius/l_arm
 	default_description = /datum/organ_description/arm/left
+	price_tag = 700
 
 /obj/item/organ/external/robotic/moebius/r_arm
 	default_description = /datum/organ_description/arm/right
+	price_tag = 700
 
 /obj/item/organ/external/robotic/moebius/l_leg
 	default_description = /datum/organ_description/leg/left
+	price_tag = 700
 
 /obj/item/organ/external/robotic/moebius/r_leg
 	default_description = /datum/organ_description/leg/right
+	price_tag = 700
 
 /obj/item/organ/external/robotic/moebius/groin
 	default_description = /datum/organ_description/groin
+	price_tag = 700
 
 /obj/item/organ/external/robotic/moebius/torso
 	name = "\"Soteria\" Torso"
 	default_description = /datum/organ_description/chest
+	price_tag = 700
 
 /obj/item/organ/external/robotic/moebius/head
 	name = "\"Soteria\" Head"
 	default_description = /datum/organ_description/head
+	price_tag = 700
 
 // Blackshied
 /obj/item/organ/external/robotic/blackshield
@@ -198,26 +230,33 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/blackshield/l_arm
 	default_description = /datum/organ_description/arm/left
+	price_tag = 800
 
 /obj/item/organ/external/robotic/blackshield/r_arm
 	default_description = /datum/organ_description/arm/right
+	price_tag = 800
 
 /obj/item/organ/external/robotic/blackshield/l_leg
 	default_description = /datum/organ_description/leg/left
+	price_tag = 800
 
 /obj/item/organ/external/robotic/blackshield/r_leg
 	default_description = /datum/organ_description/leg/right
+	price_tag = 800
 
 /obj/item/organ/external/robotic/blackshield/groin
 	default_description = /datum/organ_description/groin
+	price_tag = 800
 
 /obj/item/organ/external/robotic/blackshield/torso
 	name = "\"Blackshield\" Torso"
 	default_description = /datum/organ_description/chest
+	price_tag = 800
 
 /obj/item/organ/external/robotic/blackshield/head
 	name = "\"Blackshield\" Head"
 	default_description = /datum/organ_description/head
+	price_tag = 800
 
 // Church of the Absolute
 /obj/item/organ/external/robotic/church
@@ -230,26 +269,33 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/church/l_arm
 	default_description = /datum/organ_description/arm/left
+	price_tag = 400
 
 /obj/item/organ/external/robotic/church/r_arm
 	default_description = /datum/organ_description/arm/right
+	price_tag = 400
 
 /obj/item/organ/external/robotic/church/l_leg
 	default_description = /datum/organ_description/leg/left
+	price_tag = 400
 
 /obj/item/organ/external/robotic/church/r_leg
 	default_description = /datum/organ_description/leg/right
+	price_tag = 400
 
 /obj/item/organ/external/robotic/church/groin
 	default_description = /datum/organ_description/groin
+	price_tag = 400
 
 /obj/item/organ/external/robotic/church/torso
 	name = "\"Absolute\" Torso"
 	default_description = /datum/organ_description/chest
+	price_tag = 400
 
 /obj/item/organ/external/robotic/church/head
 	name = "\"Absolute\" Head"
 	default_description = /datum/organ_description/head
+	price_tag = 400
 
 // Excelsior
 /obj/item/organ/external/robotic/excelsior
@@ -288,16 +334,20 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 	price_tag = 1200
 
 /obj/item/organ/external/robotic/one_star/l_arm
+	price_tag = 1200
 	default_description = /datum/organ_description/arm/left
 
 /obj/item/organ/external/robotic/one_star/r_arm
 	default_description = /datum/organ_description/arm/right
+	price_tag = 1200
 
 /obj/item/organ/external/robotic/one_star/l_leg
 	default_description = /datum/organ_description/leg/left
+	price_tag = 1200
 
 /obj/item/organ/external/robotic/one_star/r_leg
 	default_description = /datum/organ_description/leg/right
+	price_tag = 1200
 
 // Nashef
 /obj/item/organ/external/robotic/nashef
