@@ -41,7 +41,8 @@
 	..(loc)
 	birthtime = world.time
 	lifetime = _lifetime
-	addtimer(CALLBACK(src, .proc/close,), lifetime)
+	if(lifetime > 0) //Portals with no lifetime do not close automatically.
+		addtimer(CALLBACK(src, .proc/close,), lifetime)
 
 var/list/portal_cache = list()
 

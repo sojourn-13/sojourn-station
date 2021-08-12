@@ -377,6 +377,18 @@
 	sort_string = "VAAAE"
 	category = CAT_BLUE
 
+/datum/design/research/circuit/telesci/relay
+	name = "TeleSci Relay"
+	build_path = /obj/item/circuitboard/telesci_relay
+	sort_string = "VAAF"
+	category = CAT_BLUE
+
+/datum/design/research/circuit/telesci/inhibit
+	name = "Teleporter Inhibitor"
+	build_path = /obj/item/circuitboard/tele_inhibitor
+	sort_string = "VAAQ"
+	category = CAT_BLUE
+
 /datum/design/research/circuit/bssilk/console
 	name = "Bluespace Snare Control Console"
 	build_path = /obj/item/circuitboard/bssilk_cons
