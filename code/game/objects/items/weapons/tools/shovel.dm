@@ -15,6 +15,8 @@
 	edge = TRUE
 	max_health = 500
 	tool_qualities = list(QUALITY_SHOVELING = 35, QUALITY_DIGGING = 35, QUALITY_EXCAVATION = 10, QUALITY_HAMMERING = 15)
+	effective_faction = list("spider") // Spiders are weak to crushing.
+	damage_mult = 2
 
 /obj/item/tool/shovel/improvised
 	name = "junk shovel"

@@ -11,6 +11,8 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_WOOD = 2)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
 	tool_qualities = list(QUALITY_HAMMERING = 35, QUALITY_PRYING = 10)
+	effective_faction = list("spider") // Spiders are weak to crushing.
+	damage_mult = 2
 
 /obj/item/tool/hammer/powered_hammer
 	name = "powered sledgehammer"
