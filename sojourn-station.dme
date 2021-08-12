@@ -2855,6 +2855,7 @@
 #include "code\modules\turbolift\turbolift_process.dm"
 #include "code\modules\turbolift\turbolift_stop.dm"
 #include "code\modules\turbolift\turbolift_turfs.dm"
+#include "code\modules\unit_tests\_unit_tests.dm"
 #include "code\modules\vehicles\cargo_train.dm"
 #include "code\modules\vehicles\train.dm"
 #include "code\modules\vehicles\vehicle.dm"

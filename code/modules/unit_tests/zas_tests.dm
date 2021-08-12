@@ -19,10 +19,10 @@
 		/area/shuttle/escape/centcom,
 		/area/turret_protected/ai,
 		/area/shuttle/mining/station,
-		/area/eris/medical/virology,
-		/area/eris/rnd/xenobiology,
+		/area/nadezhda/medical/virology,
+		/area/nadezhda/rnd/xenobiology,
 		/area/outpost/mining_main/west_hall,
-		/area/eris/quartermaster/storage
+		/area/nadezhda/quartermaster/storage
 	)
 
 	log_test("Testing areas requiring UT_NORMAL")
