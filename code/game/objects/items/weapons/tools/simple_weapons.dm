@@ -31,6 +31,8 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_upgrades = 5
 	tool_qualities = list(QUALITY_HAMMERING = 10)
+	effective_faction = list("spider") // Spiders are weak to crushing.
+	damage_mult = 2
 
 /obj/item/tool/hatchet
 	name = "hatchet"
