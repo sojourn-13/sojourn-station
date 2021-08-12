@@ -24,6 +24,14 @@ var/datum/maps_data/maps_data = new
 	var/turf/T = get_turf(A)
 	return T && isContactLevel(T.z)
 
+//Checks for sealed Z-levels.
+/proc/isSealedLevel(level)
+	return level in maps_data.sealed_levels
+
+/proc/isOnSealedLevel(atom/A)
+	var/turf/T = get_turf(A)
+	return T && isSealedLevel(T.z)
+
 /proc/isAdminLevel(var/level)
 	return level in maps_data.admin_levels
 
