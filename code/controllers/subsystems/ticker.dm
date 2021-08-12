@@ -205,6 +205,7 @@ SUBSYSTEM_DEF(ticker)
 	return TRUE
 
 /datum/controller/subsystem/ticker/proc/setup()
+	var/init_start = world.timeofday
 	to_chat(world, "<span class='boldannounce'>Starting game...</span>")
 	//var/init_start = world.timeofday
 	//Create and announce mode
@@ -250,12 +251,11 @@ SUBSYSTEM_DEF(ticker)
 
 	CHECK_TICK
 
-	// no, block the main thread.
-	GLOB.storyteller.set_up()
-	to_chat(world, "<FONT color='blue'><B>Enjoy the game!</B></FONT>")
-	SEND_SOUND(world, sound('sound/AI/welcome.ogg')) // Skie
-	//Holiday Round-start stuff	~Carn
-	Holiday_Game_Start()
+	for(var/I in round_start_events)
+		var/datum/callback/cb = I
+		cb.InvokeAsync()
+	LAZYCLEARLIST(round_start_events)
+	log_world("Game start took [(world.timeofday - init_start)/10]s")
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
