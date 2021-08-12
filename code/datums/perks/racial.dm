@@ -518,6 +518,7 @@
 /datum/perk/folken_healing_young
 	name = "Folken Photo-Healing"
 	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration. Due to your comparitively young age, you heal much faster than older folken."
+	passivePerk = TRUE
 	var/replaced = FALSE // Did it replace the normal folken healing?
 
 /datum/perk/folken_healing_young/assign(mob/living/carbon/human/H)
