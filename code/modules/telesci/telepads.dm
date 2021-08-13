@@ -7,6 +7,7 @@
 	desc = "Short range pads that travel around the plannet, being just stablised somehow to not affect bluespace objects." //Legit plot whole braking the story but what ever
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "pad-idle"
+	anchored = TRUE
 
 /obj/machinery/telesci_pad/attackby(obj/item/I, mob/user, params)
 	return //No more plot whole braking the story
