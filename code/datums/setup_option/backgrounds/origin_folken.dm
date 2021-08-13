@@ -6,7 +6,7 @@
 
 	restricted_to_species = list(FORM_FOLKEN)
 
-	perks = list(PERK_FOLKEN_HEALING)
+	perks = list()
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -44,7 +44,7 @@
 
 	restricted_to_species = list(FORM_FOLKEN)
 
-	perks = list(PERK_FOLKEN_HEALING, PERK_ODD_REROLL)
+	perks = list(PERK_ODD_REROLL)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,

@@ -523,6 +523,8 @@
 		OP_EYES =     /obj/item/organ/internal/eyes
 		)
 
+	perks = list(PERK_FOLKEN_HEALING)
+
 	stat_modifiers = list(
 		STAT_BIO = 10,
 		STAT_COG = 0,
