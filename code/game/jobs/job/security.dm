@@ -32,7 +32,10 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/ass_of_concrete,
+				 /datum/perk/job/blackshield_conditioning,
+				 /datum/perk/job/bolt_reflect,
+				 /datum/perk/codespeak)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -90,7 +93,9 @@
 		STAT_VIG = 30,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/ass_of_concrete,
+				 /datum/perk/job/bolt_reflect,
+				 /datum/perk/codespeak)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -146,7 +151,8 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof,
+				 /datum/perk/codespeak)
 
 	description = "The Supply Specialist is the right hand of the warrant officer and the defacto controller of the armory and armory shop. <br>\
 	Your role is mainly a desk job - with duties rarely taking you outside of the colony or even the armory.<br>\
@@ -236,7 +242,8 @@
 		access_external_airlocks, access_prospector, access_brig, access_kitchen, access_medical_suits
 	)
 
-	perks = list(/datum/perk/ear_of_quicksilver)
+	perks = list(/datum/perk/ear_of_quicksilver,
+				 /datum/perk/codespeak)
 
 	stat_modifiers = list(
 		STAT_BIO = 15,
@@ -393,6 +400,8 @@
 		STAT_TGH = 25,
 		STAT_VIG = 20,
 	)
+
+	perks = list(/datum/perk/codespeak)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
