@@ -81,3 +81,48 @@
 		MATERIAL_PLASTIC = 30,
 		MATERIAL_GLASS = 30,
 		)
+
+/obj/machinery/autolathe/mechfab/grayson
+	name = "Greyson fabricator"
+	desc = "A machine used for construction of Greyson designs."
+	icon_state = "greyson_nade_printer"
+	circuit = /obj/item/circuitboard/mechfab/grayson
+
+	build_type = GREYSONFAB
+	storage_capacity = 240
+	speed = 0.2 //takes a bit of time
+	mat_efficiency = 3 //takes 300% mats
+
+
+//Updates lathe material storage size, production speed and material efficiency.
+/obj/machinery/autolathe/mechfab/grayson/RefreshParts()
+	..()
+
+	var/mb_rating = 0
+	var/mb_amount = 0
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
+		mb_rating += MB.rating
+		mb_amount++
+
+	storage_capacity = round(initial(storage_capacity)*(mb_rating/mb_amount))
+
+	var/las_rating = 0
+	var/las_amount = 0
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
+		las_rating += M.rating
+		las_amount++
+	las_rating -= las_amount
+
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating -= man_amount
+	if(man_rating == 3)
+		man_rating = 30 //If you have a grayson manip it gives you 30 0.1 so 3-3 = 0.2 in mat efficiency
+
+	queue_max = initial(queue_max) + mb_rating //So the more matter bin levels the more we can queue!
+
+	speed = initial(speed) + man_rating + las_rating
+	mat_efficiency = max(0.2, initial(mat_efficiency) - (man_rating * 0.1))

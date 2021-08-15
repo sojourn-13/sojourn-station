@@ -20,6 +20,7 @@
 #define BIOPRINTER		(1<<3)
 
 #define MECHFAB			(1<<4)
+#define GREYSONFAB		(1<<5)
 
 #define ORGAN_GROWER	(1<<6)
 

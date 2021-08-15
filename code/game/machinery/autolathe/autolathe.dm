@@ -848,7 +848,7 @@
 	queue_max = initial(queue_max) + mb_rating //So the more matter bin levels the more we can queue!
 
 	speed = initial(speed) + man_rating + las_rating
-	mat_efficiency = max(0.2, 1.0 - (man_rating * 0.1))
+	mat_efficiency = max(0.2, initial(mat_efficiency) - (man_rating * 0.1))
 
 
 

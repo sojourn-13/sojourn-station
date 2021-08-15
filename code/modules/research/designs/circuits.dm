@@ -154,6 +154,12 @@
 	build_path = /obj/item/circuitboard/autolathe
 	category = CAT_MACHINE
 
+/datum/design/research/circuit/grayson_mechfab
+	name = "Greyson fabricator"
+	build_path = /obj/item/circuitboard/mechfab/grayson
+	category = CAT_MACHINE
+	starts_unlocked = TRUE //We make it
+
 /datum/design/research/circuit/rdservercontrol
 	name = "R&D server control console"
 	build_path = /obj/item/circuitboard/rdservercontrol

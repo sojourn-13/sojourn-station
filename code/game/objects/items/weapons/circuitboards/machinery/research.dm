@@ -84,6 +84,18 @@
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stock_parts/console_screen = 1
 	)
+
+/obj/item/circuitboard/mechfab/grayson
+	build_name = "Circuit board (Greyson Fabricator)"
+	build_path = /obj/machinery/autolathe/mechfab
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 6)
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 2,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/console_screen = 1
+	)
 /* //Leaving this here for when its made into the bullet fab.
 /obj/item/circuitboard/armorfabricator
 	build_name = "Circuit board (Armor Fabricator)"
