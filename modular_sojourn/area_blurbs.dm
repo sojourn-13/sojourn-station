@@ -142,7 +142,7 @@ ty ilu - bear
 	narrate = "The small abode of custodial equipment, the most spotless place of this usually dust-ridden colony who is soon to be polished to a mirror sheen by its humblest of workers."
 
 /area/nadezhda/security/armory
-	narrate = "Weapons line the shelfs and the glimer reflects off the armor."
+	narrate = "Weapons line the shelves in perfect order and even more perfect condition. Ammunition is neatly kept separate. The autolathe clicks and pistons in anticipation for the guns and ammunition it will print on yet another busy day..."
 
 /area/nadezhda/security/armoryshop
 	narrate = "The smell of freshly pressed gunpowder permeates the air. Weapons line the shelves in perfect order and even more perfect condition. The shutters guard closely instruments of great equality, yet still allowing them to be seen for the sake of appraisal."
