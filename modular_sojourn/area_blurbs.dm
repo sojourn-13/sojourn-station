@@ -81,12 +81,6 @@ ty ilu - bear
 /area/nadezhda/dungeon/outside/prepper/vault/entryway
 	narrate = "A complex of housing, storage and power all left to ruin."
 
-/area/nadezhda/dungeon/outside/monster_cave
-	name = "Monster Cave"
-	icon_state = "erisgreen"
-	forced_ambience = list('sound/ambience/ambisin1.ogg', 'sound/ambience/ambisin2.ogg', 'sound/ambience/ambisin3.ogg', 'sound/ambience/ambisin4.ogg')
-	dynamic_lighting = TRUE
-
 /area/nadezhda/dungeon/outside/smuggler_zone
 	narrate = "A small outpost for pirates and smugglers alike."
 
@@ -119,18 +113,13 @@ ty ilu - bear
 /area/nadezhda/maintenance/substation
 	narrate = "One of the many substations around the colony seeing the SMES storage and power net sceners."
 
-//Hallway
-
-
 //Command
 
 /area/nadezhda/command/meeting_room
 	narrate = "A place for behind close door meetings to get things done, or argue for hours in..."
 
-
 /area/nadezhda/command/armory
 	narrate = "Clean fire arms and armor for when marshals and blackshield fails..."
-
 
 /area/nadezhda/command/panic_room
 	narrate = "A vault for the command personal unable to aid in cases of colony unrest or attack."
