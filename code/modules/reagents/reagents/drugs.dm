@@ -162,7 +162,7 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0 //Anything above 0 will have a 100% odds when smoking
+	addiction_chance = 0 //Anything above 0 will have 100% odds when smoking
 	nerve_system_accumulations = 10
 
 /datum/reagent/drug/nicotine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -182,7 +182,7 @@
 
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
-	M.add_chemical_effect(CE_PULSE, 2) //Your ODing...
+	M.add_chemical_effect(CE_PULSE, 2) //You're ODing...
 	if(prob(5))
 		M.emote("cough")
 	M.adjustOxyLoss(0.5)
@@ -196,10 +196,10 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0 //Never make nicotine actually addictive. Kaz's orders.
+	addiction_chance = 0 // Note: NEVER make nicotine actually addictive. EVER.
 	nerve_system_accumulations = 15
 
-/datum/reagent/drug/nicotineplus/overdose(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/drug/nicotineplus/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // If you inject fine nicotine
 	..()
 	M.add_chemical_effect(CE_PULSE, 1)
 	M.add_chemical_effect(CE_PAINKILLER, 10 * effect_multiplier)
@@ -207,8 +207,16 @@
 		M.add_chemical_effect(CE_ANTITOX, 10 * effect_multiplier)
 		M.heal_organ_damage(0.2 * effect_multiplier, 0.2 * effect_multiplier)
 
-/datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
+/datum/reagent/drug/nicotineplus/affect_ingest(mob/living/carbon/M, alien, effect_multiplier) // If you smoke it normally...or drink it liquid
+	..()
+	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier)
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 10 * effect_multiplier)
+		M.heal_organ_damage(0.2 * effect_multiplier, 0.2 * effect_multiplier)
+
+/datum/reagent/drug/nicotineplus/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
+	M.add_chemical_effect(CE_PULSE, 2)
 	if(prob(5))
 		M.emote("cough")
 	M.adjustOxyLoss(1)
