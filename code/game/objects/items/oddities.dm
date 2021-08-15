@@ -547,7 +547,7 @@
 		STAT_COG = 2, //trash stats for mass-printed trash
 		STAT_MEC = 2
 	)
-	perk = /datum/perk/bluespace
+	perk = /datum/perk/oddity/sharp_mind //TODO: fix /datum/perk/bluespace
 
 /obj/item/oddity/si_bluespace_scanner/examine(mob/living/user, distance)
 	. = ..()
@@ -568,3 +568,12 @@
 	if(my_area.bluespace_entropy > my_area.bluespace_hazard_threshold*0.95 || GLOB.bluespace_hazard_threshold > GLOB.bluespace_hazard_threshold*0.95)
 		to_chat(user, SPAN_NOTICE("Entropy in area has its readings off the chart..."))
 
+/obj/item/oddity/code_book
+	name = "Marshal Code Handbook"
+	desc = "A heavy book with details and translations of the Marshal codes."
+	icon_state = "book_code"
+	oddity_stats = list(
+		STAT_COG = 0
+	)
+	price_tag = 3200 //So we have a reason for stealing it
+	perk = /datum/perk/codespeak

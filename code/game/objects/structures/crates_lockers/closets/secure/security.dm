@@ -83,6 +83,7 @@
 	new /obj/item/clothing/suit/greatcoat/ihc(src)
 	new /obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak(src)
 	new /obj/item/storage/box/trackimp(src)
+	new /obj/item/oddity/code_book(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "supply specialist's locker"
@@ -127,6 +128,7 @@
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/clothing/suit/armor/commander/marshal_coat_ss(src)
 	new /obj/item/storage/box/trackimp(src)
+	new /obj/item/oddity/code_book(src)
 	if(prob(50))
 		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
 	else
