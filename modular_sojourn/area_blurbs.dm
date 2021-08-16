@@ -76,7 +76,7 @@ ty ilu - bear
 	narrate = "Sounds of different fauna, feral growls and cute squeaks of all kinds, can be heard echoing through the otherwise silent emptiness of this abandoned facility. Their purpose unknown, its mantainers nowhere to be seen, it now stands as the ruins of an animal-holding facility colloquially dubbed as 'The zoo'."
 
 /area/nadezhda/dungeon/outside/prepper
-	narrate = "A base of operations fallen into disrepair, its former inhabitants hoarding all manner of gear for survival have long since left it on the care of their defensive security systems, long since gone haywire. From its insides, a chittering that's definitely not robotic in nature can faintly be heard..."
+	narrate = "A base of operations fallen into disrepair, its former inhabitants hoarding all manner of gear for survival have long since left it on the care of their defensive security systems, now gone haywire. From its insides, a chittering that's definitely not robotic in nature can faintly be heard..."
 
 /area/nadezhda/dungeon/outside/prepper/vault/entryway
 	narrate = "The ruins of a civilization long lost to unknown causes, nothing but a deafening echo of silence can be heard through the immense hallways of this now abandoned habitational complex. That is, until its synthetic denizens and burrowed spiders start their staked feud for the ownership of this den..."
