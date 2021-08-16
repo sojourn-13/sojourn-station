@@ -205,6 +205,10 @@ var/list/_client_preferences_by_type
 	description = "Enable gun crosshair"
 	key = "GUN_CURSOR"
 
+/datum/client_preference/area_info_blurb
+	description = "Show area narration."
+	key = "AREA_INFO"
+
 /********************
 * General Staff Preferences *
 ********************/
