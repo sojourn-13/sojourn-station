@@ -54,7 +54,7 @@
 		to_chat(user, SPAN_NOTICE("You swallow some of contents of \the [src]."))
 
 	on_reagent_change()
-		if(icon_state == "saltshakersmall" || icon_state == "peppermillsmall" || icon_state == "flour")
+		if(icon_state == "saltshakersmall" || icon_state == "peppermillsmall" || icon_state == "flour" || icon_state == "sugarsmall")
 			return
 		if(reagents.reagent_list.len > 0)
 			switch(reagents.get_master_reagent_id())
@@ -84,24 +84,19 @@
 					icon_state = "coldsauce"
 					center_of_mass = list("x"=16, "y"=6)
 				if("sodiumchloride")
-					name = "Salt Shaker"
-					desc = "Salt. From space oceans, presumably."
-					icon_state = "saltshaker"
+					name = "Salt Bag"
+					desc = "A big bag of Salt. From space oceans, presumably."
+					icon_state = "salt" // "saltshaker" was nonexistant
 					center_of_mass = list("x"=16, "y"=10)
 				if("blackpepper")
 					name = "Pepper Mill"
 					desc = "Often used to flavor food or make people sneeze."
 					icon_state = "peppermillsmall"
 					center_of_mass = list("x"=16, "y"=10)
-				if("cornoil")
-					name = "Corn Oil"
-					desc = "A delicious oil used in cooking. Made from corn."
-					icon_state = "oliveoil"
-					center_of_mass = list("x"=16, "y"=6)
 				if("sugar")
-					name = "Sugar"
-					icon_state = "sugarsmall"
-					desc = "Tasty space sugar!"
+					name = "Sugar sack"
+					icon_state = "sugar"
+					desc = "A big bag of sugar, universal sweetener and cavity generator."
 					center_of_mass = list("x"=16, "y"=6)
 				else
 					name = "Misc Condiment Bottle"
@@ -125,10 +120,10 @@
 	preloaded_reagents = list("enzyme" = 50)
 
 /obj/item/reagent_containers/food/condiment/sugar
-	name = "sugar sack"
-	desc = "A big bag of sugar, universal sweetener and cavity generator."
-	icon_state = "sugar"
-	preloaded_reagents = list("sugar" = 50)
+	name = "Sugar shaker"
+	desc = "Tasty space sugar!"
+	icon_state = "sugarsmall"
+	preloaded_reagents = list("sugar" = 30)
 
 /obj/item/reagent_containers/food/condiment/cookingoil
 	name = "cooking oil bottle"
@@ -136,8 +131,9 @@
 	icon_state = "oliveoil"
 	possible_transfer_amounts = list(1,2,3,4,5,10)
 	preloaded_reagents = list("cornoil" = 50)
+	center_of_mass = list("x"=16, "y"=6)
 
-//Seperate from above since it's a small shaker rather then a large one.
+//Seperate from above since it's a small shaker rather than a large one.
 /obj/item/reagent_containers/food/condiment/saltshaker
 	name = "salt shaker"
 	desc = "Salt. From space oceans, presumably."

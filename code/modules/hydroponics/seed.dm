@@ -721,6 +721,10 @@
 					total_yield += 1
 					to_chat(user, SPAN_NOTICE("You have managed to harvest more!"))
 				total_yield = max(1,total_yield)
+				if(user.stats.getPerk(PERK_MASTER_HERBALIST))
+					total_yield += 2
+					to_chat(user, SPAN_NOTICE("Thanks to your folken herbalistic teachings, you managed to harvest even more!"))
+				total_yield = max(2,total_yield)
 
 		for(var/i = 0;i<total_yield;i++)
 			var/obj/item/product
