@@ -250,8 +250,11 @@
 			inserted_casing.is_caseless = C.is_caseless
 			inserted_casing.maxamount = C.maxamount
 			inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
-			if(ispath(inserted_casing.projectile_type) && C.BB)
+			//This here makes ot so if were loading in pre-shot sells it dosnt magiclly give it a BB
+			if(ispath(inserted_casing.projectile_type) && inserted_casing.BB)
 				inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
+			else
+				inserted_casing.BB = null
 			C.update_icon()
 			inserted_casing.update_icon()
 			loaded.Insert(1, inserted_casing)
