@@ -518,8 +518,18 @@
 /datum/perk/folken_healing/young
 	name = "Folken Photo-Healing"
 	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration. Due to your comparitively young age, you heal much faster than older folken."
+	var/replaced = FALSE // Did it replace the normal folken healing?
 
+/datum/perk/folken_healing/young/assign(mob/living/carbon/human/H)
+	..()
+	if(holder.stats.getPerk(PERK_FOLKEN_HEALING)) // Does the user has the folken healing perk?
+		holder.stats.removePerk(PERK_FOLKEN_HEALING) // Remove the old healing.
+		replaced = TRUE
 
+/datum/perk/folken_healing/young/remove()
+	if(replaced) // Did the perk replaced the normal healing perk?
+		holder.stats.addPerk(PERK_FOLKEN_HEALING) // Give back the replaced perk
+	..()
 
 ////////////////////////////// Mycus Perks
 

@@ -887,6 +887,7 @@
 #include "code\game\objects\items\devices\flash.dm"
 #include "code\game\objects\items\devices\floor_painter.dm"
 #include "code\game\objects\items\devices\hacktool.dm"
+#include "code\game\objects\items\devices\holowarrant.dm"
 #include "code\game\objects\items\devices\lighting.dm"
 #include "code\game\objects\items\devices\lightreplacer.dm"
 #include "code\game\objects\items\devices\megaphone.dm"
@@ -1834,6 +1835,7 @@
 #include "code\modules\mob\inventory\helpers.dm"
 #include "code\modules\mob\inventory\slots.dm"
 #include "code\modules\mob\language\ancient_latin.dm"
+#include "code\modules\mob\language\codespeak.dm"
 #include "code\modules\mob\language\generic.dm"
 #include "code\modules\mob\language\german.dm"
 #include "code\modules\mob\language\jana.dm"
@@ -2933,5 +2935,6 @@
 #include "maps\submaps\junk_field\j25_25\onestar\onestar.dm"
 #include "maps\submaps\junk_field\j25_25\serbian\serbian.dm"
 #include "maps\submaps\junk_field\j5_5\neutral\neutral.dm"
+#include "modular_sojourn\area_blurbs.dm"
 #include "modular_sojourn\pixelshift.dm"
 // END_INCLUDE

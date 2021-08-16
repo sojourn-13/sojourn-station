@@ -39,8 +39,6 @@
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/commanderuniform(src)
-	if(prob(90))
-		new /obj/item/gun_upgrade/muzzle/silencer(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 
