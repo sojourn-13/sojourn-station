@@ -39,12 +39,12 @@ ty ilu - bear
 
 
 /area/colony/exposedsun/pastgate
-	narrate = "Untamed wilderness and hostile wildlife roam freely past the colony gates amidst the traps and mines. Thread carefully, and keep your wits about you..."
+	narrate = "Untamed wilderness and hostile wildlife roam freely past the colony gates amidst the traps and mines. Tread carefully, and keep your wits about you, you are not alone out here..."
 
 //Maintenance
 
 /area/nadezhda/maintenance
-	narrate = "Dark passages long abandoned by the colony were left to be the domain of roaches, rats and spiders..."
+	narrate = "Dark passages long abandoned by the colony were left to be the domain of roaches, rats and spiders... Or worse."
 
 /area/nadezhda/maintenance/junk
 	narrate = "The Junkyard, maintained by the local faith. Watch out for intergalactical scrap meteors being forcibly pulled by its force."
@@ -58,7 +58,7 @@ ty ilu - bear
 	narrate = "Roaches and critters have made this damp and long abandoned cave their nest. A glint of gold shimmers from within the piles of scrap and rock walls, awaiting the curious prospector to unearth its hidden treasures."
 
 /area/nadezhda/dungeon/outside/abandoned_solars
-	narrate = "Its position being a difficult one to defend and properly mantain, these solar panels have long since fallen into abandonement, ravaged by local fauna and the unforgiving passage of time. A couple lengths of wire and a passion for construction will mayhaps render this decaying piece of civilization functional once more..."
+	narrate = "Once an abandoned and destroyed ruin, now reclaimed by the colony and maintained by the soteria. With just a few wires, it grants its boon in power, something to offset the cost of the humming drones patrolling around."
 
 /area/nadezhda/dungeon/outside/burned_outpost
 	narrate = "Perhaps a mere accident, or an intential arson to cover deeds of dubious nature, this small outpost has charred to the ground now, leaving behind only the faintest traces of whatever life inhabited it before."
@@ -73,16 +73,16 @@ ty ilu - bear
 	narrate = "The earliest traces of sentient technological settlement on the planet can be found in what's left of this haphazardly built outpost, now fallen to ruin. Be wary of the roaches and spiders that have claimed it as their nest."
 
 /area/nadezhda/dungeon/outside/zoo
-	narrate = "Sounds of different fauna, feral growls and cute squeaks of all kinds, can be heard echoing through the otherwise silent emptiness of this abandoned facility. Their purpose unknown, its mantainers nowhere to be seen, it now stands as the ruins of an animal-holding facility colloquially dubbed as 'The zoo'."
+	narrate = "Sounds of different fauna, feral growls and cute squeaks of all kinds, can be heard echoing through the otherwise silent emptiness of this abandoned facility. Their purpose unknown, its maintainers nowhere to be seen, it now stands as the ruins of an animal-holding facility colloquially dubbed as 'The zoo'."
 
 /area/nadezhda/dungeon/outside/prepper
-	narrate = "A base of operations fallen into disrepair, its former inhabitants hoarding all manner of gear for survival have long since left it on the care of their defensive security systems, now gone haywire. From its insides, a chittering that's definitely not robotic in nature can faintly be heard..."
+	narrate = "A base of operations fallen into disrepair, its former inhabitants hoarding all manner of gear for survival have long since left it to the care of their defensive security systems, now gone haywire. From its insides, a chittering that's definitely not robotic in nature can faintly be heard..."
 
 /area/nadezhda/dungeon/outside/prepper/vault/entryway
 	narrate = "The ruins of a civilization long lost to unknown causes, nothing but a deafening echo of silence can be heard through the immense hallways of this now abandoned habitational complex. That is, until its synthetic denizens and burrowed spiders start their staked feud for the ownership of this den..."
 
 /area/nadezhda/dungeon/outside/smuggler_zone
-	narrate = "An outpost of heavily reinforced walls stands strong and imposing, erected in the middle of the forest. Guarded closely by hordes of armed vatgrown space pirates, their crude chants and boasts can be heard from the outside, as well as some eerily cheery music..." // It's Caramelldansen.
+	narrate = "An outpost of heavily reinforced walls stands strong and imposing, erected in the middle of the forest. Guarded closely by hordes of armed vatgrown void wolves, their low unintelligible grunting a mockery of sapiant life." // It's Caramelldansen.
 
 /area/nadezhda/dungeon/outside/smuggler_zone_u
 	narrate = "The inside of the Void Wolves outpost, lively with the smell of cheap drugs and even cheaper booze, as well as the threating buzz of the energy guns and swords of its inhabitants."
@@ -91,7 +91,7 @@ ty ilu - bear
 	narrate = "An imposing office complex curiously located in the middle of the forest, its high technology machines and gadgets guarded closely by an army of heavily armed synthetics..."
 
 /area/nadezhda/outside/dcave
-	narrate = "Terrors may indeed stalk these caves, but trinkets and baubles can be found amidst the rubble and trash for those with sufficient light, a keen eye...and a steady trigger finger."
+	narrate = "Terrors may indeed stalk these caves, but trinkets and baubles can be found amidst the rubble and trash for those with sufficient light, a keen eye... and a steady trigger finger."
 
 /area/nadezhda/outside/pond
 	narrate = "A large pond housing life from frogs to croaker lords alike."
@@ -100,13 +100,13 @@ ty ilu - bear
 	narrate = "A small cave out of many that dot the planet, spiders can usually be seen lurking inside, nesting for prey to fall on their webs."
 
 /area/nadezhda/outside/forest/swamp_hut
-	narrate = "A small abandoned hut in the middle of the swamps with tilled plots of land and farm animals - an oasis for those with wishes of settlement, or who seek shelter from the local fauna. Beware the usual avian lifeforms that usually move inside looking for the same..."
+	narrate = "A small abandoned hut in the middle of the swamps with tilled plots of land and farm animals - an oasis for those with wishes of settlement, or who seek shelter from the local fauna. Beware the tribals that usually move inside looking for the same..."
 
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark
-	narrate = "The mooing of the tatonkas. Cerberuses snarling. The happy clucking of mutated chickens. All hunts, great and small alike, begin with the preparation brought about by the humble animals on this farm..."
+	narrate = "The mooing of the tatonkas. Cerberuse's snarling. The happy clucking of mutated chickens. All hunts, great and small alike, begin with the preparation brought about by the humble animals on this farm..."
 
 /area/nadezhda/outside/mountainsolars
-	narrate = "Being so high up makes the air thin, and the sun scorch harder. But there is beauty to be found on the vantage of the highest point in the colony, dotted by solar panels to provide power with."
+	narrate = "Being so high up makes the air thin, and the sun scorch harder. But there is beauty to be found on the vantage of the highest point in the colony, dotted by solar panels to provide power."
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
