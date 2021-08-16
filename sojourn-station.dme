@@ -1835,6 +1835,7 @@
 #include "code\modules\mob\inventory\helpers.dm"
 #include "code\modules\mob\inventory\slots.dm"
 #include "code\modules\mob\language\ancient_latin.dm"
+#include "code\modules\mob\language\codespeak.dm"
 #include "code\modules\mob\language\generic.dm"
 #include "code\modules\mob\language\german.dm"
 #include "code\modules\mob\language\jana.dm"
