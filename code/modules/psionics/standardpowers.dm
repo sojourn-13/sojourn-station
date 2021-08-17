@@ -42,7 +42,7 @@
 		usr.show_message("\blue You project your mind into [target.real_name]: [say]")
 		log_say("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
 		for(var/mob/observer/ghost/G in world)
-			G.show_message("<i>Telepathic message from <b>[src]</b> to <b>[target]</b>: [say]</i>")
+			G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool()
 	set category = "Psionic powers"
@@ -82,7 +82,7 @@
 		owner.nutrition = 400
 		owner.adjustToxLoss(15)
 		owner.drip_blood(20)
-		to_chat(src, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
+		to_chat(owner, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekineticprowress()
 	set category = "Psionic powers"
@@ -217,7 +217,7 @@
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			B.distress(TRUE)
 	else
-		to_chat(src, "You lack enough psi essence to call creatures from burrows.")
+		to_chat(owner, "You lack enough psi essence to call creatures from burrows.")
 
 /obj/item/organ/internal/psionic_tumor/proc/psychic_banish()
 	set category = "Psionic powers"
@@ -235,7 +235,7 @@
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			B.evacuate()
 	else
-		to_chat(src, "You lack enough psi essence to banish nearby creatures.")
+		to_chat(owner, "You lack enough psi essence to banish nearby creatures.")
 
 /obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere()
 	set category = "Psionic powers"
@@ -245,7 +245,7 @@
 	psi_point_cost = 3
 
 	if(pay_power_cost(psi_point_cost))
-		var/mob/living/L = get_grabbed_mob(src)			//Grab anyone we have grabbed
+		var/mob/living/L = get_grabbed_mob(owner)			//Grab anyone we have grabbed
 		var/turf/simulated/floor/target					//this is where we are teleporting
 		var/list/validtargets = list()					//list of valid tiles to teleport to
 
