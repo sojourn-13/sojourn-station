@@ -18,7 +18,7 @@
 		owner.stun_effect_act(0, 200, BP_CHEST)
 		owner.weakened = 10
 		owner.visible_message(
-			SPAN_DANGER("[src]'s flesh begins to hiss and bubble as their wounds mend!"),
+			SPAN_DANGER("[owner]'s flesh begins to hiss and bubble as their wounds mend!"),
 			SPAN_DANGER("A wave of agony envelops you as your wounds begin to close!")
 			)
 
@@ -53,7 +53,7 @@
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
 		owner.visible_message(
-			"[src] makes a psionic omnitool!",
+			"[owner] makes a psionic omnitool!",
 			"You make a psionic omnitool!"
 			)
 		usr.put_in_active_hand(tool)
@@ -67,7 +67,7 @@
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
 		owner.visible_message(
-			"[src] makes a psionic knife!",
+			"[owner] makes a psionic knife!",
 			"You make a psionic knife!"
 			)
 		usr.put_in_active_hand(knife)
@@ -82,6 +82,7 @@
 		owner.nutrition = 400
 		owner.adjustToxLoss(15)
 		owner.drip_blood(20)
+		to_chat(owner, "You cannibalize your own body to end your hunger.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekineticprowress()
 	set category = "Psionic powers"
@@ -92,6 +93,7 @@
 	if (!(TK in owner.mutations)) // We can't get TK if we already have TK
 		if(pay_power_cost(psi_point_cost))
 			owner.mutations.Add(TK)
+			to_chat(owner, "You use your powers to gain the ability to remotely interact with the world.")
 	else
 		to_chat(owner, "You already have tekekinesis.")
 
@@ -105,7 +107,7 @@
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/hammer/telekinetic_fist/fist = new /obj/item/tool/hammer/telekinetic_fist(src, owner)
 		owner.visible_message(
-			"[src] makes a telekinetic fist!",
+			"[owner] makes a telekinetic fist!",
 			"You make a telekinetic fist!"
 			)
 		usr.put_in_active_hand(fist)
@@ -198,7 +200,7 @@
 		spawn(2)
 		playsound(src.loc, 'sound/voice/shriek1.ogg', 75, 1, 8, 8)
 		//Playing the sound twice will make it sound really horrible
-		visible_message(SPAN_DANGER("[src] emits a horrifying wail as nearby burrows stir to life!"))
+		visible_message(SPAN_DANGER("[owner] emits a horrifying wail as nearby burrows stir to life!"))
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			B.distress(TRUE)
 	else
@@ -216,7 +218,7 @@
 		spawn(2)
 		playsound(src.loc, 'sound/voice/hiss6.ogg', 75, 1, 8, 8)
 		//Playing the sound twice will make it sound really horrible
-		visible_message(SPAN_DANGER("[src] emits a haunting scream as it turns to flee, taking the nearby horde with it...."))
+		visible_message(SPAN_DANGER("[owner] emits a haunting scream as it turns to flee, taking the nearby horde with it...."))
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			B.evacuate()
 	else
@@ -240,11 +242,11 @@
 					validtargets += T					//Add them to the list
 		target = pick(validtargets)						//Now we pick a target
 
-		do_sparks(1, 0, src)							//Visual feedback before the teleport
+		do_sparks(1, 0, owner.loc)							//Visual feedback before the teleport
 		owner.forceMove(target)							//Moves the caster
 		if(L)											//If we have a grabbed target
-			do_sparks(1, 0, target)						//Visual feeback before the teleport
+			do_sparks(1, 0, target.loc)						//Visual feeback before the teleport
 			L.forceMove(target)							//Moves the target
-			do_sparks(1, 0, target)						//Visual feedback after the teleport
-		do_sparks(1, 0, src)							//Visual feedback after the teleport
+			do_sparks(1, 0, target.loc)						//Visual feedback after the teleport
+		do_sparks(1, 0, owner.loc)							//Visual feedback after the teleport
 		owner.weakened += 10								//Moving like this is stressful and stuns you for a time.
