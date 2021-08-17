@@ -17,6 +17,132 @@
 			SPAN_DANGER("A wave of agony envelops you as your wounds begin to close!")
 			)
 
+/obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy()
+	set category = "Psionic powers"
+	set name = "Telepathy (1)"
+	set desc = "Expend a single point of your psi essence to send a message to someone. Cruciform users are shielded from this heresy."
+	psi_point_cost = 1
+
+	var/list/creatures = list() // Who we can talk to
+	for(var/mob/living/carbon/h in world) // Check every players in the game
+		if(!h.species?.reagent_tag != IS_SYNTHETIC && !h.get_core_implant(/obj/item/implant/core_implant/cruciform)) // Can't talk to robots or people with cruciforms
+			creatures += h // Add the player to the list we can talk to
+	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures
+	if (isnull(target))
+		return
+
+	if(pay_power_cost(psi_point_cost))
+		var/say = sanitize(input("What do you wish to say"))
+		target.show_message("\blue You hear [usr.real_name]'s voice: [say]")
+		usr.show_message("\blue You project your mind into [target.real_name]: [say]")
+		log_say("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
+		for(var/mob/observer/ghost/G in world)
+			G.show_message("<i>Telepathic message from <b>[src]</b> to <b>[target]</b>: [say]</i>")
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool()
+	set category = "Psionic powers"
+	set name = "Create Omnitool (1)"
+	set desc = "Expend a single point of your psi essence to create a shitty omnitool."
+	psi_point_cost = 1
+
+	if(pay_power_cost(psi_point_cost))
+		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
+		owner.visible_message(
+			"[src] make a psionic omnitool!",
+			"You make a psionic omnitool!"
+			)
+		usr.put_in_active_hand(tool)
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_knife()
+	set category = "Psionic powers"
+	set name = "Create Knife (1)"
+	set desc = "Expend a single point of your psi essence to create a Knife."
+	psi_point_cost = 1
+
+	if(pay_power_cost(psi_point_cost))
+		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
+		owner.visible_message(
+			"[src] make a psionic knife!",
+			"You make a psionic knife!"
+			)
+		usr.put_in_active_hand(knife)
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_weapon()
+	set category = "Psionic powers"
+	set name = "Create Weapon (2)"
+	set desc = "Construct a weapon"
+	psi_point_cost = 2
+
+	var/obj/item/oddity/active = null
+	if(usr.get_active_hand())
+		if(istype(usr.get_active_hand(), /obj/item/oddity))
+			active = usr.get_active_hand()
+			if(!active.oddity_stats)
+				to_chat(usr, "This oddity has no aspects to build a weapon from!")
+				return
+			var/list/LStats = active.oddity_stats
+			var/obj/item/cultweaponchoice = pickweight(list(
+				/obj/item/tool/sword/cult = (1 + LStats[STAT_ROB]),
+				/obj/item/gun/projectile/automatic/sol/cult = (1 + LStats[STAT_VIG]),
+				/obj/item/gun/energy/laser/cult = (1 + LStats[STAT_COG]),
+				/obj/item/tool/hammer/homewrecker/cult= (1 + LStats[STAT_TGH]),
+				/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
+				/obj/item/tool/saw/chain/cult = (1 + LStats[STAT_MEC])))
+			playsound(usr.loc, pick('sound/hallucinations/wail.ogg','sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/far_noise.ogg'), 50, 1, -3)
+			var/turf/T = get_turf(usr)
+			do_sparks(8, 0, T)
+			cultweaponchoice = new cultweaponchoice(T)
+			usr.visible_message(
+				SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into a [cultweaponchoice]!"),
+				SPAN_DANGER("You mold and twist the [active] like clay, transforming it into a [cultweaponchoice]!")
+				)
+			usr.drop_item()
+			usr.put_in_active_hand(cultweaponchoice)
+			qdel(active)
+
+		else
+			to_chat(usr, "You must hold an oddity in your active hand.")
+	else
+		to_chat(usr, "You must hold an oddity in your active hand.")
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_tool()
+	set category = "Psionic powers"
+	set name = "Create Tool (2)"
+	set desc = "Construct a tool"
+	psi_point_cost = 2
+
+	var/obj/item/oddity/active = null
+	if(usr.get_active_hand())
+		if(istype(usr.get_active_hand(), /obj/item/oddity))
+			active = usr.get_active_hand()
+			if(!active.oddity_stats)
+				to_chat(usr, "This oddity has no aspects to build a weapon from!")
+				return
+			var/list/LStats = active.oddity_stats
+			var/obj/item/cultweaponchoice = pickweight(list(
+				/obj/item/tool/saw/hyper = (1 + LStats[STAT_ROB]),
+				/obj/item/tool/hammer/powered_hammer = (1 + LStats[STAT_VIG]),
+				/obj/item/tool/multitool/advanced = (1 + LStats[STAT_COG]),
+				/obj/item/tool/shovel/power = (1 + LStats[STAT_TGH]),
+				/obj/item/tool/screwdriver/combi_driver = (1 + LStats[STAT_BIO]),
+				/obj/item/tool/weldingtool/advanced = (1 + LStats[STAT_MEC])))
+			playsound(usr.loc, pick('sound/hallucinations/wail.ogg','sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/far_noise.ogg'), 50, 1, -3)
+			var/turf/T = get_turf(usr)
+			do_sparks(8, 0, T)
+			cultweaponchoice = new cultweaponchoice(T)
+			usr.visible_message(
+				SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into a [cultweaponchoice]!"),
+				SPAN_DANGER("You mold and twist the [active] like clay, transforming it into a [cultweaponchoice]!")
+				)
+			usr.drop_item()
+			usr.put_in_active_hand(cultweaponchoice)
+			qdel(active)
+
+		else
+			to_chat(usr, "You must hold an oddity in your active hand.")
+	else
+		to_chat(usr, "You must hold an oddity in your active hand.")
+
 /*
 /datum/power/psion/horrifying
 	name = "Horrifying Visage"

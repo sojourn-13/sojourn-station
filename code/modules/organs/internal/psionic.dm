@@ -25,5 +25,10 @@
 	var/psi_point_cost
 
 	owner_verbs = list(
-		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_knife,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_weapon,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool
 	)
