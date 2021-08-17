@@ -93,7 +93,7 @@
 	if (!(TK in owner.mutations)) // We can't get TK if we already have TK
 		if(pay_power_cost(psi_point_cost))
 			owner.mutations.Add(TK)
-			to_chat(src, "You feel your abilities expending, allowing you to manipulate and move objects with your mind.")
+			to_chat(owner, "You feel your abilities expending, allowing you to manipulate and move objects with your mind.")
 	else
 		to_chat(owner, "You already have tekekinesis.")
 
@@ -106,7 +106,7 @@
 	if ((TK in owner.mutations)) // We can't remove TK if we don't already have TK
 		if(pay_power_cost(psi_point_cost))
 			owner.mutations.Remove(TK)
-			to_chat(src, "You feel your telekinetic powers becoming dormant, for now.")
+			to_chat(owner, "You feel your telekinetic powers becoming dormant, for now.")
 	else
 		to_chat(owner, "You do not have tekekinesis.")
 
