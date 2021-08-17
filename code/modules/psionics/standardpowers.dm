@@ -1,7 +1,12 @@
 /datum/power/psion/proc/addPower(var/mob/living/carbon/human/themaster)
 	to_chat(themaster, "DEBUG. Adding: [src] to the psion")
 
-// Automatic powers
+// NOTES ON BALANCE
+// Psionic powers are maintained and balanced by the long cooldown per psi point gained. It takes 5 minutes to gain a psi point and you're maximum pool is Cog/10
+// Since you will rarely have a fuck ton of psi points outside specializing (scientist/mar'qua/background choices/etc) and they take a long time to refill when spent.
+// The cooldowns are not based in a hard number but how much you want to risk by using a slowly recharging but limited pool. -Kazkin
+
+// Lesser powers - These powers should never exceed a cost of 1 point.
 /obj/item/organ/internal/psionic_tumor/proc/psionic_healing()
 	set category = "Psionic powers"
 	set name = "Psychosomatic healing (1)"
@@ -19,8 +24,8 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy()
 	set category = "Psionic powers"
-	set name = "Telepathy (1)"
-	set desc = "Expend a single point of your psi essence to send a message to someone. Cruciform users are shielded from this heresy."
+	set name = "Telepathic projection (1)"
+	set desc = "Expend a single point of your psi essence to send a message to someone. Cruciform users are shielded from this heresy and synthetics lack the flesh for it."
 	psi_point_cost = 1
 
 	var/list/creatures = list() // Who we can talk to
@@ -41,36 +46,72 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool()
 	set category = "Psionic powers"
-	set name = "Create Omnitool (1)"
-	set desc = "Expend a single point of your psi essence to create a shitty omnitool."
+	set name = "Telekinetic Omnitool (1)"
+	set desc = "Expend a single point of your psi essence to create an omnitool. It disappears when dropped or if it leaves your hand."
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
 		owner.visible_message(
-			"[src] make a psionic omnitool!",
+			"[src] makes a psionic omnitool!",
 			"You make a psionic omnitool!"
 			)
 		usr.put_in_active_hand(tool)
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_knife()
 	set category = "Psionic powers"
-	set name = "Create Knife (1)"
-	set desc = "Expend a single point of your psi essence to create a Knife."
+	set name = "Psychic Blade (1)"
+	set desc = "Expend a single point of your psi essence to create a low quality but still deadly knife. It's power and damage scale with your robustness."
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
 		owner.visible_message(
-			"[src] make a psionic knife!",
+			"[src] makes a psionic knife!",
 			"You make a psionic knife!"
 			)
 		usr.put_in_active_hand(knife)
 
+/obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer()
+	set category = "Psionic powers"
+	set name = "Psychosomatic Transference (1)"
+	set desc = "Expend a single point of your psi essence to fill your stomach with cannibalized proteins from your own body. Beware, this will generate toxins and expend some of your blood."
+	psi_point_cost = 1
+
+	if(pay_power_cost(psi_point_cost))
+		owner.nutrition = 400
+		owner.adjustToxLoss(15)
+		owner.drip_blood(20)
+
+/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress()
+	set category = "Psionic powers"
+	set name = "Telekinetic Prowress (1)"
+	set desc = "Expend a single point of your psi essence to gain telekinesis. Beware, only a genetics lab may remove the power once this is used. Lasts indefinitely."
+	psi_point_cost = 1
+
+	if(pay_power_cost(psi_point_cost))
+		owner.mutations.Add(TK)
+
+/obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist()
+	set category = "Psionic powers"
+	set name = "Telekinetic Fist (1)"
+	set desc = "Expend a single point of your psi essence to create a telekinetic fist, hitting some with it in melee or throwing it will damage and knock them back. It's knockback and power \
+	scales with your physical robustness."
+	psi_point_cost = 1
+
+	if(pay_power_cost(psi_point_cost))
+		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
+		owner.visible_message(
+			"[src] makes a telekinetic fist!",
+			"You make a telekinetic fist!"
+			)
+		usr.put_in_active_hand(knife)
+
+// Greater powers - These powers should have a cost of 1-5 and have very powerful effects.
 /obj/item/organ/internal/psionic_tumor/proc/psionic_weapon()
 	set category = "Psionic powers"
-	set name = "Create Weapon (2)"
-	set desc = "Construct a weapon"
+	set name = "Psionic Weapon Construction (2)"
+	set desc = "Expend two psi points to shape an oddity into a weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 2
 
 	var/obj/item/oddity/active = null
@@ -83,7 +124,7 @@
 			var/list/LStats = active.oddity_stats
 			var/obj/item/cultweaponchoice = pickweight(list(
 				/obj/item/tool/sword/cult = (1 + LStats[STAT_ROB]),
-				/obj/item/gun/projectile/automatic/sol/cult = (1 + LStats[STAT_VIG]),
+				/obj/item/gun/projectile/automatic/sts/rifle/cult = (1 + LStats[STAT_VIG]),
 				/obj/item/gun/energy/laser/cult = (1 + LStats[STAT_COG]),
 				/obj/item/tool/hammer/homewrecker/cult= (1 + LStats[STAT_TGH]),
 				/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
@@ -107,8 +148,8 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_tool()
 	set category = "Psionic powers"
-	set name = "Create Tool (2)"
-	set desc = "Construct a tool"
+	set name = "Psionic Tool Creation (2)"
+	set desc = "Expend two psi points to shape an oddity into a power tool. What tool your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 2
 
 	var/obj/item/oddity/active = null
@@ -120,12 +161,12 @@
 				return
 			var/list/LStats = active.oddity_stats
 			var/obj/item/cultweaponchoice = pickweight(list(
-				/obj/item/tool/saw/hyper = (1 + LStats[STAT_ROB]),
-				/obj/item/tool/hammer/powered_hammer = (1 + LStats[STAT_VIG]),
-				/obj/item/tool/multitool/advanced = (1 + LStats[STAT_COG]),
-				/obj/item/tool/shovel/power = (1 + LStats[STAT_TGH]),
-				/obj/item/tool/screwdriver/combi_driver = (1 + LStats[STAT_BIO]),
-				/obj/item/tool/weldingtool/advanced = (1 + LStats[STAT_MEC])))
+				/obj/item/tool/saw/chain/cult = (1 + LStats[STAT_ROB]),
+				/obj/item/tool/hammer/homewrecker/cult = (1 + LStats[STAT_VIG]),
+				/obj/item/tool/multitool/advanced/cult = (1 + LStats[STAT_COG]),
+				/obj/item/tool/shovel/power/cult = (1 + LStats[STAT_TGH]),
+				/obj/item/tool/screwdriver/combi_driver/cult = (1 + LStats[STAT_BIO]),
+				/obj/item/tool/weldingtool/advanced/cult = (1 + LStats[STAT_MEC])))
 			playsound(usr.loc, pick('sound/hallucinations/wail.ogg','sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/far_noise.ogg'), 50, 1, -3)
 			var/turf/T = get_turf(usr)
 			do_sparks(8, 0, T)
@@ -143,134 +184,64 @@
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
-/*
-/datum/power/psion/horrifying
-	name = "Horrifying Visage"
-	desc = "Infuses you with the aspect of the ship itself, causing you to drain sanity from anyone that observes you."
+/obj/item/organ/internal/psionic_tumor/proc/psychic_call()
+	set category = "Psionic powers"
+	set name = "Psychic Call (2)"
+	set desc = "Expend two points of your psi essence to call creatures from nearby burrows. They are not inherently friendly to you. Use at your own risks."
+	psi_point_cost = 2
 
-/datum/power/psion/horrifying/addPower(var/mob/living/carbon/human/themaster)
-	themaster.sanity_damage += 5
-	..()
+	if(pay_power_cost(psi_point_cost))
+		playsound(src.loc, 'sound/voice/shriek1.ogg', 75, 1, 8, 8)
+		spawn(2)
+		playsound(src.loc, 'sound/voice/shriek1.ogg', 75, 1, 8, 8)
+		//Playing the sound twice will make it sound really horrible
+		visible_message(SPAN_DANGER("[src] emits a horrifying wail as nearby burrows stir to life!"))
+		for (var/obj/structure/burrow/B in find_nearby_burrows())
+			B.distress(TRUE)
+	else
+		to_chat(src, "You lack enough psi essence to call creatures from burrows.")
 
-/datum/power/psion/vblade
-	name = "Voidmother's Blade"
-	desc = "Transforms an oddity into a weapon for our cause."
+/obj/item/organ/internal/psionic_tumor/proc/psychic_banish()
+	set category = "Psionic powers"
+	set name = "Psychic Banish (3)"
+	set desc = "Expend two points of your psi essence to banish nearby creatures capable of burrowing back into the holes from whence they came. Effects creatures must be able to burrow and may \
+	resist your psychic influence."
+	psi_point_cost = 3
 
-/datum/power/psion/amoung
-	name = "Among Them"
-	desc = "Causes roaches to see you as one of their own."
+	if(pay_power_cost(psi_point_cost))
+		playsound(src.loc, 'sound/voice/hiss6.ogg', 75, 1, 8, 8)
+		spawn(2)
+		playsound(src.loc, 'sound/voice/hiss6.ogg', 75, 1, 8, 8)
+		//Playing the sound twice will make it sound really horrible
+		visible_message(SPAN_DANGER("[src] emits a haunting scream as it turns to flee, taking the nearby horde with it...."))
+		for (var/obj/structure/burrow/B in find_nearby_burrows())
+			B.evacuate()
+	else
+		to_chat(src, "You lack enough psi essence to banish nearby creatures.")
 
-/datum/power/psion/amoung/addPower(var/mob/living/carbon/human/themaster)
-	themaster.faction = "roach"
-	..()
+/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere()
+	set category = "Psionic powers"
+	set name = "Journey to Nowhere (3)"
+	set desc = "Expend three psi points to transport yourself, whatever you are carrying, and anyone you are grabbing to the nightmare realm known as deep maintenance. You will land somewhere in the \
+	tunnels, but you are not assured safety or that you will be alone once your on the other side. Using this power strains the body and will stun you for a short time."
+	psi_point_cost = 3
 
-// Lesser powers
+	if(pay_power_cost(psi_point_cost))
+		var/mob/living/L = get_grabbed_mob(src)			//Grab anyone we have grabbed
+		var/turf/simulated/floor/target					//this is where we are teleporting
+		var/list/validtargets = list()					//list of valid tiles to teleport to
 
+		for(var/area/A in world)						//Clumbsy, but less intensive than iterating every tile
+			if(istype(A, /area/deepmaint))				//First find our deepmaint areas
+				for(var/turf/simulated/floor/T in A)	//Pull a list of valid floor tiles from deepmaint
+					validtargets += T					//Add them to the list
+		target = pick(validtargets)						//Now we pick a target
 
-/datum/power/psion/tranquility
-	name = "Tranquility"
-	desc = "End a breakdown immediately"
-	psi_point_cost = 1
-
-/datum/power/psion/candle
-	name = "Like a Candle"
-	desc = "Grants target a glimpse into the power of the void."
-	psi_point_cost = 5
-
-/datum/power/psion/wail
-	name = "Unearthly Wail"
-	desc = "Allows you to unleash a blood-curdling wail, draining sanity."
-	psi_point_cost = 1
-
-/datum/power/psion/darkness
-	name = "Bring Darkness"
-	desc = "Breaks all lights around you."
-	psi_point_cost = 1
-
-/datum/power/psion/banish
-	name = "Banish Swarm"
-	desc = "Banishes all roaches within 15 tiles of you to the nearest burrow."
-	psi_point_cost = 1
-
-/datum/power/psion/callswarm
-	name = "Call Swarm"
-	desc = "Calls a swarm of roaches to your location. They are not friendly to you."
-	psi_point_cost = 1
-
-/datum/power/psion/rust
-	name = "Rust"
-	desc = "Causes one object in your hand to rust and become useless."
-	psi_point_cost = 1
-
-/datum/power/psion/vfaith
-	name = "Voidmother's Faith"
-	desc = "Restores your sanity to full"
-	psi_point_cost = 1
-
-// Greater powers
-
-/datum/power/psion/decay
-	name = "Decay"
-	desc = "Makes all objects on your person and in the inventory of your grabbed target rust and become useless."
-	psi_point_cost = 4
-	psipointcost = 40
-
-/datum/power/psion/vshield
-	name = "Voidmother's Shield"
-	desc = "Grants you a black, oily substance that functions as powerful armor... permanently"
-	psipointcost = 40
-
-/datum/power/psion/initiate
-	name = "Rite of Initiation"
-	desc = "Induct a new psion to our ranks."
-	psi_point_cost = 4
-	psipointcost = 40
-
-/datum/power/psion/kingofbeasts
-	name = "King of Beasts"
-	desc = "Summons a friendly kaiser roach to your location."
-	psi_point_cost = 4
-	psipointcost = 40
-
-/datum/power/psion/viel
-	name = "Tear the Veil"
-	desc = "Rends the veil asunder for yourself and one other person."
-	psi_point_cost = 6
-	psipointcost = 40
-
-/datum/power/psion/truthinblood
-	name = "Truth in Blood"
-	desc = "Covers the ground around you in blood and gore."
-	psi_point_cost = 4
-	psipointcost = 40
-
-/datum/power/psion/breakfaith
-	name = "Break the faith"
-	desc = "Subvert an Obelisk to our cause."
-	psi_point_cost = 4
-	psipointcost = 40
-
-/datum/power/psion/breakreality
-	name = "Unseat Reality"
-	desc = "Bring down the walls of reality around you."
-	psi_point_cost = 4
-	psipointcost = 40
-
-/datum/power/psion/embracecorruption
-	name = "Embrace Corruption"
-	desc = "Sacrifice yourself to bring about a true fusion of man and machine."
-	psi_point_cost = 0
-	psipointcost = 40
-
-/datum/power/psion/underworld
-	name = "Path to the Underworld"
-	desc = "Teleport yourself and anyone grabbed by you to the under-tunnels."
-	psi_point_cost = 4
-	psipointcost = 40
-
-/datum/power/psion/theskies
-	name = "The Skies are Buried Deep"
-	desc = "Reveals the truth to everyone who can see you."
-	psi_point_cost = 4
-	psipointcost = 40
-*/
+		do_sparks(1, 0, src)							//Visual feedback before the teleport
+		owner.forceMove(target)							//Moves the caster
+		if(L)											//If we have a grabbed target
+			do_sparks(1, 0, target)						//Visual feeback before the teleport
+			L.forceMove(target)							//Moves the target
+			do_sparks(1, 0, target)						//Visual feedback after the teleport
+		do_sparks(1, 0, src)							//Visual feedback after the teleport
+		owner.weakened += 10								//Moving like this is stressful and stuns you for a time.

@@ -63,6 +63,12 @@
 
 //Subtracts psi points from you fool and checks if you can pay for powers.
 /obj/item/organ/internal/psionic_tumor/proc/pay_power_cost(var/psi_cost)
+	if(owner.stat == DEAD)
+		to_chat(src, "You are dead.")
+		return
+	if(owner.stat == UNCONSCIOUS)
+		to_chat(src, "You cannot use your psionic powers while unconsious.")
+		return
 	if(psi_points < psi_cost)
 		to_chat(usr,"You lack the psionic essence to do this.")
 		return FALSE

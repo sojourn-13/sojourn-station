@@ -1,4 +1,3 @@
-
 /obj/item/gun/energy/laser/heavypulserifle
 	name = "Jury-Rigged EZ-13 MK2 Heavy Pulse Rifle"
 	desc = "An exosuit mounted heavy pulse rifle that has been modified to be used on foot. This kind of modification is highly illegal in Sol. \
