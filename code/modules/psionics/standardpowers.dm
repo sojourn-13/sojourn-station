@@ -18,7 +18,7 @@
 		owner.stun_effect_act(0, 200, BP_CHEST)
 		owner.weakened = 10
 		owner.visible_message(
-			SPAN_DANGER("[src]'s flesh begins to hiss and bubble as their wounds mend!"),
+			SPAN_DANGER("[owner]'s flesh begins to hiss and bubble as their wounds mend!"),
 			SPAN_DANGER("A wave of agony envelops you as your wounds begin to close!")
 			)
 
@@ -29,7 +29,7 @@
 	psi_point_cost = 1
 
 	var/list/creatures = list() // Who we can talk to
-	for(var/mob/living/carbon/h in world) // Check every players in the game
+	for(var/mob/living/carbon/human/h in world) // Check every players in the game
 		if(!h.species?.reagent_tag != IS_SYNTHETIC && !h.get_core_implant(/obj/item/implant/core_implant/cruciform)) // Can't talk to robots or people with cruciforms
 			creatures += h // Add the player to the list we can talk to
 	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures
@@ -42,7 +42,7 @@
 		usr.show_message("\blue You project your mind into [target.real_name]: [say]")
 		log_say("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
 		for(var/mob/observer/ghost/G in world)
-			G.show_message("<i>Telepathic message from <b>[src]</b> to <b>[target]</b>: [say]</i>")
+			G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool()
 	set category = "Psionic powers"
@@ -53,7 +53,7 @@
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
 		owner.visible_message(
-			"[src] makes a psionic omnitool!",
+			"[owner] makes a psionic omnitool!",
 			"You make a psionic omnitool!"
 			)
 		usr.put_in_active_hand(tool)
@@ -67,7 +67,7 @@
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
 		owner.visible_message(
-			"[src] makes a psionic knife!",
+			"[owner] makes a psionic knife!",
 			"You make a psionic knife!"
 			)
 		usr.put_in_active_hand(knife)
@@ -82,7 +82,7 @@
 		owner.nutrition = 400
 		owner.adjustToxLoss(15)
 		owner.drip_blood(20)
-		to_chat(src, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
+		to_chat(owner, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekineticprowress()
 	set category = "Psionic powers"
@@ -90,9 +90,12 @@
 	set desc = "Expend a single point of your psi essence to gain telekinesis. Lasts indefinitely unless a genetics lab or you yourself willingly end it."
 	psi_point_cost = 1
 
-	if(pay_power_cost(psi_point_cost))
-		owner.mutations.Add(TK)
-		to_chat(src, "You feel your abilities expending, allowing you to manipulate and move objects with your mind.")
+	if (!(TK in owner.mutations)) // We can't get TK if we already have TK
+		if(pay_power_cost(psi_point_cost))
+			owner.mutations.Add(TK)
+			to_chat(owner, "You feel your abilities expending, allowing you to manipulate and move objects with your mind.")
+	else
+		to_chat(owner, "You already have tekekinesis.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekineticprowress_end()
 	set category = "Psionic powers"
@@ -100,9 +103,12 @@
 	set desc = "Expend a single point of your psi essence to gain telekinesis. Beware, only a genetics lab may remove the power once this is used. Lasts indefinitely."
 	psi_point_cost = 0
 
-	if(pay_power_cost(psi_point_cost))
-		owner.mutations.Remove(TK)
-		to_chat(src, "You feel your telekinetic powers becoming dormant, for now.")
+	if ((TK in owner.mutations)) // We can't remove TK if we don't already have TK
+		if(pay_power_cost(psi_point_cost))
+			owner.mutations.Remove(TK)
+			to_chat(owner, "You feel your telekinetic powers becoming dormant, for now.")
+	else
+		to_chat(owner, "You do not have tekekinesis.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist()
 	set category = "Psionic powers"
@@ -112,12 +118,12 @@
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
+		var/obj/item/tool/hammer/telekinetic_fist/fist = new /obj/item/tool/hammer/telekinetic_fist(src, owner)
 		owner.visible_message(
-			"[src] makes a telekinetic fist!",
+			"[owner] makes a telekinetic fist!",
 			"You make a telekinetic fist!"
 			)
-		usr.put_in_active_hand(knife)
+		usr.put_in_active_hand(fist)
 
 // Greater powers - These powers should have a cost of 1-5 and have very powerful effects.
 /obj/item/organ/internal/psionic_tumor/proc/psionic_weapon()
@@ -207,11 +213,11 @@
 		spawn(2)
 		playsound(src.loc, 'sound/voice/shriek1.ogg', 75, 1, 8, 8)
 		//Playing the sound twice will make it sound really horrible
-		visible_message(SPAN_DANGER("[src] emits a horrifying wail as nearby burrows stir to life!"))
+		visible_message(SPAN_DANGER("[owner] emits a horrifying wail as nearby burrows stir to life!"))
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			B.distress(TRUE)
 	else
-		to_chat(src, "You lack enough psi essence to call creatures from burrows.")
+		to_chat(owner, "You lack enough psi essence to call creatures from burrows.")
 
 /obj/item/organ/internal/psionic_tumor/proc/psychic_banish()
 	set category = "Psionic powers"
@@ -225,21 +231,21 @@
 		spawn(2)
 		playsound(src.loc, 'sound/voice/hiss6.ogg', 75, 1, 8, 8)
 		//Playing the sound twice will make it sound really horrible
-		visible_message(SPAN_DANGER("[src] emits a haunting scream as it turns to flee, taking the nearby horde with it...."))
+		visible_message(SPAN_DANGER("[owner] emits a haunting scream as it turns to flee, taking the nearby horde with it...."))
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			B.evacuate()
 	else
-		to_chat(src, "You lack enough psi essence to banish nearby creatures.")
+		to_chat(owner, "You lack enough psi essence to banish nearby creatures.")
 
 /obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere()
 	set category = "Psionic powers"
 	set name = "Journey to Nowhere (3)"
 	set desc = "Expend three psi points to transport yourself, whatever you are carrying, and anyone you are grabbing to the nightmare realm known as deep maintenance. You will land somewhere in the \
-	tunnels, but you are not assured safety or that you will be alone once your on the other side. Using this power strains the body and will stun you for a short time."
+	tunnels, but you are not assured safety or that you will be alone once on the other side. Using this power strains the body and will stun you for a short time."
 	psi_point_cost = 3
 
 	if(pay_power_cost(psi_point_cost))
-		var/mob/living/L = get_grabbed_mob(src)			//Grab anyone we have grabbed
+		var/mob/living/L = get_grabbed_mob(owner)			//Grab anyone we have grabbed
 		var/turf/simulated/floor/target					//this is where we are teleporting
 		var/list/validtargets = list()					//list of valid tiles to teleport to
 
@@ -249,11 +255,11 @@
 					validtargets += T					//Add them to the list
 		target = pick(validtargets)						//Now we pick a target
 
-		do_sparks(1, 0, src)							//Visual feedback before the teleport
+		do_sparks(1, 0, owner.loc)							//Visual feedback before the teleport
 		owner.forceMove(target)							//Moves the caster
 		if(L)											//If we have a grabbed target
-			do_sparks(1, 0, target)						//Visual feeback before the teleport
+			do_sparks(1, 0, target.loc)						//Visual feeback before the teleport
 			L.forceMove(target)							//Moves the target
-			do_sparks(1, 0, target)						//Visual feedback after the teleport
-		do_sparks(1, 0, src)							//Visual feedback after the teleport
+			do_sparks(1, 0, target.loc)						//Visual feedback after the teleport
+		do_sparks(1, 0, owner.loc)							//Visual feedback after the teleport
 		owner.weakened += 10								//Moving like this is stressful and stuns you for a time.
