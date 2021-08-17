@@ -1,8 +1,8 @@
 // Tools
 /obj/item/tool/psionic_omnitool
 	name = "psionic omnitool"
-	desc = "A tool created from the mind of a psion, it is capable of doing anything any other tool can but cannot do it quite as well unfortunately. The more mechanically inclined one is, the better \
-	this tool becomes."
+	desc = "A tool created from the mind of a psion, it is capable of doing anything any other tool can but cannot do it quite as well unfortunately. The more skill you have in whatever action, \
+	you're performing, the more valuable this tool becomes."
 	icon_state = "psi_omni"
 	force = WEAPON_FORCE_DANGEROUS
 	worksound = WORKSOUND_DRIVER_TOOL
@@ -55,7 +55,6 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/hammer/telekinetic_fist/attack(atom/movable/target, mob/user)
-	var/atom/movable/throw_target = get_edge_target_turf(target, user.dir)
 	var/whack_speed = 0
 
 	if(user.stats.getStat(STAT_ROB) <= 0)
@@ -73,7 +72,8 @@
 	else if(user.stats.getStat(STAT_ROB) > 30)
 		force = WEAPON_FORCE_BRUTAL
 		whack_speed = 6
-	target.throw_at(throw_target, whack_speed, whack_speed, user, gentle = TRUE)
+	var/throwdir = get_dir(user,target)
+	target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
 	..()
 	force = initial(force) // Reset the damage just in case
 	qdel(src)
@@ -144,8 +144,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT | SLOT_BACK
 	worksound = WORKSOUND_HARD_SLASH
-	force = WEAPON_FORCE_PAINFUL
-	throwforce = WEAPON_FORCE_PAINFUL
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_DANGEROUS
 	tool_qualities = list(QUALITY_PULSING = 7, QUALITY_SCREW_DRIVING = 3)
 
 /obj/item/tool/hammer/homewrecker/cult
@@ -154,12 +154,12 @@
 	filled with the fires of ambition to create and destroy."
 	icon = 'icons/obj/psionic/occhammer.dmi'
 	icon_state = "soulcrusher"
-	wielded_icon = "wielded"
+	wielded_icon = "soulcrusher_wielded"
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
-	force_unwielded = WEAPON_FORCE_PAINFUL
-	force_wielded = WEAPON_FORCE_PAINFUL
+	force_unwielded = WEAPON_FORCE_ROBUST
+	force_wielded = WEAPON_FORCE_ROBUST
 	slot_flags = SLOT_BELT|SLOT_BACK
-	tool_qualities = list(QUALITY_SHOVELING = 1, QUALITY_DIGGING = 1, QUALITY_HAMMER = 50, QUALITY_WELDING = 21)
+	tool_qualities = list(QUALITY_SHOVELING = 1, QUALITY_DIGGING = 1, QUALITY_HAMMERING = 50, QUALITY_WELDING = 21)
 	origin_tech = list()
 	matter = list()
 
@@ -181,6 +181,7 @@
 	icon_state = "eclipse"
 	origin_tech = list()
 	matter = list()
+	price_tag = 0
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
 
@@ -192,19 +193,9 @@
 	icon_state = "moonrise"
 	origin_tech = list()
 	matter = list()
-	projectile_type = /obj/item/projectile/beam/cult
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
-
-/obj/item/projectile/beam/cult
-	name = "psychic heavy laser"
-	icon_state = "heavylaser"
-	damage_types = list(BURN = 20)
-	armor_penetration = 0
-
-	muzzle_type = /obj/effect/projectile/laser_heavy/muzzle
-	tracer_type = /obj/effect/projectile/laser_heavy/tracer
-	impact_type = /obj/effect/projectile/laser_heavy/impact
+	price_tag = 0
 
 /obj/item/gun/energy/plasma/cassad/cult
 	name = "\"Black Sun\" psi-plasma rifle"
@@ -212,19 +203,16 @@
 	outside the Soteria or Church. Perhaps its popularity is what imprinted it in the memory of the psion that made it?"
 	icon = 'icons/obj/psionic/occcassad.dmi'
 	icon_state = "manumission"
-
 	origin_tech = list()
 	matter = list()
+	price_tag = 0
 	fire_sound = 'sound/weapons/pulse.ogg'
-	projectile_type = /obj/item/projectile/plasma/cult
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
-
-/obj/item/projectile/plasma/cult
-	name = "psychic plasma bolt"
-	damage_types = list(BURN = 28)
-	armor_penetration = 0
-	impact_type = /obj/effect/projectile/stun/impact
+	init_firemodes = list(
+		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
+		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
+	)
 
 // Oddity to Tools list
 /obj/item/tool/multitool/advanced/cult
@@ -254,7 +242,7 @@
 	icon_state = "psi_driver"
 	matter = list()
 	origin_tech = list()
-	tool_qualities = list(QUALITY_SCREW_DRIVING = 42, QUALITY_BOLT_TURNING = 42, QUALITY_DRILLING = 42, QUALITY_RETRACTING = 22)
+	tool_qualities = list(QUALITY_SCREW_DRIVING = 42, QUALITY_BOLT_TURNING = 42, QUALITY_DRILLING = 36, QUALITY_RETRACTING = 22)
 
 /obj/item/tool/weldingtool/advanced/cult
 	name = "thought scorcher"
@@ -262,7 +250,7 @@
 	icon_state = "psi_welder"
 	item_state = "psi_welder"
 	glow_color = COLOR_PURPLE
-	switched_on_qualities = list(QUALITY_WELDING = 39, QUALITY_CAUTERIZING = 24, QUALITY_WIRE_CUTTING = 12, QUALITY_PULSING = 7, QUALITY_SCREW_DRIVING = 3)
+	switched_on_qualities = list(QUALITY_WELDING = 42, QUALITY_CAUTERIZING = 24, QUALITY_WIRE_CUTTING = 12, QUALITY_PULSING = 7, QUALITY_SCREW_DRIVING = 3)
 	max_fuel = 29
 	matter = list()
 	origin_tech = list()

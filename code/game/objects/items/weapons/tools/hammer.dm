@@ -13,6 +13,7 @@
 	tool_qualities = list(QUALITY_HAMMERING = 35, QUALITY_PRYING = 10)
 	effective_faction = list("spider") // Spiders are weak to crushing.
 	damage_mult = 2
+	hitsound = 'sound/weapons/smash.ogg'
 
 /obj/item/tool/hammer/powered_hammer
 	name = "powered sledgehammer"
@@ -72,8 +73,9 @@
 	name = "foreman's sledgehammer"
 	desc = "Once a tool used to nail rivets, now a tool used to crush skulls. The signature weapon of the prospector's foreman."
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "sledgehammer0"
-	item_state = "sledgehammer1"
+	icon_state = "sledgehammer"
+	item_state = "sledgehammer0"
+	wielded_icon = "sledgehammer1"
 	force = WEAPON_FORCE_LETHAL
 	slot_flags = SLOT_BELT|SLOT_BACK
 	armor_penetration = ARMOR_PEN_EXTREME
@@ -92,7 +94,8 @@
 	name = "homewrecker"
 	desc = "A large steel chunk welded to a long handle. Extremely heavy."
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "homewrecker0"
+	icon_state = "homewrecker"
+	item_state = "homewrecker0"
 	wielded_icon = "homewrecker1"
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY

@@ -17,6 +17,7 @@
 	tool_qualities = list(QUALITY_SHOVELING = 35, QUALITY_DIGGING = 35, QUALITY_EXCAVATION = 10, QUALITY_HAMMERING = 15)
 	effective_faction = list("spider") // Spiders are weak to crushing.
 	damage_mult = 2
+	hitsound = 'sound/weapons/smash.ogg'
 
 /obj/item/tool/shovel/improvised
 	name = "junk shovel"

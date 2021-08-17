@@ -93,7 +93,7 @@
 	if (!(TK in owner.mutations)) // We can't get TK if we already have TK
 		if(pay_power_cost(psi_point_cost))
 			owner.mutations.Add(TK)
-			to_chat(owner, "You feel your abilities expending, allowing you to manipulate and move objects with your mind.")
+			to_chat(owner, "You feel your abilities expanding, allowing you to manipulate and move objects with your mind.")
 	else
 		to_chat(owner, "You already have tekekinesis.")
 
@@ -152,8 +152,8 @@
 			do_sparks(8, 0, T)
 			cultweaponchoice = new cultweaponchoice(T)
 			usr.visible_message(
-				SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into a [cultweaponchoice]!"),
-				SPAN_DANGER("You mold and twist the [active] like clay, transforming it into a [cultweaponchoice]!")
+				SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into [cultweaponchoice]!"),
+				SPAN_DANGER("You mold and twist the [active] like clay, transforming it into [cultweaponchoice]!")
 				)
 			usr.drop_item()
 			usr.put_in_active_hand(cultweaponchoice)
