@@ -103,12 +103,12 @@
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
+		var/obj/item/tool/hammer/telekinetic_fist/fist = new /obj/item/tool/hammer/telekinetic_fist(src, owner)
 		owner.visible_message(
 			"[src] makes a telekinetic fist!",
 			"You make a telekinetic fist!"
 			)
-		usr.put_in_active_hand(knife)
+		usr.put_in_active_hand(fist)
 
 // Greater powers - These powers should have a cost of 1-5 and have very powerful effects.
 /obj/item/organ/internal/psionic_tumor/proc/psionic_weapon()
