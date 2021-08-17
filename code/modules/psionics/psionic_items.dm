@@ -13,17 +13,20 @@
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
 	var/mob/living/carbon/holder // The one that prevent the tool from fading
+	var/process_delay = 10 // How much time, in deciseconds (1/10th of a second) between Process() calls
 
 /obj/item/tool/psionic_omnitool/New(var/loc, var/mob/living/carbon/Maker)
 	..()
 	holder = Maker
+	Process()
 
 /obj/item/tool/psionic_omnitool/Process()
-	..()
 	if(loc != holder) // We're no longer in/on the psionic.
-		visible_message("The [src] fades into nothingness.")
+		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
+	else
+		spawn(process_delay) Process()
 
 // Temporary psionic items/weapons.
 /obj/item/tool/hammer/telekinetic_fist
@@ -40,14 +43,17 @@
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
 	tool_qualities = list(QUALITY_HAMMERING = 35, QUALITY_PRYING = 10)
 	effective_faction = list("spider") // Spiders are weak to crushing.
+	damage_mult = 2
 	degradation = 0 // Can't degrade
 	workspeed = 0.8
 	max_upgrades = 0 // Can't upgrade it
-	var/mob/living/carbon/holder // The one that prevent the knife from fading
+	var/mob/living/carbon/holder // The one that prevent the fist from fading
+	var/process_delay = 10 // How much time, in deciseconds (1/10th of a second) between Process() calls
 
 /obj/item/tool/hammer/telekinetic_fist/New(var/loc, var/mob/living/carbon/Maker)
 	..()
 	holder = Maker
+	Process()
 
 /obj/item/tool/hammer/telekinetic_fist/attack(atom/movable/target, mob/user)
 	var/atom/movable/throw_target = get_edge_target_turf(target, user.dir)
@@ -74,11 +80,12 @@
 	qdel(src)
 
 /obj/item/tool/hammer/telekinetic_fist/Process()
-	..()
 	if(loc != holder) // We're no longer in/on the psionic.
-		visible_message("The [src] fades into nothingness.")
+		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
+	else
+		spawn(process_delay) Process()
 
 /obj/item/tool/knife/psionic_blade
 	name = "psychic blade"
@@ -95,11 +102,13 @@
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
-	var/mob/living/carbon/holder // The one that prevent the knife from fading
+	var/mob/living/carbon/holder // The one that prevent the blade from fading
+	var/process_delay = 10 // How much time, in deciseconds (1/10th of a second) between Process() calls
 
 /obj/item/tool/knife/psionic_blade/New(var/loc, var/mob/living/carbon/Maker)
 	..()
 	holder = Maker
+	Process()
 
 /obj/item/tool/knife/psionic_blade/attack(atom/target, mob/user)
 	if(user.stats.getStat(STAT_ROB) <= 0)
@@ -116,11 +125,12 @@
 	force = initial(force) // Reset the damage just in case
 
 /obj/item/tool/knife/psionic_blade/Process()
-	..()
 	if(loc != holder) // We're no longer in/on the psionic.
-		visible_message("The [src] fades into nothingness.")
+		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
+	else
+		spawn(process_delay) Process()
 
 
 // Oddity to Weapons list
