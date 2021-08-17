@@ -21,7 +21,8 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/psionic_omnitool/Process()
-	if(loc != holder) // We're no longer in/on the psionic.
+	..()
+	if(loc != holder && loc.loc != holder) // We're no longer in/on the psionic.
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
@@ -78,7 +79,8 @@
 	qdel(src)
 
 /obj/item/tool/hammer/telekinetic_fist/Process()
-	if(loc != holder) // We're no longer in/on the psionic.
+	..()
+	if(loc != holder && loc.loc != holder) // We're no longer in/on the psionic.
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
@@ -121,7 +123,8 @@
 	force = initial(force) // Reset the damage just in case
 
 /obj/item/tool/knife/psionic_blade/Process()
-	if(loc != holder) // We're no longer in/on the psionic.
+	..()
+	if(loc != holder && loc.loc != holder) // We're no longer in/on the psionic.
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
