@@ -604,7 +604,7 @@
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/ammo_casing/a75
-	desc = "A 20mm gyrojet casing."
+	desc = "A .70 gyrojet casing."
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 
