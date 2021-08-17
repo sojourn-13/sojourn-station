@@ -18,6 +18,13 @@
 	..()
 	holder = Maker
 
+/obj/item/tool/psionic_omnitool/Process()
+	..()
+	if(loc != holder) // We're no longer in/on the psionic.
+		visible_message("The [src] fades into nothingness.")
+		qdel(src)
+		return
+
 // Temporary psionic items/weapons.
 /obj/item/tool/hammer/telekinetic_fist
 	name = "telekinetic fist"

@@ -26,9 +26,15 @@
 
 	owner_verbs = list(
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing,
+		/obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy,
+		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_knife,
+		/obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_weapon,
-		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool,
+		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
+		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
+		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere
 	)
