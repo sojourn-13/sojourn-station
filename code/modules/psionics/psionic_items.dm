@@ -18,15 +18,13 @@
 /obj/item/tool/psionic_omnitool/New(var/loc, var/mob/living/carbon/Maker)
 	..()
 	holder = Maker
-	Process()
+	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/psionic_omnitool/Process()
 	if(loc != holder) // We're no longer in/on the psionic.
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
-	else
-		spawn(process_delay) Process()
 
 // Temporary psionic items/weapons.
 /obj/item/tool/hammer/telekinetic_fist
@@ -53,7 +51,7 @@
 /obj/item/tool/hammer/telekinetic_fist/New(var/loc, var/mob/living/carbon/Maker)
 	..()
 	holder = Maker
-	Process()
+	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/hammer/telekinetic_fist/attack(atom/movable/target, mob/user)
 	var/atom/movable/throw_target = get_edge_target_turf(target, user.dir)
@@ -84,8 +82,6 @@
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
-	else
-		spawn(process_delay) Process()
 
 /obj/item/tool/knife/psionic_blade
 	name = "psychic blade"
@@ -108,7 +104,7 @@
 /obj/item/tool/knife/psionic_blade/New(var/loc, var/mob/living/carbon/Maker)
 	..()
 	holder = Maker
-	Process()
+	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/knife/psionic_blade/attack(atom/target, mob/user)
 	if(user.stats.getStat(STAT_ROB) <= 0)
@@ -129,8 +125,6 @@
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
-	else
-		spawn(process_delay) Process()
 
 
 // Oddity to Weapons list
