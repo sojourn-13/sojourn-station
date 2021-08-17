@@ -29,6 +29,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy,
 		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress,
+		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress_end,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_knife,
 		/obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist,

@@ -82,20 +82,34 @@
 		owner.nutrition = 400
 		owner.adjustToxLoss(15)
 		owner.drip_blood(20)
-		to_chat(owner, "You cannibalize your own body to end your hunger.")
+		to_chat(src, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekineticprowress()
 	set category = "Psionic powers"
 	set name = "Telekinetic Prowress (1)"
-	set desc = "Expend a single point of your psi essence to gain telekinesis. Beware, only a genetics lab may remove the power once this is used. Lasts indefinitely."
+	set desc = "Expend a single point of your psi essence to gain telekinesis. Lasts indefinitely unless a genetics lab or you yourself willingly end it."
 	psi_point_cost = 1
 
+
 	if (!(TK in owner.mutations)) // We can't get TK if we already have TK
-		if(pay_power_cost(psi_point_cost))
-			owner.mutations.Add(TK)
-			to_chat(owner, "You use your powers to gain the ability to remotely interact with the world.")
+    if(pay_power_cost(psi_point_cost))
+		  owner.mutations.Add(TK)
+		  to_chat(src, "You feel your abilities expending, allowing you to manipulate and move objects with your mind.")
 	else
 		to_chat(owner, "You already have tekekinesis.")
+
+/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress_end()
+	set category = "Psionic powers"
+	set name = "End Telekinesis (0)"
+	set desc = "Expend a single point of your psi essence to gain telekinesis. Beware, only a genetics lab may remove the power once this is used. Lasts indefinitely."
+	psi_point_cost = 0
+
+  if ((TK in owner.mutations)) // We can't remove TK if we don't already have TK
+	  if(pay_power_cost(psi_point_cost))
+		  owner.mutations.Remove(TK)
+		  to_chat(src, "You feel your telekinetic powers becoming dormant, for now.")
+  else
+    to_chat(owner, "You do not have tekekinesis.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist()
 	set category = "Psionic powers"

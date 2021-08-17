@@ -3,7 +3,7 @@
 	name = "psionic omnitool"
 	desc = "A tool created from the mind of a psion, it is capable of doing anything any other tool can but cannot do it quite as well unfortunately. The more mechanically inclined one is, the better \
 	this tool becomes."
-	icon_state = "engimplant"
+	icon_state = "psi_omni"
 	force = WEAPON_FORCE_DANGEROUS
 	worksound = WORKSOUND_DRIVER_TOOL
 	flags = CONDUCT
@@ -30,8 +30,8 @@
 /obj/item/tool/hammer/telekinetic_fist
 	name = "telekinetic fist"
 	desc = "A one time use fist made from a psion. It has a limited life span, better use it soon unless you plan to hold it for awhile."
-	icon_state = "hammer"
-	item_state = "hammer"
+	icon_state = "psyfist"
+	item_state = "psyfist"
 	flags = CONDUCT
 	force = WEAPON_FORCE_PAINFUL
 	worksound = WORKSOUND_HAMMER
@@ -130,7 +130,7 @@
 // Oddity to Weapons list
 /obj/item/tool/sword/cult
 	name = "Non-Euclidean Blade"
-	desc = "A blade forged from the mind of a psion using an oddity. An odd but deadly sword, yet holding it makes you feel... odd."
+	desc = "A blade forged from the mind of a psion using an oddity. An odd but deadly sword, yet holding it makes you feel... strange."
 	icon = 'icons/obj/psionic/occsword.dmi'
 	icon_state = "non-euclidian_blade"
 
@@ -242,6 +242,7 @@
 	icon_state = "psipowershovel"
 	item_state = "shovel"
 	matter = list()
+	origin_tech = list()
 	tool_qualities = list(QUALITY_SHOVELING = 53, QUALITY_DIGGING = 42, QUALITY_EXCAVATION = 34, QUALITY_HAMMERING = 6)
 
 /obj/item/tool/screwdriver/combi_driver/cult
@@ -249,14 +250,16 @@
 	desc = "A tool crafted from the thoughts of a psion after shaping an oddity. A mind is an adapative thing, so why wouldn't it make an adaptive tool?"
 	icon_state = "psi_driver"
 	matter = list()
+	origin_tech = list()
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 42, QUALITY_BOLT_TURNING = 42, QUALITY_DRILLING = 42, QUALITY_RETRACTING = 22)
 
 /obj/item/tool/weldingtool/advanced/cult
 	name = "thought scorcher"
-	desc = "A tool crafted from the thoughts of a psion after shaping an oddity. A mind is an adapative thing, so why wouldn't it make an adaptive tool?"
+	desc = "A tool crafted from the thoughts of a psion after shaping an oddity. What is our ire, if not the embers of our thoughts left to burn?"
 	icon_state = "psi_welder"
 	item_state = "psi_welder"
-	glow_color = COLOR_BLUE_LIGHT
+	glow_color = COLOR_PURPLE
 	switched_on_qualities = list(QUALITY_WELDING = 39, QUALITY_CAUTERIZING = 24, QUALITY_WIRE_CUTTING = 12, QUALITY_PULSING = 7, QUALITY_SCREW_DRIVING = 3)
 	max_fuel = 29
 	matter = list()
+	origin_tech = list()

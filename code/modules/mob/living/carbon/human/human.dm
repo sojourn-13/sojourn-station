@@ -110,7 +110,7 @@
 
 		var/obj/item/organ/internal/psionic_tumor/B = random_organ_by_process(BP_PSION)
 		if(B)
-			stat("Psi Essence", "[B.psi_points]")
+			stat("Psi Essence", "[B.psi_points]/[B.max_psi_points]")
 
 	else if(statpanel("Perks"))
 		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
