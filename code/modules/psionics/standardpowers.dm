@@ -89,8 +89,11 @@
 	set desc = "Expend a single point of your psi essence to gain telekinesis. Beware, only a genetics lab may remove the power once this is used. Lasts indefinitely."
 	psi_point_cost = 1
 
-	if(pay_power_cost(psi_point_cost))
-		owner.mutations.Add(TK)
+	if (!(TK in owner.mutations)) // We can't get TK if we already have TK
+		if(pay_power_cost(psi_point_cost))
+			owner.mutations.Add(TK)
+	else
+		to_chat(owner, "You already have tekekinesis.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist()
 	set category = "Psionic powers"
@@ -223,7 +226,7 @@
 	set category = "Psionic powers"
 	set name = "Journey to Nowhere (3)"
 	set desc = "Expend three psi points to transport yourself, whatever you are carrying, and anyone you are grabbing to the nightmare realm known as deep maintenance. You will land somewhere in the \
-	tunnels, but you are not assured safety or that you will be alone once your on the other side. Using this power strains the body and will stun you for a short time."
+	tunnels, but you are not assured safety or that you will be alone once on the other side. Using this power strains the body and will stun you for a short time."
 	psi_point_cost = 3
 
 	if(pay_power_cost(psi_point_cost))
