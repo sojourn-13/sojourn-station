@@ -13,7 +13,6 @@
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
 	var/mob/living/carbon/holder // The one that prevent the tool from fading
-	var/process_delay = 10 // How much time, in deciseconds (1/10th of a second) between Process() calls
 
 /obj/item/tool/psionic_omnitool/New(var/loc, var/mob/living/carbon/Maker)
 	..()
@@ -47,7 +46,6 @@
 	workspeed = 0.8
 	max_upgrades = 0 // Can't upgrade it
 	var/mob/living/carbon/holder // The one that prevent the fist from fading
-	var/process_delay = 10 // How much time, in deciseconds (1/10th of a second) between Process() calls
 
 /obj/item/tool/hammer/telekinetic_fist/New(var/loc, var/mob/living/carbon/Maker)
 	..()
@@ -101,7 +99,6 @@
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
-	var/process_delay = 10 // How much time, in deciseconds (1/10th of a second) between Process() calls
 
 /obj/item/tool/knife/psionic_blade/New(var/loc, var/mob/living/carbon/Maker)
 	..()
