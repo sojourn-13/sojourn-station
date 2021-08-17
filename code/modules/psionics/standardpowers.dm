@@ -29,7 +29,7 @@
 	psi_point_cost = 1
 
 	var/list/creatures = list() // Who we can talk to
-	for(var/mob/living/carbon/h in world) // Check every players in the game
+	for(var/mob/living/carbon/human/h in world) // Check every players in the game
 		if(!h.species?.reagent_tag != IS_SYNTHETIC && !h.get_core_implant(/obj/item/implant/core_implant/cruciform)) // Can't talk to robots or people with cruciforms
 			creatures += h // Add the player to the list we can talk to
 	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures

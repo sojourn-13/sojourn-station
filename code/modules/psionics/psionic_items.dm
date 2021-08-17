@@ -12,6 +12,7 @@
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
+	price_tag = 0
 	var/mob/living/carbon/holder // The one that prevent the tool from fading
 
 /obj/item/tool/psionic_omnitool/New(var/loc, var/mob/living/carbon/Maker)
@@ -21,7 +22,7 @@
 
 /obj/item/tool/psionic_omnitool/Process()
 	..()
-	if(loc != holder && loc.loc != holder) // We're no longer in/on the psionic.
+	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
@@ -45,6 +46,7 @@
 	degradation = 0 // Can't degrade
 	workspeed = 0.8
 	max_upgrades = 0 // Can't upgrade it
+	price_tag = 0
 	var/mob/living/carbon/holder // The one that prevent the fist from fading
 
 /obj/item/tool/hammer/telekinetic_fist/New(var/loc, var/mob/living/carbon/Maker)
@@ -78,7 +80,7 @@
 
 /obj/item/tool/hammer/telekinetic_fist/Process()
 	..()
-	if(loc != holder && loc.loc != holder) // We're no longer in/on the psionic.
+	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
@@ -98,6 +100,7 @@
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it
+	price_tag = 0
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
 
 /obj/item/tool/knife/psionic_blade/New(var/loc, var/mob/living/carbon/Maker)
@@ -121,7 +124,7 @@
 
 /obj/item/tool/knife/psionic_blade/Process()
 	..()
-	if(loc != holder && loc.loc != holder) // We're no longer in/on the psionic.
+	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)
 		return
