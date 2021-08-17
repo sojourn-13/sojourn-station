@@ -23,15 +23,6 @@
 	if(!steps.len)
 		spawn_result()
 
-		if(rnd_point_giver) // We check if it is a mech
-			for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list) // Check every RnD computer in existance
-				if(RD.id == 1) // only core gets the science
-					RD.files.research_points += give_points // Give the points
-					var/obj/item/device/radio/R = new /obj/item/device/radio // New radio to send a message
-					R.channels = list("Science" = 1)
-					R.autosay("Exosuit constructed, granting [give_points] research points", "Legio Cybernetica's Announcement System" ,"Science") // Message on the Science channel using the radio
-					qdel(R)
-
 	else
 		set_desc(steps.len)
 	return
@@ -80,7 +71,7 @@
 				RD.files.research_points += give_points // Give the points
 				var/obj/item/device/radio/radio
 				radio = new /obj/item/device/radio{channels=list("Science")}(src) // Create a new radio
-				radio.autosay("Exosuit constructed, granting [give_points] research points.", "Legio Cybernetica's Announcement System", "Science") // Make the radio say a message.
+				radio.autosay("Exosuit constructed, granting [give_points] research points.", "Robotics Research's Announcement System", "Science") // Make the radio say a message.
 				spawn(50) qdel(radio) // Wait 5 seconds before deleting the radio
 
 		spawn()

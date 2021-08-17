@@ -72,6 +72,7 @@
 #define BP_B_R_ARM  "right humerus"
 #define BP_B_L_LEG  "left femur"
 #define BP_B_R_LEG  "right femur"
+#define BP_PSION "psionic organ"
 
 // Unique carrion Organs.
 #define BP_SPCORE   "spider core"

@@ -78,3 +78,4 @@
 #define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
 #define PERK_GREENTHUMB /datum/perk/greenthumb
+#define PERK_PSION /datum/perk/psion
