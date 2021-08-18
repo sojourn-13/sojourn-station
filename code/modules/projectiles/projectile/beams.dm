@@ -182,3 +182,19 @@
 		L.adjustToxLoss(-5)
 		L.adjustBruteLoss(-5)
 		L.adjustFireLoss(-5)
+
+/obj/item/projectile/beam/tesla
+	name = "lightning"
+	damage_types = list(BURN = 30)
+	armor_penetration = 10
+	hitscan = TRUE
+
+	muzzle_type = /obj/effect/projectile/tesla/muzzle
+	tracer_type = /obj/effect/projectile/tesla/tracer
+	impact_type = /obj/effect/projectile/tesla/impact
+
+/obj/item/projectile/beam/tesla/shotgun
+	kill_count = 5 // short range
+
+/obj/item/projectile/beam/tesla/shotgun/strong
+	damage_types = list(BURN = 45) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
