@@ -53,9 +53,10 @@
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
 		owner.visible_message(
-			"[owner] makes a psionic omnitool!",
-			"You make a psionic omnitool!"
+			"[owner] clenches their fist, electricity crackling before a telekinetic omnitool is shaped in their hand!",
+			"You feel the rush of electric essence shocking your hand lightly before a telekinetic omnitool forms!"
 			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(tool)
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_knife()
@@ -67,10 +68,26 @@
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
 		owner.visible_message(
-			"[owner] makes a psionic knife!",
-			"You make a psionic knife!"
+			"[owner] clenches their fist, electricity crackling before a psionic blade forms in their hand!",
+			"You feel the rush of electric essence shocking your hand lightly before a psychic blade forms!"
 			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(knife)
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_shield()
+	set category = "Psionic powers"
+	set name = "Psychic Shield (1)"
+	set desc = "Expend a single point of your psi essence to create an energy shield capable of blocking bullets, energy beams, and melee attacks."
+	psi_point_cost = 1
+
+	if(pay_power_cost(psi_point_cost))
+		var/obj/item/shield/riot/crusader/psionic/shield = new /obj/item/shield/riot/crusader/psionic(src, owner)
+		owner.visible_message(
+			"[owner] clenches their fist, electricity crackling before a psy-shield forms in their hand!",
+			"You feel the rush of electric essence shocking your hand lightly before a psy-shield forms!"
+			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		usr.put_in_active_hand(shield)
 
 /obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer()
 	set category = "Psionic powers"
@@ -93,36 +110,37 @@
 	if (!(TK in owner.mutations)) // We can't get TK if we already have TK
 		if(pay_power_cost(psi_point_cost))
 			owner.mutations.Add(TK)
-			to_chat(owner, "You feel your abilities expanding, allowing you to manipulate and move objects with your mind.")
+			to_chat(owner, "You feel your abilities expanding, your mind growing outward, allowing you to manipulate and move objects with your mind.")
 	else
-		to_chat(owner, "You already have tekekinesis.")
+		to_chat(owner, "You already have telekinesis.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekineticprowress_end()
 	set category = "Psionic powers"
 	set name = "End Telekinesis (0)"
-	set desc = "Expend a single point of your psi essence to gain telekinesis. Beware, only a genetics lab may remove the power once this is used. Lasts indefinitely."
+	set desc = "End your telekinesis at will, at no essence cost. Beware, you will need to expend more to get telekinesis back."
 	psi_point_cost = 0
 
 	if ((TK in owner.mutations)) // We can't remove TK if we don't already have TK
 		if(pay_power_cost(psi_point_cost))
 			owner.mutations.Remove(TK)
-			to_chat(owner, "You feel your telekinetic powers becoming dormant, for now.")
+			to_chat(owner, "You feel your telekinetic powers becoming dormant as your mind withdraws into itself, for now.")
 	else
-		to_chat(owner, "You do not have tekekinesis.")
+		to_chat(owner, "You do not have telekinesis.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist()
 	set category = "Psionic powers"
 	set name = "Telekinetic Fist (1)"
-	set desc = "Expend a single point of your psi essence to create a telekinetic fist, hitting some with it in melee or throwing it will damage and knock them back. It's knockback and power \
+	set desc = "Expend a single point of your psi essence to create a telekinetic fist, hitting some with it in melee will damage and knock them back. It's knockback and power \
 	scales with your physical robustness."
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/hammer/telekinetic_fist/fist = new /obj/item/tool/hammer/telekinetic_fist(src, owner)
 		owner.visible_message(
-			"[owner] makes a telekinetic fist!",
-			"You make a telekinetic fist!"
+			"[owner] clenches their hand into a fist, electric energy crackling around it before a telekinetic fist forms over it!",
+			"You clench your hand into a fist, electric energy crackling around your fingers before a telekinetic fist forms over it!"
 			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(fist)
 
 // Greater powers - These powers should have a cost of 1-5 and have very powerful effects.
@@ -147,7 +165,7 @@
 				/obj/item/tool/hammer/homewrecker/cult= (1 + LStats[STAT_TGH]),
 				/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
 				/obj/item/tool/saw/chain/cult = (1 + LStats[STAT_MEC])))
-			playsound(usr.loc, pick('sound/hallucinations/wail.ogg','sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/far_noise.ogg'), 50, 1, -3)
+			playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 			var/turf/T = get_turf(usr)
 			do_sparks(8, 0, T)
 			cultweaponchoice = new cultweaponchoice(T)
@@ -185,7 +203,7 @@
 				/obj/item/tool/shovel/power/cult = (1 + LStats[STAT_TGH]),
 				/obj/item/tool/screwdriver/combi_driver/cult = (1 + LStats[STAT_BIO]),
 				/obj/item/tool/weldingtool/advanced/cult = (1 + LStats[STAT_MEC])))
-			playsound(usr.loc, pick('sound/hallucinations/wail.ogg','sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/far_noise.ogg'), 50, 1, -3)
+			playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 			var/turf/T = get_turf(usr)
 			do_sparks(8, 0, T)
 			cultweaponchoice = new cultweaponchoice(T)
@@ -241,7 +259,7 @@
 	set category = "Psionic powers"
 	set name = "Journey to Nowhere (3)"
 	set desc = "Expend three psi points to transport yourself, whatever you are carrying, and anyone you are grabbing to the nightmare realm known as deep maintenance. You will land somewhere in the \
-	tunnels, but you are not assured safety or that you will be alone once on the other side. Using this power strains the body and will stun you for a short time."
+	tunnels, but you are not assured safety or that you will be alone once on the other side. Using this power strains the body and will weaken you for a short time."
 	psi_point_cost = 3
 
 	if(pay_power_cost(psi_point_cost))

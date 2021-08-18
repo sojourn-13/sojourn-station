@@ -57,6 +57,19 @@
 			R.part.take_damage(rand(20,40))
 			R.uninstall()
 			R.malfunction = MALFUNCTION_PERMANENT
+
+		if(istype(O, /obj/item/organ_module))
+			if(O == src)
+				continue
+			var/obj/item/organ_module/R = O
+			if(R.wearer != owner)
+				continue
+			if(R.is_organic_module == FALSE)
+				owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s [R.part]."),\
+				SPAN_DANGER("[R.name] rips through your [R.part]."))
+				R.part.take_damage(rand(20,40))
+				R.remove()
+
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		H.update_implants()

@@ -6,8 +6,9 @@
 	icon_state = "psi_omni"
 	force = WEAPON_FORCE_DANGEROUS
 	worksound = WORKSOUND_DRIVER_TOOL
+	w_class = ITEM_SIZE_BULKY
 	flags = CONDUCT
-	tool_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_BOLT_TURNING = 30, QUALITY_DRILLING = 30, QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 30, QUALITY_PRYING = 30, QUALITY_DIGGING = 30, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30, QUALITY_SHOVELING = 30, QUALITY_EXCAVATION = 30, QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_SAWING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CUTTING = 30, QUALITY_BONE_GRAFTING = 30)
+	tool_qualities = list(QUALITY_SCREW_DRIVING = 25, QUALITY_BOLT_TURNING = 25, QUALITY_DRILLING = 25, QUALITY_WELDING = 25, QUALITY_CAUTERIZING = 25, QUALITY_PRYING = 25, QUALITY_DIGGING = 25, QUALITY_PULSING = 25, QUALITY_WIRE_CUTTING = 25, QUALITY_HAMMERING = 25, QUALITY_SHOVELING = 25, QUALITY_EXCAVATION = 25, QUALITY_CLAMPING = 25, QUALITY_RETRACTING = 25, QUALITY_SAWING = 25, QUALITY_BONE_SETTING = 25, QUALITY_CUTTING = 25, QUALITY_BONE_GRAFTING = 25)
 	degradation = 0 // Can't degrade
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
@@ -36,7 +37,7 @@
 	flags = CONDUCT
 	force = WEAPON_FORCE_PAINFUL
 	worksound = WORKSOUND_HAMMER
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_BULKY
 	origin_tech = list()
 	matter = list()
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
@@ -93,6 +94,7 @@
 	icon_state = "psi_knife"
 	item_state = "psi_knife"
 	force = WEAPON_FORCE_HARMLESS
+	w_class = ITEM_SIZE_BULKY
 	tool_qualities = list(QUALITY_CUTTING = 30)
 	origin_tech = list()
 	matter = list()
@@ -123,6 +125,30 @@
 	force = initial(force) // Reset the damage just in case
 
 /obj/item/tool/knife/psionic_blade/Process()
+	..()
+	if(loc != holder) // We're no longer in the psionic's hand.
+		visible_message("The [src.name] fades into nothingness.")
+		qdel(src)
+		return
+
+/obj/item/shield/riot/crusader/psionic
+	name = "psychic combat shield"
+	desc = "A shield projected by the mind of a psion, it's speed and skill depend on the toughness of the psionic that created it. Useful for blocking energy beams, bullets, and melee attacks. \
+	A simple thought can deploy or shrink the shield at will."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "psishield1"
+	w_class = ITEM_SIZE_BULKY
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	var/mob/living/carbon/holder // The one that prevent the blade from fading
+
+/obj/item/shield/riot/crusader/psionic/New(var/loc, var/mob/living/carbon/Maker)
+	..()
+	holder = Maker
+	START_PROCESSING(SSobj, src)
+
+/obj/item/shield/riot/crusader/psionic/Process()
 	..()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")

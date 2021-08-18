@@ -104,6 +104,7 @@
 	matter = list(MATERIAL_BIOMATTER = 20)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/cht_mant_claws
+	is_organic_module = TRUE
 
 /obj/item/tool/armscythe
 	name = "organic scythe"
@@ -129,6 +130,7 @@
 	matter = list(MATERIAL_BIOMATTER = 20)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/armscythe
+	is_organic_module = TRUE
 
 
 /obj/item/biogoop/armscythe

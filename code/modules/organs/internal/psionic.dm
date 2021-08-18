@@ -32,6 +32,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress_end,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_knife,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_shield,
 		/obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_weapon,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool,

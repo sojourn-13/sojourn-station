@@ -261,4 +261,10 @@
 	else
 		set_light(0)
 
-
+/obj/item/shield/energy/reaver/update_icon()
+	icon_state = "voidwolfshield[active]"
+	update_wear_icon()
+	if(active)
+		set_light(1.5, 1.5, COLOR_LIGHTING_RED_BRIGHT)
+	else
+		set_light(0)

@@ -15,6 +15,7 @@
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/engimplant/organic
 	matter = list(MATERIAL_BIOMATTER = 10)
+	is_organic_module = TRUE
 
 /obj/item/biogoop/engineer
 	name = "incomplete organic engineering augment"
