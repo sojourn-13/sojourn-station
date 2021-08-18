@@ -1,29 +1,248 @@
-"a" = (/turf/simulated/wall,/area/crawler)
-"b" = (/obj/crawler/crawler_wallbreaker,/turf/simulated/wall,/area/crawler)
-"c" = (/turf/simulated/floor/tiled/derelict,/area/crawler)
-"d" = (/turf/simulated/floor/carpet,/area/crawler)
-"e" = (/obj/crawler/crawler_wallbreaker/vertical,/turf/simulated/wall,/area/crawler)
-"f" = (/obj/rogue/telebeacon,/turf/simulated/floor/carpet,/area/crawler)
-"g" = (/obj/random/structures/os,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"h" = (/obj/structure/closet/onestar/tier3/special,/obj/random/credits/c1000,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"i" = (/mob/living/simple_animal/hostile/megafauna/one_star,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"j" = (/obj/structure/closet/onestar/tier3/special,/obj/random/credits/c1000,/obj/random/oddity_guns,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"k" = (/obj/structure/table/onestar,/obj/item/gun/energy/captain,/obj/random/dungeon_ammo,/obj/random/dungeon_ammo,/obj/random/dungeon_gun_energy,/obj/random/material_rare,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"l" = (/obj/structure/table/onestar,/obj/random/dungeon_ammo,/obj/random/dungeon_ammo,/obj/random/dungeon_gun_energy,/obj/item/tool_upgrade/augment/ai_tool,/obj/item/tool_upgrade/augment/ai_tool,/obj/item/tool_upgrade/augment/ai_tool,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"m" = (/obj/machinery/light,/obj/structure/closet/onestar/tier3/special,/obj/random/credits/c1000,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"n" = (/obj/structure/table/onestar,/obj/random/dungeon_gun_energy,/obj/random/material_rare,/obj/item/tool_upgrade/augment/holding_tank,/obj/item/tool_upgrade/augment/holding_tank,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"o" = (/obj/structure/table/onestar,/obj/random/dungeon_gun_ballistic,/obj/random/dungeon_gun_ballistic,/obj/random/material_rare,/obj/random/material_resources,/obj/item/tool_upgrade/augment/expansion,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"p" = (/obj/structure/table/onestar,/obj/random/dungeon_gun_ballistic,/obj/random/dungeon_gun_ballistic,/obj/random/dungeon_gun_energy,/obj/random/material_rare,/obj/item/tool_upgrade/augment/repair_nano,/obj/item/tool_upgrade/augment/repair_nano,/turf/simulated/floor/tiled/derelict,/area/crawler)
-"q" = (/obj/structure/table/onestar,/obj/random/dungeon_gun_ballistic,/obj/random/material_resources,/obj/random/material_resources,/obj/random/material_resources,/obj/random/dungeon_gun_ballistic,/obj/random/material_resources,/obj/random/material_resources,/turf/simulated/floor/tiled/derelict,/area/crawler)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/simulated/wall,
+/area/crawler)
+"b" = (
+/obj/crawler/crawler_wallbreaker,
+/turf/simulated/wall,
+/area/crawler)
+"c" = (
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"d" = (
+/turf/simulated/floor/carpet,
+/area/crawler)
+"e" = (
+/obj/crawler/crawler_wallbreaker/vertical,
+/turf/simulated/wall,
+/area/crawler)
+"f" = (
+/obj/rogue/telebeacon,
+/turf/simulated/floor/carpet,
+/area/crawler)
+"g" = (
+/obj/random/structures/os,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"h" = (
+/obj/structure/closet/onestar/tier3/special,
+/obj/random/credits/c1000,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"i" = (
+/mob/living/simple_animal/hostile/megafauna/one_star,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"j" = (
+/obj/structure/closet/onestar/tier3/special,
+/obj/random/credits/c1000,
+/obj/random/oddity_guns,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"k" = (
+/obj/structure/table/onestar,
+/obj/item/gun/energy/captain,
+/obj/random/dungeon_ammo,
+/obj/random/dungeon_ammo,
+/obj/random/dungeon_gun_energy,
+/obj/random/material_rare,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"l" = (
+/obj/structure/table/onestar,
+/obj/random/dungeon_ammo,
+/obj/random/dungeon_ammo,
+/obj/random/dungeon_gun_energy,
+/obj/item/tool_upgrade/augment/ai_tool,
+/obj/item/tool_upgrade/augment/ai_tool,
+/obj/item/tool_upgrade/augment/ai_tool,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"m" = (
+/obj/machinery/light,
+/obj/structure/closet/onestar/tier3/special,
+/obj/random/credits/c1000,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"n" = (
+/obj/structure/table/onestar,
+/obj/random/dungeon_gun_energy,
+/obj/random/material_rare,
+/obj/item/tool_upgrade/augment/holding_tank,
+/obj/item/tool_upgrade/augment/holding_tank,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"o" = (
+/obj/structure/table/onestar,
+/obj/random/dungeon_gun_ballistic,
+/obj/random/dungeon_gun_ballistic,
+/obj/random/material_rare,
+/obj/random/material_resources,
+/obj/item/tool_upgrade/augment/expansion,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"p" = (
+/obj/structure/table/onestar,
+/obj/random/dungeon_gun_ballistic,
+/obj/random/dungeon_gun_ballistic,
+/obj/random/dungeon_gun_energy,
+/obj/random/material_rare,
+/obj/item/tool_upgrade/augment/repair_nano,
+/obj/item/tool_upgrade/augment/repair_nano,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"q" = (
+/obj/structure/table/onestar,
+/obj/random/dungeon_gun_ballistic,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/obj/random/dungeon_gun_ballistic,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
 
 (1,1,1) = {"
-aaaaaabaaaaaa
-aggjjcicjjgga
-accccdddcccca
-accccdcccccca
-eccccdfdcccce
-accccdcccccca
-accccdddcccca
-aghlknmpoqhga
-aaaaaabaaaaaa
+a
+a
+a
+a
+e
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+g
+c
+c
+c
+c
+c
+g
+a
+"}
+(3,1,1) = {"
+a
+g
+c
+c
+c
+c
+c
+h
+a
+"}
+(4,1,1) = {"
+a
+j
+c
+c
+c
+c
+c
+l
+a
+"}
+(5,1,1) = {"
+a
+j
+c
+c
+c
+c
+c
+k
+a
+"}
+(6,1,1) = {"
+a
+c
+d
+d
+d
+d
+d
+n
+a
+"}
+(7,1,1) = {"
+b
+i
+d
+c
+f
+c
+d
+m
+b
+"}
+(8,1,1) = {"
+a
+c
+d
+c
+d
+c
+d
+p
+a
+"}
+(9,1,1) = {"
+a
+j
+c
+c
+c
+c
+c
+o
+a
+"}
+(10,1,1) = {"
+a
+j
+c
+c
+c
+c
+c
+q
+a
+"}
+(11,1,1) = {"
+a
+g
+c
+c
+c
+c
+c
+h
+a
+"}
+(12,1,1) = {"
+a
+g
+c
+c
+c
+c
+c
+g
+a
+"}
+(13,1,1) = {"
+a
+a
+a
+a
+e
+a
+a
+a
+a
 "}

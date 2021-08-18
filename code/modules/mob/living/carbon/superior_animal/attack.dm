@@ -93,6 +93,8 @@
 		return
 
 	var/obj/item/projectile/A = new projectiletype(user:loc)
+	if(casingtype)
+		new casingtype(get_turf(src))
 	playsound(user, projectilesound, 100, 1)
 	if(!A)	return
 	var/def_zone = get_exposed_defense_zone(target)

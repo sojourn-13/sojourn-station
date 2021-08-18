@@ -385,10 +385,10 @@
 	empulse(target, 1, 3)
 
 //smoothbore rifles
-/obj/item/projectile/bullet/ball //TODO: make this less op vs people
-	damage_types = list(BRUTE = 60) //Grab me musket as the founding fathers intented
-	armor_penetration = 50 //Grape size whole in the blokes chest
-	agony = 250 //So we deal lots of damage to mobs
+/obj/item/projectile/bullet/ball
+	damage_types = list(BRUTE = 60) //Grab me musket as the founding fathers intended
+	armor_penetration = 0 //Golf-ball sized hole in the blokes chest, but not his plate carrier.
+	agony = 95
 	penetrating = 2
 	hitscan = TRUE
 
