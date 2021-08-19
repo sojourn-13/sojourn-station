@@ -92,9 +92,6 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 
-// This is absolutely unobtainable, you can't literally pick up any structure children and apply it to the crafting recipe, what were they even thinking?
-
-/*
 /datum/craft_recipe/weapon/handmade_lid_shield
 	name = "handmade lid shield"
 	result = /obj/item/shield/riot/handmade/lid
@@ -103,7 +100,6 @@
 		list(/obj/structure/closet/crate/trashcart, 1, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 10, 60)
 	)
-*/
 
 /datum/craft_recipe/weapon/handmade_tray_shield
 	name = "handmade tray shield"

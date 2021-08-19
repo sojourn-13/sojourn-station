@@ -77,6 +77,25 @@
 		list(QUALITY_ADHESIVE, 15, 20)
 	)
 
+//A rod with bits of pointy shrapnel stuck to it. Good weapon
+/datum/craft_recipe/tool/choppa
+	name = "choppa"
+	result = /obj/item/tool/saw/improvised
+	steps = list(
+		list(/obj/item/stack/rods, 1, 30),
+		list(QUALITY_CUTTING, 15, 150)
+	)
+
+//A rod and a sheet bound together with tape
+/datum/craft_recipe/tool/junkshovel
+	name = "junk shovel"
+	result = /obj/item/tool/shovel/improvised
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
+		list(/obj/item/stack/rods, 1, 30),
+		list(QUALITY_ADHESIVE, 15, 150)
+	)
+
 // For when you want everything in a single arm.
 /datum/craft_recipe/tool/toolimplant
 	name = "Multitool implant"
@@ -97,23 +116,13 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
-//A rod with bits of pointy shrapnel stuck to it. Good weapon
-/datum/craft_recipe/tool/choppa
-	name = "choppa"
-	result = /obj/item/tool/saw/improvised
+//Outsider tape more or less
+/datum/craft_recipe/tool/webtape
+	name = "web tape"
+	result = /obj/item/tool/tape_roll/web
 	steps = list(
-		list(/obj/item/stack/rods, 1, 30),
-		list(QUALITY_CUTTING, 15, 150)
-	)
-
-//A rod and a sheet bound together with tape
-/datum/craft_recipe/tool/junkshovel
-	name = "junk shovel"
-	result = /obj/item/tool/shovel/improvised
-	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
-		list(/obj/item/stack/rods, 1, 30),
-		list(QUALITY_ADHESIVE, 15, 150)
+		list(/obj/item/stack/medical/bruise_pack/handmade, 3, "time" = 50),
+		list(/obj/effect/spider/stickyweb, 1, "time" = 30)
 	)
 
 /datum/craft_recipe/tool/weaver
@@ -172,14 +181,6 @@
 		list(/obj/item/stack/cable_coil, 5, "time" = 20)
 	)
 	related_stats = list(STAT_COG)
-
-/datum/craft_recipe/tool/webtape
-	name = "web tape"
-	result = /obj/item/tool/tape_roll/web
-	steps = list(
-		list(/obj/item/stack/medical/bruise_pack/handmade, 3, "time" = 50),
-		list(/obj/item/stack/material/silk, 1, 30)
-	)
 
 //Metal rods reinforced with regular tape
 /datum/craft_recipe/tool/brace
