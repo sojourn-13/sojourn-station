@@ -551,7 +551,9 @@
 
 /obj/item/oddity/si_bluespace_scanner/examine(mob/living/user, distance)
 	. = ..()
-	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 90)) //got to be smarts
+	if(!iscarbon(user) || !issilicon(user))
+		return//Prevents ghosts form making a runtime
+	if(!user.stats?.getPerk(PERK_SI_SCI) || !usr.stat_check(STAT_COG, 90)) //got to be smarts
 		to_chat(usr, SPAN_WARNING("This tool is far to complex to read let alone use."))
 		return
 	var/area/my_area = get_area(src)

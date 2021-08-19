@@ -25,7 +25,7 @@
 		visible_message("[src] [pick("squats down and grunts.","begins making a huge racket.","begins snuffling raucously.")]")
 		offspring_left--
 		var/mob/living/carbon/superior_animal/lodge/baby_cerberus/E = new(get_turf(src))
-		START_PROCESSING(SSobj, E)
+		START_PROCESSING(SSmobs, E)
 
 /mob/living/carbon/superior_animal/lodge/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens

@@ -92,7 +92,7 @@
 		visible_message("[src] [pick("squats down and moos.","begins making a huge racket.","begins mooing raucously.")]")
 		offspring_left--
 		var/mob/living/carbon/superior_animal/lodge/baby_tatonka/E = new(get_turf(src))
-		START_PROCESSING(SSobj, E)
+		START_PROCESSING(SSmobs, E)
 	default_pixel_x = -16
 	pixel_x = -16
 
