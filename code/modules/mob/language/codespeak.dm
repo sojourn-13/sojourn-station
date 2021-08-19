@@ -23,8 +23,9 @@ var/cop_code_last
 	else if(state_location)
 		var/area/area = get_area(src)
 		var/location = initial(area.name) //No funny area renaming
+		var/turf/T = get_turf(src)
 		var/preposition = pick("in", "at")
-		src.say("[prefix]s [message] [preposition] [location]@")
+		src.say("[prefix]s [message] [preposition] [location] at coordinates [T.x], [T.y], [T.z]@")
 		codespeak_cooldown = world.time + 25
 	else
 		if(say_localy)
@@ -39,6 +40,21 @@ var/cop_code_last
 	set name = "MAYDAY"
 	src.codesay("Need help", TRUE, FALSE)
 
+/mob/living/carbon/human/proc/codespeak_regroup()
+	set category = "Codespeak"
+	set name = "Regroup (location)"
+	src.codesay("Regroup", TRUE, FALSE)
+
+/mob/living/carbon/human/proc/codespeak_moving_away()
+	set category = "Codespeak"
+	set name = "Pulling"
+	src.codesay("Withdrawing from", FALSE, FALSE)
+
+/mob/living/carbon/human/proc/codespeak_moving()
+	set category = "Codespeak"
+	set name = "En route from (location)"
+	src.codesay("En route", TRUE, FALSE)
+
 /mob/living/carbon/human/proc/codespeak_clear()
 	set category = "Codespeak"
 	set name = "Area clear"
@@ -49,10 +65,20 @@ var/cop_code_last
 	set name = "Roaches"
 	src.codesay("Roaches", TRUE, FALSE)
 
+/mob/living/carbon/human/proc/codespeak_spooders()
+	set category = "Codespeak"
+	set name = "Spiders"
+	src.codesay("Spiders", TRUE, FALSE)
+
+/mob/living/carbon/human/proc/codespeak_bigspooders()
+	set category = "Codespeak"
+	set name = "Reaper Spider"
+	src.codesay("Reaper spider", TRUE, FALSE)
+
 /mob/living/carbon/human/proc/codespeak_bigromch()
 	set category = "Codespeak"
-	set name = "Fuhrer roach"
-	src.codesay("Fuhrer roach", TRUE, FALSE)
+	set name = "Kaiser roach"
+	src.codesay("Kaiser roach", TRUE, FALSE)
 
 /mob/living/carbon/human/proc/codespeak_serb()
 	set category = "Codespeak"
@@ -88,6 +114,11 @@ var/cop_code_last
 	set category = "Codespeak"
 	set name = "Suspect"
 	src.codesay("Located the suspect", TRUE, FALSE)
+
+/mob/living/carbon/human/proc/codespeak_unknown()
+	set category = "Codespeak"
+	set name = "Unknown Located"
+	src.codesay("Located a unknown", TRUE, FALSE)
 
 /mob/living/carbon/human/proc/codespeak_status()
 	set category = "Codespeak"
