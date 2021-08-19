@@ -73,6 +73,11 @@
 	else if(user.stats.getStat(STAT_ROB) > 30)
 		force = WEAPON_FORCE_BRUTAL
 		whack_speed = 6
+
+	if(user.stats.getPerk(PERK_PSI_MANIA))
+		force = WEAPON_FORCE_BRUTAL
+		whack_speed = 6
+
 	var/throwdir = get_dir(user,target)
 	target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
 	..()
@@ -120,6 +125,8 @@
 	else if(user.stats.getStat(STAT_ROB) <= 30)
 		force = WEAPON_FORCE_ROBUST // As strong as a machete
 	else if(user.stats.getStat(STAT_ROB) > 30)
+		force = WEAPON_FORCE_BRUTAL
+	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
 	..()
 	force = initial(force) // Reset the damage just in case

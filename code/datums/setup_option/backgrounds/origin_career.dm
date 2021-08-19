@@ -200,11 +200,6 @@
 	This can range from starting your own shop to small business making stuff. Who knows how many tried and failed but your one of them, the market back in Sol Fed was just to crowed, that must be it. \
 	The system of bureaucracy and its regulations have pushed out many like you but it really gets the old noggin working in overtime."
 
-//Idea is simple, this one is to be a smart cookie and try and make a something to rival even LLS!
-//The main boon, loads of cog and some bio and mec so you can craft fast and e-z well also not being to robust in maints.
-//-11Loss Stats +"16"Gained Stats
-
-	restricted_depts = LSS //You dont need those non-entrepreneurs!
 	perks = list(/datum/perk/market_prof) //YOU GOT THIS, YOU KNOW WHATS UP AND HOW TO TURN TRASH INTO GOLD! BE YOUR OWN BOSS, GONE ON TO DO IT!
 
 	stat_modifiers = list(
@@ -213,7 +208,7 @@
 		STAT_VIG = -3,
 		STAT_BIO = 3,
 		STAT_MEC = 3,
-		STAT_COG = 10 //Dump stat kinda not a big deal to be "to high"
+		STAT_COG = 10 //So many psions are going to fucking pick this.
 	)
 
 /datum/category_item/setup_option/background/career/scavenger
@@ -224,6 +219,24 @@
 	to dodge potential traps."
 
 	perks = list(/datum/perk/sure_step)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/career/psi_sufficiency
+	name = "Former Scholar"
+	desc = "Once in life, you were a scholar and researcher. This may have been academic, personal interest, or hobbyist but regardless the reason you spent a great deal of time collecting massive \
+	amounts of information from various cultures, planets, and sectors both advanced and primitive. Regardless of where your focus laid, you became quite used to piecing together and categorizing \
+	details to such an extent that it became second nature. As a result, should you ever become a psion, your ability to hyper focus without losing the bigger picture allows you to lessen the \
+	negative side effects of your powers."
+
+	perks = list(/datum/perk/psi_attunement)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,

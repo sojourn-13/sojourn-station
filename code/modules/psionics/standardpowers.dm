@@ -15,8 +15,12 @@
 
 	if(pay_power_cost(psi_point_cost))
 		owner.heal_overall_damage(40,40)
-		owner.stun_effect_act(0, 200, BP_CHEST)
-		owner.weakened = 10
+		if(!owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			owner.stun_effect_act(0, 200, BP_CHEST)
+			owner.weakened = 10
+		else
+			owner.stun_effect_act(0, 100, BP_CHEST)
+			owner.weakened = 5
 		owner.visible_message(
 			SPAN_DANGER("[owner]'s flesh begins to hiss and bubble as their wounds mend!"),
 			SPAN_DANGER("A wave of agony envelops you as your wounds begin to close!")
@@ -96,9 +100,14 @@
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
-		owner.nutrition = 400
-		owner.adjustToxLoss(15)
-		owner.drip_blood(20)
+		if(!owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			owner.nutrition = 400
+			owner.adjustToxLoss(15)
+			owner.drip_blood(54)
+		else
+			owner.nutrition = 400
+			owner.adjustToxLoss(7.5)
+			owner.drip_blood(26)
 		to_chat(owner, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
 
 /obj/item/organ/internal/psionic_tumor/proc/telekineticprowress()

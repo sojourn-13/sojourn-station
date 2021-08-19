@@ -29,7 +29,7 @@
 		/datum/job/outsider //Psions are only available to colonist or allies.
 		)
 	allow_modifications = FALSE
-	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CINDAR)
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 */
 /datum/category_item/setup_option/core_implant/cruciform/tessellate
 	name = "Tessellate Cruciform"

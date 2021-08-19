@@ -144,3 +144,39 @@
 		STAT_MEC = 8,
 		STAT_COG = -15
 	)
+
+/datum/category_item/setup_option/background/bckgrnd/psionic_harmony
+	name = "Peaceful Life"
+	desc = "You've lived a life of peace and harmony so idyllic that is has given you a special bit of enlightenment. This is not to say your life was easy, nor without trial or consequence, \
+	it merely speaks of your approach being serene in ways that have left lasting effects upon you. This early life has left you so deeply effected that your mind is the calm within the storm, \
+	no matter the scenario you cannot be left in turmoil for long. You always find contentment, you always find peace. As such, should you ever become a psion, you're mind is perfectly adapted \
+	to make the most of the essence from which your powers are called, granting you three additional uses of your abilities."
+
+	perks = list(/datum/perk/psi_harmony)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/psionic_mania
+	name = "Bedlam"
+	desc = "Your life has been nothing but conflict, violence, and bedlam for as long as you can remember. You were fighting the moment you can stand and nothing has changed. You're always \
+	ready to throw down. You may not be outwardly confrontational, hell, people might not even know the capacity for hurting others you have deep down. But you cannot see violence as anything \
+	but the ultimate authority from which all authority is granted. This bedlam has changed how your mind works and, should you ever become a psion, has made you the perfect example of what \
+	a destructive mind can do. You always deal the maximum level of destruction when using your psionic powers which scale with your body and mind."
+
+	perks = list(/datum/perk/psi_mania)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)

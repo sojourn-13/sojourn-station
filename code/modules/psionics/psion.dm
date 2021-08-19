@@ -16,13 +16,17 @@
 //Main process, synthetics and impants are removed here, max psi points are determined, and checks to regen psi points.
 /obj/item/organ/internal/psionic_tumor/Process()
 	..()
+	var/psi_max_bonus = 0
 	if(round(world.time) % 5 == 0)
 		remove_synthetics()
 
 	if(!owner.stats.getPerk(PERK_PSION))
 		owner.stats.addPerk(PERK_PSION)
 
-	max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) / 10), 1, 30))
+	if(owner.stats.getPerk(PERK_PSI_HARMONY))
+		psi_max_bonus = 3
+
+	max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) / 10), 1, 30)) + psi_max_bonus
 
 	if(world.time > last_psi_point_gain)
 		if(psi_points >= max_psi_points)
