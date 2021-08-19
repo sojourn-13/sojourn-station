@@ -40,6 +40,10 @@
 	if (isnull(target))
 		return
 
+	if(owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
+		to_chat(owner, "Your psionic attunement allows you to bypass fully using your essence.")
+		psi_point_cost = 0
+
 	if(pay_power_cost(psi_point_cost))
 		var/say = sanitize(input("What do you wish to say"))
 		target.show_message("\blue You hear [usr.real_name]'s voice: [say]")
@@ -115,6 +119,10 @@
 	set name = "Telekinetic Prowess (1)"
 	set desc = "Expend a single point of your psi essence to gain telekinesis. Lasts indefinitely unless a genetics lab or you yourself willingly end it."
 	psi_point_cost = 1
+
+	if(owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
+		to_chat(owner, "Your psionic attunement allows you to bypass fully using your essence.")
+		psi_point_cost = 0
 
 	if (!(TK in owner.mutations)) // We can't get TK if we already have TK
 		if(pay_power_cost(psi_point_cost))

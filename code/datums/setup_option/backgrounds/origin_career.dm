@@ -234,7 +234,7 @@
 	desc = "Once in life, you were a scholar and researcher. This may have been academic, personal interest, or hobbyist but regardless the reason you spent a great deal of time collecting massive \
 	amounts of information from various cultures, planets, and sectors both advanced and primitive. Regardless of where your focus laid, you became quite used to piecing together and categorizing \
 	details to such an extent that it became second nature. As a result, should you ever become a psion, your ability to hyper focus without losing the bigger picture allows you to lessen the \
-	negative side effects of your powers."
+	negative side effects of your powers and use some abilities at no cost."
 
 	perks = list(/datum/perk/psi_attunement)
 
