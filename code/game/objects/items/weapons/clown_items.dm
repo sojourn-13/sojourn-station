@@ -9,7 +9,7 @@
  * Banana Peals
  */
 //its here so that its all contained in 1 file for the var
- /obj/item/bananapeel
+/obj/item/bananapeel
  	var/how_many_times_we_can_pull_a_pro_clown_gamer_move = 1
 
 /obj/item/bananapeel/Crossed(AM as mob|obj)

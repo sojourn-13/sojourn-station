@@ -142,15 +142,11 @@
 			else
 				playsound(src.loc, 'sound/machines/ping.ogg', 50, 1)
 				prize = bet*slots_payouts[wintype]
-			else
 		if(prize > 0)
 			src.visible_message("<b>[name]</b> states, \"Congratulations! You won [prize] Credits!\"")
 			if(jester)
 				jackpot = max(jackpot - prize, 0)
 			spawn_money(prize,src.loc,user)
-		else
-
-
 	src.add_fingerprint(user)
 	update_icon()
 	bet = 0
