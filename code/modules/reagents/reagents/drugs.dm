@@ -109,6 +109,38 @@
 	M.make_dizzy(10 * effect_multiplier)
 	M.confused = max(M.confused, 20 * effect_multiplier)
 
+/datum/reagent/drug/psi_juice
+	name = "Cerebrix "
+	id = "psi_juice"
+	description = "A rare chemical originally developed by the Soteria, this quasi-stimulant enhances the mind of a psion and restores their psi essence. However its highly addictive and highly \
+	dangerous if overdosed. Useless to non-psions. Has a secondary effect when drank that causes the user to enhance their cognitive abilities."
+	taste_description = "mushroom"
+	color = "#E700E7"
+	overdose = REAGENTS_OVERDOSE * 0.66
+	metabolism = REM * 0.5
+	addiction_chance = 90
+	nerve_system_accumulations = 40
+	reagent_type = "Drug/Stimulator"
+
+/datum/reagent/drug/psi_juice/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	var/obj/item/organ/internal/psionic_tumor/C = /obj/item/organ/internal/psionic_tumor
+	var/effective_dose = dose
+	if(effective_dose < 5 && M.species.has_process[BP_PSION])
+		if(C.psi_points >= C.max_psi_points)
+			return
+		C.psi_points += 1
+		effective_dose -= 5
+
+/datum/reagent/stim/psi_juice/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_BASIC, STIM_TIME, "psi_juice")
+
+/datum/reagent/stim/psi_juice/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "psi_juice_w")
+
+/datum/reagent/drug/psi_juice/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11)
+	M.add_chemical_effect(CE_PULSE, 2)
+	M.adjustBrainLoss(0.5)
 
 /datum/reagent/drug/psilocybin
 	name = "Psilocybin"

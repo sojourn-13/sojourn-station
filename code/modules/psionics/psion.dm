@@ -53,9 +53,8 @@
 
 			if(R.owner != owner)
 				continue
-			owner.visible_message(SPAN_DANGER("[owner]'s [R.name] tears off."),
-			SPAN_DANGER("Your [R.name] tears off."))
-			// Insert internal organ flying out here. - R4d6
+			to_chat(owner, SPAN_DANGER("You feeling a sickeningly emptying feeling as the synthetic organ within your body is forcefully shunted elsewhere by your psionic power."))
+			qdel(O)
 
 		if(istype(O, /obj/item/implant))
 			if(O == src)
@@ -73,7 +72,8 @@
 			if(R.is_organic_module == FALSE)
 				owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
 				SPAN_DANGER("[R.name] rips through your body."))
-				R.remove()
+				to_chat(owner, SPAN_DANGER("You feeling a sickeningly emptying feeling as the synthetic module within your body is forcefully shunted elsewhere by your psionic power."))
+				qdel(O)
 
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner

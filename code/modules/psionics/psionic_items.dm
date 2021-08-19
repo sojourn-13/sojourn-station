@@ -137,6 +137,7 @@
 	A simple thought can deploy or shrink the shield at will."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "psishield1"
+	item_state = "psishield1"
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list()
 	matter = list()
@@ -150,7 +151,6 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/shield/riot/crusader/psionic/Process()
-	..()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
 		qdel(src)

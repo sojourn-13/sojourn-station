@@ -189,10 +189,16 @@
 	required_reagents = list("sugar" = 1, "blattedin" = 1, "sulfur" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/psi_juice
+	result = "cerebrix"
+	required_reagents = list("psilocybin" = 1, "synaptizine" = 1, "cryptobiolin" = 1)
+	result_amount = 3
+
 /datum/chemical_reaction/ryetalyn
 	result = "ryetalyn"
 	required_reagents = list("arithrazine" = 1, "carbon" = 1)
 	result_amount = 2
+
 /datum/chemical_reaction/negative_ling
 	result = "negativeling"
 	required_reagents = list("ryetalyn" = 1, "carbon" = 1)
@@ -338,7 +344,6 @@
 	result = "citalopram"
 	required_reagents = list("mindbreaker" = 1, "carbon" = 1)
 	result_amount = 3
-
 
 /datum/chemical_reaction/paroxetine
 	result = "paroxetine"
