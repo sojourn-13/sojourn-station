@@ -13,7 +13,7 @@
 	switched_on_qualities = list(QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 25, QUALITY_WIRE_CUTTING = 25)
 	worksound = WORKSOUND_WELDING
 	toggleable = TRUE
-	max_upgrades = 0
+	max_upgrades = 3
 	heat = 2250
 
 	var/obj/item/hydrogen_fuel_cell/flask = null // The flask the welder use for ammo

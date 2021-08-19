@@ -22,7 +22,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	w_class = ITEM_SIZE_BULKY
 	recoil_buildup = 1
 	twohanded = TRUE
-	max_upgrades = 0
+	max_upgrades = 3
 	fire_delay = 10
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_MHYDROGEN = 5, MATERIAL_OSMIUM = 3, MATERIAL_TRITIUM = 2)
