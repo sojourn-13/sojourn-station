@@ -46,15 +46,23 @@
 			SPAN_DANGER("Your [R.name] tears off."))
 			R.droplimb()
 
+		if(istype(O, /obj/item/organ/internal))
+			var/obj/item/organ/internal/R = O
+			if(!BP_IS_ROBOTIC(R))
+				continue
+
+			if(R.owner != owner)
+				continue
+			owner.visible_message(SPAN_DANGER("[owner]'s [R.name] tears off."),
+			SPAN_DANGER("Your [R.name] tears off."))
+			// Insert internal organ flying out here. - R4d6
+
 		if(istype(O, /obj/item/implant))
 			if(O == src)
 				continue
 			var/obj/item/implant/R = O
-			if(R.wearer != owner)
-				continue
-			owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s [R.part]."),\
-			SPAN_DANGER("[R.name] rips through your [R.part]."))
-			R.part.take_damage(rand(20,40))
+			owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
+			SPAN_DANGER("[R.name] rips through your body."))
 			R.uninstall()
 			R.malfunction = MALFUNCTION_PERMANENT
 
@@ -62,12 +70,9 @@
 			if(O == src)
 				continue
 			var/obj/item/organ_module/R = O
-			if(R.wearer != owner)
-				continue
 			if(R.is_organic_module == FALSE)
-				owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s [R.part]."),\
-				SPAN_DANGER("[R.name] rips through your [R.part]."))
-				R.part.take_damage(rand(20,40))
+				owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
+				SPAN_DANGER("[R.name] rips through your body."))
 				R.remove()
 
 	if(ishuman(owner))

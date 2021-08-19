@@ -146,6 +146,7 @@
 /obj/item/shield/riot/crusader/psionic/New(var/loc, var/mob/living/carbon/Maker)
 	..()
 	holder = Maker
+	set_light(1.5, 1.5, COLOR_LIGHTING_PURPLE_BRIGHT)
 	START_PROCESSING(SSobj, src)
 
 /obj/item/shield/riot/crusader/psionic/Process()
