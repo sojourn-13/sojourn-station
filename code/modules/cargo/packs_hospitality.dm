@@ -257,3 +257,11 @@
 	containertype = /obj/structure/closet/crate
 	crate_name  = "musical band crate"
 	group = "Hospitality"
+
+/datum/supply_pack/boombox
+	contains = list(/obj/item/media/boombox)
+	name = "Boombox delivery"
+	cost = 650 //bit more costly then music devices itself
+	crate_name = "Nanotrasen boombox crate"
+	containertype = /obj/structure/closet/crate
+	group = "Miscellaneous"
