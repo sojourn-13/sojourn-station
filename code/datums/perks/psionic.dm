@@ -32,4 +32,5 @@
 /datum/perk/psi_attunement
 	name = "Psionic Attunement"
 	desc = "You have, through practice or innate talent, mastered your psionic abilities to such a degree that you have greater control of the negative side effects of your powers. Whenever you \
-	use a psionic power that has a negative side effects, you take only half the penalties a psion normally would."
+	use a psionic power that has a negative side effects, you take only half the penalties a psion normally would. Equally, some lesser powers like telepathic projection and telekinetic prowess \
+	no longer cost essence to use."

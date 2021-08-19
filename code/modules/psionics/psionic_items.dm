@@ -41,7 +41,7 @@
 	origin_tech = list()
 	matter = list()
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
-	tool_qualities = list(QUALITY_HAMMERING = 35, QUALITY_PRYING = 10)
+	tool_qualities = list()
 	effective_faction = list("spider") // Spiders are weak to crushing.
 	damage_mult = 2
 	degradation = 0 // Can't degrade
@@ -289,21 +289,23 @@
 	matter = list()
 	origin_tech = list()
 
-// Psionic Injector, give a certain amount of psi-points a certain amount of time.
+// Psionic Inhaler, give a certain amount of psi-points a certain amount of time.
 /obj/item/psi_injector
-	name = "Psi Injector"
-	desc = "A modified hypospray designed to allow psions to regain a point of psy." // TODO : Annoy Kaz to write a better description - R4d6
+	name = "cerebrix inhaler"
+	desc = "A modified inhaler which delivers over-saturated cerebrix diluted in water before being aerosolized. Unlike a direct injection or drinking, this method prevents overdosing or nasty side \
+	side effects at the cost of spending more cerebrix for what it returns."
 	icon = 'icons/obj/syringe.dmi'
-	icon_state = "combat_hypo"
+	icon_state = "psi_inhaler"
 	force = WEAPON_FORCE_HARMLESS
-	matter = list()
+	w_class = ITEM_SIZE_SMALL
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
 	var/use = 1 // Number of times it can be used.
 	var/point_per_use = 1 // Amount of points it give to a psion each use.
 
 /obj/item/psi_injector/examine(mob/user)
 	..()
 	to_chat(user, "It has [use] uses left.")
-	to_chat(user, "It can give [point_per_use] per uses to a psion.")
+	to_chat(user, "It can give [point_per_use] essence per use to a psion.")
 
 /obj/item/psi_injector/attack(atom/target, mob/user)
 	if(ishuman(target)) // Check if it's an actual mob and not a wall
@@ -312,16 +314,16 @@
 		if(PT) // Is the target a psion
 			if(PT.max_psi_points - PT.psi_points >= point_per_use) // Is there space to give the psion the points?
 				if(use) // Do we have uses left?
-					user.visible_message("You inject [point_per_use] psi-point into [T.name]'s body.",
-										"[user.name] inject [point_per_use] psi-point into [T.name]'s body.")
+					user.visible_message("You inject [point_per_use] dose into [T.name]'s body.",
+										"[user.name] injects [point_per_use] dose into [T.name]'s body.")
 					PT.psi_points += point_per_use
 					use--
 					return
 				else
-					to_chat(user, "The [src.name] can no longer give points.")
+					to_chat(user, "The [src.name] has no doses left.")
 					return
 			else
-				to_chat(user, "[T.name] already has the maximum amount of points \his body can hold.")
+				to_chat(user, "[T.name] already has the maximum amount of essence \his body can hold.")
 				return
 		else
 			to_chat(user, "You can't inject this into a non-psion.")
