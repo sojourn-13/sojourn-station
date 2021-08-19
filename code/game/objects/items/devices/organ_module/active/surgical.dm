@@ -15,6 +15,7 @@
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/medmultitool/medimplant/cht_mant
 	matter = list(MATERIAL_BIOMATTER = 10)
+	is_organic_module = TRUE
 
 /obj/item/organ_module/active/simple/surgical/organic
 	name = "embedded organic surgical multitool"
@@ -24,6 +25,7 @@
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
 	holding_type = /obj/item/tool/medmultitool/medimplant/organic
 	matter = list(MATERIAL_BIOMATTER = 10)
+	is_organic_module = TRUE
 
 /obj/item/biogoop/surgical
 	name = "incomplete organic surgical augment"

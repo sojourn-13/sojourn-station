@@ -40,10 +40,10 @@ var/list/disciples = list()
 		return
 	if(!active)
 		return
-	H.adjustBrainLoss(55+rand(5))
-	H.adjustOxyLoss(100+rand(50))
+	H.adjustBrainLoss(60)
+	H.adjustOxyLoss(200+rand(50))
 	if(part)
-		H.apply_damage(100+rand(75), BURN, part)
+		H.apply_damage(100+rand(150), BURN, part)
 	H.apply_effect(40+rand(20), IRRADIATE, check_protection = 0)
 	var/datum/effect/effect/system/spark_spread/s = new
 	s.set_up(3, 1, src)

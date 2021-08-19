@@ -78,3 +78,7 @@
 #define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
 #define PERK_GREENTHUMB /datum/perk/greenthumb
+#define PERK_PSION /datum/perk/psion
+#define PERK_PSI_MANIA /datum/perk/psi_mania
+#define PERK_PSI_HARMONY /datum/perk/psi_harmony
+#define PERK_PSI_ATTUNEMENT /datum/perk/psi_attunement

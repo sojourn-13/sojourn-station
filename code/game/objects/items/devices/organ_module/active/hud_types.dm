@@ -44,6 +44,7 @@
 	verb_name = "Activate Bio-Thermal Goggles"
 	icon_state = "bioshades"
 	holding_type = /obj/item/clothing/glasses/shades/thermal/bio
+	is_organic_module = TRUE
 
 /obj/item/organ_module/active/hud/welder_bio
 	name = "embedded bio-welder overlays"
@@ -51,6 +52,7 @@
 	verb_name = "Activate Bio-Welder Goggles"
 	icon_state = "bioshades"
 	holding_type = /obj/item/clothing/glasses/welding/superior/shades/bio
+	is_organic_module = TRUE
 
 /obj/item/organ_module/active/hud/night_bio
 	name = "embedded bio-night vision overlays"
@@ -58,3 +60,4 @@
 	verb_name = "Activate Bio-Night Vision Goggles"
 	icon_state = "bioshades"
 	holding_type = /obj/item/clothing/glasses/shades/night/bio
+	is_organic_module = TRUE

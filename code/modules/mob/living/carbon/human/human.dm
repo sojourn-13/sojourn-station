@@ -104,9 +104,13 @@
 			stat("Gnawing hunger", "[carrion_hunger]/[round(maw_efficiency/10)]")
 
 		var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
-		if (C)
+		if(C)
 			stat("Cruciform", "[C.power]/[C.max_power]")
 			stat("Channeling Boost", "[C.channeling_boost]")
+
+		var/obj/item/organ/internal/psionic_tumor/B = random_organ_by_process(BP_PSION)
+		if(B)
+			stat("Psi Essence", "[B.psi_points]/[B.max_psi_points]")
 
 	else if(statpanel("Perks"))
 		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
@@ -1208,6 +1212,8 @@ var/list/rank_prefix = list(\
 					C.install_default_modules_by_job(mind.assigned_job)
 					C.access.Add(mind.assigned_job.cruciform_access)
 					C.install_default_modules_by_path(mind.assigned_job)
+			if(I.implant_organ_type)
+				src.make_psion()
 
 	else
 		var/organ_type

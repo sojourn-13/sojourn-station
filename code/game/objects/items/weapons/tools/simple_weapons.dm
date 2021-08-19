@@ -397,6 +397,7 @@
 	suitable_cell = /obj/item/cell/medium
 	switched_on_qualities = list(QUALITY_HAMMERING = 30)
 	switched_off_qualities = list(QUALITY_HAMMERING = 10)
+	hitsound = 'sound/weapons/smash.ogg'
 
 /obj/item/tool/power_fist/turn_on(mob/user)
 	if (cell && cell.charge > 0)

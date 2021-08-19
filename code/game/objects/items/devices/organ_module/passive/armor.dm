@@ -17,6 +17,7 @@
 	allowed_organs = list(BP_CHEST)
 	icon_state = "orgarmor-chest"
 	matter = list(MATERIAL_BIOMATTER = 30)
+	is_organic_module = TRUE
 
 /obj/item/organ_module/armor/onInstall(obj/item/organ/external/E)
 	E.brute_mod -= 0.3
