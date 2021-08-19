@@ -526,7 +526,7 @@
 	if(can_dual == TRUE)
 		to_chat(user, SPAN_NOTICE("This gun can be duel-wielded effectively, if you're skilled enough."))
 
-	if(iscarbon(user))
+	if(iscarbon(user) || issilicon(user))
 		if(one_hand_penalty && !user.stats.getPerk(PERK_PERFECT_SHOT))
 			to_chat(user, SPAN_WARNING("This gun needs to be wielded in both hands to be used most effectively."))
 		else if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))

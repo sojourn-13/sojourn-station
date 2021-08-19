@@ -43,17 +43,18 @@
 	..()
 	if(exam_message)
 		to_chat(user, SPAN_NOTICE("[exam_message]"))
-	var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
-	if(robotics_expert) // Are we an expert in robots?
-		to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
-	else if (health < maxHealth * 0.25)
-		to_chat(user, SPAN_DANGER("It's grievously wounded!"))
-	else if (health < maxHealth * 0.50)
-		to_chat(user, SPAN_DANGER("It's badly wounded!"))
-	else if (health < maxHealth * 0.75)
-		to_chat(user, SPAN_WARNING("It's wounded."))
-	else if (health < maxHealth)
-		to_chat(user, SPAN_WARNING("It's a bit wounded."))
+	if(iscarbon(user) || issilicon(user))
+		var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
+		if(robotics_expert) // Are we an expert in robots?
+			to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
+		else if (health < maxHealth * 0.25)
+			to_chat(user, SPAN_DANGER("It's grievously wounded!"))
+		else if (health < maxHealth * 0.50)
+			to_chat(user, SPAN_DANGER("It's badly wounded!"))
+		else if (health < maxHealth * 0.75)
+			to_chat(user, SPAN_WARNING("It's wounded."))
+		else if (health < maxHealth)
+			to_chat(user, SPAN_WARNING("It's a bit wounded."))
 
 /mob/living/carbon/superior_animal/handmade/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0) //WE CLEAN!
 	. = ..()
