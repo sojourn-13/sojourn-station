@@ -116,6 +116,7 @@
 	dangerous if overdosed. Useless to non-psions. Has a secondary effect when drank that causes the user to enhance their cognitive abilities."
 	taste_description = "ascension"
 	color = "#E700E7"
+	reagent_state = LIQUID
 	overdose = REAGENTS_OVERDOSE * 0.66
 	metabolism = REM * 0.5
 	addiction_chance = 90
