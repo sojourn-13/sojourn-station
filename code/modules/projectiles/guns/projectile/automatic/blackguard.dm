@@ -27,7 +27,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/rifle_boltforward.ogg'
-	gun_tags = list(GUN_MAGWELL, GUN_BAYONET)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_BAYONET)
 
 	init_firemodes = list(
 		list(mode_name="semiauto", burst=1, fire_delay=8, move_delay=null, icon="semi")
