@@ -288,3 +288,42 @@
 	max_fuel = 29
 	matter = list()
 	origin_tech = list()
+
+// Psionic Injector, give a certain amount of psi-points a certain amount of time.
+/obj/item/psi_injector
+	name = "Psi Injector"
+	desc = "A modified hypospray designed to allow psions to regain a point of psy." // TODO : Annoy Kaz to write a better description - R4d6
+	icon = 'icons/obj/syringe.dmi'
+	icon_state = "combat_hypo"
+	force = WEAPON_FORCE_HARMLESS
+	matter = list()
+	var/use = 1 // Number of times it can be used.
+	var/point_per_use = 1 // Amount of points it give to a psion each use.
+
+/obj/item/psi_injector/examine(mob/user)
+	..()
+	to_chat(user, "It has [use] uses left.")
+	to_chat(user, "It can give [point_per_use] per uses to a psion.")
+
+/obj/item/psi_injector/attack(atom/target, mob/user)
+	if(ishuman(target)) // Check if it's an actual mob and not a wall
+		var/mob/living/carbon/human/T = target
+		var/obj/item/organ/internal/psionic_tumor/PT = T.random_organ_by_process(BP_PSION)
+		if(PT) // Is the target a psion
+			if(PT.max_psi_points - PT.psi_points >= point_per_use) // Is there space to give the psion the points?
+				if(use) // Do we have uses left?
+					user.visible_message("You inject [point_per_use] psi-point into [T.name]'s body.",
+										"[user.name] inject [point_per_use] psi-point into [T.name]'s body.")
+					PT.psi_points += point_per_use
+					use--
+					return
+				else
+					to_chat(user, "The [src.name] can no longer give points.")
+					return
+			else
+				to_chat(user, "[T.name] already has the maximum amount of points \his body can hold.")
+				return
+		else
+			to_chat(user, "You can't inject this into a non-psion.")
+			return
+	..()
