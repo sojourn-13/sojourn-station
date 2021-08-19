@@ -169,17 +169,18 @@
 /* Things that didn't fit anywhere else */
 
 /datum/reagent/adminordrazine //An OP chemical for admins
-	name = "Adminordrazine"
+	name = "Chemical Nakh"
 	id = "adminordrazine"
-	description = "It's magic. We don't have to explain it."
-	taste_description = "100% abuse"
+	description = "An extremely rare chemical rumored to have been created specifically by soteria director Nakharan Mkne. Believed to be able to bring back even the dead or keep even the most \
+	ruined of people away from death's door. How did you get this?"
+	taste_description = "overpowered bullshit"
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#daa520"
 	affects_dead = 1 //This can even heal dead people.
 
 	glass_icon_state = "golden_cup"
 	glass_name = "golden cup"
-	glass_desc = "It's magic. We don't have to explain it."
+	glass_desc = "It's science. We don't have to explain shit."
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/adminordrazine/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
