@@ -9,10 +9,10 @@
 #define JUKEMODE_PLAY_ONCE   4 // Play, then stop.
 
 /obj/machinery/media/jukebox
-	name = "space jukebox"
+	name = "jukebox"
 	icon = 'icons/obj/jukebox.dmi'
-	icon_state = "jukebox2-nopower"
-	var/state_base = "jukebox2"
+	icon_state = "jukebox-nopower"
+	var/state_base = "jukebox"
 	anchored = TRUE
 	density = TRUE
 	power_channel = STATIC_EQUIP
