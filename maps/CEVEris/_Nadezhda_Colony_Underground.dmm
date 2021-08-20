@@ -4329,7 +4329,7 @@
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/maintenance/substation/section2)
 "ajv" = (
 /obj/structure/medical_stand,
@@ -50800,13 +50800,6 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"qss" = (
-/obj/structure/table/bar_special,
-/obj/machinery/floor_light,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/material/ashtray,
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/nadezhda/crew_quarters/cafeteria)
 "qsA" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light/floor{
@@ -54017,6 +54010,13 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
+"sqT" = (
+/obj/structure/table/bar_special,
+/obj/machinery/floor_light,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/material/ashtray,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/nadezhda/crew_quarters/cafeteria)
 "sqZ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -57034,7 +57034,7 @@
 	pixel_x = 3
 	},
 /obj/machinery/light,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/maintenance/substation/section2)
 "unq" = (
 /obj/structure/extinguisher_cabinet{
@@ -58911,7 +58911,7 @@
 "vvR" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/recharge_station,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/quartermaster/hangarsupply)
 "vwi" = (
 /obj/effect/spider/stickyweb,
@@ -75530,7 +75530,7 @@ cLm
 faw
 rtv
 rtv
-qss
+sqT
 alf
 cLm
 mSu
