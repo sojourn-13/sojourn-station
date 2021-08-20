@@ -93,32 +93,32 @@
 	owner.brute_mod_perk = 0.7 //30% of brute and burn damage.
 	owner.burn_mod_perk = 0.7
 
-/datum/robot_component/armour/level_2
+/datum/robot_component/armour_level_2
 	external_type = /obj/item/robot_parts/robot_component/armour/mkii
 	max_damage = 120
 	installed_by_default = FALSE
 
-/datum/robot_component/armour/level_2/install()
+/datum/robot_component/armour_level_2/install()
 	owner.brute_mod_perk = 0.5 //50% of brute and burn damage.
 	owner.burn_mod_perk = 0.5
 	owner.stats.addPerk(/datum/perk/ass_of_concrete)
 
-/datum/robot_component/armour/level_2/uninstall()
+/datum/robot_component/armour_level_2/uninstall()
 	owner.brute_mod_perk = 0.7 //70% of brute and burn damage.
 	owner.burn_mod_perk = 0.7
 	owner.stats.removePerk(/datum/perk/ass_of_concrete)
 
-/datum/robot_component/armour/level_3
+/datum/robot_component/armour_level_3
 	external_type = /obj/item/robot_parts/robot_component/armour/mkv
 	max_damage = 160
 	installed_by_default = FALSE
 
-/datum/robot_component/armour/level_3/install()
+/datum/robot_component/armour_level_3/install()
 	owner.brute_mod_perk = 0.4 //40% of brute and burn damage.
 	owner.burn_mod_perk = 0.4
 	owner.stats.addPerk(/datum/perk/ass_of_concrete)
 
-/datum/robot_component/armour/level_3/uninstall()
+/datum/robot_component/armour_level_3/uninstall()
 	owner.brute_mod_perk = 0.7 //70% of brute and burn damage.
 	owner.burn_mod_perk = 0.7
 	owner.stats.removePerk(/datum/perk/ass_of_concrete)
