@@ -205,7 +205,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	origin_tech = list()
 	matter = list()
-	tool_qualities = list(QUALITY_LASER_CUTTING = 42, QUALITY_CLAMPING = 6, QUALITY_CAUTERIZING = 8, QUALITY_RETRACTING = 22, QUALITY_BONE_SETTING = 19) //It's a surgical chainsaw
+	tool_qualities = list(QUALITY_LASER_CUTTING = 42, QUALITY_SAWING = 23, QUALITY_CLAMPING = 6, QUALITY_CAUTERIZING = 8, QUALITY_RETRACTING = 22, QUALITY_BONE_SETTING = 19) //It's a surgical chainsaw
 	max_fuel = 123
 
 /obj/item/gun/projectile/automatic/sts/rifle/cult
