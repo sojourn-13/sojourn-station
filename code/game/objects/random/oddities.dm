@@ -74,6 +74,7 @@
 				/obj/item/gun/projectile/that_gun = 1,
 				/obj/item/gun/hydrogen/incinerator = 1,
 				/obj/item/gun/projectile/colt/cult = 1,
+				/obj/item/gun/projectile/shotgun/pump/gladstone/queen/king = 1,
 				/obj/item/soap/bluespase = 0.5)) //Ye not a "gun" but still good for this
 
 /obj/random/uplink/low_chance
