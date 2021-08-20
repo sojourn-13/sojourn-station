@@ -86,47 +86,39 @@
 	max_damage = 80
 
 /datum/robot_component/armour/install()
-	..()
 	owner.brute_mod_perk = 0.6 //60% of brute and burn damage.
 	owner.burn_mod_perk = 0.6
 
 /datum/robot_component/armour/uninstall()
-	..()
 	owner.brute_mod_perk = 0.7 //30% of brute and burn damage.
 	owner.burn_mod_perk = 0.7
 
 /datum/robot_component/armour/level_2
-	name = "advanced armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkii
 	max_damage = 120
 	installed_by_default = FALSE
 
 /datum/robot_component/armour/level_2/install()
-	..()
 	owner.brute_mod_perk = 0.5 //50% of brute and burn damage.
 	owner.burn_mod_perk = 0.5
 	owner.stats.addPerk(/datum/perk/ass_of_concrete)
 
 /datum/robot_component/armour/level_2/uninstall()
-	..()
 	owner.brute_mod_perk = 0.7 //70% of brute and burn damage.
 	owner.burn_mod_perk = 0.7
 	owner.stats.removePerk(/datum/perk/ass_of_concrete)
 
 /datum/robot_component/armour/level_3
-	name = "combat armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkv
 	max_damage = 160
 	installed_by_default = FALSE
 
 /datum/robot_component/armour/level_3/install()
-	..()
 	owner.brute_mod_perk = 0.4 //40% of brute and burn damage.
 	owner.burn_mod_perk = 0.4
 	owner.stats.addPerk(/datum/perk/ass_of_concrete)
 
 /datum/robot_component/armour/level_3/uninstall()
-	..()
 	owner.brute_mod_perk = 0.7 //70% of brute and burn damage.
 	owner.burn_mod_perk = 0.7
 	owner.stats.removePerk(/datum/perk/ass_of_concrete)
@@ -330,13 +322,13 @@
 	icon_state_broken = "armor_broken"
 
 /obj/item/robot_parts/robot_component/armour/mkii
-	name = "Mark II armour plating"
+	desc = "Advanced armor plating that is helps keep a borg stable in combat."
 	icon_state = "armormk2"
 	icon_state_broken = "armormk2_broken"
 	matter = list(MATERIAL_STEEL = 25)
 
 /obj/item/robot_parts/robot_component/armour/mkv
-	name = "Mark V armour plating"
+	desc = "Advanced combat armor plating that is helps keep a borg stable in combat and protected."
 	icon_state = "armormk5"
 	icon_state_broken = "armormk5_broken"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
