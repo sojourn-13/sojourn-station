@@ -49,6 +49,9 @@
 			owner.visible_message(SPAN_DANGER("[owner]'s [R.name] tears off."),
 			SPAN_DANGER("Your [R.name] tears off."))
 			R.droplimb()
+			if(ishuman(owner))
+				var/mob/living/carbon/human/H = owner
+				H.update_implants()
 
 		if(istype(O, /obj/item/organ/internal))
 			var/obj/item/organ/internal/R = O
@@ -59,6 +62,9 @@
 				continue
 			to_chat(owner, SPAN_DANGER("You feeling a sickeningly emptying feeling as the synthetic organ within your body is forcefully shunted elsewhere by your psionic power."))
 			qdel(O)
+			if(ishuman(owner))
+				var/mob/living/carbon/human/H = owner
+				H.update_implants()
 
 		if(istype(O, /obj/item/implant))
 			if(O == src)
@@ -68,6 +74,9 @@
 			SPAN_DANGER("[R.name] rips through your body."))
 			R.uninstall()
 			R.malfunction = MALFUNCTION_PERMANENT
+			if(ishuman(owner))
+				var/mob/living/carbon/human/H = owner
+				H.update_implants()
 
 		if(istype(O, /obj/item/organ_module))
 			if(O == src)
@@ -78,10 +87,10 @@
 				SPAN_DANGER("[R.name] rips through your body."))
 				to_chat(owner, SPAN_DANGER("You feeling a sickeningly emptying feeling as the synthetic module within your body is forcefully shunted elsewhere by your psionic power."))
 				qdel(O)
+				if(ishuman(owner))
+					var/mob/living/carbon/human/H = owner
+					H.update_implants()
 
-	if(ishuman(owner))
-		var/mob/living/carbon/human/H = owner
-		H.update_implants()
 
 //Subtracts psi points from you fool and checks if you can pay for powers.
 /obj/item/organ/internal/psionic_tumor/proc/pay_power_cost(var/psi_cost)
