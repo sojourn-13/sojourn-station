@@ -76,30 +76,40 @@
 	else
 		to_chat(user, "\The [shotgun] is empty.")
 
-/obj/item/gun/projectile/revolver/lemant/deacon
+/obj/item/gun/projectile/revolver/deacon
 	name = "\"Deacon\" heavy revolver"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	Some pilgrims find what they are looking for..."
+	icon = 'icons/obj/guns/projectile/lemant_blue.dmi'
 	icon_state = "lemant_blue"
 	item_state = "lemant_blue"
 	caliber = CAL_50
+	drawChargeMeter = FALSE
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
+	max_shells = 9
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
+	price_tag = 450
+	damage_multiplier = 1.2
+	penetration_multiplier = 1.1
+	recoil_buildup = 4
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	var/obj/item/gun/projectile/underslung/launcher
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire grenades",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
-/obj/item/gun/projectile/revolver/lemant/deacon/Initialize()
+/obj/item/gun/projectile/revolver/deacon/Initialize()
 	. = ..()
 	launcher = new(src)
 
-/obj/item/gun/projectile/revolver/lemant/deacon/attackby(obj/item/I, mob/user)
+/obj/item/gun/projectile/revolver/deacon/attackby(obj/item/I, mob/user)
 	if((istype(I, /obj/item/ammo_casing/grenade)))
 		launcher.load_ammo(I, user)
 	else
 		..()
 
-/obj/item/gun/projectile/revolver/lemant/deacon/attack_hand(mob/user)
+/obj/item/gun/projectile/revolver/deacon/attack_hand(mob/user)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(user.get_inactive_hand() == src && cur_mode.settings["use_launcher"])
@@ -107,7 +117,7 @@
 	else
 		..()
 
-/obj/item/gun/projectile/revolver/lemant/deacon/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+/obj/item/gun/projectile/revolver/deacon/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(cur_mode.settings["use_launcher"])
@@ -117,7 +127,7 @@
 	else
 		..()
 
-/obj/item/gun/projectile/revolver/lemant/deacon/examine(mob/user)
+/obj/item/gun/projectile/revolver/deacon/examine(mob/user)
 	..()
 	if(launcher.loaded.len)
 		to_chat(user, "\The [launcher] has \a [launcher.chambered] loaded.")
