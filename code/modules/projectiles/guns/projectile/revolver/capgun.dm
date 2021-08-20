@@ -10,3 +10,4 @@
 	max_shells = 7
 	ammo_type = /obj/item/ammo_casing/cap
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	fire_animatio = FALSE
