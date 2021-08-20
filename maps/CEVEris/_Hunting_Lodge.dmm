@@ -3686,6 +3686,10 @@
 /obj/machinery/light/floor,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"oA" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "xv" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/rods/random,
@@ -10229,7 +10233,7 @@ bP
 dd
 dG
 dg
-dg
+oA
 aP
 aD
 aD
