@@ -4,10 +4,10 @@ Comes with lockable by TMs panel which allows for selection of targets: animals,
 Will blast electricity at any target within 5 tiles radius matching criteria chosen.
 */
 
-#define HUMAN /mob/living/carbon/human
-#define SILICON /mob/living/silicon
-#define SUPERIOR_ANIMAL /mob/living/carbon/superior_animal
-#define SIMPLE_ANIMAL /mob/living/simple_animal
+#define T_HUMAN /mob/living/carbon/human
+#define T_SILICON /mob/living/silicon
+#define T_SUPERIOR_ANIMAL /mob/living/carbon/superior_animal
+#define T_SIMPLE_ANIMAL /mob/living/simple_animal
 
 /obj/machinery/power/tesla_turret
 	name = "Defensive Tesla Coil Turret"
@@ -22,7 +22,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	var/locked = FALSE
 	var/zap_cooldown = 100
 	var/last_zap = 0
-	var/list/possible_targets = list(HUMAN, SILICON, SIMPLE_ANIMAL, SUPERIOR_ANIMAL)
+	var/list/possible_targets = list(T_HUMAN, T_SILICON, T_SIMPLE_ANIMAL, T_SUPERIOR_ANIMAL)
 	var/current_target = null
 
 /obj/machinery/power/tesla_turret/anchored
@@ -146,7 +146,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 		S.emp_act(3 /*EMP_LIGHT*/)
 
 
-#undef HUMAN
-#undef SILICON
-#undef SUPERIOR_ANIMAL
-#undef SIMPLE_ANIMAL
+#undef T_HUMAN
+#undef T_SILICON
+#undef T_SUPERIOR_ANIMAL
+#undef T_SIMPLE_ANIMAL
