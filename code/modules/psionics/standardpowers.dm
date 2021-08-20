@@ -6,6 +6,9 @@
 // Since you will rarely have a fuck ton of psi points outside specializing (scientist/mar'qua/background choices/etc) and they take a long time to refill when spent.
 // The cooldowns are not based in a hard number but how much you want to risk by using a slowly recharging but limited pool. -Kazkin
 
+// Do account for the fact that psi points can be restored using cerebrix inhalers or injections of cerebrix. Powers that are inherently strong or spammable should come with drawbacks.
+// Agony or stat penalties are the usual go to. Failing that, dealing damage a psion can't restore with his powers.
+
 // Lesser powers - These powers should never exceed a cost of 1 point.
 /obj/item/organ/internal/psionic_tumor/proc/psionic_healing()
 	set category = "Psionic powers"
@@ -160,7 +163,7 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(fist)
 
-// Greater powers - These powers should have a cost of 1-5 and have very powerful effects.
+// Greater powers - These powers should have a cost of 2-5 and have very powerful effects.
 /obj/item/organ/internal/psionic_tumor/proc/psionic_weapon()
 	set category = "Psionic powers"
 	set name = "Psionic Weapon Construction (2)"
