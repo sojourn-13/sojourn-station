@@ -158,9 +158,9 @@ var/list/disciples = list()
 			R.part.take_damage(rand(20,40))
 			R.uninstall()
 			R.malfunction = MALFUNCTION_PERMANENT
-	if(ishuman(wearer))
-		var/mob/living/carbon/human/H = wearer
-		H.update_implants()
+			if(ishuman(wearer))
+				var/mob/living/carbon/human/H = wearer
+				H.update_implants()
 
 
 /obj/item/implant/core_implant/cruciform/proc/update_data()
