@@ -110,7 +110,7 @@
 	M.confused = max(M.confused, 20 * effect_multiplier)
 
 /datum/reagent/drug/psi_juice
-	name = "Cerebrix "
+	name = "Cerebrix"
 	id = "psi_juice"
 	description = "A rare chemical originally developed by the Soteria, this quasi-stimulant enhances the mind of a psion and restores their psi essence. However its highly addictive and highly \
 	dangerous if overdosed. Useless to non-psions. Has a secondary effect when drank that causes the user to enhance their cognitive abilities."

@@ -190,7 +190,7 @@
 	result_amount = 3
 
 /datum/chemical_reaction/psi_juice
-	result = "cerebrix"
+	result = "psi_juice"
 	required_reagents = list("psilocybin" = 1, "synaptizine" = 1, "cryptobiolin" = 1)
 	result_amount = 3
 
