@@ -209,3 +209,10 @@
 /datum/design/research/item/part/greyson_manipulator
 	name = "greyson positronic manipulator"
 	build_path = /obj/item/stock_parts/manipulator/one_star
+
+// Greyson Machines ========================
+
+/datum/design/research/circuit/greyson_autolathe
+	name = "Greyson Autolathe"
+	build_path = /obj/item/circuitboard/autolathe_greyson
+	category = CAT_MACHINE
