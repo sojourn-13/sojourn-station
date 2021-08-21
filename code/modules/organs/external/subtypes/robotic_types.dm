@@ -103,7 +103,7 @@
 /obj/item/organ/external/robotic/technomancer/head
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
-/*
+
 // Synth-Skin
 /obj/item/organ/external/robotic/full_body_prosthetic
 	name = "Full Body Prosthetic \"Synth-Skin\""
@@ -122,7 +122,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 /obj/item/organ/external/robotic/full_body_prosthetic/head
 	name = "Full Body Prosthetic \"Synth-Skin\" Head"
 	default_description = /datum/organ_description/head
-*/
+
 // Junktech
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""

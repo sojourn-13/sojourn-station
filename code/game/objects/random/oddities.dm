@@ -60,7 +60,7 @@
 				/obj/item/gun/energy/ntpistol/mana = 1,
 				/obj/item/gun/projectile/automatic/maxim/replica = 1,
 				/obj/item/oddity/nt/seal = 1,
-				/obj/item/gun/projectile/revolver/lemant/deacon = 1,
+				/obj/item/gun/projectile/revolver/deacon = 1,
 				/obj/item/gun/projectile/clarissa/devil_eye = 1,
 				/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic = 1,
 				/obj/item/gun/energy/captain/zapper = 1,

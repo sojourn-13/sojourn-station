@@ -1083,7 +1083,7 @@
 /obj/item/ammo_magazine/price_tag = 60
 
 /obj/item/ammo_magazine/ammobox/price_tag = 40
-
+/*
 /obj/item/ammo_magazine/get_item_cost(export)
 	. = ..()
 	for(var/obj/item/ammo_casing/i in stored_ammo)
@@ -1093,7 +1093,7 @@
 
 /obj/item/ammo_casing/get_item_cost(export)
 	. = ..() * amount
-
+*/
 /obj/item/tool/price_tag = 20
 
 /obj/item/tool/get_item_cost(export)

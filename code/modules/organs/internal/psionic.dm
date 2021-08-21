@@ -1,3 +1,5 @@
+// This organ turns people into a psion once in the body after the first process check. Has alot of stats (on par with a brain) due to giving you lots in return.
+// All owner_verbs are standard powers given to psions the moment they ascend. BP_PSION is called for bodily effects relating specifically to psions, such as chemicals.
 /obj/item/organ/internal/psionic_tumor
 	name = "ascended flesh"
 	health = 400 //They need to live awhile longer than other organs. Is this even used by organ code anymore?
@@ -12,7 +14,7 @@
 	throw_speed = 3
 	throw_range = 5
 	layer = ABOVE_MOB_LAYER
-	origin_tech = list(TECH_BIO = 6)
+	origin_tech = list(TECH_BIO = 20) // Literally a unique organ found in only one place in the entire galaxy.
 	attack_verb = list("attacked", "slapped", "whacked")
 	price_tag = 12000
 	blood_req = 8

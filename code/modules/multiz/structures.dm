@@ -21,6 +21,9 @@
 				qdel(src)
 			return .
 
+/obj/structure/multiz/ex_act(severity)
+	return //We cant be broken like this to prevent people getting unfairly stuck do to bad rng
+
 /obj/structure/multiz/CanPass(obj/mover, turf/source, height, airflow)
 	return airflow || !density
 
