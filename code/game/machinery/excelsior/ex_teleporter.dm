@@ -54,6 +54,7 @@ var/global/excelsior_last_draft = 0
 		/obj/item/circuitboard/excelsior_turret = 150,
 		/obj/item/circuitboard/excelsiorshieldwallgen = 150,
 		/obj/item/circuitboard/excelsior_boombox = 150,
+		/obj/item/circuitboard/excelsior_autodoc = 50,
 		/obj/item/circuitboard/diesel = 150,
 		/obj/item/melee/baton/excelbaton = 200,
 		/obj/item/device/defib_kit/compact = 500,
