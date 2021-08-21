@@ -8561,22 +8561,6 @@
 	},
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
-"arr" = (
-/obj/landmark/join/start/technomancer,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/engineering/workshop)
 "ars" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -22848,8 +22832,8 @@
 	dir = 4
 	},
 /obj/machinery/sleeper{
-	icon_state = "sleeper_0";
-	dir = 8
+	dir = 8;
+	icon_state = "sleeper_0"
 	},
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -39052,9 +39036,9 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "iwO" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
-	tag = "icon-intact (NORTH)";
+	dir = 1;
 	icon_state = "intact";
-	dir = 1
+	tag = "icon-intact (NORTH)"
 	},
 /turf/simulated/floor/reinforced/nitrogen{
 	temperature = 273.15
@@ -42386,8 +42370,8 @@
 /obj/effect/floor_decal/industrial/loading/white,
 /obj/effect/floor_decal/industrial/box/white/corners,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
@@ -44884,8 +44868,8 @@
 	pixel_y = 30
 	},
 /obj/machinery/atmospherics/binary/pump{
-	name = "gas pump to turbine";
-	dir = 4
+	dir = 4;
+	name = "gas pump to turbine"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
@@ -48398,8 +48382,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/loading/white,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -54707,12 +54691,12 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
@@ -57579,8 +57563,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/white,
@@ -62072,12 +62056,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
@@ -83801,7 +83785,7 @@ aCU
 oDn
 aCU
 cSr
-arr
+arq
 eId
 aCU
 oWq
@@ -84407,7 +84391,7 @@ aCU
 oDn
 aCU
 woj
-arr
+arq
 tDm
 mhb
 mhb
