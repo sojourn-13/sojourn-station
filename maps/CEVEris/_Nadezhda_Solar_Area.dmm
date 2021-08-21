@@ -1285,12 +1285,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"gl" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/outside/mountainsolars)
 "gr" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -1340,9 +1334,6 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
 "lx" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
 /obj/structure/sign/department/atmos,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/outside/mountainsolars)
@@ -9275,7 +9266,7 @@ Zy
 bi
 bi
 bi
-gl
+bi
 Zy
 oV
 bw
