@@ -6,12 +6,14 @@
 	var/name
 	var/desc
 	var/list/icon_states = "station"
-	var/offer_type
-	var/offer_price
-	var/offer_amount
+	var/offer_type   //What the ship wants form the colony
+	var/offer_price  //The price of the good the ship wants to buy
+	var/offer_amount //How many goods the ship wants form colony
 
-	var/spawn_always = FALSE
-	var/spawn_probability = 30
+	var/offer_amout_devider_of_wanted_goods = 1 //This is a var to devide the amout of goods the trade ship wants form colony
+
+	var/spawn_always = FALSE //Do we always spawn in the round?
+	var/spawn_probability = 30 //How likely we are to spawn in the round
 	var/spawn_cost = 1
 	var/start_discovered = FALSE
 	var/list/linked_with //trade 'stations' or 'station' that must spawn with //list or path
@@ -37,7 +39,7 @@
 
 /datum/trade_station/proc/init_src()
 	if(name)
-		crash_with("Some retard gived trade station a name before init_src, not thought name_pool. ([type])")
+		crash_with("Some silly gived trade station a name before init_src, not thought name_pool. ([type])")
 	for(var/datum/trade_station/S in SStrade.all_stations)
 		name_pool.Remove(S.name)
 		if(!length(name_pool))
@@ -143,10 +145,16 @@
 	offer_type = pick(offer_types)
 	var/atom/movable/AM = offer_type
 
-	var/min_amt = clamp(round(SPECIAL_OFFER_MIN_PRICE / max(1, SStrade.get_new_cost(AM))),1,10)
-	var/max_amt = clamp(round(SPECIAL_OFFER_MAX_PRICE / (max(1, SStrade.get_new_cost(AM)))),11,100)
+	var/min_amt = clamp(round(SPECIAL_OFFER_MIN_PRICE / max(1, SStrade.get_new_cost(AM))),10,20) //Minium of 10 items
+	var/max_amt = clamp(round(SPECIAL_OFFER_MAX_PRICE / (max(1, SStrade.get_new_cost(AM)))),21,100) //Maxium of 100 items
 	var/randompricehike = rand (10, 1000)
-	offer_amount = rand(min_amt, max_amt)
+	//Offer_amout is how many items the offer wants form th colony \
+	meaning that lets say min amt roles 10 and max amout roles 30 it will randomly pick a number form 10 to 30 \
+	Then offier amout devider will use the trade ship's set number, lets say 2 in this case and then round \
+	lets say it picks 13 then devides by 2, then its 6.5 rounding to 7 items wanted.
+	offer_amount = round(rand(min_amt, max_amt) / offer_amout_devider_of_wanted_goods)
+
+	//TODO: add commit here explaining this.
 #define spec_offer_price_custom_mod (isnum(offer_types[offer_type]) ? offer_types[offer_type] : 1)
 	var/min_price = clamp(offer_amount * max(1, SStrade.get_new_cost(AM)) * spec_offer_price_custom_mod + randompricehike, SPECIAL_OFFER_MIN_PRICE, SPECIAL_OFFER_MAX_PRICE)
 	var/max_price = clamp(offer_amount * max(1, SStrade.get_new_cost(AM)) * spec_offer_price_custom_mod + randompricehike, min_price, SPECIAL_OFFER_MAX_PRICE)

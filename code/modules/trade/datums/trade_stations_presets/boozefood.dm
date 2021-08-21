@@ -51,5 +51,5 @@
 
 	offer_types = list(
 		/obj/item/tool/knife,
-		/obj/item/reagent_containers/food/snacks/grown = 4
+		/obj/item/reagent_containers/food/snacks/grown = 10 //10 credits a grown item basicl
 	)

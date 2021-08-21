@@ -1,5 +1,6 @@
 /datum/trade_station/McRonalds
 	name_pool = list("CTS 'Dionis'" = "Corporate Trade Station of food chain 'McRonalds', a subsidiary of Lonestar Shipping Solutions. They're sending a message. \"Hey, dudes, we sell things for theta-7-oil manipulations, fly in and check our wares!\"")
+	offer_amout_devider_of_wanted_goods = 5 //less hard to get most of this
 	assortiment = list(
 		"Burgers" = list(
 			/obj/item/reagent_containers/food/snacks/bigbiteburger = custom_good_name("BigR RBurger"),
@@ -20,8 +21,8 @@
 	)
 	offer_types = list(
 		/obj/item/reagent_containers/food/snacks/meat,
-		/obj/item/reagent_containers/food/snacks/meat/corgi,
-		/mob/living/carbon/superior_animal/roach,
-		/mob/living/carbon/superior_animal/roach/hunter,
-		/mob/living/carbon/superior_animal/roach/roachling
+		/obj/item/reagent_containers/food/snacks/meat/spider,
+		/mob/living/carbon/superior_animal/roach = 2,
+		/mob/living/carbon/superior_animal/roach/hunter = 6,
+		/mob/living/carbon/superior_animal/roach/roachling = 4 //can grow into bigger roaches thus time limits are trash
 	)
