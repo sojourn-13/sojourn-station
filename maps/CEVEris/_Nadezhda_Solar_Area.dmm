@@ -1583,6 +1583,7 @@
 /obj/machinery/recharger,
 /obj/structure/catwalk,
 /obj/item/circuitboard/powermonitor,
+/obj/item/key/cargo_train,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "HX" = (
