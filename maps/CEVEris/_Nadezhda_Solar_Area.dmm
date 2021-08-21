@@ -1771,15 +1771,6 @@
 /obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/mountainsolars)
-"To" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/space,
-/area/nadezhda/outside/mountainsolars)
 "Tq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -11006,7 +10997,7 @@ bG
 bH
 bz
 cV
-To
+bH
 bG
 bG
 bG
