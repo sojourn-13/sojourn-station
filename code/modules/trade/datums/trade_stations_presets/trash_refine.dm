@@ -1,5 +1,6 @@
 /datum/trade_station/lancer
 	name_pool = list("IRS 'Lancer'" = "IRS Trash Railgun 'Lancer'. They're sending a message. \"Hoho, you want some Trash?\"")
+	offer_amout_devider_of_wanted_goods = 6 //less items do to cubes being really hard to stack and rather long to make food items
 	assortiment = list(
 		"Trash" = list(/obj/random/scrap/dense_even = custom_good_amount_range(list(6, 80))),
 		"Scrap Lump" = list(/obj/item/scrap_lump = custom_good_amount_range(list(80, 100))),

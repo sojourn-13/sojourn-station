@@ -1,5 +1,5 @@
 /obj/item/computer_hardware/hard_drive/portable/design
-	name = "blank design disk"
+	name = "design disk"
 	desc = "Data disk used to store autolathe designs."
 	icon_state = "yellow"
 	max_capacity = 1024	// Up to 255 designs, automatically reduced to the nearest power of 2

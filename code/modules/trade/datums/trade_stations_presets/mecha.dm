@@ -1,6 +1,7 @@
 /datum/trade_station/mechas
 	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell exosuits. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
 		\"Hey, dudes, it seems you want some mechas? We currently got a surplus and spare parts.\"")
+	offer_amout_devider_of_wanted_goods = 5 //50% less
 	assortiment = list(
 		"Exosuits" = list(
 			/obj/mecha/working/ripley/firefighter,
