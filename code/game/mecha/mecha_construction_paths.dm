@@ -4,8 +4,8 @@
 
 /datum/construction/mecha/custom_action(step, atom/used_atom, mob/user)
 	user.visible_message(
-		"[user] has connected [used_atom] to [holder].", //What onlookers see
-		"You connect [used_atom] to [holder]" //What we see in are own chat
+		"[user] connects the [used_atom] to the [holder].", //What onlookers see
+		"You connect the [used_atom] to the [holder]" //What we see in are own chat
 	)
 	holder.add_overlay(used_atom.icon_state+"+o") //Magic letter o in sprites to make them all different. Used for icons.
 	qdel(used_atom) //We ALWAYS delete the mech lim/part used. No way to get this back.
