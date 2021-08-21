@@ -188,7 +188,7 @@
 	set name = "Expand"
 
 	expand(pick(non_blob_neighbors))
-/*
+*/
 
 /obj/effect/blob/proc/regen()
 	if (!(QDELETED(core)))
