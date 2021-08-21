@@ -237,3 +237,60 @@
 		STAT_MEC = 10,
 		STAT_COG = 10
 	)
+
+// FBP's lack a base racial bonus, what you see here is all they get.
+/datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_generic
+	name = "Generic Chassis"
+	desc = "The form of a Full Body Prosthetic is one in which a formerly organic person has suffered terminal extensive damage to the point the body could not be saved. Though under rare circumstances \
+	a synthetic may choose this chassis type, more often than not FBP's are survivors of conflicts, accidents, or terminal diseases. The transition from an organic body to a mechanical one is often \
+	jarring to the average person, as formerly 'slow' processes are now greatly enhanced, allowing for an FBP to function better than they once did. This particular chassis type is built for general \
+	purpose and often considered generic. It does equally well in all areas, making it suited for a variety of tasks."
+
+	restricted_to_species = list(FORM_FBP)
+
+	stat_modifiers = list(
+		STAT_ROB = 15,
+		STAT_TGH = 15,
+		STAT_VIG = 15,
+		STAT_BIO = 15,
+		STAT_MEC = 15,
+		STAT_COG = 15
+	)
+
+/datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_fighter
+	name = "Veteran Chassis"
+	desc = "The form of a Full Body Prosthetic is one in which a formerly organic person has suffered terminal extensive damage to the point the body could not be saved. Though under rare circumstances \
+	a synthetic may choose this chassis type, more often than not FBP's are survivors of conflicts, accidents, or terminal diseases. The transition from an organic body to a mechanical one is often \
+	jarring to the average person, as formerly 'slow' processes are now greatly enhanced, allowing for an FBP to function better than they once did. This particular chassis type is built for those \
+	who lost their bodies from conflict, be it serving as a soldier, mercenary, void wolf, or something else. Veteran models have redundant combat systems, enhancing the strength, durability, and \
+	aim of FBP's who did not let death stop them from duty."
+
+	restricted_to_species = list(FORM_FBP)
+
+	stat_modifiers = list(
+		STAT_ROB = 25, // No inbuilt weapons.
+		STAT_TGH = 25,
+		STAT_VIG = 25,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_scholar
+	name = "Scholar Chassis"
+	desc = "The form of a Full Body Prosthetic is one in which a formerly organic person has suffered terminal extensive damage to the point the body could not be saved. Though under rare circumstances \
+	a synthetic may choose this chassis type, more often than not FBP's are survivors of conflicts, accidents, or terminal diseases. The transition from an organic body to a mechanical one is often \
+	jarring to the average person, as formerly 'slow' processes are now greatly enhanced, allowing for an FBP to function better than they once did. This particular chassis type is built for scholars \
+	as it contains internal data banks and cerebral enhancers to allow for additional information storage capable of being filtered to the owner on a subconscious level. FBP's with these chassis types \
+	tend to be on the wealthy side, as cognitive enhancers do not come cheap, but you get what you pay for and it shows in performance."
+
+	restricted_to_species = list(FORM_FBP)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 25,
+		STAT_MEC = 25,
+		STAT_COG = 35 // Good on paper, but since you cannot be a psion, at best it helps with hacking and disarming landmines.
+	)

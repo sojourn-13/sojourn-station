@@ -533,6 +533,8 @@ BLIND     // can't see anything
 		siemens_coefficient = 0 // DAMN BOI
 		qdel(I)
 
+	if(istype(I, /obj/item/tool/knife/psionic_blade))
+		return ..()
 	if(!knifes)
 		knifes = list(
 			/obj/item/tool/knife,

@@ -307,7 +307,7 @@
 /datum/organ_description/leg/right/nashef_synthetic
 	default_type = /obj/item/organ/external/robotic/nashef
 
-/*
+
 //FBP
 /datum/organ_description/chest/full_body_prosthetic
 	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
@@ -330,4 +330,3 @@
 
 /datum/organ_description/leg/right/full_body_prosthetic
 	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
-*/
