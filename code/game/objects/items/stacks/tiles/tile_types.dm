@@ -53,25 +53,25 @@
 	name = "ashen wood floor tile"
 	singular_name = "ashen wood floor tile"
 	desc = "An easy to fit wooden floor tile."
-	icon_state = "ashtile_wood"
+	icon_state = "tile_ashwood"
 
 /obj/item/stack/tile/wood/ashen/red
 	name = "red ashen wood floor tile"
 	singular_name = "red ashen wood floor tile"
 	desc = "An easy to fit wooden floor tile."
-	icon_state = "ashtile_wood"
+	icon_state = "tile_ashwood"
 
 /obj/item/stack/tile/wood/ashen/dull
 	name = "dull ashen wood floor tile"
 	singular_name = "dull ashen wood floor tile"
 	desc = "An easy to fit wooden floor tile."
-	icon_state = "ashtile_wood"
+	icon_state = "tile_oldwood"
 
 /obj/item/stack/tile/wood/old
 	name = "old wood floor tile"
 	singular_name = "old wood floor tile"
 	desc = "An easy to fit wooden floor tile. Mind the splinters."
-	icon_state = "oldtile_wood"
+	icon_state = "tile_oldwood"
 
 /obj/item/stack/tile/wood/old/veridical
 	name = "old veridical wood floor tile"
@@ -500,15 +500,19 @@
 /obj/item/stack/tile/derelict/white_red_edges
 	name = "greyson positronic floor tile"
 	singular_name = "greyson positronic floor tile"
+	icon_state = "tile_derelict1"
 
 /obj/item/stack/tile/derelict/white_small_edges
 	name = "greyson positronic floor tile"
 	singular_name = "greyson positronic floor tile"
+	icon_state = "tile_derelict2"
 
 /obj/item/stack/tile/derelict/red_white_edges
 	name = "greyson positronic floor tile"
 	singular_name = "greyson positronic floor tile"
+	icon_state = "tile_derelict3"
 
 /obj/item/stack/tile/derelict/white_big_edges
 	name = "greyson positronic floor tile"
 	singular_name = "greyson positronic floor tile"
+	icon_state = "tile_derelict4"
