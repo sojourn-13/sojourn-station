@@ -1296,11 +1296,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"gS" = (
-/obj/structure/catwalk,
-/obj/item/caution,
-/turf/space,
-/area/nadezhda/outside/mountainsolars)
 "is" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/rock,
@@ -1419,10 +1414,6 @@
 	},
 /obj/vehicle/train/cargo/trolley,
 /turf/simulated/floor/plating,
-/area/nadezhda/outside/mountainsolars)
-"pn" = (
-/obj/structure/catwalk,
-/turf/space,
 /area/nadezhda/outside/mountainsolars)
 "pp" = (
 /obj/structure/railing{
@@ -9410,8 +9401,8 @@ ac
 ac
 ac
 dM
-pn
-pn
+bw
+bw
 dM
 dM
 dM
@@ -9512,8 +9503,8 @@ al
 al
 dM
 dM
-pn
-pn
+bw
+bw
 dM
 dM
 dM
@@ -9614,8 +9605,8 @@ al
 al
 dM
 dM
-pn
-gS
+bw
+em
 dM
 dM
 dM
@@ -9716,7 +9707,7 @@ al
 dM
 dM
 dM
-pn
+bw
 CE
 KB
 iZ
@@ -10431,7 +10422,7 @@ iZ
 DZ
 RP
 CE
-pn
+bw
 nz
 cy
 al
@@ -10533,7 +10524,7 @@ iZ
 QH
 RP
 CE
-pn
+bw
 nz
 al
 al
@@ -10634,8 +10625,8 @@ iZ
 iZ
 wK
 RP
-gS
-pn
+em
+bw
 nz
 al
 al
@@ -10736,8 +10727,8 @@ iZ
 iZ
 al
 cp
-pn
-pn
+bw
+bw
 nz
 al
 al
@@ -10838,8 +10829,8 @@ iZ
 iZ
 iJ
 al
-pn
-pn
+bw
+bw
 al
 al
 aU
