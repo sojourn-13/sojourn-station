@@ -6,6 +6,8 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	icon_state = "door_closed"
 	power_channel = STATIC_ENVIRON
 
+	maxhealth = 400 //Makes it so you need to really shoot open a door
+
 	explosion_resistance = 10
 
 	var/aiControlDisabled = 0
