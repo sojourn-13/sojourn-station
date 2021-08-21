@@ -182,13 +182,13 @@
 			return PROCESS_KILL
 
 		set_expand_time()
-
+/*
 /obj/effect/blob/verb/expandverb()
 	set src in view()
 	set name = "Expand"
 
 	expand(pick(non_blob_neighbors))
-
+/*
 
 /obj/effect/blob/proc/regen()
 	if (!(QDELETED(core)))
