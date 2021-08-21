@@ -148,10 +148,11 @@
 	var/min_amt = clamp(round(SPECIAL_OFFER_MIN_PRICE / max(1, SStrade.get_new_cost(AM))),10,20) //Minium of 10 items
 	var/max_amt = clamp(round(SPECIAL_OFFER_MAX_PRICE / (max(1, SStrade.get_new_cost(AM)))),21,100) //Maxium of 100 items
 	var/randompricehike = rand (10, 1000)
-	//Offer_amout is how many items the offer wants form th colony \
+	/*Offer_amout is how many items the offer wants form th colony \
 	meaning that lets say min amt roles 10 and max amout roles 30 it will randomly pick a number form 10 to 30 \
 	Then offier amout devider will use the trade ship's set number, lets say 2 in this case and then round \
 	lets say it picks 13 then devides by 2, then its 6.5 rounding to 7 items wanted.
+	*/
 	offer_amount = round(rand(min_amt, max_amt) / offer_amout_devider_of_wanted_goods)
 
 	//TODO: add commit here explaining this.
