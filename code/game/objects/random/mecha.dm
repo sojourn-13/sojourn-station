@@ -8,12 +8,12 @@
 		/obj/mecha/working/hoverpod/shuttlepod = 6,
 		/obj/mecha/working/ripley = 5,
 		/obj/mecha/working/ripley/firefighter = 6,
-		/obj/mecha/working/ripley/deathripley = 0.5,//has a dangerous melee weapon
+		/obj/mecha/working/ripley/deathripley = 2,//well armored
 		/obj/mecha/working/ripley/mining = 4,
 		/obj/mecha/medical/odysseus = 6,
 		/obj/mecha/medical/odysseus/loaded = 5,
-		/obj/mecha/combat/durand = 1,//comes unarmed
-		/obj/mecha/combat/gygax = 1.5,//comes unarmed
+		/obj/mecha/combat/durand = 1.5,//comes unarmed
+		/obj/mecha/combat/gygax = 1,//comes unarmed
 		/obj/mecha/combat/dreadnought = 0.1,
 		/obj/mecha/combat/phazon = 0.1)
 
@@ -24,8 +24,6 @@
 	name = "low chance random mecha"
 	icon_state = "machine-red-low"
 	spawn_nothing_percentage = 90
-
-
 
 /obj/random/mecha/damaged
 	name = "random damaged mecha"
