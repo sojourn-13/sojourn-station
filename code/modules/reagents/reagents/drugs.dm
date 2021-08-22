@@ -127,7 +127,7 @@
 	var/mob/living/carbon/human/H = M
 	var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(BP_PSION)
 	var/effective_dose = dose
-	if(effective_dose < 5 && H.random_organ_by_process(BP_PSION))
+	if(effective_dose >= 5 && H.random_organ_by_process(BP_PSION)) //We require 5 or more
 		if(C.psi_points >= C.max_psi_points)
 			return
 		C.psi_points += 1
