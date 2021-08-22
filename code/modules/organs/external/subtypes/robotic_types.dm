@@ -12,6 +12,12 @@
 	model = "hesphaistos"
 	price_tag = 200
 
+/obj/item/organ/external/robotic/hesphaistos/athena
+	name = "Hesphaistos Athena"
+	desc = "Prosthesis with a militaristic black and green casing"
+	force_icon = 'icons/mob/human_races/cyberlimbs/hesphaistos_alt.dmi'
+	model = "hesphaistos_alt"
+
 /obj/item/organ/external/robotic/zenghu
 	name = "Zeng-Hu"
 	desc = "Prosthesis with rubbery fleshtone covering with visible seams."
@@ -24,6 +30,13 @@
 	desc = "Prosthesis with minimalist black and red casing."
 	force_icon = 'icons/mob/human_races/cyberlimbs/xion.dmi'
 	model = "xion"
+	price_tag = 200
+
+/obj/item/organ/external/robotic/ward
+	name = "Ward Takehashi"
+	desc = "Sleek prosthesis with white casing."
+	force_icon = 'icons/mob/human_races/cyberlimbs/ward.dmi'
+	model = "ward"
 	price_tag = 200
 
 //Character setup prostheses
@@ -103,26 +116,51 @@
 /obj/item/organ/external/robotic/technomancer/head
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
-
+<<<<<<< Updated upstream
+/*
 // Synth-Skin
 /obj/item/organ/external/robotic/full_body_prosthetic
+=======
+
+// synthskin
+/obj/item/organ/external/robotic/synthskin
+>>>>>>> Stashed changes
 	name = "Full Body Prosthetic \"Synth-Skin\""
 	desc = "A full body prosthetic with \"realistic\" synth skin."
 	force_icon = 'icons/mob/human_races/cyberlimbs/fbp.dmi'
 	model = "fbp"
 
-obj/item/organ/external/robotic/full_body_prosthetic/groin
+obj/item/organ/external/robotic/synthskin/groin
 	name = "Full Body Prosthetic \"Synth-Skin\" Groin"
 	default_description = /datum/organ_description/groin
 
-/obj/item/organ/external/robotic/full_body_prosthetic/torso
+/obj/item/organ/external/robotic/synthskin/torso
 	name = "Full Body Prosthetic \"Synth-Skin\" Torso"
+	default_description = /datum/organ_description/chest
+
+/obj/item/organ/external/robotic/synthskin/head
+	name = "Full Body Prosthetic \"Synth-Skin\" Head"
+	default_description = /datum/organ_description/head
+
+// FBPs
+/obj/item/organ/external/robotic/full_body_prosthetic
+	name = "Full Body Prosthetic \"Skeleton\""
+	desc = "A full body prosthetic skeleton frame."
+	force_icon = 'icons/mob/human_races/cyberlimbs/unmarked_1.dmi'
+	model = "fbp"
+
+obj/item/organ/external/robotic/full_body_prosthetic/groin
+	name = "Full Body Prosthetic \"Skeleton\" Groin"
+	default_description = /datum/organ_description/groin
+
+/obj/item/organ/external/robotic/full_body_prosthetic/torso
+	name = "Full Body Prosthetic \"Skeleton\" Torso"
 	default_description = /datum/organ_description/chest
 
 /obj/item/organ/external/robotic/full_body_prosthetic/head
 	name = "Full Body Prosthetic \"Synth-Skin\" Head"
 	default_description = /datum/organ_description/head
-
+*/
 // Junktech
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""
