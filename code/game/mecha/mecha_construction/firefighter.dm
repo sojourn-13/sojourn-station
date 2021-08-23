@@ -59,7 +59,7 @@
 		//8
 		list("key"=/obj/item/stack/material/plastic,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="The The internal armor is finished, but needs 5 plastic sheets for insulation."),
+			"desc"="The internal armor is finished, but needs 5 plastic sheets for insulation."),
 		//9
 		list("key"=/obj/item/stack/material/silver,
 			//"backkey"=QUALITY_PRYING,
@@ -122,7 +122,7 @@
 			"desc"="The basic chassis is assembled. A heavy cell mount is needed to power it."),
 		//24
 		list("key"=QUALITY_SCREW_DRIVING,
-			"desc"="The case of the chassis screwed shut. It must be unscrewed to continue.") //So we can successfully keyback to this for getting back tool mods
+			"desc"="The case of the chassis is screwed shut. It must be unscrewed to continue.") //So we can successfully keyback to this for getting back tool mods
 	)
 
 

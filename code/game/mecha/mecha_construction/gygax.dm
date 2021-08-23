@@ -150,7 +150,7 @@
 			"desc"="The basic chassis is assembled. A heavy cell mount is needed to power it."),
 		//30
 		list("key"=QUALITY_SCREW_DRIVING,
-			"desc"="Mech case cover is screwed shut. It must be unscrewed to continue.") //So we can successfully keyback to this for getting back tool mods
+			"desc"="The case of the chassis is screwed shut. It must be unscrewed to continue.") //So we can successfully keyback to this for getting back tool mods
 	)
 
 	custom_action(index, diff, atom/used_atom, mob/user)
