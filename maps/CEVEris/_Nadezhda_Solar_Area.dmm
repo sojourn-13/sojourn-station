@@ -225,6 +225,9 @@
 	dir = 4;
 	pixel_x = 0
 	},
+/obj/item/stack/cable_coil,
+/obj/item/stack/cable_coil,
+/obj/random/toolbox,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/outside/mountainsolars)
 "aQ" = (
@@ -331,18 +334,6 @@
 /obj/structure/flora/tree/jungle_small/variant2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"bg" = (
-/obj/structure/table/rack/shelf,
-/obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/nadezhda/engineering/dorm/one)
 "bh" = (
 /obj/machinery/camera/network/engineering{
 	dir = 1
@@ -419,14 +410,7 @@
 "bv" = (
 /obj/structure/table/rack/shelf,
 /obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/obj/random/material_resources/low_chance,
-/obj/random/material_resources/low_chance,
 /obj/random/tool/low_chance,
-/obj/random/tool/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/engineering/dorm/one)
 "bw" = (
@@ -661,9 +645,6 @@
 /area/nadezhda/outside/mountainsolars)
 "cd" = (
 /obj/structure/table/standard,
-/obj/random/toolbox,
-/obj/item/stack/cable_coil,
-/obj/item/stack/cable_coil,
 /obj/structure/window/reinforced{
 	dir = 1;
 	pixel_y = 0
@@ -796,29 +777,10 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"cu" = (
-/obj/structure/table/rack/shelf,
-/obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/nadezhda/engineering/dorm/two)
 "cv" = (
 /obj/structure/table/rack/shelf,
 /obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/obj/random/material_resources/low_chance,
-/obj/random/material_resources/low_chance,
 /obj/random/tool/low_chance,
-/obj/random/tool/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/engineering/dorm/two)
 "cw" = (
@@ -1348,18 +1310,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"gx" = (
-/obj/structure/table/rack/shelf,
-/obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/nadezhda/engineering/dorm/three)
 "gD" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2309,11 +2259,6 @@
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/outside/mountainsolars)
-"AJ" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/nadezhda/outside/mountainsolars)
 "AQ" = (
 /obj/machinery/button/remote/airlock{
 	id = "engdorm2";
@@ -2383,18 +2328,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/engineering/dorm/four)
-"Cf" = (
-/obj/structure/table/rack/shelf,
-/obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/nadezhda/engineering/dorm/four)
 "Ch" = (
 /obj/structure/curtain/open,
 /obj/machinery/shower{
@@ -2444,14 +2377,7 @@
 "CB" = (
 /obj/structure/table/rack/shelf,
 /obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/obj/random/material_resources/low_chance,
-/obj/random/material_resources/low_chance,
 /obj/random/tool/low_chance,
-/obj/random/tool/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/engineering/dorm/three)
 "CE" = (
@@ -2682,14 +2608,7 @@
 "Hl" = (
 /obj/structure/table/rack/shelf,
 /obj/random/junk/low_chance,
-/obj/random/junk/low_chance,
-/obj/random/material_resources/low_chance,
-/obj/random/material_resources/low_chance,
 /obj/random/tool/low_chance,
-/obj/random/tool/low_chance,
-/obj/random/tool_upgrade/low_chance,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/engineering/dorm/four)
 "Ho" = (
@@ -9028,7 +8947,7 @@ aj
 OM
 Ot
 Ot
-AJ
+ak
 aj
 aR
 aj
@@ -9221,7 +9140,7 @@ al
 aS
 al
 aj
-bg
+bv
 Ye
 Tf
 Ye
@@ -10241,7 +10160,7 @@ ab
 ab
 ab
 aj
-cu
+cv
 fs
 lU
 fs
@@ -11669,7 +11588,7 @@ ab
 ab
 ab
 aj
-gx
+CB
 rE
 Fe
 rE
@@ -12689,7 +12608,7 @@ aa
 aa
 aa
 aj
-Cf
+Hl
 KT
 Oa
 KT
