@@ -308,7 +308,7 @@
 	default_type = /obj/item/organ/external/robotic/nashef
 
 
-//FBP
+// FBP
 /datum/organ_description/chest/full_body_prosthetic
 	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
 
@@ -330,3 +330,27 @@
 
 /datum/organ_description/leg/right/full_body_prosthetic
 	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+// Unbranded
+/datum/organ_description/chest/unbranded
+	default_type = /obj/item/organ/external/robotic
+
+/datum/organ_description/groin/unbranded
+	default_type = /obj/item/organ/external/robotic
+
+/datum/organ_description/head/unbranded
+	default_type = /obj/item/organ/external/robotic
+	functions = null
+
+/datum/organ_description/arm/left/unbranded
+	default_type = /obj/item/organ/external/robotic
+
+/datum/organ_description/arm/right/unbranded
+	default_type = /obj/item/organ/external/robotic
+
+/datum/organ_description/leg/left/unbranded
+	default_type = /obj/item/organ/external/robotic
+
+/datum/organ_description/leg/right/unbranded
+	default_type = /obj/item/organ/external/robotic
+
