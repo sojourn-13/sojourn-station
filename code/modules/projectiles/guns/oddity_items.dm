@@ -86,7 +86,7 @@
 	one_hand_penalty = 6
 	penetration_multiplier = 1.1
 
-/obj/item/gun/projectile/boltgun/bluecross //Pending balance changes with
+/obj/item/gun/projectile/boltgun/bluecross
 	name = "\"Krag Jørgensen\" boltgun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			A single shot rifle; perfect for big game hunters! \
@@ -100,10 +100,9 @@
 	damage_multiplier = 2.5 //basic shot will 67.6~ damage
 	penetration_multiplier  = 2
 	max_shells = 1
-	price_tag = 2750 //halfed on export as of coding
+	price_tag = 2750
 	sharp = FALSE
 	saw_off = FALSE
-	eject_animatio = FALSE //We do not have a eject animation.
 
 /obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"

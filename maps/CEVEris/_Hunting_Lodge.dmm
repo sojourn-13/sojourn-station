@@ -1741,8 +1741,6 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fm" = (
 /obj/structure/table/woodentable,
-/obj/item/ammo_casing/shotgun/pellet/prespawned,
-/obj/item/gun/projectile/shotgun/pump/gladstone/queen,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fn" = (
@@ -3685,6 +3683,10 @@
 "ll" = (
 /obj/machinery/light/floor,
 /turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"oA" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "xv" = (
 /obj/structure/table/reinforced,
@@ -10229,7 +10231,7 @@ bP
 dd
 dG
 dg
-dg
+oA
 aP
 aD
 aD

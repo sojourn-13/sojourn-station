@@ -2,6 +2,7 @@
 	name_pool = list("Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself on our stock.\"")
 	start_discovered = TRUE //WE KNOW WERE ARE OVERHOUNDS ARE
 	spawn_always = TRUE //Were right next door
+	offer_amout_devider_of_wanted_goods = 10 //less do to needing hunters
 	assortiment = list(
 		"Hunting Gear" = list(
 			/obj/item/gun/projectile/boltgun/light,

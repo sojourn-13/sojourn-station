@@ -179,7 +179,7 @@
 	if (.)
 		// It's silly to have old self-charging cells spawn partially discharged
 		if(!autorecharging)
-			charge = min(charge, RAND_DECIMAL(0, maxcharge))
+			charge = min(charge, RAND_DECIMAL(50, maxcharge))
 
 		if(prob(20))
 			rigged = TRUE

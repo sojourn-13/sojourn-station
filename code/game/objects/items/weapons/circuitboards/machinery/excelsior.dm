@@ -84,6 +84,19 @@
 		/obj/item/cell/medium = 1
 	)
 
+/obj/item/circuitboard/excelsior_autodoc
+	name = "excelsior autodoc"
+	build_name = ""
+	build_path = /obj/machinery/excelsior_autodoc
+	board_type = "machine"
+	origin_tech = list(TECH_BIO = 5, TECH_ILLEGAL = 2)
+	req_components = list(
+		/obj/item/stock_parts/manipulator/excelsior = 1,
+		/obj/item/stock_parts/micro_laser/excelsior = 1,
+		/obj/item/stock_parts/scanning_module/excelsior = 1,
+		/obj/item/stock_parts/console_screen = 1
+	)
+
 //Putting these here since its an antag type item and making a full .dm for 9 lines of code is.. dumb. -Kaz, Trilby
 
 /obj/item/circuitboard/jukebox

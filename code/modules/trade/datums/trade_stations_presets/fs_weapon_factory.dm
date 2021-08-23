@@ -1,6 +1,7 @@
 /datum/trade_station/fs_factory
 	name_pool = list("XSMS 'Kaida'" = "Xanaroth Syndicate Manufacturing Station 'Kaida'. \"Well if it isn't our favorite trade partner, we got some side deals just for you!\"")
 	markup = 0.2
+	offer_amout_devider_of_wanted_goods = 3 //less, hard to get items
 	assortiment = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/mac,

@@ -84,6 +84,7 @@
 	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int)
 
 	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
+	var/fire_animatio = FALSE //Only used in revolvers atm, animation for each shot being fired
 
 	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
 
@@ -328,12 +329,20 @@
 			handle_post_fire(user, target, pointblank, reflex)
 			update_icon()
 
+		if(fire_animatio) //Are bullet amination check
+			if(silenced)
+				flick("fire_s", src)
+			else
+				flick("fire", src)
+
 		if(i < burst)
 			sleep(burst_delay)
 
 		if(!(target && target.loc))
 			target = targloc
 			pointblank = 0
+
+
 
 	//update timing
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)

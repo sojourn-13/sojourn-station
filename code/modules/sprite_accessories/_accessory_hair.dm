@@ -18,7 +18,8 @@
 		FORM_CINDAR,
 		FORM_NARAMAD,
 		FORM_OPIFEX,
-		FORM_FOLKEN
+		FORM_FOLKEN,
+		FORM_FBP
 		)
 
 /datum/sprite_accessory/hair/bald
