@@ -2111,7 +2111,7 @@
 	pixel_x = 0
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/device/radio/intercom/broadcasting{
+/obj/item/device/radio/intercom{
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
@@ -2693,7 +2693,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/device/radio/intercom/broadcasting{
+/obj/item/device/radio/intercom{
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
