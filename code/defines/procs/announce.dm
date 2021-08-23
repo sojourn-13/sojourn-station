@@ -116,13 +116,13 @@ datum/announcement/proc/Log(message as text, message_title as text)
 	command_announcement.Announce("It has come to our attention that an ion storm has formed.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert", new_sound = 'sound/AI/ionstorm.ogg')
 
 /proc/AnnounceArrival(var/mob/living/character, var/rank, var/join_message)
-    if (join_message && SSticker.current_state == GAME_STATE_PLAYING && SSjob.ShouldCreateRecords(rank))
-        if(issilicon(character))
-            global_announcer.autosay("A new [rank] [join_message].", ANNOUNSER_NAME)
-        else
+	if (join_message && SSticker.current_state == GAME_STATE_PLAYING && SSjob.ShouldCreateRecords(rank))
+		if(issilicon(character))
+			global_announcer.autosay("A new [rank] [join_message].", ANNOUNSER_NAME)
+		else
 
-    if (character.mind)
-        if (character.mind.role_alt_title)
-            rank = character.mind.role_alt_title
+	if (character.mind)
+		if (character.mind.role_alt_title)
+			rank = character.mind.role_alt_title
 
-    global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)
+	global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)
