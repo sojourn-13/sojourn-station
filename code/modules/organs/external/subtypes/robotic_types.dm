@@ -116,15 +116,9 @@
 /obj/item/organ/external/robotic/technomancer/head
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
-<<<<<<< Updated upstream
-/*
-// Synth-Skin
-/obj/item/organ/external/robotic/full_body_prosthetic
-=======
 
 // synthskin
 /obj/item/organ/external/robotic/synthskin
->>>>>>> Stashed changes
 	name = "Full Body Prosthetic \"Synth-Skin\""
 	desc = "A full body prosthetic with \"realistic\" synth skin."
 	force_icon = 'icons/mob/human_races/cyberlimbs/fbp.dmi'
@@ -144,23 +138,23 @@ obj/item/organ/external/robotic/synthskin/groin
 
 // FBPs
 /obj/item/organ/external/robotic/full_body_prosthetic
-	name = "Full Body Prosthetic \"Skeleton\""
+	name = "Prosthetic "
 	desc = "A full body prosthetic skeleton frame."
 	force_icon = 'icons/mob/human_races/cyberlimbs/unmarked_1.dmi'
 	model = "fbp"
 
 obj/item/organ/external/robotic/full_body_prosthetic/groin
-	name = "Full Body Prosthetic \"Skeleton\" Groin"
+	name = "Prosthetic Groin"
 	default_description = /datum/organ_description/groin
 
 /obj/item/organ/external/robotic/full_body_prosthetic/torso
-	name = "Full Body Prosthetic \"Skeleton\" Torso"
+	name = "Prosthetic Torso"
 	default_description = /datum/organ_description/chest
 
 /obj/item/organ/external/robotic/full_body_prosthetic/head
-	name = "Full Body Prosthetic \"Synth-Skin\" Head"
+	name = "Prosthetic Head"
 	default_description = /datum/organ_description/head
-*/
+	
 // Junktech
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""
