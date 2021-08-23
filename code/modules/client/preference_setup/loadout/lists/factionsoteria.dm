@@ -75,6 +75,13 @@
 	slot = slot_glasses
 	sort_category = "Faction: Soteria"
 
+/datum/gear/factionsoteria/medicalscouter
+	display_name = "medical HUD, scouter"
+	path = /obj/item/clothing/glasses/hud/health/scouter
+	allowed_roles = list(JOBS_MEDICAL)
+	slot = slot_glasses
+	sort_category = "Faction: Soteria"
+
 /datum/gear/factionsoteria/sciencegoggles
 	display_name = "science goggles"
 	path = /obj/item/clothing/glasses/powered/science
