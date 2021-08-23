@@ -1406,8 +1406,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/circuitlab)
@@ -2490,12 +2490,12 @@
 /obj/machinery/space_heater,
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
@@ -3537,12 +3537,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -4692,8 +4692,8 @@
 /obj/structure/railing/grey,
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
@@ -4972,12 +4972,12 @@
 /obj/structure/reagent_dispensers/premiumwhiskey,
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
@@ -5796,12 +5796,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -5920,12 +5920,12 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/wood,
@@ -5951,12 +5951,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -6522,12 +6522,12 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -6621,12 +6621,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
@@ -7237,8 +7237,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
@@ -8174,12 +8174,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
@@ -9899,12 +9899,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
@@ -10020,12 +10020,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
@@ -11040,12 +11040,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -11283,8 +11283,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -11966,12 +11966,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
@@ -15487,12 +15487,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -24066,12 +24066,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
@@ -24511,12 +24511,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/armoryshop)
@@ -25890,12 +25890,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/command/swo/quarters)
@@ -25995,8 +25995,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/clownoffice)
@@ -26713,8 +26713,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1south)
@@ -27576,8 +27576,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/steel,
@@ -28820,12 +28820,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/security/prisoncells)
@@ -29016,8 +29016,8 @@
 	pixel_x = -32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/warningred{
@@ -29040,12 +29040,12 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -29163,12 +29163,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
@@ -29674,12 +29674,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -29747,8 +29747,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -32429,8 +32429,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -32980,7 +32980,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/engineering/foyer)
 "eyt" = (
 /obj/structure/cable/green{
@@ -34301,12 +34301,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -34474,12 +34474,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
@@ -34607,8 +34607,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/engineering/foyer)
@@ -35338,8 +35338,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/steel/bar_dance,
@@ -35355,12 +35355,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
@@ -35412,7 +35412,7 @@
 /obj/machinery/newscaster{
 	pixel_x = 32
 	},
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "fXQ" = (
 /obj/structure/bed/chair/comfy/blue{
@@ -37187,8 +37187,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -37947,12 +37947,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white,
@@ -39337,12 +39337,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
@@ -39609,8 +39609,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/white/corners,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
@@ -39847,12 +39847,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -41463,12 +41463,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/pool)
@@ -41800,8 +41800,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/detectives_office)
@@ -41815,12 +41815,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -42629,12 +42629,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/section5)
@@ -42880,12 +42880,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
@@ -42936,8 +42936,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -43815,12 +43815,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -46723,12 +46723,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/command/tcommsat/computer)
@@ -47264,8 +47264,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/white/corners,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -47482,12 +47482,12 @@
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
@@ -47640,12 +47640,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/engineering/workshop)
@@ -48094,8 +48094,8 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ovm" = (
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners,
 /obj/effect/floor_decal/industrial/warningwhite{
@@ -48552,7 +48552,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "oKa" = (
 /obj/effect/decal/cleanable/dirt,
@@ -48604,12 +48604,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/disposaldrop)
@@ -49472,12 +49472,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -50515,12 +50515,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/podrooms)
@@ -50687,8 +50687,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/captain/quarters)
@@ -51086,12 +51086,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
@@ -51509,8 +51509,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -53482,8 +53482,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -53942,8 +53942,8 @@
 	pixel_x = -32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/warningred{
@@ -54383,12 +54383,12 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/wood,
@@ -54661,7 +54661,7 @@
 "sLs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/engineering/foyer)
 "sLE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -54672,12 +54672,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
@@ -55209,12 +55209,12 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -55394,12 +55394,12 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -56272,12 +56272,12 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -57652,12 +57652,12 @@
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
@@ -59304,12 +59304,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
@@ -60643,12 +60643,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/command/gmaster)
@@ -61298,8 +61298,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
@@ -62629,8 +62629,8 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
@@ -62651,12 +62651,12 @@
 	},
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_white"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
