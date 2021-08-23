@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/capgun
+/obj/item/gun/projectile/revolver/capgun
 	name = "HS REV .357 \"Miller\"" //for that epic clown robbery meme
 	desc = "Looks almost like the real thing! Ages 8 and up."
 	icon_state = "revolver"
@@ -10,3 +10,4 @@
 	max_shells = 7
 	ammo_type = /obj/item/ammo_casing/cap
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	fire_animatio = FALSE

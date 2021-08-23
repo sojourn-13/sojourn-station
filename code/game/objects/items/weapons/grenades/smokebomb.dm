@@ -1,20 +1,20 @@
-/obj/item/weapon/grenade/smokebomb
-	name = "HS SG \"Reynolds\""
+/obj/item/grenade/smokebomb
+	name = "HS smoke grenade \"Reynolds\""
 	desc = "Smoke grenade, used to create a cloud of smoke providing cover and hiding movement."
 	det_time = 20
 	var/datum/effect/effect/system/smoke_spread/bad/smoke
 
-/obj/item/weapon/grenade/smokebomb/New()
+/obj/item/grenade/smokebomb/New()
 	..()
 	src.smoke = new
 	src.smoke.attach(src)
 
-/obj/item/weapon/grenade/smokebomb/Destroy()
+/obj/item/grenade/smokebomb/Destroy()
 	qdel(smoke)
 	smoke = null
 	return ..()
 
-/obj/item/weapon/grenade/smokebomb/prime()
+/obj/item/grenade/smokebomb/prime()
 	playsound(src.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
 	src.smoke.set_up(10, 0, usr.loc)
 	spawn(0)
@@ -35,9 +35,9 @@
 	desc = "[initial(desc)] It has already been used."
 	return
 
-/obj/item/weapon/grenade/smokebomb/nt
-	name = "NT SG \"Holy Fog\""
+/obj/item/grenade/smokebomb/nt
+	name = "NT smoke grenade \"Holy Fog\""
 	desc = "Smoke grenade, used to create a cloud of smoke providing cover and hiding movement."
 	icon_state = "smokegrenade_nt"
 	item_state = "smokegrenade_nt"
-	matter = list(MATERIAL_BIOMATTER = 75)
+	matter = list(MATERIAL_BIOMATTER = 10)

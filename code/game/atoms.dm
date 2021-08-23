@@ -337,6 +337,12 @@ its easier to just keep the beam vertical.
 				to_chat(user, "<span class='notice'>It has [reagents.total_volume] unit\s left.</span>")
 			else
 				to_chat(user, "<span class='danger'>It's empty.</span>")
+
+	if(ishuman(user) && user.stats && user.stats.getPerk(/datum/perk/greenthumb))
+		var/datum/perk/greenthumb/P = user.stats.getPerk(/datum/perk/greenthumb)
+		var/obj/item/I = P.virtual_scanner
+		I.afterattack(src, user, get_dist(src, user) <= 1)
+
 	SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 
 	return distance == -1 || (get_dist(src, user) <= distance) || isobserver(user)
@@ -750,11 +756,12 @@ its easier to just keep the beam vertical.
 /atom/proc/get_sex()
 	return gender
 
+//RETURNS A DATUM
 /atom/proc/get_gender()
 	return GLOB.gender_datums[gender]
 
 /atom/proc/gender_word(var/position, var/gen = null) //So you can suggest an alternative gender if needed.
-	var/datum/gender/G = GLOB.gender_datums["neuter"]
+	var/datum/gender/G = get_gender()
 	if(istype(gen, /datum/gender))
 		//Use as given.
 		G = gen
@@ -762,7 +769,8 @@ its easier to just keep the beam vertical.
 	else if(istext(gen))
 		G = GLOB.gender_datums[gen] //Convert to the gender using the name given.
 		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite list extraction") //TODO: REMOVE THIS ONCE FIXED
-	else
-		G = get_gender() //Otherwise, default to this thing's gender.
-		if(istext(G)) CRASH("gender_word has somehow resulted in a text gender despite get_gender result") //TODO: REMOVE THIS ONCE FIXED
 	return G.word(position)
+
+// Called after we wrench/unwrench this object
+/obj/proc/wrenched_change()
+	return

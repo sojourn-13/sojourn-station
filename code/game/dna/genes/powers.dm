@@ -2,6 +2,19 @@
 // POWERS
 ///////////////////////////////////
 
+/datum/dna/gene/basic/monkey
+	name="Monkified"
+	activation_messages=list("You feel primitive")
+
+	New()
+		block=MONKEYBLOCK
+
+	deactivate(var/mob/M, var/connected, var/flags)
+		..(M,connected,flags)
+		if(istype(M, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = M
+			H.humanize()
+
 /datum/dna/gene/basic/nobreath
 	name="No Breathing"
 	activation_messages=list("You feel no need to breathe.")

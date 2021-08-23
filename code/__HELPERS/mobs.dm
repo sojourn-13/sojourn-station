@@ -144,7 +144,7 @@ Proc for attack log creation, because really why not
 	return (thing in R.module.modules)
 
 /proc/get_exposed_defense_zone(var/atom/movable/target)
-	var/obj/item/weapon/grab/G = locate() in target
+	var/obj/item/grab/G = locate() in target
 	if(G && G.state >= GRAB_NECK) //works because mobs are currently not allowed to upgrade to NECK if they are grabbing two people.
 		return pick(BP_ALL_LIMBS - list(BP_CHEST, BP_GROIN))
 	else
@@ -260,13 +260,13 @@ Proc for attack log creation, because really why not
 
 
 /proc/is_neotheology_disciple(mob/living/L)
-	if(istype(L) && L.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+	if(istype(L) && L.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		return TRUE
 
 	return FALSE
 
 /proc/is_excelsior(var/mob/M)
-	var/obj/item/weapon/implant/excelsior/E = locate(/obj/item/weapon/implant/excelsior) in M
+	var/obj/item/implant/excelsior/E = locate(/obj/item/implant/excelsior) in M
 	if (E && E.wearer == M)
 		return TRUE
 

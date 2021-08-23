@@ -1,8 +1,8 @@
-/mob/living/proc/handle_recoil(var/obj/item/weapon/gun/G)
+/mob/living/proc/handle_recoil(var/obj/item/gun/G)
 	deltimer(recoil_reduction_timer)
 	if(G.one_hand_penalty)//If the gun has a two handed penalty and is not weilded.
-		if(!G.wielded)
-			recoil += G.one_hand_penalty //Then the one hand penalty wil lbe added to the recoil.
+		if(!G.wielded && !usr.stats.getPerk(PERK_PERFECT_SHOT))
+			recoil += G.one_hand_penalty //Then the one hand penalty will be added to the recoil.
 	if(G.recoil_buildup)
 		recoil += G.recoil_buildup
 		update_recoil()

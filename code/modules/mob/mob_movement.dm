@@ -132,11 +132,18 @@
 		return TRUE
 	if (check_dense_object())
 		return -1
+
+	//If we have catwalks then we can safely move around without error as if its a lattace with magboots
+	for(var/obj/O in loc)
+		if(istype(O, /obj/structure/catwalk))
+			return TRUE
+
 	return FALSE
+
 
 //return 1 if slipped, 0 otherwise
 /mob/proc/handle_spaceslipping()
-	if(prob(1)) //Todo: Factor in future agility stat here
+	if(prob(0)) //Todo: Factor in future agility stat here, SoJ edit we remove space slipping, its bad
 		to_chat(src, SPAN_WARNING("You slipped!"))
 		src.inertia_dir = src.last_move
 		step(src, src.inertia_dir)

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/sbaw
+/obj/item/gun/projectile/automatic/sbaw
 	name = "\"Mjolnir\" payload rifle"
 	desc = "A 20mm Smooth Bore Assault Weapon(SBAW), the distant relative of the Omnirifle series taking the big-bore utility platform to its logical conclusion. \
 	Taking the role of both assault shotgun and grenade launcher, it's a terrifying impliment often used by shock troops to crack light vehicles, mechs, power armor, and infantry in defilade."
@@ -13,7 +13,7 @@
 	mag_well = MAG_WELL_DRUM
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 1500
+	price_tag = 2000
 	penetration_multiplier = 1.2
 	damage_multiplier = 1
 	zoom_factor = 0.3
@@ -29,7 +29,7 @@
 	SEMI_AUTO_NODELAY
 	)
 
-/obj/item/weapon/gun/projectile/automatic/sbaw/update_icon()
+/obj/item/gun/projectile/automatic/sbaw/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -47,12 +47,12 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/sbaw/Initialize()
+/obj/item/gun/projectile/automatic/sbaw/Initialize()
 	. = ..()
 	update_icon()
 
 
-/obj/item/weapon/gun/projectile/automatic/sbaw/admin
+/obj/item/gun/projectile/automatic/sbaw/admin
 	name = "\"Gloryhammer\" payload rifle"
 	desc = "An obscene tool of destruction forged by ancient gods of warfare, sowing horror when you weild this Thunder Striking Wizard Thrasher."
 	icon = 'icons/obj/guns/projectile/sbaw.dmi'

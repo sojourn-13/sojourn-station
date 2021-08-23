@@ -12,12 +12,7 @@
 	var/possible_transfer_amounts = list(10,25,50,100)
 	var/contents_cost
 
-/obj/structure/reagent_dispensers/get_item_cost()
-	var/ratio = reagents.total_volume / reagents.maximum_volume
-
-	return ..() + round(contents_cost * ratio)
-
-/obj/structure/reagent_dispensers/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/reagent_dispensers/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.is_refillable())
 		return 0 //so we can refill them via their afterattack.
 	else
@@ -164,7 +159,7 @@
 			test.Shift(EAST,6)
 			add_overlay(test)
 
-	var/obj/item/weapon/tool/T = I
+	var/obj/item/tool/T = I
 	if(istype(T) && T.use_fuel_cost)
 		return 0
 
@@ -193,7 +188,7 @@
 	else if (reagents.total_volume > 100)
 		explosion(src.loc,0,1,3)
 	else if (reagents.total_volume > 50)
-		explosion(src.loc,-1,1,2)
+		explosion(src.loc,0,1,2)
 	if(src)
 		qdel(src)
 
@@ -237,6 +232,24 @@
 	anchored = 1
 	volume = 500
 	starting_reagent = "water"
+	var/cups = 20
+	var/cup_type = /obj/item/reagent_containers/food/drinks/sillycup
+
+/obj/structure/reagent_dispensers/water_cooler/attack_hand(var/mob/user)
+	if(cups > 0)
+		var/visible_messages = DispenserMessages(user)
+		visible_message(visible_messages[1], visible_messages[2])
+		var/cup = new cup_type(loc)
+		user.put_in_active_hand(cup)
+		cups--
+	else
+		to_chat(user, RejectionMessage(user))
+
+/obj/structure/reagent_dispensers/water_cooler/proc/DispenserMessages(var/mob/user)
+	return list("\The [user] grabs a paper cup from \the [src].", "You grab a paper cup from \the [src]'s cup compartment.")
+
+/obj/structure/reagent_dispensers/water_cooler/proc/RejectionMessage(var/mob/user)
+	return "\The [src]'s cup dispenser is empty."
 
 /obj/structure/reagent_dispensers/water_cooler/attackby(obj/item/I, mob/user)
 	if(QUALITY_BOLT_TURNING in I.tool_qualities)
@@ -265,6 +278,16 @@
 	price_tag = 25
 	contents_cost = 700
 
+/obj/structure/reagent_dispensers/meadkeg
+	name = "mead keg"
+	desc = "A keg of honey and beer"
+	icon_state = "premiumwhiskey"
+	amount_per_transfer_from_this = 10
+	volume = 1000
+	starting_reagent = "mead"
+	price_tag = 25
+	contents_cost = 1200
+
 /obj/structure/reagent_dispensers/cahorsbarrel
 	name = "Absolutism Cahors barrel"
 	desc = "Barrel a day - keeps liver away."
@@ -281,7 +304,7 @@
 	amount_per_transfer_from_this = 10
 	anchored = 1
 	density = 0
-	volume = 1000
+	volume = 50000
 	starting_reagent = "virusfood"
 
 /obj/structure/reagent_dispensers/acid
@@ -294,82 +317,13 @@
 	volume = 1000
 	starting_reagent = "sacid"
 
-//this is big movable beaker
-/obj/structure/reagent_dispensers/bidon
-	name = "B.I.D.O.N. canister"
-	desc = "Bulk Industrial Dispenser Omnitech-Nanochem. A canister with acid-resistant linings intended for handling big volumes of chemicals."
-	icon = 'icons/obj/machines/chemistry.dmi'
-	icon_state = "bidon"
-	reagent_flags = AMOUNT_VISIBLE
-	amount_per_transfer_from_this = 30
-	possible_transfer_amounts = list(10,30,60,120,200)
-	var/filling_states = list(10,20,30,40,50,60,70,80,100)
-	unacidable = 1
-	anchored = 0
-	density = TRUE
-	volume = 600
-	var/lid = TRUE
+/obj/structure/reagent_dispensers/premiumwhiskey
+	name = "Special Blend Whiskey Barrel"
+	desc = "A barrel full of Special Blend whiskey, the finest whiskey this side of the galaxy, and every other side as well."
+	icon_state = "premiumwhiskey"
+	amount_per_transfer_from_this = 10
+	volume = 1000 //Limited, rare stock! But still should be plenty to go around for everyone
+	starting_reagent = "specialwhiskey"
+	price_tag = 30
+	contents_cost = 1000 // This keg's not meant to be ordered through cargo, you start every shift with it and that's it! Big profits though...
 
-/obj/structure/reagent_dispensers/bidon/advanced
-	name = "stasis B.I.D.O.N. canister"
-	desc = "An advanced B.I.D.O.N. canister with stasis function."
-	icon_state = "bidon_adv"
-	reagent_flags = TRANSPARENT
-	filling_states = list(20,40,60,80,100)
-	volume = 900
-
-/obj/structure/reagent_dispensers/bidon/Initialize(mapload, ...)
-	. = ..()
-	update_icon()
-
-/obj/structure/reagent_dispensers/bidon/examine(mob/user)
-	if(!..(user, 2))
-		return
-	if(lid)
-		to_chat(user, SPAN_NOTICE("It has lid on it."))
-	if(reagents.total_volume)
-		to_chat(user, SPAN_NOTICE("It's filled with [reagents.total_volume]/[volume] units of reagents."))
-
-/obj/structure/reagent_dispensers/bidon/attack_hand(mob/user as mob)
-	lid = !lid
-	if(lid)
-		to_chat(user, SPAN_NOTICE("You put the lid on."))
-		reagent_flags &= ~(REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE)
-	else
-		reagent_flags |= REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE
-		to_chat(user, SPAN_NOTICE("You removed the lid."))
-	playsound(src,'sound/items/trayhit2.ogg',50,1)
-	update_icon()
-
-/obj/structure/reagent_dispensers/bidon/attackby(obj/item/I, mob/user)
-	if(lid)
-		to_chat(user, SPAN_NOTICE("Remove the lid first."))
-		return
-	else
-		. = ..()
-	update_icon()
-
-/obj/structure/reagent_dispensers/bidon/update_icon()
-	cut_overlays()
-	if(lid)
-		var/mutable_appearance/lid_icon = mutable_appearance(icon, "[icon_state]_lid")
-		add_overlay(lid_icon)
-	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state][get_filling_state()]")
-		if(!istype(src,/obj/structure/reagent_dispensers/bidon/advanced))
-			filling.color = reagents.get_color()
-		add_overlay(filling)
-
-/obj/structure/reagent_dispensers/bidon/proc/get_filling_state()
-	var/percent = round((reagents.total_volume / volume) * 100)
-	for(var/increment in filling_states)
-		if(increment >= percent)
-			return increment
-
-/obj/structure/reagent_dispensers/bidon/advanced/examine(mob/user)
-	if(!..(user, 2))
-		return
-	if(reagents.reagent_list.len)
-		for(var/I in reagents.reagent_list)
-			var/datum/reagent/R = I
-			to_chat(user, "<span class='notice'>[R.volume] units of [R.name]</span>")

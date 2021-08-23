@@ -37,10 +37,6 @@
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 
-
-
-
-
 /obj/random/cloth/armor
 	name = "random armor"
 	desc = "This is a random armor."
@@ -73,9 +69,6 @@
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
 
-
-
-
 /obj/random/cloth/suit
 	name = "random suit"
 	desc = "This is a random suit."
@@ -105,6 +98,8 @@
 				/obj/item/clothing/suit/gorka/toggle/gorka/crew_o = 2,
 				/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 2,
 				/obj/item/clothing/suit/gorka/toggle/gorka = 2,
+				/obj/item/clothing/suit/storage/aerostatic_bomber_jacket = 2,
+				/obj/item/clothing/suit/storage/jamrock_blazer = 2,
 				/obj/item/clothing/suit/storage/toggle/labcoat = 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/chemist= 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/cmo = 3,
@@ -112,16 +107,14 @@
 				/obj/item/clothing/suit/storage/toggle/labcoat/science = 3,
 				/obj/item/clothing/suit/storage/toggle/labcoat/virologist = 3,
 				/obj/item/clothing/suit/storage/rank/qm_coat = 2,
-				/obj/item/clothing/suit/storage/toggle/leather/cyberpunk = 8))
+				/obj/item/clothing/suit/storage/toggle/leather/cyberpunk = 8,
+				/obj/item/clothing/suit/storage/triad = 2,
+				/obj/item/clothing/suit/storage/akira = 2))
 
 /obj/random/cloth/suit/low_chance
 	name = "low chance random suit"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
-
 
 /obj/random/cloth/hazmatsuit
 	name = "random hazmat suit"
@@ -143,10 +136,6 @@
 	name = "low chance random hazmat suit"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
-
 
 /obj/random/cloth/under
 	name = "random under"
@@ -187,6 +176,8 @@
 				/obj/item/clothing/under/gorka/creworange = 2,
 				/obj/item/clothing/under/gorka/crewyellow = 2,
 				/obj/item/clothing/under/gorka/standard = 2,
+				/obj/item/clothing/under/jamrock_suit = 2,
+				/obj/item/clothing/under/aerostatic_suit = 2,
 				/obj/item/clothing/under/costume/history/pirate = 5,
 				/obj/item/clothing/under/color/purple = 5,
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit = 5,
@@ -202,16 +193,23 @@
 				/obj/item/clothing/under/dress/red = 5,
 				/obj/item/clothing/under/leisure = 5,
 				/obj/item/clothing/under/leisure/white = 5,
-				/obj/item/clothing/under/leisure/pullover = 5))
+				/obj/item/clothing/under/leisure/pullover = 5,
+				/obj/item/clothing/under/track_suit = 2,
+				/obj/item/clothing/under/white = 2,
+				/obj/item/clothing/under/red = 2,
+				/obj/item/clothing/under/green = 2,
+				/obj/item/clothing/under/grey = 2,
+				/obj/item/clothing/under/black = 2,
+				/obj/item/clothing/under/dress/black = 1,
+				/obj/item/clothing/under/dress/white = 1,
+				/obj/item/clothing/under/helltaker = 2,
+				/obj/item/clothing/under/johnny = 2,
+				/obj/item/clothing/under/raider = 1))
 
 /obj/random/cloth/under/low_chance
 	name = "low chance random under"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
-
 
 /obj/random/cloth/helmet
 	name = "random helmet"
@@ -289,15 +287,16 @@
 				/obj/item/clothing/head/soft/sec/corp = 1,
 				/obj/item/clothing/head/tophat = 5,
 				/obj/item/clothing/head/ushanka = 3,
-				/obj/item/clothing/head/welding = 5))
+				/obj/item/clothing/head/costume/history/anarchist_cap = 2,
+				/obj/item/clothing/head/costume/history/anarchist = 1,
+				/obj/item/clothing/head/welding = 5,
+				/obj/item/clothing/head/ranger = 3,
+				/obj/item/clothing/head/inhaler = 1))
 
 /obj/random/cloth/head/low_chance
 	name = "low chance random head"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
 
 /obj/random/cloth/gloves
 	name = "random gloves"
@@ -305,12 +304,14 @@
 	icon_state = "armor-grey"
 
 /obj/random/cloth/gloves/item_to_spawn()
-	return pickweight(list(/obj/item/clothing/gloves/botanic_leather = 3,
+	return pickweight(list(/obj/item/clothing/gloves/botanic_leather = 2,
+				/obj/item/clothing/gloves/aerostatic_gloves = 2,
 				/obj/item/clothing/gloves/boxing = 2,
 				/obj/item/clothing/gloves/boxing/blue = 5,
 				/obj/item/clothing/gloves/boxing/green = 1,
 				/obj/item/clothing/gloves/boxing/yellow = 1,
 				/obj/item/clothing/gloves/captain = 1,
+				/obj/item/clothing/gloves/thick/ablasive = 2,
 				/obj/item/clothing/gloves/color = 3,
 				/obj/item/clothing/gloves/color/blue = 3,
 				/obj/item/clothing/gloves/color/brown = 3,
@@ -328,15 +329,15 @@
 				/obj/item/clothing/gloves/thick = 5,
 				/obj/item/clothing/gloves/thick/combat = 1,
 				/obj/item/clothing/gloves/thick/swat = 2,
-				/obj/item/clothing/gloves/stungloves = 1))
+				/obj/item/clothing/gloves/stungloves = 1,
+				/obj/item/clothing/gloves/evening = 2,
+				/obj/item/clothing/gloves/ash_evening = 2,
+				/obj/item/clothing/gloves/knuckles = 2))
 
 /obj/random/cloth/gloves/low_chance
 	name = "low chance random gloves"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
 
 /obj/random/cloth/glasses
 	name = "random glasses"
@@ -345,6 +346,7 @@
 
 /obj/random/cloth/glasses/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/glasses/eyepatch = 4,
+				/obj/item/clothing/glasses/binoclard_lenses = 2,
 				/obj/item/clothing/glasses/regular/gglasses = 2,
 				/obj/item/clothing/glasses/hud/health = 2,
 				/obj/item/clothing/glasses/hud/security = 2,
@@ -356,9 +358,6 @@
 	name = "low chance random glasses"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
 
 /obj/random/cloth/shoes
 	name = "random shoes"
@@ -379,17 +378,20 @@
 				/obj/item/clothing/shoes/color/yellow = 1,
 				/obj/item/clothing/shoes/galoshes = 8,
 				/obj/item/clothing/shoes/jackboots = 14,
+				/obj/item/clothing/shoes/jackboots/longboot = 7,
+				/obj/item/clothing/shoes/jackboots/redboot = 4,
 				/obj/item/clothing/shoes/leather = 14,
+				/obj/item/clothing/shoes/aerostatic_boots = 10,
+				/obj/item/clothing/shoes/render = 10,
+				/obj/item/clothing/shoes/ablasive = 8,
 				/obj/item/clothing/shoes/reinforced = 14,
-				/obj/item/clothing/shoes/workboots = 4))
+				/obj/item/clothing/shoes/workboots = 4,
+				/obj/item/clothing/shoes/track_shoes = 3))
 
 /obj/random/cloth/shoes/low_chance
 	name = "low chance random shoes"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-
-
 
 /obj/random/cloth/backpack
 	name = "random backpack"
@@ -397,44 +399,44 @@
 	icon_state = "armor-grey"
 
 /obj/random/cloth/backpack/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/storage/backpack = 1,
-				/obj/item/weapon/storage/backpack/white = 5,
-				/obj/item/weapon/storage/backpack/purple = 5,
-				/obj/item/weapon/storage/backpack/blue = 5,
-				/obj/item/weapon/storage/backpack/green = 5,
-				/obj/item/weapon/storage/backpack/orange = 5,
-				/obj/item/weapon/storage/backpack/botanist = 4,
-				/obj/item/weapon/storage/backpack/captain = 1,
-				/obj/item/weapon/storage/backpack/clown = 4,
-				/obj/item/weapon/storage/backpack/industrial = 6,
-				/obj/item/weapon/storage/backpack/medical = 6,
-				/obj/item/weapon/storage/backpack/security = 6,
-				/obj/item/weapon/storage/backpack/neotheology = 2,
-				/obj/item/weapon/storage/backpack/ironhammer = 2,
-				/obj/item/weapon/storage/backpack/military = 6,
-				/obj/item/weapon/storage/backpack/sport = 1,
-				/obj/item/weapon/storage/backpack/sport/white = 5,
-				/obj/item/weapon/storage/backpack/sport/purple = 5,
-				/obj/item/weapon/storage/backpack/sport/blue = 5,
-				/obj/item/weapon/storage/backpack/sport/green = 5,
-				/obj/item/weapon/storage/backpack/sport/orange = 5,
-				/obj/item/weapon/storage/backpack/sport/botanist = 4,
-				/obj/item/weapon/storage/backpack/sport/neotheology = 2,
-				/obj/item/weapon/storage/backpack/sport/ironhammer = 2,
-				/obj/item/weapon/storage/backpack/satchel = 1,
-				/obj/item/weapon/storage/backpack/satchel/white = 5,
-				/obj/item/weapon/storage/backpack/satchel/purple = 5,
-				/obj/item/weapon/storage/backpack/satchel/blue = 5,
-				/obj/item/weapon/storage/backpack/satchel/green = 5,
-				/obj/item/weapon/storage/backpack/satchel/orange = 5,
-				/obj/item/weapon/storage/backpack/satchel/botanist = 4,
-				/obj/item/weapon/storage/backpack/satchel/captain = 1,
-				/obj/item/weapon/storage/backpack/satchel/industrial = 6,
-				/obj/item/weapon/storage/backpack/satchel/medical = 6,
-				/obj/item/weapon/storage/backpack/satchel/security = 6,
-				/obj/item/weapon/storage/backpack/satchel/leather/withwallet = 12,
-				/obj/item/weapon/storage/backpack/satchel/ironhammer = 4,
-				/obj/item/weapon/storage/backpack/satchel/neotheology = 4))
+	return pickweight(list(/obj/item/storage/backpack = 1,
+				/obj/item/storage/backpack/white = 5,
+				/obj/item/storage/backpack/purple = 5,
+				/obj/item/storage/backpack/blue = 5,
+				/obj/item/storage/backpack/green = 5,
+				/obj/item/storage/backpack/orange = 5,
+				/obj/item/storage/backpack/botanist = 4,
+				/obj/item/storage/backpack/captain = 1,
+				/obj/item/storage/backpack/clown = 4,
+				/obj/item/storage/backpack/industrial = 6,
+				/obj/item/storage/backpack/medical = 6,
+				/obj/item/storage/backpack/security = 6,
+				/obj/item/storage/backpack/neotheology = 2,
+				/obj/item/storage/backpack/ironhammer = 2,
+				/obj/item/storage/backpack/military = 6,
+				/obj/item/storage/backpack/sport = 1,
+				/obj/item/storage/backpack/sport/white = 5,
+				/obj/item/storage/backpack/sport/purple = 5,
+				/obj/item/storage/backpack/sport/blue = 5,
+				/obj/item/storage/backpack/sport/green = 5,
+				/obj/item/storage/backpack/sport/orange = 5,
+				/obj/item/storage/backpack/sport/botanist = 4,
+				/obj/item/storage/backpack/sport/neotheology = 2,
+				/obj/item/storage/backpack/sport/ironhammer = 2,
+				/obj/item/storage/backpack/satchel = 1,
+				/obj/item/storage/backpack/satchel/white = 5,
+				/obj/item/storage/backpack/satchel/purple = 5,
+				/obj/item/storage/backpack/satchel/blue = 5,
+				/obj/item/storage/backpack/satchel/green = 5,
+				/obj/item/storage/backpack/satchel/orange = 5,
+				/obj/item/storage/backpack/satchel/botanist = 4,
+				/obj/item/storage/backpack/satchel/captain = 1,
+				/obj/item/storage/backpack/satchel/industrial = 6,
+				/obj/item/storage/backpack/satchel/medical = 6,
+				/obj/item/storage/backpack/satchel/security = 6,
+				/obj/item/storage/backpack/satchel/leather/withwallet = 12,
+				/obj/item/storage/backpack/satchel/ironhammer = 4,
+				/obj/item/storage/backpack/satchel/neotheology = 4))
 
 /obj/random/cloth/backpack/low_chance
 	name = "low chance random backpack"
@@ -447,16 +449,16 @@
 	icon_state = "armor-grey"
 
 /obj/random/cloth/belt/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/storage/belt/medical = 8,
-				/obj/item/weapon/storage/belt/medical/emt = 8,
-				/obj/item/weapon/storage/belt/security = 4,
-				/obj/item/weapon/storage/belt/webbing = 2,
-				/obj/item/weapon/storage/belt/webbing/green = 2,
-				/obj/item/weapon/storage/belt/webbing/black = 2,
-				/obj/item/weapon/storage/belt/webbing/ih = 2,
-				/obj/item/weapon/storage/belt/security/neotheology = 2,
-				/obj/item/weapon/storage/belt/utility = 8,
-				/obj/item/weapon/storage/belt/utility/neotheology = 4))
+	return pickweight(list(/obj/item/storage/belt/medical = 8,
+				/obj/item/storage/belt/medical/emt = 8,
+				/obj/item/storage/belt/security = 4,
+				/obj/item/storage/belt/webbing = 2,
+				/obj/item/storage/belt/webbing/green = 2,
+				/obj/item/storage/belt/webbing/black = 2,
+				/obj/item/storage/belt/webbing/ih = 2,
+				/obj/item/storage/belt/security/neotheology = 2,
+				/obj/item/storage/belt/utility = 8,
+				/obj/item/storage/belt/utility/neotheology = 4))
 
 /obj/random/cloth/belt/low_chance
 	name = "low chance random belt"
@@ -483,3 +485,27 @@
 	desc = "This is a random holster."
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
+
+/obj/random/cloth/greyson_clothing
+	name = "random greyson clothing"
+	desc = "This is a random greyson clothing."
+	icon_state = "armor-grey"
+
+/obj/random/cloth/greyson_clothing/low_chance
+	name = "low chance random greyson clothing"
+	desc = "This is a random greyson clothing."
+	icon_state = "armor-grey-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/cloth/greyson_clothing/item_to_spawn()
+	return pickweight(list(/obj/item/clothing/under/os_jumpsuit = 8,
+				/obj/item/clothing/under/iron_lock_security = 5,
+				/obj/item/clothing/shoes/ablasive/iron_lock_security = 1,
+				/obj/item/clothing/gloves/thick/ablasive/iron_lock_security  = 1,
+				/obj/item/clothing/head/soft/iron_lock_security = 1,
+				/obj/item/clothing/head/helmet/laserproof/iron_lock_security = 1,
+				/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
+				/obj/item/clothing/suit/greatcoat/os = 4,
+				/obj/item/clothing/head/os_cap = 4,
+				/obj/item/clothing/head/helmet/space/os = 8,
+				/obj/item/clothing/suit/space/os = 8))

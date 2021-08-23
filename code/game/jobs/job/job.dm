@@ -23,6 +23,8 @@
 	var/department_account_access = FALSE	// Can this position access the department acount, even if they're not a head?
 	var/minimum_character_age = 0
 	var/ideal_character_age = 30
+	var/playtimerequired = 0				// How many minutes in this deaprtment are required to play this job?
+	var/coltimerequired = 0					// How many minutes do we need to play of Colonist/Visitor before we're allowed this job?
 	var/create_record = 1					// Do we announce/make records for people who spawn on this job?
 	var/list/also_known_languages = list()	// additional chance based languages to all jobs.
 
@@ -171,6 +173,15 @@
 		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age].</span>")
 		return TRUE
 
+	if(coltimerequired)
+		if(coltimerequired > prefs.playtime["Civilian"])
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime as a colonist. Minimum playtime is [coltimerequired] minutes.</span>")
+			return TRUE
+
+	if(playtimerequired)
+		if(playtimerequired > prefs.playtime[department])
+			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
+			return TRUE
 	return FALSE
 
 /datum/job/proc/is_setup_restricted(list/options)
@@ -230,3 +241,10 @@
 // enforcing this mechanically.
 /datum/job/proc/player_has_enough_pto(client/C)
 	return TRUE
+
+/datum/job/proc/change_playtime(client/C, var/amount = 0)
+	C.prefs.playtime[department] += amount
+	var/commandep = COMMAND //The following two lines are to add to command playtime while playing council positions.
+	if(department_flag & commandep)
+		C.prefs.playtime["Command"] += amount
+	C.prefs.save_preferences(0)

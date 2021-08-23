@@ -40,12 +40,19 @@
 /obj/machinery/porta_turret/prepper
 	name = "advanced turret"
 	desc = "A highly modified turret with a stronger laser and self repair system."
-	installation = /obj/item/weapon/gun/energy/lasercore
-	check_synth = 1
-	ailock = 1
+	installation = /obj/item/gun/energy/lasercannon
+
+	check_arrest = TRUE //Sure
+	check_records = TRUE //Sure
+	check_weapons = TRUE //So we shoot propis with their guns
+	check_access = TRUE //Respects access
+	check_anomalies = FALSE //We dont attack simples
+	check_synth = FALSE //so dont shoot are own
+
+	ailock = TRUE
 	use_power = NO_POWER_USE
 	shot_delay = 5
-	auto_repair = 1
+	auto_repair = TRUE
 
 /obj/machinery/turretid/Destroy()
 	if(control_area)
@@ -91,11 +98,11 @@
 
 	return ..()
 
-/obj/machinery/turretid/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/turretid/attackby(obj/item/W, mob/user)
 	if(stat & BROKEN)
 		return
 
-	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/modular_computer))
+	if(istype(W, /obj/item/card/id)||istype(W, /obj/item/modular_computer))
 		if(src.allowed(usr))
 			playsound(loc, 'sound/machines/id_swipe.ogg', 100, 1)
 			if(emagged)

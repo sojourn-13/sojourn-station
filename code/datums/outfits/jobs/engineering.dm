@@ -1,13 +1,13 @@
 /decl/hierarchy/outfit/job/engineering
 	hierarchy_type = /decl/hierarchy/outfit/job/engineering
-	belt = /obj/item/weapon/storage/belt/utility/full
+	belt = /obj/item/storage/belt/utility/full
 	l_ear = /obj/item/device/radio/headset/headset_eng
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/thick
+	gloves = /obj/item/clothing/gloves/insulated
 	pda_slot = slot_l_store
 	r_pocket = /obj/item/device/t_scanner
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
-	backpack_contents = list(/obj/item/weapon/gun/matter/launcher/breaker = 1)
+	backpack_contents = list(/obj/item/gun/matter/launcher/breaker = 1)
 
 /decl/hierarchy/outfit/job/engineering/New()
 	..()
@@ -20,7 +20,7 @@
 	head = /obj/item/clothing/head/firefighter/chief
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	l_ear = /obj/item/device/radio/headset/heads/ce
-	id_type = /obj/item/weapon/card/id/ce
+	id_type = /obj/item/card/id/ce
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 
 /decl/hierarchy/outfit/job/engineering/engineer
@@ -29,7 +29,7 @@
 	uniform = /obj/item/clothing/under/rank/engineer
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	head = /obj/item/clothing/head/hardhat
-	id_type = /obj/item/weapon/card/id/engie
+	id_type = /obj/item/card/id/engie
 	pda_type = /obj/item/modular_computer/pda/engineering
 
 /decl/hierarchy/outfit/job/engineering/engineer/void

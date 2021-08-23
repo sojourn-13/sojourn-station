@@ -37,7 +37,7 @@
 			if(BP_IS_ROBOTIC(S))
 				if(S.get_damage())
 					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-					S.heal_damage(15, 15, robo_repair = 1)
+					S.heal_damage(15, 15, TRUE)
 					H.updatehealth()
 					use(1)
 					user.visible_message(

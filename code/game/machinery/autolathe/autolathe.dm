@@ -18,14 +18,14 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 2000
-	circuit = /obj/item/weapon/circuitboard/autolathe
+	circuit = /obj/item/circuitboard/autolathe
 
 	var/build_type = AUTOLATHE
 
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk
+	var/obj/item/computer_hardware/hard_drive/portable/disk
 
 	var/list/stored_material = list()
-	var/obj/item/weapon/reagent_containers/glass/container
+	var/obj/item/reagent_containers/glass/container
 
 	var/unfolded
 	var/show_category
@@ -57,7 +57,7 @@
 	var/have_disk = TRUE
 	var/have_reagents = TRUE
 	var/have_materials = TRUE
-	var/have_recycling = TRUE
+	var/have_recycling = FALSE
 	var/have_design_selector = TRUE
 
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
@@ -227,6 +227,9 @@
 
 /obj/machinery/autolathe/attackby(obj/item/I, mob/user)
 
+	if(istype(I, /obj/item/stack/material/cyborg))
+		return //Prevents borgs throwing their stuff into it
+
 	if(default_deconstruction(I, user))
 		wires?.Interact(user)
 		return
@@ -234,15 +237,15 @@
 	if(default_part_replacement(I, user))
 		return
 
-	if(istype(I, /obj/item/weapon/computer_hardware/hard_drive/portable))
+	if(istype(I, /obj/item/computer_hardware/hard_drive/portable))
 		insert_disk(user, I)
 
 	// Some item types are consumed by default
-	if(istype(I, /obj/item/stack) || istype(I, /obj/item/trash) || istype(I, /obj/item/weapon/material/shard))
+	if(istype(I, /obj/item/stack) || istype(I, /obj/item/trash) || istype(I, /obj/item/material/shard))
 		eat(user, I)
 		return
 
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	if(istype(I, /obj/item/reagent_containers/glass))
 		insert_beaker(user, I)
 		return
 
@@ -360,7 +363,7 @@
 		return 1
 
 
-/obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/weapon/computer_hardware/hard_drive/portable/inserted_disk)
+/obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
 	if(!inserted_disk && istype(user))
 		inserted_disk = user.get_active_hand()
 
@@ -387,7 +390,7 @@
 	SSnano.update_uis(src)
 
 
-/obj/machinery/autolathe/proc/insert_beaker(mob/living/user, obj/item/weapon/reagent_containers/glass/beaker)
+/obj/machinery/autolathe/proc/insert_beaker(mob/living/user, obj/item/reagent_containers/glass/beaker)
 	if(!beaker && istype(user))
 		beaker = user.get_active_hand()
 
@@ -491,8 +494,8 @@
 		to_chat(user, SPAN_WARNING("\The [eating] does not contain significant amounts of useful materials and cannot be accepted."))
 		return FALSE
 
-	if(istype(eating, /obj/item/weapon/computer_hardware/hard_drive/portable))
-		var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = eating
+	if(istype(eating, /obj/item/computer_hardware/hard_drive/portable))
+		var/obj/item/computer_hardware/hard_drive/portable/disk = eating
 		if(disk.license)
 			to_chat(user, SPAN_WARNING("\The [src] refuses to accept \the [eating] as it has non-null license."))
 			return FALSE
@@ -804,7 +807,7 @@
 
 	//And if there's any remainder, we eject that as a shard
 	if(remainder)
-		new /obj/item/weapon/material/shard(drop_location(), material, _amount = remainder)
+		new /obj/item/material/shard(drop_location(), material, _amount = remainder)
 
 	//The stored material gets the amount (whole+remainder) subtracted
 	stored_material[material] -= amount
@@ -822,7 +825,7 @@
 	..()
 	var/mb_rating = 0
 	var/mb_amount = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
 		mb_rating += MB.rating
 		mb_amount++
 
@@ -830,14 +833,14 @@
 
 	var/man_rating = 0
 	var/man_amount = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
 		man_amount++
 	man_rating -= man_amount
 
 	var/las_rating = 0
 	var/las_amount = 0
-	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
 		las_rating += M.rating
 		las_amount++
 	las_rating -= las_amount
@@ -887,9 +890,10 @@
 	desc = "It produces items using metal and glass."
 	idle_power_usage = 100
 	active_power_usage = 8000
-	circuit = /obj/item/weapon/circuitboard/autolathe_industrial
+	circuit = /obj/item/circuitboard/autolathe_industrial
 	speed = 4
 	storage_capacity = 240
+	have_recycling = TRUE
 
 #undef ERR_OK
 #undef ERR_NOTFOUND
@@ -910,7 +914,7 @@
 
 /obj/machinery/autolathe/loaded/Initialize()
 	. = ..()
-	container = new /obj/item/weapon/reagent_containers/glass/beaker(src)
+	container = new /obj/item/reagent_containers/glass/beaker(src)
 
 
 // You (still) can't flicker over-lays in BYOND, and this is a vis_contents hack to provide the same functionality.

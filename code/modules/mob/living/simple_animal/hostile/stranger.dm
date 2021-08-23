@@ -11,6 +11,7 @@
 	response_disarm = "shoves"
 	response_harm = "hits"
 	speed = 4
+	ranged_cooldown = 1
 	stop_automated_movement_when_pulled = FALSE
 	maxHealth = 200
 	health = 200
@@ -34,23 +35,23 @@
 	projectiletype = /obj/item/projectile/plasma/heavy
 	projectilesound = 'sound/weapons/laser.ogg'
 	faction = "bluespace"
+	leather_amount = 0
+	bones_amount = 0
 	var/empy_cell = FALSE
 	var/prob_tele = 20
 
-/mob/living/simple_animal/hostile/stranger/New()
-	..()
-	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-	sparks.set_up(3, 0, src.loc)
-	sparks.start()
+/mob/living/simple_animal/hostile/stranger/Initialize(mapload)
+	. = ..()
+	do_sparks(3, 0, src.loc)
 
 /mob/living/simple_animal/hostile/stranger/death()
-	..()
-	var/obj/item/weapon/gun/energy/plasma/stranger/S = new /obj/item/weapon/gun/energy/plasma/stranger(src.loc)
+	. = ..()
+	var/obj/item/gun/energy/plasma/stranger/S = new (src.loc)
 	S.cell = new S.suitable_cell(S)
-	S.cell.charge = S.cell.maxcharge/2
 	if(empy_cell)
-		S.cell.charge = 0
-	S.cell.update_icon()
+		S.cell.use(S.cell.charge)
+	else
+		S.cell.use(S.cell.maxcharge/2)
 	S.update_icon()
 	new /obj/effect/decal/cleanable/ash (src.loc)
 	var/atom/movable/overlay/animation
@@ -60,9 +61,7 @@
 	animation.master = src
 	flick("dust2-h", animation)
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
-	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-	sparks.set_up(3, 0, src.loc)
-	sparks.start()
+	do_sparks(3, 0, src.loc)
 	qdel(src)
 
 /mob/living/simple_animal/hostile/stranger/attack_generic(mob/user, damage, attack_message)
@@ -73,9 +72,10 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 		return FALSE
-	.=..()
+	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/attackby(obj/item/W, mob/user, params)
 	if(prob(prob_tele))
@@ -83,10 +83,10 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 		return FALSE
-	..()
-
+	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/attack_hand(mob/living/carbon/M)
 	if(M.a_intent != I_HELP && prob(prob_tele))
@@ -94,9 +94,10 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 		return FALSE
-	..()
+	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/bullet_act(obj/item/projectile/P, def_zone)
 	if(prob(prob_tele))
@@ -104,9 +105,10 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 		return FALSE
-	..()
+	. = ..()
 
 /mob/living/simple_animal/hostile/stranger/Life()
 	. = ..()
@@ -115,9 +117,10 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 4, 2)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 
-/obj/item/weapon/gun/energy/plasma/stranger
+/obj/item/gun/energy/plasma/stranger
 	name = "unknown plasma gun"
 	desc = "A plasma gun from unknown origin"
 	icon = 'icons/obj/guns/energy/lancer.dmi'
@@ -129,7 +132,7 @@
 	fire_delay = 5
 	one_hand_penalty = 5
 	twohanded = FALSE
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
 	can_dual = TRUE
 	w_class = ITEM_SIZE_NORMAL
 
@@ -140,7 +143,7 @@
 		list(mode_name="VAPORIZE", burst=3, projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/unknown_spacegun_vaporize.ogg', fire_delay=5, move_delay=4, charge_cost=11, icon="vaporize", projectile_color = "#FFFFFF", recoil_buildup=3)
 	)
 
-/obj/item/weapon/gun/energy/plasma/stranger/update_icon(ignore_inhands)
+/obj/item/gun/energy/plasma/stranger/update_icon(ignore_inhands)
 	if(charge_meter)
 		var/ratio = 0
 

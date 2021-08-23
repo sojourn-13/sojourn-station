@@ -16,8 +16,6 @@
 #define CAL_SHOTGUN "Shotgun Shell"
 #define CAL_50	".50 kurtz"
 #define CAL_70 ".70"
-#define CAL_CAP "plastic cap"
-#define CAL_ROCKET "rocket propelled grenade"
 #define CAL_GRENADE "grenade"
 
 /obj/machinery/autolathe/artist_bench
@@ -25,7 +23,7 @@
 	desc = "Insert wood, steel, glass, plasteel, plastic and a bit of your soul to create a beautiful work of art."
 	icon = 'icons/obj/machines/autolathe.dmi'
 	icon_state = "bench"
-	circuit = /obj/item/weapon/circuitboard/artist_bench
+	circuit = /obj/item/circuitboard/artist_bench
 	have_disk = FALSE
 	have_reagents = FALSE
 	have_recycling = FALSE
@@ -102,7 +100,7 @@
 			return TRUE
 		return FALSE
 
-/obj/machinery/autolathe/artist_bench/proc/insert_oddity(mob/living/user, obj/item/inserted_oddity) //Not sure if nessecary to name oddity this way. obj/item/weapon/oddity/inserted_oddity
+/obj/machinery/autolathe/artist_bench/proc/insert_oddity(mob/living/user, obj/item/inserted_oddity) //Not sure if nessecary to name oddity this way. obj/item/oddity/inserted_oddity
 	if(oddity)
 		to_chat(user, SPAN_NOTICE("There's already \a [oddity] inside [src]."))
 		return
@@ -196,17 +194,15 @@
 	//var/list/LWeights = list(weight_mechanical, weight_cognition, weight_biology, weight_robustness, weight_toughness, weight_vigilance)
 
 	if(full_artwork == "artwork_revolver")
-		var/obj/item/weapon/gun/projectile/revolver/artwork_revolver/R = new(src)
+		var/obj/item/gun/projectile/revolver/artwork_revolver/R = new(src)
 
 		var/gun_pattern = pickweight(list(
-			"pistol" = 16 + weight_robustness,
+			"pistol" = 16 + weight_robustness + weight_biology,
 			"magnum" = 8 + weight_vigilance,
 			"shotgun" = 8 + weight_robustness,
 			"rifle" = 8 + weight_vigilance,
 			"sniper" = 8 + max(weight_vigilance + weight_cognition),
 			"gyro" = 1 + weight_robustness + weight_mechanical,
-			"cap" = 16 + weight_biology,
-			"rocket" = 8 + weight_toughness,
 			"grenade" = 8 + weight_toughness
 		))
 
@@ -252,16 +248,6 @@
 				R.caliber = CAL_70
 				R.recoil_buildup = 0.1 * rand(1,20)
 
-			if("cap")
-				R.caliber = CAL_CAP
-
-			if("rocket")//From RPG.dm, Arbitrary values
-				R.caliber = CAL_ROCKET
-				R.fire_sound = 'sound/effects/bang.ogg'
-				R.bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'
-				R.one_hand_penalty = 15 + rand(-3,5)//From ak47.dm, temporary values
-				R.recoil_buildup = 15 + rand(-3,3)
-
 			if("grenade")
 				R.caliber = CAL_GRENADE
 				R.fire_sound = 'sound/weapons/guns/fire/grenadelauncher_fire.ogg'
@@ -281,7 +267,7 @@
 		return S
 
 	else if(full_artwork == "artwork_oddity")
-		var/obj/item/weapon/oddity/artwork/O = new(src)
+		var/obj/item/oddity/artwork/O = new(src)
 		var/list/oddity_stats = list(STAT_MEC = rand(0,1), STAT_COG = rand(0,1), STAT_BIO = rand(0,1), STAT_ROB = rand(0,1), STAT_TGH = rand(0,1), STAT_VIG = rand(0,1))//May not be nessecary
 		var/stats_amt = 3
 		if(ins_used >= 85)//Arbitrary values
@@ -299,7 +285,7 @@
 		return O
 
 	else if(full_artwork == "artwork_toolmod")
-		var/obj/item/weapon/tool_upgrade/artwork_tool_mod/TM = new(src, ins_used)
+		var/obj/item/tool_upgrade/artwork_tool_mod/TM = new(src, ins_used)
 		return TM
 	else
 		return "ERR_ARTWORK"

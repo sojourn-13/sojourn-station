@@ -1,6 +1,6 @@
 /datum/gear/accessory
 	display_name = "wallet"
-	path = /obj/item/weapon/storage/wallet
+	path = /obj/item/storage/wallet
 	slot = slot_accessory_buffer
 	sort_category = "Accessories"
 
@@ -25,6 +25,10 @@
 	display_name = "metal necklace"
 	path = /obj/item/clothing/accessory/necklace
 
+/datum/gear/accessory/fractalrosary
+	display_name = "fractal Rosary"
+	path = /obj/item/clothing/accessory/fractalrosary
+
 /datum/gear/accessory/neckbrace
 	display_name = "neck brace"
 	path = /obj/item/clothing/accessory/neckbrace
@@ -38,7 +42,11 @@
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory/tie
 	flags = GEAR_HAS_TYPE_SELECTION
-	
+
+/datum/gear/accessory/fluffycape
+	display_name = "fluffy cape"
+	path = /obj/item/clothing/accessory/cape
+
 /datum/gear/accessory/blackshieldpatch
 	display_name = "Blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield

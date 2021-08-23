@@ -85,7 +85,7 @@
 	new /obj/item/clothing/head/soft/white(src)
 	new /obj/item/clothing/head/soft/white(src)
 	new /obj/item/clothing/head/soft/white(src)
-	new /obj/item/weapon/storage/backpack/sport/white(src)
+	new /obj/item/storage/backpack/sport/white(src)
 
 /obj/structure/closet/wardrobe/color/red
 	name = "red wardrobe"
@@ -137,7 +137,7 @@
 	new /obj/item/clothing/head/soft/grey(src)
 	new /obj/item/clothing/head/soft/grey(src)
 	new /obj/item/clothing/head/soft/grey(src)
-	new /obj/item/weapon/storage/backpack/sport(src)
+	new /obj/item/storage/backpack/sport(src)
 
 /obj/structure/closet/wardrobe/color/mixed
 	name = "mixed wardrobe"
@@ -163,10 +163,10 @@
 	new /obj/item/clothing/mask/bandana/yellow(src)
 	new /obj/item/clothing/mask/bandana/purple(src)
 	new /obj/item/clothing/mask/bandana/camo(src)
-	new /obj/item/weapon/storage/backpack/sport/purple(src)
-	new /obj/item/weapon/storage/backpack/sport/green(src)
-	new /obj/item/weapon/storage/backpack/sport/blue(src)
-	new /obj/item/weapon/storage/backpack/sport/orange(src)
+	new /obj/item/storage/backpack/sport/purple(src)
+	new /obj/item/storage/backpack/sport/green(src)
+	new /obj/item/storage/backpack/sport/blue(src)
+	new /obj/item/storage/backpack/sport/orange(src)
 
 /*Jobs*/
 
@@ -210,14 +210,12 @@
 /obj/structure/closet/wardrobe/militia/populate_contents()
 	new /obj/item/clothing/under/rank/trooper(src)
 	new /obj/item/clothing/under/rank/trooper(src)
-	new /obj/item/clothing/under/rank/trooper/tan(src)
-	new /obj/item/clothing/under/rank/trooper/tan(src)
-	new /obj/item/clothing/under/rank/trooper/green(src)
-	new /obj/item/clothing/under/rank/trooper/green(src)
-	new /obj/item/clothing/under/rank/trooper/cadet(src)
-	new /obj/item/clothing/under/rank/trooper/cadet(src)
-	new /obj/item/clothing/under/rank/trooper/cadet(src)
-	new /obj/item/clothing/under/rank/trooper/cadet(src)
+	new /obj/item/clothing/under/rank/trooper(src)
+	new /obj/item/clothing/under/rank/trooper(src)
+	new /obj/item/clothing/under/rank/trooper/skirt(src)
+	new /obj/item/clothing/under/rank/trooper/skirt(src)
+	new /obj/item/clothing/under/rank/trooper/skirt(src)
+	new /obj/item/clothing/under/rank/trooper/skirt(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/shoes/jackboots(src)
@@ -232,27 +230,22 @@
 	icon_door = "militia"
 
 /obj/structure/closet/wardrobe/militia/accessory/populate_contents()
-	new /obj/item/clothing/head/rank/trooper/beret(src)
-	new /obj/item/clothing/head/rank/trooper/beret(src)
-	new /obj/item/clothing/head/rank/trooper/beret(src)
-	new /obj/item/clothing/head/rank/trooper/cap(src)
-	new /obj/item/clothing/head/rank/trooper/cap(src)
-	new /obj/item/clothing/head/rank/trooper/cap(src)
-	new /obj/item/clothing/accessory/armband/militia(src)
-	new /obj/item/clothing/accessory/armband/militia(src)
-	new /obj/item/clothing/accessory/armband/militia(src)
-	new /obj/item/clothing/accessory/armband/militia(src)
-	new /obj/item/clothing/accessory/armband/militia(src)
-	new /obj/item/clothing/accessory/armband/militia(src)
-	new /obj/item/clothing/accessory/holster/hip(src)
-	new /obj/item/clothing/accessory/holster/hip(src)
-	new /obj/item/clothing/accessory/holster/hip(src)
 	new /obj/item/clothing/accessory/holster/leg(src)
 	new /obj/item/clothing/accessory/holster/leg(src)
-	new /obj/item/clothing/mask/bandana(src)
-	new /obj/item/clothing/mask/bandana(src)
-	new /obj/item/clothing/suit/sling(src)
-	new /obj/item/clothing/suit/sling(src)
+	new /obj/item/clothing/accessory/holster/leg(src)
+	new /obj/item/clothing/accessory/holster/leg(src)
+	new /obj/item/clothing/accessory/ranks/trooper(src)
+	new /obj/item/clothing/accessory/ranks/trooper(src)
+	new /obj/item/clothing/accessory/ranks/trooper(src)
+	new /obj/item/clothing/accessory/ranks/trooper(src)
+	new /obj/item/clothing/accessory/patches/blackshield_trooper(src)
+	new /obj/item/clothing/accessory/patches/blackshield_trooper(src)
+	new /obj/item/clothing/accessory/patches/blackshield_trooper(src)
+	new /obj/item/clothing/accessory/patches/blackshield_trooper(src)
+	new /obj/item/clothing/glasses/ballistic(src)
+	new /obj/item/clothing/glasses/ballistic(src)
+	new /obj/item/clothing/glasses/ballistic(src)
+	new /obj/item/clothing/glasses/ballistic(src)
 
 /obj/structure/closet/wardrobe/job/science_white
 	name = "science wardrobe"
@@ -344,10 +337,10 @@
 	new /obj/item/clothing/suit/storage/chaplain(src)
 	new /obj/item/clothing/head/rank/chaplain(src)
 	new /obj/item/clothing/under/bride_white(src)
-	new /obj/item/weapon/storage/fancy/candle_box(src)
-	new /obj/item/weapon/storage/fancy/candle_box(src)
-	new /obj/item/weapon/deck/tarot(src)
-	new /obj/item/weapon/talkingcrystal(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/deck/tarot(src)
+	new /obj/item/talkingcrystal(src)
 
 /*Other*/
 
@@ -374,7 +367,7 @@
 	new /obj/item/clothing/suit/armor/heavy(src)
 	new /obj/item/clothing/mask/balaclava/tactical(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
-	new /obj/item/weapon/storage/belt/security(src)
+	new /obj/item/storage/belt/security(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/gloves/thick(src)
 

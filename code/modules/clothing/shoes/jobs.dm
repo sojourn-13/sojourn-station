@@ -47,7 +47,7 @@
 	desc = "A pair of steel-toed utility workboots."
 	icon_state = "workboots"
 	item_state = "workboots"
-	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0) //Worse than jackboots and reinforced boots due to granting shock immunity to legs
 	siemens_coefficient = 0
 	can_hold_knife = 1
 
@@ -78,3 +78,49 @@
 	desc = "They're actually quite comfortable."
 	icon_state = "artist"
 	item_state = "artist_shoes"
+
+/obj/item/clothing/shoes/hermes_shoes
+	name = "Hermes Boots"
+	desc = "Boots used by the faithful to spread the word of God more quickly by small hidden wheels under the heels. Sadly not all that good at protecting your feet as other more robust boots."
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_GOLD = 3)
+	icon_state = "hermes"
+	item_state = "hermes"
+	slowdown = SHOES_SLOWDOWN - 0.1 //10% speed buff
+	can_hold_knife = 1//Still boots
+	price_tag = 120
+
+/obj/item/clothing/shoes/hunterboots
+    name = "Hunter Boots"
+    desc = "A pair of shin high boots made of tahca or mukhwa leather. The neck is adorned with fur and what seem to be some sort of smooth scales. \
+            They fit your feet snuggly, you could run in these forever."
+    icon_state = "hunterboots"
+    item_state = "hunterboots"
+    force = WEAPON_FORCE_HARMLESS
+    armor = list(melee = 20, bullet = 5, energy = 10, bomb = 5, bio = 25, rad = 5)
+    siemens_coefficient = 0.6
+    price_tag = 200
+    can_hold_knife = 1
+
+/obj/item/clothing/shoes/hunterboots/verb/toggle_style()
+    set name = "Adjust Style"
+    set category = "Object"
+    set src in usr
+
+    if(!isliving(loc))
+        return
+
+    var/mob/M = usr
+    var/list/options = list()
+    options["Tahca Hide boots"] = "hunterboots"
+    options["Mukhwa Leather boots"] = "hunterboots_alt"
+
+    var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+    if(src && choice && !M.incapacitated() && Adjacent(M))
+        icon_state = options[choice]
+        to_chat(M, "You adjusted your boot's style into [choice] mode.")
+        update_icon()
+        update_wear_icon()
+        usr.update_action_buttons()
+        return 1

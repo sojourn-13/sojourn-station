@@ -1,4 +1,4 @@
-#define CRUCIFORM_TYPE obj/item/weapon/implant/core_implant/cruciform
+#define CRUCIFORM_TYPE obj/item/implant/core_implant/cruciform
 
 GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
@@ -19,8 +19,10 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	desc = "Building needs mainly faith but resources as well. Find out what it takes."
 	power = 5
 	category = "Construction"
+	nutri_cost = 10
+	blood_cost = 10
 
-/datum/ritual/cruciform/priest/blueprint_check/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C, list/targets)
+/datum/ritual/cruciform/priest/blueprint_check/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
 	var/datum/nt_blueprint/blueprint = GLOB.nt_blueprints[construction_key]
 	var/list/listed_components = list()
@@ -30,6 +32,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		listed_components += list("[blueprint.materials[placeholder]] [initial(placeholder.name)]")
 	to_chat(user, SPAN_NOTICE("[blueprint.name] requires: [english_list(listed_components)]."))
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 
 /datum/ritual/cruciform/priest/construction
 	name = "Manifestation"
@@ -37,8 +45,11 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	desc = "Build and expand. Shape your faith into something more sensible."
 	power = 40
 	category = "Construction"
+	nutri_cost = 25
+	blood_cost = 25
 
-/datum/ritual/cruciform/priest/construction/perform(mob/living/carbon/human/user, obj/item/weapon/implant/core_implant/C, list/targets)
+
+/datum/ritual/cruciform/priest/construction/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
 	var/datum/nt_blueprint/blueprint = GLOB.nt_blueprints[construction_key]
 	var/turf/target_turf = get_step(user,user.dir)
@@ -50,6 +61,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		return
 
 	user.visible_message(SPAN_NOTICE("You see as [user] passes his hands over something."),SPAN_NOTICE("You see your faith take physical form as you concentrate on [blueprint.name] image"))
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
 
 	var/obj/effect/overlay/nt_construction/effect = new(target_turf, blueprint.build_time)
 
@@ -72,7 +89,6 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	var/build_path = blueprint.build_path
 	new build_path(target_turf)
 
-
 /datum/ritual/cruciform/priest/construction/proc/items_check(mob/user,turf/target, datum/nt_blueprint/blueprint)
 	var/list/turf_contents = target.contents
 
@@ -90,6 +106,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			if(stacked.amount < required_amount)
 				return FALSE
 	return TRUE
+
 /datum/nt_blueprint/
 	var/name = "Report me"
 	var/build_path
@@ -109,10 +126,30 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	materials = list(
 		/obj/item/stack/material/steel = 16,
 		/obj/item/stack/material/plastic = 4,
-		/obj/item/stack/material/plasteel = 2,
+		/obj/item/stack/material/plasteel = 2
 	)
 	build_time = 5 SECONDS
 
+
+//For making mobs
+/datum/nt_blueprint/mob
+
+/datum/nt_blueprint/mob/rook
+	name = "Rook Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/rook
+	materials = list(
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 10,
+		/obj/item/stack/material/gold = 10,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/biomatter = 30,
+		/obj/item/stack/material/diamond = 1,
+		/obj/item/book/ritual/cruciform = 1 //Limiting factor
+	)
+	build_time = 20 SECONDS //We dont want to make these in combat
+
+//For making machinery
 /datum/nt_blueprint/machinery
 
 /datum/nt_blueprint/machinery/obelisk
@@ -144,7 +181,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/steel = 10,
 		/obj/item/stack/material/glass = 2,
 		/obj/item/stack/material/silver = 6,
-		/obj/item/weapon/storage/toolbox = 1
+		/obj/item/storage/toolbox = 1
 	)
 	build_time = 5 SECONDS
 /datum/nt_blueprint/machinery/solidifier
@@ -156,6 +193,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/structure/reagent_dispensers/biomatter = 1
 	)
 	build_time = 9 SECONDS
+
 //Notice: We don't use them on Soj but its kept here for posterity. -Kaz
 //cloner
 /*
@@ -169,6 +207,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/glass/reinforced = 10,
 	)
 	build_time = 10 SECONDS
+
 /datum/nt_blueprint/machinery/reader
 	name = "Cruciform Reader"
 	build_path = /obj/machinery/neotheology/reader
@@ -179,6 +218,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/CRUCIFORM_TYPE = 1
 	)
 	build_time = 10 SECONDS
+
 /datum/nt_blueprint/machinery/biocan
 	name = "Biomass tank"
 	build_path = /obj/machinery/neotheology/biomass_container
@@ -189,6 +229,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	)
 	build_time = 8 SECONDS
 */
+
 //generator
 /datum/nt_blueprint/machinery/biogen
 	name = "Biomatter Power Generator"
@@ -201,6 +242,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/structure/reagent_dispensers/biomatter = 1
 	)
 	build_time = 15 SECONDS
+
 /datum/nt_blueprint/machinery/biogen_console
 	name = "Biomatter Power Generator: Console"
 	build_path = /obj/machinery/multistructure/biogenerator_part/console
@@ -210,14 +252,16 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/cable_coil = 30 //! TODO: proper recipe
 	)
 	build_time = 6 SECONDS
+
 /datum/nt_blueprint/machinery/biogen_port
 	name = "Biomatter Power Generator: Port"
 	build_path = /obj/machinery/multistructure/biogenerator_part/port
 	materials = list(
 		/obj/item/stack/material/steel = 10,
-		/obj/item/weapon/reagent_containers/glass/bucket = 1
+		/obj/item/reagent_containers/glass/bucket = 1
 	)
 	build_time = 5 SECONDS
+
 //bioreactor
 /datum/nt_blueprint/machinery/bioreactor_loader
 	name = "Biomatter Reactor: Loader"
@@ -232,7 +276,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 /datum/nt_blueprint/machinery/bioreactor_metrics
 	name = "Biomatter Reactor: Metrics"
-	build_path = /obj/machinery/multistructure/biogenerator_part/console
+	build_path = /obj/machinery/multistructure/bioreactor_part/console
 	materials = list(
 		/obj/item/stack/material/steel = 2,
 		/obj/item/stack/material/silver = 5,
@@ -240,14 +284,16 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/cable_coil = 30 //! TODO: proper recipe
 	)
 	build_time = 7 SECONDS
+
 /datum/nt_blueprint/machinery/bioreactor_port
 	name = "Biomatter Reactor: Port"
 	build_path = /obj/machinery/multistructure/bioreactor_part/bioport
 	materials = list(
 		/obj/item/stack/material/silver = 5,
-		/obj/item/weapon/reagent_containers/glass/bucket = 1
+		/obj/item/reagent_containers/glass/bucket = 1
 	)
 	build_time = 6 SECONDS
+
 /datum/nt_blueprint/machinery/bioreactor_biotank
 	name = "Biomatter Reactor: Tank"
 	build_path = /obj/machinery/multistructure/bioreactor_part/biotank_platform
@@ -257,6 +303,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/structure/reagent_dispensers/biomatter/large = 1
 	)
 	build_time = 6 SECONDS
+
 /datum/nt_blueprint/machinery/bioreactor_unloader
 	name = "Biomatter Reactor: Unloader"
 	build_path = /obj/machinery/multistructure/bioreactor_part/unloader
@@ -266,11 +313,22 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/structure/reagent_dispensers/biomatter = 1
 	)
 	build_time = 8 SECONDS
+
+/datum/nt_blueprint/machinery/bioreactor_unloader
+	name = "Biomatter Reactor: Bioreactor Platform"
+	build_path = /obj/machinery/multistructure/bioreactor_part/platform
+	materials = list(
+		/obj/item/stack/material/steel = 10,
+		/obj/item/stack/rods = 2
+	)
+	build_time = 8 SECONDS
+
 /datum/nt_blueprint/machinery/bioreactor_platform
-	name = "Biomatter Reactor: Platform"
+	name = "Biomatter Reactor: Biomatter Canister Platform"
 	build_path = /obj/machinery/multistructure/bioreactor_part/biotank_platform
 	materials = list(
 		/obj/item/stack/material/steel = 10,
+		/obj/item/stack/material/plastic = 4,
 		/obj/item/stack/tile/floor = 1
 	)
 	build_time = 8 SECONDS

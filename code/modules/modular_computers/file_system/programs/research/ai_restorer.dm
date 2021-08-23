@@ -12,6 +12,7 @@
 	available_on_ntnet = 1
 	nanomodule_path = /datum/nano_module/program/computer_aidiag/
 	var/restoring = 0
+	usage_flags = PROGRAM_CONSOLE
 
 /datum/computer_file/program/aidiag/proc/get_ai()
 	if(computer && computer.ai_slot && computer.ai_slot.check_functionality() && computer.ai_slot.enabled && computer.ai_slot.stored_card && computer.ai_slot.stored_card.carded_ai)
@@ -48,10 +49,10 @@
 		A.laws.clear_supplied_laws()
 		to_chat(A, "<span class='danger'>Non-core laws reset.</span>")
 		return 1
-	if(href_list["PRG_uploadDefault"])
-		A.laws = new maps_data.default_law_type
-		to_chat(A, "<span class='danger'>All laws purged. Default lawset uploaded.</span>")
-		return 1
+//	if(href_list["PRG_uploadDefault"])
+//		A.laws = new maps_data.default_law_type
+//		to_chat(A, "<span class='danger'>All laws purged. Default lawset uploaded.</span>")
+//		return 1
 	if(href_list["PRG_addCustomSuppliedLaw"])
 		var/law_to_add = sanitize(input("Please enter a new law for the AI.", "Custom Law Entry"))
 		var/sector = input("Please enter the priority for your new law. Can only write to law sectors 15 and above.", "Law Priority (15+)") as num
@@ -77,7 +78,7 @@
 		A.switch_from_dead_to_living_mob_list()
 		A.add_ai_verbs()
 		A.update_icon()
-		var/obj/item/weapon/aicard/AC = A.loc
+		var/obj/item/device/aicard/AC = A.loc
 		if(AC)
 			AC.update_icon()
 	// Finished restoring

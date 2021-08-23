@@ -1,6 +1,6 @@
-/obj/item/weapon/gun/projectile/clarissa
+/obj/item/gun/projectile/clarissa
 	name = "\"Clarissa\" pistol"
-	desc = "A small, easily concealable, but somewhat underpowered gun. Uses .35 rounds."
+	desc = "A small, easily concealable, but somewhat underpowered gun produced by \"H&S\" as a preciser to the \"Giskard\". Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
 	icon_state = "clarissa"
 	item_state = "clarissa"
@@ -9,16 +9,16 @@
 	can_dual = TRUE
 	silenced = 0
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 450
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_PLASTIC = 6)
+	price_tag = 250
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_H_PISTOL
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	damage_multiplier = 0.7
 	recoil_buildup = 2 //weakest gun in the damn game
 
-/obj/item/weapon/gun/projectile/clarissa/update_icon()
+/obj/item/gun/projectile/clarissa/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -37,7 +37,7 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/clarissa/makarov
+/obj/item/gun/projectile/clarissa/makarov
 	name = "\"Makarov\" pistol"
 	desc = "Old-designed pistol used by space communists. Small and easily concealable. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/makarov.dmi'

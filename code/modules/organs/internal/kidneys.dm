@@ -9,6 +9,7 @@
 	oxygen_req = 2.5
 	nutriment_req = 2
 	price_tag = 1500
+	w_class =  ITEM_SIZE_TINY
 
 /obj/item/organ/internal/kidney/left
 /obj/item/organ/internal/kidney/right
@@ -23,3 +24,16 @@
 
 /obj/item/organ/internal/kidney/right/cindarite
 	icon_state = "kidney_right_cindar"
+
+/obj/item/organ/internal/kidney/prosthetic
+	name = "prosthetic kidneys"
+	desc = "Prosthetic kindeys, doesn't work as well as the real deal."
+	icon_state = "kidneys-prosthetic"
+	price_tag = 100
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1)
+	organ_efficiency = list(OP_KIDNEYS = 50)
+
+/obj/item/organ/internal/kidney/prosthetic/left
+/obj/item/organ/internal/kidney/prosthetic/right
+	icon_state = "kidneys-prosthetic2"

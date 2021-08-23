@@ -1,34 +1,37 @@
 /datum/design/autolathe/tool/crowbar
 	name = "crowbar"
-	build_path = /obj/item/weapon/tool/crowbar
+	build_path = /obj/item/tool/crowbar
 
 /datum/design/autolathe/tool/crowbar_onestar
 	name = "greyson positronic crowbar"
-	build_path = /obj/item/weapon/tool/crowbar/onestar
+	build_path = /obj/item/tool/crowbar/onestar
 
 /datum/design/autolathe/tool/multitool
 	name = "multitool"
-	build_path = /obj/item/weapon/tool/multitool
+	build_path = /obj/item/tool/multitool
 
 /datum/design/autolathe/tool/multitool/advanced
 	name = "advanced multitool"
-	build_path = /obj/item/weapon/tool/multitool/advanced
+	build_path = /obj/item/tool/multitool/advanced
+
+/datum/design/autolathe/tool/multitool/multitool_onestar
+	name = "greyson positronic multitool"
+	build_path = /obj/item/tool/onestar_multitool
 
 /datum/design/autolathe/tool/weldertool
 	name = "welding tool"
-	build_path = /obj/item/weapon/tool/weldingtool
+	build_path = /obj/item/tool/weldingtool
 
 /datum/design/autolathe/tool/weldingtool/advanced
 	name = "advanced welding tool"
-	build_path = /obj/item/weapon/tool/weldingtool/advanced
+	build_path = /obj/item/tool/weldingtool/advanced
 
 /datum/design/autolathe/tool/weldertool_onestar
 	name = "greyson positronic welding tool"
-	build_path = /obj/item/weapon/tool/weldingtool/onestar
+	build_path = /obj/item/tool/weldingtool/onestar
 
 /datum/design/autolathe/tool/weldermask
 	name = "welding mask"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
 	build_path = /obj/item/clothing/head/welding
 
 /datum/design/autolathe/tool/weldinggoggles
@@ -37,179 +40,212 @@
 
 /datum/design/autolathe/tool/screwdriver
 	name = "screwdriver"
-	build_path = /obj/item/weapon/tool/screwdriver
+	build_path = /obj/item/tool/screwdriver
 
 /datum/design/autolathe/tool/electric_screwdriver
 	name = "electric screwdriver"
-	build_path = /obj/item/weapon/tool/screwdriver/electric
+	build_path = /obj/item/tool/screwdriver/electric
 
 /datum/design/autolathe/tool/combi_driver
-	name = "combi driver"
-	build_path = /obj/item/weapon/tool/screwdriver/combi_driver
+	name = "combination drill"
+	build_path = /obj/item/tool/screwdriver/combi_driver
 
 /datum/design/autolathe/tool/combi_driver_onestar
-	name = "greyson positronic combi driver"
-	build_path = /obj/item/weapon/tool/screwdriver/combi_driver/onestar
+	name = "greyson positronic combination drill"
+	build_path = /obj/item/tool/screwdriver/combi_driver/onestar
 
 /datum/design/autolathe/tool/wirecutters
-	name = "wirecutters"
-	build_path = /obj/item/weapon/tool/wirecutters
+	name = "wire cutters"
+	build_path = /obj/item/tool/wirecutters
 
 /datum/design/autolathe/tool/pliers
 	name = "pliers"
-	build_path = /obj/item/weapon/tool/wirecutters/pliers
+	build_path = /obj/item/tool/wirecutters/pliers
+
+/datum/design/autolathe/tool/onestar_pliers
+	name = "greyson positronic pliers"
+	build_path = /obj/item/tool/wirecutters/onestar_pliers
 
 /datum/design/autolathe/tool/ducttape
 	name = "roll of duct tape"
-	build_path = /obj/item/weapon/tool/tape_roll
+	build_path = /obj/item/tool/tape_roll
 
 /datum/design/autolathe/tool/ducttape/fiber
 	name = "roll of fiber"
-	build_path = /obj/item/weapon/tool/tape_roll/fiber
+	build_path = /obj/item/tool/tape_roll/fiber
 
 /datum/design/autolathe/tool/ducttape/glue
 	name = "glue bucket"
-	build_path = /obj/item/weapon/tool/tape_roll/glue
+	build_path = /obj/item/tool/tape_roll/glue
 
 /datum/design/autolathe/tool/armature_cutter
 	name = "armature cutter"
-	build_path = /obj/item/weapon/tool/wirecutters/armature
+	build_path = /obj/item/tool/wirecutters/armature
 
 /datum/design/autolathe/tool/wrench
 	name = "wrench"
-	build_path = /obj/item/weapon/tool/wrench
-
-/datum/design/autolathe/tool/hammer
-	build_path = /obj/item/weapon/tool/hammer
-
-/datum/design/autolathe/tool/powered_hammer
-	build_path = /obj/item/weapon/tool/hammer/powered_hammer
-
-/datum/design/autolathe/tool/hammer_onestar
-	build_path = /obj/item/weapon/tool/hammer/powered_hammer/onestar_hammer
-
-/datum/design/autolathe/tool/big_wrench
-	name = "big wrench"
-	build_path = /obj/item/weapon/tool/wrench/big_wrench
-
-/datum/design/autolathe/tool/pickaxe
-	name = "pickaxe"
-	build_path = /obj/item/weapon/tool/pickaxe
-
-/datum/design/autolathe/tool/jackhammer_onestar
-	name = "greyson positronic jackhammer"
-	build_path = /obj/item/weapon/tool/pickaxe/jackhammer/onestar
-
-/datum/design/autolathe/tool/drill_onestar
-	name = "greyson positronic drill"
-	build_path = /obj/item/weapon/tool/pickaxe/drill/onestar
-
-/datum/design/autolathe/tool/pickaxe_excavation
-	name = "excavation pick"
-	build_path = /obj/item/weapon/tool/pickaxe/excavation
-
-/datum/design/autolathe/tool/pickaxe_onestar
-	name = "greyson positronic pickaxe"
-	build_path = /obj/item/weapon/tool/pickaxe/onestar
-
-/datum/design/autolathe/tool/knife
-	name = "kitchen knife"
-	build_path = /obj/item/weapon/tool/knife
-
-/datum/design/autolathe/tool/tacknife
-	name = "tactical knife"
-	build_path = /obj/item/weapon/tool/knife/tacknife
-
-/datum/design/autolathe/tool/hatchet
-	name = "hatchet"
-	build_path = /obj/item/weapon/tool/hatchet
+	build_path = /obj/item/tool/wrench
 
 /datum/design/autolathe/tool/hammer
 	name = "hammer"
-	build_path = /obj/item/weapon/tool/hammer
+	build_path = /obj/item/tool/hammer
+
+/datum/design/autolathe/tool/powered_hammer
+	name = "powered sledgehammer"
+	build_path = /obj/item/tool/hammer/powered_hammer
+
+/datum/design/autolathe/tool/hammer_onestar
+	name = "greyson sledgehammer"
+	build_path = /obj/item/tool/hammer/powered_hammer/onestar_hammer
+
+/datum/design/autolathe/tool/big_wrench
+	name = "big wrench"
+	build_path = /obj/item/tool/wrench/big_wrench
+
+/datum/design/autolathe/tool/pickaxe
+	name = "pickaxe"
+	build_path = /obj/item/tool/pickaxe
+
+/datum/design/autolathe/tool/jackhammer_onestar
+	name = "greyson positronic jackhammer"
+	build_path = /obj/item/tool/pickaxe/jackhammer/onestar
+
+/datum/design/autolathe/tool/drill_onestar
+	name = "greyson positronic drill"
+	build_path = /obj/item/tool/pickaxe/drill/onestar
+
+/datum/design/autolathe/tool/pickaxe_excavation
+	name = "excavation pick"
+	build_path = /obj/item/tool/pickaxe/excavation
+
+/datum/design/autolathe/tool/pickaxe_onestar
+	name = "greyson positronic pickaxe"
+	build_path = /obj/item/tool/pickaxe/onestar
+
+/datum/design/autolathe/tool/knife
+	name = "kitchen knife"
+	build_path = /obj/item/tool/knife
+
+/datum/design/autolathe/tool/tacknife
+	name = "tactical knife"
+	build_path = /obj/item/tool/knife/tacknife
+
+/datum/design/autolathe/tool/hatchet
+	name = "hatchet"
+	build_path = /obj/item/tool/hatchet
 
 /datum/design/autolathe/tool/minihoe
 	name = "mini hoe"
-	build_path = /obj/item/weapon/tool/minihoe
+	build_path = /obj/item/tool/minihoe
 
 /datum/design/autolathe/tool/shovel
 	name = "shovel"
-	build_path = /obj/item/weapon/tool/shovel
+	build_path = /obj/item/tool/shovel
+
+/datum/design/autolathe/tool/onestar_shovel
+	name = "greyson positronic shovel"
+	build_path = /obj/item/tool/shovel/onestar_shovel
 
 /datum/design/autolathe/tool/combat_shovel
 	name = "combat shovel"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
-	build_path = /obj/item/weapon/tool/shovel/combat
+	build_path = /obj/item/tool/shovel/combat
 
 /datum/design/autolathe/tool/spade
 	name = "spade"
-	build_path = /obj/item/weapon/tool/shovel/spade
+	build_path = /obj/item/tool/shovel/spade
 
 /datum/design/autolathe/tool/shovel/power
-	build_path = /obj/item/weapon/tool/shovel/power
+	name = "power shovel 9000"
+	build_path = /obj/item/tool/shovel/power
 
 /datum/design/autolathe/tool/mop
 	name = "janitor's mop"
-	build_path = /obj/item/weapon/mop
+	build_path = /obj/item/mop
 
 /datum/design/autolathe/tool/scalpel
 	name = "scalpel"
-	build_path = /obj/item/weapon/tool/scalpel
+	build_path = /obj/item/tool/scalpel
+
+/datum/design/autolathe/tool/scalpel/advanced
+	name = "advanced scalpel"
+	build_path = /obj/item/tool/scalpel/advanced
 
 /datum/design/autolathe/tool/saw
 	name = "saw"
-	build_path = /obj/item/weapon/tool/saw
+	build_path = /obj/item/tool/saw
+
+/datum/design/autolathe/tool/onestar_saw
+	name = "greyson positronic saw"
+	build_path = /obj/item/tool/saw/onestar_saw
 
 /datum/design/autolathe/tool/circularsaw
 	name = "circular saw"
-	build_path = /obj/item/weapon/tool/saw/circular
+	build_path = /obj/item/tool/saw/circular
 
 /datum/design/autolathe/tool/advanced_circularsaw
 	name = "advanced circular saw"
-	build_path = /obj/item/weapon/tool/saw/circular/advanced
+	build_path = /obj/item/tool/saw/circular/advanced
 
 /datum/design/autolathe/tool/chainsaw
 	name = "chainsaw"
-	build_path = /obj/item/weapon/tool/saw/chain
+	build_path = /obj/item/tool/saw/chain
 
 /datum/design/autolathe/tool/hypersaw
-	build_path = /obj/item/weapon/tool/saw/hyper
+	name = "TM hypersaw"
+	build_path = /obj/item/tool/saw/hyper
 
 /datum/design/autolathe/tool/surgicaldrill
-	name = "surgical drill"
-	build_path = /obj/item/weapon/tool/surgicaldrill
+	name = "hand drill"
+	build_path = /obj/item/tool/surgicaldrill
+
+/datum/design/autolathe/tool/surgicaldrill/adv
+	name = "long-nose hand drill"
+	build_path = /obj/item/tool/surgicaldrill/adv
 
 /datum/design/autolathe/tool/retractor
 	name = "retractor"
-	build_path = /obj/item/weapon/tool/retractor
+	build_path = /obj/item/tool/retractor
 
 /datum/design/autolathe/tool/cautery
-	name = "cautery"
-	build_path = /obj/item/weapon/tool/cautery
+	name = "electrocautery"
+	build_path = /obj/item/tool/cautery
 
 /datum/design/autolathe/tool/bonesetter
-	name = "bonesetter"
-	build_path = /obj/item/weapon/tool/bonesetter
+	name = "bone setter"
+	build_path = /obj/item/tool/bonesetter
 
 /datum/design/autolathe/tool/hemostat
 	name = "hemostat"
-	build_path = /obj/item/weapon/tool/hemostat
+	build_path = /obj/item/tool/hemostat
 
 /datum/design/autolathe/tool/rcd
 	name = "rapid construction device"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
-	build_path = /obj/item/weapon/rcd
+	build_path = /obj/item/rcd
 
 /datum/design/autolathe/tool/rcd_ammo
 	name = "matter cartridge"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
-	build_path = /obj/item/weapon/rcd_ammo
+	build_path = /obj/item/rcd_ammo
 
 /datum/design/autolathe/tool/pneumatic_crowbar
 	name = "pneumatic crowbar"
-	build_type = AUTOLATHE | PROTOLATHE//so rnd can make them
-	build_path = /obj/item/weapon/tool/crowbar/pneumatic
+	build_path = /obj/item/tool/crowbar/pneumatic
 
 /datum/design/autolathe/tool/omni_surgery_onestar
-	name = "greyson positronic medmultitool"
-	build_path = /obj/item/weapon/tool/medmultitool
+	name = "greyson positronic medical multitool"
+	build_path = /obj/item/tool/medmultitool
+
+/datum/design/autolathe/tool/bonegel
+	name = "bone gel"
+	build_path = /obj/item/tool/tape_roll/bonegel
+
+/datum/design/autolathe/tool/hatton_ammo
+	name = "Artificer's Guild BT \"Hatton\" gas tube"
+	build_path = /obj/item/hatton_magazine
+
+/datum/design/autolathe/tool/mop
+	name = "Mop"
+	build_path = /obj/item/mop
+
+/datum/design/autolathe/tool/isprayer
+	name = "industrial chemical sprayer"
+	build_path = /obj/item/reagent_containers/spray/chemsprayer/industrial

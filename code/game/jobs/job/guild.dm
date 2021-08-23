@@ -28,8 +28,8 @@
 	)
 	description = "The Chief Executive Officer coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
 Your main objective, bluntly, is to make as much money as you can. Purchase and acquire goods, and sell them on for a profit.<br>\
-Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilise them well.<br>\
-The vendors found throughout the ship are also operated by your organisation. They make you money - ensure they are functional and well-stocked.<br>\
+Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
+The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
 There is a market for contraband and more unscrupulous services. Venturing into this area may prove profitable, but comes with risk.<br>\
 You do not receive a salary, but can fund yourself from the company account. Strike a balance between the needs of yourself and the wider company."
 
@@ -124,11 +124,11 @@ Accessed by elevator, the area contains an outpost with all the facilities to pr
 Whatever you dig up will go to the cargo department, and from then on it is the responsibility of others within Lonestar to sell it.<br>\
 The deep tunnels are far less dangerous than the wilderness, but pack well - disappearances are not unheard of."
 
-	duties = "Dig up ores and minerals to be processed into useable material.<br>\
+	duties = "Dig up ores and minerals to be processed into usable material.<br>\
 	Locate other valuables within the tunnels that may be turned to profit."
 
 	access = list(
-		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining,
+		access_maint_tunnels, access_mailsorting, access_mining,
 		access_mining_station
 	)
 

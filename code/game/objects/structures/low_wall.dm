@@ -42,7 +42,7 @@
 
 //Derelict tileset
 /obj/structure/low_wall/onestar
-	name = "greyson low wall"
+	name = "Greyson low wall"
 	wall_color = "#FFFFFF"
 	icon_state = "greyson"
 
@@ -417,7 +417,7 @@
 
 
 	//Hitting the wall with stuff
-	if(!istype(I,/obj/item/weapon/rcd) && !istype(I, /obj/item/weapon/reagent_containers))
+	if(!istype(I,/obj/item/rcd) && !istype(I, /obj/item/reagent_containers))
 		if(!I.force)
 			return attack_hand(user)
 		var/dam_threshhold = 150 //Integrity of Steel

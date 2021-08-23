@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/matter/launcher/nt_sprayer
+/obj/item/gun/matter/launcher/nt_sprayer
 	name = "cleansing carbine"
 	desc = "\"Old Testament\" brand cleansing carbine. Uses solid biomass as ammo and dispense cleansing liquid on hit. Despite many attempts, nobody is quite sure how it works."
 	icon_state = "nt_sprayer"
@@ -9,20 +9,20 @@
 	matter_type = MATERIAL_BIOMATTER
 	stored_matter = 0 //We do not print with free biomatter
 	projectile_cost = 0.5
-	projectile_type = /obj/item/weapon/arrow/cleansing
+	projectile_type = /obj/item/arrow/cleansing
 
 	init_firemodes = list(
-		list(mode_name="small", projectile_type=/obj/item/weapon/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 0.5),
-		list(mode_name="large", projectile_type=/obj/item/weapon/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 1.5),
+		list(mode_name="small", projectile_type=/obj/item/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 0.5),
+		list(mode_name="large", projectile_type=/obj/item/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 1.5),
 	)
 
-/obj/item/weapon/arrow/cleansing
+/obj/item/arrow/cleansing
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "toxin"
 	throwforce = 1
 	sharp = FALSE
 
-/obj/item/weapon/arrow/cleansing/throw_impact()
+/obj/item/arrow/cleansing/throw_impact()
 	..()
 
 	create_reagents(5)
@@ -32,7 +32,7 @@
 
 	qdel(src)
 
-/obj/item/weapon/gun/matter/launcher/nt_sprayer/mini
+/obj/item/gun/matter/launcher/nt_sprayer/mini
 	name = "\"Spot\" cleaning pistol"
 	desc = "The janitor's choice of cleaner. Uses cellulose based solution to clean upto 99% of dirt grime and oil, even comes with a sling to fit on your back."
 	icon_state = "si_sprayer"
@@ -50,13 +50,13 @@
 	projectile_cost = 1
 
 	init_firemodes = list(
-		list(mode_name="small", projectile_type=/obj/item/weapon/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 1),
-		list(mode_name="large", projectile_type=/obj/item/weapon/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 3),
+		list(mode_name="small", projectile_type=/obj/item/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 1),
+		list(mode_name="large", projectile_type=/obj/item/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 3),
 	)
 
-/obj/item/weapon/arrow/cleansing/bigger
+/obj/item/arrow/cleansing/bigger
 
-/obj/item/weapon/arrow/cleansing/bigger/throw_impact()
+/obj/item/arrow/cleansing/bigger/throw_impact()
 	..()
 
 	create_reagents(15)

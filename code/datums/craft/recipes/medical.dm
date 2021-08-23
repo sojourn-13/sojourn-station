@@ -7,12 +7,19 @@
 	result = /obj/item/stack/medical/bruise_pack/handmade
 	icon_state = "clothing"
 	steps = list(
-		list(/obj/item/clothing, 1, time = 30)
+		list(/obj/item/stack/material/cloth, 5, time = 15) // One sheet per stack
+	)
+
+/datum/craft_recipe/medical/silkointment
+	name = "spider silk ointment"
+	result = /obj/item/stack/medical/ointment/handmade
+	steps = list(
+		list(/obj/item/stack/material/silk, 5, 30) // One sheet per stack
 	)
 
 /datum/craft_recipe/medical/blood_pack
 	name = "blood pack"
-	result = /obj/item/weapon/reagent_containers/blood/empty
+	result = /obj/item/reagent_containers/blood/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC)
 	)
@@ -27,6 +34,16 @@
 	)
 	related_stats = list(STAT_COG, STAT_BIO, STAT_MEC)
 
+/datum/craft_recipe/medical/improsplint
+	name = "improvised splints"
+	result = /obj/item/stack/medical/splint/improvised
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD),
+		list(/obj/item/stack/cable_coil, 5, "time" = 5),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 10)
+	)
+	related_stats = list(STAT_BIO, STAT_MEC)
+
 /datum/craft_recipe/medical/makeshift_leg
 	name = "Junktech prosthetic left leg"
 	result = /obj/item/organ/external/robotic/junktech/l_leg
@@ -36,9 +53,9 @@
 		list(QUALITY_WELDING, 10, 10),
 		list(/obj/item/stack/cable_coil, 5, "time" = 0),
 		list(QUALITY_WIRE_CUTTING, 10, 10),
-		list(/obj/item/weapon/stock_parts/manipulator, 1),
+		list(/obj/item/stock_parts/manipulator, 1),
 		list(QUALITY_PULSING, 10, 10),
-		list(/obj/item/weapon/reagent_containers/glass/bucket, 1)
+		list(/obj/item/reagent_containers/glass/bucket, 1)
 	)
 	related_stats = list(STAT_MEC)
 
@@ -55,9 +72,9 @@
 		list(QUALITY_WELDING, 10, 10),
 		list(/obj/item/stack/cable_coil, 5, "time" = 0),
 		list(QUALITY_WIRE_CUTTING, 10, 10),
-		list(/obj/item/weapon/stock_parts/manipulator, 1),
+		list(/obj/item/stock_parts/manipulator, 1),
 		list(QUALITY_PULSING, 10, 10),
-		list(/obj/item/weapon/tool/knife/hook, 1)
+		list(/obj/item/tool/knife/hook, 1)
 	)
 	related_stats = list(STAT_MEC)
 

@@ -1,5 +1,8 @@
 /obj/machinery/portable_atmospherics/hydroponics/Process()
 
+	if (frozen == 1) // If the tray is frozen, it won't do anything.
+		return
+
 	// Handle nearby smoke if any.
 	for(var/obj/effect/effect/smoke/chem/smoke in view(1, src))
 		if(smoke.reagents.total_volume)
@@ -36,7 +39,7 @@
 		return
 
 	// Advance plant age.
-	if(prob(30)) age += 1 * HYDRO_SPEED_MULTIPLIER
+	if(prob(30*seed.get_trait(TRAIT_BOOSTED_GROWTH))) age += 1 * HYDRO_SPEED_MULTIPLIER
 
 	//Highly mutable plants have a chance of mutating every tick.
 	if(seed.get_trait(TRAIT_IMMUTABLE) == -1)

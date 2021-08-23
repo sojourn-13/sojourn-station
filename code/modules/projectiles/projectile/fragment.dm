@@ -21,3 +21,9 @@
 	embed = 0
 	damage_types = list(BRUTE = 16)
 	check_armour = ARMOR_BOMB
+
+/obj/item/projectile/bullet/pellet/fragment/rubber
+	damage_types = list(BRUTE = 1)
+	agony = 32
+	embed = FALSE
+	sharp = FALSE

@@ -71,9 +71,6 @@
 
 	return ..()
 
-/obj/item/stack/get_item_cost()
-	return amount * price_tag
-
 /obj/item/stack/examine(mob/user)
 	if(..(user, 1))
 		if(!uses_charge)
@@ -177,7 +174,7 @@
 			S.amount = produced
 			S.add_to_stacks(user)
 
-		if (istype(O, /obj/item/weapon/storage)) //BubbleWrap - so newly formed boxes are empty
+		if (istype(O, /obj/item/storage)) //BubbleWrap - so newly formed boxes are empty
 			for (var/obj/item/I in O)
 				qdel(I)
 
@@ -274,6 +271,7 @@
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(S)
 			if(blood_DNA)
+				LAZYINITLIST(S.blood_DNA)
 				S.blood_DNA |= blood_DNA
 		return transfer
 	return 0
@@ -296,7 +294,7 @@
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(newstack)
 			if(blood_DNA)
-				newstack.blood_DNA |= blood_DNA
+				newstack.blood_DNA = blood_DNA.Copy()
 		return newstack
 	return null
 

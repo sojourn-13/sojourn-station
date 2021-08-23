@@ -9,7 +9,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
@@ -17,9 +17,10 @@
 	min_oxy = 16 //Require atleast 16kPA oxygen
 	minbodytemp = 223		//Below -50 Degrees Celcius
 	maxbodytemp = 323	//Above 50 Degrees Celcius
-	holder_type = /obj/item/weapon/holder/cat
+	holder_type = /obj/item/holder/cat
 	mob_size = MOB_SMALL
 	possession_candidate = 1
+	colony_friend = TRUE
 
 	scan_range = 3//less aggressive about stealing food
 	metabolic_factor = 0.75
@@ -84,7 +85,7 @@
 						break//usually only kill one mouse per proc
 
 /mob/living/simple_animal/cat/beg(var/atom/thing, var/atom/holder)
-	visible_emote("licks its lips and hungrily glares at [holder]'s [thing.name]")
+	visible_emote("licks [get_gender() == MALE ? "his" : get_gender() == FEMALE ? "her" : "their"] lips and hungrily glares at [holder]'s [thing.name]")
 
 /mob/living/simple_animal/cat/Released()
 	//A thrown cat will immediately attack mice near where it lands
@@ -235,6 +236,8 @@
 	icon_state = "cat"
 	item_state =  "cat"
 	befriend_job = "Chief Biolab Overseer"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/cat/kitten
 	name = "kitten"
@@ -244,7 +247,7 @@
 	gender = NEUTER
 
 // Leaving this here for now.
-/obj/item/weapon/holder/cat/fluff/bones
+/obj/item/holder/cat/fluff/bones
 	name = "Bones"
 	desc = "It's Bones! Meow."
 	gender = MALE
@@ -257,9 +260,85 @@
 	gender = MALE
 	icon_state = "cat3"
 	item_state = "cat3"
-	holder_type = /obj/item/weapon/holder/cat/fluff/bones
+	holder_type = /obj/item/holder/cat/fluff/bones
 	var/friend_name = "Erstatz Vryroxes"
 
 /mob/living/simple_animal/cat/kitten/New()
 	gender = pick(MALE, FEMALE)
 	..()
+
+//Trilby
+
+/mob/living/simple_animal/cat/runtime
+	name = "Trilby"
+	real_name = "Trilby"
+	desc = "A bluespace denizen that purrs its way into our dimension when the very fabric of reality is teared apart."
+	icon_state = "runtimecat"
+	item_state = "runtimecat"
+	density = 0
+
+	status_flags = GODMODE // Bluespace cat
+	min_oxy = 0
+	minbodytemp = 0
+	maxbodytemp = INFINITY
+	autoseek_food = 0
+	metabolic_factor = 0.0
+	harm_intent_damage = 0
+	melee_damage_lower = 0
+	melee_damage_upper = 0
+	attacktext = "slashed"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
+/mob/living/simple_animal/cat/runtime/New(loc)
+	..(loc)
+	playsound(loc, 'sound/effects/teleport.ogg', 50, 1)
+
+/mob/living/simple_animal/cat/runtime/attackby(var/obj/item/O, var/mob/user)
+	visible_message(SPAN_DANGER("[user]'s [O.name] harmlessly passes through \the [src]."))
+
+/mob/living/simple_animal/cat/runtime/MouseDrop(atom/over_object)
+	return
+
+/mob/living/simple_animal/cat/runtime/attack_hand(mob/living/carbon/human/M as mob)
+
+	switch(M.a_intent)
+
+		if(I_HELP)  // Pet the cat
+			M.visible_message(SPAN_NOTICE("[M] pets \the [src]."))
+
+		if(I_DISARM)
+			M.visible_message(SPAN_NOTICE("[M]'s hand passes through \the [src]."))
+			M.do_attack_animation(src)
+
+		if(I_GRAB)
+			if (M == src)
+				return
+			if (!(status_flags & CANPUSH))
+				return
+			M.visible_message(SPAN_NOTICE("[M]'s hand passes through \the [src]."))
+			M.do_attack_animation(src)
+
+		if(I_HURT)
+			M.visible_message(SPAN_WARNING("[M] tries to kick \the [src] but passes through."))
+			M.do_attack_animation(src)
+			visible_message(SPAN_WARNING("\The [src] hisses."))
+
+	return
+
+/mob/living/simple_animal/cat/runtime/set_flee_target(atom/A)
+	return
+
+/mob/living/simple_animal/cat/runtime/bullet_act(var/obj/item/projectile/proj)
+	return PROJECTILE_FORCE_MISS
+
+/mob/living/simple_animal/cat/runtime/ex_act(severity)
+	return
+
+/mob/living/simple_animal/cat/runtime/singularity_act()
+	return
+
+/mob/living/simple_animal/cat/runtime/start_pulling(var/atom/movable/AM)
+	to_chat(src, SPAN_WARNING("Your hand passes through \the [src]."))
+	return

@@ -62,6 +62,8 @@
 #define FORM_LIZARD_TGSMOOTH    "Smooth-Snouted Lizard"
 #define FORM_VULPINE			"Vulpine"
 #define FORM_FENNEC				"Fennec"
+#define FORM_MOTH				"Moth"
+#define FORM_MOTH_WHITE			"Moth (Colorable)"
 #define FORM_NARAMAD			"Naramad"
 #define FORM_SLIME				"Slime"
 #define FORM_AVIAN				"Avian"
@@ -77,8 +79,14 @@
 #define FORM_CHTMANT			"Cht'mant"
 #define FORM_CINDAR				"Cindarite"
 #define FORM_OPIFEX				"Opifex"
-#define FORM_SOTSYNTH			"Soteria Full Body Positronic"
-#define FORM_AGSYNTH			"Artificer Guild Full Body Positronic"
+#define FORM_SOTSYNTH			"Soteria Synthetic"
+#define FORM_AGSYNTH			"Artificer Guild Synthetic"
+#define FORM_BSSYNTH			"Blackshield Synthetic"
+#define FORM_CHURCHSYNTH		"Absolute Synthetic"
+#define FORM_NASHEF				"Nashef-Agunabi"
+#define FORM_FBP				"Full Body Prosthetic"
+#define FORM_FOLKEN				"Folken"
+#define FORM_MYCUS				"Mycus"
 
 #define FORM_BIRD				"Avian"
 
@@ -89,7 +97,7 @@
 #define FORM_VOX_GRAY			"Gray Vox"
 #define FORM_VOX_LIME			"Lime Vox"
 
-#define FORM_VOX_BONEY			"Boney Vox"
+#define FORM_VOX_BONEY			"Bony Vox"
 #define FORM_VOX_TECHY			"Techy Vox"
 
 //

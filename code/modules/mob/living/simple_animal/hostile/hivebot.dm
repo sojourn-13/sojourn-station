@@ -26,9 +26,19 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	move_to_delay = 5
+	leather_amount = 0
+	bones_amount = 0
 	//Drops
-	var/drop1 = /obj/item/weapon/scrap_lump
+	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
+
+/mob/living/simple_animal/hostile/hivebot/emp_act(severity)
+	..()
+	adjustFireLoss(rand(20,30))
+	if(rapid)
+		rapid = FALSE
+	if(prob(95) && ranged)
+		ranged = FALSE
 
 /mob/living/simple_animal/hostile/hivebot/range
 	name = "Malfunctioning Autonomous Sentinel"
@@ -69,7 +79,7 @@
 
 	//Death and harvest vars
 	meat_amount = 3
-	meat_type = /obj/item/weapon/scrap_lump
+	meat_type = /obj/item/scrap_lump
 	blood_from_harvest = /obj/effect/decal/cleanable/blood/gibs/robot
 	gibspawner = /obj/effect/gibspawner/robot
 
@@ -88,9 +98,77 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	move_to_delay = 5
 
+/mob/living/simple_animal/hostile/republicon/emp_act(severity)
+	..()
+	adjustFireLoss(rand(80,130))
+	if(rapid)
+		rapid = FALSE
+	if(prob(95) && ranged)
+		ranged = FALSE
+
 /mob/living/simple_animal/hostile/republicon/range
 	name = "Forgotten Sentinel"
 	desc = "The creators of the malfunctioning autonomous drones, having long since gone haywire themselves they destroy anything they find. This one is equipped with a heavy laser cannon."
 	icon_state = "republicon-armed"
 	icon_dead = "republicon-armed_dead"
 	ranged = 1
+
+/mob/living/carbon/superior_animal/sentinal_seeker
+	name = "Forgotten Seeker"
+	desc = "An ancient and dangerous machine from a long forgotten time with a heavily armored body can shrug off bullets and melee strikes with ease. At some point, it had a purpose, now it has gone \
+	mad and seeks only death, yours and its own."
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "seeker"
+	icon_dead = "seeker_dead"
+	pass_flags = PASSTABLE
+
+	mob_size = MOB_LARGE
+
+	attack_sound = 'sound/weapons/rapidslice.ogg'
+	speak_emote = list("screams")
+	emote_see = list("sharpens its knives carefully.", "shudders and shakes for a moment!", "gushes red ichor!")
+	deathmessage = "collapses into a pile of scrap!"
+	speak_chance = 5
+
+	move_to_delay = 1
+	turns_per_move = 4
+	see_in_dark = 10
+
+	melee_damage_lower = 35
+	melee_damage_upper = 40
+/*
+	armor = list(
+		melee = 40,
+		bullet = 40,
+		energy = 10,
+		bomb = 60,
+		bio = 0,
+		rad = 0,
+		agony = 0
+	)
+*/
+	health = 900
+	maxHealth = 900
+	attacktext = "sliced"
+	faction = "hivebot"
+	viewRange = 14
+	default_pixel_x = -16
+	randpixel = 0
+
+	//Death and harvest vars
+	meat_amount = 3
+	meat_type = /obj/item/scrap_lump
+	gibspawner = /obj/effect/gibspawner/robot
+	leather_amount = 0
+	bones_amount = 0
+	fleshcolor = "#080808"
+	bloodcolor = "#080808"
+
+	light_range = 6
+	light_color = COLOR_LIGHTING_RED_BRIGHT
+	mob_classification = CLASSIFICATION_SYNTHETIC
+
+/mob/living/carbon/superior_animal/sentinal_seeker/New()
+	..()
+	pixel_x = -16
+	pixel_y = 0

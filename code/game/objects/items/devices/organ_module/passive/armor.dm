@@ -17,6 +17,7 @@
 	allowed_organs = list(BP_CHEST)
 	icon_state = "orgarmor-chest"
 	matter = list(MATERIAL_BIOMATTER = 30)
+	is_organic_module = TRUE
 
 /obj/item/organ_module/armor/onInstall(obj/item/organ/external/E)
 	E.brute_mod -= 0.3
@@ -24,11 +25,11 @@
 /obj/item/organ_module/armor/onRemove(obj/item/organ/external/E)
 	E.brute_mod += 0.3
 
-/obj/item/weapon/biogoop/armor
+/obj/item/biogoop/armor
 	name = "incomplete exeskeleton implant"
 
 
-/obj/item/weapon/biogoop/armor/attackby(obj/item/I, mob/user)
+/obj/item/biogoop/armor/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
 		var/obj/item/stack/S = I
 		if(S.use(1))

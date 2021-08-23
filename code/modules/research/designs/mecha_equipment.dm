@@ -31,7 +31,7 @@
 
 /datum/design/research/item/mecha/flaregun
 	name = "Flare launcher"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flare
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare
 
 /datum/design/research/item/mecha/sleeper
 	name = "Sleeper"
@@ -57,24 +57,36 @@
 
 //obj/item/mecha_parts/mecha_equipment/repair_droid,
 
+/datum/design/research/item/mecha/ammo/lmg
+	name = "Ultra AC 2 ammunition box"
+	build_path = /obj/item/mech_ammo_box/lmg
+	starts_unlocked = TRUE
+	category = "Ammo"
+
+/datum/design/research/item/mecha/ammo/scattershot
+	name = "LBX AC 10 ammunition box"
+	build_path = /obj/item/mech_ammo_box/scattershot
+	starts_unlocked = TRUE
+	category = "Ammo"
+
 /datum/design/research/item/mecha/taser
 	name = "PBT \"Pacifier\" mounted taser"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	starts_unlocked = TRUE
 
 /datum/design/research/item/mecha/lmg
 	name = "Ultra AC 2"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg
 	starts_unlocked = TRUE
 
 /datum/design/research/item/mecha/lmg/scrap
 	name = "Jury-Rigged Lead Repeater"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/scrap
 	starts_unlocked = TRUE
 
 /datum/design/research/item/mecha/scattershot/flak
 	name = "Jury-Rigged Flak Cannon"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/flak
 	starts_unlocked = TRUE
 
 /datum/design/research/item/mecha/weapon
@@ -82,29 +94,33 @@
 // *** Weapon modules
 /datum/design/research/item/mecha/weapon/scattershot
 	name = "LBX AC 10 \"Scattershot\""
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
 
 /datum/design/research/item/mecha/weapon/laser
 	name = "CH-PS \"Immolator\" laser"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
 
 /datum/design/research/item/mecha/weapon/laser_rigged
 	name = "Jury-rigged welder-laser"
 	desc = "Allows for the construction of a welder-laser assembly package for non-combat exosuits."
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/riggedlaser
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser
 	starts_unlocked = TRUE
 
 /datum/design/research/item/mecha/weapon/laser_heavy
 	name = "CH-LC \"Solaris\" laser cannon"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
+
+/datum/design/research/item/mecha/weapon/hydrogen
+	name = "Mech-mounted Hydrogen-Plasma Cannon"
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/hydrogen
 
 /datum/design/research/item/mecha/weapon/ion
-	name = "mkIV ion heavy cannon"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+	name = "MkIV ion heavy cannon"
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
 
 /datum/design/research/item/mecha/weapon/grenade_launcher
 	name = "SGL-6 grenade launcher"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
 
 // *** Nonweapon modules
 /datum/design/research/item/mecha/wormhole_gen
@@ -129,8 +145,13 @@
 
 /datum/design/research/item/mecha/repair_droid
 	name = "Repair droid"
-	desc = "Automated repair droid, exosuits' best companion. BEEP BOOP"
+	desc = "Automated repair droid, exosuits' best companion. BEEP BOOP!"
 	build_path = /obj/item/mecha_parts/mecha_equipment/repair_droid
+
+/datum/design/research/item/mecha/shield_droid
+	name = "Shield droid"
+	desc = "Automated sheild droid, exosuits' second best companion. BEEP BOOP!"
+	build_path = /obj/item/mecha_parts/mecha_equipment/combat_shield
 
 /datum/design/research/item/mecha/plasma_generator
 	desc = "Plasma reactor"

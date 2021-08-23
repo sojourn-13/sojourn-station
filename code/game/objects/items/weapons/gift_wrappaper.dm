@@ -7,14 +7,14 @@
 /*
  * Gifts
  */
-/obj/item/weapon/a_gift
+/obj/item/a_gift
 	name = "gift"
 	desc = "PRESENTS!!!! eek!"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "gift1"
 	item_state = "gift1"
 
-/obj/item/weapon/a_gift/New()
+/obj/item/a_gift/New()
 	..()
 	pixel_x = rand(-10,10)
 	pixel_y = rand(-10,10)
@@ -23,33 +23,33 @@
 	else
 		icon_state = "gift[pick(1, 2, 3)]"
 
-/obj/item/weapon/a_gift/ex_act()
+/obj/item/a_gift/ex_act()
 	qdel(src)
 	return
 
-/obj/item/weapon/a_gift/attack_self(mob/M as mob)
+/obj/item/a_gift/attack_self(mob/M as mob)
 	var/gift_type = pick(
-		/obj/item/weapon/storage/wallet,
-		/obj/item/weapon/storage/photo_album,
-		/obj/item/weapon/storage/box/snappops,
-		/obj/item/weapon/storage/fancy/crayons,
-		/obj/item/weapon/storage/backpack/holding,
-		/obj/item/weapon/storage/belt/champion,
-		/obj/item/weapon/soap/deluxe,
-		/obj/item/weapon/pen/invisible,
-//		/obj/item/weapon/lipstick/jade,
-		/obj/item/weapon/grenade/smokebomb,
-		/obj/item/weapon/corncob,
-		/obj/item/weapon/contraband/poster,
-		/obj/item/weapon/book/manual/barman_recipes,
-		/obj/item/weapon/book/manual/chef_recipes,
-		/obj/item/weapon/bikehorn,
-		/obj/item/weapon/beach_ball,
-		/obj/item/weapon/beach_ball/holoball,
+		/obj/item/storage/wallet,
+		/obj/item/storage/photo_album,
+		/obj/item/storage/box/snappops,
+		/obj/item/storage/fancy/crayons,
+		/obj/item/storage/backpack/holding,
+		/obj/item/storage/belt/champion,
+		/obj/item/soap/deluxe,
+		/obj/item/pen/invisible,
+//		/obj/item/lipstick/jade,
+		/obj/item/grenade/smokebomb,
+		/obj/item/corncob,
+		/obj/item/contraband/poster,
+		/obj/item/book/manual/barman_recipes,
+		/obj/item/book/manual/chef_recipes,
+		/obj/item/bikehorn,
+		/obj/item/beach_ball,
+		/obj/item/beach_ball/holoball,
 		/obj/item/toy/junk/balloon,
 		/obj/item/toy/junk/blink,
 		/obj/item/toy/weapon/crossbow,
-		/obj/item/weapon/gun/projectile/revolver/capgun,
+		/obj/item/gun/projectile/revolver/capgun,
 		/obj/item/toy/weapon/katana,
 		/obj/item/toy/figure/mecha/deathripley,
 		/obj/item/toy/figure/mecha/durand,
@@ -64,11 +64,11 @@
 		/obj/item/toy/figure/mecha/seraph,
 		/obj/item/toy/junk/spinningtoy,
 		/obj/item/toy/weapon/sword,
-		/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus,
-		/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris,
 		/obj/item/device/paicard,
 		/obj/item/device/violin,
-		/obj/item/weapon/storage/belt/utility/full,
+		/obj/item/storage/belt/utility/full,
 		/obj/item/clothing/accessory/tie/yellow)
 
 	if(!ispath(gift_type,/obj/item))	return
@@ -80,7 +80,7 @@
 	qdel(src)
 	return
 
-/obj/item/weapon/gift
+/obj/item/gift
 	name = "gift"
 	desc = "A wrapped item."
 	icon = 'icons/obj/items.dmi'
@@ -90,7 +90,7 @@
 	item_state = "gift"
 	w_class = ITEM_SIZE_BULKY
 
-/obj/item/weapon/gift/attack_self(mob/user as mob)
+/obj/item/gift/attack_self(mob/user as mob)
 	user.drop_item()
 	if(src.gift && (src.gift in src.contents))
 		user.put_in_active_hand(gift)
@@ -104,10 +104,10 @@
 		return
 	to_chat(user, SPAN_WARNING("You can't move."))
 
-/obj/effect/spresent/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/effect/spresent/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 
-	if (!istype(W, /obj/item/weapon/tool/wirecutters))
+	if (!istype(W, /obj/item/tool/wirecutters))
 		to_chat(user, SPAN_WARNING("I need wirecutters for that."))
 		return
 
@@ -120,7 +120,7 @@
 /*
  * Wrapping Paper
  */
-/obj/item/weapon/c_tube
+/obj/item/c_tube
 	name = "cardboard tube"
 	desc = "A tube... of cardboard."
 	icon = 'icons/obj/items.dmi'
@@ -130,7 +130,7 @@
 	throw_speed = 4
 	throw_range = 5
 
-/obj/item/weapon/wrapping_paper
+/obj/item/wrapping_paper
 	name = "wrapping paper"
 	desc = "You can use this to wrap items in."
 	icon = 'icons/obj/items.dmi'
@@ -138,23 +138,23 @@
 	matter = list(MATERIAL_BIOMATTER = 4)
 	var/amount = 20.0
 
-/obj/item/weapon/wrapping_paper/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/wrapping_paper/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	if (!( locate(/obj/structure/table, src.loc) ))
 		to_chat(user, SPAN_WARNING("You MUST put the paper on a table!"))
 	if (W.w_class < ITEM_SIZE_BULKY)
-		if ((istype(user.l_hand, /obj/item/weapon/tool/wirecutters) || istype(user.r_hand, /obj/item/weapon/tool/wirecutters)))
+		if ((istype(user.l_hand, /obj/item/tool/wirecutters) || istype(user.r_hand, /obj/item/tool/wirecutters)))
 			var/a_used = 2 ** (src.w_class - 1)
 			if (src.amount < a_used)
 				to_chat(user, SPAN_WARNING("You need more paper!"))
 				return
 			else
-				if(istype(W, /obj/item/smallDelivery) || istype(W, /obj/item/weapon/gift)) //No gift wrapping gifts!
+				if(istype(W, /obj/item/smallDelivery) || istype(W, /obj/item/gift)) //No gift wrapping gifts!
 					return
 
 				src.amount -= a_used
 				user.drop_item()
-				var/obj/item/weapon/gift/G = new /obj/item/weapon/gift( src.loc )
+				var/obj/item/gift/G = new /obj/item/gift( src.loc )
 				G.size = W.w_class
 				G.w_class = G.size + 1
 				G.icon_state = text("gift[]", G.size)
@@ -164,7 +164,7 @@
 				W.add_fingerprint(user)
 				src.add_fingerprint(user)
 			if (src.amount <= 0)
-				new /obj/item/weapon/c_tube( src.loc )
+				new /obj/item/c_tube( src.loc )
 				qdel(src)
 				return
 		else
@@ -174,11 +174,11 @@
 	return
 
 
-/obj/item/weapon/wrapping_paper/examine(mob/user)
+/obj/item/wrapping_paper/examine(mob/user)
 	if(..(user, 1))
 		to_chat(user, text("There is about [] square units of paper left!", src.amount))
 
-/obj/item/weapon/wrapping_paper/attack(mob/target as mob, mob/user as mob)
+/obj/item/wrapping_paper/attack(mob/target as mob, mob/user as mob)
 	if (!ishuman(target))
 		return
 	var/mob/living/carbon/human/H = target
@@ -201,4 +201,4 @@
 		else
 			to_chat(user, SPAN_WARNING("You need more paper."))
 	else
-		to_chat(user, "They are moving around too much. A straightjacket would help.")
+		to_chat(user, "They are moving around too much. A straitjacket would help.")

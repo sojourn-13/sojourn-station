@@ -8,7 +8,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Nadezhda Council"
-	difficulty = "Hard."
+	difficulty = "Stressful."
 	selection_color = "#94a87f"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
@@ -18,7 +18,7 @@
 		access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
 		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
-		access_external_airlocks, access_paramedic, access_research_equipment
+		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits
 	)
 
 	ideal_character_age = 40
@@ -30,7 +30,7 @@
 		STAT_COG = 25
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -39,9 +39,9 @@
 							 /datum/computer_file/program/reports)
 
 	description = "The Chief Biolab Overseer is the head of the medical branch of the Soteria Institute, preserving and improving lives.<br>\
-	Your main responsibility is to keep everyone alive, as is the objective of your department. Prioritise health over most other concerns. <br>\
+	Your main responsibility is to keep everyone alive, as is the objective of your department. Prioritize health over most other concerns. <br>\
 	A variety of medical staff work under your command. Although these roles are clear-cut compared to the research branch, direct them appropriately.<br>\
-	Of course, remember that you are a doctor yourself - feel free to help with less specialised activities to ease the burden.<br>\
+	Of course, remember that you are a doctor yourself - feel free to help with less specialized activities to ease the burden.<br>\
 	The Medical wing also falls under the ownership of Soteria. You may use their resources - and they may use yours - as needed."
 
 	duties = "Direct the doctors under your command towards the bettering of all mankind.<br>\
@@ -65,16 +65,16 @@
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "the Chief Biolab Overseer"
-	difficulty = "Medium."
+	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-
+	alt_titles = list("Soteria Nurse", "Soteria Pharmacist", "Soteria Surgeon", "Soteria Medical Intern")
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
-		access_genetics, access_external_airlocks, access_research_equipment
+		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -82,7 +82,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -90,7 +90,7 @@
 
 	description = "The Doctor is a professional medic and surgeon dedicated to healing the sick and injured, at all costs.<br>\
 	A broad range of medical procedures fall under your purview - diagnostics, general treatment, surgery, and virology.<br>\
-	You are not expected to be an expert in all: specialising in an area is fine. Divide tasks amongst colleagues, with CBO guidance.<br>\
+	You are not expected to be an expert in all: specializing in an area is fine. Divide tasks amongst colleagues, with CBO guidance.<br>\
 	Remember that chemistry has a dedicated specialist. Avoid this department unless it is notably short-staffed.<br>\
 	Due to the nature of your work, you may find yourself confined to the department for the shift majority. Don't abandon patients."
 
@@ -112,17 +112,18 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief Biolab Overseer"
-	difficulty = "Medium."
+	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
 
-	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly
-	)
+	perks = list(/datum/perk/medicalexpertise) //Nurses should be able to get bare bone basics
 
-	perks = list(/datum/perk/selfmedicated)
+	access = list(
+		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits,
+		access_psychiatrist, access_genetics, access_robotics, access_xenobiology, access_tox, access_xenoarch
+	)
 
 	stat_modifiers = list(
 		STAT_TGH = 20,
@@ -144,7 +145,7 @@
 	duties = "Act as a guard for medical, ensuring unneeded colonist leave and nothing is stolen.<br>\
 		Aid medical doctors and paramedics in any way you can.<br>\
 		Act as a nurse for minor injuries, treating patients that a doctor needn't bother with.<br>\
-		Ensure that any outbreaks are contained, such as slimes, infected monkies, or kudzu."
+		Ensure that any outbreaks are contained, such as slimes, infected monkeys, or kudzu."
 
 /obj/landmark/join/start/chemist //This says chemist so I didn't have to edit the map shit when I changed this. Fix later.
 	name = "Soteria Orderly"
@@ -161,22 +162,22 @@
 	spawn_positions = 1
 	wage = WAGE_PROFESSIONAL
 	supervisors = "the Soteria Biolab Overseer"
-	difficulty = "Easy To Medium."
+	difficulty = "Soul Crushing."
 	selection_color = "#a8b69a"
-
+	alt_titles = list("Soteria Psychologist")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 
 	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry
+		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)
+
+	perks = list(/datum/perk/medicalexpertise) //Your trained for this.
 
 	stat_modifiers = list(
 		STAT_BIO = 25,
 		STAT_COG = 15,
 		STAT_VIG = 5
 	)
-
-	perks = list(/datum/perk/selfmedicated)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -206,14 +207,14 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Soteria Biolab Overseer"
-	difficulty = "Medium."
+	difficulty = "Underappreciated."
 	selection_color = "#a8b69a"
 	wage = WAGE_LABOUR_HAZARD
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/paramedic
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_paramedic,
-		access_eva, access_maint_tunnels, access_external_airlocks
+		access_eva, access_maint_tunnels, access_external_airlocks, access_chemistry, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -222,7 +223,7 @@
 		STAT_VIG = 10,
 	)
 
-	perks = list(/datum/perk/selfmedicated)
+	perks = list(/datum/perk/medicalexpertise)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,

@@ -24,6 +24,14 @@ var/datum/maps_data/maps_data = new
 	var/turf/T = get_turf(A)
 	return T && isContactLevel(T.z)
 
+//Checks for sealed Z-levels.
+/proc/isSealedLevel(level)
+	return level in maps_data.sealed_levels
+
+/proc/isOnSealedLevel(atom/A)
+	var/turf/T = get_turf(A)
+	return T && isSealedLevel(T.z)
+
 /proc/isAdminLevel(var/level)
 	return level in maps_data.admin_levels
 
@@ -103,8 +111,8 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 						/datum/job/chaplain, /datum/job/acolyte, /datum/job/janitor, /datum/job/hydro,
 						/datum/job/scientist, /datum/job/roboticist,
 						/datum/job/ai, /datum/job/cyborg,
-						/datum/job/assistant
-
+						/datum/job/assistant,
+						/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter, /datum/job/off_colony_herbalist, /datum/job/outsider
 						)
 
 	var/overmap_z
@@ -189,7 +197,7 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 
 /datum/maps_data/proc/get_empty_zlevel()
 	if(empty_levels == null)
-		world.maxz++
+		world.incrementMaxZ()
 		empty_levels = list(world.maxz)
 
 		add_z_level(world.maxz, world.maxz, 1)

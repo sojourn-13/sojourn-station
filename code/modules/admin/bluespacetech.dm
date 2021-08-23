@@ -30,26 +30,26 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	//Items
 	bst.equip_to_slot_or_del(new /obj/item/clothing/under/admin/bst(bst), slot_w_uniform)
 	bst.equip_to_slot_or_del(new /obj/item/device/radio/headset/ert/bst(bst), slot_l_ear)
-	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/holding/bst(bst), slot_back)
-	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(bst.back), slot_in_backpack)
+	bst.equip_to_slot_or_del(new /obj/item/storage/backpack/holding/bst(bst), slot_back)
+	bst.equip_to_slot_or_del(new /obj/item/storage/box/survival(bst.back), slot_in_backpack)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/shoes/admin/bst(bst), slot_shoes)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/head/beret(bst), slot_head)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/glasses/admin/bst(bst), slot_glasses)
-	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full/bst(bst), slot_belt)
+	bst.equip_to_slot_or_del(new /obj/item/storage/belt/utility/full/bst(bst), slot_belt)
 	bst.equip_to_slot_or_del(new /obj/item/clothing/gloves/admin/bst(bst), slot_gloves)
 
-	bst.equip_to_slot_or_del(new /obj/item/weapon/storage/box/ids(bst.back), slot_in_backpack)
+	bst.equip_to_slot_or_del(new /obj/item/storage/box/ids(bst.back), slot_in_backpack)
 	bst.equip_to_slot_or_del(new /obj/item/device/t_scanner(bst.back), slot_in_backpack)
 	bst.equip_to_slot_or_del(new /obj/item/modular_computer/pda/captain(bst.back), slot_in_backpack)
 
-	var/obj/item/weapon/storage/box/pills = new /obj/item/weapon/storage/box(null, TRUE)
+	var/obj/item/storage/box/pills = new /obj/item/storage/box(null, TRUE)
 	pills.name = "adminordrazine"
 	for(var/i = 1, i < 12, i++)
-		new /obj/item/weapon/reagent_containers/pill/adminordrazine(pills)
+		new /obj/item/reagent_containers/pill/adminordrazine(pills)
 	bst.equip_to_slot_or_del(pills, slot_in_backpack)
 
 	//Sort out ID
-	var/obj/item/weapon/card/id/bst/id = new/obj/item/weapon/card/id/bst(bst)
+	var/obj/item/card/id/bst/id = new/obj/item/card/id/bst(bst)
 	id.registered_name = bst.real_name
 	id.assignment = "Bluespace Technician"
 	id.name = "[id.assignment]"
@@ -72,7 +72,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	spawn(10)
 		bst_post_spawn(bst)
 
-	log_admin("Bluespace Tech Spawned: X:[bst.x] Y:[bst.y] Z:[bst.z] User:[src]")
+	log_and_message_admins("has become a Bluespace Technician \the [jumplink(T)] User:[src]", location = T) //So we can go to it
+	log_admin("Bluespace Tech Spawned: X:[bst.x] Y:[bst.y] Z:[bst.z] User:[src]") //Going to leave this do to XYZ logging
 	return 1
 
 /client/proc/bst_post_spawn(mob/living/carbon/human/bst/bst)
@@ -159,8 +160,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	set name = "Teleport out"
 	set desc = "Activate bluespace to leave and return to your original mob (if you have one)."
 	set category = "BST"
-
+	log_and_message_admins("has Bluespace Technician Teleported Out")
 	src.suicide()
+
 
 /mob/living/carbon/human/bst/verb/tgm()
 	set name = "Toggle Godmode"
@@ -172,13 +174,45 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 
 	to_chat(src, span("notice", "God mode is now [status_flags & GODMODE ? "enabled" : "disabled"]"))
 
+/mob/living/carbon/human/bst/verb/bst_raise_stats()
+	set name = "Raise All Stats By 5"
+	set desc = "Gives you 5+ to all stats."
+	set category = "BST"
+	log_and_message_admins("has Bluespace Technician raised stats by 5")
+
+	to_chat(src, SPAN_NOTICE("Stats raised by 5"))
+
+	src.stats.changeStat(STAT_COG, 5)
+	src.stats.changeStat(STAT_MEC, 5)
+	src.stats.changeStat(STAT_BIO, 5)
+	src.stats.changeStat(STAT_ROB, 5)
+	src.stats.changeStat(STAT_TGH, 5)
+	src.stats.changeStat(STAT_VIG, 5)
+
+/mob/living/carbon/human/bst/verb/bst_lower_stats()
+	set name = "Lowers All Stats By 5"
+	set desc = "Removes 5 to all stats."
+	set category = "BST"
+	log_and_message_admins("has Bluespace Technician lowered stats by 5")
+
+	to_chat(src, SPAN_NOTICE("Stats lowered by 5"))
+
+	src.stats.changeStat(STAT_COG, -5)
+	src.stats.changeStat(STAT_MEC, -5)
+	src.stats.changeStat(STAT_BIO, -5)
+	src.stats.changeStat(STAT_ROB, -5)
+	src.stats.changeStat(STAT_TGH, -5)
+	src.stats.changeStat(STAT_VIG, -5)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////I T E M S/////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-/obj/item/weapon/storage/backpack/holding/bst
+/obj/item/storage/backpack/holding/bst
+	name = "stablized bag of holding"
+	desc = "A backpack that opens into a localized pocket of bluespace. An example of stable bluespace that predate the crash and maintains its stability even with other bluespace objects."
 	worn_access = TRUE
+	bluespace_safe = TRUE
 
 /obj/item/device/radio/headset/ert/bst
 	name = "bluespace technician's headset"
@@ -301,14 +335,14 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 
 	return TRUE //Because Bluespace
 
-/obj/item/weapon/card/id/bst
+/obj/item/card/id/bst
 	icon_state = "centcom"
 	desc = "An ID straight from Central Command. This one looks highly classified."
 
-/obj/item/weapon/card/id/bst/New()
+/obj/item/card/id/bst/New()
 		access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()
 
-/obj/item/weapon/card/id/bst/attack_hand()
+/obj/item/card/id/bst/attack_hand()
 	if(!usr)
 		return
 	if(!isbst(usr))
@@ -317,26 +351,26 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	else
 		..()
 
-/obj/item/weapon/storage/belt/utility/full/bst
+/obj/item/storage/belt/utility/full/bst
 	name = "bluespace technician's belt"
 	storage_slots = 24
 	icon = 'icons/inventory/belt/icon.dmi'
 	icon_state = "utility"
 	item_state = "utility"
 
-/obj/item/weapon/storage/belt/utility/full/bst/populate_contents()
+/obj/item/storage/belt/utility/full/bst/populate_contents()
 	..()
-	new /obj/item/weapon/tool/screwdriver/bs(src)
-	new /obj/item/weapon/tool/saw/bs(src)
-	new /obj/item/weapon/tool/wrench/bs(src)
-	new /obj/item/weapon/tool/weldingtool/bs(src)
-	new /obj/item/weapon/tool/crowbar/bs(src)
-	new /obj/item/weapon/tool/wirecutters/bs(src)
-	new /obj/item/weapon/tool/multitool/bs(src)
-	new /obj/item/weapon/tool/multitool(src)
+	new /obj/item/tool/screwdriver/bs(src)
+	new /obj/item/tool/saw/bs(src)
+	new /obj/item/tool/wrench/bs(src)
+	new /obj/item/tool/weldingtool/bs(src)
+	new /obj/item/tool/crowbar/bs(src)
+	new /obj/item/tool/wirecutters/bs(src)
+	new /obj/item/tool/multitool/bs(src)
+	new /obj/item/tool/multitool(src)
 	new /obj/item/device/t_scanner(src)
 	new /obj/item/stack/cable_coil/random(src)
-	new /obj/item/weapon/tool/tape_roll/flextape(src)
+	new /obj/item/tool/tape_roll/flextape(src)
 
 /mob/living/carbon/human/bst/restrained()
 	return !(status_flags & GODMODE)

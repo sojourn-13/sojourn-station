@@ -26,6 +26,8 @@ Has ability of every roach.
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 
+	flash_resistances = 9.9 // were not fully flash proof but almost...
+
 	var/distress_call_stage = 3
 
 	var/health_marker_1 = 1500
@@ -34,9 +36,13 @@ Has ability of every roach.
 
 	blattedin_revives_left = 0
 
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kaiser
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser
 	meat_amount = 15
 	sanity_damage = 3
+
+	ranged = 1 // RUN, COWARD!
+	projectiletype = /obj/item/projectile/roach_spit/large
+	fire_verb = "spits glowing bile"
 
 /mob/living/carbon/superior_animal/roach/kaiser/New()
 	..()
@@ -67,11 +73,12 @@ Has ability of every roach.
 
 	if(isliving(A))
 		var/mob/living/L = A
-		if(istype(L) && prob(10))
+		if(prob(10))
 			var/damage = rand(melee_damage_lower, melee_damage_upper)
-			L.damage_through_armor(damage, TOX)
+			L.apply_effect(200, IRRADIATE) // Looks like a lot but its really not
+			L.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
 			playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
-			L.visible_message(SPAN_DANGER("\the [src] globs up some toxic bile all over \the [L]!"))
+			L.visible_message(SPAN_DANGER("\the [src] globs up some glowing bile all over \the [L]!"))
 
 // SUPPORT ABILITIES
 /mob/living/carbon/superior_animal/roach/kaiser/proc/gas_attack()
@@ -128,13 +135,13 @@ Has ability of every roach.
 	return FALSE
 
 //RIDING
-/mob/living/carbon/superior_animal/roach/kaiser/try_tame(var/mob/living/carbon/user, var/obj/item/weapon/reagent_containers/food/snacks/grown/thefood)
+/mob/living/carbon/superior_animal/roach/kaiser/try_tame(var/mob/living/carbon/user, var/obj/item/reagent_containers/food/snacks/grown/thefood)
 	if(!istype(thefood))
 		return FALSE
 	if(prob(40))
 		// TODO: Make Kaiser bite user's arm off here.
 		visible_message("[src] hesitates for a moment... and then charges at [user]!")
-		return FALSE //Sometimes roach just be like that
+		return TRUE //Setting this to true because the only current usage is attack, and it says it hesitates.
 	//fruits and veggies are not there own type, they are all the grown type and contain certain reagents. This is why it didnt work before
 	if(isnull(thefood.seed.chems["singulo"]))
 		return FALSE
@@ -153,6 +160,8 @@ Has ability of every roach.
 			can_buckle = FALSE
 			return FALSE
 		friends += user
+		colony_friend = TRUE
+		friendly_to_colony = TRUE
 		visible_message("[src] reluctantly stops thrashing around...")
 		return TRUE
 	visible_message("[src] snaps out of its trance and rushes at [user]!")

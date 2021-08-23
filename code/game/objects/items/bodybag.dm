@@ -23,12 +23,12 @@
 	close_sound = 'sound/items/zip.ogg'
 	var/item_path = /obj/item/bodybag //What item do we get back when folding it up?
 	density = 0
-	storage_capacity = (MOB_MEDIUM * 2) - 1 //Holds 1 medium size mob or 2 smalls
+	storage_capacity = (MOB_MEDIUM * 4) - 1 //Holds 6 medium size mob or 11 smalls
 	var/contains_body = 0
 	layer = LOW_OBJ_LAYER+0.01
 
 /obj/structure/closet/body_bag/attackby(W as obj, mob/user as mob)
-	if (istype(W, /obj/item/weapon/pen))
+	if (istype(W, /obj/item/pen))
 		var/t = input(user, "What would you like the label to be?", text("[]", src.name), null)  as text
 		if (user.get_active_hand() != W)
 			return
@@ -43,7 +43,7 @@
 			src.name = "body bag"
 	//..() //Doesn't need to run the parent. Since when can fucking bodybags be welded shut? -Agouri
 		return
-	else if(istype(W, /obj/item/weapon/tool/wirecutters))
+	else if(istype(W, /obj/item/tool/wirecutters))
 		to_chat(user, "You cut the tag off the bodybag.")
 		src.name = "body bag"
 		src.cut_overlays()
@@ -83,10 +83,11 @@
 /obj/item/bodybag/cryobag
 	name = "stasis bag"
 	desc = "A folded, non-reusable bag designed to prevent additional damage to an occupant. Especially useful if short on time or in \
-	a hostile enviroment."
+	a hostile environment."
 	icon = 'icons/obj/cryobag.dmi'
 	icon_state = "bodybag_folded"
 	origin_tech = list(TECH_BIO = 4)
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1)
 	price_tag = 50
 
 /obj/item/bodybag/cryobag/attack_self(mob/user)
@@ -97,17 +98,17 @@
 /obj/structure/closet/body_bag/cryobag
 	name = "stasis bag"
 	desc = "A non-reusable plastic bag designed to prevent additional damage to an occupant. Especially useful if short on time or in \
-	a hostile enviroment. This one features a much more advanced design that preserves its occupant in cryostasis."
+	a hostile environment. This one features a much more advanced design that preserves its occupant in cryostasis."
 	icon = 'icons/obj/cryobag.dmi'
 	item_path = /obj/item/bodybag/cryobag
 	store_misc = 0
 	store_items = 0
 	var/used = 0
-	var/obj/item/weapon/tank/tank = null
+	var/obj/item/tank/tank = null
 	var/existing_degradation
 
 /obj/structure/closet/body_bag/cryobag/New()
-	tank = new /obj/item/weapon/tank/emergency_oxygen(null) //It's in nullspace to prevent ejection when the bag is opened.
+	tank = new /obj/item/tank/emergency_oxygen(null) //It's in nullspace to prevent ejection when the bag is opened.
 	..()
 
 /obj/structure/closet/body_bag/cryobag/Destroy()
@@ -123,6 +124,7 @@
 		O.icon = src.icon
 		O.icon_state = "bodybag_used"
 		O.desc = "A used stasisbag. It's nothing but trash now."
+		O.matter = list(MATERIAL_PLASTIC = 0.5, MATERIAL_SILVER = 0.2)
 		qdel(src)
 
 /obj/structure/closet/body_bag/cryobag/Entered(atom/movable/AM)

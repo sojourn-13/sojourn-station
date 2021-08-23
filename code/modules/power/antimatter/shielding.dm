@@ -149,7 +149,7 @@ proc/cardinalrange(var/center)
 
 /obj/machinery/am_shielding/proc/setup_core()
 	processing = 1
-	SSmachines.machinery.Add(src)
+	GLOB.machines += src
 	if(!control_unit)	return
 	control_unit.linked_cores.Add(src)
 	control_unit.reported_core_efficiency += efficiency
@@ -197,7 +197,7 @@ proc/cardinalrange(var/center)
 	matter = list(MATERIAL_STEEL = 3)
 
 /obj/item/device/am_shielding_container/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/tool/multitool) && istype(src.loc,/turf))
+	if(istype(I, /obj/item/tool/multitool) && istype(src.loc,/turf))
 		new/obj/machinery/am_shielding(src.loc)
 		qdel(src)
 		return

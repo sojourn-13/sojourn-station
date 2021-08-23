@@ -121,6 +121,19 @@
 	icon_state = "impact_stun"
 
 //----------------------------
+// Tesla beam
+//----------------------------
+/obj/effect/projectile/tesla/New()
+	..()
+	icon_state = "lightning[rand(1,12)]"
+
+/obj/effect/projectile/tesla/tracer
+
+/obj/effect/projectile/tesla/muzzle
+
+/obj/effect/projectile/tesla/impact
+
+//----------------------------
 // Bullet
 //----------------------------
 /obj/effect/projectile/bullet/muzzle

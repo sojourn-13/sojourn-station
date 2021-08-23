@@ -4,24 +4,30 @@
 	icon_state = "bluespaceroach"
 	maxHealth = 25
 	health = 25
-
+	meat_type = /obj/item/bluespace_crystal
 	melee_damage_lower = 3
 	melee_damage_upper = 10
 	sanity_damage = 1
+
+/* TODO: Make these a threat and not free loot
+	waring_faction = "" //It was a inside job
+	waring_faction_multy = 5 //We know your weakness
+*/
+
+	flash_resistances = 15 //We are the light
+
 	//spawn_blacklisted = TRUE
 	var/change_tele_to_mob = 25
 	var/chance_tele_to_eat = 25
 	var/chance_tele_to_random = 10
 
-/mob/living/carbon/superior_animal/roach/bluespace/New()
-	..()
-	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
-	sparks.set_up(3, 0, loc)
-	sparks.start()
+/mob/living/carbon/superior_animal/roach/bluespace/Initialize(mapload)
+	. = ..()
+	do_sparks(3, 0, src.loc)
 
 /mob/living/carbon/superior_animal/roach/bluespace/Life()
 	. = ..()
-	if(stat != CONSCIOUS) // if the roach is conscious
+	if(stat != CONSCIOUS)
 		return
 
 	if(stat != AI_inactive)
@@ -36,6 +42,7 @@
 		target = get_random_secure_turf_in_range(src, 7, 1)
 	if(target)
 		playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, target, 1)
 		playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
 
@@ -45,9 +52,10 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 2, 1)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 		return FALSE
-	..()
+	. = ..()
 
 /mob/living/carbon/superior_animal/roach/bluespace/attack_hand(mob/living/carbon/M)
 	if(M.a_intent != I_HELP && prob(change_tele_to_mob))
@@ -55,9 +63,10 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 2, 1)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 		return FALSE
-	..()
+	. = ..()
 
 /mob/living/carbon/superior_animal/roach/bluespace/bullet_act(obj/item/projectile/P, def_zone)
 	if(prob(change_tele_to_mob))
@@ -65,9 +74,10 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 2, 1)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 		return FALSE
-	..()
+	. = ..()
 
 /mob/living/carbon/superior_animal/roach/bluespace/attack_generic(mob/user, damage, attack_message)
 	if(!damage || !istype(user))
@@ -77,6 +87,7 @@
 		if(target_mob)
 			source = target_mob
 		var/turf/T = get_random_secure_turf_in_range(source, 2, 1)
+		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 		return FALSE
-	.=..()
+	. = ..()

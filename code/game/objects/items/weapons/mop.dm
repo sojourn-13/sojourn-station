@@ -1,7 +1,7 @@
 #define MOPMODE_TILE 1
 #define MOPMODE_SWEEP 2
 
-/obj/item/weapon/mop
+/obj/item/mop
 	desc = "The world of janitalia wouldn't be complete without a mop."
 	name = "mop"
 	icon = 'icons/obj/janitor.dmi'
@@ -13,17 +13,17 @@
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
 	matter = list(MATERIAL_PLASTIC = 3)
-	var/mopping = 0
-	var/mopcount = 0
+	var/mopspeed  = 30
+	price_tag = 12
 
 	var/mopmode = MOPMODE_TILE
 	var/sweep_time = 7
 
-/obj/item/weapon/mop/Initialize()
+/obj/item/mop/Initialize()
 	. = ..()
 	create_reagents(30)
 
-/obj/item/weapon/mop/attack_self(var/mob/user)
+/obj/item/mop/attack_self(var/mob/user)
 	.=..()
 	if (mopmode == MOPMODE_TILE)
 		mopmode = MOPMODE_SWEEP
@@ -32,7 +32,7 @@
 		mopmode = MOPMODE_TILE
 		to_chat(user, SPAN_NOTICE("You will now thoroughly clean a single tile at a time"))
 
-/obj/item/weapon/mop/afterattack(atom/A, mob/user, proximity)
+/obj/item/mop/afterattack(atom/A, mob/user, proximity)
 	if(!proximity) return
 	if(istype(A, /turf) || istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
 		if(reagents.total_volume < 1)
@@ -46,7 +46,7 @@
 		if (mopmode == MOPMODE_TILE)
 			//user.visible_message(SPAN_WARNING("[user] begins to clean \the [T]."))
 			user.setClickCooldown(3)
-			if(do_after(user, 30, T))
+			if(do_after(user, mopspeed, T))
 				if(T)
 					T.clean(src, user)
 				to_chat(user, SPAN_NOTICE("You have finished mopping!"))
@@ -59,7 +59,7 @@
 		makeWet(A, user)
 
 
-/obj/item/weapon/mop/proc/sweep(var/mob/user, var/turf/target)
+/obj/item/mop/proc/sweep(var/mob/user, var/turf/target)
 	user.setClickCooldown(sweep_time)
 	var/direction = get_dir(get_turf(src),target)
 	var/list/turfs
@@ -114,7 +114,7 @@
 			to_chat(user, SPAN_DANGER("There's not enough space for broad sweeps here!"))
 			return
 
-/obj/item/weapon/mop/proc/makeWet(atom/A, mob/user)
+/obj/item/mop/proc/makeWet(atom/A, mob/user)
 	if(A.is_open_container())
 		if(A.reagents)
 			if(A.reagents.total_volume < 1)
@@ -130,10 +130,29 @@
 
 
 /obj/effect/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/weapon/mop) || istype(I, /obj/item/weapon/soap))
+	if(istype(I, /obj/item/mop) || istype(I, /obj/item/soap) || istype(I, /obj/item/holyvacuum))
 		return
 	..()
 
+/obj/item/mop/guild
+	name = "articulated mop"
+	desc = "An Artificer's Guild-modified mop. Sports a pistol-actuated mop head making it able to hold more cleaning suds and sweep faster. \
+	The handle is also telescopic allowing for easier storage."
+	icon = 'icons/obj/janitor.dmi'
+	icon_state = "engimop"
+	force = WEAPON_FORCE_WEAK+1
+	throwforce = WEAPON_FORCE_WEAK+1
+	throw_speed = 5
+	throw_range = 10
+	w_class = ITEM_SIZE_SMALL
+	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
+	matter = list(MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 4, MATERIAL_STEEL = 4)
+	mopspeed  = 15
+	sweep_time = 4
+
+/obj/item/mop/guild/Initialize()
+	. = ..()
+	create_reagents(60)
 
 #undef MOPMODE_TILE
 #undef MOPMODE_SWEEP

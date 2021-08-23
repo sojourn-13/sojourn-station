@@ -84,7 +84,7 @@
 	icon_state = "judge"
 	item_state = "judge"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	allowed = list(/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/spacecash)
+	allowed = list(/obj/item/storage/fancy/cigarettes,/obj/item/spacecash)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/costume/job/imperium_monk
@@ -130,7 +130,7 @@
 	item_state = "space_suit_syndicate"
 	desc = "A plastic replica of the syndicate space suit, you'll look just like a real murderous syndicate agent in this! This is a toy, it is not made for use in space!"
 	w_class = ITEM_SIZE_NORMAL
-	allowed = list(/obj/item/device/lighting/toggleable/flashlight,/obj/item/weapon/tank/emergency_oxygen,/obj/item/toy)
+	allowed = list(/obj/item/device/lighting/toggleable/flashlight,/obj/item/tank/emergency_oxygen,/obj/item/toy)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	item_flags = COVER_PREVENT_MANIPULATION
@@ -209,6 +209,13 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|EYES|HEAD|FACE
 	flags_inv = HIDEJUMPSUIT|HIDESHOES|HIDEGLOVES
 	item_state_slots = list(slot_r_hand_str = "judge", slot_l_hand_str = "judge")
+
+/obj/item/clothing/suit/costume/kinky/alyson
+	name = "bunny suit"
+	desc = "The most famous appeal on every side of the universe, a bunny suit complete with pantyhoses, cuffs, and a puffy tail. Ears not included!"
+	icon_state = "lewdbunny"
+	flags_inv = HIDEJUMPSUIT|HIDEGLOVES
+	item_state_slots = list(slot_r_hand_str = "suit_black", slot_l_hand_str = "suit_black")
 
 /*Misc*/
 

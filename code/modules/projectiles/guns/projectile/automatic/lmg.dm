@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/lmg
+/obj/item/gun/projectile/automatic/lmg
 	name = "SAW"
 	desc = "A defunct lmg, please ahelp if you're seeing it. Uses 7.5mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
@@ -32,48 +32,48 @@
 
 	var/cover_open = 0
 
-/obj/item/weapon/gun/projectile/automatic/lmg/special_check(mob/user)
+/obj/item/gun/projectile/automatic/lmg/special_check(mob/user)
 	if(cover_open)
 		to_chat(user, SPAN_WARNING("[src]'s cover is open! Close it before firing!"))
 		return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/automatic/lmg/proc/toggle_cover(mob/user)
+/obj/item/gun/projectile/automatic/lmg/proc/toggle_cover(mob/user)
 	cover_open = !cover_open
 	to_chat(user, SPAN_NOTICE("You [cover_open ? "open" : "close"] [src]'s cover."))
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/lmg/attack_self(mob/user as mob)
+/obj/item/gun/projectile/automatic/lmg/attack_self(mob/user as mob)
 	if(cover_open)
 		toggle_cover(user) //close the cover
 		playsound(src.loc, 'sound/weapons/guns/interact/lmg_close.ogg', 100, 1)
 	else
 		return ..() //once closed, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/lmg/attack_hand(mob/user as mob)
+/obj/item/gun/projectile/automatic/lmg/attack_hand(mob/user as mob)
 	if(!cover_open && user.get_inactive_hand() == src)
 		toggle_cover(user) //open the cover
 		playsound(src.loc, 'sound/weapons/guns/interact/lmg_open.ogg', 100, 1)
 	else
 		return ..() //once open, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/lmg/equipped(var/mob/user, var/slot)
+/obj/item/gun/projectile/automatic/lmg/equipped(var/mob/user, var/slot)
 	.=..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/lmg/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/automatic/lmg/load_ammo(var/obj/item/A, mob/user)
 	if(!cover_open)
 		to_chat(user, SPAN_WARNING("You need to open the cover to load [src]."))
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/lmg/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/automatic/lmg/unload_ammo(mob/user, var/allow_dump=1)
 	if(!cover_open)
 		to_chat(user, SPAN_WARNING("You need to open the cover to unload [src]."))
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/lmg/update_icon()
+/obj/item/gun/projectile/automatic/lmg/update_icon()
 	icon_state = "[icon_base][cover_open ? "_open" : "_closed"]"
 	if(ammo_magazine)
 		add_overlay("_mag[ammo_magazine.max_ammo]")
@@ -83,11 +83,11 @@
 	..()
 
 //**** Saved in case we want the code in the future****//
-//obj/item/weapon/gun/projectile/automatic/lmg/equipped(var/mob/user, var/slot)
+//obj/item/gun/projectile/automatic/lmg/equipped(var/mob/user, var/slot)
 //	.=..()
 //	update_icon()
 
-//obj/item/weapon/gun/projectile/automatic/lmg/update_icon()
+//obj/item/gun/projectile/automatic/lmg/update_icon()
 //	icon_state = "[icon_base][cover_open ? "open" : "closed"][ammo_magazine ? round(ammo_magazine.stored_ammo.len, 25) : "-empty"]"
 //	set_item_state("-[cover_open ? "open" : null][ammo_magazine ?"mag":"nomag"]", hands = TRUE)
 //	set_item_state("-[ammo_magazine ?"mag":"nomag"]", back = TRUE)
@@ -95,7 +95,7 @@
 
 
 
-/obj/item/weapon/gun/projectile/automatic/lmg/pk
+/obj/item/gun/projectile/automatic/lmg/pk
 	name = "Pulemyot Kalashnikova"
 	desc = "\"Kalashnikov's Machinegun\", a well-made copy of what many consider to be the best traditional machinegun ever designed."
 	icon = 'icons/obj/guns/projectile/pk.dmi'
@@ -109,7 +109,7 @@
 		)
 
 //Typical LMG/SAW, use this for the high end of "normal."
-/obj/item/weapon/gun/projectile/automatic/lmg/saw
+/obj/item/gun/projectile/automatic/lmg/saw
 	name = "\"Pegasus\" light machinegun"
 	desc = "A common LMG chambered in .257 Carbine, accepting either boxes or standard magazines, though this calls into question some reliability issues. \
 	This particular example bears a winged horse in laurels and a \"Pegasus\" nameplate, all other markings have been filed off."
@@ -128,4 +128,47 @@
 
 	init_firemodes = list(
 		FULL_AUTO_600,
+		BURST_5_ROUND,
 		)
+
+//This should be in its own file...
+/obj/item/gun/projectile/automatic/lmg/tk
+	name = "\"Takeshi\" suppression machinegun"
+	desc = "The \"Takeshi LMG\" is Seinemetall Defense GmbH's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death."
+	icon = 'icons/obj/guns/projectile/tk.dmi'
+	icon_base = "tk"
+	icon_state = "tk"
+	item_state = "tk"
+	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
+	caliber = CAL_LRIFLE
+	damage_multiplier = 1.1 //This is clearly to high
+	penetration_multiplier = 1.1 //Ah yes wall hacks...
+	recoil_buildup = 1.7 //Why is this so good?
+
+/obj/item/gun/projectile/automatic/lmg/tk/update_icon()
+//	..() We are rather different then other guns and lmgs.
+//	icon_state = "[icon_base][cover_open ? "_open" : "_closed"]" - this is for ref of what it did before.
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (cover_open)
+		iconstring += "open"
+		itemstring += "open"
+	else
+		iconstring += "closed"
+		itemstring += "closed"
+
+	if (ammo_magazine)
+		var/percent = (ammo_magazine.stored_ammo.len / ammo_magazine.max_ammo) * 100
+		var/number = round(percent, 25)
+		iconstring += "[number]"
+	else
+		iconstring += "-empty"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+
+/obj/item/gun/projectile/automatic/lmg/tk/Initialize()
+	. = ..()
+	update_icon()

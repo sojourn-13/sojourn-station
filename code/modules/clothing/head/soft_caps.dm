@@ -133,4 +133,5 @@
 	name = "Iron Lock Security cap"
 	initial_name = "Iron Lock Security cap"
 	desc = "It's a field cap in red colors with \"Iron Lock Security\" logo on it."
-	icon_state = "northtech"
+	icon_state = "redsecsoft" // Placeholder until real northtech sprite exists
+

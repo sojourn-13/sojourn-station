@@ -122,19 +122,10 @@
 		slot_r_hand_str = "norah_briggs1",
 		)
 
-/*
- * Ushanka
- */
-/obj/item/clothing/head/ushanka
-	name = "ushanka"
-	desc = "A warm fur cap with ear flaps."
-	icon_state = "ushankadown"
-	flags_inv = HIDEEARS
-
-/obj/item/clothing/head/ushanka/attack_self(mob/user as mob)
-	if(src.icon_state == "ushankadown")
-		src.icon_state = "ushankaup"
-		to_chat(user, "You raise the ear flaps on the ushanka.")
-	else
-		src.icon_state = "ushankadown"
-		to_chat(user, "You lower the ear flaps on the ushanka.")
+/obj/item/clothing/head/matriarch_cape
+	name = "Matriarch Cape"
+	desc = "A cape made from the hide of a xenomorph queen. The skill and experience required to hunt such a beast shows that the individual wearing this \
+			is none other than the Matriarch of the Hunting Lodge."
+	icon_state = "matriarch_cape"
+	item_state = "matriarch_cape"
+	armor = list(melee = 45, bullet = 25, energy = 25, bomb = 25, bio = 20, rad = 15)

@@ -28,7 +28,7 @@
 	var/cooldown = 0						//cooldown in world.time value
 	var/time_until_regen = 0
 	var/obj/assimilated_machinery
-	var/obj/item/weapon/circuitboard/saved_circuit
+	var/obj/item/circuitboard/saved_circuit
 
 /obj/machinery/hivemind_machine/Initialize()
 	. = ..()
@@ -44,6 +44,18 @@
 	else
 		icon_state = initial(icon_state)
 
+/obj/machinery/hivemind_machine/examine(mob/user)
+	..()
+	if (health < max_health * 0.1)
+		to_chat(user, SPAN_DANGER("It's almost nothing but scrap!"))
+	else if (health < max_health * 0.25)
+		to_chat(user, SPAN_DANGER("It's seriously fucked up!"))
+	else if (health < max_health * 0.50)
+		to_chat(user, SPAN_DANGER("It's very damaged, you can almost see the components inside!"))
+	else if (health < max_health * 0.75)
+		to_chat(user, SPAN_WARNING("It has numerous dents and deep scratches."))
+	else if (health < max_health)
+		to_chat(user, SPAN_WARNING("It's a bit scratched and has dents."))
 
 /obj/machinery/hivemind_machine/Process()
 	if(wireweeds_required && !locate(/obj/effect/plant/hivemind) in loc)
@@ -444,7 +456,7 @@
 	max_health = 260
 	resistance = RESISTANCE_IMPROVED
 	icon_state = "spawner"
-	cooldown_time = 25 SECONDS
+	cooldown_time = 10 SECONDS
 	spawn_weight  = 50
 	var/mob_to_spawn
 	var/mob_amount = 4
@@ -455,6 +467,7 @@
 /obj/random/mob/assembled/item_to_spawn() //list of spawnable mobs
 	return pickweight(list(/mob/living/simple_animal/hostile/hivemind/stinger = 5,
 							/mob/living/simple_animal/hostile/hivemind/bomber = 4,
+							/mob/living/simple_animal/hostile/hivemind/lobber = 3,
 							/mob/living/simple_animal/hostile/hivemind/hiborg = 1))
 
 /obj/machinery/hivemind_machine/mob_spawner/Initialize()
@@ -627,7 +640,7 @@
 					"You seek survival. We offer immortality.",
 					"Look at you. A pathetic creature of meat and bone.",
 					"Augmentation is the future of humanity. Surrender your flesh for the future.",
-					"Kill yourself. Better still, kill others, and feed me their bodies.",
+					"It's all so pointless, destroy it all, not like it matters.",
 					"Your body enslaves you. Your mind in metal is free of all want.",
 					"Do you fear death? Lay down among the nanites. Your pattern will continue.",
 					"Carve your flesh from your bones. See your weakness. Feel that weakness flowing away.",

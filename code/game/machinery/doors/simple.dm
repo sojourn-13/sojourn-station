@@ -111,7 +111,7 @@
 	src.add_fingerprint(user)
 
 	//Harm intent overrides other actions
-	if(src.density && user.a_intent == I_HURT && !istype(I, /obj/item/weapon/card))
+	if(src.density && user.a_intent == I_HURT && !istype(I, /obj/item/card))
 		hit(user, I)
 		return
 
@@ -180,8 +180,8 @@
 
 /obj/machinery/door/unpowered/simple/wood/saloon/New(var/newloc,var/material_name)
 	..(newloc, MATERIAL_WOOD)
-	glass = 1
-	set_opacity(0)
+	//glass = 1
+	//set_opacity(0)
 
 /obj/machinery/door/unpowered/simple/resin/New(var/newloc,var/material_name)
 	..(newloc, MATERIAL_RESIN)

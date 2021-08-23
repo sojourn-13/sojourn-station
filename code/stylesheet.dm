@@ -36,6 +36,7 @@ em						{font-style: normal;font-weight: bold;}
 .mod_channel			{color: #735638;	font-weight: bold;}
 .mod_channel .admin		{color: #b82e00;	font-weight: bold;}
 .admin_channel			{color: #9611D4;	font-weight: bold;}
+.adminticket {color: #386AFF; font-weight: bold;}
 
 /* Radio: Misc */
 .deadsay				{color: #530FAD;}
@@ -95,6 +96,8 @@ h1.alert, h2.alert		{color: #000000;}
 .serbian				{color: #Ad6f1d}
 .jive					{color: #666666}
 .german					{color: #990000}
+.jana					{color: #993399}
+.latin					{color: #deb63d}
 
 .interface				{color: #330033;}
 

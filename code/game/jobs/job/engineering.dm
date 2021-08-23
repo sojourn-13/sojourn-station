@@ -31,47 +31,6 @@
 		STAT_VIG = 15,
 	)
 
-	known_recipes = list(
-			/datum/craft_recipe/guild/melee,
-			/datum/craft_recipe/guild/bullet,
-			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/robotmelee,
-			/datum/craft_recipe/guild/arcwelder,
-			/datum/craft_recipe/guild/combat_shovel,
-			/datum/craft_recipe/guild/railgunpistol,
-			/datum/craft_recipe/guild/railgunrifle,
-			/datum/craft_recipe/guild/mace,
-			/datum/craft_recipe/guild/claymore,
-			/datum/craft_recipe/guild/machete,
-			/datum/craft_recipe/guild/katana,
-			/datum/craft_recipe/guild/firebrand,
-			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing,
-			/datum/craft_recipe/guild/plasmablock,
-			/datum/craft_recipe/guild/rubbermesh,
-			/datum/craft_recipe/guild/booster,
-			/datum/craft_recipe/guild/injector,
-			/datum/craft_recipe/guild/weintraub,
-			/datum/craft_recipe/guild/overshooter,
-			/datum/craft_recipe/guild/dangerzone,
-			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine,
-			/datum/craft_recipe/guild/watchman,
-			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox/*,
-			/datum/craft_recipe/weapon/guild_bin,
-			/datum/craft_recipe/weapon/guild_manip,
-			/datum/craft_recipe/weapon/guild_laser,
-			/datum/craft_recipe/weapon/guild_scanner,
-			/datum/craft_recipe/weapon/guild_capacitor,
-			/datum/craft_recipe/weapon/guild_mine_trap,
-			*/
-			)
-
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/ntnetmonitor,
 							 /datum/computer_file/program/power_monitor,
@@ -84,9 +43,9 @@
 							 /datum/computer_file/program/reports)
 
 	description = "The Guild Master is the head of the Artificers Guild, a group of skilled engineers. This colony is your pride.<br>\
-	You are to keep the colony running and constantly improve it as much as you are able. Let none question the efficacy of your labours.<br>\
-	As a leader, it is far more efficient for you to delegate work than attempting to solve everything yourself - spread the labour.<br>\
-	Machinery across the station is your responsibility. Let no outsiders interfere or intrude into your domain - even Command staff are no exception.<br>\
+	You are to keep the colony running and constantly improve it as much as you are able. Let none question the efficacy of your labors.<br>\
+	As a leader, it is far more efficient for you to delegate work than attempting to solve everything yourself - spread the labor.<br>\
+	Machinery across the colony is your responsibility. Let no outsiders interfere or intrude into your domain - even Command staff are no exception.<br>\
 	Treat every Guild member like your family. Keep them paid, fed, and safe. You may be a part of the wider colony, but your own come first."
 
 	duties = "Manage the Guild Adepts - set tasks and areas of focus.<br>\
@@ -113,9 +72,8 @@
 	difficulty = "Medium."
 	selection_color = "#d5c88f"
 	wage = WAGE_PROFESSIONAL
-
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
-
+	alt_titles = list("Guild Novice")
 	access = list(
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 		access_external_airlocks, access_construction, access_atmospherics
@@ -127,47 +85,6 @@
 		STAT_TGH = 10,
 		STAT_VIG = 10,
 	)
-
-	known_recipes = list(
-			/datum/craft_recipe/guild/melee,
-			/datum/craft_recipe/guild/bullet,
-			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/robotmelee,
-			/datum/craft_recipe/guild/arcwelder,
-			/datum/craft_recipe/guild/combat_shovel,
-			/datum/craft_recipe/guild/railgunpistol,
-			/datum/craft_recipe/guild/railgunrifle,
-			/datum/craft_recipe/guild/mace,
-			/datum/craft_recipe/guild/claymore,
-			/datum/craft_recipe/guild/machete,
-			/datum/craft_recipe/guild/katana,
-			/datum/craft_recipe/guild/firebrand,
-			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing,
-			/datum/craft_recipe/guild/plasmablock,
-			/datum/craft_recipe/guild/rubbermesh,
-			/datum/craft_recipe/guild/booster,
-			/datum/craft_recipe/guild/injector,
-			/datum/craft_recipe/guild/weintraub,
-			/datum/craft_recipe/guild/overshooter,
-			/datum/craft_recipe/guild/dangerzone,
-			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine,
-			/datum/craft_recipe/guild/watchman,
-			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox/*,
-			/datum/craft_recipe/weapon/guild_bin,
-			/datum/craft_recipe/weapon/guild_manip,
-			/datum/craft_recipe/weapon/guild_laser,
-			/datum/craft_recipe/weapon/guild_scanner,
-			/datum/craft_recipe/weapon/guild_capacitor,
-			/datum/craft_recipe/weapon/guild_mine_trap,
-			*/
-			)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -183,7 +100,7 @@ Outside of this, you should devote time to learning and configuring various syst
 This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, or purchased from Lonestar or the Prospectors.<br>\
 Do not let outsiders, even Command Staff, interfere with the duties of the Guild. And remember - be ready to respond to emergency calls at any time."
 
-	duties = "Start up the supermatter.<br>\
+	duties = "Start up the solars and generators.<br>\
 	Repair anything and anyone that needs some maintenance.<br>\
 	Respond to distress calls and patch breaches in the walls.<br>\
 	Keep every part of the colony powered, oxygenated, and ready to use."

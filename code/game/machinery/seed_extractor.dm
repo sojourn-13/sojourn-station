@@ -5,20 +5,27 @@
 	icon_state = "sextractor"
 	density = 1
 	anchored = 1
+	circuit = /obj/item/circuitboard/seed_extractor
 
-obj/machinery/seed_extractor/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/seed_extractor/attackby(var/obj/item/O as obj, var/mob/user as mob)
+
+	if(default_deconstruction(O, user))
+		return
+
+	if(default_part_replacement(O, user))
+		return
 
 	// Fruits and vegetables.
-	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown) || istype(O, /obj/item/weapon/grown))
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown) || istype(O, /obj/item/grown))
 
 		user.remove_from_mob(O)
 
 		var/datum/seed/new_seed_type
-		if(istype(O, /obj/item/weapon/grown))
-			var/obj/item/weapon/grown/F = O
+		if(istype(O, /obj/item/grown))
+			var/obj/item/grown/F = O
 			new_seed_type = plant_controller.seeds[F.plantname]
 		else
-			var/obj/item/weapon/reagent_containers/food/snacks/grown/F = O
+			var/obj/item/reagent_containers/food/snacks/grown/F = O
 			new_seed_type = plant_controller.seeds[F.plantname]
 
 		if(new_seed_type)

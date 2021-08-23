@@ -17,7 +17,7 @@
 
 	var/temperature_archived
 	var/mob/living/carbon/occupant = null
-	var/obj/item/weapon/reagent_containers/glass/beaker = null
+	var/obj/item/reagent_containers/glass/beaker = null
 
 	var/current_heat_capacity = 50
 
@@ -69,7 +69,7 @@
 		go_out()
 
 /obj/machinery/atmospherics/unary/cryo_cell/attack_hand(mob/user)
-	if(!usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT))
+	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Cog needs 30 as bio is 15
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 	ui_interact(user)
@@ -183,8 +183,8 @@
 			return
 	return put_mob(target)
 
-/obj/machinery/atmospherics/unary/cryo_cell/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if(istype(W, /obj/item/weapon/reagent_containers/glass))
+/obj/machinery/atmospherics/unary/cryo_cell/attackby(var/obj/item/W as obj, var/mob/user as mob)
+	if(istype(W, /obj/item/reagent_containers/glass))
 		if(beaker)
 			to_chat(user, SPAN_WARNING("A beaker is already loaded into the machine."))
 			return
@@ -242,9 +242,12 @@
 			if(occupant.bodytemperature < 225)
 				if (occupant.getToxLoss())
 					occupant.adjustToxLoss(max(-1, -20/occupant.getToxLoss()))
-				var/heal_brute = occupant.getBruteLoss() ? min(1, 20/occupant.getBruteLoss()) : 0
-				var/heal_fire = occupant.getFireLoss() ? min(1, 20/occupant.getFireLoss()) : 0
+				var/heal_brute = occupant.getBruteLoss() ? min(20, 20/occupant.getBruteLoss()) : 0
+				var/heal_fire = occupant.getFireLoss() ? min(20, 20/occupant.getFireLoss()) : 0
+				occupant.adjustOxyLoss(-10) //Were always healing o2
+				occupant.adjustToxLoss(-1) //Were always healing a small bit of toxins
 				occupant.heal_organ_damage(heal_brute,heal_fire)
+				occupant.adjustCloneLoss(-5) //Were always healing a bit of cloneloss, not much tho
 		var/has_cryo = occupant.reagents.get_reagent_amount("cryoxadone") >= 1
 		var/has_clonexa = occupant.reagents.get_reagent_amount("clonexadone") >= 1
 		var/has_cryo_medicine = has_cryo || has_clonexa

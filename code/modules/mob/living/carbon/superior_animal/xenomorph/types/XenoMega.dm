@@ -9,7 +9,6 @@
 
 	maxHealth = 1600
 	health = 1600
-
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
@@ -25,7 +24,6 @@
 	icon_dead = "queen_dead"
 	icon_rest = "queen_stunned"
 	status_flags = 0
-
 	maxHealth = 3000
 	health = 3000
 	poison_per_bite = 10
@@ -33,16 +31,94 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
-	move_to_delay = 2
+	move_to_delay = 1
 	turns_per_move = 12
+
+/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/slip(var/slipped_on)
+	return FALSE
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && !L.weakened && prob(30))
-			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE))
+			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
 				return
 			L.Weaken(8)
 			L.visible_message(SPAN_DANGER("\the [src] rams \the [L] off there feet!"))
 
 	. = ..()
+
+/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/praetorian/queen/attack_hand(mob/living/carbon/M as mob)
+	..()
+	var/mob/living/carbon/human/H = M
+
+	switch(M.a_intent)
+		if (I_HELP)
+			help_shake_act(M)
+
+		if (I_GRAB)
+			if(!weakened && stat == CONSCIOUS)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustBruteLoss(25)
+				M.adjustOxyLoss(25)
+				M.Weaken(5)
+				visible_message(SPAN_WARNING("\red [src] immediately crushes [M] with its titan bulk when they stupidly try to grab it!"))
+				return 1
+			else
+				if(M == src || anchored)
+					return 0
+				for(var/obj/item/grab/G in src.grabbed_by)
+					if(G.assailant == M)
+						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
+						return
+
+				var/obj/item/grab/G = new /obj/item/grab(M, src)
+				if(buckled)
+					to_chat(M, SPAN_NOTICE("You cannot grab [src], \he is buckled in!"))
+				if(!G) //the grab will delete itself in New if affecting is anchored
+					return
+
+				M.put_in_active_hand(G)
+				G.synch()
+				LAssailant = M
+
+				M.do_attack_animation(src)
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
+
+				return 1
+
+		if (I_DISARM)
+			if(!weakened && stat == CONSCIOUS)
+				M.visible_message("\red [src] slays [M] with an deadly impalement from its tail!")
+				M.Weaken(5)
+				M.adjustBruteLoss(250)
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+
+			M.do_attack_animation(src)
+
+		if (I_HURT)
+			var/damage = 3
+			if ((stat == CONSCIOUS) && prob(10))
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				M.visible_message("\red [M] missed \the [src]")
+			else
+				if (istype(H))
+					damage += max(0, (H.stats.getStat(STAT_ROB) / 10))
+					if (HULK in H.mutations)
+						damage *= 2
+
+				playsound(loc, "punch", 25, 1, -1)
+				M.visible_message("\red [M] has punched \the [src]")
+
+				adjustBruteLoss(damage)
+				updatehealth()
+				M.do_attack_animation(src)
+
+				return 1

@@ -47,6 +47,8 @@ SUBSYSTEM_DEF(ticker)
 	//station_explosion used to be a variable for every mob's hud. Which was a waste!
 	//Now we have a general cinematic centrally held within the gameticker....far more efficient!
 	var/obj/screen/cinematic = null
+	var/scheduled_restart = null
+	var/automatic_restart_allowed = TRUE
 
 /datum/controller/subsystem/ticker/Initialize(start_timeofday)
 	if(!syndicate_code_phrase)
@@ -126,7 +128,10 @@ SUBSYSTEM_DEF(ticker)
 			if(!process_empty_server())
 				return
 
-			var/game_finished = (evacuation_controller.round_over() || ship_was_nuked  || universe_has_ended)
+			if(automatic_restart_allowed && config.automatic_restart_time && config.automatic_restart_time < world.time)
+				shift_end()
+
+			var/game_finished = (evacuation_controller.round_over() || ship_was_nuked  || universe_has_ended || (scheduled_restart && scheduled_restart < world.time))
 
 			if(!nuke_in_progress && game_finished)
 				current_state = GAME_STATE_FINISHED
@@ -245,6 +250,7 @@ SUBSYSTEM_DEF(ticker)
 
 		generate_contracts(min(6 + round(minds.len / 5), 12))
 		generate_excel_contracts(min(6 + round(minds.len / 5), 12))
+		generate_blackshield_contracts(min(6 + round(minds.len / 5), 12))
 		excel_check()
 		addtimer(CALLBACK(src, .proc/contract_tick), 15 MINUTES)
 	//start_events() //handles random events and space dust.
@@ -368,7 +374,7 @@ SUBSYSTEM_DEF(ticker)
 			SSticker.minds |= player.mind
 
 /datum/controller/subsystem/ticker/proc/generate_contracts(count)
-	var/list/candidates = (subtypesof(/datum/antag_contract) - typesof(/datum/antag_contract/excel))
+	var/list/candidates = (subtypesof(/datum/antag_contract) - typesof(/datum/antag_contract/excel)- typesof(/datum/antag_contract/blackshield))
 	while(count--)
 		while(candidates.len)
 			var/contract_type = pick(candidates)
@@ -382,7 +388,22 @@ SUBSYSTEM_DEF(ticker)
 				candidates -= contract_type
 			break
 
-datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
+/datum/controller/subsystem/ticker/proc/generate_blackshield_contracts(count)
+	var/list/candidates = subtypesof(/datum/antag_contract/blackshield)
+	while(count--)
+		while(candidates.len)
+			var/contract_type = pick(candidates)
+			var/datum/antag_contract/C = new contract_type
+			if(!C.can_place())
+				candidates -= contract_type
+				qdel(C)
+				continue
+			C.place()
+			if(C.unique)
+				candidates -= contract_type
+			break
+
+/datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 	var/list/candidates = subtypesof(/datum/antag_contract/excel)
 	while(count--)
 		while(candidates.len)
@@ -414,7 +435,7 @@ datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 		var/marked_areas = 0
 		if(M.completed)
 			return
-		for (var/obj/item/device/propaganda_chip/C in world)
+		for (var/obj/item/device/propaganda_chip/C in ship_areas)
 			if (C.active)
 				if (get_area(C) in targets)
 					marked_areas += 1
@@ -424,8 +445,10 @@ datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 
 /datum/controller/subsystem/ticker/proc/contract_tick()
 	generate_contracts(1)
+	generate_blackshield_contracts(1)
 	generate_excel_contracts(1)
 	addtimer(CALLBACK(src, .proc/contract_tick), 15 MINUTES)
+
 /datum/controller/subsystem/ticker/proc/equip_characters()
 	var/captainless = TRUE
 	for(var/mob/living/carbon/human/player in GLOB.player_list)
@@ -454,29 +477,29 @@ datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 				var/turf/playerTurf = get_turf(Player)
 				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
 					if(isNotAdminLevel(playerTurf.z))
-						to_chat(Player, "<font color='blue'><b>You managed to survive, but were marooned on [station_name()] as [Player.real_name]...</b></font>")
+						to_chat(Player, "<font color='green'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>") //No more "getting marooned" on a goddamn planet.
 					else
-						to_chat(Player, "<font color='green'><b>You managed to survive the events on [station_name()] as [Player.real_name].</b></font>")
+						to_chat(Player, "<font color='green'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>")
 				else if(isAdminLevel(playerTurf.z))
 					to_chat(Player, "<font color='green'><b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b></font>")
 				else if(issilicon(Player))
-					to_chat(Player, "<font color='green'><b>You remain operational after the events on [station_name()] as [Player.real_name].</b></font>")
+					to_chat(Player, "<font color='green'><b>You remained operational after today's events on the [station_name()] as [Player.real_name].</b></font>")
 				else
-					to_chat(Player, "<font color='blue'><b>You missed the crew transfer after the events on [station_name()] as [Player.real_name].</b></font>")
+					to_chat(Player, "<font color='green'><b>You managed to survive today's events on the [station_name()] as [Player.real_name].</b></font>") //No such "crew transfer" here, unless people take the lift back home.
 			else
 				if(isghost(Player))
 					var/mob/observer/ghost/O = Player
 					if(!O.started_as_observer)
-						to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
+						to_chat(Player, "<font color='red'><b>You did not survive today's events on the [station_name()]...</b></font>")
 				else
-					to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
+					to_chat(Player, "<font color='red'><b>You did not survive today's events on the [station_name()]...</b></font>")
 	to_chat(world, "<br>")
 
 	for(var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
 		if(aiPlayer.stat != DEAD)
 			to_chat(world, "<b>[aiPlayer.name] (Played by: [aiPlayer.key])'s laws at the end of the round were:</b>")
 		else
-			to_chat(world, "<b>[aiPlayer.name] (Played by: [aiPlayer.key])'s laws when it was deactivated were:</b>")
+			to_chat(world, "<b>[aiPlayer.name] (Played by: [aiPlayer.key])'s laws at the time of their deactivation were:</b>")
 		aiPlayer.show_laws(TRUE)
 
 		if(aiPlayer.connected_robots.len)
@@ -518,3 +541,8 @@ datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)
 	log_game("Antagonists at round end were...")
 	for(var/i in total_antagonists)
 		log_game("[i]s[total_antagonists[i]].")
+
+/datum/controller/subsystem/ticker/proc/shift_end(round_end_time = config.automatic_restart_delay)
+	command_announcement.Announce("Today's shift will be ending in [round(round_end_time/(1 MINUTE))] minute[round_end_time >= 1 MINUTE && round_end_time < 2 MINUTES ? "" : "s"]. Please finish up all current tasks and return all departmental equipment used.", "Shift End Call", new_sound = 'sound/misc/notice3.ogg')
+	automatic_restart_allowed = FALSE
+	scheduled_restart = world.time + round_end_time

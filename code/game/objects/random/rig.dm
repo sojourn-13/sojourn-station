@@ -6,29 +6,29 @@
 /obj/random/rig/item_to_spawn()
 	return pickweight(list(
 	//Uncommon/civilian ones. These should make up most of the rig spawns
-	/obj/item/weapon/rig/eva = 20,
-	/obj/item/weapon/rig/eva/equipped = 10,
-	/obj/item/weapon/rig/medical = 20,
-	/obj/item/weapon/rig/medical/equipped = 10,
-	/obj/item/weapon/rig/light = 20,
-	/obj/item/weapon/rig/industrial = 20,
-	/obj/item/weapon/rig/industrial/equipped = 10,
+	/obj/item/rig/eva = 20,
+	/obj/item/rig/eva/equipped = 10,
+	/obj/item/rig/medical = 20,
+	/obj/item/rig/medical/equipped = 10,
+	/obj/item/rig/light = 20,
+	/obj/item/rig/industrial = 20,
+	/obj/item/rig/industrial/equipped = 10,
 
 	//Head of staff
-	//obj/item/weapon/rig/ce = 10,
-	//obj/item/weapon/rig/ce/equipped = 5,
-	/obj/item/weapon/rig/hazmat = 5,
-	/obj/item/weapon/rig/hazmat/equipped = 2,
+	//obj/item/rig/ce = 10,
+	//obj/item/rig/ce/equipped = 5,
+	/obj/item/rig/hazmat = 5,
+	/obj/item/rig/hazmat/equipped = 2,
 
 	//Heavy armor
-	//obj/item/weapon/rig/combat = 10,
-	//obj/item/weapon/rig/combat/ironhammer = 10,
-	/obj/item/weapon/rig/hazard = 5,
+	//obj/item/rig/combat = 10,
+	//obj/item/rig/combat/ironhammer = 10,
+	/obj/item/rig/hazard = 5,
 
 	//The ones below here come with built in weapons
-	//obj/item/weapon/rig/combat/equipped = 4,
-	//obj/item/weapon/rig/combat/ironhammer/equipped = 4,
-	/obj/item/weapon/rig/hazard/equipped = 2,
+	//obj/item/rig/combat/equipped = 4,
+	//obj/item/rig/combat/ironhammer/equipped = 4,
+	/obj/item/rig/hazard/equipped = 2,
 	))
 
 /obj/random/rig/low_chance
@@ -42,11 +42,11 @@
 /obj/random/rig/engi/item_to_spawn()
 	return pickweight(list(
 	//Uncommon/civilian ones. These should make up most of the rig spawns
-	/obj/item/weapon/rig/eva = 30,
-	/obj/item/weapon/rig/eva/equipped = 10,
-	/obj/item/weapon/rig/light = 20,
-	/obj/item/weapon/rig/industrial = 30,
-	/obj/item/weapon/rig/industrial/equipped = 10
+	/obj/item/rig/eva = 30,
+	/obj/item/rig/eva/equipped = 10,
+	/obj/item/rig/light = 20,
+	/obj/item/rig/industrial = 30,
+	/obj/item/rig/industrial/equipped = 10
 	))
 
 
@@ -56,7 +56,7 @@
 	has_postspawn = TRUE
 
 /obj/random/rig/damaged/post_spawn(var/list/spawns)
-	for (var/obj/item/weapon/rig/module in spawns)
+	for (var/obj/item/rig/module in spawns)
 		//screw it up a bit
 		var/cnd = rand(40,80)
 		module.lose_modules(cnd)

@@ -59,7 +59,7 @@
 		usr.emote(message)
 
 /mob/verb/subtle_wrapper()
-	set name = "Subtle (anti-ghost) verb"
+	set name = "Subtle verb"
 	set category = "IC"
 
 	var/message = input("", "subtle (text)") as text|null
@@ -141,6 +141,8 @@
 		verb=pick("exclaims", "shouts", "yells")
 	else if(ending=="?")
 		verb="asks"
+	else if(ending=="@")
+		verb="reports"
 
 	return verb
 
@@ -173,7 +175,7 @@
 		return standard_mode
 
 	if(length(message) >= 2 && copytext(message,1,2) == get_prefix_key(/decl/prefix/radio_channel_selection))
-		var/channel_prefix =  sanitize_key(copytext(message, 2, 3))
+		var/channel_prefix = lowertext(copytext(message, 2, 3))
 		return department_radio_keys[channel_prefix]
 
 	return null

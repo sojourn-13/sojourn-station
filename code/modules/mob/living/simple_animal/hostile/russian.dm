@@ -20,7 +20,7 @@
 	attacktext = "punched"
 	a_intent = I_HURT
 	var/corpse = /obj/landmark/corpse/antagonist/russian
-	var/weapon1 = /obj/item/weapon/tool/knife
+	var/weapon1 = /obj/item/tool/knife
 	min_oxy = 5
 	max_oxy = 0
 	min_tox = 0
@@ -32,12 +32,14 @@
 	unsuitable_atoms_damage = 15
 	faction = "russian"
 	status_flags = CANPUSH
+	leather_amount = 0
+	bones_amount = 0
 
 
 /mob/living/simple_animal/hostile/russian/ranged
 	icon_state = "russianranged"
 	corpse = /obj/landmark/corpse/antagonist/russian/ranged
-	weapon1 = /obj/item/weapon/gun/projectile/revolver
+	weapon1 = /obj/item/gun/projectile/revolver
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet
 	projectilesound = 'sound/weapons/Gunshot.ogg'

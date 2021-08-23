@@ -30,6 +30,7 @@
 #define PERK_SHELL_SHOCK /datum/perk/oddity/shell_shock
 #define PERK_FAILING_MIND /datum/perk/oddity/failing_mind
 #define PERK_SHARP_MIND /datum/perk/oddity/sharp_mind
+#define PERK_BLACKBOX_INSIGHT /datum/perk/oddity/blackbox_insight
 #define PERK_STRANGTH /datum/perk/oddity/strangth
 
 //roundstart perks (job and racial)
@@ -45,6 +46,7 @@
 #define PERK_EAR_OF_QUICKSILVER /datum/perk/ear_of_quicksilver
 #define PERK_JUNKBORN /datum/perk/junkborn
 #define PERK_ASS_OF_CONCRETE /datum/perk/ass_of_concrete
+#define PERK_BRAWN /datum/perk/brawn
 #define PERK_SURE_STEP /datum/perk/sure_step
 #define PERK_SPIDER_FRIEND /datum/perk/spiderfriend
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
@@ -55,6 +57,28 @@
 #define PERK_BORN_WARRIOR /datum/perk/born_warrior
 #define PERK_SCUTTLEBUG /datum/perk/scuttlebug
 #define PERK_MARKET_PROF /datum/perk/market_prof
+#define PERK_MEDICAL_EXPERT /datum/perk/medicalexpertise
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
+#define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
+#define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
+#define PERK_BOLT_REFLECT /datum/perk/job/bolt_reflect
 #define PERK_JINGLE_JANGLE /datum/perk/job/jingle_jangle
+#define PERK_BUTCHER /datum/perk/job/butcher
+#define PERK_MASTER_HERBALIST /datum/perk/job/master_herbalist
+#define PERK_PERFECT_SHOT /datum/perk/exceptional_aim
+#define PERK_STAY_HYDRATED /datum/perk/stay_hydrated
+#define PERK_SECOND_SKIN /datum/perk/second_skin
+#define PERK_IRON_FLESH /datum/perk/iron_flesh
+#define PERK_SI_SCI /datum/perk/si_sci
+#define PERK_ODD_REROLL /datum/perk/oddity_reroll
+#define PERK_FOLKEN_HEALING /datum/perk/folken_healing
+#define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
+#define PERK_DARK_HEAL /datum/perk/dark_heal
+#define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
+#define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
+#define PERK_GREENTHUMB /datum/perk/greenthumb
+#define PERK_PSION /datum/perk/psion
+#define PERK_PSI_MANIA /datum/perk/psi_mania
+#define PERK_PSI_HARMONY /datum/perk/psi_harmony
+#define PERK_PSI_ATTUNEMENT /datum/perk/psi_attunement

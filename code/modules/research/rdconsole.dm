@@ -42,15 +42,15 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	icon_keyboard = "rd_key"
 	icon_screen = "rdcomp"
 	light_color = COLOR_LIGHTING_PURPLE_MACHINERY
-	circuit = /obj/item/weapon/circuitboard/rdconsole
+	circuit = /obj/item/circuitboard/rdconsole
 	var/datum/research/files								//Stores all the collected research data.
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = null	//Stores the data disk.
+	var/obj/item/computer_hardware/hard_drive/portable/disk = null	//Stores the data disk.
 
 	var/obj/machinery/r_n_d/destructive_analyzer/linked_destroy = null	//Linked Destructive Analyzer
 	var/obj/machinery/autolathe/rnd/protolathe/linked_lathe = null		//Linked Protolathe
 	var/obj/machinery/autolathe/rnd/imprinter/linked_imprinter = null	//Linked Circuit Imprinter
 
-	var/screen = SCREEN_MAIN	//Which screen is currently showing.
+	var/screen = SCREEN_LOCKED	//Which screen is currently showing.
 	var/id     = 0			//ID of the computer (for server restrictions).
 	var/sync   = 1		//If sync = 0, it doesn't show up on Server Control Console
 	var/can_research = TRUE   //Is this console capable of researching
@@ -90,7 +90,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 
 
 /obj/machinery/computer/rdconsole/proc/griefProtection() //Have it automatically push research to the centcomm server so wild griffins can't fuck up R&D's work
-	for(var/obj/machinery/r_n_d/server/centcom/C in SSmachines.machinery)
+	for(var/obj/machinery/r_n_d/server/centcom/C in GLOB.machines)
 		C.files.download_from(files)
 
 /obj/machinery/computer/rdconsole/Initialize()
@@ -111,9 +111,9 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		linked_destroy = null
 	return ..()
 
-/obj/machinery/computer/rdconsole/attackby(var/obj/item/weapon/D as obj, var/mob/user as mob)
+/obj/machinery/computer/rdconsole/attackby(var/obj/item/D as obj, var/mob/user as mob)
 	//Loading a disk into it.
-	if(istype(D, /obj/item/weapon/computer_hardware/hard_drive/portable))
+	if(istype(D, /obj/item/computer_hardware/hard_drive/portable))
 		if(disk)
 			to_chat(user, SPAN_NOTICE("A disk is already loaded into the machine."))
 			return
@@ -122,7 +122,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		D.forceMove(src)
 		disk = D
 		to_chat(user, SPAN_NOTICE("You add \the [D] to the machine."))
-	else if(istype(D, /obj/item/device/science_tool)) // Used when you want to upload autopsy/other scanned data to the console
+	else if(istype(D, /obj/item/device/science_tool) || istype(D,/obj/item/portable_destructive_analyzer)) // Used when you want to upload autopsy/other scanned data to the console
 		var/research_points = files.experiments.read_science_tool(D)
 		if(research_points > 0)
 			to_chat(user, SPAN_NOTICE("[name] received [research_points] research points from uploaded data."))
@@ -332,7 +332,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	reset_screen()
 
 /obj/machinery/computer/rdconsole/proc/sync_tech()
-	for(var/obj/machinery/r_n_d/server/S in SSmachines.machinery)
+	for(var/obj/machinery/r_n_d/server/S in GLOB.machines)
 		var/server_processed = FALSE
 		if((id in S.id_with_upload) || istype(S, /obj/machinery/r_n_d/server/centcom))
 			S.files.download_from(files)
@@ -380,7 +380,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	return designs_list
 
 /obj/machinery/computer/rdconsole/attack_hand(mob/user)
-	if(!usr.stat_check(STAT_COG, 20))
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 60))
 		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
 		return
 

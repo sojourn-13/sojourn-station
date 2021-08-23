@@ -1,4 +1,4 @@
-/obj/item/weapon/stamp
+/obj/item/stamp
 	name = "rubber stamp"
 	desc = "A rubber stamp for stamping important documents."
 	icon = 'icons/obj/bureaucracy.dmi'
@@ -18,67 +18,67 @@
 	var/yplus	= 2		//Ditto for Y
 	var/yminus	= -3	//Ditto for Y
 
-/obj/item/weapon/stamp/captain
+/obj/item/stamp/captain
 	name = "premier's rubber stamp"
 	icon_state = "stamp-cap"
 	xplus = 0
 	yminus = -1
 
-/obj/item/weapon/stamp/hop
+/obj/item/stamp/hop
 	name = "steward's rubber stamp"
 	icon_state = "stamp-hop"
 
-/obj/item/weapon/stamp/hos
+/obj/item/stamp/hos
 	name = "warrant officer's rubber stamp"
 	icon_state = "stamp-hos"
 
-/obj/item/weapon/stamp/hos2
+/obj/item/stamp/hos2
 	name = "blackshield commander's rubber stamp"
 	icon_state = "stamp-hos"
 
-/obj/item/weapon/stamp/ce
+/obj/item/stamp/ce
 	name = "guild master's rubber stamp"
 	icon_state = "stamp-ce"
 
-/obj/item/weapon/stamp/pr
+/obj/item/stamp/pr
 	name = "prime's rubber stamp"
 	icon_state = "stamp-pr"
 
-/obj/item/weapon/stamp/rd
+/obj/item/stamp/rd
 	name = "chief research overseer's rubber stamp"
 	icon_state = "stamp-rd"
 
-/obj/item/weapon/stamp/cmo
+/obj/item/stamp/cmo
 	name = "chief biolab overseer's rubber stamp"
 	icon_state = "stamp-cmo"
 
-/obj/item/weapon/stamp/denied
+/obj/item/stamp/denied
 	name = "\improper DENIED rubber stamp"
 	icon_state = "stamp-deny"
 	stamp_flags = STAMP_DENIAL | STAMP_GENERIC
 
-/obj/item/weapon/stamp/clown
+/obj/item/stamp/clown
 	name = "clown's rubber stamp"
 	icon_state = "stamp-clown"
 	stamp_flags = STAMP_GENERIC
 
-/obj/item/weapon/stamp/qm
+/obj/item/stamp/qm
 	name = "chief executive officer's stamp"
 	icon_state = "stamp-qm"
 
-/obj/item/weapon/stamp/fr
+/obj/item/stamp/fr
 	name = "foreman's stamp"
 	icon_state = "stamp-fr"
 
 // Syndicate stamp to forge documents.
-/obj/item/weapon/stamp/chameleon/attack_self(mob/user as mob)
+/obj/item/stamp/chameleon/attack_self(mob/user as mob)
 
-	var/list/stamp_types = typesof(/obj/item/weapon/stamp) - src.type // Get all stamp types except our own
+	var/list/stamp_types = typesof(/obj/item/stamp) - src.type // Get all stamp types except our own
 	var/list/stamps = list()
 
 	// Generate them into a list
 	for(var/stamp_type in stamp_types)
-		var/obj/item/weapon/stamp/S = new stamp_type
+		var/obj/item/stamp/S = new stamp_type
 		stamps[capitalize(S.name)] = S
 
 	var/list/show_stamps = list("EXIT" = null) + sortList(stamps) // the list that will be shown to the user to pick from
@@ -87,7 +87,7 @@
 
 	if(user && (src in user.contents))
 
-		var/obj/item/weapon/stamp/chosen_stamp = stamps[capitalize(input_stamp)]
+		var/obj/item/stamp/chosen_stamp = stamps[capitalize(input_stamp)]
 
 		if(chosen_stamp)
 			name = chosen_stamp.name

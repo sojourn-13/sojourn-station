@@ -158,7 +158,29 @@ Sword holsters
 	icon_state = "saber_holster"
 	overlay_state = "saber"
 	slot = "utility"
-	can_hold = list(/obj/item/weapon/tool/sword/saber)
+	can_hold = list(/obj/item/tool/sword/saber)
+	price_tag = 200
+	sound_in = 'sound/effects/sheathin.ogg'
+	sound_out = 'sound/effects/sheathout.ogg'
+
+/obj/item/clothing/accessory/holster/saber/militiacommander
+	name = "blackshield Commander's scabbard"
+	desc = "A brown leather Scabbard with golden lining, on it the emblem of Blackshield, This one is designed for the Commander's Saber."
+	icon_state = "saber_holster"
+	overlay_state = "saber"
+	slot = "utility"
+	can_hold = list(/obj/item/tool/sword/saber)
+	price_tag = 200
+	sound_in = 'sound/effects/sheathin.ogg'
+	sound_out = 'sound/effects/sheathout.ogg'
+
+/obj/item/clothing/accessory/holster/saber/militiasergeant
+	name = "blackshield sergeant's scabbard"
+	desc = "A brown leather Scabbard with silver lining, on it the emblem of Blackshield, This one is designed for the Sergeant's Saber."
+	icon_state = "saber_holster"
+	overlay_state = "saber"
+	slot = "utility"
+	can_hold = list(/obj/item/tool/sword/saber)
 	price_tag = 200
 	sound_in = 'sound/effects/sheathin.ogg'
 	sound_out = 'sound/effects/sheathout.ogg'
@@ -171,7 +193,7 @@ Sword holsters
 
 
 /obj/item/clothing/accessory/holster/saber/occupied
-	var/holstered_spawn = /obj/item/weapon/tool/sword/saber
+	var/holstered_spawn = /obj/item/tool/sword/saber
 
 /obj/item/clothing/accessory/holster/saber/occupied/Initialize()
 	holstered = new holstered_spawn
@@ -184,7 +206,7 @@ Sword holsters
 	desc = "A sturdy brown leather scabbard with gold trim. A spring loaded release mechanism and universal design makes it fantastic for all swords."
 	icon_state = "crusader_holster"
 	overlay_state = "crusader"
-	can_hold = list(/obj/item/weapon/tool/sword)
+	can_hold = list(/obj/item/tool/sword)
 
 /obj/item/clothing/accessory/holster/saber/greatsword/update_icon()
 	..()
@@ -193,11 +215,33 @@ Sword holsters
 		add_overlay(image('icons/inventory/accessory/icon.dmi', "crusader_layer"))
 
 /obj/item/clothing/accessory/holster/saber/greatsword/occupied
-	var/holstered_spawn = /obj/item/weapon/tool/sword/crusader
+	var/holstered_spawn = /obj/item/tool/sword/crusader
 
 /obj/item/clothing/accessory/holster/saber/greatsword/occupied/Initialize()
 	holstered = new holstered_spawn
 
+//Subtype which is for printing from the biomachine
+/obj/item/clothing/accessory/holster/saber/greatsword/churchprint
+	name = "Absolutist Sword Scabbard"
+	desc = "A sturdy brown leather scabbard with gold trim. Perfectly designed for holding weapons to fight against the enemies of the Church."
+	icon_state = "crusader_holster"
+	overlay_state = "crusader"
+	can_hold = list(
+		/obj/item/tool/sword/nt,
+		/obj/item/tool/sword/crusader
+		)
+
+/obj/item/clothing/accessory/holster/saber/greatsword/churchprint/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "crusader_layer"))
+
+/obj/item/clothing/accessory/holster/saber/greatsword/churchprint/occupied
+	var/holstered_spawn = /obj/item/tool/sword/crusader
+
+/obj/item/clothing/accessory/holster/saber/greatsword/churchprint/occupied/Initialize()
+	holstered = new holstered_spawn
 
 
 
@@ -206,7 +250,7 @@ Sword holsters
 	desc = "A sturdy black leather scabbard. For the survivalist in you."
 	icon_state = "machete_holster"
 	overlay_state = "machete"
-	can_hold = list(/obj/item/weapon/tool/sword/machete)
+	can_hold = list(/obj/item/tool/sword/machete)
 
 /obj/item/clothing/accessory/holster/saber/machete/update_icon()
 	..()
@@ -215,11 +259,30 @@ Sword holsters
 		add_overlay(image('icons/inventory/accessory/icon.dmi', "machete_layer"))
 
 /obj/item/clothing/accessory/holster/saber/machete/occupied
-	var/holstered_spawn = /obj/item/weapon/tool/sword/machete
+	var/holstered_spawn = /obj/item/tool/sword/machete
 
 /obj/item/clothing/accessory/holster/saber/machete/occupied/Initialize()
 	holstered = new holstered_spawn
 
+/obj/item/clothing/accessory/holster/saber/huntingclaw
+	name = "Hunting Claw Sheath"
+	desc = "A sheath specifically made to be occupied by the Hunting Claw. It's made out of locally sourced leather and bone and treated to give it it's characteristic color,\
+	 the modular strapping makes it so that it can be adapted to each hunter's carrying needs across their body and gear comfortably."
+	icon_state = "huntingclaw_holster"
+	overlay_state = "huntingclaw"
+	can_hold = list(/obj/item/tool/sword/huntingclaw)
+
+/obj/item/clothing/accessory/holster/saber/huntingclaw/update_icon()
+    ..()
+    cut_overlays()
+    if(contents.len)
+        add_overlay(image('icons/inventory/accessory/icon.dmi', "huntingclaw_layer"))
+
+/obj/item/clothing/accessory/holster/saber/huntingclaw/occupied
+    var/holstered_spawn = /obj/item/tool/sword/huntingclaw
+
+/obj/item/clothing/accessory/holster/saber/huntingclaw/occupied/Initialize()
+    holstered = new holstered_spawn
 
 
 
@@ -229,7 +292,7 @@ Sword holsters
 	icon_state = "cutlass_holster"
 	overlay_state = "cutlass"
 	slot = "utility"
-	can_hold = list(/obj/item/weapon/tool/sword/saber, /obj/item/weapon/tool/sword/katana)
+	can_hold = list(/obj/item/tool/sword/saber, /obj/item/tool/sword/katana)
 	price_tag = 200
 	sound_in = 'sound/effects/sheathin.ogg'
 	sound_out = 'sound/effects/sheathout.ogg'
@@ -242,7 +305,7 @@ Sword holsters
 
 
 /obj/item/clothing/accessory/holster/saber/cutlass/occupied
-	var/holstered_spawn = /obj/item/weapon/tool/sword/saber/cutlass
+	var/holstered_spawn = /obj/item/tool/sword/saber/cutlass
 
 /obj/item/clothing/accessory/holster/saber/cutlass/occupied/Initialize()
 	holstered = new holstered_spawn

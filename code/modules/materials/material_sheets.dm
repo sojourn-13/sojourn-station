@@ -94,7 +94,7 @@
 	name = "iron"
 	icon_state = "sheet-iron"
 	default_type = MATERIAL_IRON
-	price_tag = 2
+	price_tag = 1
 
 /obj/item/stack/material/iron/random
 	rand_min = 3
@@ -115,13 +115,13 @@
 	name = "diamond"
 	icon_state = "sheet-diamond"
 	default_type = MATERIAL_DIAMOND
-	price_tag = 50
+	price_tag = 25
 
 /obj/item/stack/material/durasteel
 	name = "durasteel"
 	icon_state = "sheet-durasteel"
 	default_type = MATERIAL_DURASTEEL
-	price_tag = 100
+	price_tag = 1000
 
 /obj/item/stack/material/diamond/random
 	rand_min = 1
@@ -135,7 +135,7 @@
 	name = MATERIAL_URANIUM
 	icon_state = "sheet-uranium"
 	default_type = MATERIAL_URANIUM
-	price_tag = 25
+	price_tag = 10
 
 /obj/item/stack/material/uranium/random
 	rand_min = 2
@@ -145,7 +145,7 @@
 	name = "solid plasma"
 	icon_state = "sheet-plasma"
 	default_type = MATERIAL_PLASMA
-	price_tag = 15
+	price_tag = 8
 
 /obj/item/stack/material/plasma/random
 	rand_min = 3
@@ -158,6 +158,9 @@
 	price_tag = 2
 	novariants = FALSE
 
+/obj/item/stack/material/plastic/full
+	amount = 120
+
 /obj/item/stack/material/plastic/random
 	rand_min = 3
 	rand_max = 10
@@ -166,7 +169,7 @@
 	name = "gold"
 	icon_state = "sheet-gold"
 	default_type = MATERIAL_GOLD
-	price_tag = 25
+	price_tag = 10
 
 /obj/item/stack/material/gold/random
 	rand_min = 2
@@ -176,7 +179,7 @@
 	name = MATERIAL_SILVER
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_SILVER
-	price_tag = 20
+	price_tag = 5
 
 /obj/item/stack/material/silver/random
 	rand_min = 3
@@ -187,7 +190,7 @@
 	name = "platinum"
 	icon_state = "sheet-adamantine"
 	default_type = MATERIAL_PLATINUM
-	price_tag = 40
+	price_tag = 20
 
 /obj/item/stack/material/platinum/random
 	rand_min = 1
@@ -198,7 +201,7 @@
 	name = "metallic hydrogen"
 	icon_state = "sheet-hydrogen"
 	default_type = MATERIAL_MHYDROGEN
-	price_tag = 25
+	price_tag = 10
 	novariants = FALSE
 
 //Fuel for MRSPACMAN generator.
@@ -207,14 +210,14 @@
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_TRITIUM
 	apply_colour = 1
-	price_tag = 25
+	price_tag = 10
 
 /obj/item/stack/material/osmium
 	name = "osmium"
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_OSMIUM
 	apply_colour = 1
-	price_tag = 25
+	price_tag = 12
 
 /obj/item/stack/material/steel
 	name = MATERIAL_STEEL
@@ -236,8 +239,11 @@
 	icon_state = "sheet-plasteel"
 	item_state = "sheet-metal"
 	default_type = MATERIAL_PLASTEEL
-	price_tag = 15
+	price_tag = 8
 	novariants = FALSE
+
+/obj/item/stack/material/plasteel/full
+	amount = 120
 
 /obj/item/stack/material/plasteel/random
 	rand_min = 3
@@ -249,6 +255,9 @@
 	default_type = MATERIAL_WOOD
 	price_tag = 1 //Way to easy to get on mass.
 
+/obj/item/stack/material/wood/full
+	amount = 120
+
 /obj/item/stack/material/wood/random
 	rand_min = 3
 	rand_max = 10
@@ -257,19 +266,22 @@
 	name = "cloth"
 	icon_state = "sheet-cloth"
 	default_type = MATERIAL_CLOTH
-	price_tag = 10
+	price_tag = 1
 
 /obj/item/stack/material/silk
 	name = "silk"
 	icon_state = "sheet_silk_bundle"
 	default_type = MATERIAL_SILK //We dont work as cloth
-	price_tag = 20
+	price_tag = 10
 
 /obj/item/stack/material/cardboard
 	name = "cardboard"
 	icon_state = "sheet-card"
 	default_type = MATERIAL_CARDBOARD
-	price_tag = 5
+	price_tag = 3
+
+/obj/item/stack/material/cardboard/full
+	amount = 120
 
 /obj/item/stack/material/cardboard/random
 	rand_min = 5
@@ -277,9 +289,16 @@
 
 /obj/item/stack/material/leather
 	name = "leather"
-	desc = "The by-product of mob grinding."
+	desc = "The by-product of skinning local wildlife."
 	icon_state = "sheet-leather"
 	default_type = MATERIAL_LEATHER
+	price_tag = 10
+
+/obj/item/stack/material/bone
+	name = "bones"
+	desc = "A collection of random bones and bits."
+	icon_state = "sheet_bones"
+	default_type = MATERIAL_BONE
 	price_tag = 10
 
 /obj/item/stack/material/glass
@@ -287,6 +306,9 @@
 	icon_state = "sheet-glass"
 	default_type = MATERIAL_GLASS
 	price_tag = 2
+
+/obj/item/stack/material/glass/full
+	amount = 120
 
 /obj/item/stack/material/glass/random
 	rand_min = 3
@@ -299,11 +321,11 @@
 
 /obj/item/stack/material/glass/plasmaglass
 	name = "borosilicate glass"
-	desc = "This sheet is special platinum-glass alloy designed to withstand large temperatures"
+	desc = "This sheet is special plasma-glass alloy designed to withstand large temperatures"
 	singular_name = "borosilicate glass sheet"
 	icon_state = "sheet-plasmaglass"
 	default_type = MATERIAL_PLASMAGLASS
-	price_tag = 10
+	price_tag = 6
 
 /obj/item/stack/material/glass/plasmaglass/random
 	rand_min = 3
@@ -311,7 +333,7 @@
 
 /obj/item/stack/material/glass/plasmarglass
 	name = "reinforced borosilicate glass"
-	desc = "This sheet is special platinum-glass alloy designed to withstand large temperatures. It is reinforced with few rods."
+	desc = "This sheet is special plasma-glass alloy designed to withstand large temperatures. It is reinforced with few rods."
 	singular_name = "reinforced borosilicate glass sheet"
 	icon_state = "sheet-plasmarglass"
 	default_type = MATERIAL_RPLASMAGLASS

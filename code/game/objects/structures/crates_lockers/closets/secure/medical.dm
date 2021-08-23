@@ -5,16 +5,16 @@
 	req_access = list(access_medical_equip)
 
 /obj/structure/closet/secure_closet/medicine/populate_contents()
-	new /obj/item/weapon/storage/box/autoinjectors(src)
-	new /obj/item/weapon/storage/box/syringes(src)
-	new /obj/item/weapon/reagent_containers/dropper(src)
-	new /obj/item/weapon/reagent_containers/dropper(src)
-	new /obj/item/weapon/reagent_containers/glass/beaker(src)
-	new /obj/item/weapon/reagent_containers/glass/beaker(src)
-	new /obj/item/weapon/reagent_containers/glass/bottle/inaprovaline(src)
-	new /obj/item/weapon/reagent_containers/glass/bottle/inaprovaline(src)
-	new /obj/item/weapon/reagent_containers/glass/bottle/antitoxin(src)
-	new /obj/item/weapon/reagent_containers/glass/bottle/antitoxin(src)
+	new /obj/item/storage/box/autoinjectors(src)
+	new /obj/item/storage/box/syringes(src)
+	new /obj/item/reagent_containers/dropper(src)
+	new /obj/item/reagent_containers/dropper(src)
+	new /obj/item/reagent_containers/glass/beaker(src)
+	new /obj/item/reagent_containers/glass/beaker(src)
+	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
+	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
+	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
+	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 
 /obj/structure/closet/secure_closet/anesthetics
 	name = "anesthetics closet"
@@ -23,13 +23,13 @@
 	req_access = list(access_moebius)
 
 /obj/structure/closet/secure_closet/anesthetics/populate_contents()
-	new /obj/item/weapon/tank/anesthetic(src)
-	new /obj/item/weapon/tank/anesthetic(src)
-	new /obj/item/weapon/tank/anesthetic(src)
+	new /obj/item/tank/anesthetic(src)
+	new /obj/item/tank/anesthetic(src)
+	new /obj/item/tank/anesthetic(src)
 	new /obj/item/clothing/mask/breath/medical(src)
 	new /obj/item/clothing/mask/breath/medical(src)
 	new /obj/item/clothing/mask/breath/medical(src)
-	new /obj/item/weapon/tool/wrench(src)
+	new /obj/item/tool/wrench(src)
 
 /obj/structure/closet/secure_closet/personal/doctor
 	name = "soteria doctor's locker"
@@ -39,9 +39,9 @@
 
 /obj/structure/closet/secure_closet/personal/doctor/populate_contents()
 	if(prob(50))
-		new /obj/item/weapon/storage/backpack/medical(src)
+		new /obj/item/storage/backpack/medical(src)
 	else
-		new /obj/item/weapon/storage/backpack/satchel/medical(src)
+		new /obj/item/storage/backpack/satchel/medical(src)
 	switch(pick("blue", "green", "purple"))
 		if ("blue")
 			new /obj/item/clothing/under/scrubs(src)
@@ -70,10 +70,10 @@
 	new /obj/item/clothing/shoes/color(src)
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
-	new /obj/item/weapon/storage/belt/medical/emt(src)
-	new /obj/item/weapon/storage/belt/medical/emt(src)
-	new /obj/item/weapon/storage/belt/medical/(src)
-	new /obj/item/weapon/storage/belt/medical/(src)
+	new /obj/item/storage/belt/medical/emt(src)
+	new /obj/item/storage/belt/medical/emt(src)
+	new /obj/item/storage/belt/medical/(src)
+	new /obj/item/storage/belt/medical/(src)
 	new /obj/item/clothing/suit/storage/surgical_apron(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
@@ -84,9 +84,9 @@
 
 /obj/structure/closet/secure_closet/personal/paramedic/populate_contents()
 	if(prob(50))
-		new /obj/item/weapon/storage/backpack/medical(src)
+		new /obj/item/storage/backpack/medical(src)
 	else
-		new /obj/item/weapon/storage/backpack/satchel/medical(src)
+		new /obj/item/storage/backpack/satchel/medical(src)
 	switch(pick("blue", "green", "purple"))
 		if ("blue")
 			new /obj/item/clothing/under/scrubs(src)
@@ -104,14 +104,14 @@
 	new /obj/item/clothing/gloves/latex/nitrile(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/device/radio(src)
-	new /obj/item/weapon/tool/crowbar(src)
-	new /obj/item/weapon/extinguisher/mini(src)
+	new /obj/item/tool/crowbar(src)
+	new /obj/item/extinguisher/mini(src)
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
-	new /obj/item/weapon/storage/belt/medical/emt(src)
+	new /obj/item/storage/belt/medical/emt(src)
 	new /obj/item/clothing/suit/storage/hazardvest(src)
-	new /obj/item/weapon/storage/pouch/medical_supply(src)
+	new /obj/item/storage/pouch/medical_supply(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
 	name = "soteria orderly locker"
@@ -121,9 +121,9 @@
 
 /obj/structure/closet/secure_closet/personal/orderly/populate_contents()
 	if(prob(50))
-		new /obj/item/weapon/storage/backpack/medical(src)
+		new /obj/item/storage/backpack/medical(src)
 	else
-		new /obj/item/weapon/storage/backpack/satchel/medical(src)
+		new /obj/item/storage/backpack/satchel/medical(src)
 	switch(pick("blue", "green", "purple"))
 		if ("blue")
 			new /obj/item/clothing/under/scrubs(src)
@@ -136,14 +136,16 @@
 			new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/device/radio(src)
-	new /obj/item/weapon/tool/crowbar(src)
-	new /obj/item/weapon/extinguisher/mini(src)
+	new /obj/item/tool/crowbar(src)
+	new /obj/item/extinguisher/mini(src)
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
-	new /obj/item/weapon/storage/belt/medical/emt(src)
+	new /obj/item/storage/belt/medical/emt(src)
 	new /obj/item/clothing/suit/storage/hazardvest_black(src)
-	new /obj/item/weapon/storage/pouch/medical_supply(src)
+	new /obj/item/melee/baton(src)
+	new /obj/item/storage/pouch/baton_holster(src)
+	new /obj/item/storage/pouch/medical_supply(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
 	name = "soteria biolab overseer's locker"
@@ -152,9 +154,9 @@
 
 /obj/structure/closet/secure_closet/reinforced/CMO/populate_contents()
 	if(prob(50))
-		new /obj/item/weapon/storage/backpack/medical(src)
+		new /obj/item/storage/backpack/medical(src)
 	else
-		new /obj/item/weapon/storage/backpack/satchel(src)
+		new /obj/item/storage/backpack/satchel(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)
 	new /obj/item/clothing/head/bio_hood/cmo(src)
 	new /obj/item/clothing/shoes/color(src)
@@ -171,14 +173,16 @@
 	new /obj/item/clothing/under/rank/moebius_biolab_officer(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/cmo(src)
 	new /obj/item/clothing/gloves/latex(src)
-	new /obj/item/weapon/storage/belt/medical(src)
+	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/heads/cmo(src)
 	new /obj/item/device/flash(src)
-	new /obj/item/weapon/reagent_containers/hypospray(src)
-	new /obj/item/weapon/storage/pouch/medical_supply(src)
+	new /obj/item/reagent_containers/hypospray(src)
+	new /obj/item/storage/pouch/medical_supply(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)
+	new /obj/item/computer_hardware/hard_drive/portable/design/medical/advanced/cmo(src)
+	new /obj/item/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"
@@ -199,8 +203,8 @@
 	req_access = list(access_chemistry)
 
 /obj/structure/closet/secure_closet/chemical/populate_contents()
-	new /obj/item/weapon/storage/box/pillbottles(src)
-	new /obj/item/weapon/storage/box/pillbottles(src)
-	new /obj/item/weapon/storage/pouch/tubular/vial(src)
-	new /obj/item/weapon/storage/bag/chemistry(src)
-	new /obj/item/weapon/storage/bag/chemistry(src)
+	new /obj/item/storage/box/pillbottles(src)
+	new /obj/item/storage/box/pillbottles(src)
+	new /obj/item/storage/pouch/tubular/vial(src)
+	new /obj/item/storage/bag/chemistry(src)
+	new /obj/item/storage/bag/chemistry(src)

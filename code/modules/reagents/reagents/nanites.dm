@@ -7,13 +7,14 @@
 	name = ""
 	id = "dont use these"
 	description = "Microscopic construction robots."
-	taste_description = "slimey metal"
+	taste_description = "slimy metal"
 	reagent_state = LIQUID
 	color = "#696969" // ( ͡° ͜ʖ ͡°)
 	metabolism = REM/2
 	heating_point = 523
 	heating_products = list("nanites")
 	scannable = 1
+	affects_dead = 1
 	reagent_type = "Nanites"
 
 /datum/reagent/nanites/proc/eat_blood(mob/living/carbon/M) // Yam !
@@ -121,7 +122,7 @@
 				return TRUE
 			if(istype(organ, /obj/item/organ/external))
 				var/obj/item/organ/external/E = organ
-				for(var/obj/item/weapon/implant/I in E.implants)
+				for(var/obj/item/implant/I in E.implants)
 					if(I.malfunction)
 						metabolism = 1
 						constant_metabolism = TRUE
@@ -134,7 +135,7 @@
 		for(var/obj/item/organ/organ in H.organs) //Grab the organ holding the implant.
 			if(metabolism == 1 && istype(organ, /obj/item/organ/external)) // if metabolism == 1 then broken implant is found see implant_medics/will_occur()
 				var/obj/item/organ/external/E = organ
-				for(var/obj/item/weapon/implant/I in E.implants)
+				for(var/obj/item/implant/I in E.implants)
 					if(I.malfunction)
 						I.restore()
 						return
@@ -280,7 +281,7 @@
 /datum/reagent/nanites/uncapped/dynamic_handprints
 	name = "Handyprints"
 	id = "nanohands"
-	description = "Microscopic construction robots programmed to change handprints while in bloodstream."
+	description = "Microscopic construction robots programmed to change hand prints while in bloodstream."
 	var/uni_identity
 	heating_point = 523
 	heating_products = list("uncap nanites")

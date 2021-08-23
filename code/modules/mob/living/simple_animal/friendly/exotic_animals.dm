@@ -18,6 +18,7 @@
 				"Waaaah.")
 	emote_hear = list("wahs!","chitters.")
 	emote_see = list("trundles around","rears up onto their hind legs and pounces a bug")
+	colony_friend = TRUE
 
 /mob/living/simple_animal/redpanda/fae
 	name = "fae panda"
@@ -28,12 +29,15 @@
 	health = 60
 	melee_damage_lower = 10
 	melee_damage_upper = 10
+	colony_friend = TRUE
 
 /mob/living/simple_animal/penguin
 	name = "penguin"
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird."
 	icon_state = "penguin"
 	icon_dead = "penguin_dead_blood"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 2
 	maxHealth = 20
 	health = 20
 	turns_per_move = 5
@@ -44,12 +48,15 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+	colony_friend = TRUE
 
 /mob/living/simple_animal/penguin/baby
 	name = "penguin chick"
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird. This one is just a baby."
 	icon_state = "penguin_baby"
 	icon_dead = "penguin_baby_dead_blood"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 1 // Why would you? You monster.
 	maxHealth = 10
 	health = 10
 	harm_intent_damage = 10
@@ -61,6 +68,8 @@
 	desc = "A long-necked waterbird."
 	icon_state = "goose"
 	icon_dead = "goose_dead"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 2
 	maxHealth = 20
 	health = 20
 	turns_per_move = 5
@@ -71,6 +80,8 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+	faction = "pond"
+	colony_friend = TRUE
 
 /mob/living/simple_animal/lizard
 	name = "lizard"
@@ -89,6 +100,7 @@
 	mob_size = MOB_MINISCULE
 	possession_candidate = 1
 	seek_speed = 0.75
+	colony_friend = TRUE
 
 /mob/living/simple_animal/lizard/New()
 	..()
@@ -115,6 +127,8 @@
 				"Ararrrararr.")
 	emote_hear = list("screEEEEeeches!","chirps.")
 	emote_see = list("earflicks","sniffs at the ground")
+	colony_friend = TRUE
+	faction = "pond"
 
 /mob/living/simple_animal/fennec/fennix
 	name = "fennix"

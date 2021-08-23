@@ -39,7 +39,7 @@
 	name = "Serotrotium"
 	id = "serotrotium"
 	description = "A chemical compound that promotes concentrated production of the serotonin neurotransmitter in humans."
-	taste_description = "bitterness"
+	taste_description = "pure happiness"
 	reagent_state = LIQUID
 	color = "#202040"
 	metabolism = REM * 0.25
@@ -57,7 +57,7 @@
 /datum/reagent/drug/cryptobiolin
 	name = "Cryptobiolin"
 	id = "cryptobiolin"
-	description = "Cryptobiolin causes confusion and dizzyness."
+	description = "Cryptobiolin causes confusion and dizziness."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#000055"
@@ -109,11 +109,45 @@
 	M.make_dizzy(10 * effect_multiplier)
 	M.confused = max(M.confused, 20 * effect_multiplier)
 
+/datum/reagent/drug/psi_juice
+	name = "Cerebrix"
+	id = "psi_juice"
+	description = "A rare chemical originally developed by the Soteria, this quasi-stimulant enhances the mind of a psion and restores their psi essence. However its highly addictive and highly \
+	dangerous if overdosed. Useless to non-psions. Has a secondary effect when drank that causes the user to enhance their cognitive abilities."
+	taste_description = "ascension"
+	color = "#E700E7"
+	reagent_state = LIQUID
+	overdose = REAGENTS_OVERDOSE * 0.66
+	metabolism = REM * 0.5
+	addiction_chance = 90
+	nerve_system_accumulations = 40
+	reagent_type = "Drug/Stimulator"
+
+/datum/reagent/drug/psi_juice/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(BP_PSION)
+	var/effective_dose = dose
+	if(effective_dose >= 5 && H.random_organ_by_process(BP_PSION)) //We require 5 or more
+		if(C.psi_points >= C.max_psi_points)
+			return
+		C.psi_points += 1
+		holder.remove_reagent("psi_juice", 5)
+
+/datum/reagent/stim/psi_juice/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_BASIC, STIM_TIME, "psi_juice")
+
+/datum/reagent/stim/psi_juice/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "psi_juice_w")
+
+/datum/reagent/drug/psi_juice/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11)
+	M.add_chemical_effect(CE_PULSE, 2)
+	M.adjustBrainLoss(0.5)
 
 /datum/reagent/drug/psilocybin
 	name = "Psilocybin"
 	id = "psilocybin"
-	description = "A strong psycotropic derived from certain species of mushroom."
+	description = "A strong psychotropic derived from certain species of mushroom."
 	taste_description = "mushroom"
 	color = "#E700E7"
 	overdose = REAGENTS_OVERDOSE * 0.66
@@ -158,16 +192,23 @@
 	name = "Nicotine"
 	id = "nicotine"
 	description = "A highly addictive stimulant extracted from the tobacco plant."
-	taste_description = "pepper"
+	taste_description = "tobacco"
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0
+	addiction_chance = 0 //Anything above 0 will have 100% odds when smoking
 	nerve_system_accumulations = 10
 
-/datum/reagent/drug/nicotine/overdose(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/drug/nicotine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_PULSE, 1) //If you inject it into your blood
+	M.add_chemical_effect(CE_PAINKILLER, 5 * effect_multiplier)
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 5 * effect_multiplier)
+		M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
+
+/datum/reagent/drug/nicotine/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
 	M.add_chemical_effect(CE_PAINKILLER, 5 * effect_multiplier)
 	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		M.add_chemical_effect(CE_ANTITOX, 5 * effect_multiplier)
@@ -175,9 +216,45 @@
 
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
+	M.add_chemical_effect(CE_PULSE, 2) //You're ODing...
 	if(prob(5))
-		M.vomit()
+		M.emote("cough")
+	M.adjustOxyLoss(0.5)
 	M.adjustToxLoss(0.5)
+
+/datum/reagent/drug/nicotineplus
+	name = "Fine Nicotine"
+	id = "nicotineplus"
+	description = "A highly addictive and strong stimulant extracted from the tobacco plant, found on the finest of cigars."
+	taste_description = "fine tobacco"
+	reagent_state = LIQUID
+	color = "#181818"
+	overdose = REAGENTS_OVERDOSE
+	addiction_chance = 0 // Note: NEVER make nicotine actually addictive. EVER.
+	nerve_system_accumulations = 15
+
+/datum/reagent/drug/nicotineplus/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // If you inject fine nicotine
+	..()
+	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_PAINKILLER, 10 * effect_multiplier)
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 10 * effect_multiplier)
+		M.heal_organ_damage(0.2 * effect_multiplier, 0.2 * effect_multiplier)
+
+/datum/reagent/drug/nicotineplus/affect_ingest(mob/living/carbon/M, alien, effect_multiplier) // If you smoke it normally...or drink it liquid
+	..()
+	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier)
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 10 * effect_multiplier)
+		M.heal_organ_damage(0.2 * effect_multiplier, 0.2 * effect_multiplier)
+
+/datum/reagent/drug/nicotineplus/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11)
+	M.add_chemical_effect(CE_PULSE, 2)
+	if(prob(5))
+		M.emote("cough")
+	M.adjustOxyLoss(1)
+	M.adjustToxLoss(1)
 
 /datum/reagent/drug/hyperzine
 	name = "Hyperzine"

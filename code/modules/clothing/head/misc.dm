@@ -233,3 +233,75 @@
 	name = "excelsior officer cap"
 	desc = "A peaked commissar cap marked with a red hammer and gear emblem on an orange background at its front."
 	icon_state = "excelsior_officer"
+
+/obj/item/clothing/head/ranger
+	name = "ranger hat"
+	desc = "A rather generic sergeant hat. On second look it's actually a ranger hat."
+	icon_state = "ranger"
+	item_state = "ranger"
+	price_tag = 40
+
+/obj/item/clothing/head/inhaler
+	name = "odd looking helmet"
+	desc = "A confusingly complex helmet. It is capable of protecting you so it's more useful than being a simple decoration."
+	icon_state = "inhaler"
+	item_state = "inhaler"
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	siemens_coefficient = 1
+	price_tag = 600
+	armor = list(
+		melee = 20,
+		bullet = 15,
+		energy = 10,
+		bomb = 0,
+		bio = 20,
+		rad = 25
+	)
+
+/obj/item/clothing/head/os_cap
+	name = "Greyson Positronic Cap"
+	desc = "A flat brim cap warn by Greyson Positronic office workers to keep out light and sport their logo at the same time."
+	icon_state = "os_cap"
+	item_state = "os_cap"
+	armor = list(
+		melee = 5,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 20,
+		rad = 25
+	)
+
+/*
+ * Ushanka
+ */
+/obj/item/clothing/head/ushanka
+	name = "ushanka"
+	desc = "A warm, black fur cap with a soviet design."
+	icon_state = "ushanka"
+	item_state = "ushanka"
+	flags_inv = HIDEEARS
+
+// No more bulky ushanka, no need for this.
+/*
+/obj/item/clothing/head/ushanka/attack_self(mob/user as mob)
+	if(src.icon_state == "ushankadown")
+		src.icon_state = "ushankaup"
+		to_chat(user, "You raise the ear flaps on the ushanka.")
+	else
+		src.icon_state = "ushankadown"
+		to_chat(user, "You lower the ear flaps on the ushanka.")
+*/
+
+// Hood for the Outsider cloak
+
+/obj/item/clothing/head/outcasthood
+	name = "outcast's hood"
+	desc = "A raggedy hood from your trusty cloak, can be used to hide your face from the harmful looks of others."
+	icon_state = "ragged_hood"
+	item_state = "ragged_hood"
+	flags_inv = HIDEEARS|BLOCKHAIR
+	armor = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
+

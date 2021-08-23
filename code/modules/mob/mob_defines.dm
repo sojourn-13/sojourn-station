@@ -6,6 +6,11 @@
 	blood_color = "#A10808"
 	var/datum/mind/mind
 
+	//This is here for admins to modife for any player, mob for events or other things. Also antags could
+	//likely use this - I.E Bots with deeper scans could see through into a carrion or a Exl agent
+	var/colony_friend = FALSE //Are we friendly to the colony? Turrets/Mechs vs Mob
+	var/friendly_to_colony = FALSE //Do we attack colony stuff - Mechs / Turrets regardless of who they are
+
 	movement_handlers = list(
 	/datum/movement_handler/mob/relayed_movement,
 	/datum/movement_handler/mob/death,
@@ -102,8 +107,8 @@ While it would be entirely possible to check the mob's move handlers list for th
 	var/obj/buckled = null//Living
 	var/obj/item/l_hand = null//Living
 	var/obj/item/r_hand = null//Living
-	var/obj/item/weapon/back = null//Human/Monkey
-	var/obj/item/weapon/storage/s_active = null//Carbon
+	var/obj/item/back = null//Human/Monkey
+	var/obj/item/storage/s_active = null//Carbon
 	var/obj/item/clothing/mask/wear_mask = null//Carbon
 
 
@@ -188,6 +193,8 @@ While it would be entirely possible to check the mob's move handlers list for th
 
 	var/list/progressbars = null
 
+	///The z level this mob is currently registered in
+	var/registered_z
 
 	var/speed_factor = 1.0
 

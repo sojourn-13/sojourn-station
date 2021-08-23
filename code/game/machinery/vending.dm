@@ -26,8 +26,8 @@
 
 	if(!product_name)
 		product_name = initial(tmp.name)
-		if(ispath(tmp, /obj/item/weapon/computer_hardware/hard_drive/portable))
-			var/obj/item/weapon/computer_hardware/hard_drive/portable/tmp_disk = tmp
+		if(ispath(tmp, /obj/item/computer_hardware/hard_drive/portable))
+			var/obj/item/computer_hardware/hard_drive/portable/tmp_disk = tmp
 			if(initial(tmp_disk.disk_name))
 				product_name = initial(tmp_disk.disk_name)
 
@@ -141,7 +141,7 @@
 	var/buying_percentage = 0 //If set, the vendomat will accept people selling items to it, and in return will give (percentage * listed item price) in cash
 	var/scan_id = 1
 	var/auto_price = TRUE //The vendomat will automatically set prices on products if their price is not specified.
-	var/obj/item/weapon/coin/coin
+	var/obj/item/coin/coin
 	var/datum/wires/vending/wires = null
 	var/always_open	=	FALSE // If true, this machine allows products to be inserted without requirinf the maintenance hatch to be screwed open first
 	var/list/can_stock = list()	//A whitelist of objects which can be stocked into this vendor
@@ -183,7 +183,7 @@
  	R can be null, in which case the user is inserting something that wasnt previously here.
  	In that case we create a new inventory record for the item
  */
-/obj/machinery/vending/proc/stock(obj/item/weapon/W, var/datum/data/vending_product/R, var/mob/user)
+/obj/machinery/vending/proc/stock(obj/item/W, var/datum/data/vending_product/R, var/mob/user)
 	if(!user.unEquip(W))
 		return
 
@@ -195,7 +195,7 @@
 
 	SSnano.update_uis(src)
 
-/obj/machinery/vending/proc/try_to_buy(obj/item/weapon/W, var/datum/data/vending_product/R, var/mob/user)
+/obj/machinery/vending/proc/try_to_buy(obj/item/W, var/datum/data/vending_product/R, var/mob/user)
 	if(!earnings_account)
 		to_chat(user, SPAN_WARNING("[src] flashes a message: Vendomat not registered to an account."))
 		return
@@ -336,13 +336,13 @@
 					for(var/datum/data/vending_product/R in product_records)
 						for(var/obj/O in R.instances)
 							O.forceMove(loc)
-					new /obj/item/weapon/circuitboard/vending(loc)
+					new /obj/item/circuitboard/vending(loc)
 					qdel(src)
 
 		if(ABORT_CHECK)
 			return
 
-	var/obj/item/weapon/card/id/ID = I.GetIdCard()
+	var/obj/item/card/id/ID = I.GetIdCard()
 
 	if (currently_vending && earnings_account && !earnings_account.suspended)
 		var/paid = 0
@@ -352,13 +352,13 @@
 			paid = pay_with_card(ID,I)
 			handled = 1
 			playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
-		else if (istype(I, /obj/item/weapon/spacecash/ewallet))
-			var/obj/item/weapon/spacecash/ewallet/C = I
+		else if (istype(I, /obj/item/spacecash/ewallet))
+			var/obj/item/spacecash/ewallet/C = I
 			paid = pay_with_ewallet(C)
 			handled = 1
 			playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
-		else if (istype(I, /obj/item/weapon/spacecash/bundle))
-			var/obj/item/weapon/spacecash/bundle/C = I
+		else if (istype(I, /obj/item/spacecash/bundle))
+			var/obj/item/spacecash/bundle/C = I
 			paid = pay_with_cash(C)
 			handled = 1
 
@@ -420,7 +420,7 @@
 			SSnano.update_uis(src)
 			return
 
-	if (I && istype(I, /obj/item/weapon/spacecash))
+	if (I && istype(I, /obj/item/spacecash))
 		attack_hand(user)
 		return
 
@@ -428,7 +428,7 @@
 		if(panel_open)
 			attack_hand(user)
 		return
-	else if(istype(I, /obj/item/weapon/coin) && premium.len > 0)
+	else if(istype(I, /obj/item/coin) && premium.len > 0)
 		user.drop_item()
 		I.loc = src
 		coin = I
@@ -456,7 +456,7 @@
 /**
  * Receive payment with cashmoney.
  */
-/obj/machinery/vending/proc/pay_with_cash(var/obj/item/weapon/spacecash/bundle/cashmoney)
+/obj/machinery/vending/proc/pay_with_cash(var/obj/item/spacecash/bundle/cashmoney)
 	if(currently_vending.price > cashmoney.worth)
 		// This is not a status display message, since it's something the character
 		// themselves is meant to see BEFORE putting the money in
@@ -482,7 +482,7 @@
  * Takes payment for whatever is the currently_vending item. Returns 1 if
  * successful, 0 if failed.
  */
-/obj/machinery/vending/proc/pay_with_ewallet(var/obj/item/weapon/spacecash/ewallet/wallet)
+/obj/machinery/vending/proc/pay_with_ewallet(var/obj/item/spacecash/ewallet/wallet)
 	visible_message("<span class='info'>\The [usr] swipes \the [wallet] through \the [src].</span>")
 	if(currently_vending.price > wallet.worth)
 		status_message = "Insufficient funds on chargecard."
@@ -499,7 +499,7 @@
  * Takes payment for whatever is the currently_vending item. Returns 1 if
  * successful, 0 if failed
  */
-/obj/machinery/vending/proc/pay_with_card(var/obj/item/weapon/card/id/I, var/obj/item/ID_container)
+/obj/machinery/vending/proc/pay_with_card(var/obj/item/card/id/I, var/obj/item/ID_container)
 	if(I==ID_container || ID_container == null)
 		visible_message("<span class='info'>\The [usr] swipes \the [I] through \the [src].</span>")
 	else
@@ -847,22 +847,19 @@
 
 //Somebody cut an important wire and now we're following a new definition of "pitch."
 /obj/machinery/vending/proc/throw_item()
-	var/obj/throw_item = null
 	var/mob/living/target = locate() in view(7,src)
 	if(!target)
-		return 0
-
-	for(var/datum/data/vending_product/R in product_records)
-		throw_item = R.get_product(loc)
-		if (!throw_item)
-			continue
-		break
-	if (!throw_item)
-		return 0
-	spawn(0)
-		throw_item.throw_at(target, 16, 3, src)
-	visible_message(SPAN_WARNING("\The [src] launches \a [throw_item] at \the [target]!"))
-	return 1
+		return FALSE
+	var/obj/item/projectile/P = new /obj/item/projectile/coin(get_turf(src))
+	P.shot_from = src
+	playsound(src, \
+		pick('sound/weapons/Gunshot.ogg','sound/weapons/guns/fire/Revolver_fire.ogg','sound/weapons/Gunshot_light.ogg',\
+		'sound/weapons/guns/fire/shotgunp_fire.ogg','sound/weapons/guns/fire/ltrifle_fire.ogg','sound/weapons/guns/fire/lmg_fire.ogg',\
+		'sound/weapons/guns/fire/ltrifle_fire.ogg','sound/weapons/guns/fire/batrifle_fire.ogg'),\
+		60, 1)
+	P.launch(target)
+	visible_message(SPAN_WARNING("\The [src] launches \a [P] at \the [target]!"))
+	return TRUE
 
 /obj/machinery/vending/proc/set_department()
 	var/list/possible_departments = list("Privately Owned" = null)
@@ -905,7 +902,7 @@
 	desc = "A vendor with a wide variety of masks and gas tanks."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "dispenser"
-	product_paths = "/obj/item/weapon/tank/oxygen;/obj/item/weapon/tank/plasma;/obj/item/weapon/tank/emergency_oxygen;/obj/item/weapon/tank/emergency_oxygen/engi;/obj/item/clothing/mask/breath"
+	product_paths = "/obj/item/tank/oxygen;/obj/item/tank/plasma;/obj/item/tank/emergency_oxygen;/obj/item/tank/emergency_oxygen/engi;/obj/item/clothing/mask/breath"
 	productamounts = "10;10;10;5;25"
 	vend_delay = 0
 */

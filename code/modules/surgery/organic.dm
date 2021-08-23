@@ -353,8 +353,8 @@
 		SPAN_WARNING("[user] scrapes something inside [organ.get_surgery_name()] with \the [tool]!"),
 		SPAN_WARNING("You scrape something inside [organ.get_surgery_name()] with \the [tool]!")
 	)
-	if(istype(target, /obj/item/weapon/implant) && prob(25))
-		var/obj/item/weapon/implant/imp = target
+	if(istype(target, /obj/item/implant) && prob(25))
+		var/obj/item/implant/imp = target
 		imp.malfunction(1)
 
 
@@ -381,6 +381,7 @@
 		SPAN_NOTICE("You amputate [organ.get_surgery_name()] with \the [tool].")
 	)
 	organ.droplimb(TRUE, DROPLIMB_EDGE)
+	playsound(user.loc, 'sound/sanity/limb_tear_off.ogg', 50, 1)
 
 /datum/surgery_step/amputate/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(

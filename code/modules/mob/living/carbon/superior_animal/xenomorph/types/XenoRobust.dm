@@ -9,7 +9,7 @@
 
 	maxHealth = 80
 	health = 80
-
+	flash_resistances = 8 //Weak xeno dies to like 3 hits of most things, lets not make it to easy
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
@@ -21,7 +21,7 @@
 	icon_living = "defender"
 	icon_dead = "defender_dead"
 	icon_rest = "defender_stunned"
-
+	flash_resistances = 3 //Meant to be a weaker tank let them weakly tank
 	maxHealth = 200
 	health = 200
 
@@ -35,7 +35,7 @@
 
 	maxHealth = 40
 	health = 40
-
+	flash_resistances = 1 //Not really an issue to be flashing now is it?
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	var/cooldown_time = 30 SECONDS
@@ -106,7 +106,6 @@ var/datum/xenomorph/xeno_morph_ai
 	maxHealth = 120
 	health = 120
 	attack_sound = list('sound/xenomorph/alien_bite1.ogg', 'sound/xenomorph/alien_bite2.ogg')
-
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
@@ -122,9 +121,9 @@ var/datum/xenomorph/xeno_morph_ai
 
 	maxHealth = 60
 	health = 60
-
 	melee_damage_lower = 15
 	melee_damage_upper = 20
+	flash_resistances = 0
 
 	move_to_delay = 6
 	turns_per_move = 18

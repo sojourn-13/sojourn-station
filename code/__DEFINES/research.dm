@@ -2,15 +2,16 @@
 
 #define TECH_MATERIAL "materials"
 #define TECH_ENGINEERING "engineering"
-#define TECH_PLASMA "plasmatech"
-#define TECH_POWER "powerstorage"
+#define TECH_PLASMA "plasma tech"
+#define TECH_POWER "power storage"
 #define TECH_BLUESPACE "bluespace"
-#define TECH_BIO "biotech"
+#define TECH_BIO "bio tech"
 #define TECH_COMBAT "combat"
 #define TECH_MAGNET "magnets"
 #define TECH_DATA "programming"
 #define TECH_ILLEGAL "syndicate"
 #define TECH_ARCANE "arcane"
+#define TECH_GREYSON "greyson"
 
 //used in design to specify which machine can build it
 #define IMPRINTER		(1<<0)	//For circuits. Uses glass/chemicals.
@@ -29,6 +30,7 @@
 #define RESEARCH_POWERSTORAGE  /datum/tech/powerstorage
 #define RESEARCH_BLUESPACE     /datum/tech/bluespace
 #define RESEARCH_ROBOTICS      /datum/tech/robotics
+#define RESEARCH_GREYSON       /datum/tech/greyson
 #define RESEARCH_ILLEGAL       /datum/tech/illegal
 
 
@@ -49,5 +51,7 @@
 #define CAT_MODCOMP     "Modular Computers"
 #define CAT_CIRCUITS    "Circuits"
 #define CAT_MEDI        "Medical"
-#define CAT_TOOLMODS    "Toolmods"
-#define CAT_GUNMODS     "Gunmods"
+#define CAT_TOOLMODS    "Tool Mods"
+#define CAT_GUNMODS     "Gun Mods"
+#define CAT_TOOLS       "Tools"
+#define CAT_CLOTHING    "Clothing"

@@ -1,5 +1,4 @@
-
-/obj/item/weapon/gun/projectile/automatic/dp
+/obj/item/gun/projectile/automatic/dp
 	name = "\"Pulemyot Degtyaryova\" light machinegun"
 	desc = "A cruedly made yet reliable top-loading machine gun manufactured by the local Nadezhda Marshals. It appears to have specifically been made to use spare pan-magazines from Maxims."
 	icon = 'icons/obj/guns/projectile/dp.dmi'
@@ -21,7 +20,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/dp_fire.ogg'
-	recoil_buildup = 3
+	recoil_buildup = 3.5
 	twohanded = TRUE
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
@@ -33,7 +32,7 @@
 		list(mode_name="suppressing fire",  burst=16, burst_delay=1.2, move_delay=11,  icon="burst")
 		)
 
-obj/item/weapon/gun/projectile/automatic/dp/update_icon()
+obj/item/gun/projectile/automatic/dp/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"

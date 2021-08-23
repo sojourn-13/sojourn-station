@@ -25,7 +25,7 @@ GLOBAL_LIST_INIT(art_types, file2list("strings/artist_strings/descriptors/art_ty
 
 /proc/get_artwork_crew_name(only_first_name = FALSE, only_last_name = FALSE)
 	var/list/names = list()
-	var/art_crew_name = "Who?"
+	var/art_crew_name = "Nadezhda" //Default name. This current will be better then "Who?."
 	for(var/mob/living/carbon/human/H in (GLOB.human_mob_list & GLOB.player_list))
 		if(!isOnStationLevel(H))
 			continue
@@ -87,7 +87,7 @@ GLOBAL_LIST_INIT(art_types, file2list("strings/artist_strings/descriptors/art_ty
 	var/list/emotions = list("fear", "joy", "laughter", "sadness", "respect", "terror", "vigor", "encourages")
 	desc += " A [pick(GLOB.art_styles)] [pick(GLOB.art_types)] [get_sculpting_method()]. [pick("Inspires", "Infuses")] [pick(emotions)] to those who look at it."
 
-/obj/item/weapon/gun/projectile/make_art_review()
+/obj/item/gun/projectile/make_art_review()
 	desc += " [get_art_gun_desc(src)]"
 	desc += " Uses [caliber] rounds."
 

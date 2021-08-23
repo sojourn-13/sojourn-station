@@ -64,7 +64,7 @@
 	body_parts_covered = 0
 	extra_allowed = list(
 		/obj/item/seeds,
-		/obj/item/weapon/reagent_containers/glass/fertilizer,
+		/obj/item/reagent_containers/glass/fertilizer,
 		/obj/item/weedkiller
 	)
 
@@ -125,10 +125,10 @@
 	item_state = "nt_sportsjacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor = list(
-		melee = 10,
-		bullet = 5,
-		energy = 0,
-		bomb = 10,
+		melee = 15,
+		bullet = 10,
+		energy = 5,
+		bomb = 0,
 		bio = 100,
 		rad = 75
 	)
@@ -204,7 +204,7 @@
 	icon_state = "hazard"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
-	extra_allowed = list(/obj/item/weapon/tool)
+	extra_allowed = list(/obj/item/tool)
 	body_parts_covered = UPPER_TORSO
 	price_tag = 50
 
@@ -214,7 +214,7 @@
 	icon_state = "hazard_black"
 	item_state = "hazard_nlack"
 	blood_overlay_type = "armor"
-	extra_allowed = list(/obj/item/weapon/tool)
+	extra_allowed = list(/obj/item/tool)
 	body_parts_covered = UPPER_TORSO
 	price_tag = 50
 
@@ -243,13 +243,13 @@
 	item_state = "surgeon"
 	blood_overlay_type = "armor"
 	extra_allowed = list(
-		/obj/item/weapon/tool/bonesetter,
-		/obj/item/weapon/tool/cautery,
-		/obj/item/weapon/tool/saw/circular,
-		/obj/item/weapon/tool/hemostat,
-		/obj/item/weapon/tool/retractor,
-		/obj/item/weapon/tool/scalpel,
-		/obj/item/weapon/tool/surgicaldrill,
+		/obj/item/tool/bonesetter,
+		/obj/item/tool/cautery,
+		/obj/item/tool/saw/circular,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/retractor,
+		/obj/item/tool/scalpel,
+		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/stack/medical/advanced/bruise_pack
 	)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO

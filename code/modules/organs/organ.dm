@@ -116,7 +116,7 @@
 	if(istype(loc, /obj/item/device/mmi) || istype(loc, /mob/living/simple_animal/spider_core))
 		return TRUE
 
-	if(istype(loc, /obj/structure/closet/body_bag/cryobag) || istype(loc, /obj/structure/closet/crate/freezer) || istype(loc, /obj/item/weapon/storage/freezer))
+	if(istype(loc, /obj/structure/closet/body_bag/cryobag) || istype(loc, /obj/structure/closet/crate/freezer) || istype(loc, /obj/item/storage/freezer))
 		return TRUE
 
 	return FALSE
@@ -170,14 +170,14 @@
 
 /obj/item/organ/proc/handle_germ_effects()
 	//** Handle the effects of infections
-	var/antibiotics = owner.reagents.get_reagent_amount("spaceacillin")
+	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 
 	if (germ_level > 0 && germ_level < INFECTION_LEVEL_ONE/2 && prob(30))
 		germ_level--
 
 	if (germ_level >= INFECTION_LEVEL_ONE/2)
 		//aiming for germ level to go from ambient to INFECTION_LEVEL_TWO in an average of 15 minutes
-		if(antibiotics < 5 && prob(round(germ_level/6)))
+		if(antibiotics <= 1 && prob(round(germ_level/6))) //Make Spaceacillin autoinjectors not useless after using 1 unit out of 5 they have.
 			germ_level++
 
 	if(germ_level >= INFECTION_LEVEL_ONE)
@@ -186,7 +186,7 @@
 
 	if (germ_level >= INFECTION_LEVEL_TWO)
 		//spread germs
-		if (antibiotics < 5 && parent.germ_level < germ_level && ( parent.germ_level < INFECTION_LEVEL_ONE*2 || prob(30) ))
+		if (antibiotics <= 5 && parent.germ_level < germ_level && ( parent.germ_level < INFECTION_LEVEL_ONE*2 || prob(30) ))
 			parent.germ_level++
 
 		if (prob(3))	//about once every 30 seconds
@@ -232,9 +232,9 @@
 /obj/item/organ/proc/handle_antibiotics()
 	var/antibiotics = 0
 	if(owner)
-		antibiotics = owner.reagents.get_reagent_amount("spaceacillin")
+		antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 
-	if (!germ_level || antibiotics < 5)
+	if (!germ_level || antibiotics <= 5)
 		return
 
 	if (germ_level < INFECTION_LEVEL_ONE)
@@ -242,7 +242,7 @@
 	else if (germ_level < INFECTION_LEVEL_TWO)
 		germ_level -= 6	//at germ_level == 500, this should cure the infection in a minute
 	else
-		germ_level -= 2 //at germ_level == 1000, this will cure the infection in 5 minutes
+		germ_level -= 3 // Let's speed this up since it takes forever.
 
 //Adds autopsy data for used_weapon.
 /obj/item/organ/proc/add_autopsy_data(var/used_weapon, var/damage)
@@ -275,11 +275,11 @@
 		return
 	switch (severity)
 		if (1)
-			take_damage(9)
+			take_damage(30) //Deals half the organs damage
 		if (2)
-			take_damage(3)
+			take_damage(25)
 		if (3)
-			take_damage(1)
+			take_damage(15)
 
 // Gets the limb this organ is located in, if any
 /obj/item/organ/proc/get_limb()

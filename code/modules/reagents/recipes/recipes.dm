@@ -189,10 +189,27 @@
 	required_reagents = list("sugar" = 1, "blattedin" = 1, "sulfur" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/psi_juice
+	result = "psi_juice"
+	required_reagents = list("psilocybin" = 1, "synaptizine" = 1, "cryptobiolin" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/psi_juice_inhaler
+	result = null
+	required_reagents = list("psi_juice" = 15, "water" = 15, "silicon" = 15)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/psi_juice_inhaler/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/psi_injector(location)
+
 /datum/chemical_reaction/ryetalyn
 	result = "ryetalyn"
 	required_reagents = list("arithrazine" = 1, "carbon" = 1)
 	result_amount = 2
+
 /datum/chemical_reaction/negative_ling
 	result = "negativeling"
 	required_reagents = list("ryetalyn" = 1, "carbon" = 1)
@@ -339,7 +356,6 @@
 	required_reagents = list("mindbreaker" = 1, "carbon" = 1)
 	result_amount = 3
 
-
 /datum/chemical_reaction/paroxetine
 	result = "paroxetine"
 	required_reagents = list("mindbreaker" = 1, "acetone" = 1, "inaprovaline" = 1)
@@ -398,6 +414,24 @@
 	new /obj/item/stack/material/uranium(get_turf(holder.my_atom), created_volume)
 	return
 
+/datum/chemical_reaction/silversolidification
+	result = null
+	required_reagents = list("iron" =5, "frostoil" =5, "silver" =20)
+	result_amount =1
+
+/datum/chemical_reaction/silversolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
+	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
+	return
+
+/datum/chemical_reaction/cardboardification
+	result = null
+	required_reagents = list("woodpulp" = 5, "water" = 5)
+	result_amount = 1
+
+/datum/chemical_reaction/cardboardification/on_reaction(var/datum/reagents/holder, var/created_volume)
+	new /obj/item/stack/material/cardboard(get_turf(holder.my_atom), created_volume)
+	return
+
 /* Grenade reactions */
 
 /datum/chemical_reaction/explosion_potassium
@@ -408,7 +442,7 @@
 
 /datum/chemical_reaction/explosion_potassium/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
-	e.set_up(round (created_volume/10, 1), holder.my_atom, 0, 0)
+	e.set_up(round (created_volume/45, 1), holder.my_atom, 0, 0) // 600/45 = 13.3 , 13/3 = 4-3 light-range , slightly weaker than a cracker.
 	if(isliving(holder.my_atom))
 		e.amount *= 0.5
 		var/mob/living/L = holder.my_atom
@@ -472,6 +506,10 @@
 /datum/chemical_reaction/nitroglycerin/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
 	e.set_up(round (created_volume/2, 1), holder.my_atom, 0, 0)
+	//at created_volume/10, doble 120 beaker bomb is 5,
+	//at created_volume/4,  doble 120 beaker bomb is 21,
+	//at created_volume/2,  doble 120 beaker bomb is 43,
+	//Given the effort it takes and hydr needed for this 2 is fine.
 	if(isliving(holder.my_atom))
 		e.amount *= 0.5
 		var/mob/living/L = holder.my_atom
@@ -676,10 +714,12 @@
 	required_reagents = list("peridaxon" = 1, "mutagen" = 1, "clonexadone" = 1)
 	result_amount = 3
 
+/*
 /datum/chemical_reaction/vomitol
 	result = "vomitol"
 	required_reagents = list("carbon" = 1, "sugar" = 1, "acetone" = 1)
 	result_amount = 3
+*/
 
 /datum/chemical_reaction/arectine
 	result = "arectine"
@@ -770,6 +810,7 @@
 /datum/chemical_reaction/carbon
 	result = "carbon"
 	required_reagents = list("woodpulp" = 3)
+	inhibitors = list("water" = 1) // So that we can make ghetto cardboard
 	result_amount = 2
 	maximum_temperature = INFINITY
 	minimum_temperature = 373
@@ -802,6 +843,11 @@
 	result_amount = 3
 	maximum_temperature = 270
 	minimum_temperature = 0
+
+/datum/chemical_reaction/rejuvenating_agent
+	result = "rejuvenating_agent"
+	required_reagents = list("cleaner" = 2, "pacid" = 1, "sulfur" = 1)
+	result_amount = 2
 
 /datum/chemical_reaction/glue
 	result = "glue"

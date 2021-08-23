@@ -82,7 +82,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	//alt_titles = list("Hydroponicist")
+	alt_titles = list("Hydroponicist")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
@@ -94,7 +94,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb)
 
 	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
@@ -103,6 +103,7 @@
 
 	duties = "Grow food. Ensure a good supply of raw vegetables and core grains - rice and wheat.<br>\
 		Raise animals for eggs, meat and recreation.<br>\
+		Maintain the potted plants around the colony.<br>\
 		Manage invasive flora around the colony and control fungal infestations."
 
 /obj/landmark/join/start/hydro
@@ -124,7 +125,7 @@
 	access = list(access_theatre)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/artist
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
-	//alt_titles = list("Artist","Clown","Entertainer","Mime")
+	alt_titles = list("Artist","Clown","Entertainer","Mime")
 	stat_modifiers = list(
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
@@ -161,12 +162,12 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	//alt_titles = list("Custodian","Sanitation Technician")
-	access = list(access_janitor, access_maint_tunnels, access_morgue, access_crematorium, access_mailsorting, access_cargo)
+	alt_titles = list("Custodian","Sanitation Technician")
+	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
-	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle)
+	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
@@ -181,6 +182,7 @@
 
 	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
 		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
+		Restock Newscasters to at lest 15 prints.<br>\
 		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
 
 /obj/landmark/join/start/janitor

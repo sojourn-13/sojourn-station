@@ -5,7 +5,7 @@
 	maxHealth = 20
 	icon = 'icons/mob/build_a_drone.dmi'
 	icon_state = "drone_os"
-	faction = "onestar"
+	faction = "greyson"
 	layer = MOB_LAYER
 	var/obj/item/loot
 	var/attacktext = "drills"
@@ -28,7 +28,7 @@
 	..()
 	update_icons()
 
-	botcard = new /obj/item/weapon/card/id(src)
+	botcard = new /obj/item/card/id(src)
 	botcard.access = botcard_access.Copy()
 
 	access_scanner = new /obj(src)
@@ -55,7 +55,7 @@
 	..()
 	update_icons()
 
-	botcard = new /obj/item/weapon/card/id(src)
+	botcard = new /obj/item/card/id(src)
 	botcard.access = botcard_access.Copy()
 
 	access_scanner = new /obj(src)

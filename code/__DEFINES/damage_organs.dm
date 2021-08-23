@@ -14,7 +14,7 @@
 
 #define STUN      "stun"
 #define WEAKEN    "weaken"
-#define PARALYZE  "paralize"
+#define PARALYZE  "paralyze"
 #define IRRADIATE "irradiate"
 #define AGONY     "agony"     // Added in PAIN!
 #define SLUR      "slur"
@@ -59,19 +59,20 @@
 // Carrion organ processes
 #define OP_MAW       "carrion maw"
 #define OP_SPINNERET "carrion spinneret"
-#define OP_CHEMICALS "chemmical vessel"
+#define OP_CHEMICALS "chemical vessel"
 
 // Unique organs.
 #define BP_MOUTH    "mouth"
 #define BP_EYES     "eyes"
 #define BP_BRAIN    "brain"
-#define BP_B_CHEST  "ribcage"
+#define BP_B_CHEST  "rib cage"
 #define BP_B_GROIN  "pelvis"
 #define BP_B_HEAD   "skull"
 #define BP_B_L_ARM  "left humerus"
 #define BP_B_R_ARM  "right humerus"
 #define BP_B_L_LEG  "left femur"
 #define BP_B_R_LEG  "right femur"
+#define BP_PSION "psionic organ"
 
 // Unique carrion Organs.
 #define BP_SPCORE   "spider core"

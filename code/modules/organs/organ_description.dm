@@ -201,6 +201,7 @@
 
 /datum/organ_description/head/soteria_synthetic
 	default_type = /obj/item/organ/external/robotic/moebius
+	functions = null
 
 /datum/organ_description/arm/left/soteria_synthetic
 	default_type = /obj/item/organ/external/robotic/moebius
@@ -223,6 +224,7 @@
 
 /datum/organ_description/head/artificer_guild_synthetic
 	default_type = /obj/item/organ/external/robotic/technomancer
+	functions = null
 
 /datum/organ_description/arm/left/artificer_guild_synthetic
 	default_type = /obj/item/organ/external/robotic/technomancer
@@ -235,3 +237,96 @@
 
 /datum/organ_description/leg/right/artificer_guild_synthetic
 	default_type = /obj/item/organ/external/robotic/technomancer
+
+//Blackshield
+/datum/organ_description/chest/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/groin/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/head/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+	functions = null
+
+/datum/organ_description/arm/left/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/arm/right/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/leg/left/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+/datum/organ_description/leg/right/blackshield_synthetic
+	default_type = /obj/item/organ/external/robotic/blackshield
+
+// Church
+/datum/organ_description/chest/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/groin/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/head/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+	functions = null
+
+/datum/organ_description/arm/left/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/arm/right/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/leg/left/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+/datum/organ_description/leg/right/church_synthetic
+	default_type = /obj/item/organ/external/robotic/church
+
+//Nashef
+/datum/organ_description/chest/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/groin/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/head/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+	functions = null
+
+/datum/organ_description/arm/left/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/arm/right/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/leg/left/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+/datum/organ_description/leg/right/nashef_synthetic
+	default_type = /obj/item/organ/external/robotic/nashef
+
+
+//FBP
+/datum/organ_description/chest/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/groin/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/head/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+	functions = null
+
+/datum/organ_description/arm/left/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/arm/right/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/leg/left/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic
+
+/datum/organ_description/leg/right/full_body_prosthetic
+	default_type = /obj/item/organ/external/robotic/full_body_prosthetic

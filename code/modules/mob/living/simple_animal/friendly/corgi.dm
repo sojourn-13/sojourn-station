@@ -9,7 +9,7 @@
 	emote_see = list("shakes its head", "shivers")
 	speak_chance = 1
 	turns_per_move = 10
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/corgi
 	meat_amount = 3
 	response_help  = "pets"
 	response_disarm = "bops"
@@ -20,9 +20,10 @@
 	stomach_size_mult = 30
 	seek_speed = 6
 	possession_candidate = 1
-	holder_type = /obj/item/weapon/holder/corgi
+	holder_type = /obj/item/holder/corgi
 	var/obj/item/inventory_head
 	var/obj/item/inventory_back
+	colony_friend = TRUE
 
 /mob/living/simple_animal/corgi/New()
 	..()
@@ -37,13 +38,15 @@
 	response_help  = "pets"
 	response_disarm = "bops"
 	response_harm   = "kicks"
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/corgi/Life()
 	..()
 
 	if(!stat && !resting && !buckled)
 		if(prob(1))
-			var/msg2 = (pick("dances around","chases their tail"))
+			var/msg2 = (pick("dances around","chases [get_gender() == MALE ? "his" : get_gender() == FEMALE ? "her" : "their"] tail"))
 			src.visible_message("<span class='name'>[src]</span> [msg2].")
 			spawn(0)
 				for(var/i in list(1,2,4,8,4,2,1,2,4,8,4,2,1,2,4,8,4,2))
@@ -53,12 +56,12 @@
 /mob/living/simple_animal/corgi/beg(var/atom/thing, var/atom/holder)
 	visible_emote("stares at the [thing] that [holder] has with sad puppy eyes.")
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/corgi
+/obj/item/reagent_containers/food/snacks/meat/corgi
 	name = "Corgi meat"
 	desc = "Tastes like... well you know..."
 
 /mob/living/simple_animal/corgi/attackby(var/obj/item/O as obj, var/mob/user as mob)  //Marker -Agouri
-	if(istype(O, /obj/item/weapon/newspaper))
+	if(istype(O, /obj/item/newspaper))
 		if(!stat)
 			visible_message(SPAN_NOTICE("[user] baps [name] on the nose with the rolled up [O.name]."))
 			scan_interval = max_scan_interval//discipline your dog to make it stop stealing food for a while
@@ -121,6 +124,8 @@
 	response_disarm = "bops"
 	response_harm   = "kicks"
 	var/puppies = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 //Lisa already has a cute bow!
 /mob/living/simple_animal/corgi/Lisa/Topic(href, href_list)

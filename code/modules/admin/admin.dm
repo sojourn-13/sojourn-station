@@ -2,27 +2,63 @@
 var/global/BSACooldown = 0
 var/global/floorIsLava = 0
 
+#define ADMIN_QUE(user,display) "<a href='?_src_=holder;adminmoreinfo=\ref[user]'>[display]</a>"
+#define ADMIN_PP(user,display) "<a href='?_src_=holder;adminplayeropts=\ref[user]'>[display]</a>"
+#define ADMIN_VV(atom,display) "<a href='?_src_=vars;Vars=\ref[atom]'>[display]</a>"
+#define ADMIN_SM(user,display) "<a href='?_src_=holder;subtlemessage=\ref[user]'>[display]</a>"
+#define ADMIN_TP(user,display) "<a href='?_src_=holder;traitor=\ref[user]'>[display]</a>"
 
 ////////////////////////////////
-/proc/message_admins(var/msg)
+/proc/message_admins(var/msg, tag = "admin_log", tagtext = "ADMIN LOG")
 	lobby_message(message = msg, color = "#FFA500")
-	msg = "<span class=\"log_message\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
-	log_adminwarn(msg)
+	var/m = "<span class=\"log_message\"><span class=\"prefix\">[tagtext]:</span> <span class=\"message\">[msg]</span></span>"
+	log_adminwarn(m)
 	for(var/client/C in admins)
-		if(R_ADMIN & C.holder.rights)
-			to_chat(C, msg)
+		m = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[msg]</span></span>"
+		if(check_rights(R_ADMIN, 0, C.mob))
+			to_chat(C, m)
 
-/proc/msg_admin_attack(var/text) //Toggleable Attack Messages
+/proc/msg_admin_attack(var/text, tag = "attack", tagtext = "ATTACK:") //Toggleable Attack Messages
 	log_attack(text)
-	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	lobby_message(message = text, color = "#FFA500")
 	for(var/client/C in admins)
-		if(R_ADMIN & C.holder.rights)
+		if(check_rights(R_ADMIN, 0, C.mob))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
-				var/msg = rendered
+				var/msg = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[text]</span></span>"
 				to_chat(C, msg)
 
-proc/admin_notice(var/message, var/rights)
+/**
+ * Sends a message to the staff able to see admin tickets
+ * Arguments:
+ * msg - The message being send
+ * important - If the message is important. If TRUE it will ignore the PREF_HEAR preferences,
+               send a sound and flash the window. Defaults to FALSE
+ */
+/proc/message_adminTicket(msg, important = FALSE, quiet = FALSE, tag = "admin_ticket", tagtext = "Request for Help")
+	for(var/client/C in admins)
+		if(check_rights(R_ADMIN | R_MOD, 0, C.mob))
+			var/rendered = "<span class=\"adminhelp\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> [msg]</span></span>"
+			to_chat(C, rendered)
+			if(important || (!quiet && (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)))
+				sound_to(C, 'sound/effects/adminhelp.ogg')
+
+/**
+ * Sends a message to the staff able to see mentor tickets
+ * Arguments:
+ * msg - The message being send
+ * important - If the message is important. If TRUE it will ignore the PREF_HEAR preferences,
+               send a sound and flash the window. Defaults to FALSE
+ */
+/proc/message_mentorTicket(msg, important = FALSE, quiet = FALSE, tag = "mentor_ticket", tagtext = "Request for Mentor")
+	for(var/client/C in admins)
+		if(check_rights(R_ADMIN | R_MENTOR | R_MOD, 0, C.mob))
+			var/rendered = "<span class=\"adminhelp\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> [msg]</span></span>"
+			to_chat(C, rendered)
+			if(important || (!quiet && (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)))
+				sound_to(C, 'sound/effects/adminhelp.ogg')
+
+
+/proc/admin_notice(var/message, var/rights)
 	for(var/mob/M in SSmobs.mob_list)
 		if(check_rights(rights, 0, M))
 			to_chat(M, message)
@@ -288,7 +324,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 				<BR><HR><A href='?src=\ref[src];admincaster=set_signature'>The newscaster recognises you as:<BR> <FONT COLOR='green'>[src.admincaster_signature]</FONT></A>
 			"}
 		if(1)
-			dat+= "Station Feed Channels<HR>"
+			dat+= "Colony Feed Channels<HR>"
 			if( isemptylist(news_network.network_channels) )
 				dat+="<I>No active channels found...</I>"
 			else
@@ -350,7 +386,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 			dat+="<B>[src.admincaster_feed_channel.channel_name]: </B><FONT SIZE=1>\[created by: <FONT COLOR='maroon'>[src.admincaster_feed_channel.author]</FONT>\]</FONT><HR>"
 			if(src.admincaster_feed_channel.censored)
 				dat+={"
-					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a [company_name] D-Notice.<BR>
+					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Nadezhda colony, and marked with a [company_name] D-Notice.<BR>
 					No further feed story additions are allowed while the D-Notice is in effect.<BR><BR>
 				"}
 			else
@@ -385,7 +421,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 		if(11)
 			dat+={"
 				<B>[company_name] D-Notice Handler</B><HR>
-				<FONT SIZE=1>A D-Notice is to be bestowed upon the channel if the handling Authority deems it as harmful for the station's
+				<FONT SIZE=1>A D-Notice is to be bestowed upon the channel if the handling Authority deems it as harmful for the colony's
 				morale, integrity or disciplinary behaviour. A D-Notice will render a channel unable to be updated by anyone, without deleting any feed
 				stories it might contain at the time. You can lift a D-Notice if you have the required access at any time.</FONT><HR>
 			"}
@@ -413,11 +449,11 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 		if(13)
 			dat+={"
 				<B>[src.admincaster_feed_channel.channel_name]: </B><FONT SIZE=1>\[ created by: <FONT COLOR='maroon'>[src.admincaster_feed_channel.author]</FONT> \]</FONT><BR>
-				Channel messages listed below. If you deem them dangerous to the station, you can <A href='?src=\ref[src];admincaster=toggle_d_notice;toggle_d_notice=\ref[src.admincaster_feed_channel]'>Bestow a D-Notice upon the channel</A>.<HR>
+				Channel messages listed below. If you deem them dangerous to the colony, you can <A href='?src=\ref[src];admincaster=toggle_d_notice;toggle_d_notice=\ref[src.admincaster_feed_channel]'>Bestow a D-Notice upon the channel</A>.<HR>
 			"}
 			if(src.admincaster_feed_channel.censored)
 				dat+={"
-					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a [company_name] D-Notice.<BR>
+					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Nadezhda colony, and marked with a [company_name] D-Notice.<BR>
 					No further feed story additions are allowed while the D-Notice is in effect.<BR><BR>
 				"}
 			else
@@ -469,7 +505,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 			"}
 		if(18)
 			dat+={"
-				<B><FONT COLOR ='maroon'>-- STATIONWIDE WANTED ISSUE --</B></FONT><BR><FONT SIZE=2>\[Submitted by: <FONT COLOR='green'>[news_network.wanted_issue.backup_author]</FONT>\]</FONT><HR>
+				<B><FONT COLOR ='maroon'>-- COLONY-WIDE WANTED ISSUE --</B></FONT><BR><FONT SIZE=2>\[Submitted by: <FONT COLOR='green'>[news_network.wanted_issue.backup_author]</FONT>\]</FONT><HR>
 				<B>Criminal</B>: [news_network.wanted_issue.author]<BR>
 				<B>Description</B>: [news_network.wanted_issue.body]<BR>
 				<B>Photo:</B>:
@@ -922,8 +958,8 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_atom, R_DEBUG, FALSE)
 	else
 		var/newItem = new chosen(usr.loc)
 
-		if(istype(newItem, /obj/item/weapon/gun))
-			var/obj/item/weapon/gun/weapon = newItem
+		if(istype(newItem, /obj/item/gun))
+			var/obj/item/gun/weapon = newItem
 			weapon.loadAmmoBestGuess()
 
 
@@ -1070,23 +1106,18 @@ ADMIN_VERB_ADD(/datum/admins/proc/toggleguests, R_ADMIN, FALSE)
 		M = whom
 		C = M.client
 	else
-		return "<b>(*not an mob*)</b>"
+		return "<b>(*not a mob*)</b>"
 	switch(detail)
 		if(0)
 			return "<b>[key_name(C, link, name, highlight_special)]</b>"
-
 		if(1)	//Private Messages
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>)</b>"
-
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE(M,"?")])</b>"
 		if(2)	//Admins
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;subtlemessage=[ref_mob]'>SM</A>) ([admin_jump_link(M, UNLINT(src))]) (<A HREF='?_src_=holder;check_antagonist=1'>CA</A>)</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE(M,"?")]) ([ADMIN_PP(M,"PP")]) ([ADMIN_VV(M,"VV")]) ([ADMIN_SM(M,"SM")]) ([admin_jump_link(M, UNLINT(src))]) ([ADMIN_TP(M,"TP")])</b>"
 		if(3)	//Devs
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M, UNLINT(src))])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_VV(M,"VV")])([admin_jump_link(M, UNLINT(src))])</b>"
 		if(4)	//Mentors
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;subtlemessage=[ref_mob]'>SM</A>) ([admin_jump_link(M, UNLINT(src))])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)] ([ADMIN_QUE(M,"?")]) ([ADMIN_PP(M,"PP")]) ([ADMIN_VV(M,"VV")]) ([ADMIN_SM(M,"SM")]) ([admin_jump_link(M, UNLINT(src))])</b>"
 
 
 //
@@ -1168,3 +1199,136 @@ ADMIN_VERB_ADD(/datum/admins/proc/paralyze_mob, R_ADMIN, FALSE)
 			H.paralysis = 0
 			msg = "has unparalyzed [key_name(H)]."
 		log_and_message_admins(msg)
+
+
+// Returns a list of the number of admins in various categories
+// result[1] is the number of staff that match the rank mask and are active
+// result[2] is the number of staff that do not match the rank mask
+// result[3] is the number of staff that match the rank mask and are inactive
+/proc/staff_countup(rank_mask = R_ADMIN)
+	var/list/result = list(0, 0, 0)
+	for(var/client/X in admins)
+		if(rank_mask && !check_rights_for(X, rank_mask))
+			result[2]++
+			continue
+		if(X.holder.fakekey)
+			result[2]++
+			continue
+		if(X.is_afk())
+			result[3]++
+			continue
+		result[1]++
+	return result
+
+//This proc checks whether subject has at least ONE of the rights specified in rights_required.
+/proc/check_rights_for(client/subject, rights_required)
+	if(subject && subject.holder)
+		if(rights_required && !(rights_required & subject.holder.rights))
+			return 0
+		return 1
+	return 0
+//This proc lets us make artifacts with the effects and triggers we want.
+ADMIN_VERB_ADD(/datum/admins/proc/spawn_artifact, R_ADMIN, FALSE)
+/datum/admins/proc/spawn_artifact(effect in subtypesof(/datum/artifact_effect))
+	set category = "Debug"
+	set desc = "(atom path) Spawn an artifact with a specified effect."
+	set name = "Spawn Artifact"
+
+	if (!check_rights(R_ADMIN|R_DEBUG,0))
+		return
+
+	var/obj/machinery/artifact/A
+	var/primary_trigger
+
+	var/datum/artifact_effect/secondary_effect
+	var/secondary_trigger
+
+	if (ispath(effect))
+		primary_trigger = input(usr, "Choose a trigger", "Choose a trigger") as null | anything in list("TRIGGER_TOUCH", "TRIGGER_WATER", "TRIGGER_ACID", "TRIGGER_VOLATILE", "TRIGGER_TOXIN", "TRIGGER_FORCE", "TRIGGER_ENERGY", "TRIGGER_HEAT", "TRIGGER_COLD", "TRIGGER_PLASMA", "TRIGGER_OXY", "TRIGGER_CO2", "TRIGGER_NITRO")
+
+		if (!primary_trigger)
+			return
+		//This is a very ghetto way of doing it, but this is an admin ability and it shouldn't be called every second, so we should be fine. Feel free to rework the implementation.
+		switch(primary_trigger)
+			if("TRIGGER_TOUCH")
+				primary_trigger = 0
+			if("TRIGGER_WATER")
+				primary_trigger = 1
+			if("TRIGGER_ACID")
+				primary_trigger = 2
+			if("TRIGGER_VOLATILE")
+				primary_trigger = 3
+			if("TRIGGER_TOXIN")
+				primary_trigger = 4
+			if("TRIGGER_FORCE")
+				primary_trigger = 5
+			if("TRIGGER_ENERGY")
+				primary_trigger = 6
+			if("TRIGGER_HEAT")
+				primary_trigger = 7
+			if("TRIGGER_COLD")
+				primary_trigger = 8
+			if("TRIGGER_PLASMA")
+				primary_trigger = 9
+			if("TRIGGER_OXY")
+				primary_trigger = 10
+			if("TRIGGER_CO2")
+				primary_trigger = 11
+			if("TRIGGER_NITRO")
+				primary_trigger = 12
+
+		var/choice = alert(usr, "Secondary effect?", "Secondary effect", "Yes", "No") == "Yes"
+
+		if (choice)
+			secondary_effect = input(usr, "Choose an effect", "Choose effect") as null | anything in subtypesof(/datum/artifact_effect)
+
+			if (!ispath(secondary_effect))
+				return
+
+			secondary_trigger = input(usr, "Choose a trigger", "Choose a trigger") as null | anything in list("TRIGGER_TOUCH", "TRIGGER_WATER", "TRIGGER_ACID", "TRIGGER_VOLATILE", "TRIGGER_TOXIN", "TRIGGER_FORCE", "TRIGGER_ENERGY", "TRIGGER_HEAT", "TRIGGER_COLD", "TRIGGER_PLASMA", "TRIGGER_OXY", "TRIGGER_CO2", "TRIGGER_NITRO")
+
+			if (!secondary_trigger)
+				return
+			switch(secondary_trigger)
+				if("TRIGGER_TOUCH")
+					secondary_trigger = 0
+				if("TRIGGER_WATER")
+					secondary_trigger = 1
+				if("TRIGGER_ACID")
+					secondary_trigger = 2
+				if("TRIGGER_VOLATILE")
+					secondary_trigger = 3
+				if("TRIGGER_TOXIN")
+					secondary_trigger = 4
+				if("TRIGGER_FORCE")
+					secondary_trigger = 5
+				if("TRIGGER_ENERGY")
+					secondary_trigger = 6
+				if("TRIGGER_HEAT")
+					secondary_trigger = 7
+				if("TRIGGER_COLD")
+					secondary_trigger = 8
+				if("TRIGGER_PLASMA")
+					secondary_trigger = 9
+				if("TRIGGER_OXY")
+					secondary_trigger = 10
+				if("TRIGGER_CO2")
+					secondary_trigger = 11
+				if("TRIGGER_NITRO")
+					secondary_trigger = 12
+
+		A = new(usr.loc)
+		A.my_effect = new effect(A)
+		A.my_effect.trigger = primary_trigger
+
+		if (secondary_effect)
+			A.secondary_effect = new secondary_effect
+			A.secondary_effect.trigger = secondary_trigger
+		else
+			QDEL_NULL(A.secondary_effect)
+
+#undef ADMIN_QUE
+#undef ADMIN_PP
+#undef ADMIN_VV
+#undef ADMIN_SM
+#undef ADMIN_TP

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/mac
+/obj/item/gun/projectile/automatic/mac
 	name = "\"MAC\" SMG"
 	desc = "A conceptual replica of an old and incredibly simple SMG. However, ergonomics were never good on the original, and recoil is rather significant. Essentially disposable. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/mac.dmi'
@@ -14,7 +14,7 @@
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
 	price_tag = 1000
 	damage_multiplier = 0.9
-	recoil_buildup = 5
+	recoil_buildup = 4
 	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	one_hand_penalty = 5 //smg level
 
@@ -24,7 +24,7 @@
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/automatic/mac/update_icon()
+/obj/item/gun/projectile/automatic/mac/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -43,12 +43,12 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/mac/Initialize()
+/obj/item/gun/projectile/automatic/mac/Initialize()
 	. = ..()
 	update_icon()
 
 ///not for typical use: it WILL cause lag
-/obj/item/weapon/gun/projectile/automatic/mac/croon
+/obj/item/gun/projectile/automatic/mac/croon
 	name = "\"Croon\" mini-chaingun"
 	desc = "Essentially a box with a motor, this ultra-simple SMG is technically a chaingun. The markings are in strange runes, the only ledgible parts reading \"Croon HS-010 .35\" and the selector switch seems to be fully automatic in both directions."
 	icon = 'icons/obj/guns/projectile/hs010.dmi'
@@ -74,7 +74,7 @@
 		list(mode_name="fuller auto", mode_type = /datum/firemode/automatic, fire_delay=0.5, icon="auto"),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/mac/croon/update_icon()
+/obj/item/gun/projectile/automatic/mac/croon/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -86,6 +86,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/mac/croon/Initialize()
+/obj/item/gun/projectile/automatic/mac/croon/Initialize()
 	. = ..()
 	update_icon()

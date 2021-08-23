@@ -224,19 +224,19 @@
 	icon_state = "gorka_crew_sci"
 	item_state = "gorka_crew_sci"
 
-obj/item/clothing/under/genericb
+/obj/item/clothing/under/genericb
 	name = "blue generic outfit"
 	desc = "A simple blue shirt with brown pants."
 	icon_state = "genericb"
 	item_state = "genericb"
 
-obj/item/clothing/under/genericw
+/obj/item/clothing/under/genericw
 	name = "white generic outfit"
 	desc = "A simple white shirt with grey pants."
 	icon_state = "genericw"
 	item_state = "genericw"
 
-obj/item/clothing/under/genericr
+/obj/item/clothing/under/genericr
 	name = "red generic outfit"
 	desc = "A simple red shirt with black pants."
 	icon_state = "genericr"
@@ -247,6 +247,11 @@ obj/item/clothing/under/genericr
 	desc = "An outdated uniform of a now extinct corporation \"Iron Lock Security\". A private security firm that got its start centuries ago subcontracted by Greyson Positronics before being phased out."
 	icon_state = "northtech"
 	has_sensor = 0
+
+/obj/item/clothing/under/os_jumpsuit
+	name = "Greyson Positronic jumpsuit"
+	desc = "An uniform that was produced by Greyson Positronics, cleaning to enginering this over engineered suit was used. Surprisingly the suit senors still work."
+	icon_state = "os_jumpsuit"
 
 //Excelsior
 /obj/item/clothing/under/excelsior
@@ -326,26 +331,167 @@ obj/item/clothing/under/genericr
 	icon_state = "cyber"
 	item_state = "cyber"
 
-obj/item/clothing/under/neon
+/obj/item/clothing/under/jamrock_suit
+	name = "brown comfortable clothing"
+	desc = "A suit and pants that are basic in colour but comfortable to wear."
+	icon_state = "jamrock_suit"
+	item_state = "jamrock_suit"
+
+/obj/item/clothing/under/aerostatic_suit
+	name = "dark comfortable clothing"
+	desc = "A suit and pants that are basic in colour but comfortable to wear."
+	icon_state = "aerostatic_suit"
+	item_state = "aerostatic_suit"
+
+/obj/item/clothing/under/track_suit
+	name = "striped tracksuit"
+	desc = "A tracksuit lined with white tripped fibers on its side."
+	icon_state = "tracksuit_black"
+	item_state = "tracksuit_black"
+
+/obj/item/clothing/under/neon
 	name = "green neon tracksuit"
 	desc = "A tracksuit lined with green neon fibers. Slightly luminescent."
 	icon_state = "neon"
 	item_state = "bl_suit"
 
-obj/item/clothing/under/neon/yellow
+/obj/item/clothing/under/neon/yellow
 	name = "yellow neon tracksuit"
 	desc = "A tracksuit lined with yellow neon fibers. Slightly luminescent."
 	icon_state = "neony"
 	item_state = "bl_suit"
 
-obj/item/clothing/under/neon/blue
+/obj/item/clothing/under/neon/blue
 	name = "blue neon tracksuit"
 	desc = "A tracksuit lined with blue neon fibers. Slightly luminescent."
 	icon_state = "neonb"
 	item_state = "bl_suit"
 
-obj/item/clothing/under/neon/red
+/obj/item/clothing/under/neon/red
 	name = "red neon tracksuit"
 	desc = "A tracksuit lined with red neon fibers. Slightly luminescent."
 	icon_state = "neonr"
 	item_state = "bl_suit"
+
+/obj/item/clothing/under/white
+	name = "ivory white outfit"
+	desc = "White suit, white pants and a white tie. Very stylish."
+	icon_state = "suit_white"
+	item_state = "suit_white"
+	price_tag = 45
+
+/obj/item/clothing/under/red
+	name = "blood red outfit"
+	desc = "Red suit, red pants and a red tie. Very stylish."
+	icon_state = "suit_red"
+	item_state = "suit_red"
+	price_tag = 45
+
+/obj/item/clothing/under/green
+	name = "questionable outfit"//Riddler reference, you probably knew that
+	desc = "Green suit, green pants and a green tie. Quite a riddle to solve."
+	icon_state = "riddler"
+	item_state = "riddler"
+	price_tag = 45
+
+/obj/item/clothing/under/grey
+	name = "ash grey outfit"
+	desc = "Grey suit, grey pants and a grey tie. Very stylish."
+	icon_state = "suit_grey"
+	item_state = "suit_grey"
+	price_tag = 45
+
+/obj/item/clothing/under/black
+	name = "charcoal black outfit"
+	desc = "Black suit, black pants and a black tie. Very stylish."
+	icon_state = "suit_black"
+	item_state = "suit_black"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/black
+	name = "black and purple dress"
+	desc = "A black and purple dress, quite stylish"
+	icon_state = "black_purple"
+	item_state = "black_purple"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/white
+	name = "white and yellow dress"
+	desc = "A white and yellow dress, quite stylish"
+	icon_state = "white_yellow"
+	item_state = "white_yellow"
+	price_tag = 45
+
+
+/obj/item/clothing/under/helltaker
+	name = "charming outfit"//Helltaker reference
+	desc = "A red shirt with a black tie and black pants. Stylish enough to impress the devil."
+	icon_state = "helltaker"
+	item_state = "helltaker"
+	price_tag = 45
+
+/obj/item/clothing/under/johnny
+	name = "rockerboy outfit"//Cyberpunk 2077, Johnny Silverhand's outfit
+	desc = "A padded vest with brown leather pants. Never stop fightin'"
+	icon_state = "johnny"
+	item_state = "johnny"
+	price_tag = 60
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/under/raider
+	name = "leather outfit"
+	desc = "A rather resistant, generic leather outfit. Smells like waste"
+	icon_state = "raider"
+	item_state = "raider"
+	price_tag = 60
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+/obj/item/clothing/under/tribalhide
+	name = "Tribal Hides"
+	desc = "Leather and fur stitched together, for your inner unga.You feel like thumping your chest."
+	icon_state = "tribalhide"
+	item_state = "tribalm"
+	price_tag = 50
+	armor = list(
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+/obj/item/clothing/under/tribalhide/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Exposed Chest"] = "tribalm"
+	options["Covered Chest"] = "tribalf"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your hides into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

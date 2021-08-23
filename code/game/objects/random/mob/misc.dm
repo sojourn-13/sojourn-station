@@ -13,6 +13,26 @@
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 90
 
+//Carps
+
+/obj/random/mob/carp
+	name = "random carp"
+	icon_state = "hostilemob-purple"
+	alpha = 128
+
+/obj/random/mob/carp/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/carp = 9,
+		/mob/living/simple_animal/hostile/carp/baby = 7,
+		/mob/living/simple_animal/hostile/carp/pike = 6,
+		/mob/living/simple_animal/hostile/carp/shark = 2,
+		/mob/living/simple_animal/hostile/carp/greatwhite = 0.5
+		))
+
+/obj/random/mob/carp/low_chance
+	name = "low chance random carp"
+	icon_state = "hostilemob-purple-low"
+	spawn_nothing_percentage = 60
+
 //croakers
 /obj/random/mob/croaker
 	name = "random croaker"
@@ -34,11 +54,12 @@
 	alpha = 128
 
 /obj/random/mob/voidwolf/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/voidwolf = 9,
-		/mob/living/simple_animal/hostile/voidwolf/fieldtech = 2,
-		/mob/living/simple_animal/hostile/voidwolf/ranged = 4,
-		/mob/living/simple_animal/hostile/voidwolf/fieldtech/ranged = 4,
-		/mob/living/simple_animal/hostile/voidwolf/captain = 0.5
+	return pickweight(list(
+		/mob/living/carbon/superior_animal/human/voidwolf = 9,
+		/mob/living/carbon/superior_animal/human/voidwolf/fieldtech = 2,
+		/mob/living/carbon/superior_animal/human/voidwolf/ranged = 4,
+		/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged = 4,
+		/mob/living/carbon/superior_animal/human/voidwolf/captain = 0.5
 		))
 
 /obj/random/mob/voidwolf/low_chance
@@ -109,9 +130,12 @@
 	alpha = 128
 
 /obj/random/mob/tengolo/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/tengbrute = 2,
-		/mob/living/simple_animal/hostile/tengstalker = 1,
-		/mob/living/simple_animal/hostile/tengcharge = 2,
+	return pickweight(list(/mob/living/simple_animal/hostile/tengbrute = 20,
+		/mob/living/simple_animal/hostile/tengstalker = 10,
+		/mob/living/simple_animal/hostile/tengcharge = 20,
+		/mob/living/simple_animal/hostile/hell_pig = 1,
+		/mob/living/simple_animal/hostile/hell_pig/slepnir = 1,
+		/mob/living/simple_animal/hostile/hell_pig/wendigo = 1
 		))
 
 /obj/random/mob/tengolo/low_chance
@@ -129,6 +153,32 @@
 
 /obj/random/cluster/tengolo/item_to_spawn()
 	return /obj/random/mob/tengolo
+
+/obj/random/mob/tahca
+	name = "random tahca"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/tahca/item_to_spawn()
+	return /mob/living/simple_animal/hostile/retaliate/tahca
+
+/obj/random/mob/tahca/low_chance
+	name = "low chance tahca"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/mob/mukwah
+	name = "random mukwah"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/mukwah/item_to_spawn()
+	return /mob/living/simple_animal/hostile/bear/mukwah
+
+/obj/random/mob/mukwah/low_chance
+	name = "low chance mukwah"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
 
 //hakhma beetle - seperate due to hakhma being roach aligned
 /obj/random/mob/hakhma
@@ -171,9 +221,33 @@
 	alpha = 128
 
 /obj/random/mob/nightmare/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/nightmare))
+	return pickweight(list(/mob/living/simple_animal/hostile/nightmare = 99,
+			/mob/living/simple_animal/hostile/nightmare/dream_daemon = 1)) //If you get this spawn your unlucky
 
 /obj/random/mob/nightmare/low_chance
 	name = "low chance nightmare"
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 90
+
+
+//Voxy
+/obj/random/mob/vox
+	name = "random vox"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/vox/item_to_spawn()
+	return pickweight(list(/mob/living/carbon/superior_animal/vox = 8,
+		/mob/living/carbon/superior_animal/vox/posin_thrower = 3,
+		/mob/living/carbon/superior_animal/vox/thrower_spear = 4,
+		/mob/living/carbon/superior_animal/vox/armord = 6,
+		/mob/living/carbon/superior_animal/vox/hider = 4,
+		/mob/living/carbon/superior_animal/vox/ashen = 6,
+		/mob/living/carbon/superior_animal/vox/weak = 10,
+		/mob/living/carbon/superior_animal/vox/rage = 4
+		))
+
+/obj/random/mob/vox/low_chance
+	name = "low chance nightmare"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 50 //Coin flip

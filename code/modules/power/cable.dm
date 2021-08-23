@@ -90,13 +90,13 @@ var/list/possible_cable_coil_colours = list(
 
 	var/turf/T = src.loc			// hide if turf is not intact
 	if(level==1) hide(!T.is_plating())
-	cable_list += src //add it to the global cable list
+	GLOB.cable_list += src //add it to the global cable list
 
 
 /obj/structure/cable/Destroy()					// called when a cable is deleted
 	if(powernet)
 		cut_cable_from_powernet()				// update the powernets
-	cable_list -= src							//remove it from global cable list
+	GLOB.cable_list -= src							//remove it from global cable list
 	. = ..()										// then go ahead and delete the cable
 
 ///////////////////////////////////
@@ -178,6 +178,7 @@ var/list/possible_cable_coil_colours = list(
 				used_now = FALSE
 				return 		//he didn't
 			if(do_after(user, 20, src))
+				log_and_message_admins(" - Wire splicing trap being added to at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 				var/fail_chance = FAILCHANCE_HARD - user.stats.getStat(STAT_MEC) // 72 for assistant
 				if(prob(fail_chance))
 					if(!shock(user, 100)) //why not
@@ -193,7 +194,7 @@ var/list/possible_cable_coil_colours = list(
 		else
 			coil.cable_join(src, user)
 
-	else if(istype(I, /obj/item/weapon/tool/multitool))
+	else if(istype(I, /obj/item/tool/multitool))
 
 		if(powernet && (powernet.avail > 0))		// is it powered?
 			to_chat(user, SPAN_WARNING("[power_to_text(powernet.avail)] in power network."))
@@ -521,13 +522,15 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	w_class = ITEM_SIZE_SMALL
 	throw_speed = 2
 	throw_range = 5
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
+	matter = null //Cant have nice things, peole abused it way to much. Thank you players.
+	//matter = list(MATERIAL_STEEL = 0.15, MATERIAL_PLASTIC = 0.15) less then 1 vaules make for endless mats in some places - Namely matterforge.
+	//matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1) Eris vaules, broken do to 30 x 3-4 per eletrical box making mechs in wires...
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
 	item_state = "coil"
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
 	stacktype = /obj/item/stack/cable_coil
-	preloaded_reagents = list("copper" = 8, "plasticide" = 2)
+	preloaded_reagents = list("copper" = 12, "plasticide" = 6) //Normal is 8 copper 2 plastic
 
 /obj/item/stack/cable_coil/cyborg
 	name = "cable coil synthesizer"
@@ -563,10 +566,14 @@ obj/structure/cable/proc/cableColor(var/colorC)
 			return ..()
 
 		if(S.burn_dam)
-			if(S.burn_dam < ROBOLIMB_SELF_REPAIR_CAP)
-				S.heal_damage(0,15,0,1)
+			var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
+			if(S.burn_dam < ROBOLIMB_SELF_REPAIR_CAP || robotics_expert)
+				var/repair_amount = 15
+				if(robotics_expert)
+					repair_amount = user.stats.getStat(STAT_MEC)
+				S.heal_damage(0,repair_amount,TRUE)
 				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-				user.visible_message(SPAN_DANGER("\The [user] patches some damaged wiring on \the [M]'s [S.name] with \the [src]."))
+				user.visible_message(SPAN_DANGER("\The [user] [robotics_expert ? "expertly" : ""] patches some damaged wiring on \the [M]'s [S.name] with \the [src]."))
 			else if(S.open != 2)
 				to_chat(user, SPAN_DANGER("The damage is far too severe to patch over externally."))
 			return 1
@@ -629,7 +636,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 		if(src.amount <= 14)
 			to_chat(usr, "\red You need at least 15 lengths to make restraints!")
 			return
-		var/obj/item/weapon/handcuffs/cable/B = new /obj/item/weapon/handcuffs/cable(usr.loc)
+		var/obj/item/handcuffs/cable/B = new /obj/item/handcuffs/cable(usr.loc)
 		B.color = color
 		to_chat(usr, SPAN_NOTICE("You wind some cable together to make some restraints."))
 		src.use(15)

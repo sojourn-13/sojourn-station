@@ -1,6 +1,6 @@
 //Those are all weapons that don't had tool modding at some point, but should have it for balance purposes.
 
-/obj/item/weapon/tool/broken_bottle
+/obj/item/tool/broken_bottle
 	name = "broken bottle"
 	desc = "A bottle with a sharp broken bottom."
 	icon = 'icons/obj/drinks.dmi'
@@ -17,7 +17,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	var/icon/broken_outline = icon('icons/obj/drinks.dmi', "broken")
 
-/obj/item/weapon/tool/nailstick
+/obj/item/tool/nailstick
 	name = "nailed stick"
 	desc = "Stick with some nails in it. Looks sharp enough."
 	icon = 'icons/obj/weapons.dmi'
@@ -31,10 +31,12 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_upgrades = 5
 	tool_qualities = list(QUALITY_HAMMERING = 10)
+	effective_faction = list("spider") // Spiders are weak to crushing.
+	damage_mult = 2
 
-/obj/item/weapon/tool/hatchet
+/obj/item/tool/hatchet
 	name = "hatchet"
-	desc = "A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood."
+	desc = "A very sharp axe blade upon a short fiber-metal handle. It has a long history of chopping things, but now it is used for chopping wood."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hatchet"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 3)
@@ -48,8 +50,9 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)
 	attack_verb = list("chopped", "torn", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_SAWING = 15)
+	worksound = WORKSOUND_HARD_SLASH
 
-/obj/item/weapon/tool/fireaxe
+/obj/item/tool/fireaxe
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	icon = 'icons/obj/weapons.dmi'
@@ -61,14 +64,13 @@
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_PRYING = 20, QUALITY_SAWING = 15)
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
-	force = WEAPON_FORCE_NORMAL
-	force_unwielded = WEAPON_FORCE_NORMAL
-	force_wielded = WEAPON_FORCE_BRUTAL
+	force = WEAPON_FORCE_BRUTAL
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
+	worksound = WORKSOUND_HARD_SLASH
 
-/obj/item/weapon/tool/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
+/obj/item/tool/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
 	..()
 	if(A && wielded)
@@ -76,26 +78,34 @@
 			var/obj/effect/plant/P = A
 			P.die_off()
 
-/obj/item/weapon/tool/fireaxe/woodsman
+/obj/item/tool/fireaxe/woodsman
 	name = "woodsman axe"
 	desc = "Chop the wood to fuel the fire."
 	icon_state = "woodsmanaxe0"
 	wielded_icon = "woodsmanaxe1"
-	force = WEAPON_FORCE_PAINFUL
-	force_unwielded = WEAPON_FORCE_PAINFUL
-	force_wielded = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_SHALLOW
-	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 25)
+	force = WEAPON_FORCE_ROBUST
+	slot_flags = SLOT_BELT|SLOT_BACK
+	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 30)
 	w_class = ITEM_SIZE_BULKY
-	slot_flags = null
 
-/obj/item/weapon/tool/minihoe
+/obj/item/tool/fireaxe/militia_tomahawk
+	name = "blackshield tactical tomahawk"
+	desc = "For cutting, sawing, prying, and throwing at targets mid back-flip."
+	icon_state = "sec_tomahawk"
+	wielded_icon = "sec_tomahawk"
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_BRUTAL
+	slot_flags = SLOT_BELT|SLOT_BACK
+	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
+	w_class = ITEM_SIZE_NORMAL
+
+/obj/item/tool/minihoe
 	name = "mini hoe"
 	desc = "It's used for removing weeds or scratching your back."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hoe"
 	item_state = "hoe"
-	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 2)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2)
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_WEAK
 	max_upgrades = 2
@@ -103,209 +113,9 @@
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("slashed", "sliced", "cut", "clawed")
 
-//Knifes
-
-/obj/item/weapon/tool/knife
-	name = "kitchen knife"
-	desc = "A general purpose Chef's Knife made by the Lonestar Shipping Solutions, LLC. Guaranteed to stay sharp for years to come."
-	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "knife"
-	flags = CONDUCT
-	sharp = TRUE
-	edge = TRUE
-	worksound = WORKSOUND_HARD_SLASH
-	w_class = ITEM_SIZE_SMALL
-	force = WEAPON_FORCE_NORMAL
-	throwforce = WEAPON_FORCE_WEAK
-	armor_penetration = ARMOR_PEN_SHALLOW
-	max_upgrades = 2
-	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
-	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
-	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	slot_flags = SLOT_BELT
-	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
-	var/backstab_damage = 10
-
-/obj/item/weapon/tool/knife/resolve_attackby(atom/target, mob/user)
-	. = ..()
-	if(!(iscarbon(target) || isanimal(target)))
-		return
-	if(get_turf(target) != get_step(user, user.dir))
-		return
-	if(target.stat == DEAD)
-		return
-	if(user.dir != target.dir)
-		return
-	var/mob/living/carbon/M = target
-	M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
-	visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
-	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been backstabbed by [user.name] ([user.ckey])</font>")
-	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey])</font>")
-	//Uses regular call to deal damage
-	//Is affected by mob armor*
-
-/obj/item/weapon/tool/knife/boot
-	name = "boot knife"
-	desc = "A small fixed-blade knife for putting inside a boot."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "tacknife"
-	item_state = "knife"
-	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
-	force = WEAPON_FORCE_PAINFUL
-	backstab_damage = 14
-	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 15)
-
-/obj/item/weapon/tool/knife/hook
-	name = "meat hook"
-	desc = "A sharp, metal hook what sticks into things."
-	icon_state = "hook_knife"
-	item_state = "hook_knife"
-	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
-	force = WEAPON_FORCE_DANGEROUS
-	backstab_damage = 8
-	armor_penetration = ARMOR_PEN_EXTREME //Should be countered be embedding
-	embed_mult = 1.5 //This is designed for embedding
-
-/obj/item/weapon/tool/knife/ritual
-	name = "ritual knife"
-	desc = "The unearthly energies that once powered this blade are now dormant."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
-	force = WEAPON_FORCE_PAINFUL
-	backstab_damage = 14
-
-/obj/item/weapon/tool/knife/butch
-	name = "butcher's cleaver"
-	icon_state = "butch"
-	desc = "A huge thing used for chopping and chopping up meat. This includes roaches and roach-by-products."
-	force = WEAPON_FORCE_DANGEROUS
-	throwforce = WEAPON_FORCE_NORMAL
-	backstab_damage = 8
-	armor_penetration = ARMOR_PEN_MODERATE
-	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 1)
-	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 15)
-
-/obj/item/weapon/tool/knife/neotritual
-	name = "Absolutism ritual knife"
-	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "neot-knife"
-	item_state = "knife"
-	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
-	force = WEAPON_FORCE_PAINFUL
-	max_upgrades = 3
-
-/obj/item/weapon/tool/knife/tacknife
-	name = "tactical knife"
-	desc = "You'd be killing loads of people if this was Medal of Valor: Heroes of Space."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "tacknife_guard"
-	item_state = "knife"
-	backstab_damage = 14
-	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
-	force = WEAPON_FORCE_PAINFUL
-	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
-	armor_penetration = ARMOR_PEN_MODERATE
-	max_upgrades = 3
-
-/obj/item/weapon/tool/knife/dagger
-	name = "dagger"
-	desc = "A sharp implement; difference between this and a knife is it is sharp on both sides. Good for finding holes in armor and exploiting them."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "dagger"
-	item_state = "dagger"
-	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
-	force = WEAPON_FORCE_NORMAL
-	backstab_damage = 15
-	armor_penetration = ARMOR_PEN_DEEP
-
-/obj/item/weapon/tool/knife/dagger/ceremonial
-	name = "ceremonial dagger"
-	desc = "Given to high ranking officers as a signature of office, while it isn't meant to be a weapon it certainly does the job."
-	icon_state = "fancydagger"
-	item_state = "fancydagger"
-	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
-
-/obj/item/weapon/tool/knife/dagger/bluespace
-	name = "Soteria \"Displacement Dagger\""
-	desc = "A teleportation matrix attached to a dagger, for sending things you stab it into very far away."
-	icon_state = "bluespace_dagger"
-	item_state = "bluespace_dagger"
-	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5, MATERIAL_PLASMA = 20)
-	force = WEAPON_FORCE_NORMAL+1
-	embed_mult = 25 //You WANT it to embed
-	suitable_cell = /obj/item/weapon/cell/small
-	toggleable = TRUE
-	use_power_cost = 0.4
-	passive_power_cost = 0.4
-	backstab_damage = 10
-	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_BLUESPACE = 4)
-	var/mob/living/embedded
-	var/last_teleport
-	var/entropy_value = 3
-
-/obj/item/weapon/tool/knife/dagger/bluespace/New()
-	..()
-	item_flags |= BLUESPACE
-
-/obj/item/weapon/tool/knife/dagger/bluespace/on_embed(mob/user)
-	embedded = user
-
-/obj/item/weapon/tool/knife/dagger/bluespace/on_embed_removal(mob/user)
-	embedded = null
-
-/obj/item/weapon/tool/knife/dagger/bluespace/Process()
-	..()
-	if(switched_on && embedded && cell)
-		if(last_teleport + max(3 SECONDS, embedded.mob_size*(cell.charge/cell.maxcharge)) < world.time)
-			var/area/A = random_ship_area()
-			var/turf/T = A.random_space()
-			if(T && cell.checked_use(use_power_cost*embedded.mob_size))
-				last_teleport = world.time
-				playsound(T, "sparks", 50, 1)
-				anim(T,embedded,'icons/mob/mob.dmi',,"phaseout",,embedded.dir)
-				go_to_bluespace(get_turf(embedded), entropy_value, TRUE, embedded, T)
-				playsound(T, 'sound/effects/phasein.ogg', 25, 1)
-				playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
-				anim(T,embedded,'icons/mob/mob.dmi',,"phasein",,embedded.dir)
-
-/obj/item/weapon/tool/knife/dagger/assassin
-	name = "dagger"
-	desc = "A sharp implement, with a twist; The handle acts as a reservoir for reagents, and the blade injects those that it hits."
-	icon_state = "ass_dagger"
-	item_state = "ass_dagger"
-	reagent_flags = INJECTABLE|TRANSPARENT
-
-/obj/item/weapon/tool/knife/dagger/assassin/New()
-	..()
-	create_reagents(80)
-
-/obj/item/weapon/tool/knife/dagger/assassin/resolve_attackby(atom/target, mob/user)
-	.=..()
-	if(!target.reagents || !isliving(target))
-		return
-
-	if(!reagents.total_volume)
-		return
-
-	if(!target.reagents.get_free_space())
-		return
-	var/modifier = 1
-	var/reagent_modifier = 1
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		modifier += min(30,H.stats.getStat(STAT_ROB))
-		reagent_modifier = CLAMP(round(H.stats.getStat(STAT_BIO)/10), 1, 5)
-	var/mob/living/L = target
-	if(prob(min(100,(100-L.getarmor(user.targeted_organ, ARMOR_MELEE))+modifier)))
-		var/trans = reagents.trans_to_mob(target, rand(1,3)*reagent_modifier, CHEM_BLOOD)
-		admin_inject_log(user, target, src, reagents.log_list(), trans)
-		to_chat(user, SPAN_NOTICE("You inject [trans] units of the solution. [src] now contains [src.reagents.total_volume] units."))
-
-/obj/item/weapon/tool/scythe
+/obj/item/tool/scythe
 	name = "scythe"
-	desc = "A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow."
+	desc = "A sharp and curved blade on a long fiber-metal handle, this tool makes it easy to reap what you sow."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "scythe0"
 	matter = list(MATERIAL_PLASTEEL = 7, MATERIAL_PLASTIC = 3)
@@ -320,7 +130,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_SAWING = 10)
 
 //Flails
-/obj/item/weapon/tool/chainofcommand
+/obj/item/tool/chainofcommand
 	name = "chain of command"
 	desc = "A tool used by great men to placate the frothing masses."
 	icon = 'icons/obj/weapons.dmi'
@@ -336,9 +146,26 @@
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_HAMMERING = 5)
 
+/obj/item/tool/disciplinary_action
+	name = "Disciplinary Action"
+	desc = "A long whip of steel chains used by Blackshield for when someone acts out of line."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "chain"
+	item_state = "chain"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_DANGEROUS
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 2)
+	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	max_upgrades = 3
+	tool_qualities = list(QUALITY_HAMMERING = 5)
+
+
 //Swords
 
-/obj/item/weapon/tool/sword
+/obj/item/tool/sword
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
 	icon = 'icons/obj/weapons.dmi'
@@ -360,9 +187,9 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_BULKY
 
-/obj/item/weapon/tool/sword/katana
+/obj/item/tool/sword/katana
 	name = "katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one looks pretty sharp."
+	desc = "Modern Japanese-style blade that has no curve to it. This one looks pretty sharp."
 	icon_state = "katana"
 	item_state = "katana"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
@@ -370,9 +197,9 @@
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_SHALLOW
 
-/obj/item/weapon/tool/sword/katana_makeshift
+/obj/item/tool/sword/katana_makeshift
 	name = "makeshift katana"
-	desc = "Modern japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
+	desc = "Modern Japanese-style blade that has no curve to it. This one is two knives welded together, proving where there's a will and a weeb there's a way."
 	icon_state = "katana_improv"
 	item_state = "katana_improv"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife
@@ -380,14 +207,14 @@
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_SHALLOW
 
-/obj/item/weapon/tool/sword/katana/nano
+/obj/item/tool/sword/katana/nano
 	name = "\improper Soteria \"Muramasa\" katana"
 	desc = "After an extensive binge of ancient animated recordings, a scientist decided to upgrade a recovered katana."
 	icon_state = "eutactic_katana"
 	item_state = "eutactic_katana"
 	toggleable = TRUE
 
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
 
 	use_power_cost = 0.4
 	passive_power_cost = 0.4
@@ -396,18 +223,18 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 6)
 	switched_on_force = WEAPON_FORCE_LETHAL
 
-/obj/item/weapon/tool/sword/katana/nano/turn_on(mob/user)
+/obj/item/tool/sword/katana/nano/turn_on(mob/user)
 	.=..()
 	if(.)
 		embed_mult = 0
 		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
 
-/obj/item/weapon/tool/sword/katana/nano/turn_off(mob/user)
+/obj/item/tool/sword/katana/nano/turn_off(mob/user)
 	..()
 	embed_mult = initial(embed_mult)
 	playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
 
-/obj/item/weapon/tool/sword/katana/nano/update_icon()
+/obj/item/tool/sword/katana/nano/update_icon()
 	..()
 	if(cell)
 		overlays += "[icon_state]_cell"
@@ -416,7 +243,7 @@
 	else
 		overlays += "[icon_state]_power_off"
 
-/obj/item/weapon/tool/sword/katana/firebrand //Firebrand. Sprited and Implemented by Sieghardt
+/obj/item/tool/sword/katana/firebrand //Firebrand. Sprited and Implemented by Sieghardt
 	name = "Artificer Firebrand"
 	desc = "Originally the fever dream of an brave guild master looking for a better way to deal with roaches, the Firebrand ended up as a hellish implement of war. While turned off, this is a blunted hunk of metal. When turned on the Firebrand becomes a bringer of fiery doom to anyone unlucky enough to be its path."
 	icon_state = "firebrand"
@@ -437,11 +264,11 @@
 	heat = 2250
 	glow_color = COLOR_ORANGE
 	//Stronger when turned on. Will emit heat, turn its damage type to burn and set targets on fire.
-/obj/item/weapon/tool/sword/katana/firebrand/is_hot()
+/obj/item/tool/sword/katana/firebrand/is_hot()
 	if(switched_on)
 		return heat
 
-/obj/item/weapon/tool/sword/katana/firebrand/turn_on(mob/user)
+/obj/item/tool/sword/katana/firebrand/turn_on(mob/user)
 	.=..()
 	if(.)
 		embed_mult = 0
@@ -450,7 +277,7 @@
 		playsound(loc, 'sound/items/welderactivate.ogg', 50, 1)
 		//Too hot to get stuck into crud.
 
-/obj/item/weapon/tool/sword/katana/firebrand/apply_hit_effect(atom/target, blocked=FALSE)
+/obj/item/tool/sword/katana/firebrand/apply_hit_effect(atom/target, blocked=FALSE)
 	.=..()
 	if(iscarbon(target) && switched_on)
 		var/mob/living/carbon/M = target
@@ -458,14 +285,14 @@
 		M.IgniteMob()
 		//Sets the target on fire, however only 1 stack at a time rather than 4 like most incendiary ammo.
 
-/obj/item/weapon/tool/sword/katana/firebrand/turn_off(mob/user)
+/obj/item/tool/sword/katana/firebrand/turn_off(mob/user)
 	..()
 	embed_mult = initial(embed_mult)
 	damtype = initial(damtype)
 	set_light(0)
 	playsound(loc, 'sound/items/welderdeactivate.ogg', 50, 1)
 
-/obj/item/weapon/tool/sword/katana/firebrand/update_icon()
+/obj/item/tool/sword/katana/firebrand/update_icon()
 	..()
 	if(switched_on)
 		icon_state = "firebrand_on"
@@ -474,7 +301,7 @@
 		icon_state = initial(icon_state)
 		item_state = initial(item_state)
 
-/obj/item/weapon/tool/sword/saber
+/obj/item/tool/sword/saber
 	name = "premier's saber"
 	desc = "A finely made formal blade fit for the premier. Despite being primarily for show it cuts deep and painfully."
 	icon = 'icons/obj/weapons-blades.dmi'
@@ -482,13 +309,28 @@
 	item_state = "saber"
 	armor_penetration = ARMOR_PEN_SHALLOW
 
-/obj/item/weapon/tool/sword/saber/cutlass
+/obj/item/tool/sword/saber/cutlass
 	name = "cutlass"
 	desc = "A finely made sword for pirates or military men who take themselves too seriously."
 	icon_state = "cutlass"
 	item_state = "cutlass"
 
-/obj/item/weapon/tool/sword/machete
+/obj/item/tool/sword/saber/militiacommander
+	name = "Officer's Saber"
+	desc = "A masterfully forged Saber to be carried by the Blackshield Commander, Despite it fact for Ceremonial use. It can also be used in combat, if they're crazy enough."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "saber"
+	item_state = "saber"
+	armor_penetration = ARMOR_PEN_SHALLOW
+
+/obj/item/tool/sword/saber/militiasergeant
+	name = "Sergeant's Saber"
+	desc = "An Saber made for the Senior Enlisted of Blackshield, Usually used for Ceremonial usage but can also be used in combat, Preferably used by a maniac who likes to charge into battle without helmet or armour."
+	icon_state = "cutlass"
+	item_state = "cutlass"
+	armor_penetration = ARMOR_PEN_SHALLOW
+
+/obj/item/tool/sword/machete
 	name = "machete"
 	desc = "An explorer's best friend and trust back up plan. Or primary plan for those who like to get in there personally."
 	icon = 'icons/obj/weapons-blades.dmi'
@@ -498,25 +340,90 @@
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
 
-/obj/item/weapon/tool/gauntlet
+/obj/item/tool/sword/cleaver
+	name = "Cleaver Sustine"
+	desc = "A weapon designed by the Hunting Lodge, this massive sword is especially effective against Tengolos, berserk or not."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "cleaver"
+	item_state = "cleaver"
+	tool_qualities = list(QUALITY_CUTTING = 30)
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	w_class = ITEM_SIZE_BULKY
+	effective_faction = list("tengo", "tengolo_berserker") // Which faction the cleaver is effective against.
+	damage_mult = 2 // The damage multiplier the cleaver get when attacking that faction.
+
+/obj/item/tool/sword/huntingclaw
+	name = "Hunting Claw"
+	desc = "The second best friend a hunter could ask for, this one handed blade is lightweight and razor sharp thanks to its starworks-grade alloy construction.\
+	 The hilt is made out of wood with gold looking trimmings. A Black Bear has been beautifully etched on the wood. All craftsmanship is of the highest quality."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "huntingclaw"
+	item_state = "huntingclaw"
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_WOOD = 2)
+	slot_flags = SLOT_BELT | SLOT_BACK
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Very sharp blade, serrated back
+	force = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_SHALLOW
+	w_class = ITEM_SIZE_NORMAL
+
+/obj/item/tool/gauntlet
 	name = "render gauntlet"
 	desc = "A crudely made gauntlet consisting of straps, metal reinforcement and render skin - including it's deadly claws."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "gauntlet"
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Cuts people down just like trees.
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5)
 	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
 
+/obj/item/tool/power_fist
+	name = "power fist"
+	desc = "A battery powered hydraulic combat gauntlet designed for extended operations where close combat and muscles matter most."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "powerfist"
+	item_state = "powerfist"
+	toggleable = TRUE
+	worksound = WORKSOUND_HAMMER
+	switched_on_force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 7)
+	attack_verb = list("punched", "decked", "haymakered", "uppercut")
+	degradation = 0.7
+	use_power_cost = 1
+	suitable_cell = /obj/item/cell/medium
+	switched_on_qualities = list(QUALITY_HAMMERING = 30)
+	switched_off_qualities = list(QUALITY_HAMMERING = 10)
+	hitsound = 'sound/weapons/smash.ogg'
+
+/obj/item/tool/power_fist/turn_on(mob/user)
+	if (cell && cell.charge > 0)
+		item_state = "[initial(item_state)]_on"
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
+		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+		..()
+	else
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src] has no power!"))
+
+/obj/item/tool/power_fist/turn_off(mob/user)
+	item_state = initial(item_state)
+	playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	..()
+
 //POLEARMS
-/obj/item/weapon/tool/spear
+/obj/item/tool/spear
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "spearglass0"
 	wielded_icon = "spearglass1"
 	name = "spear"
 	desc = "A spiky bit of material tied onto a metal pole with some wire. It's an insult to spears across the galaxy - but it can still do some nasty damage and has some decent armor-piercing capabilities. Spears like these are often seen in the hands of vagrants, muggers, or desperate militias. Due to this weapon - if you could call it that - being so long, you're able to attack enemies from up to a tile away."
 	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_ROBUST // It's meant to be thrown
 	armor_penetration = ARMOR_PEN_MODERATE // It's a SPEAR!
 	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
 	w_class = ITEM_SIZE_HUGE
@@ -526,12 +433,12 @@
 	sharp = TRUE
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	origin_tech = list(TECH_COMBAT = 1)
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/weapons/slice.ogg' // Sounds more like a stab than a cut.
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	embed_mult = 1.5
 	//attack_distance = 2
 
-/obj/item/weapon/tool/spear/hunter_halberd
+/obj/item/tool/spear/hunter_halberd
 	name = "Halberd"
 	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself; "
 	icon = 'icons/obj/weapons.dmi'

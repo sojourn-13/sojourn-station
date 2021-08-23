@@ -5,6 +5,11 @@
 	item_cost = 4
 	category = /datum/uplink_category/ammunition
 
+/datum/uplink_item/item/ammo/pistol
+	name = ".35 HV box"
+	item_cost = 1
+	path = /obj/item/ammo_magazine/ammobox/pistol_35/hv
+
 /datum/uplink_item/item/ammo/hpistol
 	name = ".35 HV high-capacity mag"
 	item_cost = 1
@@ -68,27 +73,36 @@
 /datum/uplink_item/item/ammo/m12/empty
 	name = "empty M12 shotgun mag"
 	item_cost = 1
-	path = /obj/item/ammo_magazine/m12
+	path = /obj/item/ammo_magazine/m12/empty
 
 /datum/uplink_item/item/ammo/sniperammo
 	name = ".60-06 AP"
 	item_cost = 3
 	path = /obj/item/ammo_magazine/ammobox/antim_small
 
+/datum/uplink_item/item/ammo/sniperammo_lethal
+	name = "1 \"Red-Nose\" shell casing"
+	item_cost = 2
+	path = /obj/item/ammo_casing/antim/lethal
+
+/datum/uplink_item/item/ammo/sniperammo_ion
+	name = "1 \"Off-Switch\" shell casing"
+	item_cost = 2
+	path = /obj/item/ammo_casing/antim/ion
 
 //Super-class cells, better than what you'll find in a vendor,
 //but not as good as the best maint loot, so scavenging is still encouraged
 /datum/uplink_item/item/ammo/cell/small
-	name = "Small Power Cell"
+	name = "Lonestar \"Robustcell 300S\""
 	item_cost = 2
-	path = /obj/item/weapon/cell/small/super
+	path = /obj/item/cell/small/super
 
 /datum/uplink_item/item/ammo/cell/medium
-	name = "Medium Power Cell"
+	name = "Lonestar \"Robustcell 1000M\""
 	item_cost = 3
-	path = /obj/item/weapon/cell/medium/super
+	path = /obj/item/cell/medium/super
 
 /datum/uplink_item/item/ammo/cell/large
-	name = "Large Power Cell"
+	name = "Lonestar \"Robustcell 16000L\""
 	item_cost = 4
-	path = /obj/item/weapon/cell/large/super
+	path = /obj/item/cell/large/super

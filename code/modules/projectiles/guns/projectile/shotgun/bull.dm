@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/bull
+/obj/item/gun/projectile/shotgun/bull
 	name = "\"Bull\" shotgun"
 	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. A nightmare of engineering, this gun is often regarded as one of the worst firearms ever produced. \
 			Due to shorter than usual barrels, damages are somewhat lower and recoil suffers as a result. The ability to fire both barrels at once seems more of a gimmick than a feature. \
@@ -17,7 +17,7 @@
 	var/reload = 1
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
-	price_tag = 1400 //gives tactical advantage with beanbags, but consumes more ammo and hits less harder with lethal ammo, so Gladstone or Regulator would be better for lethal takedowns in general
+	price_tag = 1200 //gives tactical advantage with beanbags, but consumes more ammo and hits less harder with lethal ammo, so Gladstone or Regulator would be better for lethal takedowns in general
 	damage_multiplier = 0.75
 	penetration_multiplier = 0.75
 	one_hand_penalty = 10 //compact shotgun level
@@ -31,7 +31,7 @@
 		list(mode_name="fire both barrels at once", burst=2, icon="burst"),
 		)
 
-/obj/item/weapon/gun/projectile/shotgun/bull/proc/pump(mob/M as mob)
+/obj/item/gun/projectile/shotgun/bull/proc/pump(mob/M as mob)
 	var/turf/newloc = get_turf(src)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
 	if(chambered)
@@ -47,12 +47,12 @@
 				reload = 0
 	update_icon()
 
-/obj/item/weapon/gun/projectile/shotgun/bull/consume_next_projectile()
+/obj/item/gun/projectile/shotgun/bull/consume_next_projectile()
 	if (chambered)
 		return chambered.BB
 	return null
 
-/obj/item/weapon/gun/projectile/shotgun/bull/handle_post_fire()
+/obj/item/gun/projectile/shotgun/bull/handle_post_fire()
 	..()
 	var/turf/newloc = get_turf(src)
 	if(chambered)
@@ -65,7 +65,7 @@
 				chambered = AC
 	reload = 1
 
-/obj/item/weapon/gun/projectile/shotgun/bull/unload_ammo(user, allow_dump)
+/obj/item/gun/projectile/shotgun/bull/unload_ammo(user, allow_dump)
 	var/turf/newloc = get_turf(src)
 	if(chambered)
 		chambered.forceMove(newloc) //Eject casing
@@ -73,7 +73,7 @@
 		reload = 1
 	..(user, allow_dump=1)
 
-/obj/item/weapon/gun/projectile/shotgun/bull/attack_self(mob/user as mob)
+/obj/item/gun/projectile/shotgun/bull/attack_self(mob/user as mob)
 	if(reload)
 		if(wielded)
 			pump(user)
@@ -86,12 +86,12 @@
 		else
 			unload_ammo(user)
 
-/obj/item/weapon/gun/projectile/shotgun/bull/proc/update_charge()
+/obj/item/gun/projectile/shotgun/bull/proc/update_charge()
 	var/ratio = get_ammo() / (max_shells + 1)//1 in the chamber
 	ratio = round(ratio, 0.25) * 100
 	add_overlay("[ratio]_PW")
 
 
-/obj/item/weapon/gun/projectile/shotgun/bull/update_icon()
+/obj/item/gun/projectile/shotgun/bull/update_icon()
 	cut_overlays()
 	update_charge()

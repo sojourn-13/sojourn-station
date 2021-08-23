@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/pacman/scrap
+/obj/item/circuitboard/pacman/scrap
 	build_name = "S.C.R.A.P PACMAN-type generator"
 	build_path = /obj/machinery/power/port_gen/pacman/scrap
 	board_type = "machine"
@@ -6,7 +6,7 @@
 
 /datum/design/research/circuit/pacman/scrap
 	name = "S.C.R.A.P PACMAN-type generator"
-	build_path = /obj/item/weapon/circuitboard/pacman/scrap
+	build_path = /obj/item/circuitboard/pacman/scrap
 	starts_unlocked = TRUE //We want to be able to make these
 
 /obj/machinery/power/port_gen/pacman/scrap
@@ -19,4 +19,4 @@
 	time_per_fuel_unit = 80
 
 /obj/machinery/power/port_gen/pacman/scrap/overheat()
-	explosion(loc, 1, 5, 2, -1)
+	explosion(loc, 1, 5, 2, 0)

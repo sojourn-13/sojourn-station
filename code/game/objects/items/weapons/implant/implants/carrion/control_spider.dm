@@ -1,4 +1,5 @@
-/obj/item/weapon/implant/carrion_spider/control
+/obj/item/implant/carrion_spider/control
+	name = "control spider"
 	icon_state = "spiderling_control"
 	spider_price = 40
 	var/active = FALSE
@@ -8,7 +9,7 @@
 	var/mob/living/wearer_last
 	var/list/start_damage = list()
 
-/obj/item/weapon/implant/carrion_spider/control/activate()
+/obj/item/implant/carrion_spider/control/activate()
 	..()
 	if(!owner_mob || !owner_mob?.mind)
 		return
@@ -49,15 +50,15 @@
 
 	addtimer(CALLBACK(src, .proc/return_mind), rand(45 SECONDS, 70 SECONDS))
 
-/obj/item/weapon/implant/carrion_spider/control/on_uninstall()
+/obj/item/implant/carrion_spider/control/on_uninstall()
 	..()
 	return_mind()
 
-/obj/item/weapon/implant/carrion_spider/control/Destroy()
+/obj/item/implant/carrion_spider/control/Destroy()
 	. = ..()
 	return_mind()
 
-/obj/item/weapon/implant/carrion_spider/control/proc/return_mind()
+/obj/item/implant/carrion_spider/control/proc/return_mind()
 	if(!active)
 		return
 	active = FALSE

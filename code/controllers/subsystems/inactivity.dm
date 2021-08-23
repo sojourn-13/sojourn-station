@@ -20,6 +20,14 @@ SUBSYSTEM_DEF(inactivity)
 		else if (C.mob && C.mob.mind && C.mob.stat != DEAD)
 			C.mob.mind.last_activity = world.time - C.inactivity
 
+		//Us injecting our code into this subsystem just to be cancer.
+		if(!C.is_afk(5 MINUTES))
+			if(C.mob)
+				var/mob/living/carbon/human/SMan = C.mob
+				if(istype(SMan, /mob/living/carbon/human))
+					if(SMan.job)
+						SMan.mind.assigned_job.change_playtime(C, 1)
+
 		if (MC_TICK_CHECK)
 			return
 

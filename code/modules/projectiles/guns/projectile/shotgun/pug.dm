@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/pug
+/obj/item/gun/projectile/shotgun/pug
 	name = "\"Pug\" auto-shotgun"
 	desc = "It's magazine-fed shotgun designed for close quarters combat, nicknamed 'Striker' by boarding parties. \
 			Robust and reliable design allows you to swap magazines on the go and dump as many shells at your foes as you want... \
@@ -12,7 +12,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 2500
+	price_tag = 1750
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
@@ -23,11 +23,11 @@
 
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_400, //0.7 damage_multiplier
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/shotgun/pug/update_icon()
+/obj/item/gun/projectile/shotgun/pug/update_icon()
 	cut_overlays()
 	icon_state = "[initial(icon_state)]"
 	if(ammo_magazine)
@@ -44,6 +44,6 @@
 	else
 		item_state = initial(item_state)
 
-/obj/item/weapon/gun/projectile/shotgun/pug/Initialize()
+/obj/item/gun/projectile/shotgun/pug/Initialize()
 	. = ..()
 	update_icon()

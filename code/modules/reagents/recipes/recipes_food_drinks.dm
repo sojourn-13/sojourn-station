@@ -5,8 +5,8 @@
 
 /datum/chemical_reaction/sodiumchloride
 	result = "sodiumchloride"
-	required_reagents = list("sodium" = 1, "hclacid" = 1)
-	result_amount = 2
+	required_reagents = list("hclacid" = 1, "sodium" = 1, "water" = 1) //Hydrocloric Acid with Water so that it makes Chlorine, makes more sense.
+	result_amount = 3
 
 /datum/chemical_reaction/eznutrient
 	result = "eznutrient"
@@ -35,34 +35,52 @@
 	required_reagents = list("soymilk" = 10)
 	catalysts = list("enzyme" = 5)
 	result_amount = 1
-	blacklist_containers = list(/mob)
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/tofu/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/tofu(location)
+		new /obj/item/reagent_containers/food/snacks/tofu(location)
 
 /datum/chemical_reaction/chocolate_bar
 	result = null
 	required_reagents = list("soymilk" = 2, "coco" = 2, "sugar" = 2)
 	result_amount = 1
-	blacklist_containers = list(/mob)
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/chocolate_bar/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/chocolatebar(location)
+		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
 
 /datum/chemical_reaction/chocolate_bar2
 	result = null
 	required_reagents = list("milk" = 2, "coco" = 2, "sugar" = 2)
 	result_amount = 1
-	blacklist_containers = list(/mob)
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/chocolate_bar2/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/chocolatebar(location)
+		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+
+/datum/chemical_reaction/icecreambase
+	/datum/chemical_reaction/icedcream
+	required_reagents = list("sugar" = 1, "ice" = 1, "cream" = 1)
+	result = "icecreambase"
+	result_amount = 3
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/honey_icecream
+	result = null
+	required_reagents = list("icecreambase" = 10, "honey" = 5)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/honey_icecream/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/honey_icecream(location)
 
 /datum/chemical_reaction/hot_coco
 	result = "hot_coco"
@@ -84,45 +102,45 @@
 	required_reagents = list("milk" = 40)
 	catalysts = list("enzyme" = 5)
 	result_amount = 1
-	blacklist_containers = list(/mob)
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/cheesewheel/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesewheel(location)
+		new /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel(location)
 
 /datum/chemical_reaction/meatball
 	result = null
 	required_reagents = list("protein" = 3, "flour" = 5)
 	result_amount = 3
-	blacklist_containers = list(/mob)
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/meatball/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/meatball(location)
+		new /obj/item/reagent_containers/food/snacks/rawmeatball(location)
 
 /datum/chemical_reaction/dough
 	result = null
 	required_reagents = list("egg" = 3, "flour" = 10)
 	result_amount = 1
-	blacklist_containers = list(/mob)
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/dough/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/dough(location)
+		new /obj/item/reagent_containers/food/snacks/dough(location)
 
 /datum/chemical_reaction/syntiflesh
 	result = null
 	required_reagents = list("blood" = 5, "clonexadone" = 1)
 	result_amount = 1
-	blacklist_containers = list(/mob)
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/syntiflesh/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/meat/syntiflesh(location)
+		new /obj/item/reagent_containers/food/snacks/meat/syntiflesh(location)
 
 /datum/chemical_reaction/hot_ramen
 	result = "hot_ramen"
@@ -133,6 +151,50 @@
 	result = "hell_ramen"
 	required_reagents = list("capsaicin" = 1, "hot_ramen" = 6)
 	result_amount = 6
+
+/datum/chemical_reaction/butter
+	result = null
+	required_reagents = list("cream" = 5, "sodiumchloride" = 5) // Consider this a placeholder until there's a better way to make butter by churning - Seb
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/butter/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/sliceable/butterstick(location)
+
+/datum/chemical_reaction/vanillaicecream
+	result = null
+	required_reagents = list("icecreambase" = 10, "ice" = 5)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/vanillaicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/icecream(location)
+
+/datum/chemical_reaction/chocolateicecream
+	result = null
+	required_reagents = list("icecreambase" = 10, "coco" = 5)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/chocolateicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/chocoicecream(location)
+
+/datum/chemical_reaction/strawberryicecream
+	result = null
+	required_reagents = list("icecreambase" = 10, "berryjuice" = 5)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/strawberryicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/strawberryicecream(location)
 
 /* Aurora's Coffee */
 
@@ -161,8 +223,8 @@
 	required_reagents = list("espresso" = 1, "milk" = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/latte
-	result = "latte"
+/datum/chemical_reaction/lattemacchiato
+	result = "lattemacchiato"
 	required_reagents = list("flat_white" = 1, "milk" = 1)
 	result_amount = 2
 
@@ -181,8 +243,8 @@
 	required_reagents = list("cappuccino" = 1, "espresso" = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/mocacchino
-	result = "mocacchino"
+/datum/chemical_reaction/mocaccino
+	result = "mocaccino"
 	required_reagents = list("flat_white" = 1, "hot_coco" = 1)
 	result_amount = 2
 
@@ -370,7 +432,8 @@
 
 /datum/chemical_reaction/hooch
 	result = "hooch"
-	required_reagents = list ("sugar" = 1, "ethanol" = 2, "fuel" = 1)
+	required_reagents = list ("ethanol" = 2, "fuel" = 1)
+	catalysts = list("enzyme" = 5)
 	result_amount = 3
 
 /datum/chemical_reaction/irish_coffee
@@ -472,6 +535,11 @@
 	result = "barefoot"
 	required_reagents = list("berryjuice" = 1, "cream" = 1, "vermouth" = 1)
 	result_amount = 3
+
+/datum/chemical_reaction/riotjuice
+	result = "riotjuice"
+	required_reagents = list("vodka" = 5, "pineapplejuice" = 5, "bluecuracao" = 5)
+	result_amount = 15
 
 /datum/chemical_reaction/grapesoda
 	result = "grapesoda"
@@ -601,8 +669,8 @@
 
 /datum/chemical_reaction/milkshake
 	result = "milkshake"
-	required_reagents = list("cream" = 1, "ice" = 2, "milk" = 2)
-	result_amount = 5
+	required_reagents = list("icecreambase" = 1, "milk" = 1)
+	result_amount = 2
 
 /datum/chemical_reaction/rewriter
 	result = "rewriter"
@@ -642,4 +710,55 @@
 /datum/chemical_reaction/drinks/miss_fortune
 	result = "miss_fortune"
 	required_reagents = list("nanatsunoumi" = 1, "redcandyliquor" = 1, "bluecuracao" = 1, "melonliquor" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/drinks/triplecitrus
+	result = "triplecitrus"
+	required_reagents = list("limejuice" = 1, "orangejuice" = 1, "lemonjuice" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/sugarrush
+	result = "sugarrush"
+	required_reagents = list("sugar" = 2, "triplecitrus" = 1) //Optional Karmotrine.
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/crevicespike
+	result = "crevicespike"
+	required_reagents = list("capsaicin" = 2, "triplecitrus" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/fringeweaver
+	result = "fringeweaver"
+	required_reagents = list("sugar" = 1, "ethanol" = 3)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/schnapps
+	result = "schnapps"
+	required_reagents = list("sugar" = 1, "vodka" = 3)
+	catalysts = list("ethanol" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/pianowoman
+	result = "pianowoman"
+	required_reagents = list("sugar" = 1, "fernet" = 1, "lemon_lime" = 1, "capsaicin" = 1, "bluecuracao" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/drinks/choccymilk
+	result = "chocolatemilk"
+	required_reagents = list("coco" = 1, "milk" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/strawberrymilk
+	result = "strawberrymilk"
+	required_reagents = list("berryjuice" = 1, "milk" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/drinks/fernetcola
+	result = "fernetcola"
+	required_reagents = list("fernet" = 1, "cola" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/drinks/fanciulli
+	result = "fanciulli"
+	required_reagents = list("manhattan" = 1, "fernet" = 1)
 	result_amount = 2

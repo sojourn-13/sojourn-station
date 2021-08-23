@@ -242,6 +242,46 @@
 	name = "medal of exceptional heroism"
 	desc = "An extremely rare golden medal awarded only by faction woners. To recieve such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
 
+/*Capes*/
+/obj/item/clothing/accessory/ccape
+	name = "holographic capitoleum cape"
+	desc = "A electronic cloak with a holographic interface lining it's stiff wiring. This cape is the only one feared by Castellans, not because of any might or power, but because it signifies one status of being from the capitol, and thus, one's ability to back-stab and lie."
+	icon_state = "capital_cape"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/ccape/soldier
+	name = "soldier-lord trench cape"
+	desc = "A cloak for a warrior from the land of the midnight sun, those who call themselves 'Nobles of the Sword', the Reichsritter of the castellans, who don't lead as generals, but as soldiers, ready to fight shoulder-to-shoulder for Kaiser and Homeland. Most died in the Battle of Krios, Sol Federation troopers were trained to put down the giant, gene-modded castellan knights who lead the vorhut soldiery. The few 'Nobles of the Sword' that survived mostly do-so as disgraced nobles, mercenaries, and duelist, one day knowing their martial bloodlines will die."
+	icon_state = "krieg_cape"
+
+/obj/item/clothing/accessory/cape
+	name = "fluffy cape"
+	desc = "A cloak of old money, comfy, furred, and decadent to all hell, for those who believe your worth as a man is the worth that you bring."
+	icon_state = "erp_cape"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/ccape/rural
+	name = "farmer barons olive cape"
+	desc = "A cloak that define's one status as humble, as humble as a feudal land lord can try. This green, copper clad cloak is commonly worn by échevins-lord houses, those who own great swathes of colonial and rural territory. It's in actuality a self-defence mechanism, the knowledge that if they don't conceal their wealth, the vorhut countryvolk and jaeger frontiersmen they rule over will burn their estates and steal from their coffers."
+	icon_state = "pelinal_cape"
+
+/obj/item/clothing/accessory/ccape/bleublood
+	name = "admirals dress cape"
+	desc = "A cloak lined with gold, and dyed in a noble blue. A proper cape of admirality, for many houses rely on the navy to exist, producing master navigator-captains who lead the otherwise meager Kriosan fleet to greatness. Ad Astra Per Aspera."
+	icon_state = "bleu_cape"
+
+/obj/item/clothing/accessory/cape/outsider
+	name = "outcast's cloak"
+	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
+	icon_state = "outsider"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/cape/black
+	name = "attachable black cloak"
+	desc = "A simple black cloak you can attach to your suit for all your edgy needs."
+	icon_state = "cloak"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
 /*Scarves*/
 
 /obj/item/clothing/accessory/scarf/black
@@ -432,6 +472,13 @@ obj/item/clothing/accessory/scarf/green
 	icon_state = "tags"
 	item_state = "tags"
 
+/obj/item/clothing/accessory/fractalrosary
+	name = "Fractal Rosary"
+	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
+			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
+	icon_state = "fractal_rosary"
+	item_state = "fractal_rosary"
+
 /obj/item/clothing/accessory/legbrace
 	name = "leg brace"
 	desc = "A lightweight polymer frame designed to hold legs upright comfortably."
@@ -530,7 +577,7 @@ obj/item/clothing/accessory/scarf/green
 	icon_state = "bs_sergeant"
 	item_state = "bs_sergeant"
 
-/obj/item/clothing/accessory/patches/blackshield_sergeant
+/obj/item/clothing/accessory/patches/blackshield_sergeantmajor
 	name = "blackshield sergeant major patch"
 	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
 	icon_state = "bs_sergeantm"

@@ -33,19 +33,24 @@
 	icon_dead = "parrot_dead"
 	pass_flags = PASSTABLE
 	mob_size = MOB_SMALL
+	leather_amount = 0
 
 	speak_emote = list("squawks","says","yells")
 	emote_see = list("flutters its wings","squawks","bawks")
 
 	speak_chance = 1//1% (1 in 100) chance every tick; So about once per 150 seconds, assuming an average tick is 1.5s
 	turns_per_move = 5
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/cracker/
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken // Enough with the cracker meme.
+	meat_amount = 2
 
 	response_help  = "pets"
 	response_disarm = "gently moves aside"
 	response_harm   = "swats"
 	stop_automated_movement = 1
 	universal_speak = 1
+
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 	var/parrot_state = PARROT_WANDER //Hunt for a perch when created
 	var/parrot_sleep_max = 25 //The time the parrot sits while perched before looking around. Mosly a way to avoid the parrot's AI in life() being run every single tick.
@@ -644,8 +649,8 @@
 		return 0
 
 	if(!drop_gently)
-		if(istype(held_item, /obj/item/weapon/grenade))
-			var/obj/item/weapon/grenade/G = held_item
+		if(istype(held_item, /obj/item/grenade))
+			var/obj/item/grenade/G = held_item
 			G.loc = src.loc
 			G.prime()
 			to_chat(src, "You let go of the [held_item]!")
@@ -772,6 +777,9 @@
 	faction = "pond"
 	speak_chance = 5
 
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken // You monster.
+	meat_amount = 2
+
 	speak_emote = list("squawks","says","yells")
 	emote_see = list("flutters its wings","squawks","bawks")
 
@@ -783,6 +791,9 @@
 	response_harm   = "swats"
 	universal_speak = 1
 	wander = 1
+
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/jungle_bird/Initialize()
 	icon_state = "bird-[rand(1, 17)]"

@@ -5,7 +5,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 
-/obj/item/projectile/ion/on_hit(atom/target)
+/obj/item/projectile/ion/on_impact(atom/target)
 	empulse(target, 1, 1)
 	return TRUE
 
@@ -17,8 +17,8 @@
 	sharp = TRUE
 	edge = TRUE
 
-/obj/item/projectile/bullet/gyro/on_hit(atom/target)
-	explosion(target, -1, 0, 2)
+/obj/item/projectile/bullet/gyro/on_impact(atom/target)
+	explosion(target, 0, 1, 2)
 	return TRUE
 
 /obj/item/projectile/bullet/rocket
@@ -32,8 +32,8 @@
 	set_light(2.5, 0.5, "#dddd00")
 	..(target, target_zone, x_offset, y_offset, angle_offset)
 
-/obj/item/projectile/bullet/rocket/on_hit(atom/target)
-	explosion(target, 0, 1, 2, 4)
+/obj/item/projectile/bullet/rocket/on_impact(atom/target)
+	explosion(loc, 0, 1, 2, 4)
 	set_light(0)
 	return TRUE
 
@@ -45,12 +45,40 @@
 	check_armour = ARMOR_ENERGY
 	var/temperature = 300
 
-
-/obj/item/projectile/temp/on_hit(atom/target)//These two could likely check temp protection on the mob
+/obj/item/projectile/temp/on_impact(atom/target)//These two could likely check temp protection on the mob
 	if(isliving(target))
 		var/mob/M = target
 		M.bodytemperature = temperature
 	return TRUE
+
+/obj/item/projectile/temp/cold
+	temperature = 200
+
+/obj/item/projectile/temp/ice
+	temperature = 10 //balance wise this will be 10 rather then 0
+
+/obj/item/projectile/temp/hot
+	temperature = 400
+
+/obj/item/projectile/temp/boil
+	temperature = 500
+
+
+/obj/item/projectile/slime_death
+	name = "core stopper beam"
+	icon_state = "ice_2"
+	damage_types = list(BURN = 0)
+	nodamage = TRUE
+	check_armour = ARMOR_ENERGY
+	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+	hitscan = TRUE
+
+/obj/item/projectile/slime_death/on_impact(atom/target)//These two could likely check temp protection on the mob
+	if(isliving(target))
+		if(isslime(target))
+			var/mob/living/carbon/slime/cute = target
+			nodamage = FALSE
+			cute.death() // The cute slime dies.
 
 /obj/item/projectile/meteor
 	name = "meteor"
@@ -88,7 +116,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 
-/obj/item/projectile/energy/floramut/on_hit(atom/target)
+/obj/item/projectile/energy/floramut/on_impact(atom/target)
 	var/mob/living/M = target
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = M
@@ -120,7 +148,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 
-/obj/item/projectile/energy/florayield/on_hit(atom/target)
+/obj/item/projectile/energy/florayield/on_impact(atom/target)
 	var/mob/M = target
 	if(ishuman(target)) //These rays make plantmen fat.
 		var/mob/living/carbon/human/H = M
@@ -131,11 +159,29 @@
 	else
 		return 1
 
+/obj/item/projectile/energy/floraevolve
+	name = "gamma somatoray"
+	icon_state = "plasma"
+	damage_types = list(TOX = 0)
+	nodamage = TRUE
+	check_armour = ARMOR_ENERGY
+
+/obj/item/projectile/energy/floraevolve/on_impact(atom/target)
+	var/mob/M = target
+	if(ishuman(target)) //These rays make plantmen fat.
+		var/mob/living/carbon/human/H = M
+		if((H.species.flags & IS_PLANT) && (H.nutrition < 500))
+			H.nutrition += 30
+	else if (istype(target, /mob/living/carbon/))
+		M.show_message("\blue The evolution beam dissipates harmlessly through your body.")
+	else
+		return 1
+
 
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"
 
-/obj/item/projectile/beam/mindflayer/on_hit(atom/target)
+/obj/item/projectile/beam/mindflayer/on_impact(atom/target)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		M.confused += rand(5,8)
@@ -170,4 +216,5 @@
 	if(!life)
 		qdel(src)
 
-
+/obj/item/projectile/flamer_lob/flamethrower
+	life = 5

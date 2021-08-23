@@ -1,4 +1,4 @@
-/obj/item/weapon/reagent_containers/food/snacks/meat
+/obj/item/reagent_containers/food/snacks/meat
 	name = "meat"
 	desc = "A slab of meat cut from a nondescript animal. The core ingredient in thousands upon thousands of food recipes, in one way or another."
 	icon_state = "meat"
@@ -6,36 +6,36 @@
 	filling_color = "#FF1C1C"
 	center_of_mass = list("x"=16, "y"=14)
 	bitesize = 3
-	matter = list(MATERIAL_BIOMATTER = 20)
+	matter = list(MATERIAL_BIOMATTER = 10)
 	preloaded_reagents = list("protein" = 9)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/attackby(obj/item/I, mob/user)
+/obj/item/reagent_containers/food/snacks/meat/attackby(obj/item/I, mob/user)
 	if(QUALITY_CUTTING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_ZERO, required_stat = STAT_BIO))
 			to_chat(user, SPAN_NOTICE("You cut the meat into thin strips."))
-			new /obj/item/weapon/reagent_containers/food/snacks/rawcutlet(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/rawcutlet(src)
-			new /obj/item/weapon/reagent_containers/food/snacks/rawcutlet(src)
+			new /obj/item/reagent_containers/food/snacks/rawcutlet(src)
+			new /obj/item/reagent_containers/food/snacks/rawcutlet(src)
+			new /obj/item/reagent_containers/food/snacks/rawcutlet(src)
 			qdel(src)
 	else
 		..()
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/syntiflesh
+/obj/item/reagent_containers/food/snacks/meat/syntiflesh
 	name = "synthetic meat"
 	desc = "A synthetic slab of flesh. You probably won't not be able to not tell the difference from the real thing maybe!"
 
 // Seperate definitions because some food likes to know if it's human.
 // TODO: rewrite kitchen code to check a var on the meat item so we can remove
 // all these sybtypes.
-/obj/item/weapon/reagent_containers/food/snacks/meat/human
-/obj/item/weapon/reagent_containers/food/snacks/meat/monkey
+/obj/item/reagent_containers/food/snacks/meat/human
+/obj/item/reagent_containers/food/snacks/meat/monkey
 	//same as plain meat
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/corgi
+/obj/item/reagent_containers/food/snacks/meat/corgi
 	name = "Corgi meat"
 	desc = "Tastes like... well, you know."
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
+/obj/item/reagent_containers/food/snacks/meat/roachmeat
 	desc = "A slab of sickly-green bubbling meat cut from a giant roach. You swear you can see it still twitching occasionally. Delicious!"
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
@@ -43,28 +43,31 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 4, "blattedin" = 8, "diplopterum" = 7)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/seuche
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche
 	preloaded_reagents = list("protein" = 4, "seligitillin" = 8, "diplopterum" = 6)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/panzer
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer
 	preloaded_reagents = list("protein" = 8, "blattedin" = 12, "starkellin" = 15, "diplopterum" = 4)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/fuhrer
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer
 	preloaded_reagents = list("protein" = 6, "seligitillin" = 6, "fuhrerole" = 12, "diplopterum" = 6)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kaiser
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser
 	preloaded_reagents = list("protein" = 6, "blattedin" = 12, "seligitillin" = 6, "starkellin" = 15, "fuhrerole" = 12, "diplopterum" = 6)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/jager
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/jager
 	preloaded_reagents = list("protein" = 6, "blattedin" = 6, "gewaltine" = 8, "diplopterum" = 2)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kraftwerk
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk
 	preloaded_reagents = list("protein" = 6, "blattedin" = 6, "gewaltine" = 6, "uncap nanites" = 2, "nanites" = 3)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/glowing
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
 	preloaded_reagents = list("protein" = 4, "blattedin" = 8, "diplopterum" = 7, MATERIAL_URANIUM = 5) // half a uranium per roach
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/spider
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
+	preloaded_reagents = list("protein" = 4, "seligitillin" = 8, "diplopterum" = 6, "iron" = 5)
+
+/obj/item/reagent_containers/food/snacks/meat/spider
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
@@ -72,7 +75,7 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 7, "pararein" = 12)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/spider/hunter
+/obj/item/reagent_containers/food/snacks/meat/spider/hunter
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
@@ -80,7 +83,23 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "pararein" = 2)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/spider/emperor
+/obj/item/reagent_containers/food/snacks/meat/spider/plasma
+	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+
+	bitesize = 6
+	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "plasma" = 5)
+
+/obj/item/reagent_containers/food/snacks/meat/spider/pepper
+	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+
+	bitesize = 6
+	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "condensedcapsaicin" = 5)
+
+/obj/item/reagent_containers/food/snacks/meat/spider/emperor
 	desc = "A bloated slab of sickly-green meat cut from a spider. This one smells like cognitive improvement drugs."
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
@@ -88,7 +107,15 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "party drops" =8)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
+/obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
+	desc = "A bloated slab of sickly-green meat cut from a spider. This one smells like cognitive improvement drugs."
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+	//Emperor Spider's meat contains party drops, big brain chemical. 8 seems fine. Emperors are dangerous.
+	bitesize = 6
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "stoxin" =8)
+
+/obj/item/reagent_containers/food/snacks/meat/spider/nurse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
@@ -96,7 +123,7 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
+/obj/item/reagent_containers/food/snacks/meat/spider/midwife
 	desc = "A bloated slab of sickly-green meat cut from a spider. It twitches and shudders as you look it as if actively mutating even in death."
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
@@ -104,7 +131,7 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "mutagen" = 8)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/spider/recluse
+/obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The smell from this one makes your nose go numb."
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
@@ -112,7 +139,7 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "zombiepowder" = 6)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/spider/queen
+/obj/item/reagent_containers/food/snacks/meat/spider/queen
 	desc = "A bloated slab of sickly-green meat cut from a spider queen. This one smells of combat stimulants for some reason."
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
@@ -120,7 +147,7 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "menace" = 6)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/carp
+/obj/item/reagent_containers/food/snacks/meat/carp
 	name = "carp fillet"
 	desc = "A juicy fillet cut from a carp. The potent and powerful venom they produce just gives it a unique tang. Delicious!"
 	icon_state = "fishfillet"
@@ -129,7 +156,7 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "carpotoxin" = 8)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/bearmeat
+/obj/item/reagent_containers/food/snacks/meat/bearmeat
 	name = "bear meat"
 	desc = "A slab of meat so manly you can almost smell the concentrated testosterone in it."
 	icon_state = "bearmeat"
@@ -138,7 +165,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("protein" = 12, "hyperzine" = 5)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/primal
+/obj/item/reagent_containers/food/snacks/meat/primal
 	name = "meat"
 	desc = "A massive slab of meat containing a metric ton of protein and chemicals natural to a render."
 	icon_state = "bearmeat"
@@ -147,7 +174,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("protein" = 25, "tramadol" = 5)
 
-/obj/item/weapon/reagent_containers/food/snacks/meat/xenomeat
+/obj/item/reagent_containers/food/snacks/meat/xenomeat
 	name = "meat"
 	desc = "A fatty cut of bright-green meat. The overwhelmingly powerful smell of the acid within burns your sinuses and makes your eyes water."
 	icon_state = "xenomeat"
@@ -155,3 +182,37 @@
 	bitesize = 6
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("protein" = 6, "pacid" = 6)
+
+/obj/item/reagent_containers/food/snacks/meat/fungi
+	name = "fungal slab"
+	desc = "The meat of a strange, sentient fungal creature. It feels watery to the touch, yet it doesn't moisten, presumabily packed with myriad of chemicals." // You didn't just kill your mushroom friend for this, did you...?
+	icon_state = "fungalmeat"
+	filling_color = "#BF896B"
+	preloaded_reagents = list("protein" = 6, "dexalinp" = 3, "haloperidol" = 4, "hyronalin" = 5, "vermicetol" = 3, "dermaline" = 2, "kelotane" = 2, "peridaxon" = 2, "varceptol" = 3, "meralyne" = 3, "tricordrazine" = 4, "oxycodone" = 5)
+
+/obj/item/reagent_containers/food/snacks/meat/chicken
+	name = "poultry"
+	desc = "Poultry meat, might be chicken or any other avian species."
+	icon_state = "birdmeat"
+	filling_color = "#EDA897"
+	preloaded_reagents = list("protein" = 8)
+
+/obj/item/reagent_containers/food/snacks/meat/chicken/vox
+	name = "tribal bird meat"
+	desc = "The meat of a tribal bird native to this planet. Their remarkable endurance makes the tissue feel gamey to the mouth, but very rich in protein."
+	icon_state = "voxmeat"
+	filling_color = "#3B8529"
+	preloaded_reagents = list("protein" = 8, "polystem" = 5, "quicklot" = 5)
+
+/obj/item/reagent_containers/food/snacks/meat/chicken/attackby(obj/item/I, mob/user)
+	if(QUALITY_CUTTING in I.tool_qualities)
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_ZERO, required_stat = STAT_BIO))
+			to_chat(user, SPAN_NOTICE("You cut the poultry in smaller pieces."))
+			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
+			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
+			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
+			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
+			qdel(src)
+	else
+		..()
+

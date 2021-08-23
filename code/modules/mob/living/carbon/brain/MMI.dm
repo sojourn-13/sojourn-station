@@ -18,7 +18,7 @@
 
 /obj/item/device/mmi
 	name = "man-machine interface"
-	desc = "The Warrior's bland acronym, MMI, obscures the true horror of this monstrosity."
+	desc = "The Warrior's bland acronym, MMI, obscures the true horror of this monstrosity. Under no circumstances should this be placed in anything except a cyborg chassis. Reminder, synthetic designs made by Soteria and the Artificer Guild are not cyborgs."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "mmi_empty"
 	w_class = ITEM_SIZE_NORMAL
@@ -68,7 +68,7 @@
 
 		return
 
-	if((istype(O,/obj/item/weapon/card/id)||istype(O,/obj/item/modular_computer/pda)) && brainmob)
+	if((istype(O,/obj/item/card/id)||istype(O,/obj/item/modular_computer/pda)) && brainmob)
 		if(allowed(user))
 			locked = !locked
 			to_chat(user, "\blue You [locked ? "lock" : "unlock"] the brain holder.")
@@ -119,7 +119,7 @@
 /obj/item/device/mmi/relaymove(var/mob/user, var/direction)
 	if(user.stat || user.stunned)
 		return
-	var/obj/item/weapon/rig/rig = src.get_rig()
+	var/obj/item/rig/rig = src.get_rig()
 	if(rig)
 		rig.forced_move(direction, user)
 
@@ -172,7 +172,8 @@
 	to_chat(brainmob, "\blue Radio is [radio.listening==1 ? "now" : "no longer"] receiving broadcast.")
 
 /obj/item/device/mmi/emp_act(severity)
-	if(!brainmob)
+	return //Turns out this happends well in a borg...
+/*	if(!brainmob)
 		return
 	else
 		switch(severity)
@@ -182,4 +183,4 @@
 				brainmob.emp_damage += rand(10,20)
 			if(3)
 				brainmob.emp_damage += rand(0,10)
-	..()
+	..()*/

@@ -6,6 +6,7 @@
 	var/max_blood_storage = 0	//How much blood an organ stores. Base is 5 * blood_req, so the organ can survive without blood for 5 ticks beofre taking damage (+ blood supply of blood vessels)
 	var/current_blood = 100	//How much blood is currently in the organ
 	var/blood_req = 0	//How much blood an organ takes to funcion
+	var/scanner_hidden = FALSE //Does this organ show on a body scanner?
 	var/nutriment_req = 0	//Controls passive nutriment loss
 	var/oxygen_req = 0	//If oxygen reqs are not satisfied, get debuff and brain starts taking damage
 	layer = ABOVE_LYING_MOB_LAYER
@@ -89,7 +90,7 @@
 	if(!damage || BP_IS_ROBOTIC(src) || !owner || owner.chem_effects[CE_TOXIN] || owner.is_asystole() || !current_blood)
 		return
 	if(damage < 0.1*max_damage)
-		owner.adjustNutrition(-(nutriment_req * 10))
+		owner.adjustNutrition(-(nutriment_req))
 		heal_damage(0.1)
 
 /obj/item/organ/internal/examine(mob/user)
@@ -131,12 +132,20 @@
 				"organ" = "\ref[src]"
 			)
 		else
-			condition = list(
-				"name" = "Damage",
-				"fix_name" = "Heal",
-				"step" = /datum/surgery_step/fix_organ,
-				"organ" = "\ref[src]"
-			)
+			if(istype(src, /obj/item/organ/internal/bone))
+				condition = list(
+					"name" = "Damage",
+					"fix_name" = "Graft",
+					"step" = /datum/surgery_step/fix_bone,
+					"organ" = "\ref[src]"
+				)
+			else
+				condition = list(
+					"name" = "Damage",
+					"fix_name" = "Heal",
+					"step" = /datum/surgery_step/fix_organ,
+					"organ" = "\ref[src]"
+				)
 
 		conditions_list.Add(list(condition))
 
@@ -146,7 +155,7 @@
 /obj/item/organ/internal/proc/prepare_eat()
 	if(BP_IS_ROBOTIC(src))
 		return // No eating cybernetic implants!
-	var/obj/item/weapon/reagent_containers/food/snacks/organ/S = new
+	var/obj/item/reagent_containers/food/snacks/organ/S = new
 	S.name = name
 	S.desc = desc
 	S.icon = icon
@@ -158,7 +167,7 @@
 /obj/item/organ/internal/attack(mob/living/carbon/M, mob/user)
 	if(M == user && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		var/obj/item/weapon/reagent_containers/food/snacks/S = prepare_eat()
+		var/obj/item/reagent_containers/food/snacks/S = prepare_eat()
 		if(S)
 			H.drop_item()
 			H.put_in_active_hand(S)

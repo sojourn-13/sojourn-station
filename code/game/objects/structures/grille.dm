@@ -92,7 +92,7 @@
 	src.health -= damage*0.2
 	spawn(0) healthCheck() //spawn to make sure we return properly if the grille is deleted
 
-/obj/structure/grille/attackby(obj/item/weapon/I, mob/user)
+/obj/structure/grille/attackby(obj/item/I, mob/user)
 
 	var/list/usable_qualities = list(QUALITY_WIRE_CUTTING)
 	if(anchored)
@@ -249,7 +249,7 @@
 
 /obj/structure/grille/cult
 	name = "cult grille"
-	desc = "A matrice built out of an unknown material, with some sort of forcefield blocking air around it."
+	desc = "A matrix built out of an unknown material, with some sort of force field blocking air around it."
 	icon_state = "grillecult"
 	health = 40 //Make it strong enough to avoid people breaking in too easily
 

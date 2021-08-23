@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(gender_datums)
 		if("gender")					return key
 		if("Gender")					return gender2text(key)
 		else
-			CRASH("Genderword proc called with invalid position.")
+			CRASH("Genderword proc called with invalid position. ([position])")
 
 /datum/gender/male
 	key  = "male"

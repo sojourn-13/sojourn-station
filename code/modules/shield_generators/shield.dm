@@ -1,6 +1,6 @@
 //Tells all active shield generators in the world to update, at some point in future
 /proc/update_shield_generators()
-	for (var/obj/machinery/power/shield_generator/S in SSmachines.machinery)
+	for (var/obj/machinery/power/shield_generator/S in GLOB.machines)
 		S.needs_update = TRUE
 
 /turf/proc/getEffectShield()
@@ -261,7 +261,7 @@ Like for example singulo act and whatever.
 
 
 // Attacks with hand tools. Blocked by Hyperkinetic flag.
-/obj/effect/shield/attackby(var/obj/item/weapon/I as obj, var/mob/user as mob)
+/obj/effect/shield/attackby(var/obj/item/I as obj, var/mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
 

@@ -23,7 +23,7 @@
 /area/crawler)
 "g" = (
 /obj/structure/bed,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /turf/simulated/floor/wood,
 /area/crawler)
 "h" = (
@@ -54,7 +54,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "n" = (
-/mob/living/simple_animal/hostile/roomba/boomba,
+/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
 /turf/simulated/floor/wood,
 /area/crawler)
 "o" = (

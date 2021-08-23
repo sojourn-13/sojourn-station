@@ -13,7 +13,9 @@
 
 	unlocks_designs = list(	/datum/design/research/item/part/micro_mani,
 							/datum/design/research/item/part/basic_sensor,
-							/datum/design/research/item/medical/autopsy_scanner
+							/datum/design/research/item/medical/autopsy_scanner,
+							/datum/design/research/item/beaker/smoll,
+							/datum/design/research/item/beaker/big
 						)
 
 /datum/technology/medical_cooling
@@ -97,7 +99,12 @@
 	cost = 400
 
 	unlocks_designs = list(	/datum/design/research/circuit/biogenerator,
-							/datum/design/research/item/weapon/flora_gun)
+							/datum/design/research/circuit/extractor,
+							/datum/design/research/circuit/seed_extractor,
+							/datum/design/research/circuit/editor,
+							/datum/design/research/item/weapon/flora_gun,
+							/datum/design/research/item/botany_disk
+							)
 
 /datum/technology/portable_chemistry
 	name = "Portable Chemistry"
@@ -119,8 +126,8 @@
 							/datum/design/research/circuit/chem_heater,
 							/datum/design/research/item/makeshift_centrifuge,
 							/datum/design/research/structure/bidon,
-							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade,
-							/datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
+							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade
+							//datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
 							)
 /*
 /datum/technology/basic_food_processing
@@ -155,7 +162,7 @@
 */
 /datum/technology/basic_medical_tools
 	name = "Basic Medical Tools"
-	desc = "Mass Spectrometry method. Experimental surgical, laser tools. Medical sensors intergrated hud in hud-glass and large revival electrical shocks."
+	desc = "Mass Spectrometry method. Experimental surgical, laser tools. Medical sensors intergrated hud in hud-glass and large revival electrical shocks. Artificial quick dry bone gel composite."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.4
@@ -170,7 +177,8 @@
 							/datum/design/research/item/medical/reagent_scanner,
 							/datum/design/research/item/medical/defibs,
 							/datum/design/research/item/scalpel_laser,
-							/datum/design/research/item/hud/health,
+							/datum/design/research/item/clothing/health,
+							/datum/design/research/item/bonegel,
 							)
 
 /datum/technology/improved_biotech
@@ -277,12 +285,14 @@
 							/datum/design/research/item/mechfab/modules/multitool/surgical,
 							/datum/design/research/item/mechfab/modules/multitool/engineer,
 							/datum/design/research/item/mechfab/modules/multitool/miner,
+							/datum/design/research/item/mechfab/modules/multitool/farmer,
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_arm,
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_arm,
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_leg,
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_leg,
 							/datum/design/research/item/mechfab/prosthesis_moebius/groin,
-							/datum/design/research/item/mechfab/prosthesis_moebius/groin
+							/datum/design/research/item/mechfab/prosthesis_moebius/head,
+							/datum/design/research/item/mechfab/prosthesis_moebius/chest
 							)
 
 /datum/technology/omega_biotech
@@ -294,37 +304,23 @@
 	y = 0.9
 	icon = "scalpelmanager"
 
-	required_technologies = list(	/datum/technology/top_biotech,
-									/datum/technology/mind_biotech
+	required_technologies = list(	/datum/technology/top_biotech
 								)
 	required_tech_levels = list()
 	cost = 2000
 
 	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/armor,
 							/datum/design/research/item/mechfab/modules/armblade,
+							/datum/design/research/item/mechfab/modules/wolverine,
 							/datum/design/research/item/mechfab/modules/energy_blade,
+							/datum/design/research/item/mechfab/modules/taser,
+							/datum/design/research/item/mechfab/modules/armsmg,
+							/datum/design/research/item/mechfab/modules/armshield,
 							/datum/design/research/item/mechfab/modules/runner,
 							/datum/design/research/item/mechfab/modules/hud/med,
 							/datum/design/research/item/mechfab/modules/hud/sec,
 							/datum/design/research/item/mechfab/modules/hud/welder
 							)
-
-
-/datum/technology/mind_biotech
-	name = "Mind Biotech"
-	desc = "Experimental biotechnology that explores the inner workings of sentient minds."
-	tech_type = RESEARCH_BIOTECH
-
-	x = 0.7
-	y = 0.6
-	icon = "mindswapper"
-
-	required_technologies = list(	/datum/technology/top_biotech)
-
-	required_tech_levels = list()
-	cost = 4000
-
-	unlocks_designs = list(	/datum/design/research/circuit/mindswapper)
 
 /datum/technology/rig_medical_stuff
 	name = "RIG Medical Addaptation"

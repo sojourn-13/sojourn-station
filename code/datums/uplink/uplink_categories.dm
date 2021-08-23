@@ -48,5 +48,8 @@
 /datum/uplink_category/neotheology
 	name = "NeoTheology"
 
+/datum/uplink_category/void_wolf
+	name = "Void Wolf Connection"
+
 /datum/uplink_category/telecrystals
 	name = "Telecrystals"

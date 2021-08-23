@@ -10,7 +10,7 @@
 	density = 1
 	anchored = 0
 	opacity = 0
-	layer = BELOW_MOB_LAYER
+	layer = TURF_LAYER + 0.6
 	var/list/welder_salvage = list(/obj/item/stack/material/plasteel,/obj/item/stack/material/steel,/obj/item/stack/rods)
 	var/list/wirecutters_salvage = list(/obj/item/stack/cable_coil)
 	var/list/crowbar_salvage
@@ -238,3 +238,7 @@
 /obj/effect/decal/mecha_wreckage/odysseus/mime
 	name = "Mime wreckage"
 	icon_state = "mime-broken"
+
+/obj/effect/decal/mecha_wreckage/dreadnought/hephaestus
+	name = "wreckage of a fancy mech"
+	icon_state = "hephaestus-broken"

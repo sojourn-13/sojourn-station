@@ -7,7 +7,7 @@
 	response_disarm = "prods"
 	response_harm   = "stomps on"
 	icon_state = "brainslug"
-
+	colony_friend = TRUE
 	health = 30
 	maxHealth = 30
 
@@ -23,7 +23,7 @@
 	hunger_enabled = FALSE
 	pass_flags = PASSTABLE
 	universal_understand = 1
-	//holder_type = /obj/item/weapon/holder/borer //Theres no inhand sprites for holding borers, it turns you into a pink square
+	//holder_type = /obj/item/holder/borer //Theres no inhand sprites for holding borers, it turns you into a pink square
 
 	var/borer_level = 0                           // Level of borer.
 	var/borer_exp = 0                             // Borer experience.
@@ -92,6 +92,23 @@
 
 	truename = "[pick("Primary","Secondary","Tertiary","Quaternary")] [rand(1000,9999)]"
 	if(!roundstart) request_player()
+
+/mob/living/simple_animal/borer/proc/ghost_enter(mob/user)
+	if(stat || key)
+		return FALSE
+	var/confirmation = alert("Would you like to occupy \the [src]?", "", "Yes", "No")
+	if(confirmation == "No" || QDELETED(src))
+		return TRUE
+	if(key)
+		to_chat(user, SPAN_WARNING("Someone is already occupying this body."))
+		return TRUE
+	key = user.key
+	return TRUE
+
+/mob/living/simple_animal/borer/attack_ghost(mob/user)
+	. = ..()
+	if(!.)
+		. = ghost_enter(user)
 
 /mob/living/simple_animal/borer/proc/update_abilities(force_host=FALSE)
 	// Remove all abilities
@@ -171,6 +188,9 @@
 
 			if(prob(host.brainloss/20))
 				host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_s","gasp"))]")
+
+	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
+		L.try_activate_ai()
 
 /mob/living/simple_animal/borer/Stat()
 	. = ..()
@@ -338,7 +358,7 @@
 		update_dead_sight()
 	else
 		if (is_ventcrawling)
-			sight |= SEE_TURFS|SEE_OBJS|BLIND
+			sight |= SEE_TURFS|SEE_OBJS|SEE_MOBS|BLIND
 		else
 			//sight = initial(sight)
 			see_in_dark = initial(see_in_dark)

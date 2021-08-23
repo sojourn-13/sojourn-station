@@ -24,7 +24,8 @@
 	SSresearch.initialize_design_file(src)
 
 /datum/computer_file/binary/design/proc/on_design_set()
-	set_filename(design.id)
+	if (design)
+		set_filename(design.id)
 
 /datum/computer_file/binary/design/proc/set_copy_protection(enabled)
 	copy_protected = enabled
@@ -46,7 +47,7 @@
 	if(!copy_protected)
 		return TRUE
 
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = holder
+	var/obj/item/computer_hardware/hard_drive/portable/disk = holder
 	if(!istype(disk) || disk.license < point_cost)
 		return FALSE
 
@@ -60,7 +61,7 @@
 	if(!copy_protected)
 		return TRUE
 
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/disk = holder
+	var/obj/item/computer_hardware/hard_drive/portable/disk = holder
 	if(disk.license > 0)
 		disk.license -= point_cost
 	return TRUE

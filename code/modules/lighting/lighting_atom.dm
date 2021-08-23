@@ -43,6 +43,7 @@
 		else
 			light = new /datum/light_source(src, .)
 
+
 /atom/New()
 	. = ..()
 

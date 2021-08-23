@@ -20,7 +20,7 @@
 							/datum/design/research/circuit/arcade_orion_trail,
 							/datum/design/research/circuit/autolathe,
 							/datum/design/research/item/light_replacer,
-							/datum/design/autolathe/tool/weldermask,
+							/datum/design/research/item/clothing/weldermask,
 							/datum/design/research/item/mesons
 						)
 
@@ -37,7 +37,8 @@
 	required_tech_levels = list()
 	cost = 500
 
-	unlocks_designs = list(/datum/design/research/circuit/atmosalerts, /datum/design/research/circuit/air_management)
+	unlocks_designs = list(/datum/design/research/circuit/atmosalerts,
+						   /datum/design/research/circuit/air_management)
 
 // TO ADD: space_heater
 /datum/technology/ice_and_fire
@@ -53,7 +54,8 @@
 	required_tech_levels = list()
 	cost = 500
 
-	unlocks_designs = list(/datum/design/research/circuit/gas_heater, /datum/design/research/circuit/gas_cooler)
+	unlocks_designs = list(/datum/design/research/circuit/gas_heater,
+						   /datum/design/research/circuit/gas_cooler)
 
 // TO ADD: idcardconsole
 /datum/technology/adv_replication
@@ -176,7 +178,8 @@
 	required_tech_levels = list()
 	cost = 500
 
-	unlocks_designs = list(/datum/design/research/circuit/ordercomp, /datum/design/research/circuit/supplycomp)
+	unlocks_designs = list(/datum/design/research/circuit/ordercomp,
+						   /datum/design/research/circuit/supplycomp)
 
 //TOOLS BRANCH
 // TO ADD: ore_redemption, mining_equipment_vendor, mining_fabricator?
@@ -207,7 +210,7 @@
 
 	required_technologies = list(/datum/technology/basic_mining)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(	/datum/design/research/circuit/miningdrill,
 							/datum/design/research/circuit/miningdrillbrace,
@@ -229,12 +232,12 @@
 									/datum/technology/advanced_mining
 								)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1000
 
-	unlocks_designs = list(	/datum/design/autolathe/tool/pneumatic_crowbar,
-							/datum/design/autolathe/tool/rcd,
-							/datum/design/autolathe/tool/rcd_ammo,
-							/datum/design/autolathe/tool/combat_shovel
+	unlocks_designs = list(	/datum/design/research/item/tool/pneumatic_crowbar,
+							/datum/design/research/item/tool/rcd,
+							/datum/design/research/item/tool/rcd_ammo,
+							/datum/design/research/item/tool/combat_shovel
 							)
 
 /datum/technology/improved_tools
@@ -335,6 +338,7 @@
 	cost = 1500
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/cellmount,
+							/datum/design/research/item/weapon/toolmod/celladapt,
 							/datum/design/research/item/weapon/toolmod/fueltank,
 							/datum/design/research/item/weapon/toolmod/expansion,
 							/datum/design/research/item/weapon/toolmod/spikes,
@@ -400,7 +404,7 @@
 
 	required_technologies = list(/datum/technology/adv_parts)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/item/part/ultra_micro_laser,
 						/datum/design/research/item/part/super_matter_bin,
@@ -435,7 +439,7 @@
 
 	required_technologies = list(/datum/technology/super_adv_engineering, /datum/technology/weapon_recharging)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 7)
-	cost = 3500
+	cost = 5000
 
 	unlocks_designs = list(/datum/design/research/circuit/industrial_autolathe,
 							/datum/design/research/circuit/recharger_industrial,

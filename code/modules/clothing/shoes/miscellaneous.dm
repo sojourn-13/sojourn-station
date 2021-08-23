@@ -17,6 +17,20 @@
 	siemens_coefficient = 0 // DAMN BOI
 	species_restricted = null
 
+/obj/item/clothing/shoes/ablasive
+	name = "ablative jackboots"
+	desc = "A thick pare of boots that excels in protecting the wearer against energy projectiles."
+	armor = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
+	icon_state = "swat"
+	force = WEAPON_FORCE_WEAK
+	siemens_coefficient = 0.6
+	can_hold_knife = TRUE
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 15, MATERIAL_PLATINUM = 2)
+
+/obj/item/clothing/shoes/ablasive/iron_lock_security
+	name = "outdated jackboots"
+	desc = "An \"Iron Lock Security\" ablative boots with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
+
 /obj/item/clothing/shoes/swat
 	name = "\improper SWAT shoes"
 	desc = "When you want to turn up the heat."
@@ -34,6 +48,7 @@
 	armor = list(melee = 20, bullet = 10, energy = 25, bomb = 10, bio = 10, rad = 0)
 	item_flags = NOSLIP
 	siemens_coefficient = 0.4
+	can_hold_knife = 1
 
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain, wooden sandals."
@@ -52,7 +67,7 @@
 
 /obj/item/clothing/shoes/cult
 	name = "boots"
-	desc = "A pair of boots worn by the followers of Nar-Sie."
+	desc = "A pair of boots worn by the followers of ... something."
 	icon_state = "cult"
 	item_state = "cult"
 	force = WEAPON_FORCE_WEAK
@@ -99,6 +114,20 @@
 	desc = "A sturdy pair of leather shoes."
 	icon_state = "leather"
 
+/obj/item/clothing/shoes/jackboots/redboot
+	name = "red boots"
+	desc = "A pair of stylish red boots."
+	icon_state = "redboots"
+	item_state = "redboots"
+	price_tag = 30
+
+/obj/item/clothing/shoes/jackboots/longboot
+	name = "long boots"
+	desc = "A pair of stylish vertically long boots."
+	icon_state = "longboots"
+	item_state = "longboots"
+	price_tag = 40
+
 /obj/item/clothing/shoes/laceup
 	name = "black dress shoes"
 	desc = "A pair of sleek black polished shoes."
@@ -114,11 +143,53 @@
 	desc = "A pair of customized dress shoes in a tailored color."
 	icon_state = "whitedress"
 
+/obj/item/clothing/shoes/aerostatic_boots
+	name = "aerostatic boots"
+	desc = "A pair of running shoes that are designed with speed in mind, that stated they dont really make you go faster, and look quit nice."
+	icon_state = "aerostatic_boots"
+
+/obj/item/clothing/shoes/render //Armored a bit do to the hide
+	name = "lizardskin shoes"
+	desc = "A green pare of shoes made of a lizardskin, likely a young render..."
+	icon_state = "lizardskin_shoes"
+	armor = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 10, rad = 0)
+
+/obj/item/clothing/shoes/church_blacksilk_boots
+	name = "blacksilk boots"
+	desc = "A pare of silk boots that is common to see in more faithful places."
+	icon_state = "church_blacksilk_boots"
+
+/obj/item/clothing/shoes/track_shoes
+	name = "running shoes"
+	desc = "A pare of shoes with with stripes on the side for running."
+	icon_state = "trackshoes_black"
+
+/*High Heels*/
+
 /obj/item/clothing/shoes/highheels
-	name = "high heels"
-	desc = "A pair of fancy high heels."
+	name = "white high heels"
+	desc = "A pair of 'sterile' high heels."
 	icon_state = "heels"
 
+/obj/item/clothing/shoes/highheels/red
+	name = "red high heels"
+	desc = "A pair of vain high heels."
+	icon_state = "redheels"
+
+/obj/item/clothing/shoes/highheels/black
+	name = "black high heels"
+	desc = "A pair of edgy high heels, you suddenly want Kimchi."
+	icon_state = "blackheels"
+
+/obj/item/clothing/shoes/highheels/purple
+	name = "purple high heels"
+	desc = "A pair of luxurious high heels."
+	icon_state = "purpleheels"
+
+/obj/item/clothing/shoes/highheels/blue
+	name = "blue high heels"
+	desc = "Une paire de talons hauts appropriés."
+	icon_state = "blueheels"
 
 /*Flats*/
 

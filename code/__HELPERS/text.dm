@@ -410,7 +410,6 @@ proc/TextPreview(var/string, var/len=40)
 
 
 /proc/pencode2html(t)
-	t = cp1251_to_utf8(t)
 	t = replacetext(t, "\n", "<BR>")
 	t = replacetext(t, "\[center\]", "<center>")
 	t = replacetext(t, "\[/center\]", "</center>")
@@ -444,7 +443,8 @@ proc/TextPreview(var/string, var/len=40)
 	t = replacetext(t, "\[/grid\]", "</td></tr></table>")
 	t = replacetext(t, "\[row\]", "</td><tr>")
 	t = replacetext(t, "\[cell\]", "<td>")
-	t = replacetext(t, "\[logo\]", "<img src = ntlogo.png>")
+	t = replacetext(t, "\[logo\]", "<img src = nadezhdalogo.png>")
+	t = replacetext(t, "\[logolonestar\]", "<img src = lonestarlogo.png>")
 	t = replacetext(t, "\[editorbr\]", "")
 	return t
 
@@ -474,7 +474,8 @@ proc/TextPreview(var/string, var/len=40)
 	t = replacetext(t, "</table>", "\[/grid\]")
 	t = replacetext(t, "<tr>", "\[row\]")
 	t = replacetext(t, "<td>", "\[cell\]")
-	t = replacetext(t, "<img src = ntlogo.png>", "\[logo\]")
+	t = replacetext(t, "<img src = nadezhdalogo.png>", "\[logo\]")
+	t = replacetext(t, "<img src = lonestarlogo.png>", "\[logolonestar\]")
 	t = replacetext(t, "<span class=\"paper_field\"></span>", "\[field\]")
 	t = strip_html_properly(t)
 	return t

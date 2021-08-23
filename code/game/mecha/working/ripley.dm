@@ -5,6 +5,7 @@
 	initial_icon = "ripley"
 	step_in = 2
 	max_temperature = 20000
+	price_tag = 5000
 	health = 500
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley
 	cargo_capacity = 10
@@ -26,6 +27,7 @@
 	icon_state = "firefighter"
 	initial_icon = "firefighter"
 	max_temperature = 65000
+	price_tag = 6500
 	health = 550
 	lights_power = 8
 	damage_absorption = list("brute"=0.8,"fire"=0.5,"bullet"=0.8,"energy"=1,"bomb"=0.5)
@@ -39,17 +41,18 @@
 	initial_icon = "deathripley"
 	step_in = 1
 	step_energy_drain = 1
-	opacity=0
+	opacity = 0
 	lights_power = 60
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley/deathripley
+	price_tag = 7000
 
 /obj/mecha/working/ripley/deathripley/New()
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/flak
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/flak/loaded
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/scrap
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/scrap/loaded
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster
 	ME.attach(src)

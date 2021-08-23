@@ -11,30 +11,30 @@
 				/obj/item/stack/medical/splint = 1,\
 				/obj/item/bodybag = 2,\
 				/obj/item/bodybag/cryobag = 1,\
-				/obj/item/weapon/storage/pill_bottle/kelotane = 1,\
-				/obj/item/weapon/storage/pill_bottle/antitox = 2,\
-				/obj/item/weapon/storage/pill_bottle/tramadol = 2,\
-				/obj/item/weapon/storage/pill_bottle/prosurgeon = 1,
-				/obj/item/weapon/reagent_containers/syringe/antitoxin = 2,\
-				/obj/item/weapon/reagent_containers/syringe/inaprovaline = 2,\
-				/obj/item/weapon/reagent_containers/syringe/tricordrazine = 1,\
-				/obj/item/weapon/reagent_containers/syringe/spaceacillin = 1,\
-				/obj/item/weapon/reagent_containers/glass/beaker/vial/nanites = 0.5,\
+				/obj/item/storage/pill_bottle/kelotane = 1,\
+				/obj/item/storage/pill_bottle/antitox = 2,\
+				/obj/item/storage/pill_bottle/tramadol = 2,\
+				/obj/item/storage/pill_bottle/prosurgeon = 1,
+				/obj/item/reagent_containers/syringe/antitoxin = 2,\
+				/obj/item/reagent_containers/syringe/inaprovaline = 2,\
+				/obj/item/reagent_containers/syringe/tricordrazine = 1,\
+				/obj/item/reagent_containers/syringe/spaceacillin = 1,\
+				/obj/item/reagent_containers/glass/beaker/vial/nanites = 0.5,\
 				/obj/item/stack/nanopaste = 0.5,\
-				/obj/item/weapon/reagent_containers/syringe/stim/mbr = 0.5,\
-				/obj/item/weapon/reagent_containers/syringe/stim/cherrydrops = 0.5,\
-				/obj/item/weapon/reagent_containers/syringe/stim/pro_surgeon = 0.5,\
-				/obj/item/weapon/reagent_containers/syringe/stim/violence = 0.5,\
-				/obj/item/weapon/reagent_containers/syringe/stim/bouncer = 0.5,\
-				/obj/item/weapon/reagent_containers/syringe/stim/steady = 0.5,\
-				/obj/item/weapon/reagent_containers/syringe/stim/machine_spirit = 0.1,\
-				/obj/item/weapon/reagent_containers/syringe/stim/grape_drops = 0.1,\
-				/obj/item/weapon/reagent_containers/syringe/stim/ultra_surgeon = 0.1,\
-				/obj/item/weapon/reagent_containers/syringe/stim/violence_ultra = 0.1,\
-				/obj/item/weapon/reagent_containers/syringe/stim/boxer = 0.1,\
-				/obj/item/weapon/reagent_containers/syringe/stim/turbo = 0.1,\
-				/obj/item/weapon/reagent_containers/syringe/stim/party_drops = 0.05,\
-				/obj/item/weapon/reagent_containers/syringe/stim/menace = 0.05))
+				/obj/item/reagent_containers/syringe/stim/mbr = 0.5,\
+				/obj/item/reagent_containers/syringe/stim/cherrydrops = 0.5,\
+				/obj/item/reagent_containers/syringe/stim/pro_surgeon = 0.5,\
+				/obj/item/reagent_containers/syringe/stim/violence = 0.5,\
+				/obj/item/reagent_containers/syringe/stim/bouncer = 0.5,\
+				/obj/item/reagent_containers/syringe/stim/steady = 0.5,\
+				/obj/item/reagent_containers/syringe/stim/machine_spirit = 0.1,\
+				/obj/item/reagent_containers/syringe/stim/grape_drops = 0.1,\
+				/obj/item/reagent_containers/syringe/stim/ultra_surgeon = 0.1,\
+				/obj/item/reagent_containers/syringe/stim/violence_ultra = 0.1,\
+				/obj/item/reagent_containers/syringe/stim/boxer = 0.1,\
+				/obj/item/reagent_containers/syringe/stim/turbo = 0.1,\
+				/obj/item/reagent_containers/syringe/stim/party_drops = 0.05,\
+				/obj/item/reagent_containers/syringe/stim/menace = 0.05))
 
 /obj/random/medical/low_chance
 	name = "low chance random medicine"
@@ -49,9 +49,9 @@
 /obj/random/medical_lowcost/item_to_spawn()
 	return pickweight(list(/obj/item/stack/medical/bruise_pack = 4,\
 				/obj/item/stack/medical/ointment = 4,\
-				/obj/item/weapon/reagent_containers/syringe/antitoxin = 2,\
-				/obj/item/weapon/reagent_containers/syringe/inaprovaline = 2,\
-				/obj/item/weapon/reagent_containers/syringe/tricordrazine = 1))
+				/obj/item/reagent_containers/syringe/antitoxin = 2,\
+				/obj/item/reagent_containers/syringe/inaprovaline = 2,\
+				/obj/item/reagent_containers/syringe/tricordrazine = 1))
 
 /obj/random/medical_lowcost/low_chance
 	name = "low chance random low tier medicine"
@@ -64,11 +64,11 @@
 	spawn_nothing_percentage = 60
 
 /obj/random/firstaid/item_to_spawn()
-	return pickweight(list(/obj/item/weapon/storage/firstaid/regular = 3,\
-				/obj/item/weapon/storage/firstaid/toxin = 1,\
-				/obj/item/weapon/storage/firstaid/o2 = 1,\
-				/obj/item/weapon/storage/firstaid/adv = 0.5,\
-				/obj/item/weapon/storage/firstaid/fire = 1))
+	return pickweight(list(/obj/item/storage/firstaid/regular = 3,\
+				/obj/item/storage/firstaid/toxin = 1,\
+				/obj/item/storage/firstaid/o2 = 1,\
+				/obj/item/storage/firstaid/adv = 0.5,\
+				/obj/item/storage/firstaid/fire = 1))
 
 /obj/random/firstaid/low_chance
 	name = "low chance random first aid kit"

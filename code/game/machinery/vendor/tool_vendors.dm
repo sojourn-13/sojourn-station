@@ -4,9 +4,9 @@
 		/obj/item/device/assembly/prox_sensor = 10,
 		/obj/item/device/assembly/igniter = 10,
 		/obj/item/device/assembly/signaler = 10,
-		/obj/item/weapon/tool/wirecutters = 5,
-		/obj/item/weapon/tool/wirecutters/pliers = 5,
-		/obj/item/weapon/cartridge/signal = 10,
+		/obj/item/tool/wirecutters = 5,
+		/obj/item/tool/wirecutters/pliers = 5,
+		/obj/item/cartridge/signal = 10,
 		/obj/item/device/lighting/toggleable/flashlight = 5,
 		/obj/item/device/assembly/timer = 10,
 		)
@@ -21,37 +21,37 @@
 	icon_state = "tool"
 	icon_deny = "tool-deny"
 	products = list(/obj/item/stack/cable_coil/random = 10,
-					/obj/item/weapon/tool/crowbar = 5,
-					/obj/item/weapon/tool/weldingtool = 5,
-					/obj/item/weapon/tool/wirecutters = 3,
-					/obj/item/weapon/tool/wirecutters/pliers = 3,
-					/obj/item/weapon/tool/wrench = 5,
-					/obj/item/weapon/tool/hammer = 5,
+					/obj/item/tool/crowbar = 5,
+					/obj/item/tool/weldingtool = 5,
+					/obj/item/tool/wirecutters = 3,
+					/obj/item/tool/wirecutters/pliers = 3,
+					/obj/item/tool/wrench = 5,
+					/obj/item/tool/hammer = 5,
 					/obj/item/device/scanner/gas = 5,
 					/obj/item/device/t_scanner = 5,
-					/obj/item/weapon/tool/screwdriver = 5,
+					/obj/item/tool/screwdriver = 5,
 					/obj/item/clothing/gloves/insulated/cheap = 2,
 					/obj/item/clothing/gloves/insulated = 1,
-					/obj/item/weapon/storage/pouch/engineering_tools = 2,
-					/obj/item/weapon/storage/pouch/engineering_supply = 2,
-					/obj/item/weapon/weldpack/canister = 4,
-					/obj/item/weapon/weldpack = 2)
-	prices = list(/obj/item/weapon/tool/hammer = 30,
-					/obj/item/stack/cable_coil/random = 100,
-					/obj/item/weapon/tool/crowbar = 30,
-					/obj/item/weapon/tool/weldingtool = 50,
-					/obj/item/weapon/tool/wirecutters = 30,
-					/obj/item/weapon/tool/wirecutters/pliers = 30,
-					/obj/item/weapon/tool/wrench = 30,
+					/obj/item/storage/pouch/engineering_tools = 2,
+					/obj/item/storage/pouch/engineering_supply = 2,
+					/obj/item/weldpack/canister = 4,
+					/obj/item/weldpack = 2)
+	prices = list(/obj/item/tool/hammer = 30,
+					/obj/item/stack/cable_coil/random = 50,
+					/obj/item/tool/crowbar = 30,
+					/obj/item/tool/weldingtool = 50,
+					/obj/item/tool/wirecutters = 30,
+					/obj/item/tool/wirecutters/pliers = 30,
+					/obj/item/tool/wrench = 30,
 					/obj/item/device/scanner/gas = 50,
 					/obj/item/device/t_scanner = 50,
-					/obj/item/weapon/tool/screwdriver = 30,
+					/obj/item/tool/screwdriver = 30,
 					/obj/item/clothing/gloves/insulated/cheap = 80,
 					/obj/item/clothing/gloves/insulated = 600,
-					/obj/item/weapon/storage/pouch/engineering_tools = 300,
-					/obj/item/weapon/storage/pouch/engineering_supply = 600,
-					/obj/item/weapon/weldpack/canister = 300,
-					/obj/item/weapon/weldpack = 675)
+					/obj/item/storage/pouch/engineering_tools = 150,
+					/obj/item/storage/pouch/engineering_supply = 300,
+					/obj/item/weldpack/canister = 200,
+					/obj/item/weldpack = 300)
 
 /obj/machinery/vending/engivend
 	name = "Guild-Vend"
@@ -60,73 +60,73 @@
 	icon_state = "engivend"
 	icon_deny = "engivend-deny"
 	products = list(/obj/item/clothing/glasses/powered/meson = 2,
-					/obj/item/weapon/tool/multitool = 4,
-					/obj/item/weapon/airlock_electronics = 10,
-					/obj/item/weapon/circuitboard/apc = 10,
-					/obj/item/weapon/airalarm_electronics = 10,
-					/obj/item/weapon/cell/large/high = 10,
-					/obj/item/weapon/storage/belt/utility = 3,
-					/obj/item/weapon/weldpack/canister = 4,
-					/obj/item/weapon/weldpack = 2)
-	contraband = list(/obj/item/weapon/cell/large/potato = 3)
+					/obj/item/tool/multitool = 4,
+					/obj/item/airlock_electronics = 10,
+					/obj/item/circuitboard/apc = 10,
+					/obj/item/airalarm_electronics = 10,
+					/obj/item/cell/large/high = 2,
+					/obj/item/storage/belt/utility = 3,
+					/obj/item/weldpack/canister = 4,
+					/obj/item/weldpack = 2)
+	contraband = list(/obj/item/cell/large/potato = 3)
 	auto_price = FALSE
 
 //This one's from bay12
 /obj/machinery/vending/engineering
 	name = "Artificer's Tool Maker"
-	desc = "Everything you need for do-it-yourself station repair."
-	product_slogans = "Home project planned? Do it yourself!;Legally, I have to ask you not to use those tools to hack into anything.;Locked door? Tools here!;Big project and you're missing your precious wrench? I bet I can replace it!;The most robust tools on the ship!"
+	desc = "Everything you need for do-it-yourself colony repair."
+	product_slogans = "Home project planned? Do it yourself!;Legally, I have to ask you not to use those tools to hack into anything.;Locked door? Tools here!;Big project and you're missing your precious wrench? I bet I can replace it!;The most robust tools on the colony!"
 	product_ads = "Best tools!;Cheap!;Reliable!;Do-It-Yourself!"
 	icon_state = "engi"
 	icon_deny = "engi-deny"
 	products = list(/obj/item/clothing/head/hardhat = 4,
-					/obj/item/weapon/storage/belt/utility = 4,
+					/obj/item/storage/belt/utility = 4,
 					/obj/item/clothing/glasses/powered/meson = 4,
 					/obj/item/clothing/gloves/insulated = 4,
-					/obj/item/weapon/tool/screwdriver = 12,
-					/obj/item/weapon/tool/crowbar = 12,
-					/obj/item/weapon/tool/wirecutters = 12,
-					/obj/item/weapon/tool/wirecutters/pliers = 6,
-					/obj/item/weapon/tool/multitool = 12,
-					/obj/item/weapon/tool/hammer = 10,
-					/obj/item/weapon/tool/wrench = 12,
+					/obj/item/tool/screwdriver = 12,
+					/obj/item/tool/crowbar = 12,
+					/obj/item/tool/wirecutters = 12,
+					/obj/item/tool/wirecutters/pliers = 6,
+					/obj/item/tool/multitool = 12,
+					/obj/item/tool/hammer = 10,
+					/obj/item/tool/wrench = 12,
 					/obj/item/device/t_scanner = 12,
-					/obj/item/weapon/cell/large = 8,
-					/obj/item/weapon/tool/weldingtool = 8,
+					/obj/item/cell/large = 8,
+					/obj/item/tool/weldingtool = 8,
 					/obj/item/clothing/head/welding = 8,
-					/obj/item/weapon/weldpack/canister = 4,
-					/obj/item/weapon/weldpack = 2,
-					/obj/item/weapon/light/tube = 10,
+					/obj/item/weldpack/canister = 4,
+					/obj/item/weldpack = 2,
+					/obj/item/light/tube = 10,
 					/obj/item/clothing/suit/fire = 4,
-					/obj/item/weapon/stock_parts/scanning_module = 5,
-					/obj/item/weapon/stock_parts/micro_laser = 5,
-					/obj/item/weapon/stock_parts/matter_bin = 5,
-					/obj/item/weapon/stock_parts/manipulator = 5,
-					/obj/item/weapon/stock_parts/console_screen = 5)
+					/obj/item/stock_parts/scanning_module = 5,
+					/obj/item/stock_parts/micro_laser = 5,
+					/obj/item/stock_parts/matter_bin = 5,
+					/obj/item/stock_parts/manipulator = 5,
+					/obj/item/stock_parts/console_screen = 5)
 	prices = list(/obj/item/clothing/head/hardhat = 4,
-					/obj/item/weapon/storage/belt/utility = 150,
-					/obj/item/clothing/glasses/powered/meson = 300,
+					/obj/item/storage/belt/utility = 75,
+					/obj/item/clothing/glasses/powered/meson = 150,
 					/obj/item/clothing/gloves/insulated = 600,
-					/obj/item/weapon/tool/screwdriver = 30,
-					/obj/item/weapon/tool/crowbar = 30,
-					/obj/item/weapon/tool/wirecutters = 30,
-					/obj/item/weapon/tool/wirecutters/pliers = 30,
-					/obj/item/weapon/tool/multitool = 40,
-					/obj/item/weapon/tool/hammer = 30,
-					/obj/item/weapon/tool/wrench = 40,
+					/obj/item/tool/screwdriver = 30,
+					/obj/item/tool/crowbar = 30,
+					/obj/item/tool/wirecutters = 30,
+					/obj/item/tool/wirecutters/pliers = 30,
+					/obj/item/tool/multitool = 40,
+					/obj/item/tool/hammer = 30,
+					/obj/item/tool/wrench = 40,
 					/obj/item/device/t_scanner = 50,
-					/obj/item/weapon/cell/large = 500,
-					/obj/item/weapon/tool/weldingtool = 40,
+					/obj/item/cell/large = 500,
+					/obj/item/tool/weldingtool = 40,
 					/obj/item/clothing/head/welding = 80,
-					/obj/item/weapon/weldpack/canister = 300,
-					/obj/item/weapon/weldpack = 675,
-					/obj/item/weapon/light/tube = 10,
+					/obj/item/weldpack/canister = 200,
+					/obj/item/weldpack = 300,
+					/obj/item/light/tube = 10,
 					/obj/item/clothing/suit/fire = 150,
-					/obj/item/weapon/stock_parts/scanning_module = 40,
-					/obj/item/weapon/stock_parts/micro_laser = 40,
-					/obj/item/weapon/stock_parts/matter_bin = 40,
-					/obj/item/weapon/stock_parts/manipulator = 40,
-					/obj/item/weapon/stock_parts/console_screen = 40)
+					/obj/item/stock_parts/scanning_module = 40,
+					/obj/item/stock_parts/micro_laser = 40,
+					/obj/item/stock_parts/matter_bin = 40,
+					/obj/item/stock_parts/manipulator = 40,
+					/obj/item/stock_parts/console_screen = 40)
 
 //FOR ACTORS GUILD - Containers
 /obj/machinery/vending/containers
@@ -144,24 +144,24 @@
 	product_slogans = "Trust is power, and there's no cell you can trust like Robustcell.;No battery is stronger nor lasts longer.;One that Lasts!;You can't top the copper top!;Tesla doesn't have anything on us!;Don't believe the competitors, Our cells last longer!"
 	product_ads = "Robust!;Trustworthy!;Durable!;Robustcell - For your power needs!;Better than the others!;Stronger than the others!"
 	icon_state = "powermat"
-	products = list(/obj/item/weapon/cell/large = 10,
-					/obj/item/weapon/cell/large/high = 10,
-					/obj/item/weapon/cell/medium = 15,
-					/obj/item/weapon/cell/medium/high = 15,
-					/obj/item/weapon/cell/small = 20,
-					/obj/item/weapon/cell/small/high = 20)
-	contraband = list(/obj/item/weapon/cell/large/super = 5,
-						/obj/item/weapon/cell/medium/super = 5,
-						/obj/item/weapon/cell/small/super = 5)
-	prices = list(/obj/item/weapon/cell/large = 500,
-					/obj/item/weapon/cell/large/high = 700,
-					/obj/item/weapon/cell/medium = 300,
-					/obj/item/weapon/cell/medium/high = 400,
-					/obj/item/weapon/cell/small = 100,
-					/obj/item/weapon/cell/small/high = 200,
-					/obj/item/weapon/cell/large/super = 1200,
-					/obj/item/weapon/cell/medium/super = 700,
-					/obj/item/weapon/cell/small/super = 350)
+	products = list(/obj/item/cell/large = 10,
+					/obj/item/cell/large/high = 10,
+					/obj/item/cell/medium = 15,
+					/obj/item/cell/medium/high = 15,
+					/obj/item/cell/small = 20,
+					/obj/item/cell/small/high = 20)
+	contraband = list(/obj/item/cell/large/super = 5,
+						/obj/item/cell/medium/super = 5,
+						/obj/item/cell/small/super = 5)
+	prices = list(/obj/item/cell/large = 500,
+					/obj/item/cell/large/high = 700,
+					/obj/item/cell/medium = 300,
+					/obj/item/cell/medium/high = 400,
+					/obj/item/cell/small = 100,
+					/obj/item/cell/small/high = 200,
+					/obj/item/cell/large/super = 900,
+					/obj/item/cell/medium/super = 600,
+					/obj/item/cell/small/super = 300)
 
 /obj/machinery/vending/printomat
 	name = "Lonestar Print-Mat"
@@ -169,44 +169,42 @@
 	product_slogans = "Print your own gun TODAY!;The future is NOW!;Can't stop the industrial revolution!;Everything you can imagine, RIGHT HERE!;Don't copy that floppy!;Who needs dreams when you can print everything you need?"
 	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!;Industrial Revolution!;Future!;Print your dreams TODAY!;Cheap and reliable!"
 	icon_state = "discomat"
-	products = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 20,
-					 /obj/item/weapon/storage/box/data_disk/basic = 5,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 20,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 10,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 5,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 5,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics = 2,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 10,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 10,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 5,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 5,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/armstrong = 2,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 10,
-					 /obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork = 3,
-					 /obj/item/weapon/circuitboard/autolathe = 3,
-					 /obj/item/weapon/circuitboard/vending = 10)
-	contraband = list(/obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3,
-	/obj/item/weapon/gun/projectile/shotgun/pump/china = 2,
-	/obj/item/ammo_casing/grenade/frag = 3,
-	/obj/item/ammo_casing/grenade/blast = 4,
-	/obj/item/ammo_casing/grenade = 2,)
-	prices = list(/obj/item/weapon/computer_hardware/hard_drive/portable = 50,
-				 /obj/item/weapon/storage/box/data_disk/basic = 100,
-	 			 /obj/item/weapon/computer_hardware/hard_drive/portable/design/misc = 400,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/components = 500,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools = 1800,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits = 600,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics = 400,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/medical = 400,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/computer = 500,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/security = 600,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 3000,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/armstrong = 2000,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 700,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork = 600,
-				 /obj/item/weapon/circuitboard/autolathe = 700,
-				 /obj/item/weapon/circuitboard/vending = 500,
-				 /obj/item/weapon/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 1000)
+	products = list(/obj/item/computer_hardware/hard_drive/portable = 20,
+					 /obj/item/storage/box/data_disk/basic = 5,
+					 /obj/item/computer_hardware/hard_drive/portable/design/misc = 20,
+					 /obj/item/computer_hardware/hard_drive/portable/design/janitor = 10,
+					 /obj/item/computer_hardware/hard_drive/portable/design/components = 10,
+					 /obj/item/computer_hardware/hard_drive/portable/design/adv_tools = 5,
+					 /obj/item/computer_hardware/hard_drive/portable/design/circuits = 5,
+					 /obj/item/computer_hardware/hard_drive/portable/design/logistics = 2,
+					 /obj/item/computer_hardware/hard_drive/portable/design/medical = 10,
+					 /obj/item/computer_hardware/hard_drive/portable/design/computer = 10,
+					 /obj/item/computer_hardware/hard_drive/portable/design/security = 5,
+					 /obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 5,
+					 /obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 2,
+					 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 10,
+					 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 3,
+					 /obj/item/circuitboard/autolathe = 3,
+					 /obj/item/circuitboard/vending = 10)
+	contraband = list(/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3)
+	prices = list(/obj/item/computer_hardware/hard_drive/portable = 50,
+				 /obj/item/storage/box/data_disk/basic = 100,
+				 /obj/item/computer_hardware/hard_drive/portable/design/misc = 200,
+				 /obj/item/computer_hardware/hard_drive/portable/design/janitor = 120,
+				 /obj/item/computer_hardware/hard_drive/portable/design/components = 250,
+				 /obj/item/computer_hardware/hard_drive/portable/design/adv_tools = 900,
+				 /obj/item/computer_hardware/hard_drive/portable/design/circuits = 300,
+				 /obj/item/computer_hardware/hard_drive/portable/design/logistics = 200,
+				 /obj/item/computer_hardware/hard_drive/portable/design/medical = 200,
+				 /obj/item/computer_hardware/hard_drive/portable/design/computer = 250,
+				 /obj/item/computer_hardware/hard_drive/portable/design/security = 300,
+				 /obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 1500,
+				 /obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 1000,
+				 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 350,
+				 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 300,
+				 /obj/item/circuitboard/autolathe = 350,
+				 /obj/item/circuitboard/vending = 200,
+				 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 500)
 
 //This one's from bay12
 /obj/machinery/vending/plasmaresearch
@@ -233,18 +231,22 @@
 					/obj/item/clothing/under/rank/roboticist = 4,
 					/obj/item/stack/cable_coil = 4,
 					/obj/item/device/flash = 4,
-					/obj/item/weapon/cell/large/high = 12,
+					/obj/item/cell/large/high = 12,
 					/obj/item/device/assembly/prox_sensor = 3,
 					/obj/item/device/assembly/signaler = 3,
 					/obj/item/device/scanner/health = 3,
-					/obj/item/weapon/tool/scalpel = 2,
-					/obj/item/weapon/tool/saw/circular = 2,
-					/obj/item/weapon/tank/anesthetic = 2,
+					/obj/item/tool/scalpel = 2,
+					/obj/item/tool/saw/circular = 2,
+					/obj/item/tank/anesthetic = 2,
 					/obj/item/clothing/mask/breath/medical = 5,
-					/obj/item/weapon/tool/screwdriver = 5,
-					/obj/item/weapon/tool/crowbar = 5,
-					/obj/item/weapon/weldpack/canister = 2,
-					/obj/item/weapon/weldpack = 1,
+					/obj/item/tool/screwdriver = 5,
+					/obj/item/tool/crowbar = 5,
+					/obj/item/weldpack/canister = 2,
+					/obj/item/weldpack = 1,
+					//Drone Fabrication Kits
+					/obj/item/storage/box/roomba_kit = 3,
+					/obj/item/storage/box/sword_drone_kit = 1,
+					/obj/item/storage/box/mantis_drone_kit = 1,
 					//Ripley
 					/obj/item/device/kit/paint/ripley = 3,
 					/obj/item/device/kit/paint/ripley/death = 3,
@@ -285,6 +287,9 @@
 					/obj/item/device/kit/paint/odysseus/mime = 1,
 					/obj/item/device/kit/paint/gygax = 1,
 					/obj/item/device/kit/paint/ripley/clark_spider = 1)
+	prices = list(	/obj/item/storage/box/roomba_kit = 250,
+					/obj/item/storage/box/sword_drone_kit = 750,
+					/obj/item/storage/box/mantis_drone_kit = 750)
 
 	auto_price = FALSE
 

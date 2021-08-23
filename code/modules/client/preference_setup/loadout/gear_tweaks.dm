@@ -181,13 +181,13 @@
 		return I.reagents.add_reagent(reagent, I.reagents.get_free_space())
 
 /datum/gear_tweak/tablet
-	var/list/ValidProcessors = list(/obj/item/weapon/computer_hardware/processor_unit/small)
-	var/list/ValidBatteries = list(/obj/item/weapon/cell/small, /obj/item/weapon/cell/small/high, /obj/item/weapon/cell/small/super)
-	var/list/ValidHardDrives = list(/obj/item/weapon/computer_hardware/hard_drive/micro, /obj/item/weapon/computer_hardware/hard_drive/small, /obj/item/weapon/computer_hardware/hard_drive)
-	var/list/ValidNetworkCards = list(/obj/item/weapon/computer_hardware/network_card, /obj/item/weapon/computer_hardware/network_card/advanced)
-	var/list/ValidPrinters = list(null, /obj/item/weapon/computer_hardware/printer)
-	var/list/ValidCardSlots = list(null, /obj/item/weapon/computer_hardware/card_slot)
-	var/list/ValidTeslaLinks = list(null, /obj/item/weapon/computer_hardware/tesla_link)
+	var/list/ValidProcessors = list(/obj/item/computer_hardware/processor_unit/small)
+	var/list/ValidBatteries = list(/obj/item/cell/small, /obj/item/cell/small/high, /obj/item/cell/small/super)
+	var/list/ValidHardDrives = list(/obj/item/computer_hardware/hard_drive/micro, /obj/item/computer_hardware/hard_drive/small, /obj/item/computer_hardware/hard_drive)
+	var/list/ValidNetworkCards = list(/obj/item/computer_hardware/network_card, /obj/item/computer_hardware/network_card/advanced)
+	var/list/ValidPrinters = list(null, /obj/item/computer_hardware/printer)
+	var/list/ValidCardSlots = list(null, /obj/item/computer_hardware/card_slot)
+	var/list/ValidTeslaLinks = list(null, /obj/item/computer_hardware/tesla_link)
 
 /datum/gear_tweak/tablet/get_contents(var/list/metadata)
 	var/list/names = list()
@@ -331,3 +331,59 @@
 	if(ValidTeslaLinks[metadata[7]])
 		var/t = ValidTeslaLinks[metadata[7]]
 		I.tesla_link = new t(I)
+
+var/datum/gear_tweak/custom_name/gear_tweak_free_name = new()
+
+/datum/gear_tweak/custom_name
+	var/list/valid_custom_names
+
+/datum/gear_tweak/custom_name/New(var/list/valid_custom_names)
+	src.valid_custom_names = valid_custom_names
+	..()
+
+/datum/gear_tweak/custom_name/get_contents(var/metadata)
+	return "Name: [metadata]"
+
+/datum/gear_tweak/custom_name/get_default()
+	return ""
+
+/datum/gear_tweak/custom_name/get_metadata(var/user, var/metadata)
+	if(jobban_isbanned(user, "Custom loadout"))
+		to_chat(user, WARNING("You are banned from using custom loadout names/descriptions."))
+		return
+	if(valid_custom_names)
+		return input(user, "Choose an item name.", "Character Preference", metadata) as null|anything in valid_custom_names
+	return sanitize(input(user, "Choose the item's name. Leave it blank to use the default name.", "Item Name", metadata) as text|null, MAX_LNAME_LEN, extra = 0)
+
+/datum/gear_tweak/custom_name/tweak_item(var/obj/item/I, var/metadata)
+	if(!metadata)
+		return I.name
+	I.name = metadata
+
+/*
+Custom Description
+*/
+var/datum/gear_tweak/custom_desc/gear_tweak_free_desc = new()
+
+/datum/gear_tweak/custom_desc
+	var/list/valid_custom_desc
+
+/datum/gear_tweak/custom_desc/New(var/list/valid_custom_desc)
+	src.valid_custom_desc = valid_custom_desc
+	..()
+
+/datum/gear_tweak/custom_desc/get_contents(var/metadata)
+	return "Description: [metadata]"
+
+/datum/gear_tweak/custom_desc/get_default()
+	return ""
+
+/datum/gear_tweak/custom_desc/get_metadata(var/user, var/metadata)
+	if(valid_custom_desc)
+		return input(user, "Choose an item description.", "Character Preference", metadata) as null|anything in valid_custom_desc
+	return sanitize(input(user, "Choose the item's description. Leave it blank to use the default description.", "Item Description", metadata) as message|null, extra = 0)
+
+/datum/gear_tweak/custom_desc/tweak_item(var/obj/item/I, var/metadata)
+	if(!metadata)
+		return I.desc
+	I.desc = metadata

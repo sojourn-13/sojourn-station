@@ -2,8 +2,11 @@
 /obj/item/rig_module/storage
 	name = "internal storage compartment"
 	desc = "A storage container designed to be installed in a RIG suit. Allows a few items to be stored inside"
+	interface_name = "internal storage compartment"
+	interface_desc = "A storage compartment built directly into the suits back module, accessed through a latching compartment."
+	price_tag = 100
 
-	var/obj/item/weapon/storage/internal/container = null
+	var/obj/item/storage/internal/container = null
 	w_class = ITEM_SIZE_BULKY
 
 	//The default iconstate is actually really perfect for this, it looks like a reinforced box
@@ -12,14 +15,14 @@
 
 	//These vars will be passed onto the storage
 	var/list/can_hold = new/list() //List of objects which this item can store (if set, it can't store anything else)
-	var/list/cant_hold = new/list(/obj/item/weapon/rig) //List of objects which this item can't store (in effect only if can_hold isn't set)
+	var/list/cant_hold = new/list(/obj/item/rig) //List of objects which this item can't store (in effect only if can_hold isn't set)
 	var/max_w_class = ITEM_SIZE_NORMAL //Max size of objects that this object can store (in effect only if can_hold isn't set)
 	var/max_storage_space = 25 //Slightly more than a satchel can hold.
 	var/storage_slots = null //The number of storage slots in this container.
 
 //Create the internal storage and pass on various parameters
 /obj/item/rig_module/storage/New()
-	container = new /obj/item/weapon/storage/internal(src)
+	container = new /obj/item/storage/internal(src)
 	container.can_hold = can_hold
 	container.cant_hold = cant_hold
 	container.max_w_class = max_w_class
@@ -31,7 +34,7 @@
 	Installation
 *****************************/
 //Installing stuff
-/obj/item/rig_module/storage/can_install(var/obj/item/weapon/rig/rig, var/mob/user, var/feedback = FALSE)
+/obj/item/rig_module/storage/can_install(var/obj/item/rig/rig, var/mob/user, var/feedback = FALSE)
 	if (rig.storage) //If it already has a storage mod installed, then no adding another one
 		if (user && feedback)
 			to_chat(user, SPAN_DANGER("The [rig] already has a storage module installed, you can't fit another one."))
@@ -43,7 +46,7 @@
 	holder.storage = src //Set ourselves as the storage mod
 	container.master_item = holder //When its inside a rig, that rig is the thing we use for location checks
 
-/obj/item/rig_module/storage/uninstalled(var/obj/item/weapon/rig/former, var/mob/living/user)
+/obj/item/rig_module/storage/uninstalled(var/obj/item/rig/former, var/mob/living/user)
 	.=..()
 	former.storage = null //Unset the storage mod
 	container.master_item = src //When its outside a rig, use ourselves for location checks

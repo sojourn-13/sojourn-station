@@ -73,6 +73,19 @@
 	armor = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	price_tag = 150
 
+/obj/item/clothing/gloves/thick/ablasive
+	name = "ablative gloves"
+	desc = "A thick pare of gloves that excels in protecting the wearer against energy projectiles."
+	armor = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
+	icon_state = "ihscombat"
+	item_state = "ihscombat"
+	price_tag = 150
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_PLATINUM = 2)
+
+/obj/item/clothing/gloves/thick/ablasive/iron_lock_security
+	name = "outdated gloves"
+	desc = "An \"Iron Lock Security\" ablative gloves with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
+
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
 	desc = "A pair of fire, shock-proof, and impact-resistant combat gloves."
 	name = "combat gloves"
@@ -82,12 +95,36 @@
 	siemens_coefficient = 0
 	price_tag = 250
 
+/obj/item/clothing/gloves/thick/hunter
+    desc = "Tough, tight fitting and reinforced with bone this pair of leather gloves blend a perfect compromise between durability and comfort thanks to the different materials used."
+    name = "hunter gloves"
+    icon_state = "huntergloves"
+    item_state = "huntergloves"
+    armor = list(melee = 30, bullet = 10, energy = 20, bomb = 10, bio = 5, rad = 0)
+    siemens_coefficient = 0.5
+    price_tag = 200
+
+/obj/item/clothing/gloves/knuckles
+	name = "knuckle gloves"
+	desc = "Gloves with additional reinforcment on the knuckles."
+	icon_state = "knuckles"
+	item_state = "knuckles"
+	armor = list(melee = 20, bullet = 5, energy = 0, bomb = 0, bio = 0, rad = 0)
+	price_tag = 50
+
 /obj/item/clothing/gloves/evening
 	name = "evening gloves"
 	initial_name = "evening gloves"
 	desc = "A pair of elegant evening gloves."
 	icon_state = "evening_gloves"
 	item_state = "evening_gloves"
+
+/obj/item/clothing/gloves/ash_evening
+	name = "ash evening gloves"
+	initial_name = "ash evening gloves"
+	desc = "A pair of ash elegant evening gloves."
+	icon_state = "ash_evening_gloves"
+	item_state = "ash_evening_gloves"
 
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
@@ -114,7 +151,16 @@
 	siemens_coefficient = 0.50 //thick work gloves
 	price_tag = 50
 
-obj/item/clothing/gloves/fingerless
+/obj/item/clothing/gloves/aerostatic_gloves
+	name = "red designer leather gloves"
+	desc = "A pair of elegant leather gloves."
+	icon_state = "aerostatic_gloves"
+	item_state = "aerostatic_gloves"
+	permeability_coefficient = 0.05
+	siemens_coefficient = 0.50 //thick work gloves
+	price_tag = 50
+
+/obj/item/clothing/gloves/fingerless
 	desc = "A pair of gloves modified for species with clawed hands."
 	name = "fingerless gloves"
 	icon_state = "fingerlessgloves"

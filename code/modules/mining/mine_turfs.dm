@@ -21,9 +21,13 @@
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type==QUALITY_EXCAVATION)
 		to_chat(user, SPAN_NOTICE("You try to break out a rock geode or two."))
-		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
+		if(I.use_tool(user, src, WORKTIME_DELAYED, tool_type, FAILCHANCE_ZERO, required_stat = STAT_ROB))
 			new /obj/random/material_ore_small(get_turf(src))
 			if(prob(50))
+				new /obj/random/material_ore_small(get_turf(src))
+			if(prob(25))
+				new /obj/random/material_ore_small(get_turf(src))
+			if(prob(5))
 				new /obj/random/material_ore_small(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You break out some rock geode(s)."))
 			return
@@ -70,7 +74,7 @@
 	var/next_rock = 0
 	var/archaeo_overlay = ""
 	var/excav_overlay = ""
-	var/obj/item/weapon/last_find
+	var/obj/item/last_find
 	var/datum/artifact_find/artifact_find
 
 	has_resources = 1
@@ -232,7 +236,7 @@
 					next_rock += excavation_amount * 10
 					while(next_rock > 100)
 						next_rock -= 100
-						var/obj/item/weapon/ore/O = new(src)
+						var/obj/item/ore/O = new(src)
 						geologic_data.UpdateNearbyArtifactInfo(src)
 						O.geologic_data = geologic_data
 				return
@@ -267,11 +271,11 @@
 					else if(prob(15))
 						//empty boulder
 						B = new(src)
-				if(mineral && istype(user.get_inactive_hand(), /obj/item/weapon/storage/bag/ore)) //This entire segment can be done better.
+				if(mineral && istype(user.get_inactive_hand(), /obj/item/storage/bag/ore)) //This entire segment can be done better.
 					var/obj/structure/ore_box/box = istype(user.pulling, /obj/structure/ore_box) ? user.pulling : FALSE
-					var/obj/item/weapon/storage/bag/ore/bag = user.get_inactive_hand()
+					var/obj/item/storage/bag/ore/bag = user.get_inactive_hand()
 					for (, mined_ore < mineral.result_amount, mined_ore++)
-						var/obj/item/weapon/ore/O = DropMineral()
+						var/obj/item/ore/O = DropMineral()
 						if(box)
 							box.contents += O
 						else
@@ -319,7 +323,7 @@
 		return
 
 	clear_ore_effects()
-	var/obj/item/weapon/ore/O = new mineral.ore (src)
+	var/obj/item/ore/O = new mineral.ore (src)
 	if(istype(O) && geologic_data)
 		geologic_data.UpdateNearbyArtifactInfo(src)
 		O.geologic_data = geologic_data
@@ -364,15 +368,15 @@
 /turf/simulated/mineral/proc/excavate_find(var/prob_clean = 0, var/datum/find/F)
 	//with skill and luck, players can cleanly extract finds
 	//otherwise, they come out inside a chunk of rock
-	var/obj/item/weapon/X
+	var/obj/item/X
 	if(prob_clean)
-		X = new /obj/item/weapon/archaeological_find(src, new_item_type = F.find_type)
+		X = new /obj/item/archaeological_find(src, new_item_type = F.find_type)
 	else
-		X = new /obj/item/weapon/ore/strangerock(src, inside_item_type = F.find_type)
+		X = new /obj/item/ore/strangerock(src, inside_item_type = F.find_type)
 		geologic_data.UpdateNearbyArtifactInfo(src)
 		X:geologic_data = geologic_data
 
-	//some find types delete the /obj/item/weapon/archaeological_find and replace it with something else, this handles when that happens
+	//some find types delete the /obj/item/archaeological_find and replace it with something else, this handles when that happens
 	//yuck
 	var/display_name = "something"
 	if(!X)
@@ -417,12 +421,12 @@
 			if(5)
 				var/quantity = rand(1,3)
 				for(var/i=0, i<quantity, i++)
-					new /obj/item/weapon/material/shard(src)
+					new /obj/item/material/shard(src)
 
 			if(6)
 				var/quantity = rand(1,3)
 				for(var/i=0, i<quantity, i++)
-					new /obj/item/weapon/material/shard/plasma(src)
+					new /obj/item/material/shard/plasma(src)
 
 			if(7)
 				var/obj/item/stack/material/uranium/R = new(src)
@@ -512,8 +516,8 @@
 		return
 
 	for(var/i=0;i<(rand(3)+2);i++)
-		new/obj/item/weapon/ore/glass(src)
-		new/obj/item/weapon/ore(src)
+		new/obj/item/ore/glass(src)
+		new/obj/item/ore(src)
 
 	dug = 1
 	desc = "A hole has been dug here." //so we can tell from looking
@@ -546,11 +550,11 @@
 	if(isrobot(M))
 		var/mob/living/silicon/robot/R = M
 		if(R.module)
-			if(istype(R.module_state_1,/obj/item/weapon/storage/bag/ore))
+			if(istype(R.module_state_1,/obj/item/storage/bag/ore))
 				attackby(R.module_state_1,R)
-			else if(istype(R.module_state_2,/obj/item/weapon/storage/bag/ore))
+			else if(istype(R.module_state_2,/obj/item/storage/bag/ore))
 				attackby(R.module_state_2,R)
-			else if(istype(R.module_state_3,/obj/item/weapon/storage/bag/ore))
+			else if(istype(R.module_state_3,/obj/item/storage/bag/ore))
 				attackby(R.module_state_3,R)
 			else
 				return

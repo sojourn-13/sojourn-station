@@ -249,7 +249,7 @@
 			to_chat(mob, "<span class='notice'>You're pinned down by \a [mob.pinned[1]]!</span>")
 		return MOVEMENT_STOP
 
-	for(var/obj/item/weapon/grab/G in mob.grabbed_by)
+	for(var/obj/item/grab/G in mob.grabbed_by)
 		return MOVEMENT_STOP
 		/* TODO: Bay grab system
 		if(G.stop_move())
@@ -301,13 +301,17 @@
 	mob.add_move_cooldown(extra_delay)
 
 	/* TODO: Bay grab system
-	for (var/obj/item/weapon/grab/G in mob)
+	for (var/obj/item/grab/G in mob)
 		if (G.assailant_reverse_facing())
 			mob.set_dir(GLOB.reverse_dir[direction])
 		G.assailant_moved()
-	for (var/obj/item/weapon/grab/G in mob.grabbed_by)
+	for (var/obj/item/grab/G in mob.grabbed_by)
 		G.adjust_position()
 	*/
+	//Sojourn pixel shift port
+	mob.pixel_x = mob.default_pixel_x//Reset pixel shifting x
+	mob.pixel_y = mob.default_pixel_y//Reset pixel shifting y
+	//End of edit
 	mob.moving = 0
 
 /datum/movement_handler/mob/movement/MayMove(var/mob/mover)
@@ -316,7 +320,7 @@
 /datum/movement_handler/mob/movement/proc/HandleGrabs(var/direction, var/old_turf)
 	. = 0
 	// TODO: Look into making grabs use movement events instead, this is a mess.
-	for (var/obj/item/weapon/grab/G in mob)
+	for (var/obj/item/grab/G in mob)
 		. = max(., G.slowdown)
 		var/mob/M = G.affecting
 		if(M && get_dist(old_turf, M) <= 1)

@@ -1,8 +1,9 @@
 var/global/list/body_modifications = list()
 var/global/list/modifications_types = list(
-	BP_CHEST  = "", BP_BACK   = "", BP_HEAD   = "", BP_GROIN = "",
-	BP_L_ARM  = "", BP_R_ARM  = "", BP_L_LEG  = "", BP_R_LEG = "",
-	OP_HEART  = "", OP_LUNGS  = "", OP_LIVER  = "", OP_EYES   = ""
+	BP_CHEST = "",  "chest2" = "", BP_HEAD = "",   BP_GROIN = "",
+	BP_L_ARM  = "", BP_R_ARM  = "", BP_L_LEG  = "", BP_R_LEG  = "",
+	OP_HEART  = "", OP_LUNGS  = "", OP_LIVER  = "", OP_EYES   = "",
+	OP_KIDNEY_LEFT = "", OP_KIDNEY_RIGHT = "" , OP_STOMACH = "", BP_BRAIN = ""
 )
 
 /proc/generate_body_modification_lists()
@@ -22,7 +23,7 @@ var/global/list/modifications_types = list(
 		if(MODIFICATION_ORGANIC)
 			return body_modifications["nothing"]
 		if(MODIFICATION_SILICON)
-			return body_modifications["prosthesis_basic"]
+			return body_modifications["robotize_organ"]
 		if(MODIFICATION_REMOVED)
 			return body_modifications["amputated"]
 
@@ -33,7 +34,7 @@ var/global/list/modifications_types = list(
 	var/desc = ""							// Description.
 	var/list/body_parts = list(				// For sorting'n'selection optimization.
 		BP_CHEST, BP_BACK, BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG,\
-		OP_HEART, OP_LUNGS, OP_LIVER, BP_BRAIN, OP_EYES)
+		OP_HEART, OP_LUNGS, OP_LIVER, BP_BRAIN, OP_EYES, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_STOMACH)
 	var/list/allowed_species = list("Human")// Species restriction.
 	var/replace_limb = null					// To draw usual limb or not.
 	var/mob_icon = ""
@@ -50,14 +51,17 @@ var/global/list/modifications_types = list(
 	if(!organ || !(organ in body_parts))
 		//usr << "[name] isn't useable for [organ]"
 		return FALSE
-	var/list/organ_data = organ_structure[organ]
-	if(organ_data)
-		var/parent_organ = organ_data["parent"]
-		if(parent_organ)
-			var/datum/body_modification/parent = P.get_modification(parent_organ)
-			if(parent.nature > nature)
-				to_chat(usr, "[name] can't be attached to [parent.name]")
-				return FALSE
+	var/parent_organ
+	for(var/organ_parent in organ_structure)
+		var/list/organ_data = organ_structure[organ_parent]
+		if(organ in organ_data["children"])
+			parent_organ = organ_parent
+
+	if(parent_organ)
+		var/datum/body_modification/parent = P.get_modification(parent_organ)
+		if(parent.nature > nature)
+			to_chat(usr, "[name] can't be attached to [parent.name]")
+			return FALSE
 
 	if(department_specific.len)
 		if(H && H.mind)
@@ -75,7 +79,7 @@ var/global/list/modifications_types = list(
 				to_chat(usr, "This body-mod does not match your highest-priority department.")
 				return FALSE
 
-	if(!allow_nt && H?.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+	if(!allow_nt && H?.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		to_chat(usr, "Your cruciform prevents you from using this modification.")
 		return FALSE
 
@@ -107,11 +111,11 @@ var/global/list/modifications_types = list(
 		return new OD.default_type(holder,OD)
 
 /datum/body_modification/limb/amputation
-	name = "Amputated"
-	short_name = "Amputated"
+	name = "Removed"
+	short_name = "Removed"
 	id = "amputated"
 	desc = "Organ was removed."
-	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_EYES) // No more headless, crotchless people. Also organs are VITAL!
 	replace_limb = 1
 	nature = MODIFICATION_REMOVED
 
@@ -183,13 +187,31 @@ var/global/list/modifications_types = list(
 	id = "prosthesis_ghetto"
 	replace_limb = /obj/item/organ/external/robotic/junktech
 	icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
-
+/*
+/datum/body_modification/limb/prosthesis/full_body_prosthetic
+	id = "prosthesis_full_body_prosthetic"
+	replace_limb = /obj/item/organ/external/robotic/full_body_prosthetic
+	icon = 'icons/mob/human_races/cyberlimbs/fbp.dmi'
+*/
 /datum/body_modification/limb/prosthesis/moebius
 	id = "prosthesis_moebius"
 	replace_limb = /obj/item/organ/external/robotic/moebius
 	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
-	department_specific = list(DEPARTMENT_MEDICAL, DEPARTMENT_SCIENCE)
 	icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
+	department_specific = list(DEPARTMENT_MEDICAL, DEPARTMENT_SCIENCE)
+
+/datum/body_modification/limb/prosthesis/blackshield
+	id = "prosthesis_blackshield"
+	replace_limb = /obj/item/organ/external/robotic/blackshield
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
+	department_specific = list(DEPARTMENT_SECURITY)
+
+/datum/body_modification/limb/prosthesis/church
+	id = "prosthesis_church"
+	replace_limb = /obj/item/organ/external/robotic/church
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	icon = 'icons/mob/human_races/cyberlimbs/church.dmi'
 
 /datum/body_modification/limb/mutation/New()
 	short_name = "M: [name]"
@@ -214,14 +236,13 @@ var/global/list/modifications_types = list(
 		return new replace_limb(holder)
 	else
 		return new organ(holder)
-
+/* Commented out due to no way to differenciate them.
 /datum/body_modification/organ/assisted
 	name = "Assisted organ"
 	short_name = "P: assisted"
 	id = "assisted"
 	desc = "Assisted organ."
-	body_parts = list(OP_HEART, OP_LUNGS, OP_LIVER, OP_EYES)
-	allow_nt = FALSE
+	body_parts = list(OP_HEART, OP_LUNGS, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_STOMACH, BP_BRAIN, OP_LIVER, OP_EYES)
 
 /datum/body_modification/organ/assisted/create_organ(var/mob/living/carbon/holder, var/O, var/color)
 	var/obj/item/organ/I = ..(holder,O,color)
@@ -229,15 +250,15 @@ var/global/list/modifications_types = list(
 	I.min_bruised_damage = 15
 	I.min_broken_damage = 35
 	return I
-
+*/
 
 /datum/body_modification/organ/robotize_organ
 	name = "Robotic organ"
 	short_name = "P: prosthesis"
 	id = "robotize_organ"
 	desc = "Robotic organ."
-	body_parts = list(OP_HEART, OP_LUNGS, OP_LIVER, OP_EYES)
-	allow_nt = FALSE
+	body_parts = list(OP_HEART, OP_LUNGS, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_STOMACH, BP_BRAIN, OP_LIVER, OP_EYES)
+	nature = MODIFICATION_SILICON
 
 /datum/body_modification/organ/robotize_organ/create_organ(var/mob/living/carbon/holder, O, color)
 	var/obj/item/organ/I = ..(holder,O,color)

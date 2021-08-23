@@ -1,6 +1,6 @@
-/obj/item/weapon/gun/projectile/firefly
+/obj/item/gun/projectile/firefly
 	name = "\"Firefly\" pistol"
-	desc = "A simple and reliable sidearm produced by Holland & Sullivan Arms for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto in high-capacity magazines.."
+	desc = "A simple and reliable sidearm produced by Seinemetall Defense GmbH for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto magazines."
 	icon = 'icons/obj/guns/projectile/firefly.dmi'
 	icon_state = "firefly"
 	item_state = "firefly"
@@ -10,8 +10,8 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_H_PISTOL
-	auto_eject = 1
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
+	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_PLASTIC = 4)
 	price_tag = 750
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
@@ -21,7 +21,7 @@
 	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 
-/obj/item/weapon/gun/projectile/firefly/update_icon()
+/obj/item/gun/projectile/firefly/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -40,6 +40,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/firefly/Initialize()
+/obj/item/gun/projectile/firefly/Initialize()
 	. = ..()
 	update_icon()

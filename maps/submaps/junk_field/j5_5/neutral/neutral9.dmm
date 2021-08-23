@@ -1,0 +1,120 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"b" = (
+/obj/random/scrap/dense_weighted/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"d" = (
+/turf/simulated/wall/r_wall,
+/area/template_noop)
+"e" = (
+/obj/structure/railing,
+/obj/structure/lattice,
+/obj/random/mob/carp/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"f" = (
+/obj/random/junkfood/rotten,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"h" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"i" = (
+/obj/random/junkfood/rotten/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"j" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/template_noop,
+/area/template_noop)
+"n" = (
+/obj/random/scrap/dense_weighted/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"r" = (
+/turf/template_noop,
+/area/template_noop)
+"w" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"F" = (
+/obj/structure/lattice,
+/obj/structure/railing,
+/turf/template_noop,
+/area/template_noop)
+"G" = (
+/obj/structure/lattice,
+/obj/random/lowkeyrandom/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"L" = (
+/obj/structure/lattice,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"M" = (
+/obj/structure/lattice,
+/obj/structure/railing,
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+"U" = (
+/obj/structure/girder,
+/obj/random/material/low_chance,
+/turf/simulated/floor/plating/under,
+/area/template_noop)
+"Y" = (
+/obj/random/material/low_chance,
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+r
+M
+b
+w
+L
+"}
+(2,1,1) = {"
+a
+F
+f
+d
+b
+"}
+(3,1,1) = {"
+Y
+e
+n
+i
+a
+"}
+(4,1,1) = {"
+G
+a
+h
+j
+b
+"}
+(5,1,1) = {"
+U
+a
+r
+L
+a
+"}

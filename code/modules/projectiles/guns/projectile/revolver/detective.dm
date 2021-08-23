@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/detective
+/obj/item/gun/projectile/revolver/detective
 	name = "\"Havelock\" revolver"
 	desc = "A cheap H&S J-frame revolver, simple, reliable, .35 caliber."
 	icon = 'icons/obj/guns/projectile/detective.dmi'
@@ -9,15 +9,15 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	fire_sound = 'sound/weapons/Gunshot_light.ogg'
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
+	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_STEEL = 8, MATERIAL_WOOD = 6)
 	price_tag = 250 //cheap civ peashooter revolver, something similar to olivav
 	damage_multiplier = 1.15 //because pistol round
 	penetration_multiplier = 1.2
-	recoil_buildup = 16
-	one_hand_penalty = 12
+	recoil_buildup = 2
+	one_hand_penalty = 6
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 
-/obj/item/weapon/gun/projectile/revolver/detective/update_icon()
+/obj/item/gun/projectile/revolver/detective/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)

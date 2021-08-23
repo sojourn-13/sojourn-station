@@ -17,7 +17,14 @@
 	var/effective_damage = damage - guaranteed_damage_red
 
 	if(damagetype == HALLOSS)
-		effective_damage = round(effective_damage * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)))
+		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
+			effective_damage = round ( effective_damage * ( 100 - src.getarmor(def_zone, "agony") ) / 100 )
+		else
+			effective_damage = round(effective_damage * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)))
+	//Simple and superior mobs have a different way of dealing with agony damage.
+	if(damagetype == AGONY)
+		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/))
+			effective_damage = round ( effective_damage * ( 100 - src.getarmor(def_zone, "agony") ) / 100 )
 
 	if(effective_damage <= 0)
 		show_message(SPAN_NOTICE("Your armor absorbs the blow!"))
@@ -67,6 +74,11 @@
 /mob/living/proc/getarmor(var/def_zone, var/type)
 	return 0
 
+/mob/living/simple_animal/getarmor(var/def_zone, var/type)
+	return src.armor[type]
+
+/mob/living/carbon/superior_animal/getarmor(var/def_zone, var/type)
+	return src.armor[type]
 
 /mob/living/proc/hit_impact(damage, dir)
 	if(incapacitated(INCAPACITATION_DEFAULT|INCAPACITATION_BUCKLED_PARTIALLY))
@@ -237,6 +249,8 @@
 					src.pinned += O
 
 /mob/living/proc/embed(var/obj/item/O, var/def_zone=null)
+	if(O.wielded)
+		return
 	if(ismob(O.loc))
 		var/mob/living/L = O.loc
 		if(!L.unEquip(O, src))

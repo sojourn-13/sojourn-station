@@ -28,3 +28,6 @@
 	max_co2 = 0
 	min_n2 = 0
 	max_n2 = 0
+	leather_amount = 6 //The amount of leather sheets dropped.
+	bones_amount = 6 //The amount of bone sheets dropped.
+	mob_size = MOB_LARGE

@@ -7,7 +7,7 @@
 
 /obj/structure/noticeboard/anomaly/New()
 	//add some memos
-	var/obj/item/weapon/paper/P = new()
+	var/obj/item/paper/P = new()
 	P.name = "Memo RE: proper analysis procedure"
 	P.info = "<br>We keep test dummies in pens here for a reason, so standard procedure should be to activate newfound alien artifacts and place the two in close proximity. Promising items I might even approve monkey testing on."
 	P.copy_overlays(list("paper_stamped_rd"), TRUE)
@@ -49,12 +49,12 @@
 
 	New()
 		..()
-		new /obj/item/weapon/book/manual/excavation(src)
-		new /obj/item/weapon/book/manual/mass_spectrometry(src)
-		new /obj/item/weapon/book/manual/materials_chemistry_analysis(src)
-		new /obj/item/weapon/book/manual/anomaly_testing(src)
-		new /obj/item/weapon/book/manual/anomaly_spectroscopy(src)
-		new /obj/item/weapon/book/manual/stasis(src)
+		new /obj/item/book/manual/excavation(src)
+		new /obj/item/book/manual/mass_spectrometry(src)
+		new /obj/item/book/manual/materials_chemistry_analysis(src)
+		new /obj/item/book/manual/anomaly_testing(src)
+		new /obj/item/book/manual/anomaly_spectroscopy(src)
+		new /obj/item/book/manual/stasis(src)
 		update_icon()
 
 //---- Lockers and closets
@@ -68,12 +68,13 @@
 		..()
 		sleep(2)
 		new /obj/item/clothing/under/rank/scientist(src)
-		new /obj/item/clothing/suit/storage/toggle/labcoat(src)
+		new /obj/item/clothing/suit/storage/membrane(src) //SCIENCE!!!
 		new /obj/item/clothing/shoes/color(src)
 		new /obj/item/clothing/glasses/powered/science(src)
 		new /obj/item/device/radio/headset/headset_sci(src)
-		new /obj/item/weapon/storage/belt/archaeology(src)
-		new /obj/item/weapon/tool/pickaxe/excavation(src)
+		new /obj/item/storage/belt/archaeology(src)
+		new /obj/item/tool/pickaxe/excavation(src)
+		new /obj/item/storage/backpack/duffelbag(src)
 		return
 
 /obj/structure/closet/excavation
@@ -85,7 +86,7 @@
 	New()
 		..()
 		sleep(2)
-		new /obj/item/weapon/storage/belt/archaeology(src)
+		new /obj/item/storage/belt/archaeology(src)
 		new /obj/item/device/lighting/toggleable/lantern(src)
 		new /obj/item/device/ano_scanner(src)
 		new /obj/item/device/depth_scanner(src)
@@ -94,11 +95,11 @@
 		new /obj/item/device/beacon_locator(src)
 		new /obj/item/device/radio/beacon(src)
 		new /obj/item/clothing/glasses/powered/meson(src)
-		new /obj/item/weapon/tool/pickaxe(src)
+		new /obj/item/tool/pickaxe(src)
 		new /obj/item/device/measuring_tape(src)
-		new /obj/item/weapon/tool/pickaxe/excavation(src)
-		new /obj/item/weapon/storage/bag/fossils(src)
-		new /obj/item/weapon/hand_labeler(src)
+		new /obj/item/tool/pickaxe/excavation(src)
+		new /obj/item/storage/bag/fossils(src)
+		new /obj/item/hand_labeler(src)
 		new /obj/item/taperoll/research(src)
 		return
 

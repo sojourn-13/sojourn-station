@@ -1,6 +1,6 @@
-/obj/item/weapon/gun/projectile/colt
+/obj/item/gun/projectile/colt
 	name = "\"Colt\" pistol"
-	desc = "A cheap knock-off of an M1911 produced by Scarborough Arms. Uses .35 rounds."
+	desc = "A cheap knock-off of an M1911 produced by Holland & Sullivan. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/colt.dmi'
 	icon_state = "colt"
 	item_state = "colt"
@@ -11,27 +11,27 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_H_PISTOL
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.2
-	recoil_buildup = 12
-	one_hand_penalty = 14
+	recoil_buildup = 6
+	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 
-/obj/item/weapon/gun/projectile/colt/NM_colt
+/obj/item/gun/projectile/colt/NM_colt
 	name = "\"Bronco\" pistol"
 	desc = "A rugged derivative of the venerable M1911, built on double-stack frames and modified by the Nadezhda Marshals gunsmiths from new or refitted weapons to meet match-grade standards. Uses .35 rounds."
 	icon_state = "NM_colt"
 	item_state = "colt"
 	caliber = CAL_PISTOL
-	mag_well = MAG_WELL_H_PISTOL
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
-	recoil_buildup = 10
+	recoil_buildup = 5
 
-/obj/item/weapon/gun/projectile/colt/ten
+/obj/item/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
-	desc = "A classy civilian high-powered automatic based on the M1911 series handguns, with significant reinforcements produded by Holland & Sullivan Arms. Uses .40 Auto-Mag."
+	desc = "A classy high-powered automatic based on the M1911 series handguns, with significant reinforcements produded by Scarborough Arms. Uses .40 Auto-Mag."
 	icon_state = "delta"
 	item_state = "colt"
 	w_class = ITEM_SIZE_NORMAL
@@ -40,15 +40,15 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
-	price_tag = 1000
+	price_tag = 900
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
-	recoil_buildup = 12
+	recoil_buildup = 6
 	damage_multiplier = 1.1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)
 
-/obj/item/weapon/gun/projectile/colt/ten/dark
+/obj/item/gun/projectile/colt/ten/dark
 	name = "\"Stallion\" magnum pistol"
 	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard and produced by SolFed armories across the galaxy, this one bears  defaced serial numbers and the insignia of the Blackshield. Uses .40 Auto-Mag."
 	icon_state = "dark_delta"
@@ -56,7 +56,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
-/obj/item/weapon/gun/projectile/colt/update_icon()
+/obj/item/gun/projectile/colt/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -72,6 +72,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/colt/Initialize()
+/obj/item/gun/projectile/colt/Initialize()
 	. = ..()
 	update_icon()

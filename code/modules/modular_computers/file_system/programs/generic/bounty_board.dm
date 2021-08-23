@@ -125,6 +125,7 @@
 			to_chat(usr, SPAN_WARNING("Insufficient Data"))
 			return
 		selectedEntry = null
+		log_and_message_admins("[usr] has posted a bounty!")
 		return 1
 
 	if(href_list["remove"])

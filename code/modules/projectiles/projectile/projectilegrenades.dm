@@ -7,6 +7,7 @@
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
+
 /obj/item/projectile/bullet/grenade
 	name = "grenade shell"
 	icon_state = "grenade"
@@ -23,7 +24,7 @@
 	else
 		..()
 
-/obj/item/projectile/bullet/grenade/on_hit(atom/target)	//Allows us to cause different effects for each grenade shell on hit
+/obj/item/projectile/bullet/grenade/on_impact(atom/target)	//Allows us to cause different effects for each grenade shell on hit
 	grenade_effect(target)
 
 
@@ -55,6 +56,15 @@
 
 /obj/item/projectile/bullet/grenade/emp/grenade_effect(target)
 	empulse(target, heavy_emp_range, light_emp_range)
+
+/obj/item/projectile/bullet/grenade/frag/weak
+	name = "frag shell"
+	range = 7
+	f_type = /obj/item/projectile/bullet/pellet/fragment/strong
+	f_amount = 100
+	f_damage = 2
+	f_step = 1
+	same_turf_hit_chance = 10
 
 /obj/item/projectile/bullet/grenade/flash
 	name = "flash shell"

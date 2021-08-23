@@ -81,7 +81,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 	var/datum/species/cspecies = global.all_species[pref.species]
 	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form]
-	if( !pref.species_form || !(pref.species_form in GLOB.playable_species_form_list) || (cspecies.obligate_form && cspecies.default_form != cform.name) )
+	if(!pref.species_form || !(pref.species_form in GLOB.playable_species_form_list) || (cspecies.obligate_form && cspecies.default_form != cform.name) )
 		pref.species_form = cspecies.default_form
 		if(!pref.species_form)
 			pref.species_form = FORM_HUMAN
@@ -119,7 +119,6 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		if(cform.name == cspecies.default_form && cspecies.obligate_form)
 			mode = "reset_form=1"
 			prefix = "&#8634; "
-		else if(cspecies.obligate_form) continue
 		formstring = "<a href='?src=\ref[src];[mode]'>[prefix][cform.name]</a>" + formstring
 		if(cform.name == cform.variantof || cform.name == cspecies.default_form && cspecies.obligate_form) break
 		cform = GLOB.all_species_form_list[cform.variantof]
@@ -165,6 +164,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 /datum/category_item/player_setup_item/physical/body/OnTopic(var/href,var/list/href_list, var/mob/user)
 
+	pref.categoriesChanged = "Body"
 	var/datum/species/mob_species = all_species[pref.species]
 	var/datum/species_form/mob_species_form = GLOB.all_species_form_list[pref.species_form]
 	if(href_list["toggle_species_verbose"])
@@ -179,13 +179,14 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/new_species = input(user, "Choose your character's species:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species) as null|anything in global.playable_species
 		if(new_species && CanUseTopic(user))
 			pref.species = new_species
-			pref.ears_style = null
-			pref.tail_style = null
-			pref.wings_style = null
-			pref.setup_options["Career"] = null
-			pref.setup_options["Homeworld"] = null
-			pref.setup_options["Upbringing"] = null
-			pref.setup_options["Ethnicity"] = null
+			pref.ears_style = "Default"
+			pref.tail_style = "Default"
+			pref.wings_style = "Default"
+			pref.setup_options["Career"] = "None"
+			pref.setup_options["Homeworld"] = "None"
+			pref.setup_options["Upbringing"] = "None"
+			pref.setup_options["Ethnicity"] = "None"
+			pref.setup_options["Core implant"] = "None"
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["reset_form"])

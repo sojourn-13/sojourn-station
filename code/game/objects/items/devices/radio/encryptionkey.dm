@@ -11,9 +11,9 @@
 	var/translate_hive = 0
 	var/syndie = 0
 	var/list/channels = list()
-	matter = list(MATERIAL_STEEL = 1)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 
-/obj/item/device/encryptionkey/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/encryptionkey/attackby(obj/item/W as obj, mob/user as mob)
 
 /obj/item/device/encryptionkey/syndicate
 	icon_state = "cypherkey"
@@ -25,12 +25,12 @@
 	icon_state = "cypherkey"
 	translate_binary = 1
 	origin_tech = list(TECH_ILLEGAL = 3)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2)
 
 /obj/item/device/encryptionkey/headset_bs
 	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
 	channels = list( "Blackshield" = 1, "Marshal" = 1)
-
 
 /obj/item/device/encryptionkey/headset_mar
 	name = "security radio encryption key"
@@ -75,13 +75,13 @@
 /obj/item/device/encryptionkey/heads/captain
 	name = "premier's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1, "Blueteam" = 0, "Redtag" = 0, "Greenteam" = 0, "Yellowtag" = 0)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1, "Plasmatag B" = 0, "Plasmatag R" = 0, "Plasmatag G" = 0, "Plasmatag Y" = 0)
 
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
 	desc = "Integrated encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Blackshield" = 1, "Marshal" = 1)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Blackshield" = 1, "Marshal" = 1, "Plasmatag B" = 1, "Plasmatag R" = 1, "Plasmatag G" = 1, "Plasmatag Y" = 1)
 
 /obj/item/device/encryptionkey/heads/rd
 	name = "research overseer's encryption key"
@@ -111,7 +111,7 @@
 /obj/item/device/encryptionkey/heads/hop
 	name = "steward's encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1, "Blueteam" = 0, "Redtag" = 0, "Greenteam" = 0, "Yellowtag" = 0)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Blackshield" = 1, "Marshal" = 1, "Plasmatag B" = 0, "Plasmatag R" = 0, "Plasmatag G" = 0, "Plasmatag Y" = 0)
 
 /obj/item/device/encryptionkey/heads/merchant
 	name = "lonestar executive radio encryption key"
@@ -145,20 +145,20 @@
 
 /obj/item/device/encryptionkey/entertainment
 	name = "entertainment radio key"
-	channels = list("Entertainment" = 1)
+	channels = list("Supply" = 1)
 
 /obj/item/device/encryptionkey/headset_blueteam
 	name = "entertainment radio key"
-	channels = list("Blueteam" = 1)
+	channels = list("Plasmatag B" = 1)
 
 /obj/item/device/encryptionkey/headset_redteam
 	name = "entertainment radio key"
-	channels = list("Redtag" = 1)
+	channels = list("Plasmatag R" = 1)
 
 /obj/item/device/encryptionkey/headset_yellowteam
 	name = "entertainment radio key"
-	channels = list("Yellowtag" = 1)
+	channels = list("Plasmatag Y" = 1)
 
 /obj/item/device/encryptionkey/headset_greenteam
 	name = "entertainment radio key"
-	channels = list("Greenteam" = 1)
+	channels = list("Plasmatag G" = 1)

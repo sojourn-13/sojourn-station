@@ -4,8 +4,9 @@
 #include "_Nadezhda_Colony_Underground.dmm"
 #include "_Nadezhda_Colony_Transition.dmm"
 #include "_Nadezhda_Colony_Surface.dmm"
-#include "_Nadezhda_Colony_labercamp.dmm"
+//#include "_Nadezhda_Colony_labercamp.dmm"
 #include "_Nadezhda_Solar_Area.dmm"
+#include "_Hunting_Lodge.dmm"
 #include "../encounters/deepforest/deepforest.dm"
 #include "../encounters/spacefortress/spacefortress.dm"
 #include "centcomm.dmm"
@@ -22,6 +23,7 @@
 	is_contact_level = TRUE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
+	generate_asteroid = TRUE
 	height = 1
 
 /obj/map_data/nadezda_u
@@ -31,7 +33,7 @@
 	is_contact_level = TRUE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	height = 2
+	height = 1
 
 /obj/map_data/nadezda_e
 	name = "Nadezhda Elevator and Stairs"
@@ -40,7 +42,7 @@
 	is_contact_level = TRUE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	height = 3
+	height = 1
 
 /obj/map_data/admin
 	name = "Admin Level"
@@ -66,3 +68,12 @@
 	is_sealed = TRUE
 	generate_asteroid = TRUE
 	height = 1
+
+/obj/map_data/hunting_lodge
+	name = "Hunting Lodge"
+	is_station_level = FALSE
+	is_player_level = TRUE
+	is_contact_level = FALSE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	height = 2

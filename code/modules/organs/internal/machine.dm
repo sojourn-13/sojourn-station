@@ -7,9 +7,10 @@
 	nature = MODIFICATION_SILICON
 	vital = TRUE
 	var/open
-	var/obj/item/weapon/cell/medium/cell = /obj/item/weapon/cell/medium/moebius/nuclear
+	var/obj/item/cell/medium/cell = /obj/item/cell/medium/moebius/nuclear
 	//at 0.8 completely depleted after 60ish minutes of constant walking or 130 minutes of standing still
 	var/servo_cost = 0.5 // this will probably require tweaking
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/organ/internal/cell/Initialize(mapload, ...)
 	. = ..()
@@ -52,17 +53,18 @@
 	var/cost = get_servo_cost()
 	if(world.time - owner.l_move_time < 15)
 		cost *= 2
+	/*
 	if(!use(cost))
 		if(!owner.lying && !owner.buckled)
 			to_chat(owner, SPAN_WARNING("You don't have enough energy to function!"))
 		owner.Paralyse(3)
-
+	*/ // Since atom cells don't recharge, this will keep triggering over and over, paralizing the user and knocking them over every minute or so.
 /obj/item/organ/internal/cell/emp_act(severity)
 	..()
 	if(cell)
 		cell.emp_act(severity)
 
-/obj/item/organ/internal/cell/attackby(obj/item/weapon/W, mob/user)
+/obj/item/organ/internal/cell/attackby(obj/item/W, mob/user)
 	if(QUALITY_SCREW_DRIVING in W.tool_qualities)
 		if(open)
 			open = FALSE
@@ -78,7 +80,7 @@
 				to_chat(user, SPAN_NOTICE("You remove \the [cell] from \the [src]."))
 				cell = null
 
-	if (istype(W, /obj/item/weapon/cell))
+	if (istype(W, /obj/item/cell))
 		if(open)
 			if(cell)
 				to_chat(user, SPAN_WARNING("There is a power cell already installed."))

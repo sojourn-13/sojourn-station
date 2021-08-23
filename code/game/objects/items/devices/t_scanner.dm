@@ -9,7 +9,7 @@
 /obj/item/device/t_scanner
 	name = "\improper T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
-	icon_state = "t-ray0"
+	icon_state = "t-ray"
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_SMALL
 	item_state = "electronic"
@@ -19,10 +19,11 @@
 
 	//Scan range can be changed, and the power costs scale up with it
 	var/scan_range = 1
+	var/icon_swap_to_old = TRUE
 
 	//TODO: Make devices have cell support as an inherent behaviour
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	var/obj/item/cell/cell = null
+	var/suitable_cell = /obj/item/cell/small
 	var/active_power_usage = 25 //Watts
 
 	var/turn_on_sound = 'sound/effects/Custom_flashlight.ogg'
@@ -51,6 +52,28 @@
 	var/datum/event_source //When listening for movement, this is the source we're listening to
 	var/mob/current_user //The last mob who interacted with us. We'll try to fetch the client from them
 
+/obj/item/device/t_scanner/verb/toggle_style()
+	set name = "Adjust Sprite"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default eris"] = TRUE
+	options["default sojourn"] = FALSE
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_swap_to_old = options[choice]
+		to_chat(M, "You adjusted your t-ray scanner's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/device/t_scanner/get_cell()
 	return cell
@@ -61,8 +84,24 @@
 		cell = null
 		update_icon()
 
+/obj/item/device/t_scanner/New()
+	..()
+	update_icon()
+
 /obj/item/device/t_scanner/update_icon()
-	icon_state = "t-ray[enabled]"
+	var/iconstring = initial(icon_state)
+
+	if (!icon_swap_to_old)
+		iconstring = "t-ray"
+	else
+		iconstring = "t-ray_alt"
+
+	if (enabled)
+		iconstring += "1"
+	else
+		iconstring += "0"
+
+	icon_state = iconstring
 
 /******************************************************
 	CORE FUNCTIONALITY: SCANNING AND DRAWING OVERLAYS

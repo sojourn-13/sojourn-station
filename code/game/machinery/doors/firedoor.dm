@@ -34,7 +34,7 @@
 
 	var/hatch_open = 0
 
-	power_channel = ENVIRON
+	power_channel = STATIC_ENVIRON
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 5
 
@@ -210,9 +210,9 @@
 					user.visible_message(SPAN_DANGER("[user] has removed the electronics from \the [src]."),
 										"You have removed the electronics from [src].")
 					if (stat & BROKEN)
-						new /obj/item/weapon/circuitboard/broken(src.loc)
+						new /obj/item/circuitboard/broken(src.loc)
 					else
-						new/obj/item/weapon/airalarm_electronics(src.loc)
+						new/obj/item/airalarm_electronics(src.loc)
 					var/obj/structure/firedoor_assembly/FA = new/obj/structure/firedoor_assembly(src.loc)
 					FA.anchored = 1
 					FA.density = 1

@@ -8,14 +8,17 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	faction = "hostile"
 	var/stance = HOSTILE_STANCE_IDLE	//Used to determine behavior
 	var/mob/living/target_mob
-	var/attack_same = 0
-	var/ranged = 0
-	var/rapid = 0
+
+	var/attack_same = FALSE
+
+	var/ranged = FALSE
+	var/rapid = FALSE
 	var/projectiletype
 	var/projectilesound
 	var/casingtype
-	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
+
 	var/list/friends = list()
+
 	var/break_stuff_probability = 100
 	var/ranged_ignores_vision
 	stop_automated_movement_when_pulled = 0
@@ -24,8 +27,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	a_intent = I_HURT
 	can_burrow = FALSE
 	hunger_enabled = 0//Until automated eating mechanics are enabled, disable hunger for hostile mobs
+
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles
 	var/atom/targets_from = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
+
 	var/vision_range = 9 //How big of an area to search for targets in, a vision of 9 attempts to find targets as soon as they walk into screen view
 	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
 	var/approaching_target = FALSE //We should dodge now
@@ -47,6 +52,8 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			var/mob/living/L = A
 			if(L.faction == src.faction && !attack_same)
 				continue
+			if(L.colony_friend && src.colony_friend)
+				continue
 			else if(L in friends)
 				continue
 			else
@@ -55,21 +62,21 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 					T = L
 					break
 
-		else if(istype(A, /obj/mecha)) // Our line of sight stuff was already done in ListTargets().
+		else if(istype(A, /obj/mecha) && !friendly_to_colony) // Our line of sight stuff was already done in ListTargets().
 			var/obj/mecha/M = A
 			if (M.occupant)
 				stance = HOSTILE_STANCE_ATTACK
 				T = M
 				break
 
-		if(istype(A, /obj/machinery/bot))
+		if(istype(A, /obj/machinery/bot) && !friendly_to_colony)
 			var/obj/machinery/bot/B = A
 			if (B.health > 0)
 				stance = HOSTILE_STANCE_ATTACK
 				T = B
 				break
 
-		if(istype(A, /obj/machinery/porta_turret))
+		if(istype(A, /obj/machinery/porta_turret) && !friendly_to_colony)
 			var/obj/machinery/porta_turret/P = A
 			if (P.health > 0)
 				stance = HOSTILE_STANCE_ATTACK
@@ -266,7 +273,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	A.launch(target, def_zone)
 
 /mob/living/simple_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
-	var /mob/living/simple_animal/hostile/shooter = src
+	var /mob/living/simple_animal/hostile/shooter = src //TODO: Make it work for alt click in perfs like rig code
+	if(ranged_cooldown >= world.time) //Modula for admins to set them at different things
+		to_chat(src, "You gun isnt ready to fire!.")
+		return
 	if(shooter.ranged ==1)
 		shooter.OpenFire(targetDD)
 
@@ -300,3 +310,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
 			if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/railing))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+
+/mob/living/simple_animal/hostile/verb/break_around()
+	set name = "Attack Surroundings "
+	set desc = "Lash out on the your surroundings | Forcefully attack your surroundings."
+	set category = "Mob verbs"
+
+	src.DestroySurroundings()

@@ -34,6 +34,20 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
+	price_tag = 950
+
+/obj/item/clothing/suit/space/void/SCAF/voidwolf
+	name = "REAVER-SCAF suit"
+	desc = "A bulky antique suit of refurbished infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. This one has a void wolf paint job with intimidating red colors."
+	icon_state = "scaf_wolf"
+	item_state = "scaf_wolf"
+	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
+
+/obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
+	name = "REAVER-SCAF helmet"
+	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet. This one has a void wolf paint job with intimidating red colors."
+	icon_state = "scaf_wolf"
+	item_state = "scaf_wolf"
 
 /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 	name = "blackshield SCAF helmet"
@@ -96,10 +110,10 @@
 
 /obj/item/clothing/suit/space/void/merc/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/merc/boxed
-	tank = /obj/item/weapon/tank/emergency_oxygen/double
+	tank = /obj/item/tank/emergency_oxygen/double
 
 /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	name = "xanorath voidsuit helmet"
@@ -230,7 +244,7 @@
 
 /obj/item/clothing/suit/space/void/ronin/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/ronin/boxed
-	tank = /obj/item/weapon/tank/emergency_oxygen/double
+	tank = /obj/item/tank/emergency_oxygen/double

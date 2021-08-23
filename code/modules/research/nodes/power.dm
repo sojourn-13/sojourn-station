@@ -53,11 +53,12 @@
 	required_tech_levels = list()
 	cost = 1000
 
-	unlocks_designs = list(/datum/design/research/circuit/smes_cell, /datum/design/research/item/part/smes_coil/weak)
+	unlocks_designs = list(	/datum/design/research/circuit/smes_cell,
+							/datum/design/research/item/part/smes_coil/weak)
 
 /datum/technology/energy_distribution
 	name = "Energy Distribution"
-	desc = "Breaker boxes, that give more comfortable control of powernets."
+	desc = "Breaker boxes and better robotic power saving, that give more comfortable control of powernets and system engery saving."
 	tech_type = RESEARCH_POWERSTORAGE
 
 	x = 0.5
@@ -68,7 +69,8 @@
 	required_tech_levels = list()
 	cost = 1000
 
-	unlocks_designs = list(/datum/design/research/circuit/breakerbox)
+	unlocks_designs = list(	/datum/design/research/circuit/breakerbox,
+							/datum/design/research/item/robot_upgrade/power_saver)
 
 /datum/technology/super_power
 	name = "Super Power Storing"
@@ -79,9 +81,7 @@
 	y = 0.7
 	icon = "hypercell"
 
-	required_technologies = list(
-								/datum/technology/advanced_power
-								)
+	required_technologies = list(/datum/technology/advanced_power)
 	required_tech_levels = list()
 	cost = 1200
 
@@ -152,7 +152,9 @@
 
 	required_technologies = list(/datum/technology/advanced_power_generation)
 	required_tech_levels = list()
-	unlocks_designs = list(/datum/design/research/circuit/miss, /datum/design/research/structure/solar)
+	unlocks_designs = list(/datum/design/research/circuit/miss,
+								 /datum/design/research/structure/solar,
+								 /datum/design/research/circuit/hydrogen_gen)
 
 	cost = 2000//5000
 
@@ -213,7 +215,7 @@
 	icon = "bluespacecell"
 
 	required_technologies = list(
-									/datum/technology/omega_power
+									/datum/technology/atom_small_power
 								)
 
 	required_tech_levels = list()

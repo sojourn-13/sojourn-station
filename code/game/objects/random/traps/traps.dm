@@ -5,10 +5,10 @@
 
 /obj/random/traps/item_to_spawn()
 	var/list/possible_traps = list(/obj/structure/wire_splicing = 1,
-	/obj/item/weapon/mine/armed = 0.15,
-	/obj/item/weapon/mine/improvised = 0.30,
-	/obj/item/weapon/beartrap/armed = 0.45,
-	/obj/item/weapon/beartrap/makeshift/armed = 0.8)
+	/obj/item/mine/armed = 0.15,
+	/obj/item/mine/improvised = 0.30,
+	/obj/item/beartrap/armed = 0.45,
+	/obj/item/beartrap/makeshift/armed = 0.8)
 
 	//Check that its possible to spawn the chosen trap at this location
 	while (possible_traps.len)
@@ -52,8 +52,20 @@
 	alpha = 128
 
 /obj/random/spider_trap/item_to_spawn()
-	return (/obj/item/weapon/spider_shadow_trap)
+	return (/obj/item/spider_shadow_trap)
 
 /obj/random/spider_trap/low_chance
+	icon_state = "trap-red-low"
+	spawn_nothing_percentage = 80
+
+/obj/random/spider_trap_burrowing
+	name = "burrow spider trap"
+	icon_state = "trap-red"
+	alpha = 128
+
+/obj/random/spider_trap_burrowing/item_to_spawn()
+	return (/obj/item/spider_shadow_trap/burrowing)
+
+/obj/random/spider_trap_burrowing/low_chance
 	icon_state = "trap-red-low"
 	spawn_nothing_percentage = 80

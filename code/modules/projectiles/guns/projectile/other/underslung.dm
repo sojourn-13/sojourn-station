@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/underslung
+/obj/item/gun/projectile/underslung
 	name = "underslung grenade launcher"
 	desc = "Not much more than a tube and a firing mechanism, this grenade launcher is designed to be fitted to a rifle."
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
@@ -11,5 +11,6 @@
 	twohanded = FALSE
 	caliber = CAL_GRENADE
 	handle_casings = EJECT_CASINGS
-/obj/item/weapon/gun/projectile/underslung/attack_self()
+
+/obj/item/gun/projectile/underslung/attack_self()
 	return

@@ -116,7 +116,7 @@
 #define COIN_IRON "Iron coin"
 #define COIN_PLASMA "Solid plasma coin"
 #define COIN_URANIUM "Uranium coin"
-#define COIN_PLATINUM "Platunum coin"
+#define COIN_PLATINUM "Platinum coin"
 
 #define SHARD_SHARD "shard"
 #define SHARD_SHRAPNEL "shrapnel"
@@ -180,8 +180,8 @@
 // Default name for announsment system
 #define ANNOUNSER_NAME "Nadezhda Colony System Announcer"
 
-
-#define LIST_OF_CONSONANT list("b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z", "á", "â", "ã", "ä", "æ", "ç", "é", "ê", "ë", "ì", "í", "ï", "ð", "ñ", "ò", "ô", "õ", "ö", "÷", "ø", "ù")
+#define LIST_OF_CONSONANT list("a", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z", "á", "â", "ã", "ä", "æ", "ç", "é", "ê", "ë", "ì", "í", "ï", "ð", "ñ", "ò", "ô", "õ", "ö", "÷", "ø", "ù")
+#define EN_ALPHABET list("a", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z")
 
 //Multi-z
 #define FALL_GIB_DAMAGE 999
@@ -206,6 +206,7 @@
 #define CRUCIFORM_LEMN /datum/core_module/rituals/cruciform/lemniscate
 #define CRUCIFORM_MONO /datum/core_module/rituals/cruciform/monomial
 #define CRUCIFORM_DIVI /datum/core_module/rituals/cruciform/divisor
+#define CRUCIFORM_FACT /datum/core_module/rituals/cruciform/factorial
 
 #define CRUCIFORM_OBEY /datum/core_module/cruciform/obey
 #define CRUCIFORM_PRIEST_CONVERT /datum/core_module/activatable/cruciform/priest_convert
@@ -320,3 +321,27 @@
 		}\
 		A.flags &= ~OVERLAY_QUEUED;\
 	}
+
+
+//Planet habitability class
+#define HABITABILITY_IDEAL  1
+#define HABITABILITY_OKAY  2
+#define HABITABILITY_BAD  3
+
+
+//Map template flags
+#define TEMPLATE_FLAG_ALLOW_DUPLICATES 1 // Lets multiple copies of the template to be spawned
+#define TEMPLATE_FLAG_SPAWN_GUARANTEED 2 // Makes it ignore away site budget and just spawn (only for away sites)
+#define TEMPLATE_FLAG_CLEAR_CONTENTS   4 // if it should destroy objects it spawns on top of
+#define TEMPLATE_FLAG_NO_RUINS         8 // if it should forbid ruins from spawning on top of it
+#define TEMPLATE_FLAG_NO_RADS          16// Removes all radiation from the template after spawning.
+
+
+//Flags for exoplanet ruin picking
+
+#define RUIN_HABITAT 	1		//long term habitat
+#define RUIN_HUMAN 		2		//human-made structure
+#define RUIN_ALIEN 		4		//artificial structure of an unknown origin
+#define RUIN_WRECK 		8		//crashed vessel
+#define RUIN_NATURAL	16		//naturally occuring structure
+#define RUIN_WATER 		32		//ruin depending on planet having water accessible

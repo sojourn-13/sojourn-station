@@ -29,7 +29,7 @@
 	unlocks_designs = list()
 
 /datum/technology/telecommunications
-	name = "Roots\' Telecommunications"
+	name = "Roots Telecommunications"
 	desc = "Parts for telecommunications. Hyperwave filtering method. Subspace ansible. Subspace transmition and analyzing method. Advanced bluespace broadcasting and receiving. Transmition system monitoring."
 	tech_type = RESEARCH_BLUESPACE
 
@@ -123,7 +123,8 @@
 	required_tech_levels = list()
 	cost = 1500
 
-	unlocks_designs = list(/datum/design/research/circuit/shield/hull)
+	unlocks_designs = list(	/datum/design/research/circuit/shield/hull,
+							/datum/design/research/circuit/telesci/inhibit)
 
 /datum/technology/teleportation
 	name = "Teleportation"
@@ -154,10 +155,12 @@
 
 	unlocks_designs = list(	/datum/design/research/circuit/telesci/console,
 							/datum/design/research/circuit/telesci/hub,
+							/datum/design/research/circuit/telesci/relay,
 							/datum/design/research/item/part/artificialbscrystal,
 							/datum/design/research/circuit/bssilk/hub,
 							/datum/design/research/circuit/bssilk/console,
-							/datum/design/research/item/bs_snare
+							/datum/design/research/item/bs_snare,
+							/datum/design/research/item/si_bluespace_scanner
 							)
 
 /datum/technology/bluespace_tools
@@ -196,7 +199,8 @@
 	unlocks_designs = list(	/datum/design/research/item/belt_holding,
 							/datum/design/research/item/pouch_holding,
 							/datum/design/research/item/trashbag_holding,
-							/datum/design/research/item/oresatchel_holding
+							/datum/design/research/item/oresatchel_holding,
+							/datum/design/research/item/robot_upgrade/satchel_of_holding_for_borgs
 						    )
 
 /*

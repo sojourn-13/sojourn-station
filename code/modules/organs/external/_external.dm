@@ -245,8 +245,6 @@
 		return
 	limb_efficiency = (limb_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)) / 3
 
-
-
 /obj/item/organ/external/proc/update_bionics_hud()
 	switch(organ_tag)
 		if(BP_L_ARM)
@@ -269,11 +267,11 @@
 		return
 	switch (severity)
 		if (1)
-			take_damage(10)
+			take_damage(20)
 		if (2)
-			take_damage(5)
+			take_damage(15)
 		if (3)
-			take_damage(1)
+			take_damage(5)
 
 /obj/item/organ/external/attack_self(var/mob/user)
 	if(!contents.len)
@@ -303,7 +301,9 @@
 				continue
 			to_chat(usr, SPAN_DANGER("There is \a [I] sticking out of it."))
 	return
-B
+
+#define MAX_MUSCLE_SPEED -0.5
+
 /obj/item/organ/external/proc/get_tally()
 	if(is_broken() && !(status & ORGAN_SPLINTED))
 		. += 3
@@ -325,7 +325,9 @@ B
 	if(status & ORGAN_SPLINTED)
 		. += 0.5
 
-	. += (-(limb_efficiency / 100 - 1) * 1.5)	//0 at 100 efficiency, -0.75 at 150, +0.75 at 50
+	var/muscle_eff = owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
+	muscle_eff = muscle_eff - (muscle_eff/(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag)/100)) //Need more nerves to control those new muscles
+	. += max(-(muscle_eff/ 100)/4, MAX_MUSCLE_SPEED)
 
 	. += tally
 
@@ -396,7 +398,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	// remove embedded objects and drop them on the floor
 	for(var/obj/implanted_object in implants)
-		if(!istype(implanted_object,/obj/item/weapon/implant))	// We don't want to remove REAL implants. Just shrapnel etc.
+		if(!istype(implanted_object, /obj/item/implant) && !istype(implanted_object, /obj/item/organ_module))	// We don't want to remove REAL implants. Just shrapnel etc. // Also prevent the removal of augmentation.
 			implanted_object.loc = get_turf(src)
 			implants -= implanted_object
 
@@ -555,13 +557,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 		handle_germ_effects()
 
 /obj/item/organ/external/proc/handle_germ_sync()
-	var/antibiotics = owner.reagents.get_reagent_amount("spaceacillin")
+	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 	for(var/datum/wound/W in wounds)
 		//Open wounds can become infected
 		if (owner.germ_level > W.germ_level && W.infection_check())
 			W.germ_level++
 
-	if (antibiotics < 5)
+	if (antibiotics <= 1) //Make Spaceacillin autoinjectors not useless after using 1 unit out of 5 they have.
 		for(var/datum/wound/W in wounds)
 			//Infected wounds raise the organ's germ level
 			if (W.germ_level > germ_level)
@@ -573,7 +575,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(germ_level < INFECTION_LEVEL_TWO)
 		return ..()
 
-	var/antibiotics = owner.reagents.get_reagent_amount("spaceacillin")
+	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 
 	if(germ_level >= INFECTION_LEVEL_TWO)
 		//spread the infection to internal organs
@@ -610,7 +612,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				if (parent.germ_level < INFECTION_LEVEL_ONE*2 || prob(30))
 					parent.germ_level++
 
-	if(germ_level >= INFECTION_LEVEL_THREE && antibiotics < 30)	//overdosing is necessary to stop severe infections
+	if(germ_level >= INFECTION_LEVEL_THREE && antibiotics <= 15)	// Overdosing shouldn't be how you solve such severe infections
 		if (!(status & ORGAN_DEAD))
 			status |= ORGAN_DEAD
 			to_chat(owner, SPAN_NOTICE("You can't feel your [name] anymore..."))
@@ -828,8 +830,9 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 // Checks if the limb should get fractured by now
 /obj/item/organ/external/proc/should_fracture()
-	var/bone_efficiency = owner.get_specific_organ_efficiency(OP_BONE, organ_tag)
-	return config.bones_can_break && !BP_IS_ROBOTIC(src) && (brute_dam > ((min_broken_damage * ORGAN_HEALTH_MULTIPLIER) * (bone_efficiency / 100)))
+	if(owner)
+		var/bone_efficiency = owner.get_specific_organ_efficiency(OP_BONE, organ_tag)
+		return config.bones_can_break && (brute_dam > ((min_broken_damage * ORGAN_HEALTH_MULTIPLIER) * (bone_efficiency / 100)))
 
 // Fracture the bone in the limb
 /obj/item/organ/external/proc/fracture()
@@ -884,7 +887,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		owner.visible_message("<span class='danger'>\The [W] sticks in the wound!</span>")
 	implants += W
 
-	if(!istype(W, /obj/item/weapon/material/shard/shrapnel))
+	if(!istype(W, /obj/item/material/shard/shrapnel))
 		embedded += W
 		owner.verbs += /mob/proc/yank_out_object
 
@@ -932,9 +935,6 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 		return english_list(descriptors)
 
-	. = ""
-	if((status & ORGAN_CUT_AWAY) && !is_stump() && !(parent && parent.status & ORGAN_CUT_AWAY))
-		. += "tear at [amputation_point] so severe that it hangs by a scrap of flesh"
 	//Normal organic organ damage
 	var/list/wound_descriptors = list()
 	if(open > 1)

@@ -6,10 +6,12 @@
 	minbodytemp = 0
 	maxbodytemp = 500
 	mob_size = MOB_SMALL
+	leather_amount = 0
+	bones_amount = 0
 
 	var/obj/item/device/radio/borg/radio = null
 	var/mob/living/silicon/ai/connected_ai = null
-	var/obj/item/weapon/cell/large/cell = null
+	var/obj/item/cell/large/cell = null
 	var/obj/machinery/camera/camera = null
 	var/obj/item/device/mmi/mmi = null
 	var/list/req_access = list(access_robotics) //Access needed to pop out the brain.
@@ -30,7 +32,7 @@
 	attacktext = "shocked"
 	melee_damage_lower = 1
 	melee_damage_upper = 3
-
+	colony_friend = TRUE
 	response_help  = "pets"
 	response_disarm = "shoos"
 	response_harm   = "stomps on"
@@ -104,14 +106,14 @@
 			to_chat(user, SPAN_WARNING("\The [src] is undamaged!"))
 		return
 
-	else if(istype(O, /obj/item/weapon/card/id)||istype(O, /obj/item/modular_computer/pda))
+	else if(istype(O, /obj/item/card/id)||istype(O, /obj/item/modular_computer/pda))
 		if (!mmi)
 			to_chat(user, SPAN_DANGER("There's no reason to swipe your ID - \the [src] has no brain to remove."))
 			return 0
 
-		var/obj/item/weapon/card/id/id_card
+		var/obj/item/card/id/id_card
 
-		if(istype(O, /obj/item/weapon/card/id))
+		if(istype(O, /obj/item/card/id))
 			id_card = O
 		else
 			id_card = O.GetIdCard()
@@ -149,7 +151,7 @@
 
 /mob/living/simple_animal/spiderbot/proc/explode() //When emagged.
 	src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
-	explosion(get_turf(loc), -1, -1, 3, 5)
+	explosion(get_turf(loc), 0, 0, 3, 5)
 	eject_brain()
 	death()
 
@@ -221,11 +223,11 @@
 		to_chat(usr, "\red You have nothing to drop!")
 		return 0
 
-	if(istype(held_item, /obj/item/weapon/grenade))
+	if(istype(held_item, /obj/item/grenade))
 		visible_message(SPAN_DANGER("\The [src] launches \the [held_item]!"), \
 			SPAN_DANGER("You launch \the [held_item]!"), \
 			"You hear a skittering noise and a thump!")
-		var/obj/item/weapon/grenade/G = held_item
+		var/obj/item/grenade/G = held_item
 		G.loc = src.loc
 		G.prime()
 		held_item = null

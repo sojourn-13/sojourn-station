@@ -15,13 +15,13 @@
 	var/recent_fail = 0
 
 /obj/item/device/scanner/mass_spectrometer/is_valid_scan_target(atom/O)
-	if(!usr.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
+	if(!usr.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 20)) //Takes 15 bio so 20 cog
 		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
 		return
 
 	if(!O.reagents || !O.reagents.total_volume)
 		return FALSE
-	return (O.is_open_container()) || istype(O, /obj/item/weapon/reagent_containers/syringe)
+	return (O.is_open_container()) || istype(O, /obj/item/reagent_containers/syringe)
 
 /obj/item/device/scanner/mass_spectrometer/scan(atom/A, mob/user)
 	if(A != src)

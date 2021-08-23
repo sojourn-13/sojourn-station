@@ -37,18 +37,24 @@
 	var/time = ""
 	var/source_terminal = ""
 
-/datum/transaction/New(amount = 0, target_name, purpose, source_terminal)
-	src.amount = amount
-	src.target_name = target_name
-	src.purpose = purpose
-	src.source_terminal = source_terminal
+/datum/transaction/New(_amount = 0, _target_name, _purpose, _source_terminal, _date = null, _time = null)
+	amount = _amount
+	target_name = _target_name
+	purpose = _purpose
+	source_terminal = _source_terminal
 
-	if(istype(source_terminal, /atom))
-		var/atom/terminal_atom = source_terminal
-		src.source_terminal = "[terminal_atom.name] at [get_area(terminal_atom)]"
+	if(istype(_source_terminal, /atom))
+		var/atom/terminal_atom = _source_terminal
+		source_terminal = "[terminal_atom.name] at [get_area(terminal_atom)]"
 
-	src.date = current_date_string
-	src.time = stationtime2text()
+	if(_date)
+		date = _date
+	else
+		date = current_date_string
+	if(_time)
+		time = _time
+	else
+		time = stationtime2text()
 
 /datum/transaction/proc/apply_to(var/datum/money_account/account)
 	if(!istype(account) || !account.is_valid())
@@ -68,14 +74,7 @@
 		src.time = stationtime2text()
 
 /datum/transaction/proc/Copy()
-	var/datum/transaction/T = new
-	T.target_name = src.target_name
-	T.purpose = src.purpose
-	T.amount = src.amount
-	T.date = src.date
-	T.time = src.time
-	T.source_terminal = src.source_terminal
-	return T
+	return new/datum/transaction(amount, target_name, purpose, source_terminal, date, time)
 
 
 /proc/create_account(new_owner_name = "Default user", starting_funds = 0, obj/machinery/account_database/source_db)
@@ -109,7 +108,7 @@
 		//create a sealed package containing the account details
 		var/obj/item/smallDelivery/P = new /obj/item/smallDelivery(source_db.loc)
 
-		var/obj/item/weapon/paper/R = new /obj/item/weapon/paper(P)
+		var/obj/item/paper/R = new /obj/item/paper(P)
 		P.wrapped = R
 		R.name = "Account information: [M.owner_name]"
 		R.info = "<b>Account details (confidential)</b><br><hr><br>"

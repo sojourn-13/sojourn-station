@@ -11,6 +11,7 @@
 	damage_absorption = list("brute"=0.5,"fire"=1.1,"bullet"=0.65,"energy"=0.9,"bomb"=1)
 	armor_level = MECHA_ARMOR_HEAVY
 	max_temperature = 30000
+	price_tag = 25000
 	infra_luminosity = 8
 	force = 40
 	var/defence = 0
@@ -18,6 +19,23 @@
 	wreckage = /obj/effect/decal/mecha_wreckage/durand
 	max_equip = 5
 	internal_damage_threshold = 30
+
+/obj/mecha/combat/durand/New()
+	..()
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/loaded(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded(src)
+	ME.attach(src)
+	return
+
+/obj/mecha/combat/durand/relaymove(mob/user,direction)
+	if(defence)
+		if(world.time - last_message > 20)
+			src.occupant_message("<font color='red'>Unable to move while in defence mode</font>")
+			last_message = world.time
+		return 0
+	. = ..()
+	return
 
 /obj/mecha/combat/durand/security
 	desc = "A heavy mech suit even older than the standard durand. This one has been repurposed for the security team but isn't in the best shape."
@@ -35,33 +53,13 @@
 		for(ME in equipment)
 			ME.detach(src)
 			qdel(ME)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
-	ME.attach(src)
-	return
-
-
-/obj/mecha/combat/durand/New()
-	..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	ME.attach(src)
 	return
-
-
-/obj/mecha/combat/durand/relaymove(mob/user,direction)
-	if(defence)
-		if(world.time - last_message > 20)
-			src.occupant_message("<font color='red'>Unable to move while in defence mode</font>")
-			last_message = world.time
-		return 0
-	. = ..()
-	return
-
 
 /obj/mecha/combat/durand/verb/defence_mode()
 	set category = "Exosuit Interface"

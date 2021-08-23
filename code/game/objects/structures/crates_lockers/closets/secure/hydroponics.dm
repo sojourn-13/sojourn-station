@@ -6,27 +6,31 @@
 
 /obj/structure/closet/secure_closet/personal/hydroponics/populate_contents()
 	if(prob(25))
-		new /obj/item/weapon/storage/backpack/botanist(src)
+		new /obj/item/storage/backpack/botanist(src)
 	else if(prob(25))
-		new /obj/item/weapon/storage/backpack/sport/botanist(src)
+		new /obj/item/storage/backpack/sport/botanist(src)
 	else
-		new /obj/item/weapon/storage/backpack/satchel/botanist(src)
+		new /obj/item/storage/backpack/satchel/botanist(src)
+
 	new /obj/item/clothing/suit/rank/botanist(src)
-	new /obj/item/weapon/storage/bag/produce(src)
+	new /obj/item/storage/bag/produce(src)
 	new /obj/item/clothing/under/rank/botanist(src)
 	new /obj/item/device/scanner/plant(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/clothing/mask/rank/botanist(src)
-	new /obj/item/weapon/tool/minihoe(src)
-	new /obj/item/weapon/tool/hatchet(src)
-	new /obj/item/weapon/tool/wirecutters(src)
-	new /obj/item/weapon/reagent_containers/spray/plantbgone(src)
+	new /obj/item/tool/minihoe(src)
+	new /obj/item/tool/hatchet(src)
+	new /obj/item/tool/wirecutters(src)
+	new /obj/item/reagent_containers/spray/plantbgone(src)
 	new /obj/item/clothing/gloves/botanic_leather(src)
+	new /obj/item/clothing/mask/gas/alternate(src)
+	new /obj/item/tank/air(src)
 
-/obj/structure/closet/secure_closet/personal/hydroponics/public
+/obj/structure/closet/secure_closet/personal/hydroponics/
 	name = "botanist's locker"
 	req_access = list(access_hydroponics)
 	access_occupy = list()
+	icon_state = "hydro"
 
 /obj/structure/closet/secure_closet/personal/agrolyte
 	name = "agrolyte's locker"
@@ -36,16 +40,16 @@
 
 /obj/structure/closet/secure_closet/personal/agrolyte/populate_contents()
 	new /obj/item/clothing/suit/rank/botanist(src)
-	new /obj/item/weapon/storage/belt/utility/neotheology(src)
-	new /obj/item/weapon/storage/bag/produce(src)
+	new /obj/item/storage/belt/utility/neotheology(src)
+	new /obj/item/storage/bag/produce(src)
 	new /obj/item/clothing/under/rank/botanist(src)
 	new /obj/item/device/scanner/plant(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/mask/rank/botanist(src)
-	new /obj/item/weapon/tool/minihoe(src)
-	new /obj/item/weapon/tool/hatchet(src)
-	new /obj/item/weapon/tool/wirecutters(src)
-	new /obj/item/weapon/reagent_containers/spray/plantbgone(src)
+	new /obj/item/tool/minihoe(src)
+	new /obj/item/tool/hatchet(src)
+	new /obj/item/tool/wirecutters(src)
+	new /obj/item/reagent_containers/spray/plantbgone(src)
 	new /obj/item/clothing/suit/armor/vest/botanist(src)
 	new /obj/item/clothing/head/helmet/botanist(src)
 	new /obj/item/clothing/gloves/botanic_leather(src)

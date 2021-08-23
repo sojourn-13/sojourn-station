@@ -4,7 +4,7 @@
 #define CYCLE_CASINGS 	2 //experimental: cycle casings, like a revolver. Also works for multibarrelled guns
 
 
-/obj/item/weapon/gun/projectile
+/obj/item/gun/projectile
 	name = "gun"
 	desc = "A gun that fires bullets."
 	icon = 'icons/obj/guns/projectile.dmi'
@@ -41,7 +41,7 @@
 	var/tac_reloads = TRUE	// Enables guns to eject mag and insert new magazine.
 	gun_tags = list(GUN_PROJECTILE)
 
-/obj/item/weapon/gun/projectile/loadAmmoBestGuess()
+/obj/item/gun/projectile/loadAmmoBestGuess()
 	var/obj/item/ammo_magazine/chosenMag = null
 
 	if(magazine_type)
@@ -75,18 +75,18 @@
 
 	return
 
-/obj/item/weapon/gun/projectile/Destroy()
+/obj/item/gun/projectile/Destroy()
 	QDEL_NULL(chambered)
 	QDEL_NULL(ammo_magazine)
 	return ..()
 
-/obj/item/weapon/gun/projectile/proc/cock_gun(mob/user)
+/obj/item/gun/projectile/proc/cock_gun(mob/user)
 	set waitfor = 0
 	if(cocked_sound)
 		sleep(3)
 		if(user && loc) playsound(src.loc, cocked_sound, 75, 1)
 
-/obj/item/weapon/gun/projectile/consume_next_projectile()
+/obj/item/gun/projectile/consume_next_projectile()
 	//get the next casing
 	if(loaded.len)
 		chambered = loaded[1] //load next casing.
@@ -101,17 +101,17 @@
 		return chambered.BB
 	return null
 
-/obj/item/weapon/gun/projectile/handle_post_fire()
+/obj/item/gun/projectile/handle_post_fire()
 	..()
 	if(chambered)
 		chambered.expend()
 		process_chambered()
 
-/obj/item/weapon/gun/projectile/handle_click_empty()
+/obj/item/gun/projectile/handle_click_empty()
 	..()
 	process_chambered()
 
-/obj/item/weapon/gun/projectile/proc/process_chambered()
+/obj/item/gun/projectile/proc/process_chambered()
 	if (!chambered) return
 
 	if(chambered.is_caseless)
@@ -157,7 +157,7 @@
 
 //Attempts to load A into src, depending on the type of thing being loaded and the load_method
 //Maybe this should be broken up into separate procs for each load method?
-/obj/item/weapon/gun/projectile/proc/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/proc/load_ammo(var/obj/item/A, mob/user)
 	if(istype(A, /obj/item/ammo_magazine))
 		var/obj/item/ammo_magazine/AM = A
 		if(!(load_method & AM.mag_type) || caliber != AM.caliber)
@@ -240,15 +240,21 @@
 
 		if(C.amount > 1)
 			C.amount -= 1
-			var/obj/item/ammo_casing/inserted_casing = new /obj/item/ammo_casing(src)
+			var/type = C.type
+			var/obj/item/ammo_casing/inserted_casing = new type
 			inserted_casing.desc = C.desc
 			inserted_casing.caliber = C.caliber
 			inserted_casing.projectile_type = C.projectile_type
 			inserted_casing.icon_state = C.icon_state
 			inserted_casing.spent_icon = C.spent_icon
+			inserted_casing.is_caseless = C.is_caseless
 			inserted_casing.maxamount = C.maxamount
-			if(ispath(inserted_casing.projectile_type) && C.BB)
+			inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
+			//This here makes ot so if were loading in pre-shot sells it dosnt magiclly give it a BB
+			if(ispath(inserted_casing.projectile_type) && inserted_casing.BB)
 				inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
+			else
+				inserted_casing.BB = null
 			C.update_icon()
 			inserted_casing.update_icon()
 			loaded.Insert(1, inserted_casing)
@@ -263,7 +269,7 @@
 	update_icon()
 
 //attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
-/obj/item/weapon/gun/projectile/proc/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/proc/unload_ammo(mob/user, var/allow_dump=1)
 	if(ammo_magazine)
 		user.put_in_hands(ammo_magazine)
 
@@ -294,29 +300,29 @@
 		to_chat(user, SPAN_WARNING("[src] is empty."))
 	update_icon()
 
-/obj/item/weapon/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
+/obj/item/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
 	.=..()
 	if (!.) //Parent returns true if attackby is handled
 		load_ammo(A, user)
 
-/obj/item/weapon/gun/projectile/attack_self(mob/user as mob)
+/obj/item/gun/projectile/attack_self(mob/user as mob)
 	if(firemodes.len > 1)
 		..()
 	else
 		unload_ammo(user)
 
-/obj/item/weapon/gun/projectile/attack_hand(mob/user as mob)
+/obj/item/gun/projectile/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)
 		unload_ammo(user, allow_dump=0)
 	else
 		return ..()
 
-/obj/item/weapon/gun/projectile/MouseDrop(over_object, src_location, over_location)
+/obj/item/gun/projectile/MouseDrop(over_object, src_location, over_location)
 	..()
 	if(src.loc == usr && istype(over_object, /obj/screen/inventory/hand))
 		unload_ammo(usr, allow_dump=0)
 
-/obj/item/weapon/gun/projectile/afterattack(atom/A, mob/living/user)
+/obj/item/gun/projectile/afterattack(atom/A, mob/living/user)
 	..()
 	if(auto_eject && ammo_magazine && ammo_magazine.stored_ammo && !ammo_magazine.stored_ammo.len)
 		ammo_magazine.forceMove(get_turf(src.loc))
@@ -330,14 +336,14 @@
 		ammo_magazine = null
 		update_icon() //make sure to do this after unsetting ammo_magazine
 
-/obj/item/weapon/gun/projectile/examine(mob/user)
+/obj/item/gun/projectile/examine(mob/user)
 	..(user)
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	to_chat(user, "Has [get_ammo()] round\s remaining.")
 	return
 
-/obj/item/weapon/gun/projectile/proc/get_ammo()
+/obj/item/gun/projectile/proc/get_ammo()
 	var/bullets = 0
 	if(loaded)
 		bullets += loaded.len
@@ -347,7 +353,7 @@
 		bullets += 1
 	return bullets
 
-/obj/item/weapon/gun/projectile/proc/get_max_ammo()
+/obj/item/gun/projectile/proc/get_max_ammo()
 	var/bullets = 0
 	if (load_method & MAGAZINE)
 		if(ammo_magazine)
@@ -358,7 +364,7 @@
 
 /* Unneeded -- so far.
 //in case the weapon has firemodes and can't unload using attack_hand()
-/obj/item/weapon/gun/projectile/verb/unload_gun()
+/obj/item/gun/projectile/verb/unload_gun()
 	set name = "Unload Ammo"
 	set category = "Object"
 	set src in usr
@@ -368,7 +374,7 @@
 	unload_ammo(usr)
 */
 
-/obj/item/weapon/gun/projectile/ui_data(mob/user)
+/obj/item/gun/projectile/ui_data(mob/user)
 	var/list/data = ..()
 	data["caliber"] = caliber
 	data["current_ammo"] = get_ammo()
@@ -376,19 +382,19 @@
 
 	return data
 
-/obj/item/weapon/gun/projectile/refresh_upgrades()
+/obj/item/gun/projectile/refresh_upgrades()
 	max_shells = initial(max_shells)
 	..()
 
-/obj/item/weapon/gun/projectile/pickup(mob/user)
+/obj/item/gun/projectile/pickup(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/smg_cock.ogg',20,4)
 
-/obj/item/weapon/gun/projectile/dropped(mob/user)
+/obj/item/gun/projectile/dropped(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/lmg_magin.ogg',20,4)
 
-/obj/item/weapon/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
+/obj/item/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
 	if(QUALITY_SAWING in A.tool_qualities)
 		to_chat(user, SPAN_NOTICE("You begin to saw off the stock and barrel of \the [src]."))
 		if(saw_off == FALSE)

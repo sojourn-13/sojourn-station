@@ -24,10 +24,12 @@
 	siemens_coefficient = 0.7
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 100
+	tool_qualities = list(QUALITY_ARMOR = 100)
+	max_upgrades = 1
 
 //Blackshield helmets
 /obj/item/clothing/head/helmet/ballistic
-	name = "helmet"
+	name = "ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel."
 	icon_state = "helmet_mil"
 	armor = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
@@ -39,13 +41,13 @@
 	icon_state = "helmet_mil_alt"
 
 /obj/item/clothing/head/helmet/ballistic/green
-	name = "helmet"
+	name = "green ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
 			Some folks are born to kill."
 	icon_state = "helmet_green"
 
 /obj/item/clothing/head/helmet/ballistic/tan
-	name = "helmet"
+	name = "tan ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
 			Smells like sweat."
 	icon_state = "helmet_tan"
@@ -61,6 +63,31 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/botanist/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["botanist default"] = "botanist"
+	options["cosine men yoroi lens"] = "cosine_men_yoroi"
+	options["cosine men yoroi lensless"] = "cosine_men_yoroi_switched"
+	options["cosine men yoroi round lens"] = "cosine_men_yoroi_weeaboomode"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/acolyte
 	name = "vector hood"
 	desc = "Even the most devout deserve head protection."
@@ -71,6 +98,30 @@
 	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+
+/obj/item/clothing/head/helmet/acolyte/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["vector default"] = "acolyte"
+	options["tangent ridge helmet"] = "tangent_ridge_helmet_switched"
+	options["tangent ridge helmet open"] = "tangent_ridge_helmet"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
@@ -107,9 +158,77 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/custodian/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["default custodian helmet"] = "custodian"
+	options["sine cornette"] = "sine_cornette"
+	options["sine cornette switched"] = "sine_cornette_switched"
+	options["sine cornette switched alternative"] = "sine_cornette_switched_alternative"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/helmet/huntmaster_helmet
+	name = "Huntmaster Nomad Helm"
+	desc = "Made from the hide of a render patriarch, this visored helmet made of bone and leather with glass lenses to keep blood and grit from the eyes. \
+			There is a small chimera etched into the bone on the rear of the helmet."
+	item_state = "huntmaster_helmet"
+	icon_state = "huntmaster_helmet"
+	armor = list(
+		melee = 60,
+		bullet = 20,
+		energy = 15,
+		bomb = 15,
+		bio = 15,
+		rad = 0
+	)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+
+/obj/item/clothing/head/helmet/huntmaster_helmet/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["huntmaster horned nomad helm"] = "huntmaster_helmet"
+	options["huntmaster horned helm long snout"] = "huntmaster_helmet_alt"
+	options["huntmaster hornless nomad helm"] = "huntmaster_helmet_hornless"
+	options["huntmaster hornless helm long snout"] = "huntmaster_helmet_hornless_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/hunter
 	name = "hunter's hood"
 	desc = "A visored helmet made of bone and leather with glass lenses to keep blood and grit from the eyes."
+	item_state = "hunter_helmet"
 	icon_state = "hunter_helmet"
 	armor = list(
 		melee = 60,
@@ -122,6 +241,36 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/hunter/stalker
+	item_state = "hunter_helmet_stalker"
+	icon_state = "hunter_helmet_stalker"
+
+/obj/item/clothing/head/helmet/hunter/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["combat helmet"] = "hunter_helmet"
+	options["stalker hood"] = "hunter_helmet_stalker"
+	options["visored helmet"] = "hunter_helmet_visor"
+	options["nomad hooded-helm"] = "hunter_helmet_nomad"
+	options["nomad helm long snout"] = "hunter_helmet_nomad_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/generic_full
 	name = "full helmet"
 	desc = "A generic non-branded full cover helmet with decent all round protection."
@@ -131,19 +280,20 @@
 	body_parts_covered = HEAD|FACE|EARS
 
 /obj/item/clothing/head/helmet/technomancersuit
-	name = "'Mark V' enviromental protection helmet"
+	name = "'Mark V' environmental protection helmet"
 	desc = "You feel like this helmet is rare, for some reason."
 	icon_state = "technohelmet"
-	armor = list(melee = 40, bullet = 40, energy = 40, bomb = 60, bio = 100, rad = 100) //Cant have armor mods
+	armor = list(melee = 45, bullet = 45, energy = 40, bomb = 60, bio = 100, rad = 100) //Cant have armor mods
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	flash_protection = FLASH_PROTECTION_MAJOR
 	action_button_name = "Toggle Headlamp"
 	light_overlay = "technohelmet_light"
 	brightness_on = 4
+	max_upgrades = 2
 
 /obj/item/clothing/head/helmet/soteriasuit
-	name = "'Mark II' enviromental protection helmet"
+	name = "'Mark II' environmental protection helmet"
 	desc = "You feel like this helmet is cheap, for some reason."
 	icon_state = "armor_engineering"
 	armor = list(melee = 15, bullet = 15, energy = 25, bomb = 35, bio = 50, rad = 50)
@@ -151,6 +301,7 @@
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_STEEL = 20)
 	flash_protection = FLASH_PROTECTION_MODERATE
+	max_upgrades = 2
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
@@ -163,6 +314,34 @@
 	siemens_coefficient = 0.5
 	price_tag = 150
 
+/obj/item/clothing/head/armor/helmet/tanker
+	name = "black tanker helmet"
+	desc = "Protects the head from damage while you are in a mech or joy riding the cargo trolley."
+	icon_state = "tanker_helmet"
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEEARS|BLOCKHAIR
+	siemens_coefficient = 1
+	armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/head/armor/helmet/tanker/green
+	name = "green tanker helmet"
+	icon_state = "tanker_helmet_green"
+
+/obj/item/clothing/head/armor/helmet/tanker/brown
+	name = "brown tanker helmet"
+	icon_state = "tanker_helmet_brown"
+
+/obj/item/clothing/head/armor/helmet/tanker/gray
+	name = "gray tanker helmet"
+	icon_state = "tanker_helmet_gray"
+
 /obj/item/clothing/head/helmet/laserproof
 	name = "ablative helmet"
 	desc = "A helmet that excels in protecting the wearer against energy projectiles."
@@ -170,6 +349,18 @@
 	armor = list(melee = 30, bullet = 30, energy = 75, bomb = 50, bio = 10, rad = 0)
 	flags_inv = HIDEEARS|HIDEEYES
 	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0.5
+	price_tag = 150
+
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security
+	name = "outdated ablative helmet"
+	desc = "A \"Iron Lock Security\" helmet that excels in protecting the wearer against energy projectiles this even after all these years still is the base of ablative helmet design. Produced by Greyson Positronic"
+	icon_state = "ablative"
+	armor = list(melee = 20, bullet = 20, energy = 70, bomb = 50, bio = 10, rad = 0)
+	flags_inv = HIDEEARS|HIDEEYES
+	cold_protection = HEAD
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_PLATINUM = 2) //cheaper
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.5
 	price_tag = 150
@@ -193,6 +384,7 @@
 		rad = 0
 	)
 	price_tag = 75
+	max_upgrades = 2
 
 /obj/item/clothing/head/helmet/handmade/greathelm
 	name = "bucket-helm"
@@ -203,6 +395,20 @@
 	body_parts_covered = HEAD|FACE|EARS|EYES
 	siemens_coefficient = 0.6
 	price_tag = 85
+
+/obj/item/clothing/head/armor/helmet/penance
+	name = "penance helmet"
+	desc = "A primitive helmet with a chainmailed coif. These were quickly made for trench conditions as logistical supply lines ran low on proper ballistic helmets, issued to consripts, thiefs, and cowards alike. Even after they were replaced, thousands of these shitty iron caps can be found as macabre military surplus. For some reason, you've decided to wear this ghastly thing."
+	icon_state = "helmet_kriosanpenace"
+	flags_inv = BLOCKHAIR
+	armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 0,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)
 
 /obj/item/clothing/head/helmet/thunderdome
 	name = "\improper Thunderdome helmet"
@@ -231,31 +437,27 @@
 // toggleable face guard
 /obj/item/clothing/head/helmet/faceshield
 	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
-	var/list/armor_up = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	var/list/armor_down = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-
-	var/tint_down = TINT_NONE
-	flags_inv = HIDEEARS
-	var/flags_inv_down = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
-	body_parts_covered = HEAD|EARS
-	var/body_parts_covered_down = HEAD|EARS|EYES|FACE
-	flash_protection = FLASH_PROTECTION_NONE
-	var/flash_protection_down = FLASH_PROTECTION_MAJOR
+	var/tint_up = TINT_NONE
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
+	var/flags_inv_up = HIDEEARS
+	body_parts_covered = HEAD|EARS|EYES|FACE
+	var/body_parts_covered_up = HEAD|EARS
+	flash_protection = FLASH_PROTECTION_MAJOR
+	var/flash_protection_up = FLASH_PROTECTION_NONE
 	action_button_name = "Flip Face Shield"
+	tool_qualities = list()
+	max_upgrades = 0
 	var/up = FALSE
+
 
 /obj/item/clothing/head/helmet/faceshield/riot
 	name = "riot helmet"
 	desc = "It's a helmet specifically designed to protect against close range attacks."
 	icon_state = "riot"
 	armor_up = list(melee = 35, bullet = 25, energy = 25, bomb = 20, bio = 0, rad = 0)
-	armor_down = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
-
-/obj/item/clothing/head/helmet/faceshield/Initialize()
-	. = ..()
-	set_is_up(up)
 
 /obj/item/clothing/head/helmet/faceshield/attack_self()
 	toggle()
@@ -263,21 +465,26 @@
 /obj/item/clothing/head/helmet/faceshield/update_icon()
 	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)
 
-//I wanted to name it set_up() but some how I thought that would be misleading
-/obj/item/clothing/head/helmet/faceshield/proc/set_is_up(is_up)
-	up = is_up
+/obj/item/clothing/head/helmet/faceshield/refresh_upgrades()
+	. = ..()
 	if(up)
 		armor = getArmor(arglist(armor_up))
+		flash_protection = flash_protection_up
+		tint = tint_up
+		flags_inv = flags_inv_up
+		body_parts_covered = body_parts_covered_up
+	else
 		flash_protection = initial(flash_protection)
 		tint = initial(tint)
 		flags_inv = initial(flags_inv)
 		body_parts_covered = initial(body_parts_covered)
-	else
-		armor = getArmor(arglist(armor_down))
-		flash_protection = flash_protection_down
-		tint = tint_down
-		flags_inv = flags_inv_down
-		body_parts_covered = body_parts_covered_down
+
+//I wanted to name it set_up() but some how I thought that would be misleading
+/obj/item/clothing/head/helmet/faceshield/proc/set_is_up(is_up)
+	if(up == is_up) return
+	up = is_up
+
+	refresh_upgrades()
 
 	update_icon()
 	update_wear_icon()	//update our mob overlays
@@ -302,7 +509,7 @@
 	desc = "It's a helmet specifically designed for general police work. Comes with a visor face cover and extra padding for dealing with criminal scum in melee."
 	icon_state = "helmet_visor"
 	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	armor_down = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
 
@@ -416,7 +623,7 @@
 	) //Low protection since it gives night vision with no battery.
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	flash_protection = FLASH_PROTECTION_MAJOR
-	action_button_name = "Toggle Thermo-Nightvision Hud"
+	action_button_name = "Toggle Thermal Night-Vision HUD"
 	var/obj/item/clothing/glasses/hud/security/jensenshades/hud
 	price_tag = 2000
 
@@ -431,7 +638,7 @@
 	toggle()
 
 /obj/item/clothing/head/helmet/night_vision_helm/verb/toggle()
-	set name = "Toggle Thermo-Nightvision Hud"
+	set name = "Toggle Thermal Night-Vision HUD"
 	set desc = "Lets you see in the dark and look tacticool."
 	set category = "Object"
 	var/mob/user = loc
@@ -441,13 +648,13 @@
 		return
 	if(hud in src)
 		if(user.equip_to_slot_if_possible(hud, slot_glasses))
-			to_chat(user, "You enable the thermo-nightvision hud on [src].")
+			to_chat(user, "You enable the thermal night-vision HUD on [src].")
 			update_icon()
 	else
 		if(ismob(hud.loc))
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			to_chat(user, "You disable the thermo-nightvision hud on [src].")
+			to_chat(user, "You disable the thermal night-vision HUD on [src].")
 		hud.forceMove(src)
 		update_icon()
 	usr.update_action_buttons()
@@ -458,7 +665,7 @@
 		if(ismob(hud.loc))
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			to_chat(hud_loc, "[hud] automaticly retract in [src].")
+			to_chat(hud_loc, "[hud] automatically retract in [src].")
 		hud.forceMove(src)
 		update_icon()
 
@@ -501,9 +708,45 @@
 	desc = "\"I do not know who I am, I don\'t know why I\'m here. All I know is that I must kill.\""
 	icon_state = "maska"
 	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
+	var/icon_swap_to_old = TRUE
+
+/obj/item/clothing/head/helmet/faceshield/altyn/maska/update_icon() //needed for fancy new icon
+	var/iconstring = initial(icon_state)
+	if (!icon_swap_to_old)
+		iconstring = "maska"
+	else
+		iconstring = "maska_killa"
+
+	if (up)
+		iconstring += "_up"
+
+	icon_state = iconstring
+
+/obj/item/clothing/head/helmet/faceshield/altyn/maska/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["maska"] = "TRUE"
+	options["maska killa"] = "FALSE"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_swap_to_old = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/visor/cyberpunkgoggle
-	name = "\improper Type-34C Semi-Enclosed Headwear"
+	name = "\improper Type-34C Semi-Enclosed Head Wear"
 	desc = "Civilian model of a popular helmet used by certain law enforcement agencies. It does not have any armor plating, but has a neo-laminated fabric lining."
 	icon_state = "cyberpunkgoggle"
 	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR

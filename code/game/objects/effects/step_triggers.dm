@@ -213,6 +213,71 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "hut_to_gulag_2_B"
 	id_target = "hut_to_gulag_1_B"
 
+//Vault Bunker
+/obj/effect/step_trigger/vault_bunker_1A
+	id = "vault_bunker_1A"
+	id_target = "vault_bunker_2A"
+
+/obj/effect/step_trigger/vault_bunker_2A
+	id = "vault_bunker_2A"
+	id_target = "vault_bunker_1A"
+
+/obj/effect/step_trigger/vault_bunker_1B
+	id = "vault_bunker_1B"
+	id_target = "vault_bunker_2B"
+
+/obj/effect/step_trigger/vault_bunker_2B
+	id = "vault_bunker_2B"
+	id_target = "vault_bunker_1B"
+
+/obj/effect/step_trigger/vault_bunker_1C
+	id = "vault_bunker_1C"
+	id_target = "vault_bunker_2C"
+
+/obj/effect/step_trigger/vault_bunker_2C
+	id = "vault_bunker_2C"
+	id_target = "vault_bunker_1C"
+
+/obj/effect/step_trigger/vault_bunker_1D
+	id = "vault_bunker_1D"
+	id_target = "vault_bunker_2D"
+
+/obj/effect/step_trigger/vault_bunker_2D
+	id = "vault_bunker_2D"
+	id_target = "vault_bunker_1D"
+
+/obj/effect/step_trigger/vault_bunker_1E
+	id = "vault_bunker_1E"
+	id_target = "vault_bunker_2E"
+
+/obj/effect/step_trigger/vault_bunker_2E
+	id = "vault_bunker_2E"
+	id_target = "vault_bunker_1E"
+
+/obj/effect/step_trigger/vault_bunker_1F
+	id = "vault_bunker_1F"
+	id_target = "vault_bunker_2F"
+
+/obj/effect/step_trigger/vault_bunker_2F
+	id = "vault_bunker_2F"
+	id_target = "vault_bunker_1F"
+
+/obj/effect/step_trigger/vault_bunker_1G
+	id = "vault_bunker_1G"
+	id_target = "vault_bunker_2G"
+
+/obj/effect/step_trigger/vault_bunker_2G
+	id = "vault_bunker_2G"
+	id_target = "vault_bunker_1G"
+
+/obj/effect/step_trigger/vault_bunker_1H
+	id = "vault_bunker_1H"
+	id_target = "vault_bunker_2H"
+
+/obj/effect/step_trigger/vault_bunker_2H
+	id = "vault_bunker_2H"
+	id_target = "vault_bunker_1H"
+
 //Monster cave to more beast caves
 /obj/effect/step_trigger/monster_to_beast_1_A
 	id = "monster_to_beast_1_A"
@@ -248,6 +313,47 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "prepper_to_vbunker_2_A"
 	id_target = "prepper_to_vbunker_1_A"
 
+/obj/effect/step_trigger/prepper_to_vbunker_3_A
+	id = "prepper_to_vbunker_3_A"
+	id_target = "prepper_to_vbunker_4_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_4_A
+	id = "prepper_to_vbunker_4_A"
+	id_target = "prepper_to_vbunker_3_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_5_A
+	id = "prepper_to_vbunker_5_A"
+	id_target = "prepper_to_vbunker_6_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_6_A
+	id = "prepper_to_vbunker_6_A"
+	id_target = "prepper_to_vbunker_5_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_7_A
+	id = "prepper_to_vbunker_7_A"
+	id_target = "prepper_to_vbunker_8_A"
+
+/obj/effect/step_trigger/prepper_to_vbunker_8_A
+	id = "prepper_to_vbunker_8_A"
+	id_target = "prepper_to_vbunker_7_A"
+
+//Surface to lower colony disposal transition teleporters.
+/obj/effect/step_trigger/disposal_transition_1_A
+	id = "disposal_transition_1_A"
+	id_target = "disposal_transition_2_A"
+
+/obj/effect/step_trigger/disposal_transition_2_A
+	id = "disposal_transition_2_A"
+	id_target = "disposal_transition_1_A"
+
+/obj/effect/step_trigger/disposal_transition_1_B
+	id = "disposal_transition_1_B"
+	id_target = "disposal_transition_2_B"
+
+/obj/effect/step_trigger/disposal_transition_2_B
+	id = "disposal_transition_2_B"
+	id_target = "disposal_transition_1_B"
+
 //Ironhead compound to abandoned fortress
 /obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A
 	id = "ironcompound_to_abandonedfortress_1_A"
@@ -257,7 +363,7 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "ironcompound_to_abandonedfortress_2_A"
 	id_target = "ironcompound_to_abandonedfortress_1_A"
 
-//Swamp caves to river forest
+//Swamp caves to river forest (redirected from deep forest to river forest)
 /obj/effect/step_trigger/swampcaves_to_riverforest_1_A
 	id = "swampcaves_to_riverforest_1_A"
 	id_target = "swampcaves_to_riverforest_2_A"
@@ -273,3 +379,20 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /obj/effect/step_trigger/swampcaves_to_riverforest_2_B
 	id = "swampcaves_to_riverforest_2_B"
 	id_target = "swampcaves_to_riverforest_1_B"
+
+//River forest to hunting lodge
+/obj/effect/step_trigger/riverforest_to_huntinglodge_1_A
+	id = "riverforest_to_huntinglodge_1_A"
+	id_target = "riverforest_to_huntinglodge_2_A"
+
+/obj/effect/step_trigger/riverforest_to_huntinglodge_2_A
+	id = "riverforest_to_huntinglodge_2_A"
+	id_target = "riverforest_to_huntinglodge_1_A"
+
+/obj/effect/step_trigger/riverforest_to_huntinglodge_1_B
+	id = "riverforest_to_huntinglodge_1_B"
+	id_target = "riverforest_to_huntinglodge_2_B"
+
+/obj/effect/step_trigger/riverforest_to_huntinglodge_2_B
+	id = "riverforest_to_huntinglodge_2_B"
+	id_target = "riverforest_to_huntinglodge_1_B"

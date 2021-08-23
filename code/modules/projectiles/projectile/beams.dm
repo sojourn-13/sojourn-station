@@ -54,6 +54,10 @@
 	damage_types = list(BURN = 35) //Normal slugs deal 45
 	armor_penetration = 10
 
+/obj/item/projectile/beam/shotgun/strong
+	damage_types = list(BURN = 54) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
+	armor_penetration = 10
+
 /obj/item/projectile/beam/practice
 	name = "laser"
 	icon_state = "laser"
@@ -115,9 +119,9 @@
 	icon_state = "xray"
 	damage_types = list(BURN = 50)
 	armor_penetration = 40
-	stun = 3
-	weaken = 3
-	stutter = 3
+	//stun = 3
+	//weaken = 3
+	//stutter = 3
 
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
@@ -134,3 +138,63 @@
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
+
+//book "lasers"
+/obj/item/projectile/beam/sniper/judgement
+	name = "lighting"
+	icon_state = "stun"
+	agony = 5
+	damage_types = list(BURN = 10)
+	armor_penetration = 0
+
+
+	muzzle_type = /obj/effect/projectile/stun/muzzle
+	tracer_type = /obj/effect/projectile/stun/tracer
+	impact_type = /obj/effect/projectile/stun/impact
+
+/obj/item/projectile/beam/sniper/sin_within
+	name = "sin"
+	icon_state = "xray"
+	damage_types = list(TOX = 10)
+	armor_penetration = 0
+
+	muzzle_type = /obj/effect/projectile/xray/muzzle
+	tracer_type = /obj/effect/projectile/xray/tracer
+	impact_type = /obj/effect/projectile/xray/impact
+
+/obj/item/projectile/beam/sniper/healing
+	name = "grace"
+	icon_state = "xray"
+	damage_types = list(TOX = 0)//Shouldnt do anything but just in case its toxin
+	armor_penetration = 0
+	stun = 0
+	weaken = 0
+
+	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
+	tracer_type = /obj/effect/projectile/laser_blue/tracer
+	impact_type = /obj/effect/projectile/laser_blue/impact
+
+/obj/item/projectile/beam/sniper/healing/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjustOxyLoss(-10)
+		L.adjustToxLoss(-5)
+		L.adjustBruteLoss(-5)
+		L.adjustFireLoss(-5)
+
+/obj/item/projectile/beam/tesla
+	name = "lightning"
+	damage_types = list(BURN = 30)
+	armor_penetration = 10
+	hitscan = TRUE
+
+	muzzle_type = /obj/effect/projectile/tesla/muzzle
+	tracer_type = /obj/effect/projectile/tesla/tracer
+	impact_type = /obj/effect/projectile/tesla/impact
+
+/obj/item/projectile/beam/tesla/shotgun
+	kill_count = 5 // short range
+
+/obj/item/projectile/beam/tesla/shotgun/strong
+	damage_types = list(BURN = 45) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage

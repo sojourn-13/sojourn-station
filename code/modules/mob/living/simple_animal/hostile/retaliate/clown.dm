@@ -35,9 +35,11 @@
 	heat_damage_per_tick = 15	//amount of damage applied if animal's body temperature is higher than maxbodytemp
 	cold_damage_per_tick = 10	//same as heat_damage_per_tick, only if the bodytemperature it's lower than minbodytemp
 	unsuitable_atoms_damage = 10
+	leather_amount = 0
+	bones_amount = 0
 
 	var/banana_time = 0 // If there's no time set it won't spawn.
-	var/banana_type = /obj/item/weapon/bananapeel
+	var/banana_type = /obj/item/bananapeel
 	var/attack_reagent
 
 
@@ -60,7 +62,7 @@
 	..()
 	visible_message("<b>[src]</b> explodes in a shower of banana guts!")
 	new /obj/effect/gibspawner/clown(src.loc)
-	new /obj/item/weapon/bananapeel(src.loc)
+	new /obj/item/bananapeel(src.loc)
 	qdel(src)
 	return
 
@@ -111,7 +113,7 @@
 	health = 250
 	speed = -10
 	banana_time = 40
-	banana_type = /obj/item/weapon/reagent_containers/food/snacks/pie
+	banana_type = /obj/item/reagent_containers/food/snacks/pie
 
 /mob/living/simple_animal/hostile/retaliate/clown/honkling
 	name = "Honkling"
@@ -297,7 +299,7 @@
 	emote_see = list("jiggles.", "wobbles.")
 	maxHealth = 400
 	health = 400
-	mob_size = MOB_SIZE_LARGE
+	mob_size = MOB_LARGE
 	speed = 20
 	attacktext = "bounces off of"
 	attack_reagent = "mindbreaker"

@@ -313,6 +313,13 @@
 			return current.volume
 	return 0
 
+/datum/reagents/proc/get_reagent_by_type(var/type)
+	var/amount = 0
+	for(var/datum/reagent/current in reagent_list)
+		if(istype(current, type))
+			amount += current.volume
+	return amount
+
 /datum/reagents/proc/get_data(var/id)
 	for(var/datum/reagent/current in reagent_list)
 		if(current.id == id)
@@ -382,6 +389,7 @@
 
 	else if(istype(target, /atom))
 		var/atom/A = target
+		touch(A)
 		if(ismob(target))
 			return splash_mob(target, amount, multiplier, copy)
 		if(isturf(target))

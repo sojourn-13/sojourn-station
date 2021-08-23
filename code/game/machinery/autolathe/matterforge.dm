@@ -5,7 +5,7 @@
 
 /obj/machinery/matter_nanoforge
 	name = "Matter NanoForge"
-	desc = "It consumes items and produces compressed matter."
+	desc = "It consumes items and produces compressed matter. Objects produced by it are made up of compressed matter that can not be broken back down for their material value."
 	icon = 'icons/obj/machines/matterforge.dmi'
 	icon_state = "techprint"
 	density = TRUE
@@ -13,7 +13,7 @@
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
 
-	circuit = /obj/item/weapon/circuitboard/matter_nanoforge
+	circuit = /obj/item/circuitboard/matter_nanoforge
 
 	var/list/stored_material = list()
 	var/obj/power_source
@@ -33,7 +33,7 @@
 	var/queue_max = 8
 
 	var/list/disk_list = list(
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforage
+	/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
 	)
 	var/list/design_list = list()
 	var/speed = 2
@@ -62,7 +62,7 @@
 
 /obj/machinery/matter_nanoforge/proc/find_files_by_disk(typepath)
 	var/list/files = list()
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/design/c = new typepath
+	var/obj/item/computer_hardware/hard_drive/portable/design/c = new typepath
 	for(var/f in c.designs)
 		var/datum/design/design_object = new f
 		design_object.AssembleDesignInfo()
@@ -177,6 +177,8 @@
 	if(..())
 		return TRUE
 	matter_assoc_list()
+	if(!check_user(user))
+		return
 	user.set_machine(src)
 	if(!design_list?.len)
 		get_designs()
@@ -293,6 +295,7 @@
 
 /obj/machinery/matter_nanoforge/proc/eat(mob/living/user, obj/item/eating)
 	var/used_sheets
+
 	if(!eating && istype(user))
 		eating = user.get_active_hand()
 	if(!istype(eating))
@@ -320,6 +323,10 @@
 					total_material_gained[material] = 0
 
 				var/total_material = _matter[material]
+
+				if(istype(O, /obj/item/stack/material/cyborg))
+					return //Prevents borgs throwing their stuff into it
+
 				if(istype(O, /obj/item/stack))
 					var/obj/item/stack/material/stack = O
 					total_material *= stack.get_amount()
@@ -470,7 +477,7 @@
 
 	//And if there's any remainder, we eject that as a shard
 	if (remainder)
-		new /obj/item/weapon/material/shard(drop_location(), MATERIAL_COMPRESSED_MATTER, _amount = remainder)
+		new /obj/item/material/shard(drop_location(), MATERIAL_COMPRESSED_MATTER, _amount = remainder)
 
 	//The stored material gets the amount (whole+remainder) subtracted
 	stored_material[MATERIAL_COMPRESSED_MATTER] -= amount
@@ -489,7 +496,7 @@
 
 /obj/machinery/matter_nanoforge/proc/fabricate_design(datum/design/design)
 	consume_materials(design)
-	design.Fabricate(drop_location(), mat_efficiency, src)
+	design.Fabricate(drop_location(), 0, src)
 
 	working = FALSE
 	current_design = null
@@ -497,7 +504,7 @@
 	next_file()
 
 /obj/machinery/matter_nanoforge/proc/consume_materials(datum/design/design)
-	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - design.materials[MATERIAL_COMPRESSED_MATTER])
+	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - (design.materials[MATERIAL_COMPRESSED_MATTER] * mat_efficiency))
 	return TRUE
 
 #undef ERR_OK
@@ -553,7 +560,7 @@
 	..()
 	var/mb_rating = 0
 	var/mb_amount = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
 		mb_rating += MB.rating
 		mb_amount++
 
@@ -561,14 +568,14 @@
 
 	var/man_rating = 0
 	var/man_amount = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
 		man_amount++
 	man_rating -= man_amount
 
 	var/las_rating = 0
 	var/las_amount = 0
-	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
 		las_rating += M.rating
 		las_amount++
 	las_rating -= las_amount
@@ -618,5 +625,12 @@
 	lst[MATERIAL_CLOTH] = 0.10
 	lst[MATERIAL_SILK] = 0.05
 	lst[MATERIAL_CARDBOARD] = 0.10
-	lst[MATERIAL_LEATHER] = 0.10
+	lst[MATERIAL_LEATHER] = 0.70
+	lst[MATERIAL_BONE] = 0.70
 	lst[MATERIAL_TITANIUM] = 0.70
+
+/obj/machinery/matter_nanoforge/proc/check_user(mob/user)
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
+		return TRUE
+	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+	return FALSE

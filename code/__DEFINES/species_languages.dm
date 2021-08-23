@@ -29,6 +29,7 @@
 #define LANGUAGE_JIVE		"Jive"
 #define LANGUAGE_GERMAN		"German"
 #define LANGUAGE_JANA	    "Jana"
+#define LANGUAGE_LATIN 		"Ancient Latin"
 
 #define LANGUAGE_ROBOT "Robot Talk"
 #define LANGUAGE_DRONE "Drone Talk"
@@ -41,7 +42,7 @@
 #define LANGUAGE_OCCULT "Occult"
 #define LANGUAGE_BLITZ "Blitzshell Communique"
 #define LANGUAGE_OPIFEXEE "Opifexee"
-#define LANGUAGE_CHTMANT "Cht'Hive"
+#define LANGUAGE_CHTMANT "Chthive"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.

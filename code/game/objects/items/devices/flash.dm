@@ -10,7 +10,7 @@
 	flags = CONDUCT
 	origin_tech = list(TECH_MAGNET = 2, TECH_COMBAT = 1)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-
+	price_tag = 5
 	var/times_used = 0 //Number of times it's been used.
 	var/broken = 0     //Is the flash burnt out?
 	var/last_used = 0 //last world.time it was used.
@@ -67,7 +67,20 @@
 	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
 	var/flashfail = 0
 
-	if(iscarbon(M))
+	if(issuperioranimal(M))
+		if(M.stat!=DEAD)
+			var/flash_strength = 10
+			if(issuperioranimal(M))
+				var/mob/living/carbon/superior_animal/H = M
+				flash_strength -= H.flash_resistances
+			if(flash_strength > 0)
+				M.Weaken(flash_strength)
+				user.visible_message(SPAN_NOTICE("[user] overloads [M]'s sensors with the flash!")) //This IS what we want.
+				return //hacky way to stop miss-messages for the player. but should work
+			else
+				flashfail = 1
+
+	if(iscarbon(M) && !issuperioranimal(M)) //Just in case so we dont double flash are superioranimal friends
 		if(M.stat!=DEAD)
 			var/mob/living/carbon/C = M
 			var/safety = C.eyecheck()

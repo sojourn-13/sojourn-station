@@ -64,16 +64,63 @@
 	)
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	extra_allowed = list(
-		/obj/item/weapon/storage/toolbox,
-		/obj/item/weapon/storage/briefcase/inflatable,
+		/obj/item/storage/toolbox,
+		/obj/item/storage/briefcase/inflatable,
 		/obj/item/device/t_scanner,
-		/obj/item/weapon/rcd
+		/obj/item/rcd
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/engineering
 
 /obj/item/clothing/suit/space/void/engineering/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/jetpack/oxygen
+	tank = /obj/item/tank/jetpack/oxygen
+
+//Scav
+/obj/item/clothing/head/space/void/riggedvoidsuit
+	name = "makeshift armored helmet"
+	desc = "A makeshift armored helmet you can see the glue holding it, just close enough to be airtight."
+	icon_state = "makeshift_void"
+	item_state = "makeshift_void"
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	flash_protection = FLASH_PROTECTION_MAJOR
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+
+
+	armor = list(
+		melee = 40,
+		bullet = 20,
+		energy = 20,
+		bomb = 25,
+		bio = 100,
+		rad = 0
+	)
+	light_overlay = "helmet_light_dual"
+	siemens_coefficient = 0.8
+
+/obj/item/clothing/suit/space/void/riggedvoidsuit
+	name = "makeshift armored voidsuit"
+	desc = "A makeshift armored voidsuit, you can see the glue holding it, just close enough to be airtight."
+	icon_state = "makeshift_void"
+	item_state = "makeshift_void"
+	siemens_coefficient = 0.4
+	armor = list(
+		melee = 40,
+		bullet = 20,
+		energy = 20,
+		bomb = 25,
+		bio = 100,
+		rad = 0
+	)
+	siemens_coefficient = 0.8
+	slowdown = 1.6
+	helmet = /obj/item/clothing/head/space/void/riggedvoidsuit
+
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	flash_protection = FLASH_PROTECTION_MAJOR
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+
 
 //Mining rig
 /obj/item/clothing/head/helmet/space/void/mining
@@ -127,7 +174,7 @@
 		slot_r_hand_str = "medical_helm",
 		)
 	armor = list(
-		melee = 30,
+		melee = 20, // It's a literal glass cube
 		bullet = 10,
 		energy = 35,
 		bomb = 25,
@@ -143,13 +190,13 @@
 	item_state = "medical_voidsuit"
 	slowdown = 0.25
 	extra_allowed = list(
-		/obj/item/weapon/storage/firstaid,
+		/obj/item/storage/firstaid,
 		/obj/item/device/scanner/health,
 		/obj/item/stack/medical,
 		/obj/item/roller
 	)
 	armor = list(
-		melee = 20,
+		melee = 35,
 		bullet = 10,
 		energy = 35,
 		bomb = 25,
@@ -203,7 +250,7 @@
 
 /obj/item/clothing/suit/space/void/security/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/jetpack/oxygen
+	tank = /obj/item/tank/jetpack/oxygen
 
 /obj/item/clothing/head/helmet/space/void/odst
 	name = "Sol Federation voidsuit helmet"
@@ -363,7 +410,7 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/atmos
 
 /obj/item/clothing/suit/space/void/security/equipped
-	tank = /obj/item/weapon/tank/jetpack/oxygen
+	tank = /obj/item/tank/jetpack/oxygen
 
 //Assault
 /obj/item/clothing/head/space/void/assault
@@ -395,10 +442,26 @@
 	item_state = icon_state
 	..()
 
+/obj/item/clothing/head/space/void/assault/void_wolf
+	name = "reaver assault helmet"
+	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in. This one was made for a Void Wolf Reaver."
+
+/obj/item/clothing/head/space/void/assault/void_wolf/New()
+	icon_state = "assault_wolf"
+	item_state = "assault_wolf"
+
+/obj/item/clothing/suit/space/void/assault/void_wolf
+	name = "reaver assault armor"
+	icon_state = "assault_wolf"
+	item_state = "assault_wolf"
+	desc = "Void Wolves prey on Kriosan trade ships and frontier colonies all the time, in rare circumstances they engage military ships, with skilled and ballsy Void Wolf Reavers succeeding \
+	and making off with expensive loot, such as this assault armor given a Void Wolf paint job."
+	helmet = /obj/item/clothing/head/space/void/assault/void_wolf
+
 /obj/item/clothing/suit/space/void/assault
 	name = "assault armor"
 	icon_state = "assaultsuit"
-	desc = "A specialty import from the kriosan confederacy, usually imported by the Lonestar thanks to the companies long standing trade agreement. It costs a kings ransom, albiet for a good reason \
+	desc = "A specialty import from the Kriosan Confederacy, usually imported by Lonestar LLC thanks to the companies' long standing trade agreement. It costs a king's ransom, albeit for a good reason \
 	given its sturdy craftmenship and reinforced armor layers."
 	item_state = "assaultsuit"
 	armor = list(
@@ -449,7 +512,7 @@
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	item_state = "armor_medical"
 	armor = list(
-		melee = 30,
+		melee = 35,
 		bullet = 35,
 		energy = 30,
 		bomb = 40,

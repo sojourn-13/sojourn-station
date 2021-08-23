@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/giskard
+/obj/item/gun/projectile/giskard
 	name = "\"Giskard\" pistol"
 	desc = "That's the most popular handgun produced by Holland & Sullivan. Can even fit into a pocket! Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/giskard.dmi'
@@ -12,14 +12,14 @@
 	fire_delay = 0.6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3)
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_H_PISTOL
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 4)
 	price_tag = 300
 	damage_multiplier = 1
 	penetration_multiplier = 0.8
 	recoil_buildup = 3
 
-/obj/item/weapon/gun/projectile/giskard/update_icon()
+/obj/item/gun/projectile/giskard/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -38,6 +38,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/giskard/Initialize()
+/obj/item/gun/projectile/giskard/Initialize()
 	. = ..()
 	update_icon()

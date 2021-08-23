@@ -22,7 +22,7 @@
 /area/nadezhda
 	ship_area = TRUE
 	icon_state = "erisyellow"
-	base_turf = /turf/simulated/floor/asteroid/dirt
+	base_turf = /turf/simulated/floor/plating/under
 	flags = AREA_FLAG_RAD_SHIELDED
 
 //Maintenance
@@ -62,47 +62,47 @@
 
 /area/nadezhda/maintenance/undergroundfloor1north
 	name = "Underground Floor 1 North Maintenance"
-	icon_state = "section1deck1central"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/undergroundfloor1west
 	name = "Underground Floor 1 West Maintenance"
-	icon_state = "section1deck2central"
+	icon_state = "erisyellow"
 
 /area/nadezhda/maintenance/undergroundfloor1east
 	name = "Underground Floor 1 East Maintenance"
-	icon_state = "section1deck3central"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/undergroundfloor1central
 	name = "Underground Floor 1 Central Maintenance"
-	icon_state = "section1deck3central"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/undergroundfloor1oldgarden
 	name = "Underground Floor 1 Old Garden"
-	icon_state = "section1deck3central"
+	icon_state = "erisyellow"
 
 /area/nadezhda/maintenance/undergroundfloor1oldconstruction
 	name = "Underground Floor 1 Old Construction Site"
-	icon_state = "section1deck3central"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/undergroundfloor1south
 	name = "Underground Floor 1 South Maintenance"
-	icon_state = "section1deck4central"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/undergroundfloor2north
 	name = "Underground Floor 2 North Maintenance"
-	icon_state = "section1deck5central"
+	icon_state = "erisyellow"
 
 /area/nadezhda/maintenance/undergroundfloor2west
 	name = "Underground Floor 2 West Maintenance"
-	icon_state = "section2deck1port"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/undergroundfloor2east
 	name = "Underground Floor 2 East Maintenance"
-	icon_state = "section2deck1starboard"
+	icon_state = "erisyellow"
 
 /area/nadezhda/maintenance/undergroundfloor2south
 	name = "Underground Floor 2 South Maintenance"
-	icon_state = "section2deck2port"
+	icon_state = "erisgreen"
 
 /area/nadezhda/maintenance/cavehideout
 	name = "Abandoned Cave Shed"
@@ -119,7 +119,6 @@
 /area/nadezhda/maintenance/hideout
 	name = "Abandoned Maintenance Shed"
 	icon_state = "section2deck3starboard"
-
 
 //Outside abandoned structures
 
@@ -141,8 +140,12 @@
 	dynamic_lighting = TRUE
 
 /area/nadezhda/dungeon/outside/abandoned_solars
-	name = "Abandoned Solars"
+	name = "Soteria Solar Outpost"
 	icon_state = "erisgreen"
+	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
+
+/area/nadezhda/dungeon/outside/abandoned_solars/powered
+	requires_power = FALSE
 
 /area/nadezhda/dungeon/outside/burned_outpost
 	name = "Burned Outpost"
@@ -229,7 +232,7 @@
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen13.ogg', 'sound/ambience/ambigen14.ogg', 'sound/ambience/ambimalf.ogg')
 	dynamic_lighting = TRUE
-	requires_power = 0
+	requires_power = FALSE
 	flags = AREA_FLAG_RAD_SHIELDED
 
 /area/nadezhda/outside/one_star/fo_outside
@@ -252,6 +255,7 @@
 /area/nadezhda/outside/pond
 	name = "Pond"
 	icon_state = "erisgreen"
+	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
 
 /area/nadezhda/outside/bcave
 	name = "Tengolo Cave West"
@@ -277,12 +281,37 @@
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
+/area/nadezhda/outside/forest/swamp_hut
+	name = "Swamp Hut"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+	requires_power = FALSE
+
 /area/nadezhda/outside/forest/river_forest_light
 	name = "River Forest"
 	icon_state = "forest"
 
 /area/nadezhda/outside/forest/river_forest_dark
 	name = "River Forest"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
+/area/nadezhda/outside/forest/river_forest_underground
+	name = "River Forest Underground"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
+/area/nadezhda/outside/forest/hunting_lodge
+	name = "Hunting Lodge"
+	icon_state = "forest"
+
+/area/nadezhda/outside/forest/hunting_lodge_dark
+	name = "Hunting Lodge"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
+/area/nadezhda/outside/forest/hunting_lodge_shed_dark
+	name = "Lodge Barn"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
@@ -311,7 +340,6 @@
 	icon_state = "substation"
 	sound_env = SMALL_ENCLOSED
 	forced_ambience = list('sound/ambience/maintambience.ogg')
-
 
 /area/nadezhda/maintenance/substation/engineering
 	name = "Engineering Substation"
@@ -342,9 +370,6 @@
 
 /area/nadezhda/maintenance/substation/bridge
 	name = "Bridge Substation"
-
-
-
 
 //Hallway
 
@@ -434,8 +459,8 @@
 	name = "Stairwell"
 	icon_state = "hallway4"
 
-
 //Command
+
 /area/nadezhda/command
 	name = "\improper Command"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
@@ -579,7 +604,6 @@
 	icon_state = "erisyellow"
 
 //Crew Quarters
-
 
 /area/nadezhda/crew_quarters
 	name = "\improper Dormitories"
@@ -742,7 +766,6 @@
 	name = "Public Hydroponics"
 	icon_state = "erisblue"
 
-
 //Church
 
 /area/nadezhda/absolutism
@@ -778,11 +801,6 @@
 /area/nadezhda/absolutism/chapelritualroom
 	name = "Chapel Rituals Room"
 	icon_state = "erisgreen"
-
-
-
-
-
 
 //Engineering
 
@@ -848,7 +866,6 @@
 /area/nadezhda/engineering/enginehallway
 	name = "\improper Engine Room Hallway"
 	icon_state = "engine"
-
 
 /area/nadezhda/engineering/engine_monitoring
 	name = "\improper Engine Monitoring Room"
@@ -965,7 +982,6 @@
 
 /area/nadezhda/engineering/propulsion/right
 	name = "Right Propulsion Hangar"
-
 
 //MedBay
 
@@ -1138,9 +1154,6 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/medical/medbay/uppercor
 	name = "Medbay Upper Coridor"
 	icon_state = "erisgreen"
-
-
-
 
 //Security
 
@@ -1325,9 +1338,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "hammerred"
 	is_maintenance = TRUE
 
-
 //Cargo
-
 
 /area/nadezhda/quartermaster
 	name = "\improper Merchants"
@@ -1355,10 +1366,18 @@ area/nadezhda/medical/medbaymeeting
 	name = "Disposal and Delivery"
 	icon_state = "erisred"
 
+/area/nadezhda/quartermaster/underground_to_surface_disposal
+	name = "Disposal surface access"
+	icon_state = "erisblue"
+	requires_power = FALSE
 
 /area/nadezhda/quartermaster/hangarsupply
 	name = "Supply Shuttle Hangar"
 	icon_state = "erisblue"
+
+/area/nadezhda/quartermaster/hangarsupply_nolight
+	name = "Supply Shuttle Dock"
+	icon_state = "erisgreen"
 
 /area/nadezhda/quartermaster/misc
 	name = "\improper Cargo Barracks"
@@ -1368,8 +1387,6 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Cargo Delivery Dock"
 	icon_state = "erisgreen"
 	base_turf = /turf/simulated/floor/tiled/dark/cargo
-
-
 
 
 //Research and Development
@@ -1538,6 +1555,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/pros/shuttle
 	name = "\improper Shuttle Hangar"
 	icon_state = "erisgreen"
+	dynamic_lighting = FALSE
 
 /area/nadezhda/pros/proelav
 	name = "\improper Lonestar Surface Elevator"

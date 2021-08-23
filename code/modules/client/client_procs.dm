@@ -165,7 +165,6 @@
 	prefs = SScharacter_setup.preferences_datums[ckey]
 	if(!prefs)
 		prefs = new /datum/preferences(src)
-		SScharacter_setup.preferences_datums[ckey] = prefs
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 
@@ -361,7 +360,9 @@
 		'html/panels.css',
 		'html/images/loading.gif',
 		'html/images/ntlogo.png',
-		'html/images/talisman.png'
+		'html/images/talisman.png',
+		'html/images/nadezhdalogo.png',
+		'html/images/lonestarlogo.png'
 		)
 
 	spawn (10) //removing this spawn causes all clients to not get verbs.

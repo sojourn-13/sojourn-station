@@ -28,9 +28,13 @@ var/list/admin_verbs = list("default" = list(), "hideable" = list())
 			if(text2num(text_right) & holder.rights)
 				verbs += admin_verbs[text_right]
 
+		if(check_rights(config.profiler_permission))
+			control_freak = 0 // enable profiler
+
 /client/proc/remove_admin_verbs()
 	for(var/right in admin_verbs)
 		verbs.Remove(admin_verbs[right])
+	control_freak = initial(control_freak)
 
 ADMIN_VERB_ADD(/client/proc/hide_most_verbs, null, FALSE)
 //hides all our hideable adminverbs
@@ -367,7 +371,7 @@ ADMIN_VERB_ADD(/client/proc/kill_air, R_DEBUG, FALSE)
 		deadmin_holder.reassociate()
 		log_admin("[src] re-admined themself.")
 		message_admins("[src] re-admined themself.", 1)
-		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or atleast a small space station</span>")
+		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or at least just the colony.</span>")
 		verbs -= /client/proc/readmin_self
 
 
@@ -484,7 +488,7 @@ ADMIN_VERB_ADD(/client/proc/change_human_appearance_self, R_ADMIN, FALSE)
 ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN|R_FUN, FALSE)
 /client/proc/change_security_level()
 	set name = "Set security level"
-	set desc = "Sets the station security level"
+	set desc = "Sets the colony's security level"
 	set category = "Admin"
 
 	if(!check_rights(R_ADMIN))	return
@@ -568,6 +572,27 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 		return
 	T.stats.addPerk(perkname)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
+
+ADMIN_VERB_ADD(/client/proc/playtimeadd, R_ADMIN|R_MOD|R_DEBUG, FALSE)
+/client/proc/playtimeadd(mob/T as mob in GLOB.player_list)
+	set category = "Fun"
+	set name = "Add Playtime"
+	set desc = "Add playtime to a ckey."
+	var/datum/perk/departmentpt = input("What department do you wish to add playtime to?") as null|anything in typesof(/datum/department) - /datum/department
+	var/timeadded = input("How much time do you wish to add in minutes?") as null|num
+	if(isnull(timeadded))
+		return
+	timeadded = round(timeadded)
+	if (!departmentpt)
+		return
+	if(QDELETED(T))
+		to_chat(usr, "Creature has been delete in the meantime.")
+		return
+	var/datum/department/departmentplaytimevar = new departmentpt()
+	if(departmentplaytimevar.id)
+		T.client.prefs.playtime[departmentplaytimevar.id] += timeadded
+		message_admins("\blue [key_name_admin(usr)] added [timeadded] MINUTES of [departmentpt] to [key_name(T)].", 1)
+		log_admin("[key_name_admin(usr)] added [timeadded] MINUTES of [departmentpt] to [key_name(T)].")
 
 ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
 /client/proc/perkremove(mob/T as mob in SSmobs.mob_list)

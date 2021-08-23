@@ -33,6 +33,16 @@
 		icon_state = "animeeyesouter"
 		body_parts = list(BP_HEAD)
 
+	bugeyeleft
+		name = "Bug Eye (Left)"
+		icon_state = "bugeyeleft"
+		body_parts = list(BP_HEAD)
+
+	bugeyeright
+		name = "Bug Eye (right)"
+		icon_state = "bugeyeright"
+		body_parts = list(BP_HEAD)
+
 /*Back Stripe*/
 
 	backstripe
@@ -114,6 +124,28 @@
 		icon_state = "chooves"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT)
+
+/*Makeup + Lipstick*/
+
+	lipstick
+		name = "Lipstick (Human/Regular)"
+		icon_state = "lipstick"
+		body_parts = list(BP_HEAD)
+
+	lipstickkriosan
+		name = "Lipstick (Kriosan/Vulpkanin)"
+		icon_state = "lipstickkriosan"
+		body_parts = list(BP_HEAD)
+
+	lipsticknaramad
+		name = "Lipstick (Naramad)"
+		icon_state = "lipsticknaramad"
+		body_parts = list(BP_HEAD)
+
+	lipstickakula
+		name = "Lipstick (Akula)"
+		icon_state = "lipstickakula"
+		body_parts = list(BP_HEAD)
 
 /*Color Bands + Patches*/
 
@@ -770,3 +802,10 @@
 		leftleg
 			name = "Sablekyne (Bone, L.Leg)"
 			body_parts = list (BP_L_LEG)
+
+/*Marqua*/
+
+	frogeyes
+		name = "Marqua Eyes"
+		icon_state = "frogeyes"
+		body_parts = list(BP_HEAD)

@@ -1,19 +1,19 @@
-/obj/item/weapon/circuitboard/supplycomp
+/obj/item/circuitboard/supplycomp
 	build_name = "supply control console"
 	build_path = /obj/machinery/computer/supplycomp
 	origin_tech = list(TECH_DATA = 3)
 	var/contraband_enabled = 0
 
-/obj/item/weapon/circuitboard/supplycomp/construct(var/obj/machinery/computer/supplycomp/SC)
+/obj/item/circuitboard/supplycomp/construct(var/obj/machinery/computer/supplycomp/SC)
 	if (..(SC))
 		SC.can_order_contraband = contraband_enabled
 
-/obj/item/weapon/circuitboard/supplycomp/deconstruct(var/obj/machinery/computer/supplycomp/SC)
+/obj/item/circuitboard/supplycomp/deconstruct(var/obj/machinery/computer/supplycomp/SC)
 	if (..(SC))
 		contraband_enabled = SC.can_order_contraband
 
-/obj/item/weapon/circuitboard/supplycomp/attackby(obj/item/I as obj, mob/user as mob)
-	if(istype(I,/obj/item/weapon/tool/multitool))
+/obj/item/circuitboard/supplycomp/attackby(obj/item/I as obj, mob/user as mob)
+	if(istype(I,/obj/item/tool/multitool))
 		var/catastasis = src.contraband_enabled
 		var/opposite_catastasis
 		if(catastasis)

@@ -144,7 +144,7 @@ SUBSYSTEM_DEF(statverbs)
 /datum/statverb/fix_computer
 	name = "Fix computer"
 	required_stat = STAT_COG
-	minimal_stat  = STAT_LEVEL_ADEPT
+	minimal_stat  = STAT_LEVEL_PROF //We use what we at lest need to use this
 
 /datum/statverb/fix_computer/action(mob/user, obj/item/modular_computer/target)
 	if(target.hard_drive.damage < 100)

@@ -11,7 +11,7 @@
 	cooldown_time = 1 SECONDS
 	cooldown_category = "group"
 
-/datum/ritual/group/pre_check(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C, targets)
+/datum/ritual/group/pre_check(mob/living/carbon/human/H, obj/item/implant/core_implant/C, targets)
 	if(is_on_cooldown(H))
 		return FALSE
 	return ..()
@@ -19,13 +19,13 @@
 /datum/ritual/group/proc/step_check(mob/living/carbon/human/H)
 	return TRUE
 
-/datum/ritual/group/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C, targets)
+/datum/ritual/group/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C, targets)
 	if(!effect_type)
 		return FALSE
 
 	var/datum/core_module/group_ritual/GR = new
 	GR.ritual = src
-	GR.implant_type = C.implant_type
+	GR.implant_type = implant_type //Defined further in document as main core implant
 	GR.phrases = phrases
 	GR.effect = new effect_type
 	GR.effect.succ_message = success_message
@@ -55,7 +55,7 @@
 /////////////////////////////////
 
 /datum/core_module/group_ritual
-	implant_type = /obj/item/weapon/implant/core_implant
+	implant_type = /obj/item/implant/core_implant
 	var/list/participants = list()
 	var/list/correct_participants = list()
 	var/list/phrases = list()

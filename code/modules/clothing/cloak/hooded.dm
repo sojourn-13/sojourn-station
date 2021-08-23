@@ -121,7 +121,7 @@
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 	//hoodtype = /obj/item/clothing/head/hood/winter
-	allowed = list (/obj/item/device/flash, /obj/item/weapon/pen, /obj/item/weapon/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/weapon/tank/emergency_oxygen, /obj/item/weapon/storage/fancy/cigarettes, /obj/item/weapon/storage/box/matches, /obj/item/weapon/reagent_containers/food/drinks/flask)
+	allowed = list (/obj/item/device/flash, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 
 /obj/item/clothing/suit/hooded/wintercoat/captain
 	name = "premier's winter coat"
@@ -197,4 +197,12 @@
 	desc = "For larping as the other techno cult."
 	icon_state = "techpriest"
 	item_state = "techpriest"
+	hoodtype = /obj/item/clothing/head/hood/techpriest
+
+/obj/item/clothing/suit/hooded/costume/techpriest_explorator
+	name = "explorator armor"
+	desc = "For larping as the other techno cult. This time with armor, the metal platings provided decent protection, roughly on par with a hand made vest."
+	icon_state = "explorator"
+	item_state = "explorator"
+	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 10, bio = 15, rad = 5)
 	hoodtype = /obj/item/clothing/head/hood/techpriest

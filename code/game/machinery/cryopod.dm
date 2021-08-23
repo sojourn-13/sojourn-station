@@ -16,7 +16,7 @@
 	icon_state = "cellconsole"
 	light_power = 1.5
 	light_color = COLOR_LIGHTING_BLUE_MACHINERY
-	circuit = /obj/item/weapon/circuitboard/cryopodcontrol
+	circuit = /obj/item/circuitboard/cryopodcontrol
 	density = 0
 	interact_offline = 1
 	var/mode = null
@@ -35,7 +35,7 @@
 	desc = "An interface between crew and the robotic storage systems."
 	icon = 'icons/obj/robot_storage.dmi'
 	icon_state = "console"
-	circuit = /obj/item/weapon/circuitboard/robotstoragecontrol
+	circuit = /obj/item/circuitboard/robotstoragecontrol
 
 	storage_type = "cyborgs"
 	storage_name = "Robotic Storage Control"
@@ -45,6 +45,11 @@
 	name = "elevator oversight console"
 	desc = "An interface between crew and the elevator storage systems."
 	storage_name = "Elevator Storage Control"
+
+/obj/machinery/computer/cryopod/dormitory
+	name = "dormitory oversight console"
+	desc = "An interface between crew and the dorms storage systems."
+	storage_name = "Dorms Storage Control"
 
 /obj/machinery/computer/cryopod/attack_hand(mob/user = usr)
 	if(stat & (NOPOWER|BROKEN))
@@ -130,12 +135,12 @@
 	src.updateUsrDialog()
 	return
 
-/obj/item/weapon/circuitboard/cryopodcontrol
+/obj/item/circuitboard/cryopodcontrol
 	build_name = "cryogenic oversight console"
 	build_path = /obj/machinery/computer/cryopod
 	origin_tech = list(TECH_DATA = 3)
 
-/obj/item/weapon/circuitboard/robotstoragecontrol
+/obj/item/circuitboard/robotstoragecontrol
 	build_name = "robotic storage console"
 	build_path = /obj/machinery/computer/cryopod/robot
 	origin_tech = list(TECH_DATA = 3)
@@ -176,21 +181,22 @@
 	var/obj/machinery/computer/cryopod/control_computer
 	var/last_no_computer_message = 0
 	var/applies_stasis = 1
+	var/cryo_announcement = TRUE
 
 	// These items are preserved when the process() despawn proc occurs.
 	var/list/preserve_items = list(
-		/obj/item/weapon/hand_tele,
-		/obj/item/weapon/card/id/captains_spare,
+		/obj/item/hand_tele,
+		/obj/item/card/id/captains_spare,
 		/obj/item/device/aicard,
 		/obj/item/device/mmi,
 		/obj/item/device/paicard,
-		/obj/item/weapon/gun,
-		/obj/item/weapon/pinpointer,
+		/obj/item/gun,
+		/obj/item/pinpointer,
 		/obj/item/clothing/suit,
 		/obj/item/clothing/shoes/magboots,
 		/obj/item/blueprints,
 		/obj/item/clothing/head/helmet/space,
-		/obj/item/weapon/storage/internal
+		/obj/item/storage/internal
 	)
 
 /obj/machinery/cryopod/robot
@@ -204,7 +210,7 @@
 	on_store_name = "Robotic Storage Oversight"
 	on_enter_occupant_message = "The storage unit broadcasts a sleep signal to you. Your systems start to shut down, and you enter low-power mode."
 	allow_occupant_types = list(/mob/living/silicon/robot)
-	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
+//	disallow_occupant_types = list(/mob/living/silicon/robot/drone) We infact can put drones in storage.
 	applies_stasis = 0
 
 /obj/machinery/cryopod/elevator
@@ -220,6 +226,23 @@
 	opacity = 1
 
 	time_till_despawn = 600 //1 minute. We want to be much faster then normal cryo, since waiting in an elevator for half an hour is a special kind of hell.
+
+	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
+//	disallow_occupant_types = list(/mob/living/silicon/robot/drone) Why would the lower colony not want us?!
+
+/obj/machinery/cryopod/dormitory
+	name = "Long Sleep Bed"
+	desc = "A bed for a long term sleep. (Use this to log out like a cryopod)"
+	icon = 'icons/obj/furniture.dmi'
+	icon_state = "bed"
+	base_icon_state = "bed"
+	occupied_icon_state = "bed"
+	on_store_message = null
+	on_store_name = null
+	on_enter_occupant_message = "You slip into the warm sheets and prepare for a long rest."
+	cryo_announcement = FALSE
+
+	time_till_despawn = 600 //1 minute. Quick log outs because of how it looks
 
 	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
 	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
@@ -317,7 +340,7 @@
 
 		if(W.contents.len) //Make sure we catch anything not handled by qdel() on the items.
 			for(var/obj/item/O in W.contents)
-				if(istype(O,/obj/item/weapon/storage/internal)) //Stop eating pockets, you fuck!
+				if(istype(O,/obj/item/storage/internal)) //Stop eating pockets, you fuck!
 					continue
 				O.forceMove(src)
 
@@ -395,7 +418,9 @@
 	control_computer._admin_logs += "[key_name(occupant)]" + "[occupant.mind ? ", ([occupant.mind.assigned_role])" : ""]" + " at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)]" + "[occupant.mind ? " ([occupant.mind.assigned_role])" : ""]" + " entered cryostorage.")
 
-	announce.autosay("[occupant.real_name]" + "[occupant.mind ? ", [occupant.mind.assigned_role]" : ""]" + ", [on_store_message]", "[on_store_name]")
+	if(cryo_announcement)
+		announce.autosay("[occupant.real_name]" + "[occupant.mind ? ", [occupant.mind.assigned_role]" : ""]" + ", [on_store_message]", "[on_store_name]")
+
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>")
 
 
@@ -500,8 +525,9 @@
 		items -= announce
 
 	for(var/obj/item/W in items)
-		W.forceMove(get_turf(src))
-		occupant.equip_to_appropriate_slot(W) // Items are now ejected. Tries to put them items on the occupant so they don't leave them behind
+		if (!istype(W, /obj/item/device/radio/intercom)) //Stops people from eating intercoms
+			W.forceMove(get_turf(src))
+			occupant.equip_to_appropriate_slot(W) // Items are now ejected. Tries to put them items on the occupant so they don't leave them behind
 
 	src.go_out()
 	add_fingerprint(usr)

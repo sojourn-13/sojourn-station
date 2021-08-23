@@ -9,6 +9,7 @@ var/const/SERVICE           =(1<<7)
 var/const/LSS	            =(1<<8)
 var/const/CHURCH           	=(1<<9)
 var/const/PROSPECTORS		=(1<<10)
+var/const/INDEPENDENT		=(1<<11)
 
 var/const/ENGSEC			=(1<<0)
 
@@ -58,6 +59,10 @@ var/const/PROSPECTOR		=(1<<12)
 var/const/CHAPLAIN			=(1<<0)
 var/const/ACOLYTE			=(1<<1)
 
+var/const/HUNTMASTER		=(1<<0)
+var/const/LODGEHUNTER		=(1<<1)
+var/const/OUTSIDER			=(1<<2)
+var/const/LODGEHERBALIST	=(1<<3)
 
 var/list/assistant_occupations = list()
 
@@ -91,6 +96,8 @@ var/list/security_positions = list(JOBS_SECURITY)
 
 var/list/nonhuman_positions = list(JOBS_NONHUMAN)
 
+
+var/list/offcolony_positions = list(JOBS_INDEPENDENT)
 
 /proc/guest_jobbans(var/job)
 	return ((job in command_positions) || (job in nonhuman_positions) || (job in security_positions))

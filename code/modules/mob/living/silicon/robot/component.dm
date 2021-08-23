@@ -52,7 +52,8 @@
 	brute_damage += brute
 	electronics_damage += electronics
 
-	if(brute_damage + electronics_damage >= max_damage) destroy()
+	if(brute_damage + electronics_damage >= max_damage)
+		destroy()
 
 /datum/robot_component/proc/heal_damage(brute, electronics)
 	if(installed != 1)
@@ -82,19 +83,54 @@
 /datum/robot_component/armour
 	name = "armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour
-	max_damage = 60
+	max_damage = 80
+
+/datum/robot_component/armour/install()
+	..()
+	owner.brute_mod_perk = 0.6 //60% of brute and burn damage.
+	owner.burn_mod_perk = 0.6
+
+/datum/robot_component/armour/uninstall()
+	..()
+	owner.brute_mod_perk = 0.7 //30% of brute and burn damage.
+	owner.burn_mod_perk = 0.7
 
 /datum/robot_component/armour/level_2
 	name = "advanced armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkii
-	max_damage = 90
+	max_damage = 120
 	installed_by_default = FALSE
+
+/datum/robot_component/armour/level_2/install()
+	..()
+	owner.brute_mod_perk = 0.5 //50% of brute and burn damage.
+	owner.burn_mod_perk = 0.5
+	owner.stats.addPerk(/datum/perk/ass_of_concrete)
+
+/datum/robot_component/armour/level_2/uninstall()
+	..()
+	owner.brute_mod_perk = 0.7 //70% of brute and burn damage.
+	owner.burn_mod_perk = 0.7
+	owner.stats.removePerk(/datum/perk/ass_of_concrete)
 
 /datum/robot_component/armour/level_3
 	name = "combat armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkv
-	max_damage = 120
+	max_damage = 160
 	installed_by_default = FALSE
+
+/datum/robot_component/armour/level_3/install()
+	..()
+	owner.brute_mod_perk = 0.4 //40% of brute and burn damage.
+	owner.burn_mod_perk = 0.4
+	owner.stats.addPerk(/datum/perk/ass_of_concrete)
+
+/datum/robot_component/armour/level_3/uninstall()
+	..()
+	owner.brute_mod_perk = 0.7 //70% of brute and burn damage.
+	owner.burn_mod_perk = 0.7
+	owner.stats.removePerk(/datum/perk/ass_of_concrete)
+
 
 // JETPACK
 // Allows the cyborg to move in space
@@ -106,12 +142,12 @@
 	installed_by_default = FALSE
 	active_usage = 150
 
-	var/obj/item/weapon/tank/jetpack/synthetic/tank = null
+	var/obj/item/tank/jetpack/synthetic/tank = null
 
 
 /datum/robot_component/jetpack/install()
 	..()
-	tank = new/obj/item/weapon/tank/jetpack/synthetic
+	tank = new/obj/item/tank/jetpack/synthetic
 	//owner.internals = tank
 	tank.forceMove(owner)
 	owner.jetpack = tank
@@ -289,20 +325,24 @@
 	icon_state_broken = "motor_broken"
 
 /obj/item/robot_parts/robot_component/armour
-	name = "robot armour plating"
+	name = "armour plating"
 	icon_state = "armor"
 	icon_state_broken = "armor_broken"
 
 /obj/item/robot_parts/robot_component/armour/mkii
-	name = "robot Mark II armour plating"
+	name = "Mark II armour plating"
+	icon_state = "armormk2"
+	icon_state_broken = "armormk2_broken"
 	matter = list(MATERIAL_STEEL = 25)
 
 /obj/item/robot_parts/robot_component/armour/mkv
-	name = "robot Mark V armour plating"
+	name = "Mark V armour plating"
+	icon_state = "armormk5"
+	icon_state_broken = "armormk5_broken"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
 
 /obj/item/robot_parts/robot_component/camera
-	name = "robot camera"
+	name = "camera"
 	icon_state = "camera"
 	icon_state_broken = "camera_broken"
 
@@ -312,12 +352,12 @@
 	icon_state_broken = "analyser_broken"
 
 /obj/item/robot_parts/robot_component/radio
-	name = "robot radio"
+	name = "radio"
 	icon_state = "radio"
 	icon_state_broken = "radio_broken"
 
 /obj/item/robot_parts/robot_component/jetpack
-	name = "robot jetpack"
+	name = "jetpack"
 	desc = "Self refilling jetpack that makes the unit suitable for EVA work."
 	icon = 'icons/obj/tank.dmi'
 	icon_state = "jetpack-black"

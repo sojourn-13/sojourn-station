@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/temperature
+/obj/item/gun/energy/temperature
 	name = "temperature gun"
 	icon = 'icons/obj/guns/energy/freezegun.dmi'
 	icon_state = "freezegun"
@@ -6,8 +6,8 @@
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/pulse3.ogg'
 	desc = "A gun that changes temperatures. It has a small label on the side, \"More extreme temperatures will cost more charge!\""
-	var/temperature = T20C
-	var/current_temperature = T20C
+	//var/temperature = T20C
+	//var/current_temperature = T20C
 	charge_cost = 100
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 4, TECH_POWER = 3, TECH_MAGNET = 2)
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -15,20 +15,27 @@
 	price_tag = 750
 	projectile_type = /obj/item/projectile/temp
 	zoom_factor = 2.0
-	gun_tags = list(GUN_SCOPE)
 
+	init_firemodes = list(
+		list(mode_name="ice", projectile_type=/obj/item/projectile/temp/ice, fire_delay=6, charge_cost = 1000),
+		list(mode_name="cold", projectile_type=/obj/item/projectile/temp/cold, fire_delay=6, charge_cost = 500),
+		list(mode_name="warm", projectile_type=/obj/item/projectile/temp, fire_delay= 6, charge_cost = 50),
+		list(mode_name="hot", projectile_type=/obj/item/projectile/temp/hot, fire_delay= 6, charge_cost = 500),
+		list(mode_name="boil", projectile_type=/obj/item/projectile/temp/boil, fire_delay= 6, charge_cost = 1000),
+	)
 
-/obj/item/weapon/gun/energy/temperature/Initialize()
+/*
+/obj/item/gun/energy/temperature/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
 
-/obj/item/weapon/gun/energy/temperature/Destroy()
+/obj/item/gun/energy/temperature/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
 
-/obj/item/weapon/gun/energy/temperature/attack_self(mob/living/user as mob)
+/obj/item/gun/energy/temperature/attack_self(mob/living/user as mob)
 	user.set_machine(src)
 	var/temp_text = ""
 	if(temperature > (T0C - 50))
@@ -45,7 +52,7 @@
 	onclose(user, "window=freezegun", src)
 
 
-/obj/item/weapon/gun/energy/temperature/Topic(href, href_list)
+/obj/item/gun/energy/temperature/Topic(href, href_list)
 	if (..())
 		return 1
 	usr.set_machine(src)
@@ -65,7 +72,7 @@
 	return
 
 
-/obj/item/weapon/gun/energy/temperature/Process()
+/obj/item/gun/energy/temperature/Process()
 	switch(temperature)
 		if(0 to 100) charge_cost = 1000
 		if(100 to 250) charge_cost = 500
@@ -82,3 +89,4 @@
 				temperature += 10
 		else
 			temperature = current_temperature
+*/

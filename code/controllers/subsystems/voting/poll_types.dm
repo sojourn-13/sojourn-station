@@ -6,19 +6,19 @@
 /datum/poll/restart
 	name = "End Round"
 	question = "End Shift?"
-	time = 60
+	time = 90
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
-	next_vote = 240 MINUTES //Minimum round length before it can be called for the first time
+	next_vote = 250 MINUTES //Minimum round length before it can be called for the first time
 	cooldown = 60 MINUTES
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
 
-	multiple_votes = FALSE
+	multiple_votes = TRUE //Duel votes are fun
 	can_revote = TRUE
-	can_unvote = FALSE
+	can_unvote = TRUE //In case you heck up
 
-	see_votes = TRUE
+	see_votes = FALSE //No swaying
 
 /*To prevent abuse and rule-by-salt, the evac vote weights each player's vote based on a few parameters
 	If you are alive and have been for a while, then you have the normal 1 vote
@@ -83,12 +83,7 @@
 	text = "End Shift"
 
 /datum/vote_choice/restart/on_win()
-	command_announcement.Announce("Todays shift will be ending in fifteen minutes. Please finish up all tasks and return department equipment.", "Shift End Call", new_sound = 'sound/misc/notice3.ogg')
-	sleep(15 MINUTES)
-	to_chat(world, "<b>Restarting world due to shift end...</b>")
-	sleep(60)
-	log_game("Rebooting due to restart vote")
-	world.Reboot()
+	SSticker.shift_end(15 MINUTES)
 
 /datum/vote_choice/countinue_round
 	text = "Continue Shift"

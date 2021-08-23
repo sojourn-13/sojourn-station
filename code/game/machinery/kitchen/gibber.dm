@@ -1,4 +1,3 @@
-
 /obj/machinery/gibber
 	name = "gibber"
 	desc = "The name isn't descriptive enough?"
@@ -191,7 +190,7 @@
 
 	var/slab_name = occupant.name
 	var/slab_count = 3
-	var/slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	var/slab_type = /obj/item/reagent_containers/food/snacks/meat
 	var/slab_nutrition = 20
 	if(iscarbon(occupant))
 		var/mob/living/carbon/C = occupant
@@ -204,6 +203,12 @@
 			slab_count = critter.meat_amount
 		if(critter.meat_type)
 			slab_type = critter.meat_type
+
+	else if(isroach(occupant))
+		var/mob/living/carbon/superior_animal/roach/H = occupant
+		slab_type = H.meat_type
+		slab_count = H.meat_amount
+
 	else if(ishuman(occupant))
 		var/mob/living/carbon/human/H = occupant
 		slab_name = src.occupant.real_name
@@ -215,7 +220,7 @@
 	slab_nutrition /= slab_count
 
 	for(var/i=1 to slab_count)
-		var/obj/item/weapon/reagent_containers/food/snacks/meat/new_meat = new slab_type(src)
+		var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(src)
 		new_meat.name = "[slab_name] [new_meat.name]"
 		new_meat.reagents.add_reagent("nutriment",slab_nutrition)
 

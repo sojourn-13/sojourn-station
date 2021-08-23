@@ -1,4 +1,4 @@
-/obj/item/weapon/mine
+/obj/item/mine
 	name = "Excelsior Mine"
 	desc = "An anti-personnel mine. IFF technology grants safe passage to Excelsior agents, and a mercifully brief end to others unless they can disarm it with a multitool."
 	icon = 'icons/obj/machines/excelsior/objects.dmi'
@@ -24,10 +24,10 @@
 	var/deployed = FALSE
 	anchored = FALSE
 
-/obj/item/weapon/mine/ignite_act()
+/obj/item/mine/ignite_act()
 	explode()
 
-/obj/item/weapon/mine/proc/explode()
+/obj/item/mine/proc/explode()
 	var/turf/T = get_turf(src)
 	explosion(T,explosion_d_size,explosion_h_size,explosion_l_size,explosion_f_size)
 	fragment_explosion(T, spread_radius, fragment_type, num_fragments, null, damage_step)
@@ -35,17 +35,17 @@
 	if(src)
 		qdel(src)
 
-/obj/item/weapon/mine/bullet_act()
+/obj/item/mine/bullet_act()
 	if(prob(90))
 		explode()
 
-/obj/item/weapon/mine/update_icon()
+/obj/item/mine/update_icon()
 	cut_overlays()
 
 	if(armed)
 		add_overlay(image(icon,"mine_light"))
 
-/obj/item/weapon/mine/attack_self(var/mob/user)
+/obj/item/mine/attack_self(var/mob/user)
 	if(locate(/obj/structure/multiz/ladder) in get_turf(user))
 		to_chat(user, SPAN_NOTICE("You cannot place \the [src] here, there is a ladder."))
 		return
@@ -67,9 +67,11 @@
 			armed = TRUE
 			update_icon()
 			playsound(loc, 'sound/weapons/armbomb.ogg', 75, 1, -3)
+			log_and_message_admins(" - Landmine set at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
+
 	update_icon()
 
-/obj/item/weapon/mine/attack_hand(mob/user as mob)
+/obj/item/mine/attack_hand(mob/user as mob)
 	.=..()
 	for(var/datum/antagonist/A in user.mind.antagonist)
 		if(A.id == ROLE_EXCELSIOR_REV && deployed)
@@ -93,7 +95,7 @@
 				)
 		explode()
 
-/obj/item/weapon/mine/attackby(obj/item/I, mob/user)
+/obj/item/mine/attackby(obj/item/I, mob/user)
 	if(QUALITY_PULSING in I.tool_qualities)
 
 		if (deployed)
@@ -110,6 +112,7 @@
 			anchored = FALSE
 			armed = FALSE
 			deployed = FALSE
+			log_and_message_admins(" - Mine disarmed at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 			update_icon()
 		return
 	else
@@ -120,7 +123,7 @@
 			explode()
 		return
 
-/obj/item/weapon/mine/Crossed(var/mob/AM)
+/obj/item/mine/Crossed(var/mob/AM)
 	var/bonus_evade = 0
 	if (armed)
 		if (isliving(AM))
@@ -147,14 +150,14 @@
 				return
 	.=..()
 
-/obj/item/weapon/mine/armed
+/obj/item/mine/armed
 	name = "land mine"
 	desc = "An anti-personnel mine. This one looks new, as if someone placed this here recently... Better disarm it with a multitool or a bullet."
 	armed = TRUE
 	deployed = TRUE
 	anchored = TRUE
 
-/obj/item/weapon/mine/improvised
+/obj/item/mine/improvised
 	name = "improvised land mine"
 	desc = "An anti-personnel mine that could only be more ghetto if it was held together by duct tape. It appears to be a makeshift trap with a frag grenade rigged to the trigger mechanism, a multitool should easily disarm this."
 	icon_state = "mine_improvised"
@@ -171,7 +174,7 @@
 	deployed = TRUE
 	anchored = TRUE
 
-/obj/item/weapon/mine/improvised/attackby(obj/item/I, mob/user)
+/obj/item/mine/improvised/attackby(obj/item/I, mob/user)
 	if(QUALITY_PULSING in I.tool_qualities)
 
 		if (deployed)

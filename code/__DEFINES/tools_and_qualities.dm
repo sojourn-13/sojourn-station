@@ -26,6 +26,7 @@
 #define QUALITY_BONE_SETTING			"bone setting"
 #define QUALITY_CUTTING					"cutting"
 #define QUALITY_LASER_CUTTING			"laser cutting"	//laser scalpels and e-swords - bloodless cutting
+#define QUALITY_BONE_GRAFTING			"bone grafting"
 
 //Other Qualities
 #define QUALITY_WEAVING					"weaving"
@@ -38,7 +39,9 @@
 #define WORKTIME_INSTANT				0
 #define WORKTIME_NEAR_INSTANT			30
 #define WORKTIME_FAST					60
+#define WORKTIME_QUICK					75
 #define WORKTIME_NORMAL					90
+#define WORKTIME_DELAYED				105
 #define WORKTIME_SLOW					120
 #define WORKTIME_LONG					170
 #define WORKTIME_EXTREMELY_LONG			250

@@ -426,7 +426,7 @@ var/global/list/wings_icon_cache = list()
 /mob/living/carbon/human/update_implants(var/update_icons = 1)
 	var/image/standing = image('icons/mob/mob.dmi', "blank")
 	var/have_icon = FALSE
-	for(var/obj/item/weapon/implant/I in src)
+	for(var/obj/item/implant/I in src)
 		if(I.is_external() && I.wearer == src)
 			var/image/mob_icon = I.get_mob_overlay(gender, form)
 			if(mob_icon)
@@ -454,10 +454,10 @@ var/global/list/wings_icon_cache = list()
 
 /mob/living/carbon/human/proc/get_marking_image()
 	if(!body_markings) return
-	var/mutable_appearance/marking_icon = new(null)
+	var/icon/marking_icon
 	for(var/markname in body_markings)
 		var/datum/sprite_accessory/marking/real_marking = GLOB.body_marking_list[markname]
-		var/icon/specific_marking_icon = new()
+		var/list/valid_body_parts = list()
 		for(var/part in real_marking.body_parts)
 			//Eris lacks hands and feet. This code should allow hands and feet.
 			//This exists because the sprites are separated over all limbs whereas this codebase doesn't have hands or feet.
@@ -470,11 +470,29 @@ var/global/list/wings_icon_cache = list()
 						valid = TRUE
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
-				var/icon/specific_marking_subicon = icon(real_marking.icon, "[real_marking.icon_state]-[part]")
-				specific_marking_subicon.Blend(specific_marking_icon, ICON_UNDERLAY)
-				specific_marking_icon = specific_marking_subicon
-		specific_marking_icon.Blend(body_markings[markname], real_marking.blend) //This should be a colour.
-		marking_icon.add_overlay(specific_marking_icon)
+				valid_body_parts += part
+		var/icon/specific_marking_icon
+		var/cache_key = "[markname]-[valid_body_parts.Join("_")]"
+		var/advanced_cache_key = "B*[cache_key]*[body_markings[markname]]*[real_marking.blend]" //The *B is there to prevent collisions.
+		cache_key = "A*[cache_key]" //To prevent collisions.
+		if(marking_cache[advanced_cache_key]) //Done like this in case the result is null.
+			specific_marking_icon = new /icon(marking_cache[advanced_cache_key])
+		else
+			if(marking_cache[cache_key]) //We have the grey version but not the colored.
+				specific_marking_icon = new /icon(marking_cache[cache_key])
+			else
+				specific_marking_icon = new()
+				for(var/part in valid_body_parts)
+					var/icon/specific_marking_subicon = icon(real_marking.icon, "[real_marking.icon_state]-[part]")
+					specific_marking_subicon.Blend(specific_marking_icon, ICON_UNDERLAY)
+					specific_marking_icon = specific_marking_subicon
+				marking_cache[cache_key] = new /icon(specific_marking_icon)
+			specific_marking_icon.Blend(body_markings[markname], real_marking.blend) //This should be a colour.
+			marking_cache[advanced_cache_key] = new /icon(specific_marking_icon)
+		if(marking_icon)
+			marking_icon.Blend(specific_marking_icon, ICON_OVERLAY)
+		else //WARNING: THIS WILL BREAK IF WE EVER USE INCONSISTENT MARKING SIZES
+			marking_icon = specific_marking_icon
 	return image(marking_icon)
 
 //Insert Furry Bits
@@ -965,8 +983,8 @@ mob/living/carbon/human/proc/get_wings_image()
 
 		var/beltlayer = BELT_LAYER
 		var/otherlayer = BELT_LAYER_ALT
-		if(istype(belt, /obj/item/weapon/storage/belt))
-			var/obj/item/weapon/storage/belt/ubelt = belt
+		if(istype(belt, /obj/item/storage/belt))
+			var/obj/item/storage/belt/ubelt = belt
 			if(ubelt.show_above_suit)
 				beltlayer = BELT_LAYER_ALT
 				otherlayer = BELT_LAYER
@@ -1092,9 +1110,9 @@ mob/living/carbon/human/proc/get_wings_image()
 				overlay_icon = test.icon
 		else if(test.icon_override)
 			overlay_icon = test.icon_override
-		else if(istype(test, /obj/item/weapon/rig))
+		else if(istype(test, /obj/item/rig))
 			//If this is a rig and a mob_icon is set, it will take species into account in the rig update_icon() proc.
-			var/obj/item/weapon/rig/rig = test
+			var/obj/item/rig/rig = test
 			overlay_icon = rig.mob_icon
 
 		else if(test.item_icons && (slot_back_str in test.item_icons))

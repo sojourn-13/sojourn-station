@@ -25,7 +25,7 @@
 		weapon_edge = 0
 
 	hit_impact(effective_force, get_step(user, src))
-	damage_through_armor(effective_force, I.damtype, hit_zone, ARMOR_MELEE, armour_pen = I.armor_penetration, used_weapon = I, sharp = weapon_sharp, edge = weapon_edge)
+	damage_through_armor(effective_force, I.damtype, hit_zone, ARMOR_MELEE, armour_pen = I.armor_penetration + (user.stats.getStat(STAT_ROB) * 0.25), used_weapon = I, sharp = weapon_sharp, edge = weapon_edge)
 
 /*Its entirely possible that we were gibbed or dusted by the above. Check if we still exist before
 continuing. Being gibbed or dusted has a 1.5 second delay, during which it sets the transforming var to
@@ -46,7 +46,7 @@ true, and the mob is not yet deleted, so we need to check that as well*/
 		var/embed_chance = (damage - embed_threshold)*I.embed_mult
 		if(user.stats.getPerk(PERK_BORN_WARRIOR))
 			return TRUE
-		if (embed_chance > 0 && prob(embed_chance))
+		if (embed_chance > 0 && prob(embed_chance) && !src.stats.getPerk(PERK_IRON_FLESH))
 			src.embed(I, hit_zone)
 
 	return TRUE
@@ -54,14 +54,14 @@ true, and the mob is not yet deleted, so we need to check that as well*/
 // Attacking someone with a weapon while they are neck-grabbed
 /mob/living/carbon/proc/check_attack_throat(obj/item/W, mob/user)
 	if(user.a_intent == I_HURT)
-		for(var/obj/item/weapon/grab/G in src.grabbed_by)
+		for(var/obj/item/grab/G in src.grabbed_by)
 			if(G.assailant == user && G.state >= GRAB_NECK)
 				if(attack_throat(W, G, user))
 					return 1
 	return 0
 
 // Knifing
-/mob/living/carbon/proc/attack_throat(obj/item/W, obj/item/weapon/grab/G, mob/user)
+/mob/living/carbon/proc/attack_throat(obj/item/W, obj/item/grab/G, mob/user)
 
 	if(!W.edge || !W.force || W.damtype != BRUTE)
 		return 0 //unsuitable weapon

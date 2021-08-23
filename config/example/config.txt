@@ -131,6 +131,12 @@ ALLOW_ADMIN_OOCCOLOR
 ## allow players to initiate a restart vote
 #ALLOW_VOTE_RESTART
 
+## set a restart time in seconds after the server starts
+#AUTOMATIC_RESTART_TIME 21600
+
+## automatic restart delay from round end to actual restart in seconds
+#AUTOMATIC_RESTART_DELAY 900
+
 ## allow players to initate a mode-change start
 #ALLOW_VOTE_MODE
 

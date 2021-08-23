@@ -7,7 +7,7 @@
 	var/log = 0
 	var/sound
 	var/newscast = 0
-	var/channel_name = "Station Announcements"
+	var/channel_name = "Colony-wide Announcements"
 	var/announcement_type = "Announcement"
 
 /datum/announcement/New(var/do_log = 0, var/new_sound = null, var/do_newscast = 0)
@@ -15,17 +15,17 @@
 	log = do_log
 	newscast = do_newscast
 
-/datum/announcement/priority/New(var/do_log = 1, var/new_sound = 'sound/misc/notice2.ogg', var/do_newscast = 0)
+/datum/announcement/priority/New(var/do_log = 1, var/new_sound = 'sound/misc/notice4.ogg', var/do_newscast = 0) // Leave that sound for alarms cleared please.
 	..(do_log, new_sound, do_newscast)
 	title = "Priority Announcement"
 	announcement_type = "Priority Announcement"
 
-/datum/announcement/priority/command/New(var/do_log = 1, var/new_sound = 'sound/misc/notice2.ogg', var/do_newscast = 0)
+/datum/announcement/priority/command/New(var/do_log = 1, var/new_sound = 'sound/ai/commandreport.ogg', var/do_newscast = 0) // Command doesn't mean just HIGH command y'know
 	..(do_log, new_sound, do_newscast)
 	title = "[command_name()] Update"
 	announcement_type = "[command_name()] Update"
 
-/datum/announcement/priority/security/New(var/do_log = 1, var/new_sound = 'sound/misc/notice2.ogg', var/do_newscast = 0)
+/datum/announcement/priority/security/New(var/do_log = 1, var/new_sound = 'sound/misc/notice1.ogg', var/do_newscast = 0) // Serious business. High alert.
 	..(do_log, new_sound, do_newscast)
 	title = "Security Announcement"
 	announcement_type = "Security Announcement"
@@ -98,7 +98,7 @@ datum/announcement/proc/Log(message as text, message_title as text)
 		log_say("[key_name(usr)] has made \a [announcement_type]: [message_title] - [message] - [announcer]")
 		message_admins("[key_name_admin(usr)] has made \a [announcement_type].", 1)
 
-/proc/GetNameAndAssignmentFromId(var/obj/item/weapon/card/id/I)
+/proc/GetNameAndAssignmentFromId(var/obj/item/card/id/I)
 	// Format currently matches that of newscaster feeds: Registered Name (Assigned Rank)
 	return I.assignment ? "[I.registered_name] ([I.assignment])" : I.registered_name
 
@@ -113,11 +113,16 @@ datum/announcement/proc/Log(message as text, message_title as text)
 
 
 /proc/ion_storm_announcement()
-	command_announcement.Announce("It has come to our attention that an ion storm has formed.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert")
+	command_announcement.Announce("It has come to our attention that an ion storm has formed.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert", new_sound = 'sound/AI/ionstorm.ogg')
 
 /proc/AnnounceArrival(var/mob/living/character, var/rank, var/join_message)
 	if (join_message && SSticker.current_state == GAME_STATE_PLAYING && SSjob.ShouldCreateRecords(rank))
 		if(issilicon(character))
 			global_announcer.autosay("A new [rank] [join_message].", ANNOUNSER_NAME)
 		else
+
+	if (character.mind)
+		if (character.mind.role_alt_title)
+			rank = character.mind.role_alt_title
+
 			global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)

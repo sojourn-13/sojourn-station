@@ -30,8 +30,8 @@
 
 //HOP
 /obj/item/clothing/head/rank/first_officer
-	name = "steward's hat"
-	desc = "A stylish hat that both protects you from enraged former-crewmembers and gives you a false sense of authority."
+	name = "steward's cap"
+	desc = "A stylish field-cover that both protects you from enraged former-crewmembers and gives you a false sense of authority."
 	icon_state = "hopcap"
 
 //Chaplain
@@ -64,7 +64,7 @@
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
 	desc = "A navy blue marshal beret."
-	icon_state = "beret_navy_officer"
+	icon_state = "policeberet"
 
 /obj/item/clothing/head/rank/commander/beret
 	name = "warrant officer beret"

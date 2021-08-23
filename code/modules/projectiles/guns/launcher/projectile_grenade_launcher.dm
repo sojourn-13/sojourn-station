@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/pump/china
+/obj/item/gun/projectile/shotgun/pump/china
 	name = "China Lake"
 	desc = "This centuries-old design was recently rediscovered and adapted for use in modern battlefields. \
         Working similar to a pump-action combat shotgun, its light weight and robust design quickly made it a popular weapon. \
@@ -10,7 +10,7 @@
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_WOOD = 10)
-	price_tag = 3000
+	price_tag = 1750
 	caliber = CAL_GRENADE
 	load_method = SINGLE_CASING
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
@@ -21,7 +21,7 @@
 	recoil_buildup = 20
 	twohanded = TRUE
 
-/obj/item/weapon/gun/projectile/shotgun/pump/china/handle_post_fire(mob/user)
+/obj/item/gun/projectile/shotgun/pump/china/handle_post_fire(mob/user)
 	log_and_message_admins("fired a grenade ([chambered.name]) from a grenade launcher ([src.name]).")
 	user.attack_log += "\[[time_stamp()]\] <font color='red'> fired a grenade ([chambered.name]) from a grenade launcher ([src.name])</font>"
 	chambered = null

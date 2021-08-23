@@ -46,6 +46,11 @@
 	ammo_type = /obj/item/ammo_casing/pistol_35
 	max_ammo = 30
 
+/obj/item/ammo_magazine/ammobox/pistol_35/scrap
+	name = "ammunition packet (old .35 Auto)"
+	icon_state = "pistol_s"
+	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
+
 /obj/item/ammo_magazine/ammobox/pistol_35/practice
 	name = "ammunition packet (.35 Auto practice)"
 	icon_state = "pistol_p"
@@ -76,6 +81,13 @@
 	caliber = ".40"
 	caliber = CAL_MAGNUM
 	ammo_type = /obj/item/ammo_casing/magnum_40
+	max_ammo = 30
+
+/obj/item/ammo_magazine/ammobox/magnum_40/scrap
+	name = "ammunition packet (old .40 Magnum)"
+	icon_state = "magnum_s"
+	caliber = CAL_MAGNUM
+	ammo_type = /obj/item/ammo_casing/magnum/scrap
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/magnum_40/practice
@@ -130,6 +142,17 @@
 	icon_state = "box_lrifle_p"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/practice
 
+/obj/item/ammo_magazine/ammobox/light_rifle_257/lethal
+	name = "ammunition box (.257 Carbine hollow-point)"
+	icon_state = "box_clrifle_l"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
+
+/obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity
+	name = "ammunition box (.257 Carbine high-velocity)"
+	icon_state = "box_lrifle_p"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
+
+// .257 Pacets
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small
 	name = "ammunition box (.257 Carbine FMJ)"
 	icon_state = "lrifle"
@@ -158,6 +181,11 @@
 	icon_state = "lrifle_l"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
+/obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
+	name = "ammunition packet (old .257 Rifle)"
+	icon_state = "clrifle_s"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
+	max_ammo = 30
 
 ////7.5 Rifle////
 
@@ -173,6 +201,13 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75
 	mag_type = SPEEDLOADER | MAGAZINE
 	max_ammo = 180
+
+/obj/item/ammo_magazine/ammobox/rifle_75/scrap
+	name = "ammunition packet (old 7.5mm Rifle)"
+	icon_state = "srifle_s"
+	max_ammo = 30 //Were a small packet not a box
+	w_class = ITEM_SIZE_SMALL
+	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
 /obj/item/ammo_magazine/ammobox/rifle_75/pickup(mob/user)
 	..()
@@ -292,6 +327,24 @@
 	ammo_type = /obj/item/ammo_casing/antim
 	max_ammo = 5
 
+/obj/item/ammo_magazine/ammobox/antim/scrap
+	name = "ammunition box (old .60 Anti Material)"
+	icon_state = "antim_s"
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
+	ammo_type = /obj/item/ammo_casing/antim/scrap
+	max_ammo = 5
+
+//// 40mm rolled shot ////
+
+/obj/item/ammo_magazine/ammobox/ball
+	name = "ammunition box (30mm rolled shot)"
+	icon_state = "antim"
+	desc = "A box of 30mm rolled shot."
+	matter = list(MATERIAL_STEEL = 30)
+	w_class = ITEM_SIZE_BULKY
+	caliber = CAL_BALL
+	ammo_type = /obj/item/ammo_casing/ball
+	max_ammo = 30
 
 //// .408 Omni ////
 
@@ -328,6 +381,12 @@
 	icon_state = "hrifle_l"
 	desc = "A box of .408 heavy rifle ammunition. 40ct, 7mm hollow-tipped full-caliber."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
+
+/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap
+	name = "ammunition packet (old .408 Rifle)"
+	icon_state = "lrifle_s"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/scrap
+	max_ammo = 30
 
 ////bulk .408////
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408
@@ -456,21 +515,14 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	max_ammo = 35
 
-/*To do, make this work
 /obj/item/ammo_magazine/ammobox/shotgun/update_icon()
-
 	var/iconstring = initial(icon_state)
-	var/itemstring = ""
 
-	if (stored_ammo.len >= 0)
-		iconstring = "-1"
-	else
+	if (stored_ammo.len == 0)
 		iconstring += "-0"
-		return
 
 	icon_state = iconstring
-	set_item_state(itemstring)
-*/
+//	return
 
 /obj/item/ammo_magazine/ammobox/shotgun/blanks
 	name = "ammunition packet (20mm Blank)"
@@ -504,12 +556,22 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 	max_ammo = 35
 
+//used in mapping only cases
+/obj/item/ammo_magazine/ammobox/shotgun/flashshells
+	name = "signaling ammunition packet (20mm Illumination)"
+	icon_state = "stunslug"
+	matter = list(MATERIAL_STEEL = 12, MATERIAL_CARDBOARD = 2)
+	caliber = CAL_SHOTGUN
+	w_class = ITEM_SIZE_BULKY
+	ammo_type = /obj/item/ammo_casing/shotgun/illumination
+	max_ammo = 70 //2x the ammo for being map spawned
+
 /obj/item/ammo_magazine/ammobox/shotgun/flash
 	name = "ammunition packet (20mm Illumination)"
 	icon_state = "stunslug"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SHOTGUN
-	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	ammo_type = /obj/item/ammo_casing/shotgun/illumination
 	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/stunshells
@@ -536,10 +598,26 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
 	max_ammo = 35
 
-/obj/item/ammo_magazine/ammobox/shotgun/flashshells
-	name = "ammunition packet (20mm Flash Shell)"
-	icon_state = "explosive"
+/obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag
+	name = "old ammunition packet (20mm Beanbag)"
+	icon_state = "shot_scrap"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SHOTGUN
-	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag/scrap
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet
+	name = "old ammunition packet (20mm Buckshot)"
+	icon_state = "shot_scrap"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet/scrap
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/scrap_slug
+	name = "old ammunition packet (20mm Slug)"
+	icon_state = "shot_scrap"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet/scrap
 	max_ammo = 35

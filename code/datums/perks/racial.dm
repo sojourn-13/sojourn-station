@@ -19,13 +19,26 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("<b><font color='red'>[user] begins growling as their muscles tighten!</font><b>", "<b><font color='red'>You feel a comfortable warmth as your body steels itself against all pain.</font><b>", "<b><font color='red'>You hear something growling!</font><b>")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("sabledone", 5)
+	user.reagents.add_reagent("sabledone", 10)
 	return ..()
 
 /datum/perk/bone
 	name = "Bone Plated"
 	desc = "All sablekyne are covered in bone-like plating across various parts of the body, this layer of natural armor along the shins, thighs, fore-arms, and shoulders allow you to absorb impacts better than anyone, adding a further tolerance to pain."
 	//icon_state = "" // - No icon, suggestion - Riot Shield?
+
+/datum/perk/brawn
+	name = "Brawny Build"
+	desc = "All sablekyne are stocky and built wide, your brawny build and low center of gravity gives you exceptional balance. Few beasts can knock you down and not even the strongest men can push you over, provided you walk instead of run."
+	//icon_state = "muscular" // https://game-icons.net
+
+/datum/perk/brawn/assign(mob/living/carbon/human/H)
+	..()
+	holder.mob_bump_flag = HEAVY
+
+/datum/perk/ass_of_concrete/remove()
+	holder.mob_bump_flag = ~HEAVY
+	..()
 
 ///////////////////////////////////////Mar'qua perks
 /datum/perk/suddenbrilliance
@@ -50,12 +63,25 @@
 /datum/perk/inspired
 	name = "Inspired Intellect"
 	desc = "Even the most humble Mar'qua is capable of study and extrapolation, your natural intellect allows you to become gain inspiration more easily."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+
+/datum/perk/alien_nerves
+	name = "Adapted Nervous System"
+	desc = "A mar'qua's nervous system has long since adapted to the use of stimulants, chemicals, and different toxins. Unlike lesser races, you can handle a wide variety of chemicals before showing any side effects and you'll never become addicted."
+
+/datum/perk/alien_nerves/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 0
+	holder.metabolism_effects.nsa_threshold += 300
+
+/datum/perk/alien_nerves/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_threshold -= 300
+	..()
 
 //////////////////////////////////////Human perks
 /datum/perk/tenacity
 	name = "Tenacity"
-	desc = "You pull what made your ancestors conquer the stars from your will, recovering from a small amount of injuries and potentially stabilizing yourself to live a bit longer."
+	desc = "When everything looks grim, you can muster a moment of bravado, reminding yourself that you ain't got time to bleed. You toughen up your metabolism, allowing you to ignore some of your pain, while stopping your bleeding and slightly healing your wounds."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -67,29 +93,69 @@
 		to_chat(usr, SPAN_NOTICE("The human body can only take so much, you'll need more time before you've recovered enough to use this again."))
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
-	user.visible_message("[user] grits their teeth and begins breathing slowly.", "You grit your teeth and remind yourself you don't have time to bleed!")
+	user.visible_message("[user] grits their teeth and begins breathing slowly.", "You grit your teeth and remind yourself you ain't got time to bleed!")
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("adrenol", 5)
 	return ..()
 
-/datum/perk/gutsandglory
-	name = "Guts and Glory"
-	desc = "You pull what made your ancestors conquer the stars from your will, letting your body recover somewhat from any internal damage at the cost of becoming exhausted while it works."
+/datum/perk/iwillsurvive
+	name = "Will to Survive"
+	desc = "You push your primal desire to keep living to its limit, letting your body recover slightly from any internal damage out of sheer force of will at the cost of becoming extremely exhausted while it works."
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/gutsandglory/activate()
+/datum/perk/iwillsurvive/activate()
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("The human body can only take so much, you'll need more time before you've recovered enough to use this again."))
+		to_chat(usr, SPAN_NOTICE("The human body can only take so much punishment, you'll need more time before you've recovered enough to use this again."))
 		return FALSE
 	cooldown_time = world.time + 30 MINUTES
 	user.visible_message("[user] closes their eyes and takes a deep breath, slowing down as they focus on recovering!", "You feel exhausted as you slow down to let your body recover, focusing on controlling your breathing while your body slowly mends some of your internal damage.")
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("hustim", 5)
 	return ..()
+
+
+/datum/perk/slymarbo
+	name = "Inspiring Battlecry"
+	desc = "Life has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/slymarbo/activate()
+	var/mob/living/carbon/human/user = usr
+	var/list/people_around = list()
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You cannot muster the willpower to have a heroic moment just yet."))
+		return FALSE
+	cooldown_time = world.time + 30 MINUTES
+	log_and_message_admins("used their [src] perk.")
+	for(var/mob/living/carbon/human/H in view(user))
+		if(H != user && !isdeaf(H))
+			people_around.Add(H)
+	if(people_around.len > 0)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("You feel inspired by a heroic shout!"))
+			give_boost(participant)
+	give_boost(usr)
+	usr.emote("urah")
+	return ..()
+
+/datum/perk/slymarbo/proc/give_boost(mob/living/carbon/human/participant)
+	var/effect_time = 2 MINUTES
+	var/amount = 10
+	var/list/stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
+	for(var/stat in stats_to_boost)
+		participant.stats.changeStat(stat, amount)
+		addtimer(CALLBACK(src, .proc/take_boost, participant, stat, amount), effect_time)
+
+/datum/perk/slymarbo/proc/take_boost(mob/living/carbon/human/participant, stat, amount)
+	participant.stats.changeStat(stat, -amount)
+
 
 //////////////////////////////////////Kriosan perks
 /datum/perk/enhancedsenses
@@ -111,10 +177,14 @@
 	user.reagents.add_reagent("kriotol", 5)
 	return ..()
 
+/datum/perk/exceptional_aim
+	name = "Instinctual Skill"
+	desc = "All kriosans understand the dynamics of shooting, to such a degree that guns are more extensions to one's hand than weapon. You take no penalty when firing any range weapon one handed."
+
 ////////////////////////////////////////Akula perks
 /datum/perk/recklessfrenzy
 	name = "Reckless Frenzy"
-	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly adddictive \
+	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly addictive \
 	and often times will leave your body weaker for a short time."
 	active = FALSE
 	passivePerk = FALSE
@@ -127,11 +197,16 @@
 		to_chat(usr, SPAN_NOTICE("Your body has been taxed to its limits, you need more time to recover before using this ability again."))
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
-	user.visible_message("<b><font color='red'>[user] lets out deep gutteral growl as their eyes glaze over!</font><b>", "<b><font size='3px'><font color='red'>You abandon all reason as your sink into a blood thirsty frenzy!</font><b>", "<b><font color='red'>You hear a terrifying roar!</font><b>")
+	user.visible_message("<b><font color='red'>[user] lets out deep guttural growl as their eyes glaze over!</font><b>", "<b><font size='3px'><font color='red'>You abandon all reason as your sink into a blood thirsty frenzy!</font><b>", "<b><font color='red'>You hear a terrifying roar!</font><b>")
 	playsound(usr.loc, 'sound/voice/akularoar.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("robustitol", 5)
 	return ..()
+
+/datum/perk/iron_flesh
+	name = "Iron Flesh"
+	desc = "Akula scales are not only tough and resistant to damage but exceptionally skilled at naturally forcing out embedded objects that somehow punch through. You'll never get a bullet nor object stuck inside when hit."
+
 
 ////////////////////////////////////////Naramad perks
 /datum/perk/adrenalineburst
@@ -154,10 +229,13 @@
 	user.reagents.add_reagent("naratonin", 5)
 	return ..()
 
+/datum/perk/stay_hydrated
+	name = "Hydration Reliance"
+	desc = "Naramad have adapted biology heavily reliant on the intake of fluids, in particular clean clear water. Drinking purified water, even tap water, heals your body slowly, as if you drank tricordizine!"
+
 /datum/perk/born_warrior
 	name = "Born Warrior"
 	desc = "No matter their background all naramadi are capable bringing any object to bear as a weapon, be it bladed or blunt. Unlike other races your grip is iron and you'll never lose your weapon through embedding it in an enemy."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
 
 /////////////////////////////////////////Cindarite perks
 /datum/perk/purgetoxins
@@ -198,6 +276,10 @@
 	user.reagents.add_reagent("cindicillin", 5)
 	return ..()
 
+/datum/perk/second_skin
+	name = "Second Skin"
+	desc = "Cindarites, be they bunker born or spacers, are used to wearing bulky enviromental suits. This life time of being acclimated to heavy clothing has become a second skin for many, allowing you to remove clothing instantly and never suffer slowdown from heavy armor."
+
 ///////////////////////////////////////////Opifex perks
 /datum/perk/opifex_backup
 	name = "Smuggled Tools"
@@ -213,9 +295,9 @@
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up tools. You didn't lose them, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up tools out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up tools out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/belt/utility/opifex/full(usr.loc)
+	new /obj/item/storage/belt/utility/opifex/full(usr.loc)
 	return ..()
 
 /datum/perk/opifex_backup_medical
@@ -229,12 +311,12 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up meds. You didn't lose them, did you?"))
+		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of backup medicine. You didn't lose them, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up webbing out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up webbing out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/belt/medical/opifex/full(usr.loc)
+	new /obj/item/storage/belt/medical/opifex/full(usr.loc)
 	return ..()
 
 
@@ -249,12 +331,12 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up weapons. You didn't lose them, did you?"))
+		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of backup weapons. You didn't lose them, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your back up belt out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up belt out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/belt/security/tactical/opifex/full(usr.loc)
+	new /obj/item/storage/belt/security/tactical/opifex/full(usr.loc)
 	return ..()
 
 /datum/perk/opifex_turret
@@ -271,14 +353,14 @@
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your scrap circuit. You didn't lose it, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your smuggled circuit out from their hiding place, the plastic and metal device clattering on the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your smuggled circuit out from their hiding place, the plastic and metal device clattering on the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/circuitboard/artificer_turret/opifex(usr.loc)
+	new /obj/item/circuitboard/artificer_turret/opifex(usr.loc)
 	return ..()
 
 /datum/perk/opifex_patchkit
 	name = "Smuggled Patch Kit"
-	desc = "Every opifex carries his own personal IFAK stashed somewhere. Being practical is the best option, after all, and the colony is a dangerous place."
+	desc = "Every opifex carries their own personal IFAK stashed somewhere. Being practical is the best option, after all, and the colony is a dangerous place."
 	active = FALSE
 	passivePerk = FALSE
 
@@ -290,16 +372,16 @@
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your patch kit. You didn't lose it, did you?"))
 		return FALSE
 	cooldown_time = world.time + 12 HOURS
-	to_chat(usr, SPAN_NOTICE("You discretely and stealthily slip your smuggled patch kit out from their hiding place, the cloth pouch clattering on the floor."))
+	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your smuggled patch kit out from their hiding place, the cloth pouch clattering on the floor."))
 	log_and_message_admins("used their [src] perk.")
-	new /obj/item/weapon/storage/firstaid/ifak(usr.loc)
+	new /obj/item/storage/firstaid/ifak(usr.loc)
 	return ..()
 
 ////////////////////////////////////////////Cht'mant perks
 /datum/perk/spiderfriend
 	name = "Kin to the Spiders"
-	desc = "Through a combination of pheromones, appearence, and an innate understanding of spider behaviour all spiders are friendly to you, they won't attack you even if you attack them. This change \
-	in your biology and pheramones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
+	desc = "Through a combination of pheromones, appearance, and an innate understanding of spider behavior all spiders are friendly to you, they won't attack you even if you attack them. This change \
+	in your biology and pheromones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
 	//icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/spiderfriend/assign(mob/living/carbon/human/H)
@@ -324,7 +406,7 @@
 		to_chat(usr, SPAN_NOTICE("You need a bit more time to build up your web reserves!"))
 		return FALSE
 	cooldown_time = world.time + 5 SECONDS
-	user.visible_message("[user] begins secreting and spreading web material around them.", "You begin secreting and spreading your webbing around.", "You hear an uncomfortable chitter noise.")
+	user.visible_message("[user] begins secreting and spreading web material around them.", "You begin secreting and spreading your webbing around.", "You hear an uncomfortable chittering noise.")
 	//log_and_message_admins("used their [src] perk.") //commented out due to spam in the logs.
 	new /obj/effect/spider/stickyweb/chtmant(usr.loc)
 	return ..()
@@ -347,7 +429,7 @@
 		return FALSE
 	cooldown_time = world.time + 1 HOURS
 	usr.nutrition -= 350
-	user.visible_message("<b><font color='red'>[user] vomits different colored slime onto the floor!</font><b>", "<b><font color='red'>You vomit out your healing ichors onto the floor!</font><b>", "<b><font color='red'>You hear a wretching noise!</font><b>")
+	user.visible_message("<b><font color='red'>[user] vomits different colored slime onto the floor!</font><b>", "<b><font color='red'>You vomit out your healing ichors onto the floor!</font><b>", "<b><font color='red'>You hear a retching noise!</font><b>")
 	log_and_message_admins("used their [src] perk.")
 	playsound(usr.loc, 'sound/effects/blobattack.ogg', 50, 1)
 	new /obj/item/stack/medical/advanced/bruise_pack/mending_ichor(usr.loc)
@@ -357,7 +439,7 @@
 
 /datum/perk/chitinarmor
 	name = "Chitin Armor"
-	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile bretheren."
+	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile brethren."
 	//icon_state = "" // - No icon, suggestion - Riot Shield?
 
 /datum/perk/chitinarmor/assign(mob/living/carbon/human/H)
@@ -376,3 +458,127 @@
 	name = "Scuttlebug"
 	desc = "While your definitive purpose is not as clearly defined as other castes within the cht'mant hive your constant movement and labors have made you quite used to the hustle and bustle, letting you run faster than most races."
 	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+
+/datum/perk/repair_goo
+	name = "Produce Repair Goo"
+	desc = "Fixing things is apart of your caste as it is scuttling around keeping yourself busy. As such you can vomit out glue-like goo that functions exceptionally well for tool and general repairs."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/repair_goo/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your body hasn't finished recovering, you will need to wait a bit longer."))
+		return FALSE
+	if(usr.nutrition <= 350)
+		to_chat(usr, SPAN_NOTICE("You do not have enough nutrition to produce more goo, find things to eat!"))
+		return FALSE
+	cooldown_time = world.time + 1 HOURS
+	usr.nutrition -= 350
+	user.visible_message("<b><font color='red'>[user] vomits a sticky gray tar onto the floor!</font><b>", "<b><font color='red'>You vomit out your repair goo onto the floor!</font><b>", "<b><font color='red'>You hear a retching noise!</font><b>")
+	log_and_message_admins("used their [src] perk.")
+	playsound(usr.loc, 'sound/effects/blobattack.ogg', 50, 1)
+	new /obj/item/tool/tape_roll/repair_goo(usr.loc)
+	return ..()
+
+///////////////////////////// Folken Perks
+
+/datum/perk/oddity_reroll
+	name = "Modify Oddity"
+	desc = "You reach into your understanding of this natural world to alter the latent effects of an oddity, enhancing the properties it has."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/oddity_reroll/activate()
+	var/mob/living/carbon/human/user = usr
+	var/obj/item/oddity/O = user.get_active_hand()
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("The natural forces around you cannot be manipulated just yet."))
+		return FALSE
+	if(!istype(O, /obj/item/oddity))
+		to_chat(usr, SPAN_NOTICE("This isn't the correct kind of oddity!"))
+		return FALSE
+	cooldown_time = world.time + 45 MINUTES
+	user.visible_message("<b><font color='green'>[user] concentrates on the anomaly in their hand, something about it changing in a subtle way.</font><b>", "<b><font color='green'>You focus on the energies around the object, swaying them to your will and enhancing it!</font><b>")
+	log_and_message_admins("used their [src] perk.")
+	if(O.oddity_stats)
+		if(O.random_stats)
+			for(var/stat in O.oddity_stats)
+				O.oddity_stats[stat] = (rand(1, O.oddity_stats[stat]) + 5)
+
+/datum/perk/folken_healing
+	name = "Folken Photo-Healing"
+	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration."
+	passivePerk = TRUE
+
+/datum/perk/folken_healing/young
+	name = "Folken Photo-Healing"
+	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration. Due to your comparitively young age, you heal much faster than older folken."
+	var/replaced = FALSE // Did it replace the normal folken healing?
+
+/datum/perk/folken_healing/young/assign(mob/living/carbon/human/H)
+	..()
+	if(holder.stats.getPerk(PERK_FOLKEN_HEALING)) // Does the user has the folken healing perk?
+		holder.stats.removePerk(PERK_FOLKEN_HEALING) // Remove the old healing.
+		replaced = TRUE
+
+/datum/perk/folken_healing/young/remove()
+	if(replaced) // Did the perk replaced the normal healing perk?
+		holder.stats.addPerk(PERK_FOLKEN_HEALING) // Give back the replaced perk
+	..()
+
+////////////////////////////// Mycus Perks
+
+/datum/perk/dark_heal
+	name = "Mycus Regeneration"
+	desc = "As a mycus, you heal as long as you are in the darkness, increasing your natural regeneration."
+	passivePerk = TRUE
+
+/datum/perk/mushroom_follower
+	name = "Spawn Shroomling"
+	desc = "Shroomlings are animal-intelligence mycus capable of following simple orders like 'Shroomling 'Name' Follow.' and 'Shroomling 'Name' Stop.' who will stay by you when ordered. While capable of fighting, they are quite weak, the \
+	major benefit of having one is they may turn any food you feed into them into useful healing chemicals contained in bottles of resin."
+	active = FALSE
+	passivePerk = FALSE
+	var/follower_type = /mob/living/carbon/superior_animal/fungi/shroom
+
+/datum/perk/mushroom_follower/activate()
+	var/mob/living/carbon/human/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(user, SPAN_NOTICE("You've already created your companion, you didn't lose them did you?"))
+		return FALSE
+	cooldown_time = world.time + 12 HOURS
+	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
+	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
+	mushroom.friends += user
+	mushroom.following = user
+	..()
+
+/datum/perk/slime_follower
+	name = "Spawn Slime-Mold"
+	desc = "Slime-mold shroomlings are animal-intelligence mycus capable of following simple orders like 'Slime-Mold 'Name' Follow.' and 'Slimd-Mold 'Name' Stop.' who will stay by you when ordered. Slime-molds are made for combat, being \
+	incredibly sturdy and physically strong, able to regenerate even the worst wounds. Unfortunately they suffer from poor eyesight, requiring threats to get close before they notice them."
+	active = FALSE
+	passivePerk = FALSE
+	var/follower_type = /mob/living/carbon/superior_animal/fungi/slime
+
+/datum/perk/slime_follower/activate()
+	var/mob/living/carbon/human/user = usr
+
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(user, SPAN_NOTICE("You've already created your companion, you didn't lose them did you?"))
+		return FALSE
+	cooldown_time = world.time + 12 HOURS
+	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
+	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
+	mushroom.friends += user
+	mushroom.following = user
+	..()

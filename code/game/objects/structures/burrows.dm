@@ -66,7 +66,7 @@
 	if(obelisk ? obelisk.active : FALSE) //(obelisk && obelisk.active) doesn't work for some reason. //TODO: Revisit this
 		qdel(src)
 		return
-	all_burrows.Add(src)
+	GLOB.all_burrows.Add(src)
 	if (anchor)
 		offset_to(anchor, 8)
 
@@ -94,7 +94,7 @@
 
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
-	all_burrows.Remove(src)
+	GLOB.all_burrows.Remove(src)
 	target = null
 	recieving = null
 	//Eject any mobs that tunnelled through us
@@ -445,8 +445,12 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		isSealed = FALSE
 		invisibility = 0
 		icon_state = "hole"
+		layer = OPEN_DOOR_LAYER //Basiclly we can see this over most things other then closed doors, and the like
+		plane = GAME_PLANE
 		name = "burrow"
-		desc = "Some sort of hole that leads inside a wall. It's full of hardened resin and secretions. Collapsing this would require some heavy digging tools"
+		desc = "Some sort of hole that leads inside a wall. It's full of hardened resin and secretions. Collapsing this would require some heavy digging tools."
+		if(deepmaint_entry_point)
+			desc = "Entrance hidden by bricks and rubble. Collapsing this would require some heavy digging tools."
 		var/turf/simulated/floor/F = loc
 		if (istype(F) && F.flooring)
 			//This should never be false
@@ -568,6 +572,8 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			qdel(src)
 			return
 	isSealed = TRUE
+	layer = initial(layer)
+	plane = initial(plane)
 	icon_state = initial(icon_state)
 	name = initial(name)
 	desc = initial(desc)
@@ -619,6 +625,9 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 /obj/structure/burrow/attack_generic(mob/living/L)
 	if (is_valid(L))
 		enter_burrow(L)
+	if (issuperioranimal(L))//So they don't carry burrow's reference and never qdel
+		var/mob/living/carbon/superior_animal/SA = L
+		SA.target_mob = null
 
 
 /obj/structure/burrow/proc/pull_mob(mob/living/L)

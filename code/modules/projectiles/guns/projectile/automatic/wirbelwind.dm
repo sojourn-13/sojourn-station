@@ -1,6 +1,6 @@
-/obj/item/weapon/gun/projectile/automatic/wirbelwind
+/obj/item/gun/projectile/automatic/wirbelwind
 	name = "\"Wirbelwind\" SMG"
-	desc = "A compact and lightweight law enforcement PDW produced by Seinemetall. Uses .35 Auto."
+	desc = "A compact and lightweight law enforcement PDW produced by Seinemetall Defense GmbH. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/wirbelwind.dmi'
 	icon_state = "wirbelwind"
 	item_state = "wirbelwind"
@@ -9,7 +9,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
+	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL|MAG_WELL_DRUM
 	auto_eject = 1
 	can_dual = TRUE
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
@@ -26,7 +26,7 @@
 		FULL_AUTO_600
 		)
 
-/obj/item/weapon/gun/projectile/automatic/wirbelwind/update_icon()
+/obj/item/gun/projectile/automatic/wirbelwind/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -46,6 +46,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/wirbelwind/Initialize()
+/obj/item/gun/projectile/automatic/wirbelwind/Initialize()
 	. = ..()
 	update_icon()

@@ -1,13 +1,13 @@
 /*
  * Premade paper
  */
-/obj/item/weapon/paper/court
+/obj/item/paper/court
 	name = "Judgement"
 	info = {"For crimes against the colony, the offender is sentenced to:
 	<BR>\n
 	<BR>\n"}
 
-/obj/item/weapon/paper/toxin
+/obj/item/paper/toxin
 	name = "Chemical Information"
 	info = {"Known Onboard Toxins:
 	<BR>\n\tGrade A Semi-Liquid Plasma:
@@ -40,7 +40,7 @@
 	<BR>\n\t\t\tThe effect are cumulative.
 	<BR>\n\t\tWARNING: It is a crime to use this without authorization"}
 
-/obj/item/weapon/paper/courtroom
+/obj/item/paper/courtroom
 	name = "A Crash Course in Legal SOP on the colony."
 	info = {"<B>Roles:</B>
 	<BR>\nThe Ranger is basically the investigator and prosecutor.
@@ -83,7 +83,7 @@
 	<BR>\nTADA you're done. Security then executes the sentence and adds the applicable convictions to the person's record.
 	<BR>\n"}
 
-/obj/item/weapon/paper/botanist
+/obj/item/paper/botanist
 	name = "Greetings from Billy Bob"
 	info = {"<B>Hey fellow botanist!</B>
 	<BR>\n
@@ -114,7 +114,7 @@
 	<BR>\n<B>Water keeps weeds such as nettles alive!</B>
 	<BR>\n<B>All other plants need both.</B>"}
 
-/obj/item/weapon/paper/djstation
+/obj/item/paper/djstation
 	name = "DJ Listening Outpost"
 	info = {"<B>Welcome new owner!</B>
 	<BR>
@@ -122,12 +122,12 @@
 	<br><ol><li>Equip yourself with a multi-tool</li><li>Use the multitool on each machine, that is the broadcaster, receiver and the relay.</li><li>Turn all the machines on, it has already been configured for you to listen on.</li></ol> Simple as that. Now to listen to the private channels, you'll have to configure the intercoms, located on the front desk. Here is a list of frequencies for you to listen on.
 	<br><ul><li>145.7 - Common Channel</li><li>144.7 - Private AI Channel</li><li>135.9 - Security Channel</li><li>135.7 - Engineering Channel</li><li>135.5 - Medical Channel</li><li>135.3 - Command Channel</li><li>135.1 - Science Channel</li><li>134.9 - Mining Channel</li><li>134.7 - Cargo Channel</li>"}
 
-/obj/item/weapon/paper/jobs
+/obj/item/paper/jobs
 	name = "Job Information"
 	info = {"Information on all formal jobs that can be assigned on the colony can be found on this document.
 	<BR>\nIt just contains a crudely drawn picture of a stick figure orgy and a bunch of animal abhumans."}
 
-/obj/item/weapon/paper/sop
+/obj/item/paper/sop
 	name = "paper- 'Standard Operating Procedure'"
 	info = {"Alert Levels:
 	<BR>\nBlue- Emergency
@@ -184,7 +184,7 @@
 	<BR>\n\t\tIf ship does not arrive-
 	<BR>\n\t\t\tEvacuate to a nearby safe area!"}
 
-/obj/item/weapon/paper/fortune
+/obj/item/paper/fortune
 	name = "fortune card"
 	info = {"<center>YOUR FORTUNE</center>"}
 	icon_state = "fortunecard"
@@ -246,14 +246,14 @@
 		[pick(fortune)]</font>"}
 		return ..() // moving the
 
-/obj/item/weapon/paper/fortune/update_icon()
+/obj/item/paper/fortune/update_icon()
 	if(info)
 		icon_state = "fortunecard"
 	else
 		icon_state = "fortunecard"
 	return
 
-/obj/item/weapon/paper/laber_camp
+/obj/item/paper/laber_camp
 	name = "Labor Notice"
 	info = {"Hard Labor Notice:
 	<BR>\n\tHard Rock Wall:
@@ -271,7 +271,7 @@
 	<BR>\n
 	<BR>\n\t\tWARNING: It is a crime to mine here without authorization"}
 
-/obj/item/weapon/paper/laber_camp_notice
+/obj/item/paper/laber_camp_notice
 	name = "Mining Rights and Conservation"
 	info = {"From Artificer Guild and Soteria Xenoarch Division:
 	<BR>\n\tArtificer Guild:
@@ -283,3 +283,7 @@
 	<BR>\n\t\tDeep rock scans have shown that from time to time the labor camp may have hidden weapons and tools inside the rock walls.
 	<BR>\n
 	<BR>\n\t\tWARNING: Well Boris Kilmeade has full rights to mining the labor camp sight it may be used by any prisoner that wishes to do labor or a time sentence"}
+
+/obj/item/paper/cro_pistol
+	name = "Classia Pistol"
+	info = {"This weapon is highly volatile and extremely dangerous if fired too many times to quickly, be sure to allow it to vent properly lest it over heats. This weapon is also explosive, so be aware of contraband laws and potential damage to the colony. A screwdriver is required to remove the hydrogen tanks, do be careful even then, lest you scorch your hand."}

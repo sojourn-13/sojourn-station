@@ -14,6 +14,7 @@
 	var/automatic_charge_overlays = FALSE	//Do we handle over-lays with base update_icon()? | Stolen from TG egun code
 	var/charge_sections = 5		// How many indicator blips are there?
 	var/charge_x_offset = 2		//The spacing between each charge indicator. Should be 2 to leave a 1px gap between each blip.
+	var/natural_remedy = FALSE
 
 /obj/item/stack/medical/attack(mob/living/M, mob/living/user)
 	var/types = M.get_classification()
@@ -50,7 +51,9 @@
 				SPAN_NOTICE("You start applying [src] to [M].") \
 				)
 				if (do_after(user, 30, M))
-					if(prob(10 + user.stats.getStat(STAT_BIO)))
+					if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+					else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
 						use(1)
@@ -77,8 +80,8 @@
 			)
 		var/med_skill = user.stats.getStat(STAT_BIO)
 		if (do_after(user, 30, M))
-			M.heal_organ_damage((src.heal_brute * (1+med_skill/50)/2), (src.heal_burn * (1+med_skill/50)/2))
-			if(prob(10 + med_skill))
+			M.heal_organ_damage((src.heal_brute + (med_skill * 2)), (src.heal_burn + (med_skill * 2)))
+			if(prob(10 + med_skill) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 			else
 				use(1)
@@ -178,7 +181,9 @@
 								to_chat(user, SPAN_WARNING("Your amateur actions caused [H] [pain > 50 ? "a lot of " : ""]pain."))
 							else
 								to_chat(user, "<span class='[pain > 50 ? "danger" : "warning"]'>Your amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")
-					if(prob(10 + user.stats.getStat(STAT_BIO)))
+					if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+					else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 						to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 					else
 						used++
@@ -197,7 +202,7 @@
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))
 
 /obj/item/stack/medical/bruise_pack/handmade
-	name = "non sterile bandage"
+	name = "non sterile bandages"
 	singular_name = "non sterile bandage"
 	desc = "Parts of clothes that can be wrapped around bloody stumps."
 	icon_state = "hm_brutepack"
@@ -240,7 +245,9 @@
 					SPAN_NOTICE("[user] salved wounds on [M]'s [affecting.name]."),
 					SPAN_NOTICE("You salved wounds on [M]'s [affecting.name].")
 				)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					use(1)
@@ -262,6 +269,13 @@
 			else
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a [src]!"))
 
+/obj/item/stack/medical/ointment/handmade
+	name = "spider silk salves"
+	singular_name = "spider silk salve"
+	desc = "Freshly gathered spider webs that you can slather on burns to prevent infection."
+	icon_state = "spidergoo"
+	natural_remedy = TRUE
+
 /obj/item/stack/medical/advanced/bruise_pack
 	name = "advanced trauma kit"
 	singular_name = "advanced trauma kit"
@@ -274,6 +288,16 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
 
+/obj/item/stack/medical/advanced/bruise_pack/tatonka_tongue
+	name = "tatonka blood tongue"
+	singular_name = "tatonka blood tongue"
+	desc = "A treated tatonka tongue that has anti-septic saliva, capable of promoting healing and properly treating brute damage."
+	icon_state = "brahmin_tongue"
+	automatic_charge_overlays = FALSE
+	consumable = TRUE
+	matter = list(MATERIAL_BIOMATTER = 2.5)
+	natural_remedy = TRUE
+
 /obj/item/stack/medical/advanced/bruise_pack/mending_ichor
 	name = "mending ichor"
 	singular_name = "mending ichor"
@@ -282,6 +306,7 @@
 	automatic_charge_overlays = FALSE
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
 	matter = list(MATERIAL_BIOMATTER = 2.5)
+	natural_remedy = TRUE
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -338,7 +363,9 @@
 				W.bandage()
 				W.disinfect()
 				W.heal_damage(heal_brute)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					used++
@@ -379,6 +406,16 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
 
+/obj/item/stack/medical/advanced/ointment/powder_pouch
+	name = "tatonka powder pouch"
+	singular_name = "tatonka powder pouch"
+	desc = "A small pouch containing the powder of a tatonka horn, a medicine useful for treating burns and disinfecting wounds."
+	icon_state = "powder_pouch"
+	automatic_charge_overlays = FALSE
+	consumable = TRUE
+	matter = list(MATERIAL_BIOMATTER = 2.5)
+	natural_remedy = TRUE
+
 /obj/item/stack/medical/advanced/ointment/regenerative_ichor
 	name = "regenerative ichor"
 	singular_name = "regenerative ichor"
@@ -387,6 +424,7 @@
 	automatic_charge_overlays = FALSE
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
 	matter = list(MATERIAL_BIOMATTER = 2.5)
+	natural_remedy = TRUE
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -420,7 +458,9 @@
 					SPAN_NOTICE("You cover wounds on [M]'s [affecting.name] with regenerative membrane.")
 				)
 				affecting.heal_damage(0,heal_burn)
-				if(prob(10 + user.stats.getStat(STAT_BIO)))
+				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
+					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
+				else if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 				else
 					use(1)
@@ -450,6 +490,14 @@
 	amount = 5
 	max_amount = 5
 
+/obj/item/stack/medical/splint/improvised
+	name = "improvised bone splint"
+	singular_name = "improvised bone splint"
+	desc = "A pair of wooden planks held together by wire that can work as a splint on a pinch."
+	icon_state = "improsplint"
+	amount = 1
+	max_amount = 1
+
 /obj/item/stack/medical/splint/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
 		return 1
@@ -463,7 +511,7 @@
 			return TRUE
 
 		var/limb = affecting.name
-		if(!(affecting.organ_tag in list(BP_L_ARM,BP_R_ARM,BP_L_LEG ,BP_R_LEG)))
+		if(!(affecting.organ_tag in list(BP_L_LEG, BP_R_LEG, BP_L_ARM, BP_R_ARM, BP_CHEST, BP_GROIN, BP_HEAD)))
 			to_chat(user, SPAN_DANGER("You can't apply a splint there!"))
 			return
 		if(affecting.status & ORGAN_SPLINTED)
@@ -506,10 +554,7 @@
 					)
 					return
 			affecting.status |= ORGAN_SPLINTED
-			if(prob(10 + user.stats.getStat(STAT_BIO)))
-				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
-			else
-				use(1)
+			use(1) //You cannot "waste less" of a splint! Their uses are supposed to be expended since it's one whole item not some ointment!
 		return
 
 /obj/item/stack/medical/advanced/bruise_pack/nt

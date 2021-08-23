@@ -14,12 +14,26 @@
 	var/glass_power = 1 //How much are more are we getting from the glass?
 	var/id = 0
 	health = 10
-	var/obscured = 0
-	var/sunfrac = 0
+	var/obscured = 0 //When we draw are line to the sun, are we blocked by something?
+	var/sunfrac = 0 //This is used for maths on how much power were getting, based on were the sun is vs pannel angel
 	var/adir = SOUTH // actual dir
 	var/ndir = SOUTH // target dir
 	var/turn_angle = 0
 	var/obj/machinery/power/solar_control/control = null
+
+/obj/machinery/power/solar/examine(mob/user)
+	..()
+	if(glass_power >= 1) //Basiclly lets make sure
+		to_chat(user, "<span class='info'>The pannel reads that its glass power is at : [glass_power]</span>")
+	else
+		to_chat(user, "<span class='info'>The pannel's glass is damage or dirty and generationg : [glass_power] well normal rating is 1x or more!</span>")
+
+
+/obj/machinery/power/solar/Initialize() //We want to make them like 20% odds to brake but not when made.
+	..()
+	if(prob(20))
+		broken()
+
 
 /obj/machinery/power/solar/drain_power()
 	return -1
@@ -52,6 +66,7 @@
 		S.glass_type = /obj/item/stack/material/glass
 		S.anchored = 1
 	S.loc = src
+
 	if(S.glass_type == /obj/item/stack/material/glass/reinforced) //if the panel is in reinforced glass
 		health *= 2 								 //this need to be placed here, because panels already on the map don't have an assembly linked to
 		glass_power = 1.1 //1650
@@ -64,8 +79,7 @@
 
 	update_icon()
 
-/obj/machinery/power/solar/attackby(obj/item/weapon/I, mob/user)
-
+/obj/machinery/power/solar/attackby(obj/item/I, mob/user)
 	if(QUALITY_PRYING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_PRYING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			var/obj/item/solar_assembly/S = locate() in src
@@ -78,7 +92,7 @@
 	else if (I)
 		src.add_fingerprint(user)
 		src.health -= I.force
-		//src.healthcheck()
+		src.healthCheck()
 	..()
 
 
@@ -87,8 +101,8 @@
 		if(!(stat & BROKEN))
 			broken()
 		else
-			new /obj/item/weapon/material/shard(src.loc)
-			new /obj/item/weapon/material/shard(src.loc)
+			new /obj/item/material/shard(src.loc)
+			new /obj/item/material/shard(src.loc)
 			qdel(src)
 			return
 	return
@@ -147,13 +161,13 @@
 	switch(severity)
 		if(1.0)
 			if(prob(15))
-				new /obj/item/weapon/material/shard( src.loc )
+				new /obj/item/material/shard( src.loc )
 			qdel(src)
 			return
 
 		if(2.0)
 			if (prob(25))
-				new /obj/item/weapon/material/shard( src.loc )
+				new /obj/item/material/shard( src.loc )
 				qdel(src)
 				return
 
@@ -230,12 +244,16 @@
 	if(tracker)
 		usable_qualities.Add(QUALITY_PRYING)
 
+	if(istype(I, /obj/item/stack/material/cyborg))
+		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]. Use a sheet loader with glass inside it to build!"))
+		return //Prevents borgs throwing their stuff into it
+
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 		if(QUALITY_PRYING)
 			if(tracker)
 				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-					new /obj/item/weapon/tracker_electronics(src.loc)
+					new /obj/item/tracker_electronics(src.loc)
 					tracker = 0
 					user.visible_message(SPAN_NOTICE("[user] takes out the electronics from the solar assembly."))
 					return
@@ -270,7 +288,7 @@
 			return
 
 	if(!tracker)
-		if(istype(I, /obj/item/weapon/tracker_electronics))
+		if(istype(I, /obj/item/tracker_electronics))
 			tracker = 1
 			user.drop_item()
 			qdel(I)
@@ -418,8 +436,8 @@
 			if (src.stat & BROKEN)
 				to_chat(user, SPAN_NOTICE("The broken glass falls out."))
 				var/obj/structure/computerframe/A = new /obj/structure/computerframe( src.loc )
-				new /obj/item/weapon/material/shard( src.loc )
-				var/obj/item/weapon/circuitboard/solar_control/M = new /obj/item/weapon/circuitboard/solar_control( A )
+				new /obj/item/material/shard( src.loc )
+				var/obj/item/circuitboard/solar_control/M = new /obj/item/circuitboard/solar_control( A )
 				for (var/obj/C in src)
 					C.loc = src.loc
 				A.circuit = M
@@ -430,7 +448,7 @@
 			else
 				to_chat(user, SPAN_NOTICE("You disconnect the monitor."))
 				var/obj/structure/computerframe/A = new /obj/structure/computerframe( src.loc )
-				var/obj/item/weapon/circuitboard/solar_control/M = new /obj/item/weapon/circuitboard/solar_control( A )
+				var/obj/item/circuitboard/solar_control/M = new /obj/item/circuitboard/solar_control( A )
 				for (var/obj/C in src)
 					C.loc = src.loc
 				A.circuit = M
@@ -553,7 +571,7 @@
 // MISC
 //
 
-/obj/item/weapon/paper/solarsteup
+/obj/item/paper/solarsteup
 	name = "paper- 'Message from Tacitus, guild grand master.'"
 	info = "<h1>Greetings Adept</h1><p>Setting up the solar array is pretty straight forward, you just need to replace the wiring that transmits the most energy at the start of each shift \
 	and then go through all the existing wiring to cut off any frayed spots before recrimping it, this step is important as the frayed wires will cause power loss if not repaired. \
@@ -562,14 +580,14 @@
 	array doesn't detect the panels, try resetting the computer by taking it apart and putting it back together. Remember to walk instead of run on the under plating, wear \
 	insulated gloves, and wear some insulated work boots for protection. -Tacitus O'Connar.</p>"
 
-/obj/item/weapon/paper/solarsteupchurch
+/obj/item/paper/solarsteupchurch
 	name = "paper- 'Message from Augustine, church cartographer.'"
 	info = "<h1>Greetings</h1><p>For those unaware we have a small solar system set up here to help provide reserve power to the colony, be quite careful as while it is smaller, safer, and easier to \
 	maintain than what the artificer guild uses the wiring under the catwalk will fray over time and may shock you by electrifying the metal. If you find a pair of insulated gloves I \
 	highly suggest cutting any splicings and crimping the wires to make them safe and increase power production. If needed it may be usefull to upgrade the glass inside the pannels to harvest more power, reinforced borosilicate works best. \
 	If the colony ever has any brown outs or black outs the third SMES unit in the biogenerator room will charge from these solars and can be hooked up as a temporary solution.</p>"
 
-/obj/item/weapon/paper/voidwolfwarning
+/obj/item/paper/voidwolfwarning
 	name = "paper- 'Read this you vat grown retards!'"
 	info = "<h1>Good you got a few fucking brain cells</h1><p>For those limp dicks who fucking forgot ever since the colony killed Preston and his Jackels they can't reset this teleporter, its stuck \
 	on forever because none of our boffins know how the fuck it works. Doesn't matter anyways, the fortress got taken over by Preston's formerly caged face rippers so none of you should be getting \
@@ -577,7 +595,7 @@
 	take out that huge queen looking bitch. P.S. Watch out for the landmines we laced a few spots with, might cause a breach so keep your void suits on and your oxygen tanks filled.</p>"
 
 
-/obj/item/weapon/paper/solar
+/obj/item/paper/solar
 	name = "paper- 'Going green! Setup your own solar array instructions.'"
 	info = "<h1>Welcome</h1><p>At greencorps we love the environment, and space. With this package you are able to help mother nature and produce energy without any usage of fossil fuel or \
 	plasma! Singularity energy is dangerous while solar energy is safe, which is why it's better. Now here is how you setup your own solar array.</p><p>You can make a solar panel by wrenching \

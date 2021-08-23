@@ -106,5 +106,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	var/power = force
 	if(HULK in user.mutations)
 		power *= 2
+	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
+		power *= damage_mult // Increase the damage
 	target.hit_with_weapon(src, user, power, hit_zone)
 	return

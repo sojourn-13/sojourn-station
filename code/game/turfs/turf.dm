@@ -278,3 +278,28 @@ var/const/enterloopsanity = 100
 
 /turf/AllowDrop()
 	return TRUE
+
+//Moves the contents of this turf onto another.
+//Excludes any objects in the 'exclude' list.
+//'where' should be a turf.
+/turf/proc/Unload(var/turf/where, var/list/exclude = null)
+	if(where)
+		var/list/what = contents - exclude
+		sleep(-1)
+		for(var/atom/movable/obj in what)
+			if(!obj.anchored && obj.loc == src)// prevents the object from being affected if it's not currently here.
+				obj.forceMove(where)
+			CHECK_TICK
+
+//Slides the contents of this turf onto an adjacent turf.
+//Excludes any objects in the 'exclude' list.
+//Should respect collisions, obstacles, or other immovables.
+//'where' should be a direction.
+/turf/proc/UnloadSlide(var/where, var/list/exclude, speed)
+	if(isnum(where))
+		var/list/what = contents - exclude
+		sleep(1)
+		for(var/atom/movable/obj in what)
+			if(!obj.anchored && obj.loc == src)// prevents the object from being affected if it's not currently here.
+				step_glide(obj, where, speed)
+			CHECK_TICK

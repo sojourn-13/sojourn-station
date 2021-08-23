@@ -1,9 +1,23 @@
+
+//NOTE: Don't use this proc for finding specific mobs or a very certain object; ultilize GLOBs instead of view()/mob/living/carbon/superior_animal/proc/getObjectsInView()
 /mob/living/carbon/superior_animal/proc/getObjectsInView()
 	objectsInView = objectsInView || view(src, viewRange)
 	return objectsInView
 
+//Use this for all mobs per zlevel, get_dist() checked
 /mob/living/carbon/superior_animal/proc/getPotentialTargets()
+	var/turf/T = get_turf(src)
+	if(!T)
+		return //We're contained inside something, a locker perhaps.
 	return hearers(src, viewRange)
+
+
+	/* There was an attempt at optimization, but it was unsanitized, and was more expensive than just checking hearers.
+	var/list/list_to_return = new
+	for(var/atom/thing in SSmobs.mob_living_by_zlevel[((get_turf(src)).z)])
+		if(get_dist(src, thing) <= viewRange)
+			list_to_return += thing
+	return list_to_return*/
 
 /mob/living/carbon/superior_animal/proc/findTarget()
 	var/list/filteredTargets = new
@@ -31,7 +45,7 @@
 		loseTarget()
 		return
 
-	if (!(target_mob in getPotentialTargets()) && !istype(target_mob, /obj/mecha))
+	if ((get_dist(src, target_mob) >= viewRange) || src.z != target_mob.z && !istype(target_mob, /obj/mecha))
 		loseTarget()
 		return
 
@@ -47,6 +61,8 @@
 	if (isliving(O))
 		var/mob/living/L = O
 		if((L.stat != CONSCIOUS) || (L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0)) || (!attack_same && (L.faction == src.faction)) || (L in friends))
+			return
+		if(L.friendly_to_colony && src.friendly_to_colony) //If are target and areselfs have the friendly to colony tag, used for chtmant protection
 			return
 		return 1
 
@@ -77,6 +93,39 @@
 					return
 
 			for (var/obj/structure/obstacle in get_step(src, dir))
-				if (istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/low_wall) || istype(obstacle, /obj/structure/railing) || istype(obstacle, /obj/mecha))
+				if (istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/low_wall) || istype(obstacle, /obj/structure/railing) || istype(obstacle, /obj/mecha) || istype(obstacle, /obj/structure/girder))
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
+
+/mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
+	..()
+	if(obey_friends) // Are we only obeying friends?
+		if(speaker in friends) // Is the one talking a friend?
+			if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following) // Is he telling us to follow?
+				following = speaker
+				visible_emote("[follow_message]")
+
+			if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
+				following = null
+				visible_emote("[stop_message]")
+	else // We are obeying everyone
+		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following) // Is he telling us to follow?
+			following = speaker
+			visible_emote("[follow_message]")
+
+		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
+			following = null
+			visible_emote("[stop_message]")
+
+//Putting this here do to no idea were it would fit other then here
+/mob/living/carbon/superior_animal/verb/toggle_AI()
+	set name = "Toggle AI"
+	set desc = "Toggles on/off the mobs AI."
+	set category = "Mob verbs"
+
+	if (AI_inactive)
+		activate_ai()
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
+	else
+		AI_inactive = TRUE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))

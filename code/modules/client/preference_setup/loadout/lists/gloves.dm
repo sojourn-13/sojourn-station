@@ -36,9 +36,30 @@
 	slot = slot_gloves
 	cost = 1
 
+/datum/gear/gloves/evening_ash
+	display_name = "gloves, ash evening"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/ash_evening
+	slot = slot_gloves
+	cost = 1
+
 /datum/gear/gloves/latex
 	display_name = "gloves, latex"
 	sort_category = "Gloves and Handwear"
 	path = /obj/item/clothing/gloves/latex
+	slot = slot_gloves
+	cost = 1
+
+/datum/gear/gloves/red_leather
+	display_name = "gloves, red designer leather gloves"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/aerostatic_gloves
+	slot = slot_gloves
+	cost = 1
+
+/datum/gear/gloves/knuckles
+	display_name = "knuckle gloves"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/knuckles
 	slot = slot_gloves
 	cost = 1

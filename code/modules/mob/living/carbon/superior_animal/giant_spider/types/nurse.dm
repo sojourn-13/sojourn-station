@@ -16,10 +16,11 @@
 	poison_per_bite = 2
 	var/atom/cocoon_target
 	poison_type = "stoxin"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
+	var/web_activity = 30
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
 	name = "midwife spider"
@@ -30,8 +31,43 @@
 	health = 60
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	poison_type = "mutagen"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
+	poison_per_bite = 4
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/midwife
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/carrier
+	name = "carrier spider"
+	desc = "Furry and tan, it makes you shudder to look at it. This one has brilliant green eyes, its body swollen with pulsating eggs."
+	icon_state = "carrier"
+	icon_living = "carrier"
+	deathmessage = "splits open! Several wriggling spiders crawl from its gore!"
+	var/has_made_spiderlings = FALSE
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
+	if (stat != DEAD)
+		target_mob = null
+		stance = initial(stance)
+		stop_automated_movement = initial(stop_automated_movement)
+		walk(src, 0)
+		if(!has_made_spiderlings)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			new /obj/effect/spider/spiderling/near_grown(src.loc)
+			has_made_spiderlings = TRUE
+
+		density = 0
+		layer = LYING_MOB_LAYER
+
+	. = ..()
+
+/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver
+	name = "orb weaver spider"
+	desc = "Furry and green, it makes you shudder to look at it. This one has lots of energy and even more webs covering its body."
+	icon_state = "webslinger"
+	icon_living = "webslinger"
+	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.","bounces happily in place!")
+	web_activity = 90
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"
@@ -40,16 +76,16 @@
 	icon_living = "recluse"
 	maxHealth = 20
 	health = 20
-	poison_per_bite = 4
+	poison_per_bite = 1 //1u is all it takes to sleep you, your asleep also dosnt prevet it form attacking you more then once meaning this quit quickly stacks without someones help
 	melee_damage_lower = 3
 	melee_damage_upper = 5
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/recluse
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	meat_amount = 2
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen
-	name = "spider queen"
+	name = "empress spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one is a huge chittering brood queen with large fangs of dripping venom."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_queen"
@@ -60,8 +96,9 @@
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "menace"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/queen
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/queen
 	meat_amount = 3
+	flash_resistances = 5 //For balance against are speedy fello
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
 
@@ -90,13 +127,13 @@
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/Life()
 	..()
-	if(!stat)
+	if(!stat && !AI_inactive)
 		if(stance == HOSTILE_STANCE_IDLE)
 			//30% chance to stop wandering and do something
-			if(!busy && prob(30))
+			if(!busy && prob(web_activity))
 				//first, check for potential food nearby to cocoon
 				var/list/cocoonTargets = new
-				for(var/mob/living/C in getObjectsInView())
+				for(var/mob/living/C in getPotentialTargets())
 					if(C.stat != CONSCIOUS)
 						cocoonTargets += C
 
@@ -130,7 +167,7 @@
 							if(busy == LAYING_EGGS)
 								if(!(locate(/obj/effect/spider/eggcluster) in get_turf(src)))
 									new /obj/effect/spider/eggcluster(loc, src)
-									fed--
+									fed -= 2
 									update_openspace()
 								busy = 0
 								stop_automated_movement = 0
@@ -181,7 +218,19 @@
 										continue
 									large_cocoon = 1
 
-									if (istype(M, /mob/living))
+									if(istype(M, /mob/living/carbon/human))
+										if(M.faction == "spiders")
+											continue
+										else
+											src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
+											M.drip_blood(200)
+											M.adjustToxLoss(200)
+											M.adjustOxyLoss(200)
+											M.adjustBrainLoss(60)
+											M.updatehealth()
+											fed += 1 //Takes 2 mobs before we can lay eggs
+
+									else if(istype(M, /mob/living))
 										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
 										fed += 1 //Takes 2 mobs before we can lay eggs
 

@@ -2,12 +2,12 @@
 	name = "exosuit fabricator"
 	desc = "A machine used for construction of robots and mechas."
 	icon_state = "mechfab"
-	circuit = /obj/item/weapon/circuitboard/mechfab
+	circuit = /obj/item/circuitboard/mechfab
 
 	build_type = MECHFAB
 	storage_capacity = 240
 	speed = 3
-
+	unsuitable_materials = list()	// Can use biomatter too for some seals and rigs.
 	have_disk = FALSE
 	have_reagents = FALSE
 	have_recycling = FALSE
@@ -18,6 +18,12 @@
 
 	var/datum/research/files
 
+
+/obj/machinery/autolathe/mechfab/proc/check_user(mob/user)
+	if(user.stats?.getPerk(PERK_SI_SCI) || user.stat_check(STAT_MEC, 30)) //Needs same skill as it takes to maintain a mech
+		return TRUE
+	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+	return FALSE
 
 /obj/machinery/autolathe/mechfab/Initialize()
 	. = ..()

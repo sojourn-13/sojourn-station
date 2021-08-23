@@ -140,7 +140,13 @@
 	build_path = /obj/item/rig_module/vision/meson
 	category = CAT_MINING
 
-/datum/design/research/item/rig_cheap
+/datum/design/research/item/clothing/rig_cheap
 	name = "SI 'Spacer' control module"
 	desc = "An ultra light rig suit that a protolathe is only just able to print off..."
-	build_path = /obj/item/weapon/rig/light/ultra_light
+	build_path = /obj/item/rig/light/ultra_light
+	build_type = MECHFAB | PROTOLATHE
+
+/datum/design/research/item/clothing/rig_advhazmat
+	name = "Advanced AMI control module"
+	build_path = /obj/item/rig/advhazmat
+	build_type = MECHFAB

@@ -33,7 +33,7 @@ var/global/list/default_medbay_channels = list(
 
 /obj/item/device/radio
 	icon = 'icons/obj/radio.dmi'
-	name = "station bounced radio"
+	name = "ham radio"
 	suffix = "\[3\]"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
@@ -168,7 +168,7 @@ var/global/list/default_medbay_channels = list(
 	return user.has_internal_radio_channel_access(internal_channels[freq])
 
 /mob/proc/has_internal_radio_channel_access(var/list/req_one_accesses)
-	var/obj/item/weapon/card/id/I = GetIdCard()
+	var/obj/item/card/id/I = GetIdCard()
 	return has_access(list(), req_one_accesses, I ? I.GetAccess() : list())
 
 /mob/observer/ghost/has_internal_radio_channel_access(var/list/req_one_accesses)
@@ -561,10 +561,10 @@ var/global/list/default_medbay_channels = list(
 			user.show_message(SPAN_NOTICE("\The [src] can not be modified or attached!"))
 	return
 
-/obj/item/device/radio/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/radio/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	user.set_machine(src)
-	if (!( istype(W, /obj/item/weapon/tool/screwdriver) ))
+	if (!( istype(W, /obj/item/tool/screwdriver) ))
 		return
 	b_stat = !( b_stat )
 	if(!istype(src, /obj/item/device/radio/beacon))
@@ -613,13 +613,13 @@ var/global/list/default_medbay_channels = list(
 		var/datum/robot_component/C = R.components["radio"]
 		R.cell_use_power(C.active_usage)
 
-/obj/item/device/radio/borg/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/radio/borg/attackby(obj/item/W as obj, mob/user as mob)
 //	..()
 	user.set_machine(src)
-	if (!( istype(W, /obj/item/weapon/tool/screwdriver) || (istype(W, /obj/item/device/encryptionkey/ ))))
+	if (!( istype(W, /obj/item/tool/screwdriver) || (istype(W, /obj/item/device/encryptionkey/ ))))
 		return
 
-	if(istype(W, /obj/item/weapon/tool/screwdriver))
+	if(istype(W, /obj/item/tool/screwdriver))
 		if(keyslot)
 
 
@@ -784,7 +784,7 @@ var/global/list/default_medbay_channels = list(
 	channels = list("Command" = 1, "Blackshield" = 1, "Marshal" = 1, "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Prospector" = 1)
 	price_tag = 20000
 	origin_tech = list(TECH_DATA = 7, TECH_ENGINEERING = 7, TECH_ILLEGAL = 7)
-	var/list/obj/item/weapon/oddity/used_oddity = list()
+	var/list/obj/item/oddity/used_oddity = list()
 	var/last_produce = 0
 	var/cooldown = 40 MINUTES
 	var/max_cooldown = 40 MINUTES
@@ -829,11 +829,11 @@ var/global/list/default_medbay_channels = list(
 		to_chat(user, SPAN_NOTICE("The [name] has already been emaged."))
 		return NO_EMAG_ACT
 
-/obj/item/device/radio/random_radio/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/radio/random_radio/attackby(obj/item/W as obj, mob/user as mob)
 	user.set_machine(src)
 
-	if(istype(W, /obj/item/weapon/oddity))
-		var/obj/item/weapon/oddity/D = W
+	if(istype(W, /obj/item/oddity))
+		var/obj/item/oddity/D = W
 		if(D.oddity_stats)
 			var/usefull = FALSE
 			if(D in used_oddity)

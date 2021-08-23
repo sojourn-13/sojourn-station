@@ -11,7 +11,7 @@
 	required_tech_levels = list()
 	cost = 0
 
-	unlocks_designs = list(/datum/design/research/item/hud/security)
+	unlocks_designs = list(/datum/design/research/item/clothing/security)
 
 // TO ADD: synth flashes?
 /datum/technology/basic_nonlethal
@@ -66,6 +66,20 @@
 							/datum/design/research/item/ammo/shotgun_stun
 						)
 
+/datum/technology/sst
+	name = "Soteria Surface Tenstion Project"
+	desc = "The development of non-lethal weapons for Soteria Medical using GP technology."
+	x = 0.6
+	y = 0.3
+	tech_type = RESEARCH_COMBAT
+	icon = "abnegate"
+	required_technologies = list(/datum/technology/advanced_nonlethal)
+	required_tech_levels = list(RESEARCH_GREYSON = 3) //Likely people will get parts/cog/bots for this
+	cost = 7500
+	unlocks_designs = list(/datum/design/research/item/greyson/abnegate,
+						/datum/design/research/item/greyson/formatbound,
+						/datum/design/research/item/greyson/humility,
+						/datum/design/research/item/greyson/systemcost)
 
 /datum/technology/hardsuit_nonlethal
 	name = "Mounted Non-Lethal"
@@ -116,7 +130,9 @@
 	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
 							/datum/design/research/item/ammo/smg_mag,
 							/datum/design/research/item/ammo/pistol_laser,
-							/datum/design/research/item/ammo/magum_laser
+							/datum/design/research/item/ammo/magum_laser,
+							/datum/design/research/item/robot_upgrade/bigknife,
+							/datum/design/research/item/weapon/slimebaton
 							)
 
 /datum/technology/exotic_weaponry
@@ -133,6 +149,7 @@
 	cost = 3000
 
 	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun,
+							/datum/design/research/item/weapon/slimegun,
 							/datum/design/research/item/ammo/shotgun_fire,
 							/datum/design/research/item/ammo/shotgun_laser
 							)
@@ -154,6 +171,7 @@
 							/datum/design/research/item/weapon/centurio,
 							/datum/design/research/item/weapon/auretian
 						)
+
 
 /datum/technology/adv_lethal
 	name = "Advanced Lethal Weapons"
@@ -196,13 +214,13 @@
 	cost = 4000
 
 	unlocks_designs = list(
-							/datum/design/research/item/weapon/gunmod/battery_shunt,
-							/datum/design/research/item/weapon/gunmod/overdrive,
-							/datum/design/research/item/weapon/gunmod/toxin_coater,
-							/datum/design/research/item/weapon/gunmod/overheat,
-							/datum/design/research/item/weapon/gunmod/penetrator,
-							//datum/design/research/item/weapon/gunmod/isotope_diffuser,
-							//datum/design/research/item/weapon/gunmod/psionic_catalyst
+							/datum/design/research/item/weapon/weapon_upgrade/battery_shunt,
+							/datum/design/research/item/weapon/weapon_upgrade/overdrive,
+							/datum/design/research/item/weapon/weapon_upgrade/toxin_coater,
+							/datum/design/research/item/weapon/weapon_upgrade/overheat,
+							/datum/design/research/item/weapon/weapon_upgrade/penetrator,
+							//datum/design/research/item/weapon/weapon_upgrade/isotope_diffuser,
+							//datum/design/research/item/weapon/weapon_upgrade/psionic_catalyst
 						)
 
 /datum/technology/laser_weaponry
@@ -222,7 +240,9 @@
 							/datum/design/research/item/weapon/lasercannon,
 							/datum/design/research/item/ammo/heavy_rifle_408,
 							/datum/design/research/item/ammo/laser_mag,
-							/datum/design/research/item/weapon/laser_ak)
+							/datum/design/research/item/weapon/laser_ak,
+							/datum/design/research/item/weapon/centauri
+							)
 
 /datum/technology/riglaser_weaponry
 	name = "Hardsuit Laser Weaponry"
@@ -253,9 +273,9 @@
 	required_tech_levels = list()
 	cost = 1000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/soteriaarmorchest,
-							 /datum/design/research/item/weapon/soteriaarmorhead,
-							 /datum/design/research/item/rig_cheap)
+	unlocks_designs = list(/datum/design/research/item/clothing/soteriaarmorchest,
+							 /datum/design/research/item/clothing/soteriaarmorhead,
+							 /datum/design/research/item/clothing/rig_cheap)
 
 /datum/technology/advanced_armor
 	name = "Advanced Armor Designs"
@@ -270,5 +290,26 @@
 	required_tech_levels = list()
 	cost = 5000
 
-	unlocks_designs = list(/datum/design/research/item/weapon/medarmor,
-							/datum/design/research/item/weapon/armor_laserproof)
+	unlocks_designs = list(/datum/design/research/item/clothing/medarmor,
+							/datum/design/research/item/clothing/armor_laserproof,
+							/datum/design/research/item/clothing/rig_advhazmat)
+
+/datum/technology/advanced_unstable_plasma_weapons
+	name = "Advanced Plasma Weapon Designs"
+	desc = "Advanced plasma designs for space or ground combat, rather unstable designs for unstable minds."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.9
+	y = 0.8
+	icon = "hydrogen"
+
+	required_technologies = list(/datum/technology/advanced_armor,
+								 /datum/technology/laser_weaponry)
+	required_tech_levels = list(RESEARCH_POWERSTORAGE = 12, RESEARCH_ENGINEERING = 20)
+	cost = 7500 //You get back a lot
+
+	unlocks_designs = list(/datum/design/research/item/weapon/hydrogen_rifle,
+							/datum/design/research/item/weapon/hydrogen_pistol,
+							/datum/design/research/item/weapon/hydrogen_cannon,
+							/datum/design/research/item/mecha/weapon/hydrogen,
+							/datum/design/research/item/weapon/hydrogen_welder)

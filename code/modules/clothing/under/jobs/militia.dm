@@ -48,6 +48,12 @@
 	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the insignia of the Blackshield."
 	icon_state = "gorka_ih"
 
+/obj/item/clothing/under/rank/trooper/skirt
+	name = "blackshield skirt"
+	desc = "A skirt in blackshield colours and fitted for same attachments of shoulderboards. Sadly this likely will not help protect your feet or legs form cuts and scratches"
+	icon_state = "gorka_blackshield_skort"
+	item_state = "gorka_blackshield_skort"
+
 /obj/item/clothing/under/rank/trooper/green
 	name = "green blackshield gorka"
 	desc = "A rugged set of militant and quite slavic two-tone clothes."
@@ -108,7 +114,7 @@
 	name = "tactical turtleneck"
 	desc = "A reinforced military turtleneck, designed to provide moderate combat protection."
 	icon_state = "syndicate"
-
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/instructor
@@ -143,6 +149,7 @@
 	name = "commander's combat uniform"
 	desc = "It's a uniform worn by those few with the dedication to achieve the position of \"Blackshield Commander\". It has additional armor to protect the wearer."
 	icon_state = "gorka_ih"
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0) // Let's not lie anymore about the armored aspect of it.
 
 	siemens_coefficient = 0.8
 

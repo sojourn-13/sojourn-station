@@ -135,7 +135,7 @@
 		for(var/oretype in typesof(/ore)-/ore)
 			var/ore/OD = new oretype()
 			ore_data[OD.name] = OD
-	
+
 	for(var/orename in ore_data)
 		ores_processing[orename] = 0
 		ores_stored[orename] = 0
@@ -158,7 +158,7 @@
 	var/list/tick_alloys = list()
 
 	//Grab some more ore to process this tick.
-	for(var/obj/item/weapon/ore/O in get_step(src, input_dir))
+	for(var/obj/item/ore/O in get_step(src, input_dir))
 		if(!isnull(ores_stored[O.material]))
 			ores_stored[O.material] += O.sheet_amout
 		else
@@ -245,7 +245,7 @@
 			else
 				ores_stored[metal]--
 				sheets++
-				new /obj/item/weapon/ore/slag(get_step(src, output_dir))
+				new /obj/item/ore/slag(get_step(src, output_dir))
 		else
 			continue
 

@@ -6,6 +6,9 @@
 
 /datum/perk/active_inspiration
 	name = "Exotic Inspiration (Active)"
+	desc = "The alcohol you imbibed is granting you that much needed boost in inspiration for your next project...somehow."
+	gain_text = "You feel a sudden rush of alcohol-induced inspiration..."
+	lose_text = "Your sudden flash of brilliance fades away..."
 	//icon_state = "inspiration_active" // https://game-icons.net/1x1/lorc/enlightenment.html
 
 /datum/perk/active_inspiration/assign(mob/living/carbon/human/H)
@@ -45,7 +48,7 @@
 
 /datum/perk/timeismoney
 	name = "Hyperzine Implant"
-	desc = "A standard issue implant designed for chief executive officers that contains a small on demand injection of hyperzine. The implant itself is hidden from prying scanners and comes in both \
+	desc = "A standard issue implant designed for Chief Executive Officers that contains a small on-demand injection of Hyperzine. The implant itself is hidden from prying scanners and comes in both \
 	metal and organic material designs to aid in remaining hidden. While useful, the chemical storage takes time to recharge after use."
 	active = FALSE
 	passivePerk = FALSE
@@ -55,7 +58,7 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("Your chemical implant is still recharging, you'll need to wait longer."))
+		to_chat(usr, SPAN_NOTICE("Your chemical implant is still refilling, you'll need to wait longer."))
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("[user] begins twitching and breathing much quicker!", "You feel your heart rate increasing rapidly as everything seems to speed up!", "You hear someone breathing rapidly...")
@@ -63,20 +66,9 @@
 	user.reagents.add_reagent("hyperzine", 5)
 	return ..()
 
-/datum/perk/selfmedicated
+/datum/perk/medicalexpertise
 	name = "Medical Expertise"
-	desc = "You've been trained in the art of Soteria medicine, applying chemicals in the most efficient ways to lessen addiction chance and prevent as much nerve shock."
-	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
-
-/datum/perk/selfmedicated/assign(mob/living/carbon/human/H)
-	..()
-	holder.metabolism_effects.addiction_chance_multiplier = 0.5
-	holder.metabolism_effects.nsa_threshold += 10
-
-/datum/perk/selfmedicated/remove()
-	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_threshold -= 10
-	..()
+	desc = "Your medical training and experience in the area of patient triage is unparalleled. 'Waste not, want not' is your motto, and you apply bandages and salves with utmost efficiency, sometimes using just the right ammount of them."
 
 /datum/perk/solborn
 	name = "Sol Born"
@@ -110,7 +102,7 @@
 /datum/perk/addict
 	name = "Chem Addict"
 	desc = "You've been an addict all your life, for whatever piss poor reason you've told yourself. Your body is able to handle a variety of drugs, more than the average person, but you get \
-	easily addicted to most of them."
+	easily addicted to all of them."
 	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/addict/assign(mob/living/carbon/human/H)
@@ -130,15 +122,15 @@
 
 /datum/perk/merchant/assign(mob/living/carbon/human/H)
 	..()
-	//holder.sanity.valid_inspirations += /obj/item/weapon/spacecash/bundle
+	//holder.sanity.valid_inspirations += /obj/item/spacecash/bundle
 
 /datum/perk/merchant/remove()
-	//holder.sanity.valid_inspirations -= /obj/item/weapon/spacecash/bundle
+	//holder.sanity.valid_inspirations -= /obj/item/spacecash/bundle
 	..()
 */
 /datum/perk/sanityboost
 	name = "True Faith"
-	desc = "When near an obelisk, you feel your mind at ease. You're body is strengthed by its presence, resisting all forms of damage."
+	desc = "When near an obelisk, you feel your mind at ease. Your body is strengthened by its presence, resisting all forms of damage."
 	gain_text = "You feel the protection of the nearby obelisk."
 	lose_text = "You no longer feel the protection of an obelisk."
 	//icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
@@ -159,17 +151,17 @@
 
 /datum/perk/sure_step
 	name = "Sure step"
-	desc = "Years spent in hazardous areas have made you sure on your footing, you are more likely to avoid traps and don't trip while running on underplating."
+	desc = "Years spent in hazardous areas have made you sure on your footing, you are more likely to avoid traps and less likely to trip while running on under-plating."
 	//icon_state = "mantrap"
 
 /datum/perk/ear_of_quicksilver
 	name = "Ear of Quicksilver"
-	desc = "Training (and an ear implant) given to you as a ranger makes it hard for secrets to escape your ears. Beware, loud noises are especially dangerous to you as a side effect."
+	desc = "Training (and an ear implant) given to you as a Ranger makes it hard for secrets to escape your ears. Beware, loud noises are especially dangerous to you as a side effect."
 	//icon_state = "ear" // https://game-icons.net
 
 /datum/perk/unfinished_delivery
 	name = "Lazarus Protocol"
-	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish it will attempt an emergency revival that may restore your body after a short time in which you'll be unconcious."
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will attempt an emergency revival that may restore your body after a short time, in which you'll be unconscious."
 	//icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
 
 /datum/perk/lungs_of_iron
@@ -184,7 +176,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Enviromental damage from falling or explosives have less of an effect on your toughened body."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -204,15 +196,15 @@
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
-	holder.mod_climb_delay -= 0.5
+	holder.mod_climb_delay -= 0.75
 
 /datum/perk/parkour/remove()
-	holder.mod_climb_delay += 0.5
+	holder.mod_climb_delay += 0.75
 	..()
 
 /datum/perk/chaingun_smoker
 	name = "Unclean Living"
-	desc = "The bad conditions of your birth have led you to thrive in toxic enviroments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
+	desc = "The bad conditions of your birth have led you to thrive in toxic environments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
 	//icon_state = "cigarette" // https://game-icons.net
 
 /datum/perk/nightcrawler
@@ -222,7 +214,8 @@
 
 /datum/perk/fast_fingers
 	name = "Fast fingers"
-	desc = "Pockets, ears, hands... just not the clothes! My legerdemain is legendary! Any time you pickpocket someone observers have a much harder time noticing."
+	desc = "Nothing is safe around your hands. You are a true kleptomaniac. Taking items off others makes no sound or prompts, provided its in their pockets, hands, or their ears. \
+	It's also quicker and you can slip pills into drinks unnoticed."
 	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
 
 /datum/perk/quiet_as_mouse
@@ -240,12 +233,12 @@
 
 /datum/perk/junkborn
 	name = "Expert Scavenger"
-	desc = "They say theirs diamonds in the rough and you can prove it. Removing a trash pile has a chance of revealing a valuable item nobody else would find."
+	desc = "One man's trash is another man's salary. Removing a trash pile has a chance of revealing a valuable item nobody else would find."
 	//icon_state = "treasure" // https://game-icons.net
 
 /datum/perk/ass_of_concrete
-	name = "Expert Defensive Training"
-	desc = "Your position requires you to be unstoppable. Slowing down to a walking pace lets you center your gravity and few things can knock you down."
+	name = "Immovable Object"
+	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around, as long as you walk instead of run."
 	//icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/ass_of_concrete/assign(mob/living/carbon/human/H)
@@ -258,12 +251,12 @@
 
 /datum/perk/sommelier
 	name = "Sommelier"
-	desc = "You know how to handle even strongest alcohol in the universe and doing so improves your toughness."
+	desc = "You know how to handle even the strongest alcohol in the universe and doing so improves your toughness."
 	//icon_state = "inspiration"
 
 /datum/perk/rezsickness
 	name = "Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience has left you weakened and thus unable to be fighting fit for awhile."
+	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. You better find a bed or chair to rest into until you've fully recuperated."
 	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
 	lose_text = "You finally feel like you recovered from the ravages of your body."
 	var/initial_time
@@ -272,43 +265,43 @@
 	..()
 	initial_time = world.time
 	cooldown_time = world.time + 30 MINUTES
-	holder.brute_mod_perk += 0.15
-	holder.burn_mod_perk += 0.15
-	holder.oxy_mod_perk += 0.15
-	holder.toxin_mod_perk += 0.15
-	holder.stats.changeStat(STAT_ROB, -15)
-	holder.stats.changeStat(STAT_TGH, -15)
-	holder.stats.changeStat(STAT_VIG, -15)
-
-/datum/perk/rezsickness/remove()
-	holder.brute_mod_perk -= 0.15
-	holder.burn_mod_perk -= 0.15
-	holder.oxy_mod_perk -= 0.15
-	holder.toxin_mod_perk -= 0.15
-	holder.stats.changeStat(STAT_ROB, 15)
-	holder.stats.changeStat(STAT_TGH, 15)
-	holder.stats.changeStat(STAT_VIG, 15)
-	..()
-
-/datum/perk/rezsickness/severe
-	name = "Severe Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience has left severely weakened to the point where you struggle to do even basic tasks."
-
-/datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
-	..()
 	holder.brute_mod_perk += 0.10
 	holder.burn_mod_perk += 0.10
 	holder.oxy_mod_perk += 0.10
 	holder.toxin_mod_perk += 0.10
+	holder.stats.changeStat(STAT_ROB, -10)
+	holder.stats.changeStat(STAT_TGH, -10)
+	holder.stats.changeStat(STAT_VIG, -10)
+
+/datum/perk/rezsickness/remove()
+	holder.brute_mod_perk -= 0.10
+	holder.burn_mod_perk -= 0.10
+	holder.oxy_mod_perk -= 0.10
+	holder.toxin_mod_perk -= 0.10
+	holder.stats.changeStat(STAT_ROB, 10)
+	holder.stats.changeStat(STAT_TGH, 10)
+	holder.stats.changeStat(STAT_VIG, 10)
+	..()
+
+/datum/perk/rezsickness/severe
+	name = "Severe Revival Sickness"
+	desc = "You've recently died and have been brought back to life. Your body cannot handle this traumatic experience very well, to the point where you struggle to complete even basic tasks. You better rest in a bed until it subsides before going back to work."
+
+/datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk += 0.15
+	holder.burn_mod_perk += 0.15
+	holder.oxy_mod_perk += 0.15
+	holder.toxin_mod_perk += 0.15
 	holder.stats.changeStat(STAT_COG, -15)
 	holder.stats.changeStat(STAT_MEC, -15)
 	holder.stats.changeStat(STAT_BIO, -15)
 
 /datum/perk/rezsickness/severe/remove()
-	holder.brute_mod_perk -= 0.10
-	holder.burn_mod_perk -= 0.10
-	holder.oxy_mod_perk -= 0.10
-	holder.toxin_mod_perk -= 0.10
+	holder.brute_mod_perk -= 0.15
+	holder.burn_mod_perk -= 0.15
+	holder.oxy_mod_perk -= 0.15
+	holder.toxin_mod_perk -= 0.15
 	holder.stats.changeStat(STAT_COG, 15)
 	holder.stats.changeStat(STAT_MEC, 15)
 	holder.stats.changeStat(STAT_BIO, 15)
@@ -316,7 +309,7 @@
 
 /datum/perk/rezsickness/severe/fatal
 	name = "Fatal Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience has left you utterly physically and mentally wrecked, you better find a bed to recover in..."
+	desc = "You've recently died and have been brought back to life. Your frail constitution can barely handle the process, leaving you utterly physically and mentally wrecked. You better stay in bed for now and rest, or you risk dying even easier than before."
 
 /datum/perk/rezsickness/severe/fatal/assign(mob/living/carbon/human/H)
 	..()
@@ -324,24 +317,24 @@
 	holder.burn_mod_perk += 0.25
 	holder.oxy_mod_perk += 0.25
 	holder.toxin_mod_perk += 0.25
-	holder.stats.changeStat(STAT_ROB, -15)
-	holder.stats.changeStat(STAT_TGH, -15)
-	holder.stats.changeStat(STAT_VIG, -15)
-	holder.stats.changeStat(STAT_COG, -15)
-	holder.stats.changeStat(STAT_MEC, -15)
-	holder.stats.changeStat(STAT_BIO, -15)
+	holder.stats.changeStat(STAT_ROB, -20)
+	holder.stats.changeStat(STAT_TGH, -20)
+	holder.stats.changeStat(STAT_VIG, -20)
+	holder.stats.changeStat(STAT_COG, -20)
+	holder.stats.changeStat(STAT_MEC, -20)
+	holder.stats.changeStat(STAT_BIO, -20)
 
 /datum/perk/rezsickness/severe/fatal/remove()
 	holder.brute_mod_perk -= 0.25
 	holder.burn_mod_perk -= 0.25
 	holder.oxy_mod_perk -= 0.25
 	holder.toxin_mod_perk -= 0.25
-	holder.stats.changeStat(STAT_ROB, 15)
-	holder.stats.changeStat(STAT_TGH, 15)
-	holder.stats.changeStat(STAT_VIG, 15)
-	holder.stats.changeStat(STAT_COG, 15)
-	holder.stats.changeStat(STAT_MEC, 15)
-	holder.stats.changeStat(STAT_BIO, 15)
+	holder.stats.changeStat(STAT_ROB, 20)
+	holder.stats.changeStat(STAT_TGH, 20)
+	holder.stats.changeStat(STAT_VIG, 20)
+	holder.stats.changeStat(STAT_COG, 20)
+	holder.stats.changeStat(STAT_MEC, 20)
+	holder.stats.changeStat(STAT_BIO, 20)
 	..()
 
 /datum/perk/rezsickness/on_process()
@@ -354,20 +347,256 @@
 
 /datum/perk/handyman
 	name = "Handyman"
-	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the best way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
+	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
+	var/known_recipes = list(
+			/datum/craft_recipe/guild/melee,
+			/datum/craft_recipe/guild/bullet,
+			/datum/craft_recipe/guild/energy,
+			/datum/craft_recipe/guild/bomb,
+			/datum/craft_recipe/guild/robotmelee,
+			/datum/craft_recipe/guild/arcwelder,
+			/datum/craft_recipe/guild/polytool,
+			/datum/craft_recipe/guild/combat_shovel,
+			/datum/craft_recipe/guild/supermop,
+			/datum/craft_recipe/guild/railgunpistol,
+			/datum/craft_recipe/guild/railgunrifle,
+			/datum/craft_recipe/guild/heavypulserifle,
+			/datum/craft_recipe/guild/mace,
+			/datum/craft_recipe/guild/claymore,
+			/datum/craft_recipe/guild/machete,
+			/datum/craft_recipe/guild/katana,
+			/datum/craft_recipe/guild/firebrand,
+			/datum/craft_recipe/guild/technosuit,
+			/datum/craft_recipe/guild/technohelmet,
+			/datum/craft_recipe/guild/webbing,
+			/datum/craft_recipe/guild/sheet_stacker,
+			/datum/craft_recipe/guild/plasmablock,
+			/datum/craft_recipe/guild/rubbermesh,
+			/datum/craft_recipe/guild/booster,
+			/datum/craft_recipe/guild/injector,
+			/datum/craft_recipe/guild/weintraub,
+			/datum/craft_recipe/guild/overshooter,
+			/datum/craft_recipe/guild/dangerzone,
+			/datum/craft_recipe/guild/forged,
+			/datum/craft_recipe/guild/heavy_barrel,
+			/datum/craft_recipe/guild/silencer,
+			/datum/craft_recipe/guild/turretcircuit,
+			/datum/craft_recipe/guild/rocket_engine,
+			/datum/craft_recipe/guild/watchman,
+			/datum/craft_recipe/guild/matter_nanoforge,
+			/datum/craft_recipe/guild/matter_nanoforge_blackbox,
+			/datum/craft_recipe/guild/guild_bin,
+			/datum/craft_recipe/guild/guild_manip,
+			/datum/craft_recipe/guild/guild_laser,
+			/datum/craft_recipe/guild/guild_scanner,
+			/datum/craft_recipe/guild/guild_capacitor,
+			//datum/craft_recipe/guild/guild_mine_trap,
+			)
+
+/datum/perk/handyman/assign(mob/living/carbon/human/H)
+	..()
+	holder.mind.knownCraftRecipes.Add(known_recipes)
+
+/datum/perk/handyman/remove()
+    holder.mind.knownCraftRecipes.Remove(known_recipes)
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
-	desc = "Special training from senior prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examing an oddity that has become an anomaly you can tell what its greater boon or curse may be."
+	desc = "Special training from senior Prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."
 
 /datum/perk/market_prof
 	name = "Market Professional"
-	desc = "Just by looking at the item you can know how much it cost."
+	desc = "You've become an excellent appraiser of goods over the years. Just by looking at the item, you can know how much it would sell for in today's market rates."
 
 /datum/perk/surgical_master
-	name = "Surgical Master"
-	desc = "When it comes to surgery most in your field are experts, while you may not know the more advanced medical procedures you can perform surgery with ease."
+	name = "Surgery Training"
+	desc = "While you may not know the more advanced medical procedures, your mandatory training on surgery for implantation purposes allows you to perform basic surgical procedures with ease."
+
+/datum/perk/advanced_medical
+	name = "Advanced Surgical Techniques"
+	desc = "Your surgical training and experience have tempered your special techniques for treating patients, enabling you to make more effective and efficient use of your resources when reconstituting their bodies."
+
+/datum/perk/robotics_expert
+	name = "Robotics Expert"
+	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
+	var/known_recipes = list(
+			/datum/craft_recipe/robotic/custom_board,
+			/datum/craft_recipe/robotic/roomba_frame,
+			/datum/craft_recipe/robotic/roomba_treads,
+			/datum/craft_recipe/robotic/roomba_knife,
+			/datum/craft_recipe/robotic/roomba_armor,
+			/datum/craft_recipe/robotic/roomba_armor/heavy,
+			/datum/craft_recipe/robotic/sword_frame,
+			/datum/craft_recipe/robotic/mantis_frame,
+			/datum/craft_recipe/robotic/head_frame,
+			/datum/craft_recipe/robotic/left_arm_frame,
+			/datum/craft_recipe/robotic/right_arm_frame,
+			/datum/craft_recipe/robotic/left_leg_frame,
+			/datum/craft_recipe/robotic/right_leg_frame
+			)
+
+/datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
+	..()
+	holder.mind.knownCraftRecipes.Add(known_recipes)
+
+/datum/perk/robotics_expert/remove()
+	holder.mind.knownCraftRecipes.Remove(known_recipes)
+
+/datum/perk/job/bolt_reflect
+	name = "Bolt Action Rifle Training"
+	desc = "Through intense and repetitive training with bolt-action and lever-action rifles, you will always chamber a new round instantly after firing."
 
 /datum/perk/job/jingle_jangle
 	name = "Key Smith"
-	desc = "You know how to use keys and lockpicks to open electronic doors somehow."
+	desc = "You have been granted a multitude of specially crafted electronic 'keys' for opening most airlocks around the colony, and the knowledge on how to use them has been solely been passed on to you. Don't get discouraged, you will eventually find the right one..."
+
+/datum/perk/job/blackshield_conditioning
+	name = "Blackshield Conditioning"
+	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, your body is a bit more resistant to brute force damage and burns due to trauma conditioning."
+
+/datum/perk/blackshield_conditioning/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk -= 0.15
+	holder.burn_mod_perk -= 0.10
+
+/datum/perk/blackshield_conditioning/remove()
+	holder.brute_mod_perk += 0.15
+	holder.burn_mod_perk += 0.10
+
+/datum/perk/job/prospector_conditioning
+	name = "Rough and Tumble"
+	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. As a result, you resist every type of damage just a little bit better than others not of similar toughness."
+
+/datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk -= 0.10
+	holder.burn_mod_perk -= 0.05
+	holder.oxy_mod_perk -= 0.10
+	holder.toxin_mod_perk -= 0.15
+
+/datum/perk/prospector_conditioning/remove()
+	holder.brute_mod_perk += 0.10
+	holder.burn_mod_perk += 0.05
+	holder.oxy_mod_perk += 0.10
+	holder.toxin_mod_perk += 0.15
+
+/datum/perk/job/butcher
+	name = "Master Butcher"
+	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
+	var/known_recipes = list(
+			/datum/craft_recipe/lodge/baroqe,
+			/datum/craft_recipe/lodge/hunter_crossbow,
+			/datum/craft_recipe/lodge/hunting_halberd,
+			/datum/craft_recipe/lodge/render_gauntlet,
+			/datum/craft_recipe/lodge/skinning_knife,
+			/datum/craft_recipe/lodge/woodsmans_axe,
+			/datum/craft_recipe/lodge/bone_shield,
+			/datum/craft_recipe/lodge/hunter_hood,
+			/datum/craft_recipe/lodge/hunter_armor_basic,
+			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
+			/datum/craft_recipe/lodge/hunter_armor_metalman,
+			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
+			/datum/craft_recipe/lodge/blood_tongue,
+			/datum/craft_recipe/lodge/powder_pouch,
+			/datum/craft_recipe/lodge/tangu_juice,
+			/datum/craft_recipe/lodge/clucker_juice,
+			/datum/craft_recipe/lodge/tahca_antiviral,
+			/datum/craft_recipe/lodge/crossbow_bolts,
+			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
+			/datum/craft_recipe/lodge/crossbow_bolts/speed,
+			/datum/craft_recipe/lodge/duct_tape_weak,
+			/datum/craft_recipe/lodge/duct_tape,
+			/datum/craft_recipe/lodge/chimera_fang,
+			/datum/craft_recipe/lodge/soap,
+			/datum/craft_recipe/lodge/hunting_claw,
+			/datum/craft_recipe/lodge/hunter_boots,
+			/datum/craft_recipe/lodge/hunter_gloves,
+			/datum/craft_recipe/lodge/sheath,
+			/datum/craft_recipe/lodge/hunting_belt
+			)
+
+/datum/perk/job/butcher/assign(mob/living/carbon/human/H)
+	..()
+	holder.mind.knownCraftRecipes.Add(known_recipes)
+
+/datum/perk/job/butcher/remove()
+	holder.mind.knownCraftRecipes.Remove(known_recipes)
+
+/datum/perk/job/master_herbalist
+	name = "Naturalist"
+	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
+	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
+	or plant trays you always harvest an additional bonus!"
+
+/datum/perk/si_sci
+	name = "SI Science Trainning"
+	desc = "You know how to use RnD core consoles and Exosuit Fabs."
+
+/datum/perk/greenthumb
+	name = "Green Thumb"
+	desc = "After growing plants for years (or at least being around those that do) you have become a botanical expert. You can get all information about plants, from stats \
+	        to harvest reagents, by examining them."
+	//icon_state = "greenthumb" // https://game-icons.net/1x1/delapouite/farmer.html
+
+	var/virtual_scanner = new /obj/item/device/scanner/plant/perk
+
+/datum/perk/greenthumb/assign(mob/living/carbon/human/H)
+	..()
+	var/obj/item/device/scanner/V = virtual_scanner
+	V.is_virtual = TRUE
+
+/datum/perk/neat
+	name = "Humble Cleanser"
+	desc = "You're used to seeing filth in all its forms. Your motto: a clean colony and workspace is the first step to enlightenment. The simple act of such humble work as cleaning grants you inspiration."
+	//icon_state = "neat" // https://game-icons.net/1x1/delapouite/broom.html
+
+/datum/perk/channeling
+	name = "Channeling"
+	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
+			during group rituals, and have an increased regeneration of cruciform energy."
+
+
+/datum/perk/codespeak
+	name = "Codespeak"
+	desc = "You know Marshal codes."
+	//icon_state = "codespeak" // https://game-icons.net/1x1/delapouite/police-officer-head.html
+	var/list/codespeak_procs = list(
+		/mob/living/carbon/human/proc/codespeak_help,
+		/mob/living/carbon/human/proc/codespeak_clear,
+		/mob/living/carbon/human/proc/codespeak_regroup,
+		/mob/living/carbon/human/proc/codespeak_moving,
+		/mob/living/carbon/human/proc/codespeak_moving_away,
+		/mob/living/carbon/human/proc/codespeak_spooders,
+		/mob/living/carbon/human/proc/codespeak_romch,
+		/mob/living/carbon/human/proc/codespeak_bigspooders,
+		/mob/living/carbon/human/proc/codespeak_bigromch,
+		/mob/living/carbon/human/proc/codespeak_serb,
+		/mob/living/carbon/human/proc/codespeak_commie,
+		/mob/living/carbon/human/proc/codespeak_carrion,
+		/mob/living/carbon/human/proc/codespeak_mutant,
+		/mob/living/carbon/human/proc/codespeak_dead,
+		/mob/living/carbon/human/proc/codespeak_corpse,
+		/mob/living/carbon/human/proc/codespeak_criminal,
+		/mob/living/carbon/human/proc/codespeak_unknown,
+		/mob/living/carbon/human/proc/codespeak_status,
+		/mob/living/carbon/human/proc/codespeak_shutup,
+		/mob/living/carbon/human/proc/codespeak_understood,
+		/mob/living/carbon/human/proc/codespeak_yes,
+		/mob/living/carbon/human/proc/codespeak_no,
+		/mob/living/carbon/human/proc/codespeak_understood_local,
+		/mob/living/carbon/human/proc/codespeak_yes_local,
+		/mob/living/carbon/human/proc/codespeak_no_local,
+		/mob/living/carbon/human/proc/codespeak_warcrime_local,
+		/mob/living/carbon/human/proc/codespeak_run_local
+		)
+
+/datum/perk/codespeak/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		holder.verbs += codespeak_procs
+
+
+/datum/perk/codespeak/remove()
+	if(holder)
+		holder.verbs -= codespeak_procs
+	..()

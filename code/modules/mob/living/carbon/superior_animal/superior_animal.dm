@@ -12,6 +12,12 @@
 
 	var/eating_time = 900
 
+	var/moved = FALSE
+	var/move_attack_mult = 0.6
+
+	var/do_gibs = TRUE //Do we gib?
+	var/gibspawner_type = /obj/effect/gibspawner/generic //what we use as are gib spawner
+	//Not to be confused with - gibspawner
 	var/icon_living
 	var/icon_dead
 	var/icon_rest //resting/unconscious animation
@@ -26,11 +32,17 @@
 	var/emote_see = list() //chat emotes
 	var/speak_chance = 2 //percentage chance of speaking a line from 'emote_see'
 
+	var/comfy_range = 6 //How far we like to be form are targets when we fire!
+
+	var/grabbed_by_friend = FALSE //is this superior_animal being wrangled?
+
 	var/turns_per_move = 3 //number of life ticks per random movement
 	var/turns_since_move = 0 //number of life ticks since last random movement
 	var/wander = 1 //perform automated random movement when idle
 	var/stop_automated_movement = 0 //use this to temporarely stop random movement
 	var/stop_automated_movement_when_pulled = 0
+
+	var/flash_resistances = 0 //Normal flash done by a hand held is 10, 10+ is for bombs
 
 	var/toxin_immune = FALSE
 
@@ -44,8 +56,7 @@
 	var/light_dam = 0 //0 to disable, minimum amount of lums to cause damage, otherwise heals in darkness
 	var/hunger_factor = 0 //0 to disable, how much nutrition is consumed per life tick
 
-	var/waring_faction = "" //What faction do we hate?
-	var/waring_faction_multy = 1 //How much more damage do we do to our ennemy faction?
+	colony_friend = FALSE
 
 
 	var/min_air_pressure = 50 //below this, brute damage is dealt
@@ -59,8 +70,13 @@
 	var/attack_sound_chance = 100
 	var/attack_sound_volume = 90
 
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	var/meat_amount = 3
+	//Lodge related products
+	var/leather_amount = 0 //The amount of leather sheets dropped.
+	var/bones_amount = 0 //The amount of bone sheets dropped.
+	var/has_special_parts = FALSE //var for checking during the butcher process.
+	var/special_parts = list() //Any special body parts.
 
 	var/melee_damage_lower = 0
 	var/melee_damage_upper = 10
@@ -86,8 +102,45 @@
 	var/busy = 0 // status of the animal, if it is doing a special task (eating, spinning web) we still want it
 	// in HOSTILE_STANCE_IDLE to react to threat but we don't want stop_automated_movement set back to 0 in Life()
 
-	var/fleshcolor = "#666600"
-	var/bloodcolor = "#666600"
+	var/fleshcolor = "#DB0000"
+	var/bloodcolor = "#DB0000"
+	//Armor values for the mob. Works like normal armor values.
+	var/armor = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0,
+		agony = 0
+	)
+
+	var/ranged = FALSE  //Do we have a range based attack?
+	var/rapid = FALSE   //Do we shoot in 3s?
+	var/projectiletype  //What are we shooting?
+	var/projectilesound //What sound do we make when firing
+	var/casingtype      //Do we leave casings after shooting?
+	var/ranged_cooldown //What is are modular cooldown, in seconds.
+	var/ranged_middlemouse_cooldown = 0 //For when people are controling them and firing, do we have a cooldown? Modular for admins to tweak.
+	var/fire_verb       //what does it do when it shoots?
+	//ammo stuff
+	var/limited_ammo = FALSE //Do we run out of ammo?
+	var/mag_drop = FALSE //Do we drop are mags?
+	var/rounds_left = 5 //Debug number
+	var/mag_type = /obj/item/ammo_magazine/pistol_35/empty//What is are mag/cell used?
+	var/mags_left = 3 //How many mags do we have?
+	var/rounds_per_fire = 1 //how many bullets do we eat per shot, NOTE: rapid fire will use rounds_per_fire * 3
+	var/reload_message = "performs a tactical reload!" //Are reload message.
+	var/full_reload_message = "" //name + reload message above
+
+	// Variables for the following AI
+	var/obey_friends = TRUE // Do we obey only friends ?
+	var/mob/following = null // Who are we following?
+	var/follow_distance = 2 // How close do we stay?
+	var/follow_message = "nods and start following." // Message that the mob emote when they start following. Include the name of the one who follow at the end
+	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
+
+	var/list/known_languages = list() // The languages that the superior mob know.
 
 /mob/living/carbon/superior_animal/New()
 	..()
@@ -98,10 +151,17 @@
 
 	objectsInView = new
 
+	full_reload_message  = "[reload_message]"
+	reload_message = "[name] [full_reload_message]"
+
 	verbs -= /mob/verb/observe
 	pixel_x = RAND_DECIMAL(-randpixel, randpixel)
 	pixel_y = RAND_DECIMAL(-randpixel, randpixel)
 
+	GLOB.superior_animal_list += src
+
+	for(var/language in known_languages)
+		add_language(language)
 
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
 	.=..()
@@ -111,6 +171,7 @@
 			create_burrow(get_turf(src))
 
 /mob/living/carbon/superior_animal/Destroy()
+	GLOB.superior_animal_list -= src
 	. = ..()
 
 /mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)

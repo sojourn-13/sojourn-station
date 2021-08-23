@@ -8,7 +8,14 @@
 	name = "bed"
 	result = /obj/structure/bed
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
+	)
+
+/datum/craft_recipe/furniture/bonfire
+	name = "bonfire"
+	result = /obj/structure/bonfire
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
 	)
 
 //Custom chairs
@@ -26,7 +33,7 @@
 	name = "chair, steel"
 	result = /obj/structure/bed/chair
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/furniture/wooden_chair
@@ -34,7 +41,7 @@
 	result = /obj/structure/bed/chair/custom/wood
 	icon_state = "woodworking"
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD),
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
 	)
 
 // Office chairs
@@ -42,7 +49,7 @@
 	name = "chair, office dark"
 	result = /obj/structure/bed/chair/office/dark
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/furniture/office_chair/light
@@ -54,7 +61,7 @@
 	name = "comfy chair, beige"
 	result = /obj/structure/bed/chair/comfy/beige
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
 /datum/craft_recipe/furniture/comfy_chair/black
@@ -91,16 +98,16 @@
 
 /datum/craft_recipe/furniture/stool
 	name = "stool"
-	result = /obj/item/weapon/stool
+	result = /obj/item/stool
 	time = 30
 	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
 	)
 	flags = null
 
 /datum/craft_recipe/furniture/barstool
 	name = "stool, bar"
-	result = /obj/item/weapon/stool/custom/bar_special
+	result = /obj/item/stool/custom/bar_special
 	time = 30
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
@@ -116,3 +123,12 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_WOOD)
 	)
+
+/datum/craft_recipe/furniture/burnbarrel
+	name = "burn barrel"
+	result = /obj/machinery/microwave/burnbarrel
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD),
+	)
+
