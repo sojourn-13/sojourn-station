@@ -13,6 +13,7 @@ SUBSYSTEM_DEF(job)
 	var/list/job_debug = list()				//Debug info
 	var/list/job_mannequins = list()				//Cache of icons for job info window
 
+
 /datum/controller/subsystem/job/Initialize(start_timeofday)
 	if(!occupations.len)
 		SetupOccupations()
@@ -578,10 +579,138 @@ SUBSYSTEM_DEF(job)
 
 	return SP
 
-
-
 /datum/controller/subsystem/job/proc/ShouldCreateRecords(var/title)
 	if(!title) return 0
 	var/datum/job/job = GetJob(title)
 	if(!job) return 0
 	return job.create_record
+
+
+/****************************/
+/* Playtime Tracking System */
+/****************************/
+
+//Internal Only. May be changed without warning.
+/datum/playtime
+	var/realtime = 0 //The complete time a player has played this job.
+	var/forced = FALSE //Whether the job has been enabled manually for a player by an admin.
+	var/playtime = 0 //The amount of time which actually counts toward the job.
+
+/datum/playtime/New(var/datum/playtime/old)
+	if(!old) return
+	realtime = old.realtime
+	forced = old.forced
+	playtime = old.playtime
+
+/* Procs that alter the save */
+
+//Adds played time to a single, or provided list of jobs. Should only be called automatically.
+/datum/controller/subsystem/job/proc/JobTimeAdd(ckey, jobs, seconds)
+	if(!jobs) return
+	if(!islist(jobs)) jobs = list(jobs)
+	for(var/job in jobs)
+		var/datum/playtime/P = JobTimeGetDatum(ckey, job)
+		if(!P)
+			continue
+		P.playtime += seconds
+		P.realtime += seconds
+		JobTimeSetDatum(ckey, job, P)
+
+
+//Adds a played time to a singular job. Negative numbers subtract time.
+/datum/controller/subsystem/job/proc/JobTimeAlter(ckey, job_key, seconds)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	P.playtime += seconds
+	JobTimeSetDatum(ckey, job_key, P)
+
+//Sets the played time to a set value
+/datum/controller/subsystem/job/proc/JobTimeSet(ckey, job_key, seconds)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	P.playtime = seconds
+	JobTimeSetDatum(ckey, job_key, P)
+
+//Forces a job to be accessible regardless of time played, or disables it if 'enable' is set false.
+/datum/controller/subsystem/job/proc/JobTimeForce(ckey, job_key, enable = TRUE)
+	var/datum/playtime/P = JobTimeGetDatum(ckey)
+	P.forced = enable
+	JobTimeSetDatum(ckey)
+
+/* Procs that read the save */
+
+//Returns true if either the job from job_key has been forced, or the sum of all jobs in the list exceeds req_time
+/datum/controller/subsystem/job/proc/JobTimeAutoCheck(ckey, job_key, jobs, req_time)
+	if(JobTimeAllowCheck(ckey, job_key)) return TRUE
+	return JobTimeCheck(ckey, req_time) >= req_time
+
+//Returns the sum of all times in the list of jobs provided.
+//If 'jobs' is not a list, it will be encapsulated in one.
+/datum/controller/subsystem/job/proc/JobTimeCheck(ckey, jobs)
+	var/total = 0
+	if(!islist(jobs)) jobs = list(jobs)
+	for(var/job in jobs)
+		var/datum/playtime/P = JobTimeGetDatum(ckey, job)
+		total += P.playtime
+	return total
+
+
+//Returns whether or not a given job has been forcibly allowed by admins.
+/datum/controller/subsystem/job/proc/JobTimeAllowCheck(ckey, job_key)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	return P.forced
+
+//Returns an associative list. "job_key" = time
+//Force-states are not considered, only the actual time is returned.
+/datum/controller/subsystem/job/proc/JobTimeGetAll(ckey)
+	//Not Implemented
+
+/* Internal Savefile Stuff - DO NOT CALL FROM OUTSIDE */
+// Seriously, implementation can change wildly depending on our needs.
+
+//We'll only need to read once per key per job, so why do it more?
+/datum/controller/subsystem/job/var/list/playtime_cache = list()
+
+/datum/controller/subsystem/job/proc/JobTimeGetDatum(ckey, job_key, ignore_cache)
+
+	if(playtime_cache[ckey] == null) playtime_cache[ckey] = list()
+
+	var/datum/playtime/P
+	var/cached = TRUE
+	if(!ignore_cache)
+		P = playtime_cache[ckey][job_key]
+	if(!istype(P))
+		var/savefile/S = new("data/player_saves/[copytext(ckey, 1, 2)]/[ckey]/playtime.sav")
+		S.cd = job_key
+		P = new()
+		from_file(S["realtime"], P.realtime)
+		from_file(S["forced"], P.forced)
+		from_file(S["playtime"], P.playtime)
+		cached = FALSE
+	//Don't trust the savefile. We could sanitize on save, but if someone else fiddles with it, this will break.
+	//By sanitizing on load and decache, we ensure that any proc calling this gets a clean object.
+	if(!isnum(P.realtime)) P.realtime = 0
+	if(!isnum(P.playtime)) P.playtime = 0
+	if(!(P.forced == TRUE || P.forced == FALSE)) P.forced = FALSE
+
+	if(!cached)
+		playtime_cache[ckey][job_key] = new /datum/playtime(P) //So we don't load twice for no reason.
+
+	return P
+
+/datum/controller/subsystem/job/proc/JobTimeSetDatum(ckey, job_key, var/datum/playtime/datum)
+	if(!istype(datum)) return //I don't trust you to use the appropriate datums.
+
+	//Sanitize here too just to be safe.
+	if(!isnum(datum.realtime)) datum.realtime = 0
+	if(!isnum(datum.playtime)) datum.playtime = 0
+	if(!(datum.forced == TRUE || datum.forced == FALSE)) datum.forced = FALSE
+
+	var/savefile/S = new("data/player_saves/[copytext(ckey, 1, 2)]/[ckey]/playtime.sav")
+	S.cd = job_key
+	to_file(S["realtime"], datum.realtime)
+	to_file(S["forced"], datum.forced)
+	to_file(S["playtime"], datum.playtime)
+
+	//We cache it here rather than on the 'get' so that only changes that are saved get recorded.
+	//The cache is also a copy of the original, so that people don't get the smart idea to hold the datum and update it elsewhere.
+	if(playtime_cache[ckey] == null) playtime_cache[ckey] = list() // This should never be true, but I don't trust you lot to make sure you read before writing.
+	playtime_cache[ckey][job_key] = new /datum/playtime(datum)

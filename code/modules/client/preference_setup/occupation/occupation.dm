@@ -133,12 +133,12 @@
 			bad_message = "\[IN [(available_in_days)] DAYS]"*/
 		else if(job.minimum_character_age && user.client && (user.client.prefs.age < job.minimum_character_age))
 			bad_message = "\[MINIMUM CHARACTER AGE: [job.minimum_character_age]]"
-		else if(job.playtimerequired && user.client)
+		/*else if(job.playtimerequired && user.client)
 			if(job.playtimerequired > user.client.prefs.playtime[job.department])
 				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
 		else if(job.coltimerequired && user.client)
 			if(job.coltimerequired > user.client.prefs.playtime["Civilian"])
-				bad_message = "\[MINIMUM PLAYTIME AS A COLONIST: [job.coltimerequired] Minutes]" //People may need to play colonist before playing this job.
+				bad_message = "\[MINIMUM PLAYTIME AS A COLONIST: [job.coltimerequired] Minutes]" *///People may need to play colonist before playing this job.
 		else if(user.client && job.is_setup_restricted(user.client.prefs.setup_options))
 			bad_message = "\[SETUP RESTRICTED]"
 		if(("Assistant" in pref.job_low) && (rank != "Assistant"))

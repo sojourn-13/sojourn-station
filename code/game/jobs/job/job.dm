@@ -173,7 +173,8 @@
 		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age].</span>")
 		return TRUE
 
-	if(coltimerequired)
+	//Disabled since I rewrote the system to be more granular. Will need later work.
+	/*if(coltimerequired)
 		if(coltimerequired > prefs.playtime["Civilian"])
 			to_chat(feedback, "<span class='boldannounce'>Not enough playtime as a colonist. Minimum playtime is [coltimerequired] minutes.</span>")
 			return TRUE
@@ -181,7 +182,7 @@
 	if(playtimerequired)
 		if(playtimerequired > prefs.playtime[department])
 			to_chat(feedback, "<span class='boldannounce'>Not enough playtime in this department. Minimum playtime is [playtimerequired] minutes.</span>")
-			return TRUE
+			return TRUE*/
 	return FALSE
 
 /datum/job/proc/is_setup_restricted(list/options)
@@ -243,8 +244,7 @@
 	return TRUE
 
 /datum/job/proc/change_playtime(client/C, var/amount = 0)
-	C.prefs.playtime[department] += amount
-	var/commandep = COMMAND //The following two lines are to add to command playtime while playing council positions.
-	if(department_flag & commandep)
-		C.prefs.playtime["Command"] += amount
-	C.prefs.save_preferences(0)
+	//The string processing is necessary so that string queries can return too.
+	//For some reason, /datum/job/hydro and "/datum/job/hydro" are not considered the same string.
+	SSjob.JobTimeAdd(C.ckey, "[type]", amount)
+	
