@@ -6,6 +6,8 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	icon_state = "door_closed"
 	power_channel = STATIC_ENVIRON
 
+	maxHealth = 400 //Makes it so you need to really shoot open a door
+
 	explosion_resistance = 10
 
 	var/aiControlDisabled = 0
@@ -33,7 +35,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	var/justzap = 0
 	var/safe = 1
 	normalspeed = 1
-	var/obj/item/weapon/airlock_electronics/electronics = null
+	var/obj/item/airlock_electronics/electronics = null
 	var/hasShocked = 0 //Prevents multiple shocks from happening
 	var/secured_wires = 0
 	var/datum/wires/airlock/wires = null
@@ -621,7 +623,7 @@ There are 9 wires.
 	else
 		return 0
 
-/obj/machinery/door/airlock/proc/force_wedge_item(obj/item/weapon/tool/T)
+/obj/machinery/door/airlock/proc/force_wedge_item(obj/item/tool/T)
 	T.forceMove(src)
 	wedged_item = T
 	update_icon()
@@ -636,7 +638,7 @@ There are 9 wires.
 	if(!isliving(usr))
 		to_chat(usr, SPAN_WARNING("You can't do this."))
 		return
-	var/obj/item/weapon/tool/T = usr.get_active_hand()
+	var/obj/item/tool/T = usr.get_active_hand()
 	if(istype(T) && T.w_class >= ITEM_SIZE_NORMAL) // We do the checks before proc call, because see "proc overhead".
 		if(!density)
 			usr.drop_item()
@@ -1012,14 +1014,14 @@ There are 9 wires.
 		hit(user, I)
 		return
 
-	if(istype(I, /obj/item/weapon/keys))
+	if(istype(I, /obj/item/keys))
 		if(used_now)
 			to_chat(user, SPAN_WARNING("You are already looking for the key!")) //don't want people stacking odds
 			return
 		used_now = TRUE
 		if(ishuman(usr))
 			var/mob/living/carbon/human/H = usr
-			if(istype(I, /obj/item/weapon/keys/lockpicks))
+			if(istype(I, /obj/item/keys/lockpicks))
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 30, 1, -2)
 			else
 				playsound(src.loc, 'sound/items/keychainrattle.ogg', 700, 1, -2)
@@ -1068,7 +1070,7 @@ There are 9 wires.
 						da.update_state()
 
 						if(operating == -1 || (stat & BROKEN))
-							new /obj/item/weapon/circuitboard/broken(src.loc)
+							new /obj/item/circuitboard/broken(src.loc)
 							operating = 0
 						else
 							if (!electronics) create_electronics()
@@ -1119,12 +1121,12 @@ There are 9 wires.
 		if(ABORT_CHECK)
 			return
 
-	if(istype(I, /obj/item/weapon/tool))
+	if(istype(I, /obj/item/tool))
 		return src.attack_hand(user)
 	else if(istype(I, /obj/item/device/assembly/signaler))
 		return src.attack_hand(user)
-	else if(istype(I, /obj/item/weapon/pai_cable))	// -- TLE
-		var/obj/item/weapon/pai_cable/cable = I
+	else if(istype(I, /obj/item/pai_cable))	// -- TLE
+		var/obj/item/pai_cable/cable = I
 		cable.plugin(src, user)
 
 	else
@@ -1168,7 +1170,7 @@ There are 9 wires.
 	if(arePowerSystemsOn())
 		playsound(src.loc, open_sound_powered, 70, 1, -2)
 	else
-		var/obj/item/weapon/tool/T = forced
+		var/obj/item/tool/T = forced
 		if (istype(T) && T.item_flags & SILENT)
 			playsound(src.loc, open_sound_unpowered, 3, 1, -5) //Silenced tools can force open airlocks silently
 		else if (istype(T) && T.item_flags & LOUD)
@@ -1176,7 +1178,7 @@ There are 9 wires.
 		else
 			playsound(src.loc, open_sound_unpowered, 70, 1, -1)
 
-	var/obj/item/weapon/tool/T = forced
+	var/obj/item/tool/T = forced
 	if (istype(T) && T.item_flags & HONKING)
 		playsound(src.loc, WORKSOUND_HONK, 70, 1, -2)
 
@@ -1245,7 +1247,7 @@ There are 9 wires.
 		AM.airlock_crush()
 	return 1
 
-/obj/item/weapon/tool/airlock_crush(crush_damage)
+/obj/item/tool/airlock_crush(crush_damage)
 	. = ..() // Perhaps some function to this was planned, however currently this proc's return is not used anywhere, how peculiar. ~Luduk
 	// #define MAGIC_NANAKO_CONSTANT 0.4
 	health += crush_damage * degradation * (1 - get_tool_quality(QUALITY_PRYING) * 0.01) * 0.4
@@ -1287,8 +1289,8 @@ There are 9 wires.
 						next_beep_at = world.time + SecondsToTicks(120)
 					close_door_at = world.time + 6
 					return
-				if(istype(AM, /obj/item/weapon/tool))
-					var/obj/item/weapon/tool/T = AM
+				if(istype(AM, /obj/item/tool))
+					var/obj/item/tool/T = AM
 					if(T.w_class >= ITEM_SIZE_NORMAL)
 						operating = TRUE
 						density = TRUE
@@ -1313,7 +1315,7 @@ There are 9 wires.
 	if(arePowerSystemsOn())
 		playsound(src.loc, close_sound, 70, 1, -2)
 	else
-		var/obj/item/weapon/tool/T = forced
+		var/obj/item/tool/T = forced
 		if (istype(T) && T.item_flags & SILENT)
 			playsound(src.loc, open_sound_unpowered, 3, 1, -5) //Silenced tools can force airlocks silently
 		else if (istype(T) && T.item_flags & LOUD)
@@ -1321,7 +1323,7 @@ There are 9 wires.
 		else
 			playsound(src.loc, open_sound_unpowered, 70, 1, -2)
 
-	var/obj/item/weapon/tool/T = forced
+	var/obj/item/tool/T = forced
 	if (istype(T) && T.item_flags & HONKING)
 		playsound(src.loc, WORKSOUND_HONK, 70, 1, -2)
 
@@ -1417,9 +1419,9 @@ There are 9 wires.
 /obj/machinery/door/airlock/proc/create_electronics()
 	//create new electronics
 	if (secured_wires)
-		src.electronics = new/obj/item/weapon/airlock_electronics/secure( src.loc )
+		src.electronics = new/obj/item/airlock_electronics/secure( src.loc )
 	else
-		src.electronics = new/obj/item/weapon/airlock_electronics( src.loc )
+		src.electronics = new/obj/item/airlock_electronics( src.loc )
 
 	//update the electronics to match the door's access
 	if(!src.req_access)
@@ -1458,12 +1460,12 @@ There are 9 wires.
 
 //Override to check locked var
 /obj/machinery/door/airlock/hit(var/mob/user, var/obj/item/I)
-	var/obj/item/weapon/W = I
+	var/obj/item/W = I
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*1.5)
 	var/calc_damage = W.force*W.structure_damage_factor
 	var/quiet = FALSE
 	if (istool(I))
-		var/obj/item/weapon/tool/T = I
+		var/obj/item/tool/T = I
 		quiet = T.item_flags & SILENT
 
 	if (locked)

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/artwork_revolver
+/obj/item/gun/projectile/revolver/artwork_revolver
 	name = "Weird Revolver"
 	desc = "This is an artistically-made revolver with a limited use chameleon projector."
 	icon = 'icons/obj/guns/projectile/artwork_revolver.dmi'
@@ -13,7 +13,7 @@
 	penetration_multiplier = 1.4
 	recoil_buildup = 30 //Arbitrary value
 
-/obj/item/weapon/gun/projectile/revolver/artwork_revolver/Initialize()
+/obj/item/gun/projectile/revolver/artwork_revolver/Initialize()
 	name = get_weapon_name(capitalize = TRUE)
 
 	var/random_icon = rand(1,5)
@@ -33,11 +33,11 @@
 
 	. = ..()
 
-/obj/item/weapon/gun/projectile/revolver/artwork_revolver/get_item_cost(export)
+/obj/item/gun/projectile/revolver/artwork_revolver/get_item_cost(export)
 	. = ..()
 	. += rand(-1000,2500)
 
-/obj/item/weapon/gun/projectile/revolver/artwork_revolver/spin_cylinder()
+/obj/item/gun/projectile/revolver/artwork_revolver/spin_cylinder()
 	set name = "Spin revolver"
 	set desc = "Fun when you're bored out of your skull. Or if you want to change your revolvers appearence."
 	set category = "Object"

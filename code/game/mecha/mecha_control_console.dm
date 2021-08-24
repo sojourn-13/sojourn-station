@@ -5,7 +5,7 @@
 	icon_screen = "mecha"
 	light_color = COLOR_LIGHTING_PURPLE_MACHINERY
 	req_access = list(access_robotics)
-	circuit = /obj/item/weapon/circuitboard/mecha_control
+	circuit = /obj/item/circuitboard/mecha_control
 	var/list/located = list()
 	var/screen = FALSE
 	var/stored_data
@@ -38,8 +38,16 @@
 		screen = TRUE
 	if(href_list["return"])
 		screen = FALSE
+	if(href_list["print"])
+		to_chat(usr, "The [src] hums as it begins printing a report.")
+		sleep(50)
+		print_report(usr)
 	src.updateUsrDialog()
 	return
+
+/obj/machinery/computer/mecha/proc/print_report(var/mob/living/user)
+	new /obj/item/paper(get_turf(src), stored_data, "Exosuit Log") // Spawn the log of the mech
+	src.visible_message("\The [src] spits out a piece of paper.")
 
 //I have no idea what im doing
 /obj/machinery/computer/mecha/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
@@ -60,7 +68,7 @@
 		dat += "<h3>Log contents</h3>"
 		dat += "<a href='?src=\ref[src];return=1'>Return</a><hr>"
 		dat += "[stored_data]"
-
+		dat += "<A href='?src=\ref[src];print=1'>Print Log</A><BR>"
 		dat += "<A href='?src=\ref[src];refresh=1'>(Refresh)</A><BR>"
 		dat += "</body></html>"
 
@@ -121,10 +129,10 @@
 	return M.get_log_html()
 
 
-/obj/item/weapon/storage/box/mechabeacons //Whe is this here?!
+/obj/item/storage/box/mechabeacons //Whe is this here?!
 	name = "Exosuit Tracking Beacons"
 
-/obj/item/weapon/storage/box/mechabeacons/New()
+/obj/item/storage/box/mechabeacons/New()
 	..()
 	new /obj/item/mecha_parts/mecha_tracking(src)
 	new /obj/item/mecha_parts/mecha_tracking(src)

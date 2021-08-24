@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/hydrogen/pistol
+/obj/item/gun/hydrogen/pistol
 	name = "\improper \"Classia\" hydrogen-plasma pistol"
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brain child of Soteria Director Nakharan Mkne, meant to compete and exceed the church of the absolutes \
 	own plasma designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapons over heating without being \
@@ -18,7 +18,7 @@
 		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/pistol/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 40, use_plasma_cost = 20)
 	)
 
-/obj/item/weapon/gun/hydrogen/cannon
+/obj/item/gun/hydrogen/cannon
 	name = "\improper \"Sollex\" hydrogen-plasma cannon"
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brain child of Soteria Director Nakharan Mkne, meant to compete and exceed the church of the absolutes \
 	own plasma designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapons over heating without being \
@@ -37,7 +37,7 @@
 	)
 
 // Blue cross weapon, no overheat and infinite ammo.
-/obj/item/weapon/gun/hydrogen/incinerator
+/obj/item/gun/hydrogen/incinerator
 	name = "\improper \"Reclaimator\" hydrogen-plasma gun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	This plasma gun doesn't seems to heat up."
@@ -51,17 +51,17 @@
 		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 0, use_plasma_cost = 20)
 	)
 
-/obj/item/weapon/gun/hydrogen/incinerator/Initialize()
+/obj/item/gun/hydrogen/incinerator/Initialize()
 	..()
-	//flask = new /obj/item/weapon/hydrogen_fuel_cell/infinite(src) // Apparently never running out of ammo is too OP.
+	//flask = new /obj/item/hydrogen_fuel_cell/infinite(src) // Apparently never running out of ammo is too OP.
 
 // Can't remove the cell
 /* It was nerfed back to a normal cell, so there's no reason to not be able to remove it.
-/obj/item/weapon/gun/hydrogen/incinerator/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
+/obj/item/gun/hydrogen/incinerator/attackby(obj/item/W as obj, mob/living/user as mob)
 	return
 */
 
-/obj/item/weapon/gun/hydrogen/plasma_torch
+/obj/item/gun/hydrogen/plasma_torch
 	name = "\improper Welder Gun"
 	desc = "A plasma welder converted to shoot plasma bolts. Has less range than a \"Classia\"-Pattern Plasma Pistol."
 	icon_state = "welder"
@@ -69,20 +69,27 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 7, TECH_PLASMA = 7)
 	projectile_type = /obj/item/projectile/hydrogen/pistol/welder
 	twohanded = FALSE
+	w_class = ITEM_SIZE_SMALL
 	init_firemodes = list()
+	safety = FALSE // It's a welder turned into a gun, it doesn't have any nifty safeties, and even if it did, the player had to deactivate them to turn the welder into a gun in the first place.
+	restrict_safety = TRUE // Can't change the safety on something that doesn't have any. Look here ^ - R4d6
+	var/obj/item/tool/plasma_torch/welder = null // Hold the welder the gun turns into.
 
 // This is where the gun turn into a welder
-/obj/item/weapon/gun/hydrogen/plasma_torch/verb/switch_to_welder()
+/obj/item/gun/hydrogen/plasma_torch/verb/switch_to_welder()
 	set name = "Enable Safeties"
 	set desc = "Enable the safeties, making the welder gun able to weld once more."
 	set category = "Object"
 
-	var/obj/item/weapon/tool/plasma_torch/welder = new /obj/item/weapon/tool/plasma_torch(src)
+	if(!welder) // Safety check if there isn't a welder.
+		welder = new /obj/item/tool/plasma_torch(src)
+		welder.gun = src
 	if(flask) // Give the welder the same flask the gun has, but only if there's a flask.
 		welder.flask = flask // Link the flask to the welder
 		flask.forceMove(welder) // Give the flask to the welder
 		flask = null // The gun has no more flask
-	qdel(src) // Remove the original gun.
+	usr.remove_from_mob(src) // Remove the gun from the user
+	src.forceMove(welder) // Move the gun into the welder
 	usr.put_in_hands(welder) // Put the welder in the user's hand.
 	usr.visible_message(
 						SPAN_NOTICE("[usr] activate the safeties of the [src.name]."),

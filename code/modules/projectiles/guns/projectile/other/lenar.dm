@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/grenade/lenar
+/obj/item/gun/projectile/grenade/lenar
 	name = "GmbH GL \"Lenar\""
 	desc = "A more than bulky pump-action grenade launcher used by Police during riots. Holds up to 6 grenade shells in a revolving magazine."
 	icon = 'icons/obj/guns/launcher/grenadelauncher.dmi'
@@ -10,14 +10,15 @@
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
 	fire_sound_text = "a metallic thunk"
+	price_tag = 1200
 
-/obj/item/weapon/gun/projectile/grenade/lenar/proc/update_charge()
+/obj/item/gun/projectile/grenade/lenar/proc/update_charge()
 	var/ratio = loaded.len / max_shells
 	if(ratio < 0.33 && ratio != 0)
 		ratio = 0.33
 	ratio = round(ratio, 0.33) * 100
 	overlays += "grenademag_[ratio]"
 
-/obj/item/weapon/gun/projectile/grenade/lenar/update_icon()
+/obj/item/gun/projectile/grenade/lenar/update_icon()
 	overlays.Cut()
 	update_charge()

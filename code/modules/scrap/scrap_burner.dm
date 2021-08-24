@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/pacman/scrap
+/obj/item/circuitboard/pacman/scrap
 	build_name = "S.C.R.A.P PACMAN-type generator"
 	build_path = /obj/machinery/power/port_gen/pacman/scrap
 	board_type = "machine"
@@ -6,7 +6,7 @@
 
 /datum/design/research/circuit/pacman/scrap
 	name = "S.C.R.A.P PACMAN-type generator"
-	build_path = /obj/item/weapon/circuitboard/pacman/scrap
+	build_path = /obj/item/circuitboard/pacman/scrap
 	starts_unlocked = TRUE //We want to be able to make these
 
 /obj/machinery/power/port_gen/pacman/scrap

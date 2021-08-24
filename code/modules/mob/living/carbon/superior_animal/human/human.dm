@@ -22,3 +22,5 @@
 	can_burrow = FALSE
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
+
+	known_languages = list(LANGUAGE_COMMON)

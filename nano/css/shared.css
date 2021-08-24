@@ -189,6 +189,10 @@ abbr {
     color: #ee0000;
 }
 
+.unimportant {
+    color: #808080;
+}
+
 .idle {
     color: #272727;
 }
@@ -664,8 +668,12 @@ table.pmon td, table.pmon th {
 
 /* Table Stuffs for manifest*/
 
+tr.bottom_bordered td, .bottom_bordered{
+    border-bottom: 1px solid #aaf
+}
+
 th.command {
-    background: #3333FF;
+    background: #3333ff;
     font-weight: bold;
     color: #ffffff;
 }
@@ -765,7 +773,7 @@ th.bot {
     width: 75px;
 }
 .wideTable tr:nth-child(odd) {
-    background-color: #272727;
+	background-color: #272727;
 }
 
 /* Candystriped rows for tables */
@@ -774,6 +782,20 @@ th.bot {
 }
 .candystripe:nth-child(odd) {
 	background-color: rgba(0, 0, 0, 0.16);
+}
+.nanoMap{
+    background: url(nanomapBackground.png) repeat;
+    border: 1px solid #40628a;
+    overflow: auto;
+    position: relative;
+    padding: 10px;
+    margin: 5px 0;
+}
+#SpecialOffer{
+    border: 1px solid #40628a;
+    border-radius: 10px 0;
+    width: 99%;
+    padding: 5px;
 }
 
 #sciTechTreeContainer {
@@ -786,6 +808,24 @@ th.bot {
 }
 
 /* [Tooltips of description] */
+.withToolTip .ImTooltip, .withToolTipInTooltip .ImTooltipInTooltip{
+	display			: none;
+	padding			: 10px;
+	margin-left		: 8px;
+	width			: 200px;
+	z-index			: 999;
+	background      : #717177;
+	border          : 4px solid #666;
+	border-radius   : 0px 5px;
+	color           : #d1d1dd;
+	text-align      : center;
+    white-space     : pre-line;
+    overflow: wrap;
+}
+.withToolTip:hover .ImTooltip, .withToolTipInTooltip:hover .ImTooltipInTooltip{
+	display			: block;
+	position		: absolute;
+}
 .sciTechTreeIcon span {
 	visibility		: hidden;
 	opacity			: 0;
@@ -984,4 +1024,3 @@ img.sciTechTreeIconToolTip {
     width: 300px;
     float: left;
 }
-

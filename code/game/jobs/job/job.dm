@@ -247,3 +247,4 @@
 	//The string processing is necessary so that string queries can return too.
 	//For some reason, /datum/job/hydro and "/datum/job/hydro" are not considered the same string.
 	SSjob.JobTimeAdd(C.ckey, "[type]", amount)
+	

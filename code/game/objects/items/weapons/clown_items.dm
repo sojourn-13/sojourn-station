@@ -9,10 +9,10 @@
  * Banana Peals
  */
 //its here so that its all contained in 1 file for the var
- /obj/item/weapon/bananapeel
+/obj/item/bananapeel
  	var/how_many_times_we_can_pull_a_pro_clown_gamer_move = 1
- 
-/obj/item/weapon/bananapeel/Crossed(AM as mob|obj)
+
+/obj/item/bananapeel/Crossed(AM as mob|obj)
 	if (isliving(AM) && how_many_times_we_can_pull_a_pro_clown_gamer_move > 0)
 		var/mob/living/M = AM
 		M.slip("\the [src.name]",4)
@@ -20,7 +20,7 @@
 /*
  * Soap
  */
-/obj/item/weapon/soap
+/obj/item/soap
 	name = "soap"
 	desc = "An unbranded and unscented bar of soap."
 	gender = PLURAL
@@ -38,12 +38,12 @@
 	var/cleaning_reagent = "cleaner" //What do we use to clean?
 	var/bless_tile = FALSE
 
-/obj/item/weapon/soap/New()
+/obj/item/soap/New()
 	..()
 	create_reagents(reagent_storage)
 	wet()
 
-/obj/item/weapon/soap/examine(mob/user)
+/obj/item/soap/examine(mob/user)
 	..()
 	if (how_many_times_we_can_pull_a_pro_clown_gamer_move > 0)
 		to_chat(user, "<span class='info'>[src] looks slippery.</span>")
@@ -53,18 +53,18 @@
 		return
 
 
-/obj/item/weapon/soap/proc/wet()
+/obj/item/soap/proc/wet()
 	playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 	reagents.add_reagent(cleaning_reagent, reagent_storage)
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = initial(how_many_times_we_can_pull_a_pro_clown_gamer_move)
 
-/obj/item/weapon/soap/Crossed(AM as mob|obj)
+/obj/item/soap/Crossed(AM as mob|obj)
 	if (isliving(AM) && how_many_times_we_can_pull_a_pro_clown_gamer_move > 0)
 		var/mob/living/M = AM
 		M.slip("the [src.name]",slip_power)
 		how_many_times_we_can_pull_a_pro_clown_gamer_move -= 1
 
-/obj/item/weapon/soap/afterattack(atom/target, mob/user as mob, proximity)
+/obj/item/soap/afterattack(atom/target, mob/user as mob, proximity)
 	if(!proximity) return
 
 	else if(istype(target,/obj/effect/decal/cleanable))
@@ -88,7 +88,7 @@
 		to_chat(user, "<span class='notice'>You wet \the [src] in the sink.</span>")
 		wet()
 		return
-	else if (istype(target, /obj/structure/mopbucket) || istype(target, /obj/item/weapon/reagent_containers/glass) || istype(target, /obj/structure/reagent_dispensers/watertank))
+	else if (istype(target, /obj/structure/mopbucket) || istype(target, /obj/item/reagent_containers/glass) || istype(target, /obj/structure/reagent_dispensers/watertank))
 		if (target.reagents && target.reagents.total_volume)
 			to_chat(user, "<span class='notice'>You wet \the [src] in the [target].</span>")
 			wet()
@@ -109,7 +109,7 @@
 
 
 //attack_as_weapon
-/obj/item/weapon/soap/attack(mob/living/target, mob/living/user, var/target_zone)
+/obj/item/soap/attack(mob/living/target, mob/living/user, var/target_zone)
 	if(ishuman(target) && ishuman(user) && !target.stat && user.targeted_organ == BP_MOUTH)
 		user.visible_message(
 			SPAN_DANGER("\The [user] washes \the [target]'s mouth out with soap!")
@@ -118,24 +118,24 @@
 		return
 	..()
 
-/obj/item/weapon/soap/nanotrasen
+/obj/item/soap/nanotrasen
 	desc = "A NanoTrasen-brand bar of soap. Smells of plasma."
 	icon_state = "soapnt"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 4
 	clean_speed = 45 //Plasma is red
 	matter = list(MATERIAL_BIOMATTER = 11, MATERIAL_PLASMA = 1)
 
-/obj/item/weapon/soap/deluxe
+/obj/item/soap/deluxe
 	icon_state = "soapdeluxe"
 	clean_speed = 40
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 5
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
 
-/obj/item/weapon/soap/deluxe/New()
+/obj/item/soap/deluxe/New()
 	desc = "A deluxe Lonestar-brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
 	..()
 
-/obj/item/weapon/soap/church
+/obj/item/soap/church
 	desc = "An Absolutism-brand bar of soap. It has a faithful smell."
 	icon_state = "soapchuchie"
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 6
@@ -143,8 +143,9 @@
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
 	cleaning_reagent = "holywater"
 	bless_tile = TRUE
+	price_tag = 30
 
-/obj/item/weapon/soap/syndie
+/obj/item/soap/syndie
 	desc = "An untrustworthy bar of soap. Smells of fear."
 	icon_state = "soapsyndie"
 	clean_speed = 35 //Almost the same as a mop
@@ -153,7 +154,7 @@
 	cleaning_reagent = "sterilizine" //Syndie bar soaps were always meant to quickly clean bloodstains to hide their crimes. AFAIK this should be a counter to luminol too, making it worth it.
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 15
 
-/obj/item/weapon/soap/commie
+/obj/item/soap/commie
 	name = "excelsior soap"
 	desc = "A bar of soap with the words \"For one to be truly free from shackles one must be clean\" engraved on it. Smells of struggles of the working class."
 	icon_state = "soapcommie"
@@ -162,7 +163,7 @@
 	reagent_storage = 30 //Same as mop
 	slip_power = 5
 
-/obj/item/weapon/soap/hunters
+/obj/item/soap/hunters
 	name = "handmade soap"
 	desc = "A bar of soap made by animal byproducts and ash."
 	icon_state = "soaproach_red"
@@ -171,14 +172,14 @@
 	reagent_storage = 10 //less then normal
 	slip_power = 2 //weak due to being handmade
 
-/obj/item/weapon/soap/hunters/New()
+/obj/item/soap/hunters/New()
 	..()
 	if(prob(50))
 		icon_state = "soaproach_green"
 	else
 		icon_state = "soaproach_red"
 
-/obj/item/weapon/soap/bluespase
+/obj/item/soap/bluespase
 	desc = "An anomalous bar of blue soap created by an unknown person (or group?), their work marked by a blue cross.\
 	These items are known to vanish and reappear when left alone. Smells of bluespace and hospitals."
 	icon_state = "soapblue"
@@ -189,7 +190,7 @@
 	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASMA = 3, MATERIAL_GOLD = 3, MATERIAL_SILVER = 3, MATERIAL_DIAMOND = 3)
 	cleaning_reagent = "sterilizine" //We use something that removes blood
 
-/obj/item/weapon/soap/bluespase/New()
+/obj/item/soap/bluespase/New()
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(5, get_turf(src))
@@ -197,7 +198,7 @@
 /*
  * Bike Horns
  */
-/obj/item/weapon/bikehorn
+/obj/item/bikehorn
 	name = "bike horn"
 	desc = "A loud bike horn. Favored by entertainers system-wide."
 	icon = 'icons/obj/items.dmi'
@@ -210,7 +211,7 @@
 	attack_verb = list("HONKED")
 	var/spam_flag = 0
 
-/obj/item/weapon/bikehorn/attack_self(mob/user as mob)
+/obj/item/bikehorn/attack_self(mob/user as mob)
 	if (spam_flag == 0)
 		spam_flag = 1
 		playsound(src.loc, 'sound/items/bikehorn.ogg', 50, 1)

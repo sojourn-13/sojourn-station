@@ -122,10 +122,10 @@
 
 /datum/perk/merchant/assign(mob/living/carbon/human/H)
 	..()
-	//holder.sanity.valid_inspirations += /obj/item/weapon/spacecash/bundle
+	//holder.sanity.valid_inspirations += /obj/item/spacecash/bundle
 
 /datum/perk/merchant/remove()
-	//holder.sanity.valid_inspirations -= /obj/item/weapon/spacecash/bundle
+	//holder.sanity.valid_inspirations -= /obj/item/spacecash/bundle
 	..()
 */
 /datum/perk/sanityboost
@@ -484,6 +484,7 @@
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
 	var/known_recipes = list(
+			/datum/craft_recipe/lodge/baroqe,
 			/datum/craft_recipe/lodge/hunter_crossbow,
 			/datum/craft_recipe/lodge/hunting_halberd,
 			/datum/craft_recipe/lodge/render_gauntlet,
@@ -511,6 +512,7 @@
 			/datum/craft_recipe/lodge/hunter_boots,
 			/datum/craft_recipe/lodge/hunter_gloves,
 			/datum/craft_recipe/lodge/sheath,
+			/datum/craft_recipe/lodge/hunting_belt
 			)
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)
@@ -519,6 +521,12 @@
 
 /datum/perk/job/butcher/remove()
 	holder.mind.knownCraftRecipes.Remove(known_recipes)
+
+/datum/perk/job/master_herbalist
+	name = "Naturalist"
+	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
+	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
+	or plant trays you always harvest an additional bonus!"
 
 /datum/perk/si_sci
 	name = "SI Science Trainning"
@@ -546,3 +554,49 @@
 	name = "Channeling"
 	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
 			during group rituals, and have an increased regeneration of cruciform energy."
+
+
+/datum/perk/codespeak
+	name = "Codespeak"
+	desc = "You know Marshal codes."
+	//icon_state = "codespeak" // https://game-icons.net/1x1/delapouite/police-officer-head.html
+	var/list/codespeak_procs = list(
+		/mob/living/carbon/human/proc/codespeak_help,
+		/mob/living/carbon/human/proc/codespeak_clear,
+		/mob/living/carbon/human/proc/codespeak_regroup,
+		/mob/living/carbon/human/proc/codespeak_moving,
+		/mob/living/carbon/human/proc/codespeak_moving_away,
+		/mob/living/carbon/human/proc/codespeak_spooders,
+		/mob/living/carbon/human/proc/codespeak_romch,
+		/mob/living/carbon/human/proc/codespeak_bigspooders,
+		/mob/living/carbon/human/proc/codespeak_bigromch,
+		/mob/living/carbon/human/proc/codespeak_serb,
+		/mob/living/carbon/human/proc/codespeak_commie,
+		/mob/living/carbon/human/proc/codespeak_carrion,
+		/mob/living/carbon/human/proc/codespeak_mutant,
+		/mob/living/carbon/human/proc/codespeak_dead,
+		/mob/living/carbon/human/proc/codespeak_corpse,
+		/mob/living/carbon/human/proc/codespeak_criminal,
+		/mob/living/carbon/human/proc/codespeak_unknown,
+		/mob/living/carbon/human/proc/codespeak_status,
+		/mob/living/carbon/human/proc/codespeak_shutup,
+		/mob/living/carbon/human/proc/codespeak_understood,
+		/mob/living/carbon/human/proc/codespeak_yes,
+		/mob/living/carbon/human/proc/codespeak_no,
+		/mob/living/carbon/human/proc/codespeak_understood_local,
+		/mob/living/carbon/human/proc/codespeak_yes_local,
+		/mob/living/carbon/human/proc/codespeak_no_local,
+		/mob/living/carbon/human/proc/codespeak_warcrime_local,
+		/mob/living/carbon/human/proc/codespeak_run_local
+		)
+
+/datum/perk/codespeak/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		holder.verbs += codespeak_procs
+
+
+/datum/perk/codespeak/remove()
+	if(holder)
+		holder.verbs -= codespeak_procs
+	..()

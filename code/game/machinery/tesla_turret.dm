@@ -4,10 +4,10 @@ Comes with lockable by TMs panel which allows for selection of targets: animals,
 Will blast electricity at any target within 5 tiles radius matching criteria chosen.
 */
 
-#define HUMAN /mob/living/carbon/human
-#define SILICON /mob/living/silicon
-#define SUPERIOR_ANIMAL /mob/living/carbon/superior_animal
-#define SIMPLE_ANIMAL /mob/living/simple_animal
+#define T_HUMAN /mob/living/carbon/human
+#define T_SILICON /mob/living/silicon
+#define T_SUPERIOR_ANIMAL /mob/living/carbon/superior_animal
+#define T_SIMPLE_ANIMAL /mob/living/simple_animal
 
 /obj/machinery/power/tesla_turret
 	name = "Defensive Tesla Coil Turret"
@@ -16,13 +16,13 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	density = TRUE
 	icon = 'icons/obj/tesla_turret.dmi'
 	icon_state = "coil"
-	circuit = /obj/item/weapon/circuitboard/tesla_turret
+	circuit = /obj/item/circuitboard/tesla_turret
 	frame_type = FRAME_VERTICAL
 	var/active = FALSE
 	var/locked = FALSE
 	var/zap_cooldown = 100
 	var/last_zap = 0
-	var/list/possible_targets = list(HUMAN, SILICON, SIMPLE_ANIMAL, SUPERIOR_ANIMAL)
+	var/list/possible_targets = list(T_HUMAN, T_SILICON, T_SIMPLE_ANIMAL, T_SUPERIOR_ANIMAL)
 	var/current_target = null
 
 /obj/machinery/power/tesla_turret/anchored
@@ -37,7 +37,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	..()
 	to_chat(user, SPAN_NOTICE("The turret is [active ? "on" : "off"].")) // Is the generator on?
 
-/obj/machinery/power/tesla_turret/attackby(obj/item/weapon/W, mob/user)
+/obj/machinery/power/tesla_turret/attackby(obj/item/W, mob/user)
 
 	if(default_deconstruction(W, user))
 		return
@@ -45,8 +45,8 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	if(default_part_replacement(W, user))
 		return
 
-	if(istype(W, /obj/item/weapon/card/id))
-		var/obj/item/weapon/card/id/C = W // New var to use ID-only vars.
+	if(istype(W, /obj/item/card/id))
+		var/obj/item/card/id/C = W // New var to use ID-only vars.
 		if(!access_construction in C.access)
 			to_chat(user, "You do not have the required access to lock the turret.")
 			return
@@ -88,7 +88,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 
 /obj/machinery/power/tesla_turret/RefreshParts()
 	zap_cooldown = initial(zap_cooldown)
-	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		zap_cooldown -= (C.rating * 15)
 
 /obj/machinery/power/tesla_turret/attack_hand(mob/user)
@@ -117,8 +117,10 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	..()
 	if(active)
 		icon_state = "coil_active"
+		set_light(3)
 	else
 		icon_state = "coil"
+		set_light(0)
 
 
 /obj/machinery/power/tesla_turret/proc/zap(mob/living/target)
@@ -144,7 +146,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 		S.emp_act(3 /*EMP_LIGHT*/)
 
 
-#undef HUMAN
-#undef SILICON
-#undef SUPERIOR_ANIMAL
-#undef SIMPLE_ANIMAL
+#undef T_HUMAN
+#undef T_SILICON
+#undef T_SUPERIOR_ANIMAL
+#undef T_SIMPLE_ANIMAL

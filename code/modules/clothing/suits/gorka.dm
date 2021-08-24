@@ -110,11 +110,11 @@
 
 /obj/item/clothing/suit/gorka
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
-	var/obj/item/weapon/storage/internal/pockets
+	var/obj/item/storage/internal/pockets
 
 /obj/item/clothing/suit/gorka/New()
 	..()
-	pockets = new/obj/item/weapon/storage/internal(src)
+	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 2	//two slots
 	pockets.max_w_class = ITEM_SIZE_SMALL		//fit only pocket sized items
 	pockets.max_storage_space = 4
@@ -382,4 +382,4 @@
 	name = "green corpsman hood"
 	desc = "A hood from a gorka jacket, oddly robust."
 	icon_state = "gorka_jacket_ih_med_g_hood"
-	
+

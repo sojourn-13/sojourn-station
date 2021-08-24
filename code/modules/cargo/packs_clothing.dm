@@ -8,7 +8,7 @@
 					/obj/item/clothing/shoes/leather,
 					/obj/item/clothing/suit/storage/wcoat/black)
 	name = "Formalwear Crate"
-	cost = 1200
+	cost = 300
 	containertype = /obj/structure/closet
 	crate_name = "formalwear crate"
 	group = "Clothing"
@@ -29,7 +29,7 @@
 					/obj/item/clothing/under/bride_white,
 					/obj/item/clothing/suit/rank/chef,
 					/obj/item/clothing/under/plaid/kilt)
-	cost = 800 //they dont get payed much
+	cost = 100 //they dont get payed much
 	crate_name = "actor costumes crate"
 	containertype = /obj/structure/closet/crate/secure
 	access = access_theatre

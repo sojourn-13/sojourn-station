@@ -1,4 +1,4 @@
-/obj/item/weapon/ore
+/obj/item/ore
 	name = "rock"
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "ore2"
@@ -8,8 +8,9 @@
 	var/material
 	var/material_randomly_has = TRUE
 	var/sheet_amout = 1 //How many sheets do we give?
+	price_tag = 1
 
-/obj/item/weapon/ore/New()
+/obj/item/ore/New()
 	..()
 	if(material_randomly_has)
 		if(prob(5))
@@ -33,10 +34,10 @@
 		else
 			material = "sand"
 
-/obj/item/weapon/ore/ex_act(severity)
+/obj/item/ore/ex_act(severity)
 	return //We allow mining charges to not blow up ores
 
-/obj/item/weapon/ore/attackby(obj/item/I, mob/user)
+/obj/item/ore/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!istype(user.loc, /turf))
 		return
@@ -47,7 +48,7 @@
 	if(tool_type==QUALITY_HAMMERING)
 		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
 		if(I.use_tool(user, src, WORKTIME_QUICK, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/weapon/ore/glass(get_turf(src))
+			new /obj/item/ore/glass(get_turf(src))
 			if(prob(50))
 				new /obj/random/material_ore_small(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
@@ -56,20 +57,21 @@
 		return
 
 
-/obj/item/weapon/ore/uranium
+/obj/item/ore/uranium
 	name = "pitchblende"
 	icon_state = "ore_uranium"
 	origin_tech = list(TECH_MATERIAL = 5)
 	material = MATERIAL_URANIUM
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 3
 
-/obj/item/weapon/ore/uranium/small
+/obj/item/ore/uranium/small
 	name = "pitchblende shard"
 	material = MATERIAL_URANIUM
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/iron
+/obj/item/ore/iron
 	name = "hematite"
 	icon_state = "ore_iron"
 	origin_tech = list(TECH_MATERIAL = 1)
@@ -77,11 +79,11 @@
 	crushable = FALSE
 	material_randomly_has = FALSE
 
-/obj/item/weapon/ore/iron/small
+/obj/item/ore/iron/small
 	name = "hematite nugget"
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/coal
+/obj/item/ore/coal
 	name = "raw carbon"
 	icon_state = "ore_coal"
 	origin_tech = list(TECH_MATERIAL = 1)
@@ -89,11 +91,11 @@
 	crushable = FALSE
 	material_randomly_has = FALSE
 
-/obj/item/weapon/ore/coal/small
+/obj/item/ore/coal/small
 	name = "raw carbon chunk"
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/glass
+/obj/item/ore/glass
 	name = "sand"
 	icon_state = "ore_glass"
 	origin_tech = list(TECH_MATERIAL = 1)
@@ -103,7 +105,7 @@
 	material_randomly_has = FALSE
 
 // POCKET SAND!
-/obj/item/weapon/ore/glass/throw_impact(atom/hit_atom)
+/obj/item/ore/glass/throw_impact(atom/hit_atom)
 	..()
 	var/mob/living/carbon/human/H = hit_atom
 	if(istype(H) && H.has_eyes() && prob(85))
@@ -114,88 +116,95 @@
 			if(istype(loc, /turf/)) qdel(src)
 
 
-/obj/item/weapon/ore/plasma
+/obj/item/ore/plasma
 	name = "plasma crystals"
 	icon_state = "ore_plasma"
 	origin_tech = list(TECH_MATERIAL = 2)
 	material = MATERIAL_PLASMA
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 5
 
-/obj/item/weapon/ore/plasma/small
+/obj/item/ore/plasma/small
 	name = "plasma crystal"
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/silver
+/obj/item/ore/silver
 	name = "native silver ore"
 	icon_state = "ore_silver"
 	origin_tech = list(TECH_MATERIAL = 3)
 	material = MATERIAL_SILVER
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 2
 
-/obj/item/weapon/ore/silver/small
+/obj/item/ore/silver/small
 	name = "native silver nugget"
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/gold
+/obj/item/ore/gold
 	name = "native gold ore"
 	icon_state = "ore_gold"
 	origin_tech = list(TECH_MATERIAL = 4)
 	material = MATERIAL_GOLD
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 6
 
-/obj/item/weapon/ore/gold/small
+/obj/item/ore/gold/small
 	name = "native gold nugget"
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/diamond
+/obj/item/ore/diamond
 	name = "diamonds"
 	icon_state = "ore_diamond"
 	origin_tech = list(TECH_MATERIAL = 6)
 	material = MATERIAL_DIAMOND
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 7
 
-/obj/item/weapon/ore/diamond/small
+/obj/item/ore/diamond/small
 	name = "diamond dust"
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/osmium
+/obj/item/ore/osmium
 	name = "raw platinum"
 	icon_state = "ore_platinum"
 	material = MATERIAL_PLATINUM
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 9
 
-/obj/item/weapon/ore/osmium/small
+/obj/item/ore/osmium/small
 	name = "raw platinum shard"
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/hydrogen
+/obj/item/ore/hydrogen
 	name = "raw hydrogen"
 	icon_state = "ore_hydrogen"
 	material = MATERIAL_MHYDROGEN
 	crushable = FALSE
 	material_randomly_has = FALSE
+	price_tag = 10
 
-/obj/item/weapon/ore/hydrogen/small
+/obj/item/ore/hydrogen/small
 	name = "raw hydrogen nugget" //Its a nugget?
 	sheet_amout = 0.5
 
-/obj/item/weapon/ore/slag
+/obj/item/ore/slag
 	name = "Slag"
 	desc = "Someone screwed up..."
 	icon_state = "slag"
 	material = null
+	price_tag = 0
 
-/obj/item/weapon/ore/New()
+/obj/item/ore/New()
 	pixel_x = rand(0,16)-8
 	pixel_y = rand(0,8)-8
 	..()
 
-/obj/item/weapon/ore/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/ore/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/device/core_sampler))
 		var/obj/item/device/core_sampler/C = W
 		C.sample_item(src, user)

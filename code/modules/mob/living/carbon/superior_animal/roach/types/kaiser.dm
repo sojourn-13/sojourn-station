@@ -36,7 +36,7 @@ Has ability of every roach.
 
 	blattedin_revives_left = 0
 
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/kaiser
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser
 	meat_amount = 15
 	sanity_damage = 3
 
@@ -76,7 +76,7 @@ Has ability of every roach.
 		if(prob(10))
 			var/damage = rand(melee_damage_lower, melee_damage_upper)
 			L.apply_effect(200, IRRADIATE) // Looks like a lot but its really not
-			L.damage_through_armor(damage, TOX, ARMOR_BIO)
+			L.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
 			playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
 			L.visible_message(SPAN_DANGER("\the [src] globs up some glowing bile all over \the [L]!"))
 
@@ -135,7 +135,7 @@ Has ability of every roach.
 	return FALSE
 
 //RIDING
-/mob/living/carbon/superior_animal/roach/kaiser/try_tame(var/mob/living/carbon/user, var/obj/item/weapon/reagent_containers/food/snacks/grown/thefood)
+/mob/living/carbon/superior_animal/roach/kaiser/try_tame(var/mob/living/carbon/user, var/obj/item/reagent_containers/food/snacks/grown/thefood)
 	if(!istype(thefood))
 		return FALSE
 	if(prob(40))

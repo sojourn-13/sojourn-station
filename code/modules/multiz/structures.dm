@@ -21,6 +21,9 @@
 				qdel(src)
 			return .
 
+/obj/structure/multiz/ex_act(severity)
+	return //We cant be broken like this to prevent people getting unfairly stuck do to bad rng
+
 /obj/structure/multiz/CanPass(obj/mover, turf/source, height, airflow)
 	return airflow || !density
 
@@ -121,8 +124,8 @@
 			C.forceMove(target.loc)
 			var/direction = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
 			C.Move(get_step(C, direction))
-			if(istype(C, /obj/item/weapon/grenade))
-				var/obj/item/weapon/grenade/G = C
+			if(istype(C, /obj/item/grenade))
+				var/obj/item/grenade/G = C
 				if(!G.active)
 					G.activate(user)
 			return TRUE

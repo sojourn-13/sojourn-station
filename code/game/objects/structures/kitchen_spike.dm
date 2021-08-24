@@ -18,6 +18,9 @@
 	else
 		if(spike(target))
 			visible_message(SPAN_DANGER("[user] has forced [target] onto the spike, killing them instantly!"))
+			for(var/obj/item/thing in target)
+				if(thing.is_equipped())
+					target.drop_from_inventory(thing)
 			qdel(target)
 			return TRUE
 		else
@@ -35,7 +38,7 @@
 		meat_type = H.form.meat_type
 		icon_state = "spikebloody"
 	else if(isalien(victim))
-		meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/xenomeat
+		meat_type = /obj/item/reagent_containers/food/snacks/meat/xenomeat
 		icon_state = "spikebloodygreen"
 	else
 		return 0

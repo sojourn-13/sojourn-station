@@ -2,84 +2,84 @@ GLOBAL_LIST_EMPTY(various_antag_contracts)	//Contracts from "Various" emloyers, 
 GLOBAL_LIST_EMPTY(excel_antag_contracts)	//Excelsior contracts
 GLOBAL_LIST_EMPTY(blackshield_antag_contracts)	//Excelsior contracts
 GLOBAL_LIST_INIT(antag_item_targets,list(
-		"the premier's antique laser gun" = /obj/item/weapon/gun/energy/captain,
-		"a hand teleporter" = /obj/item/weapon/hand_tele,
-		"an RCD" = /obj/item/weapon/rcd,
-		"a jetpack" = /obj/item/weapon/tank/jetpack,
+		"the premier's antique laser gun" = /obj/item/gun/energy/captain,
+		"a hand teleporter" = /obj/item/hand_tele,
+		"an RCD" = /obj/item/rcd,
+		"a jetpack" = /obj/item/tank/jetpack,
 		"a premier's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/device/aicard,
-		"the Guild Master's advanced voidsuit control module" = /obj/item/weapon/rig/ce,
+		"the Guild Master's advanced voidsuit control module" = /obj/item/rig/ce,
 		"the colony blueprints" = /obj/item/blueprints,
 		"a sample of slime extract" = /obj/item/slime_extract,
-		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
+		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
 		"a Soteria research overseer's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
 		"a guild master's jumpsuit" = /obj/item/clothing/under/rank/exultant,
 		"a Soteria biolab overseer's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,
 		"a warrant officer's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
 		"a steward's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
-		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
+		"the hypospray" = /obj/item/reagent_containers/hypospray,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
-		"an marshal hardsuit control module" = /obj/item/weapon/rig/combat/ironhammer
+		"an marshal hardsuit control module" = /obj/item/rig/combat/ironhammer
 	))
 
 GLOBAL_LIST_INIT(excel_item_targets,list(
-		"a Minotaur revolver" = /obj/item/weapon/gun/projectile/revolver,
-		"a Deckard revolver" = /obj/item/weapon/gun/projectile/revolver/deckard,
-		"a Gladstone shotgun" = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone,
-		"a Grizzly shotgun" = /obj/item/weapon/gun/projectile/shotgun/pump,
-		//"a Cassad plasma rifle" = /obj/item/weapon/gun/energy/plasma/cassad,
-		"a Spider Rose energy gun" = /obj/item/weapon/gun/energy/gun,
-		"a Hustler omni rifle" = /obj/item/weapon/gun/projectile/automatic/omnirifle,
-		"a MAC sub machine gun" = /obj/item/weapon/gun/projectile/automatic/mac,
-		"a Straylight sub machine gun" = /obj/item/weapon/gun/projectile/automatic/straylight,
-		"a STS carbine" = /obj/item/weapon/gun/projectile/automatic/sts,
-		"a Colt handgun" = /obj/item/weapon/gun/projectile/colt,
+		"a Minotaur revolver" = /obj/item/gun/projectile/revolver,
+		"a Deckard revolver" = /obj/item/gun/projectile/revolver/deckard,
+		"a Gladstone shotgun" = /obj/item/gun/projectile/shotgun/pump/gladstone,
+		"a Grizzly shotgun" = /obj/item/gun/projectile/shotgun/pump,
+		//"a Cassad plasma rifle" = /obj/item/gun/energy/plasma/cassad,
+		"a Spider Rose energy gun" = /obj/item/gun/energy/gun,
+		"a Hustler omni rifle" = /obj/item/gun/projectile/automatic/omnirifle,
+		"a MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
+		"a Straylight sub machine gun" = /obj/item/gun/projectile/automatic/straylight,
+		"a STS carbine" = /obj/item/gun/projectile/automatic/sts,
+		"a Colt handgun" = /obj/item/gun/projectile/colt,
 		//"a Lenar granade launcher" = /datum/design/autolathe/gun/grenade_launcher_lenar, What in the god damn?
-		"a RCD" = /obj/item/weapon/rcd,
-		//"a cruciform" = /obj/item/weapon/implant/core_implant/cruciform,
+		"a RCD" = /obj/item/rcd,
+		//"a cruciform" = /obj/item/implant/core_implant/cruciform,
 		//"the station blueprints" = /obj/item/blueprints,
-		//"a hand teleporter" = /obj/item/weapon/hand_tele,
-		"a bluespace Harpoon" = /obj/item/weapon/bluespace_harpoon,
-		//"a rocket-powered charge hammer" = /obj/item/weapon/tool/hammer/charge,
-		"the captain's antique laser gun" = /obj/item/weapon/gun/energy/captain,
+		//"a hand teleporter" = /obj/item/hand_tele,
+		"a bluespace Harpoon" = /obj/item/bluespace_harpoon,
+		//"a rocket-powered charge hammer" = /obj/item/tool/hammer/charge,
+		"the captain's antique laser gun" = /obj/item/gun/energy/captain,
 
 	))
 
 GLOBAL_LIST_INIT(blackshield_item_targets,list(
-		"Deckard revolver" = /obj/item/weapon/gun/projectile/revolver/deckard,
-		"Gladstone shotgun" = /obj/item/weapon/gun/projectile/shotgun/pump/gladstone,
-		"Cassad plasma rifle" = /obj/item/weapon/gun/energy/pulse/cassad,
-		"Spider Rose energy gun" = /obj/item/weapon/gun/energy/gun,
-		"Hustler omni rifle" = /obj/item/weapon/gun/projectile/automatic/omnirifle,
-		"MAC sub machine gun" = /obj/item/weapon/gun/projectile/automatic/mac,
-		"Straylight sub machine gun" = /obj/item/weapon/gun/projectile/automatic/straylight,
-		"STS carbine" = /obj/item/weapon/gun/projectile/automatic/sts,
-		"M1911 .40 Auto mag handgun" = /obj/item/weapon/gun/projectile/colt/ten,
-		"Lenar granade launcher" = /obj/item/weapon/gun/projectile/grenade/lenar,
-		"Forged barrel" = /obj/item/weapon/gun_upgrade/barrel/forged,
-		"Penetrator magnetic accelerator barrel" = /obj/item/weapon/gun_upgrade/barrel/mag_accel,
-		"Magnetic overheat barrel" = /obj/item/weapon/gun_upgrade/barrel/overheat,
-		"Danger Zone Trigger" = /obj/item/weapon/gun_upgrade/trigger/dangerzone,
-		"Gauss Coil barrel" = /obj/item/weapon/gun_upgrade/barrel/gauss,
-		"Watchman scope" = /obj/item/weapon/gun_upgrade/scope/watchman,
-		"Contract Killer scope" = /obj/item/weapon/gun_upgrade/scope/killer,
-		"Melee armor plating" = /obj/item/weapon/tool_upgrade/armor/melee,
-		"Ballistic armor plating" = /obj/item/weapon/tool_upgrade/armor/bullet,
-		"Energy armor plating" = /obj/item/weapon/tool_upgrade/armor/energy,
-		"Bomb proofing armor plate" = /obj/item/weapon/tool_upgrade/armor/bomb,
-		"Hand RCD" = /obj/item/weapon/rcd,
-		"bluespace Harpoon" = /obj/item/weapon/bluespace_harpoon,
+		"Deckard revolver" = /obj/item/gun/projectile/revolver/deckard,
+		"Gladstone shotgun" = /obj/item/gun/projectile/shotgun/pump/gladstone,
+		"Cassad plasma rifle" = /obj/item/gun/energy/pulse/cassad,
+		"Spider Rose energy gun" = /obj/item/gun/energy/gun,
+		"Hustler omni rifle" = /obj/item/gun/projectile/automatic/omnirifle,
+		"MAC sub machine gun" = /obj/item/gun/projectile/automatic/mac,
+		"Straylight sub machine gun" = /obj/item/gun/projectile/automatic/straylight,
+		"STS carbine" = /obj/item/gun/projectile/automatic/sts,
+		"M1911 .40 Auto mag handgun" = /obj/item/gun/projectile/colt/ten,
+		"Lenar granade launcher" = /obj/item/gun/projectile/grenade/lenar,
+		"Forged barrel" = /obj/item/gun_upgrade/barrel/forged,
+		"Penetrator magnetic accelerator barrel" = /obj/item/gun_upgrade/barrel/mag_accel,
+		"Magnetic overheat barrel" = /obj/item/gun_upgrade/barrel/overheat,
+		"Danger Zone Trigger" = /obj/item/gun_upgrade/trigger/dangerzone,
+		"Gauss Coil barrel" = /obj/item/gun_upgrade/barrel/gauss,
+		"Watchman scope" = /obj/item/gun_upgrade/scope/watchman,
+		"Contract Killer scope" = /obj/item/gun_upgrade/scope/killer,
+		"Melee armor plating" = /obj/item/tool_upgrade/armor/melee,
+		"Ballistic armor plating" = /obj/item/tool_upgrade/armor/bullet,
+		"Energy armor plating" = /obj/item/tool_upgrade/armor/energy,
+		"Bomb proofing armor plate" = /obj/item/tool_upgrade/armor/bomb,
+		"Hand RCD" = /obj/item/rcd,
+		"bluespace Harpoon" = /obj/item/bluespace_harpoon,
 		"Mech CCW armor booster" = /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
 		"Mech Exosuit projectile armor booster" = /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
 		"Mech Shield droid" = /obj/item/mecha_parts/mecha_equipment/combat_shield,
 		"Mech RCD" = /obj/item/mecha_parts/mecha_equipment/tool/rcd,
-		"PBT Pacifier mounted taser" = /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser,
-		"Ultra AC 2"= /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg,
-		"LBX AC 10 Scattershot" = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
-		"CH-PS Immolator laser" = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
-		"CH-LC Solaris laser cannon" = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy,
-		"MkIV ion heavy cannon" = /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
-		"SGL-6 grenade launcher" = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang,
+		"PBT Pacifier mounted taser" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser,
+		"Ultra AC 2"= /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg,
+		"LBX AC 10 Scattershot" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot,
+		"CH-PS Immolator laser" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,
+		"CH-LC Solaris laser cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy,
+		"MkIV ion heavy cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,
+		"SGL-6 grenade launcher" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang,
 		"Mounted rig combat injector" = /obj/item/rig_module/chem_dispenser/combat,
 		"hardsuit laser cannon"= /obj/item/rig_module/mounted,
 		"hardsuit laser gun"= /obj/item/rig_module/mounted/egun,
@@ -89,17 +89,17 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"hardsuit integrated thermals" = /obj/item/rig_module/vision/thermal,
 		"hardsuit integrated power sink" = /obj/item/rig_module/power_sink,
 		"hardsuit integrated electrowarfare mod" = /obj/item/rig_module/electrowarfare_suite,
-		"design disk Means of Production" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior,
-		"design disk Means of Revolution" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior_weapons,
-		"design disk Stocking Revolution" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_parts,
-		"design disk Means of Power" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/ex_cells,
-		"design disk .35 Drozd SMG" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_drozd,
-		"design disk Makarov" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_makarov,
-		"design disk Vintorez" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_vintorez,
-		"design disk Kardashev-Mosin" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_boltgun,
-		"design disk Kalashnikov" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ak,
-		"design disk Reclaimer" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer,
-		"design disk Shpagin" = /obj/item/weapon/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,
+		"design disk Means of Production" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior,
+		"design disk Means of Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
+		"design disk Stocking Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/ex_parts,
+		"design disk Means of Power" = /obj/item/computer_hardware/hard_drive/portable/design/ex_cells,
+		"design disk .35 Drozd SMG" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd,
+		"design disk Makarov" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_makarov,
+		"design disk Vintorez" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez,
+		"design disk Kardashev-Mosin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_boltgun,
+		"design disk Kalashnikov" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak,
+		"design disk Reclaimer" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer,
+		"design disk Shpagin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,
 
 	))
 
@@ -147,11 +147,11 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 // A contract to steal a specific item - allows you to check all contents (recursively) for the target item
 /datum/antag_contract/item
 
-/datum/antag_contract/item/proc/on_container(obj/item/weapon/storage/bsdm/container)
+/datum/antag_contract/item/proc/on_container(obj/item/storage/bsdm/container)
 	if(check(container))
 		complete(container.owner)
 
-/datum/antag_contract/item/proc/check(obj/item/weapon/storage/container)
+/datum/antag_contract/item/proc/check(obj/item/storage/container)
 	return check_contents(container.GetAllContents(includeSelf = FALSE))
 
 /datum/antag_contract/item/proc/check_contents(list/contents)
@@ -164,7 +164,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 
 /datum/antag_contract/item/file/check_contents(list/contents)
 	var/list/all_files = list()
-	for(var/obj/item/weapon/computer_hardware/hard_drive/H in contents)
+	for(var/obj/item/computer_hardware/hard_drive/H in contents)
 		all_files += H.stored_files
 
 	return check_files(all_files)
@@ -208,7 +208,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/implant/can_place()
 	return ..() && target_mind
 
-/datum/antag_contract/implant/proc/check(obj/item/weapon/implant/spying/implant)
+/datum/antag_contract/implant/proc/check(obj/item/implant/spying/implant)
 	if(completed)
 		return
 	if(implant.wearer && implant.wearer.mind == target_mind)
@@ -284,7 +284,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		if(!istype(H) || H.stat == DEAD || !isOnStationLevel(H))
 			candidates -= target_mind
 			continue
-		target = H.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
+		target = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
 		if(!target)
 			target = H.organs_by_name[BP_HEAD]
 		desc = "Assassinate [target_mind.current.real_name] and dispatch their [target.name] via BSDM as a proof."
@@ -308,25 +308,25 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	var/target_type
 
 	var/static/list/possible_items = list(
-		"the captain's antique laser gun" = /obj/item/weapon/gun/energy/captain,
-		"a hand teleporter" = /obj/item/weapon/hand_tele,
-		"an RCD" = /obj/item/weapon/rcd,
-		"a jetpack" = /obj/item/weapon/tank/jetpack,
+		"the captain's antique laser gun" = /obj/item/gun/energy/captain,
+		"a hand teleporter" = /obj/item/hand_tele,
+		"an RCD" = /obj/item/rcd,
+		"a jetpack" = /obj/item/tank/jetpack,
 		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/device/aicard,
-		"the Technomancer Exultant's advanced voidsuit control module" = /obj/item/weapon/rig/ce,
+		"the Technomancer Exultant's advanced voidsuit control module" = /obj/item/rig/ce,
 		"the station blueprints" = /obj/item/blueprints,
 		"a sample of slime extract" = /obj/item/slime_extract,
-		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
+		"a piece of corgi meat" = /obj/item/reagent_containers/food/snacks/meat/corgi,
 		"a Moebius expedition overseer's jumpsuit" = /obj/item/clothing/under/rank/expedition_overseer,
 		"a exultant's jumpsuit" = /obj/item/clothing/under/rank/exultant,
 		"a Moebius biolab officer's jumpsuit" = /obj/item/clothing/under/rank/moebius_biolab_officer,
 		"a Ironhammer commander's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
 		"a First Officer's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
-		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
-		"the captain's pinpointer" = /obj/item/weapon/pinpointer,
+		"the hypospray" = /obj/item/reagent_containers/hypospray,
+		"the captain's pinpointer" = /obj/item/pinpointer,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
-		"an Ironhammer hardsuit control module" = /obj/item/weapon/rig/combat/ironhammer
+		"an Ironhammer hardsuit control module" = /obj/item/rig/combat/ironhammer
 	)
 
 /datum/antag_contract/item/steal/New()
@@ -350,7 +350,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/item/steal/docs
 	unique = TRUE
 	reward = 12
-	target_type = /obj/item/weapon/oddity/secdocs
+	target_type = /obj/item/oddity/secdocs
 	desc = "Steal a folder of secret documents and send them via BSDM."
 
 
@@ -367,7 +367,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 
 /datum/antag_contract/item/dump/check_contents(list/contents)
 	var/received = 0
-	for(var/obj/item/weapon/spacecash/cash in contents)
+	for(var/obj/item/spacecash/cash in contents)
 		received += cash.worth
 	return received >= sum
 
@@ -385,7 +385,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 
 /datum/antag_contract/item/blood/check_contents(list/contents)
 	var/list/samples = list()
-	for(var/obj/item/weapon/reagent_containers/C in contents)
+	for(var/obj/item/reagent_containers/C in contents)
 		var/list/data = C.reagents?.get_data("blood")
 		if(!data || data["species"] != "Human" || (data["blood_DNA"] in samples))
 			continue
@@ -502,7 +502,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 				continue
 
 		if (cruciform_check)
-			var/cruciform = H.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
+			var/cruciform = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
 			if(cruciform)
 				continue
 

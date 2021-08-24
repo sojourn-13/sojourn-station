@@ -18,6 +18,7 @@
 	old_y = 0
 	default_pixel_x = -16
 	pixel_x = -16
+	randpixel = 0
 	leather_amount = 6 //The amount of leather sheets dropped.
 	bones_amount = 8 //The amount of bone sheets dropped.
 	has_special_parts = TRUE //var for checking during the butcher process.
@@ -37,7 +38,7 @@
 	..()
 
 /mob/living/carbon/superior_animal/lodge/tatonka/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	var/obj/item/weapon/reagent_containers/G = O
+	var/obj/item/reagent_containers/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_refillable())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
 		var/transfered = udder.trans_id_to(G, milk_type, rand(5,10))
@@ -49,8 +50,8 @@
 		..()
 
 /mob/living/carbon/superior_animal/lodge/tatonka/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
-		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
+		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")
 			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It moos happily.")
@@ -91,7 +92,7 @@
 		visible_message("[src] [pick("squats down and moos.","begins making a huge racket.","begins mooing raucously.")]")
 		offspring_left--
 		var/mob/living/carbon/superior_animal/lodge/baby_tatonka/E = new(get_turf(src))
-		START_PROCESSING(SSobj, E)
+		START_PROCESSING(SSmobs, E)
 	default_pixel_x = -16
 	pixel_x = -16
 
@@ -112,6 +113,7 @@
 	mob_size = MOB_SMALL
 	default_pixel_x = -16
 	pixel_x = -16
+	randpixel = 0
 
 /mob/living/carbon/superior_animal/lodge/baby_tatonka/New()
 	..()

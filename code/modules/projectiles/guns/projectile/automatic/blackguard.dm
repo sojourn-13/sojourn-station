@@ -1,6 +1,6 @@
-/obj/item/weapon/gun/projectile/automatic/blackguard
+/obj/item/gun/projectile/automatic/blackguard
 	name = "\"Blackguard\" heavy marksman rifle"
-	desc = "A heavily modded and  \"improved\" omnirifle platform design made by the Blackshield and Marshals, chambered in .408, \
+	desc = "A heavily modded and  \"improved\" omnirifle platform design made by the Marshals but used by Blackshield, chambered in .408, \
 	With an extended barrel, standard bayonet, and a reflex scope this rifle has less customization than other weapons, but lends itself to a good all \
 	round design and function. Unlike other omni rifles, this one can take standard mags or drum mags of .408 ammo."
 	icon = 'icons/obj/guns/projectile/blackguard.dmi'
@@ -27,13 +27,13 @@
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/rifle_boltforward.ogg'
-	gun_tags = list(GUN_MAGWELL, GUN_BAYONET)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_BAYONET)
 
 	init_firemodes = list(
 		list(mode_name="semiauto", burst=1, fire_delay=8, move_delay=null, icon="semi")
 		)
 
-/obj/item/weapon/gun/projectile/automatic/blackguard/update_icon()
+/obj/item/gun/projectile/automatic/blackguard/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -51,6 +51,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/blackguard/Initialize()
+/obj/item/gun/projectile/automatic/blackguard/Initialize()
 	. = ..()
 	update_icon()

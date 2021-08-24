@@ -1,6 +1,6 @@
-//Not to be confused with /obj/item/weapon/reagent_containers/food/drinks/bottle
+//Not to be confused with /obj/item/reagent_containers/food/drinks/bottle
 
-/obj/item/weapon/reagent_containers/glass/bottle
+/obj/item/reagent_containers/glass/bottle
 	name = "bottle"
 	desc = "A small bottle."
 	icon = 'icons/obj/chemical.dmi'
@@ -12,7 +12,7 @@
 	filling_states = "20;60;100"
 	label_icon_state = "label_bottle"
 
-/obj/item/weapon/reagent_containers/glass/bottle/update_icon()
+/obj/item/reagent_containers/glass/bottle/update_icon()
 	cut_overlays()
 
 	if(has_lid())
@@ -35,92 +35,92 @@
 			filling.color = reagents.get_color()
 			add_overlay(filling)
 
-/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline
+/obj/item/reagent_containers/glass/bottle/inaprovaline
 	name = "inaprovaline bottle"
 	desc = "A small bottle. Contains inaprovaline - used to stabilize patients."
 	icon_state = "bottle"
 	preloaded_reagents = list("inaprovaline" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/toxin
+/obj/item/reagent_containers/glass/bottle/toxin
 	name = "toxin bottle"
 	desc = "A small bottle of toxins. Do not drink, it is poisonous."
 	icon_state = "bottle"
 	preloaded_reagents = list("toxin" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/cyanide
+/obj/item/reagent_containers/glass/bottle/cyanide
 	name = "cyanide bottle"
 	desc = "A small bottle of cyanide. Bitter almonds?"
 	icon_state = "bottle"
 	preloaded_reagents = list("cyanide" = 30)
 
-/obj/item/weapon/reagent_containers/glass/bottle/stoxin
+/obj/item/reagent_containers/glass/bottle/stoxin
 	name = "soporific bottle"
 	desc = "A small bottle of soporific. Just the fumes make you sleepy."
 	icon_state = "bottle"
 	preloaded_reagents = list("stoxin" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/chloralhydrate
+/obj/item/reagent_containers/glass/bottle/chloralhydrate
 	name = "chloral hydrate bottle"
 	desc = "A small bottle of chloral hydrate. Mickey's Favorite!"
 	icon_state = "bottle"
 	preloaded_reagents = list("chloralhydrate" = 30)
 
-/obj/item/weapon/reagent_containers/glass/bottle/antitoxin
+/obj/item/reagent_containers/glass/bottle/antitoxin
 	name = "dylovene bottle"
 	desc = "A small bottle of dylovene. Counters poisons, and repairs damage. A wonder drug."
 	icon_state = "bottle"
 	preloaded_reagents = list("anti_toxin" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/mutagen
+/obj/item/reagent_containers/glass/bottle/mutagen
 	name = "unstable mutagen bottle"
 	desc = "A small bottle of unstable mutagen. Randomly changes the DNA structure of whoever comes in contact."
 	icon_state = "bottle"
 	preloaded_reagents = list("mutagen" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/ammonia
+/obj/item/reagent_containers/glass/bottle/ammonia
 	name = "ammonia bottle"
 	desc = "A small bottle."
 	icon_state = "bottle"
 	preloaded_reagents = list("ammonia" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/diethylamine
+/obj/item/reagent_containers/glass/bottle/diethylamine
 	name = "diethylamine bottle"
 	desc = "A small bottle."
 	icon_state = "bottle"
 	preloaded_reagents = list("diethylamine" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/pacid
+/obj/item/reagent_containers/glass/bottle/pacid
 	name = "polytrinic acid bottle"
 	desc = "A small bottle. Contains a small amount of polytrinic acid."
 	icon_state = "bottle"
 	preloaded_reagents = list("pacid" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/capsaicin
+/obj/item/reagent_containers/glass/bottle/capsaicin
 	name = "capsaicin bottle"
 	desc = "A small bottle. Contains hot sauce."
 	icon_state = "bottle"
 	preloaded_reagents = list("capsaicin" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/frostoil
+/obj/item/reagent_containers/glass/bottle/frostoil
 	name = "frost oil bottle"
 	desc = "A small bottle. Contains cold sauce."
 	icon_state = "bottle"
 	preloaded_reagents = list("frostoil" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/tricord
+/obj/item/reagent_containers/glass/bottle/tricord
 	name = "tricordrazine bottle"
 	desc = "A small bottle. Contains Tricordrazine, a mild all-around healing agent."
 	icon_state = "bottle"
 	preloaded_reagents = list("tricordrazine" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/adminordrazine
+/obj/item/reagent_containers/glass/bottle/adminordrazine
 	name = "adminordrazine bottle"
 	desc = "A small bottle. Contains the liquid essence of the gods."
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "holyflask"
 	preloaded_reagents = list("adminordrazine" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/petrel
+/obj/item/reagent_containers/glass/bottle/petrel
 	name = "diesel canister"
 	desc = "A small canister. Contains liquid diesel, useful for powering diesel generators or making fire bombs."
 	icon_state = "canister"
@@ -129,25 +129,25 @@
 	matter = list(MATERIAL_PLASTIC = 1)
 	preloaded_reagents = list("fuel" = 120)
 
-/obj/item/weapon/reagent_containers/glass/bottle/tangu_extract
+/obj/item/reagent_containers/glass/bottle/tangu_extract
 	name = "tangu extract bottle"
 	desc = "A small bottle. Contains the extract of a tangu horn, a highly valuable universal healing chemical."
 	icon_state = "bottle"
 	preloaded_reagents = list("tangu_extract" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/clucker_extract
+/obj/item/reagent_containers/glass/bottle/clucker_extract
 	name = "clucker extract bottle"
 	desc = "A small bottle. Contains the extract of a compressed clucker feather, a rather weak painkiller."
 	icon_state = "bottle"
 	preloaded_reagents = list("clucker_extract" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/tahcacillin
+/obj/item/reagent_containers/glass/bottle/tahcacillin
 	name = "tahcacillin bottle"
 	desc = "A small bottle. Contains a derived extract of blood mixed with tahca horns, a powerful anti-viral for dealing with diseases and infection when injected into the bloodstream."
 	icon_state = "bottle"
 	preloaded_reagents = list("tahcacillin" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic
+/obj/item/reagent_containers/glass/bottle/organic
 	name = "resin bottle"
 	desc = "A small bottle made of organic resin with a small bark-like lid."
 	icon = 'icons/obj/chemical.dmi'
@@ -160,38 +160,38 @@
 	label_icon_state = "bottle_b_labeled"
 	lid_icon_state = "lid_bottle_b"
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/dexalinp
+/obj/item/reagent_containers/glass/bottle/organic/dexalinp
 	preloaded_reagents = list("dexalinp" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/haloperidol
+/obj/item/reagent_containers/glass/bottle/organic/haloperidol
 	preloaded_reagents = list("haloperidol" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/hyronalin
+/obj/item/reagent_containers/glass/bottle/organic/hyronalin
 	preloaded_reagents = list("hyronalin" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/vermicetol
+/obj/item/reagent_containers/glass/bottle/organic/vermicetol
 	preloaded_reagents = list("vermicetol" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/dermaline
+/obj/item/reagent_containers/glass/bottle/organic/dermaline
 	preloaded_reagents = list("dermaline" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/kelotane
+/obj/item/reagent_containers/glass/bottle/organic/kelotane
 	preloaded_reagents = list("kelotane" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/peridaxon
+/obj/item/reagent_containers/glass/bottle/organic/peridaxon
 	preloaded_reagents = list("peridaxon" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/varceptol
+/obj/item/reagent_containers/glass/bottle/organic/varceptol
 	preloaded_reagents = list("varceptol" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/oxycodone
+/obj/item/reagent_containers/glass/bottle/organic/oxycodone
 	preloaded_reagents = list("oxycodone" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/tricordrazine
+/obj/item/reagent_containers/glass/bottle/organic/tricordrazine
 	preloaded_reagents = list("tricordrazine" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/meralyne
+/obj/item/reagent_containers/glass/bottle/organic/meralyne
 	preloaded_reagents = list("meralyne" = 60)
 
-/obj/item/weapon/reagent_containers/glass/bottle/organic/dermatane
+/obj/item/reagent_containers/glass/bottle/organic/dermatane
 	preloaded_reagents = list("dermaline" = 30, "kelotane" = 30)

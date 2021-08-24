@@ -1,4 +1,4 @@
-/obj/item/weapon/storage/belt
+/obj/item/storage/belt
 	name = "belt"
 	desc = "Can hold various things."
 	icon = 'icons/inventory/belt/icon.dmi'
@@ -14,7 +14,7 @@
 
 	var/show_above_suit = 0
 
-/obj/item/weapon/storage/belt/verb/toggle_layer()
+/obj/item/storage/belt/verb/toggle_layer()
 	set name = "Switch Belt Layer"
 	set category = "Object"
 
@@ -24,22 +24,22 @@
 	show_above_suit = !show_above_suit
 	update_icon()
 
-/obj/item/weapon/storage/update_icon()
+/obj/item/storage/update_icon()
 	if (ismob(src.loc))
 		var/mob/M = src.loc
 		M.update_inv_belt()
 
 
-/obj/item/weapon/storage/belt/utility
+/obj/item/storage/belt/utility
 	name = "tool belt"
 	desc = "Can hold various tools."
 	icon_state = "utility"
 	item_state = "utility"
 	can_hold = list(
-		/obj/item/weapon/tool,
-		/obj/item/weapon/tool_upgrade,
+		/obj/item/tool,
+		/obj/item/tool_upgrade,
 		/obj/item/device/lightreplacer,
-		/obj/item/weapon/rcd,
+		/obj/item/rcd,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/device/radio,
 		/obj/item/stack/cable_coil,
@@ -47,205 +47,279 @@
 		/obj/item/device/scanner/gas,
 		/obj/item/taperoll/engineering,
 		/obj/item/device/robotanalyzer,
-		/obj/item/weapon/tool/minihoe,
-		/obj/item/weapon/tool/hatchet,
+		/obj/item/tool/minihoe,
+		/obj/item/tool/hatchet,
 		/obj/item/device/scanner/plant,
-		/obj/item/weapon/extinguisher/mini,
-		/obj/item/weapon/hand_labeler,
+		/obj/item/extinguisher/mini,
+		/obj/item/hand_labeler,
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses,
-		/obj/item/weapon/flame/lighter,
-		/obj/item/weapon/cell/small,
-		/obj/item/weapon/cell/medium,
-		/obj/item/weapon/grenade/chem_grenade/cleaner,
-		/obj/item/weapon/grenade/chem_grenade/antiweed,
-		/obj/item/weapon/grenade/chem_grenade/metalfoam
+		/obj/item/flame/lighter,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/grenade/chem_grenade/cleaner,
+		/obj/item/grenade/chem_grenade/antiweed,
+		/obj/item/grenade/chem_grenade/metalfoam
 	)
 
-/obj/item/weapon/storage/belt/utility/full/populate_contents()
-	new /obj/item/weapon/tool/screwdriver(src)
-	new /obj/item/weapon/tool/wrench(src)
-	new /obj/item/weapon/tool/weldingtool(src)
-	new /obj/item/weapon/tool/crowbar(src)
-	new /obj/item/weapon/tool/wirecutters(src)
+/obj/item/storage/belt/utility/full/populate_contents()
+	new /obj/item/tool/screwdriver(src)
+	new /obj/item/tool/wrench(src)
+	new /obj/item/tool/weldingtool(src)
+	new /obj/item/tool/crowbar(src)
+	new /obj/item/tool/wirecutters(src)
 	new /obj/item/stack/cable_coil/random(src)
 
-/obj/item/weapon/storage/belt/utility/neotheology
+/obj/item/storage/belt/utility/roboticist
+	name = "roboticist tool belt"
+	desc = "Can hold various tools."
+	can_hold = list(
+		/obj/item/tool,
+		/obj/item/tool_upgrade,
+		/obj/item/device/lightreplacer,
+		/obj/item/rcd,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/device/radio,
+		/obj/item/stack/cable_coil,
+		/obj/item/device/t_scanner,
+		/obj/item/device/scanner/gas,
+		/obj/item/taperoll/engineering,
+		/obj/item/device/robotanalyzer,
+		/obj/item/tool/minihoe,
+		/obj/item/tool/hatchet,
+		/obj/item/device/scanner/plant,
+		/obj/item/extinguisher/mini,
+		/obj/item/hand_labeler,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+		/obj/item/flame/lighter,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/grenade/chem_grenade/cleaner,
+		/obj/item/grenade/chem_grenade/antiweed,
+		/obj/item/grenade/chem_grenade/metalfoam,
+		/obj/item/gun/hydrogen/plasma_torch // Something that can hold a welder should be able to hold the same welder turned into a gun.
+	)
+
+/obj/item/storage/belt/utility/roboticist/populate_contents()
+	new /obj/item/tool/screwdriver/electric(src)
+	new /obj/item/tool/wrench/big_wrench(src)
+	new /obj/item/tool/plasma_torch/loaded(src)
+	new /obj/item/tool/crowbar(src)
+	new /obj/item/tool/wirecutters(src)
+	new /obj/item/tool/multitool(src)
+	new /obj/item/device/robotanalyzer(src)
+
+/obj/item/storage/belt/hunter
+	name = "hunting belt"
+	desc = "Can hold various tools fit for a lodge hunter."
+	icon_state = "hunting"
+	item_state = "hunting"
+	can_hold = list(
+		/obj/item/tool,
+		/obj/item/tool_upgrade,
+		/obj/item/device/radio,
+		/obj/item/stack/cable_coil,
+		/obj/item/tool/minihoe,
+		/obj/item/tool/hatchet,
+		/obj/item/device/scanner/plant,
+		/obj/item/extinguisher/mini,
+		/obj/item/hand_labeler,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+		/obj/item/flame/lighter,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine,
+		/obj/item/melee,
+		/obj/item/reagent_containers/food/snacks,
+		/obj/item/reagent_containers/food/drinks,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/stack/medical,
+		/obj/item/device/scanner/health,
+		/obj/item/soap,
+		/obj/item/oddity/chimeric_fang_trophy
+	)
+
+/obj/item/storage/belt/utility/neotheology
 	name = "Absolutism utility belt"
 	desc = "Waist-held holy items."
 	icon_state = "utility_neotheology"
 	can_hold_extra = list(
-		/obj/item/weapon/book/ritual/cruciform,
-		/obj/item/weapon/implant/core_implant/cruciform,
-		/obj/item/weapon/soap,
-		/obj/item/weapon/reagent_containers/spray/cleaner,
-		/obj/item/weapon/tool/knife/dagger/nt,
-		/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors,
-		/obj/item/weapon/gun/energy/plasma/martyr,
-		/obj/item/weapon/gun/energy/ntpistol
+		/obj/item/book/ritual/cruciform,
+		/obj/item/implant/core_implant/cruciform,
+		/obj/item/soap,
+		/obj/item/reagent_containers/spray/cleaner,
+		/obj/item/tool/knife/dagger/nt,
+		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/energy/ntpistol
 	)
 
-/obj/item/weapon/storage/belt/utility/handmade
+/obj/item/storage/belt/utility/handmade
 	name = "handmade tool belt"
 	desc = "Can hold various tools, its made from wire. It somehow always ends up the same color no matter what it is made from."
 	icon_state = "handmade_utility"
 	item_state = "handmande_utility"
 	price_tag = 5
 
-/obj/item/weapon/storage/belt/utility/handmade/full/populate_contents()
-	new /obj/item/weapon/tool/screwdriver/improvised(src)
-	new /obj/item/weapon/tool/wrench/improvised(src)
-	new /obj/item/weapon/tool/weldingtool/improvised(src)
-	new /obj/item/weapon/tool/crowbar/improvised(src)
-	new /obj/item/weapon/tool/wirecutters/improvised(src)
+/obj/item/storage/belt/utility/handmade/full/populate_contents()
+	new /obj/item/tool/screwdriver/improvised(src)
+	new /obj/item/tool/wrench/improvised(src)
+	new /obj/item/tool/weldingtool/improvised(src)
+	new /obj/item/tool/crowbar/improvised(src)
+	new /obj/item/tool/wirecutters/improvised(src)
 	new /obj/item/stack/cable_coil/random(src)
-	new /obj/item/weapon/tool/saw/improvised(src)
+	new /obj/item/tool/saw/improvised(src)
 
-/obj/item/weapon/storage/belt/utility/opifex
+/obj/item/storage/belt/utility/opifex
 	name = "opifex black tool webbing"
 	desc = "A black webbing made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for tools, limiting its versatility."
 	icon_state = "webbing_black"
 	item_state = "webbing_black"
 	storage_slots = 12
 
-/obj/item/weapon/storage/belt/utility/opifex/full/populate_contents()
-	new /obj/item/weapon/tool/crowbar/pneumatic(src)
-	new /obj/item/weapon/tool/hammer(src)
-	new /obj/item/weapon/tool/multitool/advanced(src)
-	new /obj/item/weapon/tool/saw/circular/advanced(src)
-	new /obj/item/weapon/tool/screwdriver/electric(src)
+/obj/item/storage/belt/utility/opifex/full/populate_contents()
+	new /obj/item/tool/crowbar/pneumatic(src)
+	new /obj/item/tool/hammer(src)
+	new /obj/item/tool/multitool/advanced(src)
+	new /obj/item/tool/saw/circular/advanced(src)
+	new /obj/item/tool/screwdriver/electric(src)
 	new /obj/item/stack/cable_coil/random(src)
-	new /obj/item/weapon/tool/shovel/power(src)
-	new /obj/item/weapon/tool/tape_roll/fiber(src)
-	new /obj/item/weapon/tool/weldingtool/advanced(src)
-	new /obj/item/weapon/tool/wirecutters/armature(src)
-	new /obj/item/weapon/tool/wrench/big_wrench(src)
-	new /obj/item/weapon/tool/knife/dagger(src)
+	new /obj/item/tool/shovel/power(src)
+	new /obj/item/tool/tape_roll/fiber(src)
+	new /obj/item/tool/weldingtool/advanced(src)
+	new /obj/item/tool/wirecutters/armature(src)
+	new /obj/item/tool/wrench/big_wrench(src)
+	new /obj/item/tool/knife/dagger(src)
 
-/obj/item/weapon/storage/belt/medical/opifex
+/obj/item/storage/belt/medical/opifex
 	name = "opifex black medical webbing"
 	desc = "A black webbing made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for medical supplies, limiting its versatility."
 	icon_state = "webbing_black"
 	item_state = "webbing_black"
 	storage_slots = 12
 
-/obj/item/weapon/storage/belt/medical/opifex/full/populate_contents()
+/obj/item/storage/belt/medical/opifex/full/populate_contents()
 	new /obj/item/device/scanner/health(src)
-	new /obj/item/weapon/reagent_containers/syringe/large/hyperzine(src)
-	new /obj/item/weapon/reagent_containers/syringe/large/tricordrazine(src)
-	new /obj/item/weapon/reagent_containers/syringe/large/inaprovaline(src)
-	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
-	new /obj/item/weapon/storage/pill_bottle/prosurgeon(src)
-	new /obj/item/weapon/storage/pill_bottle/bicaridine(src)
-	new /obj/item/weapon/storage/pill_bottle/dermaline(src)
-	new /obj/item/weapon/storage/pill_bottle/dexalin_plus(src)
-	new /obj/item/weapon/storage/pill_bottle/antitox(src)
+	new /obj/item/reagent_containers/syringe/large/hyperzine(src)
+	new /obj/item/reagent_containers/syringe/large/tricordrazine(src)
+	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
+	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/storage/pill_bottle/prosurgeon(src)
+	new /obj/item/storage/pill_bottle/bicaridine(src)
+	new /obj/item/storage/pill_bottle/dermaline(src)
+	new /obj/item/storage/pill_bottle/dexalin_plus(src)
+	new /obj/item/storage/pill_bottle/antitox(src)
 	new /obj/item/bodybag/cryobag(src)
-	new /obj/item/weapon/extinguisher/mini(src)
+	new /obj/item/extinguisher/mini(src)
 
-/obj/item/weapon/storage/belt/medical
+/obj/item/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
 	icon_state = "medicalbelt"
 	item_state = "medical"
 	can_hold = list(
 		/obj/item/device/scanner/health,
-		/obj/item/weapon/dnainjector,
+		/obj/item/dnainjector,
 		/obj/item/device/radio/headset,
-		/obj/item/weapon/reagent_containers/dropper,
-		/obj/item/weapon/reagent_containers/glass/beaker,
-		/obj/item/weapon/reagent_containers/glass/bottle,
-		/obj/item/weapon/reagent_containers/pill,
-		/obj/item/weapon/reagent_containers/syringe,
-		/obj/item/weapon/flame/lighter,
-		/obj/item/weapon/cell/small,
-		/obj/item/weapon/storage/fancy/cigarettes,
-		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/flame/lighter,
+		/obj/item/cell/small,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/storage/pill_bottle,
 		/obj/item/stack/medical,
 		/obj/item/clothing/mask/surgical,
 		/obj/item/clothing/head/surgery,
 		/obj/item/clothing/gloves,
-		/obj/item/weapon/reagent_containers/hypospray,
+		/obj/item/reagent_containers/hypospray,
 		/obj/item/clothing/glasses,
-		/obj/item/weapon/tool/crowbar,
+		/obj/item/tool/crowbar,
 		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/weapon/extinguisher/mini,
+		/obj/item/extinguisher/mini,
 		/obj/item/tape/medical,
 		/obj/item/device/flash,
-		/obj/item/weapon/extinguisher/mini,
+		/obj/item/extinguisher/mini,
 		/obj/item/stack/nanopaste,
 		/obj/item/bodybag,
-		/obj/item/weapon/tool/bonesetter,
-		/obj/item/weapon/tool/scalpel,
-		/obj/item/weapon/tool/scalpel/advanced,
-		/obj/item/weapon/tool/scalpel/laser,
-		/obj/item/weapon/tool/tape_roll/bonegel,
-		/obj/item/weapon/tool/cautery,
-		/obj/item/weapon/tool/cautery/adv,
-		/obj/item/weapon/tool/retractor,
-		/obj/item/weapon/tool/retractor/adv,
-		/obj/item/weapon/tool/saw/circular,
-		/obj/item/weapon/tool/saw/circular/medical,
-		/obj/item/weapon/tool/hemostat,
-		/obj/item/weapon/tool/hemostat/adv,
-		/obj/item/weapon/reagent_containers/pill,
-		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/tool/bonesetter,
+		/obj/item/tool/scalpel,
+		/obj/item/tool/scalpel/advanced,
+		/obj/item/tool/scalpel/laser,
+		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/tool/cautery,
+		/obj/item/tool/cautery/adv,
+		/obj/item/tool/retractor,
+		/obj/item/tool/retractor/adv,
+		/obj/item/tool/saw/circular,
+		/obj/item/tool/saw/circular/medical,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/hemostat/adv,
+		/obj/item/reagent_containers/pill,
+		/obj/item/storage/pill_bottle,
 		/obj/item/bodybag/cryobag,
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses,
-		/obj/item/weapon/reagent_containers/blood,
+		/obj/item/reagent_containers/blood,
 		/obj/item/taperoll/medical,
-		/obj/item/weapon/tool/crowbar,
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses
 	)
 
-/obj/item/weapon/storage/belt/medical/emt
+/obj/item/storage/belt/medical/emt
 	name = "EMT utility belt"
 	desc = "A sturdy black webbing belt with attached pouches."
 	icon_state = "emsbelt"
 	item_state = "emsbelt"
 
-/obj/item/weapon/storage/belt/security
+/obj/item/storage/belt/security
 	name = "tactical belt"
 	desc = "Can hold various military and security equipment."
 	icon_state = "security"
 	item_state = "security"
 	can_hold = list(
-		/obj/item/weapon/grenade,
-		/obj/item/weapon/reagent_containers/spray/pepper,
-		/obj/item/weapon/handcuffs,
-		/obj/item/weapon/tool/crowbar,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/tool/crowbar,
 		/obj/item/device/flash,
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_magazine,
-		/obj/item/weapon/cell/small,
-		/obj/item/weapon/cell/medium,
-		/obj/item/weapon/flame/lighter,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/flame/lighter,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/modular_computer/pda,
 		/obj/item/device/radio/headset,
 		/obj/item/device/hailer,
 		/obj/item/device/megaphone,
-		/obj/item/weapon/melee,
-		/obj/item/weapon/tool/knife,
-		/obj/item/weapon/gun/projectile/mk58,
-		/obj/item/weapon/gun/projectile/revolver/lemant,
-		/obj/item/weapon/gun/energy/gun,
-		/obj/item/weapon/gun/projectile/clarissa,
-		/obj/item/weapon/gun/projectile/giskard,
-		/obj/item/weapon/gun/projectile/olivaw,
-		/obj/item/weapon/gun/projectile/revolver/detective,
-		/obj/item/weapon/gun/energy/gun/martin,
+		/obj/item/melee,
+		/obj/item/tool/knife,
+		/obj/item/gun/projectile/mk58,
+		/obj/item/gun/projectile/revolver/lemant,
+		/obj/item/gun/energy/gun,
+		/obj/item/gun/projectile/clarissa,
+		/obj/item/gun/projectile/giskard,
+		/obj/item/gun/projectile/olivaw,
+		/obj/item/gun/projectile/revolver/detective,
+		/obj/item/gun/energy/gun/martin,
 		/obj/item/taperoll,
-		/obj/item/weapon/pen,
-		/obj/item/weapon/reagent_containers/food/snacks,
-		/obj/item/weapon/reagent_containers/food/drinks
+		/obj/item/pen,
+		/obj/item/reagent_containers/food/snacks,
+		/obj/item/reagent_containers/food/drinks
 	)
 
-/obj/item/weapon/storage/belt/holding
+/obj/item/storage/belt/holding
 	name = "belt of holding"
 	desc = "The greatest in pants-supporting bluespace technology."
 	icon_state = "holdingbelt"
@@ -256,12 +330,12 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GOLD = 6, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 3)
 	origin_tech = list(TECH_BLUESPACE = 4)
 
-/obj/item/weapon/storage/belt/holding/New()
+/obj/item/storage/belt/holding/New()
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(4, get_turf(src))
 
-/obj/item/weapon/storage/belt/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/storage/belt/holding/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.item_flags & BLUESPACE)
 		to_chat(user, SPAN_WARNING("The bluespace interfaces of the two devices conflict and malfunction, producing a loud explosion."))
 		if (ishuman(user))
@@ -277,47 +351,47 @@
 		return
 	..()
 
-/obj/item/weapon/storage/belt/security/tactical
+/obj/item/storage/belt/security/tactical
 	name = "professional tactical belt"
 	desc = "Can hold various military and security equipment, more so than a standard belt or web harness."
 	icon_state = "tactical"
 	storage_slots = 12
 
-/obj/item/weapon/storage/belt/security/tactical/opifex
+/obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
 	desc = "A black tactical belt made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for combat, limiting its versatility."
 
-/obj/item/weapon/storage/belt/security/tactical/opifex/full/populate_contents()
-	new /obj/item/weapon/reagent_containers/spray/pepper(src)
-	new /obj/item/weapon/tool/crowbar(src)
+/obj/item/storage/belt/security/tactical/opifex/full/populate_contents()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/tool/crowbar(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
-	new /obj/item/weapon/gun/energy/gun(src)
-	new /obj/item/weapon/cell/medium/high(src)
-	new /obj/item/weapon/cell/medium/high(src)
-	new /obj/item/weapon/tool/knife/dagger/assassin(src)
-	new /obj/item/weapon/grenade/spawnergrenade/manhacks/opifex(src)
-	new /obj/item/weapon/grenade/spawnergrenade/manhacks/opifex(src)
-	new /obj/item/weapon/grenade/smokebomb(src)
-	new /obj/item/weapon/grenade/chem_grenade/teargas(src)
+	new /obj/item/gun/energy/gun(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/tool/knife/dagger/assassin(src)
+	new /obj/item/grenade/spawnergrenade/manhacks/opifex(src)
+	new /obj/item/grenade/spawnergrenade/manhacks/opifex(src)
+	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/grenade/chem_grenade/teargas(src)
 
-/obj/item/weapon/storage/belt/security/neotheology
+/obj/item/storage/belt/security/neotheology
 	name = "tactical absolutism belt"
 	desc = "Can hold various military and security equipment for the awakened crusader or skilled divisor. Deus Vult."
 	icon_state = "tactical_neotheology"
 	can_hold_extra = list(
-		/obj/item/weapon/book/ritual/cruciform,
-		/obj/item/weapon/implant/core_implant/cruciform,
-		/obj/item/weapon/tool/knife/neotritual,
-		/obj/item/weapon/gun/energy/crossbow,
-		/obj/item/weapon/gun/energy/taser, //specially fitted to hold the counselor
-		/obj/item/weapon/tool/knife/dagger/nt,
-		/obj/item/weapon/reagent_containers/food/drinks/bottle/ntcahors,
-		/obj/item/weapon/gun/energy/plasma/martyr,
-		/obj/item/weapon/gun/energy/ntpistol
+		/obj/item/book/ritual/cruciform,
+		/obj/item/implant/core_implant/cruciform,
+		/obj/item/tool/knife/neotritual,
+		/obj/item/gun/energy/crossbow,
+		/obj/item/gun/energy/taser, //specially fitted to hold the counselor
+		/obj/item/tool/knife/dagger/nt,
+		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/energy/ntpistol
 	)
 
-/obj/item/weapon/storage/belt/champion
+/obj/item/storage/belt/champion
 	name = "championship belt"
 	desc = "Proves to the world that you are the strongest!"
 	icon_state = "championbelt"
@@ -328,31 +402,31 @@
 		)
 	price_tag = 50
 
-/obj/item/weapon/storage/belt/church
+/obj/item/storage/belt/church
 	name = "absolutism belt"
 	desc = "Waist-held holy items."
 	icon_state = "ntbelt"
 
-/obj/item/weapon/storage/belt/webbing
+/obj/item/storage/belt/webbing
 	name = "web harness"
 	desc = "Everything you need at hand, at belt."
 	icon_state = "webbing"
 	item_state = "webbing"
 	storage_slots = 9
 
-/obj/item/weapon/storage/belt/webbing/green
+/obj/item/storage/belt/webbing/green
 	name = "green web harness"
 	desc = "Everything you need at hand, at belt."
 	icon_state = "webbing_green"
 	item_state = "webbing_green"
 
-/obj/item/weapon/storage/belt/webbing/black
+/obj/item/storage/belt/webbing/black
 	name = "black web harness"
 	desc = "Everything you need at hand, at belt."
 	icon_state = "webbing_black"
 	item_state = "webbing_black"
 
-/obj/item/weapon/storage/belt/webbing/ih
+/obj/item/storage/belt/webbing/ih
 	name = "security web harness"
 	desc = "Everything you need at hand, at belt."
 	icon_state = "webbing_ih"

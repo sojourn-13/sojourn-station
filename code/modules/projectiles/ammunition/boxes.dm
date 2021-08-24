@@ -83,7 +83,7 @@
 	ammo_type = /obj/item/ammo_casing/magnum_40
 	max_ammo = 30
 
-/obj/item/ammo_magazine/ammobox/magnum/scrap
+/obj/item/ammo_magazine/ammobox/magnum_40/scrap
 	name = "ammunition packet (old .40 Magnum)"
 	icon_state = "magnum_s"
 	caliber = CAL_MAGNUM
@@ -333,6 +333,18 @@
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5
+
+//// 40mm rolled shot ////
+
+/obj/item/ammo_magazine/ammobox/ball
+	name = "ammunition box (30mm rolled shot)"
+	icon_state = "antim"
+	desc = "A box of 30mm rolled shot."
+	matter = list(MATERIAL_STEEL = 30)
+	w_class = ITEM_SIZE_BULKY
+	caliber = CAL_BALL
+	ammo_type = /obj/item/ammo_casing/ball
+	max_ammo = 30
 
 //// .408 Omni ////
 
@@ -584,4 +596,28 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag
+	name = "old ammunition packet (20mm Beanbag)"
+	icon_state = "shot_scrap"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag/scrap
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet
+	name = "old ammunition packet (20mm Buckshot)"
+	icon_state = "shot_scrap"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet/scrap
+	max_ammo = 35
+
+/obj/item/ammo_magazine/ammobox/shotgun/scrap_slug
+	name = "old ammunition packet (20mm Slug)"
+	icon_state = "shot_scrap"
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_CARDBOARD = 1)
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet/scrap
 	max_ammo = 35

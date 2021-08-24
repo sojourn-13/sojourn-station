@@ -1,5 +1,4 @@
-
-/obj/item/weapon/gun/energy/laser/heavypulserifle
+/obj/item/gun/energy/laser/heavypulserifle
 	name = "Jury-Rigged EZ-13 MK2 Heavy Pulse Rifle"
 	desc = "An exosuit mounted heavy pulse rifle that has been modified to be used on foot. This kind of modification is highly illegal in Sol. \
 	It's not supposed to function without an exosuit's power source and might destroy powercells it consumes."
@@ -22,11 +21,11 @@
 		WEAPON_NORMAL
 	)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
-	suitable_cell = /obj/item/weapon/cell/large
+	suitable_cell = /obj/item/cell/large
 	price_tag = 2000 //Only worth 1k in cargo rare and all
 	var/consume_cell = TRUE
 
-/obj/item/weapon/gun/energy/laser/heavypulserifle/consume_next_projectile()
+/obj/item/gun/energy/laser/heavypulserifle/consume_next_projectile()
 	.=..()
 	if(. && consume_cell && cell.empty())
 		visible_message(SPAN_WARNING("\The [cell] of \the [src] burns out!"))

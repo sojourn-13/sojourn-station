@@ -1,6 +1,6 @@
 
 // Star-Striker! A sci only gun that fires laser based shells
-/obj/item/weapon/gun/projectile/boltgun/sci
+/obj/item/gun/projectile/boltgun/sci
 	name = "\"Star Striker\" laser boltgun"
 	desc = "A weapon based on the Sike boltgun line but fitted to use longer, laser based casings. Chambered in .223 laser casings."
 	icon = 'icons/obj/guns/energy/starstriker.dmi'

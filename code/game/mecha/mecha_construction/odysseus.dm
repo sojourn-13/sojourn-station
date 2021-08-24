@@ -2,12 +2,12 @@
 
 /datum/construction/mecha/odysseus_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/odysseus_torso, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//1
-		list("key"=/obj/item/mecha_parts/part/odysseus_head, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//2
-		list("key"=/obj/item/mecha_parts/part/odysseus_left_arm, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//3
-		list("key"=/obj/item/mecha_parts/part/odysseus_right_arm, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//4
-		list("key"=/obj/item/mecha_parts/part/odysseus_left_leg, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//5
-		list("key"=/obj/item/mecha_parts/part/odysseus_right_leg, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head.")//6
+		list("key"=/obj/item/mecha_parts/part/odysseus_torso, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//1
+		list("key"=/obj/item/mecha_parts/part/odysseus_head, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//2
+		list("key"=/obj/item/mecha_parts/part/odysseus_left_arm, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//3
+		list("key"=/obj/item/mecha_parts/part/odysseus_right_arm, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//4
+		list("key"=/obj/item/mecha_parts/part/odysseus_left_leg, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//5
+		list("key"=/obj/item/mecha_parts/part/odysseus_right_leg, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs.")//6
 	)
 	spawn_result()
 		var/obj/item/mecha_parts/chassis/const_holder = holder
@@ -38,7 +38,7 @@
 			//"backkey"=QUALITY_WELDING,
 			"desc"="Internal armor is welded, heatsinked and ready for plasteel external armor."),
 		//4
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
+		list("key"=/obj/item/tool_upgrade/reinforcement/heatsink,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor and HUD is installed and the case is ready for a heatsink."),
 		//5
@@ -70,7 +70,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed but unscrewed."),
 		//12
-		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
+		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured and waiting for a peripherals board."),
 		//13
@@ -78,7 +78,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed but unscrewed."),
 		//14
-		list("key"=/obj/item/weapon/circuitboard/mecha/main,
+		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted and setted, waiting for a Central control board."),
 		//15
@@ -98,11 +98,11 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The hydraulic systems are unbolted."),
 		//19
-		list("key"=/obj/item/weapon/tool_upgrade/augment/hydraulic,
+		list("key"=/obj/item/tool_upgrade/augment/hydraulic,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="With the cell mount added it can now have the hydraulics added."),
 		//20
-		list("key"=/obj/item/weapon/tool_upgrade/augment/cell_mount,
+		list("key"=/obj/item/tool_upgrade/augment/cell_mount,
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Mech case is made and needs to start with a cell mount."),
 		//21
@@ -148,7 +148,7 @@
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "odysseus0"
-					new /obj/item/weapon/tool_upgrade/augment/cell_mount(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/cell_mount(get_turf(holder))
 			if(18)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -162,7 +162,7 @@
 						"You disconnect and remove [holder] hydraulic systems."
 					)
 					holder.icon_state = "odysseus0"
-					new /obj/item/weapon/tool_upgrade/augment/hydraulic(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/hydraulic(get_turf(holder))
 			if(17)
 				if(diff==FORWARD)
 					usr.visible_message(
@@ -228,7 +228,7 @@
 						"[usr] removes the central control module from [holder].", \
 						"You remove the central computer mainboard from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/main(get_turf(holder))
+					new /obj/item/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "odysseus4"
 			if(12)
 				if(diff==FORWARD)
@@ -255,7 +255,7 @@
 						"[usr] removes the peripherals control module from [holder].", \
 						"You remove the peripherals control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/peripherals(get_turf(holder))
+					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "odysseus6"
 			if(10)
 				if(diff==FORWARD)
@@ -365,7 +365,7 @@
 						"You disconnect and remove [holder] heat sink."
 					)
 					holder.icon_state = "odysseus13"
-					new /obj/item/weapon/tool_upgrade/reinforcement/heatsink(get_turf(holder))
+					new /obj/item/tool_upgrade/reinforcement/heatsink(get_turf(holder))
 			if(2)
 				if(diff==FORWARD)
 					usr.visible_message(

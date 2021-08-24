@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/armblade
+/obj/item/tool/armblade
 	name = "armblade"
 	desc = "A mechanical blade deployed from your arm. The favourite hidden weapon of many criminal types."
 	icon = 'icons/obj/surgery.dmi'
@@ -19,10 +19,11 @@
 	icon_state = "armblade"
 	matter = list(MATERIAL_STEEL = 16)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/armblade
+	holding_type = /obj/item/tool/armblade
+	price_tag = 200 //Just some metal
 
 
-/obj/item/weapon/tool/armblade/claws
+/obj/item/tool/armblade/claws
 	icon_state = "wolverine"
 	name = "claws"
 	desc = "A set of claws deployed from the tips of your fingers. Great for cutting people into ribbons."
@@ -33,7 +34,7 @@
 	verb_name = "Deploy embedded claws"
 	icon_state = "wolverine"
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/armblade/claws
+	holding_type = /obj/item/tool/armblade/claws
 
 /obj/item/organ_module/active/simple/armblade/energy_blade
 	name = "energy armblade"
@@ -42,7 +43,7 @@
 	icon_state = "energyblade"
 	origin_tech = list(TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_SILVER = 10, MATERIAL_GOLD = 3, )
-	holding_type = /obj/item/weapon/melee/energy/blade/organ_module
+	holding_type = /obj/item/melee/energy/blade/organ_module
 
 /obj/item/organ_module/active/simple/armblade/bs_tomahawk
 	name = "Embedded Blackshield Tomahawk"
@@ -51,7 +52,7 @@
 	icon_state = "armblade"
 	matter = list(MATERIAL_STEEL = 16)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/fireaxe/militia_tomahawk
+	holding_type = /obj/item/tool/fireaxe/militia_tomahawk
 
 /obj/item/organ_module/active/simple/armblade/longsword
 	name = "Embedded Longsword"
@@ -60,7 +61,7 @@
 	icon_state = "nt_longsword"
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/sword/nt/longsword
+	holding_type = /obj/item/tool/sword/nt/longsword
 
 /obj/item/organ_module/active/simple/armblade/ritual
 	name = "Embedded Knife"
@@ -69,7 +70,7 @@
 	icon_state = "neot-knife"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/knife/neotritual
+	holding_type = /obj/item/tool/knife/neotritual
 
 /obj/item/organ_module/active/simple/armblade/energy_blade/deploy(mob/living/carbon/human/H, obj/item/organ/external/E)
 	..()
@@ -79,7 +80,7 @@
 	..()
 	playsound(H.loc, 'sound/weapons/saberoff.ogg', 50, 1)
 
-/obj/item/weapon/tool/cht_mant_claws
+/obj/item/tool/cht_mant_claws
 	name = "chitinous claws"
 	desc = "A set of cht'mant claws, hard as chitin and suited as dangerous armor rending weapons."
 	icon = 'icons/obj/surgery.dmi'
@@ -102,9 +103,10 @@
 	icon_state = "chtmant_claws"
 	matter = list(MATERIAL_BIOMATTER = 20)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/cht_mant_claws
+	holding_type = /obj/item/tool/cht_mant_claws
+	is_organic_module = TRUE
 
-/obj/item/weapon/tool/armscythe
+/obj/item/tool/armscythe
 	name = "organic scythe"
 	desc = "An organic blade deployed from your arm. The favourite augment for those who prefer alternatives to metal."
 	icon = 'icons/obj/surgery.dmi'
@@ -127,14 +129,15 @@
 	icon_state = "oscythe"
 	matter = list(MATERIAL_BIOMATTER = 20)
 	allowed_organs = list(BP_R_ARM, BP_L_ARM)
-	holding_type = /obj/item/weapon/tool/armscythe
+	holding_type = /obj/item/tool/armscythe
+	is_organic_module = TRUE
 
 
-/obj/item/weapon/biogoop/armscythe
+/obj/item/biogoop/armscythe
 	name = "incomplete organic armscythe implant"
 
 
-/obj/item/weapon/biogoop/armscythe/attackby(obj/item/I, mob/user)
+/obj/item/biogoop/armscythe/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
 		var/obj/item/stack/S = I
 		if(S.use(1))

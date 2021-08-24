@@ -98,7 +98,7 @@ datum/announcement/proc/Log(message as text, message_title as text)
 		log_say("[key_name(usr)] has made \a [announcement_type]: [message_title] - [message] - [announcer]")
 		message_admins("[key_name_admin(usr)] has made \a [announcement_type].", 1)
 
-/proc/GetNameAndAssignmentFromId(var/obj/item/weapon/card/id/I)
+/proc/GetNameAndAssignmentFromId(var/obj/item/card/id/I)
 	// Format currently matches that of newscaster feeds: Registered Name (Assigned Rank)
 	return I.assignment ? "[I.registered_name] ([I.assignment])" : I.registered_name
 
@@ -120,4 +120,9 @@ datum/announcement/proc/Log(message as text, message_title as text)
 		if(issilicon(character))
 			global_announcer.autosay("A new [rank] [join_message].", ANNOUNSER_NAME)
 		else
-			global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)
+
+	if (character.mind)
+		if (character.mind.role_alt_title)
+			rank = character.mind.role_alt_title
+
+	global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)

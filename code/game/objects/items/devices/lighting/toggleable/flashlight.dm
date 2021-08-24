@@ -1,8 +1,8 @@
 /obj/item/device/lighting/toggleable/flashlight
 	action_button_name = "Toggle Flashlight"
 	var/tick_cost = 0.2
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	var/obj/item/cell/cell = null
+	var/suitable_cell = /obj/item/cell/small
 	dir = WEST
 
 	var/obj/effect/effect/light/light_spot
@@ -36,7 +36,7 @@
 		update_icon()
 
 /obj/item/device/lighting/toggleable/flashlight/proc/calculate_dir(var/turf/old_loc)
-	if (istype(src.loc,/obj/item/weapon/storage) || istype(src.loc,/obj/structure/closet))
+	if (istype(src.loc,/obj/item/storage) || istype(src.loc,/obj/structure/closet))
 		return
 	if (istype(src.loc,/mob/living))
 		var/mob/living/L = src.loc
@@ -59,7 +59,7 @@
 	var/hitSomething = FALSE
 	light_direction = new_dir
 
-	if (istype(src.loc,/obj/item/weapon/storage) || istype(src.loc,/obj/structure/closet))	//no point in finding spot for light if flashlight is inside container
+	if (istype(src.loc,/obj/item/storage) || istype(src.loc,/obj/structure/closet))	//no point in finding spot for light if flashlight is inside container
 		place_lightspot(NT)
 		return
 
@@ -330,7 +330,7 @@
 	light_spot_power = 3
 	light_spot_range = 4
 	tick_cost = 0.4
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 
 /obj/item/device/lighting/toggleable/flashlight/seclite
 	name = "security flashlight"
@@ -339,6 +339,7 @@
 	item_state = "seclite"
 	light_spot_radius = 3
 	light_spot_power = 2.5
+	price_tag = 8
 
 /obj/item/device/lighting/toggleable/flashlight/seclite/update_icon()
 	. = ..()

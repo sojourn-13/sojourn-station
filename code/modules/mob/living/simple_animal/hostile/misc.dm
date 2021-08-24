@@ -79,7 +79,6 @@
 	icon_state = "yithian"
 	icon_living = "yithian"
 	icon_dead = "yithian_dead"
-	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 2
 
@@ -89,7 +88,6 @@
 	icon_state = "tindalos"
 	icon_living = "tindalos"
 	icon_dead = "tindalos_dead"
-	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 1.5
 
@@ -114,7 +112,7 @@
 	layer = HIDE_LAYER
 	density = 0
 	turns_per_move = 5
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/carp
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -151,7 +149,7 @@
 	layer = HIDE_LAYER
 	density = 0
 	turns_per_move = 2
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/carp
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/carp
 	response_help = "boops the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"

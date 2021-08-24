@@ -25,11 +25,11 @@
 		visible_message("[src] [pick("squats down and grunts.","begins making a huge racket.","begins snuffling raucously.")]")
 		offspring_left--
 		var/mob/living/carbon/superior_animal/lodge/baby_cerberus/E = new(get_turf(src))
-		START_PROCESSING(SSobj, E)
+		START_PROCESSING(SSmobs, E)
 
 /mob/living/carbon/superior_animal/lodge/cerberus/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown)) //feedin' dem chickens
-		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
+		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "mushroom")
 			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It snuffles happily.")
@@ -52,6 +52,7 @@
 	icon_state = "nightstalker"
 	icon_living = "nightstalker"
 	icon_dead = "nightstalker_dead"
+	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	move_to_delay = 3
 	maxHealth = 300
 	health = 300

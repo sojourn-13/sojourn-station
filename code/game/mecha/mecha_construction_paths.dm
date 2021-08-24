@@ -4,8 +4,8 @@
 
 /datum/construction/mecha/custom_action(step, atom/used_atom, mob/user)
 	user.visible_message(
-		"[user] has connected [used_atom] to [holder].", //What onlookers see
-		"You connect [used_atom] to [holder]" //What we see in are own chat
+		"[user] connects the [used_atom] to the [holder].", //What onlookers see
+		"You connect the [used_atom] to the [holder]" //What we see in are own chat
 	)
 	holder.add_overlay(used_atom.icon_state+"+o") //Magic letter o in sprites to make them all different. Used for icons.
 	qdel(used_atom) //We ALWAYS delete the mech lim/part used. No way to get this back.
@@ -37,14 +37,14 @@
 			return 0
 		else
 			S.use(5)
-	else if(istype(used_atom, /obj/item/weapon/stock_parts))
-		var/obj/item/weapon/stock_parts/S = used_atom
+	else if(istype(used_atom, /obj/item/stock_parts))
+		var/obj/item/stock_parts/S = used_atom
 		if(S.rating < step["rating"]) //Rating is used for a gate of stockparts to be better but we dont use its rating...
 			return 0
 		usr.drop_from_inventory(S, holder)
 
-	else if(istype(used_atom, /obj/item/weapon/tool_upgrade))
-		var/obj/item/weapon/tool_upgrade/U = used_atom
+	else if(istype(used_atom, /obj/item/tool_upgrade))
+		var/obj/item/tool_upgrade/U = used_atom
 		usr.drop_from_inventory(U, holder) //U for upgrade
 
 	else if(istype(used_atom, /obj/item/mecha_parts))
@@ -52,8 +52,8 @@
 		usr.drop_from_inventory(M, holder) //M for mech part
 
 
-	else if(istype(used_atom, /obj/item/weapon/circuitboard/mecha))
-		var/obj/item/weapon/circuitboard/mecha/B = used_atom
+	else if(istype(used_atom, /obj/item/circuitboard/mecha))
+		var/obj/item/circuitboard/mecha/B = used_atom
 		usr.drop_from_inventory(B, holder) //B for Board
 
 	else if(istype(used_atom, /obj/item/rig_module/vision))
@@ -161,7 +161,7 @@
 			//"backkey"=QUALITY_WELDING,
 			"desc"="Internal armor is welded."),
 		//4
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/heatsink, //In this case were using an item rather then a tool. It will delete it after.
+		list("key"=/obj/item/tool_upgrade/reinforcement/heatsink, //In this case were using an item rather then a tool. It will delete it after.
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Internal armor needs to be welded into place."),
 		//5
@@ -193,7 +193,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Peripherals control module is installed"),
 		//12
-		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
+		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="Central control module is secured"),
 		//13
@@ -201,7 +201,7 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="Central control module is installed"),
 		//14
-		list("key"=/obj/item/weapon/circuitboard/mecha/main,
+		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
 			"desc"="The wiring is adjusted"),
 		//15
@@ -298,7 +298,7 @@
 						"[user] removes the central control module from [holder].",
 						"You remove the central computer mainboard from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/main(get_turf(holder)) //Unlike in legitmently the board before this one in this case is saved for some reason I dont even know.
+					new /obj/item/circuitboard/mecha/main(get_turf(holder)) //Unlike in legitmently the board before this one in this case is saved for some reason I dont even know.
 					holder.icon_state = "example4"
 			if(8)
 				if(diff==FORWARD)
@@ -326,7 +326,7 @@
 						"[user] removes the peripherals control module from [holder].",
 						"You remove the peripherals control module from [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/peripherals(get_turf(holder))
+					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "example6"
 			if(6)
 				if(diff==FORWARD)

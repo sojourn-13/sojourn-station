@@ -20,7 +20,7 @@
 	move_to_delay = 6
 	turns_per_move = 5
 	see_in_dark = 10
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider
 	meat_amount = 3
 	leather_amount = 0
 	bones_amount = 0

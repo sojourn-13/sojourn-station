@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/heavysniper
+/obj/item/gun/projectile/heavysniper
 	name = "Anti-Materiel Rifle"
 	desc = "A heavy anti-material rifle fitted with a scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing .60-06 shells."
 	icon = 'icons/obj/guns/projectile/heavysniper.dmi'
@@ -24,7 +24,7 @@
 	twohanded = TRUE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
-/obj/item/weapon/gun/projectile/heavysniper/update_icon()
+/obj/item/gun/projectile/heavysniper/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -43,13 +43,13 @@
 
 
 
-/obj/item/weapon/gun/projectile/heavysniper/attack_self(mob/user) //Someone overrode attackself for this class, soooo.
+/obj/item/gun/projectile/heavysniper/attack_self(mob/user) //Someone overrode attackself for this class, soooo.
 	if(zoom)
 		toggle_scope(user)
 		return
 	bolt_act(user)
 
-/obj/item/weapon/gun/projectile/heavysniper/proc/bolt_act(mob/living/user)
+/obj/item/gun/projectile/heavysniper/proc/bolt_act(mob/living/user)
 	playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltback.ogg', 75, 1)
 	bolt_open = !bolt_open
 	if(bolt_open)
@@ -67,52 +67,52 @@
 	add_fingerprint(user)
 	update_icon()
 
-/obj/item/weapon/gun/projectile/heavysniper/special_check(mob/user)
+/obj/item/gun/projectile/heavysniper/special_check(mob/user)
 	if(bolt_open)
 		to_chat(user, SPAN_WARNING("You can't fire [src] while the bolt is open!"))
 		return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/heavysniper/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/heavysniper/load_ammo(var/obj/item/A, mob/user)
 	if(!bolt_open)
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/heavysniper/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/heavysniper/unload_ammo(mob/user, var/allow_dump=1)
 	if(!bolt_open)
 		return
 	..()
 
-/obj/item/weapon/weaponparts
+/obj/item/weaponparts
 	var/part_color = ""
 	name = "weaponpart"
 	desc = "how did you get it?"
 	icon = 'icons/obj/weaponparts.dmi'
 
-/obj/item/weapon/weaponparts/heavysniper/stock
+/obj/item/weaponparts/heavysniper/stock
 	name = "sniper stock"
 	desc = "This is a sniper stock. You need to attach the reciever."
 	icon_state = "sniper_stock"
 
-/obj/item/weapon/weaponparts/heavysniper/reciever
+/obj/item/weaponparts/heavysniper/reciever
 	name = "sniper reciever"
 	desc = "This is a sniper reciever. You need to attach it to the stock."
 	icon_state = "sniper_reciever"
 
-/obj/item/weapon/weaponparts/heavysniper/stockreciever
+/obj/item/weaponparts/heavysniper/stockreciever
 	name = "sniper stock with reciever"
 	desc = "This is a sniper stock with reciever. Now attach the barrel."
 	icon_state = "sniper_stockreciever"
 
-/obj/item/weapon/weaponparts/heavysniper/barrel
+/obj/item/weaponparts/heavysniper/barrel
 	name = "sniper rifle barrel"
 	desc = "This is a barrel from a sniper rifle."
 	icon_state = "sniper_barrel"
 
-/obj/item/weapon/weaponparts/heavysniper/stock/attackby(obj/item/W, mob/user,)
-	if(istype(W,/obj/item/weapon/weaponparts/heavysniper/reciever))
+/obj/item/weaponparts/heavysniper/stock/attackby(obj/item/W, mob/user,)
+	if(istype(W,/obj/item/weaponparts/heavysniper/reciever))
 		to_chat(user, "You attach the reciever to the stock")
-		var/obj/item/weapon/weaponparts/heavysniper/stockreciever/HS = new (get_turf(src))
+		var/obj/item/weaponparts/heavysniper/stockreciever/HS = new (get_turf(src))
 		if(loc == user)
 			equip_slot = user.get_inventory_slot(src)
 			if(equip_slot in list(slot_r_hand, slot_l_hand))
@@ -122,10 +122,10 @@
 		qdel(src)
 
 
-/obj/item/weapon/weaponparts/heavysniper/stockreciever/attackby(obj/item/W, mob/user)
-	if(istype(W,/obj/item/weapon/weaponparts/heavysniper/barrel))
+/obj/item/weaponparts/heavysniper/stockreciever/attackby(obj/item/W, mob/user)
+	if(istype(W,/obj/item/weaponparts/heavysniper/barrel))
 		to_chat(user, "You attach the barrel to the stock")
-		var/obj/item/weapon/gun/projectile/heavysniper/HS = new (get_turf(src))
+		var/obj/item/gun/projectile/heavysniper/HS = new (get_turf(src))
 		if(loc == user)
 			equip_slot = user.get_inventory_slot(src)
 			if(equip_slot in list(slot_r_hand, slot_l_hand))
@@ -133,35 +133,3 @@
 				user.equip_to_slot_if_possible(HS, equip_slot)
 		qdel(W)
 		qdel(src)
-
-/obj/item/weapon/gun/projectile/revolver/little_comet
-	name = "\"Little Comet\" revolver"
-	desc = "A special revolver developed to be as flashy and over priced as the businessmen that carry them. A special gravity based modification in the cylinder allows for it to over penetrate \
-	even solid steel walls despite its low caliber, the weapons value derived from said gravitonic modification being old tech from greyson that can no longer be reproduced. Uses .35 special rounds."
-	icon = 'icons/obj/guns/projectile/little_comet.dmi'
-	icon_state = "little_comet"
-	item_state = "little_comet"
-	drawChargeMeter = FALSE
-	max_shells = 6
-	caliber = CAL_PISTOL
-	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/pistol_35
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
-	price_tag = 5000
-	damage_multiplier = 1.1 //because pistol round
-	penetration_multiplier = 20
-	pierce_multiplier =  5
-	recoil_buildup = 13
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
-
-/obj/item/weapon/gun/projectile/revolver/little_comet/update_icon()
-	..()
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (silenced)
-		iconstring += "_s"
-		itemstring += "_s"
-
-	icon_state = iconstring
-	set_item_state(itemstring)

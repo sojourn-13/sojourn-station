@@ -24,6 +24,7 @@
 	throw_range = 20
 	matter = list(MATERIAL_PLASTIC = 3)
 	force = NONE
+	price_tag = 10
 
 
 /*
@@ -54,7 +55,7 @@
 	return
 
 /obj/item/toy/junk/balloon/attackby(obj/O as obj, mob/user as mob)
-	if(istype(O, /obj/item/weapon/reagent_containers/glass))
+	if(istype(O, /obj/item/reagent_containers/glass))
 		if(O.reagents)
 			if(O.reagents.total_volume < 1)
 				to_chat(user, "The [O] is empty.")
@@ -343,7 +344,7 @@
 
 /obj/item/toy/weapon/waterflower/afterattack(atom/A as mob|obj, mob/user as mob)
 
-	if (istype(A, /obj/item/weapon/storage/backpack ))
+	if (istype(A, /obj/item/storage/backpack ))
 		return
 
 	else if (locate (/obj/structure/table, src.loc))
@@ -1211,6 +1212,26 @@
 	icon_state = "therapygreen"
 	item_state = "egg3" // It's the green egg in items_left/righthand
 	w_class = ITEM_SIZE_TINY
+
+/obj/item/toy/plushie/fumo/arcueid // If people want to add more fumos, make them children of this one. - Seb
+	name = "neco arc fumo"
+	desc = "...What the fuck?"
+	icon_state = "arcueid"
+	phrase = "Burenyaa~"
+	var/pokesound = 'sound/sanity/burenyaa.ogg'
+
+/obj/item/toy/plushie/fumo/arcueid/attack_self(mob/user as mob)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(user.a_intent == I_HELP)
+		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> hugs [src]!"),SPAN_NOTICE("You hug [src]!"))
+	else if (user.a_intent == I_HURT)
+		user.visible_message(SPAN_WARNING("<b>\The [user]</b> punches [src]!"),SPAN_WARNING("You punch [src]!"))
+	else if (user.a_intent == I_GRAB)
+		user.visible_message(SPAN_WARNING("<b>\The [user]</b> attempts to strangle [src]!"),SPAN_WARNING("You attempt to strangle [src]!"))
+	else
+		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> pokes the [src]."),SPAN_NOTICE("You poke the [src]."))
+		visible_message("[src] says, \"[phrase]\"")
+		playsound(src.loc, pokesound, 50, 0) // Should work for any pokesound anyone might want to add to fumos.
 
 /obj/item/toy/plushie/carp
 	name = "carp space plushie"

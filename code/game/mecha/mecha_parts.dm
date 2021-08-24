@@ -40,13 +40,13 @@
 
 /obj/item/mecha_parts/chassis/ripley
 	name = "Ripley Chassis"
-	desc = "A chassis or case for a Ripley mech, needs Ripley arms and legs."
+	desc = "A chassis or case for a Ripley mech, needs Ripley torso, arms and legs."
 	construct_type = /datum/construction/mecha/ripley_chassis
 	matter = list(MATERIAL_STEEL = 30)
 
 /obj/item/mecha_parts/chassis/ripley/firefighter
 	name = "Firefighter Chassis"
-	desc = "A chassis or case for a Firefighter mech, needs Ripley arms and legs, as well as a fire suit."
+	desc = "A chassis for a Firefighter mech. Needs Ripley torso, arms and legs, as well as a fire suit."
 	construct_type = /datum/construction/mecha/firefighter_chassis
 
 /obj/item/mecha_parts/part/ripley_torso
@@ -88,7 +88,7 @@
 
 /obj/item/mecha_parts/chassis/gygax
 	name = "Gygax Chassis"
-	desc = "A chassis or case for a Gygax mech, needs arms, legs, head, as well as a anti-stain paint and SMES coils."
+	desc = "The chassis for a Gygax mech. Needs a Gygax head, torso, arms and legs, as well as anti-staining paint and a SMES coil."
 	construct_type = /datum/construction/mecha/gygax_chassis
 	matter = list(MATERIAL_PLASTEEL = 30)
 
@@ -108,14 +108,14 @@
 
 /obj/item/mecha_parts/part/gygax_left_arm
 	name = "Gygax Left Arm"
-	desc = "A Gygax left arm. Data and power sockets are compatible with most exosuit tools and weapons."
+	desc = "A Gygax left arm. Data and power sockets are compatible with most exosuit weapons and tools."
 	icon_state = "gygax_l_arm"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_PLASTEEL = 20)
 
 /obj/item/mecha_parts/part/gygax_right_arm
 	name = "Gygax Right Arm"
-	desc = "A Gygax right arm. Data and power sockets are compatible with most exosuit tools and weapons."
+	desc = "A Gygax right arm. Data and power sockets are compatible with most exosuit weapons and tools."
 	icon_state = "gygax_r_arm"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_PLASTEEL = 20)
@@ -143,10 +143,9 @@
 
 /obj/item/mecha_parts/chassis/durand
 	name = "Durand Chassis"
-	desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."
+	desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."
 	construct_type = /datum/construction/mecha/durand_chassis
 	matter = list(MATERIAL_PLASTEEL = 30)
-
 
 /obj/item/mecha_parts/part/durand_torso
 	name = "Durand Torso"
@@ -250,7 +249,7 @@
 
 /obj/item/mecha_parts/chassis/odysseus
 	name = "Odysseus Chassis"
-	desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."
+	desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."
 	construct_type = /datum/construction/mecha/odysseus_chassis
 	matter = list(MATERIAL_STEEL = 25)
 

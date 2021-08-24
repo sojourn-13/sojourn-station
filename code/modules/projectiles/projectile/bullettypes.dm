@@ -384,6 +384,14 @@
 	. = ..()
 	empulse(target, 1, 3)
 
+//smoothbore rifles
+/obj/item/projectile/bullet/ball
+	damage_types = list(BRUTE = 60) //Grab me musket as the founding fathers intended
+	armor_penetration = 0 //Golf-ball sized hole in the blokes chest, but not his plate carrier.
+	agony = 95
+	penetrating = 2
+	hitscan = TRUE
+
 //Shotguns
 //*********************************//
 

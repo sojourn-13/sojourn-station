@@ -22,8 +22,8 @@
 	var/icon_swap_to_old = TRUE
 
 	//TODO: Make devices have cell support as an inherent behaviour
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	var/obj/item/cell/cell = null
+	var/suitable_cell = /obj/item/cell/small
 	var/active_power_usage = 25 //Watts
 
 	var/turn_on_sound = 'sound/effects/Custom_flashlight.ogg'

@@ -11,6 +11,13 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 
+/datum/craft_recipe/furniture/bonfire
+	name = "bonfire"
+	result = /obj/structure/bonfire
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
+	)
+
 //Custom chairs
 /datum/craft_recipe/furniture/bar_chair
 	name = "chair, bar"
@@ -91,7 +98,7 @@
 
 /datum/craft_recipe/furniture/stool
 	name = "stool"
-	result = /obj/item/weapon/stool
+	result = /obj/item/stool
 	time = 30
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
@@ -100,7 +107,7 @@
 
 /datum/craft_recipe/furniture/barstool
 	name = "stool, bar"
-	result = /obj/item/weapon/stool/custom/bar_special
+	result = /obj/item/stool/custom/bar_special
 	time = 30
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),

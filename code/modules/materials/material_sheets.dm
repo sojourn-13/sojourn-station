@@ -158,6 +158,9 @@
 	price_tag = 2
 	novariants = FALSE
 
+/obj/item/stack/material/plastic/full
+	amount = 120
+
 /obj/item/stack/material/plastic/random
 	rand_min = 3
 	rand_max = 10
@@ -239,6 +242,9 @@
 	price_tag = 8
 	novariants = FALSE
 
+/obj/item/stack/material/plasteel/full
+	amount = 120
+
 /obj/item/stack/material/plasteel/random
 	rand_min = 3
 	rand_max = 8
@@ -248,6 +254,9 @@
 	icon_state = "sheet-wood"
 	default_type = MATERIAL_WOOD
 	price_tag = 1 //Way to easy to get on mass.
+
+/obj/item/stack/material/wood/full
+	amount = 120
 
 /obj/item/stack/material/wood/random
 	rand_min = 3
@@ -270,6 +279,9 @@
 	icon_state = "sheet-card"
 	default_type = MATERIAL_CARDBOARD
 	price_tag = 3
+
+/obj/item/stack/material/cardboard/full
+	amount = 120
 
 /obj/item/stack/material/cardboard/random
 	rand_min = 5
@@ -294,6 +306,9 @@
 	icon_state = "sheet-glass"
 	default_type = MATERIAL_GLASS
 	price_tag = 2
+
+/obj/item/stack/material/glass/full
+	amount = 120
 
 /obj/item/stack/material/glass/random
 	rand_min = 3

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/boltgun
+/obj/item/gun/projectile/boltgun
 	name = "\"Kardashev-Mosin\" boltgun"
 	desc = "Weapon for hunting or endless trench warfare. \
 			If you're on a budget, it's a darn good rifle for just about everything."
@@ -19,18 +19,20 @@
 	max_shells = 10
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
+	fire_sound_silenced = 'sound/weapons/guns/fire/hpistol_fire.ogg' //It makes it more quite but still a high caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 500
 	one_hand_penalty = 15 //full sized rifle with bayonet is hard to keep on target
 	var/bolt_open = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") // Considering attached bayonet
 	sharp = TRUE //We have a knife!
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_BAYONET, GUN_SCOPE, GUN_SILENCABLE)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/true
+	sawn = /obj/item/gun/projectile/boltgun/sawn/true
 	var/bolt_training = TRUE
+	eject_animatio = TRUE //we infact have bullet animations
 
-/obj/item/weapon/gun/projectile/boltgun/sawn //subtype for code
+/obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" boltgun"
 	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
@@ -46,14 +48,14 @@
 	damage_multiplier = 0.9
 	fire_delay = 4
 	one_hand_penalty = 10
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
 	bolt_training = FALSE //Trainning didnt cover obrez
 
-/obj/item/weapon/gun/projectile/boltgun/sawn/true //used for the Kardashev-Mosin, so we dont cheat crafting menus
+/obj/item/gun/projectile/boltgun/sawn/true //used for the Kardashev-Mosin, so we dont cheat crafting menus
 
-/obj/item/weapon/gun/projectile/boltgun/update_icon()
+/obj/item/gun/projectile/boltgun/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -67,20 +69,24 @@
 	else
 		iconstring += "_closed"
 
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/boltgun/Initialize()
+/obj/item/gun/projectile/boltgun/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/boltgun/attack_self(mob/user) //Someone overrode attackself for this class, soooo.
+/obj/item/gun/projectile/boltgun/attack_self(mob/user) //Someone overrode attackself for this class, soooo.
 	if(zoom)
 		toggle_scope(user)
 		return
 	bolt_act(user)
 
-/obj/item/weapon/gun/projectile/boltgun/handle_post_fire(mob/user)
+/obj/item/gun/projectile/boltgun/handle_post_fire(mob/user)
 	..()
 	if(bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT) && loaded.len>0)
 		to_chat(user, SPAN_NOTICE("Your hands move instinctively to chamber a new round!"))
@@ -92,11 +98,16 @@
 		bolt_act(user)
 		return
 
-/obj/item/weapon/gun/projectile/boltgun/proc/bolt_act(mob/living/user)
+/obj/item/gun/projectile/boltgun/proc/bolt_act(mob/living/user)
 	playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltback.ogg', 75, 1)
 	bolt_open = !bolt_open
 	if(bolt_open)
 		if(chambered)
+			if(eject_animatio) //Are bullet amination check
+				if(silenced)
+					flick("bullet_eject_s", src)
+				else
+					flick("bullet_eject", src)
 			to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [chambered]!"))
 			chambered.forceMove(get_turf(src))
 			loaded -= chambered
@@ -111,18 +122,18 @@
 		add_fingerprint(user)
 	update_icon()
 
-/obj/item/weapon/gun/projectile/boltgun/special_check(mob/user)
+/obj/item/gun/projectile/boltgun/special_check(mob/user)
 	if(bolt_open)
 		to_chat(user, SPAN_WARNING("You can't fire [src] while the bolt is open!"))
 		return 0
 	return ..()
 
-/obj/item/weapon/gun/projectile/boltgun/load_ammo(var/obj/item/A, mob/user)
+/obj/item/gun/projectile/boltgun/load_ammo(var/obj/item/A, mob/user)
 	if(!bolt_open)
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)
+/obj/item/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)
 	if(!bolt_open)
 		return
 	..()

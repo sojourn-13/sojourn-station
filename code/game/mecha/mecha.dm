@@ -51,7 +51,7 @@
 	var/list/damage_absorption = list("brute"=0.8,"fire"=1.2,"bullet"=0.9,"energy"=1,"bomb"=1)
 	// This armor level indicates how fortified the mech's armor is.
 	var/armor_level = MECHA_ARMOR_LIGHT
-	var/obj/item/weapon/cell/large/cell
+	var/obj/item/cell/large/cell
 	var/state = 0
 	var/list/log = new
 	var/last_message = 0
@@ -98,6 +98,7 @@
 	var/step_sound = 'sound/mecha/Mech_Step.ogg'
 	var/step_turn_sound = 'sound/mecha/Mech_Rotation.ogg'
 
+	var/list/obj/item/mech_ammo_box/ammo[3] // List to hold the mech's internal ammo.
 
 
 /obj/mecha/can_prevent_fall()
@@ -207,7 +208,26 @@
 		icon_state += "-open"
 
 
-
+/obj/mecha/proc/reload_gun()
+	var/obj/item/mech_ammo_box/MAB
+	if(!istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic)) // Does it use bullets?
+		return FALSE
+	var/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/gun = selected
+	for(var/obj/item/mech_ammo_box/M in ammo) // Run through the boxes
+		if(M.ammo_type == gun.ammo_type) // Is it the right ammo?
+			MAB = M
+	if(MAB) // Only proceed if MAB isn't null, AKA we got a valid box to draw from
+		while(gun.max_ammo > gun.projectiles) // Keep loading until we're full or the box's empty
+			if(MAB.ammo_amount_left < MAB.amount_per_click) // Check if there's enough ammo left
+				MAB.forceMove(src.loc) // Drop the empty ammo box
+				for(var/i = ammo.len to 1 step -1) // Check each spot in the ammobox list
+					if(ammo[i] == MAB) // Is it the same box?
+						ammo[i] = null // It is no longer there
+						MAB = null
+				return FALSE
+			MAB.ammo_amount_left -= MAB.amount_per_click // Remove the ammo from the box
+			gun.projectiles += MAB.amount_per_click // Put the ammo in the box
+		return TRUE
 
 ////////////////////////
 ////// Helpers /////////
@@ -224,7 +244,7 @@
 	return internal_tank
 
 /obj/mecha/proc/add_cell()
-	cell = new /obj/item/weapon/cell/large/super(src)
+	cell = new /obj/item/cell/large/super(src)
 
 /obj/mecha/proc/add_cabin()
 	cabin_air = new
@@ -1027,7 +1047,7 @@ assassination method if you time it right*/
 			else
 				to_chat(user, "You were unable to attach [I] to [src]")
 		return
-	var/obj/item/weapon/card/id/id_card = I.GetIdCard()
+	var/obj/item/card/id/id_card = I.GetIdCard()
 	if(id_card)
 		if(add_req_access || maint_access)
 			if(internals_access_allowed(usr))
@@ -1048,7 +1068,7 @@ assassination method if you time it right*/
 				to_chat(user, "There's not enough wire to finish the task.")
 		return
 
-	else if(istype(I, /obj/item/weapon/cell/large))
+	else if(istype(I, /obj/item/cell/large))
 		if(state == 4 || (state == 3 && !cell))
 			if(!src.cell)
 				to_chat(user, "You install the powercell")
@@ -1066,6 +1086,15 @@ assassination method if you time it right*/
 		I.forceMove(src)
 		user.visible_message("[user] attaches [I] to [src].", "You attach [I] to [src]")
 		return
+
+	else if(istype(I, /obj/item/mech_ammo_box))
+		for(var/i = ammo.len to 1 step -1) // Check each spot in the ammobox list
+			if(ammo[i] == null) // No box in the way.
+				insert_item(I, user)
+				ammo[i] = I
+				user.visible_message("[user] attaches [I] to [src].", "You attach [I] to [src]")
+				src.log_message("Ammobox [I] inserted by [user]")
+				return
 
 	else
 		src.log_message("Attacked by [I]. Attacker - [user]")
@@ -1337,6 +1366,15 @@ assassination method if you time it right*/
 	src.occupant << browse(src.get_stats_html(), "window=exosuit")
 	return
 
+/obj/mecha/verb/reload()
+	set name = "Reload Gun"
+	set category = "Exosuit Interface"
+	set popup_menu = 0
+	set src = usr.loc
+	if(usr!=src.occupant)
+		return
+	reload_gun() // Reload the mech's active gun
+
 /*
 /obj/mecha/verb/force_eject()
 	set category = "Object"
@@ -1482,7 +1520,7 @@ assassination method if you time it right*/
 	return FALSE
 
 
-/obj/mecha/check_access(obj/item/weapon/card/id/I, list/access_list)
+/obj/mecha/check_access(obj/item/card/id/I, list/access_list)
 	if(!istype(access_list))
 		return TRUE
 	if(!access_list.len) //no requirements
@@ -1663,7 +1701,7 @@ assassination method if you time it right*/
 	return output
 
 
-/obj/mecha/proc/output_access_dialog(obj/item/weapon/card/id/id_card, mob/user)
+/obj/mecha/proc/output_access_dialog(obj/item/card/id/id_card, mob/user)
 	if(!id_card || !user) return
 	var/output = {"<html>
 						<head><style>
@@ -1688,7 +1726,7 @@ assassination method if you time it right*/
 	onclose(user, "exosuit_add_access")
 	return
 
-/obj/mecha/proc/output_maintenance_dialog(obj/item/weapon/card/id/id_card,mob/user)
+/obj/mecha/proc/output_maintenance_dialog(obj/item/card/id/id_card,mob/user)
 	if(!id_card || !user) return
 
 	var/maint_options = "<a href='?src=\ref[src];set_internal_tank_valve=1;user=\ref[user]'>Set Cabin Air Pressure</a>"

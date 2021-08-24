@@ -4,8 +4,8 @@
 	their bulkier equipment. Includes a munchkin, greyson model drill, advanced ore scanner, and an emergency radio, just in case."
 	verb_name = "Deploy mining tool"
 	items = list(
-		/obj/item/weapon/tool/omnitool,
-		/obj/item/weapon/tool/pickaxe/drill/onestar,
+		/obj/item/tool/omnitool,
+		/obj/item/tool/pickaxe/drill/onestar,
 		/obj/item/device/scanner/mining/advanced,
 		/obj/item/device/radio/off,
 	)

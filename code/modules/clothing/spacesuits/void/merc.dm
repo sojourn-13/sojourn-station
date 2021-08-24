@@ -34,6 +34,7 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
+	price_tag = 950
 
 /obj/item/clothing/suit/space/void/SCAF/voidwolf
 	name = "REAVER-SCAF suit"
@@ -109,10 +110,10 @@
 
 /obj/item/clothing/suit/space/void/merc/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/merc/boxed
-	tank = /obj/item/weapon/tank/emergency_oxygen/double
+	tank = /obj/item/tank/emergency_oxygen/double
 
 /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	name = "xanorath voidsuit helmet"
@@ -243,7 +244,7 @@
 
 /obj/item/clothing/suit/space/void/ronin/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/ronin/boxed
-	tank = /obj/item/weapon/tank/emergency_oxygen/double
+	tank = /obj/item/tank/emergency_oxygen/double

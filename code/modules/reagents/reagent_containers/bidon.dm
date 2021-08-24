@@ -19,7 +19,7 @@
 	name = "stasis B.I.D.O.N. canister"
 	desc = "An advanced B.I.D.O.N. canister with stasis function."
 	icon_state = "bidon_adv"
-	reagent_flags = TRANSPARENT
+	reagent_flags = TRANSPARENT | NO_REACT // It's a stasis BIDON, shouldn't allow chems to react inside it.
 	filling_states = list(20,40,60,80,100)
 	volume = 9000
 
@@ -34,7 +34,7 @@
 	var/timing = FALSE
 
 /obj/structure/reagent_dispensers/bidon/singular/attackby(obj/item/I, mob/user)
-	if(istype(I,/obj/item/weapon/tool/multitool))
+	if(istype(I,/obj/item/tool/multitool))
 		if(!timing)
 			to_chat(user, SPAN_NOTICE("You start the timer."))
 			timing = TRUE

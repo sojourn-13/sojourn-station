@@ -64,16 +64,16 @@
 	)
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	extra_allowed = list(
-		/obj/item/weapon/storage/toolbox,
-		/obj/item/weapon/storage/briefcase/inflatable,
+		/obj/item/storage/toolbox,
+		/obj/item/storage/briefcase/inflatable,
 		/obj/item/device/t_scanner,
-		/obj/item/weapon/rcd
+		/obj/item/rcd
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/engineering
 
 /obj/item/clothing/suit/space/void/engineering/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/jetpack/oxygen
+	tank = /obj/item/tank/jetpack/oxygen
 
 //Scav
 /obj/item/clothing/head/space/void/riggedvoidsuit
@@ -181,6 +181,7 @@
 		bio = 100,
 		rad = 75
 	)
+	camera_networks = list(NETWORK_MEDICAL)
 
 /obj/item/clothing/suit/space/void/medical
 	icon_state = "rig-medical"
@@ -189,7 +190,7 @@
 	item_state = "medical_voidsuit"
 	slowdown = 0.25
 	extra_allowed = list(
-		/obj/item/weapon/storage/firstaid,
+		/obj/item/storage/firstaid,
 		/obj/item/device/scanner/health,
 		/obj/item/stack/medical,
 		/obj/item/roller
@@ -228,6 +229,7 @@
 	)
 	siemens_coefficient = 0.7
 	light_overlay = "helmet_light_ihs"
+	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/clothing/suit/space/void/security
 	name = "marshal voidsuit"
@@ -248,7 +250,7 @@
 
 /obj/item/clothing/suit/space/void/security/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/jetpack/oxygen
+	tank = /obj/item/tank/jetpack/oxygen
 
 /obj/item/clothing/head/helmet/space/void/odst
 	name = "Sol Federation voidsuit helmet"
@@ -298,6 +300,7 @@
 	name = "blackshield voidsuit helmet"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
+	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/clothing/suit/space/void/security/odst/mil
 	name = "blackshield voidsuit"
@@ -309,6 +312,7 @@
 	name = "blackshield corpsman voidsuit helmet"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
+	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/clothing/suit/space/void/odst/corps
 	name = "blackshield corpsman voidsuit"
@@ -406,7 +410,7 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/atmos
 
 /obj/item/clothing/suit/space/void/security/equipped
-	tank = /obj/item/weapon/tank/jetpack/oxygen
+	tank = /obj/item/tank/jetpack/oxygen
 
 //Assault
 /obj/item/clothing/head/space/void/assault

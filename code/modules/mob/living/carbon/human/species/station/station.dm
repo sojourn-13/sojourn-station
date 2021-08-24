@@ -482,7 +482,7 @@
 		"Lizard Tail",
 		"Lizard Tail, Short"
 		)
-	permitted_wings = list("Spines,Aquatic",
+	permitted_wings = list("Spines, Aquatic",
 		"Spines, Long",
 		"Spines, Long Membrane",
 		"Spines, Short",
@@ -522,6 +522,8 @@
 		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
 		OP_EYES =     /obj/item/organ/internal/eyes
 		)
+
+	perks = list(PERK_FOLKEN_HEALING)
 
 	stat_modifiers = list(
 		STAT_BIO = 10,
@@ -582,6 +584,54 @@
 
 /datum/species/mycus/get_bodytype()
 	return "Mycus"
+
+/datum/species/full_body_prosthetic
+	name = "Full Body Prosthetic"
+	default_form = FORM_FBP
+	obligate_form = TRUE
+	obligate_name = FALSE
+	name_plural = "FBPs"
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	reagent_tag = IS_SYNTHETIC
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/full_body_prosthetic,
+		BP_GROIN =  new /datum/organ_description/groin/full_body_prosthetic,
+		BP_HEAD =   new /datum/organ_description/head/full_body_prosthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/full_body_prosthetic,
+		BP_R_ARM =  new /datum/organ_description/arm/right/full_body_prosthetic,
+		BP_L_LEG =  new /datum/organ_description/leg/left/full_body_prosthetic,
+		BP_R_LEG =  new /datum/organ_description/leg/right/full_body_prosthetic
+		)
+
+	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
+		)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/full_body_prosthetic/get_bodytype()
+	return "Full Body Prosthetic"
 
 
 /datum/species/soteria_synthetic
@@ -644,7 +694,7 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/soteria_synthetic/get_bodytype()
-	return "Synthetic"
+	return "Soteria Synthetic"
 
 /datum/species/artificer_guild_synthetic
 	name = "Artificer Guild Synthetic"
@@ -704,7 +754,7 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/artificer_guild_synthetic/get_bodytype()
-	return "Synthetic"
+	return "Artificer Guild Synthetic"
 
 /datum/species/blackshield_synthetic
 	name = "Blackshield Synthetic"
@@ -763,7 +813,7 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/blackshield_synthetic/get_bodytype()
-	return "Synthetic"
+	return "Blackshield Synthetic"
 
 /datum/species/church_synthetic
 	name = "Absolute Synthetic"
@@ -822,7 +872,7 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/church_synthetic/get_bodytype()
-	return "Synthetic"
+	return "Absolute Synthetic"
 
 /datum/species/nashef_synthetic
 	name = "Nashef-Agunabi"
@@ -879,58 +929,3 @@
 	)
 
 	spawn_flags = IS_RESTRICTED
-
-/*
-/datum/species/full_body_prosthetic
-	name = "Full Body Prosthetic"
-	default_form = FORM_FBP
-	name_plural = "FBPs"
-	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "How did you find this? Report this to Kazkin if you're reading it."
-	reagent_tag = IS_SYNTHETIC
-	hunger_factor = 0
-	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
-	radiation_mod = 0
-	virus_immune = TRUE
-
-	has_limbs = list(
-		BP_CHEST =  new /datum/organ_description/chest/full_body_prosthetic,
-		BP_GROIN =  new /datum/organ_description/groin/full_body_prosthetic,
-		BP_HEAD =   new /datum/organ_description/head/full_body_prosthetic,
-		BP_L_ARM =  new /datum/organ_description/arm/left/full_body_prosthetic,
-		BP_R_ARM =  new /datum/organ_description/arm/right/full_body_prosthetic,
-		BP_L_LEG =  new /datum/organ_description/leg/left/full_body_prosthetic,
-		BP_R_LEG =  new /datum/organ_description/leg/right/full_body_prosthetic
-		)
-
-	has_process = list(    // which required-process checks are conducted and defalut organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
-		)
-
-	heat_discomfort_strings = list(
-		"System analysis reports higher than normal heat levels.",
-		"System analysis reports rising tempatures!",
-		"System analysis reports dangerous levels of heat!."
-		)
-	cold_discomfort_strings = list(
-		"System analysis reports lower than normal tempature.",
-		"System analysis reports rapidly decreasing tempatures!",
-		"System analysis reports dangerous levels of cold!."
-		)
-
-	stat_modifiers = list(
-		STAT_BIO = 2,
-		STAT_COG = 2,
-		STAT_MEC = 2,
-		STAT_ROB = 2,
-		STAT_TGH = 2,
-		STAT_VIG = 2
-	)
-
-	spawn_flags = CAN_JOIN
-
-/datum/species/full_body_prosthetic/get_bodytype()
-	return "FBP"
-*/

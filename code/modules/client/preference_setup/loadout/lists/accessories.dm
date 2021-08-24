@@ -1,6 +1,6 @@
 /datum/gear/accessory
 	display_name = "wallet"
-	path = /obj/item/weapon/storage/wallet
+	path = /obj/item/storage/wallet
 	slot = slot_accessory_buffer
 	sort_category = "Accessories"
 

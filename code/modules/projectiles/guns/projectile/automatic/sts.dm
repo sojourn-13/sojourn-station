@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/sts
+/obj/item/gun/projectile/automatic/sts
 	name = "\"STS\" carbine"
 	desc = "The rugged STS-25, the right arm of the unfree world. Uses Carbine rounds. This one is unmarked."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
@@ -30,7 +30,7 @@
 		)
 
 
-/obj/item/weapon/gun/projectile/automatic/sts/update_icon()
+/obj/item/gun/projectile/automatic/sts/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -45,11 +45,11 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/sts/Initialize()
+/obj/item/gun/projectile/automatic/sts/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/sts/lrifle
+/obj/item/gun/projectile/automatic/sts/lrifle
 	name = "\"STS\" carbine"
 	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one is unmarked."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
@@ -58,9 +58,9 @@
 	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_MAGWELL)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 12)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn
+	sawn = /obj/item/gun/projectile/automatic/sts/lrifle/sawn
 
-/obj/item/weapon/gun/projectile/automatic/sts/lrifle/update_icon()
+/obj/item/gun/projectile/automatic/sts/lrifle/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -80,11 +80,11 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/sts/lrifle/Initialize()
+/obj/item/gun/projectile/automatic/sts/lrifle/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/automatic/sts/lrifle/sawn
+/obj/item/gun/projectile/automatic/sts/lrifle/sawn
 	name = "\"STS\" carbine"
 	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one has had its stock lopped off, rendering it rather impractical to use.."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts25.dmi'
@@ -98,7 +98,7 @@
 	one_hand_penalty = 20
 	saw_off = FALSE
 
-/obj/item/weapon/gun/projectile/automatic/sts/rifle
+/obj/item/gun/projectile/automatic/sts/rifle
 	name = "\"STS\" battle rifle"
 	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. We'll keep our land a free land, stop the enemy coming in."
 	icon = 'icons/obj/guns/projectile/sts30.dmi'
@@ -112,7 +112,7 @@
 	one_hand_penalty = 20
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn
+	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn
 
 
 	init_firemodes = list(
@@ -120,7 +120,7 @@
 		FULL_AUTO_400
 		)
 
-/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn
+/obj/item/gun/projectile/automatic/sts/rifle/sawn
 	name = "sawn down \"STS\" battle rifle"
 	desc = "A rugged STS-30.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
@@ -139,7 +139,7 @@
 		FULL_AUTO_400
 		)
 
-/obj/item/weapon/gun/projectile/automatic/sts/rifle/blackshield
+/obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
 	desc = "A lightweight modified variant of the STS-30 that takes 7.5mm rounds, shedding wartime wood for modern plastic polymer. \
 	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified recievers and gas block for better recoil control. \
@@ -155,7 +155,7 @@
 	one_hand_penalty = 18
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn/blackshield
+	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -163,7 +163,7 @@
 		FULL_AUTO_400
 		)
 
-/obj/item/weapon/gun/projectile/automatic/sts/rifle/sawn/blackshield
+/obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	name = "sawn down Blackshield \"STS PARA\" rifle"
 	desc = "A rugged STS-35 with two round burst.  Uses 7.5mm rifle rounds. This one has been shortened as much as possible while still able to function still more effective then a normal STS-30 varent."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts30.dmi'
@@ -184,7 +184,7 @@
 		FULL_AUTO_400
 		)
 
-/obj/item/weapon/gun/projectile/automatic/sts/hrifle
+/obj/item/gun/projectile/automatic/sts/hrifle
 	name = "\"STS\" heavy rifle"
 	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. If we have to go alone, we'll go alone with pride."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
@@ -200,12 +200,12 @@
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/automatic/sts/hrifle/sawn
+	sawn = /obj/item/gun/projectile/automatic/sts/hrifle/sawn
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
 
-/obj/item/weapon/gun/projectile/automatic/sts/hrifle/sawn
+/obj/item/gun/projectile/automatic/sts/hrifle/sawn
 	name = "sawn down \"STS\" heavy rifle"
 	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. This one has been shortened as much as possible while still able to function."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'

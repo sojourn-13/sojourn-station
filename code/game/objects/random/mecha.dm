@@ -8,12 +8,12 @@
 		/obj/mecha/working/hoverpod/shuttlepod = 6,
 		/obj/mecha/working/ripley = 5,
 		/obj/mecha/working/ripley/firefighter = 6,
-		/obj/mecha/working/ripley/deathripley = 0.5,//has a dangerous melee weapon
+		/obj/mecha/working/ripley/deathripley = 2,//well armored
 		/obj/mecha/working/ripley/mining = 4,
 		/obj/mecha/medical/odysseus = 6,
 		/obj/mecha/medical/odysseus/loaded = 5,
-		/obj/mecha/combat/durand = 1,//comes unarmed
-		/obj/mecha/combat/gygax = 1.5,//comes unarmed
+		/obj/mecha/combat/durand = 1.5,//comes unarmed
+		/obj/mecha/combat/gygax = 1,//comes unarmed
 		/obj/mecha/combat/dreadnought = 0.1,
 		/obj/mecha/combat/phazon = 0.1)
 
@@ -24,8 +24,6 @@
 	name = "low chance random mecha"
 	icon_state = "machine-red-low"
 	spawn_nothing_percentage = 90
-
-
 
 /obj/random/mecha/damaged
 	name = "random damaged mecha"
@@ -75,17 +73,17 @@
 		/obj/item/mecha_parts/mecha_equipment/tool/safety_clamp,
 		/obj/item/mecha_parts/mecha_equipment/tool/passenger,
 		/obj/item/mecha_parts/mecha_equipment/thruster,
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/riggedlaser,
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy,
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion,
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse,
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/taser,
-		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
-		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg,
-		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flare,
-		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive,
-		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang))
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive,
+		/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang))
 
 /obj/random/mecha_equipment/low_chance
 	name = "low chance random mecha equipment"

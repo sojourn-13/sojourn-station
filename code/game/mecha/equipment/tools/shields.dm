@@ -7,6 +7,7 @@
 	equip_cooldown = 5
 	energy_drain = 20
 	range = 0
+	price_tag = 2000
 
 	var/obj/item/shield_projector/line/exosuit/my_shield = null
 	var/my_shield_type = /obj/item/shield_projector/line/exosuit
@@ -238,7 +239,7 @@
 	active = FALSE
 
 /obj/item/shield_projector/proc/update_shield_positions()
-	if (istype(src.loc,/obj/item/weapon/storage) || istype(src.loc,/obj/structure/closet || istype(src.loc,/obj/item/clothing/suit/storage)))	//no point in finding spot for light if flashlight is inside container
+	if (istype(src.loc,/obj/item/storage) || istype(src.loc,/obj/structure/closet || istype(src.loc,/obj/item/clothing/suit/storage)))	//no point in finding spot for light if flashlight is inside container
 		destroy_shields()
 		return
 	for(var/obj/effect/directional_shield/S in active_shields)

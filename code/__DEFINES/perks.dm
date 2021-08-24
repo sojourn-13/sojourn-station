@@ -65,6 +65,7 @@
 #define PERK_BOLT_REFLECT /datum/perk/job/bolt_reflect
 #define PERK_JINGLE_JANGLE /datum/perk/job/jingle_jangle
 #define PERK_BUTCHER /datum/perk/job/butcher
+#define PERK_MASTER_HERBALIST /datum/perk/job/master_herbalist
 #define PERK_PERFECT_SHOT /datum/perk/exceptional_aim
 #define PERK_STAY_HYDRATED /datum/perk/stay_hydrated
 #define PERK_SECOND_SKIN /datum/perk/second_skin
@@ -77,3 +78,7 @@
 #define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
 #define PERK_GREENTHUMB /datum/perk/greenthumb
+#define PERK_PSION /datum/perk/psion
+#define PERK_PSI_MANIA /datum/perk/psi_mania
+#define PERK_PSI_HARMONY /datum/perk/psi_harmony
+#define PERK_PSI_ATTUNEMENT /datum/perk/psi_attunement

@@ -7,10 +7,10 @@
 	contains = list(/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
-					/obj/item/weapon/tank/air,
-					/obj/item/weapon/tank/air,
-					/obj/item/weapon/tank/air)
-	cost = 480
+					/obj/item/tank/air,
+					/obj/item/tank/air,
+					/obj/item/tank/air)
+	cost = 180
 	containertype = /obj/structure/closet/crate/internals
 	crate_name = "internals crate"
 	group = "Engineering"
@@ -18,7 +18,7 @@
 /datum/supply_pack/sleeping_agent
 	name = "Canister: \[N2O\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/sleeping_agent)
-	cost = 1800
+	cost = 180
 	containertype = /obj/structure/largecrate
 	crate_name = "N2O crate"
 	group = "Engineering"
@@ -26,7 +26,7 @@
 /datum/supply_pack/oxygen
 	name = "Canister: \[O2\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/oxygen)
-	cost = 1200
+	cost = 120
 	containertype = /obj/structure/largecrate
 	crate_name = "O2 crate"
 	group = "Engineering"
@@ -34,7 +34,7 @@
 /datum/supply_pack/nitrogen
 	name = "Canister: \[N2\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/nitrogen)
-	cost = 1200
+	cost = 120
 	containertype = /obj/structure/largecrate
 	crate_name = "N2 crate"
 	group = "Engineering"
@@ -42,51 +42,51 @@
 /datum/supply_pack/air
 	name = "Canister \[Air\]"
 	contains = list(/obj/machinery/portable_atmospherics/canister/air)
-	cost = 1200
+	cost = 120
 	containertype = /obj/structure/largecrate
 	crate_name = "air crate"
 	group = "Engineering"
 
 /datum/supply_pack/evacuation
 	name = "Emergency Equipment Crate"
-	contains = list(/obj/item/weapon/storage/toolbox/emergency,
-					/obj/item/weapon/storage/toolbox/emergency,
+	contains = list(/obj/item/storage/toolbox/emergency,
+					/obj/item/storage/toolbox/emergency,
 					/obj/item/clothing/suit/storage/hazardvest,
 					/obj/item/clothing/suit/storage/hazardvest,
-					/obj/item/weapon/tank/emergency_oxygen,
-					/obj/item/weapon/tank/emergency_oxygen,
-					/obj/item/weapon/tank/emergency_oxygen,
-					/obj/item/weapon/tank/emergency_oxygen,
-					/obj/item/weapon/tank/emergency_oxygen,
+					/obj/item/tank/emergency_oxygen,
+					/obj/item/tank/emergency_oxygen,
+					/obj/item/tank/emergency_oxygen,
+					/obj/item/tank/emergency_oxygen,
+					/obj/item/tank/emergency_oxygen,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas)
-	cost = 800
+	cost = 80
 	containertype = /obj/structure/closet/crate/internals
 	crate_name = "emergency equipment crate"
 	group = "Engineering"
 
 /datum/supply_pack/inflatable
 	name = "Inflatable Barriers Crate"
-	contains = list(/obj/item/weapon/storage/briefcase/inflatable,
-					/obj/item/weapon/storage/briefcase/inflatable,
-					/obj/item/weapon/storage/briefcase/inflatable,
-					/obj/item/weapon/storage/briefcase/inflatable,
-					/obj/item/weapon/storage/briefcase/inflatable)
-	cost = 1200
+	contains = list(/obj/item/storage/briefcase/inflatable,
+					/obj/item/storage/briefcase/inflatable,
+					/obj/item/storage/briefcase/inflatable,
+					/obj/item/storage/briefcase/inflatable,
+					/obj/item/storage/briefcase/inflatable)
+	cost = 120
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "inflatable barriers crate"
 	group = "Engineering"
 
 /datum/supply_pack/lightbulbs
 	name = "Replacement Lights Crate"
-	contains = list(/obj/item/weapon/storage/box/lights/mixed,
-					/obj/item/weapon/storage/box/lights/mixed,
-					/obj/item/weapon/storage/box/lights/mixed,
-					/obj/item/weapon/storage/box/lights/mixed)
-	cost = 560
+	contains = list(/obj/item/storage/box/lights/mixed,
+					/obj/item/storage/box/lights/mixed,
+					/obj/item/storage/box/lights/mixed,
+					/obj/item/storage/box/lights/mixed)
+	cost = 120
 	containertype = /obj/structure/closet/crate
 	crate_name = "replacement lights crate"
 	group = "Engineering"
@@ -149,14 +149,14 @@
 
 /datum/supply_pack/electrical
 	name = "Electrical Maintenance Crate"
-	contains = list (/obj/item/weapon/storage/toolbox/electrical,
-					/obj/item/weapon/storage/toolbox/electrical,
+	contains = list (/obj/item/storage/toolbox/electrical,
+					/obj/item/storage/toolbox/electrical,
 					/obj/item/clothing/gloves/insulated,
 					/obj/item/clothing/gloves/insulated,
-					/obj/item/weapon/cell/large,
-					/obj/item/weapon/cell/large,
-					/obj/item/weapon/cell/large/high,
-					/obj/item/weapon/cell/large/high)
+					/obj/item/cell/large,
+					/obj/item/cell/large,
+					/obj/item/cell/large/high,
+					/obj/item/cell/large/high)
 	cost = 960
 	containertype = /obj/structure/closet/crate
 	crate_name = "electrical maintenance crate"
@@ -164,9 +164,9 @@
 
 /datum/supply_pack/mechanical
 	name = "Mechanical Maintenance Crate"
-	contains = list(/obj/item/weapon/storage/belt/utility/full,
-					/obj/item/weapon/storage/belt/utility/full,
-					/obj/item/weapon/storage/belt/utility/full,
+	contains = list(/obj/item/storage/belt/utility/full,
+					/obj/item/storage/belt/utility/full,
+					/obj/item/storage/belt/utility/full,
 					/obj/item/clothing/suit/storage/hazardvest,
 					/obj/item/clothing/suit/storage/hazardvest,
 					/obj/item/clothing/suit/storage/hazardvest,
@@ -179,14 +179,14 @@
 	group = "Engineering"
 
 /datum/supply_pack/toolmods_reinforcement
-	contains = list(/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
-					/obj/item/weapon/tool_upgrade/reinforcement/heatsink,
-					/obj/item/weapon/tool_upgrade/reinforcement/plating,
-					/obj/item/weapon/tool_upgrade/reinforcement/plating,
-					/obj/item/weapon/tool_upgrade/reinforcement/guard,
-					/obj/item/weapon/tool_upgrade/reinforcement/guard,
-					/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh,
-					/obj/item/weapon/tool_upgrade/reinforcement/rubbermesh)
+	contains = list(/obj/item/tool_upgrade/reinforcement/heatsink,
+					/obj/item/tool_upgrade/reinforcement/heatsink,
+					/obj/item/tool_upgrade/reinforcement/plating,
+					/obj/item/tool_upgrade/reinforcement/plating,
+					/obj/item/tool_upgrade/reinforcement/guard,
+					/obj/item/tool_upgrade/reinforcement/guard,
+					/obj/item/tool_upgrade/reinforcement/rubbermesh,
+					/obj/item/tool_upgrade/reinforcement/rubbermesh)
 	name = "Tool-Mod Reinforcement Crate"
 	cost = 1000
 	containertype = /obj/structure/closet/crate
@@ -194,15 +194,15 @@
 	group = "Engineering"
 
 /datum/supply_pack/toolmods_productivity
-	contains = list(/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip,
-					/obj/item/weapon/tool_upgrade/productivity/ergonomic_grip,
-					/obj/item/weapon/tool_upgrade/productivity/ratchet,
-					/obj/item/weapon/tool_upgrade/productivity/ratchet,
-					/obj/item/weapon/tool_upgrade/productivity/red_paint,
-					/obj/item/weapon/tool_upgrade/productivity/oxyjet,
-					/obj/item/weapon/tool_upgrade/productivity/whetstone,
-					/obj/item/weapon/tool_upgrade/productivity/whetstone,
-					/obj/item/weapon/tool_upgrade/productivity/motor)
+	contains = list(/obj/item/tool_upgrade/productivity/ergonomic_grip,
+					/obj/item/tool_upgrade/productivity/ergonomic_grip,
+					/obj/item/tool_upgrade/productivity/ratchet,
+					/obj/item/tool_upgrade/productivity/ratchet,
+					/obj/item/tool_upgrade/productivity/red_paint,
+					/obj/item/tool_upgrade/productivity/oxyjet,
+					/obj/item/tool_upgrade/productivity/whetstone,
+					/obj/item/tool_upgrade/productivity/whetstone,
+					/obj/item/tool_upgrade/productivity/motor)
 	name = "Tool-Mod Productivity Crate"
 	cost = 1000
 	containertype = /obj/structure/closet/crate
@@ -210,14 +210,14 @@
 	group = "Engineering"
 
 /datum/supply_pack/toolmods_refinement
-	contains = list(/obj/item/weapon/tool_upgrade/refinement/laserguide,
-					/obj/item/weapon/tool_upgrade/refinement/laserguide,
-					/obj/item/weapon/tool_upgrade/refinement/stabilized_grip,
-					/obj/item/weapon/tool_upgrade/refinement/stabilized_grip,
-					/obj/item/weapon/tool_upgrade/refinement/magbit,
-					/obj/item/weapon/tool_upgrade/refinement/magbit,
-					/obj/item/weapon/tool_upgrade/refinement/ported_barrel,
-					/obj/item/weapon/tool_upgrade/refinement/ported_barrel)
+	contains = list(/obj/item/tool_upgrade/refinement/laserguide,
+					/obj/item/tool_upgrade/refinement/laserguide,
+					/obj/item/tool_upgrade/refinement/stabilized_grip,
+					/obj/item/tool_upgrade/refinement/stabilized_grip,
+					/obj/item/tool_upgrade/refinement/magbit,
+					/obj/item/tool_upgrade/refinement/magbit,
+					/obj/item/tool_upgrade/refinement/ported_barrel,
+					/obj/item/tool_upgrade/refinement/ported_barrel)
 	name = "Tool-Mod Refinement Crate"
 	cost = 1000
 	containertype = /obj/structure/closet/crate
@@ -225,14 +225,14 @@
 	group = "Engineering"
 
 /datum/supply_pack/toolmods_utility
-	contains = list(/obj/item/weapon/tool_upgrade/augment/cell_mount,
-					/obj/item/weapon/tool_upgrade/augment/cell_mount,
-					/obj/item/weapon/tool_upgrade/augment/fuel_tank,
-					/obj/item/weapon/tool_upgrade/augment/fuel_tank,
-					/obj/item/weapon/tool_upgrade/augment/expansion,
-					/obj/item/weapon/tool_upgrade/augment/expansion,
-					/obj/item/weapon/tool_upgrade/augment/dampener,
-					/obj/item/weapon/tool_upgrade/augment/dampener)
+	contains = list(/obj/item/tool_upgrade/augment/cell_mount,
+					/obj/item/tool_upgrade/augment/cell_mount,
+					/obj/item/tool_upgrade/augment/fuel_tank,
+					/obj/item/tool_upgrade/augment/fuel_tank,
+					/obj/item/tool_upgrade/augment/expansion,
+					/obj/item/tool_upgrade/augment/expansion,
+					/obj/item/tool_upgrade/augment/dampener,
+					/obj/item/tool_upgrade/augment/dampener)
 	name = "Tool-Mod Utility Crate"
 	cost = 1000
 	containertype = /obj/structure/closet/crate
@@ -255,8 +255,8 @@
 	group = "Engineering"
 
 /datum/supply_pack/omnitool
-	contains = list(/obj/item/weapon/tool/omnitool,
-					/obj/item/weapon/tool/omnitool)
+	contains = list(/obj/item/tool/omnitool,
+					/obj/item/tool/omnitool)
 	name = "Omnitool Crate"
 	cost = 2000
 	containertype = /obj/structure/closet/crate
@@ -273,11 +273,11 @@
 
 /datum/supply_pack/fuelcrate2
 	name = "Fuel Crate (1000)" //1000 fuel
-	contains = list(/obj/item/weapon/weldpack,
-			/obj/item/weapon/weldpack,
-			/obj/item/weapon/weldpack/canister,
-			/obj/item/weapon/weldpack/canister,
-			/obj/item/weapon/weldpack/canister,)
+	contains = list(/obj/item/weldpack,
+			/obj/item/weldpack,
+			/obj/item/weldpack/canister,
+			/obj/item/weldpack/canister,
+			/obj/item/weldpack/canister,)
 	cost = 2000
 	access = FALSE
 	containertype = /obj/structure/closet/crate
@@ -307,9 +307,9 @@
 					/obj/item/solar_assembly,
 					/obj/item/solar_assembly,
 					/obj/item/solar_assembly, // 21 Solar Assemblies. 1 Extra for the controller
-					/obj/item/weapon/circuitboard/solar_control,
-					/obj/item/weapon/tracker_electronics,
-					/obj/item/weapon/paper/solar)
+					/obj/item/circuitboard/solar_control,
+					/obj/item/tracker_electronics,
+					/obj/item/paper/solar)
 	cost = 1300
 	containertype = /obj/structure/closet/crate
 	crate_name = "solar pack crate"
@@ -363,8 +363,8 @@
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/tool/drill,
 		/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
-		/obj/item/weapon/circuitboard/mecha/main,
-		/obj/item/weapon/circuitboard/mecha/peripherals,
+		/obj/item/circuitboard/mecha/main,
+		/obj/item/circuitboard/mecha/peripherals,
 		/obj/item/mecha_parts/chassis/ripley,
 		/obj/item/mecha_parts/part/ripley_torso,
 		/obj/item/mecha_parts/part/ripley_left_arm,
@@ -381,8 +381,8 @@
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun,
 		/obj/item/mecha_parts/mecha_equipment/tool/sleeper,
-		/obj/item/weapon/circuitboard/mecha/main,
-		/obj/item/weapon/circuitboard/mecha/peripherals,
+		/obj/item/circuitboard/mecha/main,
+		/obj/item/circuitboard/mecha/peripherals,
 		/obj/item/mecha_parts/chassis/odysseus,
 		/obj/item/mecha_parts/part/odysseus_head,
 		/obj/item/mecha_parts/part/odysseus_torso,
@@ -400,13 +400,13 @@
 	contains = list(/obj/item/device/assembly/prox_sensor,
 					/obj/item/device/assembly/prox_sensor,
 					/obj/item/device/assembly/prox_sensor,
-					/obj/item/weapon/storage/toolbox/electrical,
+					/obj/item/storage/toolbox/electrical,
 					/obj/item/device/flash,
 					/obj/item/device/flash,
 					/obj/item/device/flash,
 					/obj/item/device/flash,
-					/obj/item/weapon/cell/large/high,
-					/obj/item/weapon/cell/large/high)
+					/obj/item/cell/large/high,
+					/obj/item/cell/large/high)
 	cost = 800
 	containertype = /obj/structure/closet/crate/secure/scisecurecrate
 	crate_name = "robotics assembly crate"
@@ -415,13 +415,13 @@
 /*
 //Contains six, you'll probably want to build several of these
 /datum/supply_pack/shield_diffuser
-	contains = list(/obj/item/weapon/circuitboard/shield_diffuser,
-	/obj/item/weapon/circuitboard/shield_diffuser,
-	/obj/item/weapon/circuitboard/shield_diffuser,
-	/obj/item/weapon/circuitboard/shield_diffuser,
-	/obj/item/weapon/circuitboard/shield_diffuser,
-	/obj/item/weapon/circuitboard/shield_diffuser,
-	/obj/item/weapon/circuitboard/shield_diffuser)
+	contains = list(/obj/item/circuitboard/shield_diffuser,
+	/obj/item/circuitboard/shield_diffuser,
+	/obj/item/circuitboard/shield_diffuser,
+	/obj/item/circuitboard/shield_diffuser,
+	/obj/item/circuitboard/shield_diffuser,
+	/obj/item/circuitboard/shield_diffuser,
+	/obj/item/circuitboard/shield_diffuser)
 	name = "Shield Diffuser Circuitry Crate"
 	cost = 2400
 	containertype = /obj/structure/closet/crate/secure
@@ -430,9 +430,9 @@
 	access = access_ce
 */
 /datum/supply_pack/hatton_tube
-	contains = list(/obj/item/weapon/hatton_magazine,
-	/obj/item/weapon/hatton_magazine,
-	/obj/item/weapon/hatton_magazine)
+	contains = list(/obj/item/hatton_magazine,
+	/obj/item/hatton_magazine,
+	/obj/item/hatton_magazine)
 	name = "Hatton Gas Tubes Crate"
 	crate_name = "hatton gas tubes crate"
 	cost = 4000
@@ -442,7 +442,7 @@
 
 /*
 /datum/supply_pack/shield_gen
-	contains = list(/obj/item/weapon/circuitboard/shield_generator)
+	contains = list(/obj/item/circuitboard/shield_generator)
 	name = "Hull Shield Generator Circuitry Crate"
 	cost = 4000
 	containertype = /obj/structure/closet/crate/secure

@@ -5,7 +5,7 @@
 	icon = 'icons/obj/machines/excelsior/field.dmi'
 	stun_chance = 3
 	shield_type = /obj/machinery/shieldwall/excelsior
-	circuit = /obj/item/weapon/circuitboard/excelsiorshieldwallgen
+	circuit = /obj/item/circuitboard/excelsiorshieldwallgen
 	req_access = list()
 
 /obj/machinery/shieldwallgen/excelsior/attack_hand(mob/user as mob)

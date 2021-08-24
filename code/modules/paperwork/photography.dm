@@ -16,14 +16,14 @@
 	icon_state = "film"
 	item_state = "electropack"
 	w_class = ITEM_SIZE_TINY
-
+	price_tag = 13
 
 /********
 * photo *
 ********/
 var/global/photo_count = 0
 
-/obj/item/weapon/photo
+/obj/item/photo
 	name = "photo"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "photo"
@@ -35,35 +35,35 @@ var/global/photo_count = 0
 	var/icon/tiny
 	var/photo_size = 3
 
-/obj/item/weapon/photo/update_icon()
+/obj/item/photo/update_icon()
 	.=..()
 	//When the photo updates, update its container too. This will often be an album or paper bundle
 	if (istype(loc, /obj))
 		var/obj/O = loc
 		O.update_icon()
 
-/obj/item/weapon/photo/New()
+/obj/item/photo/New()
 	id = photo_count++
 	..()
 
-/obj/item/weapon/photo/attack_self(mob/user as mob)
+/obj/item/photo/attack_self(mob/user as mob)
 	user.examinate(src)
 
-/obj/item/weapon/photo/attackby(obj/item/weapon/P as obj, mob/user as mob)
-	if(istype(P, /obj/item/weapon/pen))
+/obj/item/photo/attackby(obj/item/P as obj, mob/user as mob)
+	if(istype(P, /obj/item/pen))
 		var/txt = sanitize(input(user, "What would you like to write on the back?", "Photo Writing", null)  as text, 128)
 		if(loc == user && user.stat == 0)
 			scribble = txt
 	..()
 
-/obj/item/weapon/photo/examine(mob/user)
+/obj/item/photo/examine(mob/user)
 	if(in_range(user, src))
 		show(user)
 		to_chat(user, desc)
 	else
 		to_chat(user, SPAN_NOTICE("It is too far away."))
 
-/obj/item/weapon/photo/proc/show(mob/user as mob)
+/obj/item/photo/proc/show(mob/user as mob)
 	user << browse_rsc(img, "tmp_photo_[id].png")
 	user << browse("<html><head><title>[name]</title></head>" \
 		+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
@@ -73,7 +73,7 @@ var/global/photo_count = 0
 	onclose(user, "[name]")
 	return
 
-/obj/item/weapon/photo/verb/rename()
+/obj/item/photo/verb/rename()
 	set name = "Rename photo"
 	set category = "Object"
 	set src in usr
@@ -89,12 +89,12 @@ var/global/photo_count = 0
 /**************
 * photo album *
 **************/
-/obj/item/weapon/storage/photo_album
+/obj/item/storage/photo_album
 	name = "Photo album"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "album"
 	item_state = "briefcase"
-	can_hold = list(/obj/item/weapon/photo)
+	can_hold = list(/obj/item/photo)
 	matter = list(MATERIAL_BIOMATTER = 4)
 
 
@@ -107,6 +107,7 @@ var/global/photo_count = 0
 	desc = "A polaroid camera. 10 photos left."
 	icon_state = "camera"
 	item_state = "electropack"
+	price_tag = 6
 	w_class = ITEM_SIZE_SMALL
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
@@ -215,7 +216,7 @@ var/global/photo_count = 0
 		y_c--
 		x_c = x_c - size
 
-	var/obj/item/weapon/photo/p = createpicture(target, user, capturemode, radius)
+	var/obj/item/photo/p = createpicture(target, user, capturemode, radius)
 	p.desc = mobs
 	printpicture(user, p)
 
@@ -225,7 +226,7 @@ var/global/photo_count = 0
 	var/z_c	= target.z
 
 
-	var/obj/item/weapon/photo/p = new()
+	var/obj/item/photo/p = new()
 	p.name = "photo"
 
 
@@ -256,14 +257,14 @@ var/global/photo_count = 0
 	//The photo object is returned immediately, but its image will only be added a couple seconds later
 	return p
 
-/obj/item/device/camera/proc/printpicture(mob/user, obj/item/weapon/photo/p)
+/obj/item/device/camera/proc/printpicture(mob/user, obj/item/photo/p)
 	if (user)
 		user.put_in_hands(p)
 	else
 		p.forceMove(get_turf(src))
 
-/obj/item/weapon/photo/proc/copy(var/copy_id = 0)
-	var/obj/item/weapon/photo/p = new/obj/item/weapon/photo()
+/obj/item/photo/proc/copy(var/copy_id = 0)
+	var/obj/item/photo/p = new/obj/item/photo()
 
 	p.name = name
 	p.icon = icon(icon, icon_state)

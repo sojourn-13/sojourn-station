@@ -37,13 +37,13 @@
 		for(ME in equipment)
 			ME.detach(src)
 			qdel(ME)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src)
 	ME.attach(src)
@@ -80,15 +80,15 @@
 			ME.detach(src)
 			qdel(ME)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src)
 	ME.attach(src)
@@ -104,7 +104,7 @@
 	return
 
 /obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/add_cell()
-	cell = new /obj/item/weapon/cell/large/moebius/nuclear(src)
+	cell = new /obj/item/cell/large/moebius/nuclear(src)
 
 /obj/mecha/combat/dreadnought/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
@@ -129,13 +129,13 @@
 
 /obj/mecha/combat/dreadnought/New()
 	..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse(src)
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/loaded(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/loaded(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src)
 	ME.attach(src)
@@ -159,13 +159,13 @@
 		for(ME in equipment)
 			ME.detach(src)
 			qdel(ME)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/loaded(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/loaded(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/loaded(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/explosive(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/teleporter(src)
 	ME.attach(src)

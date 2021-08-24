@@ -24,10 +24,6 @@
 #define QDEL_NULL_LIST(x) if(x) { for(var/y in x) { qdel(y) } ; x = null }
 #define QDEL_CLEAR_LIST(x) if(x) { for(var/y in x) { qdel(y) } ; x = list() }
 
-#define GC_QUEUED_FOR_QUEUING -1
-#define GC_QUEUED_FOR_HARD_DEL -2
-#define GC_CURRENTLY_BEING_QDELETED -3
-
 /**
  * Delete `item` after `time` passed.
  * Return `id` for timer, so deletion process could be stopped.

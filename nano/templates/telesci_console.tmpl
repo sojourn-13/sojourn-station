@@ -1,0 +1,92 @@
+<h1>Advanced Telepad Control Console</h1>
+{{if !data.telepadPresent}}
+	<div class='notice'>No telepad located. <BR>Please add telepad data via use of Multitool.</div>
+{{else data.telepadOpen}}
+	<div class='notice'>Telepad indicates maintenance protocols active.<BR>Please ensure telepad cover is securely attached.</div>
+{{else}}
+	{{if data.menu == 1}} <!-- BS_MENU_SELECT -->
+		<div style="float:left;">
+			<h2>Manual Controls</h2>
+			<hr>
+			{{:helper.link('Set X Coordinate','arrow-2-e-w',{'setX' : 1})}}
+			<div class='statusDisplay'>{{:data.targetX}}</div>
+			{{:helper.link('Set Y Coordinate','arrow-2-n-s',{'setY' : 1})}}
+			<div class='statusDisplay'>{{:data.targetY}}</div>
+
+			{{:helper.link('Set Sector','copy',{'setZ' : 1})}}
+			<div class='statusDisplay'>{{:data.targetZ}}</div>
+			<BR>
+			{{:helper.link(data.invalid ? 'Invalid Input' : 'Begin Pathing','play',{'pathing' : 1}, data.invalid ? 'linkOff' : '')}}
+			{{if data.invalid}}
+				<div class='statusDisplay' style='float:left'>Warning: Selected sector is inaccessible at this range. Unable to begin pathing.</div>
+			{{else data.dangerous}}
+				<div class='statusDisplay' style='float:left'>Warning: Targeted position undergoing extreme bluespace interference. Possibility of equipment failure high.</div>
+			{{/if}}
+		</div>
+		{{if data.beaconPanel == 1}}
+		<div class="floatRight">
+			{{:helper.link('Close Beacon List','carat-1-n',{'toggleBeaconPanel' : 1})}}
+		</div>
+		<div class='statusDisplay' style="float:right">
+			<h2>Active Beacons</h2>
+			<hr>
+			<table>
+			{{for data.beacons}}
+				<tr>
+					<td>
+						{{:value.text}}
+					</td>
+					<td>
+						{{if value.selected == 0}}{{:helper.link('Select','circle-check',{'selectBeacon' : value.ref}, null,'width75btn noFloat')}} {{else}} {{:helper.link('Cancel','circle-close',{'unselectBeacon' : 1}, null,'width75btn noFloat')}} {{/if}} <br>
+					</td>
+				</tr>
+			{{empty}}
+				No active beacons detected.
+			{{/for}}
+			</table>
+		</div>
+		{{else}}
+		<div class="floatRight">
+			{{:helper.link('Open Beacon List','carat-1-s',{'toggleBeaconPanel' : 1})}}
+		</div>
+		{{/if}}
+	{{else data.menu == 2}} <!-- BS_MENU_MASTERMIND -->
+		<div style="text-align:center">
+			{{if data.workingRelays < data.digitRequirement}}
+				<div class='notice'>Warning: Number of relays insufficient for amount of power required. Damage to crystals likely.</div>
+			{{/if}}
+			Pathfinding calculations in progress. Expected path size: {{:data.digitRequirement}}
+			<div class='statusDisplay' style="height: 30px; width: 70px; text-align: center; vertical-align: center;">{{:data.inputKey}}</div>
+			{{:helper.link('Input Path',null,{'keyInput' : 1})}}
+			<br>
+			<br>
+			{{:helper.link('Test Path','play',{'tryCalc' : 1})}} {{:helper.link('Cancel', 'close',{'cancel' : 1})}}
+		</div>
+	{{else data.menu == 3}} <!-- BS_MENU_PATHFINDING -->
+		{{if data.ticking != 1}}
+			Optimal pathway isolated. Begin opening bluespace tunnel?<br>
+			{{if data.dangerous}}
+				<div class='notice'>Warning: High bluespace interference detected. Opening bluespace tunnel may result in catastrophic equipment failure.</div>
+			{{/if}}
+			{{:helper.link('Begin Opening Tunnel', 'gear', {'startTimer' : 1})}}
+		{{else}}
+			Opening bluespace tunnel, please wait...
+			<div class='statusDisplay'>{{:data.stageText}}</div>
+			{{if data.dangerous}}
+				<div class='notice'>Warning: High bluespace interference detected. For your safety, please stand clear of local relays.</div>
+			{{/if}}
+			{{:helper.displayBar(data.progress, 0, data.delay, 'average')}}
+		{{/if}}
+		{{:helper.link('Cancel', 'close', {'cancel' : 1})}}
+	{{else data.menu == 4}} <!-- BS_MENU_PORTAL -->
+		Bluespace tunnel currently open at ({{:data.targetX}}, {{:data.targetY}}, {{:data.targetZ}})<br>
+		{{:helper.link('Close Bluespace Tunnel', 'close', {'cancel' : 1})}}
+	{{/if}}
+	<h3>Telepad Log</h3>
+	<div class='statusDisplayRecords' style='height:100px;font-size:82%;overflow-y:scroll;clear:both;' name='Telepad Log' value=''>
+	{{:data.log}}
+	</div>
+	<h3>Telepad Power</h3>
+	{{:helper.displayBar(data.power, 0, data.maxpower, 'good', helper.round((data.power/data.maxpower)*100) + "%")}}
+{{/if}}
+</div

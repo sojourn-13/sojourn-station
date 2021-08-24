@@ -69,7 +69,9 @@
 	preloaded_reagents = list("woodpulp" = 10)
 
 /obj/item/device/lighting/glowstick/flare/torch/burn_out()
-	..()
+	STOP_PROCESSING(SSobj, src)
+	on = FALSE
+	update_icon()
 	if(ismob(loc))
 		var/mob/M = loc
 		M.visible_message(
@@ -114,8 +116,7 @@
 	else
 		return
 
-/obj/item/device/lighting/glowstick/flare/torch/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	..()
+/obj/item/device/lighting/glowstick/flare/torch/attackby(obj/item/W as obj, mob/user as mob)
 	if(isflamesource(W))
 		if(fuel <= 0)
 			to_chat(user, SPAN_NOTICE("The [src] has no more cloth to burn."))
@@ -125,6 +126,7 @@
 			return
 		else
 			START_PROCESSING(SSobj, src)
+			update_icon()
 			user.visible_message(
 				SPAN_NOTICE("[user] lights \the [src] with their [W]."),
 				SPAN_NOTICE("You light the [src] with \the [W]. A blazing star is born!")

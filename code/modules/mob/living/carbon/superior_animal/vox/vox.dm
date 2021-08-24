@@ -14,10 +14,12 @@
 	emote_see = list("looks around for a target.")
 	attacktext = "claws"
 	meat_amount = 4
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken/vox
 	mob_size = MOB_MEDIUM
 	can_burrow = FALSE
 	randpixel = 0
 	deathmessage = "slumps down and seems to no longer move!"
+	attack_sound = 'sound/weapons/slash.ogg'
 
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
@@ -33,7 +35,7 @@
 	mag_drop = FALSE
 	ranged = TRUE
 	rounds_left = 1
-	mag_type = /obj/item/weapon/ore
+	mag_type = /obj/item/ore
 	mags_left = 6 //each vox has 6 rocks normally
 	rounds_per_fire = 1
 	reload_message = "picks up a rock!"

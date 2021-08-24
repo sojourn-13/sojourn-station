@@ -6,7 +6,7 @@
 	Thanks to advanced blueprint designs by SI it can also take lumps of scrap to crate refined scrap by simply adding them to the pump's storage."
 	icon = 'icons/obj/machines/petrel_maker.dmi'
 	icon_state = "diesel_greyson"
-	circuit = /obj/item/weapon/circuitboard/petrel_maker
+	circuit = /obj/item/circuitboard/petrel_maker
 	var/petrel_form_plastic = 30 //25/5 = 5 so with grayson upgrades this is 29 sheets of plastic into 120 welder fuel.
 	var/stored_plastic = 0 //How much stored plastic we have
 //	var/convert_speed = 30 SECONDS //How long it takes to covert things
@@ -20,13 +20,13 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 120 //Some drain
 
-/obj/item/weapon/circuitboard/petrel_maker
+/obj/item/circuitboard/petrel_maker
 	build_name = "greyson petrel pump"
 	build_path = /obj/machinery/petrel_maker
 	origin_tech = list(TECH_DATA = 16, TECH_ENGINEERING = 8, TECH_POWER = 14)
 	req_components = list(
-		/obj/item/weapon/stock_parts/manipulator = 1,
-		/obj/item/weapon/stock_parts/micro_laser = 1
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/micro_laser = 1
 	)
 
 /obj/machinery/petrel_maker/proc/try_to_make_petrel(mob/user)
@@ -34,7 +34,7 @@
 	if(petrel_form_plastic <= stored_plastic)
 //		sleep(convert_speed)//So its not istant
 		stored_plastic -= petrel_form_plastic
-		new /obj/item/weapon/reagent_containers/glass/bottle/petrel(loc)
+		new /obj/item/reagent_containers/glass/bottle/petrel(loc)
 		return //No looping
 	else
 		to_chat(user, "<span class='info'>Needed Level of stored Petrel: [petrel_form_plastic]</span>")
@@ -76,22 +76,22 @@
 			else
 				to_chat(user, SPAN_WARNING("You can't insert [sheets_amount_to_transphere] in [name]"))
 			return
-	if (istype(I, /obj/item/weapon/scrap_lump))
+	if (istype(I, /obj/item/scrap_lump))
 		qdel(I)
 		ping()
 		new /obj/item/stack/sheet/refined_scrap(loc)
 		return
-	if (istype(I, /obj/item/weapon/reagent_containers/food/snacks/sandwich))
+	if (istype(I, /obj/item/reagent_containers/food/snacks/sandwich))
 		qdel(I)
 		ping()
-		new /obj/item/weapon/reagent_containers/food/snacks/toasted_guild_sandwich(loc)
+		new /obj/item/reagent_containers/food/snacks/toasted_guild_sandwich(loc)
 		return
 
 /obj/machinery/petrel_maker/RefreshParts()
 	..()
-	for(var/obj/item/weapon/stock_parts/P in component_parts)
-	//	if(istype(P, /obj/item/weapon/stock_parts/micro_laser))
+	for(var/obj/item/stock_parts/P in component_parts)
+	//	if(istype(P, /obj/item/stock_parts/micro_laser))
 		//	convert_speed = clamp((P.rating / convert_speed),1,30) //max level is 6 so 5 sleep or what not
-		if(istype(P, /obj/item/weapon/stock_parts/manipulator))
+		if(istype(P, /obj/item/stock_parts/manipulator))
 			petrel_form_plastic -= clamp((P.rating - petrel_form_plastic),1,30) //Max level is 6 so 21 is min amout for admin spawned things
 	return

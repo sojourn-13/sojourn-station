@@ -61,9 +61,9 @@
 
 	var/obj/structure/closet/crate/excelsior/CR = new /obj/structure/closet/crate/excelsior(LM)
 
-	new /obj/item/weapon/computer_hardware/hard_drive/portable/design/excelsior(CR)
-	new /obj/item/weapon/circuitboard/excelsiorautolathe(CR)
-	new /obj/item/weapon/circuitboard/excelsior_teleporter(CR)
+	new /obj/item/computer_hardware/hard_drive/portable/design/excelsior(CR)
+	new /obj/item/circuitboard/excelsiorautolathe(CR)
+	new /obj/item/circuitboard/excelsior_teleporter(CR)
 
 	for (var/datum/antagonist/A in members)
 		to_chat(A.owner.current, SPAN_NOTICE("Use your excelsior supply stash. [landmark.navigation]"))

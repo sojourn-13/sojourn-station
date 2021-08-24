@@ -285,6 +285,8 @@
 		inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
 		if(ispath(inserted_casing.projectile_type) && C.BB)
 			inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
+		else
+			inserted_casing.BB = null
 		C.update_icon()
 		inserted_casing.update_icon()
 		stored_ammo.Insert(1, inserted_casing)

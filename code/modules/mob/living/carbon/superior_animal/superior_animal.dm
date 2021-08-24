@@ -70,7 +70,7 @@
 	var/attack_sound_chance = 100
 	var/attack_sound_volume = 90
 
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	var/meat_amount = 3
 	//Lodge related products
 	var/leather_amount = 0 //The amount of leather sheets dropped.
@@ -140,6 +140,8 @@
 	var/follow_message = "nods and start following." // Message that the mob emote when they start following. Include the name of the one who follow at the end
 	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
 
+	var/list/known_languages = list() // The languages that the superior mob know.
+
 /mob/living/carbon/superior_animal/New()
 	..()
 	if(!icon_living)
@@ -157,6 +159,9 @@
 	pixel_y = RAND_DECIMAL(-randpixel, randpixel)
 
 	GLOB.superior_animal_list += src
+
+	for(var/language in known_languages)
+		add_language(language)
 
 /mob/living/carbon/superior_animal/Initialize(var/mapload)
 	.=..()

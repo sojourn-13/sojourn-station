@@ -16,7 +16,7 @@
 	poison_per_bite = 2
 	var/atom/cocoon_target
 	poison_type = "stoxin"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/nurse
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/nurse
 	meat_amount = 3
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
@@ -32,7 +32,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_per_bite = 4
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/midwife
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/midwife
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
 	name = "carrier spider"
@@ -79,7 +79,7 @@
 	poison_per_bite = 1 //1u is all it takes to sleep you, your asleep also dosnt prevet it form attacking you more then once meaning this quit quickly stacks without someones help
 	melee_damage_lower = 3
 	melee_damage_upper = 5
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/recluse
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	meat_amount = 2
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
@@ -96,7 +96,7 @@
 	melee_damage_upper = 30
 	poison_per_bite = 4
 	poison_type = "menace"
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/spider/queen
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/queen
 	meat_amount = 3
 	flash_resistances = 5 //For balance against are speedy fello
 	//Giving the queen her own meat type which contains MENACE.

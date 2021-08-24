@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/laser
+/obj/item/gun/energy/laser
 	name = "\"Lightfall\" laser rifle"
 	desc = "\"Old Testament\" brand laser carbine. Deadly and radiant, like the ire of God it represents."
 	icon = 'icons/obj/guns/energy/laser.dmi'
@@ -20,7 +20,7 @@
 	)
 	twohanded = TRUE
 
-/obj/item/weapon/gun/energy/laser/mounted
+/obj/item/gun/energy/laser/mounted
 	self_recharge = TRUE
 	use_external_power = TRUE
 	safety = FALSE
@@ -28,7 +28,7 @@
 	damage_multiplier = 0.7
 	twohanded = FALSE
 
-/obj/item/weapon/gun/energy/laser/mounted/blitz
+/obj/item/gun/energy/laser/mounted/blitz
 	name = "SDF LR \"Strahl\""
 	desc = "A miniaturized laser rifle, remounted for robotic use only."
 	icon_state = "laser_turret"
@@ -36,19 +36,25 @@
 	charge_meter = FALSE
 	twohanded = FALSE
 
-/obj/item/weapon/gun/energy/laser/mounted/cyborg
+/obj/item/gun/energy/laser/mounted/cyborg
 	name = "integrated \"Cog\" lasgun"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made."
-	recharge_time = 10 //Time it takes for shots to recharge (in ticks)
+	icon = 'icons/obj/guns/energy/retro.dmi'
+	icon_state = "retro"
+	recharge_time = 4 //Time it takes for shots to recharge (in ticks)
+	damage_multiplier = 0.8
+	projectile_type = /obj/item/projectile/beam/heavylaser
+	cell_type = /obj/item/cell/medium/moebius/high
+	charge_cost = 50
 
-/obj/item/weapon/gun/energy/laser/practice
+/obj/item/gun/energy/laser/practice
 	name = "OT LG \"Lightfall\" - P"
 	desc = "A modified version of \"Old Testament\" brand laser carbine, this one fires less concentrated energy bolts, designed for target practice."
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 2)
 	price_tag = 500
 	projectile_type = /obj/item/projectile/beam/practice
 
-/obj/item/weapon/gun/energy/retro
+/obj/item/gun/energy/retro
 	name = "\"Cog\" lasgun"
 	icon = 'icons/obj/guns/energy/retro.dmi'
 	icon_state = "retro"
@@ -70,13 +76,13 @@
 	)
 	twohanded = TRUE
 
-/obj/item/weapon/gun/energy/retro/New()
+/obj/item/gun/energy/retro/New()
 	..()
 	if(prob(50))
 		icon = 'icons/obj/guns/energy/retro_alt.dmi'
 	return
 
-/obj/item/weapon/gun/energy/captain
+/obj/item/gun/energy/captain
 	name = "\"Destiny\" energy pistol"
 	icon = 'icons/obj/guns/energy/capgun.dmi'
 	icon_state = "caplaser"
@@ -98,7 +104,7 @@
 	)
 	twohanded = FALSE
 
-/obj/item/weapon/gun/energy/firestorm
+/obj/item/gun/energy/firestorm
 	name = "\"Firestorm\" assault SMG"
 	desc = "A front loading laser SMG made more close quarters, compactness and its high rate of fire. Luckily it appears to make up for its charge usage by taking medium cell batteries.\
 	On the side of the gun under the barrel appears to be an 'H&S' marking. Surprising considering the quality of the weapon!"
@@ -108,7 +114,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/Laser.ogg'
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam/weak/smg
 	projectile_color = "#0000FF"
@@ -120,8 +126,8 @@
 	recoil_buildup = 2
 	one_hand_penalty = 3
 	projectile_type = /obj/item/projectile/beam
-	suitable_cell = /obj/item/weapon/cell/medium
-	cell_type = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/medium
+	cell_type = /obj/item/cell/small
 	charge_cost = 40
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
@@ -129,7 +135,7 @@
 		FULL_AUTO_600
 		)
 
-/obj/item/weapon/gun/energy/lasercore
+/obj/item/gun/energy/lasercore
 	name = "\"Laser Core\" laser carbine"
 	desc = "A high-powered laser carbine made by H&S. It was hailed back in its prime for its high-powered shots and compactness. However, it really consumes power."
 	icon = 'icons/obj/guns/energy/lasercore.dmi'

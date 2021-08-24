@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/shovel
+/obj/item/tool/shovel
 	name = "shovel"
 	desc = "A large tool for digging and moving dirt and rock."
 	icon_state = "shovel"
@@ -15,8 +15,11 @@
 	edge = TRUE
 	max_health = 500
 	tool_qualities = list(QUALITY_SHOVELING = 35, QUALITY_DIGGING = 35, QUALITY_EXCAVATION = 10, QUALITY_HAMMERING = 15)
+	effective_faction = list("spider") // Spiders are weak to crushing.
+	damage_mult = 2
+	hitsound = 'sound/weapons/smash.ogg'
 
-/obj/item/weapon/tool/shovel/improvised
+/obj/item/tool/shovel/improvised
 	name = "junk shovel"
 	desc = "A large but fragile tool for moving dirt and rock, made by hand. Has more than enough space for tool mods to make it better."
 	icon_state = "impro_shovel"
@@ -24,7 +27,7 @@
 	degradation = 1.5
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
-/obj/item/weapon/tool/shovel/combat
+/obj/item/tool/shovel/combat
 	name = "combat crovel"
 	desc = "A plasteel crovel with a sharp head, serrated side, crowbar lever on the pommel, and a fold-able winch for easy transport. For when you need to dig out trenches, hammer barricades together, cave in skulls, and cut your steak."
 	icon_state = "combat_shovel"
@@ -36,7 +39,7 @@
 	tool_qualities = list(QUALITY_SHOVELING = 45, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_HAMMERING = 15, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
 	workspeed = 1.2
 
-/obj/item/weapon/tool/shovel/onestar_shovel
+/obj/item/tool/shovel/onestar_shovel
 	name = "Greyson Positronic shovel"
 	desc = "A large tool for digging and moving dirt and rock with the finest engineering put into it for maximum lift and heaving."
 	icon_state = "one_star_shovel"
@@ -48,7 +51,7 @@
 	degradation = 0.8
 	max_upgrades = 2
 
-/obj/item/weapon/tool/shovel/spade
+/obj/item/tool/shovel/spade
 	name = "spade"
 	desc = "A small tool ofter used for simple gardening task such as digging soil and moving dirt."
 	icon_state = "spade"
@@ -60,7 +63,7 @@
 	tool_qualities = list(QUALITY_SHOVELING = 20, QUALITY_DIGGING = 20, QUALITY_EXCAVATION = 10,QUALITY_HAMMERING = 10)
 	max_upgrades = 2
 
-/obj/item/weapon/tool/shovel/power
+/obj/item/tool/shovel/power
 	name = "power shovel 9000"
 	desc = "A powered shovel for all your dumpster diving needs."
 	icon_state = "powershovel"
@@ -74,4 +77,4 @@
 	use_power_cost = 0.8
 	degradation = 0.7
 	max_upgrades = 4
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium

@@ -9,6 +9,11 @@
 	//plug before baymed arrives
 	var/obj/item/device/radio/silicon_radio
 
+	brute_mod_perk = 0.7 //70% of brute and burn damage.
+	burn_mod_perk = 0.7
+	toxin_mod_perk = 0.1 //10% of toxins/o2
+	oxy_mod_perk = 0.1
+
 	var/list/hud_list[10]
 	var/list/speech_synthesizer_langs = list()	//which languages can be vocalized by the speech synthesizer
 
@@ -26,8 +31,8 @@
 	var/list/datum/alarm/queued_alarms = new()
 
 	var/list/access_rights
-	var/obj/item/weapon/card/id/idcard
-	var/idcard_type = /obj/item/weapon/card/id/synthetic
+	var/obj/item/card/id/idcard
+	var/idcard_type = /obj/item/card/id/synthetic
 
 	var/email_ringtone = TRUE
 

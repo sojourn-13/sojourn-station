@@ -189,10 +189,27 @@
 	required_reagents = list("sugar" = 1, "blattedin" = 1, "sulfur" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/psi_juice
+	result = "psi_juice"
+	required_reagents = list("psilocybin" = 1, "synaptizine" = 1, "cryptobiolin" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/psi_juice_inhaler
+	result = null
+	required_reagents = list("psi_juice" = 15, "water" = 15, "silicon" = 15)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/psi_juice_inhaler/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/psi_injector(location)
+
 /datum/chemical_reaction/ryetalyn
 	result = "ryetalyn"
 	required_reagents = list("arithrazine" = 1, "carbon" = 1)
 	result_amount = 2
+
 /datum/chemical_reaction/negative_ling
 	result = "negativeling"
 	required_reagents = list("ryetalyn" = 1, "carbon" = 1)
@@ -338,7 +355,6 @@
 	result = "citalopram"
 	required_reagents = list("mindbreaker" = 1, "carbon" = 1)
 	result_amount = 3
-
 
 /datum/chemical_reaction/paroxetine
 	result = "paroxetine"

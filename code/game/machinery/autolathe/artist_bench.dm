@@ -23,7 +23,7 @@
 	desc = "Insert wood, steel, glass, plasteel, plastic and a bit of your soul to create a beautiful work of art."
 	icon = 'icons/obj/machines/autolathe.dmi'
 	icon_state = "bench"
-	circuit = /obj/item/weapon/circuitboard/artist_bench
+	circuit = /obj/item/circuitboard/artist_bench
 	have_disk = FALSE
 	have_reagents = FALSE
 	have_recycling = FALSE
@@ -100,7 +100,7 @@
 			return TRUE
 		return FALSE
 
-/obj/machinery/autolathe/artist_bench/proc/insert_oddity(mob/living/user, obj/item/inserted_oddity) //Not sure if nessecary to name oddity this way. obj/item/weapon/oddity/inserted_oddity
+/obj/machinery/autolathe/artist_bench/proc/insert_oddity(mob/living/user, obj/item/inserted_oddity) //Not sure if nessecary to name oddity this way. obj/item/oddity/inserted_oddity
 	if(oddity)
 		to_chat(user, SPAN_NOTICE("There's already \a [oddity] inside [src]."))
 		return
@@ -194,7 +194,7 @@
 	//var/list/LWeights = list(weight_mechanical, weight_cognition, weight_biology, weight_robustness, weight_toughness, weight_vigilance)
 
 	if(full_artwork == "artwork_revolver")
-		var/obj/item/weapon/gun/projectile/revolver/artwork_revolver/R = new(src)
+		var/obj/item/gun/projectile/revolver/artwork_revolver/R = new(src)
 
 		var/gun_pattern = pickweight(list(
 			"pistol" = 16 + weight_robustness + weight_biology,
@@ -267,7 +267,7 @@
 		return S
 
 	else if(full_artwork == "artwork_oddity")
-		var/obj/item/weapon/oddity/artwork/O = new(src)
+		var/obj/item/oddity/artwork/O = new(src)
 		var/list/oddity_stats = list(STAT_MEC = rand(0,1), STAT_COG = rand(0,1), STAT_BIO = rand(0,1), STAT_ROB = rand(0,1), STAT_TGH = rand(0,1), STAT_VIG = rand(0,1))//May not be nessecary
 		var/stats_amt = 3
 		if(ins_used >= 85)//Arbitrary values
@@ -285,7 +285,7 @@
 		return O
 
 	else if(full_artwork == "artwork_toolmod")
-		var/obj/item/weapon/tool_upgrade/artwork_tool_mod/TM = new(src, ins_used)
+		var/obj/item/tool_upgrade/artwork_tool_mod/TM = new(src, ins_used)
 		return TM
 	else
 		return "ERR_ARTWORK"
@@ -386,4 +386,4 @@
 #undef ERR_NOLICENSE
 #undef ERR_PAUSED
 #undef ERR_NOINSIGHT
-#undef MAX_STAT_VALUE
+

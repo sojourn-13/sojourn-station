@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/boltgun/light
+/obj/item/gun/projectile/boltgun/light
 	name = "\"Sika\" light boltgun"
 	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
 	icon = 'icons/obj/guns/projectile/lightboltgun.dmi'
@@ -14,12 +14,12 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light
+	sawn = /obj/item/gun/projectile/boltgun/sawn/light
 
-/obj/item/weapon/gun/projectile/boltgun/sawn/light
+/obj/item/gun/projectile/boltgun/sawn/light
 	name = "\"obrez\" light boltgun"
 	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
@@ -34,7 +34,7 @@
 	saw_off = FALSE
 
 //Wood verson
-/obj/item/weapon/gun/projectile/boltgun/light_wood
+/obj/item/gun/projectile/boltgun/light_wood
 	name = "\"Roe\" light boltgun"
 	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .257, it's a common varmint and plinking rifle."
 	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
@@ -50,11 +50,11 @@
 	sharp = FALSE
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_GLASS = 10)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	saw_off = TRUE
-	sawn = /obj/item/weapon/gun/projectile/boltgun/sawn/light_wood
+	sawn = /obj/item/gun/projectile/boltgun/sawn/light_wood
 
-/obj/item/weapon/gun/projectile/boltgun/sawn/light_wood
+/obj/item/gun/projectile/boltgun/sawn/light_wood
 	name = "\"obrez\" light boltgun"
 	desc = "A crudly mangled and sawn-down .257 bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'

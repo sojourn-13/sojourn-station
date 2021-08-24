@@ -31,7 +31,7 @@
 /turf/simulated/floor/bluegrid,
 /area/crawler)
 "j" = (
-/obj/item/weapon/tool/pickaxe/jackhammer/onestar,
+/obj/item/tool/pickaxe/jackhammer/onestar,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "k" = (
@@ -43,23 +43,23 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "x" = (
-/obj/item/weapon/tool/pickaxe/onestar,
+/obj/item/tool/pickaxe/onestar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "y" = (
-/obj/item/weapon/tool/pickaxe/jackhammer/onestar,
+/obj/item/tool/pickaxe/jackhammer/onestar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "O" = (
-/obj/item/weapon/tool/pickaxe/drill/onestar,
+/obj/item/tool/pickaxe/drill/onestar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "R" = (
-/obj/item/weapon/tool/pickaxe/onestar,
+/obj/item/tool/pickaxe/onestar,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "T" = (
-/obj/item/weapon/tool/pickaxe/drill/onestar,
+/obj/item/tool/pickaxe/drill/onestar,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 

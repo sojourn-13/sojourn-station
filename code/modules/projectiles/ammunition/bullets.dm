@@ -381,6 +381,26 @@
 /obj/item/ammo_casing/antim/ion/prespawned
 	amount = 5
 
+//// 30mm rolled shot ////
+/obj/item/ammo_casing/ball
+	name = "shell casing"
+	desc = "A 30mm rolled shot casing."
+	icon_state = "ball"
+	spent_icon = "ball-spent"
+	caliber = CAL_BALL
+	projectile_type = /obj/item/projectile/bullet/ball
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 5
+
+/obj/item/ammo_casing/ball/Initialize()
+	. = ..()
+	var/matrix/rotation_matrix = matrix()
+	rotation_matrix.Turn(round(45 * rand(0, 32) / 2))
+	src.transform = rotation_matrix * 0.5
+
+/obj/item/ammo_casing/ball/prespawned
+	amount = 4
+
 //// Shotgun ammo ////
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
@@ -584,7 +604,7 @@
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/ammo_casing/a75
-	desc = "A 20mm gyrojet casing."
+	desc = "A .70 gyrojet casing."
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 

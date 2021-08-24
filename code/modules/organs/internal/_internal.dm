@@ -155,7 +155,7 @@
 /obj/item/organ/internal/proc/prepare_eat()
 	if(BP_IS_ROBOTIC(src))
 		return // No eating cybernetic implants!
-	var/obj/item/weapon/reagent_containers/food/snacks/organ/S = new
+	var/obj/item/reagent_containers/food/snacks/organ/S = new
 	S.name = name
 	S.desc = desc
 	S.icon = icon
@@ -167,7 +167,7 @@
 /obj/item/organ/internal/attack(mob/living/carbon/M, mob/user)
 	if(M == user && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		var/obj/item/weapon/reagent_containers/food/snacks/S = prepare_eat()
+		var/obj/item/reagent_containers/food/snacks/S = prepare_eat()
 		if(S)
 			H.drop_item()
 			H.put_in_active_hand(S)

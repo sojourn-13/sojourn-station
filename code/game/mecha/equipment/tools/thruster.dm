@@ -9,12 +9,13 @@
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 5)
 	equip_cooldown = 5
 	energy_drain = 50
+	price_tag = 300
 	var/wait = 0
-	var/obj/item/weapon/tank/jetpack/mecha/thrust
+	var/obj/item/tank/jetpack/mecha/thrust
 	equip_ready = FALSE
 
 /obj/item/mecha_parts/mecha_equipment/thruster/New()
-	thrust = new/obj/item/weapon/tank/jetpack/mecha(src)
+	thrust = new/obj/item/tank/jetpack/mecha(src)
 	..()
 
 /obj/item/mecha_parts/mecha_equipment/thruster/can_attach(obj/mecha/M)

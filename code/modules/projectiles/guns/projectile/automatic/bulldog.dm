@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/bulldog
+/obj/item/gun/projectile/automatic/bulldog
 	name = "\"Bulldog\" carbine"
 	desc = "An economy-class carbine manufactured by Seinemetall Defense GmbH and used as a common carry gun for security and police far and wide, though also popular with various adventurous sorts as a semi-disposable option in the bush. Compact and reliable. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/bulldog.dmi'
@@ -22,7 +22,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/bulldog/update_icon()
+/obj/item/gun/projectile/automatic/bulldog/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -38,12 +38,12 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/bulldog/Initialize()
+/obj/item/gun/projectile/automatic/bulldog/Initialize()
 	. = ..()
 	update_icon()
 
 
-/obj/item/weapon/gun/projectile/automatic/bulldog/rds
+/obj/item/gun/projectile/automatic/bulldog/rds
 	name = "\"Bulldog\" carbine"
 	desc = "A common carry gun manufactured by Seinemetall Defense GmbH for security and police far and wide. Compact and reliable. Uses .257 Carbine rounds. This one comes with red dot sight."
 	icon = 'icons/obj/guns/projectile/bulldog_rds.dmi'

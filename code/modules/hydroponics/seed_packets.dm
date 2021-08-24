@@ -133,6 +133,7 @@ var/global/list/plant_seed_sprites = list()
 
 /obj/item/seeds/bluespacetomatoseed
 	seed_type = "bluespacetomato"
+	price_tag = 180
 
 /obj/item/seeds/bluespacetomatoseed/New()
 	..()

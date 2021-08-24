@@ -33,11 +33,11 @@
 	uniform = /obj/item/clothing/under/orange
 	mask = /obj/item/clothing/mask/breath
 	shoes = /obj/item/clothing/shoes/orange
-	r_pocket = /obj/item/weapon/tank/emergency_oxygen
-	back = /obj/item/weapon/storage/backpack/sport/orange
+	r_pocket = /obj/item/tank/emergency_oxygen
+	back = /obj/item/storage/backpack/sport/orange
 
 /decl/hierarchy/outfit/escapedprisoner/hobo
-	belt = /obj/item/weapon/gun/projectile/revolver/handmade
+	belt = /obj/item/gun/projectile/revolver/handmade
 	l_pocket = /obj/item/ammo_casing/magnum/scrap/prespawned
 
 /obj/effect/mob_spawn/human/prisoner_transport/hobo
@@ -62,8 +62,53 @@
 	head = /obj/item/clothing/head/helmet/steelpot
 	shoes = /obj/item/clothing/shoes/color/black
 	suit = /obj/item/clothing/suit/armor/flackvest
-	suit_store = /obj/item/weapon/gun/projectile/boltgun
-	back = /obj/item/weapon/storage/backpack/satchel
+	suit_store = /obj/item/gun/projectile/boltgun
+	back = /obj/item/storage/backpack/satchel
 	r_pocket = /obj/item/ammo_magazine/speed_loader_rifle_75
 	id_slot = slot_wear_id
-	id_type = /obj/item/weapon/card/id
+	id_type = /obj/item/card/id
+
+/obj/effect/mob_spawn/human/exl_civ
+	name = "storage sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in excelsior equipment."
+	mob_name = "a scavenger"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior
+	short_desc = "You are a excelsior, move ever upwards."
+	flavour_text = "It seems you've arrived. You're here to get the good stuff and skedaddle with your life intact. \
+	There may be others to cooperate with, but don't count on it."
+	assignedrole = "Excelsior Slave"
+	title = "Excelsior Agent"
+	stat_modifiers = list(
+		STAT_ROB = 26,
+		STAT_TGH = 26,
+		STAT_BIO = 18,
+		STAT_MEC = 18,
+		STAT_VIG = 18,
+		STAT_COG = 10
+	)
+
+/obj/effect/mob_spawn/human/exl_armored
+	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior/equipped
+
+/obj/effect/mob_spawn/human/void_wolf
+	name = "storage sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in void wolf equipment."
+	mob_name = "a scavenger"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/antagonist/mercenary/void_wolf
+	short_desc = "You are a Void wolf."
+	flavour_text = "It seems you've arrived. You're here to get the good stuff and skedaddle with your life intact. \
+	There may be others to cooperate with, but don't count on it."
+	assignedrole = "Void Wolf"
+	title = "Void Wolf"
+	stat_modifiers = list(
+		STAT_ROB = 35,
+		STAT_TGH = 35,
+		STAT_BIO = 25,
+		STAT_MEC = 25,
+		STAT_VIG = 18,
+		STAT_COG = 10
+	)

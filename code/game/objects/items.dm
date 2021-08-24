@@ -80,6 +80,10 @@
 	var/max_upgrades = 3
 	var/list/prefixes = list()
 
+
+	var/list/effective_faction = list() // Which faction the item is effective against.
+	var/damage_mult = 1 // The damage multiplier the item get when attacking that faction.
+
 /obj/item/Initialize()
 	if(islist(armor))
 		armor = getArmor(arglist(armor))
@@ -164,7 +168,9 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.stats.getPerk(PERK_MARKET_PROF))
-			message += SPAN_NOTICE("\nThis item cost: [price_tag == null ? 0 : price_tag][CREDITS]")
+			message += SPAN_NOTICE("\nThis item cost: [get_item_cost()][CREDITS]")
+		if(H.stats.getPerk(PERK_MARKET_PROF) && surplus_tag == TRUE)
+			message += SPAN_NOTICE("\nThis item has a surplus tag and is only worth ten percent its usual value on exports.")
 
 	return ..(user, distance, "", message)
 
@@ -186,7 +192,7 @@
 	add_hud_actions(target)
 
 /obj/item/attack_ai(mob/user as mob)
-	if(istype(loc, /obj/item/weapon/robot_module))
+	if(istype(loc, /obj/item/robot_module))
 		//If the item is part of a cyborg module, equip it
 		if(!isrobot(user))
 			return
@@ -217,11 +223,11 @@
 	return TRUE
 
 // called when this item is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
-/obj/item/proc/on_exit_storage(obj/item/weapon/storage/S as obj)
+/obj/item/proc/on_exit_storage(obj/item/storage/S as obj)
 	return
 
 // called when this item is added into a storage item, which is passed on as S. The loc variable is already set to the storage item.
-/obj/item/proc/on_enter_storage(obj/item/weapon/storage/S as obj)
+/obj/item/proc/on_enter_storage(obj/item/storage/S as obj)
 	return
 
 // called when "found" in pockets and storage items. Returns 1 if the search should end.
@@ -369,7 +375,7 @@
 	if(!..())
 		return 0
 
-	if(istype(src, /obj/item/weapon/melee/energy))
+	if(istype(src, /obj/item/melee/energy))
 		return
 
 	if((flags & NOBLOODY)||(item_flags & NOBLOODY))

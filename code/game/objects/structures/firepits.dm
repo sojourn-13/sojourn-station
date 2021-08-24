@@ -1,42 +1,43 @@
-//Buildable fireplaces, sadly while testing it oom'd and has some issues with igniting, not going to risk merging it so I'm leaving it to work on later. -Kaz
-/*
 /obj/structure/bonfire
 	name = "bonfire"
 	desc = "For grilling, broiling, charring, smoking, heating, roasting, toasting, simmering, searing, melting, and occasionally burning things."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "bonfire"
-	density = FALSE
-	anchored = TRUE
+	density = FALSE // We can go over it, needed to buckle people to it.
+	anchored = TRUE // We can't move it around.
+	can_buckle = FALSE // We can't buckle to it just yet.
 	buckle_lying = FALSE
-	var/burning = FALSE
-	var/next_fuel_consumption = 0 // world.time of when next item in fuel list gets eatten to sustain the fire.
-	var/grill = FALSE
-	var/datum/material/material
-	var/set_temperature = T0C + 30	//K
-	var/heating_power = 80000
+	var/burning = FALSE // Are we burning right now?
+	var/grill = FALSE // Does it have a grill?
+	var/fuel = 0 // How much fuel does it have right now, AKA the plank currently being burned
+	var/fuel_conversion_rate = 1000 // How much fuel does a single plank give?
+	var/fuel_usage_rate = 5 // How much fuel does it use each tick.
+	var/start_fuel_use = 50 // How much fuel does it use when starting?
 
-/obj/structure/bonfire/Initialize(mapload, material_name)
-	. = ..()
-	if(!material_name)
-		material_name = MATERIAL_WOOD
-	if(!material)
-		qdel(src)
-		return
-	color = material.icon_colour
+	var/burn_damage = 4 // How much damage does it deal to the buckled mob? || APPLY TO EVERY BODYPART, MULTIPLY BY 7 TO GET THE REAL AMOUNT OF DAMAGE
 
-/obj/structure/bonfire/permanent/Initialize(mapload, material_name)
-	. = ..()
-	ignite()
+	var/obj/item/reagent_containers/food/snacks/meat/current_steak = null // The steak it is currently cooking
+	var/cooking_time = 10 // The number of tick it take to cook the steak
+	var/time = 0 // Timer to cook the steam
 
+/obj/structure/bonfire/Created()
+	fuel = fuel_conversion_rate * 5 // Start with fuel when fabricated
+	return
+
+/obj/structure/bonfire/New()
+	START_PROCESSING(SSobj, src)
+	..()
+
+// Attack stuff
 /obj/structure/bonfire/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill)
+	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill) // Make either a stake or a grill with the rods, not both.
 		var/obj/item/stack/rods/R = W
-		var/choice = input(user, "What would you like to construct?", "Bonfire") as null|anything in list("Stake","Grill")
+		var/choice = input(user, "What would you like to construct?", "Bonfire") as null|anything in list("Stake","Grill") // Choice
 		switch(choice)
 			if("Stake")
 				R.use(1)
-				can_buckle = TRUE
-				buckle_require_restraints = TRUE
+				can_buckle = TRUE // We can buckle to the fire!
+				buckle_require_restraints = TRUE // No one will get willingly buckled
 				to_chat(user, "<span class='notice'>You add a rod to \the [src].</span>")
 				var/mutable_appearance/rod_underlay = mutable_appearance('icons/obj/structures.dmi', "bonfire_rod")
 				rod_underlay.pixel_y = 16
@@ -44,205 +45,133 @@
 				underlays += rod_underlay
 			if("Grill")
 				R.use(1)
-				grill = TRUE
+				grill = TRUE // We can cook !
 				to_chat(user, "<span class='notice'>You add a grill to \the [src].</span>")
 				update_icon()
 			else
 				return ..()
 
-	else if(istype(W, /obj/item/weapon/reagent_containers/food/snacks/meat) && grill == TRUE)
-		qdel(W)
-		new /obj/item/weapon/reagent_containers/food/snacks/meatsteak(src.loc)
+	else if(istype(W, /obj/item/reagent_containers/food/snacks/meat) && grill == TRUE && !current_steak) // MEAT !
+		current_steak = W // Start cooking the steak
+		insert_item(W, user) // insert the steak inside the fire
 
-	else if(istype(W, /obj/item/stack/material/wood))
+	else if(istype(W, MATERIAL_WOOD)) // If it's wood, use it as fuel
 		add_fuel(W, user)
 
-	else if(QUALITY_CAUTERIZING in W.tool_qualities)
-		ignite()
+	else if(isflamesource(W))
+		ignite() // Start the fire
+
 	else
 		return ..()
 
 /obj/structure/bonfire/attack_hand(mob/user)
 	if(buckled_mob)
 		return ..()
+	DropFuel(user) // Take out some unused fuel
 
-	if(get_fuel_amount())
-		remove_fuel(user)
-	else
-		dismantle(user)
+// Fuel stuff
+/obj/structure/bonfire/proc/add_fuel(obj/item/W, mob/user)
+	insert_item(W, user) // Insert the plank in the fire
+	user.visible_message(
+						SPAN_NOTICE("[user] insert the [W.name] in the [src.name].") // No need for the user message sine 'insert_item' handle that
+						)
 
-
-/obj/structure/bonfire/proc/dismantle(mob/user)
-	if(!burning)
-		user.visible_message("[user] starts dismantling \the [src].", "You start dismantling \the [src].")
-		if(do_after(user, 5 SECONDS))
-			//for(var/i = 1 to 5)
-				//material.place_dismantled_product(get_turf(src))
-			user.visible_message("[user] dismantles down \the [src].", "You dismantle \the [src].")
-			qdel(src)
-	else
-		to_chat(user, "<span class='warning'>\The [src] is still burning. Extinguish it first if you want to dismantle it.</span>")
-
-/obj/structure/bonfire/proc/get_fuel_amount()
-	var/F = 0
-	for(var/A in contents)
-		if(istype(A, /obj/item/stack/material/wood))
-			F += 4.0
-	return F
-
-/obj/structure/bonfire/permanent/get_fuel_amount()
-	return 10
-
-/obj/structure/bonfire/proc/remove_fuel(mob/user)
-	if(get_fuel_amount())
-		var/atom/movable/AM = pop(contents)
-		AM.forceMove(get_turf(src))
-		to_chat(user, "<span class='notice'>You take \the [AM] out of \the [src] before it has a chance to burn away.</span>")
-		update_icon()
-
-/obj/structure/bonfire/permanent/remove_fuel(mob/user)
-	dismantle(user)
-
-/obj/structure/bonfire/proc/add_fuel(atom/movable/new_fuel, mob/user)
-	if(get_fuel_amount() >= 20)
-		to_chat(user, "<span class='warning'>\The [src] already has enough fuel!</span>")
-		return FALSE
-	if(istype(new_fuel, /obj/item/stack/material/wood))
-		var/obj/item/stack/F = new_fuel
-		var/obj/item/stack/S = F.split(1)
-		if(S)
-			S.forceMove(src)
-			to_chat(user, "<span class='warning'>You add \the [new_fuel] to \the [src].</span>")
-			update_icon()
-			return TRUE
-		return FALSE
-	else
-		to_chat(user, "<span class='warning'>\The [src] needs raw wood to burn, \a [new_fuel] won't work.</span>")
-		return FALSE
-
-/obj/structure/bonfire/permanent/add_fuel(mob/user)
-	to_chat(user, "<span class='warning'>\The [src] has plenty of fuel and doesn't need more fuel.</span>")
-
-/obj/structure/bonfire/proc/consume_fuel(var/obj/item/stack/consumed_fuel)
-	if(!istype(consumed_fuel))
-		qdel(consumed_fuel) // Don't know, don't care.
-		return FALSE
-
-	else if(istype(consumed_fuel, /obj/item/stack/material/wood)) // One log makes two planks of wood.
-		next_fuel_consumption = world.time + 4 MINUTE
-		qdel(consumed_fuel)
-		update_icon()
+/obj/structure/bonfire/proc/use_fuel(var/use)
+	if(fuel >= use) // Did we use up the fuel in the ""current"" plank yet?
+		fuel -= use // If not, burn the plank a bit more.
 		return TRUE
+	else if(consume_fuel()) // if we're out of fuel, burn another plank !
+		fuel -= use
+		return TRUE
+	else // If we're also out of planks, burn the rest of the fuel
+		fuel = 0
+		return FALSE
+
+// Here we turn planks into gasoline !
+/obj/structure/bonfire/proc/consume_fuel()
+	for(var/item in contents) // Check the bonfire's inventory
+		if(istype(item, /obj/item/stack/material/wood)) // Is it wood?
+			var/obj/item/stack/material/wood/W = item // Wood-specific vars
+			W.use(1) // Use the wood, it will also delete itself when completly used up
+			fuel += fuel_conversion_rate // Add the fuel
+			return TRUE
+	return FALSE // We don't have anything to burn !
+
+// Remove an unburned plank from the flames
+/obj/structure/bonfire/proc/DropFuel(mob/user)
+	for(var/obj/item in contents) // Check the fire's inventory
+		if(istype(item, /obj/item/stack/material/wood)) // Wood!
+			user.visible_message(SPAN_NOTICE("[user] remove an intact [item.name] from the [src.name].")) // No need for the user message sine 'eject_item' handle that
+			eject_item(item, user) // Remove the object
+			return TRUE
+	to_chat(user, SPAN_NOTICE("There are no intact planks in the [src.name].")) // No wood...
 	return FALSE
 
-/obj/structure/bonfire/permanent/consume_fuel()
-	return TRUE
+/obj/structure/bonfire/Process()
+	if(burning) // Are we burning?
+		if(use_fuel(fuel_usage_rate)) // Did we have enough fuel for this tick?
+			if(buckled_mob) // Are we burning someone at the stake?
 
-/* //Doesn't need to effect atmos. -Kaz
-/obj/structure/bonfire/proc/check_oxygen()
-	var/datum/gas_mixture/G = loc.return_air()
-	if(G.gas[/datum/gas/oxygen] < 1)
-		return FALSE
-	return TRUE
-*/
+				// BURN !!
+				buckled_mob.apply_damage(burn_damage, BURN, def_zone = BP_HEAD)
+				buckled_mob.apply_damage(burn_damage, BURN, def_zone = BP_CHEST)
+				buckled_mob.apply_damage(burn_damage, BURN, def_zone = BP_GROIN)
+				buckled_mob.apply_damage(burn_damage, BURN, def_zone = BP_L_ARM)
+				buckled_mob.apply_damage(burn_damage, BURN, def_zone = BP_R_ARM)
+				buckled_mob.apply_damage(burn_damage, BURN, def_zone = BP_L_LEG)
+				buckled_mob.apply_damage(burn_damage, BURN, def_zone = BP_R_LEG)
 
+			if(current_steak) // Are we cooking?
+				time++ // Clock go tick-tock...
+				if(time >= cooking_time) // The steak is done.
+					qdel(current_steak) // Delete the steak
+					current_steak = null // Free up the variable for the next step
+					time = initial(time) // Reset the clock
+					new /obj/item/reagent_containers/food/snacks/meatsteak(src.loc) // Cooked Steak !
+					visible_message(SPAN_NOTICE("The steak finish cooking.")) // Little message
+		else // We ran out of fuel.
+			extinguish() // The fire is no more.
+
+// Turn off the fire
 /obj/structure/bonfire/proc/extinguish()
-	if(burning)
-		burning = FALSE
+	if(burning) // Only proceed if we aren't already off
+		burning = FALSE // No longer burning
 		update_icon()
-		STOP_PROCESSING(SSobj, src)
 		visible_message("<span class='notice'>\The [src] stops burning.</span>")
 
+// Turn on the fire
 /obj/structure/bonfire/proc/ignite()
-	if(!burning && get_fuel_amount())
-		burning = TRUE
+	if(!burning && use_fuel(start_fuel_use)) // Make sure we aren't already on and that we have enough fuel
+		burning = TRUE // We're burning now.
 		update_icon()
-		START_PROCESSING(SSobj, src)
 		visible_message("<span class='warning'>\The [src] starts burning!</span>")
-
-/obj/structure/bonfire/proc/burn()
-	var/turf/current_location = get_turf(src)
-	current_location.hotspot_expose(1000, 500)
-	for(var/A in current_location)
-		if(A == src)
-			continue
-		if(isobj(A))
-			var/obj/O = A
-			O.fire_act(null, 1000, 500)
-		else if(isliving(A) && get_fuel_amount() > 4)
-			var/mob/living/L = A
-			L.adjust_fire_stacks(get_fuel_amount() / 4)
-			L.IgniteMob()
 
 /obj/structure/bonfire/update_icon()
 	overlays.Cut()
 	if(burning)
 		var/state
-		switch(get_fuel_amount())
-			if(0 to 4.5)
+		switch(fuel)
+			if(0 to 500)
 				state = "bonfire_warm"
-			if(4.6 to 10)
+			if(501 to 1000)
 				state = "bonfire_hot"
 		var/image/I = image(icon, state)
 		I.appearance_flags = RESET_COLOR
 		overlays += I
-
-		if(buckled_mob && get_fuel_amount() >= 5)
+		if(buckled_mob && fuel >= 5)
 			I = image(icon, "bonfire_intense")
 			I.pixel_y = 13
 			I.layer = MOB_LAYER + 0.1
 			I.appearance_flags = RESET_COLOR
 			overlays += I
-
-		var/light_strength = max(get_fuel_amount() / 2, 2)
+		var/light_strength = max(clamp(fuel/10, 1, 7), 2)
 		set_light(light_strength, light_strength, "#FF9933")
 	else
 		set_light(0)
-
 	if(grill)
 		var/image/grille_image = image(icon, "bonfire_grill")
 		grille_image.appearance_flags = RESET_COLOR
 		overlays += grille_image
-
-
-/obj/structure/bonfire/Process(delta_time)
-	//if(!check_oxygen())
-		//extinguish()
-		//return
-	if(world.time >= next_fuel_consumption)
-		if(!consume_fuel(pop(contents)))
-			extinguish()
-			return
-	if(!grill)
-		burn()
-
-	if(burning)
-		var/W = get_fuel_amount()
-		if(W >= 5)
-			var/datum/gas_mixture/env = loc.return_air()
-			if(env && abs(env.temperature - set_temperature) > 0.1)
-				var/transfer_moles = 0.25 * env.total_moles
-				var/datum/gas_mixture/removed = env.remove(transfer_moles)
-
-				if(removed)
-					var/heat_transfer = removed.get_thermal_energy_change(set_temperature)
-					if(heat_transfer > 0)
-						heat_transfer = min(heat_transfer , heating_power)
-
-						removed.add_thermal_energy(heat_transfer)
-
-				env.merge(removed)
-
-/obj/structure/bonfire/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
-	ignite()
-
-// Use this to have things react to having water applied to them.
-/atom/movable/proc/water_act(amount)
-	return
-
-/obj/structure/bonfire/water_act(amount)
-	if(prob(amount * 10))
-		extinguish()
 
 /obj/structure/bonfire/post_buckle_mob(mob/living/M)
 	if(M.buckled == src) // Just buckled someone
@@ -250,4 +179,13 @@
 	else // Just unbuckled someone
 		M.pixel_y -= 13
 	update_icon()
-*/
+
+/obj/structure/bonfire/permanent // For bonfires that never stop
+	fuel_usage_rate = 0
+	start_fuel_use = 0
+	burning = TRUE
+
+/obj/structure/bonfire/permanent/New()
+	..()
+	fuel = fuel_conversion_rate
+	update_icon()

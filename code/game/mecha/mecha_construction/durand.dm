@@ -3,17 +3,17 @@
 
 /datum/construction/mecha/durand_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/durand_torso, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//1
-		list("key"=/obj/item/mecha_parts/part/durand_left_arm, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//2
-		list("key"=/obj/item/mecha_parts/part/durand_right_arm, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//3
-		list("key"=/obj/item/mecha_parts/part/durand_left_leg, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//4
-		list("key"=/obj/item/mecha_parts/part/durand_right_leg, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//5
-		list("key"=/obj/item/mecha_parts/part/durand_head, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//6
-		list("key"=/obj/item/clothing/shoes/magboots, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//7
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//8
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//9
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars."),//10
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/stick, desc = "A chassis or case for a Durand mech, needs Durand arms, legs, head, as well as a magboots and added four brace bars.")//11
+		list("key"=/obj/item/mecha_parts/part/durand_torso, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//1
+		list("key"=/obj/item/mecha_parts/part/durand_left_arm, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//2
+		list("key"=/obj/item/mecha_parts/part/durand_right_arm, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//3
+		list("key"=/obj/item/mecha_parts/part/durand_left_leg, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//4
+		list("key"=/obj/item/mecha_parts/part/durand_right_leg, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//5
+		list("key"=/obj/item/mecha_parts/part/durand_head, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//6
+		list("key"=/obj/item/clothing/shoes/magboots, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//7
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//8
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//9
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//10
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars.")//11
 	)
 
 	spawn_result()
@@ -36,541 +36,542 @@
 		//1
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="External armor is wrenched just needs to be welded."),
+			"desc"="The exosuit is almost ready. All that is left is a little spot-welding to touch things up."),
 		//2
-		list("key"=/obj/item/weapon/tool_upgrade/reinforcement/plating,
+		list("key"=/obj/item/tool_upgrade/reinforcement/plating,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="External armor is installed, just needs the internal reinforcement plate mod."),
+			"desc"="The windshield is secured in place. Reinforced plating is needed to protect cockpit's hatch."),
 		//3
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="External armor is installed and needs glass a to be screwed down."),
+			"desc"="The windshield hangs loose in the chassis, and must be screwed into place."),
 		//4
 		list("key"=/obj/item/stack/material/glass/reinforced,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="External armor is installed and needs reinforced glass a to be installed."),
+			"desc"="External armor is installed. 5 sheets of reinforced glass are needed for the windshield."),
 		//5
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="External armor is installed but unbolted."),
+			"desc"="The external armor is installed on the chassis, but needs to be bolted down."),
 		//6
 		list("key"=/obj/item/mecha_parts/part/durand_armour,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="Internal armor is welded and ready for the durand armour plates."),
+			"desc"="The internal armor is welded together, and the full chassis is ready for durand armour plates."),
 		//7
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="Internal armor is wrenched but needs to be welded"),
+			"desc"="The Internal armor complete, but its components are segmented. They need to be welded together."),
 		//8
 		list("key"=/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Internal armor is placed in its case and needs to a CCW plate"),
+			"desc"="The RW armor booster has been secured in place. A CCW armor booster is required for additional protection."),
 		//9
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Internal armor is placed in its case and needs to be bolted down"),
+			"desc"="The RW armor booster has been placed in the chassis, but needs to be bolted down."),
 		//10
 		list("key"=/obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Internal armor is placed in its case and needs to a Exosuit projectile armor plate"),
+			"desc"="With the circuit shielding secured, the entire chest-piece needs a RW armor booster for further protection."),
 		//11
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Internal armor is placed in its case and needs to be bolted down"),
+			"desc"="The circuit shielding has been placed in the chassis, but needs to be bolted down."),
 		//12
 		list("key"=/obj/item/stack/material/plasteel,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Advanced capacitor is secured and ready for an armor plate"),
+			"desc"="The advanced capacitor is secured and the internal circutry is complete. 5 sheets of plasteel are needed to shield the circuitry."),
 		//13
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Advanced capacitor is installed but not screwed down"),
+			"desc"="The advanced capacitor hangs loose in the chassis, and must be screwed into place."),
 		//14
-		list("key"=/obj/item/weapon/stock_parts/capacitor,
+		list("key"=/obj/item/stock_parts/capacitor,
 			"rating" = 2,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Advanced scanner module is secured and ready to connect to an advanced capacitor"),
+			"desc"="The advanced scanner module is secured, but requires an advanced capacitor."),
 		//15
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Advanced scanner module is installed but not screwed down"),
+			"desc"="The advanced scanner hangs loose in the chassis, and must be screwed into place."),
 		//16
-		list("key"=/obj/item/weapon/stock_parts/scanning_module,
+		list("key"=/obj/item/stock_parts/scanning_module,
 			"rating" = 2,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Targeting module is secured down and ready to connect to an advanced scanner"),
+			"desc"="The weapon control and targeting board is secured. It will require an advanced scanner for identifying hostiles."),
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Targeting module is installed but unscrewed"),
+			"desc"="The weapon control and targeting board hangs loose in the chassis, and must be screwed into place."),
 		//18
-		list("key"=/obj/item/weapon/circuitboard/mecha/targeting,
+		list("key"=/obj/item/circuitboard/mecha/targeting,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Peripherals control module is secured and ready to connect to a targeting board"),
+			"desc"="The Peripherals control board is secured. However, a weapon control and targeting board is also required for this chassis."),
 		//19
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Peripherals control module is installed and need to be screwed down"),
+			"desc"="The peripherals control board hangs loose in the chassis, and must be screwed into place."),
 		//20
-		list("key"=/obj/item/weapon/circuitboard/mecha/peripherals,
+		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Central control module is secured and ready to connect to a peripherals board"),
+			"desc"="The central control board is secured. It requires a peripherals control board to function properly."),
 		//21
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Central control module is installed but is unscrewed"),
+			"desc"="The central control board hangs loose in the chassis, and must be screwed into place."),
 		//22
-		list("key"=/obj/item/weapon/circuitboard/mecha/main,
+		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The wiring is adjusted and ready for a central control board"),
+			"desc"="The hydraulic wiring is adjusted, and the chassis is ready for a central control board."),
 		//23
 		list("key"=QUALITY_WIRE_CUTTING,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The wiring is added but needs to be fixed up"),
+			"desc"="The wiring is connected, but needs to be organized with a wire-cutting tool."),
 		//24
 		list("key"=/obj/item/stack/cable_coil,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The hydraulic systems are active but unwired."),
+			"desc"="The hydraulic systems on the chassis requires wiring."),
 		//25
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="The hydraulic systems are connected but bolted down."),
+			"desc"="The hydraulic systems are bolted in, but the interconnected components must be screwed into place."),
 		//26
 		list("key"=QUALITY_BOLT_TURNING,
-			"desc"="The hydraulic systems are disconnected."),
+			"desc"="The high power motor hangs loose from the chassis, it needs to be bolted down."),
 		//27
-		list("key"=/obj/item/weapon/tool_upgrade/productivity/motor,
+		list("key"=/obj/item/tool_upgrade/productivity/motor,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Hydraulics set inside need to be linked to a eletric moter."),
+			"desc"="The hydraulic circuits require a high power motor to actuate."),
 		//28
-		list("key"=/obj/item/weapon/tool_upgrade/augment/hydraulic,
+		list("key"=/obj/item/tool_upgrade/augment/hydraulic,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="With the cell mount added it can now have the hydraulics added."),
+			"desc"="With the heavy cell mount added, it can now have hydraulic circuits inserted."),
 		//29
-		list("key"=/obj/item/weapon/tool_upgrade/augment/cell_mount,
+		list("key"=/obj/item/tool_upgrade/augment/cell_mount,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Mech case is made and needs to start with a cell mount."),
+			"desc"="The basic chassis is assembled. A heavy cell mount is needed to power it."),
 		//30
 		list("key"=QUALITY_SCREW_DRIVING,
-			"desc"="Mech case cover is screwed close.") //So we can successfully keyback to this for getting back tool mods
+			"desc"="The case of the chassis screwed shut. It must be unscrewed to continue.") //So we can successfully keyback to this for getting back tool mods
 	)
 
 	custom_action(index, diff, atom/used_atom, mob/user)
 		if(!..())
 			return 0
 
-		//TODO: better messages.
+		if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+			return
+
 		switch(index)
 			if(30)
 				usr.visible_message(
-					"[usr] opens [holder] internal cover box", \
-					"You openn [holder] internal cover box."
+					"[usr] opens the internal cover of the [holder]", \
+					"You open the internal cover of the [holder]."
 				)
 				holder.icon_state = "durand1"
 			if(29)
 				if(diff==FORWARD)
 					usr.visible_message(
-					"[usr] adds in [holder] cell box systems", \
-					"You adds in [holder]'s cell box systems."
+						"[usr] adds a heavy cell mount to the [holder].", \
+						"You add a heavy cell mount to the [holder]."
 					)
 					holder.icon_state = "durand0"
 				else
 					usr.visible_message(
-						"[usr] screws back [holder] cover", \
-						"You screw [holder] internal cover back."
+						"[usr] removes the heavy cell mount from the [holder].", \
+						"You remove the heavy cell mount from the [holder]."
 					)
 					holder.icon_state = "durand0"
+					new /obj/item/tool_upgrade/augment/cell_mount(get_turf(holder))
 			if(28)
 				if(diff==FORWARD)
 					usr.visible_message(
-					"[usr] adds in [holder] hydraulic systems", \
-					"You adds in [holder]'s hydraulic systems."
+						"[usr] adds a hydraulic system to the [holder].", \
+						"You add a hydraulic system to the [holder]."
 					)
 					holder.icon_state = "durand1"
 				else
 					usr.visible_message(
-						"[usr] takes out [holder] hydraulic systems", \
-						"You disconnect and remove [holder] hydraulic systems."
+						"[usr] takes out the [holder]'s hydraulic systems", \
+						"You disconnect and remove the [holder]'s hydraulic systems."
 					)
 					holder.icon_state = "durand0"
-					new /obj/item/weapon/tool_upgrade/augment/cell_mount(get_turf(holder))
+					new /obj/item/tool_upgrade/augment/hydraulic(get_turf(holder))
 			if(27)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] connects [holder] a motor", \
-						"You connect [holder] a motor in."
+						"[usr] connects a high powered motor to the [holder].", \
+						"You connect a high powered motor to the [holder]."
 					)
 					holder.icon_state = "durand1"
 				else
 					usr.visible_message(
-						"[usr] takes out [holder] hydraulic systems", \
-						"You disconnect and remove [holder] hydraulic systems."
+						"[usr] removes a high powered motor from the [holder].", \
+						"You disconnect and remove a high powered motor from the [holder]."
 					)
 					holder.icon_state = "durand0"
-					new /obj/item/weapon/tool_upgrade/augment/hydraulic(get_turf(holder))
+					new /obj/item/tool_upgrade/productivity/motor(get_turf(holder))
 			if(26)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] connects [holder] the motor to the hydraulic systems", \
-						"You connect [holder] to the hydraulic systems."
+						"[usr] secures hydraulic systems inside the [holder].", \
+						"You secure hydraulic systems inside the [holder]."
 					)
 					holder.icon_state = "durand1"
 				else
 					usr.visible_message(
-						"[usr] takes out [holder] a high power motor", \
-						"You disconnect and remove [holder] form the hydraulic systems."
+						"[usr] unsecures the [holder]'s hydraulic system", \
+						"You unsecure the [holder]'s hydraulic system."
 					)
 					holder.icon_state = "durand0"
-					new /obj/item/weapon/tool_upgrade/productivity/motor(get_turf(holder))
 			if(25)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] activates [holder] hydraulic systems.", \
-						"You activate [holder] hydraulic systems."
+						"[usr] connects the hydraulic systems inside the [holder].", \
+						"You connect the hydraulic systems inside the [holder]."
 					)
 					holder.icon_state = "durand1"
 				else
 					usr.visible_message(
-						"[usr] disconnects [holder] hydraulic systems", \
-						"You disconnect [holder] hydraulic systems."
+						"[usr] disconnects the [holder]'s hydraulic systems", \
+						"You disconnect the [holder]'s hydraulic systems."
 					)
 					holder.icon_state = "durand0"
 			if(24)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] activates [holder] hydraulic systems.", \
-						"You activate [holder] hydraulic systems."
+						"[usr] adds wiring to the [holder]", \
+						"You add wiring to the [holder]."
 					)
 					holder.icon_state = "durand2"
 				else
 					usr.visible_message(
-						"[usr] disconnects [holder] hydraulic systems", \
-						"You disconnect [holder] hydraulic systems."
+						"[usr] removes the [holder]'s wiring", \
+						"You remove the [holder]'s wiring."
 					)
 					holder.icon_state = "durand0"
 			if(23)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] adds the wiring to [holder].", \
-						"You add the wiring to [holder]."
+						"[usr] organizes the wiring in the [holder].", \
+						"You organize the wiring in the [holder]."
 					)
 					holder.icon_state = "durand3"
 				else
 					usr.visible_message(
-						"[usr] deactivates [holder] hydraulic systems.", \
-						"You deactivate [holder] hydraulic systems."
+						"[usr] unsets the wiring from the [holder].", \
+						"You unset the wiring from the [holder]."
 					)
 					holder.icon_state = "durand1"
 			if(22)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] adjusts the wiring of [holder].", \
-						"You adjust the wiring of [holder]."
-					)
-					holder.icon_state = "durand4"
-				else
-					usr.visible_message(
-						"[usr] removes the wiring from [holder].", \
-						"You remove the wiring from [holder]."
-					)
-					new /obj/item/stack/cable_coil (get_turf(holder), 5)
-					holder.icon_state = "durand2"
-			if(21)
-				if(diff==FORWARD)
-					usr.visible_message(
-						"[usr] installs the central control module into [holder].", \
-						"You install the central computer mainboard into [holder]."
+						"[usr] installs the central control board into the [holder].", \
+						"You install the central control board into the [holder]."
 					)
 					holder.icon_state = "durand5"
 				else
 					usr.visible_message(
-						"[usr] disconnects the wiring of [holder].", \
-						"You disconnect the wiring of [holder]."
+						"[usr] removes the central control board from the [holder].", \
+						"You remove the central control board from the [holder]."
 					)
 					holder.icon_state = "durand3"
-			if(20)
+					new /obj/item/circuitboard/mecha/main(get_turf(holder))
+			if(21)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures the mainboard.", \
-						"You secure the mainboard."
+						"[usr] secures the central control board inside the [holder].", \
+						"You secure the central control board inside the [holder]."
 					)
 					holder.icon_state = "durand6"
 				else
 					usr.visible_message(
-						"[usr] removes the central control module from [holder].", \
-						"You remove the central computer mainboard from [holder]."
+						"[usr] unsecures the central control board inside the [holder].", \
+						"You unsecure the central control board inside the [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/main(get_turf(holder))
 					holder.icon_state = "durand4"
-			if(19)
+			if(20)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs the peripherals control module into [holder].", \
-						"You install the peripherals control module into [holder]."
+						"[usr] installs the peripherals control board into the [holder].", \
+						"You install the peripherals control board into the [holder]."
 					)
 					holder.icon_state = "durand7"
 				else
 					usr.visible_message(
-						"[usr] unfastens the mainboard.", \
-						"You unfasten the mainboard."
+						"[usr] removes the peripherals control board from the [holder].", \
+						"You remove the peripherals control board from the [holder]."
 					)
 					holder.icon_state = "durand5"
-			if(18)
+					new /obj/item/circuitboard/mecha/peripherals(get_turf(holder))
+			if(19)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures the peripherals control module.", \
-						"You secure the peripherals control module."
+						"[usr] secures the peripherals control board inside the [holder].", \
+						"You secure the peripherals control board inside the [holder]."
 					)
 					holder.icon_state = "durand8"
 				else
 					usr.visible_message(
-						"[usr] removes the peripherals control module from [holder].", \
-						"You remove the peripherals control module from [holder]."
+						"[usr] unsecures the peripherals control board inside the [holder].", \
+						"You unsecure the peripherals control board inside the [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/peripherals(get_turf(holder))
 					holder.icon_state = "durand6"
-			if(17)
+			if(18)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs the weapon control module into [holder].", \
-						"You install the weapon control module into [holder]."
+						"[usr] installs the weapon control and targeting board into the [holder].", \
+						"You install the weapon control and targeting board into the [holder]."
 					)
 					holder.icon_state = "durand9"
 				else
 					usr.visible_message(
-						"[usr] unfastens the peripherals control module.", \
-						"You unfasten the peripherals control module."
+						"[usr] removes the weapon control and targeting board from the [holder].", \
+						"You remove the weapon control and targeting board from the [holder]."
 					)
 					holder.icon_state = "durand7"
-			if(16)
+					new /obj/item/circuitboard/mecha/targeting(get_turf(holder))
+			if(17)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures the weapon control module.", \
-						"You secure the weapon control module."
+						"[usr] secures the weapon control and targeting board inside the [holder].", \
+						"You secure the weapon control and targeting board inside the [holder]."
 					)
 					holder.icon_state = "durand10"
 				else
 					usr.visible_message(
-						"[usr] removes the weapon control module from [holder].", \
-						"You remove the weapon control module from [holder]."
+						"[usr] unsecures the weapon control and targeting board from the [holder].", \
+						"You unsecure the weapon control and targeting board from the [holder]."
 					)
-					new /obj/item/weapon/circuitboard/mecha/targeting(get_turf(holder))
 					holder.icon_state = "durand8"
-			if(15)
+			if(16)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs [used_atom] to [holder].", \
-						"You install [used_atom] to [holder]."
+						"[usr] installs the [used_atom] into the [holder].", \
+						"You install the [used_atom] into the [holder]."
 					)
 					holder.icon_state = "durand11"
 				else
 					usr.visible_message(
-						"[usr] unfastens the weapon control module.", \
-						"You unfasten the weapon control module."
+						"[usr] removes the scanner from the [holder].", \
+						"You remove the scanner from the [holder]."
 					)
 					holder.icon_state = "durand9"
-			if(14)
+			if(15)
 				if(diff==FORWARD)
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(!S)
 						S = "advanced scanner module"
 					usr.visible_message(
-						"[usr] secures the [S].", \
-						"You secure the [S]."
+						"[usr] secures the [S] into the [holder].", \
+						"You secure the [S] into the [holder]."
 					)
 					holder.icon_state = "durand12"
 				else
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(S)
 						S.forceMove(get_turf(holder))
 					else
 						S = "advanced scanner module"
 					usr.visible_message(
-						"[usr] removes the [S] from [holder].", \
-						"You remove the [S] from [holder]."
+						"[usr] unsecures the [S] from the [holder].", \
+						"You unsecures the [S] from the [holder]."
 					)
 					holder.icon_state = "durand10"
-			if(13)
+			if(14)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs [used_atom] to [holder].", \
-						"You install [used_atom] to [holder]."
+						"[usr] installs the [used_atom] into the [holder].", \
+						"You install the [used_atom] into the [holder]."
 					)
 					holder.icon_state = "durand13"
 				else
-					var/obj/item/weapon/stock_parts/scanning_module/S = locate() in holder
+					var/obj/item/stock_parts/scanning_module/S = locate() in holder
 					if(!S)
 						S = "advanced scanner module"
 					usr.visible_message(
-						"[usr] unfastens the [S].", \
-						"You unfasten the [S]."
+						"[usr] unfastens the [S] from the [holder].", \
+						"You unfasten the [S] from the [holder]."
 					)
 					holder.icon_state = "durand11"
-			if(12)
+			if(13)
 				if(diff==FORWARD)
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(!C)
 						C = "advanced capacitor"
 					usr.visible_message(
-						"[usr] secures the [C].", \
-						"You secure the [C]."
+						"[usr] secures the [C] into the [holder].", \
+						"You secure the [C] into the [holder]."
 					)
 					holder.icon_state = "durand14"
 				else
-					var/obj/item/weapon/stock_parts/capacitor/C = locate() in holder
+					var/obj/item/stock_parts/capacitor/C = locate() in holder
 					if(C)
 						C.forceMove(get_turf(holder))
 					else
 						C = "advanced capacitor"
 					usr.visible_message(
-						"[usr] removes the [C] from [holder].", \
-						"You remove the [C] from [holder]."
+						"[usr] unsecures the [C] from the [holder].", \
+						"You unsecure the [C] from the [holder]."
 					)
 					holder.icon_state = "durand12"
-			if(11)
+			if(12)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures internal armor layer.", \
-						"You secure internal armor layer."
+						"[usr] installs the circuit shielding inside the [holder].", \
+						"You install the circuit shielding inside the [holder]."
 					)
 					holder.icon_state = "durand16"
 				else
 					usr.visible_message(
-						"[usr] pries internal armor layer from [holder].", \
-						"You prie internal armor layer from [holder]."
+						"[usr] pries the circuit shielding from the [holder].", \
+						"You pry the circuit shielding from the [holder]."
 					)
-					new /obj/item/stack/material/plasteel (get_turf(holder), 5)
 					holder.icon_state = "durand14"
+					new /obj/item/stack/material/plasteel (get_turf(holder), 5)
+			if(11)
+				if(diff==FORWARD)
+					usr.visible_message(
+						"[usr] bolts down the circuit shielding on the [holder].", \
+						"You bolt down the circuit shielding on the [holder]."
+					)
+					holder.icon_state = "durand15"
+				else
+					usr.visible_message(
+						"[usr] unsecures the circuit shielding on the [holder].", \
+						"You unsecure the circuit shielding on the [holder]."
+					)
+					holder.icon_state = "durand13"
 			if(10)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs internal armor layer to [holder].", \
-						"You install internal armor layer to [holder]."
+						"[usr] adds the RW armor booster to the [holder].", \
+						"You add the RW armor booster to the [holder]."
 					)
 					holder.icon_state = "durand15"
 				else
-					new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(get_turf(holder))
 					usr.visible_message(
-						"[usr] removes a internal armor plate.", \
-						"You unfasten and remove internal armor plating."
+						"[usr] removes the RW armor booster from the [holder].", \
+						"You remove the RW armor booster from the [holder]."
 					)
 					holder.icon_state = "durand13"
+					new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster(get_turf(holder))
 			if(9)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] bolts down armor plates to [holder].", \
-						"You bolt down armor plating [holder]."
+						"[usr] bolts down the RW armor booster on the [holder].", \
+						"You bolt down the RW armor booster on the [holder]."
 					)
 					holder.icon_state = "durand15"
 				else
 					usr.visible_message(
-						"[usr] removes a internal armor plate.", \
-						"You unfasten and remove internal armor plating."
+						"[usr] unsecures the RW armor booster on the [holder].", \
+						"You unsecure the RW armor booster on the [holder]."
 					)
 					holder.icon_state = "durand13"
 			if(8)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] bolts down armor plates to [holder].", \
-						"You bolt down armor plating [holder]."
-					)
-					holder.icon_state = "durand15"
-				else
-					usr.visible_message(
-						"[usr] removes a internal armor plate.", \
-						"You unfasten and remove internal armor plating."
-					)
-					new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster(get_turf(holder))
-					holder.icon_state = "durand13"
-			if(7)
-				if(diff==FORWARD)
-					usr.visible_message(
-						"[usr] welds internal armor layer to [holder].", \
-						"You weld the internal armor layer to [holder]."
+						"[usr] adds the CCW armor booster to the [holder].", \
+						"You add the CCW armor booster to the [holder]."
 					)
 					holder.icon_state = "durand17"
 				else
 					usr.visible_message(
-						"[usr] unfastens the internal armor layer.", \
-						"You unfasten the internal armor layer."
+						"[usr] pry the CCW armor booster from the [holder].", \
+						"You pries the CCW armor booster from the [holder]."
 					)
 					holder.icon_state = "durand15"
-			if(6)
+					new /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster(get_turf(holder))
+			if(7)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs durand Armour Plates to [holder].", \
-						"You install durand Armour Plates to [holder]."
+						"[usr] welds together the internal armor of the [holder].", \
+						"You weld together the internal armor of the [holder]."
 					)
 					holder.icon_state = "durand18"
 				else
 					usr.visible_message(
-						"[usr] cuts internal armor layer from [holder].", \
-						"You cut the internal armor layer from [holder]."
+						"[usr] cuts apart the internal armor of the [holder].", \
+						"You cuts apart the internal armor of the [holder]."
 					)
-					new /obj/item/mecha_parts/part/durand_armour(get_turf(holder))
 					holder.icon_state = "durand16"
-			if(5)
+			if(6)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures durand Armour Plates.", \
-						"You secure durand Armour Plates."
+						"[usr] affixes durand armor plates onto the [holder].", \
+						"You affix durand armor plates onto the [holder]."
 					)
 					holder.icon_state = "durand19"
 				else
 					usr.visible_message(
-						"[usr] pries durand Armour Plates from [holder].", \
-						"You prie durand Armour Plates from [holder]."
+						"[usr] pries the durand armor plates from the [holder].", \
+						"You pry the durand armor plates from the [holder]."
+					)
+					holder.icon_state = "durand17"
+					new /obj/item/mecha_parts/part/durand_armour(get_turf(holder))
+			if(5)
+				if(diff==FORWARD)
+					usr.visible_message(
+						"[usr] secures the durand armor plates on the [holder].", \
+						"You secure the durand armor plates on the [holder]."
+					)
+					holder.icon_state = "durand19"
+				else
+					usr.visible_message(
+						"[usr] unsecures the durand armor plates from the [holder].", \
+						"You unsecure the durand armor plates from the [holder]."
 					)
 					holder.icon_state = "durand17"
 			if(4)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures durand Armour Plates.", \
-						"You secure durand Armour Plates."
-					)
-					holder.icon_state = "durand19"
-				else
-					usr.visible_message(
-						"[usr] pries durand Armour Plates from [holder].", \
-						"You prie durand Armour Plates from [holder]."
-					)
-					holder.icon_state = "durand17"
-			if(3)
-				if(diff==FORWARD)
-					usr.visible_message(
-						"[usr] screws down the glass case on [holder].", \
-						"You fasten the glass to [holder]."
+						"[usr] installs the windshield on the [holder].", \
+						"You install the windshield on the [holder]."
 					)
 				else
 					usr.visible_message(
-						"[usr] removes glass form.", \
-						"You take out the glass casing."
+						"[usr] removes the windshield from the [holder].", \
+						"You remove the windshield from the [holder]."
 					)
 					holder.icon_state = "durand19"
 					new /obj/item/stack/material/glass/reinforced (get_turf(holder), 5)
+			if(3)
+				if(diff==FORWARD)
+					usr.visible_message(
+						"[usr] screws down the windshield on the [holder].", \
+						"You screw down the windshield on the [holder]."
+					)
+				else
+					usr.visible_message(
+						"[usr] unscrews the windshield from the [holder].", \
+						"You unscrew the windshield from the [holder]."
+					)
+					holder.icon_state = "durand18"
 			if(2)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] screws down the glass case on [holder].", \
-						"You fasten the glass to [holder]."
+						"[usr] installs reinforced plating over the cockpit of the [holder].", \
+						"You install reinforced plating over the cockpit of the [holder]."
 					)
 				else
 					usr.visible_message(
-						"[usr] unfastens durand Armour Plates.", \
-						"You unfasten durand Armour Plates."
+						"[usr] removes the reinforced plating from the cockpit of the [holder].", \
+						"You remove the reinforced plating from the cockpit of the [holder]."
 					)
 					holder.icon_state = "durand18"
+					new /obj/item/tool_upgrade/reinforcement/plating (get_turf(holder), 5)
 			if(1)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] welds durand Armour Plates to [holder].", \
-						"You weld durand Armour Plates to [holder]."
+						"[usr] finishes construction on the exosuit.", \
+						"You finish construction on the exosuit."
 					)
 				else
 					usr.visible_message(
-						"[usr] removes the reinforcement plate.", \
-						"You take out the reinforcement plate mod."
+						"[usr] begins to disassemble the [holder].", \
+						"You begin to disassemble the [holder]."
 					)
 					holder.icon_state = "durand19"
-					new /obj/item/weapon/tool_upgrade/reinforcement/plating (get_turf(holder), 5)
 		return 1

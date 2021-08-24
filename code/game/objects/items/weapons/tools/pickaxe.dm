@@ -1,4 +1,4 @@
-/obj/item/weapon/tool/pickaxe
+/obj/item/tool/pickaxe
 	name = "Pickaxe"
 	desc = "The most basic of mining tools, for short excavations and small mineral extractions."
 	flags = CONDUCT
@@ -23,28 +23,28 @@
 	embed_mult = 1.2 //Digs deep
 	mode = EXCAVATE //Mode should be whatever is the starting tool and off quality.
 
-/obj/item/weapon/tool/pickaxe/equipped(mob/user)
+/obj/item/tool/pickaxe/equipped(mob/user)
 	..()
 	update_icon()
 
-/obj/item/weapon/tool/pickaxe/dropped(mob/user)
+/obj/item/tool/pickaxe/dropped(mob/user)
 	..()
 	update_icon()
 
-/obj/item/weapon/tool/pickaxe/turn_on(mob/user)
+/obj/item/tool/pickaxe/turn_on(mob/user)
 	.=..()
 	if(.)
 		mode = DIG
 		to_chat(user, SPAN_NOTICE("You tighten your grip on [src], and ready yourself to strike earth."))
 
-/obj/item/weapon/tool/pickaxe/turn_off(mob/user)
+/obj/item/tool/pickaxe/turn_off(mob/user)
 
 	mode = EXCAVATE
 	to_chat(user, SPAN_NOTICE("You loosen your grip on [src], and prepare to remove debris."))
 	..()
 
 
-/obj/item/weapon/tool/pickaxe/onestar
+/obj/item/tool/pickaxe/onestar
 	name = "Greyson Positronic Pickaxe"
 	desc = "A standard Greyson Positronic digging tool. Whatever secrets they used to make this so powerful and cheap is a mystery."
 	icon_state = "one_star_pickaxe"
@@ -60,22 +60,22 @@
 	workspeed = 1.2
 	use_power_cost = 0
 
-/obj/item/weapon/tool/pickaxe/onestar/turn_on(mob/user)
+/obj/item/tool/pickaxe/onestar/turn_on(mob/user)
 	..(null, TRUE)
 	mode = DIG
 	to_chat(user, SPAN_NOTICE("You turn on [src], readying yourself to strike earth."))
 	playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
 
-/obj/item/weapon/tool/pickaxe/onestar/turn_off(mob/user)
+/obj/item/tool/pickaxe/onestar/turn_off(mob/user)
 	..(null, TRUE)
 	mode = EXCAVATE
 	to_chat(user, SPAN_NOTICE("You turn off [src], and prepare to remove debris."))
 	playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
 
-/obj/item/weapon/tool/pickaxe/onestar/cyborg
+/obj/item/tool/pickaxe/onestar/cyborg
 	workspeed = 1.4
 
-/obj/item/weapon/tool/pickaxe/jackhammer
+/obj/item/tool/pickaxe/jackhammer
 	name = "jackhammer"
 	desc = "Cracks rocks with blasts, perfect for killing cave lizards."
 	icon_state = "jackhammer"
@@ -88,9 +88,9 @@
 	workspeed = 1.4
 	degradation = 0.7
 	use_power_cost = 0.6
-	suitable_cell = /obj/item/weapon/cell/medium
+	suitable_cell = /obj/item/cell/medium
 
-/obj/item/weapon/tool/pickaxe/jackhammer/onestar
+/obj/item/tool/pickaxe/jackhammer/onestar
 	name = "Greyson Positronic Jackhammer"
 	desc = "A heavy Greyson Positronic tool that cracks rocks with blasts, perfect for killing capitalist pigs."
 	icon_state = "one_star_jackhammer"
@@ -105,7 +105,7 @@
 	max_upgrades = 2
 	use_power_cost = 0.8
 
-/obj/item/weapon/tool/pickaxe/drill
+/obj/item/tool/pickaxe/drill
 	name = "mining drill" // Can dig sand as well!
 	desc = "Yours is the drill that will pierce through the rock walls."
 	icon_state = "handdrill"
@@ -119,7 +119,7 @@
 	use_fuel_cost = 0.07
 	max_fuel = 100
 
-/obj/item/weapon/tool/pickaxe/drill/onestar
+/obj/item/tool/pickaxe/drill/onestar
 	name = "Greyson Positronic mining drill"
 	desc = "Yours is the drill that will pierce through the worker, metaphorically."
 	icon_state = "one_star_drill"
@@ -134,7 +134,7 @@
 	use_fuel_cost = 0.10
 	max_fuel = 90
 
-/obj/item/weapon/tool/pickaxe/diamonddrill
+/obj/item/tool/pickaxe/diamonddrill
 	name = "diamond-point mining drill"
 	desc = "Yours is the drill that will pierce the universe!"
 	icon_state = "diamonddrill"
@@ -151,11 +151,13 @@
 	max_fuel = 120
 	workspeed = 1.5
 
-/obj/item/weapon/tool/pickaxe/diamonddrill/rig
+/obj/item/tool/pickaxe/diamonddrill/rig
+	switched_off_qualities = list(QUALITY_DIGGING = 50, QUALITY_DRILLING = 50)
+	switched_on_qualities = list(QUALITY_EXCAVATION = 10, QUALITY_DRILLING = 20)
 	use_fuel_cost = 0
 	passive_fuel_cost = 0
 
-/obj/item/weapon/tool/pickaxe/excavation
+/obj/item/tool/pickaxe/excavation
 	name = "hand pickaxe"
 	desc = "A smaller, more precise version of the pickaxe, used for archaeological excavation."
 	icon_state = "pick_hand"

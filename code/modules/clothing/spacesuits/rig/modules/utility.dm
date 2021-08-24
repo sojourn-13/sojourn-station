@@ -24,6 +24,7 @@
 	selectable = 1
 	toggleable = 0
 	disruptive = 0
+	price_tag = 200
 
 
 	var/device_type
@@ -35,6 +36,8 @@
 	icon_state = "scanner"
 	interface_name = "health scanner"
 	interface_desc = "Shows an informative health readout when used on a subject."
+
+	price_tag = 1250
 
 	device_type = /obj/item/device/scanner/health/rig
 
@@ -49,8 +52,9 @@
 	suit_overlay_inactive = "mounted-drill"
 	use_power_cost = 0.1
 
+	price_tag = 1350
 
-	device_type = /obj/item/weapon/tool/pickaxe/diamonddrill/rig
+	device_type = /obj/item/tool/pickaxe/diamonddrill/rig
 
 /obj/item/rig_module/device/anomaly_scanner
 	name = "hardsuit anomaly scanner"
@@ -75,6 +79,8 @@
 	selectable = 0
 	device_type = /obj/item/device/scanner/mining
 
+	price_tag = 850
+
 
 /obj/item/rig_module/device/rcd
 	name = "RCD mount"
@@ -84,8 +90,9 @@
 	interface_desc = "A device for building or removing walls. Cell-powered."
 	usable = 1
 	engage_string = "Configure RCD"
+	price_tag = 1000
 
-	device_type = /obj/item/weapon/rcd/mounted
+	device_type = /obj/item/rcd/mounted
 
 /obj/item/rig_module/device/New()
 	..()
@@ -119,6 +126,7 @@
 	toggleable = 0
 	disruptive = 0
 
+	price_tag = 2250
 
 	engage_string = "Inject"
 
@@ -139,7 +147,11 @@
 	var/max_reagent_volume = 80 //Used when refilling.
 
 /obj/item/rig_module/chem_dispenser/ninja
+	name = "compact chem dispenser"
+	desc = "A normal chemical dispenser but much smaller and tighter."
 	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream. This variant is made to be extremely light and flexible."
+
+	price_tag = 1500//Its trash
 
 	//just over a syringe worth of each. Want more? Go refill. Gives the ninja another reason to have to show their face.
 	charges = list(
@@ -233,6 +245,8 @@
 	name = "combat chemical injector"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
 
+	price_tag = 3500
+
 	charges = list(
 		list("synaptizine",   "synaptizine",   0, 30),
 		list("hyperzine",     "hyperzine",     0, 30),
@@ -252,6 +266,8 @@
 	selectable = 1
 	disruptive = 1
 
+	price_tag = 3000
+
 	interface_name = "mounted chem injector"
 	interface_desc = "Dispenses loaded chemicals via an arm-mounted injector."
 
@@ -265,6 +281,7 @@
 	toggleable = 0
 	disruptive = 0
 
+	price_tag = 2500
 
 	engage_string = "Configure Synthesiser"
 
@@ -330,7 +347,7 @@
 	interface_name = "maneuvering jets"
 	interface_desc = "An inbuilt EVA maneuvering system that runs off the rig air supply."
 
-	var/obj/item/weapon/tank/jetpack/rig/jets
+	var/obj/item/tank/jetpack/rig/jets
 
 /obj/item/rig_module/maneuvering_jets/engage()
 	if(!..())

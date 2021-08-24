@@ -69,7 +69,7 @@
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-	alt_titles = list("Soteria Nurse", "Soteria Pharmacist", "Soteria Surgeon", "Soteria Medical Intern")
+	alt_titles = list("Soteria Nurse", "Soteria Emergency Physician", "Soteria Surgeon", "Soteria Medical Intern")
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 
 	access = list(
@@ -115,7 +115,7 @@
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
-
+	alt_titles = (null)
 	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
 
 	perks = list(/datum/perk/medicalexpertise) //Nurses should be able to get bare bone basics
@@ -166,7 +166,7 @@
 	selection_color = "#a8b69a"
 	alt_titles = list("Soteria Psychologist")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
-
+	alt_titles = (null)
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)
@@ -210,7 +210,7 @@
 	difficulty = "Underappreciated."
 	selection_color = "#a8b69a"
 	wage = WAGE_LABOUR_HAZARD
-
+	alt_titles = (null)
 	outfit_type = /decl/hierarchy/outfit/job/medical/paramedic
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_paramedic,

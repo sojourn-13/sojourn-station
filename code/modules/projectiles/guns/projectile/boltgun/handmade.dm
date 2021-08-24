@@ -1,11 +1,11 @@
-/obj/item/weapon/gun/projectile/boltgun/handmade
+/obj/item/gun/projectile/boltgun/handmade
 	name = "handmade bolt action rifle"
 	desc = "A handmade bolt action rifle, made from junk and some spare parts."
 	icon = 'icons/obj/guns/projectile/makeshift_boltgun.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_WOOD = 5)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE, GUN_SILENCABLE)
 	fire_delay = 4 // 2 more than the serbian one
 	damage_multiplier = 1
 	penetration_multiplier = 1

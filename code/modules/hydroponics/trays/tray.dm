@@ -252,7 +252,12 @@
 	if(closed_system)
 		if(user) to_chat(user, "You can't harvest from the plant while the lid is shut.")
 		return
-
+/*
+	if(user.stats.getPerk(PERK_MASTER_HERBALIST))
+		yield_mod += 2
+		seed.harvest(user,yield_mod)
+	else
+*/
 	if(user)
 		seed.harvest(user,yield_mod)
 	else
@@ -528,9 +533,9 @@
 	if (I.is_drainable())
 		return 0
 
-	else if(istype(I, /obj/item/weapon/reagent_containers/syringe))
+	else if(istype(I, /obj/item/reagent_containers/syringe))
 
-		var/obj/item/weapon/reagent_containers/syringe/S = I
+		var/obj/item/reagent_containers/syringe/S = I
 
 		if (S.mode == 1)
 			if(seed)
@@ -574,19 +579,19 @@
 		else
 			to_chat(user, SPAN_DANGER("\The [src] already has seeds in it!"))
 
-	else if (istype(I, /obj/item/weapon/storage/bag/produce))
+	else if (istype(I, /obj/item/storage/bag/produce))
 
 		attack_hand(user)
 
-		var/obj/item/weapon/storage/bag/produce/S = I
-		for (var/obj/item/weapon/reagent_containers/food/snacks/grown/G in locate(user.x,user.y,user.z))
+		var/obj/item/storage/bag/produce/S = I
+		for (var/obj/item/reagent_containers/food/snacks/grown/G in locate(user.x,user.y,user.z))
 			if(!S.can_be_inserted(G))
 				return
 			S.handle_item_insertion(G, 1)
 
-	else if ( istype(I, /obj/item/weapon/plantspray) )
+	else if ( istype(I, /obj/item/plantspray) )
 
-		var/obj/item/weapon/plantspray/spray = I
+		var/obj/item/plantspray/spray = I
 		user.remove_from_mob(I)
 		toxins += spray.toxicity
 		pestlevel -= spray.pest_kill_str
@@ -596,7 +601,7 @@
 		qdel(I)
 		check_health()
 
-	else if(istype(I, /obj/item/weapon/tool/multitool))
+	else if(istype(I, /obj/item/tool/multitool))
 		if(!anchored)
 			to_chat(user, "<span class='warning'>Anchor it first!</span>")
 			return

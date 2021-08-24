@@ -21,7 +21,7 @@
  * Vests
  */
 /obj/item/clothing/suit/armor/vest
-	name = "armor"
+	name = "armor vest"
 	desc = "An armored vest that protects against some damage. Not designed for serious operations."
 	icon_state = "armor"
 	item_state = "armor"
@@ -56,12 +56,12 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/vest/detective
-	name = "armor"
+	name = "ranger armor vest"
 	desc = "An armored vest with a ranger's badge on it."
 	icon_state = "armor_detective"
 
 /obj/item/clothing/suit/armor/vest/ironhammer
-	name = "security armor"
+	name = "security armor vest"
 	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
 
@@ -268,14 +268,14 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(melee = 40, bullet = 40, energy = 35, bomb = 50, bio = 100, rad = 100)
 	max_upgrades = 2
-	extra_allowed = list(/obj/item/weapon/extinguisher,
-						 /obj/item/weapon/tool,
-						 /obj/item/weapon/tool_upgrade,
+	extra_allowed = list(/obj/item/extinguisher,
+						 /obj/item/tool,
+						 /obj/item/tool_upgrade,
 						 /obj/item/stack/cable_coil,
 						 /obj/item/device/t_scanner,
 						 /obj/item/device/scanner/gas,
 						 /obj/item/taperoll/engineering,
-						 /obj/item/weapon/storage/toolbox)
+						 /obj/item/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/soteriasuit
@@ -287,14 +287,14 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	max_upgrades = 2
 	armor = list(melee = 35, bullet = 25, energy = 25, bomb = 30, bio = 50, rad = 50)
-	extra_allowed = list(/obj/item/weapon/extinguisher,
-						 /obj/item/weapon/tool,
-						 /obj/item/weapon/tool_upgrade,
+	extra_allowed = list(/obj/item/extinguisher,
+						 /obj/item/tool,
+						 /obj/item/tool_upgrade,
 						 /obj/item/stack/cable_coil,
 						 /obj/item/device/t_scanner,
 						 /obj/item/device/scanner/gas,
 						 /obj/item/taperoll/engineering,
-						 /obj/item/weapon/storage/toolbox)
+						 /obj/item/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_STEEL = 40)
 

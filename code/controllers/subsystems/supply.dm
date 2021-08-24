@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(supply)
 /datum/controller/subsystem/supply/proc/forbidden_atoms_check(atom/A)
 	if(isliving(A))
 		return TRUE
-	if(istype(A, /obj/item/weapon/disk/nuclear))
+	if(istype(A, /obj/item/disk/nuclear))
 		return TRUE
 	if(istype(A, /obj/machinery/nuclearbomb))
 		return TRUE
@@ -117,9 +117,9 @@ SUBSYSTEM_DEF(supply)
 
 		//supply manifest generation begin
 
-		var/obj/item/weapon/paper/manifest/slip
+		var/obj/item/paper/manifest/slip
 		if(!SP.contraband)
-			slip = new /obj/item/weapon/paper/manifest(A)
+			slip = new /obj/item/paper/manifest(A)
 			slip.is_copy = 0
 			slip.info = "<h3>Shipping Manifest</h3><hr><br>"
 			slip.info +="Order #[SO.id]<br>"
@@ -151,7 +151,21 @@ SUBSYSTEM_DEF(supply)
 			if(!typepath)
 				continue
 
-			var/atom/B2 = new typepath(A)
+			var/atom/movable/B2
+			if(ispath(typepath, /obj/random))
+				var/obj/randomcatcher/CATCH = new /obj/randomcatcher
+				B2 = CATCH.get_item(typepath)
+				B2.forceMove(A)
+			else
+				B2 = new typepath(A)
+			B2.surplus_tag = TRUE
+			var/list/n_contents = B2.GetAllContents()
+			for(var/atom/movable/I in n_contents)
+				I.surplus_tag = TRUE
+			/* So you can't really just buy crates, then instantly resell them for a potential profit depending on if the crate hasn't had its cost scaled properly.
+			*  Yes, there are limits, I could itterate over every content of the item too and set its surplus_tag to TRUE
+			*  But that doesn't work with stackables when you can just make a new stack, and gets comp-expensive and not worth it just to spite people getting extra numbers
+			*/
 			if(SP.amount && B2:amount) B2:amount = SP.amount
 			if(slip) slip.info += "<li>[B2.name]</li>" //add the item to the manifest
 
