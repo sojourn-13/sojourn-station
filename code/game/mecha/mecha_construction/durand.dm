@@ -60,7 +60,7 @@
 		//7
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="The Internal armor complete, but its components are segmented. They need to be welded together."),
+			"desc"="The Internal armor is secured, but its components are segmented. They need to be welded together."),
 		//8
 		list("key"=/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
 			//"backkey"=QUALITY_PRYING,
@@ -89,16 +89,16 @@
 		list("key"=/obj/item/stock_parts/capacitor,
 			"rating" = 2,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The advanced scanner module is secured, but requires an advanced capacitor."),
+			"desc"="The advanced scanner module module is secured, but requires an advanced capacitor."),
 		//15
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="The advanced scanner hangs loose in the chassis, and must be screwed into place."),
+			"desc"="The advanced scanner module hangs loose in the chassis, and must be screwed into place."),
 		//16
 		list("key"=/obj/item/stock_parts/scanning_module,
 			"rating" = 2,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The weapon control and targeting board is secured. It will require an advanced scanner for identifying hostiles."),
+			"desc"="The weapon control and targeting board is secured. It will require an advanced scanner module for identifying hostiles."),
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
@@ -134,7 +134,7 @@
 		//25
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="The hydraulic systems are bolted in, but the interconnected components must be screwed into place."),
+			"desc"="The hydraulic systems are bolted down, but the interconnected components must be screwed into place."),
 		//26
 		list("key"=QUALITY_BOLT_TURNING,
 			"desc"="The high power motor hangs loose from the chassis, it needs to be bolted down."),
