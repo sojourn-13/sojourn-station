@@ -418,7 +418,6 @@
 /obj/item/dnainjector/midgit/New()
 	..()
 	block = SMALLSIZEBLOCK
-		..()
 
 /obj/item/dnainjector/antimidgit
 	name = "\improper DNA injector (Anti-Small Size)"
@@ -430,7 +429,6 @@
 /obj/item/dnainjector/antimidgit/New()
 	..()
 	block = SMALLSIZEBLOCK
-		..()
 
 /////////////////////////////////////
 /obj/item/dnainjector/antiglasses

@@ -595,7 +595,7 @@
 	trash = /obj/item/trash/waffles
 	bitesize = 5 // Five on the tray
 	preloaded_reagents = list("protein" = 10)
-	nutriment_desc = list("soft minced meat" = 5, "cabbage" = 2)
+	nutriment_desc = list("soft minced meat" = 5, "cabbage" = 2, "moist steamed buns" = 3)
 	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/reagent_containers/food/snacks/egg
@@ -815,8 +815,9 @@
 	icon_state = "sashimi"
 	trash = /obj/item/trash/grease
 	bitesize = 2
+	nutriment_amt = 4
 	preloaded_reagents = list("protein" = 4)
-	nutriment_desc = list("raw fish" = 8, "soy sauce" = 2)
+	nutriment_desc = list("raw fish" = 2, "soy sauce" = 2)
 
 /obj/item/reagent_containers/food/snacks/hugemushroomslice
 	name = "huge mushroom slice"
@@ -3226,9 +3227,9 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/reagent_containers/food/snacks/icecream/attackby(obj/item/W as obj, mob/user as mob) // No way we're microwaving two cookies to make an ICECREAM sandwich. - Seb
-	if(istype(W,/obj/item/reagent_containers/food/snacks/cookie))
+	if(istype(W,/obj/item/reagent_containers/food/snacks/brownieslice)) // Fits better than a cookie for the sandwich
 		new /obj/item/reagent_containers/food/snacks/icecreamsandwich(src)
-		to_chat(user, "You sandwich the icecream between the cookies.")
+		to_chat(user, "You sandwich the icecream between the brownies.")
 		qdel(W)
 		qdel(src)
 
@@ -3238,7 +3239,7 @@
 	icon_state = "chocolateicecream"
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
-	nutriment_amt = 6
+	nutriment_amt = 8
 	nutriment_desc = list("velvety chocolate" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
 
@@ -3248,7 +3249,7 @@
 	icon_state = "strawberryicecream"
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
-	nutriment_amt = 6
+	nutriment_amt = 8
 	nutriment_desc = list("strawberry" = 10, "sweetness" = 5, "refreshing cold" = 5)
 	matter = list(MATERIAL_BIOMATTER = 6)
 
@@ -3917,7 +3918,7 @@
 	nutriment_amt = 8
 	trash = /obj/item/trash/plate
 	center_of_mass = list("x"=21, "y"=12)
-	nutriment_desc = list("moist and buttery pancakes" = 10, "sweet syrup" = 2)
+	nutriment_desc = list("moist and buttery pancakes" = 6, "sweet syrup" = 2)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 8)
 

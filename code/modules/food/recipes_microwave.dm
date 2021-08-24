@@ -240,7 +240,6 @@ I said no!
 	reagents = list("sugar" = 5, "milk" = 5)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/doughslice,
-		/obj/item/reagent_containers/food/snacks/butterslice,
 	)
 	result = /obj/item/reagent_containers/food/snacks/waffles
 

@@ -386,4 +386,4 @@
 #undef ERR_NOLICENSE
 #undef ERR_PAUSED
 #undef ERR_NOINSIGHT
-#undef MAX_STAT_VALUE
+

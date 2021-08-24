@@ -2551,7 +2551,7 @@
 	color = "#5bd231" // rgb(91, 210, 49)
 	overdose = 45
 
-	glass_icon_state = "crevicespike"
+	glass_icon_state = "crevice_spike"
 	glass_name = "Crevice Spike"
 	glass_desc = "It will knock the drunkenness out of you or knock you out cold."
 
