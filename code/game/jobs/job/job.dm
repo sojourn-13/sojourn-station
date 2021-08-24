@@ -244,4 +244,6 @@
 	return TRUE
 
 /datum/job/proc/change_playtime(client/C, var/amount = 0)
-	SSjob.JobTimeAdd(C.ckey, list(title), amount)
+	//The string processing is necessary so that string queries can return too.
+	//For some reason, /datum/job/hydro and "/datum/job/hydro" are not considered the same string.
+	SSjob.JobTimeAdd(C.ckey, "[type]", amount)
