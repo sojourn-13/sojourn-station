@@ -3,16 +3,16 @@
 //Hardest mech to made on start do to its components being rather costly and unable to be given back making it a investement
 /datum/construction/mecha/phazon_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/phazon_torso, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//1
-		list("key"=/obj/item/mecha_parts/part/phazon_left_arm, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//2
-		list("key"=/obj/item/mecha_parts/part/phazon_right_arm, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//3
-		list("key"=/obj/item/mecha_parts/part/phazon_left_leg, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//4
-		list("key"=/obj/item/mecha_parts/part/phazon_right_leg, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."),//5
-		list("key"=/obj/item/mecha_parts/part/phazon_head, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //6,
-		list("key"=/obj/item/bluespace_crystal/artificial, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //7,
-		list("key"=/obj/item/stock_parts/smes_coil/super_capacity, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //8,
-		list("key"=/obj/item/gun_upgrade/mechanism/overdrive, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil."), //9,
-		list("key"=/obj/item/cell/large/moebius/nuclear, desc = "A chassis or case for a Phazon mech, needs arms, legs, head, artificial bluespace crystal, Tesla overdrive chip, large atomic cell, and a super capacity SMES coil.") //10
+		list("key"=/obj/item/mecha_parts/part/phazon_torso, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."),//1
+		list("key"=/obj/item/mecha_parts/part/phazon_left_arm, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."),//2
+		list("key"=/obj/item/mecha_parts/part/phazon_right_arm, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."),//3
+		list("key"=/obj/item/mecha_parts/part/phazon_left_leg, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."),//4
+		list("key"=/obj/item/mecha_parts/part/phazon_right_leg, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."),//5
+		list("key"=/obj/item/mecha_parts/part/phazon_head, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."), //6,
+		list("key"=/obj/item/bluespace_crystal/artificial, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."), //7,
+		list("key"=/obj/item/stock_parts/smes_coil/super_capacity, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."), //8,
+		list("key"=/obj/item/gun_upgrade/mechanism/overdrive, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil."), //9,
+		list("key"=/obj/item/cell/large/moebius/nuclear, desc = "The chassis for a Phazon mech. Needs a Phazon head, torso, arms and legs, as well as an artificial bluespace crystal, "Tesla" overdrive chip, large atomic cell, and a super capacity SMES coil.") //10
 	)
 
 	spawn_result()
@@ -33,100 +33,100 @@
 	result = /obj/mecha/combat/phazon
 	steps = list(
 		//1
-		list("key"=/obj/item/hand_tele,
-			//"backkey"=QUALITY_PRYING,
-			"desc"="The hand tele is to be installed."),
-		//2
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="External armor is wrenched but not welded down."),
+			"desc"="The exosuit is almost ready. All that is left is a little spot-welding to touch things up."),
+		//2
+		list("key"=/obj/item/hand_tele,
+			//"backkey"=QUALITY_PRYING,
+			"desc"="The external armor is installed. There is a slot in the cockpit for a NT BSD \"Jumper\", AKA a Hand Teleporter, to be inserted."),
 		//3
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="External armor is installed not not bolted in place."),
+			"desc"="The external armor is installed on the chassis, but needs to be bolted down."),
 		//4
 		list("key"=/obj/item/mecha_parts/part/phazon_armor,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="Phase armor is welded but missing phazon armor external plate."),
+			"desc"="The internal armor is welded together, and the full chassis is ready for phazon armor plates."),
 		//5
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="Phase internal armor is wrenched down and waits welding."),
+			"desc"="The Internal armor is secured, but its components are segmented. They need to be welded together."),
 		//6
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Phase armor is installed and needs bolting."),
+			"desc"="The circuit shielding has been placed in the chassis, but needs to be bolted down."),
 		//7
 		list("key"=/obj/item/stack/material/plasteel,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The bluespace crystal is engaged and can be protected over with plasteel plates."),
+			"desc"="The ansible crystal is wired and the internal circuitry is complete. 5 sheets of plasteel are needed to shield the circuitry."),
 		//8
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_WIRE_CUTTING,
-			"desc"="The bluespace crystal is connected but needs to be set with a screwdriver."),
+			"desc"="The ansible crystal hangs loose in the chassis, and must be screwed into place."),
 		//9
 		list("key"=/obj/item/stack/cable_coil,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="The bluespace crystal is installed but unwired."),
+			"desc"="The the ansible crystal is installed but requires additional wiring to power it."),
 		//10
 		list("key"=/obj/item/stock_parts/subspace/crystal,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Super capacitor is secured and bluespace crystal is awaiting to be subspace tooned with a crystal."),
+			"desc"="The super capacitor is secured and the targeting system is complete. Next, the bluespace crystal must be subspace-tuned with an ansible crystal."),
 		//12
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Super capacitor is installed but unscrewed."),
+			"desc"="The super capacitor hangs loose in the chassis, and must be screwed into place."),
 		//12
 		list("key"=/obj/item/stock_parts/capacitor/super,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Phasic scanner module is secured and can connect to a super capacitor."),
+			"desc"="The phasic scanner module module is secured, but requires a super capacitor."),
 		//13
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Phasic scanner module is installed but unscrewed."),
+			"desc"="The phasic scanner module hangs loose in the chassis, and must be screwed into place."),
 		//14
 		list("key"=/obj/item/stock_parts/scanning_module/phasic,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Weapon control module is secured and can connect to a phasic scanning module"),
+			"desc"="The weapon control and targeting board is secured. It will require a phasic scanner module for identifying hostiles."),
 		//15
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Weapon control is installed and can be screwed down."),
+			"desc"="The weapon control and targeting board hangs loose in the chassis, and must be screwed into place."),
 		//16
 		list("key"=/obj/item/circuitboard/mecha/targeting,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Peripherals control module is secured and waiting a targeting board."),
+			"desc"="The Peripherals control board is secured. However, a weapon control and targeting board is also required for this chassis."),
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Peripherals control module is installed and needs to be screwed down"),
+			"desc"="The peripherals control board hangs loose in the chassis, and must be screwed into place."),
 		//18
 		list("key"=/obj/item/circuitboard/mecha/peripherals,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="Central control module is secured and ready for a peripherals control module."),
+			"desc"="The central control board is secured. It requires a peripherals control board to function properly."),
 		//19
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="Central control module is installed, but unscrewed."),
+			"desc"="The central control board hangs loose in the chassis, and must be screwed into place."),
 		//20
 		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The wiring is adjusted for connecting to a central control board."),
+			"desc"="The wiring is adjusted, and the chassis is ready for a central control board."),
 		//21
 		list("key"=QUALITY_WIRE_CUTTING,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The wiring is added but needs adjustments."),
+			"desc"="The wiring is connected, but needs to be organized with a wire-cutting tool."),
 		//22
 		list("key"=/obj/item/stack/cable_coil,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The hydraulic systems are active but unlinked to internal power systems."),
+			"desc"="The electromagnetic actuators require wiring."),
 		//23
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="The hydraulic systems are connected but not screwed into place."),
+			"desc"="The electromagnetic actuators are unlinked and must be screwed together."),
 		//24
 		list("key"=QUALITY_BOLT_TURNING,
-			"desc"="The hydraulic systems are disconnected and unbolted.")
+			"desc"="The electromagnetic actuators hang loose on the chassis and need to be bolted down.")
 		)
 
 
@@ -134,19 +134,22 @@
 		if(!..())
 			return 0
 
-		//TODO: better messages.
+		if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+			return
+
 		switch(index)
 			if(24)
 				usr.visible_message(
-					"[usr] connects the [holder] hydraulic systems", \
-					"You connect [holder] hydraulic systems."
+					"[usr] secures the electromagnetic actuators in the [holder].", \
+					"You secure the electromagnetic actuators in the [holder]."
 				)
 				holder.icon_state = "phazon1"
 			if(23)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] activates the [holder] hydraulic systems.", \
-						"You activate [holder] hydraulic systems."
+						"[usr] connects the electromagnetic actuators in the [holder].", \
+						"You connect the electromagnetic actuators in the [holder]."
 					)
 					holder.icon_state = "phazon2"
 				else
@@ -159,7 +162,7 @@
 				if(diff==FORWARD)
 					usr.visible_message(
 						"[usr] adds the wiring to the [holder].", \
-						"You add the wiring to [holder]."
+						"You add the wiring to the [holder]."
 					)
 					holder.icon_state = "phazon3"
 				else
@@ -171,8 +174,8 @@
 			if(21)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] adjusts the wiring of the [holder].", \
-						"You adjust the wiring of [holder]."
+						"[usr] organizes the wiring in the [holder].", \
+						"You organize the wiring in the [holder]."
 					)
 					holder.icon_state = "phazon4"
 				else
@@ -185,8 +188,8 @@
 			if(20)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs the central control module into the [holder].",  \
-						"You install the central computer mainboard into [holder]."
+						"[usr] installs the central control board into the [holder].",  \
+						"You install the central control board into the [holder]."
 					)
 					qdel(used_atom)
 					holder.icon_state = "phazon5"
@@ -199,8 +202,8 @@
 			if(19)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures the mainboard.", \
-						"You secure the mainboard."
+						"[usr] secures the central control board inside the [holder].", \
+						"You secure the central control board inside the [holder]."
 					)
 					holder.icon_state = "phazon6"
 				else
@@ -214,7 +217,7 @@
 				if(diff==FORWARD)
 					usr.visible_message(
 						"[usr] installs the peripherals control module into the [holder].", \
-						"You install the peripherals control module into [holder]."
+						"You install the peripherals control board into the [holder]."
 					)
 					qdel(used_atom)
 					holder.icon_state = "phazon7"
@@ -227,8 +230,8 @@
 			if(17)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures the peripherals control module.", \
-						"You secure the peripherals control module."
+						"[usr] secures the peripherals control board inside the [holder].", \
+						"You secure the peripherals control board inside the [holder]."
 					)
 					holder.icon_state = "phazon8"
 				else
@@ -241,8 +244,8 @@
 			if(16)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs the weapon control module into the [holder].", \
-						"You install the weapon control module into [holder]."
+						"[usr] installs the weapon control and targeting board into the [holder].", \
+						"You install the weapon control and targeting board into the [holder]."
 					)
 					qdel(used_atom)
 					holder.icon_state = "phazon9"
@@ -255,8 +258,8 @@
 			if(15)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures the weapon control module.", \
-						"You secure the weapon control module."
+						"[usr] secures the weapon control and targeting board inside the [holder].", \
+						"You secure the weapon control and targeting board inside the [holder]."
 					)
 					holder.icon_state = "phazon10"
 				else
@@ -269,8 +272,8 @@
 			if(14)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs [used_atom] to the [holder].", \
-						"You install [used_atom] to [holder]."
+						"[usr] installs [used_atom] into the [holder].", \
+						"You install the [used_atom] into [holder]."
 					)
 					qdel(used_atom)
 					holder.icon_state = "phazon11"
@@ -286,8 +289,8 @@
 					if(!S)
 						S = "phasic scanner module"
 					usr.visible_message(
-						"[usr] secures the [S].", \
-						"You secure the [S]."
+						"[usr] secures the [S] into the [holder].", \
+						"You secure the [S] into the [holder]."
 					)
 					holder.icon_state = "phazon12"
 				else
@@ -304,8 +307,8 @@
 			if(12)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs [used_atom] to the [holder].", \
-						"You install [used_atom] to [holder]."
+						"[usr] installs the [used_atom] into the [holder].", \
+						"You install the [used_atom] into [holder]."
 					)
 					qdel(used_atom)
 					holder.icon_state = "phazon13"
@@ -324,8 +327,8 @@
 					if(!C)
 						C = "super capacitor"
 					usr.visible_message(
-						"[usr] secures the [C].", \
-						"You secure the [C]."
+						"[usr] secures the [C] into the [holder].", \
+						"You secure the [C] into the [holder]."
 					)
 					holder.icon_state = "phazon14"
 				else
@@ -342,8 +345,8 @@
 			if(10)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs the bluespace crystal.", \
-						"You install the bluespace crystal"
+						"[usr] installs the ansible crystal into the [holder].", \
+						"You install the ansible crystal into the [holder]"
 					)
 					qdel(used_atom)
 					holder.icon_state = "phazon15"
@@ -359,48 +362,48 @@
 			if(9)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] connects the bluespace crystal.", \
-						"You connect the bluespace crystal."
+						"[usr] connects the ansible crystal inside the [holder].", \
+						"You connect the ansible crystal inside the [holder]."
 					)
 					holder.icon_state = "phazon16"
 				else
 					usr.visible_message(
-						"[usr] removes the bluespace crystal from the [holder].", \
-						"You remove the bluespace crystal from the [holder]."
+						"[usr] removes the ansible crystal from the [holder].", \
+						"You remove the ansible crystal from the [holder]."
 					)
 					new /obj/item/stock_parts/subspace/crystal(get_turf(holder))
 					holder.icon_state = "phazon14"
 			if(8)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] engages the bluespace crystal.", \
-						"You engage the bluespace crystal."
+						"[usr] adds wiring for the ansible crystal inside the [holder].", \
+						"You add wiring for the ansible crystal inside the [holder]."
 					)
 					holder.icon_state = "phazon17"
 				else
 					usr.visible_message(
-						"[usr] disconnects the bluespace crystal from the [holder].", \
-						"You disconnect the bluespace crystal from the [holder]."
+						"[usr] disconnects the ansible crystal from the [holder].", \
+						"You disconnect the ansible crystal from the [holder]."
 					)
 					holder.icon_state = "phazon15"
 			if(7)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs the phase armor layer to the [holder].", \
-						"You install the phase armor layer to the [holder]."
+						"[usr] installs the circuit shielding inside the [holder].", \
+						"You install the circuit shielding inside the [holder]."
 					)
 					holder.icon_state = "phazon18"
 				else
 					usr.visible_message(
-						"[usr] disengages the bluespace crystal.", \
-						"You disengage the bluespace crystal."
+						"[usr] disengages the ansible crystal.", \
+						"You disengage the ansible crystal."
 					)
 					holder.icon_state = "phazon16"
 			if(6)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures the phase armor layer.", \
-						"You secure the phase armor layer."
+						"[usr] bolts down the circuit shielding on the [holder].", \
+						"You bolt down the circuit shielding on the [holder]."
 					)
 					holder.icon_state = "phazon19"
 				else
@@ -413,8 +416,8 @@
 			if(5)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] welds the phase armor layer to the [holder].", \
-						"You weld the phase armor layer to the [holder]."
+						"[usr] welds together the internal armor of the [holder].", \
+						"You weld together the internal armor of the [holder]."
 					)
 					holder.icon_state = "phazon20"
 				else
@@ -426,8 +429,8 @@
 			if(4)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] installs Phazon Armor Plates to the [holder].", \
-						"You install Phazon Armor Plates to the [holder]."
+						"[usr] installs Phazon Armor Plates on the [holder].", \
+						"You install Phazon Armor Plates on the [holder]."
 					)
 					qdel(used_atom)
 					holder.icon_state = "phazon21"
@@ -440,8 +443,8 @@
 			if(3)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures Phazon Armor Plates.", \
-						"You secure Phazon Armor Plates."
+						"[usr] secures the Phazon armor plates on the [holder].", \
+						"You secure the Phazon armor plates on the [holder]."
 					)
 					holder.icon_state = "phazon22"
 				else
@@ -453,10 +456,12 @@
 					holder.icon_state = "phazon20"
 			if(2)
 				if(diff==FORWARD)
-					usr.visible_message(
-						"[usr] welds Phazon Armor Plates to the [holder].", \
-						"You weld Phazon Armor Plates to the [holder]."
-					)
+					if(diff==FORWARD)
+						usr.visible_message(
+							"[usr] carefully slots the hand teleporter into the cockpit of the [holder].", \
+							"You carefully slots the hand teleporter into the cockpit of the [holder]."
+						)
+					qdel(used_atom)
 				else
 					usr.visible_message(
 						"[usr] unfastens Phazon Armor Plates.", \
@@ -466,8 +471,13 @@
 			if(1)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] carefully inserts the anomaly core into \the [holder] and secures it.", \
-						"You carefully insert the hand tele into \the [holder] and secures it."
+						"[usr] finishes construction on the exosuit.", \
+						"You finish construction on the exosuit."
 					)
-					qdel(used_atom)
+				else
+					usr.visible_message(
+						"[usr] begins to disassemble the [holder].", \
+						"You begin to disassemble the [holder]."
+					)
+					holder.icon_state = "phazon22"
 		return 1

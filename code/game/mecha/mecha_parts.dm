@@ -239,7 +239,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASMA = 10, MATERIAL_SILVER = 3)
 
 /obj/item/mecha_parts/part/phazon_armor
-	name = "Phazon Armor"
+	name = "Phazon Armor Plates"
 	icon_state = "phazon_armor"
 	origin_tech = list(TECH_MATERIAL = 5, TECH_BLUESPACE = 3, TECH_MAGNET = 3)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASMA = 10, MATERIAL_URANIUM = 10, MATERIAL_SILVER = 10, MATERIAL_DIAMOND = 5)

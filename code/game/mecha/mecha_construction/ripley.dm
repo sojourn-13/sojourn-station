@@ -95,7 +95,7 @@
 		//17
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="The hydraulic systems are bolted in, but the interconnected components must be screwed into place."),
+			"desc"="The hydraulic systems are bolted down, but the interconnected components must be screwed into place."),
 		//18
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,

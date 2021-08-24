@@ -53,11 +53,11 @@
 		//6
 		list("key"=/obj/item/mecha_parts/part/gygax_armour,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="The internal armor is welded together, and the full chassis is ready for gygax armour plates."),
+			"desc"="The internal armor is welded together, and the full chassis is ready for gygax armor plates."),
 		//7
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="The Internal armor complete, but its components are segmented. They need to be welded together."),
+			"desc"="The Internal armor is complete, but its components are segmented. They need to be welded together."),
 		//8
 		list("key"=/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
 			//"backkey"=QUALITY_PRYING,
@@ -131,7 +131,7 @@
 		//25
 		list("key"=QUALITY_SCREW_DRIVING,
 			//"backkey"=QUALITY_BOLT_TURNING,
-			"desc"="The hydraulic systems are bolted in, but the interconnected components must be screwed into place."),
+			"desc"="The hydraulic systems are bolted down, but the interconnected components must be screwed into place."),
 		//26
 		list("key"=QUALITY_BOLT_TURNING,
 			//"backkey"=QUALITY_PRYING,
@@ -161,7 +161,6 @@
 			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
 			return
 
-		//TODO: better messages.
 		switch(index)
 			if(30)
 				usr.visible_message(
