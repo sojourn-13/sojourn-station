@@ -3,17 +3,17 @@
 
 /datum/construction/mecha/durand_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/durand_torso, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//1
-		list("key"=/obj/item/mecha_parts/part/durand_left_arm, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//2
-		list("key"=/obj/item/mecha_parts/part/durand_right_arm, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//3
-		list("key"=/obj/item/mecha_parts/part/durand_left_leg, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//4
-		list("key"=/obj/item/mecha_parts/part/durand_right_leg, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//5
-		list("key"=/obj/item/mecha_parts/part/durand_head, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//6
-		list("key"=/obj/item/clothing/shoes/magboots, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//7
-		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//8
-		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//9
-		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars."),//10
-		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, arms and legs, as well as magboots and four brace bars.")//11
+		list("key"=/obj/item/mecha_parts/part/durand_torso, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//1
+		list("key"=/obj/item/mecha_parts/part/durand_left_arm, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//2
+		list("key"=/obj/item/mecha_parts/part/durand_right_arm, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//3
+		list("key"=/obj/item/mecha_parts/part/durand_left_leg, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//4
+		list("key"=/obj/item/mecha_parts/part/durand_right_leg, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//5
+		list("key"=/obj/item/mecha_parts/part/durand_head, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//6
+		list("key"=/obj/item/clothing/shoes/magboots, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//7
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//8
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//9
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars."),//10
+		list("key"=/obj/item/tool_upgrade/reinforcement/stick, desc = "The chassis for a Durand mech. Needs a Durand head, torso, arms and legs, as well as magboots and four brace bars.")//11
 	)
 
 	spawn_result()
@@ -122,7 +122,7 @@
 		//22
 		list("key"=/obj/item/circuitboard/mecha/main,
 			//"backkey"=QUALITY_SCREW_DRIVING,
-			"desc"="The hydraulic wiring is adjusted, and the chassis is ready for a central control board"),
+			"desc"="The hydraulic wiring is adjusted, and the chassis is ready for a central control board."),
 		//23
 		list("key"=QUALITY_WIRE_CUTTING,
 			//"backkey"=QUALITY_SCREW_DRIVING,
@@ -152,12 +152,16 @@
 			"desc"="The basic chassis is assembled. A heavy cell mount is needed to power it."),
 		//30
 		list("key"=QUALITY_SCREW_DRIVING,
-			"desc"="The case of the chassis screwed close. It must be unscrewed to continue.") //So we can successfully keyback to this for getting back tool mods
+			"desc"="The case of the chassis screwed shut. It must be unscrewed to continue.") //So we can successfully keyback to this for getting back tool mods
 	)
 
 	custom_action(index, diff, atom/used_atom, mob/user)
 		if(!..())
 			return 0
+
+		if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+			return
 
 		switch(index)
 			if(30)
@@ -169,8 +173,8 @@
 			if(29)
 				if(diff==FORWARD)
 					usr.visible_message(
-					"[usr] adds a heavy cell mount to the [holder].", \
-					"You add a heavy cell mount to the [holder]."
+						"[usr] adds a heavy cell mount to the [holder].", \
+						"You add a heavy cell mount to the [holder]."
 					)
 					holder.icon_state = "durand0"
 				else
@@ -183,8 +187,8 @@
 			if(28)
 				if(diff==FORWARD)
 					usr.visible_message(
-					"[usr] adds a hydraulic system to the [holder].", \
-					"You add a hydraulic system to the [holder]."
+						"[usr] adds a hydraulic system to the [holder].", \
+						"You add a hydraulic system to the [holder]."
 					)
 					holder.icon_state = "durand1"
 				else

@@ -2,12 +2,12 @@
 
 /datum/construction/mecha/odysseus_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/odysseus_torso, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//1
-		list("key"=/obj/item/mecha_parts/part/odysseus_head, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//2
-		list("key"=/obj/item/mecha_parts/part/odysseus_left_arm, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//3
-		list("key"=/obj/item/mecha_parts/part/odysseus_right_arm, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//4
-		list("key"=/obj/item/mecha_parts/part/odysseus_left_leg, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head."),//5
-		list("key"=/obj/item/mecha_parts/part/odysseus_right_leg, desc = "A chassis or case for a Odysseus mech, needs arms, legs, head.")//6
+		list("key"=/obj/item/mecha_parts/part/odysseus_torso, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//1
+		list("key"=/obj/item/mecha_parts/part/odysseus_head, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//2
+		list("key"=/obj/item/mecha_parts/part/odysseus_left_arm, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//3
+		list("key"=/obj/item/mecha_parts/part/odysseus_right_arm, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//4
+		list("key"=/obj/item/mecha_parts/part/odysseus_left_leg, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."),//5
+		list("key"=/obj/item/mecha_parts/part/odysseus_right_leg, desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs.")//6
 	)
 	spawn_result()
 		var/obj/item/mecha_parts/chassis/const_holder = holder
