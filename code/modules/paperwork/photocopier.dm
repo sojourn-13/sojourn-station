@@ -81,7 +81,7 @@
 		if(stat & (BROKEN|NOPOWER))
 			return
 
-		if(toner >= 5)
+		if(toner >= 1)
 			var/mob/living/silicon/tempAI = usr
 			var/obj/item/device/camera/siliconcam/camera = tempAI.aiCamera
 
@@ -96,7 +96,7 @@
 				p.desc += "Copied by [tempAI.name]"
 			else
 				p.desc += " - Copied by [tempAI.name]"
-			toner -= 5
+			toner -= 1
 			sleep(15)
 		updateUsrDialog()
 
