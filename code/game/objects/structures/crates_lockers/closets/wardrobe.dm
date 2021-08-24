@@ -196,12 +196,18 @@
 	new /obj/item/clothing/under/rank/security(src)
 	new /obj/item/clothing/under/rank/security(src)
 	new /obj/item/clothing/under/rank/security(src)
+	new /obj/item/clothing/head/seccap(src)
+	new /obj/item/clothing/head/seccap(src)
+	new /obj/item/clothing/head/seccap(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/head/rank/ironhammer(src)
+	new /obj/item/clothing/suit/armor/commander/marshal_coat(src)
+	new /obj/item/clothing/suit/armor/commander/marshal_coat(src)
+	new /obj/item/clothing/suit/armor/commander/marshal_coat(src)
 
 /obj/structure/closet/wardrobe/militia
 	name = "blackshield wardrobe"

@@ -295,7 +295,7 @@
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 			new_item.icon_state = "unknown[rand(1,4)]"
 			new_item.desc = ""
-				new_item.price_tag = rand(450,1500)
+			new_item.price_tag = rand(450,1500)
 		if(19 to 20)
 			apply_prefix = 0
 			new_item = new /obj/item/tool/sword(src.loc)

@@ -32,7 +32,7 @@
 	var/savefile/S = new /savefile(path)
 	if(!S)					return 0
 	S.cd = "/"
-	if(announce == 1)
+	if(announce)
 		log_and_message_admins("[key_name(usr)] has saved their preferences.")
 
 	S["version"] << SAVEFILE_VERSION_MAX

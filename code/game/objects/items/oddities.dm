@@ -45,7 +45,9 @@
 	for(var/stat in oddity_stats)
 		var/aspect
 		switch(oddity_stats[stat])
-			if(10 to INFINITY)
+			if(30 to INFINITY)
+				aspect = "a <span style='color:#cd00ff;'>REALITY-BENDING</span>"
+			if(10 to 30)
 				aspect = "an <span style='color:#d0b050;'>overwhelming</span>"
 			if(6 to 10)
 				aspect = "a <span class='red'>strong</span>"

@@ -92,6 +92,8 @@ var/global/list/robot_modules = list(
 
 	R.speed_factor = speed_factor + R.vtech_added_speed
 	R.power_efficiency = power_efficiency
+	for(var/obj/item/I in emag)
+		I.canremove = 0
 
 	for(var/name in stat_modifiers)
 		R.stats.changeStat(name, stat_modifiers[name])

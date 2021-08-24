@@ -65,7 +65,6 @@
 		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
 
 /datum/chemical_reaction/icecreambase
-	/datum/chemical_reaction/icedcream
 	required_reagents = list("sugar" = 1, "ice" = 1, "cream" = 1)
 	result = "icecreambase"
 	result_amount = 3
@@ -558,9 +557,10 @@
 
 /datum/chemical_reaction/mead
 	result = "mead"
-	required_reagents = list("sugar" = 1, "water" = 1)
+	required_reagents = list("honey" = 1, "water" = 1) // No more conflicting with Ethanol recipe
 	catalysts = list("enzyme" = 5)
 	result_amount = 2
+	blacklist_containers = list(/mob, /obj/machinery/microwave) // So that it doesn't conflict with honey bun recipe
 
 /datum/chemical_reaction/iced_beer
 	result = "iced_beer"
@@ -762,3 +762,10 @@
 	result = "fanciulli"
 	required_reagents = list("manhattan" = 1, "fernet" = 1)
 	result_amount = 2
+
+/datum/chemical_reaction/drinks/kvass
+	result = "Kvass"
+	required_reagents = list("ethanol" = 1, "flour" = 1) // Can't physically dump rye bread into water so...
+	catalysts = list("enzyme" = 5) // Almost every homemade alcohol recipe has this
+	result_amount = 2
+

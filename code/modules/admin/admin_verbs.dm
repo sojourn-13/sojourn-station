@@ -573,26 +573,20 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 	T.stats.addPerk(perkname)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
 
-ADMIN_VERB_ADD(/client/proc/playtimeadd, R_ADMIN|R_MOD|R_DEBUG, FALSE)
-/client/proc/playtimeadd(mob/T as mob in GLOB.player_list)
+ADMIN_VERB_ADD(/client/proc/playtimebypass, R_ADMIN|R_MOD|R_DEBUG, FALSE)
+/client/proc/playtimebypass(mob/T as mob in GLOB.player_list)
 	set category = "Fun"
-	set name = "Add Playtime"
-	set desc = "Add playtime to a ckey."
-	var/datum/perk/departmentpt = input("What department do you wish to add playtime to?") as null|anything in typesof(/datum/department) - /datum/department
-	var/timeadded = input("How much time do you wish to add in minutes?") as null|num
-	if(isnull(timeadded))
-		return
-	timeadded = round(timeadded)
-	if (!departmentpt)
-		return
-	if(QDELETED(T))
-		to_chat(usr, "Creature has been delete in the meantime.")
-		return
-	var/datum/department/departmentplaytimevar = new departmentpt()
-	if(departmentplaytimevar.id)
-		T.client.prefs.playtime[departmentplaytimevar.id] += timeadded
-		message_admins("\blue [key_name_admin(usr)] added [timeadded] MINUTES of [departmentpt] to [key_name(T)].", 1)
-		log_admin("[key_name_admin(usr)] added [timeadded] MINUTES of [departmentpt] to [key_name(T)].")
+	set name = "Bypass Playtime"
+	set desc = "Allow a job to be played without the time requirements."
+
+	var/key = mob.ckey
+	var/datum/job/J = input("Which job do you wish to change?") as null|anything in typesof(/datum/job)
+	if(!J) return
+	var/mode = input("Enable, or disable?") in list("Enable", "Disable")
+	if(!mode) return
+	SSjob.JobTimeForce(ckey, initial(J.title), (mode=="Enable"))
+	message_admins("\blue [key_name_admin(usr)] [lowertext(mode)]d [key]'s [J] job bypass.", 1)
+	log_admin("[key_name_admin(usr)] [lowertext(mode)]d [key]'s [J] job bypass.")
 
 ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
 /client/proc/perkremove(mob/T as mob in SSmobs.mob_list)

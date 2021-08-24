@@ -125,4 +125,4 @@ datum/announcement/proc/Log(message as text, message_title as text)
 		if (character.mind.role_alt_title)
 			rank = character.mind.role_alt_title
 
-			global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)
+	global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)

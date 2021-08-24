@@ -181,6 +181,7 @@
 		bio = 100,
 		rad = 75
 	)
+	camera_networks = list(NETWORK_MEDICAL)
 
 /obj/item/clothing/suit/space/void/medical
 	icon_state = "rig-medical"
@@ -228,6 +229,7 @@
 	)
 	siemens_coefficient = 0.7
 	light_overlay = "helmet_light_ihs"
+	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/clothing/suit/space/void/security
 	name = "marshal voidsuit"
@@ -298,6 +300,7 @@
 	name = "blackshield voidsuit helmet"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
+	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/clothing/suit/space/void/security/odst/mil
 	name = "blackshield voidsuit"
@@ -309,6 +312,7 @@
 	name = "blackshield corpsman voidsuit helmet"
 	icon_state = "odst_mil"
 	item_state = "odst_mil"
+	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/clothing/suit/space/void/odst/corps
 	name = "blackshield corpsman voidsuit"
