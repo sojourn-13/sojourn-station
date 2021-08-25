@@ -153,6 +153,11 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/external/robotic/hesphaistos
 	icon = 'icons/mob/human_races/cyberlimbs/hesphaistos.dmi'
 
+/datum/body_modification/limb/prosthesis/hesphaistos/alt
+	id = "prosthesis_hesphaistos_alt"
+	replace_limb = /obj/item/organ/external/robotic/hesphaistos
+	icon = 'icons/mob/human_races/cyberlimbs/hesphaistos_alt.dmi'
+
 /datum/body_modification/limb/prosthesis/zenghu
 	id = "prosthesis_zenghu"
 	replace_limb = /obj/item/organ/external/robotic/zenghu
@@ -162,6 +167,11 @@ var/global/list/modifications_types = list(
 	id = "prosthesis_xion"
 	replace_limb = /obj/item/organ/external/robotic/xion
 	icon = 'icons/mob/human_races/cyberlimbs/xion.dmi'
+
+/datum/body_modification/limb/prosthesis/ward
+	id = "ward"
+	replace_limb = /obj/item/organ/external/robotic/ward
+	icon = 'icons/mob/human_races/cyberlimbs/ward.dmi'
 
 /datum/body_modification/limb/prosthesis/asters
 	id = "prosthesis_asters"

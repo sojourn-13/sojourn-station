@@ -21,6 +21,27 @@
 		icon_state = "alurane"
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
+/*FBP 'chasis' markings*/
+	athena_body
+		name = "Athena chassis"
+		icon_state ="athena"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	athena_head
+		name = "Athena head"
+		icon_state ="athena"
+		body_parts = list(BP_HEAD)
+
+	ward_body
+		name = "Ward Takehashi chassis"
+		icon_state ="ward"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	ward_head
+		name = "Ward Takehashi head"
+		icon_state ="ward"
+		body_parts = list(BP_HEAD)
+
 /*Anime Eyes*/
 
 	animeeyesinner
