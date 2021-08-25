@@ -895,6 +895,46 @@
 	storage_capacity = 240
 	have_recycling = TRUE
 
+/obj/machinery/autolathe/greyson
+	name = "greyson autolathe"
+	desc = "It produces items using metal and glass."
+	icon_state = "greyson"
+	idle_power_usage = 200
+	active_power_usage = 10000
+	circuit = /obj/item/circuitboard/autolathe_greyson
+	speed = 4
+	storage_capacity = 240
+	have_recycling = TRUE
+
+/obj/machinery/autolathe/greyson/RefreshParts()
+	..()
+	var/mb_rating = 0
+	var/mb_amount = 0
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
+		mb_rating += MB.rating
+		mb_amount++
+
+	storage_capacity = round(initial(storage_capacity)*(mb_rating/mb_amount))
+
+	var/man_rating = 0
+	var/man_amount = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+		man_amount++
+	man_rating -= man_amount
+
+	var/las_rating = 0
+	var/las_amount = 0
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
+		las_rating += M.rating
+		las_amount++
+	las_rating -= las_amount
+
+	queue_max = initial(queue_max) + mb_rating //So the more matter bin levels the more we can queue!
+
+	speed = initial(speed) + man_rating + las_rating
+	mat_efficiency = max(0.05, 1.0 - (man_rating * 0.1))
+
 #undef ERR_OK
 #undef ERR_NOTFOUND
 #undef ERR_NOMATERIAL
