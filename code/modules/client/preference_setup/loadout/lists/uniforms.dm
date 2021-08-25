@@ -72,6 +72,10 @@
 	display_name = "latex maid dress"
 	path = /obj/item/clothing/under/costume/kinky/latex_maid
 
+/datum/gear/uniform/classy_maid
+	display_name = "maid dress"
+	path = /obj/item/clothing/under/costume/maid
+
 /datum/gear/uniform/modularsuit
 	display_name = "modular suit selection"
 	path = /obj/item/clothing/under/modular
