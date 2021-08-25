@@ -1,7 +1,7 @@
 /datum/category_item/setup_option/background/homeworld
-	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_KRIOSAN, FORM_CINDAR, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_FBP)
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_KRIOSAN, FORM_CINDAR, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_FBP, FORM_UNBRANDED)
 
-/datum/category_item/setup_option/background/homeworld/amereth
+/datum/category_item/setup_option/background/homeworld/amethyn
 	name = "Amethyn"
 	desc = "The great jewel of the frontier, Amethyn, the place you have lived formerly as a tribal (or perhaps currently) that contains all the wonder and mystery of the realm. It's \
 	natural splendor has given you an understanding of the potential green wealth on offer, but a world without written history is one of mystery. One that you may or may not know. As someone who \

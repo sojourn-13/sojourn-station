@@ -611,7 +611,7 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/full_body_prosthetic
 		)
 
-	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_HEART = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
@@ -633,6 +633,53 @@
 /datum/species/full_body_prosthetic/get_bodytype()
 	return "Full Body Prosthetic"
 
+/datum/species/unbranded_synth
+	name = "Unbranded Full Body Prosthetic"
+	default_form = FORM_UNBRANDED
+	obligate_form = TRUE
+	obligate_name = FALSE
+	name_plural = "FBPs"
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	reagent_tag = IS_SYNTHETIC
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/unbranded,
+		BP_GROIN =  new /datum/organ_description/groin/unbranded,
+		BP_HEAD =   new /datum/organ_description/head/unbranded,
+		BP_L_ARM =  new /datum/organ_description/arm/left/unbranded,
+		BP_R_ARM =  new /datum/organ_description/arm/right/unbranded,
+		BP_L_LEG =  new /datum/organ_description/leg/left/unbranded,
+		BP_R_LEG =  new /datum/organ_description/leg/right/unbranded
+		)
+
+	has_process = list(    // which required-process checks are conducted and default organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
+		)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/unbranded_synth/get_bodytype()
+	return "Unbranded Full Body Prosthetic"
 
 /datum/species/soteria_synthetic
 	name = "Soteria Synthetic"
@@ -669,7 +716,7 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/soteria_synthetic
 		)
 
-	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_HEART = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
@@ -789,7 +836,7 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/blackshield_synthetic
 		)
 
-	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_HEART = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
@@ -848,7 +895,7 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/church_synthetic
 		)
 
-	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_HEART = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
@@ -907,7 +954,7 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/nashef_synthetic
 		)
 
-	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_HEART = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic

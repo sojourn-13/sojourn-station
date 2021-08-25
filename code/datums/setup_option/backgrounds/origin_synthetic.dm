@@ -246,7 +246,7 @@
 	jarring to the average person, as formerly 'slow' processes are now greatly enhanced, allowing for an FBP to function better than they once did. This particular chassis type is built for general \
 	purpose and often considered generic. It does equally well in all areas, making it suited for a variety of tasks."
 
-	restricted_to_species = list(FORM_FBP)
+	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -265,7 +265,7 @@
 	who lost their bodies from conflict, be it serving as a soldier, mercenary, void wolf, or something else. Veteran models have redundant combat systems, enhancing the strength, durability, and \
 	aim of FBP's who did not let death stop them from duty."
 
-	restricted_to_species = list(FORM_FBP)
+	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
 
 	stat_modifiers = list(
 		STAT_ROB = 25, // No inbuilt weapons.
@@ -284,7 +284,7 @@
 	as it contains internal data banks and cerebral enhancers to allow for additional information storage capable of being filtered to the owner on a subconscious level. FBP's with these chassis types \
 	tend to be on the wealthy side, as cognitive enhancers do not come cheap, but you get what you pay for and it shows in performance."
 
-	restricted_to_species = list(FORM_FBP)
+	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
