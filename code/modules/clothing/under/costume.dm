@@ -55,6 +55,12 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "jester2"
 	item_state = "jester2"
 
+/obj/item/clothing/under/costume/maid
+	name = "maid dress"
+	desc = "A neat and orderly maid dress, for when you plan to actually clean."
+	icon_state = "janimaid"
+	item_state = "janimaid"
+
 /*Kinky*/
 
 /obj/item/clothing/under/costume/kinky/latex_maid
