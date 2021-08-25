@@ -461,8 +461,8 @@
 	)
 /obj/item/clothing/under/tribalhide
 	name = "Tribal Hides"
-	desc = "Leather and fur stitched together, for your inner unga.You feel like thumping your chest."
-	icon_state = "tribalhide"
+	desc = "Leather and fur stitched together, for your inner unga. You feel like thumping your chest."
+	icon_state = "tribalm"
 	item_state = "tribalm"
 	price_tag = 50
 	armor = list(
