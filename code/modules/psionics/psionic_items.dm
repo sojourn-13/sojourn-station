@@ -61,16 +61,16 @@
 	if(user.stats.getStat(STAT_ROB) <= 0)
 		force = WEAPON_FORCE_HARMLESS
 		whack_speed = 2
-	else if(user.stats.getStat(STAT_ROB) <= 10)
+	else if(user.stats.getStat(STAT_ROB) <= 15)
 		force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
 		whack_speed = 4
-	else if(user.stats.getStat(STAT_ROB) <= 20)
+	else if(user.stats.getStat(STAT_ROB) <= 25)
 		force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
 		whack_speed = 6
-	else if(user.stats.getStat(STAT_ROB) <= 30)
+	else if(user.stats.getStat(STAT_ROB) <= 35)
 		force = WEAPON_FORCE_ROBUST // As strong as a machete
 		whack_speed = 6
-	else if(user.stats.getStat(STAT_ROB) > 30)
+	else if(user.stats.getStat(STAT_ROB) > 35)
 		force = WEAPON_FORCE_BRUTAL
 		whack_speed = 6
 
@@ -118,13 +118,13 @@
 /obj/item/tool/knife/psionic_blade/attack(atom/target, mob/user)
 	if(user.stats.getStat(STAT_ROB) <= 0)
 		force = WEAPON_FORCE_HARMLESS
-	else if(user.stats.getStat(STAT_ROB) <= 10)
+	else if(user.stats.getStat(STAT_ROB) <= 15)
 		force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
-	else if(user.stats.getStat(STAT_ROB) <= 20)
+	else if(user.stats.getStat(STAT_ROB) <= 25)
 		force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
-	else if(user.stats.getStat(STAT_ROB) <= 30)
+	else if(user.stats.getStat(STAT_ROB) <= 35)
 		force = WEAPON_FORCE_ROBUST // As strong as a machete
-	else if(user.stats.getStat(STAT_ROB) > 30)
+	else if(user.stats.getStat(STAT_ROB) > 35)
 		force = WEAPON_FORCE_BRUTAL
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
@@ -149,6 +149,7 @@
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
+	base_block_chance = 40
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
 
 /obj/item/shield/riot/crusader/psionic/New(var/loc, var/mob/living/carbon/Maker)
