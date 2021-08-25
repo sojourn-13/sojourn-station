@@ -26,7 +26,7 @@
 		owner.stats.addPerk(PERK_PSION)
 
 	if(owner.stats.getPerk(PERK_PSI_HARMONY))
-		psi_max_bonus = 3
+		psi_max_bonus = 2
 
 	max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) / 10), 1, 30)) + psi_max_bonus
 
@@ -34,7 +34,7 @@
 		if(psi_points >= max_psi_points)
 			return
 		psi_points += 1
-		last_psi_point_gain = world.time + 5 MINUTES
+		last_psi_point_gain = world.time + 10 MINUTES
 
 	if(psi_points > max_psi_points)
 		psi_points = max_psi_points

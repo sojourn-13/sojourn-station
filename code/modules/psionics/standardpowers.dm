@@ -55,21 +55,6 @@
 		for(var/mob/observer/ghost/G in world)
 			G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
 
-/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool()
-	set category = "Psionic powers"
-	set name = "Telekinetic Omnitool (1)"
-	set desc = "Expend a single point of your psi essence to create an omnitool. It disappears when dropped or if it leaves your hand."
-	psi_point_cost = 1
-
-	if(pay_power_cost(psi_point_cost))
-		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
-		owner.visible_message(
-			"[owner] clenches their fist, electricity crackling before a telekinetic omnitool is shaped in their hand!",
-			"You feel the rush of electric essence shocking your hand lightly before a telekinetic omnitool forms!"
-			)
-		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
-		usr.put_in_active_hand(tool)
-
 /obj/item/organ/internal/psionic_tumor/proc/psionic_knife()
 	set category = "Psionic powers"
 	set name = "Psychic Blade (1)"
@@ -166,8 +151,8 @@
 // Greater powers - These powers should have a cost of 2-5 and have very powerful effects.
 /obj/item/organ/internal/psionic_tumor/proc/psionic_weapon()
 	set category = "Psionic powers"
-	set name = "Psionic Weapon Construction (2)"
-	set desc = "Expend two psi points to shape an oddity into a weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
+	set name = "Psionic Weapon Construction (3)"
+	set desc = "Expend three psi points to shape an oddity into a weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 2
 
 	if(pay_power_cost(psi_point_cost))
@@ -244,8 +229,8 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/psychic_call()
 	set category = "Psionic powers"
-	set name = "Psychic Call (2)"
-	set desc = "Expend two points of your psi essence to call creatures from nearby burrows. They are not inherently friendly to you. Use at your own risks."
+	set name = "Psychic Call (3)"
+	set desc = "Expend three points of your psi essence to call creatures from nearby burrows. They are not inherently friendly to you. Use at your own risks."
 	psi_point_cost = 2
 
 	if(pay_power_cost(psi_point_cost))
@@ -261,8 +246,8 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/psychic_banish()
 	set category = "Psionic powers"
-	set name = "Psychic Banish (3)"
-	set desc = "Expend two points of your psi essence to banish nearby creatures capable of burrowing back into the holes from whence they came. Effects creatures must be able to burrow and may \
+	set name = "Psychic Banish (4)"
+	set desc = "Expend four points of your psi essence to banish nearby creatures capable of burrowing back into the holes from whence they came. Effects creatures must be able to burrow and may \
 	resist your psychic influence."
 	psi_point_cost = 3
 
@@ -303,3 +288,18 @@
 			do_sparks(1, 0, target.loc)						//Visual feedback after the teleport
 		do_sparks(1, 0, owner.loc)							//Visual feedback after the teleport
 		owner.weakened += 10								//Moving like this is stressful and stuns you for a time.
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool()
+	set category = "Psionic powers"
+	set name = "Telekinetic Omnitool (2)"
+	set desc = "Expend two points of your psi essence to create an omnitool. It disappears when dropped or if it leaves your hand."
+	psi_point_cost = 2
+
+	if(pay_power_cost(psi_point_cost))
+		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
+		owner.visible_message(
+			"[owner] clenches their fist, electricity crackling before a telekinetic omnitool is shaped in their hand!",
+			"You feel the rush of electric essence shocking your hand lightly before a telekinetic omnitool forms!"
+			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		usr.put_in_active_hand(tool)

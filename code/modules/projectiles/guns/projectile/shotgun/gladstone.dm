@@ -33,9 +33,11 @@
 	saw_off = FALSE
 
 /obj/item/gun/projectile/shotgun/pump/gladstone/queen
-	name = "\"Queen\" hunting shotgun"
-	desc = "A venerable shotgun with incredibly dubious patent claims by H&S Arms, it serves as a common shotgun alongside a number of virtually ideantical weapons across the galaxy. \
-			 Can hold up to 14+1 20mm shells in its tube magazine. This one has been endlessly tinkered by Jea Smails giving it just the more power and looks it needed to stop crimes in 2 shots."
+	name = "\"Fallen Empress\" hunting shotgun"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	This particular shotgun was originally a gladstone, remodeled and reforged by Jea Smails, first matriarch of the hunting lodge. It was destroyed by a careless hunt master, only \
+	to reappear in the lodge, now marked with a blue cross. Perhaps attempts to destroy it now made it eternal? Whatever the case, it packs a hell of a punch. \
+	Can hold up to 14+1 20mm shells in its tube magazine."
 	icon = 'icons/obj/guns/projectile/shotgun_queen.dmi'
 	icon_state = "queen"
 	item_state = "queen"
