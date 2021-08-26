@@ -16,7 +16,7 @@
 
 /obj/item/organ_module/muscle/nanite/Process()
 	..()
-	if(loc != holder) // We're no longer in the psionic's hand.
+	if(loc.loc != holder) // We're no longer in the holder.
 		visible_message("The [src.name] turn into useless nanite goo.")
 		qdel(src)
 		return
@@ -43,7 +43,7 @@
 
 /obj/item/organ_module/armor/nanite/Process()
 	..()
-	if(loc != holder) // We're no longer in the psionic's hand.
+	if(loc.loc != holder) // We're no longer in the holder.
 		visible_message("The [src.name] turn into useless nanite goo.")
 		qdel(src)
 		return
@@ -72,7 +72,7 @@
 
 /obj/item/organ_module/active/simple/nanite/Process()
 	..()
-	if(loc != holder) // We're no longer in the psionic's hand.
+	if(loc.loc != holder) // We're no longer in the holder.
 		visible_message("The [src.name] turn into useless nanite goo.")
 		qdel(src)
 		return
@@ -101,7 +101,7 @@
 
 /obj/item/organ_module/active/simple/engineer/nanite/Process()
 	..()
-	if(loc != holder) // We're no longer in the psionic's hand.
+	if(loc.loc != holder) // We're no longer in the holder.
 		visible_message("The [src.name] turn into useless nanite goo.")
 		qdel(src)
 		return

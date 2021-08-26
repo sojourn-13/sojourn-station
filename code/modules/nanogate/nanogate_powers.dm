@@ -173,7 +173,7 @@ Self augments include:
 
 	if(pay_power_cost(nano_point_cost))
 		to_chat(owner, "You permanently assign some of your nanites to making your body move faster.")
-		var/obj/item/organ_module/muscle/nanite/Aug // The type of augment to install
+		var/obj/item/organ_module/muscle/nanite/Aug = new(src, owner) // The type of augment to install
 		for(var/body_part in Aug.allowed_organs) // Install the augment everywhere it can.
 			var/obj/item/organ/external/limb = owner.get_organ(body_part)
 			if(limb)
@@ -191,7 +191,7 @@ Self augments include:
 
 	if(pay_power_cost(nano_point_cost))
 		to_chat(owner, "You permanently assign some of your nanites to protecting your body.")
-		var/obj/item/organ_module/armor/nanite/Aug // The type of augment to install
+		var/obj/item/organ_module/armor/nanite/Aug = new(src, owner) // The type of augment to install
 		for(var/body_part in Aug.allowed_organs) // Install the augment everywhere it can.
 			var/obj/item/organ/external/limb = owner.get_organ(body_part)
 			if(limb)
@@ -208,8 +208,8 @@ Self augments include:
 	nano_point_cost = 2 // Create two blades.
 
 	if(pay_power_cost(nano_point_cost))
-		to_chat(owner, "You permanently assign some of your nanites to create blades..")
-		var/obj/item/organ_module/active/simple/nanite/Aug // The type of augment to install
+		to_chat(owner, "You permanently assign some of your nanites to create blades.")
+		var/obj/item/organ_module/active/simple/nanite/Aug = new(src, owner) // The type of augment to install
 		for(var/body_part in Aug.allowed_organs) // Install the augment everywhere it can.
 			var/obj/item/organ/external/limb = owner.get_organ(body_part)
 			if(limb)
