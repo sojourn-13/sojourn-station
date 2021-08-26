@@ -20,8 +20,8 @@
 	/obj/random/material_rare = 50,
 	/obj/random/material_rare = 50,
 	/obj/item/rcd = 1,
-	/obj/item/rcd_ammo = 10,
-	/obj/item/rcd_ammo = 5)
+	/obj/item/stack/material/compressed_matter/random = 10,
+	/obj/item/stack/material/compressed_matter/random = 5)
 
 /datum/stash/engi/inspection
 	contents_list_extra = list(/obj/item/stack/material/steel/full = 2,
@@ -49,7 +49,7 @@
 /datum/stash/engi/handoff
 	contents_list_extra = list(
 	/obj/item/rcd = 1,
-	/obj/item/rcd_ammo = 3,
+	/obj/item/stack/material/compressed_matter/random = 3,
 	/obj/item/stack/material/plasteel/random = 1,
 	)
 

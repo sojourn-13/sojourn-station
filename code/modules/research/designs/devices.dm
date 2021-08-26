@@ -13,10 +13,6 @@
 	name = "rapid construction device"
 	build_path = /obj/item/rcd
 
-/datum/design/research/item/tool/rcd_ammo
-	name = "matter cartridge"
-	build_path = /obj/item/rcd_ammo
-
 /datum/design/research/item/tool/pneumatic_crowbar
 	name = "pneumatic crowbar"
 	build_path = /obj/item/tool/crowbar/pneumatic
