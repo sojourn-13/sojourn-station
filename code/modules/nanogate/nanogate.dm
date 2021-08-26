@@ -26,9 +26,9 @@
 	if(owner.stat == UNCONSCIOUS)
 		to_chat(src, "You cannot use your nanogates powers while unconsious.")
 		return FALSE
-	if(nano_points < nano_cost)
+	if(nanite_points < nano_cost)
 		to_chat(usr,"You lack the nanites to do this.")
 		return FALSE
 	else
-		nano_points -= nano_cost
+		nanite_points -= nano_cost
 		return TRUE

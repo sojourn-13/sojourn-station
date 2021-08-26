@@ -112,6 +112,10 @@
 		if(B)
 			stat("Psi Essence", "[B.psi_points]/[B.max_psi_points]")
 
+		var/obj/item/organ/internal/nanogate/N = random_organ_by_process(BP_NANOGATE)
+		if(N)
+			stat("Nanites Point", "[N.nanite_points]")
+
 	else if(statpanel("Perks"))
 		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
 			perkHolder.update()

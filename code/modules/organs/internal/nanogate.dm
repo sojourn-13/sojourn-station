@@ -16,7 +16,7 @@
 	origin_tech = list(TECH_ENGINEERING = 20)
 	attack_verb = list("attacked", "slapped", "whacked")
 	price_tag = 12000
-	var/nano_points = 10
+	var/nanite_points = 10
 	var/nano_point_cost
 	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
 
