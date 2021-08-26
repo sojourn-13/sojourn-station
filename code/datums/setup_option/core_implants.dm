@@ -31,6 +31,26 @@
 	allow_modifications = FALSE
 	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
+/datum/category_item/setup_option/core_implant/nanogate
+	name = "Nanogate"
+	desc = "TODO : Yell at -R4d6"
+	implant_organ_type = /obj/item/organ/internal/nanogate
+	restricted_jobs = list(
+		/datum/job/outsider // Nanogates are only available to colonist or allies.
+		)
+	allow_modifications = TRUE
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
+
+/datum/category_item/setup_option/core_implant/opifex_nanogate
+	name = "Opifex Nanogate"
+	desc = "TODO : Yell at -R4d6"
+	implant_organ_type = /obj/item/organ/internal/nanogate/opifex
+	restricted_jobs = list(
+		/datum/job/outsider // Nanogates are only available to colonist or allies.
+		)
+	allow_modifications = TRUE
+	restricted_to_species = list(FORM_OPIFEX) // Opifex get their own fancy nanogate
+
 /datum/category_item/setup_option/core_implant/cruciform/tessellate
 	name = "Tessellate Cruciform"
 	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Tessellate, disciples who promote unity and healing, it charges slightly faster \

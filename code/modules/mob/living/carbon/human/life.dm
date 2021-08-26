@@ -770,6 +770,11 @@
 
 	if(status_flags & GODMODE)	return 0	//godmode
 
+	if(stats.getPerk(PERK_NANITE_REGEN)) // Do they have the nanite regen perk?
+		var/datum/perk/nanogate_regen/P = stats.getPerk(PERK_NANITE_REGEN) // Add a reference to the perk for us to use.
+		if(P && P.regen_rate) // Check if the perk is actually there and got regeneration enabled.
+			heal_overall_damage(P.regen_rate, P.regen_rate, P.regen_rate)
+
 	if(species.light_dam)//TODO: Use this proc for flora and mycus races. Search proc mycus. -Note for Kaz.
 		var/light_amount = 0
 		if(isturf(loc))
