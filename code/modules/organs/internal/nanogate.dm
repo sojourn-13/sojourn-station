@@ -63,5 +63,6 @@
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
 		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
-		/obj/item/organ/internal/nanogate/proc/nanite_blade
+		/obj/item/organ/internal/nanogate/proc/nanite_blade,
+		/obj/item/organ/internal/nanogate/proc/nanite_tool
 		)

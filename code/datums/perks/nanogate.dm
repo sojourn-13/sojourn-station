@@ -37,6 +37,7 @@
 	passivePerk = FALSE
 
 /datum/perk/nanite_creation/nanite_knife/activate()
+	..()
 	var/obj/item/tool/knife/nanite_blade/knife = new /obj/item/tool/knife/nanite_blade(src, holder)
 	holder.visible_message(
 		"[holder] clenches their fist, electricity crackling before a psionic blade forms in their hand!",
@@ -52,6 +53,7 @@
 	passivePerk = FALSE
 
 /datum/perk/nanite_tool/activate()
+	..()
 	var/obj/item/tool/nanite_omnitool/tool = new /obj/item/tool/nanite_omnitool(src, holder)
 	holder.visible_message(
 		"[holder] clenches their fist, electricity crackling before a psionic blade forms in their hand!",
