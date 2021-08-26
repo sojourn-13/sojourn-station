@@ -28,11 +28,13 @@ Self augments include:
 	nano_point_cost = 2
 
 	if(!Stand) // Do they already have the bot?
+		var/bot_name = input(owner, "Choose your nanobot's name : ", "Nanobot Name", "Nanobot") as null|text
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to creating a nanobot.")
 			Stand = new /mob/living/carbon/superior_animal/nanobot(owner.loc)
+			Stand.name = bot_name
 			Stand.creator = owner
-			owner.verbs -= /obj/item/organ/internal/nanogate/proc/create_nanobot
+			owner_verbs -= /obj/item/organ/internal/nanogate/proc/create_nanobot
 		else
 			to_chat(owner, "You do not have any nanites to assign to that task.")
 	else
