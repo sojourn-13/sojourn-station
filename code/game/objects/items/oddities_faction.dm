@@ -183,6 +183,8 @@
 	var/cooldown = 30 MINUTES
 
 /obj/item/device/techno_tribalism/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/tool/psionic_omnitool)
+		return
 	if(items_count < max_count)
 		if(istype(W, /obj/item/tool))
 			var/useful = FALSE
