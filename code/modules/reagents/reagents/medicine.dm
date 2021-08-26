@@ -1240,7 +1240,7 @@
 	scannable = 1
 
 /datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
-	M.adjustToxLoss(-8 * removed)
+	M.adjustToxLoss(-8)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
