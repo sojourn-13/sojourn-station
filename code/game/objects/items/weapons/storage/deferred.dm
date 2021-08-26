@@ -116,7 +116,7 @@
 		/obj/item/tool/scalpel/laser,
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/reagent_containers/syringe, //We hold any syringe.
-		/obj/item/storage/pill_bottle/tramadol,
+		/obj/item/storage/pill_bottle, //We hold pill bottles as well
 		/obj/item/stack/medical/advanced/bruise_pack
 		)
 
