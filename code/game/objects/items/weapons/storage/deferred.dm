@@ -94,30 +94,31 @@
 //Medical
 /obj/item/storage/deferred/surgery
 	name = "combat surgery kit"
-	desc = "Contains tools for surgery. Has precise foam fitting for safe transport."
+	desc = "Contains tools for surgery. Has precise foam fitting for safe transport of highly advanced tools."
 	icon_state = "combat_surgery_kit"
 	item_state = "combat_surgery_kit"
 	initial_contents = list(
 		/obj/item/tool/bonesetter,
-		/obj/item/tool/cautery,
-		/obj/item/tool/saw/circular,
-		/obj/item/tool/hemostat,
-		/obj/item/tool/retractor,
-		/obj/item/tool/scalpel,
+		/obj/item/tool/saw/circular/medical,
+		/obj/item/tool/hemostat/adv,
+		/obj/item/tool/retractor/adv,
+		/obj/item/tool/scalpel/laser,
 		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
+		/obj/item/storage/pill_bottle/tramadol,
 		/obj/item/stack/medical/advanced/bruise_pack
 		)
 	can_hold = list(
 		/obj/item/tool/bonesetter,
-		/obj/item/tool/cautery,
-		/obj/item/tool/saw/circular,
-		/obj/item/tool/hemostat,
-		/obj/item/tool/retractor,
-		/obj/item/tool/scalpel,
+		/obj/item/tool/saw/circular/medical,
+		/obj/item/tool/hemostat/adv,
+		/obj/item/tool/retractor/adv,
+		/obj/item/tool/scalpel/laser,
 		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
+		/obj/item/storage/pill_bottle/tramadol,
 		/obj/item/stack/medical/advanced/bruise_pack
 		)
-
 
 /obj/item/storage/deferred/meds
 	name = "combat medical kit"
