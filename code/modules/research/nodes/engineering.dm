@@ -236,7 +236,6 @@
 
 	unlocks_designs = list(	/datum/design/research/item/tool/pneumatic_crowbar,
 							/datum/design/research/item/tool/rcd,
-							/datum/design/research/item/tool/rcd_ammo,
 							/datum/design/research/item/tool/combat_shovel
 							)
 
