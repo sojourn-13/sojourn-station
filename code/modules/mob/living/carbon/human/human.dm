@@ -1219,7 +1219,9 @@ var/list/rank_prefix = list(\
 			if(I.implant_organ_type)
 				if(istype(I.implant_organ_type, /obj/item/organ/internal/psionic_tumor))
 					src.make_psion()
-				if(istype(I.implant_organ_type, /obj/item/organ/internal/nanogate))
+				else if(istype(I.implant_organ_type, /obj/item/organ/internal/nanogate/opifex))
+					src.give_nanogate(TRUE)
+				else if(istype(I.implant_organ_type, /obj/item/organ/internal/nanogate))
 					src.give_nanogate()
 
 	else

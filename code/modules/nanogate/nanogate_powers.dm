@@ -167,25 +167,21 @@ Self augments include:
 // Personnal Augment Powers.
 /obj/item/organ/internal/nanogate/proc/nanite_muscle()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Muscle (2)"
+	set name = "Nanite Augment - Muscle (1)"
 	set desc = "Spend some of your nanites to create nanites muscle to allow you to walk faster."
 	nano_point_cost = 2 // Install two augments on both legs
 
-	if(pay_power_cost(nano_point_cost))
-		to_chat(owner, "You permanently assign some of your nanites to making your body move faster.")
-		var/obj/item/organ_module/muscle/nanite/Aug = new(src, owner) // The type of augment to install
-		for(var/body_part in Aug.allowed_organs) // Install the augment everywhere it can.
-			var/obj/item/organ/external/limb = owner.get_organ(body_part)
-			if(limb)
-				Aug = new(src, owner)
-				Aug.install(owner.organs_by_name[limb])
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_muscle
+	if(!owner.stats.getPerk(PERK_NANITE_REGEN)) // Do they already have the bot?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
+			owner.stats.addPerk(PERK_NANITE_REGEN)
+			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_regen
 	else
-		to_chat(owner, "There is no more space for more muscles.")
+		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
 
 /obj/item/organ/internal/nanogate/proc/nanite_armor()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Armor (4)"
+	set name = "Nanite Augment - Armor (1)"
 	set desc = "Spend some of your nanites to create nanite armor to protect your body."
 	nano_point_cost = 4 // Cover the entire body in armor
 

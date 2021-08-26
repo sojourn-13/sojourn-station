@@ -2,13 +2,17 @@
 
 // Proc to give people nanogates. Add the organ, and it will do the rest.
  // HOW TO USE: Right click person -> view variables -> call proc -> type "make_psion" -> click finished -> done
-/mob/proc/give_nanogate()
+/mob/proc/give_nanogate(var/opifex = FALSE)
 	var/mob/living/carbon/human/user = src
 	if(istype(user))
 		var/obj/item/organ/external/chest = user.get_organ(BP_CHEST)
 
 		if(chest)
-			var/obj/item/organ/internal/nanogate/B = new /obj/item/organ/internal/nanogate
+			var/obj/item/organ/internal/nanogate/B
+			if(opifex)
+				B = new /obj/item/organ/internal/nanogate/opifex
+			else
+				B = new /obj/item/organ/internal/nanogate
 			B.replaced(chest)
 
 // The main process

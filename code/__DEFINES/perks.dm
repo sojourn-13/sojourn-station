@@ -83,4 +83,6 @@
 #define PERK_PSI_HARMONY /datum/perk/psi_harmony
 #define PERK_PSI_ATTUNEMENT /datum/perk/psi_attunement
 #define PERK_NANOGATE /datum/perk/nanogate
-#define PERK_NANITE_REGEN /datum/perk/nanogate_regen
+#define PERK_NANITE_REGEN /datum/perk/nanite_regen
+#define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
+#define PERK_NANITE_ARMOR /datum/perk/nanite_armor
