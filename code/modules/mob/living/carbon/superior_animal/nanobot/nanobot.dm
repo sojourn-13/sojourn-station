@@ -1,5 +1,5 @@
 /mob/living/carbon/superior_animal/nanobot
-	name = "\improper Nanobot"
+	name = "Nanobot"
 	desc = "A robot built from Nanites"
 	icon = 'icons/mob/custom_bot.dmi'
 	icon_state = "soteria_sword_handmade"
@@ -30,11 +30,6 @@
 	deathmessage = "blows apart!"
 	light_range = 3
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
-
-	health = 450
-	maxHealth = 450
-	melee_damage_lower = 30
-	melee_damage_upper = 40
 
 	do_gibs = FALSE
 	colony_friend = TRUE
