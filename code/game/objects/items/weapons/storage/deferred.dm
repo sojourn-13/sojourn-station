@@ -110,10 +110,10 @@
 		)
 	can_hold = list(
 		/obj/item/tool/bonesetter,
-		/obj/item/tool/saw/circular/medical,
-		/obj/item/tool/hemostat/adv,
-		/obj/item/tool/retractor/adv,
-		/obj/item/tool/scalpel/laser,
+		/obj/item/tool/saw/circular,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/retractor,
+		/obj/item/tool/scalpel,
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/reagent_containers/syringe, //We hold any syringe.
 		/obj/item/storage/pill_bottle, //We hold pill bottles as well
