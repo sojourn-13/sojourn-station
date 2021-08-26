@@ -120,11 +120,14 @@ datum/announcement/proc/Log(message as text, message_title as text)
 		if(issilicon(character))
 			global_announcer.autosay("A new [rank] [join_message].", ANNOUNSER_NAME)
 		else
-
-	if (character.client)
-		if (character.client.prefs)
-			if (character.mind)
-				if (character.mind.role_alt_title)
-					rank = character.mind.role_alt_title
-
-	global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)
+			if (character.client)
+				if (character.client.prefs)
+					if (character.mind)
+						if (character.mind.role_alt_title)
+							rank = character.mind.role_alt_title
+					if (rank == "Outsider")
+						message_admins("[character.real_name], has joined the round silently.")
+					else
+						global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)
+			else
+				global_announcer.autosay("[character.real_name], [rank], [join_message].", ANNOUNSER_NAME)	// This should not trigger -- but it's here as an emergency fallback

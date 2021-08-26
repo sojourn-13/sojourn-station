@@ -155,7 +155,7 @@ var/global/list/modifications_types = list(
 
 /datum/body_modification/limb/prosthesis/hesphaistos/alt
 	id = "prosthesis_hesphaistos_alt"
-	replace_limb = /obj/item/organ/external/robotic/hesphaistos
+	replace_limb = /obj/item/organ/external/robotic/hesphaistos/athena
 	icon = 'icons/mob/human_races/cyberlimbs/hesphaistos_alt.dmi'
 
 /datum/body_modification/limb/prosthesis/zenghu
@@ -197,12 +197,12 @@ var/global/list/modifications_types = list(
 	id = "prosthesis_ghetto"
 	replace_limb = /obj/item/organ/external/robotic/junktech
 	icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
-/*
-/datum/body_modification/limb/prosthesis/full_body_prosthetic
+
+/datum/body_modification/limb/prosthesis/synthskin
 	id = "prosthesis_full_body_prosthetic"
-	replace_limb = /obj/item/organ/external/robotic/full_body_prosthetic
+	replace_limb = /obj/item/organ/external/robotic/synthskin
 	icon = 'icons/mob/human_races/cyberlimbs/fbp.dmi'
-*/
+
 /datum/body_modification/limb/prosthesis/moebius
 	id = "prosthesis_moebius"
 	replace_limb = /obj/item/organ/external/robotic/moebius
