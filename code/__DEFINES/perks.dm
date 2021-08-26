@@ -86,3 +86,5 @@
 #define PERK_NANITE_REGEN /datum/perk/nanite_regen
 #define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
 #define PERK_NANITE_ARMOR /datum/perk/nanite_armor
+#define PERK_NANITE_KNIFE /datum/perk/nanite_knife
+#define PERK_NANITE_TOOL /datum/perk/nanite_tool

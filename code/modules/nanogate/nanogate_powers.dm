@@ -171,11 +171,11 @@ Self augments include:
 	set desc = "Spend some of your nanites to create nanites muscle to allow you to walk faster."
 	nano_point_cost = 2 // Install two augments on both legs
 
-	if(!owner.stats.getPerk(PERK_NANITE_REGEN)) // Do they already have the bot?
+	if(!owner.stats.getPerk(PERK_NANITE_MUSCLE)) // Do they already have the perk?
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
-			owner.stats.addPerk(PERK_NANITE_REGEN)
-			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_regen
+			owner.stats.addPerk(PERK_NANITE_MUSCLE)
+			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_muscle
 	else
 		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
 
@@ -183,34 +183,40 @@ Self augments include:
 	set category = "Nanogate Powers"
 	set name = "Nanite Augment - Armor (1)"
 	set desc = "Spend some of your nanites to create nanite armor to protect your body."
-	nano_point_cost = 4 // Cover the entire body in armor
+	nano_point_cost = 1
 
-	if(pay_power_cost(nano_point_cost))
-		to_chat(owner, "You permanently assign some of your nanites to protecting your body.")
-		var/obj/item/organ_module/armor/nanite/Aug = new(src, owner) // The type of augment to install
-		for(var/body_part in Aug.allowed_organs) // Install the augment everywhere it can.
-			var/obj/item/organ/external/limb = owner.get_organ(body_part)
-			if(limb)
-				Aug = new(src, owner)
-				Aug.install(owner.organs_by_name[limb])
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_armor
+	if(!owner.stats.getPerk(PERK_NANITE_ARMOR)) // Do they already have the perk?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
+			owner.stats.addPerk(PERK_NANITE_ARMOR)
+			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_armor
 	else
-		to_chat(owner, "There is no more space for more armor.")
+		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
 
 /obj/item/organ/internal/nanogate/proc/nanite_blade()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Blade (2)"
+	set name = "Nanite Augment - Blade (1)"
 	set desc = "Spend some of your nanites to create nanites blades to harm your foes."
-	nano_point_cost = 2 // Create two blades.
+	nano_point_cost = 1
 
-	if(pay_power_cost(nano_point_cost))
-		to_chat(owner, "You permanently assign some of your nanites to create blades.")
-		var/obj/item/organ_module/active/simple/nanite/Aug = new(src, owner) // The type of augment to install
-		for(var/body_part in Aug.allowed_organs) // Install the augment everywhere it can.
-			var/obj/item/organ/external/limb = owner.get_organ(body_part)
-			if(limb)
-				Aug = new(src, owner)
-				Aug.install(owner.organs_by_name[limb])
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_blade
+	if(!owner.stats.getPerk(PERK_NANITE_KNIFE)) // Do they already have the perk?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
+			owner.stats.addPerk(PERK_NANITE_KNIFE)
+			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_blade
 	else
-		to_chat(owner, "There is no more space for more armor.")
+		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
+
+/obj/item/organ/internal/nanogate/proc/nanite_tool()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Omnitool (1)"
+	set desc = "Spend some of your nanites to create nanites blades to harm your foes."
+	nano_point_cost = 1
+
+	if(!owner.stats.getPerk(PERK_NANITE_TOOL)) // Do they already have the perk?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
+			owner.stats.addPerk(PERK_NANITE_TOOL)
+			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_tool
+	else
+		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")

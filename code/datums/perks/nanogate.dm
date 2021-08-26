@@ -1,3 +1,5 @@
+// Perks given by the nanogate organ
+
 /datum/perk/nanogate
 	name = "Spinal Nanite Implant"
 	desc = "You have a nanogate implant in your spine."
@@ -13,15 +15,6 @@
 	name = "Nanite Muscles"
 	desc = "You set the nanites in your body to the task of making you move fast."
 	gain_text = "Your spine hurt for a bit as the nanites start make you faster."
-	var/speed_bonus = 0.3
-
-/datum/perk/nanite_muscle/assign(mob/living/carbon/human/H)
-	..()
-	H.tally -= speed_bonus
-
-/datum/perk/nanite_muscle/remove()
-	..()
-	H.tally += speed_bonus
 
 /datum/perk/nanite_armor
 	name = "Nanite Armor"
@@ -29,10 +22,40 @@
 	gain_text = "Your spine hurt for a bit as the nanites reinforce your body."
 	var/armor_mod = 0.3
 
-/datum/perk/nanite_muscle/assign(mob/living/carbon/human/H)
+/datum/perk/nanite_armor/assign(mob/living/carbon/human/H)
 	..()
-	H.brute_mod -= armor_mod
+	holder.brute_mod_perk -= armor_mod
 
-/datum/perk/nanite_muscle/remove()
+/datum/perk/nanite_armor/remove()
 	..()
-	H.brute_mod += armor_mod
+	holder.brute_mod_perk += armor_mod
+
+/datum/perk/nanite_knife
+	name = "Nanite Knife"
+	desc = "You set the nanites in your body to the task of making you more resilient."
+	gain_text = "Your spine hurt for a bit as the nanites reinforce your body."
+	passivePerk = FALSE
+
+/datum/perk/nanite_creation/nanite_knife/activate()
+	var/obj/item/tool/knife/nanite_blade/knife = new /obj/item/tool/knife/nanite_blade(src, holder)
+	holder.visible_message(
+		"[holder] clenches their fist, electricity crackling before a psionic blade forms in their hand!",
+		"You feel the rush of electric essence shocking your hand lightly before a psychic blade forms!"
+		)
+	playsound(holder.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+	holder.put_in_active_hand(knife)
+
+/datum/perk/nanite_tool
+	name = "Nanite Omnitool"
+	desc = "You set the nanites in your body to the task of making you more resilient."
+	gain_text = "Your spine hurt for a bit as the nanites reinforce your body."
+	passivePerk = FALSE
+
+/datum/perk/nanite_tool/activate()
+	var/obj/item/tool/nanite_omnitool/tool = new /obj/item/tool/nanite_omnitool(src, holder)
+	holder.visible_message(
+		"[holder] clenches their fist, electricity crackling before a psionic blade forms in their hand!",
+		"You feel the rush of electric essence shocking your hand lightly before a psychic blade forms!"
+		)
+	playsound(holder.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+	holder.put_in_active_hand(tool)
