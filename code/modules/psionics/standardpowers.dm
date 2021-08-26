@@ -153,7 +153,7 @@
 	set category = "Psionic powers"
 	set name = "Psionic Weapon Construction (3)"
 	set desc = "Expend three psi points to shape an oddity into a weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
-	psi_point_cost = 2
+	psi_point_cost = 3
 
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/oddity/active = null
@@ -249,7 +249,7 @@
 	set name = "Psychic Banish (4)"
 	set desc = "Expend four points of your psi essence to banish nearby creatures capable of burrowing back into the holes from whence they came. Effects creatures must be able to burrow and may \
 	resist your psychic influence."
-	psi_point_cost = 3
+	psi_point_cost = 4
 
 	if(pay_power_cost(psi_point_cost))
 		playsound(src.loc, 'sound/voice/hiss6.ogg', 75, 1, 8, 8)
@@ -267,7 +267,7 @@
 	set name = "Journey to Nowhere (5)"
 	set desc = "Expend five psi points to transport yourself, whatever you are carrying, and anyone you are grabbing to the nightmare realm known as deep maintenance. You will land somewhere in the \
 	tunnels, but you are not assured safety or that you will be alone once on the other side. Using this power strains the body and will weaken you for a short time."
-	psi_point_cost = 3
+	psi_point_cost = 5
 
 	if(pay_power_cost(psi_point_cost))
 		var/mob/living/L = get_grabbed_mob(owner)			//Grab anyone we have grabbed
@@ -294,9 +294,25 @@
 	set name = "Telekinetic Omnitool (2)"
 	set desc = "Expend two points of your psi essence to create an omnitool. It disappears when dropped or if it leaves your hand."
 	psi_point_cost = 2
+	var/stat_mec = 25
+	var/stat_bio = 25
+	var/stat_rob = 25
 
 	if(pay_power_cost(psi_point_cost))
 		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
+		if (owner.stats.getStat(STAT_MEC) > 32)
+			stat_mec = owner.stats.getStat(STAT_MEC) * 0.8
+			if (owner.stats.getStat(STAT_MEC) > 62)
+				stat_mec = 50
+		if (owner.stats.getStat(STAT_BIO) > 32)
+			stat_bio = owner.stats.getStat(STAT_BIO) * 0.8
+			if (owner.stats.getStat(STAT_BIO) > 62)
+				stat_bio = 50
+		if (owner.stats.getStat(STAT_ROB) > 32)
+			stat_rob = owner.stats.getStat(STAT_ROB) * 0.8
+			if (owner.stats.getStat(STAT_ROB) > 62)
+				stat_rob = 50
+		tool.tool_qualities = list(QUALITY_SCREW_DRIVING = stat_mec, QUALITY_BOLT_TURNING = stat_mec, QUALITY_DRILLING = stat_mec, QUALITY_WELDING = stat_mec, QUALITY_CAUTERIZING = stat_bio, QUALITY_PRYING = stat_mec, QUALITY_DIGGING = stat_rob, QUALITY_PULSING = stat_mec, QUALITY_WIRE_CUTTING = stat_mec, QUALITY_HAMMERING = stat_rob, QUALITY_SHOVELING = stat_rob, QUALITY_EXCAVATION = stat_rob, QUALITY_CLAMPING = stat_bio, QUALITY_RETRACTING = stat_bio, QUALITY_SAWING = stat_mec, QUALITY_BONE_SETTING = stat_bio, QUALITY_CUTTING = stat_bio, QUALITY_BONE_GRAFTING = stat_bio)
 		owner.visible_message(
 			"[owner] clenches their fist, electricity crackling before a telekinetic omnitool is shaped in their hand!",
 			"You feel the rush of electric essence shocking your hand lightly before a telekinetic omnitool forms!"
