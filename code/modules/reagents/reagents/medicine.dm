@@ -51,7 +51,7 @@
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1
 
-/datum/reagent/medicine/vermicetol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/medicine/vermicetol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed = REM)
 	M.heal_organ_damage(12 * removed, 0)
 
 /datum/reagent/medicine/varceptol
@@ -65,7 +65,7 @@
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1
 
-/datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed = REM)
 	M.heal_organ_damage(8 * removed, 0)
 	M.adjustToxLoss(-3 * removed)
 
@@ -486,7 +486,7 @@
 	overdose = 10
 	scannable = 1
 
-/datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
+/datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
 	if(ishuman(M))
@@ -1239,8 +1239,8 @@
 	constant_metabolism = TRUE
 	scannable = 1
 
-/datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
-	M.adjustToxLoss(-8 * removed)
+/datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
+	M.adjustToxLoss(-5)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
