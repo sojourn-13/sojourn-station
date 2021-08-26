@@ -363,3 +363,11 @@
 	icon_state = "rcd"
 	item_state = "rcdammo"
 	default_type = MATERIAL_COMPRESSED_MATTER
+	price_tag = 30
+
+/obj/item/stack/material/compressed_matter/random
+	rand_min = 15
+	rand_max = 30
+
+/obj/item/stack/material/compressed_matter/full
+	amount = 120

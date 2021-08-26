@@ -182,6 +182,3 @@
 	..(newloc, MATERIAL_WOOD)
 	//glass = 1
 	//set_opacity(0)
-
-/obj/machinery/door/unpowered/simple/resin/New(var/newloc,var/material_name)
-	..(newloc, MATERIAL_RESIN)

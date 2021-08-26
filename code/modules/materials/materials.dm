@@ -20,7 +20,6 @@
 		DOORS
 			stone
 			metal
-			resin
 			wood
 */
 
@@ -684,22 +683,7 @@ var/list/name_to_material
 	flags = MATERIAL_PADDING
 	sheet_singular_name = "ball"
 	sheet_plural_name = "balls"
-/*
-/material/resin
-	name = "resin"
-	icon_colour = "#E85DD8"
-	dooropen_noise = 'sound/effects/attackblob.ogg'
-	door_icon_base = "resin"
-	melting_point = T0C+300
-	sheet_singular_name = "blob"
-	sheet_plural_name = "blobs"
 
-/material/resin/can_open_material_door(var/mob/living/user)
-	var/mob/living/carbon/M = user
-	if(istype(M) && locate(/obj/item/organ/internal/xenos/hivenode) in M.internal_organs)
-		return 1
-	return 0
-*/
 /material/biomatter
 	name = MATERIAL_BIOMATTER
 	stack_type = /obj/item/stack/material/biomatter
