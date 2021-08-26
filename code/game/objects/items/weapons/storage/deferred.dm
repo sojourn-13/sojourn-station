@@ -115,7 +115,7 @@
 		/obj/item/tool/retractor/adv,
 		/obj/item/tool/scalpel/laser,
 		/obj/item/tool/tape_roll/bonegel,
-		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
+		/obj/item/reagent_containers/syringe, //We hold any syringe.
 		/obj/item/storage/pill_bottle/tramadol,
 		/obj/item/stack/medical/advanced/bruise_pack
 		)
