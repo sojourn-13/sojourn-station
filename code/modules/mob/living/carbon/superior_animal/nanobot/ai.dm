@@ -14,19 +14,19 @@
 	if(speaker in creator) // Is it the creator speaking?
 
 		// Autodoc mode.
-		if(AUTODOC_MODE & hearing_flag) // Is Autodoc mode activated?
+		if(hearing_flag & AUTODOC_MODE) // Is Autodoc mode activated?
 			if(findtext(message, "Activate Autodoc") && findtext(message, "[src.name]"))
 				visible_emote("state, \"Activating Autodoc Mode.\"")
 				// TODO : Make it inject chems based on damage. -R4d6
 
 		// Radio mode.
-		if(RADIO_MODE & hearing_flag) // Is Radio mode activated?
+		if(hearing_flag & RADIO_MODE) // Is Radio mode activated?
 			if(findtext(message, "Activate Radio") && findtext(message, "[src.name]"))
 				visible_emote("state, \"Activating Internal Radio.\"")
 				// TODO : Make it turn on its radio. -R4d6
 
 		// Opifex Food mode.
-		if(FOOD_MODE & hearing_flag) // Is Autodoc mode activated?
+		if(hearing_flag & FOOD_MODE) // Is Autodoc mode activated?
 			if(findtext(message, "Activate Food") && findtext(message, "[src.name]"))
 				visible_emote("state, \"Activating Food Mode.\"")
 				// TODO : Make it create food that poison non-opifex. -R4d6

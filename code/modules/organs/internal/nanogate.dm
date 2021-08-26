@@ -31,11 +31,37 @@
 		// Activation of vocal protocols for the bots
 		/obj/item/organ/internal/nanogate/proc/autodoc_mode,
 		/obj/item/organ/internal/nanogate/proc/radio_mode,
-		/obj/item/organ/internal/nanogate/proc/food_mode,
 
 		// Upgrades of the user.
-		/obj/item/organ/internal/nanogate/proc/nanite_regen
+		/obj/item/organ/internal/nanogate/proc/nanite_regen,
+		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
+		/obj/item/organ/internal/nanogate/proc/nanite_armor,
+		/obj/item/organ/internal/nanogate/proc/nanite_blade
+
 		)
 
 // Opifexes are the creator of the tech, they get a better one.
 /obj/item/organ/internal/nanogate/opifex
+	name = "Opifex Nanite Gate"
+	price_tag = 20000 // Better than the standard one.
+	nanite_points = 15
+
+	owner_verbs = list(
+		// Creation and upgrade of the bot
+		/obj/item/organ/internal/nanogate/proc/create_nanobot,
+		/obj/item/organ/internal/nanogate/proc/stand_damage,
+		/obj/item/organ/internal/nanogate/proc/stand_health,
+		/obj/item/organ/internal/nanogate/proc/stand_armor,
+		/obj/item/organ/internal/nanogate/proc/stand_repair,
+
+		// Activation of vocal protocols for the bots
+		/obj/item/organ/internal/nanogate/proc/autodoc_mode,
+		/obj/item/organ/internal/nanogate/proc/radio_mode,
+		/obj/item/organ/internal/nanogate/proc/food_mode,
+
+		// Upgrades of the user.
+		/obj/item/organ/internal/nanogate/proc/nanite_regen,
+		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
+		/obj/item/organ/internal/nanogate/proc/nanite_armor,
+		/obj/item/organ/internal/nanogate/proc/nanite_blade
+		)
