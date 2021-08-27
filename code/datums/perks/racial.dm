@@ -298,6 +298,7 @@
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up tools out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/storage/belt/utility/opifex/full(usr.loc)
+	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 	return ..()
 
 /datum/perk/opifex_backup_medical
@@ -317,6 +318,7 @@
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up webbing out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/storage/belt/medical/opifex/full(usr.loc)
+	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 	return ..()
 
 
@@ -337,6 +339,7 @@
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your back up belt out from their hiding place, the webbing unfolds as it quietly flops to the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/storage/belt/security/tactical/opifex/full(usr.loc)
+	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 	return ..()
 
 /datum/perk/opifex_turret
@@ -356,6 +359,7 @@
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your smuggled circuit out from their hiding place, the plastic and metal device clattering on the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/circuitboard/artificer_turret/opifex(usr.loc)
+	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 	return ..()
 
 /datum/perk/opifex_patchkit
@@ -375,6 +379,7 @@
 	to_chat(usr, SPAN_NOTICE("You discreetly and stealthily slip your smuggled patch kit out from their hiding place, the cloth pouch clattering on the floor."))
 	log_and_message_admins("used their [src] perk.")
 	new /obj/item/storage/firstaid/ifak(usr.loc)
+	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 	return ..()
 
 ////////////////////////////////////////////Cht'mant perks
