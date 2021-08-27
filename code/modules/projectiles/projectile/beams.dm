@@ -37,7 +37,7 @@
 	damage_types = list(BURN = 20)
 
 /obj/item/projectile/beam/weak/kurtz_50
-	damage_types = list(BURN = 25)
+	damage_types = list(BURN = 40)
 
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)

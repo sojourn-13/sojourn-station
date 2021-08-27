@@ -630,3 +630,54 @@
 		new /obj/item/clothing/accessory/ranks/blank(src)
 		new /obj/item/clothing/accessory/ranks/blank(src)
 		new /obj/item/clothing/accessory/ranks/blank(src)
+
+// Guild boxes, exclusively used to mass craft guild parts.
+/obj/item/storage/box/guild_manip
+	name = "box of forged manipulators"
+	desc = "A box containing five forged manipulators, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "guild"
+
+/obj/item/storage/box/guild_manip/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/manipulator/guild(src)
+
+/obj/item/storage/box/guild_bin
+	name = "box of cast matter bins"
+	desc = "A box containing five cast matter bins, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "guild"
+
+/obj/item/storage/box/guild_bin/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/matter_bin/guild(src)
+
+/obj/item/storage/box/guild_laser
+	name = "box of perfected micro-lasers"
+	desc = "A box containing five perfected micro-lasers, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "guild"
+
+/obj/item/storage/box/guild_laser/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/micro_laser/guild(src)
+
+/obj/item/storage/box/guild_scanner
+	name = "box of perfected scanning modules"
+	desc = "A box containing five perfected scanning modules, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "guild"
+
+/obj/item/storage/box/guild_scanner/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/scanning_module/guild(src)
+
+/obj/item/storage/box/guild_capacitor
+	name = "box of ultra capacitors"
+	desc = "A box containing five ultra capacitors, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "guild"
+
+/obj/item/storage/box/guild_capacitor/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/capacitor/guild(src)
