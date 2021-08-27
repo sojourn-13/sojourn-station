@@ -34,6 +34,7 @@
 	name = "Nanite Knife"
 	desc = "You set the nanites in your body to the task of making you more resilient."
 	gain_text = "Your spine hurt for a bit as the nanites reinforce your body."
+	active = FALSE
 	passivePerk = FALSE
 
 /datum/perk/nanite_creation/nanite_knife/activate()
@@ -50,6 +51,7 @@
 	name = "Nanite Omnitool"
 	desc = "You set the nanites in your body to the task of making you more resilient."
 	gain_text = "Your spine hurt for a bit as the nanites reinforce your body."
+	active = FALSE
 	passivePerk = FALSE
 
 /datum/perk/nanite_tool/activate()
