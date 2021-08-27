@@ -77,7 +77,7 @@
 	..()
 	to_chat(holder, "Your spine hurt as the converted nanites enter your bloodstream.")
 	holder.reagents.add_reagent(chem_id, chem_amount)
-	spawn(5) holder.stats.removePerk(src.type) // Delete the perk
+	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 
 /datum/perk/nanite_chem/implantoids
 	name = "Implantoids Nanites"
