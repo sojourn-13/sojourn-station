@@ -20,6 +20,7 @@ Current User-Related Powers
 - Armor Upgrade : Give the user a perk that reduce damage, again the precise number is defined in the perk given.
 - Spawn Knife : Allow the user to create Nanite Knifes at will. The knives disapear once they leave the user's hand.
 - Spawn Omnitool : Opifex-only. The same as 'Spawn Knife', except with an omnitool rather than a knife.
+- Chemical Injection : Allow the user to choose a type of nanite chem to inject himself, then give him a perk that will do the injection when the user want.
 */
 
 // Nanobot powers and upgrades.
