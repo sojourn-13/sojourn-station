@@ -1,23 +1,25 @@
 // This is where you write the powers for the nanogate implant/organ. Keep in mind that the points it use are only regenerated as the beginning of the shift.
-
 /*
-You get a point pool of 10 points at shift start, you cannot restore or get more points. You may use this point pool to do 2 things.
-You build a robot which follows you at all times which you can spend further points to unlock abilities.
+The user get a limited pool of points at shift start and has no way of regenerating or getting more points.
+He can use those points to either build & upgrade a robot companion similar to a shroomling, upgrade themselves, or mix and match both option.
+Each power can only be buyed once.
+Opifex have access to a better version with a bigger point pool and more available powers to buy.
 
-Abilities include:
--Self repair (regeneration)
--Higher damage
--Higher health
--Autodoc mode (voice command makes it diagnose then inject chemicals based on your current damage)
--Service mode (bot spawns ration food and drinks toxic to anyone but an opifex)
--Radio mode (voice commands turn on and off a station bounced radio)
-The other use is for self augmentation in ways beyond what robotics does. Giving you augments that can't be taken out and are quite powerful, but they take from the same resource point pool as your robot augmenting.
-Self augments include:
--Speed boosters
--Razor nails
--Stat effecting nanite injections
--Armor upgrades
--Opifex specialized omnitools
+Current Robot-Related Powers
+- Create Nanobot : Self-explanatory, this allow the user to create & name a nanobot. It is underwhelming at first, but keep in mind it is meant to be upgraded.
+- Upgrade Damage : Upgrade the nanobot's lower & upper damage by whatever the 'damage_boost' var is set to (currently 20).
+- Upgrade Health : Upgrade the nanobot's both max health and currently health by the 'health_boost' var (200). Doesn't actually heal the bot as any damage it got will still stay. It is just so that upgrading the health doesn't reduce the bot to 50% HP.
+- Enable Self-Repait : This make the nanobot constantly heal itself, with the rate of healing determined by the 'repair_rate' variable (5).
+- Enable Radio Mode : Allow the nanobot to recognize the 'Toggle Radio' voice command, which enable or disable the broadcasting of a built-in radio.
+- Enable Autodoc Mode : Allow the nanobot to recognize the 'Toggle Autodoc' voice command, which basically turn it into a medibot.
+- Enable Food Mode : Opifex-Only, this one allow the nanobot to spawn rations toxic to non-opifex.
+
+Current User-Related Powers
+- Regeneration : Give the user a perk that constantly heal himself at a very slow rate defined in the perk itself.
+- Speed Booster : Give the user a perk that make him move faster, the speed increase being defined in the perk itself.
+- Armor Upgrade : Give the user a perk that reduce damage, again the precise number is defined in the perk given.
+- Spawn Knife : Allow the user to create Nanite Knifes at will. The knives disapear once they leave the user's hand.
+- Spawn Omnitool : Opifex-only. The same as 'Spawn Knife', except with an omnitool rather than a knife.
 */
 
 // Nanobot powers and upgrades.
