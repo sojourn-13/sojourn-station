@@ -234,6 +234,7 @@
 	name = "Kurtz's refinement kit"
 	desc = "A kit made of plasteel with ready to fit on compiscators and refinding tools to any .50 kurtz that somehow always seem to improve it the weapon."
 	icon_state = "kit_heavy_alt"
+	can_remove = FALSE
 
 /obj/item/gun_upgrade/mechanism/brass_kit/New()
 	..()
@@ -254,6 +255,7 @@
 	name = "\"Brass Fighter\" refinement kit"
 	desc = "A kit made of brass with ready to fit on compiscators and refinding tools to any .50 kurtz that somehow always seem to improve it the weapon. The tools inside are warm to the touch and the box itself has a faint ticking sound."
 	icon_state = "kit_heavy"
+	can_remove = FALSE
 
 /obj/item/gun_upgrade/mechanism/brass_kit/New()
 	..()
