@@ -254,8 +254,9 @@
 // Todo make Cult spawn with this and the clockwork block
 /obj/item/gun_upgrade/mechanism/brass_kit
 	name = "\"Brass Fighter\" refinement kit"
-	desc = "A kit made of brass with ready to fit on compiscators and refinding tools to any .50 kurtz that somehow always seem to improve it the weapon. The tools inside are warm to the touch and the box itself has a faint ticking sound."
-	icon_state = "kit_heavy"
+	desc = "A kit made from brass and designed to improve .50 caliber kurtz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
+	and plays a faint melodic tone through brass gears and perptually grinding cogs. Was this an invention of the blue cross or a toy some other entity made?"
+	icon_state = "Clockback"
 	can_remove = FALSE
 
 /obj/item/gun_upgrade/mechanism/brass_kit/New()
