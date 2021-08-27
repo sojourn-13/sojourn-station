@@ -43,10 +43,22 @@
 	var/list/creator = list() // Who's the bot's creator.
 	var/repair_rate = 0 // How fast does the bot repair itself.
 	var/hearing_flag = 0 // Flags for voice-activated functions
-	var/obj/item/device/radio/R
+	var/obj/item/device/radio/R // Var for the built-in radio
+
+	// Vars for the medical function
+	var/medbot = FALSE // Does it act like a medbot?
+	var/mob/living/carbon/human/patient = null
+	var/currently_healing = FALSE
+	var/injection_amount = 15 //How much reagent do we inject at a time?
+	var/heal_threshold = 10 //Start healing when they have this much damage in a category
+	var/treatment_brute = "tricordrazine"
+	var/treatment_oxy = "tricordrazine"
+	var/treatment_fire = "tricordrazine"
+	var/treatment_tox = "tricordrazine"
+	var/treatment_virus = "spaceacillin"
 
 /mob/living/carbon/superior_animal/nanobot/New()
-	..()
+	. = ..()
 	R = new/obj/item/device/radio(src)
 
 /mob/living/carbon/superior_animal/nanobot/examine(mob/user)
@@ -97,3 +109,15 @@
 
 	// If nothing was ever triggered, continue as normal
 	..()
+
+/mob/living/carbon/superior_animal/nanobot/proc/spawn_food(var/random = FALSE)
+	var/obj/item/reagent_containers/food/snacks/spawned_food // The food we're spawning
+	if(random) // Are we spawning random food?
+		var/list/possible_food = typesof(/obj/item/reagent_containers/food/snacks) // Create a list of possible food to spawn
+		possible_food -= /obj/item/reagent_containers/food/snacks // Remove the default type from the list
+		spawned_food = pick(possible_food) // Select a random food.
+
+	else // We're spawning a specific food.
+		spawned_food = /obj/item/reagent_containers/food/snacks/mre/can
+	spawned_food = new(src.loc) // Spawn the food
+	visible_emote("state, \"Dispensing [spawned_food.name].\"") // Vocal Message

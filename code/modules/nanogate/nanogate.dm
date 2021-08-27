@@ -1,7 +1,7 @@
 // Main page for nanogates and non-power stuff. If it is related to nanogates and you don't know where to put it, put it here. -R4d6
 
 // Proc to give people nanogates. Add the organ, and it will do the rest.
- // HOW TO USE: Right click person -> view variables -> call proc -> type "make_psion" -> click finished -> done
+ // HOW TO USE: Right click person -> Click 'Advanced Proc Call Target -> Type 'give_nanogate' -> Click finish to give a normal nanogate, click 'num' then type '1', *then* finished to give them an opifex nanogate.
 /mob/proc/give_nanogate(var/opifex = FALSE)
 	var/mob/living/carbon/human/user = src
 	if(istype(user))
