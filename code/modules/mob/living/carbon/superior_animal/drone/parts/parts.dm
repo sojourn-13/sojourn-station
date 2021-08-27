@@ -29,7 +29,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/build_step = 0 // Used to know at which part of the assembly process we are.
 	var/created_name = "Roomba" // The name the roomba will start with.
-	var/step_message = "It is missing a control board." // What does the assembly need next.
+	var/step_message = "It is missing a custom control module." // What does the assembly need next.
 	var/obj/item/cell/medium/power_cell // The power cell the roomba has
 
 /obj/item/bot_part/roomba/roomba_frame/examine(mob/user)
@@ -121,7 +121,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/build_step = 0 // Used to know at which part of the assembly process we are.
 	var/created_name = "Mantis Drone" // The name the drone will start with.
-	var/step_message = "It is missing a left arm." // What does the assembly need next.
+	var/step_message = "It is missing a left arm frame." // What does the assembly need next.
 	var/obj/item/cell/large/power_cell // The power cell the drone has
 
 /obj/item/bot_part/mantis_part/main_frame/examine(mob/user)
