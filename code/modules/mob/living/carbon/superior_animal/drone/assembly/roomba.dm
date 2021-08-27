@@ -20,8 +20,8 @@
 	else if((istype(W, /obj/item/bot_part/control)) && (build_step == 0))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
-			SPAN_NOTICE("You add the [W.name] to the [src].")
+			SPAN_NOTICE("[user] adds the [W.name] to the roomba."),
+			SPAN_NOTICE("You add the [W.name] to the roomba.")
 		)
 		step_message = "It is missing a medium power cell." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
@@ -34,8 +34,8 @@
 	else if((istype(W, /obj/item/cell/medium)) && (build_step == 1))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-			SPAN_NOTICE("[user] adds the [W.name] to [src]."),
-			SPAN_NOTICE("You add the [W.name] to [src].")
+			SPAN_NOTICE("[user] adds the [W.name] to the roomba."),
+			SPAN_NOTICE("You add the [W.name] to roomba.")
 		)
 		step_message = "It is missing roomba treads." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
@@ -48,8 +48,8 @@
 	else if((istype(W, /obj/item/bot_part/roomba/roomba_treads)) && (build_step == 2))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
-			SPAN_NOTICE("You add the [W.name] to the [src].")
+			SPAN_NOTICE("[user] adds the [W.name] to the roomba."),
+			SPAN_NOTICE("You add the [W.name] to the roomba.")
 		)
 		step_message = "The wiring is missing and must be installed." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
@@ -65,8 +65,8 @@
 			to_chat(user, ("There's not enough cable left."))
 			return
 		user.visible_message(
-			SPAN_NOTICE("[user] starts to wire the [src]."),
-			SPAN_NOTICE("You start to wire the [src].")
+			SPAN_NOTICE("[user] starts to wire the roomba."),
+			SPAN_NOTICE("You start to wire the roomba.")
 		)
 		if(!do_after(user, WORKTIME_FAST, src))
 			return
@@ -83,8 +83,8 @@
 	else if((QUALITY_PULSING) && (build_step == 4))
 		var/obj/item/tool/T = W // New var to use tool-only procs.
 		user.visible_message(
-			SPAN_NOTICE("[user] starts to program the [src]."),
-			SPAN_NOTICE("You start to program the [src].")
+			SPAN_NOTICE("[user] starts to program the roomba."),
+			SPAN_NOTICE("You start to program the roomba.")
 		)
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
@@ -101,8 +101,8 @@
 		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-				SPAN_NOTICE("[user] screws the panel on the [src] shut."),
-				SPAN_NOTICE("You screw the panel on the [src] shut.")
+				SPAN_NOTICE("[user] screws the panel on the roomba shut."),
+				SPAN_NOTICE("You screw the panel on the roomba shut.")
 			)
 			step_message = "Almost done. The drone needs the swipe of an ID with robotics access. Hopefully, yours." // Next step
 			playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)

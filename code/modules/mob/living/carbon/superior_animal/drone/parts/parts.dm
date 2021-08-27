@@ -20,7 +20,7 @@
 
 /obj/item/bot_part/roomba/roomba_frame
 	desc = "It's a frame for a roomba."
-	name = "roomba frame"
+	name = "Roomba Chassis"
 	icon_state = "roomba_frame_0"
 	force = 3.0
 	throwforce = 10.0
@@ -87,7 +87,7 @@
 	desc = "Parts used for the construction of a Soteria Sword Drone."
 
 /obj/item/bot_part/sword_part/main_frame
-	name = "Sword Drone Main Frame"
+	name = "Sword Drone Chassis"
 	desc = "It's a frame for a sword drone."
 	icon_state = "sword_frame_0"
 	force = 3.0
@@ -111,7 +111,7 @@
 	desc = "Parts used for the construction of a Soteria Mantis Drone."
 
 /obj/item/bot_part/mantis_part/main_frame
-	name = "Mantis Drone Main Frame"
+	name = "Mantis Drone Chassis"
 	desc = "It's a frame for a mantis drone."
 	icon_state = "mantis_frame_0"
 	force = 3.0

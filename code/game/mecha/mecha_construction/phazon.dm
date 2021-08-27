@@ -67,7 +67,7 @@
 		//9
 		list("key"=/obj/item/stack/cable_coil,
 			//"backkey"=QUALITY_PRYING,
-			"desc"="The the ansible crystal is installed but requires additional wiring to power it."),
+			"desc"="The ansible crystal is installed but requires additional wiring to power it."),
 		//10
 		list("key"=/obj/item/stock_parts/subspace/crystal,
 			//"backkey"=QUALITY_SCREW_DRIVING,

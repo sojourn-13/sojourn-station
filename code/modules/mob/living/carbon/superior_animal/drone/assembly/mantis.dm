@@ -165,15 +165,14 @@
 	else if((istype(W, /obj/item/cell/large)) && (build_step == 11))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
-			SPAN_NOTICE("You add the [W.name] to the [src].")
+			SPAN_NOTICE("[user] adds the [W.name] to the [src].")
 		)
 		step_message = "The power cell is not secured and must be screwed into place." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		power_cell = W //Store the power cell for later usage.
 
 		// Remove the cell
-		insert_item(W, user)
+		power_cell.forceMove(src)
 
 	// Step 13, Secure the power cell.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 12))
@@ -181,8 +180,8 @@
 		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-				SPAN_NOTICE("[user] secures the [W.name] in the [src]."),
-				SPAN_NOTICE("You secure the [W.name] in the [src].")
+				SPAN_NOTICE("[user] secures the power cell in the [src]."),
+				SPAN_NOTICE("You secure the power cell in the [src].")
 			)
 			step_message = "The custom control module is missing and must be installed." // Next step
 
@@ -240,7 +239,7 @@
 				SPAN_NOTICE("[user] programs the [src]."),
 				SPAN_NOTICE("You program the [src].")
 			)
-			step_message = "The panel is open and must be screwed shut." // Next step
+			step_message = "The maintenance panel is open and must be screwed shut." // Next step
 
 	// Step 18, Close the panel.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 17))
@@ -248,10 +247,10 @@
 		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-				SPAN_NOTICE("[user] screws the panel on the [src] shut."),
-				SPAN_NOTICE("You screw the panel on the [src] shut.")
+				SPAN_NOTICE("[user] screws the maintenance panel on the [src] shut."),
+				SPAN_NOTICE("You screw the maintenance panel on the [src] shut.")
 			)
-			step_message = "The panel is closed, it needs to be outfitted with a Mark II environmental protection suit." // Next step
+			step_message = "The maintenance panel is closed. The drone needs to be outfitted with a Mark II environmental protection suit." // Next step
 
 	// Step 19, Add the armor
 	else if((istype(W, /obj/item/clothing/suit/armor/vest/soteriasuit)) && (build_step == 18))
