@@ -13,4 +13,4 @@
 	penetration_multiplier = 1.25
 	recoil_buildup = 8
 	one_hand_penalty = 15
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)

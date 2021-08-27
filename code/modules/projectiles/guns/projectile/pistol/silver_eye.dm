@@ -16,7 +16,7 @@
 	recoil_buildup = 5
 	one_hand_penalty = 10
 	penetration_multiplier = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 	reload_sound 	= 'sound/weapons/guns/interact/reload_silver.ogg'
 	fire_sound = 'sound/weapons/guns/fire/fire_silver.ogg'
 
