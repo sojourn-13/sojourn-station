@@ -26,7 +26,7 @@
 		owner.stats.addPerk(PERK_PSION)
 
 	if(owner.stats.getPerk(PERK_PSI_HARMONY))
-		psi_max_bonus = 2
+		psi_max_bonus = 3
 
 	max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) / 10), 1, 30)) + psi_max_bonus
 
