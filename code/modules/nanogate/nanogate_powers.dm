@@ -222,3 +222,19 @@ Current User-Related Powers
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_tool
 	else
 		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
+
+/obj/item/organ/internal/nanogate/proc/nanite_chem()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Chemical (1)"
+	set desc = "Convert some of your nanites into more specialized nanites."
+	nano_point_cost = 1
+
+	var/list/choices_perk = typesof(PERK_NANITE_CHEM)
+	choices_perk -= PERK_NANITE_CHEM
+
+	var/datum/perk/nanite_chem/choice = input(owner, "Which nanite chem do you want?", "Chem Choice", null) as null|anything in choices_perk
+
+	if(choice && pay_power_cost(nano_point_cost)) // Check if the user actually made a choice, and if they did, check if they have the points.
+		owner.stats.addPerk(choice)
+		to_chat(owner, "You permanently convert some of your nanites into specialized variants.")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_tool

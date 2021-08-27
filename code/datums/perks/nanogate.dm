@@ -63,3 +63,46 @@
 		)
 	playsound(holder.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 	holder.put_in_active_hand(tool)
+
+/datum/perk/nanite_chem
+	name = "Nanite Chemical"
+	desc = "You can send the prepared nanites into your bloodstream at a moment's notice, but only once."
+	gain_text = "Your spine hurt for a bit as the nanites convert themselves."
+	active = FALSE
+	passivePerk = FALSE
+	var/chem_id = "nanites"
+	var/chem_amount = 15
+
+/datum/perk/nanite_chem/activate()
+	..()
+	to_chat(holder, "Your spine hurt as the converted nanites enter your bloodstream.")
+	holder.reagents.add_reagent(chem_id, chem_amount)
+	spawn(5) holder.stats.removePerk(src.type) // Delete the perk
+
+/datum/perk/nanite_chem/implantoids
+	name = "Implantoids Nanites"
+	chem_id = "implant nanites"
+
+/datum/perk/nanite_chem/trauma_control_system
+	name = "Trauma Control System Nanites"
+	chem_id = "trauma_control_system"
+
+/datum/perk/nanite_chem/control_booster_utility
+	name = "Control Booster Utility Nanites"
+	chem_id = "cbu"
+
+/datum/perk/nanite_chem/control_booster_combat
+	name = "Control Booster Combat Nanites"
+	chem_id = "cbc"
+
+/datum/perk/nanite_chem/purgers
+	name = "Purgers Nanites"
+	chem_id = "nanopurgers"
+
+/datum/perk/nanite_chem/oxyrush
+	name = "Oxyrush Nanites"
+	chem_id = "oxyrush"
+
+/datum/perk/nanite_chem/nantidotes
+	name = "Nantidotes Nanites"
+	chem_id = "nantidotes"
