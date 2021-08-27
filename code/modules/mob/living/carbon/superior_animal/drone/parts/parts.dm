@@ -20,7 +20,7 @@
 
 /obj/item/bot_part/roomba/roomba_frame
 	desc = "It's a frame for a roomba."
-	name = "roomba frame"
+	name = "Roomba Chassis"
 	icon_state = "roomba_frame_0"
 	force = 3.0
 	throwforce = 10.0
@@ -29,7 +29,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/build_step = 0 // Used to know at which part of the assembly process we are.
 	var/created_name = "Roomba" // The name the roomba will start with.
-	var/step_message = "It is missing a control board." // What does the assembly need next.
+	var/step_message = "It is missing a custom control module." // What does the assembly need next.
 	var/obj/item/cell/medium/power_cell // The power cell the roomba has
 
 /obj/item/bot_part/roomba/roomba_frame/examine(mob/user)
@@ -87,7 +87,7 @@
 	desc = "Parts used for the construction of a Soteria Sword Drone."
 
 /obj/item/bot_part/sword_part/main_frame
-	name = "Sword Drone Main Frame"
+	name = "Sword Drone Chassis"
 	desc = "It's a frame for a sword drone."
 	icon_state = "sword_frame_0"
 	force = 3.0
@@ -111,7 +111,7 @@
 	desc = "Parts used for the construction of a Soteria Mantis Drone."
 
 /obj/item/bot_part/mantis_part/main_frame
-	name = "Mantis Drone Main Frame"
+	name = "Mantis Drone Chassis"
 	desc = "It's a frame for a mantis drone."
 	icon_state = "mantis_frame_0"
 	force = 3.0
@@ -121,7 +121,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/build_step = 0 // Used to know at which part of the assembly process we are.
 	var/created_name = "Mantis Drone" // The name the drone will start with.
-	var/step_message = "It is missing a left arm." // What does the assembly need next.
+	var/step_message = "It is missing a left arm frame." // What does the assembly need next.
 	var/obj/item/cell/large/power_cell // The power cell the drone has
 
 /obj/item/bot_part/mantis_part/main_frame/examine(mob/user)

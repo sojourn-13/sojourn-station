@@ -149,7 +149,7 @@
 
 /obj/item/tool/medmultitool/medimplant
 	name = "soteria medical omnitool"
-	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
+	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
 	icon_state = "medimplant"
 	matter = null
 	force = WEAPON_FORCE_PAINFUL
@@ -168,7 +168,7 @@
 
 /obj/item/tool/medmultitool/medimplant/sci
 	name = "soteria medical omnitool"
-	desc = "An all-in-one medical tool implant based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
+	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
 	icon_state = "medimplant_sci"
 	matter = null //Nope
 	degradation = 1

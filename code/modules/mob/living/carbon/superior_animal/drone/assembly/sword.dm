@@ -12,17 +12,17 @@
 			return
 		created_name = t
 		user.visible_message(
-								SPAN_NOTICE("[user] write [t] on the drone's nametag."),
-								SPAN_NOTICE("You write [t] on the drone's nametag.")
-							)
+			SPAN_NOTICE("[user] writes [t] on the drone's nametag."),
+			SPAN_NOTICE("You write [t] on the drone's nametag.")
+		)
 
 	// Step 1, Adding the left arm
 	else if((istype(W, /obj/item/bot_part/left_arm_frame)) && (build_step == 0))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
+			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
+			SPAN_NOTICE("You add the [W.name] to the [src].")
+		)
 		step_message = "It is missing a right arm frame." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
@@ -34,9 +34,9 @@
 	else if((istype(W, /obj/item/bot_part/right_arm_frame)) && (build_step == 1))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
+			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
+			SPAN_NOTICE("You add the [W.name] to the [src].")
+		)
 		step_message = "It is missing a left leg frame." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
@@ -48,9 +48,9 @@
 	else if((istype(W, /obj/item/bot_part/left_leg_frame)) && (build_step == 2))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
+			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
+			SPAN_NOTICE("You add the [W.name] to the [src].")
+		)
 		step_message = "It is missing a right leg frame." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
@@ -62,10 +62,10 @@
 	else if((istype(W, /obj/item/bot_part/right_leg_frame)) && (build_step == 3))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
-		step_message = "It is missing an head frame." // Next step
+			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
+			SPAN_NOTICE("You add the [W.name] to the [src].")
+		)
+		step_message = "It is missing a head frame." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the leg
@@ -76,10 +76,10 @@
 	else if((istype(W, /obj/item/bot_part/head_frame)) && (build_step == 4))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
-		step_message = "The frames are not secured." // Next step
+			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
+			SPAN_NOTICE("You add the [W.name] to the [src].")
+		)
+		step_message = "The frames are not secured and must be bolted down." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the head
@@ -92,10 +92,10 @@
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-								SPAN_NOTICE("[user] wrench the frames together."),
-								SPAN_NOTICE("You wrench the frames together.")
-							)
-			step_message = "The screws are lose." // Next step
+				SPAN_NOTICE("[user] wrenches the frames together."),
+				SPAN_NOTICE("You wrench the frames together.")
+			)
+			step_message = "The screws on the frame are loose." // Next step
 
 	// Step 7, Securing the screws
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 6))
@@ -103,19 +103,19 @@
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-								SPAN_NOTICE("[user] tighten the screws."),
-								SPAN_NOTICE("You tighten the screws.")
-							)
+				SPAN_NOTICE("[user] tightens the screws on the [src]."),
+				SPAN_NOTICE("You tighten the screws on the [src].")
+			)
 			step_message = "The hydraulics system is missing." // Next step
 
 	// Step 8, Adding the hydraulics
 	else if((istype(W, /obj/item/tool_upgrade/augment/hydraulic)) && (build_step == 7))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
-		step_message = "The hydraulics aren't secured." // Next step
+			SPAN_NOTICE("[user] add the [W.name] to the [src]."),
+			SPAN_NOTICE("You add the [W.name] to the [src].")
+		)
+		step_message = "The hydraulics aren't secured and must be bolted down." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the hydraulics
@@ -128,18 +128,18 @@
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-								SPAN_NOTICE("[user] secure the hydraulic system."),
-								SPAN_NOTICE("You secure the hydraulic system.")
-							)
+				SPAN_NOTICE("[user] secure the hydraulic system."),
+				SPAN_NOTICE("You secure the hydraulic system.")
+			)
 			step_message = "It is missing an energy armblade module." // Next step
 
 	// Step 10, Add the armblade
 	else if((istype(W, /obj/item/organ_module/active/simple/armblade/energy_blade)) && (build_step == 9))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
+			SPAN_NOTICE("[user] add the [W.name] to the [src]."),
+			SPAN_NOTICE("You add the [W.name] to the [src].")
+		)
 		step_message = "It is missing a large power cell." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
@@ -151,10 +151,9 @@
 	else if((istype(W, /obj/item/cell/large)) && (build_step == 10))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to [src]."),
-								SPAN_NOTICE("You add the [W.name] to [src].")
-							)
-		step_message = "The power cell is unsecured." // Next step
+			SPAN_NOTICE("[user] adds the [W.name] to the [src].")
+		)
+		step_message = "The power cell is not secured and must be screwed into place." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		power_cell = W //Store the power cell for later usage.
 
@@ -167,19 +166,19 @@
 		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-								SPAN_NOTICE("[user] secure the power cell."),
-								SPAN_NOTICE("You secure the power cell.")
-							)
-			step_message = "It is missing the circuit board." // Next step
+				SPAN_NOTICE("[user] secures the power cell in the [src]."),
+				SPAN_NOTICE("You secure the power cell in the [src].")
+			)
+			step_message = "The custom control module is missing and must be installed." // Next step
 
 	// Step 13, Add the circuit board
 	else if((istype(W, /obj/item/bot_part/control)) && (build_step == 12))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
-		step_message = "The board is unsecured." // Next step
+			SPAN_NOTICE("[user] adds the [W.name] to the [src]."),
+			SPAN_NOTICE("You add the [W.name] to the [src].")
+		)
+		step_message = "The custom control module is not secured and must be screwed into place." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the board
@@ -192,10 +191,10 @@
 		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-								SPAN_NOTICE("[user] secured the board."),
-								SPAN_NOTICE("You secured the board.")
-							)
-			step_message = "The wiring is missing." // Next step
+				SPAN_NOTICE("[user] secures the custom control module inside the [src]."),
+				SPAN_NOTICE("You secure the custom control module inside the [src].")
+			)
+			step_message = "The wiring is missing and must be installed." // Next step
 
 	// Step 15, Wire the drone
 	else if((istype(W, /obj/item/stack/cable_coil)) && (build_step == 14))
@@ -204,17 +203,17 @@
 			to_chat(user, ("There's not enough material in this stack."))
 			return
 		user.visible_message(
-								SPAN_NOTICE("[user] start to wire the [src]."),
-								SPAN_NOTICE("You start to wire the [src].")
-							)
+			SPAN_NOTICE("[user] starts to wire the [src]."),
+			SPAN_NOTICE("You start to wire the [src].")
+		)
 		if(!do_after(user, WORKTIME_DELAYED, src))
 			return
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] wire the drone."),
-								SPAN_NOTICE("You wire the drone.")
-							)
-		step_message = "The circuit board is unprogrammed." // Next step
+			SPAN_NOTICE("[user] wires the [src]."),
+			SPAN_NOTICE("You wire the [src].")
+		)
+		step_message = "The circuitry must be programmed with a multitool or another pulsing instrument." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 		C.use(10) // use five cables.
 
@@ -224,10 +223,10 @@
 		if(T.use_tool(user, src, WORKTIME_DELAYED, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-								SPAN_NOTICE("[user] program the drone."),
-								SPAN_NOTICE("You program the drone.")
-							)
-			step_message = "The panel is open." // Next step
+				SPAN_NOTICE("[user] programs the drone."),
+				SPAN_NOTICE("You program the drone.")
+			)
+			step_message = "The maintenance panel is open and must be screwed shut." // Next step
 
 	// Step 17, Close the panel.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 16))
@@ -235,19 +234,19 @@
 		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-								SPAN_NOTICE("[user] close the panel."),
-								SPAN_NOTICE("You close the panel.")
-							)
-			step_message = "The panel is closed, it need armor now though." // Next step
+				SPAN_NOTICE("[user] screws the maintenance panel on the [src] shut."),
+				SPAN_NOTICE("You screw the maintenance panel on the [src] shut.")
+			)
+			step_message = "The maintenance panel is closed. The drone needs to be outfitted with a Mark II environmental protection suit." // Next step
 
 	// Step 18, Add the armor
 	if((istype(W, /obj/item/clothing/suit/armor/vest/soteriasuit)) && (build_step == 17))
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] add the [W.name] to the [src]."),
-								SPAN_NOTICE("You add the [W.name] to the [src].")
-							)
-		step_message = "The armor need to be welded in place." // Next step
+			SPAN_NOTICE("[user] outfits the [src] with the [W.name]."),
+			SPAN_NOTICE("You outfit the [src] with the [W.name].")
+		)
+		step_message = "The armor must be welded onto the frame." // Next step
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)
 
 		// Remove the armor
@@ -260,25 +259,25 @@
 		if(T.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-								SPAN_NOTICE("[user] weld the armor in place."),
-								SPAN_NOTICE("You weld the armor in place.")
-							)
-			step_message = "It need to be painted in red." // Next step
+				SPAN_NOTICE("[user] welds the armor onto the [src]."),
+				SPAN_NOTICE("You weld the armor onto the [src].")
+			)
+			step_message = "Company guidelines require you to paint the chassis red." // Next step
 
 	// Step 20, Add the paint.
 	else if((istype(W, /obj/item/tool_upgrade/productivity/red_paint)) && (build_step == 19))
 		user.visible_message(
-								SPAN_NOTICE("[user] start to paint the [src] red."),
-								SPAN_NOTICE("You start to paint the [src] red.")
-							)
+			SPAN_NOTICE("[user] starts to paint the [src] red."),
+			SPAN_NOTICE("You start to paint the [src] red.")
+		)
 		if(!do_after(user, WORKTIME_DELAYED, src))
 			return
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
-								SPAN_NOTICE("[user] paint the [src] red."),
-								SPAN_NOTICE("You paint the [src] red.")
-							)
-		step_message = "All it need is a swipe of your ID." // Next step
+			SPAN_NOTICE("[user] paints the [src] red."),
+			SPAN_NOTICE("You paint the [src] red.")
+		)
+		step_message = "Almost done. The drone needs the swipe of an ID with robotics access. Hopefully, yours." // Next step
 
 		// Remove the paint
 		user.remove_from_mob(W)
@@ -288,11 +287,11 @@
 	else if((istype(W, /obj/item/card/id)) && (build_step == 20))
 		var/obj/item/card/id/C = W // New var to use ID-only vars.
 		if(!access_robotics in C.access) // Are you authorized to start the roomba ?
-			to_chat(user, "You do not have the autorization to start the drone.")
+			to_chat(user, "You do not have the authorization to start the drone.")
 			return
 		build_step++
 		user.visible_message(
-								SPAN_NOTICE("[user] activate [created_name]! Beep boop."),
+								SPAN_NOTICE("[user] activates [created_name]! Beep boop."),
 								SPAN_NOTICE("You activate [created_name]! Beep boop.")
 							)
 		var/mob/living/carbon/superior_animal/handmade/sword/R = new /mob/living/carbon/superior_animal/handmade/sword(get_turf(src)) // Spawn the sword drone
