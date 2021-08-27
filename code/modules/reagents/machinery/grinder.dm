@@ -29,24 +29,6 @@
 		/obj/item/stack/material/mhydrogen = "hydrogen",
 	)
 
-/obj/machinery/reagentgrinder/big_hand
-	name = "Large hand grinder"
-	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "big_mortar0"
-	use_power = FALSE
-	idle_power_usage = 0
-	active_power_usage = 0
-	anchored = TRUE
-	density = TRUE
-
-/obj/machinery/reagentgrinder/big_hand/attackby(obj/item/I, mob/user)
-
-	//Useability tweak for borgs
-	if (istype(I,/obj/item/gripper))
-		ui_interact(user)
-		return
-	return insert(I, user)
-
 /obj/machinery/reagentgrinder/RefreshParts()
 	var/man_rating = 0
 	var/man_amount = 0
@@ -299,6 +281,28 @@
 		grind_item(I, beaker.reagents)
 
 
+/obj/machinery/reagentgrinder/big_hand
+	name = "Large hand grinder"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "big_mortar0"
+	use_power = FALSE
+	idle_power_usage = 0
+	active_power_usage = 0
+	limit = 20
+	anchored = TRUE
+	density = TRUE
+
+/obj/machinery/reagentgrinder/big_hand/update_icon()
+	icon_state = "big_mortar"+num2text(!isnull(beaker))
+	return
+
+/obj/machinery/reagentgrinder/big_hand/attackby(obj/item/I, mob/user)
+
+	//Useability tweak for borgs
+	if (istype(I,/obj/item/gripper))
+		ui_interact(user)
+		return
+	return insert(I, user)
 
 /obj/machinery/reagentgrinder/industrial
 	name = "Industrial Grinder"
