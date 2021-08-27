@@ -43,6 +43,11 @@
 	var/list/creator = list() // Who's the bot's creator.
 	var/repair_rate = 0 // How fast does the bot repair itself.
 	var/hearing_flag = 0 // Flags for voice-activated functions
+	var/obj/item/device/radio/R
+
+/mob/living/carbon/superior_animal/nanobot/New()
+	..()
+	R = new/obj/item/device/radio(src)
 
 /mob/living/carbon/superior_animal/nanobot/examine(mob/user)
 	..()

@@ -21,9 +21,9 @@
 
 		// Radio mode.
 		if(hearing_flag & RADIO_MODE) // Is Radio mode activated?
-			if(findtext(message, "Activate Radio") && findtext(message, "[src.name]"))
-				visible_emote("state, \"Activating Internal Radio.\"")
-				// TODO : Make it turn on its radio. -R4d6
+			if(findtext(message, "Toggle Radio") && findtext(message, "[src.name]"))
+				R.broadcasting = !R.broadcasting
+				visible_emote("state, \"[R.broadcasting ? "Activating" : "Deactivating"] Radio Transmissions.\"")
 
 		// Opifex Food mode.
 		if(hearing_flag & FOOD_MODE) // Is Autodoc mode activated?
