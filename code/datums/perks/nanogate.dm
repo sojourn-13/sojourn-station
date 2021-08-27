@@ -37,7 +37,7 @@
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/nanite_creation/nanite_knife/activate()
+/datum/perk/nanite_knife/activate()
 	..()
 	var/obj/item/tool/knife/nanite_blade/knife = new /obj/item/tool/knife/nanite_blade(src, holder)
 	holder.visible_message(
