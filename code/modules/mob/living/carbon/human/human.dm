@@ -1217,11 +1217,11 @@ var/list/rank_prefix = list(\
 					C.access.Add(mind.assigned_job.cruciform_access)
 					C.install_default_modules_by_path(mind.assigned_job)
 			if(I.implant_organ_type)
-				if(istype(I.implant_organ_type, /obj/item/organ/internal/psionic_tumor))
+				if(I.implant_organ_type == "psionic tumor")
 					src.make_psion()
-				else if(istype(I.implant_organ_type, /obj/item/organ/internal/nanogate/opifex))
+				else if(I.implant_organ_type == "opifex nanogate")
 					src.give_nanogate(TRUE)
-				else if(istype(I.implant_organ_type, /obj/item/organ/internal/nanogate))
+				else if(I.implant_organ_type == "nanogate")
 					src.give_nanogate()
 
 	else
