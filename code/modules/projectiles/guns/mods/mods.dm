@@ -232,7 +232,8 @@
 // Guild made upgrade kit that makes .50 guns a bit more viable
 /obj/item/gun_upgrade/mechanism/upgrade_kit
 	name = "Kurtz's refinement kit"
-	desc = "A kit made of plasteel with ready to fit on compiscators and refinding tools to any .50 kurtz that somehow always seem to improve it the weapon."
+	desc = "A kit made of plasteel designed to refit and refine any kurtz loaded .50 caliber weapon. This kit is produced by the Artificer's Guild so even \
+	the heaviest caliber pistols might stand a chance of competing with their legendary myrmidon design."
 	icon_state = "kit_heavy_alt"
 	can_remove = FALSE
 
