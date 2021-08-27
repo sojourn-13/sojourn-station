@@ -128,8 +128,8 @@
 		if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check.
 			build_step++ // Go to the next assembly part.
 			user.visible_message(
-				SPAN_NOTICE("[user] secures the [W.name] in the [src]."),
-				SPAN_NOTICE("You secure the [W.name] in the [src].")
+				SPAN_NOTICE("[user] secures the hydraulics in the [src]."),
+				SPAN_NOTICE("You secure the hydraulics in the [src].")
 			)
 			step_message = "It is missing an armblade." // Next step
 
@@ -172,7 +172,7 @@
 		power_cell = W //Store the power cell for later usage.
 
 		// Remove the cell
-		power_cell.forceMove(src)
+		insert_item(W, user)
 
 	// Step 13, Secure the power cell.
 	else if((QUALITY_SCREW_DRIVING) && (build_step == 12))
