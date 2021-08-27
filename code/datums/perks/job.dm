@@ -380,6 +380,7 @@
 			/datum/craft_recipe/guild/forged,
 			/datum/craft_recipe/guild/heavy_barrel,
 			/datum/craft_recipe/guild/silencer,
+			/datum/craft_recipe/guild/kit,
 			/datum/craft_recipe/guild/turretcircuit,
 			/datum/craft_recipe/guild/rocket_engine,
 			/datum/craft_recipe/guild/watchman,

@@ -213,7 +213,7 @@
 /* //This mod works fine but if a bullet hits an object it run times, my theory is its trying to make an effect work via rads that isn't coded properly either by ERIS or my bad porting.
 //For now this has been modified to not use rad damage since that has issues.
 */
-//Adds radiation damage to .35 rounds. Acquired through raiding greyson machines.
+//Adds extra burns and toxin damage to .35 rounds. Acquired through raiding greyson machines or heavy SI investment.
 /obj/item/gun_upgrade/mechanism/glass_widow
 	name = "Greyson \"Glass Widow\" infuser"
 	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
@@ -229,6 +229,45 @@
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	I.gun_loc_tag = GUN_MECHANISM
 
+// Guild made upgrade kit that makes .50 guns a bit more viable
+/obj/item/gun_upgrade/mechanism/upgrade_kit
+	name = "Kurtz's refinement kit"
+	desc = "A kit made of plasteel with ready to fit on compiscators and refinding tools to any .50 kurtz that somehow always seem to improve it the weapon."
+	icon_state = "kit_heavy_alt"
+
+/obj/item/gun_upgrade/mechanism/brass_kit/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.1, //10% more damage
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% declay removed
+		GUN_UPGRADE_PEN_MULT = 1.2, //we shoot harder, but not by much
+		GUN_UPGRADE_MOVE_DELAY_MULT = 0.9, //We shoot somehwat faster (not hit scan)
+		GUN_UPGRADE_RECOIL = 0.85 //15% less recoil (dosnt help as much without stacking it with other mods)
+		)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50)
+	I.gun_loc_tag = GUN_MECHANISM
+
+// Rare Bluecross spawn clock cult brass kit that will make any .50 cal gun into something worth ya know... using...
+// Todo make Cult spawn with this and the clockwork block
+/obj/item/gun_upgrade/mechanism/brass_kit
+	name = "\"Brass Fighter\" refinement kit"
+	desc = "A kit made of brass with ready to fit on compiscators and refinding tools to any .50 kurtz that somehow always seem to improve it the weapon. The tools inside are warm to the touch and the box itself has a faint ticking sound."
+	icon_state = "kit_heavy"
+
+/obj/item/gun_upgrade/mechanism/brass_kit/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.15, //15% more damage
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% declay removed
+		GUN_UPGRADE_PEN_MULT = 2, //we shoot harder
+		GUN_UPGRADE_MOVE_DELAY_MULT = 0.6, //We shoot way faster (not hit scan)
+		GUN_UPGRADE_MUZZLEFLASH = 2, //Bigger flash
+		GUN_UPGRADE_RECOIL = 0.75 //25% less recoil (dosnt help as much without stacking it with other mods)
+		)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50)
+	I.gun_loc_tag = GUN_MECHANISM
 
 //Lets any revolver be made into a fully automatic weapon, but increases recoil. Acquirable through guild crafters.
 /obj/item/gun_upgrade/mechanism/weintraub

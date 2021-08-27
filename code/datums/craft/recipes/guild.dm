@@ -417,6 +417,22 @@
 		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
 	)
 
+/datum/craft_recipe/guild/kit
+	name = "Kurtz's refinement kit"
+	result = /obj/item/gun_upgrade/mechanism/upgrade_kit
+	icon_state = "gun"
+	steps = list(
+		list(/obj/item/stack/material/steel, 20, "time" = 30),
+		list(/obj/item/stack/material/plasteel, 15, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(CRAFT_MATERIAL, 3, MATERIAL_SILVER),
+		list(QUALITY_DRILLING, 60, "time" = 90),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/material/plastic, 10, "time" = 30),
+		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
+	)
+
 /datum/craft_recipe/guild/heavy_barrel
 	name = "Heavy Forged Barrel"
 	result = /obj/item/gun_upgrade/barrel/bore

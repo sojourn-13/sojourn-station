@@ -92,7 +92,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	recoil_buildup = 4
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	var/obj/item/gun/projectile/underslung/launcher
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

@@ -18,7 +18,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 
 /obj/item/gun/projectile/avasarala/update_icon()
 	..()
