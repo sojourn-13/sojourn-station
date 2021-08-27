@@ -57,7 +57,7 @@
 
 /obj/item/gun/projectile/lamia/scoped/dark
 	name = "\"Naga\" advanced heavy pistol"
-	desc = "The M6D \"Naga\", a heavy pistol manufactured on Mars and given seen use by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
+	desc = "The M6D \"Naga\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
 	icon_state = "scoped_dark_lamia"
 	item_state = "scoped_dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
