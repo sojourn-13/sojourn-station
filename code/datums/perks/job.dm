@@ -380,6 +380,7 @@
 			/datum/craft_recipe/guild/forged,
 			/datum/craft_recipe/guild/heavy_barrel,
 			/datum/craft_recipe/guild/silencer,
+			/datum/craft_recipe/guild/kit,
 			/datum/craft_recipe/guild/turretcircuit,
 			/datum/craft_recipe/guild/rocket_engine,
 			/datum/craft_recipe/guild/watchman,
@@ -391,6 +392,11 @@
 			/datum/craft_recipe/guild/guild_scanner,
 			/datum/craft_recipe/guild/guild_capacitor,
 			//datum/craft_recipe/guild/guild_mine_trap,
+			/datum/craft_recipe/guild/guild_bin_box,
+			/datum/craft_recipe/guild/guild_manip_box,
+			/datum/craft_recipe/guild/guild_laser_box,
+			/datum/craft_recipe/guild/guild_scanner_box,
+			/datum/craft_recipe/guild/guild_capacitor_box
 			)
 
 /datum/perk/handyman/assign(mob/living/carbon/human/H)

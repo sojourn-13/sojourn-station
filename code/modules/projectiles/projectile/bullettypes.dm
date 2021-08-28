@@ -125,16 +125,16 @@
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
-	damage_types = list(BRUTE = 30)
-	armor_penetration = 15
+	damage_types = list(BRUTE = 40)
+	armor_penetration = 20
 	can_ricochet = TRUE
 	step_delay = 0.75
 
 /obj/item/projectile/bullet/kurtz_50/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 6)
-	agony = 32
+	damage_types = list(BRUTE = 8)
+	agony = 40
 	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	embed = FALSE
@@ -154,8 +154,8 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 32)
-	agony = 32
+	damage_types = list(BRUTE = 45)
+	agony = 40
 	armor_penetration = 5
 	penetrating = 0
 	can_ricochet = FALSE
@@ -165,8 +165,8 @@
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
-	damage_types = list(BRUTE = 36)
-	armor_penetration = 20
+	damage_types = list(BRUTE = 50)
+	armor_penetration = 25
 	penetrating = 2
 	can_ricochet = FALSE
 	embed = TRUE
@@ -388,9 +388,16 @@
 /obj/item/projectile/bullet/ball
 	damage_types = list(BRUTE = 60) //Grab me musket as the founding fathers intended
 	armor_penetration = 0 //Golf-ball sized hole in the blokes chest, but not his plate carrier.
-	agony = 95
+	agony = 60
 	penetrating = 2
 	hitscan = TRUE
+
+/obj/item/projectile/bullet/ball/on_hit(atom/target, def_zone = null)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		if(istype(target, /mob/living/simple_animal) || istype(target, /mob/living/carbon/superior_animal))
+			M.damage_through_armor(damage = 240, damagetype = BRUTE, def_zone = null, attack_flag = ARMOR_BULLET, armour_pen = 90, used_weapon = null, sharp = 0, edge = 0)
 
 //Shotguns
 //*********************************//
