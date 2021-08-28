@@ -16,3 +16,6 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 3)
 	tool_qualities = list(QUALITY_BONE_SETTING = 60)
 	degradation = 0.75
+
+/obj/item/tool/bonesetter/adv/si
+	icon_state = "retractor_SI"

@@ -114,6 +114,12 @@
 
 
 //Surgery tools
+/datum/design/research/item/surgery_kit
+	name = "Advanced Sugery Kit"
+	desc = "A box of advanced surgery tools."
+	build_path = /obj/item/storage/deferred/surgery/si
+	category = CAT_TOOLS
+
 /datum/design/research/item/medical/medimplant_sci
 	name = "Soteria Medical Omnitool"
 	desc = "An all-in-one smart medical tool implant based on the legendary Greyson Positronic model."

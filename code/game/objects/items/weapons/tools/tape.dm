@@ -28,7 +28,7 @@
 	desc = "A bucket of milky white fluid. Can be used to stick things together, but unlike tape, it cannot be used to seal things."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "glue"
-	tool_qualities = list(QUALITY_ADHESIVE = 40, QUALITY_CAUTERIZING = 5, QUALITY_BONE_GRAFTING = 25) // Better than duct tape, but can't seal things and is mostly used in crafting - also, it's glue, so it can be used as an extremely shitty way of sealing wounds and repairing bones.
+	tool_qualities = list(QUALITY_ADHESIVE = 40, QUALITY_CAUTERIZING = 5, QUALITY_BONE_GRAFTING = 15) // Better than duct tape, but can't seal things and is mostly used in crafting - also, it's glue, so it can be used as an extremely shitty way of sealing wounds and repairing bones.
 	matter = list(MATERIAL_PLASTIC = 15)
 	worksound = NO_WORKSOUND
 	preloaded_reagents = list("glue" = 30)
@@ -74,9 +74,17 @@
 	matter = list(MATERIAL_PLASTIC = 20)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
 	preloaded_reagents = list("milk" = 5)
-	tool_qualities = list(QUALITY_BONE_GRAFTING = 50)
+	tool_qualities = list(QUALITY_BONE_GRAFTING = 30)
 	max_stock = 100
 	use_stock_cost = 1
+
+/obj/item/tool/tape_roll/bonegel/si
+	name = "bone super gel"
+	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
+	icon = 'icons/obj/stack/items.dmi'
+	icon_state = "bonegel_SI"
+	tool_qualities = list(QUALITY_BONE_GRAFTING = 50)
+	preloaded_reagents = null
 
 /obj/item/tool/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)
 	if(istype(H) && has_quality(QUALITY_ADHESIVE))

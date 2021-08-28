@@ -25,3 +25,8 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2, MATERIAL_DIAMOND = 1)
 	tool_qualities = list(QUALITY_DRILLING = 60)
 	use_power_cost = 0.60
+
+/obj/item/tool/surgicaldrill/adv/si
+	icon_state = "drill_SI"
+	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4) //So we dont need diamond
+	armor_penetration = ARMOR_PEN_MODERATE

@@ -15,3 +15,6 @@
 	matter = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 4)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 2)
 	tool_qualities = list(QUALITY_CAUTERIZING = 60)
+
+/obj/item/tool/cautery/adv/si
+	item_state = "cautery_SI"

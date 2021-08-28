@@ -26,6 +26,9 @@
 	degradation = 0.12
 	max_upgrades = 4
 
+/obj/item/tool/scalpel/advanced/si
+	icon_state = "scalpel_t4_SI"
+
 /obj/item/tool/scalpel/laser
 	name = "laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly searing bleeding cuts through laser cauterization."

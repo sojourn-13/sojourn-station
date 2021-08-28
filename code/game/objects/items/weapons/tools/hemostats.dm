@@ -14,3 +14,6 @@
 	matter = list(MATERIAL_STEEL = 6)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
 	tool_qualities = list(QUALITY_CLAMPING = 60)
+
+/obj/item/tool/hemostat/adv/si
+	icon_state = "hemostat_SI"

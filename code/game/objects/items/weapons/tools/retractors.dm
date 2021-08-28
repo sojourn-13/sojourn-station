@@ -12,3 +12,6 @@
 	desc = "Retracts surgical incisions with greater precision and speed than normal."
 	matter = list(MATERIAL_STEEL = 8)
 	tool_qualities = list(QUALITY_RETRACTING = 60)
+
+/obj/item/tool/retractor/adv/si
+	icon_state = "retractor_SI"
