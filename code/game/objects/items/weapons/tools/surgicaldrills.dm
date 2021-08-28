@@ -28,5 +28,5 @@
 
 /obj/item/tool/surgicaldrill/adv/si
 	icon_state = "drill_SI"
-	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4) //So we dont need diamond
+	matter = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 4, MATERIAL_PLASTEEL = 1) //we use a plasteel tip rather then diamond, thus less AP
 	armor_penetration = ARMOR_PEN_MODERATE
