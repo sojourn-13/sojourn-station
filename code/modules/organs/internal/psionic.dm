@@ -37,6 +37,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_shield,
 		/obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_weapon,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_melee,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,

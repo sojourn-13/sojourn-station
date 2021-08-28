@@ -8,7 +8,7 @@
 	fire_sound = 'sound/weapons/pulse.ogg'
 	projectile_type = /obj/item/projectile/beam/pulse
 	sel_mode = 1
-	charge_cost = 20 //40 shots per high medium-sized cell
+	charge_cost = 40 //20 shots per high medium-sized cell
 	fire_delay = 12
 	origin_tech = list(TECH_COMBAT = 7, TECH_PLASMA = 2)
 	price_tag = 1500
