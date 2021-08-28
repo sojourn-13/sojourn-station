@@ -262,7 +262,7 @@
 "fb" = (/obj/structure/table/woodentable,/obj/item/ammo_magazine/ammobox/light_rifle_257_small,/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,/obj/item/tool/spear/hunter_halberd,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fc" = (/obj/structure/table/rack/shelf,/obj/item/gun/projectile/boltgun/lever,/obj/item/ammo_magazine/ammobox/magnum_40/hv,/obj/item/ammo_magazine/ammobox/magnum_40/lethal,/obj/item/ammo_magazine/ammobox/magnum_40,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fd" = (/obj/structure/table/rack/shelf,/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"fe" = (/obj/structure/table/rack/shelf,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fe" = (/obj/structure/table/rack/shelf,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/tool/spear/hunter_halberd,/obj/item/organ_module/active/simple/implant_bolt_lance,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "ff" = (/obj/structure/table/woodentable,/obj/random/firstaid,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fg" = (/obj/structure/bed/chair{dir = 1},/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "fh" = (/obj/structure/table/reinforced,/obj/item/stack/cable_coil/random,/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -699,7 +699,6 @@ aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB
 aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 euaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 "}
-
 (1,1,2) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
