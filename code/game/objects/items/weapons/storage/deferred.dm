@@ -133,9 +133,6 @@
 		/obj/item/tool/scalpel/advanced/si,
 		/obj/item/tool/tape_roll/bonegel/si,
 		/obj/item/tool/surgicaldrill/adv/si,
-		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
-		/obj/item/storage/pill_bottle/tramadol,
-		/obj/item/stack/medical/advanced/bruise_pack
 		)
 	can_hold = list(
 		/obj/item/tool/bonesetter,
