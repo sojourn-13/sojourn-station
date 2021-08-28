@@ -198,6 +198,13 @@
 							/datum/design/research/item/part/adv_sensor,
 							/datum/design/research/item/part/nano_mani,
 							/datum/design/research/item/surgery_kit,
+							/datum/design/research/item/drill_s_adv,
+							/datum/design/research/item/scalpel_adv,
+							/datum/design/research/item/bonesetter_adv,
+							/datum/design/research/item/cautery_adv,
+							/datum/design/research/item/hemostat_adv,
+							/datum/design/research/item/retractor_adv,
+							/datum/design/research/item/medsaw_circular,
 							)
 
 /datum/technology/portable_biotech
