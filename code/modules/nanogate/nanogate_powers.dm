@@ -9,6 +9,7 @@ Current Robot-Related Powers
 - Create Nanobot : Self-explanatory, this allow the user to create & name a nanobot. It is underwhelming at first, but keep in mind it is meant to be upgraded.
 - Upgrade Damage : Upgrade the nanobot's lower & upper damage by whatever the 'damage_boost' var is set to (currently 20).
 - Upgrade Health : Upgrade the nanobot's both max health and currently health by the 'health_boost' var (200). Doesn't actually heal the bot as any damage it got will still stay. It is just so that upgrading the health doesn't reduce the bot to 50% HP.
+- Upgrade Armor : Upgrade the nanobot's armor up to a specified value, unlike the two other upgrade armor, it doesn't add to its initial value, but replace it.
 - Enable Self-Repait : This make the nanobot constantly heal itself, with the rate of healing determined by the 'repair_rate' variable (5).
 - Enable Radio Mode : Allow the nanobot to recognize the 'Toggle Radio' voice command, which enable or disable the broadcasting of a built-in radio.
 - Enable Autodoc Mode : Allow the nanobot to recognize the 'Toggle Autodoc' voice command, which basically turn it into a medibot.
