@@ -29,7 +29,33 @@
 
 /datum/category_item/player_setup_item/law_pref/content()
 	. = list()
-	. += "<b>Your Species Has No Laws</b><br>"
+	var/datum/species/species = all_species[pref.species]
+
+	if(!species.can_shackle)
+		. += "<b>Your Species Has No Laws</b><br>"
+	else
+		. += "<b>Shackle: </b>"
+		if(!pref.is_shackled)
+			. += "<span class='linkOn'>Off</span>"
+			. += "<a href='?src=\ref[src];toggle_shackle=[pref.is_shackled]'>On</a>"
+			. += "<br>Only shackled positronics have laws in an integrated positronic chassis."
+			. += "<hr>"
+		else
+			. += "<a href='?src=\ref[src];toggle_shackle=[pref.is_shackled]'>Off</a>"
+			. += "<span class='linkOn'>On</span>"
+			. += "<br>You are shackled and have laws that restrict your behaviour."
+			. += "<hr>"
+
+			. += "<b>Your Current Laws:</b><br>"
+
+			if(!pref.laws.len)
+				. += "<b>You currently have no laws.</b><br>"
+			else
+				for(var/i in 1 to pref.laws.len)
+					. += "[i]) [pref.laws[i]]<br>"
+
+			. += "Law sets: <a href='?src=\ref[src];lawsets=1'>Load Set</a><br>"
+
 	. = jointext(.,null)
 
 /datum/category_item/player_setup_item/law_pref/OnTopic(href, href_list, user)

@@ -702,7 +702,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
-
+	can_shackle = TRUE
 	dark_color = "#ffffff"
 	light_color = "#000000"
 
@@ -761,6 +761,7 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	virus_immune = TRUE
+	can_shackle = TRUE
 	breath_type = null
 	poison_type = null
 
@@ -820,6 +821,7 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	virus_immune = TRUE
+	can_shackle = TRUE
 	breath_type = null
 	poison_type = null
 
@@ -879,6 +881,7 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	virus_immune = TRUE
+	can_shackle = FALSE //Church man believe in free will
 	breath_type = null
 	poison_type = null
 

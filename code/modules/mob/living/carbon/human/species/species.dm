@@ -24,6 +24,7 @@
 	var/min_age = 18
 	var/max_age = 90
 
+
 	var/blood_color = "#A10808"                          // Red.
 	var/flesh_color = "#FFC896"                          // Pink.
 	var/gibbed_anim = "gibbed-h"
@@ -43,6 +44,7 @@
 	var/list/speech_chance                   // The likelihood of a speech sound playing.
 	var/num_alternate_languages = 0          // How many secondary languages are available to select at character creation
 	var/name_language = LANGUAGE_COMMON      // The language to use when determining names for this species, or null to use the first name/last name generator
+	var/can_shackle = FALSE					 //Shackle var. Off by default.
 
 	// Combat vars.
 	var/total_health = 100                   // Point at which the mob will enter crit.
