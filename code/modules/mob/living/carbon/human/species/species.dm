@@ -220,6 +220,19 @@
 	return species_language.get_random_name(gender)
 
 /datum/species/proc/organs_spawned(var/mob/living/carbon/human/H)
+	if(H.is_mannequin) // if were a mannequin then we remove all its organs.
+		H.species.has_process = list(
+			OP_HEART =    null,
+			OP_LUNGS =    null,
+			OP_STOMACH =  null,
+			OP_LIVER =    null,
+			OP_KIDNEY_LEFT =  null,
+			OP_KIDNEY_RIGHT = null,
+			BP_BRAIN =    null,
+			OP_APPENDIX = null,
+			OP_EYES =     null
+			)
+
 	return
 
 /datum/species/proc/hug(var/mob/living/carbon/human/H,var/mob/living/target)

@@ -84,7 +84,7 @@ var/list/disciples = list()
 	..()
 	if(active && round(world.time) % 5 == 0)
 		remove_cyber()
-	if(wearer && wearer.stat == DEAD)
+	if(wearer && wearer.stat == DEAD || wearer.is_mannequin) //If were dead or a mannequin we do not actively process are cruciform
 		deactivate()
 	if(wearer && wearer.stats && wearer.stats.getPerk(/datum/perk/channeling) && round(world.time) % 5 == 0)
 		power_regen -= channeling_boost  // Removing the previous channeling boost since the number of disciples may have changed

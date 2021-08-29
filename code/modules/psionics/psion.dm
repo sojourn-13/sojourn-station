@@ -4,6 +4,8 @@
  // HOW TO USE: Right click person -> view variables -> call proc -> type "make_psion" -> click finished -> done
 /mob/proc/make_psion()
 	var/mob/living/carbon/human/user = src
+	if(user.is_mannequin) //Quick return to stop them adding mages to mannequins
+		return
 	if(istype(user))
 		var/obj/item/organ/external/head = user.get_organ(BP_HEAD)
 

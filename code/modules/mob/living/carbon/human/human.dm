@@ -809,7 +809,8 @@ var/list/rank_prefix = list(\
 		return
 	var/list/creatures = list()
 	for(var/mob/living/carbon/h in world)
-		creatures += h
+		if(!h.is_mannequin) // Can't talk mannequins
+			creatures += h // Add the player to the list we can talk to
 	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures
 	if (isnull(target))
 		return
