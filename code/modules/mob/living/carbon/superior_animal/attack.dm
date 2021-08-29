@@ -8,7 +8,13 @@
 	var/damage = rand(melee_damage_lower, melee_damage_upper)
 
 	if(moved) damage *= move_attack_mult
-
+//Here we handle blocking chance against superior mobs, yeah.
+	if(isliving(A))
+		var/mob/living/L = A
+		if(istype(L, /mob/living/carbon/human))
+			var/mob/living/carbon/human/target_human = L
+			if(target_human.check_shields(damage, null, src, null, attacktext))
+				return 0
 	. = A.attack_generic(src, damage, attacktext, environment_smash)
 
 	if(.)

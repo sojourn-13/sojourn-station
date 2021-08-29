@@ -1,5 +1,7 @@
 /mob/living/carbon/superior_animal/giant_spider/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
+	if(!..())
+		return
 
 	if(isliving(A))
 		var/mob/living/L = A
