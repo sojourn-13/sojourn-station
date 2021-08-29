@@ -361,6 +361,7 @@
 			/datum/craft_recipe/guild/railgunpistol,
 			/datum/craft_recipe/guild/railgunrifle,
 			/datum/craft_recipe/guild/heavypulserifle,
+			/datum/craft_recipe/guild/guild_bull,
 			/datum/craft_recipe/guild/mace,
 			/datum/craft_recipe/guild/claymore,
 			/datum/craft_recipe/guild/machete,

@@ -31,6 +31,22 @@
 		list(mode_name="fire both barrels at once", burst=2, icon="burst"),
 		)
 
+/obj/item/gun/projectile/shotgun/bull/bison
+	name = "\"Bison\" shotgun"
+	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. A nightmare of engineering turned sleek room-clearer by the Artificers guild. Its snub barrel reinforced and lengthened, \
+			 a proper stock affixed and even the poorly machined lower given a bit of TLC. A work of true artifice."
+	icon = 'icons/obj/guns/projectile/bigpeacewalker.dmi'
+	icon_state = "bigpeacewalker"
+	item_state = "PW"
+	max_shells = 8
+	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10)
+	price_tag = 1750
+	damage_multiplier = 0.85
+	penetration_multiplier = 0.85
+	one_hand_penalty = 14
+	recoil_buildup = 12
+
+
 /obj/item/gun/projectile/shotgun/bull/proc/pump(mob/M as mob)
 	var/turf/newloc = get_turf(src)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
@@ -85,6 +101,19 @@
 			..()
 		else
 			unload_ammo(user)
+
+/obj/item/gun/projectile/shotgun/bull/bison/attack_self(mob/user as mob)
+	if(reload)
+		if(world.time >= recentpumpmsg + 10)
+			pump(user)
+			recentpumpmsg = world.time
+
+	else
+		if(firemodes.len > 1)
+			..()
+		else
+			unload_ammo(user)
+
 
 /obj/item/gun/projectile/shotgun/bull/proc/update_charge()
 	var/ratio = get_ammo() / (max_shells + 1)//1 in the chamber
