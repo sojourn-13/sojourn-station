@@ -532,6 +532,22 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER)
 	)
 
+/datum/craft_recipe/guild/guild_bull
+	name = "Reforge Bull shotgun"
+	result = /obj/item/gun/projectile/shotgun/bull
+	steps = list(
+		list(/obj/item/gun/projectile/shotgun/bull, 1, "time" = 80),
+		list(/obj/item/gun_upgrade/barrel/bore, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(QUALITY_SAWING, 50, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 60),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 40),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
+	)
+
 /datum/craft_recipe/guild/guild_bin
 	name = "Cast Matter Bin"
 	result = /obj/item/stock_parts/matter_bin/guild
