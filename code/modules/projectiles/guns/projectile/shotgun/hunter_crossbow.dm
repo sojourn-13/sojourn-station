@@ -42,7 +42,7 @@
 
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow_implanted
 	name = "'Shooting Star' implanted bolt lance"
-	desc = "A bolt lance modified to fit inside a prosthetic, this one is painted purple and appears to have an inscription that reads 'Shooting Star'. An effort by Charles Astra to be even more edgy."
+	desc = "A bolt lance modified to fit inside a prosthetic, this one is painted purple and appears to have an inscription that reads 'Shooting Star'. An effort by a prominent hunt master to be even more edgy."
 	icon = 'icons/obj/guns/projectile/shooting_star.dmi'
 	icon_state = "shooting_star"
 	item_state = "shooting_star"

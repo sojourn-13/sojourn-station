@@ -13,7 +13,7 @@
 
 /obj/item/organ_module/active/simple/implant_bolt_lance
 	name = "'Shooting Star' implanted bolt lance"
-	desc = "A bolt lance modified to fit inside a prosthetic, this one is painted purple and appears to have an inscription that reads 'Shooting Star'. An effort by Charles Astra to be even more edgy."
+	desc = "A bolt lance modified to fit inside a prosthetic, this one is painted purple and appears to have an inscription that reads 'Shooting Star'. An effort by a prominent hunt master to be even more edgy."
 	verb_name = "Deploy embedded bolt lance"
 	icon = 'icons/obj/guns/projectile/shooting_star.dmi'
 	icon_state = "shooting_star"
