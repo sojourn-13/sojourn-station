@@ -165,7 +165,7 @@
 		return
 
 
-// Oddity to Weapons list
+// Oddity to melee weapons
 /obj/item/tool/sword/cult
 	name = "Non-Euclidean Blade"
 	desc = "A blade forged from the mind of a psion using an oddity. An odd but deadly sword, yet holding it makes you feel... strange."
@@ -209,6 +209,40 @@
 	tool_qualities = list(QUALITY_LASER_CUTTING = 42, QUALITY_SAWING = 23, QUALITY_CLAMPING = 6, QUALITY_CAUTERIZING = 8, QUALITY_RETRACTING = 22, QUALITY_BONE_SETTING = 19) //It's a surgical chainsaw
 	max_fuel = 123
 
+/obj/item/tool/sword/machete/cult
+	name = "Scorch Sword"
+	desc = "A blade quite common in the jungle crafted from the mind of a psion using an oddity. When you hold it, the blade's edge glows with heat."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "psi_machete"
+	item_state = "psi_machete"
+	origin_tech = list()
+	matter = list()
+	tool_qualities = list(QUALITY_LASER_CUTTING = 21, QUALITY_CUTTING = 10,  QUALITY_SAWING = 20, QUALITY_CAUTERIZING = 12) //So we can cut down trees
+
+/obj/item/tool/sword/cleaver/cult
+	name = "Moon Cleaver"
+	desc = "A black bladed mockery of the lodge's tools for hunting tengolos and their twisted evolution. This weapon, forged from a psion, hunts what few consider anything but archetypes \
+	of primal fears. Fit for the culling of spiders."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "psi_cleaver"
+	item_state = "psi_cleaver"
+	tool_qualities = list(QUALITY_SAWING = 3, QUALITY_CLAMPING = 6, QUALITY_CAUTERIZING = 8, QUALITY_RETRACTING = 2, QUALITY_BONE_SETTING = 12)
+	effective_faction = list("spider") // Which faction the cleaver is effective against.
+	origin_tech = list()
+	matter = list()
+
+/obj/item/tool/power_fist/cult
+	name = "Mind Rocker"
+	desc = "A hydraulic combat gauntlet forged from the mind of a psion. When all else fails, you still have your fists."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "psi_powerfist"
+	item_state = "psi_powerfist"
+	origin_tech = list()
+	matter = list()
+	switched_on_qualities = list(QUALITY_HAMMERING = 13, QUALITY_SHOVELING = 13, QUALITY_DIGGING = 13)
+	switched_off_qualities = list(QUALITY_HAMMERING = 3, QUALITY_SHOVELING = 3, QUALITY_DIGGING = 3)
+
+// Oddity to guns
 /obj/item/gun/projectile/automatic/sts/rifle/cult
 	name = "\"Eclipse\" psi-rifle"
 	desc = "An STS conjured from the minds of a psion who shaped an oddity into a weapon. It is nearly identical to a normal STS-30 battle rifle, save for lacking as much penetration or stopping power."
@@ -241,6 +275,7 @@
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
+	charge_cost = 50
 	fire_sound = 'sound/weapons/pulse.ogg'
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
@@ -248,6 +283,37 @@
 		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
 		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
 	)
+
+/obj/item/gun/energy/gun/martin/cult
+	name = "\"Star\" psi-laser pistol"
+	desc = "A laser weapon formed from the mind of a psion who shaped an oddity into a weapon. A psionic copy of a martin, an oft overlooked and ignored weapon. Perhaps this is formed from the \
+	small thoughts that make all the difference?"
+	icon = 'icons/obj/guns/energy/psi_pdw.dmi'
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+
+/obj/item/gun/energy/plasma/auretian/cult
+	name = "\"Meteoroid\" psi-energy pistol"
+	desc = "An energy weapon forged from the mind of a psion who shaped an oddity into a weapon. The iconic auretian is a weapon that the Soteria employs often and frequently among its staff, \
+	yet this copy isn't anywhere near what machine lathes can produce. Is it a cheap imitation? A copy of what yearned to be greater? Perhaps it is but flattery."
+	icon = 'icons/obj/guns/energy/psi_brigador.dmi'
+	icon_state = "brigador"
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	damage_multiplier = 0.8
+	penetration_multiplier = 0.8
+
+/obj/item/gun/projectile/automatic/greasegun/cult
+	name = "\"Super Nova\" psi-submachine gun"
+	desc = "A ballistic weapon forged from the mind of a psion who shaped an oddity into a weapon. One wonders how and why this weapon came to be. Perhaps that is the point?"
+	icon = 'icons/obj/guns/projectile/greasegun_psi.dmi'
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	damage_multiplier = 0.9
+	penetration_multiplier = 1
 
 // Oddity to Tools list
 /obj/item/tool/multitool/advanced/cult
@@ -257,6 +323,7 @@
 	tool_qualities = list(QUALITY_PULSING = 42, QUALITY_CAUTERIZING = 22, QUALITY_RETRACTING = 18)
 	matter = list()
 	origin_tech = list()
+	price_tag = 0
 	use_power_cost = 0.50
 	workspeed = 1.2
 	max_upgrades = 4
@@ -269,6 +336,7 @@
 	item_state = "shovel"
 	matter = list()
 	origin_tech = list()
+	price_tag = 0
 	tool_qualities = list(QUALITY_SHOVELING = 53, QUALITY_DIGGING = 42, QUALITY_EXCAVATION = 34, QUALITY_HAMMERING = 6)
 
 /obj/item/tool/screwdriver/combi_driver/cult
@@ -277,6 +345,7 @@
 	icon_state = "psi_driver"
 	matter = list()
 	origin_tech = list()
+	price_tag = 0
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 42, QUALITY_BOLT_TURNING = 42, QUALITY_DRILLING = 36, QUALITY_RETRACTING = 22)
 
 /obj/item/tool/weldingtool/advanced/cult
@@ -289,6 +358,26 @@
 	max_fuel = 29
 	matter = list()
 	origin_tech = list()
+	price_tag = 0
+
+/obj/item/tool/shovel/combat/cult
+	name = "cognitive pry-cutter"
+	desc = "A tool forged from the mind of a psion using an oddity. We use tools. We cut. We dig. We pry. What is it we hope to find?"
+	icon_state = "crovel"
+	matter = list()
+	origin_tech = list()
+	price_tag = 0
+	tool_qualities = list(QUALITY_SHOVELING = 37, QUALITY_DIGGING = 40, QUALITY_PRYING = 37, QUALITY_HAMMERING = 13, QUALITY_CUTTING = 7, QUALITY_SAWING = 3)
+	workspeed = 1.15
+
+/obj/item/tool/wrench/big_wrench/cult
+	name = "twist cutter"
+	desc = "A tool crafted from the mind of a psion using an oddity. Cut things loose, bolt them together, will it make a difference?"
+	icon_state = "psi_wrench"
+	tool_qualities = list(QUALITY_BOLT_TURNING = 42, QUALITY_HAMMERING = 37, QUALITY_WIRE_CUTTING = 34)
+	matter = list()
+	origin_tech = list()
+	price_tag = 0
 
 // Psionic Inhaler, give a certain amount of psi-points a certain amount of time.
 /obj/item/psi_injector
