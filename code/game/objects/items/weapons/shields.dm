@@ -32,13 +32,68 @@
 /obj/item/shield
 	name = "shield"
 	var/base_block_chance = 50
+	var/max_durability = 500
+	var/durability = 500
+
+/obj/item/shield/proc/breakShield(mob/user)
+	if(user)
+		to_chat(user, SPAN_DANGER("Your [src] broke!"))
+		new /obj/item/material/shard/shrapnel(user.loc)
+	else
+		new /obj/item/material/shard/shrapnel(get_turf(src))
+	playsound(get_turf(src), 'sound/effects/impacts/thud1.ogg', 50, 1 -3)
+	spawn(10) qdel(src)
+	return
+
+/obj/item/shield/proc/adjustShieldDurability(amount, user)
+	durability = CLAMP(durability + amount, 0, max_durability)
+	if(durability == 0)
+		breakShield(user)
+
+/obj/item/shield/attackby(obj/item/I, mob/user)
+	if(I.has_quality(QUALITY_ADHESIVE))
+		if(src.durability)
+			user.visible_message(SPAN_NOTICE("[user] begins repairing \the [src] with the [I]!"))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_ADHESIVE, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				src.adjustShieldDurability(src.max_durability * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100, user)
+
+/obj/item/shield/examine(mob/user)
+	if(!..(user,2))
+		return
+
+	if (durability)
+		if (durability > max_durability * 0.95)
+			return
+		else if (durability > max_durability * 0.80)
+			to_chat(user, "It has a few light scratches.")
+		else if (durability > max_durability * 0.40)
+			to_chat(user, SPAN_NOTICE("It shows minor signs of stress and wear."))
+		else if (durability > max_durability * 0.20)
+			to_chat(user, SPAN_WARNING("It looks a bit cracked and worn."))
+		else if (durability > max_durability * 0.10)
+			to_chat(user, SPAN_WARNING("Whatever use this tool once had is fading fast."))
+		else if (durability > max_durability * 0.05)
+			to_chat(user, SPAN_WARNING("Attempting to use this thing as a tool is probably not going to work out well."))
+		else
+			to_chat(user, SPAN_DANGER("It's falling apart. This is one slip away from just being a pile of assorted trash."))
 
 /obj/item/shield/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(user.incapacitated())
 		return 0
-
 	//block as long as they are not directly behind us
-	var/bad_arc = reverse_direction(user.dir) //arc of directions from which we cannot block
+	var/bad_arc = reverse_direction(user.dir)
+	if(istype(attacker, /mob/living/simple_animal/hostile) || istype(attacker, /mob/living/carbon/superior_animal/))
+		var/mob/living/carbon/human/defender = user
+		if(check_shield_arc(defender, bad_arc, damage_source, attacker))
+			if(defender.halloss >= 50)
+				defender.visible_message(SPAN_DANGER("\The [defender] is too tired to block!"))
+				return 0
+			else
+				var/damage_received = CLAMP(damage * (CLAMP(100-user.stats.getStat(STAT_TGH)/2,0,100) / 100) - user.stats.getStat(STAT_TGH)/5,1,100)
+				src.durability = src.durability -  CLAMP(damage_received,10,100) // Shields still take some damage, can't have it go unscathed
+				defender.adjustHalLoss(damage_received)
+				defender.visible_message(SPAN_DANGER("\The [defender] blocks [attack_text] with \the [src]!"))
+				return 1
 	if(check_shield_arc(user, bad_arc, damage_source, attacker))
 		if(prob(get_block_chance(user, damage, damage_source, attacker)))
 			user.visible_message(SPAN_DANGER("\The [user] blocks [attack_text] with \the [src]!"))
@@ -101,6 +156,8 @@
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
 	price_tag = 2000
+	max_durability = 1200
+	durability = 1200
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
 
 /obj/item/shield/riot/crusader/handle_shield(mob/user)
@@ -126,6 +183,8 @@
 	flags = null
 	throw_speed = 2
 	throw_range = 6
+	max_durability = 350
+	durability = 350
 	matter = list(MATERIAL_STEEL = 6)
 	base_block_chance = 35
 
@@ -148,6 +207,8 @@
 	flags = CONDUCT
 	throw_speed = 2
 	throw_range = 4
+	max_durability = 300
+	durability = 300
 	matter = list(MATERIAL_STEEL = 4)
 	base_block_chance = 30
 
@@ -167,6 +228,8 @@
 	flags = CONDUCT
 	throw_speed = 2
 	throw_range = 2
+	max_durability = 300
+	durability = 300
 	matter = list(MATERIAL_STEEL = 8)
 	base_block_chance = 40
 
@@ -195,6 +258,8 @@
 	throwforce = 5.0
 	throw_speed = 1
 	throw_range = 4
+	max_durability = 700
+	durability = 700
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	attack_verb = list("shoved", "bashed")

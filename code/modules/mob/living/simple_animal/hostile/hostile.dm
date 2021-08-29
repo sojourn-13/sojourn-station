@@ -173,6 +173,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		return
 	if(isliving(target_mob))
 		var/mob/living/L = target_mob
+		if(istype(target_mob, /mob/living/carbon/human))
+			var/mob/living/carbon/human/target_human = target_mob
+			if(target_human.check_shields(rand(melee_damage_lower,melee_damage_upper), null, src, null, attacktext)) //Do they block us?
+				return L
 		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return L
