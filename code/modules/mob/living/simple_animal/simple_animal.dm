@@ -752,3 +752,31 @@
 //Animals are generally good at falling, small ones are immune
 /mob/living/simple_animal/get_fall_damage()
 	return mob_size - 1
+
+/mob/living/simple_animal/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)
+	shock_damage *= siemens_coeff
+	if (shock_damage<1)
+		return 0
+
+	src.apply_damage(shock_damage, BURN, def_zone, used_weapon="Electrocution")
+	playsound(loc, "sparks", 50, 1, -1)
+	if (shock_damage > 15)
+		src.visible_message(
+			"\red [src] was shocked by the [source]!", \
+			"\red <B>You feel a powerful shock course through your body!</B>", \
+			"\red You hear a heavy electrical crack." \
+		)
+		Stun(10)//This should work for now, more is really silly and makes you lay there forever
+		Weaken(10)
+	else
+		src.visible_message(
+			"\red [src] was mildly shocked by the [source].", \
+			"\red You feel a mild shock course through your body.", \
+			"\red You hear a light zapping." \
+		)
+
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(5, 1, loc)
+	s.start()
+
+	return shock_damage
