@@ -114,6 +114,12 @@
 
 
 //Surgery tools
+/datum/design/research/item/surgery_kit
+	name = "Advanced Sugery Kit"
+	desc = "A box of advanced surgery tools."
+	build_path = /obj/item/storage/deferred/surgery/si
+	category = CAT_TOOLS
+
 /datum/design/research/item/medical/medimplant_sci
 	name = "Soteria Medical Omnitool"
 	desc = "An all-in-one smart medical tool implant based on the legendary Greyson Positronic model."
@@ -127,28 +133,38 @@
 	build_path = /obj/item/tool/scalpel/laser
 	category = CAT_TOOLS
 
+/datum/design/research/item/scalpel_adv
+	name = "Advanced Scalpel"
+	build_path = /obj/item/tool/scalpel/advanced/si
+	category = CAT_TOOLS
+
+/datum/design/research/item/drill_s_adv
+	name = "Long-nose Hand Drill"
+	build_path = /obj/item/tool/surgicaldrill/adv
+	category = CAT_TOOLS
+
 /datum/design/research/item/bonesetter_adv
 	name = "Bone Clamp Setter"
 	desc = "An advanced bone clamping tool, allows for more precise settling of bones with less wrist force required."
-	build_path = /obj/item/tool/bonesetter/adv
+	build_path = /obj/item/tool/bonesetter/adv/si
 	category = CAT_TOOLS
 
 /datum/design/research/item/cautery_adv
 	name = "High Power Cautery"
 	desc = "A cautery with self-regulating heat transfer capabilities, allows for quicker and more precise cauterization of surgical incisions."
-	build_path = /obj/item/tool/cautery/adv
+	build_path = /obj/item/tool/cautery/adv/si
 	category = CAT_TOOLS
 
 /datum/design/research/item/hemostat_adv
 	name = "Precise Hemostat"
 	desc = "An advanced hemostat with better vein clamping strength and an adaptive tip tuned to also allow easier extraction of shrapnel, organs, and implants."
-	build_path = /obj/item/tool/hemostat/adv
+	build_path = /obj/item/tool/hemostat/adv/si
 	category = CAT_TOOLS
 
 /datum/design/research/item/retractor_adv
 	name = "Extended Retractor"
 	desc = "Retracts surgical incisions with greater precision and speed than normal."
-	build_path = /obj/item/tool/retractor/adv
+	build_path = /obj/item/tool/retractor/adv/si
 	category = CAT_TOOLS
 
 /datum/design/research/item/medsaw_circular
@@ -166,7 +182,7 @@
 /datum/design/research/item/bonegel
 	name = "Bone Gel"
 	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
-	build_path = /obj/item/tool/tape_roll/bonegel
+	build_path = /obj/item/tool/tape_roll/bonegel/si
 	materials = list(MATERIAL_PLASTIC = 10)
 	category = CAT_TOOLS
 

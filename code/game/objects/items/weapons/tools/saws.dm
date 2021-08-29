@@ -58,7 +58,7 @@
 	desc = "For clean bone cutting but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
 	icon_state = "saw"
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4)
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_PLASTEEL = 2)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
 	use_power_cost = 0.05
 	degradation = 2.65
