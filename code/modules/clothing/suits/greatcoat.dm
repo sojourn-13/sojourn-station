@@ -11,6 +11,30 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/greatcoat/ihc/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Greatcoat default"] = "ihc_coat"
+	options["Formal coat"] = "wo_fancycoatmob"
+	options["Dickflap alt"] = "wo_dickflapmob"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak
 	name = "warrant officer's cloaked greatcoat"
 	desc = "A durable greatcoat, designed for protecion and style. This one has a cloak attached to it."
