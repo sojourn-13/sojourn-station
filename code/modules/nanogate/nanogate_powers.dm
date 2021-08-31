@@ -179,7 +179,7 @@ Current User-Related Powers
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
-/obj/item/organ/internal/nanogate/proc/control_bot()
+/obj/item/organ/internal/nanogate/proc/control()
 	set category = "Nanogate Powers"
 	set name = "Activate Nanobot Remote (0)"
 	set desc = "Spend some of your nanites to remotely control your nanobot at will."

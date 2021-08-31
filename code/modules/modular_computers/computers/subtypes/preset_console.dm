@@ -203,6 +203,11 @@
 	cell = new /obj/item/cell/large/moebius/omega(src)
 	gps_sensor= new /obj/item/computer_hardware/gps_sensor(src)
 
+/obj/item/modular_computer/console/preset/nanobot/can_interact(var/mob/user)
+	if(usr.incapacitated())
+		to_chat(user, "<span class='warning'>You can't do that.</span>")
+		return FALSE
+	return TRUE
 
 //Dock control
 /*
