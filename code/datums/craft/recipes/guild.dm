@@ -534,7 +534,7 @@
 
 /datum/craft_recipe/guild/guild_bull
 	name = "Reforge Bull shotgun"
-	result = /obj/item/gun/projectile/shotgun/bull
+	result = /obj/item/gun/projectile/shotgun/bull/bison
 	steps = list(
 		list(/obj/item/gun/projectile/shotgun/bull, 1, "time" = 80),
 		list(/obj/item/gun_upgrade/barrel/bore, 1, "time" = 60),
