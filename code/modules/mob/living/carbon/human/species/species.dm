@@ -229,8 +229,7 @@
 			OP_KIDNEY_LEFT =  null,
 			OP_KIDNEY_RIGHT = null,
 			BP_BRAIN =    null,
-			OP_APPENDIX = null,
-			OP_EYES =     null
+			OP_APPENDIX = null
 			)
 
 	return
