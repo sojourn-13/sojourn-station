@@ -415,6 +415,9 @@
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
 
+	G.prefixes |= prefix
+
+
 /datum/component/item_upgrade/proc/add_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_FULLAUTO])
 		G.add_firemode(FULL_AUTO_400)

@@ -50,7 +50,6 @@
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/pepper/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
-
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && prob(50))

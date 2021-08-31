@@ -111,7 +111,10 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	if(active)
 		for(var/mob/M in view(5, src))
 			if(istype(M, current_target))
-				zap(M)
+				if(M.stat != DEAD)
+					zap(M)
+				else // They're dead, don't shoot
+					continue
 
 /obj/machinery/power/tesla_turret/update_icon()
 	..()
@@ -124,7 +127,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 
 
 /obj/machinery/power/tesla_turret/proc/zap(mob/living/target)
-	if((last_zap + zap_cooldown) > world.time || !powernet)
+	if((!powernet || last_zap + zap_cooldown) > world.time)
 		return FALSE
 	last_zap = world.time
 	var/power = (powernet.avail/2)
