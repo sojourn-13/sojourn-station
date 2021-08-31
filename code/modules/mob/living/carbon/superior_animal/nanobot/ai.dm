@@ -1,6 +1,7 @@
 #define AUTODOC_MODE 1
 #define RADIO_MODE 2
 #define FOOD_MODE 4
+#define CONSOLE_MODE 8
 
 /mob/living/carbon/superior_animal/nanobot/findTarget()
 	. = ..()
@@ -14,21 +15,21 @@
 	if(speaker in creator) // Is it the creator speaking?
 
 		// Autodoc mode.
-		if(hearing_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
+		if(ai_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
 			if(findtext(message, "Toggle Autodoc") && findtext(message, "[src.name]"))
 				medbot = !medbot
 				visible_emote("state, \"[medbot ? "Activating" : "Deactivating"] Autodoc Mode.\"")
 				return
 
 		// Radio mode.
-		if(hearing_flag & RADIO_MODE) // Is Radio Mode installed?
+		if(ai_flag & RADIO_MODE) // Is Radio Mode installed?
 			if(findtext(message, "Toggle Radio") && findtext(message, "[src.name]"))
 				R.broadcasting = !R.broadcasting
 				visible_emote("state, \"[R.broadcasting ? "Activating" : "Deactivating"] Radio Transmissions.\"")
 				return
 
 		// Opifex Food mode.
-		if(hearing_flag & FOOD_MODE) // Is Food Mode installed?
+		if(ai_flag & FOOD_MODE) // Is Food Mode installed?
 			if(findtext(message, "Dispense Food") && findtext(message, "[src.name]"))
 				spawn_food() // The food-spawning and the visible emote is handled in the proc.
 				return
@@ -93,3 +94,11 @@
 
 	if((H.getToxLoss() >= heal_threshold) && (!H.reagents.has_reagent(treatment_tox)))
 		return treatment_tox
+
+/mob/living/carbon/superior_animal/nanobot/attack_hand(mob/living/user as mob)
+	if(user in creator) // Does the user has access?
+		if(ai_flag & CONSOLE_MODE) // Do we have console mode enabled?
+			if(C) // Do we have a console?
+				C.attack_hand(user) // "Attack" the console instead.
+				return
+	..() // Continue the normal behavior

@@ -42,8 +42,9 @@
 	follow_distance = 2
 	var/list/creator = list() // Who's the bot's creator.
 	var/repair_rate = 0 // How fast does the bot repair itself.
-	var/hearing_flag = 0 // Flags for voice-activated functions
+	var/ai_flag = 0 // Flags for special functions
 	var/obj/item/device/radio/R // Var for the built-in radio
+	var/obj/item/modular_computer/console/preset/nanobot/C
 
 	// Vars for the medical function
 	var/medbot = FALSE // Does it act like a medbot?

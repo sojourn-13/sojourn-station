@@ -118,12 +118,11 @@ Current User-Related Powers
 	if(Stand) // Do they have the bot?
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to activate a mode in your bot.")
-			Stand.hearing_flag |= AUTODOC_MODE
+			Stand.ai_flag |= AUTODOC_MODE
 			verbs -= /obj/item/organ/internal/nanogate/proc/autodoc_mode
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
-// Powers that activate various modes for the bot.
 /obj/item/organ/internal/nanogate/proc/radio_mode()
 	set category = "Nanogate Powers"
 	set name = "Activate Nanobot Protocol - Radio (1)"
@@ -133,12 +132,26 @@ Current User-Related Powers
 	if(Stand) // Do they have the bot?
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to activate a mode in your bot.")
-			Stand.hearing_flag |= RADIO_MODE
+			Stand.ai_flag |= RADIO_MODE
 			verbs -= /obj/item/organ/internal/nanogate/proc/radio_mode
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
-// Powers that activate various modes for the bot.
+/obj/item/organ/internal/nanogate/proc/console_mode()
+	set category = "Nanogate Powers"
+	set name = "Activate Nanobot Protocol - Console (1)"
+	set desc = "Spend some of your nanites to activate a protocol in your bot."
+	nano_point_cost = 1
+
+	if(Stand) // Do they have the bot?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to activate a mode in your bot.")
+			Stand.ai_flag |= CONSOLE_MODE
+			Stand.C = new Stand.C(Stand) // Give the stand a console
+			verbs -= /obj/item/organ/internal/nanogate/proc/radio_mode
+	else
+		to_chat(owner, "You do not have a nanobot to upgrade!")
+
 /obj/item/organ/internal/nanogate/proc/food_mode()
 	set category = "Nanogate Powers"
 	set name = "Activate Nanobot Protocol - Food (1)"
@@ -148,7 +161,7 @@ Current User-Related Powers
 	if(Stand) // Do they have the bot?
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to activate a mode in your bot.")
-			Stand.hearing_flag |= FOOD_MODE
+			Stand.ai_flag |= FOOD_MODE
 			verbs -= /obj/item/organ/internal/nanogate/proc/food_mode
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")

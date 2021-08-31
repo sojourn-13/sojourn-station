@@ -190,6 +190,20 @@
 	hard_drive.store_file(new /datum/computer_file/program/trade())
 	set_autorun("trade")
 
+// Nanobot integrated Console.
+/obj/item/modular_computer/console/preset/nanobot
+	suitable_cell = /obj/item/cell/large
+
+/obj/item/modular_computer/console/preset/nanobot/install_default_hardware()
+	..()
+	network_card = new /obj/item/computer_hardware/network_card/advanced(src)
+	processor_unit = new /obj/item/computer_hardware/processor_unit/super(src)
+	tesla_link = new /obj/item/computer_hardware/tesla_link(src)
+	hard_drive = new /obj/item/computer_hardware/hard_drive/cluster(src)
+	cell = new /obj/item/cell/large/moebius/omega(src)
+	gps_sensor= new /obj/item/computer_hardware/gps_sensor(src)
+
+
 //Dock control
 /*
 /obj/item/modular_computer/console/preset/dock/install_default_hardware()
