@@ -311,6 +311,12 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
+	synthskin_humanf
+		name = "FBP-Human Female synthskin"
+		icon_state = "synthskinhumanf"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
 	synthskin_canine
 		name = "FBP-Canine synthskin"
 		icon_state = "synthskincanine"
