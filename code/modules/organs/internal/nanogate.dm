@@ -32,6 +32,7 @@
 		/obj/item/organ/internal/nanogate/proc/autodoc_mode,
 		/obj/item/organ/internal/nanogate/proc/radio_mode,
 		/obj/item/organ/internal/nanogate/proc/console_mode,
+		/obj/item/organ/internal/nanogate/proc/control_bot,
 
 		// Upgrades of the user.
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
@@ -59,7 +60,9 @@
 		// Activation of vocal protocols for the bots
 		/obj/item/organ/internal/nanogate/proc/autodoc_mode,
 		/obj/item/organ/internal/nanogate/proc/radio_mode,
+		/obj/item/organ/internal/nanogate/proc/console_mode,
 		/obj/item/organ/internal/nanogate/proc/food_mode,
+		/obj/item/organ/internal/nanogate/proc/control_bot,
 
 		// Upgrades of the user.
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
