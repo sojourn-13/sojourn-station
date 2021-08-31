@@ -30,6 +30,7 @@
 	deathmessage = "blows apart!"
 	light_range = 3
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
+	holder_type = /obj/item/holder/nanobot
 
 	do_gibs = FALSE
 	colony_friend = TRUE

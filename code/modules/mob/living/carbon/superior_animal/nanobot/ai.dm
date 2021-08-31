@@ -101,3 +101,13 @@
 			C.attack_hand(user) // "Attack" the console instead.
 			return
 	..() // Continue the normal behavior
+
+/mob/living/carbon/superior_animal/nanobot/MouseDrop(atom/over_object)
+	if (holder_type)//we need a defined holder type in order for picking up to work
+		var/mob/living/carbon/H = over_object
+		if(!istype(H) || !Adjacent(H))
+			return ..()
+		get_scooped(H, usr)
+		return
+	return ..()
+
