@@ -28,6 +28,15 @@
 				visible_emote("state, \"[R.broadcasting ? "Activating" : "Deactivating"] Radio Transmissions.\"")
 				return
 
+		// Console Mode
+		if(ai_flag & CONSOLE_MODE)
+			if(findtext(message, "Deploy Console") && findtext(message, "[src.name]") && C.loc == src)
+				anchored = TRUE // The bot can't move
+				C.forceMove(src.loc) // Deploy the console
+			else if(findtext(message, "Store Console") && findtext(message, "[src.name]") && C.loc != src)
+				anchored = FALSE // We can move
+				C.forceMove(src) // Store the console
+
 		// Opifex Food mode.
 		if(ai_flag & FOOD_MODE) // Is Food Mode installed?
 			if(findtext(message, "Dispense Food") && findtext(message, "[src.name]"))
@@ -103,7 +112,7 @@
 	..() // Continue the normal behavior
 
 /mob/living/carbon/superior_animal/nanobot/MouseDrop(atom/over_object)
-	if (holder_type)//we need a defined holder type in order for picking up to work
+	if(holder_type && !anchored) // We need a defined holder type in order for picking up to work, and the bot need to not be anchored.
 		var/mob/living/carbon/H = over_object
 		if(!istype(H) || !Adjacent(H))
 			return ..()

@@ -196,7 +196,7 @@
 
 /obj/item/modular_computer/console/preset/nanobot/install_default_hardware()
 	..()
-	network_card = new /obj/item/computer_hardware/network_card/advanced(src)
+	network_card = new /obj/item/computer_hardware/network_card/adv_wired(src)
 	processor_unit = new /obj/item/computer_hardware/processor_unit/super(src)
 	tesla_link = new /obj/item/computer_hardware/tesla_link(src)
 	hard_drive = new /obj/item/computer_hardware/hard_drive/cluster(src)
