@@ -147,8 +147,7 @@ Current User-Related Powers
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to activate a mode in your bot.")
 			Stand.ai_flag |= CONSOLE_MODE
-			Stand.C = new Stand.C(Stand) // Give the stand a console
-			verbs -= /obj/item/organ/internal/nanogate/proc/radio_mode
+			verbs -= /obj/item/organ/internal/nanogate/proc/console_mode
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
@@ -165,6 +164,33 @@ Current User-Related Powers
 			verbs -= /obj/item/organ/internal/nanogate/proc/food_mode
 	else
 		to_chat(owner, "You do not have a nanobot to upgrade!")
+
+/obj/item/organ/internal/nanogate/proc/control_bot()
+	set category = "Nanogate Powers"
+	set name = "Activate Nanobot Remote Control (1)"
+	set desc = "Spend some of your nanites to remotely control your nanobot at will."
+	nano_point_cost = 1
+
+	if(Stand) // Do they have the bot?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to create a remote control setup in your bot.")
+			verbs -= /obj/item/organ/internal/nanogate/proc/control_bot
+			verbs += /obj/item/organ/internal/nanogate/proc/control
+	else
+		to_chat(owner, "You do not have a nanobot to upgrade!")
+
+/obj/item/organ/internal/nanogate/proc/control_bot()
+	set category = "Nanogate Powers"
+	set name = "Activate Nanobot Remote (0)"
+	set desc = "Spend some of your nanites to remotely control your nanobot at will."
+	nano_point_cost = 0
+
+	if(Stand) // Do they have the bot?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You remotely control your bot.")
+			// TODO : Figure out how to possess the nanobot. -R4d6
+	else
+		to_chat(owner, "You do not have a nanobot to control!")
 
 // Personnal powers
 /obj/item/organ/internal/nanogate/proc/nanite_regen()

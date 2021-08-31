@@ -1,7 +1,7 @@
-#define AUTODOC_MODE 1
-#define RADIO_MODE 2
-#define FOOD_MODE 4
-#define CONSOLE_MODE 8
+#define AUTODOC_MODE 1 // To act like a medibot
+#define RADIO_MODE 2 // To act like a radio
+#define FOOD_MODE 4 // To give food.
+#define CONSOLE_MODE 8 // To act as a console
 
 /mob/living/carbon/superior_animal/nanobot/findTarget()
 	. = ..()
@@ -98,7 +98,6 @@
 /mob/living/carbon/superior_animal/nanobot/attack_hand(mob/living/user as mob)
 	if(user in creator) // Does the user has access?
 		if(ai_flag & CONSOLE_MODE) // Do we have console mode enabled?
-			if(C) // Do we have a console?
-				C.attack_hand(user) // "Attack" the console instead.
-				return
+			C.attack_hand(user) // "Attack" the console instead.
+			return
 	..() // Continue the normal behavior

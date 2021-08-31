@@ -44,7 +44,7 @@
 	var/repair_rate = 0 // How fast does the bot repair itself.
 	var/ai_flag = 0 // Flags for special functions
 	var/obj/item/device/radio/R // Var for the built-in radio
-	var/obj/item/modular_computer/console/preset/nanobot/C
+	var/obj/item/modular_computer/console/preset/nanobot/C // The in-built console.
 
 	// Vars for the medical function
 	var/medbot = FALSE // Does it act like a medbot?
@@ -61,6 +61,7 @@
 /mob/living/carbon/superior_animal/nanobot/New()
 	. = ..()
 	R = new/obj/item/device/radio(src)
+	C = new /obj/item/modular_computer/console/preset/nanobot(src)
 
 /mob/living/carbon/superior_animal/nanobot/examine(mob/user)
 	..()
