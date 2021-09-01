@@ -232,7 +232,7 @@
 /datum/gear/factionsecurity/ihcgreatcoat
 	display_name= "greatcoat, commander"
 	path = /obj/item/clothing/suit/greatcoat/ihc
-	allowed_roles = list("Warrant Officer")
+	allowed_roles = list("Warrant Officer","Blackshield Commander")
 	slot = slot_wear_suit
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Faction: Security"
@@ -254,7 +254,14 @@
 /datum/gear/factionsecurity/ihccap
 	display_name= "cap, commander"
 	path = /obj/item/clothing/head/rank/commander/cap
-	allowed_roles = list("Warrant Officer")
+	allowed_roles = list("Warrant Officer" ,"Blackshield Commander")
+	slot = slot_head
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/bsccap
+	display_name= "cap, blackshield commander"
+	path = /obj/item/clothing/head/rank/milcom
+	allowed_roles = list("Warrant Officer" ,"Blackshield Commander")
 	slot = slot_head
 	sort_category = "Faction: Security"
 
