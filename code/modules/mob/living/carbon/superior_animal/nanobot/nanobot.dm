@@ -84,8 +84,8 @@
 
 /mob/living/carbon/superior_animal/nanobot/death()
 	if(controller) // Is there someone currently controlling the bot when it died?
-		to_chat(user, "You are suddenly shunted out of your nanobot as it die.")
-		user.adjustBrainLoss(rand(5, 10)) // Get some brain damage.
+		to_chat(src, "You are suddenly shunted out of your nanobot as it die.")
+		controller.adjustBrainLoss(rand(5, 10)) // Get some brain damage.
 		return_mind() // Send them back
 	. = ..()
 
