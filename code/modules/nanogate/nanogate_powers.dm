@@ -181,8 +181,8 @@ Current User-Related Powers
 
 /obj/item/organ/internal/nanogate/proc/control()
 	set category = "Nanogate Powers"
-	set name = "Activate Nanobot Remote (0)"
-	set desc = "Spend some of your nanites to remotely control your nanobot at will."
+	set name = "Remote Control"
+	set desc = "Remotely control your nanobot. Don't die while controlling it though!"
 	nano_point_cost = 0
 
 	if(Stand) // Do they have the bot?
