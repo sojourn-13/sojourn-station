@@ -188,7 +188,8 @@ Current User-Related Powers
 	if(Stand) // Do they have the bot?
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You remotely control your bot.")
-			// TODO : Figure out how to possess the nanobot. -R4d6
+			Stand.controller = owner
+			owner.mind.transfer_to(Stand)
 	else
 		to_chat(owner, "You do not have a nanobot to control!")
 

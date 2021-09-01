@@ -87,18 +87,6 @@
 						cleaned_human.clean_blood(1)
 						to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
 
-/mob/living/carbon/superior_animal/handmade/death(var/gibbed, var/message = "blows apart!")
-	if (stat != DEAD)
-		new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
-
-		if(cell) // Only if it does have a cell
-			cell.forceMove(src.loc) // Drop the power cell
-			cell = null // No more cell in the drone
-
-		.=..()
-		if(src)
-			qdel(src)
-
 /mob/living/carbon/superior_animal/handmade/emp_act(severity)
 	..()
 	take_overall_damage(0, 50 * severity)
@@ -129,9 +117,19 @@
 			return
 
 		else if(QUALITY_PULSING in T.tool_qualities)
-			follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(0, 1, 2, 3, 4, 5)
-			if(density && follow_distance < 1)
-				follow_distance = 1 // Making sure that the bot don't try to occupy your tile if it can't share it.
+			if(stat != DEAD) // are we still alive?
+				follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(0, 1, 2, 3, 4, 5)
+				if(density && follow_distance < 1)
+					follow_distance = 1 // Making sure that the bot don't try to occupy your tile if it can't share it.
+			else if(health >= maxHealth * 0.99) // We are dead, but are we at least intact?, not actual maxHealth in case something put the HP at least 399.9999999
+				user.visible_message(
+										SPAN_NOTICE("[user] start to reactivate [src.name]."),
+										SPAN_NOTICE("You start to reactivate [src.name]..")
+										)
+				if(T.use_tool(user, src, user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? WORKTIME_LONG : WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_EASY, required_stat = STAT_COG)) // Bring the bot back. It's long as fuck. Bit faster if it's your job.
+					revive() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it
+			else
+				to_chat(user, "[src] need to be fully repaired before reactivation is possible.")
 			return
 
 	// If nothing was ever triggered, continue as normal

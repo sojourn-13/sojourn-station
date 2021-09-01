@@ -47,6 +47,9 @@
 	var/obj/item/device/radio/R // Var for the built-in radio
 	var/obj/item/modular_computer/console/preset/nanobot/C // The in-built console.
 
+	// For the remote control thing
+	var/mob/living/carbon/human/controller
+
 	// Vars for the medical function
 	var/medbot = FALSE // Does it act like a medbot?
 	var/mob/living/carbon/human/patient = null
@@ -68,7 +71,7 @@
 	..()
 	if(iscarbon(user) || issilicon(user))
 		var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
-		if(robotics_expert) // Are we an expert in robots?
+		if(robotics_expert || src == user) // Are we an expert in robots or examining ourselves?
 			to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
 		else if (health < maxHealth * 0.25)
 			to_chat(user, SPAN_DANGER("It's grievously wounded!"))
@@ -78,6 +81,13 @@
 			to_chat(user, SPAN_WARNING("It's wounded."))
 		else if (health < maxHealth)
 			to_chat(user, SPAN_WARNING("It's a bit wounded."))
+
+/mob/living/carbon/superior_animal/nanobot/death()
+	if(controller) // Is there someone currently controlling the bot when it died?
+		to_chat(user, "You are suddenly shunted out of your nanobot as it die.")
+		user.adjustBrainLoss(rand(5, 10)) // Get some brain damage.
+		return_mind() // Send them back
+	. = ..()
 
 // For repairing damage to the bot.
 /mob/living/carbon/superior_animal/nanobot/attackby(obj/item/W as obj, mob/user as mob)
@@ -105,9 +115,19 @@
 			return
 
 		else if(QUALITY_PULSING in T.tool_qualities)
-			follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(0, 1, 2, 3, 4, 5)
-			if(density && follow_distance < 1)
-				follow_distance = 1 // Making sure that the bot don't try to occupy your tile if it can't share it.
+			if(stat != DEAD) // are we still alive?
+				follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(0, 1, 2, 3, 4, 5)
+				if(density && follow_distance < 1)
+					follow_distance = 1 // Making sure that the bot don't try to occupy your tile if it can't share it.
+			else if(health >= maxHealth * 0.99) // We are dead, but are we at least intact?, not actual maxHealth in case something put the HP at least 399.9999999
+				user.visible_message(
+										SPAN_NOTICE("[user] start to reactivate [src.name]."),
+										SPAN_NOTICE("You start to reactivate [src.name]..")
+										)
+				if(T.use_tool(user, src, user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? WORKTIME_LONG : WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_EASY, required_stat = STAT_COG)) // Bring the bot back. It's long as fuck. Bit faster if it's your job.
+					revive() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it.
+			else
+				to_chat(user, "[src] need to be fully repaired before reactivation is possible.")
 			return
 
 	// If nothing was ever triggered, continue as normal
@@ -124,3 +144,12 @@
 		spawned_food = /obj/item/reagent_containers/food/snacks/mre/can
 	spawned_food = new(src.loc) // Spawn the food
 	visible_emote("state, \"Dispensing [spawned_food.name].\"") // Vocal Message
+
+/mob/living/carbon/superior_animal/nanobot/verb/return_mind()
+	set category = "Remote Control"
+	set name = "Deactivate Remote Control"
+	set desc = "Deactivate the remote control of the nanobot and return to your body.."
+
+	to_chat(usr, "You stop controlling [name].")
+	mind.transfer_to(controller)
+	controller = null
