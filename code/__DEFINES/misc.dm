@@ -4,6 +4,10 @@
 
 #define TRANSITIONEDGE 7 // Distance from edge to move to another z-level.
 
+#define CLIENT_MIN_FPS 0 //SERVER sync
+
+#define CLIENT_MAX_FPS 60 //Do not go above this or byond goes fucky
+
 // Invisibility constants.
 #define INVISIBILITY_NONE                 0
 #define INVISIBILITY_LIGHTING             20
