@@ -22,8 +22,8 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Greatcoat default"] = "ihc_coat"
-	options["Formal coat"] = "wo_fancycoatmob"
-	options["Dickflap alt"] = "wo_dickflapmob"
+	options["Formal coat"] = "wo_formal"
+	options["Formal coat alt"] = "wo_formallong"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
