@@ -25,7 +25,6 @@
 	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body."
 	implant_organ_type = /obj/item/organ/internal/psionic_tumor
 	restricted_jobs = list(
-		/datum/job/merchant, //Job based mechanical implant.
 		/datum/job/outsider //Psions are only available to colonist or allies.
 		)
 	allow_modifications = FALSE

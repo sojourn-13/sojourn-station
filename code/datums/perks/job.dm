@@ -47,8 +47,8 @@
 	..()
 
 /datum/perk/timeismoney
-	name = "Hyperzine Implant"
-	desc = "A standard issue implant designed for Chief Executive Officers that contains a small on-demand injection of Hyperzine. The implant itself is hidden from prying scanners and comes in both \
+	name = "Hyperzine Injections"
+	desc = "A standard issue injector hidden away that is designed for Chief Executive Officers that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
 	metal and organic material designs to aid in remaining hidden. While useful, the chemical storage takes time to recharge after use."
 	active = FALSE
 	passivePerk = FALSE
@@ -58,7 +58,7 @@
 	if(!istype(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("Your chemical implant is still refilling, you'll need to wait longer."))
+		to_chat(usr, SPAN_NOTICE("Your chemical injector is still refilling, you'll need to wait longer."))
 		return FALSE
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("[user] begins twitching and breathing much quicker!", "You feel your heart rate increasing rapidly as everything seems to speed up!", "You hear someone breathing rapidly...")
