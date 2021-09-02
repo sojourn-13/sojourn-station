@@ -399,12 +399,11 @@
 	set category = "OOC"
 	if(prefs)
 		prefs.ShowChoices(usr)
-/*
+		
 /client/proc/apply_fps(var/client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
 		vars["fps"] = prefs.clientfps
 
-*/
 
 // Byond seemingly calls stat, each tick.
 // Calling things each tick can get expensive real quick.
