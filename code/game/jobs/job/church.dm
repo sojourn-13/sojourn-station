@@ -73,6 +73,7 @@
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/church/acolyte
 	also_known_languages = list(LANGUAGE_LATIN = 100)
+	alt_titles = list("Divisor","Factorial","Monomial","Lemniscate","Tessellate")
 
 	stat_modifiers = list(
 	STAT_MEC = 25,
