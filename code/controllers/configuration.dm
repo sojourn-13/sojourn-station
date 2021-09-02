@@ -535,6 +535,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if("ticklag")
 					Ticklag = text2num(value)
 
+				if("fps")
+					fps = text2num(value)
+
 				if("tick_limit_mc_init")
 					tick_limit_mc_init = text2num(value)
 
