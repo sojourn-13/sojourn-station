@@ -1,5 +1,6 @@
 /datum/job/smc
 	title = "Blackshield Commander"
+	alt_titles = list("Blackshield Lieutenant") //Lesser "rank" but allows фor new-er commanders to join and learn
 	flag = SMC
 	head_position = 1
 	department = DEPARTMENT_SECURITY
