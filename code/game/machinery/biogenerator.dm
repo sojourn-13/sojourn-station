@@ -58,7 +58,7 @@
 			list(name="Roll of gauze", cost=100, path=/obj/item/stack/medical/bruise_pack),
 			list(name="Ointment", cost=100, path=/obj/item/stack/medical/ointment),
 			list(name="Advanced trauma kit", cost=200, path=/obj/item/stack/medical/advanced/bruise_pack),
-			list(name="Advanced trauma kit x5",5, cost=1060, path=/obj/item/storage/box/advancedtraumakit),
+			list(name="Advanced trauma kit x5", cost=1060, path=/obj/item/storage/box/advancedtraumakit),
 			list(name="Advanced burn kit", cost=200, path=/obj/item/stack/medical/advanced/ointment),
 			list(name="Advanced burn kit x5", cost=1060, path=/obj/item/storage/box/advancedburnkit),
 		"Carpet",
