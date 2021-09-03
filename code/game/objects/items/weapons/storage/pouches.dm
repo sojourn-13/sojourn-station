@@ -238,6 +238,35 @@
 	if(contents.len)
 		add_overlay(image('icons/inventory/pockets/icon.dmi', "flare_[contents.len]"))
 
+/obj/item/storage/pouch/grow_a_gun
+	name = "H&S Grow A Gun"
+	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use slot-o-matic."
+	icon_state = "grow"
+	item_state = "grow"
+	matter = list(MATERIAL_PLASTIC = 1)
+	storage_slots = 7
+	w_class = ITEM_SIZE_SMALL
+	max_w_class = ITEM_SIZE_TINY
+
+	can_hold = list(
+		/obj/item/reagent_containers/food/snacks/cube/gun,
+		)
+
+/obj/item/storage/pouch/grow_a_gun/New()
+	populate_contents()
+
+/obj/item/storage/pouch/grow_a_gun/populate_contents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/food/snacks/cube/gun(src)
+	update_icon()
+
+/obj/item/storage/pouch/grow_a_gun/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/pockets/icon.dmi', "grow_[contents.len]"))
+
+
 /obj/item/storage/pouch/pistol_holster
 	name = "pistol holster"
 	desc = "Can hold a handgun in."
