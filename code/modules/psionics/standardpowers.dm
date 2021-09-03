@@ -362,28 +362,16 @@
 /obj/item/organ/internal/psionic_tumor/proc/psionic_armor()
 	set category = "Psionic powers"
 	set name = "Psionic armor (4)"
-	set desc = "Summons a set of armor from somewhere that does not exist. It cannot be taken off. Worn non-uniform equipment will be lost."
+	set desc = "Creates a set of armor from somewhere that does not exist. Anything taken off disappears and whatever clothing you are wearing when this power is used is destroyed."
 	psi_point_cost = 4
 
 	if(pay_power_cost(psi_point_cost))
-		playsound(src.loc, pick('sound/hallucinations/wail.ogg','sound/hallucinations/veryfar_noise.ogg','sound/hallucinations/far_noise.ogg'), 50, 1, -3) //Same sound as the scream.
+		playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 		owner.visible_message(
 			SPAN_DANGER("[src]'s flesh and clothing contort and shimmer, reforming into flowing, black and bronze robes!"),
 			SPAN_DANGER("Your flesh and clothing meld painfully, shimmering out of this reality as they are replaced with a set of armored robes!")
 			)
-		//Start the replacement.
-		//Feet
-		to_chat(owner, SPAN_DANGER("Your feet and legs slough away, replaced with something stronger. Can you hear it underneath you?"))
 		owner.replace_in_slot(new /obj/item/clothing/shoes/occultgreaves, slot_shoes, skip_covering_check = TRUE)
-
-		//Chestpiece
-		to_chat(owner, SPAN_DANGER("Your chest turns in on itself and expands. It needs to get out. Let it out."))
 		owner.replace_in_slot(new /obj/item/clothing/suit/space/occultist, slot_wear_suit, skip_covering_check = TRUE)
-
-		//Gloves
-		to_chat(owner, SPAN_DANGER("Your fingers bend backwards until they pierce through the back of your hands. Can you feel it tugging at the corners of your brain?"))
 		owner.replace_in_slot(new /obj/item/clothing/gloves/occultgloves, slot_gloves, skip_covering_check = TRUE)
-
-		//Hood
-		to_chat(owner, SPAN_DANGER("Your eyes have melted, now you can see. Tear open reality and release what is underneath."))
 		owner.replace_in_slot(new /obj/item/clothing/head/space/occulthood, slot_head, skip_covering_check = TRUE)
