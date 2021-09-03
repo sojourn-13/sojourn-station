@@ -33,7 +33,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns
 	disk_name = "Marshal \"Negotiator\" Pack"
 	icon_state = "ironhammer"
-	license = 10
+	license = 20 //1:1 with blackshield guns
 	designs = list(
 		/datum/design/autolathe/gun/rex10,
 		/datum/design/autolathe/gun/rev10,
@@ -46,9 +46,18 @@
 		//rifles
 		/datum/design/autolathe/gun/basstet,
 		/datum/design/autolathe/gun/strelki,
+		/datum/design/autolathe/gun/ostwind = 3,
+		//shotguns
+		/datum/design/autolathe/gun/riot_shotgun = 4,
 		//machinegun
 		/datum/design/autolathe/gun/dp = 2,
 		/datum/design/autolathe/gun/bastard = 2,
+		//ion
+		/datum/design/autolathe/gun/ion_pistol = 5,
+		//launcher
+		/datum/design/autolathe/gun/grenade_launcher_lenar = 6,
+		//sniper
+		/datum/design/autolathe/gun/nordwind = 14, //basic uses the whole disk...
 		)
 
 //Blackshield

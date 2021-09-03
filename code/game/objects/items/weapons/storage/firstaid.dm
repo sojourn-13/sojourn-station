@@ -16,7 +16,7 @@
 	throw_range = 8
 	matter = list(MATERIAL_PLASTIC = 5)
 	price_tag = 200
-	var/empty = 0
+	var/empty = FALSE
 
 
 /obj/item/storage/firstaid/fire
@@ -24,6 +24,9 @@
 	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
 	icon_state = "ointment"
 	item_state = "firstaid-ointment"
+
+/obj/item/storage/firstaid/fire/empty
+	empty = TRUE
 
 /obj/item/storage/firstaid/fire/populate_contents()
 	icon_state = pick("ointment","firefirstaid")
@@ -40,6 +43,9 @@
 
 /obj/item/storage/firstaid/regular
 	icon_state = "firstaid"
+
+/obj/item/storage/firstaid/regular/empty
+	empty = TRUE
 
 /obj/item/storage/firstaid/regular/populate_contents()
 	if (empty) return
@@ -74,6 +80,9 @@
 	icon_state = "antitoxin"
 	item_state = "firstaid-toxin"
 
+/obj/item/storage/firstaid/toxin/empty
+	empty = TRUE
+
 /obj/item/storage/firstaid/toxin/populate_contents()
 	icon_state = pick("antitoxin","antitoxfirstaid2","antitoxfirstaid3")
 
@@ -94,6 +103,9 @@
 	icon_state = "o2"
 	item_state = "firstaid-o2"
 
+/obj/item/storage/firstaid/o2/empty
+	empty = TRUE
+
 /obj/item/storage/firstaid/o2/populate_contents()
 	if (empty) return
 	new /obj/item/reagent_containers/pill/dexalin(src)
@@ -110,6 +122,9 @@
 	desc = "Contains advanced medical treatments."
 	icon_state = "advfirstaid"
 	item_state = "firstaid-advanced"
+
+/obj/item/storage/firstaid/adv/empty
+	empty = TRUE
 
 /obj/item/storage/firstaid/adv/populate_contents()
 	if (empty) return
@@ -202,7 +217,7 @@
 	new /obj/item/tool/retractor/adv/si(src)
 	new /obj/item/tool/scalpel/advanced/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
-	new /obj/item/tool/surgicaldrill/adv/sib(src)
+	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 
 /obj/item/storage/firstaid/ifak
