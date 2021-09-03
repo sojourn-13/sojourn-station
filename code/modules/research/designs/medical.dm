@@ -112,12 +112,37 @@
 	name = "Large glass beaker"
 	build_path = /obj/item/reagent_containers/glass/beaker/large
 
+/datum/design/research/item/fire_kit
+	name = "Empty Fire Firstaid Kit"
+	build_path = /obj/item/storage/firstaid/fire/empty
+	category = "Medical"
+
+/datum/design/research/item/regular_kit
+	name = "Empty Firstaid Kit"
+	build_path = /obj/item/storage/firstaid/regular/empty
+	category = "Medical"
+
+/datum/design/research/item/toxin_kit
+	name = "Empty Toxin Firstaid Kit"
+	build_path = /obj/item/storage/firstaid/toxin/empty
+	category = "Medical"
+
+/datum/design/research/item/o2_kit
+	name = "Empty Oxygen Deprivation Kit"
+	build_path = /obj/item/storage/firstaid/o2/empty
+	category = "Medical"
+
+/datum/design/research/item/adv_kit
+	name = "Empty Advanced Kit"
+	build_path = /obj/item/storage/firstaid/adv/empty
+	category = "Medical"
+
 
 //Surgery tools
 /datum/design/research/item/surgery_kit
 	name = "Advanced Sugery Kit"
-	desc = "A box of advanced surgery tools."
-	build_path = /obj/item/storage/deferred/surgery/si
+	desc = "A box for advanced surgery tools."
+	build_path = /obj/item/storage/firstaid/surgery/si/empty
 	category = CAT_TOOLS
 
 /datum/design/research/item/medical/medimplant_sci

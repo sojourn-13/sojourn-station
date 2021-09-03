@@ -120,34 +120,6 @@
 		/obj/item/stack/medical/advanced/bruise_pack
 		)
 
-/obj/item/storage/deferred/surgery/si
-	name = "advanced surgery kit"
-	desc = "Contains tools for surgery. Has precise foam fitting for safe transport of highly advanced tools."
-	icon_state = "surgery_box_SI"
-	item_state = "combat_surgery_kit"
-	initial_contents = list(
-		/obj/item/tool/bonesetter/adv/si,
-		/obj/item/tool/saw/circular/medical,
-		/obj/item/tool/hemostat/adv/si,
-		/obj/item/tool/retractor/adv/si,
-		/obj/item/tool/scalpel/advanced/si,
-		/obj/item/tool/tape_roll/bonegel/si,
-		/obj/item/tool/surgicaldrill/adv/si,
-		)
-	can_hold = list(
-		/obj/item/tool/bonesetter,
-		/obj/item/tool/saw/circular,
-		/obj/item/tool/hemostat,
-		/obj/item/tool/retractor,
-		/obj/item/tool/scalpel,
-		/obj/item/tool/tape_roll/bonegel,
-		/obj/item/tool/surgicaldrill,
-		/obj/item/reagent_containers/syringe, //We hold any syringe.
-		/obj/item/storage/pill_bottle, //We hold pill bottles as well
-		/obj/item/stack/medical/advanced/bruise_pack
-		)
-
-
 /obj/item/storage/deferred/meds
 	name = "combat medical kit"
 	desc = "Contains advanced medical treatments."
