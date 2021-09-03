@@ -11,7 +11,6 @@
 	var/max_damage = 30  // HP of this component.
 	var/mob/living/silicon/robot/owner
 	var/installed_by_default = TRUE
-	var/armor_tier = 1
 
 
 // The actual device object that has to be installed for this.
@@ -50,8 +49,8 @@
 /datum/robot_component/proc/take_damage(brute, electronics, sharp, edge)
 	if(installed != 1) return
 
-	brute_damage += brute/armor_tier
-	electronics_damage += electronics/armor_tier
+	brute_damage += brute
+	electronics_damage += electronics
 
 	if(brute_damage + electronics_damage >= max_damage)
 		destroy()
@@ -84,21 +83,53 @@
 /datum/robot_component/armour
 	name = "armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour
-	max_damage = 100
+	max_damage = 80
+
+/datum/robot_component/armour/install()
+	..()
+	owner.brute_mod_perk = 0.6 //60% of brute and burn damage.
+	owner.burn_mod_perk = 0.6
+
+/datum/robot_component/armour/uninstall()
+	..()
+	owner.brute_mod_perk = 0.7 //30% of brute and burn damage.
+	owner.burn_mod_perk = 0.7
 
 /datum/robot_component/armour/level_2
 	name = "advanced armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkii
-	max_damage = 125
+	max_damage = 120
 	installed_by_default = FALSE
-	armor_tier = 2
+
+/datum/robot_component/armour/level_2/install()
+	..()
+	owner.brute_mod_perk = 0.5 //50% of brute and burn damage.
+	owner.burn_mod_perk = 0.5
+	owner.stats.addPerk(/datum/perk/ass_of_concrete)
+
+/datum/robot_component/armour/level_2/uninstall()
+	..()
+	owner.brute_mod_perk = 0.7 //70% of brute and burn damage.
+	owner.burn_mod_perk = 0.7
+	owner.stats.removePerk(/datum/perk/ass_of_concrete)
 
 /datum/robot_component/armour/level_3
 	name = "combat armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour/mkv
-	max_damage = 175
+	max_damage = 160
 	installed_by_default = FALSE
-	armor_tier = 3
+
+/datum/robot_component/armour/level_3/install()
+	..()
+	owner.brute_mod_perk = 0.4 //40% of brute and burn damage.
+	owner.burn_mod_perk = 0.4
+	owner.stats.addPerk(/datum/perk/ass_of_concrete)
+
+/datum/robot_component/armour/level_3/uninstall()
+	..()
+	owner.brute_mod_perk = 0.7 //70% of brute and burn damage.
+	owner.burn_mod_perk = 0.7
+	owner.stats.removePerk(/datum/perk/ass_of_concrete)
 
 
 // JETPACK
