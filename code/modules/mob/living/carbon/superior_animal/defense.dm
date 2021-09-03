@@ -181,7 +181,6 @@
 		handle_stunned()
 		handle_weakened()
 		if(health <= 0)
-			death()
 			blinded = 1
 			silent = 0
 			return 1
@@ -230,7 +229,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 /mob/living/carbon/superior_animal/updatehealth()
 	. = ..() //health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
 	activate_ai()
-	if (health <= 0)
+	if (health <= 0 && stat != DEAD) //stops constantly procing death
 		death()
 
 /mob/living/carbon/superior_animal/gib(var/anim = icon_gib)
