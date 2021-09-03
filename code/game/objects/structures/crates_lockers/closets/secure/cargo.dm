@@ -287,7 +287,6 @@
 
 /obj/structure/closet/secure_closet/reinforced/foreman/populate_contents()
 	new /obj/item/device/radio/headset/heads/foreman(src)
-	new/obj/item/storage/pouch/grow_a_gun(src)
 	if(prob(60))
 		new /obj/item/storage/backpack/satchel/industrial(src)
 	else if(prob(50))
