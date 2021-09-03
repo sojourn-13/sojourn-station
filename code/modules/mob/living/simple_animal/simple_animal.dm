@@ -235,7 +235,7 @@
 		if(!.)
 			return FALSE
 
-		if(health <= 0)
+		if(health <= 0 && stat != DEAD) //So we dont loop every tick
 			death()
 			return FALSE
 
