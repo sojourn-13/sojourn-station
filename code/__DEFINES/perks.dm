@@ -82,3 +82,21 @@
 #define PERK_PSI_MANIA /datum/perk/psi_mania
 #define PERK_PSI_HARMONY /datum/perk/psi_harmony
 #define PERK_PSI_ATTUNEMENT /datum/perk/psi_attunement
+
+// Nanogate Perks
+#define PERK_NANOGATE /datum/perk/nanogate
+#define PERK_NANITE_REGEN /datum/perk/nanite_regen
+#define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
+#define PERK_NANITE_ARMOR /datum/perk/nanite_armor
+#define PERK_NANITE_KNIFE /datum/perk/nanite_knife
+#define PERK_NANITE_TOOL /datum/perk/nanite_tool
+
+// Nanite Chem Perks.
+#define PERK_NANITE_CHEM /datum/perk/nanite_chem
+#define PERK_NANITE_CHEM_IMPLANT /datum/perk/nanite_chem/implantoids
+#define PERK_NANITE_CHEM_TCS /datum/perk/nanite_chem/trauma_control_system
+#define PERK_NANITE_CHEM_CBU /datum/perk/nanite_chem/control_booster_utility
+#define PERK_NANITE_CHEM_CBC /datum/perk/nanite_chem/control_booster_combat
+#define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_chem/purgers
+#define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_chem/oxyrush
+#define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_chem/nantidotes

@@ -1,9 +1,15 @@
-/mob/living/carbon/superior_animal/handmade
-	name = "Custom-made Drone"
-	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
+/mob/living/carbon/superior_animal/nanobot
+	name = "Nanobot"
+	desc = "A robot built from Nanites"
 	icon = 'icons/mob/custom_bot.dmi'
+	icon_state = "soteria_sword_handmade"
+	attack_sound = 'sound/weapons/blade1.ogg'
 	faction = "neutral"
 	pass_flags = PASSTABLE
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 10
+	melee_damage_upper = 20
 	turns_per_move = 5
 	see_in_dark = 10
 	wander = FALSE
@@ -23,9 +29,8 @@
 	randpixel = 0
 	deathmessage = "blows apart!"
 	light_range = 3
-	light_color = COLOR_LIGHTING_RED_BRIGHT
-	var/exam_message = null // Custom message that show when examined and is different for each model.
-	var/cleaning = FALSE
+	light_color = COLOR_LIGHTING_BLUE_BRIGHT
+	holder_type = /obj/item/holder/nanobot // What the nanobot become when picked up.
 
 	do_gibs = FALSE
 	colony_friend = TRUE
@@ -33,19 +38,40 @@
 
 	known_languages = list(LANGUAGE_COMMON)
 
-	var/obj/item/cell/cell = null // Hold the drone's power cell, default to a cheap one.
 	follow_message = "state, \"Beginning Escort Protocol.\""
 	stop_message = "state, \"Ending Escort Protocol.\""
 	follow_distance = 2
 	var/list/creator = list() // Who's the bot's creator.
+	var/repair_rate = 0 // How fast does the bot repair itself.
+	var/ai_flag = 0 // Flags for special functions
+	var/obj/item/device/radio/R // Var for the built-in radio
+	var/obj/item/modular_computer/console/preset/nanobot/C // The in-built console.
 
-/mob/living/carbon/superior_animal/handmade/examine(mob/user)
+	// For the remote control thing
+	var/mob/living/carbon/human/controller
+
+	// Vars for the medical function
+	var/medbot = FALSE // Does it act like a medbot?
+	var/mob/living/carbon/human/patient = null
+	var/currently_healing = FALSE
+	var/injection_amount = 15 //How much reagent do we inject at a time?
+	var/heal_threshold = 10 //Start healing when they have this much damage in a category
+	var/treatment_brute = "tricordrazine"
+	var/treatment_oxy = "tricordrazine"
+	var/treatment_fire = "tricordrazine"
+	var/treatment_tox = "tricordrazine"
+	var/treatment_virus = "spaceacillin"
+
+/mob/living/carbon/superior_animal/nanobot/New()
+	. = ..()
+	R = new/obj/item/device/radio(src)
+	C = new /obj/item/modular_computer/console/preset/nanobot(src)
+
+/mob/living/carbon/superior_animal/nanobot/examine(mob/user)
 	..()
-	if(exam_message)
-		to_chat(user, SPAN_NOTICE("[exam_message]"))
 	if(iscarbon(user) || issilicon(user))
 		var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
-		if(robotics_expert) // Are we an expert in robots?
+		if(robotics_expert || src == user) // Are we an expert in robots or examining ourselves?
 			to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
 		else if (health < maxHealth * 0.25)
 			to_chat(user, SPAN_DANGER("It's grievously wounded!"))
@@ -56,43 +82,15 @@
 		else if (health < maxHealth)
 			to_chat(user, SPAN_WARNING("It's a bit wounded."))
 
-/mob/living/carbon/superior_animal/handmade/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0) //WE CLEAN!
+/mob/living/carbon/superior_animal/nanobot/death()
+	if(controller) // Is there someone currently controlling the bot when it died?
+		to_chat(src, "You are suddenly shunted out of your nanobot as it die.")
+		controller.adjustBrainLoss(rand(5, 10)) // Get some brain damage.
+		return_mind() // Send them back
 	. = ..()
-	if(cleaning)
-		var/turf/tile = loc
-		if(isturf(tile))
-			tile.clean_blood()
-			for(var/A in tile)
-				if(istype(A, /obj/effect))
-					if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
-						qdel(A)
-				else if(istype(A, /obj/item))
-					var/obj/item/cleaned_item = A
-					cleaned_item.clean_blood()
-				else if(ishuman(A))
-					var/mob/living/carbon/human/cleaned_human = A
-					if(cleaned_human.lying)
-						if(cleaned_human.head)
-							cleaned_human.head.clean_blood()
-							cleaned_human.update_inv_head(0)
-						if(cleaned_human.wear_suit)
-							cleaned_human.wear_suit.clean_blood()
-							cleaned_human.update_inv_wear_suit(0)
-						else if(cleaned_human.w_uniform)
-							cleaned_human.w_uniform.clean_blood()
-							cleaned_human.update_inv_w_uniform(0)
-						if(cleaned_human.shoes)
-							cleaned_human.shoes.clean_blood()
-							cleaned_human.update_inv_shoes(0)
-						cleaned_human.clean_blood(1)
-						to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
 
-/mob/living/carbon/superior_animal/handmade/emp_act(severity)
-	..()
-	take_overall_damage(0, 50 * severity)
-
-// For repairing damage to the synths.
-/mob/living/carbon/superior_animal/handmade/attackby(obj/item/W as obj, mob/user as mob)
+// For repairing damage to the bot.
+/mob/living/carbon/superior_animal/nanobot/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
@@ -127,10 +125,31 @@
 										SPAN_NOTICE("You start to reactivate [src.name]..")
 										)
 				if(T.use_tool(user, src, user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? WORKTIME_LONG : WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_EASY, required_stat = STAT_COG)) // Bring the bot back. It's long as fuck. Bit faster if it's your job.
-					revive() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it
+					revive() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it.
 			else
 				to_chat(user, "[src] need to be fully repaired before reactivation is possible.")
 			return
 
 	// If nothing was ever triggered, continue as normal
 	..()
+
+/mob/living/carbon/superior_animal/nanobot/proc/spawn_food(var/random = FALSE)
+	var/obj/item/reagent_containers/food/snacks/spawned_food // The food we're spawning
+	if(random) // Are we spawning random food?
+		var/list/possible_food = typesof(/obj/item/reagent_containers/food/snacks) // Create a list of possible food to spawn
+		possible_food -= /obj/item/reagent_containers/food/snacks // Remove the default type from the list
+		spawned_food = pick(possible_food) // Select a random food.
+
+	else // We're spawning a specific food.
+		spawned_food = /obj/item/reagent_containers/food/snacks/mre/can
+	spawned_food = new(src.loc) // Spawn the food
+	visible_emote("state, \"Dispensing [spawned_food.name].\"") // Vocal Message
+
+/mob/living/carbon/superior_animal/nanobot/verb/return_mind()
+	set category = "Remote Control"
+	set name = "Deactivate Remote Control"
+	set desc = "Deactivate the remote control of the nanobot and return to your body.."
+
+	to_chat(usr, "You stop controlling [name].")
+	mind.transfer_to(controller)
+	controller = null

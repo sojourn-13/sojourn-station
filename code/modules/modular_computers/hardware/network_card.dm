@@ -90,6 +90,15 @@ var/global/ntnet_card_uid = 1
 	icon_state = "netcard_ethernet"
 	hardware_size = 3
 
+/obj/item/computer_hardware/network_card/adv_wired
+	name = "advanced wired network card"
+	desc = "An advanced network card for usage with standard frequencies. This one supports wired connection and it's transmitter is strong enough to connect even when far away."
+	long_range = TRUE
+	ethernet = TRUE
+	origin_tech = list(TECH_DATA = 7, TECH_ENGINEERING = 5)
+	power_usage = 150 // Better range but higher power usage.
+	icon_state = "netcard_ethernet"
+	hardware_size = 3
 
 // Returns a string identifier of this network card
 /obj/item/computer_hardware/network_card/proc/get_network_tag()

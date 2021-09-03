@@ -112,6 +112,10 @@
 		if(B)
 			stat("Psi Essence", "[B.psi_points]/[B.max_psi_points]")
 
+		var/obj/item/organ/internal/nanogate/N = random_organ_by_process(BP_NANOGATE)
+		if(N)
+			stat("Nanites Point", "[N.nanite_points]")
+
 	else if(statpanel("Perks"))
 		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
 			perkHolder.update()
@@ -1213,7 +1217,12 @@ var/list/rank_prefix = list(\
 					C.access.Add(mind.assigned_job.cruciform_access)
 					C.install_default_modules_by_path(mind.assigned_job)
 			if(I.implant_organ_type)
-				src.make_psion()
+				if(I.implant_organ_type == "psionic tumor")
+					src.make_psion()
+				else if(I.implant_organ_type == "opifex nanogate")
+					src.give_nanogate(TRUE)
+				else if(I.implant_organ_type == "nanogate")
+					src.give_nanogate()
 
 	else
 		var/organ_type
