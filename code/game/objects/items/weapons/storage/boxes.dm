@@ -184,6 +184,105 @@
 	new /obj/item/dnainjector/m2h(src)
 	new /obj/item/dnainjector/m2h(src)
 
+//Begining of all the stupid boxes for the biogenerator.
+/obj/item/storage/box/advancedtraumakit
+	name = "box of ATKs"
+	desc = "A box containing five advanced trauma kits."
+
+/obj/item/storage/box/advancedtraumakit/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/stack/medical/advanced/bruise_pack (src)
+
+/obj/item/storage/box/advancedburnkit
+	name = "box of ABKs"
+	desc = "A box containing five advanced burn kits."
+
+/obj/item/storage/box/advancedburnkit/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/stack/medical/advanced/ointment (src)
+
+/obj/item/storage/box/leatherbulk
+	name = "Box of leather"
+	desc = "A box containing five workable sheets of leather."
+
+/obj/item/storage/box/leatherbulk/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/stack/material/leather (src)
+
+/obj/item/storage/box/clothbulk
+	name = "Box of cloth"
+	desc = "A box containing five bolts of cloth."
+
+/obj/item/storage/box/clothbulk/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/stack/material/cloth (src)
+
+/obj/item/storage/box/carpetbulk
+	name = "Box of red carpet"
+	desc = "A box containing fifteen cubic meters of red carpet, tightly vacuum compresed."
+
+/obj/item/storage/box/bcarpetbulk/populate_contents()
+	for(var/i in 1 to 15)
+		new /obj/item/stack/tile/carpet(src)
+
+/obj/item/storage/box/bcarpetbulk
+	name = "Box of black carpet"
+	desc = "A box containing fifteen cubic meters of black carpet, tightly vacuum compresed."
+
+/obj/item/storage/box/bluecarpetbulk/populate_contents()
+	for(var/i in 1 to 15)
+		new /obj/item/stack/tile/carpet/bcarpet (src)
+
+/obj/item/storage/box/bluecarpetbulk
+	name = "Box of blue carpet"
+	desc = "A box containing fifteen cubic meters of blue carpet, tightly vacuum compresed."
+
+/obj/item/storage/box/bluecarpetbulk/populate_contents()
+	for(var/i in 1 to 15)
+		new /obj/item/stack/tile/carpet/blucarpet (src)
+
+/obj/item/storage/box/turcarpetbulk
+	name = "Box of turqoise carpet"
+	desc = "A box containing fifteen cubic meters of turqoise carpet, tightly vacuum compresed."
+
+/obj/item/storage/box/turcarpetbulk/populate_contents()
+	for(var/i in 1 to 15)
+		new /obj/item/stack/tile/carpet/turcarpet (src)
+
+/obj/item/storage/box/sbluecarpetbulk
+	name = "Box of silver carpet"
+	desc = "A box containing fifteen cubic meters of silver carpet, tightly vacuum compresed."
+
+/obj/item/storage/box/sbluecarpetbulk/populate_contents()
+	for(var/i in 1 to 15)
+		new /obj/item/stack/tile/carpet/sblucarpet (src)
+
+/obj/item/storage/box/purcarpetbulk
+	name = "Box of purple carpet"
+	desc = "A box containing fifteen cubic meters of purple carpet, tightly vacuum compresed."
+
+/obj/item/storage/box/purcarpetbulk/populate_contents()
+	for(var/i in 1 to 15)
+		new /obj/item/stack/tile/carpet/purcarpet (src)
+
+/obj/item/storage/box/oracarpetbulk
+	name = "Box of orange carpet"
+	desc = "A box containing fifteen cubic meters of orange carpet, tightly vacuum compresed."
+
+/obj/item/storage/box/oracarpetbulk/populate_contents()
+	for(var/i in 1 to 15)
+		new /obj/item/stack/tile/carpet/oracarpet (src)
+
+/obj/item/storage/box/cardboardbulk
+	name = "Box of cardboard"
+	desc = "A box containing five tightly packed flats of cardboard. "
+
+/obj/item/storage/box/cardboardbulk/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/stack/material/cardboard (src)
+
+//End of hydro boxes
+
 /obj/item/storage/box/flashbangs
 	name = "box of flashbangs"
 	desc = "A box containing seven antipersonnel flashbang grenades.<br> WARNING: These devices are extremely dangerous and can cause blindness or deafness in repeated use."

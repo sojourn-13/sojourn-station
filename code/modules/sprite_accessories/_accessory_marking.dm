@@ -214,6 +214,11 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
+	elven_ears
+	name = "Elven Ears"
+	icon_state = "elfs"
+	blend = ICON_MULTIPLY
+
 	brows
 		name = "Eyebrows"
 		icon_state = "brows"
