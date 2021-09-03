@@ -28,7 +28,7 @@
 	var/panel_locked = FALSE // Is the panel locked?
 	var/panel_open = FALSE // Is the panel open?
 	var/obj/item/bot_part/roomba/roomba_plating/armored = null // Hold the roomba armor plating so that we can get it back.
-	var/obj/item/weaponry = null // Hold the roomba armor plating so that we can get it back.
+	var/obj/item/weaponry = null // Hold the roomba's gun so that we can get it back.
 	var/obj/item/mine/kamikaze = null // Store the mine the roomba can hold.
 	cell = new /obj/item/cell/medium/moebius // Hold the roomba's power cell, but default to a cheap one
 
@@ -39,6 +39,7 @@
 /mob/living/carbon/superior_animal/handmade/roomba/New()
 	armor = default_armor // Give the roomba it's default armor.
 	..()
+	update_icon()
 
 /*\
  * The attackby() is basically a decision tree with branches.
@@ -101,11 +102,13 @@
 				if(panel_open)
 					panel_open = FALSE
 					to_chat(user, "You close [src]'s panel.")
+					update_icon()
 					return
 
 				// If we're here, then the panel wasn't open, so let's open it.
 				panel_open = TRUE
 				to_chat(user, "You open [src]'s panel.")
+				update_icon()
 				return
 
 		// Are we attacking with the roomba plating and is the panel open?
@@ -126,6 +129,7 @@
 			// Get rid of the plating
 			user.remove_from_mob(W)
 			W.forceMove(src)
+			update_icon()
 			return
 
 		// Is it the taped knife and is the panel open?
@@ -149,6 +153,7 @@
 			// Remove the knife from the user and give it to the roomba.
 			user.remove_from_mob(W)
 			W.forceMove(src)
+			update_icon()
 			return
 
 		// Typical 'is it a gun and is the panel open'.
@@ -170,6 +175,7 @@
 				// Remove the gun from the user and give it ot the roomva.
 				user.remove_from_mob(W)
 				G.forceMove(src)
+				update_icon()
 				return
 
 			// We cannot use that gun.
@@ -189,9 +195,10 @@
 			kamikaze = M // Store the mine itself.
 			to_chat(user, "You install the [W.name] on [src].")
 
-			// Remove the gun from the user and give it ot the roomva.
+			// Remove the gun from the user and give it ot the roomba.
 			user.remove_from_mob(W)
 			M.forceMove(src)
+			update_icon()
 			return
 
 		// Use a crowbar to remove armor and weapons
@@ -217,6 +224,7 @@
 					if(health > maxHealth)
 						health = maxHealth // If the current health of the roomba is over the current maximum health, reduce it to the maximum health.
 					to_chat(user, "You remove [src]'s armor plating.")
+					update_icon()
 					return
 
 			// We want to remove the weapon.
@@ -247,6 +255,7 @@
 					ranged = FALSE // Tell the roomba it can't shoot anymore.
 					to_chat(user, "You remove the [weaponry.name] from [src].")
 					weaponry = null // It got no weapons now.
+					update_icon()
 					return
 
 	// If nothing was ever triggered, continue as normal
@@ -278,9 +287,19 @@
 		kamikaze.explode() // Make the mine explode.
 		kamikaze = null // No more mine in the roomba
 	..()
+	update_icon()
 	return
 
 /mob/living/carbon/superior_animal/handmade/roomba/UnarmedAttack()
 	. = ..()
 	if((.) && (kamikaze)) // If we succeeded in hitting and the roomba got a bomb.
 		death() // Kill the roomba which will in turn trigger the bomb.
+
+/mob/living/carbon/superior_animal/handmade/roomba/update_icon()
+	overlays.Cut()
+	if(panel_open)
+		overlays += image(icon, "roomba_panel")
+	if(armored)
+		overlays += image(icon, "roomba_plating")
+	if(weaponry)
+		overlays += image(icon, "roomba_gun")
