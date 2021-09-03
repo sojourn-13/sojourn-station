@@ -1,18 +1,18 @@
 /obj/machinery/exploration
-	icon = 'icons/obj/ADMS.dmi'
+	icon = 'icons/obj/adms.dmi'
 	anchored = FALSE
 	use_power = NO_POWER_USE //The exploration items take power directly from a cell.
 	density = TRUE
 
-/obj/machinery/exploration/ADMS
+/obj/machinery/exploration/adms
 	name = "Anomalous Data Measurement System"
 	desc = "A large piece of equipment for gathering data from anomalous regions."
-	icon_state = "ADMS"
+	icon_state = "adms"
 
-	circuit = /obj/item/circuitboard/ADMS
+	circuit = /obj/item/circuitboard/adms
 	var/soundcooldown = 5
 	var/active = FALSE
-	var/obj/item/computer_hardware/hard_drive/portable/inserted_disk //Any portable drive works. When inserted, the ADMS installs the research point program
+	var/obj/item/computer_hardware/hard_drive/portable/inserted_disk //Any portable drive works. When inserted, the adms installs the research point program
 	var/datum/computer_file/binary/research_points/inserted_disk_file //A ref to the research_points program
 	var/obj/item/cell/large/cell
 	//Upgrades
@@ -20,29 +20,29 @@
 	var/charge_use = 50 //modified by capacitor. Better capacitor = slower cell drain
 	emagged = FALSE
 
-/obj/machinery/exploration/ADMS/examine(mob/user)
+/obj/machinery/exploration/adms/examine(mob/user)
 	. = ..()
 	if(inserted_disk)
 		to_chat(user, SPAN_NOTICE("It has a disk inserted."))
 	else
 		to_chat(user, SPAN_NOTICE("The disk drive is empty!"))
 
-/obj/machinery/exploration/ADMS/emag_act(mob/user)
+/obj/machinery/exploration/adms/emag_act(mob/user)
 	if(!emagged)
 		emagged = TRUE
 		playsound(loc, "sparks", 75, 1, -1)
 		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
 
-/obj/machinery/exploration/ADMS/Destroy()
+/obj/machinery/exploration/adms/Destroy()
 	if(inserted_disk)
 		inserted_disk.forceMove(loc)//If destroyed, drop the disk!
 	return ..()
 
-/obj/machinery/exploration/ADMS/New()
+/obj/machinery/exploration/adms/New()
 	set_light(l_color=COLOR_RED)
 	..()
 
-/obj/machinery/exploration/ADMS/Process()//Harvest speed values may need tweaking. Needs testing in live environment
+/obj/machinery/exploration/adms/Process()//Harvest speed values may need tweaking. Needs testing in live environment
 	if(!active)
 		set_light(0,0)
 		return
@@ -83,7 +83,7 @@
 			src.spawn_monsters("Roaches",1)//On the station is just calls groups of roaches!
 			return
 
-/obj/machinery/exploration/ADMS/proc/spawn_monsters(var/tag, var/number)
+/obj/machinery/exploration/adms/proc/spawn_monsters(var/tag, var/number)
 	src.active = FALSE
 	system_error("hostiles detected")
 	playsound(loc, "robot_talk_heavy", 100, 0, 0)
@@ -118,35 +118,35 @@
 				continue
 			new /obj/effect/decal/cleanable/rubble(FL)
 		if(tag == "Roaches")
-			//new /obj/spawner/mob/roaches/cluster(burstup)
+			new /obj/random/cluster/roaches(burstup)
 		if(tag == "Spiders")
-			//new /obj/spawner/mob/spiders/cluster(burstup)
+			new /obj/random/cluster/spiders(burstup)
 		if(tag == "Space")
 			new /mob/living/simple_animal/hostile/retaliate/malf_drone(burstup)
 		number--
 	return
 
-/obj/item/computer_hardware/hard_drive/portable/research_points/adms //any research disk works in the ADMS, but it starts with an empty one!
+/obj/item/computer_hardware/hard_drive/portable/research_points/adms //any research disk works in the adms, but it starts with an empty one!
 	min_points = 0
 	max_points = 0
 
-/obj/machinery/exploration/ADMS/proc/system_error(var/error)
+/obj/machinery/exploration/adms/proc/system_error(var/error)
 	if(error)
 		visible_message(SPAN_NOTICE("\The [src] flashes a '[error]' warning."))
 	playsound(loc, 'sound/machines/buzz-sigh.ogg', 50, 0)
 	active = FALSE
 	update_icon()
 
-/obj/machinery/exploration/ADMS/proc/use_cell_power()
+/obj/machinery/exploration/adms/proc/use_cell_power()
 	if(!cell)
 		return FALSE
 	if(cell.checked_use(charge_use))
 		return TRUE
 	return FALSE
 
-/obj/item/circuitboard/ADMS
+/obj/item/circuitboard/adms
 	name = "Anomalous Data Measurement System"
-	build_path = /obj/machinery/exploration/ADMS
+	build_path = /obj/machinery/exploration/adms
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
 	req_components = list(
@@ -156,7 +156,7 @@
 		/obj/item/cell/large = 1
 	)
 
-/obj/machinery/exploration/ADMS/RefreshParts()
+/obj/machinery/exploration/adms/RefreshParts()
 	..()
 	harvest_speed = initial(harvest_speed)
 	charge_use = initial(charge_use)
@@ -172,12 +172,11 @@
 		harvest_speed = harvest_speed/2
 	cell = locate(/obj/item/cell/large) in component_parts
 
-
-/obj/machinery/exploration/ADMS/attackby(obj/item/I, mob/user as mob)
+/obj/machinery/exploration/adms/attackby(obj/item/I, mob/user as mob)
 	..()
 	if(istype(I, /obj/item/computer_hardware/hard_drive/portable))//if the item is a portable disk
 		if(inserted_disk)//and we already have a portable disk
-			to_chat(user, "The ADMS already has a disk inserted.")//fail out
+			to_chat(user, "The adms already has a disk inserted.")//fail out
 		else
 			user.drop_item()
 			I.loc = src
@@ -204,7 +203,7 @@
 
 	if(istype(I, /obj/item/cell/large))
 		if(cell)
-			to_chat(user, "The ADMS already has a cell installed.")
+			to_chat(user, "The adms already has a cell installed.")
 		else
 			user.drop_item()
 			I.loc = src
@@ -214,7 +213,7 @@
 		return
 
 
-/obj/machinery/exploration/ADMS/attack_hand(mob/user as mob)
+/obj/machinery/exploration/amds/attack_hand(mob/user as mob)
 	if (panel_open && cell)
 		to_chat(user, "You take out \the [cell].")
 		cell.loc = get_turf(user)
@@ -237,7 +236,7 @@
 
 	update_icon()
 
-/obj/machinery/exploration/ADMS/verb/eject_disk()
+/obj/machinery/exploration/adms/verb/eject_disk()
 	set name = "Eject Disk"
 	set category = "Object"
 	set src in view(1)
@@ -245,15 +244,15 @@
 		inserted_disk.loc = get_turf(src)
 		inserted_disk = null
 		inserted_disk_file = null
-/obj/machinery/exploration/ADMS/update_icon()
+/obj/machinery/exploration/adms/update_icon()
 	if(active)
-		icon_state = "ADMS-on"
+		icon_state = "adms-on"
 	else
-		icon_state = "ADMS"
+		icon_state = "adms"
 	return
 
 /datum/design/research/circuit/adms
 	name = "Anomalous Data Measurement System"
-	build_path = /obj/item/circuitboard/ADMS
+	build_path = /obj/item/circuitboard/adms
 	sort_string = "HAAAG"
 	category = CAT_COMP
