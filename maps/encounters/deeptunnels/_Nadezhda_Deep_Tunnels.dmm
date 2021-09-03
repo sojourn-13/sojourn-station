@@ -8968,6 +8968,9 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomal)
+"IH" = (
+/turf/simulated/floor/asteroid,
+/area/nadezhda/rnd/mixing)
 "IX" = (
 /obj/structure/table/standard,
 /obj/item/device/lighting/toggleable/lamp,
@@ -9017,7 +9020,7 @@
 "Kv" = (
 /obj/structure/railing/grey,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/nadezhda/rnd/mixing)
 "Kx" = (
 /obj/item/modular_computer/console/preset/security/camera{
 	dir = 8
@@ -9381,7 +9384,7 @@
 "YH" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/mine/explored)
+/area/nadezhda/rnd/mixing)
 "YV" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Toxins Lab";
@@ -22126,9 +22129,9 @@ ti
 ti
 ks
 ks
-ks
+IH
 YH
-ks
+IH
 ks
 ks
 ks
@@ -22330,7 +22333,7 @@ ks
 ks
 Kv
 YH
-ks
+IH
 ks
 ks
 ks
@@ -22532,7 +22535,7 @@ ks
 ks
 Kv
 YH
-ks
+IH
 ks
 ks
 ks
@@ -22734,7 +22737,7 @@ ti
 ti
 Kv
 YH
-ks
+IH
 ks
 ks
 ks
@@ -22936,7 +22939,7 @@ ti
 ti
 Kv
 YH
-ks
+IH
 ks
 ks
 ks
@@ -23138,7 +23141,7 @@ ti
 ti
 Kv
 YH
-ks
+IH
 ks
 ks
 ti
@@ -23340,7 +23343,7 @@ ti
 ti
 Kv
 YH
-ks
+IH
 ks
 ks
 ti
@@ -32630,7 +32633,7 @@ ti
 ti
 ti
 ti
-ks
+IH
 YH
 ti
 ti

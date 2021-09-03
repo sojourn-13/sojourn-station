@@ -37,7 +37,7 @@
 
 	var/list/creatures = list() // Who we can talk to
 	for(var/mob/living/carbon/human/h in world) // Check every players in the game
-		if(!h.species?.reagent_tag != IS_SYNTHETIC && !h.get_core_implant(/obj/item/implant/core_implant/cruciform)) // Can't talk to robots or people with cruciforms
+		if(!h.species?.reagent_tag != IS_SYNTHETIC && !h.get_core_implant(/obj/item/implant/core_implant/cruciform) && !h.is_mannequin) // Can't talk to robots or people with cruciforms or mannequins
 			creatures += h // Add the player to the list we can talk to
 	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures
 	if (isnull(target))

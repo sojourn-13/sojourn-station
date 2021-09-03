@@ -66,6 +66,10 @@
 	var/lying_prev = 0
 	var/canmove = 1
 
+/* Is mannquin to be used when we want to make sure character start up beings do not also get the boon of what ever we are adding
+   this is current used in magic cups to prevent them form being apart of the faith's list.*/
+	var/is_mannequin = FALSE
+
 
 	/*
 Allows mobs to move through dense areas without restriction. For instance, in space or out of holder objects.
