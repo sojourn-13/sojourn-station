@@ -183,6 +183,28 @@
 	new /obj/item/storage/pill_bottle/prosurgeon(src)
 	make_exact_fit()
 
+
+/obj/item/storage/firstaid/surgery/si
+	name = "advanced surgery kit"
+	desc = "Contains tools for surgery. Has precise foam fitting for safe transport of highly advanced tools."
+	icon_state = "surgery_box_SI"
+	item_state = "combat_surgery_kit"
+	icon = 'icons/obj/storage/deferred.dmi'
+
+/obj/item/storage/firstaid/surgery/si/empty
+	empty = TRUE
+
+/obj/item/storage/firstaid/surgery/si/populate_contents()
+	if (empty) return
+	new /obj/item/tool/bonesetter/adv/si(src)
+	new /obj/item/tool/saw/circular/medical(src)
+	new /obj/item/tool/hemostat/adv/si(src)
+	new /obj/item/tool/retractor/adv/si(src)
+	new /obj/item/tool/scalpel/advanced/si(src)
+	new /obj/item/tool/tape_roll/bonegel/si(src)
+	new /obj/item/tool/surgicaldrill/adv/sib(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+
 /obj/item/storage/firstaid/ifak
 	name = "IFAK"
 	desc = "Individual First Aid Kit"
