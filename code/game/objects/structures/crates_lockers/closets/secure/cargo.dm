@@ -287,6 +287,7 @@
 
 /obj/structure/closet/secure_closet/reinforced/foreman/populate_contents()
 	new /obj/item/device/radio/headset/heads/foreman(src)
+	new/obj/item/storage/pouch/grow_a_gun(src)
 	if(prob(60))
 		new /obj/item/storage/backpack/satchel/industrial(src)
 	else if(prob(50))
@@ -387,6 +388,7 @@
 	new/obj/item/clothing/mask/gas/artist_hat(src)
 	new/obj/item/device/radio/headset/headset_cargo(src)
 	new/obj/item/circuitboard/artist_bench(src)
+	new/obj/item/storage/pouch/grow_a_gun(src)
 
 /obj/structure/closet/wardrobe/color/pink/artist
 
@@ -403,6 +405,7 @@
 	new/obj/item/storage/fancy/crayons(src)
 	new/obj/item/reagent_containers/spray/waterflower(src)
 	new/obj/item/device/pda/clown(src)
+	new/obj/item/storage/pouch/grow_a_gun(src)
 	//new/obj/item/clothing/mask/gas/plaguedoctor(src)
 	new/obj/item/clothing/gloves/color/green(src)
 	//new/obj/item/clothing/gloves/color/rainbow(src)
