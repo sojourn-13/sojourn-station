@@ -1,5 +1,5 @@
 /obj/machinery/exploration
-	icon = 'icons/obj/ADMS.dmi'
+	icon = 'icons/obj/adms.dmi'
 	anchored = FALSE
 	use_power = NO_POWER_USE //The exploration items take power directly from a cell.
 	density = TRUE
