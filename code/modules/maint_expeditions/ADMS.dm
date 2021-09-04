@@ -1,5 +1,5 @@
 /obj/machinery/exploration
-	icon = 'icons/obj/adms.dmi'
+	icon = 'icons/obj/ADMS.dmi'
 	anchored = FALSE
 	use_power = NO_POWER_USE //The exploration items take power directly from a cell.
 	density = TRUE
@@ -46,39 +46,56 @@
 	if(!active)
 		set_light(0,0)
 		return
+
 	if(!use_cell_power())
 		system_error("charge error")//If the battery is dead, shut it down
 		set_light(0,0)
 		return
+
 	if(!inserted_disk)
 		system_error("no disk found")
 		set_light(0,0)
 		return
+
 	if(inserted_disk.used_capacity >= inserted_disk.max_capacity)
 		system_error("disk full")
 		set_light(0,0)
 		return
+
 	set_light(2,1)
-	if(soundcooldown == 0)
+
+	if(soundcooldown <= 0)
 		playsound(src.loc, 'sound/ambience/sonar.ogg', 60, 1, 8, 8)
 		soundcooldown = 5
-	else
-		soundcooldown--
-	if(istype(get_area(src), /area/deepmaint))
+
+	soundcooldown--
+
+	var/area = get_area(src)
+	if(istype(area, /area/deepmaint))
 		inserted_disk_file.size += 1.2 * harvest_speed//1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
 		if(prob(3))//SET BACK TO prob(3) after test!
 			src.spawn_monsters("Roaches",4)//Full Furher retinue
 			return
-	if(istype(get_area(src), /area/asteroid) || istype(get_area(src), /area/mine/unexplored))
+
+	else if(istype(area, /area/asteroid))
 		inserted_disk_file.size += 0.4 * harvest_speed//100 points per tick per tier of laser
 		if(prob(2))
 			src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
 			return
-	if(istype(get_area(src), /area/awaymission))//Spooders because no Nothern Light
+
+	else if(istype(area, /area/mine/unexplored))
+		inserted_disk_file.size += 0.4 * harvest_speed//100 points per tick per tier of laser
+		if(prob(2))
+			src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
+			return
+
+	else if(istype(area, /area/awaymission))//Spooders because no Northern Light
 		inserted_disk_file.size += 0.8 * harvest_speed//200 points per tick per tier of laser
 		if(prob(1))
 			src.spawn_monsters("Spiders",2)
+
 	else
+		inserted_disk_file.size += 0.2 * harvest_speed
 		if(prob(10))
 			src.spawn_monsters("Roaches",1)//On the station is just calls groups of roaches!
 			return
@@ -98,6 +115,7 @@
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 	if(emagged)
 		new /mob/living/carbon/superior_animal/roach/kaiser(src.loc)
+		visible_message(SPAN_DANGER("[name] get destroyed as a Kaiser emerge from underneath it!"))
 		qdel(src)
 		return
 	for(var/turf/simulated/floor/F in orange(src.loc, 5))
@@ -108,22 +126,22 @@
 		if (locate(/obj/structure/multiz) in F)
 			continue
 		candidatetiles += F
-	while(number > 0)
+	for(number, number > 0, number--)
 		var/turf/simulated/floor/burstup = pick(candidatetiles)
 		//spawn some rubble too!
-		for (var/turf/simulated/floor/FL in orange(burstup, 3))
+		for (var/turf/simulated/floor/FL in view(burstup, 1))
 			if (FL.is_wall)
 				continue
 			if (locate(/obj/effect/decal/cleanable/rubble) in FL)
 				continue
 			new /obj/effect/decal/cleanable/rubble(FL)
-		if(tag == "Roaches")
-			new /obj/random/cluster/roaches(burstup)
-		if(tag == "Spiders")
-			new /obj/random/cluster/spiders(burstup)
-		if(tag == "Space")
-			new /mob/living/simple_animal/hostile/retaliate/malf_drone(burstup)
-		number--
+		switch(tag)
+			if("Roaches")
+				new /obj/random/cluster/roaches(burstup)
+			if("Spiders")
+				new /obj/random/cluster/spiders(burstup)
+			if("Space")
+				new /mob/living/simple_animal/hostile/retaliate/malf_drone(burstup)
 	return
 
 /obj/item/computer_hardware/hard_drive/portable/research_points/adms //any research disk works in the adms, but it starts with an empty one!
@@ -212,8 +230,7 @@
 			to_chat(user, "You install \the [I].")
 		return
 
-
-/obj/machinery/exploration/amds/attack_hand(mob/user as mob)
+/obj/machinery/exploration/adms/attack_hand(mob/user as mob)
 	if (panel_open && cell)
 		to_chat(user, "You take out \the [cell].")
 		cell.loc = get_turf(user)
@@ -227,6 +244,7 @@
 			active = !active
 			if(active)
 				visible_message(SPAN_NOTICE("\The [src] pings loudly, the sound echoing in the distance."))
+				playsound(src.loc, 'sound/ambience/sonar.ogg', 60, 1, 8, 8)
 			else
 				visible_message(SPAN_NOTICE("\The [src] falls silent."))
 		else
@@ -254,5 +272,4 @@
 /datum/design/research/circuit/adms
 	name = "Anomalous Data Measurement System"
 	build_path = /obj/item/circuitboard/adms
-	sort_string = "HAAAG"
 	category = CAT_COMP
