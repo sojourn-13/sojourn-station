@@ -43,7 +43,10 @@
 	..()
 
 /obj/machinery/exploration/adms/Process()//Harvest speed values may need tweaking. Needs testing in live environment
-	..()
+	if(!active)
+		set_light(0,0)
+		return
+
 	if(!use_cell_power())
 		system_error("charge error")//If the battery is dead, shut it down
 		return
@@ -56,46 +59,43 @@
 		system_error("disk full")
 		return
 
-	if(active)
-		set_light(2,1)
+	set_light(2,1)
 
-		if(soundcooldown <= 0)
-			playsound(src.loc, 'sound/ambience/sonar.ogg', 60, 1, 8, 8)
-			soundcooldown = initial(soundcooldown)
+	if(soundcooldown <= 0)
+		playsound(src.loc, 'sound/ambience/sonar.ogg', 60, 1, 8, 8)
+		soundcooldown = initial(soundcooldown)
 
-		soundcooldown--
+	soundcooldown--
 
-		var/area = get_area(src)
-		if(istype(area, /area/deepmaint))
-			give_points(1.2) //1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
-			if(prob(3))//SET BACK TO prob(3) after test!
-				src.spawn_monsters("Roaches",4)//Full Furher retinue
-				return
+	var/area = get_area(src)
+	if(istype(area, /area/deepmaint))
+		give_points(1.2) //1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
+		if(prob(3))//SET BACK TO prob(3) after test!
+			src.spawn_monsters("Roaches",4)//Full Furher retinue
+			return
 
-		else if(istype(area, /area/asteroid))
-			give_points(0.4) //100 points per tick per tier of laser
-			if(prob(2))
-				src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
-				return
+	else if(istype(area, /area/asteroid))
+		give_points(0.4) //100 points per tick per tier of laser
+		if(prob(2))
+			src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
+			return
 
-		else if(istype(area, /area/mine/unexplored))
-			give_points(0.4) //100 points per tick per tier of laser
-			if(prob(2))
-				src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
-				return
+	else if(istype(area, /area/mine/unexplored))
+		give_points(0.4) //100 points per tick per tier of laser
+		if(prob(2))
+			src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
+			return
 
-		else if(istype(area, /area/awaymission))//Spooders because no Northern Light
-			give_points(0.8) //200 points per tick per tier of laser
-			if(prob(1))
-				src.spawn_monsters("Spiders",2)
+	else if(istype(area, /area/awaymission))//Spooders because no Northern Light
+		give_points(0.8) //200 points per tick per tier of laser
+		if(prob(1))
+			src.spawn_monsters("Spiders",2)
 
-		else
-			give_points(0.2)
-			if(prob(10))
-				src.spawn_monsters("Roaches",1)//On the station is just calls groups of roaches!
-				return
 	else
-		set_light(0,0)
+		give_points(0.2)
+		if(prob(10))
+			src.spawn_monsters("Roaches",1)//On the station is just calls groups of roaches!
+			return
 
 // Proc to add more points in the data disk.
 /obj/machinery/exploration/adms/proc/give_points(var/amount)
