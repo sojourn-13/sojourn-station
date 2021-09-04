@@ -1,11 +1,11 @@
 /obj/machinery/exploration
-	icon = 'icons/obj/ADMS.dmi'
+	icon = 'icons/obj/adms.dmi'
 	anchored = FALSE
 	use_power = NO_POWER_USE //The exploration items take power directly from a cell.
 	density = TRUE
 
 /obj/machinery/exploration/adms
-	name = "Anomalous Data Measurement System"
+	name = "\improper Anomalous Data Measurement System"
 	desc = "A large piece of equipment for gathering data from anomalous regions."
 	icon_state = "adms"
 
@@ -49,59 +49,60 @@
 
 	if(!use_cell_power())
 		system_error("charge error")//If the battery is dead, shut it down
-		set_light(0,0)
 		return
 
 	if(!inserted_disk)
 		system_error("no disk found")
-		set_light(0,0)
 		return
 
 	if(inserted_disk.used_capacity >= inserted_disk.max_capacity)
 		system_error("disk full")
-		set_light(0,0)
 		return
 
 	set_light(2,1)
 
 	if(soundcooldown <= 0)
 		playsound(src.loc, 'sound/ambience/sonar.ogg', 60, 1, 8, 8)
-		soundcooldown = 5
+		soundcooldown = initial(soundcooldown)
 
 	soundcooldown--
 
 	var/area = get_area(src)
 	if(istype(area, /area/deepmaint))
-		inserted_disk_file.size += 1.2 * harvest_speed//1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
+		give_points(1.2) //1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
 		if(prob(3))//SET BACK TO prob(3) after test!
 			src.spawn_monsters("Roaches",4)//Full Furher retinue
 			return
 
 	else if(istype(area, /area/asteroid))
-		inserted_disk_file.size += 0.4 * harvest_speed//100 points per tick per tier of laser
+		give_points(0.4) //100 points per tick per tier of laser
 		if(prob(2))
 			src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
 			return
 
 	else if(istype(area, /area/mine/unexplored))
-		inserted_disk_file.size += 0.4 * harvest_speed//100 points per tick per tier of laser
+		give_points(0.4) //100 points per tick per tier of laser
 		if(prob(2))
 			src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
 			return
 
 	else if(istype(area, /area/awaymission))//Spooders because no Northern Light
-		inserted_disk_file.size += 0.8 * harvest_speed//200 points per tick per tier of laser
+		give_points(0.8) //200 points per tick per tier of laser
 		if(prob(1))
 			src.spawn_monsters("Spiders",2)
 
 	else
-		inserted_disk_file.size += 0.2 * harvest_speed
+		give_points(0.2)
 		if(prob(10))
 			src.spawn_monsters("Roaches",1)//On the station is just calls groups of roaches!
 			return
 
+// Proc to add more points in the data disk.
+/obj/machinery/exploration/adms/proc/give_points(var/amount)
+	inserted_disk_file.size += amount * harvest_speed // The point given by the file is determined by the size of the file.
+	inserted_disk.recalculate_size() // Update the disk so that it know if if the file's too big.
+
 /obj/machinery/exploration/adms/proc/spawn_monsters(var/tag, var/number)
-	src.active = FALSE
 	system_error("hostiles detected")
 	playsound(loc, "robot_talk_heavy", 100, 0, 0)
 	var/list/turf/candidatetiles = list()
@@ -153,6 +154,7 @@
 		visible_message(SPAN_NOTICE("\The [src] flashes a '[error]' warning."))
 	playsound(loc, 'sound/machines/buzz-sigh.ogg', 50, 0)
 	active = FALSE
+	set_light(0,0)
 	update_icon()
 
 /obj/machinery/exploration/adms/proc/use_cell_power()
@@ -223,8 +225,7 @@
 		if(cell)
 			to_chat(user, "The adms already has a cell installed.")
 		else
-			user.drop_item()
-			I.loc = src
+			insert_item(I, user)
 			cell = I
 			component_parts += I
 			to_chat(user, "You install \the [I].")
@@ -232,8 +233,7 @@
 
 /obj/machinery/exploration/adms/attack_hand(mob/user as mob)
 	if (panel_open && cell)
-		to_chat(user, "You take out \the [cell].")
-		cell.loc = get_turf(user)
+		eject_item(cell, user)
 		component_parts -= cell
 		cell = null
 		return
