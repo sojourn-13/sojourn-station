@@ -289,6 +289,7 @@
 	icon_state = "leaper"
 	icon_living = "leaper"
 
+// Credit to SlapDrink#0083 for the sprite.
 /mob/living/simple_animal/hostile/hell_pig
 	name = "hell pig"
 	desc = "The venerable evolution of a tengolo charger, morphing into a violent and destructive beast hostile to all but its own berserk kind. Hell pigs represent the end of a charger's life \
@@ -335,6 +336,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 
+// Credit to scar#1579 for the sprite.
 /mob/living/simple_animal/hostile/hell_pig/slepnir
 	name = "slepnir"
 	desc = "The venerable evolution of a tengolo charger, morphing into a violent and destructive beast hostile to all but its own berserk kind. The slepnir, unlike its other berserk kin, only attacks \

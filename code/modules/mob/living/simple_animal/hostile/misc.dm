@@ -345,6 +345,7 @@
 	mob_size = 20
 	resistance = 15
 
+// Credit to scar#1579 for the sprite.
 /mob/living/simple_animal/hostile/retaliate/tahca
 	name = "tahca"
 	desc = "A cervine creature, surprisingly native to this planet, that resembles a two-headed deer. Despite what one would expect, while docile in nature, it is more than willing to fight if attacked. Hunters value \

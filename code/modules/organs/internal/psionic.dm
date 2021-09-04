@@ -42,5 +42,5 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
-		///obj/item/organ/internal/psionic_tumor/proc/psionic_armor
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor
 	)

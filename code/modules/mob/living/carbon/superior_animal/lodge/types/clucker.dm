@@ -1,5 +1,5 @@
 //clucker
-//Basically a mutant chicken that produces feathers, meat, and a single bit of bones if butchered by a hunter.
+//Basically a mutant chicken that produces feathers, meat, and a single bit of bones if butchered by a hunter. Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/clucker
 	name = "\improper clucker"
 	desc = "A clucker, the affectionately nick named chickens that escaped the colony and somehow survived in the wild before mutating. While mostly without feathers, a single blood engorged one \
@@ -69,7 +69,7 @@
 		STOP_PROCESSING(SSobj, src)
 
 //Baby Clucker
-//Looks nearly the same as a regular chick.
+//Looks nearly the same as a regular chick. Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/chick_clucker
 	name = "\improper clucker chick"
 	desc = "Adorable! They make such a racket though."

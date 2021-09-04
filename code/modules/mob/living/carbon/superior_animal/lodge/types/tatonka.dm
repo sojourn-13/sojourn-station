@@ -1,5 +1,5 @@
 //tatonka
-//Two headed cow that produces milk+
+//Two headed cow that produces milk+ Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/tatonka
 	name = "tatonka"
 	desc = "When cows brought by the colony escape into the wilds they tend to mutate rapidly, the most stable strain growing a second head and losing much of its coloration. Useful for the \
@@ -97,7 +97,7 @@
 	pixel_x = -16
 
 //Baby Tatonka
-//Grows into a tatonka or a tangu
+//Grows into a tatonka or a tangu. Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/baby_tatonka
 	name = "\improper tatonka calf"
 	desc = "Adorable! Four sets of big brown eyes and cute little horns."
@@ -135,7 +135,7 @@
 	default_pixel_x = -16
 	pixel_x = -16
 
-//Tangu, the improved version of tatonka and thus rarer to produce.
+//Tangu, the improved version of tatonka and thus rarer to produce. Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/tatonka/tangu
 	name = "tangu"
 	desc = "Tangu are a mutant strand of tatonka who have grown larger with thick shaggy coats. While rarer than tatonka they are highly prized for their more robust milk and for their horns, \
