@@ -5,7 +5,7 @@
 	density = TRUE
 
 /obj/machinery/exploration/adms
-	name = "Anomalous Data Measurement System"
+	name = "\improper Anomalous Data Measurement System"
 	desc = "A large piece of equipment for gathering data from anomalous regions."
 	icon_state = "adms"
 
