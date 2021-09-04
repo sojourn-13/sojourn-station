@@ -9,7 +9,7 @@
 	icon_state = "psion_tumor"
 	force = 1.0
 	w_class = ITEM_SIZE_SMALL
-	specific_organ_size = 2
+	specific_organ_size = 0.5
 	throwforce = 1.0
 	throw_speed = 3
 	throw_range = 5
@@ -42,5 +42,5 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
-		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor
+		///obj/item/organ/internal/psionic_tumor/proc/psionic_armor
 	)

@@ -1909,6 +1909,33 @@
 /obj/item/reagent_containers/food/snacks/cube
 	matter = list(MATERIAL_BIOMATTER = 20)
 
+/obj/item/reagent_containers/food/snacks/cube/gun
+	name = "Grow-A-Gun Cube"
+	desc = "Just add Water!"
+	reagent_flags = REFILLABLE
+	icon_state = "guncube"
+	bitesize = 12
+	filling_color = "#ADAC7F"
+	center_of_mass = list("x"=16, "y"=14)
+	preloaded_reagents = list("plasticide" = 10)
+	//taste_tag = list(MEAT_FOOD,BLAND_FOOD)
+
+/obj/item/reagent_containers/food/snacks/cube/gun/New()
+	..()
+	color = pick("#EE204D", "#FCE883", "#1F75FE", "#B5674D", "#FF7538", "#1CAC78", "#926EAE", "#232323")
+
+/obj/item/reagent_containers/food/snacks/cube/gun/proc/Expand()
+	src.visible_message(SPAN_NOTICE("\The [src] expands!"))
+	var/turf/T = get_turf(src)
+	new/obj/item/gun/projectile/automatic/slaught_o_matic(T)
+	qdel(src)
+	return TRUE
+
+/obj/item/reagent_containers/food/snacks/cube/gun/on_reagent_change()
+	if(reagents.has_reagent("water"))
+		Expand()
+
+
 /obj/item/reagent_containers/food/snacks/cube/roach
 	name = "Roach Cube"
 	desc = "Just add Blood!"
