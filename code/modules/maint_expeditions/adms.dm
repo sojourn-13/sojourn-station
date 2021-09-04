@@ -56,7 +56,7 @@
 		system_error("disk full")
 		return
 
-	if(active
+	if(active)
 		set_light(2,1)
 
 		if(soundcooldown <= 0)
