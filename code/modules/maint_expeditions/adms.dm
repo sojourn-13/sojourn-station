@@ -262,6 +262,8 @@
 		inserted_disk.loc = get_turf(src)
 		inserted_disk = null
 		inserted_disk_file = null
+		component_parts -= inserted_disk
+
 /obj/machinery/exploration/adms/update_icon()
 	if(active)
 		icon_state = "adms-on"
