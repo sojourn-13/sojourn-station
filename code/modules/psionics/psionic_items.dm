@@ -540,7 +540,7 @@
 	icon_state = "gloves"
 	icon_override = 'icons/obj/psionic/occmob.dmi'
 	slot_flags = SLOT_GLOVES
-	siemens_coefficient = 1 //Insulated! You can't take them off so I don't think it's an issue.
+	siemens_coefficient = 1 //Insulated!
 	matter = list()
 	armor = list(
 		melee = 35,
@@ -590,6 +590,7 @@
 		rad = 50
 	)
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|NOSLIP //make these like spacesuit so it can be a real spacesuit
+	siemens_coefficient = 1 //Insulated!
 	var/mob/living/carbon/human/occultist
 	var/pointgranted = 0 //Did we give you your cog?
 
