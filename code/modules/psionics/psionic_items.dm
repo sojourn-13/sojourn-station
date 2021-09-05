@@ -486,6 +486,9 @@
 
 /obj/item/clothing/head/space/occulthood/attack_self(mob/user) //Reflavoring because this is light from a place that does not know it.
 	if(brightness_on)
+		if(!isturf(user.loc))
+			to_chat(user, "Your cannot hear your thoughts while in this [user.loc]")
+			return
 		on = !on
 		to_chat(user, "With a single thought and urging of your psychic power, you [on ? "enkindle" : "extinguish"] the hood's unnatural light.")
 		update_occult_flashlight(user)
