@@ -122,5 +122,14 @@
 
 
 /obj/item/gun/projectile/shotgun/bull/update_icon()
+	..()
 	cut_overlays()
 	update_charge()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
