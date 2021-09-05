@@ -1,3 +1,4 @@
+// Most sprites here can be attributed to scar#1579 who provided either the sprite itself or the base sprite.
 /obj/item/animal_part
 	name = "animal part"
 	desc = "A chunk of an animal taken from the body during the butchering process. How the fuck did you find this?"
@@ -77,3 +78,5 @@
 	item_state = "wolf_tooth"
 	price_tag = 300
 	w_class = ITEM_SIZE_TINY
+
+// End of scar#1579's sprites.

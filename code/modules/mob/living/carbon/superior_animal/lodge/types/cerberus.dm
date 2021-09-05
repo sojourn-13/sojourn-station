@@ -1,4 +1,4 @@
-//Cerberus, a domesticated hell diver that can be bred for hunting.
+//Cerberus, a domesticated hell diver that can be bred for hunting. Credit to BigBimmer#2319 for the sprite.
 /mob/living/carbon/superior_animal/lodge/cerberus
 	name = "cerberus"
 	desc = "A domesticated hell diver kept fat, happy, and loyal by the local hunting lodge that breed them as hunting allies and guard animals. Favored especially for their asexual \
@@ -43,7 +43,7 @@
 	else
 		..()
 
-//Chimera, a rare spawn beast of a cerberus
+//Chimera, a rare spawn beast of a cerberus. Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/cerberus/chimera
 	name = "chimera"
 	desc = "A mutated strain of a domesticated cerberus, rarely appearing and much sleeker than their lesser cousins. Chimera are faster, better armored, and much more lethal than a cerberus \
@@ -72,7 +72,7 @@
 	pixel_x = -16
 
 //Baby cerberus
-//Grows into a cerberus or chimera
+//Grows into a cerberus or chimera. Credit to BigBimmer#2319 for the sprite.
 /mob/living/carbon/superior_animal/lodge/baby_cerberus
 	name = "\improper cerberus gruntling"
 	desc = "Adorable! A chubby little pig rat thing, largely defenseless until it finally grows up."
