@@ -261,10 +261,9 @@
 		to_chat(usr, SPAN_NOTICE("No disk is inside."))
 		return
 
-	if(inserted_disk)
-		inserted_disk.forceMove(drop_location())
-		component_parts -= inserted_disk
-		to_chat(usr, SPAN_NOTICE("You remove \the [inserted_disk] from \the [src]."))
+	inserted_disk.forceMove(drop_location())
+	component_parts -= inserted_disk
+	to_chat(usr, SPAN_NOTICE("You remove \the [inserted_disk] from \the [src]."))
 
 	inserted_disk = null
 	inserted_disk_file = null
