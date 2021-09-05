@@ -427,7 +427,8 @@
 	item_state = "armor"
 	icon = 'icons/obj/psionic/occicon.dmi'
 	icon_override = 'icons/obj/psionic/occmob.dmi'
-	desc = "A black fabric robe inset with hardened bronze plates, shaped from the mind of a psion. It is durable, capable of surviving space and protecting one from many of the things that would do one harm. \
+	desc = "A black fabric robe inset with hardened bronze plates, shaped from the mind of a psion. Wearing the complete set is said to enhance the cognitive powers of a psion. \
+	It is durable, capable of surviving space and protecting one from many of the things that would do one harm. \
 	Is it durable because the mind is the last thing to die? Why must it appear so, if it is but a reflection of our thoughts?"
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_OCLOTHING
@@ -448,11 +449,22 @@
 	supporting_limbs = list()
 	flags_inv = HIDEJUMPSUIT|HIDETAIL //Removed hide shoes and gloves because we want this so that you can see the shoes and stuff while keeping the spacesuit tags. Yes this is terrible, no there isn't a better way.
 	//var/list/supporting_limbs = list(
+	var/mob/living/carbon/human/occultist //This is so we know who is wearing it.
+	var/pointgranted = 0 //Did we give you your cog?
 
 /obj/item/clothing/suit/space/occultist/dropped()
 	..()
+	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
 	qdel(src)
+
+
+/obj/item/clothing/suit/space/occultist/equipped(var/mob/M)
+	.=..()
+	occultist = M
+	if(!pointgranted)
+		occultist.stats.changeStat(STAT_COG, 5)
+		pointgranted = 1
 
 /obj/item/clothing/head/space/occulthood
 	name = "psion hood"
@@ -474,6 +486,11 @@
 	)
 	siemens_coefficient = 0.4
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT
+	brightness_on = 5
+	on = 0
+	light_applied = 0
+	var/mob/living/carbon/human/occultist
+	var/pointgranted = 0 //Did we give you your cog?
 
 	action_button_name = "Toggle Witchlight" //reflavor this so I can make it purple to go in line with the guns - Sigma
 	light_overlay = "helmet_light_occult" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
@@ -481,8 +498,10 @@
 
 /obj/item/clothing/head/space/occulthood/dropped()
 	..()
+	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
 	qdel(src)
+
 
 /obj/item/clothing/head/space/occulthood/attack_self(mob/user) //Reflavoring because this is light from a place that does not know it.
 	if(brightness_on)
@@ -505,6 +524,13 @@
 	update_icon(user)
 	user.update_action_buttons()
 
+/obj/item/clothing/head/space/occulthood/equipped(var/mob/M)
+	.=..()
+	occultist = M
+	if(!pointgranted)
+		occultist.stats.changeStat(STAT_COG, 5)
+		pointgranted = 1
+
 /obj/item/clothing/gloves/occultgloves //We want them to not be snippable. Maybe make it some kind of rigsuit?
 	name = "psion gloves"
 	desc = "A black fabric pair of gloves inset with hardened bronze plates, shaped from the mind of a psion. It is durable, capable of surviving space and protecting one from many of the things that \
@@ -525,11 +551,21 @@
 		rad = 50
 	)
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT //make these like spacesuit so it can be a real spacesuit
+	var/mob/living/carbon/human/occultist
+	var/pointgranted = 0 //Did we give you your cog?
 
 /obj/item/clothing/gloves/occultgloves/dropped()
 	..()
+	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
 	qdel(src)
+
+/obj/item/clothing/gloves/occultgloves/equipped(var/mob/M)
+	.=..()
+	occultist = M
+	if(!pointgranted)
+		occultist.stats.changeStat(STAT_COG, 5)
+		pointgranted = 1
 
 /obj/item/clothing/gloves/occultgloves/attackby(obj/item/W, mob/user) //Overwrite the gloves clip proc because we don't want these clipped off at all.
 	if(istype(W, /obj/item/tool/wirecutters) || istype(W, /obj/item/tool/scalpel)) //Same check as normal gloves.
@@ -554,8 +590,18 @@
 		rad = 50
 	)
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|NOSLIP //make these like spacesuit so it can be a real spacesuit
+	var/mob/living/carbon/human/occultist
+	var/pointgranted = 0 //Did we give you your cog?
 
 /obj/item/clothing/shoes/occultgreaves/dropped()
 	..()
+	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
 	qdel(src)
+
+/obj/item/clothing/shoes/occultgreaves/equipped(var/mob/M)
+	.=..()
+	occultist = M
+	if(!pointgranted)
+		occultist.stats.changeStat(STAT_COG, 5)
+		pointgranted = 1
