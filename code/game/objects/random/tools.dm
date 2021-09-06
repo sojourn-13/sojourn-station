@@ -7,31 +7,40 @@
 /obj/random/tool/item_to_spawn()
 	return pickweight(list(/obj/random/pack/rare = 2,
 				/obj/item/tool/omnitool = 0.5,
-				/obj/item/tool/screwdriver = 8,
+				/obj/item/tool/screwdriver = 4,
+				/obj/item/tool/screwdriver/improvised = 8,
 				/obj/item/tool/screwdriver/electric = 2,
 				/obj/item/tool/screwdriver/combi_driver = 1,
 				/obj/item/tool/wirecutters = 4,
+				/obj/item/tool/wirecutters/improvised = 6,
 				/obj/item/tool/wirecutters/pliers = 4,
 				/obj/item/tool/wirecutters/armature = 2,
-				/obj/item/tool/weldingtool = 8,
+				/obj/item/tool/weldingtool = 4,
+				/obj/item/tool/weldingtool/improvised = 8,
 				/obj/item/tool/weldingtool/advanced = 2,
-				/obj/item/tool/crowbar = 12,
+				/obj/item/tool/crowbar = 8,
+				/obj/item/tool/crowbar/improvised = 12,
 				/obj/item/tool/crowbar/pneumatic = 2,
-				/obj/item/tool/wrench = 8,
-				/obj/item/tool/hammer = 10,
-				/obj/item/tool/hammer/powered_hammer = 2,
+				/obj/item/tool/wrench = 4,
+				/obj/item/tool/wrench/improvised = 6,
 				/obj/item/tool/wrench/big_wrench = 2,
-				/obj/item/tool/multitool = 4,
+				/obj/item/tool/hammer = 8,
+				/obj/item/tool/hammer/homewrecker = 10,
+				/obj/item/tool/hammer/powered_hammer = 2,
+				/obj/item/tool/multitool = 3,
+				/obj/item/tool/multitool/improvised = 4,
 				/obj/item/tool/multitool/uplink = 0.01, //REALLY RARE
 				/obj/item/tool/multitool/advanced = 1,
-				/obj/item/tool/saw = 8,
+				/obj/item/tool/saw = 4,
+				/obj/item/tool/saw/improvised = 6,
 				/obj/item/tool/saw/circular = 2,
 				/obj/item/tool/saw/circular/advanced = 1,
 				/obj/item/tool/saw/chain = 0.5,
 				/obj/item/tool/saw/hyper = 0.5,
 				/obj/item/tool/surgicaldrill = 4,
 				/obj/item/tool/surgicaldrill/adv = 1,
-				/obj/item/tool/shovel = 5,
+				/obj/item/tool/shovel = 3,
+				/obj/item/tool/shovel/improvised = 6,
 				/obj/item/tool/shovel/spade = 2.5,
 				/obj/item/tool/shovel/power = 1,
 				/obj/item/tool/pickaxe = 2,
@@ -39,9 +48,11 @@
 				/obj/item/tool/pickaxe/drill = 1,
 				/obj/item/tool/pickaxe/diamonddrill = 0.5,
 				/obj/item/tool/pickaxe/excavation = 1,
-				/obj/item/tool/tape_roll = 12,
+				/obj/item/tool/tape_roll/web = 8, //real tape rarer do to making tools last so long / gives a reason to print it
+				/obj/item/tool/tape_roll = 5,
 				/obj/item/tool/tape_roll/fiber = 2,
-				/obj/item/tool/tape_roll/glue = 10,
+				/obj/item/tool/tape_roll/glue = 4,
+				/obj/item/tool/knife/shiv = 7,
 				/obj/item/reagent_containers/spray/vvd40 = 0.5,
 				/obj/item/storage/belt/utility = 5,
 				/obj/item/storage/belt/utility/full = 1,
@@ -118,9 +129,6 @@
 	name = "low chance advanced tool"
 	icon_state = "tool-orange-low"
 	spawn_nothing_percentage = 60
-
-
-
 
 /obj/random/toolbox
 	name = "random toolbox"

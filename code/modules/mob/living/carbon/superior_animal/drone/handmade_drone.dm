@@ -39,6 +39,16 @@
 	follow_distance = 2
 	var/list/creator = list() // Who's the bot's creator.
 
+/mob/living/carbon/superior_animal/robot/death()
+	..()
+	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(3, 1, src)
+	s.start()
+	qdel(src)
+	return
+
+
 /mob/living/carbon/superior_animal/handmade/examine(mob/user)
 	..()
 	if(exam_message)

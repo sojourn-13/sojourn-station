@@ -15,9 +15,25 @@
 	throw_speed = 2
 	throw_range = 8
 	matter = list(MATERIAL_PLASTIC = 5)
+	max_storage_space = 15
 	price_tag = 200
 	var/empty = FALSE
 
+/obj/item/storage/firstaid/regular
+	icon_state = "firstaid"
+
+/obj/item/storage/firstaid/regular/empty
+	empty = TRUE
+
+/obj/item/storage/firstaid/regular/populate_contents()
+	if (empty) return
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/device/scanner/health(src)
 
 /obj/item/storage/firstaid/fire
 	name = "fire first-aid kit"
@@ -37,23 +53,6 @@
 	new /obj/item/reagent_containers/pill/kelotane(src)
 	new /obj/item/reagent_containers/pill/kelotane(src)
 	new /obj/item/reagent_containers/pill/kelotane(src) //Replaced ointment with these since they actually work --Errorage
-	new /obj/item/reagent_containers/hypospray/autoinjector(src)
-	new /obj/item/device/scanner/health(src)
-
-
-/obj/item/storage/firstaid/regular
-	icon_state = "firstaid"
-
-/obj/item/storage/firstaid/regular/empty
-	empty = TRUE
-
-/obj/item/storage/firstaid/regular/populate_contents()
-	if (empty) return
-	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	new /obj/item/device/scanner/health(src)
 
@@ -158,6 +157,8 @@
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport."
 	icon_state = "surgeon"
 	item_state = "firstaid-surgeon"
+	max_storage_space = 18
+	matter = list(MATERIAL_PLASTIC = 10) //holds more
 	can_hold = list(
 		/obj/item/tool/bonesetter,
 		/obj/item/tool/cautery,
@@ -205,6 +206,7 @@
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"
 	icon = 'icons/obj/storage/deferred.dmi'
+	max_storage_space = 18
 
 /obj/item/storage/firstaid/surgery/si/empty
 	empty = TRUE
