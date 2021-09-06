@@ -19,6 +19,7 @@
 	var/harvest_speed = 0 //Modified by internal scanner and laser
 	var/charge_use = 50 //modified by capacitor. Better capacitor = slower cell drain
 	emagged = FALSE
+	var/list/monster_list = list("Roaches", "Spiders")
 
 /obj/machinery/exploration/adms/examine(mob/user)
 	. = ..()
@@ -70,31 +71,25 @@
 	var/area = get_area(src)
 	if(istype(area, /area/deepmaint))
 		give_points(1.2) //1000 research points PER size. 300 points per tick per tier of laser. ~1,000-5,000 before mobs spawn.
-		if(prob(3))//SET BACK TO prob(3) after test!
-			src.spawn_monsters("Roaches",4)//Full Furher retinue
-			return
-
-	else if(istype(area, /area/asteroid))
-		give_points(0.4) //100 points per tick per tier of laser
-		if(prob(2))
-			src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
+		if(prob(3))
+			spawn_monsters(4) //Full Furher retinue
 			return
 
 	else if(istype(area, /area/mine/unexplored))
 		give_points(0.4) //100 points per tick per tier of laser
 		if(prob(2))
-			src.spawn_monsters("Space",2)//Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
+			spawn_monsters(2) //Fewer than deepmaint, since this area is not as dangerous. Need to make a new spacemob spawner!
 			return
 
-	else if(istype(area, /area/awaymission))//Spooders because no Northern Light
+	else if(istype(area, /area/awaymission))
 		give_points(0.8) //200 points per tick per tier of laser
 		if(prob(1))
-			src.spawn_monsters("Spiders",2)
+			spawn_monsters(2)
 
 	else
 		give_points(0.2)
 		if(prob(10))
-			src.spawn_monsters("Roaches",1)//On the station is just calls groups of roaches!
+			src.spawn_monsters(1)//On the station is just calls groups of roaches!
 			return
 
 // Proc to add more points in the data disk.
@@ -102,7 +97,7 @@
 	inserted_disk_file.size += amount * harvest_speed // The point given by the file is determined by the size of the file.
 	inserted_disk.recalculate_size() // Update the disk so that it know if if the file's too big.
 
-/obj/machinery/exploration/adms/proc/spawn_monsters(var/tag, var/number)
+/obj/machinery/exploration/adms/proc/spawn_monsters(var/number, var/tag = "Random")
 	system_error("hostiles detected")
 	playsound(loc, "robot_talk_heavy", 100, 0, 0)
 	var/list/turf/candidatetiles = list()
@@ -127,6 +122,12 @@
 		if (locate(/obj/structure/multiz) in F)
 			continue
 		candidatetiles += F
+
+	update_monster_list()
+
+	if(tag == "Random")
+		tag = pick(monster_list)
+
 	for(number, number > 0, number--)
 		var/turf/simulated/floor/burstup = pick(candidatetiles)
 		//spawn some rubble too!
@@ -141,13 +142,24 @@
 				new /obj/random/cluster/roaches(burstup)
 			if("Spiders")
 				new /obj/random/cluster/spiders(burstup)
-			if("Space")
-				new /mob/living/simple_animal/hostile/retaliate/malf_drone(burstup)
+			if("Xenomorph")
+				new /obj/random/cluster/xenomorphs(burstup)
+			if("Underground")
+				new /obj/random/mob/undergroundmob(burstup)
 	return
 
 /obj/item/computer_hardware/hard_drive/portable/research_points/adms //any research disk works in the adms, but it starts with an empty one!
 	min_points = 0
 	max_points = 0
+
+/obj/machinery/exploration/adms/proc/update_monster_list()
+	monster_list = list("Roaches", "Spiders")
+
+	var/area = get_area(src)
+	if(istype(area, /area/deepmaint))
+		monster_list.Add("Xenomorph")
+	if(istype(area, /area/mine/unexplored))
+		monster_list.Add("Underground")
 
 /obj/machinery/exploration/adms/proc/system_error(var/error)
 	if(error)
