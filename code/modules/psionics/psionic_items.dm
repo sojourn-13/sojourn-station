@@ -486,7 +486,7 @@
 	)
 	siemens_coefficient = 0.4
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT
-	brightness_on = 5
+	brightness_on = 8
 	on = 0
 	light_applied = 0
 	var/mob/living/carbon/human/occultist
