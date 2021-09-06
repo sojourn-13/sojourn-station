@@ -24,18 +24,21 @@
 		// Radio mode.
 		if(ai_flag & RADIO_MODE) // Is Radio Mode installed?
 			if(findtext(message, "Toggle Radio") && findtext(message, "[src.name]"))
-				R.broadcasting = !R.broadcasting
-				visible_emote("state, \"[R.broadcasting ? "Activating" : "Deactivating"] Radio Transmissions.\"")
+				Radio.broadcasting = !Radio.broadcasting
+				visible_emote("state, \"[Radio.broadcasting ? "Activating" : "Deactivating"] Radio Transmissions.\"")
 				return
 
 		// Console Mode
 		if(ai_flag & CONSOLE_MODE)
-			if(findtext(message, "Deploy Console") && findtext(message, "[src.name]") && C.loc == src)
+			if(!Console && findtext(message, "Console")) // Check if the console wasn't deleted
+				visible_emote("state, \"Error. No Console Detected\"")
+				return
+			if(findtext(message, "Deploy Console") && findtext(message, "[src.name]") && Console.loc == src)
 				anchored = TRUE // The bot can't move
-				C.forceMove(src.loc) // Deploy the console
-			else if(findtext(message, "Store Console") && findtext(message, "[src.name]") && C.loc != src)
+				Console.forceMove(src.loc) // Deploy the console
+			else if(findtext(message, "Store Console") && findtext(message, "[src.name]") && Console.loc != src)
 				anchored = FALSE // We can move
-				C.forceMove(src) // Store the console
+				Console.forceMove(src) // Store the console
 
 		// Opifex Food mode.
 		if(ai_flag & FOOD_MODE) // Is Food Mode installed?
@@ -107,7 +110,7 @@
 /mob/living/carbon/superior_animal/nanobot/attack_hand(mob/living/user as mob)
 	if(user in creator) // Does the user has access?
 		if(ai_flag & CONSOLE_MODE) // Do we have console mode enabled?
-			C.attack_hand(user) // "Attack" the console instead.
+			Console.attack_hand(user) // "Attack" the console instead.
 			return
 	..() // Continue the normal behavior
 

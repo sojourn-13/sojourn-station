@@ -201,13 +201,7 @@
 	tesla_link = new /obj/item/computer_hardware/tesla_link(src)
 	hard_drive = new /obj/item/computer_hardware/hard_drive/cluster(src)
 	cell = new /obj/item/cell/large/moebius/omega(src)
-	gps_sensor= new /obj/item/computer_hardware/gps_sensor(src)
-
-/obj/item/modular_computer/console/preset/nanobot/can_interact(var/mob/user)
-	if(usr.incapacitated())
-		to_chat(user, "<span class='warning'>You can't do that.</span>")
-		return FALSE
-	return TRUE
+	gps_sensor = new /obj/item/computer_hardware/gps_sensor(src)
 
 //Dock control
 /*
