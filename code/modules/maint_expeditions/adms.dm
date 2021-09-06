@@ -10,7 +10,7 @@
 	icon_state = "adms"
 
 	circuit = /obj/item/circuitboard/adms
-	var/soundcooldown = 5
+	var/soundcooldown = 2
 	var/active = FALSE
 	var/obj/item/computer_hardware/hard_drive/portable/inserted_disk //Any portable drive works. When inserted, the adms installs the research point program
 	var/datum/computer_file/binary/research_points/inserted_disk_file //A ref to the research_points program
@@ -20,6 +20,7 @@
 	var/charge_use = 50 //modified by capacitor. Better capacitor = slower cell drain
 	emagged = FALSE
 	var/list/monster_list = list("Roaches", "Spiders")
+	var/ping_sound = 'sound/ambience/sonar2.ogg'
 
 /obj/machinery/exploration/adms/examine(mob/user)
 	. = ..()
@@ -62,11 +63,13 @@
 
 	set_light(2,1)
 
+	if(soundcooldown > 0)
+		soundcooldown--
+
 	if(soundcooldown <= 0)
-		playsound(src.loc, 'sound/ambience/sonar.ogg', 60, 1, 8, 8)
+		playsound(src.loc, ping_sound, 60, 1, 8, 8)
 		soundcooldown = initial(soundcooldown)
 
-	soundcooldown--
 
 	var/area = get_area(src)
 	if(istype(area, /area/deepmaint))
@@ -256,7 +259,8 @@
 			active = !active
 			if(active)
 				visible_message(SPAN_NOTICE("\The [src] pings loudly, the sound echoing in the distance."))
-				playsound(src.loc, 'sound/ambience/sonar.ogg', 60, 1, 8, 8)
+				playsound(src.loc, ping_sound, 60, 1, 8, 8)
+				soundcooldown = initial(soundcooldown)
 			else
 				visible_message(SPAN_NOTICE("\The [src] falls silent."))
 		else
