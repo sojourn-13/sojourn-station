@@ -283,9 +283,6 @@
 
 /obj/machinery/power/port_gen/pacman/attackby(var/obj/item/I, var/mob/user)
 
-	if(default_deconstruction(I, user))
-		return
-
 	if(default_part_replacement(I, user))
 		return
 
@@ -306,7 +303,7 @@
 
 	else
 
-		var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
+		var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_SCREW_DRIVING)
 
 		var/tool_type = I.get_tool_type(user, usable_qualities, src)
 		switch(tool_type)
@@ -322,6 +319,10 @@
 						connect_to_network()
 					else
 						disconnect_from_network()
+
+			if(QUALITY_SCREW_DRIVING) //combo drills omni tools ect
+				if(default_deconstruction(I, user))
+					return
 
 			if(ABORT_CHECK)
 				return

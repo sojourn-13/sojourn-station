@@ -564,7 +564,7 @@ var/global/list/default_medbay_channels = list(
 /obj/item/device/radio/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	user.set_machine(src)
-	if (!( istype(W, /obj/item/tool/screwdriver) ))
+	if(!(QUALITY_SCREW_DRIVING in W.tool_qualities))
 		return
 	b_stat = !( b_stat )
 	if(!istype(src, /obj/item/device/radio/beacon))

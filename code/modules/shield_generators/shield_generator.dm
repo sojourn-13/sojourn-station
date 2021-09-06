@@ -270,15 +270,40 @@
 		to_chat(user, "Wait until \the [src] cools down from emergency shutdown first!")
 		return
 
-	if(default_deconstruction(O, user))
-		return
 	if(default_part_replacement(O, user))
 		return
 
-	//TODO: Implement unwrenching in a proper centralised location. Having to copypaste this around sucks
-	if(QUALITY_BOLT_TURNING in O.tool_qualities)
-		wrench(user, O)
-		return
+	else
+		var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_SCREW_DRIVING)
+
+		var/tool_type = O.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+
+			if(QUALITY_BOLT_TURNING)
+
+				if(O.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+					playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+					if(anchored)
+						to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
+						anchored = FALSE
+					else
+						if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
+						to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
+						anchored = TRUE
+
+					if(anchored)
+						connect_to_network()
+					else
+						disconnect_from_network()
+
+					return
+
+			if(QUALITY_SCREW_DRIVING) //combo drills omni tools ect
+				if(default_deconstruction(O, user))
+					return
+
+			if(ABORT_CHECK)
+				return
 
 	if(istype(O, /obj/item/tool))
 		return src.attack_hand(user)
@@ -652,19 +677,6 @@
 		spanclass = "danger"
 
 	command_announcement.Announce(span(spanclass, "[prefix]Shield integrity at [round(field_integrity())]%"), "Shield Status Report", msg_sanitized = TRUE)
-
-
-/obj/machinery/power/shield_generator/proc/wrench(var/user, var/obj/item/O)
-	if(O.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-		if(anchored)
-			to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
-			anchored = FALSE
-		else
-			if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
-			to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
-			anchored = TRUE
-		return
 
 //This proc keeps an internal log of shield impacts, activations, deactivations, and a vague log of config changes
 /obj/machinery/power/shield_generator/proc/log_event(var/event_type, var/atom/origin_atom)
