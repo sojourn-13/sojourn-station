@@ -471,6 +471,15 @@
 		plant.update_neighbors()
 
 
+/obj/structure/low_wall/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
+
 /obj/structure/low_wall/affect_grab(var/mob/living/user, var/mob/living/target, var/state)
 	var/obj/occupied = turf_is_crowded()
 	if(occupied)

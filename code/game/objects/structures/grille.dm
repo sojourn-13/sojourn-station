@@ -214,11 +214,20 @@
 	..()
 
 /obj/structure/grille/attack_generic(var/mob/user, var/damage, var/attack_verb)
-	visible_message(SPAN_DANGER("[user] [attack_verb] the [src]!"))
-	attack_animation(user)
-	health -= damage
-	spawn(1) healthCheck()
-	return 1
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
+/obj/structure/grille/proc/take_damage(amount)
+	health -= amount
+	if(health <= 0)
+		visible_message(SPAN_WARNING("\The [src] breaks down!"))
+		playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
+		new /obj/item/stack/rods(get_turf(usr))
+		qdel(src)
 
 /obj/structure/grille/hitby(AM as mob|obj)
 	..()

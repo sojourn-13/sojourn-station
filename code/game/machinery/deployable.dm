@@ -73,6 +73,22 @@ for reference:
 	maxHealth = material.integrity
 	health = maxHealth
 
+/obj/structure/barricade/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
+/obj/structure/barricade/proc/take_damage(amount)
+	health -= amount
+	if(health <= 0)
+		visible_message(SPAN_WARNING("\The [src] breaks down!"))
+		playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
+		dismantle()
+		qdel(src)
+
 /obj/structure/barricade/get_matter()
 	. = ..()
 	if(material)
@@ -156,6 +172,22 @@ for reference:
 	maxHealth = 100.0
 	var/locked = 0.0
 //	req_access = list(access_maint_tunnels)
+
+/obj/machinery/deployable/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
+/obj/machinery/deployable/proc/take_damage(amount)
+	health -= amount
+	if(health <= 0)
+		visible_message(SPAN_WARNING("\The [src] breaks down!"))
+		playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
+		dismantle()
+		qdel(src)
 
 /obj/machinery/deployable/barrier/New()
 	..()

@@ -24,6 +24,14 @@
 	icon_modifier = "grey_"
 	icon_state = "grey_railing0"
 
+/obj/structure/railing/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
 /obj/structure/railing/Initialize()
 	. = ..()
 	update_icon(FALSE)

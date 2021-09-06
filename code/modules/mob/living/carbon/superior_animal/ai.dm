@@ -70,7 +70,11 @@
 		var/obj/mecha/M = O
 		return isValidAttackTarget(M.occupant)
 
-/mob/living/carbon/superior_animal/proc/destroySurroundings()
+/mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
+/*
+			if (obstacle.dir == reverse_dir[dir]) // this here is so we can target what were are attacking
+*/
+
 	if (prob(break_stuff_probability))
 
 		for (var/obj/structure/window/obstacle in src.loc) // To destroy directional windows that are on the creature's tile
@@ -93,35 +97,47 @@
 					return
 
 			for(var/obj/structure/closet/obstacle in get_step(src, dir))//A locker as a block? We will brake it.
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-				return
+				if(obstacle.opened == FALSE || obstacle.density == TRUE) //Are we closed or dence? then attack!
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 			for(var/obj/structure/table/obstacle in get_step(src, dir))//Tables do not save you.
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-				return
+				if(obstacle.density == TRUE) //In cases were its flipped and its walking past it
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 			for(var/obj/structure/low_wall/obstacle in get_step(src, dir))//This is only a miner issue... We will brake it
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-				return
+				if(obstacle.density == TRUE) //Almost never will do anything, but in cases were theirs a non-dence lower wall
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 			for(var/obj/structure/girder/obstacle in get_step(src, dir))//We know your tricks, they will now fail.
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-				return
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 			for(var/obj/structure/railing/obstacle in get_step(src, dir))//Bulkwork defence... Easy to brake
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-				return
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 			for(var/obj/mecha/obstacle in get_step(src, dir))//Hmm, notable but not everlasting.
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-				return
+				if(obstacle.density == TRUE) //will always likely be dence but in cases were its somehow not
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 			for(var/obj/structure/barricade/obstacle in get_step(src, dir))//Steel will not stop us, then why would planks?
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-				return
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/machinery/deployable/obstacle in get_step(src, dir))//Steel will not stop us, then why would planks?
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 			for(var/obj/machinery/door/obstacle in get_step(src,dir)) //Doors, will stop us when closed, but we will brake it
-				if(obstacle.density == 1)
+				if(obstacle.density == TRUE)
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
 
