@@ -270,14 +270,29 @@
 
 	update_icon()
 
+
+//Handles ejecting the data disk, when able, will place and hand
+/obj/machinery/exploration/adms/proc/eject_disk_action(mob/living/user)
+	if(!inserted_disk)
+		to_chat(usr, SPAN_NOTICE("No disk is inside."))
+		return
+
+	inserted_disk.forceMove(drop_location())
+	component_parts -= inserted_disk
+	to_chat(usr, SPAN_NOTICE("You remove \the [inserted_disk] from \the [src]."))
+
+	inserted_disk = null
+	inserted_disk_file = null
+
 /obj/machinery/exploration/adms/verb/eject_disk()
 	set name = "Eject Disk"
 	set category = "Object"
 	set src in view(1)
 	if(inserted_disk)
-		inserted_disk.loc = get_turf(src)
-		inserted_disk = null
-		inserted_disk_file = null
+		eject_disk_action()
+	else
+		to_chat(usr, SPAN_NOTICE("No disk is inside."))
+
 /obj/machinery/exploration/adms/update_icon()
 	if(active)
 		icon_state = "adms-on"
