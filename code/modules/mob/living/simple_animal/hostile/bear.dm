@@ -81,6 +81,7 @@
 	melee_damage_upper = 40
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 
+// Credit to scar#1579 for the sprite.
 /mob/living/simple_animal/hostile/bear/mukwah
 	name = "mukwah"
 	desc = "A bear that escaped from the abandoned zoo labs before mutating into a creature known as a mukwah. Unlike a standard bear, a mukwah is much more powerful, a heavy hitter that is \

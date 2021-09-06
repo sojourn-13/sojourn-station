@@ -297,23 +297,59 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			if(prob(95))
 				qdel(obstacle)
 
-	if(prob(break_stuff_probability))
-		for(var/dir in cardinal) // North, South, East, West
-			for(var/obj/machinery/obstacle in get_step(src, dir))
-				if((obstacle.dir == reverse_dir[dir])) // So that windows get smashed in the right order
+	if (prob(break_stuff_probability))
+
+		for (var/obj/structure/window/obstacle in src.loc) // To destroy directional windows that are on the creature's tile
+			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+			return
+
+		for (var/obj/machinery/door/window/obstacle in src.loc) // To destroy windoors that are on the creature's tile
+			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+			return
+
+		for (var/dir in cardinal) // North, South, East, West
+			for (var/obj/structure/window/obstacle in get_step(src, dir))
+				if ((obstacle.is_full_window()) || (obstacle.dir == reverse_dir[dir])) // So that directional windows get smashed in the right order
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
-			for(var/turf/simulated/wall/obstacle in get_step(src, dir))
-				if((obstacle.dir == reverse_dir[dir])) // So that windows get smashed in the right order
+
+			for (var/obj/machinery/door/window/obstacle in get_step(src, dir))
+				if (obstacle.dir == reverse_dir[dir]) // So that windoors get smashed in the right order
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
-			for(var/obj/structure/window/obstacle in get_step(src, dir))
-				if((obstacle.dir == reverse_dir[dir]) || obstacle.is_fulltile()) // So that windows get smashed in the right order
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-					return
-			var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
-			if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille) || istype(obstacle, /obj/structure/railing))
+
+			for(var/obj/structure/closet/obstacle in get_step(src, dir))//A locker as a block? We will brake it.
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
+			for(var/obj/structure/table/obstacle in get_step(src, dir))//Tables do not save you.
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
+			for(var/obj/structure/low_wall/obstacle in get_step(src, dir))//This is only a miner issue... We will brake it
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
+			for(var/obj/structure/girder/obstacle in get_step(src, dir))//We know your tricks, they will now fail.
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
+			for(var/obj/structure/railing/obstacle in get_step(src, dir))//Bulkwork defence... Easy to brake
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
+			for(var/obj/structure/barricade/obstacle in get_step(src, dir))//Steel will not stop us, then why would planks?
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
+			for(var/obj/mecha/obstacle in get_step(src, dir))//Hmm, notable but not everlasting.
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+
+			for(var/obj/machinery/door/obstacle in get_step(src,dir)) //Doors, will stop us when closed, but we will brake it
+				if(obstacle.density == 1)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 /mob/living/simple_animal/hostile/verb/break_around()
 	set name = "Attack Surroundings "

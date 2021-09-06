@@ -44,8 +44,8 @@
 	var/list/creator = list() // Who's the bot's creator.
 	var/repair_rate = 0 // How fast does the bot repair itself.
 	var/ai_flag = 0 // Flags for special functions
-	var/obj/item/device/radio/R // Var for the built-in radio
-	var/obj/item/modular_computer/console/preset/nanobot/C // The in-built console.
+	var/obj/item/device/radio/Radio // Var for the built-in radio
+	var/obj/item/modular_computer/console/preset/nanobot/Console // The in-built console.
 
 	// For the remote control thing
 	var/mob/living/carbon/human/controller
@@ -64,8 +64,8 @@
 
 /mob/living/carbon/superior_animal/nanobot/New()
 	. = ..()
-	R = new/obj/item/device/radio(src)
-	C = new /obj/item/modular_computer/console/preset/nanobot(src)
+	Radio = new/obj/item/device/radio(src)
+	Console = new /obj/item/modular_computer/console/preset/nanobot(src)
 
 /mob/living/carbon/superior_animal/nanobot/examine(mob/user)
 	..()
