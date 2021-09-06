@@ -62498,6 +62498,9 @@
 /obj/machinery/computer/aiupload{
 	dir = 4
 	},
+/obj/machinery/camera/xray/research{
+	dir = 5
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai_upload)
 "xFB" = (
