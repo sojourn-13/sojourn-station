@@ -122,6 +122,8 @@
 
 	if(mind)
 		statpanel("Perks",src.stats.perk_stats)
+	
+	src.stats.initialized = 1
 
 /mob/living/carbon/human/ex_act(severity)
 	if(!blinded)

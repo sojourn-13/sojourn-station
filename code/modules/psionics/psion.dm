@@ -13,9 +13,6 @@
 			var/obj/item/organ/internal/psionic_tumor/B = new /obj/item/organ/internal/psionic_tumor
 			B.replaced(head)
 
-			B.max_psi_points = round(clamp((user.stats.getStat(STAT_COG) / 10), 1, 30))
-			B.psi_points = B.max_psi_points
-
 // Main process, this runs through all the needed checks for a psion. Removal of implants like cruciforms and synthetics are called here.
 // This also handles psi points limits and regeneration, the effect is dynamic so increases to cognition through things like stims and chems will update accordingly.
 /obj/item/organ/internal/psionic_tumor/Process()
@@ -32,14 +29,16 @@
 
 	max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) / 10), 1, 30)) + psi_max_bonus
 
+	if((psi_points > max_psi_points) || (owner.stats.initialized == 1 && psi_points < 0))
+		psi_points = max_psi_points
+	
 	if(world.time > last_psi_point_gain)
 		if(psi_points >= max_psi_points)
 			return
 		psi_points += 1
 		last_psi_point_gain = world.time + 10 MINUTES
 
-	if(psi_points > max_psi_points)
-		psi_points = max_psi_points
+	
 
 // This proc removes all implants. Synthetic limbs and implants are exploded out of the body while organ_modules and synthetic organs are teleported away.
 /obj/item/organ/internal/psionic_tumor/proc/remove_synthetics()
