@@ -240,7 +240,7 @@
 
 /obj/item/storage/pouch/grow_a_gun
 	name = "H&S Grow A Gun"
-	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use slot-o-matic."
+	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use slot-o-matic. There are several warnings to not eat the dehydrated guns inside, and to keep away from kids unless hydrated."
 	icon_state = "grow"
 	item_state = "grow"
 	matter = list(MATERIAL_PLASTIC = 1)
