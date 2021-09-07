@@ -202,6 +202,7 @@
 	hard_drive = new /obj/item/computer_hardware/hard_drive/cluster(src)
 	cell = new /obj/item/cell/large/moebius/omega(src)
 	gps_sensor = new /obj/item/computer_hardware/gps_sensor(src)
+	led = new /obj/item/computer_hardware/led/adv(src)
 
 //Dock control
 /*
