@@ -708,6 +708,8 @@
 	Standalone Shockpaddles
 */
 
+
+
 /obj/item/shockpaddles/standalone
 	desc = "A pair of shockpaddles powered by a small battery."
 
@@ -756,6 +758,32 @@
 
 /obj/item/shockpaddles/standalone/emp_act(severity)
 	. = ..()
+
+/obj/item/shockpaddles/robot
+	name = "defibrillator paddles"
+	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing."
+	chargecost = 50
+	combat = 1
+	icon_state = "defibpaddles0"
+	item_state = "defibpaddles0"
+	cooldowntime = (30)
+
+/obj/item/shockpaddles/robot/check_charge(var/charge_amt)
+	if(isrobot(src.loc))
+		var/mob/living/silicon/robot/R = src.loc
+		return (R.cell && R.cell.check_charge(charge_amt))
+
+/obj/item/shockpaddles/robot/checked_use(var/charge_amt)
+	if(isrobot(src.loc))
+		var/mob/living/silicon/robot/R = src.loc
+		return (R.cell && R.cell.checked_use(charge_amt))
+
+/obj/item/shockpaddles/robot/combat
+	name = "combat defibrillator paddles"
+	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing.  This version \
+	appears to be optimized for combat situations, foregoing the safety inhabitors in favor of a faster charging time."
+	safety = 0
+	chargetime = (10)
 
 /* From the Bay port, this doesn't seem to have a sprite.
 /obj/item/shockpaddles/standalone/traitor
