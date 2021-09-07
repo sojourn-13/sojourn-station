@@ -17,6 +17,14 @@
 		rad = 0
 	)
 
+/obj/item/clothing/suit/storage/toggle/labcoat/poofy
+	name = "formal labcoat"
+	desc = "A longer labcoat that protects against minor chemical spills."
+	icon_state = "labcoat_formal_open"
+	item_state = "labcoat_formal" //Is this even used for anything?
+	icon_open = "labcoat_formal_open"
+	icon_closed = "labcoat_formal"
+
 /obj/item/clothing/suit/storage/toggle/labcoat/cmo
 	name = "biolab overseer's labcoat"
 	desc = "Bluer than the standard model."
