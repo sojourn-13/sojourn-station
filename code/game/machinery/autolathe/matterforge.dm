@@ -334,7 +334,6 @@
 				if(istype(O, /obj/item/stack/material/compressed_matter))
 					to_chat(user, SPAN_NOTICE("You deposit [total_material] compressed matter into \the [src]."))
 					stored_material[MATERIAL_COMPRESSED_MATTER] += total_material
-					update_desc(stored_material[MATERIAL_COMPRESSED_MATTER])
 					qdel(eating)
 					return
 				total_material_gained[material] += total_material
@@ -348,8 +347,6 @@
 			added_mats = storage_capacity - stored_material[MATERIAL_COMPRESSED_MATTER]
 		var/leftover_mats = (added_mats + stored_material[MATERIAL_COMPRESSED_MATTER]) - storage_capacity
 		stored_material[MATERIAL_COMPRESSED_MATTER] += added_mats
-		update_desc(stored_material[MATERIAL_COMPRESSED_MATTER])
-		gained_mats += added_mats
 		if(leftover_mats == 0)
 			used_sheets = (added_mats / artifact.get_power()) / lst[mat]
 		else
@@ -512,9 +509,6 @@
 #undef ERR_NOMATERIAL
 #undef SANITIZE_LATHE_COST
 #undef ERR_PAUSED
-
-/obj/machinery/matter_nanoforge/proc/update_desc(var/stored_mats)
-	desc = "It consumes items and produces compressed matter. It has [stored_mats] Compressed Matter stored."
 
 /obj/machinery/matter_nanoforge/ex_act(severity)
 	return 0
