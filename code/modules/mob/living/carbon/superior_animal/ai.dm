@@ -108,12 +108,12 @@
 
 			for(var/obj/structure/low_wall/obstacle in get_step(src, dir))//This is only a miner issue... We will brake it
 				if(obstacle.density == TRUE) //Almost never will do anything, but in cases were theirs a non-dence lower wall
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 5,attacktext) //Lots of health
 					return
 
 			for(var/obj/structure/girder/obstacle in get_step(src, dir))//We know your tricks, they will now fail.
 				if(obstacle.density == TRUE)
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 2,attacktext) //A bit of health
 					return
 
 			for(var/obj/structure/railing/obstacle in get_step(src, dir))//Bulkwork defence... Easy to brake
@@ -132,6 +132,11 @@
 					return
 
 			for(var/obj/machinery/deployable/obstacle in get_step(src, dir))//Steel will not stop us, then why would planks?
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
+			for(var/obj/structure/grille/obstacle in get_step(src, dir))//An insult to defences... We will make you pay
 				if(obstacle.density == TRUE)
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
