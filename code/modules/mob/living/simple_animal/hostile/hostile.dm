@@ -362,6 +362,11 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
 
+			for(var/obj/structure/grille/obstacle in get_step(src, dir))//An insult to defences... We will make you pay
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
 			for(var/obj/machinery/door/obstacle in get_step(src,dir)) //Doors, will stop us when closed, but we will brake it
 				if(obstacle.density == TRUE)
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
