@@ -202,10 +202,20 @@
 		icon_state = icon_living
 
 
-
 /mob/living/carbon/superior_animal/regenerate_icons()
 	. = ..()
 	update_icons()
 
 /mob/living/carbon/superior_animal/updateicon()
 	. = ..()
+
+/mob/living/carbon/superior_animal/examine(mob/user)
+	..()
+	if (health < maxHealth * 0.25)
+		to_chat(user, SPAN_DANGER("It's grievously wounded!"))
+	else if (health < maxHealth * 0.50)
+		to_chat(user, SPAN_DANGER("It's badly wounded!"))
+	else if (health < maxHealth * 0.75)
+		to_chat(user, SPAN_WARNING("It's wounded."))
+	else if (health < maxHealth)
+		to_chat(user, SPAN_WARNING("It's a bit wounded."))
