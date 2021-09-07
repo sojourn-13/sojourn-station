@@ -3,6 +3,7 @@
 	var/list/stat_list = list()
 	var/list/datum/perk/perks = list()
 	var/list/obj/effect/perk_stats = list() // Holds effects representing perks, to display them in stat()
+	var/initialized = FALSE //Whether or not the stats have had time to be properly filled. Not always used. For players, it is set in human/Stat(), used for Stat-dependant organs
 
 /datum/stat_holder/New(mob/living/L)
 	holder = L

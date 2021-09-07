@@ -268,7 +268,7 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/psychic_call()
 	set category = "Psionic powers"
-	set name = "Psychic Call (3)"
+	set name = "Psychic Call (2)"
 	set desc = "Expend three points of your psi essence to call creatures from nearby burrows. They are not inherently friendly to you. Use at your own risks."
 	psi_point_cost = 2
 
