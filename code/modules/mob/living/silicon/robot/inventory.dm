@@ -275,6 +275,9 @@
 	else
 		to_chat(src, SPAN_NOTICE("You need to disable a module first!"))
 
+/mob/living/silicon/robot/proc/get_all_slots()  //Proc for robots to search their slots for stuff. Useful particularly for mining robot ore bags.
+	return list(module_state_1, module_state_2, module_state_3)
+
 
 //Attempt to grip the item in a gripper.
 //Parent call will drop it on the floor if gripper can't hold it

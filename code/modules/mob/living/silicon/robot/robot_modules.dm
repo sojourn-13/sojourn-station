@@ -359,6 +359,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
 	src.modules += new /obj/item/autopsy_scanner(src) // an autopsy scanner
 	src.modules += new /obj/item/reagent_containers/spray/sterilizine(src)
+	src.modules += new /obj/item/shockpaddles/robot(src)
 	src.modules += new /obj/item/roller_holder(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/scanner/price(src)
