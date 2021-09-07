@@ -28,10 +28,10 @@
 	diary << "\[[time_stamp()]] [game_id] [category]: [text][log_end]"
 
 /proc/log_admin(text)
-/*	admin_log.Add(text)
+	admin_log.Add(text)
 	lobby_message(message = text, color = "#FFA500")
 	if (config.log_admin)
-		game_log("ADMIN", text)*/
+		game_log("ADMIN", text)
 
 /proc/log_debug(text)
 	if (config.log_debug)

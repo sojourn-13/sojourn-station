@@ -10,13 +10,13 @@ var/global/floorIsLava = 0
 
 ////////////////////////////////
 /proc/message_admins(var/msg, tag = "admin_log", tagtext = "ADMIN LOG")
-	/*lobby_message(message = msg, color = "#FFA500")
+	lobby_message(message = msg, color = "#FFA500")
 	var/m = "<span class=\"log_message\"><span class=\"prefix\">[tagtext]:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(m)
 	for(var/client/C in admins)
 		m = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[msg]</span></span>"
 		if(check_rights(R_ADMIN, 0, C.mob))
-			to_chat(C, m)*/
+			to_chat(C, m)
 
 /proc/msg_admin_attack(var/text, tag = "attack", tagtext = "ATTACK:") //Toggleable Attack Messages
 	log_attack(text)
