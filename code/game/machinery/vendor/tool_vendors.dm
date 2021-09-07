@@ -213,6 +213,7 @@
 	products = list(/obj/item/clothing/under/rank/scientist = 6,
 					/obj/item/clothing/suit/bio_suit = 6,
 					/obj/item/clothing/head/bio_hood = 6,
+					/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 6,
 					/obj/item/device/transfer_valve = 6,
 					/obj/item/device/assembly/timer = 6,
 					/obj/item/device/assembly/signaler = 6,
