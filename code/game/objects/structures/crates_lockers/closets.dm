@@ -88,7 +88,6 @@
 
 /obj/structure/closet/Destroy()
 	dump_contents()
-	qdel(src)
 	return ..()
 
 /obj/structure/closet/examine(mob/user)
