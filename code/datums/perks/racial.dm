@@ -549,16 +549,17 @@
 	major benefit of having one is they may turn any food you feed into them into useful healing chemicals contained in bottles of resin."
 	active = FALSE
 	passivePerk = FALSE
+	var/used = FALSE // Not deleting after use since the description is useful.
 	var/follower_type = /mob/living/carbon/superior_animal/fungi/shroom
 
 /datum/perk/mushroom_follower/activate()
 	var/mob/living/carbon/human/user = usr
 	if(!istype(user))
 		return ..()
-	if(world.time < cooldown_time)
+	if(used)
 		to_chat(user, SPAN_NOTICE("You've already created your companion, you didn't lose them did you?"))
 		return FALSE
-	cooldown_time = world.time + 12 HOURS
+	used = TRUE
 	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
 	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
 	mushroom.friends += user
@@ -571,6 +572,7 @@
 	incredibly sturdy and physically strong, able to regenerate even the worst wounds. Unfortunately they suffer from poor eyesight, requiring threats to get close before they notice them."
 	active = FALSE
 	passivePerk = FALSE
+	var/used = FALSE // Not deleting after use since the description is useful.
 	var/follower_type = /mob/living/carbon/superior_animal/fungi/slime
 
 /datum/perk/slime_follower/activate()
@@ -578,10 +580,10 @@
 
 	if(!istype(user))
 		return ..()
-	if(world.time < cooldown_time)
+	if(used)
 		to_chat(user, SPAN_NOTICE("You've already created your companion, you didn't lose them did you?"))
 		return FALSE
-	cooldown_time = world.time + 12 HOURS
+	used = TRUE
 	to_chat(usr, SPAN_NOTICE("You grow a follower!"))
 	var/mob/living/carbon/superior_animal/fungi/mushroom = new follower_type(user.loc)
 	mushroom.friends += user
