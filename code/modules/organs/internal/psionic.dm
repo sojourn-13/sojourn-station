@@ -21,8 +21,8 @@
 	max_blood_storage = 80
 	oxygen_req = 8
 	nutriment_req = 6
-	var/psi_points = -1 //psi_points and max_psi_points initialize at a negative value, so it can be adjusted in the psionic_tumor/Process() step at round start.
-	var/max_psi_points = -2
+	var/psi_points = 31 //psi_points starts at a high value so it can be adjusted in the psionic_tumor/Process() step at round start.
+	var/max_psi_points = 0
 	var/disabled = TRUE //Whether or not the implant functions.
 	var/last_psi_point_gain
 	var/psi_point_cost
