@@ -640,6 +640,9 @@ There are 9 wires.
 		return
 	var/obj/item/tool/T = usr.get_active_hand()
 	if(istype(T) && T.w_class >= ITEM_SIZE_NORMAL) // We do the checks before proc call, because see "proc overhead".
+		if(istype(T,/obj/item/tool/psionic_omnitool) || istype(T,/obj/item/tool/knife/psionic_blade))
+			to_chat(usr, SPAN_NOTICE("You can't wedge your psionic item in."))
+			return
 		if(!density)
 			usr.drop_item()
 			force_wedge_item(T)
