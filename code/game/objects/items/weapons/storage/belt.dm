@@ -108,7 +108,7 @@
 	new /obj/item/tool/crowbar(src)
 	new /obj/item/tool/wirecutters(src)
 	new /obj/item/tool/multitool(src)
-	new /obj/item/device/robotanalyzer(src)
+	new /obj/item/stack/cable_coil(src)
 
 /obj/item/storage/belt/hunter
 	name = "hunting belt"
