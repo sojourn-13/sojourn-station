@@ -30,7 +30,7 @@
 	options["Shotgun Beanbag"] = "bean"
 	options["Shotgun Slug"] = "slug"
 	options[".60 Anti-Material"] = "antim"
-	options["40mm rolled shot"] = "ball"
+	options["30mm rolled shot"] = "ball"
 
 	var/choice = input(user,"What ammo do you want to make?") as null|anything in options
 
