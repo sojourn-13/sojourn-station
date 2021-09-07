@@ -545,6 +545,7 @@
 		/obj/item/clothing/under/neon/blue = 5,
 		/obj/item/clothing/under/neon/red = 5,
 		//Over Clothing
+		/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 5,
 		/obj/item/clothing/suit/storage/texan = 2,
 		/obj/item/clothing/suit/storage/triad = 2,
 		/obj/item/clothing/suit/storage/akira = 2,
@@ -710,6 +711,7 @@
 		/obj/item/clothing/under/neon/blue = 55,
 		/obj/item/clothing/under/neon/red = 55,
 		//Over Clothing
+		/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 150, //labcoats are exspensive
 		/obj/item/clothing/suit/storage/texan = 100,
 		/obj/item/clothing/suit/storage/triad = 120,
 		/obj/item/clothing/suit/storage/akira = 75,
@@ -741,6 +743,7 @@
 				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 5,
 				/obj/item/clothing/mask/costume/kinky/sexy_clown = 5,
 				/obj/item/clothing/mask/costume/kinky/sexy_mime = 5,
+				/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 3,
 				/obj/item/clothing/under/rank/trooper/skirt = 5,
 				/obj/item/clothing/under/rank/engineer/skirt = 5,
 				/obj/item/clothing/under/rank/engineer/skirt/alt = 5,
@@ -768,6 +771,7 @@
 				/obj/item/clothing/suit/costume/kinky/sexy_scientist = 100,
 				/obj/item/clothing/mask/costume/kinky/sexy_clown = 100,
 				/obj/item/clothing/mask/costume/kinky/sexy_mime = 100,
+				/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 200,
 				/obj/item/clothing/under/rank/trooper/skirt = 100,
 				/obj/item/clothing/under/rank/engineer/skirt = 125, //has rad shielding
 				/obj/item/clothing/under/rank/engineer/skirt/alt = 125,

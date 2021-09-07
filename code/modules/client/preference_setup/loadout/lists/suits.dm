@@ -93,6 +93,10 @@
 	display_name = "labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat
 
+/datum/gear/suit/formal_labcoat
+	display_name = "formal labcoat"
+	path = /obj/item/clothing/suit/storage/toggle/labcoat/poofy
+
 /datum/gear/suit/peacoat
 	display_name = "peacoat"
 	path = /obj/item/clothing/suit/storage/toggle/peacoat
