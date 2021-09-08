@@ -864,6 +864,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
 "cC" = (
@@ -1178,6 +1181,9 @@
 "du" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/atmos)
@@ -2964,6 +2970,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "hT" = (
@@ -3553,6 +3562,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "ji" = (
@@ -3617,6 +3629,9 @@
 /obj/structure/closet/crate,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -3751,6 +3766,7 @@
 /obj/machinery/holoposter{
 	pixel_y = 30
 	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "jJ" = (
@@ -4543,6 +4559,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/floor_decal/industrial/caution/red,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "ly" = (
@@ -4563,6 +4580,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/industrial/caution/red,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "lB" = (
@@ -4691,6 +4709,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27;
 	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
@@ -5084,6 +5105,9 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
@@ -5724,6 +5748,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "nU" = (
@@ -6232,6 +6257,9 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/outpostbreakroom)
 "pa" = (
@@ -6253,6 +6281,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
@@ -6444,6 +6475,9 @@
 	pixel_x = -27;
 	pixel_y = 0
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "py" = (
@@ -6487,6 +6521,7 @@
 	pixel_x = 0;
 	pixel_y = -30
 	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisoltwo)
 "pD" = (
@@ -6995,6 +7030,7 @@
 	pixel_x = 0;
 	pixel_y = -30
 	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisolone)
 "qK" = (
@@ -7329,6 +7365,9 @@
 "rC" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
@@ -8055,6 +8094,7 @@
 	pixel_x = 0;
 	pixel_y = -30
 	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/anomal)
 "tp" = (
@@ -8384,6 +8424,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "ut" = (
@@ -8613,6 +8656,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "uY" = (
@@ -8779,6 +8823,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "yH" = (
@@ -8891,8 +8936,21 @@
 	pixel_x = -27;
 	pixel_y = 0
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
+"ET" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/effect/floor_decal/industrial/stand_clear/red,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
 "Fm" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
@@ -8946,6 +9004,7 @@
 	pixel_x = 0;
 	pixel_y = -30
 	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "HL" = (
@@ -9104,6 +9163,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1;
+	icon_state = "box_corners_red"
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "Oz" = (
@@ -9170,6 +9237,9 @@
 	pixel_x = -27;
 	pixel_y = 0
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "Sa" = (
@@ -9181,6 +9251,7 @@
 	pixel_x = 0;
 	pixel_y = -30
 	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "Su" = (
@@ -9217,6 +9288,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27;
 	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
@@ -11014,7 +11088,7 @@ MR
 JV
 Eh
 kF
-kV
+ET
 lx
 ma
 mA
@@ -11822,7 +11896,7 @@ yi
 Su
 Zu
 kI
-kV
+ET
 lA
 md
 lZ

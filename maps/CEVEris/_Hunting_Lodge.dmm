@@ -10,7 +10,7 @@
 "aj" = (/obj/structure/flora/ausbushes/palebush,/turf/simulated/floor/rock,/area/nadezhda/outside/forest/hunting_lodge)
 "ak" = (/obj/structure/flora/ausbushes/palebush,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
 "al" = (/obj/structure/flora/small/rock2,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
-"am" = (/obj/structure/railing,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
+"am" = (/obj/structure/railing,/obj/structure/railing/grey{dir = 1},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "an" = (/obj/structure/flora/ausbushes/reedbush,/obj/effect/overlay/water,/obj/effect/overlay/water/top,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
 "ao" = (/obj/structure/table/reinforced,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/forest/hunting_lodge)
 "ap" = (/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/beach/sand,/area/nadezhda/outside/forest/hunting_lodge)
@@ -155,7 +155,7 @@
 "cY" = (/obj/structure/multiz/stairs/enter/bottom{dir = 8},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "cZ" = (/obj/structure/multiz/stairs/active/bottom{dir = 8},/turf/simulated/floor/tiled/techmaint,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "da" = (/obj/structure/table/woodentable,/obj/item/gun/projectile/shotgun/pump/gladstone/queen,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"db" = (/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"db" = (/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dc" = (/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "dd" = (/obj/effect/floor_decal/spline/plain,/obj/structure/railing/grey,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "de" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
@@ -223,9 +223,9 @@
 "eo" = (/obj/machinery/portable_atmospherics/hydroponics/soil,/turf/simulated/floor/asteroid/dirt/flood/plough,/area/nadezhda/outside/forest/hunting_lodge)
 "ep" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
 "eq" = (/obj/structure/flora/tree/jungle/variant2,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
-"er" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 8; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/obj/item/toy/desk/dippingbird,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"er" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 8; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/obj/item/toy/desk/dippingbird,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/hunting_lodge)
 "es" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
-"et" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"et" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 1; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/hunting_lodge)
 "eu" = (/obj/map_data/hunting_lodge,/turf/unsimulated/wall/jungle/variant,/area/nadezhda/outside/forest/hunting_lodge)
 "ev" = (/turf/unsimulated/wall/jungle,/area/nadezhda/outside/forest/hunting_lodge)
 "ew" = (/turf/simulated/open,/area/nadezhda/outside/forest/hunting_lodge)
@@ -343,8 +343,8 @@
 "gF" = (/obj/machinery/honey_extractor,/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/floor/tiled/dark/brown_platform,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "gG" = (/obj/structure/table/rack/shelf,/obj/item/storage/box/bottles,/obj/item/storage/box/bottles,/obj/item/storage/box/bottles,/obj/item/storage/box/bottles,/obj/item/storage/box/bottles,/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/floor/tiled/dark/brown_platform,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "gH" = (/obj/machinery/shower,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/machinery/door/window/southleft{name = "shower door"},/obj/structure/curtain/open,/obj/effect/floor_decal/corner_techfloor_grid,/obj/structure/window/reinforced{dir = 4; pixel_x = 0},/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"gI" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 8; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
-"gJ" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"gI" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 8; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/hunting_lodge)
+"gJ" = (/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/railing{desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops."; dir = 4; matter = list("wood" = 4); name = "wooden fence"},/obj/structure/sink/puddle,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/hunting_lodge)
 "gK" = (/obj/random/mob/tahca/low_chance,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
 "gL" = (/obj/random/mob/tengolo/low_chance,/turf/simulated/floor/asteroid/grass/jungle,/area/nadezhda/outside/forest/hunting_lodge)
 "gM" = (/obj/structure/table/rack/shelf,/obj/item/storage/box/syringes,/obj/item/storage/box/syringes,/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/floor/tiled/dark/brown_platform,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
@@ -375,7 +375,7 @@
 "hl" = (/obj/effect/floor_decal/industrial/warningred,/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hm" = (/obj/effect/floor_decal/industrial/warningred,/obj/effect/floor_decal/industrial/stand_clear/red,/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
 "hn" = (/obj/effect/floor_decal/industrial/warningred,/obj/effect/floor_decal/industrial/warningred{dir = 4},/turf/simulated/floor/tiled/dark/cargo,/area/nadezhda/outside/forest/hunting_lodge)
-"ho" = (/obj/structure/railing,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/outside/forest/hunting_lodge)
+"ho" = (/obj/structure/railing/grey{dir = 1},/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "hp" = (/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "hq" = (/obj/machinery/light{dir = 8},/obj/machinery/biogenerator,/turf/simulated/floor/tiled/dark/brown_platform,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "hr" = (/obj/machinery/beehive,/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/dungeon/outside/abandoned_solars/powered)
@@ -397,11 +397,11 @@
 "hH" = (/obj/structure/flora/ausbushes/stalkybush,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "hI" = (/obj/structure/flora/ausbushes/lavendergrass,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "hJ" = (/obj/machinery/light{dir = 4},/obj/random/furniture/pottedplant,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"hK" = (/obj/structure/flora/ausbushes/fullgrass,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"hL" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"hM" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"hN" = (/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"hO" = (/obj/structure/flora/ausbushes/leafybush,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hK" = (/obj/structure/railing,/obj/structure/railing/grey{dir = 1},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
+"hL" = (/obj/structure/railing/grey{dir = 1},/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
+"hM" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
+"hN" = (/obj/structure/railing{dir = 1; icon_state = "railing0"},/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"hO" = (/obj/structure/flora/ausbushes/leafybush,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "hP" = (/obj/effect/floor_decal/spline/plain,/obj/structure/railing/grey,/obj/machinery/light{dir = 4},/obj/random/furniture/pottedplant,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "hQ" = (/obj/structure/table/woodentable,/turf/simulated/floor/wood/wild2,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "hR" = (/obj/structure/table/rack/shelf,/turf/simulated/floor/wood/wild2,/area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -560,18 +560,13 @@
 "kO" = (/obj/structure/flora/grass/both,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "kP" = (/obj/structure/flora/grass/brown,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "kQ" = (/obj/structure/flora/small/bushc1,/obj/structure/railing/grey{dir = 4},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
-"kR" = (/obj/structure/flora/rock,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
+"kR" = (/obj/structure/flora/rock,/turf/simulated/floor/asteroid/dirt/mud,/area/nadezhda/outside/forest/hunting_lodge)
 "kS" = (/obj/structure/flora/ausbushes/stalkybush,/turf/simulated/floor/beach/water/shallow,/area/nadezhda/outside/forest/hunting_lodge)
 "kT" = (/obj/structure/flora/grass/green,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "kU" = (/obj/structure/flora/rock/variant2,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "kV" = (/obj/structure/flora/small/rock5,/obj/structure/railing/grey{dir = 4},/turf/simulated/floor/asteroid/dirt/dust,/area/nadezhda/outside/forest/hunting_lodge)
-"kW" = (/obj/structure/railing/grey,/obj/structure/flora/ausbushes/stalkybush,/turf/simulated/floor/beach/water/shallow,/area/nadezhda/outside/forest/hunting_lodge)
-"kX" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/railing/grey,/turf/simulated/floor/beach/water/shallow,/area/nadezhda/outside/forest/hunting_lodge)
-"kY" = (/obj/structure/railing/grey,/obj/structure/flora/ausbushes/reedbush,/turf/simulated/floor/beach/water/shallow,/area/nadezhda/outside/forest/hunting_lodge)
-"kZ" = (/obj/structure/flora/ausbushes/ywflowers,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
-"la" = (/obj/structure/flora/ausbushes/fullgrass,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
-"lb" = (/obj/structure/flora/grass/brown,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
-"lc" = (/obj/structure/flora/grass/both,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
+"kW" = (/obj/structure/railing{dir = 1; icon_state = "railing0"},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/forest/hunting_lodge)
+"la" = (/obj/structure/flora/ausbushes/fullgrass,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "ld" = (/obj/structure/table/woodentable,/obj/machinery/recharger,/obj/item/cell/small,/obj/item/hand_labeler,/turf/simulated/floor/tiled/dark/brown_platform,/area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "le" = (/obj/structure/railing{anchored = 1; dir = 8; icon_state = "railing0"},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/forest/hunting_lodge)
 "lf" = (/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/forest/hunting_lodge)
@@ -580,7 +575,7 @@
 "li" = (/obj/structure/table/woodentable,/obj/item/storage/fancy/cigar,/obj/item/flame/lighter/zippo/bullet,/turf/simulated/floor/wood/wild3,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "lj" = (/obj/machinery/recycler,/obj/machinery/conveyor/east{id = "lodge_grinder"},/turf/simulated/floor/plating/under,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "lk" = (/obj/structure/railing/grey,/obj/structure/disposalpipe/segment{dir = 4},/obj/machinery/light/floor,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
-"ll" = (/obj/machinery/light/floor,/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ll" = (/obj/machinery/light/floor,/obj/structure/railing/grey{dir = 1},/turf/simulated/floor/wood/wild1,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "oA" = (/obj/machinery/recharge_station,/turf/simulated/floor/wood/wild2,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "xv" = (/obj/structure/table/reinforced,/obj/item/stack/rods/random,/obj/item/storage/toolbox/electrical,/turf/simulated/floor/wood,/area/nadezhda/outside/forest/hunting_lodge_dark)
 "zn" = (/obj/effect/overlay/water/top,/obj/effect/overlay/water,/turf/simulated/floor/beach/water/ocean,/area/nadezhda/outside/forest/hunting_lodge)
@@ -644,24 +639,24 @@ aBaBatatatatatatatatatatatawatatababatataDaDaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDaDaDaD
 aBaBatatatatatatatatatatatatatatatatatawaDaDaCaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaCaDbGbkaPbQcQcacacacacRbPbPiyeRfaftfKgOhtbPbQbQbQbQbQcecececececAaPaDaDksaMaMktebelelebaDaDaDkuaMaEaDaDaDaDaDatatatatataBaBaaaaaaaaaa
 aBaBatatatatatayatatatatatayatatatatatataDaDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaEaDaDaDaDbGbkaPbQcKcaiziAiBiCikikiDfahChDhEhFhtbPdHcciEccbQcececectbYdHaPaDaCkskvaMaMebelelebkwkxaDkuaMaDaDaDaDaDaDatatatauataBaBaaaaaaaaaa
 aBaBatatatawatatatatatatatatatataDaDaDaDaEaDaDaDaDaDaDaDaDaDaDaDaCbfbfbfbfbfbfbfbfbnbkaPbQbQcabQbQbQbQbPbPiyfthGhHhIcrhtbPbPbPbPbPbPbPbPhJbQbQbQaPaDaDkykzkAaMebelelebkBkBaDkuaMaDaDaDaDaEaDatatatatataBaBaaaaaaaaaa
-aBaBatatatatatatatatatatawatatataEaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDbGcgejejejejejejejejcWdoiqiqdIiqiqiqiqikikiDhKhLhMhNhOhtbPbPbPbPbPbPbPbPcXcYcZbQaPaDaDkCeieieieieleldVdVdVdVkuaMaDaDaDaDaDaDatatatatataBaBaaaaaaaaaa
-aBaBatatatatatatatatatatatatatataDaDaDaPaPaPaPaPaPaPaPaPaPaPaPaDbGdJaDaDaDaDaDaDaDaDaMaPbQbQbPbPchbPbPbPbPfIllbPbPbPbPbPbPbPbPbPbPbPbPbPcXcYcZbQaPaDaDkCegelelelelelelelelelaMaMaHaDaCaDaDaDatatatatataBaBaaaaaaaaaa
+aBaBatatatatatatatatatatawatatataEaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDbGcgejejejejejejejejcWdoiqiqdIiqiqiqiqikikiDgOhIiacrhOhtbPbPbPbPbPbPbPbPcXcYcZbQaPaDaDkCeieieieieleldVdVdVdVkuaMaDaDaDaDaDaDatatatatataBaBaaaaaaaaaa
+aBaBatatatatatatatatatatatatatataDaDaDaPaPaPaPaPaPaPaPaPaPaPaPaDbGdJaDaDaDaDaDaDaDaDaMaPbQbQbPbPchbPbPbPbPfIllhohohohobPbPbPbPbPbPbPbPbPcXcYcZbQaPaDaDkCegelelelelelelelelelaMaMaHaDaCaDaDaDatatatatataBaBaaaaaaaaaa
 aBaOatawatatatatatatatatayatatataDaDaDaPdbdcdedcdcdcdcdedfdfaPaDbGdJaDaDaDaDaDaDaDaDaMaPbQbQdHbPbPddddddddiFddddbPbPbPbPddddddddddddddddhPbQbQbQaPaDaDkDkEelelkFkGkGkFelelelaMaMaDaDaDaDaDaDatatatatataBaBaaaaaaaaaa
 aBaBatatatatatatawatatatatatatataDaDaDaPdfdcdjdcdcdcdcdjdkdfaPaDbGdJaDaDaDaDaDaDaDaDaMaPaPaPaPaPaPdKdghRhRiGdhdGdididididGdhdhhScrcrcxcycrdXaPaPaPaDaDkDkEelelkFkHkIkFelelelaMaMaDaDaDaDaDaDatatatatataBaBaaaaaaaaaa
 aBaBavayatatatayatatawatatavatatataEaDaPdfdcdcdcdcdcdcdcdldkaPaDbGdJaDaDaDaDaDaDaCaDaMaMaMaPaPaPaPdKdgdgdgiHdgdgdgdgdgdgdgdgdghShUcrcGcHcrdXaPaDaDaDaCkJegelelelelelelelelelaMaMaDaDaDaDaDaDatatauatataBaBaaaaaaaaaa
 aBaBatatatatatatavatatatatatatatataDaDaPdqdqdqdqdrdrdqdqdqdqaPaDdmdJaMaCaDaDaEaDaDaDaDaDaMaPaPaPaPiIiJdYdYeahQhQdndgdgdnoAechQhWhXhYhZcriaekaPaDaDaDaDkKeieieieieleldVdVdVdVkuaMaDaDaDaCaDaDatatatatataBaBaaaaaaaaaa
 aBaBatatatavatatatatatatatatatatataDaDaPdvdkdldldldkdldkdldwaPaDdmdJaMaDaDaDaDaDaDaDaDaDaMaPaPaPaPaPaPaPaPaPaPaPaPdsdsaPaPaPaPaPaPaPaPaPaPaPaPaDaDaDaDkLkMkNkMebelelebkOkPkOkuaMaDaDaDaDatatatatatatataBaBaaaaaaaaaa
 aBaBatawatatatatatatatatatatatatataDaDaPdvdldldkdkdkdldkdldwaPaDdmePaMaDaDaDaDaDaDaDaDaDaMaDaDaDaDaDaDaDaDaDaDaDaMduduaMaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDkQkNkRkSebelelebkTkUkTkuaMaDaDaDaDatatatatatatataBaBaaaaaaaaaa
-aBaBatatatatatatatawatatatatauatataDaDaPdxdxdxdzdldldAdxdxdxaPaPaPfjaPaPaPaPaPaPaDaDaDaDaMaDaDaDaDaDaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDkVkWkXkYkZlalakZlblclbkuaMaDaDaDaDatauatatatatataBaBaaaaaaaaaa
-aBaBatayatatatatatatatatatayatataDaDaDaPdBdBdldCdldkdDdldfdbdEfsfWgtgEgFgGgMgSaPaDaCaDaDaMaMaMaMaMaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaEaDgYgYgYgYgYgYgYgYgYgYgYgYgYamaDaMaMaDaDaDaDatatatatatatataBaBaaaaaaaaaa
-aBaBatatatatatatatatatatatatatataDaDaDaPdLdMdkdNdkdkdDdcdcdOdEdPdQdRdSdSdSdSdSaPaDaDaDaDaDaDaDaDaDaMaDaDaDaCaDaDaMaMaMaMaDaDaDhpaDaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcaoaohdaMaMaDaCaDaDatatatatatatataBaBaaaaaaaaaa
+aBaBatatatatatatatawatatatatauatataDaDaPdxdxdxdzdldldAdxdxdxaPaPaPfjaPaPaPaPaPaPaDaDaDaDaMaDaDaDaDaDaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDaDaDaCaDaDkVkSkNkMeblalaebkPkOkPkuaMaDaDaDaDatauatatatatataBaBaaaaaaaaaa
+aBaBatayatatatatatatatatatayatataDaDaDaPdBdBdldCdldkdDdldfdbdEfsfWgtgEgFgGgMgSaPaDaCaDaDaMaMaMaMaMaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaEaDgYgYgYgYgYhKhKhKhKhKhKhKhKamhLaMaMaDaDaDaDatatatatatatataBaBaaaaaaaaaa
+aBaBatatatatatatatatatatatatatataDaDaDaPdLdMdkdNdkdkdDdcdlhMdEdPdQdRdSdSdSdSdSaPaDaDaDaDaDaDaDaDaDaMaDaDaDaCaDaDaMaMaMaMaDaDaDhpaDaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcaoaohdaMaMaDaCaDaDatatatatatatataBaBaaaaaaaaaa
 aBaBatatauatatatatatatavatatatataDaDaDaPdcdcdldCdldkdTdcdUdcdEhqdShTibdSdSdSehaPaDaDaDaDaDaDaDaDaDaMaDaDaDaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbibihdaMaMaDaDaDaDatatatatatatataBaBaaaaaaaaaa
 aBaOatatatatatatauatatatayatatatataDaDaPdcdcdfdCdldkdTdcdZdcdEjqdSjrjsdSdSdSldaPaDaDaDdVaDdWaDaDaDaMaDdVaDdWaDaDaMaMaMaMaDaDaDdVaDdWaDaDaDaDgZhfhbhbhbhbhghbhbhbhbhbhhbibihdaMaMaDaDaDaDatatatatatatataBaBaaaaaaaaaa
 aBaBatatatawatatatatatatatatauatataDaDaPedeedfdNdldkdDdcdcdOdEjudSjvjwdSdSdSjxaPaDaDaDaDaDaDaDebaDaMaDaDaDaDaDebaMaMaMaMaDaDaDaDaDaDaDebaDaDgZhahbhbhbhbhbhbhbhbhbhbhcbibihdaMaMaDaDaDaDatatatatatatauataBaaaaaaaaaa
 aBaBatatatatatatatatatatatavatatataDaDaPdfdfdfdCdldldDdcdcdcdEjydSdSdSdSdSeNiKaPaDaDaDaDaDaDaDaDaDaMaDaDaCaDaDaDaMaMaMaMaDaDaDaDaDaDaDaDaCaDhihahbhbhbhbhbhbhbhbhbhbhcbibileaMaMaDaDaDaDaDaDaDaDatatatataBaaaaaaaaaa
 aBaBatatatatatayatatatatatatatatataDaDaPdbdfdldCdkdldDdcdcdcdEjBdSdSdSjCjDjEjFaPaEaDebaDaDegaDaDaDaMebaDaDegaDaDaMaMaMaMaDaDebaDaCegaDaDaDaDhjhkhlhmhlhlhlhlhlhlhmhlhnbibilfaMaMaDaEaDaDaCaDaDaDaDaDabaBaBaaaaaaaaaa
-aBaBatatatataAatatatatatatatatataDaDaDaPaPaPaPaPdldkaPaPaPaPaPaPaPjAjAaPaPaPaPaPaDaDaDaDaCaDdVaDaDaMaDaDaDaDdVaMaMaMaMaMaMaDaDaDaDaDdVaDaDaDhjhohohohohohohohohohobibibibilfaMaMaDaDaDaDaDaDaDaDaDaDaaaaaBaaaaaaaaaa
-aBaBatauatatatatatatatatatatatatataDaDaDaDaDaDkGduduaMjGjGjGjHjHaDduduaDaDaDaDaDaDaDaDaDaDeiaDaDaDaMaDaDaDeiaMaMaMaMaMaMaMaMaDaDaDeiaDaDaDaDaMaMaMaMaMaMaMaMaMaMlflflflflflfaMaMaDaDaDaDaDaDaDaDaDaaaaaaaaaaaaaaaaaa
+aBaBatatatataAatatatatatatatatataDaDaDaPaPaPaPaPdldkaPaPaPaPaPaPaPjAjAaPaPaPaPaPaDaDaDaDaCaDdVaDaDaMaDaDaDaDdVaMaMaMaMaMaMaDaDaDaDaDdVaDaDaDhjbibibibibibibibibibibibibibilfaMaMaDaDaDaDaDaDaDaDaDaDaaaaaBaaaaaaaaaa
+aBaBatauatatatatatatatatatatatatataDaDaDaDaDaDkGduduaMjGjGjGjHjHaDduduaDaDaDaDaDaDaDaDaDaDeiaDaDaDaMaDaDaDeiaMaMaMaMaMaMaMaMaDaDaDeiaDaDaDaDaMhNhNhNhNhNhNhNhNhNkWlflflflflfaMaMaDaDaDaDaDaDaDaDaDaaaaaaaaaaaaaaaaaa
 aBaBatatazatawatatatatatatatatatataDaDaDaDaDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaaaaaaaaaa
 aBaOatatatatatatauatatawatatatatataDaDaDaDaDaDaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaaaaaaaaaa
 aBaBatatatavayatatatayatatatauatatatataDaDaDaDaDerelhrhrelelhrhrelelhrhreletaMaMaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDaaaagRgPaaaaaaaaaa
