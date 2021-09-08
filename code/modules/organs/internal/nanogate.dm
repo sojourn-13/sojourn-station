@@ -19,6 +19,7 @@
 	var/nanite_points = 10
 	var/nano_point_cost
 	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
+	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
 
 	owner_verbs = list(
 		// Creation and upgrade of the bot
@@ -39,7 +40,13 @@
 		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
 		/obj/item/organ/internal/nanogate/proc/nanite_blade,
-		/obj/item/organ/internal/nanogate/proc/nanite_chem
+		/obj/item/organ/internal/nanogate/proc/nanite_chem,
+
+		// Rig Upgrades
+		/obj/item/organ/internal/nanogate/proc/nanite_rig,
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_storage,
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_laser,
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 
 		)
 
@@ -70,5 +77,11 @@
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
 		/obj/item/organ/internal/nanogate/proc/nanite_blade,
 		/obj/item/organ/internal/nanogate/proc/nanite_tool,
-		/obj/item/organ/internal/nanogate/proc/nanite_chem
+		/obj/item/organ/internal/nanogate/proc/nanite_chem,
+
+		// Rig Upgrades
+		/obj/item/organ/internal/nanogate/proc/nanite_rig,
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_storage,
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_laser,
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 		)
