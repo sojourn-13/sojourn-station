@@ -13,7 +13,7 @@
 	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
 	price_tag = 1000
-	damage_multiplier = 0.9
+	damage_multiplier = 0.8
 	recoil_buildup = 4
 	gun_tags = list(GUN_PROJECTILE,GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	one_hand_penalty = 5 //smg level

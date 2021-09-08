@@ -7,7 +7,7 @@
 	item_state = "basstet"
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 10)
 	price_tag = 800
-	damage_multiplier = 0.9 //Cheaer AK basiclly
+	damage_multiplier = 0.8 //Cheaer AK basiclly
 	w_class = ITEM_SIZE_NORMAL
 	recoil_buildup = 8
 	caliber = CAL_LRIFLE

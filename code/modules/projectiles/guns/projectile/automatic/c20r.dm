@@ -18,7 +18,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
-	damage_multiplier = 1.2
+	damage_multiplier = 1
 	penetration_multiplier = 1.5
 	zoom_factor = 0.4
 	recoil_buildup = 3
@@ -48,6 +48,6 @@
 	name = "bullpip SMG"
 	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/si_cr20.dmi'
-	damage_multiplier = 1
+	damage_multiplier = 0.9
 	penetration_multiplier = 1
 	price_tag = 500

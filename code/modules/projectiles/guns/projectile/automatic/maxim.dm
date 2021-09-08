@@ -26,9 +26,9 @@
 
 	init_firemodes = list(
 		FULL_AUTO_600,
-		list(mode_name="short bursts", burst=5,    burst_delay=1, move_delay=6,  icon="burst"),
-		list(mode_name="long bursts",  burst=8, burst_delay=1, move_delay=8,  icon="burst"),
-		list(mode_name="suppressing fire",  burst=16, burst_delay=1, move_delay=11,  icon="burst")
+		list(mode_name="short bursts", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),
+		list(mode_name="long bursts",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
+		list(mode_name="suppressing fire",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
 
 

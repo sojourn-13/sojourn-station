@@ -10,8 +10,11 @@
 /obj/item/projectile/bullet/pistol_35
 	damage_types = list(BRUTE = 16)
 	armor_penetration = 5
-	step_delay = 0.75
+	step_delay = 0.65
 	can_ricochet = TRUE
+
+	affective_damage_range = 2
+	affective_ap_range = 2
 
 /obj/item/projectile/bullet/pistol_35/rubber
 	name = "rubber bullet"
@@ -35,6 +38,8 @@
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 10
 	step_delay = 0.5
+	affective_damage_range = 3
+	affective_ap_range = 3
 	can_ricochet = TRUE
 
 /obj/item/projectile/bullet/pistol_35/practice
@@ -56,12 +61,14 @@
 	can_ricochet = FALSE
 	embed = TRUE
 	sharp = TRUE
-	step_delay = 0.55
+	step_delay = 0.65
 
 /obj/item/projectile/bullet/pistol_35/scrap
 	damage_types = list(BRUTE = 12)
 	armor_penetration = 0
 
+	affective_damage_range = 1
+	affective_ap_range = 1
 
 //Revolvers and high-caliber pistols
 //*********************************//
@@ -71,7 +78,10 @@
 	damage_types = list(BRUTE = 24)
 	armor_penetration = 10
 	can_ricochet = TRUE
-	step_delay = 0.75
+	step_delay = 0.4
+
+	affective_damage_range = 3
+	affective_ap_range = 3
 
 /obj/item/projectile/bullet/magnum_40/practice
 	name = "practice bullet"
@@ -81,13 +91,16 @@
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
-	step_delay = 0.75
+	step_delay = 0.4
 
 /obj/item/projectile/bullet/magnum_40/hv
 	damage_types = list(BRUTE = 28)
 	armor_penetration = 25
 	penetrating = 1
-	step_delay = 0.5
+	step_delay = 0.25
+
+	affective_damage_range = 4
+	affective_ap_range = 4
 
 /obj/item/projectile/bullet/magnum_40/rubber
 	name = "rubber bullet"
@@ -97,7 +110,7 @@
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
-	step_delay = 0.9
+	step_delay = 0.5
 
 /obj/item/projectile/bullet/magnun_40/rubber/soporific
 	name = "soporific coated rubber bullet"
@@ -122,25 +135,28 @@
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 5
+	affective_damage_range = 1
+	affective_ap_range = 1
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
-	damage_types = list(BRUTE = 40)
+	damage_types = list(BRUTE = 30)
 	armor_penetration = 20
 	can_ricochet = TRUE
-	step_delay = 0.75
+	embed = TRUE
+	step_delay = 0.65
+	affective_damage_range = 4
+	affective_ap_range = 4
 
 /obj/item/projectile/bullet/kurtz_50/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 8)
-	agony = 40
+	agony = 35
 	check_armour = ARMOR_MELEE
 	armor_penetration = 0
-	embed = FALSE
-	sharp = FALSE
 	can_ricochet = TRUE
-	step_delay = 0.9
+	step_delay = 0.75
 
 /obj/item/projectile/bullet/kurtz_50/practice
 	name = "practice bullet"
@@ -148,30 +164,27 @@
 	agony = 3
 	armor_penetration = 0
 	embed = FALSE
-	sharp = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.75
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 45)
-	agony = 40
+	damage_types = list(BRUTE = 35)
+	agony = 35
 	armor_penetration = 5
 	penetrating = 0
 	can_ricochet = FALSE
-	embed = TRUE
-	sharp = TRUE
 	step_delay = 0.8
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
-	damage_types = list(BRUTE = 50)
+	damage_types = list(BRUTE = 40)
 	armor_penetration = 25
 	penetrating = 2
 	can_ricochet = FALSE
-	embed = TRUE
-	sharp = TRUE
-	step_delay = 0.5
+	step_delay = 0.45
+	affective_damage_range = 4
+	affective_ap_range = 4
 
 
 //Carbines and rifles
@@ -185,6 +198,8 @@
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.3
+	affective_damage_range = 7
+	affective_ap_range = 7
 
 /obj/item/projectile/bullet/light_rifle_257/practice
 	name = "practice bullet"
@@ -201,6 +216,8 @@
 	armor_penetration = 24
 	penetrating = 2
 	hitscan = TRUE
+	affective_damage_range = 8 //Can snipe
+	affective_ap_range = 8
 
 /obj/item/projectile/bullet/light_rifle_257/rubber
 	name = "rubber bullet"
@@ -228,6 +245,8 @@
 /obj/item/projectile/bullet/light_rifle_257/scrap
 	damage_types = list(BRUTE = 18)
 	armor_penetration = 7
+	affective_damage_range = 4
+	affective_ap_range = 4
 
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
@@ -240,6 +259,8 @@
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.5
+	affective_damage_range = 5
+	affective_ap_range = 5
 
 /obj/item/projectile/bullet/rifle_75/hv
 	damage_types = list(BRUTE = 25)
@@ -247,6 +268,8 @@
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
+	affective_damage_range = 7
+	affective_ap_range = 7
 
 /obj/item/projectile/bullet/rifle_75/practice
 	name = "practice bullet"
@@ -292,6 +315,8 @@
 /obj/item/projectile/bullet/rifle_75/scrap
 	damage_types = list(BRUTE = 22)
 	armor_penetration = 10
+	affective_damage_range = 2
+	affective_ap_range = 2
 
 /// .408 OMNI ///
 
@@ -301,6 +326,8 @@
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
+	affective_damage_range = 8
+	affective_ap_range = 8
 
 /obj/item/projectile/bullet/heavy_rifle_408/rubber
 	name = "rubber bullet"
@@ -330,6 +357,8 @@
 	armor_penetration = 40
 	penetrating = 3
 	hitscan = TRUE
+	affective_damage_range = 9 //Sniping cal
+	affective_ap_range = 9
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
@@ -345,6 +374,8 @@
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 15 //half  of normal
+	affective_damage_range = 5
+	affective_ap_range = 5
 
 ///Snowflake caseless///
 
@@ -355,6 +386,8 @@
 	can_ricochet = TRUE
 	sharp = TRUE
 	step_delay = 0.3
+	affective_damage_range = 3
+	affective_ap_range = 3
 
 //Sniper rifles
 /obj/item/projectile/bullet/antim
@@ -364,6 +397,8 @@
 	//weaken = 10
 	penetrating = 5
 	hitscan = TRUE //so the PTR isn't useless as a sniper weapon
+	affective_damage_range = 10
+	affective_ap_range = 10
 
 /obj/item/projectile/bullet/antim/lethal
 	damage_types = list(BRUTE = 60)
@@ -371,10 +406,14 @@
 	armor_penetration = 60
 	agony = 70
 	penetrating = 2
+	affective_damage_range = 9
+	affective_ap_range = 9
 
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 63)
 	armor_penetration = 50
+	affective_damage_range = 8
+	affective_ap_range = 8
 
 /obj/item/projectile/bullet/antim/ion
 	damage_types = list(BRUTE = 40)
@@ -391,6 +430,8 @@
 	agony = 60
 	penetrating = 2
 	hitscan = TRUE
+	affective_damage_range = 4
+	affective_ap_range = 9 //Good rifling!
 
 /obj/item/projectile/bullet/ball/on_hit(atom/target, def_zone = null)
 	. = ..()
@@ -409,6 +450,8 @@
 	armor_penetration = 10
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
+	affective_damage_range = 1
+	affective_ap_range = 1
 
 /obj/item/projectile/bullet/shotgun/beanbag
 	name = "beanbag"
@@ -528,6 +571,8 @@
 	spread_step = 10
 	knockback = 0 //We do not knockback do to issues with bullet douping
 	step_delay = 0.9
+	affective_damage_range = 1
+	affective_ap_range = 1
 
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()
 	. = ..()
@@ -575,6 +620,8 @@
 	armor_penetration = 10
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
+	affective_damage_range = 7
+	affective_ap_range = 7
 
 
 /obj/item/projectile/bullet/crossbow_bolt/lethal
@@ -592,3 +639,5 @@
 	armor_penetration = 40
 	penetrating = 3
 	hitscan = TRUE
+	affective_damage_range = 9
+	affective_ap_range = 9

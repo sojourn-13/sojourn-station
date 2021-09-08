@@ -102,6 +102,7 @@
 	icon_base = "pk"
 	icon_state = "pk_closed"
 	item_state = "pk_closed"
+	damage_multiplier = 0.8
 	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,
@@ -141,8 +142,8 @@
 	item_state = "tk"
 	mag_well = MAG_WELL_BOX|MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
-	damage_multiplier = 1.1 //This is clearly to high
-	penetration_multiplier = 1.1 //Ah yes wall hacks...
+	damage_multiplier = 1
+	penetration_multiplier = 1
 	recoil_buildup = 1.7 //Why is this so good?
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()

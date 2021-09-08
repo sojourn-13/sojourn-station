@@ -21,6 +21,10 @@
 	meat_type = null
 	leather_amount = 0
 	bones_amount = 0
+
+	armor = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 100, rad = 50) //Legitmently their armor
+
+
 //They are all waring space suits
 	breath_required_type = NONE
 	breath_poison_type = NONE
@@ -171,8 +175,6 @@
 	desc = "A void wolf reaver stormtrooper, vatgrown and given bionic enhancements, with far better equipment and decades of experience raiding ships and killing men under the command of a true reaver."
 	icon_state = "reaver_lasrak"
 	projectilesound = 'sound/weapons/Laser.ogg'
-	maxHealth = 250
-	health = 250
 	melee_damage_lower = 20 //We dont like melee
 	melee_damage_upper = 25
 	ranged = TRUE
@@ -186,6 +188,8 @@
 	rounds_left = 20
 	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 3
+
+	armor = list(melee = 60, bullet = 55, energy = 50, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/New()
 	..()
@@ -230,8 +234,6 @@
 	icon_state = "reaver_melee"
 	melee_damage_lower = 35
 	melee_damage_upper = 40
-	maxHealth = 350
-	health = 350
 	ranged = FALSE
 	rapid = FALSE
 	limited_ammo = FALSE

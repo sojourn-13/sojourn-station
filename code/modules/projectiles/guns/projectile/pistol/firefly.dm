@@ -16,7 +16,7 @@
 	price_tag = 750
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	damage_multiplier = 1
+	damage_multiplier = 0.9
 	recoil_buildup = 5
 	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)

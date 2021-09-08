@@ -426,7 +426,7 @@
 		return //dual wielding deal too much damage as it is, so no point blank for it
 
 	//default point blank multiplier
-	var/damage_mult = 1.3
+	var/damage_mult = 1.1
 
 	//determine multiplier due to the target being grabbed
 	if(ismob(target))
@@ -436,9 +436,9 @@
 			for(var/obj/item/grab/G in M.grabbed_by)
 				grabstate = max(grabstate, G.state)
 			if(grabstate >= GRAB_NECK)
-				damage_mult = 2.5
+				damage_mult = 1.75
 			else if(grabstate >= GRAB_AGGRESSIVE)
-				damage_mult = 1.5
+				damage_mult = 1.3
 		P.multiply_projectile_damage(damage_mult)
 
 

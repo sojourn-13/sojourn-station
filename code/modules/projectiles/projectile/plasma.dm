@@ -7,6 +7,11 @@
 	armor_penetration = 15
 	check_armour = ARMOR_ENERGY
 
+	affective_damage_range = 3
+	affective_ap_range = 5
+
+	has_drop_off = TRUE
+
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
 
@@ -20,6 +25,10 @@
 
 /obj/item/projectile/plasma/heavy
 	name = "heavy plasma bolt"
+
+	affective_damage_range = 2
+	affective_ap_range = 3
+
 	damage_types = list(BURN = 30)
 	armor_penetration = 30
 
@@ -29,6 +38,8 @@
 /obj/item/projectile/plasma/heavy/super_heavy
 	name = "superheavy plasma bolt"
 	damage_types = list(BURN = 50)
+	affective_damage_range = 1
+	affective_ap_range = 2
 
 /obj/item/projectile/plasma/impact
 	name = "plasma impact bolt"

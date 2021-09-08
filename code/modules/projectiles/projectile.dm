@@ -72,6 +72,19 @@
 	var/matrix/effect_transform			// matrix to rotate and scale projectile effects - putting it here so it doesn't
 										//  have to be recreated multiple times
 
+	// Ranged issue
+
+	var/has_drop_off = FALSE
+
+	var/speed_drop_off = 0 //How much we get slowed farther we go
+	var/damage_drop_off = 0 //How much less damage we have the farther we go
+	var/ap_drop_off = 0 //How much less AP we have the farther we go
+
+	var/affective_damage_range = 50 //How far we can go before we start being negitively impacted, higher is a buffer
+	var/affective_ap_range = 50 //How far we can go before we start being negitively impacted, higher is a buffer
+
+	var/range_shot = 1 //How far we been shot so far. We start at 1 to prevent runtimes with deviding by 0
+
 /obj/item/projectile/is_hot()
 	if (damage_types[BURN])
 		return damage_types[BURN] * heat
@@ -696,6 +709,32 @@
 		if((x == 1 || x == world.maxx || y == 1 || y == world.maxy))
 			qdel(src)
 			return
+
+
+		if(has_drop_off) //Does this shot get weaker as it goes?
+			range_shot++ //We get the distence form the shooter to what it hit
+			damage_drop_off = max(1, range_shot - initial(affective_damage_range)) / 50 //How far we were shot - are affective range. This one is for damage drop off
+			ap_drop_off = max(1, range_shot - initial(affective_ap_range)) //How far we were shot - are affective range. This one is for AP drop off
+
+			armor_penetration = ap_drop_off - initial(armor_penetration)
+
+			agony = max(0, initial(agony) - range_shot) //every step we lose one agony, this stops sniping with rubbers.
+
+			if(damage_types[BRUTE])
+				damage_types[BRUTE] = max(0, initial(damage_types[BRUTE]) - damage_drop_off + penetrating) //they can still embed
+
+			if(damage_types[BURN])
+				damage_types[BURN] = max(0, initial(damage_types[BURN]) - damage_drop_off + penetrating) //they can still embed
+
+			if(damage_types[TOX])
+				damage_types[TOX] = max(0, initial(damage_types[TOX]) - damage_drop_off + penetrating) //they can still embed
+
+			//Clone dosnt get removed do to being rare same as o2
+
+			if(!hitscan)
+				speed_drop_off = range_shot / 50 //How far we were shot - are affective range. This one is for speed drop off
+				// Every 50 steps = 1 step delay , 5 is 0.1 (thats huge!), 1 0.02
+				step_delay = initial(step_delay) + speed_drop_off
 
 		trajectory.increment()	// increment the current location
 		location = trajectory.return_location(location)		// update the locally stored location data

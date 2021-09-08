@@ -13,7 +13,7 @@
 	mag_well = MAG_WELL_SMG
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_WOOD = 4)
 	price_tag = 800
-	damage_multiplier = 0.9
+	damage_multiplier = 0.8
 	penetration_multiplier = 1.5
 	recoil_buildup = 4.5
 	one_hand_penalty = 10
