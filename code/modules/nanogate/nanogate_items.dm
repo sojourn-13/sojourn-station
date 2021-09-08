@@ -131,6 +131,13 @@
 	A.use_power(power_usage, STATIC_EQUIP)
 	return TRUE
 
+/obj/item/rig/nanite/emp_act(severity_class)
+	if(severity_class >= 5)
+		src.visible_message("The [src.name] get destroyed by an EMP."]
+		spawn(20) qdel(src)
+	else
+		..()
+
 /obj/item/clothing/suit/space/rig/nanite
 	name = "suit"
 
