@@ -132,7 +132,7 @@
 	icon_state = "electronic"
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/gold, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 20),
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
@@ -163,8 +163,8 @@
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/steel, 8, "time" = 20),
-		list(/obj/item/stack/material/silver, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_SILVER, "time" = 20),
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
@@ -179,8 +179,8 @@
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/steel, 4, "time" = 20),
-		list(/obj/item/stack/material/silver, 5, "time" = 20),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL, "time" = 20),
+		list(CRAFT_MATERIAL, 5, MATERIAL_SILVER, "time" = 20),
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
@@ -199,9 +199,9 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40),
 		list(/obj/item/stack/cable_coil, 30, "time" = 30),
 		list(QUALITY_WIRE_CUTTING, 40, 30),
-		list(/obj/item/stack/material/plasteel, 20, "time" = 30),
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_WELDING, 40, "time" = 40),
-		list(/obj/item/stack/material/silver, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 20),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 10)
 	)
 
@@ -209,7 +209,7 @@
 	name = "War Mace"
 	result = /obj/item/tool/hammer/mace
 	steps = list(
-		list(/obj/item/stack/material/steel, 15, "time" = 30),
+		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 60)
@@ -219,7 +219,7 @@
 	name = "Claymore"
 	result = /obj/item/tool/sword
 	steps = list(
-		list(/obj/item/stack/material/steel, 15, "time" = 30),
+		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 60)
@@ -229,7 +229,7 @@
 	name = "Machete"
 	result = /obj/item/tool/sword/machete
 	steps = list(
-		list(/obj/item/stack/material/steel, 15, "time" = 30),
+		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 60)
@@ -239,11 +239,11 @@
 	name = "Katana"
 	result = /obj/item/tool/sword/katana
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 10, "time" = 30),
+	list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(/obj/item/stack/material/steel, 5, "time" = 30),
+	list(CRAFT_MATERIAL, 5, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_WELDING, 40, "time" = 60),
-		list(/obj/item/stack/material/diamond, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND, "time" = 30),
 		list(QUALITY_HAMMERING, 45, "time" = 40),
 		list(/obj/item/tool_upgrade/productivity/whetstone, 1, "time" = 30)
 	)
@@ -252,9 +252,9 @@
 	name = "Firebrand"
 	result = /obj/item/tool/sword/katana/firebrand
 	steps = list(
-	list(/obj/item/stack/material/plasteel, 10, "time" = 30),
+	list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 30),
 	list(QUALITY_SAWING, 30, "time" = 60),
-	list(/obj/item/stack/material/steel, 5, "time" = 30),
+	list(CRAFT_MATERIAL, 5, MATERIAL_STEEL, "time" = 30),
 	list(QUALITY_WELDING, 40, "time"= 60),
 	list(/obj/item/tool_upgrade/productivity/oxyjet, 1, "time" = 30),
 	list(QUALITY_HAMMERING, 45, "time" = 40),
@@ -315,7 +315,7 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
 		list(QUALITY_ADHESIVE, 10, "time" = 60),
 		list(/obj/item/stack/cable_coil, 30, "time" = 30),
-		list(/obj/item/stack/material/plasteel, 5, "time" = 30)
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 30),
 	)
 
 //Tool/Gun Mods ---------------------
@@ -324,18 +324,18 @@
 	name = "Plasma Block"
 	result = /obj/item/tool_upgrade/reinforcement/plasmablock
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 5, "time" = 30),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
-		list(/obj/item/stack/material/plastic, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
-		list(/obj/item/stack/material/plasma, 1, "time" = 30)
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASMA, "time" = 30),
 	)
 
 /datum/craft_recipe/guild/rubbermesh
 	name = "Rubber Mesh"
 	result = /obj/item/tool_upgrade/reinforcement/rubbermesh
 	steps = list(
-		list(/obj/item/stack/material/plastic, 3, "time" = 30),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_WIRE_CUTTING, 20, "time" = 90)
 	)
 
@@ -344,11 +344,11 @@
 	name = "Booster"
 	result = /obj/item/tool_upgrade/productivity/booster
 	steps = list(
-		list(/obj/item/stack/material/steel, 3, "time" = 30),
-		list(QUALITY_HAMMERING, 20, "time" = 40),
-		list(/obj/item/stack/material/plastic, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 25, "time" = 90),
-		list(/obj/item/stack/material/gold, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD, "time" = 30),
 		list(QUALITY_BOLT_TURNING, 20, "time" = 40)
 	)
 
@@ -356,11 +356,11 @@
 	name = "Plasma Injector"
 	result = /obj/item/tool_upgrade/productivity/injector
 	steps = list(
-		list(/obj/item/stack/material/steel, 3, "time" = 30),
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
-		list(/obj/item/stack/material/plastic, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 25, "time" = 90),
-		list(/obj/item/stack/material/plasma, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASMA, "time" = 30),
 		list(QUALITY_WELDING, 40, "time" = 40)
 	)
 
@@ -370,11 +370,11 @@
 	result = /obj/item/gun_upgrade/mechanism/weintraub
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 3, "time" = 30),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
-		list(/obj/item/stack/material/plastic, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 25, "time" = 90)
 	)
 
@@ -383,11 +383,11 @@
 	result = /obj/item/gun_upgrade/mechanism/overshooter
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 3, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
-		list(/obj/item/stack/material/plastic, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_SCREW_DRIVING, 25, "time" = 90)
 	)
 
@@ -396,11 +396,11 @@
 	result = /obj/item/gun_upgrade/trigger/dangerzone
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
-		list(/obj/item/stack/material/plastic, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
 	)
 
@@ -409,11 +409,11 @@
 	result = /obj/item/gun_upgrade/barrel/forged
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
-		list(/obj/item/stack/material/plastic, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
 	)
 
@@ -422,14 +422,14 @@
 	result = /obj/item/gun_upgrade/mechanism/upgrade_kit
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/stack/material/steel, 20, "time" = 30),
-		list(/obj/item/stack/material/plasteel, 15, "time" = 30),
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL, "time" = 30),
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(CRAFT_MATERIAL, 3, MATERIAL_SILVER),
 		list(QUALITY_DRILLING, 60, "time" = 90),
 		list(QUALITY_WELDING, 40, "time" = 40),
-		list(/obj/item/stack/material/plastic, 10, "time" = 30),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
 	)
 
@@ -444,7 +444,7 @@
 		list(QUALITY_WELDING, 40, "time" = 40),
 		list(QUALITY_DRILLING, 60, "time" = 90),
 		list(/obj/item/tool_upgrade/refinement/ported_barrel, 1, "time" = 30),
-		list(/obj/item/stack/material/plasteel, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
 	)
 
@@ -453,11 +453,11 @@
 	result = /obj/item/gun_upgrade/muzzle/silencer
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 3, "time" = 30),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
-		list(/obj/item/stack/material/plastic, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 30),
 		list(QUALITY_CUTTING, 25, "time" = 90)
 	)
 
@@ -466,11 +466,11 @@
 	result = /obj/item/gun_upgrade/scope/watchman
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 3, "time" = 30),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
-		list(/obj/item/stack/material/glass, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 30),
 		list(QUALITY_CUTTING, 25, "time" = 90)
 	)
 /*
@@ -527,6 +527,7 @@
 		list(/obj/item/stock_parts/manipulator, 1, "time" = 120),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_DRILLING, 60, "time" = 90),
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER)
@@ -539,6 +540,7 @@
 		list(/obj/item/gun/projectile/shotgun/bull, 1, "time" = 80),
 		list(/obj/item/gun_upgrade/barrel/bore, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_DRILLING, 60, "time" = 90),
 		list(QUALITY_WELDING, 40, "time" = 60),
 		list(QUALITY_HAMMERING, 45, "time" = 40),
 		list(QUALITY_SAWING, 50, "time" = 60),
@@ -552,12 +554,11 @@
 	name = "Cast Matter Bin"
 	result = /obj/item/stock_parts/matter_bin/guild
 	steps = list(
-		list(/obj/item/stock_parts/matter_bin/super, 1),
+		list(/obj/item/stock_parts/matter_bin/super, 2),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(/obj/item/stock_parts/matter_bin/super, 1),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_HAMMERING, 40),
 		list(QUALITY_SAWING, 60)
@@ -567,14 +568,13 @@
 	name = "Forged Manipulator"
 	result = /obj/item/stock_parts/manipulator/guild
 	steps = list(
-		list(/obj/item/stock_parts/manipulator/pico, 1),
+		list(/obj/item/stock_parts/manipulator/pico, 2),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(/obj/item/stack/cable_coil, 10),
-		list(/obj/item/stock_parts/manipulator/pico, 1),
 		list(QUALITY_HAMMERING, 40),
 		list(QUALITY_SAWING, 60)
 	)
@@ -583,12 +583,11 @@
 	name = "Perfected Micro-Laser"
 	result = /obj/item/stock_parts/micro_laser/guild
 	steps = list(
-		list(/obj/item/stock_parts/micro_laser/ultra, 1),
+		list(/obj/item/stock_parts/micro_laser/ultra, 2),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(/obj/item/stock_parts/micro_laser/ultra, 1),
 		list(QUALITY_SAWING, 60)
 	)
 
@@ -596,13 +595,12 @@
 	name = "Perfected Scanning Module"
 	result = /obj/item/stock_parts/scanning_module/guild
 	steps = list(
-		list(/obj/item/stock_parts/scanning_module/phasic, 1),
+		list(/obj/item/stock_parts/scanning_module/phasic, 2),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
-		list(/obj/item/stock_parts/scanning_module/phasic, 1),
 		list(QUALITY_SAWING, 60)
 	)
 
@@ -610,27 +608,26 @@
 	name = "Crafted Ultra Capacitor"
 	result = /obj/item/stock_parts/capacitor/guild
 	steps = list(
-		list(/obj/item/stock_parts/capacitor/super, 1),
+		list(/obj/item/stock_parts/capacitor/super, 2),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
-		list(/obj/item/stock_parts/capacitor/super, 1),
 		list(QUALITY_SAWING, 60)
 	)
 
 // Boxes for max crafting, should always cost x6 materials.
+ // saves on needing 4 extra parts tho
 /datum/craft_recipe/guild/guild_bin_box
 	name = "Box of Cast Matter Bins"
 	result = /obj/item/storage/box/guild_bin
 	steps = list(
-		list(/obj/item/stock_parts/matter_bin/super, 1),
+		list(/obj/item/stock_parts/matter_bin/super, 4),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
 		list(CRAFT_MATERIAL, 13, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASMAGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(/obj/item/stock_parts/matter_bin/super, 1),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_HAMMERING, 40),
 		list(QUALITY_SAWING, 60),
@@ -641,14 +638,13 @@
 	name = "Box of Forged Manipulators"
 	result = /obj/item/storage/box/guild_manip
 	steps = list(
-		list(/obj/item/stock_parts/manipulator/pico, 1),
+		list(/obj/item/stock_parts/manipulator/pico, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 13, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 13, MATERIAL_PLASTIC),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(/obj/item/stack/cable_coil, 10),
-		list(/obj/item/stock_parts/manipulator/pico, 1),
 		list(QUALITY_HAMMERING, 40),
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
@@ -658,12 +654,11 @@
 	name = "Box of Perfected Micro-Lasers"
 	result = /obj/item/storage/box/guild_laser
 	steps = list(
-		list(/obj/item/stock_parts/micro_laser/ultra, 1),
+		list(/obj/item/stock_parts/micro_laser/ultra, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 4, MATERIAL_DIAMOND),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(/obj/item/stock_parts/micro_laser/ultra, 1),
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
@@ -672,13 +667,12 @@
 	name = "Box of Perfected Scanning Modules"
 	result = /obj/item/storage/box/guild_scanner
 	steps = list(
-		list(/obj/item/stock_parts/scanning_module/phasic, 1),
+		list(/obj/item/stock_parts/scanning_module/phasic, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 9, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(CRAFT_MATERIAL, 9, MATERIAL_SILVER),
-		list(/obj/item/stock_parts/scanning_module/phasic, 1),
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
@@ -687,13 +681,12 @@
 	name = "Box of Crafted Ultra Capacitors"
 	result = /obj/item/storage/box/guild_capacitor
 	steps = list(
-		list(/obj/item/stock_parts/capacitor/super, 1),
+		list(/obj/item/stock_parts/capacitor/super, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 9, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(CRAFT_MATERIAL, 9, MATERIAL_SILVER),
-		list(/obj/item/stock_parts/capacitor/super, 1),
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)

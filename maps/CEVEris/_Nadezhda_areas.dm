@@ -1200,6 +1200,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Security - Armory"
 	icon_state = "Warden"
 
+/area/nadezhda/security/armory_blackshield
+	name = "\improper Blackshield - Armory"
+	icon_state = "Warden"
+
 /area/nadezhda/security/armoryshop
 	name = "\improper Security - Armory Shop"
 	icon_state = "Warden"
@@ -1215,6 +1219,10 @@ area/nadezhda/medical/medbaymeeting
 
 /area/nadezhda/security/tactical
 	name = "\improper Security - Tactical Equipment"
+	icon_state = "Tactical"
+
+/area/nadezhda/security/tactical_blackshield
+	name = "\improper Blackshield - Tactical Equipment"
 	icon_state = "Tactical"
 
 /area/nadezhda/security/nuke_storage
@@ -1253,6 +1261,10 @@ area/nadezhda/medical/medbaymeeting
 
 /area/nadezhda/security/triage
 	name = "\improper Security Triage"
+	icon_state = "security"
+
+/area/nadezhda/security/triage_blackshield
+	name = "\improper Blackshield Triage"
 	icon_state = "security"
 
 /area/nadezhda/security/vacantoffice2

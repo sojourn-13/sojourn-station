@@ -11,8 +11,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/floor_decal/industrial/warningred{
@@ -54,12 +54,12 @@
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 4
+	dir = 4;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_white"
 	},
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 4
@@ -238,6 +238,25 @@
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/hallway/main/stairwell)
 "aH" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = 32
+	},
+/obj/effect/floor_decal/industrial/box/white/corners,
+/obj/effect/floor_decal/industrial/box/white/corners{
+	dir = 1;
+	icon_state = "box_corners_white"
+	},
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/main/stairwell)
+"aI" = (
 /obj/machinery/power/smes/buildable{
 	charge = 2.5e+006;
 	input_attempt = 1;
@@ -254,12 +273,6 @@
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/hallway/main/stairwell)
-"aI" = (
-/obj/machinery/power/breakerbox{
-	RCon_tag = "Stairwell Substation Bypass"
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
@@ -310,16 +323,8 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "aP" = (
-/obj/machinery/camera/network/engineering{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
-	},
-/mob/living/simple_animal/yithian{
-	desc = "How'd he get in here?";
-	name = "Jorb"
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
@@ -352,21 +357,28 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "bk" = (
+/obj/structure/table/rack/shelf,
+/obj/random/toolbox,
+/obj/random/toolbox/low_chance,
+/obj/random/toolbox/low_chance,
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/hallway/main/stairwell)
+"bl" = (
 /obj/machinery/atmospherics/pipe/tank/carbon_dioxide,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bl" = (
+"bm" = (
 /obj/machinery/atmospherics/pipe/tank/nitrogen,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bm" = (
+"bn" = (
 /obj/machinery/atmospherics/pipe/tank/plasma,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bn" = (
+"bo" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
@@ -376,11 +388,11 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bo" = (
-/obj/machinery/computer/general_air_control,
+"bp" = (
+/obj/item/modular_computer/console/preset/engineering/atmos,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
-"bp" = (
+"bq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/light{
 	dir = 1
@@ -392,26 +404,13 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	icon_state = "box_corners_red";
-	dir = 1
+	dir = 1;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
-"bq" = (
-/obj/structure/table/rack/shelf,
-/obj/random/toolbox,
-/obj/random/toolbox/low_chance,
-/obj/random/toolbox/low_chance,
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/hallway/main/stairwell)
 "bt" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/hallway/main/stairwell)
-"bu" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
@@ -424,6 +423,20 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "bw" = (
+/obj/machinery/camera/network/engineering{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
+/mob/living/simple_animal/yithian{
+	desc = "How'd he get in here?";
+	name = "Jorb"
+	},
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/hallway/main/stairwell)
+"bx" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4;
 	icon_state = "intact"
@@ -431,31 +444,25 @@
 /obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bx" = (
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/hallway/main/stairwell)
 "by" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/hallway/main/stairwell)
-"bz" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+/obj/machinery/atmospherics/binary/pump/on{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "bD" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "bE" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/main/stairwell)
+"bF" = (
 /obj/machinery/atmospherics/omni/filter{
 	tag_east = 2;
 	tag_north = 5;
@@ -463,7 +470,7 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bF" = (
+"bG" = (
 /obj/machinery/atmospherics/omni/filter{
 	tag_east = 2;
 	tag_north = 7;
@@ -471,7 +478,7 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bG" = (
+"bH" = (
 /obj/machinery/atmospherics/omni/filter{
 	tag_east = 2;
 	tag_north = 6;
@@ -479,32 +486,24 @@
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bH" = (
+"bI" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"bI" = (
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/hallway/main/stairwell)
 "bJ" = (
-/obj/item/modular_computer/console/preset/engineering/atmos,
+/obj/machinery/computer/general_air_control,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "bK" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/bed/chair/office/dark{
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "bL" = (
-/obj/machinery/space_heater,
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "bM" = (
@@ -516,15 +515,23 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "bN" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white/brown_perforated,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/obj/item/modular_computer/console/preset/engineering/alarms{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "bO" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "bP" = (
+/obj/machinery/space_heater,
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/hallway/main/stairwell)
+"bQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -533,7 +540,22 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
-"bQ" = (
+"bR" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/hallway/main/stairwell)
+"bS" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/main/stairwell)
+"bT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
@@ -546,68 +568,32 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
-"bR" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/obj/item/modular_computer/console/preset/engineering/alarms{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/hallway/main/stairwell)
-"bS" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/engineering{
-	name = "Artificer Power Substation";
-	req_access = list(10)
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/hallway/main/stairwell)
-"bT" = (
-/obj/machinery/alarm{
-	dir = 1;
-	icon_state = "alarm0";
-	pixel_y = -22
-	},
-/obj/machinery/computer/general_air_control{
-	dir = 8;
-	frequency = 1441;
-	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous Oxide", "waste_sensor" = "Gas Mix Tank")
-	},
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/hallway/main/stairwell)
 "bX" = (
-/obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/hallway/main/stairwell)
-"bY" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/machinery/firealarm{
+/obj/effect/floor_decal/industrial/danger{
 	dir = 4;
-	pixel_x = 28
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
 	},
 /obj/machinery/camera/network/engineering,
+/turf/simulated/floor/tiled/white/golden,
+/area/nadezhda/hallway/main/stairwell)
+"bY" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -26;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/hallway/main/stairwell)
 "cb" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/hallway/main/stairwell)
-"cc" = (
 /obj/machinery/power/terminal{
 	dir = 1;
 	icon_state = "term"
@@ -620,7 +606,21 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/main/stairwell)
-"cd" = (
+"cc" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/hallway/main/stairwell)
+"ce" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -638,18 +638,16 @@
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/hallway/main/stairwell)
-"ce" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/hallway/main/stairwell)
 "cf" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/obj/machinery/telecomms/relay/preset/telecomms,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/hallway/main/stairwell)
+"cg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
@@ -658,7 +656,7 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/hallway/main/stairwell)
-"cg" = (
+"ch" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -672,7 +670,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/hallway/main/stairwell)
-"ch" = (
+"ci" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -683,21 +681,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/hallway/main/stairwell)
-"ci" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -710,71 +693,52 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/main/stairwell)
 "ck" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/white/golden,
+/obj/machinery/power/breakerbox{
+	RCon_tag = "Stairwell Substation Bypass"
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "cl" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4;
-	icon_state = "danger";
-	tag = "icon-danger (EAST)"
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
 	},
-/obj/structure/cable/yellow{
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
 	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/hallway/main/stairwell)
 "cm" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
-/obj/effect/floor_decal/industrial/warningred{
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/hallway/main/stairwell)
 "cn" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/machinery/alarm{
+	dir = 1;
+	icon_state = "alarm0";
+	pixel_y = -22
 	},
-/obj/structure/closet/wall_mounted/emcloset{
-	pixel_y = 32
+/obj/machinery/computer/general_air_control{
+	dir = 8;
+	frequency = 1441;
+	name = "Tank Monitor";
+	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous Oxide", "waste_sensor" = "Gas Mix Tank")
 	},
-/obj/effect/floor_decal/industrial/box/white/corners,
-/obj/effect/floor_decal/industrial/box/white/corners{
-	icon_state = "box_corners_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningwhite{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
+/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "co" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -808,6 +772,30 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/main/stairwell)
 "cs" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/golden,
+/area/nadezhda/hallway/main/stairwell)
+"ct" = (
+/obj/structure/table/rack/shelf,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/main/stairwell)
+"cu" = (
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/main/stairwell)
+"cv" = (
 /obj/effect/floor_decal/industrial/danger/corner{
 	dir = 4;
 	icon_state = "dangercorner"
@@ -819,45 +807,27 @@
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/hallway/main/stairwell)
-"ct" = (
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/hallway/main/stairwell)
-"cu" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+"cw" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/hallway/main/stairwell)
-"cv" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 0
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
 	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1;
-	icon_state = "danger"
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/hallway/main/stairwell)
-"cw" = (
+"cx" = (
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -28
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
-	},
-/turf/simulated/floor/tiled/white/golden,
-/area/nadezhda/hallway/main/stairwell)
-"cx" = (
-/obj/structure/closet/crate,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/hallway/main/stairwell)
@@ -873,18 +843,24 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/main/stairwell)
 "cA" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 2;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/white/golden,
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/main/stairwell)
 "cB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -902,17 +878,12 @@
 "cM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/engineering{
+	name = "Artificer Power Substation";
+	req_access = list(10)
 	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/golden,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/hallway/main/stairwell)
 "cN" = (
 /turf/simulated/floor/carpet/blucarpet,
@@ -932,43 +903,23 @@
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/hallway/main/stairwell)
 "cV" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4;
-	icon_state = "danger";
-	tag = "icon-danger (EAST)"
-	},
-/obj/machinery/camera/network/engineering,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/hallway/main/stairwell)
 "cW" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/main/stairwell)
+"cX" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -26;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/hallway/main/stairwell)
-"cX" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/golden,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "cY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -996,20 +947,26 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/main/stairwell)
 "da" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/airlock/engineering{
-	name = "Artificer Power Substation";
-	req_access = list(10)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
+/obj/machinery/camera/network/engineering,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/hallway/main/stairwell)
+"db" = (
+/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/main/stairwell)
-"db" = (
+"dc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -1023,20 +980,6 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
-"dc" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/hallway/main/stairwell)
 "dd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -1044,7 +987,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/camera/network/engineering,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -1059,7 +1001,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/light/small,
+/obj/machinery/camera/network/engineering,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -1197,24 +1139,70 @@
 /turf/simulated/floor/tiled/steel,
 /area/turbolift/mountain/transition2)
 "fK" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
-	},
+/obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/main/stairwell)
+"hz" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/light/small,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "mL" = (
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/main/stairwell)
 "wc" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/golden,
+/area/nadezhda/hallway/main/stairwell)
+"AL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/hallway/main/stairwell)
+"Eb" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/main/stairwell)
+"GX" = (
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "West APC";
@@ -1235,24 +1223,19 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/main/stairwell)
-"AL" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
+"IA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/airlock/engineering{
+	name = "Artificer Power Substation";
+	req_access = list(10)
 	},
-/obj/machinery/telecomms/relay/preset/telecomms,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/hallway/main/stairwell)
-"Eb" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/main/stairwell)
-"GX" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "Nc" = (
 /obj/machinery/door/airlock/maintenance_interior{
@@ -1271,10 +1254,27 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/main/stairwell)
 "OT" = (
-/obj/structure/table/rack/shelf,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/mechanical,
-/turf/simulated/floor/tiled/white/brown_perforated,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/simulated/floor/tiled/white/golden,
+/area/nadezhda/hallway/main/stairwell)
+"Xs" = (
+/obj/structure/closet/crate,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/hallway/main/stairwell)
 
 (1,1,1) = {"
@@ -1315,18 +1315,18 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -1372,19 +1372,19 @@ aa
 aa
 aa
 aa
-ab
-ab
-bj
-bt
-bt
-bM
+aa
 ab
 ab
 ab
 ab
 ab
 ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -1429,17 +1429,17 @@ aa
 aa
 aa
 aa
-ab
+aa
 ab
 bj
-bu
+bD
 bD
 bM
 ab
 ab
-cW
-AL
-GX
+ab
+ab
+ab
 ab
 ab
 aa
@@ -1486,12 +1486,12 @@ aa
 aa
 aa
 aa
+aa
 ab
-ab
-bk
-bv
+bj
+bt
 bE
-bN
+bM
 ab
 ab
 bY
@@ -1543,20 +1543,20 @@ aa
 aa
 aa
 aa
-ab
+aa
 ab
 bl
 bv
 bF
-bO
+bS
 ab
 ab
-ab
+da
 cg
+AL
 ab
 ab
-ab
-ab
+aa
 aa
 aa
 aa
@@ -1588,32 +1588,32 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 aa
 aa
 aa
 aa
 aa
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 bm
 bv
 bG
 bO
 ab
-cn
-fK
+ab
+ab
 ch
-wc
-OT
 ab
 ab
+ab
+aa
 aa
 aa
 aa
@@ -1645,8 +1645,7 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
 ab
 ab
 ab
@@ -1657,22 +1656,23 @@ aa
 aa
 aa
 aa
-ab
+aa
+aa
 ab
 bn
-bw
+bv
 bH
 bO
 ab
 aH
 cc
 ci
-cq
+GX
 ct
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 aa
 aa
 "}
@@ -1701,8 +1701,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ab
 ae
@@ -1714,12 +1714,12 @@ aa
 aa
 aa
 aa
-ab
+aa
 ab
 bo
 bx
 bI
-bL
+bO
 ab
 aI
 cb
@@ -1727,9 +1727,9 @@ cj
 cq
 cu
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 aa
 aa
 "}
@@ -1758,8 +1758,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ac
 dG
@@ -1767,26 +1767,26 @@ dG
 an
 ao
 ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
 ab
 bJ
 by
-by
+bL
 bP
-bS
+ab
 ck
-ck
-cA
-cM
-cX
-da
 db
+cA
+cq
+cX
 ab
 ab
+ab
+aa
 aa
 aa
 "}
@@ -1815,8 +1815,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ad
 dG
@@ -1828,22 +1828,22 @@ ab
 ab
 ab
 ab
-ab
+aa
 ab
 bp
-bz
+bK
 bK
 bQ
-ab
+cM
 cV
-cd
+cV
 cl
 cs
 cw
-ab
+IA
 dc
 ab
-ab
+aa
 aa
 aa
 "}
@@ -1872,8 +1872,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ae
 dG
@@ -1885,7 +1885,7 @@ at
 aC
 aJ
 ab
-ab
+aa
 ab
 bq
 aP
@@ -1894,13 +1894,13 @@ bT
 ab
 bX
 ce
-bX
+wc
 cv
 cx
 ab
 dd
 ab
-ab
+aa
 aa
 aa
 "}
@@ -1929,8 +1929,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 aT
 dG
@@ -1942,22 +1942,22 @@ au
 aD
 OJ
 ab
+aa
 ab
+bk
+bw
+bN
+cn
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+cW
+fK
+cW
+OT
+Xs
 ab
 de
 ab
-ab
+aa
 aa
 aa
 "}
@@ -1986,8 +1986,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 af
 dG
@@ -2012,9 +2012,9 @@ ab
 ab
 ab
 ab
-dc
+hz
 ab
-ab
+aa
 aa
 aa
 "}
@@ -2043,8 +2043,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ag
 dG
@@ -2071,7 +2071,7 @@ cY
 cR
 df
 ab
-ab
+aa
 aa
 aa
 "}
@@ -2100,8 +2100,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ae
 dG
@@ -2128,7 +2128,7 @@ cr
 ab
 ab
 ab
-ab
+aa
 aa
 aa
 "}
@@ -2157,8 +2157,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ai
 dG
@@ -2170,22 +2170,22 @@ cN
 aG
 dk
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 cz
 ab
 ab
 cZ
 ab
-ab
-ab
-ab
+aa
+aa
+aa
 aa
 aa
 "}
@@ -2214,8 +2214,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ah
 dG
@@ -2227,22 +2227,22 @@ az
 cN
 aL
 ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
 aa
 aa
 "}
@@ -2271,8 +2271,8 @@ aa
 aa
 aa
 aa
-ab
-ab
+aa
+aa
 ab
 ab
 ae
@@ -2284,20 +2284,20 @@ aB
 cN
 dm
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -2328,26 +2328,26 @@ aa
 aa
 aa
 aa
+aa
+aa
 ab
 ab
 ab
 ab
 ab
+aa
 ab
 ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -2386,13 +2386,13 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa

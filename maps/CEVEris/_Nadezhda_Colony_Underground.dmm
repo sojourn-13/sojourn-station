@@ -1439,6 +1439,10 @@
 	name = "R&D shutter control";
 	pixel_y = -24
 	},
+/obj/item/stack/material/steel/full,
+/obj/item/stack/material/glass{
+	amount = 120
+	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "adu" = (
@@ -3223,6 +3227,9 @@
 	req_access = list(69)
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10,
+/obj/machinery/camera/motion/security{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "ahg" = (
@@ -3321,12 +3328,18 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "ahp" = (
-/obj/machinery/autolathe/industrial,
+/obj/machinery/autolathe/loaded,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "ahq" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns,
+/obj/item/stack/material/cardboard/random,
+/obj/item/stack/material/cardboard/random,
+/obj/item/stack/material/plasteel/random,
+/obj/item/stack/material/plasteel/random,
+/obj/item/stack/material/glass/full,
+/obj/item/stack/material/plastic/full,
+/obj/item/stack/material/steel/full,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "ahr" = (
@@ -3463,6 +3476,9 @@
 /obj/item/computer_hardware/hard_drive/portable/design/security,
 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle,
 /obj/structure/table/steel_reinforced,
+/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns{
+	pixel_y = 16
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "ahE" = (
@@ -4553,7 +4569,7 @@
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "ajW" = (
 /obj/structure/sink/puddle,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/crew_quarters/hydroponics)
 "ajX" = (
 /obj/structure/railing/grey{
@@ -4869,9 +4885,6 @@
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "akJ" = (
@@ -13886,7 +13899,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "aAR" = (
-/turf/simulated/wall,
+/turf/simulated/mineral,
 /area/nadezhda/quartermaster/hangarsupply)
 "aAS" = (
 /obj/effect/decal/cleanable/blood,
@@ -18214,9 +18227,9 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/crew_quarters/podrooms)
 "aNI" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall,
-/area/nadezhda/quartermaster/hangarsupply)
+/obj/landmark/join/start/hydro,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics)
 "aNJ" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/table/glass,
@@ -21952,6 +21965,7 @@
 	},
 /obj/random/medical/low_chance,
 /obj/random/medical/low_chance,
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/chemistry)
 "aYE" = (
@@ -22948,8 +22962,7 @@
 	dir = 4
 	},
 /obj/machinery/sleeper{
-	dir = 8;
-	icon_state = "sleeper_0"
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -28858,6 +28871,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/colony)
+"bFO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/border/borderfloor,
+/turf/simulated/floor/wood,
+/area/nadezhda/crew_quarters/cafeteria)
 "bFU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -31913,6 +31931,15 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/item/circuitboard/adms,
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for the AI core maintenance door.";
+	id = "AICore";
+	name = "AI Maintenance Hatch";
+	req_access = newlist();
+	req_one_access = newlist();
+	pixel_y = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "dNO" = (
@@ -32361,6 +32388,8 @@
 /area/colony)
 "edZ" = (
 /obj/structure/closet/chefcloset,
+/obj/item/soap/hunters,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/crew_quarters/kitchen)
 "eeB" = (
@@ -33131,7 +33160,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/bluecorner,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/engineering/foyer)
 "eyt" = (
 /obj/structure/cable/green{
@@ -35425,7 +35454,7 @@
 "fVE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/rock/manmade/ruin2,
+/turf/simulated/floor/rock/manmade/ruin3,
 /area/nadezhda/crew_quarters/cafeteria)
 "fVN" = (
 /obj/structure/table/woodentable,
@@ -37624,6 +37653,11 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/security/prisoncells)
+"htT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/crew_quarters/hydroponics)
 "huc" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -40355,12 +40389,10 @@
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 8
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/remote/blast_door{
 	id = "premier_office";
-	name = "Blast Doors Control";
-	pixel_x = 23;
-	pixel_y = -7;
-	specialfunctions = 4
+	name = "remote shutter control";
+	pixel_x = 30
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/captain)
@@ -41612,7 +41644,7 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/device/scanner/plant,
 /obj/item/storage/makeshift_grinder,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/crew_quarters/hydroponics)
 "kiS" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -42554,8 +42586,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "kTW" = (
-/obj/structure/table/reinforced,
-/obj/machinery/microscope,
+/obj/machinery/exploration/adms,
+/obj/item/tape/research,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/circuitlab)
 "kUi" = (
@@ -44925,7 +44957,7 @@
 /area/nadezhda/command/captain/quarters)
 "mlt" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/rock/manmade/ruin2,
+/turf/simulated/floor/rock/manmade/ruin3,
 /area/nadezhda/crew_quarters/cafeteria)
 "mlu" = (
 /turf/simulated/floor/tiled/dark/danger,
@@ -49361,7 +49393,7 @@
 "pfP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/border/techfloor/orange,
-/turf/simulated/floor/rock/manmade/ruin2,
+/turf/simulated/floor/rock/manmade/ruin3,
 /area/nadezhda/crew_quarters/cafeteria)
 "pge" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -53568,7 +53600,7 @@
 /obj/effect/floor_decal/border/techfloor/orange{
 	dir = 1
 	},
-/turf/simulated/floor/rock/manmade/ruin2,
+/turf/simulated/floor/rock/manmade/ruin3,
 /area/nadezhda/crew_quarters/cafeteria)
 "rVa" = (
 /obj/structure/catwalk,
@@ -53936,7 +53968,6 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/crew_quarters/kitchen)
 "sgl" = (
-/obj/structure/kitchenspike,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -53944,6 +53975,7 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
+/obj/machinery/gibber,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/crew_quarters/kitchen)
 "sgs" = (
@@ -54917,7 +54949,7 @@
 "sLs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/dark/bluecorner,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/engineering/foyer)
 "sLE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -56229,7 +56261,7 @@
 /obj/effect/floor_decal/border/techfloor/orange{
 	dir = 1
 	},
-/turf/simulated/floor/rock/manmade/ruin2,
+/turf/simulated/floor/rock/manmade/ruin3,
 /area/nadezhda/crew_quarters/cafeteria)
 "tAT" = (
 /obj/machinery/door/airlock{
@@ -56959,11 +56991,9 @@
 /turf/simulated/shuttle/floor/mining,
 /area/turbolift/Mining/colony)
 "tZv" = (
-/obj/structure/table/reinforced,
-/obj/item/stack/material/glass{
-	amount = 120
+/obj/item/modular_computer/console/preset/research{
+	dir = 8
 	},
-/obj/item/stack/material/steel/full,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "uai" = (
@@ -58198,6 +58228,7 @@
 /area/nadezhda/crew_quarters/pool)
 "uQE" = (
 /obj/landmark/join/start/hydro,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics)
 "uQG" = (
@@ -59052,12 +59083,16 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
 "vqI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1)
+/obj/machinery/camera/motion/security{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/turret_protected/ai)
 "vqM" = (
 /obj/structure/railing,
 /obj/random/junk/low_chance,
@@ -61340,6 +61375,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/camera/motion/security{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/server)
@@ -78681,7 +78719,7 @@ qVV
 bpX
 ofR
 gQa
-meM
+bFO
 akR
 akV
 wUA
@@ -78870,7 +78908,7 @@ aie
 fYX
 ask
 rYh
-vqI
+pmn
 rYh
 rYh
 rYh
@@ -80148,7 +80186,7 @@ eid
 nyu
 nyu
 nyu
-nyu
+nyI
 nyI
 nyI
 nyI
@@ -81903,8 +81941,8 @@ hkN
 hUZ
 alV
 xyF
-bnY
-bnY
+tnY
+tnY
 lnV
 tnY
 bnY
@@ -82057,11 +82095,11 @@ aCS
 aHJ
 voS
 voS
+cJT
 aAR
-cJT
-cJT
-cJT
-cJT
+aAR
+aAR
+aAR
 vGx
 aaF
 afM
@@ -82106,9 +82144,9 @@ hUZ
 kis
 xyF
 ivD
-bnY
 ivD
-tnY
+ivD
+ivD
 ivD
 jCP
 icf
@@ -82259,11 +82297,11 @@ aCS
 axH
 voS
 voS
+cJT
 aAR
-cJT
-cJT
-cJT
-cJT
+aAR
+aAR
+aAR
 vGx
 aaH
 afR
@@ -82307,10 +82345,10 @@ fYX
 hUZ
 mon
 xyF
-bnY
-uQE
-lnV
 tnY
+uQE
+vmh
+htT
 bnY
 jCP
 vzF
@@ -82461,11 +82499,11 @@ czi
 axt
 voS
 voS
+cJT
 aAR
-cJT
-cJT
-cJT
-cJT
+aAR
+aAR
+aAR
 vGx
 aaK
 ahX
@@ -82510,9 +82548,9 @@ aiN
 qMh
 xyF
 ivD
-bnY
 ivD
-tnY
+ivD
+ivD
 ivD
 jCP
 bPq
@@ -82663,7 +82701,7 @@ aof
 aoJ
 aoJ
 aoL
-aNI
+aoi
 aoM
 aoM
 aoM
@@ -83317,7 +83355,7 @@ dME
 cWd
 ivS
 qzj
-xGS
+aNI
 xGS
 ajm
 xGS
@@ -85887,8 +85925,8 @@ nyI
 nyI
 nyI
 nyI
-axw
-axw
+ifx
+ifx
 ifx
 ifx
 axw
@@ -86089,8 +86127,8 @@ nyI
 nyI
 nyI
 nyI
-axw
-axw
+ifx
+ifx
 ifx
 ifx
 ifx
@@ -86291,8 +86329,8 @@ wjr
 nyI
 nyI
 nyI
-axw
-axw
+ifx
+ifx
 ifx
 ifx
 ifx
@@ -86493,8 +86531,8 @@ sSP
 wjr
 fGB
 nyI
-axw
-axw
+ifx
+ifx
 ifx
 ifx
 ifx
@@ -87503,8 +87541,8 @@ ktr
 ndl
 hWB
 nyI
-axw
-axw
+ifx
+ifx
 ifx
 ifx
 axw
@@ -87705,8 +87743,8 @@ nyI
 nyI
 nyI
 nyI
-axw
-axw
+ifx
+ifx
 ifx
 ifx
 axw
@@ -87907,8 +87945,8 @@ nyI
 nyI
 nyI
 nyI
-axw
-axw
+ifx
+ifx
 ifx
 ifx
 axw
@@ -88109,10 +88147,10 @@ nyI
 nyI
 nyI
 nyI
-axw
-axw
-axw
-axw
+ifx
+ifx
+ifx
+ifx
 axw
 aDL
 aEb
@@ -88311,7 +88349,7 @@ nyI
 nyI
 nyI
 nyI
-axw
+ifx
 ifx
 ifx
 ifx
@@ -92066,7 +92104,7 @@ nyI
 nyI
 nyI
 nyI
-aCS
+nyI
 aCS
 aEO
 aEO
@@ -93463,7 +93501,7 @@ cBB
 cBB
 cBB
 avT
-cyE
+vqI
 cyE
 hrg
 cyE
@@ -94939,7 +94977,7 @@ uiM
 vsW
 biu
 aEO
-aEO
+aaP
 nyI
 nyI
 nyI
@@ -95141,7 +95179,7 @@ yaz
 qgf
 biy
 aEO
-aEO
+aaP
 nyI
 nyI
 nyI
@@ -95343,7 +95381,7 @@ yaz
 biy
 biy
 aEO
-aEO
+aaP
 nyI
 nyI
 nyI
@@ -95545,7 +95583,7 @@ aEO
 aEO
 aEO
 aEO
-aEO
+aaP
 nyI
 nyI
 nyI
@@ -95741,13 +95779,13 @@ gav
 gav
 csG
 aEO
-aEO
-aEO
-aEO
-aEO
-aEO
-aEO
-aEO
+aaP
+aaP
+aaP
+aaP
+aaP
+aaP
+aaP
 nyI
 nyI
 nyI
@@ -96755,7 +96793,7 @@ aEO
 aEO
 aEO
 aEO
-aEO
+aaP
 nyI
 nyI
 nyI
@@ -96780,7 +96818,7 @@ czi
 czi
 czi
 czi
-axw
+ifx
 axw
 axw
 ayo
@@ -98334,7 +98372,7 @@ gav
 csG
 aEO
 aEO
-aEO
+aaP
 aaP
 nyI
 nyI
@@ -98537,7 +98575,7 @@ csG
 xdi
 aEO
 aEO
-aEO
+aaP
 nyI
 nyI
 aEO
@@ -99228,7 +99266,7 @@ axw
 axw
 axw
 axw
-axw
+ifx
 wKT
 aEO
 aaP
@@ -99407,6 +99445,11 @@ czi
 czi
 czi
 nyI
+ifx
+ifx
+ifx
+ifx
+ifx
 axw
 axw
 axw
@@ -99425,13 +99468,8 @@ axw
 axw
 axw
 axw
-axw
-axw
-axw
-axw
-axw
-axw
-axw
+ifx
+ifx
 aEO
 aaP
 aaP
@@ -99570,7 +99608,7 @@ aEO
 aaP
 aaP
 aaP
-aEO
+aaP
 aEO
 aUz
 aUS
@@ -99772,7 +99810,7 @@ aEO
 aaP
 aaP
 aaP
-aEO
+aaP
 aEO
 aUq
 aUT
@@ -99920,9 +99958,9 @@ aaP
 aaP
 aaP
 aaP
-aEO
-aEO
-aEO
+aaP
+aaP
+aaP
 aaP
 aEO
 aEO
@@ -99974,7 +100012,7 @@ aEO
 aaP
 aaP
 aaP
-aEO
+aaP
 aEO
 aUr
 aTz
@@ -100110,13 +100148,13 @@ aaP
 aaP
 aaP
 aaP
-aEO
-aEO
-aEO
-aEO
-aEO
-aEO
-aEO
+aaP
+aaP
+aaP
+aaP
+aaP
+aaP
+aaP
 aEO
 aEO
 aEO
@@ -100176,7 +100214,7 @@ aEO
 aaP
 aaP
 aaP
-aEO
+aaP
 aEO
 aUA
 aUX
@@ -100311,9 +100349,9 @@ nyI
 aaP
 aaP
 aIg
-aFL
-aEO
-aEO
+aaP
+aaP
+aaP
 aEO
 aEO
 aEO
@@ -100378,7 +100416,7 @@ aEO
 aaP
 aaP
 aaP
-aEO
+aaP
 aEO
 aEO
 aEO
@@ -100580,11 +100618,11 @@ aEO
 aaP
 aaP
 aaP
-aEO
 aaP
-aEO
-aEO
-aEO
+aaP
+aaP
+aaP
+aaP
 aEO
 aEO
 aEO
@@ -100779,10 +100817,10 @@ aEO
 csG
 gav
 aEO
-aFL
-aFL
-aFL
 aEO
+aaP
+aaP
+aaP
 aaP
 aaP
 aaP
@@ -101321,7 +101359,7 @@ nyI
 aaP
 aaP
 aaP
-aFL
+aaP
 aEO
 aQN
 aFi

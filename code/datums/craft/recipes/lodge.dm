@@ -38,7 +38,7 @@
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_BONE, "time" = 60),
-		list(/obj/item/stack/material/plasteel, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 20),
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_WELDING, 30, "time" = 60),
@@ -52,7 +52,7 @@
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/plastic, 8, "time" = 20),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 20),
 		list(/obj/item/tool_upgrade/augment/cell_mount, 1, "time" = 20),
 		list(/obj/item/cell/large, 1, "time" = 20),
 		list(/obj/item/tool_upgrade/augment/hydraulic, 1, "time" = 20),
@@ -71,7 +71,7 @@
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 22, MATERIAL_STEEL, "time" = 60),
-		list(/obj/item/stack/material/wood, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 20, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
@@ -99,7 +99,7 @@
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/wood, 2, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 10, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 20, "time" = 30),
 		list(QUALITY_HAMMERING, 15, "time" = 40),
@@ -112,7 +112,7 @@
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
-		list(/obj/item/stack/material/wood, 2, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 10, "time" = 40),
 		list(QUALITY_HAMMERING, 10, "time" = 40)
 	)
@@ -123,7 +123,7 @@
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_BONE, "time" = 60),
-		list(/obj/item/stack/material/wood, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 10, "time" = 40),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
 		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
@@ -134,12 +134,12 @@
 	result = /obj/item/tool/sword/huntingclaw
 	icon_state = "woodworking"
 	steps = list(
-		list(/obj/item/stack/material/plasteel, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_WELDING, 15, "time" = 60),
 		list(QUALITY_HAMMERING, 15, "time" = 60),
-		list(/obj/item/stack/material/steel, 4, "time" = 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_WELDING, 15, "time" = 60),
-		list(/obj/item/stack/material/wood, 2, "time" = 30),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 30),
 		list(QUALITY_CUTTING, 15, "time" = 40),
 		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
 	)
@@ -212,7 +212,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 8, MATERIAL_LEATHER, "time" = 60),
 		list(QUALITY_CUTTING, 15, "time" = 50),
-		list(/obj/item/stack/material/wood, 4, "time" = 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_WOOD, "time" = 30),
 		list(QUALITY_HAMMERING, 15, 30)
 	)
 
