@@ -783,6 +783,11 @@
 	icon_state = "erisyellow"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
+/area/nadezhda/absolutism/skyyard
+	name = "\improper Junk Sky Field Teleporter"
+	icon_state = "erisyellow"
+	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
+
 /area/nadezhda/absolutism/bioreactor
 	name = "\improper Church Bioreactor Room"
 	icon_state = "erisblue"
