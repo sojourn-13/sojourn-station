@@ -22,6 +22,13 @@ Current User-Related Powers
 - Spawn Knife : Allow the user to create Nanite Knifes at will. The knives disapear once they leave the user's hand.
 - Spawn Omnitool : Opifex-only. The same as 'Spawn Knife', except with an omnitool rather than a knife.
 - Chemical Injection : Allow the user to choose a type of nanite chem to inject himself, then give him a perk that will do the injection when the user want.
+
+Current Rig-Related Powers
+- Install Rig : Spawn a Nanite Rig, defined in nanogate_items.dm, on your back if there isn't anything there.
+- Upgrade Rig Storage : Install a Storage Module in the rig.
+- Install Laser Cannon : Install a Laser Cannon Module in the rig.
+- Install Autodoc : Install an Autodoc Module in the rig.
+
 */
 
 // Nanobot powers and upgrades.
