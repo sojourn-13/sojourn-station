@@ -35,11 +35,9 @@
 	name = "wire manglers"
 	result = /obj/item/tool/wirecutters/improvised
 	steps = list(
-		list(/obj/item/stack/rods, 1, "time" = 30),
-		list(QUALITY_PRYING, 10, 70),
-		list(/obj/item/stack/rods, 1, "time" = 30),
-		list(QUALITY_PRYING, 10, 70),
-		list(QUALITY_SCREW_DRIVING, 10, 70)
+		list(/obj/item/stack/rods, 2, "time" = 60),
+		list(QUALITY_PRYING, 20, "time" = 140),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 70)
 	)
 
 //A pair of rods laboriously twisted into a useful shape

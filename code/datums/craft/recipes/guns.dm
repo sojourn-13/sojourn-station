@@ -141,7 +141,7 @@
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/steel, 8, "time" = 20),
+		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL, "time" = 60),
 		list(QUALITY_CUTTING, 20, "time" = 40),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
@@ -198,11 +198,6 @@
 	name = "Multi-Laser Cannon"
 	result = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
 	steps = list(
-		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
-		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
-		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60),
-		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60)
+		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 4, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 180)
 	)
