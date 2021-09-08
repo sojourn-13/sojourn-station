@@ -164,18 +164,18 @@
 	supervisors = "the Soteria Biolab Overseer"
 	difficulty = "Soul Crushing."
 	selection_color = "#a8b69a"
-	alt_titles = list("Soteria Psychologist")
+	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 	alt_titles = (null)
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)
 
-	perks = list(/datum/perk/medicalexpertise) //Your trained for this.
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/psi_psychology) //Your trained for this.
 
 	stat_modifiers = list(
 		STAT_BIO = 25,
-		STAT_COG = 15,
+		STAT_COG = 20,
 		STAT_VIG = 5
 	)
 
@@ -186,11 +186,14 @@
 	description = "The Psychiatrist is a mental specialist that works to help colonists through their various issues and concerns.<br>\
 	In some ways you are a professional conversationalist. Despite knowing advanced therapy techniques, sometimes a mere chat can work wonders.<br>\
 	More eventful days may involve you having particularly unstable colonists sectioned, or interviewing criminals in coordination with Security.<br>\
-	Remember that patient confidentiality is highly important in your profession. Keep sensitive information between you and the patient."
+	Remember that patient confidentiality is highly important in your profession. Keep sensitive information between you and the patient.<br>\
+	Soteria psychs are also one of the most psionically adept members of the colony, with an innate understanding of how the mind works.<br>\
+	If you become a psion, you have a greater variety of beneficial powers which you can use to aid the colony."
 
 	duties = "Speak with anyone who desires help, no matter their rank or relation.<br>\
 		Prescribe medicine and offer therapy courses for those who need it.<br>\
-		Determine if individuals are fit for work or not. Help those who are proven unfit."
+		Determine if individuals are fit for work or not. Help those who are proven unfit.<br>\
+		Use your psionic gifts to assist the colony."
 
 /obj/landmark/join/start/psychiatrist
 	name = "Soteria Psychiatrist"
