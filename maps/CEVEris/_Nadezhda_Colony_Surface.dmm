@@ -8305,6 +8305,20 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/meadow)
+"duo" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atm{
+	dir = 4;
+	pixel_x = 30
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/hallway/surface/section1)
 "duJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11267,7 +11281,7 @@
 /obj/structure/catwalk,
 /obj/machinery/light/small,
 /obj/effect/floor_decal/border/borderfloor/cee,
-/obj/random/gun_normal/low_chance,
+/obj/random/gun_normal,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/prep)
 "gze" = (
@@ -19434,6 +19448,13 @@
 /obj/landmark/join/start/assistant,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/surface/section1)
+"oGt" = (
+/obj/structure/table/rack/shelf,
+/obj/structure/catwalk,
+/obj/effect/floor_decal/border/borderfloor/cee,
+/obj/random/gun_shotgun,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/pros/prep)
 "oGY" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/random/junk/low_chance,
@@ -24264,6 +24285,14 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
+"tjh" = (
+/obj/structure/catwalk,
+/obj/machinery/door/airlock/maintenance_interior,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/hallway/surface/section1)
 "tjN" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
@@ -26454,10 +26483,10 @@
 /obj/structure/table/steel,
 /obj/random/firstaid,
 /obj/random/firstaid,
-/obj/random/firstaid,
 /obj/effect/floor_decal/industrial/arrows/white{
 	dir = 1
 	},
+/obj/random/firstaid/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/pros/prep)
 "vpY" = (
@@ -28075,6 +28104,8 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
+/obj/item/paper_bin,
+/obj/item/pen/multi,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "wRZ" = (
@@ -53174,7 +53205,7 @@ glg
 yfS
 dHW
 hRX
-hRX
+duo
 dEO
 dEO
 onq
@@ -55189,7 +55220,7 @@ trI
 trI
 trI
 gax
-ace
+oGt
 trI
 trI
 rDz
@@ -58236,7 +58267,7 @@ feI
 bna
 bna
 bna
-akq
+tjh
 coX
 oEm
 oYn
