@@ -527,7 +527,7 @@
 		list(/obj/item/stock_parts/manipulator, 1, "time" = 120),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_DRILLING, 60, "time" = 90),
+		//list(QUALITY_DRILLING, 60, "time" = 90),
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER)
