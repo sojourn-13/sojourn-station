@@ -5,22 +5,23 @@
 	set desc = "Expend three psi points to shape an oddity into a range weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 3
 
-	if(pay_power_cost(psi_point_cost))
-		var/obj/item/oddity/active = null
-		if(usr.get_active_hand())
-			if(istype(usr.get_active_hand(), /obj/item/oddity))
-				active = usr.get_active_hand()
-				if(!active.oddity_stats)
-					to_chat(usr, "This oddity has no aspects to build a weapon from!")
-					return
-				var/list/LStats = active.oddity_stats
-				var/obj/item/cultweaponchoice = pickweight(list(
-					/obj/item/gun/energy/plasma/auretian/cult = (1 + LStats[STAT_ROB]),
-					/obj/item/gun/projectile/automatic/sts/rifle/cult = (1 + LStats[STAT_VIG]),
-					/obj/item/gun/energy/laser/cult = (1 + LStats[STAT_COG]),
-					/obj/item/gun/projectile/automatic/greasegun/cult= (1 + LStats[STAT_TGH]),
-					/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
-					/obj/item/gun/energy/gun/martin/cult = (1 + LStats[STAT_MEC])))
+	var/obj/item/oddity/active = null
+	if(usr.get_active_hand())
+		if(istype(usr.get_active_hand(), /obj/item/oddity))
+			active = usr.get_active_hand()
+			if(!active.oddity_stats)
+				to_chat(usr, "This oddity has no aspects to build a weapon from!")
+				return
+			var/list/LStats = active.oddity_stats
+			var/obj/item/cultweaponchoice = pickweight(list(
+				/obj/item/gun/energy/plasma/auretian/cult = (1 + LStats[STAT_ROB]),
+				/obj/item/gun/projectile/automatic/sts/rifle/cult = (1 + LStats[STAT_VIG]),
+				/obj/item/gun/energy/laser/cult = (1 + LStats[STAT_COG]),
+				/obj/item/gun/projectile/automatic/greasegun/cult= (1 + LStats[STAT_TGH]),
+				/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
+				/obj/item/gun/energy/gun/martin/cult = (1 + LStats[STAT_MEC])))
+			
+			if(pay_power_cost(psi_point_cost))
 				playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 				var/turf/T = get_turf(usr)
 				do_sparks(8, 0, T)
@@ -32,11 +33,11 @@
 				usr.drop_item()
 				usr.put_in_active_hand(cultweaponchoice)
 				qdel(active)
-
-			else
-				to_chat(usr, "You must hold an oddity in your active hand.")
+		
 		else
 			to_chat(usr, "You must hold an oddity in your active hand.")
+	else
+		to_chat(usr, "You must hold an oddity in your active hand.")
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_melee()
 	set category = "Psionic powers"
@@ -44,22 +45,23 @@
 	set desc = "Expend three psi points to shape an oddity into a melee weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 3
 
-	if(pay_power_cost(psi_point_cost))
-		var/obj/item/oddity/active = null
-		if(usr.get_active_hand())
-			if(istype(usr.get_active_hand(), /obj/item/oddity))
-				active = usr.get_active_hand()
-				if(!active.oddity_stats)
-					to_chat(usr, "This oddity has no aspects to build a weapon from!")
-					return
-				var/list/LStats = active.oddity_stats
-				var/obj/item/cultweaponchoice = pickweight(list(
-					/obj/item/tool/sword/cult = (1 + LStats[STAT_ROB]),
-					/obj/item/tool/sword/machete/cult = (1 + LStats[STAT_VIG]),
-					/obj/item/tool/saw/chain/cult = (1 + LStats[STAT_COG]),
-					/obj/item/tool/hammer/homewrecker/cult= (1 + LStats[STAT_TGH]),
-					/obj/item/tool/sword/cleaver/cult = (1 + LStats[STAT_BIO]),
-					/obj/item/tool/power_fist/cult = (1 + LStats[STAT_MEC])))
+	var/obj/item/oddity/active = null
+	if(usr.get_active_hand())
+		if(istype(usr.get_active_hand(), /obj/item/oddity))
+			active = usr.get_active_hand()
+			if(!active.oddity_stats)
+				to_chat(usr, "This oddity has no aspects to build a weapon from!")
+				return
+			var/list/LStats = active.oddity_stats
+			var/obj/item/cultweaponchoice = pickweight(list(
+				/obj/item/tool/sword/cult = (1 + LStats[STAT_ROB]),
+				/obj/item/tool/sword/machete/cult = (1 + LStats[STAT_VIG]),
+				/obj/item/tool/saw/chain/cult = (1 + LStats[STAT_COG]),
+				/obj/item/tool/hammer/homewrecker/cult= (1 + LStats[STAT_TGH]),
+				/obj/item/tool/sword/cleaver/cult = (1 + LStats[STAT_BIO]),
+				/obj/item/tool/power_fist/cult = (1 + LStats[STAT_MEC])))
+				
+			if(pay_power_cost(psi_point_cost))
 				playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 				var/turf/T = get_turf(usr)
 				do_sparks(8, 0, T)
@@ -71,11 +73,10 @@
 				usr.drop_item()
 				usr.put_in_active_hand(cultweaponchoice)
 				qdel(active)
-
-			else
-				to_chat(usr, "You must hold an oddity in your active hand.")
 		else
 			to_chat(usr, "You must hold an oddity in your active hand.")
+	else
+		to_chat(usr, "You must hold an oddity in your active hand.")
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_tool()
 	set category = "Psionic powers"
@@ -83,22 +84,22 @@
 	set desc = "Expend two psi points to shape an oddity into a tool. What tool your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 2
 
-	if(pay_power_cost(psi_point_cost))
-		var/obj/item/oddity/active = null
-		if(usr.get_active_hand())
-			if(istype(usr.get_active_hand(), /obj/item/oddity))
-				active = usr.get_active_hand()
-				if(!active.oddity_stats)
-					to_chat(usr, "This oddity has no aspects to build a weapon from!")
-					return
-				var/list/LStats = active.oddity_stats
-				var/obj/item/cultweaponchoice = pickweight(list(
-					/obj/item/tool/shovel/combat/cult = (1 + LStats[STAT_ROB]),
-					/obj/item/tool/wrench/big_wrench/cult = (1 + LStats[STAT_VIG]),
-					/obj/item/tool/multitool/advanced/cult = (1 + LStats[STAT_COG]),
-					/obj/item/tool/shovel/power/cult = (1 + LStats[STAT_TGH]),
-					/obj/item/tool/screwdriver/combi_driver/cult = (1 + LStats[STAT_BIO]),
-					/obj/item/tool/weldingtool/advanced/cult = (1 + LStats[STAT_MEC])))
+	var/obj/item/oddity/active = null
+	if(usr.get_active_hand())
+		if(istype(usr.get_active_hand(), /obj/item/oddity))
+			active = usr.get_active_hand()
+			if(!active.oddity_stats)
+				to_chat(usr, "This oddity has no aspects to build a weapon from!")
+				return
+			var/list/LStats = active.oddity_stats
+			var/obj/item/cultweaponchoice = pickweight(list(
+				/obj/item/tool/shovel/combat/cult = (1 + LStats[STAT_ROB]),
+				/obj/item/tool/wrench/big_wrench/cult = (1 + LStats[STAT_VIG]),
+				/obj/item/tool/multitool/advanced/cult = (1 + LStats[STAT_COG]),
+				/obj/item/tool/shovel/power/cult = (1 + LStats[STAT_TGH]),
+				/obj/item/tool/screwdriver/combi_driver/cult = (1 + LStats[STAT_BIO]),
+				/obj/item/tool/weldingtool/advanced/cult = (1 + LStats[STAT_MEC])))
+			if(pay_power_cost(psi_point_cost))
 				playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 				var/turf/T = get_turf(usr)
 				do_sparks(8, 0, T)
@@ -110,11 +111,10 @@
 				usr.drop_item()
 				usr.put_in_active_hand(cultweaponchoice)
 				qdel(active)
-
-			else
-				to_chat(usr, "You must hold an oddity in your active hand.")
 		else
 			to_chat(usr, "You must hold an oddity in your active hand.")
+	else
+		to_chat(usr, "You must hold an oddity in your active hand.")
 
 /obj/item/organ/internal/psionic_tumor/proc/psychic_call()
 	set category = "Psionic powers"
