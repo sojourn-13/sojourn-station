@@ -992,6 +992,7 @@
 #include "code\game\objects\items\weapons\gift_wrappaper.dm"
 #include "code\game\objects\items\weapons\handcuffs.dm"
 #include "code\game\objects\items\weapons\hydrogen_fuel_cell.dm"
+#include "code\game\objects\items\weapons\hydrogen_melee.dm"
 #include "code\game\objects\items\weapons\improvised_components.dm"
 #include "code\game\objects\items\weapons\legcuffs.dm"
 #include "code\game\objects\items\weapons\manuals.dm"
