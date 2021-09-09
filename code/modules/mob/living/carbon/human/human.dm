@@ -122,7 +122,7 @@
 
 	if(mind)
 		statpanel("Perks",src.stats.perk_stats)
-	
+
 	src.stats.initialized = TRUE
 
 /mob/living/carbon/human/ex_act(severity)
@@ -1222,6 +1222,8 @@ var/list/rank_prefix = list(\
 			if(I.implant_organ_type)
 				if(I.implant_organ_type == "psionic tumor")
 					src.make_psion()
+				if(I.implant_organ_type == "cultured tumor")
+					src.make_psion_psych()
 				else if(I.implant_organ_type == "opifex nanogate")
 					src.give_nanogate(TRUE)
 				else if(I.implant_organ_type == "nanogate")

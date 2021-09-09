@@ -29,6 +29,23 @@
 		)
 	allow_modifications = FALSE
 	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
+
+/datum/category_item/setup_option/core_implant/psionic_tumor_psychiatrist
+	name = "Cultured Psionic Organ"
+	desc = "An unusual organ implanted by the Soteria research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Nadezhda. \
+	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body. This \
+	particular organ is the result of development while inside the brain of someone who understands the mind intimiately, offering them expanded powers and abilities when working as a Soteria psych."
+	implant_organ_type = "cultured tumor"
+	restricted_jobs = list(
+		/datum/job/cmo,
+		/datum/job/doctor,
+		/datum/job/orderly,
+		/datum/job/paramedic,
+		/datum/job/salvager // For some reason this is not in the prospector department value. TODO: Fix this. -Kaz
+	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
+	restricted_depts = SECURITY | COMMAND | PROSPECTOR | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
+
 /* Commented out they get balanced and until the event they get added into.
 /datum/category_item/setup_option/core_implant/nanogate
 	name = "Nanogate"

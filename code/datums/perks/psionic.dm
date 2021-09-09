@@ -34,3 +34,39 @@
 	desc = "You have, through practice or innate talent, mastered your psionic abilities to such a degree that you have greater control of the negative side effects of your powers. Whenever you \
 	use a psionic power that has a negative side effects, you take only half the penalties a psion normally would. Equally, some lesser powers like telepathic projection and telekinetic prowess \
 	no longer cost essence to use."
+
+/datum/perk/psi_psychology
+	name = "Mind Master"
+	desc = "Your training as a Soteria psychologist and understanding of psychiatry has given you a deep understanding of how the mind works. As a result, if you became a psion, you have an \
+	expanded set of powers that aid you in your work, with additional essence to use your abilities."
+
+/datum/perk/psi_grace
+	name = "Psionic Grace"
+	desc = "The latent effects of a fellow psion with mastery over the mind has enhanced your abilities. The gifted enhancement allows you to recover your psi essence twice as fast."
+	gain_text = "You feel completely at peace for a moment, the workings of mind, body, and the space beyond suddenly becomes but a play thing for your mind. The feeling is fleeting, but the effects \
+	are lasting."
+
+/datum/perk/psi_peace_of_the_psion
+	name = "Mind over Matter"
+	desc = "You felt the grace of a psion touching your mind and bringing about a level of peace and perfection you never quite considered. Now, as a result, your body and mind work \
+	beyond any potential they once had."
+	gain_text = "Everything falls into place, all things become clear. You feel stronger, more alert, quicker. You have not attained perfection but you feel you are closer than ever before \
+	and the last mental block you had has been removed, the flood gates of success filling your mind."
+
+/datum/perk/psi_peace_of_the_psion/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_ROB, 10)
+	holder.stats.changeStat(STAT_TGH, 10)
+	holder.stats.changeStat(STAT_VIG, 10)
+	holder.stats.changeStat(STAT_COG, 10)
+	holder.stats.changeStat(STAT_MEC, 10)
+	holder.stats.changeStat(STAT_BIO, 10)
+
+/datum/perk/psion/remove()
+	holder.stats.changeStat(STAT_ROB, -10)
+	holder.stats.changeStat(STAT_TGH, -10)
+	holder.stats.changeStat(STAT_VIG, -10)
+	holder.stats.changeStat(STAT_COG, -10)
+	holder.stats.changeStat(STAT_MEC, -10)
+	holder.stats.changeStat(STAT_BIO, -10)
+	..()

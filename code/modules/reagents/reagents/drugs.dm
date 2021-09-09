@@ -117,7 +117,7 @@
 	taste_description = "ascension"
 	color = "#E700E7"
 	reagent_state = LIQUID
-	overdose = REAGENTS_OVERDOSE * 0.66
+	overdose = REAGENTS_OVERDOSE
 	metabolism = REM * 0.5
 	addiction_chance = 90
 	nerve_system_accumulations = 40
