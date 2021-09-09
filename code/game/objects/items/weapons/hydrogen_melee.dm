@@ -100,7 +100,7 @@
 /obj/item/hydrogen_sword/Process()
 	if(active && fuel_cell)
 		if(!fuel_cell.use(use_plasma_cost))
-			src.visible_message(SPAN_NOTICE("The [src] run out of hydrogen!."))
+			src.visible_message(SPAN_NOTICE("[src] run out of hydrogen!."))
 			deactivate()
 
 /obj/item/hydrogen_sword/update_icon()
