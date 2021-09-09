@@ -18,13 +18,21 @@
 	var/active_force = WEAPON_FORCE_LETHAL // It's a blade of super-heated plasma.
 	var/active_throwforce = WEAPON_FORCE_BRUTAL // Less damage when thrown.
 	var/active_w_class = ITEM_SIZE_HUGE // Can't put that in a backpack while active
-	var/emp_burn = 50 // How much burn damage do the sword do to neighboring mobs if EMP'ed while active
+	var/emp_burn_min = 25 // How much burn damage do the sword do to neighboring mobs if EMP'ed while active
+	var/emp_burn_max = 50 // How much burn damage do the sword do to neighboring mobs if EMP'ed while active
 	var/obj/item/hydrogen_fuel_cell/fuel_cell = null // The flask the sword consume to stay active
 	var/use_plasma_cost = 0.1 // Active cost
 
 /obj/item/hydrogen_sword/New()
 	..()
 	START_PROCESSING(SSobj, src)
+
+/obj/item/hydrogen_sword/examine(mob/user)
+	..()
+	if(fuel_cell)
+		to_chat(user, SPAN_NOTICE("[src]'s fuel gauge is at [(fuel_cell.plasma / fuel_cell.max_plasma) * 100]%"))
+	else
+		to_chat(user, SPAN_NOTICE("[src] doesn't have a fuel cell inserted."))
 
 /obj/item/hydrogen_sword/proc/activate()
 	if(!fuel_cell || active)
@@ -84,7 +92,8 @@
 		src.visible_message(SPAN_DANGER("[src]'s active magnetic field get disturbed by an EMP, violently exploding and scorching everything nearby!"))
 		explosion(T, 0, 1, 2, 4) // Explode
 		for(var/mob/M in view(2, T)) // Burn every mob nearby.
-			M.take_overall_damage(0, emp_burn)
+			to_chat(user, SPAN_DANGER("You feel a wave of heat scorch your body!")
+			M.take_overall_damage(0, rand(emp_burn_min, emp_burn_max))
 		spawn(20)
 			qdel(src)
 
@@ -117,7 +126,8 @@
 	w_class = ITEM_SIZE_SMALL
 	var/armed = FALSE
 	var/obj/item/hydrogen_fuel_cell/cell = null // The flask the sword consume to stay active
-	var/explosion_burn = 75 // How much burn damage the grenade do to nearby mobs.
+	var/burn_min = 50 // How much burn damage the grenade do to nearby mobs.
+	var/burn_max = 75 // How much burn damage the grenade do to nearby mobs.
 	var/hydrogen_threshold = 10 // How much hydrogen must be in the cell for it to be viable.
 
 /obj/item/hydrogen_grenade/attack_self(mob/living/user as mob)
@@ -173,6 +183,7 @@
 	var/turf/T = get_turf(src)
 	explosion(T, 0, 1, 2, 4) // Explode
 	for(var/mob/M in view(3, T)) // Burn every mob nearby.
-		M.take_overall_damage(0, explosion_burn)
+		to_chat(user, SPAN_DANGER("You feel a wave of heat scorch your body!")
+		M.take_overall_damage(0, rand(burn_min, burn_max))
 	spawn(20)
 		qdel(src)
