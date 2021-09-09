@@ -8,7 +8,7 @@
 	psi_point_cost = 2
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
-	if(L && isliving(L) && L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand upon [L] attempting to put them to sleep!"),
 				SPAN_DANGER("You place your hand on [L] expanding your mind and attempting to put them to sleep!")
@@ -25,7 +25,7 @@
 	psi_point_cost = 2
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
-	if(L && isliving(L) && L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand on [L], their wounds cleanly sealing and healing!"),
 				SPAN_DANGER("You place your hand upon [L], focusing your thoughts and carefully reconstructing each injury with your talented mind!")
@@ -41,7 +41,7 @@
 	psi_point_cost = 3
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
-	if(L && isliving(L) && L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand on [L], the air seeming to shimmer for a moment!"),
 				SPAN_DANGER("You place your hand upon [L], focusing your thoughts as you carefully reconstruct any brain damage!")
@@ -61,7 +61,7 @@
 	psi_point_cost = 7
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
-	if(L && isliving(L) && L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 		if(L && L.stats.getPerk(PERK_PSION))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [L], the air seeming to shimmer for a moment!"),
