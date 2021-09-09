@@ -118,7 +118,7 @@
 	item_state = "grenade"
 	contained_sprite = TRUE
 	origin_tech = list(TECH_POWER = 3)
-	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_MHYDROGEN = 1, MATERIAL_OSMIUM = 1, MATERIAL_TRITIUM = 1)
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_MHYDROGEN = 0.5, MATERIAL_OSMIUM = 0.5, MATERIAL_TRITIUM = 0.5)
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_WEAK
 	throw_speed = 3
