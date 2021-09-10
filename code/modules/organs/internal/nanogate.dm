@@ -22,6 +22,7 @@
 	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
 
 	owner_verbs = list(
+		/obj/item/organ/internal/nanogate/proc/nanite_message,
 		// Creation and upgrade of the bot
 		/obj/item/organ/internal/nanogate/proc/create_nanobot,
 		/obj/item/organ/internal/nanogate/proc/stand_damage,
@@ -57,6 +58,7 @@
 	nanite_points = 15
 
 	owner_verbs = list(
+		/obj/item/organ/internal/nanogate/proc/nanite_message,
 		// Creation and upgrade of the bot
 		/obj/item/organ/internal/nanogate/proc/create_nanobot,
 		/obj/item/organ/internal/nanogate/proc/stand_damage,
