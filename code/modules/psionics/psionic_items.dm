@@ -392,12 +392,18 @@
 	var/use = 1 // Number of times it can be used.
 	var/point_per_use = 1 // Amount of points it give to a psion each use.
 
+/obj/item/psi_injector/update_icon()
+	if(use <= 0)
+		icon_state = "psi_inhaler_used"
+
+
 /obj/item/psi_injector/examine(mob/user)
 	..()
 	to_chat(user, "It has [use] uses left.")
 	to_chat(user, "It can give [point_per_use] essence per use to a psion.")
 
 /obj/item/psi_injector/attack(atom/target, mob/user)
+	update_icon()
 	if(ishuman(target)) // Check if it's an actual mob and not a wall
 		var/mob/living/carbon/human/T = target
 		var/obj/item/organ/internal/psionic_tumor/PT = T.random_organ_by_process(BP_PSION)
@@ -408,12 +414,15 @@
 										"[user.name] injects [point_per_use] dose into [T.name]'s body.")
 					PT.psi_points += point_per_use
 					use--
+					update_icon()
 					return
 				else
 					to_chat(user, "The [src.name] has no doses left.")
+					update_icon()
 					return
 			else
 				to_chat(user, "[T.name] already has the maximum amount of essence \his body can hold.")
+				update_icon()
 				return
 		else
 			to_chat(user, "You can't inject this into a non-psion.")
