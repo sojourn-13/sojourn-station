@@ -40,10 +40,9 @@
 		/datum/job/cmo,
 		/datum/job/doctor,
 		/datum/job/orderly,
-		/datum/job/paramedic,
-		/datum/job/salvager // For some reason this is not in the prospector department value. TODO: Fix this. -Kaz
+		/datum/job/paramedic
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
-	restricted_depts = SECURITY | COMMAND | PROSPECTOR | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_depts = SECURITY | COMMAND | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
 	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
 /* Commented out they get balanced and until the event they get added into.
