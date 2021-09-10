@@ -134,13 +134,7 @@
 
 	if((CLUMSY in usr.mutations) && prob(50))
 		to_chat(usr, SPAN_WARNING("You cut yourself on the paper."))
-
-		if(usr.hand == usr.l_hand) // Are we using the left arm?
-			usr.apply_damage(1, BRUTE, def_zone = BP_L_ARM)
-		if(usr.hand == usr.r_hand) // Are we using the right arm?
-			usr.apply_damage(1, BRUTE, def_zone = BP_R_ARM)
-		else //Were not using are hands so we damage are chest. As were always going to have this lim
-			usr.apply_damage(1, BRUTE, def_zone = BP_CHEST) //Hope no one does this well missing an arm...
+		papercut()
 
 	var/n_name = sanitizeSafe(input(usr, "What would you like to label the paper?", "Paper Labelling", null)  as text, MAX_NAME_LEN)
 
@@ -148,6 +142,16 @@
 	if((loc == usr || loc.loc && loc.loc == usr) && usr.stat == 0 && n_name)
 		name = n_name
 		add_fingerprint(usr)
+
+/obj/item/paper/proc/papercut(mob/living/user as mob)
+	if(user.hand == user.l_hand) // Are we using the left arm?
+		user.apply_damage(1, BRUTE, def_zone = BP_L_ARM)
+	if(user.hand == user.r_hand) // Are we using the right arm?
+		user.apply_damage(1, BRUTE, def_zone = BP_R_ARM)
+	else //Were not using are hands so we damage are chest. As were always going to have this lim
+		user.apply_damage(1, BRUTE, def_zone = BP_CHEST) //Hope no one does this well missing an arm...
+
+
 
 /obj/item/paper/attack_self(mob/living/user as mob)
 	if (user.a_intent == I_HURT)
