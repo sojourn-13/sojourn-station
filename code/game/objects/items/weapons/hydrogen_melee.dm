@@ -1,7 +1,7 @@
 // Hydrogen Sword, like an energy sword that use hydrogen fuel cell. It explode if it is EMP'ed while active.
 /obj/item/hydrogen_sword
 	name = "hydrogen-plasma sword"
-	desc = "An energy sword that use hydrogen which has been super-heated into a plasma. The only thing preventing this from blowing up in your face is a magnetic field produced by the hilt."
+	desc = "An energy sword that uses super heated hydrogen shaped into plasma. The only thing preventing this from blowing up in your face is a magnetic field produced by the hilt."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "sword"
 	item_state = "sword"
@@ -112,7 +112,7 @@
 // Hydrogen Grenade, explode when hitting something, even if thrown.
 /obj/item/hydrogen_grenade
 	name = "hydrogen grenade"
-	desc = "A hilt that can support an hydrogen fuel cell. It has a flimsy safety that prevent it from exploding from the weakest impact."
+	desc = "A hilt that can support an hydrogen fuel cell. It has a flimsy safe guard that prevents it from exploding from the weakest impact."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "grenade"
 	item_state = "grenade"
