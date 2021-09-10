@@ -13,17 +13,19 @@ List of powers in this page :
 
 /obj/item/organ/internal/nanogate/proc/nanite_message()
 	set category = "Nanogate Powers"
-	set name = "Message"
+	set name = "Nanite Message"
 	set desc = "Send a message to someone else that has a nanogate."
 	nano_point_cost = 0 // It's free.
 
-	var/list/creatures = list() // Who we can talk to
+	var/list/mob/living/carbon/human/target_list = list() // Who we can talk to
 	for(var/mob/living/carbon/human/h in world) // Check every players in the game
-		for(var/organ_inside in h.internal_organs)
-			if(istype(organ_inside, /obj/item/organ/internal/nanogate))
-				creatures += h // Add the player to the list we can talk to
-				continue
-	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures
+		if(ishuman(h) && !h.is_mannequin)
+			for(var/organ_inside in h.internal_organs)
+				if(istype(organ_inside, /obj/item/organ/internal/nanogate))
+					target_list += h // Add the player to the list we can talk to
+					break
+	target_list -= owner
+	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in target_list
 	if (isnull(target))
 		return
 
