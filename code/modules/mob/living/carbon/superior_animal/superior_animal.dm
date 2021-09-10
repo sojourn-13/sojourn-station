@@ -105,7 +105,21 @@
 	var/fleshcolor = "#DB0000"
 	var/bloodcolor = "#DB0000"
 	//Armor values for the mob. Works like normal armor values.
+	var/give_randomized_armor = FALSE
+	var/gives_prefex = FALSE
+	var/prefex = "bugged"
+
 	var/armor = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0,
+		agony = 0
+	)
+
+	var/add_armor = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,

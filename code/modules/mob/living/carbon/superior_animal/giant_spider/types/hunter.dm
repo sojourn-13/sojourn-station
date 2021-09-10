@@ -16,7 +16,7 @@
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/cloaker
 	name = "cloaker spider"
-	desc = "Furry and black, it makes you shudder to look at it. This one has a chameleonic chitin that makes it hard to see."
+	desc = "Furry and black, it makes you shudder to look at it. This one has a weaker chameleonic chitin that makes it hard to see."
 	alpha = 50
 	armor = list(melee = 5, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 25)
 
@@ -220,7 +220,7 @@
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor
 	name = "emperor spider"
-	desc = "Furry and black, it makes you shudder to look at it. This one is huge with long legs and glowing nightmarish eyes filled with malign hatred."
+	desc = "Furry and black, it makes you shudder to look at it. This one is huge with long legs with hard chitin plates and glowing nightmarish eyes filled with malign hatred."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_emperor"
 	icon_living = "spider_emperor"
@@ -236,6 +236,8 @@
 	poison_type = "party drops"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
 	armor = list(melee = 25, bullet = 25, energy = 10, bomb = 25, bio = 10, rad = 25)
+
+	give_randomized_armor = FALSE //Were not getting armor
 
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
 	meat_amount = 3
@@ -262,6 +264,8 @@
 	poison_per_bite = 6
 	poison_type = "stoxin"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
+
+	give_randomized_armor = FALSE //Were not getting armor
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider/slip(var/slipped_on)
 	return FALSE
