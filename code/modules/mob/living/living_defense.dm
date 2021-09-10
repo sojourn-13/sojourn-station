@@ -27,8 +27,13 @@
 			effective_damage = round ( effective_damage * ( 100 - src.getarmor(def_zone, "agony") ) / 100 )
 
 	if(effective_damage <= 0)
-		show_message(SPAN_NOTICE("Your armor absorbs the blow!"))
+		show_message(SPAN_NOTICE("Your armor fully absorbs the blow!"))
 		return FALSE
+
+	if(armor_effectiveness > 0) //did we even over-penitrate?
+		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
+			effective_damage = round ( effective_damage + (armor_effectiveness - src.getarmor(def_zone, damagetype) / 2)) //We re-check are armor we over-pentrated
+
 
 	//Here we can remove edge or sharpness from the blow
 	if ( (sharp || edge) && prob ( getarmor (def_zone, attack_flag) ) )
