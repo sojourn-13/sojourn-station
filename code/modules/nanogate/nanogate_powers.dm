@@ -11,7 +11,7 @@ List of powers in this page :
 - Communication : A free power that allow the user to speak with anyone else that also got a nanogate.
 */
 
-/obj/item/organ/internal/nanogate/proc/message()
+/obj/item/organ/internal/nanogate/proc/nanite_message()
 	set category = "Nanogate Powers"
 	set name = "Message"
 	set desc = "Send a message to someone else that has a nanogate."
