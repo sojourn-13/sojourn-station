@@ -109,6 +109,8 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
+	latent_mutations="1=MUTATION_COW_SKIN;2=MUTATION_IMBECILE"
+
 /mob/living/simple_animal/cow/New()
 	udder = new(50)
 	udder.my_atom = src

@@ -68,6 +68,12 @@
 
 	var/list/chem_effects = list()
 
+	//Mutations populated at the start of the round; Used for genetics.
+	var/latent_mutations=""
+
+	//Mutations populated manually through genetic tampering.
+	var/datum/genetics/genetics_holder/active_mutations
+
 	//Used in living/recoil.dm
 	var/recoil = 0 //What our current recoil level is
 	var/recoil_reduction_timer
