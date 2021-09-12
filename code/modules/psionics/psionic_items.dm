@@ -625,15 +625,19 @@
 		rad = 100
 	) // Thematic with the lodge bone armor in terms of defense, has bio/rad because theme but without a suit it doesn't do much. Not that great compared to most helmets, you want it for the stats. -Kaz
 	price_tag = 0
+	var/mask_cooldown_time = 25 MINUTES
+	var/last_invoke = -16000
 
 // If you renew it every 25 minutes (in the 5 minute window before it ends), you effectively have +30 cog/+15 vig with some upkeep. Great for a psion and thematic with the kriosan skull. -Kaz
 // Thematically, the dead must be remembered periodically, lest they and the things they offer be forgotten.
-/obj/item/clothing/mask/gas/bonedog/proc/invoke_spirit(var/mob/M)
+/obj/item/clothing/mask/gas/bonedog/verb/invoke_spirit(var/mob/M)
 	set name = "Invoke Mask"
 	set desc = "Invoke the psionic potential left in this skull."
 	set category = "Object"
-	var/mask_cooldown_time = 25 MINUTES
-	var/last_invoke
+
+	if(!usr.stats.getPerk(PERK_PSION))
+		to_chat(usr, "<span class='notice'>You lack the psionic potential to invoke this.</span>")
+		return
 
 	if((last_invoke + mask_cooldown_time) >= world.time)
 		to_chat(usr, "<span class='notice'>[name] needs more time to regenerate.</span>")
