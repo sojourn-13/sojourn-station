@@ -13,7 +13,18 @@
 			var/obj/item/organ/internal/psionic_tumor/B = new /obj/item/organ/internal/psionic_tumor
 			B.disabled = FALSE
 			B.replaced(head)
-			
+
+/mob/proc/make_psion_psych()
+	var/mob/living/carbon/human/user = src
+	if(user.is_mannequin) //Quick return to stop them adding mages to mannequins
+		return
+	if(istype(user))
+		var/obj/item/organ/external/head = user.get_organ(BP_HEAD)
+
+		if(head)
+			var/obj/item/organ/internal/psionic_tumor/psychiatrist/B = new /obj/item/organ/internal/psionic_tumor/psychiatrist
+			B.disabled = FALSE
+			B.replaced(head)
 
 // Main process, this runs through all the needed checks for a psion. Removal of implants like cruciforms and synthetics are called here.
 // This also handles psi points limits and regeneration, the effect is dynamic so increases to cognition through things like stims and chems will update accordingly.
@@ -21,6 +32,7 @@
 	..()
 	if(disabled == FALSE)
 		var/psi_max_bonus = 0
+		var/cognitive_potential = 1
 		if(round(world.time) % 5 == 0)
 			remove_synthetics()
 
@@ -28,18 +40,26 @@
 			owner.stats.addPerk(PERK_PSION)
 
 		if(owner.stats.getPerk(PERK_PSI_HARMONY))
-			psi_max_bonus = 2
+			psi_max_bonus += 2
+
+		if(owner.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
+			psi_max_bonus += 5
 
 		max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) / 10), 1, 30)) + psi_max_bonus
 
+		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) / 20), 0, 5))
+
 		if(psi_points > max_psi_points && owner.stats.initialized == TRUE) //Tracks Deltas in Cog changing maximum psi, but also acts as a short circuit check for round-start psionics.
 			psi_points = max_psi_points
-		
+
 		if(world.time > last_psi_point_gain)
 			if(psi_points >= max_psi_points)
 				return
 			psi_points += 1
-			last_psi_point_gain = world.time + 10 MINUTES
+			if(owner.stats.getPerk(PERK_PSI_GRACE))
+				last_psi_point_gain = world.time + ((10 MINUTES - cognitive_potential MINUTES) / 2)
+			else
+				last_psi_point_gain = world.time + (10 MINUTES - cognitive_potential MINUTES)
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()

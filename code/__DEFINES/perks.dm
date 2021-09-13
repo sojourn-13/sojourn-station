@@ -78,10 +78,17 @@
 #define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
 #define PERK_GREENTHUMB /datum/perk/greenthumb
+
+// Psionic perks
 #define PERK_PSION /datum/perk/psion
 #define PERK_PSI_MANIA /datum/perk/psi_mania
 #define PERK_PSI_HARMONY /datum/perk/psi_harmony
 #define PERK_PSI_ATTUNEMENT /datum/perk/psi_attunement
+#define PERK_PSI_PSYCHOLOGIST /datum/perk/psi_psychology
+#define PERK_PSI_PEACE /datum/perk/psi_peace_of_the_psion
+#define PERK_PSI_GRACE /datum/perk/psi_grace
+
+
 
 // Nanogate Perks
 #define PERK_NANOGATE /datum/perk/nanogate

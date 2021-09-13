@@ -105,14 +105,14 @@
 		update_icon()
 
 /obj/item/tool/plasma_torch/attackby(obj/item/W as obj, mob/living/user as mob)
+	if(istype(W, /obj/item/hydrogen_fuel_cell))
+		if(flask)
+			to_chat(usr, SPAN_WARNING("[src] is already loaded."))
+			return
 
-	if(flask)
-		to_chat(usr, SPAN_WARNING("[src] is already loaded."))
-		return
-
-	if(istype(W, /obj/item/hydrogen_fuel_cell) && insert_item(W, user))
-		flask = W
-		update_icon()
+		if(insert_item(W, user))
+			flask = W
+			update_icon()
 
 /obj/item/tool/plasma_torch/update_icon()
 	..()

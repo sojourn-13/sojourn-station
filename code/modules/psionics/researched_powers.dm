@@ -1,0 +1,1 @@
+// These powers are obtained through the Soteria via researching into new powers. They may be granted to the researcher and others.

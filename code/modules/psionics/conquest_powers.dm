@@ -1,0 +1,1 @@
+// These powers are obtained by killing bosses in deep maints nad have a scary thematic scheme. Unlike other powers, these are immensely powerful.
