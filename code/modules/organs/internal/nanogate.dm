@@ -1,7 +1,7 @@
 // Similar to the psionic tumor, this organ give people abilities.
 /obj/item/organ/internal/nanogate
 	name = "Nanite Gate"
-	health = 400 //They need to live awhile longer than other organs. Is this even used by organ code anymore?
+	max_damage = 400 //They need to live awhile longer than other organs. Is this even used by organ code anymore?
 	desc = "TODO"
 	organ_efficiency = list(BP_NANOGATE = 100)
 	parent_organ_base = BP_CHEST // It's in the spine.
@@ -20,8 +20,6 @@
 	var/nano_point_cost
 	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
 	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
-
-	var/list/foreign_organs = list(/obj/item/organ/internal/psionic_tumor)
 
 	owner_verbs = list(
 		/obj/item/organ/internal/nanogate/proc/nanite_message,
