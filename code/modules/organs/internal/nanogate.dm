@@ -1,7 +1,7 @@
 // Similar to the psionic tumor, this organ give people abilities.
 /obj/item/organ/internal/nanogate
 	name = "Nanogate"
-	health = 400 //They need to live awhile longer than other organs. Is this even used by organ code anymore?
+	max_damage = 60
 	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses."
 	organ_efficiency = list(BP_NANOGATE = 100)
 	parent_organ_base = BP_HEAD // It's at the base of the skull in the spine.

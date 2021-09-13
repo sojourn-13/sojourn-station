@@ -163,7 +163,7 @@ var/cop_code_last
 /mob/living/carbon/human/proc/codespeak_warcrime_local()
 	set category = "Codespeak"
 	set name = "(local) Attack?"
-	src.codesay("Engage?", FALSE, TRUE) //TODO: Replace with something that sounds good
+	src.codesay("Permission to engage?", FALSE, TRUE) //TODO: Replace with something that sounds good
 
 /mob/living/carbon/human/proc/codespeak_run_local()
 	set category = "Codespeak"
