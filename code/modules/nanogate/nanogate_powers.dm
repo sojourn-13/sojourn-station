@@ -1,8 +1,8 @@
 // This is where you write the powers for the nanogate implant/organ. Keep in mind that the points it use are only regenerated as the beginning of the shift.
 /*
 The user get a limited pool of points at shift start and has no way of regenerating or getting more points.
-He can use those points to either build & upgrade a robot companion similar to a shroomling, upgrade themselves, or mix and match both option.
-Each power can only be buyed once.
+He can use those points to either build & upgrade a robot companion similar to a shroomling, upgrade themselves, upgrade their suit, or mix and match both option.
+Each power can only be bought once.
 Opifex have access to a better version with a bigger point pool and more available powers to buy.
 
 The powers here are those that don't currently fit in any categories
@@ -14,7 +14,7 @@ List of powers in this page :
 /obj/item/organ/internal/nanogate/proc/nanite_message()
 	set category = "Nanogate Powers"
 	set name = "Nanite Message"
-	set desc = "Send a message to someone else that has a nanogate."
+	set desc = "Send a message to anyone who also has a nanogate."
 	nano_point_cost = 0 // It's free.
 
 	var/list/mob/living/carbon/human/target_list = list() // Who we can talk to

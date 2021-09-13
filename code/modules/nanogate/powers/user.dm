@@ -4,17 +4,15 @@ List of powers in this page :
 - Regeneration : Give the user a perk that constantly heal himself at a very slow rate defined in the perk itself.
 - Speed Booster : Give the user a perk that make him move faster, the speed increase being defined in the perk itself.
 - Armor Upgrade : Give the user a perk that reduce damage, again the precise number is defined in the perk given.
-- Spawn Knife : Allow the user to create Nanite Knifes at will. The knives disapear once they leave the user's hand.
-- Spawn Omnitool : Opifex-only. The same as 'Spawn Knife', except with an omnitool rather than a knife.
 - Chemical Injection : Allow the user to choose a type of nanite chem to inject himself, then give him a perk that will do the injection when the user want.
 */
 
 // Give the user a perk that constantly heal a tiny bit of damage.
 /obj/item/organ/internal/nanogate/proc/nanite_regen()
 	set category = "Nanogate Powers"
-	set name = "Nanite Regeneration (1)"
-	set desc = "Spend some of your nanites to constantly repair your body."
-	nano_point_cost = 1
+	set name = "Nanite Regeneration (8)"
+	set desc = "Spend a large portion of your nanites to restore and repair your body by enhancing your natural healing."
+	nano_point_cost = 8
 
 	if(!owner.stats.getPerk(PERK_NANITE_REGEN)) // Do they already have the bot?
 		if(pay_power_cost(nano_point_cost))
@@ -27,62 +25,32 @@ List of powers in this page :
 // Give the user a perk that make him move faster
 /obj/item/organ/internal/nanogate/proc/nanite_muscle()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Muscle (1)"
-	set desc = "Spend some of your nanites to create nanites muscle to allow you to walk faster."
+	set name = "Nanite Augment - Muscle (2)"
+	set desc = "Spend some of your nanites to create nanite muscle to allow you to move faster."
 	nano_point_cost = 2 // Install two augments on both legs
 
 	if(!owner.stats.getPerk(PERK_NANITE_MUSCLE)) // Do they already have the perk?
 		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
+			to_chat(owner, "You permanently assign some of your nanites to enhancing your physical movement.")
 			owner.stats.addPerk(PERK_NANITE_MUSCLE)
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_muscle
 	else
-		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
+		to_chat(owner, "Assigning more nanites to enhance your muscles wouldn't offer any benefit.")
 
 // Give the user a perk that reduce incoming damage
 /obj/item/organ/internal/nanogate/proc/nanite_armor()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Armor (1)"
-	set desc = "Spend some of your nanites to create nanite armor to protect your body."
-	nano_point_cost = 1
+	set name = "Nanite Augment - Armor (3)"
+	set desc = "Spend some of your nanites to create nanite weave mesh to protect your body."
+	nano_point_cost = 3
 
 	if(!owner.stats.getPerk(PERK_NANITE_ARMOR)) // Do they already have the perk?
 		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
+			to_chat(owner, "You permanently assign some of your nanites to act as a reactive nano-weave armor, allowing you to resist physical brute damage.")
 			owner.stats.addPerk(PERK_NANITE_ARMOR)
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_armor
 	else
-		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
-
-// Allow the user to create a nanite blade at will
-/obj/item/organ/internal/nanogate/proc/nanite_blade()
-	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Blade (1)"
-	set desc = "Spend some of your nanites to create nanites blades to harm your foes."
-	nano_point_cost = 1
-
-	if(!owner.stats.getPerk(PERK_NANITE_KNIFE)) // Do they already have the perk?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
-			owner.stats.addPerk(PERK_NANITE_KNIFE)
-			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_blade
-	else
-		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
-
-// Allow the user to create a nanite omnitool at will
-/obj/item/organ/internal/nanogate/proc/nanite_tool()
-	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Omnitool (1)"
-	set desc = "Spend some of your nanites to create nanites blades to harm your foes."
-	nano_point_cost = 1
-
-	if(!owner.stats.getPerk(PERK_NANITE_TOOL)) // Do they already have the perk?
-		if(pay_power_cost(nano_point_cost))
-			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
-			owner.stats.addPerk(PERK_NANITE_TOOL)
-			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_tool
-	else
-		to_chat(owner, "Assigning more nanites to repairing your body wouldn't give you a boost in regeneration rate.")
+		to_chat(owner, "Your nanites are already providing as much armor as they can.")
 
 // Allow the user to inject themselves with a chosen nanite.
 /obj/item/organ/internal/nanogate/proc/nanite_chem()
@@ -99,4 +67,4 @@ List of powers in this page :
 	if(choice && pay_power_cost(nano_point_cost)) // Check if the user actually made a choice, and if they did, check if they have the points.
 		owner.stats.addPerk(choice)
 		to_chat(owner, "You permanently convert some of your nanites into specialized variants.")
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_tool
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_chem

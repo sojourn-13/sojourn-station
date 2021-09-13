@@ -655,6 +655,6 @@
 	last_invoke = world.time
 
 	playsound(src.loc, 'sound/hallucinations/ghosty_wind.ogg', 25, 1) // Faintly spooky wind
-	to_chat(usr, "You invoke the hidden potential from this long forgotten mask, your mind becomes cunning, your eyes sharp. The effect is temporary, but powerful.")
+	to_chat(usr, "You invoke the hidden potential from this long forgotten mask, your mind becomes cunning, your eyes sharp, you hear the wind howling. The effect is temporary, but powerful.")
 	M.stats.addTempStat(STAT_COG, 30, 30 MINUTES, "bonedog_mask")
 	M.stats.addTempStat(STAT_VIG, 15, 30 MINUTES, "bonedog_mask")
