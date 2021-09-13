@@ -1,7 +1,7 @@
 // Similar to the psionic tumor, this organ give people abilities.
 /obj/item/organ/internal/nanogate
 	name = "Nanite Gate"
-	max_damage = 400 //They need to live awhile longer than other organs. Is this even used by organ code anymore?
+	max_damage = 60
 	desc = "TODO"
 	organ_efficiency = list(BP_NANOGATE = 100)
 	parent_organ_base = BP_CHEST // It's in the spine.

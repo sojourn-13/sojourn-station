@@ -29,7 +29,7 @@
 
 /obj/item/organ/internal/nanogate/proc/remove_foreign()
 	for(var/obj/item/organ/O in owner.internal_organs)
-		if(istype(O, /obj/item/organ/internal/psionic_tumor) && !(O.status & ORGAN_DEAD)) // If we have the forbidden organ and we didn't kill it already
+		if(!(O.status & ORGAN_DEAD) && istype(O, /obj/item/organ/internal/psionic_tumor)) // If we have the forbidden organ and we didn't kill it already
 			to_chat(owner, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel an immense pain in [O.get_limb()]."))
 			if(istype(O, /obj/item/organ/external))
 				var/obj/item/organ/external/E = O
