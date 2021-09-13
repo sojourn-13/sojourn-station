@@ -37,7 +37,6 @@
 	particular organ is the result of development while inside the brain of someone who understands the mind intimiately, offering them expanded powers and abilities when working as a Soteria psych."
 	implant_organ_type = "cultured tumor"
 	restricted_jobs = list(
-		/datum/job/cmo,
 		/datum/job/doctor,
 		/datum/job/orderly,
 		/datum/job/paramedic

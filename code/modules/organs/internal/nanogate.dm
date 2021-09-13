@@ -1,11 +1,11 @@
 // Similar to the psionic tumor, this organ give people abilities.
 /obj/item/organ/internal/nanogate
-	name = "Nanite Gate"
+	name = "Nanogate"
 	max_damage = 60
-	desc = "TODO"
+	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses."
 	organ_efficiency = list(BP_NANOGATE = 100)
-	parent_organ_base = BP_CHEST // It's in the spine.
-	icon_state = "psion_tumor"
+	parent_organ_base = BP_HEAD // It's at the base of the skull in the spine.
+	icon_state = "psion_tumor" //TODO: Replace this with a proper sprite.
 	force = 1.0
 	w_class = ITEM_SIZE_SMALL
 	specific_organ_size = 0.5
@@ -40,7 +40,6 @@
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
 		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
-		/obj/item/organ/internal/nanogate/proc/nanite_blade,
 		/obj/item/organ/internal/nanogate/proc/nanite_chem,
 
 		// Rig Upgrades
@@ -51,11 +50,22 @@
 
 		)
 
+// Guild made the original blue prints. There version is better than the one they give to others,
+obj/item/organ/internal/nanogate
+	name = "Artificer Nanogate"
+	icon_state = "psion_tumor" //TODO: Replace this with a proper sprite. AG branded.
+	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses. This \
+	particular design is made by the Artificer Guild, able to store more nanites for additional uses."
+	nanite_points = 15
+
 // Opifexes are the creator of the tech, they get a better one.
 /obj/item/organ/internal/nanogate/opifex
 	name = "Opifex Nanite Gate"
+	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses. This \
+	particular design is an opifex original and one of the best that can be found in the galaxy."
+	icon_state = "psion_tumor" //TODO: Replace this with a proper sprite. Opifex branded.
 	price_tag = 20000 // Better than the standard one.
-	nanite_points = 15
+	nanite_points = 20
 
 	owner_verbs = list(
 		/obj/item/organ/internal/nanogate/proc/nanite_message,
@@ -77,8 +87,6 @@
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
 		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
-		/obj/item/organ/internal/nanogate/proc/nanite_blade,
-		/obj/item/organ/internal/nanogate/proc/nanite_tool,
 		/obj/item/organ/internal/nanogate/proc/nanite_chem,
 
 		// Rig Upgrades

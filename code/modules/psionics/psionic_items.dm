@@ -392,12 +392,18 @@
 	var/use = 1 // Number of times it can be used.
 	var/point_per_use = 1 // Amount of points it give to a psion each use.
 
+/obj/item/psi_injector/update_icon()
+	if(use <= 0)
+		icon_state = "psi_inhaler_used"
+
+
 /obj/item/psi_injector/examine(mob/user)
 	..()
 	to_chat(user, "It has [use] uses left.")
 	to_chat(user, "It can give [point_per_use] essence per use to a psion.")
 
 /obj/item/psi_injector/attack(atom/target, mob/user)
+	update_icon()
 	if(ishuman(target)) // Check if it's an actual mob and not a wall
 		var/mob/living/carbon/human/T = target
 		var/obj/item/organ/internal/psionic_tumor/PT = T.random_organ_by_process(BP_PSION)
@@ -408,12 +414,15 @@
 										"[user.name] injects [point_per_use] dose into [T.name]'s body.")
 					PT.psi_points += point_per_use
 					use--
+					update_icon()
 					return
 				else
 					to_chat(user, "The [src.name] has no doses left.")
+					update_icon()
 					return
 			else
 				to_chat(user, "[T.name] already has the maximum amount of essence \his body can hold.")
+				update_icon()
 				return
 		else
 			to_chat(user, "You can't inject this into a non-psion.")
@@ -606,3 +615,46 @@
 	if(!pointgranted)
 		occultist.stats.changeStat(STAT_COG, 5)
 		pointgranted = 1
+
+// Special items.
+/obj/item/clothing/mask/gas/bonedog
+	name = "Mask of the Bone Dog"
+	desc = "The ivory bleached skull of some kind of canine. Was this a trophy of a wolf slain in battle or a token of a lost pet taken and remembered by its master? Perhaps it is the skull of a kriosan, \
+	the result of a rivalry remembered in blood. Oddly, this non-conductive bone mask is quite durable and protects from radiation, sickness, and harmful gases. Even to the untrained, this item \
+	has obvious psionic potential."
+	icon_state = "bonedog"
+	siemens_coefficient = 1 // Non-conductive
+	matter = list(MATERIAL_BONE = 5, MATERIAL_BIOMATTER = 2)
+	armor = list(
+		melee = 40,
+		bullet = 20,
+		energy = 5,
+		bomb = 5,
+		bio = 100,
+		rad = 100
+	) // Thematic with the lodge bone armor in terms of defense, has bio/rad because theme but without a suit it doesn't do much. Not that great compared to most helmets, you want it for the stats. -Kaz
+	price_tag = 0
+	var/mask_cooldown_time = 25 MINUTES
+	var/last_invoke = -16000
+
+// If you renew it every 25 minutes (in the 5 minute window before it ends), you effectively have +30 cog/+15 vig with some upkeep. Great for a psion and thematic with the kriosan skull. -Kaz
+// Thematically, the dead must be remembered periodically, lest they and the things they offer be forgotten.
+/obj/item/clothing/mask/gas/bonedog/verb/invoke_spirit(var/mob/M)
+	set name = "Invoke Mask"
+	set desc = "Invoke the psionic potential left in this skull."
+	set category = "Object"
+
+	if(!usr.stats.getPerk(PERK_PSION))
+		to_chat(usr, "<span class='notice'>You lack the psionic potential to invoke this.</span>")
+		return
+
+	if((last_invoke + mask_cooldown_time) >= world.time)
+		to_chat(usr, "<span class='notice'>[name] needs more time to regenerate.</span>")
+		return
+
+	last_invoke = world.time
+
+	playsound(src.loc, 'sound/hallucinations/ghosty_wind.ogg', 25, 1) // Faintly spooky wind
+	to_chat(usr, "You invoke the hidden potential from this long forgotten mask, your mind becomes cunning, your eyes sharp, you hear the wind howling. The effect is temporary, but powerful.")
+	M.stats.addTempStat(STAT_COG, 30, 30 MINUTES, "bonedog_mask")
+	M.stats.addTempStat(STAT_VIG, 15, 30 MINUTES, "bonedog_mask")

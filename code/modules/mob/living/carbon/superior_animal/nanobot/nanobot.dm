@@ -56,10 +56,10 @@
 	var/currently_healing = FALSE
 	var/injection_amount = 15 //How much reagent do we inject at a time?
 	var/heal_threshold = 10 //Start healing when they have this much damage in a category
-	var/treatment_brute = "tricordrazine"
-	var/treatment_oxy = "tricordrazine"
-	var/treatment_fire = "tricordrazine"
-	var/treatment_tox = "tricordrazine"
+	var/treatment_brute = "bicaridine"
+	var/treatment_oxy = "dexalinp"
+	var/treatment_fire = "dermaline"
+	var/treatment_tox = "carthatoline"
 	var/treatment_virus = "spaceacillin"
 
 /mob/living/carbon/superior_animal/nanobot/New()
@@ -84,7 +84,7 @@
 
 /mob/living/carbon/superior_animal/nanobot/death()
 	if(controller) // Is there someone currently controlling the bot when it died?
-		to_chat(src, "You are suddenly shunted out of your nanobot as it die.")
+		to_chat(src, "You are suddenly shunted out of your nanobot as it dies.")
 		controller.adjustBrainLoss(rand(5, 10)) // Get some brain damage.
 		return_mind() // Send them back
 	. = ..()
