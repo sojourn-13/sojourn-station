@@ -14,13 +14,32 @@
 			else
 				B = new /obj/item/organ/internal/nanogate
 			B.replaced(chest)
+			return TRUE
+	return FALSE
 
 // The main process
 /obj/item/organ/internal/nanogate/Process()
 	..()
 
+	if(round(world.time) % 5 == 0)
+		remove_foreign()
+
 	if(!owner.stats.getPerk(PERK_NANOGATE))
 		owner.stats.addPerk(PERK_NANOGATE)
+
+/obj/item/organ/internal/nanogate/proc/remove_foreign()
+	to_chat(owner, "Removing foreign organ.")
+	for(var/obj/item/organ/O in foreign_organs)
+		to_chat(owner, "Searching list, current item : [O].")
+		if((locate(O) in owner.organs)) // If we have the forbidden organ
+			to_chat(owner, SPAN_DANGER("Your nanite gate send an message : \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel an immense pain in [O.get_limb()]."))
+			if(istype(O, /obj/item/organ/external))
+				var/obj/item/organ/external/E = O
+				E.droplimb()
+			else
+				O.die()
+			return TRUE
+	return FALSE
 
 // Check if there's enough nano points and remove them.
 /obj/item/organ/internal/nanogate/proc/pay_power_cost(var/nano_cost)

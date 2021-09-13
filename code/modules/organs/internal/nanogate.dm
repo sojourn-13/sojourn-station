@@ -21,6 +21,8 @@
 	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
 	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
 
+	var/list/foreign_organs = list(/obj/item/organ/internal/psionic_tumor)
+
 	owner_verbs = list(
 		/obj/item/organ/internal/nanogate/proc/nanite_message,
 		// Creation and upgrade of the bot
