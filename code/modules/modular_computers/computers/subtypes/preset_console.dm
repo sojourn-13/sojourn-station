@@ -193,6 +193,7 @@
 // Nanobot integrated Console.
 /obj/item/modular_computer/console/preset/nanobot
 	suitable_cell = /obj/item/cell/large
+	layer = ABOVE_MOB_LAYER
 
 /obj/item/modular_computer/console/preset/nanobot/install_default_hardware()
 	..()

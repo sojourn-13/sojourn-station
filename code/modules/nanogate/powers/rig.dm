@@ -20,8 +20,8 @@ List of powers in this page :
 
 	if(owner.can_equip(nanite_rig, slot_back, disable_warning = FALSE, skip_item_check = FALSE, skip_covering_check = TRUE))
 		if(pay_power_cost(nano_point_cost))
-			owner.visible_message("[owner.name]'s back erupt in a black goo that quickly transform into a rig.",
-									"Your spine hurt like hell as it expand into a rigsuit.")
+			owner.visible_message("[owner.name]'s back erupt in a black goo that quickly transform into a rig suit module.",
+									"Despite the nanites dulling the pain, your back still aches while your nanites form a rig suit on your back..")
 			owner.replace_in_slot(nanite_rig, slot_back, skip_covering_check = TRUE)
 			nanite_rig.seal_delay = initial(nanite_rig.seal_delay) // resetting the seal delay
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig

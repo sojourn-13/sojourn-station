@@ -1,25 +1,29 @@
 // Perks given by the nanogate organ
 
 /datum/perk/nanogate
-	name = "Spinal Nanite Implant"
-	desc = "You have a nanogate implant in your spine."
-	gain_text = "Your spine hurt for a bit."
+	name = "Nanogate Implant"
+	desc = "At some point you chose to have a nanogate installed in your body, the metallic nanite based implant goes directly at the base of your skull right where your spine connects. While \
+	quite powerful and widely useful, the effects of having one has made it far more difficult to become inspired."
+	gain_text = "Your head aches for a moment, the effects of your spine having been seperated and an advanced machine slotted inbetween leaving you with a dull pain that is quickly cured \
+	by your nanites."
 
 /datum/perk/nanite_regen
 	name = "Nanite Regeneration"
-	desc = "You set the nanites in your body to the task of repairing your body of any damage it got."
-	gain_text = "Your spine hurt for a bit as the nanites start repairing the damage."
+	desc = "You configure your nanite matrix to begin aiding in your natural healing."
+	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	var/regen_rate = 1
 
 /datum/perk/nanite_muscle
-	name = "Nanite Muscles"
-	desc = "You set the nanites in your body to the task of making you move fast."
-	gain_text = "Your spine hurt for a bit as the nanites start make you faster."
+	name = "Nanite Muscle Therapy"
+	desc = "Through the use of pain killers and small dispersed drug therapy to critical areas your nanogate has enhanced your physical movement speed and endurance, allowing you to run for \
+	longer stretches at a faster pace without tiring."
+	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 
 /datum/perk/nanite_armor
-	name = "Nanite Armor"
-	desc = "You set the nanites in your body to the task of making you more resilient."
-	gain_text = "Your spine hurt for a bit as the nanites reinforce your body."
+	name = "Nanite Skin-Weave"
+	desc = "Through the use of reactive nanites designed to plate together into a shield your machines can reform at a lightning pace to let you physically resist incoming damage by forming a \
+	mesh weave shield just before a strike connects. Effective, but only against physical brute damage."
+	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	var/armor_mod = 0.3
 
 /datum/perk/nanite_armor/assign(mob/living/carbon/human/H)
@@ -30,44 +34,10 @@
 	..()
 	holder.brute_mod_perk += armor_mod
 
-/datum/perk/nanite_knife
-	name = "Nanite Knife"
-	desc = "You set the nanites in your body to the task of making you more resilient."
-	gain_text = "Your spine hurt for a bit as the nanites reinforce your body."
-	active = FALSE
-	passivePerk = FALSE
-
-/datum/perk/nanite_knife/activate()
-	..()
-	var/obj/item/tool/knife/nanite_blade/knife = new /obj/item/tool/knife/nanite_blade(src, holder)
-	holder.visible_message(
-		"[holder] clenches their fist, electricity crackling before a psionic blade forms in their hand!",
-		"You feel the rush of electric essence shocking your hand lightly before a psychic blade forms!"
-		)
-	playsound(holder.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
-	holder.put_in_active_hand(knife)
-
-/datum/perk/nanite_tool
-	name = "Nanite Omnitool"
-	desc = "You set the nanites in your body to the task of making you more resilient."
-	gain_text = "Your spine hurt for a bit as the nanites reinforce your body."
-	active = FALSE
-	passivePerk = FALSE
-
-/datum/perk/nanite_tool/activate()
-	..()
-	var/obj/item/tool/nanite_omnitool/tool = new /obj/item/tool/nanite_omnitool(src, holder)
-	holder.visible_message(
-		"[holder] clenches their fist, electricity crackling before a psionic blade forms in their hand!",
-		"You feel the rush of electric essence shocking your hand lightly before a psychic blade forms!"
-		)
-	playsound(holder.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
-	holder.put_in_active_hand(tool)
-
 /datum/perk/nanite_chem
-	name = "Nanite Chemical"
-	desc = "You can send the prepared nanites into your bloodstream at a moment's notice, but only once."
-	gain_text = "Your spine hurt for a bit as the nanites convert themselves."
+	name = "Nanite Chemicals"
+	desc = "You program and set aside a specific subset of nanites who have a singular purpose that you can call upon at any time to engage their effect, but this only works once."
+	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
 	var/chem_id = "nanites"
@@ -75,7 +45,7 @@
 
 /datum/perk/nanite_chem/activate()
 	..()
-	to_chat(holder, "Your spine hurt as the converted nanites enter your bloodstream.")
+	to_chat(holder, "You feel a sudden rush as the pre-programed nanites enter your bloodstream.")
 	holder.reagents.add_reagent(chem_id, chem_amount)
 	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 
@@ -96,7 +66,7 @@
 	chem_id = "cbc"
 
 /datum/perk/nanite_chem/purgers
-	name = "Purgers Nanites"
+	name = "Purger Nanites"
 	chem_id = "nanopurgers"
 
 /datum/perk/nanite_chem/oxyrush
@@ -104,5 +74,5 @@
 	chem_id = "oxyrush"
 
 /datum/perk/nanite_chem/nantidotes
-	name = "Nantidotes Nanites"
+	name = "Nantidotes"
 	chem_id = "nantidotes"

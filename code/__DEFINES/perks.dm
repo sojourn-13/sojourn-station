@@ -88,8 +88,6 @@
 #define PERK_PSI_PEACE /datum/perk/psi_peace_of_the_psion
 #define PERK_PSI_GRACE /datum/perk/psi_grace
 
-
-
 // Nanogate Perks
 #define PERK_NANOGATE /datum/perk/nanogate
 #define PERK_NANITE_REGEN /datum/perk/nanite_regen
