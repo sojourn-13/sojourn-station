@@ -75,3 +75,37 @@
 
 /obj/item/clothing/head/helmet/space/rig/nanite
 	name = "hood"
+
+/obj/item/rig/nanite/verb/remove_tank()
+	set name = "Eject air tank"
+	set desc = "Eject the hardsuit's air tank"
+	set category = "Hardsuit"
+	set src = usr.contents
+
+	if(!air_supply)
+		to_chat(usr, "There is not tank to remove.")
+		return
+	else
+		usr.put_in_hands(air_supply)
+		to_chat(usr, "You detach and remove \the [air_supply].")
+		air_supply = null
+		return
+
+/obj/item/rig/nanite/verb/insert_tank()
+	set name = "Insert air tank"
+	set desc = "Insert an air canister in the rig"
+	set category = "Hardsuit"
+	set src = usr.contents
+
+	var/obj/item/tank/I = usr.get_active_hand()
+	if(istype(I, /obj/item/tank)) //Todo, some kind of check for suits without integrated air supplies.
+		if(air_supply)
+			to_chat(usr, "\The [src] already has a tank installed.")
+			return
+
+		if(!usr.unEquip(I))
+			return
+		air_supply = I
+		I.forceMove(src)
+		to_chat(usr, "You slot [I] into [src] and tighten the connecting valve.")
+		return
