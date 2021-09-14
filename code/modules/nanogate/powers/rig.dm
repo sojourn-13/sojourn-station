@@ -26,6 +26,25 @@ List of powers in this page :
 			nanite_rig.seal_delay = initial(nanite_rig.seal_delay) // resetting the seal delay
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig
 
+// Create the *opifex* nanite rig
+/obj/item/organ/internal/nanogate/proc/nanite_rig_opifex()
+	set category = "Nanogate Powers"
+	set name = "Nanite Rigsuit - Installation (3)"
+	set desc = "Convert some of your nanites into a permanent rigsuit attached to your spine."
+	nano_point_cost = 3
+
+	if(!nanite_rig)
+		nanite_rig = new /obj/item/rig/nanite(src)
+		nanite_rig.seal_delay = 0 // No delay to put it on because nanites, and moving while putting it one make it disapear
+
+	if(owner.can_equip(nanite_rig, slot_back, disable_warning = FALSE, skip_item_check = FALSE, skip_covering_check = TRUE))
+		if(pay_power_cost(nano_point_cost))
+			owner.visible_message("[owner.name]'s back erupt in a black goo that quickly transform into a rig suit module.",
+									"Despite the nanites dulling the pain, your back still aches while your nanites form a rig suit on your back..")
+			owner.replace_in_slot(nanite_rig, slot_back, skip_covering_check = TRUE)
+			nanite_rig.seal_delay = initial(nanite_rig.seal_delay) // resetting the seal delay
+			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_opifex
+
 // Give the nanite rig a storage module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_storage()
 	set category = "Nanogate Powers"

@@ -29,6 +29,9 @@
 	var/charge_tick = 10
 	var/recharge_time = 10
 
+/obj/item/rig/nanite/opifex
+	air_type = /obj/item/tank/emergency_nitgen
+
 /obj/item/rig/nanite/New()
 	..()
 	Initialize()
