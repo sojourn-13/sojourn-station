@@ -192,7 +192,6 @@
 	wielded_icon = "soulcrusher_wielded"
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	force_unwielded = WEAPON_FORCE_ROBUST
-	force_wielded = WEAPON_FORCE_ROBUST
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_SHOVELING = 1, QUALITY_DIGGING = 1, QUALITY_HAMMERING = 50, QUALITY_WELDING = 21)
 	origin_tech = list()
@@ -639,7 +638,7 @@
 
 // If you renew it every 25 minutes (in the 5 minute window before it ends), you effectively have +30 cog/+15 vig with some upkeep. Great for a psion and thematic with the kriosan skull. -Kaz
 // Thematically, the dead must be remembered periodically, lest they and the things they offer be forgotten.
-/obj/item/clothing/mask/gas/bonedog/verb/invoke_spirit(var/mob/M)
+/obj/item/clothing/mask/gas/bonedog/verb/invoke_spirit(var/mob/living/carbon/human/M)
 	set name = "Invoke Mask"
 	set desc = "Invoke the psionic potential left in this skull."
 	set category = "Object"
