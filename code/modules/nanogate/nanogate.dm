@@ -2,17 +2,20 @@
 
 // Proc to give people nanogates. Add the organ, and it will do the rest.
  // HOW TO USE: Right click person -> Click 'Advanced Proc Call Target -> Type 'give_nanogate' -> Click finish to give a normal nanogate, click 'num' then type '1', *then* finished to give them an opifex nanogate.
-/mob/proc/give_nanogate(var/opifex = FALSE)
+/mob/proc/give_nanogate(var/gate_type = "Standard")
 	var/mob/living/carbon/human/user = src
 	if(istype(user))
 		var/obj/item/organ/external/chest = user.get_organ(BP_CHEST)
 
 		if(chest)
 			var/obj/item/organ/internal/nanogate/B
-			if(opifex)
-				B = new /obj/item/organ/internal/nanogate/opifex
-			else
-				B = new /obj/item/organ/internal/nanogate
+			switch(gate_type)
+				if("Standard")
+					B = new /obj/item/organ/internal/nanogate
+				if("Artificer")
+					B = new /obj/item/organ/internal/nanogate/artificer
+				if("Opifex")
+					B = new /obj/item/organ/internal/nanogate/opifex
 			B.replaced(chest)
 			return TRUE
 	return FALSE

@@ -51,7 +51,7 @@
 		)
 
 // Guild made the original blue prints. There version is better than the one they give to others,
-obj/item/organ/internal/nanogate
+obj/item/organ/internal/nanogate/artificer
 	name = "Artificer Nanogate"
 	icon_state = "psion_tumor" //TODO: Replace this with a proper sprite. AG branded.
 	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses. This \
@@ -60,7 +60,7 @@ obj/item/organ/internal/nanogate
 
 // Opifexes are the creator of the tech, they get a better one.
 /obj/item/organ/internal/nanogate/opifex
-	name = "Opifex Nanite Gate"
+	name = "Opifex Nanogate"
 	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses. This \
 	particular design is an opifex original and one of the best that can be found in the galaxy."
 	icon_state = "psion_tumor" //TODO: Replace this with a proper sprite. Opifex branded.
