@@ -5,6 +5,8 @@ List of powers in this page :
 - Speed Booster : Give the user a perk that make him move faster, the speed increase being defined in the perk itself.
 - Armor Upgrade : Give the user a perk that reduce damage, again the precise number is defined in the perk given.
 - Chemical Injection : Allow the user to choose a type of nanite chem to inject himself, then give him a perk that will do the injection when the user want.
+- Tool/Gun Mods : Give the user a modification that they chose from a list. The only reusable power.
+- Nanite Ammo : Give the user a perk that can spawn an ammo box of a specified type every 30 minutes. Delay defined in the perk itself.
 */
 
 // Give the user a perk that constantly heal a tiny bit of damage.
@@ -64,7 +66,74 @@ List of powers in this page :
 
 	var/datum/perk/nanite_chem/choice = input(owner, "Which nanite chem do you want?", "Chem Choice", null) as null|anything in choices_perk
 
-	if(choice && pay_power_cost(nano_point_cost)) // Check if the user actually made a choice, and if they did, check if they have the points.
+	if(choice && owner.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(nano_point_cost)) // Check if the user actually made a choice, and if they did, check if they have the points.
 		owner.stats.addPerk(choice)
 		to_chat(owner, "You permanently convert some of your nanites into specialized variants.")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_chem
+
+// Give the user a tool or gun mod
+/obj/item/organ/internal/nanogate/proc/nanite_mod()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Tool Mod (1)"
+	set desc = "Spend some of your nanites to create a tool or gun mod."
+	nano_point_cost = 1
+	var/list/choices_mods = typesof(/obj/item/tool_upgrade) // Get every tool mod
+	// Remove the parents of the toolmods
+	choices_mods -= list(/obj/item/tool_upgrade,
+						/obj/item/tool_upgrade/reinforcement,
+						/obj/item/tool_upgrade/productivity,
+						/obj/item/tool_upgrade/refinement,
+						/obj/item/tool_upgrade/augment,
+						/obj/item/tool_upgrade/armor
+						)
+
+	choices_mods += typesof(/obj/item/gun_upgrade) // Get every gun mod
+
+	// Remove the parents of the gunmods
+	choices_mods -= list(/obj/item/gun_upgrade,
+						/obj/item/gun_upgrade/barrel,
+						/obj/item/gun_upgrade/muzzle,
+						/obj/item/gun_upgrade/mechanism,
+						/obj/item/gun_upgrade/trigger,
+						/obj/item/gun_upgrade/magwell,
+						/obj/item/gun_upgrade/scope
+						)
+
+	// Removing the mods that shouldn't be available : AKA Bluespace, Greyson and AI stuff
+	choices_mods -= list(/obj/item/tool_upgrade/augment/holding_tank,
+						/obj/item/tool_upgrade/augment/ai_tool,
+						/obj/item/tool_upgrade/augment/ai_tool_excelsior,
+						/obj/item/tool_upgrade/augment/repair_nano,
+						/obj/item/tool_upgrade/augment/randomizer,
+						/obj/item/tool_upgrade/artwork_tool_mod,
+						/obj/item/gun_upgrade/mechanism/glass_widow,
+						/obj/item/gun_upgrade/mechanism/greyson_master_catalyst,
+						/obj/item/gun_upgrade/mechanism/brass_kit,
+						/obj/item/gun_upgrade/trigger/honker,
+						/obj/item/gun_upgrade/mechanism/bikehorn,
+						/obj/item/gun_upgrade/mechanism/faulty_trapped,
+						/obj/item/gun_upgrade/trigger/faulty,
+						/obj/item/gun_upgrade/barrel/faulty,
+						/obj/item/gun_upgrade/muzzle/faulty,
+						/obj/item/gun_upgrade/mechanism/faulty,
+						/obj/item/gun_upgrade/scope/faulty
+						)
+
+	var/obj/item/choice = input(owner, "Which modification do you want?", "Mod Choice", null) as null|anything in choices_mods
+
+	if(choice && pay_power_cost(nano_point_cost))
+		to_chat(owner, "You permanently assign some of your nanites to create a modification.")
+		owner.put_in_hands(new choice(owner.loc))
+
+// Give the user a perk that allow them to create an ammo box every 30 minutes
+/obj/item/organ/internal/nanogate/proc/nanite_ammo()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Ammo (1)"
+	set desc = "Spend some of your nanites to create an ammo."
+	nano_point_cost = 1
+
+	if(!owner.stats.getPerk(PERK_NANITE_AMMO)) // Do they already have the perk?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to create ammunition boxes.")
+			owner.stats.addPerk(PERK_NANITE_AMMO)
+			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_ammo
