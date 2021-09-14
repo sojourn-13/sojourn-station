@@ -12,6 +12,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
 	var/log_say = 0						// log client say
+	var/fps = 20						// Exactly what it says on the tin. Client
 	var/log_admin = 0					// log admin actions
 	var/log_debug = 1					// log debug output
 	var/log_game = 0					// log game events
@@ -535,6 +536,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if("ticklag")
 					Ticklag = text2num(value)
 
+				if("fps")
+					fps = text2num(value)
+
 				if("tick_limit_mc_init")
 					tick_limit_mc_init = text2num(value)
 
@@ -749,11 +753,11 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if("use_loyalty_implants")
 					config.use_loyalty_implants = 1
 
-
-
-
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
+	fps = round(fps)
+	if(fps <= 0)
+		fps = initial(fps)
 
 /datum/configuration/proc/loadsql(filename)  // -- TLE
 	var/list/Lines = file2list(filename)
