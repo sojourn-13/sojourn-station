@@ -278,7 +278,7 @@
 	desc = "An old .408 rifle bullet casing."
 	icon_state = "lrifle_c_s"
 	spent_icon = "lrifle_c_s-spent"
-	caliber = CAL_LRIFLE
+	caliber = CAL_HRIFLE
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/scrap
 
 /obj/item/ammo_casing/heavy_rifle_408/scrap/prespawned

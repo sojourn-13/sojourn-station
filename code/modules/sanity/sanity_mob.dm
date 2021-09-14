@@ -140,10 +140,10 @@
 			breakdowns -= B
 
 /datum/sanity/proc/handle_Insight()
-	if(owner.stats.getPerk(PERK_INSPIRED))
-		insight_passive_gain_multiplier = insight_passive_gain_multiplier * 1.5
-	if(owner.stats.getPerk(PERK_NANOGATE))
-		insight_passive_gain_multiplier = insight_passive_gain_multiplier / 2
+	//if(owner.stats.getPerk(PERK_INSPIRED)) //This uber fucked things, commenting it out for now to fix later. -Kaz
+	//	insight_passive_gain_multiplier = insight_passive_gain_multiplier * 1.5
+	//if(owner.stats.getPerk(PERK_NANOGATE))
+	//	insight_passive_gain_multiplier = insight_passive_gain_multiplier / 2
 	give_insight(INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier)
 	while(resting < max_resting && insight >= 100)
 		if(owner.stats.getPerk(PERK_ARTIST))
