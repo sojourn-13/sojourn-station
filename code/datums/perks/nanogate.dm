@@ -36,7 +36,7 @@
 
 /datum/perk/nanite_chem
 	name = "Nanite Chemicals"
-	desc = "You program and set aside a specific subset of nanites who have a singular purpose that you can call upon at any time to engage their effect, but this only works once."
+	desc = "You programmed and set aside a specific subset of nanites who have a singular purpose that you can call upon at any time to engage their effect, but this only works once."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
@@ -76,3 +76,23 @@
 /datum/perk/nanite_chem/nantidotes
 	name = "Nantidotes"
 	chem_id = "nantidotes"
+
+/datum/perk/nanite_ammo
+	name = "Nanite Ammunition"
+	desc = "You programmed and set aside a specific subset of nanites who have a singular purpose that you can call upon at any time to engage their effect."
+	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
+	active = FALSE
+	passivePerk = FALSE
+	var/cooldown = 30 MINUTES
+
+/datum/perk/nanite_ammo/activate()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Your nanites didn't ready an ammo box yet."))
+		return FALSE
+
+	var/list/ammo_boxes = typesof(/obj/item/ammo_magazine/ammobox)
+	ammo_boxes -= /obj/item/ammo_magazine/ammobox
+	var/obj/item/choice = input(usr, "Which type of ammo do you want?", "Ammo Choice", null) as null|anything in ammo_boxes
+	usr.put_in_hands(new choice(usr.loc))
+	cooldown_time = world.time + cooldown
+	return ..()

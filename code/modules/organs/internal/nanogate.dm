@@ -88,6 +88,8 @@ obj/item/organ/internal/nanogate
 		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
 		/obj/item/organ/internal/nanogate/proc/nanite_chem,
+		/obj/item/organ/internal/nanogate/proc/nanite_mod,
+		/obj/item/organ/internal/nanogate/proc/nanite_ammo,
 
 		// Rig Upgrades
 		/obj/item/organ/internal/nanogate/proc/nanite_rig,
