@@ -46,7 +46,8 @@
 		/obj/item/organ/internal/nanogate/proc/nanite_rig,
 		/obj/item/organ/internal/nanogate/proc/nanite_rig_storage,
 		/obj/item/organ/internal/nanogate/proc/nanite_rig_laser,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc,
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_eva
 
 		)
 
@@ -95,5 +96,6 @@ obj/item/organ/internal/nanogate/artificer
 		/obj/item/organ/internal/nanogate/proc/nanite_rig_opifex,
 		/obj/item/organ/internal/nanogate/proc/nanite_rig_storage,
 		/obj/item/organ/internal/nanogate/proc/nanite_rig_laser,
-		/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc,
+		/obj/item/organ/internal/nanogate/proc/nanite_rig_eva
 		)

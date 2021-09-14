@@ -97,3 +97,24 @@ List of powers in this page :
 		nanite_rig.install(autodoc_module)
 		to_chat(owner, "Your spine hurt as the nanites start to work on making an autodoc module.")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
+
+// Give the nanite rig an EVA Module
+/obj/item/organ/internal/nanogate/proc/nanite_rig_eva()
+	set category = "Nanogate Powers"
+	set name = "Nanite Rigsuit - EVA Upgrade (1)"
+	set desc = "Use some of your nanites to create thrusters inside your hardsuit."
+	nano_point_cost = 1
+
+	if(!nanite_rig)
+		to_chat(owner, "You need a rig to use this power you idiot.")
+		return
+
+	if(pay_power_cost(nano_point_cost))
+
+		// Creating it early because we need to manually initialize some stuff
+		var/obj/item/rig_module/maneuvering_jets/eva_module = new /obj/item/rig_module/maneuvering_jets(src)
+		eva_module.Initialize()
+
+		nanite_rig.install(eva_module)
+		to_chat(owner, "Your spine hurt as the nanites start to work on making an autodoc module.")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
