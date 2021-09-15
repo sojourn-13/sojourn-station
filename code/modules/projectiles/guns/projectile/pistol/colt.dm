@@ -12,7 +12,7 @@
 	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
-	damage_multiplier = 1.1
+	damage_multiplier = 1.2
 	recoil_buildup = 6
 	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)

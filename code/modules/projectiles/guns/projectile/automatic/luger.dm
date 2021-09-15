@@ -11,7 +11,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 6, MATERIAL_STEEL = 10)
 	price_tag = 650
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
-	damage_multiplier = 0.9
+	damage_multiplier = 1
 	recoil_buildup = 5
 	one_hand_penalty = 20
 	load_method = MAGAZINE

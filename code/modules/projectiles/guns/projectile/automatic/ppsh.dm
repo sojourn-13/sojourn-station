@@ -47,7 +47,7 @@
 	item_state = "ppv"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	price_tag = 1200
-	damage_multiplier = 0.7
+	damage_multiplier = 0.9
 	penetration_multiplier = 1.0
 	recoil_buildup = 5
 	one_hand_penalty = 20

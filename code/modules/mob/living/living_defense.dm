@@ -32,7 +32,7 @@
 
 	if(armor_effectiveness > 0) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage = round ( effective_damage + (armor_effectiveness - src.getarmor(def_zone, damagetype) / 2)) //We re-check are armor we over-pentrated
+			effective_damage += round ( effective_damage + (armor_effectiveness - src.getarmor(def_zone, damagetype) / 2)) //We re-check are armor we over-pentrated
 
 
 	//Here we can remove edge or sharpness from the blow
