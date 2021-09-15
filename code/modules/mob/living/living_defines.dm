@@ -69,7 +69,7 @@
 	var/list/chem_effects = list()
 
 	//Mutations populated at the start of the round; Used for genetics.
-	var/latent_mutations=""
+	var/latent_mutations = list()
 
 	//Mutations populated manually through genetic tampering.
 	var/datum/genetics/genetics_holder/active_mutations

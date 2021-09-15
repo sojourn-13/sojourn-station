@@ -1,20 +1,18 @@
-//Produce a copy of the mob this gene came from, with 
-
+//Macro: MUTATION_COPY
 /datum/genetics/mutation/copy_mob
-    key = "MUTATION_COPY"
-    embryo_descriptions = list(/datum/genetics/embryo_state/copy_mob_1)
-    active = TRUE
-    cloneGene = TRUE
-    New()
-        name = "Genetic Copy of [source_mob.name]"
+	name = "Genetic Copy of a disappointing placeholder"
+	embryo_descriptions = list(/datum/genetics/embryo_state/copy_mob_1)
+	clone_gene = TRUE
+
+/datum/genetics/mutation/copy_mob/New(var/mob/living/source)
+		source_mob = source
+		name = "Genetic Copy of [source_mob.name]"
 
 
 /datum/genetics/embryo_state/copy_mob_1
-    desc = "The embryo resembles its parent closely."
-    active_stage = 2 //What stage of development the descriptor becomes active.
+	desc = "The embryo resembles its parent closely."
+	active_stage = 2 //What stage of development the descriptor becomes active.
 
-/datum/genetics/mutation/proc/onClone()
-    //TODO: Spawn perfect copy in cloner.
-
-/datum/genetics/mutation/proc/onIrradiate()
-    //TODO: Create a switch statement of different mob types 
+/datum/genetics/mutation/copy_mob/onClone()
+	..()
+	//TODO: Spawn perfect copy in cloner.
