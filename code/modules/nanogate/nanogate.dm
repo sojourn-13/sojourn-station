@@ -2,25 +2,45 @@
 
 // Proc to give people nanogates. Add the organ, and it will do the rest.
  // HOW TO USE: Right click person -> Click 'Advanced Proc Call Target -> Type 'give_nanogate' -> Click finish to give a normal nanogate, click 'num' then type '1', *then* finished to give them an opifex nanogate.
-/mob/proc/give_nanogate(var/opifex = FALSE)
+/mob/proc/give_nanogate(var/gate_type = "Standard")
 	var/mob/living/carbon/human/user = src
 	if(istype(user))
 		var/obj/item/organ/external/chest = user.get_organ(BP_CHEST)
 
 		if(chest)
 			var/obj/item/organ/internal/nanogate/B
-			if(opifex)
-				B = new /obj/item/organ/internal/nanogate/opifex
-			else
-				B = new /obj/item/organ/internal/nanogate
+			switch(gate_type)
+				if("Standard")
+					B = new /obj/item/organ/internal/nanogate
+				if("Artificer")
+					B = new /obj/item/organ/internal/nanogate/artificer
+				if("Opifex")
+					B = new /obj/item/organ/internal/nanogate/opifex
 			B.replaced(chest)
+			return TRUE
+	return FALSE
 
 // The main process
 /obj/item/organ/internal/nanogate/Process()
 	..()
 
+	if(round(world.time) % 5 == 0)
+		remove_foreign()
+
 	if(!owner.stats.getPerk(PERK_NANOGATE))
 		owner.stats.addPerk(PERK_NANOGATE)
+
+/obj/item/organ/internal/nanogate/proc/remove_foreign()
+	for(var/obj/item/organ/O in owner.internal_organs)
+		if(!(O.status & ORGAN_DEAD) && istype(O, /obj/item/organ/internal/psionic_tumor)) // If we have the forbidden organ and we didn't kill it already
+			to_chat(owner, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel an immense pain in [O.get_limb()]."))
+			if(istype(O, /obj/item/organ/external))
+				var/obj/item/organ/external/E = O
+				E.droplimb()
+			else
+				O.die()
+			return TRUE
+	return FALSE
 
 // Check if there's enough nano points and remove them.
 /obj/item/organ/internal/nanogate/proc/pay_power_cost(var/nano_cost)

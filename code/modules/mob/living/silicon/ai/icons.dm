@@ -153,3 +153,8 @@ var/list/datum/ai_icon/ai_icons
 	name = "Triumvirate Static"
 	alive_icon = "ai-static"
 	alive_light = "#020B2B"
+
+/datum/ai_icon/door_command
+	name = "Law 2"
+	alive_icon = "ai-law2"
+	dead_icon = "ai-law2_dead"

@@ -303,29 +303,52 @@
 
 	else
 
+
 		var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_SCREW_DRIVING)
+
+		if(panel_open && circuit)
+			usable_qualities += QUALITY_PRYING
 
 		var/tool_type = I.get_tool_type(user, usable_qualities, src)
 		switch(tool_type)
 
 			if(QUALITY_BOLT_TURNING)
-				if(istype(get_turf(src), /turf/space) && !anchored)
-					to_chat(user, SPAN_NOTICE("You can't anchor something to empty space. Idiot."))
-					return
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					to_chat(user, SPAN_NOTICE("You [anchored ? "un" : ""]anchor the brace with [I]."))
-					anchored = !anchored
+				if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+					playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+					if(anchored)
+						to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
+						anchored = FALSE
+					else
+						if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
+						to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
+						anchored = TRUE
+
 					if(anchored)
 						connect_to_network()
 					else
 						disconnect_from_network()
 
-			if(QUALITY_SCREW_DRIVING) //combo drills omni tools ect
-				if(default_deconstruction(I, user))
 					return
+
+			if(QUALITY_PRYING)
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_HARD, required_stat = STAT_MEC))
+					to_chat(user, SPAN_NOTICE("You remove the components of \the [src] with [I]."))
+					dismantle()
+				return TRUE
+
+			if(QUALITY_SCREW_DRIVING)
+				var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+					updateUsrDialog()
+					panel_open = !panel_open
+					to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance hatch of \the [src] with [I]."))
+					update_icon()
+				return TRUE
+
 
 			if(ABORT_CHECK)
 				return
+
 
 /obj/machinery/power/port_gen/pacman/attack_hand(mob/user)
 	..()

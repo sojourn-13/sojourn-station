@@ -78,18 +78,22 @@
 #define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
 #define PERK_GREENTHUMB /datum/perk/greenthumb
+
+// Psionic perks
 #define PERK_PSION /datum/perk/psion
 #define PERK_PSI_MANIA /datum/perk/psi_mania
 #define PERK_PSI_HARMONY /datum/perk/psi_harmony
 #define PERK_PSI_ATTUNEMENT /datum/perk/psi_attunement
+#define PERK_PSI_PSYCHOLOGIST /datum/perk/psi_psychology
+#define PERK_PSI_PEACE /datum/perk/psi_peace_of_the_psion
+#define PERK_PSI_GRACE /datum/perk/psi_grace
 
 // Nanogate Perks
 #define PERK_NANOGATE /datum/perk/nanogate
 #define PERK_NANITE_REGEN /datum/perk/nanite_regen
 #define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
 #define PERK_NANITE_ARMOR /datum/perk/nanite_armor
-#define PERK_NANITE_KNIFE /datum/perk/nanite_knife
-#define PERK_NANITE_TOOL /datum/perk/nanite_tool
+#define PERK_NANITE_AMMO /datum/perk/nanite_ammo
 
 // Nanite Chem Perks.
 #define PERK_NANITE_CHEM /datum/perk/nanite_chem

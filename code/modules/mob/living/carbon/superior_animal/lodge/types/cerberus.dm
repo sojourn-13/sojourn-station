@@ -71,6 +71,31 @@
 	default_pixel_x = -16
 	pixel_x = -16
 
+/mob/living/carbon/superior_animal/lodge/cerberus/chimera/moon
+	name = "Luna"
+	desc = "A special chimera that evolved even further, Luna is one of two twins that act as companions to the Lodge Master and the Matriach."
+	gender = "female" // Luna's a girl
+
+	// Faster than her brother, but less durable.
+	move_to_delay = 2
+	maxHealth = 400
+	health = 400
+	melee_damage_lower = 40
+	melee_damage_upper = 45
+	armor = list(melee = 30, bullet = 30, energy = 20, bomb = 5, bio = 10, rad = 25)
+
+/mob/living/carbon/superior_animal/lodge/cerberus/chimera/sun
+	name = "Solis"
+	desc = "A special chimera that evolved even further, Solis is one of two twins that act as companions to the Lodge Master and the Matriach."
+	gender = "male" // Solis' a guy.
+
+	// More tanky than his sister, but slightly slower
+	maxHealth = 500
+	health = 500
+	melee_damage_lower = 50
+	melee_damage_upper = 55
+	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 10, bio = 15, rad = 25)
+
 //Baby cerberus
 //Grows into a cerberus or chimera. Credit to BigBimmer#2319 for the sprite.
 /mob/living/carbon/superior_animal/lodge/baby_cerberus

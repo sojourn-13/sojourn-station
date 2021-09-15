@@ -122,7 +122,7 @@
 
 	if(mind)
 		statpanel("Perks",src.stats.perk_stats)
-	
+
 	src.stats.initialized = TRUE
 
 /mob/living/carbon/human/ex_act(severity)
@@ -1219,13 +1219,17 @@ var/list/rank_prefix = list(\
 					C.install_default_modules_by_job(mind.assigned_job)
 					C.access.Add(mind.assigned_job.cruciform_access)
 					C.install_default_modules_by_path(mind.assigned_job)
-			if(I.implant_organ_type)
-				if(I.implant_organ_type == "psionic tumor")
+			switch(I.implant_organ_type)
+				if("psionic tumor")
 					src.make_psion()
-				else if(I.implant_organ_type == "opifex nanogate")
-					src.give_nanogate(TRUE)
-				else if(I.implant_organ_type == "nanogate")
-					src.give_nanogate()
+				if("cultured tumor")
+					src.make_psion_psych()
+				if("nanogate")
+					src.give_nanogate("Standard")
+				if("artificer nanogate")
+					src.give_nanogate("Artificer")
+				if("opifex nanogate")
+					src.give_nanogate("Opifex")
 
 	else
 		var/organ_type

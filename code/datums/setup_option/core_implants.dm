@@ -29,10 +29,25 @@
 		)
 	allow_modifications = FALSE
 	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
+
+/datum/category_item/setup_option/core_implant/psionic_tumor_psychiatrist
+	name = "Cultured Psionic Organ"
+	desc = "An unusual organ implanted by the Soteria research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Nadezhda. \
+	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body. This \
+	particular organ is the result of development while inside the brain of someone who understands the mind intimiately, offering them expanded powers and abilities when working as a Soteria psych."
+	implant_organ_type = "cultured tumor"
+	restricted_jobs = list(
+		/datum/job/doctor,
+		/datum/job/orderly,
+		/datum/job/paramedic
+	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
+	restricted_depts = SECURITY | COMMAND | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
+
 /* Commented out they get balanced and until the event they get added into.
 /datum/category_item/setup_option/core_implant/nanogate
 	name = "Nanogate"
-	desc = "TODO : Yell at -R4d6"
+	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses."
 	implant_organ_type = "nanogate"
 	restricted_jobs = list(
 		/datum/job/outsider // Nanogates are only available to colonist or allies.
@@ -40,9 +55,21 @@
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
+/datum/category_item/setup_option/core_implant/artificer_nanogate
+	name = "Artificer Nanogate"
+	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses. This \
+	particular design is made by the Artificer Guild, able to store more nanites for additional uses."
+	implant_organ_type = "artificer nanogate"
+	restricted_jobs = list(
+		/datum/job/outsider // Nanogates are only available to colonist or allies.
+		)
+	allow_modifications = TRUE
+	restricted_depts = SECURITY | COMMAND | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+
 /datum/category_item/setup_option/core_implant/opifex_nanogate
 	name = "Opifex Nanogate"
-	desc = "TODO : Yell at -R4d6"
+	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses. This \
+	particular design is an opifex original and one of the best that can be found in the galaxy."
 	implant_organ_type = "opifex nanogate"
 	restricted_jobs = list(
 		/datum/job/outsider // Nanogates are only available to colonist or allies.

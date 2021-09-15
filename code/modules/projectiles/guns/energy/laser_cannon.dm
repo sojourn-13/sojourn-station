@@ -29,6 +29,7 @@
 	recharge_time = 10
 	safety = FALSE
 	restrict_safety = TRUE
+	one_hand_penalty = 0 // It's mounted on the arm and there's no way to wield it.
 	twohanded = FALSE
 
 /obj/item/gun/energy/lasercannon/rnd

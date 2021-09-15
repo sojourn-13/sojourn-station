@@ -251,3 +251,40 @@
 	name = "low chance nightmare"
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 50 //Coin flip
+
+
+#define LUNA	/mob/living/carbon/superior_animal/lodge/cerberus/chimera/moon
+#define SOLIS	/mob/living/carbon/superior_animal/lodge/cerberus/chimera/sun
+
+// Bit flags to check which twins has spawned
+#define LUNA_FLAG 1
+#define SOLIS_FLAG 2
+
+/obj/random/mob/luna_solis
+	name = "random Luna and Solis"
+	alpha = 128
+	has_postspawn = TRUE
+
+	// I use those vars to prevent duplicates when trying to spawn the two of them.
+	var/spawned_twin = 0
+	var/twin_chance = 5 // The chance, in percentages, that we get both Luna and Solis instead of one of the two
+
+	item_to_spawn() // Spawn one of the two chimera twins
+		. = pick(LUNA, SOLIS) // '.' is the default return value, we're using it instead of directly using 'return' because we want to check what we got.
+		switch(.)
+			if(LUNA)
+				spawned_twin |= LUNA_FLAG
+			if(SOLIS)
+				spawned_twin |= SOLIS_FLAG
+
+	post_spawn()
+		if(prob(twin_chance))
+			if(!(spawned_twin & LUNA_FLAG))
+				new LUNA(src.loc)
+			if(!(spawned_twin & SOLIS_FLAG))
+				new SOLIS(src.loc)
+
+#undef LUNA
+#undef SOLIS
+#undef LUNA_FLAG
+#undef SOLIS_FLAG
