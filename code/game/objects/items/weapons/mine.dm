@@ -106,10 +106,11 @@
 			anchored = TRUE
 			armed = TRUE
 			update_icon()
-
+			log_and_message_admins(" - Mine armed at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 	update_icon()
 
 /obj/item/mine/attack_hand(mob/user)
+	src.add_fingerprint(user)
 	if(excelsior)
 		for(var/datum/antagonist/A in user.mind.antagonist)
 			if(A.id == ROLE_EXCELSIOR_REV && deployed)
@@ -157,6 +158,7 @@
 	. =..()
 
 /obj/item/mine/attackby(obj/item/I, mob/user)
+	src.add_fingerprint(user)
 	if(QUALITY_PULSING in I.tool_qualities)
 
 		if (deployed)
@@ -173,6 +175,7 @@
 			anchored = FALSE
 			armed = FALSE
 			update_icon()
+			log_and_message_admins(" - Mine disarmed at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 		return
 	else
 		if (deployed)   //now touching it with stuff that don't pulse will also be a bad idea
