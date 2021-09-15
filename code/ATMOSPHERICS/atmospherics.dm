@@ -11,6 +11,8 @@ Pipelines + Other Objects -> Pipe network
 */
 /obj/machinery/atmospherics
 
+	var/has_errored = FALSE //Used to get a debug message
+
 	auto_init = 0
 
 	anchored = 1
