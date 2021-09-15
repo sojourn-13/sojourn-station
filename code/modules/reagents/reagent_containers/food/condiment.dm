@@ -98,6 +98,14 @@
 					icon_state = "sugar"
 					desc = "A big bag of sugar, universal sweetener and cavity generator."
 					center_of_mass = list("x"=16, "y"=6)
+					if(prob(50))
+						icon_state = "sugarsmall"
+						desc = "Tasty space sugar!"
+				if("cornoil")
+					name = "Cooking Oil Bottle"
+					icon_state = "oliveoil"
+					desc = "A bottle of corn oil, for all your deep frying needs."
+					center_of_mass = list("x"=16, "y"=6)
 				else
 					name = "Misc Condiment Bottle"
 					if (reagents.reagent_list.len==1)
