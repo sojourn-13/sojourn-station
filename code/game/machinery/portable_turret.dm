@@ -302,7 +302,7 @@ var/list/turret_icons
 
 	var/obj/item/card/id/ID = I.GetIdCard()
 
-	if (user.a_intent != I_HURT)
+	if (user.a_intent == I_HELP)
 		if(stat & BROKEN)
 			if(QUALITY_PRYING in I.tool_qualities)
 				//If the turret is destroyed, you can remove it with a crowbar to
@@ -321,20 +321,21 @@ var/list/turret_icons
 					else
 						to_chat(user, SPAN_NOTICE("You remove the turret but did not manage to salvage anything."))
 					qdel(src) // qdel
+				return TRUE //No whacking the turret with tools on help intent
 
 		else if(QUALITY_BOLT_TURNING in I.tool_qualities)
 			if(enabled)
 				to_chat(user, SPAN_WARNING("You cannot unsecure an active turret!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 			if(wrenching)
 				to_chat(user, "<span class='warning'>Someone is already [anchored ? "un" : ""]securing the turret!</span>")
-				return
+				return TRUE //No whacking the turret with tools on help intent
 			if(debugopen)
 				to_chat(user, SPAN_WARNING("You can't secure the turret while the circuitry is exposed!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 			if(!anchored && isinspace())
 				to_chat(user, SPAN_WARNING("Cannot secure turrets in space!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 
 			user.visible_message( \
 					"<span class='warning'>[user] begins [anchored ? "un" : ""]securing the turret.</span>", \
@@ -362,7 +363,7 @@ var/list/turret_icons
 					to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
 					update_icon()
 			wrenching = 0
-
+			return TRUE //No whacking the turret with tools on help intent
 		else if(istype(I, /obj/item/card/id)||istype(I, /obj/item/modular_computer))
 			if(allowed(user))
 				locked = !locked
@@ -380,6 +381,7 @@ var/list/turret_icons
 					registered_names.Cut()
 					registered_names = list()
 					to_chat(user, SPAN_NOTICE("You access the debug board and reset the turret's access list."))
+					return TRUE //No whacking the turret with tools on help intent
 
 			else
 				if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD,  required_stat = STAT_COG))
@@ -402,6 +404,7 @@ var/list/turret_icons
 						hackfail = 0
 					else
 						to_chat(user, SPAN_WARNING("You fail to hack the ID reader, but avoid tripping the security protocol."))
+					return TRUE //No whacking the turret with tools on help intent
 
 		else if(QUALITY_SCREW_DRIVING in I.tool_qualities)
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD,  required_stat = STAT_MEC))
@@ -412,6 +415,7 @@ var/list/turret_icons
 					debugopen = 1
 					to_chat(user, SPAN_NOTICE("You gently unscrew the seconday maintenance hatch, gaining access to the turret's internal circuitry and debug functions."))
 					desc = "A hatch on the bottom of the access panel is opened, exposing the circuitry inside."
+				return TRUE //No whacking the turret with tools on help intent
 
 		else if((QUALITY_WIRE_CUTTING in I.tool_qualities) && (debugopen))
 			if(overridden)
@@ -432,6 +436,7 @@ var/list/turret_icons
 						hackfail = 1
 						sleep(300)
 						hackfail = 0
+			return TRUE //No whacking the turret with tools on help intent
 
 	if (!(I.flags & NOBLUDGEON) && I.force && !(stat & BROKEN))
 		//if the turret was attacked with the intention of harming it:
