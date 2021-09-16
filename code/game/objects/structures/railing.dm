@@ -299,7 +299,7 @@
 			if(!anchored)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					user.visible_message(SPAN_NOTICE("\The [user] dismantles \the [src]."), SPAN_NOTICE("You dismantle \the [src]."))
-					drop_materials(get_turf(user))
+					drop_materials(get_turf(user), user)
 					qdel(src)
 			if(reinforced)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
@@ -355,6 +355,7 @@
 		return
 
 	usr.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
+	add_fingerprint(user)
 	climbers |= user
 
 	var/delay = (issmall(user) ? 20 : 34)

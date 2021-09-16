@@ -107,7 +107,7 @@
 					to_chat(user, SPAN_NOTICE("You start disassembling the girder..."))
 					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 						to_chat(user, SPAN_NOTICE("You dissasembled the girder!"))
-						dismantle()
+						dismantle(user)
 						return
 				if(!anchored)
 					to_chat(user, SPAN_NOTICE("You start securing the girder..."))
@@ -287,8 +287,8 @@
 	icon_state = "reinforced"
 	reinforcing = 0
 
-/obj/structure/girder/proc/dismantle()
-	drop_materials(drop_location())
+/obj/structure/girder/proc/dismantle(mob/living/user)
+	drop_materials(drop_location(), user)
 	qdel(src)
 
 /obj/structure/girder/attack_hand(mob/user as mob)
@@ -306,7 +306,7 @@
 		take_damage(damage)
 		return 1
 
-/obj/structure/girder/proc/take_damage(var/damage, var/damage_type = BRUTE, var/ignore_resistance = FALSE)
+/obj/structure/girder/proc/take_damage(var/damage, var/damage_type = BRUTE, var/ignore_resistance = FALSE, mob/living/user)
 	if (!ignore_resistance)
 		damage -= resistance
 	if (!damage || damage <= 0)
@@ -314,7 +314,7 @@
 
 	health -= damage
 	if (health <= 0)
-		dismantle()
+		dismantle(user)
 
 
 /obj/structure/girder/ex_act(severity)
