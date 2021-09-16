@@ -5,37 +5,32 @@
 	set desc = "Expend three psi points to shape an oddity into a range weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 3
 
-	var/obj/item/oddity/active = null
-	if(usr.get_active_hand())
-		if(istype(usr.get_active_hand(), /obj/item/oddity))
-			active = usr.get_active_hand()
-			if(!active.oddity_stats)
-				to_chat(usr, "This oddity has no aspects to build a weapon from!")
-				return
-			var/list/LStats = active.oddity_stats
-			var/obj/item/cultweaponchoice = pickweight(list(
-				/obj/item/gun/energy/plasma/auretian/cult = (1 + LStats[STAT_ROB]),
-				/obj/item/gun/projectile/automatic/sts/rifle/cult = (1 + LStats[STAT_VIG]),
-				/obj/item/gun/energy/laser/cult = (1 + LStats[STAT_COG]),
-				/obj/item/gun/projectile/automatic/greasegun/cult= (1 + LStats[STAT_TGH]),
-				/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
-				/obj/item/gun/energy/gun/martin/cult = (1 + LStats[STAT_MEC])))
-			
-			if(pay_power_cost(psi_point_cost))
-				playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
-				var/turf/T = get_turf(usr)
-				do_sparks(8, 0, T)
-				cultweaponchoice = new cultweaponchoice(T)
-				usr.visible_message(
-					SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into [cultweaponchoice]!"),
-					SPAN_DANGER("You mold and twist the [active] like clay, transforming it into [cultweaponchoice]!")
-					)
-				usr.drop_item()
-				usr.put_in_active_hand(cultweaponchoice)
-				qdel(active)
-		
-		else
-			to_chat(usr, "You must hold an oddity in your active hand.")
+	var/obj/item/oddity/active = usr.get_active_hand()
+	if(istype(usr.get_active_hand(), /obj/item/oddity))
+		if(!active.oddity_stats)
+			to_chat(usr, "This oddity has no aspects to build a weapon from!")
+			return
+		var/list/LStats = active.oddity_stats
+		var/obj/item/cultweaponchoice = pickweight(list(
+			/obj/item/gun/energy/plasma/auretian/cult = (1 + LStats[STAT_ROB]),
+			/obj/item/gun/projectile/automatic/sts/rifle/cult = (1 + LStats[STAT_VIG]),
+			/obj/item/gun/energy/laser/cult = (1 + LStats[STAT_COG]),
+			/obj/item/gun/projectile/automatic/greasegun/cult= (1 + LStats[STAT_TGH]),
+			/obj/item/gun/energy/plasma/cassad/cult = (1 + LStats[STAT_BIO]),
+			/obj/item/gun/energy/gun/martin/cult = (1 + LStats[STAT_MEC])))
+
+		if(pay_power_cost(psi_point_cost))
+			playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
+			var/turf/T = get_turf(usr)
+			do_sparks(8, 0, T)
+			cultweaponchoice = new cultweaponchoice(T)
+			usr.visible_message(
+				SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into [cultweaponchoice]!"),
+				SPAN_DANGER("You mold and twist the [active] like clay, transforming it into [cultweaponchoice]!")
+				)
+			usr.drop_item()
+			usr.put_in_active_hand(cultweaponchoice)
+			qdel(active)
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
@@ -45,36 +40,32 @@
 	set desc = "Expend three psi points to shape an oddity into a melee weapon. What weapon your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 3
 
-	var/obj/item/oddity/active = null
-	if(usr.get_active_hand())
-		if(istype(usr.get_active_hand(), /obj/item/oddity))
-			active = usr.get_active_hand()
-			if(!active.oddity_stats)
-				to_chat(usr, "This oddity has no aspects to build a weapon from!")
-				return
-			var/list/LStats = active.oddity_stats
-			var/obj/item/cultweaponchoice = pickweight(list(
-				/obj/item/tool/sword/cult = (1 + LStats[STAT_ROB]),
-				/obj/item/tool/sword/machete/cult = (1 + LStats[STAT_VIG]),
-				/obj/item/tool/saw/chain/cult = (1 + LStats[STAT_COG]),
-				/obj/item/tool/hammer/homewrecker/cult= (1 + LStats[STAT_TGH]),
-				/obj/item/tool/sword/cleaver/cult = (1 + LStats[STAT_BIO]),
-				/obj/item/tool/power_fist/cult = (1 + LStats[STAT_MEC])))
-				
-			if(pay_power_cost(psi_point_cost))
-				playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
-				var/turf/T = get_turf(usr)
-				do_sparks(8, 0, T)
-				cultweaponchoice = new cultweaponchoice(T)
-				usr.visible_message(
-					SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into [cultweaponchoice]!"),
-					SPAN_DANGER("You mold and twist the [active] like clay, transforming it into [cultweaponchoice]!")
-					)
-				usr.drop_item()
-				usr.put_in_active_hand(cultweaponchoice)
-				qdel(active)
-		else
-			to_chat(usr, "You must hold an oddity in your active hand.")
+	var/obj/item/oddity/active = usr.get_active_hand()
+	if(istype(usr.get_active_hand(), /obj/item/oddity))
+		if(!active.oddity_stats)
+			to_chat(usr, "This oddity has no aspects to build a weapon from!")
+			return
+		var/list/LStats = active.oddity_stats
+		var/obj/item/cultweaponchoice = pickweight(list(
+			/obj/item/tool/sword/cult = (1 + LStats[STAT_ROB]),
+			/obj/item/tool/sword/machete/cult = (1 + LStats[STAT_VIG]),
+			/obj/item/tool/saw/chain/cult = (1 + LStats[STAT_COG]),
+			/obj/item/tool/hammer/homewrecker/cult= (1 + LStats[STAT_TGH]),
+			/obj/item/tool/sword/cleaver/cult = (1 + LStats[STAT_BIO]),
+			/obj/item/tool/power_fist/cult = (1 + LStats[STAT_MEC])))
+
+		if(pay_power_cost(psi_point_cost))
+			playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
+			var/turf/T = get_turf(usr)
+			do_sparks(8, 0, T)
+			cultweaponchoice = new cultweaponchoice(T)
+			usr.visible_message(
+				SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into [cultweaponchoice]!"),
+				SPAN_DANGER("You mold and twist the [active] like clay, transforming it into [cultweaponchoice]!")
+				)
+			usr.drop_item()
+			usr.put_in_active_hand(cultweaponchoice)
+			qdel(active)
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
@@ -84,35 +75,31 @@
 	set desc = "Expend two psi points to shape an oddity into a tool. What tool your mind creates is entirely random, but the properties of the oddity heavily influence what it may become."
 	psi_point_cost = 2
 
-	var/obj/item/oddity/active = null
-	if(usr.get_active_hand())
-		if(istype(usr.get_active_hand(), /obj/item/oddity))
-			active = usr.get_active_hand()
-			if(!active.oddity_stats)
-				to_chat(usr, "This oddity has no aspects to build a weapon from!")
-				return
-			var/list/LStats = active.oddity_stats
-			var/obj/item/cultweaponchoice = pickweight(list(
-				/obj/item/tool/shovel/combat/cult = (1 + LStats[STAT_ROB]),
-				/obj/item/tool/wrench/big_wrench/cult = (1 + LStats[STAT_VIG]),
-				/obj/item/tool/multitool/advanced/cult = (1 + LStats[STAT_COG]),
-				/obj/item/tool/shovel/power/cult = (1 + LStats[STAT_TGH]),
-				/obj/item/tool/screwdriver/combi_driver/cult = (1 + LStats[STAT_BIO]),
-				/obj/item/tool/weldingtool/advanced/cult = (1 + LStats[STAT_MEC])))
-			if(pay_power_cost(psi_point_cost))
-				playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
-				var/turf/T = get_turf(usr)
-				do_sparks(8, 0, T)
-				cultweaponchoice = new cultweaponchoice(T)
-				usr.visible_message(
-					SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into a [cultweaponchoice]!"),
-					SPAN_DANGER("You mold and twist the [active] like clay, transforming it into a [cultweaponchoice]!")
-					)
-				usr.drop_item()
-				usr.put_in_active_hand(cultweaponchoice)
-				qdel(active)
-		else
-			to_chat(usr, "You must hold an oddity in your active hand.")
+	var/obj/item/oddity/active = usr.get_active_hand()
+	if(istype(usr.get_active_hand(), /obj/item/oddity))
+		if(!active.oddity_stats)
+			to_chat(usr, "This oddity has no aspects to build a weapon from!")
+			return
+		var/list/LStats = active.oddity_stats
+		var/obj/item/cultweaponchoice = pickweight(list(
+			/obj/item/tool/shovel/combat/cult = (1 + LStats[STAT_ROB]),
+			/obj/item/tool/wrench/big_wrench/cult = (1 + LStats[STAT_VIG]),
+			/obj/item/tool/multitool/advanced/cult = (1 + LStats[STAT_COG]),
+			/obj/item/tool/shovel/power/cult = (1 + LStats[STAT_TGH]),
+			/obj/item/tool/screwdriver/combi_driver/cult = (1 + LStats[STAT_BIO]),
+			/obj/item/tool/weldingtool/advanced/cult = (1 + LStats[STAT_MEC])))
+		if(pay_power_cost(psi_point_cost))
+			playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
+			var/turf/T = get_turf(usr)
+			do_sparks(8, 0, T)
+			cultweaponchoice = new cultweaponchoice(T)
+			usr.visible_message(
+				SPAN_DANGER("[usr] molds and twists the [active] like clay, transforming it into a [cultweaponchoice]!"),
+				SPAN_DANGER("You mold and twist the [active] like clay, transforming it into a [cultweaponchoice]!")
+				)
+			usr.drop_item()
+			usr.put_in_active_hand(cultweaponchoice)
+			qdel(active)
 	else
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
@@ -158,7 +145,7 @@
 	tunnels, but you are not assured safety or that you will be alone once on the other side. Using this power strains the body and will weaken you for a short time."
 	psi_point_cost = 5
 
-	if(pay_power_cost(psi_point_cost))
+	if(alert(usr, "Are you sure you want to do this?", "Journey to Nowhere", "Yes", "No") == "Yes" && pay_power_cost(psi_point_cost))
 		var/mob/living/L = get_grabbed_mob(owner)			//Grab anyone we have grabbed
 		var/turf/simulated/floor/target					//this is where we are teleporting
 		var/list/validtargets = list()					//list of valid tiles to teleport to
