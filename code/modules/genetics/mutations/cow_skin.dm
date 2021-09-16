@@ -9,14 +9,6 @@
 	desc = "The embryo has large splotches on its skin."
 	active_stage = 1 //What stage of development the descriptor becomes active.
 
-/datum/genetics/mutation/cow_skin/onPlayerImplant()
-	..()
-	container.holder.brute_mod_perk -= 0.1
-
-/datum/genetics/mutation/cow_skin/onPlayerRemove()
-	..()
-	container.holder.brute_mod_perk += 0.1
-
 /datum/genetics/mutation/cow_skin/onMobImplant()
 	..()
 	container.holder.brute_mod_perk -= 0.1

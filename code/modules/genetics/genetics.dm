@@ -18,7 +18,7 @@
 	var/mob/living/holder //Who is holding the genes
 
 	var/mob/living/donator //Where the genes came from.
-	
+
 	var/list/mutation_pool = list() //Each gene held by the creature. Uses /datum/genetics/mutation.
 
 	var/total_instability = 0 //How much instability is present in the gene pool.
@@ -28,7 +28,7 @@
 //Build a holder based on a mob source
 /datum/genetics/genetics_holder/New(var/mob/living/source)
 	..()
-	
+
 	//No robots allowed.
 	if(issilicon(source))
 		return
@@ -44,7 +44,7 @@
 			new_mutation.container = src
 			new_mutation.source_mob = donator
 			new_mutation.implanted = FALSE
-			new_mutation.active = pick(TRUE, FALSE)
+			new_mutation.active = pick(list(TRUE, FALSE))
 			if(new_mutation.active)
 				total_instability += new_mutation.instability
 
@@ -99,7 +99,7 @@
 
 //Activate an implant in a mutagen
 /proc/implant_mutations(var/mob/living/target, var/datum/genetics/genetics_holder/injection)
-	
+
 	//No robots allowed.
 	if(issilicon(target))
 		return FALSE
@@ -110,16 +110,16 @@
 	target.active_mutations = container
 
 	//Process individual mutations, set them to implanted.
-	for(var/index=0, index<container.mutation_pool.len, index++)
-		container.mutation_pool[index].implanted = TRUE
-
+	for(var/datum/genetics/mutation/active_mutation in target.active_mutations)
+		active_mutation.implanted = TRUE
 		//Skip mutations not activated
-		if(container.mutation_pool[index].active)
+		if(active_mutation.active)
 			if(istype(target, /mob/living/carbon/human))
-				container.mutation_pool[index].onPlayerImplant()
-			else
-				container.mutation_pool[index].onMobImplant()
-	
+				active_mutation.onPlayerImplant()
+
+			if(istype(target, /mob/living))
+				active_mutation.onMobImplant()
+
 	target.active_mutations.initialized = TRUE
 
 	return TRUE
@@ -134,7 +134,7 @@
 
 	//Reference to the mob the mutation came from.
 	var/mob/living/source_mob
-	
+
 	//Name of the Mutation
 	var/name = "Mutation Placeholder"
 
@@ -178,12 +178,13 @@
 
 //What happens when the genes are applied to a player.
 /datum/genetics/mutation/proc/onPlayerImplant()
-	if(gain_text)
+	if(istype(container.holder, /mob/living/carbon/human) && gain_text)
 		to_chat(container.holder, SPAN_NOTICE("[gain_text]"))
+		return TRUE
+	return FALSE
 
 //What happens when the genes are applied to any creature.
 /datum/genetics/mutation/proc/onMobImplant()
-
 
 //What happens when a gene is removed from a player.
 /datum/genetics/mutation/proc/onPlayerRemove()
@@ -192,31 +193,46 @@
 //What happens when a gene is removed from a mob.
 /datum/genetics/mutation/proc/onMobRemove()
 
-//Managing a constantly updating process on a mob. 
-//Takes the mutation's on_process proc and should be called in onPlayerImplant and onMobImplant.
+//Managing a constantly updating process on a mob.
+//Takes the mutation's Process proc and should be called in onPlayerImplant and onMobImplant.
 /datum/genetics/mutation/proc/initializeProcessing()
-	SHOULD_CALL_PARENT(TRUE)
-	RegisterSignal(container.holder, COMSIG_MOB_LIFE, .proc/on_process)
-	to_chat(container.holder, SPAN_NOTICE("[gain_text]"))
+	if(checkProcessingValid())
+		START_PROCESSING(SSprocessing, src)
 
-/datum/genetics/mutation/proc/remove()
-	SHOULD_CALL_PARENT(TRUE)
-	qdel(src)
+//Check if the process is still valid
+/datum/genetics/mutation/proc/checkProcessingValid()
+	if(!active)
+		log_and_message_admins("Process Cancelled, mutation not active.")
+		return FALSE
+	else if(!implanted)
+		log_and_message_admins("Process Cancelled, mutation not implanted.")
+		return FALSE
+	else if(!container)
+		log_and_message_admins("Process Cancelled, container not referenced.")
+		return FALSE
+	else if(!container.holder)
+		log_and_message_admins("Process Cancelled, container.holder not referenced.")
+		return FALSE
+	else if(container.holder.stat == DEAD)
+		log_and_message_admins("Process Cancelled, container.holder is dead.")
+		return FALSE
+	else
+		return TRUE
+
+
+//Stopping the process
+/datum/genetics/mutation/proc/haltProcessing()
+	STOP_PROCESSING(SSprocessing, src)
 
 //What happens when a mutation causes mounting occurences over time, such as intermittant moos.
-/datum/genetics/mutation/proc/on_process()
-	SHOULD_CALL_PARENT(TRUE)
-	if(!active)
-		return FALSE
-	if(!implanted)
-		return FALSE
-	if(!container)
-		return FALSE
-	if(!container.holder)
-		return FALSE
-	if(container.holder.stat == DEAD)
+/datum/genetics/mutation/Process()
+	if(!checkProcessingValid())
+		log_and_message_admins("Process halted in the Processing step, check processing trigger.")
+		haltProcessing()
 		return FALSE
 	return TRUE
+
+
 
 
 

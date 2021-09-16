@@ -5,13 +5,15 @@
 	gain_text = "Your mind seems to slow, your thoughts become muddled. What were you doing again?"
 
 /datum/genetics/mutation/imbecile/onPlayerImplant()
-	..()
+	if(!..())
+		return
 	container.holder.stats.changeStat(STAT_COG, -10)
 	container.holder.stats.changeStat(STAT_MEC, -10)
 	container.holder.stats.changeStat(STAT_BIO, -10)
 
 /datum/genetics/mutation/imbecile/onPlayerRemove()
-	..()
+	if(!..())
+		return
 	container.holder.stats.changeStat(STAT_COG, 10)
 	container.holder.stats.changeStat(STAT_MEC, 10)
 	container.holder.stats.changeStat(STAT_BIO, 10)

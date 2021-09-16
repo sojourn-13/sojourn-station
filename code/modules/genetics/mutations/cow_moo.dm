@@ -1,23 +1,11 @@
 //Macro: MUTATION_MOO
 /datum/genetics/mutation/cow_moo
-	name = "Cow Skin"
-	desc = "Causes the skin to become a little more leathery- the uncured sort."
+	name = "Moo"
+	desc = "Causes the affected to moo intermittantly."
 	embryo_descriptions = list(/datum/genetics/embryo_state/cow_skin)
-	gain_text = "Your skin feels a little thicker than usual. Wait, are those... Cow splotches?"
+	gain_text = "Your feel the urge to graze in a meadow. Moo..."
 	var/cooldown = 3 MINUTES
 	var/initial_time
-
-/datum/genetics/embryo_state/cow_moo
-	desc = "The embryo has large splotches on its skin."
-	active_stage = 1 //What stage of development the descriptor becomes active.
-
-/datum/genetics/mutation/cow_moo/onPlayerImplant()
-	..()
-	initial_time = world.time
-	initializeProcessing()
-
-/datum/genetics/mutation/cow_moo/onPlayerRemove()
-	remove()
 
 /datum/genetics/mutation/cow_moo/onMobImplant()
 	..()
@@ -25,17 +13,14 @@
 	initializeProcessing()
 	
 /datum/genetics/mutation/cow_moo/onMobRemove()
-	remove()
+	haltProcessing()
 
-/datum/genetics/mutation/cow_moo/on_process()
+/datum/genetics/mutation/cow_moo/Process()
 	if(!..())
-		return
-
-	if(container.holder.species.flags & NO_BREATHE)
 		return
 
 	if(world.time < initial_time + cooldown)
 		return
 	
 	initial_time = world.time
-	container.holder.visible_emote("emits a haunting Moo.")
+	container.holder.visible_message("<span class='name'>[container.holder]</span> emits a haunting Moo.")
