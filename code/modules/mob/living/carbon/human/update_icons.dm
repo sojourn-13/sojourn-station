@@ -960,6 +960,7 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/update_inv_belt(var/update_icons=1)
 	overlays_standing[BELT_LAYER] = null
+	overlays_standing[BELT_LAYER_ALT] = null
 	if(belt)
 		var/t_state = belt.icon_state
 		var/t_icon = belt.icon
@@ -979,10 +980,18 @@ mob/living/carbon/human/proc/get_wings_image()
 		else
 			t_icon = form.get_mob_icon("belt")
 
+		var/icon/test = new (t_icon)
+		if (!(t_state in icon_states(test)))
+			t_icon = get_back_icon(belt)
+			t_state = "back"
+
 		standing = image(icon = t_icon, icon_state = t_state)
 
 		var/beltlayer = BELT_LAYER
 		var/otherlayer = BELT_LAYER_ALT
+		if(!(t_state in icon_states(test)))
+			beltlayer = BELT_LAYER_ALT
+			otherlayer = BELT_LAYER
 		if(istype(belt, /obj/item/storage/belt))
 			var/obj/item/storage/belt/ubelt = belt
 			if(ubelt.show_above_suit)

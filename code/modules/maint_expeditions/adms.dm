@@ -6,7 +6,7 @@
 
 /obj/machinery/exploration/adms
 	name = "\improper Anomalous Data Measurement System"
-	desc = "A large piece of equipment for gathering data from anomalous regions."
+	desc = "A large piece of equipment for gathering data from anomalous regions. It has an habit of angering the local population pest."
 	icon_state = "adms"
 
 	circuit = /obj/item/circuitboard/adms
@@ -34,11 +34,6 @@
 		emagged = TRUE
 		playsound(loc, "sparks", 75, 1, -1)
 		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
-
-/obj/machinery/exploration/adms/Destroy()
-	if(inserted_disk)
-		inserted_disk.forceMove(loc)//If destroyed, drop the disk!
-	return ..()
 
 /obj/machinery/exploration/adms/New()
 	set_light(l_color=COLOR_RED)
@@ -95,6 +90,16 @@
 			src.spawn_monsters(1)//On the station is just calls groups of roaches!
 			return
 
+/obj/machinery/exploration/adms/Destroy()
+	for(var/obj/A in contents)
+		A.forceMove(loc)
+		if(A in component_parts)
+			component_parts -= A
+		if(A in contents)
+			component_parts -= A
+	spawn(5)
+		..()
+
 // Proc to add more points in the data disk.
 /obj/machinery/exploration/adms/proc/give_points(var/amount)
 	inserted_disk_file.size += amount * harvest_speed // The point given by the file is determined by the size of the file.
@@ -114,8 +119,8 @@
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 	if(emagged)
 		new /mob/living/carbon/superior_animal/roach/kaiser(src.loc)
-		visible_message(SPAN_DANGER("[name] get destroyed as a Kaiser emerge from underneath it!"))
-		qdel(src)
+		visible_message(SPAN_DANGER("[src] get destroyed as a Kaiser emerge from underneath it!"))
+		Destroy()
 		return
 	for(var/turf/simulated/floor/F in orange(src.loc, 5))
 		if(F.is_wall)

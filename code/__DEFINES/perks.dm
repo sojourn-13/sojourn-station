@@ -88,15 +88,12 @@
 #define PERK_PSI_PEACE /datum/perk/psi_peace_of_the_psion
 #define PERK_PSI_GRACE /datum/perk/psi_grace
 
-
-
 // Nanogate Perks
 #define PERK_NANOGATE /datum/perk/nanogate
 #define PERK_NANITE_REGEN /datum/perk/nanite_regen
 #define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
 #define PERK_NANITE_ARMOR /datum/perk/nanite_armor
-#define PERK_NANITE_KNIFE /datum/perk/nanite_knife
-#define PERK_NANITE_TOOL /datum/perk/nanite_tool
+#define PERK_NANITE_AMMO /datum/perk/nanite_ammo
 
 // Nanite Chem Perks.
 #define PERK_NANITE_CHEM /datum/perk/nanite_chem

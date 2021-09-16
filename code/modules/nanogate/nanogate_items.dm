@@ -1,94 +1,17 @@
 // Here is where we store the items made by the nanogate organ.
-
-/obj/item/tool/nanite_omnitool
-	name = "nanite omnitool"
-	desc = "A tool created from nanites, it is capable of doing anything any other tool can but cannot do it quite as well unfortunately. The more skill you have in whatever action, \
-	you're performing, the more valuable this tool becomes."
-	icon_state = "psi_omni"
-	force = WEAPON_FORCE_DANGEROUS
-	worksound = WORKSOUND_DRIVER_TOOL
-	w_class = ITEM_SIZE_BULKY
-	flags = CONDUCT
-	tool_qualities = list(QUALITY_SCREW_DRIVING = 25, QUALITY_BOLT_TURNING = 25, QUALITY_WELDING = 25, QUALITY_PRYING = 25, QUALITY_DIGGING = 25, QUALITY_PULSING = 25, QUALITY_WIRE_CUTTING = 25, QUALITY_HAMMERING = 25, QUALITY_SHOVELING = 25, QUALITY_EXCAVATION = 25, QUALITY_SAWING = 25, QUALITY_CUTTING = 25)
-	degradation = 0 // Can't degrade
-	workspeed = 0.8
-	use_power_cost = 0 // Don't use power
-	max_upgrades = 0 // Can't upgrade it
-	price_tag = 0
-	var/mob/living/carbon/holder // The one that prevent the tool from fading
-
-/obj/item/tool/nanite_omnitool/New(var/loc, var/mob/living/carbon/Maker)
-	..()
-	holder = Maker
-	START_PROCESSING(SSobj, src)
-
-/obj/item/tool/nanite_omnitool/Process()
-	..()
-	if(loc != holder) // We're no longer in the holder.
-		visible_message("The [src.name] turn into useless nanite goo.")
-		qdel(src)
-		return
-
-/obj/item/tool/knife/nanite_blade
-	name = "nanite blade"
-	desc = "A blade made from the mind of a psion. Though it is a mental projection, the maker's physical strength accounts for how deadly the edge is. The stronger the body, the better the blade. \
-	Deceptively harmless, unless you're robust."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "psi_knife"
-	item_state = "psi_knife"
-	force = WEAPON_FORCE_HARMLESS
-	w_class = ITEM_SIZE_BULKY
-	tool_qualities = list(QUALITY_CUTTING = 30)
-	origin_tech = list()
-	matter = list()
-	degradation = 0 // Can't degrade
-	workspeed = 0.8
-	use_power_cost = 0 // Don't use power
-	max_upgrades = 0 // Can't upgrade it
-	price_tag = 0
-	var/mob/living/carbon/holder // The one that prevent the blade from fading
-
-/obj/item/tool/knife/nanite_blade/New(var/loc, var/mob/living/carbon/Maker)
-	..()
-	holder = Maker
-	START_PROCESSING(SSobj, src)
-
-/obj/item/tool/knife/nanite_blade/attack(atom/target, mob/user)
-	if(user.stats.getStat(STAT_ROB) <= 0)
-		force = WEAPON_FORCE_HARMLESS
-	else if(user.stats.getStat(STAT_ROB) <= 15)
-		force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
-	else if(user.stats.getStat(STAT_ROB) <= 25)
-		force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
-	else if(user.stats.getStat(STAT_ROB) <= 35)
-		force = WEAPON_FORCE_ROBUST // As strong as a machete
-	else if(user.stats.getStat(STAT_ROB) > 35)
-		force = WEAPON_FORCE_BRUTAL
-	if(user.stats.getPerk(PERK_PSI_MANIA))
-		force = WEAPON_FORCE_BRUTAL
-	..()
-	force = initial(force) // Reset the damage just in case
-
-/obj/item/tool/knife/nanite_blade/Process()
-	..()
-	if(loc != holder) // We're no longer in the holder.
-		visible_message("The [src.name] turn into useless nanite goo.")
-		qdel(src)
-		return
-
 /obj/item/rig/nanite
 	name = "nanite suit control module"
 	desc = "A lighter, less armoured rig suit made from nanites and attached to someone's spine."
 	icon_state = "ihs_rig_old"
 	suit_type = "nanite suit"
 	armor = list(
-		melee = 25,
-		bullet = 20,
-		energy = 20,
+		melee = 30,
+		bullet = 30,
+		energy = 30,
 		bomb = 25,
 		bio = 100,
-		rad = 25
-	)
+		rad = 100
+	) // the suit is less armored than a psion suit but provides alot more utility. -Kaz.
 	emp_protection = 10
 	slowdown = 0
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL | DRAG_AND_DROP_UNEQUIP | EQUIP_SOUNDS
@@ -105,6 +28,9 @@
 
 	var/charge_tick = 10
 	var/recharge_time = 10
+
+/obj/item/rig/nanite/opifex
+	air_type = /obj/item/tank/emergency_nitgen
 
 /obj/item/rig/nanite/New()
 	..()
@@ -133,7 +59,7 @@
 
 /obj/item/rig/nanite/emp_act(severity_class)
 	if(severity_class >= 5)
-		src.visible_message("The [src.name] get destroyed by an EMP.")
+		src.visible_message("The [src.name] has been destroyed by an EMP!")
 		spawn(20) qdel(src)
 	else
 		..()
@@ -149,3 +75,37 @@
 
 /obj/item/clothing/head/helmet/space/rig/nanite
 	name = "hood"
+
+/obj/item/rig/nanite/verb/remove_tank()
+	set name = "Eject air tank"
+	set desc = "Eject the hardsuit's air tank"
+	set category = "Hardsuit"
+	set src = usr.contents
+
+	if(!air_supply)
+		to_chat(usr, "There is not tank to remove.")
+		return
+	else
+		usr.put_in_hands(air_supply)
+		to_chat(usr, "You detach and remove \the [air_supply].")
+		air_supply = null
+		return
+
+/obj/item/rig/nanite/verb/insert_tank()
+	set name = "Insert air tank"
+	set desc = "Insert an air canister in the rig"
+	set category = "Hardsuit"
+	set src = usr.contents
+
+	var/obj/item/tank/I = usr.get_active_hand()
+	if(istype(I, /obj/item/tank)) //Todo, some kind of check for suits without integrated air supplies.
+		if(air_supply)
+			to_chat(usr, "\The [src] already has a tank installed.")
+			return
+
+		if(!usr.unEquip(I))
+			return
+		air_supply = I
+		I.forceMove(src)
+		to_chat(usr, "You slot [I] into [src] and tighten the connecting valve.")
+		return

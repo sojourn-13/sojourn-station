@@ -676,7 +676,7 @@
 	desc = "The mechanism that loads bullets into the chamber has jammed, one would be lucky the gun didn't explode if this was shot."
 	icon_state = "Reverse_loader"
 
-/obj/item/gun_upgrade/faulty_trapped/New()
+/obj/item/gun_upgrade/mechanism/faulty_trapped/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
