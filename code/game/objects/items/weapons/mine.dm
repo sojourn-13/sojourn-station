@@ -6,7 +6,8 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_STEEL = 35)
 	matter_reagents = list("fuel" = 40)
-	layer = BELOW_MOB_LAYER //fixed the wrong layer - Plasmatik
+	layer = HIDE_LAYER
+	//layer = BELOW_MOB_LAYER //fixed the wrong layer - Plasmatik //This one is to easy to spot, so we hide them a bit more - Kaz/Trilby
 	var/prob_explode = 90
 	var/pulse_difficulty = FAILCHANCE_NORMAL
 
