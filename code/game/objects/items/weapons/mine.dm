@@ -27,6 +27,10 @@
 	var/excelsior = FALSE
 	anchored = FALSE
 
+/obj/item/mine/bullet_act()
+	if(prob(90))
+		explode()
+
 /obj/item/mine/armed
 	armed = TRUE
 	deployed = TRUE
