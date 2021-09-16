@@ -230,7 +230,7 @@
 	return FALSE
 
 /obj/machinery/porta_turret/artificer/attackby(obj/item/I, mob/user)
-	if (user.a_intent != I_HURT)
+	if (user.a_intent == I_HELP)
 		if(stat & BROKEN)
 			if(QUALITY_PRYING in I.tool_qualities)
 				//If the turret is destroyed, you can remove it with a crowbar to
@@ -248,14 +248,15 @@
 					else
 						to_chat(user, SPAN_NOTICE("You remove the turret but did not manage to salvage anything."))
 					qdel(src) // qdel
+				return TRUE //No whacking the turret with tools on help intent
 
 		else if(QUALITY_BOLT_TURNING in I.tool_qualities)
 			if(enabled)
 				to_chat(user, SPAN_WARNING("You cannot unsecure an active turret!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 			if(!anchored && isinspace())
 				to_chat(user, SPAN_WARNING("Cannot secure turrets in space!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 
 			user.visible_message( \
 					"<span class='warning'>[user] begins [anchored ? "un" : ""]securing the turret.</span>", \
@@ -282,6 +283,7 @@
 					to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
 					update_icon()
 			wrenching = 0
+			return TRUE //No whacking the turret with tools on help intent
 
 		else if(istype(I, /obj/item/cell/large))
 			if(cell)
@@ -291,12 +293,13 @@
 				I.forceMove(src)
 				cell = I
 				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
+			return TRUE //No whacking the turret with cells on help intent
 
 		else if(istype(I, ammo_box) && I:stored_ammo.len)
 			var/obj/item/ammo_magazine/A = I
 			if(ammo >= ammo_max)
 				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
-				return
+				return TRUE //No whacking the turret with ammo boxes on help intent
 
 			var/transfered_ammo = 0
 			for(var/obj/item/ammo_casing/AC in A.stored_ammo)
@@ -307,6 +310,7 @@
 				if(ammo == ammo_max)
 					break
 			to_chat(user, SPAN_NOTICE("You loaded [transfered_ammo] bullets into [src]. It now contains [ammo] ammo."))
+			return TRUE //No whacking the turret with ammo boxes on help intent
 
 	else
 		..()
