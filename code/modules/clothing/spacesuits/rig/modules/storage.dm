@@ -14,10 +14,10 @@
 	icon_state = "module"
 
 	//These vars will be passed onto the storage
-	var/list/can_hold = new/list() //List of objects which this item can store (if set, it can't store anything else)
-	var/list/cant_hold = new/list(/obj/item/rig) //List of objects which this item can't store (in effect only if can_hold isn't set)
+	var/list/can_hold = list() //List of objects which this item can store (if set, it can't store anything else)
+	var/list/cant_hold = list(/obj/item/rig) //List of objects which this item can't store (in effect only if can_hold isn't set)
 	var/max_w_class = ITEM_SIZE_NORMAL //Max size of objects that this object can store (in effect only if can_hold isn't set)
-	var/max_storage_space = 25 //Slightly more than a satchel can hold.
+	var/max_storage_space = DEFAULT_HUGE_STORAGE * 0.7 //This is a entire satchel of storage
 	var/storage_slots = null //The number of storage slots in this container.
 
 //Create the internal storage and pass on various parameters
