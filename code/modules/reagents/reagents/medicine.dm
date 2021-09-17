@@ -139,7 +139,7 @@
 	color = "#225722"
 	scannable = 1
 
-/datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, var/removed = REM)
+/datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, effect_multiplier, var/removed = REM)
 	M.adjustToxLoss(-8 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -149,6 +149,12 @@
 				return
 			if(L.damage > 0)
 				L.damage = max(L.damage - 2 * removed, 0)
+	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
+	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes
+	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
+	holder.remove_reagent("stoxin", 0.4 * effect_multiplier)     //Fuck mobs and injectables
+	holder.remove_reagent("zombiepowder", 0.4 * effect_multiplier)
+	holder.remove_reagent("xenotoxin", 0.4 * effect_multiplier)
 
 /datum/reagent/medicine/cordradaxon
 	name = "Cordradaxon"
