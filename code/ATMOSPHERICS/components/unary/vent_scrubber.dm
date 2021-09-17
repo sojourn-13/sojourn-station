@@ -39,7 +39,7 @@
 
 /obj/machinery/atmospherics/unary/vent_scrubber/New()
 	..()
-	air_contents.volume = ATMOS_DEFAULT_VOLUME_FILTER * 2
+	air_contents.volume = ATMOS_DEFAULT_VOLUME_FILTER
 
 	initial_loc = get_area(loc)
 	area_uid = initial_loc.uid
@@ -144,7 +144,7 @@
 	if(!length(environments))
 		return 0
 
-	var/power_draw = 0
+	var/power_draw = 1 //Bandaid correction, vents atm gain 1w magiclly do to a math bug that is current unknown - Trilby
 	var/transfer_happened = FALSE
 
 	for(var/e in environments)
@@ -157,14 +157,28 @@
 			var/transfer_moles = min(environment.total_moles, environment.total_moles*MAX_SCRUBBER_FLOWRATE/environment.volume)
 			//group_multiplier gets divided out here
 			power_draw += scrub_gas(src, scrubbing_gas, environment, air_contents, transfer_moles, power_rating)
+			if(debug)
+				log_debug("Srub Gas: scrubbing gas [scrubbing_gas] - enviroment: [environment] - air contents: [air_contents] - transfer moles: [transfer_moles] - Power-rating: [power_rating]")
+
 		else //Just siphon all air
 			//limit flow rate from turfs
 			var/transfer_moles = min(environment.total_moles, environment.total_moles*MAX_SIPHON_FLOWRATE/environment.volume)
 			//group_multiplier gets divided out here
 			power_draw += pump_gas(src, environment, air_contents, transfer_moles, power_rating)
+
+			if(debug)
+				log_debug("Pump Gas: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
+
 		transfer_happened = TRUE
 
+	if(0 > power_draw) //Stops negitives, baindaid correction
+		if(!has_errored)
+			log_to_dd("Error: Scrubber has had a negitive power draw - X:[src.x] Y:[src.y] Z:[src.z]")
+			has_errored = TRUE
+		power_draw = 0
+
 	if(transfer_happened)
+
 		last_power_draw = power_draw
 		use_power(power_draw)
 		if(network)
