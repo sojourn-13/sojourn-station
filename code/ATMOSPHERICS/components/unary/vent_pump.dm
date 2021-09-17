@@ -155,7 +155,7 @@
 	if(!length(environments))
 		return 0
 
-	var/power_draw = 0
+	var/power_draw = 1 //Baindaid correction
 	var/transfer_happened = FALSE
 
 	for(var/e in environments)
