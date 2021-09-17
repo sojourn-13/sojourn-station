@@ -57,11 +57,6 @@
 	slot = slot_wear_mask
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/clothing/mask/costume/halloween
-	display_name = "Halloween mask selection"
-	path = /obj/item/clothing/mask/costume/halloween
-	flags = GEAR_HAS_TYPE_SELECTION
-
 /datum/gear/clothing/mask/gas/clown
 	display_name = "Clown mask selection"
 	slot = slot_wear_mask
