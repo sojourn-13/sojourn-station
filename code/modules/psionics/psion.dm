@@ -74,16 +74,13 @@
 			var/obj/item/organ/external/R = O
 			if(!BP_IS_ROBOTIC(R))
 				continue
-
-			if(R.owner != owner)
-				continue
 			owner.visible_message(SPAN_DANGER("[owner]'s [R.name] tears off."),
 			SPAN_DANGER("Your [R.name] tears off."))
 			R.droplimb()
 			if(ishuman(owner))
 				var/mob/living/carbon/human/H = owner
 				H.update_implants()
-	
+
 	for(var/obj/item/organ/O in owner.internal_organs)
 		if(istype(O, /obj/item/organ/internal))
 			var/obj/item/organ/internal/R = O
