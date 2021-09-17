@@ -409,7 +409,7 @@
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
-	desc = "Special training from senior Prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."
+	desc = "Special training or experience from living in the wild, untamed world has provided the instinctive advantage to know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."
 
 /datum/perk/market_prof
 	name = "Market Professional"

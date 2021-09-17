@@ -134,6 +134,8 @@
 	outfit_type = /decl/hierarchy/outfit/job/outsider
 	difficulty = "Impossible!"
 
+	perks = list(/datum/perk/stalker)
+
 	stat_modifiers = list(
 		STAT_BIO = 5,
 		STAT_TGH = 6,
