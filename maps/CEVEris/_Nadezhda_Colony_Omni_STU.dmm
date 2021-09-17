@@ -25978,6 +25978,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/camera/network/engineering{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "gLL" = (
@@ -66550,6 +66553,7 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
+/obj/machinery/camera/network/engineering,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/engineering/workshop)
 "rjd" = (
@@ -68712,6 +68716,9 @@
 /area/nadezhda/absolutism/bioreactor)
 "rKx" = (
 /obj/machinery/hologram/holopad,
+/obj/machinery/camera/network/engineering{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/command/gmaster)
 "rKy" = (
@@ -72490,7 +72497,6 @@
 /obj/structure/table/rack,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/reagent_containers/glass/bucket,
-/obj/machinery/camera/network/engineering,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/engineering/workshop)
 "sLM" = (
@@ -88818,6 +88824,13 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
+"wIS" = (
+/obj/structure/closet/secure_closet/personal/engineering_personal,
+/obj/machinery/camera/network/engineering{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/engineering/workshop)
 "wIV" = (
 /obj/structure/sign/department/bar,
 /turf/simulated/wall,
@@ -158334,7 +158347,7 @@ tsn
 rPd
 utW
 tpv
-tpv
+wIS
 xjr
 xQu
 iDV
