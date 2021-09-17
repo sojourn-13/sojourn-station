@@ -1,13 +1,14 @@
 //Macro: MUTATION_COPY
 /datum/genetics/mutation/copy_mob
 	name = "Genetic Copy of a disappointing placeholder"
+	key = "MUTATION_COPY_SHOULD/NOT/SHOW"
 	embryo_descriptions = list(/datum/genetics/embryo_state/copy_mob_1)
 	clone_gene = TRUE
 
 /datum/genetics/mutation/copy_mob/New(var/mob/living/source)
 		source_mob = source
-		name = "Genetic Copy of [source_mob.name]"
-
+		name = "Genetic Copy of [source_mob]"
+		key = "MUTATION_COPY_[source_mob.type]"
 
 /datum/genetics/embryo_state/copy_mob_1
 	desc = "The embryo resembles its parent closely."

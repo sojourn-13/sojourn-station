@@ -68,11 +68,11 @@
 
 	var/list/chem_effects = list()
 
-	//Mutations populated at the start of the round; Used for genetics.
-	var/latent_mutations = list()
+	//Inactive Mutations populated at spawn, meant to reflect integral parts of this creature's DNA
+	var/inherant_mutations = list()
 
-	//Mutations populated manually through genetic tampering.
-	var/datum/genetics/genetics_holder/active_mutations
+	//Mutations populated through horrendous genetic tampering.
+	var/datum/genetics/genetics_holder/unnatural_mutations = new()
 
 	//Used in living/recoil.dm
 	var/recoil = 0 //What our current recoil level is

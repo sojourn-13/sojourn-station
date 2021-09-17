@@ -1,5 +1,7 @@
-
-//This is a bugtesting item, please forgive the memes.
+/*
+=================The Belvoix scanner=================
+This is a bugtesting item, please forgive the memes.
+*/
 /obj/item/device/scanner/belvoix_scanner
 	name = "Belvoix Scanner"
 	desc = "A worryingly small device for extracting, analyzing and modifying genetic information. Never saw production in Soteria, as it was deemed too humane and convenient for regular use."
@@ -16,7 +18,8 @@
 	return TRUE
 
 
-/obj/item/device/scanner/belvoix_scanner/scan(atom/target, mob/user)
+/obj/item/device/scanner/belvoix_scanner/scan(mob/living/target, mob/user)
+	log_debug("Injected a bastard named [target] with the belvoix scanner")
 	if(user.a_intent == I_HELP)
 		if(target != src)
 			to_chat(user, SPAN_NOTICE("\The [src] takes a sample out of \the [target]"))
@@ -25,8 +28,8 @@
 		scan_data = belvoix_scan(held_mutations)
 		user.show_message(scan_data)
 	else if(user.a_intent == I_HURT)
-		to_chat(user, SPAN_NOTICE("\The [src] injects a sample into \the [target]"))		
-		implant_mutations(target, held_mutations)
+		to_chat(user, SPAN_NOTICE("\The [src] injects a sample into \the [target]"))
+		inject_mutations(target, held_mutations.mutation_pool)
 
 
 /proc/belvoix_scan(var/datum/genetics/genetics_holder/held_mutations)

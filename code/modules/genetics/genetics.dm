@@ -11,77 +11,75 @@
 * If no mutations in a mob has the onClone value, it will be automatically generated, so genetics can be used to clone just about anything.
 *
 * Example:
-* mutations_inactive="1=MUTATION_COW_SKIN;2=MUTATION_IMBECILE;3=MUTATION_MKNEWAIFUHAIR"
+* mutations_inactive= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
 **/
 
 /datum/genetics/genetics_holder
 	var/mob/living/holder //Who is holding the genes
 
-	var/mob/living/donator //Where the genes came from.
-
 	var/list/mutation_pool = list() //Each gene held by the creature. Uses /datum/genetics/mutation.
+
+	var/max_instability = 1000 //How much instability we can deal with before bad things happen.
 
 	var/total_instability = 0 //How much instability is present in the gene pool.
 
 	var/initialized = FALSE //Whether or not the held genes have been applied to the holder.
 
+
 //Build a holder based on a mob source
-/datum/genetics/genetics_holder/New(var/mob/living/source)
+/datum/genetics/genetics_holder/New(var/mob/living/source = null)
 	..()
+	if(source)
+		//No robots allowed.
+		if(issilicon(source))
+			return
 
-	//No robots allowed.
-	if(issilicon(source))
-		return
+		var/clone_mutation_found = FALSE
 
-	donator = source
-	var/clone_mutation_found = FALSE
+		//Add inherant mutations as fully realized objects
+		if(source.inherant_mutations)
+			for(var/source_mutation in source.inherant_mutations)
+				var/mut_path = source_mutation
+				var/datum/genetics/mutation/new_mutation = new mut_path
+				new_mutation.container = src
+				new_mutation.source_mob = source
+				new_mutation.implanted = FALSE
+				new_mutation.active = pick(list(TRUE, FALSE))
+				if(new_mutation.active)
+					total_instability += new_mutation.instability
 
-	//Add inactive mutations as fully realized objects
-	if(donator.latent_mutations)
-		for(var/source_mutation in donator.latent_mutations)
-			var/mut_path = source_mutation
-			var/datum/genetics/mutation/new_mutation = new mut_path
-			new_mutation.container = src
-			new_mutation.source_mob = donator
-			new_mutation.implanted = FALSE
-			new_mutation.active = pick(list(TRUE, FALSE))
-			if(new_mutation.active)
-				total_instability += new_mutation.instability
+				if(istype(new_mutation, MUTATION_COPY))
+					clone_mutation_found = TRUE
+				mutation_pool += new_mutation
 
-			if(istype(new_mutation, MUTATION_COPY))
-				clone_mutation_found = TRUE
-			mutation_pool += new_mutation
+		//Add unnaturally implanted mutations as fully realized objects.
+		if(source.unnatural_mutations)
+			for(var/datum/genetics/mutation/source_mutation in source.unnatural_mutations.mutation_pool)
+				var/datum/genetics/mutation/new_mutation = source_mutation.copy()
+				new_mutation.container = src
+				new_mutation.implanted = FALSE
+				if(new_mutation.active)
+					total_instability += new_mutation.instability
+				if(istype(new_mutation, MUTATION_COPY))
+					clone_mutation_found = TRUE
+				mutation_pool += new_mutation
 
-	//Add active mutations as fully realized objects.
-	if(donator.active_mutations)
-		for(var/datum/genetics/mutation/source_mutation in donator.active_mutations.mutation_pool)
-			var/datum/genetics/mutation/new_mutation = new source_mutation(donator)
+		//Generate a Copy Mob mutation if one hasn't been created yet.
+		if (!clone_mutation_found)
+			var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source)
 			new_mutation.container = src
 			new_mutation.implanted = FALSE
 			new_mutation.active = TRUE
 			total_instability += new_mutation.instability
-			if(istype(new_mutation, MUTATION_COPY))
-				clone_mutation_found = TRUE
 			mutation_pool += new_mutation
-
-	//Generate a Copy Mob mutation if one hasn't been created yet.
-	if (!clone_mutation_found)
-		var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(donator)
-		new_mutation.container = src
-		new_mutation.implanted = FALSE
-		new_mutation.active = TRUE
-		total_instability += new_mutation.instability
-		mutation_pool += new_mutation
 
 
 /datum/genetics/genetics_holder/Destroy()
-	donator = null
 	total_instability = 0
 	mutation_pool = list()
 	return ..()
 
-
-/datum/genetics/genetics_holder/proc/irradiate(/datum/genetics/mutation/target)
+/datum/genetics/genetics_holder/proc/irradiate(datum/genetics/mutation/target)
 	//What happens when a gene is irradiated.
 
 /datum/genetics/genetics_holder/proc/getMutation(key)
@@ -98,31 +96,65 @@
 		mutation_to_remove.onMobRemove(src)
 
 //Activate an implant in a mutagen
-/proc/implant_mutations(var/mob/living/target, var/datum/genetics/genetics_holder/injection)
+/proc/inject_mutations(var/mob/living/target, var/list/injection=list())
+
+	log_debug("--------------")
+	log_debug("beginning implant.")
+	log_debug("target person:")
+	log_debug("[target.name] ->[target.key], [target.ckey]")
 
 	//No robots allowed.
 	if(issilicon(target))
 		return FALSE
 
-	//Setup the linkage between the mob and the genetics holder
-	var/datum/genetics/genetics_holder/container = injection
-	container.holder = target
-	target.active_mutations = container
+	//Initialize this if we haven't already
+	target.unnatural_mutations.holder = target
 
-	//Process individual mutations, set them to implanted.
-	for(var/datum/genetics/mutation/active_mutation in target.active_mutations)
-		active_mutation.implanted = TRUE
-		//Skip mutations not activated
-		if(active_mutation.active)
-			if(istype(target, /mob/living/carbon/human))
-				active_mutation.onPlayerImplant()
+	//Add the mutations in a separate loop from the activation step.
+	for(var/datum/genetics/mutation/injected_mutation in injection)
+		var/datum/genetics/mutation/new_mutation = injected_mutation.copy()
+		if(new_mutation.active) //Only active genes contribute to instability.
+			target.unnatural_mutations.total_instability += injected_mutation.instability
+			if(target.unnatural_mutations.total_instability > target.unnatural_mutations.max_instability)
+				new_mutation.active = FALSE
+		new_mutation.implanted = FALSE //Sanity checking for activation loop.
+		new_mutation.container = target.unnatural_mutations
+		target.unnatural_mutations.mutation_pool += new_mutation
 
-			if(istype(target, /mob/living))
-				active_mutation.onMobImplant()
+	//Process individual mutations, set them to implanted, and apply their effects to the target.
+	for(var/datum/genetics/mutation/unnatural_mutation in target.unnatural_mutations.mutation_pool)
+		log_debug("Reached the mutation loop Active mutation: [unnatural_mutation], implanted=[unnatural_mutation.implanted], active=[unnatural_mutation.active]")
+		if(unnatural_mutation.implanted) //Skip mutations already marked as implanted.
+			log_debug("Skipping Mutation, already implanted.")
+			continue
+		unnatural_mutation.implanted = TRUE
+		
+		if(!unnatural_mutation.active) //Skip mutations not activated
+			log_debug("Skipping Mutation, inactive.")
+			continue
 
-	target.active_mutations.initialized = TRUE
+		if(istype(target, /mob/living/carbon/human))
+			log_debug("Ran On Player proc for: [unnatural_mutation]")
+			unnatural_mutation.onPlayerImplant()
+		if(istype(target, /mob/living))
+			log_debug("Ran On Mob proc for [unnatural_mutation]")
+			unnatural_mutation.onMobImplant()
+
+	target.unnatural_mutations.initialized = TRUE
+
+	//The part where bad things happen.
+	if(target.unnatural_mutations.total_instability > target.unnatural_mutations.max_instability)
+		target.unnatural_mutations.destabilize()
 
 	return TRUE
+
+//Function handling instability of a creature exceeding their maximum.
+/datum/genetics/genetics_holder/proc/destabilize()
+	//TODO: All of this.
+
+	//Akira message:
+	holder.visible_message(SPAN_DANGER("\The [holder]'s body begins to warp and change! BY SCIENCE, WHAT IS THAT!?"))
+
 
 /*
 * Basic outline of mutations
@@ -139,6 +171,9 @@
 	var/name = "Mutation Placeholder"
 
 	var/desc = "Description Placeholder"
+
+	//The key of the object, used to search for it easily. Often matches the Macro text.
+	var/key = "DEFAULT"
 
 	//The text displayed to a player when they gain a mutation.
 	var/gain_text
@@ -167,6 +202,25 @@
 	//How many research points the gene is worth.
 	var/gene_research_value = 1000
 
+/datum/genetics/mutation/proc/copy(var/copy_container = FALSE)
+	var/datum/genetics/mutation/duplicate = new type(src)
+	if(copy_container)
+		duplicate.container = container
+	duplicate.source_mob = source_mob
+	duplicate.name = name
+	duplicate.desc = desc
+	duplicate.key = key
+	duplicate.gain_text = gain_text
+	duplicate.clone_gene = clone_gene
+	duplicate.active = active
+	duplicate.implanted = implanted
+	duplicate.embryo_descriptions = embryo_descriptions.Copy()
+	duplicate.instability = instability
+	duplicate.cloning_mutation = cloning_mutation
+	duplicate.irradiation_list = irradiation_list.Copy()
+	duplicate.gene_research_value = gene_research_value
+	return duplicate
+
 /datum/genetics/embryo_state
 	var/active_stage = 0 //What stage of development the descriptor becomes active.
 	var/desc = "This embryo is looking pretty default."
@@ -178,17 +232,19 @@
 
 //What happens when the genes are applied to a player.
 /datum/genetics/mutation/proc/onPlayerImplant()
+	log_debug("Ran the default Player implant proc for [name] as per usual")
 	if(istype(container.holder, /mob/living/carbon/human) && gain_text)
 		to_chat(container.holder, SPAN_NOTICE("[gain_text]"))
 		return TRUE
 	return FALSE
 
 //What happens when the genes are applied to any creature.
+//This function will be applied to ANY mob, including players, so be sure to exclude appropriately for edge cases.
 /datum/genetics/mutation/proc/onMobImplant()
+	log_debug("Ran the default Mob proc for [name]")
 
 //What happens when a gene is removed from a player.
 /datum/genetics/mutation/proc/onPlayerRemove()
-
 
 //What happens when a gene is removed from a mob.
 /datum/genetics/mutation/proc/onMobRemove()
@@ -227,8 +283,6 @@
 //What happens when a mutation causes mounting occurences over time, such as intermittant moos.
 /datum/genetics/mutation/Process()
 	if(!checkProcessingValid())
-		log_and_message_admins("Process halted in the Processing step, check processing trigger.")
-		haltProcessing()
 		return FALSE
 	return TRUE
 

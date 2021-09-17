@@ -109,7 +109,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-	latent_mutations= list(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MOO)
+	inherant_mutations= list(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MOO)
 
 /mob/living/simple_animal/cow/New()
 	udder = new(50)

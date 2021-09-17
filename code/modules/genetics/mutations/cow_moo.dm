@@ -1,6 +1,7 @@
 //Macro: MUTATION_MOO
 /datum/genetics/mutation/cow_moo
 	name = "Moo"
+	key = "MUTATION_MOO"
 	desc = "Causes the affected to moo intermittantly."
 	embryo_descriptions = list(/datum/genetics/embryo_state/cow_skin)
 	gain_text = "Your feel the urge to graze in a meadow. Moo..."
@@ -8,7 +9,7 @@
 	var/initial_time
 
 /datum/genetics/mutation/cow_moo/onMobImplant()
-	..()
+	log_debug("Cow Moo implant activated")
 	initial_time = world.time
 	initializeProcessing()
 	
@@ -16,6 +17,7 @@
 	haltProcessing()
 
 /datum/genetics/mutation/cow_moo/Process()
+	log_debug("Unbeknownst to everyone, the Moo is processing. Somehow.")
 	if(!..())
 		return
 
@@ -24,3 +26,4 @@
 	
 	initial_time = world.time
 	container.holder.visible_message("<span class='name'>[container.holder]</span> emits a haunting Moo.")
+	return
