@@ -347,17 +347,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 	var/last_event = 0
 
 /obj/machinery/door/airlock/Process()
-	// Deliberate no call to parent.
-	if(main_power_lost_until > 0 && world.time >= main_power_lost_until)
-		regainMainPower()
-
-	if(backup_power_lost_until > 0 && world.time >= backup_power_lost_until)
-		regainBackupPower()
-
-	else if(electrified_until > 0 && world.time >= electrified_until)
-		electrify(0)
-
-	..()
+	return PROCESS_KILL
 
 /obj/machinery/door/airlock/uranium/Process()
 	if(world.time > last_event+20)
@@ -479,16 +469,16 @@ There are 9 wires.
 					src.justzap = 1
 					spawn (10)
 						src.justzap = 0
-					return
+					return FALSE
 			else /*if(src.justzap)*/
-				return
+				return FALSE
 		else if(prob(10) && src.operating == 0)
 			var/mob/living/carbon/C = user
 			if(istype(C) && C.hallucination_power > 25)
 				to_chat(user, "<span class='danger'>You feel a powerful shock course through your body!</span>")
 				user.adjustHalLoss(10)
 				user.Stun(10)
-				return
+				return FALSE
 	..()
 
 /obj/machinery/door/airlock/proc/isElectrified()
@@ -528,18 +518,23 @@ There are 9 wires.
 	return src.isWireCut(AIRLOCK_WIRE_BACKUP_POWER1) || src.isWireCut(AIRLOCK_WIRE_BACKUP_POWER2)
 
 /obj/machinery/door/airlock/proc/loseMainPower()
-	main_power_lost_until = mainPowerCablesCut() ? -1 : world.time + SecondsToTicks(60)
+	main_power_lost_until = mainPowerCablesCut() ? -1 : SecondsToTicks(60)
+	if(main_power_lost_until > 0)
+		addtimer(CALLBACK(src, .proc/regainMainPower), main_power_lost_until)
 
 	// If backup power is permanently disabled then activate in 10 seconds if possible, otherwise it's already enabled or a timer is already running
 	if(backup_power_lost_until == -1 && !backupPowerCablesCut())
-		backup_power_lost_until = world.time + SecondsToTicks(10)
+		backup_power_lost_until = SecondsToTicks(10)
+		addtimer(CALLBACK(src, .proc/regainBackupPower), backup_power_lost_until)
 
 	// Disable electricity if required
 	if(electrified_until && isAllPowerLoss())
 		electrify(0)
 
 /obj/machinery/door/airlock/proc/loseBackupPower()
-	backup_power_lost_until = backupPowerCablesCut() ? -1 : world.time + SecondsToTicks(60)
+	backup_power_lost_until = backupPowerCablesCut() ? -1 : SecondsToTicks(60)
+	if(backup_power_lost_until > 0)
+		addtimer(CALLBACK(src, .proc/regainBackupPower), backup_power_lost_until)
 
 	// Disable electricity if required
 	if(electrified_until && isAllPowerLoss())
@@ -575,7 +570,9 @@ There are 9 wires.
 		else
 			shockedby += text("\[[time_stamp()]\] - EMP)")
 		message = "The door is now electrified [duration == -1 ? "permanently" : "for [duration] second\s"]."
-		src.electrified_until = duration == -1 ? -1 : world.time + SecondsToTicks(duration)
+		electrified_until = duration == -1 ? -1 : SecondsToTicks(duration)
+		if(electrified_until > 0)
+			addtimer(CALLBACK(src, .proc/electrify), electrified_until)
 
 	if(feedback && message)
 		to_chat(usr, message)
@@ -1290,7 +1287,6 @@ There are 9 wires.
 					if(world.time > next_beep_at)
 						playsound(src.loc, 'sound/machines/buzz-two.ogg', 30, 1, -1)
 						next_beep_at = world.time + SecondsToTicks(120)
-					close_door_at = world.time + 6
 					return
 				if(istype(AM, /obj/item/tool))
 					var/obj/item/tool/T = AM
