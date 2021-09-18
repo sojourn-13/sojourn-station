@@ -580,6 +580,7 @@
 		for(var/i=0;i<actual_meat_amount;i++)
 			var/obj/item/meat = new meat_type(get_turf(src))
 			meat.name = "[src.name] [meat.name]"
+			meat.inherant_mutations = src.inherant_mutations
 		if(issmall(src))
 			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
 			new blood_from_harvest(get_turf(src))
