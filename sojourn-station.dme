@@ -2018,8 +2018,6 @@
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\tank.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\toxic.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\robot.dm"
-#include "code\modules\mob\living\carbon\superior_animal\robots\subtype\excelsior\excelsior.dm"
-#include "code\modules\mob\living\carbon\superior_animal\robots\subtype\excelsior\types\poporavtomat.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\greyson.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\custodian.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\friendly.dm"
