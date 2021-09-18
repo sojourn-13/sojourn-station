@@ -1850,7 +1850,7 @@
 /obj/random/material_ore/low_chance,
 /obj/random/material_ore/low_chance,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "aAV" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/dropper{
@@ -2087,7 +2087,7 @@
 /obj/random/material_ore/low_chance,
 /obj/random/material_ore/low_chance,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "aEf" = (
 /obj/machinery/conveyor/west{
 	id = "QMLoad2"
@@ -3779,7 +3779,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/random/boxes,
 /turf/simulated/floor/beach/water/flooded,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "bbk" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 6
@@ -31869,7 +31869,7 @@
 "ism" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "isF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/standard{
@@ -54459,7 +54459,7 @@
 /obj/random/material_ore/low_chance,
 /obj/random/material_ore/low_chance,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "ofl" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -83647,9 +83647,10 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "vvY" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall,
-/area/colony)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/cev_eris,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/hangarsupply)
 "vwb" = (
 /obj/structure/catwalk,
 /obj/structure/barricade,
@@ -85496,7 +85497,7 @@
 	oldified = 1
 	},
 /turf/simulated/floor/beach/water/flooded,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "vSL" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -87651,7 +87652,7 @@
 "wts" = (
 /obj/random/material_ore/low_chance,
 /turf/simulated/floor/beach/water/flooded,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "wtw" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -89275,7 +89276,7 @@
 /obj/effect/floor_decal/industrial/box/white,
 /obj/random/material_ore/low_chance,
 /turf/simulated/floor/beach/water/flooded,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "wOE" = (
 /obj/structure/flora/small/grassb1,
 /turf/simulated/floor/asteroid/dirt,
@@ -113570,7 +113571,7 @@ koE
 koE
 rup
 koE
-sTw
+vvY
 vWY
 koE
 koE
@@ -113782,7 +113783,7 @@ sFI
 sFI
 sFI
 sFI
-trc
+qPK
 qPK
 qPK
 qPK
@@ -113973,10 +113974,10 @@ ure
 gfs
 iRh
 oep
-vvY
-vvY
-vvY
-vvY
+nOD
+nOD
+nOD
+nOD
 crC
 crC
 crC
@@ -114175,18 +114176,18 @@ fpr
 fYS
 wdM
 thu
-xGi
-trc
-trc
-trc
-trc
+koE
+qPK
+qPK
+qPK
+qPK
 sFI
 sFI
 sFI
 sFI
 sFI
 sFI
-trc
+qPK
 kFX
 bNj
 shw
@@ -114377,18 +114378,18 @@ wfL
 rFR
 dxu
 qJw
-xGi
+koE
 aAS
 ofj
 aEe
-trc
-trc
-trc
-trc
-trc
-trc
-trc
-trc
+qPK
+qPK
+qPK
+qPK
+qPK
+qPK
+qPK
+qPK
 vvs
 bNj
 trc
@@ -114988,13 +114989,13 @@ hiT
 hiT
 hiT
 xGi
-trc
+qPK
 wts
 wts
 wts
 vSy
-trc
-trc
+qPK
+qPK
 iWI
 kFX
 trc
@@ -115190,13 +115191,13 @@ kOs
 cFW
 ygZ
 xGi
-trc
+qPK
 wOu
 bbh
 vSy
 vSy
-trc
-trc
+qPK
+qPK
 dcw
 aYd
 trc
@@ -115392,13 +115393,13 @@ pAw
 sYG
 sYG
 xGi
-trc
-trc
-trc
-trc
-trc
-trc
-trc
+qPK
+qPK
+qPK
+qPK
+qPK
+qPK
+qPK
 mSG
 eNE
 trc
