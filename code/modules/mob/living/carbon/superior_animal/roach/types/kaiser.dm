@@ -18,7 +18,7 @@ Has ability of every roach.
 
 	var/datum/reagents/gas_sac
 
-	armor = list(melee = 30, bullet = 25, energy = 10, bomb = 50, bio = 20, rad = 100)
+	armor = list(melee = 30, bullet = 25, energy = 10, bomb = 50, bio = 20, rad = 100, agony = 0)
 
 	knockdown_odds = 10
 	melee_damage_lower = 20

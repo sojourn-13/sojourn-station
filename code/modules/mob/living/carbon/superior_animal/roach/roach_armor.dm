@@ -3,19 +3,23 @@
 
 	if(give_randomized_armor)
 		pick_armor()
-		armor += add_armor
+	for(var/key in add_armor)
+		if(key in armor)
+			armor[key] += add_armor[key]
+		else
+			armor[key] = add_armor[key]
 		if(gives_prefex)
 			name = "[prefex] [name]"
 
 
 
 /mob/living/carbon/superior_animal/roach/pick_armor()
-	switch (pickweight(list("basic" = 5, "biosilicified" = 1, "lambertian" = 1, "insensitive" = 3)))
+	switch (pickweight(list("basic" = 5, "Biosilicified" = 3, "Lambertian" = 1, "Insensitive" = 2)))
 
 		if("basic") //No changes, we are base level
 			return
 
-		if("biosilicified")
+		if("Biosilicified")
 			add_armor = list(
 			melee = 10,
 			bullet = 5,
@@ -26,10 +30,10 @@
 			agony = 15 //Rubbers deal way less to us!
 			)
 			gives_prefex = TRUE
-			prefex = "biosilicified"
+			prefex = "Biosilicified"
 			return
 
-		if("lambertian")
+		if("Lambertian")
 			add_armor = list(
 			melee = 0,
 			bullet = 0,
@@ -40,11 +44,11 @@
 			agony = 10
 			)
 			gives_prefex = TRUE
-			prefex = "lambertian"
+			prefex = "Lambertian"
 			flash_resistances += 2
 			return
 
-		if("insensitive")
+		if("Insensitive")
 			add_armor = list(
 			melee = 5,
 			bullet = 5,
@@ -56,5 +60,5 @@
 			)
 			gives_prefex = TRUE
 			flash_resistances += 1
-			prefex = "insensitive"
+			prefex = "Insensitive"
 			return

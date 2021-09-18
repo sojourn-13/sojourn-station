@@ -3,12 +3,24 @@
 
 	if(give_randomized_armor)
 		pick_armor()
-		armor += add_armor
+	for(var/key in add_armor)
+		if(key in armor)
+			armor[key] += add_armor[key]
+		else
+			armor[key] = add_armor[key]
 		if(gives_prefex)
 			name = "[prefex] [name]"
-
-
-
+/*
+//We'll assume that damage is list(brute = 5, burn = 5) and armor is a list(brute = 5, toxin = 5)
+	var/list/result = list() //Creates a new list
+	for(var/key in damage) //gets every entry in the damage list and sets 'key' to it one at a time. Because of how byond lists work, however, key will be set to 'brute' for the first loop, then 'burn'
+		if(key in armor) //brute is in armor too
+			result[key] = max(damage[key] - armor[key], 0) //So you just take the difference between them and put the result in the result list.
+		else //burn is not in armor
+			result[key] = damage[key] //So you just deal the damage directly to the player's life points.
+  //You'll notice that at no point did toxin matter. Yes, armor blocks toxin, but because no toxin damage was actually done, in the end we didn't need to add it to the result damage list.
+  //So, at the very end, result = list(brute = 0, burn = 5)
+*/
 /mob/living/carbon/superior_animal/giant_spider/pick_armor()
 	switch (pickweight(list("basic" = 5, "padded" = 1, "lustrous" = 1, "insensitive" = 3)))
 

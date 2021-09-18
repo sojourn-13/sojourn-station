@@ -15,7 +15,7 @@
 
 	give_randomized_armor = TRUE //We get randomized addition armor
 
-	armor = list(melee = 10, bullet = 5, energy = 0, bomb = 5, bio = 20, rad = 0)
+	armor = list(melee = 10, bullet = 5, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 2
