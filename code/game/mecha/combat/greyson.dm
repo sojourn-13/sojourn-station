@@ -18,6 +18,8 @@
 	wreckage = null
 	max_equip = 5
 	internal_damage_threshold = 30
+	pixel_x = -16 // Make the mech centered
+	pixel_y = -16
 
 /obj/mecha/combat/greyson/New()
 	..()

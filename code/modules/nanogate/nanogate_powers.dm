@@ -9,7 +9,7 @@ The powers here are those that don't currently fit in any categories
 
 List of powers in this page :
 - Communication : A free power that allow the user to speak with anyone else that also got a nanogate.
-- Nanite Swarm : A reusable power that allow the user to create a controllable nanite swarm.
+- Nanite Swarm : A reusable power that allow the user to create a controllable nanite swarm. // Commented out until we make the mob work in like 5 years
 */
 
 /obj/item/organ/internal/nanogate/proc/nanite_message()
@@ -38,6 +38,7 @@ List of powers in this page :
 		for(var/mob/observer/ghost/G in world)
 			G.show_message("<i>Nanite message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
 
+/*
 // Create a swarm of nanites. We're not removing the power once used because the swarm is fairly weak
 /obj/item/organ/internal/nanogate/proc/nanite_swarm()
 	set category = "Nanogate Powers"
@@ -48,4 +49,4 @@ List of powers in this page :
 	if(pay_power_cost(nano_point_cost))
 		to_chat(owner, "You permanently assign some of your nanites to become a swarm.")
 		var/mob/living/simple_animal/hostile/commanded/nanomachine/nanomachine = new /mob/living/simple_animal/hostile/commanded/nanomachine(owner.loc)
-		nanomachine.master = owner
+		nanomachine.master = owner*/
