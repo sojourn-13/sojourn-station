@@ -22,7 +22,7 @@ This is a bugtesting item, please forgive the memes.
 	if(user.a_intent == I_HELP)
 		if(target != src)
 			to_chat(user, SPAN_NOTICE("\The [src] takes a sample out of \the [target]"))
-		held_mutations = new /datum/genetics/genetics_holder(target, src)
+		held_mutations = new /datum/genetics/genetics_holder(target.unnatural_mutations.mutation_pool, target.inherent_mutations, target)
 		scan_title = "Belvoix Scanner - [target]"
 		scan_data = belvoix_scan(held_mutations)
 		user.show_message(scan_data)

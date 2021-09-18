@@ -27,58 +27,67 @@
 
 
 //Build a holder based on a mob source
-/datum/genetics/genetics_holder/New(var/mob/living/source = null)
+/datum/genetics/genetics_holder/New(var/list/unnatural_mutations, var/list/inherant_mutations, var/mob/living/source)
 	..()
+
 	if(source)
+		log_debug("--------------")
+		log_debug("Creating new Genetics with source reference")
+		log_debug("source: [source]")
 		//No robots allowed.
 		if(issilicon(source))
 			return
 
-		var/clone_mutation_found = FALSE
 
-		//Add inherant mutations as fully realized objects
-		if(source.inherant_mutations)
-			for(var/datum/genetics/mutation/source_mutation in source.inherant_mutations)
-				//Check to make sure there are no duplicates
-				if(getMutation(source_mutation.key))
-					continue
-				var/datum/genetics/mutation/new_mutation = new type(source_mutation)
-				new_mutation.container = src
+	//Add inherant mutations as fully realized objects
+	if(inherant_mutations && inherant_mutations.len > 0)
+		log_debug("inherant mutations:")
+		for(var/source_mutation in inherant_mutations)
+			log_debug("-> [source_mutation]")
+
+		for(var/incoming_mutation in inherant_mutations)
+			var/datum/genetics/mutation/source_mutation = new incoming_mutation()
+			//Check to make sure there are no duplicates
+			log_debug("Attempting to read an inherant mutation: [source_mutation]")
+			if(getMutation(source_mutation.key))
+				continue
+			log_debug("Couldn't find existing mutation, moving on to try and add one:")
+			var/datum/genetics/mutation/new_mutation = source_mutation.copy()
+			new_mutation.container = src
+			if(source)
 				new_mutation.source_mob = source
-				new_mutation.implanted = FALSE
-				new_mutation.active = pick(list(TRUE, FALSE))
-				if(new_mutation.active)
-					total_instability += new_mutation.instability
+			new_mutation.implanted = FALSE
+			new_mutation.active = pick(list(TRUE, FALSE))
+			if(new_mutation.active)
+				total_instability += new_mutation.instability
+			mutation_pool += new_mutation
 
-				if(istype(new_mutation, MUTATION_COPY))
-					clone_mutation_found = TRUE
-				mutation_pool += new_mutation
+	//Add unnaturally implanted mutations as fully realized objects.
+	if(unnatural_mutations && unnatural_mutations.len > 0)
+		log_debug("unnatural mutations:")
+		for(var/source_mutation in unnatural_mutations)
+			log_debug("-> [source_mutation]")
 
-		//Add unnaturally implanted mutations as fully realized objects.
-		if(source.unnatural_mutations)
-			for(var/datum/genetics/mutation/source_mutation in source.unnatural_mutations.mutation_pool)
-				//Check to make sure there are no duplicates
-				if(getMutation(source_mutation.key))
-					continue
-				var/datum/genetics/mutation/new_mutation = source_mutation.copy()
-				new_mutation.container = src
-				new_mutation.implanted = FALSE
-				if(new_mutation.active)
-					total_instability += new_mutation.instability
-					if(istype(new_mutation, MUTATION_COPY))
-						clone_mutation_found = TRUE
-				mutation_pool += new_mutation
+		for(var/datum/genetics/mutation/source_mutation in unnatural_mutations)
+			//Check to make sure there are no duplicates
+			if(getMutation(source_mutation.key))
+				continue
+			var/datum/genetics/mutation/new_mutation = source_mutation.copy()
+			new_mutation.container = src
+			new_mutation.implanted = FALSE
+			if(new_mutation.active)
+				total_instability += new_mutation.instability
+			mutation_pool += new_mutation
 
 		//Generate a Copy Mob mutation if one hasn't been created yet.
 		//Also, Check to make sure there are no duplicates. Copy_mob is robust enough to not treat clone mutations of other mobs as a duplicate.
-		if(!clone_mutation_found && !getMutation("MUTATION_COPY_[source.type]"))
-			var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source)
-			new_mutation.container = src
-			new_mutation.implanted = FALSE
-			new_mutation.active = TRUE
-			total_instability += new_mutation.instability
-			mutation_pool += new_mutation
-
+	if(source && !getMutation("MUTATION_COPY_[source.type]"))
+		var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source)
+		new_mutation.container = src
+		new_mutation.implanted = FALSE
+		new_mutation.active = TRUE
+		total_instability += new_mutation.instability
+		mutation_pool += new_mutation
 
 /datum/genetics/genetics_holder/Destroy()
 	total_instability = 0
@@ -142,7 +151,7 @@
 			log_debug("Skipping Mutation, already implanted.")
 			continue
 		unnatural_mutation.implanted = TRUE
-		
+
 		if(!unnatural_mutation.active) //Skip mutations not activated
 			log_debug("Skipping Mutation, inactive.")
 			continue

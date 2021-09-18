@@ -69,7 +69,7 @@
 	var/list/chem_effects = list()
 
 	//Inactive Mutations populated at spawn, meant to reflect integral parts of this creature's DNA
-	var/inherant_mutations = list()
+	var/list/inherent_mutations = list()
 
 	//Mutations populated through horrendous genetic tampering.
 	var/datum/genetics/genetics_holder/unnatural_mutations = new()
