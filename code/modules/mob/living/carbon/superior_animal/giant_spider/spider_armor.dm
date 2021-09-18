@@ -3,13 +3,13 @@
 
 	if(give_randomized_armor)
 		pick_armor()
+	if(gives_prefex)
+		name = "[prefex] [name]"
 	for(var/key in add_armor)
 		if(key in armor)
 			armor[key] += add_armor[key]
 		else
 			armor[key] = add_armor[key]
-		if(gives_prefex)
-			name = "[prefex] [name]"
 /*
 //We'll assume that damage is list(brute = 5, burn = 5) and armor is a list(brute = 5, toxin = 5)
 	var/list/result = list() //Creates a new list

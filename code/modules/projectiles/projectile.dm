@@ -713,28 +713,28 @@
 
 		if(has_drop_off) //Does this shot get weaker as it goes?
 			range_shot++ //We get the distence form the shooter to what it hit
-			damage_drop_off = max(1, range_shot - initial(affective_damage_range)) / 50 //How far we were shot - are affective range. This one is for damage drop off
-			ap_drop_off = max(1, range_shot - initial(affective_ap_range)) //How far we were shot - are affective range. This one is for AP drop off
+			damage_drop_off = max(1, range_shot - affective_damage_range) / 50 //How far we were shot - are affective range. This one is for damage drop off
+			ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-			armor_penetration -= max(0, initial(armor_penetration) - ap_drop_off)
+			armor_penetration = max(0, armor_penetration - ap_drop_off)
 
-			agony -= max(0, initial(agony) - range_shot) //every step we lose one agony, this stops sniping with rubbers.
+			agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
 
 			if(damage_types[BRUTE])
-				damage_types[BRUTE] -= max(0, penetrating + initial(damage_types[BRUTE]) - damage_drop_off) //they can still embed
+				damage_types[BRUTE] -= max(0, penetrating + damage_types[BRUTE] - damage_drop_off) //they can still embed
 
 			if(damage_types[BURN])
-				damage_types[BURN] -= max(0, penetrating + initial(damage_types[BURN]) - damage_drop_off) //they can still embed
+				damage_types[BURN] -= max(0, penetrating + damage_types[BURN] - damage_drop_off) //they can still embed
 
 			if(damage_types[TOX])
-				damage_types[TOX] -= max(0, penetrating + initial(damage_types[TOX]) - damage_drop_off) //they can still embed
+				damage_types[TOX] -= max(0, penetrating + damage_types[TOX] - damage_drop_off) //they can still embed
 
 			//Clone dosnt get removed do to being rare same as o2
 
 			if(!hitscan)
 				speed_drop_off = range_shot / 50 //How far we were shot - are affective range. This one is for speed drop off
 				// Every 50 steps = 1 step delay , 5 is 0.1 (thats huge!), 1 0.02
-				step_delay = initial(step_delay) + speed_drop_off
+				step_delay = step_delay + speed_drop_off
 
 		trajectory.increment()	// increment the current location
 		location = trajectory.return_location(location)		// update the locally stored location data
