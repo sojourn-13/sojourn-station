@@ -26,7 +26,7 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive(src)
 	ME.attach(src)
