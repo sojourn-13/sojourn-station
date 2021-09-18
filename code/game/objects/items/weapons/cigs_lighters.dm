@@ -417,11 +417,17 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			else
 				to_chat(user, SPAN_NOTICE("[src] is full."))
 
-/obj/item/clothing/mask/smokable/cigarette/attack_self(mob/user as mob)
+/obj/item/clothing/mask/smokable/cigarette/attack_self(mob/living/user as mob)
 	if(lit == 1)
 		user.visible_message(SPAN_NOTICE("[user] calmly drops and treads on the lit [src], putting it out instantly."))
+		add_fingerprint(user)//Still adding are prints to touch
 		die(1)
 	return ..()
+
+/obj/item/clothing/mask/smokable/cigarette/on_slotmove(mob/user)
+	. = ..()
+	if(get_equip_slot() == SLOT_MASK)
+		add_fingerprint(user) //We infuse are prints when we smoke
 
 /obj/item/clothing/mask/smokable/cigarette/attack(mob/living/carbon/human/H, mob/user, def_zone)
 	if(lit && H == user && istype(H))

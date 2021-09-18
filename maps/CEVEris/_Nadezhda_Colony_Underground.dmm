@@ -31935,9 +31935,9 @@
 	desc = "A remote control-switch for the AI core maintenance door.";
 	id = "AICore";
 	name = "AI Maintenance Hatch";
+	pixel_y = -32;
 	req_access = newlist();
-	req_one_access = newlist();
-	pixel_y = -32
+	req_one_access = newlist()
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
@@ -38938,6 +38938,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/captain/quarters)
+"iiS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/constructable_frame/machine_frame,
+/obj/item/circuitboard/biogenerator,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "ija" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
@@ -73551,7 +73557,7 @@ aHa
 aRq
 aHa
 aRq
-aRQ
+iiS
 aQj
 aHa
 aQj
