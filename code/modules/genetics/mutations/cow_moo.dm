@@ -9,7 +9,6 @@
 	var/initial_time
 
 /datum/genetics/mutation/cow_moo/onMobImplant()
-	log_debug("Cow Moo implant activated")
 	initial_time = world.time
 	initializeProcessing()
 	
@@ -17,7 +16,6 @@
 	haltProcessing()
 
 /datum/genetics/mutation/cow_moo/Process()
-	log_debug("Unbeknownst to everyone, the Moo is processing. Somehow.")
 	if(!..())
 		return
 

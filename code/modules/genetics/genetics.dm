@@ -38,9 +38,11 @@
 
 		//Add inherant mutations as fully realized objects
 		if(source.inherant_mutations)
-			for(var/source_mutation in source.inherant_mutations)
-				var/mut_path = source_mutation
-				var/datum/genetics/mutation/new_mutation = new mut_path
+			for(var/datum/genetics/mutation/source_mutation in source.inherant_mutations)
+				//Check to make sure there are no duplicates
+				if(getMutation(source_mutation.key))
+					continue
+				var/datum/genetics/mutation/new_mutation = new type(source_mutation)
 				new_mutation.container = src
 				new_mutation.source_mob = source
 				new_mutation.implanted = FALSE
@@ -55,17 +57,21 @@
 		//Add unnaturally implanted mutations as fully realized objects.
 		if(source.unnatural_mutations)
 			for(var/datum/genetics/mutation/source_mutation in source.unnatural_mutations.mutation_pool)
+				//Check to make sure there are no duplicates
+				if(getMutation(source_mutation.key))
+					continue
 				var/datum/genetics/mutation/new_mutation = source_mutation.copy()
 				new_mutation.container = src
 				new_mutation.implanted = FALSE
 				if(new_mutation.active)
 					total_instability += new_mutation.instability
-				if(istype(new_mutation, MUTATION_COPY))
-					clone_mutation_found = TRUE
+					if(istype(new_mutation, MUTATION_COPY))
+						clone_mutation_found = TRUE
 				mutation_pool += new_mutation
 
 		//Generate a Copy Mob mutation if one hasn't been created yet.
-		if (!clone_mutation_found)
+		//Also, Check to make sure there are no duplicates. Copy_mob is robust enough to not treat clone mutations of other mobs as a duplicate.
+		if(!clone_mutation_found && !getMutation("MUTATION_COPY_[source.type]"))
 			var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source)
 			new_mutation.container = src
 			new_mutation.implanted = FALSE
@@ -82,12 +88,21 @@
 /datum/genetics/genetics_holder/proc/irradiate(datum/genetics/mutation/target)
 	//What happens when a gene is irradiated.
 
-/datum/genetics/genetics_holder/proc/getMutation(key)
-	RETURN_TYPE(/datum/genetics/mutation)
-	if(ispath(key))
-		return locate(key) in mutation_pool
+//Search function for a specific mutation living in a genetics holder.
 
-/datum/genetics/genetics_holder/proc/removeMutation(key)
+//Key- relates to a stored identifying string in the mutation datum, can be different for datums of the same object
+//Function must return a mutation datum from the mutation pool on a success, and a null value that evaluates to FALSE on a fail.
+/datum/genetics/genetics_holder/proc/getMutation(var/key)
+	RETURN_TYPE(/datum/genetics/mutation)
+	log_debug("--------------")
+	log_debug("Beginning search for [key]")
+	for(var/datum/genetics/mutation/source_mutation in mutation_pool)
+		if(source_mutation.key == key)
+			log_debug("Found key [key] in [source_mutation], which has key [source_mutation.key]")
+			return source_mutation
+	return null
+
+/datum/genetics/genetics_holder/proc/removeMutation(var/key)
 	var/datum/genetics/mutation/mutation_to_remove = getMutation(key)
 	if(mutation_to_remove)
 		total_instability -= mutation_to_remove.instability
@@ -123,7 +138,6 @@
 
 	//Process individual mutations, set them to implanted, and apply their effects to the target.
 	for(var/datum/genetics/mutation/unnatural_mutation in target.unnatural_mutations.mutation_pool)
-		log_debug("Reached the mutation loop Active mutation: [unnatural_mutation], implanted=[unnatural_mutation.implanted], active=[unnatural_mutation.active]")
 		if(unnatural_mutation.implanted) //Skip mutations already marked as implanted.
 			log_debug("Skipping Mutation, already implanted.")
 			continue

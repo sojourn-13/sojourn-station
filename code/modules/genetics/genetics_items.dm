@@ -19,7 +19,6 @@ This is a bugtesting item, please forgive the memes.
 
 
 /obj/item/device/scanner/belvoix_scanner/scan(mob/living/target, mob/user)
-	log_debug("Injected a bastard named [target] with the belvoix scanner")
 	if(user.a_intent == I_HELP)
 		if(target != src)
 			to_chat(user, SPAN_NOTICE("\The [src] takes a sample out of \the [target]"))
