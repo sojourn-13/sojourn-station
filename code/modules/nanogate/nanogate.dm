@@ -5,9 +5,9 @@
 /mob/proc/give_nanogate(var/gate_type = "Standard")
 	var/mob/living/carbon/human/user = src
 	if(istype(user))
-		var/obj/item/organ/external/chest = user.get_organ(BP_CHEST)
+		var/obj/item/organ/external/head = user.get_organ(BP_HEAD)
 
-		if(chest)
+		if(head)
 			var/obj/item/organ/internal/nanogate/B
 			switch(gate_type)
 				if("Standard")
@@ -16,7 +16,7 @@
 					B = new /obj/item/organ/internal/nanogate/artificer
 				if("Opifex")
 					B = new /obj/item/organ/internal/nanogate/opifex
-			B.replaced(chest)
+			B.replaced(head)
 			return TRUE
 	return FALSE
 
