@@ -35,9 +35,9 @@
 
 /datum/reagent/medicine/bicaridine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
-		M.heal_organ_damage(0.3 * effect_multiplier, 0, 5 * effect_multiplier)
+		M.heal_organ_damage(0.15 * effect_multiplier, 0, 5 * effect_multiplier)
 		return
-	M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
+	M.heal_organ_damage(0.3 * effect_multiplier, 0, 5 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
 
 /datum/reagent/medicine/vermicetol
@@ -66,7 +66,7 @@
 	scannable = 1
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.heal_organ_damage(8 * removed, 0)
+	M.heal_organ_damage(9 * removed, 0)
 	M.adjustToxLoss(-3 * removed)
 
 /datum/reagent/medicine/meralyne
@@ -81,7 +81,7 @@
 	scannable = 1
 
 /datum/reagent/medicine/meralyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.heal_organ_damage(1.2 * effect_multiplier, 0, 5 * effect_multiplier)
+	M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.30)
 
 /datum/reagent/medicine/kelotane
@@ -125,7 +125,7 @@
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
 	M.adjust_hallucination(-0.9 * effect_multiplier)
-	M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
+	M.adjustToxLoss(-((0.2 + (M.getToxLoss() * 0.05)) * effect_multiplier))
 	M.add_chemical_effect(CE_ANTITOX, 1)
 	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
 	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes
@@ -140,7 +140,7 @@
 	scannable = 1
 
 /datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, effect_multiplier, var/removed = REM)
-	M.adjustToxLoss(-8 * removed)
+	M.adjustToxLoss(-6 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
@@ -284,8 +284,8 @@
 		M.adjustCloneLoss(-(20 + (M.getCloneLoss() * effect_multiplier)))
 		M.adjustOxyLoss(-(20 + (M.getOxyLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_OXYGENATED, 1)
-		M.heal_organ_damage(40 * effect_multiplier, 20 * effect_multiplier, 20 * effect_multiplier, 20 * effect_multiplier)
-		M.adjustToxLoss(-(20 + (M.getToxLoss() * effect_multiplier)))
+		M.heal_organ_damage(10 * effect_multiplier, 5 * effect_multiplier, 5 * effect_multiplier, 5 * effect_multiplier)
+		M.adjustToxLoss(-(5 + (M.getToxLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_PULSE, -2)
 
 /datum/reagent/medicine/clonexadone
@@ -304,8 +304,8 @@
 		M.adjustCloneLoss(-(30 + (M.getCloneLoss() * effect_multiplier)))
 		M.adjustOxyLoss(-(30 + (M.getOxyLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_OXYGENATED, 2)
-		M.heal_organ_damage(40 * effect_multiplier, 40 * effect_multiplier, 40 * effect_multiplier, 40 * effect_multiplier)
-		M.adjustToxLoss(-(30 + (M.getToxLoss() * effect_multiplier)))
+		M.heal_organ_damage(10 * effect_multiplier, 5 * effect_multiplier, 5 * effect_multiplier, 5 * effect_multiplier)
+		M.adjustToxLoss(-(10 + (M.getToxLoss() * effect_multiplier)))
 		M.add_chemical_effect(CE_PULSE, -2)
 
 /* Painkillers */
@@ -795,7 +795,7 @@
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(dose == overdose) //Less gaming, do surgery you lazy butt.
+		if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
 			var/list/brokenBP = list()
 			for(var/obj/item/organ/external/E in H.organs)
 				if(E.is_broken())
@@ -845,7 +845,7 @@
 /datum/reagent/medicine/kyphotorin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(prob(0.5 * effect_multiplier + dose) || dose == overdose)
+		if(prob(0.5 * effect_multiplier + dose) || dose >= overdose)
 			var/list/missingLimbs = list()
 			for(var/name in BP_ALL_LIMBS)
 				if(!H.has_appendage(name))
@@ -871,10 +871,10 @@
 	color = "#ded890"
 	scannable = 1
 	metabolism = REM/2
-	overdose = REAGENTS_OVERDOSE - 10
+	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/medicine/polystem/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.heal_organ_damage(0.2 * effect_multiplier, 0, 3 * effect_multiplier)
+	M.heal_organ_damage(0.3 * effect_multiplier, 0, 3 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, min(1,0.1 * effect_multiplier))
 
 /datum/reagent/medicine/polystem/overdose(mob/living/carbon/M, alien)
