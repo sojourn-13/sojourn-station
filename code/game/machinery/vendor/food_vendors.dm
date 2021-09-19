@@ -313,7 +313,6 @@
 					/obj/item/reagent_containers/food/drinks/drinkingglass/pint = 10,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass = 10,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/double = 4,
-					/obj/item/clothing/suit/chef/classic = 2,
 					/obj/item/storage/lunchbox = 3,
 					/obj/item/storage/lunchbox/rainbow = 3,
 					/obj/item/storage/lunchbox/cat = 3,

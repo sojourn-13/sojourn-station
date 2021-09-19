@@ -6686,7 +6686,7 @@
 /obj/item/tool/multitool{
 	pixel_x = 10
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
+/obj/item/reagent_containers/food/drinks{
 	pixel_x = -5
 	},
 /obj/structure/cable/green{
