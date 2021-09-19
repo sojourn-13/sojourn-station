@@ -27,9 +27,11 @@
 
 /obj/item/reagent_containers/food/drinks/proc/open(mob/user)
 	playsound(loc, 'sound/effects/canopen.ogg', rand(10,50), 1)
+	icon_state += "_open"
 	to_chat(user, SPAN_NOTICE("You open [src] with an audible pop!"))
 	reagent_flags |= OPENCONTAINER
 	verbs += /obj/item/reagent_containers/food/drinks/proc/gulp_whole
+	update_icon()
 
 /obj/item/reagent_containers/food/drinks/attack(mob/M as mob, mob/user as mob, def_zone)
 	if(force && !(flags & NOBLUDGEON) && user.a_intent == I_HURT)
@@ -343,7 +345,7 @@
 
 /obj/item/reagent_containers/food/drinks/mug
 	name = "mug"
-	desc = "A plain white mug."
+	desc = "A plain mug."
 	icon_state = "mug"
 	item_state = "coffee"
 	volume = 30
@@ -411,26 +413,69 @@
 	desc = "A mug with a Soteria Institute logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius"
 
+
+/obj/item/reagent_containers/food/drinks/mug/gold
+	name = "gold mug"
+	desc = "A shiny gold-like mug."
+	icon_state = "mug_gold"
+
+/obj/item/reagent_containers/food/drinks/mug/old_nt
+	name = "NanoTrasen mug"
+	desc = "Not even your morning coffee is safe from corporate advertising."
+	icon_state = "mug_old_nt"
+
+/obj/item/reagent_containers/food/drinks/mug/new_nt
+	name = "Absolute mug"
+	desc = "A brown mug, it prominently features a tau-cross."
+	icon_state = "mug_new_nt"
+
+/obj/item/reagent_containers/food/drinks/mug/syndie
+	name = "Syndicate mug"
+	desc = "A sleek red mug."
+	icon_state = "mug_syndie"
+
+/obj/item/reagent_containers/food/drinks/mug/serb
+	name = "Serbian mug"
+	desc = "A mug with a Serbian flag emblazoned on it."
+	icon_state = "mug_serb"
+
+/obj/item/reagent_containers/food/drinks/mug/ironhammer
+	name = "Blackshield mug"
+	desc = "A mug with an Blackshield sign on it."
+	icon_state = "mug_hammer"
+
+/obj/item/reagent_containers/food/drinks/mug/league
+	name = "Technomancer mug"
+	desc = "A mug with a Technomancer League logo on it."
+	icon_state = "mug_league"
+
+/obj/item/reagent_containers/food/drinks/mug/moe
+	name = "\improper soteria mug"
+	desc = "A white mug with Soteria Institute logo on it."
+	icon_state = "mug_moe"
+
+/obj/item/reagent_containers/food/drinks/mug/aster
+	name = "Aster mug"
+	desc = "A fancy gold mug with a Aster Guild logo on it."
+	icon_state = "mug_aster"
+
+/obj/item/reagent_containers/food/drinks/mug/guild
+	name = "Guild mug"
+	desc = "A plain mug with a Guild logo on it."
+	icon_state = "mug_guild"
+
+/obj/item/reagent_containers/food/drinks/mug/white
+	name = "white mug"
+	desc = "A plain white mug."
+	icon_state = "mug_white"
+
 /obj/item/reagent_containers/food/drinks/mug/teacup
 	name = "cup"
 	desc = "A plain white porcelain teacup."
-	icon_state = "teacup"
-	item_state = "coffee"
-	volume = 20
-	center_of_mass = "x=15;y=13"
-	filling_states = "100"
+	icon_state = "_cup"
 	base_name = "cup"
-	base_icon = "teacup"
-
-/obj/item/reagent_containers/food/drinks/britcup //Delete this when Clockrigger is done with map changes.
-	name = "mug"
-	desc = "A mug with an unknown flag emblazoned on it."
-	icon_state = "britmug"
-	volume = 30
-	center_of_mass = list("x"=15, "y"=13)
-	filling_states = "40;80;100"
-	base_name = "mug"
-	base_icon = "mug"
+	base_icon = "_cup"
+	filling_states = "100"
 
 //tea and tea accessories
 /obj/item/reagent_containers/food/drinks/tea
