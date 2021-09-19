@@ -59,6 +59,7 @@
 		/datum/design/autolathe/gun/grenade_launcher_lenar = 6,
 		//sniper
 		/datum/design/autolathe/gun/nordwind = 14, //basic uses the whole disk...
+		/datum/design/autolathe/device/landmine = 0,
 		)
 
 //Blackshield
@@ -90,6 +91,7 @@
 		/datum/design/autolathe/gun/sts25,
 		/datum/design/autolathe/gun/sts30,
 		/datum/design/autolathe/gun/sts40,
+		/datum/design/autolathe/device/landmine = 0,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo

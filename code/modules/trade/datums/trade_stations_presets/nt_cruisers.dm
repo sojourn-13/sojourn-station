@@ -41,7 +41,7 @@
 			/obj/item/gun/projectile/mk58/wood,
 			/obj/item/gun/projectile/revolver/lemant,
 			/obj/item/gun/projectile/shotgun/pump/combat,
-			/obj/item/gun/launcher/grenade
+			/obj/item/gun/projectile/grenade
 		),
 	)
 

@@ -6,7 +6,7 @@
 				/obj/random/scrap/dense_even = custom_good_amount_range(list(4, 8)),
 				/obj/random/scrap/sparse_even = custom_good_amount_range(list(5, 9)),
 				/obj/random/scrap/sparse_weighted = custom_good_amount_range(list(6, 10)),
-				)
+				),
 		"Scrap Lump" = list(/obj/item/scrap_lump = custom_good_amount_range(list(80, 100))),
 		"Salvageable Machines" = list(
 			/obj/structure/salvageable/computer = custom_good_amount_range(list(5, 15)),

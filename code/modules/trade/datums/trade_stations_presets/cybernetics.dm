@@ -56,3 +56,20 @@
 		/obj/item/organ_module/active/simple/taser
 	)
 
+/obj/item/organ/external/robotic/moebius
+	price_tag = 450 //Has plasteel
+
+/obj/item/organ/external/robotic/blackshield
+	price_tag = 750 //Has blackmarket
+
+/obj/item/organ/external/robotic/one_star
+	price_tag = 1250 //Has legit the best in the game
+
+/obj/item/organ/external/robotic/technomancer
+	price_tag = 375 //basic
+
+/obj/item/organ/external/robotic/serbian
+	price_tag = 375 //basic
+
+/obj/item/organ/external/robotic/frozen_star
+	price_tag = 375 //basic
