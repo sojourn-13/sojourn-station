@@ -1,7 +1,7 @@
 /obj/item/storage/belt/sheath/judgement
 	icon_state = "sheath_judgement"
 	name = "curved sheath"
-	desc = "Made to store curved swords. It is dark blue. It has a patterned gold head on it's bottom part. On inner side of it's mouth you can notice strange cyan crystal."
+	desc = "A dark blue leather sheathe designed to fit a curved sword. The base and head are patterned with gold and you can see a strange cyan crystal at the mouth."
 	can_hold = list(
 		/obj/item/tool/sword/saber
 		//obj/item/tool/sword/katana //Katana's are not curved here
