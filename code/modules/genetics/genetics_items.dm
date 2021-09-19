@@ -39,3 +39,50 @@ This is a bugtesting item, please forgive the memes.
 		for(var/datum/genetics/mutation/mutagen in held_mutations.mutation_pool)
 			dat += "[mutagen.name]([mutagen.active == TRUE ? "Active" : "Inactive"]): [mutagen.desc]"
 		return jointext(dat, "<br>")
+
+/*
+=================Mutagenic Purger=================
+Implant that clears ALL mutations from people when injected. 
+
+It also resets instability to 0 so bad things don't happen.
+
+TODO: Make sure the machine that makes this takes long enough to produce it, that bad things can happen from high instability.
+*/
+
+/obj/item/genetics/purger
+	name = "Blue-Ink Mutagenic Purger"
+	desc = "The saving grace of genetics, this wonderous concoction can purge mutations from the body before anything terrible happens."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "cimplanter2"
+	item_state = "syringe_0"
+	throw_speed = 1
+	throw_range = 5
+	w_class = ITEM_SIZE_SMALL
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 1, MATERIAL_URANIUM = 1)
+	origin_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 4, TECH_BIO = 6)
+	var/used = FALSE
+
+/obj/item/genetics/purger/attack(mob/living/target, mob/living/user)
+	if(!istype(target))
+		return
+	
+	if(target.body_part_covered(user.targeted_organ))
+		to_chat(user, SPAN_WARNING("The needle can't pierce through clothes."))
+		return
+
+	if(!user.stats?.getPerk(PERK_SI_SCI))
+		to_chat(user, SPAN_WARNING("You have no idea how to configure this damn thing. Maybe a scientist can get it working?"))
+		return
+
+	if(used)
+		to_chat(user, SPAN_WARNING("The purger has been used!"))
+		return
+
+	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	user.do_attack_animation(target)
+
+	if(do_mob(user, target, 50) && src && !used)
+		icon_state = "cimplanter0"
+		used = TRUE
+		target.unnatural_mutations = new /datum/genetics/genetics_holder()
+
