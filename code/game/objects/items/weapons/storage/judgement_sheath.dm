@@ -81,7 +81,7 @@
 
 /obj/item/tool/sword/katana/spatial_cutter
 	name = "spatial cutter"
-	desc = "This is a strange sword that leaves behind an afterimages of itself, that is following it, as you swing it in the air. It has a slightly curved blade with a single edge. When you look at it you almost hear a storm that is approaching. Handle is encrusted with a cyan crystal."
+	desc = "A strange sword said to be one of the artificer guild grand master's few forays into weapon design. The blade is curved and thrums in your hand with a coming storm, a single swing leaves a blurred after image carrying all the intent and lethality of strikes past."
 	icon_state = "2ndkey"
 
 	var/LifeTimeOfSpatialCuts = 5 SECONDS
