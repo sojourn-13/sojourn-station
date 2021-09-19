@@ -123,7 +123,7 @@
 			audible_message(quote, "You almost can hear someone's voice.", 3)
 
 /obj/item/tool/sword/katana/spatial_cutter/sword_of_lie
-	name = "Sword of Lie"
+	name = "Blade of Memory"
 	icon_state = "exultant"
 
 /obj/item/tool/sword/katana/spatial_cutter/sword_of_lie/New()
