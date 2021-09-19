@@ -2,10 +2,14 @@
 	name_pool = list("IRS 'Lancer'" = "IRS Trash Railgun 'Lancer'. They're sending a message. \"Hoho, you want some Trash?\"")
 	offer_amout_devider_of_wanted_goods = 6 //less items do to cubes being really hard to stack and rather long to make food items
 	assortiment = list(
-		"Trash" = list(/obj/random/scrap/dense_even = custom_good_amount_range(list(6, 80))),
+		"Trash" = list(/obj/random/scrap/dense_weighted = custom_good_amount_range(list(2, 5)),
+				/obj/random/scrap/dense_even = custom_good_amount_range(list(4, 8)),
+				/obj/random/scrap/sparse_even = custom_good_amount_range(list(5, 9)),
+				/obj/random/scrap/sparse_weighted = custom_good_amount_range(list(6, 10)),
+				)
 		"Scrap Lump" = list(/obj/item/scrap_lump = custom_good_amount_range(list(80, 100))),
 		"Salvageable Machines" = list(
-			/obj/structure/salvageable/computer = custom_good_amount_range(list(50, 75)),
+			/obj/structure/salvageable/computer = custom_good_amount_range(list(5, 15)),
 			/obj/structure/salvageable/personal = custom_good_amount_range(list(0, 8)),
 			/obj/structure/salvageable/server = custom_good_amount_range(list(6, 12)),
 			/obj/structure/salvageable/data = custom_good_amount_range(list(6, 10)),
@@ -22,6 +26,18 @@
 	)
 //imo way better place of doing the whole list to be in same file as the ship - Trilby
 /obj/random/scrap
+	price_tag = 50
+
+/obj/random/scrap/dense_weighted
+	price_tag = 150
+
+/obj/random/scrap/dense_even
+	price_tag = 125
+
+/obj/random/scrap/sparse_even
+	price_tag = 100
+
+/obj/random/scrap/sparse_weighted
 	price_tag = 50
 
 /obj/structure/scrap_cube
