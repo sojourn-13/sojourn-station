@@ -21,6 +21,9 @@
 	var/use_sound = "rustle" //sound played when used. null for no sound.
 	contained_sprite = FALSE
 
+	var/insertion_sound
+	var/extraction_sound
+
 /obj/item/storage/New()
 	can_hold |= can_hold_extra
 	. = ..()
@@ -339,7 +342,7 @@
 //This proc handles items being inserted. It does not perform any checks of whether an item can or can't be inserted. That's done by can_be_inserted()
 //The stop_warning parameter will stop the insertion message from being displayed. It is intended for cases where you are inserting multiple items at once,
 //such as when picking up all the items on a tile with one click.
-/obj/item/storage/proc/handle_item_insertion(obj/item/W as obj, prevent_warning = 0)
+/obj/item/storage/proc/handle_item_insertion(obj/item/W as obj, prevent_warning = 0, mob/user)
 	if (!istype(W)) return 0
 	if (usr)
 		usr.prepare_for_slotmove(W)
@@ -354,14 +357,13 @@
 		W.dropped(usr)
 		add_fingerprint(usr)
 
-		if (!prevent_warning)
-			for (var/mob/M in viewers(usr, null))
-				if (M == usr)
-					to_chat(usr, SPAN_NOTICE("You put \the [W] into [src]."))
-				else if (M in range(1)) //If someone is standing close enough, they can tell what it is...
-					M.show_message(SPAN_NOTICE("\The [usr] puts [W] into [src]."))
-				else if (W && W.w_class >= ITEM_SIZE_NORMAL) //Otherwise they can only see large or normal items from a distance...
-					M.show_message(SPAN_NOTICE("\The [usr] puts [W] into [src]."))
+		var/message = "[W] into [src]"
+		if(!prevent_warning && W.w_class >= ITEM_SIZE_NORMAL)
+			if(insertion_sound)
+				playsound(get_turf(src), insertion_sound, 100)
+			visible_message(SPAN_NOTICE("[usr] puts [message]."))
+		else
+			to_chat(usr, SPAN_NOTICE("You put [message]."))
 
 	refresh_all()
 
@@ -391,6 +393,8 @@
 		W.maptext = ""
 
 	W.on_exit_storage(src)
+	if(extraction_sound)
+		playsound(get_turf(src), extraction_sound, 100)
 	update_icon()
 
 //This proc is called when you want to place an item into the storage item.
@@ -429,7 +433,7 @@
 				to_chat(user, SPAN_WARNING("God damnit!"))
 
 	W.add_fingerprint(user)
-	return handle_item_insertion(W)
+	return handle_item_insertion(W,,user)
 
 /obj/item/storage/dropped(mob/user as mob)
 	return
@@ -476,7 +480,7 @@
 			break
 		if(can_be_inserted(I, TRUE))
 			. |= TRUE
-			handle_item_insertion(I, TRUE)
+			handle_item_insertion(I, TRUE, user)
 
 	if(user)
 		if(.)
