@@ -851,6 +851,7 @@
 		/obj/item/storage/box/bs_kit/grizzly = 3,
 		/obj/item/storage/box/bs_kit/stallion = 5,
 		/obj/item/storage/box/bs_kit/lamia = 3,
+		/obj/item/storage/box/bs_kit/colt = 3,
 		/obj/item/storage/box/bs_kit/martin = 5,
 		/obj/item/storage/box/bs_kit/standard_armor = 5,
 		/obj/item/storage/box/bs_kit/flak_armor = 3,
@@ -864,6 +865,7 @@
 		/obj/item/storage/box/bs_kit/grizzly = 750,
 		/obj/item/storage/box/bs_kit/stallion = 500,
 		/obj/item/storage/box/bs_kit/lamia = 750,
+		/obj/item/storage/box/bs_kit/colt = 750,
 		/obj/item/storage/box/bs_kit/martin = 500,
 		/obj/item/storage/box/bs_kit/standard_armor = 500,
 		/obj/item/storage/box/bs_kit/flak_armor = 750,
@@ -902,6 +904,7 @@
 	var/items = list(
 					/obj/item/storage/box/bs_kit/stallion = "Stallion",
 					/obj/item/storage/box/bs_kit/lamia = "Lamia",
+					/obj/item/storage/box/bs_kit/colt = "Colt",
 					/obj/item/storage/box/bs_kit/martin = "Martin"
 					)
 	var/selection = input(redeemer, "Pick your side-arm", "Blackshield Voucher Redemption") as null|anything in items

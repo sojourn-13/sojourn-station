@@ -110,6 +110,16 @@
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
+/obj/item/storage/box/bs_kit/colt
+	name = "\improper Colt Secondary Kit"
+	desc = "The standard Blackshield equipment kit."
+
+	populate_contents()
+		new /obj/item/gun/projectile/colt(src)
+		new /obj/item/ammo_magazine/pistol_35(src)
+		new /obj/item/ammo_magazine/pistol_35(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
+
 /obj/item/storage/box/bs_kit/martin
 	name = "\improper Martin Secondary Kit"
 	desc = "A kit designed for energy-based weaponry."
