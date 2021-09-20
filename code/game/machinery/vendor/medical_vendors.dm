@@ -77,7 +77,9 @@
 		/obj/item/reagent_containers/syringe/spaceacillin = 1,
 
 		/obj/item/implantcase/death_alarm = 2,
-		/obj/item/implanter = 2
+		/obj/item/implanter = 2,
+
+		/obj/item/device/defib_kit = 2
 		)
 	contraband = list(
 		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 2,
@@ -86,8 +88,10 @@
 	prices = list(
 		/obj/item/device/scanner/health = 50,
 
-		/obj/item/stack/medical/bruise_pack = 50, /obj/item/stack/medical/ointment = 35,
-		/obj/item/stack/medical/advanced/bruise_pack = 100, /obj/item/stack/medical/advanced/ointment = 100,
+		/obj/item/stack/medical/bruise_pack = 50,
+		/obj/item/stack/medical/ointment = 35,
+		/obj/item/stack/medical/advanced/bruise_pack = 100,
+		/obj/item/stack/medical/advanced/ointment = 100,
 		/obj/item/stack/nanopaste = 300,
 
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 50,
@@ -99,6 +103,8 @@
 
 		/obj/item/implantcase/death_alarm = 25,
 		/obj/item/implanter = 25,
+
+		/obj/item/device/defib_kit = 750,
 
 		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 100,
 		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 100,
