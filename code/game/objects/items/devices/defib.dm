@@ -281,9 +281,10 @@
 		icon_state = "defibpaddles[wielded]_cooldown"
 
 /obj/item/shockpaddles/proc/can_use(mob/user, mob/M)
-	if(si_only && !user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
-		to_chat(user, "<span class='warning'>\The [src] is so complex your need training to use this.</span>")
-		return 0
+	if(si_only)
+		if(!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !user.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !user.stats?.getPerk(PERK_MEDICAL_EXPERT))
+			to_chat(user, "<span class='warning'>\The [src] is so complex your need training to use this.</span>")
+			return 0
 	if(busy)
 		return 0
 	if(!check_charge(chargecost()))
