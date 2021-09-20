@@ -121,10 +121,10 @@
 
 /datum/genetics/genetics_holder/proc/remove_all_mutations()
 	total_instability = 0
-	for var/datum/genetics/mutation/mutation_to_remove in mutation_pool
-		if(istype(target, /mob/living/carbon/human))
+	for (var/datum/genetics/mutation/mutation_to_remove in mutation_pool)
+		if(istype(holder, /mob/living/carbon/human))
 			mutation_to_remove.onPlayerRemove()
-		if(istype(target, /mob/living))
+		if(istype(holder, /mob/living))
 			mutation_to_remove.onMobRemove()
 	mutation_pool = list()
 	initialized = FALSE
