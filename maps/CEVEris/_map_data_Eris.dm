@@ -1,9 +1,10 @@
 #include "overmap-eris.dm"
 #include "shuttles-eris.dm"
 #include "../encounters/deeptunnels/deeptunnels.dm"
-#include "_Nadezhda_Colony_Underground.dmm"
-#include "_Nadezhda_Colony_Transition.dmm"
-#include "_Nadezhda_Colony_Surface.dmm"
+#include "_Nadezhda_Colony_Omni_STU.dmm"
+//#include "_Nadezhda_Colony_Underground.dmm"
+//#include "_Nadezhda_Colony_Transition.dmm"
+//#include "_Nadezhda_Colony_Surface.dmm"
 //#include "_Nadezhda_Colony_labercamp.dmm"
 #include "_Nadezhda_Solar_Area.dmm"
 #include "_Hunting_Lodge.dmm"
@@ -15,6 +16,18 @@
 	name = "Eris"
 	is_sealed = TRUE
 	height = 1
+
+
+/obj/map_data/nadezda_ues //Omnie level has all three surface underground and stairs
+	name = "Nadezhda Omni Map"
+	is_station_level = TRUE
+	is_player_level = TRUE
+	is_contact_level = TRUE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	generate_asteroid = TRUE
+	height = 3
+
 
 /obj/map_data/nadezda_s
 	name = "Nadezhda Surface"

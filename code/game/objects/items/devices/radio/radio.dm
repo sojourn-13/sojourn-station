@@ -101,6 +101,7 @@ var/global/list/default_medbay_channels = list(
 /obj/item/device/radio/attack_self(mob/user as mob)
 	user.set_machine(src)
 	interact(user)
+	add_fingerprint(user) //Touching a radio adds are prints
 
 /obj/item/device/radio/interact(mob/user)
 	if(!user)

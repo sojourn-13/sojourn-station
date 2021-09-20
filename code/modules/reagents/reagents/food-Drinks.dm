@@ -428,7 +428,7 @@
 	id = "drink"
 	description = "Uh, some kind of drink."
 	reagent_state = LIQUID
-	color = "#E78108"
+	color = "#E78108d0"
 	var/nutrition = 0 // Per metabolism tick
 	var/adj_dizzy = 0 // Per metabolism tick
 	var/adj_drowsy = 0
@@ -460,7 +460,7 @@
 	id = "energy_drink_monster"
 	description = "The raw essence of a electrolytes."
 	taste_description = "chemical water"
-	color = "#C3AF00"
+	color = "#c3b000a9"
 	adj_dizzy = -1
 	adj_drowsy = -2
 	adj_sleepy = -10
@@ -470,7 +470,7 @@
 	id = "energy_drink_baton"
 	description = "The raw essence of a electrolytes and carbonation."
 	taste_description = "carbonated chemical water"
-	color = "#C3AF00"
+	color = "#990066d0"
 	adj_dizzy = -1
 	adj_drowsy = -2
 	adj_sleepy = -10
@@ -482,7 +482,7 @@
 	id = "banana"
 	description = "The raw essence of a banana."
 	taste_description = "banana"
-	color = "#C3AF00"
+	color = "#c3b000a9"
 
 	glass_icon_state = "banana"
 	glass_name = "banana juice"
@@ -493,7 +493,7 @@
 	id = "berryjuice"
 	description = "A delicious blend of several different kinds of berries."
 	taste_description = "berries"
-	color = "#990066"
+	color = "#990066d0"
 
 	glass_icon_state = "berryjuice"
 	glass_name = "berry juice"
@@ -504,7 +504,7 @@
 	id = "carrotjuice"
 	description = "Has a uniquely sweet flavor of concentrated carrots."
 	taste_description = "carrots"
-	color = "#FF8C00" // rgb: 255, 140, 0
+	color = "#FF8C00d0" // rgb: 255, 140, 0
 
 	glass_icon_state = "carrotjuice"
 	glass_name = "carrot juice"
@@ -519,7 +519,7 @@
 	id = "grapejuice"
 	description = "The juice is often sold in stores or fermented and made into wine, brandy, or vinegar."
 	taste_description = "grapes"
-	color = "#863333"
+	color = "#863333d0"
 
 	glass_icon_state = "grapejuice"
 	glass_name = "grape juice"
@@ -531,7 +531,7 @@
 	description = "Used to make lemonade, soft drinks, and cocktails."
 	taste_description = "sourness"
 	taste_mult = 1.1
-	color = "#AFAF00"
+	color = "#AFAF00d0"
 
 	glass_icon_state = "lemonjuice"
 	glass_name = "lemon juice"
@@ -543,7 +543,7 @@
 	description = "The sweet-sour juice of limes."
 	taste_description = "unbearable sourness"
 	taste_mult = 1.1
-	color = "#365E30"
+	color = "#35742bd0"
 
 	glass_icon_state = "glass_green"
 	glass_name = "lime juice"
@@ -558,7 +558,7 @@
 	id = "orangejuice"
 	description = "Liquid extract of the orange tree fruit, produced by squeezing or reaming oranges."
 	taste_description = "oranges"
-	color = "#E78108"
+	color = "#E78108d0"
 
 	glass_icon_state = "glass_orange"
 	glass_name = "orange juice"
@@ -573,7 +573,7 @@
 	id = "poisonberryjuice"
 	description = "A tasty juice blended from various kinds of very deadly and toxic berries."
 	taste_description = "berries"
-	color = "#863353"
+	color = "#863353d0"
 	strength = 5
 
 	glass_icon_state = "poisonberryjuice"
@@ -586,7 +586,7 @@
 	description = "Juice of the potato. Best served fresh."
 	taste_description = "Irish sadness"
 	nutrition = 2
-	color = "#302000"
+	color = "#302000d0"
 
 	glass_icon_state = "glass_brown"
 	glass_name = "potato juice"
@@ -597,7 +597,7 @@
 	id = "tomatojuice"
 	description = "Juice made from tomatoes, usually used as a beverage, either plain or in cocktails"
 	taste_description = "tomatoes"
-	color = "#731008"
+	color = "#731008d0"
 
 	glass_icon_state = "glass_red"
 	glass_name = "tomato juice"
@@ -612,7 +612,7 @@
 	id = "watermelonjuice"
 	description = "Delicious juice made from watermelon."
 	taste_description = "sweet watermelon"
-	color = "#B83333"
+	color = "#b83333b7"
 
 	glass_icon_state = "glass_red"
 	glass_name = "watermelon juice"
@@ -623,7 +623,7 @@
 	id = "pineapplejuice"
 	description = "A tart, yet tropical juice."
 	taste_description = "pineapple"
-	color = "#FFFF66"
+	color = "#FFFF66b7"
 
 	glass_icon_state = "glass_yellow"
 	glass_name = "pineapple juice"
@@ -674,7 +674,7 @@
 	id = "cream"
 	description = "Dairy product composed of the higher-fat layer skimmed from the top of milk before homogenization."
 	taste_description = "creamy milk"
-	color = "#DFD7AF"
+	color = "#dfd7afab"
 
 	glass_icon_state = "glass_white"
 	glass_name = "cream"
@@ -696,7 +696,7 @@
 	description = "Sweet, cold beverage that is usually made from milk"
 	taste_description = "cold creamy vanilla"
 	id = "milkshake"
-	color = "#AEE5E4"
+	color = "#aee5e4e1"
 	adj_temp = -9
 
 	glass_icon_state = "milkshake"
@@ -716,7 +716,7 @@
 	id = "tea"
 	description = "Tasty black tea. Contains caffeine."
 	taste_description = "tart black tea"
-	color = "#AC3700"
+	color = "#AC3700d0"
 	adj_dizzy = -2
 	adj_drowsy = -1
 	adj_sleepy = -3
@@ -735,7 +735,7 @@
 	id = "icetea"
 	description = "A form of cold tea. Usually served in a glass with ice."
 	taste_description = "cold, tart tea"
-	color = "#B43A003"
+	color = "#B43A00d0"
 	adj_temp = -5
 
 	glass_icon_state = "icedteaglass"
@@ -749,7 +749,7 @@
 	id = "greentea"
 	description = "Tasty green tea. It has antioxidants; it's good for you!"
 	taste_description = "subtle green tea"
-	color = "#669900"
+	color = "#C33F00d0"
 
 	glass_icon_state = "greentea"
 	glass_name = "green tea"
@@ -760,7 +760,7 @@
 	id = "icegreentea"
 	description = "Green tea, cold and served with ice."
 	taste_description = "cold green tea"
-	color = "#669900" // Nice.
+	color = "#CE4200d0"
 
 	glass_name = "iced green tea"
 	glass_desc = "It looks like green tea with ice. One might even call it iced green tea."
@@ -774,7 +774,7 @@
 	description = "Coffee is a brewed drink prepared from roasted seeds, commonly called coffee beans, of the coffee plant."
 	taste_description = "bitterness"
 	taste_mult = 1.3
-	color = "#482000"
+	color = "#482000d3"
 	adj_dizzy = -5
 	adj_drowsy = -3
 	adj_sleepy = -2
@@ -810,7 +810,7 @@
 	description = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
 	taste_description = "bitter coffee"
 	taste_mult = 1
-	color = "#664300"
+	color = "#664300d3"
 
 	glass_icon_state = "espresso"
 	glass_name = "shot of espresso"
@@ -821,7 +821,7 @@
 	id = "icecoffee"
 	description = "Coffee and ice, refreshing and cool."
 	taste_description = "bitter coldness"
-	color = "#102838"
+	color = "#102838d3"
 	adj_temp = -5
 
 	glass_icon_state = "icedcoffeeglass"
@@ -833,7 +833,7 @@
 	id = "soy_latte"
 	description = "A coffee drink made with espresso and steamed soy milk."
 	taste_description = "creamy coffee"
-	color = "#664300"
+	color = "#664300d3"
 	adj_temp = 5
 
 	glass_icon_state = "soy_latte"
@@ -850,7 +850,7 @@
 	id = "cafe_latte"
 	description = "A nice, strong and tasty beverage to drink while you are reading."
 	taste_description = "soft bitterness"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3" // rgb: 102, 67, 0
 	adj_temp = 5
 
 	glass_icon_state = "cafe_latte"
@@ -867,7 +867,7 @@
 	id = "freddp_espresso"
 	description = "Espresso with ice cubes poured over ice."
 	taste_description = "cold and refreshing bitter coffee"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3" // rgb: 102, 67, 0
 
 	glass_icon_state = "freddo_spr" // Lonestar Shipping Solutions logo and all!
 	glass_name = "freddo espresso"
@@ -879,7 +879,7 @@
 	id = "caffe_americano"
 	description = "Espresso diluted with hot water."
 	taste_description = "coffee"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3" // rgb: 102, 67, 0
 
 
 	glass_icon_state = "americano"
@@ -892,7 +892,7 @@
 	id = "flat_white"
 	description = "Espresso with a bit of steamy hot milk."
 	taste_description = "bitter coffee and a dash of foamy milk"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3"// rgb: 102, 67, 0
 
 	glass_icon_state = "flatwhite"
 	glass_name = "flat white"
@@ -904,7 +904,7 @@
 	id = "lattemacchiato"
 	description = "Foamy milk with a single espresso shot."
 	taste_description = "foamy bitterness"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3"// rgb: 102, 67, 0
 
 	glass_icon_state = "lattemacchiato"
 	glass_name = "cafe latte"
@@ -916,7 +916,7 @@
 	id = "cappuccino"
 	description = "Espresso with steamed milk foam."
 	taste_description = "foamy light coffee"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3" // rgb: 102, 67, 0
 
 	glass_icon_state = "cappuccino"
 	glass_name = "cappuccino"
@@ -928,7 +928,7 @@
 	id = "freddo_cappuccino"
 	description = "Espresso with steamed milk foam, on ice."
 	taste_description = "cold and bitter milk foam"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3" // rgb: 102, 67, 0
 
 	glass_icon_state = "freddo_cap"
 	glass_name = "freddo cappuccino"
@@ -940,7 +940,7 @@
 	id = "macchiato"
 	description = "Espresso with milk foam."
 	taste_description = "bitter coffee with a hint of foamy milk"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3" // rgb: 102, 67, 0
 
 	glass_icon_state = "macchiato"
 	glass_name = "macchiato"
@@ -952,7 +952,7 @@
 	id = "mocaccino"
 	description = "Espresso with hot milk and chocolate."
 	taste_description = "sweet milk and bitter, chocolatey coffee"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#664300d3" // rgb: 102, 67, 0
 
 	glass_icon_state = "mocaccino"
 	glass_name = "mocaccino"
@@ -964,7 +964,7 @@
 	id = "sromshine"
 	description = "The best part of waking up."
 	taste_description = "coffee with an acidic twist"
-	color = "#A14702"
+	color = "#A14702d3"
 
 	glass_icon_state = "sromshine"
 	glass_name = "cup of Sromshine"
@@ -978,7 +978,7 @@
 	description = "A heated drink consisting melted chocolate and heated milk."
 	taste_description = "creamy chocolate"
 	reagent_state = LIQUID
-	color = "#403010"
+	color = "#403010dc"
 	nutrition = 2
 	adj_temp = 5
 
@@ -991,7 +991,7 @@
 	id = "sodawater"
 	description = "Water containing dissolved carbon dioxide gas."
 	taste_description = "carbonated water"
-	color = "#619494"
+	color = "#619494d0"
 	adj_dizzy = -5
 	adj_drowsy = -3
 	adj_temp = -5
@@ -1005,7 +1005,7 @@
 	id = "grapesoda"
 	description = "Sweetened drink with a grape flavor and a deep purple color."
 	taste_description = "grape soda"
-	color = "#421C52"
+	color = "#421C52d0"
 	adj_drowsy = -3
 
 	glass_icon_state = "gsodaglass"
@@ -1017,7 +1017,7 @@
 	id = "tonic"
 	description = "A carbonated soft drink in which quinine is dissolved. "
 	taste_description = "tart and fresh"
-	color = "#664300"
+	color = "#664300d0"
 	adj_dizzy = -5
 	adj_drowsy = -3
 	adj_sleepy = -2
@@ -1032,7 +1032,7 @@
 	description = "Drink using lemon juice, water, and a sweetener such as cane sugar or honey."
 	taste_description = "tartness"
 	id = "lemonade"
-	color = "#FFFF00"
+	color = "#FFFF00d0"
 	adj_temp = -5
 
 	glass_icon_state = "lemonadeglass"
@@ -1044,7 +1044,7 @@
 	description = "Long live the guy who everyone had mistaken for a girl. Baka!"
 	taste_description = "fruity sweetness"
 	id = "kiraspecial"
-	color = "#CCCC99"
+	color = "#CCCC99d0"
 	adj_temp = -5
 
 	glass_icon_state = "kiraspecial"
@@ -1057,7 +1057,7 @@
 	description = "It's not what it sounds like..."
 	taste_description = "orange and cola soda"
 	id = "brownstar"
-	color = "#9F3400"
+	color = "#9F3400d0"
 	adj_temp = -2
 
 	glass_icon_state = "brownstar"
@@ -1069,7 +1069,7 @@
 	description = "The secret of the sanctuary of the Librarian..."
 	taste_description = "a bad night out"
 	id = "rewriter"
-	color = "#485000"
+	color = "#485000d0"
 	adj_temp = -5
 
 	glass_icon_state = "rewriter"
@@ -1086,7 +1086,7 @@
 	id = "nuka_cola"
 	description = "Cola, cola never changes."
 	taste_description = "the future"
-	color = "#100800"
+	color = "#100800d0"
 	adj_temp = -5
 	adj_sleepy = -2
 	nerve_system_accumulations = 50
@@ -1109,7 +1109,7 @@
 	id = "grenadine"
 	description = "Made in the modern day with proper pomegranate substitute. Who uses real fruit, anyways?"
 	taste_description = "100% pure pomegranate"
-	color = "#FF004F"
+	color = "#FF004Fd0"
 
 	glass_icon_state = "grenadineglass"
 	glass_name = "grenadine syrup"
@@ -1122,7 +1122,7 @@
 	description = "A refreshing beverage."
 	taste_description = "cola"
 	reagent_state = LIQUID
-	color = "#100800"
+	color = "#100800d0"
 	adj_drowsy = -3
 	adj_temp = -5
 
@@ -1135,7 +1135,7 @@
 	id = "spacemountainwind"
 	description = "Blows right through you like a space wind."
 	taste_description = "sweet citrus soda"
-	color = "#102000"
+	color = "#102000d0"
 	adj_drowsy = -7
 	adj_sleepy = -1
 	adj_temp = -5
@@ -1149,10 +1149,10 @@
 	id = "dr_gibb"
 	description = "A delicious blend of 42 different flavors"
 	taste_description = "cherry soda"
-	color = "#102000"
+	color = "#102000d0"
 	adj_drowsy = -6
 	adj_temp = -5
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "Dr. Gibb"
 	glass_desc = "Dr. Gibb. Not as dangerous as the name might imply."
@@ -1162,7 +1162,7 @@
 	id = "space_up"
 	description = "Tastes like a hull breach in your mouth."
 	taste_description = "a hull breach"
-	color = "#202800"
+	color = "#202800d0"
 	adj_temp = -8
 
 	glass_icon_state = "space-up_glass"
@@ -1174,7 +1174,7 @@
 	description = "A tangy substance made of lime and lemon."
 	taste_description = "tangy lime and lemon soda"
 	id = "lemon_lime"
-	color = "#878F00"
+	color = "#878F00d0"
 	adj_temp = -8
 
 	glass_icon_state = "lemonlime"
@@ -1187,7 +1187,7 @@
 	description = "A carbinated mellon drink."
 	taste_description = "carbinated melon"
 	reagent_state = LIQUID
-	color = "#82F296"
+	color = "#82F296d0"
 	adj_drowsy = -3
 	adj_temp = -5
 
@@ -1201,9 +1201,9 @@
 	description = "A gulp a day keeps the MediBot away. That's probably for the best."
 	taste_description = "homely fruit"
 	reagent_state = LIQUID
-	color = "#FF8CFF"
+	color = "#FF8CFFd0"
 	nutrition = 1
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "doctorsdelightglass"
 	glass_name = "The Doctor's Delight"
 	glass_desc = "A healthy mixture of juices, guaranteed to keep you healthy until the next toolboxing takes place."
@@ -1243,7 +1243,7 @@
 	description = "A anise-flavored spirit derived from botanicals."
 	taste_description = "death and licorice"
 	taste_mult = 1.5
-	color = "#33EE00"
+	color = "#33EE00d0"
 	strength = 12
 
 	glass_icon_state = "absintheglass"
@@ -1256,7 +1256,7 @@
 	id = "ale"
 	description = "A dark alcoholic beverage made by malted barley and yeast."
 	taste_description = "hearty barley ale"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 25
 
 	glass_icon_state = "aleglass"
@@ -1269,7 +1269,7 @@
 	id = "beer"
 	description = "An alcoholic beverage made from malted grains, hops, yeast, and water."
 	taste_description = "piss water"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 35
 	nutriment_factor = 1
 
@@ -1287,7 +1287,7 @@
 	id = "Kvass"
 	description = "A traditonal, and very popular russian drink.Made on the colony."
 	taste_description = "sweet, yet very light dark beer."
-	color = "#9F3400"
+	color = "#9F3400d0"
 	strength = 60
 	adj_temp = -5
 
@@ -1301,7 +1301,7 @@
 	description = "Exotically blue, fruity drink, distilled from oranges."
 	taste_description = "oranges"
 	taste_mult = 1.1
-	color = "#0000CD"
+	color = "#0000CDd0"
 	strength = 15
 
 	glass_icon_state = "curacaoglass"
@@ -1314,7 +1314,7 @@
 	id = "redcandyliquor"
 	description = "Made from assorted sweets, candies and even flowers."
 	taste_description = "sweet and smooth alcohol"
-	color = "#E33232" // rgb: 227, 50, 50
+	color = "#E33232d0" // rgb: 227, 50, 50
 	strength = 10
 
 	glass_icon_state = "alco-redglass"
@@ -1327,7 +1327,7 @@
 	id = "nanatsunoumi"
 	description = "A harsh salty alcohol that is from Japanese origin."
 	taste_description = "salt and young lemons"
-	color = "#FFFFFF" // rgb: 255, 255, 255
+	color = "#FFFFFFd0" // rgb: 255, 255, 255
 	strength = 40
 
 	glass_icon_state = "alco-whiteglass"
@@ -1340,7 +1340,7 @@
 	id = "miss_fortune"
 	description = "Mix of Candy Liquor, Nanatsunoumi, Blue Curacao, and Melon Liquor that shockingly tastes good.."
 	taste_description = "luck"
-	color = "#FFFFFF" // rgb: 255, 255, 255
+	color = "#FFFFFFd0" // rgb: 255, 255, 255
 	strength = 200 //Oh no
 
 	glass_icon_state = "miss_fortuneglass"
@@ -1355,7 +1355,7 @@
 	description = "A sweet and strongly alcoholic drink, made after numerous distillations and years of maturing. Classy as fornication."
 	taste_description = "rich and smooth alcohol"
 	taste_mult = 1.1
-	color = "#AB3C05"
+	color = "#AB3C05d0"
 	strength = 15
 
 	glass_icon_state = "cognacglass"
@@ -1368,7 +1368,7 @@
 	id = "deadrum"
 	description = "Distilled alcoholic drink made from saltwater."
 	taste_description = "salty sea water"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 30
 
 	glass_icon_state = "rumglass"
@@ -1385,7 +1385,7 @@
 	id = "gin"
 	description = "A distilled alcoholic drink that derives its predominant flavor from juniper berries."
 	taste_description = "an alcoholic christmas tree"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 25
 
 	glass_icon_state = "ginvodkaglass"
@@ -1414,7 +1414,7 @@
 	description = "A widely known, Mexican coffee-flavored liqueur."
 	taste_description = "spiked latte"
 	taste_mult = 1.1
-	color = "#664300"
+	color = "#664300d0"
 	strength = 25
 
 	glass_icon_state = "kahluaglass"
@@ -1427,7 +1427,7 @@
 	id = "melonliquor"
 	description = "A relatively sweet and fruity 46 proof liquor."
 	taste_description = "fruity alcohol"
-	color = "#138808" // rgb: 19, 136, 8
+	color = "#138808d0" // rgb: 19, 136, 8
 	strength = 30
 
 	glass_icon_state = "emeraldglass"
@@ -1441,7 +1441,7 @@
 	description = "Distilled alcoholic drink made from sugarcane byproducts"
 	taste_description = "spiked butterscotch"
 	taste_mult = 1.1
-	color = "#664300"
+	color = "#664300d0"
 	strength = 15
 
 	glass_icon_state = "rumglass"
@@ -1454,7 +1454,7 @@
 	id = "sake"
 	description = " Alcoholic beverage made by fermenting rice that has been polished."
 	taste_description = "dry alcohol"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 25
 
 	glass_icon_state = "sakeglass"
@@ -1467,7 +1467,7 @@
 	id = "tequilla"
 	description = "A strong and mildly flavored, Mexican produced spirit."
 	taste_description = "paint stripper"
-	color = "#FFFF91"
+	color = "#FFFF91d0"
 	strength = 25
 
 	glass_icon_state = "tequillaglass"
@@ -1480,7 +1480,7 @@
 	id = "thirteenloko"
 	description = "A potent mixture of caffeine and alcohol."
 	taste_description = "jitters and death"
-	color = "#102000"
+	color = "#102000d0"
 	strength = 25
 	nutriment_factor = 1
 
@@ -1502,7 +1502,7 @@
 	description = "Aromatized, fortified white wine flavored with various botanicals."
 	taste_description = "dry alcohol"
 	taste_mult = 1.3
-	color = "#91FF91" // rgb: 145, 255, 145
+	color = "#91FF91d0" // rgb: 145, 255, 145
 	strength = 15
 
 	glass_icon_state = "vermouthglass"
@@ -1515,7 +1515,7 @@
 	id = "vodka"
 	description = "Clear distilled alcoholic beverage that originates from Poland and Russia."
 	taste_description = "grain alcohol"
-	color = "#0064C8" // rgb: 0, 100, 200
+	color = "#358adfd0" // rgb: 0, 100, 200
 	strength = 5
 
 	glass_icon_state = "ginvodkaglass"
@@ -1532,7 +1532,7 @@
 	id = "whiskey"
 	description = "A type of distilled alcoholic beverage made from fermented grain mash."
 	taste_description = "molasses"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 25
 
 	glass_icon_state = "whiskeyglass"
@@ -1545,7 +1545,7 @@
 	id = "wine"
 	description = "An premium alcoholic beverage made from distilled grape juice."
 	taste_description = "bitter sweetness"
-	color = "#7E4043" // rgb: 126, 64, 67
+	color = "#7E4043d0" // rgb: 126, 64, 67
 	strength = 15
 
 	glass_icon_state = "wineglass"
@@ -1558,7 +1558,7 @@
 	id = "ntcahors"
 	description = "Fortified dessert wine made from cabernet sauvignon, saperavi, and other grapes."
 	taste_description = "sweet charcoal"
-	color = "#7E4043" // rgb: 126, 64, 67
+	color = "#7E4043d0" // rgb: 126, 64, 67
 	strength = 30
 
 	glass_icon_state = "wineglass"
@@ -1581,7 +1581,7 @@
 	reagent_state = LIQUID
 	color = "#365000"
 	strength = 30
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "acidspitglass"
 	glass_name = "Acid Spit"
 	glass_desc = "A drink from the company archives. Made from live aliens."
@@ -1592,7 +1592,7 @@
 	id = "alliescocktail"
 	description = "A drink made from your allies, not as sweet as when made from your enemies."
 	taste_description = "bitter yet free"
-	color = "#664300"
+	color = "#00664dd0"
 	strength = 25
 
 	glass_icon_state = "alliescocktail"
@@ -1605,7 +1605,7 @@
 	id = "aloe"
 	description = "So very, very, very good."
 	taste_description = "sweet 'n creamy"
-	color = "#664300"
+	color = "#192c00d0"
 	strength = 15
 
 	glass_icon_state = "aloe"
@@ -1619,7 +1619,7 @@
 	description = "Official drink of the Gun Club!"
 	taste_description = "dark and metallic"
 	reagent_state = LIQUID
-	color = "#664300"
+	color = "#124da7d0"
 	strength = 25
 
 	glass_icon_state = "amasecglass"
@@ -1632,7 +1632,7 @@
 	id = "andalusia"
 	description = "A nice, strangely named drink."
 	taste_description = "lemons"
-	color = "#664300"
+	color = "#665700d0"
 	strength = 15
 
 	glass_icon_state = "andalusia"
@@ -1645,7 +1645,7 @@
 	id = "antifreeze"
 	description = "Ultimate refreshment."
 	taste_description = "Jack Frost's piss"
-	color = "#664300"
+	color = "#00fff2d0"
 	strength = 12
 	adj_temp = 20
 	targ_temp = 330
@@ -1661,9 +1661,11 @@
 	description = "Nuclear proliferation never tasted so good."
 	taste_description = "da bomb"
 	reagent_state = LIQUID
-	color = "#666300"
+	color = "#6b0000d0"
 	strength = 5
 	druggy = 50
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "atomicbombglass"
 	glass_name = "Atomic Bomb"
@@ -1676,8 +1678,10 @@
 	description = "Coffee, Irish Cream, and cognac. You will get bombed."
 	taste_description = "angry and Irish"
 	taste_mult = 1.3
-	color = "#664300"
+	color = "#662000d0"
 	strength = 10
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "b52glass"
 	glass_name = "B-52"
@@ -1688,8 +1692,10 @@
 	id = "bahama_mama"
 	description = "Tropical cocktail."
 	taste_description = "lime and orange"
-	color = "#FF7F3B"
+	color = "#FF7F3Bd0"
 	strength = 15
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "bahama_mama"
 	glass_name = "Bahama Mama"
@@ -1702,8 +1708,10 @@
 	description = "A drink from Clown Heaven."
 	taste_description = "a bad joke"
 	nutriment_factor = 1
-	color = "#FFFF91"
+	color = "#FFFF91d0"
 	strength = 6
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "bananahonkglass"
 	glass_name = "Banana Honk"
@@ -1715,7 +1723,7 @@
 	id = "barefoot"
 	description = "Barefoot and pregnant"
 	taste_description = "creamy berries"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 10
 
 	glass_icon_state = "b&p"
@@ -1732,7 +1740,7 @@
 	reagent_state = LIQUID
 	color = "#664300"
 	strength = 12
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "beepskysmashglass"
 	glass_name = "Beepsky Smash"
 	glass_desc = "Heavy, hot and strong. Just like the Iron fist of the LAW."
@@ -1760,8 +1768,10 @@
 	id = "blackrussian"
 	description = "For the lactose-intolerant. Still as classy as a White Russian."
 	taste_description = "bitterness"
-	color = "#360000"
+	color = "#360000d0"
 	strength = 15
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "blackrussianglass"
 	glass_name = "Black Russian"
@@ -1773,7 +1783,7 @@
 	id = "bloodymary"
 	description = "A strange yet pleasurable mixture made of vodka, tomato and lime juice. Tastes like liquid murder"
 	taste_description = "tomatoes with a hint of lime"
-	color = "#664300"
+	color = "#660000d0"
 	strength = 15
 
 	glass_icon_state = "bloodymaryglass"
@@ -1785,7 +1795,7 @@
 	id = "booger"
 	description = "Ewww..."
 	taste_description = "sweet 'n creamy"
-	color = "#8CFF8C"
+	color = "#8CFF8Cd0"
 	strength = 30
 
 	glass_icon_state = "booger"
@@ -1798,7 +1808,7 @@
 	description = "It's just as effective as Dutch-Courage!"
 	taste_description = "alcoholic bravery"
 	taste_mult = 1.1
-	color = "#664300"
+	color = "#664300d0"
 	strength = 15
 
 	glass_icon_state = "bravebullglass"
@@ -1823,7 +1833,7 @@
 	id = "martini"
 	description = "Vermouth with Gin. Not quite how 007 enjoyed it, but still delicious."
 	taste_description = "dry class"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 15
 
 	glass_icon_state = "martiniglass"
@@ -1836,7 +1846,7 @@
 	id = "cubalibre"
 	description = "Rum, mixed with cola. Viva la revolucion."
 	taste_description = "cola"
-	color = "#3E1B00"
+	color = "#3E1B00d0"
 	strength = 10
 
 	glass_icon_state = "cubalibreglass"
@@ -1850,8 +1860,10 @@
 	description = "AHHHH!!!!"
 	taste_description = "sweet tasting iron"
 	taste_mult = 1.5
-	color = "#820000"
+	color = "#a70000"
 	strength = 10
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "demonsblood"
 	glass_name = "Demons' Blood"
@@ -1863,7 +1875,7 @@
 	id = "devilskiss"
 	description = "Creepy time!"
 	taste_description = "bitter iron"
-	color = "#A68310"
+	color = "#A68310d0"
 	strength = 15
 
 	glass_icon_state = "devilskiss"
@@ -1877,7 +1889,7 @@
 	description = "Only for the experienced. You think you see sand floating in the glass."
 	taste_description = "a beach"
 	nutriment_factor = 1
-	color = "#2E6671"
+	color = "#2E6671d0"
 	strength = 12
 
 	glass_icon_state = "driestmartiniglass"
@@ -1890,7 +1902,7 @@
 	id = "ginfizz"
 	description = "Refreshingly lemony, deliciously dry."
 	taste_description = "dry, tart lemons"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 25
 
 	glass_icon_state = "ginfizzglass"
@@ -1904,7 +1916,7 @@
 	description = "Watered-down rum, pirate approved!"
 	taste_description = "a poor excuse for alcohol"
 	reagent_state = LIQUID
-	color = "#664300"
+	color = "#664300d0"
 	strength = 90
 
 	glass_icon_state = "grogglass"
@@ -1916,7 +1928,7 @@
 	id = "erikasurprise"
 	description = "The surprise is, it's green!"
 	taste_description = "tartness and bananas"
-	color = "#2E6671"
+	color = "#2E6671d0"
 	strength = 10
 
 	glass_icon_state = "erikasurprise"
@@ -1931,8 +1943,10 @@
 	taste_description = "your brains smashed out by a lemon wrapped around a gold brick"
 	taste_mult = 5
 	reagent_state = LIQUID
-	color = "#664300"
+	color = "#00ffead0"
 	strength = 1
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "gargleblasterglass"
 	glass_name = "Pan-Galactic Gargle Blaster"
@@ -1944,7 +1958,7 @@
 	id = "gintonic"
 	description = "An all time classic, mild cocktail."
 	taste_description = "mild and tart"
-	color = "#664300"
+	color = "#004166d0"
 	strength = 20
 
 	glass_icon_state = "gintonicglass"
@@ -1958,7 +1972,7 @@
 	description = "100 proof cinnamon schnapps, made for alcoholic teen girls on spring break."
 	taste_description = "burning cinnamon"
 	taste_mult = 1.3
-	color = "#664300"
+	color = "#004166d0"
 	strength = 15
 
 	glass_icon_state = "ginvodkaglass"
@@ -1972,9 +1986,11 @@
 	description = "You just don't get it maaaan."
 	taste_description = "giving peace a chance"
 	reagent_state = LIQUID
-	color = "#664300"
+	color = "#6daa0cab"
 	strength = 15
 	druggy = 50
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "hippiesdelightglass"
 	glass_name = "Hippie's Delight"
@@ -1986,7 +2002,7 @@
 	id = "hooch"
 	description = "Either someone's failure at cocktail making or attempt in alcohol production. In any case, do you really want to drink that?"
 	taste_description = "pure resignation"
-	color = "#664300"
+	color = "#664e00d0"
 	strength = 1
 	toxicity = 2
 
@@ -1999,7 +2015,7 @@
 	id = "iced_beer"
 	description = "A beer which is so cold the air around it freezes."
 	taste_description = "refreshingly cold"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 20
 	adj_temp = -20
 	targ_temp = 270
@@ -2014,8 +2030,10 @@
 	id = "irishcarbomb"
 	description = "Mmm, tastes like chocolate cake..."
 	taste_description = "delicious anger"
-	color = "#2E6671"
+	color = "#2E6671d0"
 	strength = 15
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "irishcarbomb"
 	glass_name = "Irish Car Bomb"
@@ -2027,7 +2045,7 @@
 	id = "irishcoffee"
 	description = "Coffee, and alcohol. More fun than a Mimosa to drink in the morning."
 	taste_description = "giving up on the day"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 15
 
 	glass_icon_state = "irishcoffeeglass"
@@ -2040,7 +2058,7 @@
 	id = "irishcream"
 	description = "Whiskey-imbued cream, what else would you expect from the Irish."
 	taste_description = "creamy alcohol"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 25
 
 	glass_icon_state = "irishcreamglass"
@@ -2053,8 +2071,10 @@
 	id = "longislandicedtea"
 	description = "The liquor cabinet, brought together in a delicious mix. Intended for middle-aged alcoholic women only."
 	taste_description = "a mixture of cola and alcohol"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 12
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "longislandicedteaglass"
 	glass_name = "Long Island iced tea"
@@ -2066,7 +2086,7 @@
 	id = "manhattan"
 	description = "The Ranger's undercover drink of choice. They never could stomach gin..."
 	taste_description = "mild dryness"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 15
 
 	glass_icon_state = "manhattanglass"
@@ -2079,7 +2099,7 @@
 	id = "manhattan_proj"
 	description = "A scientist's drink of choice, for pondering ways to blow up the colony."
 	taste_description = "death, the destroyer of worlds"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 10
 	druggy = 30
 
@@ -2093,7 +2113,7 @@
 	id = "manlydorf"
 	description = "Beer and Ale, brought together in a delicious mix. Intended for true men only."
 	taste_description = "hair on your chest and your chin"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 25
 
 	glass_icon_state = "manlydorfglass"
@@ -2105,7 +2125,7 @@
 	id = "margarita"
 	description = "On the rocks with salt on the rim. Arriba~!"
 	taste_description = "dry and salty"
-	color = "#8CFF8C"
+	color = "#8CFF8Cd0"
 	strength = 15
 
 	glass_icon_state = "margaritaglass"
@@ -2119,7 +2139,7 @@
 	description = "A Viking's drink, though a cheap one."
 	taste_description = "sweet, sweet alcohol"
 	reagent_state = LIQUID
-	color = "#664300"
+	color = "#664300d0"
 	strength = 30
 	nutriment_factor = 1
 
@@ -2134,7 +2154,7 @@
 	description = "You've really hit rock bottom now... your liver packed its bags and left last night."
 	taste_description = "cheap ethanol"
 	taste_mult = 2.5
-	color = "#664300"
+	color = "#664300d0"
 	strength = 12
 
 	glass_icon_state = "moonshinebottle"
@@ -2149,6 +2169,8 @@
 	reagent_state = LIQUID
 	color = "#2E2E61"
 	strength = 10
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "neurotoxinglass"
 	glass_name = "Neurotoxin"
@@ -2165,7 +2187,7 @@
 	id = "patron"
 	description = "Tequila with silver in it, a favorite of alcoholic women in the club scene."
 	taste_description = "metallic and expensive"
-	color = "#585840"
+	color = "#585840d0"
 	strength = 20
 
 	glass_icon_state = "patronglass"
@@ -2178,7 +2200,7 @@
 	id = "pwine"
 	description = "Is this even wine? Toxic! Hallucinogenic! Probably consumed in boatloads by your superiors!"
 	taste_description = "purified alcoholic death"
-	color = "#000000"
+	color = "#000000d0"
 	strength = 1
 	druggy = 50
 	halluci = 10
@@ -2206,7 +2228,7 @@
 	id = "red_mead"
 	description = "The true Viking's drink! Even though it has a strange red color."
 	taste_description = "sweet and salty alcohol"
-	color = "#C73C00"
+	color = "#C73C00d0"
 	strength = 30
 
 	glass_icon_state = "red_meadglass"
@@ -2219,7 +2241,7 @@
 	id = "riotjuice"
 	description = "A cocktail that is very potent. Perfect for sporting events."
 	taste_description = "strong yet drinkable alcohol"
-	color = "#33CCFF"
+	color = "#33CCFFd0"
 	strength = 10
 
 	glass_icon_state = "riotjuice_glass"
@@ -2232,7 +2254,7 @@
 	id = "sbiten"
 	description = "A spicy Vodka! Might be a little hot for the little guys!"
 	taste_description = "hot and spice"
-	color = "#664300"
+	color = "#004166d0"
 	strength = 5
 	adj_temp = 50
 	targ_temp = 360
@@ -2247,7 +2269,7 @@
 	id = "screwdrivercocktail"
 	description = "Vodka, mixed with plain ol' orange juice. The result is surprisingly delicious."
 	taste_description = "oranges"
-	color = "#A68310"
+	color = "#A68310d0"
 	strength = 15
 
 	glass_icon_state = "screwdriverglass"
@@ -2262,8 +2284,10 @@
 	taste_description = "a pencil eraser"
 	taste_mult = 1.2
 	nutriment_factor = 1
-	color = "#664300"
+	color = "#004666d0"
 	strength = 12
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "silencerglass"
 	glass_name = "Silencer"
@@ -2275,8 +2299,10 @@
 	id = "singulo"
 	description = "A blue-space beverage!"
 	taste_description = "concentrated matter"
-	color = "#2E6671"
+	color = "#3b0c0cd0"
 	strength = 10
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "singulo"
 	glass_name = "Singulo"
@@ -2288,7 +2314,7 @@
 	id = "snowwhite"
 	description = "A cold refreshment"
 	taste_description = "refreshing cold"
-	color = "#FFFFFF"
+	color = "#FFFFFFd0"
 	strength = 20
 
 	glass_icon_state = "snowwhite"
@@ -2301,7 +2327,7 @@
 	id = "suidream"
 	description = "Comprised of: White soda, blue curacao, melon liquor."
 	taste_description = "fruit"
-	color = "#00A86B"
+	color = "#00A86Bd0"
 	strength = 50
 
 	glass_icon_state = "sdreamglass"
@@ -2314,7 +2340,7 @@
 	id = "syndicatebomb"
 	description = "Tastes like terrorism!"
 	taste_description = "purified antagonism"
-	color = "#2E6671"
+	color = "#716c2ed0"
 	strength = 10
 
 	glass_icon_state = "syndicatebomb"
@@ -2327,7 +2353,7 @@
 	id = "tequillasunrise"
 	description = "Tequila and orange juice. Much like a Screwdriver, only Mexican~"
 	taste_description = "oranges"
-	color = "#FFE48C"
+	color = "#FFE48Cd0"
 	strength = 25
 
 	glass_icon_state = "tequillasunriseglass"
@@ -2339,9 +2365,11 @@
 	id = "threemileisland"
 	description = "Made for a woman, strong enough for a man."
 	taste_description = "dry"
-	color = "#666340"
+	color = "#666340d0"
 	strength = 10
 	druggy = 50
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "threemileislandglass"
 	glass_name = "Three Mile Island iced tea"
@@ -2354,10 +2382,12 @@
 	description = "This thing is ON FIRE! CALL THE DAMN GUILDIES!"
 	taste_description = "spicy toxins"
 	reagent_state = LIQUID
-	color = "#664300"
+	color = "#665c00d0"
 	strength = 10
 	adj_temp = 15
 	targ_temp = 330
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "toxinsspecialglass"
 	glass_name = "Toxins Special"
@@ -2368,7 +2398,7 @@
 	id = "vodkamartini"
 	description = "Vodka with Gin. Not quite how 007 enjoyed it, but still delicious."
 	taste_description = "shaken, not stirred"
-	color = "#664300"
+	color = "#004666d0"
 	strength = 12
 
 	glass_icon_state = "martiniglass"
@@ -2381,7 +2411,7 @@
 	id = "vodkatonic"
 	description = "For when a gin and tonic isn't Russian enough."
 	taste_description = "tart bitterness"
-	color = "#0064C8" // rgb: 0, 100, 200
+	color = "#0064C8d0" // rgb: 0, 100, 200
 	strength = 15
 
 	glass_icon_state = "vodkatonicglass"
@@ -2394,8 +2424,10 @@
 	id = "whiterussian"
 	description = "That's just, like, your opinion, man..."
 	taste_description = "bitter cream"
-	color = "#A68340"
+	color = "#A68340d0"
 	strength = 15
+
+	glass_unique_appearance = TRUE
 
 	glass_icon_state = "whiterussianglass"
 	glass_name = "White Russian"
@@ -2407,7 +2439,7 @@
 	id = "whiskeycola"
 	description = "Whiskey, mixed with cola. Surprisingly refreshing."
 	taste_description = "cola"
-	color = "#3E1B00"
+	color = "#3E1B00d0"
 	strength = 25
 
 	glass_icon_state = "whiskeycolaglass"
@@ -2419,7 +2451,7 @@
 	name = "Whiskey Soda"
 	id = "whiskeysoda"
 	description = "For the more refined griffon."
-	color = "#664300"
+	color = "#533600d0"
 	strength = 15
 
 	glass_icon_state = "whiskeysodaglass2"
@@ -2432,7 +2464,7 @@
 	id = "atomvodka"
 	description = "Clear distilled alcoholic beverage that originates from Poland and Russia, now with nuclear taste!"
 	taste_description = "strong grain alcohol"
-	color = "#0064C8" // rgb: 0, 100, 200
+	color = "#0064C8d0" // rgb: 0, 100, 200
 	strength = 5
 	strength_mod = 10
 	toxicity = 10
@@ -2452,7 +2484,7 @@
 	id = "specialwhiskey"
 	description = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	taste_description = "the whiskey gods blessing your tastebuds"
-	color = "#664300"
+	color = "#664300d0"
 	strength = 10
 
 	glass_icon_state = "whiskeyglass"
@@ -2478,7 +2510,7 @@
 	id = "daiquiri"
 	description = "Refreshing rum and citrus. Time for a tropical get away."
 	taste_description = "refreshing citrus and rum"
-	color = "#d1ff49" // rgb(209, 255, 73
+	color = "#d1ff49d0" // rgb(209, 255, 73
 	strength = 25
 
 	glass_name = "Daiquiri"
@@ -2489,7 +2521,7 @@
 	id = "whiskeysour"
 	description = "A smokey, refreshing lemon whiskey."
 	taste_description = "smoke and citrus"
-	color = "#a0692e" // rgb(160, 105, 46)
+	color = "#a0692ed0" // rgb(160, 105, 46)
 	strength = 20
 
 	glass_name = "Whiskey Sour"
@@ -2500,7 +2532,7 @@
 	id = "mojito"
 	description = "Minty rum and citrus, made for sailing."
 	taste_description = "minty rum and lime"
-	color = "#d1ff49" // rgb(209, 255, 73
+	color = "#d1ff49d0" // rgb(209, 255, 73
 	strength = 30
 
 	glass_icon_state = "mojito"
@@ -2512,7 +2544,7 @@
 	id = "balloon"
 	description = "A strange drink invented in the aerostats of Venus."
 	taste_description = "strange alcohol"
-	color = "#FAEBD7"
+	color = "#FAEBD7d0"
 	strength = 66
 
 	glass_name = "Balloon"
@@ -2524,8 +2556,8 @@
 	description = "A mixture of citrus juices. Tangy, yet smooth."
 	taste_description = "extremely refreshing sourness"
 	nutrition = 2
-	color = "#bedf00" // rgb(190, 223, 0)
-
+	color = "#bedf00d0" // rgb(190, 223, 0)
+	glass_unique_appearance = TRUE
 	glass_icon_state = "triplecitrus"
 	glass_name = "Triple Citrus"
 	glass_desc = "A mixture of citrus juices. Tangy, yet smooth."
@@ -2538,7 +2570,7 @@
 	nutrition = 2
 	color = "#d51e5e" // rgb(213, 30,94)
 	glass_center_of_mass = list("x"=16, "y"=7)
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "sugarrush"
 	glass_name = "Sugar Rush"
 	glass_desc = "Sweet, light, and fruity - as girly as it gets."
@@ -2550,7 +2582,7 @@
 	taste_description = "sour, manly, and sobering goodness"
 	color = "#5bd231" // rgb(91, 210, 49)
 	overdose = 45
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "crevice_spike"
 	glass_name = "Crevice Spike"
 	glass_desc = "It will knock the drunkenness out of you or knock you out cold."
@@ -2572,7 +2604,7 @@
 	taste_description = "sugar dilluted in ethylic alcohol"
 	color = "#ffffb3" // rgb(255, 255, 179)
 	strength = 15 //Almost like Moonshine
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "fringeweaver"
 	glass_name =  "Fringe Weaver"
 	glass_desc = "It's like drinking ethylic alcohol with a spoonful of sugar."
@@ -2584,7 +2616,7 @@
 	taste_description = "sweet and happy"
 	color = "#bdffca" // rgb(189, 255, 202)
 	strength = 25
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "pianowoman"
 	glass_name = "Piano Woman"
 	glass_desc = "A rename of a classic mix, the favorite drink of certain robots and biosynths for some reason..."
@@ -2594,7 +2626,7 @@
 	id = "fernet"
 	description = "Pure Fernet, a bitter herb digestiff. Drink if you dare."
 	taste_description = "unbearable bitterness"
-	color = "#150905" // rgb(21, 9, 5)
+	color = "#150905d0" // rgb(21, 9, 5)
 	strength = 5 //Not meant to be drank on its own!
 
 	glass_icon_state = "fernetpuro"
@@ -2621,7 +2653,7 @@
 	taste_description = "bittersweet relief"
 	color = "#572C00" // rgb(87, 44, 0)
 	strength = 35
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "godlyblend"
 	glass_name = "sawn-off bottle of Fernet cola"
 	glass_desc = "Fernet mixed with cola, served on a sawn-off bottle as per tradition. A smooth digestiff for when you've eaten more than you could chew."
@@ -2634,7 +2666,7 @@
 	id = "fanciulli"
 	description = "Manhattan with Fernet as its bitter."
 	taste_description = "a sweet, sobering mix"
-
+	glass_unique_appearance = TRUE
 	glass_icon_state = "fanciulli"
 	glass_name = "Fanciulli"
 	glass_desc = "What if the Manhattan cocktail <b>actually</b> used a digestiff? Helps you sober up, but makes you sluggish."

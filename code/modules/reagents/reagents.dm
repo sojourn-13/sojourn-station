@@ -38,6 +38,8 @@
 	var/color = "#000000"
 	var/color_weight = 1
 
+	var/glass_unique_appearance = FALSE
+
 	var/chilling_point
 	var/chilling_message = "crackles and freezes!"
 	var/chilling_sound = 'sound/effects/bubbles.ogg'

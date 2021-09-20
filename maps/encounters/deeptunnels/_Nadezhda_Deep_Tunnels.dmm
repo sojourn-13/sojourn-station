@@ -818,10 +818,10 @@
 /obj/structure/table/rack,
 /obj/item/gun/projectile/shotgun/doublebarrel,
 /obj/item/gun/projectile/shotgun/doublebarrel,
-/obj/item/ammo_magazine/ammobox,
-/obj/item/ammo_magazine/ammobox,
 /obj/item/beartrap,
 /obj/item/beartrap,
+/obj/item/ammo_magazine/ammobox/shotgun/flashshells,
+/obj/item/ammo_magazine/ammobox/shotgun/flashshells,
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/mine/lockers)
@@ -6686,7 +6686,7 @@
 /obj/item/tool/multitool{
 	pixel_x = 10
 	},
-/obj/item/reagent_containers/food/drinks/britcup{
+/obj/item/reagent_containers/food/drinks{
 	pixel_x = -5
 	},
 /obj/structure/cable/green{

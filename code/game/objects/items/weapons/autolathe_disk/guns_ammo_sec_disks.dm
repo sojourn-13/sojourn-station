@@ -15,6 +15,7 @@
 		/datum/design/autolathe/tool/tacknife,
 		/datum/design/autolathe/tool/combat_shovel,
 		/datum/design/autolathe/sec/beartrap,
+		/datum/design/autolathe/device/landmine = 2, //can make 10 warcrimes
 		/datum/design/autolathe/sec/silencer,
 		/datum/design/autolathe/sec/gun_case,
 		/datum/design/research/item/light_replacer,
@@ -58,6 +59,41 @@
 		/datum/design/autolathe/gun/grenade_launcher_lenar = 6,
 		//sniper
 		/datum/design/autolathe/gun/nordwind = 14, //basic uses the whole disk...
+		/datum/design/autolathe/device/landmine = 0,
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
+	disk_name = "Marshal \"Shoot-out\" Pack"
+	icon_state = "ironhammer"
+	license = 30 //1:1 with blackshield guns
+	designs = list(
+		/datum/design/autolathe/ammo/pistol = 0,
+		/datum/design/autolathe/ammo/pistol_lethal,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/hpistol = 0,
+		/datum/design/autolathe/ammo/hpistol_lethal,
+		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/ammo/hpistol_practice = 0,
+		/datum/design/autolathe/ammo/smg = 0,
+		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg_lethal,
+		/datum/design/autolathe/ammo/smg_practice = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/magnum = 0,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
+		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/ammo/pistol_ammobox = 0,
+		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox = 0,
+		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/grenade,
+		/datum/design/autolathe/ammo/grenade/flash
 		)
 
 //Blackshield
@@ -89,6 +125,7 @@
 		/datum/design/autolathe/gun/sts25,
 		/datum/design/autolathe/gun/sts30,
 		/datum/design/autolathe/gun/sts40,
+		/datum/design/autolathe/device/landmine = 0,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo

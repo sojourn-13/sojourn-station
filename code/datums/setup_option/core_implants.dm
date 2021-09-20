@@ -39,9 +39,17 @@
 	restricted_jobs = list(
 		/datum/job/doctor,
 		/datum/job/orderly,
-		/datum/job/paramedic
+		/datum/job/paramedic,
+		/datum/job/premier,
+		/datum/job/pg,
+		/datum/job/chaplain,
+		/datum/job/chief_engineer,
+		/datum/job/merchant,
+		/datum/job/rd,
+		/datum/job/smc,
+		/datum/job/swo
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
-	restricted_depts = SECURITY | COMMAND | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_depts = SECURITY | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
 	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
 /* Commented out they get balanced and until the event they get added into.

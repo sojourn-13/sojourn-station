@@ -6,7 +6,7 @@
 /obj/random/traps/item_to_spawn()
 	var/list/possible_traps = list(/obj/structure/wire_splicing = 1,
 	/obj/item/mine/armed = 0.15,
-	/obj/item/mine/improvised = 0.30,
+	/obj/item/mine/improvised/armed = 0.30,
 	/obj/item/beartrap/armed = 0.45,
 	/obj/item/beartrap/makeshift/armed = 0.8)
 

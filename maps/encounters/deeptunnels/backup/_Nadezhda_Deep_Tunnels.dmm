@@ -15,8 +15,8 @@
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "ae" = (
-/obj/structure/boulder,
-/turf/unsimulated/mask,
+/obj/random/mob/undergroundmob/low_chance,
+/turf/simulated/floor/asteroid,
 /area/mine/explored)
 "af" = (
 /obj/structure/railing{
@@ -83,12 +83,8 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/mine/power)
 "ap" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
+/obj/machinery/ntnet_relay,
+/turf/simulated/floor/tiled/white/techfloor_grid,
 /area/mine/power)
 "aq" = (
 /obj/structure/cable{
@@ -129,10 +125,13 @@
 	},
 /area/mine/hallway)
 "ay" = (
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
 	},
-/area/turbolift/Mining/underground)
+/turf/simulated/floor/tiled/white/techfloor,
+/area/mine/hallway)
 "az" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
@@ -210,7 +209,17 @@
 /obj/item/tool/pickaxe,
 /obj/item/storage/belt/utility,
 /obj/item/storage/toolbox/mechanical,
-/obj/item/tool/multitool,
+/obj/item/cell/large/super{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/obj/item/cell/large/super{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/obj/item/tool/multitool{
+	pixel_x = 5
+	},
 /obj/structure/table/rack,
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/steel/cargo,
@@ -239,8 +248,10 @@
 	},
 /area/turbolift/Research/underground)
 "aT" = (
-/turf/simulated/floor/tiled/steel,
-/area/turbolift/Mining/underground)
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/mine/hallway)
 "aU" = (
 /obj/item/modular_computer/console,
 /turf/simulated/floor/tiled/steel/cargo,
@@ -263,6 +274,9 @@
 	},
 /obj/random/lowkeyrandom,
 /obj/random/powercell/low_chance,
+/obj/random/powercell/large_safe,
+/obj/random/powercell/large_safe,
+/obj/random/powercell/large_safe,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/prep)
 "aY" = (
@@ -322,11 +336,9 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "bi" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/turbolift/Mining/underground)
+/obj/random/mob/nightmare/low_chance,
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
 "bj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/monofloor,
@@ -357,6 +369,9 @@
 "bp" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/powercell/low_chance,
+/obj/random/powercell/large_safe,
+/obj/random/powercell/large_safe,
+/obj/random/powercell/large_safe,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/prep)
 "bq" = (
@@ -457,6 +472,7 @@
 /area/mine/prep)
 "bH" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/prep)
 "bI" = (
@@ -700,6 +716,11 @@
 /turf/simulated/floor/asteroid,
 /area/mine/prep)
 "cg" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /obj/machinery/telecomms/relay/preset/mining,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/mine/power)
@@ -789,6 +810,8 @@
 "ct" = (
 /obj/structure/closet/secure_closet/personal/miner,
 /obj/item/storage/firstaid/ifak,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/mine/lockers)
 "cu" = (
@@ -797,6 +820,9 @@
 /obj/item/gun/projectile/shotgun/doublebarrel,
 /obj/item/beartrap,
 /obj/item/beartrap,
+/obj/item/ammo_magazine/ammobox/shotgun/flashshells,
+/obj/item/ammo_magazine/ammobox/shotgun/flashshells,
+/obj/item/ammo_magazine/ammobox/shotgun/flashshells,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/mine/lockers)
 "cv" = (
@@ -837,6 +863,9 @@
 "cB" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
@@ -935,6 +964,7 @@
 /area/mine/atmos)
 "cR" = (
 /obj/machinery/atmospherics/pipe/tank/plasma,
+/obj/machinery/camera/network/mining,
 /turf/simulated/floor/plating,
 /area/mine/atmos)
 "cS" = (
@@ -1115,8 +1145,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4;
-	icon_state = "intact";
-	tag = "icon-intact (EAST)"
+	icon_state = "intact"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -1124,8 +1153,7 @@
 "dq" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4;
-	icon_state = "intact";
-	tag = "icon-intact (EAST)"
+	icon_state = "intact"
 	},
 /obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/plating/under,
@@ -1153,6 +1181,9 @@
 "du" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/atmos)
@@ -1279,10 +1310,6 @@
 /area/nadezhda/rnd/outpostgeneral)
 "dM" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/structure/cable/yellow,
 /obj/structure/cable{
 	d2 = 8;
@@ -1291,11 +1318,6 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/power)
 "dN" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/power)
 "dO" = (
@@ -1472,6 +1494,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/smes/buildable{
+	RCon_tag = "Substation - Mining";
 	charge = 5e+006;
 	input_attempt = 1;
 	input_level = 200000;
@@ -1479,8 +1502,7 @@
 	output_attempt = 1;
 	output_level = 200000;
 	output_level_max = 250000;
-	outputting = 2;
-	RCon_tag = "Substation - MinOut"
+	outputting = 2
 	},
 /obj/structure/cable/yellow{
 	d2 = 2;
@@ -1882,10 +1904,10 @@
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
 "fm" = (
-/obj/machinery/camera/network/mining,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/camera/network/mining,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -1981,6 +2003,7 @@
 	dir = 4
 	},
 /obj/structure/closet/firecloset,
+/obj/item/clothing/mask/costume/animal/rat,
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
 "fw" = (
@@ -2212,6 +2235,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/processing)
 "fV" = (
@@ -2597,6 +2621,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "gX" = (
@@ -2795,6 +2820,7 @@
 /area/nadezhda/rnd/outpostmachineroom)
 "hx" = (
 /obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hy" = (
@@ -2839,16 +2865,14 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4;
-	icon_state = "intact";
-	tag = "icon-intact (EAST)"
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hF" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4;
-	icon_state = "intact";
-	tag = "icon-intact (EAST)"
+	icon_state = "intact"
 	},
 /obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -2867,11 +2891,6 @@
 /area/nadezhda/rnd/outpostmachineroom)
 "hI" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/power)
 "hJ" = (
@@ -2951,6 +2970,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "hT" = (
@@ -2973,14 +2995,9 @@
 "hW" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
+	d1 = 2;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/mine/power)
@@ -2995,6 +3012,7 @@
 	icon_state = "alarm0";
 	pixel_y = -22
 	},
+/obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "hZ" = (
@@ -3044,17 +3062,22 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "ie" = (
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Substation - Science - Outpost";
+	charge = 5e+006;
+	input_attempt = 1;
+	input_level = 200000;
+	inputting = 0;
+	output_attempt = 1;
+	output_level = 200000;
+	output_level_max = 250000;
+	outputting = 2
+	},
 /obj/structure/cable/yellow{
-	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "0-4"
 	},
-/obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (EAST)";
-	icon_state = "danger";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/golden,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "if" = (
 /obj/machinery/power/port_gen/pacman,
@@ -3086,6 +3109,7 @@
 	pixel_x = -26;
 	pixel_y = 0
 	},
+/obj/machinery/ntnet_relay,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/outpostmachineroom)
 "il" = (
@@ -3101,28 +3125,46 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "im" = (
+/obj/structure/catwalk,
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "in" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
 "io" = (
 /obj/machinery/portable_atmospherics/canister/air,
@@ -3134,27 +3176,21 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "ip" = (
+/obj/machinery/power/terminal{
+	dir = 1;
+	icon_state = "term"
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/obj/structure/catwalk,
 /obj/structure/cable/yellow{
-	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "0-8"
 	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (EAST)";
-	icon_state = "danger";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/golden,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "iq" = (
 /obj/machinery/power/port_gen/pacman,
@@ -3228,7 +3264,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "iv" = (
-/obj/machinery/autolathe,
+/obj/machinery/autolathe/loaded,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/outpoststorage)
 "iw" = (
@@ -3261,9 +3297,6 @@
 /area/nadezhda/rnd/outpoststorage)
 "iA" = (
 /obj/machinery/portable_atmospherics/canister/air,
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpoststorage)
 "iB" = (
@@ -3271,19 +3304,21 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpoststorage)
 "iC" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpoststorage)
 "iD" = (
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "iE" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
 	},
-/obj/machinery/telecomms/relay/preset/mining,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
+/obj/machinery/camera/network/engineering,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/outpostmachineroom)
 "iF" = (
@@ -3330,6 +3365,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/space_heater,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "iK" = (
@@ -3339,9 +3375,9 @@
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (EAST)";
+	dir = 4;
 	icon_state = "danger";
-	dir = 4
+	tag = "icon-danger (EAST)"
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -3384,7 +3420,7 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpoststorage)
 "iS" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpoststorage)
 "iT" = (
@@ -3394,18 +3430,18 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "iU" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/outpostmachineroom)
 "iV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
+/obj/machinery/telecomms/relay/preset/mining,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/outpostmachineroom)
 "iW" = (
@@ -3444,9 +3480,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/danger/corner{
-	tag = "icon-dangercorner (EAST)";
+	dir = 4;
 	icon_state = "dangercorner";
-	dir = 4
+	tag = "icon-dangercorner (EAST)"
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -3461,9 +3497,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (NORTH)";
-	icon_state = "danger";
-	dir = 1
+	dir = 1;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -3497,23 +3532,41 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "jf" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 6;
+	icon_state = "intact";
+	tag = "icon-intact (SOUTHEAST)"
 	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/outpoststorage)
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "jg" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/unary/heater{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/outpoststorage)
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "jh" = (
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/moebius/nuclear;
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/outpoststorage)
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "ji" = (
 /obj/random/cluster/spiders/low_chance,
 /turf/simulated/floor/asteroid,
@@ -3574,11 +3627,11 @@
 /area/nadezhda/rnd/outpostmachineroom)
 "jo" = (
 /obj/structure/closet/crate,
-/obj/item/stack/material/plasma/random,
-/obj/item/stack/material/plasma/random,
-/obj/item/stack/material/plasma/random,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -3606,7 +3659,6 @@
 /area/nadezhda/rnd/outpoststorage)
 "js" = (
 /obj/structure/table/standard,
-/obj/item/stack/material/plasteel/random,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
 "jt" = (
@@ -3617,11 +3669,9 @@
 /area/nadezhda/rnd/outpostmachineroom)
 "ju" = (
 /obj/structure/table/standard,
-/obj/item/stack/material/steel/full,
-/obj/item/stack/material/glass{
-	amount = 50
+/obj/machinery/camera/network/research{
+	dir = 1
 	},
-/obj/machinery/light,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
 "jv" = (
@@ -3653,11 +3703,10 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "jy" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -28
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/white/brown_perforated,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "jz" = (
 /obj/structure/dispenser,
@@ -3683,31 +3732,24 @@
 "jC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/science{
 	name = "Machine Room";
 	req_access = list(5)
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpostgeneral)
 "jD" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/science{
-	name = "Material Storage";
-	req_access = list(5)
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/rnd/outpostgeneral)
+/obj/machinery/seed_storage/xenobotany,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "jE" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/anomalisolthree)
@@ -3724,6 +3766,7 @@
 /obj/machinery/holoposter{
 	pixel_y = 30
 	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "jJ" = (
@@ -3767,44 +3810,123 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "jO" = (
-/obj/structure/table/standard,
-/obj/item/device/lighting/toggleable/lamp,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolthree)
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/rnd/outpostmachineroom)
 "jP" = (
-/obj/machinery/artifact_scanpad,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolthree)
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/golden,
+/area/nadezhda/rnd/outpostmachineroom)
 "jQ" = (
-/obj/machinery/artifact_analyser,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/rnd/outpostmachineroom)
+"jR" = (
+/obj/structure/catwalk,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28;
+	pixel_y = 0
+	},
+/obj/machinery/space_heater,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/rnd/outpostmachineroom)
+"jS" = (
+/obj/machinery/power/sensor{
+	long_range = 1;
+	name = "Powernet Sensor - Research Outpost";
+	name_tag = "Research Outpost Subgrid"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/rnd/outpostmachineroom)
+"jT" = (
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/tablet/lease/preset/medical,
+/obj/item/storage/box/botanydisk,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpostbotany)
+"jU" = (
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolthree)
-"jR" = (
-/obj/structure/table/standard,
-/obj/item/device/lighting/toggleable/lamp,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfour)
-"jS" = (
-/obj/machinery/artifact_scanpad,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfour)
-"jT" = (
-/obj/machinery/artifact_analyser,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfour)
-"jU" = (
-/obj/structure/table/standard,
-/obj/item/device/lighting/toggleable/lamp,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfive)
 "jV" = (
-/obj/machinery/artifact_scanpad,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfive)
+/area/nadezhda/rnd/anomalisolthree)
 "jW" = (
-/obj/machinery/artifact_analyser,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfive)
+/area/nadezhda/rnd/anomalisolthree)
 "jX" = (
 /obj/machinery/light{
 	dir = 1
@@ -3812,10 +3934,10 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "jY" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge,
 /obj/structure/sign/department/toxins{
 	pixel_x = -32
 	},
+/obj/machinery/portable_atmospherics/powered/scrubber/huge,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/mixing)
 "jZ" = (
@@ -3828,119 +3950,108 @@
 /turf/simulated/mineral/random,
 /area/nadezhda/rnd/outpostgeneral)
 "kb" = (
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -22
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
 	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolthree)
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 24
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/outpostmachineroom)
 "kc" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolthree)
+/obj/structure/table/rack,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/obj/item/device/gps/mining,
+/turf/simulated/floor/tiled/steel/danger,
+/area/mine/hallway)
 "kd" = (
+/obj/structure/table/standard,
+/obj/item/book/manual/suspension,
 /obj/machinery/light{
-	dir = 4
+	dir = 1
 	},
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
-	pixel_y = 0
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolthree)
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/rnd/outpostgeneral)
 "ke" = (
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -22
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfour)
+/obj/structure/closet/excavation,
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/rnd/outpostgeneral)
 "kf" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfour)
+/obj/machinery/suspension_gen,
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/rnd/outpostgeneral)
 "kg" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
+/obj/machinery/alarm/monitor/isolation{
+	alarm_id = "isolation_one";
+	dir = 8;
+	pixel_x = 22;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfour)
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/anomalisolthree)
 "kh" = (
-/obj/item/device/radio/intercom{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4;
-	pixel_x = -22
+	use_power = 0
 	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfive)
-"ki" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfive)
-"kj" = (
-/obj/machinery/light{
+/obj/machinery/camera/network/research{
 	dir = 4
 	},
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
-	pixel_y = 0
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/anomalisolthree)
+"ki" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1;
+	icon_state = "map";
+	tag = "icon-map (NORTH)"
 	},
 /obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/anomalisolthree)
+"kj" = (
+/obj/machinery/alarm/monitor/isolation{
+	alarm_id = "isolation_two";
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisolfive)
 "kk" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
+/obj/machinery/vending/hydronutrients{
+	categories = 3
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "kl" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -3967,110 +4078,42 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "kn" = (
-/obj/structure/disposalpipe/junction{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/obj/machinery/smartfridge,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "ko" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/obj/structure/table/reinforced,
+/obj/machinery/centrifuge,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpostbotany)
 "kp" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/machinery/chemical_dispenser,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpostbotany)
 "kq" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/obj/machinery/chem_master,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpostbotany)
 "kr" = (
-/obj/structure/disposalpipe/junction{
+/obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "ks" = (
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "kt" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
+/obj/machinery/atmospherics/unary/freezer{
+	cooling = 5;
+	dir = 8;
+	set_temperature = 70
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "ku" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -4102,174 +4145,114 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "kx" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 0
-	},
-/obj/machinery/camera/network/research{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
-"ky" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 8;
-	name = "Mixing"
-	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
-"kz" = (
-/obj/machinery/meter,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (NORTH)";
-	icon_state = "map";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
-"kA" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
-"kB" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	use_power = 0
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/camera/network/research{
-	dir = 4
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"ky" = (
+/obj/machinery/botany/editor,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
+"kz" = (
+/obj/machinery/botany/extractor,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
+"kA" = (
+/obj/machinery/biogenerator,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
+"kB" = (
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisolthree)
 "kC" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (NORTH)";
-	icon_state = "map";
-	dir = 1
-	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisolthree)
 "kD" = (
-/obj/machinery/alarm/monitor/isolation{
-	alarm_id = "isolation_one";
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 0
+/obj/machinery/door/airlock/external{
+	id_tag = "riso3";
+	name = "Isolation Three";
+	req_access = list(65)
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 8
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/anomalisolthree)
 "kE" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	use_power = 0
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/camera/network/research{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel,
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisolfour)
 "kF" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (NORTH)";
-	icon_state = "map";
-	dir = 1
-	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisolfour)
 "kG" = (
-/obj/machinery/alarm/monitor/isolation{
-	alarm_id = "isolation_one";
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 0
+/obj/machinery/door/airlock/external{
+	id_tag = "riso4";
+	name = "Isolation Four";
+	req_access = list(65)
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 8
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/anomalisolfour)
 "kH" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	use_power = 0
+/obj/machinery/door/airlock/external{
+	id_tag = "riso5";
+	name = "Isolation Five";
+	req_access = list(65)
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/camera/network/research{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/anomalisolfive)
 "kI" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (NORTH)";
-	icon_state = "map";
-	dir = 1
-	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisolfive)
 "kJ" = (
-/obj/machinery/alarm/monitor/isolation{
-	alarm_id = "isolation_two";
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 0
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel,
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisolfive)
 "kK" = (
 /turf/simulated/wall/r_wall,
@@ -4285,98 +4268,57 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "kN" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 2;
-	name = "Mix to Space"
-	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/seed_extractor,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "kO" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomalisolthree)
-"kP" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomalisolthree)
-"kQ" = (
-/obj/machinery/door/airlock/science{
-	name = "Material Storage";
-	req_access = list(5)
-	},
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/white,
+/obj/structure/table/rack,
+/obj/item/clothing/suit/space/anomaly,
+/obj/item/clothing/head/helmet/space/anomaly,
+/obj/item/device/gps/science,
+/turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/outpostgeneral)
+"kQ" = (
+/obj/structure/table/standard,
+/obj/item/pen,
+/obj/item/device/lighting/toggleable/lamp,
+/obj/item/paper_bin,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
 "kR" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomalisolfour)
-"kS" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomalisolfour)
+/obj/structure/table/standard,
+/obj/item/device/lighting/toggleable/lamp,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolthree)
 "kT" = (
-/obj/machinery/door/airlock/external{
-	id_tag = "riso3";
-	name = "Isolation Three";
-	req_access = list(65)
-	},
-/obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
+/obj/machinery/artifact_scanpad,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolthree)
 "kU" = (
-/obj/machinery/door/airlock/external{
-	id_tag = "riso4";
-	name = "Isolation Four";
-	req_access = list(65)
-	},
-/obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/rnd/anomalisolfour)
+/obj/machinery/artifact_harvester,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolthree)
 "kV" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomalisolfive)
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
 "kW" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomalisolfive)
+/obj/machinery/button/remote/airlock{
+	id = "riso3";
+	name = "Door Bolt Control";
+	pixel_x = -5;
+	pixel_y = 25;
+	specialfunctions = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
 "kX" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -4392,25 +4334,14 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "kY" = (
-/obj/structure/closet/secure_closet/personal/hydroponics{
-	name = "xenoflorist's locker";
-	req_access = list(5)
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "kZ" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostbotany)
-"la" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
 	},
-/turf/simulated/floor/tiled/white/gray_platform,
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "lb" = (
 /obj/structure/table/rack/shelf,
@@ -4443,37 +4374,43 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
 "lc" = (
-/turf/simulated/floor/tiled/white,
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostbotany)
 "ld" = (
-/obj/machinery/smartfridge,
-/turf/simulated/floor/tiled/white,
+/obj/structure/table/reinforced,
+/obj/machinery/electrolyzer,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostbotany)
 "le" = (
-/obj/machinery/seed_extractor,
-/obj/machinery/camera/network/research,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostbotany)
-"lf" = (
-/obj/machinery/biogenerator,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostbotany)
-"lg" = (
-/obj/machinery/seed_storage/xenobotany,
-/obj/machinery/light{
+/obj/machinery/atmospherics/portables_connector{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white/gray_platform,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"lf" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"lg" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/beakers,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostbotany)
 "lh" = (
-/obj/machinery/vending/hydronutrients{
-	categories = 3
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostbotany)
 "li" = (
-/obj/machinery/reagentgrinder/industrial,
-/turf/simulated/floor/tiled/white/gray_platform,
+/obj/machinery/chem_heater,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostbotany)
 "lj" = (
 /obj/machinery/alarm{
@@ -4484,62 +4421,75 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "lk" = (
-/obj/machinery/atmospherics/unary/freezer{
-	dir = 2
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -28
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "ll" = (
-/obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "lm" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 4;
-	name = "Injection/Mix to Space"
-	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "ln" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "lo" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "lp" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid,
-/area/nadezhda/rnd/mixing)
-"lq" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid,
-/area/nadezhda/rnd/mixing)
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"lq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "lr" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/anomal)
@@ -4569,15 +4519,17 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "lv" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/button/remote/airlock{
-	id = "riso3";
+	id = "riso4";
 	name = "Door Bolt Control";
 	pixel_x = -5;
+	pixel_y = 25;
+	specialfunctions = 4
+	},
+/obj/machinery/button/remote/airlock{
+	id = "riso5";
+	name = "Door Bolt Control";
+	pixel_x = 5;
 	pixel_y = 25;
 	specialfunctions = 4
 	},
@@ -4598,15 +4550,16 @@
 /area/nadezhda/rnd/anomal)
 "lx" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	tag = "icon-intact (NORTHEAST)";
+	dir = 5;
 	icon_state = "intact";
-	dir = 5
+	tag = "icon-intact (NORTHEAST)"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/floor_decal/industrial/caution/red,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "ly" = (
@@ -4616,27 +4569,8 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "lz" = (
-/obj/machinery/button/remote/airlock{
-	id = "riso5";
-	name = "Door Bolt Control";
-	pixel_x = 5;
-	pixel_y = 25;
-	specialfunctions = 4
-	},
-/obj/machinery/button/remote/airlock{
-	id = "riso4";
-	name = "Door Bolt Control";
-	pixel_x = -5;
-	pixel_y = 25;
-	specialfunctions = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (NORTH)";
-	icon_state = "map";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/turf/unsimulated/mask,
+/area/mine/explored)
 "lA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 9
@@ -4646,6 +4580,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/industrial/caution/red,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "lB" = (
@@ -4656,39 +4591,26 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomal)
 "lD" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostbotany)
-"lE" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostbotany)
-"lF" = (
-/obj/structure/bed/chair{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/white/gray_platform,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"lE" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"lF" = (
+/turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostbotany)
 "lG" = (
-/obj/structure/table/standard,
-/obj/item/device/lighting/toggleable/lamp,
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/white/gray_platform,
+/obj/structure/railing,
+/turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostbotany)
 "lH" = (
-/obj/structure/table/standard,
-/obj/item/storage/toolbox/mechanical,
-/turf/simulated/floor/tiled/white/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/rnd/outpostbotany)
 "lI" = (
 /obj/structure/disposalpipe/segment,
@@ -4713,9 +4635,9 @@
 /area/nadezhda/rnd/mixing)
 "lK" = (
 /obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (WEST)";
+	dir = 8;
 	icon_state = "danger";
-	dir = 8
+	tag = "icon-danger (WEST)"
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
@@ -4768,34 +4690,31 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/mixing)
 "lS" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
+"lT" = (
+/obj/machinery/portable_atmospherics/hydroponics{
+	pixel_y = 4
+	},
+/obj/machinery/atmospherics/portables_connector,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/rnd/outpostbotany)
+"lU" = (
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warningred{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
-"lT" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 1;
-	name = "Chamber to Space"
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
-"lU" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/ignition{
-	id = "toxin_chamber2";
-	pixel_x = 0;
-	pixel_y = -5
-	},
-/obj/machinery/button/remote/blast_door{
-	id = "toxinchamber1";
-	name = "Mixing Room Vent Control";
-	pixel_x = 0;
-	pixel_y = 5
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "lV" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/smartspawnplasma,
@@ -4808,9 +4727,9 @@
 /area/nadezhda/rnd/mixing)
 "lX" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	tag = "icon-intact (NORTHEAST)";
+	dir = 5;
 	icon_state = "intact";
-	dir = 5
+	tag = "icon-intact (NORTHEAST)"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
@@ -4830,9 +4749,9 @@
 /area/nadezhda/rnd/anomal)
 "ma" = (
 /obj/machinery/power/emitter/anchored{
-	tag = "icon-emitter (NORTH)";
+	dir = 1;
 	icon_state = "emitter";
-	dir = 1
+	tag = "icon-emitter (NORTH)"
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -4850,9 +4769,9 @@
 /area/nadezhda/rnd/anomal)
 "md" = (
 /obj/machinery/power/emitter/anchored{
-	tag = "icon-emitter (NORTH)";
+	dir = 1;
 	icon_state = "emitter";
-	dir = 1
+	tag = "icon-emitter (NORTH)"
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -4879,81 +4798,51 @@
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "mf" = (
-/obj/machinery/door/airlock/external{
-	id_tag = "riso5";
-	name = "Isolation Five";
-	req_access = list(65)
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/door/window/brigdoor/eastright{
+	dir = 2;
+	req_access = list(5)
 	},
-/obj/structure/cable/blue{
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/anomal)
+"mg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/rnd/anomalisolfive)
-"mg" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "mh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/disposalpipe/junction{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
+/obj/machinery/reagentgrinder/industrial,
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "mi" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/machinery/portable_atmospherics/hydroponics{
+	pixel_y = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/outpostbotany)
 "mj" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+/obj/machinery/portable_atmospherics/hydroponics{
+	pixel_y = 4
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/outpostbotany)
 "mk" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
+/obj/machinery/light,
+/obj/machinery/smartfridge/drying_rack,
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "ml" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
+/obj/machinery/camera/network/research{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostbotany)
 "mm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -4970,8 +4859,8 @@
 /area/nadezhda/rnd/mixing)
 "mo" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
+	dir = 4;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
@@ -4994,30 +4883,31 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "ms" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 2;
-	name = "Freezer to Space"
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "mt" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/door/airlock/glass,
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/outpostbotany)
 "mu" = (
-/obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
-"mv" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 8;
-	name = "Chamber to Port"
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/rnd/outpostbotany)
+"mv" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/personal/hydroponics{
+	name = "xenoflorist's locker";
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "mw" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8;
@@ -5038,12 +4928,14 @@
 /turf/simulated/floor/reinforced/airless,
 /area/nadezhda/rnd/mixing)
 "my" = (
-/obj/machinery/door/blast/regular{
-	id = "toxinchamber1";
-	name = "Toxins Launcher Bay Door"
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
 	},
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
 "mz" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -5073,9 +4965,9 @@
 /area/nadezhda/rnd/anomal)
 "mB" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (NORTH)";
+	dir = 1;
 	icon_state = "map";
-	dir = 1
+	tag = "icon-map (NORTH)"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
@@ -5093,9 +4985,67 @@
 /area/nadezhda/rnd/anomal)
 "mE" = (
 /obj/structure/reagent_dispensers/watertank,
-/turf/simulated/floor/tiled/white,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "mF" = (
+/obj/structure/table/reinforced,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/mass_spectrometer/adv,
+/obj/item/device/scanner/reagent,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"mG" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"mH" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"mI" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tool/wrench,
+/obj/item/storage/toolbox/mechanical,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"mJ" = (
+/obj/structure/closet/crate/hydroponics,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
+	},
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/outpostbotany)
+"mK" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/item/plantspray/pests,
 /obj/item/reagent_containers/spray/plantbgone{
@@ -5110,36 +5060,10 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/rnd/outpostbotany)
-"mG" = (
-/obj/structure/closet/crate/hydroponics,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/glass/bucket,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/rnd/outpostbotany)
-"mH" = (
-/obj/machinery/portable_atmospherics/hydroponics,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/outpostbotany)
-"mI" = (
-/obj/item/device/radio/intercom{
-	dir = 1;
-	pixel_y = -22
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/rnd/outpostbotany)
-"mJ" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/rnd/outpostbotany)
-"mK" = (
-/obj/structure/table/standard,
-/obj/item/tool/wrench,
-/obj/item/storage/box/botanydisk,
-/turf/simulated/floor/tiled/white/gray_platform,
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "mL" = (
 /obj/machinery/hologram/holopad,
@@ -5176,9 +5100,17 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
 "mQ" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
 "mR" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -5187,12 +5119,21 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "mS" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 4;
-	name = "Port to Chamber"
+/obj/machinery/door/airlock/research{
+	name = "Xenofloral Lab";
+	req_access = list(55)
 	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "mT" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 8;
@@ -5201,27 +5142,23 @@
 	id = "air_in";
 	use_power = 1
 	},
-/obj/machinery/shield_diffuser,
 /turf/simulated/floor/reinforced/airless,
 /area/nadezhda/rnd/mixing)
 "mU" = (
-/obj/machinery/air_sensor{
-	frequency = 1430;
-	id_tag = "toxins_mixing_1";
-	output = 63
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/reinforced/airless,
-/area/nadezhda/rnd/mixing)
-"mV" = (
-/obj/machinery/artifact_scanpad,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "mW" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/reagent_dispensers/coolanttank,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomal)
 "mX" = (
 /obj/machinery/camera/network/research{
@@ -5233,22 +5170,43 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/outpostbreakroom)
 "mZ" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/chem_heater,
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/science{
+	name = "Material Storage";
+	req_access = list(5)
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpostgeneral)
 "na" = (
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/obj/machinery/door/airlock/science{
+	name = "Material Storage";
+	req_access = list(5)
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpostgeneral)
 "nb" = (
-/obj/structure/sink{
-	dir = 4;
-	icon_state = "sink";
-	pixel_x = 11;
-	pixel_y = 0
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/area/nadezhda/rnd/outpostgeneral)
 "nc" = (
 /obj/structure/sign/department/toxin_res,
 /turf/simulated/wall/r_wall,
@@ -5336,12 +5294,12 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/mixing)
 "nj" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-s"
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "nk" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -5349,78 +5307,67 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "nl" = (
-/obj/machinery/computer/general_air_control{
-	dir = 8;
-	frequency = 1430;
-	name = "Mixing Chamber Monitor";
-	sensors = list("toxins_mixing_1" = "Mixing Chamber - 1")
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "nm" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "nn" = (
-/obj/machinery/sparker{
-	id = "toxin_chamber2";
-	pixel_y = -21
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
 	},
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
-	tag = "icon-intact (EAST)";
-	icon_state = "intact";
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
 	},
-/turf/simulated/floor/reinforced/airless,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "no" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/nadezhda/rnd/mixing)
+/mob/living/simple_animal/mouse/brown,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "np" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 10
-	},
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/wall/r_wall,
+/area/mine/unexplored)
 "nq" = (
-/obj/machinery/artifact_harvester,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/anomal)
 "nr" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+	dir = 5
 	},
-/obj/machinery/door/airlock/science{
-	name = "Botany";
-	req_access = list(5)
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/rnd/outpostbotany)
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "ns" = (
 /obj/structure/table/rack/shelf,
 /obj/random/science/low_chance,
@@ -5453,15 +5400,24 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
 "nt" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/syringes,
-/obj/item/device/scanner/reagent,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostbotany)
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "nu" = (
 /obj/structure/disposalpipe/junction{
-	icon_state = "pipe-j2";
-	dir = 2
+	dir = 2;
+	icon_state = "pipe-j2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -5523,30 +5479,51 @@
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/outpostbreakroom)
 "nE" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk{
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/junction{
+	dir = 2;
+	icon_state = "pipe-j2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/area/nadezhda/rnd/outpostgeneral)
 "nF" = (
-/obj/structure/table/standard,
-/obj/machinery/light{
+/obj/structure/disposalpipe/segment{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "pipe-s"
 	},
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 22
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/obj/machinery/centrifuge,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/area/nadezhda/rnd/outpostgeneral)
 "nG" = (
 /obj/structure/disposalpipe/junction{
-	tag = "icon-pipe-j1 (NORTH)";
-	icon_state = "pipe-j1";
-	dir = 1
+	dir = 1;
+	icon_state = "pipe-j1"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -5590,9 +5567,9 @@
 /area/nadezhda/rnd/mixing)
 "nI" = (
 /obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (WEST)";
+	dir = 8;
 	icon_state = "danger";
-	dir = 8
+	tag = "icon-danger (WEST)"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5716,54 +5693,108 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/mixing)
 "nQ" = (
-/obj/machinery/computer/general_air_control{
-	dir = 8;
-	frequency = 1430;
-	name = "Mixing Chamber Monitor";
-	sensors = list("toxins_mixing_1" = "Mixing Chamber - 1", "toxins_mixing_2" = "Mixing Chamber - 2")
+/obj/machinery/atmospherics/unary/freezer{
+	dir = 2
 	},
-/turf/simulated/floor/tiled/white/gray_perforated,
-/area/nadezhda/rnd/mixing)
-"nR" = (
-/obj/machinery/light{
-	dir = 8
+/obj/machinery/camera/network/research{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"nR" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "nS" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (NORTH)";
+	dir = 1;
 	icon_state = "map";
-	dir = 1
+	tag = "icon-map (NORTH)"
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "nT" = (
-/obj/machinery/atmospherics/valve{
-	dir = 4
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/rnd/mixing)
+/obj/structure/disposalpipe/junction{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = -30
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "nU" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (EAST)";
-	icon_state = "map";
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "nV" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/mixing)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "nW" = (
 /obj/machinery/radiocarbon_spectrometer,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomal)
 "nX" = (
@@ -5863,36 +5894,44 @@
 /obj/item/deck/cards,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/outpostbreakroom)
-"of" = (
-/obj/machinery/power/sensor{
-	long_range = 1;
-	name = "Powernet Sensor - Research Outpost";
-	name_tag = "Research Outpost Subgrid"
+"og" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/obj/structure/cable/yellow{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/camera/network/research{
+	dir = 1
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/rnd/outpostmachineroom)
-"og" = (
-/obj/structure/bed/chair/office/light,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/area/nadezhda/rnd/outpostgeneral)
 "oh" = (
-/obj/structure/table/standard,
-/obj/machinery/electrolyzer,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-s"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/area/nadezhda/rnd/outpostgeneral)
 "oi" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass_research{
@@ -5967,12 +6006,28 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/mixing)
 "op" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 8;
-	name = "Thermal Transfer to Space"
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/junction{
+	dir = 8;
+	icon_state = "pipe-y"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "oq" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 9
@@ -5989,34 +6044,22 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "os" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	tag = "icon-intact (NORTHEAST)";
-	icon_state = "intact";
-	dir = 5
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpoststorage)
 "ot" = (
-/obj/machinery/sparker{
-	id = "toxin_chamber2";
-	pixel_y = 21
-	},
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
-	tag = "icon-intact (EAST)";
-	icon_state = "intact";
-	dir = 4
-	},
-/turf/simulated/floor/reinforced/airless,
+/obj/machinery/atmospherics/portables_connector,
+/turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "ou" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 9
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "ov" = (
 /turf/simulated/wall/r_wall,
@@ -6050,35 +6093,30 @@
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/outpostbreakroom)
 "oB" = (
-/obj/machinery/chem_master,
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/obj/machinery/atmospherics/unary/heater{
+	dir = 2;
+	icon_state = "heater"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
 "oC" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/dropper{
-	pixel_y = -4
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
 	},
-/obj/item/storage/box/syringes{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/beakers,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
 "oD" = (
-/obj/machinery/chemical_dispenser,
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
 "oE" = (
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -28
 	},
 /obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (WEST)";
+	dir = 8;
 	icon_state = "danger";
-	dir = 8
+	tag = "icon-danger (WEST)"
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
@@ -6110,29 +6148,19 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "oJ" = (
-/obj/machinery/air_sensor{
-	frequency = 1430;
-	id_tag = "toxins_mixing_2";
-	output = 63
+/mob/living/simple_animal/hostile/diyaab{
+	colony_friend = 1;
+	desc = "A friendly diyaab that hunts mice in the research lower labs.";
+	faction = "neutral";
+	friendly_to_colony = 1;
+	name = "Trod"
 	},
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/reinforced/airless,
-/area/nadezhda/rnd/mixing)
+/turf/simulated/floor/wood,
+/area/nadezhda/rnd/outpostbreakroom)
 "oK" = (
 /obj/structure/bed/padded,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisoltwo)
-"oL" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
-	},
-/obj/machinery/camera/network/engineering,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/outpostmachineroom)
 "oM" = (
 /obj/machinery/door/airlock/external{
 	id_tag = "riso1";
@@ -6202,7 +6230,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/rnd/outpostbreakroom)
 "oV" = (
-/obj/structure/table/woodentable,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/wood,
 /area/nadezhda/rnd/outpostbreakroom)
 "oW" = (
@@ -6229,14 +6257,17 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/outpostbreakroom)
 "pa" = (
 /obj/machinery/recharger,
 /obj/structure/table/reinforced,
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
+	dir = 4;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/mixing)
@@ -6250,6 +6281,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
@@ -6266,29 +6300,22 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "pe" = (
-/obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (NORTH)";
-	icon_state = "map";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/obj/machinery/camera/network/research,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "pf" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/meter,
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "pg" = (
-/obj/machinery/door/blast/regular{
-	id = "toxinchamber2";
-	name = "Toxins Launcher Bay Door"
+/obj/machinery/air_sensor{
+	frequency = 1430;
+	id_tag = "toxins_mixing_2";
+	output = 63
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/reinforced/airless,
 /area/nadezhda/rnd/mixing)
 "ph" = (
 /obj/structure/table/standard,
@@ -6315,8 +6342,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisoltwo)
@@ -6368,9 +6395,9 @@
 /area/nadezhda/rnd/anomal)
 "pn" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (EAST)";
+	dir = 4;
 	icon_state = "map";
-	dir = 4
+	tag = "icon-map (EAST)"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
@@ -6387,6 +6414,10 @@
 "pp" = (
 /obj/item/storage/toolbox/mechanical,
 /obj/structure/table/reinforced,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = -30
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/mixing)
 "pq" = (
@@ -6437,9 +6468,15 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/mixing)
 "px" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
@@ -6450,26 +6487,19 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "pz" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 2;
-	name = "Chamber to Space"
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5;
+	icon_state = "intact";
+	tag = "icon-intact (NORTHEAST)"
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "pA" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/ignition{
-	id = "toxin_chamber2";
-	pixel_x = 0;
-	pixel_y = -5
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4;
+	icon_state = "map";
+	tag = "icon-map (EAST)"
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "toxinchamber2";
-	name = "Mixing Room Vent Control";
-	pixel_x = 0;
-	pixel_y = 5
-	},
-/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "pB" = (
@@ -6484,9 +6514,14 @@
 	use_power = 0
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = -30
+	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisoltwo)
 "pD" = (
@@ -6556,13 +6591,13 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "pK" = (
-/obj/structure/toilet{
-	dir = 4
+/obj/structure/table/steel_reinforced,
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_y = 12
 	},
-/obj/structure/window/basic,
-/obj/machinery/door/window,
+/obj/item/reagent_containers/food/condiment/saltshaker,
 /turf/simulated/floor/tiled/cafe,
-/area/nadezhda/rnd/outpostgeneral)
+/area/mine/livingarea)
 "pL" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -6570,58 +6605,39 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "pM" = (
-/obj/machinery/shower{
-	icon_state = "shower";
-	dir = 8
+/obj/structure/toilet{
+	dir = 4
 	},
 /obj/structure/window/basic,
-/obj/machinery/door/window{
-	dir = 8
-	},
+/obj/machinery/door/window,
+/obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/rnd/outpostgeneral)
 "pN" = (
+/obj/machinery/camera/network/research,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"pO" = (
+/obj/machinery/atmospherics/binary/pump,
 /obj/machinery/alarm{
 	dir = 4;
 	icon_state = "alarm0";
 	pixel_x = -26
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
-"pO" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 4;
-	name = "Thermal Transfer/Mix/Freezer to Space"
-	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "pP" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
-/obj/machinery/meter,
+/obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "pQ" = (
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 4;
-	name = "Injection/Mix to Space"
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
+/mob/living/simple_animal/mouse/white,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "pR" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	tag = "icon-map (EAST)";
-	icon_state = "map";
-	dir = 4
-	},
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid,
-/area/nadezhda/rnd/mixing)
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
 "pS" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/anomalisolone)
@@ -6728,19 +6744,14 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/outpostmedical)
 "qe" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 0
-	},
-/obj/machinery/atmospherics/binary/passive_gate{
-	dir = 1;
-	name = "Mix to Space"
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"qf" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
-/area/nadezhda/rnd/mixing)
-"qf" = (
-/obj/machinery/atmospherics/portables_connector,
-/turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/rnd/mixing)
 "qg" = (
 /obj/structure/bed/padded,
@@ -6850,28 +6861,23 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/outpostgeneral)
 "qt" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	tag = "icon-intact (NORTHEAST)";
-	icon_state = "intact";
-	dir = 5
+/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
 	},
-/obj/machinery/camera/network/research{
-	dir = 4
-	},
-/obj/machinery/holoposter{
-	pixel_x = -32
-	},
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "qu" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "qv" = (
-/obj/machinery/meter,
-/obj/machinery/light,
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
-/turf/simulated/floor/tiled/white/techfloor_grid,
+/obj/effect/floor_decal/industrial/danger,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
+/turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "qw" = (
 /obj/structure/table/standard,
@@ -6898,8 +6904,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisolone)
@@ -7002,8 +7008,8 @@
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "qH" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge,
-/turf/simulated/floor/tiled/white/gray_platform,
+/obj/machinery/computer/area_atmos/area,
+/turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
 "qI" = (
 /obj/structure/bed/chair{
@@ -7017,9 +7023,14 @@
 	use_power = 0
 	},
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = -30
+	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/anomalisolone)
 "qK" = (
@@ -7048,8 +7059,6 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/outpostgeneral)
 "qO" = (
-/obj/structure/table/rack/shelf,
-/obj/item/modular_computer/console/preset/medical/monitor,
 /obj/machinery/bodyscanner,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
@@ -7068,8 +7077,8 @@
 /area/nadezhda/rnd/outpostmedical)
 "qR" = (
 /obj/machinery/sleeper{
-	icon_state = "sleeper_0";
-	dir = 4
+	dir = 4;
+	icon_state = "sleeper_0"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
@@ -7202,7 +7211,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "re" = (
 /obj/structure/cable/green{
@@ -7285,17 +7294,22 @@
 	dir = 4
 	},
 /obj/machinery/sleeper{
-	icon_state = "sleeper_0";
-	dir = 4
+	dir = 4;
+	icon_state = "sleeper_0"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rr" = (
-/obj/structure/reagent_dispensers/fueltank,
-/turf/simulated/floor/tiled/white/violetcorener,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomal)
 "rs" = (
-/obj/structure/reagent_dispensers/watertank,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "rt" = (
@@ -7329,7 +7343,7 @@
 /obj/machinery/door/airlock/glass_research{
 	name = "Medical Outpost"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "rz" = (
 /obj/machinery/alarm{
@@ -7351,6 +7365,9 @@
 "rC" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
@@ -7427,9 +7444,9 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (EAST)";
+	dir = 4;
 	icon_state = "danger";
-	dir = 4
+	tag = "icon-danger (EAST)"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
@@ -7487,18 +7504,24 @@
 /area/nadezhda/rnd/outpostmedical)
 "rT" = (
 /obj/effect/floor_decal/industrial/danger{
-	tag = "icon-danger (EAST)";
+	dir = 4;
 	icon_state = "danger";
-	dir = 4
+	tag = "icon-danger (EAST)"
+	},
+/obj/machinery/vending/wallmed{
+	name = "Emergency NanoMed";
+	pixel_x = 0;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "rU" = (
-/turf/unsimulated/mineral,
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/rnd/mixing)
 "rV" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/unsimulated/mineral,
+/turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/rnd/mixing)
 "rW" = (
 /obj/random/cluster/roaches/low_chance,
@@ -7521,9 +7544,18 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sb" = (
-/obj/structure/table/steel_reinforced,
+/obj/machinery/shower{
+	dir = 8;
+	icon_state = "shower"
+	},
+/obj/structure/window/basic,
+/obj/machinery/door/window{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_techfloor_gray,
+/obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/cafe,
-/area/mine/livingarea)
+/area/nadezhda/rnd/outpostgeneral)
 "sc" = (
 /obj/structure/lattice,
 /obj/structure/lattice,
@@ -7727,26 +7759,14 @@
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "sv" = (
-/obj/structure/disposalpipe/junction{
-	icon_state = "pipe-j2";
-	dir = 2
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "sw" = (
@@ -7828,14 +7848,11 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sG" = (
-/obj/structure/table/standard,
-/obj/item/device/scanner/plant,
-/obj/machinery/light{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
 	},
-/obj/machinery/reagentgrinder/portable,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostbotany)
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
 "sH" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -7862,9 +7879,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sJ" = (
-/obj/machinery/camera/network/mining{
-	dir = 1
-	},
+/mob/living/simple_animal/mouse/irish,
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "sK" = (
@@ -8015,7 +8030,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/livingarea)
 "tg" = (
-/obj/random/mob/render/low_chance,
+/mob/living/simple_animal/hostile/wurm/adult,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "th" = (
@@ -8032,12 +8047,7 @@
 /area/mine/unexplored)
 "tj" = (
 /obj/structure/table/standard,
-/obj/item/stack/material/plastic{
-	amount = 120
-	},
-/obj/machinery/camera/network/research{
-	dir = 1
-	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
 "tk" = (
@@ -8045,22 +8055,14 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "tl" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
 	},
-/obj/machinery/camera/network/research{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
 "tm" = (
 /obj/machinery/camera/network/research{
 	dir = 4
@@ -8088,19 +8090,22 @@
 /obj/machinery/camera/network/research{
 	dir = 1
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = -30
+	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/anomal)
 "tp" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/tablet/lease/preset/chemistry,
-/obj/item/device/scanner/mass_spectrometer/adv,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/machinery/camera/network/research{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/item/stack/material/plasma/random,
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostbotany)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
 "tq" = (
 /obj/structure/table/woodentable,
 /obj/machinery/camera/network/research{
@@ -8111,8 +8116,8 @@
 "tr" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
 /obj/machinery/camera/network/research,
 /turf/simulated/floor/tiled/steel,
@@ -8120,8 +8125,8 @@
 "ts" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
 /obj/machinery/camera/network/research,
 /turf/simulated/floor/tiled/steel,
@@ -8144,6 +8149,7 @@
 /obj/machinery/camera/network/research{
 	dir = 1
 	},
+/obj/machinery/space_heater,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "tv" = (
@@ -8165,28 +8171,6 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
-"tx" = (
-/obj/machinery/power/smes/buildable{
-	charge = 5e+006;
-	input_attempt = 1;
-	input_level = 200000;
-	inputting = 0;
-	output_attempt = 1;
-	output_level = 200000;
-	output_level_max = 250000;
-	outputting = 2;
-	RCon_tag = "Substation - RrsOut"
-	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/outpostmachineroom)
-"ty" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/rnd/outpostmachineroom)
 "tz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -8199,37 +8183,6 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/rnd/outpostmachineroom)
-"tB" = (
-/obj/machinery/power/terminal{
-	tag = "icon-term (NORTH)";
-	icon_state = "term";
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "tC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -8249,22 +8202,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/golden,
-/area/nadezhda/rnd/outpostmachineroom)
-"tE" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/catwalk,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/structure/cable/yellow,
-/turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "tF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -8305,10 +8242,13 @@
 "tJ" = (
 /turf/unsimulated/mineral,
 /area/nadezhda/rnd/outpostgeneral)
-"tL" = (
-/obj/random/mob/render/low_chance,
+"tK" = (
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"tL" = (
+/obj/random/mob/undergroundmob/low_chance,
+/turf/simulated/floor/asteroid,
+/area/mine/lockers)
 "tM" = (
 /obj/machinery/door/airlock/multi_tile/glass{
 	name = "Research Outpost";
@@ -8323,41 +8263,17 @@
 	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/rnd/outpostgeneral)
-"tO" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/space/anomaly,
-/obj/item/clothing/head/helmet/space/anomaly,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostgeneral)
 "tP" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
-"tQ" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/space/anomaly,
-/obj/item/clothing/head/helmet/space/anomaly,
-/obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostgeneral)
 "tR" = (
 /obj/machinery/camera/network/research{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/cargo,
-/area/nadezhda/rnd/outpostgeneral)
-"tS" = (
-/obj/machinery/suspension_gen,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/outpostgeneral)
-"tT" = (
-/obj/structure/closet/excavation,
-/turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpostgeneral)
 "tU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -8394,11 +8310,11 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/obj/structure/reagent_dispensers/coolanttank,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "ua" = (
-/obj/structure/reagent_dispensers/coolanttank,
+/obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "ub" = (
@@ -8430,6 +8346,7 @@
 /turf/simulated/floor/plating/under,
 /area/mine/power)
 "uf" = (
+/obj/random/mob/nightmare/low_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "ug" = (
@@ -8443,6 +8360,1143 @@
 /obj/item/device/scanner/reagent,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/anomal)
+"ui" = (
+/turf/simulated/shuttle/floor/mining,
+/area/turbolift/Mining/underground)
+"uj" = (
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/nadezhda/rnd/outpostgeneral)
+"uk" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"ul" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"um" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -28
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"un" = (
+/obj/machinery/pipelayer,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpoststorage)
+"uo" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8;
+	icon_state = "danger";
+	tag = "icon-danger (WEST)"
+	},
+/obj/machinery/pipedispenser,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"up" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8;
+	icon_state = "danger";
+	tag = "icon-danger (WEST)"
+	},
+/obj/machinery/pipedispenser/disposal,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"uq" = (
+/obj/machinery/portable_atmospherics/canister,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpoststorage)
+"ur" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"us" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 24
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"ut" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uu" = (
+/obj/machinery/atmospherics/valve{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uv" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uw" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"ux" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uy" = (
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uz" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/ignition{
+	id = "toxin_chamber2";
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uA" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/rnd/mixing)
+"uB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/rnd/mixing)
+"uC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"uD" = (
+/obj/machinery/door/airlock/science{
+	name = "Gas Storage";
+	req_access = list(5)
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpostgeneral)
+"uE" = (
+/obj/machinery/sparker{
+	id = "toxin_chamber2";
+	pixel_y = 21
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/rnd/mixing)
+"uF" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction,
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/rnd/mixing)
+"uG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/rnd/mixing)
+"uH" = (
+/obj/machinery/camera/network/research{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"uI" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"uJ" = (
+/obj/structure/table/reinforced,
+/obj/item/device/radio/beacon/explosion_watcher,
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/rnd/mixing)
+"uK" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
+"uL" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "Air Mix to Port"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uM" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/rnd/mixing)
+"uN" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
+	dir = 1;
+	icon_state = "intact";
+	tag = "icon-intact (NORTH)"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/rnd/mixing)
+"uO" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uP" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uQ" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8;
+	name = "coolent pump"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"uR" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5;
+	icon_state = "intact";
+	tag = "icon-intact (NORTHEAST)"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/nadezhda/rnd/mixing)
+"uS" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/rnd/mixing)
+"uT" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"uU" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"uV" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"uW" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"uX" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = -27
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"uY" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	icon_state = "danger";
+	tag = "icon-danger (EAST)"
+	},
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"uZ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"vb" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"vc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"vd" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"ve" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/asteroid,
+/area/nadezhda/rnd/mixing)
+"vf" = (
+/mob/living/simple_animal/mouse/gray,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
+"vg" = (
+/obj/machinery/light/floor,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"vh" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/door/airlock/science{
+	name = "Gas Storage";
+	req_access = list(5)
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpostgeneral)
+"vi" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/rnd/outpostbotany)
+"vj" = (
+/mob/living/simple_animal/hostile/nightmare,
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
+"vk" = (
+/obj/random/mob/undergroundmob,
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"vl" = (
+/obj/random/mob/undergroundmob,
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
+"vm" = (
+/obj/random/traps/low_chance,
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"vn" = (
+/obj/random/traps/low_chance,
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
+"vo" = (
+/mob/living/simple_animal/hostile/ratking{
+	colony_friend = 1;
+	friendly_to_colony = 1
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/mine/livingarea)
+"vp" = (
+/obj/machinery/camera/network/mining{
+	dir = 1
+	},
+/mob/living/simple_animal/mouse/hooded,
+/turf/simulated/floor/tiled/cafe,
+/area/mine/livingarea)
+"vq" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
+/turf/simulated/shuttle/floor/mining,
+/area/turbolift/Mining/underground)
+"vr" = (
+/obj/machinery/portable_atmospherics/powered/scrubber/huge,
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/rnd/mixing)
+"vS" = (
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/mixing)
+"wP" = (
+/obj/machinery/alarm{
+	dir = 1;
+	icon_state = "alarm0";
+	pixel_y = -22
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"xP" = (
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfour)
+"yd" = (
+/obj/machinery/door/airlock/science{
+	name = "Anomaly Research";
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
+"yi" = (
+/obj/machinery/artifact_scanpad,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfive)
+"yz" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/meter,
+/obj/machinery/holoposter{
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central6,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"yH" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 10
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Am" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"BD" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomal)
+"BG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/mining,
+/turf/simulated/floor/tiled/steel/danger,
+/area/mine/hallway)
+"BN" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"BR" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfour)
+"Ce" = (
+/obj/machinery/camera/network/research,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"Cf" = (
+/obj/machinery/alarm/monitor/isolation{
+	alarm_id = "isolation_one";
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/anomalisolfour)
+"DW" = (
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/rnd/anomal)
+"DY" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"Eh" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1;
+	icon_state = "map";
+	tag = "icon-map (NORTH)"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/anomalisolfour)
+"Ek" = (
+/turf/unsimulated/mineral,
+/area/nadezhda/rnd/mixing)
+"Er" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/industrial/loading/red{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"EE" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/rnd/outpoststorage)
+"ET" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/effect/floor_decal/industrial/stand_clear/red,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
+"Fm" = (
+/obj/effect/floor_decal/corner/paleblue/diagonal{
+	dir = 4
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/cafe,
+/area/mine/medical)
+"FA" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"FT" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 5
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Gi" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	use_power = 0
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/anomalisolfour)
+"Gv" = (
+/obj/machinery/door/airlock/science{
+	name = "Anomaly Research";
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomal)
+"GQ" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomal)
+"GW" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = -30
+	},
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/outpoststorage)
+"HL" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	use_power = 0
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/anomalisolfive)
+"HP" = (
+/turf/unsimulated/mineral,
+/area/nadezhda/rnd/outpostmedical)
+"HY" = (
+/obj/structure/window/reinforced,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomal)
+"IH" = (
+/turf/simulated/floor/asteroid,
+/area/nadezhda/rnd/mixing)
+"IX" = (
+/obj/structure/table/standard,
+/obj/item/device/lighting/toggleable/lamp,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfive)
+"JM" = (
+/obj/machinery/light,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"JV" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfour)
+"Kn" = (
+/obj/structure/catwalk,
+/obj/structure/window/reinforced/plasma{
+	dir = 1
+	},
+/obj/structure/window/reinforced/plasma,
+/obj/structure/window/reinforced/plasma{
+	dir = 8
+	},
+/obj/machinery/camera/network/research{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Ko" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Kp" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Kv" = (
+/obj/structure/railing/grey,
+/turf/simulated/floor/asteroid,
+/area/nadezhda/rnd/mixing)
+"Kx" = (
+/obj/item/modular_computer/console/preset/security/camera{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"KK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/mining{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/hallway)
+"KT" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"La" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 9
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"LJ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"LL" = (
+/obj/machinery/door/blast/regular{
+	id = "Toxins_Pad";
+	name = "Toxins launch-pad"
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"LT" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/rnd/mixing)
+"Mm" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/mine/hallway)
+"MR" = (
+/obj/machinery/artifact_scanpad,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfour)
+"MT" = (
+/obj/machinery/artifact_analyser,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfive)
+"Ol" = (
+/obj/structure/catwalk,
+/obj/structure/window/reinforced/plasma{
+	dir = 4
+	},
+/obj/structure/window/reinforced/plasma,
+/obj/structure/window/reinforced/plasma{
+	dir = 8
+	},
+/obj/machinery/camera/network/research,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Om" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 6
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Os" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1;
+	icon_state = "box_corners_red"
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"Oz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/mine/lockers)
+"OR" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/door/window/brigdoor/eastright{
+	dir = 1;
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/anomal)
+"OY" = (
+/obj/structure/catwalk,
+/obj/structure/window/reinforced/plasma{
+	dir = 8
+	},
+/obj/structure/window/reinforced/plasma{
+	dir = 1
+	},
+/obj/structure/window/reinforced/plasma{
+	dir = 4
+	},
+/obj/machinery/camera/network/research{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Qy" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"Ry" = (
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfive)
+"RA" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"RW" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
+"Sa" = (
+/obj/structure/lattice,
+/turf/simulated/floor/fixed/hydrotile/shallowcoolant,
+/area/nadezhda/rnd/mixing)
+"Sr" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = -30
+	},
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
+"Su" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfive)
+"SD" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/door/window/brigdoor/eastright{
+	dir = 2;
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/anomal)
+"SI" = (
+/obj/machinery/door/airlock/glass_research{
+	name = "Toxins Lab";
+	req_access = list(7)
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/sign/department/toxins{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/mixing)
+"SZ" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/outpostgeneral)
+"Tr" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"TA" = (
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"TS" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/structure/lattice,
+/turf/unsimulated/mineral,
+/area/nadezhda/rnd/mixing)
+"TT" = (
+/obj/machinery/mass_driver{
+	dir = 4;
+	drive_range = 62;
+	id = "Toxins_Mass";
+	name = "Toxins mass driver"
+	},
+/obj/effect/floor_decal/industrial/warningred/full,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Uf" = (
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/anomal)
+"Um" = (
+/obj/machinery/door/airlock/glass_research{
+	name = "Toxins Lab";
+	req_access = list(7)
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/mixing)
+"UO" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid,
+/area/nadezhda/rnd/mixing)
+"VU" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5;
+	icon_state = "intact";
+	tag = "icon-intact (NORTHEAST)"
+	},
+/obj/machinery/camera/network/research{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
+"VY" = (
+/obj/machinery/artifact_analyser,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfour)
+"Wk" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/device/binoculars,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/device/lighting/toggleable/flashlight,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"WT" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/remote/driver{
+	_wifi_id = null;
+	id = "Toxins_Mass";
+	name = "Toxins mass driver"
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"Xk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/mining{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel,
+/area/mine/hallway)
+"Xo" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid,
+/area/nadezhda/rnd/outpostgeneral)
+"XA" = (
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomal)
+"XH" = (
+/turf/simulated/floor/fixed/hydrotile/shallowcoolant,
+/area/nadezhda/rnd/mixing)
+"XN" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/remote/blast_door{
+	id = "Toxins_Pad";
+	name = "Launch-pad door-control"
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/rnd/mixing)
+"Ya" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Yj" = (
+/obj/structure/table/standard,
+/obj/item/device/lighting/toggleable/lamp,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfour)
+"Ym" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/industrial/outline,
+/obj/machinery/door/window/brigdoor/eastright{
+	dir = 1;
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/anomal)
+"Yp" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfive)
+"YB" = (
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/rnd/mixing)
+"YH" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/rnd/mixing)
+"YV" = (
+/obj/machinery/door/airlock/glass_research{
+	name = "Toxins Lab";
+	req_access = list(7)
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/mixing)
+"Za" = (
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/rnd/mixing)
+"Zu" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1;
+	icon_state = "map";
+	tag = "icon-map (NORTH)"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/anomalisolfive)
+"ZL" = (
+/obj/machinery/portable_atmospherics/powered/pump,
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/mixing)
+"ZN" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/nadezhda/rnd/mixing)
 
 (1,1,1) = {"
 aa
@@ -8817,12 +9871,12 @@ ti
 ti
 ti
 ti
-ti
 jE
 jE
 jE
 jE
 jE
+lr
 lr
 lr
 lr
@@ -8838,14 +9892,14 @@ pS
 pS
 pS
 pS
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+lz
+lr
+lr
+lr
+lr
+lr
+lr
+lr
 aa
 "}
 (3,1,1) = {"
@@ -9019,16 +10073,16 @@ ti
 ti
 ti
 ti
-ti
 jE
-jO
-kb
+kR
+jU
+kh
 kB
-kO
+lB
 tZ
 ua
 lC
-mV
+mW
 nq
 nW
 ov
@@ -9040,14 +10094,14 @@ qg
 qw
 qI
 pS
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+lz
+lr
+mf
+HY
+Uf
+BD
+OR
+lr
 aa
 "}
 (4,1,1) = {"
@@ -9221,17 +10275,17 @@ ti
 ti
 ti
 ti
-ti
 jE
-jP
-kc
+kT
+jV
+ki
 kC
-kP
+kV
 lt
 lX
 lC
 mW
-mW
+DW
 to
 ov
 tr
@@ -9242,14 +10296,14 @@ ts
 qx
 qJ
 pS
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+lz
+lr
+rr
+XA
+XA
+XA
+rr
+lr
 aa
 "}
 (5,1,1) = {"
@@ -9423,12 +10477,12 @@ ti
 ti
 ti
 ti
-ti
 jE
-jQ
-kd
+kU
+jW
+kg
 kD
-kT
+lB
 lu
 ly
 lC
@@ -9446,12 +10500,12 @@ qK
 pS
 lr
 lr
-ti
-ti
-ti
-ti
-ti
-ti
+SD
+XA
+XA
+XA
+Ym
+lr
 aa
 "}
 (6,1,1) = {"
@@ -9625,13 +10679,13 @@ ti
 ti
 ti
 ti
-ti
 jE
 jE
 jE
 jE
 jE
-lv
+kW
+lu
 lY
 lX
 ls
@@ -9648,12 +10702,12 @@ lZ
 qS
 rg
 lr
-ti
-ti
-ti
-ti
-ti
-ti
+rr
+XA
+XA
+XA
+rr
+lr
 aa
 "}
 (7,1,1) = {"
@@ -9816,23 +10870,23 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+hs
+hs
+hs
+hs
+hs
+hs
 ti
 ti
 ti
 ti
 ti
 jF
-jR
-ke
+Yj
+xP
+Gi
 kE
-kR
+lB
 lw
 lZ
 mz
@@ -9850,12 +10904,12 @@ lB
 qT
 rh
 lr
-ti
-ti
-ti
-ti
-ti
-ti
+mf
+XA
+XA
+XA
+OR
+lr
 aa
 "}
 (8,1,1) = {"
@@ -10018,23 +11072,23 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+hs
+ht
+jk
+hC
+hT
+hs
 ti
 ti
 ti
 ti
 ti
 jF
-jS
-kf
+MR
+JV
+Eh
 kF
-kS
+ET
 lx
 ma
 mA
@@ -10053,11 +11107,11 @@ qU
 ri
 lr
 lr
-ti
-ti
-ti
-ti
-ti
+lr
+Gv
+lr
+lr
+lr
 aa
 "}
 (9,1,1) = {"
@@ -10220,23 +11274,23 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+hs
+ht
+hD
+hK
+hT
+hs
+hs
+hs
+hs
+hs
+hs
 jF
-jT
-kg
+VY
+BR
+Cf
 kG
-kU
+lB
 ly
 mb
 mB
@@ -10253,824 +11307,16 @@ pV
 lX
 qj
 lB
-rr
-lr
-ti
-ti
-ti
-ti
-ti
+lB
+yd
+GQ
+XA
+ks
+lz
+lz
 aa
 "}
 (10,1,1) = {"
-aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-jF
-jF
-jF
-jF
-jF
-lz
-mc
-mC
-lB
-tV
-nX
-uh
-lB
-lB
-lu
-pW
-ql
-qk
-pU
-qV
-rj
-rs
-lr
-ti
-ti
-ti
-ti
-ti
-aa
-"}
-(11,1,1) = {"
-aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-uf
-uf
-uf
-uf
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-hs
-hs
-hs
-hs
-hs
-hs
-ti
-ti
-ti
-ti
-ti
-ti
-jG
-jU
-kh
-kH
-mf
-ly
-lB
-lB
-lB
-lB
-lB
-lB
-lB
-lB
-lu
-pX
-qm
-qB
-qB
-qW
-lB
-tu
-lr
-ti
-ti
-ti
-ti
-ti
-aa
-"}
-(12,1,1) = {"
-aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-uf
-ji
-uf
-uf
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-hs
-ht
-jk
-hC
-hT
-hs
-ti
-ti
-ti
-ti
-ti
-ti
-jG
-jV
-ki
-kI
-kV
-lA
-md
-lZ
-lZ
-lZ
-lZ
-lZ
-lZ
-lZ
-pI
-pY
-qn
-qC
-qL
-qX
-lB
-tY
-lr
-ti
-ti
-ti
-ti
-ti
-aa
-"}
-(13,1,1) = {"
-aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-uf
-uf
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-hs
-ht
-hD
-hK
-hT
-hs
-hs
-hs
-hs
-hs
-hs
-ti
-jG
-jW
-kj
-kJ
-kW
-lB
-lB
-mD
-mX
-lB
-nY
-ox
-oN
-lB
-pJ
-pZ
-qo
-qD
-qM
-qY
-rk
-ru
-lr
-ti
-ti
-ti
-ti
-ti
-aa
-"}
-(14,1,1) = {"
 aa
 ti
 ti
@@ -11238,10 +11484,818 @@ hU
 hs
 hs
 ik
-iE
 iU
+iV
 hs
-ih
+jF
+jF
+jF
+jF
+jF
+lv
+mB
+mc
+mC
+lB
+tV
+nX
+uh
+lB
+lB
+lu
+pW
+ql
+qk
+pU
+qV
+rj
+rs
+lr
+ks
+ks
+ks
+lz
+lz
+aa
+"}
+(11,1,1) = {"
+aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+tK
+tK
+tK
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+hs
+hv
+hE
+hM
+hV
+hs
+hs
+iE
+iF
+kb
+hs
+jG
+IX
+Ry
+HL
+kH
+lB
+ly
+lB
+lB
+lB
+lB
+lB
+lB
+lB
+lB
+lu
+pX
+qm
+qB
+qB
+qW
+lB
+tu
+lr
+lz
+ks
+ks
+ks
+lz
+aa
+"}
+(12,1,1) = {"
+aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+ji
+tK
+tK
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+hs
+hw
+hE
+hN
+io
+qh
+qh
+tA
+jB
+hs
+hs
+jG
+yi
+Su
+Zu
+kI
+ET
+lA
+md
+lZ
+lZ
+lZ
+lZ
+lZ
+lZ
+lZ
+pI
+pY
+qn
+qC
+qL
+qX
+lB
+tY
+lr
+lz
+ks
+ks
+lz
+lz
+aa
+"}
+(13,1,1) = {"
+aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+tK
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+hs
+hx
+hF
+hO
+iI
+hs
+ie
+ip
+iH
+jR
+iX
+jG
+MT
+Yp
+kj
+kJ
+lB
+lB
+lB
+mD
+mX
+lB
+nY
+ox
+oN
+lB
+pJ
+pZ
+qo
+qD
+qM
+qY
+rk
+ru
+lr
+lz
+ks
+ks
+lz
+lz
+aa
+"}
+(14,1,1) = {"
+aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+hs
+hy
+hG
+hP
+iJ
+hs
+im
+jO
+jQ
+jS
+th
+jG
 jG
 jG
 jG
@@ -11265,11 +12319,11 @@ qZ
 lr
 lr
 lr
-ti
-ti
-ti
-ti
-ti
+lz
+ks
+ks
+lz
+lz
 aa
 "}
 (15,1,1) = {"
@@ -11433,23 +12487,23 @@ ti
 ti
 ti
 hs
-hv
-hE
-hM
-hV
-hs
-hs
-oL
-iF
-iV
-hs
-ih
-jH
-jH
-jH
+hy
+hH
+hH
+iY
+iG
+tC
+tz
+tD
+tF
+tG
+jC
+jJ
+nb
+nr
 jH
 tm
-jH
+pQ
 jH
 jH
 jH
@@ -11467,11 +12521,11 @@ ra
 jH
 ih
 ih
-ti
-ti
-ti
-ti
-ti
+lz
+ks
+ks
+ks
+lz
 aa
 "}
 (16,1,1) = {"
@@ -11514,7 +12568,7 @@ ti
 ti
 ti
 sB
-ks
+bi
 ti
 ti
 ti
@@ -11635,20 +12689,20 @@ ti
 ti
 ti
 hs
-hw
-hE
-hN
-io
-qh
-qh
-tA
-jB
+hz
+ic
+il
+jm
 hs
-hs
+in
+jP
+iK
+iZ
+jn
 ih
 jI
-jH
-jH
+nj
+nt
 jH
 jH
 jH
@@ -11837,20 +12891,20 @@ ti
 ti
 ti
 hs
-hx
-hF
-hO
-iI
+ib
+id
+hR
+hY
 hs
-tx
-tB
-in
-tE
-iX
+if
+iq
+if
+ja
+jo
 ih
 jH
-jH
-kk
+nl
+nE
 jJ
 kX
 jJ
@@ -11966,10 +13020,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -12039,25 +13093,25 @@ ti
 ti
 ti
 hs
-hy
-hG
-hP
-iJ
+hB
+jt
+hS
+hZ
 hs
-ty
-im
-iH
-of
-th
+hs
+hs
+hs
+hs
+hs
 ih
 jH
 jH
 km
-kK
-kK
-kK
-nr
-kK
+ih
+ih
+ih
+ih
+ih
 mY
 nv
 oa
@@ -12076,7 +13130,7 @@ ti
 ti
 ti
 ks
-ks
+Xo
 ks
 aa
 "}
@@ -12168,9 +13222,9 @@ ti
 ti
 ti
 ti
-uf
+tK
 ji
-uf
+tK
 uf
 ti
 ti
@@ -12241,25 +13295,25 @@ ti
 ti
 ti
 hs
-hy
-hH
-hH
-iY
-iG
-tz
-tC
-tD
-tF
-tG
-jC
-jJ
-jJ
-kn
-kK
-kY
-lD
-mg
-mE
+hs
+hs
+hs
+hs
+hs
+hs
+hs
+hs
+hs
+hs
+ih
+tk
+jH
+nF
+ih
+os
+iR
+iA
+uq
 mY
 nw
 oa
@@ -12371,8 +13425,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -12442,33 +13496,33 @@ ti
 ti
 ti
 ti
-hs
-hz
-ic
-il
-jm
-hs
-ie
-ip
-iK
-iZ
-jn
-ih
-tk
-jH
-ko
 kK
-kZ
-lE
-mh
+ko
+jT
+ld
+ln
+lU
+mv
 mE
+mH
+mJ
+ih
+jN
+jH
+jH
+nR
+ih
+iS
+iR
+iA
+uq
 mY
 nx
 oa
 oy
 oT
 mY
-pK
+pM
 qb
 qp
 ih
@@ -12643,27 +13697,27 @@ ti
 ti
 ti
 ti
-ti
-hs
-ib
-id
-hR
-hY
-hs
-if
-iq
-if
-ja
-jo
-ih
-jH
-jH
-kp
 kK
-la
-lF
-mi
-mF
+kK
+kp
+lc
+lh
+lo
+mg
+mg
+mg
+mg
+mg
+mS
+mU
+mU
+mU
+nT
+ih
+iS
+iR
+iA
+uq
 mY
 ny
 oa
@@ -12845,34 +13899,34 @@ ti
 ti
 ti
 ti
-ti
-hs
-hB
-jt
-hS
-hZ
-hs
-hs
-hs
-hs
-hs
-hs
-ih
-jH
-jH
-kp
 kK
-nt
-lG
-mj
-mG
+kK
+kq
+lg
+li
+lp
+kY
+my
+mF
+mI
+mK
+ih
+jN
+jH
+jH
+nU
+ih
+pN
+iu
+iu
+ur
 mY
 nz
 oa
 oy
 oV
 mY
-pM
+sb
 qc
 qq
 ih
@@ -13047,31 +14101,31 @@ ti
 ti
 ti
 ti
-ti
-hs
-hs
-hs
-hs
-hs
-hs
-ig
-it
-iL
-iL
-jp
+kK
+jf
+kr
+le
+kY
+lp
+mh
+kK
+kK
+kK
+kK
+kK
 ih
 jH
 jH
-kp
-kK
-lc
-lc
-mk
-mH
+nU
+ih
+iu
+pR
+sG
+GW
 mY
 nA
 ob
-oy
+oJ
 oW
 mY
 ih
@@ -13080,12 +14134,12 @@ ih
 ih
 jN
 jH
-jH
+Sr
 ih
 ih
-jH
-jH
-jH
+uj
+uj
+uj
 ih
 ih
 aa
@@ -13249,34 +14303,34 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ig
-lb
-iL
-iL
-jq
+kK
+jg
+kt
+kY
+kY
+lp
+mi
+ih
+ih
+ih
+ih
+ih
 ih
 jH
 jH
-kp
-kK
-ld
-lc
-mk
-mH
+nU
+ih
+iC
+iC
+jy
+iu
 mY
 nB
 oc
 oz
 oX
 mY
-pK
+pM
 qb
 qr
 ih
@@ -13451,27 +14505,27 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+kK
+jh
+kx
+kx
+lk
+lq
+mj
 ig
-ns
+it
 iL
-iL
-jr
+EE
+jp
 ih
 jH
 jH
-ko
-kK
-le
-lc
-mk
-mH
+nR
+ih
+iC
+iC
+jy
+iu
 mY
 nC
 od
@@ -13653,34 +14707,34 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ig
-iu
-iM
-jb
-jb
-jD
-jK
-jK
-kq
 kK
-lf
-lc
-mk
-mH
+kK
+ky
+kY
+kY
+lD
+mi
+ig
+lb
+iL
+iL
+jq
+ih
+jH
+jH
+nU
+ih
+iC
+iC
+jy
+iu
 mY
 nD
 oe
 tq
 oZ
 mY
-pM
+sb
 qc
 qq
 ih
@@ -13855,27 +14909,27 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+kK
+kK
+kz
+kY
+kY
+lD
+mi
 ig
-iv
-iN
-iP
-js
+ns
+iL
+iL
+jr
 ih
 jH
 jH
-kp
-kK
-lg
-lc
-mk
-mI
+nU
+ih
+mG
+qe
+tl
+iu
 mY
 mY
 mY
@@ -14057,34 +15111,34 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ig
-iw
-iO
-iP
-tj
-ih
-jH
-jH
-kp
 kK
-lh
-lc
-ml
-mJ
+kK
+kA
+kY
+ll
+lE
+mk
+ig
+iu
+iM
+jb
+jb
 mZ
-nE
+jK
+jK
+nV
+ih
+iQ
+iQ
 tp
-oB
+iu
+un
+jz
+jz
 ih
 ih
-pK
+ih
+pM
 qb
 qs
 ih
@@ -14259,31 +15313,31 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+kK
+kK
+kN
+kY
+kY
+lF
+ml
 ig
-ix
+iv
+iN
 iP
-iP
-ju
+js
 ih
 jL
 jH
-tl
-kK
-lc
-lc
-lc
-lc
-na
-na
 og
-oC
+ih
+iQ
+iQ
+tp
+iu
+iu
+iu
+um
+ih
 ih
 ih
 pL
@@ -14461,34 +15515,34 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ig
-iy
-iP
-jc
-jv
-ih
-jH
-jH
-ko
 kK
-li
-lH
-sG
-mK
-nb
-nF
-oh
-oD
+kK
+kQ
+kY
+kY
+lG
+ms
+ig
+iw
+iO
+iP
+ju
+ih
+jH
+jH
+nR
+ih
+iQ
+iQ
+tp
+iu
+iu
+iu
+uH
 ih
 ih
-pM
+ih
+sb
 qc
 qq
 ih
@@ -14663,31 +15717,31 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+kK
+jD
+kY
+kY
+lm
+lm
+mt
 ig
-iz
+ix
 iP
-jd
-jw
+iP
+tj
 ih
 jH
 jH
-kp
-kK
-kK
-kK
-kK
-kK
-kK
-kK
-kK
-kK
+nU
+ih
+iB
+iB
+uk
+us
+uw
+uC
+uI
+ih
 ih
 ih
 ih
@@ -14751,10 +15805,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -14865,31 +15919,31 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+kK
+kk
+kY
+kY
+lm
+lH
+vi
 ig
-iu
-iu
-je
-jx
-kQ
-jM
-jM
-kr
-kK
-kK
-kK
-kK
-kK
-kK
-kK
-kK
-kK
+iy
+iP
+jc
+jv
+ih
+jH
+jH
+oh
+ih
+ih
+ih
+ih
+ih
+ih
+uD
+vh
+ih
 ih
 ih
 ih
@@ -14953,10 +16007,10 @@ ti
 ti
 ti
 ti
-uf
+tK
 ji
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -15067,22 +16121,22 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+kK
+kn
+kZ
+lf
+lm
+lS
+lS
 ig
-iA
-iQ
-jf
-jy
+iz
+iP
+jd
+jw
 ih
 jH
-jH
-kt
+nm
+op
 jJ
 jJ
 lI
@@ -15090,11 +16144,11 @@ tn
 jJ
 jJ
 nG
+uK
 lI
 jJ
 jJ
-jJ
-tn
+RW
 lI
 jJ
 jJ
@@ -15156,8 +16210,8 @@ ti
 ti
 ti
 ti
-uf
-tL
+tK
+tK
 ti
 ti
 ti
@@ -15269,21 +16323,21 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+kK
+kK
+kK
+kK
+lm
+lT
+mu
 ig
-iB
-iR
-jg
-jz
-ih
-jN
-jH
+mG
+iu
+je
+jx
+na
+jM
+nn
 ku
 jH
 jH
@@ -15302,7 +16356,7 @@ jH
 jH
 jH
 ku
-jH
+vf
 ry
 rA
 rJ
@@ -15474,18 +16528,18 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
+kK
+kK
+kK
+kK
 ig
-iC
-iS
-jh
-jz
+iu
+iu
+jy
+um
 ih
 jH
-jH
+no
 ku
 kL
 lj
@@ -15664,8 +16718,8 @@ ti
 ti
 ti
 ti
+vm
 ks
-ks
 ti
 ti
 ti
@@ -15681,10 +16735,10 @@ ti
 ti
 ti
 ig
-ig
-ig
-ig
-ig
+iu
+iu
+mQ
+iu
 ih
 ih
 iD
@@ -15893,7 +16947,7 @@ jX
 kv
 ih
 jA
-lK
+uo
 lK
 lK
 lK
@@ -15901,7 +16955,7 @@ nI
 lK
 oE
 lK
-lK
+up
 jA
 qd
 qd
@@ -16288,7 +17342,7 @@ ks
 ks
 tM
 iD
-iD
+SZ
 tN
 iD
 tP
@@ -16694,10 +17748,10 @@ ih
 ih
 ih
 ih
+kO
 rt
 rt
-rt
-tT
+kf
 ih
 ih
 jA
@@ -16896,10 +17950,10 @@ ti
 ti
 ti
 ih
+kd
 rt
 rt
 rt
-tT
 jA
 jA
 jA
@@ -17075,7 +18129,7 @@ ks
 ks
 ks
 ks
-ks
+ae
 ks
 ks
 ks
@@ -17098,10 +18152,10 @@ ti
 ti
 ti
 ih
-tO
-tQ
-tS
-tS
+kO
+rt
+rt
+kf
 jA
 jA
 jA
@@ -17301,9 +18355,9 @@ ti
 ti
 ih
 ih
-jA
-jA
-jA
+ke
+ke
+ih
 jA
 jA
 jA
@@ -17513,7 +18567,7 @@ lR
 mr
 mO
 nh
-nQ
+uJ
 oo
 oI
 oj
@@ -17909,23 +18963,23 @@ ti
 jA
 jA
 jA
-jY
-kx
-kM
-lk
-lS
-ms
-mQ
-nj
-nR
-lS
-mQ
-mQ
+jA
+nQ
 px
-pN
-qe
-qt
-qH
+pO
+qf
+kM
+kM
+ux
+kM
+kM
+uO
+uT
+uW
+vr
+jA
+jA
+jA
 qd
 qd
 qd
@@ -18111,23 +19165,23 @@ ti
 jA
 jA
 jA
-jZ
-ky
+jA
+ot
+oq
 kM
 kM
-kA
-mt
-mt
-nk
-mt
-op
-mt
-mt
-py
-pO
-qf
-qu
-qH
+kM
+kM
+RA
+LJ
+LJ
+uP
+KT
+Kp
+vr
+jA
+jA
+jA
 qd
 qd
 qd
@@ -18314,21 +19368,21 @@ jA
 jA
 jA
 jA
-kz
-kN
-ll
-lT
-mu
-mR
-kM
-nS
-oq
-mR
-pe
+ou
 pz
-pP
-qf
-qv
+kM
+kM
+kM
+vg
+nk
+kM
+vg
+py
+uU
+uX
+jA
+jA
+jA
 jA
 qd
 qd
@@ -18516,21 +19570,21 @@ jA
 jA
 jA
 jA
-kA
-kM
-lm
-lU
-mv
-mS
-nl
-nT
-or
-mS
-mv
+oB
 pA
-pQ
+pP
 qf
-oq
+kM
+kM
+kM
+Tr
+ut
+ut
+uV
+uY
+jA
+jA
+jA
 jA
 qd
 qd
@@ -18718,23 +19772,23 @@ jA
 jA
 jA
 jA
+qH
+kM
+kM
+kM
+kM
+kM
+uy
+kM
+uL
+nS
+pP
+uZ
+DY
+VU
 jA
 jA
-ln
-lV
-ln
-ln
-nm
-nU
-os
-ln
-pf
-lV
-ln
-jA
-jA
-jA
-qd
+HP
 qd
 qd
 ti
@@ -18919,31 +19973,31 @@ ti
 ti
 jA
 jA
+jY
+oC
+oC
+oC
+qt
+kM
+kM
+uz
+or
+mR
+uQ
+kM
+vb
+kM
+yz
 jA
 jA
+Ek
+Ek
 jA
-lo
-lV
-mw
-mT
-nn
-lV
-ot
-mT
-mw
-lV
-lo
-jA
-jA
-jA
-jA
-jA
-jA
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
 ti
 ti
 aa
@@ -19121,33 +20175,33 @@ ti
 ti
 ti
 jA
-jA
-jA
-jA
-lo
+jZ
+oD
+oD
+oD
+qu
+kM
+ut
 lV
-mx
-mU
-no
 lV
-no
-oJ
-mx
+uM
+uM
 lV
-lo
+vb
+kM
+Qy
+ZL
 jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-ti
-ti
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
 aa
 "}
 (54,1,1) = {"
@@ -19259,10 +20313,9 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
+ks
+ks
+ks
 ti
 ti
 ti
@@ -19325,31 +20378,32 @@ ti
 ti
 jA
 jA
-jA
-lp
-lV
-my
-lV
-np
-nV
-ou
+pe
+oD
+oD
+qu
+kM
+mR
 lV
 pg
+mT
+mw
 lV
-lo
+vb
+kM
+Qy
+ZL
 jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
+Ek
+Ek
+XH
+Sa
+Sa
+Sa
+XH
+XH
+Sa
+XH
 aa
 "}
 (55,1,1) = {"
@@ -19461,9 +20515,9 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
+ks
+tg
+ks
 ti
 ti
 ti
@@ -19526,30 +20580,30 @@ ti
 ti
 ti
 jA
-jA
-jA
-lo
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-lo
-jA
-jA
-jA
-jA
+pf
+oD
+oD
+qu
+kM
+uu
+lV
+uE
+mx
+mx
+lV
+vb
+kM
+Qy
 jA
 jA
 jA
-jA
-jA
-jA
-jA
+Ek
+rU
+YB
+rU
+YB
+YB
+rU
 rU
 rU
 aa
@@ -19663,9 +20717,9 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
+ks
+ks
+ks
 ti
 ti
 ti
@@ -19728,30 +20782,30 @@ ti
 ti
 ti
 jA
-jA
-jA
-lq
+oD
+oD
+oD
+qv
+ul
+uv
+uA
+uF
+uN
+uR
+lV
+vc
+vd
+FA
+ZN
+ve
 lW
-lW
-lW
-lW
-lW
-lW
-lW
-lW
-lW
-pR
-lW
-lW
-lW
-lW
-lW
-lW
-lW
-lW
-lW
-lW
-lW
+TS
+LT
+LT
+LT
+LT
+LT
+LT
 rV
 gR
 aa
@@ -19931,29 +20985,29 @@ ti
 ti
 jA
 jA
+vS
+vS
+jA
+jA
+jA
+uB
+uG
+uG
+uS
+lV
+jA
+Um
 jA
 jA
 jA
 jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
+Ek
+rU
+YB
+rU
+YB
+YB
+rU
 rU
 rU
 aa
@@ -20131,7 +21185,7 @@ ti
 ti
 ti
 ti
-ti
+np
 jA
 jA
 jA
@@ -20143,21 +21197,21 @@ jA
 jA
 jA
 jA
+Os
+Am
+Wk
 jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
+Ek
+Ek
+Ek
+XH
+Sa
+Sa
+Sa
+XH
+XH
+Sa
+XH
 aa
 "}
 (59,1,1) = {"
@@ -20194,9 +21248,9 @@ ti
 ti
 ti
 ti
-uf
+tK
 ii
-uf
+tK
 ti
 ti
 ti
@@ -20333,7 +21387,7 @@ ti
 ti
 ti
 ti
-ti
+np
 jA
 jA
 jA
@@ -20345,21 +21399,21 @@ jA
 jA
 jA
 jA
+Ce
+mL
+BN
 jA
 jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-jA
-ti
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
+Ek
 aa
 "}
 (60,1,1) = {"
@@ -20396,9 +21450,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -20540,28 +21594,28 @@ ti
 ti
 ti
 ti
+ks
+UO
+ks
+YV
+oD
+oD
+SI
+mn
+mn
+wP
+jA
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (61,1,1) = {"
@@ -20742,28 +21796,28 @@ ti
 ti
 ti
 ti
+ks
+ks
+ks
+jA
+TT
+Er
+jA
+XN
+Kx
+WT
+jA
 ti
 ti
 ti
+aa
+aa
+aa
+aa
+aa
+aa
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
 aa
 "}
 (62,1,1) = {"
@@ -20944,25 +21998,25 @@ ti
 ti
 ti
 ti
+ks
+ks
+ks
+Za
+LL
+Za
+Za
+Za
+Za
+Za
+jA
 ti
 ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
 ti
 ti
 ti
@@ -21147,15 +22201,15 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+ks
+ks
+IH
+YH
+IH
+ks
+ks
+ks
+ks
 ti
 ti
 ti
@@ -21246,8 +22300,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -21349,15 +22403,15 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+ks
+ks
+Kv
+YH
+IH
+ks
+ks
+ks
+ks
 ti
 ti
 ti
@@ -21444,12 +22498,12 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -21551,15 +22605,15 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+ks
+ks
+Kv
+YH
+IH
+ks
+ks
+ks
+ks
 ti
 ti
 ti
@@ -21642,20 +22696,20 @@ ti
 ti
 ti
 ti
+tK
 uf
-tL
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -21755,13 +22809,13 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+Kv
+YH
+IH
+ks
+ks
+ks
+ks
 ti
 ti
 ti
@@ -21844,27 +22898,27 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ks
 ks
-uf
+tK
 ti
 ti
 ti
@@ -21957,13 +23011,13 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+Kv
+YH
+IH
+ks
+ks
+ks
+ks
 ti
 ti
 ti
@@ -22047,26 +23101,26 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -22159,11 +23213,11 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
+Kv
+YH
+IH
+ks
+ks
 ti
 ti
 ti
@@ -22249,30 +23303,30 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -22361,11 +23415,11 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
+Kv
+YH
+IH
+ks
+ks
 ti
 ti
 ti
@@ -22451,12 +23505,12 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -22468,9 +23522,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -22563,8 +23617,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -22653,30 +23707,30 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
@@ -22765,8 +23819,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -22858,27 +23912,27 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
-uf
+tK
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -22967,8 +24021,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -23057,30 +24111,30 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
-uf
+tK
 ti
 ti
-uf
+tK
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -23169,8 +24223,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -23262,45 +24316,24 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
-uf
+tK
 ti
 ti
-uf
+tK
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-tL
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 uf
 ti
 ti
@@ -23322,6 +24355,7 @@ ti
 ti
 ti
 ti
+tK
 ti
 ti
 ti
@@ -23373,6 +24407,26 @@ ti
 ti
 ti
 ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+Kv
+YH
 ti
 ti
 ti
@@ -23460,35 +24514,35 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
-uf
+tK
 ti
 ti
 ti
@@ -23501,10 +24555,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -23541,10 +24595,10 @@ ti
 ti
 ti
 ti
-tL
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -23573,8 +24627,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -23662,55 +24716,51 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-ti
-ti
-ti
-ti
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
+tK
+tK
+tK
 ti
 ti
 ti
@@ -23743,10 +24793,14 @@ ti
 ti
 ti
 ti
-uf
+ti
+ti
+ti
+ti
+tK
 ji
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -23775,8 +24829,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -23868,47 +24922,47 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+vn
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -23946,8 +25000,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -23977,8 +25031,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -24068,49 +25122,49 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
+tK
+tK
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
-uf
+tK
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24179,8 +25233,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -24270,10 +25324,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24282,18 +25336,18 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -24301,18 +25355,18 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24381,8 +25435,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -24472,11 +25526,11 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24489,12 +25543,12 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24511,9 +25565,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24583,8 +25637,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -24674,17 +25728,14 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
-uf
-uf
-ti
-ti
-ti
+tK
+tK
 ti
 ti
 ti
@@ -24692,12 +25743,12 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
 ti
 ti
 ti
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24711,11 +25762,14 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+ti
+ti
+ti
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24785,8 +25839,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -24875,28 +25929,11 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
-uf
-uf
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -24912,12 +25949,29 @@ ti
 ti
 ti
 ti
+tK
+tK
 ti
-uf
-uf
-uf
-uf
-uf
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24987,8 +26041,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -25076,18 +26130,16 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
-uf
-uf
-ti
-ti
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
+tK
+tK
 ti
 ti
 ti
@@ -25097,10 +26149,10 @@ ti
 ti
 ti
 ti
-uf
-uf
 ti
 ti
+tK
+tK
 ti
 ti
 ti
@@ -25117,9 +26169,11 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+ti
+ti
+tK
+vn
+tK
 ti
 ti
 ti
@@ -25189,8 +26243,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -25278,11 +26332,11 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -25299,8 +26353,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -25319,9 +26373,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -25391,8 +26445,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -25469,7 +26523,7 @@ ti
 ti
 ti
 ks
-rW
+vk
 ks
 ti
 ti
@@ -25480,9 +26534,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -25501,8 +26555,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -25524,8 +26578,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -25593,8 +26647,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -25682,11 +26736,11 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+vj
+tK
+tK
+tK
 ti
 ti
 ti
@@ -25725,9 +26779,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -25795,8 +26849,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -25884,11 +26938,11 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -25927,9 +26981,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -25997,8 +27051,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -26086,11 +27140,11 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -26128,17 +27182,17 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+vl
 ti
 ti
 ti
@@ -26199,8 +27253,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -26290,9 +27344,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -26331,16 +27385,16 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
-uf
-uf
+tK
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -26401,8 +27455,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -26454,46 +27508,8 @@ ti
 ti
 ti
 ti
-uf
+tK
 ii
-tL
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-uf
-ti
-uf
-uf
-uf
 uf
 ti
 ti
@@ -26527,23 +27543,17 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
 ti
+tK
+tK
+tK
+tK
 ti
 ti
 ti
-uf
-uf
 ti
-uf
-uf
 ti
-uf
-uf
-uf
-uf
 ti
 ti
 ti
@@ -26571,12 +27581,23 @@ ti
 ti
 ti
 ti
+tK
+tK
+tK
 ti
 ti
 ti
 ti
+tK
+tK
 ti
+tK
+tK
 ti
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -26605,6 +27626,39 @@ ti
 ti
 ti
 ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+Kv
+YH
 ti
 ti
 ti
@@ -26656,9 +27710,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -26691,10 +27745,10 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
+tK
+vn
 ti
 ti
 ti
@@ -26729,24 +27783,24 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -26805,8 +27859,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -26893,14 +27947,14 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -26932,23 +27986,23 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -27007,8 +28061,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -27098,11 +28152,11 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -27133,24 +28187,24 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -27209,8 +28263,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -27300,9 +28354,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -27335,21 +28389,21 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -27411,8 +28465,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -27503,8 +28557,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -27544,14 +28598,14 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -27613,8 +28667,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -27705,8 +28759,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -27745,11 +28799,11 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -27815,8 +28869,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -27904,11 +28958,11 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -27948,10 +29002,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -28017,8 +29071,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -28106,13 +29160,13 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -28150,8 +29204,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -28219,8 +29273,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -28308,13 +29362,13 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -28352,12 +29406,12 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -28421,8 +29475,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -28509,18 +29563,18 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
@@ -28552,15 +29606,15 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -28623,8 +29677,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -28710,19 +29764,19 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -28753,16 +29807,16 @@ ks
 ks
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -28825,8 +29879,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -28912,28 +29966,28 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+vn
+tK
+tK
+tK
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -28955,16 +30009,16 @@ sB
 ks
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29027,8 +30081,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -29117,25 +30171,25 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
-uf
+vn
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -29157,15 +30211,15 @@ ks
 ks
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29229,11 +30283,11 @@ ti
 ti
 ti
 ti
+Kv
+YH
 ti
 ti
-ks
-rW
-ks
+ti
 ti
 ti
 ti
@@ -29318,28 +30372,28 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29360,10 +30414,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29431,11 +30485,11 @@ ti
 ti
 ti
 ti
+Kv
+YH
 ti
 ti
-ks
-ks
-ks
+ti
 ti
 ti
 ti
@@ -29519,14 +30573,14 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29534,11 +30588,11 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29564,8 +30618,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -29633,8 +30687,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -29721,14 +30775,14 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29736,11 +30790,11 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29766,8 +30820,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -29835,8 +30889,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -29924,21 +30978,21 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29968,8 +31022,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -30037,8 +31091,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -30126,32 +31180,28 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
-uf
-ti
-ti
-ti
-ti
-ti
-uf
-uf
+tK
 ti
 ti
 ti
 ti
+ti
+tK
+tK
 ti
 ti
 ti
@@ -30170,8 +31220,12 @@ ti
 ti
 ti
 ti
-uf
-uf
+ti
+ti
+ti
+ti
+tK
+vn
 ti
 ti
 ti
@@ -30239,8 +31293,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -30328,28 +31382,28 @@ ti
 ti
 ti
 ti
+tK
+tK
+tK
+tK
+ti
+ti
+tK
+tK
 uf
-uf
-uf
-uf
-ti
-ti
-uf
-uf
-uf
-uf
+tK
 ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -30368,15 +31422,15 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -30404,7 +31458,7 @@ ti
 ks
 ks
 ks
-tg
+bi
 ti
 ti
 ti
@@ -30441,8 +31495,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -30498,9 +31552,9 @@ ti
 ti
 ti
 ti
-uf
+tK
 ii
-uf
+tK
 ti
 ti
 ti
@@ -30530,27 +31584,24 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
-uf
-tL
-uf
-uf
-ti
-ti
-ti
-ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
+ti
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -30570,15 +31621,18 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
 ti
-uf
-uf
-uf
-uf
-uf
+ti
+ti
+tK
+tK
+tK
+ti
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -30643,8 +31697,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -30700,9 +31754,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -30732,23 +31786,20 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
-uf
-uf
-ti
-ti
-ti
+tK
+tK
 ti
 ti
 ti
@@ -30772,15 +31823,18 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
 ti
-uf
-uf
-uf
-uf
-uf
+ti
+ti
+tK
+tK
+tK
+ti
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -30845,8 +31899,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -30944,10 +31998,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -30972,17 +32026,17 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -31047,8 +32101,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -31146,10 +32200,10 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -31174,17 +32228,17 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -31249,8 +32303,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -31348,10 +32402,10 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -31376,14 +32430,14 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -31451,8 +32505,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+Kv
+YH
 ti
 ti
 ti
@@ -31489,7 +32543,7 @@ ti
 ti
 ks
 ks
-tg
+ks
 ti
 ti
 ti
@@ -31550,7 +32604,7 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
@@ -31579,13 +32633,13 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -31653,8 +32707,8 @@ ti
 ti
 ti
 ti
-ti
-ti
+IH
+YH
 ti
 ti
 ti
@@ -31781,13 +32835,13 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-tL
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -31854,11 +32908,11 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+Ya
+jA
+jA
 ti
 ti
 ti
@@ -31982,14 +33036,14 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -32054,15 +33108,15 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+jA
+oD
+Ya
+oD
+jA
+jA
+jA
 ti
 ti
 ti
@@ -32156,7 +33210,7 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
@@ -32184,21 +33238,21 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -32255,17 +33309,17 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+oD
+oD
+oD
+Ya
+oD
+oD
+oD
+jA
+jA
 ti
 ti
 ti
@@ -32358,7 +33412,7 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
@@ -32390,17 +33444,17 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -32456,19 +33510,19 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+La
+oD
+oD
+oD
+Ya
+oD
+oD
+oD
+yH
+jA
+jA
 ti
 ti
 ti
@@ -32560,19 +33614,13 @@ ti
 ti
 ti
 ti
-uf
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-ti
-ti
-ti
-ti
-ti
-ti
+tK
 ti
 ti
 ti
@@ -32591,19 +33639,25 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+tK
+tK
 ks
 ks
 ks
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -32658,19 +33712,19 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+oD
+oD
+La
+oD
+oD
+Ya
+oD
+oD
+yH
+oD
+oD
+jA
 ti
 ti
 ti
@@ -32733,7 +33787,7 @@ ti
 ti
 eN
 fc
-fc
+tL
 ks
 ks
 am
@@ -32744,68 +33798,13 @@ fo
 ks
 ks
 ks
-ks
-ks
-ks
-ks
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-uf
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-uf
-uf
-uf
+vm
 ks
 ks
 ks
 ti
 ti
 ti
-uf
-uf
-uf
-uf
 ti
 ti
 ti
@@ -32823,6 +33822,7 @@ ti
 ti
 ti
 ti
+tK
 ti
 ti
 ti
@@ -32847,9 +33847,19 @@ ti
 ti
 ti
 ti
+tK
+tK
+tK
+ks
+ks
+ks
 ti
 ti
 ti
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -32874,6 +33884,50 @@ ti
 ti
 ti
 ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+jA
+jA
+oD
+oD
+oD
+La
+oD
+Ya
+oD
+yH
+oD
+oD
+oD
+jA
+jA
 ti
 ti
 ti
@@ -32965,10 +34019,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -32995,19 +34049,19 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ks
 ks
 ks
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33061,21 +34115,21 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+pf
+oD
+oD
+oD
+oD
+La
+Ya
+yH
+oD
+oD
+oD
+oD
+JM
+jA
 ti
 ti
 ti
@@ -33198,17 +34252,17 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -33263,21 +34317,21 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+Ol
+Ya
+Ya
+Ya
+Ya
+Ya
+TA
+Ya
+Ya
+Ya
+Ya
+Ya
+OY
+jA
 ti
 ti
 ti
@@ -33400,10 +34454,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33465,21 +34519,21 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+pf
+oD
+oD
+oD
+oD
+FT
+Ya
+Om
+oD
+oD
+oD
+oD
+JM
+jA
 ti
 ti
 ti
@@ -33601,12 +34655,12 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33667,21 +34721,21 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+oD
+oD
+oD
+FT
+oD
+Ya
+oD
+Om
+oD
+oD
+oD
+jA
+jA
 ti
 ti
 ti
@@ -33737,7 +34791,7 @@ be
 bf
 bf
 ct
-cJ
+Oz
 di
 dJ
 ej
@@ -33802,15 +34856,15 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33870,19 +34924,19 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+oD
+oD
+FT
+oD
+oD
+Ya
+oD
+oD
+Om
+oD
+oD
+jA
 ti
 ti
 ti
@@ -34003,18 +35057,18 @@ ti
 ti
 ti
 ti
+tK
+tK
+tK
+tK
+tK
 uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34042,10 +35096,10 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34072,19 +35126,19 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+FT
+oD
+oD
+oD
+Ya
+oD
+oD
+oD
+Om
+jA
+jA
 ti
 ti
 ti
@@ -34205,18 +35259,18 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34244,10 +35298,10 @@ ti
 ti
 ti
 ti
-uf
+tK
 ji
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -34275,17 +35329,17 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+oD
+oD
+oD
+Ya
+oD
+oD
+oD
+jA
+jA
 ti
 ti
 ti
@@ -34407,18 +35461,18 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34447,8 +35501,8 @@ ti
 ti
 ti
 ti
-uf
-uf
+tK
+tK
 ti
 ti
 ti
@@ -34478,15 +35532,15 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+jA
+Ko
+Kn
+Ko
+jA
+jA
+jA
 ti
 ti
 ti
@@ -34543,7 +35597,7 @@ ah
 bg
 bg
 bO
-bQ
+ap
 ao
 dk
 dM
@@ -34555,7 +35609,7 @@ ed
 ge
 ff
 gN
-gN
+Fm
 sl
 sC
 gr
@@ -34566,7 +35620,7 @@ ks
 ks
 ks
 ks
-ae
+ad
 ti
 ti
 ti
@@ -34609,18 +35663,18 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34682,11 +35736,11 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
-ti
-ti
+jA
+jA
+jA
+jA
+jA
 ti
 ti
 ti
@@ -34745,7 +35799,7 @@ ah
 bg
 bg
 bP
-cg
+bQ
 cv
 dl
 dN
@@ -34812,15 +35866,15 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34947,7 +36001,7 @@ ah
 bg
 bg
 an
-ap
+cg
 cM
 dm
 en
@@ -36575,7 +37629,7 @@ cz
 ed
 gt
 gU
-gV
+sJ
 rZ
 sF
 gt
@@ -37208,9 +38262,9 @@ ti
 ti
 ti
 ti
-uf
+tK
 ii
-uf
+tK
 ti
 ti
 ti
@@ -37383,9 +38437,9 @@ fL
 ed
 gt
 gY
+vo
 gV
-gV
-sJ
+vp
 gt
 sS
 sX
@@ -37410,9 +38464,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-tL
+tK
+tK
+tK
 ti
 ti
 ti
@@ -37586,7 +38640,7 @@ cz
 gt
 gZ
 sa
-sb
+pK
 sK
 gt
 gt
@@ -37969,13 +39023,13 @@ ti
 ai
 ai
 ai
-by
-by
-by
+ay
+ay
+ay
 by
 aB
 bj
-by
+Mm
 bj
 ci
 aK
@@ -38171,9 +39225,9 @@ ti
 ai
 ai
 ai
-by
-by
-by
+aT
+aT
+aT
 ai
 aH
 bj
@@ -38373,9 +39427,9 @@ ti
 ai
 ai
 ak
-ay
-ay
-bi
+ui
+ui
+vq
 ax
 ai
 bk
@@ -38575,9 +39629,9 @@ ti
 ai
 ai
 al
-aT
-aT
-aT
+ui
+ui
+ui
 al
 ai
 bl
@@ -38777,12 +39831,12 @@ ti
 ai
 ai
 al
-aT
-aT
-aT
+ui
+ui
+ui
 al
 ai
-aK
+ai
 bB
 bT
 aK
@@ -38791,7 +39845,7 @@ aC
 aR
 ar
 aC
-dX
+KK
 ai
 is
 bo
@@ -38979,12 +40033,12 @@ ti
 aD
 aD
 al
-aT
-aT
-aT
+ui
+ui
+ui
 al
 aI
-aK
+ai
 bo
 bU
 aK
@@ -39185,9 +40239,9 @@ aw
 aw
 aw
 aA
-aI
-aK
-bo
+ai
+ai
+BG
 bV
 aK
 cy
@@ -39388,7 +40442,7 @@ tH
 tH
 tH
 ai
-aK
+ai
 bC
 bV
 aK
@@ -39795,7 +40849,7 @@ aK
 bm
 bo
 bV
-bm
+kc
 aK
 ai
 ai
@@ -40000,7 +41054,7 @@ bV
 bo
 cz
 cZ
-cz
+Xk
 cz
 cz
 cZ
@@ -40218,7 +41272,7 @@ ks
 ks
 ks
 ks
-ks
+ae
 ti
 ti
 ti
@@ -40635,9 +41689,9 @@ ti
 ti
 ti
 ti
-uf
+tK
 ii
-uf
+tK
 ti
 ti
 ti
@@ -40837,9 +41891,9 @@ ti
 ti
 ti
 ti
-uf
-uf
-uf
+tK
+tK
+tK
 ti
 ti
 ti
@@ -42540,7 +43594,7 @@ ti
 ti
 ti
 ks
-ks
+bi
 ti
 ti
 ti
@@ -43475,7 +44529,7 @@ ti
 ti
 ti
 ks
-tg
+ks
 ti
 ti
 ti
@@ -44232,7 +45286,7 @@ ti
 ti
 ti
 ti
-ks
+ae
 ks
 ks
 ks
@@ -47028,1618 +48082,1618 @@ aa
 "}
 (192,1,1) = {"
 aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (193,1,1) = {"
 aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (194,1,1) = {"
 aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (195,1,1) = {"
 aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (196,1,1) = {"
 aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (197,1,1) = {"
 aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (198,1,1) = {"
 aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (199,1,1) = {"
 aa
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 "}
 (200,1,1) = {"

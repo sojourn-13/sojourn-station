@@ -197,10 +197,28 @@
 /obj/item/device/defib_kit/compact/combat/loaded
 	cell_type = /obj/item/cell/medium
 
+
+/obj/item/device/defib_kit/compact/combat/adv
+	name = "advanced defibrillator"
+	desc = "A belt-equipped SI branded defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
+	paddles = /obj/item/shockpaddles/linked/combat/advanced
+	item_state = "defibcompact_adv"
+
+	oxygain = 40
+
+/obj/item/device/defib_kit/compact/combat/adv/loaded
+	cell_type = /obj/item/cell/medium/moebius/high
+
 /obj/item/shockpaddles/linked/combat
 	combat = 1
 	safety = 0
 	chargetime = (1 SECONDS)
+
+/obj/item/shockpaddles/linked/combat/advanced
+	name = "advanced defibrillator paddles"
+	desc = "A pair of ploymore-gripped paddles with flat metals surfaces that are used to deliver powerful controled electric shocks."
+	si_only = TRUE
+	advanced_pads = TRUE
 
 
 //paddles
@@ -224,6 +242,10 @@
 	var/chargecost = 500 //units of charge per zap	//With the default APC level cell, this allows 4 shocks
 	var/burn_damage_amt = 5
 	var/use_on_synthetic = 0 //If 1, this is only useful on FBPs, if 0, this is only useful on fleshies
+
+	var/advanced_pads = FALSE
+	var/si_only = FALSE
+
 
 	var/wieldedm = 0
 	var/cooldown = 0
@@ -259,6 +281,10 @@
 		icon_state = "defibpaddles[wielded]_cooldown"
 
 /obj/item/shockpaddles/proc/can_use(mob/user, mob/M)
+	if(si_only)
+		if(!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !user.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !user.stats?.getPerk(PERK_MEDICAL_EXPERT))
+			to_chat(user, "<span class='warning'>\The [src] is so complex your need training to use this.</span>")
+			return 0
 	if(busy)
 		return 0
 	if(!check_charge(chargecost()))
@@ -585,16 +611,20 @@
 				M.stats.changeStat(STAT_VIG, -rngStatRemoved)
 		log_and_message_admins("Removed [-rngStatRemoved] to the VIG stat of [M]")
 
-	switch(M.stats.getStat(STAT_TGH))
-		if(-200 to 40)
-			M.stats.addPerk(/datum/perk/rezsickness/severe/fatal)
-			log_and_message_admins("Added fatal rez sickness to [M].")
-		if(40 to 60)
-			M.stats.addPerk(/datum/perk/rezsickness/severe)
-			log_and_message_admins("Added severe rez sickness to [M].")
-		if(60 to INFINITY)
-			M.stats.addPerk(/datum/perk/rezsickness)
-			log_and_message_admins("Added mild rez sickness to [M].")
+	if(!advanced_pads)
+		switch(M.stats.getStat(STAT_TGH))
+			if(-200 to 40)
+				M.stats.addPerk(/datum/perk/rezsickness/severe/fatal)
+				log_and_message_admins("Added fatal rez sickness to [M].")
+			if(40 to 60)
+				M.stats.addPerk(/datum/perk/rezsickness/severe)
+				log_and_message_admins("Added severe rez sickness to [M].")
+			if(60 to INFINITY)
+				M.stats.addPerk(/datum/perk/rezsickness)
+				log_and_message_admins("Added mild rez sickness to [M].")
+	else
+		M.stats.addPerk(/datum/perk/rezsickness)
+		log_and_message_admins("Added mild rez sickness to [M].")
 
 /obj/item/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, var/deadtime)
 	if(deadtime < DEFIB_TIME_LOSS) return

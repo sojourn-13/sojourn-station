@@ -68,9 +68,13 @@
 	build_path = /obj/item/device/camera_film
 	materials = list(MATERIAL_PLASTIC = 1, MATERIAL_STEEL = 0.2)
 
+/datum/design/autolathe/device/landmine
+	name = "landmine"
+	build_path = /obj/item/mine
+
 /datum/design/autolathe/device/excelsiormine
 	name = "excelsior mine"
-	build_path = /obj/item/mine
+	build_path = /obj/item/mine/excelsior
 
 /datum/design/autolathe/device/propaganda_chip
 	name = "propaganda chip"

@@ -382,13 +382,13 @@
 /obj/item/psi_injector
 	name = "cerebrix inhaler"
 	desc = "A modified inhaler which delivers over-saturated cerebrix diluted in water before being aerosolized. Unlike a direct injection or drinking, this method prevents overdosing or nasty side \
-	side effects at the cost of spending more cerebrix for what it returns."
+	side effects at the cost of spending more cerebrix for what it returns in essence."
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "psi_inhaler"
 	force = WEAPON_FORCE_HARMLESS
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-	var/use = 1 // Number of times it can be used.
+	var/use = 4 // Number of times it can be used.
 	var/point_per_use = 1 // Amount of points it give to a psion each use.
 
 /obj/item/psi_injector/update_icon()
