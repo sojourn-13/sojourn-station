@@ -42,7 +42,7 @@
 	desc = "The standard Blackshield equipment kit."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/sts/rifle/blackshield(src)
+		new /obj/item/gun/projectile/automatic/sts(src)
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/ammo_magazine/rifle_75_short(src)
