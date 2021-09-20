@@ -206,3 +206,23 @@
 	log_and_message_admins("[user.real_name] sent a message to [H] with text \"[text]\"")
 	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 	playsound(H, 'sound/machines/signal.ogg', 50, 1)
+
+
+/datum/ritual/cruciform/base/revelation
+	name = "Revelation"
+	phrase = "Patris ostendere viam"
+	desc = "A person close to you will have a vision that could increase ther sanity... or that's what you hope will happen."
+	power = 50
+
+/datum/ritual/cruciform/base/revelation/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
+	var/mob/living/carbon/human/T = get_front_human_in_range(H, 4)
+	//if(!T || !T.client)
+	if(!T)
+		fail("No target.", H, C)
+		return FALSE
+	T.hallucination(50,100)
+	//var/sanity_lost = rand(-10,10) no thanks
+	T.druggy = max(T.druggy, 10)
+	//T.sanity.changeLevel(sanity_lost) //no thanks
+	SEND_SIGNAL(H, COMSIG_RITUAL, src, T)
+	return TRUE

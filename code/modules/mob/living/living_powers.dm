@@ -37,7 +37,7 @@
 	if(faction == "CEV Eris")
 		return TRUE
 
-	for (var/obj/mecha/M in mechas_list)
+	for (var/obj/mecha/M in GLOB.mechas_list)
 		if (M.z == src.z && get_dist(src, M) <= dist)
 			return TRUE
 

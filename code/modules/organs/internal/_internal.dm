@@ -10,6 +10,7 @@
 	var/nutriment_req = 0	//Controls passive nutriment loss
 	var/oxygen_req = 0	//If oxygen reqs are not satisfied, get debuff and brain starts taking damage
 	layer = ABOVE_LYING_MOB_LAYER
+	origin_tech = list(TECH_BIO = 2)
 
 /obj/item/organ/internal/New(mob/living/carbon/human/holder, datum/organ_description/OD)
 	..()

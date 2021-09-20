@@ -47,14 +47,14 @@
 	var/mob/living/carbon/human/H = src
 
 	if (H.client.prefs.UI_style && !(H.client.prefs.UI_style == "")) //если у клиента моба прописан стиль\тип ХУДа
-		if(global.HUDdatums.Find(H.client.prefs.UI_style))//Если существует такой тип ХУДА
+		if(GLOB.HUDdatums.Find(H.client.prefs.UI_style))//Если существует такой тип ХУДА
 			return TRUE
 
 	return FALSE
 
 /mob/living/carbon/human/minimalize_HUD()
 	var/mob/living/carbon/human/H = src
-	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 	if (H.client.prefs.UI_compact_style && HUDdatum.MinStyleFlag)
 		for (var/p in H.HUDneed)
 			var/obj/screen/HUD = H.HUDneed[p]
@@ -148,7 +148,7 @@
 
 /mob/living/carbon/human/create_HUDinventory()
 	var/mob/living/carbon/human/H = src
-	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	for (var/gear_slot in species.hud.gear)//Добавляем Элементы ХУДа (инвентарь)
 		if (!HUDdatum.slot_data.Find(gear_slot))
@@ -174,7 +174,7 @@
 
 /mob/living/carbon/human/create_HUDneed()
 	var/mob/living/carbon/human/H = src
-	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	for(var/HUDname in species.hud.ProcessHUD) //Добавляем Элементы ХУДа (не инвентарь)
 		if (!(HUDdatum.HUDneed.Find(HUDname))) //Ищем такой в датуме
@@ -195,7 +195,7 @@
 
 /mob/living/carbon/human/create_HUDfrippery()
 	var/mob/living/carbon/human/H = src
-	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	//Добавляем Элементы ХУДа (украшения)
 	for (var/list/whistle in HUDdatum.HUDfrippery)
@@ -208,7 +208,7 @@
 
 /mob/living/carbon/human/create_HUDtech()
 	var/mob/living/carbon/human/H = src
-	var/datum/hud/human/HUDdatum = global.HUDdatums[H.defaultHUD]
+	var/datum/hud/human/HUDdatum = GLOB.HUDdatums[H.defaultHUD]
 
 	//Добавляем технические элементы(damage,flash,pain... оверлеи)
 	for (var/techobject in HUDdatum.HUDoverlays)

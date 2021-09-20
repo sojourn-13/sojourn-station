@@ -794,10 +794,14 @@ var/global/list/default_medbay_channels = list(
 
 /obj/item/device/radio/random_radio/New()
 	..()
+	GLOB.all_faction_items[src] = GLOB.department_guild
 	START_PROCESSING(SSobj, src)
 
 /obj/item/device/radio/random_radio/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
 	. = ..()
 
 /obj/item/device/radio/random_radio/receive_range(freq, level)
@@ -830,7 +834,9 @@ var/global/list/default_medbay_channels = list(
 		to_chat(user, SPAN_NOTICE("The [name] has already been emaged."))
 		return NO_EMAG_ACT
 
-/obj/item/device/radio/random_radio/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/device/radio/random_radio/attackby(obj/item/W, mob/user, params)
+	if(nt_sword_attack(W, user))
+		return FALSE
 	user.set_machine(src)
 
 	if(istype(W, /obj/item/oddity))

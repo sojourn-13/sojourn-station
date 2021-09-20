@@ -1,12 +1,12 @@
 /datum/antag_faction
-	var/id = null
+	var/id
 	var/name = "faction"	//name displayed in different places
 	var/antag = "antag"		//name for the faction members
 	var/antag_plural = "antags"
 	var/welcome_text = "Hello, antagonist!"
 
-	var/hud_indicator = null
-	var/leader_hud_indicator = null
+	var/hud_indicator
+	var/leader_hud_indicator
 	var/faction_invisible = TRUE
 
 	var/list/faction_icons = list()
@@ -23,7 +23,7 @@
 /datum/antag_faction/New()
 	if(!leader_hud_indicator)
 		leader_hud_indicator = hud_indicator
-	current_factions.Add(src)
+	GLOB.current_factions.Add(src)
 
 /datum/antag_faction/proc/add_member(var/datum/antagonist/member, var/announce = TRUE)
 	if(!member || !member.owner || !member.owner.current || (member in members) || !member.owner.current.client)
@@ -111,7 +111,7 @@
 	for(var/datum/antagonist/A in members)
 		remove_member(A)
 
-	current_factions.Remove(src)
+	GLOB.current_factions.Remove(src)
 	return TRUE
 
 
@@ -137,13 +137,12 @@
 /datum/antag_faction/proc/customize(var/mob/leader)
 
 /datum/antag_faction/proc/communicate(var/mob/user)
-	if(!is_member(user))
+	if(!is_member(user) || user.stat != CONSCIOUS)
 		return
 
-	usr = user
-	var/message = input("Type message","[name] communication")
+	var/message = input(user, "Type message","[name] communication")
 
-	if(!message || !is_member(user))
+	if(!message || !is_member(user) || user.stat != CONSCIOUS) //Check the same things again, to prevent message-holding
 		return
 
 	message = capitalize(sanitize(message))
@@ -185,6 +184,7 @@
 		text += A.print_player()
 
 	text += "<br>"
+
 	if (objectives.len)
 		var/failed = FALSE
 		var/num = 1
@@ -202,13 +202,11 @@
 			text += "<br><font color='red'><B>The members of the [name] failed their tasks.</B></font>"
 		else
 			text += "<br><font color='green'><B>The members of the [name] accomplished their tasks!</B></font>"
-//	text += print_success_extra()
+	text += print_success_extra()
 	// Display the results.
 	return text
-
-/datum/faction/proc/print_success_extra() //Placeholder for extra data for print_succes proc
+/datum/antag_faction/proc/print_success_extra() //Placeholder for extra data for print_succes proc
 	return ""
-
 /datum/antag_faction/proc/get_indicator(var/datum/antagonist/A)
 	if(A in leaders)
 		return get_leader_indicator()
