@@ -44,6 +44,7 @@
 
 //Copy a genetics holder wholesale for reuse.
 /datum/genetics/genetics_holder/proc/Copy(var/copy_holder = FALSE)
+	log_debug("genetics_holder copied. copy_holder(bool): [copy_holder]")
 	var/datum/genetics/genetics_holder/duplicate = new type(src)
 	if(copy_holder)
 		duplicate.holder = holder
@@ -58,37 +59,39 @@
 
 //Initialize a genetics holder based on an existing mob.
 /datum/genetics/genetics_holder/proc/initializeFromMob(var/mob/living/source)
+	log_debug("func initializeFromMob called. Mob: [source]")
 	//No robots allowed.
 	if(issilicon(source))
 		return
-	addInherentMutations(source.inherent_mutations, source.type)
+	addInherentMutations(source.inherent_mutations, source.type, source.name)
 	addUnnaturalMutations(source.unnatural_mutations.mutation_pool)
 	attemptAddCopyMobMutation(source.type, source.name)
 
 //Initialize a genetics holder based on a slab of meat.
 /datum/genetics/genetics_holder/proc/initializeFromMeat(var/obj/item/reagent_containers/food/snacks/meat/gene_meat)
-	addInherentMutations(gene_meat.inherent_mutations, gene_meat.source_mob)
-	addUnnaturalMutations(gene_meat.unnatural_mutations)
+	log_debug("func initializeFromMeat called. Meat: [gene_meat]")
+	addInherentMutations(gene_meat.inherent_mutations, gene_meat.source_mob, gene_meat.source_name)
+	addUnnaturalMutations(gene_meat.unnatural_mutations.mutation_pool)
 	attemptAddCopyMobMutation(gene_meat.source_mob, gene_meat.source_name)
+	toggleAllImplanted(FALSE)
 
 //Add inherent mutations based on a source mob
-/datum/genetics/genetics_holder/proc/addInherentMutations(var/list/inherent_mutations, var/source)
-	if(inherent_mutations && inherent_mutations.len > 0)
-		log_debug("inherent mutations:")
+/datum/genetics/genetics_holder/proc/addInherentMutations(var/list/inherent_mutations, var/source, var/source_name)
+	log_debug("func addInherentMutations called, adding:")
+	if(source && inherent_mutations && inherent_mutations.len > 0)
 		for(var/source_mutation in inherent_mutations)
 			log_debug("-> [source_mutation]")
 
 		for(var/incoming_mutation in inherent_mutations)
 			var/datum/genetics/mutation/new_mutation = new incoming_mutation()
 			new_mutation.source_mob = source
-			new_mutation.implanted = FALSE
+			new_mutation.source_name = source_name
 			addMutation(new_mutation)
 
 //Add unnatural mutations already generated
 /datum/genetics/genetics_holder/proc/addUnnaturalMutations(var/list/unnatural_mutations)
-	//Add unnaturally implanted mutations as fully realized objects.
+	log_debug("func addUnnaturalMutations called, adding:")
 	if(unnatural_mutations && unnatural_mutations.len > 0)
-		log_debug("unnatural mutations:")
 		for(var/datum/genetics/mutation/source_mutation in unnatural_mutations)
 			log_debug("-> [source_mutation]")
 			var/datum/genetics/mutation/new_mutation = source_mutation.copy()
@@ -98,6 +101,7 @@
 //Generate a Copy Mob mutation if one hasn't been created yet.
 //Also, Check to make sure there are no duplicates. Copy_mob is robust enough to not treat clone mutations of other mobs as a duplicate.
 /datum/genetics/genetics_holder/proc/attemptAddCopyMobMutation(var/source_type, var/source_name)
+	log_debug("attemptAddCopyMobMutation: [source_type] , [source_name]")
 	if(!getMutation("MUTATION_COPY_[source_type]"))
 		var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source_type, source_name)
 		new_mutation.active = TRUE
@@ -107,11 +111,14 @@
 
 //Turn on/off the implanted key for all implants.
 /datum/genetics/genetics_holder/proc/toggleAllImplanted(var/state = FALSE)
+	log_debug("toggleAllImplanted: turning all mutation's implanted values to state=[state]")
+
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		selected_mutation.implanted = state
 
 //Randomly toggle random mutations in a holder as active; helps obfuscate unidentified mutations.
 /datum/genetics/genetics_holder/proc/randomizeActivations()
+	log_debug("randomizeActivations: randomizing activated state in some genetics_holder, somewhere")
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		if (prob(50))
 			selected_mutation.activate(TRUE)
@@ -119,6 +126,7 @@
 			selected_mutation.deactivate()
 
 /datum/genetics/genetics_holder/Destroy()
+	log_debug("Destroyed a genetics holder- that's unusual...")
 	total_instability = 0
 	mutation_pool = list()
 	return ..()
@@ -132,15 +140,15 @@
 //Function must return a mutation datum from the mutation pool on a success, and a null value that evaluates to FALSE on a fail.
 /datum/genetics/genetics_holder/proc/getMutation(var/key)
 	RETURN_TYPE(/datum/genetics/mutation)
-	log_debug("--------------")
-	log_debug("Beginning search for [key]")
+	log_debug("getMutation: Beginning search for [key]")
 	for(var/datum/genetics/mutation/source_mutation in mutation_pool)
 		if(source_mutation.key == key)
-			log_debug("Found key [key] in [source_mutation], which has key [source_mutation.key]")
+			log_debug("getMutation: Found key [key] in [source_mutation], which has key [source_mutation.key]")
 			return source_mutation
 	return null
 
 /datum/genetics/genetics_holder/proc/removeMutation(var/key , var/amt_to_remove = 1)
+	log_debug("removeMutation: removing [key] mutation. Amt=[amt_to_remove]")
 	var/datum/genetics/mutation/mutation_to_remove = getMutation(key)
 	if(mutation_to_remove)
 		total_instability -= (mutation_to_remove.instability * amt_to_remove)
@@ -162,17 +170,21 @@
 	initialized = FALSE
 
 //Proc for easily adding mutations to a genetics holder, so it can be called quickly.
-/datum/genetics/genetics_holder/proc/addMutation(var/datum/genetics/mutation/incoming_mutation)
+/datum/genetics/genetics_holder/proc/addMutation(var/datum/genetics/mutation/incoming_mutation, var/force_add = FALSE)
+	log_debug("Adding mutation: [incoming_mutation.name], Force Add: [force_add]")
 	var/datum/genetics/mutation/existing_mutation = getMutation(incoming_mutation)
-	var/add_mutation = TRUE
+	var/max_copies_reached = FALSE
 	if(existing_mutation)
 		if((max_copies != 0) && ((existing_mutation.count + incoming_mutation.count) > max_copies))
-			add_mutation = FALSE
+			max_copies_reached = TRUE
 
 	//actually process adding the object
-	if(add_mutation)
+	if(!max_copies_reached || force_add)
 		if(existing_mutation)
-			existing_mutation.count += incoming_mutation.count
+			if(max_copies_reached)
+				existing_mutation.count = max_copies
+			else
+				existing_mutation.count += incoming_mutation.count
 		else
 			//Ensure exclusive mutations come in as inactive if another of the same type already exists and is active.
 			if(incoming_mutation.exclusive_type)
@@ -185,17 +197,13 @@
 			mutation_pool += incoming_mutation
 			sortMutation(mutation_pool)
 
-		if(track_instability)
-			total_instability += (incoming_mutation.instability * incoming_mutation.count)
-	return add_mutation
+	if(track_instability)
+		total_instability += (incoming_mutation.instability * incoming_mutation.count)
 
 //Inject a mutagen into a living person.
 //MAKE SURE HOLDER IS SET FIRST.
 /datum/genetics/genetics_holder/proc/inject_mutations(var/mob/living/target)
-	log_debug("--------------")
-	log_debug("beginning implant.")
-	log_debug("target person:")
-	log_debug("[target.name] ->[target.key], [target.ckey]")
+	log_debug("beginning implant: [target.name] ->[target.key], [target.ckey]")
 
 	//No robots allowed.
 	if(issilicon(target))
