@@ -9,8 +9,8 @@
 /datum/individual_objective/disturbance/assign()
 	..()
 	target_area = random_ship_area()
-	desc = "Something in bluespace tries mess with ship systems. You need to go to [target_area] and power it down by APC \
-	for [unit2time(units_requested)] minutes to lower bluespace interference, before worst will happen."
+	desc = "Something is messing with colony systems. You need to go to [target_area] and power it down by APC \
+	for [unit2time(units_requested)] minutes to lower interference, before worst will happen."
 	RegisterSignal(target_area, COMSIG_AREA_APC_OPERATING, .proc/task_completed)
 
 /datum/individual_objective/disturbance/task_completed(on=TRUE)
@@ -52,12 +52,12 @@
 		if(I.type == target.type)
 			completed()
 			return
-*/
+
 /datum/individual_objective/more_tech/completed()
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSING_HUMAN_EQUITP)
 	..()
-
+*/
 /datum/individual_objective/oddity
 	name = "Warded"
 	req_department = list(DEPARTMENT_ENGINEERING)
@@ -96,7 +96,7 @@
 /datum/individual_objective/tribalism/assign()
 	..()
 	target = pick_faction_item(mind_holder)
-	desc = "It is time to greater sacrifice. Put \the [target] in Techno-Tribalism Enforcer."
+	desc = "It is time to greater sacrifice. Put \the [target] in Artificer Perfection Cube."
 	RegisterSignal(mind_holder, COMSIG_OBJ_TECHNO_TRIBALISM, .proc/task_completed)
 
 /datum/individual_objective/tribalism/task_completed(obj/item/I)

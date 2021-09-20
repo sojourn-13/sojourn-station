@@ -37,7 +37,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_HUMAN_BREAKDOWN)
 	..()
-
+/*
 /datum/individual_objective/derange
 	name = "Derange"
 	limited_antag = TRUE
@@ -65,7 +65,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_HUMAN_BREAKDOWN)
 	..()
-
+*/
 #define MOB_ADD_DRUG 1
 #define ON_MOB_DRUG 2
 #define MOB_DELETE_DRUG 3
@@ -161,7 +161,7 @@
 	if(completed) return
 	UnregisterSignal(target, COMSIG_HUMAN_HEALTH)
 	..()
-
+/*
 /datum/individual_objective/helper
 	name = "Helping Hand"
 	units_requested = 15 MINUTES
@@ -201,7 +201,7 @@
 	if(completed) return
 	UnregisterSignal(target, COMSIG_HUMAN_SANITY)
 	..()
-
+*/
 /datum/individual_objective/obsession
 	name = "Obsessive Observation"
 	var/mob/living/carbon/human/target

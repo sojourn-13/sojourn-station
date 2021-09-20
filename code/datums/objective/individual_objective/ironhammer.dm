@@ -82,7 +82,7 @@
 /datum/individual_objective/danger/assign()
 	..()
 	target = pick_faction_item(mind_holder)
-	desc = "\The [target] is clear danger to ship and crew. Destroy it with any means possible."
+	desc = "\The [target] is clear danger to colony. Destroy it with any means possible."
 	RegisterSignal(mind_holder, COMSIG_OBJ_FACTION_ITEM_DESTROY, .proc/task_completed)
 
 /datum/individual_objective/danger/task_completed(obj/item/I)

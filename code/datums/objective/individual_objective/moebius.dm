@@ -40,7 +40,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSING_NSA)
 	..()
-
+/*
 /datum/individual_objective/derail
 	name = "Observe a Derail"
 	req_department = list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL)
@@ -60,7 +60,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_HUMAN_BREAKDOWN)
 	..()
-
+*/
 /datum/individual_objective/adiction
 	name = "On The Hook"
 	req_department = list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL)

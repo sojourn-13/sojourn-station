@@ -82,7 +82,7 @@
 	..()
 	target = pick_candidates()
 	target = new target()
-	desc = "A friend of yours on the other side on trade teleporter is waiting for a [target]. Ensure it will be sold via cargo."
+	desc = "A friend of yours on the other side on trade station is waiting for a [target]. Ensure it will be sold via cargo."
 	RegisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY, .proc/task_completed)
 
 /datum/individual_objective/order/task_completed(atom/movable/AM)
