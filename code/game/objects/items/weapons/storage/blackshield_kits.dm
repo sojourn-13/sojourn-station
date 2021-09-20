@@ -63,6 +63,32 @@
 		new /obj/item/cell/medium(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/greasegun
+	name = "\improper Grease Gun Primary Kit"
+	desc = "The standard Blackshield equipment kit."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/greasegun(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/bs_kit/grizzly
+	name = "\improper Grizzly Primary Kit"
+	desc = "The standard Blackshield equipment kit."
+
+	populate_contents()
+		new /obj/item/gun/projectile/shotgun/pump(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/storage/pouch/ammo(src)
+
 // Side-arms Kits
 /obj/item/storage/box/bs_kit/stallion
 	name = "\improper Stallion Secondary Kit"

@@ -843,27 +843,31 @@
 	name = "\improper Blackshield Kit Vendor"
 	desc = "A vendor that can dispense specialized equipment kits for Blackshield Troopers."
 	icon_state = "trashvend"
-	products = list(
+	products = list( // 5 in stock for the default blackshield kit, 3 for the rest
 		/obj/item/storage/box/bs_kit/mosin = 5,
 		/obj/item/storage/box/bs_kit/sts = 3,
-		/obj/item/storage/box/bs_kit/cog = 5,
+		/obj/item/storage/box/bs_kit/cog = 3,
+		/obj/item/storage/box/bs_kit/greasegun = 3,
+		/obj/item/storage/box/bs_kit/grizzly = 3,
 		/obj/item/storage/box/bs_kit/stallion = 5,
 		/obj/item/storage/box/bs_kit/lamia = 3,
 		/obj/item/storage/box/bs_kit/martin = 5,
 		/obj/item/storage/box/bs_kit/standard_armor = 5,
 		/obj/item/storage/box/bs_kit/flak_armor = 3,
-		/obj/item/storage/box/bs_kit/laser_armor = 3,
+		/obj/item/storage/box/bs_kit/laser_armor = 3
 		)
-	prices = list(
+	prices = list( // 500$ for default Blackshield stuff, 750 for the rest
 		/obj/item/storage/box/bs_kit/mosin = 500,
 		/obj/item/storage/box/bs_kit/sts = 750,
-		/obj/item/storage/box/bs_kit/cog = 500,
+		/obj/item/storage/box/bs_kit/cog = 750,
+		/obj/item/storage/box/bs_kit/greasegun = 750,
+		/obj/item/storage/box/bs_kit/grizzly = 750,
 		/obj/item/storage/box/bs_kit/stallion = 500,
 		/obj/item/storage/box/bs_kit/lamia = 750,
 		/obj/item/storage/box/bs_kit/martin = 500,
 		/obj/item/storage/box/bs_kit/standard_armor = 500,
 		/obj/item/storage/box/bs_kit/flak_armor = 750,
-		/obj/item/storage/box/bs_kit/laser_armor = 750,
+		/obj/item/storage/box/bs_kit/laser_armor = 750
 		)
 	auto_price = FALSE
 
@@ -884,7 +888,9 @@
 	var/items = list(
 					/obj/item/storage/box/bs_kit/mosin = "Mosin",
 					/obj/item/storage/box/bs_kit/sts = "STS",
-					/obj/item/storage/box/bs_kit/cog = "Cog"
+					/obj/item/storage/box/bs_kit/cog = "Cog",
+					/obj/item/storage/box/bs_kit/greasegun = "Grease Gun",
+					/obj/item/storage/box/bs_kit/grizzly = "Grizzly"
 					)
 	var/selection = input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items
 	if(selection)
