@@ -84,5 +84,6 @@ TODO: Make sure the machine that makes this takes long enough to produce it, tha
 	if(do_mob(user, target, 50) && src && !used)
 		icon_state = "cimplanter0"
 		used = TRUE
-		target.unnatural_mutations = new /datum/genetics/genetics_holder()
+		to_chat(target, SPAN_NOTICE("You feel your body begin to stabilize, and your anomalous mutations leave you."))
+		target.unnatural_mutations.remove_all_mutations()
 
