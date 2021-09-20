@@ -12,7 +12,7 @@ This is a bugtesting item, please forgive the memes.
 	var/datum/genetics/genetics_holder/held_mutations
 
 /obj/item/device/scanner/belvoix_scanner/is_valid_scan_target(atom/target)
-	if(!istype(target, /mob/living))
+	if(!istype(target, /mob/living) || !istype(target, /obj/item/reagent_containers/food/snacks/meat))
 		to_chat(usr, SPAN_WARNING("A red dot blips, the scan target [target] is invalid."))
 		return FALSE
 	return TRUE
@@ -29,8 +29,17 @@ This is a bugtesting item, please forgive the memes.
 		user.show_message(scan_data)
 	else if(user.a_intent == I_HURT)
 		to_chat(user, SPAN_NOTICE("\The [src] injects a sample into \the [target]"))
-		inject_mutations(target, held_mutations.mutation_pool)
+		held_mutations.inject_mutations(target)
 
+/obj/item/device/scanner/belvoix_scanner/scan(obj/item/reagent_containers/food/snacks/meat/target, mob/user)
+	if(user.a_intent == I_HELP)
+		if(target != src)
+			to_chat(user, SPAN_NOTICE("\The [src] takes a sample out of \the [target]"))
+		held_mutations = new /datum/genetics/genetics_holder()
+		held_mutations.initializeFromMeat(target)
+		scan_title = "Belvoix Scanner - [target]"
+		scan_data = belvoix_scan(held_mutations)
+		user.show_message(scan_data)
 
 /proc/belvoix_scan(var/datum/genetics/genetics_holder/held_mutations)
 	if(held_mutations.mutation_pool.len == 0)
@@ -86,7 +95,7 @@ TODO: Make sure the machine that makes this takes long enough to produce it, tha
 		icon_state = "cimplanter0"
 		used = TRUE
 		to_chat(target, SPAN_NOTICE("You feel your body begin to stabilize, and your anomalous mutations leave you."))
-		target.unnatural_mutations.remove_all_mutations()
+		target.unnatural_mutations.removeAllMutations()
 
 /*
 =================Mutagenic Sample Plate=================
@@ -102,30 +111,18 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_GLASS = 2)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
-	var/list/mutations/mutation_pool
+	var/datum/genetics/genetics_holder/genetics_holder
 	
-/obj/item/genetics/sample/New(var/list/mutation_list)
-	for (var/datum/genetics/mutation/source_mutation in mutation_list)
-		var/datum/genetics/mutation/new_mutation = source_mutation.copy()
+/obj/item/genetics/sample/New(var/datum/genetics/genetics_holder/incoming_holder)
 	name = "Mutagenic Sample Plate"
 	icon_state = "slideblood"
+	genetics_holder = incoming_holder.Copy()
 
 /*
 =================Genetics Circuits=================
 Circuit boards for different Genetics Machines.
 */
-
-/obj/item/circuitboard/autolathe
-	build_name = "Cloaning Vat Board"
-	build_path = /obj/machinery/genetics/autolathe
-	board_type = "machine"
-	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2, TECH_BIO = 7)
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 3,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/console_screen = 1
-	)
-
+/*
 /obj/item/circuitboard/genetics_server
 	build_name = "Genetics Server"
 	build_path = /obj/machinery/computer/genetics_server
@@ -135,3 +132,4 @@ Circuit boards for different Genetics Machines.
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/scanning_module = 1
 	)
+*/

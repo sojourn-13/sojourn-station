@@ -34,27 +34,45 @@
 /datum/genetics/genetics_holder/virtual
 	track_instability = FALSE
 
-//Build a holder based on a mob source
-/datum/genetics/genetics_holder/New()
+//Build a holder from scratch
+/datum/genetics/genetics_holder/New(mob/living/holding_mob)
+	if(holding_mob)
+		holder = holding_mob
 	..()
+
+
+
+//Copy a genetics holder wholesale for reuse.
+/datum/genetics/genetics_holder/proc/Copy(var/copy_holder = FALSE)
+	var/datum/genetics/genetics_holder/duplicate = new type(src)
+	if(copy_holder)
+		duplicate.holder = holder
+	duplicate.max_instability = max_instability
+	duplicate.max_copies = max_copies
+	duplicate.track_instability = track_instability
+	duplicate.initialized = FALSE
+	for (var/datum/genetics/mutation/old_mutation in mutation_pool)
+		var/datum/genetics/mutation/new_mutation = old_mutation.copy()
+		duplicate.addMutation(new_mutation)
+	return duplicate
 
 //Initialize a genetics holder based on an existing mob.
 /datum/genetics/genetics_holder/proc/initializeFromMob(var/mob/living/source)
 	//No robots allowed.
 	if(issilicon(source))
 		return
-	addInherentMutations(source.inherent_mutations, source)
+	addInherentMutations(source.inherent_mutations, source.type)
 	addUnnaturalMutations(source.unnatural_mutations.mutation_pool)
-	attemptAddCopyMobMutation(source)
+	attemptAddCopyMobMutation(source.type, source.name)
 
 //Initialize a genetics holder based on a slab of meat.
 /datum/genetics/genetics_holder/proc/initializeFromMeat(var/obj/item/reagent_containers/food/snacks/meat/gene_meat)
-	addInherentMutations(gene_meat.inherent_mutations, gene_meat.source)
+	addInherentMutations(gene_meat.inherent_mutations, gene_meat.source_mob)
 	addUnnaturalMutations(gene_meat.unnatural_mutations)
-	attemptAddCopyMobMutation(source)
+	attemptAddCopyMobMutation(gene_meat.source_mob, gene_meat.source_name)
 
 //Add inherent mutations based on a source mob
-/datum/genetics/genetics_holder/proc/addInherentMutations(var/list/inherent_mutations, var/mob/living/source)
+/datum/genetics/genetics_holder/proc/addInherentMutations(var/list/inherent_mutations, var/source)
 	if(inherent_mutations && inherent_mutations.len > 0)
 		log_debug("inherent mutations:")
 		for(var/source_mutation in inherent_mutations)
@@ -64,26 +82,23 @@
 			var/datum/genetics/mutation/new_mutation = new incoming_mutation()
 			new_mutation.source_mob = source
 			new_mutation.implanted = FALSE
-			new_mutation.active = pick(list(TRUE, FALSE))
-			addMutation(source_mutation)
+			addMutation(new_mutation)
 
 //Add unnatural mutations already generated
 /datum/genetics/genetics_holder/proc/addUnnaturalMutations(var/list/unnatural_mutations)
 	//Add unnaturally implanted mutations as fully realized objects.
 	if(unnatural_mutations && unnatural_mutations.len > 0)
 		log_debug("unnatural mutations:")
-		for(var/source_mutation in unnatural_mutations)
-			log_debug("-> [source_mutation]")
-
 		for(var/datum/genetics/mutation/source_mutation in unnatural_mutations)
+			log_debug("-> [source_mutation]")
 			var/datum/genetics/mutation/new_mutation = source_mutation.copy()
 			new_mutation.implanted = FALSE
 			addMutation(new_mutation)
 
 //Generate a Copy Mob mutation if one hasn't been created yet.
 //Also, Check to make sure there are no duplicates. Copy_mob is robust enough to not treat clone mutations of other mobs as a duplicate.
-/datum/genetics/genetics_holder/proc/attemptAddCopyMobMutation(var/mob/living/source)
-	if(source && !getMutation("MUTATION_COPY_[source.type]"))
+/datum/genetics/genetics_holder/proc/attemptAddCopyMobMutation(var/source)
+	if(source && !getMutation("MUTATION_COPY_[source]"))
 		var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source)
 		new_mutation.container = src
 		new_mutation.implanted = FALSE
@@ -93,6 +108,17 @@
 		mutation_pool += new_mutation
 		return TRUE
 	return FALSE
+
+//Turn on/off the implanted key for all implants.
+/datum/genetics/genetics_holder/proc/toggleAllImplanted(var/state = FALSE)
+	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
+		selected_mutation.implanted = state
+
+//Randomly toggle random mutations in a holder as active; helps obfuscate unidentified mutations.
+/datum/genetics/genetics_holder/proc/randomizeActivations()
+	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
+		selected_mutation.active = pick(TRUE, FALSE)
+
 
 /datum/genetics/genetics_holder/Destroy()
 	total_instability = 0
@@ -154,9 +180,10 @@
 		if(track_instability)
 			total_instability += (incoming_mutation.instability * incoming_mutation.count)
 	return reason
-//Activate an implant in a mutagen
-/proc/inject_mutations(var/mob/living/target, var/list/injection=list())
 
+//Inject a mutagen into a living person.
+//MAKE SURE HOLDER IS SET FIRST.
+/datum/genetics/genetics_holder/proc/inject_mutations(var/mob/living/target)
 	log_debug("--------------")
 	log_debug("beginning implant.")
 	log_debug("target person:")
@@ -166,31 +193,21 @@
 	if(issilicon(target))
 		return FALSE
 
-	//Initialize this if we haven't already
-	target.unnatural_mutations.holder = target
-
 	//Add the mutations in a separate loop from the activation step.
-	for(var/datum/genetics/mutation/injected_mutation in injection)
+	for(var/datum/genetics/mutation/injected_mutation in mutation_pool)
 		var/datum/genetics/mutation/new_mutation = injected_mutation.copy()
-		if(new_mutation.active) //Only active genes contribute to instability.
-			target.unnatural_mutations.total_instability += injected_mutation.instability
-			if(target.unnatural_mutations.total_instability > target.unnatural_mutations.max_instability)
-				new_mutation.active = FALSE
 		new_mutation.implanted = FALSE //Sanity checking for activation loop.
-		new_mutation.container = target.unnatural_mutations
-		target.unnatural_mutations.mutation_pool += new_mutation
-
+		target.unnatural_mutations.addMutation(new_mutation)
+		
 	//Process individual mutations, set them to implanted, and apply their effects to the target.
 	for(var/datum/genetics/mutation/unnatural_mutation in target.unnatural_mutations.mutation_pool)
 		if(unnatural_mutation.implanted) //Skip mutations already marked as implanted.
 			log_debug("Skipping Mutation, already implanted.")
 			continue
 		unnatural_mutation.implanted = TRUE
-
 		if(!unnatural_mutation.active) //Skip mutations not activated
 			log_debug("Skipping Mutation, inactive.")
 			continue
-
 		if(istype(target, /mob/living/carbon/human))
 			log_debug("Ran On Player proc for: [unnatural_mutation]")
 			unnatural_mutation.onPlayerImplant()
@@ -201,7 +218,7 @@
 	target.unnatural_mutations.initialized = TRUE
 
 	//The part where bad things happen.
-	if(track_instability && (target.unnatural_mutations.total_instability > target.unnatural_mutations.max_instability))
+	if(target.unnatural_mutations.track_instability && (target.unnatural_mutations.total_instability > target.unnatural_mutations.max_instability))
 		target.unnatural_mutations.destabilize()
 
 	return TRUE
@@ -225,7 +242,9 @@
 	var/datum/genetics/genetics_holder/container
 
 	//Reference to the mob the mutation came from.
-	var/mob/living/source_mob
+	var/source_mob
+
+	var/source_name = "Edwardo the placeholder Clone"
 
 	//Name of the Mutation
 	var/name = "Mutation Placeholder"

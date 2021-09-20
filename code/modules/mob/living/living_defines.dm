@@ -72,7 +72,7 @@
 	var/list/inherent_mutations = list()
 
 	//Mutations populated through horrendous genetic tampering.
-	var/datum/genetics/genetics_holder/unnatural_mutations = new()
+	var/datum/genetics/genetics_holder/unnatural_mutations
 
 	//Used in living/recoil.dm
 	var/recoil = 0 //What our current recoil level is

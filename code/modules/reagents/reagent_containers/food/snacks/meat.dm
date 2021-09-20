@@ -9,8 +9,9 @@
 	matter = list(MATERIAL_BIOMATTER = 10)
 	preloaded_reagents = list("protein" = 9)
 	var/inherent_mutations = list() //Holder for genetics, created for the meat on spawn.
-	var/unnatural_mutations = list() //GMO in your MEAT
-	var/mob/living/source_mob
+	var/datum/genetics/genetics_holder/unnatural_mutations = list() //GMO in your MEAT
+	var/source_mob
+	var/source_name
 
 /obj/item/reagent_containers/food/snacks/meat/attackby(obj/item/I, mob/user)
 	if(QUALITY_CUTTING in I.tool_qualities)

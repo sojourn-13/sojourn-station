@@ -583,9 +583,10 @@
 				log_debug("DETECTED MEAT OF [src] IS REAL MEAT, PROCESSING.")
 				var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new meat_type(get_turf(src))
 				butchered_meat.name = "[src.name] [butchered_meat.name]"
-				butchered_meat.inherent_mutations = src.inherent_mutations
-				butchered_meat.unnatural_mutations = src.unnatural_mutations.mutation_pool
-				butchered_meat.source_mob = src
+				butchered_meat.inherent_mutations = src.inherent_mutations.Copy()
+				butchered_meat.unnatural_mutations = src.unnatural_mutations.Copy()
+				butchered_meat.source_mob = src.type
+				butchered_meat.source_name = src.name
 			else
 				var/obj/item/non_meat = new meat_type(get_turf(src))
 				non_meat.name = "[src.name] [non_meat.name]"
