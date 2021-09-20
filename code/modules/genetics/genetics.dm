@@ -10,8 +10,16 @@
 *
 * If no mutations in a mob has the onClone value, it will be automatically generated, so genetics can be used to clone just about anything.
 *
-* Example:
-* mutations_inactive= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
+* Duplicates of a mutation aren't stored as separate objects. 
+* Instead, they are combined into one mutation object with a higher "count" to save space, sanity, and so on.
+*
+* The genetics holder is the object to interact with outside of mutations. If you're calling things inside it without a proc,
+* and you aren't coding a mutation, you are likely doing something WRONG.
+*
+* ".Copy() just works"
+*
+* Example of an inherant_mutations list:
+* inherant_mutations= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
 **/
 
 /datum/genetics/genetics_holder
