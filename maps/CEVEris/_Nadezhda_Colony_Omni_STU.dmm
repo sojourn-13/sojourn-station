@@ -29801,6 +29801,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/item/device/defib_kit,
+/obj/item/cell,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/triage_blackshield)
 "hzu" = (
@@ -60067,9 +60069,8 @@
 /obj/item/cell/small/moebius{
 	pixel_y = 8
 	},
-/obj/item/device/defib_kit,
-/obj/item/cell/large/high,
 /obj/structure/table/glass,
+/obj/item/device/defib_kit/compact/combat/adv/loaded,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "pdx" = (
@@ -93583,7 +93584,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance/undergroundfloor1north)
+/area/nadezhda/quartermaster/miningdock)
 "xhg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
