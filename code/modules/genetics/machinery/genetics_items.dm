@@ -50,6 +50,25 @@ This is a bugtesting item, please forgive the memes.
 			dat += "[mutagen.name]([mutagen.active == TRUE ? "Active" : "Inactive"]): [mutagen.desc]"
 		return jointext(dat, "<br>")
 
+/obj/item/device/scanner/belvoix_scanner/proc/scramble()
+	set category = "Object"
+	set name = "Scramble Activated Genes"
+	set src in view(1)
+
+	if(isghost(usr))
+		to_chat(usr, "You ghost!")
+		return
+
+	if(!Adjacent(usr))
+		return
+
+	usr.visible_message(SPAN_NOTICE("[usr] scrambled the dna in the [src]!"),SPAN_NOTICE("You scrambled the dna in the [src]!"))
+	
+	held_mutations.randomizeActivations()
+
+	scan_data = belvoix_scan(held_mutations)
+	usr.show_message(scan_data)
+
 /*
 =================Mutagenic Purger=================
 Implant that clears ALL mutations from people when injected. 
@@ -96,6 +115,8 @@ TODO: Make sure the machine that makes this takes long enough to produce it, tha
 		used = TRUE
 		to_chat(target, SPAN_NOTICE("You feel your body begin to stabilize, and your anomalous mutations leave you."))
 		target.unnatural_mutations.removeAllMutations()
+
+
 
 /*
 =================Mutagenic Sample Plate=================

@@ -97,15 +97,11 @@
 
 //Generate a Copy Mob mutation if one hasn't been created yet.
 //Also, Check to make sure there are no duplicates. Copy_mob is robust enough to not treat clone mutations of other mobs as a duplicate.
-/datum/genetics/genetics_holder/proc/attemptAddCopyMobMutation(var/source)
-	if(source && !getMutation("MUTATION_COPY_[source]"))
-		var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source)
-		new_mutation.container = src
-		new_mutation.implanted = FALSE
+/datum/genetics/genetics_holder/proc/attemptAddCopyMobMutation(var/source_type, var/source_name)
+	if(!getMutation("MUTATION_COPY_[source_type]"))
+		var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source_type, source_name)
 		new_mutation.active = TRUE
-		if(track_instability)
-			total_instability += new_mutation.instability
-		mutation_pool += new_mutation
+		addMutation(new_mutation)
 		return TRUE
 	return FALSE
 
@@ -117,8 +113,10 @@
 //Randomly toggle random mutations in a holder as active; helps obfuscate unidentified mutations.
 /datum/genetics/genetics_holder/proc/randomizeActivations()
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
-		selected_mutation.active = pick(TRUE, FALSE)
-
+		if (prob(50))
+			selected_mutation.activate(TRUE)
+		else
+			selected_mutation.deactivate()
 
 /datum/genetics/genetics_holder/Destroy()
 	total_instability = 0
@@ -142,13 +140,16 @@
 			return source_mutation
 	return null
 
-/datum/genetics/genetics_holder/proc/removeMutation(var/key)
+/datum/genetics/genetics_holder/proc/removeMutation(var/key , var/amt_to_remove = 1)
 	var/datum/genetics/mutation/mutation_to_remove = getMutation(key)
 	if(mutation_to_remove)
-		total_instability -= mutation_to_remove.instability
-		mutation_pool -= mutation_to_remove
-		mutation_to_remove.onPlayerRemove(src)
-		mutation_to_remove.onMobRemove(src)
+		total_instability -= (mutation_to_remove.instability * amt_to_remove)
+		mutation_to_remove.count -= amt_to_remove
+		if(mutation_to_remove.count <= 0)
+			mutation_pool -= mutation_to_remove
+		if(holder)
+			mutation_to_remove.onPlayerRemove(src)
+			mutation_to_remove.onMobRemove(src)
 
 /datum/genetics/genetics_holder/proc/removeAllMutations()
 	total_instability = 0
@@ -163,23 +164,30 @@
 //Proc for easily adding mutations to a genetics holder, so it can be called quickly.
 /datum/genetics/genetics_holder/proc/addMutation(var/datum/genetics/mutation/incoming_mutation)
 	var/datum/genetics/mutation/existing_mutation = getMutation(incoming_mutation)
-	var/reason = ""
+	var/add_mutation = TRUE
 	if(existing_mutation)
 		if((max_copies != 0) && ((existing_mutation.count + incoming_mutation.count) > max_copies))
-			reason = "MAX COPIES HAS BEEN REACHED"
+			add_mutation = FALSE
 
 	//actually process adding the object
-	if(!reason)
+	if(add_mutation)
 		if(existing_mutation)
 			existing_mutation.count += incoming_mutation.count
 		else
+			//Ensure exclusive mutations come in as inactive if another of the same type already exists and is active.
+			if(incoming_mutation.exclusive_type)
+				for (var/datum/genetics/mutation/exclusive_mutation in mutation_pool)
+					if(incoming_mutation.exclusive_type == exclusive_mutation.exclusive_type && exclusive_mutation.active)
+						incoming_mutation.active = FALSE
+						break
+
 			incoming_mutation.container = src
 			mutation_pool += incoming_mutation
 			sortMutation(mutation_pool)
 
 		if(track_instability)
 			total_instability += (incoming_mutation.instability * incoming_mutation.count)
-	return reason
+	return add_mutation
 
 //Inject a mutagen into a living person.
 //MAKE SURE HOLDER IS SET FIRST.
@@ -241,9 +249,10 @@
 	//Reference to the containing genetics_holder
 	var/datum/genetics/genetics_holder/container
 
-	//Reference to the mob the mutation came from.
+	//Type of the mob the mutation came from.
 	var/source_mob
 
+	//The name of the mob the mutation came from.
 	var/source_name = "Edwardo the placeholder Clone"
 
 	//Name of the Mutation
@@ -254,6 +263,9 @@
 	//The key of the object, used to search for it easily. Often matches the Macro text.
 	var/key = "DEFAULT"
 
+	//the exclusive type of the mutation, prevents other mutations in the holder from being active (e.g. there can only be on SKIN mutation.)
+	var/exclusive_type = MUT_TYPE_NONE
+	
 	//The amount of copies of this mutation loaded into a given genetics holder.
 	var/count = 1
 
@@ -308,6 +320,31 @@
 	var/active_stage = 0 //What stage of development the descriptor becomes active.
 	var/desc = "This embryo is looking pretty default."
 	var/hide_development = 0 //When to hide the descriptor. If 0, the description will remain active for the whole of the development process.
+
+//Activate a mutation. Deactivates other exclusive mutations if 'force activation' is set to TRUE.
+/datum/genetics/mutation/proc/activate(var/force_activation = FALSE)
+	if (exclusive_type && force_activation)
+		for (var/datum/genetics/mutation/container_mutation in container.mutation_pool)
+			if(container_mutation == src)
+				continue
+			if(exclusive_type == container_mutation.exclusive_type)
+				container_mutation.deactivate()
+		active = TRUE
+	else if (exclusive_type)
+		var/found_other_exclusive_mutation = FALSE
+		for (var/datum/genetics/mutation/container_mutation in container.mutation_pool)
+			if(container_mutation == src)
+				continue
+			if(exclusive_type == container_mutation.exclusive_type)
+				found_other_exclusive_mutation = TRUE
+		if(!found_other_exclusive_mutation)
+			active = TRUE
+	else if (!exclusive_type)
+		active = TRUE
+	return
+
+/datum/genetics/mutation/proc/deactivate()
+	active = FALSE
 
 //What happens when the mob is spawned in the cloner.
 /datum/genetics/mutation/proc/onClone()

@@ -3,6 +3,7 @@
 	name = "Cow Skin"
 	key = "MUTATION_COW_SKIN"
 	desc = "Causes the skin to become a little more leathery- the uncured sort."
+	exclusive_type = MUT_TYPE_SKIN
 	embryo_descriptions = list(/datum/genetics/embryo_state/cow_skin)
 	gain_text = "Your skin feels a little thicker than usual. Wait, are those... Cow splotches?"
 
