@@ -56570,6 +56570,14 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/section3)
+"ogY" = (
+/obj/machinery/power/wall_obelisk{
+	pixel_x = -32
+	},
+/turf/simulated/floor/carpet,
+/area/nadezhda/crew_quarters/dorm3{
+	name = "Dormitory 3"
+	})
 "ogZ" = (
 /obj/structure/closet/secure_closet/personal/hydroponics{
 	name = "gardener's locker";
@@ -65976,6 +65984,14 @@
 /obj/random/material_ore/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"qyV" = (
+/obj/machinery/power/wall_obelisk{
+	pixel_x = -32
+	},
+/turf/simulated/floor/carpet,
+/area/nadezhda/crew_quarters/dorm2{
+	name = "Dormitory 2"
+	})
 "qyX" = (
 /obj/structure/flora/small/trailrocka1,
 /turf/simulated/floor/plating/under,
@@ -66738,6 +66754,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation{
 	name = "Residential District Substation"
@@ -69485,6 +69505,14 @@
 /obj/machinery/light,
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
+"rqk" = (
+/obj/machinery/power/wall_obelisk{
+	pixel_x = 32
+	},
+/turf/simulated/floor/carpet,
+/area/nadezhda/crew_quarters/dorm1{
+	name = "Dormitory 1"
+	})
 "rql" = (
 /obj/item/spider_shadow_trap{
 	pixel_x = -26;
@@ -82162,6 +82190,12 @@
 "uAo" = (
 /turf/simulated/wall,
 /area/nadezhda/hallway/main/stairwell)
+"uAF" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/nadezhda/pros/proelav)
 "uAG" = (
 /obj/structure/sign/departmentold/mining,
 /turf/simulated/wall/r_wall,
@@ -86569,11 +86603,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/medical/virology)
 "vxK" = (
-/obj/item/modular_computer/console/preset/research{
-	dir = 8
+/obj/machinery/power/wall_obelisk{
+	pixel_x = 32
 	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/rnd/research)
+/turf/simulated/floor/carpet,
+/area/nadezhda/crew_quarters/dorm4{
+	name = "Dormitory 4"
+	})
 "vxM" = (
 /obj/item/stool/custom/bar_special,
 /obj/landmark/join/start/assistant,
@@ -121571,7 +121607,7 @@ cqL
 cqL
 tsU
 bBR
-vxK
+oqO
 ryn
 cfb
 uDW
@@ -152847,7 +152883,7 @@ sFI
 tzg
 tzg
 dRW
-fsk
+vxK
 kGt
 tJK
 gbf
@@ -152864,7 +152900,7 @@ bKS
 vXP
 awx
 wEd
-xjl
+rqk
 sbd
 sff
 sff
@@ -155473,7 +155509,7 @@ sFI
 wDK
 wDK
 jsf
-fqM
+ogY
 kUk
 qwI
 gRj
@@ -155490,7 +155526,7 @@ gRX
 kZm
 mtx
 kCR
-lvi
+qyV
 pVm
 fbv
 fbv
@@ -191842,7 +191878,7 @@ veZ
 veZ
 sUr
 cMY
-nPk
+uAF
 nPk
 cMY
 dbA
