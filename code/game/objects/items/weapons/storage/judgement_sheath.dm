@@ -4,7 +4,7 @@
 	icon = 'icons/obj/sheath.dmi'
 	desc = "A dark blue leather sheathe designed to fit a curved sword. The base and head are patterned with gold and you can see a strange cyan crystal at the mouth."
 	can_hold = list(
-		/obj/item/tool/sword/saber
+		/obj/item/tool/sword/saber,
 		/obj/item/tool/sword/katana
 	)
 
