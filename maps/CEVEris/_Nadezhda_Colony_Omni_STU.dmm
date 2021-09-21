@@ -57396,6 +57396,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"onR" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 4;
+	icon_state = "spline_fancy"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = -22
+	},
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/crew_quarters/library)
 "ooa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -157926,7 +157939,7 @@ nbW
 tRr
 xlj
 tRr
-xlj
+onR
 ekV
 jzw
 fbO
