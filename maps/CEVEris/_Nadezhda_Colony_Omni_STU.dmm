@@ -5133,6 +5133,14 @@
 /obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/side/f2section1)
+"bre" = (
+/obj/machinery/door/airlock/vault{
+	name = "Lonestar Vault";
+	req_access = list(41)
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/security/nuke_storage)
 "brm" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb3,
@@ -13055,6 +13063,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/camera/network/command{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/security/nuke_storage)
 "drr" = (
@@ -29935,11 +29946,11 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/main/stairwell)
 "hBp" = (
-/obj/machinery/camera/network/command,
-/obj/machinery/holoposter{
-	pixel_y = 32
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/diamond,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/security/nuke_storage)
 "hBH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -39443,8 +39454,9 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "jTU" = (
-/turf/simulated/mineral,
-/area/nadezhda/quartermaster/hangarsupply)
+/obj/item/modular_computer/console/preset/trade,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/nuke_storage)
 "jTV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/light/small{
@@ -59829,6 +59841,9 @@
 /obj/machinery/suit_storage_unit/security,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical)
+"oZv" = (
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/nuke_storage)
 "oZz" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/tree/jungle/variant5,
@@ -69195,6 +69210,13 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"rmH" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/device/camera,
+/obj/item/pen/multi,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/nuke_storage)
 "rmM" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -69540,6 +69562,10 @@
 /obj/structure/filingcabinet/filingcabinet,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"rqu" = (
+/obj/item/device/assembly/prox_sensor,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/nuke_storage)
 "rqw" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -89035,6 +89061,12 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"wbW" = (
+/obj/machinery/camera/motion/security{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/nuke_storage)
 "wbX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -116710,10 +116742,10 @@ tyV
 gLP
 gLP
 koE
+mIx
+mIx
 jTU
-jTU
-jTU
-jTU
+oZv
 mIx
 blA
 ooq
@@ -116912,12 +116944,12 @@ sCN
 gLP
 gLP
 koE
-jTU
-jTU
-jTU
-jTU
+mIx
 mIx
 hBp
+rqu
+bre
+ndF
 lSh
 hHv
 ndF
@@ -117114,10 +117146,10 @@ eNE
 gLP
 gLP
 koE
-jTU
-jTU
-jTU
-jTU
+mIx
+mIx
+rmH
+wbW
 mIx
 rdv
 nvT
