@@ -855,7 +855,7 @@
 		/obj/item/storage/box/bs_kit/martin = 5,
 		/obj/item/storage/box/bs_kit/standard_armor = 5,
 		/obj/item/storage/box/bs_kit/flak_armor = 3,
-		/obj/item/storage/box/bs_kit/flak_armor = 3,
+		/obj/item/storage/box/bs_kit/bullet_armor = 3,
 		/obj/item/storage/box/bs_kit/laser_armor = 3
 		)
 	prices = list( // 500$ for default Blackshield stuff, 750 for the rest
