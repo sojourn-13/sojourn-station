@@ -1,7 +1,7 @@
 // Sprites are a courtesy of ma9ici4n. https://ma9ici4n.itch.io/gems
 /obj/item/gem
 	name = "giant gem"
-	desc = "A giant gem. It is very pretty. And costly."
+	desc = "As pretty as it is expensive, a great way to flaunt your wealth."
 	icon = 'icons/obj/gems.dmi'
 	var/color_list = list("cyan", "purple", "green", "dark", "amber", "blue", "red")
 	var/gem_color
