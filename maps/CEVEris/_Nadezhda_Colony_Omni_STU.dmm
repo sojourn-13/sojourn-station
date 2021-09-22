@@ -10761,7 +10761,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/structure/table/rack/shelf,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -10770,6 +10769,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/table/rack/shelf,
 /turf/simulated/floor/wood,
 /area/nadezhda/security/tactical_blackshield)
 "cNe" = (
@@ -88122,11 +88122,11 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/robotics)
 "vQZ" = (
-/obj/structure/table/rack/shelf,
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
 	},
+/obj/machinery/vending/blackshield_kit,
 /turf/simulated/floor/wood,
 /area/nadezhda/security/tactical_blackshield)
 "vRd" = (
