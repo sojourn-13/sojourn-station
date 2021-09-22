@@ -1,9 +1,8 @@
 /obj/structure/diamond
-	name = "Fragment Of Amethyn"
-	desc = "A large gemstone made up of both diamond and anomalist materials alike, \
-	this prize of mining took 4 weeks to painstakingly chisel and grind out of what was thought to be impassable rock walls, \
-	holding many denser materials not yet found. Well it would normally go for a high price and is estimated to be work 4 million credits for even a chunk of it, \
-	no one on the Kriosan Confederacy or Syndicate markets have tried to even offer a price and Ryan can't seem to get it off his hands."
+	name = "Fragment of Amethyn"
+	desc = "A once in the galaxy formation of diamond and anomalous materials that took four weeks of painstaking chiseling to remove from its geode prison. \
+	This object is so valuable it is literally priceless, incapable of being sold on any market due to nobody have the money to buy it. So now Ryan keeps \
+	it in the Lonestar vault as an insurance policy."
 	icon = 'icons/obj/engine.dmi'
 	icon_state = "diamond"
 	anchored = 1
