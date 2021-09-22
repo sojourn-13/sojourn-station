@@ -202,7 +202,7 @@
 	name = "advanced defibrillator"
 	desc = "A belt-equipped SI branded defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
 	paddles = /obj/item/shockpaddles/linked/combat/advanced
-	item_state = "defibcompact_adv"
+	icon_state = "advdefibcompact"
 
 	oxygain = 40
 
