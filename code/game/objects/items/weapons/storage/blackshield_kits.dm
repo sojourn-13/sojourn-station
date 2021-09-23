@@ -61,7 +61,7 @@
 		new /obj/item/cell/medium(src)
 		new /obj/item/cell/medium(src)
 		new /obj/item/cell/medium(src)
-		new /obj/item/storage/pouch/ammo(src)
+		new /obj/item/storage/pouch/tubular(src)
 
 /obj/item/storage/box/bs_kit/greasegun
 	name = "\improper Grease Gun Primary Kit"
