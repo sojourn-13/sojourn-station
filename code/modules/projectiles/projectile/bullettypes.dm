@@ -426,7 +426,7 @@
 //smoothbore rifles
 /obj/item/projectile/bullet/ball
 	damage_types = list(BRUTE = 60) //Grab me musket as the founding fathers intended
-	armor_penetration = 0 //Golf-ball sized hole in the blokes chest, but not his plate carrier.
+	armor_penetration = 25 //Golf-ball sized hole in the blokes chest, but not his plate carrier.
 	agony = 60
 	penetrating = 2
 	hitscan = TRUE
