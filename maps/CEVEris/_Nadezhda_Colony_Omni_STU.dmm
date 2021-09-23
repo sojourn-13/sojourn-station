@@ -29813,7 +29813,7 @@
 	icon_state = "1-2"
 	},
 /obj/item/device/defib_kit,
-/obj/item/cell,
+/obj/item/cell/large,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/triage_blackshield)
 "hzu" = (
