@@ -111,4 +111,4 @@
 	glasses = /obj/item/clothing/glasses/ballistic
 	head = /obj/item/clothing/head/rank/trooper/cap
 	gloves = /obj/item/clothing/gloves/thick/swat
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 2, /obj/item/gun/energy/gun/martin = 1, /obj/item/tool/knife/boot/blackshield = 1)
+	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/storage/box/blackshield_voucher = 1, /obj/item/tool/knife/boot/blackshield = 1)

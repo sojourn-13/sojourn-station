@@ -14,6 +14,13 @@
 
 	var/show_above_suit = 0
 
+/obj/item/storage/belt/Initialize()
+	. = ..()
+	if (!item_state)
+		item_state = icon_state
+
+	update_icon()
+
 /obj/item/storage/belt/verb/toggle_layer()
 	set name = "Switch Belt Layer"
 	set category = "Object"

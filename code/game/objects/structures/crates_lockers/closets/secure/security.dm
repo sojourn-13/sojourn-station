@@ -119,6 +119,7 @@
 	new /obj/item/clothing/under/rank/warden(src)
 	new /obj/item/clothing/head/rank/warden/beret(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo(src)
+	new /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
 	new /obj/item/storage/belt/security(src)

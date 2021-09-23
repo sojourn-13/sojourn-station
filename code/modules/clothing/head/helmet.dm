@@ -321,6 +321,7 @@
 	item_flags = THICKMATERIAL
 	flags_inv = HIDEEARS|BLOCKHAIR
 	siemens_coefficient = 1
+	price_tag = 160
 	armor = list(
 		melee = 15,
 		bullet = 15,

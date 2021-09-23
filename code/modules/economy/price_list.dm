@@ -1137,6 +1137,11 @@
 /obj/item/robot_parts/robot_component/armour/exosuit/combat/price_tag = 1000
 
 /obj/item/mech_component/price_tag = 150
+
+/obj/item/mecha_parts/mecha_equipment/tool/safety_clamp/price_tag = 600
+
+/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/price_tag = 200
+
 /obj/item/mech_equipment/price_tag = 200
 
 /obj/item/gun/launcher/grenade/price_tag = 1500
@@ -1146,3 +1151,19 @@
 /obj/item/inflatable/price_tag = 40
 
 /obj/item/tool/knife/dagger/bluespace/price_tag = 400
+
+/obj/item/ammo_casing/antim/lethal/prespawned/price_tag = 500
+
+/obj/item/ammo_casing/antim/lethal/prespawned/get_item_cost(export)
+	. = ..()
+	. = amount * 100
+
+/obj/item/ammo_casing/antim/lethal/price_tag = 100
+
+/obj/item/storage/photo_album/price_tag = 30
+
+/obj/item/device/toner/price_tag = 10
+
+/obj/item/wrapping_paper/price_tag = 32
+
+/obj/item/packageWrap/price_tag = 45
