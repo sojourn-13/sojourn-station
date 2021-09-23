@@ -11,6 +11,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage_types = list(BURN = 20)
+	armor_penetration = 20 //Some AP
 	check_armour = ARMOR_ENERGY
 	var/frequency = 1
 	hitscan = 1
@@ -24,6 +25,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 /obj/item/projectile/beam/weak
 	damage_types = list(BURN = 16)
+	armor_penetration = 15 //Some AP
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 12)
@@ -52,7 +54,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 /obj/item/projectile/beam/weak/ap
 	damage_types = list(BURN = 15)
-	armor_penetration = 20
+	armor_penetration = 25
 
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 35) //Normal slugs deal 45

@@ -33,11 +33,11 @@
 
 	if(armor_over_penitration > 0 && damagetype == BRUTE) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += round(armor_over_penitration - src.getarmor(def_zone, "bullet") / 2) //We re-check are armor we over-pentrated, this counts both melee and bullets
+			effective_damage += max(0,round(armor_over_penitration - src.getarmor(def_zone, "bullet") / 2)) //We re-check are armor we over-pentrated, this counts both melee and bullets. We reduce are over AP as bullets tend to have a lot
 
 	if(armor_over_penitration > 0 && damagetype == BURN) //did we even over-penitrate?
 		if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //We only overpenitrate mobs.
-			effective_damage += round(armor_over_penitration - src.getarmor(def_zone, "energy")) //We re-check are armor we over-pentrated
+			effective_damage += max(0,round(armor_over_penitration - src.getarmor(def_zone, "energy") * 2)) //We re-check are armor we over-pentrated, and then deal 2x damage do to being a laser, thus weaker then most bullets and most mobs having less engery armor.
 
 
 	//Here we can remove edge or sharpness from the blow
