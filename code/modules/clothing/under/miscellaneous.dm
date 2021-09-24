@@ -75,6 +75,11 @@
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
 
+/obj/item/clothing/under/gharness
+	name = "gear harness"
+	desc = "A series of belts and straps to hold your equipment. Originally designed for simple drones and synths, this is hardly a modest option for organics."
+	icon_state = "gear_harness"
+
 /obj/item/clothing/under/monomial_belt
 	name = "monomial belt"
 	desc = "A simple black loin cloth with a dark gold trim favored by monomials for its monk-like aesthetic. For when you need to show off your muscles in the name of god."
