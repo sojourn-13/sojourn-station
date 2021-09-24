@@ -79,7 +79,7 @@
 	related_stats = list(STAT_COG)
 
 /datum/craft_recipe/cloth_stripe
-	name = "cloth"
+	name = "salvage cloth"
 	result = /obj/item/stack/material/cloth/random
 	icon_state = "clothing"
 	steps = list(
