@@ -39,6 +39,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_personal_cooldown(user)
 		return TRUE
 	else
@@ -81,6 +82,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_personal_cooldown(user)
 		return TRUE
 	else
@@ -143,6 +145,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			give_boost(participant)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_global_cooldown()
 		return TRUE
 	else
@@ -229,6 +232,7 @@
 	H.adjustBrainLoss(-5)
 	H.updatehealth()
 	set_personal_cooldown(H)
+	add_effect(H, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/monomial/perfect_self
@@ -259,6 +263,7 @@
 	to_chat(user, SPAN_NOTICE("You feel at peace with yourself, your body and mind going beyond its limits."))
 	set_personal_cooldown(user)
 	addtimer(CALLBACK(src, .proc/discard_effect, user), src.cooldown_time)
+	add_effect(user, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/monomial/perfect_self/proc/discard_effect(mob/living/carbon/human/user, amount)
@@ -304,6 +309,7 @@
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
 	set_personal_cooldown(user)
+	add_effect(user, FILTER_HOLY_GLOW, 25)
 
 /datum/ritual/cruciform/divisor/div_flash
 	name = "Ire"
@@ -334,6 +340,7 @@
 			else
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
 	set_personal_cooldown(user)
+	add_effect(user, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/factorial
@@ -370,6 +377,7 @@
 			fail("This type of cell cannot be charged.", user, C)
 			return
 		to_chat(user, "You start charging the [P.name].")
+		add_effect(user, FILTER_HOLY_GLOW, 25)
 		while(C.power >= charge_used) // Keep going until we run out of power
 			if(!istype(user.get_active_hand(), /obj/item/cell)) // Check if we're still holding a cell. Because rigged cell explode when charging.
 				break
@@ -408,6 +416,7 @@
 		if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
 			augmentic.rejuvenate() // Repair the organ
 	to_chat(user, "Your mechanical organs knit themselves back together.")
+	add_effect(user, FILTER_HOLY_GLOW, 25)
 
 // Mass-Repair
 /datum/ritual/cruciform/factorial/mass_repair
@@ -429,8 +438,9 @@
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
 	set_personal_cooldown(user)
-	for(var/mob/living/carbon/human/H in view(user)) // Affect everyone the user can see.
+	for(var/mob/living/carbon/human/H in oview(user)) // Affect everyone the user can see.
 		for(var/obj/item/organ/augmentic in H) // Run this loop for every organ the person has
 			if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
 				augmentic.rejuvenate() // Repair the organ
 				to_chat(H, "Your [augmentic.name] repair itself!")
+				add_effect(H, FILTER_HOLY_GLOW, 25)

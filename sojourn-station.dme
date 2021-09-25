@@ -83,6 +83,7 @@
 #include "code\__HELPERS\bluespace_entropy.dm"
 #include "code\__HELPERS\delays.dm"
 #include "code\__HELPERS\files.dm"
+#include "code\__HELPERS\filters_effects.dm"
 #include "code\__HELPERS\functional.dm"
 #include "code\__HELPERS\game.dm"
 #include "code\__HELPERS\global_lists.dm"

@@ -98,6 +98,7 @@
 	H.adjustBrainLoss(-5)
 	H.updatehealth()
 	set_personal_cooldown(H)
+	add_effect(user, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/priest/heal_other
@@ -151,6 +152,7 @@
 		H.adjustBrainLoss(-5)
 		H.updatehealth()
 		set_personal_cooldown(user)
+		add_effect(H, FILTER_HOLY_GLOW, 25)
 		return TRUE
 
 /datum/ritual/cruciform/priest/heal_heathen
@@ -183,6 +185,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_personal_cooldown(user)
 		return TRUE
 	else
@@ -286,6 +289,7 @@
 			user.vessel.remove_reagent("blood",blood_cost)
 	log_and_message_admins("successfully baptized [CI.wearer]")
 	to_chat(CI.wearer, "<span class='info'>Your cruciform vibrates and warms up.</span>")
+	add_effect(CI.wearer, FILTER_HOLY_GLOW, 25)
 
 	CI.activate()
 
@@ -417,6 +421,7 @@
 		M.custom_pain("You feel the nails of the cruciform drive into your ribs!",1)
 		M.update_implants()
 		M.updatehealth()
+		add_effect(M, FILTER_HOLY_GLOW, 25)
 
 	return TRUE
 
@@ -568,7 +573,7 @@
 /datum/ritual/cruciform/priest/short_boost
 	name = "Short boost ritual"
 	phrase = null
-	desc = "This litany boosts the stats of everyone who's hear you on the short time. "
+	desc = "This litany boosts the stats of everyone who is near you on the short time. "
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	effect_time = 10 MINUTES
@@ -600,6 +605,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			give_boost(participant)
+			add_effect(user, FILTER_HOLY_GLOW, 25)
 		set_global_cooldown()
 		return TRUE
 	else
@@ -660,6 +666,7 @@
 
 	if(altar)
 		new /obj/item/paper/neopaper(altar.loc, disciples.Join("\n"), "Church Record")
+		add_effect(user, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/priest/new_cruciform
@@ -813,6 +820,7 @@
 		for(var/datum/seed/S in plants_around)
 			give_boost(S)
 		set_global_cooldown()
+		add_effect(user, FILTER_HOLY_GLOW, 25)
 		return TRUE
 	else
 		fail("There is no plant around to hear your song.", user, C)
@@ -852,6 +860,7 @@
 	to_chat(user, SPAN_NOTICE("You ease the pain of [T.name]."))
 
 	T.reagents.add_reagent("anodyne", 10)
+	add_effect(T, FILTER_HOLY_GLOW, 25)
 
 	return TRUE
 
@@ -884,6 +893,7 @@
 	R.add_reagent("holyinaprovaline", 10)
 	R.add_reagent("holydexalinp", 10)
 	R.trans_to_mob(T, 20, CHEM_BLOOD)
+	add_effect(T, FILTER_HOLY_GLOW, 25)
 
 	return TRUE
 
@@ -924,6 +934,7 @@
 	to_chat(user, SPAN_NOTICE("You help [T.name] get rid of their addictions."))
 
 	T.reagents.add_reagent("laudanum", 10)
+	add_effect(T, FILTER_HOLY_GLOW, 25)
 
 	return TRUE
 
