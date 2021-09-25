@@ -98,7 +98,7 @@
 	H.adjustBrainLoss(-5)
 	H.updatehealth()
 	set_personal_cooldown(H)
-	add_effect(user, FILTER_HOLY_GLOW, 25)
+	add_effect(H, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/priest/heal_other

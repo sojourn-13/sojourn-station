@@ -16,12 +16,12 @@
 		user.filters += effect
 		if(duration)
 			spawn(duration)
-				remove_effect(user, filter_fx, fade_delay)
+				remove_effect(user, effect)
 		return TRUE
 	return FALSE
 
 /proc/remove_effect(var/mob/user, var/dm_filter/effect)
 	if(user && effect)
-		user.filters -= filter_fx
+		user.filters -= effect
 		return TRUE
 	return FALSE
