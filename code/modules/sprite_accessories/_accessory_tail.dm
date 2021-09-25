@@ -192,17 +192,10 @@
 	desc = ""
 	icon_state = "kitsune_miria"
 
-/datum/sprite_accessory/tail/kitsune_rosey
-	name = "Kitsune Tails, Rosey"
-	desc = ""
-	icon_state = "kitsune_tri"
-
 /datum/sprite_accessory/tail/kitsune_tritail
 	name = "Kitsune Tails, Tritail"
 	desc = ""
-	icon_state = "triplekitsune"
-	colored_layers = 1
-	blend = ICON_MULTIPLY
+	icon_state = "kitsune_tri"
 
 /datum/sprite_accessory/tail/kitsune_tamamo
 	name = "Kitsune Tails, Pentatail"
@@ -210,7 +203,6 @@
 	icon_state = "kitsune_pent"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
-
 
 /datum/sprite_accessory/tail/kitty
 	name = "Kitty Tail, Downwards"
@@ -252,7 +244,6 @@
 	desc = ""
 	icon_state = "monkey"
 	colored_layers = 1
-	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/otietail
 	name = "Otie Tail"

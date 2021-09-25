@@ -66,12 +66,6 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
 
-/datum/gear/xenowear/kriosansuit
-	display_name = "gear harness"
-	path = /obj/item/clothing/under/gharness
-	slot = slot_w_uniform
-	sort_category = "Xenowear"
-
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"
 	path = /obj/item/clothing/shoes/footwraps
