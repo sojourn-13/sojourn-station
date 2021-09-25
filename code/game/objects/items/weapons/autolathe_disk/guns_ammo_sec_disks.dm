@@ -15,9 +15,10 @@
 		/datum/design/autolathe/tool/tacknife,
 		/datum/design/autolathe/tool/combat_shovel,
 		/datum/design/autolathe/sec/beartrap,
-		/datum/design/autolathe/device/landmine = 2, //can make 10 warcrimes
+		//datum/design/autolathe/device/landmine = 2, //can make 10 warcrimes //why did you put this here this was an awful idea.
 		/datum/design/autolathe/sec/silencer,
 		/datum/design/autolathe/sec/gun_case,
+		/obj/item/storage/secure/briefcase,
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/sec/hailer,
 		/datum/design/research/item/medical/autopsy_scanner,
