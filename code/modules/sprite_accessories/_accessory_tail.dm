@@ -201,8 +201,9 @@
 	name = "Kitsune Tails, Tritail"
 	desc = ""
 	icon_state = "triplekitsune"
-	colored_layers = 1
+	colored_layers = 2
 	blend = ICON_MULTIPLY
+	extra_overlay = "triplekitsune_tips"
 
 /datum/sprite_accessory/tail/kitsune_tamamo
 	name = "Kitsune Tails, Pentatail"
