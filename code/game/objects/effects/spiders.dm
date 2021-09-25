@@ -257,7 +257,7 @@
 					break
 
 		if(amount_grown >= 100)
-			var/spawn_type = /obj/random/mob/spiders
+			var/spawn_type = /obj/random/mob/spiders/spider_ling //This one cant spawn spiderlings
 			new spawn_type(src.loc, src)
 			qdel(src)
 	else if(isorgan(loc))
