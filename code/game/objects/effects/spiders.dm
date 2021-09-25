@@ -155,6 +155,7 @@
 	var/amount_grown = -1
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent
 	var/travelling_in_vent = 0
+	var/spawn_type = /obj/random/mob/spiders
 
 /obj/effect/spider/spiderling/New(var/location, var/atom/parent)
 	pixel_x = rand(6,-6)
@@ -257,8 +258,7 @@
 					break
 
 		if(amount_grown >= 100)
-			var/spawn_type = /obj/random/mob/spiders
-			new spawn_type(src.loc, src)
+			new spawn_type(src.loc, src) //This spawns the random mob spawner that the spiderling grows into
 			qdel(src)
 	else if(isorgan(loc))
 		if(!amount_grown) amount_grown = 1
@@ -312,3 +312,4 @@
 
 /obj/effect/spider/spiderling/near_grown
 	amount_grown = 80
+	spawn_type = /obj/random/mob/spiders/spider_ling //This one cant spawn carrons
