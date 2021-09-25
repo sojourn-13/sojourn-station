@@ -1284,6 +1284,7 @@ There are 9 wires.
 		for(var/turf/turf in locs)
 			for(var/atom/movable/AM in turf)
 				if(AM.blocks_airlock())
+					addtimer(CALLBACK(src, .proc/close), 60) //We want to close again soon, like a minet or so
 					if(world.time > next_beep_at)
 						playsound(src.loc, 'sound/machines/buzz-two.ogg', 30, 1, -1)
 						next_beep_at = world.time + SecondsToTicks(120)
