@@ -153,7 +153,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/bulletproof(src)
-		new /obj/item/clothing/head/helmet/ballistic(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia(src)
 
 /obj/item/storage/box/bs_kit/laser_armor
 	name = "\improper Ablative Armor Kit"
