@@ -203,7 +203,6 @@
 	icon_state = "triplekitsune"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
-	extra_overlay = "triplekitsune_tips"
 
 /datum/sprite_accessory/tail/kitsune_tamamo
 	name = "Kitsune Tails, Pentatail"
@@ -253,7 +252,6 @@
 	desc = ""
 	icon_state = "monkey"
 	colored_layers = 1
-	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/otietail
 	name = "Otie Tail"
