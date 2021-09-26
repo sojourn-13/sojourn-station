@@ -182,7 +182,7 @@
 	name = "\"Flathead\" APLU customization kit"
 	new_name = "\"Flathead\" APLU"
 	new_desc = "A fancy APLU exosuit paint job which add a fanceir head to any ripley."
-	new_icon_file = 'icons\mecha\mecha40.dmi'
+	new_icon_file = 'icons/mecha/mecha40.dmi'
 	new_icon = "flathead"
 
 //Clark models
