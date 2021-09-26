@@ -375,6 +375,7 @@
 #include "code\datums\objective\individual_objective\individual_objective.dm"
 #include "code\datums\objective\individual_objective\ironhammer.dm"
 #include "code\datums\objective\individual_objective\moebius.dm"
+#include "code\datums\objective\individual_objective\prospectors.dm"
 #include "code\datums\objective\individual_objective\technomancers.dm"
 #include "code\datums\observation\_defines.dm"
 #include "code\datums\observation\death.dm"

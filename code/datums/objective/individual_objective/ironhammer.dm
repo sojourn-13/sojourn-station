@@ -34,7 +34,7 @@
 
 /datum/individual_objective/time_to_action/assign()
 	..()
-	desc = "Murder or observer murdering of 20 mobs."
+	desc = "Murder or observer murdering of 20 hostiles (Roaches, Spiders, ect)."
 	RegisterSignal(mind_holder, COMSIG_MOB_DEATH, .proc/task_completed)
 
 /datum/individual_objective/time_to_action/task_completed(mob/mob_death)
