@@ -17,4 +17,6 @@
 
 /datum/genetics/mutation/copy_mob/onClone()
 	..()
-	//TODO: Spawn perfect copy in cloner.
+	return source_mob
+
+	

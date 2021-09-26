@@ -12,34 +12,30 @@ This is a bugtesting item, please forgive the memes.
 	var/datum/genetics/genetics_holder/held_mutations
 
 /obj/item/device/scanner/belvoix_scanner/is_valid_scan_target(atom/target)
-	if(!istype(target, /mob/living) || !istype(target, /obj/item/reagent_containers/food/snacks/meat))
+	if(!istype(target, /mob/living) && !istype(target, /obj/item/reagent_containers/food/snacks/meat))
 		to_chat(usr, SPAN_WARNING("A red dot blips, the scan target [target] is invalid."))
 		return FALSE
 	return TRUE
 
 
-/obj/item/device/scanner/belvoix_scanner/scan(mob/living/target, mob/user)
+/obj/item/device/scanner/belvoix_scanner/scan(atom/target, mob/user)
 	if(user.a_intent == I_HELP)
 		if(target != src)
 			to_chat(user, SPAN_NOTICE("\The [src] takes a sample out of \the [target]"))
 		held_mutations = new /datum/genetics/genetics_holder()
-		held_mutations.initializeFromMob(target)
+
+		if(istype(target, /mob/living))
+			var/mob/living/living_target = target
+			held_mutations.initializeFromMob(living_target)
+		else if (istype(target, /obj/item/reagent_containers/food/snacks/meat))
+			var/obj/item/reagent_containers/food/snacks/meat/meat_target = target
+			held_mutations.initializeFromMeat(meat_target)
 		scan_title = "Belvoix Scanner - [target]"
 		scan_data = belvoix_scan(held_mutations)
 		user.show_message(scan_data)
 	else if(user.a_intent == I_HURT)
 		to_chat(user, SPAN_NOTICE("\The [src] injects a sample into \the [target]"))
 		held_mutations.inject_mutations(target)
-
-/obj/item/device/scanner/belvoix_scanner/scan(obj/item/reagent_containers/food/snacks/meat/target, mob/user)
-	if(user.a_intent == I_HELP)
-		if(target != src)
-			to_chat(user, SPAN_NOTICE("\The [src] takes a sample out of \the [target]"))
-		held_mutations = new /datum/genetics/genetics_holder()
-		held_mutations.initializeFromMeat(target)
-		scan_title = "Belvoix Scanner - [target]"
-		scan_data = belvoix_scan(held_mutations)
-		user.show_message(scan_data)
 
 /proc/belvoix_scan(var/datum/genetics/genetics_holder/held_mutations)
 	if(held_mutations.mutation_pool.len == 0)
@@ -50,7 +46,7 @@ This is a bugtesting item, please forgive the memes.
 			dat += "[mutagen.name]([mutagen.active == TRUE ? "Active" : "Inactive"]): [mutagen.desc]"
 		return jointext(dat, "<br>")
 
-/obj/item/device/scanner/belvoix_scanner/proc/scramble()
+/obj/item/device/scanner/belvoix_scanner/verb/scramble()
 	set category = "Object"
 	set name = "Scramble Activated Genes"
 	set src in view(1)
@@ -63,15 +59,22 @@ This is a bugtesting item, please forgive the memes.
 		return
 
 	usr.visible_message(SPAN_NOTICE("[usr] scrambled the dna in the [src]!"),SPAN_NOTICE("You scrambled the dna in the [src]!"))
-	
+
 	held_mutations.randomizeActivations()
 
 	scan_data = belvoix_scan(held_mutations)
 	usr.show_message(scan_data)
 
+/obj/item/device/scanner/belvoix_scanner/verb/makeSlide()
+	set category = "Object"
+	set name = "Print Sample Plate"
+	set src in view(1)
+	var/obj/item/genetics/sample/new_sample = new /obj/item/genetics/sample(held_mutations)
+	usr.put_in_hands(new_sample)
+
 /*
 =================Mutagenic Purger=================
-Implant that clears ALL mutations from people when injected. 
+Implant that clears ALL mutations from people when injected.
 
 It also resets instability to 0 so bad things don't happen.
 
@@ -94,7 +97,7 @@ TODO: Make sure the machine that makes this takes long enough to produce it, tha
 /obj/item/genetics/purger/attack(mob/living/target, mob/living/user)
 	if(!istype(target))
 		return
-	
+
 	if(target.body_part_covered(user.targeted_organ))
 		to_chat(user, SPAN_WARNING("The needle can't pierce through clothes."))
 		return
@@ -130,15 +133,38 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "slide"
 	w_class = ITEM_SIZE_SMALL
-	matter = list(MATERIAL_GLASS = 2)
+	matter = list(MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	var/datum/genetics/genetics_holder/genetics_holder
-	
-/obj/item/genetics/sample/New(var/datum/genetics/genetics_holder/incoming_holder)
-	name = "Mutagenic Sample Plate"
-	icon_state = "slideblood"
-	genetics_holder = incoming_holder.Copy()
 
+/obj/item/genetics/sample/New(var/datum/genetics/genetics_holder/incoming_holder)
+	if(incoming_holder)
+		name = "Mutagenic Sample Plate"
+		icon_state = "slideblood"
+		genetics_holder = incoming_holder.Copy()
+
+/obj/item/genetics/sample/proc/unload_genetics()
+	var/datum/genetics/genetics_holder/outbound_genetics_holder = genetics_holder.Copy()
+	name = "Empty Mutagenic Sample Plate"
+	genetics_holder = null
+	icon_state = "slide"
+	return outbound_genetics_holder
+/*
+=================Embryo=================
+A general purpose fetus for creation when genetics ends at a bad time, for whatever reason
+icon = 'icons/obj/surgery.dmi'
+icon_state='innards'
+*/
+
+/obj/item/genetics/reject
+	name = "Genetic Reject"
+	desc = "A product of hasty genetics work. Whatever this mound of flesh could have been, it will never see the light of day."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "innards"
+
+/obj/item/genetics/reject/New(var/parent_name)
+	if(parent_name)
+		name = "Genetic Reject of [parent_name]"
 /*
 =================Genetics Circuits=================
 Circuit boards for different Genetics Machines.

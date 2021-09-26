@@ -56,6 +56,8 @@
 	var/datum/genetics/genetics_holder/duplicate = new type(src)
 	if(copy_holder)
 		duplicate.holder = holder
+	else
+		duplicate.holder = null
 	duplicate.max_instability = max_instability
 	duplicate.max_copies = max_copies
 	duplicate.track_instability = track_instability
@@ -124,6 +126,15 @@
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		selected_mutation.implanted = state
 
+//Get a random active clone mutation for cloning
+/datum/genetics/genetics_holder/proc/findCloneMutation()
+	log_debug("findCloneMutation: getting a random active clone mutation for cloning")
+	var/list/clone_mutation_pool
+	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
+		if(selected_mutation.clone_gene && selected_mutation.active)
+			clone_mutation_pool += selected_mutation
+	return pick(clone_mutation_pool)
+
 //Randomly toggle random mutations in a holder as active; helps obfuscate unidentified mutations.
 /datum/genetics/genetics_holder/proc/randomizeActivations()
 	log_debug("randomizeActivations: randomizing activated state in some genetics_holder, somewhere")
@@ -180,7 +191,7 @@
 //Proc for easily adding mutations to a genetics holder, so it can be called quickly.
 /datum/genetics/genetics_holder/proc/addMutation(var/datum/genetics/mutation/incoming_mutation, var/force_add = FALSE)
 	log_debug("Adding mutation: [incoming_mutation.name], Force Add: [force_add]")
-	var/datum/genetics/mutation/existing_mutation = getMutation(incoming_mutation)
+	var/datum/genetics/mutation/existing_mutation = getMutation(incoming_mutation.key)
 	var/max_copies_reached = FALSE
 	if(existing_mutation)
 		if((max_copies != 0) && ((existing_mutation.count + incoming_mutation.count) > max_copies))
@@ -317,6 +328,7 @@
 	if(copy_container)
 		duplicate.container = container
 	duplicate.source_mob = source_mob
+	duplicate.source_name = source_name
 	duplicate.name = name
 	duplicate.desc = desc
 	duplicate.key = key
