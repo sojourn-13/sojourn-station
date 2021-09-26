@@ -306,7 +306,7 @@
 	..()
 
 /datum/individual_objective/economy
-	name = "Businessman"
+	name = "Business"
 	var/datum/money_account/target
 
 /datum/individual_objective/economy/can_assign(mob/living/L)

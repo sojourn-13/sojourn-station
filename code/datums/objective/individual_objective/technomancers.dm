@@ -78,7 +78,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSING_HUMAN_EQUITP)
 	..()
-
+/*
 /datum/individual_objective/tribalism
 	name = "Advanced Tribalism"
 	req_department = list(DEPARTMENT_ENGINEERING)
@@ -107,3 +107,4 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_OBJ_TECHNO_TRIBALISM)
 	..()
+*/

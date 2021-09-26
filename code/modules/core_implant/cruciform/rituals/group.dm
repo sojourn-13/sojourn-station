@@ -163,10 +163,6 @@
 		C = /datum/ritual/cruciform/crusader/flash
 		CI.known_rituals |= initial(C.name)
 
-/datum/ritual/group/cruciform/sanctify/step_check(mob/living/carbon/human/H)
-	return TRUE
-
-
 /datum/ritual/group/cruciform/sanctify
 	name = "Sanctify"
 	desc = "Sanctify the land you tread."
@@ -182,6 +178,9 @@
 	)
 	effect_type = /datum/group_ritual_effect/cruciform/sanctify
 	high_ritual = FALSE
+
+/datum/ritual/group/cruciform/sanctify/step_check(mob/living/carbon/human/H)
+	return TRUE
 
 /datum/group_ritual_effect/cruciform/sanctify/trigger_success(var/mob/starter, var/list/participants)
 	..()

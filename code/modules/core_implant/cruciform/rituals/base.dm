@@ -211,12 +211,22 @@
 /datum/ritual/cruciform/base/revelation
 	name = "Revelation"
 	phrase = "Patris ostendere viam"
-	desc = "A person close to you will have a vision that could increase ther sanity... or that's what you hope will happen."
+	desc = "A person close to you will have a vision that could increase ther faith... or that's what you hope will happen."
 	power = 50
+	nutri_cost = 50//high cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/base/revelation/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(H, 4)
 	//if(!T || !T.client)
+	if(H.species?.reagent_tag != IS_SYNTHETIC)
+		if(H.nutrition >= nutri_cost)
+			H.nutrition -= nutri_cost
+		else
+			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			H.vessel.remove_reagent("blood",blood_cost)
+	log_and_message_admins("performed Revelation litany (makes people drugged/hallucinate)")
+
 	if(!T)
 		fail("No target.", H, C)
 		return FALSE

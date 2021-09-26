@@ -372,7 +372,7 @@
 
 /obj/item/device/techno_tribalism/examine(user)
 	..()
-	to_chat(user, SPAN_NOTICE("The [src] is feeded by [items_count]/[max_count]."))
+	to_chat(user, SPAN_NOTICE("The [src] is fed by [items_count]/[max_count]."))
 
 /obj/item/maneki_neko
 	name = "Ancient Maneki Neko"

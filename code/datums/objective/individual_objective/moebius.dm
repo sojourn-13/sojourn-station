@@ -105,8 +105,8 @@
 	..()
 
 /datum/individual_objective/more_research
-	name = "Mandate of Science"
-	req_department = list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL)
+	name = "Progress No Matter The Cost."
+	req_department = list(DEPARTMENT_SCIENCE)
 	limited_antag = TRUE
 	rarity = 4
 	var/obj/item/target

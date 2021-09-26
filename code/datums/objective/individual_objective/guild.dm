@@ -1,3 +1,4 @@
+/*
 /datum/individual_objective/repossession
 	name = "Repossession"
 	req_department = list(DEPARTMENT_LSS)
@@ -24,7 +25,7 @@
 	if(completed) return
 	UnregisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY)
 	..()
-
+*/
 /datum/individual_objective/museum
 	name = "It Belongs to Museum"
 	desc = "Ensure that 3-4 oddities were sold via cargo."

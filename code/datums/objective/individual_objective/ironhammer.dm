@@ -1,3 +1,4 @@
+/*TODO: Make this not shitcurdy
 /datum/individual_objective/familiar_face
 	name = "A Familiar Face"
 	req_department = list(DEPARTMENT_SECURITY)
@@ -25,7 +26,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_EMPTY_POCKETS)
 	..()
-
+*/
 /datum/individual_objective/time_to_action
 	name = "Time for Action"
 	req_department = list(DEPARTMENT_SECURITY)
@@ -43,7 +44,7 @@
 	if(completed) return
 	UnregisterSignal(owner, COMSIG_MOB_DEATH)
 	..()
-
+/* TODO: make this not be shitcurdy
 /datum/individual_objective/paranoia
 	name = "Paranoia"
 	req_department = list(DEPARTMENT_SECURITY)
@@ -66,7 +67,8 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_EMPTY_POCKETS)
 	..()
-
+*/
+/*
 /datum/individual_objective/danger
 	name = "Absolute Danger"
 	req_department = list(DEPARTMENT_SECURITY)
@@ -93,7 +95,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_OBJ_FACTION_ITEM_DESTROY)
 	..()
-
+*/
 /datum/individual_objective/guard
 	name = "Guard"
 	req_department = list(DEPARTMENT_SECURITY)

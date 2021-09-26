@@ -1,3 +1,4 @@
+/*
 /datum/individual_objective/bad_technology
 	name = "Heretical Technology"
 	limited_antag = TRUE
@@ -62,7 +63,7 @@
 	if(completed) return
 	UnregisterSignal(target, COMSIG_HUMAN_INSTALL_IMPLANT)
 	..()
-
+*/
 /datum/individual_objective/spread
 	name = "Spread the Word"
 	req_cruciform = TRUE
