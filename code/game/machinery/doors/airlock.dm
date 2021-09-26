@@ -477,7 +477,7 @@ There are 9 wires.
 			if(istype(C) && C.hallucination_power > 25)
 				to_chat(user, "<span class='danger'>You feel a powerful shock course through your body!</span>")
 				user.adjustHalLoss(10)
-				user.Stun(10)
+				//user.Stun(10) salt pr, this is bullshit never really tricks anyone and does nothing but unrealisticlly block you cuz hur dur im shocked! when not
 				return FALSE
 	..()
 
