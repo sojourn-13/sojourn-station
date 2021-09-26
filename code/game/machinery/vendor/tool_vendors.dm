@@ -258,6 +258,7 @@
 					/obj/item/device/kit/paint/ripley/glass = 3,
 					/obj/item/device/kit/paint/ripley/ripley_zairjah = 3,
 					/obj/item/device/kit/paint/ripley/combatripley = 3,
+					/obj/item/device/kit/paint/ripley/flathead = 3,
 					/obj/item/device/kit/paint/ripley/orange_box = 3,
 					/obj/item/device/kit/paint/ripley/clark = 3,
 					/obj/item/device/kit/paint/ripley/clark_orange = 3,
