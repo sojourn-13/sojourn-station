@@ -7,7 +7,7 @@
 	item_state = "abnegate"
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	w_class = ITEM_SIZE_NORMAL + 0.2
+	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 10)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_STEEL = 8, MATERIAL_SILVER = 8, MATERIAL_PLATINUM = 2)
@@ -37,7 +37,7 @@
 	recoil_buildup = 6
 	can_dual = FALSE
 	damage_multiplier = 1.3
-	w_class = ITEM_SIZE_NORMAL + 0.3
+	w_class = ITEM_SIZE_NORMAL
 	projectile_type=/obj/item/projectile/bullet/magnun_40/rubber/soporific
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 5)
 	price_tag = 1600

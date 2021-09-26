@@ -28,6 +28,8 @@
 #define INSIGHT_PASSIVE_GAIN 0.05
 #define INSIGHT_GAIN(level_change) (INSIGHT_PASSIVE_GAIN + level_change / 15)
 
+#define SANITY_MOB_DISTANCE_ACTIVATION 12
+
 #define INSIGHT_DESIRE_COUNT 2
 
 #define INSIGHT_DESIRE_FOOD "food"
@@ -113,18 +115,13 @@
 
 /datum/sanity/proc/handle_view()
 	. = 0
+	activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION)
 	if(sanity_invulnerability)//Sorry, but that needed to be added here :C
-		for(var/mob/living/L in view(owner.client ? owner.client : owner))
-			L.try_activate_ai()
 		return
 	var/vig = owner.stats.getStat(STAT_VIG)
 	for(var/atom/A in view(owner.client ? owner.client : owner))
 		if(A.sanity_damage)
 			. += SANITY_DAMAGE_VIEW(A.sanity_damage, vig, get_dist(owner, A))
-			if(isliving(A))
-				var/mob/living/L = A
-				L.try_activate_ai()
-
 
 /datum/sanity/proc/handle_area()
 	var/area/my_area = get_area(owner)
