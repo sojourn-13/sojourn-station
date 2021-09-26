@@ -205,6 +205,7 @@
 	var/clone_type = clone_mutation.onClone()
 	if(ispath(clone_type, /mob/living))
 		occupant = new clone_type()
+		clone_info.inject_mutations(occupant)
 
 	if(ispath(clone_type, /obj/item))
 		nonliving_occupant = new clone_type()
