@@ -7,6 +7,8 @@
 
 	return 1
 
+/*
+
 /mob/living/carbon/superior_animal/Life()
 	. = ..()
 
@@ -81,6 +83,8 @@
 
 	if(!following && !(findTarget())) // Stop following
 		walk_to(src, 0)
+
+*/
 
 /mob/living/carbon/superior_animal/handle_chemicals_in_body()
 	if(reagents)

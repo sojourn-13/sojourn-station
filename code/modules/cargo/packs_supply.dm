@@ -82,3 +82,12 @@
 	cost = 200
 	crate_name = "cleaner grenade crate"
 	group = "Supply"
+
+/datum/supply_pack/gem
+	name = "Gem Crate"
+	contains = list(/obj/item/gem)
+	containertype = /obj/structure/largecrate
+	cost = 1000000
+	crate_name = "giant gem crate"
+	group = "Supply"
+

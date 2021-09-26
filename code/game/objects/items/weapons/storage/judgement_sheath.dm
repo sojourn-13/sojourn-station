@@ -1,10 +1,12 @@
-/obj/item/storage/belt/sheath/judgement
+/obj/item/storage/sheath/judgement
 	icon_state = "sheath_judgement"
 	name = "curved sheath"
+	icon = 'icons/obj/sheath.dmi'
 	desc = "A dark blue leather sheathe designed to fit a curved sword. The base and head are patterned with gold and you can see a strange cyan crystal at the mouth."
+	max_w_class = ITEM_SIZE_HUGE
 	can_hold = list(
-		/obj/item/tool/sword/saber
-		//obj/item/tool/sword/katana //Katana's are not curved here
+		/obj/item/tool/sword/saber,
+		/obj/item/tool/sword/katana
 	)
 
 	force = 15
@@ -28,13 +30,13 @@
 			if(ChargeNarrative[charge])
 				to_chat(user, SPAN_NOTICE(replacetext("You can see [ChargeNarrative[charge]].", "%self", name)))
 
-/obj/item/storage/belt/sheath/judgement/handle_item_insertion(obj/item/W, prevent_warning = 0, mob/user)
+/obj/item/storage/sheath/judgement/handle_item_insertion(obj/item/W, prevent_warning = 0, mob/user)
 	. = ..()
 	if(. && istype(W, /obj/item/tool/sword/katana/spatial_cutter))
 		var/obj/item/tool/sword/katana/spatial_cutter/cutter = W
 		cutter.ActivateSpatialCuts(src, user)
 
-/obj/item/storage/belt/sheath/judgement/afterattack(atom/target, mob/user, proximity_flag, params)
+/obj/item/storage/sheath/judgement/afterattack(atom/target, mob/user, proximity_flag, params)
 	. = ..()
 	var/turf/T = get_turf(target)
 	if(RiftTarget)
@@ -68,14 +70,14 @@
 		to_chat(user, "\The [src] shines.")
 
 
-/obj/item/storage/belt/sheath/judgement/filled/New()
+/obj/item/storage/sheath/judgement/filled/New()
 	new/obj/item/tool/sword/katana/spatial_cutter(src)
 	. = ..()
 
-/obj/item/storage/belt/sheath/judgement/exultor
+/obj/item/storage/sheath/judgement/exultor
 	icon_state = "exultor_sheath"
 
-/obj/item/storage/belt/sheath/judgement/exultor/filled/New()
+/obj/item/storage/sheath/judgement/exultor/filled/New()
 	new/obj/item/tool/sword/katana/spatial_cutter/sword_of_lie(src)
 	. = ..()
 
@@ -83,6 +85,9 @@
 	name = "spatial cutter"
 	desc = "A strange sword said to be one of the artificer guild grand master's few forays into weapon design. The blade is curved and thrums in your hand with a coming storm, a single swing leaves a blurred after image carrying all the intent and lethality of strikes past."
 	icon_state = "2ndkey"
+
+	max_upgrades = 0 //OP already
+	tool_qualities = list() //This avoids issues with cutting up bodies
 
 	var/LifeTimeOfSpatialCuts = 5 SECONDS
 
@@ -103,7 +108,7 @@
 			SpatialCuts.Add(new SpatialCutsType(T, src, SpatialCutsColor, rand(0, 36) * 10, LifeTimeOfSpatialCuts))
 			playsound(T, 'sound/weapons/rapidslice.ogg', 100)
 			next_spatial_cut = world.time + SpatialCutCooldown
-	proc/ActivateSpatialCuts(obj/item/storage/belt/sheath/judgement/sheath, mob/user)
+	proc/ActivateSpatialCuts(obj/item/storage/sheath/judgement/sheath, mob/user)
 		. = length(SpatialCuts)
 		spawn(0)
 			for(var/atom/movable/SpatialCut/C in SpatialCuts)
@@ -116,7 +121,7 @@
 	desc = "This is a strange katana that leaves an afterimage of it as you swing it in the air. When you look at it you almost hear a male voice whispering something into your head, but can't understand what exactly."
 	icon_state = "yamato"
 	SpatialCutsColor = "#88ccdd"
-	ActivateSpatialCuts(obj/item/storage/belt/sheath/judgement/sheath)
+	ActivateSpatialCuts(obj/item/storage/sheath/judgement/sheath)
 		. = ..()
 		if(.)
 			var/quote = "<b>Voice from somewhere</b> says, \"[pick("Too slow.", "Out of my way!", "Just like old times.")]\""
@@ -146,7 +151,7 @@
 /* We dont care about braking down nt swords
 /obj/item/tool/sword/nt_sword/attackby(obj/item/I, mob/user, params)
 	. = ..()
-	if(istype(I, /obj/item/tool/sword/katana/spatial_cutter/sword_of_lie) || istype(I, /obj/item/storage/belt/sheath/judgement))
+	if(istype(I, /obj/item/tool/sword/katana/spatial_cutter/sword_of_lie) || istype(I, /obj/item/storage/sheath/judgement))
 		qdel(src)*/
 
 /atom/movable/SpatialCut

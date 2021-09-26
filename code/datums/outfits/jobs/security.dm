@@ -90,7 +90,7 @@
 	belt = /obj/item/storage/belt/medical/emt
 	gloves = /obj/item/clothing/gloves/thick
 	l_hand = /obj/item/storage/firstaid/blackshield
-	backpack_contents = list(/obj/item/gun/energy/gun/martin = 1, /obj/item/cell/small/high = 1)
+	backpack_contents = list(/obj/item/storage/box/blackshield_voucher = 1)
 
 /decl/hierarchy/outfit/job/security/ihoper
 	name = OUTFIT_JOB_NAME("Marshal - Marshal Officer")
@@ -111,4 +111,4 @@
 	glasses = /obj/item/clothing/glasses/ballistic
 	head = /obj/item/clothing/head/rank/trooper/cap
 	gloves = /obj/item/clothing/gloves/thick/swat
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 2, /obj/item/gun/energy/gun/martin = 1, /obj/item/tool/knife/boot/blackshield = 1)
+	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/storage/box/blackshield_voucher = 1, /obj/item/tool/knife/boot/blackshield = 1)

@@ -202,7 +202,7 @@
 	desc = "The meat of a tribal bird native to this planet. Their remarkable endurance makes the tissue feel gamey to the mouth, but very rich in protein."
 	icon_state = "voxmeat"
 	filling_color = "#3B8529"
-	preloaded_reagents = list("protein" = 8, "polystem" = 5, "quicklot" = 5)
+	preloaded_reagents = list("protein" = 8, "polystem" = 5, "quickclot" = 5)
 
 /obj/item/reagent_containers/food/snacks/meat/chicken/attackby(obj/item/I, mob/user)
 	if(QUALITY_CUTTING in I.tool_qualities)

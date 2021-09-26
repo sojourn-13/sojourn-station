@@ -62,6 +62,40 @@
 		/datum/design/autolathe/device/landmine = 0,
 		)
 
+/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
+	disk_name = "Marshal \"Shoot-out\" Pack"
+	icon_state = "ironhammer"
+	license = 30 //1:1 with blackshield guns
+	designs = list(
+		/datum/design/autolathe/ammo/pistol = 0,
+		/datum/design/autolathe/ammo/pistol_lethal,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/hpistol = 0,
+		/datum/design/autolathe/ammo/hpistol_lethal,
+		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/ammo/hpistol_practice = 0,
+		/datum/design/autolathe/ammo/smg = 0,
+		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg_lethal,
+		/datum/design/autolathe/ammo/smg_practice = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/magnum = 0,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
+		/datum/design/autolathe/ammo/magnum_lethal,
+		/datum/design/autolathe/ammo/pistol_ammobox = 0,
+		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox = 0,
+		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
+		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/grenade,
+		/datum/design/autolathe/ammo/grenade/flash
+		)
+
 //Blackshield
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield
 	disk_name = "Blackshield 'Shall-not-be-Infringed' Pack"

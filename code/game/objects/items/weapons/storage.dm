@@ -27,7 +27,7 @@
 	name = "sheath"
 	desc = "Made to store swords."
 
-/obj/item/storage/belt/sheath/attack_hand(mob/living/carbon/human/user)
+/obj/item/storage/sheath/attack_hand(mob/living/carbon/human/user)
 	if(contents.len && (src in user))
 		var/obj/item/I = contents[contents.len]
 		if(istype(I))
@@ -39,7 +39,7 @@
 	else
 		..()
 
-/obj/item/storage/belt/sheath/update_icon()
+/obj/item/storage/sheath/update_icon()
 	overlays.Cut()
 	var/icon_to_set = "0" // If there nothing in content then icon_to_set won't change to anything and will stay 0
 	for(var/obj/item/tool/sword/SW in contents)
