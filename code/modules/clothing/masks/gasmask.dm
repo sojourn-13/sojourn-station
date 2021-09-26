@@ -145,6 +145,18 @@
 	desc = "Beep boop."
 	icon_state = "death"
 
+//Sprite by INFRARED_BARON
+/obj/item/clothing/mask/gas/big_shot
+	name = "trader mask"
+	desc = "A mask used by salesperson."
+	icon_state = "big_shot"
+
+//Sprite by INFRARED_BARON
+/obj/item/clothing/mask/gas/colony
+	name = "jester mask"
+	desc = "A green wig and colourful mask to make anyone smile."
+	icon_state = "colony"
+
 /obj/item/clothing/mask/gas/industrial
 	name = "industrial gas mask"
 	desc = "An industrial gas mask designed for heavy usage."
