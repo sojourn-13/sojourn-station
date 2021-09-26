@@ -1,6 +1,6 @@
 /datum/design/research/item/greyson/cog
 	name = "GP \"Cog\" lasegun"
-	build_path = /obj/item/gun/energy/retro
+	build_path = /obj/item/gun/energy/cog
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/abnegate

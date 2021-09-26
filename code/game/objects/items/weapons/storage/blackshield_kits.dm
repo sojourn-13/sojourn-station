@@ -55,7 +55,7 @@
 	desc = "A kit designed for energy-based weaponry."
 
 	populate_contents()
-		new /obj/item/gun/energy/retro(src)
+		new /obj/item/gun/energy/cog(src)
 		new /obj/item/cell/medium(src)
 		new /obj/item/cell/medium(src)
 		new /obj/item/cell/medium(src)
