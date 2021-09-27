@@ -47,12 +47,12 @@
 #define STRUCTURE_DAMAGE_BORING 		3
 
 //Quick defines for fire modes
-#define FULL_AUTO_300		list(mode_name = "full auto",  mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto", damage_mult_add = -0.1)
-#define FULL_AUTO_400		list(mode_name = "full auto",  mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="auto", damage_mult_add = -0.1)
-#define FULL_AUTO_600		list(mode_name = "full auto",  mode_type = /datum/firemode/automatic, fire_delay = 1  , icon="auto", damage_mult_add = -0.1)
-#define FULL_AUTO_800		list(mode_name = "full auto",  mode_type = /datum/firemode/automatic, fire_delay = 0.8, icon="auto", damage_mult_add = -0.1)
+#define FULL_AUTO_300		list(mode_name = "full auto",  mode_type = /datum/firemode/automatic, fire_delay = 3  , icon="auto", damage_mult_add = -0.1)
+#define FULL_AUTO_400		list(mode_name = "full auto",  mode_type = /datum/firemode/automatic, fire_delay = 2.5, icon="auto", damage_mult_add = -0.1)
+#define FULL_AUTO_600		list(mode_name = "full auto",  mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto", damage_mult_add = -0.1)
+#define FULL_AUTO_800		list(mode_name = "full auto",  mode_type = /datum/firemode/automatic, fire_delay = 1, icon="auto", damage_mult_add = -0.1)
 
-#define SEMI_AUTO_NODELAY	list(mode_name="semiauto", burst=1, fire_delay=0, move_delay=null, icon="semi")
+#define SEMI_AUTO_NODELAY	list(mode_name="semiauto", burst=1, fire_delay=0.2, move_delay=null, icon="semi") //Some delay
 
 #define BURST_2_ROUND		list(mode_name="2-beam bursts", mode_desc = "Short, controlled bursts", burst=2, fire_delay=null, move_delay=2, icon="burst", damage_mult_add = -0.1)
 #define BURST_3_ROUND		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4, icon="burst", damage_mult_add = -0.1)

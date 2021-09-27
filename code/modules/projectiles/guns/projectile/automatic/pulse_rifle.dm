@@ -21,7 +21,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/m41_reload.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/m41_cocked.ogg'
 	damage_multiplier = 1
-	recoil_buildup = 3
+	recoil_buildup = 0.25
 	one_hand_penalty = 7 //heavy, but very advanced, so bullpup rifle level despite not being bullpup
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 

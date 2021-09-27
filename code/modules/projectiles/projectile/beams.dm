@@ -1,3 +1,9 @@
+/*
+Beams, they are rather harder to get armor against and dont have bullet drop off.
+Thus they are objectively always going to be outclassed by bullets in their idea use.
+Beams also can pass thought glass and are hitscan, thus making them great against most problems.
+In pvp they also have more lasting damages, such as infections, and pain form burns.
+*/
 /obj/item/projectile/beam
 	name = "laser"
 	icon_state = "laser"
@@ -5,8 +11,8 @@
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage_types = list(BURN = 20)
+	armor_penetration = 20 //Some AP
 	check_armour = ARMOR_ENERGY
-	eyeblur = 4
 	var/frequency = 1
 	hitscan = 1
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
@@ -19,7 +25,7 @@
 
 /obj/item/projectile/beam/weak
 	damage_types = list(BURN = 16)
-	eyeblur = 0 //we do not eyeblur
+	armor_penetration = 15 //Some AP
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 12)
@@ -44,11 +50,11 @@
 
 /obj/item/projectile/beam/weak/lethal
 	damage_types = list(BURN = 20)
-	armor_penetration = -25
+	armor_penetration = 0 //cant have negitive armor sadly
 
 /obj/item/projectile/beam/weak/ap
 	damage_types = list(BURN = 15)
-	armor_penetration = 20
+	armor_penetration = 25
 
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 35) //Normal slugs deal 45
@@ -57,6 +63,7 @@
 /obj/item/projectile/beam/shotgun/strong
 	damage_types = list(BURN = 54) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
 	armor_penetration = 10
+	eyeblur = 4
 
 /obj/item/projectile/beam/practice
 	name = "laser"
@@ -75,7 +82,7 @@
 	icon_state = "heavylaser"
 	damage_types = list(BURN = 35)
 	armor_penetration = 25
-
+	eyeblur = 4
 	muzzle_type = /obj/effect/projectile/laser_heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser_heavy/tracer
 	impact_type = /obj/effect/projectile/laser_heavy/impact
@@ -85,7 +92,7 @@
 	icon_state = "xray"
 	damage_types = list(BURN = 25)
 	armor_penetration = 40
-
+	eyeblur = 4
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
@@ -95,7 +102,7 @@
 	icon_state = "u_laser"
 	damage_types = list(BURN = 40)
 	armor_penetration = 25
-
+	eyeblur = 4
 	muzzle_type = /obj/effect/projectile/laser_pulse/muzzle
 	tracer_type = /obj/effect/projectile/laser_pulse/tracer
 	impact_type = /obj/effect/projectile/laser_pulse/impact
@@ -122,7 +129,7 @@
 	//stun = 3
 	//weaken = 3
 	//stutter = 3
-
+	eyeblur = 4
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact

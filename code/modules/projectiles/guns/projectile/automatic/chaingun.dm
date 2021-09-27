@@ -29,7 +29,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/chaingun_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/chaingun_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
-	recoil_buildup = 5
+	recoil_buildup = 1.5
 	twohanded = TRUE
 	one_hand_penalty = 100
 	zoom_factor = 0.4

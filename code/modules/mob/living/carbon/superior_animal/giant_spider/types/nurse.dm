@@ -21,6 +21,9 @@
 	var/fed = 0
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 	var/web_activity = 30
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+
+
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
 	name = "midwife spider"
@@ -68,6 +71,8 @@
 	icon_living = "webslinger"
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.","bounces happily in place!")
 	web_activity = 90
+	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
+
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"
@@ -101,6 +106,7 @@
 	flash_resistances = 5 //For balance against are speedy fello
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
+	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
 	..()

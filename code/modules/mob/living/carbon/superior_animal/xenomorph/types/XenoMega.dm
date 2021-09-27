@@ -12,6 +12,8 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
+	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
+
 	move_to_delay = 2
 	turns_per_move = 12
 
@@ -27,6 +29,9 @@
 	maxHealth = 3000
 	health = 3000
 	poison_per_bite = 10
+
+	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
+
 
 	melee_damage_lower = 40
 	melee_damage_upper = 50

@@ -17,6 +17,10 @@
 	emote_see = list("chitters.", "rubs its legs.")
 	speak_chance = 5
 
+	give_randomized_armor = TRUE //We get randomized addition armor
+
+	armor = list(melee = 5, bullet = 5, energy = 0, bomb = 5, bio = 10, rad = 25)
+
 	move_to_delay = 6
 	turns_per_move = 5
 	see_in_dark = 10

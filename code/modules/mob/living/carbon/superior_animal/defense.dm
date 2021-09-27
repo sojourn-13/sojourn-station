@@ -423,3 +423,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	var/obj/structure/burrow/B = find_visible_burrow(src)
 	if (B)
 		B.evacuate()
+
+
+/mob/living/carbon/superior_animal/proc/pick_armor()
+	..()

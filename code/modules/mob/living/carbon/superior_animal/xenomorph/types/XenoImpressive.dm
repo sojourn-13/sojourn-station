@@ -9,6 +9,8 @@
 	health = 500
 	attack_sound = list('sound/xenomorph/alien_footstep_charge1.ogg', 'sound/xenomorph/alien_footstep_charge2.ogg', 'sound/xenomorph/alien_footstep_charge3.ogg')
 
+	armor = list(melee = 15, bullet = 15, energy = 10, bomb = 30, bio = 100, rad = 100)
+
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 
@@ -64,8 +66,10 @@
 	icon_living = "hivelord"
 	icon_dead = "hivelord_dead"
 	icon_rest = "hivelord_stunned"
-	maxHealth = 900
-	health = 900
+	maxHealth = 600
+	health = 600
+
+	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35

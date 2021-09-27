@@ -18,7 +18,7 @@
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	damage_multiplier = 0.8
-	recoil_buildup = 15
+	recoil_buildup = 3.25
 	one_hand_penalty = 20 //automatic shotgun level
 
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
