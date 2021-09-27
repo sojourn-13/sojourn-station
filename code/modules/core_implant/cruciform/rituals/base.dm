@@ -32,7 +32,6 @@
 	H.apply_effect(-30, AGONY, 0)
 	H.apply_effect(-30, HALLOSS, 0)
 	H.updatehealth()
-	add_effect(H, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/base/soul_hunger
@@ -44,7 +43,6 @@
 /datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	H.nutrition += 100
 	H.adjustToxLoss(5)
-	add_effect(H, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/base/glow_book
@@ -130,7 +128,6 @@
 
 		if((istype(CI) && CI.get_module(CRUCIFORM_PRIEST)) || prob(50))
 			to_chat(target, SPAN_DANGER("[H], faithful cruciform follower, cries for salvation at [t.name]!"))
-	add_effect(H, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/base/reveal
@@ -177,7 +174,6 @@
 				break
 	if (!was_triggired)
 		to_chat(H, SPAN_NOTICE("There is nothing here. You feel safe."))
-	add_effect(H, FILTER_HOLY_GLOW, 25)
 	return TRUE
 
 /datum/ritual/cruciform/base/message
@@ -210,5 +206,3 @@
 	log_and_message_admins("[user.real_name] sent a message to [H] with text \"[text]\"")
 	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 	playsound(H, 'sound/machines/signal.ogg', 50, 1)
-	add_effect(user, FILTER_HOLY_GLOW, 25)
-	add_effect(H, FILTER_HOLY_GLOW, 25)
