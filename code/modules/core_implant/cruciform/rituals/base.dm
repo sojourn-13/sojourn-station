@@ -179,7 +179,7 @@
 /datum/ritual/cruciform/base/message
 	name = "Sending"
 	phrase = "Audit, me audit vocationem. Ego nuntius vobis."
-	desc = "Send a message anonymously through the void, straight into the mind of another disciple."
+	desc = "Send a message through the void, straight into the mind of another disciple."
 	power = 30
 	nutri_cost = 10//low cost
 	blood_cost = 10//low cost
