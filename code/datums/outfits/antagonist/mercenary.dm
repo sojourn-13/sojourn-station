@@ -47,7 +47,7 @@
 	head = /obj/item/clothing/head/helmet/space
 	shoes = /obj/item/clothing/shoes/color/black
 	suit = /obj/item/clothing/suit/space
-	suit_store = /obj/item/gun/energy/retro
+	suit_store = /obj/item/gun/energy/cog
 	back = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/utility/full
 	r_pocket = /obj/item/cell/medium/high
