@@ -18,4 +18,4 @@
 	degradation = 0.75
 
 /obj/item/tool/bonesetter/adv/si
-	icon_state = "retractor_SI"
+	icon_state = "bone setter_SI"
