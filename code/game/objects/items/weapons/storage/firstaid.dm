@@ -218,6 +218,7 @@
 	new /obj/item/tool/hemostat/adv/si(src)
 	new /obj/item/tool/retractor/adv/si(src)
 	new /obj/item/tool/scalpel/advanced/si(src)
+	new /obj/item/tool/cautery/adv/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
 	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
