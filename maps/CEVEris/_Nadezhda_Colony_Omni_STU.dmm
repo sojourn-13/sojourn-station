@@ -29500,10 +29500,10 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "huP" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/energy/retro{
+/obj/item/gun/energy/cog{
 	pixel_y = 8
 	},
-/obj/item/gun/energy/retro{
+/obj/item/gun/energy/cog{
 	pixel_y = 8
 	},
 /obj/item/cell/medium/high{
@@ -66421,7 +66421,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armoryshop)
 "qEl" = (
@@ -92889,10 +92889,10 @@
 "wZc" = (
 /obj/structure/table/rack,
 /obj/machinery/door/window/southleft,
-/obj/item/gun/energy/retro{
+/obj/item/gun/energy/cog{
 	pixel_y = 8
 	},
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "wZd" = (

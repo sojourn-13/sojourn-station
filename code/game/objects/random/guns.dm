@@ -181,7 +181,7 @@
 	return pickweight(list(/obj/item/gun/energy/gun/martin = 2,\
 				/obj/item/gun/energy/ntpistol = 2,\
 				/obj/item/gun/energy/gun = 2,\
-				/obj/item/gun/energy/retro = 1,\
+				/obj/item/gun/energy/cog = 1,\
 				/obj/item/gun/energy/lasercannon = 1,\
 				/obj/item/gun/energy/lasercore = 1,\
 				/obj/item/gun/energy/firestorm = 0.5,\

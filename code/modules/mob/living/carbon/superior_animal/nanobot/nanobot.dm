@@ -1,8 +1,8 @@
 /mob/living/carbon/superior_animal/nanobot
 	name = "Nanobot"
 	desc = "A robot built from Nanites"
-	icon = 'icons/mob/custom_bot.dmi'
-	icon_state = "soteria_sword_handmade"
+	icon = 'icons/mob/nanobot.dmi'
+	icon_state = "nanobot"
 	attack_sound = 'sound/weapons/blade1.ogg'
 	faction = "neutral"
 	pass_flags = PASSTABLE
@@ -66,6 +66,7 @@
 	. = ..()
 	Radio = new/obj/item/device/radio(src)
 	Console = new /obj/item/modular_computer/console/preset/nanobot(src)
+	update_icon()
 
 /mob/living/carbon/superior_animal/nanobot/examine(mob/user)
 	..()
@@ -88,6 +89,11 @@
 		controller.adjustBrainLoss(rand(5, 10)) // Get some brain damage.
 		return_mind() // Send them back
 	. = ..()
+
+/mob/living/carbon/superior_animal/nanobot/update_icon()
+	overlays.Cut()
+	overlays += image(icon, "[icon_state]_lights")
+
 
 // For repairing damage to the bot.
 /mob/living/carbon/superior_animal/nanobot/attackby(obj/item/W as obj, mob/user as mob)

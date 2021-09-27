@@ -2154,7 +2154,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "ii" = (
 /obj/structure/table/onestar,
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /obj/item/cell/medium,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -24
@@ -2762,7 +2762,7 @@
 "kr" = (
 /obj/structure/table/onestar,
 /obj/machinery/light/floor,
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /obj/item/cell/medium,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -4542,7 +4542,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "qy" = (
 /obj/structure/table/onestar,
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -4779,7 +4779,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "rm" = (
 /obj/structure/low_wall/onestar,
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "rn" = (
@@ -5187,7 +5187,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "sC" = (
 /obj/structure/table/onestar,
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -6024,7 +6024,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "Bh" = (
 /obj/structure/table/onestar,
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /obj/item/cell/medium/high,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/outside/one_star/fo_internal)

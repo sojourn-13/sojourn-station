@@ -2449,6 +2449,7 @@
 #include "code\modules\projectiles\guns\energy\centauri.dm"
 #include "code\modules\projectiles\guns\energy\centurio_auretian.dm"
 #include "code\modules\projectiles\guns\energy\charge.dm"
+#include "code\modules\projectiles\guns\energy\cog.dm"
 #include "code\modules\projectiles\guns\energy\crossbow.dm"
 #include "code\modules\projectiles\guns\energy\decloner.dm"
 #include "code\modules\projectiles\guns\energy\disco_vazer.dm"

@@ -19,7 +19,7 @@
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/New()
 	..()
 	if(prob(20))
-		drop2 = /obj/item/gun/energy/retro
+		drop2 = /obj/item/gun/energy/cog
 	if(prob(30))
 		cell_drop = /obj/item/cell/medium
 

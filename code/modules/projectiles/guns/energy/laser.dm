@@ -39,8 +39,8 @@
 /obj/item/gun/energy/laser/mounted/cyborg
 	name = "integrated \"Cog\" lasgun"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made."
-	icon = 'icons/obj/guns/energy/retro.dmi'
-	icon_state = "retro"
+	icon = 'icons/obj/guns/energy/cog.dmi'
+	icon_state = "cog"
 	recharge_time = 4 //Time it takes for shots to recharge (in ticks)
 	damage_multiplier = 0.8
 	projectile_type = /obj/item/projectile/beam/heavylaser
@@ -53,34 +53,6 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 2)
 	price_tag = 500
 	projectile_type = /obj/item/projectile/beam/practice
-
-/obj/item/gun/energy/retro
-	name = "\"Cog\" lasgun"
-	icon = 'icons/obj/guns/energy/retro.dmi'
-	icon_state = "retro"
-	item_state = null	//so the human update icon uses the icon_state instead.
-	item_charge_meter = TRUE
-	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous."
-	fire_sound = 'sound/weapons/Laser.ogg'
-	slot_flags = SLOT_BELT|SLOT_BACK
-	w_class = ITEM_SIZE_BULKY
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5)
-	projectile_type = /obj/item/projectile/beam
-	fire_delay = 10 //old technology
-	charge_cost = 50
-	price_tag = 900
-	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
-	init_firemodes = list(
-		WEAPON_NORMAL,
-		BURST_2_ROUND
-	)
-	twohanded = TRUE
-
-/obj/item/gun/energy/retro/New()
-	..()
-	if(prob(50))
-		icon = 'icons/obj/guns/energy/retro_alt.dmi'
-	return
 
 /obj/item/gun/energy/captain
 	name = "\"Destiny\" energy pistol"
