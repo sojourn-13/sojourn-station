@@ -18,7 +18,7 @@
 	price_tag = 1000
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.1
-	recoil_buildup = 5
+	recoil_buildup = 10
 	one_hand_penalty = 10
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
@@ -66,7 +66,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	price_tag = 1250
 	zoom_factor = 0.3
-	recoil_buildup = 5
+	recoil_buildup = 10
 	one_hand_penalty = 10
 	penetration_multiplier = 1
 	damage_multiplier = 1
@@ -114,7 +114,7 @@
 	item_state = "osprey"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
 	price_tag = 1750
-	recoil_buildup = 7.5
+	recoil_buildup = 15
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	zoom_factor = 1.2
@@ -135,7 +135,7 @@
 	price_tag = 1250
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	damage_multiplier = 0.8
-	recoil_buildup = 9
+	recoil_buildup = 18
 	penetration_multiplier = 0.8
 	one_hand_penalty = 25
 	init_firemodes = list(
@@ -155,8 +155,8 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	price_tag = 1500
 	damage_multiplier = 0.8
-	recoil_buildup = 6.5
-	one_hand_penalty = 11.1
+	recoil_buildup = 13
+	one_hand_penalty = 23
 	zoom_factor = 0.3
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -176,8 +176,8 @@
 	price_tag = 1000
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.2
-	recoil_buildup = 4
-	one_hand_penalty = 12.5
+	recoil_buildup = 8
+	one_hand_penalty = 25
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
@@ -197,5 +197,5 @@
 	price_tag = 650
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	can_dual = TRUE
-	recoil_buildup = 8
-	one_hand_penalty = 10
+	recoil_buildup = 16
+	one_hand_penalty = 20

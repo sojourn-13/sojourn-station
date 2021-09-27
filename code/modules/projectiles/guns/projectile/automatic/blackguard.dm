@@ -18,8 +18,8 @@
 	price_tag = 2500
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.35 //Really hard to upgrade
-	recoil_buildup = 7.5
-	one_hand_penalty = 10
+	recoil_buildup = 15
+	one_hand_penalty = 20
 
 	max_upgrades = 3 // Trigger, and guards or a laser sight
 

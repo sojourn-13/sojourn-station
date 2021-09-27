@@ -10,7 +10,7 @@
 	price_tag = 1400 //one of most robust revolvers here
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.5
-	recoil_buildup = 4
+	recoil_buildup = 8
 	one_hand_penalty = 10
 	zoom_factor = 0.4
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'

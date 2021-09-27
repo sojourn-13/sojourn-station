@@ -20,7 +20,7 @@
 	fire_delay = 3 //all revolvers can fire faster, but have huge recoil
 	damage_multiplier = 1.2
 	armor_penetration = 0.65 // Insanely powerful handcannon, but worthless against heavy armor
-	recoil_buildup = 4
+	recoil_buildup = 8
 	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	var/drawChargeMeter = TRUE

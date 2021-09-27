@@ -13,5 +13,5 @@
 	price_tag = 900
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.5
-	recoil_buildup = 3
+	recoil_buildup = 6
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)

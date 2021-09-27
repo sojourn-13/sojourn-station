@@ -15,7 +15,7 @@
 	price_tag = 800
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.5
-	recoil_buildup = 2.25
+	recoil_buildup = 4.5
 	one_hand_penalty = 10
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 

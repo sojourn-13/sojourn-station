@@ -17,7 +17,7 @@
 	price_tag = 300
 	damage_multiplier = 1
 	penetration_multiplier = 0.8
-	recoil_buildup = 1.5
+	recoil_buildup = 3
 
 /obj/item/gun/projectile/giskard/update_icon()
 	..()

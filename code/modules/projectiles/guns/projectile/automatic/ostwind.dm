@@ -22,7 +22,7 @@
 	zoom_factor = 0.4
 	penetration_multiplier = 1.2
 	damage_multiplier = 0.9
-	recoil_buildup = 2.5
+	recoil_buildup = 5
 	one_hand_penalty = 10 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 

@@ -21,7 +21,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	damage_multiplier = 1.5 //simular to 257
 	penetration_multiplier = 3
-	recoil_buildup = 3
+	recoil_buildup = 6
 	one_hand_penalty = 15 //smg level
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE ,GUN_SCOPE, GUN_MAGWELL)

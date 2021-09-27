@@ -16,7 +16,7 @@
 	cell_type = /obj/item/cell/medium
 	sel_mode = 2
 	charge_cost = 20 //Gives us 40 shots per high medium-sized cell
-	recoil_buildup = 0.4 //pulse weapons have a bit more recoil
+	recoil_buildup = 0.9 //pulse weapons have a bit more recoil
 	one_hand_penalty = 5
 	twohanded = TRUE
 	damage_multiplier = 0.9

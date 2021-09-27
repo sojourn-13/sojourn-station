@@ -17,8 +17,8 @@
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 15)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	price_tag = 300
-	recoil_buildup = 15
-	one_hand_penalty = 30 //double the LMG.
+	recoil_buildup = 30
+	one_hand_penalty = 60 //double the LMG.
 	burst_delay = 0
 	burst = 6
 	init_offset = 7 //awful accuracy

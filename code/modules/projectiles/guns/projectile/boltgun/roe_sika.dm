@@ -6,7 +6,7 @@
 	item_state = "boltgun"
 	max_shells = 10
 	zoom_factor = 2.0
-	recoil_buildup = 7.5
+	recoil_buildup = 15
 	one_hand_penalty = 20 //maybe some trick shots
 	price_tag = 1000
 	damage_multiplier = 1.25

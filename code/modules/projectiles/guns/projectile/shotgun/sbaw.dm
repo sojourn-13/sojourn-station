@@ -18,7 +18,7 @@
 	damage_multiplier = 1
 	zoom_factor = 0.3
 	fire_delay = 12
-	recoil_buildup = 10
+	recoil_buildup = 20
 	one_hand_penalty = 30
 	fire_sound = 'sound/weapons/guns/fire/heavy_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'

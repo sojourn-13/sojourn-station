@@ -12,7 +12,7 @@
 	price_tag = 550
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	damage_multiplier = 0.9
-	recoil_buildup = 1.5
+	recoil_buildup = 3
 	one_hand_penalty = 10
 	load_method = MAGAZINE
 	init_firemodes = list(

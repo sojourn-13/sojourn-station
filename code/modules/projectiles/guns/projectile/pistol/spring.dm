@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/projectile/spring.dmi'
 	icon_state = "spring"
 	damage_multiplier = 1.1
-	recoil_buildup = 2.5
+	recoil_buildup = 5
 	price_tag = 700
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 6, TECH_ILLEGAL = 3)
 	w_class = ITEM_SIZE_SMALL

@@ -19,7 +19,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 600
 	damage_multiplier = 1.1
-	recoil_buildup = 7.5
+	recoil_buildup = 15
 	one_hand_penalty = 10 //full sized shotgun level
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/sawn
