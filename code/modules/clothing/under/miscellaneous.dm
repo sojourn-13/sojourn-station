@@ -435,6 +435,13 @@
 	item_state = "helltaker"
 	price_tag = 45
 
+/obj/item/clothing/under/colony
+	name = "cheap charming outfit"//Sprite by INFRARED_BARON
+	desc = "A cheap outfit to that goes well with any actor's career."
+	icon_state = "colony"
+	item_state = "colony"
+	price_tag = 40
+
 /obj/item/clothing/under/johnny
 	name = "rockerboy outfit"//Cyberpunk 2077, Johnny Silverhand's outfit
 	desc = "A padded vest with brown leather pants. Never stop fightin'"

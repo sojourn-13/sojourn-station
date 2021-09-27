@@ -323,10 +323,16 @@
 					/obj/item/storage/box/costume/surplushalloween = 2,
 					/obj/item/storage/box/costume/bonusjustice = 2,
 					/obj/item/storage/box/costume/bonuswrestling = 2,
+					//Under
+					/obj/item/clothing/under/colony = 10,
+					//Masks
 					/obj/item/clothing/mask/gas/dal = 1,
 					/obj/item/clothing/mask/gas/wolf = 1,
 					/obj/item/clothing/mask/gas/hox = 1,
-					/obj/item/clothing/mask/gas/cha = 1)
+					/obj/item/clothing/mask/gas/cha = 1,
+					/obj/item/clothing/mask/gas/colony = 2,
+					/obj/item/clothing/mask/gas/big_shot = 2
+					)
 	prices = list(/obj/item/storage/box/costume/bandit = 100,
 					/obj/item/storage/box/costume/bunny = 100,
 					/obj/item/storage/box/costume/cardborg = 100,
@@ -376,10 +382,15 @@
 					/obj/item/storage/box/costume/surplushalloween = 200,
 					/obj/item/storage/box/costume/bonusjustice = 200,
 					/obj/item/storage/box/costume/bonuswrestling = 200,
+					//Under
+					/obj/item/clothing/under/colony = 15,
+					//Masks
 					/obj/item/clothing/mask/gas/dal = 50,
 					/obj/item/clothing/mask/gas/wolf = 50,
 					/obj/item/clothing/mask/gas/hox = 50,
-					/obj/item/clothing/mask/gas/cha = 50)
+					/obj/item/clothing/mask/gas/cha = 50,
+					/obj/item/clothing/mask/gas/colony = 25,
+					/obj/item/clothing/mask/gas/big_shot = 25)
 
 /obj/machinery/vending/style
 	name = "Style vendor"
@@ -396,6 +407,9 @@
 		/obj/item/clothing/gloves/ash_evening = 3,
 		/obj/item/clothing/gloves/aerostatic_gloves = 3,
 		/obj/item/clothing/gloves/latex = 3,
+		//Masks
+		/obj/item/clothing/mask/gas/colony = 2,
+		/obj/item/clothing/mask/gas/big_shot = 2,
 		//Head stuff
 		/obj/item/clothing/head/ranger = 4,
 		/obj/item/clothing/head/inhaler = 2,
@@ -527,6 +541,7 @@
 		/obj/item/clothing/under/dress/black = 4,
 		/obj/item/clothing/under/dress/white = 4,
 		/obj/item/clothing/under/helltaker = 4,
+		/obj/item/clothing/under/colony = 4,
 		/obj/item/clothing/under/johnny = 3,
 		/obj/item/clothing/under/raider = 3,
 		/obj/item/clothing/under/dress = 5,
@@ -562,6 +577,9 @@
 		/obj/item/clothing/gloves/ash_evening = 70,
 		/obj/item/clothing/gloves/aerostatic_gloves = 50,
 		/obj/item/clothing/gloves/latex = 30,
+		//Masks
+		/obj/item/clothing/mask/gas/colony = 35,
+		/obj/item/clothing/mask/gas/big_shot = 80,
 		//Head stuff
 		/obj/item/clothing/head/ranger = 55,
 		/obj/item/clothing/head/inhaler = 75,
@@ -693,6 +711,7 @@
 		/obj/item/clothing/under/dress/black = 60,
 		/obj/item/clothing/under/dress/white = 60,
 		/obj/item/clothing/under/helltaker = 60,
+		/obj/item/clothing/under/colony = 50,
 		/obj/item/clothing/under/johnny = 75,
 		/obj/item/clothing/under/raider = 75,
 		/obj/item/clothing/under/dress = 75,
