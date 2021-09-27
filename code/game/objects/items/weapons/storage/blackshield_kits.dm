@@ -55,13 +55,13 @@
 	desc = "A kit designed for energy-based weaponry."
 
 	populate_contents()
-		new /obj/item/gun/energy/retro(src)
+		new /obj/item/gun/energy/cog(src)
 		new /obj/item/cell/medium(src)
 		new /obj/item/cell/medium(src)
 		new /obj/item/cell/medium(src)
 		new /obj/item/cell/medium(src)
 		new /obj/item/cell/medium(src)
-		new /obj/item/storage/pouch/ammo(src)
+		new /obj/item/storage/pouch/tubular(src)
 
 /obj/item/storage/box/bs_kit/greasegun
 	name = "\improper Grease Gun Primary Kit"
@@ -153,7 +153,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/bulletproof(src)
-		new /obj/item/clothing/head/helmet/ballistic(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia(src)
 
 /obj/item/storage/box/bs_kit/laser_armor
 	name = "\improper Ablative Armor Kit"

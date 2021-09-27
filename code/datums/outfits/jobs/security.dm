@@ -90,7 +90,7 @@
 	belt = /obj/item/storage/belt/medical/emt
 	gloves = /obj/item/clothing/gloves/thick
 	l_hand = /obj/item/storage/firstaid/blackshield
-	backpack_contents = list(/obj/item/gun/energy/gun/martin = 1, /obj/item/cell/small/high = 1)
+	backpack_contents = list(/obj/item/storage/box/blackshield_voucher = 1)
 
 /decl/hierarchy/outfit/job/security/ihoper
 	name = OUTFIT_JOB_NAME("Marshal - Marshal Officer")

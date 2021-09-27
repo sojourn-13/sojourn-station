@@ -71,7 +71,7 @@
 
 /obj/machinery/porta_turret/One_star
 	name = "greyson positronic turret"
-	installation = /obj/item/gun/energy/retro
+	installation = /obj/item/gun/energy/cog
 
 /obj/machinery/porta_turret/crescent
 	enabled = FALSE
@@ -93,7 +93,7 @@
 	check_weapons = FALSE
 	check_anomalies = TRUE
 	colony_allied_turret = TRUE
-	installation = /obj/item/gun/energy/retro
+	installation = /obj/item/gun/energy/cog
 
 /obj/machinery/porta_turret/stationary
 	ailock = TRUE
@@ -143,10 +143,10 @@
 //				iconholder = 1
 //				eprojectile = /obj/item/projectile/beam
 
-		if(/obj/item/gun/energy/retro)
+		if(/obj/item/gun/energy/cog)
 			iconholder = 1
 
-//			if(/obj/item/gun/energy/retro/sc_retro)
+//			if(/obj/item/gun/energy/cog/sc_retro)
 //				iconholder = 1
 
 		if(/obj/item/gun/energy/captain)

@@ -87,7 +87,7 @@
 	rapid = TRUE
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/gun/energy/retro
+	weapon1 = /obj/item/gun/energy/cog
 	weapon2 = null
 	limited_ammo = TRUE
 	mag_drop = TRUE
@@ -132,7 +132,7 @@
 	ranged = TRUE
 	rapid = TRUE
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/gun/energy/retro
+	weapon1 = /obj/item/gun/energy/cog
 	weapon2 = null
 	limited_ammo = TRUE
 	mag_drop = TRUE
