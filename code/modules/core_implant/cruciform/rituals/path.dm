@@ -39,7 +39,6 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
-			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_personal_cooldown(user)
 		return TRUE
 	else
@@ -82,7 +81,6 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
-			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_personal_cooldown(user)
 		return TRUE
 	else
@@ -145,7 +143,6 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			give_boost(participant)
-			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_global_cooldown()
 		return TRUE
 	else
@@ -437,4 +434,3 @@
 			if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
 				augmentic.rejuvenate() // Repair the organ
 				to_chat(H, "Your [augmentic.name] repair itself!")
-				add_effect(H, FILTER_HOLY_GLOW, 25)
