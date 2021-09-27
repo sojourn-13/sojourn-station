@@ -115,6 +115,7 @@
 	desc = "Can hold various tools fit for a lodge hunter."
 	icon_state = "hunting"
 	item_state = "hunting"
+	storage_slots = 11
 	can_hold = list(
 		/obj/item/tool,
 		/obj/item/tool_upgrade,
