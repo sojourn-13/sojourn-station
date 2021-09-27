@@ -20,7 +20,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	zoom_factor = 0.6
-	recoil_buildup = 10
+	recoil_buildup = 5
 	one_hand_penalty = 15 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	init_firemodes = list(
@@ -42,7 +42,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 750
 	zoom_factor = 0.6
-	recoil_buildup = 14
+	recoil_buildup = 7
 	damage_multiplier = 0.9
 	one_hand_penalty = 25
 	auto_eject = FALSE
@@ -83,7 +83,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
 	price_tag = 450
 	zoom_factor = 0.0
-	recoil_buildup = 15
+	recoil_buildup = 8.5
 	damage_multiplier = 0.7
 	one_hand_penalty = 25
 	saw_off = FALSE

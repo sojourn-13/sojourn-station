@@ -13,7 +13,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
-	recoil_buildup = 5
+	recoil_buildup = 2.5
 	one_hand_penalty = 10
 	penetration_multiplier = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)

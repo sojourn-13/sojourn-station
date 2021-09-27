@@ -15,7 +15,6 @@
 	price_tag = 1000
 	damage_multiplier = 0.95
 	recoil_buildup = 1.5
-	one_hand_penalty = 10
 	twohanded = FALSE
 	one_hand_penalty = 5 //smg level
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)

@@ -20,7 +20,7 @@
 	suitable_cell = /obj/item/cell/large
 	one_hand_penalty = 10
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
-	recoil_buildup = 12 //Big shots, big recoil.
+	recoil_buildup = 6 //Big shots, big recoil.
 	damage_multiplier = 1.2
 	init_firemodes = list(
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
@@ -73,7 +73,7 @@
 	fire_delay = 7
 	charge_cost = 100
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
-	recoil_buildup = 6 //Still a railgun.
+	recoil_buildup = 3 //Still a railgun.
 	can_dual = TRUE
 	twohanded = FALSE
 	init_firemodes = list(

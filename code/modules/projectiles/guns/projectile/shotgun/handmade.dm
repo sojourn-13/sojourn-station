@@ -15,6 +15,6 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_PAINFUL
 	damage_multiplier = 0.7
-	recoil_buildup = 20 //makin it a bit more than most shotguns
+	recoil_buildup = 10 //makin it a bit more than most shotguns
 	one_hand_penalty = 5 //compact shotgun level, so same as sawn off
 	price_tag = 250 //cheap as they get

@@ -43,7 +43,7 @@
 	icon = 'icons/obj/guns/projectile/makarov.dmi'
 	icon_state = "makarov"
 	damage_multiplier = 1.1
-	recoil_buildup = 8
+	recoil_buildup = 4
 	price_tag = 700
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
 	init_firemodes = list(

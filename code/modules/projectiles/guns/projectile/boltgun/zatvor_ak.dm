@@ -11,7 +11,7 @@
 	damage_multiplier = 0.8
 	penetration_multiplier  = 1.0
 	slot_flags = SLOT_BELT|SLOT_BACK
-	recoil_buildup = 10
+	recoil_buildup = 5
 	price_tag = 500
 	one_hand_penalty = 15
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 20, MATERIAL_WOOD = 5)

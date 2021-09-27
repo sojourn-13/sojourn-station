@@ -95,7 +95,7 @@
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GLASS = 4)
 	price_tag = 1100
 	damage_multiplier = 0.8
-	recoil_buildup = 2
+	recoil_buildup = 1
 	one_hand_penalty = 3
 	projectile_type = /obj/item/projectile/beam
 	suitable_cell = /obj/item/cell/medium

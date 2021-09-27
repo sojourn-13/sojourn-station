@@ -13,7 +13,7 @@
 	load_method = SINGLE_CASING
 	max_shells = 6
 	damage_multiplier = 1.36
-	recoil_buildup = 2
+	recoil_buildup = 1
 	var/chamber_open = FALSE
 	var/jammed = FALSE
 	var/jam_chance = 15
@@ -35,7 +35,7 @@
 	and recoil as a result of its caliber."
 	caliber = CAL_SHOTGUN
 	max_shells = 2
-	recoil_buildup = 18 //Still a shotgun
+	recoil_buildup = 8 //Still a shotgun
 	jam_chance = 25
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
@@ -47,7 +47,7 @@
 	caliber = CAL_ANTIM
 	max_shells = 1
 	damage_multiplier = 1
-	recoil_buildup = 30 //still a massive bullet
+	recoil_buildup = 15 //still a massive bullet
 	jam_chance = 35
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 

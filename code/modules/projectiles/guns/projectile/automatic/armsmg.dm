@@ -18,7 +18,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.5
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
-	recoil_buildup = 2 // Low damage, low recoil, on par with the wirbelwind but less damage and can be used 1 handed.
+	recoil_buildup = 1 // Low damage, low recoil, on par with the wirbelwind but less damage and can be used 1 handed.
 	one_hand_penalty = 0
 
 /obj/item/gun/projectile/automatic/armsmg/blackshield

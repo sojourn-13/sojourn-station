@@ -7,7 +7,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	damage_multiplier = 1.5
 	penetration_multiplier  = 1.5
-	recoil_buildup = 30
+	recoil_buildup = 15
 	max_shells = 5
 	zoom_factor = 2.0
 	price_tag = 1500

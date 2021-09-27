@@ -14,7 +14,7 @@
 	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL|MAG_WELL_DRUM
 	damage_multiplier = 1.15
 	penetration_multiplier = 1
-	recoil_buildup = 2
+	recoil_buildup = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	one_hand_penalty = 8
 	auto_eject = TRUE

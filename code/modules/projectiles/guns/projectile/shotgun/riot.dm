@@ -21,7 +21,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 600
 	damage_multiplier = 0.8 //Pug has 0.7 do to its fire normal modes
-	recoil_buildup = 13
+	recoil_buildup = 7.5
 	one_hand_penalty = 15 //full sized shotgun level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 

@@ -17,7 +17,7 @@
 	matter = list(MATERIAL_PLASTEEL = 11, MATERIAL_STEEL = 13, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1, MATERIAL_GLASS = 2)
 	price_tag = 500
 	damage_multiplier = 0.5 //makeshift laser
-	recoil_buildup = 2
+	recoil_buildup = 1
 	one_hand_penalty = 3
 	init_offset = 7 //makeshift laser
 	projectile_type = /obj/item/projectile/beam
