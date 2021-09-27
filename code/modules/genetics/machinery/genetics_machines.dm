@@ -32,7 +32,7 @@
 	var/obj/item/nonliving_occupant //If or when we're cloning a biological item instead of a mob.
 
 	var/cloning = FALSE //Whether or not the machine is currently attempting to make a clone.
-	
+
 	var/closed = FALSE //Animation marker for closing the vat.
 
 	var/clone_ready = FALSE //If the clone is ready to be expelled
@@ -128,7 +128,7 @@
 
 //TODO: rewrite to attempt ejection into vents shaft, or breakout event, etc.
 /obj/machinery/genetics/cloner/proc/eject_contents()
-	
+
 	if(occupant)
 		if(clone_ready)
 			occupant.forceMove(loc)
@@ -141,6 +141,8 @@
 		embryo.forceMove(loc)
 		embryo = null
 
+
+	stop()
 	update_icon()
 
 
@@ -191,7 +193,9 @@
 	embryo_stage = 0
 
 	cloning = TRUE
-
+	
+	clone_ready = FALSE
+	
 	occupant = null
 
 	closed = TRUE
@@ -228,8 +232,8 @@
 		//reader.update_icon()
 
 	progress = 0
-	embryo_stage
-
+	embryo_stage = 0
+	clone_ready = FALSE
 
 	update_icon()
 	return TRUE
@@ -253,7 +257,7 @@
 		if(clone_ready)
 			nonliving_occupant.forceMove(holder)
 		nonliving_occupant = null
-	
+
 	if(!clone_ready)
 		embryo.forceMove(holder)
 	embryo = null
