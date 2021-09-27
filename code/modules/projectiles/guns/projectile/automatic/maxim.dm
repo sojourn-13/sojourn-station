@@ -19,7 +19,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
-	recoil_buildup = 3
+	recoil_buildup = 0.5
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	twohanded = TRUE

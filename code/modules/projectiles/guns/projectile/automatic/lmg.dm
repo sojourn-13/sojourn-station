@@ -21,7 +21,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
-	recoil_buildup = 3.5
+	recoil_buildup = 0.25
 	one_hand_penalty = 30 //you're not Stallone. LMG level.
 
 	init_firemodes = list(
@@ -125,7 +125,7 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	recoil_buildup = 3.5
+	recoil_buildup = 0.5
 
 	init_firemodes = list(
 		FULL_AUTO_600,

@@ -20,7 +20,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	zoom_factor = 0.6
-	recoil_buildup = 10
+	recoil_buildup = 2.25
 	one_hand_penalty = 15 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	init_firemodes = list(
