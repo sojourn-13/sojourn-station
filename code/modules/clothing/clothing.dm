@@ -724,18 +724,3 @@ BLIND     // can't see anything
 		set_sensors(U)
 	else
 		return ..()
-
-/obj/item/clothing/under/attackby(obj/item/I, mob/user)
-	if(is_sharp(I))
-		user.visible_message(
-			SPAN_NOTICE("\The [user] begins cutting up \the [src] with \a [I]."),
-			SPAN_NOTICE("You begin cutting up \the [src] with \the [I].")
-		)
-		if(do_after(user, 50, src))
-			to_chat(user, SPAN_NOTICE("You cut \the [src] into pieces!"))
-			for(var/i in 1 to 5) // One sheet per body part except groin
-				new /obj/item/stack/material/cloth(get_turf(src))
-			qdel(src)
-		return
-	..()
-
