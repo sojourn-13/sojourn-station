@@ -113,7 +113,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		trunk = locate() in src.loc
 		if(!trunk)
 			mode = 0
-			flush = 0
+			flush = FALSE
 		else
 			trunk.linked = src	// link the pipe trunk to self
 
