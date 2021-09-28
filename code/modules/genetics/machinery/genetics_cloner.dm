@@ -98,7 +98,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	//Disposals info
 	var/datum/gas_mixture/air_contents	// internal reservoir
 	var/mode = 1	// item mode 0=off 1=charging 2=charged
-	var/flush = 0	// true if flush handle is pulled
+	var/flush = FALSE	// true if flush handle is pulled
 	var/obj/structure/disposalpipe/trunk/trunk = null // the attached pipe trunk
 	var/flushing = 0	// true if flushing in progress
 	var/last_sound = 0
