@@ -441,7 +441,7 @@
 	return sortTim(L, order >= 0 ? /proc/cmp_records_asc : /proc/cmp_records_dsc)
 
 //Specifically for mutation datums in a list.
-/proc/sortMutation(list/L, order = 1)
+/proc/sortMutation(list/L, order = TRUE)
 	return sortTim(L, order >= 0 ? /proc/cmp_mutations_asc : /proc/cmp_mutations_dsc)
 
 //any value in a list
