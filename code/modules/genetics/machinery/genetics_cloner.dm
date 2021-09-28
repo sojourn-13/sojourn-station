@@ -383,7 +383,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 // perform a flush
 /obj/machinery/genetics/cloner/proc/flush()
-	flushing = 1
+	flushing = TRUE
 	
 
 	// virtual holder object which actually travels through the pipes.
