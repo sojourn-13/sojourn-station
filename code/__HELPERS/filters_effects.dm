@@ -8,8 +8,6 @@
 */
 
 #define FILTER_HOLY_GLOW filter(type="drop_shadow", x=0, y=0, size=5, offset=2, color=rgb(255,255,170))
-#define FILTER_RIPPLE filter(type="ripple", x=0, y=0, size=5)
-#define FILTER_HOLY_RAY filter(type="ray", x=0, y=0, size=32, offset=2, color=rgb(255,255,170))
 
 /proc/add_effect(var/mob/user, var/dm_filter/effect, var/duration)
 	if(user && effect)

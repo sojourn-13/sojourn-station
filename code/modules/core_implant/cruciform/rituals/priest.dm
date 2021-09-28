@@ -601,7 +601,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			give_boost(participant)
-			add_effect(user, FILTER_HOLY_GLOW, 25)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_global_cooldown()
 		return TRUE
 	else
@@ -815,7 +815,6 @@
 		for(var/datum/seed/S in plants_around)
 			give_boost(S)
 		set_global_cooldown()
-		add_effect(user, FILTER_HOLY_GLOW, 25)
 		return TRUE
 	else
 		fail("There is no plant around to hear your song.", user, C)
