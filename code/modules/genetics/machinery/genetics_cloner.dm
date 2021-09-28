@@ -100,7 +100,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	var/mode = 1	// item mode 0=off 1=charging 2=charged
 	var/flush = FALSE	// true if flush handle is pulled
 	var/obj/structure/disposalpipe/trunk/trunk = null // the attached pipe trunk
-	var/flushing = 0	// true if flushing in progress
+	var/flushing = FALSE	// true if flushing in progress
 	var/last_sound = 0
 	active_power_usage = 2200	//the pneumatic pump power. 3 HP ~ 2200W
 	idle_power_usage = 100
