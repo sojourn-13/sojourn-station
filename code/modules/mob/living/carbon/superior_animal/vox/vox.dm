@@ -24,6 +24,9 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
+	armor = list(melee = 10, bullet = 15, energy = 5, bomb = 20, bio = 20, rad = 0)
+
+
 	melee_damage_lower = 12
 	melee_damage_upper = 16
 

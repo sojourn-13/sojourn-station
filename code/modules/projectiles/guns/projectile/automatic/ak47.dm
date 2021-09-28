@@ -19,7 +19,8 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
-	recoil_buildup = 5
+	damage_multiplier = 1 //the uncheap
+	recoil_buildup = 1.25
 	one_hand_penalty = 10 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
@@ -60,7 +61,7 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3, TECH_MAGNET = 3, TECH_POWER = 5)
 	price_tag = 1000
-	recoil_buildup = 3
+	recoil_buildup = 0.75
 	one_hand_penalty = 10
 	damage_multiplier = 1.2 //We hold less ammo but deal about the same damage
 	saw_off = FALSE
@@ -82,8 +83,8 @@
 	item_state = "AK"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 1000
-	damage_multiplier = 1.2
-	recoil_buildup = 8
+	damage_multiplier = 0.9 //7.5 cal
+	recoil_buildup = 2
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/ak47/sawn
@@ -99,7 +100,7 @@
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 650
-	recoil_buildup = 12
+	recoil_buildup = 4
 	one_hand_penalty = 20
 	damage_multiplier = 0.8
 	saw_off = FALSE

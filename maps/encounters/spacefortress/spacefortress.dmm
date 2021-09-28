@@ -200,7 +200,7 @@
 /area/outpost/abandoned_fortress)
 "aM" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /obj/random/powercell/medium_safe,
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned_fortress)

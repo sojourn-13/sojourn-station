@@ -14,7 +14,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 3)
 	price_tag = 1000
 	damage_multiplier = 0.95
-	recoil_buildup = 1.5
+	recoil_buildup = 0.15
 	one_hand_penalty = 10
 	twohanded = FALSE
 	one_hand_penalty = 5 //smg level

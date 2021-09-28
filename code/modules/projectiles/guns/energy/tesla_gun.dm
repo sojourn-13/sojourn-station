@@ -1,8 +1,8 @@
 /obj/item/gun/energy/tesla_gun
 	name = "Tesla Gun"
 	desc = "A gun that shoot lighting at people."
-	icon = 'icons/obj/guns/energy/retro.dmi'
-	icon_state = "retro"
+	icon = 'icons/obj/guns/energy/cog.dmi'
+	icon_state = "cog"
 	item_charge_meter = FALSE
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 	price_tag = 1600

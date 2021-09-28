@@ -201,7 +201,14 @@
 	damage_types = list(BURN = 16)
 	check_armour = ARMOR_MELEE
 	var/life = 3
+	var/fire_stacks = 1 //10 pain a fire proc through ALL armor!
 
+/obj/item/projectile/flamer_lob/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
 
 /obj/item/projectile/flamer_lob/New()
 	.=..()

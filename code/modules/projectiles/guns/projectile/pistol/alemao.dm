@@ -16,8 +16,8 @@
 	one_hand_penalty = 10
 	load_method = MAGAZINE
 	init_firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
-		list(mode_name="2-round bursts", burst=2, fire_delay=0.2, move_delay=2,    	icon="burst"),
+		list(mode_name="semiauto",       burst=1, fire_delay=1.5, move_delay=null, 	icon="semi"),
+		list(mode_name="2-round bursts", burst=2, fire_delay=2, move_delay=2,    	icon="burst"),
 		)
 
 /obj/item/gun/projectile/automatic/alemao/update_icon()

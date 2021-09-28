@@ -12,6 +12,8 @@
 	melee_damage_lower = 2
 	melee_damage_upper = 3
 
+	armor = list(melee = 5, bullet = 0, energy = 0, bomb = 0, bio = 5, rad = 0, agony = 0)
+
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
 	eating_time = 1200 //Takes longer for small roaches to eat

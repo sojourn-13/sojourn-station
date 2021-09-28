@@ -15,6 +15,8 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	projectiletype = /obj/item/projectile/beam/drone
 
+	armor = list(melee = 30, bullet = 20, energy = 35, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
+
 	do_gibs = FALSE
 
 	attack_sound = 'sound/weapons/slice.ogg' //So we dont make bite sounds

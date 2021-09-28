@@ -75,6 +75,11 @@
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
 
+/obj/item/clothing/under/gharness
+	name = "gear harness"
+	desc = "A series of belts and straps to hold your equipment. Originally designed for simple drones and synths, this is hardly a modest option for organics."
+	icon_state = "gear_harness"
+
 /obj/item/clothing/under/monomial_belt
 	name = "monomial belt"
 	desc = "A simple black loin cloth with a dark gold trim favored by monomials for its monk-like aesthetic. For when you need to show off your muscles in the name of god."
@@ -429,6 +434,13 @@
 	icon_state = "helltaker"
 	item_state = "helltaker"
 	price_tag = 45
+
+/obj/item/clothing/under/colony
+	name = "cheap charming outfit"//Sprite by INFRARED_BARON
+	desc = "A cheap outfit to that goes well with any actor's career."
+	icon_state = "colony"
+	item_state = "colony"
+	price_tag = 40
 
 /obj/item/clothing/under/johnny
 	name = "rockerboy outfit"//Cyberpunk 2077, Johnny Silverhand's outfit

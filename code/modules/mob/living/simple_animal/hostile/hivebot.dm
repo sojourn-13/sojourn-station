@@ -32,6 +32,9 @@
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
 
+	armor = list(melee = 15, bullet = 5, energy = 20, bomb = 25, bio = 100, rad = 25)
+
+
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
 	..()
 	adjustFireLoss(rand(20,30))
@@ -136,17 +139,10 @@
 
 	melee_damage_lower = 35
 	melee_damage_upper = 40
-/*
-	armor = list(
-		melee = 40,
-		bullet = 40,
-		energy = 10,
-		bomb = 60,
-		bio = 0,
-		rad = 0,
-		agony = 0
-	)
-*/
+
+	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 25, bio = 0, rad = 25)
+
+
 	health = 900
 	maxHealth = 900
 	attacktext = "sliced"

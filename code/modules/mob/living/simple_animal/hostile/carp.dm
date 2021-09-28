@@ -14,6 +14,9 @@
 	maxHealth = 25
 	health = 25
 
+	armor = list(melee = 5, bullet = 10, energy = 50, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
+
+
 	harm_intent_damage = 8
 	melee_damage_lower = 8
 	melee_damage_upper = 12
@@ -108,6 +111,9 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth,
 						 /obj/item/animal_part/wolf_tooth,
 						 /obj/item/animal_part/wolf_tooth)
+
+	armor = list(melee = 25, bullet = 10, energy = 65, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
+
 
 /mob/living/simple_animal/hostile/carp/allow_spacemove()
 	return 1	//No drifting in space for space carp!	//original comments do not steal

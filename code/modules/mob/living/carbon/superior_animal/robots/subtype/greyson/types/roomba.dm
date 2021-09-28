@@ -86,7 +86,7 @@
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/New()
 	..()
 	if(prob(10))
-		drop2 = /obj/item/gun/energy/retro
+		drop2 = /obj/item/gun/energy/cog
 	if(prob(10))
 		cell_drop = /obj/item/cell/medium
 

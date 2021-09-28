@@ -204,6 +204,15 @@
 	cell = new /obj/item/cell/large/moebius/omega(src)
 	gps_sensor = new /obj/item/computer_hardware/gps_sensor(src)
 	led = new /obj/item/computer_hardware/led/adv(src)
+	scanner = new /obj/item/computer_hardware/scanner/reagent(src)
+	network_card.matter = list()
+	processor_unit.matter = list()
+	tesla_link.matter = list()
+	hard_drive.matter = list()
+	cell.matter = list()
+	gps_sensor.matter = list()
+	led.matter = list()
+	scanner.matter = list()
 
 //Dock control
 /*

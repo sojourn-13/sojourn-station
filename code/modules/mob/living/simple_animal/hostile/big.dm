@@ -45,6 +45,8 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 40
 
+	armor = list(melee = 35, bullet = 30, energy = 25, bomb = 5, bio = 10, rad = 25)
+
 	old_x = -16
 	old_y = 0
 	default_pixel_x = -16
@@ -115,6 +117,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	mob_size = MOB_LARGE
+	armor = list(melee = 25, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25)
 
 /mob/living/simple_animal/hostile/retaliate/gaslamp
 	name = "gaslamp"
@@ -208,6 +211,7 @@
 	leather_amount = 0 //No actual skin
 	bones_amount = 30 //Lots of bone-like chitin
 	mob_size = MOB_LARGE
+	armor = list(melee = 15, bullet = 30, energy = 35, bomb = 5, bio = 10, rad = 25)
 
 /mob/living/simple_animal/hostile/nightmare/dream_daemon
 	name = "dream daemon"
@@ -224,6 +228,8 @@
 	turns_per_move = 4
 	vision_range = 8
 	aggro_vision_range = 20
+	armor = list(melee = 20, bullet = 30, energy = 5, bomb = 5, bio = 10, rad = 25) //Lost its laser armor do to being a darker colour
+
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
 	..()
@@ -318,6 +324,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	mob_size = MOB_LARGE
+	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 5, bio = 10, rad = 25)
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
 	name = "wendigo"
@@ -335,6 +342,8 @@
 	speak_emote = list("snarls!", "jerks erratically.")
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	armor = list(melee = 25, bullet = 20, energy = 0, bomb = 5, bio = 10, rad = 25)
+
 
 // Credit to scar#1579 for the sprite.
 /mob/living/simple_animal/hostile/hell_pig/slepnir
@@ -356,3 +365,6 @@
 	speak_emote = list("stomps its hooves!", "whinnies!")
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	armor = list(melee = 5, bullet = 10, energy = 10, bomb = 5, bio = 10, rad = 25)
+
+
