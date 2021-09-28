@@ -8,7 +8,7 @@
 /datum/genetics/mutation/copy_mob/New(var/incoming_type, var/incoming_name)
 		source_mob = incoming_type
 		source_name = incoming_name
-		name = "Genetic Copy of [source_name]"
+		name = "Genetic Copy of \a [source_name]"
 		key = "MUTATION_COPY_[source_mob]"
 
 /datum/genetics/embryo_state/copy_mob_1
