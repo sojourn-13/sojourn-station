@@ -519,7 +519,10 @@
 			/datum/craft_recipe/lodge/hunter_boots,
 			/datum/craft_recipe/lodge/hunter_gloves,
 			/datum/craft_recipe/lodge/sheath,
-			/datum/craft_recipe/lodge/hunting_belt
+			/datum/craft_recipe/lodge/hunting_belt,
+			/datum/craft_recipe/lodge/leather_small_pouch,
+			/datum/craft_recipe/lodge/leather_medium_pouch,
+			/datum/craft_recipe/lodge/leather_large_pouch
 			)
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)

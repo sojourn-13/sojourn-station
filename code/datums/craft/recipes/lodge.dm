@@ -344,3 +344,30 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_LEATHER, "time" = 30),
 		list(QUALITY_CUTTING, 15, "time" = 50)
 	)
+
+/datum/craft_recipe/lodge/leather_small_pouch
+	name = "small leather pouch"
+	result = /obj/item/storage/pouch/small_generic/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+
+/datum/craft_recipe/lodge/leather_medium_pouch
+	name = "medium leather pouch"
+	result = /obj/item/storage/pouch/medium_generic/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 6, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+
+/datum/craft_recipe/lodge/leather_large_pouch
+	name = "large leather pouch"
+	result = /obj/item/storage/pouch/large_generic/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 12, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)

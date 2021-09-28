@@ -99,36 +99,6 @@
 	)
 	related_stats = list(STAT_COG)
 
-/datum/craft_recipe/storage/leather_small_pouch
-	name = "small leather pouch"
-	result = /obj/item/storage/pouch/small_generic/leather
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_LEATHER, "time" = 30),
-		list(QUALITY_ADHESIVE, 10, "time" = 60)
-	)
-	related_stats = list(STAT_COG)
-
-/datum/craft_recipe/storage/leather_medium_pouch
-	name = "medium leather pouch"
-	result = /obj/item/storage/pouch/medium_generic/leather
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 4, MATERIAL_LEATHER, "time" = 30),
-		list(QUALITY_ADHESIVE, 10, "time" = 60)
-	)
-	related_stats = list(STAT_COG)
-
-/datum/craft_recipe/storage/leather_large_pouch
-	name = "large leather pouch"
-	result = /obj/item/storage/pouch/large_generic/leather
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 8, MATERIAL_LEATHER, "time" = 30),
-		list(QUALITY_ADHESIVE, 10, "time" = 60)
-	)
-	related_stats = list(STAT_COG)
-
 /datum/craft_recipe/storage/leather_duffel
 	name = "leather duffel bag"
 	result = /obj/item/storage/backpack/duffelbag/leather
