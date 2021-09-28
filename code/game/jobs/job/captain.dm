@@ -13,6 +13,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	difficulty = "Very Hard."
 	selection_color = "#ccccff"
 	req_admin_notify = 1
+	playtimerequired = 1200
 	wage = WAGE_COMMAND
 
 	ideal_character_age = 50 // Old geezer captains ftw
@@ -75,6 +76,7 @@ Treat your command officers with respect, and listen to their council. Try not t
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
+	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
 	minimum_character_age = 30
