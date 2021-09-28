@@ -297,7 +297,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		holder.move()		// spawn off the movement process
 
 /obj/machinery/genetics/cloner/proc/get_progress()
-	return (progress / cloning_stage_counter)
+	return round(progress / cloning_stage_counter)
 
 
 /obj/machinery/genetics/cloner/Process()
