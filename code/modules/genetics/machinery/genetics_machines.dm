@@ -11,9 +11,32 @@
 #define PRESSURE_TANK_VOLUME 150	//L
 #define PUMP_MAX_FLOW_RATE 90		//L/s - 4 m/s using a 15 cm by 15 cm inlet
 
+/*
+===============================================================================================================================================
+Belvoix Cloning Chamber
+
+A cloning machine for Genetics- basically, it takes mutation holders and makes mobs based on what "cloning" mutation is active in it.
+This machine allows us to create more genetic research data in R&D without necessarily needing a steady supply of meat Because cloning 
+takes time, donated meat will still save a lot of time for the department, but they aren't extremely necessary so long as we have at 
+least ONE meat of certain types.
+
+The cloning vat requires animal protein to function, loaded into a BIDON can for easy usage. Getting enough meat is part of the genetics loop, 
+but can be supported with synthetic meat from xenobotany.
+
+The cloner is operated by loading a filled "Sample Plate" into the cloning machine, anchoring a bidon can to the WEST of a cloning vat, and
+turning on the cloner through the control console. The cloner then drains protein from the anchored bidon can, and slowly grows the creature 
+over time. 
+
+Once the creature is grown, the user has to manually vent the grown mob down a disposal pipe into a containment room. If they don't, the creature
+will continue to consume protein and eventually break out of the vat and even start attacking people if it is hostile.
+
+This makes cloning vat is probably the most dangerous tool in Genetics. Because science needs a little danger to be interesting.
+===============================================================================================================================================
+*/
+
 /obj/machinery/genetics/cloner
-	name = "Belvoix Anomalous Cloning Chamber"
-	desc = "A heavily customized cloning vat, retooled for cloning strange and fantastic creatures. It seems hard-coded to prevent colonists from being cloned."
+	name = "Belvoix Xenofauna Cloning Vat"
+	desc = "A heavily customized cloning vat, retooled for cloning strange and fantastic creatures far and beyond regular fauna. Requires a steady supply of protein to function."
 	icon = 'icons/obj/neotheology_pod.dmi'
 	icon_state = "preview"
 	density = TRUE
@@ -147,46 +170,41 @@
 
 
 /obj/machinery/genetics/cloner/proc/start()
-	log_debug("Ran Start()")
-	if(cloning)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Cloning already in progress~!\""))
-		log_debug("Start(): cloning already set to TRUE!")
-		return
-
-
-	if(embryo)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Please vacate the dead embryo from the chamber~!\""))
-		return
-
+	log_debug("Genetics cloner: Ran Start()")
 
 	reader = find_reader()
 	if(!reader)
 		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Operations console not detected~!\""))
 		return
-
 	reader_loc = reader.loc
-	//reader.reading = TRUE
-	//reader.update_icon()
+
+	if(cloning)
+		reader.addLog("Error, Cloning already in progress~!")
+		return
+
+	if(embryo)
+		reader.addLog("Error, Please vacate the dead embryo from the chamber~!")
+		return
 
 	container = find_container()
 	if(!container)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Protein canister not detected~!\""))
+		reader.addLog("Error, Protein canister not detected~!")
 		return
 
 	if(!container.anchored)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Protein canister not Anchored~!\""))
+		reader.addLog("Error, Protein canister not Anchored~!")
 		return
 	container_loc = container.loc
 
 	trunk = locate() in src.loc
 	if(!trunk)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Pipe trunk not detected~!\""))
+		reader.addLog("Error, Pipe trunk not detected~!")
 		return
 
 	clone_mutation = clone_info.findCloneMutation()
 
 	if(!clone_mutation)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Error, Error~! Cloning data not found.\""))
+		reader.addLog("Error, Cloning data not found~!")
 		return
 
 	progress = 0
@@ -263,7 +281,7 @@
 	embryo = null
 
 	if(!trunk)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Pipe not conected. Aborting~!\""))
+		reader.addLog("Pipe not conected. Aborting Cloning proceedure.")
 		return
 
 	holder.forceMove(trunk)
@@ -279,7 +297,6 @@
 /obj/machinery/genetics/cloner/Process()
 	if(cloning)
 		if(stat & NOPOWER)
-			log_debug("Not powered. PROCESS CAN'T START. NOT POWERED.")
 			return
 
 		if(!reader || reader.loc != reader_loc || !container || container.loc != container_loc)
@@ -296,7 +313,7 @@
 			if(embryo_stage >= 5)
 				clone_ready = TRUE
 
-			visible_message(SPAN_DANGER("The Cloning Vat says: \"Feeding~! Test Subject~!\""))
+			reader.addLog("Dispensing Protein to the Test Subject.")
 
 			//Feed the beast.
 			if(progress <= CLONING_BREAKOUT_POINT)
@@ -313,22 +330,22 @@
 								//TODO: SPECIAL BREAKOUT EVENT
 								breakout()
 						else
-							visible_message(SPAN_DANGER("The Cloning Vat says: \"Protein not available~, The Embryo has perished.\""))
+							reader.addLog("Protein not available~, The Embryo has starved to death.")
 							stop() //The clone is dead.
 				else
-					visible_message(SPAN_DANGER("The Cloning Vat says: \"Container not found~, The Embryo has perished.\""))
+					reader.addLog("Protein container not found~, The Embryo has starved to death.")
 					stop()
 		use_power(power_cost)
 
 	if (clone_ready && !ready_message)
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"The Test Subject has Matured~!\""))
+		reader.addLog("The Test Subject has Matured~!")
 		ready_message = TRUE
 
 		embryo = null
 
 	//Disposal loop
 	if(flush && air_contents.return_pressure() >= SEND_PRESSURE )	// flush can happen even without power
-		visible_message(SPAN_DANGER("The Cloning Vat says: \"Flushing~ Test Subject~\""))
+		reader.addLog("Flushed the Test Subject down the disposal pipe~")
 
 		flush()
 	if(mode != 1) //if off or ready, no need to charge
@@ -498,30 +515,160 @@
 		. = ..()
 
 
+//Debugging
 /obj/machinery/genetics/cloner/verb/eject_cloneling()
-	set category = "Object"
+	set category = "Debug"
 	set name = "Eject Contents"
 	set src in view(1)
 	eject_contents()
 	stop()
 
 /obj/machinery/genetics/cloner/verb/start_cloneling()
-	set category = "Object"
+	set category = "Debug"
 	set name = "Start Cloning"
 	set src in view(1)
 	start()
 
 /obj/machinery/genetics/cloner/verb/manual_flush()
-	set category = "Object"
+	set category = "Debug"
 	set name = "Manual Flush"
 	set src in view(1)
 	flush = TRUE
+
+
+/*
+===============================================================================================================================================
+Vat Control Console
+
+A control console for the Cloning Vat, has displays to monitor the can usage and logs messages. It displays the (known) active mutations and 
+instability in the creature being cloned. It also links up to the core R&D console, for eventually interfacing to see what mutations are known
+and which aren't.
+===============================================================================================================================================
+*/
+
+#define VAT_MENU_WORKING 0
+#define VAT_MENU_SELECT 1
+
 
 /obj/machinery/computer/genetics/clone_console
 	name = "Vat Control Console"
 	desc = "A console for controlling and monitoring crimes against nature."
 	icon_keyboard = "teleport_key"
 	icon_screen = "medcomp"
+	
+	var/cloneLog = ""
+	var/menuOption = VAT_MENU_SELECT
+
+	var/obj/machinery/genetics/cloner/linked_cloner
+	var/obj/structure/reagent_dispensers/bidon/linked_bidon
+
+/obj/machinery/computer/genetics/clone_console/proc/sync()
+	for(var/obj/machinery/genetics/cloner/adjacent_cloner in orange(1,src))
+		linked_cloner = adjacent_cloner
+
+	if(linked_cloner)
+		for(var/obj/structure/reagent_dispensers/bidon/adjacent_bidon in orange(1,linked_cloner))
+			linked_bidon = adjacent_bidon
+	menuOption = 1
+	SSnano.update_uis(src)
+
+/obj/machinery/computer/genetics/clone_console/Initialize()
+	. = ..()
+	addLog("Belvoix Cloning Vat Console initialized. Welcome~")
+
+/obj/machinery/computer/genetics/clone_console/proc/addLog(string)
+	cloneLog = "\[[stationtime2text()]\] " + string + "<br>" + cloneLog
+
+/obj/machinery/computer/genetics/clone_console/attack_hand(mob/user)
+	if(..())
+		return TRUE
+	ui_interact(user)
+
+/obj/machinery/computer/genetics/clone_console/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	var/list/data = form_data()
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if(!ui)
+		ui = new(user, src, ui_key, "clone_console.tmpl", "VatConsole", 600, 600)
+		ui.set_initial_data(data)
+		ui.open()
+		ui.set_auto_update(TRUE)
+		ui.set_auto_update_layout(TRUE)
+
+/obj/machinery/computer/genetics/clone_console/proc/form_data()
+	if(!istype(linked_cloner) || QDELETED(linked_cloner))
+		linked_cloner = null
+	if(!istype(linked_bidon) || QDELETED(linked_bidon))
+		linked_bidon = null
+
+	var/list/data = list()
+	data["clonerPresent"] = linked_cloner ? TRUE : FALSE
+	data["linked_bidon"] = linked_cloner ? TRUE : FALSE
+	data["menu"] = menuOption
+	data["log"] = cloneLog	
+
+	//Get the amount of protein in the canister
+	var/can_max_volume = 0
+	var/protein_volume = 0
+	if(linked_bidon)
+		can_max_volume = linked_bidon.volume
+		if(linked_bidon.reagents.reagent_list.len)
+			for(var/target_reagent in linked_bidon.reagents.reagent_list)
+				var/datum/reagent/instanced_reagent = target_reagent
+				if(instanced_reagent.id == "protein")
+					protein_volume = instanced_reagent.volume
+	data["protein_volume"] = protein_volume
+	data["can_max_volume"] = can_max_volume
+	data["protein_bar_text"] = "[protein_volume] / [can_max_volume]"
+
+	//Get data from the Cloning Vat
+	var/clone_progress = 0
+	var/clone_total_progress = 0
+	var/cloning = FALSE
+	var/flush = FALSE
+	if(linked_cloner)
+		clone_total_progress = linked_cloner.cloning_stage_counter * 5
+		//Make sure clone_progress doesn't exceed the maximum in the UI, because the number CAN for tracking breakout events.
+		clone_progress = CLAMP(linked_cloner.progress, 0, clone_total_progress)
+		cloning = linked_cloner.cloning
+		if(linked_cloner.cloning && linked_cloner.flush)
+			flush = TRUE
+	data["clone_progress"] = clone_progress
+	data["clone_total_progress"] = clone_total_progress
+	data["clone_bar_text"] = "[clone_progress] / [clone_total_progress]"
+	data["cloning"] = cloning
+	data["flush"] = flush
+
+	return data
+
+/obj/machinery/computer/genetics/clone_console/Topic(href, href_list)
+	if(..())
+		return TRUE
+	if(!linked_cloner)
+		return TRUE
+
+	if(href_list["sync_console"])
+		menuOption = VAT_MENU_WORKING
+		addtimer(CALLBACK(src, .proc/sync), 3 SECONDS)
+
+	var/mob/living/user = null
+	if(isliving(usr))
+		user = usr
+
+	if(menuOption == VAT_MENU_SELECT)
+		if(linked_cloner)
+			if(href_list["start_cloning"])
+				linked_cloner.start()
+				return TRUE
+			if(href_list["flush"])
+				linked_cloner.flush = 1
+				return TRUE
+			if(href_list["eject"])
+				linked_cloner.eject_contents()
+				linked_cloner.stop()
+				return TRUE
+
+	ui_interact(user)
+	return FALSE
 
 #undef CLONING_STAGE_BASE
 #undef CLONING_BREAKOUT_POINT

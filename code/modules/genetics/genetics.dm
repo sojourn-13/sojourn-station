@@ -406,19 +406,19 @@
 //Check if the process is still valid
 /datum/genetics/mutation/proc/checkProcessingValid()
 	if(!active)
-		log_and_message_admins("Process Cancelled, mutation not active.")
+		log_debug("[src] Process Cancelled, mutation not active.")
 		return FALSE
 	else if(!implanted)
-		log_and_message_admins("Process Cancelled, mutation not implanted.")
+		log_debug("[src] Process Cancelled, mutation not implanted.")
 		return FALSE
 	else if(!container)
-		log_and_message_admins("Process Cancelled, container not referenced.")
+		log_debug("[src] Process Cancelled, container not referenced.")
 		return FALSE
 	else if(!container.holder)
-		log_and_message_admins("Process Cancelled, container.holder not referenced.")
+		log_debug("[src] Process Cancelled, container.holder not referenced.")
 		return FALSE
 	else if(container.holder.stat == DEAD)
-		log_and_message_admins("Process Cancelled, container.holder is dead.")
+		log_debug("[src] Process Cancelled, container.holder is dead.")
 		return FALSE
 	else
 		return TRUE
