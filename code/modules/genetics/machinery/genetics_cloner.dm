@@ -1,6 +1,6 @@
 #define CLONING_STAGE_BASE 		20	//Points needed to advance a stage
-#define CLONING_BREAKOUT_POINT	300
-
+#define CLONING_BREAKOUT_POINT	200
+#define BASE_PROTEIN_CONSUMPTION 20
 
 #define ANIM_OPEN 1
 #define ANIM_NONE 0
@@ -39,6 +39,9 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	desc = "A heavily customized cloning vat, retooled for cloning strange and fantastic creatures far and beyond regular fauna. Requires a steady supply of protein to function."
 	icon = 'icons/obj/neotheology_pod.dmi'
 	icon_state = "preview"
+	frame_type = FRAME_VERTICAL
+	circuit = /obj/item/circuitboard/genetics/cloner
+
 	density = TRUE
 	anchored = TRUE
 	layer = 2.8
@@ -64,7 +67,9 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 	var/cloning_stage_counter = CLONING_STAGE_BASE
 
-	var/cloning_speed  = 10	//Try to avoid use of non integer values
+	var/breakout_point = CLONING_BREAKOUT_POINT //The amount of "overgrowing" required to cause a creature to break out of containment.
+
+	var/cloning_speed  = 5	//Try to avoid use of non integer values
 
 	var/embryo_stage = 0 //Which stage the embryo is currently in
 
@@ -72,13 +77,13 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 	var/progress = 0
 
-	var/progress_increment = 1 MINUTE
+	var/progress_increment = 30 SECONDS
 
 	var/progress_benchmark
 
 	//How much protein is eaten in order to advance the progress by the cloning speed.
 	//Higher numbers means the clone eats MORE MEAT.
-	var/protein_consumption = 20
+	var/protein_consumption = BASE_PROTEIN_CONSUMPTION
 
 	var/datum/genetics/genetics_holder/clone_info //Genetics holder for the mob
 
@@ -267,16 +272,17 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 	//Check for any living mobs trigger hasmob.
 	//hasmob effects whether the package goes to cargo or its tagged destination.
-	if(occupant)
-		if(clone_ready)
+	if(clone_ready)
+		if(occupant)
+			holder.has_mob = TRUE
 			occupant.forceMove(holder)
-		occupant = null
-	else if (nonliving_occupant)
-		if(clone_ready)
+			occupant = null
+		if (nonliving_occupant)
 			nonliving_occupant.forceMove(holder)
-		nonliving_occupant = null
+			nonliving_occupant = null
+		
 
-	if(!clone_ready)
+	if(!clone_ready && embryo)
 		embryo.forceMove(holder)
 	embryo = null
 
@@ -316,7 +322,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 			reader.addLog("Dispensing Protein to the Test Subject.")
 
 			//Feed the beast.
-			if(progress <= CLONING_BREAKOUT_POINT)
+			if(progress <= breakout_point)
 				if(container)
 					if(!container.reagents.remove_reagent("protein", protein_consumption))
 						if(clone_ready)
@@ -342,6 +348,10 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		ready_message = TRUE
 
 		embryo = null
+
+	//Don't flush if the clone is not ready.
+	if(flush && !clone_ready)
+		flush = FALSE
 
 	//Disposal loop
 	if(flush && air_contents.return_pressure() >= SEND_PRESSURE )	// flush can happen even without power
@@ -374,10 +384,12 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 // perform a flush
 /obj/machinery/genetics/cloner/proc/flush()
 	flushing = 1
-	stop()
+	
 
 	// virtual holder object which actually travels through the pipes.
 	init_disposal_holder()
+
+	stop()
 
 	air_contents = new(PRESSURE_TANK_VOLUME)	// new empty gas resv.
 	flushing = 0
@@ -386,6 +398,50 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	if(mode == 2)	// if was ready,
 		mode = 1	// switch to charging
 	return
+
+//upgrading parts
+/obj/machinery/genetics/cloner/RefreshParts()
+	..()
+	var/manip_rating = 0
+	var/scanner_rating = 0
+	var/bin_rating = 0
+
+	for(var/obj/item/stock_parts/part in component_parts)
+		if(istype(part, /obj/item/stock_parts/manipulator))
+			manip_rating += part.rating
+		if(istype(part, /obj/item/stock_parts/matter_bin))
+			bin_rating += part.rating
+		if(istype(part, /obj/item/stock_parts/scanning_module))
+			scanner_rating += part.rating
+
+	//Something that might be pretty good to have along with other top tier parts
+	breakout_point = CLONING_BREAKOUT_POINT * scanner_rating
+
+	if(manip_rating >= 10)
+		cloning_speed = 50
+	else
+		cloning_speed = initial(cloning_speed) + ((manip_rating-2) * 5)
+
+	//Faster cloning speed means higher protein consumption.
+	protein_consumption = round(BASE_PROTEIN_CONSUMPTION * (2 / (bin_rating))) * (cloning_speed/5)
+
+/obj/machinery/genetics/cloner/attackby(obj/item/I, mob/user)
+	if(default_deconstruction(I, user))
+		return
+	if(default_part_replacement(I, user))
+		return
+
+	//Inserting a sample
+	if(istype(I, /obj/item/genetics/sample))
+		var/obj/item/genetics/sample/incoming_sample = I
+		if(!incoming_sample.genetics_holder)
+			to_chat(user, SPAN_WARNING("This sample has no genetic data left."))
+			return
+		clone_info = incoming_sample.unload_genetics()
+		to_chat(user, SPAN_WARNING("You load Genetic Data into the cloner."))
+		return
+	else
+		. = ..()	
 
 /obj/machinery/genetics/cloner/proc/close_anim()
 	qdel(anim0)
@@ -501,20 +557,6 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	I.pixel_z = 32
 	add_overlay(I)
 
-/obj/machinery/genetics/cloner/attackby(obj/item/I, mob/user)
-	//Handle attaching the BIDON to a cloner
-	if(istype(I, /obj/item/genetics/sample))
-		var/obj/item/genetics/sample/incoming_sample = I
-		if(!incoming_sample.genetics_holder)
-			to_chat(user, SPAN_WARNING("This sample has no genetic data left."))
-			return
-		clone_info = incoming_sample.unload_genetics()
-		to_chat(user, SPAN_WARNING("You load Genetic Data into the cloner."))
-		return
-	else
-		. = ..()
-
-
 //Debugging
 /obj/machinery/genetics/cloner/verb/eject_cloneling()
 	set category = "Debug"
@@ -535,6 +577,17 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	set src in view(1)
 	flush = TRUE
 
+#undef CLONING_STAGE_BASE
+#undef CLONING_BREAKOUT_POINT
+#undef BASE_PROTEIN_CONSUMPTION
+
+#undef ANIM_OPEN
+#undef ANIM_NONE
+#undef ANIM_CLOSE
+
+#undef SEND_PRESSURE
+#undef PRESSURE_TANK_VOLUME
+#undef PUMP_MAX_FLOW_RATE
 
 /*
 ===============================================================================================================================================
@@ -683,14 +736,3 @@ and which aren't.
 				linked_cloner.stop()
 				return TRUE
 	return FALSE
-
-#undef CLONING_STAGE_BASE
-#undef CLONING_BREAKOUT_POINT
-
-#undef ANIM_OPEN
-#undef ANIM_NONE
-#undef ANIM_CLOSE
-
-#undef SEND_PRESSURE
-#undef PRESSURE_TANK_VOLUME
-#undef PUMP_MAX_FLOW_RATE

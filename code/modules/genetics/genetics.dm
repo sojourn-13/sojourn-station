@@ -110,10 +110,10 @@
 
 //Generate a Copy Mob mutation if one hasn't been created yet.
 //Also, Check to make sure there are no duplicates. Copy_mob is robust enough to not treat clone mutations of other mobs as a duplicate.
-/datum/genetics/genetics_holder/proc/attemptAddCopyMobMutation(var/source_type, var/source_name)
-	log_debug("attemptAddCopyMobMutation: [source_type] , [source_name]")
-	if(!getMutation("MUTATION_COPY_[source_type]"))
-		var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(source_type, source_name)
+/datum/genetics/genetics_holder/proc/attemptAddCopyMobMutation(var/incoming_type, var/incoming_name)
+	log_debug("attemptAddCopyMobMutation: [incoming_type] , [incoming_name]")
+	if(!getMutation("MUTATION_COPY_[incoming_type]"))
+		var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(incoming_type, incoming_name)
 		new_mutation.active = TRUE
 		addMutation(new_mutation)
 		return TRUE

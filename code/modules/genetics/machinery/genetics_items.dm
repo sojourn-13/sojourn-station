@@ -77,13 +77,11 @@ This is a bugtesting item, please forgive the memes.
 Implant that clears ALL mutations from people when injected.
 
 It also resets instability to 0 so bad things don't happen.
-
-TODO: Make sure the machine that makes this takes long enough to produce it, that bad things can happen from high instability.
 */
 
 /obj/item/genetics/purger
 	name = "Blue-Ink Mutagenic Purger"
-	desc = "The saving grace of genetics, this wonderous concoction can purge mutations from the body before anything terrible happens."
+	desc = "An economic gene-fixer specifically made to purge mutations from the body. It takes a very long time to print."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "cimplanter2"
 	item_state = "syringe_0"
@@ -102,10 +100,6 @@ TODO: Make sure the machine that makes this takes long enough to produce it, tha
 		to_chat(user, SPAN_WARNING("The needle can't pierce through clothes."))
 		return
 
-	if(!user.stats?.getPerk(PERK_SI_SCI))
-		to_chat(user, SPAN_WARNING("You have no idea how to configure this damn thing. Maybe a scientist can get it working?"))
-		return
-
 	if(used)
 		to_chat(user, SPAN_WARNING("The purger has been used!"))
 		return
@@ -113,7 +107,7 @@ TODO: Make sure the machine that makes this takes long enough to produce it, tha
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.do_attack_animation(target)
 
-	if(do_mob(user, target, 50) && src && !used)
+	if(do_mob(user, target, 50) && !used)
 		icon_state = "cimplanter0"
 		used = TRUE
 		to_chat(target, SPAN_NOTICE("You feel your body begin to stabilize, and your anomalous mutations leave you."))
@@ -135,7 +129,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
-	var/datum/genetics/genetics_holder/genetics_holder
+	var/datum/genetics/genetics_holder/genetics_holder = null
 
 /obj/item/genetics/sample/New(var/datum/genetics/genetics_holder/incoming_holder)
 	if(incoming_holder)
@@ -149,6 +143,73 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	genetics_holder = null
 	icon_state = "slide"
 	return outbound_genetics_holder
+
+/*
+=================Mutagenic Implanter=================
+Essentially a holder item for mutagenic samples. Installed on various machines and used for cloning, modifying, and so on.
+
+Can also be loaded into a (Syringe probably) and injected into people. But that is a later item.
+*/
+/obj/item/genetics/mut_injector
+	name = "Mutagenic Injector"
+	desc = "A specialized syringe for injecting Mutagens into a host's system."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "dnainjector0"
+	item_state = "syringe_0"
+	throw_speed = 1
+	throw_range = 5
+	var/obj/item/genetics/sample/loaded_sample
+
+	w_class = ITEM_SIZE_SMALL
+	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 1, MATERIAL_STEEL = 1)
+
+/obj/item/genetics/mut_injector/attack(mob/living/target, mob/living/user)
+	if(!istype(target))
+		return
+
+	if(target.body_part_covered(user.targeted_organ))
+		to_chat(user, SPAN_WARNING("The needle can't pierce through clothes."))
+		return
+
+	if(!loaded_sample)
+		to_chat(user, SPAN_WARNING("The injector is empty!"))
+		return
+
+	if(!loaded_sample.genetics_holder)
+		to_chat(user, SPAN_WARNING("The loaded sample plate is empty!"))
+		return
+
+	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	user.do_attack_animation(target)
+
+	if(do_mob(user, target, 50) && src && loaded_sample)
+		icon_state = "dnainjector0"
+		var/datum/genetics/genetics_holder/injection = loaded_sample.unload_genetics()
+		to_chat(user, SPAN_NOTICE("\The [user] injects a sample into \the [target]"))
+		injection.inject_mutations(target)
+
+/obj/item/genetics/mut_injector/attackby(obj/item/I as obj, mob/user as mob)
+	..()
+	if (istype(I, /obj/item/genetics/sample))
+		var/obj/item/genetics/sample/incoming_sample = I
+		
+		if(loaded_sample)
+			to_chat(user, SPAN_NOTICE("The mutagenic injector is already loaded!"))
+
+		if(!loaded_sample && user.unEquip(incoming_sample, src))
+			to_chat(user, SPAN_NOTICE("You load the mutagenic injector with a sample plate."))
+			loaded_sample = incoming_sample
+			icon_state = "dnainjector"
+
+/obj/item/genetics/mut_injector/attack_self(var/mob/user)
+	if(!loaded_sample)
+		return ..()
+	user.put_in_hands(loaded_sample)
+	to_chat(user, SPAN_NOTICE("You remove the sample plate from \the [src]."))
+	loaded_sample = null
+	icon_state = "dnainjector0"
+	return
+
 /*
 =================Embryo=================
 A general purpose fetus for creation when genetics ends at a bad time, for whatever reason
@@ -169,6 +230,34 @@ icon_state='innards'
 =================Genetics Circuits=================
 Circuit boards for different Genetics Machines.
 */
+/obj/item/circuitboard/genetics/cloner
+	build_name = "Belvoix Xenofauna Cloning Vat"
+	build_path = /obj/machinery/genetics/cloner
+	board_type = "machine"
+	origin_tech = list(TECH_BIO = 6)
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 2, //Affects the cloning speed
+		/obj/item/stock_parts/scanning_module = 1, //Affects Breakout threshhold
+		/obj/item/stock_parts/matter_bin = 1, //Affects Protein Consumption
+	)
+/obj/item/circuitboard/genetics/clone_console
+	build_name = "Vat Control Console"
+	build_path = /obj/machinery/computer/genetics/clone_console
+	origin_tech = list(TECH_DATA = 3, TECH_BIO = 5)
+
+/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit
+	disk_name = "Genetics Studio Design Kit"
+	icon_state = "moebius"
+	license = 1
+	designs = list(
+		/datum/design/autolathe/genetics/cloner = 0,
+		/datum/design/autolathe/genetics/clone_console = 0,
+		/datum/design/autolathe/genetics/purger = 0
+	)
+
+
+
+
 /*
 /obj/item/circuitboard/genetics_server
 	build_name = "Genetics Server"
