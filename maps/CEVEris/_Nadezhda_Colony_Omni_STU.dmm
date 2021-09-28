@@ -3420,9 +3420,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/border/borderfloor/cee,
-/turf/simulated/floor/plating/under,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "aTW" = (
 /obj/structure/cable/cyan{
@@ -8074,10 +8073,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/catwalk,
 /obj/machinery/door/airlock/highsecurity,
-/obj/effect/floor_decal/border/borderfloor/cee,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/pros/prep)
 "ccV" = (
 /obj/structure/railing/grey,
@@ -14195,9 +14192,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/catwalk,
-/obj/effect/floor_decal/border/borderfloor/cee,
-/turf/simulated/floor/plating/under,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "dAQ" = (
 /obj/structure/table/reinforced,
@@ -29278,23 +29274,23 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "hfP" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/energy/retro{
+/obj/item/cell/medium/high{
+	pixel_y = -6
+	},
+/obj/item/cell/medium/high{
+	pixel_y = -6
+	},
+/obj/item/cell/medium/high{
+	pixel_y = -6
+	},
+/obj/item/cell/medium/high{
+	pixel_y = -6
+	},
+/obj/item/gun/energy/cog{
 	pixel_y = 8
 	},
-/obj/item/gun/energy/retro{
+/obj/item/gun/energy/cog{
 	pixel_y = 8
-	},
-/obj/item/cell/medium/high{
-	pixel_y = -6
-	},
-/obj/item/cell/medium/high{
-	pixel_y = -6
-	},
-/obj/item/cell/medium/high{
-	pixel_y = -6
-	},
-/obj/item/cell/medium/high{
-	pixel_y = -6
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -33978,7 +33974,7 @@
 	name = "Prospector Storage";
 	req_access = list(78)
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/pros/prep)
 "itT" = (
 /obj/machinery/atmospherics/binary/pump{
@@ -65804,10 +65800,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/catwalk,
 /obj/effect/floor_decal/rust/mono_rusted2,
-/obj/effect/floor_decal/border/borderfloor/cee,
-/turf/simulated/floor/plating/under,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "qeu" = (
 /obj/effect/decal/cleanable/rubble,
@@ -68056,7 +68051,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armoryshop)
 "qEl" = (
@@ -68186,9 +68181,8 @@
 /area/nadezhda/absolutism/chapel)
 "qFZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/catwalk,
-/obj/effect/floor_decal/border/borderfloor/cee,
-/turf/simulated/floor/plating/under,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "qGb" = (
 /obj/random/junk/low_chance,
@@ -77445,6 +77439,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/section4)
+"sTC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/pros/prep)
 "sTF" = (
 /obj/structure/catwalk,
 /obj/random/scrap/beacon/dense_weighted,
@@ -95233,10 +95232,10 @@
 "wZc" = (
 /obj/structure/table/rack,
 /obj/machinery/door/window/southleft,
-/obj/item/gun/energy/retro{
+/obj/item/gun/energy/cog{
 	pixel_y = 8
 	},
-/obj/item/gun/energy/retro,
+/obj/item/gun/energy/cog,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "wZd" = (
@@ -207194,7 +207193,7 @@ tCJ
 ueI
 hBf
 hBf
-ueI
+sTC
 jQr
 ajK
 wyH
