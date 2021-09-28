@@ -562,6 +562,9 @@ and which aren't.
 	var/obj/machinery/genetics/cloner/linked_cloner
 	var/obj/structure/reagent_dispensers/bidon/linked_bidon
 
+/obj/machinery/computer/genetics/clone_console/New()
+	sync()
+
 /obj/machinery/computer/genetics/clone_console/proc/sync()
 	for(var/obj/machinery/genetics/cloner/adjacent_cloner in orange(1,src))
 		linked_cloner = adjacent_cloner
@@ -569,11 +572,12 @@ and which aren't.
 	if(linked_cloner)
 		for(var/obj/structure/reagent_dispensers/bidon/adjacent_bidon in orange(1,linked_cloner))
 			linked_bidon = adjacent_bidon
-	menuOption = 1
-	SSnano.update_uis(src)
+	menuOption = VAT_MENU_SELECT
+	SSnano.update_uis(src) // update all UIs attached to src
 
 /obj/machinery/computer/genetics/clone_console/Initialize()
 	. = ..()
+	sync()
 	addLog("Belvoix Cloning Vat Console initialized. Welcome~")
 
 /obj/machinery/computer/genetics/clone_console/proc/addLog(string)
@@ -584,7 +588,19 @@ and which aren't.
 		return TRUE
 	ui_interact(user)
 
+ /**
+  * The ui_interact proc is used to open and update Nano UIs
+  * If ui_interact is not used then the UI will not update correctly
+  * ui_interact is currently defined for /atom/movable (which is inherited by /obj and /mob)
+  *
+  * @param user /mob The mob who is interacting with this ui
+  * @param ui_key string A string key to use for this ui. Allows for multiple unique uis on one obj/mob (defaut value "main")
+  * @param ui /datum/nanoui This parameter is passed by the nanoui process() proc when updating an open ui
+  *
+  * @return nothing
+  */
 /obj/machinery/computer/genetics/clone_console/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	// this is the data which will be sent to the ui
 	var/list/data = form_data()
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -602,7 +618,7 @@ and which aren't.
 
 	var/list/data = list()
 	data["clonerPresent"] = linked_cloner ? TRUE : FALSE
-	data["linked_bidon"] = linked_cloner ? TRUE : FALSE
+	data["linked_bidon"] = linked_bidon ? TRUE : FALSE
 	data["menu"] = menuOption
 	data["log"] = cloneLog	
 
@@ -642,17 +658,17 @@ and which aren't.
 
 /obj/machinery/computer/genetics/clone_console/Topic(href, href_list)
 	if(..())
-		return TRUE
+		return FALSE
 	if(!linked_cloner)
-		return TRUE
+		return FALSE
 
 	if(href_list["sync_console"])
 		menuOption = VAT_MENU_WORKING
-		addtimer(CALLBACK(src, .proc/sync), 3 SECONDS)
+		//This is too wierd to chance using.
+		//addtimer(CALLBACK(src, .proc/sync), 3 SECONDS)
+		sync()
 
-	var/mob/living/user = null
-	if(isliving(usr))
-		user = usr
+	add_fingerprint(usr)
 
 	if(menuOption == VAT_MENU_SELECT)
 		if(linked_cloner)
@@ -666,8 +682,6 @@ and which aren't.
 				linked_cloner.eject_contents()
 				linked_cloner.stop()
 				return TRUE
-
-	ui_interact(user)
 	return FALSE
 
 #undef CLONING_STAGE_BASE
