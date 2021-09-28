@@ -433,8 +433,11 @@
 			user.vessel.remove_reagent("blood",blood_cost)
 	set_personal_cooldown(user)
 	for(var/mob/living/carbon/human/H in oview(user)) // Affect everyone the user can see.
+		var/synth = FALSE // It is true if at least one of their limbs or organ is synthetic.
 		for(var/obj/item/organ/augmentic in H) // Run this loop for every organ the person has
 			if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
 				augmentic.rejuvenate() // Repair the organ
 				to_chat(H, "Your [augmentic.name] repair itself!")
-				add_effect(H, FILTER_HOLY_GLOW, 25)
+				synth = TRUE // They have a prosthetic
+		if(synth) // Did they have any prosthetics?
+			add_effect(H, FILTER_HOLY_GLOW, 25) // Make them glow.
