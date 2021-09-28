@@ -392,7 +392,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	stop()
 
 	air_contents = new(PRESSURE_TANK_VOLUME)	// new empty gas resv.
-	flushing = 0
+	flushing = FALSE
 	// now reset disposal state
 	flush = FALSE
 	if(mode == 2)	// if was ready,
