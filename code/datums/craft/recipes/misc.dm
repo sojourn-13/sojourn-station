@@ -77,3 +77,12 @@
 		list(QUALITY_CUTTING, 10, 10)
 	)
 	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/cloth_stripe
+	name = "salvage cloth"
+	result = /obj/item/stack/material/cloth/random
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/clothing/under, 1, "time" = 25),
+		list(QUALITY_CUTTING, 10, "time" = 30)
+	)

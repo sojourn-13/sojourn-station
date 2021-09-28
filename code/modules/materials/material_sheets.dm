@@ -268,6 +268,10 @@
 	default_type = MATERIAL_CLOTH
 	price_tag = 1
 
+/obj/item/stack/material/cloth/random
+	rand_min = 2
+	rand_max = 7
+
 /obj/item/stack/material/silk
 	name = "silk"
 	icon_state = "sheet_silk_bundle"

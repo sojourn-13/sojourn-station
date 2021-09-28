@@ -31,5 +31,5 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("toxin_coated", 1) //Really really bad so low amouts
+			L.reagents.add_reagent(toxin_coated, 1) //Really really bad so low amouts
 			to_chat(target, "<span class='info'>The tip of the spear was coated in something!</span>")

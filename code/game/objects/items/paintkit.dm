@@ -178,6 +178,13 @@
 	new_desc = "A fancy APLU exosuit paint job consisting of blue chrome and glowing red lights, perfect for pretending to be a combat mech."
 	new_icon = "combatripley"
 
+/obj/item/device/kit/paint/ripley/flathead
+	name = "\"Flathead\" APLU customization kit"
+	new_name = "\"Flathead\" APLU"
+	new_desc = "A fancy APLU exosuit paint job which add a fanceir head to any ripley."
+	new_icon_file = 'icons/mecha/mecha40.dmi'
+	new_icon = "flathead"
+
 //Clark models
 /obj/item/device/kit/paint/ripley/clark
 	name = "\"Clark\" APLU customization kit"

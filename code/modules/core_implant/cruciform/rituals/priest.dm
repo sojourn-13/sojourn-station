@@ -183,6 +183,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_personal_cooldown(user)
 		return TRUE
 	else
@@ -568,7 +569,7 @@
 /datum/ritual/cruciform/priest/short_boost
 	name = "Short boost ritual"
 	phrase = null
-	desc = "This litany boosts the stats of everyone who's hear you on the short time. "
+	desc = "This litany boosts the stats of everyone who is near you on the short time. "
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	effect_time = 10 MINUTES
@@ -600,6 +601,7 @@
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			give_boost(participant)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_global_cooldown()
 		return TRUE
 	else

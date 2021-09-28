@@ -50,6 +50,10 @@
 	icon_state = "small_generic_p"
 	item_state = "small_generic_p"
 
+/obj/item/storage/pouch/small_generic/leather
+	icon_state = "small_leather"
+	item_state = "small_leather"
+
 /obj/item/storage/pouch/medium_generic
 	name = "medium generic pouch"
 	desc = "Can hold nearly anything in it, but only a moderate amount."
@@ -59,6 +63,10 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 	price_tag = 500
+
+/obj/item/storage/pouch/medium_generic/leather
+	icon_state = "medium_leather"
+	item_state = "medium leather"
 
 /obj/item/storage/pouch/medium_generic/opifex
 	name = "opifex smuggle pouch"
@@ -78,6 +86,11 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_BIOMATTER = 20)
 	price_tag = 1000
+
+/obj/item/storage/pouch/large_generic/leather
+	desc = "A mini satchel made of leather.Can hold a fair bit, but it won't fit in your pocket"
+	icon_state = "large_leather"
+	item_state = "large_leather"
 
 /obj/item/storage/pouch/medical_supply
 	name = "medical supply pouch"

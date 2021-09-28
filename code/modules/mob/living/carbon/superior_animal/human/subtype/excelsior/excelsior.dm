@@ -6,8 +6,10 @@
 	icon_state = "excel_makarov"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 200
-	health = 200
+	maxHealth = 150 //About as much health as a normal person
+	health = 150
+
+	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 75, bio = 100, rad = 90) //Legitmently their armor
 
 	//range/ammo stuff
 	ranged = 1

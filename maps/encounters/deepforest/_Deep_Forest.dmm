@@ -2141,7 +2141,7 @@
 "SR" = (/obj/structure/bed/chair/custom/onestar{dir = 1},/turf/simulated/floor/plating/under,/area/nadezhda/outside/one_star)
 "SS" = (/obj/effect/decal/cleanable/dirt,/obj/random/material_resources,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "ST" = (/obj/machinery/light/small{dir = 8},/obj/machinery/porta_turret/prepper{check_access = 0},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"SU" = (/obj/machinery/porta_turret/prepper{check_access = 0; health = 40; installation = /obj/item/gun/energy/retro; maxHealth = 40},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/dungeon/outside/smuggler_zone)
+"SU" = (/obj/machinery/porta_turret/prepper{check_access = 0; health = 40; installation = /obj/item/gun/energy/cog; maxHealth = 40},/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/dungeon/outside/smuggler_zone)
 "SV" = (/obj/random/material_rare,/obj/random/material_rare,/obj/structure/closet/crate,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/one_star)
 "SX" = (/obj/random/junk,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/nadezhda/dungeon/outside/prepper)
 "SY" = (/obj/structure/extinguisher_cabinet,/turf/simulated/floor/tiled/derelict,/area/nadezhda/outside/one_star)

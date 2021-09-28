@@ -7,13 +7,13 @@
 	How it works? Nobody is quite sure. The time it takes to fabricate munitions varies by cost and the machine parts used."
 	icon = 'icons/obj/machines/autolathe.dmi'
 	icon_state = "ammolathe"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
 	circuit = /obj/item/circuitboard/bullet_fab
-	var/processing = 0
+	var/processing = FALSE
 	var/obj/item/reagent_containers/glass/beaker = null
 	var/points = 0
 	var/menustat = "menu"
@@ -134,6 +134,8 @@
 			list(name="Grenade Shell Blast", cost=350, path=/obj/item/ammo_casing/grenade/blast),
 			list(name="Grenade Shell Frag", cost=350, path=/obj/item/ammo_casing/grenade/frag),
 			list(name="Grenade Shell EMP", cost=300, path=/obj/item/ammo_casing/grenade/emp),
+			list(name=".60-06 Anti-Material \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
+			list(name=".60-06 Anti-Material \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
 		".35 Ammo Packets",
 			list(name="Packet (.35 Auto)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35),
 			list(name="Packet (.35 Auto high-velocity)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/hv),
@@ -208,7 +210,7 @@
 /obj/machinery/bulletfabricator/New()
 	..()
 	create_reagents(1000)
-	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
+	beaker = new /obj/item/reagent_containers/glass/beaker/large(src) //???
 
 /obj/machinery/biogenerator/on_reagent_change()			//When the reagents change, change the icon as well.
 	update_icon()
@@ -259,13 +261,13 @@
 			for(var/smth in recipes)
 				if(istext(smth))
 					tmp_recipes += list(list(
-						"is_category" = 1,
+						"is_category" = TRUE,
 						"name" = smth,
 					))
 				else
 					var/list/L = smth
 					tmp_recipes += list(list(
-						"is_category" = 0,
+						"is_category" = FALSE,
 						"name" = L["name"],
 						"cost" = round(L["cost"]/build_eff),
 						"allow_multiple" = L["allow_multiple"],
@@ -312,14 +314,14 @@
 		//else points += I.reagents.get_reagent_amount("nutriment") * 8 * eat_eff
 		qdel(I)
 	if(S)
-		processing = 1
+		processing = TRUE
 		update_icon()
 		updateUsrDialog()
 		playsound(src.loc, 'sound/sanity/hydraulic.ogg', 50, 1)
 		use_power(S * 30)
-		sleep((S + 15) / eat_eff)
-		processing = 0
-		update_icon()
+		spawn((1 + S * 0.5) / eat_eff) //Max stack with t1 is 61 / 1 so long time
+			processing = FALSE
+			update_icon()
 	else
 		menustat = "void"
 	return
@@ -345,25 +347,25 @@
 
 	if(cost > points)
 		menustat = "nopoints"
-		return 0
+		return FALSE
 
-	processing = 1
+	processing = TRUE
 	update_icon()
 	updateUsrDialog() //maybe we can remove it
 	points -= cost
-	sleep(cost*0.5)
+	spawn(cost / eat_eff * 0.1) //Insainly quick do to being made to mass create ammo
 
-	var/creating = recipe["path"]
-	var/reagent = recipe["reagent"]
-	if(reagent) //For reagents like milk
-		beaker.reagents.add_reagent(reagent, 30)
-	else
-		for(var/i in 1 to amount)
-			new creating(loc)
-	processing = 0
-	menustat = "complete"
-	update_icon()
-	return 1
+		var/creating = recipe["path"]
+		var/reagent = recipe["reagent"]
+		if(reagent) //For reagents like milk
+			beaker.reagents.add_reagent(reagent, 30)
+		else
+			for(var/i in 1 to amount)
+				new creating(loc)
+		processing = FALSE
+		menustat = "menu" //complete adds an extra step thats annoying to deal with
+		update_icon()
+		return TRUE
 
 /obj/machinery/bulletfabricator/Topic(href, href_list)
 	if(stat & BROKEN) return

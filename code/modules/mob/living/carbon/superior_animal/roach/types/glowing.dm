@@ -14,6 +14,8 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
 
+	armor = list(melee = 10, bullet = 5, energy = 0, bomb = 5, bio = 20, rad = 100, agony = 0)
+
 	contaminant_immunity = TRUE
 	toxin_immune = TRUE
 

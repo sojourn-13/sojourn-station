@@ -4,7 +4,7 @@
 /datum/uplink_item/item/void_wolf/cog
 	name = "\"Cog\" lasgun"
 	item_cost = 3
-	path = /obj/item/gun/energy/retro
+	path = /obj/item/gun/energy/cog
 
 /datum/uplink_item/item/void_wolf/sword
 	name = "Void Wolf Energy Swords"

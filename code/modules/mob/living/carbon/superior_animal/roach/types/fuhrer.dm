@@ -21,6 +21,8 @@
 
 	flash_resistances = 5 //half stuns by flash, so we can still get up and be in the fight!
 
+	armor = list(melee = 15, bullet = 15, energy = 5, bomb = 5, bio = 20, rad = 0, agony = 0)
+
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer
 	meat_amount = 6
 
