@@ -762,7 +762,7 @@ obj/item/clothing/suit/sweater/blue
 //Makeshift chest rig.
 /obj/item/clothing/suit/storage/vest/chestrig
 	name = "makeshift chest rig"
-	desc = "A makeshift chest rig made for carrying some stuff. Can carry four small items. Has little protective value.."
+	desc = "A makeshift chest rig made for carrying some stuff. Can carry four small items. Has little protective value."
 	icon_state = "mchestrig"
 	item_state = "mchestrig"
 	armor = list(

@@ -19,7 +19,7 @@
 
 /obj/item/clothing/shoes/ablasive
 	name = "ablative jackboots"
-	desc = "A thick pare of boots that excels in protecting the wearer against energy projectiles."
+	desc = "A thick pair of boots that excels in protecting the wearer against energy projectiles."
 	armor = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
@@ -145,23 +145,23 @@
 
 /obj/item/clothing/shoes/aerostatic_boots
 	name = "aerostatic boots"
-	desc = "A pair of running shoes that are designed with speed in mind, that stated they dont really make you go faster, and look quit nice."
+	desc = "A pair of running shoes that are designed with speed in mind, that stated they dont really make you go faster, and look quite nice."
 	icon_state = "aerostatic_boots"
 
 /obj/item/clothing/shoes/render //Armored a bit do to the hide
 	name = "lizardskin shoes"
-	desc = "A green pare of shoes made of a lizardskin, likely a young render..."
+	desc = "A green pair of shoes made of lizardskin, likely a young render..."
 	icon_state = "lizardskin_shoes"
 	armor = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 10, rad = 0)
 
 /obj/item/clothing/shoes/church_blacksilk_boots
 	name = "blacksilk boots"
-	desc = "A pare of silk boots that is common to see in more faithful places."
+	desc = "A pair of silk boots that is common to see in more faithful places."
 	icon_state = "church_blacksilk_boots"
 
 /obj/item/clothing/shoes/track_shoes
 	name = "running shoes"
-	desc = "A pare of shoes with with stripes on the side for running."
+	desc = "A pair of light, stripped running shoes. Good for squatting."
 	icon_state = "trackshoes_black"
 
 /*High Heels*/

@@ -70,8 +70,8 @@
 
 //Civillian
 /obj/item/clothing/suit/storage/toggle/club
-	name = "executive officer's jacket"
-	desc = "A well tailored and rich jacket of the executive officer."
+	name = "chief executive officer's jacket"
+	desc = "A well tailored and rich jacket for the Chief Executive Officer."
 	icon_state = "cm_coat"
 	item_state = "cm_coat"
 	icon_open = "cm_coat_open"
@@ -166,7 +166,7 @@
 //Detective
 /obj/item/clothing/suit/storage/rank/insp_trench
 	name = "ranger's armored trenchcoat"
-	desc = "Brown and armored trenchcoat, designed and created by Security. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
+	desc = "Brown and armored trenchcoat, designed and created by the Marshals. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
 	icon_state = "rangercoat"
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"

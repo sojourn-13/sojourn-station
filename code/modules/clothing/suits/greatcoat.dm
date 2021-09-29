@@ -50,7 +50,7 @@
 
 /obj/item/clothing/suit/greatcoat/ihc_blue
 	name = "warrant officer's blue greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style. This one is blue and fits the Warrant officer's uniform."
+	desc = "A durable greatcoat, designed for protecion and style. This one is blue and fits the Warrant Officer's uniform."
 	icon_state = "ihc_coat_blue"
 	item_state = "ihc_coat_blue"
 	blood_overlay_type = "coat"
@@ -185,7 +185,7 @@
 
 /obj/item/clothing/suit/greatcoat/general/overcoatblack/german
 	name = "thalatta overcoat"
-	desc = "A sturdy overcoat from thalatta, the city-ship filled with people of faith and technology. Not related to the local church, strangely enough, but worn by them sometimes."
+	desc = "A sturdy overcoat from Thalatta, the city-ship filled with people of faith and technology. Not related to the local church, strangely enough, but worn by them sometimes."
 	icon_state = "germancoat"
 	item_state = "germancoat"
 
