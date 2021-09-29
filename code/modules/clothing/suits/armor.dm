@@ -252,7 +252,6 @@
 
 /obj/item/clothing/suit/armor/vest/prime
 	name = "prime armor"
-<<<<<<< Updated upstream
 	desc = "Trust in god, but keep your armor on."
 =======
 	desc = "Trust in God but keep your armor on."
