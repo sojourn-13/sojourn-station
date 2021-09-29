@@ -335,7 +335,6 @@ obj/item/clothing/suit/fluff/kimono
 		bullet = 5,
 		energy = 5,
 		bomb = 0,
->>>>>>> Stashed changes
 		bio = 0,
 		rad = 0
 	)
