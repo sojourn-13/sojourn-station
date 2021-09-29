@@ -123,7 +123,7 @@
 	return TRUE
 
 /mob/living/carbon/superior_animal/robot/mining/proc/drop_loot()
-	visible_message("[src] empty \his storage bin.") // Visible message
+	visible_message("[src] empties \his storage bin.") // Visible message
 	var/turf/T = get_turf(src)
 	for(var/obj/O in contents) // Empty everything
 		O.forceMove(T) // Move the item on the ground
