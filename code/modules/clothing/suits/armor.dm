@@ -220,9 +220,6 @@
 
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
-<<<<<<< Updated upstream
-	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies' various dangerous pests."
-=======
 	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
 >>>>>>> Stashed changes
 	icon_state = "custodian"
