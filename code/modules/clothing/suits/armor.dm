@@ -280,7 +280,6 @@
 
 /obj/item/clothing/suit/armor/vest/soteriasuit
 	name = "'Mark II' environmental protection suit"
-<<<<<<< Updated upstream
 	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
 =======
 	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guild's original design. \
