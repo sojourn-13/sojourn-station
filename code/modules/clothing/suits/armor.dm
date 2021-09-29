@@ -824,7 +824,6 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		melee = 25, //It's made of mostly wood and cloth, shittiest armor in the game easily, but does have bio and rad, giving it a rare but still possible boost over handmade. -Kaz
 		bullet = 15, // Justifying keeping somewhat decent values on bullet just because I changed the recipe to include steel. - Seb
 		energy = 10, // It's mostly made of wood, it will char easily.
-=======
 		bomb = 10,
 		bio = 25,
 		rad = 25
