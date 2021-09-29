@@ -439,7 +439,8 @@
 			/datum/craft_recipe/robotic/left_arm_frame,
 			/datum/craft_recipe/robotic/right_arm_frame,
 			/datum/craft_recipe/robotic/left_leg_frame,
-			/datum/craft_recipe/robotic/right_leg_frame
+			/datum/craft_recipe/robotic/right_leg_frame,
+			/datum/craft_recipe/robotic/mining_bot
 			)
 
 /datum/perk/robotics_expert/assign(mob/living/carbon/human/H)

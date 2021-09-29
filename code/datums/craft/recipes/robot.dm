@@ -145,3 +145,16 @@
 		list(QUALITY_BOLT_TURNING, 10, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
 	)
+
+/datum/craft_recipe/robotic/mining_bot
+	name = "Aether Mining Bot"
+	result = /mob/living/carbon/superior_animal/robot/mining/aether
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 60),
+		list(/obj/item/bot_part/roomba/roomba_treads, 2, "time" = 60),
+		list(/obj/item/robot_parts/robot_component/actuator, 2, "time" = 60),
+		list(/obj/item/robot_parts/robot_component/camera, 1, "time" = 60),
+		list(QUALITY_WELDING, 10, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 10, "time" = 180),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
+	)
