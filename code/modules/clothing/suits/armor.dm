@@ -253,7 +253,6 @@
 /obj/item/clothing/suit/armor/vest/prime
 	name = "prime armor"
 	desc = "Trust in god, but keep your armor on."
-=======
 	desc = "Trust in God but keep your armor on."
 >>>>>>> Stashed changes
 	icon_state = "prime"
