@@ -92,6 +92,9 @@
 	if(prob(3))
 		deepmaint_entry_point = TRUE
 
+	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints borrow
+		desc = "Entrance hidden by bricks and rubble. Collapsing this would require some heavy digging tools."
+
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
 	GLOB.all_burrows.Remove(src)
