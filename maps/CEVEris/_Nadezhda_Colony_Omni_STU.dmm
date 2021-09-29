@@ -999,11 +999,6 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/detectives_office)
 "amt" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/universal,
 /turf/simulated/floor/plating,
 /area/colony)
@@ -18159,6 +18154,27 @@
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/chapel)
+"ezP" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "AI_maint_hatch";
+	layer = 2.6;
+	name = "Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/colony)
 "eAi" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -20375,11 +20391,6 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "eZA" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/colony)
@@ -31703,6 +31714,27 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
+"hOd" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "AI_maint_hatch";
+	layer = 2.6;
+	name = "Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/colony)
 "hOv" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/plating/under,
@@ -31893,6 +31925,24 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
+"hQP" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "AI_maint_hatch";
+	layer = 2.6;
+	name = "Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/colony)
 "hQU" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -44540,8 +44590,7 @@
 /obj/structure/cable/green{
 	d1 = 32;
 	d2 = 2;
-	icon_state = "32-2";
-	dir = 1
+	icon_state = "32-2"
 	},
 /obj/machinery/atmospherics/pipe/zpipe/down{
 	dir = 1
@@ -71317,6 +71366,26 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/fo)
+"rkv" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "AI_maint_hatch";
+	layer = 2.6;
+	name = "Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/colony)
 "rkQ" = (
 /obj/machinery/computer/arcade,
 /obj/effect/decal/cleanable/dirt,
@@ -76308,9 +76377,9 @@
 /area/nadezhda/outside/forest)
 "stw" = (
 /obj/structure/cable/green{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/colony)
@@ -84821,11 +84890,6 @@
 "uze" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/colony)
@@ -98305,6 +98369,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"xwI" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/colony)
 "xwL" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/techmaint,
@@ -169696,7 +169768,7 @@ lfA
 lfA
 lfA
 lfA
-lfA
+hQP
 lfA
 lfA
 lfA
@@ -169898,7 +169970,7 @@ lNV
 lNV
 phf
 lNV
-lNV
+rkv
 lNV
 lNV
 tDY
@@ -170699,8 +170771,8 @@ hSx
 xGi
 xGi
 xGi
-kni
-lDG
+ezP
+hOd
 rgz
 myQ
 nGN
@@ -171306,7 +171378,7 @@ xGi
 pHi
 amt
 kOw
-xGi
+xwI
 rgz
 rgz
 rgz
