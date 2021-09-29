@@ -331,12 +331,6 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "triadkillers"
 	item_state = "triadkillers"
 	armor = list(
-<<<<<<< Updated upstream
-		melee = 15, //Loadout item with pockets, cool looking and decent protection but easily outclassed. -Kaz
-		bullet = 15,
-		energy = 15,
-		bomb = 15,
-=======
 		melee = 10,
 		bullet = 5,
 		energy = 5,
