@@ -302,6 +302,7 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
+/mob/living/carbon/superior_animal/robot/mining/aether,
 /turf/simulated/floor/asteroid,
 /area/mine/prep)
 "bc" = (
