@@ -93,7 +93,7 @@
 		deepmaint_entry_point = TRUE
 
 	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints borrow
-		desc = "Entrance hidden by bricks and rubble. Collapsing this would require some heavy digging tools."
+		desc = "There appears to be an entrance here, covered by rubble and dirt. Collapsing it would take some serious tools and time."
 
 //Lets remove ourselves from the global list and cleanup any held references
 /obj/structure/burrow/Destroy()
