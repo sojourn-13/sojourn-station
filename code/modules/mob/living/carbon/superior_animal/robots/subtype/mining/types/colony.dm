@@ -11,4 +11,4 @@
 	friendly_to_colony = TRUE
 	obey_friends = FALSE // We follow everyone who ask
 
-	wander = FALSE // We don't wander automatically
+	wandering = FALSE // We don't wander automatically
