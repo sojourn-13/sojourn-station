@@ -830,7 +830,6 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		bullet = 15, // Justifying keeping somewhat decent values on bullet just because I changed the recipe to include steel. - Seb
 		energy = 10, // It's mostly made of wood, it will char easily.
 =======
-		bullet = 30,
 		energy = 25,
 >>>>>>> Stashed changes
 		bomb = 10,
