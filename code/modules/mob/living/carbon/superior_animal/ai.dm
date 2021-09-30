@@ -189,6 +189,7 @@
 	if (common_known)
 		add_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to ON."))
+		common_known = TRUE
 	else
 		remove_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))
