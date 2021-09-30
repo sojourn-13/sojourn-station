@@ -89,7 +89,7 @@
 			continue
 		valid_targets += H
 	target = pick(valid_targets)
-	desc = "[target] may submit to evil forces if the [ritual_name] is not performed on them."
+	desc = "[target] may need spiritual guidance, using [ritual_name] will give peace of mind to you and hopefully them."
 	ritual = GLOB.all_rituals[ritual_name]
 	RegisterSignal(mind_holder, COMSIG_RITUAL, .proc/task_completed)
 
@@ -111,7 +111,7 @@
 /datum/individual_objective/sanctify/assign()
 	..()
 	target_area = random_ship_area()
-	desc = "\the [target_area] if overran with useen evil forces. it needs to be cleansed."
+	desc = "\the [target_area] may be the target of infestation by maligned forces, it should be blessed and cleansed."
 	RegisterSignal(target_area, COMSIG_AREA_SANCTIFY, .proc/task_completed)
 
 /datum/individual_objective/sanctify/task_completed()

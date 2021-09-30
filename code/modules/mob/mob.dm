@@ -1308,8 +1308,8 @@ mob/proc/yank_out_object()
 	set category = "IC"
 	var/timeinjob = 0
 	log_debug("[src.ckey] just looked at his playtime.")
-	for(var/job in joblist)
-		var/datum/job/J = joblist[job]
+	for(var/job in GLOB.joblist)
+		var/datum/job/J = GLOB.joblist[job]
 		timeinjob = SSjob.JobTimeCheck(usr.ckey, "[J.type]")
 		if(timeinjob > 0)
 			to_chat(src, "You have spent [timeinjob] minutes playing as [J.title].")

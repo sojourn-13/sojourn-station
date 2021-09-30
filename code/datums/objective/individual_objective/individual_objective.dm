@@ -36,6 +36,7 @@
 	var/list/req_department = list()
 	var/req_cruciform = FALSE
 	var/allow_cruciform = TRUE
+	var/allow_psion = TRUE
 	var/based_time = FALSE
 	var/limited_antag = FALSE
 	var/rarity = 1
@@ -115,6 +116,9 @@
 		return FALSE
 	if(is_neotheology_disciple(L))
 		if(!allow_cruciform)
+			return FALSE
+	if(L.stats.getPerk(PERK_PSION))
+		if(!allow_psion)
 			return FALSE
 	else
 		if(req_cruciform)
