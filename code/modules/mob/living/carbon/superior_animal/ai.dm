@@ -193,3 +193,4 @@
 	else
 		remove_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))
+		common_known = FALSE
