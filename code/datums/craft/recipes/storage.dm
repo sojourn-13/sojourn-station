@@ -109,6 +109,15 @@
 	)
 	related_stats = list(STAT_COG)
 
+/datum/craft_recipe/lodge/leather_small_pouch
+	name = "small leather pouch"
+	result = /obj/item/storage/pouch/small_generic/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+
 /datum/craft_recipe/box/adv
 	icon_state = "clothing"
 	avaliableToEveryone = FALSE
