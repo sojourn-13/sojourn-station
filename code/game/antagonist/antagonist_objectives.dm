@@ -1,4 +1,4 @@
-/datum/antagonist/proc/create_objectives(var/survive = FALSE)
+/datum/antagonist/proc/create_objectives(survive = FALSE)
 
 	if(!possible_objectives || !possible_objectives.len)
 		return
@@ -9,7 +9,7 @@
 
 
 // used only for factions antagonists
-/datum/antagonist/proc/set_objectives(var/list/new_objectives)
+/datum/antagonist/proc/set_objectives(list/new_objectives)
 
 	if(!owner || !owner.current)
 		return
@@ -40,12 +40,12 @@
 //Owner: The antag or faction that will own this objective
 //Possible objectives: The weighted list of objectives we choose from
 //Quantity: How many objectives we will select
-/proc/pick_objectives(var/owner, var/list/possible_objectives, var/quantity)
+/proc/pick_objectives(owner, list/possible_objectives, quantity)
 	//Safety checks first
 	if(!possible_objectives || !possible_objectives.len)
 		return
 
-	if (!owner || (!istype(owner, /datum/antag_faction) && !istype(owner, /datum/antagonist)))
+	if (!owner || (!istype(owner, /datum/faction) && !istype(owner, /datum/antagonist)))
 		return
 
 	if (!isnum(quantity) || quantity <= 0)
@@ -92,7 +92,6 @@
 
 			//Thirdly, remove this objective from the possible list
 			possible_objectives.Remove(chosen_obj)
-
 
 
 

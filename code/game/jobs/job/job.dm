@@ -12,13 +12,13 @@
 	var/total_positions = 0					// How many players can be this job
 	var/spawn_positions = 0					// How many players can spawn in as this job
 	var/current_positions = 0				// How many players have this job
-	var/supervisors = null					// Supervisors, who this person answers to directly
+	var/supervisors					// Supervisors, who this person answers to directly
 	var/selection_color = "#ffffff"			// Selection screen color
 	var/list/alt_titles
 	var/difficulty = "Null"
 
 	var/req_admin_notify					// If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
-	var/department = null					// Does this position have a department tag?
+	var/department					// Does this position have a department tag?
 	var/head_position = FALSE				// Is this position Command?
 	var/department_account_access = FALSE	// Can this position access the department acount, even if they're not a head?
 	var/minimum_character_age = 0
@@ -139,6 +139,27 @@
 /datum/job/proc/get_access()
 	return src.access.Copy()
 
+/datum/job/proc/is_experienced_enough(client/C) //This can be reimplemented if you want to have special requirements for jobs.
+	var/are_we_experienced_enough = FALSE //We start under the assumption of NO!
+	var/list/jobs_in_department = list() //What jobs are in this department?
+	for(var/job in joblist)
+		var/datum/job/J = joblist[job]
+		if(department_flag == COMMAND)
+			if(department_flag & J.department_flag)
+				jobs_in_department += "[J.type]"
+		else
+			if(department == J.department)
+				jobs_in_department += "[J.type]"
+	if(playtimerequired > 0)
+		if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", jobs_in_department, playtimerequired))
+			are_we_experienced_enough = TRUE //We are experienced enough, hurray.
+	if(coltimerequired > 0)
+		if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", "/datum/job/assistant", coltimerequired))
+			are_we_experienced_enough = TRUE //We are experienced enough as a colonist, hurray.
+	if(playtimerequired == 0 && coltimerequired == 0)
+		are_we_experienced_enough = TRUE //We're doing a job that requires 0 experience, hurray.
+	return are_we_experienced_enough
+
 /datum/job/proc/apply_fingerprints(var/mob/living/carbon/human/target)
 	if(!istype(target))
 		return 0
@@ -173,6 +194,9 @@
 		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age].</span>")
 		return TRUE
 
+	if(!is_experienced_enough(prefs.client))
+		to_chat(feedback, "<span class='boldannounce'>Not experienced enough. This job requires that you play [coltimerequired] minutes of colonist and [playtimerequired] in the [department] department.</span>")
+		return TRUE
 	//Disabled since I rewrote the system to be more granular. Will need later work.
 	/*if(coltimerequired)
 		if(coltimerequired > prefs.playtime["Civilian"])
@@ -247,4 +271,3 @@
 	//The string processing is necessary so that string queries can return too.
 	//For some reason, /datum/job/hydro and "/datum/job/hydro" are not considered the same string.
 	SSjob.JobTimeAdd(C.ckey, "[type]", amount)
-	

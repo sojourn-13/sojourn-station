@@ -10,8 +10,7 @@
 	var/account_number = 0
 	var/account_pin
 	var/account_initial_balance = 3500	//How much money this account starts off with
-
-
+	var/list/jobs_in_department = list()
 
 	//Account Funding
 	/*
@@ -45,7 +44,6 @@
 	pending_wage_total = 0
 	for (var/a in pending_wages)
 		pending_wage_total += pending_wages[a]
-
 
 /*************
 	Command

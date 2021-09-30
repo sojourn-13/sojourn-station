@@ -1302,3 +1302,14 @@ mob/proc/yank_out_object()
 /mob/proc/set_stat(var/new_stat)
 	. = stat != new_stat
 	stat = new_stat
+
+/client/verb/showplaytime()
+	set name = "Show All Playtime"
+	set category = "IC"
+	var/timeinjob = 0
+	log_debug("[src.ckey] just looked at his playtime.")
+	for(var/job in joblist)
+		var/datum/job/J = joblist[job]
+		timeinjob = SSjob.JobTimeCheck(usr.ckey, "[J.type]")
+		if(timeinjob > 0)
+			to_chat(src, "You have spent [timeinjob] minutes playing as [J.title].")

@@ -13,10 +13,8 @@ GLOBAL_LIST_EMPTY(living_mob_list)			//List of all alive mobs, including clientl
 GLOBAL_LIST_EMPTY(dead_mob_list)				//List of all dead mobs, including clientless. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(hearing_objects)	//List of all dead mobs, including clientless. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(superior_animal_list)		//A list of all superior animals; for targeting each other
-var/global/list/current_antags = list()
-var/global/list/current_factions = list()
-var/global/list/antag_team_objectives = list()		//List of shared sets of objectives for antag teams
-var/global/list/antag_team_members = list()			//List of the people who are in antag teams
+GLOBAL_LIST_EMPTY(current_antags)
+GLOBAL_LIST_EMPTY(current_factions)
 
 GLOBAL_LIST_EMPTY(factions_list)			//List of active factions.
 GLOBAL_LIST_EMPTY(faxable_factions_list)	//Factions with faxes.
@@ -24,14 +22,14 @@ GLOBAL_LIST_EMPTY(player_factions_list)		//Factions with players in them. Admin 
 GLOBAL_LIST_EMPTY(admin_factions_list)		//Factions with administrative response. All faxes to an admin faction pass through admins first, even with a primary fax.
 
 GLOBAL_LIST_EMPTY(cable_list)					//Index for all cables, so that powernets don't have to look through the entire world all the time
-var/global/list/chemical_reactions_list				//list of all /datum/chemical_reaction datums. Used during chemical reactions
+GLOBAL_LIST_EMPTY(chemical_reactions_list)				//list of all /datum/chemical_reaction datums. Used during chemical reactions
 GLOBAL_LIST_EMPTY(chemical_reactions_list_by_result)					//list of all /datum/chemical_reaction datums. But this one indexed by chemical result instead of reagents
-var/global/list/chemical_reagents_list				//list of all /datum/reagent datums indexed by reagent id. Used by chemistry stuff
-var/global/list/landmarks_list = list()				//list of all landmarks created
-var/global/list/shuttle_landmarks_list = list()		//list of all /obj/effect/shuttle_landmark.
-var/global/list/old_surgery_steps = list()			//list of all old-style (not bound to organs) surgery steps
+GLOBAL_LIST_EMPTY(chemical_reagents_list)				//list of all /datum/reagent datums indexed by reagent id. Used by chemistry stuff
+GLOBAL_LIST_EMPTY(landmarks_list)				//list of all landmarks created
+GLOBAL_LIST_EMPTY(shuttle_landmarks_list)		//list of all /obj/effect/shuttle_landmark.
+GLOBAL_LIST_EMPTY(old_surgery_steps)			//list of all old-style (not bound to organs) surgery steps
 GLOBAL_LIST_EMPTY(surgery_steps)					//list of all new organ-based surgery steps
-var/global/list/mechas_list = list()				//list of all mechs. Used by hostile mobs target tracking.
+GLOBAL_LIST_EMPTY(mechas_list)				//list of all mechs. Used by hostile mobs target tracking. Not sure this is used anymore
 
 GLOBAL_LIST_EMPTY(all_burrows)				//list of all burrows
 GLOBAL_LIST_EMPTY(all_maintshrooms)			//list of all maintshrooms
@@ -48,14 +46,14 @@ GLOBAL_LIST_EMPTY(all_doors) //List of all airlocks
 GLOBAL_LIST_EMPTY(atmos_machinery) //All things atmos
 
 //Jobs and economy
-var/global/list/joblist = list()					//list of all jobstypes, minus borg and AI
-var/global/list/all_departments = list()			//List of all department datums
+GLOBAL_LIST_EMPTY(joblist)					//list of all jobstypes, minus borg and AI
+GLOBAL_LIST_EMPTY(all_departments)			//List of all department datums
 var/global/list/department_IDs = list(DEPARTMENT_COMMAND, DEPARTMENT_MEDICAL, DEPARTMENT_ENGINEERING,
  DEPARTMENT_SCIENCE, DEPARTMENT_SECURITY, DEPARTMENT_LSS, DEPARTMENT_CHURCH, DEPARTMENT_CIVILIAN, DEPARTMENT_PROSPECTOR)
-var/global/list/global_corporations = list()
+GLOBAL_LIST_EMPTY(global_corporations)
 
 
-var/global/list/HUDdatums = list()
+GLOBAL_LIST_EMPTY(HUDdatums)
 
 #define all_genders_define_list list(MALE, FEMALE, PLURAL, NEUTER)
 
@@ -71,7 +69,7 @@ var/global/list/whitelisted_species = list("Human") // Species that require a wh
 var/global/list/playable_species = list("Human")    // A list of ALL playable species, whitelisted, latejoin or otherwise.
 
 // Posters
-var/global/list/poster_designs = list()
+GLOBAL_LIST_EMPTY(poster_designs)
 
 // Uplinks
 var/list/obj/item/device/uplink/world_uplinks = list()
@@ -88,6 +86,12 @@ GLOBAL_LIST_EMPTY(all_stash_datums)
 
 //PERKS
 GLOBAL_LIST_EMPTY(all_perks)
+
+//individual_objectives
+GLOBAL_LIST_EMPTY(all_faction_items)
+
+//faction_items
+GLOBAL_LIST_EMPTY(individual_objectives)
 
 //NeoTheology
 GLOBAL_LIST_EMPTY(all_rituals)//List of all rituals
@@ -109,7 +113,6 @@ GLOBAL_LIST_EMPTY(body_marking_list)
 
 GLOBAL_DATUM_INIT(underwear, /datum/category_collection/underwear, new())
 
-var/global/list/backbaglist = list("Nothing", "Backpack", "Satchel", "Satchel Alt")
 var/global/list/exclude_jobs = list(/datum/job/ai,/datum/job/cyborg)
 
 var/global/list/organ_structure = list(
@@ -139,34 +142,6 @@ var/list/datum/visualnet/visual_nets = list()
 var/datum/visualnet/camera/cameranet = new()
 
 var/global/list/syndicate_access = list(access_maint_tunnels, access_syndicate, access_external_airlocks)
-
-// Strings which corraspond to bodypart covering flags, useful for outputting what something covers.
-var/global/list/string_part_flags = list(
-	"head" = HEAD,
-	"face" = FACE,
-	"eyes" = EYES,
-	"upper body" = UPPER_TORSO,
-	"lower body" = LOWER_TORSO,
-	"legs" = LEGS,
-	"arms" = ARMS
-)
-
-// Strings which corraspond to slot flags, useful for outputting what slot something is.
-var/global/list/string_slot_flags = list(
-	"back" = SLOT_BACK,
-	"face" = SLOT_MASK,
-	"waist" = SLOT_BELT,
-	"ID slot" = SLOT_ID,
-	"ears" = SLOT_EARS,
-	"eyes" = SLOT_EYES,
-	"hands" = SLOT_GLOVES,
-	"head" = SLOT_HEAD,
-	"feet" = SLOT_FEET,
-	"exo slot" = SLOT_OCLOTHING,
-	"body" = SLOT_ICLOTHING,
-	"uniform" = SLOT_ACCESSORY_BUFFER,
-	"holster" = SLOT_HOLSTER
-)
 
 //A list of slots where an item doesn't count as "worn" if it's in one of them
 var/global/list/unworn_slots = list(slot_l_hand,slot_r_hand, slot_l_store, slot_r_store,slot_robot_equip_1,slot_robot_equip_2,slot_robot_equip_3)
@@ -240,7 +215,7 @@ var/global/list/hair_gradients_list = list(
 	paths = subtypesof(/datum/old_surgery_step)
 	for(var/T in paths)
 		var/datum/old_surgery_step/S = new T
-		old_surgery_steps += S
+		GLOB.old_surgery_steps += S
 	sort_surgeries()
 
 	//perkS - Initialise all /datum/perks into a list
@@ -253,14 +228,14 @@ var/global/list/hair_gradients_list = list(
 	paths = subtypesof(/datum/department)
 	for(var/T in paths)
 		var/datum/department/D = new T
-		all_departments[D.id] = D
+		GLOB.all_departments[D.id] = D
 
 	//List of job datums
 	paths = subtypesof(/datum/job)
 	paths -= exclude_jobs
 	for(var/T in paths)
 		var/datum/job/J = new T
-		joblist[J.title] = J
+		GLOB.joblist[J.title] = J
 
 	//List of factions
 	paths = typesof(/datum/faction)-/datum/faction
@@ -272,6 +247,11 @@ var/global/list/hair_gradients_list = list(
 		if(F.admin)
 			GLOB.admin_factions_list[F.name] = F
 		//Player factions don't get loaded here since they have to be done at roundstart.
+
+	paths = subtypesof(/datum/individual_objective)
+	for(var/T in paths)
+		var/datum/individual_objective/IO = new T
+		GLOB.individual_objectives[T] = IO
 
 	//Stashes
 	paths = subtypesof(/datum/stash)
@@ -343,18 +323,18 @@ var/global/list/hair_gradients_list = list(
 	paths = subtypesof(/datum/poster) - /datum/poster/wanted
 	for(var/T in paths)
 		var/datum/poster/P = new T
-		poster_designs += P
+		GLOB.poster_designs += P
 
 	//Corporations
 	paths = subtypesof(/datum/corporation)
 	for(var/T in paths)
 		var/datum/corporation/C = new T
-		global.global_corporations[C.name] = C
+		global.GLOB.global_corporations[C.name] = C
 
 	paths = subtypesof(/datum/hud)
 	for(var/T in paths)
 		var/datum/hud/C = new T
-		global.HUDdatums[C.name] = C
+		GLOB.HUDdatums[C.name] = C
 
 	//Rituals
 	paths = typesof(/datum/ritual)

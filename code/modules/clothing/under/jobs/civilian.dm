@@ -31,7 +31,7 @@
 	item_state = "waiter_skirt"
 
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
-	desc = "An authoritative green uniform with gold flair denoting the rank of premier."
+	desc = "An authoritative green uniform with gold flair denoting the rank of Premier."
 	name = "premier's uniform"
 	icon_state = "captain"
 	item_state = "b_suit"
@@ -44,14 +44,14 @@
 
 /obj/item/clothing/under/rank/cargotech
 	name = "lonestar cargo uniform"
-	desc = "A dull lonestar turtleneck complete with sturdy work jeans."
+	desc = "A dull Lonestar turtleneck complete with sturdy work jeans."
 	icon_state = "cargotech"
 	item_state = "lb_suit"
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/rank/preacher
-	desc = "A dark ceremonial robe tailored for primes."
+	desc = "A dark ceremonial robe tailored for Primes."
 	name = "prime's robe"
 	icon_state = "preacher"
 	item_state = "w_suit"
@@ -81,20 +81,20 @@
 	item_state = "w_suit"
 
 /obj/item/clothing/under/rank/first_officer
-	desc = "A tan shirt with a premier guard's badge, worn alongside some black leggings."
+	desc = "A tan shirt with a Steward's badge, worn alongside some black leggings."
 	name = "steward's uniform"
 	icon_state = "hop"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/first_officer/skirt
-	desc = "A tan shirt with a premier guard's badge, worn alongside a black skirt."
+	desc = "A tan shirt with a Steward's badge, worn alongside a black skirt."
 	name = "steward's skirt"
 	icon_state = "hop_skirt"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/first_officer/suit
 	name = "steward's suit"
-	desc = "A teal suit complete with a white shirt and orange tie. This one has a premier guard's badge."
+	desc = "A teal suit complete with a white shirt and orange tie. This one has a Steward's badge."
 	icon_state = "teal_suit"
 	item_state = "g_suit"
 
@@ -127,7 +127,7 @@
 	item_state = "artist"
 
 /obj/item/clothing/under/rank/miner
-	desc = "A snappy lonestar jumpsuit complete with sturdy mining overalls."
+	desc = "A snappy Lonestar jumpsuit complete with sturdy mining overalls."
 	name = "lonestar miner's jumpsuit"
 	icon_state = "miner"
 	item_state = "lb_suit"

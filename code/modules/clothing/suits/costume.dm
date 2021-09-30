@@ -27,7 +27,7 @@
 
 /obj/item/clothing/suit/costume/animal/ian
 	name = "ian suit"
-	desc = "A suit resembling the famous space corgi.."
+	desc = "A suit resembling the famous space corgi."
 	icon_state = "ian"
 	item_state = ""
 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS

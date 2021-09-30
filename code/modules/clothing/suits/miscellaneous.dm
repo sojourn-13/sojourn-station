@@ -240,9 +240,9 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "punk_vest"
 	item_state = "punk_vest"
 	armor = list(
-		melee = 10,
-		bullet = 20,
-		energy = 10,
+		melee = 5,
+		bullet = 5,
+		energy = 5,
 		bomb = 0,
 		bio = 0,
 		rad = 0
@@ -269,8 +269,8 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "punkvest"
 	item_state = "punkvest"
 	armor = list(
-		melee = 10,
-		bullet = 10,
+		melee = 5,
+		bullet = 5,
 		energy = 0,
 		bomb = 0,
 		bio = 0,
@@ -302,7 +302,7 @@ obj/item/clothing/suit/fluff/kimono
 	item_state = "cyberpunk"
 	armor = list(
 		melee = 10,
-		bullet = 20,
+		bullet = 10,
 		energy = 10,
 		bomb = 0,
 		bio = 0,
@@ -331,10 +331,10 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "triadkillers"
 	item_state = "triadkillers"
 	armor = list(
-		melee = 15, //Loadout item with pockets, cool looking and decent protection but easily outclassed. -Kaz
-		bullet = 15,
-		energy = 15,
-		bomb = 15,
+		melee = 10,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
 		bio = 0,
 		rad = 0
 	)
@@ -348,7 +348,7 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "akira"
 	item_state = "akira"
 	armor = list(
-		melee = 20,
+		melee = 10,
 		bullet = 10,
 		energy = 10,
 		bomb = 0,

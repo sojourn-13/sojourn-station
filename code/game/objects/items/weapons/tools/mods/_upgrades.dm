@@ -638,7 +638,7 @@
 	UnregisterSignal(parent, COMSIG_REMOVE)
 
 /datum/component/item_upgrade/PostTransfer()
-	return COMPONENT_TRANSFER
+	return COMPONENT_NOTRANSFER //I guess we use this? - Trilby
 
 /datum/component/upgrade_removal
 	dupe_mode = COMPONENT_DUPE_UNIQUE

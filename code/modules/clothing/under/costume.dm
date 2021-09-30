@@ -91,11 +91,13 @@ obj/item/clothing/under/costume/history/pirate
 
 /obj/item/clothing/under/costume/kinky/stripper_pink
 	name = "pink stripper outfit"
+	desc = "You already know what this is."
 	icon_state = "stripper_p"
 	item_state = "stripper_p"
 
 /obj/item/clothing/under/costume/kinky/stripper_green
 	name = "green stripper outfit"
+	desc = "You already know what this is.
 	icon_state = "stripper_g"
 	item_state = "stripper_g"
 
