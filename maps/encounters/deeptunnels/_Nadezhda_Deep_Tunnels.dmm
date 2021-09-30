@@ -1651,6 +1651,7 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/processing)
 "eG" = (
+/obj/structure/material_box,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "eH" = (
@@ -1658,6 +1659,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/material_box,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "eI" = (
@@ -2711,6 +2713,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/material_box,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
 "hj" = (
@@ -4187,11 +4190,6 @@
 	name = "Isolation Three";
 	req_access = list(65)
 	},
-/obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/anomalisolthree)
@@ -4217,11 +4215,6 @@
 	name = "Isolation Four";
 	req_access = list(65)
 	},
-/obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/anomalisolfour)
@@ -4230,11 +4223,6 @@
 	id_tag = "riso5";
 	name = "Isolation Five";
 	req_access = list(65)
-	},
-/obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -9209,6 +9197,11 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"QN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/material_box,
+/turf/simulated/floor/tiled/steel,
+/area/mine/processing)
 "Ry" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -42275,7 +42268,7 @@ eV
 fU
 eU
 gF
-gF
+QN
 ee
 si
 dE
