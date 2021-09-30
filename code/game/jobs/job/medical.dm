@@ -23,6 +23,7 @@
 
 	ideal_character_age = 40
 	minimum_character_age = 30
+	playtimerequired = 1200
 
 	stat_modifiers = list(
 		STAT_BIO = 50,

@@ -15,6 +15,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -76,6 +77,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 

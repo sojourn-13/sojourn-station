@@ -584,7 +584,7 @@ ADMIN_VERB_ADD(/client/proc/playtimebypass, R_ADMIN|R_MOD|R_DEBUG, FALSE)
 	if(!J) return
 	var/mode = input("Enable, or disable?") in list("Enable", "Disable")
 	if(!mode) return
-	SSjob.JobTimeForce(ckey, initial(J.title), (mode=="Enable"))
+	SSjob.JobTimeForce(ckey, "[J]", (mode=="Enable"))
 	message_admins("\blue [key_name_admin(usr)] [lowertext(mode)]d [key]'s [J] job bypass.", 1)
 	log_admin("[key_name_admin(usr)] [lowertext(mode)]d [key]'s [J] job bypass.")
 
