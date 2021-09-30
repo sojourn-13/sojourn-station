@@ -53,6 +53,7 @@
 /obj/item/storage/pouch/small_generic/leather
 	icon_state = "small_leather"
 	item_state = "small_leather"
+	price_tag = 150
 
 /obj/item/storage/pouch/medium_generic
 	name = "medium generic pouch"
@@ -67,6 +68,7 @@
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
 	item_state = "medium leather"
+	price_tag = 300
 
 /obj/item/storage/pouch/medium_generic/opifex
 	name = "opifex smuggle pouch"
@@ -88,9 +90,10 @@
 	price_tag = 1000
 
 /obj/item/storage/pouch/large_generic/leather
-	desc = "A mini satchel made of leather.Can hold a fair bit, but it won't fit in your pocket"
+	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_leather"
 	item_state = "large_leather"
+	price_tag = 700
 
 /obj/item/storage/pouch/medical_supply
 	name = "medical supply pouch"
