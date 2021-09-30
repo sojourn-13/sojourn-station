@@ -1,6 +1,6 @@
 /mob/living/carbon/superior_animal/robot/mining
 	name = "Generic Mining Drone"
-	desc = "A small, unbranded drone, it has a drill and seem to search for shiny stuff."
+	desc = "A small, unbranded drone, it has a drill and a deep thirst for shiny rocks."
 	gender = NEUTER
 	icon = 'icons/mob/battle_roomba.dmi'
 	icon_state = "mining_drone"
