@@ -179,3 +179,16 @@
 	else
 		AI_inactive = TRUE
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
+
+/mob/living/carbon/superior_animal/verb/learn_common()
+	set name = "Learn Common"
+	set desc = "Toggles weather or not you can hear and understand Common or not."
+	set category = "Mob verbs"
+	var/common_known = FALSE
+
+	if (common_known)
+		add_language(LANGUAGE_COMMON)
+		to_chat(src, SPAN_NOTICE("You toggle knowing common to ON."))
+	else
+		remove_language(LANGUAGE_COMMON)
+		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))
