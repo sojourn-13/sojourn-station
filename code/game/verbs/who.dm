@@ -27,8 +27,13 @@
 							entry += " - <font color='black'><b>DEAD</b></font>"
 					else
 						entry += " - <font color='black'><b>DEAD</b></font>"
+				else
+					entry += " - <font color='gray'>In Lobby</font>"
 
-			if(is_special_character(C.mob))
+			if(is_limited_antag(C.mob))
+				entry += " - <b><font color='red'>Limited Antagonist</font></b>"
+
+			else if(is_special_character(C.mob))
 				entry += " - <b><font color='red'>Antagonist</font></b>"
 
 			if(C.is_afk())

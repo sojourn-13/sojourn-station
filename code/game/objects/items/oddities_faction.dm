@@ -18,10 +18,14 @@
 
 /obj/item/biosyphon/New()
 	..()
+	GLOB.all_faction_items[src] = GLOB.department_security
 	START_PROCESSING(SSobj, src)
 
 /obj/item/biosyphon/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
 	. = ..()
 
 /obj/item/biosyphon/Process()
@@ -30,6 +34,10 @@
 		visible_message(SPAN_NOTICE("[name] drop [D]."))
 		last_produce = world.time
 
+/obj/item/biosyphon/attackby(obj/item/I, mob/living/user, params)
+	if(nt_sword_attack(I, user))
+		return
+	..()
 
 /obj/item/device/von_krabin
 	name = "Von-Krabin Stimulator"
@@ -54,19 +62,30 @@
 	var/stats_buff = list(STAT_BIO, STAT_COG, STAT_MEC)
 	var/list/mob/living/carbon/human/currently_affected = list()
 
+/obj/item/von_krabin/New()
+	..()
+	GLOB.all_faction_items[src] = GLOB.department_moebius
+
 /obj/item/device/von_krabin/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	check_for_faithful(list())
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
+	..()
+
+/obj/item/device/von_krabin/attackby(obj/item/I, mob/user, params)
+	if(nt_sword_attack(I, user))
+		return FALSE
 	..()
 
 /obj/item/device/von_krabin/attack_self()
 	if(active)
-		active = FALSE
 		STOP_PROCESSING(SSobj, src)
 		check_for_faithful(list())
 	else
-		active = TRUE
 		START_PROCESSING(SSobj, src)
+	active = !active
 	return
 
 /obj/item/device/von_krabin/Process()
@@ -121,6 +140,21 @@
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 2, MATERIAL_PLASMA = 5, MATERIAL_BIOMATTER = 50)
 	var/blood_amount = 0
 
+/obj/item/reagent_containers/enricher/New()
+	..()
+	GLOB.all_faction_items[src] = GLOB.department_moebius
+
+/obj/item/reagent_containers/enricher/Destroy()
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
+	..()
+
+/obj/item/reagent_containers/enricher/attackby(obj/item/I, mob/living/user, params)
+	if(nt_sword_attack(I, user))
+		return FALSE
+	..()
+
 /obj/item/reagent_containers/enricher/attack_self()
 	if(reagents.total_volume)
 		for(var/datum/reagent/reagent in reagents.reagent_list)
@@ -159,7 +193,7 @@
 			return TRUE
 	return ..()
 
-/obj/item/reagent_containers/enricher/afterattack(var/obj/target, var/mob/user, var/flag)
+/obj/item/reagent_containers/enricher/afterattack(obj/target, mob/user, flag)
 	if(!flag)
 		return
 	if(standard_pour_into(user, target))
@@ -182,11 +216,55 @@
 	var/max_count = 5
 	var/cooldown = 30 MINUTES
 
-/obj/item/device/techno_tribalism/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/tool/psionic_omnitool))
-		return
+/obj/item/device/techno_tribalism/New()
+	..()
+	GLOB.all_faction_items[src] = GLOB.department_engineering
+
+/obj/item/device/techno_tribalism/Destroy()
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
+	..()
+
+/obj/item/device/techno_tribalism/attackby(obj/item/W, mob/user, params)
+	if(nt_sword_attack(W, user))
+		return FALSE
 	if(items_count < max_count)
-		if(istype(W, /obj/item/tool))
+		if(W in GLOB.all_faction_items)
+			if(GLOB.all_faction_items[W] == GLOB.department_moebius)
+				oddity_stats[STAT_COG] += 3
+				oddity_stats[STAT_BIO] += 3
+				oddity_stats[STAT_MEC] += 3
+			else if(GLOB.all_faction_items[W] == GLOB.department_security)
+				oddity_stats[STAT_VIG] += 3
+				oddity_stats[STAT_TGH] += 3
+				oddity_stats[STAT_ROB] += 3
+			else if(GLOB.all_faction_items[W] == GLOB.department_church)
+				oddity_stats[STAT_BIO] += 3
+				oddity_stats[STAT_COG] += 2
+				oddity_stats[STAT_VIG] += 2
+				oddity_stats[STAT_TGH] += 2
+			else if(GLOB.all_faction_items[W] == GLOB.department_guild)
+				oddity_stats[STAT_COG] += 3
+				oddity_stats[STAT_MEC] += 3
+				oddity_stats[STAT_ROB] += 1
+				oddity_stats[STAT_VIG] += 2
+			else if(GLOB.all_faction_items[W] == GLOB.department_engineering)
+				oddity_stats[STAT_MEC] += 5
+				oddity_stats[STAT_COG] += 2
+				oddity_stats[STAT_TGH] += 1
+				oddity_stats[STAT_VIG] += 1
+			else if(GLOB.all_faction_items[W] == GLOB.department_command)
+				oddity_stats[STAT_ROB] += 2
+				oddity_stats[STAT_TGH] += 1
+				oddity_stats[STAT_BIO] += 1
+				oddity_stats[STAT_MEC] += 1
+				oddity_stats[STAT_VIG] += 3
+				oddity_stats[STAT_COG] += 1
+			else
+				crash_with("[W], incompatible department")
+
+		else if(istype(W, /obj/item/tool))
 			var/useful = FALSE
 			if(W.tool_qualities)
 
@@ -194,7 +272,7 @@
 
 					if(W.tool_qualities[quality] >= 35)
 						var/stat_cost = round(W.tool_qualities[quality] / 15)
-						if(quality == QUALITY_BOLT_TURNING || quality == QUALITY_SCREW_DRIVING || quality == QUALITY_LASER_CUTTING)
+						if(quality == QUALITY_BOLT_TURNING || quality == QUALITY_SCREW_DRIVING || quality == QUALITY_CUTTING)
 							oddity_stats[STAT_COG] += stat_cost
 							useful = TRUE
 
@@ -206,7 +284,7 @@
 							oddity_stats[STAT_ROB] += stat_cost
 							useful = TRUE
 
-						else if (quality == QUALITY_WELDING || quality == QUALITY_WIRE_CUTTING || quality == QUALITY_SAWING || quality == QUALITY_CUTTING) // There is no saw that doesn't have cutting quality, better for consistency and desired output.
+						else if (quality == QUALITY_WELDING || quality == QUALITY_WIRE_CUTTING || quality == QUALITY_SAWING || quality == QUALITY_LASER_CUTTING)
 							oddity_stats[STAT_VIG] += stat_cost
 							useful = TRUE
 
@@ -260,18 +338,12 @@
 			oddity_stats[STAT_ROB] += 2
 			oddity_stats[STAT_VIG] += 2
 
-		else if(istype(W, /obj/item/gun_upgrade))
-			oddity_stats[STAT_MEC] += 2
-			oddity_stats[STAT_VIG] += 2
-
-		else if(istype(W, /obj/item/storage/toolbox))
-			oddity_stats[STAT_MEC] += 3
-
 		else
 			to_chat(user, SPAN_WARNING("The [W] is not suitable for [src]!"))
 			return
 
 		to_chat(user, SPAN_NOTICE("You feed [W] to [src]."))
+		SEND_SIGNAL(user, COMSIG_OBJ_TECHNO_TRIBALISM, W)
 		items_count += 1
 		qdel(W)
 
@@ -322,10 +394,13 @@
 
 /obj/item/maneki_neko/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	if(!istype(src.loc, /obj/item/storage/bsdm))
-		destroy_lifes()
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
 	..()
+
 /obj/item/maneki_neko/New()
+	GLOB.all_faction_items[src] = GLOB.department_guild
 	START_PROCESSING(SSobj, src)
 	..()
 
@@ -334,7 +409,10 @@
 	for(var/list/mob/living/carbon/human/affected in oviewers(affect_radius, src))
 		followers |= affected
 
-/obj/item/maneki_neko/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/maneki_neko/attackby(obj/item/W, mob/user, params)
+	if(nt_sword_attack(W, user))
+		return FALSE
+
 	if(QUALITY_HAMMERING in W.tool_qualities)
 		if(W.use_tool(user, src, WORKTIME_INSTANT, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_ROB))
 			playsound(src, "shatter", 70, 1)
@@ -381,6 +459,21 @@
 /obj/item/tool/sword/crusader/nt_sword_truth/unwield(mob/living/user)
 	..()
 	set_light(l_range = 0, l_power = 0)
+
+/obj/item/tool/sword/nt_sword/New()
+	..()
+	GLOB.all_faction_items[src] = GLOB.department_church
+
+/obj/item/tool/sword/nt_sword/Destroy()
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
+	..()
+
+/obj/item/tool/sword/nt_sword/attackby(obj/item/I, mob/user, params)
+	if(nt_sword_attack(I, user))
+		return FALSE
+	..()
 
 /obj/item/tool/sword/crusader/nt_sword_truth/attack_self(mob/user)
 	if(isBroken)
@@ -449,7 +542,7 @@
 	anchored = TRUE
 	density = TRUE
 	breakable = FALSE
-	var/obj/item/tool/sword/crusader/nt_sword_truth/sword = null
+	var/obj/item/tool/sword/crusader/nt_sword_truth/sword
 
 /obj/structure/nt_pedestal/New(var/loc, var/turf/anchor)
 	..()
@@ -526,14 +619,23 @@
 
 /obj/item/reagent_containers/atomic_distillery/New()
 	..()
+	GLOB.all_faction_items[src] = GLOB.department_command
 	START_PROCESSING(SSobj, src)
 
 /obj/item/reagent_containers/atomic_distillery/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
+		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+	GLOB.all_faction_items -= src
 	. = ..()
 
 /obj/item/reagent_containers/atomic_distillery/Process()
 	reagents.add_reagent("atomvodka", 1)
+
+/obj/item/reagent_containers/atomic_distillery/attackby(obj/item/I, mob/user, params)
+	if(nt_sword_attack(I, user))
+		return FALSE
+	..()
 
 /obj/item/reagent_containers/atomic_distillery/pre_attack(atom/A, mob/user, params)
 	if(user.a_intent == I_HURT)

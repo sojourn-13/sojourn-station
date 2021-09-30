@@ -522,14 +522,14 @@ SUBSYSTEM_DEF(ticker)
 		to_chat(world, "<b>There [dronecount>1 ? "were" : "was"] [dronecount] industrious maintenance [dronecount>1 ? "drones" : "drone"] at the end of this round.</b>")
 
 	GLOB.storyteller.declare_completion()//To declare normal completion.
-
+	scoreboard()//scores
 	//Ask the event manager to print round end information
 	SSevent.RoundEnd()
 
 	//Print a list of antagonists to the server log
 	var/list/total_antagonists = list()
 	//Look into all mobs in world, dead or alive
-	for(var/datum/antagonist/antag in current_antags)
+	for(var/datum/antagonist/antag in GLOB.current_antags)
 		var/temprole = antag.id
 		if(temprole && antag.owner)							//if they are an antagonist of some sort.
 			if(!(temprole in total_antagonists))	//If the role doesn't exist in list, create it

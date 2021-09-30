@@ -143,6 +143,7 @@
 		/datum/design/autolathe/circuit/reconstructor_excelsior,
 		/datum/design/autolathe/circuit/diesel_excelsior,
 		/datum/design/autolathe/circuit/turret_excelsior,
+		/datum/design/autolathe/circuit/recharger,
 		/datum/design/autolathe/circuit/autolathe_disk_cloner,
 		/datum/design/research/item/part/micro_mani,				//machine parts
 		/datum/design/research/item/part/subspace_amplifier,
@@ -219,6 +220,7 @@
 		/datum/design/autolathe/circuit/autolathe_excelsior,//circuits
 		/datum/design/autolathe/circuit/diesel_excelsior,
 		/datum/design/autolathe/circuit/autolathe_disk_cloner,
+		/datum/design/autolathe/circuit/recharger,
 		/datum/design/autolathe/device/propaganda_chip,
 		/datum/design/autolathe/part/igniter,//regular parts
 		/datum/design/autolathe/part/signaler,
