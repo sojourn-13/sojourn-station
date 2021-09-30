@@ -109,7 +109,7 @@
 	)
 	related_stats = list(STAT_COG)
 
-/datum/craft_recipe/lodge/leather_small_pouch
+/datum/craft_recipe/storage/leather_small_pouch
 	name = "small leather pouch"
 	result = /obj/item/storage/pouch/small_generic/leather
 	icon_state = "clothing"
