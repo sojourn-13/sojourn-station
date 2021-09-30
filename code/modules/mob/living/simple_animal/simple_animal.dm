@@ -752,12 +752,14 @@
 	set category = "Mob verbs"
 	var/common_known = FALSE
 
-	if (common_known)
+	if (!common_known)
 		add_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to ON."))
+		common_known = TRUE
 	else
 		remove_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))
+		common_known = TRUE
 
 //This is called when an animal 'speaks'. It does nothing here, but descendants should override it to add audio
 /mob/living/simple_animal/proc/speak_audio()
