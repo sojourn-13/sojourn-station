@@ -66,7 +66,9 @@
 		/obj/item/cell/medium,
 		/obj/item/grenade/chem_grenade/cleaner,
 		/obj/item/grenade/chem_grenade/antiweed,
-		/obj/item/grenade/chem_grenade/metalfoam
+		/obj/item/grenade/chem_grenade/metalfoam,
+		/obj/item/ammo_casing/flare,
+		/obj/item/gun/projectile/boltgun/flare_gun
 	)
 
 /obj/item/storage/belt/utility/full/populate_contents()
@@ -105,6 +107,8 @@
 		/obj/item/grenade/chem_grenade/cleaner,
 		/obj/item/grenade/chem_grenade/antiweed,
 		/obj/item/grenade/chem_grenade/metalfoam,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/ammo_casing/flare,
 		/obj/item/gun/hydrogen/plasma_torch // Something that can hold a welder should be able to hold the same welder turned into a gun.
 	)
 
@@ -150,6 +154,8 @@
 		/obj/item/stack/medical,
 		/obj/item/device/scanner/health,
 		/obj/item/soap,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/ammo_casing/flare,
 		/obj/item/oddity/chimeric_fang_trophy
 	)
 
@@ -164,6 +170,8 @@
 		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
 		/obj/item/gun/energy/ntpistol
 	)
@@ -279,7 +287,9 @@
 		/obj/item/reagent_containers/blood,
 		/obj/item/taperoll/medical,
 		/obj/item/clothing/gloves,
-		/obj/item/clothing/glasses
+		/obj/item/clothing/glasses,
+		/obj/item/ammo_casing/flare,
+		/obj/item/gun/projectile/boltgun/flare_gun
 	)
 
 /obj/item/storage/belt/medical/emt
@@ -321,6 +331,8 @@
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/revolver/detective,
 		/obj/item/gun/energy/gun/martin,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/ammo_casing/flare,
 		/obj/item/taperoll,
 		/obj/item/pen,
 		/obj/item/reagent_containers/food/snacks,
@@ -395,6 +407,8 @@
 		/obj/item/gun/energy/taser, //specially fitted to hold the counselor
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
 		/obj/item/gun/energy/ntpistol
 	)

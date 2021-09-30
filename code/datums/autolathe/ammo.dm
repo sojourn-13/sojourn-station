@@ -593,3 +593,8 @@
 /datum/design/autolathe/ammo/grenade/flash
 	name= "flash grenade shell"
 	build_path = /obj/item/ammo_casing/grenade/flash
+
+// Flare Shells
+/datum/design/autolathe/ammo/flare_shell
+	name = "flare shell"
+	build_path = /obj/item/ammo_casing/flare
