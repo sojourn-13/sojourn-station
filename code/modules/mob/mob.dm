@@ -1094,7 +1094,10 @@ mob/proc/yank_out_object()
 	set category	= "IC"
 	set src			= usr
 
-	browse_src_stats(src)
+	if(iscarbon(usr) || issilicon(usr))
+		browse_src_stats(src)
+	else
+		to_chat(usr, "You do not have the capability to have stats or perks!")
 
 /mob/proc/browse_src_stats(mob/user)
 	var/additionalcss = {"
