@@ -20,61 +20,6 @@
 	var/pickup = TRUE // Do we pick up the ore?
 	var/mining = TRUE // Do we mine rocks?
 
-//Putting this here do to no idea were it would fit other then here
-/mob/living/carbon/superior_animal/robot/mining/verb/toggle_viewRange()
-	set name = "Toggle Viewrange"
-	set desc = "Toggles viewrange on the mining bot, smaller ones makes it more easy to mannully controle the bot, well longer range will be more automatic."
-	set category = "Mob verbs"
-
-	if (viewRange == 6)
-		viewRange = 3
-		to_chat(src, SPAN_NOTICE("You toggle the mobs Viewrange to 3."))
-
-	if (viewRange == 3)
-		viewRange = 1
-		to_chat(src, SPAN_NOTICE("You toggle the mobs Viewrange to 1."))
-
-	else
-		viewRange = 6
-		to_chat(src, SPAN_NOTICE("You toggle the mobs Viewrange to 6."))
-
-/mob/living/carbon/superior_animal/robot/mining/verb/toggle_wandering()
-	set name = "Toggle wandering"
-	set desc = "Toggles on/off the mobs wandering."
-	set category = "Mob verbs"
-
-	if (wandering)
-		wandering = FALSE
-		to_chat(src, SPAN_NOTICE("You toggle the mobs default wandering to ON."))
-	else
-		wandering = TRUE
-		to_chat(src, SPAN_NOTICE("You toggle the mobs default wandering to OFF."))
-
-/mob/living/carbon/superior_animal/robot/mining/verb/toggle_pickup()
-	set name = "Toggle pickup"
-	set desc = "Toggles on/off the mobs pickup."
-	set category = "Mob verbs"
-
-	if (pickup)
-		pickup = FALSE
-		to_chat(src, SPAN_NOTICE("You toggle the mobs default pickup to ON."))
-	else
-		pickup = TRUE
-		to_chat(src, SPAN_NOTICE("You toggle the mobs default pickup to OFF."))
-
-/mob/living/carbon/superior_animal/robot/mining/verb/toggle_mining()
-	set name = "Toggle mining"
-	set desc = "Toggles on/off the mobs mining."
-	set category = "Mob verbs"
-
-	if (mining)
-		mining = FALSE
-		to_chat(src, SPAN_NOTICE("You toggle the mobs default mining to ON."))
-	else
-		mining = TRUE
-		to_chat(src, SPAN_NOTICE("You toggle the mobs default mining to OFF."))
-
-
 /mob/living/carbon/superior_animal/robot/mining/examine(mob/user)
 	..()
 	to_chat(user, SPAN_NOTICE("[src]'s screen flashes and show \his operating parameters : "))
@@ -84,22 +29,22 @@
 
 /mob/living/carbon/superior_animal/robot/mining/Life()
 	..()
+	if(!client) // If there's anyone controlling the bot, this AI part won't run
+		if(!look_around() && wandering) // If we didn't find anything of value and can wandering
+			target = pick(oview(viewRange + 1, src)) // Go somewhere random
 
-	if(!look_around() && wandering) // If we didn't find anything of value and can wandering
-		target = pick(oview(viewRange + 1, src)) // Go somewhere random
+		// Are we going to a minable turf despite not being supposed to?
+		if(istype(target, /turf/simulated/mineral && !mining))
+			target = null // reset the target
 
-	// Are we going to a minable turf despite not being supposed to?
-	if(istype(target, /turf/simulated/mineral && !mining))
-		target = null // reset the target
+		// Are we going to ores on the ground despite not being supposed to?
+		if(istype(target, /obj/item/ore && !pickup))
+			target = null // reset the target
 
-	// Are we going to ores on the ground despite not being supposed to?
-	if(istype(target, /obj/item/ore && !pickup))
-		target = null // reset the target
-
-	if(target) // Do we have a destination?
-		walk_to(src, target, 1, move_to_delay) // Go there
-	else
-		walk_to(src, 0) // Or else stop
+		if(target) // Do we have a destination?
+			walk_to(src, target, 1, move_to_delay) // Go there
+		else
+			walk_to(src, 0) // Or else stop
 
 /mob/living/carbon/superior_animal/robot/mining/death()
 	drop_loot()
@@ -167,41 +112,57 @@
 				target = M // We want to go to M
 				return TRUE
 
+// Mine a tile
 /mob/living/carbon/superior_animal/robot/mining/proc/mine(var/turf/simulated/mineral/M)
 	visible_message("[src] mine [M]") // Visible message
 	M.GetDrilled() // Mine the turf
 	return TRUE
 
-/mob/living/carbon/superior_animal/robot/mining/verb/force_mine()
-	set name = "Mine"
-	set desc = "Mine a close by rock."
-	set category = "Mob verbs"
-
-	mine()
-
+// Pick an ore and put it in the contents.
 /mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(var/obj/item/ore/O)
 	visible_message("[src] pick up [O]") // Visible message
 	O.forceMove(src) // Pick up the item
 	return TRUE
 
-/mob/living/carbon/superior_animal/robot/mining/verb/force_pick_ore()
-	set name = "Pick up ore"
-	set desc = "Pick up some close by ore."
-	set category = "Mob verbs"
-
-	pick_ore()
-
+// Drop all the loot that the bot gathered on the ground.
 /mob/living/carbon/superior_animal/robot/mining/proc/drop_loot()
-	visible_message("[src] empties \his storage bin.") // Visible message
+	visible_message("[src] empties \his storage bin.")
 	var/turf/T = get_turf(src)
 	for(var/obj/O in contents) // Empty everything
 		O.forceMove(T) // Move the item on the ground
 	return TRUE
 
-/mob/living/carbon/superior_animal/robot/mining/verb/force_drop_loot()
-	set name = "Drop Ore"
-	set desc = "Drop your collected ore onto the ground."
-	set category = "Mob verbs"
 
-	drop_loot()
+// Ghost-specific verbs.
+/mob/living/carbon/superior_animal/robot/mining/verb/mine_nearby()
+	set name = "Mine"
+	set desc = "Mine every rock around you that has ores."
+	set category = "Mining Bot"
 
+	for(var/O in oview(1, src)) // Check our surroundings.
+		if(istype(O, /turf/simulated/mineral)) // Is it a turf?
+			var/turf/simulated/mineral/M = O
+			if(M.mineral) // Does it have ores to mine?
+				mine(M) // Mine the turf
+				continue
+
+/mob/living/carbon/superior_animal/robot/mining/verb/gather_nearby()
+	set name = "Gather"
+	set desc = "Gather all the ore around you."
+	set category = "Mining Bot"
+
+	for(var/O in oview(1, src)) // Check our surroundings.
+		if(pickup && istype(O, /obj/item/ore)) // Is it ore on the ground?
+			var/obj/item/ore/Ore = O
+			pick_ore(Ore) // Pick it up
+			continue
+
+/mob/living/carbon/superior_animal/robot/mining/verb/dump_loot()
+	set name = "Empty"
+	set desc = "Dump all the ore you gathered on the ground."
+	set category = "Mining Bot"
+
+	if(contents.len > 0)
+		drop_loot()
+	else
+		to_chat(usr, "You do not have any ore to drop.")
