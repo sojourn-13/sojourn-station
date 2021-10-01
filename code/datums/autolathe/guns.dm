@@ -365,6 +365,10 @@
 	name = "Hunters Inc .10mm Caseless \"Bond\" Rifle"
 	build_path = /obj/item/gun/projectile/automatic/survivalrifle
 
+/datum/design/autolathe/gun/flare_gun
+	name = "H&S .22 \"Dazzlation\" light pistol"
+	build_path = /obj/item/gun/projectile/boltgun/flare_gun
+
 //L A U N C H E R S
 
 /datum/design/autolathe/gun/grenade_launcher

@@ -2540,6 +2540,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\vintorez.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\wirbelwind.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\armstrong.dm"
+#include "code\modules\projectiles\guns\projectile\boltgun\flaregun.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\handmade.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\novakovic.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\roe_sika.dm"

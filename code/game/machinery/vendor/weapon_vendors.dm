@@ -22,6 +22,7 @@
 	/obj/item/gun/projectile/olivaw = 2,
 	/obj/item/gun/projectile/colt = 2,
 	/obj/item/gun/projectile/glock = 2,
+	/obj/item/gun/projectile/boltgun/flare_gun = 5,
 	//Revolver
 	/obj/item/gun/projectile/revolver/detective = 2,
 	/obj/item/gun/projectile/revolver/lemant = 2,
@@ -64,6 +65,7 @@
 	/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 2,
 	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 2,
 	/obj/item/ammo_casing/grenade = 5,
+	/obj/item/ammo_casing/flare/prespawn = 15,
 	//Misc
 	/obj/item/clothing/accessory/holster/armpit = 2,
 	/obj/item/clothing/accessory/holster/leg = 2,
@@ -89,6 +91,7 @@
 	/obj/item/gun/projectile/olivaw = 450,
 	/obj/item/gun/projectile/colt = 450,
 	/obj/item/gun/projectile/glock = 800,
+	/obj/item/gun/projectile/boltgun/flare_gun = 500,
 	//Revolver
 	/obj/item/gun/projectile/revolver/detective = 250,
 	/obj/item/gun/projectile/revolver/lemant = 450,
@@ -131,6 +134,7 @@
 	/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 400,
 	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 750,
 	/obj/item/ammo_casing/grenade = 50,
+	/obj/item/ammo_casing/flare/prespawn = 120,
 	//Misc
 	/obj/item/clothing/accessory/holster/armpit = 50,
 	/obj/item/clothing/accessory/holster/leg = 50,
@@ -155,6 +159,7 @@
 					/obj/item/grenade/frag/stinger = 8,
 					/obj/item/grenade/smokebomb = 8,
 					/obj/item/device/flash = 8,
+					/obj/item/gun/projectile/boltgun/flare_gun = 2,
 					/obj/item/reagent_containers/spray/pepper = 8,
 					/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber = 8,
 					/obj/item/ammo_magazine/pistol_35/rubber = 8,
@@ -168,6 +173,7 @@
 					/obj/item/ammo_magazine/kurtz_50/rubber = 6,
 					/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 6,
 					/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 2,
+					/obj/item/ammo_casing/flare/prespawn = 4,
 					/obj/item/device/hailer = 8,
 					/obj/item/taperoll/police = 8,
 					/obj/item/storage/box/evidence = 2,
