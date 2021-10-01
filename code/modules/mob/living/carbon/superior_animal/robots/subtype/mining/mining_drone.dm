@@ -41,7 +41,6 @@
 		if(istype(target, /obj/item/ore && !pickup))
 			target = null // reset the target
 
-
 		// We shouldn't target the floor
 		if(istype(target, /turf/simulated/floor))
 			target = null // reset the target
@@ -125,7 +124,7 @@
 
 // Pick an ore and put it in the contents.
 /mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(var/obj/item/ore/O)
-	visible_message("[src] pick up [O]") // Visible message
+	//visible_message("[src] pick up [O]") // For some reasons the messages do not combine and spam the chat.
 	O.forceMove(src) // Pick up the item
 	return TRUE
 
