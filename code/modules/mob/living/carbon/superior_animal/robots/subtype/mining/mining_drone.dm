@@ -41,6 +41,11 @@
 		if(istype(target, /obj/item/ore && !pickup))
 			target = null // reset the target
 
+
+		// We shouldn't target the floor
+		if(istype(target, /turf/simulated/floor))
+			target = null // reset the target
+
 		if(target) // Do we have a destination?
 			walk_to(src, target, 1, move_to_delay) // Go there
 		else
