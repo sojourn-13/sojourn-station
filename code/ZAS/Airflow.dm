@@ -16,7 +16,7 @@ mob/proc/airflow_stun()
 		return 0
 	if(!lying)
 		to_chat(src, SPAN_WARNING("The sudden rush of air knocks you over!"))
-	Weaken(3) // Nerfed from 5
+	Weaken(5)
 	last_airflow_stun = world.time
 
 mob/living/silicon/airflow_stun()
@@ -101,7 +101,7 @@ obj/item/check_airflow_movable(n)
 
 	airflow_dest = null
 	if(!density)
-		density = TRUE
+		density = 1
 		od = 1
 	while(airflow_speed > 0)
 		if(airflow_speed <= 0) break
@@ -110,14 +110,14 @@ obj/item/check_airflow_movable(n)
 		if(airflow_speed > 7)
 			if(airflow_time++ >= airflow_speed - 7)
 				if(od)
-					density = FALSE
-				sleep(1 * SSAIR_TICK_MULTIPLIER)
+					density = 0
+				sleep(1 * (config.Ticklag*2))
 		else
 			if(od)
-				density = FALSE
-			sleep(max(1,10-(airflow_speed+3)) * SSAIR_TICK_MULTIPLIER)
+				density = 0
+			sleep(max(1,10-(airflow_speed+3)) * (config.Ticklag*2))
 		if(od)
-			density = TRUE
+			density = 1
 		if ((!( src.airflow_dest ) || src.loc == src.airflow_dest))
 			src.airflow_dest = locate(min(max(src.x + xo, 1), world.maxx), min(max(src.y + yo, 1), world.maxy), src.z)
 		if ((src.x == 1 || src.x == world.maxx || src.y == 1 || src.y == world.maxy))
@@ -132,7 +132,7 @@ obj/item/check_airflow_movable(n)
 	airflow_speed = 0
 	airflow_time = 0
 	if(od)
-		density = FALSE
+		density = 0
 
 
 /atom/movable/proc/RepelAirflowDest(n)
@@ -161,7 +161,7 @@ obj/item/check_airflow_movable(n)
 
 	airflow_dest = null
 	if(!density)
-		density = TRUE
+		density = 1
 		od = 1
 	while(airflow_speed > 0)
 		if(airflow_speed <= 0) return
@@ -169,9 +169,9 @@ obj/item/check_airflow_movable(n)
 		airflow_speed -= vsc.airflow_speed_decay
 		if(airflow_speed > 7)
 			if(airflow_time++ >= airflow_speed - 7)
-				sleep(1 * SSAIR_TICK_MULTIPLIER)
+				sleep(1 * (config.Ticklag*2))
 		else
-			sleep(max(1,10-(airflow_speed+3)) * SSAIR_TICK_MULTIPLIER)
+			sleep(max(1,10-(airflow_speed+3)) * (config.Ticklag*2))
 		if ((!( src.airflow_dest ) || src.loc == src.airflow_dest))
 			src.airflow_dest = locate(min(max(src.x + xo, 1), world.maxx), min(max(src.y + yo, 1), world.maxy), src.z)
 		if ((src.x == 1 || src.x == world.maxx || src.y == 1 || src.y == world.maxy))
@@ -186,7 +186,7 @@ obj/item/check_airflow_movable(n)
 	airflow_speed = 0
 	airflow_time = 0
 	if(od)
-		density = FALSE
+		density = 0
 
 /atom/movable/Bump(atom/A)
 	if(airflow_speed > 0 && airflow_dest)

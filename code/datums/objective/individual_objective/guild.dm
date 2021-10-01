@@ -27,7 +27,7 @@
 	..()
 */
 /datum/individual_objective/museum
-	name = "It belongs in a Museum"
+	name = "It Belongs to Museum"
 	desc = "Ensure that 3-4 oddities were sold via cargo."
 	req_department = list(DEPARTMENT_LSS)
 
@@ -83,7 +83,7 @@
 	..()
 	target = pick_candidates()
 	target = new target()
-	desc = "A contact of yours on the other side on the LS trade station is waiting for a [target]. Ensure it will be sold via cargo."
+	desc = "A friend of yours on the other side on trade station is waiting for a [target]. Ensure it will be sold via cargo."
 	RegisterSignal(SSsupply.shuttle, COMSIG_SHUTTLE_SUPPLY, .proc/task_completed)
 
 /datum/individual_objective/order/task_completed(atom/movable/AM)
@@ -98,6 +98,7 @@
 /datum/individual_objective/stripping
 	name = "Stripping Operation"
 	req_department = list(DEPARTMENT_LSS)
+	limited_antag = TRUE
 	rarity = 4
 	var/price_target = 2000
 	var/area/target
@@ -119,7 +120,7 @@
 			continue
 		valied_areas += A
 	target = pick(valied_areas)
-	desc = "Ensure that [target] does not have cumulative price of items inside it that is higher than [price_target][CREDITS]. Either pay someone or strip it clean of everything valuable yourself."
+	desc = "Ensure that [target] does not have cumulative price of items inside it that is higher than [price_target][CREDITS]."
 	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, .proc/task_completed)
 
 /datum/individual_objective/stripping/task_completed()
@@ -135,7 +136,7 @@
 	..()
 
 /datum/individual_objective/transfer
-	name = "Questionable Business"
+	name = "Family Business"
 	req_department = list(DEPARTMENT_LSS)
 	var/datum/money_account/target
 
@@ -160,8 +161,8 @@
 	valids_targets -= owner.initial_account
 	target = pick(valids_targets)
 	units_requested = rand(2000, 5000)
-	desc = "A questionable contact asked you to procure and provide this account number: \"[target.account_number]\" with the sum of [units_requested][CREDITS]. \
-			You dont know exactly why, but this is quite beneficial for you."
+	desc = "Some of your relative asked you to procure and provide this account number: \"[target.account_number]\" with sum of [units_requested][CREDITS]. \
+			You dont know exactly why, but this is important."
 	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, .proc/task_completed)
 
 /datum/individual_objective/transfer/task_completed(datum/money_account/S, datum/money_account/T, amount)

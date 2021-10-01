@@ -1,7 +1,7 @@
 /datum/individual_objective/upgrade
-	name = "Strength in Steel"
-	desc =  "After seeing some advertisements about bionic implants, you've been thinking about them alot lately. Getting a new bionic or implant would surely satisfy your curiosity."
-	allow_psion = FALSE
+	name = "Upgrade"
+	desc =  "Its time to improve your meat with shiny chrome. Gain new bionics, implant, or any mutation."
+	allow_cruciform = FALSE
 
 /datum/individual_objective/upgrade/can_assign(mob/living/carbon/human/H)
 	if(!..())
@@ -19,10 +19,10 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_HUMAN_ROBOTIC_MODIFICATION)
 	..()
-/*
+
 /datum/individual_objective/inspiration
 	name = "Triumph of the Spirit"
-	desc =  "Observe at least one positive breakdown. Inspiring!"
+	desc =  "Observer at least one positive breakdown. Inspiring!"
 	var/breakdown_type = /datum/breakdown/positive
 
 /datum/individual_objective/inspiration/assign()
@@ -37,7 +37,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_HUMAN_BREAKDOWN)
 	..()
-
+/*
 /datum/individual_objective/derange
 	name = "Derange"
 	limited_antag = TRUE
@@ -80,7 +80,7 @@
 /datum/individual_objective/addict/assign()
 	..()
 	timer = world.time
-	desc = "The stress of life and frontier living weighs on the mind, staying a bit buzzed on alcohol or drugs for [unit2time(units_requested)] minutes would absolutely ease that stress."
+	desc = "Stay intoxicated by alcohol or recreational drugs for [unit2time(units_requested)] minutes."
 	RegisterSignal(mind_holder, COMSIG_CARBON_HAPPY, .proc/task_completed)
 
 /datum/individual_objective/addict/task_completed(datum/reagent/happy, signal)
@@ -103,8 +103,9 @@
 	..()
 
 /datum/individual_objective/gift
-	name = "Odd Gift"
-	desc = "You feel a need to leave a mark in other people lives. Ensure that someone will level up with oddity that you touched or preferably gave them."
+	name = "Gift"
+	desc = "You feel a need to leave a mark in other people lives. Ensure that at \
+			least someone will level up with oddity that you touched."
 
 /datum/individual_objective/gift/assign()
 	..()
@@ -139,8 +140,8 @@
 	..()
 	var/list/valid_targets = (GLOB.player_list & GLOB.living_mob_list & GLOB.human_mob_list) - mind_holder
 	target = pick(valid_targets)
-	desc = "You're not sure why but you feel as though [target] needs to be protected, ensure their health is not lowered to [health_threshold] and below \
-			for [unit2time(units_requested)] minutes. If it happens, you'll need to wait longer to ensure their safe and healthy."
+	desc = "Ensure that [target] will not get their health slowered to [health_threshold] and below \
+			for [unit2time(units_requested)] minutes. Timer resets if health reaches the threshold."
 	timer = world.time
 	RegisterSignal(target, COMSIG_HUMAN_HEALTH, .proc/task_completed)
 
@@ -218,7 +219,8 @@
 	..()
 	var/list/valid_targets = (GLOB.player_list & GLOB.living_mob_list & GLOB.human_mob_list) - mind_holder
 	target = pick(valid_targets)
-	desc = "There is something interesting about [target]. For [unit2time(units_requested)] minutes, you should observe them in person. Cameras will not work."
+	desc = "There is something interesting in [target]. For [unit2time(units_requested)] minutes, you need \
+			to keep eye contact with them, and keep them in your view. Cameras will not work."
 	timer = world.time
 	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, .proc/task_completed)
 
@@ -254,7 +256,7 @@
 /datum/individual_objective/greed/assign()
 	..()
 	target = pick_faction_item(mind_holder, TRUE)
-	desc = "Acquire and hold \the [target] for [unit2time(units_requested)] minutes. Greed is good."
+	desc = "Acquire and hold \the [target] for [unit2time(units_requested)] minutes."
 	timer = world.time
 	RegisterSignal(mind_holder, COMSIG_MOB_LIFE, .proc/task_completed)
 
@@ -287,7 +289,7 @@
 /datum/individual_objective/collenction/assign()
 	..()
 	target = pick_candidates()
-	desc = "Get your hands on a [target.name]. Collecting knick knacks is a common past time after all."
+	desc = "Get your hands on a [target.name]."
 	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, .proc/task_completed)
 
 /datum/individual_objective/collenction/task_completed(obj/item/W)
