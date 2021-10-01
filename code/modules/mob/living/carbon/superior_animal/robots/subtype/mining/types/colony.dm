@@ -11,7 +11,7 @@
 	friendly_to_colony = TRUE
 	obey_friends = FALSE // We follow everyone who ask
 
-	// The vars start deactivated so that it doesn't fuck off as soon as it spawn
+	// The vars start deactivated so that it doesn't leave as soon as it spawn
 	wandering = FALSE
 	pickup = FALSE
 	mining = FALSE
