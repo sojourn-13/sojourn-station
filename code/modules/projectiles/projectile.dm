@@ -850,7 +850,7 @@
 		attached_effect.Move(src.loc)
 
 	else if(luminosity_range && luminosity_power && luminosity_color)
-		attached_effect = new /obj/effect/effect/light(src.loc, luminosity_range, luminosity_power, luminosity_color)
+		attached_effect = new /obj/effect/effect/light(src.loc, luminosity_range, luminosity_power, luminosity_color, lifetime=20)
 
 /obj/item/projectile/proc/impact_effect(var/matrix/M)
 	//This can happen when firing inside a wall, safety check
