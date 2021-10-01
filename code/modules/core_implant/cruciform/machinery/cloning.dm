@@ -471,13 +471,6 @@
 /obj/machinery/neotheology
 	icon = 'icons/obj/neotheology_machinery.dmi'
 
-#undef CLONING_START
-#undef CLONING_BONES
-#undef CLONING_MEAT
-#undef CLONING_BODY
-#undef CLONING_DONE
-
 #undef ANIM_OPEN
 #undef ANIM_NONE
 #undef ANIM_CLOSE
-
