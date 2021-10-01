@@ -73,10 +73,6 @@
 		to_chat(user, SPAN_NOTICE("It's filled with [reagents.total_volume]/[volume] units of reagents."))
 
 /obj/structure/reagent_dispensers/bidon/attack_hand(mob/user as mob)
-	//Prevent the bidon from being messed with while it is anchored.
-	if(anchored)
-		to_chat(user, SPAN_NOTICE("You can't remove the lid while the canister is anchored!"))
-		return
 	lid = !lid
 	if(lid)
 		to_chat(user, SPAN_NOTICE("You put the lid on."))
@@ -88,24 +84,7 @@
 	update_icon()
 
 /obj/structure/reagent_dispensers/bidon/attackby(obj/item/I, mob/user)
-	//Handle attaching the BIDON to a cloner
-	var/tool_type = I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
-	if(tool_type)
-		var/turf/turf_east = get_step(get_turf(src), EAST)
-		var/obj/machinery/genetics/cloner/cloner_east = locate(/obj/machinery/genetics/cloner, turf_east)
-		if(cloner_east && I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
-			to_chat(user, SPAN_NOTICE("You [anchored ? "detach" : "attach"] the B.I.D.O.N canister to the [cloner_east]."))
-			anchored = anchored ? FALSE : TRUE
-
-			//Remove the lid if it is currently sealed, so we don't have to deal with checking for it
-			if(lid)
-				to_chat(user, SPAN_NOTICE("The cloner removes the lid automatically!"))
-				lid = FALSE
-				reagent_flags |= REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE
-				playsound(src,'sound/items/trayhit2.ogg',50,1)
-				update_icon()
-			return
-	else if(lid)
+	if(lid)
 		to_chat(user, SPAN_NOTICE("Remove the lid first."))
 		return
 	else
@@ -136,8 +115,4 @@
 		for(var/I in reagents.reagent_list)
 			var/datum/reagent/R = I
 			to_chat(user, "<span class='notice'>[R.volume] units of [R.name]</span>")
-
-//Preset Bidon of Animal Protein for testing
-/obj/structure/reagent_dispensers/bidon/protein_can
-	starting_reagent = "protein"
 

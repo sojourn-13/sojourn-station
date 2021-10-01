@@ -1055,7 +1055,6 @@
 	price_tag = 300 //Eggs to hatch make this easy to mass do
 
  //Imagine dragging a loge animals allllll the way to the colony
- //Hex- Imagine this becoming relevant with cloning
 /mob/living/carbon/superior_animal/lodge/tatonka
 	price_tag = 800
 

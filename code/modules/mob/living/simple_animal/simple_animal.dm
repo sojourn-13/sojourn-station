@@ -559,7 +559,6 @@
 
 // Harvest an animal's delicious byproducts
 /mob/living/simple_animal/proc/harvest(var/mob/user)
-	log_debug("STARTING MEAT HARVEST OF [src]")
 	var/actual_meat_amount = max(1,(meat_amount/2))
 	drop_embedded()
 	if(user.stats.getPerk(PERK_BUTCHER))
@@ -579,17 +578,8 @@
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
-			if(ispath(src.meat_type, /obj/item/reagent_containers/food/snacks/meat))
-				log_debug("DETECTED MEAT OF [src] IS REAL MEAT, PROCESSING.")
-				var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new meat_type(get_turf(src))
-				butchered_meat.name = "[src.name] [butchered_meat.name]"
-				butchered_meat.inherent_mutations = src.inherent_mutations.Copy()
-				butchered_meat.unnatural_mutations = src.unnatural_mutations.Copy()
-				butchered_meat.source_mob = src.type
-				butchered_meat.source_name = src.name
-			else
-				var/obj/item/non_meat = new meat_type(get_turf(src))
-				non_meat.name = "[src.name] [non_meat.name]"
+			var/obj/item/meat = new meat_type(get_turf(src))
+			meat.name = "[src.name] [meat.name]"
 		if(issmall(src))
 			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
 			new blood_from_harvest(get_turf(src))

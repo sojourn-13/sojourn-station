@@ -440,10 +440,6 @@
 	GLOB.cmp_field = field
 	return sortTim(L, order >= 0 ? /proc/cmp_records_asc : /proc/cmp_records_dsc)
 
-//Specifically for mutation datums in a list.
-/proc/sortMutation(list/L, order = TRUE)
-	return sortTim(L, (order ? /proc/cmp_mutations_asc : /proc/cmp_mutations_dsc))
-
 //any value in a list
 /proc/sortList(list/L, cmp=/proc/cmp_text_asc)
 	return sortTim(L.Copy(), cmp)
