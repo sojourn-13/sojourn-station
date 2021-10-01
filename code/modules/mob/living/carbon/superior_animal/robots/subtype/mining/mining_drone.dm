@@ -140,11 +140,10 @@
 	set category = "Mining Bot"
 
 	for(var/O in oview(1, src)) // Check our surroundings.
-		if(istype(O, /turf/simulated/mineral)) // Is it a turf?
+		if(istype(O, /turf/simulated/mineral)) // Is it a minable turf?
 			var/turf/simulated/mineral/M = O
-			if(M.mineral) // Does it have ores to mine?
-				mine(M) // Mine the turf
-				continue
+			mine(M) // Mine the turf
+			continue
 
 /mob/living/carbon/superior_animal/robot/mining/verb/gather_nearby()
 	set name = "Gather"
