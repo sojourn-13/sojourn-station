@@ -813,10 +813,6 @@ default behaviour is:
 	if (!stats)
 		stats = new /datum/stat_holder(src)
 
-	
-	//Mutations populated through horrendous genetic tampering.
-	unnatural_mutations = new(src)
-
 	generate_static_overlay()
 	for(var/mob/observer/eye/angel/A in GLOB.player_list)
 		if(A)
