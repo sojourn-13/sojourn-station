@@ -9,8 +9,8 @@
 /datum/individual_objective/disturbance/assign()
 	..()
 	target_area = random_ship_area()
-	desc = "Something is messing with colony systems. You need to go to [target_area] and power it down by APC \
-	for [unit2time(units_requested)] minutes to lower interference, before worst will happen."
+	desc = "Something is messing with colony systems. You need to go to [target_area] and power it down by shutting off the APC \
+	for [unit2time(units_requested)] minutes to lower interference, then power it back on."
 	RegisterSignal(target_area, COMSIG_AREA_APC_OPERATING, .proc/task_completed)
 
 /datum/individual_objective/disturbance/task_completed(on=TRUE)
@@ -28,18 +28,14 @@
 	UnregisterSignal(target_area, COMSIG_AREA_APC_OPERATING)
 	..()
 
-/* TODO: make this work + its a bit to easy to do
 /datum/individual_objective/more_tech
 	name = "Endless Search"
 	req_department = list(DEPARTMENT_ENGINEERING)
 	var/obj/item/target
 
 /datum/individual_objective/more_tech/proc/pick_candidates()
-	var/candidates = list()
-	var/obj/random/tool_upgrade/CATCH = new /obj/random/tool_upgrade
-	candidates += CATCH.get_item(/obj/random/tool_upgrade/rare)
-	candidates += CATCH.get_item(/obj/random/tool_upgrade)
-	return pick(candidates)
+	var/obj/randomcatcher/CATCH = new /obj/randomcatcher
+	return CATCH.get_item(/obj/random/tool_upgrade/rare)
 
 /datum/individual_objective/more_tech/assign()
 	..()
@@ -57,7 +53,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSING_HUMAN_EQUITP)
 	..()
-*/
+
 /datum/individual_objective/oddity
 	name = "Warded"
 	req_department = list(DEPARTMENT_ENGINEERING)

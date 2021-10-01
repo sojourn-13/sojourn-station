@@ -142,8 +142,8 @@
 /datum/job/proc/is_experienced_enough(client/C) //This can be reimplemented if you want to have special requirements for jobs.
 	var/are_we_experienced_enough = FALSE //We start under the assumption of NO!
 	var/list/jobs_in_department = list() //What jobs are in this department?
-	for(var/job in joblist)
-		var/datum/job/J = joblist[job]
+	for(var/job in GLOB.joblist)
+		var/datum/job/J = GLOB.joblist[job]
 		if(department_flag == COMMAND)
 			if(department_flag & J.department_flag)
 				jobs_in_department += "[J.type]"

@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
 	var/log_say = 0						// log client say
-	var/fps = 20						// Exactly what it says on the tin. Client
+	var/fps = 40						// Exactly what it says on the tin. Client
 	var/log_admin = 0					// log admin actions
 	var/log_debug = 1					// log debug output
 	var/log_game = 0					// log game events
@@ -48,7 +48,6 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/allow_Metadata = 0				// Metadata is supported.
 	var/popup_admin_pm = 0				//adminPMs to non-admins show in a pop-up 'reply' window when set to 1.
 	var/tick_limit_mc_init = TICK_LIMIT_MC_INIT_DEFAULT	//SSinitialization throttling
-	var/Ticklag = 0.33
 	var/socket_talk	= 0					// use socket_talk to communicate with other processes
 	var/list/resource_urls = null
 	var/antag_hud_allowed = 0			// Ghosts can turn on Antagovision to see a HUD of who is the bad guys this round.
@@ -533,8 +532,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if("irc_bot_export")
 					irc_bot_export = 1
 
-				if("ticklag")
-					Ticklag = text2num(value)
+				if("fps")
+					fps = text2num(value)
 
 				if("fps")
 					fps = text2num(value)
