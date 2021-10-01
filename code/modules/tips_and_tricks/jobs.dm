@@ -146,6 +146,10 @@
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
     tipText = "The Bullet Fabricator generates usable material points based on the worth of the material in cash. The more expensive the material used, the more usable material you'll get."
 
+/tipsAndTricks/jobs/nanoforge
+    jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
+    tipText = "NanoForge makes compressed matter, this can fuel RCDs and RCD crossbows, but also is worth quite a lot of credits and makes great fuel in the Bullet Fabricator."
+
 /tipsAndTricks/jobs/tric
     jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/orderly, /datum/job/psychiatrist, /datum/job/paramedic)
     tipText = "Inaprovaline and Dylovene can be mixed together to produce Tricordazine - a mild regenerative compound that can treat brute/burns/toxin damage and even suffocation. Be careful though, more than thirty units will cause a deadly overdose!"
@@ -186,7 +190,7 @@
 	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic)
 	tipText = "For Cht'mant, chemicals obtained from different roach meats will heal them like normal healing chems do to everyone else. Blattedin acts as Tricordazine, Diplopterum as Dexalin, Starkellin as Bicaridine, Seligitilin as Kelotane, Gewaltine as Dylovene and Fuhrerole as Peridaxon. Remember these overdose at 16 units and can be lethal!"
 
-/tipsAndTricks/jobs/spooder2
+/tipsAndTricks/jobs/spooder3
 	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic)
 	tipText = "You can grind roach meat on your industrial grinder for useful chemicals. Blattedin and Diplopterum can be obtained from almost every roach, while you can get Seligitillin from Seuche roaches, Gewaltine from Jagers, Starkellin from Panzers, and Fuhrerole from Fuhrers."
 
