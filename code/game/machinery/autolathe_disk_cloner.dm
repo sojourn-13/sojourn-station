@@ -1,6 +1,6 @@
 /obj/machinery/autolathe_disk_cloner
-	name = "autolathe disk cloner"
-	desc = "Machine used for copying recipes from unprotected autolathe disks."
+	name = "Excelsior autolathe disk cloner"
+	desc = "Machine used for freeing recipes from protected autolathe disks."
 	icon = 'icons/obj/machines/disk_cloner.dmi'
 	icon_state = "disk_cloner"
 	circuit = /obj/item/circuitboard/autolathe_disk_cloner
