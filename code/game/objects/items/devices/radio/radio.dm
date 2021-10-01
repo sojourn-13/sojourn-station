@@ -831,7 +831,7 @@ var/global/list/default_medbay_channels = list(
 		playsound(loc, "sparks", 75, 1, -1)
 		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
 	else
-		to_chat(user, SPAN_NOTICE("The [name] has already been emaged."))
+		to_chat(user, SPAN_NOTICE("The [name] has already been emagged."))
 		return NO_EMAG_ACT
 
 /obj/item/device/radio/random_radio/attackby(obj/item/W, mob/user, params)
@@ -843,30 +843,31 @@ var/global/list/default_medbay_channels = list(
 		var/obj/item/oddity/D = W
 		if(D.oddity_stats)
 			var/usefull = FALSE
-			if(D in used_oddity)
-				to_chat(user, SPAN_WARNING("You already used [D] to repair [src]"))
-				return
 
 			if(random_hear >= 100)
-				to_chat(user, SPAN_WARNING("The [src] are repaired at it's maximum."))
+				to_chat(user, SPAN_WARNING("The [src] is in perfect condition."))
 				return
 
-			to_chat(user, SPAN_NOTICE("You starting repairing [src] using [D]."))
+			to_chat(user, SPAN_NOTICE("You begin repairing [src] using [D]."))
 
 			if(!do_after(user, 20 SECONDS, src))
-				to_chat(user, SPAN_WARNING("You stoped repairing [src]."))
+				to_chat(user, SPAN_WARNING("You've stopped repairing [src]."))
+				return
+
+			if(D in used_oddity)
+				to_chat(user, SPAN_WARNING("You've already used [D] to repair [src]!"))
 				return
 
 			for(var/stat in D.oddity_stats)
 				if(stat == STAT_MEC)
-					var/increece = D.oddity_stats[stat] * 3
-					random_hear += increece
+					var/increase = D.oddity_stats[stat] * 3
+					random_hear += increase
 					if(random_hear > 100)
 						random_hear = 100
 					cooldown -= (D.oddity_stats[stat]) MINUTES
 					if(cooldown < min_cooldown)
 						cooldown = min_cooldown
-					to_chat(user, SPAN_NOTICE("You make use of [D], and repaired [src] by [increece]%."))
+					to_chat(user, SPAN_NOTICE("You make use of [D], and repaired [src] by [increase]%."))
 					usefull = TRUE
 					used_oddity += D
 					return

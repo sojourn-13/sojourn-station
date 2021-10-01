@@ -224,6 +224,9 @@
 
 /obj/machinery/bulletfabricator/attackby(var/obj/item/I, var/mob/user)
 
+	if(!check_user(user))
+		return
+
 	if(istype(I, /obj/item/stack/material/cyborg))
 		return //Prevents borgs throwing their stuff into it
 
@@ -400,3 +403,9 @@
 
 	build_eff = man_rating
 	eat_eff = bin_rating
+
+/obj/machinery/bulletfabricator/proc/check_user(mob/user)
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
+		return TRUE
+	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+	return FALSE

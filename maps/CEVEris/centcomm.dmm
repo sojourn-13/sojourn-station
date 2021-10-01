@@ -18,6 +18,7 @@
 "ar" = (/obj/structure/holostool,/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_emptycourt)
 "as" = (/obj/structure/holostool,/obj/structure/window/reinforced/holowindow{dir = 4},/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_emptycourt)
 "at" = (/obj/effect/floor_decal/border/carpet/orange{dir = 1},/turf/simulated/floor/carpet/oracarpet,/area/centcom/evac)
+"au" = (/obj/structure/reagent_dispensers/bidon/protein_can,/turf/simulated/floor/tiled/dark/gray_perforated,/area/centcom/evac)
 "av" = (/obj/structure/window/reinforced/crescent{dir = 8},/turf/unsimulated/wall,/area/space)
 "aw" = (/obj/structure/flora/ausbushes/fullgrass,/turf/simulated/floor/holofloor/desert,/area/holodeck/source_desert)
 "ax" = (/obj/structure/shuttle_part/cargo{icon_state = "cargoshwall9"; tag = "icon-cargoshwall9"},/turf/simulated/floor/tiled/steel/gray_perforated,/area/supply/dock)
@@ -27,6 +28,7 @@
 "aB" = (/turf/simulated/floor/holofloor/wood,/area/holodeck/source_courtroom)
 "aC" = (/obj/landmark/mob/holocarpspawn,/turf/simulated/floor/holofloor/reinforced,/area/holodeck/source_wildlife)
 "aD" = (/turf/simulated/floor/tiled/dark/gray_perforated,/area/centcom/evac)
+"aE" = (/obj/effect/floor_decal/industrial/loading{dir = 4},/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "aF" = (/turf/unsimulated/wall,/area/centcom/suppy)
 "aG" = (/turf/simulated/shuttle/floor/mining,/area/supply/dock)
 "aH" = (/obj/machinery/embedded_controller/radio/simple_docking_controller{frequency = 1380; id_tag = "supply_shuttle"; pixel_x = 0; pixel_y = 25; req_one_access = list(13,31); tag_door = "supply_shuttle_hatch"},/turf/simulated/shuttle/floor/mining,/area/supply/dock)
@@ -82,6 +84,7 @@
 "bF" = (/obj/structure/shuttle_part/cargo{icon_state = "cargoshwall41"; tag = "icon-cargoshwall41"},/turf/simulated/floor/tiled/steel/gray_perforated,/area/supply/dock)
 "bG" = (/obj/effect/shuttle_landmark/transit/surface_transport,/turf/space,/area/space)
 "bH" = (/obj/structure/table/holo_woodentable,/turf/simulated/floor/holofloor/carpet,/area/holodeck/source_courtroom)
+"bI" = (/obj/machinery/genetics/cloner,/obj/structure/disposalpipe/trunk{dir = 4},/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "bJ" = (/turf/simulated/wall/r_wall,/area/centcom/merc_base)
 "bK" = (/turf/simulated/shuttle/wall/cargo{icon_state = "cargoshwall13"; tag = "icon-cargoshwall13"},/area/supply/dock)
 "bL" = (/obj/structure/table/standard,/obj/structure/mirror/antag{pixel_y = 28},/obj/random/credits/c10000,/obj/random/credits/c10000,/obj/random/credits/c10000,/turf/simulated/floor/carpet,/area/centcom/merc_base)
@@ -115,6 +118,7 @@
 "cn" = (/obj/structure/bed/chair/comfy/black{dir = 8},/obj/landmark/storyevent/merc_spawn,/turf/simulated/floor/wood/wild3,/area/centcom/merc_base)
 "co" = (/obj/random/closet_tech,/turf/simulated/floor/tiled/dark,/area/centcom/raider_base)
 "cp" = (/obj/structure/bed/chair/holochair{dir = 1},/turf/simulated/floor/holofloor/carpet,/area/holodeck/source_courtroom)
+"cq" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/machinery/light{dir = 1; light_color = "#0892d0"},/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "cr" = (/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_emptycourt)
 "cs" = (/obj/random/closet,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/centcom/raider_base)
 "ct" = (/turf/simulated/shuttle/wall/cargo{icon_state = "cargoshwall22"; tag = "icon-cargoshwall22"},/area/supply/dock)
@@ -161,8 +165,10 @@
 "di" = (/obj/machinery/door/blast/regular/open{id = "shipjackshutters"},/obj/effect/window_lwall_spawn/plasma/reinforced,/turf/simulated/floor/plating/under,/area/shuttle/skipjack_area)
 "dj" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "dk" = (/obj/machinery/embedded_controller/radio/simple_docking_controller{frequency = 1380; id_tag = "escape_pod_1_recovery"; pixel_x = 25; pixel_y = 0; req_one_access = list(13); tag_door = "escape_pod_1_recovery_hatch"},/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
+"dl" = (/obj/effect/window_lwall_spawn/plasma/reinforced,/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "dm" = (/obj/effect/overlay/palmtree_r,/turf/simulated/floor/holofloor/beach/sand,/area/holodeck/source_beach)
 "dn" = (/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
+"do" = (/obj/structure/disposalpipe/trunk{dir = 8},/obj/structure/disposaloutlet{dir = 4},/turf/simulated/floor/holofloor/grass,/area/centcom/evac)
 "dp" = (/obj/structure/holostool,/turf/simulated/floor/holofloor/tiled/dark,/area/holodeck/source_boxingcourt)
 "dq" = (/obj/machinery/door/blast/regular/open{id = "shipjackshutters"},/obj/effect/window_lwall_spawn/plasma/reinforced,/obj/effect/shuttle_landmark/skipjack_home,/turf/simulated/floor/plating/under,/area/shuttle/skipjack_area)
 "dr" = (/obj/machinery/door/airlock/hatch{frequency = 1331; icon_state = "door_closed"; id_tag = "vox_northwest_lock"; locked = 0; req_access = newlist()},/turf/simulated/floor/tiled/techmaint_cargo,/area/shuttle/skipjack_area)
@@ -184,18 +190,25 @@
 "dH" = (/obj/machinery/door/airlock/hatch{frequency = 1331; icon_state = "door_closed"; id_tag = "vox_northeast_lock"; locked = 0; req_access = newlist()},/turf/simulated/floor/tiled/techmaint_cargo,/area/shuttle/skipjack_area)
 "dI" = (/obj/item/beach_ball,/turf/simulated/floor/holofloor/beach/sand,/area/holodeck/source_beach)
 "dJ" = (/obj/structure/window/reinforced/holowindow{dir = 4},/turf/simulated/floor/holofloor/tiled/dark,/area/holodeck/source_boxingcourt)
+"dK" = (/turf/simulated/floor/holofloor/grass,/area/centcom/evac)
+"dL" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/holofloor/grass,/area/centcom/evac)
+"dM" = (/obj/machinery/computer/genetics/clone_console,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "dN" = (/obj/structure/window/reinforced/holowindow{dir = 8},/turf/simulated/floor/holofloor/tiled/dark,/area/holodeck/source_boxingcourt)
 "dO" = (/obj/structure/flora/grass/green,/turf/simulated/floor/holofloor/snow,/area/holodeck/source_snowfield)
 "dP" = (/turf/simulated/floor/holofloor/carpet,/area/holodeck/source_meetinghall)
 "dQ" = (/obj/machinery/airlock_sensor{frequency = 1331; id_tag = "vox_east_sensor"; pixel_x = -25},/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
 "dR" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume{frequency = 1331; id_tag = "vox_east_vent"},/obj/machinery/access_button{command = "cycle_exterior"; frequency = 1331; master_tag = "vox_east_control"; pixel_x = 32},/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
 "dS" = (/obj/machinery/meter,/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{dir = 8},/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
+"dT" = (/obj/effect/window_lwall_spawn/plasma/reinforced,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
+"dU" = (/obj/machinery/door/airlock/glass_command,/turf/simulated/floor/tiled/steel/techfloor_grid,/area/centcom/evac)
 "dV" = (/obj/item/beach_ball/holoball,/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_basketball)
 "dW" = (/obj/item/toy/junk/inflatable_duck,/turf/simulated/floor/holofloor/beach/sand,/area/holodeck/source_beach)
 "dX" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "dY" = (/obj/structure/window/reinforced/holowindow/disappearing,/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_thunderdomecourt)
+"dZ" = (/obj/machinery/door/airlock/vault/bolted,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "ea" = (/turf/space,/turf/simulated/shuttle/wall{dir = 8; icon_state = "diagonalWall3"},/area/space)
 "eb" = (/turf/unsimulated/wall{desc = "That looks like it doesn't open easily."; icon = 'icons/obj/doors/rapid_pdoor.dmi'; icon_state = "pdoor1"; name = "Shuttle Bay Blast Door"},/area/space)
+"ec" = (/obj/machinery/light{light_color = "#b9e8ea"},/turf/simulated/floor/tiled/dark/gray_perforated,/area/centcom/evac)
 "ed" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 8; frequency = 1331; id_tag = "vox_west_vent"},/obj/machinery/light/small,/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
 "ee" = (/obj/structure/table/steel,/obj/item/storage/box/donkpockets,/obj/item/reagent_containers/food/condiment/saltshaker{pixel_x = 4},/obj/item/reagent_containers/food/condiment/peppermill{pixel_x = -4},/turf/simulated/floor/reinforced,/area/shuttle/skipjack_area)
 "ef" = (/turf/simulated/floor/tiled/steel/brown_perforated,/area/shuttle/skipjack_area)
@@ -203,6 +216,7 @@
 "eh" = (/obj/structure/table/woodentable,/obj/item/storage/bag/money,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/wizard_station)
 "ei" = (/turf/simulated/shuttle/wall{icon_state = "wall3"},/area/space)
 "ej" = (/obj/structure/window/reinforced/holowindow/disappearing{dir = 1},/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_thunderdomecourt)
+"ek" = (/obj/structure/largecrate/animal/cow,/turf/simulated/floor/tiled/dark/gray_perforated,/area/centcom/evac)
 "el" = (/turf/simulated/shuttle/wall{icon_state = "wall3"},/area/centcom/small_base)
 "em" = (/obj/structure/bed/chair{dir = 1},/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
 "en" = (/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_thunderdomecourt)
@@ -371,7 +385,10 @@
 "hu" = (/obj/machinery/light/small{dir = 4},/obj/structure/table/steel,/obj/item/computer_hardware/hard_drive/portable/design/misc,/turf/simulated/floor/tiled/dark/golden,/area/shuttle/skipjack_area)
 "hv" = (/obj/machinery/vending/dinnerware,/turf/simulated/floor/reinforced,/area/shuttle/skipjack_area)
 "hw" = (/obj/structure/table/steel,/obj/item/flame/lighter/zippo,/obj/item/storage/fancy/cigarettes,/turf/simulated/floor/tiled/dark/cargo,/area/shuttle/skipjack_area)
+"hx" = (/obj/machinery/light{light_color = "#b9e8ea"},/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "hy" = (/obj/structure/window/reinforced,/turf/simulated/floor/tiled/dark/gray_perforated,/area/centcom/evac)
+"hz" = (/obj/structure/table/woodentable,/obj/item/genetics/mut_injector,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
+"hA" = (/obj/structure/table/woodentable,/obj/item/genetics/purger,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "hB" = (/obj/machinery/vending/cigarette{name = "hacked cigarette machine"; prices = list(); products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)},/turf/simulated/floor/reinforced,/area/shuttle/skipjack_area)
 "hC" = (/obj/structure/lattice,/obj/structure/grille,/turf/space,/area/space)
 "hD" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark/danger,/area/shuttle/skipjack_area)
@@ -388,6 +405,7 @@
 "hO" = (/obj/machinery/door/airlock,/turf/simulated/floor/tiled/dark/danger,/area/shuttle/skipjack_area)
 "hP" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating/under,/area/shuttle/skipjack_area)
 "hQ" = (/obj/machinery/vending/hydroseeds,/turf/simulated/floor/tiled/techmaint_cargo,/area/shuttle/skipjack_area)
+"hR" = (/obj/structure/table/woodentable,/obj/item/device/scanner/belvoix_scanner,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "hS" = (/obj/item/stack/material/glass{amount = 15},/obj/item/cell/large{charge = 100; maxcharge = 15000},/obj/structure/table/reinforced,/turf/simulated/floor/tiled/white/gray_perforated,/area/shuttle/mercshuttle_area)
 "hT" = (/obj/machinery/vending/snack{name = "hacked Getmore Chocolate Corp"; prices = list()},/turf/simulated/floor/wood/wild3,/area/centcom/merc_base)
 "hU" = (/obj/structure/table/standard,/obj/machinery/chemical_dispenser/soda,/turf/simulated/floor/tiled/cafe,/area/centcom/merc_base)
@@ -1114,16 +1132,16 @@ qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRKRKRKRhoCtcNdjcNcNcN
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoYwdndndndndndndndndndndndndndndndndndnaDFMyqFZFMFMFMhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHiriziBiBiHiBiBiIirqHqHqHqHqHhfjqjqjqjGjLjLjMjMbJjNkwjTbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoSldndndndndndndndndndndndndndndndndndnaDFMyqOcFMFMGWhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHiririLiBiMiUiViBiWirirqHqHqHqHhfjqjqjqbJjjjUbJbJbJkXkbkXbJbJbJhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHjVqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoPQaDcNcNcNdndndndndndndndndndndndndndnaDFMyqOcFMFMIrhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHjkjkjkjliBiMjziViBjAiririrhEhCkabJlIjqjqbJbJbJbJWFYQFukwFuYQiQbJbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohoNqxRhocNdndndndndndndndndndndndndndnaDFMyqUtFMGEzIhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHiririririrjQiBiBiBfEiririririrkhbJbJjqjqjqSJbJkckdYQFuFukwFuFuYQOUbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWfWfWqHqHqHqHqHfWfWfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoaDaDOkhosIqEWypssUIVaDaDaDuhVLrBcNcNqOywqmhohohohohohoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHirjRjSjZirirkfiBfEirirkgklkmknkjkkksjqjqjqjqkukwkwkwkwkwkwkwkwkwHAbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoaDaDTfhohohohohohMzkUPUPUPzkhMhovevevevehohMhohoKRKRKRKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHhlhlqHqHqHqHbPkokpkqiriririvirirktkvkykmkzkxkEksjqjqjqSJbJkFjNYQFuFukwFuFuYQOUbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoaDrhpcuocNcNcNdjcNcNaDaDaDcNcNdjcNcNcNcNcNcNdkhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHhlhlhlqHqHqHqHirirkAkBirirkCiBkDirirkAkIkAirkMkMbJhfhfhfbJbJbJbJkHYQFukwFuYQYobJbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhopraDOguocNdndndndndndndndndndndndndndndndndnaDLiKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHqHirkJkqkqkKirfEiBfEirkLkRkSkTirqHqHhnqHqHqHqHhlhlbJbJbJkXkPkXbJbJbJhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhouoMOuouocNdndncNvBvBvBvBvBvBvBvBvBvBvBcNdndncNhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHirirkUkVkqkqkWiBiBiBkYkqkqkqkZirirhChChCqHqHqHqHhlhlhlbJkQkwkQbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRVfHYcKcKVZcNdndnpCzAMmITRvzAzAYezAEMtMsWQpdndncNhMKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlhlhlhlqHqHqHirirlakqkqkqlbiBiBiBlckqkqkoldirirqHqHqHqHqHqHqHqHhlhlbJkQOKkQbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRVfHYcKcKVZcNdndnwmEMtMGfFFsWEMHeMmJPzAzAQFdndncNhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHqHiririririririrhLiBleiririririririrqHqHqHqHqHhmqHhnhlhlbJkQkwkQbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRVfHYcKcKVZcNdndnpCGfIpzAEMMmzAtXtMRvzAEMQpdndncNhMKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHqHirlflglhliljirlkiBllirlnlolplqlrirqHqHqHqHqHhmhnhlhlhlbJCrkwCrbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHfWfWfWfWqHqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohohohohocNdndncNVGVGVGVGVGVGVGVGVGVGVGcNdndnuShoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlhlqHqHqHqHqHlsltlvlvlvlwirhLiBleirlxlylykqlzlAqHqHqHqHqHhEqHhlhlhlbJbJIKbJbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohoNqxRhocNdndndndndndndndndndndndndndnaDFMyqUtFMGEzIhoKRKRKRKRKRKRKRKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHiririririrjQiBiBiBfEiririririrkhbJbJjqjqjqSJbJkckdYQFuFukwFuFuYQOUbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWfWfWqHqHqHqHqHfWfWfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoaDaDOkhosIqEWypssUIVaDaDaDuhVLrBcNcNqOywqmhohohohohohohohohohohohohoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHirjRjSjZirirkfiBfEirirkgklkmknkjkkksjqjqjqjqkukwkwkwkwkwkwkwkwkwHAbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoaDaDTfhohohohohohMzkUPUPUPzkhMhovevevevehohMhohoauauaEbIcqdldodKdLhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHhlhlqHqHqHqHbPkokpkqiriririvirirktkvkykmkzkxkEksjqjqjqSJbJkFjNYQFuFukwFuFuYQOUbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoaDrhpcuocNcNcNdjcNcNaDaDaDcNcNdjcNcNcNcNcNcNdkhocNcNcNdMcNdTdKdKdKhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHhlhlhlqHqHqHqHirirkAkBirirkCiBkDirirkAkIkAirkMkMbJhfhfhfbJbJbJbJkHYQFukwFuYQYobJbJhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhopraDOguocNdndndndndndndndndndndndndndndndndnaDdUcNcNcNcNcNdTdKdKdKhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHqHirkJkqkqkKirfEiBfEirkLkRkSkTirqHqHhnqHqHqHqHhlhlbJbJbJkXkPkXbJbJbJhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhouoMOuouocNdndncNvBvBvBvBvBvBvBvBvBvBvBcNdndncNhocNcNcNcNcNdTdTdZdThoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHirirkUkVkqkqkWiBiBiBkYkqkqkqkZirirhChChCqHqHqHqHhlhlhlbJkQkwkQbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRVfHYcKcKVZcNdndnpCzAMmITRvzAzAYezAEMtMsWQpdndncNhMcNcNcNcNcNcNcNcNcNhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlhlhlhlqHqHqHirirlakqkqkqlbiBiBiBlckqkqkoldirirqHqHqHqHqHqHqHqHhlhlbJkQOKkQbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRVfHYcKcKVZcNdndnwmEMtMGfFFsWEMHeMmJPzAzAQFdndncNhoecekekcNhxcNhzhAhRhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHqHiririririririrhLiBleiririririririrqHqHqHqHqHhmqHhnhlhlbJkQkwkQbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRVfHYcKcKVZcNdndnpCGfIpzAEMMmzAtXtMRvzAEMQpdndncNhMhohohohohohohohohohoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHqHirlflglhliljirlkiBllirlnlolplqlrirqHqHqHqHqHhmhnhlhlhlbJCrkwCrbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHfWfWfWfWqHqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohohohohocNdndncNVGVGVGVGVGVGVGVGVGVGVGcNdndnuShoKRKRKRKRKRKRKRKRKRKRKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlhlqHqHqHqHqHlsltlvlvlvlwirhLiBleirlxlylykqlzlAqHqHqHqHqHhEqHhlhlhlbJbJIKbJbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRKRKRKRKRhocNdndndndndndndndndndndndndndndndndnaDLiKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlqHqHqHqHqHqHlslBlClElvlvlFiBiBiBlGkqkqkqkolHlAqHqHqHqHqHhmhnhnhlhlhlbJbJbJhlhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhocNcNcNdXcNcNcNcNcNcNcNdXcNcNcNcNcNcNcNhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHlslvlvlvlvlvlKiBiBiBlMkqkqkqkqlNlAqHqHqHqHqHhmqHqHhnhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfWfWqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohohohohohMhohohohohohMhohohohohohohMhohoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHirlOlvlvlvlPirkAlQkAirlRlTlTkqlWirqHqHqHqHqHqHqHqHqHhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHlLfWqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH

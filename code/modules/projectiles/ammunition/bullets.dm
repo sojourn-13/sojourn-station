@@ -297,6 +297,21 @@
 	projectile_type = /obj/item/projectile/bullet/c10x24
 	is_caseless = TRUE
 
+//Flare, .22
+/obj/item/ammo_casing/flare
+	name = "flare shell"
+	desc = "A .22 chemical flare shell designed to produce a distress signal or illuminate an area."
+	caliber = CAL_FLARE
+	icon_state = "f-shell"
+	spent_icon = "f-shell-spent"
+	projectile_type = /obj/item/projectile/bullet/flare
+	matter = list(MATERIAL_PLASTIC = 1)
+	matter_reagents = list("phosphorus" = 3)
+	maxamount = 3
+
+/obj/item/ammo_casing/flare/prespawn
+	amount = 3
+
 //.50 K U R T Z
 
 /obj/item/ammo_casing/kurtz_50

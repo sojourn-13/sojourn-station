@@ -29,7 +29,6 @@
 	var/datum/reagents/metabolism/touching = null
 	var/datum/metabolism_effects/metabolism_effects = null
 	var/losebreath = 0 //if we failed to breathe last tick
-
 	var/coughedtime = null
 	var/lastpuke = 0
 
