@@ -20,6 +20,61 @@
 	var/pickup = TRUE // Do we pick up the ore?
 	var/mining = TRUE // Do we mine rocks?
 
+//Putting this here do to no idea were it would fit other then here
+/mob/living/carbon/superior_animal/robot/mining/verb/toggle_viewRange()
+	set name = "Toggle Viewrange"
+	set desc = "Toggles viewrange on the mining bot, smaller ones makes it more easy to mannully controle the bot, well longer range will be more automatic."
+	set category = "Mob verbs"
+
+	if (viewRange == 6)
+		viewRange = 3
+		to_chat(src, SPAN_NOTICE("You toggle the mobs Viewrange to 3."))
+
+	if (viewRange == 3)
+		viewRange = 1
+		to_chat(src, SPAN_NOTICE("You toggle the mobs Viewrange to 1."))
+
+	else
+		viewRange = 6
+		to_chat(src, SPAN_NOTICE("You toggle the mobs Viewrange to 6."))
+
+/mob/living/carbon/superior_animal/robot/mining/verb/toggle_wandering()
+	set name = "Toggle wandering"
+	set desc = "Toggles on/off the mobs wandering."
+	set category = "Mob verbs"
+
+	if (wandering)
+		wandering = FALSE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default wandering to ON."))
+	else
+		wandering = TRUE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default wandering to OFF."))
+
+/mob/living/carbon/superior_animal/robot/mining/verb/toggle_pickup()
+	set name = "Toggle pickup"
+	set desc = "Toggles on/off the mobs pickup."
+	set category = "Mob verbs"
+
+	if (pickup)
+		pickup = FALSE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default pickup to ON."))
+	else
+		pickup = TRUE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default pickup to OFF."))
+
+/mob/living/carbon/superior_animal/robot/mining/verb/toggle_mining()
+	set name = "Toggle mining"
+	set desc = "Toggles on/off the mobs mining."
+	set category = "Mob verbs"
+
+	if (mining)
+		mining = FALSE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default mining to ON."))
+	else
+		mining = TRUE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default mining to OFF."))
+
+
 /mob/living/carbon/superior_animal/robot/mining/examine(mob/user)
 	..()
 	to_chat(user, SPAN_NOTICE("[src]'s screen flashes and show \his operating parameters : "))
@@ -117,10 +172,24 @@
 	M.GetDrilled() // Mine the turf
 	return TRUE
 
+/mob/living/carbon/superior_animal/robot/mining/verb/force_mine()
+	set name = "Mine"
+	set desc = "Mine a close by rock."
+	set category = "Mob verbs"
+
+	mine()
+
 /mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(var/obj/item/ore/O)
 	visible_message("[src] pick up [O]") // Visible message
 	O.forceMove(src) // Pick up the item
 	return TRUE
+
+/mob/living/carbon/superior_animal/robot/mining/verb/force_pick_ore()
+	set name = "Pick up ore"
+	set desc = "Pick up some close by ore."
+	set category = "Mob verbs"
+
+	pick_ore()
 
 /mob/living/carbon/superior_animal/robot/mining/proc/drop_loot()
 	visible_message("[src] empties \his storage bin.") // Visible message
@@ -128,3 +197,11 @@
 	for(var/obj/O in contents) // Empty everything
 		O.forceMove(T) // Move the item on the ground
 	return TRUE
+
+/mob/living/carbon/superior_animal/robot/mining/verb/force_drop_loot()
+	set name = "Drop Ore"
+	set desc = "Drop your collected ore onto the ground."
+	set category = "Mob verbs"
+
+	drop_loot()
+

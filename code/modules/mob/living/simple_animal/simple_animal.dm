@@ -745,6 +745,22 @@
 		AI_inactive = TRUE
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
 
+
+/mob/living/simple_animal/verb/learn_common()
+	set name = "Learn Common"
+	set desc = "Toggles weather or not you can hear and understand Common or not."
+	set category = "Mob verbs"
+	var/common_known = FALSE
+
+	if (!common_known)
+		add_language(LANGUAGE_COMMON)
+		to_chat(src, SPAN_NOTICE("You toggle knowing common to ON."))
+		common_known = TRUE
+	else
+		remove_language(LANGUAGE_COMMON)
+		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))
+		common_known = TRUE
+
 //This is called when an animal 'speaks'. It does nothing here, but descendants should override it to add audio
 /mob/living/simple_animal/proc/speak_audio()
 	return

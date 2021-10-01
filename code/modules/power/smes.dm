@@ -248,10 +248,20 @@
 
 /obj/machinery/power/smes/attack_hand(mob/user)
 	add_fingerprint(user)
+	if(!check_user(user)) //To try and make this more guild only
+		return
 	ui_interact(user)
+
+/obj/machinery/power/smes/proc/check_user(mob/user)
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+		return TRUE
+	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+	return FALSE
 
 
 /obj/machinery/power/smes/attackby(var/obj/item/I, var/mob/user)
+	if(!check_user(user)) //To try and make this more guild only
+		return
 	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING,QUALITY_WIRE_CUTTING,QUALITY_PRYING,QUALITY_PULSING)
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
