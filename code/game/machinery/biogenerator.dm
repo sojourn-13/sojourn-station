@@ -21,11 +21,11 @@
 			list(name="Milk, 30u", cost=60, reagent="milk"),
 			list(name="Soy Milk, 30u", cost=60, reagent="soymilk"),
 			list(name="Black Pepper, 30u", cost=60, reagent="blackpepper"),
-			list(name="2 Eggs", cost=600, reagent="egg"), //Got to be really lazy
 			list(name="Flour, 30u", cost=600, reagent="flour"), //Got to be really lazy
 			list(name="Rice, 30u", cost=600, reagent="rice"), //Got to be really lazy
 			list(name="Salt, 30u", cost=600, reagent="sodiumchloride"), //Got to be really lazy
 			list(name="Sugar, 30u", cost=30, reagent="sugar"),
+			list(name="Box of eggs", cost=6400, path=/obj/item/storage/fancy/egg_box), //lets not completely replace hens
 			list(name="Slab of meat", cost=50, path=/obj/item/reagent_containers/food/snacks/meat),
 		"Nutrient",
 			list(name="EZ-Nutrient, 30u", cost=30, reagent="eznutrient"),
