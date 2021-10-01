@@ -240,7 +240,7 @@
 	luminosity_ttl = 1
 	var/fire_stacks = 1
 	var/flash_range = 1
-	var/light_duration = 300
+	var/light_duration = 900
 	var/brightness = 10
 	knockback = FALSE
 	can_ricochet = FALSE
