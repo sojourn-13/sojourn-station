@@ -65,6 +65,12 @@ var/game_id = null
 // Used with the Visual Studio Code debugger and DreamMaker Language Client extension from https://github.com/SpaceManiac/SpacemanDMM/wiki/Setting-up-Debugging
 
 /world/New()
+	// Begin loading of extools DLL and components
+	var/extools = world.GetConfig("env", "EXTOOLS_DLL") || (world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")
+	if (fexists(extools))
+		call(extools, "maptick_initialize")()
+		call(extools, "debug_initialize")()
+	// End extools
 	//logs
 	start_time = world.realtime
 	var/date_string = time2text(start_time, "YYYY/MM-Month/DD-Day")
@@ -337,11 +343,3 @@ proc/establish_db_connection()
 /world/proc/incrementMaxZ()
 	maxz++
 	SSmobs.MaxZChanged()
-
-/world/proc/change_fps(new_value = 30)
-	if(new_value <= 0)
-		CRASH("change_fps() called with [new_value] new_value.")
-	if(fps == new_value)
-		return //No change required.
-
-	fps = new_value

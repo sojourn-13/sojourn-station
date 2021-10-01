@@ -8,7 +8,7 @@
 /datum/individual_objective/big_brain/assign()
 	..()
 	target_val = mind_holder.stats.getStat(STAT_COG) + delta
-	desc = "Ensure that your cognition rises to [target_val]. Progress at any cost."
+	desc = "Ensure that your COG stat will be increased to [target_val]."
 	RegisterSignal(mind_holder, COMSIG_STAT, .proc/task_completed)
 
 /datum/individual_objective/big_brain/task_completed(stat_name, stat_value, stat_value_pure)
@@ -28,7 +28,7 @@
 
 /datum/individual_objective/get_nsa/assign()
 	..()
-	desc = "Push the limits of chemical science and reach [units_requested] of Nerve System Accumulation. Make sure to survive."
+	desc = "Reach [units_requested] of NSA. Survive."
 	RegisterSignal(mind_holder, COMSING_NSA, .proc/task_completed)
 
 /datum/individual_objective/get_nsa/task_completed(n_nsa)
@@ -62,7 +62,7 @@
 	..()
 */
 /datum/individual_objective/adiction
-	name = "Better living through chemistry"
+	name = "On The Hook"
 	req_department = list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL)
 	limited_antag = TRUE
 	rarity = 4
@@ -70,7 +70,7 @@
 /datum/individual_objective/adiction/assign()
 	..()
 	units_requested = rand(3,4)
-	desc = "Observe a sum of [units_requested] occasions where someone becomes addicted to chemicals. Record and remember the physical and mental effects."
+	desc = "Observe a sum of [units_requested] occasions on where people will get addicted to any chems."
 	RegisterSignal(mind_holder, COMSIG_CARBON_ADICTION, .proc/task_completed)
 
 /datum/individual_objective/adiction/task_completed(mob/living/carbon/C, datum/reagent/reagent)
@@ -89,7 +89,7 @@
 
 /datum/individual_objective/autopsy/assign()
 	..()
-	units_requested = rand(1,2)
+	units_requested = rand(2,3)
 	desc = "Perform [units_requested] autopsies."
 	RegisterSignal(mind_holder, COMSING_AUTOPSY, .proc/task_completed)
 
@@ -105,7 +105,7 @@
 	..()
 
 /datum/individual_objective/more_research
-	name = "Progress no matter the cost."
+	name = "Progress No Matter The Cost."
 	req_department = list(DEPARTMENT_SCIENCE)
 	limited_antag = TRUE
 	rarity = 4
@@ -139,7 +139,7 @@
 /datum/individual_objective/damage/assign()
 	..()
 	units_requested = rand(120,160)
-	desc = "Receive cumulative [units_requested] damage of any kind, record the damage and a medical scanner print out for later data logging and treatment."
+	desc = "Receive cumulative [units_requested] damage of any kind, to ensure that you see things in a different light."
 	last_health = mind_holder.health
 	RegisterSignal(mind_holder, COMSIG_HUMAN_HEALTH, .proc/task_completed)
 
@@ -177,7 +177,7 @@
 		valid_organs += E
 	for(var/obj/item/organ/O in target.internal_organs)
 		valid_organs += O
-	desc = "[target] looks interesting. Put any of their organs in destructive analyzer."
+	desc = "[target] looks interesting. Put any of their organ in destructive analyzer."
 	RegisterSignal(mind_holder, COMSING_DESTRUCTIVE_ANALIZER, .proc/task_completed)
 
 /datum/individual_objective/for_science/task_completed(obj/item/I)

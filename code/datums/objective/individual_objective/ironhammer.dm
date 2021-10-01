@@ -34,7 +34,7 @@
 
 /datum/individual_objective/time_to_action/assign()
 	..()
-	desc = "Slay or observe the slaying of 20 hostiles (Roaches, Spiders, ect)."
+	desc = "Murder or observer murdering of 20 hostiles (Roaches, Spiders, ect)."
 	RegisterSignal(mind_holder, COMSIG_MOB_DEATH, .proc/task_completed)
 
 /datum/individual_objective/time_to_action/task_completed(mob/mob_death)
@@ -104,7 +104,7 @@
 /datum/individual_objective/guard/assign()
 	..()
 	target_area = random_ship_area()
-	desc = "[target_area] needs fortification for colony safety. All sorts of bugs and monsters tunnel into the colony constantly. Have a turret built there, preferably an Artificer Guild turret."
+	desc = "[target_area] requires to be fortified with a turret."
 	RegisterSignal(target_area, COMSIG_TURRENT, .proc/task_completed)
 
 /datum/individual_objective/guard/task_completed()
