@@ -79,6 +79,7 @@
 	limited_ammo = TRUE
 	mag_drop = FALSE
 	rounds_left = 16
+	projectiletype = /obj/item/projectile/beam/midlaser
 	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 0
 	reload_message = "Beeps aggressively as it charges the gun!" //in case of addmins givng more then 1 load

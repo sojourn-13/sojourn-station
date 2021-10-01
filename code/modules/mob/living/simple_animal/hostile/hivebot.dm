@@ -77,7 +77,7 @@
 	melee_damage_upper = 25
 	attacktext = "clawed"
 	projectilesound = 'sound/weapons/Laser.ogg'
-	projectiletype = /obj/item/projectile/beam/heavylaser
+	projectiletype = /obj/item/projectile/beam //This basiclly nulls armor + deals 20 damage
 	faction = "hivebot"
 
 	//Death and harvest vars
