@@ -19,9 +19,9 @@
 	desc += "\n "
 	desc += pick("Its warranty has expired.",
 	 "The inscriptions on this thing have been erased by time.",
-	  "Looks completely ruined.",
-	   "It is difficult to make out what this thing once was.",
-	    "A relic from a bygone age.")
+	 "Looks completely ruined.",
+	 "It is difficult to make out what this thing once was.",
+	 "A relic from a bygone age.")
 
 	germ_level = pick(80,110,160)
 	price_tag *= RAND_DECIMAL(0.1, 0.6) //Tank the price of it
@@ -202,6 +202,19 @@
 
 /obj/item/ore/make_old()
 	return
+
+/obj/item/computer_hardware/hard_drive/portable/design/make_old()
+	..()
+	if(license >= 1)
+		license = round(license / pick(1, 1, 1, 1.1, 1.1, 1.1, 1.1, 1.2, 1.3)) //This looses a lot when unlucky
+//todo: make old disk have corrupted prints
+/*
+	if(designs)
+		for(var/key in designs)
+			if(prob(50))//1% to make a design into a corrputed one
+				var/replacement = /datum/design/autolathe/corrupted
+				designs[key] = replacement[key]
+*/
 
 /obj/item/grenade/make_old()
 	..()
