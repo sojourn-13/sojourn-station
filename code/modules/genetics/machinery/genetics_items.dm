@@ -72,6 +72,67 @@ This is a bugtesting item, please forgive the memes.
 	var/obj/item/genetics/sample/new_sample = new /obj/item/genetics/sample(held_mutations)
 	usr.put_in_hands(new_sample)
 
+/obj/item/device/scanner/belvoix_scanner/verb/irradiateMutation()
+	set category = "Object"
+	set name = "Irradiate Gene"
+	set src in view(1)
+	var/list/option_list = list()
+	for (var/datum/genetics/mutation/mutagen in held_mutations.mutation_pool)
+		option_list[mutagen.name] += mutagen
+	var/choice = input("Select a gene to irradiate", "Current Mutations:") in option_list
+	if (choice != null)
+		to_chat(usr, SPAN_NOTICE("\The [usr] irradiates a \the \"[choice]\" mutation!"))
+		held_mutations.irradiate(option_list[choice])
+	to_chat(usr, SPAN_NOTICE("\The [src] did not have a mutation to work with. Aborting."))
+
+/obj/item/device/scanner/belvoix_scanner/verb/combineMutation()
+	set category = "Object"
+	set name = "Combine Genes"
+	set src in view(1)
+	
+	//Generate the list
+	var/list/option_list = list()
+	for (var/datum/genetics/mutation/mutagen in held_mutations.mutation_pool)
+		option_list[mutagen.name] += list(mutagen, mutagen.count)
+	option_list["End Selection"] += list(0, 1)
+
+	
+	var/list/combined_mutations = list()
+	for(var/iterations = 0; iterations < 9; iterations++)
+		log_debug("combineMutation(): Began an iteration of this thing")
+		var/list/updated_option_list = list()
+		for(var/list/option in option_list)
+			if(option[1] != 0)
+				updated_option_list += option[0]
+
+		var/choice = input("Select a gene to combine", "Current Mutations:") in updated_option_list
+		
+		if(!choice || !choice[0])
+			break
+		else
+			//Find a spot for this mutation in the combined_mutations list as we transfer it over.
+			var/datum/genetics/mutation/selected_mutation = choice[0]
+			var/mutation_not_in_list = TRUE
+			for (var/list/mutation_amount_pair in combined_mutations)
+				var/datum/genetics/mutation/combined_mutation = mutation_amount_pair[0]
+				if (combined_mutation == selected_mutation)
+					mutation_amount_pair[1] += 1
+					mutation_not_in_list = FALSE
+			if(mutation_not_in_list)
+				combined_mutations += list(selected_mutation, 1)
+
+			//Go back and decrement the original options list
+			option_list[selected_mutation.name][1] -= 1
+
+		
+	to_chat(usr, SPAN_NOTICE("\The [usr] combines some mutations!"))
+	held_mutations.combine(combined_mutations)
+	
+
+
+	
+	
+
 /*
 =================Mutagenic Purger=================
 Implant that clears ALL mutations from people when injected.

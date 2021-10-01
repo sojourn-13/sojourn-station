@@ -1,4 +1,6 @@
 //Macro: MUTATION_COPY
+
+//A special mutation type for determining what a creature becomes when cloned.
 /datum/genetics/mutation/copy_mob
 	name = "Genetic Copy of a disappointing placeholder"
 	key = "MUTATION_COPY_SHOULD/NOT/SHOW"

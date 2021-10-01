@@ -22,6 +22,13 @@
 * inherant_mutations= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
 **/
 
+
+/*
+* =================================================================================================
+* Genetics Holder calls and helper functions
+* =================================================================================================
+*/
+
 /datum/genetics/genetics_holder
 	var/mob/living/holder //Who is holding the genes. Null, if contained within a device.
 
@@ -47,8 +54,6 @@
 	if(holding_mob)
 		holder = holding_mob
 	..()
-
-
 
 //Copy a genetics holder wholesale for reuse.
 /datum/genetics/genetics_holder/proc/Copy(var/copy_holder = FALSE)
@@ -150,19 +155,163 @@
 	mutation_pool = list()
 	return ..()
 
-/datum/genetics/genetics_holder/proc/irradiate(datum/genetics/mutation/target)
-	//What happens when a gene is irradiated.
+
+
+
+
+
+
+//What happens when a gene is irradiated.
+/datum/genetics/genetics_holder/proc/irradiate(var/datum/genetics/mutation/target)
+	var/list/mutation_group = list(target.key)
+
+	if(!getMutation(target.key))
+		error("irradiate(): Target mutation not in genetics holder.")
+
+	var/datum/genetics/mutation/new_mutation = getRecipeResult(mutation_group, MUT_TYPE_IRRADIATON)
+	
+	if(removeMutation(target.key))
+		addMutation(new_mutation)
+	
+
+//What happens when two or more genes are combined.
+/datum/genetics/genetics_holder/proc/combine(var/list/combining_mutations)
+	var/list/mutation_group = list()
+	//Validate the mutations to make sure we have everything.
+	for (var/list/mutation_amount_pair in combining_mutations)
+		var/datum/genetics/mutation/combining_mutation = mutation_amount_pair[0]
+		if(!getMutation(combining_mutation.key))
+			error("combine(): Target mutation [combining_mutation] not in genetics holder.")
+
+		var/amount = mutation_amount_pair[1]
+		if(amount > combining_mutation.count)
+			error("combine(): Trying to combine more mutations than exist in the holder!")
+
+		for(var/i=1; i<=amount; i++)
+			log_debug("combine(): Added key [combining_mutation.key]")
+			mutation_group += combining_mutation.key
+
+	var/datum/genetics/mutation/new_mutation = getRecipeResult(mutation_group, MUT_TYPE_COMBINATION)
+
+	//Go back and remove the mutations combined.
+	var/could_remove = TRUE
+	for (var/list/mutation_amount_pair in combining_mutations)
+		var/datum/genetics/mutation/combining_mutation = mutation_amount_pair[0]
+		var/amount = mutation_amount_pair[1]
+		if(!removeMutation(combining_mutation, amount))
+			error("combine(): COULD NOT REMOVE [combining_mutation]")
+			could_remove = FALSE
+
+	if(could_remove && mutation_group.len != 0)
+		addMutation(new_mutation)
+		return new_mutation
+	return null
+
+
+
+
+
+
+
+//Determine Crappy mutation made for failed / corroded / bad mutation recipes
+/datum/genetics/genetics_holder/proc/onRecipeFail()
+	var/list/fail_list = getFailList() //get call defined in code/modules/genetics/recipes/fail_recipes.dm
+	var/fail_mutation_path = pick(fail_list)
+	var/datum/genetics/mutation/fail_mutation = new fail_mutation_path()
+	fail_mutation.active = pick(TRUE,FALSE) //You remembered to keep track of the undiscovered mutation IDs, right?
+	return fail_mutation
+
+//Build a recipe compare string for searching through the global mutation recipe list
+/datum/genetics/genetics_holder/proc/getRecipeResult(var/list/mutation_group, var/recipe_type)
+	RETURN_TYPE(/datum/genetics/mutation)
+
+	if(!recipe_type)
+		log_debug("getRecipeResult: Empty recipe_type!")
+		return null
+	if(mutation_group.len == 0)
+		log_debug("getRecipeResult: Empty mutation_group!")
+		return null
+
+	var/compare_string = ""
+	if(recipe_type == MUT_TYPE_COMBINATION)
+		compare_string = "C~"
+	else if (recipe_type == MUT_TYPE_IRRADIATON)
+		compare_string = "I~"
+	else
+		log_debug("getRecipeResult: Unknown recipe_type!")
+		return null
+	
+	sortList(mutation_group)
+
+	//Add compare text for non clone mutations.
+	for (var/group_key in mutation_group)
+		var/datum/genetics/mutation/incoming_mutation = getMutation(group_key)
+		if(!incoming_mutation)
+			log_debug("getRecipeResult: Mutation with key [group_key] not found in genetics holder!")
+			return null
+		if(!incoming_mutation.clone_gene)
+			compare_string = compare_string + "G~" + group_key
+	
+	//Add compare text for the clone mutations. While we're here, we'll also build a list of them for later use.
+	var/list/clone_mutation_list = list()
+	for (var/group_key in mutation_group)
+		var/datum/genetics/mutation/incoming_mutation = getMutation(group_key)
+		if(incoming_mutation.clone_gene)
+			clone_mutation_list += incoming_mutation
+			compare_string = compare_string + "M~"
+
+	log_debug("getRecipeResult: Comparing recipe string of: [compare_string]")
+
+	//Case when don't find a recipe with the compare string- the recipe is a failure and returns a bad mutation.
+	if(!GLOB.mutation_recipe_list[compare_string]) 
+		log_debug("getRecipeResult: Could not find recipe!")
+		return onRecipeFail()
+
+	//Actually going out and finding the recipe from the global mutation_recipe list.
+	var/datum/genetics/mutation_recipe/recipe
+	var/list/potential_recipes = GLOB.mutation_recipe_list[compare_string]
+	if(potential_recipes.len == 0)
+		log_debug("getRecipeResult: potential_recipes list was 0 for some reason...")
+		return onRecipeFail()
+	else //Despair, for the WC of this loop is O(N^3)
+		for(var/datum/genetics/mutation_recipe/target_recipe in potential_recipes)
+			var/has_all_clone_data = TRUE
+			if(target_recipe.required_on_clone_types)
+				for (var/clone_path in target_recipe.required_on_clone_types)
+					var/found_path = FALSE
+					for(var/datum/genetics/mutation/incoming_mutation in clone_mutation_list)
+						if(ispath(incoming_mutation.onClone(), clone_path))
+							found_path = TRUE
+							break
+					if(!found_path)
+						has_all_clone_data = FALSE
+						break
+			if(has_all_clone_data && target_recipe.recipe_type == recipe_type)
+				log_debug("getRecipeResult: found recipe with valid clone data and type!")
+				if(!recipe || (target_recipe.priority > recipe.priority))
+					log_debug("getRecipeResult: found recipe at priority target_recipe.priority")
+					recipe = target_recipe
+
+	if(!recipe)
+		log_debug("getRecipeResult: Couldn't find a valid recipe out of the returned compare list")
+		return onRecipeFail()
+	
+	var/result_path = recipe.get_result_path()
+	var/datum/genetics/mutation/new_mutation = new result_path()
+	new_mutation.active = pick(TRUE,FALSE)
+	return(new_mutation)
+
+		
+
+
 
 //Search function for a specific mutation living in a genetics holder.
-
 //Key- relates to a stored identifying string in the mutation datum, can be different for datums of the same object
 //Function must return a mutation datum from the mutation pool on a success, and a null value that evaluates to FALSE on a fail.
 /datum/genetics/genetics_holder/proc/getMutation(var/key)
 	RETURN_TYPE(/datum/genetics/mutation)
-	log_debug("getMutation: Beginning search for [key]")
 	for(var/datum/genetics/mutation/source_mutation in mutation_pool)
 		if(source_mutation.key == key)
-			log_debug("getMutation: Found key [key] in [source_mutation], which has key [source_mutation.key]")
 			return source_mutation
 	return null
 
@@ -173,10 +322,13 @@
 		total_instability -= (mutation_to_remove.instability * amt_to_remove)
 		mutation_to_remove.count -= amt_to_remove
 		if(mutation_to_remove.count <= 0)
+			if(holder)
+				mutation_to_remove.onPlayerRemove(src)
+				mutation_to_remove.onMobRemove(src)
 			mutation_pool -= mutation_to_remove
-		if(holder)
-			mutation_to_remove.onPlayerRemove(src)
-			mutation_to_remove.onMobRemove(src)
+		return TRUE
+	else
+		return FALSE
 
 /datum/genetics/genetics_holder/proc/removeAllMutations()
 	total_instability = 0
@@ -323,6 +475,8 @@
 	//How many research points the gene is worth.
 	var/gene_research_value = 1000
 
+	var/virtual_id = 0 //A unique "ID" that the mutation holds, only set SPECIFICALLY when contained inside of an R&D server, and nowhere else.
+
 /datum/genetics/mutation/proc/copy(var/copy_container = FALSE)
 	var/datum/genetics/mutation/duplicate = new type(src)
 	if(copy_container)
@@ -433,17 +587,3 @@
 	if(!checkProcessingValid())
 		return FALSE
 	return TRUE
-
-
-
-
-
-/*
-* Interactions between genes
-*/
-
-//TODO: Use Recipe system for combining mutations.
-/datum/genetics/proc/onCombine()
-
-/datum/genetics/proc/onCombineFail()
-	//TODO: Define what happens when a combination fails.
