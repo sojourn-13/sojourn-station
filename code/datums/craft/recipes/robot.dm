@@ -141,6 +141,7 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL, "time" = 60),
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 60),
 		list(/obj/item/robot_parts/robot_component/actuator, 1, "time" = 60),
+		list(/obj/item/tool/pickaxe/diamonddrill, 1, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 10, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
