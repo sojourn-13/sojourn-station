@@ -218,22 +218,28 @@
 	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
 
 /obj/item/ammo_magazine/ammobox/rifle_75/rubber
-	name = "ammunition box (7.5mm rubber)"
+	name = "ammunition box (7.5mm Rifle rubber)"
 	icon_state = "boxhrifle-rubber"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, deforming traumatic rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
 /obj/item/ammo_magazine/ammobox/rifle_75/practice
-	name = "ammunition box (7.5mm practice)"
+	name = "ammunition box (7.5mm Rifle practice)"
 	icon_state = "boxhrifle-practice"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75/lethal
-	name = "ammunition box (7.5mm Hollow Point)"
+	name = "ammunition box (7.5mm Rifle Hollow Point)"
 	icon_state = "boxhrifle-lethal"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, hollow-point rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
+
+/obj/item/ammo_magazine/ammobox/rifle_75/hv
+	name = "ammunition box (7.5mm Rifle High-Velocity)"
+	icon_state = "boxhrifle-hv"
+	desc = "A box of 7.5mm rifle ammunition. 180ct, high-velocity rounds."
+	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small
 	name = "ammunition packet (7.5mm Rifle ball)"
@@ -254,7 +260,7 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv
-	name = "ammunition packet (7.5mm Rifle HV)"
+	name = "ammunition packet (7.5mm Rifle high-velocity)"
 	icon_state = "rifle_hv"
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 

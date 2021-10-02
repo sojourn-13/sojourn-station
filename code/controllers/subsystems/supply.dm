@@ -111,7 +111,6 @@ SUBSYSTEM_DEF(supply)
 
 		var/datum/supply_order/SO = S
 		var/datum/supply_pack/SP = SO.object
-		GLOB.supply_profit -= SP.cost
 		var/obj/A = new SP.containertype(pickedloc)
 		A.name = "[SP.name][SO.reason ? " ([SO.reason])":"" ]"
 

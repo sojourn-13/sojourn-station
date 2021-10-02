@@ -179,6 +179,23 @@
 	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
+/datum/perk/chemist
+	name = "Periodic Table"
+	desc = "You know what the atoms around you react to and in what way they do. You are used to making organic substitutes and using them. \
+			You get quarter more NSA than a normal person. You can also see all reagents in beakers."
+	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
+
+/datum/perk/chemist/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		holder.metabolism_effects.nsa_threshold *= 1.25
+
+// Added on top , removed first
+/datum/perk/selfmedicated/chemist/remove()
+	if(holder)
+		holder.metabolism_effects.nsa_threshold /= 1.25
+	..()
+
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
 	..()
 	holder.mob_bomb_defense += 25

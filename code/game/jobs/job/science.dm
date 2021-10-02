@@ -31,7 +31,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
+	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci, /datum/perk/chemist)
 
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -81,7 +81,7 @@
 		access_genetics, access_medical_suits
 	)
 
-	perks = list(/datum/perk/si_sci)
+	perks = list(/datum/perk/si_sci, /datum/perk/chemist) //We do hydro?
 
 	stat_modifiers = list(
 		STAT_MEC = 20,

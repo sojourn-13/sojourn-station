@@ -9,7 +9,6 @@
 	invisibility = 101
 	update_lying_buckled_and_verb_status()
 	GLOB.dead_mob_list -= src
-
 	if(do_gibs) gibs(loc, dna, gibspawner)
 
 	var/atom/movable/overlay/animation = null
@@ -40,7 +39,6 @@
 	canmove = 0
 	icon = null
 	invisibility = 101
-
 	new remains(loc)
 
 
@@ -60,6 +58,7 @@
 	if(stat == DEAD)
 		return 0
 
+	activate_mobs_in_range(src, 5) //Its quite clear to everyone close by when something dies
 	facing_dir = null
 
 	if(!gibbed && deathmessage != "no message") // This is gross, but reliable. Only brains use it.

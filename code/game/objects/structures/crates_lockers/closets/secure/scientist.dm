@@ -39,3 +39,4 @@
 	new /obj/item/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/rped/rd(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/computer/rd(src)
+	new /obj/item/oddity/chem_book(src)

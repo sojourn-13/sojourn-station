@@ -239,7 +239,9 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	//Guild score
 	GLOB.score_guild_faction_item_loss -= 150 * GLOB.guild_faction_item_loss // ~-300
 	GLOB.guild_objectives_score = GLOB.guild_objectives_completed * 25 // ~100
-	GLOB.guild_profit_score	= round(GLOB.supply_profit/50) // ? review it //target_max~500//
+	//calculate guild profits in a sane way
+	var/ending_balance = get_account_credits(department_accounts[DEPARTMENT_LSS])
+	GLOB.supply_profit = ending_balance - 15000
 	GLOB.guild_shared_gears_score = GLOB.guild_shared_gears * 30 // ~150-300
 
 	GLOB.guild_score = GLOB.initial_guild_score + GLOB.guild_objectives_score + GLOB.guild_profit_score
@@ -271,32 +273,32 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 
 	//ironhammer
 	dat += {"
-	<u>Ironhammer scores</u><br>
+	<u>Marshal scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_ironhammer_score)]<br>
 	<b>Lost faction items:</b> [GLOB.ironhammer_faction_item_loss] ([to_score_color(GLOB.score_ironhammer_faction_item_loss)] Points)<br>
 	<b>Faction objectives completed:</b> [GLOB.ironhammer_objectives_completed] ([to_score_color(GLOB.ironhammer_objectives_score)] Points)<br>
 	<b>Antagonist contracts completed:</b> [GLOB.completed_antag_contracts] ([to_score_color(GLOB.score_antag_contracts)] Points)<br>
 	<b>Antagonists killed or captured:</b> [GLOB.captured_or_dead_antags] ([to_score_color(GLOB.captured_or_dead_antags_score)] Points)<br>
 	<b>Escaped Antagonists:</b> [GLOB.ironhammer_escaped_antagonists] ([to_score_color(GLOB.ironhammer_escaped_antagonists_score)] Points)<br>
-	<b>IH operatives killed:</b> [GLOB.ironhammer_operative_dead] ([to_score_color(GLOB.ironhammer_operative_dead_score)] Points)<br>
-	<b>Final Ironhammer score:</b> [get_color_score(GLOB.ironhammer_score, GLOB.ironhammer_score)] Points<br><br>
+	<b>Marshals killed:</b> [GLOB.ironhammer_operative_dead] ([to_score_color(GLOB.ironhammer_operative_dead_score)] Points)<br>
+	<b>Final Marshal score:</b> [get_color_score(GLOB.ironhammer_score, GLOB.ironhammer_score)] Points<br><br>
 	"}
 
 	//moebius
 	dat += {"
-	<u>Moebius scores</u><br>
+	<u>Soteria Institution scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_moebius_score)]<br>
 	<b>Lost faction items:</b> [GLOB.moebius_faction_item_loss] ([to_score_color(GLOB.score_moebius_faction_item_loss)] Points)<br>
 	<b>Faction objectives completed:</b> [GLOB.moebius_objectives_completed] ([to_score_color(GLOB.moebius_objectives_score)] Points)<br>
 	<b>Dead crew:</b> [GLOB.crew_dead] ([to_score_color(GLOB.score_crew_dead)] Points)<br>
 	<b>Research points gained:</b> [GLOB.research_point_gained] ([to_score_color(GLOB.score_research_point_gained)] Points)<br>
 	<b>Autopsies performed:</b> [GLOB.moebius_autopsies_mobs.len] ([to_score_color(GLOB.score_moebius_autopsies_mobs)] Points)<br>
-	<b>Final Moebius score:</b> [get_color_score(GLOB.moebius_score, GLOB.moebius_score)] Points<br><br>
+	<b>Final Soteria Institution score:</b> [get_color_score(GLOB.moebius_score, GLOB.moebius_score)] Points<br><br>
 	"}
 
 	//nt
 	dat += {"
-	<u>NeoTheology scores</u><br>
+	<u>Church of Absolute scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_neotheology_score)]<br>
 	<b>Lost faction items:</b> [GLOB.neotheology_faction_item_loss] ([to_score_color(GLOB.score_neotheology_faction_item_loss)] Points)<br>
 	<b>Faction objectives completed:</b> [GLOB.neotheology_objectives_completed] ([to_score_color(GLOB.neotheology_objectives_score)] Points)<br>
@@ -304,31 +306,31 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	<b>Biomatter produced:</b> [GLOB.biomatter_neothecnology_amt] ([to_score_color(GLOB.biomatter_score)] Points)<br>
 	<b>Total of conversions:</b> [GLOB.new_neothecnology_convert] ([to_score_color(GLOB.new_neothecnology_convert_score)] Points)<br>
 	<b>Group rituals performed:</b> [GLOB.grup_ritual_performed] ([to_score_color(GLOB.grup_ritual_score)] Points)<br>
-	<b>Final Neotechnology score:</b> [get_color_score(GLOB.neotheology_score, GLOB.neotheology_score)] Points<br><br>
+	<b>Final Church of Absolute score:</b> [get_color_score(GLOB.neotheology_score, GLOB.neotheology_score)] Points<br><br>
 	"}
 
 	//guild
 	dat += {"
-	<u>Guild scores</u><br>
+	<u>Lonestar Shipping Solutions scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_guild_score)]<br>
 	<b>Lost faction items:</b> [GLOB.guild_faction_item_loss] ([to_score_color(GLOB.score_guild_faction_item_loss)] Points)<br>
 	<b>Faction objectives completed:</b> [GLOB.guild_objectives_completed] ([to_score_color(GLOB.guild_objectives_score)] Points)<br>
 	<b>Profit profits:</b> [GLOB.supply_profit] ([to_score_color(GLOB.guild_profit_score)] Points)<br>
-	<b>Crew with items distributed by the Guild:</b> [GLOB.guild_shared_gears] ([to_score_color(GLOB.guild_shared_gears_score)] Points)<br>
-	<b>Final Guild score:</b> [get_color_score(GLOB.guild_score, GLOB.guild_score)] Points<br><br><br>
+	<b>Crew with items distributed by the Lonestar Shipping Solutions:</b> [GLOB.guild_shared_gears] ([to_score_color(GLOB.guild_shared_gears_score)] Points)<br>
+	<b>Final Lonestar Shipping Solutions score:</b> [get_color_score(GLOB.guild_score, GLOB.guild_score)] Points<br><br><br>
 	"}
 
 	//Technomancers
 	dat += {"
-	<u>Technomancers scores</u><br>
+	<u>Artificer's Guild scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_technomancer_score)]<br>
 	<b>Faction objectives completed:</b> [GLOB.technomancer_objectives_completed] ([to_score_color(GLOB.score_technomancer_objectives)] Points)<br>
 	<b>All SMES Charged:</b> [GLOB.all_smes_powered ? "Yes" : "No"] ([to_score_color(GLOB.score_smes_powered)] Points)<br>
-	<b>Ship shield range:</b> [GLOB.field_radius] ([to_score_color(GLOB.score_ship_shield)] Points)<br>
+	<b>Colony shield range:</b> [GLOB.field_radius] ([to_score_color(GLOB.score_ship_shield)] Points)<br>
 	<b>Lost faction items:</b> [GLOB.technomancer_faction_item_loss] ([to_score_color(GLOB.score_technomancer_faction_item_loss)] Points)<br>
 	<b>Unpowered areas:</b> [GLOB.area_powerloss] ([to_score_color(GLOB.score_powerloss)] Points)<br>
 	<b>Areas with atmospheric problems:</b> [GLOB.area_fireloss] ([to_score_color(GLOB.score_fireloss)] Points)<br>
-	<b>Final Technomancers score:</b> [get_color_score(GLOB.technomancer_score, GLOB.technomancer_score)] Points<br><br>
+	<b>Final Artificer's Guild score:</b> [get_color_score(GLOB.technomancer_score, GLOB.technomancer_score)] Points<br><br>
 	"}
 
 	dat += "<br><hr>"

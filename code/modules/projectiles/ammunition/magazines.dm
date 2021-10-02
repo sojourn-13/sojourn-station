@@ -398,6 +398,7 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75
 	max_ammo = 100
 	multiple_sprites = 1
+	w_class = ITEM_SIZE_NORMAL //Balance change, these things are the size a box do to being legit 5 mags worth ammo 
 
 /obj/item/ammo_magazine/rifle_75_linked_box/update_icon()
 	if (!stored_ammo.len)

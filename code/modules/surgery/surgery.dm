@@ -286,6 +286,13 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 
 	return FALSE
 
+//This checks to see shrapnel in the person, used in surgery to remove them all.
+/obj/item/organ/external/proc/shrapnel_check()
+	if(locate(/obj/item/material/shard/shrapnel) in implants)
+		return TRUE
+
+	return FALSE
+
 //check if mob is lying down on something we can operate him on.
 /proc/can_operate(mob/living/carbon/M, mob/living/user)
 	if(M == user)	// Self-surgery

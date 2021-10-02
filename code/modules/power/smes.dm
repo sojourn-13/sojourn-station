@@ -49,6 +49,14 @@
 	var/building_terminal = 0 //Suggestions about how to avoid clickspam building several terminals accepted!
 	var/obj/machinery/power/terminal/terminal = null
 	var/should_be_mapped = 0 // If this is set to 0 it will send out warning on New()
+	var/skill_check = STAT_LEVEL_ADEPT
+
+/obj/machinery/power/smes/dummysimple
+	name = "simple power storage unit"
+	desc = "A overly simplified high-capacity superconducting magnetic energy storage (SMES) unit. \
+	It goes as far as to have big red arrows pointing to the switches, \
+	and indentations on the controles to allow even the blind or unable to read to set this SMES.."
+	skill_check = -30 //So legit anyone unless exstream stat reduction
 
 /obj/machinery/power/smes/drain_power(var/drain_check, var/surge, var/amount = 0)
 
@@ -253,7 +261,7 @@
 	ui_interact(user)
 
 /obj/machinery/power/smes/proc/check_user(mob/user)
-	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, skill_check))
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE
@@ -498,6 +506,7 @@
 	capacity = 5000000
 	output_level = 250000
 	should_be_mapped = 1
+	skill_check = 300 //Only mken, or guild can use this I guess
 
 /obj/machinery/power/smes/magical/Process()
 	charge = 5000000

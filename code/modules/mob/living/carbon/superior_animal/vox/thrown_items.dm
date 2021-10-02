@@ -3,22 +3,25 @@
 	damage_types = list(BRUTE = 16)
 	agony = 12
 	armor_penetration = 5
-	step_delay = 0.75
+	step_delay = 1.15
 	check_armour = ARMOR_MELEE
 	can_ricochet = FALSE
 	embed = FALSE
 	sharp = FALSE
+	affective_damage_range = 1
+	affective_ap_range = 1
 
 /obj/item/projectile/bullet/spear
 	name = "rock fragements"
 	damage_types = list(BRUTE = 24) //Same as a .40
 	agony = 15
 	armor_penetration = 25
-	step_delay = 0.75
+	step_delay = 1
 	check_armour = ARMOR_MELEE
 	can_ricochet = FALSE
 	embed = TRUE
-	sharp = TRUE
+	affective_damage_range = 2
+	affective_ap_range = 2
 
 /obj/item/projectile/bullet/spear/toxic
 	name = "coated rock fragements"
