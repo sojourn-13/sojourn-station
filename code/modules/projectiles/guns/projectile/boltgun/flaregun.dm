@@ -18,7 +18,7 @@
 	saw_off = FALSE
 	bolt_training = FALSE
 	eject_animatio = FALSE //TODO: this
-
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE) //We cant be overshooter or sharpened, but we can take a scope!
 
 
 /obj/item/gun/projectile/boltgun/flare_gun/update_icon()
