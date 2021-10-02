@@ -285,9 +285,3 @@
 			C.origin_tech = list(TECH_ILLEGAL = rand(3,6))
 
 	. = ..()
-
-/obj/item/projectile/beam/drone
-	damage_types = list(BURN = 15)
-
-/obj/item/projectile/beam/pulse/drone
-	damage_types = list(BURN = 10)
