@@ -48,7 +48,7 @@
 
 /obj/item/clothing/glasses/powered/science
 	name = "science goggles"
-	desc = "Powered goggles remotely synched with the Research database, allowing you to see the research potential of objects."
+	desc = "These goggles scan the reagents within beakers, displaying them to you!"
 	icon_state = "purple"
 	item_state = "glasses"
 

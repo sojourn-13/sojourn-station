@@ -18,7 +18,7 @@
 		STAT_VIG = 15,
 	)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, /datum/perk/chemist)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
 	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment.<br>\
@@ -54,7 +54,7 @@
 		STAT_VIG = 5,
 	)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, /datum/perk/chemist)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
@@ -94,7 +94,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb)
+	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb, /datum/perk/chemist)
 
 	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
@@ -167,7 +167,7 @@
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
-	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat)
+	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat, /datum/perk/chemist) //Union rights allows them to know chemistiry
 
 	stat_modifiers = list(
 		STAT_ROB = 10,

@@ -349,3 +349,7 @@
 #define RUIN_WRECK 		8		//crashed vessel
 #define RUIN_NATURAL	16		//naturally occuring structure
 #define RUIN_WATER 		32		//ruin depending on planet having water accessible
+
+/// Required minimum values to see reagents in a beaker
+#define HUMAN_REQ_COG_FOR_REG 35
+#define HUMAN_REQ_BIO_FOR_REG 50

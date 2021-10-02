@@ -43,6 +43,7 @@
 	var/passivePerk = TRUE
 	var/obj/effect/statclick/perk/statclick
 	var/cooldown_time = 0
+	var/perk_shared_ability
 
 /datum/perk/proc/update_stat()
 	statclick.update()
@@ -91,3 +92,20 @@
 
 /datum/perk/proc/deactivate()
 	//log_debug("Ah, fuck, I can't believe you've done this.  Perk [src] without a custom defined deactivate called")
+
+
+/// Proc called , a bitflag is always expected.
+/datum/perk/proc/check_shared_ability(ability_bitflag)
+	if(!(perk_shared_ability & ability_bitflag))
+		return FALSE
+	return TRUE
+
+/* Uncomment this when  more shared abilities are
+/datum/perk/proc/check_shared_abilities(list/ability_bitflags)
+	var/accumulated_bitflags = 0
+	for(var/bitflag in ability_bitflags)
+		if(!check_shared_ability(bitflag))
+			continue
+		accumulated_bitflags++
+	return ability_bitflags.len == accumulated_bitflags ? TRUE : FALSE
+*/
