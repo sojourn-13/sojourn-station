@@ -72,6 +72,7 @@
 /obj/machinery/porta_turret/One_star
 	name = "greyson positronic turret"
 	installation = /obj/item/gun/energy/cog
+	shot_delay = 20 //2 seconds between each shot, its older and the like
 
 /obj/machinery/porta_turret/crescent
 	enabled = FALSE
