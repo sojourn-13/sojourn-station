@@ -48,10 +48,9 @@
 	check_access = TRUE //Respects access
 	check_anomalies = FALSE //We dont attack simples
 	check_synth = FALSE //so dont shoot are own
-
+	shot_delay = 20		//2 seconds between each shot, its a heavy laser and thats what the gun in the turret is meant to be delayed by 
 	ailock = TRUE
 	use_power = NO_POWER_USE
-	shot_delay = 5
 	auto_repair = TRUE
 
 /obj/machinery/turretid/Destroy()
