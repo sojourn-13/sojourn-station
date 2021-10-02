@@ -342,7 +342,7 @@
 //This proc handles items being inserted. It does not perform any checks of whether an item can or can't be inserted. That's done by can_be_inserted()
 //The stop_warning parameter will stop the insertion message from being displayed. It is intended for cases where you are inserting multiple items at once,
 //such as when picking up all the items on a tile with one click.
-/obj/item/storage/proc/handle_item_insertion(obj/item/W as obj, prevent_warning = 0, mob/user)
+/obj/item/storage/proc/handle_item_insertion(obj/item/W as obj, prevent_warning = FALSE, mob/user)
 	if (!istype(W)) return 0
 	if (usr)
 		usr.prepare_for_slotmove(W)
@@ -357,13 +357,14 @@
 		W.dropped(usr)
 		add_fingerprint(usr)
 
-		var/message = "[W] into [src]"
 		if(!prevent_warning && W.w_class >= ITEM_SIZE_NORMAL)
 			if(insertion_sound)
 				playsound(get_turf(src), insertion_sound, 100)
-			visible_message(SPAN_NOTICE("[usr] puts [message]."))
+			visible_message(SPAN_NOTICE("[usr] puts [W] in [src]."),
+							SPAN_NOTICE("You put [W] in [src].")
+							)
 		else
-			to_chat(usr, SPAN_NOTICE("You put [message]."))
+			to_chat(usr, SPAN_NOTICE("You put [W] in [src]."))
 
 	refresh_all()
 
