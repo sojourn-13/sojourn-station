@@ -196,9 +196,13 @@
 	result = /obj/item/tool_upgrade/augment/fuel_tank
 
 	steps = list(
-		list(/obj/item/weldpack, 1, "time" = 30),
-		list(QUALITY_SAWING, 10, "time" = 120),//Disassemble the backpack
-		list(QUALITY_BOLT_TURNING, 10, 40) //And open some valves
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL), //To make the tank
+		list(QUALITY_WELDING, 10, 50), // welding the plasteel bits
+		list(QUALITY_HAMMERING, 10, 100), //Make sure its round and storable
+		list(/obj/item/stack/rods, 2, 30), //welding solder
+		list(QUALITY_WELDING, 10, 100), //welding down the solder and making it more air-tight
+		list(QUALITY_BOLT_TURNING, 10, 40),  //adding a port?
+		list(QUALITY_ADHESIVE, 20, 30) //Making it air tught
 	)
 
 //just a clamp with a flat surface to hammer something
