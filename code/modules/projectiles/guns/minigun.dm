@@ -1,7 +1,9 @@
 // Minigun, fed via a backpack
 /obj/item/gun/minigun
-	name = "minigun"
-	desc = "A backpack-fed minigun"
+	name = "\"Bullet Storm\" fenrir minigun"
+	desc = "A backpack-fed minigun designed by and for the kriosan castellan class, as it takes both size and strength\
+	to carry such a heavy weapon. While used by other groups (and smaller people), it is at home in the confederacy \
+	quelling riots, turning pirates into swiss cheese, and taking down extremely huge or dangerous fauna."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma"
 	origin_tech = list(TECH_COMBAT = 10)
@@ -42,7 +44,7 @@
 // Backpack Ammo Pack
 /obj/item/minigun_backpack
 	name = "ammo pack"
-	desc = "A backpack full of ammo for a minigun."
+	desc = "A backpack full of ammo for a minigun. Looks heavy, it'd take a robust person to carry this effortlessly."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasmapack"
 	item_state = "plasmapack"
