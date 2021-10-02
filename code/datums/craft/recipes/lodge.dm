@@ -33,8 +33,8 @@
 	)
 
 /datum/craft_recipe/lodge/baroqe
-	name = "Bone Rifle"
-	result = /obj/item/gun/projectile/baroque
+	name = "Baroque Bone Rifle"
+	result = /obj/item/gun/projectile/boltgun/baroque
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_BONE, "time" = 60),

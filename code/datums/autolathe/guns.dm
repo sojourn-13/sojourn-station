@@ -355,7 +355,7 @@
 
 /datum/design/autolathe/gun/heavysniper
 	name = "SA AMR .60-06 \"Penetrator\""
-	build_path = /obj/item/gun/projectile/heavysniper
+	build_path = /obj/item/gun/projectile/boltgun/heavysniper
 
 /datum/design/autolathe/gun/reclaimer
 	name = "Excelsior reclaimer"

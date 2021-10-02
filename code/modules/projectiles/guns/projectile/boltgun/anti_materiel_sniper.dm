@@ -1,4 +1,4 @@
-/obj/item/gun/projectile/heavysniper
+/obj/item/gun/projectile/boltgun/heavysniper
 	name = "Anti-Materiel Rifle"
 	desc = "A heavy anti-material rifle fitted with a scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing .60-06 shells."
 	icon = 'icons/obj/guns/projectile/heavysniper.dmi'
@@ -19,69 +19,14 @@
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20, MATERIAL_DIAMOND = 3, MATERIAL_OSMIUM = 5, MATERIAL_URANIUM = 2)
 	price_tag = 10000
 	one_hand_penalty = 80
-	var/bolt_open = 0
 	zoom_factor = 2.0
 	twohanded = TRUE
+	sharp = FALSE
+	saw_off = FALSE
+	eject_animatio = FALSE //Todo: this
+	bolt_training = FALSE
+
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
-
-/obj/item/gun/projectile/heavysniper/update_icon()
-	..()
-
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
-
-	if (item_suffix)
-		itemstring += "[item_suffix]"
-
-	if (bolt_open)
-		iconstring += "_open"
-	else
-		iconstring += "_closed"
-
-	icon_state = iconstring
-	set_item_state(itemstring)
-
-
-
-/obj/item/gun/projectile/heavysniper/attack_self(mob/user) //Someone overrode attackself for this class, soooo.
-	if(zoom)
-		toggle_scope(user)
-		return
-	bolt_act(user)
-
-/obj/item/gun/projectile/heavysniper/proc/bolt_act(mob/living/user)
-	playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltback.ogg', 75, 1)
-	bolt_open = !bolt_open
-	if(bolt_open)
-		if(chambered)
-			to_chat(user, SPAN_NOTICE("You work the bolt open, ejecting [chambered]!"))
-			chambered.loc = get_turf(src)
-			loaded -= chambered
-			chambered = null
-		else
-			to_chat(user, SPAN_NOTICE("You work the bolt open."))
-	else
-		to_chat(user, SPAN_NOTICE("You work the bolt closed."))
-		playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltforward.ogg', 75, 1)
-		bolt_open = 0
-	add_fingerprint(user)
-	update_icon()
-
-/obj/item/gun/projectile/heavysniper/special_check(mob/user)
-	if(bolt_open)
-		to_chat(user, SPAN_WARNING("You can't fire [src] while the bolt is open!"))
-		return 0
-	return ..()
-
-/obj/item/gun/projectile/heavysniper/load_ammo(var/obj/item/A, mob/user)
-	if(!bolt_open)
-		return
-	..()
-
-/obj/item/gun/projectile/heavysniper/unload_ammo(mob/user, var/allow_dump=1)
-	if(!bolt_open)
-		return
-	..()
 
 /obj/item/weaponparts
 	var/part_color = ""
@@ -125,7 +70,7 @@
 /obj/item/weaponparts/heavysniper/stockreciever/attackby(obj/item/W, mob/user)
 	if(istype(W,/obj/item/weaponparts/heavysniper/barrel))
 		to_chat(user, "You attach the barrel to the stock")
-		var/obj/item/gun/projectile/heavysniper/HS = new (get_turf(src))
+		var/obj/item/gun/projectile/boltgun/heavysniper/HS = new (get_turf(src))
 		if(loc == user)
 			equip_slot = user.get_inventory_slot(src)
 			if(equip_slot in list(slot_r_hand, slot_l_hand))
