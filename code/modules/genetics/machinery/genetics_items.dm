@@ -96,18 +96,27 @@ This is a bugtesting item, please forgive the memes.
 		option_list[mutagen.name] += list(mutagen, mutagen.count)
 	option_list["End Selection"] += list(0, 1)
 
+	for (var/option in option_list)
+		log_debug("[option] -> option_list[option]")
 	
 	var/list/combined_mutations = list()
 	for(var/iterations = 0; iterations < 9; iterations++)
+
 		log_debug("combineMutation(): Began an iteration of this thing")
 		var/list/updated_option_list = list()
-		for(var/list/option in option_list)
-			if(option[1] != 0)
-				updated_option_list += option[0]
+		for(var/option in option_list)
+			log_debug("Went through an option in the For List")
+			if(option_list[option][1] > 0)
+				updated_option_list["[option]"] += option_list[option][0]
+				log_debug("[option] -> option_list[option]")
+
+
+		for (var/updated_option in updated_option_list)
+			log_debug("[updated_option] -> updated_option_list[updated_option]")
 
 		var/choice = input("Select a gene to combine", "Current Mutations:") in updated_option_list
 		
-		if(!choice || !choice[0])
+		if(!choice || choice=="End Selection")
 			break
 		else
 			//Find a spot for this mutation in the combined_mutations list as we transfer it over.
