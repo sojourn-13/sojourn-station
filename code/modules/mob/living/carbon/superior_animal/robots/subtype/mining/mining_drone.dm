@@ -5,6 +5,10 @@
 	icon = 'icons/mob/battle_roomba.dmi'
 	icon_state = "mining_drone"
 	faction = "neutral"
+	health = 75 // Bit tanky, the mines are dangerous
+	maxHealth = 75
+	melee_damage_lower = 20 // Diamond-tipped drill.
+	melee_damage_upper = 30
 	viewRange = 6
 	move_to_delay = 3
 	randpixel = 0
@@ -12,7 +16,9 @@
 	do_gibs = TRUE
 	light_range = 5
 	light_color = COLOR_LIGHTING_CYAN_BRIGHT
-	cleaning = FALSE
+	cleaning = FALSE // It isn't a roomba
+	wander = FALSE // We got the wandering handled manually
+	stop_automated_movement_when_pulled = TRUE
 
 	// Unique vars
 	var/target // Where we want to go
@@ -26,6 +32,8 @@
 	to_chat(user, SPAN_NOTICE("	Wandering : [wandering ? "Active" : "Not Active"]"))
 	to_chat(user, SPAN_NOTICE("	Ore Gathering : [pickup ? "Active" : "Not Active"]"))
 	to_chat(user, SPAN_NOTICE("	Mining : [mining ? "Active" : "Not Active"]"))
+	if(client)
+		to_chat(user, SPAN_NOTICE("	Advanced AI activated."))
 
 /mob/living/carbon/superior_animal/robot/mining/Life()
 	..()
@@ -49,9 +57,13 @@
 			walk_to(src, target, 1, move_to_delay) // Go there
 		else
 			walk_to(src, 0) // Or else stop
+	else // We got someone controlling the drone.
+		walk_to(src, 0) // Stop automated movement
+		target = null // No targets to go to
 
 /mob/living/carbon/superior_animal/robot/mining/death()
 	drop_loot()
+	new /obj/item/tool/pickaxe/diamonddrill(loc) // So we can use the drill to make another one
 	..()
 
 /mob/living/carbon/superior_animal/robot/mining/attack_hand(mob/user as mob)
@@ -79,6 +91,22 @@
 
 		if(QUALITY_PULSING in T.tool_qualities) // We pulse the drone to get the loot
 			drop_loot() // Drop the loot
+			return
+
+		if(QUALITY_WELDING in T.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					user.visible_message(
+										SPAN_NOTICE("[user] [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name]."),
+										SPAN_NOTICE("You [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name].")
+										)
+					if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
+						heal_overall_damage(50, 50)
+					else
+						heal_overall_damage(rand(30, 50), rand(30, 50))
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
 			return
 
 	// If nothing was ever triggered, continue as normal
@@ -118,7 +146,7 @@
 
 // Mine a tile
 /mob/living/carbon/superior_animal/robot/mining/proc/mine(var/turf/simulated/mineral/M)
-	visible_message("[src] mine [M]") // Visible message
+	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
 
@@ -155,7 +183,7 @@
 	set category = "Mining Bot"
 
 	for(var/O in oview(1, src)) // Check our surroundings.
-		if(pickup && istype(O, /obj/item/ore)) // Is it ore on the ground?
+		if(istype(O, /obj/item/ore)) // Is it ore on the ground?
 			var/obj/item/ore/Ore = O
 			pick_ore(Ore) // Pick it up
 			continue
