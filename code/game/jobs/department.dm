@@ -123,6 +123,9 @@
 	/*
 		The LSS account represents the holdings of the local branch, and CEO.
 	*/
+	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
+	if you manage to get this variable refferenced there you're a better man than me. godspeed
+	*/
 	account_initial_balance = 15000
 	funding_type = FUNDING_NONE //So we want to trade and make money not magiclly get it every hour
 
