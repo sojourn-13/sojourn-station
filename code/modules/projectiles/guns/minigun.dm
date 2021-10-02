@@ -112,6 +112,14 @@
 		else
 			to_chat(user, "[src] doesn't have any gun connected to it.")
 
+/obj/item/minigun_backpack/pre_equip(var/mob/user, var/slot)
+	..()
+	if(user.stats.getStat(STAT_ROB) < 30)
+		to_chat(user, SPAN_NOTICE("You equip [src], but \his weight slow you down."))
+		slowdown = 0.5 // 50% speed decrease
+	else
+		slowdown = 0
+
 // Removing the gun, but still connected
 /obj/item/minigun_backpack/MouseDrop(over_object)
 	if(the_gun)
