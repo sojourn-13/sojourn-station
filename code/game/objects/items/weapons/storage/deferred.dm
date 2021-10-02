@@ -193,7 +193,7 @@
 	name = "marksman crate"
 	desc = "A crate containing one Anti-Materiel Rifle, and ten 60-06 shells."
 	icon_state = "serbcrate_deferred_black"
-	initial_contents = list(/obj/item/gun/projectile/heavysniper = 1,
+	initial_contents = list(/obj/item/gun/projectile/boltgun/heavysniper = 1,
 	/obj/item/ammo_magazine/ammobox/antim_small = 2)
 
 /obj/item/storage/deferred/crate/sidearm
