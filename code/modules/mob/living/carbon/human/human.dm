@@ -1492,7 +1492,7 @@ var/list/rank_prefix = list(\
 
 	if(stat) return
 	pulling_punches = !pulling_punches
-	to_chat(src, "<span class='notice'>You are now [pulling_punches ? "pulling your punches" : "not pulling your punches"].</span>")
+	to_chat(src, "<span class='notice'>You are now [pulling_punches ? "" : "not "]pulling your punches.</span>")
 	return
 
 //generates realistic-ish pulse output based on preset levels
