@@ -15,7 +15,7 @@
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_DURASTEEL = 5)
 	init_firemodes = list(SEMI_AUTO_NODELAY, BURST_3_ROUND, BURST_5_ROUND, BURST_8_ROUND, FULL_AUTO_800)
 
-	var/projectile_type = /obj/item/projectile/bullet/pistol_35
+	var/projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/hv
 	var/obj/item/minigun_backpack/connected = null // The backpack the gun is connected to
 
 /obj/item/gun/minigun/New()
