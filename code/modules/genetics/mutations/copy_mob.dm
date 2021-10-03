@@ -20,5 +20,3 @@
 /datum/genetics/mutation/copy_mob/onClone()
 	..()
 	return source_mob
-
-	

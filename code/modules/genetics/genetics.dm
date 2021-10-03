@@ -179,13 +179,15 @@
 	var/list/mutation_group = list()
 	//Validate the mutations to make sure we have everything.
 	for (var/list/mutation_amount_pair in combining_mutations)
-		var/datum/genetics/mutation/combining_mutation = mutation_amount_pair[0]
+		var/datum/genetics/mutation/combining_mutation = mutation_amount_pair[1]
 		if(!getMutation(combining_mutation.key))
-			error("combine(): Target mutation [combining_mutation] not in genetics holder.")
+			log_debug("combine(): Target mutation [combining_mutation] not in genetics holder.")
+			return null
 
-		var/amount = mutation_amount_pair[1]
+		var/amount = mutation_amount_pair[2]
 		if(amount > combining_mutation.count)
-			error("combine(): Trying to combine more mutations than exist in the holder!")
+			log_debug("combine(): Trying to combine more mutations than exist in the holder!")
+			return null
 
 		for(var/i=1; i<=amount; i++)
 			log_debug("combine(): Added key [combining_mutation.key]")
@@ -196,22 +198,16 @@
 	//Go back and remove the mutations combined.
 	var/could_remove = TRUE
 	for (var/list/mutation_amount_pair in combining_mutations)
-		var/datum/genetics/mutation/combining_mutation = mutation_amount_pair[0]
-		var/amount = mutation_amount_pair[1]
-		if(!removeMutation(combining_mutation, amount))
-			error("combine(): COULD NOT REMOVE [combining_mutation]")
+		var/datum/genetics/mutation/combining_mutation = mutation_amount_pair[1]
+		var/amount = mutation_amount_pair[2]
+		if(!removeMutation(combining_mutation.key, amount))
+			log_debug("combine(): COULD NOT REMOVE [combining_mutation]")
 			could_remove = FALSE
 
-	if(could_remove && mutation_group.len != 0)
+	if(could_remove && new_mutation)
 		addMutation(new_mutation)
 		return new_mutation
 	return null
-
-
-
-
-
-
 
 //Determine Crappy mutation made for failed / corroded / bad mutation recipes
 /datum/genetics/genetics_holder/proc/onRecipeFail()
@@ -227,9 +223,6 @@
 
 	if(!recipe_type)
 		log_debug("getRecipeResult: Empty recipe_type!")
-		return null
-	if(mutation_group.len == 0)
-		log_debug("getRecipeResult: Empty mutation_group!")
 		return null
 
 	var/compare_string = ""
@@ -295,13 +288,12 @@
 	if(!recipe)
 		log_debug("getRecipeResult: Couldn't find a valid recipe out of the returned compare list")
 		return onRecipeFail()
-	
-	var/result_path = recipe.get_result_path()
-	var/datum/genetics/mutation/new_mutation = new result_path()
+	log_debug("getRecipeResult: resulting recipe- [recipe.type]")
+	var/datum/genetics/mutation/new_mutation = recipe.get_result()
 	new_mutation.active = pick(TRUE,FALSE)
 	return(new_mutation)
 
-		
+
 
 
 
@@ -314,6 +306,7 @@
 		if(source_mutation.key == key)
 			return source_mutation
 	return null
+
 
 /datum/genetics/genetics_holder/proc/removeMutation(var/key , var/amt_to_remove = 1)
 	log_debug("removeMutation: removing [key] mutation. Amt=[amt_to_remove]")
@@ -328,6 +321,7 @@
 			mutation_pool -= mutation_to_remove
 		return TRUE
 	else
+		log_debug("removeMutation: Couldn't find mutation")
 		return FALSE
 
 /datum/genetics/genetics_holder/proc/removeAllMutations()

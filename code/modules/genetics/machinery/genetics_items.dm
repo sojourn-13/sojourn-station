@@ -92,12 +92,12 @@ This is a bugtesting item, please forgive the memes.
 	
 	//Generate the list
 	var/list/option_list = list()
+	var/list/count_list = list() 	//yes I needed 2 lists to make this damn thing work, it's a debug item don't @ me
 	for (var/datum/genetics/mutation/mutagen in held_mutations.mutation_pool)
-		option_list[mutagen.name] += list(mutagen, mutagen.count)
-	option_list["End Selection"] += list(0, 1)
-
-	for (var/option in option_list)
-		log_debug("[option] -> option_list[option]")
+		option_list[mutagen.name] = mutagen
+		count_list[mutagen.name] = mutagen.count
+	option_list["End Selection"] = 1
+	count_list["End Selection"] = 1
 	
 	var/list/combined_mutations = list()
 	for(var/iterations = 0; iterations < 9; iterations++)
@@ -105,14 +105,8 @@ This is a bugtesting item, please forgive the memes.
 		log_debug("combineMutation(): Began an iteration of this thing")
 		var/list/updated_option_list = list()
 		for(var/option in option_list)
-			log_debug("Went through an option in the For List")
-			if(option_list[option][1] > 0)
-				updated_option_list["[option]"] += option_list[option][0]
-				log_debug("[option] -> option_list[option]")
-
-
-		for (var/updated_option in updated_option_list)
-			log_debug("[updated_option] -> updated_option_list[updated_option]")
+			if(count_list[option] > 0)
+				updated_option_list["[option]"] = option_list[option]
 
 		var/choice = input("Select a gene to combine", "Current Mutations:") in updated_option_list
 		
@@ -120,22 +114,23 @@ This is a bugtesting item, please forgive the memes.
 			break
 		else
 			//Find a spot for this mutation in the combined_mutations list as we transfer it over.
-			var/datum/genetics/mutation/selected_mutation = choice[0]
+			var/datum/genetics/mutation/selected_mutation = option_list[choice]
 			var/mutation_not_in_list = TRUE
 			for (var/list/mutation_amount_pair in combined_mutations)
-				var/datum/genetics/mutation/combined_mutation = mutation_amount_pair[0]
+				var/datum/genetics/mutation/combined_mutation = mutation_amount_pair[1]
 				if (combined_mutation == selected_mutation)
-					mutation_amount_pair[1] += 1
+					log_debug("combineMutation():Gene already exists, incrementing.")
+					mutation_amount_pair[2] += 1
 					mutation_not_in_list = FALSE
 			if(mutation_not_in_list)
-				combined_mutations += list(selected_mutation, 1)
+				log_debug("combineMutation():Gene [selected_mutation] not detected!")
+				combined_mutations = combined_mutations + list(list(selected_mutation, 1))
 
 			//Go back and decrement the original options list
-			option_list[selected_mutation.name][1] -= 1
-
+			count_list[selected_mutation.name] -= 1
 		
 	to_chat(usr, SPAN_NOTICE("\The [usr] combines some mutations!"))
-	held_mutations.combine(combined_mutations)
+	held_mutations.combine(combined_mutations, MUT_TYPE_COMBINATION)
 	
 
 

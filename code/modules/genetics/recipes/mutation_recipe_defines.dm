@@ -38,13 +38,14 @@
 		var/ingredient_mutations = example_recipe.required_mutations
 		
 		//We sort the list so that the compare string will be uniform for any given set of ingredients.
-		if(istype(ingredient_mutations, /list))
-			var/list/ingredient_mutations_sorted = ingredient_mutations
-			sortList(ingredient_mutations_sorted)
-			for (var/key in ingredient_mutations_sorted)
-				compare_string = compare_string + "G~" + key
-		else
-			compare_string = compare_string + "G~" + ingredient_mutations
+		if (example_recipe.required_mutations)
+			if(istype(ingredient_mutations, /list))
+				var/list/ingredient_mutations_sorted = ingredient_mutations
+				sortList(ingredient_mutations_sorted)
+				for (var/key in ingredient_mutations_sorted)
+					compare_string = compare_string + "G~" + key
+			else
+				compare_string = compare_string + "G~" + ingredient_mutations
 		
 		//Add an 'M~' as a count for each clone mutation recipe required, so we don't have to compare carelessly.
 		if(example_recipe.required_on_clone_types)
@@ -87,7 +88,11 @@
 	recipe_type = MUT_TYPE_IRRADIATON
 
 //A configurable path return, in case we want variation in result for children of the main recipe definition.
-/datum/genetics/mutation_recipe/proc/get_result_path()
+/datum/genetics/mutation_recipe/proc/get_result()
+	log_debug("made new mutation using default method.")
 	if(ispath(result_path, /datum/genetics/mutation))
-		return new result_path()
+		log_debug("Found a replacement but, this is probably baaaaad-> [result_path]")
+		var/datum/genetics/mutation/new_mutation = new result_path()
+		return new_mutation
+	log_debug("Didn't find a mutation where we were loooking; returned NOTHING instead")
 	return null
