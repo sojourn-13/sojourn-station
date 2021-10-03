@@ -1724,7 +1724,7 @@
 /area/nadezhda/hallway/side/f2section1)
 "axL" = (
 /obj/structure/table/steel,
-/obj/random/booze/low_chance,
+/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
 "axS" = (
@@ -29757,7 +29757,6 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/obj/item/oddity/rare/golden_cup,
 /obj/structure/table/standard,
 /obj/machinery/camera/motion/security,
 /turf/simulated/floor/tiled/steel/bluecorner,
@@ -43599,6 +43598,7 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen/multi,
+/obj/random/booze/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "kDL" = (
@@ -88245,10 +88245,10 @@
 /area/nadezhda/medical/virology)
 "vhU" = (
 /obj/structure/table/marble,
-/obj/item/book/manual/wiki/barman_recipes,
 /obj/structure/sign/painting/paintingsnow{
 	pixel_y = 32
 	},
+/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/bar)
 "vig" = (
@@ -99190,6 +99190,14 @@
 	dir = 1;
 	pixel_y = -26
 	},
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/plastic/random,
+/obj/item/stack/material/plastic/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/clownoffice)
 "xFo" = (
