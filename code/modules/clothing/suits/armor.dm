@@ -603,6 +603,14 @@
 	slowdown = 0.6 // Bulkier due to protecting more
 	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
 
+/obj/item/clothing/suit/armor/flackvest/tan
+	name = "flak tan vest"
+	icon_state = "flakvest_tan"
+
+/obj/item/clothing/suit/armor/flackvest/tan/full
+	name = "full body tan flak vest"
+	icon_state = "flakvest_tan_fullbody"
+
 /obj/item/clothing/suit/armor/flackvest/militia
 	name = "blackshield flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
@@ -675,11 +683,35 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-obj/item/clothing/suit/armor/commander/militia
+/obj/item/clothing/suit/armor/commander/militia
 	name = "blackshield commander's armored coat"
-	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander."
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander. The armor plates even can be recoloured on the go to act as camo."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
+
+/obj/item/clothing/suit/armor/commander/militia/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "commander_mil"
+	options["Deseret Combat"] = "commander_tan"
+	options["Woodlands Combat"] = "commander_green"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 obj/item/clothing/suit/armor/commander/militia_overcoat
 	name = "blackshield armored overcoat"
