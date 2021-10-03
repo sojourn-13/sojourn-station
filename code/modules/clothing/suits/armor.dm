@@ -148,7 +148,7 @@
 	name = "ablative vest"
 	desc = "An ablative vest with plates designed to absorb rather than reflect energy projectiles."
 	icon_state = "northtech"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 10)
 	armor = list(
 		melee = 15,
 		bullet = 15,
