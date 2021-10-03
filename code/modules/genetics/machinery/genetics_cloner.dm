@@ -147,6 +147,13 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 			return reader
 	return null
 
+/obj/machinery/genetics/cloner/return_air_for_internal_lifeform()
+	//assume that the cryo cell has some kind of breath mask or something that
+	//draws from the cryo tube's environment, instead of the cold internal air.
+	if(loc)
+		return loc.return_air()
+	else
+		return null
 
 /obj/machinery/genetics/cloner/proc/breakout()
 	//TODO: Glass shattering stuff.
