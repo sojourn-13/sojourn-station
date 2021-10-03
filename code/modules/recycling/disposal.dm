@@ -527,7 +527,7 @@
 	var/destinationTag = "" // changes if contains a delivery container
 	var/tomail = 0 //changes if contains wrapped package
 	var/has_mob = FALSE //If it contains a mob
-
+	var/from_cloner = FALSE // if the package originates from a genetics cloner
 	var/partialTag = "" //set by a partial tagger the first time round, then put in destinationTag if it goes through again.
 
 
@@ -588,7 +588,7 @@
 		if(!loc)
 			return // check if we got GC'd
 
-		if(has_mob && prob(5))
+		if(has_mob && prob(5) && !from_cloner) //Mobs shunted from the cloning vat are free from damage.
 			for(var/mob/living/H in src)
 				if(isdrone(H)) //Drones use the mailing code to move through the disposal system,
 					continue
@@ -1566,3 +1566,7 @@
 		dirs = alldirs.Copy()
 
 	src.streak(dirs)
+
+#undef SEND_PRESSURE
+#undef PRESSURE_TANK_VOLUME
+#undef PUMP_MAX_FLOW_RATE
