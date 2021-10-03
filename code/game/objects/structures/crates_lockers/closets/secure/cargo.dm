@@ -178,8 +178,12 @@
 		new /obj/item/tool/saw/chain(src)
 	//Regular spawns
 	new /obj/item/tool/knife/dagger(src)
-	new /obj/item/device/lighting/glowstick/flare(src)
-	new /obj/item/device/lighting/glowstick/flare(src)
+	if(prob(50))
+		new /obj/item/gun/projectile/boltgun/flare_gun(src)
+		new /obj/item/ammo_casing/flare/prespawn(src)
+	else
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
 	if(prob(25))
 		new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
@@ -253,8 +257,12 @@
 	//Regular Spawns
 	new /obj/item/device/radio/headset/headset_pro(src)
 	new /obj/item/tool/knife/dagger(src)
-	new /obj/item/device/lighting/glowstick/flare(src)
-	new /obj/item/device/lighting/glowstick/flare(src)
+	if(prob(50))
+		new /obj/item/gun/projectile/boltgun/flare_gun(src)
+		new /obj/item/ammo_casing/flare/prespawn(src)
+	else
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
 	//Salvager
 	if(prob(90))
@@ -338,8 +346,12 @@
 		new /obj/item/tool/power_fist(src)
 	//Regular spawns
 	new /obj/item/tool/knife/dagger(src)
-	new /obj/item/device/lighting/glowstick/flare(src)
-	new /obj/item/device/lighting/glowstick/flare(src)
+	if(prob(70))
+		new /obj/item/gun/projectile/boltgun/flare_gun(src)
+		new /obj/item/ammo_casing/flare/prespawn(src)
+	else
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
 	new /obj/item/gun/projectile/silvereye(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)
