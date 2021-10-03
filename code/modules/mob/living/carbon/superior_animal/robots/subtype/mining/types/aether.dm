@@ -12,6 +12,4 @@
 	obey_friends = FALSE // We follow everyone who ask
 
 	// The vars start deactivated so that it doesn't leave as soon as it spawn
-	wandering = FALSE
-	pickup = FALSE
-	mining = FALSE
+	mining_modes = 0 // Bitflags for the AI

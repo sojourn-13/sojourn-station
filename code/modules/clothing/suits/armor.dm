@@ -144,6 +144,20 @@
 		rad = 0
 	)
 
+/obj/item/clothing/suit/armor/vest/ablative
+	name = "ablative vest"
+	desc = "An ablative vest with plates designed to absorb rather than reflect energy projectiles."
+	icon_state = "northtech"
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20)
+	armor = list(
+		melee = 15,
+		bullet = 15,
+		energy = 60,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
 	desc = "Every rose has its thorns."

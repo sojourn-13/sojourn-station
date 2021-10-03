@@ -16,6 +16,10 @@
 		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
 		return
 
+	// We don't scan clothing or boxes.
+	if(istype(O, /obj/item/clothing) && istype(O, /obj/item/storage))
+		return
+
 	return istype(O)
 
 /obj/item/device/scanner/reagent/scan(obj/O, mob/user)
