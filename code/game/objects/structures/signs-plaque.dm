@@ -28,6 +28,14 @@
 	desc = "A golden plaque with text and an image of a gas mask."
 	icon_state = "atmosplaque"
 
+/obj/structure/sign/plaque/goldplaque/grant
+	name = "solid gold research grant"
+	desc = "A golden plaque made from solid gold in the image of a research grant that the Lonestar \
+	took from the Soteria after winning a boxing tournament. \
+	It's rumored that Ryan himself commissioned this in a tasteless display of bad showmanship. \
+	The craftmenship is top quality, however."
+	icon_state = "goldenplaque"
+
 /obj/structure/sign/plaque/roundplaque
 	name = "round plaque"
 	desc = "A round plaque with some text on it."
