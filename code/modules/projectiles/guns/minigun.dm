@@ -4,8 +4,8 @@
 	desc = "A backpack-fed minigun designed by and for the kriosan castellan class, as it takes both size and strength\
 	to carry such a heavy weapon. While used by other groups (and smaller people), it is at home in the confederacy \
 	quelling riots, turning pirates into swiss cheese, and taking down extremely huge or dangerous fauna."
-	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
-	icon_state = "plasma"
+	icon = 'icons/obj/guns/projectile/minigun.dmi'
+	icon_state = "minigun"
 	origin_tech = list(TECH_COMBAT = 10)
 	w_class = ITEM_SIZE_BULKY
 	recoil_buildup = 1
@@ -45,11 +45,11 @@
 /obj/item/minigun_backpack
 	name = "ammo pack"
 	desc = "A backpack full of ammo for a minigun. Looks heavy, it'd take a robust person to carry this effortlessly."
-	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
-	icon_state = "plasmapack"
-	item_state = "plasmapack"
-	contained_sprite = TRUE
-	item_state_slots = list(slot_back_str = "plasmapack_back", slot_l_hand_str = "plasma_can_left", slot_r_hand_str = "plasma_can_right")
+	icon = 'icons/obj/guns/projectile/minigun.dmi'
+	icon_state = "powerpack"
+	item_state = "powerpack"
+	contained_sprite = TRUE // This mean that all the icons are in one file.
+	item_state_slots = list(slot_back_str = "powerpack_back")
 
 	var/ammo = 5000
 	slot_flags = SLOT_BACK
