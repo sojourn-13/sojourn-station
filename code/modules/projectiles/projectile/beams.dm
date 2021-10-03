@@ -23,6 +23,14 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 	heat = 100
 
+/obj/item/projectile/beam/drone
+	damage_types = list(BURN = 15)
+	armor_penetration = 10 //Some AP
+
+/obj/item/projectile/beam/pulse/drone
+	damage_types = list(BURN = 10)
+	armor_penetration = 5 //No AP we deal 30 damage in 3 shots
+
 /obj/item/projectile/beam/weak
 	damage_types = list(BURN = 16)
 	armor_penetration = 15 //Some AP

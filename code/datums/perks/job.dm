@@ -179,6 +179,23 @@
 	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
+/datum/perk/chemist
+	name = "Periodic Table"
+	desc = "You know what the atoms around you react to and in what way they do. You are used to making organic substitutes and using them. \
+			You get quarter more NSA than a normal person. You can also see all reagents in beakers."
+	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
+
+/datum/perk/chemist/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		holder.metabolism_effects.nsa_threshold *= 1.25
+
+// Added on top , removed first
+/datum/perk/selfmedicated/chemist/remove()
+	if(holder)
+		holder.metabolism_effects.nsa_threshold /= 1.25
+	..()
+
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
 	..()
 	holder.mob_bomb_defense += 25
@@ -439,7 +456,8 @@
 			/datum/craft_recipe/robotic/left_arm_frame,
 			/datum/craft_recipe/robotic/right_arm_frame,
 			/datum/craft_recipe/robotic/left_leg_frame,
-			/datum/craft_recipe/robotic/right_leg_frame
+			/datum/craft_recipe/robotic/right_leg_frame,
+			/datum/craft_recipe/robotic/mining_bot
 			)
 
 /datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
@@ -519,7 +537,9 @@
 			/datum/craft_recipe/lodge/hunter_boots,
 			/datum/craft_recipe/lodge/hunter_gloves,
 			/datum/craft_recipe/lodge/sheath,
-			/datum/craft_recipe/lodge/hunting_belt
+			/datum/craft_recipe/lodge/hunting_belt,
+			/datum/craft_recipe/lodge/leather_medium_pouch,
+			/datum/craft_recipe/lodge/leather_large_pouch
 			)
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)

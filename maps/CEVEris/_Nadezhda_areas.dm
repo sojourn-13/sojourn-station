@@ -131,6 +131,7 @@
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 	dynamic_lighting = FALSE
 	ship_area = FALSE
+	is_dungeon_lootable = TRUE
 
 
 /area/nadezhda/dungeon/outside/trashcave
@@ -226,6 +227,7 @@
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 	dynamic_lighting = FALSE
 	flags = null
+	is_dungeon_lootable = TRUE
 
 /area/nadezhda/outside/one_star
 	name = "Greyson Positronic Base"
@@ -304,16 +306,19 @@
 /area/nadezhda/outside/forest/hunting_lodge
 	name = "Hunting Lodge"
 	icon_state = "forest"
+	is_dungeon_lootable = FALSE
 
 /area/nadezhda/outside/forest/hunting_lodge_dark
 	name = "Hunting Lodge"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
+	is_dungeon_lootable = FALSE
 
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark
 	name = "Lodge Barn"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
+	is_dungeon_lootable = FALSE
 
 /area/nadezhda/outside/lakeside
     name = "Lakeside"
@@ -332,6 +337,7 @@
     icon_state = "meadow"
     sound_env = MOUNTAINS
     forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+    is_dungeon_lootable = FALSE
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 

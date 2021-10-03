@@ -1,7 +1,7 @@
 /mob/living/carbon/human/var/list/personal_ritual_cooldowns = list()
 
 
-/datum/ritual/
+/datum/ritual
 	var/name = "ritual"
 	var/desc = "Basic ritual that does nothing."
 	var/phrase = ""

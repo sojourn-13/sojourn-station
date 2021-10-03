@@ -58,6 +58,7 @@
 		return nerve_system_accumulations[tag]
 
 /datum/metabolism_effects/proc/get_nsa()
+	SEND_SIGNAL(parent, COMSING_NSA, nsa_current)
 	return nsa_current
 
 /datum/metabolism_effects/proc/get_nsa_target()
@@ -145,6 +146,8 @@
 			new_reagent.max_dose = R.max_dose
 			addiction_list.Add(new_reagent)
 			addiction_list[new_reagent] = 0
+			for(var/mob/living/carbon/human/H in viewers(parent))
+				SEND_SIGNAL(H, COMSIG_CARBON_ADICTION, parent, R)
 
 	if(is_type_in_list(R, addiction_list))
 		for(var/addiction in addiction_list)

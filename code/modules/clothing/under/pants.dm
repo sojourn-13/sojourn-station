@@ -246,7 +246,7 @@
 
 /obj/item/clothing/under/rank/medspec/gorkapantsihmed
 	name = "medical specialist gorka pants"
-	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband, leg cuffs, and MedSpec markings."
+	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband, leg cuffs, and Corpsman markings."
 	icon_state = "gorka_pants_ih_med"
 
 /obj/item/clothing/under/rank/medical/gorkapantscrewmed

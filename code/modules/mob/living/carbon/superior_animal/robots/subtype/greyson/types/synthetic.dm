@@ -41,5 +41,5 @@
 	name = "Greyson Positronic FBP-SEC Heavy unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. This one is has an overclocked super cog laser rifle built in his arm."
 	icon_state = "nanotrasen_ert"
-	projectiletype = /obj/item/projectile/beam/heavylaser
+	projectiletype = /obj/item/projectile/beam
 	armor = list(melee = 35, bullet = 25, energy = 40, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered

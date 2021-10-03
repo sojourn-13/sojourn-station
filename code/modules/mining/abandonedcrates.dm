@@ -31,6 +31,8 @@
 			new/obj/item/device/taperecorder(src)
 			new/obj/item/clothing/suit/space(src)
 			new/obj/item/clothing/head/helmet/space(src)
+			new /obj/item/gun/projectile/boltgun/flare_gun(src)
+			new /obj/item/ammo_casing/flare/prespawn(src)
 		if(11 to 15)
 			new/obj/item/reagent_containers/glass/beaker/bluespace(src)
 		if(16 to 20)

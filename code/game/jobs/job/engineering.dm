@@ -11,6 +11,7 @@
 	difficulty = "Medium."
 	selection_color = "#c7b97b"
 	req_admin_notify = 1
+	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
 	minimum_character_age = 30

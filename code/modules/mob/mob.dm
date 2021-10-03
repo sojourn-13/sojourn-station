@@ -1094,7 +1094,10 @@ mob/proc/yank_out_object()
 	set category	= "IC"
 	set src			= usr
 
-	browse_src_stats(src)
+	if(iscarbon(usr) || issilicon(usr))
+		browse_src_stats(src)
+	else
+		to_chat(usr, "You do not have the capability to have stats or perks!")
 
 /mob/proc/browse_src_stats(mob/user)
 	var/additionalcss = {"
@@ -1302,3 +1305,14 @@ mob/proc/yank_out_object()
 /mob/proc/set_stat(var/new_stat)
 	. = stat != new_stat
 	stat = new_stat
+
+/client/verb/showplaytime()
+	set name = "Show All Playtime"
+	set category = "IC"
+	var/timeinjob = 0
+	log_debug("[src.ckey] just looked at his playtime.")
+	for(var/job in GLOB.joblist)
+		var/datum/job/J = GLOB.joblist[job]
+		timeinjob = SSjob.JobTimeCheck(usr.ckey, "[J.type]")
+		if(timeinjob > 0)
+			to_chat(src, "You have spent [timeinjob] minutes playing as [J.title].")

@@ -17,6 +17,7 @@
 		rad = 90
 	)
 	siemens_coefficient = 0.7
+	price_tag = 3000
 
 /obj/item/clothing/suit/space/void/wizard
 	icon_state = "rig-wiz"
@@ -34,4 +35,5 @@
 		rad = 90
 	)
 	siemens_coefficient = 0.7
+	price_tag = 500
 	helmet = /obj/item/clothing/head/helmet/space/void/wizard

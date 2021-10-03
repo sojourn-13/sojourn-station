@@ -41,7 +41,7 @@
 		/obj/item/animal_part/tahca_antler,
 		/obj/item/animal_part/wolf_tooth,
 		/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
-		/obj/item/gun/projectile/baroque,
+		/obj/item/gun/projectile/boltgun/baroque,
 		/obj/item/tool/spear/hunter_halberd,
 		/obj/item/tool/gauntlet,
 		/obj/item/tool/fireaxe/woodsman,

@@ -37,7 +37,7 @@
 
 /obj/item/clothing/under/burial
 	name = "burial garments"
-	desc = "Traditional burial garments used to clothe the deceased.."
+	desc = "Traditional burial garments used to clothe the deceased."
 	icon_state = "burial"
 	item_state = "burial"
 
@@ -261,28 +261,28 @@
 //Excelsior
 /obj/item/clothing/under/excelsior
 	name = "white excelsior jumpsuit"
-	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	desc = "An Excelsior jumpsuit designed to boost morale and spread the revolution"
 	icon_state = "excelsior_white"
 	item_state = "bl_suit"
 	has_sensor = 0
 
 /obj/item/clothing/under/excelsior/mixed
 	name = "mixed excelsior jumpsuit"
-	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	desc = "An Excelsior jumpsuit designed to boost morale and spread the revolution"
 	icon_state = "excelsior_mixed"
 	item_state = "bl_suit"
 	has_sensor = 0
 
 /obj/item/clothing/under/excelsior/orange
 	name = "orange excelsior jumpsuit"
-	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution"
+	desc = "An Excelsior jumpsuit designed to boost morale and spread the revolution"
 	icon_state = "excelsior_orange"
 	item_state = "bl_suit"
 	has_sensor = 0
 
 /obj/item/clothing/under/excelsior/officer
 	name = "officer excelsior jumpsuit"
-	desc = "An excelsior jumpsuit designed to boost morale and spread the revolution; made specifically for commissars."
+	desc = "An Excelsior jumpsuit designed to boost morale and spread the revolution; made specifically for commissars."
 	icon_state = "excelsior_officer"
 	item_state = "bl_suit"
 	has_sensor = 0
@@ -350,7 +350,7 @@
 
 /obj/item/clothing/under/track_suit
 	name = "striped tracksuit"
-	desc = "A tracksuit lined with white tripped fibers on its side."
+	desc = "A tracksuit lined with white stripes on its side."
 	icon_state = "tracksuit_black"
 	item_state = "tracksuit_black"
 

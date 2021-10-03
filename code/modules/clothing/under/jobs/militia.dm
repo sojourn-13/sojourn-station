@@ -50,7 +50,7 @@
 
 /obj/item/clothing/under/rank/trooper/skirt
 	name = "blackshield skirt"
-	desc = "A skirt in blackshield colours and fitted for same attachments of shoulderboards. Sadly this likely will not help protect your feet or legs form cuts and scratches"
+	desc = "A skirt in Blackshield colours and fitted for same attachments of shoulderboards. Sadly this likely will not help protect your feet or legs form cuts and scratches"
 	icon_state = "gorka_blackshield_skort"
 	item_state = "gorka_blackshield_skort"
 
@@ -101,12 +101,12 @@
 
 /obj/item/clothing/under/rank/armorer
 	name = "Sergeant's uniform"
-	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a blackshield sergeant."
+	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield Sergeant."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/armorer/green
 	name = "green sergeant's gorka"
-	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a blackshield sergeant."
+	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a Blackshield Sergeant."
 	icon_state = "gorka"
 	item_state = "gorka"
 

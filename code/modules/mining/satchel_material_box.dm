@@ -2,72 +2,40 @@
 /**********************Material box**************************/
 
 /obj/structure/material_box
+	name = "material box"
+	desc = "A heavy box used for storing material sheets."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "orebox0"
-	name = "material box"
-	desc = "A heavy box used for storing materials."
-	density = 1
-	var/last_update = 0
-	var/list/stored_material = list()
-	var/stored_prices
+	density = TRUE
 
 /obj/structure/material_box/attackby(obj/item/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/stack/material))
-		user.remove_from_mob(W)
-		src.contents += W
-	if (istype(W, /obj/item/storage))
-		var/obj/item/storage/S = W
-		S.hide_from(usr)
-		if (locate(/obj/item/stack/material) in S.contents)
-			for(var/obj/item/stack/material/O in S.contents)
-				S.remove_from_storage(O, src) //This will move the item to this item's contents
-			playsound(loc, S.use_sound, 50, 1, -5)
-			user.visible_message(SPAN_NOTICE("[user.name] empties the [S] into the box"), SPAN_NOTICE("You empty the [S] into the box."), SPAN_NOTICE("You hear a rustling sound"))
-		else
-			to_chat(user, SPAN_WARNING("There's no material inside the [S] to empty into here"))
-	update_material_count()
-
-	return
-
-/obj/structure/material_box/proc/update_material_count()
-
-	stored_material = list()
-
-	for(var/obj/item/stack/material/O in contents)
-
-		if(stored_material[O.name])
-			stored_material[O.name]++
-		else
-			stored_material[O.name] = stored_material[O.name] + O.amount
-		stored_prices[O.name] = O.amount * O.price_tag + stored_prices[O.name]
+	if(istype(W, /obj/item/stack/material))
+		insert_item(W, user)
+	else
+		..()
 
 /obj/structure/material_box/examine(mob/user)
-	to_chat(user, "That's an [src].")
-	to_chat(user, desc)
-
-	// Borgs can now check contents too.
-	if((!ishuman(user)) && (!isrobot(user)))
-		return
-
-	if(!Adjacent(user)) //Can only check the contents of material boxes if you can physically reach them.
-		return
-
-	add_fingerprint(user)
-
+	..()
 	if(!contents.len)
-		to_chat(user, "It is empty.")
+		to_chat(user, SPAN_NOTICE("It is empty."))
 		return
 
-	if(world.time > last_update + 10)
-		update_material_count()
-		last_update = world.time
+	to_chat(user, SPAN_NOTICE("It holds : "))
+	var/final_price = 0 // The final price that get displayed
 
-	to_chat(user, "It holds:")
-	for(var/material in stored_material)
-		to_chat(user, "- [stored_material[material]] [material] worth [stored_prices[material]]")
-		//to_chat(user, "- [stored_material[material]] [material]")
+	for(var/mats in MATERIAL_LIST) // Check every material type.
+		var/mats_price = 0 // Total price of that material type
+		var/mats_amount = 0 // Total amount of sheets of that material type
+		for(var/obj/item/stack/material/M in contents) // Check everything in the box.
+			if(M.material.name == mats) // Check if it is the correct type
+				mats_amount += M.amount
+				mats_price += M.price_tag * M.amount
+		if(mats_amount > 0)
+			to_chat(user, SPAN_NOTICE("	[mats]. Amount : [mats_amount]. Value : [mats_price]$."))
+		final_price += mats_price
+
+	to_chat(user, SPAN_NOTICE("Total Price : [final_price]"))
 	return
-
 
 /obj/structure/material_box/verb/empty_box()
 	set name = "Empty Material Box"
@@ -91,12 +59,11 @@
 		to_chat(usr, "\red The material box is empty")
 		return
 
-	for (var/obj/item/stack/material/O in contents)
-		contents -= O
-		O.loc = src.loc
+	var/turf/T = get_turf(src)
+	for(var/obj/O in contents) // Empty everything
+		O.forceMove(T) // Move the item on the ground
 	to_chat(usr, "\blue You empty the material box")
-
-	return
+	return TRUE
 
 /obj/structure/material_box/ex_act(severity)
 	if(severity == 1.0 || (severity < 3.0 && prob(50)))

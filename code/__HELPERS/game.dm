@@ -262,7 +262,7 @@
 				return 0
 	return 1
 
-proc/isInSight(atom/A, atom/B)
+/proc/isInSight(atom/A, atom/B)
 	var/turf/Aturf = get_turf(A)
 	var/turf/Bturf = get_turf(B)
 
@@ -355,7 +355,7 @@ proc/isInSight(atom/A, atom/B)
 		for(var/client/C in show_to)
 			C.images -= I
 
-datum/projectile_data
+/datum/projectile_data
 	var/src_x
 	var/src_y
 	var/time
@@ -572,7 +572,7 @@ datum/projectile_data
 //Picks a single random landmark of a specified type
 /proc/pick_landmark(ltype)
 	var/list/L = list()
-	for(var/S in landmarks_list)
+	for(var/S in GLOB.landmarks_list)
 		if (istype(S, ltype))
 			L.Add(S)
 

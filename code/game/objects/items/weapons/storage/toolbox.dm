@@ -26,6 +26,9 @@
 	new /obj/item/extinguisher/mini(src)
 	if(prob(50))
 		new /obj/item/device/lighting/toggleable/flashlight(src)
+	else if(prob(10)) //Rare!
+		new /obj/item/gun/projectile/boltgun/flare_gun(src)
+		new /obj/item/ammo_casing/flare(src)
 	else
 		new /obj/item/device/lighting/glowstick/flare(src)
 	if (prob(40))

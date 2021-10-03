@@ -71,7 +71,9 @@
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/device/camera,
 		/datum/design/autolathe/device/camerafilm,
-
+		//spare flare, do not put this on the Factory disk
+		/datum/design/autolathe/gun/flare_gun = 5,
+		/datum/design/autolathe/ammo/flare_shell = 2,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/robustcells

@@ -220,7 +220,7 @@
 
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
-	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies' various dangerous pests."
+	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -369,7 +369,7 @@
 
 /obj/item/clothing/suit/armor/laserproof/rnd
 	name = "soteria ablative armor vest"
-	desc = "A soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
+	desc = "A Soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
 	armor = list(
@@ -524,7 +524,7 @@
 
 /obj/item/clothing/suit/armor/platecarrier/militia
 	name = "blackshield plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one ears the distinct IFF stripes of the Blackshield."
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one bears the distinct IFF stripes of the Blackshield."
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
 
@@ -537,7 +537,7 @@
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman
 	name = "Corpsman plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman liverly and has a stain resistant coating."
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with Corpsman liverly and has a stain resistant coating."
 	icon_state = "platecarrier_corpsman"
 	item_state = "platecarrier_corpsman"
 	armor = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0)
@@ -677,7 +677,7 @@
 
 obj/item/clothing/suit/armor/commander/militia
 	name = "blackshield commander's armored coat"
-	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander.."
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
 
@@ -689,13 +689,13 @@ obj/item/clothing/suit/armor/commander/militia_overcoat
 
 obj/item/clothing/suit/armor/commander/marshal_coat
 	name = "marshal officers greatcoat"
-	desc = "marshal officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
 	icon_state = "marshal_coat"
 	item_state = "marshal_coat"
 
 obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	name = "supply specialist's jacket"
-	desc = "Supply specialist's jacket with an armored weave. For formality, protection and style."
+	desc = "Supply Specialist's jacket with an armored weave. For formality, protection and style."
 	icon_state = "marshal_coat_ss"
 	item_state = "marshal_coat_ss"
 
@@ -757,7 +757,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 
 /obj/item/clothing/suit/armor/hunter
 	name = "hunter armor"
-	desc = "An lightly armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	desc = "A lightly armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
 	icon_state = "hunter_armor"
 	item_state = "hunter_armor"
 	blood_overlay_type = "armor"
@@ -773,7 +773,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 
 /obj/item/clothing/suit/armor/hunter/bone
 	name = "hunter armor"
-	desc = "An lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unknown animal. \
+	desc = "A lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unknown animal, \
 	supplied by the local hunting-lodge. It appears to be rather crudely self made. \ "
 	icon_state = "hunter_armor_bone"
 	item_state = "hunter_armor_bone"
@@ -788,27 +788,27 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 
 /obj/item/clothing/suit/armor/hunter/reinforced
 	name = "hunter armor"
-	desc = "An heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made with steel plating functioning as make-shift kevlar plates."
+	desc = "A heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made with steel plating functioning as make-shift kevlar plates."
 	icon_state = "hunter_armor_reinforced"
 	item_state = "hunter_armor_reinforced"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 35,
+		melee = 30,
 		bullet = 45,
 		energy = 25,
-		bomb = 30,
+		bomb = 10,
 		bio = 0,
 		rad = 0)
 
 /obj/item/clothing/suit/armor/hunter/leather
 	name = "hunter armor"
-	desc = "An lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made, yet the extra leather reinforcement is not \
+	desc = "A lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made, yet the extra leather reinforcement is not \
 	only stylish but aids greatly is dispersing laser and plasma shots."
 	icon_state = "hunter_armor_leather"
 	item_state = "hunter_armor_leather"
 	blood_overlay_type = "armor"
 	armor = list(
-		melee = 35,
+		melee = 30,
 		bullet = 25,
 		energy = 45,
 		bomb = 10,

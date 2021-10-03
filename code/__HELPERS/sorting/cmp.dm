@@ -25,12 +25,6 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 /proc/cmp_records_dsc(datum/data/record/a, datum/data/record/b)
 	return sorttext(a.fields[GLOB.cmp_field], b.fields[GLOB.cmp_field])
 
-/proc/cmp_mutations_asc(datum/genetics/mutation/a, datum/genetics/mutation/b)
-	return sorttext(b.name, a.name)
-/proc/cmp_mutations_dsc(datum/genetics/mutation/a, datum/genetics/mutation/b)
-	return sorttext(a.name, b.name)
-
-
 /proc/cmp_ckey_asc(client/a, client/b)
 	return sorttext(b.ckey, a.ckey)
 

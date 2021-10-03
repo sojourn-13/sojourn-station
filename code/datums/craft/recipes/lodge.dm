@@ -33,8 +33,8 @@
 	)
 
 /datum/craft_recipe/lodge/baroqe
-	name = "Bone Rifle"
-	result = /obj/item/gun/projectile/baroque
+	name = "Baroque Bone Rifle"
+	result = /obj/item/gun/projectile/boltgun/baroque
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_BONE, "time" = 60),
@@ -343,4 +343,22 @@
 		list(QUALITY_WIRE_CUTTING, 10, 30),
 		list(CRAFT_MATERIAL, 3, MATERIAL_LEATHER, "time" = 30),
 		list(QUALITY_CUTTING, 15, "time" = 50)
+	)
+
+/datum/craft_recipe/lodge/leather_medium_pouch
+	name = "medium leather pouch"
+	result = /obj/item/storage/pouch/medium_generic/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 4, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+
+/datum/craft_recipe/lodge/leather_large_pouch
+	name = "large leather pouch"
+	result = /obj/item/storage/pouch/large_generic/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)

@@ -3986,7 +3986,7 @@
 	icon_state = "cutlet"
 	bitesize = 2
 	center_of_mass = list("x"=17, "y"=20)
-	preloaded_reagents = list("protein" = 2)
+	preloaded_reagents = list("protein" = 3)
 	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/reagent_containers/food/snacks/rawcutlet/attackby(obj/item/W as obj, mob/user as mob)
@@ -4000,7 +4000,7 @@
 	desc = "A raw patty ready to be grilled into a juicy and delicious burger."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "patty_raw"
-	bitesize = 2
+	bitesize = 3
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 2)
 	matter = list(MATERIAL_BIOMATTER = 3)
@@ -4010,7 +4010,7 @@
 	desc = "A juicy cooked patty, ready to be slapped between two buns."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "patty"
-	bitesize = 2
+	bitesize = 3
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 3) // It's cooked
 	matter = list(MATERIAL_BIOMATTER = 3)
@@ -4019,7 +4019,7 @@
 	name = "poultry breast"
 	desc = "The breast meat of an avian species, chicken or otherwise."
 	icon_state = "chickenbreast"
-	bitesize = 2
+	bitesize = 3
 	preloaded_reagents = list("protein" = 2)
 	matter = list(MATERIAL_BIOMATTER = 3)
 
@@ -4028,7 +4028,7 @@
 	desc = "A raw meatball."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "rawmeatball"
-	bitesize = 2
+	bitesize = 3
 	center_of_mass = list("x"=16, "y"=15)
 	preloaded_reagents = list("protein" = 2)
 	matter = list(MATERIAL_BIOMATTER = 5)
@@ -4037,7 +4037,7 @@
 	name = "hotdog"
 	desc = "Unrelated to dogs, maybe."
 	icon_state = "hotdog"
-	bitesize = 2
+	bitesize = 3
 	center_of_mass = list("x"=16, "y"=17)
 	preloaded_reagents = list("protein" = 6)
 	matter = list(MATERIAL_BIOMATTER = 8)

@@ -141,6 +141,12 @@
 				bad_message = "\[MINIMUM PLAYTIME AS A COLONIST: [job.coltimerequired] Minutes]" *///People may need to play colonist before playing this job.
 		else if(user.client && job.is_setup_restricted(user.client.prefs.setup_options))
 			bad_message = "\[SETUP RESTRICTED]"
+		else if(job.playtimerequired && user.client)
+			if(!job.is_experienced_enough(user.client))
+				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"
+		else if(job.coltimerequired && user.client)
+			if(!job.is_experienced_enough(user.client))
+				bad_message = "\[MINIMUM COLONIST PLAYTIME: [job.coltimerequired] Minutes]"
 		if(("Assistant" in pref.job_low) && (rank != "Assistant"))
 			. += "<a href='?src=\ref[src];set_skills=[rank]'><font color=grey>[rank]</font></a></td><td></td></tr>"
 			continue

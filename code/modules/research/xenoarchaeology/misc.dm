@@ -75,6 +75,8 @@
 		new /obj/item/storage/belt/archaeology(src)
 		new /obj/item/tool/pickaxe/excavation(src)
 		new /obj/item/storage/backpack/duffelbag(src)
+		new /obj/item/gun/projectile/boltgun/flare_gun(src)
+		new /obj/item/ammo_casing/flare/prespawn(src)
 		return
 
 /obj/structure/closet/excavation

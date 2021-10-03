@@ -26,6 +26,8 @@
 	new /obj/item/tool/pickaxe(src)
 	new /obj/item/tool/pickaxe/drill(src)
 	new /obj/item/device/t_scanner(src)
+	new /obj/item/gun/projectile/boltgun/flare_gun(src)
+	new /obj/item/ammo_casing/flare(src)
 
 /******************************Lantern*******************************/
 

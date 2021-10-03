@@ -177,7 +177,7 @@
 	usr.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*4) //To stop people spamclicking and generating tons of paper
 
 
-/obj/item/autopsy_scanner/attack(mob/living/carbon/human/M as mob, mob/living/carbon/user as mob)
+/obj/item/autopsy_scanner/attack(mob/living/carbon/human/M, mob/living/carbon/user)
 	if(!istype(M))
 		return
 
@@ -204,6 +204,7 @@
 	for(var/mob/O in viewers(M))
 		O.show_message(SPAN_NOTICE("\The [user] scans the wounds on [M.name]'s [S.name] with \the [src]"), 1)
 
+	SEND_SIGNAL(user, COMSING_AUTOPSY, M)
 	src.add_data(S, user)
 
 	return 1

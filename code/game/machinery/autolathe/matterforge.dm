@@ -622,6 +622,7 @@
 	lst[MATERIAL_LEATHER] = 0.70
 	lst[MATERIAL_BONE] = 0.70
 	lst[MATERIAL_TITANIUM] = 0.70
+	lst[MATERIAL_COMPRESSED_MATTER] = 1 //we make this!
 
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)
 	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))

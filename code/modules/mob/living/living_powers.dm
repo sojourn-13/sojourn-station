@@ -30,7 +30,13 @@
 	if(faction == "neutral")
 		return TRUE
 
-	for (var/obj/mecha/M in mechas_list)
+	if(faction == "station")
+		return TRUE
+
+	if(faction == "CEV Eris")
+		return TRUE
+
+	for (var/obj/mecha/M in GLOB.mechas_list)
 		if (M.z == src.z && get_dist(src, M) <= dist)
 			return TRUE
 

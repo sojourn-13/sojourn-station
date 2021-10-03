@@ -59,7 +59,7 @@
 "bg" = (/obj/structure/flora/tree/jungle_small/variant3,/obj/structure/railing/grey,/turf/simulated/floor/asteroid/grass,/area/nadezhda/outside/forest/hunting_lodge)
 "bh" = (/obj/structure/railing/grey,/turf/simulated/floor/asteroid/dirt,/area/nadezhda/outside/forest/hunting_lodge)
 "bi" = (/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/outside/forest/hunting_lodge)
-"bj" = (/obj/machinery/power/smes,/obj/structure/cable,/turf/simulated/floor/plating,/area/nadezhda/outside/forest/hunting_lodge)
+"bj" = (/obj/structure/cable,/obj/machinery/power/smes/dummysimple,/turf/simulated/floor/plating,/area/nadezhda/outside/forest/hunting_lodge)
 "bk" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/outside/forest/hunting_lodge)
 "bl" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/floor/plating/under,/area/nadezhda/outside/forest/hunting_lodge)
 "bm" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/disposalpipe/segment{dir = 2; icon_state = "pipe-c"},/turf/simulated/wall/wood,/area/nadezhda/outside/forest/hunting_lodge)
@@ -695,7 +695,6 @@ aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB
 aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 euaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaaaaaaaaaa
 "}
-
 (1,1,2) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

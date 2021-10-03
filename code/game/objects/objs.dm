@@ -25,8 +25,8 @@
 	..(user, distance, infix, suffix)
 	if(get_dist(user, src) <= 2)
 		if (corporation)
-			if (corporation in global.global_corporations)
-				var/datum/corporation/C = global_corporations[corporation]
+			if (corporation in GLOB.global_corporations)
+				var/datum/corporation/C = GLOB.global_corporations[corporation]
 				to_chat(user, "<font color='[C.textcolor]'>You think this [src.name] create a \
 				<IMG CLASS=icon SRC=\ref[C.icon] ICONSTATE='[C.icon_state]'>\
 				[C.name]. [C.about]</font>")

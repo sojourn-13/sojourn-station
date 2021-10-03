@@ -51,7 +51,7 @@
 
 	ailock = TRUE
 	use_power = NO_POWER_USE
-	shot_delay = 5
+	shot_delay = 10
 	auto_repair = TRUE
 
 /obj/machinery/turretid/Destroy()

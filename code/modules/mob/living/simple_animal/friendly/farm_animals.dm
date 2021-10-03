@@ -109,8 +109,6 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 
-	inherent_mutations = list(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MOO)
-
 /mob/living/simple_animal/cow/New()
 	udder = new(50)
 	udder.my_atom = src

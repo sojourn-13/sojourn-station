@@ -97,6 +97,7 @@
 	handle_breakdowns()
 	handle_Insight()
 	handle_level()
+	SEND_SIGNAL(owner, COMSIG_HUMAN_SANITY, level)
 
 /datum/sanity/proc/give_insight(value)
 	var/new_value = value
@@ -251,6 +252,7 @@
 	else
 		to_chat(owner, SPAN_NOTICE("You have satisfied your cravings and improved your stats."))
 	owner.playsound_local(get_turf(owner), 'sound/sanity/rest.ogg', 100)
+	owner.pick_individual_objective()
 	resting = 0
 
 /datum/sanity/proc/oddity_stat_up(multiplier)
@@ -272,6 +274,8 @@
 			owner.stats.addPerk(I.perk)
 		for(var/mob/living/carbon/human/H in viewers(owner))
 			SEND_SIGNAL(H, COMSIG_HUMAN_ODDITY_LEVEL_UP, owner, O)
+		for(var/mob/living/carbon/human/H in viewers(owner))
+			SEND_SIGNAL(H, COMSIG_HUMAN_LEVEL_UP, owner, O)
 
 /datum/sanity/proc/onDamage(amount)
 	changeLevel(-SANITY_DAMAGE_HURT(amount, owner.stats.getStat(STAT_VIG)))

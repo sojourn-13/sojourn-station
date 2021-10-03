@@ -35,6 +35,7 @@
 	dir = EAST
 	var/width = 1
 
+	var/tryingToLock = FALSE // for autoclosing
 	var/damage_smoke = FALSE
 
 	// turf animation
@@ -155,14 +156,18 @@
 
 
 /obj/machinery/door/proc/bumpopen(mob/user)
-	if(operating)	return
+	if(operating)
+		return FALSE
 	if(user.last_airflow > world.time - vsc.airflow_delay) //Fakkit
-		return
-	src.add_fingerprint(user)
+		return FALSE
+	add_fingerprint(user)
 	if(density)
-		if(allowed(user))	open()
-		else				do_animate("deny")
-	return
+		if(allowed(user))
+			if(open())
+				tryingToLock = TRUE
+		else
+			do_animate("deny")
+	return TRUE
 
 /obj/machinery/door/bullet_act(var/obj/item/projectile/Proj)
 	..()
@@ -437,14 +442,14 @@
 	do_animate("opening")
 	icon_state = "door0"
 	sleep(3)
-	src.density = 0
+	src.density = FALSE
 	update_nearby_tiles()
 	sleep(7)
 	src.layer = open_layer
 	explosion_resistance = 0
 	update_icon()
 	update_nearby_tiles()
-	operating = 0
+	operating = FALSE
 
 	if(autoclose)
 		var/wait = normalspeed ? 150 : 5
@@ -460,7 +465,7 @@
 
 	do_animate("closing")
 	sleep(3)
-	src.density = 1
+	src.density = TRUE
 	update_nearby_tiles()
 	sleep(7)
 	src.layer = closed_layer
@@ -474,7 +479,7 @@
 		f5?.set_opacity(1)
 		f6?.set_opacity(1)
 
-	operating = 0
+	operating = FALSE
 
 	//I shall not add a check every x ticks if a door has closed over some fire.
 	var/obj/fire/fire = locate() in loc

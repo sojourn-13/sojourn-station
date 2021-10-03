@@ -15,7 +15,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	friendly_to_colony = TRUE
 	mob_size = MOB_SMALL
 	stop_automated_movement_when_pulled = 1
-	density = 1
+	density = FALSE
 
 // For repairing damage to the synths.
 /mob/living/carbon/superior_animal/robot/greyson/roomba/allied/attackby(obj/item/W as obj, mob/user as mob)
@@ -55,7 +55,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 	friendly_to_colony = TRUE
 	mob_size = MOB_SMALL
 	stop_automated_movement_when_pulled = TRUE
-	density = 0
+	density = FALSE
 
 // For repairing damage to the synths.
 /mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored/allied/attackby(obj/item/W as obj, mob/user as mob)

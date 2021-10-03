@@ -15,7 +15,7 @@
 	possible_antags = list(ROLE_EXCELSIOR_REV)
 	verbs = list(/datum/antag_faction/excelsior/proc/communicate_verb)
 
-/datum/faction/excelsior/print_success_extra()
+/datum/antag_faction/excelsior/print_success_extra()
 	var/extra_text = ""
 	var/list/mandates = list()
 	for(var/m in GLOB.excel_antag_contracts)
@@ -46,7 +46,7 @@
 	var/obj/landmark/storyevent/midgame_stash_spawn/landmark = null
 
 	var/list/L = list()
-	for(var/obj/landmark/storyevent/midgame_stash_spawn/S in landmarks_list)
+	for(var/obj/landmark/storyevent/midgame_stash_spawn/S in GLOB.landmarks_list)
 		L.Add(S)
 
 	L = shuffle(L)
