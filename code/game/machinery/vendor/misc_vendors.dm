@@ -890,7 +890,7 @@
 		/obj/item/storage/box/bs_kit/standard_armor = 500,
 		/obj/item/storage/box/bs_kit/flak_armor = 750,
 		/obj/item/storage/box/bs_kit/bullet_armor = 750,
-		/obj/item/storage/box/bs_kit/laser_armor = 750
+		/obj/item/storage/box/bs_kit/laser_armor = 1250
 		)
 	auto_price = FALSE
 
