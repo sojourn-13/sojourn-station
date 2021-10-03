@@ -648,9 +648,6 @@ default behaviour is:
 /mob/living/proc/slip(var/slipped_on,stun_duration=8)
 	return FALSE
 
-/mob/living/proc/trip(tripped_on, stun_duration)
-	return FALSE
-
 //damage/heal the mob ears and adjust the deaf amount
 /mob/living/adjustEarDamage(var/damage, var/deaf)
 	ear_damage = max(0, ear_damage + damage)
@@ -815,6 +812,10 @@ default behaviour is:
 	//Some mobs may need to create their stats datum farther up
 	if (!stats)
 		stats = new /datum/stat_holder(src)
+
+	
+	//Mutations populated through horrendous genetic tampering.
+	unnatural_mutations = new(src)
 
 	generate_static_overlay()
 	for(var/mob/observer/eye/angel/A in GLOB.player_list)

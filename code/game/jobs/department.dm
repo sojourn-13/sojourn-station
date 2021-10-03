@@ -10,7 +10,8 @@
 	var/account_number = 0
 	var/account_pin
 	var/account_initial_balance = 3500	//How much money this account starts off with
-	var/list/jobs_in_department = list()
+
+
 
 	//Account Funding
 	/*
@@ -44,6 +45,7 @@
 	pending_wage_total = 0
 	for (var/a in pending_wages)
 		pending_wage_total += pending_wages[a]
+
 
 /*************
 	Command
@@ -122,12 +124,10 @@
 
 	/*
 		The LSS account represents the holdings of the local branch, and CEO.
-	*/
-	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
-	if you manage to get this variable refferenced there you're a better man than me. godspeed
+		He recieves no funding, infact later he will pay guild fees out of his earnings
 	*/
 	account_initial_balance = 15000
-	funding_type = FUNDING_NONE //So we want to trade and make money not magiclly get it every hour
+	funding_type = FUNDING_EXTERNAL
 
 /datum/department/prospector
 	name = "Prospectors"

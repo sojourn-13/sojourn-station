@@ -64,12 +64,6 @@
 	var/muzzle_type
 	var/tracer_type
 	var/impact_type
-	var/luminosity_range
-	var/luminosity_power
-	var/luminosity_color
-	var/luminosity_ttl
-	var/obj/effect/attached_effect
-	var/proj_sound
 
 	var/proj_color //If defined, is used to change the muzzle, tracer, and impact icon colors through Blend()
 
@@ -140,10 +134,6 @@
 // generate impact effect
 /obj/item/projectile/proc/on_impact(atom/A)
 	impact_effect(effect_transform)
-	if(luminosity_ttl && attached_effect)
-		spawn(luminosity_ttl)
-		qdel(attached_effect)
-
 	if(!ismob(A))
 		playsound(src, hitsound_wall, 50, 1, -2)
 	return
@@ -177,7 +167,7 @@
 		p_y = text2num(mouse_control["icon-y"])
 
 //called to launch a projectile
-/obj/item/projectile/proc/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound)
+/obj/item/projectile/proc/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0)
 	var/turf/curloc = get_turf(src)
 	var/turf/targloc = get_turf(target)
 	if (!istype(targloc) || !istype(curloc))
@@ -188,9 +178,6 @@
 		on_impact(target)
 		qdel(src)
 		return FALSE
-
-	if(proj_sound)
-		playsound(proj_sound)
 
 	original = target
 	def_zone = target_zone
@@ -773,7 +760,6 @@
 			first_step = FALSE
 		else if(!bumped)
 			tracer_effect(effect_transform)
-			luminosity_effect()
 
 		if(!hitscan)
 			sleep(step_delay)	//add delay between movement iterations if it's not a hitscan weapon
@@ -841,16 +827,6 @@
 				P.activate(step_delay)	//if not a hitscan projectile, remove after a single delay
 			else
 				P.activate()
-
-/obj/item/projectile/proc/luminosity_effect()
-	if(!location)
-		return
-
-	if(attached_effect)
-		attached_effect.Move(src.loc)
-
-	else if(luminosity_range && luminosity_power && luminosity_color)
-		attached_effect = new /obj/effect/effect/light(src.loc, luminosity_range, luminosity_power, luminosity_color, lifetime=20)
 
 /obj/item/projectile/proc/impact_effect(var/matrix/M)
 	//This can happen when firing inside a wall, safety check

@@ -12,7 +12,6 @@
 	selection_color = "#ecd37d"
 	ideal_character_age = 40
 	minimum_character_age = 30
-	playtimerequired = 1200
 	also_known_languages = list(LANGUAGE_LATIN = 100)
 
 	access = list(
@@ -31,7 +30,7 @@
 		STAT_TGH = 10,
 	)
 
-	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling, /datum/perk/chemist)
+	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling)
 
 	software_on_spawn = list(/datum/computer_file/program/records,
 							 /datum/computer_file/program/reports)

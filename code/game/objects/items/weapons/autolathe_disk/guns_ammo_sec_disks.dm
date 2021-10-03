@@ -24,8 +24,6 @@
 		/datum/design/autolathe/sec/stunbaton = 5, //balance, we can only make 4
 		/datum/design/autolathe/sec/auto_eject_mod,
 		/datum/design/autolathe/gun/dnalock_mod,
-		/datum/design/autolathe/gun/flare_gun = 3,
-		/datum/design/autolathe/ammo/flare_shell,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/hos
@@ -61,8 +59,6 @@
 		//sniper
 		/datum/design/autolathe/gun/nordwind = 14, //basic uses the whole disk...
 		/datum/design/autolathe/device/landmine = 0,
-		//flaregun
-		/datum/design/autolathe/gun/flare_gun
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
@@ -96,8 +92,7 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/grenade,
-		/datum/design/autolathe/ammo/grenade/flash,
-		/datum/design/autolathe/ammo/flare_shell = 0
+		/datum/design/autolathe/ammo/grenade/flash
 		)
 
 //Blackshield
@@ -129,9 +124,6 @@
 		/datum/design/autolathe/gun/sts25,
 		/datum/design/autolathe/gun/sts30,
 		/datum/design/autolathe/gun/sts40,
-		//Flaregun
-		/datum/design/autolathe/gun/flare_gun,
-		//Misc
 		/datum/design/autolathe/device/landmine = 0,
 		)
 
@@ -175,8 +167,7 @@
 		/datum/design/autolathe/ammo/grenade,
 		/datum/design/autolathe/ammo/grenade/frag,
 		/datum/design/autolathe/ammo/grenade/blast,
-		/datum/design/autolathe/ammo/grenade/flash,
-		/datum/design/autolathe/ammo/flare_shell = 0
+		/datum/design/autolathe/ammo/grenade/flash
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger

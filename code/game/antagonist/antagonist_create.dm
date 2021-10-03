@@ -27,7 +27,7 @@
 				if(istype(H))
 					H.change_appearance(APPEARANCE_ALL, H.loc, H, TRUE, list("Human"), state = GLOB.z_state)
 
-	GLOB.current_antags.Add(src)
+	current_antags.Add(src)
 	special_init()
 
 	if(new_faction)
@@ -105,7 +105,7 @@
 		faction.remove_member(src)
 		faction = null
 
-	GLOB.current_antags.Remove(src)
+	current_antags.Remove(src)
 	if (!owner)
 		return //This can happen with some spamclicking
 	if(owner.current)

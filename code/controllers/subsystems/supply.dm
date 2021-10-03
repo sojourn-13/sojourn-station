@@ -58,11 +58,11 @@ SUBSYSTEM_DEF(supply)
 		for(var/atom/movable/AM in subarea)
 			if(AM.anchored)
 				continue
-			SEND_SIGNAL(shuttle, COMSIG_SHUTTLE_SUPPLY, AM)
+
 			sold_atoms += export_item_and_contents(AM, contraband, hacked, dry_run = FALSE)
 
-	for(var/A in exports)
-		var/datum/export/E = A
+	for(var/a in exports)
+		var/datum/export/E = a
 		var/export_text = E.total_printout()
 		if(!export_text)
 			continue
@@ -111,6 +111,7 @@ SUBSYSTEM_DEF(supply)
 
 		var/datum/supply_order/SO = S
 		var/datum/supply_pack/SP = SO.object
+
 		var/obj/A = new SP.containertype(pickedloc)
 		A.name = "[SP.name][SO.reason ? " ([SO.reason])":"" ]"
 

@@ -398,7 +398,6 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75
 	max_ammo = 100
 	multiple_sprites = 1
-	w_class = ITEM_SIZE_NORMAL //Balance change, these things are the size a box do to being legit 5 mags worth ammo
 
 /obj/item/ammo_magazine/rifle_75_linked_box/update_icon()
 	if (!stored_ammo.len)
@@ -566,7 +565,7 @@
 
 /obj/item/ammo_magazine/kurtz_50
 	name = "heavy pistol magazine"
-	desc = "An 8 round magazine marked for .50 Kurtz."
+	desc = "an 8 round magazine marked for .50 Kurtz."
 	icon_state = "kurtz"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE

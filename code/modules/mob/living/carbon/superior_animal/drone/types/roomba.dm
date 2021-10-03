@@ -12,7 +12,7 @@
 	can_buckle = TRUE
 	mob_size = MOB_SMALL
 	stop_automated_movement_when_pulled = TRUE
-	density = FALSE
+	density = 0
 	cleaning = TRUE
 
 	// Default armor values so that we can reference them.

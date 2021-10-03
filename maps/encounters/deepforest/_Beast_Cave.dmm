@@ -6988,7 +6988,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/beast_cave_light)
 "IL" = (
-/obj/random/mob/nightmare,
+/mob/living/simple_animal/hostile/nightmare,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "IR" = (
@@ -7230,7 +7230,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Lx" = (
-/obj/random/mob/nightmare,
+/mob/living/simple_animal/hostile/nightmare,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "Lz" = (
@@ -7817,7 +7817,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "RV" = (
-/obj/random/mob/nightmare,
+/mob/living/simple_animal/hostile/nightmare,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "RZ" = (
@@ -7850,7 +7850,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Sr" = (
-/obj/random/mob/nightmare,
+/mob/living/simple_animal/hostile/nightmare,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "St" = (
@@ -31827,7 +31827,7 @@ EE
 EE
 EE
 EE
-EE
+IL
 rK
 rK
 rH
@@ -32047,7 +32047,7 @@ nA
 rU
 Nt
 EE
-IL
+EE
 rK
 rK
 rH
@@ -34240,8 +34240,8 @@ rU
 Nt
 xz
 xz
-Sr
 Nt
+Sr
 Nt
 Nt
 Nt
@@ -37078,8 +37078,8 @@ rU
 Xo
 Xo
 EE
-rU
 Lx
+rU
 rU
 rK
 rU
@@ -38639,8 +38639,8 @@ Nt
 Nt
 Nt
 xz
-RV
 LU
+RV
 Nt
 Nt
 rK
@@ -39271,8 +39271,8 @@ Nt
 xz
 Nt
 rU
-Lx
 rU
+Lx
 rU
 Xo
 Xo
@@ -39292,8 +39292,8 @@ xz
 xz
 LU
 LU
-RV
-Nt
+LU
+Sr
 Nt
 IG
 IG

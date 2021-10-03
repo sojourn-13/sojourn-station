@@ -18,8 +18,16 @@
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
-			var/obj/item/meat = new meat_type(get_turf(src))
-			meat.name = "[src.name] [meat.name]"
+			if(istype(src.meat_type, /obj/item/reagent_containers/food/snacks/meat))
+				var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new meat_type(get_turf(src))
+				butchered_meat.name = "[src.name] [butchered_meat.name]"
+				butchered_meat.inherent_mutations = src.inherent_mutations.Copy()
+				butchered_meat.unnatural_mutations = src.unnatural_mutations.Copy()
+				butchered_meat.source_mob = src.type
+				butchered_meat.source_name = src.name
+			else
+				var/obj/item/non_meat = new meat_type(get_turf(src))
+				non_meat.name = "[src.name] [non_meat.name]"
 		if(issmall(src))
 			user.visible_message(SPAN_DANGER("[user] chops up \the [src]!"))
 			var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))

@@ -15,7 +15,6 @@
 #define CAL_DART "chemical dart"
 #define CAL_SCI "laser casings"
 #define CAL_GRENADE "grenade"
-#define CAL_FLARE "flare shell"
 #define CAL_CROSSBOW "bolt"
 
 //Gun loading types

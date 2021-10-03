@@ -154,13 +154,16 @@
 			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
 				ear_damage += 30
 				ear_deaf += 120
+			if (prob(70) && !shielded)
+				Paralyse(10)
 
 		if(3.0)
 			b_loss += 100
 			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
 				ear_damage += 15
 				ear_deaf += 60
-
+			if (prob(50) && !shielded)
+				Paralyse(10)
 	if (bomb_defense)
 		b_loss = max(b_loss - bomb_defense, 0)
 		f_loss = max(f_loss - bomb_defense, 0)
@@ -1396,18 +1399,6 @@ var/list/rank_prefix = list(\
 		return 0
 	..(slipped_on,stun_duration)
 
-/mob/living/carbon/human/trip(tripped_on, stun_duration)
-	if(buckled)
-		return FALSE
-	if(lying)
-		return FALSE // No tripping while crawling
-	stop_pulling()
-	if (tripped_on)
-		playsound(src, 'sound/effects/bang.ogg', 50, 1)
-		to_chat(src, SPAN_WARNING("You tripped over!"))
-	Weaken(stun_duration)
-	return TRUE
-
 /mob/living/carbon/human/proc/undislocate()
 	set category = "Object"
 	set name = "Undislocate Joint"
@@ -1492,7 +1483,7 @@ var/list/rank_prefix = list(\
 
 	if(stat) return
 	pulling_punches = !pulling_punches
-	to_chat(src, "<span class='notice'>You are now [pulling_punches ? "" : "not "]pulling your punches.</span>")
+	to_chat(src, "<span class='notice'>You are now [pulling_punches ? "pulling your punches" : "not pulling your punches"].</span>")
 	return
 
 //generates realistic-ish pulse output based on preset levels

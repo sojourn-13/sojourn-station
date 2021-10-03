@@ -224,6 +224,10 @@
 	name = "GmbH CAR .257 \"Bulldog\" Dot Sight"
 	build_path = /obj/item/gun/projectile/automatic/bulldog/rds
 
+/datum/design/autolathe/gun/ak47
+	name = "Excelsior .257 AK"
+	build_path = /obj/item/gun/projectile/automatic/ak47
+
 /datum/design/autolathe/gun/basstet
 	name = "NM CAR .257 \"Basstet\""
 	build_path = /obj/item/gun/projectile/automatic/basstet
@@ -295,18 +299,6 @@
 	name = "BR  7.5mm \"strelki\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind/strelki
 
-/datum/design/autolathe/gun/ak47
-	name = "Excelsior .257 AK"
-	build_path = /obj/item/gun/projectile/automatic/ak47
-
-/datum/design/autolathe/gun/dp
-	name= "SA BR 7.5 \"DP\""
-	build_path = /obj/item/gun/projectile/automatic/dp
-
-/datum/design/autolathe/gun/bren
-	name = "\"Kalashnabren\" LMG"
-	build_path = /obj/item/gun/projectile/automatic/bren
-
 // . 4 0 8 H E A V Y  R I F L E S
 
 /datum/design/autolathe/gun/standard_omnirifle
@@ -355,19 +347,23 @@
 
 /datum/design/autolathe/gun/heavysniper
 	name = "SA AMR .60-06 \"Penetrator\""
-	build_path = /obj/item/gun/projectile/boltgun/heavysniper
+	build_path = /obj/item/gun/projectile/heavysniper
 
 /datum/design/autolathe/gun/reclaimer
 	name = "Excelsior reclaimer"
 	build_path = /obj/item/gun/matter/launcher/reclaimer
 
+/datum/design/autolathe/gun/dp
+	name= "SA BR . 7.5 \"DP\""
+	build_path = /obj/item/gun/projectile/automatic/dp
+
+/datum/design/autolathe/gun/bren
+	name = "\"Kalashnabren\" LMG"
+	build_path = /obj/item/gun/projectile/automatic/bren
+
 /datum/design/autolathe/gun/survivalrifle
 	name = "Hunters Inc .10mm Caseless \"Bond\" Rifle"
 	build_path = /obj/item/gun/projectile/automatic/survivalrifle
-
-/datum/design/autolathe/gun/flare_gun
-	name = "H&S .22 \"Dazzlation\" light pistol"
-	build_path = /obj/item/gun/projectile/boltgun/flare_gun
 
 //L A U N C H E R S
 

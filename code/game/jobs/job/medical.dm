@@ -23,7 +23,6 @@
 
 	ideal_character_age = 40
 	minimum_character_age = 30
-	playtimerequired = 1200
 
 	stat_modifiers = list(
 		STAT_BIO = 50,
@@ -31,7 +30,7 @@
 		STAT_COG = 25
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci, /datum/perk/chemist)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -83,7 +82,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/chemist)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -172,7 +171,7 @@
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/psi_psychology, /datum/perk/chemist) //Your trained for this.
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/psi_psychology) //Your trained for this.
 
 	stat_modifiers = list(
 		STAT_BIO = 25,
@@ -227,7 +226,7 @@
 		STAT_VIG = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist)
+	perks = list(/datum/perk/medicalexpertise)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,

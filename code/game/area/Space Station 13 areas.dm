@@ -29,7 +29,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 	var/eject = null
 	var/is_maintenance = FALSE
-	var/is_dungeon_lootable = FALSE
 	var/debug = 0
 	var/requires_power = 1
 	var/always_unpowered = 0	//this gets overriden to 1 for space in area/New()
@@ -92,7 +91,7 @@ area/space/atmosalert()
 /area/space/partyalert()
 	return
 
-/area/turret_protected
+/area/turret_protected/
 	flags = AREA_FLAG_CRITICAL
 
 /area/arrival

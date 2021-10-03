@@ -53,7 +53,6 @@
 /obj/item/storage/pouch/small_generic/leather
 	icon_state = "small_leather"
 	item_state = "small_leather"
-	price_tag = 150
 
 /obj/item/storage/pouch/medium_generic
 	name = "medium generic pouch"
@@ -68,7 +67,6 @@
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
 	item_state = "medium leather"
-	price_tag = 300
 
 /obj/item/storage/pouch/medium_generic/opifex
 	name = "opifex smuggle pouch"
@@ -90,10 +88,9 @@
 	price_tag = 1000
 
 /obj/item/storage/pouch/large_generic/leather
-	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
+	desc = "A mini satchel made of leather.Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_leather"
 	item_state = "large_leather"
-	price_tag = 700
 
 /obj/item/storage/pouch/medical_supply
 	name = "medical supply pouch"
@@ -119,8 +116,6 @@
 		/obj/item/clothing/gloves/latex,
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/clothing/glasses/hud/health,
-		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare
 		)
 
 /obj/item/storage/pouch/engineering_tools
@@ -150,9 +145,7 @@
 		/obj/item/clothing/glasses,
 		/obj/item/flame/lighter,
 		/obj/item/cell/small,
-		/obj/item/cell/medium,
-		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare
+		/obj/item/cell/medium
 		)
 
 /obj/item/storage/pouch/engineering_supply
@@ -181,8 +174,7 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/airlock_electronics,
 		/obj/item/airalarm_electronics,
-		/obj/item/circuitboard/apc,
-		/obj/item/ammo_casing/flare
+		/obj/item/circuitboard/apc
 		)
 
 /obj/item/storage/pouch/janitor_supply
@@ -201,8 +193,7 @@
 		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/device/assembly/mousetrap,
 		/obj/item/device/scanner/plant,
-		/obj/item/extinguisher/mini,
-		/obj/item/gun/projectile/boltgun/flare_gun
+		/obj/item/extinguisher/mini
 		)
 
 /obj/item/storage/pouch/ammo
@@ -247,9 +238,7 @@
 		/obj/item/weldpack/canister,
 		/obj/item/cell/medium,
 		/obj/item/tank/emergency_oxygen,
-		/obj/item/tank/emergency_nitgen,
-		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare
+		/obj/item/tank/emergency_nitgen
 		)
 
 /obj/item/storage/pouch/tubular/vial
@@ -322,8 +311,7 @@
 		/obj/item/gun/projectile/shotgun/doublebarrel/sawn, //short enough to fit in
 		/obj/item/gun/launcher/syringe,
 		/obj/item/gun/energy/plasma/auretian,
-		/obj/item/gun/energy/centurio,
-		/obj/item/gun/projectile/boltgun/flare_gun
+		/obj/item/gun/energy/centurio
 		)
 
 	sliding_behavior = TRUE
@@ -355,8 +343,7 @@
 		/obj/item/reagent_containers/food/snacks/tastybread,
 		/obj/item/reagent_containers/food/snacks/baguette,
 		/obj/item/reagent_containers/glass/bottle,
-		/obj/item/reagent_containers/food/drinks/cans,
-		/obj/item/gun/projectile/boltgun/flare_gun
+		/obj/item/reagent_containers/food/drinks/cans
 		)
 
 	sliding_behavior = TRUE

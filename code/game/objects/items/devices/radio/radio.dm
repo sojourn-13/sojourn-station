@@ -794,14 +794,10 @@ var/global/list/default_medbay_channels = list(
 
 /obj/item/device/radio/random_radio/New()
 	..()
-	GLOB.all_faction_items[src] = GLOB.department_guild
 	START_PROCESSING(SSobj, src)
 
 /obj/item/device/radio/random_radio/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
-	GLOB.all_faction_items -= src
 	. = ..()
 
 /obj/item/device/radio/random_radio/receive_range(freq, level)
@@ -831,43 +827,40 @@ var/global/list/default_medbay_channels = list(
 		playsound(loc, "sparks", 75, 1, -1)
 		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
 	else
-		to_chat(user, SPAN_NOTICE("The [name] has already been emagged."))
+		to_chat(user, SPAN_NOTICE("The [name] has already been emaged."))
 		return NO_EMAG_ACT
 
-/obj/item/device/radio/random_radio/attackby(obj/item/W, mob/user, params)
-	if(nt_sword_attack(W, user))
-		return FALSE
+/obj/item/device/radio/random_radio/attackby(obj/item/W as obj, mob/user as mob)
 	user.set_machine(src)
 
 	if(istype(W, /obj/item/oddity))
 		var/obj/item/oddity/D = W
 		if(D.oddity_stats)
 			var/usefull = FALSE
+			if(D in used_oddity)
+				to_chat(user, SPAN_WARNING("You already used [D] to repair [src]"))
+				return
 
 			if(random_hear >= 100)
-				to_chat(user, SPAN_WARNING("The [src] is in perfect condition."))
+				to_chat(user, SPAN_WARNING("The [src] are repaired at it's maximum."))
 				return
 
-			to_chat(user, SPAN_NOTICE("You begin repairing [src] using [D]."))
+			to_chat(user, SPAN_NOTICE("You starting repairing [src] using [D]."))
 
 			if(!do_after(user, 20 SECONDS, src))
-				to_chat(user, SPAN_WARNING("You've stopped repairing [src]."))
-				return
-
-			if(D in used_oddity)
-				to_chat(user, SPAN_WARNING("You've already used [D] to repair [src]!"))
+				to_chat(user, SPAN_WARNING("You stoped repairing [src]."))
 				return
 
 			for(var/stat in D.oddity_stats)
 				if(stat == STAT_MEC)
-					var/increase = D.oddity_stats[stat] * 3
-					random_hear += increase
+					var/increece = D.oddity_stats[stat] * 3
+					random_hear += increece
 					if(random_hear > 100)
 						random_hear = 100
 					cooldown -= (D.oddity_stats[stat]) MINUTES
 					if(cooldown < min_cooldown)
 						cooldown = min_cooldown
-					to_chat(user, SPAN_NOTICE("You make use of [D], and repaired [src] by [increase]%."))
+					to_chat(user, SPAN_NOTICE("You make use of [D], and repaired [src] by [increece]%."))
 					usefull = TRUE
 					used_oddity += D
 					return
