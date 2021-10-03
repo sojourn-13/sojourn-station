@@ -18,7 +18,7 @@
 	name = "Fragment Crossbow Bolt"
 	result = /obj/item/ammo_casing/crossbow_bolts/fragment/bulk
 	steps = list(
-		list(/obj/item/ammo_casing/crossbow_bolts, 10),
+		list(/obj/item/stack/rods, 10),
 		list(/obj/item/ore, 1)
 	)
 
@@ -27,7 +27,7 @@
 	result = /obj/item/ammo_casing/crossbow_bolts/speed/bulk
 	time = 0
 	steps = list(
-		list(/obj/item/ammo_casing/crossbow_bolts, 10),
+		list(/obj/item/stack/rods, 10),
 		list(CRAFT_MATERIAL, 1, MATERIAL_BONE, "time" = 1), //Takes a second
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 1) //Takes a second
 	)
