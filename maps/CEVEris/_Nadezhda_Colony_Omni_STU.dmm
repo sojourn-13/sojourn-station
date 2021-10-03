@@ -7981,7 +7981,7 @@
 /obj/item/gun_upgrade/trigger/honker,
 /obj/item/gun_upgrade/trigger/honker,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/colony)
+/area/nadezhda/crew_quarters/clownoffice)
 "caU" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/busha3,
@@ -23674,7 +23674,7 @@
 	pixel_x = -11
 	},
 /turf/simulated/floor/wood,
-/area/nadezhda/maintenance/undergroundfloor1west)
+/area/nadezhda/crew_quarters/clownoffice)
 "fOk" = (
 /obj/structure/table/steel,
 /obj/random/common_oddities/low_chance,
@@ -26965,7 +26965,7 @@
 	pixel_y = 3
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/colony)
+/area/nadezhda/crew_quarters/clownoffice)
 "gDm" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
@@ -80410,7 +80410,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/personal/artist,
 /turf/simulated/floor/wood,
-/area/colony)
+/area/nadezhda/crew_quarters/clownoffice)
 "ttE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -110578,11 +110578,11 @@ buw
 rNn
 qAV
 hfy
-trc
-lEX
-trc
-trc
-trc
+tOb
+tOb
+tOb
+tOb
+tOb
 sFI
 sFI
 trc
@@ -110784,7 +110784,7 @@ ttD
 fOg
 caF
 gDl
-trc
+tOb
 sFI
 sFI
 trc
