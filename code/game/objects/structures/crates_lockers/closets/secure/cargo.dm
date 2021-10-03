@@ -133,7 +133,7 @@
 		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/ammo_magazine/smg_35(src)
 	else if(prob(75))
-		new /obj/item/gun/projectile/automatic/bastard(src)
+		new /obj/item/gun/projectile/automatic/bren(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 	else if(prob(50))
@@ -216,7 +216,7 @@
 		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/ammo_magazine/smg_35(src)
 	else if(prob(75))
-		new /obj/item/gun/projectile/automatic/bastard(src)
+		new /obj/item/gun/projectile/automatic/bren(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 	else
