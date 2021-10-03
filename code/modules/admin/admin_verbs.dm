@@ -579,7 +579,7 @@ ADMIN_VERB_ADD(/client/proc/playtimebypass, R_ADMIN|R_MOD|R_DEBUG, FALSE)
 	set name = "Bypass Playtime"
 	set desc = "Allow a job to be played without the time requirements."
 
-	var/key = mob.ckey
+	var/key = T.ckey
 	var/datum/job/J = input("Which job do you wish to change?") as null|anything in typesof(/datum/job)
 	if(!J) return
 	var/mode = input("Enable, or disable?") in list("Enable", "Disable")
