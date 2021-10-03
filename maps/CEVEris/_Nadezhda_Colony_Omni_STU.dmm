@@ -1724,7 +1724,7 @@
 /area/nadezhda/hallway/side/f2section1)
 "axL" = (
 /obj/structure/table/steel,
-/obj/random/booze/low_chance,
+/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
 "axS" = (
@@ -7981,7 +7981,7 @@
 /obj/item/gun_upgrade/trigger/honker,
 /obj/item/gun_upgrade/trigger/honker,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/colony)
+/area/nadezhda/crew_quarters/clownoffice)
 "caU" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/busha3,
@@ -23674,7 +23674,7 @@
 	pixel_x = -11
 	},
 /turf/simulated/floor/wood,
-/area/nadezhda/maintenance/undergroundfloor1west)
+/area/nadezhda/crew_quarters/clownoffice)
 "fOk" = (
 /obj/structure/table/steel,
 /obj/random/common_oddities/low_chance,
@@ -26965,7 +26965,7 @@
 	pixel_y = 3
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/colony)
+/area/nadezhda/crew_quarters/clownoffice)
 "gDm" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
@@ -29757,7 +29757,6 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/obj/item/oddity/rare/golden_cup,
 /obj/structure/table/standard,
 /obj/machinery/camera/motion/security,
 /turf/simulated/floor/tiled/steel/bluecorner,
@@ -31414,6 +31413,7 @@
 /obj/structure/closet/chefcloset,
 /obj/item/soap/hunters,
 /obj/item/reagent_containers/spray/cleaner,
+/obj/item/tool_upgrade/productivity/whetstone,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/crew_quarters/kitchen)
 "hKi" = (
@@ -43599,6 +43599,7 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen/multi,
+/obj/random/booze/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "kDL" = (
@@ -49449,6 +49450,9 @@
 /obj/item/clipboard,
 /obj/item/device/eftpos{
 	eftpos_name = "Quartermaster EFTPOS scanner"
+	},
+/obj/structure/sign/plaque/goldplaque/grant{
+	pixel_y = -32
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/merchant)
@@ -73652,6 +73656,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/item/ammo_magazine/ammobox/shotgun/beanbags,
 /obj/machinery/light/small,
+/obj/item/ammo_magazine/ammobox/shotgun/stunshells,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
 "rKL" = (
@@ -80410,7 +80415,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/personal/artist,
 /turf/simulated/floor/wood,
-/area/colony)
+/area/nadezhda/crew_quarters/clownoffice)
 "ttE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -88245,10 +88250,10 @@
 /area/nadezhda/medical/virology)
 "vhU" = (
 /obj/structure/table/marble,
-/obj/item/book/manual/wiki/barman_recipes,
 /obj/structure/sign/painting/paintingsnow{
 	pixel_y = 32
 	},
+/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/bar)
 "vig" = (
@@ -91154,6 +91159,8 @@
 	dir = 4;
 	pixel_x = 0
 	},
+/obj/item/farmbot_arm_assembly,
+/obj/item/device/assembly/prox_sensor,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics)
 "vQI" = (
@@ -96385,13 +96392,11 @@
 /area/nadezhda/outside/meadow)
 "xag" = (
 /obj/structure/closet/secure_closet/personal/miner,
-/obj/random/lowkeyrandom,
-/obj/random/ammo/shotgun/low_chance,
-/obj/random/ammo/low_chance,
-/obj/random/boxes,
+/obj/item/storage/firstaid/ifak,
 /obj/item/gun/projectile/shotgun/pump,
 /obj/item/ammo_magazine/ammobox/shotgun/buckshot,
-/turf/simulated/floor/tiled/techmaint,
+/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/miningdock)
 "xam" = (
 /obj/machinery/vending/cigarette,
@@ -99190,6 +99195,14 @@
 	dir = 1;
 	pixel_y = -26
 	},
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/plastic/random,
+/obj/item/stack/material/plastic/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/steel/random,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/clownoffice)
 "xFo" = (
@@ -110570,11 +110583,11 @@ buw
 rNn
 qAV
 hfy
-trc
-lEX
-trc
-trc
-trc
+tOb
+tOb
+tOb
+tOb
+tOb
 sFI
 sFI
 trc
@@ -110776,7 +110789,7 @@ ttD
 fOg
 caF
 gDl
-trc
+tOb
 sFI
 sFI
 trc

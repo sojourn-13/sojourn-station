@@ -302,7 +302,6 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/mob/living/carbon/superior_animal/robot/mining/aether,
 /turf/simulated/floor/asteroid,
 /area/mine/prep)
 "bc" = (
@@ -399,6 +398,7 @@
 	pixel_x = 0;
 	pixel_y = 32
 	},
+/mob/living/carbon/superior_animal/robot/mining/aether,
 /turf/simulated/floor/tiled/steel/panels,
 /area/mine/prep)
 "bu" = (
@@ -812,6 +812,7 @@
 /obj/structure/closet/secure_closet/personal/miner,
 /obj/item/storage/firstaid/ifak,
 /obj/item/gun/projectile/shotgun/pump,
+/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 /obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/mine/lockers)
