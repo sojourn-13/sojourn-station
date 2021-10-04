@@ -185,7 +185,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Armored coat"] = "hos"
-	options["Alt  armored coat"] = "new_wo"
+	options["Alt armored coat"] = "new_wo"
 	options["Formal coat"] = "wo_formal"
 	options["Formal coat alt"] = "wo_formallong"
 
