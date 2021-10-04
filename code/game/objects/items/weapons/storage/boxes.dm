@@ -188,6 +188,8 @@
 /obj/item/storage/box/advancedtraumakit
 	name = "box of ATKs"
 	desc = "A box containing five advanced trauma kits."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/advancedtraumakit/populate_contents()
 	for(var/i in 1 to 5)
@@ -196,6 +198,8 @@
 /obj/item/storage/box/advancedburnkit
 	name = "box of ABKs"
 	desc = "A box containing five advanced burn kits."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/advancedburnkit/populate_contents()
 	for(var/i in 1 to 5)
@@ -204,6 +208,8 @@
 /obj/item/storage/box/leatherbulk
 	name = "Box of leather"
 	desc = "A box containing five workable sheets of leather."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/leatherbulk/populate_contents()
 	for(var/i in 1 to 5)
@@ -212,6 +218,8 @@
 /obj/item/storage/box/clothbulk
 	name = "Box of cloth"
 	desc = "A box containing five bolts of cloth."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/clothbulk/populate_contents()
 	for(var/i in 1 to 5)
@@ -220,6 +228,8 @@
 /obj/item/storage/box/carpetbulk
 	name = "Box of red carpet"
 	desc = "A box containing fifteen cubic meters of red carpet, tightly vacuum compresed."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/bcarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
@@ -228,6 +238,8 @@
 /obj/item/storage/box/bcarpetbulk
 	name = "Box of black carpet"
 	desc = "A box containing fifteen cubic meters of black carpet, tightly vacuum compresed."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/bluecarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
@@ -236,6 +248,8 @@
 /obj/item/storage/box/bluecarpetbulk
 	name = "Box of blue carpet"
 	desc = "A box containing fifteen cubic meters of blue carpet, tightly vacuum compresed."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/bluecarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
@@ -244,6 +258,8 @@
 /obj/item/storage/box/turcarpetbulk
 	name = "Box of turqoise carpet"
 	desc = "A box containing fifteen cubic meters of turqoise carpet, tightly vacuum compresed."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/turcarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
@@ -252,6 +268,8 @@
 /obj/item/storage/box/sbluecarpetbulk
 	name = "Box of silver carpet"
 	desc = "A box containing fifteen cubic meters of silver carpet, tightly vacuum compresed."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/sbluecarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
@@ -260,6 +278,8 @@
 /obj/item/storage/box/purcarpetbulk
 	name = "Box of purple carpet"
 	desc = "A box containing fifteen cubic meters of purple carpet, tightly vacuum compresed."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/purcarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
@@ -268,6 +288,8 @@
 /obj/item/storage/box/oracarpetbulk
 	name = "Box of orange carpet"
 	desc = "A box containing fifteen cubic meters of orange carpet, tightly vacuum compresed."
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/oracarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
@@ -276,6 +298,8 @@
 /obj/item/storage/box/cardboardbulk
 	name = "Box of cardboard"
 	desc = "A box containing five tightly packed flats of cardboard. "
+	w_class = ITEM_SIZE_NORMAL
+	cant_hold = list(/obj/item)
 
 /obj/item/storage/box/cardboardbulk/populate_contents()
 	for(var/i in 1 to 5)
