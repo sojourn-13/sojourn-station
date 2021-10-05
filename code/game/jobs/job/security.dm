@@ -302,7 +302,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/suit_sensors,
