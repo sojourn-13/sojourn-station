@@ -102,7 +102,7 @@
 	playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltback.ogg', 75, 1)
 	bolt_open = !bolt_open
 	if(bolt_open)
-		if(contents.len)
+		if(contents.len || loaded.len)
 			if(chambered)
 				if(eject_animatio) //Are bullet amination check
 					if(silenced)

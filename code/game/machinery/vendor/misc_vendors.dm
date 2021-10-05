@@ -938,7 +938,8 @@
 	var/items = list(
 					/obj/item/storage/box/bs_kit/standard_armor = "Plate",
 					/obj/item/storage/box/bs_kit/flak_armor = "Flak",
-					/obj/item/storage/box/bs_kit/bullet_armor = "Bullet Proof"
+					/obj/item/storage/box/bs_kit/laser_armor = "Ablative",
+					/obj/item/storage/box/bs_kit/bullet_armor = "Bullet-Proof"
 					)
 	var/selection = input(redeemer, "Pick your armor", "Blackshield Voucher Redemption") as null|anything in items
 	if(selection)

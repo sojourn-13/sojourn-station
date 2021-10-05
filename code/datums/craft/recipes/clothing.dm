@@ -337,6 +337,20 @@
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
+/datum/craft_recipe/clothing/fullmetalflaket_tan
+	name = "full body tan flak vest"
+	result = /obj/item/clothing/suit/armor/flackvest/tan/full
+	steps = list(
+		list(/obj/item/clothing/suit/armor/flackvest/tan, 1, "time" = 30),
+		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
+	)
+
 /datum/craft_recipe/clothing/flakgreen
 	name = "full body green flak vest"
 	result = /obj/item/clothing/suit/armor/flackvest/green/full

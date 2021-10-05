@@ -160,7 +160,7 @@
 	desc = "An armor kit."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/laserproof(src)
+		new /obj/item/clothing/suit/armor/vest/ablative(src)
 		new /obj/item/clothing/head/helmet/laserproof(src)
 		new /obj/item/clothing/gloves/thick/ablasive(src)
 		new /obj/item/clothing/shoes/ablasive(src)
