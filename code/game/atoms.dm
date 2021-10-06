@@ -328,7 +328,6 @@ its easier to just keep the beam vertical.
 					to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
 			*/
 			else if(reagents && reagents.reagent_list.len)
-				var/master_reagent_name = reagents.get_master_reagent_name()
 				to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of what looks like [reagents.get_master_reagent_name()]."))
 		else
 			if(reagent_flags & AMOUNT_VISIBLE)
