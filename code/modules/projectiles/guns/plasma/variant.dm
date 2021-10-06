@@ -4,7 +4,7 @@
 	own plasma designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapons over heating without being \
 	burnt to a crisp. This variant is a pistol, capable of fitting a holster for discrete travel and easy drawing."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
-	icon_state = "pistol"
+	icon_state = "ppistol"
 	twohanded = FALSE
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 6, TECH_PLASMA = 5)
@@ -14,8 +14,8 @@
 	heat_per_shot = 25
 
 	init_firemodes = list(
-		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen/pistol, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", heat_per_shot = 25, use_plasma_cost = 10),
-		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/pistol/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 40, use_plasma_cost = 20)
+		list(mode_name = "standard", projectile_type = /obj/item/projectile/hydrogen/pistol, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", heat_per_shot = 25, use_plasma_cost = 10, icon_state = "ppistol"),
+		list(mode_name = "overclock", projectile_type = /obj/item/projectile/hydrogen/pistol/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 40, use_plasma_cost = 20, icon_state = "ppistol_crit")
 	)
 
 /obj/item/gun/hydrogen/cannon
