@@ -60,7 +60,8 @@
 	spawn_nothing_percentage = 10
 
 /obj/random/flora/jungle_tree/item_to_spawn()
-	return pick(/obj/structure/flora/tree/jungle/variant1,\
+	return pick(/obj/structure/flora/tree/jungle,\
+				/obj/structure/flora/tree/jungle/variant1,\
 				/obj/structure/flora/tree/jungle/variant2,\
 				/obj/structure/flora/tree/jungle/variant3,\
 				/obj/structure/flora/tree/jungle/variant4,\
