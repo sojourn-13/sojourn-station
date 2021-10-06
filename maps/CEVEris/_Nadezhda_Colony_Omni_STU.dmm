@@ -95749,7 +95749,7 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/obj/machinery/media/jukebox,
+/obj/machinery/vending/kink,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/cafeteria)
 "wSy" = (
