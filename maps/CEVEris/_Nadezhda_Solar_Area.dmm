@@ -258,7 +258,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "aU" = (
-/obj/structure/flora/tree/jungle_small/variant5,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "aV" = (
@@ -329,10 +329,6 @@
 	},
 /obj/structure/railing,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/mountainsolars)
-"bf" = (
-/obj/structure/flora/tree/jungle_small/variant2,
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "bh" = (
 /obj/machinery/camera/network/engineering{
@@ -492,10 +488,6 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
-"bF" = (
-/obj/structure/flora/tree/jungle_small/variant1,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "bG" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -547,7 +539,7 @@
 /area/nadezhda/outside/mountainsolars)
 "bM" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/tree/jungle_small/variant4,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "bN" = (
@@ -578,16 +570,8 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"bS" = (
-/obj/structure/flora/tree/jungle_small/variant3,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "bT" = (
-/obj/structure/flora/tree/jungle/variant3,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
-"bU" = (
-/obj/structure/flora/tree/jungle/variant4,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "bV" = (
@@ -960,7 +944,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "cU" = (
-/obj/structure/flora/tree/jungle_small/variant1,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
 "cV" = (
@@ -3265,10 +3249,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/engineering/dorm/three)
-"Sz" = (
-/obj/structure/flora/tree/jungle_small/variant4,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "SE" = (
 /obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -5358,7 +5338,7 @@ ab
 ac
 al
 aS
-bf
+aU
 aS
 aS
 aT
@@ -5511,7 +5491,7 @@ al
 dh
 ac
 ac
-bF
+aU
 al
 al
 ac
@@ -5664,7 +5644,7 @@ ab
 ac
 al
 av
-bF
+aU
 al
 bL
 av
@@ -6423,7 +6403,7 @@ al
 aS
 aS
 ac
-bF
+aU
 al
 ac
 ac
@@ -7133,7 +7113,7 @@ ag
 dF
 ac
 ac
-bF
+aU
 aS
 aS
 al
@@ -7809,7 +7789,7 @@ al
 al
 al
 al
-bS
+aU
 ae
 ag
 dF
@@ -7965,7 +7945,7 @@ dc
 ac
 dv
 du
-bF
+aU
 du
 dn
 dc
@@ -8832,7 +8812,7 @@ ac
 ac
 av
 av
-bU
+bT
 aj
 aJ
 KF
@@ -9378,7 +9358,7 @@ ac
 ac
 ac
 ac
-bF
+aU
 al
 al
 al
@@ -9788,7 +9768,7 @@ ac
 ac
 al
 av
-bF
+aU
 al
 al
 al
@@ -10096,7 +10076,7 @@ al
 cW
 al
 al
-bF
+aU
 al
 cy
 al
@@ -11841,7 +11821,7 @@ ac
 ac
 al
 al
-Sz
+aU
 al
 mI
 no
@@ -12963,7 +12943,7 @@ iZ
 iZ
 al
 al
-bU
+bT
 al
 al
 al

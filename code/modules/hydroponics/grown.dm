@@ -355,6 +355,9 @@
 /obj/plant_spawner/harebells
 	seedtype = "harebells"
 
+/obj/plant_spawner/towercaps
+	seedtype = "towercap"
+
 /obj/item/reagent_containers/food/snacks/fruit_slice
 	name = "fruit slice"
 	desc = "A slice of some tasty fruit."
