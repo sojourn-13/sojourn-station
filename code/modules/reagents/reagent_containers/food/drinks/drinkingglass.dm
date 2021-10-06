@@ -53,7 +53,7 @@
 
 	if(reagents.reagent_list.len > 0)
 		var/datum/reagent/R = reagents.get_master_reagent()
-		if(R.glass_unique_appearance && morf_glass)
+		if((R.glass_unique_appearance || R.glass_icon_state) && morf_glass)
 			if(R.glass_icon_state)
 				icon_state = R.glass_icon_state
 			else
