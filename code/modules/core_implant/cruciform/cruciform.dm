@@ -69,6 +69,15 @@ var/list/disciples = list()
 		add_module(new CRUCIFORM_DIVI)
 	if(path == "fact")
 		add_module(new CRUCIFORM_FACT)
+	if(path == "omni")
+		add_module(new CRUCIFORM_TESS)
+		add_module(new CRUCIFORM_LEMN)
+		add_module(new CRUCIFORM_MONO)
+		add_module(new CRUCIFORM_DIVI)
+		add_module(new CRUCIFORM_FACT)
+		add_module(new CRUCIFORM_PRIEST)
+		add_module(new CRUCIFORM_INQUISITOR)
+		add_module(new CRUCIFORM_CRUSADER)
 	update_data()
 	disciples |= wearer
 	return TRUE
@@ -239,3 +248,30 @@ var/list/disciples = list()
 	max_power = 50
 	power_regen = 0.2
 	path = "fact"
+
+/obj/item/implant/core_implant/cruciform/omni
+	name = "Omni-Cruciform"
+	icon_state = "cruciform_omni"
+	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
+	implant_type = /obj/item/implant/core_implant/cruciform/omni
+	power = 200
+	max_power = 200
+	power_regen = 1
+	path = "omni"
+
+// This is to give someone Augustine's cruciform
+/mob/proc/make_augustine()
+	var/mob/living/carbon/human/user = src
+	if(user.is_mannequin) //Quick return to stop them adding mages to mannequins
+		return
+	if(istype(user))
+		var/obj/item/organ/external/chest = user.get_organ(BP_CHEST)
+
+		if(chest)
+			var/obj/item/implant/core_implant/C = new /obj/item/implant/core_implant/cruciform/omni
+			C.install(src)
+			C.activate()
+			if(mind)
+				C.install_default_modules_by_job(mind.assigned_job)
+				C.access.Add(mind.assigned_job.cruciform_access)
+				C.install_default_modules_by_path(mind.assigned_job)
