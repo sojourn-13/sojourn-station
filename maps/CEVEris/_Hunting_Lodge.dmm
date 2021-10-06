@@ -90,11 +90,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aw" = (
-/obj/structure/flora/tree/jungle,
-/turf/simulated/floor/asteroid/grass/jungle,
-/area/nadezhda/outside/forest/hunting_lodge)
-"ax" = (
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ay" = (
@@ -113,7 +109,7 @@
 /turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aC" = (
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aD" = (
@@ -128,7 +124,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aG" = (
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aH" = (
@@ -281,7 +277,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aZ" = (
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ba" = (
@@ -1437,10 +1433,6 @@
 	name = "wooden fence"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/hunting_lodge)
-"eq" = (
-/obj/random/flora/jungle_tree,
-/turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "er" = (
 /obj/structure/railing{
@@ -4270,7 +4262,7 @@ at
 at
 at
 at
-eq
+aw
 aB
 aB
 aB
@@ -4472,13 +4464,13 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -4797,14 +4789,14 @@ at
 at
 at
 at
-eq
+aw
 at
 ay
 at
 at
 at
 at
-eq
+aw
 at
 aB
 aB
@@ -4899,7 +4891,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -5229,7 +5221,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -5438,7 +5430,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -5554,7 +5546,7 @@ at
 at
 at
 at
-eq
+aw
 aB
 aB
 aB
@@ -5638,7 +5630,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -5847,7 +5839,7 @@ aD
 aD
 aD
 at
-eq
+aw
 at
 at
 at
@@ -5978,7 +5970,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -6187,7 +6179,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -6515,7 +6507,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 aB
@@ -6712,7 +6704,7 @@ es
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -6932,7 +6924,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -6965,7 +6957,7 @@ zn
 ag
 at
 at
-ax
+aw
 at
 at
 at
@@ -7257,12 +7249,12 @@ au
 at
 at
 at
-eq
+aw
 at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -7575,7 +7567,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -7608,7 +7600,7 @@ at
 at
 at
 at
-ax
+aw
 at
 at
 at
@@ -8014,7 +8006,7 @@ at
 at
 at
 at
-eq
+aw
 at
 aB
 aB
@@ -8109,7 +8101,7 @@ at
 at
 at
 at
-eq
+aw
 at
 ab
 at
@@ -8147,7 +8139,7 @@ az
 at
 at
 at
-ax
+aw
 at
 at
 at
@@ -8207,7 +8199,7 @@ at
 at
 at
 aD
-ax
+aw
 at
 at
 at
@@ -8468,7 +8460,7 @@ at
 at
 at
 at
-ax
+aw
 at
 aD
 aH
@@ -8550,7 +8542,7 @@ at
 at
 at
 at
-eq
+aw
 aB
 aB
 aB
@@ -8744,7 +8736,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -8752,13 +8744,13 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -9062,14 +9054,14 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -9077,14 +9069,14 @@ at
 at
 at
 at
-eq
+aw
 at
 ay
 at
 at
 at
 at
-eq
+aw
 at
 aB
 aB
@@ -9171,7 +9163,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -9179,7 +9171,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -9489,7 +9481,7 @@ aD
 aD
 aD
 at
-eq
+aw
 at
 ay
 at
@@ -9509,7 +9501,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -9718,7 +9710,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -9746,7 +9738,7 @@ aq
 aG
 at
 at
-ax
+aw
 at
 at
 aD
@@ -9834,7 +9826,7 @@ at
 at
 at
 at
-eq
+aw
 aB
 aB
 aB
@@ -9959,7 +9951,7 @@ aq
 aq
 ag
 at
-ax
+aw
 at
 at
 at
@@ -10026,7 +10018,7 @@ aD
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -10258,7 +10250,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -10351,7 +10343,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 ay
@@ -10453,7 +10445,7 @@ aD
 aD
 at
 at
-eq
+aw
 at
 at
 at
@@ -10467,7 +10459,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -10676,7 +10668,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -10778,7 +10770,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -10795,7 +10787,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 aB
@@ -10817,7 +10809,7 @@ ag
 at
 at
 at
-ax
+aw
 at
 aD
 aD
@@ -11212,7 +11204,7 @@ at
 at
 au
 at
-eq
+aw
 at
 at
 at
@@ -11351,7 +11343,7 @@ aq
 aq
 ag
 at
-ax
+aw
 at
 at
 aD
@@ -11524,7 +11516,7 @@ aD
 at
 at
 at
-eq
+aw
 at
 ay
 at
@@ -11537,12 +11529,12 @@ au
 at
 at
 at
-eq
+aw
 at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -11849,13 +11841,13 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -11951,7 +11943,7 @@ aD
 aD
 at
 at
-eq
+aw
 at
 at
 at
@@ -12214,7 +12206,7 @@ aD
 aD
 aD
 at
-ax
+aw
 at
 at
 at
@@ -12294,7 +12286,7 @@ at
 at
 at
 at
-eq
+aw
 at
 aB
 aB
@@ -12377,7 +12369,7 @@ aD
 aD
 at
 at
-eq
+aw
 at
 at
 ab
@@ -12389,7 +12381,7 @@ at
 at
 at
 at
-eq
+aw
 at
 ab
 at
@@ -12534,7 +12526,7 @@ at
 at
 at
 at
-ax
+aw
 at
 at
 at
@@ -12702,7 +12694,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -12744,7 +12736,7 @@ ag
 at
 at
 at
-ax
+aw
 at
 at
 at
@@ -12804,7 +12796,7 @@ aD
 aD
 aD
 at
-eq
+aw
 at
 at
 at
@@ -12813,7 +12805,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -13037,12 +13029,12 @@ au
 at
 at
 at
-eq
+aw
 at
 at
 at
 at
-eq
+aw
 at
 at
 aB
@@ -13138,7 +13130,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -13240,7 +13232,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -13355,7 +13347,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -13394,7 +13386,7 @@ at
 at
 at
 at
-ax
+aw
 at
 at
 at
@@ -13664,7 +13656,7 @@ aD
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -13989,7 +13981,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at
@@ -14091,7 +14083,7 @@ at
 at
 at
 at
-eq
+aw
 at
 at
 at

@@ -2391,10 +2391,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/one_star/fo_outside)
-"ja" = (
-/obj/structure/flora/tree/jungle,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/one_star/fo_outside)
 "jb" = (
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/reinforced,
@@ -43619,7 +43615,7 @@ dv
 dv
 ee
 dv
-ja
+hS
 hC
 iK
 iC
@@ -43627,7 +43623,7 @@ pW
 hC
 hC
 hC
-ja
+hS
 dv
 dv
 dv

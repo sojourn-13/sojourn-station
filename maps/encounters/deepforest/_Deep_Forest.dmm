@@ -6851,7 +6851,7 @@
 "yB" = (
 /obj/structure/flora/small/bushc2,
 /obj/structure/flora/small/bushc3,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
@@ -7021,7 +7021,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "zl" = (
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /obj/structure/flora/small/bushb1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
@@ -7061,10 +7061,6 @@
 "zt" = (
 /obj/structure/flora/small/bushb3,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
-"zu" = (
-/obj/structure/flora/tree/jungle,
-/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "zv" = (
 /obj/structure/flora/small/busha1,
@@ -7177,7 +7173,7 @@
 /area/nadezhda/outside/forest)
 "zX" = (
 /obj/structure/flora/small/bushc2,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/forest)
 "zZ" = (
@@ -7259,7 +7255,7 @@
 /area/nadezhda/outside/forest)
 "As" = (
 /obj/structure/flora/small/bushc3,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "At" = (
@@ -7328,7 +7324,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "AH" = (
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/forest)
@@ -7392,7 +7388,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "AX" = (
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
@@ -7438,10 +7434,6 @@
 "Bh" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
-"Bi" = (
-/obj/structure/flora/tree/jungle,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "Bj" = (
@@ -7703,11 +7695,6 @@
 /obj/structure/flora/small/grassb4,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"Cu" = (
-/obj/structure/flora/tree/jungle,
-/obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/forest)
 "Cv" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/random/traps,
@@ -8081,11 +8068,6 @@
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
-"Eb" = (
-/obj/random/flora/jungle_tree,
-/obj/structure/flora/small/busha2,
-/turf/simulated/mineral/planet,
-/area/nadezhda/outside/forest)
 "Ec" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/bushb2,
@@ -8118,7 +8100,7 @@
 /area/nadezhda/outside/forest)
 "Ei" = (
 /obj/structure/flora/small/busha3,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "Ej" = (
@@ -8177,7 +8159,7 @@
 /area/nadezhda/outside/meadow)
 "Ev" = (
 /obj/structure/flora/small/busha1,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "Ew" = (
@@ -8187,7 +8169,7 @@
 /area/nadezhda/outside/meadow)
 "Ex" = (
 /obj/random/flora/small_jungle_tree,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/forest)
 "Ey" = (
@@ -8689,10 +8671,6 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest)
-"GD" = (
-/obj/structure/flora/tree/jungle,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/meadow)
 "GE" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/big/bush2,
@@ -8741,10 +8719,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/meadow)
-"GO" = (
-/obj/structure/flora/tree/jungle,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
 "GP" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/asteroid/grass,
@@ -8753,11 +8727,6 @@
 /obj/structure/flora/rock,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
-"GR" = (
-/obj/structure/flora/small/busha1,
-/obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/forest)
 "GS" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -67670,7 +67639,7 @@ yK
 zk
 il
 il
-Bi
+yK
 il
 il
 il
@@ -68095,7 +68064,7 @@ il
 il
 il
 il
-Cu
+AQ
 hk
 iw
 hB
@@ -69128,7 +69097,7 @@ hk
 hk
 hk
 hw
-Bi
+yK
 Bh
 Ba
 Ba
@@ -69549,7 +69518,7 @@ hk
 hk
 hw
 il
-Bi
+yK
 Ao
 Ba
 il
@@ -79427,7 +79396,7 @@ hW
 hW
 hW
 hW
-GO
+ir
 Dl
 Dl
 Dl
@@ -79630,7 +79599,7 @@ El
 hA
 hA
 BL
-GD
+zJ
 hA
 hA
 hA
@@ -79843,7 +79812,7 @@ hk
 hk
 Ai
 hk
-GR
+Ev
 hk
 hA
 hA
@@ -80872,7 +80841,7 @@ Ai
 Ai
 il
 Ao
-Eb
+AH
 hw
 hk
 hk
@@ -81295,7 +81264,7 @@ hk
 hk
 hk
 hk
-zu
+hz
 hk
 hA
 BL
@@ -81545,7 +81514,7 @@ hk
 hk
 hk
 hk
-Bi
+yK
 il
 il
 il
@@ -81723,14 +81692,14 @@ hW
 hW
 hW
 hW
-GO
+ir
 AS
 hW
 hW
 Dl
 hW
 hW
-GO
+ir
 hW
 hW
 BL
@@ -82117,7 +82086,7 @@ hk
 hk
 ta
 il
-zu
+hz
 Ai
 hk
 Ai
@@ -82544,7 +82513,7 @@ il
 Ao
 il
 il
-zu
+hz
 hk
 hk
 hk
@@ -83130,7 +83099,7 @@ hk
 yq
 il
 il
-zu
+hz
 hk
 hk
 hk
@@ -83156,7 +83125,7 @@ ys
 MY
 il
 il
-Eb
+AH
 WE
 hw
 hk
@@ -83330,7 +83299,7 @@ vS
 yq
 il
 il
-zu
+hz
 hk
 hk
 hk
@@ -83795,7 +83764,7 @@ hk
 hY
 hY
 hk
-Bi
+yK
 il
 Ao
 il

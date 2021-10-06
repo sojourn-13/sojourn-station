@@ -7748,7 +7748,7 @@
 /area/turret_protected/ai)
 "bYU" = (
 /obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bZc" = (
@@ -9313,7 +9313,7 @@
 /area/nadezhda/command/courtroom)
 "csO" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "csW" = (
@@ -31017,7 +31017,7 @@
 /area/colony)
 "hFh" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "hFm" = (
@@ -31103,11 +31103,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
-"hGE" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/random/flora/jungle_tree,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "hGI" = (
 /obj/structure/jtb_pillar,
 /turf/simulated/floor/tiled/dark/danger,
@@ -33151,7 +33146,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "ihN" = (
 /obj/structure/flora/small/grassb4,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "ihR" = (
@@ -37864,11 +37859,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"joP" = (
-/obj/structure/flora/tree/jungle,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "joZ" = (
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall5";
@@ -46057,10 +46047,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"lhU" = (
-/obj/structure/flora/tree/jungle,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/forest)
 "lhX" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/decal/cleanable/dirt,
@@ -56152,7 +56138,7 @@
 /turf/simulated/floor/tiled/steel/bar_flat,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "nDj" = (
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /obj/structure/flora/small/grassa2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
@@ -60792,11 +60778,6 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"oJk" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/forest)
 "oJm" = (
 /obj/random/junk,
 /turf/simulated/floor/plating,
@@ -65535,11 +65516,6 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/security/evidencestorage)
-"pVe" = (
-/obj/structure/flora/tree/jungle,
-/obj/structure/flora/small/grassb4,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "pVh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -75411,7 +75387,7 @@
 /area/nadezhda/quartermaster/hangarsupply)
 "sjg" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
@@ -79703,7 +79679,7 @@
 /area/nadezhda/hallway/main/stairwell)
 "tnZ" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tob" = (
@@ -93497,10 +93473,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"wuB" = (
-/obj/structure/flora/tree/jungle,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "wuD" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/asteroid/dirt,
@@ -98026,14 +97998,6 @@
 "xwC" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"xwH" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/tree/jungle,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "xwI" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -182777,7 +182741,7 @@ dpg
 dpg
 dpg
 oHS
-lhU
+hfC
 tfX
 tfX
 tfX
@@ -182969,7 +182933,7 @@ tfX
 oHS
 oHS
 oHS
-wuB
+adB
 dpg
 dpg
 dpg
@@ -184240,7 +184204,7 @@ oHS
 eWw
 dpg
 dpg
-wuB
+adB
 dpg
 qHc
 dpg
@@ -184426,7 +184390,7 @@ dpg
 dpg
 dpg
 oHS
-lhU
+hfC
 oHS
 oHS
 oHS
@@ -184837,7 +184801,7 @@ iKW
 oHS
 oHS
 oHS
-wuB
+adB
 fbR
 dpg
 fbR
@@ -185247,7 +185211,7 @@ pkz
 dpg
 dpg
 dpg
-pVe
+ine
 dpg
 pkz
 dpg
@@ -187215,7 +187179,7 @@ adB
 adB
 dpg
 dpg
-wuB
+adB
 dpg
 dpg
 dpg
@@ -187614,7 +187578,7 @@ tfX
 oHS
 oHS
 oHS
-wuB
+adB
 adB
 aWM
 aWM
@@ -188003,7 +187967,7 @@ dpg
 iug
 oHS
 oHS
-lhU
+hfC
 oHS
 gUn
 oHS
@@ -188025,7 +187989,7 @@ dpg
 aMC
 dpg
 dpg
-wuB
+adB
 dpg
 dpg
 dpg
@@ -188072,7 +188036,7 @@ oHS
 oHS
 hjc
 hjc
-pVe
+ine
 dpg
 dpg
 dpg
@@ -188217,7 +188181,7 @@ eWw
 eWw
 dpg
 dpg
-wuB
+adB
 dpg
 bdd
 qHc
@@ -188823,7 +188787,7 @@ dpg
 dpg
 hPb
 dpg
-wuB
+adB
 dpg
 eEA
 dpg
@@ -188870,7 +188834,7 @@ cKB
 pkz
 pkz
 oHS
-wuB
+adB
 oHS
 oHS
 oHS
@@ -189225,7 +189189,7 @@ dpg
 dpg
 eEA
 dpg
-wuB
+adB
 jNC
 jNC
 dpg
@@ -192480,7 +192444,7 @@ oHS
 dpg
 adB
 dpg
-wuB
+adB
 qiR
 dpg
 dCY
@@ -192648,7 +192612,7 @@ dpg
 dpg
 dpg
 oHS
-lhU
+hfC
 oHS
 oHS
 oHS
@@ -193896,7 +193860,7 @@ oHS
 oHS
 oHS
 oHS
-wuB
+adB
 ikV
 dpg
 nMq
@@ -194511,7 +194475,7 @@ tfX
 oHS
 oHS
 aWM
-wuB
+adB
 dpg
 eEA
 dpg
@@ -196733,7 +196697,7 @@ oHS
 oHS
 dpg
 dpg
-wuB
+adB
 dpg
 dpg
 dpg
@@ -197735,9 +197699,9 @@ oHS
 oHS
 oHS
 oHS
-wuB
+adB
 kUN
-hGE
+hFh
 kUN
 aWM
 dpg
@@ -198726,7 +198690,7 @@ dpg
 dpg
 dpg
 oHS
-lhU
+hfC
 tfX
 xbB
 xbB
@@ -198740,7 +198704,7 @@ sku
 sku
 oHS
 oHS
-lhU
+hfC
 dpg
 idZ
 wfP
@@ -199342,7 +199306,7 @@ pds
 kUN
 dpg
 dpg
-joP
+bbr
 kUN
 stl
 dpg
@@ -200140,7 +200104,7 @@ ggB
 dpg
 iHa
 oHS
-lhU
+hfC
 oHS
 nMI
 kUN
@@ -203575,7 +203539,7 @@ wmB
 oHS
 oHS
 bCz
-hGE
+hFh
 stl
 ujq
 dpg
@@ -203776,7 +203740,7 @@ esJ
 wmB
 oHS
 oHS
-oJk
+csO
 qCW
 kUN
 dpg
@@ -204787,7 +204751,7 @@ vDL
 ctX
 kUN
 kUN
-hGE
+hFh
 qES
 dpg
 ujq
@@ -205862,7 +205826,7 @@ lUG
 giG
 giG
 sku
-hGE
+hFh
 kuw
 oHS
 tMV
@@ -206388,7 +206352,7 @@ nMI
 oHS
 oHS
 oHS
-wuB
+adB
 jlM
 ujq
 dpg
@@ -206594,7 +206558,7 @@ oHS
 oHS
 dpg
 oHS
-lhU
+hfC
 nMI
 oHS
 oHS
@@ -207805,7 +207769,7 @@ oHS
 oHS
 oHS
 oHS
-lhU
+hfC
 kUN
 kUN
 csO
@@ -208206,7 +208170,7 @@ fJm
 oHS
 oHS
 oHS
-wuB
+adB
 bOA
 iVL
 ujq
@@ -208221,7 +208185,7 @@ oHS
 oHS
 oHS
 sWj
-xwH
+phZ
 sts
 awq
 sku
@@ -211073,7 +211037,7 @@ nFK
 oHS
 oHS
 oHS
-oJk
+csO
 cSy
 dpg
 dpg

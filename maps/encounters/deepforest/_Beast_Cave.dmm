@@ -4266,10 +4266,6 @@
 /mob/living/simple_animal/hostile/dino,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
-"pP" = (
-/obj/structure/flora/tree/jungle,
-/turf/simulated/floor/beach/water/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
 "pQ" = (
 /obj/random/traps/low_chance,
 /obj/effect/overlay/water/top,
@@ -4353,10 +4349,6 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "qg" = (
 /obj/structure/flora/small/lavarock1,
-/turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/forest/beast_cave_light)
-"qh" = (
-/obj/structure/flora/tree/jungle,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_light)
 "qj" = (
@@ -8345,12 +8337,6 @@
 "Zx" = (
 /mob/living/simple_animal/hostile/tengstalker,
 /turf/simulated/floor/asteroid/grass/jungle,
-/area/nadezhda/outside/forest/beast_cave_light)
-"ZB" = (
-/obj/effect/overlay/water,
-/obj/structure/flora/tree/jungle,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "ZE" = (
 /obj/effect/decal/cleanable/rubble,
@@ -23284,7 +23270,7 @@ dS
 Ox
 xW
 xW
-pP
+pC
 PU
 PU
 PU
@@ -23504,7 +23490,7 @@ dS
 dS
 dS
 dS
-pP
+pC
 PU
 PU
 PU
@@ -23729,7 +23715,7 @@ dS
 ej
 ej
 YU
-ZB
+pD
 ZP
 ZP
 OM
@@ -24627,7 +24613,7 @@ cC
 cC
 cC
 cC
-qh
+pN
 dS
 dS
 dS
