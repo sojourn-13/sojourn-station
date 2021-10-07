@@ -144,8 +144,8 @@
 		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
 	)
 
-/datum/craft_recipe/lodge/cleaver_sus
-	name = "Cleaver Sustine"
+/datum/craft_recipe/lodge/sun_cleaver
+	name = "Sun Cleaver"
 	result = /obj/item/tool/sword/cleaver
 	icon_state = "woodworking"
 	steps = list(
