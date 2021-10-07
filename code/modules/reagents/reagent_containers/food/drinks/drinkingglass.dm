@@ -36,7 +36,7 @@
 	volume = 15
 	morf_glass = FALSE
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/double
+/obj/item/reagent_containers/food/drinks/drinkingglass/doble
 	name = "double"
 	desc = "Your standard drinking glass."
 	icon_state = "double"

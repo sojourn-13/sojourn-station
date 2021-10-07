@@ -99,3 +99,11 @@
 /datum/design/autolathe/circuit/pile_ripper
 	name = "pile ripper"
 	build_path = /obj/item/circuitboard/pile_ripper
+
+/datum/design/autolathe/circuit/trade_beacon_receiving
+	name = "trade receiver beacon"
+	build_path = /obj/item/circuitboard/trade_beacon/receiving
+
+/datum/design/autolathe/circuit/trade_beacon_sending
+	name = "trade sending beacon"
+	build_path = /obj/item/circuitboard/trade_beacon/sending_beacon

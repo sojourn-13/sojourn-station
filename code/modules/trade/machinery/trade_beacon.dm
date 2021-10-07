@@ -19,6 +19,7 @@
 /obj/machinery/trade_beacon/sending
 	name = "sending trade beacon"
 	icon_state = "beacon_sending"
+	circuit = /obj/item/circuitboard/trade_beacon/receiving
 
 /obj/machinery/trade_beacon/sending/Initialize()
 	. = ..()
@@ -33,6 +34,7 @@
 
 /obj/machinery/trade_beacon/receiving
 	name = "receiving trade beacon"
+	circuit = /obj/item/circuitboard/trade_beacon/sending_beacon
 
 /obj/machinery/trade_beacon/receiving/Initialize()
 	. = ..()
