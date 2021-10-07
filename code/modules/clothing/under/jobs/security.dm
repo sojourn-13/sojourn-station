@@ -174,6 +174,32 @@
 	)
 	siemens_coefficient = 0.6
 
+/obj/item/clothing/suit/armor/hos/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Armored coat"] = "hos"
+	options["Alt armored coat"] = "new_wo"
+	options["Formal coat"] = "wo_formal"
+	options["Formal coat alt"] = "wo_formallong"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 //Jensen cosplay gear
 /obj/item/clothing/under/rank/ih_commander/jensen
 	desc = "You never asked for anything that stylish."
