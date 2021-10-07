@@ -77,7 +77,6 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/blood/Process()
 	if(world.time > drytime)
-		STOP_PROCESSING(SSobj, src) // Ok no more processing after this
 		dry()
 
 /obj/effect/decal/cleanable/blood/update_icon()
