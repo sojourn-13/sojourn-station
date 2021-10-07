@@ -284,71 +284,6 @@
 	crate_name = "HS buckshot shells crate"
 	group = "Enforcement"
 
-//ARMORY
-/datum/supply_pack/armor
-	name = "Marshal Surplus Armor Crate"
-	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest/security,
-					/obj/item/clothing/suit/armor/vest/detective,
-					/obj/item/clothing/suit/storage/vest,
-					/obj/item/clothing/head/helmet,
-					/obj/item/clothing/head/helmet)
-	cost = 1200
-	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Marshal surplus armor crate"
-	group = "Enforcement"
-
-/datum/supply_pack/riot
-	name = "Marshal Riot Gear Crate"
-	contains = list(/obj/item/melee/baton,
-					/obj/item/melee/baton,
-					/obj/item/melee/baton,
-					/obj/item/shield/riot,
-					/obj/item/shield/riot,
-					/obj/item/shield/riot,
-					/obj/item/storage/box/flashbangs,
-					/obj/item/storage/box/flashbangs,
-					/obj/item/storage/box/flashbangs,
-					/obj/item/handcuffs,
-					/obj/item/handcuffs,
-					/obj/item/handcuffs,
-					/obj/item/clothing/head/helmet/faceshield/riot,
-					/obj/item/clothing/suit/armor/heavy/riot,
-					/obj/item/clothing/head/helmet/faceshield/riot,
-					/obj/item/clothing/suit/armor/heavy/riot,
-					/obj/item/clothing/head/helmet/faceshield/riot,
-					/obj/item/clothing/suit/armor/heavy/riot)
-	cost = 4880
-	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Marshal riot gear crate"
-	group = "Enforcement"
-
-/datum/supply_pack/ballisticarmor
-	name = "Marshal Ballistic Armor Crate"
-	contains = list(/obj/item/clothing/suit/armor/bulletproof,
-					/obj/item/clothing/suit/armor/bulletproof,
-					/obj/item/clothing/head/helmet,
-					/obj/item/clothing/head/helmet)
-	cost = 2400
-	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Marshal ballistic armor crate"
-	group = "Enforcement"
-
-
-/datum/supply_pack/energyarmor
-	name = "Marshal Ablative Armor Crate"
-	contains = list(/obj/item/clothing/suit/armor/laserproof,
-					/obj/item/clothing/suit/armor/laserproof,
-					/obj/item/clothing/shoes/ablasive,
-					/obj/item/clothing/shoes/ablasive,
-					/obj/item/clothing/gloves/thick/ablasive,
-					/obj/item/clothing/gloves/thick/ablasive,
-					/obj/item/clothing/head/helmet/laserproof,
-					/obj/item/clothing/head/helmet/laserproof)
-	cost = 2800
-	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Marshal ablative armor crate"
-	group = "Enforcement"
 
 //UTILITY
 /datum/supply_pack/Enforcementbarriers
@@ -407,6 +342,27 @@
 	cost = 2000
 	containertype = /obj/structure/closet/crate/serbcrate_gray
 	crate_name = "Void Wolf Rifles Crate"
+	group = "Xanorath Syndicate"
+
+/datum/supply_pack/voidwolfflamer
+	name = "Void Wolf HellFire Crate"
+	contains = list(/obj/item/gun/flamethrower,
+					/obj/item/weldpack/canister/flamethrower)
+	cost = 3500
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Void Wolf HellFire Crate"
+	group = "Xanorath Syndicate"
+
+/datum/supply_pack/voidwolfflamer
+	name = "Void Wolf HellFire Canisters Crate"
+	contains = list(/obj/item/weldpack/canister/flamethrower,
+					/obj/item/weldpack/canister/flamethrower,
+					/obj/item/weldpack/canister/flamethrower,
+					/obj/item/weldpack/canister/flamethrower,
+					/obj/item/weldpack/canister/flamethrower)
+	cost = 750
+	containertype = /obj/structure/closet/crate/serbcrate_gray
+	crate_name = "Void Wolf HellFire Canisters Crate"
 	group = "Xanorath Syndicate"
 
 /datum/supply_pack/voidwolfdrugs
