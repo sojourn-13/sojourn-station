@@ -10,6 +10,10 @@
 	preloaded_reagents = list("protein" = 9)
 	slice_path = /obj/item/reagent_containers/food/snacks/rawcutlet
 	slices_num = 3
+	var/inherent_mutations = list() //Holder for genetics, created for the meat on spawn.
+	var/datum/genetics/genetics_holder/unnatural_mutations = list() //GMO in your MEAT
+	var/source_mob
+	var/source_name
 
 /obj/item/reagent_containers/food/snacks/meat/syntiflesh
 	name = "synthetic meat"
