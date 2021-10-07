@@ -1,6 +1,8 @@
 /obj/item/storage/box/bs_kit
 	name = "\improper Blackshield Kit"
 	desc = "A standard kit."
+	cant_hold = list(/obj/item) //stops them from being used as storage solutions - items can't be put back in.
+	w_class = ITEM_SIZE_BULKY //these carry guns and lots of items! Makes sense to make them bigger than some tiny box
 	icon_state = "box"
 
 // All-in-one kit

@@ -474,6 +474,12 @@
 	desc = "Hunt Master"
 	region = ACCESS_REGION_NONE
 
+/var/const/access_hunter = 81
+/datum/access/hunter
+	id = access_hunter
+	desc = "Hunter"
+	region = ACCESS_REGION_NONE
+
 /******************
 * Central Command *
 ******************/

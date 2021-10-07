@@ -82,7 +82,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "au" = (
-/obj/random/flora/small_jungle_tree,
+/obj/structure/flora/tree/jungle_small/variant3,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "av" = (
@@ -90,7 +90,11 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aw" = (
-/obj/random/flora/jungle_tree,
+/obj/structure/flora/tree/jungle,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ax" = (
+/obj/structure/flora/tree/jungle/variant1,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ay" = (
@@ -109,14 +113,14 @@
 /turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aC" = (
-/obj/random/flora/jungle_tree,
+/obj/structure/flora/tree/jungle/variant1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aD" = (
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aE" = (
-/obj/random/flora/small_jungle_tree,
+/obj/structure/flora/tree/jungle_small/variant3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aF" = (
@@ -124,7 +128,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aG" = (
-/obj/random/flora/jungle_tree,
+/obj/structure/flora/tree/jungle/variant1,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aH" = (
@@ -277,7 +281,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aZ" = (
-/obj/random/flora/jungle_tree,
+/obj/structure/flora/tree/jungle,
 /turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ba" = (
@@ -351,7 +355,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bg" = (
-/obj/random/flora/small_jungle_tree,
+/obj/structure/flora/tree/jungle_small/variant3,
 /obj/structure/railing/grey,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -391,6 +395,17 @@
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -1433,6 +1448,10 @@
 	name = "wooden fence"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"eq" = (
+/obj/structure/flora/tree/jungle/variant2,
+/turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "er" = (
 /obj/structure/railing{
@@ -3666,16 +3685,48 @@
 /obj/machinery/recharge_station,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"ql" = (
+/obj/machinery/door/airlock/sandstone{
+	name = "Lodge Gate Airlock";
+	req_access = list(81)
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/outside/forest/hunting_lodge)
+"tr" = (
+/obj/structure/closet/wall_mounted{
+	pixel_x = 32
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "xv" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/rods/random,
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"xS" = (
+/obj/structure/showcase/sign{
+	name = "WARNING: PRIVATE PROPERTY";
+	pixel_y = -3
+	},
+/turf/simulated/wall/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
+"xZ" = (
+/obj/structure/table/woodentable,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "zn" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/ocean,
+/area/nadezhda/outside/forest/hunting_lodge)
+"zw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "En" = (
 /obj/structure/table/reinforced,
@@ -3687,11 +3738,38 @@
 /obj/item/stack/rods/random,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Fo" = (
+/obj/structure/table/woodentable,
+/obj/item/paper_bin,
+/obj/item/pen/blue,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
+"GV" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Hd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
 "JC" = (
 /obj/structure/table/woodentable,
 /obj/machinery/recharger,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Lz" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 1;
+	id_tag = "LG1";
+	name = "External Gate";
+	req_access = newlist();
+	req_one_access = list(81)
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/outside/forest/hunting_lodge)
 "ME" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -3701,6 +3779,57 @@
 /obj/item/stack/material/steel/random,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ne" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Pp" = (
+/obj/structure/table/woodentable,
+/obj/machinery/button/remote/airlock{
+	id = "LG1";
+	name = "External Gate Lock";
+	pixel_x = 37;
+	pixel_y = 5;
+	req_access = list(81);
+	specialfunctions = 4
+	},
+/obj/machinery/button/remote/airlock{
+	id = "LG2";
+	name = "Internal Gate Control";
+	pixel_x = 26;
+	pixel_y = -7;
+	req_access = list(81)
+	},
+/obj/machinery/button/remote/airlock{
+	id = "LG1";
+	name = "External Gate Control";
+	pixel_x = 26;
+	pixel_y = 5;
+	req_access = list(81)
+	},
+/obj/machinery/button/remote/airlock{
+	id = "LG2";
+	name = "Internal Gate Lock";
+	pixel_x = 37;
+	pixel_y = -7;
+	req_access = list(81);
+	specialfunctions = 4
+	},
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Pr" = (
+/obj/structure/bed/chair/custom/wood,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"RC" = (
+/obj/structure/table/woodentable,
+/obj/item/device/binoculars,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Tp" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/forest/hunting_lodge)
 "TE" = (
 /obj/item/device/synthesized_instrument/guitar{
 	desc = "A wooden musical instrument with six strings. This guitar has seen more history then most hunters. Inscribed on the back of it is 'Charles Astra, Hunt Master'.";
@@ -3710,6 +3839,10 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"TR" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "TT" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -3719,12 +3852,39 @@
 /obj/item/stack/rods/random,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Uu" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 1;
+	id_tag = "LG2";
+	name = "Internal Gate";
+	req_access = newlist();
+	req_one_access = list(81)
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/outside/forest/hunting_lodge)
+"US" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
+"UV" = (
+/obj/structure/table/rack/shelf,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
 "XX" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
 /obj/item/stack/cable_coil/random,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"XZ" = (
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Zl" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water/top,
@@ -4262,7 +4422,7 @@ at
 at
 at
 at
-aw
+eq
 aB
 aB
 aB
@@ -4464,13 +4624,13 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -4789,14 +4949,14 @@ at
 at
 at
 at
-aw
+eq
 at
 ay
 at
 at
 at
 at
-aw
+eq
 at
 aB
 aB
@@ -4891,7 +5051,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -5221,7 +5381,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -5430,7 +5590,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -5546,7 +5706,7 @@ at
 at
 at
 at
-aw
+eq
 aB
 aB
 aB
@@ -5630,7 +5790,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -5839,7 +5999,7 @@ aD
 aD
 aD
 at
-aw
+eq
 at
 at
 at
@@ -5970,7 +6130,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -6179,7 +6339,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -6507,7 +6667,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 aB
@@ -6704,7 +6864,7 @@ es
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -6924,7 +7084,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -6957,7 +7117,7 @@ zn
 ag
 at
 at
-aw
+ax
 at
 at
 at
@@ -7249,12 +7409,12 @@ au
 at
 at
 at
-aw
+eq
 at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -7567,7 +7727,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -7600,7 +7760,7 @@ at
 at
 at
 at
-aw
+ax
 at
 at
 at
@@ -8006,7 +8166,7 @@ at
 at
 at
 at
-aw
+eq
 at
 aB
 aB
@@ -8101,7 +8261,7 @@ at
 at
 at
 at
-aw
+eq
 at
 ab
 at
@@ -8139,7 +8299,7 @@ az
 at
 at
 at
-aw
+ax
 at
 at
 at
@@ -8199,7 +8359,7 @@ at
 at
 at
 aD
-aw
+ax
 at
 at
 at
@@ -8460,7 +8620,7 @@ at
 at
 at
 at
-aw
+ax
 at
 aD
 aH
@@ -8542,7 +8702,7 @@ at
 at
 at
 at
-aw
+eq
 aB
 aB
 aB
@@ -8736,7 +8896,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -8744,13 +8904,13 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -9054,14 +9214,14 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -9069,14 +9229,14 @@ at
 at
 at
 at
-aw
+eq
 at
 ay
 at
 at
 at
 at
-aw
+eq
 at
 aB
 aB
@@ -9163,7 +9323,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -9171,7 +9331,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -9481,7 +9641,7 @@ aD
 aD
 aD
 at
-aw
+eq
 at
 ay
 at
@@ -9501,7 +9661,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -9710,7 +9870,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -9738,7 +9898,7 @@ aq
 aG
 at
 at
-aw
+ax
 at
 at
 aD
@@ -9826,7 +9986,7 @@ at
 at
 at
 at
-aw
+eq
 aB
 aB
 aB
@@ -9951,7 +10111,7 @@ aq
 aq
 ag
 at
-aw
+ax
 at
 at
 at
@@ -10018,7 +10178,7 @@ aD
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -10250,7 +10410,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -10343,7 +10503,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 ay
@@ -10445,7 +10605,7 @@ aD
 aD
 at
 at
-aw
+eq
 at
 at
 at
@@ -10459,7 +10619,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -10668,7 +10828,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -10770,7 +10930,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -10787,7 +10947,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 aB
@@ -10809,7 +10969,7 @@ ag
 at
 at
 at
-aw
+ax
 at
 aD
 aD
@@ -11204,7 +11364,7 @@ at
 at
 au
 at
-aw
+eq
 at
 at
 at
@@ -11343,7 +11503,7 @@ aq
 aq
 ag
 at
-aw
+ax
 at
 at
 aD
@@ -11516,7 +11676,7 @@ aD
 at
 at
 at
-aw
+eq
 at
 ay
 at
@@ -11529,12 +11689,12 @@ au
 at
 at
 at
-aw
+eq
 at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -11841,13 +12001,13 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -11943,7 +12103,7 @@ aD
 aD
 at
 at
-aw
+eq
 at
 at
 at
@@ -12206,7 +12366,7 @@ aD
 aD
 aD
 at
-aw
+ax
 at
 at
 at
@@ -12286,7 +12446,7 @@ at
 at
 at
 at
-aw
+eq
 at
 aB
 aB
@@ -12369,7 +12529,7 @@ aD
 aD
 at
 at
-aw
+eq
 at
 at
 ab
@@ -12381,7 +12541,7 @@ at
 at
 at
 at
-aw
+eq
 at
 ab
 at
@@ -12526,7 +12686,7 @@ at
 at
 at
 at
-aw
+ax
 at
 at
 at
@@ -12694,7 +12854,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -12736,7 +12896,7 @@ ag
 at
 at
 at
-aw
+ax
 at
 at
 at
@@ -12796,7 +12956,7 @@ aD
 aD
 aD
 at
-aw
+eq
 at
 at
 at
@@ -12805,7 +12965,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -13029,12 +13189,12 @@ au
 at
 at
 at
-aw
+eq
 at
 at
 at
 at
-aw
+eq
 at
 at
 aB
@@ -13130,7 +13290,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -13232,7 +13392,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -13347,7 +13507,7 @@ at
 at
 at
 at
-aw
+eq
 at
 at
 at
@@ -13386,7 +13546,7 @@ at
 at
 at
 at
-aw
+ax
 at
 at
 at
@@ -13641,22 +13801,22 @@ at
 at
 at
 at
+aP
+ql
+aP
+aP
+aP
+lf
+Uu
+aP
+aP
+aP
+aP
+aP
+aP
 at
-aD
-aC
-aD
-aD
-aM
-aM
-aD
-aD
-aD
-aD
-aD
 at
-at
-at
-aw
+eq
 at
 at
 at
@@ -13747,20 +13907,20 @@ au
 at
 at
 at
-at
-at
-aD
-aD
-aD
-aD
+aP
+aP
+XZ
+US
+XZ
+ql
 aM
-aM
+Hd
 aD
 aD
 at
 at
 at
-at
+aP
 at
 at
 at
@@ -13854,20 +14014,20 @@ at
 at
 at
 at
+aP
+UV
+XZ
+Pr
+RC
+Tp
+Hd
+Hd
+TR
+aD
 at
 at
-aD
-aD
-aD
-aD
-aM
-aM
-aD
-aD
 at
-at
-at
-at
+aP
 at
 at
 ay
@@ -13961,27 +14121,27 @@ at
 at
 at
 at
-at
-at
+aP
+UV
+XZ
+Pr
+GV
+Tp
+zw
+Hd
+TR
 aD
-aD
-aD
-aD
-aM
-aM
-aD
-aC
 at
 au
 at
+aP
 at
 at
 at
 at
 at
 at
-at
-aw
+eq
 at
 at
 at
@@ -14068,22 +14228,22 @@ at
 at
 at
 at
-at
-at
-at
-aD
-aD
-aD
+aP
+aP
+XZ
+Pr
+Pp
+Tp
+Hd
 aM
-aM
+TR
+TR
 aD
-aD
-aD
 at
 at
+aP
 at
-at
-aw
+eq
 at
 at
 at
@@ -14175,20 +14335,20 @@ at
 at
 at
 at
-at
-at
-at
-aD
-aD
+aP
+Fo
+XZ
+XZ
+aP
+aP
+lf
+Lz
 aa
-aM
-aM
-aa
-aD
+TR
 aD
 at
 at
-at
+aP
 at
 at
 at
@@ -14282,20 +14442,20 @@ at
 at
 at
 at
-at
-au
-at
-ab
+aP
+Ne
+XZ
+tr
+aP
+xS
+Hd
+Hd
 aa
 aa
-aM
-aM
 aa
 aa
 aa
-aa
-aa
-ay
+aP
 at
 at
 at
@@ -14389,14 +14549,14 @@ aB
 aB
 aB
 aB
-aB
-at
-at
-aB
+aP
+xZ
+Ne
+aP
+aP
 aa
-aa
-aM
-aM
+Hd
+Hd
 gR
 gQ
 aa
@@ -14496,14 +14656,14 @@ aB
 aB
 aB
 aB
-aB
-aB
-aB
-aB
-aB
+aP
+aP
+aP
+aP
+aP
 aa
 aM
-aM
+Hd
 gP
 gQ
 aa
@@ -24984,19 +25144,19 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
 ew
 ew
 ew
@@ -25090,6 +25250,12 @@ ew
 ew
 ew
 ew
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
 ew
 ew
 ew
@@ -25097,13 +25263,7 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+XZ
 ew
 ew
 ew
@@ -25197,6 +25357,12 @@ ew
 ew
 ew
 ew
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
 ew
 ew
 ew
@@ -25204,13 +25370,7 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+XZ
 ew
 ew
 ew
@@ -25304,6 +25464,12 @@ ew
 ew
 ew
 ew
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
 ew
 ew
 ew
@@ -25311,13 +25477,7 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+XZ
 ew
 ew
 ew
@@ -25411,6 +25571,12 @@ ew
 ew
 ew
 ew
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
 ew
 ew
 ew
@@ -25418,13 +25584,7 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+XZ
 ew
 ew
 ew
@@ -25518,6 +25678,12 @@ ew
 ew
 ew
 ew
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
 ew
 ew
 ew
@@ -25525,13 +25691,7 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+XZ
 ew
 ew
 ew
@@ -25625,6 +25785,12 @@ ew
 ew
 ew
 ew
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
 ew
 ew
 ew
@@ -25632,13 +25798,7 @@ ew
 ew
 ew
 ew
-ew
-ew
-ew
-ew
-ew
-ew
-ew
+XZ
 ew
 ew
 ew
@@ -25732,11 +25892,11 @@ ev
 ev
 ev
 ev
-ev
-ev
-ev
-ev
-ev
+XZ
+XZ
+XZ
+XZ
+XZ
 ev
 ev
 ev
@@ -25839,11 +25999,11 @@ ev
 ev
 ev
 ev
-ev
-ev
-ev
-ev
-ev
+XZ
+XZ
+XZ
+XZ
+XZ
 ev
 ev
 ev

@@ -2,7 +2,7 @@
 var/datum/xenomorph/xenomorph_ai
 
 /mob/living/carbon/superior_animal/xenomorph
-	name = "drone"
+	name = "xenomorph drone" //So we dont mix up drone as in the contruction drone or such
 	desc = "A basic xenomorph drone, all slime, teeth, and claws. Looking at it unnerves you..."
 	icon = 'icons/mob/Xenos_48x48.dmi'
 	icon_state = "drone"
