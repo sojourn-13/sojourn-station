@@ -183,7 +183,7 @@
 		/datum/design/autolathe/ammo/grenade/frag,
 		/datum/design/autolathe/ammo/grenade/blast,
 		/datum/design/autolathe/ammo/grenade/flash,
-		/datum/design/autolathe/ammo/flare_shell = 0
+		/datum/design/autolathe/ammo/flare_shell = 0,
 		/datum/design/autolathe/ammo/shotgun_box = 5, //Might want to up these, but really only a ten point difference from the other disk.
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 5,
 		)
