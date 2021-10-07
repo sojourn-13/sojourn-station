@@ -342,7 +342,7 @@
 
 /obj/item/tool/sword/cleaver
 	name = "Cleaver Sustine"
-	desc = "A weapon designed by the Hunting Lodge, this massive sword is especially effective against Tengolos, berserk or not."
+	desc = "A weapon designed by the Hunting Lodge, this massive sword is especially effective against Tengolos, berserk or not, dealing double its normal damage with every strike."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "cleaver"
 	item_state = "cleaver"

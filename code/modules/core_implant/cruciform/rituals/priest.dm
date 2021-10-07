@@ -89,7 +89,7 @@
 		else
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
-	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
+	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
 	H.reagents.add_reagent("laudanum", 10)
 	H.adjustBruteLoss(-20)
 	H.adjustFireLoss(-20)
@@ -142,7 +142,7 @@
 		if (!(T.Adjacent(get_turf(H))))
 			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
 			return
-		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
+		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
 		H.reagents.add_reagent("laudanum", 5)
 		H.adjustBruteLoss(-20)
 		H.adjustFireLoss(-20)
@@ -191,7 +191,7 @@
 		return FALSE
 
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
-		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
+		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain.</span>")
 		participant.reagents.add_reagent("laudanum", 5)
 		participant.adjustBruteLoss(-15)
 		participant.adjustFireLoss(-15)
@@ -569,7 +569,7 @@
 /datum/ritual/cruciform/priest/short_boost
 	name = "Short boost ritual"
 	phrase = null
-	desc = "This litany boosts the stats of everyone who is near you on the short time. "
+	desc = "This litany boosts the stats of everyone who is near you on the short time."
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	effect_time = 10 MINUTES

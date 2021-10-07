@@ -144,6 +144,20 @@
 		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
 	)
 
+/datum/craft_recipe/lodge/cleaver_sus
+	name = "Cleaver Sustine"
+	result = /obj/item/tool/sword/cleaver
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(QUALITY_HAMMERING, 15, "time" = 60),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 30),
+		list(QUALITY_CUTTING, 15, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
+	)
+
 // Armor --------------------
 /datum/craft_recipe/lodge/hunter_hood
 	name = "Hunter's Hood"
