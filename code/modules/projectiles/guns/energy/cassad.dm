@@ -14,6 +14,7 @@
 	price_tag = 1500
 	zoom_factor = null
 	damage_multiplier = 1.1
+	slot_flags = SLOT_BELT|SLOT_BACK
 	init_firemodes = list(
 		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF"),
 		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#00AAFF"),

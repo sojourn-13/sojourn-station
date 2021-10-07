@@ -255,7 +255,7 @@
 
 /datum/perk/ass_of_concrete
 	name = "Immovable Object"
-	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around, as long as you walk instead of run."
+	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around."
 	//icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/ass_of_concrete/assign(mob/living/carbon/human/H)
@@ -534,6 +534,7 @@
 			/datum/craft_recipe/lodge/chimera_fang,
 			/datum/craft_recipe/lodge/soap,
 			/datum/craft_recipe/lodge/hunting_claw,
+			/datum/craft_recipe/lodge/sun_cleaver,
 			/datum/craft_recipe/lodge/hunter_boots,
 			/datum/craft_recipe/lodge/hunter_gloves,
 			/datum/craft_recipe/lodge/sheath,

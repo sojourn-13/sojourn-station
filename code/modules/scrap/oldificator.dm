@@ -386,11 +386,12 @@
 		if(hud && prob(75))
 			hud = new /obj/item/clothing/glasses/hud/broken
 
+// This code is fucking cursed and responsible for roughly 50% of the round run-times and crashed when booting up the server. No idea what cursed shit eris did, leave this commented out. -Kaz
+/*
 /obj/effect/decal/mecha_wreckage/make_old()
 	.=..()
 	if (.)
 		salvage_num = max(1, salvage_num - pick(1, 2, 3))
-
 
 /obj/mecha/make_old()
 	. = ..()
@@ -529,3 +530,4 @@
 
 		process_warnings()
 		*/
+*/

@@ -13,7 +13,7 @@
 		/datum/job/inspector,
 		/datum/job/officer,
 		/datum/job/smc,
-		/datum/job/outsider,
+		/datum/job/outsider
 		)
 	allowed_depts = CHURCH
 	allow_modifications = TRUE

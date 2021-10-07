@@ -113,7 +113,7 @@
 /datum/ritual/cruciform/lemniscate/long_boost
 	name = "Long boost ritual"
 	phrase = null
-	desc = "This litany boosts the stats of everyone who's hear you on the short time. "
+	desc = "This litany boosts the stats of everyone who's hear you on the short time."
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	effect_time = 30 MINUTES
@@ -125,7 +125,7 @@
 
 /datum/ritual/cruciform/lemniscate/long_boost/New()
 	..()
-	desc = "This litany boosts [get_stats_to_text()] stats of evryone who hears you, for about thirty minutes."
+	desc = "This litany boosts [get_stats_to_text()] stats of everyone who hears you, for about thirty minutes."
 
 /datum/ritual/cruciform/lemniscate/long_boost/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/people_around = list()
