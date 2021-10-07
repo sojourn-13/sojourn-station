@@ -1031,7 +1031,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "ej" = (
 /obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "ek" = (
@@ -1074,7 +1074,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "es" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/one_star/fo_outside)
 "et" = (
@@ -1141,7 +1141,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "eF" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "eG" = (
@@ -2042,7 +2042,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "hS" = (
-/obj/structure/flora/tree/jungle/variant4,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "hT" = (
@@ -2391,10 +2391,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/one_star/fo_outside)
-"ja" = (
-/obj/structure/flora/tree/jungle,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/one_star/fo_outside)
 "jb" = (
 /obj/machinery/door/blast/shutters,
 /turf/simulated/floor/reinforced,
@@ -2448,10 +2444,6 @@
 "jk" = (
 /mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
 /turf/simulated/floor/tiled/derelict,
-/area/nadezhda/outside/one_star/fo_outside)
-"jl" = (
-/obj/structure/flora/tree/jungle/variant1,
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "jm" = (
 /obj/structure/table/onestar,
@@ -2532,10 +2524,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/item/clothing/head/hairflower/yellow,
 /mob/living/carbon/superior_animal/robot/greyson/custodian/chef,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/one_star/fo_outside)
-"jB" = (
-/obj/structure/flora/tree/jungle/variant5,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "jC" = (
@@ -4637,7 +4625,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "qN" = (
-/obj/structure/flora/tree/jungle_small/variant5,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "qO" = (
@@ -43627,7 +43615,7 @@ dv
 dv
 ee
 dv
-ja
+hS
 hC
 iK
 iC
@@ -43635,7 +43623,7 @@ pW
 hC
 hC
 hC
-ja
+hS
 dv
 dv
 dv
@@ -46121,7 +46109,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -47797,7 +47785,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 cV
 bg
@@ -50533,7 +50521,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 cV
 bg
@@ -51228,14 +51216,14 @@ dv
 dv
 iE
 dv
-jB
+hS
 hL
 dH
 dH
 dH
 dH
 dv
-jB
+hS
 hL
 iE
 dv
@@ -52596,14 +52584,14 @@ dv
 dv
 iE
 dv
-jB
+hS
 hL
 dH
 dH
 dH
 dH
 dv
-jB
+hS
 hL
 iE
 dv
@@ -53421,7 +53409,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 cV
 bg
@@ -53964,14 +53952,14 @@ dv
 dv
 iE
 dv
-jB
+hS
 hL
 dH
 dH
 dH
 dH
 dv
-jB
+hS
 hL
 iE
 dv
@@ -55332,14 +55320,14 @@ dv
 dv
 iE
 dv
-jB
+hS
 hL
 dH
 dH
 dH
 dH
 dv
-jB
+hS
 hL
 iE
 dv
@@ -56259,7 +56247,7 @@ cT
 dv
 dv
 dv
-jl
+hS
 dv
 dv
 dv
@@ -56269,7 +56257,7 @@ eg
 dH
 dv
 dv
-jl
+hS
 dv
 dv
 nB
@@ -58087,7 +58075,7 @@ eg
 eg
 dH
 dv
-jB
+hS
 hL
 lg
 dH
@@ -58827,7 +58815,7 @@ dv
 dv
 hi
 dW
-jl
+hS
 dW
 dv
 iE
@@ -58989,7 +58977,7 @@ kR
 dv
 dv
 dv
-jl
+hS
 dv
 dv
 dv
@@ -59641,7 +59629,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -59797,13 +59785,13 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
-jB
+hS
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -60262,7 +60250,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 cV
 bg
 fH
@@ -60402,7 +60390,7 @@ dv
 dv
 dv
 qY
-jB
+hS
 dv
 dv
 qN
@@ -60561,7 +60549,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -61012,7 +61000,7 @@ dv
 dv
 dv
 qN
-jB
+hS
 dv
 dv
 qY
@@ -61166,13 +61154,13 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 qX
 qX
 dv
 dv
-jB
+hS
 dv
 dv
 cV
@@ -61315,10 +61303,10 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
-jB
+hS
 dv
 dv
 qY
@@ -61621,10 +61609,10 @@ qX
 dv
 dv
 dv
-jB
+hS
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -61920,7 +61908,7 @@ cV
 dv
 dv
 dv
-jB
+hS
 dv
 qX
 dv
@@ -61928,11 +61916,11 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 cV
@@ -62074,7 +62062,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -62238,7 +62226,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 cV
 bg
 ca
@@ -62384,9 +62372,9 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
-jB
+hS
 dv
 dv
 dv
@@ -62530,7 +62518,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -62842,7 +62830,7 @@ qY
 qX
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -63140,7 +63128,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 ro
 rs
 ru
@@ -63149,7 +63137,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 cV
 bg
@@ -63300,7 +63288,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 cV
@@ -63745,11 +63733,11 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 qX
 qX
-jB
+hS
 dv
 dv
 qX
@@ -63909,7 +63897,7 @@ qY
 dv
 dv
 dv
-jB
+hS
 dv
 cV
 bg
@@ -64206,7 +64194,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -64355,7 +64343,7 @@ dv
 qX
 qX
 dv
-jB
+hS
 dv
 dv
 dv
@@ -64517,7 +64505,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 cV
 bg
@@ -64665,7 +64653,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 dv
@@ -64964,7 +64952,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 dv
 qX
@@ -64973,7 +64961,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 dv
 cV
 bg
@@ -65414,7 +65402,7 @@ bn
 ac
 cV
 dv
-jB
+hS
 dv
 dv
 dv
@@ -65430,7 +65418,7 @@ dv
 dv
 dv
 dv
-jB
+hS
 cV
 cV
 cV

@@ -82,7 +82,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "au" = (
-/obj/structure/flora/tree/jungle_small/variant3,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "av" = (
@@ -90,11 +90,11 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aw" = (
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ax" = (
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ay" = (
@@ -113,14 +113,14 @@
 /turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aC" = (
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aD" = (
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aE" = (
-/obj/structure/flora/tree/jungle_small/variant3,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aF" = (
@@ -128,7 +128,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aG" = (
-/obj/structure/flora/tree/jungle/variant1,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aH" = (
@@ -281,7 +281,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aZ" = (
-/obj/structure/flora/tree/jungle,
+/obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ba" = (
@@ -355,7 +355,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bg" = (
-/obj/structure/flora/tree/jungle_small/variant3,
+/obj/random/flora/small_jungle_tree,
 /obj/structure/railing/grey,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -1450,7 +1450,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge)
 "eq" = (
-/obj/structure/flora/tree/jungle/variant2,
+/obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "er" = (
