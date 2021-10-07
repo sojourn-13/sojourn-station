@@ -34,7 +34,8 @@
 				/obj/item/reagent_containers/syringe/stim/boxer = 0.1,\
 				/obj/item/reagent_containers/syringe/stim/turbo = 0.1,\
 				/obj/item/reagent_containers/syringe/stim/party_drops = 0.05,\
-				/obj/item/reagent_containers/syringe/stim/menace = 0.05))
+				/obj/item/reagent_containers/syringe/stim/menace = 0.05,\
+				/obj/item/psi_injector = 0.05))
 
 /obj/random/medical/low_chance
 	name = "low chance random medicine"
