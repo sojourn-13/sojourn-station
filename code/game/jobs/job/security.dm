@@ -407,11 +407,10 @@
 		STAT_VIG = 20,
 	)
 
-	perks = list(/datum/perk/codespeak)
+	perks = list(/datum/perk/codespeak, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
-							 /datum/computer_file/program/camera_monitor,
-							 /datum/perk/chem_contraband)
+							 /datum/computer_file/program/camera_monitor)
 
 	description = "The Marshal Officer forms the brunt of the Marshals, internally enforcing law and keeping the peace.<br>\
 	You are expected to be a problem solver who can descalate situations, reach peaceful agreements, and maintain public trust.<br>\
