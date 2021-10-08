@@ -116,7 +116,8 @@ Class Procs:
 	var/interact_offline = FALSE // Can the machine be interacted with while de-powered.
 	var/obj/item/circuitboard/circuit = null
 	var/frame_type = FRAME_DEFAULT
-
+	var/anchor_direction = null //The immediate directions an object can be anchored to a machine. If null, any direction is allowed.
+	var/anchor_type = null //What type of object can be anchored to a machine
 	var/current_power_usage = 0 // How much power are we currently using, dont change by hand, change power_usage vars and then use set_power_use
 	var/area/current_power_area // What area are we powering currently
 

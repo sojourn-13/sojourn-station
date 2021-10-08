@@ -94,6 +94,9 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 	var/power_cost = 250
 
+	anchor_direction = WEST //Direction the bidon can should be anchored in
+	anchor_type = /obj/structure/reagent_dispensers/bidon //Allows a bidon can to be anchored to this.
+
 
 	//Disposals info
 	var/datum/gas_mixture/air_contents	// internal reservoir
@@ -631,7 +634,8 @@ and which aren't.
 
 	if(linked_cloner)
 		for(var/obj/structure/reagent_dispensers/bidon/adjacent_bidon in orange(1,linked_cloner))
-			linked_bidon = adjacent_bidon
+			if(adjacent_bidon.anchored_machine == linked_cloner)
+				linked_bidon = adjacent_bidon
 	menuOption = VAT_MENU_SELECT
 	SSnano.update_uis(src) // update all UIs attached to src
 
