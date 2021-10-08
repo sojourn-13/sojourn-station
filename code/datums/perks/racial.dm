@@ -306,6 +306,8 @@
 	desc = "You retrieve your custom kitted medical webbing hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This tool belt is yours alone and you should not allow any non-opifex to use it."
 	active = FALSE
 	passivePerk = FALSE
+	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
+	
 
 /datum/perk/opifex_backup_medical/activate()
 	var/mob/living/carbon/human/user = usr

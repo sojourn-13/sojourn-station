@@ -41,6 +41,7 @@
 	taste_description = "money"
 	reagent_state = LIQUID
 	color = "#0C0C0C"
+	common = TRUE //Identifiable on sight
 
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
@@ -187,6 +188,7 @@
 	color = "#669900"
 	metabolism = REM
 	strength = 0.04
+	illegal = TRUE
 
 /datum/reagent/toxin/zombiepowder/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -212,6 +214,7 @@
 	reagent_state = LIQUID
 	strength = 0.01 // It's not THAT poisonous.
 	color = "#664330"
+	common = TRUE
 
 /datum/reagent/toxin/fertilizer/eznutrient
 	name = "EZ Nutrient"
@@ -263,6 +266,7 @@
 	color = "#8E18A9"
 	power = 10
 	meltdose = 4
+	illegal = TRUE
 
 
 /datum/reagent/toxin/lexorin
@@ -320,6 +324,7 @@
 	taste_mult = 1.3
 	reagent_state = LIQUID
 	color = "#801E28"
+	illegal = TRUE
 
 /datum/reagent/medicine/slimejelly/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(10))
@@ -366,6 +371,7 @@
 	color = "#000067"
 	metabolism = REM * 5
 	overdose = REAGENTS_OVERDOSE * 0.5
+	illegal = TRUE
 
 /datum/reagent/medicine/chloralhydrate/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/effective_dose = dose
@@ -396,6 +402,7 @@
 	glass_name = "beer"
 	glass_desc = "A freezing pint of beer"
 	glass_center_of_mass = list("x"=16, "y"=8)
+	common = TRUE //So people mistakenly believe it is, in fact, beer.
 
 /* Transformations */
 
@@ -667,6 +674,7 @@
 	reagent_state = LIQUID
 	color = "#527f4f"
 	strength = 0.3
+	common = TRUE //Church should know if they actually have biomatter or something else.
 
 /datum/reagent/toxin/biomatter/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -738,6 +746,7 @@
 	reagent_state = LIQUID
 	strength = 0.8
 	overdose = REAGENTS_OVERDOSE/2
+	illegal = TRUE
 
 /datum/reagent/toxin/combat/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()

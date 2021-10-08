@@ -45,6 +45,7 @@
 	description = "A silvery white and ductile member of the boron group of chemical elements."
 	reagent_state = SOLID
 	color = "#A8A8A8"
+	common = TRUE //Identifiable on sight
 
 /datum/reagent/toxin/ammonia
 	name = "Ammonia"
@@ -55,6 +56,7 @@
 	reagent_state = LIQUID
 	color = "#404030"
 	metabolism = REM * 0.5
+	common = TRUE //Identifiable by smell
 
 /datum/reagent/toxin/ammonia/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.adjustToxLoss(effect_multiplier * 0.15)
@@ -94,6 +96,7 @@
 	description = "A highly ductile metal."
 	taste_description = "copper"
 	color = "#6E3B08"
+	common = TRUE //Identifiable on sight
 
 /datum/reagent/ethanol
 	name = "Ethanol" //Parent class for all alcoholic reagents.
@@ -114,6 +117,7 @@
 	var/targ_temp = 310
 	var/halluci = 0
 	var/sanity_gain_ingest = 0.5
+	common = TRUE //All alchoholic reagents can be ID'd pretty easily
 
 	glass_icon_state = "glass_clear"
 	glass_name = "ethanol"
@@ -256,6 +260,8 @@
 	taste_mult = 0 //mercury apparently is tasteless. IDK
 	reagent_state = LIQUID
 	color = "#484848"
+	common = TRUE //everyone knows what mercury looks like
+	
 
 /datum/reagent/metal/mercury/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -443,6 +449,7 @@
 	glass_icon_state = "iceglass"
 	glass_name = "sugar"
 	glass_desc = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
+	common = TRUE //everyone knows what sugar is
 
 /datum/reagent/organic/sugar/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.adjustNutrition(4 * effect_multiplier)
@@ -455,6 +462,7 @@
 	reagent_state = SOLID
 	color = "#BF8C00"
 	reagent_type = "Reactive nonmetal"
+	common = TRUE //everyone knows this smell
 
 /datum/reagent/metal/tungsten
 	name = "Tungsten"

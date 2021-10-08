@@ -47,7 +47,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 
 	outfit_type = /decl/hierarchy/outfit/job/cargo/merchant
 
-	perks = list(/datum/perk/timeismoney, /datum/perk/market_prof)
+	perks = list(/datum/perk/timeismoney, /datum/perk/market_prof, /datum/perk/bartender, /datum/perk/chem_contraband)
 
 /obj/landmark/join/start/merchant
 	name = "Chief Executive Officer"

@@ -32,6 +32,7 @@
 	overdose = REAGENTS_OVERDOSE
 	addiction_chance = 100
 	sanity_gain = 1.5
+	illegal = TRUE
 
 /datum/reagent/drug/space_drugs/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.druggy = max(M.druggy, 15 * effect_multiplier)
@@ -72,6 +73,7 @@
 	metabolism = REM * 0.5
 	overdose = REAGENTS_OVERDOSE
 	sanity_gain = 1
+	illegal = TRUE
 
 /datum/reagent/drug/cryptobiolin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.make_dizzy(4 * effect_multiplier)
@@ -88,6 +90,7 @@
 	color = "#C8A5DC"
 	overdose = REAGENTS_OVERDOSE
 	sanity_gain = 1
+	illegal = TRUE
 
 /datum/reagent/drug/impedrezene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.jitteriness = max(M.jitteriness - (5 * effect_multiplier), 0)
@@ -109,6 +112,7 @@
 	color = "#B31008"
 	metabolism = REM * 0.25
 	overdose = REAGENTS_OVERDOSE
+	illegal = TRUE
 
 /datum/reagent/drug/mindbreaker/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.hallucination(50 * effect_multiplier, 50 * effect_multiplier)
