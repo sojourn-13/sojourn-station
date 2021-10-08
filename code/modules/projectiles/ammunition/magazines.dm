@@ -773,32 +773,42 @@
 /obj/item/ammo_magazine/m12
 	name = "20mm ammo drum (sabot slug)"
 	desc = "A 20mm ammo drum for the Pug Shotgun or Payload Rifle, holds 8 shells"
-	icon_state = "m12_slug"
+	icon_state = "m12_hv"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 6)
-	multiple_sprites = 1
 	max_ammo = 8
-	ammo_color = "-slug"
+	ammo_color = "-hv"
+
+/obj/item/ammo_magazine/m12/update_icon()
+	cut_overlays()
+	if(stored_ammo.len)
+		var/obj/item/ammo_casing/AC = stored_ammo[1] //look at next casing.
+		overlays += "m12_shell_[AC.shell_color]" //look and display the overlay for the ammo
+
+/obj/item/ammo_magazine/m12/Initialize()
+	. = ..()
+	update_icon()
 
 /obj/item/ammo_magazine/m12/empty
 	icon_state = "m12"
 	matter = list(MATERIAL_STEEL = 2)
 	initial_ammo = 0
+	ammo_color = ""
 
 /obj/item/ammo_magazine/m12/pellet
 	name = "20mm ammo drum (buckshot)"
-	icon_state = "m12_pellets"
+	icon_state = "m12_l"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
-	ammo_color = "-pellets"
+	ammo_color = "-l"
 
 /obj/item/ammo_magazine/m12/beanbag
 	name = "20mm ammo drum (beanbag)"
-	icon_state = "m12_beanbag"
+	icon_state = "m12_r"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	ammo_color = "-beanbag"
+	ammo_color = "-r"
 
 /obj/item/ammo_magazine/sbaw
 	name = "20mm SBAW magazine (sabot slug)"

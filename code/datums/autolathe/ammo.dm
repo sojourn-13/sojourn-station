@@ -596,5 +596,13 @@
 
 // Flare Shells
 /datum/design/autolathe/ammo/flare_shell
-	name = "flare shell"
-	build_path = /obj/item/ammo_casing/flare
+	name = ".22 red flare shell"
+	build_path = /obj/item/ammo_casing/flare/prespawn
+
+/datum/design/autolathe/ammo/flare_shell_b
+	name = ".22blue flare shell"
+	build_path = /obj/item/ammo_casing/flare/blue/prespawn
+
+/datum/design/autolathe/ammo/flare_shell_g
+	name = ".22green flare shell"
+	build_path = /obj/item/ammo_casing/flare/green/prespawn
