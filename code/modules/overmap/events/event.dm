@@ -2,6 +2,8 @@
 
 /decl/overmap_event_handler
 	var/list/event_turfs_by_z_level
+	var/last_tick = 0
+	var/obj/jtb_generator/jtb_gen  // jtb generator
 
 /decl/overmap_event_handler/New()
 	..()
@@ -24,25 +26,38 @@
 		if(!candidate_turfs.len)
 //			world << "No candidate_tufs"
 			break
-//		var/overmap_event_type = pick(subtypesof(/datum/overmap_event))
-//		if(!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail) &&
-//		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_medium) &&
-//		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_core))
-//			var/datum/overmap_event/overmap_event = new overmap_event_type
+		var/overmap_event_type = pick(subtypesof(/datum/overmap_event))
+		if(!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail) && \
+		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_medium) && \
+		!ispath(overmap_event_type, /datum/overmap_event/meteor/comet_tail_core))
+			var/datum/overmap_event/overmap_event = new overmap_event_type
 
-//			var/list/event_turfs = acquire_event_turfs(overmap_event.count, overmap_event.radius, candidate_turfs, overmap_event.continuous)
-//			candidate_turfs -= event_turfs
+			var/list/event_turfs = acquire_event_turfs(overmap_event.count, overmap_event.radius, candidate_turfs, overmap_event.continuous)
+			candidate_turfs -= event_turfs
 
-//			for(var/event_turf in event_turfs)
-//				events_by_turf[event_turf] = overmap_event
-//				GLOB.entered_event.register(event_turf, src, /decl/overmap_event_handler/proc/on_turf_entered)
-//				GLOB.exited_event.register(event_turf, src, /decl/overmap_event_handler/proc/on_turf_exited)
+			for(var/event_turf in event_turfs)
+				events_by_turf[event_turf] = overmap_event
+				GLOB.entered_event.register(event_turf, src, /decl/overmap_event_handler/proc/on_turf_entered)
+				GLOB.exited_event.register(event_turf, src, /decl/overmap_event_handler/proc/on_turf_exited)
 
-//				var/obj/effect/overmap_event/event = new(event_turf)
+				var/obj/effect/overmap_event/event = new(event_turf)
 	//			world << "Created new event in [event.loc.x], [event.loc.y]"
-//				event.name = overmap_event.name
-//				event.icon_state = pick(overmap_event.event_icon_states)
-//				event.opacity =  overmap_event.opacity
+				event.name = overmap_event.event_name_stages[3]
+				event.SetIconState("poi")
+				event.icon_stages = list(pick(overmap_event.event_icon_stage0), pick(overmap_event.event_icon_stage1), "poi")
+				event.name_stages = overmap_event.event_name_stages
+				event.opacity =  overmap_event.opacity
+
+	spawn_points_of_interest(candidate_turfs)
+
+/decl/overmap_event_handler/proc/spawn_points_of_interest(var/list/candidate_turfs)
+	var/list/pois = list(/obj/effect/overmap_event/poi/debris, /obj/effect/overmap_event/poi/station)
+	for(var/path in pois)
+		if(!candidate_turfs.len)
+			break
+		var/turf/poi_turf = pick(candidate_turfs)
+		candidate_turfs -= poi_turf
+		new path(poi_turf)
 
 /decl/overmap_event_handler/proc/get_event_turfs_by_z_level(var/z_level)
 	var/z_level_text = num2text(z_level)
@@ -79,7 +94,7 @@
 	if(continuous)
 		fitting_turfs = origin_turf.CardinalTurfs(FALSE)
 	else
-		fitting_turfs = trange(range, origin_turf)
+		fitting_turfs = RANGE_TURFS(range, origin_turf)
 	fitting_turfs = shuffle(fitting_turfs)
 	for(var/turf/T in fitting_turfs)
 		if(T in candidate_turfs)
@@ -119,13 +134,82 @@
 			return
 		new_event.enter(entering_ship)
 
+/decl/overmap_event_handler/proc/scan_loc(var/obj/effect/overmap/ship/S, var/turf/new_loc, var/can_scan, var/stage_2_width = 1)
+	
+	if(!can_scan) // No active scanner
+		// Everything is stage 2 (too far for sensors)
+		for(var/turf/T in range(S.scan_range+1, new_loc))
+			for(var/obj/effect/overmap_event/E in T)
+				E.name = E.name_stages[3]
+				E.SetIconState(E.icon_stages[3])
+	else
+		var/passive_scan = (world.time - last_tick) > PASSIVE_SCAN_PERIOD
+		if(passive_scan)
+			last_tick = world.time
+
+		// Scanning sound
+		if(passive_scan)
+			playsound(new_loc, 'sound/effects/fastbeep.ogg', 100, 1)
+			if(S.nav_control)
+				var/obj/machinery/computer/helm/H = S.nav_control
+				if(H.manual_control)  // if someone is manually controling the ship with the helm console
+					playsound(H.loc, 'sound/effects/fastbeep.ogg', 50, 1)
+
+		// Stage 0 (close range)
+		for(var/turf/T in circlerange(new_loc, S.scan_range-1))
+			for(var/obj/effect/overmap_event/E in T)
+				E.name = E.name_stages[1]
+				if(!passive_scan)
+					E.SetIconState(E.icon_stages[1])  // No outline
+				else					
+					E.SetIconState(E.icon_stages[1] + "_g")  // Green outline
+			for(var/obj/effect/overmap/E in T)
+				E.name = E.name_stages[1]
+				if((!passive_scan) || istype(E, /obj/effect/overmap/sector/exoplanet))
+					E.SetIconState(E.icon_stages[1])  // No outline
+				else					
+					E.SetIconState(E.icon_stages[1] + "_g")  // Green outline
+
+		// Stage 1 (limit range)
+		for(var/turf/T in getcircle(new_loc, S.scan_range))
+			for(var/obj/effect/overmap_event/E in T)
+				E.name = E.name_stages[2]
+				E.SetIconState(E.icon_stages[2])
+			for(var/obj/effect/overmap/E in T)
+				E.name = E.name_stages[2]
+				E.SetIconState(E.icon_stages[2])
+
+		// Stage 2 (too far for sensors)
+		for(var/i in 1 to stage_2_width)
+			for(var/turf/T in getcircle(new_loc, S.scan_range + i))
+				for(var/obj/effect/overmap_event/E in T)
+					E.name = E.name_stages[3]
+					E.SetIconState(E.icon_stages[3])
+				for(var/obj/effect/overmap/E in T)
+					E.name = E.name_stages[3]
+					E.SetIconState(E.icon_stages[3])
+
+	return
+
+// Reveal a point of interest if the ship is standing on it on the overmap
+/decl/overmap_event_handler/proc/scan_poi(var/obj/effect/overmap/ship/S, var/turf/my_loc)
+	for(var/obj/effect/overmap_event/poi/E in get_turf(my_loc))
+		E.reveal()
+	return
+
 // We don't subtype /obj/effect/overmap because that'll create sections one can travel to
 //  And with them "existing" on the overmap Z-level things quickly get odd.
 /obj/effect/overmap_event
-	name = "event"
+	name = "unknown spatial phenomenon"
 	icon = 'icons/obj/overmap.dmi'
-	icon_state = "event"
+	icon_state = "poi"
 	opacity = 1
+
+	// Stage 0: close, well scanned by sensors
+	// Stage 1: medium, barely scanned by sensors
+	// Stage 2: far, not scanned by sensors
+	var/list/name_stages = list("stage0", "stage1", "stage2")
+	var/list/icon_stages = list("generic", "object", "poi")
 
 /datum/overmap_event
 	var/name = "map event"
@@ -138,17 +222,21 @@
 	var/list/victims
 	var/continuous = TRUE //if it should form continous blob, or can have gaps
 
+	var/list/event_icon_stage0 = list("generic")
+	var/list/event_icon_stage1 = list("object")
+	var/list/event_name_stages = list("name_stage0", "name_stage1", "name_stage2")
+
 /datum/overmap_event/proc/enter(var/obj/effect/overmap/ship/victim)
 //	world << "Ship [victim] encountered [name]"
 	if(!SSevent)
 		admin_notice("<span class='danger'>Event manager not setup.</span>")
 		return
-//	if(victim in victims)
-//		if(!istype(src, /datum/overmap_event/meteor/comet_tail_core) &&
-//		!istype(src, /datum/overmap_event/meteor/comet_tail_medium)  &&
-//		!istype(src, /datum/overmap_event/meteor/comet_tail))
-//			admin_notice("<span class='danger'>Multiple attempts to trigger the same event by [victim] detected.</span>")
-//			return
+	if(victim in victims)
+		if(!istype(src, /datum/overmap_event/meteor/comet_tail_core) && \
+		!istype(src, /datum/overmap_event/meteor/comet_tail_medium)  && \
+		!istype(src, /datum/overmap_event/meteor/comet_tail))
+			admin_notice("<span class='danger'>Multiple attempts to trigger the same event by [victim] detected.</span>")
+			return
 	LAZYADD(victims, victim)
 	//var/datum/event_meta/EM = new(difficulty, "Overmap event - [name]", event, add_to_queue = FALSE, is_one_shot = TRUE)
 	var/datum/event/E = new event(null, difficulty)
@@ -163,23 +251,27 @@
 		var/datum/event/E = victims[victim]
 		E.kill()
 		LAZYREMOVE(victims, victim)
-/*
+
 /datum/overmap_event/meteor
 	name = "asteroid field"
 	event = /datum/event/meteor_wave/overmap
 	count = 15
 	radius = 4
 	continuous = FALSE
-	event_icon_states = list("meteor1", "meteor2", "meteor3", "meteor4")
+	event_icon_stage0 = list("meteors0", "meteors1", "meteors2", "meteors3")
+	event_icon_stage1 = list("field")
+	event_name_stages = list("asteroid field", "unknown field", "unknown spatial phenomenon")
 	difficulty = EVENT_LEVEL_MAJOR
 
 /datum/overmap_event/meteor/comet_tail
-	name = "comet tail further"
+	name = "thin comet tail"
 	event = /datum/event/meteor_wave/overmap/space_comet/mini
 	count = 16
 	radius = 4
 	continuous = FALSE
-	event_icon_states = list("meteor1", "meteor2", "meteor3", "meteor4")
+	event_icon_stage0 = list("dust0", "dust1", "dust2", "dust3")
+	event_icon_stage1 = list("field")
+	event_name_stages = list("thin comet tail", "unknown field", "unknown spatial phenomenon")
 
 /datum/overmap_event/meteor/comet_tail_medium
 	name = "comet tail"
@@ -187,7 +279,9 @@
 	count = 16
 	radius = 4
 	continuous = FALSE
-	event_icon_states = list("meteor1", "meteor2", "meteor3", "meteor4")
+	event_icon_stage0 = list("meteors0", "meteors1", "meteors2", "meteors3")
+	event_icon_stage1 = list("field")
+	event_name_stages = list("comet tail", "unknown field", "unknown spatial phenomenon")
 
 /datum/overmap_event/meteor/comet_tail_core
 	name = "comet core"
@@ -195,39 +289,46 @@
 	count = 16
 	radius = 4
 	continuous = FALSE
-	event_icon_states = list("meteor1", "meteor2", "meteor3", "meteor4")
+	event_icon_stage0 = list("asteroid0", "asteroid1", "asteroid2", "asteroid3")
+	event_icon_stage1 = list("object")
+	event_name_stages = list("comet core", "unknown object", "unknown spatial phenomenon")
 
 /datum/overmap_event/meteor/enter(var/obj/effect/overmap/ship/victim)
 	..()
 	if(victims[victim])
 		var/datum/event/meteor_wave/overmap/E = victims[victim]
 		E.victim = victim
-*/
+
 /datum/overmap_event/electric
 	name = "electrical storm"
 	event = /datum/event/electrical_storm
 	count = 11
 	radius = 3
 	opacity = 0
-	event_icon_states = list("electrical1", "electrical2", "electrical3", "electrical4")
+	event_icon_stage0 = list("electrical0", "electrical1", "electrical2", "electrical3")
+	event_icon_stage1 = list("field")
+	event_name_stages = list("electrical storm", "unknown field", "unknown spatial phenomenon")
 	difficulty = EVENT_LEVEL_MAJOR
 
-/*
 /datum/overmap_event/dust
 	name = "dust cloud"
 	event = /datum/event/dust
 	count = 16
 	radius = 4
-	event_icon_states = list("dust1", "dust2", "dust3", "dust4")
-*/
+	event_icon_stage0 = list("dust0", "dust1", "dust2", "dust3")
+	event_icon_stage1 = list("field")
+	event_name_stages = list("dust cloud", "unknown field", "unknown spatial phenomenon")
+
 /datum/overmap_event/ion
 	name = "ion cloud"
 	event = /datum/event/ionstorm
 	count = 8
 	radius = 3
 	opacity = 0
-	event_icon_states = list("ion1", "ion2", "ion3", "ion4")
-/*
+	event_icon_stage0 = list("ion0", "ion1", "ion2", "ion3")
+	event_icon_stage1 = list("field")
+	event_name_stages = list("ion cloud", "unknown field", "unknown spatial phenomenon")
+
 /datum/overmap_event/carp
 	name = "carp shoal"
 	event = /datum/event/carp_migration
@@ -236,11 +337,85 @@
 	opacity = 0
 	difficulty = EVENT_LEVEL_MODERATE
 	continuous = FALSE
-	event_icon_states = list("carp1", "carp2")
-*/
+	event_icon_stage0 = list("carps_shoal0", "carps_shoal1", "carps_shoal2", "carps_shoal3")
+	event_icon_stage1 = list("field")
+	event_name_stages = list("carp shoal", "unknown field", "unknown spatial phenomenon")
+
 /datum/overmap_event/carp/major
 	name = "carp school"
 	count = 5
 	radius = 4
 	difficulty = EVENT_LEVEL_MAJOR
-	event_icon_states = list("carp3", "carp4")
+	event_icon_stage0 = list("carps_school0", "carps_school1", "carps_school2", "carps_school3")
+	event_icon_stage1 = list("field")
+	event_name_stages = list("carp school", "unknown field", "unknown spatial phenomenon")
+
+
+//////
+// Points of Interest on overmap that the ship has to scan
+//////
+/obj/effect/overmap_event/poi
+	name_stages = list("point of interest", "unknown object", "unknown spatial phenomenon")
+	icon_stages = list("nodata", "nodata", "poi")
+
+	var/revealed = FALSE
+
+/obj/effect/overmap_event/poi/proc/reveal()
+	return
+
+/obj/effect/overmap_event/poi/debris
+
+/obj/effect/overmap_event/poi/debris/reveal()
+	if(revealed)
+		return
+	else
+		revealed = TRUE
+
+	name_stages = list("space wrecks", "unknown ship", "unknown spatial phenomenon")
+	icon_stages = list("spacehulk", "ship", "poi")
+
+	log_game("Space wrecks point of interest has been scanned and revealed.")
+	overmap_event_handler.jtb_gen.add_specific_junk_field("SpaceWrecks")
+	return
+
+/obj/effect/overmap_event/poi/station
+
+/obj/effect/overmap_event/poi/station/reveal()
+	if(revealed)
+		return
+	else
+		revealed = TRUE
+
+	log_game("Trading station point of interest has been scanned and revealed.")
+	SStrade.AddStation(loc)  // Add a new random station at this location
+	qdel(src)  // Clear the POI effect since there is a trading station at that location now
+	return
+
+/obj/effect/overmap_event/poi/blacksite
+	var/obj/effect/overmap/sector/blacksite/linked  // Linked blacksite sector
+
+/obj/effect/overmap_event/poi/blacksite/New(loc, var/obj/effect/overmap/sector/linked_sector)
+	..(loc)
+	linked = linked_sector
+
+/obj/effect/overmap_event/poi/blacksite/Destroy()
+	linked = null
+	. = ..()
+
+/obj/effect/overmap_event/poi/blacksite/reveal()
+	if(revealed)
+		return
+	else
+		revealed = TRUE
+
+	// Blacksite sector is now known and no longer hidden
+	if(linked)
+		linked.known = 1
+		linked.invisibility = 0
+		linked.update_known()
+		log_game("Blacksite point of interest has been scanned and revealed.")
+	else
+		log_world("## ERROR: Blacksite point of interest was not linked to a sector.")
+
+	qdel(src)  // Clear the POI effect since there is a blacksite revealed at that location now
+	return

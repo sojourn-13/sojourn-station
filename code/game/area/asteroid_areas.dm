@@ -6,30 +6,6 @@
 	sound_env = ASTEROID
 	vessel = null
 
-/area/mine/prep
-	name = "Lonestar Mining Prep"
-
-/area/mine/processing
-	name = "Lonestar Ore Processing"
-
-/area/mine/hallway
-	name = "Lonestar General"
-
-/area/mine/medical
-	name = "Lonestar Triage"
-
-/area/mine/livingarea
-	name = "Lonestar Quarters"
-
-/area/mine/atmos
-	name = "Lonestar Atmos"
-
-/area/mine/power
-	name = "Lonestar Machine Room"
-
-/area/mine/lockers
-	name = "Lonestar Locker Room"
-
 /area/mine/explored
 	name = "Mine"
 	icon_state = "explored"
@@ -37,15 +13,6 @@
 /area/mine/unexplored
 	name = "Mine"
 	icon_state = "unexplored"
-	turf_initializer = new /datum/turf_initializer/mining()
-
-/area/mine/gulag
-	name = "Labor Mines"
-	has_gravity = 1
-
-/area/mine/gulag_base
-	name = "Labor Camp"
-	has_gravity = 1
 
 
 // OUTPOSTS
@@ -67,16 +34,18 @@
 	name = "Abandoned Fortress"
 	icon_state = "yellow"
 
-/area/outpost/abandoned_fortress/powered
-	name = "Abandoned Fortress"
-	icon_state = "yellow"
-	requires_power = FALSE
+/area/outpost/blacksite
+	name = "Abandoned Blacksite"
+	icon_state = "away"
 
-/area/outpost/abandoned_fortress/powered_lit
-	name = "Excelsior Fortress"
-	icon_state = "yellow"
-	requires_power = FALSE
-	dynamic_lighting = 0
+/area/outpost/blacksite/small
+	name = "Small Abandoned Blacksite"
+
+/area/outpost/blacksite/medium
+	name = "Medium Abandoned Blacksite"
+
+/area/outpost/blacksite/large
+	name = "Large Abandoned Blacksite"
 
 // Main mining outpost
 /area/outpost/mining_main
@@ -183,3 +152,62 @@
 
 /area/outpost/research/disposal
 	name = "Research Outpost Waste Disposal"
+
+//Prison hulk
+/area/outpost/prisonhulk
+	icon_state = "security"
+
+/area/outpost/prisonhulk/cells
+	name = "Prison Hulk Cells"
+
+/area/outpost/prisonhulk/food
+	name = "Prison Hulk Mess"
+
+/area/outpost/prisonhulk/security
+	name = "Prison Hulk Brig"
+
+/area/outpost/prisonhulk/medical
+	name = "Prison Hulk Infirmary"
+
+/area/outpost/junkyard/
+	icon_state = "away"
+
+/area/outpost/junkyard/ship
+	icon_state = "away1"
+
+/area/outpost/junkyard/ship/canterbury
+	name = "HTU Canterbury"
+
+/area/outpost/junkyard/ship/rocinante
+	name = "NSS Rocinante"
+
+/area/outpost/junkyard/ship/geary
+	name = "MHS Geary"
+
+/area/outpost/junkyard/ship/epstein
+	name = "HTU Epstein"
+
+/area/outpost/junkyard/ship/lehrer
+	name = "HTU Lehrer"
+
+/area/outpost/junkyard/ship/prison
+	name = "IHS Ghislane"
+
+/area/outpost/junkyard/station
+	icon_state = "away2"
+
+/area/outpost/junkyard/station/beta
+	name = "Beta Station"
+
+/area/outpost/junkyard/station/charlie
+	name = "Charlie Station"
+
+/area/outpost/junkyard/station/delta
+	name = "Delta Station"
+
+/area/outpost/junkyard/station/core
+	name = "Delta Station Core"
+
+/area/outpost/junkyard/hermitage
+	icon_state = "away2"
+	name = "Hermitage"

@@ -12,67 +12,70 @@
 /area/template_noop)
 "ad" = (
 /obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/airless,
 /area/template_noop)
 "ae" = (
-/obj/random/scrap/sparse_even/low_chance,
-/turf/simulated/floor/plating/under,
+/obj/spawner/structures/common/low_chance,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "af" = (
-/obj/random/mob/carp,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "ag" = (
 /obj/machinery/door/airlock/maintenance_common{
 	name = "Service Maintenance";
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/techmaint_cargo,
+/turf/simulated/floor/tiled/techmaint_cargo/airless,
 /area/template_noop)
 "ah" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "ai" = (
-/obj/random/junk/low_chance,
-/turf/simulated/floor/plating/under,
+/obj/spawner/junk/low_chance,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aj" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "ak" = (
 /turf/simulated/wall/r_wall,
 /area/template_noop)
 "al" = (
-/obj/random/techpart/low_chance,
-/obj/random/junkfood/rotten,
-/obj/random/junkfood/rotten,
-/obj/random/junkfood/rotten,
-/obj/random/junk/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/electronics/low_chance,
+/obj/spawner/junkfood/rotten,
+/obj/spawner/junkfood/rotten,
+/obj/spawner/junkfood/rotten,
+/obj/spawner/junk/low_chance,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "am" = (
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "an" = (
 /turf/simulated/wall,
 /area/template_noop)
 "ao" = (
-/obj/structure/scrap/poor/large,
-/turf/simulated/floor/plating/under,
+/obj/spawner/scrap/sparse,
+/turf/simulated/floor/plating/under/airless,
+/area/template_noop)
+"ap" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "aq" = (
-/obj/random/techpart/low_chance,
-/turf/simulated/floor/plating/under,
+/obj/spawner/scrap/sparse/low_chance,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "ar" = (
-/obj/random/mob/carp,
+/mob/living/simple_animal/hostile/carp,
 /turf/template_noop,
 /area/template_noop)
 "as" = (
-/mob/living/simple_animal/hostile/carp/baby,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/scrap/sparse,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "at" = (
 /obj/structure/railing{
@@ -90,94 +93,98 @@
 /turf/template_noop,
 /area/template_noop)
 "av" = (
-/obj/random/pack/tech_loot/low_chance,
-/obj/random/pack/tech_loot/low_chance,
-/turf/simulated/floor/plating/under,
+/obj/spawner/pack/machine,
+/obj/spawner/pack/tech_loot/low_chance,
+/obj/spawner/pack/tech_loot/low_chance,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aw" = (
-/obj/random/booze/low_chance,
-/obj/random/booze/low_chance,
-/turf/simulated/floor/plating/under,
+/obj/spawner/pack/machine,
+/obj/spawner/booze/low_chance,
+/obj/spawner/booze/low_chance,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "ax" = (
-/turf/simulated/floor/tiled/techmaint_panels,
+/obj/spawner/pack/machine,
+/turf/simulated/floor/tiled/techmaint_panels/airless,
 /area/template_noop)
 "ay" = (
 /obj/machinery/light/small,
-/obj/structure/scrap/poor/large,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/scrap/sparse,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "az" = (
-/obj/random/traps,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/traps,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "aA" = (
-/obj/structure/lattice,
-/obj/structure/scrap_cube,
-/turf/template_noop,
+/mob/living/simple_animal/hostile/bear,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aB" = (
-/obj/structure/scrap/poor/large,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/scrap/dense,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "aC" = (
 /obj/structure/table/rack,
-/obj/random/contraband/low_chance,
-/obj/random/tank,
-/obj/random/tank,
-/turf/simulated/floor/plating/under,
+/obj/spawner/contraband/low_chance,
+/obj/spawner/tank,
+/obj/spawner/tank,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aD" = (
-/turf/simulated/floor/plating/under,
+/obj/spawner/pack/machine,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aE" = (
-/obj/random/scrap/sparse_even/low_chance,
-/obj/structure/scrap/poor/large,
-/turf/simulated/floor/tiled/techmaint,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/spawner/pack/machine,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aF" = (
-/obj/random/lowkeyrandom/low_chance,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled/steel/airless,
 /area/template_noop)
 "aG" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aH" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aI" = (
 /obj/structure/table/rack,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot,
-/turf/simulated/floor/tiled/techmaint_panels,
+/obj/spawner/pack/tech_loot,
+/obj/spawner/pack/tech_loot,
+/obj/spawner/pack/tech_loot,
+/obj/spawner/pack/tech_loot,
+/turf/simulated/floor/tiled/techmaint_panels/airless,
 /area/template_noop)
 "aJ" = (
-/obj/random/junk/low_chance,
+/obj/spawner/junk/low_chance,
 /obj/machinery/light/small,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aK" = (
 /obj/structure/table/rack/shelf,
-/obj/random/lowkeyrandom/low_chance,
-/obj/random/lowkeyrandom/low_chance,
-/obj/random/pack/tech_loot/low_chance,
-/obj/random/pack/tech_loot/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/lowkeyrandom/low_chance,
+/obj/spawner/lowkeyrandom/low_chance,
+/obj/spawner/pack/tech_loot/low_chance,
+/obj/spawner/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "aL" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/scrap/poor/large,
-/turf/simulated/floor/plating/under,
+/obj/spawner/scrap/dense,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aM" = (
 /obj/structure/catwalk,
@@ -186,7 +193,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aN" = (
 /obj/machinery/door/firedoor,
@@ -207,7 +214,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/techmaint_cargo,
+/turf/simulated/floor/tiled/techmaint_cargo/airless,
 /area/template_noop)
 "aO" = (
 /obj/structure/railing{
@@ -223,7 +230,7 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aQ" = (
 /obj/machinery/door/airlock/maintenance_common{
@@ -235,11 +242,16 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/techmaint_cargo,
+/turf/simulated/floor/tiled/techmaint_cargo/airless,
 /area/template_noop)
 "aR" = (
-/obj/random/scrap/sparse_even/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aS" = (
 /obj/machinery/light/small{
@@ -251,25 +263,25 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aT" = (
-/obj/random/junk/low_chance,
+/obj/spawner/junk/low_chance,
 /obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aU" = (
-/obj/random/junk/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/junk/low_chance,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "aV" = (
-/obj/random/junk/low_chance,
-/turf/simulated/floor/tiled/steel,
+/obj/spawner/junk/low_chance,
+/turf/simulated/floor/tiled/steel/airless,
 /area/template_noop)
 "aW" = (
 /obj/machinery/light/small{
@@ -280,43 +292,39 @@
 	icon_state = "0-4"
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aX" = (
 /obj/structure/girder,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "aY" = (
-/mob/living/simple_animal/hostile/carp/baby,
-/turf/simulated/floor/plating/under,
+/obj/spawner/scrap/dense,
+/turf/simulated/floor/tiled/steel/gray_platform/airless,
 /area/template_noop)
 "aZ" = (
-/obj/random/junk/low_chance,
+/obj/spawner/junk/low_chance,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "ba" = (
 /obj/structure/table/rack,
-/obj/random/pack/tech_loot,
-/obj/random/boxes,
-/turf/simulated/floor/tiled/steel/gray_platform,
+/obj/spawner/pack/tech_loot,
+/obj/spawner/boxes,
+/turf/simulated/floor/tiled/steel/gray_platform/airless,
 /area/template_noop)
 "bb" = (
-/obj/random/mob/carp,
-/turf/simulated/floor/tiled/steel,
+/mob/living/simple_animal/hostile/carp,
+/turf/simulated/floor/tiled/steel/airless,
 /area/template_noop)
 "bc" = (
-/obj/structure/scrap/poor/large,
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/template_noop)
-"bd" = (
-/obj/random/scrap/sparse_even/low_chance,
-/turf/simulated/floor/tiled/techmaint_panels,
+/obj/spawner/scrap/sparse,
+/turf/simulated/floor/tiled/steel/gray_platform/airless,
 /area/template_noop)
 "be" = (
 /obj/structure/cable/green{
@@ -325,97 +333,47 @@
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk,
-/obj/random/mob/carp,
-/turf/simulated/floor/plating/under,
+/mob/living/simple_animal/hostile/carp,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "bf" = (
 /obj/structure/table/rack,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot,
-/obj/random/boxes,
-/turf/simulated/floor/plating/under,
+/obj/spawner/pack/tech_loot,
+/obj/spawner/pack/tech_loot,
+/obj/spawner/boxes,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "bg" = (
-/turf/simulated/floor/tiled/steel/gray_platform,
+/obj/spawner/pack/machine,
+/turf/simulated/floor/tiled/steel/gray_platform/airless,
 /area/template_noop)
 "bh" = (
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot,
+/obj/spawner/pack/tech_loot,
+/obj/spawner/pack/tech_loot,
 /obj/structure/table/rack,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "bi" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/airless,
 /area/template_noop)
 "bj" = (
 /obj/structure/table/standard,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot,
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/template_noop)
-"bk" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/mob/living/simple_animal/hostile/carp/baby,
-/turf/simulated/floor/plating/under,
-/area/template_noop)
-"bl" = (
-/obj/random/mob/carp,
-/turf/simulated/floor/tiled/techmaint,
-/area/template_noop)
-"da" = (
-/obj/random/junk/low_chance,
-/turf/template_noop,
-/area/template_noop)
-"dn" = (
-/obj/structure/lattice,
-/obj/random/lowkeyrandom/low_chance,
-/turf/template_noop,
-/area/template_noop)
-"pF" = (
-/obj/random/structures/low_chance,
-/turf/template_noop,
-/area/template_noop)
-"rE" = (
-/obj/random/lowkeyrandom/low_chance,
-/turf/template_noop,
+/obj/item/folder/blue,
+/obj/item/hand_labeler,
+/obj/spawner/pack/tech_loot,
+/obj/spawner/pack/tech_loot,
+/turf/simulated/floor/tiled/steel/gray_platform/airless,
 /area/template_noop)
 "tL" = (
 /obj/effect/decal/cleanable/blood/oil,
-/turf/simulated/floor/plating/under,
-/area/template_noop)
-"Bx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/scrap/poor/large,
-/turf/simulated/floor/plating/under,
-/area/template_noop)
-"HT" = (
-/obj/structure/lattice,
-/obj/random/junk/low_chance,
-/turf/template_noop,
-/area/template_noop)
-"LF" = (
-/obj/random/lowkeyrandom/low_chance,
-/turf/simulated/floor/plating/under,
-/area/template_noop)
-"LP" = (
-/obj/random/mob/carp,
-/turf/simulated/floor/tiled/techmaint_panels,
-/area/template_noop)
-"RB" = (
-/obj/random/lowkeyrandom/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 
 (1,1,1) = {"
 aa
-rE
+aa
 aa
 aa
 ab
@@ -437,14 +395,14 @@ aa
 aa
 ab
 ab
-aD
+af
 ab
 "}
 (2,1,1) = {"
 aa
 aa
 ab
-ae
+af
 aX
 aX
 aa
@@ -452,7 +410,7 @@ aa
 aa
 aa
 aa
-da
+aa
 aa
 aa
 aa
@@ -468,23 +426,23 @@ aX
 ab
 "}
 (3,1,1) = {"
-da
 aa
-pF
+aa
+aa
 aa
 ao
 ab
 ab
 aa
-da
-pF
+aa
+aa
 aa
 aa
 aa
 aa
 aa
 aX
-aD
+af
 aU
 ak
 ab
@@ -504,20 +462,20 @@ aa
 aa
 aa
 aa
-rE
 aa
-ar
 aa
-pF
 aa
-dn
-ae
+aa
+aa
+aa
+ab
+af
 ax
 ak
-da
+aa
 ab
-bl
-aD
+am
+af
 ab
 aa
 "}
@@ -525,10 +483,10 @@ aa
 aa
 aa
 aa
-dn
 ab
-pF
-da
+ab
+aa
+aa
 aa
 aa
 aa
@@ -538,8 +496,8 @@ aa
 aa
 aa
 ab
-aD
-bl
+af
+ap
 ak
 aa
 ab
@@ -551,13 +509,13 @@ aa
 (6,1,1) = {"
 aa
 aa
-HT
 ab
 ab
-ar
+ab
 aa
 aa
-da
+aa
+aa
 aa
 aX
 aH
@@ -581,14 +539,14 @@ ab
 ab
 aa
 ab
-dn
+ab
 aa
 aa
 aa
 aa
 aX
 ai
-aD
+af
 ak
 ab
 aa
@@ -596,10 +554,10 @@ ak
 aV
 ba
 bf
-dn
+ab
 aa
 aa
-da
+aa
 aa
 "}
 (8,1,1) = {"
@@ -614,15 +572,15 @@ aX
 ab
 aa
 ak
-aD
+af
 af
 ak
 ab
-HT
+ab
 ak
 aV
-aD
-aD
+af
+af
 ab
 ab
 ab
@@ -632,7 +590,7 @@ aa
 (9,1,1) = {"
 aa
 ab
-aq
+ae
 al
 ak
 ak
@@ -641,7 +599,7 @@ aX
 ab
 ab
 an
-ae
+af
 aJ
 aX
 ab
@@ -649,8 +607,8 @@ ab
 ak
 aF
 bb
-aD
-ae
+af
+af
 aX
 ab
 aa
@@ -660,21 +618,21 @@ aa
 aa
 ab
 af
-RB
 am
-aB
-aD
-aD
-aD
+ap
+as
+af
+af
+af
 aX
 ak
 ai
-aD
+af
 ab
 aa
 ab
 ak
-bc
+aY
 bc
 bg
 bj
@@ -695,7 +653,7 @@ an
 an
 ak
 aD
-aD
+af
 ab
 ai
 aX
@@ -716,14 +674,14 @@ aa
 ab
 ab
 aa
-da
+aa
 aa
 ac
 ay
 ak
-aH
+aE
 ab
-dn
+ab
 aj
 ak
 aL
@@ -748,14 +706,14 @@ at
 au
 az
 ag
-aD
-aA
+af
 ab
-aD
+ab
+af
 ag
-aD
+af
 aO
-da
+aa
 aa
 aa
 aa
@@ -765,36 +723,36 @@ aa
 aa
 "}
 (14,1,1) = {"
-da
+aa
 ac
-Bx
-aD
-aD
-aD
+ah
+af
+af
+af
 am
-RB
+am
 am
 ak
 ai
-aY
-aD
+af
+af
 ai
 an
 aX
 aa
 aa
 ai
-LF
+af
 aa
 aa
-da
+aa
 aa
 aa
 "}
 (15,1,1) = {"
 aa
 ac
-aD
+af
 an
 an
 an
@@ -810,8 +768,8 @@ ab
 aa
 aa
 aX
-as
-aD
+am
+af
 aO
 aa
 aa
@@ -821,13 +779,13 @@ aa
 (16,1,1) = {"
 aa
 ac
-ae
+af
 an
 aq
 aq
 an
 ao
-aD
+aA
 an
 an
 an
@@ -848,10 +806,10 @@ aa
 (17,1,1) = {"
 aa
 aa
-aD
+af
 ad
-aD
-ae
+af
+af
 an
 av
 ab
@@ -859,7 +817,7 @@ ao
 an
 ab
 aa
-ao
+af
 aa
 aa
 aX
@@ -868,7 +826,7 @@ aQ
 aX
 aX
 aX
-rE
+aa
 aa
 aa
 "}
@@ -884,7 +842,7 @@ aw
 ab
 aC
 an
-rE
+aa
 aa
 aa
 ab
@@ -912,7 +870,7 @@ an
 an
 aX
 aa
-da
+aa
 ab
 ao
 an
@@ -923,7 +881,7 @@ ak
 ab
 ab
 ab
-da
+aa
 aa
 "}
 (20,1,1) = {"
@@ -934,16 +892,16 @@ ag
 ab
 ab
 ag
-as
-RB
-aR
+am
+am
+am
 aG
 ab
 aa
-aD
+af
 ao
 an
-bk
+aR
 aO
 aa
 ak
@@ -962,19 +920,19 @@ aa
 ab
 aX
 ax
-aB
 as
-aD
+am
+af
 ab
 ab
-aD
-bd
+af
+ax
 an
 aS
 aO
 aa
 bi
-da
+aa
 aa
 ab
 aa
@@ -983,22 +941,22 @@ aa
 (22,1,1) = {"
 aa
 aa
-aD
+af
 ad
 ar
-da
+aa
 an
 an
 an
 an
 ag
 an
-LP
-am
+ax
+ap
 aK
 aX
 ab
-da
+aa
 aa
 bi
 ab
@@ -1016,9 +974,9 @@ aa
 ab
 ab
 an
-aE
+aB
 am
-aD
+af
 an
 an
 an
@@ -1035,7 +993,7 @@ ab
 aa
 "}
 (24,1,1) = {"
-da
+aa
 ab
 ab
 an
@@ -1047,12 +1005,12 @@ an
 an
 ai
 aG
-aD
-ao
-aD
+af
+af
+af
 aM
 aT
-rE
+aa
 aa
 aX
 ab
@@ -1064,7 +1022,7 @@ ab
 (25,1,1) = {"
 aa
 ab
-aD
+af
 aX
 aX
 aX
@@ -1084,7 +1042,7 @@ aa
 aa
 ab
 ab
-aD
+af
 ab
 aa
 "}

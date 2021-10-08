@@ -1,10 +1,12 @@
+#define NAVIGATION_VIEW_RANGE 10
+
 /obj/machinery/computer/helm
 	name = "helm control console"
 	icon_state = "computer"
 	icon_keyboard = "teleport_key"
 	icon_screen = "eris_control"
 	light_color = COLOR_LIGHTING_CYAN_MACHINERY
-	circuit = /obj/item/circuitboard/helm
+	circuit = /obj/item/electronics/circuitboard/helm
 	var/obj/effect/overmap/ship/linked			//connected overmap object
 	var/autopilot = 0
 	var/manual_control = 0
@@ -17,17 +19,22 @@
 	. = ..()
 	linked = map_sectors["[z]"]
 	get_known_sectors()
-	//new /obj/effect/overmap_event/movable/comet()
+	new /obj/effect/overmap_event/movable/comet()
+
+	if (isnull(linked))
+		error("There are no map_sectors on [src]'s z.")
+		return
+	linked.check_link()
 
 /obj/machinery/computer/helm/proc/get_known_sectors()
 	var/area/overmap/map = locate() in world
 	for(var/obj/effect/overmap/sector/S in map)
 		if (S.known)
 			var/datum/data/record/R = new()
-			R.fields["name"] = S.name
+			R.fields["name"] = S.name_stages[1]
 			R.fields["x"] = S.x
 			R.fields["y"] = S.y
-			known_sectors[S.name] = R
+			known_sectors[S.name_stages[1]] = R
 
 /obj/machinery/computer/helm/Process()
 	..()
@@ -59,13 +66,11 @@
 		if (!manual_control)
 			user.reset_view(user.eyeobj)
 		return 0
-	if (!manual_control)
-		return -1
-	if (!get_dist(user, src) > 1 || user.blinded || !linked )
+	if (!manual_control || (!get_dist(user, src) > 1) || user.blinded || !linked )
 		return -1
 	return 0
 
-/obj/machinery/computer/helm/attack_hand(var/mob/user as mob)
+/obj/machinery/computer/helm/attack_hand(mob/user)
 
 	if(..())
 		user.unset_machine()
@@ -74,12 +79,20 @@
 
 	if(!isAI(user))
 		user.set_machine(src)
+
 	if(linked && manual_control)
 		user.reset_view(linked)
+		user.client.view = "[2*NAVIGATION_VIEW_RANGE+1]x[2*NAVIGATION_VIEW_RANGE+1]"
 
-	nano_ui_interact(user)
+	else if(!config.use_overmap && user?.client?.holder)
+		// Let the new developers know why the helm console is unresponsive
+		// (it's disabled by default on local server to make it start a bit faster)
+		to_chat(user, "NOTE: overmap generation is disabled in server configuration.")
+		to_chat(user, "To use overmap, make sure that \"config.txt\" file is present in the server config folder and \"USE_OVERMAP\" is uncommented.")
 
-/obj/machinery/computer/helm/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+	ui_interact(user)
+
+/obj/machinery/computer/helm/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(!linked)
 		return
 
@@ -102,6 +115,8 @@
 	data["autopilot"] = autopilot
 	data["manual_control"] = manual_control
 	data["canburn"] = linked.can_burn()
+	data["canpulse"] = linked.can_pulse()
+	data["canscanpoi"] = linked.can_scan_poi()
 
 	if(linked.get_speed())
 		data["ETAnext"] = "[round(linked.ETA()/10)] seconds"
@@ -136,7 +151,7 @@
 
 	if (href_list["add"])
 		var/datum/data/record/R = new()
-		var/sec_name = input("Input naviation entry name", "New navigation entry", "Sector #[known_sectors.len]") as text
+		var/sec_name = sanitize(input("Input naviation entry name", "New navigation entry", "Sector #[known_sectors.len]") as text)
 		if(!CanInteract(usr,state))
 			return
 		if(!sec_name)
@@ -207,22 +222,29 @@
 		manual_control = !manual_control
 		if(manual_control)
 			usr.reset_view(linked)
+			usr.client.view = "[2*NAVIGATION_VIEW_RANGE+1]x[2*NAVIGATION_VIEW_RANGE+1]"
 		else
 			if (isAI(usr))
 				usr.reset_view(usr.eyeobj)
+
+	if (href_list["pulse"])
+		linked.pulse()
+
+	if (href_list["scanpoi"])
+		linked.scan_poi()
 
 	updateUsrDialog()
 
 
 /obj/machinery/computer/navigation
 	name = "navigation console"
-	circuit = /obj/item/circuitboard/nav
+	circuit = /obj/item/electronics/circuitboard/nav
 	var/viewing = 0
 	var/obj/effect/overmap/ship/linked
 	icon_keyboard = "generic_key"
 	icon_screen = "helm"
 
-/obj/machinery/computer/navigation/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/computer/navigation/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(!linked)
 		return
 
@@ -276,8 +298,9 @@
 		if (!isAI(user))
 			user.set_machine(src)
 		user.reset_view(linked)
+		user.client.view = "[2*NAVIGATION_VIEW_RANGE+1]x[2*NAVIGATION_VIEW_RANGE+1]"
 
-	nano_ui_interact(user)
+	ui_interact(user)
 
 /obj/machinery/computer/navigation/Topic(href, href_list)
 	if(..())
@@ -290,6 +313,7 @@
 		viewing = !viewing
 		if(viewing)
 			usr.reset_view(linked)
+			usr.client.view = "[2*NAVIGATION_VIEW_RANGE+1]x[2*NAVIGATION_VIEW_RANGE+1]"
 		else
 			if (isAI(usr))
 				usr.reset_view(usr.eyeobj)

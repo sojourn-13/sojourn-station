@@ -27,25 +27,49 @@
 /turf/simulated/shuttle/plating/is_plating()
 	return TRUE
 
+
 /turf/simulated/floor/plating
 	icon = 'icons/turf/flooring/plating.dmi'
 	name = "plating"
 	icon_state = "plating"
 	initial_flooring = /decl/flooring/reinforced/plating
 
+/turf/simulated/floor/plating/airless
+	oxygen = 0
+	nitrogen = 0
+
 /turf/simulated/floor/plating/under
 	name = "underplating"
 	icon_state = "under"
 	icon = 'icons/turf/flooring/plating.dmi'
 	initial_flooring = /decl/flooring/reinforced/plating/under
-	oxygen = MOLES_O2STANDARD
-	nitrogen = MOLES_N2STANDARD
+
+/turf/simulated/floor/plating/under/airless
+	oxygen = 0
+	nitrogen = 0
+
+/turf/simulated/floor/grass
+	name = "grass patch"
+	icon = 'icons/turf/flooring/grass.dmi'
+	icon_state = "grass0"
+	initial_flooring = /decl/flooring/grass
+
+/turf/simulated/floor/dirt
+	name = "dirt"
+	icon = 'icons/turf/flooring/dirt.dmi'
+	icon_state = "dirt"
+	initial_flooring = /decl/flooring/dirt
+
+/turf/simulated/floor/dirt/airless
+	oxygen = 0
+	nitrogen = 0
 
 /turf/simulated/floor/hull
-	name = "underplating"
+	name = "hull"
 	icon = 'icons/turf/flooring/hull.dmi'
 	icon_state = "hullcenter0"
 	initial_flooring = /decl/flooring/reinforced/plating/hull
+
 
 /turf/simulated/floor/hull/New()
 	if(icon_state != "hullcenter0")

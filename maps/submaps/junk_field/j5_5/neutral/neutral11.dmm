@@ -4,84 +4,61 @@
 /area/template_noop)
 "b" = (
 /obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/airless,
 /area/template_noop)
 "c" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
 /turf/simulated/wall,
 /area/template_noop)
 "d" = (
 /obj/structure/lattice,
-/obj/random/mob/carp/low_chance,
-/obj/random/material/low_chance,
 /turf/template_noop,
 /area/template_noop)
 "e" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/obj/random/material/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "f" = (
 /obj/structure/girder,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "g" = (
 /obj/structure/table/standard,
-/obj/random/lowkeyrandom,
-/obj/random/junkfood/rotten/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/lowkeyrandom,
+/obj/spawner/junkfood/rotten/low_chance,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "h" = (
-/obj/random/junk/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/junk/low_chance,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "i" = (
-/obj/random/scrap/dense_weighted/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/scrap/dense,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 "j" = (
 /obj/machinery/door/airlock/maintenance_common{
 	name = "Service Maintenance";
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/techmaint_cargo,
+/turf/simulated/floor/tiled/techmaint_cargo/airless,
 /area/template_noop)
 "k" = (
-/obj/random/scrap/dense_weighted/low_chance,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "l" = (
-/obj/random/material/low_chance,
 /turf/template_noop,
 /area/template_noop)
 "m" = (
-/obj/random/traps,
-/turf/simulated/floor/tiled/techmaint,
-/area/template_noop)
-"v" = (
-/obj/structure/lattice,
-/obj/random/material/low_chance,
-/turf/template_noop,
-/area/template_noop)
-"z" = (
-/obj/structure/girder,
-/obj/random/material/low_chance,
-/turf/simulated/floor/plating/under,
-/area/template_noop)
-"H" = (
-/obj/random/scrap/dense_weighted/low_chance,
-/obj/random/material/low_chance,
-/turf/simulated/floor/tiled/techmaint,
+/obj/spawner/traps,
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/template_noop)
 
 (1,1,1) = {"
 d
 f
-v
+d
 k
 l
 "}
@@ -102,7 +79,7 @@ a
 (4,1,1) = {"
 b
 g
-H
+i
 i
 a
 "}
@@ -111,5 +88,5 @@ a
 a
 a
 a
-z
+f
 "}
