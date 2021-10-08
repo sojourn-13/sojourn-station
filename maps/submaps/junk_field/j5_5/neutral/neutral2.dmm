@@ -1,11 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/random/mob/carp/low_chance,
-/turf/simulated/floor/plating/under,
+/mob/living/simple_animal/hostile/carp,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "b" = (
-/obj/random/scrap/dense_weighted/low_chance,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "c" = (
 /obj/structure/lattice,
@@ -16,49 +15,35 @@
 /area/template_noop)
 "e" = (
 /obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/airless,
 /area/template_noop)
 "f" = (
-/obj/random/junk/low_chance,
-/turf/simulated/floor/plating/under,
+/obj/spawner/junk/low_chance,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "g" = (
-/obj/random/techpart/low_chance,
-/turf/simulated/floor/plating/under,
+/obj/spawner/scrap/sparse/low_chance,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "h" = (
 /obj/structure/girder,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating/under/airless,
 /area/template_noop)
 "i" = (
 /obj/structure/lattice,
-/obj/random/junkfood/rotten,
+/obj/spawner/junkfood/rotten,
 /turf/template_noop,
 /area/template_noop)
 "p" = (
 /turf/template_noop,
 /area/template_noop)
-"x" = (
-/obj/structure/lattice,
-/obj/random/material/low_chance,
-/turf/template_noop,
-/area/template_noop)
-"z" = (
-/obj/structure/girder,
-/obj/random/material/low_chance,
-/turf/simulated/floor/plating/under,
-/area/template_noop)
-"Y" = (
-/obj/random/material/low_chance,
-/turf/template_noop,
-/area/template_noop)
 
 (1,1,1) = {"
-Y
+p
 p
 b
-x
-Y
+c
+p
 "}
 (2,1,1) = {"
 c
@@ -68,14 +53,14 @@ g
 e
 "}
 (3,1,1) = {"
-z
+h
 h
 d
 d
-z
+h
 "}
 (4,1,1) = {"
-x
+c
 i
 f
 f
@@ -83,8 +68,8 @@ h
 "}
 (5,1,1) = {"
 p
-Y
+p
 c
-x
+c
 b
 "}
