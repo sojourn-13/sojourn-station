@@ -66,6 +66,8 @@
 	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 2,
 	/obj/item/ammo_casing/grenade = 5,
 	/obj/item/ammo_casing/flare/prespawn = 15,
+	/obj/item/ammo_casing/flare/blue/prespawn = 15,
+	/obj/item/ammo_casing/flare/green/prespawn = 15,
 	//Misc
 	/obj/item/clothing/accessory/holster/armpit = 2,
 	/obj/item/clothing/accessory/holster/leg = 2,
@@ -135,6 +137,8 @@
 	/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 750,
 	/obj/item/ammo_casing/grenade = 50,
 	/obj/item/ammo_casing/flare/prespawn = 120,
+	/obj/item/ammo_casing/flare/blue/prespawn = 120,
+	/obj/item/ammo_casing/flare/green/prespawn = 120,
 	//Misc
 	/obj/item/clothing/accessory/holster/armpit = 50,
 	/obj/item/clothing/accessory/holster/leg = 50,
@@ -173,7 +177,9 @@
 					/obj/item/ammo_magazine/kurtz_50/rubber = 6,
 					/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 6,
 					/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 2,
-					/obj/item/ammo_casing/flare/prespawn = 4,
+					/obj/item/ammo_casing/flare/prespawn = 5,
+					/obj/item/ammo_casing/flare/blue/prespawn = 5,
+					/obj/item/ammo_casing/flare/green/prespawn = 5,
 					/obj/item/device/hailer = 8,
 					/obj/item/taperoll/police = 8,
 					/obj/item/storage/box/evidence = 2,

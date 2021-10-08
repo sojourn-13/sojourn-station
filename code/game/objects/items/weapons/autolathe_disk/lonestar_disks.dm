@@ -74,6 +74,8 @@
 		//spare flare, do not put this on the Factory disk
 		/datum/design/autolathe/gun/flare_gun = 5,
 		/datum/design/autolathe/ammo/flare_shell = 2,
+		/datum/design/autolathe/ammo/flare_shell_g = 2,
+		/datum/design/autolathe/ammo/flare_shell_b = 2,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/robustcells
