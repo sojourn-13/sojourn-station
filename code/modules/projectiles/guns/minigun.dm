@@ -32,6 +32,14 @@
 		forceMove(connected)
 
 /obj/item/gun/minigun/update_icon()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
 	cut_overlays()
 	if(connected)
 		add_overlay("[icon_state]_connected")
