@@ -1022,7 +1022,7 @@
 
 /datum/ritual/cruciform/priest/adoption
 	name = "Adoption"
-	phrase = "Dervans semitas iustitiae et vias sanctorum custodiens"
+	phrase = "Dervans semitas iustitiae et vias sanctorum custodiens."
 	desc = "Opens church doors for target disciple."
 	power = 15
 
@@ -1038,7 +1038,7 @@
 
 /datum/ritual/cruciform/priest/ordination
 	name = "Ordination"
-	phrase = "Gloriam sapientes possidebunt stultorum exaltatio ignominia"
+	phrase = "Gloriam sapientes possidebunt stultorum exaltatio ignominia."
 	desc = "Opens clergy doors for target disciple."
 	power = 15
 
@@ -1054,7 +1054,7 @@
 
 /datum/ritual/cruciform/priest/omission
 	name = "Omission"
-	phrase = "Via impiorum tenebrosa nesciunt ubi corruant"
+	phrase = "Via impiorum tenebrosa nesciunt ubi corruant."
 	desc = "Removes all access from target disciple's cruciform."
 	power = 30
 
