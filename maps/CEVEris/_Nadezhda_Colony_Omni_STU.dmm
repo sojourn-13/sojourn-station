@@ -11797,9 +11797,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/airlock{
-	name = "Church Commons";
-	req_one_access = list(27,70)
+/obj/machinery/door/holy{
+	name = "Church Commons"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -20773,7 +20772,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "fgM" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock{
+/obj/machinery/door/holy/preacher{
 	name = "Bathroom"
 	},
 /turf/simulated/floor/wood/wild3,
@@ -31960,9 +31959,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock{
-	name = "Church";
-	req_access = list(70)
+/obj/machinery/door/holy{
+	name = "Church"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/absolutism/bioreactor)
@@ -38211,14 +38209,13 @@
 /area/nadezhda/command/bridge)
 "jsM" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock{
-	name = "Church Commons";
-	req_one_access = list(27,70)
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/holy{
+	name = "Church Commons"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -42869,9 +42866,8 @@
 	name = "Dormitory 3"
 	})
 "kwb" = (
-/obj/machinery/door/airlock{
-	name = "Church Commons";
-	req_one_access = list(27,70)
+/obj/machinery/door/holy{
+	name = "Church Commons"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -43291,14 +43287,13 @@
 "kAU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/airlock{
-	name = "Church";
-	req_access = list(70)
-	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/holy{
+	name = "Church"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/absolutism/storage)
@@ -44536,11 +44531,10 @@
 /turf/simulated/floor/holofloor/wood,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kPg" = (
-/obj/machinery/door/airlock{
-	name = "Chapel Armory";
-	req_access = list(74)
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/holy/preacher{
+	name = "Chapel Armory"
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/prime)
 "kPj" = (
@@ -49498,9 +49492,8 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/main/stairwell)
 "lZC" = (
-/obj/machinery/door/airlock{
-	name = "Church";
-	req_access = list(70)
+/obj/machinery/door/holy{
+	name = "Church"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
@@ -58760,16 +58753,16 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "olA" = (
-/obj/machinery/door/airlock{
-	id_tag = "chudorm4";
-	name = "Church Dorm 2";
-	req_access = list(70)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/door/airlock{
+	id_tag = "chudorm4";
+	name = "Church Dorm 2";
+	req_access = list(70)
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -88208,9 +88201,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock{
-	name = "Church";
-	req_access = list(70)
+/obj/machinery/door/holy{
+	name = "Church"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/absolutism/storage)
@@ -93624,9 +93616,8 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/surface/section1)
 "wuN" = (
-/obj/machinery/door/airlock{
-	name = "Church";
-	req_access = list(70)
+/obj/machinery/door/holy{
+	name = "Church"
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/bioreactor)
@@ -95501,16 +95492,16 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "wSl" = (
-/obj/machinery/door/airlock{
-	id_tag = "chudorm3";
-	name = "Church Dorm 1";
-	req_access = list(70)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/door/airlock{
+	id_tag = "chudorm3";
+	name = "Church Dorm 1";
+	req_access = list(70)
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -95755,10 +95746,6 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/tcommsat/computer)
 "wVv" = (
-/obj/machinery/door/airlock{
-	name = "Prime's Quarters";
-	req_access = list(74)
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -95773,6 +95760,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/holy/preacher{
+	name = "Prime's Quarters"
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/prime)
@@ -97300,10 +97290,6 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/security/tactical_blackshield)
 "xmO" = (
-/obj/machinery/door/airlock{
-	name = "Chapel Office";
-	req_access = list(74)
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -97312,6 +97298,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/holy/preacher{
+	name = "Chapel Office"
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/prime)
 "xnn" = (
@@ -97646,9 +97635,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/door/airlock{
-	name = "Church";
-	req_access = list(70)
+/obj/machinery/door/holy{
+	name = "Church"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/absolutism/storage)
@@ -159379,7 +159367,7 @@ sFI
 sFI
 sFI
 hSx
-hSx
+xGi
 eEn
 eEn
 oPz
