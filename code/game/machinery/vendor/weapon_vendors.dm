@@ -298,3 +298,135 @@
 	idle_power_usage = 211
 	auto_price = FALSE
 	vendor_department = DEPARTMENT_CIVILIAN
+
+//For the propis loot
+/obj/machinery/vending/propis_loot_box
+	name = "Prospectors 'Git-yer-Shit' Vendor"
+	desc = "The prospectors much loved 'Git-yer-Shit' a machine meant to sap the credits... 'reward' people for playing a lottery like system for boxes of items. Please spend responsibly."
+	icon_state = "MagiVend"
+	product_slogans = list("Imagine the rare stuff and buy more!", "Rare stuff if you buy more!", "Buy and get random items!", "Don't quit, buy more!", "Its not a lootbox, its surprise mechanics!")
+	vendor_department = DEPARTMENT_PROSPECTOR
+	products = list(
+		/obj/item/storage/box/vendor_lootbox = 3,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_light = 3,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_medium = 3,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_high = 3,
+		/obj/item/storage/box/vendor_lootbox/medicine_basic = 3,
+		/obj/item/storage/box/vendor_lootbox/medicine_moderate = 3,
+		/obj/item/storage/box/vendor_lootbox/medicine_high = 3,
+		/obj/item/storage/box/vendor_lootbox/oddity_low = 3,
+		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 3,
+		/obj/item/storage/box/vendor_lootbox/oddity_high = 3,
+		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 3
+		)
+	prices = list(
+		/obj/item/storage/box/vendor_lootbox = 50,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_light = 100,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_medium = 250,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_high = 500,
+		/obj/item/storage/box/vendor_lootbox/medicine_basic = 100,
+		/obj/item/storage/box/vendor_lootbox/medicine_moderate = 250,
+		/obj/item/storage/box/vendor_lootbox/medicine_high = 500,
+		/obj/item/storage/box/vendor_lootbox/oddity_low = 150,
+		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 300,
+		/obj/item/storage/box/vendor_lootbox/oddity_high = 600,
+		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 100
+		)
+	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!;Its not a lootbox, its surprise mechanics!"
+	auto_price = FALSE
+
+//For Blackshield Kits
+/obj/machinery/vending/blackshield_kit
+	name = "\improper Blackshield Kit Vendor"
+	desc = "A vendor that can dispense specialized equipment kits for Blackshield Troopers."
+	icon_state = "trashvend"
+	products = list( // 5 in stock for the default blackshield kit, 3 for the rest
+		/obj/item/storage/box/bs_kit/mosin = 5,
+		/obj/item/storage/box/bs_kit/sts = 3,
+		/obj/item/storage/box/bs_kit/cog = 3,
+		/obj/item/storage/box/bs_kit/roe = 3,
+		/obj/item/storage/box/bs_kit/greasegun = 3,
+		/obj/item/storage/box/bs_kit/grizzly = 3,
+		/obj/item/storage/box/bs_kit/stallion = 5,
+		/obj/item/storage/box/bs_kit/lamia = 3,
+		/obj/item/storage/box/bs_kit/colt = 3,
+		/obj/item/storage/box/bs_kit/martin = 5,
+		/obj/item/storage/box/bs_kit/sawn_shotgun = 5,
+		/obj/item/storage/box/bs_kit/standard_armor = 5,
+		/obj/item/storage/box/bs_kit/flak_armor = 3,
+		/obj/item/storage/box/bs_kit/bullet_armor = 3,
+		/obj/item/storage/box/bs_kit/laser_armor = 3
+		)
+	prices = list( // 500$ for default Blackshield stuff, 750 for the rest
+		/obj/item/storage/box/bs_kit/mosin = 500,
+		/obj/item/storage/box/bs_kit/sts = 750,
+		/obj/item/storage/box/bs_kit/cog = 750,
+		/obj/item/storage/box/bs_kit/roe = 750,
+		/obj/item/storage/box/bs_kit/greasegun = 750,
+		/obj/item/storage/box/bs_kit/grizzly = 750,
+		/obj/item/storage/box/bs_kit/stallion = 500,
+		/obj/item/storage/box/bs_kit/lamia = 750,
+		/obj/item/storage/box/bs_kit/colt = 750,
+		/obj/item/storage/box/bs_kit/martin = 500,
+		/obj/item/storage/box/bs_kit/sawn_shotgun = 500,
+		/obj/item/storage/box/bs_kit/standard_armor = 500,
+		/obj/item/storage/box/bs_kit/flak_armor = 750,
+		/obj/item/storage/box/bs_kit/bullet_armor = 750,
+		/obj/item/storage/box/bs_kit/laser_armor = 1250
+		)
+	auto_price = FALSE
+
+/obj/machinery/vending/blackshield_kit/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/voucher/blackshield))
+		var/obj/item/voucher/blackshield/Voucher = I
+		switch(Voucher.voucher_type)
+			if("Primary")
+				RedeemPrimary(I, user)
+			if("Secondary")
+				RedeemSecondary(I, user)
+			if("Armor")
+				RedeemArmor(I, user)
+		return
+	return ..()
+
+/obj/machinery/vending/blackshield_kit/proc/RedeemPrimary(obj/item/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/bs_kit/mosin = "Mosin",
+					/obj/item/storage/box/bs_kit/sts = "STS",
+					/obj/item/storage/box/bs_kit/cog = "Cog",
+					/obj/item/storage/box/bs_kit/greasegun = "Grease Gun",
+					/obj/item/storage/box/bs_kit/roe = "Roe light boltgun",
+					/obj/item/storage/box/bs_kit/grizzly = "Grizzly"
+					)
+	var/selection = input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+
+/obj/machinery/vending/blackshield_kit/proc/RedeemSecondary(obj/item/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/bs_kit/stallion = "Stallion",
+					/obj/item/storage/box/bs_kit/lamia = "Lamia",
+					/obj/item/storage/box/bs_kit/colt = "Colt",
+					/obj/item/storage/box/bs_kit/sawn_shotgun = "Sawn-Off Shotgun",
+					/obj/item/storage/box/bs_kit/martin = "Martin"
+					)
+	var/selection = input(redeemer, "Pick your side-arm", "Blackshield Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+
+/obj/machinery/vending/blackshield_kit/proc/RedeemArmor(obj/item/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/bs_kit/standard_armor = "Plate",
+					/obj/item/storage/box/bs_kit/flak_armor = "Flak",
+					/obj/item/storage/box/bs_kit/laser_armor = "Ablative",
+					/obj/item/storage/box/bs_kit/bullet_armor = "Bullet-Proof"
+					)
+	var/selection = input(redeemer, "Pick your armor", "Blackshield Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE

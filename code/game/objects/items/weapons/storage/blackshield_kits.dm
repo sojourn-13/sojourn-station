@@ -39,6 +39,15 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/roe
+	name = "\improper Roe Primary Kit"
+	desc = "The standard Blackshield equipment kit."
+
+	populate_contents()
+		new /obj/item/gun/projectile/boltgun/light_wood(src)
+		new /obj/item/ammo_magazine/ammobox/light_rifle_257_small(src)
+		new /obj/item/storage/pouch/ammo(src)
+
 /obj/item/storage/box/bs_kit/sts
 	name = "\improper STS Primary Kit"
 	desc = "The standard Blackshield equipment kit."
@@ -130,6 +139,16 @@
 		new /obj/item/gun/energy/gun/martin(src)
 		new /obj/item/cell/small/high(src)
 		new /obj/item/cell/small/high(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
+
+/obj/item/storage/box/bs_kit/sawn_shotgun
+	name = "\improper Sawn Shotgun Secondary Kit"
+	desc = "A kit designed for energy-based weaponry."
+
+	populate_contents()
+		new /obj/item/gun/projectile/shotgun/doublebarrel/sawn(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 // Armor Kits
