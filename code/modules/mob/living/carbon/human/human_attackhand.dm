@@ -273,7 +273,7 @@
 
 			var/randn = rand(1, 100)
 			randn = max(1, randn - H.stats.getStat(STAT_ROB))
-			if(!(species.flags & NO_SLIP) && randn <= 20)
+			if(!(species.flags & NO_SLIP) && (src.stats.getPerk(PERK_ASS_OF_CONCRETE) || src.stats.getPerk(PERK_BRAWN)) && randn <= 20)
 				apply_effect(3, WEAKEN, getarmor(affecting, ARMOR_MELEE))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				visible_message(SPAN_DANGER("[M] has pushed [src]!"))

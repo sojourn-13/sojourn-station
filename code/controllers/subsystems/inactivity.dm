@@ -26,7 +26,9 @@ SUBSYSTEM_DEF(inactivity)
 				var/mob/living/carbon/human/SMan = C.mob
 				if(istype(SMan, /mob/living/carbon/human))
 					if(SMan.job)
-						SMan.mind.assigned_job.change_playtime(C, 1)
+						if(SMan.mind)
+							if(SMan.mind.assigned_job)
+								SMan.mind.assigned_job.change_playtime(C, 1)
 
 		if (MC_TICK_CHECK)
 			return

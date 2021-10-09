@@ -180,7 +180,12 @@
 	new /obj/item/tool/knife/dagger(src)
 	if(prob(50))
 		new /obj/item/gun/projectile/boltgun/flare_gun(src)
-		new /obj/item/ammo_casing/flare/prespawn(src)
+		if(prob(50))
+			new /obj/item/ammo_casing/flare/blue/prespawn(src)
+		else if(prob(50))
+			new /obj/item/ammo_casing/flare/green/prespawn(src)
+		else
+			new /obj/item/ammo_casing/flare/prespawn(src)
 	else
 		new /obj/item/device/lighting/glowstick/flare(src)
 		new /obj/item/device/lighting/glowstick/flare(src)
@@ -259,7 +264,12 @@
 	new /obj/item/tool/knife/dagger(src)
 	if(prob(50))
 		new /obj/item/gun/projectile/boltgun/flare_gun(src)
-		new /obj/item/ammo_casing/flare/prespawn(src)
+		if(prob(50))
+			new /obj/item/ammo_casing/flare/blue/prespawn(src)
+		else if(prob(50))
+			new /obj/item/ammo_casing/flare/green/prespawn(src)
+		else
+			new /obj/item/ammo_casing/flare/prespawn(src)
 	else
 		new /obj/item/device/lighting/glowstick/flare(src)
 		new /obj/item/device/lighting/glowstick/flare(src)
@@ -348,6 +358,8 @@
 	new /obj/item/tool/knife/dagger(src)
 	if(prob(70))
 		new /obj/item/gun/projectile/boltgun/flare_gun(src)
+		new /obj/item/ammo_casing/flare/blue/prespawn(src)
+		new /obj/item/ammo_casing/flare/green/prespawn(src)
 		new /obj/item/ammo_casing/flare/prespawn(src)
 	else
 		new /obj/item/device/lighting/glowstick/flare(src)

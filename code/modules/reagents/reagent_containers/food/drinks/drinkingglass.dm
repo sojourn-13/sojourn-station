@@ -36,7 +36,7 @@
 	volume = 15
 	morf_glass = FALSE
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/double
+/obj/item/reagent_containers/food/drinks/drinkingglass/doble
 	name = "double"
 	desc = "Your standard drinking glass."
 	icon_state = "double"
@@ -53,7 +53,7 @@
 
 	if(reagents.reagent_list.len > 0)
 		var/datum/reagent/R = reagents.get_master_reagent()
-		if(R.glass_unique_appearance && morf_glass)
+		if((R.glass_unique_appearance || R.glass_icon_state) && morf_glass)
 			if(R.glass_icon_state)
 				icon_state = R.glass_icon_state
 			else

@@ -17,6 +17,7 @@
 	var/amount = 1
 	var/maxamount = 15
 	var/reload_delay = 0
+	var/shell_color = ""
 
 /obj/item/ammo_casing/Initialize()
 	. = ..()
@@ -45,6 +46,7 @@
 		new_casing.icon_state = src.icon_state
 		new_casing.spent_icon = src.spent_icon
 		new_casing.is_caseless = src.is_caseless
+		new_casing.shell_color = src.shell_color
 		new_casing.maxamount = src.maxamount
 		new_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
 		if(ispath(new_casing.projectile_type) && src.BB)
@@ -281,6 +283,7 @@
 		inserted_casing.icon_state = C.icon_state
 		inserted_casing.spent_icon = C.spent_icon
 		inserted_casing.is_caseless = C.is_caseless
+		inserted_casing.shell_color = C.shell_color
 		inserted_casing.maxamount = C.maxamount
 		inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
 		if(ispath(inserted_casing.projectile_type) && C.BB)

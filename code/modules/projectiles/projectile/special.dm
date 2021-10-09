@@ -240,7 +240,7 @@
 	luminosity_ttl = 1
 	var/fire_stacks = 1
 	var/flash_range = 1
-	var/light_duration = 900
+	var/light_duration = 1800
 	var/brightness = 10
 	knockback = FALSE
 	can_ricochet = FALSE
@@ -269,4 +269,10 @@
 	src.visible_message(SPAN_WARNING("\The [src] explodes in a bright light!"))
 	new /obj/effect/decal/cleanable/ash(src.loc)
 	playsound(src, 'sound/effects/Custom_flare.ogg', 100, 1)
-	new /obj/effect/effect/smoke/illumination(T, brightness=max(flash_range*3, brightness), lifetime=light_duration, color=COLOR_RED)
+	new /obj/effect/effect/smoke/illumination(T, brightness=max(flash_range*3, brightness), lifetime=light_duration, color=luminosity_color)
+
+/obj/item/projectile/bullet/flare/blue
+	luminosity_color = COLOR_BLUE
+
+/obj/item/projectile/bullet/flare/green
+	luminosity_color = COLOR_GREEN

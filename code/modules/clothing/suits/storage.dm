@@ -163,6 +163,19 @@
 	icon_state = "bladerunner_coat"
 	item_state = "bladerunner_coat"
 
+/obj/item/clothing/suit/storage/duster/donte
+	name = "exterminators jacket"
+	desc = "Your prom date won't know what to say when you show up wearing this stylish leather coat."
+	icon_state = "dante"
+	item_state = "dante"
+
+/obj/item/clothing/suit/storage/duster/denton
+	name = "futuristic coat"
+	desc = "whether hopping into action, or reading your coworkers emails, you'll be ready for any hostage situations"
+	icon_state = "denton"
+	item_state = "denton"
+
+
 /*Military Jackets*/
 
 /obj/item/clothing/suit/storage/miljacket/field
@@ -443,6 +456,16 @@
 	siemens_coefficient = 0.7
 	price_tag = 80
 
+/obj/item/clothing/suit/storage/toggle/leather/midriff
+	name = "Midriff leather jacket"
+	desc = "A not so sturdy jacket made of synthetic leather. Some hooligan has devestated this one by cutting it the midrif and sewing zippers into the sleeves. Hardly covers anything."
+	icon_state = "midriff_leather"
+	item_state = "midriff_leather"
+	icon_open = "midriff_leather_open"
+	icon_closed = "midriff_leather"
+	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
 /obj/item/clothing/suit/storage/texan
 	name = "ivory texan jacket"
 	desc = "A jacket fit for a Plasma magnate of southern origin. Yeehaw!" // Now you only need a comically large white top hat.
@@ -563,6 +586,13 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	item_state_slots = list(slot_r_hand_str = "brown_jacket", slot_l_hand_str = "brown_jacket")
 	icon_open = "pilot_bomber_open"
 	icon_closed = "pilot_bomber"
+
+/obj/item/clothing/suit/storage/toggle/bomber/classic
+	name = "classic bomber jacket"
+	desc = "A thick leather bomber jacket. this one appears to have zippers on the sleeves, allowing them to be rolled up"
+	icon_state = "nu_bomber"
+	icon_open = "nu_bomber_open"
+	icon_closed = "nu_bomber"
 
 /obj/item/clothing/suit/storage/toggle/bomber/navigator
 	name = "navigator bomber jacket"

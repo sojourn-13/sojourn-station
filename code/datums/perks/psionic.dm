@@ -27,7 +27,7 @@
 /datum/perk/psi_harmony
 	name = "Psionic Harmony"
 	desc = "You have achieved inner harmony, your balance of emotion giving you peace of mind and thus expanding your potential as a psion. With this frame of mind, you retain a \
-	higher maximum psi pool than others, increasing your capacity by three."
+	higher maximum psi pool than others, increasing your capacity by two."
 
 /datum/perk/psi_attunement
 	name = "Psionic Attunement"

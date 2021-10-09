@@ -4,6 +4,14 @@
 	markup = 3 //We don't want this to replace mining, so the prices are huge. -Kaz
 	name_pool = list("CRS 'Reoll'" = "Civilian Refinery Ship 'Recoll'. They're sending a message. \"Heey! We are a small refinery looking for customers. We sell all types of ores and refined materials at cheap prices as well!\"")
 	assortiment = list(
+		"Flares"  = list(
+			/obj/item/device/lighting/glowstick/flare,
+			/obj/item/ammo_magazine/ammobox/shotgun/flash,
+			/obj/item/gun/projectile/boltgun/flare_gun,
+			/obj/item/ammo_casing/flare/blue/prespawn,
+			/obj/item/ammo_casing/flare/green/prespawn,
+			/obj/item/ammo_casing/flare/prespawn
+			),
 		"Unrefined Materials"  = list(
 			/obj/item/ore/iron,
 			/obj/item/ore/coal,

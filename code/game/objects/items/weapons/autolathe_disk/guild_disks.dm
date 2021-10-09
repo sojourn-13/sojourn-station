@@ -66,7 +66,6 @@
 		/datum/design/autolathe/part/heatsink,
 		/datum/design/autolathe/part/ergonomic_grip,
 		/datum/design/autolathe/part/ratchet,
-		/datum/design/autolathe/part/red_paint,
 		/datum/design/autolathe/part/whetstone,
 		/datum/design/autolathe/part/magbit,
 		/datum/design/autolathe/part/red_paint,
@@ -110,6 +109,8 @@
 		/datum/design/autolathe/circuit/reagentgrinder,
 		/datum/design/research/circuit/pacman = 2,
 		/datum/design/research/circuit/diesel = 3,
+		/datum/design/autolathe/circuit/trade_beacon_receiving = 5,
+		/datum/design/autolathe/circuit/trade_beacon_sending = 5,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/logistics
@@ -122,8 +123,10 @@
 		/datum/design/autolathe/conveyor_switch = 0,
 		///datum/design/autolathe/circuit/smelter = 3, //Balance, no more rnd/guild abuse
 		/datum/design/autolathe/circuit/sorter = 3,
-		/datum/design/autolathe/circuit/recycler = 1,
-		/datum/design/autolathe/circuit/pile_ripper = 1,
+		/datum/design/autolathe/circuit/recycler,
+		/datum/design/autolathe/circuit/pile_ripper,
+		/datum/design/autolathe/circuit/trade_beacon_receiving,
+		/datum/design/autolathe/circuit/trade_beacon_sending,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/engineering
@@ -185,6 +188,8 @@
 		/datum/design/autolathe/circuit/sorter,
 		/datum/design/autolathe/circuit/recycler,
 		/datum/design/autolathe/circuit/pile_ripper,
+		/datum/design/autolathe/circuit/trade_beacon_receiving,
+		/datum/design/autolathe/circuit/trade_beacon_sending,
 		// From tool mods
 		/datum/design/autolathe/part/laserguide,
 		/datum/design/autolathe/part/diamondblade,
@@ -194,7 +199,6 @@
 		/datum/design/autolathe/part/heatsink,
 		/datum/design/autolathe/part/ergonomic_grip,
 		/datum/design/autolathe/part/ratchet,
-		/datum/design/autolathe/part/red_paint,
 		/datum/design/autolathe/part/whetstone,
 		/datum/design/autolathe/part/magbit,
 		/datum/design/autolathe/part/red_paint,
@@ -315,7 +319,6 @@
 	/datum/design/autolathe/part/heatsink,
 	/datum/design/autolathe/part/ergonomic_grip,
 	/datum/design/autolathe/part/ratchet,
-	/datum/design/autolathe/part/red_paint,
 	/datum/design/autolathe/part/whetstone,
 	/datum/design/autolathe/part/magbit,
 	/datum/design/autolathe/part/red_paint,
@@ -360,6 +363,8 @@
 	/datum/design/research/circuit/breakerbox,
 	/datum/design/autolathe/circuit/recycler,
 	/datum/design/autolathe/circuit/pile_ripper,
+	/datum/design/autolathe/circuit/trade_beacon_receiving,
+	/datum/design/autolathe/circuit/trade_beacon_sending,
 	//Stock Parts, and SMES coils
 	/datum/design/autolathe/part/consolescreen,
 	/datum/design/research/item/part/basic_capacitor,

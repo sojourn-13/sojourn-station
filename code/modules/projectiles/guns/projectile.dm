@@ -248,6 +248,7 @@
 			inserted_casing.icon_state = C.icon_state
 			inserted_casing.spent_icon = C.spent_icon
 			inserted_casing.is_caseless = C.is_caseless
+			inserted_casing.shell_color = C.shell_color
 			inserted_casing.maxamount = C.maxamount
 			inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
 			//This here makes ot so if were loading in pre-shot sells it dosnt magiclly give it a BB
