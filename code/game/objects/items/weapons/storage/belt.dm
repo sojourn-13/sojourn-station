@@ -11,7 +11,7 @@
 	matter = list(MATERIAL_BIOMATTER = 4, MATERIAL_PLASTIC = 5)
 	attack_verb = list("whipped", "lashed", "disciplined")
 	price_tag = 15
-
+	cant_hold = list(/obj/item/storage/pouch) //Cant stack pouches in belts
 	var/show_above_suit = 0
 
 /obj/item/storage/belt/Initialize()
@@ -434,7 +434,9 @@
 	desc = "Everything you need at hand, at belt."
 	icon_state = "webbing"
 	item_state = "webbing"
-	storage_slots = 9
+	storage_slots = 14
+	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness
+	max_storage_space = DEFAULT_NORMAL_STORAGE
 
 /obj/item/storage/belt/webbing/green
 	name = "green web harness"

@@ -5,6 +5,7 @@
 	icon_state = "pouch"
 	item_state = "pouch"
 	price_tag = 400
+	cant_hold = list(/obj/item/storage/pouch) //Pouches in pouches was a misstake
 
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT //Pouches can be worn on belt
@@ -85,7 +86,7 @@
 	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
 	storage_slots = null //Uses generic capacity
 	max_storage_space = DEFAULT_NORMAL_STORAGE
-	max_w_class = ITEM_SIZE_NORMAL
+	max_w_class = ITEM_SIZE_BULKY //We are like a backpack but a bit more condenced
 	matter = list(MATERIAL_BIOMATTER = 20)
 	price_tag = 1000
 
@@ -162,7 +163,7 @@
 	item_state = "engineering_supply"
 
 	storage_slots = 3
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -192,7 +193,7 @@
 	item_state = "janitor_supply"
 
 	storage_slots = 4
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -212,7 +213,7 @@
 	item_state = "ammo"
 
 	storage_slots = 4
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(

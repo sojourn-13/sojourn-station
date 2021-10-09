@@ -792,7 +792,7 @@ obj/item/clothing/suit/sweater/blue
 //Makeshift chest rig.
 /obj/item/clothing/suit/storage/vest/chestrig
 	name = "makeshift chest rig"
-	desc = "A makeshift chest rig made for carrying some stuff. Can carry four small items. Has little protective value."
+	desc = "A makeshift chest rig made for carrying some stuff. Can carry eight small items. Has little protective value."
 	icon_state = "mchestrig"
 	item_state = "mchestrig"
 	armor = list(
@@ -807,9 +807,9 @@ obj/item/clothing/suit/sweater/blue
 /obj/item/clothing/suit/storage/vest/chestrig/New()
 	..()
 	pockets = new/obj/item/storage/internal(src)
-	pockets.storage_slots = 4
+	pockets.storage_slots = 8
 	pockets.max_w_class = ITEM_SIZE_SMALL
-	pockets.max_storage_space = 8
+	pockets.max_storage_space = 16
 
 /*Suit Jackets*/
 /obj/item/clothing/suit/storage/suitjacket/black
