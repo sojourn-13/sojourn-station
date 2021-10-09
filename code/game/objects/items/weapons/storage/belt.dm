@@ -300,10 +300,12 @@
 
 /obj/item/storage/belt/security
 	name = "tactical belt"
-	desc = "Can hold various military and security equipment."
+	desc = "Can hold various military and security equipment. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "security"
 	item_state = "security"
 	can_hold = list(
+		/obj/item/clothing/head,
+		/obj/item/clothing/mask,
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/handcuffs,
@@ -375,7 +377,7 @@
 	name = "professional tactical belt"
 	desc = "Can hold various military and security equipment, more so than a standard belt or web harness."
 	icon_state = "tactical"
-	storage_slots = 12
+	storage_slots = 16 //Holds a lot as its bigger
 
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
@@ -431,27 +433,30 @@
 
 /obj/item/storage/belt/webbing
 	name = "web harness"
-	desc = "Everything you need at hand, at belt."
+	desc = "Everything you need at hand, at belt. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "webbing"
 	item_state = "webbing"
 	storage_slots = 14
-	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness
+	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, as well as hemets
 	max_storage_space = DEFAULT_NORMAL_STORAGE
+	can_hold_extra = list (
+	/obj/item/clothing/head,
+	/obj/item/clothing/mask)
 
 /obj/item/storage/belt/webbing/green
 	name = "green web harness"
-	desc = "Everything you need at hand, at belt."
+	desc = "Everything you need at hand, at belt. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "webbing_green"
 	item_state = "webbing_green"
 
 /obj/item/storage/belt/webbing/black
 	name = "black web harness"
-	desc = "Everything you need at hand, at belt."
+	desc = "Everything you need at hand, at belt. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "webbing_black"
 	item_state = "webbing_black"
 
 /obj/item/storage/belt/webbing/ih
 	name = "security web harness"
-	desc = "Everything you need at hand, at belt."
+	desc = "Everything you need at hand, at belt. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "webbing_ih"
 	item_state = "webbing_ih"
