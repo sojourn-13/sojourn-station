@@ -45,20 +45,17 @@
 /datum/ritual/cruciform/machines/lock_door/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/O = get_front(user)
 
-	var/obj/machinery/door/holy/Door = locate(/obj/machinery/door/holy) in O
+	var/obj/machinery/door/holy/door = locate(/obj/machinery/door/holy) in O
 
-	if(!Door)
+	if(!door)
 		fail("You fail to find a compatible door here.", user, C)
 		return FALSE
 
-	if(Door.stat & (BROKEN))
-		fail("[Door] is off.", user, C)
+	if(door.stat & (BROKEN))
+		fail("[door] is off.", user, C)
 		return FALSE
 
-	if(Door.locked)
-		Door.unlock()
-	else
-		Door.lock()
+	door.locked ? door.unlock() : door.lock()
 	return TRUE
 
 /datum/ritual/cruciform/machines/repair_door
