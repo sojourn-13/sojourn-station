@@ -82,11 +82,11 @@
 	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_generic"
 	item_state = "large_generic"
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
 	storage_slots = null //Uses generic capacity
 	max_storage_space = DEFAULT_NORMAL_STORAGE
-	max_w_class = ITEM_SIZE_BULKY //We are like a backpack but a bit more condenced
+	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_BIOMATTER = 20)
 	price_tag = 1000
 
