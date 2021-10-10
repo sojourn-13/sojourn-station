@@ -14,5 +14,5 @@
 	origin_tech = list(TECH_MAGNET = 6)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
 	psi_blocking = 10
-	price_tag = 1300
+	price_tag = 150
 	
