@@ -10,6 +10,8 @@
 
 	restricted_depts = SECURITY
 
+	perks = list(/datum/perk/chem_contraband)
+
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 0,

@@ -21,7 +21,6 @@
 
 /// Bitflag for shared perk abilities
 #define PERK_SHARED_SEE_REAGENTS 0x1
-/*
-#define PERK_SHARED_SEE_CONSUMER_REAGENTS 0x2
-*/
+#define PERK_SHARED_SEE_COMMON_REAGENTS 0x2
+#define PERK_SHARED_SEE_ILLEGAL_REAGENTS 0x3
 

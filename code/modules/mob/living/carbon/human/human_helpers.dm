@@ -28,11 +28,20 @@
 		return TRUE
 	if(stats.getStat(STAT_COG) >= HUMAN_REQ_COG_FOR_REG || stats.getStat(STAT_BIO) >= HUMAN_REQ_BIO_FOR_REG)
 		return TRUE
-	/*
-	if(stats.check_for_shared_perk(PERK_SHARED_SEE_CONSUMER_REAGENTS))
-		return 2
-	*/
 	return FALSE
+
+/mob/living/carbon/human/can_see_common_reagents()
+	if(stats.check_for_shared_perk(PERK_SHARED_SEE_COMMON_REAGENTS))
+		return TRUE
+	return FALSE
+
+/mob/living/carbon/human/can_see_illegal_reagents()
+	if(istype(glasses, /obj/item/clothing/glasses/hud/security) || istype(glasses, /obj/item/clothing/glasses/sechud))
+		return TRUE
+	else if(stats.check_for_shared_perk(PERK_SHARED_SEE_ILLEGAL_REAGENTS))
+		return TRUE
+	return FALSE
+
 
 /mob/living/carbon/human/can_force_feed(var/feeder, var/food, var/feedback = 1)
 	var/list/status = can_eat_status()

@@ -179,6 +179,16 @@
 	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	//icon_state = "bomb" // https://game-icons.net
 
+/datum/perk/space_asshole/assign(mob/living/carbon/human/H)
+	..()
+	holder.mob_bomb_defense += 25
+	holder.falls_mod -= 0.4
+
+/datum/perk/space_asshole/remove()
+	holder.mob_bomb_defense -= 25
+	holder.falls_mod += 0.4
+	..()
+
 /datum/perk/chemist
 	name = "Periodic Table"
 	desc = "You know what the atoms around you react to and in what way they do. You are used to making organic substitutes and using them. \
@@ -196,15 +206,15 @@
 		holder.metabolism_effects.nsa_threshold /= 1.25
 	..()
 
-/datum/perk/space_asshole/assign(mob/living/carbon/human/H)
-	..()
-	holder.mob_bomb_defense += 25
-	holder.falls_mod -= 0.4
+/datum/perk/bartender
+	name = "Bar Menu"
+	desc = "You know how to mix a drink, and flip a burger. You can identify the ingredients that went into food and how much was used."
+	perk_shared_ability = PERK_SHARED_SEE_COMMON_REAGENTS
 
-/datum/perk/space_asshole/remove()
-	holder.mob_bomb_defense -= 25
-	holder.falls_mod += 0.4
-	..()
+/datum/perk/chem_contraband
+	name = "Illegal Substance Training"
+	desc = "For reasons either fair or foul, you know how to easily identify certain kinds of illegal chemical contraband."
+	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
 /datum/perk/parkour
 	name = "Raiders Leap"
@@ -555,6 +565,7 @@
 	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
 	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
 	or plant trays you always harvest an additional bonus!"
+	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/si_sci
 	name = "SI Science Trainning"

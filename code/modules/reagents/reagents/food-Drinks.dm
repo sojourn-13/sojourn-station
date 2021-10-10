@@ -13,6 +13,7 @@
 	var/regen_factor = 0.8 //Used for simple animal health regeneration
 	var/injectable = 0
 	color = "#664330"
+	common = TRUE //People should know that plant food is plant food let's be real
 
 /datum/reagent/organic/nutriment/mix_data(var/list/newdata, var/newamount)
 	if(!islist(newdata) || !newdata.len)
@@ -57,6 +58,7 @@
 	color = "#FFFFFF"
 	scannable = 1
 	injectable = 1
+	common = TRUE //It's basically sugar
 
 /datum/reagent/organic/nutriment/protein
 	name = "Animal Protein"
@@ -64,6 +66,7 @@
 	id = "protein"
 	description = "Essential nutrient for the human body."
 	color = "#440000"
+	common = TRUE //Protein Shake
 
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(M.species.reagent_tag == IS_CARNIVORE)
@@ -77,6 +80,7 @@
 	id = "egg"
 	description = "Store significant amounts of protein and choline"
 	color = "#FFFFAA"
+	common = TRUE //egg
 
 /datum/reagent/organic/nutriment/honey
 	name = "Honey"
@@ -85,6 +89,7 @@
 	taste_description = "sweetness"
 	nutriment_factor = 4
 	color = "#FFFF00"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/honey/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -98,6 +103,7 @@
 	reagent_state = SOLID
 	nutriment_factor = 0.4
 	color = "#FFFFFF"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/flour/touch_turf(turf/simulated/T)
 	if(!istype(T, /turf/space))
@@ -113,6 +119,7 @@
 	reagent_state = SOLID
 	nutriment_factor = 2
 	color = "#302000"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/soysauce
 	name = "Soysauce"
@@ -123,6 +130,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 0.8
 	color = "#792300"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/ketchup
 	name = "Ketchup"
@@ -132,6 +140,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 2
 	color = "#731008"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/rice
 	name = "Rice"
@@ -142,6 +151,7 @@
 	reagent_state = SOLID
 	nutriment_factor = 0.4
 	color = "#FFFFFF"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/cherryjelly
 	name = "Cherry Jelly"
@@ -152,6 +162,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 0.4
 	color = "#801E28"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/cornoil
 	name = "Corn Oil"
@@ -162,6 +173,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 8
 	color = "#302000"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/cornoil/touch_turf(turf/simulated/T)
 	if(!istype(T))
@@ -196,6 +208,7 @@
 	taste_description = "childhood whimsy"
 	nutriment_factor = 0.4
 	color = "#FF00FF"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/mint
 	name = "Mint"
@@ -204,6 +217,7 @@
 	taste_description = "mint"
 	reagent_state = LIQUID
 	color = "#CF3600"
+	common = TRUE
 
 /datum/reagent/other/lipozine // The anti-nutriment.
 	name = "Lipozine"
@@ -226,6 +240,7 @@
 	reagent_state = SOLID
 	nutriment_factor = 1
 	color = "#302000"
+	common = TRUE
 
 /datum/reagent/organic/nutriment/hot_ramen
 	name = "Hot Ramen"
@@ -235,6 +250,7 @@
 	reagent_state = LIQUID
 	color = "#302000"
 	nutriment_factor = 3
+	common = TRUE
 
 /datum/reagent/organic/nutriment/hot_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -249,6 +265,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = "#302000"
 	nutriment_factor = 3.2 //So you have a reason to make these over normal ones.
+	common = TRUE
 
 /datum/reagent/organic/nutriment/hell_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -275,6 +292,7 @@
 	color = "#FFFFFF"
 	overdose = REAGENTS_OVERDOSE
 	scannable = 1
+	common = TRUE
 
 /datum/reagent/organic/blackpepper
 	name = "Black Pepper"
@@ -283,6 +301,7 @@
 	taste_description = "pepper"
 	reagent_state = SOLID
 	color = "#000000"
+	common = TRUE
 
 /datum/reagent/organic/enzyme
 	name = "Universal Enzyme"
@@ -293,6 +312,7 @@
 	reagent_state = LIQUID
 	color = "#365E30"
 	overdose = REAGENTS_OVERDOSE
+	common = TRUE
 
 /datum/reagent/organic/frostoil
 	name = "Frost Oil"
@@ -323,6 +343,7 @@
 	var/agony_amount = 2
 	var/discomfort_message = "<span class='danger'>Your insides feel uncomfortably hot!</span>"
 	var/slime_temp_adj = 10
+	common = TRUE //Identifiable by smell.
 
 /datum/reagent/organic/capsaicin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustToxLoss(0.05 * effect_multiplier)
@@ -436,6 +457,7 @@
 	var/adj_temp = 0
 	var/sanity_gain_ingest = 0.5
 	reagent_type = "Drink"
+	common = TRUE //Most drinks are obviously identifiable
 
 /datum/reagent/drink/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustToxLoss(0.2) // Probably not a good idea; not very deadly though
@@ -579,6 +601,7 @@
 	glass_icon_state = "poisonberryjuice"
 	glass_name = "poison berry juice"
 	glass_desc = "Looks like some deadly juice."
+	common = FALSE //Queue to the player: 'Hey maybe don't drink this'
 
 /datum/reagent/drink/potato_juice
 	name = "Potato Juice"
@@ -1208,6 +1231,7 @@
 	glass_name = "The Doctor's Delight"
 	glass_desc = "A healthy mixture of juices, guaranteed to keep you healthy until the next toolboxing takes place."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	common = FALSE //A little too useful for regular people to ID straight off
 
 /datum/reagent/drink/doctor_delight/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -2176,6 +2200,7 @@
 	glass_name = "Neurotoxin"
 	glass_desc = "A drink that is guaranteed to knock you silly."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	common = FALSE //The fact you don't know what it is should be a tip-off not to drink it.
 
 /datum/reagent/ethanol/neurotoxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -2209,6 +2234,8 @@
 	glass_name = "???"
 	glass_desc = "A black ichor with an oily purple sheer on top. Are you sure you should drink this?"
 	glass_center_of_mass = list("x"=16, "y"=5)
+	common = FALSE //The fact you don't know what it is should be a tip-off not to drink it.
+	illegal = TRUE
 
 /datum/reagent/ethanol/pwine/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -2293,6 +2320,7 @@
 	glass_name = "Silencer"
 	glass_desc = "A drink from mime Heaven."
 	glass_center_of_mass = list("x"=16, "y"=9)
+	common = FALSE //What even is this
 
 /datum/reagent/ethanol/singulo
 	name = "Singulo"
