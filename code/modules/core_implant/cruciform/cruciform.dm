@@ -186,16 +186,19 @@ var/list/disciples = list()
 	remove_modules(CRUCIFORM_PRIEST)
 	remove_modules(CRUCIFORM_INQUISITOR)
 	remove_modules(/datum/core_module/cruciform/red_light)
+	security_clearance = CLEARANCE_COMMON
 
 /obj/item/implant/core_implant/cruciform/proc/make_priest()
 	add_module(new CRUCIFORM_PRIEST)
 	add_module(new CRUCIFORM_REDLIGHT)
+	security_clearance = CLEARANCE_CLERGY
 
 /obj/item/implant/core_implant/cruciform/proc/make_inquisitor()
 	add_module(new CRUCIFORM_PRIEST)
 	add_module(new CRUCIFORM_INQUISITOR)
 	//add_module(new /datum/core_module/cruciform/uplink())
 	remove_modules(/datum/core_module/cruciform/red_light)
+	security_clearance = CLEARANCE_CLERGY
 
 //Path based cruciforms, these grant additional powers based on what path a cultist walks
 /obj/item/implant/core_implant/cruciform/tessellate
@@ -258,6 +261,7 @@ var/list/disciples = list()
 	max_power = 200
 	power_regen = 1
 	path = "omni"
+	security_clearance = CLEARANCE_CLERGY
 
 // This is to give someone Augustine's cruciform
 /mob/proc/make_augustine()
@@ -275,3 +279,4 @@ var/list/disciples = list()
 				C.install_default_modules_by_job(mind.assigned_job)
 				C.access.Add(mind.assigned_job.cruciform_access)
 				C.install_default_modules_by_path(mind.assigned_job)
+				C.security_clearance = C.security_clearance
