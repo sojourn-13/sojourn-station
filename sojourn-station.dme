@@ -2626,6 +2626,7 @@
 #include "code\modules\psionics\greater_powers.dm"
 #include "code\modules\psionics\job_powers.dm"
 #include "code\modules\psionics\psion.dm"
+#include "code\modules\psionics\psionic_blocker.dm"
 #include "code\modules\psionics\psionic_items.dm"
 #include "code\modules\psionics\researched_powers.dm"
 #include "code\modules\psionics\standard_powers.dm"

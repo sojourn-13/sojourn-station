@@ -26,6 +26,7 @@
 	var/disabled = TRUE //Whether or not the implant functions.
 	var/last_psi_point_gain
 	var/psi_point_cost
+	var/inhibited = FALSE //Whether or not the organ has been inhibited by an external force
 
 	owner_verbs = list(
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing,
