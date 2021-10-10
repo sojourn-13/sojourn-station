@@ -1,5 +1,6 @@
 /obj/machinery/door/holy
-	name = "Absolute door"
+	name = "church hatchway"
+	desc = "A door crafted by the church that requires no power and doesn't seem to have panel you could open."
 	icon = 'icons/obj/doors/Door_holy.dmi'
 	icon_state = "door_closed"
 	autoclose = 1
@@ -11,13 +12,14 @@
 	var/obj/item/wedged_item
 
 /obj/machinery/door/holy/preacher
-	name = "Absolute Prime door"
+	name = "church portcullis"
+	desc = "A door crafted by the church that requires no power and doesn't seem to have panel you could open. This one requires higher ranking in the church to open."
 	icon = 'icons/obj/doors/Door_holy_preacher.dmi'
 	minimal_holiness = CLEARANCE_CLERGY
 
 /obj/item/clothing/accessory/cross // It belongs here
-	name = "Tau Cross necklace"
-	desc = "Heavy necklace resembling a Tau Cross - symbol of the Absolute. Used as a key to Absolute doors."
+	name = "tau cross necklace"
+	desc = "A heavy necklace resembling a Tau Cross - symbol of the Absolute. Used as a key to church hatchways."
 	icon = 'icons/inventory/accessory/icon.dmi'
 	icon_state = "cross"
 	item_state = ""	// No inhands

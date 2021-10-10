@@ -38,9 +38,9 @@
 //Airlocks
 
 /datum/ritual/cruciform/machines/lock_door
-	name = "Activate door"
+	name = "Activate hatchway"
 	phrase = "Inlaqueatus."
-	desc = "Commands nearby door to be locked or unlocked."
+	desc = "Commands a nearby hatchway to be locked or unlocked."
 
 /datum/ritual/cruciform/machines/lock_door/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/O = get_front(user)
@@ -59,9 +59,9 @@
 	return TRUE
 
 /datum/ritual/cruciform/machines/repair_door
-	name = "Repair door"
+	name = "Repair hatchway"
 	phrase = "Redde quod periit."
-	desc = "Repairs nearby door at the cost of biomatter."
+	desc = "Repairs a nearby hatcway at the cost of some biomatter."
 
 /datum/ritual/cruciform/machines/repair_door/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/O = get_front(user)
@@ -70,11 +70,11 @@
 	var/obj/item/stack/material/biomatter/consumable
 
 	if(!door)
-		fail("You fail to find a compatible door here.", user, C)
+		fail("You fail to find a compatible hatchway here.", user, C)
 		return FALSE
 
 	if(door.health == door.maxHealth)
-		fail("This door doesn\'t need repair.", user, C)
+		fail("This hatchway doesn\'t need repair.", user, C)
 		return FALSE
 
 	var/turf/target_turf = get_step(user, user.dir)
@@ -102,7 +102,7 @@
 		effect.success()
 		return TRUE
 	else
-		fail("Not enough biomatter found to repair the door, you need at least [REPAIR_DOOR_AMOUNT].", user, C)
+		fail("Not enough biomatter found to repair the hatchway, you need at least [REPAIR_DOOR_AMOUNT].", user, C)
 		return FALSE
 
 ////////////////////////BIOMATTER MANIPULATION MULTI MACHINES RITUALS

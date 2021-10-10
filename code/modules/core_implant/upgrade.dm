@@ -1,6 +1,6 @@
 /obj/item/coreimplant_upgrade
 	name = "Upgrade"
-	desc = "Upgrade module for coreimplant. Must be activated after install."
+	desc = "Upgrade module for core implant. Must be activated after install."
 	icon = 'icons/obj/module.dmi'
 	icon_state = "core_upgrade"
 	var/implant_type = /obj/item/implant/core_implant

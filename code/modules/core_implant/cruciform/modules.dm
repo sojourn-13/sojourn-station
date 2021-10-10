@@ -191,6 +191,9 @@
 /datum/core_module/rituals/cruciform/crusader
 	ritual_types = list(/datum/ritual/cruciform/crusader)
 
+/datum/core_module/rituals/cruciform/omni
+	ritual_types = list(/datum/ritual/cruciform/omni)
+
 /datum/core_module/rituals/cruciform/tessellate
 	ritual_types = list(/datum/ritual/cruciform/tessellate,
 	/datum/ritual/targeted/cruciform/tessellate)

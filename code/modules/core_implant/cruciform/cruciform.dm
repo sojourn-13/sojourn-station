@@ -78,6 +78,7 @@ var/list/disciples = list()
 		add_module(new CRUCIFORM_PRIEST)
 		add_module(new CRUCIFORM_INQUISITOR)
 		add_module(new CRUCIFORM_CRUSADER)
+		add_module(new CRUCIFORM_OMNI)
 	update_data()
 	disciples |= wearer
 	return TRUE
@@ -200,6 +201,27 @@ var/list/disciples = list()
 	remove_modules(/datum/core_module/cruciform/red_light)
 	security_clearance = CLEARANCE_CLERGY
 
+/obj/item/implant/core_implant/cruciform/proc/make_apostle()
+	add_module(new CRUCIFORM_TESS)
+	add_module(new CRUCIFORM_LEMN)
+	add_module(new CRUCIFORM_MONO)
+	add_module(new CRUCIFORM_DIVI)
+	add_module(new CRUCIFORM_FACT)
+	add_module(new CRUCIFORM_PRIEST)
+	add_module(new CRUCIFORM_INQUISITOR)
+	add_module(new CRUCIFORM_CRUSADER)
+	add_module(new CRUCIFORM_OMNI)
+	//add_module(new /datum/core_module/cruciform/uplink())
+	remove_modules(/datum/core_module/cruciform/red_light)
+	security_clearance = CLEARANCE_CLERGY
+
+	name = "omni cruciform"
+	icon_state = "cruciform_omni"
+	max_power += 200
+	power_regen += 1
+
+	wearer.update_implants()
+
 //Path based cruciforms, these grant additional powers based on what path a cultist walks
 /obj/item/implant/core_implant/cruciform/tessellate
 	name = "tessellate cruciform"
@@ -263,8 +285,8 @@ var/list/disciples = list()
 	path = "omni"
 	security_clearance = CLEARANCE_CLERGY
 
-// This is to give someone Augustine's cruciform
-/mob/proc/make_augustine()
+// This is used either by Augustine or an agent sent by her that has her authority (an apostle) and should be reserved for events. -Kaz
+/mob/proc/make_church_apostle()
 	var/mob/living/carbon/human/user = src
 	if(user.is_mannequin) //Quick return to stop them adding mages to mannequins
 		return
