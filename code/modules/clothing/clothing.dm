@@ -3,6 +3,7 @@
 	siemens_coefficient = 0.9
 	item_flags = DRAG_AND_DROP_UNEQUIP
 	var/flash_protection = FLASH_PROTECTION_NONE	// Sets the item's level of flash protection.
+	var/psi_blocking = 0							// Sets the item's level of psionic protection.
 	var/tint = TINT_NONE							// Sets the item's level of visual impairment tint.
 	var/list/species_restricted						// Only these species can wear this kit.
 	var/gunshot_residue								// Used by forensics.

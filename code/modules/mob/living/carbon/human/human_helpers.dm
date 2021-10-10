@@ -5,6 +5,7 @@
 #define add_clothing_protection(A)	\
 	var/obj/item/clothing/C = A; \
 	flash_protection += C.flash_protection; \
+	psi_blocking += C.psi_blocking; \
 	equipment_tint_total += C.tint;
 
 /mob/living/carbon/human/can_eat(var/food, var/feedback = 1)
@@ -58,6 +59,7 @@
 
 /mob/living/carbon/human/proc/update_equipment_vision()
 	flash_protection = 0
+	psi_blocking = 0
 	equipment_tint_total = 0
 	equipment_see_invis	= 0
 	equipment_vision_flags = 0
