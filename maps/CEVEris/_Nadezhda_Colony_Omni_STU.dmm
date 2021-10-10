@@ -11523,11 +11523,10 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/security/barracks)
 "cTP" = (
-/obj/machinery/atmospherics/tvalve/digital/bypass{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/box,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "cTQ" = (
@@ -12096,16 +12095,6 @@
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section1)
-"dbx" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "dbA" = (
 /turf/simulated/mineral,
 /area/nadezhda/pros/proelav)
@@ -20496,6 +20485,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"fga" = (
+/obj/machinery/atmospherics/valve,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "fgb" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light,
@@ -22440,6 +22434,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/power/sensor{
+	long_range = 1;
+	name = "Powernet Sensor - Thermoelectric";
+	name_tag = "Thermoelectric Subgrid"
+	},
+/obj/structure/cable/yellow,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "fDV" = (
@@ -28764,15 +28764,15 @@
 	name = "\improper Outdoors - Pad"
 	})
 "hbL" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "hbM" = (
@@ -32430,15 +32430,6 @@
 "iaU" = (
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
-"iaV" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "iaY" = (
 /obj/machinery/computer/operating{
 	dir = 8
@@ -36136,11 +36127,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
 "iUZ" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/box,
+/obj/machinery/atmospherics/valve{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "iVc" = (
@@ -36559,14 +36551,6 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/crew_quarters/hydroponics)
-"jbf" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "jbk" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/small/grassa1,
@@ -45325,16 +45309,6 @@
 "kZN" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/genetics)
-"kZQ" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/warningdust/fulltile,
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/engineering/atmos)
 "kZS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -46303,6 +46277,14 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/floor_decal/spline/fancy/three_quarters,
 /turf/simulated/floor/reinforced/airmix,
+/area/nadezhda/engineering/atmos)
+"llv" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "llC" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -52958,6 +52940,15 @@
 "mOC" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"mOI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "mOS" = (
 /obj/structure/cyberplant,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -53848,11 +53839,6 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "mXQ" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/alarm{
@@ -59057,12 +59043,11 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/absolutism/vectorrooms)
 "opP" = (
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
-/obj/random/traps/wire_splicing/low_chance,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "opW" = (
@@ -60352,20 +60337,6 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
-"oEa" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "oEc" = (
 /obj/random/furniture/pottedplant,
 /obj/structure/cable/yellow{
@@ -61006,7 +60977,7 @@
 /area/nadezhda/crew_quarters/hydroponics)
 "oLP" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
-	dir = 4
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/box,
 /obj/effect/decal/cleanable/dirt,
@@ -64642,6 +64613,11 @@
 "pJs" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/machinery/meter,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "pJx" = (
@@ -65917,6 +65893,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/atmos)
 "pZi" = (
@@ -74765,11 +74742,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow,
-/obj/machinery/power/sensor{
-	long_range = 1;
-	name = "Powernet Sensor - Thermoelectric";
-	name_tag = "Thermoelectric Subgrid"
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
@@ -76677,15 +76653,6 @@
 "sxR" = (
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/hallway/side/f2section1)
-"sxU" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "sxY" = (
 /obj/machinery/newscaster{
 	dir = 8;
@@ -90499,6 +90466,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
+"vHb" = (
+/obj/machinery/atmospherics/binary/pump/high_power,
+/obj/effect/floor_decal/industrial/box,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "vHh" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -100936,6 +100909,16 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
+"xYJ" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "xYO" = (
 /obj/structure/table/rack,
 /obj/item/clothing/mask/breath,
@@ -173823,12 +173806,12 @@ crV
 iUZ
 uTf
 opP
-vQv
+mOI
 opP
-fJR
+llv
 vQv
 lgi
-pJa
+fga
 dTL
 esv
 eGU
@@ -174024,11 +174007,11 @@ sFI
 crV
 cTP
 kyL
-kZQ
-pJa
-kZQ
-pJa
-vkn
+lIO
+xYJ
+lIO
+xYJ
+vHb
 dmz
 vQv
 dUb
@@ -174226,10 +174209,10 @@ sFI
 crV
 oLP
 vQv
-sxU
 vQv
-jbf
-vQv
+uYr
+fJR
+uYr
 daX
 doc
 vQv
@@ -174428,10 +174411,10 @@ sFI
 crV
 nYP
 pJa
-dbx
-pJs
-iaV
 pJa
+pJs
+gNL
+xYJ
 pJa
 dsf
 uTf
@@ -174632,7 +174615,7 @@ tiO
 puU
 mXQ
 hbL
-oEa
+vOU
 rYX
 aFU
 fDK
