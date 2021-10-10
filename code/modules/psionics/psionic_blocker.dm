@@ -15,3 +15,4 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
 	psi_blocking = 10
 	price_tag = 1300
+	
