@@ -217,6 +217,8 @@
 		add_module(new CRUCIFORM_DIVI)
 	else if(path == "fact")
 		add_module(new CRUCIFORM_FACT)
+	else if(path == "omni")
+		add_module(new CRUCIFORM_OMNI)
 
 /obj/item/implant/core_implant/proc/process_modules()
 	for(var/datum/core_module/CM in modules)
