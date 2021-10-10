@@ -9,7 +9,7 @@
 #include "_Nadezhda_Solar_Area.dmm"
 #include "_Hunting_Lodge.dmm"
 #include "../encounters/deepforest/deepforest.dm"
-#include "../encounters/spacefortress/spacefortress.dm"
+//#include "../encounters/spacefortress/spacefortress.dm"
 #include "centcomm.dmm"
 
 /obj/map_data/eris
