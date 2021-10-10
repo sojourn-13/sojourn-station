@@ -954,6 +954,7 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/sika = 3,
+		/datum/design/autolathe/ammo/lrifle_speed_loader,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small,
@@ -967,6 +968,7 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/roe =  3,
+		/datum/design/autolathe/ammo/lrifle_speed_loader,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small,

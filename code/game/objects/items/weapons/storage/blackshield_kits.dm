@@ -45,7 +45,11 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun/light_wood(src)
-		new /obj/item/ammo_magazine/ammobox/light_rifle_257_small(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/sts
