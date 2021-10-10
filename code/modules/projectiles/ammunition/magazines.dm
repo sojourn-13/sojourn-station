@@ -719,19 +719,29 @@
 	desc = "A 10 round ammo strip for 7.5mm Rifle."
 	icon_state = "rifle"
 	icon = 'icons/obj/ammo_speed.dmi'
-	caliber = "rifle"
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 3)
 	ammo_type = /obj/item/ammo_casing/rifle_75
 	max_ammo = 10
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/speed_loader_light_rifle_257
+	name = "ammo strip (.257 Carbine)"
+	desc = "A 10 round ammo strip for .257 Carbine."
+	icon_state = "rifle"
+	icon = 'icons/obj/ammo_speed.dmi'
+	caliber = CAL_LRIFLE
+	matter = list(MATERIAL_STEEL = 3)
+	ammo_type = /obj/item/ammo_casing/light_rifle_257
+	max_ammo = 10
+	multiple_sprites = 1
+
+
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
 	name = "ammo strip (.408 Heavy Rifle)"
 	desc = "A 10 round ammo strip for .408 Heavy Rifle."
 	icon_state = "rifle"
 	icon = 'icons/obj/ammo_speed.dmi'
-	caliber = "hrifle"
 	caliber = CAL_HRIFLE
 	matter = list(MATERIAL_STEEL = 3)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
