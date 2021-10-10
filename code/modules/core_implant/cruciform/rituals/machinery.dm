@@ -61,7 +61,7 @@
 /datum/ritual/cruciform/machines/repair_door
 	name = "Repair hatchway"
 	phrase = "Redde quod periit."
-	desc = "Repairs a nearby hatcway at the cost of some biomatter."
+	desc = "Repairs a nearby hatchway at the cost of some biomatter."
 
 /datum/ritual/cruciform/machines/repair_door/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/O = get_front(user)
