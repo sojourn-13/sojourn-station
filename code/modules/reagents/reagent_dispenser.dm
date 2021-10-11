@@ -221,6 +221,16 @@
 	volume = 1000
 	starting_reagent = "condensedcapsaicin"
 
+/obj/structure/reagent_dispensers/ammonia
+	name = "ammonia dispenser"
+	desc = "Contains ammonia meant to clean things and mix to make spacecleaner."
+	icon_state = "ammoniatank"
+	anchored = 1
+	density = 0
+	amount_per_transfer_from_this = 10
+	volume = 1000
+	starting_reagent = "cleaner"
+	possible_transfer_amounts = list(1,5,10,25,50,100)
 
 /obj/structure/reagent_dispensers/water_cooler
 	name = "water cooler"
