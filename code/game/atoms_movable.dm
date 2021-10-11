@@ -327,6 +327,7 @@
 	// To prevent issues, diagonal movements are broken up into two cardinal movements.
 
 	// Is this a diagonal movement?
+	SEND_SIGNAL(src, COMSIG_MOVABLE_PREMOVE, src)
 	if (Dir & (Dir - 1))
 		if (Dir & NORTH)
 			if (Dir & EAST)

@@ -36,6 +36,11 @@
 	path = /obj/item/gun_upgrade/mechanism/glass_widow
 	antag_roles = ROLES_UPLINK_BASE
 
+/datum/uplink_item/item/stealthy_weapons/eye_banger
+	name = "\"Mortality\" explosive lenses"
+	item_cost = 5
+	path = /obj/item/clothing/glasses/attachable_lenses/explosive
+
 /datum/uplink_item/item/stealthy_weapons/boot_knife
 	name = "Boot Knife"
 	item_cost = 1

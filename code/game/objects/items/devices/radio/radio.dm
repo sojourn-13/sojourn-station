@@ -362,7 +362,7 @@ var/global/list/default_medbay_channels = list(
 		displayname = M.GetVoice()
 		jobname = "Unknown"
 		voicemask = 1
-
+	SEND_SIGNAL(src, COMSIG_MESSAGE_SENT)
 
 
   /* ###### Radio headsets can only broadcast through subspace ###### */

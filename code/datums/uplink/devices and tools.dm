@@ -85,7 +85,7 @@
 /datum/uplink_item/item/tools/thermal_lens
 	name = "Thermal Imaging Lenses"
 	item_cost = 10
-	path = /obj/item/clothing/glasses/powered/thermal/lens
+	path = /obj/item/clothing/glasses/attachable_lenses
 
 /datum/uplink_item/item/tools/powersink
 	name = "Powersink (DANGER!)"
