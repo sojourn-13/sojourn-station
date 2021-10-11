@@ -11676,8 +11676,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/holy{
-	name = "Church Commons"
+/obj/machinery/door/airlock{
+	name = "Church";
+	req_access = list(27)
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -38076,8 +38077,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/holy{
-	name = "Church Commons"
+/obj/machinery/door/airlock{
+	name = "Church";
+	req_access = list(27)
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -42728,8 +42730,9 @@
 	name = "Dormitory 3"
 	})
 "kwb" = (
-/obj/machinery/door/holy{
-	name = "Church Commons"
+/obj/machinery/door/airlock{
+	name = "Church";
+	req_access = list(27)
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
@@ -60907,8 +60910,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/airlock/maintenance_interior{
-	req_access = list(70)
+/obj/machinery/door/holy{
+	name = "Church"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/absolutism/bioreactor)
@@ -83384,11 +83387,12 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "ugO" = (
+/obj/structure/catwalk,
 /obj/machinery/camera/network/third_section{
 	dir = 1
 	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/pros/prep)
+/turf/simulated/floor/plating/under,
+/area/nadezhda/hallway/surface/section1)
 "ugS" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -209187,8 +209191,8 @@ kxH
 nIu
 gTM
 lNq
+xdv
 ugO
-dkg
 vaT
 jdA
 xcT
