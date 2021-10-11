@@ -74,6 +74,9 @@
 	//Mutations populated through horrendous genetic tampering.
 	var/datum/genetics/genetics_holder/unnatural_mutations
 
+	var/is_watching = TRUE  //used for remote viewing of multiz structures
+	var/can_multiz_pb = FALSE // used for point-blanking people that camp ladders.
+
 	//Used in living/recoil.dm
 	var/recoil = 0 //What our current recoil level is
 	var/recoil_reduction_timer

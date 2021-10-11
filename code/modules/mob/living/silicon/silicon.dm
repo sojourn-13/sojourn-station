@@ -45,6 +45,13 @@
 	GLOB.silicon_mob_list |= src
 	. = ..()
 	add_language(LANGUAGE_COMMON)
+	add_language(LANGUAGE_ROBOT)
+	add_language(LANGUAGE_COMMON)
+	add_language(LANGUAGE_SERBIAN)
+	add_language(LANGUAGE_GERMAN)
+	add_language(LANGUAGE_JANA)
+	add_language(LANGUAGE_CYRILLIC)
+	add_language(LANGUAGE_LATIN)
 	init_id()
 	init_subsystems()
 
