@@ -53181,7 +53181,10 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/pros/prep)
 "mAi" = (
-/obj/random/furniture/pottedplant,
+/obj/structure/closet/secure_closet/personal/hydroponics{
+	name = "xenoflorist's locker";
+	req_access = list(5)
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "mAu" = (
@@ -134782,7 +134785,7 @@ jtY
 ahR
 kyx
 xGX
-fEk
+mAi
 eXK
 sFI
 sFI
