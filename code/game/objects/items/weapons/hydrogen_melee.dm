@@ -15,6 +15,7 @@
 	w_class = ITEM_SIZE_SMALL
 	switched_on_qualities = list(QUALITY_WELDING = 5, QUALITY_CAUTERIZING = 25, QUALITY_CUTTING = 50)
 	worksound = WORKSOUND_WELDING
+	embed_mult = 0 // It shouldn't get embedded in, it's a blade of fire.
 
 	var/active = FALSE
 	var/active_ap = ARMOR_PEN_EXTREME
