@@ -263,6 +263,8 @@
 					/obj/item/device/kit/paint/ripley/clark = 3,
 					/obj/item/device/kit/paint/ripley/clark_orange = 3,
 					/obj/item/device/kit/paint/ripley/clark_veteran = 3,
+					//Randy
+					/obj/item/device/kit/paint/rust_randy = 3,
 					//Ody
 					/obj/item/device/kit/paint/odysseus = 3,
 					/obj/item/device/kit/paint/odysseus/blue_racer = 3,

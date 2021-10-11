@@ -41,7 +41,6 @@
 		/datum/design/research/item/mechfab/ripley/chassis,
 		/datum/design/research/item/mechfab/ripley/chassis/firefighter,
 		/datum/design/research/item/mechfab/ripley/torso,
-		/datum/design/research/item/mechfab/ripley/head,
 		/datum/design/research/item/mechfab/ripley/left_arm,
 		/datum/design/research/item/mechfab/ripley/right_arm,
 		/datum/design/research/item/mechfab/ripley/left_leg,

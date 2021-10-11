@@ -3,16 +3,16 @@
 
 /datum/construction/mecha/randy_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/ripley_torso, desc = "A chassis or case for a Ripley mech, needs a Ripley torso, arms and legs."),//1
-		list("key"=/obj/item/mecha_parts/part/ripley_left_arm, desc = "A chassis or case for a Ripley mech, needs a Ripley torso, arms and legs."),//2
-		list("key"=/obj/item/mecha_parts/part/ripley_right_arm, desc = "A chassis or case for a Ripley mech, needs a Ripley torso, arms and legs."),//3
-		list("key"=/obj/item/mecha_parts/part/ripley_left_leg, desc = "A chassis or case for a Ripley mech, needs a Ripley torso, arms and legs."),//4
-		list("key"=/obj/item/mecha_parts/part/ripley_right_leg, desc = "A chassis or case for a Ripley mech, needs a Ripley torso, arms and legs.")//5
+		list("key"=/obj/item/mecha_parts/part/randy_torso, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs."),//1
+		list("key"=/obj/item/mecha_parts/part/randy_left_arm, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs."),//2
+		list("key"=/obj/item/mecha_parts/part/randy_right_arm, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs."),//3
+		list("key"=/obj/item/mecha_parts/part/randy_left_leg, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs."),//4
+		list("key"=/obj/item/mecha_parts/part/randy_right_leg, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs.")//5
 	)
 
 	spawn_result()
 		var/obj/item/mecha_parts/chassis/const_holder = holder
-		const_holder.construct = new /datum/construction/reversible/mecha/ripley(const_holder)
+		const_holder.construct = new /datum/construction/reversible/mecha/randy(const_holder)
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "ripley0"
 		const_holder.density = 1
@@ -49,9 +49,9 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The mech is missing its radio."),
 		//6
-		list("key"=/obj/item/stack/material/plasteel,
+		list("key"=/obj/item/robot_parts/robot_component/armour/mkii,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="The joint protectors are welded. 5 sheets of plasteel are needed to form the external armor."),
+			"desc"="The joint protectors are welded. A Mark II armour plating is needed as the external armor."),
 		//7
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,
@@ -367,14 +367,14 @@
 			if(4)
 				if(diff==FORWARD)
 					usr.visible_message(
-						"[usr] secures the heat sink to the [holder].", \
-						"You secure the heat sink to the [holder]."
+						"[usr] secures the radio to the [holder].", \
+						"You secure the radio to the [holder]."
 					)
 					holder.icon_state = "fireripley11"
 				else
 					usr.visible_message(
-						"[usr] unsecures the heat sink from the [holder].", \
-						"You unsecure the heat sink from the [holder]."
+						"[usr] unsecures the radio from the [holder].", \
+						"You unsecure the radio from the [holder]."
 					)
 					holder.icon_state = "ripley12"
 			if(3)

@@ -208,7 +208,15 @@
 	name = "\"Spider\" APLU customization kit"
 	new_name = "\"Spider\" APLU"
 	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearence. Someones idea of a good joke, but the metal spider head barely resembles a real giant spider."
-	new_icon = "veteranclarke"
+	new_icon = "spiderclarke"
+
+//Randy kits.
+/obj/item/device/kit/paint/rust_randy
+	name = "\"Rust\" Randy customization kit"
+	new_name = "Randy \"Rust\""
+	new_desc = "An old Randy exosuit, rusted after spending Absolute-knows how long in a pile of trash."
+	new_icon = "randy-rust"
+	allowed_types = list("randy")
 
 //Odysseus kits.
 /obj/item/device/kit/paint/odysseus
