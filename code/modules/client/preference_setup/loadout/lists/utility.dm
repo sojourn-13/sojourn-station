@@ -168,3 +168,8 @@
 	display_name = "synthesized violin"
 	path = /obj/item/device/synthesized_instrument/violin
 
+/datum/gear/utility/tinfoil
+	display_name = "anti-psion hat"
+	path = /obj/item/clothing/head/psionic/tinfoil
+	cost = 3
+

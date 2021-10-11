@@ -27,14 +27,8 @@
 		list(mode_name="fire one barrel at a time", burst=1, icon="semi"),
 		list(mode_name="fire both barrels at once", burst=2, icon="burst"),
 		)
-
-/obj/item/gun/projectile/shotgun/doublebarrel/pellet
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
-
-/obj/item/gun/projectile/shotgun/doublebarrel/flare
-	name = "signal shotgun"
-	desc = "A double-barreled shotgun meant to fire signal illumination shells."
-	ammo_type = /obj/item/ammo_casing/shotgun/illumination
+	saw_off = TRUE
+	sawn = /obj/item/gun/projectile/shotgun/doublebarrel/sawn
 
 /obj/item/gun/projectile/shotgun/doublebarrel/update_icon()
 	..()
@@ -82,24 +76,30 @@
 		return
 	..()
 
-/obj/item/gun/projectile/shotgun/doublebarrel/attackby(var/obj/item/A as obj, mob/user as mob)
-	if(QUALITY_SAWING in A.tool_qualities)
-		if (!istype(src, /obj/item/gun/projectile/shotgun/doublebarrel/sawn))
-			//if (src.item_upgrades.len)
-				//if("No" == input(user, "There are attachments present. Would you like to destroy them?") in list("Yes", "No"))
-				//	return
-			to_chat(user, SPAN_NOTICE("You begin to shorten the barrel of \the [src]."))
-			if(loaded.len)
-				for(var/i in 1 to max_shells)
-					afterattack(user, user)	//will this work? //it will. we call it twice, for twice the FUN
-					playsound(user, fire_sound, 50, 1)
-				user.visible_message(SPAN_DANGER("The shotgun goes off!"), SPAN_DANGER("The shotgun goes off in your face!"))
-				return
-			if(A.use_tool(user, src, WORKTIME_FAST, QUALITY_SAWING, FAILCHANCE_NORMAL, required_stat = STAT_COG))
-				qdel(src)
-				new /obj/item/gun/projectile/shotgun/doublebarrel/sawn(usr.loc)
-				to_chat(user, SPAN_WARNING("You shorten the barrel of \the [src]!"))
-		else
-			to_chat(user, SPAN_WARNING("You cannot shorten \the [src] any further!"))
-	else
-		..()
+//Subtypes
+
+/obj/item/gun/projectile/shotgun/doublebarrel/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
+/obj/item/gun/projectile/shotgun/doublebarrel/flare
+	name = "signal shotgun"
+	desc = "A double-barreled shotgun meant to fire signal illumination shells."
+	ammo_type = /obj/item/ammo_casing/shotgun/illumination
+
+/obj/item/gun/projectile/shotgun/doublebarrel/sawn
+	name = "sawn-off shotgun"
+	desc = "Omar's coming!"
+	icon = 'icons/obj/guns/projectile/sawnoff/sawnshotgun.dmi'
+	icon_state = "sawnshotgun"
+	item_state = "sawnshotgun"
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	can_dual = TRUE
+	caliber = CAL_SHOTGUN
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 10)
+	w_class = ITEM_SIZE_NORMAL
+	force = WEAPON_FORCE_PAINFUL
+	damage_multiplier = 0.8 //slightly weaker due to sawn-off barrels
+	recoil_buildup = 1.2 //gonna have solid grip on those, point-blank shots adviced
+	one_hand_penalty = 10 //compact shotgun level
+	saw_off = FALSE

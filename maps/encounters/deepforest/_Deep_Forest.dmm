@@ -1132,6 +1132,9 @@
 	dir = 4;
 	pixel_y = 0
 	},
+/obj/structure/salvageable/console_broken_os{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ev" = (
@@ -1192,7 +1195,7 @@
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "eE" = (
-/obj/structure/salvageable/console_os,
+/obj/structure/salvageable/server_os,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "eF" = (
@@ -10037,8 +10040,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "Ma" = (
-/obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A,
-/obj/machinery/telepad,
+/obj/structure/salvageable/data_os,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Mb" = (
@@ -10613,6 +10615,10 @@
 /obj/item/paper/Court,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Pk" = (
+/obj/effect/step_trigger/ironcompound_to_abandonedfortress_2_A,
+/turf/unsimulated/mineral,
+/area/colony)
 "Pm" = (
 /obj/structure/flora/small/busha2,
 /obj/random/mob/vox/low_chance,
@@ -12110,6 +12116,10 @@
 /mob/living/simple_animal/hostile/wurm/adult,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"Xo" = (
+/obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A,
+/turf/unsimulated/mineral,
+/area/colony)
 "Xr" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha1,
@@ -12834,8 +12844,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+Pk
+Xo
 ab
 aa
 "}

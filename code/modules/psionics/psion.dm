@@ -49,6 +49,13 @@
 
 		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) / 20), 0, 5))
 
+		if(!inhibited && owner.psi_blocking > 0)
+			owner.show_message("\blue Your psionic power has been inhibited by an outside force!")
+			inhibited = TRUE
+		else if(inhibited && owner.psi_blocking <= 0)
+			owner.show_message("\blue Your psionic power has been freed from its captivity!")
+			inhibited = FALSE
+
 		if(psi_points > max_psi_points && owner.stats.initialized == TRUE) //Tracks Deltas in Cog changing maximum psi, but also acts as a short circuit check for round-start psionics.
 			psi_points = max_psi_points
 
@@ -60,6 +67,8 @@
 				last_psi_point_gain = world.time + ((10 MINUTES - cognitive_potential MINUTES) / 2)
 			else
 				last_psi_point_gain = world.time + (10 MINUTES - cognitive_potential MINUTES)
+		
+		
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
@@ -137,4 +146,7 @@
 		return FALSE
 	else
 		psi_points -= psi_cost
+		if(owner.psi_blocking >= 10)
+			to_chat(usr,"Your mind struggles to break the confines of its prison, but cannot escape.")
+			return FALSE
 		return TRUE

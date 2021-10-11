@@ -297,6 +297,12 @@ Proc for attack log creation, because really why not
 /mob/proc/can_see_reagents()
 	return TRUE
 
+/mob/proc/can_see_illegal_reagents()
+	return TRUE
+
+/mob/proc/can_see_common_reagents()
+	return TRUE
+
 // Returns true if M was not already in the dead mob list
 /mob/proc/switch_from_living_to_dead_mob_list()
 	remove_from_living_mob_list()

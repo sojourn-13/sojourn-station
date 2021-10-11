@@ -273,6 +273,7 @@
 	var/voiceName = "Unknown"
 	heating_point = 523
 	heating_products = list("uncap nanites")
+	illegal = TRUE
 
 /datum/reagent/nanites/uncapped/voice_mimic/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(..())
@@ -285,6 +286,7 @@
 	var/uni_identity
 	heating_point = 523
 	heating_products = list("uncap nanites")
+	illegal = TRUE
 
 /datum/reagent/nanites/uncapped/dynamic_handprints/on_mob_add(mob/living/L)
 	..()

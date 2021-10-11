@@ -5,6 +5,7 @@
 #define add_clothing_protection(A)	\
 	var/obj/item/clothing/C = A; \
 	flash_protection += C.flash_protection; \
+	psi_blocking += C.psi_blocking; \
 	equipment_tint_total += C.tint;
 
 /mob/living/carbon/human/can_eat(var/food, var/feedback = 1)
@@ -27,11 +28,20 @@
 		return TRUE
 	if(stats.getStat(STAT_COG) >= HUMAN_REQ_COG_FOR_REG || stats.getStat(STAT_BIO) >= HUMAN_REQ_BIO_FOR_REG)
 		return TRUE
-	/*
-	if(stats.check_for_shared_perk(PERK_SHARED_SEE_CONSUMER_REAGENTS))
-		return 2
-	*/
 	return FALSE
+
+/mob/living/carbon/human/can_see_common_reagents()
+	if(stats.check_for_shared_perk(PERK_SHARED_SEE_COMMON_REAGENTS))
+		return TRUE
+	return FALSE
+
+/mob/living/carbon/human/can_see_illegal_reagents()
+	if(istype(glasses, /obj/item/clothing/glasses/hud/security) || istype(glasses, /obj/item/clothing/glasses/sechud))
+		return TRUE
+	else if(stats.check_for_shared_perk(PERK_SHARED_SEE_ILLEGAL_REAGENTS))
+		return TRUE
+	return FALSE
+
 
 /mob/living/carbon/human/can_force_feed(var/feeder, var/food, var/feedback = 1)
 	var/list/status = can_eat_status()
@@ -58,6 +68,7 @@
 
 /mob/living/carbon/human/proc/update_equipment_vision()
 	flash_protection = 0
+	psi_blocking = 0
 	equipment_tint_total = 0
 	equipment_see_invis	= 0
 	equipment_vision_flags = 0

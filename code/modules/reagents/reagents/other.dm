@@ -11,6 +11,7 @@
 	color = "#888888"
 	overdose = 1885
 	color_weight = 10
+	common = TRUE //So the coders know what they're eating better. (It's just wax)
 
 //None
 /datum/reagent/other/crayon_dust/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -118,6 +119,7 @@
 	color = "#808080"
 	overdose = 1885
 	color_weight = 20
+	common = TRUE //Easily Identifiable, Good for huffing
 
 /datum/reagent/other/paint/touch_turf(turf/T)
 	if(istype(T) && !istype(T, /turf/space))
@@ -216,6 +218,7 @@
 	taste_description = "expensive metal"
 	reagent_state = SOLID
 	color = "#F7C430"
+	common = TRUE //People know what gold is at a glance.
 
 /datum/reagent/metal/silver
 	name = "Silver"
@@ -345,6 +348,7 @@
 	reagent_state = LIQUID
 	color = "#A5F0EE"
 	touch_met = 50
+	common = TRUE //It's just ammonia and water, and the Janitor should be able to know what they are working with.
 
 /datum/reagent/other/space_cleaner/touch_obj(obj/O)
 	O.clean_blood()
@@ -401,6 +405,7 @@
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#009CA8"
+	common = TRUE //lewd
 
 /datum/reagent/other/lube/touch_turf(turf/simulated/T)
 	if(!istype(T))
@@ -467,6 +472,7 @@
 	taste_description = "wood"
 	reagent_state = LIQUID
 	color = "#B97A57"
+	common = TRUE //Wood pulp is identifiable at a glance
 
 /datum/reagent/other/luminol
 	name = "Luminol"
@@ -475,6 +481,7 @@
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#F2F3F4"
+	illegal=TRUE //Allows inspectors to know they are working with Luminol
 
 /datum/reagent/other/luminol/touch_obj(obj/O)
 	O.reveal_blood()
