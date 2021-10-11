@@ -63196,6 +63196,9 @@
 	dir = 5
 	},
 /obj/landmark/storyevent/hidden_vent_antag,
+/obj/structure/reagent_dispensers/bidon{
+	starting_reagent = "cleaner"
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
 "ptp" = (
