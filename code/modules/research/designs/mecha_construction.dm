@@ -2,7 +2,7 @@
 
 /datum/design/research/item/mechfab/ripley
 	category = "Ripley"
-	starts_unlocked = TRUE
+	starts_unlocked = FALSE
 
 /datum/design/research/item/mechfab/ripley/chassis
 	build_path = /obj/item/mecha_parts/chassis/ripley
@@ -24,6 +24,31 @@
 
 /datum/design/research/item/mechfab/ripley/right_leg
 	build_path = /obj/item/mecha_parts/part/ripley_right_leg
+
+
+//Randy ====================================
+
+/datum/design/research/item/mechfab/randy
+	category = "Randy"
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mechfab/randy/chassis
+	build_path = /obj/item/mecha_parts/chassis/randy
+
+/datum/design/research/item/mechfab/randy/torso
+	build_path = /obj/item/mecha_parts/part/randy_torso
+
+/datum/design/research/item/mechfab/randy/left_arm
+	build_path = /obj/item/mecha_parts/part/randy_left_arm
+
+/datum/design/research/item/mechfab/randy/right_arm
+	build_path = /obj/item/mecha_parts/part/randy_right_arm
+
+/datum/design/research/item/mechfab/randy/left_leg
+	build_path = /obj/item/mecha_parts/part/randy_left_leg
+
+/datum/design/research/item/mechfab/randy/right_leg
+	build_path = /obj/item/mecha_parts/part/randy_right_leg
 
 
 //Odysseus =====================================================

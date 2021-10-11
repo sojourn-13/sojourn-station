@@ -84,6 +84,49 @@
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 18)
 
+///////// Randy
+
+/obj/item/mecha_parts/chassis/randy
+	name = "Randy Chassis"
+	desc = "A chassis or case for a Randy mech, needs Ripley torso, arms and legs."
+	construct_type = /datum/construction/mecha/randy_chassis
+	matter = list(MATERIAL_STEEL = 20)
+
+/obj/item/mecha_parts/part/randy_torso
+	name = "Randy Torso"
+	desc = "A torso part of Randy APLU. Contains power unit, processing core and life support systems."
+	icon_state = "ripley_harness"
+	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_BIO = 1, TECH_ENGINEERING = 1)
+	matter = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 20)
+
+/obj/item/mecha_parts/part/randy_left_arm
+	name = "Randy Left Arm"
+	desc = "A Randy APLU left arm. Data and power sockets are compatible with most exosuit tools."
+	icon_state = "ripley_l_arm"
+	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
+	matter = list(MATERIAL_STEEL = 15)
+
+/obj/item/mecha_parts/part/randy_right_arm
+	name = "Randy Right Arm"
+	desc = "A Randy APLU right arm. Data and power sockets are compatible with most exosuit tools."
+	icon_state = "ripley_r_arm"
+	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
+	matter = list(MATERIAL_STEEL = 15)
+
+/obj/item/mecha_parts/part/randy_left_leg
+	name = "Randy Left Leg"
+	desc = "A Randy APLU left leg. Contains somewhat complex servodrives and balance maintaining systems."
+	icon_state = "ripley_l_leg"
+	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
+	matter = list(MATERIAL_STEEL = 15)
+
+/obj/item/mecha_parts/part/randy_right_leg
+	name = "Randy Right Leg"
+	desc = "A Randy APLU right leg. Contains somewhat complex servodrives and balance maintaining systems."
+	icon_state = "ripley_r_leg"
+	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
+	matter = list(MATERIAL_STEEL = 15)
+
 ///////// Gygax
 
 /obj/item/mecha_parts/chassis/gygax
