@@ -31,9 +31,11 @@
 
 /obj/item/shield
 	name = "shield"
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	var/slowdown_time = 1
 	var/base_block_chance = 50
-	var/max_durability = 500
-	var/durability = 500
+	var/max_durability = 250 //So we can brake and need healing time to tome
+	var/durability = 250
 
 /obj/item/shield/proc/breakShield(mob/user)
 	if(user)
@@ -56,6 +58,13 @@
 			user.visible_message(SPAN_NOTICE("[user] begins repairing \the [src] with the [I]!"))
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_ADHESIVE, FAILCHANCE_EASY, required_stat = STAT_MEC))
 				src.adjustShieldDurability(src.max_durability * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100, user)
+
+/obj/item/shield/attack(mob/M, mob/user)
+	if(isliving(M))
+		var/mob/living/L = M
+		if(L.slowdown < slowdown_time * 3)
+			L.slowdown += slowdown_time
+	return ..()
 
 /obj/item/shield/examine(mob/user)
 	if(!..(user,2))
@@ -111,6 +120,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "riot"
 	item_state = "riot"
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
@@ -156,8 +166,9 @@
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
 	price_tag = 2000
-	max_durability = 1200
-	durability = 1200
+	max_durability = 800 //Well clearly made to last it should require some repair post crusade
+	durability = 800
+	armor = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
 
 /obj/item/shield/riot/crusader/handle_shield(mob/user)
@@ -185,13 +196,13 @@
 	throw_range = 6
 	max_durability = 350
 	durability = 350
-	matter = list(MATERIAL_STEEL = 6)
+	matter = list(MATERIAL_WOOD = 10)
 	base_block_chance = 35
-
+	slowdown_time = 0 //Light do to being a buckler
+	w_class = ITEM_SIZE_NORMAL //WERE SMALLER
 
 /obj/item/shield/riot/handmade/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	return base_block_chance
-
 
 /obj/item/shield/riot/handmade/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/extinguisher) || istype(W, /obj/item/storage/toolbox) || istype(W, /obj/item/melee))
@@ -207,8 +218,8 @@
 	flags = CONDUCT
 	throw_speed = 2
 	throw_range = 4
-	max_durability = 300
-	durability = 300
+	max_durability = 100
+	durability = 100
 	matter = list(MATERIAL_STEEL = 4)
 	base_block_chance = 30
 
@@ -228,8 +239,8 @@
 	flags = CONDUCT
 	throw_speed = 2
 	throw_range = 2
-	max_durability = 300
-	durability = 300
+	max_durability = 150//Clearly meant to be better
+	durability = 150
 	matter = list(MATERIAL_STEEL = 8)
 	base_block_chance = 40
 
@@ -241,6 +252,7 @@
 	flags = null
 	throw_speed = 2
 	throw_range = 6
+	armor = list(melee = 15, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BONE = 6)
 	base_block_chance = 50
 
@@ -258,8 +270,9 @@
 	throwforce = 5.0
 	throw_speed = 1
 	throw_range = 4
-	max_durability = 700
-	durability = 700
+	max_durability = 200 //Weak
+	durability = 200
+	armor = list(melee = 10, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	attack_verb = list("shoved", "bashed")

@@ -194,6 +194,12 @@ meteor_act
 		if(.) return
 	return 0
 
+/mob/living/carbon/human/proc/has_shield()
+	for(var/obj/item/shield/shield in list(l_hand, r_hand))
+		if(!shield) continue
+		return shield
+	return FALSE
+
 /mob/living/carbon/human/resolve_item_attack(obj/item/I, mob/living/user, var/target_zone)
 	if(check_attack_throat(I, user))
 		return null
@@ -246,7 +252,7 @@ meteor_act
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(hit_appends)	//forcesay checks stat already
 	if((I.damtype == BRUTE || I.damtype == HALLOSS) && prob(25 + (effective_force * 2)))
-		if(!stat)
+		if(!stat && !(has_shield()))
 			if(headcheck(hit_zone))
 				//Harder to score a stun but if you do it lasts a bit longer
 				if(prob(effective_force))
