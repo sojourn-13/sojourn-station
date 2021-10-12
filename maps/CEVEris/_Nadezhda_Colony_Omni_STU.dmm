@@ -6718,21 +6718,16 @@
 /turf/simulated/floor/plating/under,
 /area/colony)
 "bHA" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chem/Viro Labs";
-	req_one_access = list(33,29)
-	},
-/turf/simulated/floor/plating,
-/area/nadezhda/medical/virology)
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/lab)
 "bHP" = (
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/rock,
@@ -7014,7 +7009,6 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "bLv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/bed/chair{
 	dir = 1
 	},
@@ -24515,6 +24509,23 @@
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
 	})
+"fUo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-s"
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/lab)
 "fUp" = (
 /obj/machinery/reagentgrinder/industrial,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -27764,7 +27775,9 @@
 /area/nadezhda/command/tcommsat/computer)
 "gGw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/newscaster{
 	dir = 4;
@@ -46587,6 +46600,9 @@
 /obj/item/reagent_containers/syringe/stim/ultra_surgeon{
 	pixel_x = -5
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "lba" = (
@@ -51995,6 +52011,7 @@
 /area/nadezhda/command/gmaster)
 "mmx" = (
 /obj/effect/window_lwall_spawn/smartspawn,
+/obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/plating,
 /area/colony)
 "mmA" = (
@@ -74949,6 +74966,17 @@
 /obj/random/tool_upgrade,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"rCC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/medical/chemistry)
 "rCF" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "13,15"
@@ -85073,6 +85101,9 @@
 /obj/random/medical/low_chance,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "tZR" = (
@@ -96231,8 +96262,8 @@
 "wtq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -103742,6 +103773,9 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "ydf" = (
 /obj/structure/bed/chair/office/dark,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "ydk" = (
@@ -130761,7 +130795,7 @@ lzL
 iDR
 fvV
 jUp
-wtq
+rCC
 tZL
 cCX
 byr
@@ -132978,8 +133012,8 @@ bBc
 pKM
 cRc
 tBh
-vJA
-wIR
+bHA
+fUo
 qLp
 bCf
 sdG
@@ -133795,7 +133829,7 @@ lnd
 lnd
 qLp
 lnd
-bHA
+dcv
 lnd
 lnd
 qLp
@@ -133994,7 +134028,7 @@ jlb
 lQn
 oGY
 dLI
-dLI
+xjo
 giN
 ity
 bhT
