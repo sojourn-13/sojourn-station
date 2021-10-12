@@ -196,6 +196,9 @@ var/list/ai_verbs_default = list(
 	add_language(LANGUAGE_SERBIAN, 1)
 	add_language(LANGUAGE_JIVE, 1) //can understand but obviously can't speak it.
 	add_language(LANGUAGE_GERMAN, 1)
+	add_language(LANGUAGE_JANA, 1)
+	add_language(LANGUAGE_CYRILLIC, 1)
+	add_language(LANGUAGE_LATIN, 1)
 
 	if(!safety)//Only used by AIize() to successfully spawn an AI.
 		if (!B)//If there is no player/brain inside.
