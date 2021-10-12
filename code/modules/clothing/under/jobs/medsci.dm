@@ -82,8 +82,8 @@
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/paramedic
-	desc = "A jumpsuit of the soteria medical paramedics. It's made with reinforced fiber to offer more protection for recovery operators."
-	name = "soteria paramedic's jumpsuit"
+	desc = "A jumpsuit made by soteria for their trauma team members. It's made with reinforced fiber to offer more protection for recovery operators."
+	name = "soteria trauma team jumpsuit"
 	icon_state = "paramedic"
 	item_state = "paramedic"
 	permeability_coefficient = 0.50

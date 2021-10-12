@@ -358,6 +358,44 @@ Technomancer RIG
 		/obj/item/rig_module/storage
 		)
 
+/obj/item/rig/trauma_suit
+	name = "trauma suit control module"
+	suit_type = "trauma team hardsuit"
+	desc = "An upgraded hardsuit designed by the Soteria for their trauma team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
+	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
+	icon_state = "tt_rig"
+	armor = list(
+		melee = 60,
+		bullet = 35,
+		energy = 25,
+		bomb = 70,
+		bio = 100,
+		rad = 100
+	)
+	slowdown = 0
+
+	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
+
+	extra_allowed = list(
+		/obj/item/storage/firstaid,
+		/obj/item/device/scanner/health,
+		/obj/item/stack/medical,
+		/obj/item/roller
+	)
+
+/obj/item/rig/trauma_suit/equipped
+	req_access = list()
+	req_one_access = list()
+
+	initial_modules = list(
+		/obj/item/rig_module/chem_dispenser/ninja,
+		/obj/item/rig_module/chem_dispenser/combat,
+		/obj/item/rig_module/chem_dispenser/injector,
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/device/healthscanner,
+		/obj/item/rig_module/vision/medhud,
+		/obj/item/rig_module/storage
+		)
 
 /***************************************
 	Hazard Suit

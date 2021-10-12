@@ -112,10 +112,10 @@
 	sharp = FALSE
 	step_delay = 0.5
 
-/obj/item/projectile/bullet/magnun_40/rubber/soporific
+/obj/item/projectile/bullet/magnum_40/rubber/soporific
 	name = "soporific coated rubber bullet"
 
-/obj/item/projectile/bullet/magnun_40/rubber/soporific/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/magnum_40/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)

@@ -19,7 +19,7 @@
 	id_type = /obj/item/card/id/cmo
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
 	r_ear  = /obj/item/reagent_containers/syringe/large
-	belt = /obj/item/storage/belt/medical/
+	belt = /obj/item/storage/belt/medical
 	glasses = /obj/item/clothing/glasses/hud/health
 	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1)
 
@@ -32,27 +32,24 @@
 	belt = /obj/item/storage/belt/medical
 	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1)
 
-/decl/hierarchy/outfit/job/medical/orderly
-	name = OUTFIT_JOB_NAME("Soteria - Orderly")
-	uniform = /obj/item/clothing/under/scrubs
+/decl/hierarchy/outfit/job/medical/trauma_team
+	name = OUTFIT_JOB_NAME("Soteria - Trauma Team")
+	uniform = /obj/item/clothing/under/rank/paramedic
 	id_type = /obj/item/card/id/med
 	pda_type = /obj/item/modular_computer/pda/science/medical
 	suit =  /obj/item/clothing/suit/armor/vest
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/storage/belt/medical/emt
+	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	head = /obj/item/clothing/head/helmet/visor/cyberpunkgoggle
 	r_ear  = /obj/item/reagent_containers/syringe/large
-	backpack_contents = list(/obj/item/gun/energy/stunrevolver/sci = 1, /obj/item/cell/small/high = 2, /obj/item/handcuffs = 2, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/device/flash = 1)
+	back = /obj/item/storage/backpack/duffelbag
+	l_pocket = /obj/item/device/flash
+	r_pocket = /obj/item/handcuffs
+	backpack_contents = list(/obj/item/rig/trauma_suit/equipped = 1, /obj/item/handcuffs = 1, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/storage/firstaid/soteria/large = 1, /obj/item/gun/energy/sst/formatbound = 1, /obj/item/gun/energy/sst/systemcost = 1)
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
 	name = OUTFIT_JOB_NAME("Soteria - Psychiatrist")
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	r_ear  = /obj/item/reagent_containers/syringe/large
-
-/decl/hierarchy/outfit/job/medical/paramedic
-	name = OUTFIT_JOB_NAME("Soteria - Paramedic")
-	uniform = /obj/item/clothing/under/rank/paramedic
-	shoes = /obj/item/clothing/shoes/jackboots
-	belt = /obj/item/storage/belt/medical/emt
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
-	r_ear  = /obj/item/reagent_containers/syringe/large
-	backpack_contents = list(/obj/item/storage/firstaid/soteria/large = 1)
