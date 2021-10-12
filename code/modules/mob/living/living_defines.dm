@@ -60,7 +60,7 @@
 	var/ear_damage = 0	//Carbon
 	var/stuttering = 0	//Carbon
 	var/slurring = 0	//Carbon
-
+	var/slowdown = 0
 	var/job = null//Living
 
 	var/image/static_overlay // For static over-lays on living mobs

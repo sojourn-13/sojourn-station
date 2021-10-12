@@ -1,7 +1,8 @@
 //Warning! If you change icon_state or item_state, make sure you change path for sneath as well. icons/obj/sneath.dmi
 /obj/item/tool/sword/nt // not supposed to be in the game, had to make the shortsword its own type to prevent fucking up the scourge. sorry.
 	name = "short sword"
-	desc = "A saintly looking sword, made to do God's work. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	desc = "A saintly looking sword, made to do God's work. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shortsword"
 	item_state = "nt_shortsword"
@@ -20,7 +21,8 @@
 
 /obj/item/tool/sword/nt/shortsword
 	name = "short sword"
-	desc = "A saintly looking sword, made to do God's work. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	desc = "A saintly looking sword, made to do God's work. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shortsword"
 	item_state = "nt_shortsword"
@@ -32,7 +34,8 @@
 
 /obj/item/tool/sword/nt/longsword
 	name = "longsword"
-	desc = "A saintly looking longsword, recommended by experienced crusaders. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	desc = "A saintly looking longsword, recommended by experienced crusaders. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon_state = "nt_longsword"
 	item_state = "nt_longsword"
 	force = WEAPON_FORCE_ROBUST
@@ -43,7 +46,8 @@
 
 /obj/item/tool/knife/dagger/nt
 	name = "dagger"
-	desc = "A saintly looking dagger, may the absolute have mercy. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	desc = "A saintly looking dagger, may the absolute have mercy. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_dagger"
 	item_state = "nt_dagger"
@@ -54,9 +58,9 @@
 
 /obj/item/tool/spear/halberd
 	name = "halberd"
-	desc = "This weapon of ancient design appears to be a spear-axe hybrid. It saw a lot of use back in the Dark Ages back on Earth - in more recent times, sablekyne hunters use a similar weapon \
-	on their homeworlds, the weapons practical use taking down huge and heavily armored wildlife lead to the church adopting its own design. Additionally, due to the halberd being so long, you can attack \
-	enemies from up to a tile away with it - twice as far as most other weapons can. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	desc = "This weapon of ancient design appears to be a spear-axe hybrid. \
+	It saw a lot of use back in the Dark Ages back on Earth - in more recent times, sablekyne hunters use a similar weapon \
+	on their homeworlds, the weapons practical use taking down huge and heavily armored wildlife lead to the church adopting its own design."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_halberd"
 	item_state = "nt_halberd"
@@ -68,7 +72,8 @@
 
 /obj/item/tool/sword/nt/scourge
 	name = "scourge"
-	desc = "A saintly looking scourge, extreme punishment in handheld form. Can be extended to hurt more. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	desc = "A saintly looking scourge, extreme punishment in handheld form. Can be extended to hurt more. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon_state = "nt_scourge"
 	item_state = "nt_scourge"
 	force = WEAPON_FORCE_ROBUST
@@ -127,7 +132,8 @@
 
 /obj/item/tool/sword/nt/spear
 	name = "spear"
-	desc = "A saint looking short spear, designed for use with a shield or as a throwing weapon. The spear-tip usually breaks after being thrown at a target, but it can be welded into shape again."
+	desc = "A saint looking short spear, designed for use with a shield or as a throwing weapon. \
+	The spear-tip usually breaks after being thrown at a target, but it can be welded into shape again."
 	icon_state = "nt_spear"
 	item_state = "nt_spear"
 	wielded_icon = "nt_spear_wielded"
@@ -173,10 +179,14 @@
 
 /obj/item/shield/riot/nt
 	name = "shield"
-	desc = "A saintly looking shield, let the God protect you. It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division. Has several leather straps on the back to hold melee weapons."
+	desc = "A saintly looking shield, let the God protect you. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division. \
+	Has several leather straps on the back to hold melee weapons."
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
+	force = WEAPON_FORCE_DANGEROUS
+	armor = list(melee = 20, bullet = 30, energy = 30, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2)
 	price_tag = 1000
 	base_block_chance = 40
@@ -232,7 +242,8 @@
 
 /obj/item/tool/sword/crusader
 	name = "crusader great sword"
-	desc = "A traditional blade meeting the materials and design of the future. It's made from durasteel and the craftsmanship is of the highest quality. It bears the insignia of the Church. Deus Vult."
+	desc = "A traditional blade meeting the materials and design of the future. \
+	It's made from durasteel and the craftsmanship is of the highest quality. It bears the insignia of the Church. Deus Vult."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "crusader"
 	item_state = "crusader"
