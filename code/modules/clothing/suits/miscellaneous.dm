@@ -229,6 +229,7 @@ obj/item/clothing/suit/fluff/kimono
 	/obj/item/storage/part_replacer,
 	/obj/item/storage/secure,
 	/obj/item/storage/toolbox,
+	/obj/item/storage/briefcase,
 	/obj/item/tank,
 	/obj/item/ammo_magazine,
 	/obj/item/ammo_magazine/ammobox/

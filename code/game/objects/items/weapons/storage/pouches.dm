@@ -5,6 +5,7 @@
 	icon_state = "pouch"
 	item_state = "pouch"
 	price_tag = 400
+	cant_hold = list(/obj/item/storage/pouch) //Pouches in pouches was a misstake
 
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT //Pouches can be worn on belt
@@ -81,7 +82,7 @@
 	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_generic"
 	item_state = "large_generic"
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
 	storage_slots = null //Uses generic capacity
 	max_storage_space = DEFAULT_NORMAL_STORAGE
@@ -162,7 +163,7 @@
 	item_state = "engineering_supply"
 
 	storage_slots = 3
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -192,7 +193,7 @@
 	item_state = "janitor_supply"
 
 	storage_slots = 4
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -212,7 +213,7 @@
 	item_state = "ammo"
 
 	storage_slots = 4
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
