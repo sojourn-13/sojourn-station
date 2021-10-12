@@ -2,7 +2,7 @@
 
 /datum/design/research/item/mechfab/ripley
 	category = "Ripley"
-	starts_unlocked = TRUE
+	starts_unlocked = FALSE
 
 /datum/design/research/item/mechfab/ripley/chassis
 	build_path = /obj/item/mecha_parts/chassis/ripley
@@ -24,6 +24,31 @@
 
 /datum/design/research/item/mechfab/ripley/right_leg
 	build_path = /obj/item/mecha_parts/part/ripley_right_leg
+
+
+//Ivan ====================================
+
+/datum/design/research/item/mechfab/ivan
+	category = "Ivan"
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mechfab/ivan/chassis
+	build_path = /obj/item/mecha_parts/chassis/ivan
+
+/datum/design/research/item/mechfab/ivan/torso
+	build_path = /obj/item/mecha_parts/part/ivan_torso
+
+/datum/design/research/item/mechfab/ivan/left_arm
+	build_path = /obj/item/mecha_parts/part/ivan_left_arm
+
+/datum/design/research/item/mechfab/ivan/right_arm
+	build_path = /obj/item/mecha_parts/part/ivan_right_arm
+
+/datum/design/research/item/mechfab/ivan/left_leg
+	build_path = /obj/item/mecha_parts/part/ivan_left_leg
+
+/datum/design/research/item/mechfab/ivan/right_leg
+	build_path = /obj/item/mecha_parts/part/ivan_right_leg
 
 
 //Odysseus =====================================================

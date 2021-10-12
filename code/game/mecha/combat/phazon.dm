@@ -33,6 +33,9 @@
 	bluespace_entropy(10, get_turf(src))
 	return
 
+/obj/mecha/combat/phazon/add_cell()
+	cell = new /obj/item/cell/large/moebius/nuclear(src)
+
 /obj/mecha/combat/phazon/Bump(var/atom/obstacle)
 	if(phasing && get_charge()>=phasing_energy_drain)
 		spawn()
