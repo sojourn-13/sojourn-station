@@ -368,7 +368,7 @@ Technomancer RIG
 		melee = 60,
 		bullet = 35,
 		energy = 25,
-		bomb = 70,
+		bomb = 50,
 		bio = 100,
 		rad = 100
 	)
@@ -388,7 +388,6 @@ Technomancer RIG
 	req_one_access = list()
 
 	initial_modules = list(
-		/obj/item/rig_module/chem_dispenser/ninja,
 		/obj/item/rig_module/chem_dispenser/combat,
 		/obj/item/rig_module/chem_dispenser/injector,
 		/obj/item/rig_module/maneuvering_jets,
