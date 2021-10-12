@@ -1,4 +1,4 @@
-#define DRYING_TIME 5 * 60*10                        //for 1 unit of depth in puddle (amount var)
+#define DRYING_TIME 5 * 12*10                        //for 1 unit of depth in puddle (amount var) should be 10 mins to dry
 
 var/global/list/image/splatter_cache=list()
 
