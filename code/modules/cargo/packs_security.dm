@@ -353,7 +353,7 @@
 	crate_name = "Void Wolf HellFire Crate"
 	group = "Xanorath Syndicate"
 
-/datum/supply_pack/voidwolfflamer
+/datum/supply_pack/voidwolfflamer_ammo
 	name = "Void Wolf HellFire Canisters Crate"
 	contains = list(/obj/item/weldpack/canister/flamethrower,
 					/obj/item/weldpack/canister/flamethrower,
