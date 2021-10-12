@@ -10,6 +10,7 @@
 					/obj/item/reagent_containers/glass/bottle/stoxin = 4,
 					/obj/item/reagent_containers/glass/bottle/toxin = 4,
 					/obj/item/reagent_containers/syringe/spaceacillin = 4,
+					/obj/item/stack/medical/splint = 30,
 					/obj/item/reagent_containers/syringe = 12,
 					/obj/item/device/scanner/health = 5,
 					/obj/item/reagent_containers/glass/beaker = 4,
@@ -22,6 +23,7 @@
 						/obj/item/reagent_containers/pill/antitox = 6)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
+	vendor_department = DEPARTMENT_MEDICAL
 
 /obj/machinery/vending/wallmed
 	name = "MicroMed"
@@ -35,21 +37,13 @@
 	products = list(
 		/obj/item/stack/medical/bruise_pack = 2,
 		/obj/item/stack/medical/ointment = 2,
-		/obj/item/reagent_containers/hypospray/autoinjector = 4,
-		/obj/item/device/scanner/health = 1
-		)
-	contraband = list(
-		/obj/item/reagent_containers/syringe/antitoxin = 2,
-		/obj/item/reagent_containers/syringe/spaceacillin = 2,
-		/obj/item/reagent_containers/pill/tox = 1
-		)
-	auto_price = FALSE
+		/obj/item/stack/medical/splint = 10,
 
-/obj/machinery/vending/wallmed/minor
-	products = list(
-		/obj/item/stack/medical/bruise_pack = 2,
-		/obj/item/stack/medical/ointment = 2,
 		/obj/item/reagent_containers/hypospray/autoinjector = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 8,
+		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 5,
+
 		/obj/item/device/scanner/health = 1
 		)
 	contraband = list(
@@ -57,7 +51,19 @@
 		/obj/item/reagent_containers/syringe/spaceacillin = 2,
 		/obj/item/reagent_containers/pill/tox = 1
 		)
-	auto_price = FALSE
+	prices = list(
+		/obj/item/device/scanner/health = 50,
+
+		/obj/item/stack/medical/bruise_pack = 50,
+		/obj/item/stack/medical/ointment = 35,
+		/obj/item/stack/medical/splint = 10,
+
+		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 50,
+		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 75,
+		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 50,
+
+		/obj/item/reagent_containers/pill/tox = 100
+		)
 
 /obj/machinery/vending/wallmed/lobby
 	products = list(
@@ -67,22 +73,23 @@
 		/obj/item/stack/medical/ointment = 2,
 		/obj/item/stack/medical/advanced/bruise_pack = 1,
 		/obj/item/stack/medical/advanced/ointment = 1,
-		/obj/item/stack/nanopaste = 1,
+		/obj/item/stack/medical/splint = 20, //Legit dosnt heal, stacks on 1 cuz scam
+		/obj/item/stack/nanopaste = 2,
 
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 5,
 		/obj/item/reagent_containers/syringe/antitoxin = 5,
 		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 5,
 		/obj/item/reagent_containers/syringe/tricordrazine = 5,
-		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 1,
-		/obj/item/reagent_containers/syringe/spaceacillin = 1,
+		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 3,
+		/obj/item/reagent_containers/syringe/spaceacillin = 3,
 
-		/obj/item/implantcase/death_alarm = 2,
-		/obj/item/implanter = 2,
+		/obj/item/implantcase/death_alarm = 4,
+		/obj/item/implanter = 4,
 
 		/obj/item/device/defib_kit = 2
 		)
 	contraband = list(
-		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 2,
+		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 1,
 		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 2,
 		)
 	prices = list(
@@ -92,6 +99,7 @@
 		/obj/item/stack/medical/ointment = 35,
 		/obj/item/stack/medical/advanced/bruise_pack = 100,
 		/obj/item/stack/medical/advanced/ointment = 100,
+		/obj/item/stack/medical/splint = 10,
 		/obj/item/stack/nanopaste = 300,
 
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 50,

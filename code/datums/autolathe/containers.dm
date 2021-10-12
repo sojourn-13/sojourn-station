@@ -2,6 +2,26 @@
 	name = "drinking glass"
 	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass
 
+/datum/design/autolathe/container/drinkingglass_shot
+	name = "shot glass"
+	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/shot
+
+/datum/design/autolathe/container/drinkingglass_pint
+	name = "pint glass"
+	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/pint
+
+/datum/design/autolathe/container/drinkingglass_doble
+	name = "double glass"
+	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/doble
+
+/datum/design/autolathe/container/drinkingglass_mug
+	name = "mug glass"
+	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/mug
+
+/datum/design/autolathe/container/drinkingglass_wine
+	name = "wine glass"
+	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/wineglass
+
 /datum/design/autolathe/container/carafe
 	name = "glass pitcher"
 	build_path = /obj/item/reagent_containers/food/drinks/carafe

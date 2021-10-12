@@ -1,19 +1,20 @@
 // Minigun, fed via a backpack
 /obj/item/gun/minigun
 	name = "\"Bullet Storm\" fenrir minigun"
-	desc = "A backpack-fed minigun designed by and for the kriosan castellan class, as it takes both size and strength\
+	desc = "A backpack-fed minigun designed by and for the kriosan castellan class after seeing the fenrir chaingun in action. It takes both size and strength\
 	to carry such a heavy weapon. While used by other groups (and smaller people), it is at home in the confederacy \
-	quelling riots, turning pirates into swiss cheese, and taking down extremely huge or dangerous fauna."
-	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
-	icon_state = "plasma"
+	quelling riots, turning pirates into swiss cheese, and taking down extremely huge or dangerous fauna. It takes a suitably strong man to carry this without being heavily slowed."
+	icon = 'icons/obj/guns/projectile/minigun.dmi'
+	icon_state = "minigun"
+	wielded_icon = "minigun_doble"
 	origin_tech = list(TECH_COMBAT = 10)
 	w_class = ITEM_SIZE_BULKY
-	recoil_buildup = 1
+	recoil_buildup = 0.2
 	max_upgrades = 3
-	fire_delay = 3
-	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
+	fire_delay = 1
+	fire_sound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_DURASTEEL = 5)
-	init_firemodes = list(SEMI_AUTO_NODELAY, BURST_3_ROUND, BURST_5_ROUND, BURST_8_ROUND, FULL_AUTO_800)
+	init_firemodes = list(BURST_3_ROUND, BURST_8_ROUND, FULL_AUTO_800)
 
 	var/projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/hv
 	var/obj/item/minigun_backpack/connected = null // The backpack the gun is connected to
@@ -31,6 +32,14 @@
 		forceMove(connected)
 
 /obj/item/gun/minigun/update_icon()
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
 	cut_overlays()
 	if(connected)
 		add_overlay("[icon_state]_connected")
@@ -45,13 +54,13 @@
 /obj/item/minigun_backpack
 	name = "ammo pack"
 	desc = "A backpack full of ammo for a minigun. Looks heavy, it'd take a robust person to carry this effortlessly."
-	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
-	icon_state = "plasmapack"
-	item_state = "plasmapack"
-	contained_sprite = TRUE
-	item_state_slots = list(slot_back_str = "plasmapack_back", slot_l_hand_str = "plasma_can_left", slot_r_hand_str = "plasma_can_right")
+	icon = 'icons/obj/guns/projectile/minigun.dmi'
+	icon_state = "powerpack"
+	item_state = "powerpack"
+	contained_sprite = TRUE // This mean that all the icons are in one file.
+	item_state_slots = list(slot_back_str = "powerpack_back")
 
-	var/ammo = 5000
+	var/ammo = 2000
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_HUGE
 	var/obj/item/gun/minigun/the_gun = null
@@ -80,6 +89,7 @@
 				H.connected = src
 				H.update_icon()
 				insert_item(W, user)
+				playsound(src.loc, 'sound/weapons/guns/interact/chaingun_magin.ogg', 75, 1)
 			return
 		else // We got the gun, and it is connected, put it back it.
 			user.visible_message(
@@ -115,7 +125,7 @@
 /obj/item/minigun_backpack/pre_equip(var/mob/user, var/slot)
 	..()
 	if(user.stats.getStat(STAT_ROB) < 30)
-		to_chat(user, SPAN_NOTICE("You equip [src], but \his weight slow you down."))
+		to_chat(user, SPAN_NOTICE("You equip [src], but its weight slows you down because you are weak.."))
 		slowdown = 0.5 // 50% speed decrease
 	else
 		slowdown = 0
@@ -128,6 +138,7 @@
 								SPAN_NOTICE("You detach [the_gun] from [src].")
 									)
 		eject_item(the_gun, usr)
+		playsound(src.loc, 'sound/weapons/guns/interact/chaingun_magout.ogg', 100, 1)
 
 	else if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand))
 		to_chat(usr, SPAN_NOTICE("[src] doesn't have any gun attached to it."))

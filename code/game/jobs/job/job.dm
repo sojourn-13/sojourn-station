@@ -4,6 +4,7 @@
 	var/title = "NOPE"
 	var/list/access = list()				// Useful for servers which either have fewer players, so each person needs to fill more than one role, or servers which like to give more access, so players can't hide forever in their super secure departments (I'm looking at you, chemistry!)
 	var/list/cruciform_access = list()		// Assign this access into cruciform if target has it
+	var/security_clearance = CLEARANCE_NONE	// Cruciform-specific access type, used by absolute doors
 	var/list/software_on_spawn = list()		// Defines the software files that spawn on tablets and labtops
 	var/list/core_upgrades = list()			// Defines the upgrades that would be installed into core implant on spawn, if any.
 	var/flag = NONE							// Bitflags for the job
@@ -151,11 +152,13 @@
 			if(department == J.department)
 				jobs_in_department += "[J.type]"
 	if(playtimerequired > 0)
-		if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", jobs_in_department, playtimerequired))
-			are_we_experienced_enough = TRUE //We are experienced enough, hurray.
+		if(C.ckey)
+			if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", jobs_in_department, playtimerequired))
+				are_we_experienced_enough = TRUE //We are experienced enough, hurray.
 	if(coltimerequired > 0)
-		if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", "/datum/job/assistant", coltimerequired))
-			are_we_experienced_enough = TRUE //We are experienced enough as a colonist, hurray.
+		if(C.ckey)
+			if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", "/datum/job/assistant", coltimerequired))
+				are_we_experienced_enough = TRUE //We are experienced enough as a colonist, hurray.
 	if(playtimerequired == 0 && coltimerequired == 0)
 		are_we_experienced_enough = TRUE //We're doing a job that requires 0 experience, hurray.
 	return are_we_experienced_enough

@@ -18,7 +18,7 @@
 	name = "Fragment Crossbow Bolt"
 	result = /obj/item/ammo_casing/crossbow_bolts/fragment/bulk
 	steps = list(
-		list(/obj/item/ammo_casing/crossbow_bolts, 10),
+		list(/obj/item/stack/rods, 10),
 		list(/obj/item/ore, 1)
 	)
 
@@ -27,7 +27,7 @@
 	result = /obj/item/ammo_casing/crossbow_bolts/speed/bulk
 	time = 0
 	steps = list(
-		list(/obj/item/ammo_casing/crossbow_bolts, 10),
+		list(/obj/item/stack/rods, 10),
 		list(CRAFT_MATERIAL, 1, MATERIAL_BONE, "time" = 1), //Takes a second
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 1) //Takes a second
 	)
@@ -138,6 +138,20 @@
 		list(QUALITY_WELDING, 15, "time" = 60),
 		list(QUALITY_HAMMERING, 15, "time" = 60),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 30),
+		list(QUALITY_CUTTING, 15, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/sun_cleaver
+	name = "Sun Cleaver"
+	result = /obj/item/tool/sword/cleaver
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(QUALITY_HAMMERING, 15, "time" = 60),
 		list(QUALITY_WELDING, 15, "time" = 60),
 		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 30),
 		list(QUALITY_CUTTING, 15, "time" = 40),

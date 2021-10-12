@@ -12,6 +12,7 @@
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
 	nerve_system_accumulations = 0
+	common = TRUE //Everyone knows what blood looks like
 
 /datum/reagent/organic/blood/initialize_data(var/newdata)
 	..()
@@ -98,6 +99,7 @@
 	nerve_system_accumulations = 0
 	var/fire_suppression_effect = 1 //19000 times this.
 	reagent_type = "Water"
+	common = TRUE //You know what water is.
 
 /datum/reagent/water/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.stats.getPerk(PERK_STAY_HYDRATED))
@@ -224,6 +226,7 @@
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "welder fuel"
 	glass_desc = "Unless you are an industrial tool, this is probably not safe for consumption."
+	common = TRUE //Ubiquitous enough for everyone to have dealt with it, there are canisters of it all over the place.
 
 /datum/reagent/toxin/fuel/touch_turf(turf/T)
 	new /obj/effect/decal/cleanable/liquid_fuel(T, volume)

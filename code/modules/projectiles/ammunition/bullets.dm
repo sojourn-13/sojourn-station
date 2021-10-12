@@ -299,7 +299,7 @@
 
 //Flare, .22
 /obj/item/ammo_casing/flare
-	name = "flare shell"
+	name = ".22 flare shell"
 	desc = "A .22 chemical flare shell designed to produce a distress signal or illuminate an area."
 	caliber = CAL_FLARE
 	icon_state = "f-shell"
@@ -310,6 +310,34 @@
 	maxamount = 3
 
 /obj/item/ammo_casing/flare/prespawn
+	amount = 3
+
+/obj/item/ammo_casing/flare/blue
+	name = ".22 blue flare shell"
+	desc = "A .22 chemical flare shell designed to produce a blue distress signal or illuminate an area."
+	caliber = CAL_FLARE
+	icon_state = "b-shell"
+	spent_icon = "b-shell-spent"
+	projectile_type = /obj/item/projectile/bullet/flare/blue
+	matter = list(MATERIAL_PLASTIC = 1)
+	matter_reagents = list("phosphorus" = 3)
+	maxamount = 3
+
+/obj/item/ammo_casing/flare/blue/prespawn
+	amount = 3
+
+/obj/item/ammo_casing/flare/green
+	name = ".22 green flare shell"
+	desc = "A .22 chemical flare shell designed to produce a green distress signal or illuminate an area."
+	caliber = CAL_FLARE
+	icon_state = "b-shell"
+	spent_icon = "b-shell-spent"
+	projectile_type = /obj/item/projectile/bullet/flare/green
+	matter = list(MATERIAL_PLASTIC = 1)
+	matter_reagents = list("phosphorus" = 3)
+	maxamount = 3
+
+/obj/item/ammo_casing/flare/green/prespawn
 	amount = 3
 
 //.50 K U R T Z
@@ -422,6 +450,7 @@
 	desc = "A 20mm sabot slug."
 	icon_state = "s-shell_hv"
 	spent_icon = "s-shell_hv-spent"
+	shell_color = "hv"
 	caliber = CAL_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	matter = list(MATERIAL_STEEL = 1)
@@ -441,6 +470,7 @@
 	desc = "An older 20mm slug."
 	icon_state = "s-shell_s"
 	spent_icon = "s-shell_s-spent"
+	shell_color = "scrap"
 	caliber = CAL_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun/scrap
 	maxamount = 5
@@ -453,6 +483,7 @@
 	desc = "A 20mm beanbag shell."
 	icon_state = "s-shell_r"
 	spent_icon = "s-shell_r-spent"
+	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
@@ -465,6 +496,7 @@
 	desc = "An older 20mm beanbag shell."
 	icon_state = "s-shell_rs"
 	spent_icon = "s-shell_rs-spent"
+	shell_color = "scrap_r"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/scrap
 	matter = list(MATERIAL_STEEL = 1)
 
@@ -476,6 +508,7 @@
 	desc = "A 20mm buckshot shell."
 	icon_state = "s-shell_l"
 	spent_icon = "s-shell_l-spent"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
@@ -488,6 +521,7 @@
 	desc = "An older 20mm shell."
 	icon_state = "s-shell_ss"
 	spent_icon = "s-shell_ss-spent"
+	shell_color = "scrap_s"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/scrap
 
 /obj/item/ammo_casing/shotgun/pellet/scrap/prespawned
@@ -498,6 +532,7 @@
 	desc = "A blank 20mm shell."
 	icon_state = "s-shell_b"
 	spent_icon = "s-shell_b-spent"
+	shell_color = "b"
 	projectile_type = /obj/item/projectile/bullet/blank
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
@@ -510,6 +545,7 @@
 	desc = "A 20mm practice shell."
 	icon_state = "s-shell_b"
 	spent_icon = "s-shell_b-spent"
+	shell_color = "b"
 	projectile_type = /obj/item/projectile/bullet/shotgun/practice
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
@@ -522,6 +558,7 @@
 	desc = "A 20mm chemical shell with highly flammable load."
 	icon_state = "s-shell_i"
 	spent_icon = "s-shell_i-spent"
+	shell_color = "i"
 	projectile_type = /obj/item/projectile/bullet/shotgun/incendiary
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASMA = 0.5)
 
@@ -533,6 +570,7 @@
 	desc = "A 20mm laser shell."
 	icon_state = "lasershell"
 	spent_icon = "lasershell-spent"
+	shell_color = "i"
 	projectile_type = /obj/item/projectile/beam/shotgun
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8)
 	maxamount = 5
@@ -543,6 +581,7 @@
 /obj/item/ammo_casing/shotgun/payload
 	name = "explosive shell"
 	desc = "A 20mm explosive shell."
+	shell_color = "i"
 	projectile_type = /obj/item/projectile/bullet/shotgun/payload
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
@@ -556,6 +595,7 @@
 	desc = "A 20mm plasma shell."
 	icon_state = "plasmashell"
 	spent_icon = "plasmashell-spent"
+	shell_color = "i"
 	projectile_type = /obj/item/projectile/plasma/shell
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8, MATERIAL_URANIUM = 0.8)
 	maxamount = 5
@@ -568,6 +608,7 @@
 	desc = "A 20mm heavy plasma shot shell."
 	icon_state = "plasmashell"
 	spent_icon = "plasmashell-spent"
+	shell_color = "i"
 	projectile_type = /obj/item/projectile/plasma/heavy/shell
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8, MATERIAL_URANIUM = 0.8)
 	maxamount = 5
@@ -583,6 +624,7 @@
 	desc = "A 20mm gauge taser cartridge."
 	icon_state = "stunshell"
 	spent_icon = "stunshell-spent"
+	shell_color = "i"
 	projectile_type = /obj/item/projectile/energy/electrode/stunshot
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
 	maxamount = 5
@@ -600,6 +642,7 @@
 	desc = "A chemical shell used to signal distress or provide illumination."
 	icon_state = "s-shell_f"
 	spent_icon = "s-shell_f-spent"
+	shell_color = "f"
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
 	maxamount = 5
@@ -607,6 +650,7 @@
 /obj/item/ammo_casing/shotgun/illumination/prespawned
 	amount = 5
 
+//Misc
 /obj/item/ammo_casing/rocket
 	name = "PG-7VL grenade"
 	desc = "A 40mm warhead designed for the RPG-7 launcher. Has tubular shape."

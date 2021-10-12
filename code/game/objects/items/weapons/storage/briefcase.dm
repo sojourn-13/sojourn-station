@@ -8,9 +8,9 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	throw_speed = 1
 	throw_range = 4
-	w_class = ITEM_SIZE_BULKY
-	max_w_class = ITEM_SIZE_NORMAL
-	max_storage_space = 16
+	w_class = ITEM_SIZE_HUGE //Cant normally bag this
+	max_w_class = ITEM_SIZE_BULKY //We can fit anything smaller then us
+	max_storage_space = 20 //Its a big case
 	matter = list(MATERIAL_BIOMATTER = 8, MATERIAL_PLASTIC = 4)
 
 /obj/item/storage/briefcase/rifle
@@ -23,7 +23,6 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	throw_speed = 1
 	throw_range = 4
-	w_class = ITEM_SIZE_BULKY
 	max_w_class = null
 	max_storage_space = 16
 	can_hold = list(/obj/item/gun,

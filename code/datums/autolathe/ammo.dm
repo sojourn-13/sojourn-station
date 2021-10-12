@@ -354,7 +354,7 @@
 	build_path = /obj/item/ammo_magazine/light_rifle_257_short/lethal
 
 
-//.257 box
+//.257 box and speed loader
 /datum/design/autolathe/ammo/lrifle_ammobox
 	name = "ammunition box .257 Carbine (ball)"
 	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257
@@ -386,6 +386,10 @@
 /datum/design/autolathe/ammo/lrifle_belt_empty
 	name = "linked ammunition box .257 Carbine (empty)"
 	build_path = /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty
+
+/datum/design/autolathe/ammo/lrifle_speed_loader
+	name = "stripper clip .257 Carbine (ball)"
+	build_path = /obj/item/ammo_magazine/speed_loader_light_rifle_257
 
 //7.62 rifle
 //mags
@@ -596,5 +600,13 @@
 
 // Flare Shells
 /datum/design/autolathe/ammo/flare_shell
-	name = "flare shell"
-	build_path = /obj/item/ammo_casing/flare
+	name = ".22 red flare shell"
+	build_path = /obj/item/ammo_casing/flare/prespawn
+
+/datum/design/autolathe/ammo/flare_shell_b
+	name = ".22blue flare shell"
+	build_path = /obj/item/ammo_casing/flare/blue/prespawn
+
+/datum/design/autolathe/ammo/flare_shell_g
+	name = ".22green flare shell"
+	build_path = /obj/item/ammo_casing/flare/green/prespawn

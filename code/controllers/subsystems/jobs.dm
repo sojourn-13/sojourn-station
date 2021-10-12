@@ -409,6 +409,7 @@ SUBSYSTEM_DEF(job)
 			C.install_default_modules_by_job(job)
 			C.access.Add(job.cruciform_access)
 			C.install_default_modules_by_path(job)
+			C.security_clearance = job.security_clearance
 
 		BITSET(H.hud_updateflag, ID_HUD)
 		BITSET(H.hud_updateflag, SPECIALROLE_HUD)

@@ -89,7 +89,7 @@
 		else
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
-	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
+	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
 	H.reagents.add_reagent("laudanum", 10)
 	H.adjustBruteLoss(-20)
 	H.adjustFireLoss(-20)
@@ -142,7 +142,7 @@
 		if (!(T.Adjacent(get_turf(H))))
 			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
 			return
-		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
+		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
 		H.reagents.add_reagent("laudanum", 5)
 		H.adjustBruteLoss(-20)
 		H.adjustFireLoss(-20)
@@ -191,7 +191,7 @@
 		return FALSE
 
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
-		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain</span>")
+		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain.</span>")
 		participant.reagents.add_reagent("laudanum", 5)
 		participant.adjustBruteLoss(-15)
 		participant.adjustFireLoss(-15)
@@ -569,7 +569,7 @@
 /datum/ritual/cruciform/priest/short_boost
 	name = "Short boost ritual"
 	phrase = null
-	desc = "This litany boosts the stats of everyone who is near you on the short time. "
+	desc = "This litany boosts the stats of everyone who is near you on the short time."
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	effect_time = 10 MINUTES
@@ -1019,3 +1019,55 @@
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain a prosthetic at this time.", user, C)
 			return FALSE
+
+/datum/ritual/cruciform/priest/adoption
+	name = "Adoption"
+	phrase = "Dervans semitas iustitiae et vias sanctorum custodiens."
+	desc = "Opens church doors for target disciple."
+	power = 15
+
+/datum/ritual/cruciform/priest/adoption/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found", user, C)
+		return FALSE
+
+	CI.security_clearance = CLEARANCE_COMMON
+	return TRUE
+
+/datum/ritual/cruciform/priest/ordination
+	name = "Ordination"
+	phrase = "Gloriam sapientes possidebunt stultorum exaltatio ignominia."
+	desc = "Opens clergy doors for target disciple."
+	power = 15
+
+/datum/ritual/cruciform/priest/ordination/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found", user, C)
+		return FALSE
+
+	CI.security_clearance = CLEARANCE_CLERGY
+	return TRUE
+
+/datum/ritual/cruciform/priest/omission
+	name = "Omission"
+	phrase = "Via impiorum tenebrosa nesciunt ubi corruant."
+	desc = "Removes all access from target disciple's cruciform."
+	power = 30
+
+/datum/ritual/cruciform/priest/omission/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found", user, C)
+		return FALSE
+
+	if(CI.get_module(CRUCIFORM_INQUISITOR))
+		fail("You don\'t have the authority for this.", user, C)
+		return FALSE
+
+	CI.security_clearance = CLEARANCE_NONE
+	return TRUE

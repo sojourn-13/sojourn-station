@@ -1,6 +1,8 @@
 /obj/item/storage/box/bs_kit
 	name = "\improper Blackshield Kit"
 	desc = "A standard kit."
+	cant_hold = list(/obj/item) //stops them from being used as storage solutions - items can't be put back in.
+	w_class = ITEM_SIZE_BULKY //these carry guns and lots of items! Makes sense to make them bigger than some tiny box
 	icon_state = "box"
 
 // All-in-one kit
@@ -35,6 +37,19 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/bs_kit/roe
+	name = "\improper Roe Primary Kit"
+	desc = "The standard Blackshield equipment kit."
+
+	populate_contents()
+		new /obj/item/gun/projectile/boltgun/light_wood(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/sts
@@ -128,6 +143,16 @@
 		new /obj/item/gun/energy/gun/martin(src)
 		new /obj/item/cell/small/high(src)
 		new /obj/item/cell/small/high(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
+
+/obj/item/storage/box/bs_kit/sawn_shotgun
+	name = "\improper Sawn Shotgun Secondary Kit"
+	desc = "A kit designed for energy-based weaponry."
+
+	populate_contents()
+		new /obj/item/gun/projectile/shotgun/doublebarrel/sawn(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 // Armor Kits

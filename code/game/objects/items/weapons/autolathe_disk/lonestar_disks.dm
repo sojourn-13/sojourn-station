@@ -37,6 +37,11 @@
 		/datum/design/autolathe/misc/radio_bounced,
 		/datum/design/autolathe/misc/ashtray,
 		/datum/design/autolathe/container/drinkingglass,
+		/datum/design/autolathe/container/drinkingglass_shot,
+		/datum/design/autolathe/container/drinkingglass_pint,
+		/datum/design/autolathe/container/drinkingglass_doble,
+		/datum/design/autolathe/container/drinkingglass_mug,
+		/datum/design/autolathe/container/drinkingglass_wine,
 		/datum/design/autolathe/container/carafe,
 		/datum/design/autolathe/container/insulated_pitcher,
 		/datum/design/autolathe/container/bucket,
@@ -74,6 +79,8 @@
 		//spare flare, do not put this on the Factory disk
 		/datum/design/autolathe/gun/flare_gun = 5,
 		/datum/design/autolathe/ammo/flare_shell = 2,
+		/datum/design/autolathe/ammo/flare_shell_g = 2,
+		/datum/design/autolathe/ammo/flare_shell_b = 2,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/robustcells
@@ -124,6 +131,11 @@
 		/datum/design/autolathe/misc/radio_bounced,
 		/datum/design/autolathe/misc/ashtray,
 		/datum/design/autolathe/container/drinkingglass,
+		/datum/design/autolathe/container/drinkingglass_shot,
+		/datum/design/autolathe/container/drinkingglass_pint,
+		/datum/design/autolathe/container/drinkingglass_doble,
+		/datum/design/autolathe/container/drinkingglass_mug,
+		/datum/design/autolathe/container/drinkingglass_wine,
 		/datum/design/autolathe/container/carafe,
 		/datum/design/autolathe/container/insulated_pitcher,
 		/datum/design/autolathe/container/bucket,
@@ -175,8 +187,11 @@
 		/datum/design/autolathe/misc/floor_light = 0,
 		/datum/design/autolathe/misc/tube = 0,
 		/datum/design/autolathe/misc/bulb = 0,
+		/datum/design/autolathe/misc/extinguisher = 0,
 		/datum/design/autolathe/misc/trashbag,
 		/datum/design/autolathe/container/bucket,
 		/datum/design/autolathe/tool/isprayer = 2,
 		/datum/design/autolathe/tool/mop,
+		/datum/design/autolathe/device/hand_labeler,
+		/datum/design/research/item/light_replacer,
 		)

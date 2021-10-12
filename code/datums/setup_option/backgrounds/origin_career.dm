@@ -6,7 +6,7 @@
 	a known factor and while here on the frontier security can overlook a checkered past, command positions are still barred for you."
 
 	restricted_depts = COMMAND
-	perks = list(/datum/perk/parkour)
+	perks = list(/datum/perk/parkour, /datum/perk/chem_contraband)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -88,6 +88,7 @@
 	desc = "At one point you served as a medical intern, this can range from a paramedic, nurse, orderly, and even a field medic. Your training wasn't exactly advanced but had the benefit of \
 	teaching you how to properly set a bandage and spot the differences and uses of various medical chemicals. Later on in life you might have taken your medical career further or chosen a different path. \
 	Whatever happened, you haven't forgotten the few tricks you learned."
+	perks = list(/datum/perk/chem_contraband)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -118,6 +119,8 @@
 	desc = "The Terran Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
 	of physical conditioning and as a combat medic you got the benefit of additional medical training, though not as good as what you'd get in a hospital, it has its benefits."
+
+	perks = list(/datum/perk/chem_contraband)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -151,7 +154,7 @@
 	disposition for snatching objects off of people without them noticing."
 
 	restricted_depts = COMMAND
-	perks = list(/datum/perk/fast_fingers)
+	perks = list(/datum/perk/fast_fingers, /datum/perk/chem_contraband)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,

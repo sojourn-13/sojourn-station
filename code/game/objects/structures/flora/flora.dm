@@ -81,57 +81,6 @@
 			needs_to_be_watered = FALSE
 			return
 
-//trees
-/obj/structure/flora/tree
-	name = "tree"
-	anchored = 1
-	density = 1
-	pixel_x = -16
-	layer = ABOVE_MOB_LAYER
-	mouse_opacity = MOUSE_OPACITY_ICON
-
-/obj/structure/flora/tree/attackby(obj/item/I, mob/user)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if(!istype(user.loc, /turf))
-		return
-	var/list/usable_qualities = list(QUALITY_SAWING)
-	var/tool_type = I.get_tool_type(user, usable_qualities, src)
-	if(tool_type==QUALITY_SAWING)
-		to_chat(user, SPAN_NOTICE("You start to cut the tree, felling it and turning it into planks..."))
-		if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-			playsound(loc, 'sound/items/tree_fall.ogg', 80, 1)
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 10 : 2)
-			to_chat(user, SPAN_NOTICE("You cut down a tree."))
-			qdel(src)
-			return
-		return
-
-/obj/structure/flora/tree/pine
-	name = "pine tree"
-	icon = 'icons/obj/flora/pinetrees.dmi'
-	icon_state = "pine_1"
-
-/obj/structure/flora/tree/pine/New()
-	..()
-	icon_state = "pine_[rand(1, 3)]"
-
-/obj/structure/flora/tree/pine/xmas
-	name = "xmas tree"
-	icon = 'icons/obj/flora/pinetrees.dmi'
-	icon_state = "pine_c"
-
-/obj/structure/flora/tree/pine/xmas/New()
-	..()
-	icon_state = "pine_c"
-
-/obj/structure/flora/tree/dead
-	icon = 'icons/obj/flora/deadtrees.dmi'
-	icon_state = "tree_1"
-
-/obj/structure/flora/tree/dead/New()
-	..()
-	icon_state = "tree_[rand(1, 6)]"
-
 //grass
 /obj/structure/flora/grass
 	name = "grass"
@@ -186,306 +135,6 @@
 /obj/structure/flora/bush/New()
 	..()
 	icon_state = "snowbush[rand(1, 6)]"
-
-/obj/structure/flora/pottedplant
-	name = "potted plant"
-	icon = 'icons/obj/plants.dmi'
-	icon_state = "plant-26"
-	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant
-	name = "potted plant"
-	desc = "Really brings the room together."
-	icon = 'icons/obj/plants.dmi'
-	icon_state = "plant-01"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/large
-	name = "large potted plant"
-	desc = "This is a large plant. Three branches support pairs of waxy leaves."
-	icon_state = "plant-26"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/fern
-	name = "potted fern"
-	desc = "This is an ordinary looking fern."
-	icon_state = "plant-02"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/overgrown
-	name = "overgrown potted plants"
-	desc = "This is an assortment of colorful plants. Some parts are overgrown."
-	icon_state = "plant-03"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/bamboo
-	name = "potted bamboo"
-	desc = "These are bamboo shoots. The tops looks like they've been cut short."
-	icon_state = "plant-04"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/largebush
-	name = "large potted bush"
-	desc = "This is a large bush. The leaves stick upwards in an odd fashion."
-	icon_state = "plant-05"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/thinbush
-	name = "thin potted bush"
-	desc = "This is a thin bush. It appears to be flowering."
-	icon_state = "plant-06"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/mysterious
-	name = "mysterious potted bulbs"
-	desc = "This is a mysterious looking plant. Touching the bulbs cause them to shrink."
-	icon_state = "plant-07"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/smalltree
-	name = "small potted tree"
-	desc = "This is a small tree. It is rather pleasant."
-	icon_state = "plant-08"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/unusual
-	name = "unusual potted plant"
-	desc = "This is an unusual plant. Its bulbous ends emit a soft blue light."
-	icon_state = "plant-09"
-	light_range = 2
-	light_power = 0.6
-	light_color = "#33CCFF"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/orientaltree
-	name = "potted oriental tree"
-	desc = "This is a rather oriental style tree. Its flowers are bright pink."
-	icon_state = "plant-10"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/smallcactus
-	name = "small potted cactus"
-	desc = "This is a small cactus. Its needles are sharp."
-	icon_state = "plant-11"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/tall
-	name = "tall potted plant"
-	desc = "This is a tall plant. Tiny pores line its surface."
-	icon_state = "plant-12"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/sticky
-	name = "sticky potted plant"
-	desc = "This is an odd plant. Its sticky leaves trap insects."
-	icon_state = "plant-13"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/smelly
-	name = "smelly potted plant"
-	desc = "This is some kind of tropical plant. It reeks of rotten eggs."
-	icon_state = "plant-14"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/small
-	name = "small potted plant"
-	desc = "This is a pot of assorted small flora. Some look familiar."
-	icon_state = "plant-15"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/aquatic
-	name = "aquatic potted plant"
-	desc = "This is apparently an aquatic plant. It's probably fake."
-	icon_state = "plant-16"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/shoot
-	name = "small potted shoot"
-	desc = "This is a small shoot. It still needs time to grow."
-	icon_state = "plant-17"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/flower
-	name = "potted flower"
-	desc = "This is a slim plant. Sweet smelling flowers are supported by spindly stems."
-	icon_state = "plant-18"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/crystal
-	name = "crystalline potted plant"
-	desc = "These are rather cubic plants. Odd crystal formations grow on the end."
-	icon_state = "plant-19"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/subterranean
-	name = "subterranean potted plant"
-	desc = "This is a subterranean plant. Its bulbous ends glow faintly."
-	icon_state = "plant-20"
-	light_range = 2
-	light_power = 0.6
-	light_color = "#FF6633"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/minitree
-	name = "potted tree"
-	desc = "This is a miniature tree. Apparently it was grown to 1/5 scale."
-	icon_state = "plant-21"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/stoutbush
-	name = "stout potted bush"
-	desc = "This is a stout bush. Its leaves point up and outwards."
-	icon_state = "plant-22"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/drooping
-	name = "drooping potted plant"
-	desc = "This is a small plant. The drooping leaves make it look like it's wilted."
-	icon_state = "plant-23"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/tropical
-	name = "tropical potted plant"
-	desc = "This is some kind of tropical plant. It hasn't begun to flower yet."
-	icon_state = "plant-24"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/dead
-	name = "dead potted plant"
-	desc = "This is the dried up remains of a dead plant. Someone should replace it."
-	icon_state = "plant-25"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/bamboo
-	name = "potted bamboo shoots plant"
-	desc = "A small patch of bamboo shoots. Perfect for sipping tea by."
-	icon_state = "plant-27"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/bamboo_red
-	name = "potted red bamboo shoots plant"
-	desc = "A small patch of red bamboo shoots. Perfect for sipping red tea by."
-	icon_state = "plant-28"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/redshoot
-	name = "potted red shoot plant"
-	desc = "A meak and red vine plant that grows bright yellow pettles."
-	icon_state = "plant-29"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/rotwood
-	name = "potted iron rot tree"
-	desc = "A mini red rot tree typically grown in high iron deposits."
-	icon_state = "plant-30"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/rotwood_green
-	name = "potted copper rot tree"
-	desc = "A mini green rot tree typically grown in high copper deposits well it would normally be a copper colour it leaches only off the oxygenation."
-	icon_state = "plant-31"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/rotwood_blue
-	name = "potted copper rot tree" //same as a normal copper rot but different!
-	desc = "A mini azurite rot tree typically grown in high copper deposits being a rare and unique as it only grows in azurite deposet."
-	icon_state = "plant-32"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/bush_buds
-	name = "potted bush bud grove tree"
-	desc = "A round bush that produces large bulbs of silky peddles this ones a deep blue."
-	icon_state = "plant-33"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/bush_buds_yellow
-	name = "potted yellow bush bud grove tree"
-	desc = "A round bush that produces large bulbs of silky peddles this ones a mellow yellow do to lack of propper lighting in its natural habitat."
-	icon_state = "plant-34"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/grave_poppers
-	name = "potted grave poppers"
-	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a mix of red and blue in its pettles."
-	icon_state = "plant-35"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/bush_buds_red
-	name = "potted ruby bush bud grove tree"
-	desc = "A round bush that produces large bulbs of silky peddles this ones a ruby red reflecting on its green base."
-	icon_state = "plant-36"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/grave_poppers_blue
-	name = "potted blue grave poppers"
-	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a light blue in its pettles."
-	icon_state = "plant-37"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/grave_poppers_red
-	name = "potted red grave poppers"
-	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a deep red in its pettles."
-	icon_state = "plant-38"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/barrel_cactus
-	name = "potted barrel cactus"
-	desc = "Small and subby barrel cactus requiring little to not maintains."
-	icon_state = "plant-39"
-	needs_to_maintain = FALSE
-
-/obj/structure/flora/pottedplant/clockcult
-	name = "crafted tesla bolb plant"
-	desc = "Handmade of brass and life like bulb plant pettles it runs on an intenal cell that makes a ticking sound?"
-	icon_state = "plant-40"
-	light_range = 2
-	light_power = 0.6
-	light_color = "#B5A642" //Brass-y
-	needs_to_maintain = FALSE
-
-/obj/structure/flora/pottedplant/bush_ball
-	name = "potted bush ball"
-	desc = "Mini bush trimmed to be in a ball for a generic plant to have in a office setting."
-	icon_state = "plant-41"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/bush_tall
-	name = "potted bush piller"
-	desc = "Mini bush trimmed to be in a piller for a generic plant to have in a office setting."
-	icon_state = "plant-42"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/bush_bullet
-	name = "potted bush cone"
-	desc = "Mini bush trimmed to be in a cone for a generic plant to have in a office setting."
-	icon_state = "plant-43"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/star_root
-	name = "potted star root vine"
-	desc = "A rare star root that grows with a blue tint."
-	icon_state = "plant-44"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/water_root
-	name = "potted water root vine"
-	desc = "A rather Sol looking water root vine that tends to be able to grow in any climet..."
-	icon_state = "plant-45"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/decorative
-	name = "decorative potted plant"
-	desc = "This is a decorative shrub. It's been trimmed into the shape of an apple."
-	icon_state = "applebush"
-	needs_to_maintain = TRUE
-
-/obj/structure/flora/pottedplant/xmas
-	name = "small christmas tree"
-	desc = "This is a tiny well lit decorative christmas tree."
-	icon_state = "plant-xmas"
-	needs_to_maintain = TRUE
-
 //newbushes
 
 /obj/structure/flora/ausbushes
@@ -504,10 +153,12 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You start to cut the plant, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings,"))
 			new /obj/plant_spawner/grass(get_turf(src))
 			new /obj/plant_spawner/grass(get_turf(src))
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
-			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			if(prob(20))
+				new /obj/plant_spawner/towercaps(get_turf(src))
+				to_chat(user, SPAN_NOTICE("Even got a towercap log out of it too!"))
 			qdel(src)
 			return
 		return
@@ -712,89 +363,6 @@
 	..()
 	icon_state = "fullgrass_[rand(1, 3)]"
 
-/obj/structure/flora/tree/sif
-	name = "glowing tree"
-	desc = "It's a tree, except this one seems quite alien. It glows a deep blue."
-	icon = 'icons/obj/flora/deadtrees.dmi'
-	icon_state = "tree_sif"
-
-/obj/structure/flora/tree/palm
-	icon = 'icons/obj/flora/palmtrees.dmi'
-	icon_state = "palm1"
-
-/obj/structure/flora/tree/jungle
-	name = "tree"
-	icon = 'icons/obj/flora/jungletree.dmi'
-	icon_state = "tree"
-	pixel_x = -45
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle/variant1
-	icon = 'icons/obj/flora/jungletree.dmi'
-	icon_state = "tree2"
-	pixel_x = -45
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle/variant2
-	icon = 'icons/obj/flora/jungletree.dmi'
-	icon_state = "tree3"
-	pixel_x = -45
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle/variant3
-	icon = 'icons/obj/flora/jungletree.dmi'
-	icon_state = "tree4"
-	pixel_x = -45
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle/variant4
-	icon = 'icons/obj/flora/jungletree.dmi'
-	icon_state = "tree5"
-	pixel_x = -45
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle/variant5
-	icon = 'icons/obj/flora/jungletree.dmi'
-	icon_state = "tree6"
-	pixel_x = -45
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle_small
-	icon = 'icons/obj/flora/jungletreesmall.dmi'
-	icon_state = "tree"
-	pixel_x = -30
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle_small/variant1
-	icon = 'icons/obj/flora/jungletreesmall.dmi'
-	icon_state = "tree2"
-	pixel_x = -30
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle_small/variant2
-	icon = 'icons/obj/flora/jungletreesmall.dmi'
-	icon_state = "tree3"
-	pixel_x = -30
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle_small/variant3
-	icon = 'icons/obj/flora/jungletreesmall.dmi'
-	icon_state = "tree4"
-	pixel_x = -30
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle_small/variant4
-	icon = 'icons/obj/flora/jungletreesmall.dmi'
-	icon_state = "tree5"
-	pixel_x = -30
-	pixel_y = -16
-
-/obj/structure/flora/tree/jungle_small/variant5
-	icon = 'icons/obj/flora/jungletreesmall.dmi'
-	icon_state = "tree6"
-	pixel_x = -30
-	pixel_y = -16
-
 /obj/structure/flora/small
 	anchored = 1
 
@@ -994,10 +562,12 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			new /obj/plant_spawner/grass(get_turf(src))
 			new /obj/plant_spawner/grass(get_turf(src)) //We get more
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
-			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			if(prob(20))
+				new /obj/plant_spawner/towercaps(get_turf(src))
+				to_chat(user, SPAN_NOTICE("Even got a towercap log out of it too!"))
 			qdel(src)
 			return
 		return
@@ -1016,10 +586,12 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			new /obj/plant_spawner/grass(get_turf(src))
 			new /obj/plant_spawner/grass(get_turf(src)) //We get more
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 1 : 2)
-			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			if(prob(20))
+				new /obj/plant_spawner/towercaps(get_turf(src))
+				to_chat(user, SPAN_NOTICE("Even got a towercap log out of it too!"))
 			qdel(src)
 			return
 		return
@@ -1038,9 +610,11 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			new /obj/plant_spawner/grass(get_turf(src))
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
-			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			if(prob(70))
+				new /obj/plant_spawner/towercaps(get_turf(src))
+				to_chat(user, SPAN_NOTICE("Even got a towercap log out of it too!"))
 			qdel(src)
 			return
 		return
@@ -1059,9 +633,11 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			new /obj/plant_spawner/grass(get_turf(src))
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
-			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			if(prob(60))
+				new /obj/plant_spawner/towercaps(get_turf(src))
+				to_chat(user, SPAN_NOTICE("Even got a towercap log out of it too!"))
 			qdel(src)
 			return
 		return
@@ -1080,9 +656,11 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			new /obj/plant_spawner/grass(get_turf(src))
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
-			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			if(prob(20))
+				new /obj/plant_spawner/towercaps(get_turf(src))
+				to_chat(user, SPAN_NOTICE("Even got a towercap log out of it too!"))
 			qdel(src)
 			return
 		return
@@ -1101,9 +679,11 @@
 	if(tool_type==QUALITY_CUTTING)
 		to_chat(user, SPAN_NOTICE("You start to cut the grass, harvesting some clippings..."))
 		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
 			new /obj/plant_spawner/grass(get_turf(src))
-			new /obj/item/stack/material/wood(get_turf(src), 1 ? 2 : 2)
-			to_chat(user, SPAN_NOTICE("You harvest some clippings. Even got some scrap wood out of it too!"))
+			if(prob(20))
+				new /obj/plant_spawner/towercaps(get_turf(src))
+				to_chat(user, SPAN_NOTICE("Even got a towercap log out of it too!"))
 			qdel(src)
 			return
 		return
@@ -1406,8 +986,6 @@
 			return
 		return
 
-
-
 /obj/structure/flora/pumpkin
 	name = "pumpkin"
 	icon = 'icons/obj/flora/pumpkins.dmi'
@@ -1420,14 +998,14 @@
 	icon_state = "spawner-jackolantern"
 
 /obj/effect/landmark/carved_pumpkin_spawn/New()
-    var/new_pumpkin = pick(
+	var/new_pumpkin = pick(
 		prob(70);/obj/structure/flora/pumpkin,
-        prob(60);/obj/structure/flora/pumpkin/carved,
-        prob(30);/obj/structure/flora/pumpkin/carved/scream,
-        prob(30);/obj/structure/flora/pumpkin/carved/girly,
-        prob(10);/obj/structure/flora/pumpkin/carved/owo)
-    new new_pumpkin(src.loc)
-    ..()
+		prob(60);/obj/structure/flora/pumpkin/carved,
+		prob(30);/obj/structure/flora/pumpkin/carved/scream,
+		prob(30);/obj/structure/flora/pumpkin/carved/girly,
+		prob(10);/obj/structure/flora/pumpkin/carved/owo)
+	new new_pumpkin(src.loc)
+	..()
 
 /obj/structure/flora/pumpkin/carved
 	name = "jack o' lantern"
@@ -1502,13 +1080,3 @@
 	..()
 	pixel_x = -45
 	pixel_y = null
-
-/obj/structure/flora/church_tree //fancy red tree
-	name = "Cherry Tree"
-	icon = 'icons/obj/flora/church_stuff.dmi'
-	icon_state = "red_tree_alt"
-	desc = "A large hard wood tree with bark like steel, typically used for meditation."
-	anchored = TRUE
-	density = FALSE
-	layer = ABOVE_MOB_LAYER
-	mouse_opacity = MOUSE_OPACITY_ICON

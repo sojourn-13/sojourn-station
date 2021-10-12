@@ -41,6 +41,11 @@
 		),
 		"Flasks, Glasses" = list(
 			/obj/item/reagent_containers/food/drinks/drinkingglass,
+			/obj/item/reagent_containers/food/drinks/drinkingglass/shot,
+			/obj/item/reagent_containers/food/drinks/drinkingglass/mug,
+			/obj/item/reagent_containers/food/drinks/drinkingglass/pint,
+			/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+			/obj/item/reagent_containers/food/drinks/drinkingglass/doble,
 			/obj/item/reagent_containers/food/drinks/teapot,
 			/obj/item/reagent_containers/food/drinks/pitcher,
 			/obj/item/reagent_containers/food/drinks/carafe,

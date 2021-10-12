@@ -14,7 +14,7 @@
 	minimum_character_age = 30
 	playtimerequired = 1200
 	also_known_languages = list(LANGUAGE_LATIN = 100)
-
+	security_clearance = CLEARANCE_CLERGY
 	access = list(
 		access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
 	)
@@ -74,6 +74,7 @@
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/church/acolyte
 	also_known_languages = list(LANGUAGE_LATIN = 100)
+	security_clearance = CLEARANCE_COMMON
 	alt_titles = list("Divisor","Factorial","Monomial","Lemniscate","Tessellate")
 
 	stat_modifiers = list(

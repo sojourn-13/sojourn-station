@@ -426,19 +426,12 @@
 //smoothbore rifles
 /obj/item/projectile/bullet/ball
 	damage_types = list(BRUTE = 60) //Grab me musket as the founding fathers intended
-	armor_penetration = 25 //Golf-ball sized hole in the blokes chest, but not his plate carrier.
+	armor_penetration = 250 //It's a little jenk, but this makes it super effective against mobs while only middle against players given its slow shot pattern. -Kaz
 	agony = 60
 	penetrating = 2
-	hitscan = TRUE
-	affective_damage_range = 4
-	affective_ap_range = 9 //Good rifling!
-
-/obj/item/projectile/bullet/ball/on_hit(atom/target, def_zone = null)
-	. = ..()
-	if(isliving(target))
-		var/mob/living/M = target
-		if(istype(target, /mob/living/simple_animal) || istype(target, /mob/living/carbon/superior_animal))
-			M.damage_through_armor(damage = 240, damagetype = BRUTE, def_zone = null, attack_flag = ARMOR_BULLET, armour_pen = 90, used_weapon = null, sharp = 0, edge = 0)
+	hitscan = TRUE //It's a bullet, but its hitscan as its only used by snipers.
+	affective_damage_range = 12
+	affective_ap_range = 12 //Good rifling!
 
 //Shotguns
 //*********************************//

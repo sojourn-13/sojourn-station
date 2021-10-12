@@ -1,4 +1,4 @@
-#define DRYING_TIME 5 * 60*10                        //for 1 unit of depth in puddle (amount var)
+#define DRYING_TIME 5 * 12*10                        //for 1 unit of depth in puddle (amount var) should be 10 mins to dry
 
 var/global/list/image/splatter_cache=list()
 
@@ -8,8 +8,8 @@ var/global/list/image/splatter_cache=list()
 	desc = "It's thick and gooey. Perhaps it's the chef's cooking?"
 	var/drydesc = "It's dry and crusty. Someone is not doing their job."
 	gender = PLURAL
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mfloor1"
 	random_icon_states = list("mfloor1", "mfloor2", "mfloor3", "mfloor4", "mfloor5", "mfloor6", "mfloor7")
@@ -21,20 +21,36 @@ var/global/list/image/splatter_cache=list()
 	var/amount = 5
 	var/drytime
 	sanity_damage = 1
+	// List of are shoe prints we got
+	var/list/shoe_types = list()
+
+/obj/effect/decal/cleanable/blood/bearfoot
+	name = "bearfoot"
+
+/obj/effect/decal/cleanable/blood/examine(mob/user)
+	. = ..()
+	if(iscarbon(user) || issilicon(user))
+		if(shoe_types.len && (user.stats?.getPerk(PERK_EAR_OF_QUICKSILVER) || user.stats.getStat(STAT_VIG) >= STAT_LEVEL_EXPERT)) //Basiclly rangers are meant to do this so they have a bypass
+			to_chat(user, "<span class='info'>Their is a trace shoe print that likly is form:</span>")
+			for(var/shoe in shoe_types)
+				var/obj/item/clothing/shoes/S = shoe
+				to_chat(user, "<span class='info'>some <B>[initial(S.name)]</B> </B></span>") //as cool as  [icon2html(initial(S.icon) is it dosnt work well
+		else
+			to_chat(user, "<span class='info'>These footprints have no shoe prints that you can reconise</span>")
 
 /obj/effect/decal/cleanable/blood/reveal_blood()
 	if(!fluorescent)
-		fluorescent = 1
+		fluorescent = TRUE
 		basecolor = COLOR_LUMINOL
 		update_icon()
 
 /obj/effect/decal/cleanable/blood/clean_blood()
-	fluorescent = 0
+	fluorescent = FALSE
 	if(invisibility != 100)
 		invisibility = 100
 		amount = 0
 		STOP_PROCESSING(SSobj, src)
-	..(ignore=1)
+	..(ignore=TRUE)
 
 /obj/effect/decal/cleanable/blood/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -45,15 +61,16 @@ var/global/list/image/splatter_cache=list()
 	fall_to_floor()
 	update_icon()
 
-
 	if(istype(src, /obj/effect/decal/cleanable/blood/gibs))
 		return
 	if(src.type == /obj/effect/decal/cleanable/blood)
 		if(src.loc && isturf(src.loc))
 			for(var/obj/effect/decal/cleanable/blood/B in src.loc)
 				if(B != src)
-					if (B.blood_DNA)
+					if(B.blood_DNA)
 						blood_DNA |= B.blood_DNA.Copy()
+					if(B.shoe_types)
+						shoe_types |= B.shoe_types.Copy()
 					qdel(B)
 	drytime = world.time + DRYING_TIME * (amount+1)
 	START_PROCESSING(SSobj, src)
@@ -82,6 +99,7 @@ var/global/list/image/splatter_cache=list()
 		if(istype(S))
 			S.blood_color = basecolor
 			S.track_blood = max(amount,S.track_blood)
+			shoe_types |= S.type
 			if(!S.blood_overlay)
 				S.generate_blood_overlay()
 			if(!S.blood_DNA)
@@ -97,9 +115,11 @@ var/global/list/image/splatter_cache=list()
 	else if (hasfeet)//Or feet
 		perp.feet_blood_color = basecolor
 		perp.track_blood = max(amount,perp.track_blood)
+		shoe_types |= /obj/effect/decal/cleanable/blood/bearfoot
 		if(!perp.feet_blood_DNA)
 			perp.feet_blood_DNA = list()
 		perp.feet_blood_DNA |= blood_DNA.Copy()
+
 	else if (perp.buckled && istype(perp.buckled, /obj/structure/bed/chair/wheelchair))
 		var/obj/structure/bed/chair/wheelchair/W = perp.buckled
 		W.bloodiness = 4
@@ -119,7 +139,7 @@ var/global/list/image/splatter_cache=list()
 	if (amount && istype(user))
 		add_fingerprint(user)
 		if (user.gloves)
-			return
+			return FALSE
 		var/taken = rand(1,amount)
 		amount -= taken
 		to_chat(user, SPAN_NOTICE("You get some of \the [src] on your hands."))

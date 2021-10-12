@@ -36,7 +36,8 @@
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/job/blackshield_conditioning,
 				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/codespeak)
+				 /datum/perk/codespeak,
+				 /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -97,7 +98,8 @@
 
 	perks = list(/datum/perk/ass_of_concrete,
 				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/codespeak)
+				 /datum/perk/codespeak,
+				 /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -154,7 +156,8 @@
 							 /datum/computer_file/program/camera_monitor)
 
 	perks = list(/datum/perk/market_prof,
-				 /datum/perk/codespeak)
+				 /datum/perk/codespeak,
+				 /datum/perk/chem_contraband)
 
 	description = "The Supply Specialist is the right hand of the warrant officer and the defacto controller of the armory and armory shop. <br>\
 	Your role is mainly a desk job - with duties rarely taking you outside of the colony or even the armory.<br>\
@@ -201,7 +204,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -245,7 +248,8 @@
 	)
 
 	perks = list(/datum/perk/ear_of_quicksilver,
-				 /datum/perk/codespeak)
+				 /datum/perk/codespeak,
+				 /datum/perk/chem_contraband)
 
 	stat_modifiers = list(
 		STAT_BIO = 15,
@@ -303,6 +307,7 @@
 	)
 
 	perks = list(/datum/perk/medicalexpertise)
+				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/suit_sensors,
@@ -342,7 +347,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
-	perks = list(/datum/perk/job/bolt_reflect,/datum/perk/job/blackshield_conditioning)
+	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
 
 	access = list(
 		access_security, access_eva,
@@ -403,7 +408,7 @@
 		STAT_VIG = 20,
 	)
 
-	perks = list(/datum/perk/codespeak)
+	perks = list(/datum/perk/codespeak, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)

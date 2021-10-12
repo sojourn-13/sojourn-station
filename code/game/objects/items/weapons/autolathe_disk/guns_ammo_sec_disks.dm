@@ -26,6 +26,8 @@
 		/datum/design/autolathe/gun/dnalock_mod,
 		/datum/design/autolathe/gun/flare_gun = 3,
 		/datum/design/autolathe/ammo/flare_shell,
+		/datum/design/autolathe/ammo/flare_shell_g,
+		/datum/design/autolathe/ammo/flare_shell_b,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/hos
@@ -97,7 +99,9 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/grenade,
 		/datum/design/autolathe/ammo/grenade/flash,
-		/datum/design/autolathe/ammo/flare_shell = 0
+		/datum/design/autolathe/ammo/flare_shell = 0,
+		/datum/design/autolathe/ammo/flare_shell_g = 0,
+		/datum/design/autolathe/ammo/flare_shell_b = 0,
 		)
 
 //Blackshield
@@ -159,12 +163,17 @@
 		/datum/design/autolathe/ammo/lrifle,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/rifle_short,
+		/datum/design/autolathe/ammo/rifle_lethal,
+		/datum/design/autolathe/ammo/rifle_short_lethal,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
-		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/kurtz_ammobox,
+		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber,
@@ -176,7 +185,11 @@
 		/datum/design/autolathe/ammo/grenade/frag,
 		/datum/design/autolathe/ammo/grenade/blast,
 		/datum/design/autolathe/ammo/grenade/flash,
-		/datum/design/autolathe/ammo/flare_shell = 0
+		/datum/design/autolathe/ammo/flare_shell = 0,
+		/datum/design/autolathe/ammo/flare_shell_g = 0,
+		/datum/design/autolathe/ammo/flare_shell_b = 0,
+		/datum/design/autolathe/ammo/shotgun_box = 5, //Might want to up these, but really only a ten point difference from the other disk.
+		/datum/design/autolathe/ammo/shotgun_pellet_box = 5,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger
@@ -363,11 +376,11 @@
 		/datum/design/autolathe/ammo/smg_lethal,
 		// rifles
 		/datum/design/autolathe/ammo/lrifle,
-		/datum/design/autolathe/ammo/rifle,
 		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal,
+		/datum/design/autolathe/ammo/rifle,
 		/datum/design/autolathe/ammo/rifle_short,
 		/datum/design/autolathe/ammo/rifle_lethal,
-		/datum/design/autolathe/ammo/lrifle_short_lethal,
 		/datum/design/autolathe/ammo/rifle_short_lethal,
 		/datum/design/autolathe/ammo/hrifle,
 		/datum/design/autolathe/ammo/hrifle_lethal,
@@ -941,6 +954,7 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/sika = 3,
+		/datum/design/autolathe/ammo/lrifle_speed_loader,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small,
@@ -954,6 +968,7 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/roe =  3,
+		/datum/design/autolathe/ammo/lrifle_speed_loader,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
 		/datum/design/autolathe/ammo/lrifle_ammobox_small,

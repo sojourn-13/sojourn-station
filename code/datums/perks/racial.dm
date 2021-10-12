@@ -29,14 +29,14 @@
 
 /datum/perk/brawn
 	name = "Brawny Build"
-	desc = "All sablekyne are stocky and built wide, your brawny build and low center of gravity gives you exceptional balance. Few beasts can knock you down and not even the strongest men can push you over, provided you walk instead of run."
+	desc = "All sablekyne are stocky and built wide, your brawny build and low center of gravity gives you exceptional balance. Few beasts can knock you down and not even the strongest men can push you over."
 	//icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/brawn/assign(mob/living/carbon/human/H)
 	..()
 	holder.mob_bump_flag = HEAVY
 
-/datum/perk/ass_of_concrete/remove()
+/datum/perk/brawn/remove()
 	holder.mob_bump_flag = ~HEAVY
 	..()
 
@@ -306,6 +306,7 @@
 	desc = "You retrieve your custom kitted medical webbing hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This tool belt is yours alone and you should not allow any non-opifex to use it."
 	active = FALSE
 	passivePerk = FALSE
+	
 
 /datum/perk/opifex_backup_medical/activate()
 	var/mob/living/carbon/human/user = usr

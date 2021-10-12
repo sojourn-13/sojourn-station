@@ -84,6 +84,7 @@
 	mob_swap_flags = ~HEAVY
 
 	var/flash_protection = 0				// Total level of flash protection
+	var/psi_blocking = 0					// Total level of psi protection
 	var/equipment_tint_total = 0			// Total level of visualy impairing items
 	var/equipment_darkness_modifier			// Darkvision modifier from equipped items
 	var/equipment_vision_flags				// Extra vision flags from equipped items

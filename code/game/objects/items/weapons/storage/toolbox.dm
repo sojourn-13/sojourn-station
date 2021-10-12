@@ -10,9 +10,9 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	throw_speed = 1
 	throw_range = 7
-	w_class = ITEM_SIZE_BULKY
-	max_w_class = ITEM_SIZE_NORMAL
-	max_storage_space = 14 //enough to hold all starting contents
+	w_class = ITEM_SIZE_HUGE
+	max_w_class = ITEM_SIZE_BULKY
+	max_storage_space = 18 //enough to hold all starting contents
 	origin_tech = list(TECH_COMBAT = 1)
 	attack_verb = list("robusted")
 

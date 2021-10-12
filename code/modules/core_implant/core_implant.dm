@@ -9,6 +9,7 @@
 	var/active = FALSE
 	var/activated = FALSE			//true, if cruciform was activated once
 
+	var/security_clearance = CLEARANCE_NONE
 	var/address = null
 	var/power = 0
 	var/max_power = 0
@@ -216,6 +217,8 @@
 		add_module(new CRUCIFORM_DIVI)
 	else if(path == "fact")
 		add_module(new CRUCIFORM_FACT)
+	else if(path == "omni")
+		add_module(new CRUCIFORM_OMNI)
 
 /obj/item/implant/core_implant/proc/process_modules()
 	for(var/datum/core_module/CM in modules)

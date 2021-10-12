@@ -11,7 +11,7 @@
 	matter = list(MATERIAL_BIOMATTER = 4, MATERIAL_PLASTIC = 5)
 	attack_verb = list("whipped", "lashed", "disciplined")
 	price_tag = 15
-
+	cant_hold = list(/obj/item/storage/pouch) //Cant stack pouches in belts
 	var/show_above_suit = 0
 
 /obj/item/storage/belt/Initialize()
@@ -300,10 +300,12 @@
 
 /obj/item/storage/belt/security
 	name = "tactical belt"
-	desc = "Can hold various military and security equipment."
+	desc = "Can hold various military and security equipment. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "security"
 	item_state = "security"
 	can_hold = list(
+		/obj/item/clothing/head,
+		/obj/item/clothing/mask,
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/handcuffs,
@@ -375,7 +377,7 @@
 	name = "professional tactical belt"
 	desc = "Can hold various military and security equipment, more so than a standard belt or web harness."
 	icon_state = "tactical"
-	storage_slots = 12
+	storage_slots = 16 //Holds a lot as its bigger
 
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"

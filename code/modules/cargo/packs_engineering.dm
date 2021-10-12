@@ -462,7 +462,7 @@
 /datum/supply_pack/teg
 	contains = list(/obj/machinery/power/generator)
 	name = "Mark I Thermoelectric Generator Crate"
-	cost = 2400
+	cost = 750
 	containertype = /obj/structure/closet/crate/secure/large
 	crate_name = "Mark I thermoelectric generator crate"
 	group = "Engineering"
@@ -470,7 +470,7 @@
 /datum/supply_pack/circulator
 	contains = list(/obj/machinery/atmospherics/binary/circulator)
 	name = "Binary Atmospheric Circulator Crate"
-	cost = 1200
+	cost = 600 //You need two this
 	containertype = /obj/structure/closet/crate/secure/large
 	crate_name = "binary atmospheric circulator crate"
 	group = "Engineering"
