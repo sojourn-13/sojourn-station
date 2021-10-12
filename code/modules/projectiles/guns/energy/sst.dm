@@ -1,6 +1,6 @@
 /obj/item/gun/energy/sst/Initialize()
 	. = ..()
-	src.transform *= 0.5
+	src.transform *= 0.65
 
 /obj/item/gun/energy/sst
 	name = "\"SST Abnegate\" handgun"
