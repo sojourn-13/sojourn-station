@@ -389,8 +389,8 @@
 //Non-Spawn
 //Odditys that are event only or spawned in on map gen
 /obj/item/oddity/rare/golden_cup
-	name = "Plasma Tag Trophy"
-	desc = "A trophy earned during the monthly plasma tag competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
+	name = "Colony Games Trophy"
+	desc = "A trophy earned during the monthly competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
 	icon_state = "golden_cup"
 	oddity_stats = list(
 		STAT_ROB = 9,

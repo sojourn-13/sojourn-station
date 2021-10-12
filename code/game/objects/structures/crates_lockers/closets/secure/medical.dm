@@ -77,9 +77,9 @@
 	new /obj/item/clothing/suit/storage/surgical_apron(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
-	name = "soteria paramedic's locker"
+	name = "soteria field doctor's locker"
 	req_access = list(access_cmo)
-	access_occupy = list(access_paramedic)
+	access_occupy = list(access_medical_equip)
 	icon_state = "med"
 
 /obj/structure/closet/secure_closet/personal/paramedic/populate_contents()
@@ -114,10 +114,10 @@
 	new /obj/item/storage/pouch/medical_supply(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
-	name = "soteria orderly locker"
+	name = "soteria trauma team locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_orderly)
-	icon_state = "med"
+	icon_state = "traumateam"
 
 /obj/structure/closet/secure_closet/personal/orderly/populate_contents()
 	if(prob(50))
