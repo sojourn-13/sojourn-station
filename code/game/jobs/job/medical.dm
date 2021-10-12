@@ -119,7 +119,7 @@
 	alt_titles = (null)
 	outfit_type = /decl/hierarchy/outfit/job/medical/trauma_team
 
-	perks = list(/datum/perk/medicalexpertise) // Can treat people well but can't do surgery or chemistry as good as a doctor.
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits,
