@@ -1,18 +1,18 @@
 
-//RIPLEY ===========================================================================
+//IVAN ===========================================================================
 
-/datum/construction/mecha/randy_chassis
+/datum/construction/mecha/ivan_chassis
 	steps = list(
-		list("key"=/obj/item/mecha_parts/part/randy_torso, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs."),//1
-		list("key"=/obj/item/mecha_parts/part/randy_left_arm, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs."),//2
-		list("key"=/obj/item/mecha_parts/part/randy_right_arm, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs."),//3
-		list("key"=/obj/item/mecha_parts/part/randy_left_leg, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs."),//4
-		list("key"=/obj/item/mecha_parts/part/randy_right_leg, desc = "A chassis or case for a Randy mech, needs a Randy torso, arms and legs.")//5
+		list("key"=/obj/item/mecha_parts/part/ivan_torso, desc = "A chassis or case for a Ivan mech, needs a Ivan torso, arms and legs."),//1
+		list("key"=/obj/item/mecha_parts/part/ivan_left_arm, desc = "A chassis or case for a Ivan mech, needs a Ivan torso, arms and legs."),//2
+		list("key"=/obj/item/mecha_parts/part/ivan_right_arm, desc = "A chassis or case for a Ivan mech, needs a Ivan torso, arms and legs."),//3
+		list("key"=/obj/item/mecha_parts/part/ivan_left_leg, desc = "A chassis or case for a Ivan mech, needs a Ivan torso, arms and legs."),//4
+		list("key"=/obj/item/mecha_parts/part/ivan_right_leg, desc = "A chassis or case for a Ivan mech, needs a Ivan torso, arms and legs.")//5
 	)
 
 	spawn_result()
 		var/obj/item/mecha_parts/chassis/const_holder = holder
-		const_holder.construct = new /datum/construction/reversible/mecha/randy(const_holder)
+		const_holder.construct = new /datum/construction/reversible/mecha/ivan(const_holder)
 		const_holder.icon = 'icons/mecha/mech_construction.dmi'
 		const_holder.icon_state = "ripley0"
 		const_holder.density = 1
@@ -22,11 +22,11 @@
 		return
 
 
-/datum/construction/reversible/mecha/randy
+/datum/construction/reversible/mecha/ivan
 	give_points = 5000 //How many points do we give?
 	rnd_point_giver = TRUE //Do we even give points?
 
-	result = /obj/mecha/working/randy
+	result = /obj/mecha/working/ivan
 	steps = list(
 		//1
 		list("key"=QUALITY_WELDING,

@@ -26,29 +26,29 @@
 	build_path = /obj/item/mecha_parts/part/ripley_right_leg
 
 
-//Randy ====================================
+//Ivan ====================================
 
-/datum/design/research/item/mechfab/randy
-	category = "Randy"
+/datum/design/research/item/mechfab/ivan
+	category = "Ivan"
 	starts_unlocked = TRUE
 
-/datum/design/research/item/mechfab/randy/chassis
-	build_path = /obj/item/mecha_parts/chassis/randy
+/datum/design/research/item/mechfab/ivan/chassis
+	build_path = /obj/item/mecha_parts/chassis/ivan
 
-/datum/design/research/item/mechfab/randy/torso
-	build_path = /obj/item/mecha_parts/part/randy_torso
+/datum/design/research/item/mechfab/ivan/torso
+	build_path = /obj/item/mecha_parts/part/ivan_torso
 
-/datum/design/research/item/mechfab/randy/left_arm
-	build_path = /obj/item/mecha_parts/part/randy_left_arm
+/datum/design/research/item/mechfab/ivan/left_arm
+	build_path = /obj/item/mecha_parts/part/ivan_left_arm
 
-/datum/design/research/item/mechfab/randy/right_arm
-	build_path = /obj/item/mecha_parts/part/randy_right_arm
+/datum/design/research/item/mechfab/ivan/right_arm
+	build_path = /obj/item/mecha_parts/part/ivan_right_arm
 
-/datum/design/research/item/mechfab/randy/left_leg
-	build_path = /obj/item/mecha_parts/part/randy_left_leg
+/datum/design/research/item/mechfab/ivan/left_leg
+	build_path = /obj/item/mecha_parts/part/ivan_left_leg
 
-/datum/design/research/item/mechfab/randy/right_leg
-	build_path = /obj/item/mecha_parts/part/randy_right_leg
+/datum/design/research/item/mechfab/ivan/right_leg
+	build_path = /obj/item/mecha_parts/part/ivan_right_leg
 
 
 //Odysseus =====================================================
