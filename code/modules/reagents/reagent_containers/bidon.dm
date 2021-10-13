@@ -96,23 +96,15 @@
 			anchored = FALSE
 			anchored_machine = null
 		else
-			log_debug("bidon/attackby(): Searching for machine")
 			var/list/directions = list(WEST, NORTH, SOUTH, EAST)
 			for(var/direction_from_obj in directions)
-				log_debug("bidon/attackby(): Searching in direction- [direction_from_obj]")
 				for (var/obj/machinery/valid_machine in get_step(get_turf(src), direction_from_obj))
-					log_debug("bidon/attackby(): Found machine direction- [direction_from_obj], machine- [valid_machine] anchor-type:[valid_machine.anchor_type]")
 					if(valid_machine.anchor_type && ispath(valid_machine.anchor_type, /obj/structure/reagent_dispensers/bidon))
-						log_debug("bidon/attackby(): Machine is anchorable! Direction- [direction_from_obj]")
 						if(valid_machine.anchor_direction)
-							log_debug("bidon/attackby(): Machine is has anchor direction! Direction- [valid_machine.anchor_direction]")
-							log_debug("bidon/attackby(): Reverse of BIDON Direction- [reverse_direction(direction_from_obj)]")
 							if(valid_machine.anchor_direction == reverse_direction(direction_from_obj))
-								log_debug("bidon/attackby(): Found valid directional machine to [direction_from_obj]")
 								anchored_machine = valid_machine
 								break
 						else
-							log_debug("bidon/attackby(): Found valid non-directional machine to [direction_from_obj]")
 							anchored_machine = valid_machine
 							break
 			if(anchored_machine && I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))

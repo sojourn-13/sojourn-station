@@ -28,7 +28,7 @@
 		<div class="itemContent" style="width: 100%;">
 			{{for data.reagents.contents}}
 				<div class="highlight clearBoth">
-					{{:helper.fixed(value.volume)}} units of {{:value.name}} {{if data.bidon_linked == 0}} {{:helper.link('Filter to Bidon', 'eject', {'filter' : value.id}, null, 'floatRight')}}{{/if}} {{:helper.link('Create Bottle', 'eject', {'bottle' : value.id}, null, 'floatRight')}} {{:helper.link('Purge All', 'eject', {'purge' : value.id}, null, 'floatRight')}}
+					{{:helper.fixed(value.volume)}} units of {{:value.name}} {{if data.bidon_linked == 1}} {{:helper.link('Filter to Bidon', 'eject', {'filter' : value.id}, null, 'floatRight')}}{{/if}} {{:helper.link('Create Bottle', 'eject', {'bottle' : value.id}, null, 'floatRight')}} {{:helper.link('Purge All', 'eject', {'purge' : value.id}, null, 'floatRight')}}
 				</div>
 			{{empty}}
 				<span class="bad">
@@ -39,6 +39,7 @@
 	</div>
 </div>
 
+{{if data.bidon_linked == 1}}
 <div class="item">
 	<div class="itemLabel">
 		Filter List
@@ -49,7 +50,7 @@
 		<div class="itemContent" style="width: 100%;">
 			{{for data.bidon_filter}}
 				<div class="highlight clearBoth">
-					{{:helper.fixed(value.name)}} {{:helper.link('Remove Filter', 'eject', {'unfilter' : value.id}, null, 'floatRight')}}
+					{{:value.name}} {{:helper.link('Remove Filter', 'eject', {'unfilter' : value.id}, null, 'floatRight')}}
 				</div>
 			{{empty}}
 				<span class="bad">
@@ -59,3 +60,4 @@
 		</div>
 	</div>
 </div>
+{{/if}}

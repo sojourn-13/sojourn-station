@@ -6,6 +6,13 @@ A specialized Reagent Grinder that automatically processes items placed in a loc
 into a BIDON container to the east of it. It can even purge material that you don't want!
 
 It is very goddamn convenient.
+
+The bidon_filter variable has the following structure:
+
+list(
+	list("id"=reagent_id_1, "name"=reagent_name_1),
+	list("id"=reagent_id_1, "name"=reagent_name_1)
+)
 ===============================================================================================================================================
 */
 
@@ -72,11 +79,10 @@ It is very goddamn convenient.
 		attempt_bidon_link()
 
 	check_bidon_link()
-	if(linked_bidon)
-		grind()
-		if(!grinder_stuck)
-			grab()
-	SSnano.update_uis(src)
+
+	grind()
+	if(!grinder_stuck)
+		grab()
 
 /obj/machinery/reagentgrinder/advanced/proc/attempt_bidon_link()
 	for(var/obj/structure/reagent_dispensers/bidon/adjacent_bidon in orange(1,src))
@@ -86,7 +92,7 @@ It is very goddamn convenient.
 			SSnano.update_uis(src)
 
 /obj/machinery/reagentgrinder/advanced/proc/check_bidon_link()
-	if(linked_bidon.loc != linked_bidon_loc)
+	if(linked_bidon && ((linked_bidon.loc != linked_bidon_loc) || !linked_bidon.anchored))
 		bidon_filter = list()
 		linked_bidon = null
 
@@ -128,7 +134,6 @@ It is very goddamn convenient.
 
 	var/bidon_is_linked = linked_bidon ? TRUE : FALSE
 	data["bidon_linked"] = bidon_is_linked
-	log_debug("advanced.ui_data: Bidon linked? [bidon_is_linked]")
 
 	var/bidon_full = FALSE
 	if(linked_bidon)
@@ -151,27 +156,31 @@ It is very goddamn convenient.
 				bottle(href_list["bottle"])
 	if(href_list["filter"])
 		if(linked_bidon)
-			//Add everything the first time around.
-			src.reagents.trans_id_to(linked_bidon.reagents, href_list["filter"], reagents.get_reagent_amount(href_list["filter"]))
-
 			//Don't add this to the filter twice.
 			for(var/list/reagent_data in bidon_filter)
 				var/reagent_id = reagent_data["id"]
 				if(reagent_id == href_list["filter"])
 					return 1
+
 			//Get the reagent name for the sake of our sanity
 			var/reagent_name = ""
 			for(var/reagent_raw in src.reagents.reagent_list)
 				var/datum/reagent/reagent_defined = reagent_raw
 				if(reagent_defined.id == href_list["filter"])
 					reagent_name = reagent_defined.name
+
 			//Add it to the filter
-			bidon_filter += list(list("id"=href_list["filter"], "name"=reagent_name))
+			bidon_filter.Add(list(list("id"=href_list["filter"], "name"=reagent_name)))
+
+			//Add everything the first time around.
+			src.reagents.trans_id_to(linked_bidon, href_list["filter"], reagents.get_reagent_amount(href_list["filter"]))
+
 	if(href_list["unfilter"])
 		for(var/list/reagent_data in bidon_filter)
-			var/reagent_id = reagent_data["id"]
-			if(reagent_id == href_list["unfilter"])
-				bidon_filter -= reagent_data
+			if(reagent_data["id"] == href_list["unfilter"])
+				bidon_filter -= list(reagent_data)
+
+
 	if(href_list["purge"])
 		src.reagents.del_reagent(href_list["purge"])
 	return 1
@@ -190,13 +199,14 @@ It is very goddamn convenient.
 
 /obj/machinery/reagentgrinder/advanced/proc/grind()
 	var/i
+	var/changed = FALSE
+	var/filled_bidon = FALSE
 	for(i = 0, i < items_to_process, i++)
 		var/obj/item/I = locate() in holdingitems
 		if(!I)
-			return
-		log_debug("advanced.grind() Activated.")
+			break
+		changed = TRUE
 		if((src.reagents.total_volume + I.reagents.total_volume) <= max_capacity)
-			log_debug("Grinding Activated.")
 			grind_item(I, src.reagents)
 			grinder_stuck = FALSE
 		else
@@ -206,4 +216,12 @@ It is very goddamn convenient.
 		for(var/list/reagent_info in bidon_filter)
 			var/reagent_id = reagent_info["id"]
 			if (src.reagents.has_reagent(reagent_id))
-				reagents.trans_id_to(linked_bidon.reagents, reagent_id, reagents.get_reagent_amount(reagent_id))
+				filled_bidon = TRUE
+				reagents.trans_id_to(linked_bidon, reagent_id, reagents.get_reagent_amount(reagent_id))
+	//Update the menu on grind
+	if(changed)
+		SSnano.update_uis(src)
+
+	//Make sure the bidon icon is shown
+	if(filled_bidon)
+		linked_bidon.update_icon()
