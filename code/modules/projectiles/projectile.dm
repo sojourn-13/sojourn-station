@@ -44,7 +44,7 @@
 	var/projectile_type = /obj/item/projectile
 	var/penetrating = 0 //If greater than zero, the projectile will pass through dense objects as specified by on_penetrate()
 	var/kill_count = 50 //This will de-increment every process(). When 0, it will delete the projectile.
-
+	var/nocap_structures = FALSE // wether or not this projectile can circumvent the damage cap you can do to walls and doors in one hit. Also increases the structure damage done to walls by 300%
 	//Effects
 	var/stun = 0
 	var/weaken = 0
@@ -120,6 +120,9 @@
 /obj/item/projectile/multiply_projectile_step_delay(newmult)
 	if(!hitscan)
 		step_delay = initial(step_delay) * newmult
+
+/obj/item/projectile/multiply_projectile_agony(newmult)
+	agony = initial(agony) * newmult
 
 /obj/item/projectile/proc/adjust_damages(var/list/newdamages)
 	if(!newdamages.len)

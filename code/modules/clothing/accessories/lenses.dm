@@ -16,6 +16,7 @@
 	..()
 	overlays = global_hud.thermal
 
+
 /obj/item/clothing/glasses/verb/detach_lenses()
 	set name = "Detach lenses"
 	set category = "Object"
@@ -54,6 +55,18 @@
 	target.have_lenses = src
 	inserter.drop_item(src)
 	forceMove(target)
+
+/obj/item/clothing/glasses/attachable_lenses/thermal
+//Legit the same as its parrent
+
+/obj/item/clothing/glasses/attachable_lenses/thermal/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_THERMAL = TRUE
+		)
+	I.gun_loc_tag = GUN_SIGHT
+	I.req_gun_tags = list(GUN_SIGHT)
 
 //Good example of how to make a subtype of googles that handles everything.
 /obj/item/clothing/glasses/attachable_lenses/explosive

@@ -249,13 +249,15 @@
 
 
 //Intended for gun projectiles, but defined at this level for various things that aren't of projectile type
-/obj/proc/multiply_projectile_damage(var/newmult)
+/obj/proc/multiply_projectile_damage(newmult)
 	throwforce = initial(throwforce) * newmult
 
 //Same for AP
-/obj/proc/multiply_projectile_penetration(var/newmult)
+/obj/proc/multiply_projectile_penetration(newmult)
 	armor_penetration = initial(armor_penetration) * newmult
 
-/obj/proc/multiply_pierce_penetration(var/newmult)
+/obj/proc/multiply_pierce_penetration(newmult)
 
-/obj/proc/multiply_projectile_step_delay(var/newmult)
+/obj/proc/multiply_projectile_step_delay(newmult)
+
+/obj/proc/multiply_projectile_agony(newmult)

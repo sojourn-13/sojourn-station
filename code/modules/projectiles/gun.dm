@@ -33,6 +33,8 @@
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
 	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
 	var/pierce_multiplier = 0 //ADDITIVE wall penetration to projectiles fired from this gun
+	var/extra_damage_mult_scoped = 0.2
+	var/proj_agony_multiplier = 1
 	var/burst = 1
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again
 	var/burst_delay = 2	//delay between shots, if firing in bursts
@@ -85,6 +87,10 @@
 
 	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
 	var/fire_animatio = FALSE //Only used in revolvers atm, animation for each shot being fired
+
+	var/darkness_view = 0
+	var/vision_flags = 0
+	var/see_invisible_gun = -1
 
 	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
 
@@ -313,6 +319,8 @@
 		projectile.multiply_pierce_penetration(pierce_multiplier)
 
 		projectile.multiply_projectile_step_delay(proj_step_multiplier)
+
+		projectile.multiply_projectile_agony(proj_agony_multiplier)
 
 		if(istype(projectile, /obj/item/projectile))
 			var/obj/item/projectile/P = projectile
@@ -592,6 +600,16 @@
 		sel_mode = 1
 	return set_firemode(sel_mode)
 
+/// Set firemode , but without a refresh_upgrades at the start
+/obj/item/gun/proc/very_unsafe_set_firemode(index)
+	if(index > firemodes.len)
+		index = 1
+	var/datum/firemode/new_mode = firemodes[sel_mode]
+	new_mode.apply_to(src)
+	new_mode.update()
+	update_hud_actions()
+	return new_mode
+
 /obj/item/gun/proc/set_firemode(var/index)
 	refresh_upgrades()
 	if(index > firemodes.len)
@@ -629,7 +647,6 @@
 		user.remove_cursor()
 	else
 		user.update_cursor()
-
 
 //Finds the current firemode and calls update on it. This is called from a few places:
 //When firemode is changed
@@ -726,6 +743,7 @@
 	penetration_multiplier = initial(penetration_multiplier)
 	pierce_multiplier = initial(pierce_multiplier)
 	proj_step_multiplier = initial(proj_step_multiplier)
+	proj_agony_multiplier = initial(proj_agony_multiplier)
 	fire_delay = initial(fire_delay)
 	move_delay = initial(move_delay)
 	recoil_buildup = initial(recoil_buildup)
@@ -735,22 +753,44 @@
 	init_offset = initial(init_offset)
 	proj_damage_adjust = list()
 	fire_sound = initial(fire_sound)
+	restrict_safety = initial(restrict_safety)
+	dna_compare_samples = initial(dna_compare_samples)
 	rigged = initial(rigged)
 	zoom_factor = initial(zoom_factor)
+	darkness_view = initial(darkness_view)
+	vision_flags = initial(vision_flags)
+	see_invisible_gun = initial(see_invisible_gun)
 	force = initial(force)
-	auto_eject = initial(auto_eject)
-	dna_compare_samples = initial(dna_compare_samples)
+	armor_penetration = initial(armor_penetration)
+	sharp = initial(sharp)
+	attack_verb = list()
+	one_hand_penalty = initial(one_hand_penalty)
+	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
 
-	..()
+	//Now lets have each upgrade reapply its modifications
+//	SEND_SIGNAL(src, COMSIG_ADDVAL, src) Why twice?
+	SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
-	for (var/prefix in prefixes)
-		name = "[prefix] [name]"
+	if(firemodes.len)
+		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
 
 	update_icon()
 	//then update any UIs with the new stats
 	SSnano.update_uis(src)
+
+/obj/item/gun/zoom(tileoffset, viewsize)
+	..()
+	if(!ishuman(usr))
+		return
+	var/mob/living/carbon/human/H = usr
+	if(zoom)
+		H.using_scope = src
+		damage_multiplier += extra_damage_mult_scoped
+	else
+		H.using_scope = null
+		refresh_upgrades()
 
 /* //Eris has this but it, unsurpriingly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/gun/proc/generate_guntags()

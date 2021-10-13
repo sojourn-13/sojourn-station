@@ -84,6 +84,8 @@
 		add_clothing_protection(wear_mask)
 	if(istype(wearing_rig,/obj/item/rig))
 		process_rig(wearing_rig)
+	if(istype(using_scope,/obj/item/gun))
+		process_scope(using_scope)
 
 /mob/living/carbon/human/proc/process_glasses(var/obj/item/clothing/glasses/G, var/forceActive)
 	if(G && (G.active || forceActive))
@@ -151,3 +153,13 @@
 		r_ear,
 		l_ear,
 		)
+
+/mob/living/carbon/human/proc/process_scope(mob/user)
+	var/obj/item/gun/A = using_scope
+	equipment_darkness_modifier += A.darkness_view
+	equipment_vision_flags |= A.vision_flags
+	if(A.see_invisible_gun >= 0)
+		if(equipment_see_invis)
+			equipment_see_invis = min(equipment_see_invis, A.see_invisible_gun)
+		else
+			equipment_see_invis = A.see_invisible_gun
