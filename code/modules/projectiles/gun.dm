@@ -770,7 +770,7 @@
 	initialize_firemodes()
 
 	//Now lets have each upgrade reapply its modifications
-//	SEND_SIGNAL(src, COMSIG_ADDVAL, src) Why twice?
+	SEND_SIGNAL(src, COMSIG_ADDVAL, src)
 	SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
 	if(firemodes.len)
