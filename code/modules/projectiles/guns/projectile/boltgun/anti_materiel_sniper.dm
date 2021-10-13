@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/boltgun/heavysniper
 	name = "Anti-Materiel Rifle"
-	desc = "A heavy anti-material rifle fitted with a scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing .60-06 shells."
+	desc = "A heavy anti-material rifle fitted with a night-vision scope, it was originally designed for use against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing .60-06 shells."
 	icon = 'icons/obj/guns/projectile/heavysniper.dmi'
 	icon_state = "heavysniper"
 	item_state = "heavysniper"
@@ -19,14 +19,23 @@
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20, MATERIAL_DIAMOND = 3, MATERIAL_OSMIUM = 5, MATERIAL_URANIUM = 2)
 	price_tag = 10000
 	one_hand_penalty = 80
+	damage_multiplier = 0.9
 	zoom_factor = 2.0
 	twohanded = TRUE
 	sharp = FALSE
 	saw_off = FALSE
 	eject_animatio = FALSE //Todo: this
 	bolt_training = FALSE
+	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
+	extra_damage_mult_scoped = 0.2
+	gun_tags = list(GUN_AMR, GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SIGHT) //AMR tag atm does nothing
 
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+/obj/item/gun/projectile/boltgun/heavysniper/zoom(tileoffset, viewsize)
+	..()
+	if(zoom)
+		damage_multiplier += extra_damage_mult_scoped
+	else
+		refresh_upgrades()
 
 /obj/item/weaponparts
 	var/part_color = ""

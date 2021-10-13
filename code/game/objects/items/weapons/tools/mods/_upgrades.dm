@@ -275,11 +275,9 @@
 	if(tool_upgrades[UPGRADE_DEGRADATION_MULT])
 		T.degradation *= tool_upgrades[UPGRADE_DEGRADATION_MULT]
 	if(tool_upgrades[UPGRADE_FORCE_MULT])
-		T.force *= tool_upgrades[UPGRADE_FORCE_MULT]
-		T.switched_on_force *= tool_upgrades[UPGRADE_FORCE_MULT]
+		T.force_upgrade_mults += tool_upgrades[UPGRADE_FORCE_MULT] - 1
 	if(tool_upgrades[UPGRADE_FORCE_MOD])
-		T.force += tool_upgrades[UPGRADE_FORCE_MOD]
-		T.switched_on_force += tool_upgrades[UPGRADE_FORCE_MOD]
+		T.force_upgrade_mods += tool_upgrades[UPGRADE_FORCE_MOD]
 	if(tool_upgrades[UPGRADE_FUELCOST_MULT])
 		T.use_fuel_cost *= tool_upgrades[UPGRADE_FUELCOST_MULT]
 	if(tool_upgrades[UPGRADE_POWERCOST_MULT])
@@ -314,6 +312,8 @@
 			if(/obj/item/cell/large)
 				T.suitable_cell = /obj/item/cell/medium
 				prefix = "medium-cell"
+	T.force = initial(T.force) * T.force_upgrade_mults + T.force_upgrade_mods
+	T.switched_on_force = initial(T.switched_on_force) * T.force_upgrade_mults + T.force_upgrade_mods
 	T.prefixes |= prefix
 
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
@@ -369,6 +369,8 @@
 		if(istype(G.loc, /mob))
 			var/mob/user = G.loc
 			user.update_action_buttons()
+	if(weapon_upgrades[GUN_UPGRADE_THERMAL])
+		G.vision_flags = SEE_MOBS
 
 	if(weapon_upgrades[GUN_UPGRADE_DNALOCK])
 		G.dna_compare_samples = TRUE

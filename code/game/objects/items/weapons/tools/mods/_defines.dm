@@ -101,7 +101,7 @@
 #define GUN_UPGRADE_RIGGED "rigged"
 #define GUN_UPGRADE_AUTOEJECT "autoeject"
 #define GUN_UPGRADE_CELLMINUS "small cell adapter"
-//#define GUN_UPGRADE_THERMAL "thermal scope"
+#define GUN_UPGRADE_THERMAL "thermal scope"
 #define GUN_UPGRADE_DNALOCK "biocoded"
 //Location Tag defines
 
@@ -126,7 +126,7 @@
 #define GUN_BAYONET "bayonet"
 #define GUN_CALIBRE_35 "caliber .35"
 #define GUN_CALIBRE_50 "caliber .50"
-
+#define GUN_AMR "caliber 60-06"
 GLOBAL_LIST_INIT(tool_aspects_blacklist, list(UPGRADE_COLOR, UPGRADE_ITEMFLAGPLUS, UPGRADE_CELLPLUS, UPGRADE_SHARP, UPGRADE_BULK))
 GLOBAL_LIST_INIT(weapon_aspects_blacklist, list(GUN_UPGRADE_SILENCER, GUN_UPGRADE_FORCESAFETY, GUN_UPGRADE_HONK, GUN_UPGRADE_FULLAUTO,
 											GUN_UPGRADE_EXPLODE, GUN_UPGRADE_RIGGED, UPGRADE_SANCTIFY, GUN_UPGRADE_AUTOEJECT))
