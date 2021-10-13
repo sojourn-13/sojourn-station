@@ -43,6 +43,10 @@
 	if(!holstered)
 		return
 
+	if(user.lying)
+		to_chat(user, SPAN_WARNING("You need to be standing!"))
+		return
+
 	if(istype(user.get_active_hand(),/obj))
 		to_chat(user, SPAN_WARNING("You need an empty hand to draw \the [holstered]!"))
 	else

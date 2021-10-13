@@ -747,6 +747,9 @@
 	SEND_SIGNAL(src, COMSIG_ADDVAL, src)
 	SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"
+
 	update_icon()
 	//then update any UIs with the new stats
 	SSnano.update_uis(src)

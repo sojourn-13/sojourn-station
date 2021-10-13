@@ -197,8 +197,15 @@
 	path = /obj/item/clothing/glasses/hud/security
 	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_glasses
-	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/security_tact
+	display_name = "tactical security HUD"
+	path = /obj/item/clothing/glasses/sechud/tactical
+	allowed_roles = list(JOBS_SECURITY)
+	slot = slot_glasses
+	sort_category = "Faction: Security"
+	cost = 2 //has flash protection
 
 /datum/gear/factionsecurity/fatigueselection
 	display_name = "fatigue selection"
