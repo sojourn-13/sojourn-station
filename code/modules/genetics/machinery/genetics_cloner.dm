@@ -134,7 +134,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 /obj/machinery/genetics/cloner/proc/find_container()
 	var/turf/turf_west = get_step(get_turf(src), WEST)
 	var/obj/structure/reagent_dispensers/bidon/container_west = locate(/obj/structure/reagent_dispensers/bidon, turf_west)
-	if(container_west)
+	if(container_west && container_west.anchored_machine == src)
 		return container_west
 	return null
 
@@ -206,9 +206,6 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		reader.addLog("Error, Protein canister not detected~!")
 		return
 
-	if(!container.anchored)
-		reader.addLog("Error, Protein canister not Anchored~!")
-		return
 	container_loc = container.loc
 
 	trunk = locate() in src.loc
@@ -345,9 +342,9 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 								visible_message(SPAN_DANGER("The creature breaks free!"))
 								//TODO: SPECIAL BREAKOUT EVENT
 								breakout()
-						else
-							reader.addLog("Protein not available~, The Embryo has starved to death.")
-							stop() //The clone is dead.
+					else
+						reader.addLog("Protein not available~, The Embryo has starved to death.")
+						stop() //The clone is dead.
 				else
 					reader.addLog("Protein container not found~, The Embryo has starved to death.")
 					stop()
