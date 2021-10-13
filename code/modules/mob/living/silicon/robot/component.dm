@@ -316,16 +316,19 @@
 
 /obj/item/robot_parts/robot_component/binary_communication_device
 	name = "binary communication device"
+	desc = "A robot part, this one allows a robotic unit to talk in a subspace binary channel with other cyborgs or drones."
 	icon_state = "binradio"
 	icon_state_broken = "binradio_broken"
 
 /obj/item/robot_parts/robot_component/actuator
 	name = "actuator"
+	desc = "A robot part, this one allows for the robotic unit to be able to move around."
 	icon_state = "motor"
 	icon_state_broken = "motor_broken"
 
 /obj/item/robot_parts/robot_component/armour
 	name = "armour plating"
+	desc = "A robot part, metal plates to be able to take dents and burns so more sensitive component inside dont."
 	icon_state = "armor"
 	icon_state_broken = "armor_broken"
 
@@ -343,16 +346,20 @@
 
 /obj/item/robot_parts/robot_component/camera
 	name = "camera"
+	desc = "A robot part, this allows a robot to see as well as be a moble camera, well also being able to take photos."
 	icon_state = "camera"
 	icon_state_broken = "camera_broken"
 
 /obj/item/robot_parts/robot_component/diagnosis_unit
 	name = "diagnosis unit"
+	desc = "A robot part, a complicated set of wires and checks to have a robotic unit be able to understand damage, \
+	tell whats turned on or off, and even power drains."
 	icon_state = "analyser"
 	icon_state_broken = "analyser_broken"
 
 /obj/item/robot_parts/robot_component/radio
 	name = "radio"
+	desc = "A robot part, the simple radio does nothing more then let a robot hear and use the telecoms in its local area."
 	icon_state = "radio"
 	icon_state_broken = "radio_broken"
 
