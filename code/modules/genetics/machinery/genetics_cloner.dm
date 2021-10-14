@@ -212,6 +212,10 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	if(!trunk)
 		reader.addLog("Error, Pipe trunk not detected~!")
 		return
+	
+	if(!clone_info)
+		reader.addLog("Error, Genetic Sample Plate not detected~!")
+		return
 
 	clone_mutation = clone_info.findCloneMutation()
 
@@ -342,9 +346,9 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 								visible_message(SPAN_DANGER("The creature breaks free!"))
 								//TODO: SPECIAL BREAKOUT EVENT
 								breakout()
-					else
-						reader.addLog("Protein not available~, The Embryo has starved to death.")
-						stop() //The clone is dead.
+						else
+							reader.addLog("Protein not available~, The Embryo has starved to death.")
+							stop() //The clone is dead.
 				else
 					reader.addLog("Protein container not found~, The Embryo has starved to death.")
 					stop()
@@ -353,12 +357,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	if (clone_ready && !ready_message)
 		reader.addLog("The Test Subject has Matured~!")
 		ready_message = TRUE
-
 		embryo = null
-
-	//Don't flush if the clone is not ready.
-	if(flush && !clone_ready)
-		flush = FALSE
 
 	//Disposal loop
 	if(flush && air_contents.return_pressure() >= SEND_PRESSURE )	// flush can happen even without power
