@@ -290,6 +290,12 @@
 		icon_state = "jagged"
 		body_parts = list(BP_HEAD)
 
+/*Handlebars*/
+    handlebars
+        name = "Handlebars"
+        icon_state = "handlebars"
+        body_parts = list(BP_HEAD)
+
 /*FBP 'chasis' markings*/
 	athena_body
 		name = "FBP-Athena chassis"
