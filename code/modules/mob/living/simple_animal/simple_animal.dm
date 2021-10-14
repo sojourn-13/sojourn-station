@@ -579,7 +579,6 @@
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
 			if(ispath(src.meat_type, /obj/item/reagent_containers/food/snacks/meat))
-				log_debug("DETECTED MEAT OF [src] IS REAL MEAT, PROCESSING.")
 				var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new meat_type(get_turf(src))
 				butchered_meat.name = "[src.name] [butchered_meat.name]"
 				butchered_meat.inherent_mutations = src.inherent_mutations.Copy()

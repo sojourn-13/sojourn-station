@@ -17,6 +17,8 @@
 
 	var/grinding_time = 60
 
+	var/items_to_process = 1
+
 	var/limit = 10
 	var/list/holdingitems = list()
 	var/list/sheet_reagents = list(
@@ -125,7 +127,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, nano_template, name, 400, 550)
+		ui = new(user, src, ui_key, nano_template, name, 600, 550)
 		ui.set_initial_data(data)
 		ui.open()
 

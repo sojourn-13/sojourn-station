@@ -11,6 +11,7 @@
 	var/filling_states = list(10,20,30,40,50,60,70,80,100)
 	unacidable = 1
 	anchored = 0
+	var/obj/machinery/anchored_machine
 	density = TRUE
 	volume = 6000
 	var/lid = TRUE
@@ -88,23 +89,36 @@
 	update_icon()
 
 /obj/structure/reagent_dispensers/bidon/attackby(obj/item/I, mob/user)
-	//Handle attaching the BIDON to a cloner
+	//Handle attaching the BIDON to a valid machine
 	var/tool_type = I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
 	if(tool_type)
-		var/turf/turf_east = get_step(get_turf(src), EAST)
-		var/obj/machinery/genetics/cloner/cloner_east = locate(/obj/machinery/genetics/cloner, turf_east)
-		if(cloner_east && I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
-			to_chat(user, SPAN_NOTICE("You [anchored ? "detach" : "attach"] the B.I.D.O.N canister to the [cloner_east]."))
-			anchored = anchored ? FALSE : TRUE
+		if(anchored && I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
+			anchored = FALSE
+			anchored_machine = null
+		else
+			var/list/directions = list(WEST, NORTH, SOUTH, EAST)
+			for(var/direction_from_obj in directions)
+				for (var/obj/machinery/valid_machine in get_step(get_turf(src), direction_from_obj))
+					if(valid_machine.anchor_type && ispath(valid_machine.anchor_type, /obj/structure/reagent_dispensers/bidon))
+						if(valid_machine.anchor_direction)
+							if(valid_machine.anchor_direction == reverse_direction(direction_from_obj))
+								anchored_machine = valid_machine
+								break
+						else
+							anchored_machine = valid_machine
+							break
+			if(anchored_machine && I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
+				to_chat(user, SPAN_NOTICE("You [anchored ? "detach" : "attach"] the B.I.D.O.N canister to the [anchored_machine]."))
+				anchored = TRUE
 
-			//Remove the lid if it is currently sealed, so we don't have to deal with checking for it
-			if(lid)
-				to_chat(user, SPAN_NOTICE("The cloner removes the lid automatically!"))
-				lid = FALSE
-				reagent_flags |= REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE
-				playsound(src,'sound/items/trayhit2.ogg',50,1)
-				update_icon()
-			return
+				//Remove the lid if it is currently sealed, so we don't have to deal with checking for it
+				if(lid)
+					to_chat(user, SPAN_NOTICE("The machine removes the lid automatically!"))
+					lid = FALSE
+					reagent_flags |= REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE
+					playsound(src,'sound/items/trayhit2.ogg',50,1)
+					update_icon()
+				return
 	else if(lid)
 		to_chat(user, SPAN_NOTICE("Remove the lid first."))
 		return

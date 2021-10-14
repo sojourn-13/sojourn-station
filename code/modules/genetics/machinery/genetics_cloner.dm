@@ -94,6 +94,9 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 	var/power_cost = 250
 
+	anchor_direction = WEST //Direction the bidon can should be anchored in
+	anchor_type = /obj/structure/reagent_dispensers/bidon //Allows a bidon can to be anchored to this.
+
 
 	//Disposals info
 	var/datum/gas_mixture/air_contents	// internal reservoir
@@ -131,7 +134,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 /obj/machinery/genetics/cloner/proc/find_container()
 	var/turf/turf_west = get_step(get_turf(src), WEST)
 	var/obj/structure/reagent_dispensers/bidon/container_west = locate(/obj/structure/reagent_dispensers/bidon, turf_west)
-	if(container_west)
+	if(container_west && container_west.anchored_machine == src)
 		return container_west
 	return null
 
@@ -203,14 +206,15 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		reader.addLog("Error, Protein canister not detected~!")
 		return
 
-	if(!container.anchored)
-		reader.addLog("Error, Protein canister not Anchored~!")
-		return
 	container_loc = container.loc
 
 	trunk = locate() in src.loc
 	if(!trunk)
 		reader.addLog("Error, Pipe trunk not detected~!")
+		return
+	
+	if(!clone_info)
+		reader.addLog("Error, Genetic Sample Plate not detected~!")
 		return
 
 	clone_mutation = clone_info.findCloneMutation()
@@ -353,12 +357,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	if (clone_ready && !ready_message)
 		reader.addLog("The Test Subject has Matured~!")
 		ready_message = TRUE
-
 		embryo = null
-
-	//Don't flush if the clone is not ready.
-	if(flush && !clone_ready)
-		flush = FALSE
 
 	//Disposal loop
 	if(flush && air_contents.return_pressure() >= SEND_PRESSURE )	// flush can happen even without power
@@ -631,7 +630,8 @@ and which aren't.
 
 	if(linked_cloner)
 		for(var/obj/structure/reagent_dispensers/bidon/adjacent_bidon in orange(1,linked_cloner))
-			linked_bidon = adjacent_bidon
+			if(adjacent_bidon.anchored_machine == linked_cloner)
+				linked_bidon = adjacent_bidon
 	menuOption = VAT_MENU_SELECT
 	SSnano.update_uis(src) // update all UIs attached to src
 
