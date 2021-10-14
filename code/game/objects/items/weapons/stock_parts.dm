@@ -155,14 +155,16 @@
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 	price_tag = 75
 
-//greyson positronic stock parts (rating 5)
+//greyson positronic stock parts (rating 4)
+//This is t4 as rnd makes it and having it t5 ruins anyone using guild made parts or the illegal exl parts
+//These are also unlike every t5 stock part can be mass made or gotton rather easy.
 
 /obj/item/stock_parts/capacitor/one_star
 	name = "Greyson Positronic capacitor"
 	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "one_capacitor"
 	origin_tech = list(TECH_POWER = 7, TECH_MATERIAL = 7)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -171,7 +173,7 @@
 	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "one_scan_module"
 	origin_tech = list(TECH_MAGNET = 7)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -180,7 +182,7 @@
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "one_mani"
 	origin_tech = list(TECH_MATERIAL = 7, TECH_DATA = 6)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -189,7 +191,7 @@
 	icon_state = "one_laser"
 	desc = "A tiny laser used in certain devices."
 	origin_tech = list(TECH_MAGNET = 7)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -198,7 +200,7 @@
 	desc = "A container for hold compressed matter awaiting re-construction."
 	icon_state = "one_matter"
 	origin_tech = list(TECH_MATERIAL = 7)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
