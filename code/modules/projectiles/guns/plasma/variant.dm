@@ -36,7 +36,7 @@
 		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/cannon/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", heat_per_shot = 70, use_plasma_cost = 40)
 	)
 
-// Blue cross weapon, no overheat and infinite ammo.
+// Blue cross weapon, no overheat.
 /obj/item/gun/hydrogen/incinerator
 	name = "\improper \"Reclaimator\" hydrogen-plasma gun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
