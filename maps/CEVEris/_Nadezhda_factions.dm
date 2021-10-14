@@ -26,7 +26,7 @@
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/militia
-	name = "Blackshield - Brigadier Ayana Mwangi"
+	name = "Blackshield - Brigadier Ayanda Mwangi"
 
 	fax_alert = "BLACKSHIELD COMMUNIQUE"
 	fax_response = "Blackshield Order"
@@ -35,7 +35,7 @@
 	darkcolor = "#00580a"
 	lightcolor = "#47c156"
 
-	stamptext = "This paper has been authorized with the Brigadier Ayana Mwangi's Insignia."
+	stamptext = "This paper has been authorized with the Brigadier Ayanda Mwangi's Insignia."
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/soteria
