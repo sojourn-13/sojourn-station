@@ -7,6 +7,7 @@
 */
 /datum/firemode
 	var/name = "default"
+	var/desc = "The default firemode"
 	var/icon_state
 	var/list/settings = list()
 	var/obj/item/gun/gun = null
@@ -21,6 +22,8 @@
 
 		if(propname == "mode_name")
 			name = propvalue
+		else if(propname == "mode_desc")
+			desc = propvalue
 		else if(propname == "icon")
 			icon_state = properties["icon"]
 		else if(isnull(propvalue))

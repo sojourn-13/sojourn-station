@@ -27,9 +27,9 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_600,
-		list(mode_name="short bursts", burst=5,    burst_delay=1.2, move_delay=6,  icon="burst"),
-		list(mode_name="long bursts",  burst=8, burst_delay=1.2, move_delay=8,  icon="burst"),
-		list(mode_name="suppressing fire",  burst=16, burst_delay=1.2, move_delay=11,  icon="burst")
+		BURST_5_ROUND,
+		BURST_8_ROUND,
+		list(mode_name="suppressing fire", mode_desc = "Long, uncontrolled bursts",  burst=16, burst_delay=1.2, move_delay=11,  icon="burst")
 		)
 
 /obj/item/gun/projectile/automatic/bren/update_icon()

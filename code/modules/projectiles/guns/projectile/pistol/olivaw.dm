@@ -19,8 +19,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL, GUN_SILENCABLE)
 
 	init_firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
-		list(mode_name="2-round bursts", burst=2, fire_delay=0.2, move_delay=4,    	icon="burst"),
+		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
+		list(mode_name="2-round bursts", mode_desc="Shoots two rounds back to back", burst=2, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
 
 /obj/item/gun/projectile/olivaw/update_icon()

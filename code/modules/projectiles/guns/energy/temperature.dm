@@ -17,11 +17,11 @@
 	zoom_factor = 2.0
 
 	init_firemodes = list(
-		list(mode_name="ice", projectile_type=/obj/item/projectile/temp/ice, fire_delay=6, charge_cost = 1000),
-		list(mode_name="cold", projectile_type=/obj/item/projectile/temp/cold, fire_delay=6, charge_cost = 500),
-		list(mode_name="warm", projectile_type=/obj/item/projectile/temp, fire_delay= 6, charge_cost = 50),
-		list(mode_name="hot", projectile_type=/obj/item/projectile/temp/hot, fire_delay= 6, charge_cost = 500),
-		list(mode_name="boil", projectile_type=/obj/item/projectile/temp/boil, fire_delay= 6, charge_cost = 1000),
+		list(mode_name="ice", mode_desc="A freezing bolt to chill anything down rapidly", projectile_type=/obj/item/projectile/temp/ice, fire_delay=6, charge_cost = 1000),
+		list(mode_name="cold", mode_desc="A chilly bolt to cool anything down rapidly", projectile_type=/obj/item/projectile/temp/cold, fire_delay=6, charge_cost = 500),
+		list(mode_name="warm", mode_desc="A warm bolt to heat anything up rapidly", projectile_type=/obj/item/projectile/temp, fire_delay= 6, charge_cost = 50),
+		list(mode_name="hot", mode_desc="A burning bolt to warm anything up rapidly", projectile_type=/obj/item/projectile/temp/hot, fire_delay= 6, charge_cost = 500),
+		list(mode_name="boil", mode_desc="A scorching bolt to heat anything up rapidly", projectile_type=/obj/item/projectile/temp/boil, fire_delay= 6, charge_cost = 1000),
 	)
 
 /*

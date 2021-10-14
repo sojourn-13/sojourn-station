@@ -20,8 +20,8 @@
 	auto_eject = TRUE
 
 	init_firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
+		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
+		list(mode_name="3-round bursts", mode_desc="Shoot three bullets almost instantly", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
 
 /obj/item/gun/projectile/glock/update_icon()
