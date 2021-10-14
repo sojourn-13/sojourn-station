@@ -34,7 +34,7 @@
 	icon_state = "format_bound"
 	item_state = "format_bound"
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	charge_cost = 150
+	charge_cost = 100
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	suitable_cell = /obj/item/cell/medium
 	fire_delay = 12

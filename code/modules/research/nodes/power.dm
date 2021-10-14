@@ -32,7 +32,7 @@
 
 	required_technologies = list(/datum/technology/basic_power)
 	required_tech_levels = list()
-	cost = 200
+	cost = 100
 
 	unlocks_designs = list(	/datum/design/research/item/part/adv_capacitor,
 							/datum/design/research/item/powercell/large/super,
@@ -51,7 +51,7 @@
 
 	required_technologies = list(/datum/technology/advanced_power)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(	/datum/design/research/circuit/smes_cell,
 							/datum/design/research/item/part/smes_coil/weak)
@@ -67,7 +67,7 @@
 
 	required_technologies = list(/datum/technology/advanced_power_storage)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(	/datum/design/research/circuit/breakerbox,
 							/datum/design/research/item/robot_upgrade/power_saver)
@@ -83,7 +83,7 @@
 
 	required_technologies = list(/datum/technology/advanced_power)
 	required_tech_levels = list()
-	cost = 1200
+	cost = 600
 
 	unlocks_designs = list(	/datum/design/research/item/part/super_capacitor,
 							/datum/design/research/item/powercell/large/hyper,
@@ -103,7 +103,7 @@
 
 	required_technologies = list()
 	required_tech_levels = list()
-	cost = 400
+	cost = 200
 
 	unlocks_designs = list(	/datum/design/research/circuit/solarcontrol,
 							/datum/design/research/circuit/camp,
@@ -121,7 +121,7 @@
 
 	required_technologies = list(/datum/technology/solar_power)
 	required_tech_levels = list()
-	cost = 600
+	cost = 300
 
 	unlocks_designs = list(/datum/design/research/circuit/superpacman,
 							/datum/design/research/circuit/diesel)
@@ -137,7 +137,7 @@
 
 	required_technologies = list(/datum/technology/improved_power_generation)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(/datum/design/research/circuit/mrspacman)
 
@@ -156,7 +156,7 @@
 								 /datum/design/research/structure/solar,
 								 /datum/design/research/circuit/hydrogen_gen)
 
-	cost = 2000//5000
+	cost = 1000
 
 	//unlocks_designs = list()"fusion_core_control", "fusion_fuel_compressor", "fusion_fuel_control", "gyrotron_control", "fusion_core", "fusion_injector", "gyrotron")
 
@@ -176,7 +176,7 @@
 								)
 
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(
 							/datum/design/research/item/powercell/large/omega,
@@ -198,7 +198,7 @@
 								)
 
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(
 							/datum/design/research/item/powercell/small/nuclear,
@@ -219,7 +219,7 @@
 								)
 
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(
 							/datum/design/research/item/powercell/medium/nuclear
@@ -239,7 +239,7 @@
 								)
 
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(
 							/datum/design/research/item/powercell/large/nuclear

@@ -1,7 +1,7 @@
 //The storage module allows a rig to be used as a sort of backpack, by using an internal storage compartment
 /obj/item/rig_module/storage
 	name = "internal storage compartment"
-	desc = "A storage container designed to be installed in a RIG suit. Allows a few items to be stored inside"
+	desc = "A storage container designed to be installed in a RIG suit. Allows a few items to be stored inside."
 	interface_name = "internal storage compartment"
 	interface_desc = "A storage compartment built directly into the suits back module, accessed through a latching compartment."
 	price_tag = 100
@@ -19,6 +19,14 @@
 	var/max_w_class = ITEM_SIZE_NORMAL //Max size of objects that this object can store (in effect only if can_hold isn't set)
 	var/max_storage_space = DEFAULT_HUGE_STORAGE * 0.7 //This is a entire satchel of storage
 	var/storage_slots = null //The number of storage slots in this container.
+
+/obj/item/rig_module/storage/expanded
+	name = "large internal storage compartment"
+	desc = "A storage container designed to be installed in a RIG suit. Allows many items to be stored inside"
+	interface_name = "large internal storage compartment"
+	interface_desc = "A storage compartment built directly into the suits back module, accessed through a latching compartment."
+	price_tag = 100
+	max_storage_space = DEFAULT_HUGE_STORAGE // Holds the same as a backpack.
 
 //Create the internal storage and pass on various parameters
 /obj/item/rig_module/storage/New()
