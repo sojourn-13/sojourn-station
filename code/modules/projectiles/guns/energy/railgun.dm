@@ -23,8 +23,8 @@
 	recoil_buildup = 12 //Big shots, big recoil.
 	damage_multiplier = 1.2
 	init_firemodes = list(
-		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
-		list(mode_name="non-lethal", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
+		list(mode_name="slug", mode_desc="fires a large metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
+		list(mode_name="non-lethal", mode_desc="fires a rubber pellet at light speed", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
 		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=30000, icon="grenade"),
 	)
 	var/consume_cell = FALSE
@@ -77,8 +77,8 @@
 	can_dual = TRUE
 	twohanded = FALSE
 	init_firemodes = list(
-		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/kurtz_50/railgun, icon="kill"),
-		list(mode_name="non-lethal", projectile_type=/obj/item/projectile/bullet/kurtz_50/rubber/railgun, icon="stun"),
+		list(mode_name="slug", mode_desc="fires a small metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/kurtz_50/railgun, icon="kill"),
+		list(mode_name="non-lethal", mode_desc="fires a small rubber chunk at light speeds", projectile_type=/obj/item/projectile/bullet/kurtz_50/rubber/railgun, icon="stun"),
 		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
 	)
 	price_tag = 1250
@@ -107,7 +107,7 @@
 	damage_multiplier = 0.8
 	fire_sound = 'sound/weapons/energy_shotgun.ogg'
 	init_firemodes = list(
-		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/heavy_rifle_408/railgun, icon="kill"),
+		list(mode_name="slug", mode_desc="fires a small metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/heavy_rifle_408/railgun, icon="kill"),
 		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/weak, charge_cost=30000, icon="grenade"),
 	)
 	var/consume_cell = FALSE

@@ -26,12 +26,10 @@
 
 	init_firemodes = list(
 		FULL_AUTO_600,
-		list(mode_name="short bursts", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),
-		list(mode_name="long bursts",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
-		list(mode_name="suppressing fire",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
+		list(mode_name="short bursts", mode_desc="dakka 5 shots in quick succession", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),
+		list(mode_name="long bursts", mode_desc="Dakka 8 shots in succession",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
+		list(mode_name="suppressing fire", mode_desc="DAKKA 16 shots back to back to keep targets inside cover",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
-
-
 
 /obj/item/gun/projectile/automatic/maxim/update_icon()
 	..()

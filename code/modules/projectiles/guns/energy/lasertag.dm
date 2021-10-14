@@ -42,8 +42,8 @@
 	one_hand_penalty = 2 //No wall of shots
 	recoil_buildup = 0.1
 	init_firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, icon="semi"),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=6, icon="burst"),
+		list(mode_name="semiauto", mode_desc="Standered one shot",       burst=1, fire_delay=1.2, move_delay=null, icon="semi"),
+		list(mode_name="3-round bursts", mode_desc="Three shots back to back", burst=3, fire_delay=0.2, move_delay=6, icon="burst"),
 		)
 
 /obj/item/gun/energy/lasertag/blue
@@ -62,8 +62,8 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/blue
 	required_vest = /obj/item/clothing/suit/fluff/bluetag
 	init_firemodes = list(
-		list(mode_name="normal", projectile_type=/obj/item/projectile/plasma/lastertag/blue, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
-		list(mode_name="knockback", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
+		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/blue, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
+		list(mode_name="knockback", mode_desc="Heavy hitting plasma impact that knocks people away", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
 		)
 
 /obj/item/gun/energy/lasertag/sniper/blue
@@ -98,8 +98,8 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/red
 	required_vest = /obj/item/clothing/suit/fluff/redtag
 	init_firemodes = list(
-		list(mode_name="normal", projectile_type=/obj/item/projectile/plasma/lastertag/red, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
-		list(mode_name="knockback", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
+		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/red, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
+		list(mode_name="knockback", mode_desc="Heavy hitting plasma impact that knocks people away", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
 		)
 
 /obj/item/gun/energy/lasertag/sniper/red
@@ -134,8 +134,8 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/green
 	required_vest = /obj/item/clothing/suit/fluff/greentag
 	init_firemodes = list(
-		list(mode_name="normal", projectile_type=/obj/item/projectile/plasma/lastertag/green, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
-		list(mode_name="knockback", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
+		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/green, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
+		list(mode_name="knockback", mode_desc="Heavy hitting plasma impact that knocks people away", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
 		)
 
 /obj/item/gun/energy/lasertag/sniper/green
@@ -170,8 +170,8 @@
 	projectile_type = /obj/item/projectile/plasma/lastertag/yellow
 	required_vest = /obj/item/clothing/suit/fluff/yellowtag
 	init_firemodes = list(
-		list(mode_name="normal", projectile_type=/obj/item/projectile/plasma/lastertag/yellow, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
-		list(mode_name="knockback", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
+		list(mode_name="normal", mode_desc="Standered one shot", projectile_type=/obj/item/projectile/plasma/lastertag/yellow, fire_sound='sound/weapons/Laser.ogg', icon="destroy"),
+		list(mode_name="knockback", mode_desc="Heavy hitting plasma impact that knocks people away", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', icon="stun"),
 		)
 
 /obj/item/gun/energy/lasertag/sniper/yellow

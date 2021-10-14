@@ -27,8 +27,8 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	move_delay = null
 	init_firemodes = list(
-		list(mode_name="fire one barrel at a time", burst=1, icon="semi"),
-		list(mode_name="fire both barrels at once", burst=2, icon="burst"),
+		list(mode_name="Single barrel", mode_desc="Shoots one barrel", burst=1, icon="semi"),
+		list(mode_name="Double barrel", mode_desc="Shoots both barrels at once", burst=2, icon="burst"),
 		)
 
 /obj/item/gun/projectile/shotgun/bull/bison

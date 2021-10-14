@@ -12,9 +12,9 @@
 	projectile_type = /obj/item/projectile/beam/stun
 
 	init_firemodes = list(
-		list(mode_name="taser", projectile_type=/obj/item/projectile/beam/stun, fire_delay=12, charge_cost = 50, icon="stun"),
-		list(mode_name="stunbolt", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300, icon="destroy"),
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600, icon="vaporize"), //Takes 1 full level 1 M cell
+		STUNBOLT,
+		list(mode_name="stunbolt", mode_desc="Fires a ball of condenced energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300, icon="destroy"),
+		list(mode_name="stunshot", mode_desc="Fires a ball of highly condenced energy to disable people almost instantly", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600, icon="vaporize"), //Takes 1 full level 1 M cell
 	)
 
 /obj/item/gun/energy/taser/mounted
@@ -26,8 +26,8 @@
 	damage_multiplier = 0.6
 
 	init_firemodes = list(
-		list(mode_name="taser", projectile_type=/obj/item/projectile/beam/stun, fire_delay=24, charge_cost = 50), //We use large cells? No, we don't, we use medium ones.
-		list(mode_name="stunbolt", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=50, charge_cost = 300),
+		STUNBOLT,
+		list(mode_name="stunbolt", mode_desc="Fires a ball of condenced energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=50, charge_cost = 300),
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=80, charge_cost = 600),
 	)
 
@@ -36,9 +36,9 @@
 	recharge_time = 10 //Time it takes for shots to recharge (in ticks)
 	damage_multiplier = 0.9
 	init_firemodes = list(
-		list(mode_name="taser", projectile_type=/obj/item/projectile/beam/stun, fire_delay=12, charge_cost = 50),
-		list(mode_name="stunbolt", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300),
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600),
+		STUNBOLT,
+		list(mode_name="stunbolt", mode_desc="Fires a ball of condenced energy to disable people", projectile_type=/obj/item/projectile/energy/electrode, fire_delay=25, charge_cost = 300),
+		list(mode_name="stunshot", mode_desc="Fires a ball of highly condenced energy to disable people almost instantly", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_delay=50, charge_cost = 600),
 	)
 
 /obj/item/gun/energy/stunrevolver
