@@ -1,3 +1,7 @@
+/obj/item/gun/energy/sst/Initialize()
+	. = ..()
+	src.transform *= 0.65
+
 /obj/item/gun/energy/sst
 	name = "\"SST Abnegate\" handgun"
 	desc = "\"Soteria Surface Tension\" brand handgun. A cooperative project between Soteria Medical and Soteria Research, the Abnegate uses Greyson tech to internally synthesize soporific coated .35 calliber bullets. \
@@ -35,10 +39,10 @@
 	suitable_cell = /obj/item/cell/medium
 	fire_delay = 12
 	recoil_buildup = 6
-	can_dual = FALSE
+	can_dual = TRUE
 	damage_multiplier = 1.3
 	w_class = ITEM_SIZE_NORMAL
-	projectile_type=/obj/item/projectile/bullet/magnun_40/rubber/soporific
+	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 5)
 	price_tag = 1600
 

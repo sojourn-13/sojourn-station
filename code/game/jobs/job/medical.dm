@@ -104,22 +104,22 @@
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
 
-/datum/job/orderly
-	title = "Soteria Orderly"
-	flag = ORDERLY
+/datum/job/trauma_team
+	title = "Soteria Trauma Team"
+	flag = TRAUMATEAM
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	alt_titles = (null)
-	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
+	outfit_type = /decl/hierarchy/outfit/job/medical/trauma_team
 
-	perks = list(/datum/perk/medicalexpertise) //Nurses should be able to get bare bone basics
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits,
@@ -136,22 +136,28 @@
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/scanner)
 
-	description = "The Orderly is not a man of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
-	Your primary role is that of a thug for medical. You make sure that medical remains safe by ensuring people don't trespass or steal items and remove those who shouldn't be there, by force if necessary.<br>\
+	description = "Members of the trauma team are not men of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
+	Your primary role is that of an armed thug for medical. You make sure that medical remains safe by ensuring people don't trespass or steal items and remove those who shouldn't be there, by force if necessary.<br>\
 	Your secondary responsibility is that of an soteria enforcer. Actions that require in house enforcement such as aiding doctors and security with violent patients in medical, securing the virology lab during an outbreak, and aiding in the destruction of escape slimes or kudzu from science.<br>\
-	Your third duty is to aid medical doctors and paramedics in fixing patients, this can include retrieving chemicals, doing basic triage, and accompanying paramedics to aid them in getting injured patients.<br>\
-	You are fully licensed to sell any and all chemicals to all colonists. If someone isn't an employee of Soteria Institute, charge them for their chemicals.<br>\
+	Your third duty is to aid medical doctors and act as a paramedic in fixing patients and collecting patients, this can include retrieving chemicals, doing basic triage, and going out to recover injured patients.<br>\
+	You are fully licensed to enforce the will of the overseer and to protect the soteria, its staff, and your patients with your personal weapons and armor.<br>\
 	It's worth noting that you function heavily as a nurse when not acting as muscle and treatment of patients should be priority, in particular when assisting doctors."
 
 	duties = "Act as a guard for medical, ensuring unneeded colonist leave and nothing is stolen.<br>\
-		Aid medical doctors and paramedics in any way you can.<br>\
+		Aid medical doctors in any way you can.<br>\
 		Act as a nurse for minor injuries, treating patients that a doctor needn't bother with.<br>\
 		Ensure that any outbreaks are contained, such as slimes, infected monkeys, or kudzu."
 
 /obj/landmark/join/start/chemist //This says chemist so I didn't have to edit the map shit when I changed this. Fix later.
-	name = "Soteria Orderly"
+	name = "Soteria Trauma Team"
 	icon_state = "player-green"
-	join_tag = /datum/job/orderly
+	join_tag = /datum/job/trauma_team
+
+/obj/landmark/join/start/paramedic // Same thing as above tbh.
+	name = "Soteria Trauma Team"
+	icon_state = "player-green"
+	join_tag = /datum/job/trauma_team
+
 
 /datum/job/psychiatrist
 	title = "Soteria Psychiatrist"
@@ -200,53 +206,3 @@
 	name = "Soteria Psychiatrist"
 	icon_state = "player-green"
 	join_tag = /datum/job/psychiatrist
-
-
-/datum/job/paramedic
-	title = "Soteria Paramedic"
-	flag = PARAMEDIC
-	department = DEPARTMENT_MEDICAL
-	department_flag = MEDICAL
-	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "the Soteria Biolab Overseer"
-	difficulty = "Underappreciated."
-	selection_color = "#a8b69a"
-	wage = WAGE_LABOUR_HAZARD
-	alt_titles = (null)
-	outfit_type = /decl/hierarchy/outfit/job/medical/paramedic
-	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_surgery, access_paramedic,
-		access_eva, access_maint_tunnels, access_external_airlocks, access_chemistry, access_medical_suits
-	)
-
-	stat_modifiers = list(
-		STAT_BIO = 25,
-		STAT_TGH = 10,
-		STAT_VIG = 10,
-	)
-
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist)
-
-	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
-							/datum/computer_file/program/chem_catalog,
-							 /datum/computer_file/program/camera_monitor)
-
-	description = "The Paramedic provides medical assistance on the field, while other doctors are busy in their department.<br>\
-	You are trained but lack seniority. Follow the guidance of other doctors - and transport patients back for specialist treatments.<br>\
-	Remember that you must often respond to emergencies. Pack your gear carefully and bring a breaching tool - be ready to run at short notice.<br>\
-	Your other duties include transporting patients between rooms, running errands, and generally saving time for other doctors.<br>\
-	Corpse recovery may also fall within your duties. If the body is in a dangerous location, enlist the help of the Blackshield."
-
-	duties = "Respond to distress calls and extract wounded people from dangerous situations.<br>\
-	Watch the crew monitor for signs of injuries or deaths and respond accordingly.<br>\
-	Tour around departments checking up on the health of the crew. Administer first aid on scene as required.<br>\
-	During quieter times, retrieve the corpses of the dead.<br>\
-	Run errands for the medbay staff, act as their hands outside of the medbay."
-
-/obj/landmark/join/start/paramedic
-	name = "Soteria Paramedic"
-	icon_state = "player-green"
-	join_tag = /datum/job/paramedic
-

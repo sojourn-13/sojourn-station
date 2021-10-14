@@ -51,6 +51,9 @@
 		var/obj/item/mecha_parts/M = used_atom
 		usr.drop_from_inventory(M, holder) //M for mech part
 
+	else if(istype(used_atom, /obj/item/robot_parts))
+		var/obj/item/robot_parts/R = used_atom
+		usr.drop_from_inventory(R, holder) //R for robot
 
 	else if(istype(used_atom, /obj/item/circuitboard/mecha))
 		var/obj/item/circuitboard/mecha/B = used_atom

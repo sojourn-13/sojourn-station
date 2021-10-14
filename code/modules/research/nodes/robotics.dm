@@ -14,7 +14,10 @@
 	unlocks_designs = list(	/datum/design/research/circuit/mech_recharger,
 							/datum/design/research/circuit/recharge_station,
 							/datum/design/research/item/medical/robot_scanner,
-							/datum/design/research/item/mmi)
+							/datum/design/research/item/mmi,
+							/datum/design/research/circuit/mecha/main,
+							/datum/design/research/circuit/mecha/peripherals,
+							/datum/design/research/circuit/mecha/targeting)
 
 //MECHA BRANCH
 
@@ -35,9 +38,13 @@
 		/datum/design/research/circuit/mechacontrol,
 		/datum/design/research/circuit/mechfab,
 		/datum/design/research/circuit/dronecontrol,
-		/datum/design/research/circuit/mecha/main,
-		/datum/design/research/circuit/mecha/peripherals,
-		/datum/design/research/circuit/mecha/targeting
+		/datum/design/research/item/mechfab/ripley/chassis,
+		/datum/design/research/item/mechfab/ripley/chassis/firefighter,
+		/datum/design/research/item/mechfab/ripley/torso,
+		/datum/design/research/item/mechfab/ripley/left_arm,
+		/datum/design/research/item/mechfab/ripley/right_arm,
+		/datum/design/research/item/mechfab/ripley/left_leg,
+		/datum/design/research/item/mechfab/ripley/right_leg
 		)
 
 /datum/technology/mech_odysseus

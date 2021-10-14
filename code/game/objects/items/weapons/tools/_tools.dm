@@ -47,6 +47,9 @@
 	var/lastNearBreakMessage = 0 // used to show messages that tool is about to break
 	var/isBroken = FALSE
 
+	var/force_upgrade_mults = 1
+
+	var/force_upgrade_mods = 0
 
 	var/toggleable = FALSE	//Determines if it can be switched ON or OFF, for example, if you need a tool that will consume power/fuel upon turning it ON only. Such as welder.
 	var/switched_on = FALSE	//Curent status of tool. Dont edit this in subtypes vars, its for procs only.
@@ -812,26 +815,30 @@
 
 	use_fuel_cost = initial(use_fuel_cost)
 	use_power_cost = initial(use_power_cost)
-
+	force = initial(force)
+	force_upgrade_mults = initial(force_upgrade_mults)
+	force_upgrade_mods = initial(force_upgrade_mods)
 	switched_on_force = initial(switched_on_force)
 	extra_bulk = initial(extra_bulk)
+	item_flags = initial(item_flags)
+	name = initial(name)
+	max_upgrades = initial(max_upgrades)
+	color = initial(color)
+	sharp = initial(sharp)
+	prefixes = list()
 
-	..()
+	//Now lets have each upgrade reapply its modifications
+	SEND_SIGNAL(src, COMSIG_APPVAL, src)
+
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"
 
 	health_threshold = max(0, health_threshold)
 
 	//Set the fuel volume, incase any mods altered our max fuel
 	if (reagents)
 		reagents.maximum_volume = max_fuel
-
-		if(reagents.total_volume > reagents.maximum_volume)
-			// Oh fuck.  You fucked up now.
-			var/delta = reagents.total_volume - reagents.maximum_volume
-
-			reagents.trans_to_turf(get_turf(src), delta)
-			src.visible_message(SPAN_WARNING("[usr] removes the extended fuel tank, its contents spilling onto the floor!"), \
-								SPAN_WARNING("You remove the extended fuel tank, its contents spilling onto the floor!"))
-	return
+	SSnano.update_uis(src)
 
 /obj/item/tool/examine(mob/user)
 	if(!..(user,2))
