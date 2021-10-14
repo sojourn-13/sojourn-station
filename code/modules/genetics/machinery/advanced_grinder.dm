@@ -17,7 +17,7 @@ list(
 */
 
 /obj/machinery/reagentgrinder/advanced
-	name = "Soteria Advanced Industrial Grinder"
+	name = "Soteria Advanced Grinder"
 	density = TRUE
 	anchored = TRUE
 	icon = 'icons/obj/machines/grinder.dmi'
@@ -27,7 +27,6 @@ list(
 	limit = 25
 	nano_template = "advanced_grinder.tmpl"
 	var/max_capacity = 3000
-	var/grinder_stuck = FALSE
 
 	//Bidon linked to the device
 	var/obj/structure/reagent_dispensers/bidon/linked_bidon
@@ -43,7 +42,7 @@ list(
 	var/list/bidon_filter = list() //Which reagents we are loading into the bidon, instead of keeping in the machine
 
 /obj/item/circuitboard/advanced_grinder
-	build_name = "Soteria Advanced Industrial Grinder"
+	build_name = "Soteria Advanced Grinder"
 	board_type = "machine"
 	build_path = /obj/machinery/reagentgrinder/advanced
 	origin_tech = list(TECH_BIO = 1)
@@ -52,6 +51,11 @@ list(
 		/obj/item/stock_parts/scanning_module = 1,
 		/obj/item/stock_parts/matter_bin = 2
 	)
+
+/datum/design/research/circuit/advanced_grinder
+	name = "Soteria Advanced Grinder"
+	desc = "Invented by Dr. Belvoix to make her lab a little more tidy, this device is a strict upgrade to the Industrial Grinder. Supports automatic collection, and automatic dumping into a Bidon can."
+	build_path = /obj/item/circuitboard/advanced_grinder
 
 /obj/machinery/reagentgrinder/advanced/RefreshParts()
 	var/man_rating = 0
@@ -81,8 +85,8 @@ list(
 	check_bidon_link()
 
 	grind()
-	if(!grinder_stuck)
-		grab()
+
+	grab()
 
 /obj/machinery/reagentgrinder/advanced/proc/attempt_bidon_link()
 	for(var/obj/structure/reagent_dispensers/bidon/adjacent_bidon in orange(1,src))
@@ -129,8 +133,6 @@ list(
 	var/list/data = ..()
 	log_debug("advanced.ui_data: Called function")
 	data["reagents"] = reagents.ui_data()
-
-	data["grinder_stuck"] = grinder_stuck
 
 	var/bidon_is_linked = linked_bidon ? TRUE : FALSE
 	data["bidon_linked"] = bidon_is_linked
@@ -208,9 +210,9 @@ list(
 		changed = TRUE
 		if((src.reagents.total_volume + I.reagents.total_volume) <= max_capacity)
 			grind_item(I, src.reagents)
-			grinder_stuck = FALSE
 		else
-			grinder_stuck = TRUE
+			eject_invalid_object(I, output_side)
+			holdingitems -= I
 
 		//TODO: Dispense liquid into a linked BIDON
 		for(var/list/reagent_info in bidon_filter)
