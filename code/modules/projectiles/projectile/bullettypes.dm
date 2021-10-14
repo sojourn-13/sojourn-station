@@ -38,8 +38,8 @@
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 10
 	step_delay = 0.5
-	affective_damage_range = 3
-	affective_ap_range = 3
+	affective_damage_range = 7
+	affective_ap_range = 7
 	can_ricochet = TRUE
 
 /obj/item/projectile/bullet/pistol_35/practice
@@ -80,8 +80,8 @@
 	can_ricochet = TRUE
 	step_delay = 0.4
 
-	affective_damage_range = 3
-	affective_ap_range = 3
+	affective_damage_range = 7
+	affective_ap_range = 7
 
 /obj/item/projectile/bullet/magnum_40/practice
 	name = "practice bullet"
@@ -145,8 +145,8 @@
 	can_ricochet = TRUE
 	embed = TRUE
 	step_delay = 0.65
-	affective_damage_range = 4
-	affective_ap_range = 4
+	affective_damage_range = 9
+	affective_ap_range = 9
 
 /obj/item/projectile/bullet/kurtz_50/rubber
 	name = "rubber bullet"
@@ -199,8 +199,8 @@
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.3
-	affective_damage_range = 7
-	affective_ap_range = 7
+	affective_damage_range = 12
+	affective_ap_range = 12
 
 /obj/item/projectile/bullet/light_rifle_257/practice
 	name = "practice bullet"
@@ -217,8 +217,8 @@
 	armor_penetration = 24
 	penetrating = 2
 	hitscan = TRUE
-	affective_damage_range = 8 //Can snipe
-	affective_ap_range = 8
+	affective_damage_range = 15 //Can snipe
+	affective_ap_range = 15
 	nocap_structures = TRUE //RATARATARAT down a door
 
 /obj/item/projectile/bullet/light_rifle_257/rubber
@@ -261,8 +261,8 @@
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.5
-	affective_damage_range = 5
-	affective_ap_range = 5
+	affective_damage_range = 9
+	affective_ap_range = 9
 
 /obj/item/projectile/bullet/rifle_75/hv
 	damage_types = list(BRUTE = 25)
@@ -270,8 +270,8 @@
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
-	affective_damage_range = 7
-	affective_ap_range = 7
+	affective_damage_range = 12
+	affective_ap_range = 12
 	nocap_structures = TRUE //Helps against walls and doors
 
 /obj/item/projectile/bullet/rifle_75/practice
@@ -318,8 +318,8 @@
 /obj/item/projectile/bullet/rifle_75/scrap
 	damage_types = list(BRUTE = 22)
 	armor_penetration = 10
-	affective_damage_range = 2
-	affective_ap_range = 2
+	affective_damage_range = 7
+	affective_ap_range = 7
 
 /// .408 OMNI ///
 
@@ -329,8 +329,8 @@
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
-	affective_damage_range = 8
-	affective_ap_range = 8
+	affective_damage_range = 15
+	affective_ap_range = 15
 
 /obj/item/projectile/bullet/heavy_rifle_408/rubber
 	name = "rubber bullet"
@@ -360,8 +360,8 @@
 	armor_penetration = 40
 	penetrating = 3
 	hitscan = TRUE
-	affective_damage_range = 9 //Sniping cal
-	affective_ap_range = 9
+	affective_damage_range = 18 //Sniping cal
+	affective_ap_range = 18
 	nocap_structures = TRUE //anit-wall/door
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
@@ -390,8 +390,8 @@
 	can_ricochet = TRUE
 	sharp = TRUE
 	step_delay = 0.3
-	affective_damage_range = 3
-	affective_ap_range = 3
+	affective_damage_range = 9
+	affective_ap_range = 9
 
 //Sniper rifles
 /obj/item/projectile/bullet/antim
@@ -402,8 +402,8 @@
 	//weaken = 10
 	penetrating = 5
 	hitscan = TRUE //so the PTR isn't useless as a sniper weapon
-	affective_damage_range = 10
-	affective_ap_range = 10
+	affective_damage_range = 20
+	affective_ap_range = 20
 
 /obj/item/projectile/bullet/antim/lethal
 	damage_types = list(BRUTE = 60)
@@ -411,8 +411,6 @@
 	armor_penetration = 60
 	agony = 70
 	penetrating = 2
-	affective_damage_range = 9
-	affective_ap_range = 9
 
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 63)

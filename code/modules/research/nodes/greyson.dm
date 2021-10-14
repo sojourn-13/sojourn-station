@@ -9,7 +9,7 @@
 
 	required_technologies = list()
 	required_tech_levels = list(RESEARCH_COMBAT = 3, RESEARCH_POWERSTORAGE = 3)
-	cost = 2500
+	cost = 1250
 
 	unlocks_designs = list(/datum/design/research/item/greyson/cog)
 
@@ -24,7 +24,7 @@
 
 	required_technologies = list(/datum/technology/GP_Cog)
 	required_tech_levels = list(RESEARCH_COMBAT = 5, RESEARCH_ROBOTICS = 10)
-	cost = 2500
+	cost = 1250
 
 	unlocks_designs = list(/datum/design/research/item/greyson/manhacks_roomba,
 						   /datum/design/research/item/greyson/manhacks_roomba_tripper,
@@ -43,7 +43,7 @@
 
 	required_technologies = list(/datum/technology/advanced_armor, /datum/technology/GP_Cog)
 	required_tech_levels = list()
-	cost = 2500 //Cheap do to being already done in other nodes but less good*
+	cost = 1250 //Cheap do to being already done in other nodes but less good*
 
 	unlocks_designs = list(/datum/design/research/item/greyson/iron_lock_security_armor,
 						   /datum/design/research/item/greyson/iron_lock_security_helmet,
@@ -62,7 +62,7 @@
 	required_technologies = list(/datum/technology/GP_Cog,
 								 /datum/technology/exotic_gunmods)
 	required_tech_levels = list(RESEARCH_COMBAT = 10)
-	cost = 15000
+	cost = 7500
 	unlocks_designs = list(/datum/design/research/item/greyson/glass_widow)
 
 /datum/technology/GP_unmaker
@@ -76,7 +76,7 @@
 
 	required_technologies = list(/datum/technology/GP_window)
 	required_tech_levels = list(RESEARCH_COMBAT = 13)
-	cost = 50000
+	cost = 25000
 
 	unlocks_designs = list(/datum/design/research/item/greyson/unmaker,
 			       /datum/design/research/item/greyson/combat_shield)
@@ -92,7 +92,7 @@
 
 	required_technologies = list()
 	required_tech_levels = list(RESEARCH_POWERSTORAGE = 12)
-	cost = 7500
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/powercell/large/grayson,
 						   /datum/design/research/item/powercell/medium/grayson,
@@ -111,7 +111,7 @@
 	required_technologies = list(/datum/technology/advanced_biotech,
 								 /datum/technology/super_power) // no cheating past level 3s
 	required_tech_levels = list(RESEARCH_ENGINEERING = 20)
-	cost = 7500
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/part/greyson_laser,
 						   /datum/design/research/item/part/greyson_matter,
@@ -137,7 +137,7 @@
 						   /datum/design/research/item/tool/onestar_shovel,
 						   /datum/design/research/item/tool/pickaxe_onestar)
 
-	cost = 10000
+	cost = 5000
 
 /datum/technology/GP_fuel_tools
 	name = "Greyson Positronic Fuel Tools"
@@ -150,7 +150,7 @@
 
 	required_technologies = list(/datum/technology/GP_misc_tools)
 	required_tech_levels = list()
-	cost = 7500 //Mostly a stop gate to the power tools
+	cost = 3750 //Mostly a stop gate to the power tools
 
 	unlocks_designs = list(/datum/design/research/item/tool/weldertool_onestar,
 						   /datum/design/research/item/tool/drill_onestar)
@@ -166,7 +166,7 @@
 
 	required_technologies = list(/datum/technology/GP_fuel_tools)
 	required_tech_levels = list(RESEARCH_POWERSTORAGE = 12)
-	cost = 5000
+	cost = 2500
 
 	unlocks_designs = list(/datum/design/research/item/tool/combi_driver_onestar,
 						   /datum/design/research/item/tool/multitool/multitool_onestar,
@@ -188,7 +188,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/greyson/repair_nano,
 						   /datum/design/research/item/greyson/ai_tool)
-	cost = 10000
+	cost = 5000
 
 /datum/technology/GP_fuel_toolmods
 	name = "Greyson Positronic Bluespace Holding Tank & Randomizer"
@@ -205,7 +205,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/greyson/holding_tank,
 						   /datum/design/research/item/greyson/randomizer)
-	cost = 5000 //Not THAT high-tech, but still...
+	cost = 2500 //Not THAT high-tech, but still...
 
 /datum/technology/GP_robotics
 	name = "Greyson Positronic Positronics"
@@ -224,7 +224,7 @@
 						   /datum/design/research/item/mechfab/prosthesis_grayson/r_leg,
 						   /datum/design/research/item/mechfab/prosthesis_grayson/l_leg)
 
-	cost = 7500
+	cost = 3750
 
 /datum/technology/GP_thermals
 	name = "Greyson Positronic Thermals"
@@ -240,4 +240,4 @@
 
 	unlocks_designs = list(/datum/design/research/item/greyson/thermals)
 
-	cost = 2500 //Already really end game stuff for something thats illegal and costly so its cheap
+	cost = 1250 //Already really end game stuff for something thats illegal and costly so its cheap
