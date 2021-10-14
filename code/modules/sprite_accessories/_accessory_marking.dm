@@ -214,6 +214,12 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
+	handlebar_horns
+		name = "Handlebar Special"
+		icon_state = "handlebars"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
 	elven_ears
 		name = "Elven Ears"
 		icon_state = "elfs"
