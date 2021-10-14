@@ -8,8 +8,8 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	throw_speed = 1
 	throw_range = 4
-	w_class = ITEM_SIZE_HUGE //Cant normally bag this
-	max_w_class = ITEM_SIZE_BULKY //We can fit anything smaller then us
+	w_class = ITEM_SIZE_BULKY //Cant normally bag this
+	max_w_class = ITEM_SIZE_NORMAL //We can fit anything smaller then us
 	max_storage_space = 20 //Its a big case
 	matter = list(MATERIAL_BIOMATTER = 8, MATERIAL_PLASTIC = 4)
 

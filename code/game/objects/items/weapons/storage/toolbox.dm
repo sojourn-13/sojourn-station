@@ -10,9 +10,9 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	throw_speed = 1
 	throw_range = 7
-	w_class = ITEM_SIZE_HUGE
-	max_w_class = ITEM_SIZE_BULKY
-	max_storage_space = 18 //enough to hold all starting contents
+	w_class = ITEM_SIZE_BULKY //Cant normally bag this
+	max_w_class = ITEM_SIZE_NORMAL //We can fit anything smaller then us
+	max_storage_space = 18 //enough to hold all starting contents and then some
 	origin_tech = list(TECH_COMBAT = 1)
 	attack_verb = list("robusted")
 
@@ -85,6 +85,7 @@
 	item_state = "toolbox_syndi"
 	origin_tech = list(TECH_COMBAT = 1, TECH_ILLEGAL = 1)
 	force = WEAPON_FORCE_DANGEROUS
+	max_storage_space = 24 //holds more then normal do to being antag/bigger
 
 /obj/item/storage/toolbox/syndicate/populate_contents()
 	var/obj/item/tool/cell_tool
