@@ -98,11 +98,15 @@
 	update_stats()
 
 /obj/vehicle/train/cargo/engine/Bump(atom/Obstacle)
-	var/obj/machinery/door/D = Obstacle
 	var/mob/living/carbon/human/H = load
-	if(istype(D) && istype(H))
-		D.Bumped(H)		//a little hacky, but hey, it works, and respects access rights
-
+	if(istype(Obstacle, /obj/machinery/door) && istype(H))
+		Obstacle.Bumped(H)		//a little hacky, but hey, it works, and respects access rights
+	if(istype(Obstacle, /obj/structure/multiz/stairs/active))//Start: Trying to get stairs to work
+		var/init_anc = anchored
+		anchored = FALSE
+		Obstacle.Bumped(src)
+		anchored = init_anc
+		return
 	..()
 
 /obj/vehicle/train/cargo/trolley/Bump(atom/Obstacle)
@@ -260,20 +264,20 @@
 // Loading/unloading procs
 //-------------------------------------------
 /obj/vehicle/train/cargo/trolley
-	var/list/allowed_passengers = list(
+	/*var/list/allowed_passengers = list(
 		/obj/machinery,
 		/obj/structure/closet,
 		/obj/structure/largecrate,
 		/obj/structure/reagent_dispensers,
 		/obj/structure/ore_box,
 		/mob/living/carbon/human
-	)
+	)*/
 
 /obj/vehicle/train/cargo/trolley/load(var/atom/movable/C)
 	if(ismob(C) && !passenger_allowed)
 		return 0
-	if(!is_type_in_list(C, allowed_passengers))
-		return 0
+//	if(!is_type_in_list(C, allowed_passengers))
+//		return 0 We are going to relax this a tiny bit
 
 	//if there are any items you don't want to be able to interact with, add them to this check
 	// ~no more shielded, emitter armed death trains

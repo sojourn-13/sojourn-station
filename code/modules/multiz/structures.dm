@@ -140,6 +140,8 @@
 		attack_hand(user)
 
 /obj/structure/multiz/ladder/attack_hand(var/mob/M)
+	if (M.buckled)//Prevents buckled mobs from getting stuck on ladders
+		return
 	if (isrobot(M) && !isdrone(M))
 		var/mob/living/silicon/robot/R = M
 		climb(M, (climb_delay*6)/R.speed_factor) //Robots are not built for climbing, they should go around where possible
