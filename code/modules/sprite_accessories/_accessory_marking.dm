@@ -214,12 +214,6 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
-	handlebar_horns
-		name = "Handlebar Special"
-		icon_state = "handlebars"
-		blend = ICON_MULTIPLY
-		body_parts = list(BP_HEAD)
-
 	elven_ears
 		name = "Elven Ears"
 		icon_state = "elfs"
@@ -295,6 +289,12 @@
 		name = "Jagged Teeth"
 		icon_state = "jagged"
 		body_parts = list(BP_HEAD)
+
+/*Handlebars*/
+    handlebars
+        name = "Handlebars"
+        icon_state = "handlebars"
+        body_parts = list(BP_HEAD)
 
 /*FBP 'chasis' markings*/
 	athena_body
