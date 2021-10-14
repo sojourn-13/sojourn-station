@@ -433,25 +433,30 @@
 
 /obj/item/storage/belt/webbing
 	name = "web harness"
-	desc = "Everything you need at hand, at belt."
+	desc = "Everything you need at hand, at belt. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "webbing"
 	item_state = "webbing"
-	storage_slots = 9
+	storage_slots = 14
+	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
+	max_storage_space = DEFAULT_NORMAL_STORAGE
+	can_hold_extra = list (
+	/obj/item/clothing/head,
+	/obj/item/clothing/mask)
 
 /obj/item/storage/belt/webbing/green
 	name = "green web harness"
-	desc = "Everything you need at hand, at belt."
+	desc = "Everything you need at hand, at belt. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "webbing_green"
 	item_state = "webbing_green"
 
 /obj/item/storage/belt/webbing/black
 	name = "black web harness"
-	desc = "Everything you need at hand, at belt."
+	desc = "Everything you need at hand, at belt. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "webbing_black"
 	item_state = "webbing_black"
 
 /obj/item/storage/belt/webbing/ih
 	name = "security web harness"
-	desc = "Everything you need at hand, at belt."
+	desc = "Everything you need at hand, at belt. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "webbing_ih"
 	item_state = "webbing_ih"
