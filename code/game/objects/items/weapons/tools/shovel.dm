@@ -14,7 +14,7 @@
 	sharp = FALSE
 	edge = TRUE
 	max_health = 500
-	tool_qualities = list(QUALITY_SHOVELING = 35, QUALITY_DIGGING = 35, QUALITY_EXCAVATION = 10, QUALITY_HAMMERING = 15)
+	tool_qualities = list(QUALITY_SHOVELING = 35, QUALITY_DIGGING = 35, QUALITY_EXCAVATION = 10)
 	effective_faction = list("spider") // Spiders are weak to crushing.
 	damage_mult = 2
 	hitsound = 'sound/weapons/smash.ogg'
@@ -23,7 +23,7 @@
 	name = "junk shovel"
 	desc = "A large but fragile tool for moving dirt and rock, made by hand. Has more than enough space for tool mods to make it better."
 	icon_state = "impro_shovel"
-	tool_qualities = list(QUALITY_SHOVELING = 25, QUALITY_DIGGING = 25, QUALITY_EXCAVATION = 10, QUALITY_HAMMERING = 10)
+	tool_qualities = list(QUALITY_SHOVELING = 25, QUALITY_DIGGING = 25, QUALITY_EXCAVATION = 10)
 	degradation = 1.5
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
@@ -36,7 +36,7 @@
 	w_class = ITEM_SIZE_SMALL
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
-	tool_qualities = list(QUALITY_SHOVELING = 45, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_HAMMERING = 15, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
+	tool_qualities = list(QUALITY_SHOVELING = 45, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
 	workspeed = 1.2
 
 /obj/item/tool/shovel/onestar_shovel
@@ -60,7 +60,7 @@
 	throwforce = WEAPON_FORCE_HARMLESS
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
-	tool_qualities = list(QUALITY_SHOVELING = 20, QUALITY_DIGGING = 20, QUALITY_EXCAVATION = 10,QUALITY_HAMMERING = 10)
+	tool_qualities = list(QUALITY_SHOVELING = 20, QUALITY_DIGGING = 20, QUALITY_EXCAVATION = 10)
 	max_upgrades = 2
 
 /obj/item/tool/shovel/power
@@ -72,7 +72,7 @@
 	throwforce = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 6,  MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
-	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 45, QUALITY_EXCAVATION = 20, QUALITY_HAMMERING = 15)
+	tool_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 45, QUALITY_EXCAVATION = 20)
 	workspeed = 1.3
 	use_power_cost = 0.8
 	degradation = 0.7
