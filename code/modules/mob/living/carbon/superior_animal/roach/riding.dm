@@ -7,9 +7,9 @@
 		buckled_mob.pixel_x = pixel_x
 
 /mob/living/carbon/superior_animal/roach/proc/try_tame(var/mob/living/carbon/user, var/obj/item/reagent_containers/food/snacks/grown/thefood)
-	if(!istype(thefood) || thefood.plantname != "ambrosia")
+	if(!istype(thefood))
 		return FALSE
-	if(prob(min(40, 100 - user.stats.getStat(STAT_COG)*2)))
+	if(prob(40))
 		visible_message("[src] hesitates for a moment...and then charges at [user]!")
 		return TRUE //Setting this to true because the only current usage is attack, and it says it hesitates.
 	//fruits and veggies are not there own type, they are all the grown type and contain certain reagents. This is why it didnt work before
