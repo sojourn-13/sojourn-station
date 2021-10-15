@@ -10,4 +10,4 @@
 	price_tag = 2500 // Relatively cheap
 	infra_luminosity = 6
 	cargo_capacity = 3
-	max_equip = 2
+	max_equip = 3
