@@ -291,10 +291,10 @@
 		body_parts = list(BP_HEAD)
 
 /*Handlebars*/
-    handlebars
-        name = "Handlebars"
-        icon_state = "handlebars"
-        body_parts = list(BP_HEAD)
+	handlebars
+		name = "Handlebars"
+		icon_state = "handlebars"
+		body_parts = list(BP_HEAD)
 
 /*FBP 'chasis' markings*/
 	athena_body
