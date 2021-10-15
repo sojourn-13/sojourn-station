@@ -479,8 +479,7 @@
 		life_cycles_before_scan = initial(life_cycles_before_scan)/6 //So it doesn't fall asleep just to wake up the next tick
 		return TRUE
 	life_cycles_before_scan = initial(life_cycles_before_scan)
-	return FALSE
-
+	
 	//Speaking
 	if(speak_chance && prob(speak_chance))
 		visible_emote(emote_see)
@@ -490,3 +489,4 @@
 
 	if(!following && !(findTarget())) // Stop following
 		walk_to(src, 0)
+	return FALSE
