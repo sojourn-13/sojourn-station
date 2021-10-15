@@ -312,7 +312,7 @@
 		"wine","vodka","gin","rum","tequilla","vermouth",
 		"cognac","ale","mead", "fernet")
 
-	level1 = list("melonliquor", "bluecuracao")
+	level1 = list("melonliquor", "bluecuracao", "ethanol")
 	level2 = list("sake", "irishcream")
 	level3 = list("alliescocktail") //Commie stock part gives this
 	level4 = list("enzyme")
