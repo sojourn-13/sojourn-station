@@ -472,7 +472,6 @@
 	..()
 	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
-	STOP_PROCESSING(SSobj, src)
 	qdel(src)
 
 /obj/item/clothing/suit/space/occultist/equipped(var/mob/M)
@@ -516,7 +515,6 @@
 	..()
 	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
-	STOP_PROCESSING(SSobj, src)
 	qdel(src)
 
 /obj/item/clothing/head/space/occulthood/attack_self(mob/user) //Reflavoring because this is light from a place that does not know it.
@@ -574,7 +572,6 @@
 	..()
 	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
-	STOP_PROCESSING(SSobj, src)
 	qdel(src)
 
 /obj/item/clothing/gloves/occultgloves/equipped(var/mob/M)
@@ -615,7 +612,6 @@
 	..()
 	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
-	STOP_PROCESSING(SSobj, src)
 	qdel(src)
 
 /obj/item/clothing/shoes/occultgreaves/equipped(var/mob/M)
