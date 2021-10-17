@@ -159,6 +159,7 @@ Has ability of every roach.
 		friends += user
 		colony_friend = TRUE
 		friendly_to_colony = TRUE
+		buckle_movable = TRUE //THIS SHOW IS JUST STARTING KID
 		visible_message("[src] reluctantly stops thrashing around...")
 		return TRUE
 	visible_message("[src] snaps out of its trance and rushes at [user]!")
