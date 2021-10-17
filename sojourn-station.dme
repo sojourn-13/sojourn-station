@@ -2044,6 +2044,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\roach\roach.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\roach_armor.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\roach_spits.dm"
+#include "code\modules\mob\living\carbon\superior_animal\roach\roach_summon.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\bluespace.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\emp.dm"
 #include "code\modules\mob\living\carbon\superior_animal\roach\types\fuhrer.dm"
