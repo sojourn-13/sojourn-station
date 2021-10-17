@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		TECH_COMBAT = 500,
 		TECH_MAGNET = 350,
 		TECH_DATA = 450,
-		TECH_ILLEGAL = 2000,
+		TECH_ILLEGAL = 3500,
 	) //Ideally rnd DA should get you most things with right items well harder to get items like end nodes would require disks you buy/get or doing subdepartments
 
 	// So we don't give points for researching non-artifact item
