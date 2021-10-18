@@ -311,6 +311,12 @@ Circuit boards for different Genetics Machines.
 	build_path = /obj/machinery/computer/genetics/clone_console
 	origin_tech = list(TECH_DATA = 3, TECH_BIO = 5)
 
+/obj/item/circuitboard/genetics/pulper
+	build_name = "Genetic Extractor"
+	build_path = /obj/machinery/genetics/pulper
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
+
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit
 	disk_name = "Genetics Studio Design Kit"
 	icon_state = "moebius"
