@@ -43,11 +43,10 @@
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	head = /obj/item/clothing/head/helmet/visor/cyberpunkgoggle
 	r_ear  = /obj/item/reagent_containers/syringe/large
-	back = /obj/item/storage/backpack/duffelbag
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/handcuffs
-	backpack_contents = list(/obj/item/rig/trauma_suit/equipped = 1, /obj/item/handcuffs = 1, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/storage/firstaid/soteria/large = 1, /obj/item/gun/energy/sst/formatbound = 1, /obj/item/cell/large/moebius/high = 1, /obj/item/cell/medium/moebius/high = 1)
-	suit_store = /obj/item/gun/energy/sst/systemcost
+	backpack_contents = list(/obj/item/rig/trauma_suit/equipped = 1, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/storage/firstaid/soteria/large = 1, /obj/item/gun/energy/sst/formatbound = 1, /obj/item/cell/large/moebius/high = 2, /obj/item/ammo_magazine/smg_35/hv = 2)
+	suit_store = /obj/item/gun/projectile/automatic/c20r/sci
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
 	name = OUTFIT_JOB_NAME("Soteria - Psychiatrist")

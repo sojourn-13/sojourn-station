@@ -284,7 +284,7 @@
 	name = "spiderling remains"
 	desc = "Green squishy mess."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "greenshatter"
+	icon_state = "blueshatter"
 	anchored = TRUE
 
 /obj/effect/spider/cocoon

@@ -30,7 +30,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_BAYONET)
 
 	init_firemodes = list(
-		list(mode_name="semiauto", burst=1, fire_delay=8, move_delay=null, icon="semi")
+		list(mode_name="semiauto", mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=8, move_delay=null, icon="semi")
 		)
 
 /obj/item/gun/projectile/automatic/blackguard/update_icon()

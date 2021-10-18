@@ -140,7 +140,7 @@ Has ability of every roach.
 		visible_message("[src] hesitates for a moment... and then charges at [user]!")
 		return TRUE //Setting this to true because the only current usage is attack, and it says it hesitates.
 	//fruits and veggies are not there own type, they are all the grown type and contain certain reagents. This is why it didnt work before
-	if(isnull(thefood.seed.chems["singulo"]))
+	if(isnull(thefood.seed.chems["singulo"])) // You need something injected with the 'Singulo' drink to tame this.
 		return FALSE
 	visible_message("[src] scuttles towards [user], examining the [thefood] they have in their hand.")
 	can_buckle = TRUE

@@ -436,7 +436,9 @@
 	desc = "Everything you need at hand, at belt."
 	icon_state = "webbing"
 	item_state = "webbing"
-	storage_slots = 9
+	storage_slots = 14
+	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
+	max_storage_space = DEFAULT_NORMAL_STORAGE
 
 /obj/item/storage/belt/webbing/green
 	name = "green web harness"

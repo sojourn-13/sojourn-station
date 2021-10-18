@@ -12,8 +12,8 @@
 	projectile_type = /obj/item/arrow/cleansing
 
 	init_firemodes = list(
-		list(mode_name="small", projectile_type=/obj/item/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 0.5),
-		list(mode_name="large", projectile_type=/obj/item/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 1.5),
+		list(mode_name="small", mode_desc="Samll short lasting cleansing bolt that cleans a few tiles", projectile_type=/obj/item/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 0.5),
+		list(mode_name="large", mode_desc="Samll long lasting cleansing bolt that cleans a few tiles", projectile_type=/obj/item/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 1.5),
 	)
 
 /obj/item/arrow/cleansing
@@ -50,8 +50,8 @@
 	projectile_cost = 1
 
 	init_firemodes = list(
-		list(mode_name="small", projectile_type=/obj/item/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 1),
-		list(mode_name="large", projectile_type=/obj/item/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 3),
+		list(mode_name="small", mode_desc="Samll short lasting cleansing bolt that cleans a few tiles", projectile_type=/obj/item/arrow/cleansing, fire_sound='sound/weapons/Genhit.ogg', fire_delay=14, icon="toxin", projectile_cost = 1),
+		list(mode_name="large", mode_desc="Samll long lasting cleansing bolt that cleans a few tiles", projectile_type=/obj/item/arrow/cleansing/bigger, fire_sound='sound/weapons/Genhit.ogg', fire_delay=25, icon="toxin", projectile_cost = 3),
 	)
 
 /obj/item/arrow/cleansing/bigger

@@ -25,6 +25,7 @@
 	..()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
 
@@ -82,12 +83,14 @@
 	target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
 	..()
 	force = initial(force) // Reset the damage just in case
+	STOP_PROCESSING(SSobj, src)
 	qdel(src)
 
 /obj/item/tool/hammer/telekinetic_fist/Process()
 	..()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
 
@@ -135,6 +138,7 @@
 	..()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
 
@@ -165,9 +169,9 @@
 /obj/item/shield/riot/crusader/psionic/Process()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
-
 
 // Oddity to melee weapons
 /obj/item/tool/sword/cult
@@ -470,7 +474,6 @@
 	spawn(5)
 	qdel(src)
 
-
 /obj/item/clothing/suit/space/occultist/equipped(var/mob/M)
 	.=..()
 	occultist = M
@@ -513,7 +516,6 @@
 	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
 	qdel(src)
-
 
 /obj/item/clothing/head/space/occulthood/attack_self(mob/user) //Reflavoring because this is light from a place that does not know it.
 	if(brightness_on)

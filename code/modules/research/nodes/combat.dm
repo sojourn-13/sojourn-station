@@ -25,7 +25,7 @@
 
 	required_technologies = list(/datum/technology/basic_combat)
 	required_tech_levels = list()
-	cost = 500
+	cost = 250
 
 	unlocks_designs = list(/datum/design/research/item/flash)
 
@@ -42,7 +42,7 @@
 								/datum/technology/basic_combat
 								)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/recharger
@@ -60,7 +60,7 @@
 
 	required_technologies = list(/datum/technology/weapon_recharging)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/stunrevolver,
 							/datum/design/research/item/ammo/shotgun_stun
@@ -75,7 +75,7 @@
 	icon = "abnegate"
 	required_technologies = list(/datum/technology/advanced_nonlethal)
 	required_tech_levels = list(RESEARCH_GREYSON = 3) //Likely people will get parts/cog/bots for this
-	cost = 7500
+	cost = 3750
 	unlocks_designs = list(/datum/design/research/item/greyson/abnegate,
 						/datum/design/research/item/greyson/formatbound,
 						/datum/design/research/item/greyson/humility,
@@ -92,7 +92,7 @@
 
 	required_technologies = list(/datum/technology/advanced_nonlethal)
 	required_tech_levels = list()
-	cost = 4500
+	cost = 2250
 
 	unlocks_designs = list(	/datum/design/research/item/rig_grenade_launcher,
 							/datum/design/research/item/rig_flash,
@@ -125,7 +125,7 @@
 
 	required_technologies = list(/datum/technology/weapon_recharging)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1000
 
 	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
 							/datum/design/research/item/ammo/smg_mag,
@@ -146,7 +146,7 @@
 
 	required_technologies = list(/datum/technology/basic_lethal)
 	required_tech_levels = list()
-	cost = 3000
+	cost = 2500
 
 	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun,
 							/datum/design/research/item/weapon/slimegun,
@@ -165,7 +165,7 @@
 
 	required_technologies = list(/datum/technology/exotic_weaponry)
 	required_tech_levels = list()
-	cost = 5000
+	cost = 2500
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/decloner,
 							/datum/design/research/item/weapon/centurio,
@@ -184,7 +184,7 @@
 
 	required_technologies = list(/datum/technology/basic_lethal)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1000
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
@@ -211,7 +211,7 @@
 
 	required_technologies = list(/datum/technology/adv_lethal)
 	required_tech_levels = list()
-	cost = 4000
+	cost = 2000
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/weapon_upgrade/battery_shunt,
@@ -234,7 +234,7 @@
 
 	required_technologies = list(/datum/technology/adv_lethal, /datum/technology/adv_exotic_weaponry)
 	required_tech_levels = list()
-	cost = 5000
+	cost = 2500
 
 	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun,
 							/datum/design/research/item/weapon/lasercannon,
@@ -255,7 +255,7 @@
 
 	required_technologies = list(/datum/technology/laser_weaponry)
 	required_tech_levels = list()
-	cost = 7500
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/lasercannon, /datum/design/research/item/lasermount)
 
@@ -271,7 +271,7 @@
 
 	required_technologies = list()
 	required_tech_levels = list()
-	cost = 1000
+	cost = 500
 
 	unlocks_designs = list(/datum/design/research/item/clothing/soteriaarmorchest,
 							 /datum/design/research/item/clothing/soteriaarmorhead,
@@ -289,7 +289,7 @@
 
 	required_technologies = list(/datum/technology/basic_armor)
 	required_tech_levels = list()
-	cost = 5000
+	cost = 2500
 
 	unlocks_designs = list(/datum/design/research/item/clothing/medarmor,
 							/datum/design/research/item/clothing/armor_laserproof,
@@ -307,7 +307,7 @@
 	required_technologies = list(/datum/technology/advanced_armor,
 								 /datum/technology/laser_weaponry)
 	required_tech_levels = list(RESEARCH_POWERSTORAGE = 12, RESEARCH_ENGINEERING = 20)
-	cost = 7500 //You get back a lot
+	cost = 3750 //You get back a lot
 
 	unlocks_designs = list(/datum/design/research/item/weapon/hydrogen_rifle,
 							/datum/design/research/item/weapon/hydrogen_pistol,

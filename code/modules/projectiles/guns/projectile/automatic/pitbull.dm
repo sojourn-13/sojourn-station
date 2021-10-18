@@ -27,7 +27,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
-		list(mode_name="fire grenades",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
+		list(mode_name="fire grenades", mode_desc="Shoots the underbarrel grenade tube",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
 	var/obj/item/gun/projectile/underslung/launcher

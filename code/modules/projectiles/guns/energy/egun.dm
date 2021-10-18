@@ -17,8 +17,8 @@
 	item_modifystate = "stun"
 
 	init_firemodes = list(
-		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="energystun", item_modifystate="stun", fire_sound='sound/weapons/Taser.ogg', icon="stun"),
-		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="energykill", item_modifystate="kill", fire_sound='sound/weapons/Laser.ogg', icon="kill"),
+		STUNBOLT,
+		LETHAL,
 		WEAPON_CHARGE,
 		)
 
@@ -74,7 +74,7 @@
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_WOOD = 4, MATERIAL_SILVER = 2)
 	price_tag = 150
 	init_firemodes = list(
-		WEAPON_NORMAL,
+		LETHAL,
  		WEAPON_CHARGE
 	)
 	twohanded = FALSE

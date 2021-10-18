@@ -24,8 +24,8 @@
 	var/bolt_open = 0
 	burst_delay = 0
 	init_firemodes = list(
-		list(mode_name="fire one barrel at a time", burst=1, icon="semi"),
-		list(mode_name="fire both barrels at once", burst=2, icon="burst"),
+		list(mode_name="Single barrel", mode_desc="Shoots one barrel", burst=1, icon="semi"),
+		list(mode_name="Double barrel", mode_desc="Shoots both barrels at once", burst=2, icon="burst"),
 		)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/doublebarrel/sawn

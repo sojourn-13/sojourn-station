@@ -21,8 +21,8 @@
 	twohanded = TRUE
 	damage_multiplier = 0.9
 	init_firemodes = list(
-		list(mode_name="destroy", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
-		list(mode_name="impact", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay=25, icon="kill", projectile_color = "#FF0000"),
+		list(mode_name="destroy", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
+		list(mode_name="impact", mode_desc="A relatively light plasma round that knocks people back", projectile_type=/obj/item/projectile/plasma/impact, fire_sound='sound/effects/supermatter.ogg', fire_delay=25, icon="kill", projectile_color = "#FF0000"),
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 
@@ -54,8 +54,8 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_PLASMA = 3)
 	damage_multiplier = 1
 	init_firemodes = list(
-		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=15, icon="kill", projectile_color = "#FFFF00"),
-		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="destroy", projectile_color = "#FF0000", recoil_buildup=3),
+		list(mode_name="armor penetrating", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=15, icon="kill", projectile_color = "#FFFF00"),
+		list(mode_name="rapid fire", mode_desc="Quick firing normal plasma bolts", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="destroy", projectile_color = "#FF0000", recoil_buildup=3),
 	)
 
 /obj/item/gun/energy/plasma/martyr // or should it be  Zealot
@@ -83,8 +83,8 @@
 	gun_tags = list(GUN_ENERGY)
 
 	init_firemodes = list(
-		list(mode_name="Stun", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/Taser.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
-		list(mode_name="Melt", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
+		list(mode_name="Stun", mode_desc="A weakening bolt of plasma that disables people", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/Taser.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
+		list(mode_name="Melt", mode_desc="A heavyer plasma bolt designed to melt through armor and flesh alike", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 	)
 
 /obj/item/gun/energy/plasma/super_heavy
@@ -113,8 +113,7 @@
 	var/explosion_f_size = 5
 
 	init_firemodes = list(
-		list(mode_name="Super-heavy Plasma", projectile_type=/obj/item/projectile/plasma/heavy/super_heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="kill", projectile_color = "#FFFF00"),
-		list(mode_name="Super-heavy Plasma", projectile_type=/obj/item/projectile/plasma/heavy/super_heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="kill", projectile_color = "#FFFF00")
+		list(mode_name="Super-heavy Plasma", mode_desc="A massive plasma bolt to melt even plasteel", projectile_type=/obj/item/projectile/plasma/heavy/super_heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=5, icon="kill", projectile_color = "#FFFF00"),
 	)
 
 /obj/item/gun/energy/plasma/super_heavy/examine(mob/user)

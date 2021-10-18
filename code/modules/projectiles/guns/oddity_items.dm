@@ -195,8 +195,8 @@
 	one_hand_penalty = 2
 
 	init_firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND,
 		)
 
 /obj/item/gun/projectile/that_gun/update_icon()

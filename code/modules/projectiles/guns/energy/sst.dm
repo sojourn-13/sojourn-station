@@ -34,7 +34,7 @@
 	icon_state = "format_bound"
 	item_state = "format_bound"
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	charge_cost = 150
+	charge_cost = 100
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	suitable_cell = /obj/item/cell/medium
 	fire_delay = 12
@@ -54,7 +54,7 @@
 	wielded_item_state = "_doble"
 	icon_state = "humility"
 	item_state = "humility"
-	charge_cost = 800
+	charge_cost = 500
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	w_class = ITEM_SIZE_HUGE
@@ -96,7 +96,7 @@
 	price_tag = 3200
 	charge_meter = FALSE
 	slot_flags = SLOT_BACK
-	charge_cost = 450
+	charge_cost = 300
 	suitable_cell = /obj/item/cell/large
 	recoil_buildup = 2
 	can_dual = FALSE

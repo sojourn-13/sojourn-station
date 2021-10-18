@@ -36,7 +36,7 @@
 
 	init_firemodes = list(
 		FULL_AUTO_400,
-		list(mode_name="hyper-burst", burst=3,    burst_delay=0.5, move_delay=2,  icon="burst"),
+		list(mode_name="hyper-burst", mode_desc = "Short, rapid shot 3 round burst to stop any unarmed target", burst=3,    burst_delay=0.5, move_delay=2,  icon="burst"),
 		)
 
 	var/cover_open = 0

@@ -149,21 +149,25 @@
 		update_icon()
 	add_avail(effective_gen)
 
-/obj/machinery/power/generator/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/tool/wrench))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-		anchored = !anchored
-		user.visible_message("[user.name] [anchored ? "secures" : "unsecures"] the bolts holding [src.name] to the floor.", \
-					"You [anchored ? "secure" : "unsecure"] the bolts holding [src] to the floor.", \
-					"You hear a ratchet")
-		use_power = anchored
-		if(anchored) // Powernet connection stuff.
-			connect_to_network()
-		else
-			disconnect_from_network()
-		reconnect()
-	else
-		..()
+/obj/machinery/power/generator/attackby(obj/item/I as obj, mob/user as mob)
+	var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	switch(tool_type)
+		if(QUALITY_BOLT_TURNING)
+			if(istype(get_turf(src), /turf/space) && !anchored)
+				user << SPAN_NOTICE("You can't anchor something to empty space. Idiot.")
+				return
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				user << SPAN_NOTICE("You [anchored ? "un" : ""]anchor the brace with [I].")
+				anchored = !anchored
+				if(anchored)
+					connect_to_network()
+				else
+					disconnect_from_network()
+			reconnect()
+		if(ABORT_CHECK)
+			return
+	..()
 
 /obj/machinery/power/generator/attack_hand(mob/user)
 	add_fingerprint(user)
