@@ -33,7 +33,7 @@
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
 	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
 	var/pierce_multiplier = 0 //ADDITIVE wall penetration to projectiles fired from this gun
-	var/extra_damage_mult_scoped = 0.2
+	var/extra_damage_mult_scoped = 0 //Adds even more damage mulitplier, when scopped so snipers can sniper
 	var/proj_agony_multiplier = 1
 	var/burst = 1
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again

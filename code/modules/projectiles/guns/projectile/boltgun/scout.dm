@@ -7,6 +7,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	damage_multiplier = 1.5
 	penetration_multiplier  = 1.5
+	extra_damage_mult_scoped = 0.2
 	recoil_buildup = 30
 	max_shells = 5
 	zoom_factor = 2.0

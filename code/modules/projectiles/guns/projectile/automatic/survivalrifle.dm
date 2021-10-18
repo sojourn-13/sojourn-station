@@ -16,6 +16,7 @@
 	caliber = "10x24"
 	penetration_multiplier = 1.3
 	damage_multiplier = 1.1
+	extra_damage_mult_scoped = 0.5
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/m41_reload.ogg'
