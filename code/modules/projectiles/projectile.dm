@@ -658,7 +658,7 @@
 	bumped = TRUE
 	if(ismob(A))
 		var/mob/M = A
-		if(isliving(A) && A.stat == DEAD) //Dead people are limp and unable to be moved to block bullets to stop endless monkey laser proof shields
+		if(isliving(A) && !A.stat == DEAD) //Dead people are limp and unable to be moved to block bullets to stop endless monkey laser proof shields
 			//if they have a neck grab on someone, that person gets hit instead
 			var/obj/item/grab/G = locate() in M
 			if(G && G.state >= GRAB_NECK)
