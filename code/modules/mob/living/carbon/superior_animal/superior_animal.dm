@@ -460,11 +460,24 @@
 		updateicon()
 		ticks_processed = 0
 
+	
+	
+
 	if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.
 		return PROCESS_KILL
 
 	if(!AI_inactive)
 		handle_ai()
+		//Speaking
+		if(speak_chance && prob(speak_chance))
+			visible_emote(emote_see)
+
+		if((following) && !(findTarget())) // Are we following someone and not attacking something?
+			walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+
+		if(!following && !(findTarget())) // Stop following
+			walk_to(src, 0)
+
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
 		return TRUE
@@ -480,13 +493,3 @@
 		return TRUE
 	life_cycles_before_scan = initial(life_cycles_before_scan)
 	return FALSE
-
-	//Speaking
-	if(speak_chance && prob(speak_chance))
-		visible_emote(emote_see)
-
-	if((following) && !(findTarget())) // Are we following someone and not attacking something?
-		walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
-
-	if(!following && !(findTarget())) // Stop following
-		walk_to(src, 0)

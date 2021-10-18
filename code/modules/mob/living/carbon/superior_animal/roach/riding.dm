@@ -37,11 +37,11 @@
 				can_buckle = FALSE
 				return FALSE
 		else if(prob(40)) // We are not roach fren, it is harder to tame
-					visible_message("[src] thrashes around, and throws [user] clean off!")
-					user.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
-					unbuckle_mob()
-					can_buckle = FALSE
-					return FALSE
+			visible_message("[src] thrashes around, and throws [user] clean off!")
+			user.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
+			unbuckle_mob()
+			can_buckle = FALSE
+			return FALSE
 
 		friends += user
 		colony_friend = TRUE
