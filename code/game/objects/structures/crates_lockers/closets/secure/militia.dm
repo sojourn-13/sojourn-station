@@ -39,6 +39,7 @@
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/commanderuniform(src)
+	new /obj/item/roach_summon/panzer(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 
