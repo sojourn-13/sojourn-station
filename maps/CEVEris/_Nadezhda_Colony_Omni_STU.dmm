@@ -99048,7 +99048,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)r
+/area/turret_protected/ai)
 "wSO" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
