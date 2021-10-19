@@ -10537,9 +10537,9 @@
 /area/nadezhda/rnd/lab)
 "cBy" = (
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
@@ -39174,6 +39174,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
+"jnL" = (
+/obj/machinery/light/small,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "jnM" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -175688,8 +175697,8 @@ jgX
 xvt
 aDB
 aDB
-pTJ
-oCx
+cBy
+jnL
 aDB
 kDZ
 aDB
