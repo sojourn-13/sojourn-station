@@ -3401,17 +3401,6 @@
 /area/nadezhda/security/prisoncells{
 	name = "Interrogation"
 	})
-"aPP" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "aPY" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/small/busha3,
@@ -9955,20 +9944,6 @@
 	},
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
-"cvi" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
-	},
-/obj/machinery/door/airlock/vault{
-	req_access = list(16)
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "cvj" = (
 /obj/random/cluster/spiders,
 /obj/effect/decal/cleanable/dirt,
@@ -10560,6 +10535,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
+"cBy" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "cBJ" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
@@ -16476,10 +16459,6 @@
 /area/nadezhda/crew_quarters/dorm3{
 	name = "Dormitory 3"
 	})
-"dXP" = (
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "dXR" = (
 /obj/structure/barricade,
 /turf/simulated/floor/rock,
@@ -23033,6 +23012,20 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/hallway/surface/section1)
+"fCa" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
+	},
+/obj/machinery/door/airlock/vault{
+	req_access = list(16)
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "fCe" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/floor_decal/industrial/stand_clear/white{
@@ -41349,6 +41342,14 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/surface/section1)
+"jMt" = (
+/obj/machinery/flasher{
+	id = "AI";
+	pixel_x = -24;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "jMw" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -42593,12 +42594,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"kbs" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "kbv" = (
 /obj/structure/catwalk,
 /obj/structure/invislight,
@@ -44978,6 +44973,17 @@
 /obj/machinery/camera/network/cev_eris,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
+"kDZ" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "kEe" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
@@ -53461,14 +53467,6 @@
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
 	})
-"mxA" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "mxB" = (
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -62538,8 +62536,8 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/clownoffice)
 "oCx" = (
-/obj/structure/table/bench/wooden,
-/turf/simulated/floor/tiled/steel/bar_flat,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "oCL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -100846,6 +100844,12 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/prime)
+"xna" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "xnn" = (
 /obj/machinery/light{
 	dir = 8;
@@ -101174,14 +101178,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
-"xqv" = (
-/obj/machinery/flasher{
-	id = "AI";
-	pixel_x = -24;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "xqx" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/rock5,
@@ -172430,7 +172426,7 @@ xGi
 xGi
 sFI
 sFI
-hSx
+sFI
 sFI
 sFI
 sFI
@@ -173877,7 +173873,7 @@ aDB
 xvt
 aRF
 wdE
-xqv
+jMt
 aDB
 hSx
 sFI
@@ -174077,9 +174073,9 @@ xvt
 aDB
 aDB
 aRF
-dXP
+oCx
 aDB
-kbs
+xna
 aDB
 hSx
 hSx
@@ -174279,7 +174275,7 @@ aDB
 aDB
 aDB
 aRF
-oCx
+aDB
 aDB
 wdE
 aDB
@@ -174481,7 +174477,7 @@ jsz
 aDB
 aDB
 aRF
-oCx
+aDB
 aDB
 wPV
 wPV
@@ -175289,7 +175285,7 @@ jsz
 aDB
 aDB
 pTJ
-oCx
+aDB
 aDB
 sBt
 aRL
@@ -175491,9 +175487,9 @@ aDB
 aDB
 aDB
 pTJ
-oCx
 aDB
-cvi
+aDB
+fCa
 aDB
 aDB
 aDB
@@ -175693,9 +175689,9 @@ xvt
 aDB
 aDB
 pTJ
-dXP
+oCx
 aDB
-aPP
+kDZ
 aDB
 hSx
 hSx
@@ -175895,7 +175891,7 @@ aDB
 aDB
 aDB
 cwm
-mxA
+cBy
 ueK
 pNS
 aDB
