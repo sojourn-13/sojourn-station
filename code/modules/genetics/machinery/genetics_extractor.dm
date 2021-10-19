@@ -5,7 +5,7 @@
 	It also talks in a really peppy voice, even while grinding creatures into a fine paste.
 */
 /obj/machinery/genetics/pulper
-	name = "Blue-Ink Xenofauna Genetics Pulper"
+	name = "Xenofauna Genetics Pulper"
 	desc = "A worryingly hungry device that takes raw meat (or whole bodies), extracts its DNA on a cellular level, and dispenses as much of that DNA as it can into sample plates."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "processor"
@@ -119,7 +119,7 @@
 			//big-range splatter
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
 			var/obj/effect/decal/cleanable/blood/splatter/animated/B = new(src.loc)
-			B.target_turf = pick(range(4, src))
+			B.target_turf = pick(range(3, src))
 
 			var/datum/genetics/genetics_holder/mob_genes = new /datum/genetics/genetics_holder()
 			mob_genes.initializeFromMob(occupant)
@@ -149,10 +149,12 @@
 			B.target_turf = pick(range(2, src))
 			
 			for(var/obj/item/reagent_containers/food/snacks/meat/meat_target in meat)
-				var/datum/genetics/genetics_holder/meat_genes =  new /datum/genetics/genetics_holder()
-				meat_genes.initializeFromMeat(meat_target)
-				var/obj/item/genetics/sample/new_sample = new /obj/item/genetics/sample(meat_genes)
-				new_sample.forceMove(loc)
+				//Ensures we only do this if the meat has genetics holders
+				if(meat_target.source_name)
+					var/datum/genetics/genetics_holder/meat_genes =  new /datum/genetics/genetics_holder()
+					meat_genes.initializeFromMeat(meat_target)
+					var/obj/item/genetics/sample/new_sample = new /obj/item/genetics/sample(meat_genes)
+					new_sample.forceMove(loc)
 
 			meat = list()
 

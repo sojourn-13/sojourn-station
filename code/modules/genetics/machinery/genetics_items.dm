@@ -312,7 +312,7 @@ Circuit boards for different Genetics Machines.
 	origin_tech = list(TECH_DATA = 3, TECH_BIO = 5)
 
 /obj/item/circuitboard/genetics/pulper
-	build_name = "Genetic Extractor"
+	build_name = "Xenofauna Genetics Pulper"
 	build_path = /obj/machinery/genetics/pulper
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
@@ -322,6 +322,7 @@ Circuit boards for different Genetics Machines.
 	icon_state = "moebius"
 	license = 1
 	designs = list(
+		/datum/design/autolathe/genetics/pulper = 0,
 		/datum/design/autolathe/genetics/cloner = 0,
 		/datum/design/autolathe/genetics/clone_console = 0,
 		/datum/design/autolathe/genetics/purger = 0
