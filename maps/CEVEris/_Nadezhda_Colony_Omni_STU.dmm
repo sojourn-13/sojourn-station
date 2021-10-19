@@ -3500,11 +3500,21 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/workshop)
 "aRF" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/binary/circulator,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/engineering/atmos)
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/window{
+	name = "AI Core Door";
+	req_access = list(16);
+	dir = 8
+	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
+	},
+/turf/simulated/floor/bluegrid,
+/area/turret_protected/ai)
 "aRL" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -31959,6 +31969,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "hCr" = (
@@ -33191,6 +33204,9 @@
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
+	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -61275,6 +61291,9 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "opl" = (
@@ -86221,6 +86240,9 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "ueW" = (
@@ -95506,6 +95528,9 @@
 /obj/machinery/door/window{
 	name = "AI Core Door";
 	req_access = list(16)
+	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -174839,7 +174864,7 @@ cSb
 cSb
 cSb
 wPV
-qYC
+ubd
 swt
 yfu
 hSL
@@ -175453,7 +175478,7 @@ aDB
 pTJ
 oCx
 aDB
-wSJ
+aRF
 aDB
 aDB
 aDB
