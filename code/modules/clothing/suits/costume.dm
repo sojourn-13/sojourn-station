@@ -160,6 +160,14 @@ obj/item/clothing/suit/costume/halloween/web_bindings
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	siemens_coefficient = 2.0
 
+/obj/item/clothing/suit/costume/halloween/scream
+	name = "Ghastly robes"
+	desc = "A set of loose fitting black robes, something about them inspires unease "
+	icon_state = "ghostrobes"
+	item_state = "ghostrobes"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	flags_inv = HIDEJUMPSUIT
+
 /*Kinky*/
 
 /obj/item/clothing/suit/costume/kinky/sexy_miner

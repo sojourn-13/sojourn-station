@@ -20,6 +20,7 @@
 	price_tag = 1200 //gives tactical advantage with beanbags, but consumes more ammo and hits less harder with lethal ammo, so Gladstone or Regulator would be better for lethal takedowns in general
 	damage_multiplier = 0.75
 	penetration_multiplier = 0.75
+	recoil_buildup = 18 //it's a snub nose shotgun with no barrel, cmon now. seemed bugged previously to have a recoil buildup of one?
 	one_hand_penalty = 10 //compact shotgun level
 	burst_delay = null
 	fire_delay = null

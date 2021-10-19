@@ -185,6 +185,13 @@
 	siemens_coefficient = 2.0
 	body_parts_covered = HEAD|FACE|EYES
 
+/obj/item/clothing/head/costume/halloween/scream
+	name = "Ghastly hood"
+	desc = "A sleek, black hood - all the better to hide your identity when stalking through the night"
+	icon_state = "ghosthood"
+	flags_inv = BLOCKHAIR
+	body_parts_covered = HEAD
+
 /*History*/
 
 /obj/item/clothing/head/costume/history/anarchist_cap
