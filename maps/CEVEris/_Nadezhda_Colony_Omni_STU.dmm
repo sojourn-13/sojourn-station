@@ -3401,6 +3401,17 @@
 /area/nadezhda/security/prisoncells{
 	name = "Interrogation"
 	})
+"aPP" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "aPY" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/small/busha3,
@@ -3500,20 +3511,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/workshop)
 "aRF" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/window{
-	name = "AI Core Door";
-	req_access = list(16);
-	dir = 8
-	},
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "aRL" = (
 /obj/structure/cable/cyan{
@@ -5871,7 +5869,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "bwW" = (
 /obj/effect/floor_decal/industrial/road/warning1,
@@ -9957,6 +9955,20 @@
 	},
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
+"cvi" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
+	},
+/obj/machinery/door/airlock/vault{
+	req_access = list(16)
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "cvj" = (
 /obj/random/cluster/spiders,
 /obj/effect/decal/cleanable/dirt,
@@ -16464,6 +16476,10 @@
 /area/nadezhda/crew_quarters/dorm3{
 	name = "Dormitory 3"
 	})
+"dXP" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "dXR" = (
 /obj/structure/barricade,
 /turf/simulated/floor/rock,
@@ -17931,7 +17947,6 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "erS" = (
-/obj/structure/catwalk,
 /obj/structure/lattice,
 /obj/machinery/light,
 /turf/simulated/floor/plating/under,
@@ -31972,7 +31987,7 @@
 /obj/machinery/ai_slipper{
 	icon_state = "motion0"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "hCr" = (
 /obj/structure/closet/l3closet/security,
@@ -33208,7 +33223,7 @@
 /obj/machinery/ai_slipper{
 	icon_state = "motion0"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_light,
 /area/turret_protected/ai)
 "hSN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -36892,7 +36907,6 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "iMX" = (
-/obj/structure/catwalk,
 /obj/structure/lattice,
 /obj/machinery/flasher{
 	id = "AI";
@@ -42579,6 +42593,12 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"kbs" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "kbv" = (
 /obj/structure/catwalk,
 /obj/structure/invislight,
@@ -49703,7 +49723,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "lFw" = (
 /obj/effect/floor_decal/industrial/warningred{
@@ -53441,6 +53461,14 @@
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
 	})
+"mxA" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "mxB" = (
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -54273,7 +54301,6 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/barracks)
 "mFO" = (
-/obj/structure/catwalk,
 /obj/structure/lattice,
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -61281,21 +61308,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"opk" = (
-/obj/machinery/door/window{
-	dir = 2;
-	name = "AI Core Door";
-	req_access = list(16)
-	},
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
 "opl" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
@@ -62527,7 +62539,7 @@
 /area/nadezhda/crew_quarters/clownoffice)
 "oCx" = (
 /obj/structure/table/bench/wooden,
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_flat,
 /area/turret_protected/ai)
 "oCL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -64289,12 +64301,14 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "paO" = (
-/obj/structure/catwalk,
 /obj/structure/lattice,
 /obj/machinery/newscaster{
 	pixel_y = 34
 	},
 /obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/porta_turret{
 	dir = 1
 	},
 /turf/simulated/floor/plating/under,
@@ -67433,7 +67447,7 @@
 	id = "AI";
 	pixel_x = 24
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "pNT" = (
 /obj/structure/flora/small/rock3,
@@ -68061,7 +68075,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "pTS" = (
 /obj/random/closet_maintloot/low_chance,
@@ -76237,7 +76251,7 @@
 	name = "AI Core Door";
 	req_access = list(16)
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_light,
 /area/turret_protected/ai)
 "rKf" = (
 /obj/machinery/portable_atmospherics/canister/plasma,
@@ -86231,19 +86245,13 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/window{
-	dir = 2;
-	name = "AI Core Door";
-	req_access = list(16)
-	},
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
 /obj/machinery/ai_slipper{
 	icon_state = "motion0"
 	},
-/turf/simulated/floor/bluegrid,
+/obj/machinery/door/airlock/vault{
+	req_access = list(16)
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "ueW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -95525,14 +95533,13 @@
 /turf/simulated/floor/plating,
 /area/colony)
 "wdE" = (
-/obj/machinery/door/window{
-	name = "AI Core Door";
-	req_access = list(16)
-	},
 /obj/machinery/ai_slipper{
 	icon_state = "motion0"
 	},
-/turf/simulated/floor/bluegrid,
+/obj/machinery/door/airlock/vault{
+	req_access = list(16)
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "wdH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -101167,6 +101174,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
+"xqv" = (
+/obj/machinery/flasher{
+	id = "AI";
+	pixel_x = -24;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/turret_protected/ai)
 "xqx" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/rock5,
@@ -104733,7 +104748,7 @@
 	name = "AI Core Door";
 	req_access = list(16)
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/steel/bar_light,
 /area/turret_protected/ai)
 "yfw" = (
 /obj/structure/cable/cyan{
@@ -173860,9 +173875,9 @@ aDB
 aDB
 aDB
 xvt
-qYC
-opk
-hUn
+aRF
+wdE
+xqv
 aDB
 hSx
 sFI
@@ -174061,10 +174076,10 @@ qYC
 xvt
 aDB
 aDB
-qYC
-qYC
+aRF
+dXP
 aDB
-qYC
+kbs
 aDB
 hSx
 hSx
@@ -174263,7 +174278,7 @@ crm
 aDB
 aDB
 aDB
-qYC
+aRF
 oCx
 aDB
 wdE
@@ -174465,7 +174480,7 @@ kWk
 jsz
 aDB
 aDB
-qYC
+aRF
 oCx
 aDB
 wPV
@@ -174473,7 +174488,7 @@ wPV
 iMX
 rUm
 wPV
-wPV
+xvt
 aDB
 hSx
 sFI
@@ -175281,7 +175296,7 @@ aRL
 mFO
 drK
 wPV
-wPV
+xvt
 aDB
 hSx
 sFI
@@ -175478,7 +175493,7 @@ aDB
 pTJ
 oCx
 aDB
-aRF
+cvi
 aDB
 aDB
 aDB
@@ -175678,9 +175693,9 @@ xvt
 aDB
 aDB
 pTJ
-qYC
+dXP
 aDB
-pTJ
+aPP
 aDB
 hSx
 hSx
@@ -175880,7 +175895,7 @@ aDB
 aDB
 aDB
 cwm
-egT
+mxA
 ueK
 pNS
 aDB
