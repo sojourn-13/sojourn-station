@@ -1767,7 +1767,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "awR" = (
 /obj/structure/table/steel,
@@ -16821,7 +16821,7 @@
 /area/nadezhda/hallway/surface/section1)
 "edj" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "edv" = (
 /turf/simulated/mineral,
@@ -38127,7 +38127,7 @@
 /obj/random/structures/low_chance,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "jaW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -42564,7 +42564,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "kaz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -54040,7 +54040,7 @@
 /obj/random/lowkeyrandom/low_chance,
 /obj/random/lowkeyrandom/low_chance,
 /obj/random/lowkeyrandom/low_chance,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mDk" = (
 /obj/effect/spider/stickyweb,
@@ -57733,7 +57733,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "nwq" = (
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "nws" = (
 /obj/machinery/camera/network/security{
@@ -63369,7 +63369,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/science/low_chance,
 /obj/random/science/low_chance,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "oLz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -65640,7 +65640,7 @@
 "pqJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "pqY" = (
 /obj/structure/railing,
@@ -70489,7 +70489,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/scrap_cube,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "qww" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -79832,7 +79832,7 @@
 /obj/random/structures,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "sBX" = (
 /obj/structure/flora/small/grassa3,
@@ -91130,7 +91130,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vgm" = (
 /obj/structure/ore_box,
@@ -91953,7 +91953,7 @@
 "vpo" = (
 /obj/random/structures/low_chance,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vpt" = (
 /obj/structure/table/reinforced,
