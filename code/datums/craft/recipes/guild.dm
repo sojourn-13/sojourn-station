@@ -4,6 +4,19 @@
 	related_stats = list(STAT_COG)
 	avaliableToEveryone = FALSE
 
+//Materal Craft ------------------
+
+/datum/craft_recipe/guild/plasma_glass
+	name = "borosilicate glass"
+	result = /obj/item/stack/material/glass/plasmaglass
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 1),
+		list(QUALITY_WELDING, 40, "time" = 5), //Insainly quick do tobeing 1 sheet a time
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMA, "time" = 1),
+		list(QUALITY_WELDING, 40, "time" = 5),
+		list(QUALITY_SAWING, 30, "time" = 5)
+	)
 
 //Armor mods ----------------------
 /datum/craft_recipe/guild/melee
@@ -186,6 +199,23 @@
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
 		list(QUALITY_WIRE_CUTTING, 40, 30),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
+	)
+
+/datum/craft_recipe/guild/guild_bull
+	name = "Reforge Bull shotgun"
+	result = /obj/item/gun/projectile/shotgun/bull/bison
+	steps = list(
+		list(/obj/item/gun/projectile/shotgun/bull, 1, "time" = 80),
+		list(/obj/item/gun_upgrade/barrel/bore, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_DRILLING, 60, "time" = 90),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(QUALITY_SAWING, 50, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 60),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 40),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
@@ -533,30 +563,13 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER)
 	)
 
-/datum/craft_recipe/guild/guild_bull
-	name = "Reforge Bull shotgun"
-	result = /obj/item/gun/projectile/shotgun/bull/bison
-	steps = list(
-		list(/obj/item/gun/projectile/shotgun/bull, 1, "time" = 80),
-		list(/obj/item/gun_upgrade/barrel/bore, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 60),
-		list(QUALITY_DRILLING, 60, "time" = 90),
-		list(QUALITY_WELDING, 40, "time" = 60),
-		list(QUALITY_HAMMERING, 45, "time" = 40),
-		list(QUALITY_SAWING, 50, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 60),
-		list(QUALITY_CUTTING, 30, "time" = 40),
-		list(QUALITY_SCREW_DRIVING, 40, "time" = 40),
-		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
-	)
-
 /datum/craft_recipe/guild/guild_bin
 	name = "Cast Matter Bin"
 	result = /obj/item/stock_parts/matter_bin/guild
 	steps = list(
-		list(/obj/item/stock_parts/matter_bin/super, 2),
+		list(/obj/item/stock_parts/matter_bin/super, 1),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL), //Quick useless in most cases so were cheaper
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
@@ -568,10 +581,10 @@
 	name = "Forged Manipulator"
 	result = /obj/item/stock_parts/manipulator/guild
 	steps = list(
-		list(/obj/item/stock_parts/manipulator/pico, 2),
+		list(/obj/item/stock_parts/manipulator/pico, 1),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL), //Are main thing were exspensive do to being the main crafted item
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(/obj/item/stack/cable_coil, 10),
@@ -583,9 +596,10 @@
 	name = "Perfected Micro-Laser"
 	result = /obj/item/stock_parts/micro_laser/guild
 	steps = list(
-		list(/obj/item/stock_parts/micro_laser/ultra, 2),
+		list(/obj/item/stock_parts/micro_laser/ultra, 1),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
+		list(/obj/item/stock_parts/subspace/crystal, 1),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_SAWING, 60)
@@ -595,7 +609,75 @@
 	name = "Perfected Scanning Module"
 	result = /obj/item/stock_parts/scanning_module/guild
 	steps = list(
-		list(/obj/item/stock_parts/scanning_module/phasic, 2),
+		list(/obj/item/stock_parts/scanning_module/phasic, 1),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER),
+		list(QUALITY_SAWING, 60)
+	)
+
+/datum/craft_recipe/guild/guild_capacitor
+	name = "Crafted Ultra Capacitor"
+	result = /obj/item/stock_parts/capacitor/guild
+	steps = list(
+		list(/obj/item/stock_parts/capacitor/super, 1),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER),
+		list(QUALITY_SAWING, 60)
+	)
+
+/datum/craft_recipe/guild/guild_bin_alt
+	name = "Cast Matter Bin Alt"
+	result = /obj/item/stock_parts/matter_bin/guild
+	steps = list(
+		list(/obj/item/stock_parts/matter_bin/adv, 2),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(QUALITY_HAMMERING, 40),
+		list(QUALITY_SAWING, 60)
+	)
+
+/datum/craft_recipe/guild/guild_manip_alt
+	name = "Forged Manipulator Alt"
+	result = /obj/item/stock_parts/manipulator/guild
+	steps = list(
+		list(/obj/item/stock_parts/manipulator/nano, 2),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(/obj/item/stack/cable_coil, 10),
+		list(QUALITY_HAMMERING, 40),
+		list(QUALITY_SAWING, 60)
+	)
+
+/datum/craft_recipe/guild/guild_laser_alt
+	name = "Perfected Micro-Laser Alt"
+	result = /obj/item/stock_parts/micro_laser/guild
+	steps = list(
+		list(/obj/item/stock_parts/micro_laser/high, 2),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
+		list(/obj/item/stock_parts/subspace/crystal, 1),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(QUALITY_SAWING, 60)
+	)
+
+/datum/craft_recipe/guild/guild_scanner_alt
+	name = "Perfected Scanning Module Alt"
+	result = /obj/item/stock_parts/scanning_module/guild
+	steps = list(
+		list(/obj/item/stock_parts/scanning_module/adv, 2),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
@@ -604,9 +686,9 @@
 		list(QUALITY_SAWING, 60)
 	)
 
-/datum/craft_recipe/guild/guild_capacitor
-	name = "Crafted Ultra Capacitor"
-	result = /obj/item/stock_parts/capacitor/guild
+/datum/craft_recipe/guild/guild_capacitor_alt
+	name = "Crafted Ultra Capacitor Alt"
+	result = /obj/item/stock_parts/capacitor/adv
 	steps = list(
 		list(/obj/item/stock_parts/capacitor/super, 2),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
@@ -617,15 +699,14 @@
 		list(QUALITY_SAWING, 60)
 	)
 
-// Boxes for max crafting, should always cost x6 materials.
- // saves on needing 4 extra parts tho
+// Boxes for max crafting, should always cost around x5 materials or more.
 /datum/craft_recipe/guild/guild_bin_box
 	name = "Box of Cast Matter Bins"
 	result = /obj/item/storage/box/guild_bin
 	steps = list(
 		list(/obj/item/stock_parts/matter_bin/super, 4),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(CRAFT_MATERIAL, 13, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 9, MATERIAL_PLASTEEL),
 		list(CRAFT_MATERIAL, 5, MATERIAL_PLASMAGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
@@ -656,7 +737,8 @@
 	steps = list(
 		list(/obj/item/stock_parts/micro_laser/ultra, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 4, MATERIAL_DIAMOND),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS),
+		list(/obj/item/stock_parts/subspace/crystal, 4),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_SAWING, 60),
@@ -669,10 +751,10 @@
 	steps = list(
 		list(/obj/item/stock_parts/scanning_module/phasic, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 9, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 6, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(CRAFT_MATERIAL, 9, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 6, MATERIAL_SILVER),
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
@@ -683,10 +765,10 @@
 	steps = list(
 		list(/obj/item/stock_parts/capacitor/super, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 9, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 6, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(CRAFT_MATERIAL, 9, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 6, MATERIAL_SILVER),
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
