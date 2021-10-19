@@ -164,7 +164,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	eject_contents()
 	stop()
 
-//TODO: rewrite to attempt ejection into vents shaft, or breakout event, etc.
+
 /obj/machinery/genetics/cloner/proc/eject_contents()
 
 	if(occupant)

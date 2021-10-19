@@ -201,12 +201,12 @@
 	if(istype(AM,/obj/))
 		var/obj/O = AM
 		var/dtype = O.damtype
-		var/throw_damage = O.throwforce*(speed/THROWFORCE_SPEED_DIVISOR)
+		var/throw_damage = O.throwforce*max(1, speed/THROWFORCE_SPEED_DIVISOR) //Are minium damage we do is baseline in cases were we do more damage we do more
 
 		var/miss_chance = 15
 		if (O.throw_source)
 			var/distance = get_dist(O.throw_source, loc)
-			miss_chance = max(15*(distance-2), 0)
+			miss_chance = max(15*(distance-4), 0)
 
 		if (prob(miss_chance))
 			visible_message("\blue \The [O] misses [src] narrowly!")

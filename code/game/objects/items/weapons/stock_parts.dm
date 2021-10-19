@@ -278,7 +278,7 @@
 	desc = "An ultra-high micro laser with a perfected lens to increase productivity."
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 5
-	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_DIAMOND = 1)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_RGLASS = 1, MATERIAL_SILVER = 1)
 	price_tag = 600
 
 /obj/item/stock_parts/matter_bin/guild

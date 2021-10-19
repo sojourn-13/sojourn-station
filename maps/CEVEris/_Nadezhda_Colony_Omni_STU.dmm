@@ -10382,11 +10382,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/security/laber_area)
-"czX" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/binary/circulator,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/engineering/atmos)
 "czZ" = (
 /obj/structure/table/standard,
 /obj/structure/extinguisher_cabinet{
@@ -11438,7 +11433,7 @@
 	dir = 4
 	},
 /obj/machinery/mech_recharger,
-/obj/mecha/combat/dreadnought/security,
+/obj/mecha/combat/durand/security,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "cMF" = (
@@ -17146,9 +17141,9 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "egw" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/portable_atmospherics/canister/nitrogen/prechilled,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/data,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "egx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -21628,6 +21623,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/crematorium)
+"fmW" = (
+/obj/structure/salvageable/data,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "fmZ" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -23769,13 +23768,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "fIX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/general_air_control/large_tank_control{
-	dir = 2;
-	input_tag = null;
-	name = "Coolant Room Control";
-	output_tag = null;
-	sensors = list("coolant_sensor" = "Tank")
-	},
+/obj/random/pack/junk_machine,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "fJi" = (
@@ -38296,6 +38289,7 @@
 "jdK" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/machine,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/engineering/atmos)
 "jdP" = (
@@ -49963,6 +49957,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "lIO" = (
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
+/obj/structure/salvageable/machine,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "lIS" = (
@@ -54353,8 +54348,8 @@
 /area/asteroid/cave)
 "mHa" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/portable_atmospherics/canister/nitrogen/prechilled,
 /obj/effect/decal/cleanable/dirt,
+/obj/random/structures,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/engineering/atmos)
 "mHf" = (
@@ -61342,6 +61337,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/salvageable/machine,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "opW" = (
@@ -68704,13 +68700,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "qbD" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
-	dir = 2;
-	input_tag = null;
-	name = "Coolant Room Control";
-	output_tag = null;
-	sensors = list("coolant_sensor" = "Tank")
-	},
+/obj/structure/salvageable/computer,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/atmos)
 "qbK" = (
@@ -73341,8 +73331,6 @@
 "rcR" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate,
-/obj/item/stock_parts/smes_coil,
-/obj/item/circuitboard/smes,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/engineering/atmos)
 "rcU" = (
@@ -80474,7 +80462,7 @@
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "sMk" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/power/generator,
+/obj/structure/salvageable/machine,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/engineering/atmos)
 "sMl" = (
@@ -97809,6 +97797,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/meadow)
 "wCw" = (
+/obj/structure/salvageable/data,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/atmos)
 "wCG" = (
@@ -99059,7 +99048,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/area/turret_protected/ai)r
 "wSO" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -174722,7 +174711,7 @@ hSx
 hSx
 sFI
 crV
-aRF
+jdK
 jdK
 rcR
 crV
@@ -174924,7 +174913,7 @@ hSx
 hSx
 sFI
 crV
-czX
+sMk
 pgZ
 fFb
 mTF
@@ -175136,7 +175125,7 @@ rdU
 rdU
 crV
 tiO
-vQv
+egw
 edQ
 crV
 crV
@@ -175934,7 +175923,7 @@ hSx
 hSx
 sFI
 crV
-egw
+tiM
 lGe
 ycE
 rdU
@@ -175944,7 +175933,7 @@ wMn
 fwb
 dkl
 iYq
-vQv
+egw
 eqY
 crV
 fbx
@@ -176348,7 +176337,7 @@ cHc
 fRt
 wpH
 iYq
-fJR
+fmW
 pDA
 crV
 faL
@@ -178570,7 +178559,7 @@ bbw
 pNb
 rXb
 wCw
-lXa
+wSJ
 crV
 eMf
 fkz
