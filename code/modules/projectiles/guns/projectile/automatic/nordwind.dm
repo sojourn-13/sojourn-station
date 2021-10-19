@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/nordwind
 	name = "\"Nordwind\" precision rifle"
-	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.5mm Rifle rounds."
+	desc = "A \"Nordwind\" high-end police-grade marksman rifle manufactured by Seinemetall Defense GmbH equiped with a night-vision scope. Primarily used by law enforcement, counter-terror units, and private security. Uses 7.5mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/nordwind.dmi'
 	icon_state = "nordwind"
 	item_state = "nordwind"
@@ -12,7 +12,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	auto_eject = 1
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 1)
 	price_tag = 2000
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
@@ -22,7 +22,9 @@
 	zoom_factor = 0.6
 	recoil_buildup = 2.25
 	one_hand_penalty = 15 //automatic rifle level
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	extra_damage_mult_scoped = 0.5 //High class gun
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
+	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
@@ -44,7 +46,9 @@
 	zoom_factor = 0.6
 	recoil_buildup = 14
 	damage_multiplier = 0.9
+	extra_damage_mult_scoped = 0.1
 	one_hand_penalty = 25
+	see_invisible_gun = -1
 	auto_eject = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY

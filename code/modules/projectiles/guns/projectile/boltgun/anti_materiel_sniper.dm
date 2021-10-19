@@ -30,13 +30,6 @@
 	extra_damage_mult_scoped = 0.2
 	gun_tags = list(GUN_AMR, GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SIGHT) //AMR tag atm does nothing
 
-/obj/item/gun/projectile/boltgun/heavysniper/zoom(tileoffset, viewsize)
-	..()
-	if(zoom)
-		damage_multiplier += extra_damage_mult_scoped
-	else
-		refresh_upgrades()
-
 /obj/item/weaponparts
 	var/part_color = ""
 	name = "weaponpart"

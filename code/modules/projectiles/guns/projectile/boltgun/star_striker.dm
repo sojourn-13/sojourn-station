@@ -9,6 +9,7 @@
 	max_shells = 10
 	price_tag = 250 //no...
 	damage_multiplier = 1.4 //So were worth using
+	extra_damage_mult_scoped = 0.5
 	zoom_factor = 2.0
 	caliber = CAL_SCI
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2, TECH_MAGNET = 3, TECH_POWER = 6)
