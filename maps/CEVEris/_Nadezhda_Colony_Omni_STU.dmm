@@ -76255,6 +76255,9 @@
 	name = "AI Core Door";
 	req_access = list(16)
 	},
+/obj/machinery/camera/network/command{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/turret_protected/ai)
 "rKf" = (
