@@ -3500,13 +3500,22 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/workshop)
 "aRF" = (
-/turf/simulated/floor/tiled/steel/bar_dance,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -28
+	},
+/turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "aRL" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/lattice,
+/obj/machinery/newscaster{
+	pixel_y = 34
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/porta_turret{
+	dir = 1
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
@@ -4837,13 +4846,16 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/triage_blackshield)
 "bkB" = (
-/obj/machinery/door/blast/regular{
-	id = "AICore";
-	name = "AI core maintenance hatch"
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/structure/cable/cyan,
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating,
+/obj/machinery/door/window{
+	name = "AI Core Door";
+	req_access = list(16)
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "bkH" = (
 /obj/structure/disposalpipe/segment{
@@ -5849,11 +5861,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "bwT" = (
-/obj/machinery/flasher{
-	dir = 6;
-	id = "AI";
-	pixel_x = 0;
-	pixel_y = -24
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -10537,9 +10548,9 @@
 /area/nadezhda/rnd/lab)
 "cBy" = (
 /obj/structure/cable/cyan{
-	d1 = 2;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
@@ -13969,8 +13980,10 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "drK" = (
-/obj/machinery/camera/network/command{
-	dir = 4
+/obj/machinery/flasher{
+	id = "AI";
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
@@ -17926,9 +17939,15 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "erS" = (
-/obj/structure/lattice,
-/obj/machinery/light,
-/turf/simulated/floor/plating/under,
+/obj/machinery/door/airlock/vault{
+	req_access = list(16)
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "erZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23013,6 +23032,7 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/hallway/surface/section1)
 "fCa" = (
+/obj/structure/lattice,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
@@ -23021,10 +23041,7 @@
 /obj/machinery/ai_slipper{
 	icon_state = "motion0"
 	},
-/obj/machinery/door/airlock/vault{
-	req_access = list(16)
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
+/turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "fCe" = (
 /obj/effect/floor_decal/industrial/warningwhite,
@@ -25575,6 +25592,11 @@
 	id = "AICore";
 	name = "AI core maintenance hatch"
 	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "gfs" = (
@@ -27034,19 +27056,32 @@
 /turf/simulated/wall/wood_old,
 /area/nadezhda/outside/forest)
 "guW" = (
-/obj/machinery/door/window{
-	dir = 4;
-	name = "AI Core Door";
-	req_access = list(16)
+/obj/machinery/hologram/holopad,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/door/blast/regular{
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for the AI core maintenance door.";
 	id = "AICore";
-	name = "AI core maintenance hatch"
+	name = "AI Maintenance Hatch";
+	pixel_x = 17;
+	pixel_y = 25;
+	req_access = newlist();
+	req_one_access = newlist()
 	},
 /obj/structure/cable/cyan{
-	d1 = 4;
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/critical{
+	dir = 1;
+	name = "APC";
+	pixel_x = 0;
+	pixel_y = 28
+	},
+/obj/structure/cable/cyan{
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -27182,26 +27217,20 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "gxm" = (
-/obj/item/device/radio/intercom/private{
-	dir = 2;
-	pixel_x = 28;
-	pixel_y = 4
+/obj/machinery/door/window{
+	dir = 4;
+	name = "AI Core Door";
+	req_access = list(16)
 	},
-/obj/item/device/radio/intercom/custom{
-	dir = 2;
-	pixel_x = -28;
-	pixel_y = 4
+/obj/machinery/door/blast/regular{
+	id = "AICore";
+	name = "AI core maintenance hatch"
 	},
-/obj/item/device/radio/intercom/broadcasting{
-	pixel_x = -28;
-	pixel_y = -14
-	},
-/obj/structure/cable/cyan,
 /obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/landmark/join/start/AI,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "gxn" = (
@@ -29737,34 +29766,16 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "gZh" = (
-/obj/machinery/hologram/holopad,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/lattice,
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
 	},
-/obj/machinery/button/remote/blast_door{
-	desc = "A remote control-switch for the AI core maintenance door.";
-	id = "AICore";
-	name = "AI Maintenance Hatch";
-	pixel_x = 17;
-	pixel_y = 25;
-	req_access = newlist();
-	req_one_access = newlist()
+/obj/machinery/flasher{
+	id = "AI";
+	pixel_x = 24;
+	pixel_y = 0
 	},
-/obj/structure/cable/cyan{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/critical{
-	dir = 1;
-	name = "APC";
-	pixel_x = 0;
-	pixel_y = 28
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "gZj" = (
 /obj/machinery/door/firedoor,
@@ -31979,6 +31990,9 @@
 	},
 /obj/machinery/ai_slipper{
 	icon_state = "motion0"
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
@@ -36636,9 +36650,13 @@
 	name = "Residential District Maintenance"
 	})
 "iJy" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -28
+/obj/machinery/camera/network/command{
+	dir = 8
+	},
+/obj/machinery/flasher{
+	id = "AI";
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
@@ -36900,13 +36918,27 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "iMX" = (
-/obj/structure/lattice,
-/obj/machinery/flasher{
-	id = "AI";
-	pixel_x = -24;
-	pixel_y = 0
+/obj/item/device/radio/intercom/private{
+	dir = 2;
+	pixel_x = 28;
+	pixel_y = 4
 	},
-/turf/simulated/floor/plating/under,
+/obj/item/device/radio/intercom/custom{
+	dir = 2;
+	pixel_x = -28;
+	pixel_y = 4
+	},
+/obj/item/device/radio/intercom/broadcasting{
+	pixel_x = -28;
+	pixel_y = -14
+	},
+/obj/structure/cable/cyan,
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/landmark/join/start/AI,
+/turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "iNh" = (
 /obj/structure/window/reinforced,
@@ -39174,15 +39206,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
-"jnL" = (
-/obj/machinery/light/small,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "jnM" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -41352,12 +41375,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/surface/section1)
 "jMt" = (
-/obj/machinery/flasher{
-	id = "AI";
-	pixel_x = -24;
-	pixel_y = 0
+/obj/machinery/camera/network/command{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/steel/bar_dance,
+/turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "jMw" = (
 /obj/structure/cable/green{
@@ -44983,15 +45004,13 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
 "kDZ" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/door/blast/regular{
+	id = "AICore";
+	name = "AI core maintenance hatch"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
+/obj/structure/cable/cyan,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
 /area/turret_protected/ai)
 "kEe" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -49729,14 +49748,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/flasher{
-	dir = 6;
-	id = "AI";
-	pixel_x = 0;
-	pixel_y = -24
-	},
-/obj/machinery/light/small{
-	dir = 1
+/obj/machinery/door/airlock/vault{
+	req_access = list(16)
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
@@ -54308,16 +54321,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/barracks)
 "mFO" = (
-/obj/structure/lattice,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/flasher{
-	id = "AI";
-	pixel_x = 24
-	},
+/obj/machinery/camera/xray/security,
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "mGe" = (
@@ -62546,6 +62550,14 @@
 /area/nadezhda/crew_quarters/clownoffice)
 "oCx" = (
 /obj/machinery/light/small,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
+	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
 "oCL" = (
@@ -64309,14 +64321,9 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "paO" = (
 /obj/structure/lattice,
-/obj/machinery/newscaster{
-	pixel_y = 34
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/porta_turret{
-	dir = 1
+/obj/machinery/light,
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
 	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
@@ -67444,18 +67451,6 @@
 "pNw" = (
 /turf/simulated/mineral,
 /area/nadezhda/outside/dcave)
-"pNS" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/flasher{
-	id = "AI";
-	pixel_x = 24
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "pNT" = (
 /obj/structure/flora/small/rock3,
 /obj/random/spider_trap_burrowing/low_chance,
@@ -68081,6 +68076,12 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/flasher{
+	dir = 6;
+	id = "AI";
+	pixel_x = 0;
+	pixel_y = -24
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
@@ -77103,12 +77104,6 @@
 /obj/structure/sink/puddle,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"rUm" = (
-/obj/machinery/camera/network/command{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/turret_protected/ai)
 "rUt" = (
 /obj/structure/closet/malf/suits,
 /turf/simulated/floor/tiled/steel/danger,
@@ -79774,14 +79769,6 @@
 /obj/structure/flora/small/grassa1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
-"sBt" = (
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating/under,
-/area/turret_protected/ai)
 "sBA" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -86246,20 +86233,6 @@
 /obj/effect/floor_decal/border/borderfloor/cee,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/prep)
-"ueK" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
-	},
-/obj/machinery/door/airlock/vault{
-	req_access = list(16)
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "ueW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -93452,10 +93425,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/security/laber_area)
-"vGd" = (
-/obj/machinery/camera/xray/security,
-/turf/simulated/floor/plating/under,
-/area/turret_protected/ai)
 "vGe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -95539,15 +95508,6 @@
 /obj/random/structures/low_chance,
 /turf/simulated/floor/plating,
 /area/colony)
-"wdE" = (
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
-	},
-/obj/machinery/door/airlock/vault{
-	req_access = list(16)
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "wdH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -100853,12 +100813,6 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/prime)
-"xna" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/turret_protected/ai)
 "xnn" = (
 /obj/machinery/light{
 	dir = 8;
@@ -173474,12 +173428,12 @@ hSx
 hSx
 sFI
 sFI
-hSx
-hSx
-hSx
-hSx
-hSx
-hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 hSx
 sFI
 sFI
@@ -173676,13 +173630,13 @@ aDB
 hSx
 hSx
 hSx
-aDB
-aDB
-aDB
-aDB
-aDB
-aDB
 hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -173878,13 +173832,13 @@ aDB
 aDB
 aDB
 aDB
-aDB
-xvt
-aRF
-wdE
-jMt
-aDB
 hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -174080,18 +174034,18 @@ rdW
 qYC
 xvt
 aDB
-aDB
-aRF
-oCx
-aDB
-xna
-aDB
 hSx
-hSx
-hSx
-hSx
-hSx
-hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -174282,18 +174236,18 @@ qYC
 crm
 aDB
 aDB
-aDB
-aRF
-aDB
-aDB
-wdE
-aDB
-aDB
-aDB
-aDB
-aDB
-aDB
 hSx
+hSx
+hSx
+hSx
+hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -174485,17 +174439,17 @@ kWk
 jsz
 aDB
 aDB
-aRF
 aDB
 aDB
-wPV
-wPV
-iMX
-rUm
-wPV
-xvt
 aDB
 hSx
+hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -174687,17 +174641,17 @@ fip
 aDB
 aDB
 aDB
-bwT
 aDB
 aDB
-iJy
 aDB
-gfq
-aDB
-aDB
-vGd
 aDB
 hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -174892,14 +174846,14 @@ rJU
 hCm
 xvt
 aDB
-paO
-aDB
-gZh
-gxm
-bkB
-erS
 aDB
 hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -175094,14 +175048,14 @@ aDB
 lFl
 aDB
 aDB
-wPV
-aDB
-guW
-aDB
-aDB
-wPV
 aDB
 hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -175296,14 +175250,14 @@ aDB
 pTJ
 aDB
 aDB
-sBt
-aRL
-mFO
-drK
-wPV
-xvt
 aDB
 hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -175495,17 +175449,17 @@ fip
 aDB
 aDB
 aDB
-pTJ
-aDB
-aDB
-fCa
-aDB
-aDB
-aDB
-aDB
+bkB
 aDB
 aDB
 hSx
+hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -175697,17 +175651,17 @@ jgX
 xvt
 aDB
 aDB
-cBy
-jnL
-aDB
-kDZ
+bwT
+oCx
 aDB
 hSx
-hSx
-hSx
-hSx
-hSx
-hSx
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -175901,11 +175855,11 @@ aDB
 aDB
 cwm
 cBy
-ueK
-pNS
 aDB
 hSx
-sFI
+hSx
+hSx
+hSx
 sFI
 sFI
 sFI
@@ -176099,15 +176053,15 @@ aDB
 aDB
 hSx
 hSx
+aDB
+aDB
+aDB
+erS
+aDB
+aDB
+aDB
+aDB
 hSx
-aDB
-aDB
-aDB
-aDB
-aDB
-aDB
-hSx
-sFI
 sFI
 sFI
 sFI
@@ -176300,16 +176254,16 @@ hSx
 hSx
 hSx
 sFI
-sFI
-sFI
 hSx
+aDB
+wPV
+drK
+fCa
+iJy
+wPV
+xvt
+aDB
 hSx
-hSx
-hSx
-hSx
-hSx
-hSx
-sFI
 sFI
 sFI
 sFI
@@ -176502,16 +176456,16 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+hSx
+aDB
+aRF
+aDB
+gfq
+aDB
+aDB
+mFO
+aDB
+hSx
 sFI
 sFI
 sFI
@@ -176704,16 +176658,16 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+hSx
+aDB
+aRL
+aDB
+guW
+iMX
+kDZ
+paO
+aDB
+hSx
 sFI
 sFI
 sFI
@@ -176906,16 +176860,16 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+hSx
+aDB
+wPV
+aDB
+gxm
+aDB
+aDB
+wPV
+aDB
+hSx
 sFI
 sFI
 sFI
@@ -177108,16 +177062,16 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+hSx
+aDB
+wPV
+wPV
+gZh
+jMt
+wPV
+xvt
+aDB
+hSx
 sFI
 sFI
 sFI
@@ -177310,16 +177264,16 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+hSx
+aDB
+aDB
+aDB
+aDB
+aDB
+aDB
+aDB
+aDB
+hSx
 sFI
 sFI
 sFI
@@ -177512,16 +177466,16 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
+hSx
 sFI
 sFI
 sFI
