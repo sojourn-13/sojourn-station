@@ -11367,7 +11367,7 @@
 	dir = 4
 	},
 /obj/machinery/mech_recharger,
-/obj/mecha/combat/dreadnought/security,
+/obj/mecha/combat/durand/security,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "cMF" = (
