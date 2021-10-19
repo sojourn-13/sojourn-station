@@ -24491,7 +24491,22 @@
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "fRm" = (
-/obj/machinery/light,
+/obj/machinery/door/window{
+	base_state = "right";
+	dir = 8;
+	icon_state = "right";
+	name = "AI Core Door";
+	req_access = list(16)
+	},
+/obj/machinery/door/blast/regular{
+	id = "AICore";
+	name = "AI core maintenance hatch"
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "fRn" = (
@@ -25581,21 +25596,32 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "gfq" = (
-/obj/machinery/door/window{
-	base_state = "right";
-	dir = 8;
-	icon_state = "right";
-	name = "AI Core Door";
-	req_access = list(16)
+/obj/machinery/hologram/holopad,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/door/blast/regular{
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for the AI core maintenance door.";
 	id = "AICore";
-	name = "AI core maintenance hatch"
+	name = "AI Maintenance Hatch";
+	pixel_x = 17;
+	pixel_y = 25;
+	req_access = newlist();
+	req_one_access = newlist()
 	},
 /obj/structure/cable/cyan{
-	d1 = 4;
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/critical{
+	dir = 1;
+	name = "APC";
+	pixel_x = 0;
+	pixel_y = 28
+	},
+/obj/structure/cable/cyan{
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -27056,32 +27082,19 @@
 /turf/simulated/wall/wood_old,
 /area/nadezhda/outside/forest)
 "guW" = (
-/obj/machinery/hologram/holopad,
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/door/window{
+	dir = 4;
+	name = "AI Core Door";
+	req_access = list(16)
 	},
-/obj/machinery/button/remote/blast_door{
-	desc = "A remote control-switch for the AI core maintenance door.";
+/obj/machinery/door/blast/regular{
 	id = "AICore";
-	name = "AI Maintenance Hatch";
-	pixel_x = 17;
-	pixel_y = 25;
-	req_access = newlist();
-	req_one_access = newlist()
+	name = "AI core maintenance hatch"
 	},
 /obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/critical{
-	dir = 1;
-	name = "APC";
-	pixel_x = 0;
-	pixel_y = 28
-	},
-/obj/structure/cable/cyan{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -27217,21 +27230,16 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "gxm" = (
-/obj/machinery/door/window{
-	dir = 4;
-	name = "AI Core Door";
-	req_access = list(16)
+/obj/structure/lattice,
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
 	},
-/obj/machinery/door/blast/regular{
-	id = "AICore";
-	name = "AI core maintenance hatch"
+/obj/machinery/flasher{
+	id = "AI";
+	pixel_x = 24;
+	pixel_y = 0
 	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "gxn" = (
 /obj/structure/table/rack/shelf,
@@ -29766,13 +29774,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "gZh" = (
-/obj/structure/lattice,
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
+/obj/machinery/camera/network/command{
+	dir = 8
 	},
 /obj/machinery/flasher{
 	id = "AI";
-	pixel_x = 24;
+	pixel_x = -24;
 	pixel_y = 0
 	},
 /turf/simulated/floor/plating/under,
@@ -36650,15 +36657,27 @@
 	name = "Residential District Maintenance"
 	})
 "iJy" = (
-/obj/machinery/camera/network/command{
-	dir = 8
+/obj/item/device/radio/intercom/private{
+	dir = 2;
+	pixel_x = 28;
+	pixel_y = 4
 	},
-/obj/machinery/flasher{
-	id = "AI";
-	pixel_x = -24;
-	pixel_y = 0
+/obj/item/device/radio/intercom/custom{
+	dir = 2;
+	pixel_x = -28;
+	pixel_y = 4
 	},
-/turf/simulated/floor/plating/under,
+/obj/item/device/radio/intercom/broadcasting{
+	pixel_x = -28;
+	pixel_y = -14
+	},
+/obj/structure/cable/cyan,
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/landmark/join/start/AI,
+/turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "iJB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -36918,27 +36937,10 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "iMX" = (
-/obj/item/device/radio/intercom/private{
-	dir = 2;
-	pixel_x = 28;
-	pixel_y = 4
+/obj/machinery/camera/network/command{
+	dir = 4
 	},
-/obj/item/device/radio/intercom/custom{
-	dir = 2;
-	pixel_x = -28;
-	pixel_y = 4
-	},
-/obj/item/device/radio/intercom/broadcasting{
-	pixel_x = -28;
-	pixel_y = -14
-	},
-/obj/structure/cable/cyan,
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/landmark/join/start/AI,
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "iNh" = (
 /obj/structure/window/reinforced,
@@ -41375,10 +41377,13 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/surface/section1)
 "jMt" = (
-/obj/machinery/camera/network/command{
-	dir = 4
+/obj/machinery/door/blast/regular{
+	id = "AICore";
+	name = "AI core maintenance hatch"
 	},
-/turf/simulated/floor/plating/under,
+/obj/structure/cable/cyan,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
 /area/turret_protected/ai)
 "jMw" = (
 /obj/structure/cable/green{
@@ -45004,13 +45009,8 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
 "kDZ" = (
-/obj/machinery/door/blast/regular{
-	id = "AICore";
-	name = "AI core maintenance hatch"
-	},
-/obj/structure/cable/cyan,
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating,
+/obj/machinery/camera/xray/security,
+/turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "kEe" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -54321,7 +54321,11 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/barracks)
 "mFO" = (
-/obj/machinery/camera/xray/security,
+/obj/structure/lattice,
+/obj/machinery/light,
+/obj/machinery/ai_slipper{
+	icon_state = "motion0"
+	},
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "mGe" = (
@@ -64319,14 +64323,6 @@
 /obj/random/junk/low_chance,
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"paO" = (
-/obj/structure/lattice,
-/obj/machinery/light,
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
-	},
-/turf/simulated/floor/plating/under,
-/area/turret_protected/ai)
 "paT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/cluster/roaches/lower_chance,
@@ -98620,7 +98616,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light,
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "wNg" = (
@@ -99036,17 +99031,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "wSJ" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/window{
-	name = "AI Core Door";
-	req_access = list(16);
-	dir = 8
-	},
-/turf/simulated/floor/bluegrid,
+/obj/structure/salvageable/data,
+/turf/simulated/floor/tiled/steel/danger,
 /area/turret_protected/ai)
 "wSO" = (
 /obj/machinery/disposal,
@@ -175235,7 +175221,7 @@ aDB
 aDB
 gCV
 wNf
-fRm
+qYC
 cSb
 gpF
 gpF
@@ -176259,7 +176245,7 @@ aDB
 wPV
 drK
 fCa
-iJy
+gZh
 wPV
 xvt
 aDB
@@ -176460,10 +176446,10 @@ hSx
 aDB
 aRF
 aDB
-gfq
+fRm
 aDB
 aDB
-mFO
+kDZ
 aDB
 hSx
 sFI
@@ -176662,10 +176648,10 @@ hSx
 aDB
 aRL
 aDB
-guW
-iMX
-kDZ
-paO
+gfq
+iJy
+jMt
+mFO
 aDB
 hSx
 sFI
@@ -176864,7 +176850,7 @@ hSx
 aDB
 wPV
 aDB
-gxm
+guW
 aDB
 aDB
 wPV
@@ -177066,8 +177052,8 @@ hSx
 aDB
 wPV
 wPV
-gZh
-jMt
+gxm
+iMX
 wPV
 xvt
 aDB
