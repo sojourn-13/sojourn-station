@@ -599,7 +599,7 @@
 		list(/obj/item/stock_parts/micro_laser/ultra, 1),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
-		list(/obj/item/stock_parts/subspace/crystal, 1),
+		list(CRAFT_MATERIAL, 1, MATERIAL_RGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_SAWING, 60)
@@ -667,7 +667,7 @@
 		list(/obj/item/stock_parts/micro_laser/high, 2),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
-		list(/obj/item/stock_parts/subspace/crystal, 1),
+		list(CRAFT_MATERIAL, 1, MATERIAL_RGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_SAWING, 60)
@@ -738,7 +738,7 @@
 		list(/obj/item/stock_parts/micro_laser/ultra, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS),
-		list(/obj/item/stock_parts/subspace/crystal, 4),
+		list(CRAFT_MATERIAL, 4, MATERIAL_RGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_SAWING, 60),
