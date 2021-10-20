@@ -203,6 +203,10 @@
 	display_name = "monashka garments"
 	path = /obj/item/clothing/under/rank/monashka
 
+/datum/gear/uniform/ntdress
+	display_name = "Absolutist summmer dress"
+	path = /obj/item/clothing/under/rank/ntdress
+
 /datum/gear/uniform/aerostatic_suit
 	display_name = "dark comfortable clothing"
 	path = /obj/item/clothing/under/aerostatic_suit

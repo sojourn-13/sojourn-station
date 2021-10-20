@@ -216,7 +216,7 @@
 	desc = "An ivory set of pants with white shirt and a black collar, perfect for the haughty southerner Plasma magnate. Howdy!"
 	icon_state = "texan_suit"
 	item_state = "texan_suit"
-	
+
 
 /*Turtlenecks*/
 
@@ -269,3 +269,9 @@
 	desc = "A dark and golden skirt warn by the faiths."
 	icon_state = "lemniscate_skirt"
 	item_state = "lemniscate_skirt"
+
+/obj/item/clothing/under/rank/ntdress
+	name = "Absolutist summer dress"
+	desc = "A white and gold summerdress, produced and oft worn by Abolutists"
+	icon_state = "summerdress_nt"
+	item_state = "summerdress_nt"

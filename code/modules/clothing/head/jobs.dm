@@ -60,6 +60,11 @@
 	icon_state = "beret_artist"
 	item_state = "beret_artist"
 
+/obj/item/clothing/head/beret/custom
+	name = "Customized beret"
+	desc = "An easily colored, plain beret. Classy!"
+	icon_state = "beret_whiterim"
+
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"

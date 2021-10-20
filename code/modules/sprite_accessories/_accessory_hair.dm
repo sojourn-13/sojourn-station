@@ -327,6 +327,22 @@
 	name = "Hime Cut 2"
 	icon_state = "himecut_alt"
 
+/datum/sprite_accessory/hair/himecutponytail
+	name = "himecut ponytail"
+	icon_state = "himecut_ponytail"
+
+/datum/sprite_accessory/hair/himecutponytailup
+	name = "Himecut high ponytail"
+	icon_state = "himecut_ponytail_up"
+
+/datum/sprite_accessory/hair/himecutlongponytail
+	name = "Himecut long ponytail"
+	icon_state = "himecut_long_ponytail"
+
+/datum/sprite_accessory/hair/himecutshort
+	name = "Himecut short"
+	icon_state = "himecut_short"
+
 /datum/sprite_accessory/hair/hitop
 	name = "Hitop"
 	icon_state = "hitop"
