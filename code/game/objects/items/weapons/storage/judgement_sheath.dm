@@ -72,12 +72,14 @@
 
 /obj/item/storage/sheath/judgement/filled/New()
 	new/obj/item/tool/sword/katana/spatial_cutter(src)
+	update_icon()
 	. = ..()
 
 /obj/item/storage/sheath/judgement/exultor
 	icon_state = "exultor_sheath"
 
 /obj/item/storage/sheath/judgement/exultor/filled/New()
+	update_icon()
 	new/obj/item/tool/sword/katana/spatial_cutter/sword_of_lie(src)
 	. = ..()
 
