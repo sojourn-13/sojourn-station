@@ -57,7 +57,7 @@
 	health = 250
 	icon_state = "syndicatemelee"
 	weapon1 = /obj/item/melee/energy/sword/red
-	weapon2 = /obj/item/shield/energy
+	weapon2 = /obj/item/shield/buckler/energy
 	attacktext = "slashed"
 	status_flags = 0
 	armor = list(
@@ -298,7 +298,7 @@
 	health = 450
 	icon_state = "syndicate_stormtrooper_sword"
 	weapon1 = /obj/item/melee/energy/sword/red
-	weapon2 = /obj/item/shield/energy
+	weapon2 = /obj/item/shield/buckler/energy
 	attacktext = "slashed"
 
 //elite range

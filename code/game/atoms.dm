@@ -180,6 +180,9 @@ atom/proc/breakObject()
 	P.on_hit(src, def_zone)
 	. = FALSE
 
+/atom/proc/block_bullet(mob/user, var/obj/item/projectile/damage_source, def_zone)
+	return 0
+
 /atom/proc/in_contents_of(container)//can take class or object instance as argument
 	if(ispath(container))
 		if(istype(src.loc, container))
@@ -346,7 +349,7 @@ its easier to just keep the beam vertical.
 						to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of what looks like [master_reagent.name]."))
 					else
 						to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
-			//Get the most populated reagent in the mix. If it is a "common" reagent, let the person see that, and only that. 
+			//Get the most populated reagent in the mix. If it is a "common" reagent, let the person see that, and only that.
 			else if(reagents && reagents.reagent_list.len)
 				var/datum/reagent/master_reagent = reagents.get_master_reagent()
 				if(master_reagent.common)
