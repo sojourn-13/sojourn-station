@@ -17,7 +17,7 @@
 
 	var/moved = FALSE
 	var/move_attack_mult = 0.6
-
+	universal_understand = TRUE //QoL to admins controling mobs
 	var/do_gibs = TRUE //Do we gib?
 	var/gibspawner_type = /obj/effect/gibspawner/generic //what we use as are gib spawner
 	//Not to be confused with - gibspawner
@@ -460,8 +460,8 @@
 		updateicon()
 		ticks_processed = 0
 
-	
-	
+
+
 
 	if(handle_cheap_regular_status_updates()) // They have died after all of this, do not scan or do not handle AI anymore.
 		return PROCESS_KILL

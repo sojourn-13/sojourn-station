@@ -86,10 +86,6 @@
 					squeals++
 					last_squealgain = world.time
 
-	else
-		if ((world.time - timeofdeath) > decompose_time)
-			dust()
-
 
 //Pixel offsetting as they scamper around
 /mob/living/simple_animal/mouse/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
@@ -244,11 +240,10 @@
 
 /mob/living/simple_animal/mouse/death()
 	layer = MOB_LAYER
-	if (stat != DEAD)
-		if(ckey || prob(35))
-			squeak_loud(0)//deathgasp
+	if(ckey || prob(35))
+		squeak_loud(0)//deathgasp
 
-		addtimer(CALLBACK(src, .proc/dust), decompose_time)
+	addtimer(CALLBACK(src, .proc/dust), decompose_time)
 
 	..()
 
