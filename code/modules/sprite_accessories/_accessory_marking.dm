@@ -317,6 +317,47 @@
 		icon_state ="ward"
 		body_parts = list(BP_HEAD)
 
+	hesphaistos_body
+		name = "FBP-Hesphaistos chassis"
+		icon_state ="hesphaistos"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	hesphaistos_head
+		name = "FBP-Hesphaistos head"
+		icon_state ="hesphaistos"
+		body_parts = list(BP_HEAD)
+
+	bishop_body
+		name = "FBP-Bishop chassis"
+		icon_state ="bishop"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	bishop_head
+		name = "FBP-Bishop head"
+		icon_state ="bishop"
+		body_parts = list(BP_HEAD)
+
+	xion_body
+		name = "FBP-Xion chassis"
+		icon_state ="xion"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	xion_head
+		name = "FBP-Xion head"
+		icon_state ="xion"
+		body_parts = list(BP_HEAD)
+
+	spirit_body
+		name = "FBP-Zheng-Hu Spirit chassis"
+		icon_state ="spirit"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	xion_head
+		name = "FBP-Zheng-Hu Spirit head"
+		icon_state ="spirit"
+		body_parts = list(BP_HEAD)
+
+
 	synthskin_human
 		name = "FBP-Human synthskin"
 		icon_state = "synthskinhuman"

@@ -25,6 +25,13 @@
 	model = "zenghu"
 	price_tag = 200
 
+/obj/item/organ/external/robotic/zenghu/spirit
+	name = "Zeng-Hu spirit"
+	desc = "Prosthesis with a sleek black and white polymer finish."
+	force_icon = 'icons/mob/human_races/cyberlimbs/spirit.dmi'
+	model = "spirit"
+	price_tag = 200
+
 /obj/item/organ/external/robotic/xion
 	name = "Xion"
 	desc = "Prosthesis with minimalist black and red casing."
@@ -154,7 +161,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 /obj/item/organ/external/robotic/full_body_prosthetic/head
 	name = "Prosthetic Head"
 	default_description = /datum/organ_description/head
-	
+
 // Junktech
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""

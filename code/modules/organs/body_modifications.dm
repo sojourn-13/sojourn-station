@@ -163,6 +163,11 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/external/robotic/zenghu
 	icon = 'icons/mob/human_races/cyberlimbs/zenghu.dmi'
 
+/datum/body_modification/limb/prosthesis/zenghu/spirit
+	id = "prosthesis_spirit"
+	replace_limb = /obj/item/organ/external/robotic/zenghu/spirit
+	icon = 'icons/mob/human_races/cyberlimbs/spirit.dmi'
+
 /datum/body_modification/limb/prosthesis/xion
 	id = "prosthesis_xion"
 	replace_limb = /obj/item/organ/external/robotic/xion
