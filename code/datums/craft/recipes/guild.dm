@@ -688,9 +688,9 @@
 
 /datum/craft_recipe/guild/guild_capacitor_alt
 	name = "Crafted Ultra Capacitor Alt"
-	result = /obj/item/stock_parts/capacitor/adv
+	result = /obj/item/stock_parts/capacitor/guild
 	steps = list(
-		list(/obj/item/stock_parts/capacitor/super, 2),
+		list(/obj/item/stock_parts/capacitor/adv, 2),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 2, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
