@@ -101,7 +101,7 @@
 	/obj/item/rig_module/fabricator = 0.1,
 	/obj/item/rig_module/fabricator/energy_net = 0.2,
 	/obj/item/rig_module/self_destruct = 1,
-
+	/obj/item/rig_module/held/shield = 0.5,
 	/obj/item/rig_module/teleporter = 0.5,
 
 	//Utility
@@ -164,7 +164,7 @@
 	/obj/item/rig_module/chem_dispenser/combat = 1,
 	/obj/item/rig_module/chem_dispenser/injector = 1, //Like normal but can be used on other people as well as yourself
 	/obj/item/rig_module/voice = 1,
-
+	/obj/item/rig_module/held/shield = 1,
 	//Vision
 	/obj/item/rig_module/vision/multi = 0.1, //Every vision mod in one, very powerful
 	/obj/item/rig_module/vision/thermal = 1, //Thermal is very strong

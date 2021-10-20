@@ -268,7 +268,7 @@
 
 	interface_name = "frozen star shield"
 	interface_desc = "A reinforced ballistic shield for use against high-velocity projectiles and energy weapons."
-
+	price_tag = 2500
 	usable = 0
 	selectable = 1
 	toggleable = 1

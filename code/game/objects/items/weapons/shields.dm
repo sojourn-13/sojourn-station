@@ -167,7 +167,7 @@
 	name = "tactical shield"
 	desc = "A compact personal shield made of pre-preg aramid fibres designed to stop or deflect bullets without slowing down its wielder."
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "tactical"
+	icon_state = "tactical" //by CeUvi we thx thy
 	item_state = "tactical"
 	flags = CONDUCT
 	slot_flags = SLOT_BELT|SLOT_BACK

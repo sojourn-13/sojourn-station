@@ -244,7 +244,7 @@
 	name = "NT Parma"
 	desc = "A round shield with a golden trim. Has several biomatter-leather straps on the back to hold melee weapons."
 	icon = 'icons/obj/nt_melee.dmi'
-	icon_state = "nt_buckler"
+	icon_state = "nt_buckler" //by CeUvi we thx thy
 	item_state = "nt_buckler"
 	matter = list(MATERIAL_BIOMATTER = 15, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2, MATERIAL_GOLD = 1)
 	//aspects = list(SANCTIFIED) todo:port this
