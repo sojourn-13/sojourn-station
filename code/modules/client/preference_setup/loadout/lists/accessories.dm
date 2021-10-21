@@ -47,6 +47,10 @@
 	display_name = "fluffy cape"
 	path = /obj/item/clothing/accessory/cape
 
+/datum/gear/accessory/blackcape
+	display_name = "black cloak"
+	path = /obj/item/clothing/accessory/cape/black
+
 /datum/gear/accessory/blackshieldpatch
 	display_name = "Blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield

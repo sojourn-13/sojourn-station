@@ -128,6 +128,12 @@ obj/item/clothing/suit/fluff/kimono
 	icon_state = "swim_white"
 	siemens_coefficient = 1
 
+/obj/item/clothing/under/swimsuit/ntswimsuit
+	name = "Absolutist swimsuit"
+	desc = "A fine, white and gold trim swimsuit produced and often worn by those of the faith"
+	icon_state = "swim_nt"
+	siemens_coefficient = 1
+
 /*Poncho*/
 
 /obj/item/clothing/suit/poncho/blue

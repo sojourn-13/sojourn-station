@@ -25,13 +25,6 @@
 	model = "zenghu"
 	price_tag = 200
 
-/obj/item/organ/external/robotic/zenghu/spirit
-	name = "Zeng-Hu spirit"
-	desc = "Prosthesis with a sleek black and white polymer finish."
-	force_icon = 'icons/mob/human_races/cyberlimbs/spirit.dmi'
-	model = "spirit"
-	price_tag = 200
-
 /obj/item/organ/external/robotic/xion
 	name = "Xion"
 	desc = "Prosthesis with minimalist black and red casing."
@@ -44,6 +37,13 @@
 	desc = "Sleek prosthesis with white casing."
 	force_icon = 'icons/mob/human_races/cyberlimbs/ward.dmi'
 	model = "ward"
+	price_tag = 200
+
+/obj/item/organ/external/robotic/ward/spirit
+	name = "Ward Takehashi Spirit"
+	desc = "Prosthesis with a sleek black and white polymer finish."
+	force_icon = 'icons/mob/human_races/cyberlimbs/spirit.dmi'
+	model = "spirit"
 	price_tag = 200
 
 //Character setup prostheses
