@@ -119,7 +119,7 @@
 
 /datum/craft_recipe/lodge/bone_shield
 	name = "Bone Buckler"
-	result = /obj/item/shield/riot/handmade/bone
+	result = /obj/item/shield/buckler/handmade/bone
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_BONE, "time" = 60),

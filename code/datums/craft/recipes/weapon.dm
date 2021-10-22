@@ -84,7 +84,7 @@
 
 /datum/craft_recipe/weapon/handmade_shield
 	name = "handmade shield"
-	result = /obj/item/shield/riot/handmade
+	result = /obj/item/shield/buckler/handmade
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 12, MATERIAL_WOOD),
@@ -94,7 +94,7 @@
 
 /datum/craft_recipe/weapon/handmade_lid_shield
 	name = "handmade lid shield"
-	result = /obj/item/shield/riot/handmade/lid
+	result = /obj/item/shield/riot/lid
 	steps = list(
 		list(/obj/item/stack/cable_coil, 4),
 		list(/obj/structure/closet/crate/trashcart, 1, "time" = 30),
@@ -103,7 +103,7 @@
 
 /datum/craft_recipe/weapon/handmade_tray_shield
 	name = "handmade tray shield"
-	result = /obj/item/shield/riot/handmade/tray
+	result = /obj/item/shield/riot/tray
 	steps = list(
 		list(/obj/item/tray, 1),
 		list(/obj/item/storage/belt, 1, "time" = 10)

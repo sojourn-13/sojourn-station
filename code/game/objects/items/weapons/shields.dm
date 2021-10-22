@@ -2,7 +2,7 @@
 //These are shared by various items that have shield-like behaviour
 
 //bad_arc is the ABSOLUTE arc of directions from which we cannot block. If you want to fix it to e.g. the user's facing you will need to rotate the dirs yourself.
-/proc/check_shield_arc(mob/user, var/bad_arc, atom/damage_source = null, mob/attacker = null)
+/proc/check_parry_arc(mob/user, var/bad_arc, atom/damage_source = null, mob/attacker = null)
 	//check attack direction
 	var/attack_dir = 0 //direction from the user to the source of the attack
 	if(istype(damage_source, /obj/item/projectile))
@@ -24,17 +24,17 @@
 
 	//block as long as they are not directly behind us
 	var/bad_arc = reverse_direction(user.dir) //arc of directions from which we cannot block
-	if(!check_shield_arc(user, bad_arc, damage_source, attacker))
+	if(!check_parry_arc(user, bad_arc, damage_source, attacker))
 		return 0
 
 	return 1
 
 /obj/item/shield
 	name = "shield"
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	var/base_block_chance = 35
 	var/slowdown_time = 1
-	var/base_block_chance = 50
-	var/max_durability = 250 //So we can brake and need healing time to tome
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	var/max_durability = 250 //So we can brake and need healing time to time
 	var/durability = 250
 
 /obj/item/shield/proc/breakShield(mob/user)
@@ -59,13 +59,6 @@
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_ADHESIVE, FAILCHANCE_EASY, required_stat = STAT_MEC))
 				src.adjustShieldDurability(src.max_durability * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100, user)
 
-/obj/item/shield/attack(mob/M, mob/user)
-	if(isliving(M))
-		var/mob/living/L = M
-		if(L.slowdown < slowdown_time * 3)
-			L.slowdown += slowdown_time
-	return ..()
-
 /obj/item/shield/examine(mob/user)
 	if(!..(user,2))
 		return
@@ -87,10 +80,12 @@
 			to_chat(user, SPAN_DANGER("It's falling apart. This is one slip away from just being a pile of assorted trash."))
 
 /obj/item/shield/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
-	if(user.incapacitated())
+
+	if(istype(damage_source, /obj/item/projectile) || (attacker && get_dist(user, attacker) > 1) || user.incapacitated())
 		return 0
+
 	//block as long as they are not directly behind us
-	var/bad_arc = reverse_direction(user.dir)
+	var/bad_arc = reverse_direction(user.dir) //arc of directions from which we cannot block
 	if(istype(attacker, /mob/living/simple_animal/hostile) || istype(attacker, /mob/living/carbon/superior_animal/))
 		var/mob/living/carbon/human/defender = user
 		if(check_shield_arc(defender, bad_arc, damage_source, attacker))
@@ -103,49 +98,213 @@
 				defender.adjustHalLoss(damage_received)
 				defender.visible_message(SPAN_DANGER("\The [defender] blocks [attack_text] with \the [src]!"))
 				return 1
-	if(check_shield_arc(user, bad_arc, damage_source, attacker))
+	if(check_parry_arc(user, bad_arc, damage_source, attacker))
 		if(prob(get_block_chance(user, damage, damage_source, attacker)))
 			user.visible_message(SPAN_DANGER("\The [user] blocks [attack_text] with \the [src]!"))
 			return 1
 	return 0
 
+/obj/item/shield/block_bullet(mob/user, var/obj/item/projectile/damage_source, def_zone)
+	var/bad_arc = reverse_direction(user.dir)
+	var/list/protected_area = get_protected_area(user)
+	if(prob(50))
+		protected_area = protected_area | get_partial_protected_area(user)
+	if(protected_area.Find(def_zone) && check_shield_arc(user, bad_arc, damage_source))
+		if(!damage_source.check_penetrate(src))
+			visible_message(SPAN_DANGER("\The [user] blocks [damage_source] with \his [src]!"))
+			return 1
+	return 0
+
+/obj/item/shield/proc/check_shield_arc(mob/user, var/bad_arc, atom/damage_source = null, mob/attacker = null)
+	//shield direction
+
+	var/shield_dir = 0
+	if(user.get_equipped_item(slot_l_hand) == src)
+		shield_dir = turn(user.dir, 90)
+	else if(user.get_equipped_item(slot_r_hand) == src)
+		shield_dir = turn(user.dir, -90)
+	//check attack direction
+	var/attack_dir = 0 //direction from the user to the source of the attack
+	if(istype(damage_source, /obj/item/projectile))
+		var/obj/item/projectile/P = damage_source
+		attack_dir = get_dir(get_turf(user), P.starting)
+	else if(attacker)
+		attack_dir = get_dir(get_turf(user), get_turf(attacker))
+	else if(damage_source)
+		attack_dir = get_dir(get_turf(user), get_turf(damage_source))
+
+	//blocked directions
+	if(user.get_equipped_item(slot_back) == src)
+		if(attack_dir & bad_arc && attack_dir)
+			return TRUE
+		else
+			return FALSE
+
+
+	if(wielded && !(attack_dir && (attack_dir & bad_arc)))
+		return TRUE
+	else if(!(attack_dir == bad_arc) && !(attack_dir == reverse_direction(shield_dir)) && !(attack_dir == (bad_arc | reverse_direction(shield_dir))))
+		return TRUE
+	return FALSE
+
 /obj/item/shield/proc/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	return base_block_chance
 
-//TODOKAZ: add ballistic shield
+/obj/item/shield/proc/get_protected_area(mob/user)
+	return BP_ALL_LIMBS
+
+/obj/item/shield/proc/get_partial_protected_area(mob/user)
+	return list()
+
+/obj/item/shield/attack(mob/M, mob/user)
+	if(isliving(M))
+		var/mob/living/L = M
+		if(L.slowdown < slowdown_time * 3)
+			L.slowdown += slowdown_time
+	return ..()
+
+/obj/item/shield/buckler
+	name = "tactical shield"
+	desc = "A compact personal shield made of pre-preg aramid fibres designed to stop or deflect bullets without slowing down its wielder."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "tactical" //by CeUvi we thx thy
+	item_state = "tactical"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT|SLOT_BACK
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_PAINFUL
+	throw_speed = 2
+	throw_range = 6
+	w_class = ITEM_SIZE_BULKY
+	origin_tech = list(TECH_MATERIAL = 2)
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	matter = list(MATERIAL_GLASS = 5, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
+	price_tag = 500
+	attack_verb = list("shoved", "bashed")
+	max_durability = 150 //So we can brake and need healing time to time
+	durability = 150
+	var/cooldown = 0 //shield bash cooldown. based on world.time
+	var/picked_by_human = FALSE
+	var/mob/living/carbon/human/picking_human
+
+/obj/item/shield/buckler/handle_shield(mob/user)
+	. = ..()
+	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
+
+/obj/item/shield/buckler/get_protected_area(mob/user)
+	var/list/p_area = list(BP_CHEST)
+
+	if(user.get_equipped_item(slot_back) == src)
+		return p_area
+
+	if(user.get_equipped_item(slot_l_hand) == src)
+		p_area.Add(BP_L_ARM)
+	else if(user.get_equipped_item(slot_r_hand) == src)
+		p_area.Add(BP_R_ARM)
+
+	return p_area
+
+/obj/item/shield/buckler/get_partial_protected_area(mob/user)
+	return list(BP_GROIN,BP_HEAD)
+
+/obj/item/shield/buckler/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/melee/baton))
+		on_bash(W, user)
+	else
+		..()
+
+/obj/item/shield/buckler/proc/on_bash(var/obj/item/W, var/mob/user)
+	if(cooldown < world.time - 25)
+		user.visible_message(SPAN_WARNING("[user] bashes [src] with [W]!"))
+		playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
+		cooldown = world.time
 
 /obj/item/shield/riot
-	name = "riot shield"
-	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
+	name = "ballistic shield"
+	desc = "A heavy personal shield made of pre-preg aramid fibres designed to stop or deflect bullets and other projectiles fired at its wielder at the cost of mobility."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "riot"
 	item_state = "riot"
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
 	throwforce = WEAPON_FORCE_PAINFUL
 	throw_speed = 1
 	throw_range = 4
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_HUGE
 	origin_tech = list(TECH_MATERIAL = 2)
-	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10)
+	matter = list(MATERIAL_GLASS = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 15)
 	price_tag = 500
+	base_block_chance = 60
 	attack_verb = list("shoved", "bashed")
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	var/cooldown = 0 //shield bash cooldown. based on world.time
+	var/picked_by_human = FALSE
+	var/mob/living/carbon/human/picking_human
 
 /obj/item/shield/riot/handle_shield(mob/user)
 	. = ..()
 	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
 
 /obj/item/shield/riot/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
-	if(istype(damage_source, /obj/item/projectile))
-		var/obj/item/projectile/P = damage_source
-		//thin metal shields do not stop bullets or most lasers, even in space. Will block beanbags, rubber bullets, and stunshots at normal rates tho.
-		//Lasers it can block - AP weak laser beams, laser tag, taser bolts, emitter and practic
-		if((is_sharp(P) && damage > 15))
-			return 0
-	return base_block_chance
+	if(MOVING_QUICKLY(user))
+		return 0
+	if(MOVING_DELIBERATELY(user))
+		return base_block_chance
+
+/obj/item/shield/riot/get_protected_area(mob/user)
+	var/list/p_area = list(BP_CHEST, BP_GROIN, BP_HEAD)
+
+	if(user.get_equipped_item(slot_back) == src)
+		return p_area
+
+	if(MOVING_QUICKLY(user))
+		if(user.get_equipped_item(slot_l_hand) == src)
+			p_area = list(BP_L_ARM)
+		else if(user.get_equipped_item(slot_r_hand) == src)
+			p_area = list(BP_R_ARM)
+	else if(MOVING_DELIBERATELY(user) && wielded)
+		p_area = BP_ALL_LIMBS
+
+	if(user.get_equipped_item(slot_l_hand) == src)
+		p_area.Add(BP_L_ARM)
+	else if(user.get_equipped_item(slot_r_hand) == src)
+		p_area.Add(BP_R_ARM)
+	return p_area
+
+/obj/item/shield/riot/get_partial_protected_area(mob/user)
+	if(MOVING_DELIBERATELY(user))
+		return list(BP_ALL_LIMBS)
+
+/obj/item/shield/riot/New()
+	RegisterSignal(src, COMSIG_ITEM_PICKED, .proc/is_picked)
+	RegisterSignal(src, COMSIG_ITEM_DROPPED, .proc/is_dropped)
+	return ..()
+
+/obj/item/shield/riot/proc/is_picked()
+	var/mob/living/carbon/human/user = loc
+	if(istype(user))
+		picked_by_human = TRUE
+		picking_human = user
+		RegisterSignal(picking_human, COMSIG_HUMAN_WALKINTENT_CHANGE, .proc/update_state)
+		update_state()
+
+/obj/item/shield/riot/proc/is_dropped()
+	if(picked_by_human && picking_human)
+		UnregisterSignal(picking_human, COMSIG_HUMAN_WALKINTENT_CHANGE)
+		picked_by_human = FALSE
+		picking_human = null
+
+/obj/item/shield/riot/proc/update_state()
+	if(!picking_human)
+		return
+	if(MOVING_QUICKLY(picking_human))
+		item_state = "[initial(item_state)]_run"
+		visible_message("[picking_human] lowers their [src.name].")
+	else
+		item_state = "[initial(item_state)]_walk"
+		visible_message("[picking_human] raises their [src.name] to cover themself!")
+	update_wear_icon()
 
 /obj/item/shield/riot/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/melee/baton))
@@ -158,6 +317,168 @@
 		user.visible_message(SPAN_WARNING("[user] bashes [src] with [W]!"))
 		playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
 		cooldown = world.time
+
+/obj/item/shield/riot/lid
+	name = "lid shield"
+	desc = "A detached lid from a trash cart, that works well as shield."
+	icon_state = "lid_shield"
+	flags = CONDUCT
+	throw_speed = 2
+	throw_range = 2
+	max_durability = 150//Clearly meant to be better
+	durability = 150
+	matter = list(MATERIAL_STEEL = 8)
+	base_block_chance = 40
+	max_durability = 125 //So we can brake and need healing time to time
+	durability = 125
+
+/obj/item/shield/hardsuit
+	name = "hardsuit shield"
+	desc = "A massive ballistic shield that seems impossible to wield without mechanical assist."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "riot"
+	item_state = "metal"
+	flags = CONDUCT
+	slot_flags = SLOT_BACK
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_PAINFUL
+	throw_speed = 1
+	throw_range = 4
+	w_class = ITEM_SIZE_HUGE
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	base_block_chance = 70
+	attack_verb = list("smashed", "bashed")
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	max_durability = 250 //So we can brake and need healing time to time
+	durability = 250
+	var/cooldown = 0 //shield bash cooldown. based on world.time
+	var/picked_by_human = FALSE
+	var/mob/living/carbon/human/picking_human
+	slowdown_hold = 3
+	var/mob/living/creator
+	var/cleanup = TRUE	// Should the shield despawn moments after being discarded by the summoner?
+	var/init_procees = TRUE
+
+/obj/item/shield/hardsuit/get_protected_area(mob/user)
+	var/list/p_area = list(BP_CHEST, BP_GROIN, BP_HEAD)
+
+	if(user.get_equipped_item(slot_l_hand) == src)
+		p_area.Add(BP_L_ARM)
+	else if(user.get_equipped_item(slot_r_hand) == src)
+		p_area.Add(BP_R_ARM)
+	return p_area
+
+/obj/item/shield/hardsuit/get_partial_protected_area(mob/user)
+	return list(BP_ALL_LIMBS)
+
+/obj/item/shield/hardsuit/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/melee/baton))
+		on_bash(W, user)
+	else
+		..()
+
+/obj/item/shield/hardsuit/proc/on_bash(var/obj/item/W, var/mob/user)
+	if(cooldown < world.time - 25)
+		user.visible_message(SPAN_WARNING("[user] bashes [src] with [W]!"))
+		playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
+		cooldown = world.time
+
+/obj/item/shield/hardsuit/Initialize(mapload)
+	. = ..()
+	if(init_procees)
+		START_PROCESSING(SSobj, src)
+
+/obj/item/shield/hardsuit/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/shield/hardsuit/dropped()
+	if(cleanup)
+		spawn(1) if(src) qdel(src)
+
+/obj/item/shield/hardsuit/Process()
+	if(!creator || loc != creator || (creator.l_hand != src && creator.r_hand != src))
+		// Tidy up a bit.
+		if(isliving(loc))
+			var/mob/living/carbon/human/host = loc
+			if(istype(host))
+				for(var/obj/item/organ/external/organ in host.organs)
+					for(var/obj/item/O in organ.implants)
+						if(O == src)
+							organ.implants -= src
+			host.pinned -= src
+			host.embedded -= src
+			host.drop_from_inventory(src)
+		if(cleanup)
+			spawn(1) if(src) qdel(src)
+
+/*
+ * Handmade shield
+ */
+
+/obj/item/shield/buckler/handmade
+	name = "round handmade shield"
+	desc = "A handmade stout shield, that protects the wielder while not weighting them down."
+	icon_state = "buckler"
+	item_state = "buckler"
+	flags = null
+	throw_speed = 2
+	throw_range = 6
+	matter = list(MATERIAL_STEEL = 6)
+	base_block_chance = 40
+	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	max_durability = 100 //So we can brake and need healing time to time
+	durability = 100
+
+/obj/item/shield/buckler/handmade/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+	return base_block_chance
+
+
+/obj/item/shield/buckler/handmade/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/extinguisher) || istype(W, /obj/item/storage/toolbox) || istype(W, /obj/item/melee))
+		on_bash(W, user)
+	else
+		..()
+
+/obj/item/shield/buckler/handmade/bone
+	name = "bone shield"
+	desc = "A handmade stout shield, but with a small size crafted entirely of bone. Exceptionally good at enduring melee attacks due to its light weight and high density."
+	icon_state = "buckler_bone"
+	item_state = "buckler_bone"
+	flags = null
+	throw_speed = 2
+	throw_range = 6
+	armor = list(melee = 15, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	matter = list(MATERIAL_BONE = 6)
+	base_block_chance = 50
+
+
+/obj/item/shield/riot/tray
+	name = "tray shield"
+	desc = "A thin makeshift shield, but with a good size."
+	icon_state = "tray_shield"
+	item_state = "tray_shield"
+	flags = CONDUCT
+	throw_speed = 2
+	throw_range = 4
+	matter = list(MATERIAL_STEEL = 4)
+	base_block_chance = 50
+	max_durability = 80 //So we can brake and need healing time to time
+	durability = 80
+
+/obj/item/shield/riot/tray/get_protected_area(mob/user)
+	var/list/p_area = list(BP_CHEST, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_GROIN)
+	if(MOVING_DELIBERATELY(user) && wielded)
+		p_area = BP_ALL_LIMBS
+	return p_area
+
+/obj/item/shield/riot/tray/get_partial_protected_area(mob/user)
+	return list(BP_ALL_LIMBS)
+
+/obj/item/shield/riot/tray/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+	return base_block_chance
 
 /obj/item/shield/riot/crusader
 	name = "crusader tower shield"
@@ -175,123 +496,28 @@
 	. = ..()
 	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
 
-/obj/item/shield/riot/crusader/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
-	if(istype(damage_source, /obj/item/projectile))
-		var/obj/item/projectile/P = damage_source
-		if((is_sharp(P) && damage > 15) || istype(P, /obj/item/projectile/beam))
-			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
-	return base_block_chance
-
-/*
- * Handmade shield
- */
-
-/obj/item/shield/riot/handmade
-	name = "round handmade shield"
-	desc = "A handmade stout shield, but with a small size."
-	icon_state = "buckler"
-	item_state = "buckler"
-	flags = null
-	throw_speed = 2
-	throw_range = 6
-	max_durability = 350
-	durability = 350
-	matter = list(MATERIAL_WOOD = 10)
-	base_block_chance = 35
-	slowdown_time = 0 //Light do to being a buckler
-	w_class = ITEM_SIZE_NORMAL //WERE SMALLER
-
-/obj/item/shield/riot/handmade/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
-	return base_block_chance
-
-/obj/item/shield/riot/handmade/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/extinguisher) || istype(W, /obj/item/storage/toolbox) || istype(W, /obj/item/melee))
-		on_bash(W, user)
-	else
-		..()
-
-/obj/item/shield/riot/handmade/tray
-	name = "tray shield"
-	desc = "This one is thin, but compensate it with a good size."
-	icon_state = "tray_shield"
-	item_state = "tray_shield"
-	flags = CONDUCT
-	throw_speed = 2
-	throw_range = 4
-	max_durability = 100
-	durability = 100
-	matter = list(MATERIAL_STEEL = 4)
-	base_block_chance = 30
-
-
-/obj/item/shield/riot/handmade/tray/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
-	if(istype(damage_source, /obj/item))
-		var/obj/item/I = damage_source
-		if((is_sharp(I) && damage > 15) || istype(damage_source, /obj/item/projectile/beam))
-			return 20
-	return base_block_chance
-
-
-/obj/item/shield/riot/handmade/lid
-	name = "lid shield"
-	desc = "A detached lid from a trash cart, that works well as shield."
-	icon_state = "lid_shield"
-	flags = CONDUCT
-	throw_speed = 2
-	throw_range = 2
-	max_durability = 150//Clearly meant to be better
-	durability = 150
-	matter = list(MATERIAL_STEEL = 8)
-	base_block_chance = 40
-
-/obj/item/shield/riot/handmade/bone
-	name = "bone shield"
-	desc = "A handmade stout shield, but with a small size crafted entirely of bone. Exceptionally good at enduring melee attacks due to its light weight and high density."
-	icon_state = "buckler_bone"
-	item_state = "buckler_bone"
-	flags = null
-	throw_speed = 2
-	throw_range = 6
-	armor = list(melee = 15, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
-	matter = list(MATERIAL_BONE = 6)
-	base_block_chance = 50
-
 /*
  * Energy Shield
  */
 
-/obj/item/shield/energy
+/obj/item/shield/buckler/energy
 	name = "energy combat shield"
 	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "eshield0" // eshield1 for expanded
 	flags = CONDUCT
-	force = 3.0
-	throwforce = 5.0
+	force = 3
+	throwforce = 5
 	throw_speed = 1
 	throw_range = 4
-	max_durability = 200 //Weak
-	durability = 200
-	armor = list(melee = 10, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
 	w_class = ITEM_SIZE_SMALL
-	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_ILLEGAL = 4)
+	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_COVERT = 4)
 	attack_verb = list("shoved", "bashed")
 	var/active = 0
+	max_durability = 150 //So we can brake and need healing time to time
+	durability = 150
 
-/obj/item/shield/energy/reaver
-	name = "reaver combat shield"
-	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere. This one was created for void wolves, generally employed by reavers."
-	icon_state = "voidwolfshield0" // eshield1 for expanded
-
-/obj/item/shield/energy/reaver/update_icon()
-	icon_state = "voidwolfshield[active]"
-	update_wear_icon()
-	if(active)
-		set_light(1.5, 1.5, COLOR_LIGHTING_RED_BRIGHT)
-	else
-		set_light(0)
-
-/obj/item/shield/energy/handle_shield(mob/user)
+/obj/item/shield/buckler/energy/handle_shield(mob/user)
 	if(!active)
 		return 0 //turn it on first!
 	. = ..()
@@ -302,14 +528,14 @@
 		spark_system.start()
 		playsound(user.loc, 'sound/weapons/blade1.ogg', 50, 1)
 
-/obj/item/shield/energy/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+/obj/item/shield/buckler/energy/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
-		if((is_sharp(P) && damage > 15) || istype(P, /obj/item/projectile/beam))
+		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
 			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
 	return base_block_chance
 
-/obj/item/shield/energy/attack_self(mob/living/user as mob)
+/obj/item/shield/buckler/energy/attack_self(mob/living/user as mob)
 	if ((CLUMSY in user.mutations) && prob(50))
 		to_chat(user, SPAN_WARNING("You beat yourself in the head with [src]."))
 		user.take_organ_damage(5)
@@ -331,7 +557,7 @@
 	add_fingerprint(user)
 	return
 
-/obj/item/shield/energy/update_icon()
+/obj/item/shield/buckler/energy/update_icon()
 	icon_state = "eshield[active]"
 	update_wear_icon()
 	if(active)
@@ -339,7 +565,12 @@
 	else
 		set_light(0)
 
-/obj/item/shield/energy/reaver/update_icon()
+/obj/item/shield/buckler/energy/reaver
+	name = "reaver combat shield"
+	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere. This one was created for void wolves, generally employed by reavers."
+	icon_state = "voidwolfshield0" // eshield1 for expanded
+
+/obj/item/shield/buckler/energy/reaver/update_icon()
 	icon_state = "voidwolfshield[active]"
 	update_wear_icon()
 	if(active)

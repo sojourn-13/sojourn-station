@@ -43,7 +43,7 @@
 	var/permeability_coefficient = 1 // for chemicals/diseases
 	var/siemens_coefficient = 1 // for electrical admittance/conductance (electrocution checks and shit)
 	var/slowdown = 0 // How much clothing is slowing you down. Negative values speeds you up
-
+	var/slowdown_hold // How much holding an item slows you down.
 	var/datum/armor/armor // Ref to the armor datum
 	var/datum/armor/armor_up // Ref to the armor datum
 	var/datum/armor/armor_down // Ref to the armor datum

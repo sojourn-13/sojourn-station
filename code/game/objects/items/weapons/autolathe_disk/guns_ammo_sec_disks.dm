@@ -25,6 +25,8 @@
 		/datum/design/autolathe/sec/auto_eject_mod,
 		/datum/design/autolathe/gun/dnalock_mod,
 		/datum/design/autolathe/gun/flare_gun = 3,
+		/datum/design/autolathe/sec/riot = 10,
+		/datum/design/autolathe/sec/buckler = 5,
 		/datum/design/autolathe/ammo/flare_shell,
 		/datum/design/autolathe/ammo/flare_shell_g,
 		/datum/design/autolathe/ammo/flare_shell_b,
@@ -64,7 +66,10 @@
 		/datum/design/autolathe/gun/nordwind = 14, //basic uses the whole disk...
 		/datum/design/autolathe/device/landmine = 0,
 		//flaregun
-		/datum/design/autolathe/gun/flare_gun
+		/datum/design/autolathe/gun/flare_gun,
+		//Misc
+		/datum/design/autolathe/sec/riot,
+		/datum/design/autolathe/sec/buckler = 0,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
@@ -137,6 +142,8 @@
 		/datum/design/autolathe/gun/flare_gun,
 		//Misc
 		/datum/design/autolathe/device/landmine = 0,
+		/datum/design/autolathe/sec/riot = 2,
+		/datum/design/autolathe/sec/buckler,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo
