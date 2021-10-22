@@ -54,7 +54,7 @@
 		STAT_VIG = 5,
 	)
 
-	perks = list(/datum/perk/market_prof, /datum/perk/bartender)
+	perks = list(/datum/perk/market_prof, /datum/perk/bartender, /datum/perk/foodappraise)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
