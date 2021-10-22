@@ -19,7 +19,7 @@
 
 	var/active = FALSE
 	var/active_ap = ARMOR_PEN_EXTREME
-	var/active_force = 60 // It's a blade of super-heated plasma.
+	var/active_force = WEAPON_FORCE_LETHAL // It's a blade of super-heated plasma.
 	var/active_throwforce = WEAPON_FORCE_LETHAL // Less damage when thrown.
 	var/active_w_class = ITEM_SIZE_HUGE // Can't put that in a backpack while active
 	var/emp_burn_min = 25 // How much burn damage do the sword do to neighboring mobs if EMP'ed while active
