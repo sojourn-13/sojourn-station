@@ -197,32 +197,9 @@
 
 /obj/machinery/shieldwallgen/attackby(obj/item/I, mob/user)
 
-	if(default_deconstruction(I, user))
-		return
-
 	if(default_part_replacement(I, user))
 		return
 
-
-	if(QUALITY_BOLT_TURNING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
-			if(active)
-				to_chat(user, "Turn off the field generator first.")
-				return
-
-			else if(!state)
-				state = TRUE
-				playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-				to_chat(user, "You secure the external reinforcing bolts to the floor.")
-				src.anchored = 1
-				return
-
-			else
-				state = FALSE
-				playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-				to_chat(user, "You undo the external reinforcing bolts.")
-				src.anchored = 0
-				return
 
 	if(istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
 		if (src.allowed(user))
@@ -231,9 +208,51 @@
 		else
 			to_chat(user, "\red Access denied.")
 
-	else
-		src.add_fingerprint(user)
-		visible_message("\red The [src.name] has been hit with \the [I.name] by [user.name]!")
+	var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_SCREW_DRIVING)
+
+	if(panel_open && circuit)
+		usable_qualities += QUALITY_PRYING
+
+	if(active)
+		to_chat(user, SPAN_NOTICE("You can't work with [src] while its running!"))
+
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	switch(tool_type)
+
+
+		if(QUALITY_BOLT_TURNING)
+			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+				playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+				if(anchored)
+					to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
+					anchored = FALSE
+					state = FALSE
+				else
+					if(istype(get_turf(src), /turf/space)) return //No wrenching these in space!
+					to_chat(user, SPAN_NOTICE("You secure the [src] to the floor!"))
+					anchored = TRUE
+					state = TRUE
+
+				return
+
+		if(QUALITY_PRYING)
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_HARD, required_stat = STAT_MEC))
+				to_chat(user, SPAN_NOTICE("You remove the components of \the [src] with [I]."))
+				dismantle()
+			return TRUE
+
+		if(QUALITY_SCREW_DRIVING)
+			var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+				updateUsrDialog()
+				panel_open = !panel_open
+				to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance hatch of \the [src] with [I]."))
+				update_icon()
+			return TRUE
+
+		else
+			src.add_fingerprint(user)
+			visible_message("\red The [src.name] has been hit with \the [I.name] by [user.name]!")
 
 
 /obj/machinery/shieldwallgen/emag_act()

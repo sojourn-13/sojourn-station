@@ -201,7 +201,7 @@
 		//these are used to allow hiding edge items in food that is not on a table/tray
 		var/can_slice_here = isturf(src.loc) && ((locate(/obj/structure/table) in src.loc) || (locate(/obj/machinery/optable) in src.loc) || (locate(/obj/item/tray) in src.loc))
 
-		if (has_edge(W))
+		if (has_edge(W) || QUALITY_CUTTING in W.tool_qualities)
 			if (!can_slice_here)
 				to_chat(user, SPAN_WARNING("You cannot slice \the [src] here! You need a table or at least a tray to do it."))
 				return

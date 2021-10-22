@@ -205,16 +205,5 @@
 	icon_state = "voxmeat"
 	filling_color = "#3B8529"
 	preloaded_reagents = list("protein" = 8, "polystem" = 5, "quickclot" = 5)
-
-/obj/item/reagent_containers/food/snacks/meat/chicken/attackby(obj/item/I, mob/user)
-	if(QUALITY_CUTTING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_ZERO, required_stat = STAT_BIO))
-			to_chat(user, SPAN_NOTICE("You cut the poultry in smaller pieces."))
-			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
-			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
-			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
-			new /obj/item/reagent_containers/food/snacks/chickenbreast(src)
-			qdel(src)
-	else
-		..()
-
+	slice_path = /obj/item/reagent_containers/food/snacks/chickenbreast
+	slices_num = 4
