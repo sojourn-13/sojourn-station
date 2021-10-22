@@ -40,10 +40,7 @@
 			On their home-planet maunkyne are outcasts, executed in the north for the crime of existing and exiled in the south to the unforgiving desert wastes. \
 			As a maunkyne you might be able to pass as a normal sablekyne, even amongst your more aware kin, but the colony's strict regulation on demon powder has left you without your fix. \
 			Without it, your body is weak and prone to further addiction but your upbringing in the criminal underworld of Onkarth has left you with a feral cunning and tolerance to most drugs. \
-			Even the most 'noble' maunkyne knows much about medicine, in particular the creation of highly profitable and illegal drugs. \
-			Due to maunkyne's innate addictions they are barred from command and security roles."
-
-	restricted_depts = SECURITY | COMMAND
+			Even the most 'noble' maunkyne knows much about medicine, in particular the creation of highly profitable and illegal drugs."
 
 	restricted_to_species = list(FORM_SABLEKYNE)
 

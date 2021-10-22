@@ -9,9 +9,6 @@
 		/datum/job/rd,
 		/datum/job/cmo,
 		/datum/job/chief_engineer,
-		/datum/job/supsec,
-		/datum/job/inspector,
-		/datum/job/officer,
 		/datum/job/smc,
 		/datum/job/outsider
 		)

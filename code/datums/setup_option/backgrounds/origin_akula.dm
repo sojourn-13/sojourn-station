@@ -4,11 +4,9 @@
 			While the common akula is strong, most gangers train themselves in the 'honorable' way of fighting, favoring melee. Fixing up their bikes so often has also given them some mechanical knack.  \
 			Days and weeks of patching themselves up after a bar fight or gang-land style shooting have made most pretty self reliant but, sadly even the clever gangers eventually get caught. \
 			While criminal backgrounds are often overlooked, yours is one of public record and far more brutal than most, made known by either your boasting, tattoos, or records. \
-			Because of that security has no interest in hiring you, even as a militia grunt."
+			Security is still willing to hire you, but your records should note your history."
 
 	restricted_to_species = list(FORM_AKULA)
-
-	restricted_depts = SECURITY
 
 	perks = list(/datum/perk/chem_contraband)
 

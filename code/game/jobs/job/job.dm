@@ -41,6 +41,7 @@
 	var/loyalties = ""
 
 	var/setup_restricted = FALSE
+	var/list/disallow_species = list()
 
 	//Character stats modifers
 	var/list/stat_modifiers = list()
@@ -191,6 +192,10 @@
 /datum/job/proc/is_restricted(datum/preferences/prefs, feedback)
 	if(is_setup_restricted(prefs.setup_options))
 		to_chat(feedback, "<span class='boldannounce'>[setup_restricted ? "The job requires you to pick a specific setup option." : "The job conflicts with one of your setup options."]</span>")
+		return TRUE
+
+	if(prefs.species_form in disallow_species)
+		to_chat(feedback, "<span class='boldannounce'>[setup_restricted ? "You are playing a species that cannot take this job." : "The job conflicts with one of your setup options."]</span>")
 		return TRUE
 
 	if(minimum_character_age && (prefs.age < minimum_character_age))
