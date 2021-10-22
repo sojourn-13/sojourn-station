@@ -168,7 +168,7 @@
 	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically tougher than most, cheerfully resolute and have naturally \
 	evolved to resist most forms of toxins."
 
-	restricted_to_species = list(FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
 	perks = list(/datum/perk/blood_of_lead)
 
 	stat_modifiers = list(

@@ -28,13 +28,6 @@
 	else
 		to_chat(user, "<span class='info'>The pannel's glass is damage or dirty and generationg : [glass_power] well normal rating is 1x or more!</span>")
 
-
-/obj/machinery/power/solar/Initialize() //We want to make them like 20% odds to brake but not when made.
-	..()
-	if(prob(20))
-		broken()
-
-
 /obj/machinery/power/solar/drain_power()
 	return -1
 

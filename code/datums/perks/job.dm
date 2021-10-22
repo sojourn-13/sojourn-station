@@ -223,10 +223,10 @@
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
-	holder.mod_climb_delay -= 0.75
+	holder.mod_climb_delay -= 0.95
 
 /datum/perk/parkour/remove()
-	holder.mod_climb_delay += 0.75
+	holder.mod_climb_delay += 0.95
 	..()
 
 /datum/perk/chaingun_smoker
@@ -252,10 +252,10 @@
 
 /datum/perk/quiet_as_mouse/assign(mob/living/carbon/human/H)
 	..()
-	holder.noise_coeff -= 0.5
+	holder.noise_coeff -= 0.75
 
 /datum/perk/quiet_as_mouse/remove()
-	holder.noise_coeff += 0.5
+	holder.noise_coeff += 0.75
 	..()
 
 /datum/perk/junkborn
