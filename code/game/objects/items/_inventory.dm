@@ -64,8 +64,10 @@
 		user.r_hand.update_twohanding()
 	if(wielded)
 		unwield(user)
+	/* Removing this until we can make better use of these signals - Hex
 	SEND_SIGNAL(user, COMSIG_CLOTH_EQUIPPED, src) // Theres instances in which its usefull to keep track of it both on the user and individually
 	SEND_SIGNAL(src, COMSIG_CLOTH_EQUIPPED)
+	*/
 
 /obj/item/proc/dropped(mob/user)
 	if(zoom) //binoculars, scope, etc
