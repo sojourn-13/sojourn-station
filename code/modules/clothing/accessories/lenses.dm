@@ -31,7 +31,11 @@
 		lenses.saved_last_overlay = FALSE
 		to_chat(usr, "You detach \the [have_lenses] from \the [src]");
 		usr.put_in_hands(have_lenses)
+
+		/*
+		Further purging of signals for interacting with things -Hex
 		SEND_SIGNAL(src, COMSIG_GLASS_LENSES_REMOVED, usr, src)
+		*/
 		have_lenses = FALSE
 	else
 		to_chat(usr, "You haven't got any lenses in \the [src]");
