@@ -21,7 +21,7 @@
 	name = "Sproutling"
 	desc = "Sproutlings are folken less than a century old who have yet to decide what they seek. These folken are common, often later in life choosing to become elders or shamans \
 	depending on which clique they fall into. Sproutlings have the advantage of refreshed bodies unaffected by age and thus are the most adept for dangerous or risky tasks. \
-	Unlike other folken, a sproutling’s healing organ has yet to wear down from use and thus can use it twice as often."
+	Unlike other folken, a sproutling’s healing organ has yet to wear down from use and thus works far more effectively."
 
 	restricted_to_species = list(FORM_FOLKEN)
 
