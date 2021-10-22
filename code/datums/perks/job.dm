@@ -644,7 +644,7 @@
 
 /datum/perk/foodappraise
 	name = "Spice Food"
-	desc = "Your own special spice has anomalous properties that can enhance most food products.."
+	desc = "Your own special spice has anomalous properties that can enhance most food products."
 	active = FALSE
 	passivePerk = FALSE
 /datum/perk/foodappraise/activate()
