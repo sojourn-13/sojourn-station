@@ -9,7 +9,7 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_TGH = 5,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
@@ -87,6 +87,7 @@
 	desc = "At one point you served as a medical intern, this can range from a paramedic, nurse, orderly, and even a field medic. Your training wasn't exactly advanced but had the benefit of \
 	teaching you how to properly set a bandage and spot the differences and uses of various medical chemicals. Later on in life you might have taken your medical career further or chosen a different path. \
 	Whatever happened, you haven't forgotten the few tricks you learned."
+
 	perks = list(/datum/perk/chem_contraband)
 
 	stat_modifiers = list(
@@ -157,7 +158,7 @@
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_VIG = 5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
