@@ -19,6 +19,11 @@
 	path = /obj/item/clothing/head/beret
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/beretselect
+	display_name = "beret, customized"
+	path = /obj/item/clothing/head/beret/custom
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/head/boater
 	display_name = "boater hat"
 	path = /obj/item/clothing/head/boaterhat

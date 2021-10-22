@@ -317,6 +317,71 @@
 		icon_state ="ward"
 		body_parts = list(BP_HEAD)
 
+	hesphaistos_body
+		name = "FBP-Hesphaistos chassis"
+		icon_state ="hesphaistos"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	hesphaistos_head
+		name = "FBP-Hesphaistos head"
+		icon_state ="hesphaistos"
+		body_parts = list(BP_HEAD)
+
+	bishop_body
+		name = "FBP-Bishop chassis"
+		icon_state ="bishop"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	bishop_head
+		name = "FBP-Bishop head"
+		icon_state ="bishop"
+		body_parts = list(BP_HEAD)
+
+	xion_body
+		name = "FBP-Xion chassis"
+		icon_state ="xion"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	xion_head
+		name = "FBP-Xion head"
+		icon_state ="xion"
+		body_parts = list(BP_HEAD)
+
+	spirit_body
+		name = "FBP-Ward Spirit chassis"
+		icon_state ="spirit"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	spirit_head
+		name = "FBP-Ward Spirit head"
+		icon_state ="spirit"
+		body_parts = list(BP_HEAD)
+
+	bishop_alt_optics
+		name = "FBP-Bishop Alt. Optics (IPC)"
+		icon_state = "bishop_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	ward_alt_optics
+		name = "FBP-Ward Takahashi Alt. Optics (IPC)"
+		icon_state = "wardtakahashi_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	xion_alt_optics
+		name = "FBP-Xion Alt. Optics (IPC)"
+		icon_state = "xion_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	hesphaistos_alt_optics
+		name = "FBP-Hesphaistos Alt. Optics (IPC)"
+		icon_state = "hephaestus_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	morpheus_alt_optics
+		name = "FBP-Morpheus Optics (IPC)"
+		icon_state = "morpheus_optics"
+		body_parts = list(BP_HEAD)
+
 	synthskin_human
 		name = "FBP-Human synthskin"
 		icon_state = "synthskinhuman"

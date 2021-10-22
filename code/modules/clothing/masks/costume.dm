@@ -287,6 +287,16 @@
 	siemens_coefficient = 0.9
 	body_parts_covered = HEAD|FACE|EYES
 
+/obj/item/clothing/mask/costume/halloween/scream
+	name = "ghastly mask"
+	desc = "A spooky, ghost-like mask. Sure to elicite screams from colonists of all ages!"
+	icon_state = "ghostmask"
+	item_state = "ghostmask"
+	flags_inv = HIDEFACE
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = FACE|EYES
+
 /*History*/
 
 /obj/item/clothing/mask/costume/history/plaguedoctor

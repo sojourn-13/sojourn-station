@@ -39,6 +39,13 @@
 	model = "ward"
 	price_tag = 200
 
+/obj/item/organ/external/robotic/ward/spirit
+	name = "Ward Takehashi Spirit"
+	desc = "Prosthesis with a sleek black and white polymer finish."
+	force_icon = 'icons/mob/human_races/cyberlimbs/spirit.dmi'
+	model = "spirit"
+	price_tag = 200
+
 //Character setup prostheses
 
 /obj/item/organ/external/robotic/asters
@@ -154,7 +161,7 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 /obj/item/organ/external/robotic/full_body_prosthetic/head
 	name = "Prosthetic Head"
 	default_description = /datum/organ_description/head
-	
+
 // Junktech
 /obj/item/organ/external/robotic/junktech
 	name = "\"Junktech\""
