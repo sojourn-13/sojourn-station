@@ -8,6 +8,7 @@
 	restricted_to_species = list(FORM_MYCUS)
 
 	perks = list(PERK_MUSH_FOLLOWER)
+	racial_implants_head = (/obj/item/organ_module/active/hud/night_bio_mycus)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -28,6 +29,7 @@
 	restricted_to_species = list(FORM_MYCUS)
 
 	perks = list(PERK_SLIME_FOLLOWER)
+	racial_implants_head = (/obj/item/organ_module/active/hud/night_bio_mycus)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -47,6 +49,7 @@
 	few cryptics bother with cultivating sporelings, finding that managing them is more trouble than its worth."
 
 	restricted_to_species = list(FORM_MYCUS)
+	racial_implants_head = (/obj/item/organ_module/active/hud/night_bio_mycus)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
