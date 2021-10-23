@@ -302,7 +302,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSING_HUMAN_EQUITP)
 	..()
-
+/* //This one is buggy as shit and few people know how it works, removing it until it can be fixed. -Kaz
 /datum/individual_objective/economy
 	name = "Business"
 	var/datum/money_account/target
@@ -340,3 +340,4 @@
 	if(completed) return
 	UnregisterSignal(owner.initial_account, COMSIG_TRANSATION)
 	..()
+*/
