@@ -6,9 +6,9 @@
 	w_class = ITEM_SIZE_BULKY
 
 	var/armed = FALSE
-	var/cooldown = 60 SECONDS
+	var/cooldown = 180 SECONDS
 	var/trigger_range = 1
-	var/emp_range = 5
+	var/emp_range = 3
 	var/cooldown_timer = 0
 
 /obj/item/emp_mine/proc/arm()
