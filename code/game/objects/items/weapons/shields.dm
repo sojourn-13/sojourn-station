@@ -421,7 +421,7 @@
 /obj/item/shield/buckler/handmade
 	name = "round handmade shield"
 	desc = "A handmade stout shield, that protects the wielder while not weighting them down."
-	icon_state = "buckler"
+	icon_state = "buckler" //Sprites done by CeUvi
 	item_state = "buckler"
 	flags = null
 	throw_speed = 2
