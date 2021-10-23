@@ -245,10 +245,6 @@
 /obj/item/oddity/common/old_id,
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper)
-"bb" = (
-/obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
-/area/colony/exposedsun/pastgate)
 "bc" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/big/bush3,
@@ -2082,10 +2078,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
-"hP" = (
-/obj/random/flora/jungle_tree,
-/turf/simulated/floor/asteroid/grass,
-/area/colony/exposedsun/pastgate)
 "hQ" = (
 /obj/structure/flora/small/grassa4,
 /turf/unsimulated/wall/jungle,
@@ -2728,6 +2720,10 @@
 /obj/structure/grille,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"jT" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/colony/exposedsun/pastgate)
 "jU" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light,
@@ -7169,6 +7165,10 @@
 /obj/structure/flora/small/bushc2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"zV" = (
+/obj/random/flora/small_jungle_tree,
+/turf/unsimulated/wall/jungle,
+/area/colony/exposedsun/pastgate)
 "zW" = (
 /obj/structure/flora/small/bushc2,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -10090,10 +10090,6 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/mineral/planet,
 /area/colony/exposedsun/pastgate)
-"Mm" = (
-/obj/random/flora/small_jungle_tree,
-/turf/simulated/mineral/planet,
-/area/nadezhda/outside/meadow)
 "Mn" = (
 /obj/structure/window/reinforced,
 /turf/simulated/floor/asteroid/grass,
@@ -10340,7 +10336,7 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
-"Nv" = (
+"Nw" = (
 /obj/random/flora/jungle_tree,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/forest)
@@ -10615,10 +10611,6 @@
 /obj/item/paper/Court,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
-"Pk" = (
-/obj/effect/step_trigger/ironcompound_to_abandonedfortress_2_A,
-/turf/unsimulated/mineral,
-/area/colony)
 "Pm" = (
 /obj/structure/flora/small/busha2,
 /obj/random/mob/vox/low_chance,
@@ -10855,10 +10847,6 @@
 /mob/living/simple_animal/hostile/republicon/range,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
-"QA" = (
-/obj/random/flora/jungle_tree,
-/turf/simulated/mineral/planet,
-/area/nadezhda/outside/meadow)
 "QE" = (
 /obj/machinery/porta_turret/One_star{
 	check_access = 0
@@ -10957,6 +10945,10 @@
 /obj/structure/salvageable/implant_container_os,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Rg" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/mineral/planet,
+/area/nadezhda/outside/meadow)
 "Rh" = (
 /obj/structure/table/woodentable,
 /obj/landmark/storyevent/midgame_stash_spawn,
@@ -11307,6 +11299,10 @@
 /obj/random/single,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"Te" = (
+/obj/random/flora/small_jungle_tree,
+/turf/simulated/mineral/planet,
+/area/nadezhda/outside/meadow)
 "Tf" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -24
@@ -12116,10 +12112,6 @@
 /mob/living/simple_animal/hostile/wurm/adult,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
-"Xo" = (
-/obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A,
-/turf/unsimulated/mineral,
-/area/colony)
 "Xr" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha1,
@@ -12461,6 +12453,10 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest)
+"Zd" = (
+/obj/effect/step_trigger/ironcompound_to_abandonedfortress_2_A,
+/turf/unsimulated/mineral,
+/area/colony)
 "Ze" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -12517,6 +12513,10 @@
 /obj/item/tool/pickaxe/jackhammer/onestar,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
+"Zt" = (
+/obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A,
+/turf/unsimulated/mineral,
+/area/colony)
 "Zu" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
@@ -12844,8 +12844,8 @@ ab
 ab
 ab
 ab
-Pk
-Xo
+Zd
+Zt
 ab
 aa
 "}
@@ -55138,7 +55138,7 @@ zP
 Ab
 il
 il
-Nv
+Nw
 hf
 hk
 hk
@@ -56603,7 +56603,7 @@ il
 il
 il
 il
-Nv
+Nw
 hk
 zP
 zP
@@ -61039,7 +61039,7 @@ Az
 hW
 hW
 hW
-QA
+Rg
 hA
 DV
 hW
@@ -61249,7 +61249,7 @@ hW
 hW
 hW
 BL
-QA
+Rg
 Cg
 hW
 hW
@@ -61261,7 +61261,7 @@ hA
 hA
 hA
 hA
-QA
+Rg
 hW
 hW
 hW
@@ -62100,7 +62100,7 @@ De
 Cx
 hW
 hW
-QA
+Rg
 BL
 hA
 zJ
@@ -62276,7 +62276,7 @@ Ae
 Ae
 Jv
 Ae
-Mm
+Te
 BL
 Sk
 Ad
@@ -63129,7 +63129,7 @@ hW
 hW
 hW
 BL
-QA
+Rg
 hA
 hA
 hA
@@ -63551,7 +63551,7 @@ hW
 hW
 hW
 hW
-QA
+Rg
 hA
 hA
 Bp
@@ -63770,7 +63770,7 @@ Dt
 hW
 hW
 hW
-Mm
+Te
 hA
 hA
 hA
@@ -64101,7 +64101,7 @@ gf
 Be
 Ah
 gf
-bb
+zV
 fE
 yC
 Ah
@@ -64949,7 +64949,7 @@ FV
 gd
 Ck
 vL
-bb
+zV
 fE
 gf
 gf
@@ -65152,7 +65152,7 @@ gf
 fE
 gf
 gd
-hP
+jT
 gd
 kl
 gd
@@ -65572,13 +65572,13 @@ gf
 gf
 OF
 fE
-bb
+zV
 gd
 gd
 fE
 gd
 gd
-bb
+zV
 gf
 gf
 gf
@@ -66609,7 +66609,7 @@ hk
 hk
 hk
 hk
-Nv
+Nw
 ys
 il
 il
@@ -67631,7 +67631,7 @@ Dx
 gd
 gd
 gd
-hP
+jT
 il
 il
 vU
@@ -68183,7 +68183,7 @@ hW
 hW
 hW
 hW
-Mm
+Te
 BL
 hW
 hW
@@ -68671,7 +68671,7 @@ gd
 gd
 gd
 vD
-hP
+jT
 gd
 zB
 Dx
@@ -68706,7 +68706,7 @@ il
 il
 hz
 hk
-Nv
+Nw
 il
 il
 tt
@@ -68918,7 +68918,7 @@ hw
 hw
 hk
 hw
-Nv
+Nw
 il
 il
 hk
@@ -69098,7 +69098,7 @@ gd
 il
 il
 il
-Nv
+Nw
 hw
 hk
 hk
@@ -69545,7 +69545,7 @@ hw
 hz
 hk
 hk
-Nv
+Nw
 ZN
 hw
 hk
@@ -70554,7 +70554,7 @@ gd
 gd
 gd
 gf
-hP
+jT
 gd
 gd
 gd
@@ -71179,7 +71179,7 @@ Dx
 le
 gd
 gd
-hP
+jT
 gf
 gf
 zG
@@ -71334,7 +71334,7 @@ hW
 hW
 hW
 hW
-QA
+Rg
 hA
 gf
 gf
@@ -71529,7 +71529,7 @@ AU
 AU
 hA
 BL
-QA
+Rg
 Rw
 Bp
 hA
@@ -71562,7 +71562,7 @@ Ae
 hW
 hW
 hW
-QA
+Rg
 gf
 gf
 gf
@@ -72996,7 +72996,7 @@ BL
 hW
 vJ
 hW
-QA
+Rg
 hA
 hA
 Dt
@@ -73268,7 +73268,7 @@ gd
 gd
 gd
 gd
-hP
+jT
 gd
 zy
 fE
@@ -73317,7 +73317,7 @@ MY
 hA
 hA
 Wl
-QA
+Rg
 Dl
 hW
 Ae
@@ -73517,7 +73517,7 @@ hk
 hk
 hw
 hm
-Nv
+Nw
 hw
 hw
 MY
@@ -73649,7 +73649,7 @@ hW
 hW
 hW
 hW
-QA
+Rg
 hA
 hA
 hA
@@ -73692,7 +73692,7 @@ gd
 gd
 yT
 gf
-hP
+jT
 il
 il
 il
@@ -74343,7 +74343,7 @@ zt
 il
 il
 il
-Nv
+Nw
 hk
 hk
 TL
@@ -75165,7 +75165,7 @@ hk
 il
 il
 il
-Nv
+Nw
 hk
 hk
 hk
@@ -75184,7 +75184,7 @@ hk
 hk
 hk
 hw
-Nv
+Nw
 yU
 Tu
 hk
@@ -75395,7 +75395,7 @@ hW
 hW
 hW
 Ae
-QA
+Rg
 hA
 hk
 hk
@@ -76654,7 +76654,7 @@ hW
 hW
 hW
 hW
-Mm
+Te
 hk
 jr
 Ba
@@ -76863,7 +76863,7 @@ Cx
 hW
 hW
 hW
-QA
+Rg
 hk
 hk
 Os
@@ -77886,7 +77886,7 @@ hw
 hw
 hw
 hw
-Nv
+Nw
 hw
 il
 il
@@ -79624,7 +79624,7 @@ Ep
 WO
 WO
 WO
-Mm
+Te
 Ep
 Ep
 hA
@@ -79881,7 +79881,7 @@ gf
 gf
 hA
 BL
-QA
+Rg
 hW
 hW
 hW
@@ -80009,7 +80009,7 @@ hk
 Ef
 hw
 hw
-Nv
+Nw
 il
 il
 Ao
@@ -80839,7 +80839,7 @@ ta
 ta
 il
 il
-Nv
+Nw
 hw
 hk
 hk
@@ -80875,7 +80875,7 @@ hk
 hw
 Mw
 hw
-Nv
+Nw
 Ba
 Ba
 Ba
@@ -81319,7 +81319,7 @@ hk
 hk
 hk
 hw
-Nv
+Nw
 hk
 hk
 hk
@@ -81419,7 +81419,7 @@ ik
 il
 hm
 iT
-Nv
+Nw
 hk
 hk
 hk
@@ -81847,7 +81847,7 @@ ta
 il
 il
 il
-Nv
+Nw
 ta
 vR
 ys
@@ -81858,7 +81858,7 @@ Ao
 il
 il
 il
-Nv
+Nw
 hk
 hk
 hk
@@ -82697,7 +82697,7 @@ hk
 hk
 il
 il
-Nv
+Nw
 hw
 il
 Ac
@@ -83416,7 +83416,7 @@ jr
 hk
 hk
 hw
-Nv
+Nw
 nC
 vW
 vW
@@ -83424,7 +83424,7 @@ vW
 vW
 il
 il
-Nv
+Nw
 hw
 hk
 hk
@@ -83577,7 +83577,7 @@ zP
 Ar
 Gi
 hW
-QA
+Rg
 hA
 hA
 hA
@@ -83613,7 +83613,7 @@ hk
 hk
 il
 il
-Nv
+Nw
 Qj
 Qj
 vW
@@ -83718,7 +83718,7 @@ hk
 hk
 hk
 il
-Nv
+Nw
 nC
 il
 il
@@ -84265,7 +84265,7 @@ gf
 gf
 gf
 gf
-bb
+zV
 Az
 hW
 Ae
@@ -84474,7 +84474,7 @@ gf
 gf
 gf
 gf
-bb
+zV
 Az
 hW
 Ae
@@ -84798,7 +84798,7 @@ hk
 hk
 hw
 hw
-Nv
+Nw
 il
 Ai
 Ai
@@ -84878,7 +84878,7 @@ il
 il
 il
 il
-Nv
+Nw
 iS
 nC
 nC
@@ -84892,7 +84892,7 @@ gf
 gf
 gf
 gf
-bb
+zV
 hW
 Ae
 Ae
@@ -85101,7 +85101,7 @@ gf
 gf
 gf
 gf
-bb
+zV
 hW
 hW
 Ae
@@ -85310,7 +85310,7 @@ gf
 gf
 gf
 gf
-bb
+zV
 Az
 hW
 hW
@@ -86121,7 +86121,7 @@ hk
 hk
 il
 il
-Nv
+Nw
 hw
 Ai
 Ao
@@ -86148,7 +86148,7 @@ gf
 gf
 gf
 gf
-Mm
+Te
 hW
 Az
 hW
@@ -86363,7 +86363,7 @@ hA
 Bp
 hA
 hA
-Mm
+Te
 BL
 BL
 hA
@@ -86683,7 +86683,7 @@ hk
 hk
 hk
 hk
-Nv
+Nw
 hw
 hw
 hk
@@ -87780,7 +87780,7 @@ hW
 hW
 hW
 hW
-QA
+Rg
 hA
 hk
 hk
@@ -87959,7 +87959,7 @@ hW
 hW
 hW
 hW
-QA
+Rg
 hA
 hk
 hk
@@ -89061,7 +89061,7 @@ hk
 hk
 hk
 hk
-Nv
+Nw
 Gq
 hC
 il
@@ -89487,7 +89487,7 @@ il
 il
 hk
 hw
-Nv
+Nw
 Ar
 Ba
 il
@@ -90473,7 +90473,7 @@ hA
 hA
 hW
 FU
-QA
+Rg
 BL
 hA
 hA
@@ -91573,7 +91573,7 @@ Ba
 il
 il
 hk
-Nv
+Nw
 hk
 hk
 hw
@@ -91966,7 +91966,7 @@ hW
 hW
 hW
 hW
-QA
+Rg
 hA
 hk
 hw
@@ -92573,7 +92573,7 @@ hW
 hW
 hW
 hW
-QA
+Rg
 hW
 zL
 zL

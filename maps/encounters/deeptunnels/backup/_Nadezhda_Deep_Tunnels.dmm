@@ -8845,10 +8845,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomal)
-"BF" = (
-/obj/machinery/floodlight,
-/turf/simulated/floor/tiled/white/gray_perforated,
-/area/nadezhda/rnd/outpostgeneral)
 "BG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/mining,
@@ -9028,6 +9024,10 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomal)
+"IG" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/rnd/outpostgeneral)
 "IH" = (
 /turf/simulated/floor/asteroid,
 /area/nadezhda/rnd/mixing)
@@ -17954,7 +17954,7 @@ ih
 kd
 rt
 rt
-BF
+IG
 jA
 jA
 jA
