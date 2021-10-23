@@ -23,7 +23,7 @@
 /datum/individual_objective/get_nsa
 	name = "Blow the Lid"
 	req_department = list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL)
-	units_requested = 250
+	units_requested = 90
 	units_completed = 0
 
 /datum/individual_objective/get_nsa/assign()
@@ -69,7 +69,7 @@
 
 /datum/individual_objective/adiction/assign()
 	..()
-	units_requested = rand(3,4)
+	units_requested = rand(1,2)
 	desc = "Observe a sum of [units_requested] occasions where someone becomes addicted to chemicals. Record and remember the physical and mental effects."
 	RegisterSignal(mind_holder, COMSIG_CARBON_ADICTION, .proc/task_completed)
 
@@ -138,7 +138,7 @@
 
 /datum/individual_objective/damage/assign()
 	..()
-	units_requested = rand(120,160)
+	units_requested = rand(40,80)
 	desc = "Receive cumulative [units_requested] damage of any kind, record the damage and a medical scanner print out for later data logging and treatment."
 	last_health = mind_holder.health
 	RegisterSignal(mind_holder, COMSIG_HUMAN_HEALTH, .proc/task_completed)
