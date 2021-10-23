@@ -10,8 +10,8 @@
 	plane = FLOOR_PLANE
 	icon = 'icons/obj/burrows.dmi'
 	icon_state = "cracks"
-//	level = BELOW_PLATING_LEVEL
-//	layer = ABOVE_NORMAL_TURF_LAYER
+//	level = BELOW_PLATING_LEVEL - Eris layering of it
+//	layer = ABOVE_NORMAL_TURF_LAYER - Eris layering of it
 	layer = OPEN_DOOR_LAYER //Basiclly we can see this over most things other then closed doors, and the like
 	plane = GAME_PLANE
 
