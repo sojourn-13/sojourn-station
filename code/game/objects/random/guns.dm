@@ -44,12 +44,13 @@
 	spawn_nothing_percentage = 80
 
 
-
-
 /obj/random/gun_normal
 	name = "random normal gun"
 	icon_state = "gun-green"
 	spawn_nothing_percentage = 10
+
+/obj/random/gun_normal/always_spawn
+	spawn_nothing_percentage = 0
 
 /obj/random/gun_normal/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/lamia = 0.1,\
