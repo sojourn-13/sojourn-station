@@ -312,6 +312,20 @@
 /obj/item/ammo_casing/flare/prespawn
 	amount = 3
 
+/obj/item/ammo_casing/flare/old
+	name = "old .22 flare shell"
+	desc = "A .22 chemical flare shell designed to produce a distress signal or illuminate an area."
+	caliber = CAL_FLARE
+	icon_state = "old-shell"
+	spent_icon = "old-shell-spent"
+	projectile_type = /obj/item/projectile/bullet/flare/choas
+	matter = list(MATERIAL_PLASTIC = 1)
+	matter_reagents = list("phosphorus" = 3)
+	maxamount = 1
+
+/obj/item/ammo_casing/flare/old/prespawn
+	amount = 1
+
 /obj/item/ammo_casing/flare/blue
 	name = ".22 blue flare shell"
 	desc = "A .22 chemical flare shell designed to produce a blue distress signal or illuminate an area."
@@ -330,8 +344,8 @@
 	name = ".22 green flare shell"
 	desc = "A .22 chemical flare shell designed to produce a green distress signal or illuminate an area."
 	caliber = CAL_FLARE
-	icon_state = "b-shell"
-	spent_icon = "b-shell-spent"
+	icon_state = "g-shell"
+	spent_icon = "g-shell-spent"
 	projectile_type = /obj/item/projectile/bullet/flare/green
 	matter = list(MATERIAL_PLASTIC = 1)
 	matter_reagents = list("phosphorus" = 3)

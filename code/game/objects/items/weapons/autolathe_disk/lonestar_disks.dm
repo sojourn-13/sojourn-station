@@ -29,6 +29,7 @@
 		/datum/design/autolathe/tool/weldermask,
 		/datum/design/autolathe/device/flamethrower,
 		/datum/design/autolathe/device/proxsensor,
+		/datum/design/autolathe/part/cable_coil,
 		//Misc
 		/datum/design/autolathe/misc/flashlight,
 		/datum/design/autolathe/tool/ducttape,
@@ -123,6 +124,7 @@
 		/datum/design/autolathe/tool/weldermask,
 		/datum/design/autolathe/device/flamethrower,
 		/datum/design/autolathe/device/proxsensor,
+		/datum/design/autolathe/part/cable_coil,
 		//Misc
 		/datum/design/autolathe/misc/flashlight,
 		/datum/design/autolathe/tool/ducttape,
@@ -194,4 +196,5 @@
 		/datum/design/autolathe/tool/mop,
 		/datum/design/autolathe/device/hand_labeler,
 		/datum/design/research/item/light_replacer,
+		/datum/design/autolathe/part/cable_coil,
 		)

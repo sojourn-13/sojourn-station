@@ -152,7 +152,7 @@
 		/datum/design/autolathe/part/igniter,						//regular parts
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_prox,
-		/datum/design/research/item/part/basic_capacitor,
+		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/cell/large/excelsior,				//power cells
 		/datum/design/autolathe/cell/medium/excelsior,
 		/datum/design/autolathe/cell/small/excelsior,
@@ -222,6 +222,7 @@
 		/datum/design/autolathe/circuit/autolathe_disk_cloner,
 		/datum/design/autolathe/circuit/recharger,
 		/datum/design/autolathe/device/propaganda_chip,
+		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/part/igniter,//regular parts
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_prox,
