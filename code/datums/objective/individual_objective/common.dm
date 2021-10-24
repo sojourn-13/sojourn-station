@@ -282,7 +282,7 @@
 
 /datum/individual_objective/collenction/proc/pick_candidates()
 	var/obj/randomcatcher/CATCH = new /obj/randomcatcher
-	return CATCH.get_item(/obj/random/gun_normal)
+	return CATCH.get_item(/obj/random/gun_normal/always_spawn)
 
 /datum/individual_objective/collenction/assign()
 	..()
