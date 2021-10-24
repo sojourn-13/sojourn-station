@@ -198,6 +198,8 @@
 	icon_state = "birdmeat"
 	filling_color = "#EDA897"
 	preloaded_reagents = list("protein" = 8)
+	slice_path = /obj/item/reagent_containers/food/snacks/chickenbreast
+	slices_num = 4
 
 /obj/item/reagent_containers/food/snacks/meat/chicken/vox
 	name = "tribal bird meat"
