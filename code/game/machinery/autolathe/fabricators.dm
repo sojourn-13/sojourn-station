@@ -125,7 +125,7 @@
 			list(name="SBAW Magazine (20mm HEFI)", cost=850, path=/obj/item/ammo_magazine/sbaw/he),
 		"Exotic",
 			list(name="Ammo Strip (7.5mm Rifle)", cost=400, path=/obj/item/ammo_magazine/speed_loader_rifle_75),
-			list(name="Ammo Strip (.408 Rifle)", cost=400, path=/obj/item/ammo_magazine/heavy_rifle_408),
+			list(name="Ammo Strip (.408 Rifle)", cost=400, path=/obj/item/ammo_magazine/speed_loader_heavy_rifle_408),
 			list(name="Shells (20mm Incendiary)", cost=400, path=/obj/item/ammo_casing/shotgun/incendiary/prespawned),
 			list(name="Shells (20mm Payload)", cost=500, path=/obj/item/ammo_casing/shotgun/payload/prespawned),
 			list(name="Heavy Rifle Drum Magazine (.408 Drum)", cost=500, path=/obj/item/ammo_magazine/heavy_rifle_408_drum),
