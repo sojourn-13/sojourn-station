@@ -272,7 +272,6 @@
 		/datum/design/autolathe/gun/mk58,
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
-		/datum/design/research/item/weapon/stunrevolver,
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/gun/sniperrifle = 6
 	)

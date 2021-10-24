@@ -13,6 +13,7 @@
 		/datum/design/research/item/part/micro_mani,
 		/datum/design/research/item/part/basic_micro_laser,
 		/datum/design/research/item/part/basic_matter_bin,
+		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/device/camera,
 		/datum/design/autolathe/device/camerafilm,
 		/datum/design/autolathe/part/igniter,
@@ -51,6 +52,7 @@
 		/datum/design/autolathe/part/diamondblade,
 		/datum/design/autolathe/tool/ducttape/fiber,
 		/datum/design/autolathe/tool/ducttape/glue,
+		/datum/design/autolathe/part/cable_coil = 0,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/parttoolpack
@@ -111,6 +113,7 @@
 		/datum/design/research/circuit/diesel = 3,
 		/datum/design/autolathe/circuit/trade_beacon_receiving = 5,
 		/datum/design/autolathe/circuit/trade_beacon_sending = 5,
+		/datum/design/autolathe/part/cable_coil,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/logistics
@@ -127,6 +130,7 @@
 		/datum/design/autolathe/circuit/pile_ripper,
 		/datum/design/autolathe/circuit/trade_beacon_receiving,
 		/datum/design/autolathe/circuit/trade_beacon_sending,
+		/datum/design/autolathe/part/cable_coil,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/engineering
@@ -142,6 +146,7 @@
 		/datum/design/research/item/part/micro_mani,
 		/datum/design/research/item/part/basic_micro_laser,
 		/datum/design/research/item/part/basic_matter_bin,
+		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/part/igniter,
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_infra,
@@ -252,6 +257,7 @@
 	/datum/design/research/item/part/smes_coil/super_capacity = 2,
 	/datum/design/autolathe/tool/multitool = 5,
 	/datum/design/autolathe/tool/multitool/advanced = 10,
+	/datum/design/autolathe/part/cable_coil,
 	/datum/design/autolathe/misc/tube,
 	/datum/design/autolathe/misc/tube_large,
 	/datum/design/autolathe/misc/tube_powersaver,
@@ -382,6 +388,7 @@
 	/datum/design/research/item/part/smes_coil/weak,
 	/datum/design/research/item/part/smes_coil/super_io,
 	/datum/design/research/item/part/smes_coil/super_capacity,
+	/datum/design/autolathe/part/cable_coil,
 	//misc
 	/datum/design/autolathe/misc/extinguisher,
 	/datum/design/autolathe/conveyor,

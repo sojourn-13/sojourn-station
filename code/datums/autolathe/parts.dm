@@ -18,6 +18,12 @@
 	name = "voice analyzer"
 	build_path = /obj/item/device/assembly/voice
 
+/datum/design/autolathe/part/cable_coil
+	name = "cable coil"
+	build_path = /obj/item/stack/cable_coil
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 4) //Idea is that this is were your getting the plasticside and copper
+	takes_chemicals = FALSE //geting plasticside and copper is hard
+
 /datum/design/autolathe/part/timer
 	name = "timer"
 	build_path = /obj/item/device/assembly/timer
