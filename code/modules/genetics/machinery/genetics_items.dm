@@ -191,6 +191,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	desc = "A container for holding, analyzing and transferring mutagens."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "slide"
+	var/unique_id
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
@@ -201,6 +202,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 		name = "Mutagenic Sample Plate"
 		icon_state = "slideblood"
 		genetics_holder = incoming_holder.Copy()
+	unique_id = sequential_id(type)
 
 /obj/item/genetics/sample/proc/unload_genetics()
 	var/datum/genetics/genetics_holder/outbound_genetics_holder = genetics_holder.Copy()
@@ -209,6 +211,12 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	icon_state = "slide"
 	return outbound_genetics_holder
 
+/obj/item/genetics/sample/proc/ui_data()
+	var/list/data = list()
+	data["name"] = name
+	data["unique_id"] = unique_id
+	data += genetics_holder.ui_data()
+	return data
 /*
 =================Mutagenic Implanter=================
 Essentially a holder item for mutagenic samples. Installed on various machines and used for cloning, modifying, and so on.

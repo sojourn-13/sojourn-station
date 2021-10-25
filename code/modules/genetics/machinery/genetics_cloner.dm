@@ -447,7 +447,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		to_chat(user, SPAN_WARNING("You load Genetic Data into the cloner."))
 		return
 	else
-		. = ..()	
+		. = ..()
 
 /obj/machinery/genetics/cloner/proc/close_anim()
 	qdel(anim0)

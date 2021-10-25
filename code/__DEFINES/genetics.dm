@@ -11,3 +11,17 @@
 //Types of Mutation recipes:
 #define MUT_TYPE_COMBINATION 1
 #define MUT_TYPE_IRRADIATON 2
+
+//Mutation flags (BIG TODO, these don't work yet)
+//These values are held by the flags variable in the /datum/genetics/mutation class.
+//They handle certain things happening dynamically when a mutation is added (IE: Destroying an abiotic part messily)
+#define MUT_FORCE_REQ 0x1 //If the target doesn't have requirements, it will force out abiotic parts.
+#define MUT_PURE_BIO_REQ 0x11 //Target needs to be entirely biotic and have no abiotic augments.
+#define MUT_FULL_BIO_REQ 0x12 //Target must only have biotic body parts (Not checking internals)
+#define MUT_BIO_ARM_REQ 0x13 //Target needs biotic arms
+#define MUT_BIO_LEG_REQ 0x14  //Target needs biotic legs
+#define MUT_BIO_UPPER_BODY_REQ 0x15  //Target needs biotic upper body
+#define MUT_BIO_LOWER_BODY_REQ 0x16  //Target needs biotic lower body
+#define MUT_BIO_HEAD_REQ 0x17 //Target needs a biotic head.
+
+//TODO: Add more for all organs

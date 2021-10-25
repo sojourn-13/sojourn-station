@@ -6,7 +6,7 @@
 */
 /obj/machinery/genetics/pulper
 	name = "Xenofauna Genetics Pulper"
-	desc = "A worryingly hungry device that takes raw meat (or whole bodies), extracts its DNA on a cellular level, and dispenses as much of that DNA as it can into sample plates."
+	desc = "A morosely clinical device that takes raw meat (or whole bodies), destroys it on a cellular level, and organizes as much genetic information as it can into sample plates. It also won't shut up."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "processor"
 	var/gib_time = 40 // Time from starting until sample plates appear.
@@ -31,7 +31,7 @@
 		to_chat(user, SPAN_WARNING("The pulper is inactive and blessedly silent."))
 		return
 	if(pulping)
-		src.visible_message(SPAN_DANGER("The pulper trills: \"The pulper is running~! Wait for it to finish.\""))
+		src.visible_message(SPAN_DANGER("The pulper trills: \"The pulper is running~! Please wait for it to finish~\""))
 		return
 
 	//Inserting a sample
@@ -57,7 +57,7 @@
 		to_chat(user, SPAN_WARNING("The pulper is inactive and blessedly silent."))
 		return
 	if(pulping)
-		src.visible_message(SPAN_WARNING("The pulper trills: \"The pulper is running~! Wait for it to finish.\""))
+		src.visible_message(SPAN_WARNING("The pulper trills: \"The pulper is running~! Please wait for it to finish~!\""))
 		return
 	if(istype(target, /mob/living/carbon/human))
 		src.visible_message(SPAN_WARNING("The pulper chimes in: \"Uh Oh~ Humans aren't allowed in the pulper~!\""))
@@ -78,7 +78,7 @@
 			temp_meat_count = s_animal.meat_amount
 	
 	if(temp_meat_count <= 0)
-		src.visible_message(SPAN_WARNING("The pulper gently reminds: \"That is not a genetics bearing creature~\""))
+		src.visible_message(SPAN_WARNING("The pulper gently reminds: \"That is creature has no genetic material, hun~\""))
 
 	//Do the insertion step
 	if(do_after(user, 60, target))

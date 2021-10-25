@@ -3,7 +3,6 @@
 	name = "Moo"
 	key = "MUTATION_MOO"
 	desc = "Causes the affected to moo intermittantly."
-	embryo_descriptions = list(/datum/genetics/embryo_state/cow_skin)
 	gain_text = "Your feel the urge to graze in a meadow. Moo..."
 	var/cooldown = 3 MINUTES
 	var/initial_time
