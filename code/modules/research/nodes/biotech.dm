@@ -232,6 +232,7 @@
 							/datum/design/research/item/chem_dispenser,
 							/datum/design/research/item/medhud,
 							/datum/design/research/structure/bidonadv,
+							/datum/design/research/structure/bidontrigger,
 							/datum/design/research/item/medical/compact_defibs,
 							/datum/design/research/item/implant/alarm
 							)
