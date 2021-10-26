@@ -28,9 +28,9 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2)
 
 /obj/item/device/encryptionkey/headset_bs
-	name = "security radio encryption key"
+	name = "blackshield radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list( "Blackshield" = 1, "Marshal" = 1)
+	channels = list( "Blackshield" = 1)// "Marshal" = 1 removed do to blackshield being marshals illegal
 
 /obj/item/device/encryptionkey/headset_mar
 	name = "security radio encryption key"
