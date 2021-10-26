@@ -51,6 +51,18 @@
 	display_name = "black cloak"
 	path = /obj/item/clothing/accessory/cape/black
 
+/datum/gear/accessory/blackcloak
+	display_name = "heavy black cloak"
+	path = /obj/item/clothing/accessory/cape/blackedge
+
+/datum/gear/accessory/browncloak
+	display_name = "heavy brown cloak"
+	path = /obj/item/clothing/accessory/cape/brown
+
+/datum/gear/accessory/greatcoat
+	display_name = "black greatcoat"
+	path = /obj/item/clothing/accessory/cape/blackalt
+
 /datum/gear/accessory/blackshieldpatch
 	display_name = "Blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield

@@ -466,6 +466,40 @@
 	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
+/obj/item/clothing/suit/storage/toggle/leather/bikermidriff
+	name = "midriff bikers jacket"
+	desc = "A stylish, midriff jacket made of synthetic leather. Red inner padding and thick layers, it'd be a great jacket for cruising down the road; If not for the length"
+	icon_state = "bikermidriff"
+	item_state = "bikermidriff"
+	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/leather/bikermidriff/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Sleeves down, open"] = "bikermidriff"
+	options["Sleeves down, closed"] = "bikermidriff_closed_s"
+	options["Sleeves up, open"] = "bikermidriff_r_s"
+	options["Sleeves up, closed"] = "bikermidriff_r_closed_s"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /obj/item/clothing/suit/storage/texan
 	name = "ivory texan jacket"
 	desc = "A jacket fit for a Plasma magnate of southern origin. Yeehaw!" // Now you only need a comically large white top hat.

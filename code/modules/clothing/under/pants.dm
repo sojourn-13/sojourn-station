@@ -189,6 +189,21 @@
 	desc = "A pair of athletic white track pants."
 	icon_state = "trackpantswhite"
 
+/obj/item/clothing/under/pants/leggings
+	name = "jean leggings"
+	desc = "A pair of tight-fitting nean leggings."
+	icon_state = "leggings"
+
+/obj/item/clothing/under/pants/leggingswhite
+	name = "white leggings"
+	desc = "A pair of tight-fitting white leggings."
+	icon_state = "whiteleggings"
+
+/obj/item/clothing/under/pants/leggingsprint
+	name = "leopard print leggings"
+	desc = "A pair of tight-fitting leopard print leggings."
+	icon_state = "rawrxdleggings"
+
 /obj/item/clothing/under/pants
 	name = "yoga pants"
 	desc = "A pair of tight-fitting white yoga pants."

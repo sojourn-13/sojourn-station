@@ -282,6 +282,24 @@
 	icon_state = "cloak"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/cape/blackedge
+	name = "heavy black cloak"
+	desc = "A rough and heavy black cloak for draping over yourself like some kind of cave dwelling royal."
+	icon_state = "blackcloak"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/cape/brown
+	name = "heavy brown cloak"
+	desc = "A rough and heavy brown cloak, perfectly suited to marching through the cold to the front door of an old friend."
+	icon_state = "browncloak"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/cape/blackalt
+	name = "black greatcloak"
+	desc = "A comfortable black greatcoat, perfect for winter, or simply showing off ones archaic fashion sense."
+	icon_state = "cloakalt"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
 /*Scarves*/
 
 /obj/item/clothing/accessory/scarf/black

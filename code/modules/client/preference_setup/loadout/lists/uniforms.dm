@@ -29,6 +29,11 @@
 	path = /obj/item/clothing/under/plaid
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/casualdress
+	display_name = "casual dress selection"
+	path = /obj/item/clothing/under/dress/casual
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/gorkajumpsuit
 	display_name = "gorka jumpsuit selection"
 	path = /obj/item/clothing/under/gorka
@@ -75,6 +80,10 @@
 /datum/gear/uniform/classy_maid
 	display_name = "maid dress"
 	path = /obj/item/clothing/under/costume/maid
+
+/datum/gear/uniform/sexy_maid
+	display_name = "sexy maid dress"
+	path = /obj/item/clothing/under/sexymaid
 
 /datum/gear/uniform/modularsuit
 	display_name = "modular suit selection"
