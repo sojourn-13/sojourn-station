@@ -427,6 +427,99 @@
 	item_state = "white_yellow"
 	price_tag = 45
 
+/obj/item/clothing/under/dress/saloon
+	name = "saloon dress"
+	desc = "The classic saloon girls attire, perfect for serving schnitzengruben"
+	icon_state = "dress_saloon"
+	item_state = "dress_saloon"
+	price_tag = 45
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/under/dress/casual/blackdress
+	name = "cocktail dress"
+	desc = "A flattering black cocktail dress."
+	icon_state = "blackdress"
+	item_state = "blackdress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/blackdressalt
+	name = "skater dress"
+	desc = "A lovely black skater dress"
+	icon_state = "blackdress2"
+	item_state = "blackdress2"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/flowerdress
+	name = "flower pattern dress"
+	desc = "A rather loud, flower patterned dress. Aloha!"
+	icon_state = "flower_dress"
+	item_state = "flower_dress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/sweptdress
+	name = "red swept dress"
+	desc = "A simple, asymmetrical red dress and belt. Perfect for a night on the town!"
+	icon_state = "red_swept_dress"
+	item_state = "red_swept_dress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/sevillanadress
+	name = "Sevillana dress"
+	desc = "A traditional garb from an ancient nation of old terra."
+	icon_state = "flamenco"
+	item_state = "flamenco"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/westernbustle
+	name = "western barmaids dress"
+	desc = "For those saloon workers who spend more time behind the counters than under them"
+	icon_state = "westernbustle"
+	item_state = "westernbustle"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/casual/lilac
+	name = "lilac dress"
+	desc = "A simple, lilac dress."
+	icon_state = "lilacdress"
+	item_state = "lilacdress"
+	price_tag = 45
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/under/dress/casual/bluedress
+	name = "blue dress"
+	desc = "A comfortable, breezy blue summer dress."
+	icon_state = "bluedress"
+	item_state = "bluedress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/rattydress
+	name = "skimpy black dress"
+	desc = "A short black dress, skimpy enough to qualify as a tank-top for many"
+	icon_state = "rattydress"
+	item_state = "rattydress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/littleblackdress
+	name = "little black dress"
+	desc = "A short cut, black cocktail dress. Considered a must have by the out of touch for at least 500 years!"
+	icon_state = "littleblackdress"
+	item_state = "littleblackdress"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/pinkdress
+	name = "pink skirt"
+	desc = "A simple pink skirt."
+	icon_state = "pinktutu"
+	item_state = "pinktutu"
+	price_tag = 45
+
+/obj/item/clothing/under/dress/casual/barmaid
+	name = "barmaids dress"
+	desc = "The bar-wench standard for a thousand years!"
+	icon_state = "barmaid"
+	item_state = "barmaid"
+	price_tag = 45
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/helltaker
 	name = "charming outfit"//Helltaker reference

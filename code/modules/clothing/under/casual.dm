@@ -163,6 +163,12 @@
 	icon_state = "cuttop_red"
 	item_state = "cuttop_red"
 
+/obj/item/clothing/under/top/haltertop
+	name = "black halterneck top"
+	desc = "A black halterneck top and jean shorts"
+	icon_state = " haltertop"
+	item_state = " haltertop"
+
 /obj/item/clothing/under/top/outfitfrontier
 	name = "frontier outfit"
 	desc = "A leather shirt worn alongside a tan undershirt and pants."
