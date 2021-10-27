@@ -329,8 +329,32 @@ obj/item/clothing/suit/fluff/kimono
 		bio = 0,
 		rad = 0
 	)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_GLASS = 10, MATERIAL_STEEL = 10)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/storage/scavengerarmor/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["scavenger armor"] = "scav_armor"
+	options["alt scavenger armor"] = "alt_scavenger"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/storage/triad
 	name = "triad jacket"//RUINER reference

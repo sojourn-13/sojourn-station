@@ -900,3 +900,12 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "tan_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+
+/obj/item/clothing/suit/storage/suitjacket/scav
+	name = "frontier jacket"
+	desc = "A rough make jacket, patched together from a variety of tough cloth, \
+	the fabric holds up well against wear and tear. Made first by several sewing inclined \
+	Prospectors in order to avoid cuts and scraps while out in the field, \
+	the design soon found itself spread throughout the colony."
+	icon_state = "scav_jacket"
+	item_state = "scav_jacket"

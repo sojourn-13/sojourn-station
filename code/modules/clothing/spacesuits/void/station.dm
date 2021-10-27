@@ -86,7 +86,7 @@
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 
-
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
 	armor = list(
 		melee = 40,
 		bullet = 20,
@@ -115,7 +115,7 @@
 	siemens_coefficient = 0.8
 	slowdown = 1.6
 	helmet = /obj/item/clothing/head/space/void/riggedvoidsuit
-
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_GLASS = 10, MATERIAL_PLASTIC = 20)
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	flash_protection = FLASH_PROTECTION_MAJOR
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION

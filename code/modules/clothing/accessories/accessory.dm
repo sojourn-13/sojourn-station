@@ -276,6 +276,12 @@
 	icon_state = "outsider"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/cape/scav
+	name = "makeshift cape"
+	desc = "A cape haphazardly cut from a large bolt of water resistant fabric, while some may wear it for the style, others would prefer it's use as a quick poncho, if it'll every rain."
+	icon_state = "scav_mantle"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
 /obj/item/clothing/accessory/cape/black
 	name = "attachable black cloak"
 	desc = "A simple black cloak you can attach to your suit for all your edgy needs."
