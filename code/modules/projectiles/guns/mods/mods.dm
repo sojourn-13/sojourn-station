@@ -534,7 +534,7 @@
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.breakable = FALSE
 	I.prefix = "lose trigger"
-	
+
 /obj/item/gun_upgrade/scope
 //	bad_type = /obj/item/gun_upgrade/scope
 
