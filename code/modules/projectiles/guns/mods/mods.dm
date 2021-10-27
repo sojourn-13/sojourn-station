@@ -459,7 +459,7 @@
 */
 /obj/item/gun_upgrade/mechanism/gun_rail
 	name = "H&S \"HandHolder\" Barrel Rail"
-	desc = "A simple magnetic barrel rail, designed to fit onto a variety of weapons."
+	desc = "A simple magnetic barrel rail, designed to fit onto a variety of weapons. Easy to attach, impossible to remove."
 	icon_state = "auto_spingbox"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 	can_remove = FALSE
