@@ -37,6 +37,8 @@
 	var/removal_time = WORKTIME_SLOW
 	var/removal_difficulty = FAILCHANCE_CHALLENGING
 	var/destroy_on_removal = FALSE
+	var/unique_removal = FALSE 		//Flag for unique removals.
+	var/unique_removal_type 		//What slot do we remove when this is removed? Used for rails.
 
 /datum/component/item_upgrade/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
@@ -226,6 +228,9 @@
 
 /datum/component/item_upgrade/proc/uninstall(obj/item/I, mob/living/user)
 	var/obj/item/P = parent
+	if(unique_removal)
+		var/obj/item/gun/G = I
+		G.gun_tags.Remove(unique_removal_type)
 	I.item_upgrades -= P
 	if(destroy_on_removal)
 		UnregisterSignal(I, COMSIG_ADDVAL)
@@ -361,6 +366,8 @@
 		G.rigged = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 		G.rigged = 2
+	if(weapon_upgrades[GUN_UPGRADE_RAIL])
+		G.gun_tags.Add(GUN_SCOPE)
 	if(weapon_upgrades[UPGRADE_COLOR])
 		G.color = weapon_upgrades[UPGRADE_COLOR]
 	if(weapon_upgrades[GUN_UPGRADE_ZOOM])
@@ -623,6 +630,9 @@
 
 		if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 			to_chat(user, SPAN_WARNING("Rigs the weapon to explode."))
+
+		if(weapon_upgrades[GUN_UPGRADE_RAIL])
+			to_chat(user, SPAN_WARNING("Adds a scope slot."))
 
 		if(weapon_upgrades[GUN_UPGRADE_ZOOM])
 			var/amount = weapon_upgrades[GUN_UPGRADE_ZOOM]

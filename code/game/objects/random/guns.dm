@@ -290,6 +290,7 @@
 				/obj/item/gun_upgrade/trigger/honker = 0.1,
 				/obj/item/gun_upgrade/barrel/toxin_coater = 1,
 				/obj/item/gun_upgrade/barrel/gauss = 1,
+				/obj/item/gun_upgrade/mechanism/gun_rail = 1,
 				/obj/item/gun_upgrade/trigger/boom = 0.5,
 				/obj/item/gun_upgrade/scope/watchman = 0.7,
 				/obj/item/gun_upgrade/scope/killer = 0.7,
