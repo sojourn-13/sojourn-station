@@ -478,7 +478,7 @@
 
 /datum/genetics/genetics_holder/ui_data()
 	var/list/data = list()
-	data["instability"] = instability
+	data["instability"] = total_instability
 	var/list/mutation_pool_data = list()
 	for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		mutation_pool_data += list(selected_mutation.ui_data())
@@ -532,7 +532,7 @@
 	//reference for the instability a mutation contributes to a genome.
 	var/instability = 0
 
-	//Series of bitflags for setting certain restrictions on a mutation, like needing an arm or a leg. 
+	//Series of bitflags for setting certain restrictions on a mutation, like needing an arm or a leg.
 	//A few are outlined in code/__DEFINES/genetics, we'll add more as needed.
 	var/requirement_flags
 

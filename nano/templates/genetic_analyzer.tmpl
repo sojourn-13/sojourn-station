@@ -1,0 +1,64 @@
+<h1>Belvoix Genetic Analyzer</h1>
+<div class="item">
+	<div class="itemlabelNarrow">{{:helper.link('Back', 'arrowthickstop-1-w', {'back' : 1}, data.menu_state == 1 ? 'disabled' : null)}}</div>
+</div>
+<hr>
+{{if data.menu_state == 1}}
+	{{for data.sample_plates}}
+		<div class="item">
+			<div class="fixedLeftWider" style="width:300px; display: table-cell">
+				<div class="item">
+					<div class="block" style='padding: 0px; overflow: auto'>
+						<div class="item" style="margin: 0px">
+							<div class="itemContentWidest">{{:value.name}}</div>
+						</div>
+						<div class="item">
+							<div style="margin-top:8px" class="itemLabelWidest"><b>Instability:</b> {{:value.instability}}%</div>
+						</div>
+						<div class="itemLabelWidest">Mutations</div>
+						{{for value.mutation_pool :mutation:mutation_i}}
+						<div class="statusDisplay" style="margin: 0px 4px 4px 4px">
+							<div class="item">
+									<div class="itemContentWidest">{{:mutation.name}}: {{:mutation.desc}}</div>
+							</div>
+						</div>
+						{{/for}}
+					</div>
+				</div>
+				<div class="itemlabelNarrow">{{:helper.link('Eject', 'eject', {'eject' : value.unique_id}, null, 'statusValue')}}</div>
+				<div class="itemlabelNarrow">{{:helper.link('Merge', 'icon-shuffle', {'merge' : value.unique_id}, null, 'statusValue')}}</div>
+			</div>
+		</div>
+	{{empty}}
+		<div class='notice'>No Samples Detected!</div>
+	{{/for}}
+
+{{else data.menu_state == 2}}
+	{{for data.sample_plates}}
+		<div class="item">
+			<div class="fixedLeftWider" style="width:300px; display: table-cell">
+				<div class="item">
+					<div class="block" style='padding: 0px; overflow: auto'>
+						<div class="item" style="margin: 0px">
+							<div class="itemContentWidest">{{:value.name}}</div>
+						</div>
+						<div class="item">
+							<div style="margin-top:8px" class="itemLabelWidest"><b>Instability:</b> {{:value.instability}}%</div>
+						</div>
+						<div class="itemLabelWidest">Mutations</div>
+						{{for value.mutation_pool :mutation:mutation_i}}
+						<div class="statusDisplay" style="margin: 0px 4px 4px 4px">
+							<div class="item">
+									<div class="itemContentWidest">{{:mutation.name}}: {{:mutation.desc}}</div>
+							</div>
+						</div>
+						{{/for}}
+					</div>
+				</div>
+			</div>
+		</div>
+	{{empty}}
+		<div class='notice'>No Other Samples in Machine!</div>
+	{{/for}}
+
+{{/if}}
