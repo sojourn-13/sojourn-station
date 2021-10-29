@@ -12829,12 +12829,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/remote/airlock{
-	desc = "A remote control switch.";
+	blue_ink_tk_blocker = 1;
+	desc = "It controls doors, remotely. This one has tinfoil like cover on it.";
 	id = "medbay exit";
-	light = 1;
-	light_color = "#FF0000";
-	light_range = 1;
-	luminosity = 1;
 	name = "Medbay Exit Button";
 	pixel_x = -24
 	},
