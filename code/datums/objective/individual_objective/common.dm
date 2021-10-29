@@ -101,7 +101,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_CARBON_HAPPY)
 	..()
-
+/*
 /datum/individual_objective/gift
 	name = "Odd Gift"
 	desc = "You feel a need to leave a mark in other people lives. Ensure that someone will level up with oddity that you touched or preferably gave them."
@@ -160,7 +160,7 @@
 	if(completed) return
 	UnregisterSignal(target, COMSIG_HUMAN_HEALTH)
 	..()
-/*
+
 /datum/individual_objective/helper
 	name = "Helping Hand"
 	units_requested = 15 MINUTES
@@ -236,7 +236,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_MOB_LIFE)
 	..()
-
+/*
 /datum/individual_objective/greed
 	name = "Greed"
 	units_requested = 10 MINUTES
@@ -275,7 +275,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_MOB_LIFE)
 	..()
-
+*/
 /datum/individual_objective/collenction
 	name = "Collection"
 	var/obj/item/target
@@ -302,7 +302,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSING_HUMAN_EQUITP)
 	..()
-/* //This one is buggy as shit and few people know how it works, removing it until it can be fixed. -Kaz
+
 /datum/individual_objective/economy
 	name = "Business"
 	var/datum/money_account/target
@@ -327,9 +327,10 @@
 			valids_targets += H.mind.initial_account
 	valids_targets -= owner.initial_account
 	target = pick(valids_targets)
-	units_requested = rand(500, 1000)
+	units_requested = rand(1500, 3000) //500-1000 was to little lets make this harder
 	desc = "The money must always flow but you must also prevent fees from ruining you.  \
-			Make a back transfer from you personal account for amount of [units_requested][CREDITS]."
+			Make a back transfer from you personal account for amount of [units_requested][CREDITS].\
+			Back transfer meaning adding the [units_requested][CREDITS] must be added to your account"
 	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, .proc/task_completed)
 
 /datum/individual_objective/economy/task_completed(datum/money_account/S, datum/money_account/T, amount)
@@ -340,4 +341,41 @@
 	if(completed) return
 	UnregisterSignal(owner.initial_account, COMSIG_TRANSATION)
 	..()
-*/
+
+//Back transfer but removes credits form the game to make people want to sell things or make money
+/datum/individual_objective/bills
+	name = "Bills To Pay"
+	var/datum/money_account/target
+
+/datum/individual_objective/bills/can_assign(mob/living/L)
+	if(!..())
+		return FALSE
+	if(!L.mind.initial_account)
+		return FALSE
+	var/list/valids_targets = list()
+	for(var/mob/living/carbon/human/H in ((GLOB.player_list & GLOB.living_mob_list & GLOB.human_mob_list) - L))
+		if(H.mind && H.mind.initial_account)
+			valids_targets += H.mind.initial_account
+	valids_targets -= L.mind.initial_account
+	return valids_targets.len
+
+/datum/individual_objective/bills/assign()
+	..()
+	var/list/valids_targets = list()
+	for(var/mob/living/T in GLOB.human_mob_list)
+		if(T.mind && T.mind.initial_account)
+			valids_targets += T.mind.initial_account
+	valids_targets -= owner.initial_account
+	target = pick(valids_targets)
+	units_requested = rand(1000, 2000) //Housing water and power, shouldnt be cheap
+	desc = "The bills must be payed or you could be without housing, or other normal luxuries, provide this account number: \"[target.account_number]\" with the sum of [units_requested][CREDITS]..."
+	RegisterSignal(owner.initial_account, COMSIG_TRANSATION, .proc/task_completed)
+
+/datum/individual_objective/bills/task_completed(datum/money_account/S, datum/money_account/T, amount)
+	if(S == owner.initial_account && T == target)
+		..(amount)
+
+/datum/individual_objective/bills/completed()
+	if(completed) return
+	UnregisterSignal(owner.initial_account, COMSIG_TRANSATION)
+	..()

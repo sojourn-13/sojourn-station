@@ -103,7 +103,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSING_AUTOPSY)
 	..()
-
+/*
 /datum/individual_objective/more_research
 	name = "Progress no matter the cost."
 	req_department = list(DEPARTMENT_SCIENCE)
@@ -130,7 +130,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSING_DESTRUCTIVE_ANALIZER)
 	..()
-
+*/
 /datum/individual_objective/damage
 	name = "A Different Perspective"
 	req_department = list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL)
