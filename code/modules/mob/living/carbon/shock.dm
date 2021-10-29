@@ -9,16 +9,16 @@
 		return 0
 
 	src.traumatic_shock = 			\
-	1	* src.getOxyLoss() + 		\
+	1.5	* src.getOxyLoss() + 		\
 	0.5	* src.getToxLoss() + 		\
-	1	* src.getFireLoss() + 		\
+	0.8	* src.getFireLoss() + 		\
 	1	* src.getBruteLoss() + 		\
-	1.7	* src.getCloneLoss() + 		\
-	2	* src.halloss + 			\
+	1.8	* src.getCloneLoss() + 		\
+	1.5	* src.halloss + 			\
 	-1	* src.analgesic
 
 	if(src.slurring)
-		src.traumatic_shock -= 20
+		src.traumatic_shock -= 30 //being drunk or on some types of drugs will allow you to withstand more
 
 	if(src.traumatic_shock < 0)
 		src.traumatic_shock = 0
@@ -30,7 +30,7 @@
 	..()
 	for(var/obj/item/organ/external/organ in organs)
 		if(organ && (organ.is_broken() || organ.open))
-			traumatic_shock += 30
+			traumatic_shock += 20 //Broken bones are painful but not something to criple someone in pain
 
 	return traumatic_shock
 
