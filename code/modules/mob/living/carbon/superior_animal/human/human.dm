@@ -7,6 +7,7 @@
 	viewRange = 8
 	speak_chance = 5
 	turns_per_move = 5
+	randpixel = 0
 
 	attack_sound = 'sound/weapons/slice.ogg'
 
