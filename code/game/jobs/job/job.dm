@@ -153,13 +153,15 @@
 			if(department == J.department)
 				jobs_in_department += "[J.type]"
 	if(playtimerequired > 0)
-		if(C.ckey)
-			if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", jobs_in_department, playtimerequired))
-				are_we_experienced_enough = TRUE //We are experienced enough, hurray.
+		if(C)
+			if(C.ckey)
+				if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", jobs_in_department, playtimerequired))
+					are_we_experienced_enough = TRUE //We are experienced enough, hurray.
 	if(coltimerequired > 0)
-		if(C.ckey)
-			if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", "/datum/job/assistant", coltimerequired))
-				are_we_experienced_enough = TRUE //We are experienced enough as a colonist, hurray.
+		if(C)
+			if(C.ckey)
+				if(SSjob.JobTimeAutoCheck(C.ckey, "[type]", "/datum/job/assistant", coltimerequired))
+					are_we_experienced_enough = TRUE //We are experienced enough as a colonist, hurray.
 	if(playtimerequired == 0 && coltimerequired == 0)
 		are_we_experienced_enough = TRUE //We're doing a job that requires 0 experience, hurray.
 	return are_we_experienced_enough
