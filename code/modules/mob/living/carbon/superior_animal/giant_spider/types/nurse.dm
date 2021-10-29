@@ -22,8 +22,8 @@
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.")
 	var/web_activity = 30
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
-
-
+	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
+	life_cycles_before_sleep = 3000 //We need more time to eat and web
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
 	name = "midwife spider"
@@ -35,6 +35,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_per_bite = 4
+	egg_inject_chance = 5 //Yes
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/midwife
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
@@ -43,6 +44,7 @@
 	icon_state = "carrier"
 	icon_living = "carrier"
 	deathmessage = "splits open! Several wriggling spiders crawl from its gore!"
+	egg_inject_chance = 2 //maybe...
 	var/has_made_spiderlings = FALSE
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier/death(var/gibbed,var/message = deathmessage)
@@ -73,7 +75,6 @@
 	web_activity = 90
 	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 
-
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"
 	desc = "Furry and brown, it makes you shudder to look at it. This one has brilliant green eyes and light brown skin."
@@ -86,6 +87,7 @@
 	melee_damage_upper = 5
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	meat_amount = 2
+	egg_inject_chance = 15 //Defiently
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
 
@@ -104,6 +106,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/queen
 	meat_amount = 3
 	flash_resistances = 5 //For balance against are speedy fello
+	egg_inject_chance = 10 //Likely
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
@@ -114,14 +117,16 @@
 	pixel_y = null
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/attemptAttackOnTarget()
-	var/target = ..()
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(prob(poison_per_bite))
+	..()
+	if(ishuman(target_mob))
+		var/mob/living/carbon/human/H = target_mob
+		if(prob(egg_inject_chance))
 			var/obj/item/organ/external/O = safepick(H.organs)
 			if(O && !BP_IS_ROBOTIC(O))
-				var/eggs = new /obj/effect/spider/eggcluster(O, src)
-				O.implants += eggs
+				src.visible_message(SPAN_DANGER("[src] injects something into the [O] of [H]!"))
+				var/obj/effect/spider/eggcluster/minor/S = new()
+				S.loc = O
+				O.implants += S
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/proc/GiveUp(var/C)
 	spawn(100)
