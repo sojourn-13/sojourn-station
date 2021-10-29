@@ -43,6 +43,7 @@
 	desc = "A chassis or case for a Ripley mech, needs Ripley torso, arms and legs."
 	construct_type = /datum/construction/mecha/ripley_chassis
 	matter = list(MATERIAL_STEEL = 30)
+	price_tag = 700
 
 /obj/item/mecha_parts/chassis/ripley/firefighter
 	name = "Firefighter Chassis"
@@ -55,6 +56,7 @@
 	icon_state = "ripley_harness"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_BIO = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 40, MATERIAL_GLASS = 25)
+	price_tag = 700
 
 /obj/item/mecha_parts/part/ripley_left_arm
 	name = "Ripley Left Arm"
@@ -62,6 +64,7 @@
 	icon_state = "ripley_l_arm"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 18)
+	price_tag = 700
 
 /obj/item/mecha_parts/part/ripley_right_arm
 	name = "Ripley Right Arm"
@@ -69,6 +72,7 @@
 	icon_state = "ripley_r_arm"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 18)
+	price_tag = 700
 
 /obj/item/mecha_parts/part/ripley_left_leg
 	name = "Ripley Left Leg"
@@ -76,6 +80,7 @@
 	icon_state = "ripley_l_leg"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 18)
+	price_tag = 700
 
 /obj/item/mecha_parts/part/ripley_right_leg
 	name = "Ripley Right Leg"
@@ -83,6 +88,7 @@
 	icon_state = "ripley_r_leg"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 18)
+	price_tag = 700
 
 ///////// Ivan
 
@@ -91,6 +97,7 @@
 	desc = "A chassis or case for a Ivan mech, needs Ivan torso, arms and legs."
 	construct_type = /datum/construction/mecha/ivan_chassis
 	matter = list(MATERIAL_STEEL = 20)
+	price_tag = 350
 
 /obj/item/mecha_parts/part/ivan_torso
 	name = "Ivan Torso"
@@ -98,6 +105,7 @@
 	icon_state = "ripley_harness"
 	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_BIO = 1, TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 20)
+	price_tag = 350
 
 /obj/item/mecha_parts/part/ivan_left_arm
 	name = "Ivan Left Arm"
@@ -105,6 +113,7 @@
 	icon_state = "ripley_l_arm"
 	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 10)
+	price_tag = 350
 
 /obj/item/mecha_parts/part/ivan_right_arm
 	name = "Ivan Right Arm"
@@ -112,6 +121,7 @@
 	icon_state = "ripley_r_arm"
 	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 10)
+	price_tag = 350
 
 /obj/item/mecha_parts/part/ivan_left_leg
 	name = "Ivan Left Leg"
@@ -119,6 +129,7 @@
 	icon_state = "ripley_l_leg"
 	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 10)
+	price_tag = 350
 
 /obj/item/mecha_parts/part/ivan_right_leg
 	name = "Ivan Right Leg"
@@ -126,6 +137,7 @@
 	icon_state = "ripley_r_leg"
 	origin_tech = list(TECH_DATA = 1, TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 10)
+	price_tag = 350
 
 ///////// Gygax
 
@@ -295,13 +307,14 @@
 	desc = "The chassis for an Odysseus mech. Needs an Odysseus head, arms and legs."
 	construct_type = /datum/construction/mecha/odysseus_chassis
 	matter = list(MATERIAL_STEEL = 25)
-
+	price_tag = 800
 
 /obj/item/mecha_parts/part/odysseus_head
 	name = "Odysseus Head"
 	icon_state = "odysseus_head"
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 15)
+	price_tag = 800
 
 /obj/item/mecha_parts/part/odysseus_torso
 	name = "Odysseus Torso"
@@ -309,6 +322,7 @@
 	icon_state = "odysseus_torso"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_BIO = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 20)
+	price_tag = 800
 
 /obj/item/mecha_parts/part/odysseus_left_arm
 	name = "Odysseus Left Arm"
@@ -316,6 +330,7 @@
 	icon_state = "odysseus_l_arm"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 12)
+	price_tag = 800
 
 /obj/item/mecha_parts/part/odysseus_right_arm
 	name = "Odysseus Right Arm"
@@ -323,6 +338,7 @@
 	icon_state = "odysseus_r_arm"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 12)
+	price_tag = 800
 
 /obj/item/mecha_parts/part/odysseus_left_leg
 	name = "Odysseus Left Leg"
@@ -330,6 +346,7 @@
 	icon_state = "odysseus_l_leg"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 12)
+	price_tag = 800
 
 /obj/item/mecha_parts/part/odysseus_right_leg
 	name = "Odysseus Right Leg"
@@ -337,3 +354,4 @@
 	icon_state = "odysseus_r_leg"
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 12)
+	price_tag = 800
