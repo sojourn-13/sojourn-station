@@ -41,7 +41,7 @@
 	force = WEAPON_FORCE_ROBUST
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
-	price_tag = 1200
+	price_tag = 500
 	matter = list(MATERIAL_BIOMATTER = 75, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
 
 /obj/item/tool/knife/dagger/nt
@@ -85,7 +85,7 @@
 	var/agony_extended = 45 //Church harmbaton! This is legit better then a normal baton as it can be upgraded AND has base 15 damage
 	var/stun = 0
 	w_class = ITEM_SIZE_BULKY
-	price_tag = 1000
+	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2)
 
 /obj/item/tool/sword/nt/scourge/attack_self(mob/user)
@@ -308,5 +308,5 @@
 	item_state = "crusader"
 	force = WEAPON_FORCE_LETHAL
 	armor_penetration = ARMOR_PEN_HALF
-	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_PLASTIC = 3)
+	matter = list(MATERIAL_DURASTEEL = 25, MATERIAL_GOLD = 3)
 	price_tag = 10000

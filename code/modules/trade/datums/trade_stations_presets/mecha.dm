@@ -3,22 +3,47 @@
 		\"Hey, dudes, it seems you want some mechas? We currently got a surplus and spare parts.\"")
 	offer_amout_devider_of_wanted_goods = 5 //50% less
 	assortiment = list(
-		"Exosuits" = list(
-			/obj/mecha/working/ripley/firefighter,
-			/obj/mecha/working/ripley/deathripley,
-			/obj/mecha/working/ripley/mining,
-			/obj/mecha/working/hoverpod,
-			/obj/mecha/medical/odysseus,
-			/obj/mecha/combat/gygax/dark,
-			/obj/mecha/combat/durand
+		"Exosuit Parts" = list(
+			/obj/item/mecha_parts/chassis/ripley,
+			/obj/item/mecha_parts/part/ripley_torso,
+			/obj/item/mecha_parts/part/ripley_left_arm,
+			/obj/item/mecha_parts/part/ripley_right_arm,
+			/obj/item/mecha_parts/part/ripley_left_leg,
+			/obj/item/mecha_parts/part/ripley_right_leg,
+			/obj/item/mecha_parts/chassis/odysseus,
+			/obj/item/mecha_parts/part/odysseus_torso,
+			/obj/item/mecha_parts/part/odysseus_head,
+			/obj/item/mecha_parts/part/odysseus_left_arm,
+			/obj/item/mecha_parts/part/odysseus_right_arm,
+			/obj/item/mecha_parts/part/odysseus_left_leg,
+			/obj/item/mecha_parts/part/odysseus_right_leg,
+			/obj/item/mecha_parts/chassis/ivan,
+			/obj/item/mecha_parts/part/ivan_torso,
+			/obj/item/mecha_parts/part/ivan_left_arm,
+			/obj/item/mecha_parts/part/ivan_right_arm,
+			/obj/item/mecha_parts/part/ivan_left_leg,
+			/obj/item/mecha_parts/part/ivan_right_leg,
+			/obj/item/circuitboard/mecha/main,
+			/obj/item/circuitboard/mecha/peripherals
 		),
-		"Mech Armor" = list(
+		"Exosuit Auxillery Parts" = list(
+			/obj/item/rig_module/vision/medhud,
+			/obj/item/tool_upgrade/reinforcement/heatsink,
+			/obj/item/tool_upgrade/augment/cell_mount,
+			/obj/item/tool_upgrade/augment/hydraulic,
+			/obj/item/tool_upgrade/productivity/motor,
+			/obj/item/robot_parts/robot_component/diagnosis_unit,
+			/obj/item/robot_parts/robot_component/actuator,
+			/obj/item/robot_parts/robot_component/camera,
+			/obj/item/robot_parts/robot_component/radio,
+			/obj/item/robot_parts/robot_component/armour/mkii
+		),
+		"Exosuit Armor" = list(
 			/obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
 			/obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
-			/obj/item/mecha_parts/mecha_equipment/combat_shield,
 			/obj/item/mecha_parts/mecha_equipment/repair_droid
 		),
-		"Equipment" = list(
+		"Exosuit Equipment" = list(
 			/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay,
 			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser,
 			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,

@@ -162,7 +162,7 @@
 	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "one_capacitor"
 	origin_tech = list(TECH_POWER = 7, TECH_MATERIAL = 7)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -171,7 +171,7 @@
 	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "one_scan_module"
 	origin_tech = list(TECH_MAGNET = 7)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -180,7 +180,7 @@
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "one_mani"
 	origin_tech = list(TECH_MATERIAL = 7, TECH_DATA = 6)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -189,7 +189,7 @@
 	icon_state = "one_laser"
 	desc = "A tiny laser used in certain devices."
 	origin_tech = list(TECH_MAGNET = 7)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -198,7 +198,7 @@
 	desc = "A container for hold compressed matter awaiting re-construction."
 	icon_state = "one_matter"
 	origin_tech = list(TECH_MATERIAL = 7)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 2)
 	price_tag = 500
 
@@ -244,13 +244,13 @@
 	rating = 5
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 
-//Guild stock parts (rating 5)
+//Guild stock parts (rating 4)
 /obj/item/stock_parts/capacitor/guild
 	name = "crafted ultra capacitor"
 	desc = "A guild tinkered super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "guild_capacitor"
 	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
 	price_tag = 600
 
@@ -259,7 +259,7 @@
 	desc = "An over engineered and expensive yet compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "guild_scan_module"
 	origin_tech = list(TECH_MAGNET = 5)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_RGLASS  = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
 	price_tag = 600
 
@@ -268,7 +268,7 @@
 	desc = "A buffed up pico manipulator with a added case to increase manipulation used in the construction of certain devices."
 	icon_state = "guild_mani"
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 5)
 	price_tag = 600
 
@@ -277,7 +277,7 @@
 	icon_state = "guild_micro_laser"
 	desc = "An ultra-high micro laser with a perfected lens to increase productivity."
 	origin_tech = list(TECH_MAGNET = 5)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_RGLASS = 1, MATERIAL_SILVER = 1)
 	price_tag = 600
 
@@ -286,7 +286,7 @@
 	desc = "A super matter bin with added compression cast onto the base itself for more effective storage."
 	icon_state = "guild_matter_bin"
 	origin_tech = list(TECH_MATERIAL = 5)
-	rating = 5
+	rating = 4
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 1, MATERIAL_PLASMAGLASS = 1)
 	price_tag = 600
 
