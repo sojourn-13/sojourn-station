@@ -23,7 +23,7 @@
 	var/web_activity = 30
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
-	life_cycles_before_sleep = 600
+	life_cycles_before_sleep = 3000 //We need more time to eat and web
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/midwife
 	name = "midwife spider"
@@ -88,7 +88,6 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	meat_amount = 2
 	egg_inject_chance = 15 //Defiently
-	life_cycles_before_sleep = 900
 	//Giving the recluse its own special meat that has zombie powder. Reducing the amount of meat made since this is some hard stuff and the recluse is easy to kill.
 	poison_type = "zombiepowder"
 
