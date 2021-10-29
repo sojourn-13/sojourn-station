@@ -199,7 +199,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 
 /obj/item/genetics/sample/New(var/datum/genetics/genetics_holder/incoming_holder)
 	if(incoming_holder)
-		name = "Mutagenic Sample Plate ([incoming_holder])"
+		name = "Mutagenic Sample Plate"
 		icon_state = "slideblood"
 		genetics_holder = incoming_holder.Copy()
 	unique_id = sequential_id(type)

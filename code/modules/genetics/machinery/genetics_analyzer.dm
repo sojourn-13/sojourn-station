@@ -1,5 +1,9 @@
 #define MENU_MAIN 1
 #define MENU_MERGE 2
+#define MENU_COMBINE 3
+#define MENU_PROCESSING 4
+#define MENU_COMBINE_RESULT 6
+#define MENU_IRRADIATE_RESULT 7
 /*
 =========================================================================================================================================
 Belvoix Genetic Analyzer
@@ -38,9 +42,11 @@ cannot isolate or combine desired genes.
 	//A list of virtual mutation keys that the Analyzer recognizes as real
 	var/list/known_mutations = null
 
+	var/datum/genetics/genetics_holder/mutations_to_combine = new /datum/genetics/genetics_holder()
+	var/mutations_combining_count = 0
 	var/menu_state = MENU_MAIN //1 is basic menu, 2 is merge Menu
 
-	
+
 	var/debug_ui_data = null
 
 
@@ -123,6 +129,16 @@ cannot isolate or combine desired genes.
 		active_mutation_data = active_mutation.ui_data()
 	data["active_mutation"] = active_mutation_data
 
+	var/mutations_to_combine_data
+	if(mutations_to_combine)
+		mutations_to_combine_data = mutations_to_combine.ui_data()
+	data["mutations_to_combine"] = mutations_to_combine_data
+
+	var/can_combine = FALSE
+	if(mutations_combining_count >= 2)
+		can_combine = TRUE
+	data["can_combine"] = can_combine
+
 	debug_ui_data = data
 
 	return data
@@ -130,27 +146,123 @@ cannot isolate or combine desired genes.
 /obj/machinery/genetics/gene_analyzer/Topic(href, href_list)
 	if(..())
 		return FALSE
-	log_debug("Hey we got past the default shit on the topic menu")
+
+	if(href_list["back"])
+		//Add back the mutations we removed.
+		if(menu_state == MENU_COMBINE)
+			for(var/datum/genetics/mutation/target_mutation in mutations_to_combine.mutation_pool)
+				var/datum/genetics/mutation/new_mutation = target_mutation.copy()
+				active_sample.genetics_holder.addMutation(new_mutation)
+			mutations_to_combine.removeAllMutations()
+		active_mutation = null
+		active_sample = null
+		menu_state = MENU_MAIN
+		return TRUE
 
 	if(menu_state == MENU_MAIN)
 		if(href_list["eject"])
-			log_debug("Ejecting the sample plate GET THE FUCK OUTTA THERE")
-			var/eject_id = href_list["eject"]
+			var/eject_id = text2num(href_list["eject"])
 			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
-				log_debug("comparing [selected_sample.unique_id] to [eject_id]")
-				if (selected_sample.unique_id == eject_id)
-					log_debug("found sample!")
+				var/unique_test_id = selected_sample.unique_id
+				if (unique_test_id == eject_id)
 					src.eject(selected_sample)
 					return TRUE
 
 		if(href_list["merge"])
-			var/merge_id = href_list["merge"]
-			log_debug("MERGE PAGE LOADING, active sample: [merge_id]")
+			var/merge_id = text2num(href_list["merge"])
 			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
 				if (selected_sample.unique_id == merge_id)
 					active_sample = selected_sample
-			menu_state = MENU_MERGE
+					menu_state = MENU_MERGE
+					return TRUE
+
+		if(href_list["toggle_active"])
+			var/unique_id = text2num(href_list["unique_id"])
+			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
+				if (selected_sample.unique_id == unique_id)
+					for(var/datum/genetics/mutation/target_mutation in selected_sample.genetics_holder.mutation_pool)
+						if(target_mutation.key == href_list["toggle_active"])
+							if(target_mutation.active)
+								target_mutation.active = FALSE
+							else
+								target_mutation.active = TRUE
+							return TRUE
+			log_debug("Genetics_analyzer.topic(): toggle_active ended way too late.")
+
 			return TRUE
+		if(href_list["irradiate"])
+			var/unique_id = text2num(href_list["unique_id"])
+			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
+				if (selected_sample.unique_id == unique_id)
+					active_mutation = selected_sample.genetics_holder.irradiate(selected_sample.genetics_holder.getMutation(href_list["irradiate"]))
+					menu_state = MENU_PROCESSING
+					SSnano.update_uis(src)
+					sleep(50)
+					menu_state = MENU_IRRADIATE_RESULT
+					return TRUE
+			log_debug("Genetics_analyzer.topic(): irradiate ended way too late.")
+
+			return TRUE
+		if(href_list["combine"])
+			var/unique_id = text2num(href_list["unique_id"])
+			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
+				if (selected_sample.unique_id == unique_id)
+					active_sample = selected_sample
+					var/datum/genetics/mutation/target_mutation = selected_sample.genetics_holder.getMutation(href_list["combine"])
+					if(target_mutation)
+						mutations_to_combine.addMutation(selected_sample.genetics_holder.removeMutation(target_mutation.key), TRUE)
+					mutations_combining_count++
+					menu_state = MENU_COMBINE
+					return TRUE
+			log_debug("Genetics_analyzer.topic(): irradiate ended way too late.")
+
+			return TRUE
+		if(href_list["purge"])
+			var/unique_id = text2num(href_list["unique_id"])
+			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
+				if (selected_sample.unique_id == unique_id)
+					selected_sample.genetics_holder.removeMutation(href_list["purge"])
+					return TRUE
+	if(menu_state == MENU_MERGE)
+		if(href_list["merge"])
+			var/merge_id = text2num(href_list["merge"])
+			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
+				if (selected_sample.unique_id == merge_id)
+					for(var/datum/genetics/mutation/target_mutation in selected_sample.genetics_holder.mutation_pool)
+						var/datum/genetics/mutation/new_mutation = target_mutation.copy()
+						active_sample.genetics_holder.addMutation(new_mutation)
+					selected_sample.genetics_holder.removeAllMutations()
+					sample_plates -= selected_sample
+					qdel(selected_sample)
+					menu_state = MENU_PROCESSING
+					SSnano.update_uis(src)
+					sleep(50)
+					menu_state = MENU_MAIN
+					return TRUE
+	if(menu_state == MENU_COMBINE)
+		if(href_list["add"])
+			mutations_to_combine.addMutation(active_sample.genetics_holder.removeMutation(href_list["add"]), TRUE)
+			mutations_combining_count++
+			return TRUE
+
+		if(href_list["remove"])
+			active_sample.genetics_holder.addMutation(mutations_to_combine.removeMutation(href_list["remove"]), TRUE)
+			mutations_combining_count--
+			return TRUE
+
+		if(href_list["combine"])
+			var/list/mutation_amount_pair = list()
+			for(var/datum/genetics/mutation/target_mutation in mutations_to_combine.mutation_pool)
+				mutation_amount_pair += list(list(target_mutation, target_mutation.count))
+			menu_state = MENU_PROCESSING
+			mutations_combining_count = 0
+			SSnano.update_uis(src)
+			sleep(50)
+			active_mutation = mutations_to_combine.combine(mutation_amount_pair)
+
+			active_sample.genetics_holder.addMutation(active_mutation)
+			menu_state = MENU_COMBINE_RESULT
+
 	return FALSE
 
 /*
@@ -167,3 +279,7 @@ TODO Topics:
 */
 #undef MENU_MAIN
 #undef MENU_MERGE
+#undef MENU_COMBINE
+#undef MENU_PROCESSING
+#undef MENU_COMBINE_RESULT
+#undef MENU_IRRADIATE_RESULT

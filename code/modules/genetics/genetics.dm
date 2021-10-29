@@ -187,7 +187,8 @@
 
 	if(removeMutation(target.key))
 		addMutation(new_mutation)
-
+		return new_mutation
+	return null
 
 //What happens when two or more genes are combined.
 /datum/genetics/genetics_holder/proc/combine(var/list/combining_mutations)
@@ -357,12 +358,21 @@
 	if(mutation_to_remove)
 		total_instability -= (mutation_to_remove.instability * amt_to_remove)
 		mutation_to_remove.count -= amt_to_remove
+		//make a return mutation object
+		var/datum/genetics/mutation/return_mutation = mutation_to_remove.copy()
+
 		if(mutation_to_remove.count <= 0)
 			if(holder)
 				mutation_to_remove.onPlayerRemove(src)
 				mutation_to_remove.onMobRemove(src)
 			mutation_pool -= mutation_to_remove
-		return TRUE
+
+
+			return_mutation.count = amt_to_remove + mutation_to_remove.count
+			qdel(mutation_to_remove)
+		else
+			return_mutation.count = amt_to_remove
+		return return_mutation
 	else
 		#ifdef JANEDEBUG
 		log_debug("removeMutation: Couldn't find mutation")
@@ -479,10 +489,11 @@
 /datum/genetics/genetics_holder/ui_data()
 	var/list/data = list()
 	data["instability"] = total_instability
-	var/list/mutation_pool_data = list()
-	for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
-		mutation_pool_data += list(selected_mutation.ui_data())
-
+	var/list/mutation_pool_data = null
+	if(mutation_pool)
+		mutation_pool_data = list()
+		for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
+			mutation_pool_data += list(selected_mutation.ui_data())
 	data["mutation_pool"] = mutation_pool_data
 
 	return data
