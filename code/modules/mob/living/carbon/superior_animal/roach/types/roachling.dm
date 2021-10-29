@@ -17,6 +17,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
 	eating_time = 1200 //Takes longer for small roaches to eat
+	life_cycles_before_sleep = 800 //We need more time to eat
 	probability_egg_laying = 0
 	var/amount_grown = 0
 	var/big_boss = FALSE
