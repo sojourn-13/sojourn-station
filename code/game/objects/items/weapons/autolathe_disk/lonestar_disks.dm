@@ -198,3 +198,20 @@
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/part/cable_coil,
 		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/scav
+	disk_name = "Prospectors Swag"
+	icon_state = "scav"
+	license = 6
+	designs = list(
+		/datum/design/autolathe/clothing/formanhat = 3,
+		/datum/design/autolathe/clothing/formansuit = 3,
+		/datum/design/autolathe/clothing/scav_armor,
+		/datum/design/autolathe/clothing/scav_armor_void,
+		/datum/design/autolathe/clothing/scav_helm_void = 0,
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/scav/forman
+	disk_name = "Prospectors Sweatshop"
+	icon_state = "scav"
+	license = -1

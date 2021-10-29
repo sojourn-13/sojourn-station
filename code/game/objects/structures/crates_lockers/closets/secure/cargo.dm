@@ -96,6 +96,7 @@
 
 /obj/structure/closet/secure_closet/personal/prospector/populate_contents()
 	new /obj/item/device/radio/headset/headset_pro(src)
+	new /obj/item/clothing/accessory/cape/scav(src)
 	if(prob(70))
 		new /obj/item/storage/backpack/satchel/industrial(src)
 	else if(prob(80))
@@ -206,6 +207,7 @@
 
 /obj/structure/closet/secure_closet/personal/salvager/populate_contents()
 	new /obj/item/device/radio/headset/headset_pro(src)
+	new /obj/item/clothing/accessory/cape/scav(src)
 	if(prob(70))
 		new /obj/item/storage/backpack/satchel/medical(src)
 	else if(prob(65))
@@ -302,6 +304,8 @@
 
 /obj/structure/closet/secure_closet/reinforced/foreman/populate_contents()
 	new /obj/item/device/radio/headset/heads/foreman(src)
+	new /obj/item/clothing/accessory/cape/scav(src)
+	new /obj/item/computer_hardware/hard_drive/portable/design/scav/forman(src)
 	if(prob(60))
 		new /obj/item/storage/backpack/satchel/industrial(src)
 	else if(prob(50))
@@ -365,6 +369,8 @@
 		new /obj/item/device/lighting/glowstick/flare(src)
 		new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
+	new /obj/item/clothing/head/helmet/foreman(src)
+	new /obj/item/clothing/suit/storage/vest/scav(src)
 	new /obj/item/gun/projectile/silvereye(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)

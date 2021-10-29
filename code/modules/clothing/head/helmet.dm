@@ -279,11 +279,59 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 
+/obj/item/clothing/head/helmet/foreman
+	name = "salvaged helmet"
+	desc = "A helmet patched together by Prospector Salvagers, light and easy to breath in, \
+	the helmet has a few bells and whistles, a set of inbuilt goggles to keep dust and blood out of ones eyes, \
+	salvaged Greyson material coating it's outside it offer superb protection, and even a inbuilt radio. \
+	Tragically the scav incharge of the radio was unable to tune it or turn it on."
+	icon_state = "forehead_helmet"
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 23, MATERIAL_PLATINUM  = 8, MATERIAL_STEEL = 30, MATERIAL_SILVER = 12) //worth stealing
+	price_tag = 1200
+	armor = list(
+		melee = 40,
+		bullet = 30,
+		energy = 30,
+		bomb = 65,
+		bio = 100,
+		rad = 0
+	)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	flash_protection = FLASH_PROTECTION_MAJOR
+	action_button_name = "Toggle Headlamp"
+	light_overlay = "technohelmet_light"
+	brightness_on = 5 //Slightly better do to the sear costs
+
+/obj/item/clothing/head/helmet/foreman/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["salvaged helmet"] = "forehead_helmet"
+	options["alt salvaged helmet"] = "alt_scavenger_helmet"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /obj/item/clothing/head/helmet/technomancersuit
 	name = "'Mark V' environmental protection helmet"
 	desc = "You feel like this helmet is rare, for some reason."
 	icon_state = "technohelmet"
-	armor = list(melee = 45, bullet = 45, energy = 40, bomb = 60, bio = 100, rad = 100) //Cant have armor mods
+	armor = list(melee = 45, bullet = 45, energy = 40, bomb = 60, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	flash_protection = FLASH_PROTECTION_MAJOR

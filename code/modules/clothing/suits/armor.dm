@@ -506,6 +506,36 @@
 		rad = 0
 	)
 
+//Has some armor and but is a mix of the scav suit and a webbing
+/obj/item/clothing/suit/storage/vest/scav
+	name = "armored rig"
+	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to it's front, \
+	with matching knee and arm pads to protect limbs without hindering movement. \
+	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into a shape for the vest, \
+	far lighter and offering more protection then it's more common ceramic counterparts."
+	icon_state = "forehead_armor"
+	item_state = "forehead_armor"
+	max_upgrades = 0 //No upgrading this one
+	tool_qualities = list()
+	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 35, MATERIAL_PLATINUM  = 4, MATERIAL_STEEL = 40) //worth stealing
+	price_tag = 1200
+	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+	armor = list(
+		melee = 40,
+		bullet = 35,
+		energy = 40,
+		bomb = 35,
+		bio = 0,
+		rad = 0
+	)
+/obj/item/clothing/suit/storage/vest/scav/New()
+	..()
+	pockets = new/obj/item/storage/internal(src)
+	pockets.storage_slots = 2	//two slots
+	pockets.max_w_class = ITEM_SIZE_NORMAL		//fits two normal size items as its big pockets
+	pockets.max_storage_space = 8
+
 //Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier
 	name = "plate carrier"
@@ -744,7 +774,6 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 	desc = "Supply Specialist's jacket with an armored weave. For formality, protection and style."
 	icon_state = "marshal_coat_ss"
 	item_state = "marshal_coat_ss"
-
 
 /*
  * Reactive Armor
