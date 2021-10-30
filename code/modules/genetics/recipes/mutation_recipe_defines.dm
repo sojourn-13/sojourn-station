@@ -56,7 +56,7 @@
 					compare_string = compare_string + "M~"
 			else
 				compare_string = compare_string + "M~"
-
+		log_debug("Loaded recipe [example_recipe] with string [compare_string]")
 		if(!GLOB.mutation_recipe_list[compare_string])
 			GLOB.mutation_recipe_list[compare_string] = list()
 		GLOB.mutation_recipe_list[compare_string] += example_recipe

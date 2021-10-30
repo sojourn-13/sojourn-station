@@ -2,6 +2,7 @@
 #define MENU_MERGE 2
 #define MENU_COMBINE 3
 #define MENU_PROCESSING 4
+#define MENU_ANALYZE 5
 #define MENU_COMBINE_RESULT 6
 #define MENU_IRRADIATE_RESULT 7
 /*
@@ -157,6 +158,8 @@ cannot isolate or combine desired genes.
 		active_mutation = null
 		active_sample = null
 		menu_state = MENU_MAIN
+		mutations_combining_count = 0
+		mutations_to_combine.removeAllMutations()
 		return TRUE
 
 	if(menu_state == MENU_MAIN)
@@ -223,6 +226,12 @@ cannot isolate or combine desired genes.
 				if (selected_sample.unique_id == unique_id)
 					selected_sample.genetics_holder.removeMutation(href_list["purge"])
 					return TRUE
+		if(href_list["analyze"])
+			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
+				if (selected_sample.unique_id == unique_id)
+					active_sample = selected_sample
+			
+			return TRUE
 	if(menu_state == MENU_MERGE)
 		if(href_list["merge"])
 			var/merge_id = text2num(href_list["merge"])
@@ -281,5 +290,6 @@ TODO Topics:
 #undef MENU_MERGE
 #undef MENU_COMBINE
 #undef MENU_PROCESSING
+#undef MENU_ANALYZE
 #undef MENU_COMBINE_RESULT
 #undef MENU_IRRADIATE_RESULT
