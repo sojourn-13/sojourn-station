@@ -90,6 +90,7 @@
 
 /obj/machinery/multistructure/bioreactor_part/biotank_platform/proc/take_amount(var/amount)
 	biotank.reagents.add_reagent("biomatter", amount)
+	GLOB.biomatter_neothecnology_amt += new_amount
 
 
 //Pipe wearout. Wearout var - is amount of 'dirt' that will be applied to our pipes
