@@ -58,6 +58,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 
 	req_access = list(access_research_equipment) //Data and setting manipulation requires scientist access.
 
+	var/list/known_mutations = list()
 	var/datum/tech/selected_tech_tree
 	var/datum/technology/selected_technology
 	var/show_settings = FALSE

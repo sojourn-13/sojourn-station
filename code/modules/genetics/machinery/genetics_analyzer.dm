@@ -34,6 +34,9 @@ cannot isolate or combine desired genes.
 	//Subject to upgrading based on parts.
 	var/max_analyzed_per_destruction = 2
 
+	//mark count
+	var/mark_count = 0
+
 	//The presently selected holder
 	var/obj/item/genetics/sample/active_sample = null
 
@@ -41,7 +44,8 @@ cannot isolate or combine desired genes.
 	var/datum/genetics/mutation/active_mutation = null
 
 	//A list of virtual mutation keys that the Analyzer recognizes as real
-	var/list/known_mutations = null
+	var/list/known_mutations = list()
+	var/obj/machinery/computer/rdconsole/console
 
 	var/datum/genetics/genetics_holder/mutations_to_combine = new /datum/genetics/genetics_holder()
 	var/mutations_combining_count = 0
@@ -140,7 +144,15 @@ cannot isolate or combine desired genes.
 		can_combine = TRUE
 	data["can_combine"] = can_combine
 
-	debug_ui_data = data
+	var/can_analyze = FALSE
+	if(mark_count > 0)
+		can_analyze = TRUE
+	data["can_analyze"] = can_analyze
+
+	var/analysis_full = FALSE
+	if(mark_count >= max_analyzed_per_destruction)
+		analysis_full = TRUE
+	data["analysis_full"] = analysis_full
 
 	return data
 
@@ -149,20 +161,56 @@ cannot isolate or combine desired genes.
 		return FALSE
 
 	if(href_list["back"])
-		//Add back the mutations we removed.
+		//Basically one big 'reset' button for the entire client.
+		//Tries to reset everything for a new operation to be ran.
 		if(menu_state == MENU_COMBINE)
 			for(var/datum/genetics/mutation/target_mutation in mutations_to_combine.mutation_pool)
 				var/datum/genetics/mutation/new_mutation = target_mutation.copy()
 				active_sample.genetics_holder.addMutation(new_mutation)
 			mutations_to_combine.removeAllMutations()
 		active_mutation = null
+		if(active_sample && active_sample.genetics_holder)
+			active_sample.genetics_holder.unmark_all_mutations()
 		active_sample = null
 		menu_state = MENU_MAIN
 		mutations_combining_count = 0
-		mutations_to_combine.removeAllMutations()
+		mark_count = 0
+		if(mutations_to_combine)
+			mutations_to_combine.removeAllMutations()
 		return TRUE
 
 	if(menu_state == MENU_MAIN)
+		if(href_list["sync"])
+			if(!console)
+				for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list) // Check every RnD computer in existance
+					if(RD.id == 1) // only core gets the science
+						console = RD
+
+			if(console)
+				var/awarding_points = 0
+				for(var/mut_key in known_mutations)
+					if(!console.known_mutations[mut_key])
+						console.known_mutations[mut_key] = known_mutations[mut_key]
+						awarding_points += known_mutations[mut_key]
+
+				if(awarding_points > 0)
+					console.files.research_points += awarding_points // Give the points
+					var/obj/item/device/radio/radio
+					radio = new /obj/item/device/radio{channels=list("Science")}(src) // Create a new radio
+					radio.autosay("Genetics Research Uploaded, granting [awarding_points] research points~!", "Genetics Announcement System", "Science") // Make the radio say a message.
+					spawn(50) qdel(radio)
+
+				//Update known mutations from the master console JIC
+				for(var/mut_key in console.known_mutations)
+					if(!known_mutations[mut_key])
+						known_mutations[mut_key] = console.known_mutations[mut_key]
+
+			menu_state = MENU_PROCESSING
+			SSnano.update_uis(src)
+			sleep(50)
+			menu_state = MENU_MAIN
+			return TRUE
+
 		if(href_list["eject"])
 			var/eject_id = text2num(href_list["eject"])
 			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
@@ -227,10 +275,12 @@ cannot isolate or combine desired genes.
 					selected_sample.genetics_holder.removeMutation(href_list["purge"])
 					return TRUE
 		if(href_list["analyze"])
+			var/unique_id = text2num(href_list["analyze"])
 			for(var/obj/item/genetics/sample/selected_sample in sample_plates)
 				if (selected_sample.unique_id == unique_id)
 					active_sample = selected_sample
-			
+			active_sample.genetics_holder.unmark_all_mutations()
+			menu_state = MENU_ANALYZE
 			return TRUE
 	if(menu_state == MENU_MERGE)
 		if(href_list["merge"])
@@ -271,6 +321,29 @@ cannot isolate or combine desired genes.
 
 			active_sample.genetics_holder.addMutation(active_mutation)
 			menu_state = MENU_COMBINE_RESULT
+	if(menu_state == MENU_ANALYZE)
+		if(href_list["mark"])
+			var/datum/genetics/mutation/target_mutation = active_sample.genetics_holder.getMutation(href_list["mark"])
+			target_mutation.marked = TRUE
+			mark_count++
+			return TRUE
+		if(href_list["unmark"])
+			var/datum/genetics/mutation/target_mutation = active_sample.genetics_holder.getMutation(href_list["unmark"])
+			target_mutation.marked = FALSE
+			mark_count--
+			return TRUE
+		if(href_list["analyze"])
+			for(var/datum/genetics/mutation/target_mutation in active_sample.genetics_holder.mutation_pool)
+				if(target_mutation.marked)
+					if(!known_mutations[target_mutation.key])
+						known_mutations[target_mutation.key] = target_mutation.gene_research_value
+			sample_plates -= active_sample
+			qdel(active_sample)
+			menu_state = MENU_PROCESSING
+			SSnano.update_uis(src)
+			sleep(50)
+			menu_state = MENU_MAIN
+			return TRUE
 
 	return FALSE
 
