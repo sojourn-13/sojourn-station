@@ -114,6 +114,57 @@
 /obj/item/ammo_casing/magnum/scrap/prespawned
 	amount = 6
 
+//// .45 ACP ////
+
+/obj/item/ammo_casing/pistol_45
+	desc = "A .45 ACP bullet casing."
+	icon_state = "pistol_c_l"
+	spent_icon = "pistol_c_l-spent"
+	caliber = CAL_PISTOL
+	projectile_type = /obj/item/projectile/bullet/pistol_45
+	maxamount = 15
+
+/obj/item/ammo_casing/pistol/Initialize()
+	. = ..()
+	var/matrix/rotation_matrix = matrix()
+	rotation_matrix.Turn(round(45 * rand(0, 32) / 2))
+	src.transform = rotation_matrix * 0.5
+
+/obj/item/ammo_casing/pistol_45/hv
+	desc = "A .45 ACP high-velocity bullet casing."
+	icon_state = "pistol_c_hv"
+	spent_icon = "pistol_c_hv-spent"
+	caliber = CAL_PISTOL
+	projectile_type = /obj/item/projectile/bullet/pistol_45/hv
+
+/obj/item/ammo_casing/pistol_45/practice
+	desc = "A .45 ACP practice bullet casing."
+	icon_state = "pistol_c_p"
+	spent_icon = "pistol_c_p-spent"
+	caliber = CAL_PISTOL
+	projectile_type = /obj/item/projectile/bullet/pistol_45/practice
+
+/obj/item/ammo_casing/pistol_45/rubber
+	desc = "A .45 ACP rubber bullet casing."
+	icon_state = "pistol_c_r"
+	spent_icon = "pistol_c_r-spent"
+	caliber = CAL_PISTOL
+	projectile_type = /obj/item/projectile/bullet/pistol_45/rubber
+
+/obj/item/ammo_casing/pistol_45/lethal
+	desc = "A .45 ACP hollow-point bullet casing."
+	caliber = CAL_PISTOL
+	projectile_type = /obj/item/projectile/bullet/pistol_45/lethal
+
+/obj/item/ammo_casing/pistol_45/scrap
+	desc = "An old .45 ACP bullet casing."
+	icon_state = "pistol_c_s"
+	spent_icon = "pistol_c_s-spent"
+	caliber = CAL_PISTOL
+	projectile_type = /obj/item/projectile/bullet/pistol_45/scrap
+
+
+
 //// .257 carbine ////
 
 /obj/item/ammo_casing/light_rifle_257
