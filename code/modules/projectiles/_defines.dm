@@ -2,6 +2,7 @@
 #define CAL_PISTOL ".35"
 #define CAL_35A ".35 auto"
 #define CAL_MAGNUM ".40 magnum"
+#define CAL_45 ".45 ACP"
 #define CAL_LRIFLE ".257 carbine"
 #define CAL_RIFLE "7.5mm rifle"
 #define CAL_HRIFLE ".408 heavy rifle"
