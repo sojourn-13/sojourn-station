@@ -137,6 +137,62 @@
 	armor_penetration = 5
 	affective_damage_range = 1
 	affective_ap_range = 1
+	
+
+/// .45 ACP ///
+/obj/item/projectile/bullet/pistol_45
+	damage_types = list(BRUTE = 26)
+	armor_penetration = 5
+	step_delay = 0.65
+	can_ricochet = TRUE
+
+	affective_damage_range = 2
+	affective_ap_range = 2
+
+/obj/item/projectile/bullet/pistol_45/rubber
+	name = "rubber bullet"
+	icon_state = "rubber"
+	damage_types = list(BRUTE = 4)
+	agony = 24
+	armor_penetration = 0
+	embed = FALSE
+	sharp = FALSE
+
+/obj/item/projectile/bullet/pistol_45/hv
+	damage_types = list(BRUTE = 30)
+	armor_penetration = 10
+	step_delay = 0.5
+	affective_damage_range = 4
+	affective_ap_range = 4
+	can_ricochet = TRUE
+
+/obj/item/projectile/bullet/pistol_45/practice
+	name = "practice bullet"
+	damage_types = list(BRUTE = 1)
+	agony = 4
+	armor_penetration = 0
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.75
+	can_ricochet = FALSE
+
+/obj/item/projectile/bullet/pistol_45/lethal
+	name = "hollow-point bullet"
+	damage_types = list(BRUTE = 28)
+	agony = 28
+	armor_penetration = 0
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.65
+
+/obj/item/projectile/bullet/pistol_45/scrap
+	damage_types = list(BRUTE = 22)
+	armor_penetration = 0
+
+	affective_damage_range = 1
+	affective_ap_range = 1
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
