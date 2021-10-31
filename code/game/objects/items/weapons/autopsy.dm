@@ -13,21 +13,21 @@
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_STEEL = 1)
 	var/list/datum/autopsy_data_scanner/wdata = list()
 	var/list/datum/autopsy_data_scanner/chemtraces = list()
-	var/target_name = null
-	var/timeofdeath = null
+	var/target_name
+	var/timeofdeath
 
 /obj/item/paper/autopsy_report
 	var/list/autopsy_data
 
 /datum/autopsy_data_scanner
-	var/weapon = null // this is the DEFINITE weapon type that was used
+	var/weapon // this is the DEFINITE weapon type that was used
 	var/list/organs_scanned = list() // this maps a number of scanned organs to
 									 // the wounds to those organs with this data's weapon type
 	var/organ_names = ""
 
 /datum/autopsy_data
-	var/weapon = null
-	var/pretend_weapon = null
+	var/weapon
+	var/pretend_weapon
 	var/damage = 0
 	var/hits = 0
 	var/time_inflicted = 0
@@ -54,10 +54,10 @@
 			*/
 
 			// Buffing this stuff up for now!
-			if(prob(min(20 + (user.stats.getMult(STAT_BIO, STAT_LEVEL_ADEPT) * 100 ), 100)))
+			if(prob(min(20 + (user.stats.getMult(STAT_BIO, STAT_LEVEL_EXPERT) * 100 ), 100)))
 				W.pretend_weapon = W.weapon
 			else
-				W.pretend_weapon = pick("mechanical toolbox", "wire cutters", "revolver", "crowbar", "fire extinguisher", "tomato soup", "oxygen tank", "emergency oxygen tank", "laser", "bullet")
+				W.pretend_weapon = pick("mechanical toolbox", "wirecutters", "revolver", "crowbar", "fire extinguisher", "tomato soup", "oxygen tank", "emergency oxygen tank", "laser", "bullet")
 
 
 		var/datum/autopsy_data_scanner/D = wdata[V]
@@ -176,12 +176,11 @@
 	usr.put_in_hands(P)
 	usr.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*4) //To stop people spamclicking and generating tons of paper
 
-
 /obj/item/autopsy_scanner/attack(mob/living/carbon/human/M, mob/living/carbon/user)
 	if(!istype(M))
 		return
 
-	if(!can_operate(M, user))
+	if(!can_operate(M, user) == CAN_OPERATE_ALL)
 		to_chat(user, SPAN_WARNING("You need to lay the cadaver down on a table first!"))
 		return
 
@@ -203,12 +202,12 @@
 		return
 	for(var/mob/O in viewers(M))
 		O.show_message(SPAN_NOTICE("\The [user] scans the wounds on [M.name]'s [S.name] with \the [src]"), 1)
-
 	SEND_SIGNAL(user, COMSING_AUTOPSY, M)
+	if(user.mind && user.mind.assigned_job && (user.mind.assigned_job.department in GLOB.department_moebius))
+		GLOB.moebius_autopsies_mobs |= M
 	src.add_data(S, user)
 
 	return 1
-
 
 /obj/item/autopsy_scanner/attack_self()
 	print_data()
