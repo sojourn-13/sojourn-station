@@ -217,6 +217,50 @@
 	name = "old magazine (.40 Magnum)"
 	icon_state = "magnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum/scrap
+	
+///////////// .45 pistol ///////////
+
+/obj/item/ammo_magazine/pistol_45
+	name = "standard magazine (.45 ACP)"
+	desc = "a 7 round magazine marked for .45 ACP."
+	icon_state = "pistol"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_PISTOL
+	matter = list(MATERIAL_STEEL = 3)
+	caliber = CAL_PISTOL
+	ammo_type = /obj/item/ammo_casing/pistol_45
+	max_ammo = 7
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/pistol_45/empty
+	icon_state = "pistol"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/pistol_45/practice
+	name = "standard magazine (.45 ACP practice)"
+	icon_state = "pistol_p"
+	ammo_type = /obj/item/ammo_casing/pistol_45/practice
+
+/obj/item/ammo_magazine/pistol_45/highvelocity
+	name = "standard magazine (.45 ACP high-velocity)"
+	icon_state = "pistol_hv"
+	ammo_type = /obj/item/ammo_casing/pistol_45/hv
+
+/obj/item/ammo_magazine/pistol_45/rubber
+	name = "standard magazine (.45 ACP rubber)"
+	icon_state = "pistol_r"
+	ammo_type = /obj/item/ammo_casing/pistol_45/rubber
+
+/obj/item/ammo_magazine/pistol_45/lethal
+	name = "standard magazine (.45 ACP hollow-point)"
+	icon_state = "pistol_l"
+	ammo_type = /obj/item/ammo_casing/pistol_45/lethal
+
+/obj/item/ammo_magazine/pistol_45/scrap
+	name = "old standard magazine (.45 Auto)"
+	icon_state = "pistol_s"
+	ammo_type = /obj/item/ammo_casing/pistol_45/scrap
 
 ////.257 Carbine////
 
