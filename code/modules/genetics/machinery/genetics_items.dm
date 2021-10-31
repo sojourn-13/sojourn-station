@@ -211,11 +211,11 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	icon_state = "slide"
 	return outbound_genetics_holder
 
-/obj/item/genetics/sample/proc/sample_data()
+/obj/item/genetics/sample/proc/sample_data(var/list/known_mutations)
 	var/list/data = list()
 	data["name"] = name
 	data["unique_id"] = unique_id
-	data += genetics_holder.ui_data()
+	data += genetics_holder.ui_data(known_mutations)
 	return data
 /*
 =================Mutagenic Implanter=================

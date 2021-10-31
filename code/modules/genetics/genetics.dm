@@ -486,14 +486,14 @@
 	//Akira message:
 	holder.visible_message(SPAN_DANGER("\The [holder]'s body begins to warp and change! BY SCIENCE, WHAT IS THAT!?"))
 
-/datum/genetics/genetics_holder/ui_data()
+/datum/genetics/genetics_holder/ui_data(var/list/known_mutations)
 	var/list/data = list()
 	data["instability"] = total_instability
 	var/list/mutation_pool_data = null
 	if(mutation_pool)
 		mutation_pool_data = list()
 		for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
-			mutation_pool_data += list(selected_mutation.ui_data())
+			mutation_pool_data += list(selected_mutation.ui_data(known_mutations))
 	data["mutation_pool"] = mutation_pool_data
 
 	return data
@@ -574,21 +574,37 @@
 	duplicate.marked = marked
 	return duplicate
 
-/datum/genetics/mutation/ui_data()
+//Obfuscate the data if we don't know it yet.
+/datum/genetics/mutation/ui_data(var/list/known_mutations)
 	var/list/data = list()
-	data["source_mob"] = source_mob
-	data["source_name"] = source_name
-	data["name"] = name
-	data["desc"] = desc
-	data["key"] = key
-	data["count"] = count
-	data["clone_gene"] = clone_gene
-	data["active"] = active
-	data["implanted"] = implanted
-	data["instability"] = instability
-	data["requirement_flags"] = requirement_flags
-	data["gene_research_value"] = gene_research_value
-	data["marked"] = marked
+	if(known_mutations[key])
+		data["source_mob"] = source_mob
+		data["source_name"] = source_name
+		data["name"] = name
+		data["desc"] = desc
+		data["key"] = key
+		data["count"] = count
+		data["clone_gene"] = clone_gene
+		data["active"] = active
+		data["implanted"] = implanted
+		data["instability"] = instability
+		data["requirement_flags"] = requirement_flags
+		data["gene_research_value"] = gene_research_value
+		data["marked"] = marked
+	else
+		data["source_mob"] = source_mob
+		data["source_name"] = source_name
+		data["name"] = "UNDEFINED"
+		data["desc"] = "New genetic information encountered. Analyze for further details."
+		data["key"] = key
+		data["count"] = count
+		data["clone_gene"] = clone_gene
+		data["active"] = active
+		data["implanted"] = implanted
+		data["instability"] = "??%"
+		data["requirement_flags"] = requirement_flags
+		data["gene_research_value"] = "????"
+		data["marked"] = marked
 	return data
 
 //Activate a mutation. Deactivates other exclusive mutations if 'force activation' is set to TRUE.

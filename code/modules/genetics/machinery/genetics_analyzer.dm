@@ -121,22 +121,22 @@ cannot isolate or combine desired genes.
 		if(menu_state == MENU_MERGE && active_sample && active_sample.unique_id == selected_sample.unique_id)
 			continue
 		else
-			sample_plate_data += list(selected_sample.sample_data())
+			sample_plate_data += list(selected_sample.sample_data(known_mutations))
 	data["sample_plates"] = sample_plate_data
 
 	var/active_sample_data
 	if(active_sample)
-		active_sample_data = active_sample.sample_data()
+		active_sample_data = active_sample.sample_data(known_mutations)
 	data["active_sample"] = active_sample_data
 
 	var/active_mutation_data
 	if(active_mutation)
-		active_mutation_data = active_mutation.ui_data()
+		active_mutation_data = active_mutation.ui_data(known_mutations)
 	data["active_mutation"] = active_mutation_data
 
 	var/mutations_to_combine_data
 	if(mutations_to_combine)
-		mutations_to_combine_data = mutations_to_combine.ui_data()
+		mutations_to_combine_data = mutations_to_combine.ui_data(known_mutations)
 	data["mutations_to_combine"] = mutations_to_combine_data
 
 	var/can_combine = FALSE
