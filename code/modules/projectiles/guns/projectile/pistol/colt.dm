@@ -62,7 +62,7 @@
 	icon = 'icons/obj/guns/projectile/colt.dmi'
 	icon_state = "coltreal"
 	item_state = "colt"
-	caliber = CAL_PISTOL
+	caliber = CAL_PISTOL_45
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 5)
 	price_tag = 950
