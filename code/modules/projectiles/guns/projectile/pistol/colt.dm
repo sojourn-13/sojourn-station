@@ -55,6 +55,25 @@
 	item_state = "colt"
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+	
+/obj/item/gun/projectile/colt/real
+	name = "\"M1911\" pistol"
+	desc = "A proper, old M1911 handgun, unmodernized and a flash from the past. Seven rounds, more than enough to kill anything that moves. Uses .45 ACP."
+	icon = 'icons/obj/guns/projectile/colt.dmi'
+	icon_state = "coltreal"
+	item_state = "colt"
+	caliber = CAL_PISTOL
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 5)
+	price_tag = 950
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	can_dual = TRUE
+	load_method = MAGAZINE
+	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
+	damage_multiplier = 1.2
+	recoil_buildup = 6
+	one_hand_penalty = 7
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 /obj/item/gun/projectile/colt/update_icon()
 	..()
