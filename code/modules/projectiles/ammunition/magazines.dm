@@ -228,7 +228,7 @@
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_STEEL = 3)
-	caliber = CAL_PISTOL
+	caliber = CAL_PISTOL_45
 	ammo_type = /obj/item/ammo_casing/pistol_45
 	max_ammo = 7
 	multiple_sprites = 1
