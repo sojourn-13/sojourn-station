@@ -1202,6 +1202,9 @@
 
 	if (thermal_protection < 1 && bodytemperature < burn_temperature)
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
+		if(world.time >= next_onfire_hal)
+			next_onfire_hal = world.time + 50
+			adjustHalLoss(fire_stacks*10 + 3)
 
 /mob/living/carbon/human/rejuvenate()
 	sanity.setLevel(sanity.max_level)
