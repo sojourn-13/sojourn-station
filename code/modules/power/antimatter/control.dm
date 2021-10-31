@@ -73,7 +73,7 @@
 	var/core_damage = 0
 	var/fuel = fueljar.usefuel(fuel_injection)
 
-	stored_power = (fuel/core_power)*fuel*200000
+	stored_power = fuel * 300000 // 300 kW per unit of fuel injected, or 600 kW per Core
 	//Now check if the cores could deal with it safely, this is done after so you can overload for more power if needed, still a bad idea
 	if(fuel > (2*core_power))//More fuel has been put in than the current cores can deal with
 		if(prob(50))
@@ -251,7 +251,7 @@
 	user.set_machine(src)
 
 	var/dat = ""
-	dat += "AntiMatter Control Panel<BR>"
+	dat += "Antimatter Control Panel<BR>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR>"
 	dat += "<A href='?src=\ref[src];refreshicons=1'>Force Shielding Update</A><BR><BR>"

@@ -28,7 +28,6 @@
 	var/coredirs = 0
 	var/dirs = 0
 
-
 /obj/machinery/am_shielding/New(loc)
 	..(loc)
 	spawn(10)
@@ -116,10 +115,10 @@
 	for(var/direction in alldirs)
 		var/machine = locate(/obj/machinery, get_step(loc, direction))
 		if((istype(machine, /obj/machinery/am_shielding) && machine:control_unit == control_unit)||(istype(machine, /obj/machinery/power/am_control_unit) && machine == control_unit))
-			add_overlay("shield_[direction]")
+			icon_state = "shield_[direction]"
 
 	if(core_check())
-		add_overlay("core")
+		add_overlay("core[pick(1, 2)]")
 		if(!processing)
 			setup_core()
 	else if(processing)
@@ -145,13 +144,22 @@
 
 //Scans cards for shields or the control unit and if all there it
 /obj/machinery/am_shielding/proc/core_check()
-	for(var/direction in alldirs)
+	var/counter = 0
+	for(var/obj/machinery/O in orange(1, src))
+		if(istype(O, /obj/machinery/am_shielding) || istype(O, /obj/machinery/power/am_control_unit))
+			counter++
+	if(counter >= 8)
+		return counter
+	else
+		return FALSE
+
+	/*for(var/direction in alldirs)
 		var/machine = locate(/obj/machinery, get_step(loc, direction))
 		if(!machine)
 			return FALSE //Need all for a core
 		if(!istype(machine, /obj/machinery/am_shielding) && !istype(machine, /obj/machinery/power/am_control_unit))
 			return FALSE
-	return TRUE
+	return TRUE*/
 
 /obj/machinery/am_shielding/proc/setup_core()
 	processing = TRUE
