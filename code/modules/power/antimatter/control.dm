@@ -150,6 +150,16 @@
 				disconnect_from_network()
 			return
 
+	if(QUALITY_PULSING in I.tool_qualities)
+		if((anchored || linked_shielding.len) && I.use_tool(user, src, WORKTIME_FAST, QUALITY_PULSING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+			user.visible_message("[user.name] deactivate the Antimatter engine.", \
+								"You deactivate the Antimatter engine.")
+			src.anchored = FALSE
+			disconnect_from_network()
+			for(var/obj/machinery/am_shielding/AMS in linked_shielding)
+				remove_shielding(AMS)
+			return
+
 	else if(istype(I, /obj/item/am_containment))
 		if(fueljar)
 			to_chat(user, "\red There is already a [fueljar] inside!")
