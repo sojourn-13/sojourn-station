@@ -357,7 +357,7 @@
 					/obj/structure/particle_accelerator/end_cap)
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "particle accelerator crate"
-
+/*
 /datum/supply_pack/engine/am_control
 	name = "Antimatter Control Unit"
 	cost = 1000
@@ -388,7 +388,7 @@
 					/obj/item/am_containment)
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "antimatter fuel jar crate"
-
+*/
 /datum/supply_pack/mecha_ripley
 	name = "Exosuit Assembly Crate (\"Ripley\" APLU)"
 	contains = list(
