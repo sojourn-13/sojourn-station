@@ -394,7 +394,7 @@
 //removing shrapnel from yourself, using a knife
 /datum/surgery_step/remove_shrapnel
 	required_tool_quality = QUALITY_CUTTING
-
+	difficulty = FAILCHANCE_EASY
 	duration = 8 SECONDS
 	blood_level = 1
 
@@ -427,7 +427,7 @@
 //Cauterizing a wound to stop bleeding
 /datum/surgery_step/close_wounds
 	required_tool_quality = QUALITY_CAUTERIZING
-
+	difficulty = FAILCHANCE_VERY_EASY
 	duration = 4 SECONDS
 	blood_level = 0
 
