@@ -134,7 +134,7 @@
 /obj/machinery/power/am_control_unit/attackby(obj/item/I, mob/user, params)
 	if(QUALITY_BOLT_TURNING in I.tool_qualities)
 		if(anchored || linked_shielding.len)
-			to_chat(user, "\red Once bolted and linked to a shielding unit it the [src.name] is unable to be moved!")
+			to_chat(user, "\red Once bolted and linked to a shielding unit it the [src.name] is unable to be moved! However a pulsing tool might make the whole construction fall apart safely and easily.")
 		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
 			if(!anchored)
 				user.visible_message("[user.name] secures the [src.name] to the floor.", \
@@ -154,7 +154,6 @@
 		if((anchored || linked_shielding.len) && I.use_tool(user, src, WORKTIME_FAST, QUALITY_PULSING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
 			user.visible_message("[user.name] deactivate the Antimatter engine.", \
 								"You deactivate the Antimatter engine.")
-			src.anchored = FALSE
 			disconnect_from_network()
 			for(var/obj/machinery/am_shielding/AMS in linked_shielding)
 				AMS.collapse()
