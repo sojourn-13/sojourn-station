@@ -85,7 +85,7 @@
 	return 0
 
 /obj/machinery/am_shielding/Process()
-	update_icon()
+	//update_icon()
 	return
 
 /obj/machinery/am_shielding/emp_act()//Immune due to not really much in the way of electronics.
