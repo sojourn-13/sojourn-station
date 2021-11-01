@@ -157,6 +157,7 @@
 			src.anchored = FALSE
 			disconnect_from_network()
 			for(var/obj/machinery/am_shielding/AMS in linked_shielding)
+				AMS.collapse()
 				remove_shielding(AMS)
 			return
 
