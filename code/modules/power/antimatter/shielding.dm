@@ -13,7 +13,7 @@
 	desc = "This device was built using a plasma life-form that seems to increase plasma's natural ability to react with neutrinos while reducing the combustibility."
 
 	icon = 'icons/obj/machines/antimatter.dmi'
-	icon_state = "shield"
+	icon_state = "shield_0"
 	anchored = TRUE
 	density = TRUE
 	dir = SOUTH
@@ -85,10 +85,7 @@
 	return 0
 
 /obj/machinery/am_shielding/Process()
-	if(!processing)
-		. = PROCESS_KILL
-	//TODO: core functions and stability
-	//TODO: think about checking the airmix for plasma and increasing power output
+	update_icon()
 	return
 
 /obj/machinery/am_shielding/emp_act()//Immune due to not really much in the way of electronics.
@@ -112,17 +109,23 @@
 
 /obj/machinery/am_shielding/update_icon()
 	cut_overlays()
-	for(var/direction in alldirs)
-		var/machine = locate(/obj/machinery, get_step(loc, direction))
-		if((istype(machine, /obj/machinery/am_shielding) && machine:control_unit == control_unit)||(istype(machine, /obj/machinery/power/am_control_unit) && machine == control_unit))
-			icon_state = "shield_[direction]"
+	icon_state = ""
+	var/dir_sum = 0 // All the directions that have shielding, used to choose which icon to set
+	var/turf/T
+	for(var/direction  in cardinal) // Check the four directions
+		T = get_step(src, direction) // Get the turf
+		if(locate(/obj/machinery/am_shielding, T) || locate(/obj/machinery/power/am_control_unit, T)) // Check if there's shielding on that turf
+			dir_sum += direction // Add the direction to the value.
+	icon_state = "shield_[dir_sum]" // Update the icon
 
-	if(core_check())
+	if(core_check()) // Check if we can become a core.
 		add_overlay("core[pick(1, 2)]")
-		if(!processing)
+		if(!processing) // Become a core if we weren't one already
 			setup_core()
-	else if(processing)
+	else if(processing) // Shutdown if we're somehow a core without the conditions
 		shutdown_core()
+
+	return dir_sum // Return the sum of all the directions where there was shielding
 
 /obj/machinery/am_shielding/attackby(obj/item/W, mob/user)
 	if(!istype(W) || !user) return
