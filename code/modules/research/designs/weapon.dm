@@ -172,51 +172,61 @@
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 
 /datum/design/research/item/ammo/pistol_laser
-	name = "Auto .35, laser case"
-	desc = "An auto .35 case fitted with a one time use laser payload."
-	build_path = /obj/item/ammo_casing/pistol_35/laser
+	name = "Auto .35, laser"
+	desc = "Auto .35 cases fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/laser
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_SILVER = 15, MATERIAL_GOLD = 15)
 
 /datum/design/research/item/ammo/magum_laser
 	name = "Magnum .40, laser case"
-	desc = "A magnum .40 case fitted with a one time use laser payload."
-	build_path = /obj/item/ammo_casing/magnum_40/laser
+	desc = "Magnum .40 cases fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/laser
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_SILVER = 15, MATERIAL_GOLD = 15)
 
 /datum/design/research/item/ammo/light_rifle_257
 	name = "Light rifle .257 laser casing."
-	desc = "A .257 casing fitted with a one time use laser payload."
-	build_path = /obj/item/ammo_casing/light_rifle_257/laser
+	desc = ".257 casings fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
+	materials = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 30, MATERIAL_GOLD = 30)
 
 /datum/design/research/item/ammo/rifle_75
 	name = "Rifle 7.5 laser casing."
-	desc = "A 7.5 casing fitted with a one time use laser payload."
-	build_path = /obj/item/ammo_casing/rifle_75/laser
+	desc = "7.5 casings fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
+	materials = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 30, MATERIAL_GOLD = 30)
 
 /datum/design/research/item/ammo/heavy_rifle_408
 	name = "Omni .408 laser casing."
-	desc = "A .408 Omni casing fitted with a one time use laser payload."
-	build_path = /obj/item/ammo_casing/heavy_rifle_408/laser
+	desc = ".408 Omni casing fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_SILVER = 30, MATERIAL_GOLD = 30)
 
 /datum/design/research/item/ammo/kurtz_laser
-	name = "Kurtz .50 , laser case"
-	desc = "A .50 Kurtz case fitted with a one time use laser payload."
-	build_path = /obj/item/ammo_casing/kurtz_50/laser
+	name = "Kurtz .50 , laser cases"
+	desc = ".50 Kurtz cases fitted with a one time use laser payload."
+	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/laser
+	materials = list(MATERIAL_STEEL = 15, MATERIAL_SILVER = 15, MATERIAL_GOLD = 15)
 
 // Shotgun Ammo
 
 /datum/design/research/item/ammo/shotgun_stun
 	name = "Shotgun ammo (Stun)"
 	desc = "A stunning shell for a shotgun."
-	build_path = /obj/item/ammo_casing/shotgun/stunshell //We print one at a time fore balance
+	build_path = /obj/item/ammo_casing/shotgun/stunshell/prespawned
+	materials = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
 
 /datum/design/research/item/ammo/shotgun_fire
 	name = "Shotgun ammo (Incendiary)"
 	desc = "A incendiary shell for a shotgun."
-	build_path = /obj/item/ammo_casing/shotgun/incendiary //We print one at a time fore balance
+	build_path = /obj/item/ammo_casing/shotgun/incendiary/prespawned
+	materials = list(MATERIAL_STEEL = 4, MATERIAL_PLASMA = 5)
+
 
 /datum/design/research/item/ammo/shotgun_laser
 	name = "Shotgun ammo (Laser Case)"
 	desc = "A laser based shell for a shotgun."
-	build_path = /obj/item/ammo_casing/shotgun/laser //We print one at a time fore balance
+	build_path = /obj/item/ammo_casing/shotgun/laser/prespawned
+	materials = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 4, MATERIAL_GOLD = 4)
 
 // Misc Ammo
 

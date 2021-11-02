@@ -54,7 +54,6 @@
 	desc = "A .35 Auto laser casing."
 	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 //// .40 ////
 
@@ -102,7 +101,6 @@
 	desc = "A .40 Magnum laser casing."
 	caliber = CAL_MAGNUM
 	projectile_type = /obj/item/projectile/beam/weak/magnum_40
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 /obj/item/ammo_casing/magnum/scrap
 	desc = "An old .40 Magnum bullet casing."
@@ -172,7 +170,6 @@
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 //// 7.5 Rifle ////
 
@@ -395,7 +392,6 @@
 	spent_icon = "atmr-spent"
 	caliber = CAL_ANTIM
 	projectile_type = /obj/item/projectile/bullet/antim
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/antim/Initialize()
@@ -446,7 +442,6 @@
 	spent_icon = "ball-spent"
 	caliber = CAL_BALL
 	projectile_type = /obj/item/projectile/bullet/ball
-	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/ball/Initialize()
@@ -467,7 +462,6 @@
 	shell_color = "hv"
 	caliber = CAL_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
-	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/prespawned
@@ -499,7 +493,6 @@
 	spent_icon = "s-shell_r-spent"
 	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag
-	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/beanbag/prespawned
@@ -512,7 +505,6 @@
 	spent_icon = "s-shell_rs-spent"
 	shell_color = "scrap_r"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/scrap
-	matter = list(MATERIAL_STEEL = 1)
 
 /obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned
 	amount = 5
@@ -524,7 +516,6 @@
 	spent_icon = "s-shell_l-spent"
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
-	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/pellet/prespawned
@@ -548,7 +539,6 @@
 	spent_icon = "s-shell_b-spent"
 	shell_color = "b"
 	projectile_type = /obj/item/projectile/bullet/blank
-	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/blank/prespawned
@@ -561,7 +551,6 @@
 	spent_icon = "s-shell_b-spent"
 	shell_color = "b"
 	projectile_type = /obj/item/projectile/bullet/shotgun/practice
-	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/practice/prespawned
@@ -574,7 +563,6 @@
 	spent_icon = "s-shell_i-spent"
 	shell_color = "i"
 	projectile_type = /obj/item/projectile/bullet/shotgun/incendiary
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASMA = 0.5)
 
 /obj/item/ammo_casing/shotgun/incendiary/prespawned
 	amount = 5
@@ -586,7 +574,6 @@
 	spent_icon = "lasershell-spent"
 	shell_color = "i"
 	projectile_type = /obj/item/projectile/beam/shotgun
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/laser/prespawned
@@ -597,7 +584,6 @@
 	desc = "A 20mm explosive shell."
 	shell_color = "i"
 	projectile_type = /obj/item/projectile/bullet/shotgun/payload
-	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 5
 	is_caseless = TRUE
 
@@ -611,7 +597,6 @@
 	spent_icon = "plasmashell-spent"
 	shell_color = "i"
 	projectile_type = /obj/item/projectile/plasma/shell
-	matter = list(MATERIAL_STEEL = 2, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8, MATERIAL_URANIUM = 0.8)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/plasma/prespawned
@@ -624,7 +609,6 @@
 	spent_icon = "plasmashell-spent"
 	shell_color = "i"
 	projectile_type = /obj/item/projectile/plasma/heavy/shell
-	matter = list(MATERIAL_STEEL = 2, MATERIAL_SILVER = 0.8, MATERIAL_GOLD = 0.8, MATERIAL_URANIUM = 0.8)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
@@ -640,7 +624,6 @@
 	spent_icon = "stunshell-spent"
 	shell_color = "i"
 	projectile_type = /obj/item/projectile/energy/electrode/stunshot
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/stunshell/emp_act(severity)
@@ -658,7 +641,6 @@
 	spent_icon = "s-shell_f-spent"
 	shell_color = "f"
 	projectile_type = /obj/item/projectile/energy/flash/flare
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5)
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/illumination/prespawned
@@ -715,35 +697,31 @@
 	w_class = ITEM_SIZE_SMALL
 	caliber = CAL_GRENADE
 	maxamount = 1
-	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 8)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2)
 
 /obj/item/ammo_casing/grenade/blast
 	name = "blast grenade shell"
 	desc = "An explosive grenade shell, designed to be fired from grenade launchers."
 	icon_state = "blast"
 	projectile_type = /obj/item/projectile/bullet/grenade
-	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 0.5)
 
 /obj/item/ammo_casing/grenade/frag
 	name = "frag grenade shell"
 	desc = "A frag grenade shell, designed to be fired from grenade launchers."
 	icon_state = "frag"
 	projectile_type = /obj/item/projectile/bullet/grenade/frag
-	matter = list(MATERIAL_STEEL = 14)
 
 /obj/item/ammo_casing/grenade/emp
 	name = "emp grenade shell"
 	desc = "An EMP grenade shell, designed to be fired from grenade launchers."
 	icon_state = "emp"
 	projectile_type = /obj/item/projectile/bullet/grenade/emp
-	matter = list(MATERIAL_STEEL = 2, MATERIAL_IRON = 1, MATERIAL_URANIUM = 1)
 
 /obj/item/ammo_casing/grenade/flash
 	name = "flash grenade shell"
 	desc = "A grenade shell containing specific chemical substances similar to those used in flashbangs, designed to be fired from gernade launchers."
 	icon_state = "flash"
 	projectile_type = /obj/item/projectile/bullet/grenade/flash
-	matter = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 0.5, MATERIAL_GLASS = 0.5)
 
 //Cross Bolt ammo
 /obj/item/ammo_casing/crossbow_bolts
