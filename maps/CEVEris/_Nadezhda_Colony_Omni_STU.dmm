@@ -3718,6 +3718,16 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
+"aUl" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "aUn" = (
 /obj/machinery/multistructure/bioreactor_part/platform{
 	make_glasswalls_after_creation = 1
@@ -22180,6 +22190,11 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/dungeon/outside/burned_outpost)
+"fmh" = (
+/obj/structure/catwalk,
+/obj/machinery/light,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/engineering/atmos)
 "fmo" = (
 /obj/random/scrap,
 /turf/simulated/floor/plating/under,
@@ -23199,6 +23214,12 @@
 /obj/structure/flora/small/grassb3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"fwX" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "fwY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
@@ -27929,6 +27950,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "gyY" = (
@@ -75175,9 +75199,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "ril" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -28
@@ -80619,8 +80640,8 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/engineering/atmos/surface)
 "svm" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -96941,6 +96962,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "wbF" = (
@@ -100214,6 +100236,7 @@
 /obj/machinery/door/airlock/maintenance_engineering{
 	req_access = list(24,10)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/atmos)
 "wNi" = (
@@ -101867,6 +101890,18 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/pros/foreman)
+"xfo" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "xfq" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/tiled/techmaint,
@@ -175210,7 +175245,7 @@ fJR
 nfA
 fJl
 dBb
-fJR
+fwX
 gry
 ril
 itK
@@ -176212,7 +176247,7 @@ and
 fYg
 ipI
 naR
-gBS
+fmh
 crV
 crV
 crV
@@ -176829,7 +176864,7 @@ crV
 crV
 lFo
 tKp
-tKp
+bts
 uWe
 pLY
 dym
@@ -179252,7 +179287,7 @@ edv
 edv
 crV
 phU
-tKp
+bts
 bts
 uWe
 pLY
@@ -180467,8 +180502,8 @@ vQv
 ofE
 aDu
 vcB
-vZm
-tMg
+aUl
+xfo
 crV
 sFI
 sFI
