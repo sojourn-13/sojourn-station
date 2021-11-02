@@ -296,7 +296,7 @@
 	build_path = /obj/item/gun/projectile/automatic/nordwind/strelki
 
 /datum/design/autolathe/gun/ak47
-	name = "Excelsior .257 AK"
+	name = "Excelsior 7.5mm AK"
 	build_path = /obj/item/gun/projectile/automatic/ak47
 
 /datum/design/autolathe/gun/dp
