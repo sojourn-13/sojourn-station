@@ -1745,6 +1745,7 @@
 #include "code\modules\games\tarot.dm"
 #include "code\modules\genetics\genetics.dm"
 #include "code\modules\genetics\machinery\advanced_grinder.dm"
+#include "code\modules\genetics\machinery\genetics_analyzer.dm"
 #include "code\modules\genetics\machinery\genetics_cloner.dm"
 #include "code\modules\genetics\machinery\genetics_designs.dm"
 #include "code\modules\genetics\machinery\genetics_extractor.dm"

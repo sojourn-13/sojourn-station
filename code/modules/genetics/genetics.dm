@@ -187,7 +187,8 @@
 
 	if(removeMutation(target.key))
 		addMutation(new_mutation)
-
+		return new_mutation
+	return null
 
 //What happens when two or more genes are combined.
 /datum/genetics/genetics_holder/proc/combine(var/list/combining_mutations)
@@ -357,12 +358,21 @@
 	if(mutation_to_remove)
 		total_instability -= (mutation_to_remove.instability * amt_to_remove)
 		mutation_to_remove.count -= amt_to_remove
+		//make a return mutation object
+		var/datum/genetics/mutation/return_mutation = mutation_to_remove.copy()
+
 		if(mutation_to_remove.count <= 0)
 			if(holder)
 				mutation_to_remove.onPlayerRemove(src)
 				mutation_to_remove.onMobRemove(src)
 			mutation_pool -= mutation_to_remove
-		return TRUE
+
+
+			return_mutation.count = amt_to_remove + mutation_to_remove.count
+			qdel(mutation_to_remove)
+		else
+			return_mutation.count = amt_to_remove
+		return return_mutation
 	else
 		#ifdef JANEDEBUG
 		log_debug("removeMutation: Couldn't find mutation")
@@ -461,6 +471,14 @@
 
 	return TRUE
 
+/datum/genetics/genetics_holder/proc/unmark_all_mutations()
+	for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
+		selected_mutation.marked = FALSE
+
+/datum/genetics/genetics_holder/proc/mark_all_mutations()
+	for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
+		selected_mutation.marked = TRUE
+
 //Function handling instability of a creature exceeding their maximum.
 /datum/genetics/genetics_holder/proc/destabilize()
 	//TODO: All of this.
@@ -468,6 +486,17 @@
 	//Akira message:
 	holder.visible_message(SPAN_DANGER("\The [holder]'s body begins to warp and change! BY SCIENCE, WHAT IS THAT!?"))
 
+/datum/genetics/genetics_holder/ui_data(var/list/known_mutations)
+	var/list/data = list()
+	data["instability"] = total_instability
+	var/list/mutation_pool_data = null
+	if(mutation_pool)
+		mutation_pool_data = list()
+		for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
+			mutation_pool_data += list(selected_mutation.ui_data(known_mutations))
+	data["mutation_pool"] = mutation_pool_data
+
+	return data
 
 /*
 * =================================================================================================
@@ -511,22 +540,19 @@
 	//easy reference to determine if the mutation is currently living in a creature.
 	var/implanted = FALSE
 
-	//Description of the embryo at different stages of development. Uses /datum/genetics/embryo_state.
-	var/list/embryo_descriptions = list()
-
 	//reference for the instability a mutation contributes to a genome.
 	var/instability = 0
 
-	//Whether or not the gene can be used for the cloning process.
-	var/cloning_mutation = FALSE
-
-	//List of potential mutations that the mutation can irradiate into.
-	var/list/irradiation_list = list()
+	//Series of bitflags for setting certain restrictions on a mutation, like needing an arm or a leg.
+	//A few are outlined in code/__DEFINES/genetics, we'll add more as needed.
+	var/requirement_flags
 
 	//How many research points the gene is worth.
 	var/gene_research_value = 1000
 
 	var/virtual_id = 0 //A unique "ID" that the mutation holds, only set SPECIFICALLY when contained inside of an R&D server, and nowhere else.
+
+	var/marked = FALSE //Whether or not the mutation was marked in a genetic analyzer
 
 /datum/genetics/mutation/proc/copy(var/copy_container = FALSE)
 	var/datum/genetics/mutation/duplicate = new type(src)
@@ -542,17 +568,44 @@
 	duplicate.clone_gene = clone_gene
 	duplicate.active = active
 	duplicate.implanted = implanted
-	duplicate.embryo_descriptions = embryo_descriptions.Copy()
 	duplicate.instability = instability
-	duplicate.cloning_mutation = cloning_mutation
-	duplicate.irradiation_list = irradiation_list.Copy()
+	duplicate.requirement_flags = requirement_flags
 	duplicate.gene_research_value = gene_research_value
+	duplicate.marked = marked
 	return duplicate
 
-/datum/genetics/embryo_state
-	var/active_stage = 0 //What stage of development the descriptor becomes active.
-	var/desc = "This embryo is looking pretty default."
-	var/hide_development = 0 //When to hide the descriptor. If 0, the description will remain active for the whole of the development process.
+//Obfuscate the data if we don't know it yet.
+/datum/genetics/mutation/ui_data(var/list/known_mutations)
+	var/list/data = list()
+	if(known_mutations[key])
+		data["source_mob"] = source_mob
+		data["source_name"] = source_name
+		data["name"] = name
+		data["desc"] = desc
+		data["key"] = key
+		data["count"] = count
+		data["clone_gene"] = clone_gene
+		data["active"] = active
+		data["implanted"] = implanted
+		data["instability"] = instability
+		data["requirement_flags"] = requirement_flags
+		data["gene_research_value"] = gene_research_value
+		data["marked"] = marked
+	else
+		data["source_mob"] = source_mob
+		data["source_name"] = source_name
+		data["name"] = "UNDEFINED"
+		data["desc"] = "New genetic information encountered. Analyze for further details."
+		data["key"] = key
+		data["count"] = count
+		data["clone_gene"] = clone_gene
+		data["active"] = active
+		data["implanted"] = implanted
+		data["instability"] = "??%"
+		data["requirement_flags"] = requirement_flags
+		data["gene_research_value"] = "????"
+		data["marked"] = marked
+	return data
 
 //Activate a mutation. Deactivates other exclusive mutations if 'force activation' is set to TRUE.
 /datum/genetics/mutation/proc/activate(var/force_activation = FALSE)
