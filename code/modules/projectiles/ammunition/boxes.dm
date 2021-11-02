@@ -300,6 +300,27 @@
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 200
 
+//// .223 laser shot!
+
+/obj/item/ammo_magazine/ammobox/laser_223
+	name = "ammunition packet (.223 L)"
+	icon_state = "box223-laser"
+	desc = "A packet of .223 laser round."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = "CAL_SCI"
+	ammo_type = /obj/item/ammo_casing/beam
+	max_ammo = 30
+
+/obj/item/ammo_magazine/ammobox/laser_223/ap
+	name = "ammunition packet (.223 PL)"
+	icon_state = "box223-ap-laser"
+	ammo_type = /obj/item/ammo_casing/beam/ap
+
+/obj/item/ammo_magazine/ammobox/laser_223/lethal
+	name = "ammunition packet (.223 DL)"
+	icon_state = "box223-lethal-laser"
+	ammo_type = /obj/item/ammo_casing/beam
+
 ////.50 kurtz
 
 /obj/item/ammo_magazine/ammobox/kurtz_50
@@ -593,7 +614,7 @@
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells
 	name = "signaling ammunition packet (20mm Illumination)"
 	icon_state = "stunslug"
-	matter = list(MATERIAL_STEEL = 12, MATERIAL_CARDBOARD = 2)
+	matter = list(MATERIAL_CARDBOARD = 2)
 	caliber = CAL_SHOTGUN
 	w_class = ITEM_SIZE_BULKY
 	ammo_type = /obj/item/ammo_casing/shotgun/illumination

@@ -246,20 +246,20 @@
 /datum/design/research/item/ammo/laser
 	name = "\"Star Striker\" casing"
 	desc = "A single casing for the Star Striker laser rifle, its cal is .233."
-	build_path = /obj/item/ammo_casing/beam
-	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_SILVER = 0.5) //Takes silver
+	build_path = /obj/item/ammo_magazine/ammobox/laser_223
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 30, MATERIAL_SILVER = 15) //Takes silver
 
 /datum/design/research/item/ammo/laser/ap
 	name = "\"Star Striker\" piercing laser casing."
 	desc = "A single casing for the Star Striker laser rifle. Meant for penetration of armor, its cal is .233."
-	build_path = /obj/item/ammo_casing/beam/ap
-	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_GOLD = 0.5) //Takes gold
+	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 30, MATERIAL_GOLD = 15) //Takes gold
 
 /datum/design/research/item/ammo/laser/lethal
 	name = "\"Star Striker\" dense laser casing."
 	desc = "A single casing for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is .233."
-	materials = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_PLASMA = 0.5) //Takes plasma
-	build_path = /obj/item/ammo_casing/beam/lethal
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 30, MATERIAL_PLASMA = 15) //Takes plasma
+	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal
 
 //Disks
 /datum/design/research/item/disk/blackshield
