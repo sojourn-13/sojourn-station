@@ -357,7 +357,38 @@
 					/obj/structure/particle_accelerator/end_cap)
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "particle accelerator crate"
+/*
+/datum/supply_pack/engine/am_control
+	name = "Antimatter Control Unit"
+	cost = 1000
+	contains = list(/obj/machinery/power/am_control_unit)
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "antimatter control unit crate"
 
+/datum/supply_pack/engine/am_shielding
+	name = "Antimatter Shielding"
+	cost = 2250
+	contains = list(/obj/item/am_shielding_container,
+					/obj/item/am_shielding_container,
+					/obj/item/am_shielding_container,
+					/obj/item/am_shielding_container,
+					/obj/item/am_shielding_container,
+					/obj/item/am_shielding_container,
+					/obj/item/am_shielding_container,
+					/obj/item/am_shielding_container,
+					/obj/item/am_shielding_container)
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "antimatter shielding crate"
+
+/datum/supply_pack/engine/am_fuel
+	name = "Antimatter Fuel Jar"
+	cost = 1250
+	contains = list(/obj/item/am_containment,
+					/obj/item/am_containment,
+					/obj/item/am_containment)
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "antimatter fuel jar crate"
+*/
 /datum/supply_pack/mecha_ripley
 	name = "Exosuit Assembly Crate (\"Ripley\" APLU)"
 	contains = list(

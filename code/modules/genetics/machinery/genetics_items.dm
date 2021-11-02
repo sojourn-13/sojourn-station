@@ -89,7 +89,7 @@ This is a bugtesting item, please forgive the memes.
 	set category = "Object"
 	set name = "Combine Genes"
 	set src in view(1)
-	
+
 	//Generate the list
 	var/list/option_list = list()
 	var/list/count_list = list() 	//yes I needed 2 lists to make this damn thing work, it's a debug item don't @ me
@@ -98,7 +98,7 @@ This is a bugtesting item, please forgive the memes.
 		count_list[mutagen.name] = mutagen.count
 	option_list["End Selection"] = 1
 	count_list["End Selection"] = 1
-	
+
 	var/list/combined_mutations = list()
 	for(var/iterations = 0; iterations < 9; iterations++)
 
@@ -109,7 +109,7 @@ This is a bugtesting item, please forgive the memes.
 				updated_option_list["[option]"] = option_list[option]
 
 		var/choice = input("Select a gene to combine", "Current Mutations:") in updated_option_list
-		
+
 		if(!choice || choice=="End Selection")
 			break
 		else
@@ -128,14 +128,14 @@ This is a bugtesting item, please forgive the memes.
 
 			//Go back and decrement the original options list
 			count_list[selected_mutation.name] -= 1
-		
+
 	to_chat(usr, SPAN_NOTICE("\The [usr] combines some mutations!"))
 	held_mutations.combine(combined_mutations, MUT_TYPE_COMBINATION)
-	
 
 
-	
-	
+
+
+
 
 /*
 =================Mutagenic Purger=================
@@ -191,6 +191,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	desc = "A container for holding, analyzing and transferring mutagens."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "slide"
+	var/unique_id
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
@@ -201,6 +202,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 		name = "Mutagenic Sample Plate"
 		icon_state = "slideblood"
 		genetics_holder = incoming_holder.Copy()
+	unique_id = sequential_id(type)
 
 /obj/item/genetics/sample/proc/unload_genetics()
 	var/datum/genetics/genetics_holder/outbound_genetics_holder = genetics_holder.Copy()
@@ -209,6 +211,12 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	icon_state = "slide"
 	return outbound_genetics_holder
 
+/obj/item/genetics/sample/proc/sample_data(var/list/known_mutations)
+	var/list/data = list()
+	data["name"] = name
+	data["unique_id"] = unique_id
+	data += genetics_holder.ui_data(known_mutations)
+	return data
 /*
 =================Mutagenic Implanter=================
 Essentially a holder item for mutagenic samples. Installed on various machines and used for cloning, modifying, and so on.
@@ -257,7 +265,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	..()
 	if (istype(I, /obj/item/genetics/sample))
 		var/obj/item/genetics/sample/incoming_sample = I
-		
+
 		if(loaded_sample)
 			to_chat(user, SPAN_NOTICE("The mutagenic injector is already loaded!"))
 

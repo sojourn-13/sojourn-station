@@ -156,7 +156,7 @@
 	return TRUE
 
 
-proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool, var/surgery_status = CAN_OPERATE_ALL)
+proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 	if(!istype(M))
 		return FALSE
 	if(user.a_intent != I_HELP)	//check for Hippocratic Oath
@@ -183,7 +183,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool, var/surgery
 					to_chat(user, SPAN_WARNING("You cannot operate on your [affected.name] while holding [held_item] in it!"))
 					return TRUE
 
-			if(affected.do_surgery(user, tool, surgery_status))
+			if(affected.do_surgery(user, tool))
 				return TRUE
 
 	// Invoke legacy surgery code
@@ -200,7 +200,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool, var/surgery
 
 // Some surgery steps can be ran just by clicking a limb with a tool, old surgery style
 // Those are handled here
-/obj/item/organ/external/do_surgery(mob/living/user, obj/item/tool, var/surgery_status = CAN_OPERATE_ALL)
+/obj/item/organ/external/do_surgery(mob/living/user, obj/item/tool)
 	if(!tool)
 		if(is_open())
 			ui_interact(user)
@@ -208,18 +208,6 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool, var/surgery
 		return FALSE
 
 	var/list/possible_steps
-
-	if(surgery_status == CAN_OPERATE_STANDING)
-		possible_steps = list(QUALITY_CUTTING, QUALITY_CAUTERIZING)
-		var/tool_type = tool.get_tool_type(user, possible_steps, get_surgery_target())
-		switch(tool_type)
-			if(QUALITY_CUTTING)
-				try_surgery_step(/datum/surgery_step/remove_shrapnel, user, tool)
-				return TRUE
-			if(QUALITY_CAUTERIZING)
-				try_surgery_step(/datum/surgery_step/close_wounds, user, tool)
-				return TRUE
-		return FALSE
 
 	if(BP_IS_ROBOTIC(src))
 		possible_steps = list(QUALITY_SCREW_DRIVING, QUALITY_WELDING)
@@ -315,7 +303,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool, var/surgery
 
 		//normal humans do
 		var/atom/chair = locate(/obj/structure/bed/chair, M.loc)
-		return (chair && chair.buckled_mob == M) ? CAN_OPERATE_ALL : CAN_OPERATE_STANDING
+		return chair && chair.buckled_mob == M
 
 	return M.lying && (locate(/obj/machinery/optable, M.loc) || (locate(/obj/structure/bed, M.loc)) || locate(/obj/structure/table, M.loc))
 

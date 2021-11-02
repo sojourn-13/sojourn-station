@@ -15,3 +15,11 @@
 /datum/genetics/mutation_recipe/combination/tangu_1/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/tatonka/tangu, "tatonka")
 	return new_mutation
+
+//Create Mukwah, so people can blame us for making them
+/datum/genetics/mutation_recipe/irradiation/mukwah
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/bear)
+
+/datum/genetics/mutation_recipe/irradiation/mukwah/get_result()
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/mukwah, "Mukwah")
+	return new_mutation

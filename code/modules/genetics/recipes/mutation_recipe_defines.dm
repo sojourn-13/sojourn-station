@@ -43,7 +43,7 @@
 				var/list/ingredient_mutations_sorted = ingredient_mutations
 				sortList(ingredient_mutations_sorted)
 				for (var/key in ingredient_mutations_sorted)
-					compare_string = compare_string + "G~" + key
+					compare_string = compare_string + "G~" + "[key]"
 			else
 				compare_string = compare_string + "G~" + ingredient_mutations
 		
@@ -56,7 +56,7 @@
 					compare_string = compare_string + "M~"
 			else
 				compare_string = compare_string + "M~"
-
+		log_debug("initialize_mutation_recipes(): Loaded recipe [example_recipe] with string [compare_string]")
 		if(!GLOB.mutation_recipe_list[compare_string])
 			GLOB.mutation_recipe_list[compare_string] = list()
 		GLOB.mutation_recipe_list[compare_string] += example_recipe

@@ -61,7 +61,7 @@
 
 	switch(M.a_intent)
 		if(I_HELP)
-			if(can_operate(src, M) == CAN_OPERATE_ALL && do_surgery(src, M, null, TRUE))
+			if(can_operate(src, M) && do_surgery(src, M, null))
 				return 1
 			if(istype(H) && health < HEALTH_THRESHOLD_CRIT && health > HEALTH_THRESHOLD_DEAD)
 				if(!H.check_has_mouth())
