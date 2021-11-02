@@ -1,4 +1,5 @@
 // All of this code is being done from scratch and WILL need a update.
+var/const/RESIZE_GIGANTOR = 2.25
 var/const/RESIZE_HUGE = 2
 var/const/RESIZE_BIG = 1.15
 var/const/RESIZE_NORMAL = 1
