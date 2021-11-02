@@ -213,7 +213,7 @@
 	matter = list(MATERIAL_STEEL = 3)
 
 /obj/item/am_shielding_container/attackby(obj/item/I as obj, mob/user as mob)
-	if((QUALITY_BOLT_TURNING) && isturf(src.loc))
+	if((QUALITY_PULSING in I.tool_qualities) && isturf(src.loc))
 		new /obj/machinery/am_shielding(src.loc)
 		qdel(src)
 		return
