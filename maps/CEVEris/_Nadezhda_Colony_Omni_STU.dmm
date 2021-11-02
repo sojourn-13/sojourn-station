@@ -3608,7 +3608,6 @@
 /obj/machinery/light/floor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	dir = 4;
 	pixel_x = 8
@@ -5635,6 +5634,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
 "bsh" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "bsi" = (
@@ -14846,6 +14846,7 @@
 /area/nadezhda/engineering/atmos/surface)
 "dxU" = (
 /obj/structure/table/reinforced,
+/obj/item/device/lighting/toggleable/lamp/green,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "dyc" = (
@@ -18228,9 +18229,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -18799,9 +18797,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -19954,13 +19949,15 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "eLO" = (
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/medical/genetics)
 "eLQ" = (
 /obj/effect/decal/cleanable/rubble,
@@ -27525,9 +27522,6 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -30399,15 +30393,18 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/loading/red{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/item/contraband/poster/placed/generic/work_for_a_future{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/genetics)
@@ -32097,6 +32094,9 @@
 /obj/machinery/door/blast/regular/open{
 	id = "genetics3";
 	name = "containment blast door"
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
@@ -35634,9 +35634,6 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -37990,14 +37987,14 @@
 	name = "\improper Outdoors - Pad"
 	})
 "iQG" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/disposalpipe/trunk{
+	dir = 8
 	},
+/obj/machinery/genetics/cloner,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/genetics)
 "iQJ" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -38939,11 +38936,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+	dir = 6
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/reinforced,
@@ -39746,9 +39740,6 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -43039,9 +43030,6 @@
 /turf/simulated/floor/plating/under,
 /area/colony)
 "jWw" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -48838,8 +48826,12 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "lkG" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
 "lkH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -52130,6 +52122,9 @@
 /obj/machinery/door/blast/regular/open{
 	id = "genetics2";
 	name = "containment blast door"
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
@@ -63875,6 +63870,7 @@
 	pixel_x = 0;
 	pixel_y = -30
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "oEu" = (
@@ -66303,15 +66299,6 @@
 /obj/machinery/camera/network/third_section,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/shuttle)
-"pkd" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/medical/genetics)
 "pkf" = (
 /obj/structure/table/steel,
 /obj/random/tool_upgrade/low_chance,
@@ -72046,12 +72033,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"qyv" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/medical/genetics)
 "qyA" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 9;
@@ -75980,20 +75961,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/sleep/cryo2)
-"rrd" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/obj/structure/disposaloutlet,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/medical/genetics)
 "rre" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/simulated/floor/carpet/purcarpet,
@@ -76044,7 +76011,7 @@
 /area/nadezhda/command/prime)
 "rrz" = (
 /obj/structure/table/reinforced,
-/obj/machinery/chem_heater,
+/obj/machinery/recharger/industrial,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
 "rrD" = (
@@ -82284,8 +82251,7 @@
 	name = "Residential District Maintenance"
 	})
 "sRi" = (
-/obj/item/hand_labeler,
-/obj/structure/table/reinforced,
+/obj/machinery/genetics/gene_analyzer,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "sRm" = (
@@ -84749,16 +84715,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"ttz" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/medical/genetics)
 "ttD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/personal/artist,
@@ -88925,6 +88881,9 @@
 /obj/machinery/door/blast/regular/open{
 	id = "genetics1";
 	name = "containment blast door"
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
@@ -93669,6 +93628,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/engineering/engine_room)
 "vra" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "vri" = (
@@ -97930,15 +97890,6 @@
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/engineering/workshop)
-"wmh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/medical/genetics)
 "wmn" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
@@ -100989,12 +100940,6 @@
 	dir = 4
 	},
 /obj/structure/disposaloutlet,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "wWz" = (
@@ -102057,6 +102002,10 @@
 /area/nadezhda/hallway/surface/section1)
 "xgp" = (
 /obj/machinery/light,
+/obj/machinery/computer/genetics{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "xgI" = (
@@ -102764,14 +102713,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/loading/red{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/genetics)
@@ -106105,6 +106054,7 @@
 "ybb" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/syringegun,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/genetics)
 "ybi" = (
@@ -170231,17 +170181,17 @@ gmz
 rgK
 sFI
 lwW
-pkd
-lkG
-qyv
+aAp
+aAp
+aAp
 nQp
-pkd
+aAp
 aSt
-qyv
+aAp
 nQp
-pkd
-lkG
-qyv
+aAp
+aAp
+aAp
 nQp
 bPQ
 prK
@@ -170433,15 +170383,15 @@ rgK
 rgK
 sFI
 lwW
-iQG
+pAt
 gjJ
 pAt
 nQp
-eLO
+aAp
 nhn
 aAp
 nQp
-wmh
+aAp
 aAp
 pAt
 nQp
@@ -170635,15 +170585,15 @@ sFI
 sFI
 sFI
 lwW
-wmh
+aAp
 nhn
 aAp
 nQp
-ttz
+pAt
 aAp
 pAt
 nQp
-iQG
+pAt
 aAp
 nhn
 nQp
@@ -170841,7 +170791,7 @@ wWs
 aAp
 pAt
 nQp
-rrd
+wWs
 aAp
 aAp
 nQp
@@ -171043,7 +170993,7 @@ jcj
 uty
 nQp
 lwW
-jcj
+eLO
 lXj
 nQp
 lwW
@@ -171851,7 +171801,7 @@ biX
 nMs
 wDw
 pxg
-biX
+iQG
 nMs
 wDw
 wDw
@@ -172255,7 +172205,7 @@ mEu
 qjB
 qjB
 iiW
-tKr
+lkG
 qjB
 qjB
 qjB
