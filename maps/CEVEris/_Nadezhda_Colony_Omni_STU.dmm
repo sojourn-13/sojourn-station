@@ -102037,10 +102037,9 @@
 /area/nadezhda/hallway/surface/section1)
 "xgp" = (
 /obj/machinery/light,
-/obj/machinery/computer/genetics{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/item/storage/box,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "xgI" = (
