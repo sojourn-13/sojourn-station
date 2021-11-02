@@ -211,20 +211,20 @@
 
 /datum/design/research/item/ammo/shotgun_stun
 	name = "Shotgun ammo (Stun)"
-	desc = "A stunning shell for a shotgun."
+	desc = "Stunning shells for a shotgun."
 	build_path = /obj/item/ammo_casing/shotgun/stunshell/prespawned
 	materials = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
 
 /datum/design/research/item/ammo/shotgun_fire
 	name = "Shotgun ammo (Incendiary)"
-	desc = "A incendiary shell for a shotgun."
+	desc = "Incendiary shells for a shotgun."
 	build_path = /obj/item/ammo_casing/shotgun/incendiary/prespawned
 	materials = list(MATERIAL_STEEL = 4, MATERIAL_PLASMA = 5)
 
 
 /datum/design/research/item/ammo/shotgun_laser
 	name = "Shotgun ammo (Laser Case)"
-	desc = "A laser based shell for a shotgun."
+	desc = "Laser based shells for a shotgun."
 	build_path = /obj/item/ammo_casing/shotgun/laser/prespawned
 	materials = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 4, MATERIAL_GOLD = 4)
 
@@ -245,19 +245,19 @@
 
 /datum/design/research/item/ammo/laser
 	name = "\"Star Striker\" casing"
-	desc = "A single casing for the Star Striker laser rifle, its cal is .233."
+	desc = "A packet of casings for the Star Striker laser rifle, its cal is .233."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223
 	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 30, MATERIAL_SILVER = 15) //Takes silver
 
 /datum/design/research/item/ammo/laser/ap
 	name = "\"Star Striker\" piercing laser casing."
-	desc = "A single casing for the Star Striker laser rifle. Meant for penetration of armor, its cal is .233."
+	desc = "A packet of casings for the Star Striker laser rifle. Meant for penetration of armor, its cal is .233."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap
 	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 30, MATERIAL_GOLD = 15) //Takes gold
 
 /datum/design/research/item/ammo/laser/lethal
 	name = "\"Star Striker\" dense laser casing."
-	desc = "A single casing for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is .233."
+	desc = "A packet of casings for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is .233."
 	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 30, MATERIAL_PLASMA = 15) //Takes plasma
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal
 
