@@ -28,7 +28,6 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 10)
 
-
 /obj/item/tool/baton/mini
 	name = "mini stun baton"
 	desc = "A small stun baton for self defence on a buget."
@@ -40,6 +39,7 @@
 	price_tag = 120
 	agonyforce = 20
 	hitcost = 50
+	max_upgrades = 2
 	switched_on_qualities = list(QUALITY_HAMMERING = 5, QUALITY_PULSING = 10)
 	switched_off_qualities = list(QUALITY_HAMMERING = 5)
 	use_power_cost = 0.4
