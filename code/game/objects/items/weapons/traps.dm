@@ -15,6 +15,8 @@
 	var/deployed = FALSE
 	var/prob_catch = 100
 
+	price_tag = 50 //So its worth making or gathering
+
 	var/base_damage = 45
 	var/fail_damage = 15
 	var/base_difficulty = 85
@@ -352,6 +354,7 @@ Very rarely it might escape
 	name = "jury-rigged mechanical trap"
 	desc = "A wicked looking construct of spiky bits of metal and wires. Will snap shut on anyone who steps in it. It'll do some nasty damage."
 	icon_state = "sawtrap"
+	price_tag = 30 //So its worth making or gathering
 	base_damage = 30
 	fail_damage = 20
 	base_difficulty = 80
