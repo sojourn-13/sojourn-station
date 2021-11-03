@@ -15,7 +15,7 @@
 	
 /datum/gear/c_bible
 	display_name = "Christian Bible"
-	path = /obj/item/book/manual/c_bible
+	path = /obj/item/book/manual/religion/c_bible
 
 /datum/gear/cardholder
 	display_name = "card holder"
@@ -45,7 +45,7 @@
 	
 /datum/gear/h_book
 	display_name = "Holy Book"
-	path = /obj/item/book/manual/h_book
+	path = /obj/item/book/manual/religion/h_book
 
 /datum/gear/pitcher
 	display_name = "insulated pitcher"
