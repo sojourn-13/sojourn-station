@@ -1356,7 +1356,7 @@ dat = {"<html>
 /obj/item/book/manual/religion/h_book
 	name = "Holy Book"
 	desc = "An undescript book for an unnamed religion."
-	icon_state = "h_book"
+	icon_state = "basic_bible"
 	author = "Unknown"
 
 /obj/item/book/manual/fiction/ataleoftwocities
