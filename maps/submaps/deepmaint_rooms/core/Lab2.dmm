@@ -1,0 +1,702 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"b" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"c" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"d" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"e" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"f" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/gibs/body,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"h" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"i" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"j" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"k" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"l" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"m" = (
+/obj/structure/salvageable/console_os,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"n" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/steel/panels,
+/area/awaymission)
+"o" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/panels,
+/area/awaymission)
+"q" = (
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"r" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"s" = (
+/obj/structure/salvageable/server_os,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"t" = (
+/obj/machinery/door/airlock/vault{
+	name = "Laboratory 2"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"u" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"v" = (
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"w" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/wall/ironplasma,
+/area/awaymission)
+"x" = (
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/awaymission)
+"y" = (
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"z" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"A" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/gun_energy_cheap/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"B" = (
+/obj/structure/table/rack/shelf,
+/obj/random/firstaid/low_chance,
+/obj/random/firstaid/low_chance,
+/obj/random/firstaid/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"C" = (
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"D" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"E" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"F" = (
+/obj/effect/damagedfloor/rust,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"G" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"H" = (
+/obj/structure/salvageable/computer_os,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"I" = (
+/obj/structure/salvageable/computer_os{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"J" = (
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/awaymission)
+"K" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"L" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"M" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/wall/ironplasma,
+/area/awaymission)
+"N" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"O" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"P" = (
+/obj/structure/salvageable/data_os,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"Q" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"R" = (
+/obj/machinery/door/airlock/centcom,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"S" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/turf/simulated/wall/ironplasma,
+/area/awaymission)
+"T" = (
+/turf/simulated/wall/ironplasma,
+/area/awaymission)
+"U" = (
+/obj/structure/salvageable/autolathe,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"V" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"X" = (
+/turf/simulated/wall/r_wall,
+/area/awaymission)
+"Y" = (
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"Z" = (
+/obj/effect/damagedfloor/rust,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/awaymission)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(3,1,1) = {"
+a
+a
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+X
+a
+a
+"}
+(4,1,1) = {"
+a
+a
+X
+P
+N
+y
+n
+T
+T
+T
+T
+T
+T
+T
+o
+G
+y
+N
+X
+a
+a
+"}
+(5,1,1) = {"
+a
+a
+X
+y
+y
+G
+n
+C
+J
+J
+J
+J
+J
+C
+o
+y
+y
+y
+X
+a
+a
+"}
+(6,1,1) = {"
+a
+a
+X
+B
+y
+y
+n
+C
+J
+v
+q
+E
+J
+C
+o
+A
+y
+V
+X
+a
+a
+"}
+(7,1,1) = {"
+a
+a
+X
+y
+y
+N
+n
+C
+J
+v
+v
+F
+J
+C
+o
+N
+y
+y
+X
+a
+a
+"}
+(8,1,1) = {"
+a
+a
+X
+V
+y
+y
+n
+C
+Z
+x
+J
+J
+x
+C
+o
+y
+y
+z
+X
+a
+a
+"}
+(9,1,1) = {"
+a
+a
+X
+l
+y
+T
+w
+T
+C
+T
+t
+T
+C
+S
+M
+T
+y
+y
+X
+a
+a
+"}
+(10,1,1) = {"
+a
+a
+X
+y
+y
+T
+Y
+K
+K
+f
+D
+K
+K
+K
+d
+T
+y
+y
+X
+a
+a
+"}
+(11,1,1) = {"
+a
+a
+X
+U
+y
+T
+r
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+T
+y
+s
+X
+a
+a
+"}
+(12,1,1) = {"
+a
+a
+X
+y
+y
+T
+Y
+O
+T
+C
+C
+C
+T
+k
+Y
+T
+y
+y
+X
+a
+a
+"}
+(13,1,1) = {"
+a
+a
+X
+T
+R
+T
+R
+T
+T
+I
+H
+H
+T
+T
+R
+T
+R
+T
+X
+a
+a
+"}
+(14,1,1) = {"
+a
+a
+X
+h
+a
+a
+u
+T
+Y
+Y
+Q
+Y
+c
+T
+a
+a
+a
+h
+X
+a
+a
+"}
+(15,1,1) = {"
+a
+a
+X
+a
+a
+a
+a
+T
+a
+a
+a
+a
+a
+T
+a
+a
+a
+e
+X
+a
+a
+"}
+(16,1,1) = {"
+a
+a
+X
+e
+u
+a
+a
+T
+i
+a
+u
+a
+a
+T
+a
+u
+a
+h
+X
+a
+a
+"}
+(17,1,1) = {"
+a
+a
+X
+a
+a
+a
+a
+a
+a
+X
+t
+X
+a
+a
+j
+a
+a
+a
+X
+a
+a
+"}
+(18,1,1) = {"
+a
+a
+X
+m
+a
+a
+L
+a
+a
+X
+a
+X
+a
+a
+a
+a
+b
+a
+X
+a
+a
+"}
+(19,1,1) = {"
+a
+a
+X
+X
+X
+X
+X
+X
+X
+X
+t
+X
+X
+X
+X
+X
+X
+X
+X
+a
+a
+"}
+(20,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(21,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
