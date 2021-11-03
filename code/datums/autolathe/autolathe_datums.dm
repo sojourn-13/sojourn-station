@@ -172,6 +172,8 @@
 
 	if(mat_efficiency != 1 && adjust_materials)
 		for(var/obj/O in A.GetAllContents(includeSelf = TRUE))
+			O.surplus_tag = TRUE //Printing endlessly off a disk or rnd will not be as proffitable as finding it
+
 			if(length(O.matter))
 				for(var/i in O.matter)
 					O.matter[i] = round(O.matter[i] * mat_efficiency, 0.01)

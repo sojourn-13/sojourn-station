@@ -1077,9 +1077,10 @@
 /obj/item/reagent_containers/blood
 	price_tag = 5
 
-/obj/item/reagent_containers/blood/get_item_cost(export)
-	. = ..()
-	. += (. / 2 * reagents?.total_volume) //holds as of 08-AUG-21 200u, meaning max filled should be around 405 credits
+///obj/item/reagent_containers/blood/get_item_cost(export)
+//	. = ..()
+//	. += (. / 2 * reagents?.total_volume) //holds as of 08-AUG-21 200u, meaning max filled should be around 405 credits
+//03 NOV 21, cant have nice things people exported water
 
 /obj/item/ammo_magazine/price_tag = 60
 
@@ -1095,14 +1096,17 @@
 /obj/item/ammo_casing/get_item_cost(export)
 	. = ..() * amount
 */
-/obj/item/tool/price_tag = 20
 
+/obj/item/tool/price_tag = 5 //I.G should be about as much as it takes to print it if its not already gotton its own price
+
+/*
 /obj/item/tool/get_item_cost(export)
 	. = 1
 	for(var/i in tool_qualities)
 		. += tool_qualities[i] / 5
 	. *= ..()
-
+This was a misstake
+*/
 /obj/structure/medical_stand/price_tag = 100
 
 /obj/item/virusdish/price_tag = 300
