@@ -1311,7 +1311,7 @@
 	icon_state = "c_bible"
 	author = "Unknown"
 	title = "Holy Bible"
-dat = {"<html>
+	dat = {"<html>
 				<head>
 				<style>
 				h1 {font-size: 18px; margin: 15px 0px 5px;}
