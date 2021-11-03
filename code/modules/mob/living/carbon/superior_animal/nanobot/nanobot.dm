@@ -74,7 +74,7 @@
 	..()
 	if(iscarbon(user) || issilicon(user))
 		var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
-		if(robotics_expert || src == user) // Are we an expert in robots or examining ourselves?
+		if(robotics_expert) // Are we an expert in robots or examining ourselves?
 			to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
 		else if (health < maxHealth * 0.25)
 			to_chat(user, SPAN_DANGER("It's grievously wounded!"))
@@ -124,7 +124,7 @@
 
 		else if(QUALITY_PULSING in T.tool_qualities)
 			if(stat != DEAD) // are we still alive?
-				follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(0, 1, 2, 3, 4, 5)
+				follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(1, 2, 3, 4, 5)
 				if(density && follow_distance < 1)
 					follow_distance = 1 // Making sure that the bot don't try to occupy your tile if it can't share it.
 			else if(health >= maxHealth * 0.99 && user.stats.getPerk(PERK_ROBOTICS_EXPERT)) // We are dead, but are we at least intact?, not actual maxHealth in case something put the HP at least 399.9999999
