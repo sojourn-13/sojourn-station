@@ -1307,6 +1307,7 @@
 	
 /obj/item/book/manual/religion/c_bible
 	name = "Christian Bible"
+	desc = "A book with a silver bolder and a golden crucifix in the middle. The glass in the middle seems to shimmer and shine."
 	icon_state = "c_bible"
 	author = "Unknown"
 	title = "Holy Bible"
