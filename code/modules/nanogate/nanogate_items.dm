@@ -30,7 +30,8 @@
 	var/recharge_time = 10
 
 /obj/item/rig/nanite/opifex
-	air_type = /obj/item/tank/emergency_nitgen
+	air_type = /obj/item/tank/nitrogen
+	air_supply = /obj/item/tank/nitrogen
 
 /obj/item/rig/nanite/New()
 	..()

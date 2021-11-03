@@ -35,7 +35,9 @@
 				return
 			if(findtext(message, "Deploy Console") && findtext(message, "[src.name]") && Console.loc == src)
 				anchored = TRUE // The bot can't move
+				following = null
 				Console.forceMove(src.loc) // Deploy the console
+				visible_emote("state, \"Deploying console and terminating follow protocol.\"")
 			else if(findtext(message, "Store Console") && findtext(message, "[src.name]") && Console.loc != src)
 				anchored = FALSE // We can move
 				Console.forceMove(src) // Store the console

@@ -192,7 +192,7 @@
 
 // Nanobot integrated Console.
 /obj/item/modular_computer/console/preset/nanobot
-	suitable_cell = /obj/item/cell/large
+	suitable_cell = /obj/item/cell/large/moebius/super
 	layer = ABOVE_MOB_LAYER
 
 /obj/item/modular_computer/console/preset/nanobot/install_default_hardware()
@@ -205,6 +205,8 @@
 	gps_sensor = new /obj/item/computer_hardware/gps_sensor(src)
 	led = new /obj/item/computer_hardware/led/adv(src)
 	scanner = new /obj/item/computer_hardware/scanner/reagent(src)
+	printer = new/obj/item/computer_hardware/printer(src)
+	card_slot = new/obj/item/computer_hardware/card_slot(src)
 	network_card.matter = list()
 	processor_unit.matter = list()
 	tesla_link.matter = list()
@@ -213,6 +215,8 @@
 	gps_sensor.matter = list()
 	led.matter = list()
 	scanner.matter = list()
+	printer.matter = list()
+	card_slot.matter = list()
 
 //Dock control
 /*

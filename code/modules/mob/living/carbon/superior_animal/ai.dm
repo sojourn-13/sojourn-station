@@ -151,7 +151,7 @@
 	..()
 	if(obey_friends) // Are we only obeying friends?
 		if(speaker in friends) // Is the one talking a friend?
-			if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following) // Is he telling us to follow?
+			if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 				following = speaker
 				visible_emote("[follow_message]")
 
@@ -159,7 +159,7 @@
 				following = null
 				visible_emote("[stop_message]")
 	else // We are obeying everyone
-		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following) // Is he telling us to follow?
+		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 			following = speaker
 			visible_emote("[follow_message]")
 
