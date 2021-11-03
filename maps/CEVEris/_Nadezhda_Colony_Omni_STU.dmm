@@ -14692,7 +14692,7 @@
 /area/nadezhda/pros/prep)
 "dAQ" = (
 /obj/structure/table/reinforced,
-/obj/item/melee/baton,
+/obj/item/tool/baton,
 /obj/machinery/reagentgrinder/portable,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
@@ -43643,7 +43643,7 @@
 	dir = 4;
 	pixel_x = 30
 	},
-/obj/item/melee/baton,
+/obj/item/tool/baton,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "koE" = (
@@ -75169,7 +75169,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/item/melee/baton,
+/obj/item/tool/baton,
 /obj/item/stack/material/plasma{
 	layer = 2.9
 	},
@@ -100078,12 +100078,12 @@
 /obj/item/shield/riot,
 /obj/item/shield/riot,
 /obj/structure/table/rack,
-/obj/item/melee/baton,
-/obj/item/melee/baton,
-/obj/item/melee/baton,
-/obj/item/melee/baton,
-/obj/item/melee/baton,
-/obj/item/melee/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"

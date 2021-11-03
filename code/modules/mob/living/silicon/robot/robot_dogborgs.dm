@@ -31,7 +31,7 @@
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
 	src.modules += new /obj/item/handcuffs/cyborg(src)
-	src.modules += new /obj/item/melee/baton/robot(src)
+	src.modules += new /obj/item/tool/baton/robot(src)
 	src.modules += new /obj/item/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
 	src.modules += new /obj/item/tool/robotic_omni_sec(src) //borrows and the like.
@@ -64,7 +64,7 @@
 		T.update_icon()
 	else
 		T.charge_tick = 0
-	var/obj/item/melee/baton/robot/B = locate() in src.modules
+	var/obj/item/tool/baton/robot/B = locate() in src.modules
 	if(B && B.cell)
 		B.cell.give(amount)
 

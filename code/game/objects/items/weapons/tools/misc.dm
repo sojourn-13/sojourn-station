@@ -52,9 +52,8 @@
 	create_hot_spot = TRUE
 	glow_color = COLOR_BLUE_LIGHT
 	max_upgrades = 3
-	var/stunforce = 0
-	var/agonyforce = 40
-	var/hitcost = 100
+	agonyforce = 40
+	hitcost = 100
 
 /obj/item/tool/arcwelder/cyborg
 	desc = "A specialized tool designed by the Artificer's Guild. It functions as a battery powered welder and multitool. This version has a regulation on it preventing it to be used as a taser."

@@ -16,6 +16,11 @@
 
 	var/tool_in_use = FALSE
 
+	//Stunbatons
+	var/hitcost = 0
+	var/stunforce = 0
+	var/agonyforce = 0
+
 	var/sparks_on_use = FALSE	//Set to TRUE if you want to have sparks on each use of a tool
 	var/eye_hazard = FALSE	//Set to TRUE should damage users eyes if they without eye protection
 

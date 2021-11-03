@@ -102,7 +102,7 @@
 
 /datum/design/research/item/weapon/slimebaton
 	name = "Soteria xenobio baton"
-	build_path = /obj/item/melee/baton/slimebaton
+	build_path = /obj/item/tool/baton/slimebaton
 
 /datum/design/research/item/weapon/bluespace_dagger
 	name = "Soteria \"Displacement Dagger\""

@@ -47,7 +47,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_magazine/light_rifle_257 = 100,
 		/obj/item/clothing/suit/space/void/security/odst/mil = 300,
 		/obj/item/clothing/suit/space/void/odst/corps = 300,
-		/obj/item/melee/baton = 200,
+		/obj/item/tool/baton = 200,
 		/obj/item/storage/firstaid/surgery/traitor = 500, //Advanced tools inside
 		/obj/item/clothing/suit/space/void/SCAF/blackshield = 1250 //One of the best things we can get
 		)

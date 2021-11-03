@@ -1,5 +1,5 @@
 //replaces our stun baton code with /tg/station's code
-/obj/item/melee/baton
+/obj/item/tool/baton
 	name = "stun baton"
 	desc = "A stun baton for incapacitating people with."
 	icon_state = "stunbaton"
@@ -14,48 +14,86 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	attack_verb = list("beaten")
 	price_tag = 500
-	var/stunforce = 0
-	var/agonyforce = 40
+	stunforce = 0
+	agonyforce = 40
+	hitcost = 100
+	switched_on_qualities = list(QUALITY_HAMMERING = 10, QUALITY_PULSING = 20)
+	switched_off_qualities = list(QUALITY_HAMMERING = 10)
+	use_power_cost = 0.8
+	suitable_cell = /obj/item/cell/medium
+	glow_color = COLOR_LIGHTING_ORANGE_BRIGHT
 	var/status = FALSE		//whether the thing is on or not
-	var/hitcost = 100
-	var/obj/item/cell/cell
 	var/obj/item/cell/starting_cell = /obj/item/cell/medium/high
-	var/suitable_cell = /obj/item/cell/medium
 	var/slime_killer = FALSE
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 10)
 
-/obj/item/melee/baton/Initialize()
+
+/obj/item/tool/baton/mini
+	name = "mini stun baton"
+	desc = "A small stun baton for self defence on a buget."
+	icon_state = "shocker"
+	item_state = "shocker"
+	force = WEAPON_FORCE_WEAK
+	throwforce = WEAPON_FORCE_WEAK
+	w_class = ITEM_SIZE_SMALL
+	price_tag = 120
+	agonyforce = 20
+	hitcost = 50
+	switched_on_qualities = list(QUALITY_HAMMERING = 5, QUALITY_PULSING = 10)
+	switched_off_qualities = list(QUALITY_HAMMERING = 5)
+	use_power_cost = 0.4
+	suitable_cell = /obj/item/cell/small
+	starting_cell = /obj/item/cell/small/high
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 5)
+
+/obj/item/tool/baton/turn_on(mob/user)
+	if (cell && cell.charge > 0)
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
+		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+		set_light(1.5, 1)
+		..()
+	else
+		to_chat(user, SPAN_WARNING("[src] has no power!"))
+		set_light(0)
+
+/obj/item/tool/baton/turn_off(mob/user)
+	playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	set_light(0)
+	..()
+
+
+/obj/item/tool/baton/Initialize()
 	. = ..()
 	if(!cell && suitable_cell && starting_cell)
 		cell = new starting_cell(src)
 	update_icon()
 
-/obj/item/melee/baton/Destroy()
+/obj/item/tool/baton/Destroy()
 	QDEL_NULL(cell)
 	return ..()
 
-/obj/item/melee/baton/get_cell()
+/obj/item/tool/baton/get_cell()
 	return cell
 
-/obj/item/melee/baton/proc/set_status(s)
+/obj/item/tool/baton/proc/set_status(s)
 	status = s
-	tool_qualities = status ? list(QUALITY_PULSING = 1) : null
 	update_icon()
 
-/obj/item/melee/baton/handle_atom_del(atom/A)
+/obj/item/tool/baton/handle_atom_del(atom/A)
 	..()
 	if(A == cell)
 		cell = null
 		update_icon()
 
-/obj/item/melee/baton/proc/deductcharge(var/power_drain)
+/obj/item/tool/baton/proc/deductcharge(var/power_drain)
 	if(cell)
 		. = cell.checked_use(power_drain) //try to use enough power
 		if(!cell.check_charge(hitcost))	//do we have enough power for another hit?
 			set_status(FALSE)
 
-/obj/item/melee/baton/update_icon()
+/obj/item/tool/baton/update_icon()
 	if(status)
 		icon_state = "[initial(icon_state)]_active"
 	else if(!cell)
@@ -68,7 +106,7 @@
 	else
 		set_light(0)
 
-/obj/item/melee/baton/examine(mob/user)
+/obj/item/tool/baton/examine(mob/user)
 	if(!..(user, 1))
 		return
 
@@ -77,7 +115,7 @@
 	else
 		to_chat(user, SPAN_WARNING("The baton does not have a power source installed."))
 
-/obj/item/melee/baton/attack_self(mob/user)
+/obj/item/tool/baton/attack_self(mob/user)
 	if(cell && cell.charge > hitcost)
 		set_status(!status)
 		to_chat(user, SPAN_NOTICE("[src] is now [status ? "on" : "off"]."))
@@ -92,7 +130,7 @@
 			to_chat(user, SPAN_WARNING("[src] is out of charge."))
 	add_fingerprint(user)
 
-/obj/item/melee/baton/attack(mob/M, mob/user)
+/obj/item/tool/baton/attack(mob/M, mob/user)
 	if(status && (CLUMSY in user.mutations) && prob(50))
 		to_chat(user, SPAN_DANGER("You accidentally hit yourself with the [src]!"))
 		user.Weaken(30)
@@ -100,7 +138,7 @@
 		return
 	return ..()
 
-/obj/item/melee/baton/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+/obj/item/tool/baton/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	if(isrobot(target))
 		return ..()
 
@@ -147,35 +185,35 @@
 			var/mob/living/carbon/slime/S = target
 			S.death()
 
-/obj/item/melee/baton/emp_act(severity)
+/obj/item/tool/baton/emp_act(severity)
 	if(cell)
 		cell.emp_act(severity)	//let's not duplicate code everywhere if we don't have to please.
 	..()
 
 //secborg stun baton module
-/obj/item/melee/baton/robot/attack_self(mob/user)
+/obj/item/tool/baton/robot/attack_self(mob/user)
 	//try to find our power cell
 	var/mob/living/silicon/robot/R = loc
 	if (istype(R))
 		cell = R.cell
 	return ..()
 
-/obj/item/melee/baton/robot/attackby(obj/item/W, mob/user)
+/obj/item/tool/baton/robot/attackby(obj/item/W, mob/user)
 	return
 
-/obj/item/melee/baton/MouseDrop(over_object)
+/obj/item/tool/baton/MouseDrop(over_object)
 	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
 		cell = null
 		set_status(FALSE)
 		update_icon()
 
-/obj/item/melee/baton/attackby(obj/item/C, mob/living/user)
+/obj/item/tool/baton/attackby(obj/item/C, mob/living/user)
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
 		update_icon()
 
 //Makeshift stun baton. Replacement for stun gloves.
-/obj/item/melee/baton/cattleprod
+/obj/item/tool/baton/cattleprod
 	name = "stun prod"
 	desc = "An improvised stun baton."
 	icon_state = "stunprod"
@@ -190,7 +228,7 @@
 	starting_cell = null
 	structure_damage_factor = STRUCTURE_DAMAGE_NORMAL
 
-/obj/item/melee/baton/excelbaton
+/obj/item/tool/baton/excelbaton
 	name = "Expropriator"
 	desc = "A cheap and effective way to feed the red tide."
 	icon_state = "sovietbaton"
@@ -208,12 +246,12 @@
 	starting_cell = /obj/item/cell/medium/excelsior
 
 //excelsior baton has 2 inhand sprites
-/obj/item/melee/baton/excelbaton/set_status(s)
+/obj/item/tool/baton/excelbaton/set_status(s)
 	..()
 	item_state = initial(item_state) + (status ? "_active" : "")
 	update_wear_icon()
 
-/obj/item/melee/baton/slimebaton
+/obj/item/tool/baton/slimebaton
 	name = "xenobio baton"
 	desc = "A stunbaton that is designed against slimes and other lab misstakes."
 	icon_state = "prod_si"

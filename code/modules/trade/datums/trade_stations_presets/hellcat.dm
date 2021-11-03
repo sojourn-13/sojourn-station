@@ -11,7 +11,7 @@
 		"Enforcer Equipment" = list(
 			/obj/item/handcuffs,
 			/obj/item/shield/riot,
-			/obj/item/melee/baton,
+			/obj/item/tool/baton,
 			/obj/machinery/deployable/barrier
 		),
 		"Energy weapons" = list(

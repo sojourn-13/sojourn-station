@@ -264,7 +264,7 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/standard/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/device/scanner/price(src)
-	src.modules += new /obj/item/melee/baton/robot(src)
+	src.modules += new /obj/item/tool/baton/robot(src)
 	src.modules += new /obj/item/extinguisher(src)
 	src.modules += new /obj/item/tool/robotic_omni_standard(src)
 	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
@@ -298,7 +298,7 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/standard/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 
-	var/obj/item/melee/baton/robot/B = locate() in src.modules
+	var/obj/item/tool/baton/robot/B = locate() in src.modules
 	if(B && B.cell)
 		B.cell.give(amount)
 
@@ -476,7 +476,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
-	src.emag += new /obj/item/melee/baton/robot(src)
+	src.emag += new /obj/item/tool/baton/robot(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
 	var/datum/matter_synth/plasteel = new /datum/matter_synth/plasteel(40000)
@@ -546,7 +546,7 @@ var/global/list/robot_modules = list(
 	..()
 
 	if(R.emagged)
-		var/obj/item/melee/baton/robot/B = locate() in src.modules
+		var/obj/item/tool/baton/robot/B = locate() in src.modules
 		if(B && B.cell)
 			B.cell.give(amount)
 
@@ -607,7 +607,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
 	src.modules += new /obj/item/handcuffs/cyborg(src)
-	src.modules += new /obj/item/melee/baton/robot(src)
+	src.modules += new /obj/item/tool/baton/robot(src)
 	src.modules += new /obj/item/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/tool/robotic_omni_sec(src) //borrows and the like.
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //cracks and the like.
@@ -642,7 +642,7 @@ var/global/list/robot_modules = list(
 		else
 			L.charge_tick = 0
 
-	var/obj/item/melee/baton/robot/B = locate() in src.modules
+	var/obj/item/tool/baton/robot/B = locate() in src.modules
 	if(B && B.cell)
 		B.cell.give(amount)
 
