@@ -763,6 +763,11 @@
 	required_reagents = list("manhattan" = 1, "fernet" = 1)
 	result_amount = 2
 
+/datum/chemical_reaction/drinks/antidepressant
+	result = "antidepressant"
+	required_reagents = list("watermelonjuice" = 5, "triplecitrus" = 5, "sugar" = 1, "ice" = 1, "cola" = 5, "pineapplejuice" = 5)
+	result_amount = 5
+
 /datum/chemical_reaction/drinks/kvass
 	result = "Kvass"
 	required_reagents = list("ethanol" = 1, "flour" = 1) // Can't physically dump rye bread into water so...
