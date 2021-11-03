@@ -29,6 +29,7 @@
 	var/stored_power = 0//Power to deploy per tick
 
 	var/obj/item/device/radio/radio
+	var/announce_stability = TRUE
 
 /obj/machinery/power/am_control_unit/New()
 	..()
@@ -253,13 +254,18 @@
 	spawn(40)
 		stored_core_stability_delay = 0
 
-	var/alert_msg = "WARNING, Antimatter Engine Stability at [stored_core_stability]%!"
-	if(stored_core_stability <= 75)
-		radio.autosay(alert_msg, "Antimatter Automated Announcement", "Engineering")
-	if(stored_core_stability <= 50)
-		radio.autosay(alert_msg, "Antimatter Automated Announcement", "Command")
-	if(stored_core_stability <= 25)
-		radio.autosay(alert_msg, "Antimatter Automated Announcement")
+	if(announce_stability)
+		var/alert_msg = "WARNING, Antimatter Engine Stability at [stored_core_stability]%!"
+		if(stored_core_stability <= 75)
+			radio.autosay(alert_msg, "Antimatter Automated Announcement", "Engineering")
+		if(stored_core_stability <= 50)
+			radio.autosay(alert_msg, "Antimatter Automated Announcement", "Command")
+		if(stored_core_stability <= 25)
+			radio.autosay(alert_msg, "Antimatter Automated Announcement")
+
+/obj/machinery/power/am_control_unit/proc/toggle_announcement()
+	announce_stability = !announce_stability
+	to_chat(usr, "announce_stability is now set to [announce_stability]")
 
 /obj/machinery/power/am_control_unit/proc/reset_stored_core_stability_delay()
 	stored_core_stability_delay = 0
