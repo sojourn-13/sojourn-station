@@ -1,6 +1,6 @@
 //Oh by glob
 //goat
-/mob/living/simple_animal/hostile/diyaab
+/mob/living/simple_animal/hostile/bioshock
 	name = "Bioshock"
 	desc = "Has every mutation in it. Every one Hex hadn't tested yet, at least"
 	faction = "diyaab"
@@ -25,4 +25,18 @@
 	density = 0
 	mob_size = 3
 	meat_amount = 10
-	inherent_mutations = list(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MOO, MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	inherent_mutations = list(
+		MUTATION_COW_SKIN, 
+		MUTATION_IMBECILE, 
+		MUTATION_MOO, 
+		MUTATION_GIGANTISM, 
+		MUTATION_RAND_UNSTABLE, 
+		MUTATION_RAND_UNSTABLE,
+		MUTATION_EPILEPSY,
+		MUTATION_COUGHING,
+		MUTATION_CLUMSY,
+		MUTATION_TOURETTES,
+		MUTATION_NERVOUSNESS,
+		MUTATION_BLINDNESS,
+		MUTATION_DEAF,
+		MUTATION_NEARSIGHTED)

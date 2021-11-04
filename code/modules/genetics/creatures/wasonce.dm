@@ -136,5 +136,5 @@ Has ability of every roach.
 		var/obj/mecha/M = O
 		return isValidAttackTarget(M.occupant) / 4
 
-/mob/living/carbon/superior_animal/roach/kaiser/slip(var/slipped_on)
+/mob/living/carbon/superior_animal/wasonce/slip(var/slipped_on)
 	return FALSE

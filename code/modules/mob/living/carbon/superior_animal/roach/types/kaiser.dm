@@ -46,6 +46,8 @@ Has ability of every roach.
 	projectiletype = /obj/item/projectile/roach_spit/large
 	fire_verb = "spits glowing bile"
 
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+
 /mob/living/carbon/superior_animal/roach/kaiser/New()
 	..()
 	gas_sac = new /datum/reagents(100, src)

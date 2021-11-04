@@ -245,4 +245,19 @@
 			</div>
 		</div>
 	</div>
+{{else data.menu_state == 8}}
+	<h2 class='average'>Analysis Complete!</h2>
+	{{for data.analyzed_mutations}}
+		<div class="statusDisplay" style="margin: 0px 4px 4px 4px; background: #3baf45">
+			<div class="item">
+				<div style=float: left;><b>{{:value.name}}</b>: {{:value.desc}}</div>
+				<br>
+				<div style=float: left;><b>Copies Present</b>: {{:value.count}}</div>
+				<br>
+				<div style=float: left;><b>Instability</b>: {{:value.instability}}</div>
+			</div>
+		</div>
+	{{empty}}
+		<div class='notice'>No new mutations discovered!</div>
+	{{/for}}
 {{/if}}

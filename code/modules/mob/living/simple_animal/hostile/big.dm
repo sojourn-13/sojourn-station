@@ -18,6 +18,7 @@
 	meat_amount = 8
 	leather_amount = 8 //The amount of leather sheets dropped.
 	bones_amount = 6 //The amount of bone sheets dropped.
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_NEARSIGHTED, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/render
 	name = "primal render"
@@ -61,6 +62,7 @@
 	bones_amount = 20
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/render_claw,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_GIGANTISM, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/render/FindTarget()
 	. = ..()
@@ -212,6 +214,7 @@
 	bones_amount = 30 //Lots of bone-like chitin
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 30, energy = 35, bomb = 5, bio = 10, rad = 25)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/nightmare/dream_daemon
 	name = "dream daemon"
@@ -278,6 +281,7 @@
 	leather_amount = 20
 	bones_amount = 10
 	mob_size = MOB_LARGE
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()
@@ -325,6 +329,7 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 5, bio = 10, rad = 25)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
 	name = "wendigo"
@@ -343,6 +348,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	armor = list(melee = 25, bullet = 20, energy = 0, bomb = 5, bio = 10, rad = 25)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 
 
 // Credit to scar#1579 for the sprite.
@@ -366,5 +372,5 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	armor = list(melee = 5, bullet = 10, energy = 10, bomb = 5, bio = 10, rad = 25)
-
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 

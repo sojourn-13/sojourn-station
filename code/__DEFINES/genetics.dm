@@ -5,6 +5,14 @@
 #define MUTATION_GIGANTISM /datum/genetics/mutation/gigantism
 #define MUTATION_RAND_UNSTABLE /datum/genetics/mutation/rand_unstable
 #define MUTATION_MOO /datum/genetics/mutation/cow_moo
+#define MUTATION_EPILEPSY /datum/genetics/mutation/disability/epilepsy
+#define MUTATION_COUGHING /datum/genetics/mutation/disability/cough
+#define MUTATION_CLUMSY /datum/genetics/mutation/disability/clumsy
+#define MUTATION_TOURETTES /datum/genetics/mutation/disability/tourettes
+#define MUTATION_NERVOUSNESS /datum/genetics/mutation/disability/nervousness
+#define MUTATION_BLINDNESS /datum/genetics/mutation/disability/nervousness
+#define MUTATION_DEAF /datum/genetics/mutation/disability/deaf
+#define MUTATION_NEARSIGHTED /datum/genetics/mutation/disability/nearsighted
 
 //Exclusive Mutation types:
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
