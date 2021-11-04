@@ -118,6 +118,8 @@
 		/datum/design/autolathe/gun/vintorez,
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/gun/ak47_saiga,
+		/datum/design/autolathe/gun/maxim,
 		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/gun/reclaimer,
 		/datum/design/autolathe/ammo/pistol,				//makarov ammo
@@ -138,6 +140,9 @@
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
 		/datum/design/autolathe/ammo/pistol_35_drum/hv,
 		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/sbaw_slug,						//saiga ammo
+		/datum/design/autolathe/ammo/sbaw_pellet,
+		/datum/design/autolathe/ammo/maxim,							//maxim ammo
 		/datum/design/autolathe/circuit/autolathe_excelsior,		//circuits
 		/datum/design/autolathe/circuit/shieldgen_excelsior,
 		/datum/design/autolathe/circuit/reconstructor_excelsior,
@@ -186,6 +191,8 @@
 		/datum/design/autolathe/gun/vintorez,
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/gun/ak47_saiga,
+		/datum/design/autolathe/gun/maxim,
 		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
 		/datum/design/autolathe/ammo/hpistol_rubber,
@@ -205,6 +212,9 @@
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
 		/datum/design/autolathe/ammo/pistol_35_drum/hv,
 		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/sbaw_slug,						//saiga ammo
+		/datum/design/autolathe/ammo/sbaw_pellet,
+		/datum/design/autolathe/ammo/maxim, 						//maxim
 		/datum/design/autolathe/sec/silencer,						//misc
 		/datum/design/autolathe/clothing/excelsior_armor,
 	)

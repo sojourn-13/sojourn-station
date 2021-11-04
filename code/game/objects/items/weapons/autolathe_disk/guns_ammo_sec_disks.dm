@@ -118,26 +118,27 @@
 	designs = list(
 		/datum/design/autolathe/gun/ten_dark,
 		/datum/design/autolathe/gun/NM_colt,
-		/datum/design/autolathe/gun/ladon,
-		/datum/design/autolathe/gun/naga,
+		/datum/design/autolathe/gun/ladon = 2,
+		/datum/design/autolathe/gun/naga = 2,
 		//SMGs
-		/datum/design/autolathe/gun/greasegun,
+		/datum/design/autolathe/gun/greasegun = 2,
 		//rifles
-		/datum/design/autolathe/gun/boltgun_sa,
+		/datum/design/autolathe/gun/boltgun_sa = 0,
 		/datum/design/autolathe/gun/zatvor,
-		/datum/design/autolathe/gun/sol,
-		/datum/design/autolathe/gun/omnirifle,
+		/datum/design/autolathe/gun/sol = 3,
+		/datum/design/autolathe/gun/omnirifle = 2,
 		/datum/design/autolathe/gun/standard_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
-		/datum/design/autolathe/gun/rds_omnicarbine,
+		/datum/design/autolathe/gun/rds_omnicarbine = 2,
 		//machinegun
-		/datum/design/autolathe/gun/saw,
+		/datum/design/autolathe/gun/saw = 4,
+		/datum/design/autolathe/gun/ppv = 5,
 		//grenade launcher
-		/datum/design/autolathe/gun/grenade_launcher_china_lake,
+		/datum/design/autolathe/gun/grenade_launcher_china_lake = 2,
 		//STS
 		/datum/design/autolathe/gun/sts25,
-		/datum/design/autolathe/gun/sts30,
-		/datum/design/autolathe/gun/sts40,
+		/datum/design/autolathe/gun/sts30 = 2,
+		/datum/design/autolathe/gun/sts40 = 3,
 		//Flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//Misc

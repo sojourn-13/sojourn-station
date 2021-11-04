@@ -203,7 +203,7 @@
 	)
 
 /datum/craft_recipe/guild/guild_bull
-	name = "Reforge Bull shotgun"
+	name = "bison double barrel shotgun"
 	result = /obj/item/gun/projectile/shotgun/bull/bison
 	steps = list(
 		list(/obj/item/gun/projectile/shotgun/bull, 1, "time" = 80),
@@ -219,8 +219,22 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/ten_shot_conversion
+	name = "ten-shot conversion shotgun"
+	result = /obj/item/gun/projectile/revolver/sixshot/conversion
+	steps = list(
+		list(/obj/item/gun/projectile/revolver/sixshot, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 30, "time" = 40),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+	)
+
 /datum/craft_recipe/guild/heavypulserifle
-	name = "Jury-Rigged EZ-13 MK2 Heavy Pulse Rifle"
+	name = "jury-rigged EZ-13 MK2 heavy pulse rifle"
 	result = /obj/item/gun/energy/laser/heavypulserifle
 	icon_state = "gun"
 	steps = list(
@@ -236,7 +250,7 @@
 	)
 
 /datum/craft_recipe/guild/mace
-	name = "War Mace"
+	name = "war mace"
 	result = /obj/item/tool/hammer/mace
 	steps = list(
 		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL, "time" = 30),
@@ -246,7 +260,7 @@
 	)
 
 /datum/craft_recipe/guild/claymore
-	name = "Claymore"
+	name = "claymore"
 	result = /obj/item/tool/sword
 	steps = list(
 		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL, "time" = 30),
@@ -256,7 +270,7 @@
 	)
 
 /datum/craft_recipe/guild/machete
-	name = "Machete"
+	name = "machete"
 	result = /obj/item/tool/sword/machete
 	steps = list(
 		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL, "time" = 30),
@@ -266,7 +280,7 @@
 	)
 
 /datum/craft_recipe/guild/katana
-	name = "Katana"
+	name = "katana"
 	result = /obj/item/tool/sword/katana
 	steps = list(
 	list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 30),
@@ -279,7 +293,7 @@
 	)
 
 /datum/craft_recipe/guild/firebrand
-	name = "Firebrand"
+	name = "firebrand"
 	result = /obj/item/tool/sword/katana/firebrand
 	steps = list(
 	list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 30),
@@ -325,9 +339,9 @@
 	)
 
 /datum/craft_recipe/guild/webbing
-	name = "Webbing"
+	name = "artificer guild web harness"
 	icon_state = "clothing"
-	result = /obj/item/storage/belt/webbing
+	result = /obj/item/storage/belt/webbing/artificer
 	steps = list(
 		list(/obj/item/storage/belt, 1, "time" = 30),
 		list(/obj/item/storage/belt, 1, "time" = 30),

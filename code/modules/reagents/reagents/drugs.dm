@@ -23,7 +23,7 @@
 /datum/reagent/drug/space_drugs
 	name = "Space drugs"
 	id = "space_drugs"
-	description = "An illegal chemical compound used as drug."
+	description = "An illegal chemical compound used as drug. Also a minor painkiller."
 	taste_description = "bitterness"
 	taste_mult = 0.4
 	reagent_state = LIQUID
@@ -36,18 +36,20 @@
 
 /datum/reagent/drug/space_drugs/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.druggy = max(M.druggy, 15 * effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 25)
 	if(prob(10 * effect_multiplier) && isturf(M.loc) && !istype(M.loc, /turf/space) && M.canmove && !M.restrained())
 		step(M, pick(cardinal))
 	if(prob(7 * effect_multiplier))
 		M.emote(pick("twitch", "drool", "moan", "giggle"))
 	M.add_chemical_effect(CE_PULSE, -1)
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "spacedrugs")
 	..()
 
 
 /datum/reagent/drug/serotrotium
 	name = "Serotrotium"
 	id = "serotrotium"
-	description = "A chemical compound that promotes concentrated production of the serotonin neurotransmitter in humans."
+	description = "A chemical compound that promotes concentrated production of the serotonin neurotransmitter in humans, also acts as a mild painkiller."
 	taste_description = "pure happiness"
 	reagent_state = LIQUID
 	color = "#202040"
@@ -60,13 +62,17 @@
 /datum/reagent/drug/serotrotium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(7 * effect_multiplier))
 		M.emote(pick("twitch", "drool", "moan", "gasp"))
+	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier, TRUE)
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
+	M.adjustToxLoss(-0.5)
 	..()
 
 
 /datum/reagent/drug/cryptobiolin
 	name = "Cryptobiolin"
 	id = "cryptobiolin"
-	description = "Cryptobiolin causes confusion and dizziness."
+	description = "Cryptobiolin causes confusion and dizziness. Acts as a painkiller."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#000055"
@@ -78,22 +84,30 @@
 /datum/reagent/drug/cryptobiolin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.make_dizzy(4 * effect_multiplier)
 	M.confused = max(M.confused, 20 * effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
+	M.adjustToxLoss(-0.5)
 	..()
 
 
 /datum/reagent/drug/impedrezene
 	name = "Impedrezene"
 	id = "impedrezene"
-	description = "Impedrezene is a narcotic that impedes one's ability by slowing down the higher brain cell functions."
+	description = "Impedrezene is a narcotic that impedes one's ability by slowing down the higher brain cell functions, but heals the heart and numbs most pain."
 	taste_description = "numbness"
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	overdose = REAGENTS_OVERDOSE
 	sanity_gain = 1
+	addiction_chance = 5
 	illegal = TRUE
 
 /datum/reagent/drug/impedrezene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.jitteriness = max(M.jitteriness - (5 * effect_multiplier), 0)
+	M.add_chemical_effect(CE_PAINKILLER, 40 * effect_multiplier, TRUE)
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, STIM_TIME, "impedrezene")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "impedrezene")
 	if(prob(80))
 		M.adjustBrainLoss(0.1 * effect_multiplier)
 	if(prob(50))
@@ -102,15 +116,28 @@
 		M.emote("drool")
 	..()
 
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART)
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(C))
+				return
+			if(C.damage > 0)
+				C.damage = max(C.damage - 0.5, 0)
+
+/datum/reagent/drug/impedrezene/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "impedrezene_w")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "impedrezene_w") //UNGA!
 
 /datum/reagent/drug/mindbreaker
 	name = "Mindbreaker Toxin"
 	id = "mindbreaker"
-	description = "A powerful hallucinogen, it can cause fatal effects in users."
+	description = "A powerful hallucinogen, it can cause fatal effects in users, stimulates cell growth."
 	taste_description = "sourness"
 	reagent_state = LIQUID
 	color = "#B31008"
 	metabolism = REM * 0.25
+	addiction_chance = 30
 	overdose = REAGENTS_OVERDOSE
 	illegal = TRUE
 
@@ -120,6 +147,16 @@
 	M.make_jittery(10 * effect_multiplier)
 	M.make_dizzy(10 * effect_multiplier)
 	M.confused = max(M.confused, 20 * effect_multiplier)
+	M.heal_organ_damage(0.1 * effect_multiplier, 0, 0.5 * effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
+	M.add_chemical_effect(CE_PAINKILLER, 40 * effect_multiplier, TRUE)
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker")
+
+/datum/reagent/drug/mindbreaker/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker_w")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker_w")
+	M.adjustToxLoss(-0.1) //Small toxins as your prossesing it out
 
 /datum/reagent/drug/psi_juice
 	name = "Cerebrix"
@@ -159,7 +196,7 @@
 /datum/reagent/drug/psilocybin
 	name = "Psilocybin"
 	id = "psilocybin"
-	description = "A strong psychotropic derived from certain species of mushroom."
+	description = "A strong psychotropic derived from certain species of mushroom. Makes the user unable to feel most pain."
 	taste_description = "mushroom"
 	color = "#E700E7"
 	overdose = REAGENTS_OVERDOSE * 0.66
@@ -171,7 +208,7 @@
 
 /datum/reagent/drug/psilocybin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.druggy = max(M.druggy, 30 * effect_multiplier)
-
+	M.add_chemical_effect(CE_PAINKILLER, 60 * effect_multiplier, TRUE)
 	var/effective_dose = dose
 	if(issmall(M)) effective_dose *= 2
 	if(effective_dose < 1)
@@ -271,7 +308,7 @@
 /datum/reagent/drug/hyperzine
 	name = "Hyperzine"
 	id = "hyperzine"
-	description = "Hyperzine is a highly effective, long lasting, muscle stimulant."
+	description = "Hyperzine is a highly effective, long lasting, muscle stimulant, but drains the body. Also promotes muscle regrowth. Will worsen injuries."
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#FF3300"
@@ -286,6 +323,22 @@
 		M.emote(pick("twitch", "blink_r", "shiver"))
 	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
 	M.add_chemical_effect(CE_PULSE, 2)
+	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		//G for GUNS
+		var/obj/item/organ/internal/muscle/G = H.random_organ_by_process(OP_MUSCLE)
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(G))
+				return
+			if(G.damage > 0)
+				G.damage = max(G.damage - 0.5, 0)// small healing
+		if(H.health <= 50)
+			H.heal_organ_damage(-0.1, -0.1)
+
+/datum/reagent/drug/hyperzine/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0) //Drains the stomic faster
 
 /datum/reagent/drug/hyperzine/withdrawal_act(mob/living/carbon/M)
 	M.add_chemical_effect(CE_SPEEDBOOST, -1)

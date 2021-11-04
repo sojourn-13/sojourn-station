@@ -262,28 +262,26 @@
 	name = "rig shield module"
 	desc = "A heavy deployable shield installable on a hardsuit."
 	icon_state = "riot"
-
 	activate_string = "Deploy Shield"
 	deactivate_string = "Retract Shield"
 
 	interface_name = "frozen star shield"
 	interface_desc = "A reinforced ballistic shield for use against high-velocity projectiles and energy weapons."
-	price_tag = 2500
+
 	usable = 0
 	selectable = 1
 	toggleable = 1
 	use_power_cost = 0
-	active_power_cost = 5
-	passive_power_cost = 5
+	active_power_cost = 0
+	passive_power_cost = 0
+	price_tag = 2500
 
 /obj/item/rig_module/held/shield/Process()
-
-	var/mob/living/M = holder.wearer
-	if(holder && holder.wearer)
-		if(!(locate(/obj/item/shield/hardsuit) in holder.wearer))
-			deactivate()
-			to_chat(M, "The shield retracts into the hardsuit.")
-			return 0
+	if(active)
+		if(holder && holder.wearer)
+			if(!(locate(/obj/item/shield/hardsuit) in holder.wearer))
+				deactivate()
+				return 0
 
 	return ..()
 
@@ -291,16 +289,18 @@
 
 	var/mob/living/M = holder.wearer
 
+	if((src == M.l_hand) || (src == M.r_hand))
+		return FALSE
+
+	if(M.l_hand && M.r_hand)
+		to_chat(M, SPAN_DANGER("Your hands are full."))
+		return FALSE
+
 	if(!do_after(M, 1.5 SECONDS, src))
 		to_chat(M, SPAN_DANGER("You have to stand still to deploy the shield!"))
 		return FALSE
 
 	..()
-
-	if(M.l_hand && M.r_hand)
-		to_chat(M, SPAN_DANGER("Your hands are full."))
-		deactivate()
-		return FALSE
 
 	var/obj/item/shield/hardsuit/shield = new(M)
 	shield.creator = M
@@ -319,3 +319,5 @@
 	for(var/obj/item/shield/hardsuit/shield in M.contents)
 		M.drop_from_inventory(shield)
 		qdel(shield)
+
+	to_chat(M, "The shield retracts into the hardsuit.")

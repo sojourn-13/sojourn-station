@@ -30,7 +30,7 @@
 // This also handles psi points limits and regeneration, the effect is dynamic so increases to cognition through things like stims and chems will update accordingly.
 /obj/item/organ/internal/psionic_tumor/Process()
 	..()
-	if(disabled == FALSE)
+	if(disabled == FALSE && damage < 60)
 		var/psi_max_bonus = 0
 		var/cognitive_potential = 1
 		if(round(world.time) % 5 == 0)
@@ -67,8 +67,8 @@
 				last_psi_point_gain = world.time + ((10 MINUTES - cognitive_potential MINUTES) / 2)
 			else
 				last_psi_point_gain = world.time + (10 MINUTES - cognitive_potential MINUTES)
-		
-		
+
+
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()

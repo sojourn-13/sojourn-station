@@ -440,6 +440,12 @@
 	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 
+/obj/item/storage/belt/webbing/artificer
+	name = "artificer guild web harness"
+	desc = "Everything you need at hand, at belt. This one is hand crafted by the artificer guild, allowing it to better store larger items by sacrificing a small bit of space. Better than most tool belts."
+	max_w_class = ITEM_SIZE_NORMAL // This is specifically crafted by the guild as webbings are useless for tools without being able to fit normal sized items.
+	storage_slots = 12 // Holds slightly less items than a regular webbing but still 5 more than a toolbelt given how many tools an adept needs. -Kaz
+
 /obj/item/storage/belt/webbing/green
 	name = "green web harness"
 	desc = "Everything you need at hand, at belt."

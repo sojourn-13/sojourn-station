@@ -1304,11 +1304,17 @@
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
 	page_link = "Guide_to_Food_and_Drinks"
+				
+/obj/item/book/manual/h_book
+	name = "Holy Book"
+	desc = "An undescript book for an unnamed religion."
+	icon_state = "h_book"
+	author = "Unknown"
 
 /obj/item/book/manual/classic/bleakhouse
 	name = "Bleak House"
 	desc = "A novel about the activities and affairs of the gentry, with a prominent legal theme."
-	icon_state ="book2"
+	icon_state = "book2"
 	author = "Charles Dickens"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	dat = {"
 		<html><head>

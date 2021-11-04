@@ -1,13 +1,14 @@
 /mob/living/carbon/superior_animal/nanobot
 	name = "Nanobot"
-	desc = "A robot built from Nanites"
+	desc = "A robot built from nanites to serve as a personal servant and guard. A product originally designed by the opifex before being mimiced by the Artificer Guild. They come in several variants \
+	and are known for being highly versatile."
 	icon = 'icons/mob/nanobot.dmi'
 	icon_state = "nanobot"
 	attack_sound = 'sound/weapons/blade1.ogg'
 	faction = "neutral"
 	pass_flags = PASSTABLE
-	health = 200
-	maxHealth = 200
+	health = 150
+	maxHealth = 150
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	turns_per_move = 5
@@ -20,17 +21,18 @@
 	breath_poison_type = 0 // Can't be poisoned
 	min_air_pressure = 0 // Doesn't need pressure
 	speak_emote = list("state")
-	emote_see = list("looks around for a target.")
+	emote_see = list("whirrs softly.", "glances around carefully, before softly pinging.", "pings gently before it begins running diagnostics.", "beeps as its scanner starts up.")
 	speak_chance = 1
 	attacktext = "slashed"
 	meat_amount = 0
 	mob_size = MOB_MEDIUM
 	can_burrow = FALSE
 	randpixel = 0
-	deathmessage = "blows apart!"
+	deathmessage = "falls apart!"
 	light_range = 3
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	holder_type = /obj/item/holder/nanobot // What the nanobot become when picked up.
+	viewRange = 3
 
 	do_gibs = FALSE
 	colony_friend = TRUE
@@ -72,7 +74,7 @@
 	..()
 	if(iscarbon(user) || issilicon(user))
 		var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
-		if(robotics_expert || src == user) // Are we an expert in robots or examining ourselves?
+		if(robotics_expert) // Are we an expert in robots or examining ourselves?
 			to_chat(user, SPAN_NOTICE("[name] is currently at [(health/maxHealth)*100]% integrity!")) // Give a more accurate reading.
 		else if (health < maxHealth * 0.25)
 			to_chat(user, SPAN_DANGER("It's grievously wounded!"))
@@ -122,34 +124,28 @@
 
 		else if(QUALITY_PULSING in T.tool_qualities)
 			if(stat != DEAD) // are we still alive?
-				follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(0, 1, 2, 3, 4, 5)
+				follow_distance = input(user, "How far should [src.name] follow?", "Distance to set", initial(follow_distance)) as null | anything in list(1, 2, 3, 4, 5)
 				if(density && follow_distance < 1)
 					follow_distance = 1 // Making sure that the bot don't try to occupy your tile if it can't share it.
-			else if(health >= maxHealth * 0.99) // We are dead, but are we at least intact?, not actual maxHealth in case something put the HP at least 399.9999999
+			else if(health >= maxHealth * 0.99 && user.stats.getPerk(PERK_ROBOTICS_EXPERT)) // We are dead, but are we at least intact?, not actual maxHealth in case something put the HP at least 399.9999999
 				user.visible_message(
 										SPAN_NOTICE("[user] start to reactivate [src.name]."),
 										SPAN_NOTICE("You start to reactivate [src.name]..")
 										)
-				if(T.use_tool(user, src, user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? WORKTIME_LONG : WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_EASY, required_stat = STAT_COG)) // Bring the bot back. It's long as fuck. Bit faster if it's your job.
+				if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_EASY, required_stat = STAT_COG)) // Bring the bot back. It's long as fuck. Bit faster if it's your job.
 					revive() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it.
-			else
+			else if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
 				to_chat(user, "[src] need to be fully repaired before reactivation is possible.")
+			else
+				to_chat(user, "You have no idea how to repair a completely broken nanobot. Maybe a roboticist would know how?")
 			return
 
 	// If nothing was ever triggered, continue as normal
 	..()
 
-/mob/living/carbon/superior_animal/nanobot/proc/spawn_food(var/random = FALSE)
-	var/obj/item/reagent_containers/food/snacks/spawned_food // The food we're spawning
-	if(random) // Are we spawning random food?
-		var/list/possible_food = typesof(/obj/item/reagent_containers/food/snacks) // Create a list of possible food to spawn
-		possible_food -= /obj/item/reagent_containers/food/snacks // Remove the default type from the list
-		spawned_food = pick(possible_food) // Select a random food.
-
-	else // We're spawning a specific food.
-		spawned_food = /obj/item/reagent_containers/food/snacks/mre/can
-	spawned_food = new(src.loc) // Spawn the food
-	visible_emote("state, \"Dispensing [spawned_food.name].\"") // Vocal Message
+/mob/living/carbon/superior_animal/nanobot/proc/spawn_food()
+	new /obj/item/storage/ration_pack(src.loc) // Spawn the food
+	visible_emote("state, \"Dispensing emergency ration pack.\"") // Vocal Message
 
 /mob/living/carbon/superior_animal/nanobot/verb/return_mind()
 	set category = "Remote Control"
