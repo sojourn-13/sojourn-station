@@ -823,7 +823,7 @@
 	)
 
 /obj/item/oddity/ls/inertdetonator/attack_self(mob/user as mob)
-	if(inert == 1)
+	if(inert)
 		to_chat(user,("<span class='info'> The [src] clicks! Neat.</span>"))
 		return
 
