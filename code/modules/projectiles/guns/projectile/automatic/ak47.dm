@@ -49,6 +49,20 @@
 	. = ..()
 	update_icon()
 
+/obj/item/gun/projectile/automatic/ak47/saiga
+	name = "Excelsior \"Saiga 12\" carbine"
+	desc = "\"Let the ruling classes tremble at a Communistic revolution. The proletarians have nothing to lose but their chains. They have a world to win..\"\
+		 A bulked up and modified version of the kalashnikov made to fire 20mm shotgun slugs, similar to the sol federation SBAW design. Uses 20mm in SBAW magazines."
+	icon = 'icons/obj/guns/projectile/saiga12.dmi'
+	icon_state = "saiga"
+	item_state = "saiga"
+	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	caliber = CAL_SHOTGUN
+	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
+	mag_well = MAG_WELL_DRUM
+	recoil_buildup = 25
+	one_hand_penalty = 30
+
 /obj/item/gun/projectile/automatic/ak47/akl
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	desc = "Weapon of the oppressed, oppressors, and extremists of all flavours. \

@@ -31080,7 +31080,7 @@
 /obj/item/clothing/suit/storage/toggle/labcoat/science,
 /obj/item/clothing/gloves/latex,
 /obj/item/remains,
-/obj/item/gun/projectile/revolver/rex10,
+/obj/item/gun/projectile/revolver/rev10/rex10,
 /obj/item/clothing/shoes/laceup,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)

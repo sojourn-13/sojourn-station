@@ -6,7 +6,7 @@
 /obj/random/gun_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/mk58 = 1,\
 				/obj/item/gun/projectile/revolver/lemant = 0.5,\
-				/obj/item/gun/projectile/revolver/rex10 = 2.5,\
+				/obj/item/gun/projectile/revolver/rev10/rex10 = 2.5,\
 				/obj/item/gun/projectile/mk58/wood = 1,\
 				/obj/item/gun/projectile/revolver/detective = 3,\
 				/obj/item/gun/energy/shrapnel = 4,\
@@ -56,7 +56,8 @@
 	return pickweight(list(/obj/item/gun/projectile/lamia = 0.1,\
 				/obj/item/gun/projectile/automatic/texan = 0.5,\
 				/obj/item/gun/projectile/lamia/dark = 0.1,\
-				/obj/item/gun/projectile/revolver/rev10 = 0.5,\
+				/obj/item/gun/projectile/revolver/rev10/rex10 = 0.5,\
+				/obj/item/gun/projectile/revolver/rev10/rex10/showdown = 0.1,\
 				//obj/item/gun/projectile/lamia/dark/sf = 0.1,
 				/obj/item/gun/projectile/avasarala = 0.5,\
 				/obj/item/gun/projectile/ladon = 0.5,\
