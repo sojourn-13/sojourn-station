@@ -33,6 +33,9 @@
 /obj/item/reagent_containers/food/snacks/meat/monkey
 	//same as plain meat
 
+/obj/item/reagent_containers/food/snacks/meat/pork
+	//Same as plain meat
+
 /obj/item/reagent_containers/food/snacks/meat/corgi
 	name = "Corgi meat"
 	desc = "Tastes like... well, you know."

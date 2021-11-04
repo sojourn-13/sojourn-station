@@ -383,6 +383,9 @@
 	total_instability = 0
 	for (var/datum/genetics/mutation/mutation_to_remove in mutation_pool)
 		if(istype(holder, /mob/living/carbon/human))
+			#ifdef JANEDEBUG
+			log_debug("Calling On player Remove Script: [mutation_to_remove.name]")
+			#endif
 			mutation_to_remove.onPlayerRemove()
 		if(istype(holder, /mob/living))
 			mutation_to_remove.onMobRemove()
@@ -641,8 +644,9 @@
 	#ifdef JANEDEBUG
 	log_debug("Ran the default Player implant proc for [name] as per usual")
 	#endif
-	if(istype(container.holder, /mob/living/carbon/human) && gain_text)
-		to_chat(container.holder, SPAN_NOTICE("[gain_text]"))
+	if(istype(container.holder, /mob/living/carbon/human))
+		if(gain_text)
+			to_chat(container.holder, SPAN_NOTICE("[gain_text]"))
 		return TRUE
 	return FALSE
 
@@ -655,6 +659,12 @@
 
 //What happens when a gene is removed from a player.
 /datum/genetics/mutation/proc/onPlayerRemove()
+	#ifdef JANEDEBUG
+	log_debug("Ran the default Player Remove proc for [name] as per usual")
+	#endif
+	if(istype(container.holder, /mob/living/carbon/human))
+		return TRUE
+	return FALSE
 
 //What happens when a gene is removed from a mob.
 /datum/genetics/mutation/proc/onMobRemove()

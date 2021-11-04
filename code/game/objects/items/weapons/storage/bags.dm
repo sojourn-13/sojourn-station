@@ -334,5 +334,6 @@
 	display_contents_with_number = FALSE
 	can_hold = list(/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/glass/beaker,
-		/obj/item/reagent_containers/glass/bottle
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/genetics/sample
 	)
