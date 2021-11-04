@@ -164,7 +164,7 @@
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small
 	name = "ammunition box (.257 Carbine FMJ)"
 	icon_state = "lrifle"
-	matter = list(MATERIAL_STEEL = 5)
+	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_LRIFLE
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
 	max_ammo = 60
@@ -193,7 +193,6 @@
 	name = "ammunition packet (.257 Carbine laser)"
 	icon_state = "lrifle_si"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
-
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
 	name = "ammunition packet (old .257 Rifle)"
@@ -307,7 +306,7 @@
 	icon_state = "box223-laser"
 	desc = "A packet of .223 laser round."
 	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = "CAL_SCI"
+	caliber = CAL_SCI
 	ammo_type = /obj/item/ammo_casing/beam
 	max_ammo = 30
 
@@ -381,7 +380,6 @@
 /obj/item/ammo_magazine/ammobox/antim/scrap
 	name = "ammunition box (old .60 Anti Material)"
 	icon_state = "antim_s"
-	matter = list(MATERIAL_CARDBOARD = 1)
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5
 
@@ -581,41 +579,28 @@
 /obj/item/ammo_magazine/ammobox/shotgun/blanks
 	name = "ammunition packet (20mm Blank)"
 	icon_state = "slug"
-	matter = list(MMATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/blank
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/practiceshells
 	name = "ammunition packet (20mm Practice Shells)"
 	icon_state = "slug"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/practice
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/beanbags
 	name = "ammunition packet (20mm beanbags)"
 	icon_state = "bean"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/buckshot
 	name = "ammunition packet (20mm Buckshot)"
 	icon_state = "buckshot"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
-	max_ammo = 35
 
 //used in mapping only cases
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells
 	name = "signaling ammunition packet (20mm Illumination)"
 	icon_state = "stunslug"
 	matter = list(MATERIAL_CARDBOARD = 2)
-	caliber = CAL_SHOTGUN
 	w_class = ITEM_SIZE_BULKY
 	ammo_type = /obj/item/ammo_casing/shotgun/illumination
 	max_ammo = 70 //2x the ammo for being map spawned
@@ -623,55 +608,35 @@
 /obj/item/ammo_magazine/ammobox/shotgun/flash
 	name = "ammunition packet (20mm Illumination)"
 	icon_state = "stunslug"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/illumination
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/stunshells
 	name = "ammunition packet (20mm Stun Shells)"
 	icon_state = "stunslug"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/payload
 	name = "ammunition packet (20mm Explosive Shells)"
 	icon_state = "explosive"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/payload
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/incendiary
 	name = "ammunition packet (20mm Incendiary)"
 	icon_state = "explosive"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag
 	name = "old ammunition packet (20mm Beanbag)"
 	icon_state = "shot_scrap"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag/scrap
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet
 	name = "old ammunition packet (20mm Buckshot)"
 	icon_state = "shot_scrap"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet/scrap
-	max_ammo = 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/scrap_slug
 	name = "old ammunition packet (20mm Slug)"
 	icon_state = "shot_scrap"
-	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet/scrap
-	max_ammo = 35
+
