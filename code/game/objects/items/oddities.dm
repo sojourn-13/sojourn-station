@@ -771,7 +771,7 @@
 	name = "Puzzlebox" //todo add cool sound
 	desc = "Looks oddly similar to a positronic brain. Something tells you you're better off not solving it."
 	icon_state = "puzzlebox"
-	var/openchance = 0.20
+	var/openchance = 0.2
 	var/stumped_people = list()
 	oddity_stats = list(
 		STAT_COG = 6,
