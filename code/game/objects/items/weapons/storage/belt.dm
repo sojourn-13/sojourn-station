@@ -440,12 +440,6 @@
 	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 
-/obj/item/storage/belt/webbing/artificer
-	name = "artificer guild web harness"
-	desc = "Everything you need at hand, at belt. This one is hand crafted by the artificer guild, allowing it to better store larger items by sacrificing a small bit of space. Better than most tool belts."
-	max_w_class = ITEM_SIZE_NORMAL // This is specifically crafted by the guild as webbings are useless for tools without being able to fit normal sized items.
-	storage_slots = 12 // Holds slightly less items than a regular webbing but still 5 more than a toolbelt given how many tools an adept needs. -Kaz
-
 /obj/item/storage/belt/webbing/green
 	name = "green web harness"
 	desc = "Everything you need at hand, at belt."
@@ -463,3 +457,58 @@
 	desc = "Everything you need at hand, at belt."
 	icon_state = "webbing_ih"
 	item_state = "webbing_ih"
+
+/obj/item/storage/belt/webbing/artificer
+	name = "artificer guild web harness"
+	desc = "Everything you need at hand, at belt. This one is hand crafted by the artificer guild, allowing it to better store larger items by sacrificing space. Better than most tool belts."
+	cant_hold = list(/obj/item/storage/pouch,
+					 /obj/item/storage/firstaid,
+					 /obj/item/storage/toolbox,
+					 /obj/item/storage/briefcase) //These types of storage in a belt
+
+/obj/item/storage/belt/webbing/artificer/verb/toggle_storage()
+	set name = "Adjust Storage"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["6 Large"]   = "large_storage"
+	options["9 Normale"] = "big_storage"
+	options["14 Small"]  = "small_storage"
+
+	var/choice = input(M,"What kind of storage do you want?","Adjust Storage") as null|anything in options
+
+	if(src.contents.len >= 1)
+		to_chat(M, "You cant adjust the storage well items are inside.")
+		return
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+
+		if(options[choice] == "large_storage")
+			to_chat(M, "You allow the storage of 6 Bulky items.")
+			storage_slots = 6
+			max_w_class = ITEM_SIZE_BULKY //Holds 6 bulky items, form tools to guns
+			return
+
+		if(options[choice] == "big_storage")
+			to_chat(M, "You allow the storage of 9 Normale items.")
+			storage_slots = 9 //Like old belts used to be
+			max_w_class = ITEM_SIZE_NORMAL
+			return
+
+		if(options[choice] == "small_storage")
+			to_chat(M, "You allow the storage of 14 Small items.")
+			storage_slots = 14 //Same as normal webbings
+			max_w_class = ITEM_SIZE_SMALL
+			return
+
+
+		return 1
+
+
+
+
