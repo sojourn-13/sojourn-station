@@ -25,3 +25,11 @@
 
 		if(ABORT_CHECK)
 			return
+
+/obj/structure/diamond/wealthy_shovel
+	name = "Gilded Rose Gold Shovel"
+	desc = "A rose gold made shovel stuck in a mount of diamonds to flaunt wealth over how LSS was able to corner and then oversaturate the tools market."
+	icon = 'icons/obj/statue.dmi'
+	icon_state = "weathyshovel"
+	matter = list(MATERIAL_DIAMOND = 30, MATERIAL_GOLD = 20)
+	price_tag = 200 //as much as tools used to be worth sold...

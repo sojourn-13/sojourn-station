@@ -4903,6 +4903,11 @@
 /obj/random/material_rare,
 /obj/random/material_rare,
 /obj/random/material_rare,
+/obj/random/material_rare,
+/obj/random/material_rare,
+/obj/random/material_rare/low_chance,
+/obj/random/material_rare/low_chance,
+/obj/random/material_rare/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/security/nuke_storage)
 "blE" = (
@@ -11522,6 +11527,11 @@
 /obj/random/material_rare,
 /obj/random/material_rare,
 /obj/random/material_rare,
+/obj/random/material_rare,
+/obj/random/material_rare,
+/obj/random/material_rare/low_chance,
+/obj/random/material_rare/low_chance,
+/obj/random/material_rare/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/security/nuke_storage)
 "cNo" = (
@@ -61316,18 +61326,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/side/f2section1)
 "ooq" = (
-/obj/structure/closet/crate/secure,
-/obj/random/material_rare/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/material_rare,
-/obj/random/material_rare,
-/obj/random/material_rare,
-/obj/random/material_rare,
-/turf/simulated/floor/tiled/dark/golden,
+/obj/structure/diamond/wealthy_shovel{
+	pixel_y = 5
+	},
+/turf/simulated/floor/reinforced,
 /area/nadezhda/security/nuke_storage)
 "oot" = (
 /obj/effect/decal/cleanable/dirt,
