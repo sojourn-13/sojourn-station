@@ -476,31 +476,31 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["6 Large"] = "large_storage"
+	options["6 Large"]   = "large_storage"
 	options["9 Normale"] = "big_storage"
-	options["14 Small"] = "small_storage"
+	options["14 Small"]  = "small_storage"
 
-	var/choice = input(M,"What kind of storage do you want?","Adjust Style") as null|anything in options
+	var/choice = input(M,"What kind of storage do you want?","Adjust Storage") as null|anything in options
 
-	if(src.contents >= 1)
+	if(src.contents.len >= 1)
 		to_chat(M, "You cant adjust the storage well items are inside.")
 		return
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 
-		if(choice == "large_storage")
+		if(options[choice] == "large_storage")
 			to_chat(M, "You allow the storage of 6 Bulky items.")
 			storage_slots = 6
 			max_w_class = ITEM_SIZE_BULKY //Holds 6 bulky items, form tools to guns
 			return
 
-		if(choice == "big_storage")
+		if(options[choice] == "big_storage")
 			to_chat(M, "You allow the storage of 9 Normale items.")
 			storage_slots = 9 //Like old belts used to be
 			max_w_class = ITEM_SIZE_NORMAL
 			return
 
-		if(choice == "small_storage")
+		if(options[choice] == "small_storage")
 			to_chat(M, "You allow the storage of 14 Small items.")
 			storage_slots = 14 //Same as normal webbings
 			max_w_class = ITEM_SIZE_SMALL
