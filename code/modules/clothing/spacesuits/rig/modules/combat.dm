@@ -320,4 +320,4 @@
 		M.drop_from_inventory(shield)
 		qdel(shield)
 
-	to_chat(M, "The shield retracts into the hardsuit."
+	to_chat(M, "The shield retracts into the hardsuit.")
