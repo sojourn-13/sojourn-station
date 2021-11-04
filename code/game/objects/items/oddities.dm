@@ -834,7 +834,7 @@
 
 	else
 		to_chat(user,("<span class='info'> The [src] clicks! Neat.</span>"))
-		inert = 1
+		inert = TRUE
 
 //Lonestar Special
 //For unique oddities that don't fit into other categories
