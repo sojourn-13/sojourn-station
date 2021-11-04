@@ -48,7 +48,7 @@ List of powers in this page :
 // Give the nanite rig a storage module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_storage()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Storage Upgrade (1)"
+	set name = "Nanite Rigsuit - Storage Module (1)"
 	set desc = "Use some of your nanites to create a storage compartment into your nanite rigsuit."
 	nano_point_cost = 1
 
@@ -64,7 +64,7 @@ List of powers in this page :
 // Give the nanite rig a Laser Cannon
 /obj/item/organ/internal/nanogate/proc/nanite_rig_laser()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Laser Upgrade (2)"
+	set name = "Nanite Rigsuit - Laser Module (2)"
 	set desc = "Use some of your nanites to create a mounted laser gun on your rigsuit."
 	nano_point_cost = 2
 
@@ -80,7 +80,7 @@ List of powers in this page :
 // Give the nanite rig an Autodoc Module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Autodoc Upgrade (5)"
+	set name = "Nanite Rigsuit - Autodoc Module (5)"
 	set desc = "Use many of your nanites to create a surgery module inside your hardsuit."
 	nano_point_cost = 5
 
@@ -101,7 +101,7 @@ List of powers in this page :
 // Give the nanite rig an EVA Module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_eva()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - EVA Upgrade (1)"
+	set name = "Nanite Rigsuit - EVA Module (1)"
 	set desc = "Use some of your nanites to create thrusters inside your hardsuit."
 	nano_point_cost = 1
 

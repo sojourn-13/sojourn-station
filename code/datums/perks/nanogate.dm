@@ -14,8 +14,8 @@
 	var/regen_rate = 1
 
 /datum/perk/nanite_muscle
-	name = "Nanite Muscle Therapy"
-	desc = "Through the use of pain killers and small dispersed drug therapy to critical areas your nanogate has enhanced your physical movement speed and endurance, allowing you to run for \
+	name = "Nanofiber Muscle Therapy"
+	desc = "Through the use of pain killers, implanted nanofibers, and small dispersed drug therapy to critical areas your nanogate has enhanced your physical movement speed and endurance, allowing you to run for \
 	longer stretches at a faster pace without tiring."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 
@@ -24,7 +24,7 @@
 	desc = "Through the use of reactive nanites designed to plate together into a shield your machines can reform at a lightning pace to let you physically resist incoming damage by forming a \
 	mesh weave shield just before a strike connects. Effective, but only against physical brute damage."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
-	var/armor_mod = 0.3
+	var/armor_mod = 0.2
 
 /datum/perk/nanite_armor/assign(mob/living/carbon/human/H)
 	..()
@@ -78,12 +78,13 @@
 	chem_id = "nantidotes"
 
 /datum/perk/nanite_ammo
-	name = "Nanite Ammunition"
-	desc = "You programmed and set aside a specific subset of nanites who have a singular purpose that you can call upon at any time to engage their effect."
+	name = "Munition Fabrication"
+	desc = "You programmed and set aside a specific subset of nanites whose singular purpose is to reconstruct themselves into ammunition boxes. The process is quite intensive and requires \
+	one hour between uses."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
-	var/cooldown = 30 MINUTES
+	var/cooldown = 60 MINUTES
 
 /datum/perk/nanite_ammo/activate()
 	if(world.time < cooldown_time)

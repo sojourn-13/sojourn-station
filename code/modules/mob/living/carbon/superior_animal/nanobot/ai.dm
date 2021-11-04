@@ -16,9 +16,9 @@
 
 		// Autodoc mode.
 		if(ai_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
-			if(findtext(message, "Toggle Autodoc") && findtext(message, "[src.name]"))
+			if(findtext(message, "Toggle Medibot") && findtext(message, "[src.name]"))
 				medbot = !medbot
-				visible_emote("state, \"[medbot ? "Activating" : "Deactivating"] Autodoc Mode.\"")
+				visible_emote("state, \"[medbot ? "Activating" : "Deactivating"] Medibot Mode.\"")
 				return
 
 		// Radio mode.

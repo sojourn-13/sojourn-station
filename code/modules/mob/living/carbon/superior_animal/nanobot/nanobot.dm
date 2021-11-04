@@ -21,7 +21,7 @@
 	breath_poison_type = 0 // Can't be poisoned
 	min_air_pressure = 0 // Doesn't need pressure
 	speak_emote = list("state")
-	emote_see = list("looks around for a target.")
+	emote_see = list("whirrs softly.", "glances around carefully, before softly pinging.", "pings gently before it begins running diagnostics.", "beeps as its scanner starts up.")
 	speak_chance = 1
 	attacktext = "slashed"
 	meat_amount = 0

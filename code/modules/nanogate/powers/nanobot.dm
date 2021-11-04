@@ -103,7 +103,7 @@ List of powers in this page :
 // Powers that activate various modes for the bot.
 /obj/item/organ/internal/nanogate/proc/autodoc_mode()
 	set category = "Nanogate Powers"
-	set name = "Activate Nanobot Protocol - Autodoc (4)"
+	set name = "Activate Nanobot Protocol - Medibot (4)"
 	set desc = "Spend some of your nanites to activate a medical protocol in your nanobot."
 	nano_point_cost = 4
 
