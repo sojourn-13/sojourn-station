@@ -130,3 +130,13 @@
 	cost = 150
 	crate_name = "toy weapons crate"
 	group = "Recreation"
+
+/datum/supply_pack/oddities
+	name = "Luxury Imports Crate"
+	contains = list(/obj/random/lonestar_oddities,
+					/obj/random/lonestar_oddities,
+					/obj/random/lonestar_oddities,
+					/obj/random/lonestar_oddities)
+	cost = 1200
+	crate_name = "luxury imports crate"
+	group = "Recreation"
