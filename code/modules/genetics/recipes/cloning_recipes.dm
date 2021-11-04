@@ -38,3 +38,25 @@
 /datum/genetics/mutation_recipe/irradiation/mukwah/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/mukwah, "Mukwah")
 	return new_mutation
+
+/datum/genetics/mutation_recipe/irradiation/cerberus
+	required_on_clone_types = list(/mob/living/simple_animal/pig)
+
+/datum/genetics/mutation_recipe/irradiation/cerberus/get_result()
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus, "Cerberus")
+	return new_mutation
+
+/datum/genetics/mutation_recipe/combination/chimera
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/lodge/cerberus)
+	required_mutations = list(MUTATION_NERVOUSNESS)
+
+/datum/genetics/mutation_recipe/combination/chimera/get_result()
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus, "Cerberus")
+	return new_mutation
+
+/datum/genetics/mutation_recipe/irradiation/clucker
+	required_on_clone_types = list(/mob/living/simple_animal/chicken)
+
+/datum/genetics/mutation_recipe/irradiation/clucker/get_result()
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/clucker, "Clucker")
+	return new_mutation

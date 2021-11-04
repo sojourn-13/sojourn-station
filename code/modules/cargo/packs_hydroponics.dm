@@ -49,6 +49,13 @@
 	crate_name = "cow crate"
 	group = "Hydroponics"
 
+/datum/supply_pack/pig
+	name = "Pig Crate"
+	cost = 200
+	containertype = /obj/structure/largecrate/animal/pig
+	crate_name = "pig crate"
+	group = "Hydroponics"
+
 /datum/supply_pack/bear
 	name = "Bear Crate"
 	cost = 500
