@@ -99,3 +99,26 @@
 				/obj/item/implant/uplink = 1,
 				/obj/item/device/radio/headset/uplink = 1))
 
+/obj/random/lonestar_oddities
+	name = "lonestar curios"
+	icon_state = "techloot-grey"
+
+/obj/random/lonestar_oddities/item_to_spawn()
+	return pickweight(list(
+				/obj/item/oddity/ls/collector_coin = 2,
+				/obj/item/oddity/ls/pamphlet = 2,
+				/obj/item/oddity/ls/rod_figure = 2,
+				/obj/item/oddity/ls/chess_set = 2,
+				/obj/item/oddity/ls/starscope = 1,
+				/obj/item/oddity/ls/flashdrive = 2,
+				/obj/item/oddity/ls/mutant_tooth = 1,
+				/obj/item/oddity/ls/manual = 1,
+				/obj/item/oddity/ls/bouquet = 2,
+				/obj/item/oddity/ls/magazine = 2,
+				/obj/item/oddity/ls/dogtags = 2,
+				/obj/item/oddity/ls/silk_cloak = 2,
+				/obj/item/oddity/ls/kriosan_sword = 1,
+				/obj/item/oddity/ls/newton_odd = 2,
+				/obj/item/oddity/ls/puzzlebox = 0.5,
+				/obj/item/oddity/ls/starprojector = 0.5,
+				/obj/item/oddity/ls/inertdetonator = 0.5))
