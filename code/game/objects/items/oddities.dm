@@ -684,7 +684,7 @@
 	)
 
 /obj/item/oddity/ls/magazine
-	name = "Porn Magazine"
+	name = "Swimming Magazine"
 	desc = "A good, old porn magazine. Nowadays, it's mostly for collection purposes."
 	icon_state = "magazine"
 	oddity_stats = list(
