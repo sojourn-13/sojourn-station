@@ -26,6 +26,10 @@ List of powers in this page :
 			Stand = new /mob/living/carbon/superior_animal/nanobot(owner.loc)
 			Stand.name = bot_name
 			Stand.creator += owner
+			Stand.friends += owner
+			Stand.icon_state = input(owner, "Choose your nanobot's model : ", "Nanobot Model") in list("nanobot", "wide", "squats", "heavy", "blitz")
+			Stand.icon_living = Stand.icon_state
+			Stand.icon_dead = "[Stand.icon_state]_dead"
 			verbs -= /obj/item/organ/internal/nanogate/proc/create_nanobot
 	else
 		to_chat(owner, "Your nanogate is already as its limit controlling one Nanobot. Making more would end badly.")
@@ -53,7 +57,7 @@ List of powers in this page :
 	set name = "Upgrade Nanobot - Health (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobot to endure far more punishment."
 	nano_point_cost = 1
-	var/health_boost = 200 // How much bonus health does the nanobot get?
+	var/health_boost = 150 // How much bonus health does the nanobot get?
 
 	if(Stand) // Do they have the bot?
 		if(pay_power_cost(nano_point_cost))
@@ -99,7 +103,7 @@ List of powers in this page :
 // Powers that activate various modes for the bot.
 /obj/item/organ/internal/nanogate/proc/autodoc_mode()
 	set category = "Nanogate Powers"
-	set name = "Activate Nanobot Protocol - Autodoc (4)"
+	set name = "Activate Nanobot Protocol - Medibot (4)"
 	set desc = "Spend some of your nanites to activate a medical protocol in your nanobot."
 	nano_point_cost = 4
 

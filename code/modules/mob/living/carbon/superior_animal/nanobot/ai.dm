@@ -16,9 +16,9 @@
 
 		// Autodoc mode.
 		if(ai_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
-			if(findtext(message, "Toggle Autodoc") && findtext(message, "[src.name]"))
+			if(findtext(message, "Toggle Medibot") && findtext(message, "[src.name]"))
 				medbot = !medbot
-				visible_emote("state, \"[medbot ? "Activating" : "Deactivating"] Autodoc Mode.\"")
+				visible_emote("state, \"[medbot ? "Activating" : "Deactivating"] Medibot Mode.\"")
 				return
 
 		// Radio mode.
@@ -35,7 +35,9 @@
 				return
 			if(findtext(message, "Deploy Console") && findtext(message, "[src.name]") && Console.loc == src)
 				anchored = TRUE // The bot can't move
+				following = null
 				Console.forceMove(src.loc) // Deploy the console
+				visible_emote("state, \"Deploying console and terminating follow protocol.\"")
 			else if(findtext(message, "Store Console") && findtext(message, "[src.name]") && Console.loc != src)
 				anchored = FALSE // We can move
 				Console.forceMove(src) // Store the console

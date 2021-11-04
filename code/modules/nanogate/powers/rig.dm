@@ -48,7 +48,7 @@ List of powers in this page :
 // Give the nanite rig a storage module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_storage()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Storage Upgrade (1)"
+	set name = "Nanite Rigsuit - Storage Module (1)"
 	set desc = "Use some of your nanites to create a storage compartment into your nanite rigsuit."
 	nano_point_cost = 1
 
@@ -64,25 +64,25 @@ List of powers in this page :
 // Give the nanite rig a Laser Cannon
 /obj/item/organ/internal/nanogate/proc/nanite_rig_laser()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Laser Upgrade (1)"
+	set name = "Nanite Rigsuit - Laser Module (2)"
 	set desc = "Use some of your nanites to create a mounted laser gun on your rigsuit."
-	nano_point_cost = 1
+	nano_point_cost = 2
 
 	if(!nanite_rig)
 		to_chat(owner, "You need a rig to use this power you idiot.")
 		return
 
 	if(pay_power_cost(nano_point_cost))
-		nanite_rig.install(new /obj/item/rig_module/mounted)
+		nanite_rig.install(new /obj/item/rig_module/mounted/egun)
 		to_chat(owner, "Your spine hurt as the nanites start to work on making a laser canon.")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 
 // Give the nanite rig an Autodoc Module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - Autodoc Upgrade (1)"
-	set desc = "Use some of your nanites to create a surgery module inside your hardsuit."
-	nano_point_cost = 1
+	set name = "Nanite Rigsuit - Autodoc Module (5)"
+	set desc = "Use many of your nanites to create a surgery module inside your hardsuit."
+	nano_point_cost = 5
 
 	if(!nanite_rig)
 		to_chat(owner, "You need a rig to use this power you idiot.")
@@ -101,7 +101,7 @@ List of powers in this page :
 // Give the nanite rig an EVA Module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_eva()
 	set category = "Nanogate Powers"
-	set name = "Nanite Rigsuit - EVA Upgrade (1)"
+	set name = "Nanite Rigsuit - EVA Module (1)"
 	set desc = "Use some of your nanites to create thrusters inside your hardsuit."
 	nano_point_cost = 1
 

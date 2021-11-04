@@ -48,7 +48,6 @@
 	restricted_depts = SECURITY | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
 	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
-/* Commented out they get balanced and until the event they get added into.
 /datum/category_item/setup_option/core_implant/nanogate
 	name = "Nanogate"
 	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses."
@@ -57,7 +56,7 @@
 		/datum/job/outsider // Nanogates are only available to colonist or allies.
 		)
 	allow_modifications = TRUE
-	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH)
 
 /datum/category_item/setup_option/core_implant/artificer_nanogate
 	name = "Artificer Nanogate"
@@ -68,6 +67,7 @@
 		/datum/job/outsider // Nanogates are only available to colonist or allies.
 		)
 	allow_modifications = TRUE
+	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH)
 	restricted_depts = SECURITY | COMMAND | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
 
 /datum/category_item/setup_option/core_implant/opifex_nanogate
@@ -80,7 +80,7 @@
 		)
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_OPIFEX) // Opifex get their own fancy nanogate
-*/
+
 /datum/category_item/setup_option/core_implant/cruciform/tessellate
 	name = "Tessellate Cruciform"
 	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Tessellate, disciples who promote unity and healing, it charges slightly faster \

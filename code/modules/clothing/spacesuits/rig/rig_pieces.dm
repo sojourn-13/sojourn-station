@@ -44,7 +44,7 @@
 	resilience = 0.087
 	can_breach = 1
 	supporting_limbs = list()
-	retract_while_active = FALSE
+	retract_while_active = TRUE
 
 //TODO: move this to modules
 /obj/item/clothing/head/helmet/space/rig/proc/prevent_track()
