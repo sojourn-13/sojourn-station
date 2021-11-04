@@ -325,9 +325,9 @@
 	)
 
 /datum/craft_recipe/guild/webbing
-	name = "Webbing"
+	name = "Artificer Guild Web Harness"
 	icon_state = "clothing"
-	result = /obj/item/storage/belt/webbing
+	result = /obj/item/storage/belt/webbing/artificer
 	steps = list(
 		list(/obj/item/storage/belt, 1, "time" = 30),
 		list(/obj/item/storage/belt, 1, "time" = 30),
