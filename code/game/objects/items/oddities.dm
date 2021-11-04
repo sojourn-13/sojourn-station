@@ -815,7 +815,7 @@
 	name = "Inert Detonator"
 	desc = "A device that was once in the hand of a terrorist; its payload is long dead. It's a miracle this thing ever worked, still, it's cool to look at!"
 	icon_state = "detonator"
-	var/inert = 0
+	var/inert = FALSE
 	var/boom = 1
 	oddity_stats = list(
 		STAT_MEC = 6,
