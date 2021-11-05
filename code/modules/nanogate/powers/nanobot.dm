@@ -20,7 +20,7 @@ List of powers in this page :
 	nano_point_cost = 2
 
 	if(!Stand) // Do they already have the bot?
-		var/bot_name = input(owner, "Choose your nanobot's name : ", "Nanobot Name", "Nanobot") as null|text
+		var/bot_name = input(owner, "Choose your nanobot's name : ", "Nanobot Name", "Nanobot") as text
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to form a nanobot.")
 			Stand = new /mob/living/carbon/superior_animal/nanobot(owner.loc)
