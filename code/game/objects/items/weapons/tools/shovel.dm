@@ -18,6 +18,7 @@
 	effective_faction = list("spider") // Spiders are weak to crushing.
 	damage_mult = 2
 	hitsound = 'sound/weapons/smash.ogg'
+	price_tag = 15
 
 /obj/item/tool/shovel/improvised
 	name = "junk shovel"
@@ -26,6 +27,7 @@
 	tool_qualities = list(QUALITY_SHOVELING = 25, QUALITY_DIGGING = 25, QUALITY_EXCAVATION = 10)
 	degradation = 1.5
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+	price_tag = 10
 
 /obj/item/tool/shovel/combat
 	name = "combat crovel"
@@ -38,6 +40,7 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
 	tool_qualities = list(QUALITY_SHOVELING = 45, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_CUTTING = 10, QUALITY_SAWING = 5)
 	workspeed = 1.2
+	price_tag = 175
 
 /obj/item/tool/shovel/onestar_shovel
 	name = "Greyson Positronic shovel"
@@ -50,6 +53,7 @@
 	workspeed = 1.4
 	degradation = 0.8
 	max_upgrades = 2
+	price_tag = 320 // Still just a shovel.
 
 /obj/item/tool/shovel/spade
 	name = "spade"
@@ -62,6 +66,7 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	tool_qualities = list(QUALITY_SHOVELING = 20, QUALITY_DIGGING = 20, QUALITY_EXCAVATION = 10)
 	max_upgrades = 2
+	price_tag = 60
 
 /obj/item/tool/shovel/power
 	name = "power shovel 9000"
@@ -78,3 +83,4 @@
 	degradation = 0.7
 	max_upgrades = 4
 	suitable_cell = /obj/item/cell/medium
+	price_tag = 300

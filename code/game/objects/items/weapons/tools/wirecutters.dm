@@ -11,6 +11,7 @@
 	sharp = TRUE
 	edge = TRUE
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 35, QUALITY_RETRACTING = 15, QUALITY_BONE_SETTING = 15)
+	price_tag = 25
 
 /obj/item/tool/wirecutters/bs
 	name = "bluespace wire cutters"
@@ -27,6 +28,7 @@
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 20, QUALITY_RETRACTING = 10, QUALITY_BONE_SETTING = 10, QUALITY_CLAMPING = 10)
 	degradation = 1.5
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+	price_tag = 12
 
 /obj/item/tool/wirecutters/armature
 	name = "armature cutter"
@@ -38,6 +40,7 @@
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 45, QUALITY_CUTTING = 30)
 	degradation = 0.7
 	max_upgrades = 4
+	price_tag = 200
 
 /obj/item/tool/wirecutters/pliers //hybrid of wirecutters, wrench and cautery
 	name = "pliers"
@@ -46,6 +49,7 @@
 	edge = FALSE
 	sharp = FALSE
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 15, QUALITY_CLAMPING = 20, QUALITY_BOLT_TURNING = 15, QUALITY_BONE_SETTING = 20)
+	price_tag = 20
 
 /obj/item/tool/wirecutters/onestar_pliers //hybrid of wirecutters, wrench and cautery now in plat!
 	name = "Greyson Positronic pliers"
@@ -60,6 +64,7 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 1)
 	max_upgrades = 2
 	workspeed = 1.5
+	price_tag = 300
 
 /obj/item/tool/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
 	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/handcuffs/cable)))

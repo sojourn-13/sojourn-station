@@ -135,6 +135,7 @@
 	desc = "A replacement grip for a tool which allows it to be more precisely controlled with one hand."
 	icon_state = "ergonomic"
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 5)
+	price_tag = 120
 
 /obj/item/tool_upgrade/productivity/ergonomic_grip/New()
 	..()
@@ -170,6 +171,7 @@
 	icon_state = "paint_red"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE
+	price_tag = 60
 
 /obj/item/tool_upgrade/productivity/red_paint/New()
 	..()
@@ -384,6 +386,7 @@
 	desc = "A fancy mechanical grip that partially floats around a tool, absorbing tremors and shocks. Allows precise work with a shaky hand."
 	icon_state = "stabilizing"
 	matter = list(MATERIAL_PLASTIC = 3)
+	price_tag = 90
 
 /obj/item/tool_upgrade/refinement/stabilized_grip/New()
 	..()
@@ -666,6 +669,7 @@
 	I.prefix = "flattened"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 */
+
 //Vastly reduces tool sounds, for stealthy hacking
 /obj/item/tool_upgrade/augment/dampener
 	name = "aural dampener"

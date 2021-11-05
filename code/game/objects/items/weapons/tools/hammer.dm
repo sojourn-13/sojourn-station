@@ -9,6 +9,7 @@
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_WOOD = 2)
+	price_tag = 30
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked","flattened","pulped")
 	tool_qualities = list(QUALITY_HAMMERING = 35, QUALITY_PRYING = 10)
 	effective_faction = list("spider") // Spiders are weak to crushing.
@@ -26,6 +27,7 @@
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT|SLOT_BACK
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 1)
+	price_tag = 340
 	switched_on_qualities = list(QUALITY_HAMMERING = 45)
 	switched_off_qualities = list(QUALITY_HAMMERING = 30)
 	toggleable = TRUE
@@ -61,6 +63,7 @@
 	switched_on_force = WEAPON_FORCE_LETHAL
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 3, MATERIAL_DIAMOND = 3)
+	price_tag = 860
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)
 	toggleable = TRUE
@@ -105,6 +108,7 @@
 	attack_verb = list("attacked", "smashed", "bludgeoned", "beaten")
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_upgrades = 5
+	price_tag = 15
 
 /obj/item/tool/hammer/mace
 	name = "mace"
@@ -113,6 +117,7 @@
 	icon_state = "mace"
 	item_state = "mace"
 	matter = list(MATERIAL_STEEL = 10)
+	price_tag = 30
 
 	armor_penetration = ARMOR_PEN_DEEP
 	force = WEAPON_FORCE_DANGEROUS
@@ -128,6 +133,7 @@
 	force = WEAPON_FORCE_PAINFUL
 
 	tool_qualities = list(QUALITY_HAMMERING = 15)
+	price_tag = 20
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
@@ -147,6 +153,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK
 	suitable_cell = /obj/item/cell/medium
 	use_power_cost = 15
+	price_tag = 420 // Has a rocket engine on it.
 	var/datum/effect/effect/system/trail/T
 	var/last_launch
 
