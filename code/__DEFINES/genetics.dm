@@ -13,6 +13,8 @@
 #define MUTATION_BLINDNESS /datum/genetics/mutation/disability/nervousness
 #define MUTATION_DEAF /datum/genetics/mutation/disability/deaf
 #define MUTATION_NEARSIGHTED /datum/genetics/mutation/disability/nearsighted
+#define MUTATION_EMP /datum/genetics/mutation/emp
+#define MUTATION_ROACH_BLOOD /datum/genetics/mutation/roachblood
 
 //Exclusive Mutation types:
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
@@ -36,3 +38,8 @@
 #define MUT_FULL_BIO_REQ 0x124 //Target must only have biotic body parts (Not checking internals)
 
 //TODO: Add more for all organs
+
+
+//mutations vars we add to the var/list/mutations list. We start with 11 because the base ends at 10.
+//refer to code\__DEFINES\dna.dm for the other states in this list.
+#define ROACH_BLOOD          11

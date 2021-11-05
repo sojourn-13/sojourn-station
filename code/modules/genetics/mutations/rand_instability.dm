@@ -2,6 +2,7 @@
 
 /datum/genetics/mutation/rand_unstable
 	name = "Unstable Genome"
+	desc = "A collection of prions that destabilize the gene pool"
 	key = "MUTATION_RAND_SHOULD/NOT/SHOW"
 
 /datum/genetics/mutation/rand_unstable/New()

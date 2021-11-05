@@ -362,7 +362,7 @@
 		var/datum/genetics/mutation/return_mutation = mutation_to_remove.copy()
 
 		if(mutation_to_remove.count <= 0)
-			if(holder)
+			if(holder && mutation_to_remove.active)
 				mutation_to_remove.onPlayerRemove(src)
 				mutation_to_remove.onMobRemove(src)
 			mutation_pool -= mutation_to_remove
@@ -382,13 +382,14 @@
 /datum/genetics/genetics_holder/proc/removeAllMutations()
 	total_instability = 0
 	for (var/datum/genetics/mutation/mutation_to_remove in mutation_pool)
-		if(istype(holder, /mob/living/carbon/human))
-			#ifdef JANEDEBUG
-			log_debug("Calling On player Remove Script: [mutation_to_remove.name]")
-			#endif
-			mutation_to_remove.onPlayerRemove()
-		if(istype(holder, /mob/living))
-			mutation_to_remove.onMobRemove()
+		if(mutation_to_remove.active)
+			if(istype(holder, /mob/living/carbon/human))
+				#ifdef JANEDEBUG
+				log_debug("Calling On player Remove Script: [mutation_to_remove.name]")
+				#endif
+				mutation_to_remove.onPlayerRemove()
+			if(istype(holder, /mob/living))
+				mutation_to_remove.onMobRemove()
 	mutation_pool = list()
 	initialized = FALSE
 
