@@ -18,33 +18,28 @@
 	desc = "A .35 Auto high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
 	spent_icon = "pistol_c_hv-spent"
-	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol_35/hv
 
 /obj/item/ammo_casing/pistol_35/practice
 	desc = "A .35 Auto practice bullet casing."
 	icon_state = "pistol_c_p"
 	spent_icon = "pistol_c_p-spent"
-	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol_35/practice
 
 /obj/item/ammo_casing/pistol_35/rubber
 	desc = "A .35 Auto rubber bullet casing."
 	icon_state = "pistol_c_r"
 	spent_icon = "pistol_c_r-spent"
-	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber
 
 /obj/item/ammo_casing/pistol_35/lethal
 	desc = "A .35 Auto hollow-point bullet casing."
-	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal
 
 /obj/item/ammo_casing/pistol_35/scrap
 	desc = "An old .35 Auto bullet casing."
 	icon_state = "pistol_c_s"
 	spent_icon = "pistol_c_s-spent"
-	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol_35/scrap
 
 /obj/item/ammo_casing/pistol_35/scrap/prespawned
@@ -52,7 +47,6 @@
 
 /obj/item/ammo_casing/pistol_35/laser
 	desc = "A .35 Auto laser casing."
-	caliber = CAL_PISTOL
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
 
 //// .40 ////
@@ -75,36 +69,32 @@
 	desc = "A .40 Magnum practice bullet casing."
 	icon_state = "magnum_c_p"
 	spent_icon = "magnum_c_p-spent"
-	caliber = CAL_MAGNUM
 	projectile_type = /obj/item/projectile/bullet/magnum_40/practice
 
 /obj/item/ammo_casing/magnum_40/hv
 	desc = "A .40 Magnum high-velocity bullet casing."
 	icon_state = "magnum_c_hv"
 	spent_icon = "magnum_c_hv-spent"
-	caliber = CAL_MAGNUM
 	projectile_type = /obj/item/projectile/bullet/magnum_40/hv
 
 /obj/item/ammo_casing/magnum_40/rubber
 	desc = "A .40 Magnum rubber bullet casing."
 	icon_state = "magnum_c_r"
 	spent_icon = "magnum_c_r-spent"
-	caliber = CAL_MAGNUM
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber
 
 /obj/item/ammo_casing/magnum_40/lethal
 	desc = "A .40 Magnum hollow point bullet casing."
-	caliber = CAL_MAGNUM
+	icon_state = "magnum_c_l"
+	spent_icon = "magnum_c_l-spent"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/lethal
 
 /obj/item/ammo_casing/magnum_40/laser
 	desc = "A .40 Magnum laser casing."
-	caliber = CAL_MAGNUM
 	projectile_type = /obj/item/projectile/beam/weak/magnum_40
 
 /obj/item/ammo_casing/magnum/scrap
 	desc = "An old .40 Magnum bullet casing."
-	caliber = CAL_MAGNUM
 	icon_state = "magnum_c_s"
 	spent_icon = "magnum_c_s-spent"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/scrap
@@ -118,6 +108,7 @@
 	desc = "A .257 bullet casing."
 	icon_state = "srifle_c_l"
 	spent_icon = "srifle_c_l-spent"
+	shell_color = "l"
 	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257
 	maxamount = 10
@@ -132,28 +123,28 @@
 	desc = "A .257 practice bullet casing."
 	icon_state = "srifle_c_p"
 	spent_icon = "srifle_c_p-spent"
-	caliber = CAL_LRIFLE
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/practice
 
 /obj/item/ammo_casing/light_rifle_257/hv
 	desc = "A .257 high-velocity bullet casing."
 	icon_state = "srifle_c_hv"
 	spent_icon = "srifle_c_hv-spent"
-	caliber = CAL_LRIFLE
+	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/hv
 
 /obj/item/ammo_casing/light_rifle_257/rubber
 	desc = "A .257 rubber bullet casing."
 	icon_state = "srifle_c_r"
 	spent_icon = "srifle_c_r-spent"
-	caliber = CAL_LRIFLE
+	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber
 
 /obj/item/ammo_casing/light_rifle_257/scrap
 	desc = "An old .257 rifle bullet casing."
 	icon_state = "srifle_c_s"
 	spent_icon = "srifle_c_s-spent"
-	caliber = CAL_LRIFLE
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/scrap
 
 /obj/item/ammo_casing/light_rifle_257/scrap/prespawned
@@ -162,13 +153,11 @@
 /obj/item/ammo_casing/light_rifle_257/lethal
 	desc = "A .257 hollow-point bullet casing."
 	caliber = "lrifle"
-	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/lethal
 
 /obj/item/ammo_casing/light_rifle_257/laser
 	desc = "A .257 laser casing."
 	caliber = "lrifle"
-	caliber = CAL_LRIFLE
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
 
 //// 7.5 Rifle ////
@@ -177,6 +166,7 @@
 	desc = "A 7.5mm bullet casing."
 	icon_state = "srifle_c_l"
 	spent_icon = "srifle_c_l-spent"
+	shell_color = "l"
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75
 	maxamount = 10
@@ -191,33 +181,31 @@
 	desc = "A 7.5mm high-velocity bullet casing."
 	icon_state = "srifle_c_hv"
 	spent_icon = "srifle_c_hv-spent"
-	caliber = CAL_RIFLE
+	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/rifle_75/hv
 
 /obj/item/ammo_casing/rifle_75/rubber
 	desc = "A 7.5mm rubber bullet casing."
 	icon_state = "srifle_c_r"
 	spent_icon = "srifle_c_r-spent"
-	caliber = CAL_RIFLE
+	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/rifle_75/rubber
 
 /obj/item/ammo_casing/rifle_75/practice
 	desc = "A 7.5mm practice bullet casing."
 	icon_state = "srifle_c_p"
 	spent_icon = "srifle_c_p-spent"
-	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75/practice
 
 /obj/item/ammo_casing/rifle_75/lethal
 	desc = "A 7.5mm hollow-point bullet casing."
-	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
 
 /obj/item/ammo_casing/rifle_75/scrap
 	desc = "An old 7.5 Caseless Rifle bullet casing."
 	icon_state = "srifle_c_s"
 	spent_icon = "srifle_c_s-spent"
-	caliber = CAL_RIFLE
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/rifle_75/scrap
 
 /obj/item/ammo_casing/rifle_75/scrap/prespawned
@@ -225,7 +213,6 @@
 
 /obj/item/ammo_casing/rifle_75/laser
 	desc = "A 7.5mm laser casing."
-	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/beam/weak/rifle_75
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
@@ -235,6 +222,7 @@
 	desc = "A .408 Omni bullet casing."
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
+	shell_color = "l"
 	caliber = CAL_HRIFLE
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408
 	maxamount = 10
@@ -249,33 +237,32 @@
 	desc = "A .408 Omni rubber bullet casing."
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
-	caliber = CAL_HRIFLE
+	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/rubber
 
 /obj/item/ammo_casing/heavy_rifle_408/practice
 	desc = "A .408 Omni training bullet casing."
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
-	caliber = CAL_HRIFLE
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/practice
 
 /obj/item/ammo_casing/heavy_rifle_408/hv
 	desc = "A .408 Omni high-velocity bullet casing."
 	icon_state = "lrifle_c_hv"
 	spent_icon = "lrifle_c_hv-spent"
-	caliber = CAL_HRIFLE
+	shell_color = "hv"
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/hv
 
 /obj/item/ammo_casing/heavy_rifle_408/lethal
 	desc = "A .408 Omni bullet casing."
-	caliber = CAL_HRIFLE
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/lethal
 
 /obj/item/ammo_casing/heavy_rifle_408/scrap
 	desc = "An old .408 rifle bullet casing."
 	icon_state = "lrifle_c_s"
 	spent_icon = "lrifle_c_s-spent"
-	caliber = CAL_HRIFLE
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/scrap
 
 /obj/item/ammo_casing/heavy_rifle_408/scrap/prespawned
@@ -283,7 +270,6 @@
 
 /obj/item/ammo_casing/heavy_rifle_408/laser
 	desc = "A .408 Omni laser casing."
-	caliber = CAL_HRIFLE
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
@@ -678,12 +664,10 @@
 
 /obj/item/ammo_casing/beam/ap
 	desc = "A piercing laser casing. Meant for penetration of armor thats cal is .223."
-	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/weak/ap
 
 /obj/item/ammo_casing/beam/lethal
 	desc = "A dence laser casing. Compact laser that is easily blocked by armor thats cal is .223."
-	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/weak/lethal
 
 //// Grenade Shells ////
@@ -741,7 +725,6 @@
 	name = "fragment crossbow bolt"
 	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that brake apart inside the target."
 	icon_state = "bolt"
-	caliber = CAL_CROSSBOW
 	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/lethal
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 10
@@ -753,7 +736,6 @@
 	name = "aerodynamic crossbow bolt"
 	desc = "A finely made bolt designed for a crossbow added fletching and balance to shoot true and faster."
 	icon_state = "bolt"
-	caliber = CAL_CROSSBOW
 	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/hv
 	matter = list(MATERIAL_STEEL = 1)
 	maxamount = 10

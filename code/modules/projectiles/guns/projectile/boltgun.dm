@@ -104,7 +104,7 @@
 	if(bolt_open)
 		if(contents.len || loaded.len)
 			if(chambered)
-				if(eject_animatio) //Are bullet amination check
+				if(eject_animatio && loaded.len) //Are bullet amination check
 					if(silenced)
 						flick("bullet_eject_s", src)
 					else
@@ -114,7 +114,7 @@
 				loaded -= chambered
 				chambered = null
 			else
-				if(eject_animatio) //Are bullet amination check
+				if(eject_animatio && loaded.len) //Are bullet amination check
 					if(silenced)
 						flick("bullet_eject_s", src)
 					else

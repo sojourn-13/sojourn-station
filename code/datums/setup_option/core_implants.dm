@@ -64,11 +64,19 @@
 	particular design is made by the Artificer Guild, able to store more nanites for additional uses."
 	implant_organ_type = "artificer nanogate"
 	restricted_jobs = list(
-		/datum/job/outsider // Nanogates are only available to colonist or allies.
+		/datum/job/outsider, // Nanogates are only available to colonist or allies.
+		/datum/job/premier,
+		/datum/job/pg,
+		/datum/job/chaplain,
+		/datum/job/cmo,
+		/datum/job/merchant,
+		/datum/job/rd,
+		/datum/job/smc,
+		/datum/job/swo
 		)
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH)
-	restricted_depts = SECURITY | COMMAND | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_depts = SECURITY | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
 
 /datum/category_item/setup_option/core_implant/opifex_nanogate
 	name = "Opifex Nanogate"

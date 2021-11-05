@@ -50,7 +50,7 @@
 
 		// Add mobs as friends
 		if(findtext(message, "Add User") && findtext(message, "[src.name]")) // Do we say the magic words with the bot's name?
-			for(var/mob/target in range(viewRange, src)) // Check every mob that it can see
+			for(var/mob/target in orange(viewRange, src)) // Check every mob that it can see
 				if(target != src) // Not include the bot
 					if(findtext(message, target.name)) // Was the mob named in the order?
 						if(friends.Find(target)) // Is it already a user?
@@ -62,7 +62,7 @@
 
 		// Remove mobs as friends
 		if(findtext(message, "Remove User") && findtext(message, "[src.name]")) // Do we say the magic words with the bot's name?
-			for(var/mob/target in range(viewRange, src)) // Check every mob that it can see
+			for(var/mob/target in orange(viewRange, src)) // Check every mob that it can see
 				if(target != src) // Not include the bot
 					if(findtext(message, target.name)) // Was the mob named in the order?
 						if(friends.Find(target)) // Is the user in the list?

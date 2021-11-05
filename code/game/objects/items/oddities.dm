@@ -591,3 +591,259 @@
 	)
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = /datum/perk/chemist
+
+//Lonestar
+//Oddities that are only orderable through Lonestar cargo
+
+/obj/item/oddity/ls
+	prob_perk = 0
+
+/obj/item/oddity/ls/collector_coin
+	name = "Collector's Coin"
+	desc = "Got it for a good price!"
+	icon_state = "collector_coin"
+	oddity_stats = list(
+		STAT_COG = 3,
+	)
+
+/obj/item/oddity/ls/pamphlet
+	name = "Old Tourist Pamphlet"
+	desc = "A leaflet with all the great reasons you should visit 'Humanity's Cradle'. A keepsake for those wanting overexposed photos of a past life."
+	icon_state = "earth_pamphlet"
+	oddity_stats = list(
+		STAT_TGH = 3,
+	)
+
+/obj/item/oddity/ls/rod_figure
+	name = "Immovable Rod Action Figure"
+	desc = "More moveable than the real thing; just as stiff."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "immrod"
+	item_state = "nullrod"
+	w_class = ITEM_SIZE_NORMAL
+	oddity_stats = list(
+		STAT_TGH = 3,
+		STAT_MEC = 3,
+	)
+
+/obj/item/oddity/ls/chess_set
+	name = "Chess set"
+	desc = "Pieces - you guessed it - aren't included."
+	icon_state = "chess_set"
+	w_class = ITEM_SIZE_NORMAL
+	oddity_stats = list(
+		STAT_COG = 6,
+	)
+
+/obj/item/oddity/ls/starscope
+	name = "Starscope"
+	desc = "Replica of an ancient, alien device. It was used for sublight, space travel, acting as a 'star compass'."
+	icon_state = "starscope"
+	oddity_stats = list(
+		STAT_COG = 3,
+		STAT_MEC = 6,
+	)
+
+/obj/item/oddity/ls/flashdrive
+	name = "USB flash drive"
+	desc = "An outdated, Earther, data storage device. Little more than a technical curiosity, now.	"
+	icon_state = "flashdrive"
+	oddity_stats = list(
+		STAT_MEC = 3,
+	)
+
+/obj/item/oddity/ls/mutant_tooth
+	name = "Mutated Tooth"
+	desc = "A Cindarite tooth featuring an uncommon (and very painful) mutation. You can't wait to study it!"
+	icon_state = "mutant_tooth"
+	oddity_stats = list(
+		STAT_BIO = 9,
+	)
+
+/obj/item/oddity/ls/manual
+	name = "Specialist Manual"
+	desc = "A rugged, somewhat poor compilation of notes and pages from a variety of books and manuals. The first few pages feature information ranging from how to make a molotov cocktail to how to hotwire a shuttle."
+	icon_state = "manual"
+	oddity_stats = list(
+		STAT_COG = 3,
+		STAT_MEC = 2,
+		STAT_BIO = 2,
+		STAT_TGH = 2,
+		STAT_VIG = 2,
+		STAT_ROB = 2,
+	)
+
+/obj/item/oddity/ls/bouquet
+	name = "Bouquet"
+	desc = "It has the sweetest aroma. You feel the flutter of butterflies."
+	icon_state = "bouquet"
+	item_state = "bouquet"
+	w_class = ITEM_SIZE_NORMAL
+	oddity_stats = list(
+		STAT_TGH = 6,
+	)
+
+/obj/item/oddity/ls/magazine
+	name = "Swimming Magazine"
+	desc = "A good, swimming magazine. Nowadays, it's mostly for collection purposes."
+	icon_state = "magazine"
+	oddity_stats = list(
+		STAT_TGH = 3,
+		STAT_BIO = 3,
+	)
+
+/obj/item/oddity/ls/dogtags
+	name = "SolFed Dogtags"
+	desc = "Mementos from the war. Krios has recently begun exporting their surplus."
+	icon_state = "tags"
+	oddity_stats = list(
+		STAT_TGH = 3,
+		STAT_ROB = 3,
+	)
+
+//Lonestar Clothing Oddities
+//for oddities that double as clothes
+
+/obj/item/oddity/ls/silk_cloak
+	name = "Silk Cloak"
+	desc = "The latest fashion craze on Krios!"
+	icon_state = "silk_cloak"
+	item_state = "silk_cloak"
+	slot_flags = SLOT_OCLOTHING
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	oddity_stats = list(
+		STAT_TGH = 3,
+		STAT_COG = 3,
+	)
+
+//Lonestar Weapon Oddities
+//oddities that double as weapons
+
+/obj/item/oddity/ls/kriosan_sword
+	name = "Kriosan Officer Sword" //double-check and add desc
+	desc = "A replica of the blades given to Kriosan military officers, as a reward for their loyal service."
+	icon_state = "kriosan_sword"
+	item_state = "saber"
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
+	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+	force = WEAPON_FORCE_DANGEROUS
+	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	tool_qualities = list(QUALITY_CUTTING = 10)
+	slot_flags = SLOT_BELT
+	sharp = 1
+	edge = 1
+	armor_penetration = ARMOR_PEN_SHALLOW
+
+	oddity_stats = list(
+		STAT_ROB = 10,
+	)
+
+//Lonestar Misc Oddities
+//Primarily for gimmicks that aren't weapon or clothing related
+
+/obj/item/oddity/ls/newton_odd
+	name = "Newton Cradle"
+	desc = "Physics is amazing."
+	icon_state = "newtoncradle"
+	var/on = FALSE
+	oddity_stats = list(
+		STAT_MEC = 6,
+	)
+
+/obj/item/oddity/ls/newton_odd/AltClick(var/mob/user)
+	if(on)
+		icon_state = "newtoncradle"
+		on = FALSE
+	else
+		icon_state = "newtoncradle-on"
+		on = TRUE
+
+/obj/item/oddity/ls/newton_odd/attack_self(mob/user as mob)
+	if(on)
+		icon_state = "newtoncradle"
+		on = FALSE
+	else
+		icon_state = "newtoncradle-on"
+		on = TRUE
+
+/obj/item/oddity/ls/puzzlebox
+	name = "Puzzlebox" //todo add cool sound
+	desc = "Looks oddly similar to a positronic brain. Something tells you you're better off not solving it."
+	icon_state = "puzzlebox"
+	var/openchance = 0.2
+	var/stumped_people = list()
+	oddity_stats = list(
+		STAT_COG = 6,
+		STAT_VIG = 3,
+	)
+
+/obj/item/oddity/ls/puzzlebox/attack_self(mob/user as mob)
+	if(user in stumped_people)
+		to_chat(user, "<span class='info'>Further attempts have gotten you no closer to solving the [src].</span>")
+		return
+	if(prob(openchance))
+		new /mob/living/simple_animal/hostile/stranger(user.loc)
+		new /obj/item/oddity/nt/openedpuzzlebox(user.loc)
+		to_chat(user, SPAN_WARNING("[src] clicks and lights up!"))
+		qdel(src)
+	else
+		to_chat(user,("<span class='info'>After several attempts and frustrating, indecisive clicks, you decide to put down the [src].</span>"))
+		stumped_people += user
+
+/obj/item/oddity/ls/starprojector
+	name = "Starprojector"
+	desc = "A handheld holoprojector. The beauty of uncountable planets is held within its storage."
+	icon_state = "projector"
+	var/on = FALSE
+	oddity_stats = list(
+		STAT_COG = 10,
+	)
+
+/obj/item/oddity/ls/starprojector/attack_self(mob/user as mob)
+	if (on)
+		on = FALSE
+		icon_state = "projector"
+		to_chat(user, "<span class='info'>The [src] flickers and dies.</span>")
+
+	else
+		on = TRUE
+		icon_state = "projector_on"
+		to_chat(user, "<span class='info'>The [src] shows you the beauty of the galaxy. A host of worlds, now beyond your reach.</span>")
+
+/obj/item/oddity/ls/inertdetonator //todo stop being lazy and give it a closed sprite
+	name = "Inert Detonator"
+	desc = "A device that was once in the hand of a terrorist; its payload is long dead. It's a miracle this thing ever worked, still, it's cool to look at!"
+	icon_state = "detonator"
+	var/inert = FALSE
+	var/boom = 1
+	oddity_stats = list(
+		STAT_MEC = 6,
+		STAT_TGH = 3,
+	)
+
+/obj/item/oddity/ls/inertdetonator/attack_self(mob/user as mob)
+	if(inert)
+		to_chat(user,("<span class='info'> The [src] clicks! Neat.</span>"))
+		return
+
+	if(prob (boom))
+		to_chat(user, SPAN_WARNING("The [src] clicks! Uh oh."))
+		explosion(src.loc, -1, 1, 4, 10)
+		qdel(src)
+
+	else
+		to_chat(user,("<span class='info'> The [src] clicks! Neat.</span>"))
+		inert = TRUE
+
+//Lonestar Special
+//For unique oddities that don't fit into other categories
+
+/obj/item/oddity/nt/openedpuzzlebox
+	name = "Opened Puzzlebox" //todo add cool sound; make sure path is correct
+	desc = "The box... it's been opened."
+	icon_state = "puzzlebox_open"
+	oddity_stats = list(
+		STAT_COG = 15,
+		STAT_VIG = 15,
+	)
