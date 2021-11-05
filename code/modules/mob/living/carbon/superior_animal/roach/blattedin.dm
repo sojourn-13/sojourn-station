@@ -16,7 +16,7 @@
 	if(istype(M, /mob/living/carbon/superior_animal/roach))
 		var/mob/living/carbon/superior_animal/roach/bug = M
 		bug.heal_organ_damage(heal_strength*removed)
-	else if(M.species?.reagent_tag == IS_CHTMANT)
+	else if(M.species?.reagent_tag == IS_CHTMANT || (ROACH_BLOOD in M.mutations))
 		M.adjustOxyLoss(-0.6)
 		M.heal_organ_damage(0.3)
 		M.adjustToxLoss(-0.3)
