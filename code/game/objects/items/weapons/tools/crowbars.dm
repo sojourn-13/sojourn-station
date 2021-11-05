@@ -11,6 +11,7 @@
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	tool_qualities = list(QUALITY_PRYING = 35, QUALITY_DIGGING = 10, QUALITY_HAMMERING = 10)
+	price_tag = 15
 
 /obj/item/tool/crowbar/bs
 	name = "bluespace crowbar"
@@ -26,6 +27,7 @@
 	tool_qualities = list(QUALITY_PRYING = 15, QUALITY_DIGGING = 10, QUALITY_HAMMERING = 10)
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+	price_tag = 5
 
 /obj/item/tool/crowbar/onestar
 	name = "Greyson Positronic crowbar"
@@ -37,6 +39,7 @@
 	origin_tech = list(TECH_ENGINEERING = 1, TECH_MATERIAL = 2)
 	degradation = 0.6
 	workspeed = 1.2
+	price_tag = 180 // Fancy but still just a crowbar.
 
 /obj/item/tool/crowbar/pneumatic
 	name = "pneumatic crowbar"
@@ -49,3 +52,4 @@
 	use_power_cost = 0.8
 	max_upgrades = 4
 	suitable_cell = /obj/item/cell/medium
+	price_tag = 300

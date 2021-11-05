@@ -18,6 +18,7 @@
 	origin_tech = list(TECH_MAGNET = 1, TECH_ENGINEERING = 1)
 	use_power_cost = 0.08
 	suitable_cell = /obj/item/cell/small
+	price_tag = 25
 
 	var/buffer_name
 	var/atom/buffer_object
@@ -40,6 +41,7 @@
 	workspeed = 1.6
 	max_upgrades = 5 //UNLIMITED MODS!
 	suitable_cell = /obj/item/cell/medium
+	price_tag = 1500 // Diamond and super fancy/rare.
 
 /obj/item/tool/multitool/advanced
 	name = "advanced multitool"
@@ -52,6 +54,7 @@
 	workspeed = 1.2
 	max_upgrades = 4
 	suitable_cell = /obj/item/cell/medium
+	price_tag = 400
 
 /obj/item/tool/multitool/improvised
 	name = "wire frier"
@@ -63,6 +66,7 @@
 	max_upgrades = 5 // As much as every other improvised tool
 	tool_qualities = list(QUALITY_PULSING = 15)
 	worksound = WORKSOUND_WELDING // BZZZZTTTTTT
+	price_tag = 21
 
 /obj/item/tool/multitool/Destroy()
 	unregister_buffer(buffer_object)

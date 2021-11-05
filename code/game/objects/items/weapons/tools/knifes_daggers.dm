@@ -62,6 +62,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 1)
 	armor_penetration = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
+	price_tag = 35
 
 /obj/item/tool/knife/hook
 	name = "meat hook"
@@ -81,6 +82,7 @@
 	icon_state = "render"
 	force = WEAPON_FORCE_PAINFUL
 	backstab_damage = 14
+	price_tag = 7
 
 /obj/item/tool/knife/butch
 	name = "butcher's cleaver"
@@ -93,6 +95,7 @@
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 1)
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 15)
+	price_tag = 14
 
 /obj/item/tool/knife/neotritual
 	name = "absolutism ritual knife"
@@ -105,6 +108,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
 	max_upgrades = 3
 	embed_mult = 3
+	price_tag = 24
 
 /obj/item/tool/knife/neotritual/equipped(mob/living/H)
 	. = ..()
@@ -127,6 +131,7 @@
 	throwforce = WEAPON_FORCE_LETHAL
 	max_upgrades = 3
 	embed_mult = 0.3
+	price_tag = 38
 
 /obj/item/tool/knife/dagger
 	name = "dagger"
@@ -139,6 +144,7 @@
 	backstab_damage = 15
 	armor_penetration = ARMOR_PEN_HALF
 	throwforce = WEAPON_FORCE_ROBUST
+	price_tag = 21
 
 /obj/item/tool/knife/dagger/skinning
 	name = "skinning knife"
@@ -149,6 +155,7 @@
 	item_state = "skinning"
 	armor_penetration = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 50)
+	price_tag = 500 // Takes diamond to make and very rare.
 
 /obj/item/tool/knife/dagger/ceremonial
 	name = "ceremonial dagger"
@@ -158,6 +165,7 @@
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1)
 	embed_mult = 0.3
 	max_upgrades = 4
+	price_tag = 300 // Fancy expensive paper weight.
 
 /obj/item/tool/knife/dagger/bluespace
 	name = "\improper Soteria \"Displacement Dagger\""
@@ -165,6 +173,7 @@
 	icon_state = "bluespace_dagger"
 	item_state = "bluespace_dagger"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 10, MATERIAL_GOLD = 5, MATERIAL_PLASMA = 20)
+	price_tag = 1200 // It teleports.
 	force = WEAPON_FORCE_NORMAL+1
 	embed_mult = 25 //You WANT it to embed
 	suitable_cell = /obj/item/cell/small
@@ -208,6 +217,7 @@
 	icon_state = "ass_dagger"
 	item_state = "ass_dagger"
 	reagent_flags = INJECTABLE|TRANSPARENT
+	price_tag = 10
 
 /obj/item/tool/knife/dagger/assassin/New()
 	..()

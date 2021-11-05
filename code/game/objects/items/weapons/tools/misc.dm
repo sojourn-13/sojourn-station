@@ -146,6 +146,7 @@
 	use_power_cost = 0.2 //Effective!
 	max_upgrades = 2
 	workspeed = 1.2
+	price_tag = 1400 // Super fancy
 
 /obj/item/tool/medmultitool/medimplant
 	name = "soteria medical omnitool"
@@ -160,6 +161,7 @@
 	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 15, QUALITY_BONE_GRAFTING = 40)
 	degradation = 0.5
 	workspeed = 0.8
+	price_tag = 600 // Not nearly as fancy.
 
 	use_power_cost = 1.2
 	suitable_cell = /obj/item/cell/medium
@@ -209,6 +211,7 @@
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 35, QUALITY_BOLT_TURNING = 35, QUALITY_DRILLING = 15, QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 10, QUALITY_PRYING = 25, QUALITY_DIGGING = 20, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30)
 	degradation = 0.5
 	workspeed = 0.8
+	price_tag = 600
 
 	use_power_cost = 0.8
 	suitable_cell = /obj/item/cell/medium
