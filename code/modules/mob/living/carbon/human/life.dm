@@ -774,6 +774,10 @@
 		var/datum/perk/nanite_regen/P = stats.getPerk(PERK_NANITE_REGEN) // Add a reference to the perk for us to use.
 		if(P && P.regen_rate) // Check if the perk is actually there and got regeneration enabled.
 			heal_overall_damage(P.regen_rate, P.regen_rate, P.regen_rate)
+		if(species?.reagent_tag == IS_SYNTHETIC)
+			for(var/obj/item/organ/augmentic in src) // Run this loop for every organ the user has
+				if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
+					augmentic.heal_damage(1, 1, TRUE) // Repair the organ
 
 	if(species.light_dam)//TODO: Use this proc for flora and mycus races. Search proc mycus. -Note for Kaz.
 		var/light_amount = 0
