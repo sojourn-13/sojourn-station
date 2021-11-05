@@ -777,7 +777,7 @@
 		if(species?.reagent_tag == IS_SYNTHETIC)
 			for(var/obj/item/organ/augmentic in src) // Run this loop for every organ the user has
 				if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
-					augmentic.heal_damage(1, 1, TRUE) // Repair the organ
+					augmentic.heal_damage(P.regen_rate, P.regen_rate, TRUE) // Repair the organ
 
 	if(species.light_dam)//TODO: Use this proc for flora and mycus races. Search proc mycus. -Note for Kaz.
 		var/light_amount = 0
