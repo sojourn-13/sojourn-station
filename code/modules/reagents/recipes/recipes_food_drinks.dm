@@ -765,7 +765,7 @@
 
 /datum/chemical_reaction/drinks/antidepressant
 	result = "antidepressant"
-	required_reagents = list("watermelonjuice" = 10, "triplecitrus" = 30, "sugar" = 5, "ice" = 5, "cola" = 10, "pineapplejuice" = 10)
+	required_reagents = list("space_up" = 10, "triplecitrus" = 20, "sugarrush" = 10, "ice" = 5, "cola" = 10, "pineapplejuice" = 10)
 	result_amount = 5
 
 /datum/chemical_reaction/drinks/kvass
