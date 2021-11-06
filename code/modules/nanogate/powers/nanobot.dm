@@ -178,6 +178,9 @@ List of powers in this page :
 	nano_point_cost = 0
 
 	if(Stand) // Do they have the bot?
+		if(Stand.stat == DEAD)
+			to_chat(owner, SPAN_WARNING("Your nanobot is destroyed and unable to be controlled!"))
+			return
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You remotely control your bot.")
 			Stand.controller = owner
