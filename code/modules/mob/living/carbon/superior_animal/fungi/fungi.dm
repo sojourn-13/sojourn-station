@@ -11,7 +11,7 @@
 	move_to_delay = 1
 	maxHealth = 150
 	health = 150
-	turns_per_move = 4
+	turns_per_move = 2
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	viewRange = 3

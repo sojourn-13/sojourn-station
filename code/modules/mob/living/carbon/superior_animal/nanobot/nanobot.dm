@@ -11,7 +11,7 @@
 	maxHealth = 150
 	melee_damage_lower = 10
 	melee_damage_upper = 20
-	turns_per_move = 5
+	turns_per_move = 2
 	see_in_dark = 10
 	wander = FALSE
 	stop_automated_movement_when_pulled = TRUE
