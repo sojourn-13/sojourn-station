@@ -24,6 +24,8 @@
 		/datum/design/autolathe/part/sensor_prox,
 		/datum/design/autolathe/part/camera_assembly,
 		/datum/design/autolathe/part/laserguide,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/adv_tools
@@ -53,6 +55,8 @@
 		/datum/design/autolathe/tool/ducttape/fiber,
 		/datum/design/autolathe/tool/ducttape/glue,
 		/datum/design/autolathe/part/cable_coil = 0,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/parttoolpack
@@ -114,6 +118,8 @@
 		/datum/design/autolathe/circuit/trade_beacon_receiving = 5,
 		/datum/design/autolathe/circuit/trade_beacon_sending = 5,
 		/datum/design/autolathe/part/cable_coil,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/logistics
@@ -131,6 +137,8 @@
 		/datum/design/autolathe/circuit/trade_beacon_receiving,
 		/datum/design/autolathe/circuit/trade_beacon_sending,
 		/datum/design/autolathe/part/cable_coil,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/engineering
@@ -154,6 +162,8 @@
 		/datum/design/autolathe/part/sensor_prox,
 		/datum/design/autolathe/part/camera_assembly,
 		/datum/design/autolathe/part/laserguide,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 		// From Tools
 		/datum/design/autolathe/tool/big_wrench,
 		/datum/design/autolathe/tool/pneumatic_crowbar,
@@ -372,6 +382,8 @@
 	/datum/design/autolathe/circuit/trade_beacon_receiving,
 	/datum/design/autolathe/circuit/trade_beacon_sending,
 	//Stock Parts, and SMES coils
+	/datum/design/autolathe/container/hcase_parts,
+	/datum/design/autolathe/container/hcase_engi,
 	/datum/design/autolathe/part/consolescreen,
 	/datum/design/research/item/part/basic_capacitor,
 	/datum/design/research/item/part/basic_sensor,

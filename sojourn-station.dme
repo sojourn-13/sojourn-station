@@ -1136,6 +1136,7 @@
 #include "code\game\objects\items\weapons\storage\deferred.dm"
 #include "code\game\objects\items\weapons\storage\fancy.dm"
 #include "code\game\objects\items\weapons\storage\firstaid.dm"
+#include "code\game\objects\items\weapons\storage\hardcases.dm"
 #include "code\game\objects\items\weapons\storage\internal.dm"
 #include "code\game\objects\items\weapons\storage\judgement_sheath.dm"
 #include "code\game\objects\items\weapons\storage\laundry_basket.dm"
