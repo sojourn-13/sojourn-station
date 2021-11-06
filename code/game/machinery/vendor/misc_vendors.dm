@@ -445,6 +445,16 @@
 		/obj/item/clothing/suit/storage/akira = 2,
 		/obj/item/clothing/suit/storage/aerostatic_bomber_jacket = 3,
 		/obj/item/clothing/suit/storage/jamrock_blazer = 3,
+		/obj/item/clothing/suit/gorka/toggle/gorka/camo = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_b = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_g = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_light = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_light_b = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_o = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/standard = 10,
+		/obj/item/clothing/suit/gorka/toggle/gorka/dark = 10,
 		/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 2,
 		/obj/item/clothing/suit/storage/toggle/leather/blackvest = 2,
 		/obj/item/clothing/suit/storage/toggle/leather/brownjacket = 2,
@@ -460,7 +470,7 @@
 		/obj/item/clothing/suit/storage/toggle/leather/denimvest = 2,
 		/obj/item/clothing/suit/storage/toggle/leather = 2,
 		/obj/item/clothing/suit/storage/toggle/leather/midriff = 2,
-					)
+		)
 	prices = list(
 		//Accessory
 		/obj/item/clothing/accessory/cape/blackedge = 95,
@@ -668,6 +678,16 @@
 		/obj/item/clothing/suit/storage/akira = 75,
 		/obj/item/clothing/suit/storage/aerostatic_bomber_jacket = 130,
 		/obj/item/clothing/suit/storage/jamrock_blazer = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/camo = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_b = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_g = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_light = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_light_b = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_o = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/crew_y = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/standard = 130,
+		/obj/item/clothing/suit/gorka/toggle/gorka/dark = 130,
 		/obj/item/clothing/suit/storage/toggle/leather/blackjacket = 550,
 		/obj/item/clothing/suit/storage/toggle/leather/blackvest = 550,
 		/obj/item/clothing/suit/storage/toggle/leather/brownjacket = 550,
@@ -683,7 +703,7 @@
 		/obj/item/clothing/suit/storage/toggle/leather/denimvest = 550,
 		/obj/item/clothing/suit/storage/toggle/leather = 550,
 		/obj/item/clothing/suit/storage/toggle/leather/midriff = 550,
-					)
+		)
 
 /obj/machinery/vending/kink
 	name = "KinkMate"
