@@ -217,6 +217,14 @@
 	icon_closed = "gorka_jacket"
 	hoodtype = /obj/item/clothing/head/hood/gorkahood/standard
 
+/obj/item/clothing/suit/gorka/toggle/gorka/dark
+	name = "dark gorka jacket"
+	desc = "A rugged, vaguely slavic two-tone parka, made with dark cloath."
+	icon_state = "gorka_jacket_ih"
+	icon_open = "gorka_jacket_ih_open"
+	icon_closed = "gorka_jacket_ih"
+	hoodtype = /obj/item/clothing/head/hood/gorkahood/dark
+
 /obj/item/clothing/suit/gorka/toggle/gorka
 	name = "tan gorka jacket"
 	desc = "A rugged, two-tone military style tan parka for the adventurer or paramilitant in you."
@@ -277,6 +285,11 @@
 	name = "standard gorka jacket hood"
 	icon_state = "gorka_jacket_hood"
 	desc = "A hood from a gorka jacket, oddly cozy."
+
+/obj/item/clothing/head/hood/gorkahood/dark
+	name = "dark gorka hood"
+	desc = "A hood from a gorka jacket, oddly sneaky."
+	icon_state = "gorka_jacket_ih_hood"
 
 /obj/item/clothing/head/hood/gorkahood
 	name = "tan gorka jacket hood"
