@@ -89,8 +89,8 @@
 		flask.forceMove(welder) // Give the flask to the welder
 		flask = null // The gun has no more flask
 	usr.remove_from_mob(src) // Remove the gun from the user
-	src.forceMove(welder) // Move the gun into the welder
 	usr.put_in_hands(welder) // Put the welder in the user's hand.
+	src.forceMove(welder) // Move the gun into the welder
 	usr.visible_message(
 						SPAN_NOTICE("[usr] activate the safeties of the [src.name]."),
 						SPAN_NOTICE("You activate the safeties of the [src.name].")
