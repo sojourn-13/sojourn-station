@@ -204,9 +204,9 @@
 
 /datum/craft_recipe/gun/pilgrim_claw
 	name = "Pilgrim Claw"
-	result = /obj/item/gun/projectile/revolver/lemant
+	result = /obj/item/gun/projectile/revolver/lemant/claw
 	steps = list(
-		list(/obj/item/gun/projectile/revolver/lemant/claw, 1, "time" = 20),
+		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 20),
 		list(/obj/item/tool_upgrade/augment/spikes, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 30, "time" = 10)
 	)
