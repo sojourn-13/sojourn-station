@@ -693,6 +693,7 @@
 #include "code\game\machinery\suit_storage_unit.dm"
 #include "code\game\machinery\supply_display.dm"
 #include "code\game\machinery\supplybeacon.dm"
+#include "code\game\machinery\surveillance_pod.dm"
 #include "code\game\machinery\teleporter.dm"
 #include "code\game\machinery\tesla_turret.dm"
 #include "code\game\machinery\turret_control.dm"
