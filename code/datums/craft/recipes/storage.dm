@@ -242,3 +242,35 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
+
+/datum/craft_recipe/storage/ammo_case
+	name = "Scrap ammo case"
+	result = /obj/item/storage/hcases/ammo/scrap
+	steps = list(
+		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, 20)
+	)
+
+/datum/craft_recipe/storage/engi_hardcase
+	name = "Scrap Engi Hardcase"
+	result = /obj/item/storage/hcases/engi/scrap
+	steps = list(
+		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, 20)
+	)
+
+/datum/craft_recipe/storage/parts_hardcase
+	name = "Scrap Parts Hardcase"
+	result = /obj/item/storage/hcases/parts/scrap
+	steps = list(
+		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, 20)
+	)
+
+/datum/craft_recipe/storage/medi_hardcase
+	name = "Scrap Medi Hardcase"
+	result = /obj/item/storage/hcases/med/scrap
+	steps = list(
+		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, 20)
+	)
