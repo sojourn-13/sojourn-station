@@ -15,6 +15,10 @@
 #define MUTATION_NEARSIGHTED /datum/genetics/mutation/disability/nearsighted
 #define MUTATION_EMP /datum/genetics/mutation/emp
 #define MUTATION_ROACH_BLOOD /datum/genetics/mutation/roachblood
+#define MUTATION_CHOC_MILK /datum/genetics/mutation/milk_c
+#define MUTATION_PROT_MILK /datum/genetics/mutation/milk_p
+#define MUTATION_ROBUST_MILK /datum/genetics/mutation/milk_r
+#define MUTATION_NO_PAIN /datum/genetics/mutation/painless
 
 //Exclusive Mutation types:
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
@@ -34,11 +38,14 @@
 #define MUT_BIO_UPPER_BODY_REQ 0x16  //Target needs biotic upper body
 #define MUT_BIO_LOWER_BODY_REQ 0x32  //Target needs biotic lower body
 #define MUT_BIO_HEAD_REQ 0x64 //Target needs a biotic head.
-
 #define MUT_FULL_BIO_REQ 0x124 //Target must only have biotic body parts (Not checking internals)
 
 //TODO: Add more for all organs
 
+//Cloning difficulty defines. Adjusts how much protein is required to create one creature
+#define CLONE_EASY 0.7
+#define CLONE_MEDIUM 1
+#define CLONE_HARD 1.2
 
 //mutations vars we add to the var/list/mutations list. We start with 11 because the base ends at 10.
 //refer to code\__DEFINES\dna.dm for the other states in this list.

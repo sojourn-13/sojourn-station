@@ -1,5 +1,5 @@
+//======================================================================
 //Roach Combinations
-//=======================
 /datum/genetics/mutation_recipe/irradiation/roach
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/roach)
 
@@ -76,7 +76,7 @@
 /datum/genetics/mutation_recipe/combination/tatonka_1/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/tatonka, "tatonka")
 	return new_mutation
-//=======================
+//======================================================================
 //Increase Cow FURTHER.
 /datum/genetics/mutation_recipe/combination/tangu_1
 	required_mutations = list(MUTATION_COW_SKIN, MUTATION_COW_SKIN)
@@ -86,6 +86,7 @@
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/tatonka/tangu, "tatonka")
 	return new_mutation
 
+//======================================================================
 //Create Mukwah, so people can blame us for making them
 /datum/genetics/mutation_recipe/irradiation/mukwah
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/bear)
@@ -94,6 +95,8 @@
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/mukwah, "Mukwah")
 	return new_mutation
 
+//======================================================================
+//Doggos
 /datum/genetics/mutation_recipe/irradiation/cerberus
 	required_on_clone_types = list(/mob/living/simple_animal/pig)
 
@@ -109,9 +112,94 @@
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus, "Cerberus")
 	return new_mutation
 
+//======================================================================
+//Chickos
 /datum/genetics/mutation_recipe/irradiation/clucker
 	required_on_clone_types = list(/mob/living/simple_animal/chicken)
 
 /datum/genetics/mutation_recipe/irradiation/clucker/get_result()
-	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/clucker, "Clucker")
-	return new_mutation
+	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/clucker, "Clucker")
+
+//======================================================================
+//Tengolos
+/datum/genetics/mutation_recipe/irradiation/tengolo
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/diyaab)
+
+/datum/genetics/mutation_recipe/irradiation/tengolo/get_result()
+	var/list/random_tengolo = pick(
+		list("type" = /mob/living/simple_animal/hostile/tengbrute, "name" = "Tengolo Brute"),
+		list("type" = /mob/living/simple_animal/hostile/tengcharge, "name" = "Tengolo Charger"),
+		list("type" = /mob/living/simple_animal/hostile/tengstalker, "name" = "Tengolo Stalker"))
+	return new /datum/genetics/mutation/copy_mob(random_tengolo["type"], random_tengolo["name"])
+
+//=======================
+//Hell Pigs
+/datum/genetics/mutation_recipe/combination/hell_pig
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengcharge, /mob/living/simple_animal/pig)
+
+/datum/genetics/mutation_recipe/combination/hell_pig/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig, "Hell Pig")
+//=======================
+/datum/genetics/mutation_recipe/combination/hell_pig_2
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengcharge, /mob/living/simple_animal/hostile/retaliate/tahca)
+
+/datum/genetics/mutation_recipe/combination/hell_pig_2/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig, "Hell Pig")
+//=======================
+/datum/genetics/mutation_recipe/combination/hell_pig_3
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengcharge)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/hell_pig_3/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig, "Hell Pig")
+
+//=======================
+//Slepnir
+/datum/genetics/mutation_recipe/combination/slepnir
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengbrute, /mob/living/simple_animal/pig)
+
+/datum/genetics/mutation_recipe/combination/slepnir/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/slepnir, "Slepnir")
+//=======================
+/datum/genetics/mutation_recipe/combination/slepnir_2
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengbrute, /mob/living/simple_animal/hostile/retaliate/tahca)
+
+/datum/genetics/mutation_recipe/combination/slepnir_2/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/slepnir, "Slepnir")
+//=======================
+/datum/genetics/mutation_recipe/combination/slepnir_3
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengbrute)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/slepnir_3/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/slepnir, "Slepnir")
+
+//=======================
+//Wendigo
+/datum/genetics/mutation_recipe/combination/wendigo
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengstalker, /mob/living/simple_animal/pig)
+
+/datum/genetics/mutation_recipe/combination/wendigo/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/wendigo, "Wendigo")
+//=======================
+/datum/genetics/mutation_recipe/combination/wendigo_2
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengstalker, /mob/living/simple_animal/hostile/retaliate/tahca)
+
+/datum/genetics/mutation_recipe/combination/wendigo_2/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/wendigo, "Wendigo")
+//=======================
+/datum/genetics/mutation_recipe/combination/wendigo_3
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengstalker)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/wendigo_3/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/wendigo, "Wendigo")
+
+//======================================================================
+//Croaker lord
+/datum/genetics/mutation_recipe/combination/croaker_lord
+	required_on_clone_types = list(/mob/living/simple_animal/frog)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/croaker_lord/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/retaliate/croakerlord, "croaker lord")

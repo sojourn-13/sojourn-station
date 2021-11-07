@@ -16,16 +16,16 @@
 Belvoix Cloning Chamber
 
 A cloning machine for Genetics- basically, it takes mutation holders and makes mobs based on what "cloning" mutation is active in it.
-This machine allows us to create more genetic research data in R&D without necessarily needing a steady supply of meat Because cloning 
-takes time, donated meat will still save a lot of time for the department, but they aren't extremely necessary so long as we have at 
+This machine allows us to create more genetic research data in R&D without necessarily needing a steady supply of meat Because cloning
+takes time, donated meat will still save a lot of time for the department, but they aren't extremely necessary so long as we have at
 least ONE meat of certain types.
 
-The cloning vat requires animal protein to function, loaded into a BIDON can for easy usage. Getting enough meat is part of the genetics loop, 
+The cloning vat requires animal protein to function, loaded into a BIDON can for easy usage. Getting enough meat is part of the genetics loop,
 but can be supported with synthetic meat from xenobotany.
 
 The cloner is operated by loading a filled "Sample Plate" into the cloning machine, anchoring a bidon can to the WEST of a cloning vat, and
-turning on the cloner through the control console. The cloner then drains protein from the anchored bidon can, and slowly grows the creature 
-over time. 
+turning on the cloner through the control console. The cloner then drains protein from the anchored bidon can, and slowly grows the creature
+over time.
 
 Once the creature is grown, the user has to manually vent the grown mob down a disposal pipe into a containment room. If they don't, the creature
 will continue to consume protein and eventually break out of the vat and even start attacking people if it is hostile.
@@ -84,6 +84,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	//How much protein is eaten in order to advance the progress by the cloning speed.
 	//Higher numbers means the clone eats MORE MEAT.
 	var/protein_consumption = BASE_PROTEIN_CONSUMPTION
+	var/protein_mod = CLONE_MEDIUM // modifier changing how much protein is consumed by cloning
 
 	var/datum/genetics/genetics_holder/clone_info //Genetics holder for the mob
 
@@ -179,6 +180,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		embryo.forceMove(loc)
 		embryo = null
 
+	protein_mod = initial(protein_mod)
 
 	stop()
 	update_icon()
@@ -212,7 +214,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	if(!trunk)
 		reader.addLog("Error, Pipe trunk not detected~!")
 		return
-	
+
 	if(!clone_info)
 		reader.addLog("Error, Genetic Sample Plate not detected~!")
 		return
@@ -227,10 +229,12 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	embryo_stage = 0
 
 	cloning = TRUE
-	
+
 	clone_ready = FALSE
-	
+
 	occupant = null
+
+	protein_mod = initial(protein_mod)
 
 	closed = TRUE
 
@@ -245,6 +249,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		occupant = new clone_type()
 		occupant.loc = src
 		clone_info.inject_mutations(occupant)
+		protein_mod = occupant.clone_difficulty
 
 	if(ispath(clone_type, /obj/item))
 		nonliving_occupant = new clone_type()
@@ -270,6 +275,8 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	embryo_stage = 0
 	clone_ready = FALSE
 
+	protein_mod = initial(protein_mod)
+
 	update_icon()
 	return TRUE
 
@@ -292,7 +299,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		if (nonliving_occupant)
 			nonliving_occupant.forceMove(holder)
 			nonliving_occupant = null
-		
+
 
 	if(!clone_ready && embryo)
 		embryo.forceMove(holder)
@@ -317,6 +324,8 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		if(stat & NOPOWER)
 			return
 
+		use_power(power_cost)
+
 		if(!reader || reader.loc != reader_loc || !container || container.loc != container_loc)
 			open_anim()
 			stop()
@@ -336,7 +345,8 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 			//Feed the beast.
 			if(progress <= breakout_point)
 				if(container)
-					if(!container.reagents.remove_reagent("protein", protein_consumption))
+					//This is the part where we drain protein from the container
+					if(!container.reagents.remove_reagent("protein", round(protein_consumption * protein_mod)))
 						if(clone_ready)
 							feed_the_beast += 1
 							if(feed_the_beast == 1)
@@ -350,10 +360,13 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 						else
 							reader.addLog("Protein not available~, The Embryo has starved to death.")
 							stop() //The clone is dead.
+					else if(clone_ready)
+						visible_message(SPAN_DANGER("The creature inside the cloning vat begins to stir..."))
 				else
 					reader.addLog("Protein container not found~, The Embryo has starved to death.")
 					stop()
-		use_power(power_cost)
+			else
+				breakout()
 
 	if (clone_ready && !ready_message)
 		reader.addLog("The Test Subject has Matured~!")
@@ -363,7 +376,6 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	//Disposal loop
 	if(flush && air_contents.return_pressure() >= SEND_PRESSURE )	// flush can happen even without power
 		reader.addLog("Flushed the Test Subject down the disposal pipe~")
-
 		flush()
 	if(mode != 1) //if off or ready, no need to charge
 		update_use_power(1)
@@ -391,7 +403,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 // perform a flush
 /obj/machinery/genetics/cloner/proc/flush()
 	flushing = TRUE
-	
+
 
 	// virtual holder object which actually travels through the pipes.
 	init_disposal_holder()
@@ -600,7 +612,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 ===============================================================================================================================================
 Vat Control Console
 
-A control console for the Cloning Vat, has displays to monitor the can usage and logs messages. It displays the (known) active mutations and 
+A control console for the Cloning Vat, has displays to monitor the can usage and logs messages. It displays the (known) active mutations and
 instability in the creature being cloned. It also links up to the core R&D console, for eventually interfacing to see what mutations are known
 and which aren't.
 ===============================================================================================================================================
@@ -615,7 +627,7 @@ and which aren't.
 	desc = "A console for controlling and monitoring crimes against nature."
 	icon_keyboard = "teleport_key"
 	icon_screen = "medcomp"
-	
+
 	var/cloneLog = ""
 	var/menuOption = VAT_MENU_SELECT
 
@@ -681,7 +693,7 @@ and which aren't.
 	data["clonerPresent"] = linked_cloner ? TRUE : FALSE
 	data["linked_bidon"] = linked_bidon ? TRUE : FALSE
 	data["menu"] = menuOption
-	data["log"] = cloneLog	
+	data["log"] = cloneLog
 
 	//Get the amount of protein in the canister
 	var/can_max_volume = 0

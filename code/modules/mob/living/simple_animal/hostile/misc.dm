@@ -48,6 +48,7 @@
 	mob_size = 3
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	clone_difficulty = CLONE_EASY
 
 /mob/living/simple_animal/hostile/shantak
 	name = "shantak"
