@@ -13202,7 +13202,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Vy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/magnum/scrap/prespawned,
+/obj/item/ammo_casing/magnum_40/scrap/prespawned,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "VC" = (
@@ -13406,12 +13406,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Zo" = (
-/obj/item/ammo_casing/magnum/scrap/prespawned,
+/obj/item/ammo_casing/magnum_40/scrap/prespawned,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "Zp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/magnum/scrap/prespawned,
+/obj/item/ammo_casing/magnum_40/scrap/prespawned,
 /obj/random/ammo/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
