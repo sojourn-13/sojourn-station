@@ -22,8 +22,7 @@
 	use_power_cost = 0.8
 	suitable_cell = /obj/item/cell/medium
 	glow_color = COLOR_LIGHTING_ORANGE_BRIGHT
-	var/status = FALSE		//whether the thing is on or not
-	var/obj/item/cell/starting_cell = /obj/item/cell/medium/high
+	cell = /obj/item/cell/medium/high
 	var/slime_killer = FALSE
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 10)
@@ -44,7 +43,7 @@
 	switched_off_qualities = list(QUALITY_HAMMERING = 5)
 	use_power_cost = 0.4
 	suitable_cell = /obj/item/cell/small
-	starting_cell = /obj/item/cell/small/high
+	cell = /obj/item/cell/small/high
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 1, MATERIAL_PLASTIC = 5)
 
 /obj/item/tool/baton/turn_on(mob/user)
@@ -63,11 +62,8 @@
 	set_light(0)
 	..()
 
-
 /obj/item/tool/baton/Initialize()
 	. = ..()
-	if(!cell && suitable_cell && starting_cell)
-		cell = new starting_cell(src)
 	update_icon()
 
 /obj/item/tool/baton/Destroy()
@@ -76,10 +72,6 @@
 
 /obj/item/tool/baton/get_cell()
 	return cell
-
-/obj/item/tool/baton/proc/set_status(s)
-	status = s
-	update_icon()
 
 /obj/item/tool/baton/handle_atom_del(atom/A)
 	..()
@@ -91,10 +83,10 @@
 	if(cell)
 		. = cell.checked_use(power_drain) //try to use enough power
 		if(!cell.check_charge(hitcost))	//do we have enough power for another hit?
-			set_status(FALSE)
+			turn_off()
 
 /obj/item/tool/baton/update_icon()
-	if(status)
+	if(switched_on)
 		icon_state = "[initial(icon_state)]_active"
 	else if(!cell)
 		icon_state = "[initial(icon_state)]_nocell"
@@ -116,22 +108,14 @@
 		to_chat(user, SPAN_WARNING("The baton does not have a power source installed."))
 
 /obj/item/tool/baton/attack_self(mob/user)
+	..()
 	if(cell && cell.charge > hitcost)
-		set_status(!status)
-		to_chat(user, SPAN_NOTICE("[src] is now [status ? "on" : "off"]."))
-		tool_qualities = status ? list(QUALITY_PULSING = 1) : null
 		playsound(loc, "sparks", 75, 1, -1)
 		update_icon()
-	else
-		set_status(FALSE)
-		if(!cell)
-			to_chat(user, SPAN_WARNING("[src] does not have a power source!"))
-		else
-			to_chat(user, SPAN_WARNING("[src] is out of charge."))
 	add_fingerprint(user)
 
 /obj/item/tool/baton/attack(mob/M, mob/user)
-	if(status && (CLUMSY in user.mutations) && prob(50))
+	if(switched_on && (CLUMSY in user.mutations) && prob(50))
 		to_chat(user, SPAN_DANGER("You accidentally hit yourself with the [src]!"))
 		user.Weaken(30)
 		deductcharge(hitcost)
@@ -156,12 +140,12 @@
 
 		//whacking someone causes a much poorer electrical contact than deliberately prodding them.
 		stun *= 0.5
-		if(status)		//Checks to see if the stunbaton is on.
+		if(switched_on)		//Checks to see if the stunbaton is on.
 			agony *= 0.5	//whacking someone causes a much poorer contact than prodding them.
 		else
 			agony = 0	//Shouldn't really stun if it's off, should it?
 		//we can't really extract the actual hit zone from ..(), unfortunately. Just act like they attacked the area they intended to.
-	else if(!status)
+	else if(!switched_on)
 		if(affecting)
 			target.visible_message(SPAN_WARNING("[target] has been prodded in the [affecting.name] with [src] by [user]. Luckily it was off."))
 		else
@@ -174,7 +158,7 @@
 		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 
 	//stun effects
-	if(status && deductcharge(hitcost))
+	if(switched_on && deductcharge(hitcost))
 		target.stun_effect_act(stun, agony, hit_zone, src)
 		msg_admin_attack("[key_name(user)] stunned [key_name(target)] with the [src].")
 
@@ -201,17 +185,6 @@
 /obj/item/tool/baton/robot/attackby(obj/item/W, mob/user)
 	return
 
-/obj/item/tool/baton/MouseDrop(over_object)
-	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
-		cell = null
-		set_status(FALSE)
-		update_icon()
-
-/obj/item/tool/baton/attackby(obj/item/C, mob/living/user)
-	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
-		src.cell = C
-		update_icon()
-
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/tool/baton/cattleprod
 	name = "stun prod"
@@ -225,7 +198,7 @@
 	hitcost = 150
 	attack_verb = list("poked")
 	slot_flags = null
-	starting_cell = null
+	cell = null
 	structure_damage_factor = STRUCTURE_DAMAGE_NORMAL
 
 /obj/item/tool/baton/excelbaton
@@ -243,13 +216,7 @@
 	slot_flags = SLOT_BELT
 	structure_damage_factor = STRUCTURE_DAMAGE_NORMAL
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTEEL = 5)
-	starting_cell = /obj/item/cell/medium/excelsior
-
-//excelsior baton has 2 inhand sprites
-/obj/item/tool/baton/excelbaton/set_status(s)
-	..()
-	item_state = initial(item_state) + (status ? "_active" : "")
-	update_wear_icon()
+	cell = /obj/item/cell/medium/excelsior
 
 /obj/item/tool/baton/slimebaton
 	name = "xenobio baton"
@@ -264,6 +231,6 @@
 	attack_verb = list("poked")
 	slime_killer = TRUE
 	slot_flags = null
-	starting_cell = null
+	cell = null
 	matter = list(MATERIAL_STEEL = 13, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 13)
 

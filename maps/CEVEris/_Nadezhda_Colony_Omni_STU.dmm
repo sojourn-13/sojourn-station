@@ -28150,7 +28150,7 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "gAK" = (
 /obj/structure/table/reinforced,
-/obj/item/melee/baton,
+/obj/item/tool/baton,
 /obj/item/hand_labeler,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/genetics)
@@ -63891,7 +63891,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/handcuffs,
-/obj/item/melee/baton,
+/obj/item/tool/baton,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 0;
 	pixel_y = -30
