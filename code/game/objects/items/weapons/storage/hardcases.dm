@@ -84,9 +84,12 @@
 
 /obj/item/storage/hcases/proc/open_close(user)
 	close_all()
+	if (!isturf(src.loc))
+		to_chat(user, SPAN_NOTICE("You cant toggle the lid, put it on the ground."))
+		return
 	if(closed)
 		to_chat(user, SPAN_NOTICE("You open the lid of the [src]."))
-		w_class = ITEM_SIZE_BULKY
+		w_class = ITEM_SIZE_TITANIC
 		closed = FALSE
 	else
 		to_chat(user, SPAN_NOTICE("You close the lid of the [src]."))
@@ -107,6 +110,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	sticker_name = "scrap"
 	desc = "A lacquer coated hardcase that can hold a lot of various things. Alt+click to open and close."
 	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
+
 //////////////////////////////////////////Ammo//////////////////////////////////////////
 
 /obj/item/storage/hcases/ammo
