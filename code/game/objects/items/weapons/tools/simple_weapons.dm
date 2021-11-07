@@ -272,6 +272,7 @@
 	heat = 2250
 	glow_color = COLOR_ORANGE
 	//Stronger when turned on. Will emit heat, turn its damage type to burn and set targets on fire.
+
 /obj/item/tool/sword/katana/firebrand/is_hot()
 	if(switched_on)
 		return heat
@@ -310,8 +311,8 @@
 		item_state = initial(item_state)
 
 /obj/item/tool/sword/saber
-	name = "premier's saber"
-	desc = "A finely made formal blade fit for the premier. Despite being primarily for show it cuts deep and painfully."
+	name = "decorative saber"
+	desc = "A finely made formal blade as a ornamental show of class or force. Despite being primarily for show it cuts deep and painfully."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "saber"
 	item_state = "saber"
