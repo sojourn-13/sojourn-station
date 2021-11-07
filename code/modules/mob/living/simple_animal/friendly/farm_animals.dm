@@ -97,7 +97,7 @@
 	turns_per_move = 5
 	see_in_dark = 6
 	meat_type = /obj/item/reagent_containers/food/snacks/meat
-	meat_amount = 6
+	meat_amount = 9
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
@@ -108,6 +108,7 @@
 	var/datum/reagents/udder = null
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	clone_difficulty = CLONE_EASY //Easier to make cows than other animals
 	inherent_mutations = list(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MOO)
 
 /mob/living/simple_animal/cow/New()
@@ -298,6 +299,7 @@ var/global/chicken_count = 0
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 	inherent_mutations = list(MUTATION_IMBECILE, MUTATION_NERVOUSNESS, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	clone_difficulty = CLONE_EASY
 
 
 /mob/living/simple_animal/pig/Life()

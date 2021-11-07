@@ -147,8 +147,8 @@ It also resets instability to 0 so bad things don't happen.
 /obj/item/genetics/purger
 	name = "Blue-Ink Mutagenic Purger"
 	desc = "An economic gene-fixer specifically made to purge mutations from the body. It takes a very long time to print."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "cimplanter2"
+	icon = 'icons/obj/genetics/dna_syringes.dmi'
+	icon_state = "dna_purger_b"
 	item_state = "syringe_0"
 	throw_speed = 1
 	throw_range = 5
@@ -173,7 +173,7 @@ It also resets instability to 0 so bad things don't happen.
 	user.do_attack_animation(target)
 
 	if(do_mob(user, target, 50) && !used)
-		icon_state = "cimplanter0"
+		icon_state = "dna_purger_empty"
 		used = TRUE
 		to_chat(target, SPAN_NOTICE("You feel your body begin to stabilize, and your anomalous mutations leave you."))
 		target.unnatural_mutations.removeAllMutations()
@@ -226,8 +226,8 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 /obj/item/genetics/mut_injector
 	name = "Mutagenic Injector"
 	desc = "A specialized syringe for injecting Mutagens into a host's system."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "dnainjector0"
+	icon = 'icons/obj/genetics/dna_syringes.dmi'
+	icon_state = "dna_injector_0"
 	item_state = "syringe_0"
 	throw_speed = 1
 	throw_range = 5
@@ -256,7 +256,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	user.do_attack_animation(target)
 
 	if(do_mob(user, target, 50) && src && loaded_sample)
-		icon_state = "dnainjector0"
+		icon_state = "dna_injector_1"
 		var/datum/genetics/genetics_holder/injection = loaded_sample.unload_genetics()
 		to_chat(user, SPAN_NOTICE("\The [user] injects a sample into \the [target]"))
 		injection.inject_mutations(target)

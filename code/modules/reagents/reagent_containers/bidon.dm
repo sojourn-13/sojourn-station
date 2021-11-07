@@ -138,6 +138,9 @@
 	if(lid)
 		var/mutable_appearance/lid_icon = mutable_appearance(icon, "[icon_state]_lid")
 		add_overlay(lid_icon)
+	if(anchored)
+		var/mutable_appearance/anchor_icon = mutable_appearance(icon, "bidon_anchored")
+		add_overlay(anchor_icon)
 	if(reagents.total_volume)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state][get_filling_state()]")
 		if(!istype(src,/obj/structure/reagent_dispensers/bidon/advanced))
@@ -162,3 +165,7 @@
 /obj/structure/reagent_dispensers/bidon/protein_can
 	starting_reagent = "protein"
 
+//Department starting protein to get the process off the ground
+/obj/structure/reagent_dispensers/bidon/protein_can/si
+	starting_reagent = "protein"
+	starting_volume = 1000
