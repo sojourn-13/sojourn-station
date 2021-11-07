@@ -83,7 +83,6 @@
 	name = "ammunition packet (.40 Magnum)"
 	icon_state = "magnum"
 	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = ".40"
 	caliber = CAL_MAGNUM
 	ammo_type = /obj/item/ammo_casing/magnum_40
 	max_ammo = 30
