@@ -90,7 +90,7 @@
 /obj/item/ammo_magazine/ammobox/magnum_40/scrap
 	name = "ammunition packet (old .40 Magnum)"
 	icon_state = "magnum_s"
-	ammo_type = /obj/item/ammo_casing/magnum/scrap
+	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 /obj/item/ammo_magazine/ammobox/magnum_40/practice
 	name = "ammunition packet (.40 Magnum practice)"
@@ -214,13 +214,6 @@
 	mag_type = SPEEDLOADER | MAGAZINE
 	max_ammo = 180
 
-/obj/item/ammo_magazine/ammobox/rifle_75/scrap
-	name = "ammunition packet (old 7.5mm Rifle)"
-	icon_state = "srifle_s"
-	max_ammo = 30 //Were a small packet not a box
-	w_class = ITEM_SIZE_SMALL
-	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
-
 /obj/item/ammo_magazine/ammobox/rifle_75/pickup(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/magmove.ogg',60,3)
@@ -280,6 +273,11 @@
 	name = "ammunition packet (7.5mm Rifle hollow-point)"
 	icon_state = "rifle_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
+
+/obj/item/ammo_magazine/ammobox/rifle_75_small/scrap
+	name = "ammunition packet (old 7.5mm Rifle)"
+	icon_state = "srifle_s"
+	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
 	name = "ammunition packet (7.5mm Rifle laser)"
