@@ -190,7 +190,7 @@
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
 	name = "ammunition packet (.257 Carbine laser)"
-	icon_state = "lrifle_si"
+	icon_state = "clrifle_si"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
