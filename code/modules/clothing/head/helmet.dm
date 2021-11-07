@@ -809,9 +809,9 @@
 		rad = 0
 	)
 
-/obj/item/clothing/head/armor/helmet/visor/cyberpunkgoggle/armored
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored
 	name = "\improper Type-34 Semi-Enclosed Headwear"
-	desc = "Armored helmet used by certain law enforcement agencies. It's hard to believe there's a human somewhere behind that."
+	desc = "Armored helmet used by certain law enforcement agencies. It's hard to believe there's someone somewhere behind that."
 	armor = list(
 		melee = 30,
 		bullet = 30,
