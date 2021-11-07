@@ -763,7 +763,7 @@
 
 /obj/item/storage/box/guild_manip/populate_contents()
 	for(var/i in 1 to 4)
-		new /obj/item/stock_parts/manipulator/guild(src)
+		new /obj/item/stock_parts/manipulator/handmade(src)
 
 /obj/item/storage/box/guild_bin
 	name = "box of cast matter bins"
@@ -773,7 +773,7 @@
 
 /obj/item/storage/box/guild_bin/populate_contents()
 	for(var/i in 1 to 4)
-		new /obj/item/stock_parts/matter_bin/guild(src)
+		new /obj/item/stock_parts/matter_bin/handmade(src)
 
 /obj/item/storage/box/guild_laser
 	name = "box of perfected micro-lasers"
@@ -783,7 +783,7 @@
 
 /obj/item/storage/box/guild_laser/populate_contents()
 	for(var/i in 1 to 4)
-		new /obj/item/stock_parts/micro_laser/guild(src)
+		new /obj/item/stock_parts/micro_laser/handmade(src)
 
 /obj/item/storage/box/guild_scanner
 	name = "box of perfected scanning modules"
@@ -793,7 +793,7 @@
 
 /obj/item/storage/box/guild_scanner/populate_contents()
 	for(var/i in 1 to 4)
-		new /obj/item/stock_parts/scanning_module/guild(src)
+		new /obj/item/stock_parts/scanning_module/handmade(src)
 
 /obj/item/storage/box/guild_capacitor
 	name = "box of ultra capacitors"
@@ -803,4 +803,4 @@
 
 /obj/item/storage/box/guild_capacitor/populate_contents()
 	for(var/i in 1 to 4)
-		new /obj/item/stock_parts/capacitor/guild(src)
+		new /obj/item/stock_parts/capacitor/handmade(src)

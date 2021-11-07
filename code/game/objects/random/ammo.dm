@@ -32,7 +32,7 @@
 				/obj/item/ammo_magazine/rifle_75_short = 1,
 				/obj/item/ammo_magazine/rifle_75_short/lethal = 1,
 				/obj/item/ammo_magazine/rifle_75_short/rubber = 2,
-				/obj/item/ammo_magazine/ammobox/rifle_75/scrap = 2,
+				/obj/item/ammo_magazine/ammobox/rifle_75_small/scrap = 2,
 				/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small= 1,
 				/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber = 2,
 				/obj/item/ammo_magazine/ammobox/pistol_35 = 2,

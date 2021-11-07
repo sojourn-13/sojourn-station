@@ -109,13 +109,6 @@
 	if((H.getToxLoss() >= heal_threshold) && (!H.reagents.has_reagent(treatment_tox)))
 		return treatment_tox
 
-/mob/living/carbon/superior_animal/nanobot/attack_hand(mob/living/user as mob)
-	if(user in creator) // Does the user has access?
-		if(ai_flag & CONSOLE_MODE) // Do we have console mode enabled?
-			Console.attack_hand(user) // "Attack" the console instead.
-			return
-	..() // Continue the normal behavior
-
 /mob/living/carbon/superior_animal/nanobot/MouseDrop(atom/over_object)
 	if(holder_type && !anchored) // We need a defined holder type in order for picking up to work, and the bot need to not be anchored.
 		var/mob/living/carbon/H = over_object

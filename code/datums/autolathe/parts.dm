@@ -190,3 +190,23 @@
 /datum/design/autolathe/greyson/manipulator
 	name = "greyson positronic manipulator"
 	build_path = /obj/item/stock_parts/manipulator/one_star
+
+/datum/design/autolathe/part/guild_capa
+	name = "ultra capacitor"
+	build_path = /obj/item/stock_parts/capacitor/guild
+
+/datum/design/autolathe/part/guild_scanning
+	name = "over-tuned scanning module"
+	build_path = /obj/item/stock_parts/scanning_module/guild
+
+/datum/design/autolathe/part/guild_manip
+	name = "forged manipulator"
+	build_path = /obj/item/stock_parts/manipulator/guild
+
+/datum/design/autolathe/part/guild_laser
+	name = "perfected micro-laser"
+	build_path = /obj/item/stock_parts/micro_laser/guild
+
+/datum/design/autolathe/part/guild_bin
+	name = "cast matter bin"
+	build_path = /obj/item/stock_parts/matter_bin/guild

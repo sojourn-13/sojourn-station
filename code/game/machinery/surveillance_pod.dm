@@ -1,6 +1,6 @@
 /obj/machinery/surveillance_pod
 	name = "E.Y.E. surveillance pod"
-	desc = "A man-sized pod filled with pitch black liquid."
+	desc = "A man-sized pod filled with pitch black liquid. Requires personal air supplies well in use."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "cryopod"
 	density = TRUE
@@ -16,8 +16,8 @@
 	)
 
 	var/list/compatible_helmets = list(
-	/obj/item/clothing/head/armor/helmet/visor/cyberpunkgoggle,
-	/obj/item/clothing/head/armor/helmet/visor/cyberpunkgoggle/armored
+	/obj/item/clothing/head/helmet/visor/cyberpunkgoggle,
+	/obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored
 	)
 
 //	var/list/compatible_glasses = list()

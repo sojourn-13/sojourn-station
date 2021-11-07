@@ -1,5 +1,5 @@
 //Oh by glob
-//goat
+//An Admin-only creature for acquiring and testing mutations. 
 /mob/living/simple_animal/hostile/bioshock
 	name = "Bioshock"
 	desc = "Has every mutation in it. Every one Hex hadn't tested yet, at least"
@@ -31,7 +31,6 @@
 		MUTATION_MOO,
 		MUTATION_GIGANTISM,
 		MUTATION_RAND_UNSTABLE,
-		MUTATION_RAND_UNSTABLE,
 		MUTATION_EPILEPSY,
 		MUTATION_COUGHING,
 		MUTATION_CLUMSY,
@@ -41,4 +40,9 @@
 		MUTATION_DEAF,
 		MUTATION_NEARSIGHTED,
 		MUTATION_EMP,
-		MUTATION_ROACH_BLOOD)
+		MUTATION_ROACH_BLOOD,
+		MUTATION_CHOC_MILK,
+		MUTATION_PROT_MILK,
+		MUTATION_ROBUST_MILK,
+		MUTATION_NO_PAIN)
+	clone_difficulty = CLONE_EASY

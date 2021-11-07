@@ -89,10 +89,8 @@
 
 //A configurable path return, in case we want variation in result for children of the main recipe definition.
 /datum/genetics/mutation_recipe/proc/get_result()
-	log_debug("made new mutation using default method.")
 	if(ispath(result_path, /datum/genetics/mutation))
-		log_debug("Found a replacement but, this is probably baaaaad-> [result_path]")
 		var/datum/genetics/mutation/new_mutation = new result_path()
 		return new_mutation
-	log_debug("Didn't find a mutation where we were loooking; returned NOTHING instead")
+	log_debug("Mutation_Recipe.get_result(): Didn't find a mutation where we were looking; returned NOTHING instead")
 	return null

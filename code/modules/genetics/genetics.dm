@@ -341,12 +341,16 @@
 
 //Search function for a specific mutation living in a genetics holder.
 //Key- relates to a stored identifying string in the mutation datum, can be different for datums of the same object
+//active_required- Mutation must be active in order to return properly.
 //Function must return a mutation datum from the mutation pool on a success, and a null value that evaluates to FALSE on a fail.
-/datum/genetics/genetics_holder/proc/getMutation(var/key)
+/datum/genetics/genetics_holder/proc/getMutation(var/key, var/active_required = FALSE)
 	RETURN_TYPE(/datum/genetics/mutation)
 	for(var/datum/genetics/mutation/source_mutation in mutation_pool)
 		if(source_mutation.key == key)
-			return source_mutation
+			if(!active_required || source_mutation.active)
+				return source_mutation
+			else
+				return null
 	return null
 
 

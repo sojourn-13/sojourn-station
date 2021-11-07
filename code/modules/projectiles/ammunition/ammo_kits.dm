@@ -157,7 +157,7 @@
 
 	if(piles)
 		for(var/j = 1 to piles)
-			new /obj/item/ammo_casing/magnum/scrap/prespawned(user.loc)
+			new /obj/item/ammo_casing/magnum_40/scrap/prespawned(user.loc)
 	if(boxxes)
 		for(var/j = 1 to boxxes)
 			new /obj/item/ammo_magazine/ammobox/magnum_40/scrap(user.loc)
@@ -219,7 +219,7 @@
 				new /obj/item/ammo_casing/rifle_75/scrap/prespawned(user.loc)
 		if(boxxes)
 			for(var/j = 1 to boxxes)
-				new /obj/item/ammo_magazine/ammobox/rifle_75/scrap(user.loc)
+				new /obj/item/ammo_magazine/ammobox/rifle_75_small/scrap(user.loc)
 		if(mags)
 			for(var/j = 1 to mags)
 				new /obj/item/ammo_magazine/rifle_75/scrap(user.loc)

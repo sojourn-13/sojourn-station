@@ -212,7 +212,7 @@
 /obj/item/ammo_magazine/magnum_40/old
 	name = "old magazine (.40 Magnum)"
 	icon_state = "magnum_s"
-	ammo_type = /obj/item/ammo_casing/magnum/scrap
+	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 ////.257 Carbine////
 
@@ -671,7 +671,7 @@
 /obj/item/ammo_magazine/speed_loader_magnum_40/scrap
 	name = "old speed loader (.40 Magnum)"
 	icon_state = "slmagnum_s"
-	ammo_type = /obj/item/ammo_casing/magnum/scrap
+	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 ////.50 speed loader////
 

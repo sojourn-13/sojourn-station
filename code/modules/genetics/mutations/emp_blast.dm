@@ -23,7 +23,7 @@
 		usr.show_message("\blue You must be conscious to perform this ability!")
 		return
 
-	var/datum/genetics/mutation/emp/emp_mutation = src.unnatural_mutations.getMutation("MUTATION_EMP")
+	var/datum/genetics/mutation/emp/emp_mutation = src.unnatural_mutations.getMutation("MUTATION_EMP", TRUE)
 
 	if(!emp_mutation)
 		src.verbs -= /mob/living/proc/mutation_emp
