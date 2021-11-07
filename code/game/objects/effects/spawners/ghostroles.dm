@@ -38,7 +38,7 @@
 
 /decl/hierarchy/outfit/escapedprisoner/hobo
 	belt = /obj/item/gun/projectile/revolver/handmade
-	l_pocket = /obj/item/ammo_casing/magnum/scrap/prespawned
+	l_pocket = /obj/item/ammo_casing/magnum_40/scrap/prespawned
 
 /obj/effect/mob_spawn/human/prisoner_transport/hobo
 	outfit = /decl/hierarchy/outfit/escapedprisoner/hobo

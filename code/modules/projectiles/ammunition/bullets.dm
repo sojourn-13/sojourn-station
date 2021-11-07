@@ -93,13 +93,13 @@
 	desc = "A .40 Magnum laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/magnum_40
 
-/obj/item/ammo_casing/magnum/scrap
+/obj/item/ammo_casing/magnum_40/scrap
 	desc = "An old .40 Magnum bullet casing."
 	icon_state = "magnum_c_s"
 	spent_icon = "magnum_c_s-spent"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/scrap
 
-/obj/item/ammo_casing/magnum/scrap/prespawned
+/obj/item/ammo_casing/magnum_40/scrap/prespawned
 	amount = 6
 
 //// .257 carbine ////
