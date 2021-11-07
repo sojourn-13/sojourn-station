@@ -5,6 +5,7 @@
 #define MENU_ANALYZE 5
 #define MENU_COMBINE_RESULT 6
 #define MENU_IRRADIATE_RESULT 7
+#define MENU_ANALYZE_RESULT 8
 /*
 =========================================================================================================================================
 Belvoix Genetic Analyzer
@@ -39,6 +40,9 @@ cannot isolate or combine desired genes.
 
 	//The presently selected holder
 	var/obj/item/genetics/sample/active_sample = null
+
+	//Made specifically for displaying Newly identified mutations
+	var/list/new_discovered_mutations = list()
 
 	//The presently selected mutagen (within the genetics holder)
 	var/datum/genetics/mutation/active_mutation = null
@@ -154,6 +158,14 @@ cannot isolate or combine desired genes.
 		analysis_full = TRUE
 	data["analysis_full"] = analysis_full
 
+	var/analyzed_mutation_data
+	if(new_discovered_mutations)
+		analyzed_mutation_data = list()
+		for(var/datum/genetics/mutation/target_mutation in new_discovered_mutations)
+			analyzed_mutation_data += list(target_mutation.ui_data(known_mutations))
+	data["analyzed_mutations"] = analyzed_mutation_data
+
+	debug_ui_data = data
 	return data
 
 /obj/machinery/genetics/gene_analyzer/Topic(href, href_list)
@@ -175,6 +187,7 @@ cannot isolate or combine desired genes.
 		menu_state = MENU_MAIN
 		mutations_combining_count = 0
 		mark_count = 0
+		new_discovered_mutations = list()
 		if(mutations_to_combine)
 			mutations_to_combine.removeAllMutations()
 		return TRUE
@@ -336,13 +349,14 @@ cannot isolate or combine desired genes.
 			for(var/datum/genetics/mutation/target_mutation in active_sample.genetics_holder.mutation_pool)
 				if(target_mutation.marked)
 					if(!known_mutations[target_mutation.key])
+						new_discovered_mutations += target_mutation.copy()
 						known_mutations[target_mutation.key] = target_mutation.gene_research_value
 			sample_plates -= active_sample
 			qdel(active_sample)
 			menu_state = MENU_PROCESSING
 			SSnano.update_uis(src)
 			sleep(50)
-			menu_state = MENU_MAIN
+			menu_state = MENU_ANALYZE_RESULT
 			return TRUE
 
 	return FALSE
@@ -366,3 +380,4 @@ TODO Topics:
 #undef MENU_ANALYZE
 #undef MENU_COMBINE_RESULT
 #undef MENU_IRRADIATE_RESULT
+#undef MENU_ANALYZE_RESULT

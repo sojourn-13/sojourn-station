@@ -58,6 +58,8 @@
 
 	known_languages = list(LANGUAGE_CHTMANT)
 
+	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
+
 /mob/living/carbon/superior_animal/roach/New()
 	..()
 

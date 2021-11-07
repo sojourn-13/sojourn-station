@@ -22,6 +22,7 @@
 	//They are the best anti-structure melee weapons
 	embed_mult = 1.2 //Digs deep
 	mode = EXCAVATE //Mode should be whatever is the starting tool and off quality.
+	price_tag = 45
 
 /obj/item/tool/pickaxe/equipped(mob/user)
 	..()
@@ -50,6 +51,7 @@
 	icon_state = "one_star_pickaxe"
 	item_state = "pickaxe"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2, MATERIAL_DIAMOND = 2)
+	price_tag = 900 //Diamond and fancy.
 	origin_tech = list(TECH_MATERIAL = 3, TECH_ENGINEERING = 2, TECH_POWER = 3)
 	switched_on_force = WEAPON_FORCE_ROBUST
 	tool_qualities = list(QUALITY_EXCAVATION = 50, QUALITY_PRYING = 25)
@@ -89,6 +91,7 @@
 	degradation = 0.7
 	use_power_cost = 0.6
 	suitable_cell = /obj/item/cell/medium
+	price_tag = 60
 
 /obj/item/tool/pickaxe/jackhammer/onestar
 	name = "Greyson Positronic Jackhammer"
@@ -104,6 +107,7 @@
 	workspeed = 1.7
 	max_upgrades = 2
 	use_power_cost = 0.8
+	price_tag = 1100
 
 /obj/item/tool/pickaxe/drill
 	name = "mining drill" // Can dig sand as well!
@@ -118,6 +122,7 @@
 	degradation = 0.7
 	use_fuel_cost = 0.07
 	max_fuel = 100
+	price_tag = 90
 
 /obj/item/tool/pickaxe/drill/onestar
 	name = "Greyson Positronic mining drill"
@@ -133,6 +138,7 @@
 	max_upgrades = 2
 	use_fuel_cost = 0.10
 	max_fuel = 90
+	price_tag = 1400
 
 /obj/item/tool/pickaxe/diamonddrill
 	name = "diamond-point mining drill"
@@ -150,6 +156,7 @@
 	use_fuel_cost = 0.07
 	max_fuel = 120
 	workspeed = 1.5
+	price_tag = 900
 
 /obj/item/tool/pickaxe/diamonddrill/rig
 	switched_off_qualities = list(QUALITY_DIGGING = 50, QUALITY_DRILLING = 50)
@@ -168,3 +175,4 @@
 	switched_on_qualities = list(QUALITY_DIGGING = 15, QUALITY_PRYING = 15)
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_STEEL = 3)
+	price_tag = 70

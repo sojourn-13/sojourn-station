@@ -545,8 +545,7 @@ var/list/holder_mob_icon_cache = list()
 
 /obj/item/holder/nanobot
 	name = "nanobot"
-	desc = "It's a robot."
-	item_state = null
+	desc = "It's a robot, folded up into an easily carried compact module."
 	w_class = ITEM_SIZE_HUGE // You're not fitting this thing in a backpack
 
 /obj/item/holder/nanobot/attack_self(mob/user)

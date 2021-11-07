@@ -711,36 +711,65 @@
 /obj/item/ammo_magazine/speed_loader_rifle_75
 	name = "ammo strip (7.5mm Rifle)"
 	desc = "A 10 round ammo strip for 7.5mm Rifle."
-	icon_state = "rifle"
+	icon_state = "stripper_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_RIFLE
 	matter = list(MATERIAL_STEEL = 1)
 	ammo_type = /obj/item/ammo_casing/rifle_75
 	max_ammo = 10
-	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_rifle_75/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		overlays += "stripper_[AC.shell_color]-[count]"
+
+/obj/item/ammo_magazine/speed_loader_rifle_75/Initialize()
+	. = ..()
+	update_icon()
 
 /obj/item/ammo_magazine/speed_loader_light_rifle_257
 	name = "ammo strip (.257 Carbine)"
 	desc = "A 10 round ammo strip for .257 Carbine."
-	icon_state = "rifle"
+	icon_state = "stripper_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_STEEL = 1)
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
 	max_ammo = 10
-	multiple_sprites = 1
 
+/obj/item/ammo_magazine/speed_loader_light_rifle_257/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		overlays += "stripper_[AC.shell_color]-[count]"
+
+/obj/item/ammo_magazine/speed_loader_light_rifle_257/Initialize()
+	. = ..()
+	update_icon()
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
 	name = "ammo strip (.408 Heavy Rifle)"
 	desc = "A 10 round ammo strip for .408 Heavy Rifle."
-	icon_state = "rifle"
+	icon_state = "stripper_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_HRIFLE
 	matter = list(MATERIAL_STEEL = 1)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
 	max_ammo = 10
-	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_heavy_rifle_408/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		overlays += "stripper_[AC.shell_color]-[count]"
+
+/obj/item/ammo_magazine/speed_loader_heavy_rifle_408/Initialize()
+	. = ..()
+	update_icon()
 
 ////other////
 

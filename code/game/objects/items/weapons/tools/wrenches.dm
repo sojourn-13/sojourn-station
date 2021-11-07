@@ -10,6 +10,7 @@
 	matter = list(MATERIAL_STEEL = 3)
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	tool_qualities = list(QUALITY_BOLT_TURNING = 35, QUALITY_HAMMERING = 10)
+	price_tag = 25
 
 /obj/item/tool/wrench/bs
 	name = "bluespace wrench"
@@ -25,6 +26,7 @@
 	tool_qualities = list(QUALITY_BOLT_TURNING = 20, QUALITY_HAMMERING = 10)
 	matter = list(MATERIAL_STEEL = 1)
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+	price_tag = 5
 
 /obj/item/tool/wrench/big_wrench
 	name = "big wrench"
@@ -38,3 +40,4 @@
 	throwforce = WEAPON_FORCE_PAINFUL
 	degradation = 0.7
 	max_upgrades = 4
+	price_tag = 175

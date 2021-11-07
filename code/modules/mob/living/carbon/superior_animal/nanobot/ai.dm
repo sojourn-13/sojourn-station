@@ -16,9 +16,9 @@
 
 		// Autodoc mode.
 		if(ai_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
-			if(findtext(message, "Toggle Autodoc") && findtext(message, "[src.name]"))
+			if(findtext(message, "Toggle Medibot") && findtext(message, "[src.name]"))
 				medbot = !medbot
-				visible_emote("state, \"[medbot ? "Activating" : "Deactivating"] Autodoc Mode.\"")
+				visible_emote("state, \"[medbot ? "Activating" : "Deactivating"] Medibot Mode.\"")
 				return
 
 		// Radio mode.
@@ -35,7 +35,9 @@
 				return
 			if(findtext(message, "Deploy Console") && findtext(message, "[src.name]") && Console.loc == src)
 				anchored = TRUE // The bot can't move
+				following = null
 				Console.forceMove(src.loc) // Deploy the console
+				visible_emote("state, \"Deploying console and terminating follow protocol.\"")
 			else if(findtext(message, "Store Console") && findtext(message, "[src.name]") && Console.loc != src)
 				anchored = FALSE // We can move
 				Console.forceMove(src) // Store the console
@@ -48,7 +50,7 @@
 
 		// Add mobs as friends
 		if(findtext(message, "Add User") && findtext(message, "[src.name]")) // Do we say the magic words with the bot's name?
-			for(var/mob/target in range(viewRange, src)) // Check every mob that it can see
+			for(var/mob/target in orange(viewRange, src)) // Check every mob that it can see
 				if(target != src) // Not include the bot
 					if(findtext(message, target.name)) // Was the mob named in the order?
 						if(friends.Find(target)) // Is it already a user?
@@ -60,7 +62,7 @@
 
 		// Remove mobs as friends
 		if(findtext(message, "Remove User") && findtext(message, "[src.name]")) // Do we say the magic words with the bot's name?
-			for(var/mob/target in range(viewRange, src)) // Check every mob that it can see
+			for(var/mob/target in orange(viewRange, src)) // Check every mob that it can see
 				if(target != src) // Not include the bot
 					if(findtext(message, target.name)) // Was the mob named in the order?
 						if(friends.Find(target)) // Is the user in the list?

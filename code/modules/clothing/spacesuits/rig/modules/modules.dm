@@ -110,8 +110,8 @@
 		if(!do_after(user,30,src) || !W || !src)
 			return
 
-		damage = 1
-		to_chat(user, "You mend some of damage to [src] with [W], but you will need more advanced tools to fix it completely.")
+		damage = 0
+		to_chat(user, "You mend the damage to [src] with [W].")
 		cable.use(5)
 		return
 	..()

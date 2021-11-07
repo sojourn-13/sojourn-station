@@ -4,6 +4,7 @@
 /datum/genetics/mutation/copy_mob
 	name = "Genetic Copy of a disappointing placeholder"
 	key = "MUTATION_COPY_SHOULD/NOT/SHOW"
+	desc = "An isolated section of the gene pool that can be used for cloning a creature."
 	clone_gene = TRUE
 
 /datum/genetics/mutation/copy_mob/New(var/incoming_type, var/incoming_name)

@@ -235,6 +235,13 @@
 	icon_state = "genericb"
 	item_state = "genericb"
 
+/obj/item/clothing/under/netrunner
+	name = "cybersuit"
+	desc = "Jumpsuit favored by surveillance officers and VR gamers alike. Ugly as sin. Luckily, in cyberspace no one can see your realspace clothing."
+	icon_state = "jensen"
+	item_state = "jensen"
+
+
 /obj/item/clothing/under/genericw
 	name = "white generic outfit"
 	desc = "A simple white shirt with grey pants."

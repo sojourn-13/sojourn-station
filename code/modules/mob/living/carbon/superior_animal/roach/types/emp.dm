@@ -14,6 +14,7 @@
 	mob_size = MOB_MEDIUM
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
 	knockdown_odds = 1 //its affect shouldnt be stunlocks like this
+	inherent_mutations = list(MUTATION_EMP, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY, MUTATION_ROACH_BLOOD)
 
 /mob/living/carbon/superior_animal/roach/elektromagnetisch/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()

@@ -58,19 +58,19 @@
 	var/air_type =   /obj/item/tank/oxygen
 
 	//Component/device holders.
-	var/obj/item/tank/air_supply                       // Air tank, if any.
-	var/obj/item/clothing/shoes/boots = null                  // Deployable boots, if any.
-	var/obj/item/clothing/suit/space/rig/chest                // Deployable chestpiece, if any.
-	var/obj/item/clothing/head/helmet/space/rig/helmet = null // Deployable helmet, if any.
-	var/obj/item/clothing/gloves/rig/gloves = null            // Deployable gauntlets, if any.
-	var/obj/item/cell/large/cell                             // Power supply, if any.
-	var/obj/item/rig_module/selected_module = null            // Primary system (used with middle-click)
-	var/obj/item/rig_module/vision/visor                      // Kinda shitty to have a var for a module, but saves time.
-	var/obj/item/rig_module/voice/speech                      // As above.
-	var/obj/item/rig_module/storage/storage					  // var for installed storage module, if any
-	var/mob/living/carbon/human/wearer                        // The person currently wearing the rig.
-	var/image/mob_icon                                        // Holder for on-mob icon.
-	var/list/installed_modules = list()                       // Power consumption/use bookkeeping.
+	var/obj/item/tank/air_supply								// Air tank, if any.
+	var/obj/item/clothing/shoes/boots = null					// Deployable boots, if any.
+	var/obj/item/clothing/suit/space/rig/chest					// Deployable chestpiece, if any.
+	var/obj/item/clothing/head/helmet/space/rig/helmet = null	// Deployable helmet, if any.
+	var/obj/item/clothing/gloves/rig/gloves = null				// Deployable gauntlets, if any.
+	var/obj/item/cell/large/cell								// Power supply, if any.
+	var/obj/item/rig_module/selected_module = null				// Primary system (used with middle-click)
+	var/obj/item/rig_module/vision/visor						// Kinda shitty to have a var for a module, but saves time.
+	var/obj/item/rig_module/voice/speech						// As above.
+	var/obj/item/rig_module/storage/storage						// var for installed storage module, if any
+	var/mob/living/carbon/human/wearer							// The person currently wearing the rig.
+	var/image/mob_icon											// Holder for on-mob icon.
+	var/list/installed_modules = list()							// Power consumption/use bookkeeping.
 
 	// Rig status vars.
 	var/active = FALSE

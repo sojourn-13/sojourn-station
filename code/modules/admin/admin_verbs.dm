@@ -605,6 +605,18 @@ ADMIN_VERB_ADD(/client/proc/perkremove, R_ADMIN, FALSE)
 	T.stats.removePerk(perkname.type)
 	message_admins("\blue [key_name_admin(usr)] removed the perk [perkname] from [key_name(T)].", 1)
 
+ADMIN_VERB_ADD(/client/proc/skill_issue, R_ADMIN, FALSE)
+/client/proc/skill_issue(mob/T as mob in SSmobs.mob_list)
+	set category = "Fun"
+	set name = "Skill Issue"
+	set desc = "Tells mob that it is a skill issue and to git gud."
+
+	to_chat(T, SPAN_NOTICE("<b><font size=3>Diagnosis: skill issue.</font></b>"))
+	to_chat(T, SPAN_NOTICE("Git gud."))
+
+	log_admin("[key_name(usr)] told [key_name(T)] that it is a skill issue and to git gud.")
+	message_admins("\blue [key_name_admin(usr)] told [key_name(T)] that it is a skill issue and to git gud.", 1)
+
 ADMIN_VERB_ADD(/client/proc/global_man_up, R_ADMIN, FALSE)
 /client/proc/global_man_up()
 	set category = "Fun"

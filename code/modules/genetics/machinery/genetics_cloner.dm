@@ -243,6 +243,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	var/clone_type = clone_mutation.onClone()
 	if(ispath(clone_type, /mob/living))
 		occupant = new clone_type()
+		occupant.loc = src
 		clone_info.inject_mutations(occupant)
 
 	if(ispath(clone_type, /obj/item))
