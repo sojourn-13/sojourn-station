@@ -7,8 +7,8 @@
 	icon = 'icons/obj/weapons.dmi'
 	slot_flags = SLOT_BELT
 	force = WEAPON_FORCE_PAINFUL
-	sharp = 0
-	edge = 0
+	sharp = FALSE
+	edge = FALSE
 	throwforce = WEAPON_FORCE_PAINFUL
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 2)
@@ -234,3 +234,50 @@
 	cell = null
 	matter = list(MATERIAL_STEEL = 13, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 13)
 
+//Arc Welder both a welder and a stunbaton in one
+
+/obj/item/tool/baton/arcwelder
+	name = "arc welder"
+	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, partial multitool, and incredibly painful taser. Due to its complex design it doesn't require welding goggles nor conduct shocks."
+	icon_state = "arc_welder"
+	item_state = "arc_welder"
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_WELDING
+	switched_on_qualities = list(QUALITY_WELDING = 45, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 15, QUALITY_CAUTERIZING = 10)
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 3)
+	price_tag = 1000 //valuable given its design
+	use_power_cost = 1.2
+	sparks_on_use = TRUE
+	force = WEAPON_FORCE_WEAK
+	switched_on_force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_WEAK
+	suitable_cell = /obj/item/cell/medium
+	toggleable = TRUE
+	create_hot_spot = TRUE
+	glow_color = COLOR_BLUE_LIGHT
+	max_upgrades = 3
+	agonyforce = 40
+	hitcost = 100
+
+/obj/item/tool/baton/arcwelder/cyborg
+	desc = "A specialized tool designed by the Artificer's Guild. It functions as a battery powered welder and multitool. This version has a regulation on it preventing it to be used as a taser."
+	name = "integrated arc welder"
+	suitable_cell = /obj/item/cell/medium/moebius/nuclear
+
+/obj/item/tool/baton/arcwelder/turn_on(mob/user)
+	if (cell && cell.charge > 0)
+		item_state = "[initial(item_state)]_on"
+		to_chat(user, SPAN_NOTICE("You switch [src] on."))
+		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
+		..()
+		damtype = BURN
+	else
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src] has no power!"))
+
+/obj/item/tool/baton/arcwelder/turn_off(mob/user)
+	item_state = initial(item_state)
+	playsound(loc, 'sound/effects/sparks1.ogg', 50, 1)
+	to_chat(user, SPAN_NOTICE("You switch [src] off."))
+	..()
+	damtype = initial(damtype)

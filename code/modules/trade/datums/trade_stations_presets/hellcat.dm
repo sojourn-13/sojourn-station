@@ -68,5 +68,5 @@
 		/obj/item/tool_upgrade/armor/bullet,
 		/obj/item/tool_upgrade/armor/bomb,
 		/obj/item/tool_upgrade/armor/energy,
-		/obj/item/tool/arcwelder
+		/obj/item/tool/baton/arcwelder
 	)

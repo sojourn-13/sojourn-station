@@ -100,7 +100,7 @@
 //Tools --------------------------
 /datum/craft_recipe/guild/arcwelder
 	name = "arc welder"
-	result = /obj/item/tool/arcwelder
+	result = /obj/item/tool/baton/arcwelder
 	steps = list(
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_CUTTING, 20, "time" = 40),
