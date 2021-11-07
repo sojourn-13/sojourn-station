@@ -87020,6 +87020,7 @@
 	icon_state = "tube1"
 	},
 /obj/structure/table/rack/shelf,
+/obj/item/storage/part_replacer/mini,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/engineering/workshop)
 "tXh" = (
