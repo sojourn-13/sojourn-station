@@ -41,7 +41,7 @@
 	var/obj/item/reagent_containers/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_refillable())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
-		var/transfered = udder.trans_id_to(G, milk_type, rand(5,10))
+		var/transfered = udder.trans_to(G, rand(5,10))
 		if(G.reagents.total_volume >= G.volume)
 			to_chat(user, "\red The [O] is full.")
 		if(!transfered)
@@ -87,7 +87,16 @@
 		return
 	if(stat == CONSCIOUS)
 		if(udder && prob(5))
-			udder.add_reagent(milk_type, rand(5, 10))
+			var/amount_add = rand(5, 10)
+			if(unnatural_mutations.getMutation("MUTATION_ROBUST_MILK", TRUE))
+				amount_add = 20
+			
+			if(unnatural_mutations.getMutation("MUTATION_CHOC_MILK", TRUE))
+				udder.add_reagent("chocolatemilk", amount_add)
+			else if(unnatural_mutations.getMutation("MUTATION_PROT_MILK", TRUE))
+				udder.add_reagent("protein", amount_add)
+			else
+				udder.add_reagent(milk_type, amount_add)
 	if(!stat && prob(3) && offspring_left > 0)
 		visible_message("[src] [pick("squats down and moos.","begins making a huge racket.","begins mooing raucously.")]")
 		offspring_left--

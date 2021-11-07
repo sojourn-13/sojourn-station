@@ -45,7 +45,15 @@
 
 		if(stat == CONSCIOUS)
 			if(udder && prob(5))
-				udder.add_reagent("milk", rand(5, 10))
+				var/amount_add = rand(5, 10)
+				if(unnatural_mutations.getMutation("MUTATION_ROBUST_MILK", TRUE))
+					amount_add = 20
+				if(unnatural_mutations.getMutation("MUTATION_CHOC_MILK", TRUE))
+					udder.add_reagent("chocolatemilk", amount_add)
+				else if(unnatural_mutations.getMutation("MUTATION_PROT_MILK", TRUE))
+					udder.add_reagent("protein", amount_add)
+				else
+					udder.add_reagent("milk", amount_add)
 
 		if(locate(/obj/effect/plant) in loc)
 			var/obj/effect/plant/SV = locate() in loc
@@ -112,7 +120,7 @@
 	inherent_mutations = list(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MOO)
 
 /mob/living/simple_animal/cow/New()
-	udder = new(50)
+	udder = new(100)
 	udder.my_atom = src
 	..()
 
@@ -120,7 +128,7 @@
 	var/obj/item/reagent_containers/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_refillable())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
-		var/transfered = udder.trans_id_to(G, "milk", rand(5,10))
+		var/transfered = udder.trans_to(G, 10)
 		if(G.reagents.total_volume >= G.volume)
 			to_chat(user, "\red The [O] is full.")
 		if(!transfered)
@@ -132,7 +140,15 @@
 	. = ..()
 	if(stat == CONSCIOUS)
 		if(udder && prob(5))
-			udder.add_reagent("milk", rand(5, 10))
+			var/amount_add = rand(5, 10)
+			if(unnatural_mutations.getMutation("MUTATION_ROBUST_MILK", TRUE))
+				amount_add = 20
+			if(unnatural_mutations.getMutation("MUTATION_CHOC_MILK", TRUE))
+				udder.add_reagent("chocolatemilk", amount_add)
+			else if(unnatural_mutations.getMutation("MUTATION_PROT_MILK", TRUE))
+				udder.add_reagent("protein", amount_add)
+			else
+				udder.add_reagent("milk", amount_add)
 
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M as mob)
 	if(!stat && M.a_intent == I_DISARM && icon_state != icon_dead)

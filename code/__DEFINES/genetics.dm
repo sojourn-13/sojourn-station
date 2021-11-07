@@ -15,6 +15,9 @@
 #define MUTATION_NEARSIGHTED /datum/genetics/mutation/disability/nearsighted
 #define MUTATION_EMP /datum/genetics/mutation/emp
 #define MUTATION_ROACH_BLOOD /datum/genetics/mutation/roachblood
+#define MUTATION_CHOC_MILK /datum/genetics/mutation/milk_c
+#define MUTATION_PROT_MILK /datum/genetics/mutation/milk_p
+#define MUTATION_ROBUST_MILK /datum/genetics/mutation/milk_r
 
 //Exclusive Mutation types:
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
