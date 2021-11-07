@@ -1746,6 +1746,7 @@
 #include "code\modules\games\spaceball_cards.dm"
 #include "code\modules\games\tarot.dm"
 #include "code\modules\genetics\genetics.dm"
+#include "code\modules\genetics\creatures\ambusher.dm"
 #include "code\modules\genetics\creatures\bioshock.dm"
 #include "code\modules\genetics\creatures\wasonce.dm"
 #include "code\modules\genetics\machinery\advanced_grinder.dm"
