@@ -194,3 +194,12 @@
 
 /datum/genetics/mutation_recipe/combination/wendigo_3/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/wendigo, "Wendigo")
+
+//======================================================================
+//Croaker lord
+/datum/genetics/mutation_recipe/combination/croaker_lord
+	required_on_clone_types = list(/mob/living/simple_animal/frog)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/croaker_lord/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/retaliate/croakerlord, "croaker lord")

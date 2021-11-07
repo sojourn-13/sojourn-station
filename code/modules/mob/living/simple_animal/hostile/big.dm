@@ -278,6 +278,7 @@
 	faction = "pond"
 	mob_size = 3
 	wander = 1
+	meat_amount = 10 //extra thicc
 	leather_amount = 20
 	bones_amount = 10
 	mob_size = MOB_LARGE
