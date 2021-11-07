@@ -9,6 +9,7 @@
 	products = list(
 	//Non-lethal
 	/obj/item/device/flash = 2,
+	/obj/item/tool/baton/mini = 10,
 	/obj/item/reagent_containers/spray/pepper = 2,
 	//Melee
 	/obj/item/tool/knife/tacknife = 3,
@@ -80,6 +81,7 @@
 	prices = list(
 	//Non-lethal
 	/obj/item/device/flash = 200,
+	/obj/item/tool/baton/mini = 140,
 	/obj/item/reagent_containers/spray/pepper = 50,
 	//Melee
 	/obj/item/tool/knife/tacknife = 40,
@@ -184,7 +186,8 @@
 					/obj/item/taperoll/police = 8,
 					/obj/item/storage/box/evidence = 2,
 					/obj/item/tool/fireaxe/militia_tomahawk = 4,
-					/obj/item/tool/knife/tacknife = 4)
+					/obj/item/tool/knife/tacknife = 4,
+					/obj/item/tool/baton/mini = 6)
 
 	contraband = list(/obj/item/reagent_containers/food/snacks/donut/normal = 12)
 	auto_price = FALSE

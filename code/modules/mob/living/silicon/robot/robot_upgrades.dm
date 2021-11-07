@@ -220,7 +220,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		R.module.modules += new/obj/item/tool/arcwelder/cyborg(R.module)
+		R.module.modules += new/obj/item/tool/baton/arcwelder/cyborg(R.module)
 		R.module.Initialize() //Fixes layering and possible tool issues
 		return TRUE
 

@@ -232,7 +232,7 @@
 	return
 
 /obj/item/shield/riot/nt/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/melee/baton) || istype(W, /obj/item/tool/sword/nt))
+	if(istype(W, /obj/item/tool/baton) || istype(W, /obj/item/tool/sword/nt))
 		on_bash(W, user)
 	else
 		..()
@@ -294,7 +294,7 @@
 	return
 
 /obj/item/shield/riot/nt/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/melee/baton) || istype(W, /obj/item/tool/sword/nt))
+	if(istype(W, /obj/item/tool/baton) || istype(W, /obj/item/tool/sword/nt))
 		on_bash(W, user)
 	else
 		..()

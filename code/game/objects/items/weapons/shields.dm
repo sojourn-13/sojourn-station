@@ -208,7 +208,7 @@
 	return list(BP_GROIN,BP_HEAD)
 
 /obj/item/shield/buckler/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/melee/baton))
+	if(istype(W, /obj/item/tool/baton))
 		on_bash(W, user)
 	else
 		..()
@@ -307,7 +307,7 @@
 	update_wear_icon()
 
 /obj/item/shield/riot/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/melee/baton))
+	if(istype(W, /obj/item/tool/baton))
 		on_bash(W, user)
 	else
 		..()
@@ -374,7 +374,7 @@
 	return list(BP_ALL_LIMBS)
 
 /obj/item/shield/hardsuit/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/melee/baton))
+	if(istype(W, /obj/item/tool/baton))
 		on_bash(W, user)
 	else
 		..()
