@@ -4,7 +4,7 @@
 	desc = "Causes cows and goats to produce chocolate milk when milked."
 
 /datum/genetics/mutation/milk_p
-	name = "Chocolate Milk"
+	name = "Protein Milk"
 	key = "MUTATION_PROT_MILK"
 	desc = "Causes cows and goats to produce protein when milked."
 

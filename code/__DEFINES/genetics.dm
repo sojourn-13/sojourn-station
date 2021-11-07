@@ -18,6 +18,7 @@
 #define MUTATION_CHOC_MILK /datum/genetics/mutation/milk_c
 #define MUTATION_PROT_MILK /datum/genetics/mutation/milk_p
 #define MUTATION_ROBUST_MILK /datum/genetics/mutation/milk_r
+#define MUTATION_NO_PAIN /datum/genetics/mutation/painless
 
 //Exclusive Mutation types:
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type

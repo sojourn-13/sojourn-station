@@ -256,7 +256,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	user.do_attack_animation(target)
 
 	if(do_mob(user, target, 50) && src && loaded_sample)
-		icon_state = "dna_injector_1"
+		icon_state = "dna_injector_0"
 		var/datum/genetics/genetics_holder/injection = loaded_sample.unload_genetics()
 		to_chat(user, SPAN_NOTICE("\The [user] injects a sample into \the [target]"))
 		injection.inject_mutations(target)
@@ -272,7 +272,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 		if(!loaded_sample && user.unEquip(incoming_sample, src))
 			to_chat(user, SPAN_NOTICE("You load the mutagenic injector with a sample plate."))
 			loaded_sample = incoming_sample
-			icon_state = "dnainjector"
+			icon_state = "dna_injector_1"
 
 /obj/item/genetics/mut_injector/attack_self(var/mob/user)
 	if(!loaded_sample)
@@ -280,7 +280,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	user.put_in_hands(loaded_sample)
 	to_chat(user, SPAN_NOTICE("You remove the sample plate from \the [src]."))
 	loaded_sample = null
-	icon_state = "dnainjector0"
+	icon_state = "dna_injector_0"
 	return
 
 /*
