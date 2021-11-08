@@ -270,6 +270,7 @@
 /datum/design/research/item/weapon/bastion
 	name = "bastion shield"
 	build_path = /obj/item/shield/riot/bastion
+	materials = list(MATERIAL_PLASMAGLASS = 3, MATERIAL_OSMIUM = 1) //So making it at the guild is objectively always better
 
 //Weapon mods
 /datum/design/research/item/weapon/weapon_upgrade

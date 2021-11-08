@@ -12,7 +12,7 @@
 	throw_range = 4
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_MATERIAL = 4, TECH_COMBAT = 4)
-	matter = list(MATERIAL_PLASMAGLASS = 5, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 10, MATERIAL_OSMIUM = 2)
+	matter = list(MATERIAL_PLASMAGLASS = 1, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 10)
 	price_tag = 2500
 	attack_verb = list("shoved", "bashed")
 	var/structure_form_type = /obj/structure/shield_deployed
