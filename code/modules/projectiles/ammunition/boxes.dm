@@ -281,7 +281,7 @@
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
 	name = "ammunition packet (7.5mm Rifle laser)"
-	icon_state = "rifle_si"
+	icon_state = "srifle_si"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
 
 
