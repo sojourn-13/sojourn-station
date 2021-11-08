@@ -71,9 +71,6 @@
 	QDEL_NULL(cell)
 	return ..()
 
-/obj/item/tool/baton/get_cell()
-	return cell
-
 /obj/item/tool/baton/handle_atom_del(atom/A)
 	..()
 	if(A == cell)
