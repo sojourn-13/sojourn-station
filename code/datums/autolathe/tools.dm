@@ -99,7 +99,7 @@
 	build_path = /obj/item/tool/hammer/powered_hammer/onestar_hammer
 
 /datum/design/autolathe/tool/ironhammer
-	name = "name thing"
+	name = "GmbH \"Ironhammer\" Breaching Hammer"
 	build_path = /obj/item/tool/hammer/IH
 
 /datum/design/autolathe/tool/big_wrench
