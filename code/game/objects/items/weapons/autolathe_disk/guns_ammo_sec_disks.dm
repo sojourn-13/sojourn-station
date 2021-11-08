@@ -69,6 +69,7 @@
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//Misc
+		/datum/design/autolathe/tool/ironhammer,
 		/datum/design/autolathe/sec/riot,
 		/datum/design/autolathe/sec/buckler = 0,
 		/datum/design/autolathe/container/ammocan_ih,
