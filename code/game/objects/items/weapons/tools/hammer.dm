@@ -110,7 +110,7 @@
 	max_upgrades = 5
 	price_tag = 15
 
-/obj/item/tool/hammer/IH
+/obj/item/tool/hammer/ironhammer
 	name = "GmbH \"Ironhammer\" Breaching Hammer"
 	desc = "A modified sledgehammer produced by Seinmetall for police forces across Sol space. This tool can take down standard walls and if the user is strong enough, reinforced walls."
 	icon = 'icons/obj/weapons.dmi'
