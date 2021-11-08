@@ -98,6 +98,10 @@
 	name = "greyson sledgehammer"
 	build_path = /obj/item/tool/hammer/powered_hammer/onestar_hammer
 
+/datum/design/autolathe/tool/ironhammer
+	name = "name thing"
+	build_path = /obj/item/tool/hammer/IH
+
 /datum/design/autolathe/tool/big_wrench
 	name = "big wrench"
 	build_path = /obj/item/tool/wrench/big_wrench

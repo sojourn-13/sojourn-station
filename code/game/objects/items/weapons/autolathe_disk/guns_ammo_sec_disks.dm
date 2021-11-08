@@ -65,6 +65,7 @@
 		/datum/design/autolathe/device/landmine = 0,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun
+		/datum/design/autolathe/tool/ironhammer
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
