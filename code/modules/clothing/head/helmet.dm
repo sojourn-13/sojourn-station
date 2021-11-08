@@ -326,7 +326,6 @@
 		usr.update_action_buttons()
 		return 1
 
-
 /obj/item/clothing/head/helmet/technomancersuit
 	name = "'Mark V' environmental protection helmet"
 	desc = "You feel like this helmet is rare, for some reason."
