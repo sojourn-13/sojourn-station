@@ -21,7 +21,7 @@
 * Example of an inherant_mutations list:
 * inherant_mutations= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
 **/
-#define JANEDEBUG 1
+//#define JANEDEBUG 1
 
 /*
 * =================================================================================================
