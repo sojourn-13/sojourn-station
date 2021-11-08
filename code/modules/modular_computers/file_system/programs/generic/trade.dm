@@ -8,8 +8,8 @@
 	program_key_state = "rd_key"
 	program_menu_icon = "cart"
 	extended_desc = "A trade tool, require sending and reseiving beacons."
-	size = 21
-	available_on_ntnet = FALSE
+	size = 80  //This is huge!
+	available_on_ntnet = TRUE
 	requires_ntnet = TRUE
 
 	var/trade_screen = GOODS_SCREEN
