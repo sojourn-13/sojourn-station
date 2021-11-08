@@ -457,6 +457,25 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 */
+/obj/item/gun_upgrade/mechanism/gun_rail
+	name = "H&S \"HandHolder\" Barrel Rail"
+	desc = "A simple magnetic barrel rail, designed to fit onto a variety of weapons. Easy to attach, impossible to remove."
+	icon_state = "auto_spingbox"
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
+	can_remove = FALSE
+
+/obj/item/gun_upgrade/mechanism/gun_rail/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RAIL = TRUE,
+		)
+	I.removal_time *= 10
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "tactical" //My man with 20 rails and 40 scopes on his guns
+	I.breakable = FALSE
+	I.unique_removal = TRUE
+	I.unique_removal_type = GUN_SCOPE
 
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"

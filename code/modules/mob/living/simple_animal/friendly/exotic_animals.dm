@@ -49,6 +49,7 @@
 	melee_damage_upper = 15
 	attacktext = list("pecked")
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/penguin/baby
 	name = "penguin chick"

@@ -187,10 +187,10 @@
 	use_power(1000)
 	visible_message(SPAN_DANGER("You hear a loud squelchy grinding sound."))
 	src.operating = 1
-	update_icon()
+	
 
 	var/slab_name = occupant.name
-	var/slab_count = 3
+	var/slab_count = 0
 	var/slab_type = /obj/item/reagent_containers/food/snacks/meat
 	var/slab_nutrition = 20
 	if(iscarbon(occupant))
@@ -204,22 +204,38 @@
 			slab_count = critter.meat_amount
 		if(critter.meat_type)
 			slab_type = critter.meat_type
+		if(!ispath(critter.meat_type, /obj/item/reagent_containers/food/snacks/meat) || slab_count == 0)
+			var/mob/living/to_delete = occupant
+			occupant = null
+			qdel(to_delete)
+			visible_message(SPAN_DANGER("The grinder doesn't have any appreciable meat."))
+			operating = 0
+			return
 
-	else if(isroach(occupant))
-		var/mob/living/carbon/superior_animal/roach/H = occupant
-		slab_type = H.meat_type
-		slab_count = H.meat_amount
+	else if(issuperioranimal(occupant))
+		var/mob/living/carbon/superior_animal/s_animal = occupant
+		slab_type = s_animal.meat_type
+		slab_count = s_animal.meat_amount
+		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/food/snacks/meat) || slab_count == 0)
+			var/mob/living/to_delete = occupant
+			occupant = null
+			qdel(to_delete)
+			visible_message(SPAN_DANGER("The grinder doesn't have any appreciable meat."))
+			operating = 0
+			return
 
 	else if(ishuman(occupant))
 		var/mob/living/carbon/human/H = occupant
 		slab_name = src.occupant.real_name
 		slab_type = H.form.meat_type
+		slab_count = 3
 
 	// Small mobs don't give as much nutrition.
 	if(issmall(src.occupant))
 		slab_nutrition *= 0.5
 	slab_nutrition /= slab_count
 
+	update_icon()
 	spawn(gib_time)
 		if(occupant) //Escape in time?
 			for(var/i=1 to slab_count)
@@ -238,8 +254,6 @@
 				src.occupant.ghostize()
 
 		
-
-			src.operating = 0
 			src.occupant.gib()
 			var/mob/living/to_delete = occupant
 			occupant = null

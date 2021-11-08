@@ -13,6 +13,7 @@
 	flags = NOBLUDGEON //Its not a weapon
 	preloaded_reagents = list("glue" = 1, "plasticide" = 2)
 	max_upgrades = 0 //These are consumable, so no wasting upgrades on them
+	price_tag = 15
 
 /obj/item/tool/tape_roll/web
 	name = "web tape"
@@ -22,6 +23,7 @@
 	max_stock = 30
 	alpha = 150
 	preloaded_reagents = null
+	price_tag = 3
 
 /obj/item/tool/tape_roll/glue
 	name = "superglue"
@@ -32,6 +34,7 @@
 	matter = list(MATERIAL_PLASTIC = 15)
 	worksound = NO_WORKSOUND
 	preloaded_reagents = list("glue" = 30)
+	price_tag = 12
 
 /obj/item/tool/tape_roll/fiber
 	name = "fiber tape"
@@ -42,6 +45,7 @@
 	use_stock_cost = 0.10
 	max_stock = 100
 	preloaded_reagents = list("glue" = 15, "plasticide" = 5)
+	price_tag = 30
 
 /obj/item/tool/tape_roll/repair_goo
 	name = "repair goo"
@@ -62,6 +66,7 @@
 	use_stock_cost = 0.10
 	preloaded_reagents = list("glue" = 200, "plasticide" = 50) //A bucket
 	max_stock = 100
+	price_tag = 1000 // Mythical
 
 /obj/item/tool/tape_roll/bonegel //Five stacks is too little for how often bones break. Tape-based stock system works just as fine.
 	name = "bone gel"
@@ -77,6 +82,7 @@
 	tool_qualities = list(QUALITY_BONE_GRAFTING = 30)
 	max_stock = 100
 	use_stock_cost = 1
+	price_tag = 20
 
 /obj/item/tool/tape_roll/bonegel/si
 	name = "bone super gel"
@@ -86,6 +92,7 @@
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 3)
 	tool_qualities = list(QUALITY_BONE_GRAFTING = 50)
 	preloaded_reagents = null
+	price_tag = 200
 
 /obj/item/tool/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)
 	if(istype(H) && has_quality(QUALITY_ADHESIVE))

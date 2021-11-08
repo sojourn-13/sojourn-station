@@ -30,7 +30,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/random/traps/wire_splicing/low_chance,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "ag" = (
@@ -50,7 +50,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/random/traps/wire_splicing/low_chance,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "ah" = (
@@ -99,11 +99,6 @@
 "av" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
-"aw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "ax" = (
 /turf/simulated/wall,
@@ -168,7 +163,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/random/traps/wire_splicing/low_chance,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "aI" = (
@@ -1013,9 +1008,9 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dj" = (
-/mob/living/simple_animal/frog,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
+/mob/living/simple_animal/frog,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dk" = (
@@ -1039,11 +1034,11 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/mountainsolars)
 "dp" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
 /mob/living/simple_animal/crab{
 	faction = "pond"
 	},
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dq" = (
@@ -1076,9 +1071,9 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "dx" = (
-/mob/living/simple_animal/goose,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
+/mob/living/simple_animal/goose,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dy" = (
@@ -1367,6 +1362,10 @@
 "iD" = (
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm/two)
+"iH" = (
+/obj/random/traps/wire_splicing/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
 "iJ" = (
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/small/grassa2,
@@ -1535,6 +1534,9 @@
 "mI" = (
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/mountainsolars)
+"mR" = (
+/turf/unsimulated/mineral,
+/area/nadezhda/engineering/dorm/three)
 "nc" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -1641,12 +1643,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/engineering/dorm/two)
-"ot" = (
-/obj/machinery/door/airlock{
-	name = "Bathroom"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/mountainsolars)
 "ou" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood,
@@ -1659,16 +1655,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/engineering/dorm/three)
-"oD" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/outside/mountainsolars)
 "oG" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating,
@@ -1728,6 +1714,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
+"pw" = (
+/turf/unsimulated/mineral,
+/area/nadezhda/engineering/dorm/two)
 "pS" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/cafe,
@@ -2293,13 +2282,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
-"BR" = (
-/obj/machinery/washing_machine,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/mountainsolars)
 "BY" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
@@ -2367,19 +2349,6 @@
 "CE" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/fixed/hydrotile,
-/area/nadezhda/outside/mountainsolars)
-"CL" = (
-/obj/machinery/power/apc/hyper{
-	dir = 1;
-	environ = 1;
-	equipment = 1;
-	pixel_y = 26
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/steel,
 /area/nadezhda/outside/mountainsolars)
 "CZ" = (
 /obj/item/modular_computer/console/preset/engineering,
@@ -2488,6 +2457,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/engineering/dorm/three)
+"EF" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/mountainsolars)
 "EI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2653,18 +2626,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"Iq" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/structure/mirror{
-	pixel_x = -28
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/mountainsolars)
 "IT" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/carpet/oracarpet,
@@ -2813,30 +2774,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
-"LN" = (
-/obj/structure/curtain/open,
-/obj/machinery/shower{
-	dir = 4;
-	icon_state = "shower"
-	},
-/obj/effect/floor_decal/corner_techfloor_grid,
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
-	},
-/obj/machinery/door/window/southleft{
-	name = "shower door"
-	},
-/obj/effect/floor_decal/spline/fancy,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/mountainsolars)
 "LP" = (
 /obj/machinery/light,
 /obj/structure/table/standard,
@@ -2948,15 +2885,6 @@
 	},
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm/four)
-"NZ" = (
-/obj/structure/toilet,
-/obj/machinery/vending/wallmed{
-	name = "Emergency NanoMed";
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/mountainsolars)
 "Oa" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -28
@@ -3088,9 +3016,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral,
 /area/nadezhda/outside/mountainsolars)
-"Qu" = (
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/mountainsolars)
 "QD" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3118,11 +3043,6 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm/four)
 "QL" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -3271,6 +3191,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/tool/advanced/low_chance,
 /turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"TD" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/unsimulated/mineral,
 /area/nadezhda/outside/mountainsolars)
 "TE" = (
 /obj/structure/cable{
@@ -3511,6 +3435,25 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
+"YM" = (
+/obj/machinery/power/apc/hyper{
+	dir = 1;
+	environ = 1;
+	equipment = 1;
+	pixel_y = 26
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/outside/mountainsolars)
 "YR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8403,39 +8346,39 @@ ac
 ac
 av
 ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
+iH
 ad
 ac
 ac
@@ -8506,17 +8449,17 @@ ac
 av
 bN
 av
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ac
 ac
 ac
@@ -8608,16 +8551,16 @@ ac
 al
 av
 av
-al
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+aa
+ax
+ax
+ax
+ax
+ax
+ax
+ax
+ax
+ax
 ak
 ak
 ak
@@ -8710,8 +8653,8 @@ ac
 al
 av
 bL
-aS
-aj
+EF
+ax
 aD
 Wc
 xH
@@ -8812,8 +8755,8 @@ ac
 ac
 av
 av
-bT
-aj
+aa
+ax
 aJ
 KF
 pS
@@ -8914,8 +8857,8 @@ ac
 al
 al
 al
-al
-aj
+aa
+ax
 aQ
 KF
 ul
@@ -9016,8 +8959,8 @@ al
 al
 al
 aS
-av
-aj
+TD
+ax
 ax
 Bu
 ax
@@ -9118,8 +9061,8 @@ al
 al
 al
 aS
-al
-aj
+aa
+ax
 bv
 Ye
 Tf
@@ -9220,8 +9163,8 @@ ac
 al
 al
 al
-al
-aj
+aa
+ax
 bv
 Ye
 Ye
@@ -9322,8 +9265,8 @@ ac
 al
 al
 al
-aS
-aj
+EF
+ax
 by
 Ye
 Lk
@@ -9424,8 +9367,8 @@ ac
 ac
 aS
 aS
-al
-aj
+aa
+ax
 bA
 bX
 Ye
@@ -9526,8 +9469,8 @@ ac
 ac
 aS
 aS
-al
-aj
+aa
+ax
 bK
 Ye
 JI
@@ -9628,8 +9571,8 @@ ab
 ac
 ac
 ac
-ac
-aj
+aa
+ax
 ax
 ax
 ax
@@ -9730,8 +9673,8 @@ ab
 ac
 ac
 ac
-ac
-aj
+aa
+ay
 bW
 Nn
 OB
@@ -9832,8 +9775,8 @@ ab
 ab
 ab
 ac
-ac
-aj
+aa
+ay
 cf
 bY
 rp
@@ -9934,8 +9877,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+ay
 cs
 bY
 eg
@@ -10036,8 +9979,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+ay
 ay
 nV
 ay
@@ -10138,8 +10081,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+ay
 cv
 fs
 lU
@@ -10240,8 +10183,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+ay
 cv
 fs
 fs
@@ -10342,8 +10285,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+ay
 cx
 fs
 gd
@@ -10444,8 +10387,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+ay
 cC
 vO
 fs
@@ -10546,8 +10489,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+ay
 cG
 fs
 qV
@@ -10648,17 +10591,17 @@ ab
 ab
 ab
 ab
-ab
+aa
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
 aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-jv
+YM
 cg
 aA
 aA
@@ -10750,16 +10693,16 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+pw
+ay
+ay
+ay
+ay
+ay
+ay
+ay
 aj
-LN
-Iq
-aj
-CL
-HT
-HT
-oD
 QL
 HT
 wU
@@ -10852,16 +10795,16 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+pw
+ay
+ay
+ay
+ay
+ay
+ay
+ay
 aj
-BR
-Qu
-ot
-cg
-cz
-cg
-cg
 Nt
 nl
 aB
@@ -10954,16 +10897,16 @@ ab
 ab
 ab
 ab
-ab
-ab
+aa
+mR
+az
+az
+az
+az
+az
+az
+az
 aj
-NZ
-Qu
-aj
-aw
-ca
-cg
-au
 Nt
 cz
 JX
@@ -11056,15 +10999,15 @@ ab
 ab
 ab
 ab
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+aa
+az
+az
+az
+az
+az
+az
+az
+az
 aj
 pq
 cg
@@ -11158,8 +11101,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+az
 Ch
 Sw
 qc
@@ -11260,8 +11203,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+az
 mo
 si
 mf
@@ -11362,8 +11305,8 @@ ab
 ab
 ab
 ab
-ab
-aj
+aa
+az
 pj
 si
 Vv
@@ -11464,8 +11407,8 @@ aa
 ab
 ab
 ab
-ab
-aj
+aa
+az
 az
 sw
 az
@@ -11566,8 +11509,8 @@ aa
 ab
 ab
 ab
-ab
-aj
+aa
+az
 CB
 rE
 Fe
@@ -11668,8 +11611,8 @@ aa
 ab
 ab
 ab
-ab
-aj
+aa
+az
 CB
 rE
 rE
@@ -11770,8 +11713,8 @@ aa
 ab
 ab
 ab
-ab
-aj
+aa
+az
 Ey
 rE
 xX
@@ -11872,8 +11815,8 @@ aa
 ab
 ab
 ab
-ab
-aj
+aa
+az
 CZ
 xZ
 rE
@@ -11974,8 +11917,8 @@ aa
 ab
 ab
 ab
-ab
-aj
+aa
+az
 sN
 rE
 AA
@@ -12076,8 +12019,8 @@ aa
 ab
 ab
 ab
-ab
-aj
+aa
+az
 az
 az
 az
@@ -12178,8 +12121,8 @@ aa
 ab
 ab
 ab
-ab
-aj
+aa
+aC
 so
 wZ
 Ct
@@ -12281,7 +12224,7 @@ aa
 aa
 aa
 aa
-aj
+aC
 sx
 Qa
 mv
@@ -12383,7 +12326,7 @@ aa
 aa
 aa
 aa
-aj
+aC
 fk
 Qa
 yI
@@ -12485,7 +12428,7 @@ aa
 aa
 aa
 aa
-aj
+aC
 aC
 Ww
 aC
@@ -12587,7 +12530,7 @@ aa
 aa
 aa
 aa
-aj
+aC
 Hl
 KT
 Oa
@@ -12689,7 +12632,7 @@ aa
 aa
 aa
 aa
-aj
+aC
 Hl
 KT
 KT
@@ -12791,7 +12734,7 @@ aa
 aa
 aa
 aa
-aj
+aC
 in
 KT
 DL
@@ -12893,7 +12836,7 @@ aa
 aa
 aa
 aa
-aj
+aC
 qa
 lu
 KT
@@ -12995,7 +12938,7 @@ aa
 aa
 aa
 aa
-aj
+aC
 Ce
 KT
 Yd
@@ -13097,15 +13040,15 @@ aa
 aa
 aa
 aa
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+aC
+aC
+aC
+aC
+aC
+aC
+aC
+aC
+aC
 aj
 aj
 bi

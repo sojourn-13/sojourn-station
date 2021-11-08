@@ -1686,12 +1686,12 @@
 "gy" = (
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
-"gz" = (
-/obj/random/flora/small_jungle_tree,
-/turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/forest/beast_cave_light)
 "gA" = (
 /obj/structure/flora/big/bush1,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/beast_cave_light)
+"gB" = (
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/beast_cave_light)
 "gC" = (
@@ -2197,10 +2197,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/forest/beast_cave_light)
-"iv" = (
-/obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
 "iw" = (
 /obj/structure/flora/small/bushb2,
@@ -5831,12 +5827,6 @@
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
-"vu" = (
-/obj/effect/overlay/water/top,
-/obj/effect/overlay/water,
-/obj/random/flora/jungle_tree,
-/turf/simulated/floor/beach/water/swamp,
-/area/nadezhda/outside/forest/beast_cave_light)
 "vx" = (
 /obj/random/mob/croaker/low_chance,
 /obj/effect/overlay/water/top,
@@ -5989,12 +5979,6 @@
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"xu" = (
-/obj/effect/overlay/water,
-/obj/random/flora/jungle_tree,
-/obj/effect/overlay/water/top,
-/turf/simulated/floor/beach/water/swamp,
-/area/nadezhda/outside/forest/beast_cave_light)
 "xx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk/nondense,
@@ -6389,16 +6373,17 @@
 /obj/random/flora/small_jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Ct" = (
+/obj/effect/overlay/water/top,
+/obj/effect/overlay/water,
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Cx" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
-"CD" = (
-/obj/random/flora/jungle_tree,
-/mob/living/simple_animal/hostile/snake,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
 "CE" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/overlay/water/top,
@@ -6521,6 +6506,11 @@
 /obj/structure/invislightsmall,
 /turf/simulated/mineral/random/rogue,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Ey" = (
+/obj/random/flora/jungle_tree,
+/mob/living/simple_animal/hostile/snake,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "ED" = (
 /obj/effect/overlay/water,
 /obj/random/flora/small_jungle_tree,
@@ -7168,6 +7158,10 @@
 "LU" = (
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"LY" = (
+/obj/random/flora/jungle_tree,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Mb" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/decal/cleanable/dirt,
@@ -7642,6 +7636,12 @@
 /obj/effect/decal/mecha_wreckage/ripley/deathripley,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"QZ" = (
+/obj/effect/overlay/water,
+/obj/random/flora/jungle_tree,
+/obj/effect/overlay/water/top,
+/turf/simulated/floor/beach/water/swamp,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Rf" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/dirt,
@@ -11139,7 +11139,7 @@ TS
 PY
 PY
 PY
-iv
+LY
 dS
 dS
 dS
@@ -11802,7 +11802,7 @@ PY
 dS
 dS
 rI
-iv
+LY
 Qk
 PY
 PY
@@ -12035,7 +12035,7 @@ PY
 dS
 dS
 dS
-iv
+LY
 dS
 dS
 dS
@@ -12225,7 +12225,7 @@ dS
 dS
 dS
 dS
-iv
+LY
 mS
 DO
 Kz
@@ -12456,7 +12456,7 @@ dS
 dS
 dS
 dS
-iv
+LY
 Kh
 wE
 Wj
@@ -12918,7 +12918,7 @@ PY
 PY
 PY
 Mx
-iv
+LY
 dS
 dS
 dS
@@ -13188,7 +13188,7 @@ dS
 dS
 es
 et
-iv
+LY
 hk
 et
 et
@@ -13733,11 +13733,11 @@ dS
 xW
 gm
 gy
-gz
+gB
 dS
-gz
+gB
 gN
-gz
+gB
 dS
 dS
 dS
@@ -13800,7 +13800,7 @@ PY
 PY
 PY
 PY
-iv
+LY
 dS
 dS
 dS
@@ -13952,9 +13952,9 @@ dS
 Pi
 JX
 gC
-gz
+gB
 dS
-gz
+gB
 gm
 gy
 gy
@@ -14173,7 +14173,7 @@ gJ
 gy
 gA
 gy
-gz
+gB
 gy
 gy
 gy
@@ -14182,7 +14182,7 @@ gy
 il
 dS
 dS
-gz
+gB
 gy
 UZ
 jF
@@ -14393,7 +14393,7 @@ gy
 gX
 gP
 gy
-gz
+gB
 gO
 gJ
 gy
@@ -14622,7 +14622,7 @@ gy
 gy
 dS
 dS
-gz
+gB
 Sy
 xW
 gy
@@ -14840,7 +14840,7 @@ gm
 gP
 gy
 gJ
-gz
+gB
 dS
 af
 AM
@@ -15060,7 +15060,7 @@ gO
 gP
 gA
 gy
-gz
+gB
 dS
 af
 iW
@@ -15089,7 +15089,7 @@ mD
 iW
 iJ
 Gv
-gz
+gB
 dS
 dS
 dS
@@ -15500,7 +15500,7 @@ gP
 gP
 gD
 gy
-gz
+gB
 dS
 iK
 iY
@@ -15606,7 +15606,7 @@ ej
 dS
 pC
 xW
-xu
+QZ
 dS
 dS
 hk
@@ -15754,7 +15754,7 @@ lw
 af
 nh
 af
-gz
+gB
 dS
 dS
 dS
@@ -15800,7 +15800,7 @@ dS
 pC
 Ox
 QA
-vu
+Ct
 QA
 Pn
 ej
@@ -15827,7 +15827,7 @@ Pn
 gy
 gy
 xW
-xu
+QZ
 dS
 dS
 dS
@@ -15979,7 +15979,7 @@ gy
 dS
 dS
 dS
-iv
+LY
 PY
 PY
 PY
@@ -16195,7 +16195,7 @@ af
 uD
 Xt
 KS
-gz
+gB
 dS
 dS
 dS
@@ -17038,7 +17038,7 @@ gy
 gD
 gy
 gO
-gz
+gB
 dS
 Pi
 OM
@@ -17081,7 +17081,7 @@ dS
 dS
 dS
 dS
-iv
+LY
 Af
 PY
 PY
@@ -17148,7 +17148,7 @@ DX
 pR
 pR
 KC
-vu
+Ct
 dS
 dS
 dS
@@ -17253,11 +17253,11 @@ gJ
 gy
 gy
 gy
-gz
+gB
 gy
 gy
 gy
-gz
+gB
 dS
 dS
 xW
@@ -17368,7 +17368,7 @@ cC
 cC
 pR
 pR
-vu
+Ct
 dS
 dS
 dS
@@ -17513,7 +17513,7 @@ xW
 gN
 af
 gy
-gz
+gB
 uD
 gN
 Pi
@@ -17744,7 +17744,7 @@ dS
 dS
 dS
 dS
-iv
+LY
 Kz
 Qk
 Kz
@@ -17947,7 +17947,7 @@ dS
 dS
 dS
 dS
-gz
+gB
 gy
 zu
 DX
@@ -18137,7 +18137,7 @@ gy
 gy
 gy
 gy
-gz
+gB
 dS
 dS
 dS
@@ -18195,7 +18195,7 @@ SI
 et
 PY
 xa
-iv
+LY
 dS
 dS
 dr
@@ -18356,7 +18356,7 @@ yA
 xW
 gP
 gy
-gz
+gB
 dS
 dS
 dS
@@ -18406,7 +18406,7 @@ dS
 dS
 dS
 dS
-iv
+LY
 PY
 et
 Zh
@@ -18426,7 +18426,7 @@ qx
 dr
 dS
 dS
-xu
+QZ
 Qj
 Ka
 PU
@@ -18646,7 +18646,7 @@ ef
 ef
 dS
 dS
-xu
+QZ
 PU
 Ka
 PU
@@ -18796,7 +18796,7 @@ gy
 gy
 gy
 gy
-gz
+gB
 dS
 dS
 dS
@@ -19055,7 +19055,7 @@ kj
 jk
 bt
 gN
-gz
+gB
 dS
 dS
 dS
@@ -19266,7 +19266,7 @@ dS
 dS
 dS
 dS
-gz
+gB
 So
 iU
 jR
@@ -19457,7 +19457,7 @@ gy
 gy
 gy
 gy
-gz
+gB
 dS
 fu
 eE
@@ -20155,7 +20155,7 @@ gm
 gm
 gy
 gy
-gz
+gB
 dS
 dS
 dS
@@ -20328,7 +20328,7 @@ eq
 xW
 xW
 xW
-gz
+gB
 gJ
 gR
 gy
@@ -20802,7 +20802,7 @@ kF
 kF
 dS
 dS
-gz
+gB
 Mv
 XB
 xS
@@ -20996,7 +20996,7 @@ yA
 gy
 gD
 gy
-gz
+gB
 dS
 dS
 dS
@@ -21215,7 +21215,7 @@ gy
 gP
 gP
 gy
-gz
+gB
 dS
 dS
 dS
@@ -21651,7 +21651,7 @@ ep
 xW
 xW
 gO
-gz
+gB
 gy
 gy
 gJ
@@ -21726,7 +21726,7 @@ iw
 iw
 pz
 dS
-vu
+Ct
 Qj
 Qj
 Qj
@@ -21876,11 +21876,11 @@ gD
 gy
 gy
 gy
-gz
+gB
 dS
 dS
 dS
-iv
+LY
 Ju
 jG
 et
@@ -22095,12 +22095,12 @@ gy
 gm
 gP
 gC
-gz
+gB
 dS
 dS
 dS
 dS
-iv
+LY
 iE
 jG
 et
@@ -22449,7 +22449,7 @@ et
 iw
 iw
 et
-iv
+LY
 dS
 dS
 dS
@@ -22540,7 +22540,7 @@ dS
 dS
 dS
 dS
-iv
+LY
 iE
 jG
 et
@@ -22750,7 +22750,7 @@ ej
 KC
 gy
 gy
-gz
+gB
 gP
 gy
 gJ
@@ -22980,7 +22980,7 @@ dS
 dS
 dS
 dS
-iv
+LY
 iE
 bt
 et
@@ -23420,7 +23420,7 @@ gy
 dS
 dS
 dS
-iv
+LY
 jb
 jG
 et
@@ -23544,7 +23544,7 @@ aa
 dS
 dS
 dS
-iv
+LY
 hk
 dS
 dS
@@ -23635,7 +23635,7 @@ xW
 xW
 gm
 gL
-gz
+gB
 dS
 dS
 dS
@@ -23855,7 +23855,7 @@ gA
 xW
 gy
 gy
-gz
+gB
 dS
 dS
 dS
@@ -23939,7 +23939,7 @@ dS
 dS
 xW
 xW
-vu
+Ct
 gy
 pR
 cC
@@ -24295,7 +24295,7 @@ gP
 gy
 gm
 gy
-gz
+gB
 dS
 dS
 dS
@@ -24957,10 +24957,10 @@ gy
 gm
 gy
 gy
-gz
+gB
 gy
 gO
-gz
+gB
 gy
 gy
 el
@@ -25832,8 +25832,8 @@ xW
 gm
 gy
 gm
-gz
-gz
+gB
+gB
 hB
 gP
 gy
@@ -26048,7 +26048,7 @@ eq
 eh
 eh
 xW
-gz
+gB
 gy
 gy
 hi
@@ -26064,7 +26064,7 @@ xW
 xW
 xW
 xW
-gz
+gB
 dS
 dS
 dS
@@ -26939,7 +26939,7 @@ gy
 gy
 gy
 gy
-gz
+gB
 gy
 ha
 gy
@@ -27369,7 +27369,7 @@ dS
 em
 xW
 gA
-gz
+gB
 gy
 gy
 gy
@@ -27810,7 +27810,7 @@ ey
 dS
 dS
 dS
-gz
+gB
 gC
 gT
 gy
@@ -28253,11 +28253,11 @@ es
 dS
 dS
 dS
-gz
+gB
 ha
 gy
 gy
-gz
+gB
 gy
 ha
 gy
@@ -28693,7 +28693,7 @@ et
 eE
 hl
 dS
-gz
+gB
 hD
 hR
 dS
@@ -30888,7 +30888,7 @@ dS
 dS
 et
 et
-CD
+Ey
 et
 et
 et
@@ -31771,7 +31771,7 @@ dS
 dS
 dS
 dS
-CD
+Ey
 dS
 rQ
 dS

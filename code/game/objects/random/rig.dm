@@ -97,11 +97,11 @@
 	/obj/item/rig_module/grenade_launcher = 0.5, //Comes preloaded with smoke, flashbang and EMP
 	/obj/item/rig_module/mounted = 0.1, //This is mounted lasercannon, dangerous
 	/obj/item/rig_module/mounted/egun = 0.2, //Lethal laser
-	/obj/item/rig_module/mounted/energy_blade = 0.1,
+	/obj/item/rig_module/held/energy_blade = 0.1,
 	/obj/item/rig_module/fabricator = 0.1,
 	/obj/item/rig_module/fabricator/energy_net = 0.2,
 	/obj/item/rig_module/self_destruct = 1,
-
+	/obj/item/rig_module/held/shield = 0.5,
 	/obj/item/rig_module/teleporter = 0.5,
 
 	//Utility
@@ -153,7 +153,7 @@
 	/obj/item/rig_module/grenade_launcher = 1, //Comes preloaded with smoke, flashbang and EMP
 	/obj/item/rig_module/mounted = 1, //This is mounted lasercannon, dangerous
 	/obj/item/rig_module/mounted/egun = 1, //Lethal laser
-	/obj/item/rig_module/mounted/energy_blade = 1,
+	/obj/item/rig_module/held/energy_blade = 1,
 	/obj/item/rig_module/fabricator = 1,
 	/obj/item/rig_module/fabricator/energy_net = 1,
 	/obj/item/rig_module/self_destruct = 1,
@@ -164,7 +164,7 @@
 	/obj/item/rig_module/chem_dispenser/combat = 1,
 	/obj/item/rig_module/chem_dispenser/injector = 1, //Like normal but can be used on other people as well as yourself
 	/obj/item/rig_module/voice = 1,
-
+	/obj/item/rig_module/held/shield = 1,
 	//Vision
 	/obj/item/rig_module/vision/multi = 0.1, //Every vision mod in one, very powerful
 	/obj/item/rig_module/vision/thermal = 1, //Thermal is very strong

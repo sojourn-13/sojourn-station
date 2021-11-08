@@ -656,16 +656,31 @@
 	var/tempLoc = get_turf(A)
 
 	bumped = TRUE
+
+	if(iscarbon(A))
+		var/mob/living/carbon/C = A
+		var/obj/item/shield/S
+		for(S in get_both_hands(C))
+			if(S && S.block_bullet(C, src, def_zone))
+				on_hit(S,def_zone)
+				qdel(src)
+				return TRUE
+			break //Prevents shield dual-wielding
+		S = C.get_equipped_item(slot_back)
+		if(S && S.block_bullet(C, src, def_zone))
+			on_hit(S,def_zone)
+			qdel(src)
+			return TRUE
+
 	if(ismob(A))
 		var/mob/M = A
-		if(isliving(A) && A.stat != DEAD) //Dead people are limp and unable to be moved to block bullets to stop endless monkey laser proof shields
+		if(isliving(A))
 			//if they have a neck grab on someone, that person gets hit instead
 			var/obj/item/grab/G = locate() in M
-			if(G && G.state >= GRAB_NECK)
+			if(G && G.state >= GRAB_NECK && G.affecting.health >= 0) //Cant use dead or dieing bodies as a shield as they are limp
 				visible_message(SPAN_DANGER("\The [M] uses [G.affecting] as a shield!"))
 				if(Bump(G.affecting, TRUE))
 					return //If Bump() returns 0 (keep going) then we continue on to attack M.
-
 			passthrough = !attack_mob(M, distance)
 		else
 			passthrough = FALSE //so ghosts don't stop bullets

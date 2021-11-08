@@ -118,6 +118,8 @@
 		/datum/design/autolathe/gun/vintorez,
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/gun/ak47_saiga,
+		/datum/design/autolathe/gun/maxim,
 		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/gun/reclaimer,
 		/datum/design/autolathe/ammo/pistol,				//makarov ammo
@@ -138,6 +140,9 @@
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
 		/datum/design/autolathe/ammo/pistol_35_drum/hv,
 		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/sbaw_slug,						//saiga ammo
+		/datum/design/autolathe/ammo/sbaw_pellet,
+		/datum/design/autolathe/ammo/maxim,							//maxim ammo
 		/datum/design/autolathe/circuit/autolathe_excelsior,		//circuits
 		/datum/design/autolathe/circuit/shieldgen_excelsior,
 		/datum/design/autolathe/circuit/reconstructor_excelsior,
@@ -152,7 +157,7 @@
 		/datum/design/autolathe/part/igniter,						//regular parts
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_prox,
-		/datum/design/research/item/part/basic_capacitor,
+		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/cell/large/excelsior,				//power cells
 		/datum/design/autolathe/cell/medium/excelsior,
 		/datum/design/autolathe/cell/small/excelsior,
@@ -166,6 +171,7 @@
 		/datum/design/autolathe/device/propaganda_chip,
 		/datum/design/autolathe/clothing/excelsior_armor,
 		/datum/design/autolathe/device/excelbaton,
+		/datum/design/autolathe/container/ammocan_excel,
 		/datum/design/autolathe/excelsior/laser,
 		/datum/design/autolathe/excelsior/matter,
 		/datum/design/autolathe/excelsior/module,
@@ -186,6 +192,8 @@
 		/datum/design/autolathe/gun/vintorez,
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/gun/ak47,
+		/datum/design/autolathe/gun/ak47_saiga,
+		/datum/design/autolathe/gun/maxim,
 		/datum/design/autolathe/gun/ppsh,
 		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
 		/datum/design/autolathe/ammo/hpistol_rubber,
@@ -205,8 +213,12 @@
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
 		/datum/design/autolathe/ammo/pistol_35_drum/hv,
 		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/sbaw_slug,						//saiga ammo
+		/datum/design/autolathe/ammo/sbaw_pellet,
+		/datum/design/autolathe/ammo/maxim, 						//maxim
 		/datum/design/autolathe/sec/silencer,						//misc
 		/datum/design/autolathe/clothing/excelsior_armor,
+		/datum/design/autolathe/container/ammocan_excel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/ex_parts
@@ -222,6 +234,7 @@
 		/datum/design/autolathe/circuit/autolathe_disk_cloner,
 		/datum/design/autolathe/circuit/recharger,
 		/datum/design/autolathe/device/propaganda_chip,
+		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/part/igniter,//regular parts
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_prox,
@@ -257,7 +270,8 @@
 	designs = list(
 		/datum/design/autolathe/gun/drozd,
 		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_rubber
+		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/container/ammocan_excel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_makarov
@@ -271,6 +285,7 @@
 		/datum/design/autolathe/gun/makarov,
 		/datum/design/autolathe/ammo/hpistol,				//makarov ammo
 		/datum/design/autolathe/ammo/hpistol_rubber,
+		/datum/design/autolathe/container/ammocan_excel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez
@@ -284,6 +299,7 @@
 		/datum/design/autolathe/gun/vintorez,
 		/datum/design/autolathe/ammo/rifle,
 		/datum/design/autolathe/ammo/lrifle_ammobox,
+		/datum/design/autolathe/container/ammocan_excel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_boltgun
@@ -297,6 +313,7 @@
 		/datum/design/autolathe/gun/boltgun,
 		/datum/design/autolathe/ammo/sl_rifle,
 		/datum/design/autolathe/ammo/rifle_ammobox_small,
+		/datum/design/autolathe/container/ammocan_excel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak
@@ -311,6 +328,7 @@
 		/datum/design/autolathe/ammo/rifle,						//AK ammo
 		/datum/design/autolathe/ammo/rifle_rubber,
 		/datum/design/autolathe/ammo/rifle_ammobox,
+		/datum/design/autolathe/container/ammocan_excel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer
@@ -338,4 +356,5 @@
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
 		/datum/design/autolathe/ammo/pistol_35_drum/hv,
 		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/container/ammocan_excel
 		)

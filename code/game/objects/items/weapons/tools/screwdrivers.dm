@@ -9,6 +9,7 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1)
 	attack_verb = list("stabbed")
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 35, QUALITY_BONE_SETTING = 10)
+	price_tag = 9
 
 /obj/item/tool/screwdriver/bs
 	name = "bluespace screwdriver"
@@ -22,6 +23,7 @@
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 15)
 	degradation = 2
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+	price_tag = 2
 
 /obj/item/tool/screwdriver/electric
 	name = "electric screwdriver"
@@ -34,6 +36,7 @@
 	max_upgrades = 4
 	use_power_cost = 0.18
 	suitable_cell = /obj/item/cell/small
+	price_tag = 240
 
 /obj/item/tool/screwdriver/combi_driver
 	name = "combination drill"
@@ -48,6 +51,7 @@
 	use_power_cost = 0.54
 	suitable_cell = /obj/item/cell/small
 	max_upgrades = 4
+	price_tag = 800 // Highly prized
 
 /obj/item/tool/screwdriver/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(!istype(M) || user.a_intent == "help")
@@ -71,3 +75,4 @@
 	use_power_cost = 0.3
 	suitable_cell = /obj/item/cell/small
 	max_upgrades = 2
+	price_tag = 1800 // Very prized.

@@ -6,7 +6,7 @@
 /obj/random/gun_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/mk58 = 1,\
 				/obj/item/gun/projectile/revolver/lemant = 0.5,\
-				/obj/item/gun/projectile/revolver/rex10 = 2.5,\
+				/obj/item/gun/projectile/revolver/rev10/rex10 = 2.5,\
 				/obj/item/gun/projectile/mk58/wood = 1,\
 				/obj/item/gun/projectile/revolver/detective = 3,\
 				/obj/item/gun/energy/shrapnel = 4,\
@@ -44,18 +44,20 @@
 	spawn_nothing_percentage = 80
 
 
-
-
 /obj/random/gun_normal
 	name = "random normal gun"
 	icon_state = "gun-green"
 	spawn_nothing_percentage = 10
 
+/obj/random/gun_normal/always_spawn
+	spawn_nothing_percentage = 0
+
 /obj/random/gun_normal/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/lamia = 0.1,\
 				/obj/item/gun/projectile/automatic/texan = 0.5,\
 				/obj/item/gun/projectile/lamia/dark = 0.1,\
-				/obj/item/gun/projectile/revolver/rev10 = 0.5,\
+				/obj/item/gun/projectile/revolver/rev10/rex10 = 0.5,\
+				/obj/item/gun/projectile/revolver/rev10/rex10/showdown = 0.1,\
 				//obj/item/gun/projectile/lamia/dark/sf = 0.1,
 				/obj/item/gun/projectile/avasarala = 0.5,\
 				/obj/item/gun/projectile/ladon = 0.5,\
@@ -289,6 +291,7 @@
 				/obj/item/gun_upgrade/trigger/honker = 0.1,
 				/obj/item/gun_upgrade/barrel/toxin_coater = 1,
 				/obj/item/gun_upgrade/barrel/gauss = 1,
+				/obj/item/gun_upgrade/mechanism/gun_rail = 1,
 				/obj/item/gun_upgrade/trigger/boom = 0.5,
 				/obj/item/gun_upgrade/scope/watchman = 0.7,
 				/obj/item/gun_upgrade/scope/killer = 0.7,

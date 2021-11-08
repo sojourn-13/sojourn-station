@@ -14,7 +14,7 @@
 
 
 /mob/living/carbon/superior_animal/roach/pick_armor()
-	switch (pickweight(list("basic" = 5, "Biosilicified" = 3, "Lambertian" = 1, "Insensitive" = 2)))
+	switch (pickweight(list("basic" = 15, "Biosilicified" = 5, "Lambertian" = 3, "Insensitive" = 4)))
 
 		if("basic") //No changes, we are base level
 			return

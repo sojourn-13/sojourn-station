@@ -50,7 +50,7 @@
 	icon_state = "hostilemob-black"
 	alpha = 128
 
-/obj/random/mob/spiders/item_to_spawn()
+/obj/random/mob/spiders/spider_ling/item_to_spawn()
 	return pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 35,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\

@@ -12,6 +12,7 @@
 	sharp = TRUE
 	edge = TRUE
 	tool_qualities = list(QUALITY_SAWING = 35, QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 20)
+	price_tag = 20
 	embed_mult = 1 //Serrated blades catch on bone more easily
 
 /obj/item/tool/saw/bs
@@ -29,6 +30,7 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 2)
 	max_upgrades = 2
 	workspeed = 1.2
+	price_tag = 500 //Still just a saw.
 
 /obj/item/tool/saw/improvised
 	name = "choppa"
@@ -38,6 +40,7 @@
 	tool_qualities = list(QUALITY_SAWING = 15, QUALITY_CUTTING = 10, QUALITY_WIRE_CUTTING = 10)
 	degradation = 1
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+	price_tag = 7
 
 /obj/item/tool/saw/circular //tier 3
 	name = "circular saw"
@@ -49,6 +52,7 @@
 	armor_penetration = ARMOR_PEN_MODERATE
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 45, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 30)
+	price_tag = 240
 
 	use_power_cost = 0.45
 	suitable_cell = /obj/item/cell/small
@@ -63,6 +67,7 @@
 	use_power_cost = 0.05
 	degradation = 2.65
 	suitable_cell = /obj/item/cell/small
+	price_tag = 290
 
 /obj/item/tool/saw/circular/advanced
 	name = "advanced circular saw"
@@ -74,6 +79,7 @@
 	degradation = 0.7
 	use_power_cost = 0.29
 	max_upgrades = 4
+	price_tag = 450
 
 /obj/item/tool/saw/chain //tier 4, focusing on damage, fuel variant
 	name = "chainsaw"
@@ -89,6 +95,7 @@
 	max_upgrades = 3
 	use_fuel_cost = 0.1
 	max_fuel = 80
+	price_tag = 550
 
 /obj/item/tool/saw/hyper //tier 4, focusing on damage, cell variant
 	name = "TM hypersaw"
@@ -105,3 +112,4 @@
 	degradation = 0.7
 	use_power_cost = 1
 	suitable_cell = /obj/item/cell/medium
+	price_tag = 720

@@ -358,7 +358,7 @@
 	add_fingerprint(user)
 	climbers |= user
 
-	var/delay = (issmall(user) ? 20 : 34)
+	var/delay = (issmall(user) ? 20 : 34) * user.mod_climb_delay //basiclly this will let you clime things insainly fast when you have leap perk normal if you dont
 	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
 	if(!do_after(user, duration))
 		climbers -= user

@@ -15,7 +15,8 @@
 			else
 				walk_to(src, patient, 1, move_to_delay)
 		else
-			for(var/mob/living/carbon/human/H in view(7)) // Time to find a patient!
-				if(valid_healing_target(H))
-					patient = H
-					break
+			for(var/mob/friendtest in view(7,src)) // Time to find a patient!
+				if(valid_healing_target(friendtest))
+					if(friendtest in friends)
+						patient = friendtest
+						return

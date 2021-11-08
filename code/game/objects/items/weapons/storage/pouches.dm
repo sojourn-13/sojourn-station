@@ -232,6 +232,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
+		/obj/item/tool/baton,
 		/obj/item/device/lighting/glowstick,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/ammo_casing/rocket,
@@ -346,6 +347,7 @@
 
 	can_hold = list(
 		/obj/item/melee,
+		/obj/item/tool/baton,
 		/obj/item/tool/crowbar,
 		/obj/item/hatton_magazine,
 		/obj/item/weldpack/canister,

@@ -74,6 +74,14 @@
 	origin_tech = list(TECH_BIO = 8)
 	matter = list(MATERIAL_BIOMATTER = 1)
 
+/obj/item/clothing/glasses/shades/night/bio_mycus
+	name = "fungal night vision membrane"
+	desc = "A special fungal membrane created by the mycus that allows them to see in the dark."
+	icon_state = "mycus_eye"
+	item_state = "mycus_eye"
+	origin_tech = list(TECH_BIO = 8)
+	matter = list(MATERIAL_BIOMATTER = 1)
+
 /obj/item/biogoop/thermal
 	name = "incomplete organic thermal implant"
 	matter = list(MATERIAL_BIOMATTER = 240)

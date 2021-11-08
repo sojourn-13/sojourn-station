@@ -12,13 +12,13 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		TECH_ENGINEERING = 300,
 		TECH_PLASMA = 600, //Harder to get in higher levels, Rnd gets 2-3-4
 		TECH_POWER = 350,
-		TECH_BLUESPACE = 1000,
+		TECH_BLUESPACE = 750,
 		TECH_BIO = 350,
-		TECH_COMBAT = 550,
+		TECH_COMBAT = 500,
 		TECH_MAGNET = 350,
 		TECH_DATA = 450,
-		TECH_ILLEGAL = 5000,
-	)
+		TECH_ILLEGAL = 3500,
+	) //Ideally rnd DA should get you most things with right items well harder to get items like end nodes would require disks you buy/get or doing subdepartments
 
 	// So we don't give points for researching non-artifact item
 	var/static/list/artifact_types = list(
@@ -264,7 +264,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			if(power > saved_power_level)
 				RD.files.experiments.saved_best_explosion = power
 
-			RD.files.research_points += calculated_research_points
+			RD.files.adjust_research_points(calculated_research_points)
 
 	if(calculated_research_points > 0)
 		autosay("Detected explosion with power level [power], received [calculated_research_points] research points", name ,"Science")

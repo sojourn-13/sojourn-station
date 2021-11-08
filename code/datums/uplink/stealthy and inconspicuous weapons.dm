@@ -35,11 +35,13 @@
 	item_cost = 2
 	path = /obj/item/gun_upgrade/mechanism/glass_widow
 	antag_roles = ROLES_UPLINK_BASE
-
+/*
+//Remove Lens from premisis -Hex
 /datum/uplink_item/item/stealthy_weapons/eye_banger
 	name = "\"Mortality\" explosive lenses"
 	item_cost = 5
 	path = /obj/item/clothing/glasses/attachable_lenses/explosive
+*/
 
 /datum/uplink_item/item/stealthy_weapons/boot_knife
 	name = "Boot Knife"

@@ -26,6 +26,7 @@
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
 		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
+	GLOB.ironhammer_faction_item_loss++
 	. = ..()
 
 /obj/item/biosyphon/Process()
@@ -72,6 +73,7 @@
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
 		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
+	GLOB.moebius_faction_item_loss++
 	..()
 
 /obj/item/device/von_krabin/attackby(obj/item/I, mob/user, params)
@@ -148,6 +150,7 @@
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
 		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
+	GLOB.moebius_faction_item_loss++
 	..()
 
 /obj/item/reagent_containers/enricher/attackby(obj/item/I, mob/living/user, params)
@@ -224,6 +227,7 @@
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
 		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
+	GLOB.technomancer_faction_item_loss++
 	..()
 
 /obj/item/device/techno_tribalism/attackby(obj/item/W, mob/user, params)
@@ -397,6 +401,7 @@
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
 		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
+	GLOB.guild_faction_item_loss++
 	..()
 
 /obj/item/maneki_neko/New()
@@ -468,6 +473,7 @@
 	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
 		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 	GLOB.all_faction_items -= src
+	GLOB.neotheology_faction_item_loss++
 	..()
 
 /obj/item/tool/sword/nt_sword/attackby(obj/item/I, mob/user, params)

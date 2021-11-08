@@ -133,6 +133,8 @@
 			bad_message = "\[IN [(available_in_days)] DAYS]"*/
 		else if(job.minimum_character_age && user.client && (user.client.prefs.age < job.minimum_character_age))
 			bad_message = "\[MINIMUM CHARACTER AGE: [job.minimum_character_age]]"
+		else if(user.client.prefs.species_form in job.disallow_species)
+			bad_message = "\[SPECIES DISALLOWED]"
 		/*else if(job.playtimerequired && user.client)
 			if(job.playtimerequired > user.client.prefs.playtime[job.department])
 				bad_message = "\[MINIMUM PLAYTIME: [job.playtimerequired] Minutes]"

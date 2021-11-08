@@ -24,9 +24,9 @@
 	filling_states = list(20,40,60,80,100)
 	volume = 9000
 
-/obj/structure/reagent_dispensers/bidon/singular
-	name = "trigger stasis B.I.D.O.N. canister"
-	desc = "An advanced B.I.D.O.N. canister with stasis function that can be timed to turned off and on."
+/obj/structure/reagent_dispensers/bidon/trigger
+	name = "trigger-stasis B.I.D.O.N. canister"
+	desc = "An advanced B.I.D.O.N. canister with stasis function that can be temporarily disabled with a multitool."
 	icon_state = "bidon_adv"
 	reagent_flags = TRANSPARENT | NO_REACT //Tho its not a subtype its meant to be
 	filling_states = list(20,40,60,80,100)
@@ -34,9 +34,16 @@
 	var/timer_till_mixing = 120
 	var/timing = FALSE
 
-/obj/structure/reagent_dispensers/bidon/singular/attackby(obj/item/I, mob/user)
-	if(istype(I,/obj/item/tool/multitool))
-		if(!timing)
+/obj/structure/reagent_dispensers/bidon/trigger/examine(mob/user)
+	..()
+	if(timing)
+		to_chat(user, SPAN_DANGER("[timer_till_mixing] seconds until stasis is disabled."))
+	else
+		to_chat(user, SPAN_NOTICE("[src]'s timer isn't activated."))
+
+/obj/structure/reagent_dispensers/bidon/trigger/attackby(obj/item/I, mob/user)
+	if(!timing)
+		if(I.use_tool(user, src, WORKTIME_INSTANT, QUALITY_PULSING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
 			to_chat(user, SPAN_NOTICE("You start the timer."))
 			timing = TRUE
 			ticktock()
@@ -45,13 +52,13 @@
 		. = ..()
 	update_icon()
 
-/obj/structure/reagent_dispensers/bidon/singular/proc/timer_end()
+/obj/structure/reagent_dispensers/bidon/trigger/proc/timer_end()
 	reagent_flags &= ~(NO_REACT)
 	spawn(10)
 	reagent_flags |= NO_REACT
 	reagents.process_reactions()
 
-/obj/structure/reagent_dispensers/bidon/singular/proc/ticktock()
+/obj/structure/reagent_dispensers/bidon/trigger/proc/ticktock()
 	if(timing && (timer_till_mixing > 0))
 		timer_till_mixing--
 		spawn(10)
@@ -131,6 +138,9 @@
 	if(lid)
 		var/mutable_appearance/lid_icon = mutable_appearance(icon, "[icon_state]_lid")
 		add_overlay(lid_icon)
+	if(anchored)
+		var/mutable_appearance/anchor_icon = mutable_appearance(icon, "bidon_anchored")
+		add_overlay(anchor_icon)
 	if(reagents.total_volume)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state][get_filling_state()]")
 		if(!istype(src,/obj/structure/reagent_dispensers/bidon/advanced))
@@ -155,3 +165,7 @@
 /obj/structure/reagent_dispensers/bidon/protein_can
 	starting_reagent = "protein"
 
+//Department starting protein to get the process off the ground
+/obj/structure/reagent_dispensers/bidon/protein_can/si
+	starting_reagent = "protein"
+	starting_volume = 1000

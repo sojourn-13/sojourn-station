@@ -15,9 +15,10 @@
 	var/list/allowed_devices = list(
 		/obj/item/cell,
 		/obj/item/tool, /obj/item/device/scanner,
-		/obj/item/gun/energy, /obj/item/melee/baton, /obj/item/modular_computer,
+		/obj/item/gun/energy, /obj/item/tool/baton, /obj/item/modular_computer,
 	)
 	var/portable = TRUE
+	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion and shadow items
 
 /obj/machinery/recharger/examine(user)
 	..()
@@ -182,6 +183,6 @@
 	name = "wall recharger"
 	desc = "A wall-mounted weapon charging dock."
 	icon_state = "wrecharger"
-	allowed_devices = list(/obj/item/gun/energy, /obj/item/melee/baton)
+	allowed_devices = list(/obj/item/gun/energy, /obj/item/tool/baton)
 	portable = FALSE
 	circuit = null

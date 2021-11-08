@@ -23,6 +23,8 @@
 	new /obj/item/taperoll/engineering(src)
 	new /obj/item/tool/tape_roll/flextape(src)
 	new /obj/item/storage/pouch/engineering_supply(src)
+	new /obj/item/storage/hcases/parts(src)
+	new /obj/item/storage/hcases/engi(src)
 	if(prob(50))
 		new /obj/item/tool_upgrade/augment/ai_tool(src)
 	else if(prob(50))
@@ -48,6 +50,8 @@
 	new /obj/item/tool/multitool(src)
 	new /obj/item/tool/multitool(src)
 	new /obj/item/tool/multitool(src)
+	new /obj/item/storage/hcases/parts(src)
+	new /obj/item/storage/hcases/engi(src)
 
 /obj/structure/closet/secure_closet/engineering_welding
 	name = "welding supplies"
@@ -68,6 +72,8 @@
 	new /obj/item/tool_upgrade/augment/fuel_tank(src)
 	new /obj/item/tool_upgrade/augment/fuel_tank(src)
 	new /obj/item/tool_upgrade/augment/fuel_tank(src)
+	new /obj/item/storage/hcases/parts(src)
+	new /obj/item/storage/hcases/engi(src)
 
 /obj/structure/closet/secure_closet/personal/engineering_personal
 	name = "guild adept's locker"
@@ -90,3 +96,5 @@
 	new /obj/item/clothing/suit/storage/hazardvest(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/glasses/powered/meson(src)
+	new /obj/item/storage/hcases/parts(src)
+	new /obj/item/storage/hcases/engi(src)

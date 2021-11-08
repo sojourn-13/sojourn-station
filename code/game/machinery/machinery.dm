@@ -121,6 +121,15 @@ Class Procs:
 	var/current_power_usage = 0 // How much power are we currently using, dont change by hand, change power_usage vars and then use set_power_use
 	var/area/current_power_area // What area are we powering currently
 
+	var/blue_ink_tk_blocker = FALSE
+
+/obj/machinery/attack_tk(mob/user)
+	if(blue_ink_tk_blocker)
+		to_chat(usr, SPAN_WARNING("\blue Your psionic power has been inhibited by a force."))
+		return
+	else
+		..()
+
 /obj/machinery/Initialize(mapload, d=0)
 	. = ..()
 	if(d)

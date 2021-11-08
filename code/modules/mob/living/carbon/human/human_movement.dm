@@ -16,7 +16,7 @@
 			if(stats.getPerk(PERK_NIGHTCRAWLER))
 				tally -= 0.5
 			else if(see_invisible != SEE_INVISIBLE_NOLIGHTING)
-				tally -= 0.5
+				tally += 0.5
 	if(stats.getPerk(PERK_FAST_WALKER))
 		tally -= 0.5
 	if(stats.getPerk(PERK_NANITE_MUSCLE))
@@ -55,6 +55,8 @@
 
 	if(slowdown)
 		tally += 1
+
+	tally += (r_hand?.slowdown_hold + l_hand?.slowdown_hold)
 
 	return tally
 

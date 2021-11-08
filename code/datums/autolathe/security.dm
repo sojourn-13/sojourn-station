@@ -41,8 +41,21 @@
 
 /datum/design/autolathe/sec/stunbaton
 	name = "stun baton"
-	build_path = /obj/item/melee/baton
+	build_path = /obj/item/tool/baton
+
+/datum/design/autolathe/sec/stunbaton_small
+	name = "mini stun baton"
+	build_path = /obj/item/tool/baton/mini
 
 /datum/design/autolathe/sec/auto_eject_mod
 	name = "H&S \"Dropper\" Magwell Braker"
 	build_path = /obj/item/gun_upgrade/magwell/auto_eject
+
+//Shields
+/datum/design/autolathe/sec/riot
+	name = "ballistic shield"
+	build_path = /obj/item/shield/riot
+
+/datum/design/autolathe/sec/buckler
+	name = "tactical shield"
+	build_path = /obj/item/shield/buckler

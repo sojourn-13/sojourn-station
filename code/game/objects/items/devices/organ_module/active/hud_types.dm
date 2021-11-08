@@ -46,6 +46,14 @@
 	holding_type = /obj/item/clothing/glasses/shades/thermal/bio
 	is_organic_module = TRUE
 
+/obj/item/organ_module/active/hud/night_bio_mycus
+	name = "embedded nightvision membrane"
+	desc = "A special organ developed by the mycus that allows them to see in the dark."
+	verb_name = "Activate Nightvision Membrane"
+	icon_state = "mycus_eye"
+	holding_type = /obj/item/clothing/glasses/shades/night/bio_mycus
+	is_organic_module = TRUE
+
 /obj/item/organ_module/active/hud/welder_bio
 	name = "embedded bio-welder overlays"
 	desc = "Bio-Welder Goggles, that can implanted in somebody's head. It.. twitches."

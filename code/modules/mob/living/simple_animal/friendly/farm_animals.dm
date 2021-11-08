@@ -45,7 +45,15 @@
 
 		if(stat == CONSCIOUS)
 			if(udder && prob(5))
-				udder.add_reagent("milk", rand(5, 10))
+				var/amount_add = rand(5, 10)
+				if(unnatural_mutations.getMutation("MUTATION_ROBUST_MILK", TRUE))
+					amount_add = 20
+				if(unnatural_mutations.getMutation("MUTATION_CHOC_MILK", TRUE))
+					udder.add_reagent("chocolatemilk", amount_add)
+				else if(unnatural_mutations.getMutation("MUTATION_PROT_MILK", TRUE))
+					udder.add_reagent("protein", amount_add)
+				else
+					udder.add_reagent("milk", amount_add)
 
 		if(locate(/obj/effect/plant) in loc)
 			var/obj/effect/plant/SV = locate() in loc
@@ -97,7 +105,7 @@
 	turns_per_move = 5
 	see_in_dark = 6
 	meat_type = /obj/item/reagent_containers/food/snacks/meat
-	meat_amount = 6
+	meat_amount = 9
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
@@ -108,10 +116,11 @@
 	var/datum/reagents/udder = null
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	clone_difficulty = CLONE_EASY //Easier to make cows than other animals
 	inherent_mutations = list(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MOO)
 
 /mob/living/simple_animal/cow/New()
-	udder = new(50)
+	udder = new(100)
 	udder.my_atom = src
 	..()
 
@@ -119,7 +128,7 @@
 	var/obj/item/reagent_containers/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_refillable())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
-		var/transfered = udder.trans_id_to(G, "milk", rand(5,10))
+		var/transfered = udder.trans_to(G, 10)
 		if(G.reagents.total_volume >= G.volume)
 			to_chat(user, "\red The [O] is full.")
 		if(!transfered)
@@ -131,7 +140,15 @@
 	. = ..()
 	if(stat == CONSCIOUS)
 		if(udder && prob(5))
-			udder.add_reagent("milk", rand(5, 10))
+			var/amount_add = rand(5, 10)
+			if(unnatural_mutations.getMutation("MUTATION_ROBUST_MILK", TRUE))
+				amount_add = 20
+			if(unnatural_mutations.getMutation("MUTATION_CHOC_MILK", TRUE))
+				udder.add_reagent("chocolatemilk", amount_add)
+			else if(unnatural_mutations.getMutation("MUTATION_PROT_MILK", TRUE))
+				udder.add_reagent("protein", amount_add)
+			else
+				udder.add_reagent("milk", amount_add)
 
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M as mob)
 	if(!stat && M.a_intent == I_DISARM && icon_state != icon_dead)
@@ -275,3 +292,47 @@ var/global/chicken_count = 0
 			qdel(src)
 	else
 		STOP_PROCESSING(SSobj, src)
+
+/mob/living/simple_animal/pig
+	name = "pig"
+	desc = "Known for their meat, and their status as an invasive species on nearly any human-bearing planet."
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "pig"
+	speak_emote = list("oinks","squeals")
+	emote_see = list("looks hungry")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_amount = 5
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "kicks"
+	attacktext = "kicked"
+	health = 100
+	autoseek_food = 0
+	beg_for_food = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+	inherent_mutations = list(MUTATION_IMBECILE, MUTATION_NERVOUSNESS, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	clone_difficulty = CLONE_EASY
+
+
+/mob/living/simple_animal/pig/Life()
+	. = ..()
+
+/mob/living/simple_animal/pig/attack_hand(mob/living/carbon/M as mob)
+	if(!stat && M.a_intent == I_DISARM && icon_state != icon_dead)
+		M.visible_message(SPAN_WARNING("[M] tips over [src]."),SPAN_NOTICE("You tip over [src]."))
+		Weaken(30)
+		icon_state = icon_dead
+		spawn(rand(20,50))
+			if(!stat && M)
+				icon_state = icon_living
+				var/list/responses = list(	"[src] looks at you imploringly.",
+											"[src] looks at you pleadingly",
+											"[src] looks at you with a resigned expression.",
+											"[src] seems resigned to her fate.")
+				to_chat(M, pick(responses))
+	else
+		..()

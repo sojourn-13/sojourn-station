@@ -12,6 +12,10 @@
 	display_name = "card traditional selection"
 	path = /obj/item/deck
 	flags = GEAR_HAS_TYPE_SELECTION
+	
+/datum/gear/c_bible
+	display_name = "Christian Bible"
+	path = /obj/item/book/manual/religion/c_bible
 
 /datum/gear/cardholder
 	display_name = "card holder"
@@ -38,6 +42,10 @@
 /datum/gear/flask
 	display_name = "flask"
 	path = /obj/item/reagent_containers/food/drinks/flask/barflask
+	
+/datum/gear/h_book
+	display_name = "Holy Book"
+	path = /obj/item/book/manual/religion/h_book
 
 /datum/gear/pitcher
 	display_name = "insulated pitcher"

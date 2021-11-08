@@ -1,4 +1,13 @@
 //Food items that are eaten normally and don't leave anything behind.
+#define COGBUFF 1
+#define MECBUFF 2
+#define BIOBUFF 3
+#define ROBBUFF 4
+#define TGHBUFF 5
+#define VIGBUFF 6
+#define MONEYBUFF 7
+#define NUTBUFF 8
+#define HEALBUFF 9
 /obj/item/reagent_containers/food/snacks
 	name = "snack"
 	desc = "yummy"
@@ -19,6 +28,8 @@
 
 	var/sanity_gain = 0.2 //Per bite
 	var/cooked = FALSE
+	var/appraised = 0 //Has this piece of food been appraised? We can only do that once.
+	var/chef_buff_type = 0 //What type of buff does this have to it?
 
 /obj/item/reagent_containers/food/snacks/Initialize()
 	. = ..()
@@ -34,6 +45,64 @@
 		)
 		if (!feeder)
 			feeder = eater
+
+		if(appraised == 1)
+			var/cheftimer = 30 MINUTES
+			switch(chef_buff_type)
+				if(1)
+					if(eater.stats)
+						if(eater.stats.getTempStat(stat,"spicyfood"))
+							eater.stats.removeTempStat(stat, "spicyfood")
+							eater.stats.addTempStat(STAT_COG, 15, cheftimer, "spicyfood")
+							to_chat(eater, SPAN_NOTICE("Your knowledge of Cognition feels renewed after eating something this delicious!"))
+					eater.stats.addTempStat(STAT_COG, 15, cheftimer, "spicyfood")
+					to_chat(eater, SPAN_NOTICE("Your knowledge of Cognition is increased for a short period of time after eating something delicious. Make use of it."))
+				if(2)
+					if(eater.stats)
+						if(eater.stats.getTempStat(stat,"spicyfood"))
+							eater.stats.removeTempStat(stat, "spicyfood")
+							eater.stats.addTempStat(STAT_MEC, 15, cheftimer, "spicyfood")
+							to_chat(eater, SPAN_NOTICE("Your knowledge of Cognition feels renewed after eating something this delicious!"))
+					eater.stats.addTempStat(STAT_MEC, 15, cheftimer, "spicyfood")
+					to_chat(eater, SPAN_NOTICE("Your knowledge of Mechanical is increased for a short period of time after eating something delicious. Make use of it."))
+				if(3)
+					if(eater.stats)
+						if(eater.stats.getTempStat(stat,"spicyfood"))
+							eater.stats.removeTempStat(stat, "spicyfood")
+							eater.stats.addTempStat(STAT_BIO, 15, cheftimer, "spicyfood")
+							to_chat(eater, SPAN_NOTICE("Your knowledge of Cognition feels renewed after eating something this delicious!"))
+					eater.stats.addTempStat(STAT_BIO, 15, cheftimer, "spicyfood")
+					to_chat(eater, SPAN_NOTICE("Your knowledge of Biology is increased for a short period of time after eating something delicious. Make use of it."))
+				if(4)
+					if(eater.stats)
+						if(eater.stats.getTempStat(stat,"spicyfood"))
+							eater.stats.removeTempStat(stat, "spicyfood")
+							eater.stats.addTempStat(STAT_ROB, 15, cheftimer, "spicyfood")
+							to_chat(eater, SPAN_NOTICE("Your knowledge of Robustness feels renewed after eating something this delicious!"))
+					eater.stats.addTempStat(STAT_ROB, 15, cheftimer, "spicyfood")
+					to_chat(eater, SPAN_NOTICE("Your knowledge of Robustness is increased for a short period of time after eating something delicious. Make use of it."))
+				if(5)
+					if(eater.stats)
+						if(eater.stats.getTempStat(stat,"spicyfood"))
+							eater.stats.removeTempStat(stat, "spicyfood")
+							eater.stats.addTempStat(STAT_TGH, 15, cheftimer, "spicyfood")
+							to_chat(eater, SPAN_NOTICE("Your knowledge of Toughness feels renewed after eating something this delicious!"))
+					eater.stats.addTempStat(STAT_TGH, 15, cheftimer, "spicyfood")
+					to_chat(eater, SPAN_NOTICE("Your knowledge of Toughness is increased for a short period of time after eating something delicious. Make use of it."))
+				if(6)
+					if(eater.stats)
+						if(eater.stats.getTempStat(stat,"spicyfood"))
+							eater.stats.removeTempStat(stat, "spicyfood")
+							eater.stats.addTempStat(STAT_VIG, 15, cheftimer, "spicyfood")
+							to_chat(eater, SPAN_NOTICE("Your knowledge of Vigilance feels renewed after eating something this delicious!"))
+					eater.stats.addTempStat(STAT_VIG, 15, cheftimer, "spicyfood")
+					to_chat(eater, SPAN_NOTICE("Your knowledge of Vigilance is increased for a short period of time after eating something delicious. Make use of it."))
+				if(9)
+					if(eater.stats)
+						var/mob/living/carbon/M = eater
+						M.adjustToxLoss(-((8 + (M.getToxLoss() * 0.1)) * 1))
+						M.heal_organ_damage(14, 14)
+
 
 		feeder.drop_from_inventory(src)	//so icons update :[
 
@@ -201,7 +270,7 @@
 		//these are used to allow hiding edge items in food that is not on a table/tray
 		var/can_slice_here = isturf(src.loc) && ((locate(/obj/structure/table) in src.loc) || (locate(/obj/machinery/optable) in src.loc) || (locate(/obj/item/tray) in src.loc))
 
-		if (has_edge(W))
+		if (has_edge(W) || (QUALITY_CUTTING in W.tool_qualities))
 			if (!can_slice_here)
 				to_chat(user, SPAN_WARNING("You cannot slice \the [src] here! You need a table or at least a tray to do it."))
 				return

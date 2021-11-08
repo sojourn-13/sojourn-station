@@ -216,6 +216,10 @@
 	name = "NT Shield"
 	build_path = /obj/item/shield/riot/nt
 
+/datum/design/autolathe/nt/shield/nt_buckler
+	name = "NT Buckler"
+	build_path = /obj/item/shield/buckler/nt
+
 /datum/design/autolathe/tool_upgrade/sanctifier
 	name = "sanctifier"
 	build_path = /obj/item/tool_upgrade/augment/sanctifier

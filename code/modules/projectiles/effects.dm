@@ -19,7 +19,7 @@
 		qdel(src)	//see effect_system.dm - sets loc to null and lets GC handle removing these effects
 
 //----------------------------
-// Laser beam
+// Laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser/tracer
 	icon_state = "beam"
@@ -31,7 +31,7 @@
 	icon_state = "impact_laser"
 
 //----------------------------
-// Blue laser beam
+// Blue laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser_blue/tracer
 	icon_state = "beam_blue"
@@ -43,7 +43,7 @@
 	icon_state = "impact_blue"
 
 //----------------------------
-// Omni laser beam
+// Omni laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser_omni/tracer
 	icon_state = "beam_omni"
@@ -55,7 +55,7 @@
 	icon_state = "impact_omni"
 
 //----------------------------
-// Xray laser beam
+// Xray laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/xray/tracer
 	icon_state = "xray"
@@ -67,7 +67,7 @@
 	icon_state = "impact_xray"
 
 //----------------------------
-// Heavy laser beam
+// Heavy laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser_heavy/tracer
 	icon_state = "beam_heavy"
@@ -79,7 +79,7 @@
 	icon_state = "impact_beam_heavy"
 
 //----------------------------
-// Pulse laser beam
+// Pulse laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser_pulse/tracer
 	icon_state = "u_laser"
@@ -97,7 +97,7 @@
 	icon_state = "muzzle_pulse"
 
 //----------------------------
-// Emitter beam
+// Emitter beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/emitter/tracer
 	icon_state = "emitter"
@@ -109,7 +109,7 @@
 	icon_state = "impact_emitter"
 
 //----------------------------
-// Stun beam
+// Stun beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/stun/tracer
 	icon_state = "stun"

@@ -8,13 +8,13 @@
 	icon_rest = "slimemold_rest"
 
 	// Better combat stats than other mushrooms.
-	maxHealth = 300
-	health = 300
+	maxHealth = 400
+	health = 400
 	melee_damage_lower = 40
 	melee_damage_upper = 45
-	viewRange = 6
+	viewRange = 3
 	armor = list(
-		melee = 30,
+		melee = 40,
 		bullet = 20,
 		energy = 20,
 		bomb = 10,

@@ -272,7 +272,6 @@
 		/datum/design/autolathe/gun/mk58,
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
-		/datum/design/research/item/weapon/stunrevolver,
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/gun/sniperrifle = 6
 	)
@@ -290,6 +289,7 @@
 		/datum/design/autolathe/sword/nt_scourge,
 		/datum/design/autolathe/sword/nt_spear,
 		/datum/design/autolathe/shield/nt_shield,
+		/datum/design/autolathe/nt/shield/nt_buckler,
 		/datum/design/autolathe/gun/plasma/martyr,
 		//armor and clothes
 		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,

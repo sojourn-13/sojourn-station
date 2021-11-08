@@ -223,10 +223,10 @@
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
-	holder.mod_climb_delay -= 0.75
+	holder.mod_climb_delay -= 0.95
 
 /datum/perk/parkour/remove()
-	holder.mod_climb_delay += 0.75
+	holder.mod_climb_delay += 0.95
 	..()
 
 /datum/perk/chaingun_smoker
@@ -252,10 +252,10 @@
 
 /datum/perk/quiet_as_mouse/assign(mob/living/carbon/human/H)
 	..()
-	holder.noise_coeff -= 0.5
+	holder.noise_coeff -= 0.75
 
 /datum/perk/quiet_as_mouse/remove()
-	holder.noise_coeff += 0.5
+	holder.noise_coeff += 0.75
 	..()
 
 /datum/perk/junkborn
@@ -390,6 +390,7 @@
 			/datum/craft_recipe/guild/railgunrifle,
 			/datum/craft_recipe/guild/heavypulserifle,
 			/datum/craft_recipe/guild/guild_bull,
+			/datum/craft_recipe/guild/ten_shot_conversion,
 			/datum/craft_recipe/guild/mace,
 			/datum/craft_recipe/guild/claymore,
 			/datum/craft_recipe/guild/machete,
@@ -420,11 +421,11 @@
 			/datum/craft_recipe/guild/guild_laser,
 			/datum/craft_recipe/guild/guild_scanner,
 			/datum/craft_recipe/guild/guild_capacitor,
-			/datum/craft_recipe/guild/guild_bin_alt,
-			/datum/craft_recipe/guild/guild_manip_alt,
-			/datum/craft_recipe/guild/guild_laser_alt,
-			/datum/craft_recipe/guild/guild_scanner_alt,
-			/datum/craft_recipe/guild/guild_capacitor_alt,
+			//datum/craft_recipe/guild/guild_bin_alt,
+			//datum/craft_recipe/guild/guild_manip_alt,
+			//datum/craft_recipe/guild/guild_laser_alt,
+			//datum/craft_recipe/guild/guild_scanner_alt,
+			//datum/craft_recipe/guild/guild_capacitor_alt,
 			//datum/craft_recipe/guild/guild_mine_trap,
 			/datum/craft_recipe/guild/guild_bin_box,
 			/datum/craft_recipe/guild/guild_manip_box,
@@ -645,3 +646,49 @@
 	if(holder)
 		holder.verbs -= codespeak_procs
 	..()
+
+//Chef's special perk
+
+/datum/perk/foodappraise
+	name = "Spice Food"
+	desc = "Your own special spice has anomalous properties that can enhance most food products."
+	active = FALSE
+	passivePerk = FALSE
+/datum/perk/foodappraise/activate()
+	var/mob/living/carbon/human/user = usr
+	var/obj/item/reagent_containers/food/snacks/F = user.get_active_hand()
+	if(!istype(user))
+		return ..()
+	if(!istype(F, /obj/item/reagent_containers/food/snacks))
+		to_chat(usr, SPAN_NOTICE("You can only spice food items!"))
+		return FALSE
+	if(F.appraised == 1)
+		to_chat(usr, SPAN_NOTICE("This food item has already been spiced!"))
+		return FALSE
+	to_chat(usr, SPAN_NOTICE("You quickly sprinkle some of your anomalous spice onto the food item, revealing its hidden properties."))
+	log_and_message_admins("used their [src] perk.")
+	F.chef_buff_type = rand(1,9) // We assign a random bufferino.
+	F.appraised = 1
+	switch(F.chef_buff_type)
+		if(1)
+			F.name = "mentally engaging [F.name]"
+		if(2)
+			F.name = "mechanic's [F.name]"
+		if(3)
+			F.name = "caretaker's [F.name]"
+		if(4)
+			F.name = "vigorous [F.name]"
+		if(5)
+			F.name = "hardy [F.name]"
+		if(6)
+			F.name = "focusing [F.name]"
+		if(7)
+			var/newprice = rand(100,500)
+			F.name = "exquisite [F.name]"
+			if(F.price_tag < newprice)
+				F.price_tag = newprice
+		if(8)
+			F.name = "nourishing [F.name]"
+			F.reagents.add_reagent("nutriment", 15)
+		if(9)
+			F.name = "hearty [F.name]"

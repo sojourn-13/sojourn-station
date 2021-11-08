@@ -45,7 +45,7 @@
 		/obj/item/tool/spear/hunter_halberd,
 		/obj/item/tool/gauntlet,
 		/obj/item/tool/fireaxe/woodsman,
-		/obj/item/shield/riot/handmade/bone,
+		/obj/item/shield/buckler/handmade/bone,
 		/obj/item/tool/sword/huntingclaw
 	)
 

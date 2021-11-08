@@ -39,8 +39,13 @@
 	else
 		..()
 
+/obj/item/storage/sheath/New()
+	..()
+	update_icon()
+
 /obj/item/storage/sheath/update_icon()
 	overlays.Cut()
+	cut_overlays()
 	var/icon_to_set = "0" // If there nothing in content then icon_to_set won't change to anything and will stay 0
 	for(var/obj/item/tool/sword/SW in contents)
 		icon_to_set = SW.icon_state

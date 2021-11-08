@@ -69,3 +69,29 @@
 /datum/design/autolathe/container/pill_bottle
 	name = "pill bottle"
 	build_path = /obj/item/storage/pill_bottle
+
+//hardcases
+
+/datum/design/autolathe/container/ammocan_ih
+	name = "Marshal Ammo Can"
+	build_path = /obj/item/storage/hcases/ammo/ih
+
+/datum/design/autolathe/container/ammocan_serb
+	name = "Generic Ammo Can"
+	build_path = /obj/item/storage/hcases/ammo/serb
+
+/datum/design/autolathe/container/ammocan_excel
+	name = "Revolutionary Ammo Can"
+	build_path = /obj/item/storage/hcases/ammo/excel
+
+/datum/design/autolathe/container/hcase_parts
+	name = "Hardware Hardcase"
+	build_path = /obj/item/storage/hcases/parts
+
+/datum/design/autolathe/container/hcase_med
+	name = "Medical Hardcase"
+	build_path = /obj/item/storage/hcases/med
+
+/datum/design/autolathe/container/hcase_engi
+	name = "Engineering Hardcase"
+	build_path = /obj/item/storage/hcases/engi

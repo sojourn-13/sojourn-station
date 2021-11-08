@@ -236,7 +236,7 @@
 	eyeblur = 2 // bright light slightly blurs your vision
 	luminosity_range = 5
 	luminosity_power = 1
-	luminosity_color = COLOR_RED
+	luminosity_color = COLOR_LIGHTING_RED_MACHINERY //Makes it not as blindingly red
 	luminosity_ttl = 1
 	var/fire_stacks = 1
 	var/flash_range = 1
@@ -246,6 +246,13 @@
 	can_ricochet = FALSE
 	sharp = FALSE
 	embed = FALSE
+	var/chaos = FALSE
+	var/chaose_number
+
+/obj/item/projectile/bullet/flare/New()
+	if(chaos)
+		chaose_number = RANDOM_RGB
+		luminosity_color = chaose_number
 
 /obj/item/projectile/bullet/flare/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -272,7 +279,10 @@
 	new /obj/effect/effect/smoke/illumination(T, brightness=max(flash_range*3, brightness), lifetime=light_duration, color=luminosity_color)
 
 /obj/item/projectile/bullet/flare/blue
-	luminosity_color = COLOR_BLUE
+	luminosity_color = COLOR_SKY_BLUE //softer on the eyes
 
 /obj/item/projectile/bullet/flare/green
-	luminosity_color = COLOR_GREEN
+	luminosity_color = PIPE_COLOR_GREEN //Bit better then normal green
+
+/obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
+	chaos = TRUE

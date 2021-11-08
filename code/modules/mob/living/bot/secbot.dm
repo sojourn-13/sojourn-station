@@ -322,7 +322,7 @@
 	Sa.add_overlay(image('icons/obj/aibots.dmi', "hs_hole"))
 	Sa.created_name = name
 	new /obj/item/device/assembly/prox_sensor(Tsec)
-	new /obj/item/melee/baton(Tsec)
+	new /obj/item/tool/baton(Tsec)
 	if(prob(50))
 		new /obj/item/robot_parts/l_arm(Tsec)
 
@@ -546,7 +546,7 @@
 		add_overlay(image('icons/obj/aibots.dmi', "hs_arm"))
 		qdel(I)
 
-	else if(istype(I, /obj/item/melee/baton) && build_step == 3)
+	else if(istype(I, /obj/item/tool/baton) && build_step == 3)
 		user.drop_item()
 		to_chat(user, "You complete the Securitron! Beep boop.")
 		playsound(src.loc, 'sound/effects/insert.ogg', 50, 1)

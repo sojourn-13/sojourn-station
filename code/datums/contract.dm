@@ -61,6 +61,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"Magnetic overheat barrel" = /obj/item/gun_upgrade/barrel/overheat,
 		"Danger Zone Trigger" = /obj/item/gun_upgrade/trigger/dangerzone,
 		"Gauss Coil barrel" = /obj/item/gun_upgrade/barrel/gauss,
+		"HandHolder Barrel Rail" = /obj/item/gun_upgrade/mechanism/gun_rail,
 		"Watchman scope" = /obj/item/gun_upgrade/scope/watchman,
 		"Contract Killer scope" = /obj/item/gun_upgrade/scope/killer,
 		"Melee armor plating" = /obj/item/tool_upgrade/armor/melee,

@@ -238,7 +238,7 @@
 	rapid = FALSE
 	limited_ammo = FALSE
 	weapon1 = /obj/item/tool/sword/saber/cutlass
-	weapon2 = /obj/item/shield/energy/reaver
+	weapon2 = /obj/item/shield/buckler/energy/reaver
 	armor = list(
 		melee = 0,
 		bullet = 0,
