@@ -575,7 +575,8 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	I.layer = 5.02
 	I.pixel_z = 32
 	add_overlay(I)
-
+	
+/*
 //Debugging
 /obj/machinery/genetics/cloner/verb/eject_cloneling()
 	set category = "Debug"
@@ -595,7 +596,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	set name = "Manual Flush"
 	set src in view(1)
 	flush = TRUE
-
+*/
 #undef CLONING_STAGE_BASE
 #undef CLONING_BREAKOUT_POINT
 #undef BASE_PROTEIN_CONSUMPTION

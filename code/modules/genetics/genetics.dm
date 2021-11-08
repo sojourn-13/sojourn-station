@@ -21,7 +21,7 @@
 * Example of an inherant_mutations list:
 * inherant_mutations= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
 **/
-
+#define JANEDEBUG 1
 
 /*
 * =================================================================================================
@@ -273,7 +273,7 @@
 			#endif
 			return null
 		if(!incoming_mutation.clone_gene)
-			compare_string = compare_string + "G~" + group_key
+			compare_string = compare_string + "G~" + "[incoming_mutation.type]"
 
 	//Add compare text for the clone mutations. While we're here, we'll also build a list of them for later use.
 	var/list/clone_mutation_list = list()
