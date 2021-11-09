@@ -22,7 +22,7 @@
 
 	var/obj/item/gun/hydrogen/plasma_torch/gun = null // Hold the gun the welder turns into.
 
-/obj/item/tool/plasma_torch/Initialize()
+/obj/item/tool/plasma_torch/Initialize(mapload = TRUE)
 	..()
 	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the welder a new flask when mapped in.
 	update_icon()

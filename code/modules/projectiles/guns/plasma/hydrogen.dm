@@ -13,8 +13,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 /obj/item/gun/hydrogen
 	name = "\improper \"Venatori\" hydrogen-plasma gun"
-	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brain child of Soteria Director Nakharan Mkne, meant to compete and exceed the church of the absolutes \
-	own plasma designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapons over heating without being \
+	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brainchild of Soteria Director Nakharan Mkne, meant to compete with and exceed capabilities of Absolutist \
+	own plasma weapon designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapon's extreme heat generation over heating without being \
 	burnt to a crisp."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "plasma"
@@ -27,8 +27,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_MHYDROGEN = 5, MATERIAL_OSMIUM = 3, MATERIAL_TRITIUM = 2)
 	init_firemodes = list(
-		list(mode_name = "standard", mode_desc="A large ball of hydrogen to blow up bulwarks or weak targets", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=30, icon="destroy", heat_per_shot = 25, use_plasma_cost = 10),
-		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=50, icon="kill", heat_per_shot = 40, use_plasma_cost = 20)
+		list(mode_name = "standard", mode_desc="A large ball of hydrogen to blow up bulwarks or weak targets", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=30, icon="destroy", use_plasma_cost = 10),
+		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=50, icon="kill", use_plasma_cost = 20)
 	)
 
 	var/projectile_type = /obj/item/projectile/hydrogen
@@ -38,23 +38,21 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	var/obj/item/hydrogen_fuel_cell/flask = null // The flask the gun use for ammo
 	var/obj/item/hydrogen_fuel_cell/backpack/connected = null // The backpack the gun is connected to
 	var/secured = TRUE // Is the flask secured?
-	var/heat_level = 0 // Current heat level of the gun
 	var/vent_level = 50 // Threshold at which is automatically vent_level
-	var/vent_timer = 0 // Keep track of the timer, decrease by 1 every 5 second
-	var/vent_level_timer = 6 // Timer in 5 second before the next venting can happen. A value of 6 mean that it will take 30 seconds before the gun can vent itself again.
+	var/vent_level_timer = 30 SECONDS
 	var/overheat = 100 // Max heat before overheating.
-
 	// Damage dealt when overheating
-	var/contain_fail_damage = 50 // Applied to every bodypart.
 	var/overheat_damage = 25 // Applied to the hand holding the gun.
 
-/obj/item/gun/hydrogen/Initialize()
+/obj/item/gun/hydrogen/Initialize(mapload = TRUE)
 	..()
 	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
-	update_icon()
 
 /obj/item/gun/hydrogen/New()
 	..()
+	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  vent_level,  overheat,  heat_per_shot, 0.01, vent_level_timer)
+	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent)
+	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat)
 	update_icon()
 	START_PROCESSING(SSobj, src)
 
@@ -65,13 +63,13 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /obj/item/gun/hydrogen/examine(mob/user)
 	..(user)
 	if(!flask)
-		to_chat(user, SPAN_NOTICE("Has no flask inserted."))
+		to_chat(user, SPAN_NOTICE("[src] has no flask inserted."))
 		return
 	if(use_plasma_cost) // So that the bluecross weapon can use 0 plasma
-		var/shots_remaining = round(flask.plasma / use_plasma_cost)
-		to_chat(user, "Has [shots_remaining] shot\s remaining.")
+		to_chat(user, "[src] has [round(flask.plasma / use_plasma_cost)] shot\s remaining.")
 	if(!secured)
 		to_chat(user, SPAN_DANGER("The fuel cell is not secured!"))
+	to_chat(user, SPAN_NOTICE("Control-Click to manually vent this weapon's heat."))
 	return
 
 // Removing the plasma flask
@@ -109,7 +107,10 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 											SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burns \his hand."),
 											SPAN_NOTICE("You make a mistake while unsecuring the flask and burns your hand.")
 										)
-					overheating(user)
+					if(user.hand == user.l_hand) // Are we using the left arm?
+						user.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+					else // If not then it must be the right arm.
+						user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
 				return
 		else
 			to_chat(user, "There is no flask to remove.")
@@ -129,17 +130,6 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 		return
 
 /obj/item/gun/hydrogen/Process()
-	// Lose heat over time.
-	if(heat_level > 0)
-		heat_level--
-
-	if(vent_timer > 0)
-		vent_timer--
-
-	// Vent the gun whenever possible
-	if(heat_level >= vent_level && vent_timer <= 0)
-		venting()
-
 	// Check if the gun is attached
 	if(connected) // Are we connected to something?
 		if(loc != connected) // Are we in the connected object?
@@ -148,6 +138,16 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 				usr.remove_from_mob(src)
 				forceMove(connected)
 
+/obj/item/gun/hydrogen/handle_post_fire(mob/living/user)
+	..()
+	if(!secured) // Blow up if you forgot to secure the cell.
+		src.visible_message(SPAN_DANGER("The [src.name]'s plasma leaks from the unsecured container, burning its wielder's hands!"))
+		if(user.hand == user.l_hand) // Are we using the left arm?
+			user.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+		else // If not then it must be the right arm.
+			user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+		return
+
 /obj/item/gun/hydrogen/consume_next_projectile()
 	if(!flask)
 		return null
@@ -155,27 +155,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 		return null
 	if(!flask.use(use_plasma_cost))
 		return null
-	heat_level += heat_per_shot // Increase the heat.
 	return new projectile_type(src)
-
-// The part where the gun blow up.
-/obj/item/gun/hydrogen/handle_post_fire(mob/living/user as mob)
-	..()
-	if(!secured) // Blow up if you forgot to secure the cell.
-		containment_failure(user)
-		return
-
-	// Burn the user if it overheat too much
-	if(heat_level >= overheat * 2)
-		containment_failure(user)
-		return
-
-	// Gun's too hot, start burning
-	if(heat_level >= overheat)
-		overheating(user)
-		return
-
-	return
 
 /obj/item/gun/hydrogen/update_icon()
 	cut_overlays()
@@ -184,46 +164,26 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	if(connected)
 		add_overlay("[icon_state]_connected")
 
-/obj/item/gun/hydrogen/attack_self(mob/user as mob)
-	user.visible_message(	SPAN_NOTICE("[user] start to manually vent the [name]."),
-							SPAN_NOTICE("You start to manually vent the [name].")
-						)
-	if(do_after(user, WORKTIME_NEAR_INSTANT, src))
-		user.visible_message(	SPAN_NOTICE("[user] manually vent the [name]."),
-								SPAN_NOTICE("You manually vent the [name].")
-							)
-		venting()
-		return
-	..()
-
 /////////////////////
 ///  Custom procs ///
 /////////////////////
 
 // Vent the weapon
-/obj/item/gun/hydrogen/proc/venting()
-	heat_level = 0 // Remove the heat
-	vent_timer = vent_level_timer // Reset the timer
-	src.visible_message("The [src.name]'s vents open and spew super-heated steam, cooling itself down.")
+/obj/item/gun/hydrogen/proc/ventEvent()
+	src.visible_message("[src]'s vents open and spew super-heated steam, cooling itself down.")
 
 // The weapon is too hot, burns the user's hand.
-/obj/item/gun/hydrogen/proc/overheating(mob/living/user as mob)
-	src.visible_message(SPAN_DANGER("The [src.name] overheat, burning its wielder's hands!"))
+/obj/item/gun/hydrogen/proc/handleoverheat()
+	src.visible_message(SPAN_DANGER("[src] overheats, its surface becoming blisteringly hot as a pressure warning beeps!"))
+	addtimer(CALLBACK(src , .proc/doVentsplosion), 3 SECONDS)
+	var/mob/living/L = loc
+	if(istype(L))
+		to_chat(L, SPAN_DANGER("[src] is going to explode!"))
+		if(L.hand == L.l_hand) // Are we using the left arm?
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+		else // If not then it must be the right arm.
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
 
-	// Burn the hand holding the gun
-	if(user.hand == user.l_hand) // Are we using the left arm?
-		user.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
-	else // If not then it must be the right arm.
-		user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
-
-// The weapon's plasma containment has failed, greatly burning the user !
-/obj/item/gun/hydrogen/proc/containment_failure(mob/living/user as mob)
-	src.visible_message(SPAN_DANGER("The [src.name]'s magnetic containment failed, covering its wielder with burning plasma!"))
-	// Damage every bodypart, for a total of 350
-	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_HEAD)
-	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_CHEST)
-	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_GROIN)
-	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_L_ARM)
-	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_ARM)
-	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_L_LEG)
-	user.apply_damage(contain_fail_damage, BURN, def_zone = BP_R_LEG)
+/obj/item/gun/hydrogen/proc/doVentsplosion()
+	src.visible_message(SPAN_DANGER("[src]'s overpressure valves open, releasing a powerful shockwave!"))
+	explosion(loc, 0, 0, 2)
