@@ -46,10 +46,8 @@
 	bloodcolor = "#666600"
 
 	var/taming_window = 30 //How long you have to tame this roach, once it's pacified.
-	var/busy_time // how long it will take to eat/lay egg
+	eating_time = 2 MINUTES // how long it will take to eat/lay egg
 	var/busy_start_time // when it started eating/laying egg
-
-	eating_time = 1
 
 	var/atom/eat_target // target that the roach wants to eat
 	var/fed = 0 // roach gets fed after eating a corpse

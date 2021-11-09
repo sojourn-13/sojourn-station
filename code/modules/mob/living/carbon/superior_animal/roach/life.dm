@@ -22,6 +22,10 @@
 						if ((C.stat == DEAD) && ((istype(C, /mob/living/carbon/human)) || (istype(C, /mob/living/carbon/superior_animal))))
 							eatTargets += C
 
+					for(var/obj/effect/spider/S in getPotentialTargets()) //S for Spider
+						if (((istype(S, /obj/effect/spider/eggcluster)) || (istype(S, /obj/effect/spider/spiderling))))
+							eatTargets += S
+
 					eat_target = safepick(nearestObjectsInList(eatTargets,src,1))
 					if (eat_target)
 						busy = MOVING_TO_TARGET
@@ -30,11 +34,17 @@
 						GiveUp(eat_target) //give up if we can't reach target
 						return
 				else if(prob(probability_egg_laying)) // chance to lay an egg
-					var/obj/effect/spider/eggcluster/tastyobstacle = locate(/obj/effect/spider/eggcluster) in get_turf(src)
-					if(tastyobstacle)
-						visible_message(SPAN_WARNING("[src] eats [tastyobstacle]."),"", SPAN_NOTICE("You hear something eating something."))
-						tastyobstacle.Destroy()
+					var/obj/effect/spider/eggcluster/tasty_eggs = locate(/obj/effect/spider/eggcluster) in get_turf(src)
+					var/obj/effect/spider/spiderling/tasty_bugs = locate(/obj/effect/spider/spiderling) in orange(1, src)//cant as easy scuttle away
+					if(tasty_eggs)
+						visible_message(SPAN_WARNING("[src] eats [tasty_eggs]."),"", SPAN_NOTICE("You hear something eating something."))
+						tasty_eggs.Destroy()
 						fed += rand(3, 12) // this would otherwise pop out this many big spiders
+					if(tasty_bugs)
+						visible_message(SPAN_WARNING("[src] eats [tasty_bugs]."),"", SPAN_NOTICE("You hear something eating something."))
+						tasty_bugs.Destroy()
+						fed += rand(0, 1) //Some times a single bug isnt all that filling
+
 					else if(fed <= 0)
 						return
 					busy = LAYING_EGG
@@ -49,17 +59,15 @@
 						src.visible_message(SPAN_NOTICE("\The [src] begins to eat \the [eat_target]."))
 						walk(src,0)
 						busy_start_time = world.timeofday
-						if (istype(eat_target, /mob/living/carbon/superior_animal))
-							busy_time = 30 SECONDS * eating_time
-						else if (ishuman(eat_target))
-							busy_time = 25 MINUTES
+						if (istype(eat_target, /mob/living/carbon/human))
+							eating_time = 15 MINUTES
 							// how much time it takes to it a corpse
-		    				// Set to 25 minutes to let the crew enough time to get the corpse
+		    				// Set to 15 minutes to let the crew enough time to get the corpse
 							// Several roaches eating at the same time do not speed up the process
 							// If disturbed the roach has to start back from 0
 
 			if(EATING_TARGET)
-				if (world.timeofday >= busy_start_time + busy_time)
+				if (world.timeofday >= busy_start_time + eating_time)
 					if(eat_target && istype(eat_target.loc, /turf) && get_dist(src,eat_target) <= 1)
 						var/turf/targetTurf = eat_target.loc
 						var/mob/living/carbon/M = eat_target
@@ -106,7 +114,7 @@
 					stop_automated_movement = 0
 
 			if(LAYING_EGG)
-				if (world.timeofday >= busy_start_time + busy_time)
+				if (world.timeofday >= busy_start_time + eating_time * 0.5) //Takes half as long to lay an egg then it is to eat a dead body
 					if (istype(src, /mob/living/carbon/superior_animal/roach/kaiser))// kaiser roaches now lay roachcubes
 						var/roachcube = pick(subtypesof(/obj/item/reagent_containers/food/snacks/cube/roach))
 						new roachcube(get_turf(src))
