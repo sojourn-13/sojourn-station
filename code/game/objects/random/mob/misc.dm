@@ -26,7 +26,7 @@
 /obj/random/mob/ambusher/low_chance
 	name = "low chance ambusher"
 	icon_state = "hostilemob-brown-low"
-	spawn_nothing_percentage = 80
+	spawn_nothing_percentage = 99 // These things should not be escaping from science often.
 
 //Carps
 
