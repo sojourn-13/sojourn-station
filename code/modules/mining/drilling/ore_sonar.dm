@@ -7,14 +7,13 @@
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 2)
-	var/cooldowntime = 20 MINUTES
-	var/coolingoff = 0
+	var/cooldowntime = 0
 
 /obj/item/device/ore_sonar/attack_self(mob/living/carbon/user as mob)
-	if(world.time - coolingoff > cooldowntime)
+	if(world.time < cooldowntime)
 		to_chat(user, SPAN_NOTICE("Device is still recharging. Please allow 20 minutes between each use, babe."))
 		return
-	coolingoff = world.time
+	cooldowntime = world.time + 20 MINUTES
 	to_chat(user, SPAN_NOTICE("Scan Initated. Starting to print out results."))
 	var/turf/origin = get_turf(user)
 	var/dist_scan_x = world.maxx-TRANSITIONEDGE - origin.x
