@@ -247,9 +247,9 @@ cannot isolate or combine desired genes.
 					for(var/datum/genetics/mutation/target_mutation in selected_sample.genetics_holder.mutation_pool)
 						if(target_mutation.key == href_list["toggle_active"])
 							if(target_mutation.active)
-								target_mutation.active = FALSE
+								target_mutation.deactivate()
 							else
-								target_mutation.active = TRUE
+								target_mutation.activate(1)
 							return TRUE
 			log_debug("Genetics_analyzer.topic(): toggle_active ended way too late.")
 

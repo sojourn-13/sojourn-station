@@ -1,5 +1,5 @@
 /datum/genetics/mutation/painless
-	name = "Moo"
+	name = "Painless"
 	key = "MUTATION_NO_PAIN"
 	desc = "You no longer feel pain."
 	gain_text = "Your sensation of pain fades completely."

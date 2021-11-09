@@ -19,10 +19,16 @@
 #define MUTATION_PROT_MILK /datum/genetics/mutation/milk_p
 #define MUTATION_ROBUST_MILK /datum/genetics/mutation/milk_r
 #define MUTATION_NO_PAIN /datum/genetics/mutation/painless
+#define MUTATION_ROACH_FRIEND /datum/genetics/mutation/roach_friend
+#define MUTATION_SPIDER_FRIEND /datum/genetics/mutation/spider_friend
+#define MUTATION_SPROACHDER_FRIEND /datum/genetics/mutation/sproachder_friend
+#define MUTATION_PSN_BREATH /datum/genetics/mutation/psn_breath
+#define MUTATION_CLOAKING /datum/genetics/mutation/cloaking
 
 //Exclusive Mutation types:
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
 #define MUT_TYPE_SKIN 1 //An exclusive mutation type for skin.
+#define MUT_TYPE_FACTION 2
 
 //Types of Mutation recipes:
 #define MUT_TYPE_COMBINATION 1
@@ -49,4 +55,6 @@
 
 //mutations vars we add to the var/list/mutations list. We start with 11 because the base ends at 10.
 //refer to code\__DEFINES\dna.dm for the other states in this list.
+//I use these instead of directly checking the mutations datum in some cases because it is quicker.
 #define ROACH_BLOOD          11
+#define CLOAKING          	 12

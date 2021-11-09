@@ -214,7 +214,7 @@
 	bones_amount = 30 //Lots of bone-like chitin
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 30, energy = 35, bomb = 5, bio = 10, rad = 25)
-	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_RAND_UNSTABLE)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_RAND_UNSTABLE, MUTATION_CLOAKING)
 
 /mob/living/simple_animal/hostile/nightmare/dream_daemon
 	name = "dream daemon"
