@@ -39,7 +39,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	var/obj/item/hydrogen_fuel_cell/backpack/connected = null // The backpack the gun is connected to
 	var/secured = TRUE // Is the flask secured?
 	var/vent_level = 50 // Threshold at which is automatically vent_level
-	var/vent_level_timer = 15 // Timer in 2 seconds before the next venting can happen. A value of 15 mean that it will take 30 seconds before the gun can vent itself again.
+	var/vent_level_timer = 30 SECONDS
 	var/overheat = 100 // Max heat before overheating.
 	// Damage dealt when overheating
 	var/overheat_damage = 25 // Applied to the hand holding the gun.
@@ -50,9 +50,9 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 /obj/item/gun/hydrogen/New()
 	..()
+	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  vent_level,  overheat,  heat_per_shot, 0.01, vent_level_timer)
 	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent)
 	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat)
-	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE, vent_level, overheat, heat_per_shot, 2, vent_level_timer)
 	update_icon()
 	START_PROCESSING(SSobj, src)
 
@@ -174,10 +174,16 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 // The weapon is too hot, burns the user's hand.
 /obj/item/gun/hydrogen/proc/handleoverheat()
-	src.visible_message(SPAN_DANGER("[src] overheats, burning its wielder's hands!"))
+	src.visible_message(SPAN_DANGER("[src] overheats, its surface becoming blisteringly hot as a pressure warning beeps!"))
+	addtimer(CALLBACK(src , .proc/doVentsplosion), 3 SECONDS)
 	var/mob/living/L = loc
 	if(istype(L))
+		to_chat(L, SPAN_DANGER("[src] is going to explode!"))
 		if(L.hand == L.l_hand) // Are we using the left arm?
 			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
 		else // If not then it must be the right arm.
 			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+
+/obj/item/gun/hydrogen/proc/doVentsplosion()
+	src.visible_message(SPAN_DANGER("[src]'s overpressure valves open, releasing a powerful shockwave!"))
+	explosion(loc, 0, 0, 2)

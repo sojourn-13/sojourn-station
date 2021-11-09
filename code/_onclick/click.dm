@@ -283,9 +283,9 @@
 	return
 
 /atom/movable/CtrlClick(var/mob/user)
-	if(Adjacent(user))
+	if(Adjacent(user) && loc != user) //cant pull things on yourself
 		user.start_pulling(src)
-
+	..()
 /*
 	Alt click
 	Unused except for AI
