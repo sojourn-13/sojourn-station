@@ -3,7 +3,7 @@
 	desc = "A Project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as surprisingly successful idea, both light enough kit to carry out into a combat zone. A true marval of Guild, SI and Blackshield team work to pull off such a task."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion"
-	item_state = null
+	item_state = "bastion"
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
@@ -13,9 +13,18 @@
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_MATERIAL = 4, TECH_COMBAT = 4)
 	matter = list(MATERIAL_PLASMAGLASS = 1, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 10)
-	price_tag = 2500
+	price_tag = 1200
 	attack_verb = list("shoved", "bashed")
 	var/structure_form_type = /obj/structure/shield_deployed
+
+/obj/item/bastion_broken
+	name = "Broken: Bastion Shield"
+	desc = "Once project inspired by an idea for a true deployable barrier, once the \"Bastion Shield\" was surprisingly successful idea, both light enough kit to carry out into a combat zone. Once a marval of Guild, SI and Blackshield team work to pull off such a task. \
+	Now a broken shell of its former self, maybe it still has scrap inside..."
+	icon = 'icons/obj/bastion.dmi'
+	icon_state = "bastion_broken"
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 4)
+	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/shield/riot/bastion/attack_self(mob/user)
 	deploy(user)
@@ -53,7 +62,8 @@
 /obj/structure/shield_deployed/proc/damage(damage)
 	health -= damage
 	if(health <= 0)
-		collapse()
+		new /obj/item/bastion_broken(get_turf(src))
+		qdel(src)
 
 /obj/structure/shield_deployed/attackby(obj/item/I, mob/living/user)
 	.=..()
@@ -191,7 +201,7 @@
 	usr.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
 	climbers |= user
 
-	var/delay = (issmall(user) ? 20 : 34)
+	var/delay = (issmall(user) ? 20 : 34) * user.mod_climb_delay
 	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
 	if(!do_after(user, duration))
 		climbers -= user
