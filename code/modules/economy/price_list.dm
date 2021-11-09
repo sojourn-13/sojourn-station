@@ -936,37 +936,37 @@
 //***************//
 
 /obj/item/storage/fancy/cigarettes
-	price_tag = 5
+	price_tag = 1
 
 /obj/item/storage/fancy/cigarettes/ishimura
-	price_tag = 5
+	price_tag = 1
 
 /obj/item/storage/fancy/cigarettes/tannhauser
-	price_tag = 5
+	price_tag = 1
 
 /obj/item/storage/fancy/cigarettes/brouzouf
-	price_tag = 6
+	price_tag = 2
 
 /obj/item/storage/fancy/cigarettes/frozen
-	price_tag = 8
+	price_tag = 3
 
 /obj/item/storage/fancy/cigarettes/shodan
-	price_tag = 8
+	price_tag = 3
 
 /obj/item/storage/fancy/cigarettes/toha
-	price_tag = 8
+	price_tag = 3
 
 /obj/item/storage/fancy/cigarettes/fortress
-	price_tag = 9
+	price_tag = 4
 
 /obj/item/storage/fancy/cigarettes/fortressred
-	price_tag = 9
+	price_tag = 4
 
 /obj/item/storage/fancy/cigarettes/fortressblue
-	price_tag = 9
+	price_tag = 4
 
 /obj/item/storage/fancy/cigar
-	price_tag = 15
+	price_tag = 7
 
 /obj/item/storage/box/matches
 	price_tag = 3
@@ -1122,6 +1122,8 @@ This was a misstake
 	. += reagents.total_volume * .
 */
 /obj/item/clothing/price_tag = 30
+
+/obj/item/clothing/mask/smokable/price_tag = 2 //drying fruit will make then a bit better
 
 /obj/item/solar_assembly/price_tag = 100
 
