@@ -152,12 +152,11 @@
 
 /obj/item/ammo_casing/light_rifle_257/lethal
 	desc = "A .257 hollow-point bullet casing."
-	caliber = "lrifle"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/lethal
 
 /obj/item/ammo_casing/light_rifle_257/laser
 	desc = "A .257 laser casing."
-	caliber = "lrifle"
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
 
 //// 7.5 Rifle ////
@@ -199,6 +198,7 @@
 
 /obj/item/ammo_casing/rifle_75/lethal
 	desc = "A 7.5mm hollow-point bullet casing."
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
 
 /obj/item/ammo_casing/rifle_75/scrap

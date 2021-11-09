@@ -386,8 +386,12 @@
 	..(icon_gib,1)
 
 /mob/living/simple_animal/bullet_act(var/obj/item/projectile/Proj, var/def_zone = null)
-	if(!Proj || Proj.nodamage)
+	if(!Proj)
 		return
+
+	if(Proj.nodamage)
+		if(istype(Proj, /obj/item/projectile/ion))
+			Proj.on_hit(loc)
 
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
