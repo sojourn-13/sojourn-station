@@ -52,7 +52,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	..()
 	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent)
 	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat)
-	AddComponent(/datum/component/heat, clickTypeToVent = COMSIG_CLICK_CTRL, parentIsGun = TRUE, _heatThresholdSpecial = vent_level, _overheatThreshold = overheat, _heatPerFire = heat_per_shot, _coolPerTick = 2, _ventCooldown = vent_level_timer)
+	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE, vent_level, overheat, heat_per_shot, 2, vent_level_timer)
 	update_icon()
 	START_PROCESSING(SSobj, src)
 
@@ -138,6 +138,16 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 				usr.remove_from_mob(src)
 				forceMove(connected)
 
+/obj/item/gun/hydrogen/handle_post_fire(mob/living/user)
+	..()
+	if(!secured) // Blow up if you forgot to secure the cell.
+		src.visible_message(SPAN_DANGER("The [src.name]'s plasma leaks from the unsecured container, burning its wielder's hands!"))
+		if(user.hand == user.l_hand) // Are we using the left arm?
+			user.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+		else // If not then it must be the right arm.
+			user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+		return
+
 /obj/item/gun/hydrogen/consume_next_projectile()
 	if(!flask)
 		return null
@@ -164,7 +174,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 // The weapon is too hot, burns the user's hand.
 /obj/item/gun/hydrogen/proc/handleoverheat()
-	src.visible_message(SPAN_DANGER("[src] overheat, burning its wielder's hands!"))
+	src.visible_message(SPAN_DANGER("[src] overheats, burning its wielder's hands!"))
 	var/mob/living/L = loc
 	if(istype(L))
 		if(L.hand == L.l_hand) // Are we using the left arm?
