@@ -110,6 +110,21 @@
 	max_upgrades = 5
 	price_tag = 15
 
+/obj/item/tool/hammer/ironhammer
+	name = "GmbH \"Ironhammer\" Breaching Hammer"
+	desc = "A modified sledgehammer produced by Seinmetall for police forces across Sol space. This tool can take down standard walls and if the user is strong enough, reinforced walls."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "iron_hammer"
+	item_state = "iron_hammer"
+	wielded_icon = "iron_hammer_wielded"
+	w_class = ITEM_SIZE_HUGE
+	armor_penetration = ARMOR_PEN_DEEP
+	force = WEAPON_FORCE_ROBUST
+	structure_damage_factor = STRUCTURE_DAMAGE_BORING
+	tool_qualities = list(QUALITY_HAMMERING = 40, QUALITY_PRYING = 1)
+	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 15)
+
+
 /obj/item/tool/hammer/mace
 	name = "mace"
 	desc = "Used for applying blunt force trauma to a person's rib cage."
