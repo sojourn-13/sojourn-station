@@ -291,6 +291,7 @@
 #include "code\datums\autolathe\tools.dm"
 #include "code\datums\components\_component.dm"
 #include "code\datums\components\fabric.dm"
+#include "code\datums\components\heat.dm"
 #include "code\datums\craft\craft_items.dm"
 #include "code\datums\craft\item.dm"
 #include "code\datums\craft\menu.dm"

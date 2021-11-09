@@ -261,6 +261,11 @@
 	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 30, MATERIAL_PLASMA = 15) //Takes plasma
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal
 
+/datum/design/research/item/ammo/hydroflaskette
+	name = "Compressed metallic hydrogen flask"
+	desc = "A small flask for metallic hydrogen. Used in h-plasma weapons and tools."
+	build_path = /obj/item/hydrogen_fuel_cell
+
 //Disks
 /datum/design/research/item/disk/blackshield
 	name = "Blackshield Sovereignty Disk"

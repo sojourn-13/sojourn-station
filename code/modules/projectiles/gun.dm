@@ -386,6 +386,7 @@
 
 //called after successfully firing
 /obj/item/gun/proc/handle_post_fire(mob/living/user, atom/target, var/pointblank=0, var/reflex=0)
+	SEND_SIGNAL(src, COMSIG_GUN_POST_FIRE, target, pointblank, reflex)
 	if(silenced)
 		//Silenced shots have a lower range and volume
 		playsound(user, fire_sound_silenced, 15, 1, -3)

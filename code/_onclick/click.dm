@@ -279,6 +279,7 @@
 	A.CtrlClick(src)
 	return
 /atom/proc/CtrlClick(var/mob/user)
+	SEND_SIGNAL(src, COMSIG_CLICK_CTRL, user)
 	return
 
 /atom/movable/CtrlClick(var/mob/user)
@@ -294,6 +295,7 @@
 	return
 
 /atom/proc/AltClick(var/mob/user)
+	SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
 	var/turf/T = get_turf(src)
 	if(T && user.TurfAdjacent(T))
 		if(user.listed_turf == T)
