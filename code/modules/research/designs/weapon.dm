@@ -148,6 +148,11 @@
 	name = "Hydrogen Torch"
 	build_path = /obj/item/tool/plasma_torch
 
+/datum/design/research/item/weapon/hydrogrenade
+	name = "Hydrogen Grenade"
+	desc = "A hilt that can support an hydrogen fuel cell. It has a flimsy safe guard that prevents it from exploding from the weakest impact."
+	build_path = /obj/item/hydrogen_grenade
+
 // Ammo
 /datum/design/research/item/ammo
 	name_category = "ammunition"
@@ -263,7 +268,7 @@
 
 /datum/design/research/item/ammo/hydroflaskette
 	name = "Compressed metallic hydrogen flask"
-	desc = "A small flask for metallic hydrogen. Used in h-plasma weapons and tools."
+	desc = "A small flask for metallic hydrogen. Used in hydroplasma weapons and tools."
 	build_path = /obj/item/hydrogen_fuel_cell
 
 //Disks
