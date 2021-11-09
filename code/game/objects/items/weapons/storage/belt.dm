@@ -477,7 +477,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["6 Large"]   = "large_storage"
-	options["9 Normale"] = "big_storage"
+	options["9 Normal"] = "big_storage"
 	options["14 Small"]  = "small_storage"
 
 	var/choice = input(M,"What kind of storage do you want?","Adjust Storage") as null|anything in options
@@ -495,7 +495,7 @@
 			return
 
 		if(options[choice] == "big_storage")
-			to_chat(M, "You allow the storage of 9 Normale items.")
+			to_chat(M, "You allow the storage of 9 Normal items.")
 			storage_slots = 9 //Like old belts used to be
 			max_w_class = ITEM_SIZE_NORMAL
 			return

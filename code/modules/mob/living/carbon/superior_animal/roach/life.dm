@@ -15,7 +15,7 @@
 	if(stance == HOSTILE_STANCE_IDLE)
 		switch(busy)
 			if(0)
-				if(prob(5))	// 5 percents chance that the roach is hungry
+				if(prob(35))	// 35 percents chance that the roach is hungry
 					//first, check for potential food nearby
 					var/list/eatTargets = new
 					for(var/mob/living/carbon/C in getPotentialTargets())
