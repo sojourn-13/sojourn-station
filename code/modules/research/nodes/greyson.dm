@@ -199,7 +199,7 @@
 	y = 0.6
 	icon = "greysonfuel"
 
-	required_technologies = list(/datum/technology/GP_fuel_tools
+	required_technologies = list(/datum/technology/GP_fuel_tools,
 								 /datum/technology/bluespace_extended
 								 )
 	required_tech_levels = list()
