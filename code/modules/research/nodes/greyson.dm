@@ -49,7 +49,7 @@
 						   /datum/design/research/item/greyson/iron_lock_security_helmet,
 						   /datum/design/research/item/greyson/iron_lock_security_gloves,
 						   /datum/design/research/item/greyson/iron_lock_security_boots)
-
+/*
 /datum/technology/GP_window
 	name = "Greyson Positronic Glass-Widow Infuser"
 	desc = "The GP Glass Widow Infuser design and manufacturing."
@@ -80,7 +80,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/greyson/unmaker,
 			       /datum/design/research/item/greyson/combat_shield)
-
+*/
 /datum/technology/GP_cells
 	name = "Greyson Positronic Cells"
 	desc = "A mix of old cell manufacturing with a GP characteristics."
@@ -173,7 +173,7 @@
 						   /datum/design/research/item/tool/hammer_onestar,
 						   /datum/design/research/item/tool/omni_surgery_onestar,
 						   /datum/design/research/item/tool/jackhammer_onestar)
-
+/*
 /datum/technology/GP_nano_toolmods
 	name = "Greyson Positronic Nano Reapir & NanoAI"
 	desc = "GP pre-programed self replicating nanites to fit onto any ."
@@ -189,7 +189,7 @@
 	unlocks_designs = list(/datum/design/research/item/greyson/repair_nano,
 						   /datum/design/research/item/greyson/ai_tool)
 	cost = 5000
-
+*/
 /datum/technology/GP_fuel_toolmods
 	name = "Greyson Positronic Bluespace Holding Tank & Randomizer"
 	desc = "GP pre-programed Randomizer blue paint and Bluespace Fuel Tank ."
@@ -199,12 +199,14 @@
 	y = 0.6
 	icon = "greysonfuel"
 
-	required_technologies = list(/datum/technology/GP_fuel_tools,
-								 /datum/technology/bluespace_extended)
+	required_technologies = list(/datum/technology/GP_fuel_tools
+								 //datum/technology/bluespace_extended //people can endlessly rerole and spam this to get the best tool mod possable
+								 )
 	required_tech_levels = list()
 
 	unlocks_designs = list(/datum/design/research/item/greyson/holding_tank,
-						   /datum/design/research/item/greyson/randomizer)
+						   //datum/design/research/item/greyson/randomizer
+						   )
 	cost = 2500 //Not THAT high-tech, but still...
 
 /datum/technology/GP_robotics
