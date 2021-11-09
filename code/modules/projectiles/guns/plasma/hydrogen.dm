@@ -48,8 +48,6 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	var/contain_fail_damage = 50 // Applied to every bodypart.
 	var/overheat_damage = 25 // Applied to the hand holding the gun.
 
-	var/aerith_aether = 50 // Variable used to repetidely call Process(), which is used for heat management. It is in deciseconds, so 50 = 5 seconds
-
 /obj/item/gun/hydrogen/Initialize()
 	..()
 	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
@@ -58,7 +56,11 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /obj/item/gun/hydrogen/New()
 	..()
 	update_icon()
-	Process()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/gun/hydrogen/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	..()
 
 /obj/item/gun/hydrogen/examine(mob/user)
 	..(user)
@@ -145,8 +147,6 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 				src.visible_message("The [src.name] reattach itself to the [connected.name].")
 				usr.remove_from_mob(src)
 				forceMove(connected)
-
-	spawn(aerith_aether) Process()
 
 /obj/item/gun/hydrogen/consume_next_projectile()
 	if(!flask)
