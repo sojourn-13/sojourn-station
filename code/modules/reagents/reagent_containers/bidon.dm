@@ -124,7 +124,7 @@
 					lid = FALSE
 					reagent_flags |= REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE
 					playsound(src,'sound/items/trayhit2.ogg',50,1)
-					update_icon()
+				update_icon()
 				return
 	else if(lid)
 		to_chat(user, SPAN_NOTICE("Remove the lid first."))

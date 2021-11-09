@@ -177,7 +177,7 @@
 
 /obj/machinery/genetics/pulper/verb/eject()
 	set category = "Object"
-	set name = "Empty Gibber"
+	set name = "Empty Pulper"
 	set src in oview(1)
 
 	if(occupant)

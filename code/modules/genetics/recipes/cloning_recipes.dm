@@ -83,7 +83,7 @@
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/lodge/tatonka)
 
 /datum/genetics/mutation_recipe/combination/tangu_1/get_result()
-	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/tatonka/tangu, "tatonka")
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/tatonka/tangu, "tangu")
 	return new_mutation
 
 //======================================================================
@@ -92,7 +92,7 @@
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/bear)
 
 /datum/genetics/mutation_recipe/irradiation/mukwah/get_result()
-	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/mukwah, "Mukwah")
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/mukwah, "mukwah")
 	return new_mutation
 
 //======================================================================
@@ -101,7 +101,7 @@
 	required_on_clone_types = list(/mob/living/simple_animal/pig)
 
 /datum/genetics/mutation_recipe/irradiation/cerberus/get_result()
-	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus, "Cerberus")
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus, "cerberus")
 	return new_mutation
 
 /datum/genetics/mutation_recipe/combination/chimera
@@ -109,7 +109,7 @@
 	required_mutations = list(MUTATION_NERVOUSNESS)
 
 /datum/genetics/mutation_recipe/combination/chimera/get_result()
-	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus, "Cerberus")
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus/chimera, "chimera")
 	return new_mutation
 
 //======================================================================
