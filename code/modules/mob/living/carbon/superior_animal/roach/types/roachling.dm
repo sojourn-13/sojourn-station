@@ -16,9 +16,9 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
-	eating_time = 1200 //Takes longer for small roaches to eat
+	eating_time = 90 SECONDS //Takes less time
 	life_cycles_before_sleep = 800 //We need more time to eat
-	probability_egg_laying = 0
+	probability_egg_laying = 95 //We are the quickest are we dont want to waste eggs!
 	var/amount_grown = 0
 	var/big_boss = FALSE
 
@@ -28,7 +28,7 @@
 	if(!stat)
 		amount_grown += rand(0,2) // Roachling growing up
 
-		if(amount_grown >= 100) // Old enough to turn into an adult
+		if(amount_grown >= 50) // Old enough to turn into an adult
 			var/spawn_type
 			if (fed > 0) // If roachling has eaten a corpse
 				if (big_boss == TRUE && prob(fed)) // has eaten a fuhrer roach and has eaten a bunch otherwise
