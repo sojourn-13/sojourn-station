@@ -64,23 +64,23 @@
 	required_tech_levels = list(RESEARCH_COMBAT = 10)
 	cost = 7500
 	unlocks_designs = list(/datum/design/research/item/greyson/glass_widow)
-
+*/
 /datum/technology/GP_unmaker
-	name = "Greyson Positronic Tyrant Destroyers"
-	desc = "The rare and highly vauleable GP Master Unmaker Infuser gun mod and portable self charging combat shields."
+	name = "Greyson Positronic combat shield"
+	desc = "The rare and portable self charging combat shields."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.5 //Bottom middle
 	y = 0.1
 	icon = "mastermind"
 
-	required_technologies = list(/datum/technology/GP_window)
+	required_technologies = list()
 	required_tech_levels = list(RESEARCH_COMBAT = 13)
 	cost = 25000
 
-	unlocks_designs = list(/datum/design/research/item/greyson/unmaker,
+	unlocks_designs = list(//datum/design/research/item/greyson/unmaker,
 			       /datum/design/research/item/greyson/combat_shield)
-*/
+
 /datum/technology/GP_cells
 	name = "Greyson Positronic Cells"
 	desc = "A mix of old cell manufacturing with a GP characteristics."
@@ -191,8 +191,8 @@
 	cost = 5000
 */
 /datum/technology/GP_fuel_toolmods
-	name = "Greyson Positronic Bluespace Holding Tank & Randomizer"
-	desc = "GP pre-programed Randomizer blue paint and Bluespace Fuel Tank ."
+	name = "Greyson Positronic Bluespace Holding Tank"
+	desc = "Bluespace Fuel Tank."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.6
@@ -200,12 +200,12 @@
 	icon = "greysonfuel"
 
 	required_technologies = list(/datum/technology/GP_fuel_tools
-								 //datum/technology/bluespace_extended //people can endlessly rerole and spam this to get the best tool mod possable
+								 /datum/technology/bluespace_extended
 								 )
 	required_tech_levels = list()
 
 	unlocks_designs = list(/datum/design/research/item/greyson/holding_tank,
-						   //datum/design/research/item/greyson/randomizer
+						   //datum/design/research/item/greyson/randomizer //people can endlessly rerole and spam this to get the best tool mod possable
 						   )
 	cost = 2500 //Not THAT high-tech, but still...
 
