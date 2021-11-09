@@ -16,7 +16,7 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
-	eating_time = 90 SECONDS //Takes less time
+	eating_time = 0.5 //Half less time
 	life_cycles_before_sleep = 800 //We need more time to eat
 	probability_egg_laying = 95 //We are the quickest are we dont want to waste eggs!
 	var/amount_grown = 0
