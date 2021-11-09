@@ -267,6 +267,11 @@
 	desc = "A unique disk for printing and creating Blackshield arms and ammunition."
 	build_path = /obj/item/computer_hardware/hard_drive/portable/design/blackshield
 
+/datum/design/research/item/weapon/bastion
+	name = "bastion shield"
+	build_path = /obj/item/shield/riot/bastion
+	materials = list(MATERIAL_PLASMAGLASS = 3, MATERIAL_OSMIUM = 1) //So making it at the guild is objectively always better
+
 //Weapon mods
 /datum/design/research/item/weapon/weapon_upgrade
 	name_category = "weapon upgrades"

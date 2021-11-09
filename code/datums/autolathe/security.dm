@@ -59,3 +59,8 @@
 /datum/design/autolathe/sec/buckler
 	name = "tactical shield"
 	build_path = /obj/item/shield/buckler
+
+/datum/design/autolathe/sec/bastion
+	name = "bastion shield"
+	build_path = /obj/item/shield/riot/bastion
+	materials = list(MATERIAL_PLASMAGLASS = 3, MATERIAL_OSMIUM = 1) //So making it at the guild is objectively always better

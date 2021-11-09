@@ -108,7 +108,7 @@
 
 			for(var/obj/structure/low_wall/obstacle in get_step(src, dir))//This is only a miner issue... We will brake it
 				if(obstacle.density == TRUE) //Almost never will do anything, but in cases were theirs a non-dence lower wall
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 5,attacktext) //Lots of health
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 3,attacktext) //Lots of health
 					return
 
 			for(var/obj/structure/girder/obstacle in get_step(src, dir))//We know your tricks, they will now fail.
@@ -145,7 +145,9 @@
 				if(obstacle.density == TRUE)
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
-
+			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
 
 /mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
