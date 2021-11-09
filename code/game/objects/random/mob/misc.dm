@@ -13,6 +13,21 @@
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 90
 
+//Genetic Ambusher
+
+/obj/random/mob/ambusher
+	name = "random ambusher"
+	icon_state = "hostilemob-brown-low"
+	alpha = 128
+
+/obj/random/mob/ambusher/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/shadow))
+
+/obj/random/mob/ambusher/low_chance
+	name = "low chance ambusher"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 99 // These things should not be escaping from science often.
+
 //Carps
 
 /obj/random/mob/carp

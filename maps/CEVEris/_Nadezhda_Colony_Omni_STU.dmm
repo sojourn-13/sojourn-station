@@ -7798,6 +7798,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"bSG" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "bSS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
@@ -18030,6 +18040,10 @@
 /area/nadezhda/rnd/docking{
 	name = "\improper Upper Research Hallway"
 	})
+"emw" = (
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1west)
 "emE" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
@@ -18241,6 +18255,15 @@
 /obj/structure/flora/small/trailrockb2,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"epW" = (
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "epX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -20431,6 +20454,11 @@
 /obj/item/bedsheet/orange,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
+"eRD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "eRJ" = (
 /obj/structure/salvageable/server,
 /turf/simulated/floor/tiled/steel,
@@ -21131,6 +21159,13 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/bridge)
+"eYT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "eYZ" = (
 /obj/machinery/computer/arcade,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -22378,6 +22413,11 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/quartermaster/miningdock)
+"fpt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "fpy" = (
 /obj/effect/floor_decal/industrial/loading,
 /obj/effect/decal/cleanable/dirt,
@@ -25639,6 +25679,11 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/pool)
+"fZy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "fZE" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel,
@@ -30886,9 +30931,23 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
+"hfv" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "hfy" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/crew_quarters/sleep/cryo2)
+"hfE" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "hfH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -40442,6 +40501,11 @@
 /obj/machinery/smartfridge/drying_rack,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology/xenoflora)
+"jua" = (
+/obj/structure/catwalk,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1west)
 "jud" = (
 /obj/structure/table/woodentable,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -51984,6 +52048,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"lVz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "lVG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/contraband/poster/placed/pinup/amy{
@@ -56954,6 +57024,11 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/captain)
+"mYD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "mYM" = (
 /obj/structure/flora/small/bushc1,
 /obj/machinery/light{
@@ -82833,6 +82908,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "sXu" = (
 /obj/structure/bed/chair,
+/obj/random/mob/ambusher,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "sXw" = (
@@ -83660,6 +83736,11 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"tgD" = (
+/obj/structure/catwalk,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "tgF" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -91744,6 +91825,11 @@
 /obj/effect/floor_decal/industrial/box/white,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/storage)
+"uVn" = (
+/obj/structure/catwalk,
+/obj/random/mob/ambusher/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "uVt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -109232,7 +109318,7 @@ lEX
 lEX
 cXq
 rUi
-rUi
+emw
 cVz
 fOk
 lEX
@@ -111887,7 +111973,7 @@ mdX
 oTD
 keT
 cVz
-rdK
+jua
 lEX
 lEX
 lEX
@@ -113552,7 +113638,7 @@ rdK
 rdK
 rdK
 rdK
-rdK
+jua
 rdK
 rdK
 rdK
@@ -116706,7 +116792,7 @@ qPK
 ifB
 qPK
 trc
-aQA
+bSG
 xGi
 xGi
 gtM
@@ -116790,7 +116876,7 @@ xGi
 trc
 byT
 byT
-nqv
+hfv
 hMS
 klz
 nZp
@@ -118500,7 +118586,7 @@ ato
 vBf
 eNE
 xDh
-eNE
+fpt
 eNE
 aIV
 bVE
@@ -127286,7 +127372,7 @@ lXe
 fPX
 jfy
 klz
-lXe
+mYD
 klz
 klz
 nUG
@@ -132632,7 +132718,7 @@ sFI
 rOW
 rOW
 qPK
-gLP
+tgD
 eNE
 eNE
 eNE
@@ -132726,7 +132812,7 @@ iHj
 rQi
 gsS
 iHj
-iHj
+lVz
 aeC
 gwc
 sFI
@@ -133062,7 +133148,7 @@ trc
 trc
 mEn
 sCN
-eNE
+fpt
 trc
 sFI
 sFI
@@ -136018,7 +136104,7 @@ fGW
 oQV
 oQV
 hKB
-hKB
+uVn
 hKB
 xyy
 rQi
@@ -139391,7 +139477,7 @@ sFI
 kZI
 bwE
 uDE
-uDE
+eRD
 lCm
 kZI
 rQi
@@ -141320,7 +141406,7 @@ hcQ
 hcQ
 uoC
 qPK
-gLP
+tgD
 dMQ
 qPK
 wPw
@@ -142165,7 +142251,7 @@ kZI
 lpc
 pdJ
 pdJ
-pdJ
+fZy
 pdJ
 osj
 kZI
@@ -144387,7 +144473,7 @@ rQi
 oQL
 xLp
 mlu
-hKB
+uVn
 lTS
 rQi
 pqo
@@ -144615,7 +144701,7 @@ sFI
 kZI
 gsS
 hKB
-hbP
+hfE
 ntZ
 kZI
 sFI
@@ -145478,7 +145564,7 @@ wPL
 wPL
 add
 hKB
-rQr
+epW
 fDG
 fDG
 fDG
@@ -160971,7 +161057,7 @@ sFI
 sFI
 uuI
 kvl
-cEg
+eYT
 uuI
 sFI
 sFI
