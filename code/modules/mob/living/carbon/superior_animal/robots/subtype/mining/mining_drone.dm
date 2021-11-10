@@ -172,7 +172,8 @@
 	visible_message("[src] empties \his storage bin.")
 	var/turf/T = get_turf(src)
 	for(var/obj/O in contents) // Empty everything
-		O.forceMove(T) // Move the item on the ground
+		contents -= O
+		O.loc = src.loc
 	return TRUE
 
 
