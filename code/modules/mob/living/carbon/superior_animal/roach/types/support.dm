@@ -13,6 +13,7 @@
 	knockdown_odds = 3
 
 	blattedin_revives_left = 1
+	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_PSN_BREATH, MUTATION_COUGHING, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
 
 /mob/living/carbon/superior_animal/roach/support/New()
 	.=..()

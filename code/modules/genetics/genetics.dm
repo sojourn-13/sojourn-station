@@ -345,6 +345,8 @@
 //Function must return a mutation datum from the mutation pool on a success, and a null value that evaluates to FALSE on a fail.
 /datum/genetics/genetics_holder/proc/getMutation(var/key, var/active_required = FALSE)
 	RETURN_TYPE(/datum/genetics/mutation)
+	if(!mutation_pool)
+		return null
 	for(var/datum/genetics/mutation/source_mutation in mutation_pool)
 		if(source_mutation.key == key)
 			if(!active_required || source_mutation.active)

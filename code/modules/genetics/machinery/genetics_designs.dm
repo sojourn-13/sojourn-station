@@ -13,7 +13,11 @@ Designs for various genetics components
 /datum/design/autolathe/genetics/purger
 	name = "Blue-Ink Mutagenic Purger"
 	build_path = /obj/item/genetics/purger
-	time = 1000
+	time = 100
+
+/datum/design/autolathe/genetics/mut_injector
+	name = "Mutagenic Injector"
+	build_path = /obj/item/genetics/purger
 
 /datum/design/autolathe/genetics/pulper
 	name = "Xenofauna Genetics Pulper Board"

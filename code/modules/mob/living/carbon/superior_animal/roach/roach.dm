@@ -63,6 +63,13 @@
 /mob/living/carbon/superior_animal/roach/New()
 	..()
 
+/mob/living/carbon/superior_animal/roach/isValidAttackTarget(var/atom/O)
+	if (isliving(O))
+		var/mob/living/L = O
+		if(L.faction=="sproachder")
+			return
+	return ..(O)
+
 //When roaches die near a leader, the leader may call for reinforcements
 /mob/living/carbon/superior_animal/roach/death()
 	.=..()
