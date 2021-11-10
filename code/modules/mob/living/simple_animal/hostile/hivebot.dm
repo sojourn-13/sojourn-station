@@ -133,6 +133,8 @@
 	deathmessage = "collapses into a pile of scrap!"
 	speak_chance = 5
 
+	friendly_to_colony = FALSE
+
 	move_to_delay = 1
 	turns_per_move = 4
 	see_in_dark = 10
