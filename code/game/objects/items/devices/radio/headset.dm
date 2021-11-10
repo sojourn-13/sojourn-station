@@ -155,6 +155,10 @@
 	translate_binary = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
 
+/obj/item/device/radio/headset/heads/rd/recalculateChannels(var/setDescription = FALSE)
+	..(setDescription)
+	translate_binary = TRUE
+
 /obj/item/device/radio/headset/heads/hos
 	name = "warrant officer headset"
 	desc = "The headset of the men who lock away your worthless lives. This has a small symbol denoting its built in back-up transmitter."
