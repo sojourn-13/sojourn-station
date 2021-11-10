@@ -24,7 +24,7 @@
 #define MUTATION_SPROACHDER_FRIEND /datum/genetics/mutation/sproachder_friend
 #define MUTATION_PSN_BREATH /datum/genetics/mutation/psn_breath
 #define MUTATION_CLOAKING /datum/genetics/mutation/cloaking
-
+#define MUTATION_GREATER_CLOAKING /datum/genetics/mutation/greater_cloaking
 //Exclusive Mutation types:
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
 #define MUT_TYPE_SKIN 1 //An exclusive mutation type for skin.

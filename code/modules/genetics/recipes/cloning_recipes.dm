@@ -203,3 +203,12 @@
 
 /datum/genetics/mutation_recipe/combination/croaker_lord/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/retaliate/croakerlord, "croaker lord")
+
+//======================================================================
+//Nightmare Stalkers
+/datum/genetics/mutation_recipe/combination/nightmare
+	required_on_clone_types = list(/mob/living/simple_animal/hostile/nightmare)
+	required_mutations = list(MUTATION_EMP)
+
+/datum/genetics/mutation_recipe/combination/croaker_lord/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/nightmare, "nightmare stalker")

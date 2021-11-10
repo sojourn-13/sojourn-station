@@ -4,13 +4,13 @@
 	desc = "Causes the body to produce phermones that Roaches use to identify each other."
 	gain_text = "Your body smells funny."
 	exclusive_type = MUT_TYPE_FACTION
-	instability = 10
+	instability = 30
 	var/old_faction
 
 /datum/genetics/mutation/roach_friend/onMobImplant()
 	old_faction = container.holder.faction
 	if(container.holder.faction == "spiders")
-		container.holder.faction = "sproachders"
+		container.holder.faction = "sproachder"
 	else
 		container.holder.faction = "roach"
 
@@ -24,13 +24,13 @@
 	desc = "Causes the body to produce phermones that Spiders use to identify each other."
 	gain_text = "Your body smells funny."
 	exclusive_type = MUT_TYPE_FACTION
-	instability = 10
+	instability = 30
 	var/old_faction
 
 /datum/genetics/mutation/spider_friend/onMobImplant()
 	old_faction = container.holder.faction
 	if(container.holder.faction == "roach")
-		container.holder.faction = "sproachders"
+		container.holder.faction = "sproachder"
 	else
 		container.holder.faction = "spiders"
 		
@@ -44,12 +44,12 @@
 	desc = "Causes the body to produce a strange cocktail of phermones that keep both Roaches and Spiders docile."
 	gain_text = "Your body smells a little cursed."
 	exclusive_type = MUT_TYPE_FACTION
-	instability = 20
+	instability = 60
 	var/old_faction
 
 /datum/genetics/mutation/sproachder_friend/onMobImplant()
 	old_faction = container.holder.faction
-	container.holder.faction = "sproachders"
+	container.holder.faction = "sproachder"
 		
 
 /datum/genetics/mutation/sproachder_friend/onMobRemove()

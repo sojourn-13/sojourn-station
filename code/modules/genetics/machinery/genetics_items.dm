@@ -207,7 +207,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 /obj/item/genetics/sample/proc/unload_genetics()
 	var/datum/genetics/genetics_holder/outbound_genetics_holder = genetics_holder.Copy()
 	name = "Empty Mutagenic Sample Plate"
-	genetics_holder = null
+	genetics_holder.removeAllMutations()
 	icon_state = "slide"
 	return outbound_genetics_holder
 
@@ -325,6 +325,17 @@ Circuit boards for different Genetics Machines.
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
 
+/obj/item/circuitboard/genetics/gene_analyzer
+	build_name = "Belvoix Genetic Analyzer"
+	build_path = /obj/machinery/genetics/gene_analyzer
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
+	req_components = list(
+		/obj/item/stock_parts/scanning_module = 4, //Affects Genes Analyzed
+		/obj/item/stock_parts/matter_bin = 4, //Affects Max Sample plates
+	)
+
+
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit
 	disk_name = "Genetics Studio Design Kit"
 	icon_state = "moebius"
@@ -333,7 +344,8 @@ Circuit boards for different Genetics Machines.
 		/datum/design/autolathe/genetics/pulper = 0,
 		/datum/design/autolathe/genetics/cloner = 0,
 		/datum/design/autolathe/genetics/clone_console = 0,
-		/datum/design/autolathe/genetics/purger = 0
+		/datum/design/autolathe/genetics/purger = 0,
+		/datum/design/autolathe/genetics/mut_injector = 0
 	)
 
 

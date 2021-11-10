@@ -25,6 +25,9 @@ cannot isolate or combine desired genes.
 	icon = 'icons/obj/salvageable.dmi'
 	icon_state = "implant_container0"
 
+	layer = BELOW_OBJ_LAYER
+	circuit = /obj/item/circuitboard/genetics/gene_analyzer
+
 	//List of genetics sample plates loaded into the device
 	var/list/sample_plates = list()
 
@@ -58,6 +61,20 @@ cannot isolate or combine desired genes.
 
 	var/debug_ui_data = null
 
+//upgrading parts
+/obj/machinery/genetics/gene_analyzer/RefreshParts()
+	..()
+	var/scanner_rating = 0
+	var/bin_rating = 0
+
+	for(var/obj/item/stock_parts/part in component_parts)
+		if(istype(part, /obj/item/stock_parts/matter_bin))
+			bin_rating += part.rating
+		if(istype(part, /obj/item/stock_parts/scanning_module))
+			scanner_rating += part.rating
+
+	max_analyzed_per_destruction = round(scanner_rating/4 + 1)
+	max_plates = (bin_rating+1)
 
 /obj/machinery/genetics/gene_analyzer/attackby(obj/item/I, mob/user)
 	if(default_deconstruction(I, user))

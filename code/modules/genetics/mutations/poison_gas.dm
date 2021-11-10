@@ -13,7 +13,7 @@
 /datum/genetics/mutation/psn_breath/onMobImplant()
 	container.holder.verbs += /mob/living/proc/mutation_psn_breath
 	initial_time = world.time
-	gas_sac = new /datum/reagents(100, src)
+	gas_sac = new /datum/reagents(100, container.holder)
 	initializeProcessing()
 
 /datum/genetics/mutation/psn_breath/onMobRemove()
