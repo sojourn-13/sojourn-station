@@ -117,7 +117,7 @@
 	pixel_x = -16
 	pixel_y = null
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/attemptAttackOnTarget()
+/mob/living/carbon/superior_animal/giant_spider/nurse/UnarmedAttack()
 	..()
 	if(ishuman(target_mob))
 		var/mob/living/carbon/human/H = target_mob
