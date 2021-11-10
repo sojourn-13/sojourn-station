@@ -827,9 +827,9 @@
 	force_upgrade_mults = initial(force_upgrade_mults)
 	force_upgrade_mods = initial(force_upgrade_mods)
 
-	hitcost = initial(force)
-	stunforce = initial(force)
-	agonyforce = initial(force)
+	hitcost = initial(hitcost)
+	stunforce = initial(stunforce)
+	agonyforce = initial(agonyforce)
 
 	switched_on_force = initial(switched_on_force)
 	extra_bulk = initial(extra_bulk)
