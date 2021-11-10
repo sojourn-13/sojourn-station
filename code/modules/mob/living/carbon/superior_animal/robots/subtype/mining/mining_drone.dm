@@ -164,7 +164,8 @@
 // Pick an ore and put it in the contents.
 /mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(var/obj/item/ore/O)
 	//visible_message("[src] pick up [O]") // For some reasons the messages do not combine and spam the chat.
-	O.forceMove(src) // Pick up the item
+	O.loc = src.loc
+	contents += O // Pick up the item
 	return TRUE
 
 // Drop all the loot that the bot gathered on the ground.
