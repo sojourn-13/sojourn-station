@@ -214,7 +214,6 @@
 /obj/item/ammo_casing/rifle_75/laser
 	desc = "A 7.5mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/rifle_75
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 ////.408 rifle////
 
@@ -368,7 +367,6 @@
 	desc = "A .50 Kurtz laser casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/beam/weak/kurtz_50
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim
