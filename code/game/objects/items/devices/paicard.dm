@@ -19,7 +19,7 @@
 	if(istype(rig))
 		rig.forced_move(direction, user)
 
-/obj/item/device/paicard/New()
+/obj/item/device/paicard/Initialize(mapload)
 	..()
 	add_overlay("pai-off")
 

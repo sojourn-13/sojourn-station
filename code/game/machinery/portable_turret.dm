@@ -100,7 +100,7 @@
 	lethal = TRUE
 	installation = /obj/item/gun/energy/laser
 
-/obj/machinery/porta_turret/New()
+/obj/machinery/porta_turret/Initialize(mapload)
 	..()
 	req_access.Cut()
 	req_one_access = list(access_security, access_heads, access_occupy)
@@ -113,7 +113,7 @@
 	SEND_SIGNAL(A, COMSIG_TURRENT, src)
 	setup()
 
-/obj/machinery/porta_turret/crescent/New()
+/obj/machinery/porta_turret/crescent/Initialize(mapload)
 	..()
 	req_one_access.Cut()
 	req_access = list(access_cent_specops)

@@ -61,7 +61,7 @@
 	possible_transfer_amounts = list(5,10,15,25,30,60,100,120,300)
 	lid_icon_state = "lid_beakerlarge"
 
-/obj/item/reagent_containers/glass/beaker/bluespace/New()
+/obj/item/reagent_containers/glass/beaker/bluespace/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(1, get_turf(src))

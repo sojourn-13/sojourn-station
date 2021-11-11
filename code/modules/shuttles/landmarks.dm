@@ -26,7 +26,7 @@
 	//If set, will set base area and turf type to same as where it was spawned at
 	var/autoset
 
-/obj/effect/shuttle_landmark/New()
+/obj/effect/shuttle_landmark/Initialize(mapload)
 	..()
 	GLOB.shuttle_landmarks_list += src
 	tag = copytext(landmark_tag, 1) //since tags cannot be set at compile time

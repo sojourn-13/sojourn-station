@@ -58,7 +58,7 @@
 	var/failmsg = ""
 	var/charge = 0
 
-/obj/item/device/lightreplacer/New()
+/obj/item/device/lightreplacer/Initialize(mapload)
 	failmsg = "The [name]'s refill light blinks red."
 	..()
 

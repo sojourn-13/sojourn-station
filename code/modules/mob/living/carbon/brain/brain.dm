@@ -9,7 +9,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "brain1"
 
-/mob/living/carbon/brain/New()
+/mob/living/carbon/brain/Initialize(mapload)
 	..()
 	create_reagents(1000)
 

@@ -15,7 +15,7 @@
 	var/mapped_in = 0					//Do not announce creation when it's mapped in.
 
 	// This should be only used on Dev for testing purposes.
-/obj/machinery/power/fractal_reactor/New()
+/obj/machinery/power/fractal_reactor/Initialize(mapload)
 	..()
 	if(!mapped_in)
 		to_chat(world, "<b>\red WARNING: \black Map testing power source activated at: X:[src.loc.x] Y:[src.loc.y] Z:[src.loc.z]</b>")

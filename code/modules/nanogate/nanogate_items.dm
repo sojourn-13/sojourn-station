@@ -33,7 +33,7 @@
 	air_type = /obj/item/tank/nitrogen
 	air_supply = /obj/item/tank/nitrogen
 
-/obj/item/rig/nanite/New()
+/obj/item/rig/nanite/Initialize(mapload)
 	..()
 	Initialize()
 

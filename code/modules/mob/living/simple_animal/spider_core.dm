@@ -27,7 +27,7 @@
 	density = 0 //This makes them a nightmare to kill, fun fun.
 	faction = "spiders"
 
-/mob/living/simple_animal/spider_core/New()
+/mob/living/simple_animal/spider_core/Initialize(mapload)
 	. = ..()
 	verbs |= /mob/living/proc/ventcrawl
 	verbs |= /mob/living/proc/hide

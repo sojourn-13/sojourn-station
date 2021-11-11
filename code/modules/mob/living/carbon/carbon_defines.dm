@@ -1,6 +1,6 @@
 /mob/living/carbon/
 	gender = MALE
-	var/datum/species/species //Contains icon generation and language information, set during New().
+	var/datum/species/species //Contains icon generation and language information, set during Initialize(mapload).
 	var/datum/species_form/form //Steals the icon generation info from above.
 	var/species_aan = ""
 	var/species_color_key = "#000000"

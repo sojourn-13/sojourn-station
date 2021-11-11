@@ -59,7 +59,7 @@
 	name = "reinforced holofloor"
 	icon_state = "reinforced"
 
-/turf/simulated/floor/holofloor/space/New()
+/turf/simulated/floor/holofloor/space/Initialize(mapload)
 	icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
 
 /turf/simulated/floor/holofloor/beach
@@ -87,7 +87,7 @@
 	icon = 'icons/turf/flooring/asteroid.dmi'
 	initial_flooring = null
 
-/turf/simulated/floor/holofloor/desert/New()
+/turf/simulated/floor/holofloor/desert/Initialize(mapload)
 	..()
 	if(prob(10))
 		add_overlay("asteroid[rand(0,9)]")
@@ -219,7 +219,7 @@
 		return 1
 	return 0
 
-/obj/item/holo/esword/New()
+/obj/item/holo/esword/Initialize(mapload)
 	if(!item_color)
 		item_color = pick("red","blue","green","purple")
 
@@ -310,7 +310,7 @@
 	to_chat(user, "The colony's AI is not to interact with these devices!")
 	return
 
-/obj/machinery/readybutton/New()
+/obj/machinery/readybutton/Initialize(mapload)
 	..()
 
 
@@ -375,7 +375,7 @@
 	meat_amount = 0
 	meat_type = null
 
-/mob/living/simple_animal/hostile/carp/holodeck/New()
+/mob/living/simple_animal/hostile/carp/holodeck/Initialize(mapload)
 	..()
 	set_light(2) //hologram lighting
 

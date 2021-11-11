@@ -8,7 +8,7 @@
 	var/obj/item/extinguisher/has_extinguisher
 	var/opened = 0
 
-/obj/structure/extinguisher_cabinet/New()
+/obj/structure/extinguisher_cabinet/Initialize(mapload)
 	..()
 	if(prob(80))
 		has_extinguisher = new/obj/item/extinguisher(src)

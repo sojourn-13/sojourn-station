@@ -18,7 +18,7 @@
 	var/obj/item/cell/cell = null
 	var/suitable_cell = /obj/item/cell/small
 
-/obj/item/device/robotanalyzer/New()
+/obj/item/device/robotanalyzer/Initialize(mapload)
 	..()
 	if(!cell && suitable_cell)
 		cell = new suitable_cell(src)

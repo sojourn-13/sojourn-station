@@ -30,7 +30,7 @@
 	var/datum/artifact_effect/secondary_effect
 	var/being_used = 0
 
-/obj/machinery/artifact/New()
+/obj/machinery/artifact/Initialize(mapload)
 	..()
 
 	//setup primary effect - these are the main ones (mixed)

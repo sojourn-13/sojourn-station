@@ -278,7 +278,7 @@
 		/obj/item/reagent_containers/food/snacks/cube/gun,
 		)
 
-/obj/item/storage/pouch/grow_a_gun/New()
+/obj/item/storage/pouch/grow_a_gun/Initialize(mapload)
 	populate_contents()
 
 /obj/item/storage/pouch/grow_a_gun/populate_contents()
@@ -381,7 +381,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 5, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	origin_tech = list(TECH_BLUESPACE = 4)
 
-/obj/item/storage/pouch/holding/New()
+/obj/item/storage/pouch/holding/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(3, get_turf(src))

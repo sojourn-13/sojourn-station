@@ -48,7 +48,7 @@ Has ability of every roach.
 
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 
-/mob/living/carbon/superior_animal/roach/kaiser/New()
+/mob/living/carbon/superior_animal/roach/kaiser/Initialize(mapload)
 	..()
 	gas_sac = new /datum/reagents(100, src)
 	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.

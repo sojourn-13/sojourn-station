@@ -12,7 +12,7 @@
 	var/reinforced = FALSE
 	var/obj/item/storage/toolbox/toolbox = null
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
-	New()
+	Initialize(mapload)
 		..()
 		if(!toolbox)
 			src.name = "unfinished [src.name]"

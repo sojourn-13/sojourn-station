@@ -25,7 +25,7 @@
 	unacidable = 1
 	density = 1
 
-/obj/rogue/teleporter/New()
+/obj/rogue/teleporter/Initialize(mapload)
 	for(var/turf/T in orange(7, src))
 		turfs_around += T
 

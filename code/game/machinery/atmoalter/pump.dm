@@ -21,7 +21,7 @@
 /obj/machinery/portable_atmospherics/powered/pump/filled
 	start_pressure = 90 * ONE_ATMOSPHERE
 
-/obj/machinery/portable_atmospherics/powered/pump/New()
+/obj/machinery/portable_atmospherics/powered/pump/Initialize(mapload)
 	..()
 	cell = new/obj/item/cell/large/high(src)
 

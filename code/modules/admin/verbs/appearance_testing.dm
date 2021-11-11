@@ -100,7 +100,7 @@ var/datum/appearance_test/appearance_test = new
 		rebuild_humans()
 	interact(usr)
 
-/mob/living/carbon/human/appearance_test/New()
+/mob/living/carbon/human/appearance_test/Initialize(mapload)
 	s_tone = -rand(10, 210)
 	eyes_color = rgb(rand(1,220),rand(1,220),rand(1,220))
 	..()

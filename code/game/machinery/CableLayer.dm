@@ -9,7 +9,7 @@
 	var/max_cable = 100
 	var/on = 0
 
-/obj/machinery/cablelayer/New()
+/obj/machinery/cablelayer/Initialize(mapload)
 	cable = new(src)
 	cable.amount = 100
 	..()

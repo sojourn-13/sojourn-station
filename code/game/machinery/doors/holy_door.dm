@@ -26,7 +26,7 @@
 	slot_flags = SLOT_ACCESSORY_BUFFER | SLOT_MASK
 	w_class = ITEM_SIZE_NORMAL // Chonky cross
 
-/obj/machinery/door/holy/New()
+/obj/machinery/door/holy/Initialize(mapload)
 	GLOB.nt_doors += src
 	..()
 

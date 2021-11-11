@@ -67,7 +67,7 @@ var/datum/xenomorph/xenomorph_ai
 	return FALSE
 //Xenos can't be slipped but can be flashed, after all, secondary senses like thermal vision are usually easily overloaded by lights.
 
-/mob/living/carbon/superior_animal/xenomorph/New()
+/mob/living/carbon/superior_animal/xenomorph/Initialize(mapload)
 	..()
 	if(!icon_living)
 		icon_living = icon_state
@@ -80,7 +80,7 @@ var/datum/xenomorph/xenomorph_ai
 	pixel_x = -14
 	pixel_y = 0
 
-/mob/living/carbon/superior_animal/xenomorph/hunter/New()
+/mob/living/carbon/superior_animal/xenomorph/hunter/Initialize(mapload)
 	..()
 	if(!icon_living)
 		icon_living = icon_state

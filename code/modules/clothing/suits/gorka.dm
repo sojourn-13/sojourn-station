@@ -7,7 +7,7 @@
 	var/obj/item/clothing/head/hood/hood
 	var/hoodtype = null //So other clothing can override this.
 
-/obj/item/clothing/suit/gorka/New()
+/obj/item/clothing/suit/gorka/Initialize(mapload)
 	MakeHood()
 	..()
 
@@ -112,7 +112,7 @@
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 	var/obj/item/storage/internal/pockets
 
-/obj/item/clothing/suit/gorka/New()
+/obj/item/clothing/suit/gorka/Initialize(mapload)
 	..()
 	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 2	//two slots

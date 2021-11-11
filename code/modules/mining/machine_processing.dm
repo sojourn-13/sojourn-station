@@ -14,7 +14,7 @@
 /obj/machinery/mineral/processing_unit_console/laber
 	name = "labor camp production machine console"
 
-/obj/machinery/mineral/processing_unit_console/New()
+/obj/machinery/mineral/processing_unit_console/Initialize(mapload)
 	..()
 	spawn()
 		src.machine = locate(/obj/machinery/mineral/processing_unit) in range(3, src)
@@ -119,7 +119,7 @@
 /obj/machinery/mineral/processing_unit/laber
 	name = "labor material processor"
 
-/obj/machinery/mineral/processing_unit/New()
+/obj/machinery/mineral/processing_unit/Initialize(mapload)
 	..()
 
 	ores_processing = list()

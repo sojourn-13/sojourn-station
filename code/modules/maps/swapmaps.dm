@@ -32,7 +32,7 @@
 		An associative list of icon files with names, like
 		'player.dmi' = "player"
 	swapmaps_mode
-		This must be set at runtime, like in world/New().
+		This must be set at runtime, like in world/Initialize(mapload).
 
 		SWAPMAPS_SAV	0	(default)
 			Uses .sav files for raw /savefile output.
@@ -86,7 +86,7 @@
 		Create a new map; specify id and 2 corners
 		This becomes a /swapmap for one of the compiled-in maps, for
 		 easy saving.
-	swapmap.New()
+	swapmap.Initialize(mapload)
 		Create a new map datum, but does not allocate space or assign an
 		 ID (used for loading).
 	swapmap.Del()

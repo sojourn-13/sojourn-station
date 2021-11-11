@@ -24,7 +24,7 @@
 	fuel = fuel_conversion_rate * 5 // Start with fuel when fabricated
 	return
 
-/obj/structure/bonfire/New()
+/obj/structure/bonfire/Initialize(mapload)
 	START_PROCESSING(SSobj, src)
 	..()
 
@@ -185,7 +185,7 @@
 	start_fuel_use = 0
 	burning = TRUE
 
-/obj/structure/bonfire/permanent/New()
+/obj/structure/bonfire/permanent/Initialize(mapload)
 	..()
 	fuel = fuel_conversion_rate
 	update_icon()

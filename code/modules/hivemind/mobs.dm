@@ -28,7 +28,7 @@
 	var/special_ability_cooldown = 0		//use ability_cooldown, don't touch this
 
 
-	New()
+	Initialize(mapload)
 		. = ..()
 		//here we change name, so design them according to this
 		name = pick("Warped ", "Altered ", "Modified ", "Upgraded ", "Abnormal ") + name
@@ -871,7 +871,7 @@
 	var/can_use_special_ability = TRUE
 	var/list/my_copies = list()
 
-/mob/living/simple_animal/hostile/hivemind/phaser/New()
+/mob/living/simple_animal/hostile/hivemind/phaser/Initialize(mapload)
 	..()
 	filters += filter(type="blur", size = 0)
 

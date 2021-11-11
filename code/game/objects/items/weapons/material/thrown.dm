@@ -13,7 +13,7 @@
 /obj/item/material/star/uranium
 	default_material = MATERIAL_URANIUM
 
-/obj/item/material/star/New()
+/obj/item/material/star/Initialize(mapload)
 	..()
 	src.pixel_x = rand(-12, 12)
 	src.pixel_y = rand(-12, 12)

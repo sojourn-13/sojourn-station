@@ -498,7 +498,7 @@
 		/obj/item/reagent_containers/food/snacks/chocolatepiece/truffle
 		)
 
-/obj/item/storage/fancy/heartbox/New()
+/obj/item/storage/fancy/heartbox/Initialize(mapload)
 	..()
 	new /obj/item/reagent_containers/food/snacks/chocolatepiece(src)
 	new /obj/item/reagent_containers/food/snacks/chocolatepiece(src)

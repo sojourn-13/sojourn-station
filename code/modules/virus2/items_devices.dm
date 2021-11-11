@@ -54,7 +54,7 @@
 /obj/item/virusdish/random
 	name = "virus sample"
 
-/obj/item/virusdish/random/New()
+/obj/item/virusdish/random/Initialize(mapload)
 	. = ..()
 	src.virus2 = new /datum/disease2/disease
 	src.virus2.makerandom()
@@ -111,7 +111,7 @@
 	var/stage = 1
 	var/analysed = 1
 
-/obj/item/diseasedisk/premade/New()
+/obj/item/diseasedisk/premade/Initialize(mapload)
 	name = "blank GNA disk (stage: [stage])"
 	effect = new /datum/disease2/effectholder
 	effect.effect = new /datum/disease2/effect/invisible

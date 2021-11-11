@@ -22,7 +22,7 @@
 	salvageable = 0
 	price_tag = 200
 
-	New()
+	Initialize(mapload)
 		..()
 		pr_mech_sleeper = new /datum/global_iterator/mech_sleeper(list(src),0)
 		pr_mech_sleeper.set_delay(equip_cooldown)
@@ -255,7 +255,7 @@
 	var/max_cable = 1000
 	required_type = /obj/mecha/working
 
-	New()
+	Initialize(mapload)
 		cable = new(src)
 		cable.amount = 0
 		..()
@@ -403,7 +403,7 @@
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 20)
 	required_type = /obj/mecha/medical
 
-	New()
+	Initialize(mapload)
 		..()
 		reagent_flags |= NO_REACT
 		syringes = new

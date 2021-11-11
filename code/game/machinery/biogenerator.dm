@@ -83,7 +83,7 @@
 	)
 
 
-/obj/machinery/biogenerator/New()
+/obj/machinery/biogenerator/Initialize(mapload)
 	..()
 	create_reagents(1000)
 	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)

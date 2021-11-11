@@ -43,7 +43,7 @@
 	qdel(expansion_obj)
 	return TRUE
 
-/obj/test/extensions/New()
+/obj/test/extensions/Initialize(mapload)
 	set_extension(src, /datum/extension, /datum/extension)
 	set_extension(src, /datum/extension/multitool, /datum/extension/multitool/cryo, list(/proc/is_operable, /proc/is_operable))
 	..()

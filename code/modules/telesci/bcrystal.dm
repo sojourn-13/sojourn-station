@@ -24,7 +24,7 @@
 	var/blink_range = 8 // The teleport range when crushed/thrown at someone.
 	var/entropy_value = 2
 
-/obj/item/bluespace_crystal/New()
+/obj/item/bluespace_crystal/Initialize(mapload)
 	..()
 	pixel_x = rand(-5, 5)
 	pixel_y = rand(-5, 5)

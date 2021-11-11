@@ -195,7 +195,7 @@
 	to_chat(user, SPAN_NOTICE("You switch [src] off."))
 	..()
 
-/obj/item/tool/hammer/charge/New()
+/obj/item/tool/hammer/charge/Initialize(mapload)
 	..()
 	T = new /datum/effect/effect/system/trail/fire()
 	T.set_up(src)

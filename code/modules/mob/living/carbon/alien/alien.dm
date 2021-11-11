@@ -17,7 +17,7 @@
 	var/language
 	var/death_msg = "lets out a waning guttural screech, green blood bubbling from its maw."
 
-/mob/living/carbon/alien/New()
+/mob/living/carbon/alien/Initialize(mapload)
 
 	time_of_birth = world.time
 

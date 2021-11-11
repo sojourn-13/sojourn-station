@@ -285,7 +285,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
  *	The Actual PDA
  */
 
-/obj/item/device/pda/New()
+/obj/item/device/pda/Initialize(mapload)
 	..()
 	PDAs += src
 	PDAs = sortNames(PDAs)

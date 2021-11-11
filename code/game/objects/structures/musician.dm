@@ -20,7 +20,7 @@
 /obj/structure/device/piano/get_fall_damage()
 	return FALL_GIB_DAMAGE
 
-/obj/structure/device/piano/New()
+/obj/structure/device/piano/Initialize(mapload)
 	if(prob(50))
 		name = "space minimoog"
 		desc = "This is a minimoog, like a space piano, but more spacey!"

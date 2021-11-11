@@ -13,7 +13,7 @@
 	var/stump_type = /obj/structure/flora/stump //What type stump do we have
 	var/modular_shadow = TRUE //Are rng picker var, yes or no basiclly
 
-/obj/structure/flora/tree/New()
+/obj/structure/flora/tree/Initialize(mapload)
 	..()
 	if(modular_shadow)
 		shadow_overlay = "shadow_overlay[rand(0, 6)]"
@@ -36,7 +36,7 @@
 	desc = "Once a growing tree, now a small stub in the groumd, without a voice..."
 	icon_state = "tree_stump"
 
-/obj/structure/flora/stump/small/New()
+/obj/structure/flora/stump/small/Initialize(mapload)
 	..()
 	icon_state = "tree_stump[rand(0, 6)]"
 
@@ -90,7 +90,7 @@
 	icon_state = "pine_1"
 	shadow = FALSE
 
-/obj/structure/flora/tree/pine/New()
+/obj/structure/flora/tree/pine/Initialize(mapload)
 	..()
 	icon_state = "pine_[rand(1, 3)]"
 
@@ -99,7 +99,7 @@
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_c"
 
-/obj/structure/flora/tree/pine/xmas/New()
+/obj/structure/flora/tree/pine/xmas/Initialize(mapload)
 	..()
 	icon_state = "pine_c"
 
@@ -108,7 +108,7 @@
 	icon_state = "tree_1"
 	shadow = FALSE
 
-/obj/structure/flora/tree/dead/New()
+/obj/structure/flora/tree/dead/Initialize(mapload)
 	..()
 	icon_state = "tree_[rand(1, 6)]"
 

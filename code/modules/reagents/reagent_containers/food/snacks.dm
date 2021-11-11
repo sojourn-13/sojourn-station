@@ -554,7 +554,7 @@
 	bitesize = 3
 	nutriment_amt = 3
 	preloaded_reagents = list("sprinkles" = 1)
-	New()
+	Initialize(mapload)
 		..()
 		if(prob(30))
 			src.icon_state = "donut2"
@@ -572,7 +572,7 @@
 	bitesize = 10
 	preloaded_reagents = list("sprinkles" = 1)
 	matter = list(MATERIAL_BIOMATTER = 12)
-	New()
+	Initialize(mapload)
 		..()
 		var/chaosselect = pick(1,2,3,4,5,6,7,8,9,10)
 		switch(chaosselect)
@@ -613,7 +613,7 @@
 	bitesize = 5
 	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 5)
 	matter = list(MATERIAL_BIOMATTER = 4)
-	New()
+	Initialize(mapload)
 		..()
 		if(prob(30))
 			src.icon_state = "jdonut2"
@@ -631,7 +631,7 @@
 	bitesize = 5
 	preloaded_reagents = list("sprinkles" = 1, "slimejelly" = 5)
 	matter = list(MATERIAL_BIOMATTER = 4)
-	New()
+	Initialize(mapload)
 		..()
 		if(prob(30))
 			src.icon_state = "jdonut2"
@@ -649,7 +649,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("sprinkles" = 1, "cherryjelly" = 5)
 	matter = list(MATERIAL_BIOMATTER = 4)
-	New()
+	Initialize(mapload)
 		..()
 		if(prob(30))
 			src.icon_state = "jdonut2"
@@ -1083,7 +1083,7 @@
 	nutriment_desc = list("bun" = 2, "metal" = 3)
 	nutriment_amt = 2
 	matter = list(MATERIAL_BIOMATTER = 6)
-	New()
+	Initialize(mapload)
 		..()
 		if(prob(5))
 			reagents.add_reagent("nanites", 2)
@@ -1098,7 +1098,7 @@
 	center_of_mass = list("x"=16, "y"=11)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
-	New()
+	Initialize(mapload)
 		..()
 		reagents.add_reagent("nanites", 100)
 		bitesize = 0.1
@@ -1110,7 +1110,7 @@
 	filling_color = "#43DE18"
 	center_of_mass = list("x"=16, "y"=11)
 	matter = list(MATERIAL_BIOMATTER = 13)
-	New()
+	Initialize(mapload)
 		..()
 		reagents.add_reagent("protein", 8)
 		bitesize = 2
@@ -1389,7 +1389,7 @@
 	nutriment_amt = 8
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 12)
-	New()
+	Initialize(mapload)
 		..()
 		if(prob(10))
 			name = "exceptional plump pie"
@@ -1480,7 +1480,7 @@
 	nutriment_amt = 2
 	matter = list(MATERIAL_BIOMATTER = 2)
 	bitesize = 0.1 //this snack is supposed to be eating during looooong time. And this it not dinner food! --rastaf0
-	New()
+	Initialize(mapload)
 		..()
 		unpopped = rand(1,10)
 	On_Consume()
@@ -1828,7 +1828,7 @@
 	nutriment_desc = list("backwash" = 1)
 	nutriment_amt = 1
 	bitesize = 5
-	New()
+	Initialize(mapload)
 		..()
 		var/mysteryselect = pick(1,2,3,4,5,6,7,8,9,10)
 		switch(mysteryselect)
@@ -1887,7 +1887,7 @@
 	bitesize = 5
 	preloaded_reagents = list("water" = 10)
 	matter = null
-	New()
+	Initialize(mapload)
 		..()
 		if(prob(25))
 			src.desc = "A wish come true!"
@@ -1989,7 +1989,7 @@
 	preloaded_reagents = list("plasticide" = 10)
 	//taste_tag = list(MEAT_FOOD,BLAND_FOOD)
 
-/obj/item/reagent_containers/food/snacks/cube/gun/New()
+/obj/item/reagent_containers/food/snacks/cube/gun/Initialize(mapload)
 	..()
 	color = pick("#EE204D", "#FCE883", "#1F75FE", "#B5674D", "#FF7538", "#1CAC78", "#926EAE", "#232323")
 
@@ -2723,7 +2723,7 @@
 	nutriment_amt = 5
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 9)
-	New()
+	Initialize(mapload)
 		..()
 		if(prob(10))
 			name = "exceptional plump helmet biscuit"
@@ -2755,7 +2755,7 @@
 	nutriment_amt = 8
 	matter = list(MATERIAL_BIOMATTER = 11)
 	cooked = TRUE
-	New()
+	Initialize(mapload)
 		..()
 		name = pick(list("borsch","bortsch","borstch","borsh","borshch","borscht"))
 
@@ -3883,23 +3883,23 @@
 		return
 	..()
 
-/obj/item/pizzabox/margherita/New()
+/obj/item/pizzabox/margherita/Initialize(mapload)
 	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/margherita(src)
 	boxtag = "Margherita Deluxe"
 
-/obj/item/pizzabox/vegetable/New()
+/obj/item/pizzabox/vegetable/Initialize(mapload)
 	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza(src)
 	boxtag = "Gourmet Vegetable"
 
-/obj/item/pizzabox/mushroom/New()
+/obj/item/pizzabox/mushroom/Initialize(mapload)
 	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/mushroompizza(src)
 	boxtag = "Mushroom Special"
 
-/obj/item/pizzabox/meat/New()
+/obj/item/pizzabox/meat/Initialize(mapload)
 	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/meatpizza(src)
 	boxtag = "Meatlover's Supreme"
 
-/obj/item/pizzabox/hawaiianpizza/New()
+/obj/item/pizzabox/hawaiianpizza/Initialize(mapload)
 	pizza = new /obj/item/reagent_containers/food/snacks/sliceable/pizza/hawaiianpizza(src)
 	boxtag = "Controversial Pizza"
 

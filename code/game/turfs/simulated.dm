@@ -15,7 +15,7 @@
 
 
 
-/turf/simulated/New()
+/turf/simulated/Initialize(mapload)
 	..()
 	if(istype(loc, /area/nadezhda/absolutism))
 		holy = 1

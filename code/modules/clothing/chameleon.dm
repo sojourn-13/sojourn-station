@@ -46,7 +46,7 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/under/admin/chameleon/New()
+/obj/item/clothing/under/admin/chameleon/Initialize(mapload)
 	..()
 	if(!clothing_choices)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/under)
@@ -81,7 +81,7 @@
 	body_parts_covered = 0
 	var/global/list/clothing_choices
 
-/obj/item/clothing/head/admin/chameleon/New()
+/obj/item/clothing/head/admin/chameleon/Initialize(mapload)
 	..()
 	if(!clothing_choices)
 		var/blocked = list(src.type, /obj/item/clothing/head/costume/misc/justice,)//Prevent infinite loops and bad hats.
@@ -116,7 +116,7 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/suit/admin/chameleon/New()
+/obj/item/clothing/suit/admin/chameleon/Initialize(mapload)
 	..()
 	if(!clothing_choices)
 		var/blocked = list(src.type, null)
@@ -150,7 +150,7 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/shoes/admin/chameleon/New()
+/obj/item/clothing/shoes/admin/chameleon/Initialize(mapload)
 	..()
 	if(!clothing_choices)
 		var/blocked = list(src.type, /obj/item/clothing/shoes/syndigaloshes, /obj/item/clothing/shoes/cyborg)//prevent infinite loops and bad shoes.
@@ -221,7 +221,7 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/global/list/clothing_choices
 
-/obj/item/clothing/gloves/admin/chameleon/New()
+/obj/item/clothing/gloves/admin/chameleon/Initialize(mapload)
 	..()
 	if(!clothing_choices)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/gloves, list(src.type))
@@ -256,7 +256,7 @@
 	flags_inv = HIDEEYES|HIDEFACE
 	var/global/list/clothing_choices
 
-/obj/item/clothing/mask/admin/chameleon/New()
+/obj/item/clothing/mask/admin/chameleon/Initialize(mapload)
 	..()
 	if(!clothing_choices)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/mask, list(src.type))
@@ -290,7 +290,7 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/list/global/clothing_choices
 
-/obj/item/clothing/glasses/admin/chameleon/New()
+/obj/item/clothing/glasses/admin/chameleon/Initialize(mapload)
 	..()
 	if(!clothing_choices)
 		clothing_choices = generate_chameleon_choices(/obj/item/clothing/glasses, list(src.type))
@@ -332,7 +332,7 @@
 	var/obj/item/projectile/copy_projectile
 	var/global/list/gun_choices
 
-/obj/item/gun/energy/chameleon/New()
+/obj/item/gun/energy/chameleon/Initialize(mapload)
 	..()
 
 	if(!gun_choices)

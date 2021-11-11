@@ -11,7 +11,7 @@
 	var/smoke_strength = 3
 	layer = HIDE_LAYER
 
-/obj/item/mine_old/New()
+/obj/item/mine_old/Initialize(mapload)
 	icon_state = "mine_old"
 
 /obj/item/mine_old/attack_hand(mob/user as mob)
@@ -93,7 +93,7 @@
 	var/triggered = 0
 	layer = HIDE_LAYER
 
-/obj/item/spider_shadow_trap/New()
+/obj/item/spider_shadow_trap/Initialize(mapload)
 	..()
 	pixel_x = -16
 	pixel_y = -12
@@ -145,7 +145,7 @@
 	new /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing(src.loc)
 	qdel(src)
 
-/obj/item/spider_shadow_trap/burrowing/New()
+/obj/item/spider_shadow_trap/burrowing/Initialize(mapload)
 	..()
 	pixel_x = 0
 	pixel_y = 0

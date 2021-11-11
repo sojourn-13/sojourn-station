@@ -23,7 +23,7 @@
 /obj/effect/shuttle_landmark/escape_pod/start
 	name = "Docked"
 
-/obj/effect/shuttle_landmark/escape_pod/start/New()
+/obj/effect/shuttle_landmark/escape_pod/start/Initialize(mapload)
 	landmark_tag = "escape_pod_[number]_start"
 	dock_target = "escape_pod_[number]_berth"
 	..()
@@ -31,14 +31,14 @@
 /obj/effect/shuttle_landmark/escape_pod/transit
 	name = "In transit"
 
-/obj/effect/shuttle_landmark/escape_pod/transit/New()
+/obj/effect/shuttle_landmark/escape_pod/transit/Initialize(mapload)
 	landmark_tag = "escape_pod_[number]_internim"
 	..()
 
 /obj/effect/shuttle_landmark/escape_pod/out
 	name = "Escaped"
 
-/obj/effect/shuttle_landmark/escape_pod/out/New()
+/obj/effect/shuttle_landmark/escape_pod/out/Initialize(mapload)
 	landmark_tag = "escape_pod_[number]_out"
 	dock_target = "escape_pod_[number]_recovery"
 	..()

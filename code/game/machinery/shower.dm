@@ -78,7 +78,7 @@
 	var/obj/effect/mist/mymist
 	var/obj/machinery/cellshower/master
 
-/obj/effect/shower/New()
+/obj/effect/shower/Initialize(mapload)
 	..()
 	for(var/mob/living/carbon/C in src.loc)
 		wash(C)

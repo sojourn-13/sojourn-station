@@ -7,7 +7,7 @@
 	var/sides = 6
 	attack_verb = list("diced")
 
-/obj/item/dice/New()
+/obj/item/dice/Initialize(mapload)
 	. = ..()
 	icon_state = "[name][rand(1,sides)]"
 
@@ -63,7 +63,7 @@
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "dicebag"
 
-/obj/item/storage/pill_bottle/dice/New()
+/obj/item/storage/pill_bottle/dice/Initialize(mapload)
 	..()
 	for(var/i = 1 to 7)
 		new /obj/item/dice( src )
@@ -74,7 +74,7 @@
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "magicdicebag"
 
-/obj/item/storage/pill_bottle/dice_nerd/New()
+/obj/item/storage/pill_bottle/dice_nerd/Initialize(mapload)
 	..()
 	new /obj/item/dice/d4( src )
 	new /obj/item/dice( src )

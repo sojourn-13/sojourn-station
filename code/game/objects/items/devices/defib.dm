@@ -25,7 +25,7 @@
 
 	var/obj/item/shockpaddles/linked/paddles
 
-/obj/item/device/defib_kit/New() //starts without a cell for rnd
+/obj/item/device/defib_kit/Initialize(mapload) //starts without a cell for rnd
 	..()
 	if(ispath(paddles))
 		paddles = new paddles(src, src)
@@ -749,7 +749,7 @@
 	var/obj/item/cell/cell_type = null
 	var/obj/item/cell/cell = null
 
-/obj/item/shockpaddles/standalone/New()
+/obj/item/shockpaddles/standalone/Initialize(mapload)
 	..()
 
 	if(ispath(cell_type, suitable_cell))

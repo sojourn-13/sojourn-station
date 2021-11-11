@@ -13,7 +13,7 @@
 	var/strength = 0
 	var/ticks_recovering = 10
 
-/obj/effect/energy_field/New()
+/obj/effect/energy_field/Initialize(mapload)
 	..()
 	update_nearby_tiles()
 

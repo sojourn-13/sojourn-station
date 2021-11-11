@@ -26,7 +26,7 @@
 			enhanced = 1
 			qdel(O)
 
-/obj/item/slime_extract/New()
+/obj/item/slime_extract/Initialize(mapload)
 	..()
 	create_reagents(100)
 	reagents.add_reagent("slimejelly", 30)
@@ -103,7 +103,7 @@
 	name = "bluespace slime extract"
 	icon_state = "bluespace slime extract"
 
-/obj/item/slime_extract/bluespace/New()
+/obj/item/slime_extract/bluespace/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 
@@ -245,7 +245,7 @@
 	unacidable = 1
 	layer = TURF_LAYER
 
-	New()
+	Initialize(mapload)
 		..()
 		START_PROCESSING(SSobj, src)
 

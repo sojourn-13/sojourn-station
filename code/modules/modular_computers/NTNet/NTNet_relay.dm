@@ -95,7 +95,7 @@
 		ntnet_global.add_log("Manual override: Network blacklist cleared.")
 		return 1
 
-/obj/machinery/ntnet_relay/New()
+/obj/machinery/ntnet_relay/Initialize(mapload)
 	..()
 	uid = gl_uid
 	gl_uid++

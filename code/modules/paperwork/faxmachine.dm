@@ -23,7 +23,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 
 	var/canrecieve = TRUE
 
-/obj/machinery/photocopier/faxmachine/New()
+/obj/machinery/photocopier/faxmachine/Initialize(mapload)
 	..()
 	allfaxes += src
 	if(!destination) destination = GLOB.faxable_factions_list[GLOB.faxable_factions_list.len]

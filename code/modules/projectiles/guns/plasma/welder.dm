@@ -27,14 +27,14 @@
 	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the welder a new flask when mapped in.
 	update_icon()
 
-/obj/item/tool/plasma_torch/New()
+/obj/item/tool/plasma_torch/Initialize(mapload)
 	..()
 	update_icon()
 	if(!gun)
 		gun = new /obj/item/gun/hydrogen/plasma_torch(src)
 		gun.welder = src
 
-/obj/item/tool/plasma_torch/loaded/New()
+/obj/item/tool/plasma_torch/loaded/Initialize(mapload)
 	flask = new /obj/item/hydrogen_fuel_cell(src)
 	..()
 

@@ -352,7 +352,7 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GOLD = 6, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 3)
 	origin_tech = list(TECH_BLUESPACE = 4)
 
-/obj/item/storage/belt/holding/New()
+/obj/item/storage/belt/holding/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(4, get_turf(src))

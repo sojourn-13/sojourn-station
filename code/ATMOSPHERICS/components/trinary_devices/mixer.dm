@@ -63,7 +63,7 @@
 	if(old_stat != stat)
 		update_icon()
 
-/obj/machinery/atmospherics/trinary/mixer/New()
+/obj/machinery/atmospherics/trinary/mixer/Initialize(mapload)
 	..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_MIXER
 	air2.volume = ATMOS_DEFAULT_VOLUME_MIXER
@@ -182,7 +182,7 @@ obj/machinery/atmospherics/trinary/mixer/t_mixer
 
 	//node 3 is the outlet, nodes 1 & 2 are intakes
 
-obj/machinery/atmospherics/trinary/mixer/t_mixer/New()
+obj/machinery/atmospherics/trinary/mixer/t_mixer/Initialize(mapload)
 	..()
 	switch(dir)
 		if(NORTH)
@@ -228,7 +228,7 @@ obj/machinery/atmospherics/trinary/mixer/m_mixer
 
 	//node 3 is the outlet, nodes 1 & 2 are intakes
 
-obj/machinery/atmospherics/trinary/mixer/m_mixer/New()
+obj/machinery/atmospherics/trinary/mixer/m_mixer/Initialize(mapload)
 	..()
 	switch(dir)
 		if(NORTH)

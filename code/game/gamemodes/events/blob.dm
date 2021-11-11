@@ -534,7 +534,7 @@
 	expandType = /obj/effect/blob/shield
 
 
-/obj/effect/blob/core/New()
+/obj/effect/blob/core/Initialize(mapload)
 	core = src //It is its own core
 	..()
 

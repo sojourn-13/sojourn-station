@@ -141,7 +141,7 @@
 
 	update_icon()
 
-/obj/machinery/door/airlock/New()
+/obj/machinery/door/airlock/Initialize(mapload)
 	..()
 
 	set_frequency(frequency)
@@ -217,7 +217,7 @@
 	. = ..()
 	set_frequency(frequency)
 
-/obj/machinery/airlock_sensor/New()
+/obj/machinery/airlock_sensor/Initialize(mapload)
 	..()
 	set_frequency(frequency)
 
@@ -357,7 +357,7 @@
 	set_frequency(frequency)
 
 
-/obj/machinery/access_button/New()
+/obj/machinery/access_button/Initialize(mapload)
 	..()
 
 	set_frequency(frequency)

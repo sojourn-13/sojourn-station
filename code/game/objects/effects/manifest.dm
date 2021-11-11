@@ -4,7 +4,7 @@
 	icon_state = "x"
 	unacidable = 1//Just to be sure.
 
-/obj/effect/manifest/New()
+/obj/effect/manifest/Initialize(mapload)
 
 	src.invisibility = 101
 	return

@@ -12,7 +12,7 @@
 	desc = "A small bottle. Contains inaprovaline - used to stabilize patients."
 	reagent = "inaprovaline"
 
-	New()
+	Initialize(mapload)
 		..()
 		reagents.add_reagent("inaprovaline", 60)
 
@@ -22,6 +22,6 @@
 	desc = "A small bottle of Anti-toxins. Counters poisons, and repairs damage, a wonder drug."
 	reagent = "anti_toxin"
 
-	New()
+	Initialize(mapload)
 		..()
 		reagents.add_reagent("anti_toxin", 60)

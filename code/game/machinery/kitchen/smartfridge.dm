@@ -237,7 +237,7 @@
 
 
 
-/obj/machinery/smartfridge/New()
+/obj/machinery/smartfridge/Initialize(mapload)
 	..()
 	if(is_secure)
 		wires = new/datum/wires/smartfridge/secure(src)

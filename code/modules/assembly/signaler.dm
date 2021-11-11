@@ -17,7 +17,7 @@
 	var/datum/radio_frequency/radio_connection
 	var/deadman = 0
 
-/obj/item/device/assembly/signaler/New()
+/obj/item/device/assembly/signaler/Initialize(mapload)
 	..()
 	spawn(40)
 		set_frequency(frequency)

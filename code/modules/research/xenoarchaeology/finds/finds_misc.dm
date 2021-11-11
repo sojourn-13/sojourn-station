@@ -7,7 +7,7 @@
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "crystal"
 
-/obj/machinery/crystal/New()
+/obj/machinery/crystal/Initialize(mapload)
 	if(prob(50))
 		icon_state = "crystal2"
 
@@ -21,7 +21,7 @@
 	//listening_to_players = 1
 	//speaking_to_players = 1
 
-/obj/item/talkingcrystal/New()
+/obj/item/talkingcrystal/Initialize(mapload)
 	src.talking_atom = new (src)
 	if(prob(50))
 		icon_state = "talk_crystal2"

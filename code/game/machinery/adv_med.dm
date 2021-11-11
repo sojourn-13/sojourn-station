@@ -161,7 +161,7 @@
 	anchored = 1
 
 
-/obj/machinery/body_scanconsole/New()
+/obj/machinery/body_scanconsole/Initialize(mapload)
 	..()
 	spawn(5)
 		for(var/dir in cardinal)

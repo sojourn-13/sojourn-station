@@ -3,7 +3,7 @@
 	var/list/random_icon_states = list()
 	random_rotation = 1
 
-/obj/effect/decal/weldable/New()
+/obj/effect/decal/weldable/Initialize(mapload)
 	if (random_icon_states && length(src.random_icon_states) > 0)
 		src.icon_state = pick(src.random_icon_states)
 	..()

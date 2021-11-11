@@ -3,7 +3,7 @@
 	desc = "Officially licensed to take your money."
 	icon_state = "card_pack_spaceball"
 
-/obj/item/pack/spaceball/New()
+/obj/item/pack/spaceball/Initialize(mapload)
 	var/datum/playingcard/P
 	var/i
 	var/year = 629 + text2num(time2text(world.timeofday, "YYYY"))

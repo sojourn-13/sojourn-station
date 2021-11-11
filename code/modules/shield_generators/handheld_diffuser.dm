@@ -14,7 +14,7 @@
 	else
 		icon_state = "hdiffuser_off"
 
-/obj/item/device/shield_diffuser/New()
+/obj/item/device/shield_diffuser/Initialize(mapload)
 	cell = new(src)
 	..()
 

@@ -117,7 +117,7 @@
 	friendly_to_colony = TRUE
 	randpixel = 0
 
-/mob/living/carbon/superior_animal/lodge/baby_cerberus/New()
+/mob/living/carbon/superior_animal/lodge/baby_cerberus/Initialize(mapload)
 	..()
 	src.transform *= 0.5
 

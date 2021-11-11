@@ -103,7 +103,7 @@
 	seek_speed = 0.75
 	colony_friend = TRUE
 
-/mob/living/simple_animal/lizard/New()
+/mob/living/simple_animal/lizard/Initialize(mapload)
 	..()
 
 	nutrition = rand(max_nutrition*0.25, max_nutrition*0.75)

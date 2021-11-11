@@ -8,7 +8,7 @@
 	var/fuel = 0
 	var/max_fuel = 2000
 
-/obj/item/device/lighting/glowstick/New()
+/obj/item/device/lighting/glowstick/Initialize(mapload)
 	pixel_x = rand(-12,12)
 	pixel_y = rand(-12,12)
 	fuel = rand(max_fuel*0.8, max_fuel)
@@ -98,7 +98,7 @@
 	desc = "A party-grade glowstick."
 	color = "#FF00FF"
 
-/obj/item/device/lighting/glowstick/random/New()
+/obj/item/device/lighting/glowstick/random/Initialize(mapload)
 	color = rgb(rand(50,255),rand(50,255),rand(50,255))
 	..()
 

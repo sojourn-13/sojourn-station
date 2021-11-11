@@ -185,7 +185,7 @@
 
 	var/obj/item/stuck = null
 
-/obj/item/ducttape/New()
+/obj/item/ducttape/Initialize(mapload)
 	..()
 	flags |= NOBLUDGEON
 

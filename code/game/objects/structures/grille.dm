@@ -251,7 +251,7 @@
 	destroyed = 1
 	icon_state = "grille-b"
 	density = 0
-	New()
+	Initialize(mapload)
 		..()
 		health = rand(-5, -1) //In the destroyed but not utterly threshold.
 		healthCheck() //Send this to healthCheck just in case we want to do something else with it.

@@ -8,7 +8,7 @@
 	icon='icons/effects/beam.dmi'
 	icon_state="b_beam"
 	var/tmp/atom/BeamSource
-	New()
+	Initialize(mapload)
 		..()
 		spawn(10) qdel(src)
 
@@ -67,7 +67,7 @@
 	var/duration = 10
 	var/randomdir = TRUE
 
-/obj/effect/overlay/temp/New()
+/obj/effect/overlay/temp/Initialize(mapload)
 	if(randomdir)
 		dir = pick(GLOB.cardinal)
 

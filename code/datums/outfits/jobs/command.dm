@@ -9,7 +9,7 @@
 	pda_type = /obj/item/modular_computer/pda/captain
 	backpack_contents = list(/obj/item/storage/box/ids = 1, /obj/item/tool/knife/dagger/ceremonial = 1, /obj/item/clothing/accessory/cross = 1)
 
-/decl/hierarchy/outfit/job/captain/New()
+/decl/hierarchy/outfit/job/captain/Initialize(mapload)
 	..()
 	backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/backpack/captain
 	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/captain

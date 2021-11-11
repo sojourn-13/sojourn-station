@@ -109,7 +109,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	active_power_usage = 2200	//the pneumatic pump power. 3 HP ~ 2200W
 	idle_power_usage = 100
 
-/obj/machinery/genetics/cloner/New()
+/obj/machinery/genetics/cloner/Initialize(mapload)
 	..()
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	progress_benchmark = world.time
@@ -575,7 +575,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	I.layer = 5.02
 	I.pixel_z = 32
 	add_overlay(I)
-	
+
 /*
 //Debugging
 /obj/machinery/genetics/cloner/verb/eject_cloneling()
@@ -635,7 +635,7 @@ and which aren't.
 	var/obj/machinery/genetics/cloner/linked_cloner
 	var/obj/structure/reagent_dispensers/bidon/linked_bidon
 
-/obj/machinery/computer/genetics/clone_console/New()
+/obj/machinery/computer/genetics/clone_console/Initialize(mapload)
 	sync()
 
 /obj/machinery/computer/genetics/clone_console/proc/sync()

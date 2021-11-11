@@ -19,7 +19,7 @@
 	buckle_lying = TRUE //bed-like behavior, forces mob.lying = buckle_lying if != -1
 
 	var/y_offset = 0
-/obj/machinery/optable/New()
+/obj/machinery/optable/Initialize(mapload)
 	..()
 	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
 		computer = locate(/obj/machinery/computer/operating, get_step(src, dir))

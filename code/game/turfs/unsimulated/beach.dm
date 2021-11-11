@@ -18,6 +18,6 @@
 	light_power = 2
 	light_range = 2
 
-/turf/unsimulated/beach/water/New()
+/turf/unsimulated/beach/water/Initialize(mapload)
 	..()
 	add_overlay(image("icon"='icons/turf/flooring/beach.dmi',"icon_state"="water2","layer"=MOB_LAYER+0.1))

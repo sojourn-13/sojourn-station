@@ -810,7 +810,7 @@
 	                /obj/item/reagent_containers/food/snacks/egg,
 	                /obj/item/reagent_containers/food/snacks/meat)
 
-/obj/item/storage/bag/ore/holding/New()
+/obj/item/storage/bag/ore/holding/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(4, get_turf(src))

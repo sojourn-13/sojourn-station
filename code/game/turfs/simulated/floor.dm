@@ -68,7 +68,7 @@
 	health = maxHealth
 	flooring_override = null
 
-	/*This is passed false in the New() flooring set, so that we're not calling everything up to
+	/*This is passed false in the Initialize(mapload) flooring set, so that we're not calling everything up to
 	nine times when the world is created. This saves on tons of roundstart processing*/
 	if (update)
 		update_icon(1)

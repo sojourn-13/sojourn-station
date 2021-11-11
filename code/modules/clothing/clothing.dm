@@ -243,7 +243,7 @@
 
 
 /*
-/obj/item/clothing/ears/earmuffs/mp3/New()
+/obj/item/clothing/ears/earmuffs/mp3/Initialize(mapload)
 	..()
 	player = new(src)
 	START_PROCESSING(SSobj, src)
@@ -615,7 +615,7 @@ BLIND     // can't see anything
 	valid_accessory_slots = list("armband","decor")
 	restricted_accessory_slots = list("utility", "armband")
 
-/obj/item/clothing/suit/New()
+/obj/item/clothing/suit/Initialize(mapload)
 	allowed |= extra_allowed
 	.=..()
 
@@ -661,7 +661,7 @@ BLIND     // can't see anything
 		return
 	..()
 
-/obj/item/clothing/under/New()
+/obj/item/clothing/under/Initialize(mapload)
 	..()
 	item_state_slots[slot_w_uniform_str] = icon_state //TODO: drop or gonna use it?
 
@@ -716,7 +716,7 @@ BLIND     // can't see anything
 					V.show_message("[usr] sets [src.loc]'s sensors to maximum.", 1)
 
 
-/obj/item/clothing/under/rank/New()
+/obj/item/clothing/under/rank/Initialize(mapload)
 	sensor_mode = 3
 	..()
 

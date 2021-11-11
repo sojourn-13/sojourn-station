@@ -9,7 +9,7 @@
 	var/one_time_use = 0 //Used for one-time-use teleport cards (such as clown planet coordinates.)
 						 //Setting this to 1 will set src.locked to null after a player enters the portal and will not allow hand-teles to open portals to that location.
 
-/obj/machinery/computer/teleporter/New()
+/obj/machinery/computer/teleporter/Initialize(mapload)
 	src.id = "[rand(1000, 9999)]"
 	..()
 	underlays.Cut()
@@ -179,7 +179,7 @@
 	var/entropy_value = 8
 
 
-/obj/machinery/teleport/hub/New()
+/obj/machinery/teleport/hub/Initialize(mapload)
 	..()
 	underlays.Cut()
 	underlays += "tele-wires"
@@ -228,7 +228,7 @@
 	active_power_usage = 2000
 	var/obj/machinery/teleport/hub/com
 
-/obj/machinery/teleport/station/New()
+/obj/machinery/teleport/station/Initialize(mapload)
 	..()
 	cut_overlays()
 	add_overlay("controller-wires")

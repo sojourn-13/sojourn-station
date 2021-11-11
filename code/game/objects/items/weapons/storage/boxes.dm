@@ -499,7 +499,7 @@
 	icon_state = "box"
 	illustration = "flare"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/device/lighting/glowstick/flare(src)
 		new /obj/item/device/lighting/glowstick/flare(src)
@@ -702,7 +702,7 @@
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/clothing/under/rank/trooper/service(src)
 		new /obj/item/clothing/suit/rank/trooper/service(src)
@@ -716,7 +716,7 @@
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/clothing/under/rank/armorer/service(src)
 		new /obj/item/clothing/suit/rank/armorer/service(src)
@@ -730,7 +730,7 @@
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/clothing/under/rank/commander/service(src)
 		new /obj/item/clothing/suit/rank/commander/service(src)
@@ -744,7 +744,7 @@
 	desc = "A box full of solid red, ''blank'' Blackshield ranks, for distribution to volunteers and cadets."
 	icon_state = "box"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/clothing/accessory/ranks/blank(src)
 		new /obj/item/clothing/accessory/ranks/blank(src)

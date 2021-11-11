@@ -30,7 +30,7 @@
 	var/energy_conversion_rate = 0.0002	//how many renwicks per watt?
 	use_power = NO_POWER_USE	//doesn't use APC power
 
-/obj/machinery/shield_gen/New()
+/obj/machinery/shield_gen/Initialize(mapload)
 	spawn(10)
 		for(var/obj/machinery/shield_capacitor/possible_cap in range(1, src))
 			if(get_dir(possible_cap, src) == possible_cap.dir)

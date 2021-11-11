@@ -13,7 +13,7 @@
 	var/obj/item/toppaper	//The topmost piece of paper.
 	slot_flags = SLOT_BELT
 
-/obj/item/clipboard/New()
+/obj/item/clipboard/Initialize(mapload)
 	update_icon()
 
 /obj/item/clipboard/update_icon()

@@ -25,7 +25,7 @@
 	var/image/cover_state = null
 
 
-/obj/machinery/excelsior_autodoc/New()
+/obj/machinery/excelsior_autodoc/Initialize(mapload)
 	. = ..()
 	autodoc_processor = new/datum/autodoc()
 	autodoc_processor.holder = src

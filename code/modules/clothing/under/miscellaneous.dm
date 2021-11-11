@@ -97,7 +97,7 @@
 	siemens_coefficient = 0.9
 	price_tag = 50
 
-/obj/item/clothing/under/rank/mercenary/New()
+/obj/item/clothing/under/rank/mercenary/Initialize(mapload)
 	if (prob(50))
 		name = "black tactical turtleneck"
 		icon_state = "blackturtle"

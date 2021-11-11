@@ -22,7 +22,7 @@
 	special_parts = list(/obj/item/animal_part/clucker_feather)
 	colony_friend = TRUE
 
-/mob/living/carbon/superior_animal/lodge/clucker/New()
+/mob/living/carbon/superior_animal/lodge/clucker/Initialize(mapload)
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
@@ -85,7 +85,7 @@
 	pass_flags = PASSTABLE
 	mob_size = MOB_MINISCULE
 
-/mob/living/carbon/superior_animal/lodge/chick_clucker/New()
+/mob/living/carbon/superior_animal/lodge/chick_clucker/Initialize(mapload)
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)

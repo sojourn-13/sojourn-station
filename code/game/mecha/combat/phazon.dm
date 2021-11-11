@@ -24,7 +24,7 @@
 	cargo_capacity = 1
 
 
-/obj/mecha/combat/phazon/New()
+/obj/mecha/combat/phazon/Initialize(mapload)
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/rcd
 	ME.attach(src)

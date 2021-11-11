@@ -48,7 +48,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	..()
 	flask = new /obj/item/hydrogen_fuel_cell(src) // Give the gun a new flask when mapped in.
 
-/obj/item/gun/hydrogen/New()
+/obj/item/gun/hydrogen/Initialize(mapload)
 	..()
 	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  vent_level,  overheat,  heat_per_shot, 0.01, vent_level_timer)
 	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent)

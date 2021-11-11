@@ -32,7 +32,7 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
-/mob/living/carbon/superior_animal/ambusher/New()
+/mob/living/carbon/superior_animal/ambusher/Initialize(mapload)
 	..()
 	src.adjustBruteLoss(10)
 
@@ -65,7 +65,7 @@
 /mob/living/carbon/superior_animal/ambusher/injured
 	stunned = 4
 
-/mob/living/carbon/superior_animal/ambusher/injured/New()
+/mob/living/carbon/superior_animal/ambusher/injured/Initialize(mapload)
 	..()
 	src.adjustBruteLoss(50)
 

@@ -33,7 +33,7 @@
 	icon_state = "syndicate"
 	anchored = 1
 
-/obj/structure/closet/thunderdome/New()
+/obj/structure/closet/thunderdome/Initialize(mapload)
 	..()
 
 /obj/structure/closet/thunderdome/tdred

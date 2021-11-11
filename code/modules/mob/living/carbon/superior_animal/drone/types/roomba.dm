@@ -36,7 +36,7 @@
 	stop_message = "emits an affirmative blip and stop following."
 	exam_message = null
 
-/mob/living/carbon/superior_animal/handmade/roomba/New()
+/mob/living/carbon/superior_animal/handmade/roomba/Initialize(mapload)
 	armor = default_armor // Give the roomba it's default armor.
 	..()
 	update_icon()

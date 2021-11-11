@@ -30,7 +30,7 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/gun/projectile/revolver/little_comet/New()
+/obj/item/gun/projectile/revolver/little_comet/Initialize(mapload)
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_security
 

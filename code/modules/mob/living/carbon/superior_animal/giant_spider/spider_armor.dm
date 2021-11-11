@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/giant_spider/New()
+/mob/living/carbon/superior_animal/giant_spider/Initialize(mapload)
 	..()
 
 	if(give_randomized_armor)

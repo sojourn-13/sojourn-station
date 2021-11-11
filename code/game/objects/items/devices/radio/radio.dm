@@ -70,7 +70,7 @@ var/global/list/default_medbay_channels = list(
 	frequency = new_frequency
 	radio_connection = SSradio.add_object(src, frequency, RADIO_CHAT)
 
-/obj/item/device/radio/New()
+/obj/item/device/radio/Initialize(mapload)
 	..()
 	wires = new(src)
 	internal_channels = default_internal_channels.Copy()
@@ -768,7 +768,7 @@ var/global/list/default_medbay_channels = list(
 /obj/item/device/radio/phone/medbay
 	frequency = MED_I_FREQ
 
-/obj/item/device/radio/phone/medbay/New()
+/obj/item/device/radio/phone/medbay/Initialize(mapload)
 	..()
 	internal_channels = default_medbay_channels.Copy()
 
@@ -792,7 +792,7 @@ var/global/list/default_medbay_channels = list(
 	var/min_cooldown = 15 MINUTES
 	w_class = ITEM_SIZE_BULKY
 
-/obj/item/device/radio/random_radio/New()
+/obj/item/device/radio/random_radio/Initialize(mapload)
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_guild
 	START_PROCESSING(SSobj, src)

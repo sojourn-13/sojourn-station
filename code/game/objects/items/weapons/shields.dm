@@ -276,7 +276,7 @@
 	if(MOVING_DELIBERATELY(user))
 		return list(BP_ALL_LIMBS)
 
-/obj/item/shield/riot/New()
+/obj/item/shield/riot/Initialize(mapload)
 	RegisterSignal(src, COMSIG_ITEM_PICKED, .proc/is_picked)
 	RegisterSignal(src, COMSIG_ITEM_DROPPED, .proc/is_dropped)
 	return ..()

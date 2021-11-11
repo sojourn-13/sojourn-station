@@ -84,7 +84,7 @@
 		var/datum/antagonist/A = create_antag_instance(ROLE_BORER_REPRODUCED)
 		A.create_antagonist(mind,update = FALSE)
 
-/mob/living/simple_animal/borer/New()
+/mob/living/simple_animal/borer/Initialize(mapload)
 	..()
 
 	add_language(LANGUAGE_CORTICAL)

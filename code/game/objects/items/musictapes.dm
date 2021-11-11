@@ -9,7 +9,7 @@
 	var/songlist //string reference to the name of a songlist attached to this song
 	var/list/datum/track/tracklist = list() //Actual list of media tracks
 
-/obj/item/music_tape/New()
+/obj/item/music_tape/Initialize(mapload)
 	name = "[name] #[rand(1, 999)]"
 	icon_state = "[rand(1, 15)]"
 	songlist = pick(GLOB.all_playlists)
@@ -29,7 +29,7 @@
 	songlist = "cringe"
 	icon_state = "5"
 
-/obj/item/music_tape/cursed_songs_that_nobody_likes/New() //This one is special because it's all the songs everyone hated
+/obj/item/music_tape/cursed_songs_that_nobody_likes/Initialize(mapload) //This one is special because it's all the songs everyone hated
 	..()
 	tracklist = list() //Cleans up the song list
 	songlist = "cringe"

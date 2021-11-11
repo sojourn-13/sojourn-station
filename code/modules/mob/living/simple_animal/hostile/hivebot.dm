@@ -166,7 +166,7 @@
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
-/mob/living/carbon/superior_animal/sentinal_seeker/New()
+/mob/living/carbon/superior_animal/sentinal_seeker/Initialize(mapload)
 	..()
 	pixel_x = -16
 	pixel_y = 0

@@ -7,7 +7,7 @@
 	pda_type = /obj/item/modular_computer/pda/security
 	backpack_contents = list(/obj/item/handcuffs = 1)
 
-/decl/hierarchy/outfit/job/security/New()
+/decl/hierarchy/outfit/job/security/Initialize(mapload)
 	..()
 	BACKPACK_OVERRIDE_SECURITY
 
@@ -75,7 +75,7 @@
 	pda_type = /obj/item/modular_computer/pda/forensics
 	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 2, /obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 2)
 
-/decl/hierarchy/outfit/job/security/detective/New()
+/decl/hierarchy/outfit/job/security/detective/Initialize(mapload)
 	..()
 	backpack_overrides.Cut()
 

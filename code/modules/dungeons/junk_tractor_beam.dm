@@ -99,7 +99,7 @@
 	var/list/preloaded_25_25 = list()  // Need to preload maps in SOUTH direction
 	var/list/preloaded_5_5 = list()  // Need to preload maps in SOUTH direction
 
-/obj/jtb_generator/New()
+/obj/jtb_generator/Initialize(mapload)
 	current_jf = new /datum/junk_field(jf_counter)
 	jf_counter++
 	generate_junk_field_pool()
@@ -882,7 +882,7 @@
 	density = TRUE
 	anchored = TRUE
 
-/obj/structure/jtb_pillar/New()
+/obj/structure/jtb_pillar/Initialize(mapload)
 	set_light(2, 2, "#8AD55D")
 	..()
 

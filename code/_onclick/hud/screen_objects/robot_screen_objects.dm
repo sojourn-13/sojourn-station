@@ -210,7 +210,7 @@
 	name = "pull"
 	icon_state = "robotpull0"
 
-/obj/screen/silicon/pull/New()
+/obj/screen/silicon/pull/Initialize(mapload)
 	..()
 	update_icon()
 

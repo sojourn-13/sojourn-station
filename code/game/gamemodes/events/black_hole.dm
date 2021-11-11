@@ -13,7 +13,7 @@
 	density = 0
 	anchored = 1
 
-/obj/effect/bhole/New()
+/obj/effect/bhole/Initialize(mapload)
 	spawn(4)
 		controller()
 

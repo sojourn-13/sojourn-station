@@ -30,7 +30,7 @@
 /hook/startup/proc/generateGasData()
 	gas_data = new
 	for(var/p in (typesof(/decl/xgm_gas) - /decl/xgm_gas))
-		var/decl/xgm_gas/gas = new p //avoid initial() because of potential New() actions
+		var/decl/xgm_gas/gas = new p //avoid initial() because of potential Initialize(mapload) actions
 
 		if(gas.id in gas_data.gases)
 			error("Duplicate gas id `[gas.id]` in `[p]`")

@@ -1,28 +1,28 @@
 /obj/structure/table/standard
 	icon_state = "plain_preview"
 	color = "#EEEEEE"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_PLASTIC)
 		..()
 
 /obj/structure/table/steel
 	icon_state = "plain_preview"
 	color = "#666666"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_STEEL)
 		..()
 
 /obj/structure/table/marble
 	icon_state = "stone_preview"
 	color = "#CCCCCC"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_MARBLE)
 		..()
 
 /obj/structure/table/reinforced
 	icon_state = "reinf_preview"
 	color = "#EEEEEE"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_PLASTIC)
 		reinforced = get_material_by_name(MATERIAL_STEEL)
 		..()
@@ -30,7 +30,7 @@
 /obj/structure/table/steel_reinforced
 	icon_state = "reinf_preview"
 	color = "#666666"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_STEEL)
 		reinforced = get_material_by_name(MATERIAL_STEEL)
 		..()
@@ -38,13 +38,13 @@
 /obj/structure/table/woodentable
 	icon_state = "plain_preview"
 	color = "#824B28"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_WOOD)
 		..()
 
 /obj/structure/table/gamblingtable
 	icon_state = "gamble_preview"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_WOOD)
 		custom_appearance = custom_table_appearance["Gambling"] //gambling carpet
 		..()
@@ -53,7 +53,7 @@
 	icon_state = "plain_preview"
 	color = "#00E1FF"
 	alpha = 77 // 0.3 * 255
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_GLASS)
 		..()
 
@@ -61,26 +61,26 @@
 	icon_state = "plain_preview"
 	color = "#FC2BC5"
 	alpha = 77 // 0.3 * 255
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_PLASMAGLASS)
 		..()
 
 /obj/structure/table/holotable
 	icon_state = "holo_preview"
 	color = "#EEEEEE"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name("holo[MATERIAL_PLASTIC]")
 		..()
 
 /obj/structure/table/holo_woodentable
 	icon_state = "holo_preview"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name("holowood")
 		..()
 
 /obj/structure/table/bar_special
 	icon_state = "bar_table_preview"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_STEEL)
 		custom_appearance = custom_table_appearance["Bar - special"] //bar table
 		reinforced = get_material_by_name(MATERIAL_STEEL)
@@ -88,7 +88,7 @@
 
 /obj/structure/table/onestar
 	icon_state = "onestar_preview"
-	New()
+	Initialize(mapload)
 		material = get_material_by_name(MATERIAL_STEEL)
 		custom_appearance = custom_table_appearance["Onestar"] //one star table
 		reinforced = get_material_by_name(MATERIAL_STEEL)
@@ -100,7 +100,7 @@
 	icon_state = "plain_preview"
 	color = "#EEEEEE"
 
-/obj/structure/table/bench/standard/New()
+/obj/structure/table/bench/standard/Initialize(mapload)
 	material = get_material_by_name(MATERIAL_PLASTIC)
 	..()
 
@@ -108,7 +108,7 @@
 	icon_state = "plain_preview"
 	color = "#666666"
 
-/obj/structure/table/bench/steel/New()
+/obj/structure/table/bench/steel/Initialize(mapload)
 	material = get_material_by_name(MATERIAL_STEEL)
 	..()
 
@@ -117,7 +117,7 @@
 	icon_state = "stone_preview"
 	color = "#CCCCCC"
 
-/obj/structure/table/bench/marble/New()
+/obj/structure/table/bench/marble/Initialize(mapload)
 	material = get_material_by_name(MATERIAL_MARBLE)
 	..()
 
@@ -125,7 +125,7 @@
 	icon_state = "plain_preview"
 	color = "#824B28"
 
-/obj/structure/table/bench/wooden/New()
+/obj/structure/table/bench/wooden/Initialize(mapload)
 	material = get_material_by_name(MATERIAL_WOOD)
 	..()
 
@@ -133,7 +133,7 @@
 	icon_state = "padded_preview"
 	color = "#760B0B"
 
-/obj/structure/table/bench/padded/New()
+/obj/structure/table/bench/padded/Initialize(mapload)
 	material = get_material_by_name(MATERIAL_CARPET)
 
 	..()
@@ -143,6 +143,6 @@
 	color = "#00E1FF"
 	alpha = 77 // 0.3 * 255
 
-/obj/structure/table/bench/glass/New()
+/obj/structure/table/bench/glass/Initialize(mapload)
 	material = get_material_by_name(MATERIAL_GLASS)
 	..()

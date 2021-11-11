@@ -112,7 +112,7 @@
 /obj/structure/bookcase/manuals/medical
 	name = "Medical Manuals bookcase"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/book/manual/medical_cloning(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
@@ -124,7 +124,7 @@
 /obj/structure/bookcase/manuals/engineering
 	name = "Engineering Manuals bookcase"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/book/manual/wiki/engineering_construction(src)
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
@@ -137,7 +137,7 @@
 /obj/structure/bookcase/manuals/research_and_development
 	name = "R&D Manuals bookcase"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/book/manual/research_and_development(src)
 		update_icon()

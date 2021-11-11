@@ -210,7 +210,7 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-/obj/item/projectile/flamer_lob/New()
+/obj/item/projectile/flamer_lob/Initialize(mapload)
 	.=..()
 
 /obj/item/projectile/flamer_lob/Move(atom/A)
@@ -249,7 +249,7 @@
 	var/chaos = FALSE
 	var/chaose_number
 
-/obj/item/projectile/bullet/flare/New()
+/obj/item/projectile/bullet/flare/Initialize(mapload)
 	if(chaos)
 		chaose_number = RANDOM_RGB
 		luminosity_color = chaose_number

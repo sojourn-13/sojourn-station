@@ -36,7 +36,7 @@
 	if(src.type == /obj/item/rcd && loc == usr)
 		to_chat(usr, "It currently holds [stored_matter]/30 matter-units.")
 
-/obj/item/rcd/New()
+/obj/item/rcd/Initialize(mapload)
 	..()
 	src.spark_system = new /datum/effect/effect/system/spark_spread
 	spark_system.set_up(5, 0, src)

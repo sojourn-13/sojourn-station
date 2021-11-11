@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/New()
+/mob/living/carbon/superior_animal/roach/Initialize(mapload)
 	..()
 
 	if(give_randomized_armor)

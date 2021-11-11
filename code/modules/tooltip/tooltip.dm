@@ -8,7 +8,7 @@ Configuration:
 - Set control to the correct skin element (remember to actually place the skin element)
 - Set file to the correct path for the .html file (remember to actually place the html file)
 - Attach the datum to the user client on login, e.g.
-	/client/New()
+	/client/Initialize(mapload)
 		src.tooltips = new /datum/tooltip(src)
 
 Usage:

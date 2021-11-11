@@ -239,7 +239,7 @@
 	name = "\improper LETHAL TURRETS"
 	icon_state = "turrets"
 
-/obj/structure/sign/warning/lethal_turrets/New()
+/obj/structure/sign/warning/lethal_turrets/Initialize(mapload)
 	..()
 	desc += " Enter at own risk!."
 

@@ -54,7 +54,7 @@
 	icon_state = "sunhud"
 	prescription = TRUE
 
-	New()
+	Initialize(mapload)
 		..()
 		src.hud = new/obj/item/clothing/glasses/hud/security(src)
 		return

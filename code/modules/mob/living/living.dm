@@ -809,14 +809,14 @@ default behaviour is:
 	static_overlay = image(get_static_icon(new/icon(icon, icon_state)), loc = src)
 	static_overlay.override = 1
 
-/mob/living/New()
+/mob/living/Initialize(mapload)
 	..()
 
 	//Some mobs may need to create their stats datum farther up
 	if (!stats)
 		stats = new /datum/stat_holder(src)
 
-	
+
 	//Mutations populated through horrendous genetic tampering.
 	unnatural_mutations = new(src)
 

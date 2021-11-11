@@ -13,7 +13,7 @@
 	idle_power_usage = 60
 	active_power_usage = 10000
 
-/obj/machinery/autodoc/New()
+/obj/machinery/autodoc/Initialize(mapload)
 	. = ..()
 	autodoc_processor = new/datum/autodoc/capitalist_autodoc()
 	autodoc_processor.holder = src

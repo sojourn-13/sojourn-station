@@ -14,7 +14,7 @@
 	)
 	var/list/available_slots = list()
 
-/obj/machinery/optable/altar/New()
+/obj/machinery/optable/altar/Initialize(mapload)
 	//bottom left
 	available_slots += list(list("offset" = list("x" = -8 , "y" = -3), "item" = null))
 	//bottom right

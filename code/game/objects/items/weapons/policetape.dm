@@ -35,7 +35,7 @@ var/list/tape_roll_applications = list()
 			icon_state = "[icon_base]_dir_[crumpled]"
 			dir = tape_dir
 
-/obj/item/tape/New()
+/obj/item/tape/Initialize(mapload)
 	..()
 	if(!hazard_overlays)
 		hazard_overlays = list()

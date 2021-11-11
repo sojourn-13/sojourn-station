@@ -21,7 +21,7 @@
 	throw_range = 7
 	max_amount = 60
 
-/obj/item/stack/tile/New()
+/obj/item/stack/tile/Initialize(mapload)
 	..()
 	pixel_x = rand(-7, 7)
 	pixel_y = rand(-7, 7)

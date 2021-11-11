@@ -94,7 +94,7 @@
 
 	device_type = /obj/item/rcd/mounted
 
-/obj/item/rig_module/device/New()
+/obj/item/rig_module/device/Initialize(mapload)
 	..()
 	if(device_type) device = new device_type(src)
 
@@ -290,7 +290,7 @@
 
 	var/obj/item/voice_changer/voice_holder
 
-/obj/item/rig_module/voice/New()
+/obj/item/rig_module/voice/Initialize(mapload)
 	..()
 	voice_holder = new(src)
 	voice_holder.active = 0

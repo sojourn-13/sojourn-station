@@ -85,7 +85,7 @@
 	var/max_darts = 1
 	var/obj/item/syringe_cartridge/next
 
-/obj/item/gun/launcher/syringe/New()
+/obj/item/gun/launcher/syringe/Initialize(mapload)
 	..()
 
 /obj/item/gun/launcher/syringe/consume_next_projectile()

@@ -12,7 +12,7 @@
 	is_hole = TRUE
 //	heat_capacity = 700000 No.
 
-/turf/space/New()
+/turf/space/Initialize(mapload)
 	if(!istype(src, /turf/space/transit))
 		icon_state = "white"
 	update_starlight()

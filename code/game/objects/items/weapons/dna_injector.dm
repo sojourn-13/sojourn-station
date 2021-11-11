@@ -19,7 +19,7 @@
 	var/datatype=0
 	var/value=0
 
-/obj/item/dnainjector/New()
+/obj/item/dnainjector/Initialize(mapload)
 	..()
 	if(datatype && block)
 		buf=new
@@ -146,7 +146,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/hulkmut/New()
+/obj/item/dnainjector/hulkmut/Initialize(mapload)
 	..()
 	block = HULKBLOCK
 
@@ -157,7 +157,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antihulk/New()
+/obj/item/dnainjector/antihulk/Initialize(mapload)
 	..()
 	block = HULKBLOCK
 
@@ -168,7 +168,7 @@
 	value = 0xFFF
 	//block = 8
 
-/obj/item/dnainjector/xraymut/New()
+/obj/item/dnainjector/xraymut/Initialize(mapload)
 	..()
 	block = XRAYBLOCK
 
@@ -179,7 +179,7 @@
 	value = 0x001
 	//block = 8
 
-/obj/item/dnainjector/antixray/New()
+/obj/item/dnainjector/antixray/Initialize(mapload)
 	..()
 	block = XRAYBLOCK
 
@@ -190,7 +190,7 @@
 	value = 0xFFF
 	//block = 10
 
-/obj/item/dnainjector/firemut/New()
+/obj/item/dnainjector/firemut/Initialize(mapload)
 	..()
 	block = FIREBLOCK
 
@@ -201,7 +201,7 @@
 	value = 0x001
 	//block = 10
 
-/obj/item/dnainjector/antifire/New()
+/obj/item/dnainjector/antifire/Initialize(mapload)
 	..()
 	block = FIREBLOCK
 
@@ -212,7 +212,7 @@
 	value = 0xFFF
 	//block = 12
 
-/obj/item/dnainjector/telemut/New()
+/obj/item/dnainjector/telemut/Initialize(mapload)
 	..()
 	block = TELEBLOCK
 
@@ -223,7 +223,7 @@
 	value = 0x001
 	//block = 12
 
-/obj/item/dnainjector/antitele/New()
+/obj/item/dnainjector/antitele/Initialize(mapload)
 	..()
 	block = TELEBLOCK
 
@@ -234,7 +234,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/nobreath/New()
+/obj/item/dnainjector/nobreath/Initialize(mapload)
 	..()
 	block = NOBREATHBLOCK
 
@@ -245,7 +245,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antinobreath/New()
+/obj/item/dnainjector/antinobreath/Initialize(mapload)
 	..()
 	block = NOBREATHBLOCK
 
@@ -256,7 +256,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/remoteview/New()
+/obj/item/dnainjector/remoteview/Initialize(mapload)
 	..()
 	block = REMOTEVIEWBLOCK
 
@@ -268,7 +268,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antiremoteview/New()
+/obj/item/dnainjector/antiremoteview/Initialize(mapload)
 	..()
 	block = REMOTEVIEWBLOCK
 
@@ -279,7 +279,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/regenerate/New()
+/obj/item/dnainjector/regenerate/Initialize(mapload)
 	..()
 	block = REGENERATEBLOCK
 
@@ -290,7 +290,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antiregenerate/New()
+/obj/item/dnainjector/antiregenerate/Initialize(mapload)
 	..()
 	block = REGENERATEBLOCK
 
@@ -301,7 +301,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/runfast/New()
+/obj/item/dnainjector/runfast/Initialize(mapload)
 	..()
 	block = INCREASERUNBLOCK
 
@@ -312,7 +312,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antirunfast/New()
+/obj/item/dnainjector/antirunfast/Initialize(mapload)
 	..()
 	block = INCREASERUNBLOCK
 
@@ -324,7 +324,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/morph/New()
+/obj/item/dnainjector/morph/Initialize(mapload)
 	..()
 	block = MORPHBLOCK
 
@@ -335,7 +335,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antimorph/New()
+/obj/item/dnainjector/antimorph/Initialize(mapload)
 	..()
 	block = MORPHBLOCK
 
@@ -348,7 +348,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/cold/New()
+/obj/item/dnainjector/cold/Initialize(mapload)
 	..()
 	block = COLDBLOCK
 
@@ -359,7 +359,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/anticold/New()
+/obj/item/dnainjector/anticold/Initialize(mapload)
 	..()
 	block = COLDBLOCK
 */
@@ -371,7 +371,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/noprints/New()
+/obj/item/dnainjector/noprints/Initialize(mapload)
 	..()
 	block = NOPRINTSBLOCK
 
@@ -382,7 +382,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antinoprints/New()
+/obj/item/dnainjector/antinoprints/Initialize(mapload)
 	..()
 	block = NOPRINTSBLOCK
 
@@ -393,7 +393,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/insulation/New()
+/obj/item/dnainjector/insulation/Initialize(mapload)
 	..()
 	block = SHOCKIMMUNITYBLOCK
 
@@ -404,7 +404,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antiinsulation/New()
+/obj/item/dnainjector/antiinsulation/Initialize(mapload)
 	..()
 	block = SHOCKIMMUNITYBLOCK
 
@@ -415,7 +415,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/midgit/New()
+/obj/item/dnainjector/midgit/Initialize(mapload)
 	..()
 	block = SMALLSIZEBLOCK
 
@@ -426,7 +426,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antimidgit/New()
+/obj/item/dnainjector/antimidgit/Initialize(mapload)
 	..()
 	block = SMALLSIZEBLOCK
 
@@ -438,7 +438,7 @@
 	value = 0x001
 	//block = 1
 
-/obj/item/dnainjector/antiglasses/New()
+/obj/item/dnainjector/antiglasses/Initialize(mapload)
 	..()
 	block = GLASSESBLOCK
 
@@ -449,7 +449,7 @@
 	value = 0xFFF
 	//block = 1
 
-/obj/item/dnainjector/glassesmut/New()
+/obj/item/dnainjector/glassesmut/Initialize(mapload)
 	..()
 	block = GLASSESBLOCK
 
@@ -460,7 +460,7 @@
 	value = 0xFFF
 	//block = 3
 
-/obj/item/dnainjector/epimut/New()
+/obj/item/dnainjector/epimut/Initialize(mapload)
 	..()
 	block = HEADACHEBLOCK
 
@@ -471,7 +471,7 @@
 	value = 0x001
 	//block = 3
 
-/obj/item/dnainjector/antiepi/New()
+/obj/item/dnainjector/antiepi/Initialize(mapload)
 	..()
 	block = HEADACHEBLOCK
 
@@ -482,7 +482,7 @@
 	value = 0x001
 	//block = 5
 
-/obj/item/dnainjector/anticough/New()
+/obj/item/dnainjector/anticough/Initialize(mapload)
 	..()
 	block = COUGHBLOCK
 
@@ -493,7 +493,7 @@
 	value = 0xFFF
 	//block = 5
 
-/obj/item/dnainjector/coughmut/New()
+/obj/item/dnainjector/coughmut/Initialize(mapload)
 	..()
 	block = COUGHBLOCK
 
@@ -504,7 +504,7 @@
 	value = 0xFFF
 	//block = 6
 
-/obj/item/dnainjector/clumsymut/New()
+/obj/item/dnainjector/clumsymut/Initialize(mapload)
 	..()
 	block = CLUMSYBLOCK
 
@@ -515,7 +515,7 @@
 	value = 0x001
 	//block = 6
 
-/obj/item/dnainjector/anticlumsy/New()
+/obj/item/dnainjector/anticlumsy/Initialize(mapload)
 	..()
 	block = CLUMSYBLOCK
 
@@ -526,7 +526,7 @@
 	value = 0x001
 	//block = 7
 
-/obj/item/dnainjector/antitour/New()
+/obj/item/dnainjector/antitour/Initialize(mapload)
 	..()
 	block = TWITCHBLOCK
 
@@ -537,7 +537,7 @@
 	value = 0xFFF
 	//block = 7
 
-/obj/item/dnainjector/tourmut/New()
+/obj/item/dnainjector/tourmut/Initialize(mapload)
 	..()
 	block = TWITCHBLOCK
 
@@ -548,7 +548,7 @@
 	value = 0xFFF
 	//block = 9
 
-/obj/item/dnainjector/stuttmut/New()
+/obj/item/dnainjector/stuttmut/Initialize(mapload)
 	..()
 	block = NERVOUSBLOCK
 
@@ -559,7 +559,7 @@
 	value = 0x001
 	//block = 9
 
-/obj/item/dnainjector/antistutt/New()
+/obj/item/dnainjector/antistutt/Initialize(mapload)
 	..()
 	block = NERVOUSBLOCK
 
@@ -570,7 +570,7 @@
 	value = 0xFFF
 	//block = 11
 
-/obj/item/dnainjector/blindmut/New()
+/obj/item/dnainjector/blindmut/Initialize(mapload)
 	..()
 	block = BLINDBLOCK
 
@@ -581,7 +581,7 @@
 	value = 0x001
 	//block = 11
 
-/obj/item/dnainjector/antiblind/New()
+/obj/item/dnainjector/antiblind/Initialize(mapload)
 	..()
 	block = BLINDBLOCK
 
@@ -592,7 +592,7 @@
 	value = 0xFFF
 	//block = 13
 
-/obj/item/dnainjector/deafmut/New()
+/obj/item/dnainjector/deafmut/Initialize(mapload)
 	..()
 	block = DEAFBLOCK
 
@@ -603,7 +603,7 @@
 	value = 0x001
 	//block = 13
 
-/obj/item/dnainjector/antideaf/New()
+/obj/item/dnainjector/antideaf/Initialize(mapload)
 	..()
 	block = DEAFBLOCK
 
@@ -614,7 +614,7 @@
 	value = 0xFFF
 	//block = 2
 
-/obj/item/dnainjector/hallucination/New()
+/obj/item/dnainjector/hallucination/Initialize(mapload)
 	..()
 	block = HALLUCINATIONBLOCK
 
@@ -625,7 +625,7 @@
 	value = 0x001
 	//block = 2
 
-/obj/item/dnainjector/antihallucination/New()
+/obj/item/dnainjector/antihallucination/Initialize(mapload)
 	..()
 	block = HALLUCINATIONBLOCK
 
@@ -636,7 +636,7 @@
 	value = 0xFFF
 	//block = 14
 
-/obj/item/dnainjector/h2m/New()
+/obj/item/dnainjector/h2m/Initialize(mapload)
 	..()
 	block = MONKEYBLOCK
 
@@ -647,7 +647,7 @@
 	value = 0x001
 	//block = 14
 
-/obj/item/dnainjector/m2h/New()
+/obj/item/dnainjector/m2h/Initialize(mapload)
 	..()
 	block = MONKEYBLOCK
 

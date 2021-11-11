@@ -126,7 +126,7 @@
 /mob/living/simple_animal/proc/beg(var/atom/thing, var/atom/holder)
 	visible_emote("gazes longingly at [holder]'s [thing]")
 
-/mob/living/simple_animal/New()
+/mob/living/simple_animal/Initialize(mapload)
 	..()
 	if(!icon_living)
 		icon_living = icon_state

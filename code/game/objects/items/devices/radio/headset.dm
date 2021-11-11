@@ -18,7 +18,7 @@
 	var/ks1type = /obj/item/device/encryptionkey
 	var/ks2type = null
 
-/obj/item/device/radio/headset/New()
+/obj/item/device/radio/headset/Initialize(mapload)
 	..()
 	internal_channels.Cut()
 	if(ks1type)

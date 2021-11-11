@@ -62,7 +62,7 @@
 	report_danger_level = 0
 	breach_detection = 0
 
-/obj/machinery/alarm/server/New()
+/obj/machinery/alarm/server/Initialize(mapload)
 	..()
 	req_access = list(access_rd, access_atmospherics, access_engine_equip)
 	TLV["oxygen"] =			list(-1.0, -1.0,-1.0,-1.0) // Partial pressure, kpa

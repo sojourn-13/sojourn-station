@@ -106,7 +106,7 @@
 	power_draw_per_use = 4
 	var/number_of_inputs = 2
 
-/obj/item/integrated_circuit/transfer/multiplexer/New()
+/obj/item/integrated_circuit/transfer/multiplexer/Initialize(mapload)
 	for(var/i = 1 to number_of_inputs)
 		inputs += "input [i]"
 	complexity = number_of_inputs
@@ -152,7 +152,7 @@
 	power_draw_per_use = 4
 	var/number_of_outputs = 2
 
-/obj/item/integrated_circuit/transfer/demultiplexer/New()
+/obj/item/integrated_circuit/transfer/demultiplexer/Initialize(mapload)
 	for(var/i = 1 to number_of_outputs)
 		outputs += "output [i]"
 	complexity = number_of_outputs

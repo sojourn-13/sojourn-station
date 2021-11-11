@@ -25,14 +25,14 @@ var/global/list/big_deepmaint_room_templates = list()
 /obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint
 	name = "deepmaint room"
 
-/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint/New()
+/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint/Initialize(mapload)
 	..()
 	my_map = pick(small_deepmaint_room_templates)
 
 /obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint/big
 	name = "deepmaint core room"
 
-/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint/big/New()
+/obj/procedural/jp_DungeonRoom/preexist/square/submap/deepmaint/big/Initialize(mapload)
 	..()
 	my_map = pick(big_deepmaint_room_templates)
 
@@ -198,7 +198,7 @@ var/global/list/big_deepmaint_room_templates = list()
 	name = "Deep Maint Gen"
 
 
-/obj/procedural/dungenerator/deepmaint/New()
+/obj/procedural/dungenerator/deepmaint/Initialize(mapload)
 	while(1)
 		if(Master.current_runlevel)
 			populateDeepMaintMapLists() //It's not a hook because mapping subsystem has to intialize first

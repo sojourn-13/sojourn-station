@@ -189,7 +189,7 @@ for reference:
 		dismantle()
 		qdel(src)
 
-/obj/machinery/deployable/barrier/New()
+/obj/machinery/deployable/barrier/Initialize(mapload)
 	..()
 
 	icon_state = "barrier[locked]"

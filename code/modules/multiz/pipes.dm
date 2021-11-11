@@ -28,7 +28,7 @@ obj/machinery/atmospherics/pipe/zpipe
 		level = ABOVE_PLATING_LEVEL
 		layer = GAS_PIPE_VISIBLE_LAYER
 
-obj/machinery/atmospherics/pipe/zpipe/New()
+obj/machinery/atmospherics/pipe/zpipe/Initialize(mapload)
 	..()
 	switch(dir)
 		if(SOUTH)

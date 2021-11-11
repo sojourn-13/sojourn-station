@@ -226,7 +226,7 @@
 	var/spray_amount = 5	//units of liquid per particle. 5 is enough to wet the floor - it's a big fire extinguisher, so should be fine
 	var/max_water = 1000
 
-	New()
+	Initialize(mapload)
 		reagents = new/datum/reagents(max_water)
 		reagents.my_atom = src
 		reagents.add_reagent("water", max_water)
@@ -635,7 +635,7 @@
 	var/icon/droid_overlay
 	var/list/repairable_damage = list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH)
 
-	New()
+	Initialize(mapload)
 		..()
 		pr_repair_droid = new /datum/global_iterator/mecha_repair_droid(list(src),0)
 		pr_repair_droid.set_delay(equip_cooldown)
@@ -730,7 +730,7 @@
 	var/coeff = 100
 	var/list/use_channels = list(STATIC_EQUIP,STATIC_ENVIRON,STATIC_LIGHT)
 
-	New()
+	Initialize(mapload)
 		..()
 		pr_energy_relay = new /datum/global_iterator/mecha_energy_relay(list(src),0)
 		pr_energy_relay.set_delay(equip_cooldown)
@@ -820,7 +820,7 @@
 	var/fuel_per_cycle_active = 5
 	var/power_per_cycle = 25
 
-	New()
+	Initialize(mapload)
 		..()
 		init()
 		return

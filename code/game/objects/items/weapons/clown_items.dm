@@ -38,7 +38,7 @@
 	var/cleaning_reagent = "cleaner" //What do we use to clean?
 	var/bless_tile = FALSE
 
-/obj/item/soap/New()
+/obj/item/soap/Initialize(mapload)
 	..()
 	create_reagents(reagent_storage)
 	wet()
@@ -131,7 +131,7 @@
 	how_many_times_we_can_pull_a_pro_clown_gamer_move = 5
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
 
-/obj/item/soap/deluxe/New()
+/obj/item/soap/deluxe/Initialize(mapload)
 	desc = "A deluxe Lonestar-brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
 	..()
 
@@ -172,7 +172,7 @@
 	reagent_storage = 10 //less then normal
 	slip_power = 2 //weak due to being handmade
 
-/obj/item/soap/hunters/New()
+/obj/item/soap/hunters/Initialize(mapload)
 	..()
 	if(prob(50))
 		icon_state = "soaproach_green"
@@ -190,7 +190,7 @@
 	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASMA = 3, MATERIAL_GOLD = 3, MATERIAL_SILVER = 3, MATERIAL_DIAMOND = 3)
 	cleaning_reagent = "sterilizine" //We use something that removes blood
 
-/obj/item/soap/bluespase/New()
+/obj/item/soap/bluespase/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(5, get_turf(src))

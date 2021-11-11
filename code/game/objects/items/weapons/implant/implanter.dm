@@ -9,7 +9,7 @@
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 1)
 	var/obj/item/implant/implant = null
 
-/obj/item/implanter/New()
+/obj/item/implanter/Initialize(mapload)
 	..()
 	if(ispath(implant))
 		implant = new implant(src)

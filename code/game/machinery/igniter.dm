@@ -13,7 +13,7 @@
 	var/_wifi_id
 	var/datum/wifi/receiver/button/igniter/wifi_receiver
 
-/obj/machinery/igniter/New()
+/obj/machinery/igniter/Initialize(mapload)
 	..()
 	update_icon()
 

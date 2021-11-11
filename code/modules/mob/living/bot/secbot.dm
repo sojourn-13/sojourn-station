@@ -48,7 +48,7 @@
 	desc = "It's Officer Beep O'sky! Powered by a potato and a shot of whiskey."
 	auto_patrol = 1
 
-/mob/living/bot/secbot/New()
+/mob/living/bot/secbot/Initialize(mapload)
 	..()
 	listener = new /obj/secbot_listener(src)
 	listener.secbot = src

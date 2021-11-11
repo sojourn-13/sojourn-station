@@ -3,7 +3,7 @@
 	var/list/grid_sensors
 	var/active_sensor = null	//name_tag of the currently selected sensor
 
-/datum/nano_module/power_monitor/New()
+/datum/nano_module/power_monitor/Initialize(mapload)
 	..()
 	refresh_sensors()
 

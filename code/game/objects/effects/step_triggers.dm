@@ -24,7 +24,7 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 		return
 	Trigger(H)
 
-/obj/effect/step_trigger/New()
+/obj/effect/step_trigger/Initialize(mapload)
 	..()
 	STEP_TELEPORTERS += src
 

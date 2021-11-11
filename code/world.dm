@@ -4,7 +4,7 @@
 
 	1. All global variables are initialized (including the global_init and tgstation's master controller instances including subsystems).
 	2. The map is initialized, and map objects are created.
-	3. world/New() runs.
+	3. world/Initialize(mapload) runs.
 	4. tgstation's MC runs initialization for various subsystems (refer to its own defines for the load order).
 
 */

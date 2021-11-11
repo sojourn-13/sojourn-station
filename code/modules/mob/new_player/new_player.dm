@@ -16,7 +16,7 @@
 
 	anchored = 1	//  don't get pushed around
 /*
-/mob/new_player/New()
+/mob/new_player/Initialize(mapload)
 	mob_list += src*/
 
 /mob/new_player/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="")

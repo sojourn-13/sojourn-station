@@ -17,7 +17,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	density = 0
 
-/obj/effect/shield_impact/New()
+/obj/effect/shield_impact/Initialize(mapload)
 	spawn(2 SECONDS)
 		qdel(src)
 
@@ -70,7 +70,7 @@ Like for example singulo act and whatever.
 	return 0
 */
 
-/obj/effect/shield/New()
+/obj/effect/shield/Initialize(mapload)
 	..()
 	update_nearby_tiles()
 	update_openspace()

@@ -12,7 +12,7 @@
 	var/obj/machinery/power/master = null
 
 
-/obj/machinery/power/terminal/New()
+/obj/machinery/power/terminal/Initialize(mapload)
 	..()
 	var/turf/T = src.loc
 	if(level==1) hide(!T.is_plating())

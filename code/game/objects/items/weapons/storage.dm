@@ -39,7 +39,7 @@
 	else
 		..()
 
-/obj/item/storage/sheath/New()
+/obj/item/storage/sheath/Initialize(mapload)
 	..()
 	update_icon()
 

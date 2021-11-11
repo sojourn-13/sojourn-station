@@ -6,7 +6,7 @@
 	var/obj/item/device/electronic_assembly/implant/IC = null
 	is_legal = TRUE
 
-/obj/item/implant/integrated_circuit/New()
+/obj/item/implant/integrated_circuit/Initialize(mapload)
 	..()
 	IC = new(src)
 	IC.implant = src

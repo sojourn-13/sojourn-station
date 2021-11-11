@@ -3,7 +3,7 @@
 /datum/socket_talk
 	var
 		enabled = 0
-	New()
+	Initialize(mapload)
 		..()
 		src.enabled = config.socket_talk
 

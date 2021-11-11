@@ -64,7 +64,7 @@
 	var/treatment_tox = "carthatoline"
 	var/treatment_virus = "spaceacillin"
 
-/mob/living/carbon/superior_animal/nanobot/New()
+/mob/living/carbon/superior_animal/nanobot/Initialize(mapload)
 	. = ..()
 	Radio = new/obj/item/device/radio(src)
 	Console = new /obj/item/modular_computer/console/preset/nanobot(src)

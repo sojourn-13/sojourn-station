@@ -9,7 +9,7 @@
 	var/remove_module = TRUE //if TRUE, module will removed on upgrade remove
 	var/mob/living/user
 
-/obj/item/coreimplant_upgrade/New()
+/obj/item/coreimplant_upgrade/Initialize(mapload)
 	..()
 	set_up()
 

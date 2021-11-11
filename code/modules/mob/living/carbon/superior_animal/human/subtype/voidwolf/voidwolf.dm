@@ -95,7 +95,7 @@
 	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 1
 
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/New()
+/mob/living/carbon/superior_animal/human/voidwolf/ranged/Initialize(mapload)
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
@@ -117,7 +117,7 @@
 	mag_type = /obj/item/cell/small/high/depleted
 	mags_left = 2
 
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged/New()
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged/Initialize(mapload)
 	..()
 	reload_message = "[name] ejects a depleted cell and fumbles a new one into their weapon."
 
@@ -140,7 +140,7 @@
 	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 2
 
-/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper/New()
+/mob/living/carbon/superior_animal/human/voidwolf/aerotrooper/Initialize(mapload)
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
@@ -165,7 +165,7 @@
 	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 1
 
-/mob/living/carbon/superior_animal/human/voidwolf/captain/New()
+/mob/living/carbon/superior_animal/human/voidwolf/captain/Initialize(mapload)
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one with one hand!"
 
@@ -191,7 +191,7 @@
 
 	armor = list(melee = 60, bullet = 55, energy = 50, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/New()
+/mob/living/carbon/superior_animal/human/voidwolf/elite/Initialize(mapload)
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
@@ -205,7 +205,7 @@
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
 	mags_left = 3
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/New()
+/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/Initialize(mapload)
 	..()
 	reload_message = "[name] rapidly reloads before the empty mag hits the ground!"
 
@@ -223,7 +223,7 @@
 	mag_type = /obj/item/ammo_magazine/a75/empty
 	mags_left = 0 //no spare mags, they are lethal
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/New()
+/mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/Initialize(mapload)
 	..()
 	reload_message = "[name] rapidly reloads before the empty mag hits the ground!"// You should be panicing
 
@@ -249,7 +249,7 @@
 		agony = 1000 //Pain damage proof, and rubber proof.
 	)
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
+/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/Initialize(mapload)
 	..()
 	reload_message = "[name] rapidly reloads?!"
 

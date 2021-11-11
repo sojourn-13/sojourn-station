@@ -16,7 +16,7 @@
 	item_state = null
 	w_class = ITEM_SIZE_TINY
 
-/obj/item/clothing/mask/muzzle/New()
+/obj/item/clothing/mask/muzzle/Initialize(mapload)
     ..()
     say_messages = list("Mmfph!", "Mmmf mrrfff!", "Mmmf mnnf!")
     say_verbs = list("mumbles", "says")

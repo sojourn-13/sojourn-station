@@ -53,7 +53,7 @@
 	can_hold = list(/obj/item/reagent_containers/food/snacks/donut/stat_buff)
 	max_storage_space = 12
 
-/obj/item/storage/case/donut/New()
+/obj/item/storage/case/donut/Initialize(mapload)
 	..()
 	new /obj/item/reagent_containers/food/snacks/donut/stat_buff/mec(src)
 	new /obj/item/reagent_containers/food/snacks/donut/stat_buff/cog(src)

@@ -20,7 +20,7 @@
 	var/obj/structure/reagent_dispensers/biomatter/container
 	var/last_time_used = 0
 
-/obj/machinery/biomatter_solidifier/New()
+/obj/machinery/biomatter_solidifier/Initialize(mapload)
 	. = ..()
 	add_overlay(image(icon = src.icon, icon_state = "tube", layer = LOW_OBJ_LAYER, dir = port_dir))
 

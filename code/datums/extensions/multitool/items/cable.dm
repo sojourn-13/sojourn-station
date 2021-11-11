@@ -1,4 +1,4 @@
-/obj/item/stack/cable_coil/New()
+/obj/item/stack/cable_coil/Initialize(mapload)
 	set_extension(src, /datum/extension/multitool, /datum/extension/multitool/items/cable)
 	..()
 

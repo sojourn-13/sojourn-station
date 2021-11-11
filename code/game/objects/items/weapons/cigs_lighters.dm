@@ -563,7 +563,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/trash/cigbutt/faith/green
 	icon_state = "faithgreenbutt"
 
-/obj/item/trash/cigbutt/New()
+/obj/item/trash/cigbutt/Initialize(mapload)
 	..()
 	pixel_x = rand(-10,10)
 	pixel_y = rand(-10,10)
@@ -595,7 +595,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME with the power of science.</span>"
 	quality_multiplier = 2 // Fancy!
 
-/obj/item/clothing/mask/smokable/pipe/New()
+/obj/item/clothing/mask/smokable/pipe/Initialize(mapload)
 	..()
 	name = "empty [initial(name)]"
 
@@ -897,7 +897,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "zippo"
 	item_state = "zippo"
 
-/obj/item/flame/lighter/random/New()
+/obj/item/flame/lighter/random/Initialize(mapload)
 	icon_state = "lighter-[pick("r","c","y","g")]"
 	item_state = icon_state
 	base_state = icon_state

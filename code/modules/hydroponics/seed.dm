@@ -13,7 +13,7 @@
 	var/mysterious                  	// Only used for the random seed packets.
 	var/can_self_harvest = 0        	// Mostly used for living mobs.
 	var/growth_stages = 0            	// Number of stages the plant passes through before it is mature.
-	var/list/traits = list()        	// Initialized in New()
+	var/list/traits = list()        	// Initialized in Initialize(mapload)
 	var/list/materials					// List used to determine material values for recycling in autolathe
 	var/list/origin_tech 	= list()	// List used to determine research values for recyling in deconstructive analyzer
 	var/list/mutants           		      // Possible predefined mutant varieties, if any

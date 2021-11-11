@@ -376,7 +376,7 @@
 	plasma = 2500
 	temperature = 374
 
-/turf/simulated/floor/reinforced/n20/New()
+/turf/simulated/floor/reinforced/n20/Initialize(mapload)
 	..()
 	sleep(-1)
 	if(!air) make_air()

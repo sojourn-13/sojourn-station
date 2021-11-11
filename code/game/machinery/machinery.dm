@@ -1,6 +1,6 @@
 /*
 Overview:
-   Used to create objects that need a per step proc call.  Default definition of 'New()'
+   Used to create objects that need a per step proc call.  Default definition of 'Initialize(mapload)'
    stores a reference to src machine in global 'machines list'.  Default definition
    of 'Del' removes reference to src machine in global 'machines list'.
 
@@ -47,7 +47,7 @@ Class Variables:
          EMPED:16 -- temporary broken by EMP pulse
 
 Class Procs:
-   New()                     'game/machinery/machine.dm'
+   Initialize(mapload)                     'game/machinery/machine.dm'
 
    Destroy()                     'game/machinery/machine.dm'
 

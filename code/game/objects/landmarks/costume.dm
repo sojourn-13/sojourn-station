@@ -3,44 +3,44 @@
 /obj/landmark/costume
 	delete_me = TRUE
 
-/obj/landmark/costume/chicken/New()
+/obj/landmark/costume/chicken/Initialize(mapload)
 	new /obj/item/clothing/suit/costume/animal/chicken(src.loc)
 	new /obj/item/clothing/head/costume/animal/chicken(src.loc)
 	new /obj/item/reagent_containers/food/snacks/egg(src.loc)
 
-/obj/landmark/costume/gladiator/New()
+/obj/landmark/costume/gladiator/Initialize(mapload)
 	new /obj/item/clothing/under/costume/history/gladiator(src.loc)
 	new /obj/item/clothing/head/helmet/gladiator(src.loc)
 
-/obj/landmark/costume/madscientist/New()
+/obj/landmark/costume/madscientist/Initialize(mapload)
 	//new /obj/item/clothing/under/gimmick/rank/captain/suit(src.loc)
 	new /obj/item/clothing/head/flatcap(src.loc)
 	new /obj/item/clothing/glasses/regular/gglasses(src.loc)
 
-/obj/landmark/costume/elpresidente/New()
+/obj/landmark/costume/elpresidente/Initialize(mapload)
 	//new /obj/item/clothing/under/gimmick/rank/captain/suit(src.loc)
 	new /obj/item/clothing/head/flatcap(src.loc)
 	new /obj/item/clothing/mask/smokable/cigarette/cigar/havana(src.loc)
 	new /obj/item/clothing/shoes/jackboots(src.loc)
 
-/obj/landmark/costume/nyangirl/New()
+/obj/landmark/costume/nyangirl/Initialize(mapload)
 	new /obj/item/clothing/under/plaid/properblue(src.loc)
 	new /obj/item/clothing/head/costume/animal/kitty(src.loc)
 
-/obj/landmark/costume/maid/New()
+/obj/landmark/costume/maid/Initialize(mapload)
 	var/CHOICE = pick( /obj/item/clothing/head/beret , /obj/item/clothing/head/costume/animal/rabbitears )
 	new CHOICE(src.loc)
 	new /obj/item/clothing/glasses/blindfold(src.loc)
 
-/obj/landmark/costume/butler/New()
+/obj/landmark/costume/butler/Initialize(mapload)
 	new /obj/item/clothing/suit/storage/wcoat/black(src.loc)
 	new /obj/item/clothing/head/tophat(src.loc)
 
-/obj/landmark/costume/highlander/New()
+/obj/landmark/costume/highlander/Initialize(mapload)
 	new /obj/item/clothing/under/plaid/kilt(src.loc)
 	new /obj/item/clothing/head/beret(src.loc)
 
-/obj/landmark/costume/prig/New()
+/obj/landmark/costume/prig/Initialize(mapload)
 	new /obj/item/clothing/suit/storage/wcoat/black(src.loc)
 	new /obj/item/clothing/glasses/monocle(src.loc)
 	var/CHOICE= pick( /obj/item/clothing/head/bowler, /obj/item/clothing/head/tophat)
@@ -50,31 +50,31 @@
 	//new /obj/item/clothing/under/sl_suit(src.loc)
 	new /obj/item/clothing/mask/costume/misc/fakemoustache(src.loc)
 
-/obj/landmark/costume/plaguedoctor/New()
+/obj/landmark/costume/plaguedoctor/Initialize(mapload)
 	new /obj/item/clothing/suit/costume/history/plaguedoctor(src.loc)
 	new /obj/item/clothing/head/costume/history/plaguedoctor(src.loc)
 
-/obj/landmark/costume/nightowl/New()
+/obj/landmark/costume/nightowl/Initialize(mapload)
 	new /obj/item/clothing/under/costume/animal/owl(src.loc)
 	new /obj/item/clothing/mask/costume/animal/owl(src.loc)
 
-/obj/landmark/costume/waiter/New()
+/obj/landmark/costume/waiter/Initialize(mapload)
 	new /obj/item/clothing/under/costume/job/waiter(src.loc)
 	var/CHOICE= pick( /obj/item/clothing/head/costume/animal/kitty, /obj/item/clothing/head/costume/animal/rabbitears)
 	new CHOICE(src.loc)
 	new /obj/item/clothing/suit/rank/botanist(src.loc)
 
-/obj/landmark/costume/pirate/New()
+/obj/landmark/costume/pirate/Initialize(mapload)
 	new /obj/item/clothing/under/costume/history/pirate(src.loc)
 	new /obj/item/clothing/suit/costume/history/pirate(src.loc)
 	var/CHOICE = pick( /obj/item/clothing/head/costume/history/pirate , /obj/item/clothing/head/bandana )
 	new CHOICE(src.loc)
 	new /obj/item/clothing/glasses/eyepatch(src.loc)
 
-/obj/landmark/costume/commie/New()
+/obj/landmark/costume/commie/Initialize(mapload)
 	new /obj/item/clothing/under/costume/history/soviet(src.loc)
 	new /obj/item/clothing/head/ushanka(src.loc)
 
-/obj/landmark/costume/sexyclown/New()
+/obj/landmark/costume/sexyclown/Initialize(mapload)
 	new /obj/item/clothing/mask/costume/kinky/sexy_clown(src.loc)
 	new /obj/item/clothing/under/costume/kinky/sexy_clown(src.loc)

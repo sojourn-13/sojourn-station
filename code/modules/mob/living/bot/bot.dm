@@ -20,7 +20,7 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	colony_friend = TRUE
 
-/mob/living/bot/New()
+/mob/living/bot/Initialize(mapload)
 	..()
 	update_icons()
 

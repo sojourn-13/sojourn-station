@@ -13,7 +13,7 @@
 	var/list/wires_connections = list("0", "0", "0", "0")
 
 
-/obj/effect/plant/hivemind/New()
+/obj/effect/plant/hivemind/Initialize(mapload)
 	..()
 	icon = 'icons/obj/hivemind.dmi'
 	spawn(2)

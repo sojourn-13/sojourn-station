@@ -339,7 +339,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	icon_state = "centcom"
 	desc = "An ID straight from Central Command. This one looks highly classified."
 
-/obj/item/card/id/bst/New()
+/obj/item/card/id/bst/Initialize(mapload)
 		access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()
 
 /obj/item/card/id/bst/attack_hand()

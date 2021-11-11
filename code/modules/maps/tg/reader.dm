@@ -414,7 +414,7 @@ var/global/use_preloader = FALSE
 		else
 			. = create_atom(path, crds)//first preloader pass
 
-	if(use_preloader && .)//second preloader pass, for those atoms that don't ..() in New()
+	if(use_preloader && .)//second preloader pass, for those atoms that don't ..() in Initialize(mapload)
 		_preloader.load(.)
 
 	//custom CHECK_TICK here because we don't want things created while we're sleeping to not initialize

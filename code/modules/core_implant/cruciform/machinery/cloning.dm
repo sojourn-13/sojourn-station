@@ -38,7 +38,7 @@
 	var/power_cost = 250
 
 
-/obj/machinery/neotheology/cloner/New()
+/obj/machinery/neotheology/cloner/Initialize(mapload)
 	..()
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	update_icon()
@@ -342,7 +342,7 @@
 	var/biomass_capacity = 600
 
 
-/obj/machinery/neotheology/biomass_container/New()
+/obj/machinery/neotheology/biomass_container/Initialize(mapload)
 	..()
 	create_reagents(biomass_capacity)
 	if(SSticker.current_state != GAME_STATE_PLAYING)

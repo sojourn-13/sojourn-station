@@ -53,7 +53,7 @@
 	health = 1
 	icon_state = "stickyweb1"
 	var/silk_baring = TRUE
-	New()
+	Initialize(mapload)
 		if(prob(50))
 			icon_state = "stickyweb2"
 		if(prob(20) && silk_baring)

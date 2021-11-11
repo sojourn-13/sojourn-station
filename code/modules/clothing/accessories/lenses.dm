@@ -12,7 +12,7 @@
 	var/saved_last_overlay = FALSE
 
 // Yep , we have to do it in new , because global.
-/obj/item/clothing/glasses/attachable_lenses/New()
+/obj/item/clothing/glasses/attachable_lenses/Initialize(mapload)
 	..()
 	overlays = global_hud.thermal
 
@@ -63,7 +63,7 @@
 /obj/item/clothing/glasses/attachable_lenses/thermal
 //Legit the same as its parrent
 
-/obj/item/clothing/glasses/attachable_lenses/thermal/New()
+/obj/item/clothing/glasses/attachable_lenses/thermal/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -85,7 +85,7 @@
 	origin_tech = list(TECH_ILLEGAL = 3, TECH_COMBAT = 2 , TECH_ENGINEERING = 5)
 	var/charge_exploded = FALSE
 
-/obj/item/clothing/glasses/attachable_lenses/explosive/New()
+/obj/item/clothing/glasses/attachable_lenses/explosive/Initialize(mapload)
 	..()
 	overlays = null
 

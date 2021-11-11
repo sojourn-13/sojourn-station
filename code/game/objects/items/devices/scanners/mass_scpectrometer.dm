@@ -41,7 +41,7 @@
 	else
 		..()
 
-/obj/item/device/scanner/mass_spectrometer/New()
+/obj/item/device/scanner/mass_spectrometer/Initialize(mapload)
 	..()
 	create_reagents(5)
 

@@ -39,7 +39,7 @@
 //-------------------------------------------
 // Standard procs
 //-------------------------------------------
-/obj/vehicle/train/cargo/engine/New()
+/obj/vehicle/train/cargo/engine/Initialize(mapload)
 	..()
 	cell = new /obj/item/cell/large/high(src)
 	key = new(src)

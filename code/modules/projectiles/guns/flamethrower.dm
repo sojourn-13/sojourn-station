@@ -16,7 +16,7 @@
 	..()
 	fuel_can = new /obj/item/weldpack/canister/flamethrower(src) // Give the gun a new flask when mapped in.
 
-/obj/item/gun/flamethrower/New()
+/obj/item/gun/flamethrower/Initialize(mapload)
 	..()
 
 /obj/item/gun/flamethrower/examine(mob/user)

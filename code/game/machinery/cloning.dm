@@ -23,7 +23,7 @@
 	var/eject_wait = 0 //Don't eject them as soon as they are created fuckkk
 	var/biomass = CLONE_BIOMASS * 3
 
-/obj/machinery/clonepod/New()
+/obj/machinery/clonepod/Initialize(mapload)
 	set_extension(src, /datum/extension/multitool, /datum/extension/multitool/store)
 	..()
 	if(SSticker.current_state != GAME_STATE_PLAYING)

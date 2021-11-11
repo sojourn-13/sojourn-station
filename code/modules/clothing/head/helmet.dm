@@ -604,7 +604,7 @@
 	var/obj/item/clothing/glasses/hud/security/hud
 	price_tag = 300
 
-/obj/item/clothing/head/helmet/riot_hud/New()
+/obj/item/clothing/head/helmet/riot_hud/Initialize(mapload)
 	..()
 	hud = new(src)
 	hud.canremove = FALSE
@@ -675,7 +675,7 @@
 	var/obj/item/clothing/glasses/hud/security/jensenshades/hud
 	price_tag = 2000
 
-/obj/item/clothing/head/helmet/night_vision_helm/New()
+/obj/item/clothing/head/helmet/night_vision_helm/Initialize(mapload)
 	..()
 	hud = new(src)
 	hud.canremove = FALSE

@@ -54,7 +54,7 @@
 	icon_state = "thermal"
 	icon = 'icons/inventory/eyes/icon.dmi'
 
-/obj/item/borg/sight/thermal/New()
+/obj/item/borg/sight/thermal/Initialize(mapload)
 	..()
 	overlay = global_hud.thermal
 
@@ -66,7 +66,7 @@
 	icon_state = "meson"
 	icon = 'icons/inventory/eyes/icon.dmi'
 
-/obj/item/borg/sight/meson/New()
+/obj/item/borg/sight/meson/Initialize(mapload)
 	..()
 	overlay = global_hud.meson
 
@@ -86,7 +86,7 @@
 	icon_state = "healthhud"
 	icon = 'icons/inventory/eyes/icon.dmi'
 
-	New()
+	Initialize(mapload)
 		..()
 		hud = new /obj/item/clothing/glasses/hud/health(src)
 		return
@@ -97,7 +97,7 @@
 	icon_state = "securityhud"
 	icon = 'icons/inventory/eyes/icon.dmi'
 
-	New()
+	Initialize(mapload)
 		..()
 		hud = new /obj/item/clothing/glasses/hud/security(src)
 		return

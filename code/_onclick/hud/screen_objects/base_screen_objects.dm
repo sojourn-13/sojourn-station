@@ -72,7 +72,7 @@
 /obj/screen/close
 	name = "close"
 
-/obj/screen/close/New()
+/obj/screen/close/Initialize(mapload)
 	return
 
 /obj/screen/close/Click()
@@ -231,7 +231,7 @@
 	set_selected_zone(selecting)
 	return TRUE
 
-/obj/screen/zone_sel/New()
+/obj/screen/zone_sel/Initialize(mapload)
 	..()
 	update_icon()
 
@@ -307,7 +307,7 @@
 /obj/screen/inventory/hand
 	name = "nonamehand"
 
-/obj/screen/inventory/hand/New()
+/obj/screen/inventory/hand/Initialize(mapload)
 	..()
 	ovrls["act_hand"] += new /image/no_recolor (icon = src.icon, icon_state ="act_hand[src.slot_id==slot_l_hand ? "-l" : "-r"]")
 	update_icon()
@@ -337,7 +337,7 @@
 	screen_loc = "15,7"
 	process_flag = TRUE
 
-/obj/screen/health/New()
+/obj/screen/health/Initialize(mapload)
 	..()
 	ovrls["health0"] += new /image (icon = src.icon, icon_state ="health0")
 	ovrls["health1"] += new /image/no_recolor(icon = src.icon, icon_state ="health1")
@@ -385,7 +385,7 @@
 	name = "sanity"
 	icon_state = "blank"
 
-/obj/screen/sanity/New()
+/obj/screen/sanity/Initialize(mapload)
 	..()
 	ovrls["sanity0"] += new /image/no_recolor(icon = src.icon, icon_state = "sanity0")
 	ovrls["sanity1"] += new /image/no_recolor(icon = src.icon, icon_state = "sanity1")
@@ -451,7 +451,7 @@
 	name = "nsa"
 	icon_state = "blank"
 
-/obj/screen/nsa/New()
+/obj/screen/nsa/Initialize(mapload)
 	..()
 	ovrls["nsa0"]  += new /image/no_recolor(icon = src.icon, icon_state = "nsa0")
 	ovrls["nsa1"]  += new /image/no_recolor(icon = src.icon, icon_state = "nsa1")
@@ -508,7 +508,7 @@
 	screen_loc = "15,6"
 	process_flag = TRUE
 
-/obj/screen/nutrition/New()
+/obj/screen/nutrition/Initialize(mapload)
 	..()
 	ovrls["nutrition0"] += new /image (icon = src.icon, icon_state ="nutrition0")
 	ovrls["nutrition1"] += new /image/no_recolor(icon = src.icon, icon_state ="nutrition1")
@@ -548,7 +548,7 @@
 	process_flag = TRUE
 
 
-/obj/screen/bodytemp/New()
+/obj/screen/bodytemp/Initialize(mapload)
 	..()
 	ovrls["temp0"] += new /image/no_recolor (icon = src.icon, icon_state ="temp0")
 	ovrls["temp1"] += new /image/no_recolor(icon = src.icon, icon_state ="temp1")
@@ -616,7 +616,7 @@
 	screen_loc = "15,13"
 	process_flag = TRUE
 
-/obj/screen/pressure/New()
+/obj/screen/pressure/Initialize(mapload)
 	..()
 	ovrls["pressure2"] += new /image/no_recolor (icon = src.icon, icon_state ="pressure2")
 	ovrls["pressure1"] += new /image/no_recolor(icon = src.icon, icon_state ="pressure1")
@@ -648,7 +648,7 @@
 	screen_loc = "15,10"
 	process_flag = 1
 
-/obj/screen/toxin/New()
+/obj/screen/toxin/Initialize(mapload)
 	..()
 	ovrls["tox1"] += new /image/no_recolor(icon = src.icon, icon_state ="tox1")
 	update_icon()
@@ -679,7 +679,7 @@
 	screen_loc = "15,12"
 	process_flag = TRUE
 
-/obj/screen/oxygen/New()
+/obj/screen/oxygen/Initialize(mapload)
 	..()
 	ovrls["oxy1"] += new /image/no_recolor(icon = src.icon, icon_state ="oxy1")
 //	ovrls["oxy0"] += new /image/no_recolor(icon = src.icon, icon_state ="oxy0")
@@ -711,7 +711,7 @@
 	process_flag = TRUE
 
 
-/obj/screen/fire/New()
+/obj/screen/fire/Initialize(mapload)
 	..()
 	ovrls["fire1"] += new /image/no_recolor(icon = src.icon, icon_state ="fire1")
 	ovrls["fire0"] += new /image(icon = src.icon, icon_state ="fire0")
@@ -742,7 +742,7 @@ obj/screen/fire/DEADelize()
 	icon_state = "blank"
 	screen_loc = "15,14"
 
-/obj/screen/internal/New()
+/obj/screen/internal/Initialize(mapload)
 	..()
 	ovrls["internal0"] += new /image(icon = src.icon, icon_state = "internal0")
 	ovrls["internal1"] += new /image/no_recolor(icon = src.icon, icon_state = "internal1")
@@ -900,7 +900,7 @@ obj/screen/fire/DEADelize()
 	icon_state = "pull0"
 	screen_loc = "14,2"
 
-/obj/screen/pull/New()
+/obj/screen/pull/Initialize(mapload)
 	..()
 	update_icon()
 
@@ -923,7 +923,7 @@ obj/screen/fire/DEADelize()
 	icon_state = "act_throw_off"
 	screen_loc = "15,2"
 
-/obj/screen/HUDthrow/New()
+/obj/screen/HUDthrow/Initialize(mapload)
 	/*if(usr)
 		//parentmob = usr
 		//usr.verbs += /obj/screen/HUDthrow/verb/toggle_throw_mode()
@@ -1002,7 +1002,7 @@ obj/screen/fire/DEADelize()
 
 	update_icon()
 
-/obj/screen/mov_intent/New()
+/obj/screen/mov_intent/Initialize(mapload)
 	..()
 	update_icon()
 
@@ -1030,7 +1030,7 @@ obj/screen/fire/DEADelize()
 	layer = HUD_LAYER
 	plane = HUD_PLANE
 
-/obj/screen/swap/New()
+/obj/screen/swap/Initialize(mapload)
 	..()
 	add_overlay( image(icon = src.icon, icon_state =  "swap-r", pixel_x = 32))
 
@@ -1045,7 +1045,7 @@ obj/screen/fire/DEADelize()
 	plane = HUD_PLANE
 	var/target_organ
 
-/obj/screen/bionics/New()
+/obj/screen/bionics/Initialize(mapload)
 	..()
 	update_icon()
 
@@ -1093,7 +1093,7 @@ obj/screen/fire/DEADelize()
 	icon_state = "full"
 	screen_loc = "8,2"
 
-/obj/screen/intent/New()
+/obj/screen/intent/Initialize(mapload)
 	..()
 	ovrls["disarm"] += new /image/no_recolor (icon = src.icon, icon_state ="disarm")
 	ovrls["harm"] += new /image/no_recolor (icon = src.icon, icon_state ="harm")
@@ -1133,7 +1133,7 @@ obj/screen/fire/DEADelize()
 	icon_state = "blank"
 	var/target_intent
 
-/obj/screen/fastintent/New()
+/obj/screen/fastintent/Initialize(mapload)
 	..()
 	src.add_overlay( new /image/no_recolor(icon = src.icon, icon_state = src.icon_state))
 

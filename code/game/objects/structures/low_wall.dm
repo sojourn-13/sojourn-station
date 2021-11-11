@@ -50,7 +50,7 @@
 
 
 //Low walls mark the turf they're on as a wall.  This is vital for floor icon updating code
-/obj/structure/low_wall/New()
+/obj/structure/low_wall/Initialize(mapload)
 	var/turf/T = loc
 	if (istype(T))
 		T.is_wall = TRUE

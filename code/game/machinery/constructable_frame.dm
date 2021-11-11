@@ -226,7 +226,7 @@
 	base_state = "v2box"
 	frame_type = FRAME_VERTICAL
 
-/obj/machinery/constructable_frame/machine_frame/vertical/New()
+/obj/machinery/constructable_frame/machine_frame/vertical/Initialize(mapload)
 	..()
 	update_icon()
 

@@ -25,7 +25,7 @@ var/bomb_set
 
 	var/eris_ship_bomb = FALSE           // if TRUE (1 in map editor), then Heads will get parts of code for this bomb. Obviously used in map editor. Single mapped bomb supported.
 
-/obj/machinery/nuclearbomb/New()
+/obj/machinery/nuclearbomb/Initialize(mapload)
 	..()
 	if(eris_ship_bomb)
 		r_code = "[rand(100000, 999999)]" // each time new Head spawns, s/he gets 2 numbers of code.

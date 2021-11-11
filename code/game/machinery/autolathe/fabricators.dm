@@ -216,7 +216,7 @@
 	)
 
 
-/obj/machinery/bulletfabricator/New()
+/obj/machinery/bulletfabricator/Initialize(mapload)
 	..()
 	create_reagents(1000)
 	beaker = new /obj/item/reagent_containers/glass/beaker/large(src) //???

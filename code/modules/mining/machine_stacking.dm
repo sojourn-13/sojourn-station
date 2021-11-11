@@ -8,7 +8,7 @@
 	anchored = 1
 	var/obj/machinery/mineral/stacking_machine/machine = null
 
-/obj/machinery/mineral/stacking_unit_console/New()
+/obj/machinery/mineral/stacking_unit_console/Initialize(mapload)
 	..()
 
 	spawn()

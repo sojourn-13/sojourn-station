@@ -8,7 +8,7 @@
 	anchored = 1
 	var/progress = 0
 
-/obj/structure/alien/egg/New()
+/obj/structure/alien/egg/Initialize(mapload)
 	..()
 	START_PROCESSING(SSobj, src)
 

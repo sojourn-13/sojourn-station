@@ -3,7 +3,7 @@
 	var/obj/item/holding = null
 	var/holding_type = null
 
-/obj/item/organ_module/active/simple/New()
+/obj/item/organ_module/active/simple/Initialize(mapload)
 	..()
 	if(holding_type)
 		holding = new holding_type(src)

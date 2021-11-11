@@ -25,7 +25,7 @@
 	var/obj/item/inventory_back
 	colony_friend = TRUE
 
-/mob/living/simple_animal/corgi/New()
+/mob/living/simple_animal/corgi/Initialize(mapload)
 	..()
 	nutrition = max_nutrition * 0.3//Ian doesn't start with a full belly so will be hungry at roundstart
 

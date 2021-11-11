@@ -8,7 +8,7 @@
 	var/obj/item/clothing/glasses/holding = null
 	var/holding_type = null
 
-/obj/item/organ_module/active/hud/New()
+/obj/item/organ_module/active/hud/Initialize(mapload)
 	..()
 	if(holding_type)
 		holding = new holding_type(src)

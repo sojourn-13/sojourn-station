@@ -6,7 +6,7 @@
 	desc = "For all your occult needs!"
 	icon_state = "deck_tarot"
 
-/obj/item/deck/tarot/New()
+/obj/item/deck/tarot/Initialize(mapload)
 	..()
 
 	var/datum/playingcard/P

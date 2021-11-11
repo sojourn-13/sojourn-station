@@ -47,7 +47,7 @@
 	icon_state = "hullcenter0"
 	initial_flooring = /decl/flooring/reinforced/plating/hull
 
-/turf/simulated/floor/hull/New()
+/turf/simulated/floor/hull/Initialize(mapload)
 	if(icon_state != "hullcenter0")
 		overrided_icon_state = icon_state
 	..()

@@ -22,7 +22,7 @@
 
 	var/sanity_value = 2
 
-/obj/item/media/boombox/New()
+/obj/item/media/boombox/Initialize(mapload)
 	AddComponent(/datum/component/atom_sanity, 0, "")
 	START_PROCESSING(SSobj, src)
 	..()

@@ -16,7 +16,7 @@
 	updateVisibility(src)
 	return ..()
 
-/turf/simulated/New()
+/turf/simulated/Initialize(mapload)
 	..()
 	updateVisibility(src)
 
@@ -27,7 +27,7 @@
 	updateVisibility(src)
 	return ..()
 
-/obj/structure/New()
+/obj/structure/Initialize(mapload)
 	..()
 	updateVisibility(src)
 
@@ -37,7 +37,7 @@
 	updateVisibility(src)
 	return ..()
 
-/obj/effect/New()
+/obj/effect/Initialize(mapload)
 	..()
 	updateVisibility(src)
 

@@ -1,4 +1,4 @@
-//These lists are populated in /datum/shuttle_controller/New()
+//These lists are populated in /datum/shuttle_controller/Initialize(mapload)
 //Shuttle controller is instantiated in master_controller.dm.
 
 //shuttle moving state defines are in setup.dm

@@ -17,7 +17,7 @@
 	var/otherarea = null
 	var/next_check = 0 // A time at which another mob check will occure.
 
-/obj/machinery/light_switch/New()
+/obj/machinery/light_switch/Initialize(mapload)
 	..()
 	spawn(5)
 		src.area = get_area(src)

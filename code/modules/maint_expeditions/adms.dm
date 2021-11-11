@@ -35,7 +35,7 @@
 		playsound(loc, "sparks", 75, 1, -1)
 		to_chat(user, SPAN_NOTICE("You use the cryptographic sequencer on the [name]."))
 
-/obj/machinery/exploration/adms/New()
+/obj/machinery/exploration/adms/Initialize(mapload)
 	set_light(l_color=COLOR_RED)
 	..()
 

@@ -43,7 +43,7 @@
 	..()
 	to_chat(user, "<span class='info'>Levels of stored biomass: [stored_matter]</span>")
 
-/obj/machinery/bioprinter/New()
+/obj/machinery/bioprinter/Initialize(mapload)
 	..()
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		stored_matter = 200
@@ -118,7 +118,7 @@
 	circuit = /obj/item/circuitboard/prosthetics_printer
 
 
-/obj/machinery/bioprinter/prosthetics/New()
+/obj/machinery/bioprinter/prosthetics/Initialize(mapload)
 	..()
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		stored_matter = 200

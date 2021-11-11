@@ -9,7 +9,7 @@
 	var/board = list()
 	var/selected = -1
 
-/obj/item/board/New()
+/obj/item/board/Initialize(mapload)
 	..()
 	var i
 	for(i = 0; i < 12; i++)

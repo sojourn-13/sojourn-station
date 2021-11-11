@@ -89,7 +89,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 		life = 40
 
 
-	New()
+	Initialize(mapload)
 		..()
 		var/startx = 0
 		var/starty = 0

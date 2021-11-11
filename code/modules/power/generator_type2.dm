@@ -13,7 +13,7 @@
 	var/lastgenlev = -1
 
 
-/obj/machinery/power/generator_type2/New()
+/obj/machinery/power/generator_type2/Initialize(mapload)
 	..()
 	spawn(5)
 		input1 = locate(/obj/machinery/atmospherics/unary/generator_input) in get_step(src,turn(dir, 90))

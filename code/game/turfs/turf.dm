@@ -30,7 +30,7 @@
 								// This is a more generic way of handling open space turfs
 	var/is_wall = FALSE 	//True for wall turfs, but also true if they contain a low wall object
 
-/turf/New()
+/turf/Initialize(mapload)
 	..()
 	for(var/atom/movable/AM as mob|obj in src)
 		spawn( 0 )

@@ -3,7 +3,7 @@
 	var/volume = 0
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2, TECH_BIO = 2)
 
-/obj/item/integrated_circuit/reagent/New()
+/obj/item/integrated_circuit/reagent/Initialize(mapload)
 	..()
 	if(volume)
 		create_reagents(volume)

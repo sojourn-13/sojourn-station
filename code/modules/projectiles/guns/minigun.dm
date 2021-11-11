@@ -19,7 +19,7 @@
 	var/projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/hv
 	var/obj/item/minigun_backpack/connected = null // The backpack the gun is connected to
 
-/obj/item/gun/minigun/New()
+/obj/item/gun/minigun/Initialize(mapload)
 	..()
 	START_PROCESSING(SSobj, src)
 

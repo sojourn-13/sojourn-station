@@ -29,7 +29,7 @@
 	max_storage_space = DEFAULT_HUGE_STORAGE // Holds the same as a backpack.
 
 //Create the internal storage and pass on various parameters
-/obj/item/rig_module/storage/New()
+/obj/item/rig_module/storage/Initialize(mapload)
 	container = new /obj/item/storage/internal(src)
 	container.can_hold = can_hold
 	container.cant_hold = cant_hold

@@ -23,7 +23,7 @@ var/global/list/navbeacons			// no I don't like putting this in, but it will do 
 
 	req_access = list(access_engine)
 
-	New()
+	Initialize(mapload)
 		..()
 
 		set_codes()

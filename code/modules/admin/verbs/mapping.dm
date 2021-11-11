@@ -26,7 +26,7 @@ var/intercom_range_display_status = 0
 	icon = 'icons/480x480.dmi'
 	icon_state = "25percent"
 
-	New()
+	Initialize(mapload)
 		src.pixel_x = -224
 		src.pixel_y = -224
 

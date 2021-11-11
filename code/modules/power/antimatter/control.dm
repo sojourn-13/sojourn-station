@@ -31,7 +31,7 @@
 	var/obj/item/device/radio/radio
 	var/announce_stability = TRUE
 
-/obj/machinery/power/am_control_unit/New()
+/obj/machinery/power/am_control_unit/Initialize(mapload)
 	..()
 	linked_shielding = list()
 	linked_cores = list()

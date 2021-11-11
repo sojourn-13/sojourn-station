@@ -419,7 +419,7 @@
 	var/entropy_value = 5
 	var/blink_range = 8
 
-/obj/item/oddity/broken_necklace/New()
+/obj/item/oddity/broken_necklace/Initialize(mapload)
 	..()
 	GLOB.bluespace_gift++
 	GLOB.bluespace_entropy -= rand(30, 50)

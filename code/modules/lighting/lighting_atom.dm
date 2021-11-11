@@ -44,7 +44,7 @@
 			light = new /datum/light_source(src, .)
 
 
-/atom/New()
+/atom/Initialize(mapload)
 	. = ..()
 
 	if(light_power && light_range)
@@ -60,7 +60,7 @@
 		light = null
 	return ..()
 
-/atom/movable/New()
+/atom/movable/Initialize(mapload)
 	. = ..()
 
 	if(opacity && isturf(loc))

@@ -18,7 +18,7 @@
 	else if(user.fire_stacks < 0)
 		user.fire_stacks = (min(0, user.fire_stacks + 1.5))
 
-/obj/item/towel/random/New()
+/obj/item/towel/random/Initialize(mapload)
 	..()
 	color = "#"+get_random_colour()
 

@@ -24,7 +24,7 @@
 	var/list/under_room_templates = list()
 	var/datum/map_template/dungeon_template/room/blocker_temp = null
 
-/obj/crawler/map_maker/New()
+/obj/crawler/map_maker/Initialize(mapload)
 	while(1)
 		if(Master.current_runlevel)
 			break

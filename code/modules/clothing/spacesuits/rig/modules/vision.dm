@@ -15,26 +15,31 @@
 
 /datum/rig_vision/nvg
 	mode = "night vision"
+
 /datum/rig_vision/nvg/New()
 	glasses = new /obj/item/clothing/glasses/powered/night
 
 /datum/rig_vision/thermal
 	mode = "thermal scanner"
+
 /datum/rig_vision/thermal/New()
 	glasses = new /obj/item/clothing/glasses/powered/thermal
 
 /datum/rig_vision/meson
 	mode = "meson scanner"
+
 /datum/rig_vision/meson/New()
 	glasses = new /obj/item/clothing/glasses/powered/meson
 
 /datum/rig_vision/sechud
 	mode = "security HUD"
+
 /datum/rig_vision/sechud/New()
 	glasses = new /obj/item/clothing/glasses/hud/security
 
 /datum/rig_vision/medhud
 	mode = "medical HUD"
+
 /datum/rig_vision/medhud/New()
 	glasses = new /obj/item/clothing/glasses/hud/health
 
@@ -179,7 +184,7 @@
 		to_chat(holder.wearer, "<font color='blue'>Your sensors only have one mode.</font>")
 	return 1
 
-/obj/item/rig_module/vision/New()
+/obj/item/rig_module/vision/Initialize(mapload)
 	..()
 
 	if(!vision_modes)

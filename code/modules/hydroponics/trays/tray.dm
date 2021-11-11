@@ -134,7 +134,7 @@
 		return 1
 	return ..()
 
-/obj/machinery/portable_atmospherics/hydroponics/New()
+/obj/machinery/portable_atmospherics/hydroponics/Initialize(mapload)
 	..()
 	temp_chem_holder = new()
 	temp_chem_holder.create_reagents(10)

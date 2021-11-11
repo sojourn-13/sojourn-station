@@ -98,7 +98,7 @@ var/custom_event_msg = null
 // Ideally, the connection dies when the server restarts (After feedback logging.).
 var/DBConnection/dbcon     = new() // Feedback    database (New database)
 
-// Reference list for disposal sort junctions. Filled up by sorting junction's New()
+// Reference list for disposal sort junctions. Filled up by sorting junction's Initialize(mapload)
 /var/list/tagger_locations = list()
 
 // Added for Xenoarchaeology, might be useful for other stuff.

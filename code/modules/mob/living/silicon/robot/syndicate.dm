@@ -6,7 +6,7 @@
 	lawchannel = "State"
 	idcard_type = /obj/item/card/id/syndicate
 
-/mob/living/silicon/robot/syndicate/New()
+/mob/living/silicon/robot/syndicate/Initialize(mapload)
 	if(!cell)
 		// Starts with a fancy high capacity cell
 		cell = new /obj/item/cell/large/hyper(src)

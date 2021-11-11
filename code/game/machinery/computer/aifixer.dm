@@ -9,7 +9,7 @@
 	var/mob/living/silicon/ai/occupant = null
 	var/active = 0
 
-/obj/machinery/computer/aifixer/New()
+/obj/machinery/computer/aifixer/Initialize(mapload)
 	..()
 	update_icon()
 

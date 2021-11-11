@@ -60,7 +60,7 @@
 	matter = list(MATERIAL_PLASTIC = 10, MATERIAL_GOLD = 5, MATERIAL_DIAMOND = 1, MATERIAL_URANIUM = 1)
 	price_tag = 300
 
-/obj/item/storage/bag/trash/holding/New()
+/obj/item/storage/bag/trash/holding/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(10, get_turf(src))
@@ -150,7 +150,7 @@
 	                /obj/item/reagent_containers/food/snacks/egg,
 	                /obj/item/reagent_containers/food/snacks/meat)
 
-/obj/item/storage/bag/ore/holding/New()
+/obj/item/storage/bag/ore/holding/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(4, get_turf(src))

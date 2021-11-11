@@ -14,7 +14,7 @@
 /obj/item/lipstick/random
 	name = "random lipstick"
 
-/obj/item/lipstick/random/New()
+/obj/item/lipstick/random/Initialize(mapload)
 	colour = pick("red","purple","jade","black")
 	name = "[colour] lipstick"
 

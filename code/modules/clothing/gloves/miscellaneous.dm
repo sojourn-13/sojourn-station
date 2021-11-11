@@ -26,7 +26,7 @@
 /obj/item/clothing/gloves/insulated/cheap                          //Cheap Chinese Crap
 	desc = "A pair of cheaply-made insulated gloves. Not known for reliability."
 	name = "budget insulated gloves"
-	siemens_coefficient = 1			//Set to a default of 1, gets overridden in New()
+	siemens_coefficient = 1			//Set to a default of 1, gets overridden in Initialize(mapload)
 	permeability_coefficient = 0.05
 	price_tag = 50
 

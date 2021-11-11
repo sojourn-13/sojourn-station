@@ -21,7 +21,7 @@
 	var/board_type = "computer"
 	var/list/req_components = null
 
-/obj/item/circuitboard/New() //Using this to automate names on each board.
+/obj/item/circuitboard/Initialize(mapload) //Using this to automate names on each board.
 	..()
 	if(build_name && build_name != null) //This check here is only because not all boards use automated names, apparently.
 		name = "[build_name] board"

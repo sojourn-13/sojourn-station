@@ -19,7 +19,7 @@
 
 		Add or modify the objects initialize() proc to include:
 			if(_wifi_id)		<< only creates a wifi receiver if an id is set
-				wifi_receiver = new(_wifi_id, src)		<< this needs to be in initialize() as New() is usually too
+				wifi_receiver = new(_wifi_id, src)		<< this needs to be in initialize() as Initialize(mapload) is usually too
 														   early, and the receiver will try to connect to the controller
 														   before it is setup.
 

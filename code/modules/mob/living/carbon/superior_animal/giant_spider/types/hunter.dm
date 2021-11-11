@@ -245,7 +245,7 @@
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 
-/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/New()
+/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/Initialize(mapload)
 	..()
 	pixel_x = -16
 	pixel_y = null

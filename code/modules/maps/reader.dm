@@ -210,7 +210,7 @@ var/global/dmm_suite/preloader/_preloader = null
 
 	instance = new path (locate(x,y,z))//first preloader pass
 
-	if(_preloader && instance)//second preloader pass, for those atoms that don't ..() in New()
+	if(_preloader && instance)//second preloader pass, for those atoms that don't ..() in Initialize(mapload)
 		_preloader.load(instance)
 
 	return instance
@@ -304,8 +304,8 @@ var/global/dmm_suite/preloader/_preloader = null
 	placed.underlays += turfs_underlays
 
 //atom creation method that preloads variables at creation
-/atom/New()
-	if(_preloader && (src.type == _preloader.target_path))//in case the instanciated atom is creating other atoms in New()
+/atom/Initialize(mapload)
+	if(_preloader && (src.type == _preloader.target_path))//in case the instanciated atom is creating other atoms in Initialize(mapload)
 		_preloader.load(src)
 
 	. = ..()

@@ -9,7 +9,7 @@
 	layer = MID_LANDMARK_LAYER
 	var/delete_me = FALSE
 
-/obj/landmark/New()
+/obj/landmark/Initialize(mapload)
 	..()
 	GLOB.landmarks_list += src
 

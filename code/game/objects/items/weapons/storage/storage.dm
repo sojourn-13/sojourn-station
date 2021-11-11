@@ -24,7 +24,7 @@
 	var/insertion_sound
 	var/extraction_sound
 
-/obj/item/storage/New()
+/obj/item/storage/Initialize(mapload)
 	can_hold |= can_hold_extra
 	. = ..()
 

@@ -51,7 +51,7 @@
 	jam_chance = 35
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
-obj/item/gun/projectile/handmade_pistol/New()
+obj/item/gun/projectile/handmade_pistol/Initialize(mapload)
 	..()
 	open_chamber()
 

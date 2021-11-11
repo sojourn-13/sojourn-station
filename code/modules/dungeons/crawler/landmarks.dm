@@ -6,7 +6,7 @@
 	var/wall_dir = NORTH
 	var/spawnwall = TRUE
 
-/obj/crawler/crawler_wallmaker/New()
+/obj/crawler/crawler_wallmaker/Initialize(mapload)
 	sleep(350)
 	var/turf/T = get_step(loc, wall_dir)
 	for(var/obj/crawler/crawler_wallmaker/found in T.contents)
@@ -89,7 +89,7 @@
 	var/datum/map_template/dungeon_template/template = null
 	var/end_room = FALSE
 
-/obj/crawler/room_controller/New()
+/obj/crawler/room_controller/Initialize(mapload)
 	if(loc && istype(loc.loc,/area/crawler))
 		var/area/crawler/A = loc.loc
 		A.room_controllers += src

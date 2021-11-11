@@ -36,15 +36,15 @@
 	name = "colony intercom (Security)"
 	frequency = SEC_I_FREQ
 
-/obj/item/device/radio/intercom/New()
+/obj/item/device/radio/intercom/Initialize(mapload)
 	..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/device/radio/intercom/department/medbay/New()
+/obj/item/device/radio/intercom/department/medbay/Initialize(mapload)
 	..()
 	internal_channels = default_medbay_channels.Copy()
 
-/obj/item/device/radio/intercom/department/security/New()
+/obj/item/device/radio/intercom/department/security/Initialize(mapload)
 	..()
 	internal_channels = list(
 		num2text(PUB_FREQ) = list(),
@@ -59,7 +59,7 @@
 	subspace_transmission = 1
 	syndie = 1
 
-/obj/item/device/radio/intercom/syndicate/New()
+/obj/item/device/radio/intercom/syndicate/Initialize(mapload)
 	..()
 	internal_channels[num2text(SYND_FREQ)] = list(access_syndicate)
 

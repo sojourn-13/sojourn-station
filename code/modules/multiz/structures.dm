@@ -12,7 +12,7 @@
 	var/obj/structure/multiz/target
 	var/obj/structure/multiz/targeted_by
 
-/obj/structure/multiz/New()
+/obj/structure/multiz/Initialize(mapload)
 	. = ..()
 	for(var/obj/structure/multiz/M in loc)
 		if(M != src)

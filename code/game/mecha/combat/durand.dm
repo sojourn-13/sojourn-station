@@ -20,7 +20,7 @@
 	max_equip = 5
 	internal_damage_threshold = 30
 
-/obj/mecha/combat/durand/New()
+/obj/mecha/combat/durand/Initialize(mapload)
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/loaded(src)
 	ME.attach(src)
@@ -46,7 +46,7 @@
 	step_in = 5
 	internal_damage_threshold = 40
 
-/obj/mecha/combat/durand/security/New()
+/obj/mecha/combat/durand/security/Initialize(mapload)
 	..()//Let it equip whatever is needed.
 	var/obj/item/mecha_parts/mecha_equipment/ME
 	if(equipment.len)//Now to remove it and equip anew.

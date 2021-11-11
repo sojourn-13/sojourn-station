@@ -123,7 +123,7 @@
 //----------------------------
 // Tesla beam
 //----------------------------
-/obj/effect/projectile/tesla/New()
+/obj/effect/projectile/tesla/Initialize(mapload)
 	..()
 	icon_state = "lightning[rand(1,12)]"
 

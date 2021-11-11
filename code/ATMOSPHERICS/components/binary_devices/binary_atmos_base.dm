@@ -10,7 +10,7 @@ obj/machinery/atmospherics/binary
 	var/datum/pipe_network/network1
 	var/datum/pipe_network/network2
 
-	New()
+	Initialize(mapload)
 		..()
 		switch(dir)
 			if(NORTH)

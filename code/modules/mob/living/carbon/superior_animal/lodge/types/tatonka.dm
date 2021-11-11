@@ -32,7 +32,7 @@
 	var/offspring_left = 0
 	var/milk_type = "tatonka_milk"
 
-/mob/living/carbon/superior_animal/lodge/tatonka/New()
+/mob/living/carbon/superior_animal/lodge/tatonka/Initialize(mapload)
 	udder = new(50)
 	udder.my_atom = src
 	..()
@@ -90,7 +90,7 @@
 			var/amount_add = rand(5, 10)
 			if(unnatural_mutations.getMutation("MUTATION_ROBUST_MILK", TRUE))
 				amount_add = 20
-			
+
 			if(unnatural_mutations.getMutation("MUTATION_CHOC_MILK", TRUE))
 				udder.add_reagent("chocolatemilk", amount_add)
 			else if(unnatural_mutations.getMutation("MUTATION_PROT_MILK", TRUE))
@@ -124,7 +124,7 @@
 	pixel_x = -16
 	randpixel = 0
 
-/mob/living/carbon/superior_animal/lodge/baby_tatonka/New()
+/mob/living/carbon/superior_animal/lodge/baby_tatonka/Initialize(mapload)
 	..()
 	pixel_x = -16
 	src.transform *= 0.5

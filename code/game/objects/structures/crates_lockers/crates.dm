@@ -74,7 +74,7 @@
 	secure = TRUE
 	locked = TRUE
 
-/obj/structure/closet/crate/secure/New()
+/obj/structure/closet/crate/secure/Initialize(mapload)
 	..()
 	update_icon()
 

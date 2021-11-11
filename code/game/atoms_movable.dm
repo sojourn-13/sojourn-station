@@ -248,7 +248,7 @@
 	var/atom/master = null
 	anchored = 1
 
-/atom/movable/overlay/New()
+/atom/movable/overlay/Initialize(mapload)
 	for(var/x in src.verbs)
 		src.verbs -= x
 	..()
@@ -362,7 +362,7 @@
 								step(src, SOUTH)
 	else
 		var/atom/oldloc = src.loc
-		var/olddir = dir //we can't override this without sacrificing the rest of movable/New()
+		var/olddir = dir //we can't override this without sacrificing the rest of movable/Initialize(mapload)
 
 		. = ..()
 

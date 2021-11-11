@@ -161,7 +161,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 	name = "security newscaster"
 	securityCaster = 1
 
-/obj/machinery/newscaster/New()         //Constructor, ho~
+/obj/machinery/newscaster/Initialize(mapload)         //Constructor, ho~
 	allCasters += src
 	src.paper_remaining = rand(3,15)            ///At most 15 prints and at minium 3. No max as storage as of now
 	for(var/obj/machinery/newscaster/NEWSCASTER in allCasters) // Let's give it an appropriate unit number

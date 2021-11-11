@@ -1,4 +1,4 @@
-/mob/living/carbon/New()
+/mob/living/carbon/Initialize(mapload)
 	//setup reagent holders
 	bloodstr = new /datum/reagents/metabolism(1000, src, CHEM_BLOOD)
 	ingested = new /datum/reagents/metabolism(1000, src, CHEM_INGEST)

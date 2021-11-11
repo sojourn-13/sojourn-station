@@ -26,7 +26,7 @@
 	)
 	var/entropy_value = 8
 
-/obj/structure/bs_crystal_structure/New()
+/obj/structure/bs_crystal_structure/Initialize(mapload)
 	..()
 
 	for(var/turf/simulated/floor/F in range(2, src.loc))

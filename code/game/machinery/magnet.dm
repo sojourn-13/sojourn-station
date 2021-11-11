@@ -29,7 +29,7 @@
 	var/center_y = 0
 	var/max_dist = 20 // absolute value of center_x,y cannot exceed this integer
 
-	New()
+	Initialize(mapload)
 		..()
 		var/turf/T = loc
 		hide(!T.is_plating())
@@ -219,7 +219,7 @@
 	var/datum/radio_frequency/radio_connection
 
 
-	New()
+	Initialize(mapload)
 		..()
 
 		if(autolink)

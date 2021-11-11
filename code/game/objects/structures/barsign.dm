@@ -24,7 +24,7 @@
 		else
 			to_chat(user, "It says '[icon_state]'")
 
-/obj/structure/sign/neon/barsign/New()
+/obj/structure/sign/neon/barsign/Initialize(mapload)
 	..()
 	icon_state = pick(get_valid_states())
 

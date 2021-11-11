@@ -8,7 +8,7 @@ var/list/doppler_arrays = list()
 	density = 1
 	anchored = 1.0
 
-/obj/machinery/doppler_array/New()
+/obj/machinery/doppler_array/Initialize(mapload)
 	..()
 	doppler_arrays += src
 

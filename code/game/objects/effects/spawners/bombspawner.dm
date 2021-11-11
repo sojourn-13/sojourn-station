@@ -23,7 +23,7 @@
 /obj/effect/spawner/bomb/suicide
 	btype = 3
 
-/obj/effect/spawner/bomb/New()
+/obj/effect/spawner/bomb/Initialize(mapload)
 	..()
 
 	switch (src.btype)

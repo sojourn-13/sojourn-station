@@ -20,7 +20,7 @@ ADMIN_VERB_ADD(/client/proc/show_plant_genes, R_DEBUG, FALSE)
 	for(var/mask in plant_controller.gene_tag_masks)
 		to_chat(usr, "[mask]: [plant_controller.gene_tag_masks[mask]]")
 
-var/global/datum/controller/plants/plant_controller // Set in New().
+var/global/datum/controller/plants/plant_controller // Set in Initialize(mapload).
 
 /datum/controller/plants
 
@@ -35,7 +35,7 @@ var/global/datum/controller/plants/plant_controller // Set in New().
 	var/list/plant_product_sprites = list() // List of all growth sprites plus number of growth stages.
 	var/processing = 0                      // Off/on.
 
-/datum/controller/plants/New()
+/datum/controller/plants/Initialize(mapload)
 	if(plant_controller && plant_controller != src)
 		log_debug("Rebuilding plant controller.")
 		qdel(plant_controller)

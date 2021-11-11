@@ -27,7 +27,7 @@
 	var/obj/item/hydrogen_fuel_cell/fuel_cell = null // The flask the sword consume to stay active
 	var/use_plasma_cost = 0.1 // Active cost
 
-/obj/item/tool/hydrogen_sword/New()
+/obj/item/tool/hydrogen_sword/Initialize(mapload)
 	..()
 	START_PROCESSING(SSobj, src)
 

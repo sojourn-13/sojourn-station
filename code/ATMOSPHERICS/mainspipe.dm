@@ -54,7 +54,7 @@ obj/machinery/atmospherics/mains_pipe
 	var/fatigue_pressure = 55*ONE_ATMOSPHERE
 	alert_pressure = 55*ONE_ATMOSPHERE
 
-	New()
+	Initialize(mapload)
 		..()
 
 		supply = new(src)
@@ -116,7 +116,7 @@ obj/machinery/atmospherics/mains_pipe/simple
 	dir = SOUTH
 	initialize_mains_directions = SOUTH|NORTH
 
-	New()
+	Initialize(mapload)
 		nodes.len = 2
 		..()
 		switch(dir)
@@ -200,7 +200,7 @@ obj/machinery/atmospherics/mains_pipe/manifold
 	initialize_mains_directions = EAST|NORTH|WEST
 	volume = 105
 
-	New()
+	Initialize(mapload)
 		nodes.len = 3
 		..()
 		initialize_mains_directions = (NORTH|SOUTH|EAST|WEST) & ~dir
@@ -265,7 +265,7 @@ obj/machinery/atmospherics/mains_pipe/manifold4w
 	initialize_mains_directions = EAST|NORTH|WEST|SOUTH
 	volume = 105
 
-	New()
+	Initialize(mapload)
 		nodes.len = 4
 		..()
 
@@ -315,7 +315,7 @@ obj/machinery/atmospherics/mains_pipe/split
 	var/obj/machinery/atmospherics/node3
 	var/icon_type
 
-	New()
+	Initialize(mapload)
 		nodes.len = 2
 		..()
 		initialize_mains_directions = turn(dir, 90) | turn(dir, -90)
@@ -366,7 +366,7 @@ obj/machinery/atmospherics/mains_pipe/split
 	supply
 		icon_type = "supply"
 
-		New()
+		Initialize(mapload)
 			..()
 			split_node = supply
 
@@ -381,7 +381,7 @@ obj/machinery/atmospherics/mains_pipe/split
 	scrubbers
 		icon_type = "scrubbers"
 
-		New()
+		Initialize(mapload)
 			..()
 			split_node = scrubbers
 
@@ -396,7 +396,7 @@ obj/machinery/atmospherics/mains_pipe/split
 	aux
 		icon_type = "aux"
 
-		New()
+		Initialize(mapload)
 			..()
 			split_node = aux
 
@@ -416,7 +416,7 @@ obj/machinery/atmospherics/mains_pipe/split3
 	var/obj/machinery/atmospherics/scrubbers_node
 	var/obj/machinery/atmospherics/aux_node
 
-	New()
+	Initialize(mapload)
 		nodes.len = 1
 		..()
 		initialize_mains_directions = dir
@@ -508,7 +508,7 @@ obj/machinery/atmospherics/mains_pipe/cap
 	initialize_directions = SOUTH
 	volume = 35
 
-	New()
+	Initialize(mapload)
 		nodes.len = 1
 		..()
 		initialize_mains_directions = dir
@@ -549,7 +549,7 @@ obj/machinery/atmospherics/mains_pipe/valve
 	dir = SOUTH
 	initialize_mains_directions = SOUTH|NORTH
 
-	New()
+	Initialize(mapload)
 		nodes.len = 2
 		..()
 		initialize_mains_directions = dir | turn(dir, 180)

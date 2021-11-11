@@ -5,7 +5,7 @@
 	notices = 5
 	icon_state = "nboard05"
 
-/obj/structure/noticeboard/anomaly/New()
+/obj/structure/noticeboard/anomaly/Initialize(mapload)
 	//add some memos
 	var/obj/item/paper/P = new()
 	P.name = "Memo RE: proper analysis procedure"
@@ -47,7 +47,7 @@
 /obj/structure/bookcase/manuals/xenoarchaeology
 	name = "Xenoarchaeology Manuals bookcase"
 
-	New()
+	Initialize(mapload)
 		..()
 		new /obj/item/book/manual/excavation(src)
 		new /obj/item/book/manual/mass_spectrometry(src)
@@ -64,7 +64,7 @@
 	req_access = list(access_tox_storage)
 	icon_state = "science"
 
-	New()
+	Initialize(mapload)
 		..()
 		sleep(2)
 		new /obj/item/clothing/under/rank/scientist(src)
@@ -85,7 +85,7 @@
 	icon_door = "eng_tool"
 
 
-	New()
+	Initialize(mapload)
 		..()
 		sleep(2)
 		new /obj/item/storage/belt/archaeology(src)

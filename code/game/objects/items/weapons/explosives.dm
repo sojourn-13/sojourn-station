@@ -14,7 +14,7 @@
 	var/open_panel = 0
 	var/image_overlay = null
 
-/obj/item/plastique/New()
+/obj/item/plastique/Initialize(mapload)
 	wires = new(src)
 	image_overlay = image('icons/obj/assemblies.dmi', "plastic-explosive2")
 	..()

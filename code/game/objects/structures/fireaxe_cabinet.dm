@@ -35,7 +35,7 @@
 	else if(!open)
 		add_overlay(image(icon, "fireaxe_window"))
 
-/obj/structure/fireaxecabinet/New()
+/obj/structure/fireaxecabinet/Initialize(mapload)
 	..()
 	fireaxe = new(src)
 	update_icon()

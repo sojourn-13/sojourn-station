@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	var/spawn_datum_type = /datum/spawnpoint //What kind of datum we'll create for this landmark.
 	//Make sure all landmarks that share a name also share the same datum type!
 
-/obj/landmark/join/New()
+/obj/landmark/join/Initialize(mapload)
 	if(join_tag)
 		var/datum/spawnpoint/SP = get_spawn_point(name)
 		if (!SP)
@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	var/restrict_job = null
 	var/disallow_job = null
 
-/obj/landmark/join/late/New()
+/obj/landmark/join/late/Initialize(mapload)
 	if(join_tag)
 		landmark_create_spawn_point(src, TRUE, TRUE)
 	..()

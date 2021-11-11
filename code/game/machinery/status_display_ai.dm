@@ -76,7 +76,7 @@ var/list/ai_status_emotions = list(
 /obj/machinery/ai_status_display/Process()
 	return
 
-/obj/machinery/ai_status_display/New()
+/obj/machinery/ai_status_display/Initialize(mapload)
 	GLOB.ai_status_display_list += src
 
 	..()

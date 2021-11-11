@@ -15,7 +15,7 @@
 	icon_state = "silencer"
 
 
-/obj/item/gun_upgrade/muzzle/silencer/New()
+/obj/item/gun_upgrade/muzzle/silencer/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -33,7 +33,7 @@
 	desc = "Despite advancements in 3D printing, a properly forged plasteel barrel can still outperform anything that comes from an autolathe."
 	icon_state = "Forged_barrel"
 
-/obj/item/gun_upgrade/barrel/forged/New()
+/obj/item/gun_upgrade/barrel/forged/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -49,7 +49,7 @@
 	desc = "A heavy compensating barrel brake that allows for a more powerful impact due to gas control, but the extra weight impacts recoil and firing speed."
 	icon_state = "Forged_heavy_barrel"
 
-/obj/item/gun_upgrade/barrel/bore/New()
+/obj/item/gun_upgrade/barrel/bore/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -68,7 +68,7 @@
 	icon_state = "Penetrator"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1)
 
-/obj/item/gun_upgrade/barrel/mag_accel/New()
+/obj/item/gun_upgrade/barrel/mag_accel/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -88,7 +88,7 @@
 	icon_state = "Caster"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1)
 
-/obj/item/gun_upgrade/barrel/overheat/New()
+/obj/item/gun_upgrade/barrel/overheat/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -108,7 +108,7 @@
 	desc = "A strange weapon augment made by someone with a sense of humor. The bulk of the item, not to mention its bolted attachment style, make it a pranksters tool only as it is annoying to use and remove."
 	icon_state = "bike_horn"
 
-/obj/item/gun_upgrade/mechanism/bikehorn/New()
+/obj/item/gun_upgrade/mechanism/bikehorn/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -134,7 +134,7 @@
 	icon_state = "Excruciator"
 	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_GLASS = 1)
 
-/obj/item/gun_upgrade/barrel/excruciator/New()
+/obj/item/gun_upgrade/barrel/excruciator/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -154,7 +154,7 @@
 	desc = "A popular design by the Artificer's Guild used on the frontier by mercenary groups who don't care about collateral, overclocking the firing mechanism by disabling the safety function. A void wolf staple."
 	icon_state = "Danger_Zone"
 
-/obj/item/gun_upgrade/trigger/dangerzone/New()
+/obj/item/gun_upgrade/trigger/dangerzone/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -171,7 +171,7 @@
 	icon_state = "Cop_Block"
 	price_tag = 50
 
-/obj/item/gun_upgrade/trigger/cop_block/New()
+/obj/item/gun_upgrade/trigger/cop_block/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.install_time = WORKTIME_INSTANT
@@ -189,7 +189,7 @@
 	icon_state = "DNA_lock"
 	matter = list(MATERIAL_SILVER = 1, MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3) //DNA stuff needs silver i guess
 
-/obj/item/gun_upgrade/trigger/dnalock/New()
+/obj/item/gun_upgrade/trigger/dnalock/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.install_time = WORKTIME_INSTANT //For SWAT tatics+
@@ -211,7 +211,7 @@
 	desc = "A method of overloading a weapon's internal magazine, fitting more ammunition within the weapon. An Artificer's Guild favorite for revolvers and shotguns."
 	icon_state = "Overshooter"
 
-/obj/item/gun_upgrade/mechanism/overshooter/New()
+/obj/item/gun_upgrade/mechanism/overshooter/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -230,7 +230,7 @@
 	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 
-/obj/item/gun_upgrade/mechanism/glass_widow/New()
+/obj/item/gun_upgrade/mechanism/glass_widow/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -249,7 +249,7 @@
 	icon_state = "kit_heavy_alt"
 	can_remove = FALSE
 
-/obj/item/gun_upgrade/mechanism/upgrade_kit/New()
+/obj/item/gun_upgrade/mechanism/upgrade_kit/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -272,7 +272,7 @@
 	icon_state = "Clockblock"
 	can_remove = FALSE
 
-/obj/item/gun_upgrade/mechanism/brass_kit/New()
+/obj/item/gun_upgrade/mechanism/brass_kit/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -293,7 +293,7 @@
 	desc = "A specially made custom tooled fully automatic cylinder fit for a revolver, for when you want stopping power AND a bullet storm. Good luck controlling the recoil."
 	icon_state = "Weintraub"
 
-/obj/item/gun_upgrade/mechanism/weintraub/New()
+/obj/item/gun_upgrade/mechanism/weintraub/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -309,7 +309,7 @@
 	desc = "Makes bullets loaded into the weapon fire backwards, into its user."
 	icon_state = "Reverse_loader"
 
-/obj/item/gun_upgrade/mechanism/reverse_loader/New()
+/obj/item/gun_upgrade/mechanism/reverse_loader/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -345,7 +345,7 @@
 	icon_state = "battery_shunt"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
 
-/obj/item/gun_upgrade/mechanism/battery_shunt/New()
+/obj/item/gun_upgrade/mechanism/battery_shunt/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -364,7 +364,7 @@
 	icon_state = "overdrive"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
 
-/obj/item/gun_upgrade/mechanism/overdrive/New()
+/obj/item/gun_upgrade/mechanism/overdrive/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -381,7 +381,7 @@
 	icon_state = "Clockblock"
 	price_tag = 0
 
-/obj/item/gun_upgrade/mechanism/clock_block/New()
+/obj/item/gun_upgrade/mechanism/clock_block/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -400,7 +400,7 @@
 	icon_state = "honker"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
 
-/obj/item/gun_upgrade/trigger/honker/New()
+/obj/item/gun_upgrade/trigger/honker/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -415,7 +415,7 @@
 	icon_state = "toxin_coater"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 2)
 
-/obj/item/gun_upgrade/barrel/toxin_coater/New()
+/obj/item/gun_upgrade/barrel/toxin_coater/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -432,7 +432,7 @@
 	icon_state = "isotope_diffuser"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_URANIUM = 2)
 
-/obj/item/gun_upgrade/barrel/isotope_diffuser/New()
+/obj/item/gun_upgrade/barrel/isotope_diffuser/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -448,7 +448,7 @@
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_SILVER = 3, MATERIAL_PLASTEEL = 3, MATERIAL_URANIUM = 3)
 
-/obj/item/gun_upgrade/mechanism/psionic_catalyst/New()
+/obj/item/gun_upgrade/mechanism/psionic_catalyst/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -464,7 +464,7 @@
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 	can_remove = FALSE
 
-/obj/item/gun_upgrade/mechanism/gun_rail/New()
+/obj/item/gun_upgrade/mechanism/gun_rail/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -483,7 +483,7 @@
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
 
-/obj/item/gun_upgrade/mechanism/greyson_master_catalyst/New()
+/obj/item/gun_upgrade/mechanism/greyson_master_catalyst/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -503,7 +503,7 @@
 	desc = "Makes bullets pierce through walls and penetrate armor easily, but loses rate of fire and increases recoil."
 	icon_state = "Gauss"
 
-/obj/item/gun_upgrade/barrel/gauss/New()
+/obj/item/gun_upgrade/barrel/gauss/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -523,7 +523,7 @@
 	desc = "A trigger built for energy weapons that cause it to explode when fired, the perfect bait and switch for the dishonest pirate."
 	icon_state = "Boom"
 
-/obj/item/gun_upgrade/trigger/boom/New()
+/obj/item/gun_upgrade/trigger/boom/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -544,7 +544,7 @@
 	icon_state = "Watchman"
 	matter = list(MATERIAL_GLASS = 2, MATERIAL_PLASTEEL = 1)
 
-/obj/item/gun_upgrade/scope/watchman/New()
+/obj/item/gun_upgrade/scope/watchman/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -560,7 +560,7 @@
 	desc = "A digital scope machine printed by void wolf reavers, often combined with gauss weaponry and thermal scanners to cause breaches to ships and dead pilots in void-based dog fights."
 	icon_state = "Killer"
 
-/obj/item/gun_upgrade/scope/killer/New()
+/obj/item/gun_upgrade/scope/killer/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -584,7 +584,7 @@
 	icon_state = "auto_spingbox"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 
-/obj/item/gun_upgrade/magwell/auto_eject/New()
+/obj/item/gun_upgrade/magwell/auto_eject/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -602,7 +602,7 @@
 	icon_state = "Cop_Block"
 	price_tag = 0
 
-/obj/item/gun_upgrade/trigger/faulty/New()
+/obj/item/gun_upgrade/trigger/faulty/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -621,7 +621,7 @@
 	icon_state = "Forged_barrel"
 	price_tag = 0
 
-/obj/item/gun_upgrade/barrel/faulty/New()
+/obj/item/gun_upgrade/barrel/faulty/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -641,7 +641,7 @@
 	icon_state = "silencer"
 	price_tag = 0
 
-/obj/item/gun_upgrade/muzzle/faulty/New()
+/obj/item/gun_upgrade/muzzle/faulty/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -660,7 +660,7 @@
 	icon_state = "Clockblock"
 	price_tag = 0
 
-/obj/item/gun_upgrade/mechanism/faulty/New()
+/obj/item/gun_upgrade/mechanism/faulty/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -678,7 +678,7 @@
 	icon_state = "Watchman"
 	price_tag = 0
 
-/obj/item/gun_upgrade/scope/faulty/New()
+/obj/item/gun_upgrade/scope/faulty/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
@@ -695,7 +695,7 @@
 	desc = "The mechanism that loads bullets into the chamber has jammed, one would be lucky the gun didn't explode if this was shot."
 	icon_state = "Reverse_loader"
 
-/obj/item/gun_upgrade/mechanism/faulty_trapped/New()
+/obj/item/gun_upgrade/mechanism/faulty_trapped/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(

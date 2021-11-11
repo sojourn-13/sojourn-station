@@ -3,7 +3,7 @@
 /obj/item/storage/box/samplebags
 	name = "sample bag box"
 	desc = "A box claiming to contain sample bags."
-	New()
+	Initialize(mapload)
 		for(var/i=0, i<7, i++)
 			var/obj/item/evidencebag/S = new(src)
 			S.name = "sample bag"

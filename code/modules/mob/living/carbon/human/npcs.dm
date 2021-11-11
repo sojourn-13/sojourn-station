@@ -6,7 +6,7 @@
 
 	species_restricted = list("Monkey")
 
-/mob/living/carbon/human/monkey/punpun/New()
+/mob/living/carbon/human/monkey/punpun/Initialize(mapload)
 	..()
 	spawn(1)
 		name = "Pun Pun"

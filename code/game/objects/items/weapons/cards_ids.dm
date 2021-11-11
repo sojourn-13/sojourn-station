@@ -210,7 +210,7 @@ var/const/NO_EMAG_ACT = -50
 	registered_name = "Premier"
 	assignment = "Premier"
 
-/obj/item/card/id/captains_spare/New()
+/obj/item/card/id/captains_spare/Initialize(mapload)
 	access = get_all_station_access()
 	..()
 
@@ -221,7 +221,7 @@ var/const/NO_EMAG_ACT = -50
 	item_state = "tdgreen"
 	assignment = "Synthetic"
 
-/obj/item/card/id/synthetic/New()
+/obj/item/card/id/synthetic/Initialize(mapload)
 	access = get_all_station_access() + access_synth
 	..()
 
@@ -232,7 +232,7 @@ var/const/NO_EMAG_ACT = -50
 	item_state = "tdgreen"
 	registered_name = "Administrator"
 	assignment = "Administrator"
-/obj/item/card/id/all_access/New()
+/obj/item/card/id/all_access/Initialize(mapload)
 	access = get_access_ids()
 	..()
 
@@ -242,7 +242,7 @@ var/const/NO_EMAG_ACT = -50
 	icon_state = "centcom"
 	registered_name = "Central Command"
 	assignment = "General"
-	New()
+	Initialize(mapload)
 		access = get_all_centcom_access()
 		..()
 

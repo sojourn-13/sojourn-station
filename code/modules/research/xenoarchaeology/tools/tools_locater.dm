@@ -13,7 +13,7 @@
 	var/scan_ticks = 0
 	var/obj/item/device/radio/target_radio
 
-/obj/item/device/beacon_locator/New()
+/obj/item/device/beacon_locator/Initialize(mapload)
 	START_PROCESSING(SSobj, src)
 	. = ..()
 

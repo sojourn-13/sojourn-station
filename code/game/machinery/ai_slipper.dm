@@ -17,7 +17,7 @@
 	req_access = list(access_ai_upload)
 
 
-/obj/machinery/ai_slipper/New()
+/obj/machinery/ai_slipper/Initialize(mapload)
 	..()
 	update_icon()
 

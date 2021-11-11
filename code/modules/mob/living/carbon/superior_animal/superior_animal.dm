@@ -161,7 +161,7 @@
 
 	var/list/known_languages = list() // The languages that the superior mob know.
 
-/mob/living/carbon/superior_animal/New()
+/mob/living/carbon/superior_animal/Initialize(mapload)
 	..()
 	if(!icon_living)
 		icon_living = icon_state

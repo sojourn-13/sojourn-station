@@ -3,7 +3,7 @@
 	build_path = /obj/machinery/computer/station_alert
 	var/list/alarm_handlers
 
-/obj/item/circuitboard/stationalert/New()
+/obj/item/circuitboard/stationalert/Initialize(mapload)
 	alarm_handlers = new()
 	set_extension(src, /datum/extension/multitool, /datum/extension/multitool/circuitboards/stationalert)
 	..()

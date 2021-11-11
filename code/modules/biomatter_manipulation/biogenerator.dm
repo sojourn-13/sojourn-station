@@ -285,7 +285,7 @@
 	var/obj/machinery/power/biogenerator_core/core
 
 
-/obj/machinery/multistructure/biogenerator_part/generator/New()
+/obj/machinery/multistructure/biogenerator_part/generator/Initialize(mapload)
 	. = ..()
 	chamber 	= new(loc)
 	chamber.generator = src

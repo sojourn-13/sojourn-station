@@ -8,7 +8,7 @@
 	buckle_lying = 0 //force people to sit up in chairs when buckled
 	var/propelled = 0 // Check for fire-extinguisher-driven chairs
 
-/obj/structure/bed/chair/New()
+/obj/structure/bed/chair/Initialize(mapload)
 	..()
 	update_layer()
 
@@ -208,7 +208,7 @@
 /obj/structure/bed/chair/office/dark
 	icon_state = "officechair_dark"
 
-/obj/structure/bed/chair/office/New()
+/obj/structure/bed/chair/office/Initialize(mapload)
 	..()
 	var/image/I = image(icon, "[icon_state]_over")
 	I.layer = FLY_LAYER
@@ -306,7 +306,7 @@
 /obj/structure/bed/chair/sofa/left
 	icon_state = "sofaend_left"
 
-/obj/structure/bed/chair/sofa/New()
+/obj/structure/bed/chair/sofa/Initialize(mapload)
 	..()
 	if(dir == 1)
 		buckle_dir = NORTH
@@ -365,7 +365,7 @@
 
 //sofa directions
 
-/obj/structure/bed/chair/sofa/corner/New()
+/obj/structure/bed/chair/sofa/corner/Initialize(mapload)
 	..()
 	buckle_dir = SOUTH
 

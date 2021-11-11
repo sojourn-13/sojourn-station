@@ -66,7 +66,7 @@
 	var/upright = 0
 	var/base_state
 
-/obj/item/stack/flag/New()
+/obj/item/stack/flag/Initialize(mapload)
 	..()
 	base_state = icon_state
 

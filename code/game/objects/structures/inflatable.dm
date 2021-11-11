@@ -257,7 +257,7 @@
 	can_hold = list(/obj/item/inflatable)
 	var/init_inflatable_count = 4
 
-	New()
+	Initialize(mapload)
 		..()
 		while(init_inflatable_count)
 			new /obj/item/inflatable/door(src)

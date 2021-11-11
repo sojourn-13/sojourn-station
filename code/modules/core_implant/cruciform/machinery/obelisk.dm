@@ -48,7 +48,7 @@ GLOBAL_VAR_INIT(miracle_points, 5)
 		H.stats.removePerk(/datum/perk/sanityboost)
 	currently_affected = null
 
-/obj/machinery/power/nt_obelisk/New()
+/obj/machinery/power/nt_obelisk/Initialize(mapload)
 	..()
 
 /obj/machinery/power/nt_obelisk/attack_hand(mob/user)

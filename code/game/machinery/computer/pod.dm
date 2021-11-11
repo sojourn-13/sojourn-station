@@ -13,7 +13,7 @@
 	var/title = "Mass Driver Controls"
 
 
-/obj/machinery/computer/pod/New()
+/obj/machinery/computer/pod/Initialize(mapload)
 	..()
 	spawn( 5 )
 		for(var/obj/machinery/mass_driver/M in world)

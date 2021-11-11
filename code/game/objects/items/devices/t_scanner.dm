@@ -84,7 +84,7 @@
 		cell = null
 		update_icon()
 
-/obj/item/device/t_scanner/New()
+/obj/item/device/t_scanner/Initialize(mapload)
 	..()
 	update_icon()
 
@@ -194,7 +194,7 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 	ui_interact(user)
 	//set_enabled(!enabled)
 
-/obj/item/device/t_scanner/New()
+/obj/item/device/t_scanner/Initialize(mapload)
 	.=..()
 	cell = new suitable_cell(src)
 

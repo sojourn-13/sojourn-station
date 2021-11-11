@@ -5,7 +5,7 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/church
 	backpack_contents = list(/obj/item/book/ritual/cruciform = 1)
 
-/decl/hierarchy/outfit/job/church/New()
+/decl/hierarchy/outfit/job/church/Initialize(mapload)
 	..()
 	BACKPACK_OVERRIDE_NEOTHEOLOGY
 

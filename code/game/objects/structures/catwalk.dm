@@ -8,7 +8,7 @@
 	anchored = 1.0
 
 
-/obj/structure/catwalk/New()
+/obj/structure/catwalk/Initialize(mapload)
 	..()
 	if (istype(loc, /turf/simulated/open))
 		var/turf/simulated/open/T = loc

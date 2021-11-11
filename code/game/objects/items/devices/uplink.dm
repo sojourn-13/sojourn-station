@@ -287,7 +287,7 @@ A list of items and costs is stored under the datum of every game mode, alongsid
 	anchored = TRUE
 	var/owner_roles //Can be a list of roles or a single role
 
-/obj/structure/uplink/New()
+/obj/structure/uplink/Initialize(mapload)
 	uplink = new(src, null, telecrystals)
 	uplink.update_nano_data()
 	uplink.emplaced = TRUE

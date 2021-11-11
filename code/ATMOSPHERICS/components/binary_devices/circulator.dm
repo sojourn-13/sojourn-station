@@ -23,7 +23,7 @@
 	var/stored_energy = 0
 	var/temperature_overlay
 
-/obj/machinery/atmospherics/binary/circulator/New()
+/obj/machinery/atmospherics/binary/circulator/Initialize(mapload)
 	..()
 	desc = initial(desc) + " Its outlet port is to the [dir2text(dir)]."
 	air1.volume = 400

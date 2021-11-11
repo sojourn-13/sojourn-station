@@ -78,7 +78,7 @@ var/datum/controller/process/open_space/OS_controller = null
 	. = ..()
 	OS_controller.add_turf(src)
 
-/turf/simulated/open/New()
+/turf/simulated/open/Initialize(mapload)
 	..()
 	OS_controller.add_turf(src)
 

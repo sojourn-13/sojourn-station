@@ -10,7 +10,7 @@
 	build_path = null
 
 //when adding a new camera network, you should only need to update these two procs
-	New()
+	Initialize(mapload)
 		possibleNets["Engineering"] = access_ce
 		possibleNets["SS13"] = access_hos
 		possibleNets["Mining"] = access_mining

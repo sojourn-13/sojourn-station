@@ -3,7 +3,7 @@ GLOBAL_VAR_INIT(random_parallax, pick("space0", "space1", "space2", "space3", "s
 /obj/parallax_screen
 	icon = 'icons/parallax.dmi'
 
-/obj/parallax_screen/New()
+/obj/parallax_screen/Initialize(mapload)
 	icon_state = GLOB.random_parallax
 
 /obj/parallax

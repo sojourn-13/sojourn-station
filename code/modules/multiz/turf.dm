@@ -50,7 +50,7 @@ see multiz/movement.dm for some info.
 
 	var/tmp/list/climbers = list()
 
-/turf/simulated/open/New()
+/turf/simulated/open/Initialize(mapload)
 	icon_state = "transparentclickable"
 	..()
 

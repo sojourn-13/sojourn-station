@@ -9,7 +9,7 @@
 		/datum/nano_module/drink_catalog
 	)
 
-/mob/living/silicon/ai/New()
+/mob/living/silicon/ai/Initialize(mapload)
 	silicon_subsystems.Cut()
 	for(var/subtype in subtypesof(/datum/nano_module))
 		var/datum/nano_module/NM = subtype

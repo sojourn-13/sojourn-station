@@ -30,7 +30,7 @@
 	name = "Iron Tyrant"
 	price_tag = 2500000 //best mech in the game
 
-/obj/mecha/combat/dreadnought/security/New()
+/obj/mecha/combat/dreadnought/security/Initialize(mapload)
 	..()//Let it equip whatever is needed.
 	var/obj/item/mecha_parts/mecha_equipment/ME
 	if(equipment.len)//Now to remove it and equip anew.
@@ -72,7 +72,7 @@
 	deflect_chance = 50
 	damage_absorption = list("brute"=0.3,"fire"=0.4,"bullet"=0.3,"energy"=0.5,"bomb"=0.55)
 
-/obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/New()
+/obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/Initialize(mapload)
 	..()//Let it equip whatever is needed.
 	var/obj/item/mecha_parts/mecha_equipment/ME
 	if(equipment.len)//Now to remove it and equip anew.
@@ -127,7 +127,7 @@
 	initial_icon = "mauler"
 	wreckage = /obj/effect/decal/mecha_wreckage/mauler
 
-/obj/mecha/combat/dreadnought/New()
+/obj/mecha/combat/dreadnought/Initialize(mapload)
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse(src)
 	ME.attach(src)
@@ -152,7 +152,7 @@
 	return
 
 
-/obj/mecha/combat/dreadnought/seraph/New()
+/obj/mecha/combat/dreadnought/seraph/Initialize(mapload)
 	..()//Let it equip whatever is needed.
 	var/obj/item/mecha_parts/mecha_equipment/ME
 	if(equipment.len)//Now to remove it and equip anew.

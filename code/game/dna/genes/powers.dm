@@ -81,7 +81,7 @@
 	activation_messages=list("Your skin is icy to the touch.")
 	mutation=mHeatres
 
-	New()
+	Initialize(mapload)
 		block=COLDBLOCK
 
 	can_activate(var/mob/M,var/flags)

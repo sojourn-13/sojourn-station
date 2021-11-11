@@ -53,7 +53,7 @@
 /obj/effect/energy_net/teleport
 	countdown = 60
 
-/obj/effect/energy_net/New()
+/obj/effect/energy_net/Initialize(mapload)
 	..()
 	START_PROCESSING(SSobj, src)
 

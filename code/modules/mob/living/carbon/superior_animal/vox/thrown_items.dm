@@ -27,7 +27,7 @@
 	name = "coated rock fragements"
 	var/toxin_coated
 
-/obj/item/projectile/bullet/spear/toxic/New()
+/obj/item/projectile/bullet/spear/toxic/Initialize(mapload)
 	 toxin_coated = pick("amatoxin","pararein","toxin","fuel") //they get fuel form random containers
 
 /obj/item/projectile/bullet/spear/toxic/on_hit(atom/target, def_zone = null)

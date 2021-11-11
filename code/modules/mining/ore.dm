@@ -10,7 +10,7 @@
 	var/sheet_amout = 1 //How many sheets do we give?
 	price_tag = 1
 
-/obj/item/ore/New()
+/obj/item/ore/Initialize(mapload)
 	..()
 	if(material_randomly_has)
 		if(prob(5))
@@ -219,7 +219,7 @@
 	material = null
 	price_tag = 0
 
-/obj/item/ore/New()
+/obj/item/ore/Initialize(mapload)
 	pixel_x = rand(0,16)-8
 	pixel_y = rand(0,8)-8
 	..()

@@ -66,6 +66,6 @@
 
 /obj/item/gun/energy/taser/blackshield
 
-/obj/item/gun/energy/taser/blackshield/New()
+/obj/item/gun/energy/taser/blackshield/Initialize(mapload)
 	cell = new /obj/item/cell/medium/hyper(src)
 	. =..()

@@ -19,7 +19,7 @@
 	var/charge_rate = 100000	//100 kW
 	var/obj/machinery/shield_gen/owned_gen
 
-/obj/machinery/shield_capacitor/New()
+/obj/machinery/shield_capacitor/Initialize(mapload)
 	spawn(10)
 		for(var/obj/machinery/shield_gen/possible_gen in range(1, src))
 			if(get_dir(src, possible_gen) == src.dir)

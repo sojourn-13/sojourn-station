@@ -132,7 +132,7 @@
 	throw_range = 3
 	throw_speed = 1
 
-/obj/item/shreddedp/New()
+/obj/item/shreddedp/Initialize(mapload)
 	..()
 	pixel_x = rand(-5,5)
 	pixel_y = rand(-5,5)

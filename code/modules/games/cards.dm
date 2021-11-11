@@ -20,7 +20,7 @@
 	desc = "A simple deck of playing cards."
 	icon_state = "deck"
 
-/obj/item/deck/cards/New()
+/obj/item/deck/cards/Initialize(mapload)
 	..()
 
 	var/datum/playingcard/P

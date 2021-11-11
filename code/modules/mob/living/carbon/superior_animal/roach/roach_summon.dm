@@ -26,7 +26,7 @@
 	var/used = FALSE //Are we used? Prevents an issue with mass spaming the item
 	var/entropy = FALSE //Do we make entropy on summan? Debug things shouldnt mess with the round
 
-/obj/item/roach_summon/New()
+/obj/item/roach_summon/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 

@@ -55,7 +55,7 @@
 
 	var/bloodiness = 0		// count of bloodiness
 
-/obj/machinery/bot/mulebot/New()
+/obj/machinery/bot/mulebot/Initialize(mapload)
 	..()
 	wires = new(src)
 	botcard = new(src)

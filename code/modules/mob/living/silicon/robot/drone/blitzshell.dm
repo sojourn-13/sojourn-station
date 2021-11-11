@@ -22,7 +22,7 @@
 /mob/living/silicon/robot/drone/blitzshell/is_allowed_vent_crawl_item()
 	return TRUE
 
-/mob/living/silicon/robot/drone/blitzshell/New()
+/mob/living/silicon/robot/drone/blitzshell/Initialize(mapload)
 	..()
 	verbs |= /mob/living/proc/ventcrawl
 	verbs -= /mob/living/silicon/robot/drone/verb/choose_armguard
@@ -54,7 +54,7 @@
 	hide_on_manifest = TRUE
 
 
-/obj/item/robot_module/blitzshell/New()
+/obj/item/robot_module/blitzshell/Initialize(mapload)
 	//modules += new /obj/item/gun/energy/laser/mounted/blitz(src) //Deemed too strong for initial loadout
 	modules += new /obj/item/gun/energy/plasma/mounted/blitz(src)
 	modules += new /obj/item/tool/knife/tacknife(src) //For claiming heads for assassination missions
@@ -104,7 +104,7 @@
 			to_chat(user, SPAN_DANGER("You cannot rip someone head while they alive!"))
 
 
-/obj/item/gripper/antag/New()
+/obj/item/gripper/antag/Initialize(mapload)
 	..()
 	for(var/i in GLOB.antag_item_targets)
 		can_hold |= GLOB.antag_item_targets[i]
@@ -170,7 +170,7 @@
 	name = "Drone Bounty Uplink"
 	icon_state = "uplink_access"
 
-/obj/item/device/drone_uplink/New()
+/obj/item/device/drone_uplink/Initialize(mapload)
 	..()
 	hidden_uplink = new(src, telecrystals = 25)
 

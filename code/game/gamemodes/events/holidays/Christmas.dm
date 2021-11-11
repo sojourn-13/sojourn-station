@@ -23,7 +23,7 @@
 	desc = "Directions for use: Requires two people, one to pull each end."
 	var/cracked = 0
 
-/obj/item/toy/junk/xmas_cracker/New()
+/obj/item/toy/junk/xmas_cracker/Initialize(mapload)
 	..()
 
 /obj/item/toy/junk/xmas_cracker/attack(mob/target, mob/user)

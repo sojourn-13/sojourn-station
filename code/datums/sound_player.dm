@@ -3,7 +3,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 /decl/sound_player
 	var/list/sound_tokens_by_sound_id
 
-/decl/sound_player/New()
+/decl/sound_player/Initialize(mapload)
 	..()
 	sound_tokens_by_sound_id = list()
 

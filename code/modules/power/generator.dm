@@ -24,7 +24,7 @@
 	var/effective_gen = 0
 	var/lastgenlev = 0
 
-/obj/machinery/power/generator/New()
+/obj/machinery/power/generator/Initialize(mapload)
 	..()
 	desc = initial(desc) + " Rated for [round(max_power/1000)] kW."
 	spawn(1)

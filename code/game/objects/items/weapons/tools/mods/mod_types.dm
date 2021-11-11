@@ -16,7 +16,7 @@
 
 //list/tool_upgrades, list/required_qualities, list/negative_qualities, prefix, req_fuel, req_cell
 
-/obj/item/tool_upgrade/reinforcement/stick/New()
+/obj/item/tool_upgrade/reinforcement/stick/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -34,7 +34,7 @@
 	icon_state = "heatsink"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 1)
 
-/obj/item/tool_upgrade/reinforcement/heatsink/New()
+/obj/item/tool_upgrade/reinforcement/heatsink/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -56,7 +56,7 @@
 	icon_state = "plate"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) //steel to compensate for metal rods used in crafting
 
-/obj/item/tool_upgrade/reinforcement/plating/New()
+/obj/item/tool_upgrade/reinforcement/plating/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -74,7 +74,7 @@
 	icon_state = "guard"
 	matter = list(MATERIAL_PLASTEEL = 5)
 
-/obj/item/tool_upgrade/reinforcement/guard/New()
+/obj/item/tool_upgrade/reinforcement/guard/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -94,7 +94,7 @@
 	icon_state = "plasmablock"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2, MATERIAL_PLASMA = 1)
 
-/obj/item/tool_upgrade/reinforcement/plasmablock/New()
+/obj/item/tool_upgrade/reinforcement/plasmablock/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -118,7 +118,7 @@
 	icon_state = "rubbermesh"
 	matter = list(MATERIAL_PLASTIC = 3)
 
-/obj/item/tool_upgrade/reinforcement/rubbermesh/New()
+/obj/item/tool_upgrade/reinforcement/rubbermesh/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -137,7 +137,7 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 5)
 	price_tag = 120
 
-/obj/item/tool_upgrade/productivity/ergonomic_grip/New()
+/obj/item/tool_upgrade/productivity/ergonomic_grip/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -156,7 +156,7 @@
 	icon_state = "ratchet"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
 
-/obj/item/tool_upgrade/productivity/ratchet/New()
+/obj/item/tool_upgrade/productivity/ratchet/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -173,7 +173,7 @@
 	can_remove = FALSE
 	price_tag = 60
 
-/obj/item/tool_upgrade/productivity/red_paint/New()
+/obj/item/tool_upgrade/productivity/red_paint/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -198,7 +198,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_DIAMOND = 3)
 	can_remove = FALSE
 
-/obj/item/tool_upgrade/productivity/whetstone/New()
+/obj/item/tool_upgrade/productivity/whetstone/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -221,7 +221,7 @@
 	price_tag = 300
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 4)
 
-/obj/item/tool_upgrade/productivity/diamond_blade/New()
+/obj/item/tool_upgrade/productivity/diamond_blade/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -244,7 +244,7 @@
 	icon_state = "oxyjet"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 1)
 
-/obj/item/tool_upgrade/productivity/oxyjet/New()
+/obj/item/tool_upgrade/productivity/oxyjet/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -263,7 +263,7 @@
 	icon_state = "motor"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 4)
 
-/obj/item/tool_upgrade/productivity/motor/New()
+/obj/item/tool_upgrade/productivity/motor/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -299,7 +299,7 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLASMA = 3)
 	can_remove = FALSE
 
-/obj/item/tool_upgrade/productivity/antistaining/New()
+/obj/item/tool_upgrade/productivity/antistaining/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -315,7 +315,7 @@
 	icon_state = "booster"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GOLD = 1)
 
-/obj/item/tool_upgrade/productivity/booster/New()
+/obj/item/tool_upgrade/productivity/booster/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -339,7 +339,7 @@
 	icon_state = "injector"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLASMA = 2)
 
-/obj/item/tool_upgrade/productivity/injector/New()
+/obj/item/tool_upgrade/productivity/injector/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -369,7 +369,7 @@
 	icon_state = "laser_guide"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_URANIUM = 1)
 
-/obj/item/tool_upgrade/refinement/laserguide/New()
+/obj/item/tool_upgrade/refinement/laserguide/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -388,7 +388,7 @@
 	matter = list(MATERIAL_PLASTIC = 3)
 	price_tag = 90
 
-/obj/item/tool_upgrade/refinement/stabilized_grip/New()
+/obj/item/tool_upgrade/refinement/stabilized_grip/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -407,7 +407,7 @@
 	icon_state = "magnetic"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 2)
 
-/obj/item/tool_upgrade/refinement/magbit/New()
+/obj/item/tool_upgrade/refinement/magbit/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -422,7 +422,7 @@
 	icon_state = "ported_barrel"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 2)
 
-/obj/item/tool_upgrade/refinement/ported_barrel/New()
+/obj/item/tool_upgrade/refinement/ported_barrel/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -449,7 +449,7 @@
 	icon_state = "compensatedbarrel"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GOLD = 1)
 
-/obj/item/tool_upgrade/refinement/compensatedbarrel/New()
+/obj/item/tool_upgrade/refinement/compensatedbarrel/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -477,7 +477,7 @@
 	icon_state = "vibcompensator"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1, MATERIAL_GOLD = 1)
 
-/obj/item/tool_upgrade/refinement/vibcompensator/New()
+/obj/item/tool_upgrade/refinement/vibcompensator/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -503,7 +503,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE // To fix exploit of fitting large cells on tools then taking out the mod while conserving a large cell.
 
-/obj/item/tool_upgrade/augment/cell_mount/New()
+/obj/item/tool_upgrade/augment/cell_mount/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -522,7 +522,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE // To fix exploit of fitting large cells on tools then taking out the mod while conserving a large cell.
 
-/obj/item/tool_upgrade/augment/cell_adapt/New()
+/obj/item/tool_upgrade/augment/cell_adapt/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -544,7 +544,7 @@
 	icon_state = "canister"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
 
-/obj/item/tool_upgrade/augment/fuel_tank/New()
+/obj/item/tool_upgrade/augment/fuel_tank/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -562,7 +562,7 @@
 	icon_state = "canister_holding"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4)
 
-/obj/item/tool_upgrade/augment/holding_tank/New()
+/obj/item/tool_upgrade/augment/holding_tank/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -584,7 +584,7 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE
 
-/obj/item/tool_upgrade/augment/expansion/New()
+/obj/item/tool_upgrade/augment/expansion/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -605,7 +605,7 @@
 	matter = list(MATERIAL_STEEL = 2)
 	price_tag = 10
 
-/obj/item/tool_upgrade/augment/spikes/New()
+/obj/item/tool_upgrade/augment/spikes/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -631,7 +631,7 @@
 	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 2)
 	price_tag = 20
 
-/obj/item/tool_upgrade/augment/sanctifier/New()
+/obj/item/tool_upgrade/augment/sanctifier/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -658,7 +658,7 @@
 	desc = "A attachment that fits on almost everything to create a simple flat surface for hammering."
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_STEEL = 2)
 
-/obj/item/tool_upgrade/augment/hammer_addon/New()
+/obj/item/tool_upgrade/augment/hammer_addon/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -677,7 +677,7 @@
 	icon_state = "dampener"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
 
-/obj/item/tool_upgrade/augment/dampener/New()
+/obj/item/tool_upgrade/augment/dampener/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -695,7 +695,7 @@
 	icon_state = "ai_tool"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 3, MATERIAL_GOLD = 3, MATERIAL_DIAMOND = 1)
 
-/obj/item/tool_upgrade/augment/ai_tool/New()
+/obj/item/tool_upgrade/augment/ai_tool/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -723,7 +723,7 @@
 	icon_state = "ai_tool_excelsior"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 3)
 
-/obj/item/tool_upgrade/augment/ai_tool_excelsior/New()
+/obj/item/tool_upgrade/augment/ai_tool_excelsior/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -750,7 +750,7 @@
 	icon_state = "repair_nano"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
 
-/obj/item/tool_upgrade/augment/repair_nano/New()
+/obj/item/tool_upgrade/augment/repair_nano/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -765,7 +765,7 @@
 	icon_state = "hydraulic"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 3)
 
-/obj/item/tool_upgrade/augment/hydraulic/New()
+/obj/item/tool_upgrade/augment/hydraulic/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -786,7 +786,7 @@
 	icon_state = "melee"
 	matter = list(MATERIAL_STEEL = 30)
 
-/obj/item/tool_upgrade/armor/melee/New()
+/obj/item/tool_upgrade/armor/melee/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -801,7 +801,7 @@
 	icon_state = "bullet"
 	matter = list(MATERIAL_PLASTEEL = 30)
 
-/obj/item/tool_upgrade/armor/bullet/New()
+/obj/item/tool_upgrade/armor/bullet/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -816,7 +816,7 @@
 	icon_state = "energy"
 	matter = list(MATERIAL_PLATINUM = 30)
 
-/obj/item/tool_upgrade/armor/energy/New()
+/obj/item/tool_upgrade/armor/energy/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -831,7 +831,7 @@
 	icon_state = "bomb"
 	matter = list(MATERIAL_PLASTEEL = 20)
 
-/obj/item/tool_upgrade/armor/bomb/New()
+/obj/item/tool_upgrade/armor/bomb/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
@@ -847,7 +847,7 @@
 	icon_state = "randomizer"
 	matter = list(MATERIAL_PLASMA = 4, MATERIAL_URANIUM = 4)
 
-/obj/item/tool_upgrade/augment/randomizer/New()
+/obj/item/tool_upgrade/augment/randomizer/Initialize(mapload)
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(

@@ -24,7 +24,7 @@
 	var/list/supported_programs
 	var/list/restricted_programs
 
-/obj/machinery/computer/HolodeckControl/New()
+/obj/machinery/computer/HolodeckControl/Initialize(mapload)
 	..()
 	linkedholodeck = locate(linkedholodeck_area)
 	supported_programs = list()
@@ -340,7 +340,7 @@
 /obj/machinery/computer/HolodeckControl/Exodus
 	linkedholodeck_area = /area/holodeck/alphadeck
 
-/obj/machinery/computer/HolodeckControl/Exodus/New()
+/obj/machinery/computer/HolodeckControl/Exodus/Initialize(mapload)
 	..()
 	supported_programs = list(
 	"Empty Court" 		= "emptycourt",

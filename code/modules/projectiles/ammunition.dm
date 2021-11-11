@@ -11,7 +11,7 @@
 	var/leaves_residue = 1
 	var/is_caseless = FALSE
 	var/caliber = ""					//Which kind of guns it can be loaded into
-	var/projectile_type					//The bullet type to create when New() is called
+	var/projectile_type					//The bullet type to create when Initialize(mapload) is called
 	var/obj/item/projectile/BB = null	//The loaded bullet - make it so that the projectiles are created only when needed?
 	var/spent_icon = null
 	var/amount = 1
@@ -185,7 +185,7 @@
 	var/list/icon_keys = list()		//keys
 	var/list/ammo_states = list()	//values
 
-/obj/item/ammo_magazine/New()
+/obj/item/ammo_magazine/Initialize(mapload)
 	..()
 	if(multiple_sprites)
 		initialize_magazine_icondata(src)

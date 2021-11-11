@@ -107,7 +107,7 @@
 	var/obj/item/tank/tank = null
 	var/existing_degradation
 
-/obj/structure/closet/body_bag/cryobag/New()
+/obj/structure/closet/body_bag/cryobag/Initialize(mapload)
 	tank = new /obj/item/tank/emergency_oxygen(null) //It's in nullspace to prevent ejection when the bag is opened.
 	..()
 

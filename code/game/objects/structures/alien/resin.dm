@@ -20,7 +20,7 @@
 	opacity = 0
 	health = 120
 
-/obj/structure/alien/resin/New()
+/obj/structure/alien/resin/Initialize(mapload)
 	..()
 	var/turf/T = get_turf(src)
 	T.thermal_conductivity = WALL_HEAT_TRANSFER_COEFFICIENT

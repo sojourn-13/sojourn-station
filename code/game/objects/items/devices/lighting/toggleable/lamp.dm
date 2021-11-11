@@ -10,7 +10,7 @@
 
 	on = TRUE
 
-/obj/item/device/lighting/toggleable/lamp/New()
+/obj/item/device/lighting/toggleable/lamp/Initialize(mapload)
 	..()
 	update_icon()
 

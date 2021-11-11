@@ -5,7 +5,7 @@
 /turf/simulated/mineral/random/rogue
 	var/floor_under	= /turf/simulated/floor/asteroid
 
-/turf/simulated/mineral/random/rogue/New()
+/turf/simulated/mineral/random/rogue/Initialize(mapload)
 	spawn(25)
 		for(var/turf/T in oview(src,1))
 			if(istype(get_turf(T),/turf/space))
@@ -189,7 +189,7 @@
 	/datum/rogue/asteroid/predef/cargo/angry,
 	/datum/rogue/asteroid/predef/cargo_large)
 
-/obj/asteroid_generator/New()
+/obj/asteroid_generator/Initialize(mapload)
 	myarea = get_area(loc)
 	populate_z_level()
 

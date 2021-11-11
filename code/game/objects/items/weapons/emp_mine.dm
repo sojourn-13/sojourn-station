@@ -57,6 +57,6 @@
 		to_chat(user, SPAN_WARNING("You arm \the [src]! You have 10 seconds to run away."))
 
 //Pre-armed mine
-/obj/item/emp_mine/armed/New()
+/obj/item/emp_mine/armed/Initialize(mapload)
 	..()
 	arm()

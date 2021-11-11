@@ -84,7 +84,7 @@
 	mags_left = 0
 	reload_message = "Beeps aggressively as it charges the gun!" //in case of addmins givng more then 1 load
 
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/New()
+/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/Initialize(mapload)
 	..()
 	if(prob(10))
 		drop2 = /obj/item/gun/energy/cog

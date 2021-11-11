@@ -12,7 +12,7 @@
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Station Repairs and Construction"
 
-/obj/item/book/manual/engineering_construction/New()
+/obj/item/book/manual/engineering_construction/Initialize(mapload)
 	..()
 	dat = {"
 
@@ -33,7 +33,7 @@
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Particle Accelerator User's Guide"
 
-/obj/item/book/manual/engineering_particle_accelerator/New()
+/obj/item/book/manual/engineering_particle_accelerator/Initialize(mapload)
 	..()
 	dat = {"<html>
 				<head>
@@ -80,7 +80,7 @@
 	author = "Central Engineering Division"
 	title = "Supermatter Engine Operating Manual"
 
-/obj/item/book/manual/supermatter_engine/New()
+/obj/item/book/manual/supermatter_engine/Initialize(mapload)
 	..()
 	dat = {"<html>
 				<head>
@@ -153,7 +153,7 @@
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
 
-/obj/item/book/manual/engineering_hacking/New()
+/obj/item/book/manual/engineering_hacking/Initialize(mapload)
 	..()
 	dat = {"
 
@@ -671,7 +671,7 @@
 	author = "The Company"
 	title = "Corporate Regulations"
 
-/obj/item/book/manual/security_space_law/New()
+/obj/item/book/manual/security_space_law/Initialize(mapload)
 	..()
 	dat = {"
 
@@ -695,7 +695,7 @@
 	author = "Medical Department"
 	title = "Medical Diagnostics Manual"
 
-/obj/item/book/manual/medical_diagnostics_manual/New()
+/obj/item/book/manual/medical_diagnostics_manual/Initialize(mapload)
 	..()
 	dat = {"<html>
 				<head>
@@ -742,7 +742,7 @@
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
 
-/obj/item/book/manual/engineering_guide/New()
+/obj/item/book/manual/engineering_guide/Initialize(mapload)
 	..()
 	dat = {"
 
@@ -1304,7 +1304,7 @@
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
 	page_link = "Guide_to_Food_and_Drinks"
-				
+
 /obj/item/book/manual/h_book
 	name = "Holy Book"
 	desc = "An undescript book for an unnamed religion."

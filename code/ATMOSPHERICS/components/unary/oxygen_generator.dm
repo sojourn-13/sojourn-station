@@ -23,7 +23,7 @@ obj/machinery/atmospherics/unary/oxygen_generator
 
 		return
 
-	New()
+	Initialize(mapload)
 		..()
 
 		air_contents.volume = 50

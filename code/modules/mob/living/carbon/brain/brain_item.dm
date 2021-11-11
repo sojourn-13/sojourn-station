@@ -29,7 +29,7 @@
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "chitin"
 
-/obj/item/organ/internal/brain/New()
+/obj/item/organ/internal/brain/Initialize(mapload)
 	..()
 	health = config.default_brain_health
 	spawn(5)

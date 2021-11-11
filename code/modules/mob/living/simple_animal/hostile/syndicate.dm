@@ -272,7 +272,7 @@
 	faction = "elitemerc"
 	status_flags = 0
 
-/mob/living/simple_animal/hostile/elitemercenary/New()
+/mob/living/simple_animal/hostile/elitemercenary/Initialize(mapload)
 	..()
 	set_light(l_range = 4, l_power = 3)
 

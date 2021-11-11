@@ -30,7 +30,7 @@
 
 // create a new disposal
 // find the attached trunk (if present) and init gas resvr.
-/obj/machinery/disposal/New()
+/obj/machinery/disposal/Initialize(mapload)
 	..()
 	spawn(5)
 		trunk = locate() in src.loc
@@ -713,7 +713,7 @@
 	var/sortType = list()
 	var/subtype = SORT_TYPE_NORMAL
 	// new pipe, set the icon_state as on map
-	New()
+	Initialize(mapload)
 		..()
 		base_icon_state = icon_state
 		return
@@ -1003,7 +1003,7 @@
 /obj/structure/disposalpipe/segment
 	icon_state = "pipe-s"
 
-	New()
+	Initialize(mapload)
 		..()
 		if(icon_state == "pipe-s")
 			pipe_dir = dir | turn(dir, 180)
@@ -1017,7 +1017,7 @@
 /obj/structure/disposalpipe/up
 	icon_state = "pipe-u"
 
-/obj/structure/disposalpipe/up/New()
+/obj/structure/disposalpipe/up/Initialize(mapload)
 	..()
 	pipe_dir = dir
 	update()
@@ -1066,7 +1066,7 @@
 /obj/structure/disposalpipe/down
 	icon_state = "pipe-d"
 
-/obj/structure/disposalpipe/down/New()
+/obj/structure/disposalpipe/down/Initialize(mapload)
 	..()
 	pipe_dir = dir
 	update()
@@ -1121,7 +1121,7 @@
 /obj/structure/disposalpipe/junction
 	icon_state = "pipe-j1"
 
-/obj/structure/disposalpipe/junction/New()
+/obj/structure/disposalpipe/junction/Initialize(mapload)
 	..()
 	if(icon_state == "pipe-j1")
 		pipe_dir = dir | turn(dir, -90) | turn(dir,180)
@@ -1179,7 +1179,7 @@
 	else
 		name = initial(name)
 
-/obj/structure/disposalpipe/tagger/New()
+/obj/structure/disposalpipe/tagger/Initialize(mapload)
 	. = ..()
 	pipe_dir = dir | turn(dir, 180)
 	if(sort_tag)
@@ -1247,7 +1247,7 @@
 
 	pipe_dir = sortdir | posdir | negdir
 
-/obj/structure/disposalpipe/sortjunction/New()
+/obj/structure/disposalpipe/sortjunction/Initialize(mapload)
 	. = ..()
 	if(sortType) tagger_locations |= sortType
 
@@ -1340,7 +1340,7 @@
 	icon_state = "pipe-t"
 	var/obj/linked 	// the linked obj/machinery/disposal or obj/disposaloutlet
 
-/obj/structure/disposalpipe/trunk/New()
+/obj/structure/disposalpipe/trunk/Initialize(mapload)
 	..()
 	pipe_dir = dir
 	spawn(1)
@@ -1431,7 +1431,7 @@
 					// i.e. will be treated as an empty turf
 	desc = "A broken piece of disposal pipe."
 
-	New()
+	Initialize(mapload)
 		..()
 		update()
 		return
@@ -1458,7 +1458,7 @@
 	var/turf/target	// this will be where the output objects are 'thrown' to.
 	var/mode = 0
 
-	New()
+	Initialize(mapload)
 		..()
 
 		spawn(1)

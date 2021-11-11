@@ -18,7 +18,7 @@
 	w_class = ITEM_SIZE_HUGE
 	emagged_level_up = TRUE //Were basiclly a normal computer anways
 
-/obj/item/modular_computer/telescreen/New()
+/obj/item/modular_computer/telescreen/Initialize(mapload)
 	..()
 	// Allows us to create "north bump" "south bump" etc. named objects, for more comfortable mapping.
 	name = initial(name)

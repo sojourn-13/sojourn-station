@@ -327,7 +327,7 @@
 	var/skin = null //Same as medbot, set to tox or ointment for the respective kits.
 	w_class = ITEM_SIZE_NORMAL
 
-/obj/item/firstaid_arm_assembly/New()
+/obj/item/firstaid_arm_assembly/Initialize(mapload)
 	..()
 	spawn(5) // Terrible. TODO: fix
 		if(skin)

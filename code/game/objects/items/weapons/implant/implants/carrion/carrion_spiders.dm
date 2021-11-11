@@ -15,7 +15,7 @@
 	var/obj/item/organ/internal/carrion/core/owner_core
 	var/mob/living/carbon/human/owner_mob
 
-/obj/item/implant/carrion_spider/New()
+/obj/item/implant/carrion_spider/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 	name = "strange spider"

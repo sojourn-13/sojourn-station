@@ -112,7 +112,7 @@
 	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/queen/New()
+/mob/living/carbon/superior_animal/giant_spider/nurse/queen/Initialize(mapload)
 	..()
 	pixel_x = -16
 	pixel_y = null

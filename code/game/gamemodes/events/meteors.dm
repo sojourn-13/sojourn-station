@@ -328,7 +328,7 @@
 /obj/effect/meteor/proc/get_shield_damage()
 	return max(((max(hits, 2)) * (heavy + 1) * rand(100, 140)) / hitpwr , 0)
 
-/obj/effect/meteor/New()
+/obj/effect/meteor/Initialize(mapload)
 	..()
 	z_original = z
 
@@ -347,7 +347,7 @@
 	walk(src,0) //this cancels the walk_towards() proc
 	return ..()
 
-/obj/effect/meteor/New()
+/obj/effect/meteor/Initialize(mapload)
 	..()
 	SpinAnimation()
 

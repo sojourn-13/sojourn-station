@@ -9,7 +9,7 @@
 	density = 1 // It is big
 	w_class = ITEM_SIZE_COLOSSAL // it is *big*
 
-/obj/item/gem/New()
+/obj/item/gem/Initialize(mapload)
 	..()
 	gem_color = pick(color_list)
 	icon_state = "[gem_color]"

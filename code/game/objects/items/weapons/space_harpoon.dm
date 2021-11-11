@@ -27,7 +27,7 @@
 	if(!cell && suitable_cell)
 		cell = new suitable_cell(src)
 
-/obj/item/bluespace_harpoon/New()
+/obj/item/bluespace_harpoon/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 

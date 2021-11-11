@@ -1,6 +1,6 @@
 GLOBAL_REAL(SSmentor_tickets, /datum/controller/subsystem/tickets/mentor_tickets)
 
-/datum/controller/subsystem/tickets/mentor_tickets/New()
+/datum/controller/subsystem/tickets/mentor_tickets/Initialize(mapload)
     NEW_SS_GLOBAL(SSmentor_tickets)
     PreInit()
 

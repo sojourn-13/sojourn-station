@@ -19,7 +19,7 @@
 
 	var/list/scrubbing_gas = list("plasma", "carbon_dioxide", "sleeping_agent")
 
-/obj/machinery/portable_atmospherics/powered/scrubber/New()
+/obj/machinery/portable_atmospherics/powered/scrubber/Initialize(mapload)
 	..()
 	cell = new/obj/item/cell/large/high(src)
 
@@ -156,7 +156,7 @@
 	var/global/gid = 1
 	var/id = 0
 
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/New()
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/Initialize(mapload)
 	..()
 	cell = null
 

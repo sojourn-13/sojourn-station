@@ -137,7 +137,7 @@
 		owner.mind.transfer_to(stored_mmi.brainmob)
 	..()
 
-/obj/item/organ/internal/mmi_holder/New()
+/obj/item/organ/internal/mmi_holder/Initialize(mapload)
 	..()
 	// This is very ghetto way of rebooting an IPC. TODO better way.
 	spawn(1)
@@ -148,7 +148,7 @@
 /obj/item/organ/internal/mmi_holder/posibrain
 	nature = MODIFICATION_SILICON
 
-/obj/item/organ/internal/mmi_holder/posibrain/New()
+/obj/item/organ/internal/mmi_holder/posibrain/Initialize(mapload)
 	stored_mmi = new /obj/item/device/mmi/digital/posibrain(src)
 	..()
 	spawn(30)

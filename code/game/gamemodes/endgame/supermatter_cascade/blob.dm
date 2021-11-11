@@ -13,7 +13,7 @@
 
 	var/list/avail_dirs = list(NORTH,SOUTH,EAST,WEST)
 
-/turf/unsimulated/wall/supermatter/New()
+/turf/unsimulated/wall/supermatter/Initialize(mapload)
 	..()
 	START_PROCESSING(SSturf, src)
 

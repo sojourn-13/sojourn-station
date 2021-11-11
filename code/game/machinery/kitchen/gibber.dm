@@ -26,7 +26,7 @@
 /obj/machinery/gibber/autogibber
 	var/input_dir = 0
 
-/obj/machinery/gibber/autogibber/New()
+/obj/machinery/gibber/autogibber/Initialize(mapload)
 	..()
 	spawn()
 		var/obj/landmark/machinery/input/input = locate() in orange(1, src)
@@ -46,7 +46,7 @@
 			M.gib()
 
 
-/obj/machinery/gibber/New()
+/obj/machinery/gibber/Initialize(mapload)
 	..()
 	update_icon()
 	spawn()
@@ -187,7 +187,7 @@
 	use_power(1000)
 	visible_message(SPAN_DANGER("You hear a loud squelchy grinding sound."))
 	src.operating = 1
-	
+
 
 	var/slab_name = occupant.name
 	var/slab_count = 0
@@ -253,12 +253,12 @@
 			if(ishuman(occupant))
 				src.occupant.ghostize()
 
-		
+
 			src.occupant.gib()
 			var/mob/living/to_delete = occupant
 			occupant = null
 			qdel(to_delete)
-			
+
 
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
 			operating = 0

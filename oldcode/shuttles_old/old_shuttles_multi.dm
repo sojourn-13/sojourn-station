@@ -23,7 +23,7 @@
 	var/area/origin
 	var/return_warning = 0
 
-/datum/shuttle/multi_shuttle/New()
+/datum/shuttle/multi_shuttle/Initialize(mapload)
 	..()
 
 /datum/shuttle/multi_shuttle/init_docking_controllers()

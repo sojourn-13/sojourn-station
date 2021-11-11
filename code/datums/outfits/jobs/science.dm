@@ -7,7 +7,7 @@
 	pda_type = /obj/item/modular_computer/pda/science/science
 	id_type = /obj/item/card/id/sci
 
-/decl/hierarchy/outfit/job/science/New()
+/decl/hierarchy/outfit/job/science/Initialize(mapload)
 	..()
 	BACKPACK_OVERRIDE_RESEARCH
 
@@ -39,6 +39,6 @@
 	backpack_contents = list(/obj/item/hydrogen_fuel_cell = 1)
 	l_pocket = /obj/item/device/robotanalyzer
 
-/decl/hierarchy/outfit/job/science/roboticist/New()
+/decl/hierarchy/outfit/job/science/roboticist/Initialize(mapload)
 	..()
 	backpack_overrides.Cut()

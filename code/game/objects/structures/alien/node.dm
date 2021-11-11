@@ -5,7 +5,7 @@
 	health = 100
 	layer = 3.1
 
-/obj/structure/alien/node/New()
+/obj/structure/alien/node/Initialize(mapload)
 	..()
 	START_PROCESSING(SSobj, src)
 

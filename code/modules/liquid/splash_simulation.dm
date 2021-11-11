@@ -18,7 +18,7 @@ datum/puddle/proc/process()
 	if(liquid_objects.len == 0)
 		qdel(src)
 
-datum/puddle/New()
+datum/puddle/Initialize(mapload)
 	..()
 	puddles += src
 
@@ -60,7 +60,7 @@ obj/effect/liquid
 	var/new_volume = 0
 	var/datum/puddle/controller
 
-obj/effect/liquid/New()
+obj/effect/liquid/Initialize(mapload)
 	..()
 	if( !isturf(loc) )
 		qdel(src)

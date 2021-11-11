@@ -44,7 +44,7 @@
 	speak_emote = list("beeps","clicks","chirps")
 	can_burrow = TRUE
 
-/mob/living/simple_animal/spiderbot/New()
+/mob/living/simple_animal/spiderbot/Initialize(mapload)
 	..()
 	add_language(LANGUAGE_COMMON)
 	default_language = all_languages[LANGUAGE_COMMON]
@@ -185,7 +185,7 @@
 	eject_brain()
 	. = ..()
 
-/mob/living/simple_animal/spiderbot/New()
+/mob/living/simple_animal/spiderbot/Initialize(mapload)
 
 	radio = new /obj/item/device/radio/borg(src)
 	camera = new /obj/machinery/camera(src)

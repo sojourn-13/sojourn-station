@@ -18,7 +18,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 
-/obj/machinery/slotmachine/New()
+/obj/machinery/slotmachine/Initialize(mapload)
 	..()
 	icon_type = initial(icon_state)
 	power_change()

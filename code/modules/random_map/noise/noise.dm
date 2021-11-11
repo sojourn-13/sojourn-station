@@ -7,8 +7,8 @@
 	var/cell_smooth_amt = 5
 	var/random_variance_chance = 25 // % chance of applying random_element.
 	var/random_element = 0.5        // Determines the variance when smoothing out cell values.
-	var/cell_base                   // Set in New()
-	var/initial_cell_range          // Set in New()
+	var/cell_base                   // Set in Initialize(mapload)
+	var/initial_cell_range          // Set in Initialize(mapload)
 	var/smoothing_iterations = 0
 
 /datum/random_map/noise/New()

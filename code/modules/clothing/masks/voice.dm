@@ -26,6 +26,6 @@
 	changer.voice = voice
 	to_chat(usr, SPAN_NOTICE("You are now mimicking <B>[changer.voice]</B>."))
 
-/obj/item/clothing/mask/gas/voice/New()
+/obj/item/clothing/mask/gas/voice/Initialize(mapload)
 	..()
 	changer = new(src)

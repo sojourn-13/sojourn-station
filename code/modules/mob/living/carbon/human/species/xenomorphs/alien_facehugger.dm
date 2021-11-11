@@ -38,7 +38,7 @@ var/const/MAX_ACTIVE_TIME = 400
 	if(hit_zone == BP_HEAD)
 		Attach(target)
 
-/obj/item/clothing/mask/facehugger/New()
+/obj/item/clothing/mask/facehugger/Initialize(mapload)
 	if(config.aliens_allowed)
 		..()
 	else

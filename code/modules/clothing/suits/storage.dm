@@ -2,7 +2,7 @@
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 	var/obj/item/storage/internal/pockets
 
-/obj/item/clothing/suit/storage/New()
+/obj/item/clothing/suit/storage/Initialize(mapload)
 	..()
 	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 2	//two slots
@@ -55,14 +55,14 @@
 		update_wear_icon()	//so our over-lays update
 
 
-/obj/item/clothing/suit/storage/vest/merc/New()
+/obj/item/clothing/suit/storage/vest/merc/Initialize(mapload)
 	..()
 	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 4
 	pockets.max_w_class = ITEM_SIZE_SMALL
 	pockets.max_storage_space = 8
 
-/obj/item/clothing/suit/storage/vest/ironhammer/New()
+/obj/item/clothing/suit/storage/vest/ironhammer/Initialize(mapload)
 	..()
 	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 4
@@ -845,7 +845,7 @@ obj/item/clothing/suit/sweater/blue
 		rad = 0
 	)
 
-/obj/item/clothing/suit/storage/vest/chestrig/New()
+/obj/item/clothing/suit/storage/vest/chestrig/Initialize(mapload)
 	..()
 	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 8

@@ -7,7 +7,7 @@
 	item_state = "slime"
 	w_class = ITEM_SIZE_TINY
 
-/obj/item/device/slimelight/New()
+/obj/item/device/slimelight/Initialize(mapload)
 	..()
 	set_light(6)
 

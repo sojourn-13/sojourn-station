@@ -71,7 +71,7 @@
 	pressure_checks = 2
 	pressure_checks_default = 2
 
-/obj/machinery/atmospherics/unary/vent_pump/New()
+/obj/machinery/atmospherics/unary/vent_pump/Initialize(mapload)
 	..()
 	air_contents.volume = ATMOS_DEFAULT_VOLUME_PUMP
 
@@ -90,7 +90,7 @@
 	power_channel = STATIC_EQUIP
 	power_rating = 15000	//15 kW ~ 20 HP
 
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/New()
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/Initialize(mapload)
 	..()
 	air_contents.volume = ATMOS_DEFAULT_VOLUME_PUMP + 800
 
@@ -99,7 +99,7 @@
 	power_channel = STATIC_ENVIRON
 	power_rating = 30000	//15 kW ~ 20 HP
 
-/obj/machinery/atmospherics/unary/vent_pump/engine/New()
+/obj/machinery/atmospherics/unary/vent_pump/engine/Initialize(mapload)
 	..()
 	air_contents.volume = ATMOS_DEFAULT_VOLUME_PUMP + 500 //meant to match air injector
 

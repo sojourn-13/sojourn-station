@@ -109,7 +109,7 @@
 	var/opened = 0
 	var/parent_shuttle
 
-/obj/structure/fuel_port/New()
+/obj/structure/fuel_port/Initialize(mapload)
 	src.contents.Add(new/obj/item/tank/plasma)
 
 /obj/structure/fuel_port/attack_hand(mob/user as mob)

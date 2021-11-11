@@ -78,7 +78,7 @@
 			src.projectiles += FMJ.amount_per_click
 			return 1
 
-/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/New() //Freshly made ones are not loaded
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/Initialize(mapload) //Freshly made ones are not loaded
 	..()
 	if(loaded)
 		return

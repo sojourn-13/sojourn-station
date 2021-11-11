@@ -135,12 +135,12 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "metalfoam"
 	density = 1
-	opacity = 1 // changed in New()
+	opacity = 1 // changed in Initialize(mapload)
 	anchored = 1
 	layer = EDGED_TURF_LAYER
 	var/metal = 1 // 1 = aluminum, 2 = iron
 
-/obj/structure/foamedmetal/New()
+/obj/structure/foamedmetal/Initialize(mapload)
 	..()
 	update_nearby_tiles(1)
 

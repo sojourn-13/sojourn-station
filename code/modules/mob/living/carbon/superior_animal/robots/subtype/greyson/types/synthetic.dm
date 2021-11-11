@@ -16,7 +16,7 @@
 	icon_state = "nanotrasenranged"
 	ranged = 1
 
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/New()
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/Initialize(mapload)
 	..()
 	if(prob(20))
 		drop2 = /obj/item/gun/energy/cog

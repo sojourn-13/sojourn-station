@@ -292,7 +292,7 @@
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/clothing/glasses/hud/health,
 		)
-/obj/item/storage/firstaid/ifak/New()
+/obj/item/storage/firstaid/ifak/Initialize(mapload)
 	..()
 	if (empty) return
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)

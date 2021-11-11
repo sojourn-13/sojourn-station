@@ -24,7 +24,7 @@
 	fuel_cell = new /obj/item/hydrogen_fuel_cell(src)
 
 // This proc run when the object is created
-/obj/machinery/power/hydrogen_gen/New()
+/obj/machinery/power/hydrogen_gen/Initialize(mapload)
 	..()
 
 /obj/machinery/power/hydrogen_gen/examine(mob/user)

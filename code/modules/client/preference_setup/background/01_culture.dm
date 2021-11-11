@@ -20,7 +20,7 @@
 	var/list/hidden
 	var/list/tokens = ALL_CULTURAL_TAGS
 
-/datum/category_item/player_setup_item/background/culture/New()
+/datum/category_item/player_setup_item/background/culture/Initialize(mapload)
 	hidden = list()
 	for(var/token in tokens)
 		hidden[token] = TRUE

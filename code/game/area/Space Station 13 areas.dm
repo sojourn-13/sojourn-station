@@ -32,7 +32,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/is_dungeon_lootable = FALSE
 	var/debug = 0
 	var/requires_power = 1
-	var/always_unpowered = 0	//this gets overriden to 1 for space in area/New()
+	var/always_unpowered = 0	//this gets overriden to 1 for space in area/Initialize(mapload)
 
 	var/power_equip = 1
 	var/power_light = 1
@@ -878,7 +878,7 @@ area/space/atmosalert()
 	ambience = list()
 	var/sound/mysound = null
 
-	New()
+	Initialize(mapload)
 		..()
 		var/sound/S = new/sound()
 		mysound = S

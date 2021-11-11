@@ -41,7 +41,7 @@
 
 // the inlet stage of the gas turbine electricity generator
 
-/obj/machinery/compressor/New()
+/obj/machinery/compressor/Initialize(mapload)
 	..()
 
 	gas_contained = new
@@ -98,7 +98,7 @@
 		add_overlay(image('icons/obj/pipes.dmi', "comp-o1", FLY_LAYER))
 	 //TODO: DEFERRED
 
-/obj/machinery/power/turbine/New()
+/obj/machinery/power/turbine/Initialize(mapload)
 	..()
 
 	outturf = get_step(src, dir)
@@ -211,7 +211,7 @@
 
 
 
-/obj/machinery/computer/turbine_computer/New()
+/obj/machinery/computer/turbine_computer/Initialize(mapload)
 	..()
 	spawn(5)
 		for(var/obj/machinery/compressor/C in GLOB.machines)

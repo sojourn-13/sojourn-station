@@ -25,7 +25,7 @@
 	var/tool = "laser"
 	var/tooltype = "os"
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/New()
+/mob/living/carbon/superior_animal/robot/greyson/custodian/Initialize(mapload)
 	. = ..()
 	marks_type = pick("green", "blue", "pink", "orange", "cyan", "red", "os")
 	screen_type = pick("green", "os_red", "yellow", "cyan", "red", "os")
@@ -83,7 +83,7 @@
 	ranged = TRUE
 	cleaning = FALSE
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef/New()
+/mob/living/carbon/superior_animal/robot/greyson/custodian/chef/Initialize(mapload)
 	. = ..()
 	if(prob(5))
 		drop2 = /obj/item/oddity/common/old_radio
@@ -120,7 +120,7 @@
 	if(prob(95) && ranged)
 		ranged = FALSE
 
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer/New()
+/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer/Initialize(mapload)
 	. = ..()
 	if(prob(5))
 		drop2 = /obj/random/tool_upgrade/rare

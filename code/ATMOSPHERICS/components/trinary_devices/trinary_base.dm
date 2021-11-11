@@ -14,7 +14,7 @@ obj/machinery/atmospherics/trinary
 	var/datum/pipe_network/network2
 	var/datum/pipe_network/network3
 
-	New()
+	Initialize(mapload)
 		..()
 		switch(dir)
 			if(NORTH)

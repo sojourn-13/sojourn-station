@@ -8,7 +8,7 @@
 	price_tag = 535
 	var/list/items = list()
 
-/obj/item/organ_module/active/multitool/New()
+/obj/item/organ_module/active/multitool/Initialize(mapload)
 	..()
 	var/list/paths = items.Copy()
 	items.Cut()

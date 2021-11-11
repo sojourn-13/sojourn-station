@@ -42,7 +42,7 @@ var/global/photo_count = 0
 		var/obj/O = loc
 		O.update_icon()
 
-/obj/item/photo/New()
+/obj/item/photo/Initialize(mapload)
 	id = photo_count++
 	..()
 

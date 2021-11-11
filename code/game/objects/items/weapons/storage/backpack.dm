@@ -85,7 +85,7 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_GOLD = 10, MATERIAL_DIAMOND = 5, MATERIAL_URANIUM = 5)
 	var/bluespace_safe = FALSE
 
-/obj/item/storage/backpack/holding/New()
+/obj/item/storage/backpack/holding/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	if(!bluespace_safe)

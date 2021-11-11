@@ -1,5 +1,5 @@
 /decl/security_state
-	// When defining any of these values type paths should be used, not instances. Instances will be acquired in /New()
+	// When defining any of these values type paths should be used, not instances. Instances will be acquired in /Initialize(mapload)
 
 	var/decl/security_level/severe_security_level // At which security level (and higher) the use of nuclear fission devices and other extreme measures are allowed. Defaults to the last entry in all_security_levels if unset.
 	var/decl/security_level/high_security_level   // At which security level (and higher) transfer votes are disabled, ERT may be requested, and other similar high alert implications. Defaults to the second to last entry in all_security_levels if unset.
@@ -18,7 +18,7 @@
 	var/list/standard_security_levels               // List of all normally selectable security levels
 	var/list/comm_console_security_levels           // List of all selectable security levels for the command and communication console - basically standard_security_levels - 1
 
-/decl/security_state/New()
+/decl/security_state/Initialize(mapload)
 	// Setup the severe security level
 	if(!(severe_security_level in all_security_levels))
 		severe_security_level = all_security_levels[all_security_levels.len]

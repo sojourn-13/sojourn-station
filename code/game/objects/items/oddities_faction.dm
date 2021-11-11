@@ -16,7 +16,7 @@
 	var/last_produce = 0
 	var/cooldown = 30 MINUTES
 
-/obj/item/biosyphon/New()
+/obj/item/biosyphon/Initialize(mapload)
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_security
 	START_PROCESSING(SSobj, src)
@@ -63,7 +63,7 @@
 	var/stats_buff = list(STAT_BIO, STAT_COG, STAT_MEC)
 	var/list/mob/living/carbon/human/currently_affected = list()
 
-/obj/item/von_krabin/New()
+/obj/item/von_krabin/Initialize(mapload)
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_moebius
 
@@ -142,7 +142,7 @@
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 2, MATERIAL_PLASMA = 5, MATERIAL_BIOMATTER = 50)
 	var/blood_amount = 0
 
-/obj/item/reagent_containers/enricher/New()
+/obj/item/reagent_containers/enricher/Initialize(mapload)
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_moebius
 
@@ -219,7 +219,7 @@
 	var/max_count = 5
 	var/cooldown = 30 MINUTES
 
-/obj/item/device/techno_tribalism/New()
+/obj/item/device/techno_tribalism/Initialize(mapload)
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_engineering
 
@@ -404,7 +404,7 @@
 	GLOB.guild_faction_item_loss++
 	..()
 
-/obj/item/maneki_neko/New()
+/obj/item/maneki_neko/Initialize(mapload)
 	GLOB.all_faction_items[src] = GLOB.department_guild
 	START_PROCESSING(SSobj, src)
 	..()
@@ -465,7 +465,7 @@
 	..()
 	set_light(l_range = 0, l_power = 0)
 
-/obj/item/tool/sword/nt_sword/New()
+/obj/item/tool/sword/nt_sword/Initialize(mapload)
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_church
 
@@ -623,7 +623,7 @@
 	origin_tech = list(TECH_BIO = 9, TECH_MATERIAL = 9, TECH_PLASMA = 3)
 	unacidable = TRUE
 
-/obj/item/reagent_containers/atomic_distillery/New()
+/obj/item/reagent_containers/atomic_distillery/Initialize(mapload)
 	..()
 	GLOB.all_faction_items[src] = GLOB.department_command
 	START_PROCESSING(SSobj, src)

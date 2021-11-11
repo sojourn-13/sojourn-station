@@ -56,7 +56,7 @@ var/global/list/image/splatter_cache=list()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/effect/decal/cleanable/blood/New()
+/obj/effect/decal/cleanable/blood/Initialize(mapload)
 	..()
 	fall_to_floor()
 	update_icon()
@@ -169,7 +169,7 @@ var/global/list/image/splatter_cache=list()
 	amount = 0
 	var/list/drips = list()
 
-/obj/effect/decal/cleanable/blood/drip/New()
+/obj/effect/decal/cleanable/blood/drip/Initialize(mapload)
 	..()
 	drips |= icon_state
 
@@ -181,7 +181,7 @@ var/global/list/image/splatter_cache=list()
 	amount = 0
 	var/message
 
-/obj/effect/decal/cleanable/blood/writing/New()
+/obj/effect/decal/cleanable/blood/writing/Initialize(mapload)
 	..()
 	if(random_icon_states.len)
 		for(var/obj/effect/decal/cleanable/blood/writing/W in loc)
@@ -264,7 +264,7 @@ var/global/list/image/splatter_cache=list()
 	var/list/datum/disease2/disease/virus2 = list()
 	var/dry=0 // Keeps the lag down
 
-/obj/effect/decal/cleanable/mucus/New()
+/obj/effect/decal/cleanable/mucus/Initialize(mapload)
 	spawn(DRYING_TIME * 2)
 		dry=1
 

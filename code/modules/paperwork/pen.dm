@@ -77,7 +77,7 @@
 	slot_flags = SLOT_BELT
 	origin_tech = list(TECH_MATERIAL = 2, TECH_ILLEGAL = 5)
 
-/obj/item/pen/reagent/New()
+/obj/item/pen/reagent/Initialize(mapload)
 	..()
 	create_reagents(30)
 
@@ -102,7 +102,7 @@
 	desc = "It's a black ink pen with a sharp point and a carefully engraved \"Waffle Co.\""
 	origin_tech = list(TECH_MATERIAL = 2, TECH_ILLEGAL = 5)
 
-/obj/item/pen/reagent/sleepy/New()
+/obj/item/pen/reagent/sleepy/Initialize(mapload)
 	..()
 	reagents.add_reagent("chloralhydrate", 22)	//Used to be 100 sleep toxin//30 Chloral seems to be fatal, reducing it to 22./N
 
@@ -113,7 +113,7 @@
 /obj/item/pen/reagent/paralysis
 	origin_tech = "materials=2;syndicate=5"
 
-/obj/item/pen/reagent/paralysis/New()
+/obj/item/pen/reagent/paralysis/Initialize(mapload)
 	..()
 	reagents.add_reagent("zombiepowder", 10)
 	reagents.add_reagent("cryptobiolin", 15)
@@ -192,7 +192,7 @@
 	var/colourName = "red" //for updateIcon purposes
 	var/grindable = TRUE //normal crayons are grindable, rainbow and mime aren't
 
-	New()
+	Initialize(mapload)
 		name = "[colourName] crayon"
 		if(grindable)
 			create_reagents(20)

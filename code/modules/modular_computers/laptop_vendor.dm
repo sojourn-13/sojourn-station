@@ -29,7 +29,7 @@
 	var/dev_card = 0						// 0: None, 1: Standard
 	var/dev_aislot = 0						// 0: None, 1: Standard
 
-/obj/machinery/lapvend/New()
+/obj/machinery/lapvend/Initialize(mapload)
 	..()
 	transaction_template = new(
 		0, "Computer Manufacturer (via [src.name])",

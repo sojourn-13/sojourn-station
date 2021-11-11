@@ -63,13 +63,13 @@
 	layer = HIDING_MOB_PLANE
 	invisibility = 101
 
-/obj/structure/invislight/New()
+/obj/structure/invislight/Initialize(mapload)
 	set_light(7, 5, "#999999")
 	. = ..()
 
 /obj/structure/invislightsmall
 	name = "small invisible light"
 
-/obj/structure/invislightsmall/New()
+/obj/structure/invislightsmall/Initialize(mapload)
 	set_light(1, 1, "#999999")
 	. = ..()

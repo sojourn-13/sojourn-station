@@ -379,7 +379,7 @@
 	layer = BELOW_OBJ_LAYER //So that things being ejected are visible
 	var/c_mode = 0
 
-/obj/machinery/disposal/deliveryChute/New()
+/obj/machinery/disposal/deliveryChute/Initialize(mapload)
 	..()
 	spawn(5)
 		trunk = locate() in src.loc

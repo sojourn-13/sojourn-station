@@ -5,7 +5,7 @@
 	var/width_x = 136
 	var/height_y = 136
 
-/obj/procedural/dungenerator/New()
+/obj/procedural/dungenerator/Initialize(mapload)
 	var/obj/procedural/jp_DungeonGenerator/generate = new /obj/procedural/jp_DungeonGenerator(src)
 	generate.setArea(locate(x - round(width_x/2) + 1, y + round(height_y/2) + 1, z), locate(x + round(width_x/2) - 1, y - round(height_y/2) - 1, z))
 	generate.setWallType(/turf/simulated/wall/untinted/onestar)

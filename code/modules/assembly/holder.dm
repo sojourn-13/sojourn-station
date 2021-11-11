@@ -13,7 +13,7 @@
 	var/obj/item/device/assembly/left_assembly = null
 	var/obj/item/device/assembly/right_assembly = null
 
-/obj/item/device/assembly_holder/New()
+/obj/item/device/assembly_holder/Initialize(mapload)
 	..()
 	add_hearing()
 
@@ -177,7 +177,7 @@
 /obj/item/device/assembly_holder/timer_igniter
 	name = "timer-igniter assembly"
 
-/obj/item/device/assembly_holder/timer_igniter/New()
+/obj/item/device/assembly_holder/timer_igniter/Initialize(mapload)
 	..()
 
 	var/obj/item/device/assembly/igniter/ign = new(src)

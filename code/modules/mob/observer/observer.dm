@@ -18,7 +18,7 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 /mob/observer/can_fall()
 	return FALSE
 
-/mob/observer/New()
+/mob/observer/Initialize(mapload)
 	..()
 	ghost_image = image(src.icon,src)
 	ghost_image.appearance = src

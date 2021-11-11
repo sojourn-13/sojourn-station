@@ -333,7 +333,7 @@ var/decl/asset_cache/asset_cache = new()
 /decl/asset_cache
 	var/list/cache
 
-/decl/asset_cache/New()
+/decl/asset_cache/Initialize(mapload)
 	..()
 	cache = new
 

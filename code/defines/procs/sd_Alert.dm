@@ -54,7 +54,7 @@ RETURNS
 
 Version 1 changes (from version 0):
 * Added the tag, select, and flags arguments, thanks to several suggestions from Foomer.
-* Split the sd_Alert/Alert() proc into New(), Display(), and Response() to allow more
+* Split the sd_Alert/Alert() proc into Initialize(mapload), Display(), and Response() to allow more
 	customization by developers. Primarily developers would want to use Display() to change
 	the display of active tagged windows
 

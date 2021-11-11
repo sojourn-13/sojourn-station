@@ -37,7 +37,7 @@
 
 	var/sanity_value = 2
 
-/obj/machinery/media/jukebox/New()
+/obj/machinery/media/jukebox/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, 0, "")
 	wires = new/datum/wires/jukebox(src)

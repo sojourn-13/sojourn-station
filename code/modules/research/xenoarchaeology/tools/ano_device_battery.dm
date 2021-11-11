@@ -8,7 +8,7 @@
 	var/stored_charge = 0
 	var/effect_id = ""
 
-/obj/item/anobattery/New()
+/obj/item/anobattery/Initialize(mapload)
 	. = ..()
 	battery_effect = new()
 
@@ -34,7 +34,7 @@
 	var/turf/archived_loc
 	var/energy_consumed_on_touch = 100
 
-/obj/item/anodevice/New()
+/obj/item/anodevice/Initialize(mapload)
 	..()
 	START_PROCESSING(SSobj, src)
 

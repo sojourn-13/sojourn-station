@@ -23,7 +23,7 @@
 	return data
 
 
-/obj/item/implant/chem/New()
+/obj/item/implant/chem/Initialize(mapload)
 	..()
 	create_reagents(50)
 

@@ -88,12 +88,12 @@
 	)
 	gear_tweaks += new /datum/gear_tweak/path(halloween)
 
-datum/gear/clothing/mask/tiki
+/datum/gear/clothing/mask/tiki
 	display_name = "Tiki mask selection"
 	slot = slot_wear_mask
 	path = /obj/item/clothing/mask/costume/misc/tiki/
 
-datum/gear/clothing/mask/tiki/New()
+/datum/gear/clothing/mask/tiki/New()
 	..()
 	var/tiki = list(
 		"startled tiki mask"			=	/obj/item/clothing/mask/costume/misc/tiki,

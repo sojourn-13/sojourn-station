@@ -19,16 +19,16 @@
 	else
 		return ..()
 
-/obj/structure/reagent_dispensers/New()
+/obj/structure/reagent_dispensers/Initialize(mapload)
 	create_reagents(volume)
-		
+
 	if (starting_reagent)
 		//If a starting volume is not 0, use that for the volume amount
 		if(starting_volume)
 			reagents.add_reagent(starting_reagent, starting_volume)
 		else
 			reagents.add_reagent(starting_reagent, volume)
-		
+
 	if (!possible_transfer_amounts)
 		src.verbs -= /obj/structure/reagent_dispensers/verb/set_APTFT
 	..()

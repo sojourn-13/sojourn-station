@@ -38,7 +38,7 @@
 	item_state = "balloon-empty"
 	preloaded_reagents = list()
 
-/obj/item/toy/junk/balloon/New()
+/obj/item/toy/junk/balloon/Initialize(mapload)
 	create_reagents(10)
 	..()
 

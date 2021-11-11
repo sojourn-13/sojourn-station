@@ -74,7 +74,7 @@ var/global/list/plant_seed_sprites = list()
 /obj/item/seeds/random
 	seed_type = null
 
-/obj/item/seeds/random/New()
+/obj/item/seeds/random/Initialize(mapload)
 	..()
 	seed = plant_controller.create_random_seed()
 	seed_type = seed.name
@@ -135,7 +135,7 @@ var/global/list/plant_seed_sprites = list()
 	seed_type = "bluespacetomato"
 	price_tag = 180
 
-/obj/item/seeds/bluespacetomatoseed/New()
+/obj/item/seeds/bluespacetomatoseed/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 

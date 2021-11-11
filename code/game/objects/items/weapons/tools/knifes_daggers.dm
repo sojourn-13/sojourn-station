@@ -186,7 +186,7 @@
 	var/last_teleport
 	var/entropy_value = 3
 
-/obj/item/tool/knife/dagger/bluespace/New()
+/obj/item/tool/knife/dagger/bluespace/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 
@@ -219,7 +219,7 @@
 	reagent_flags = INJECTABLE|TRANSPARENT
 	price_tag = 10
 
-/obj/item/tool/knife/dagger/assassin/New()
+/obj/item/tool/knife/dagger/assassin/Initialize(mapload)
 	..()
 	create_reagents(80)
 

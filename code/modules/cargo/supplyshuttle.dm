@@ -69,7 +69,7 @@ var/list/mechtoys = list(
 	name = "\improper Airtight plastic flaps"
 	desc = "Heavy duty, airtight, plastic flaps."
 
-/obj/structure/plasticflaps/mining/New() //set the turf below the flaps to block air
+/obj/structure/plasticflaps/mining/Initialize(mapload) //set the turf below the flaps to block air
 	var/turf/T = get_turf(loc)
 	if(T)
 		T.blocks_air = 1

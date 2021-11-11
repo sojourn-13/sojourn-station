@@ -26,7 +26,7 @@
 	reagent_ids = list("tricordrazine", "inaprovaline", "tramadol")
 	accepts_reagent_upgrades = TRUE
 
-/obj/item/reagent_containers/borghypo/New()
+/obj/item/reagent_containers/borghypo/Initialize(mapload)
 	..()
 
 	for(var/T in reagent_ids)

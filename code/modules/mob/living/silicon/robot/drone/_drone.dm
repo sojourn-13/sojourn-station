@@ -107,7 +107,7 @@ var/list/mob_hat_cache = list()
 //	can_pull_size = ITEM_SIZE_HUGE Soj chnge, same as base
 //	can_pull_mobs = MOB_PULL_SAME Soj chnge, same as base
 
-/mob/living/silicon/robot/drone/New()
+/mob/living/silicon/robot/drone/Initialize(mapload)
 
 	..()
 

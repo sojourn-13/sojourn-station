@@ -20,7 +20,7 @@
 	var/min_explode_time = 1200
 	can_burrow = TRUE
 
-/mob/living/simple_animal/mushroom/New()
+/mob/living/simple_animal/mushroom/Initialize(mapload)
 	..()
 	harvest_time = world.time
 

@@ -14,7 +14,7 @@
 	var/obj/item/tank/jetpack/mecha/thrust
 	equip_ready = FALSE
 
-/obj/item/mecha_parts/mecha_equipment/thruster/New()
+/obj/item/mecha_parts/mecha_equipment/thruster/Initialize(mapload)
 	thrust = new/obj/item/tank/jetpack/mecha(src)
 	..()
 

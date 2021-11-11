@@ -74,7 +74,7 @@
 	/* Core Procs */
 *******************************/
 //Fuel and cell spawn
-/obj/item/tool/New()
+/obj/item/tool/Initialize(mapload)
 	..()
 	if(cell)
 		cell = new cell(src) //So when we have a cell spawn it spawns a cell, otherwise it will pick a suitable cell

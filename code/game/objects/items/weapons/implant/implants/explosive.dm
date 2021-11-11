@@ -8,7 +8,7 @@
 	is_legal = FALSE
 	origin_tech = list(TECH_MATERIAL=2, TECH_COMBAT=3, TECH_BIO=4, TECH_ILLEGAL=4)
 
-/obj/item/implant/explosive/New()
+/obj/item/implant/explosive/Initialize(mapload)
 	..()
 	add_hearing()
 

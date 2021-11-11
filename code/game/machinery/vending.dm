@@ -148,7 +148,7 @@
 	//Note that a vendor can always accept restocks of things it has had in the past. This is in addition to that
 	var/no_criminals = FALSE //If true, the machine asks if you're wanted by security when you try to order.
 
-/obj/machinery/vending/New()
+/obj/machinery/vending/Initialize(mapload)
 	..()
 	wires = new(src)
 	icon_type = initial(icon_state)

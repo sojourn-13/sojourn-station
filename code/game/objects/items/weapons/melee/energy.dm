@@ -113,7 +113,7 @@
 	..()
 	deactivate(user)
 
-/obj/item/melee/energy/sword/New()
+/obj/item/melee/energy/sword/Initialize(mapload)
 	if(!blade_color)
 		blade_color = pick("red","blue","green","purple")
 	..()
@@ -217,7 +217,7 @@
 	var/mob/living/creator
 	var/datum/effect/effect/system/spark_spread/spark_system
 
-/obj/item/melee/energy/blade/New()
+/obj/item/melee/energy/blade/Initialize(mapload)
 	..()
 	spark_system = new /datum/effect/effect/system/spark_spread()
 	spark_system.set_up(5, 0, src)
@@ -253,6 +253,6 @@
 
 /obj/item/melee/energy/blade/organ_module //just to make sure that blade doesnt delet itself
 
-/obj/item/melee/energy/blade/organ_module/New()
+/obj/item/melee/energy/blade/organ_module/Initialize(mapload)
 
 /obj/item/melee/energy/blade/organ_module/attack_self(mob/user as mob)

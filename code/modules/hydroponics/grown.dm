@@ -72,7 +72,7 @@
 	if (seed.materials) matter = seed.materials.Copy()
 	if (seed.origin_tech) origin_tech = seed.origin_tech.Copy()
 
-/obj/item/reagent_containers/food/snacks/grown/New()
+/obj/item/reagent_containers/food/snacks/grown/Initialize(mapload)
 	..()
 
 /obj/item/reagent_containers/food/snacks/grown/proc/update_desc()
@@ -332,7 +332,7 @@
 	S.harvest(loc,0,0,1)
 	spawn(1) if(src) qdel(src)
 */
-/obj/plant_spawner/New()
+/obj/plant_spawner/Initialize(mapload)
 	var/datum/seed/S = plant_controller.seeds[seedtype]
 	S.harvest(loc,0,0,1)
 	spawn(5) if(src) qdel(src)

@@ -58,7 +58,7 @@
 	var/max_duration = 180
 
 
-/obj/machinery/computer/guestpass/New()
+/obj/machinery/computer/guestpass/Initialize(mapload)
 	..()
 	uid = "[rand(100,999)]-G[rand(10,99)]"
 

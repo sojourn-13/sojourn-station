@@ -301,7 +301,7 @@
 
 
 
-/obj/item/integrated_circuit/input/EPv2/New()
+/obj/item/integrated_circuit/input/EPv2/Initialize(mapload)
 	..()
 	exonet = new(src)
 	exonet.make_address("EPv2_circuit-\ref[src]")
@@ -372,7 +372,7 @@
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_per_use = 15
 
-/obj/item/integrated_circuit/input/microphone/New()
+/obj/item/integrated_circuit/input/microphone/Initialize(mapload)
 	..()
 	add_hearing()
 
@@ -575,7 +575,7 @@
 		var/obj/O = assembly ? loc : assembly
 		audible_message("\icon[O] \The [O.name] states, \"[text.data]\"")
 
-/obj/item/integrated_circuit/output/sound/New()
+/obj/item/integrated_circuit/output/sound/Initialize(mapload)
 	..()
 	extended_desc = list()
 	extended_desc += "The first input pin determines which sound is used. The choices are; "
@@ -643,7 +643,7 @@
 	power_draw_idle = 5 // Raises to 80 when on.
 	var/obj/machinery/camera/network/research/camera
 
-/obj/item/integrated_circuit/output/video_camera/New()
+/obj/item/integrated_circuit/output/video_camera/Initialize(mapload)
 	..()
 	camera = new(src)
 	on_data_written()

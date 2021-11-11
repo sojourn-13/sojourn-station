@@ -438,7 +438,7 @@
 	breakable = TRUE
 	var/spider_spawns
 
-/obj/structure/spider_nest/New()
+/obj/structure/spider_nest/Initialize(mapload)
 	. = ..()
 	spider_spawns = rand(3,8)
 	addtimer(CALLBACK(src, .proc/spawn_spider), 30 SECONDS)

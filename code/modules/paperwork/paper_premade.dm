@@ -240,7 +240,7 @@
 	"Let me tell you this: I wouldn't bet on you.",
 	"Better luck next life.")
 
-	New()
+	Initialize(mapload)
 		info = {"<font face='System' size='3'><center>YOUR FORTUNE</center><br><br>
 		The great and [pick(fortune_adjectives)] Zoltan has [pick(fortune_read)] your [pick(fortune_mystical)]!<br><br>
 		[pick(fortune)]</font>"}

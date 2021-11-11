@@ -6,7 +6,7 @@
 	var/obj/item/clothing/head/hood/hood
 	var/hoodtype = null //So other clothing can override this.
 
-/obj/item/clothing/suit/hooded/New()
+/obj/item/clothing/suit/hooded/Initialize(mapload)
 	MakeHood()
 	..()
 

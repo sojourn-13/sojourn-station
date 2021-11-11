@@ -539,7 +539,7 @@
 		bio = 0,
 		rad = 0
 	)
-/obj/item/clothing/suit/storage/vest/scav/New()
+/obj/item/clothing/suit/storage/vest/scav/Initialize(mapload)
 	..()
 	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 2	//two slots

@@ -10,7 +10,7 @@ var/list/obj/effect/bump_teleporter/BUMP_TELEPORTERS = list()
 	density = 1
 	opacity = 0
 
-/obj/effect/bump_teleporter/New()
+/obj/effect/bump_teleporter/Initialize(mapload)
 	..()
 	BUMP_TELEPORTERS += src
 

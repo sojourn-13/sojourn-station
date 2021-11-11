@@ -20,7 +20,7 @@
 	)
 	twohanded = TRUE
 
-/obj/item/gun/energy/cog/New()
+/obj/item/gun/energy/cog/Initialize(mapload)
 	..()
 	if(prob(50))
 		icon = 'icons/obj/guns/energy/cog_alt.dmi'

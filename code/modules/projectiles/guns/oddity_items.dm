@@ -30,7 +30,7 @@
 	max_shells = 60
 	recoil_buildup = 20
 
-/obj/item/gun/projectile/revolver/mistral/elite/New()
+/obj/item/gun/projectile/revolver/mistral/elite/Initialize(mapload)
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(2, get_turf(src)) //Same as the normal bluespace crystal

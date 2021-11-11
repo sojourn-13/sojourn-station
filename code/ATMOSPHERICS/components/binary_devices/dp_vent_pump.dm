@@ -41,7 +41,7 @@
 	//2: Do not pass input_pressure_min
 	//4: Do not pass output_pressure_max
 
-/obj/machinery/atmospherics/binary/dp_vent_pump/New()
+/obj/machinery/atmospherics/binary/dp_vent_pump/Initialize(mapload)
 	..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_PUMP
 	air2.volume = ATMOS_DEFAULT_VOLUME_PUMP
@@ -50,7 +50,7 @@
 /obj/machinery/atmospherics/binary/dp_vent_pump/high_volume
 	name = "large dual port air vent"
 
-/obj/machinery/atmospherics/binary/dp_vent_pump/high_volume/New()
+/obj/machinery/atmospherics/binary/dp_vent_pump/high_volume/Initialize(mapload)
 	..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_PUMP + 800
 	air2.volume = ATMOS_DEFAULT_VOLUME_PUMP + 800

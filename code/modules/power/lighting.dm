@@ -22,7 +22,7 @@
 	var/sheets_refunded = 2
 	var/obj/machinery/light/newlight = null
 
-/obj/machinery/light_construct/New()
+/obj/machinery/light_construct/Initialize(mapload)
 	..()
 	if (fixture_type == "bulb")
 		icon_state = "bulb-construct-stage1"
@@ -214,17 +214,17 @@
 	brightness_range = 12
 	brightness_power = 4
 
-/obj/machinery/light/built/New()
+/obj/machinery/light/built/Initialize(mapload)
 	status = LIGHT_EMPTY
 	update(0)
 	..()
 
-/obj/machinery/light/small/built/New()
+/obj/machinery/light/small/built/Initialize(mapload)
 	status = LIGHT_EMPTY
 	update(0)
 	..()
 
-/obj/machinery/light/floor/built/New() //WHAT IT IS?!?!??!?!?
+/obj/machinery/light/floor/built/Initialize(mapload) //WHAT IT IS?!?!??!?!?
 	status = LIGHT_EMPTY
 	update(0)
 	..()
@@ -768,7 +768,7 @@
 			desc = "A broken [name]."
 
 
-/obj/item/light/New()
+/obj/item/light/Initialize(mapload)
 	..()
 	switch(name)
 		if("light tube")

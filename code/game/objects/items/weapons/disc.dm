@@ -17,7 +17,7 @@
 	var/datum/dna2/record/buf = null
 	var/read_only = FALSE //Well,it's still a floppy disk
 
-/obj/item/disk/data/New()
+/obj/item/disk/data/Initialize(mapload)
 	..()
 	var/diskcolor = pick("red","blue","green","purple","black")
 	icon_state = "data-[diskcolor]"
@@ -42,7 +42,7 @@
 	name = "data disk - 'God Emperor of Mankind'"
 	read_only = TRUE
 
-/obj/item/disk/data/demo/New()
+/obj/item/disk/data/demo/Initialize(mapload)
 	..()
 	initializeDisk()
 	buf.types=DNA2_BUF_UE|DNA2_BUF_UI
@@ -58,7 +58,7 @@
 	name = "data disk - 'Mr. Muggles'"
 	read_only = TRUE
 
-/obj/item/disk/data/monkey/New()
+/obj/item/disk/data/monkey/Initialize(mapload)
 	..()
 	initializeDisk()
 	buf.types=DNA2_BUF_SE
@@ -77,7 +77,7 @@
 	icon_state = "box"
 	illustration = "disk"
 
-/obj/item/storage/box/disks/New()
+/obj/item/storage/box/disks/Initialize(mapload)
 	..()
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)

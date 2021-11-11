@@ -9,7 +9,7 @@
 	var/transform_dead = 0
 	var/transform_standing = 0
 
-/obj/machinery/transformer/New()
+/obj/machinery/transformer/Initialize(mapload)
 	// On us
 	..()
 	new /obj/machinery/conveyor(loc, WEST, 1)
@@ -39,7 +39,7 @@
 		if(robot)
 			robot.SetLockDown(0)
 
-/obj/machinery/transformer/conveyor/New()
+/obj/machinery/transformer/conveyor/Initialize(mapload)
 	..()
 	var/turf/T = loc
 	if(T)

@@ -13,7 +13,7 @@
 	var/my_shield_type = /obj/item/shield_projector/line/exosuit
 	var/icon/drone_overlay
 
-/obj/item/mecha_parts/mecha_equipment/combat_shield/New()
+/obj/item/mecha_parts/mecha_equipment/combat_shield/Initialize(mapload)
 	..()
 	my_shield = new my_shield_type
 	my_shield.shield_regen_delay = equip_cooldown

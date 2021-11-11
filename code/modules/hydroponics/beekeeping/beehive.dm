@@ -224,7 +224,7 @@
 	desc = "A frame for the beehive that the bees have filled with honeycombs."
 	honey = 20
 
-/obj/item/honey_frame/filled/New()
+/obj/item/honey_frame/filled/Initialize(mapload)
 	..()
 	add_overlay("honeycomb")
 
@@ -252,7 +252,7 @@
 	max_amount = 20
 	price_tag = 95 //long and semi hard to get
 
-/obj/item/stack/wax/New()
+/obj/item/stack/wax/Initialize(mapload)
 	..()
 	recipes = wax_recipes
 
@@ -267,7 +267,7 @@ var/global/list/datum/stack_recipe/wax_recipes = list( \
 	icon_state = "beepack"
 	var/full = 1
 
-/obj/item/bee_pack/New()
+/obj/item/bee_pack/Initialize(mapload)
 	..()
 	add_overlay("beepack-full")
 

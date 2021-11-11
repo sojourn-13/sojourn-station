@@ -47,7 +47,7 @@
 		"cold"
 	)
 
-/obj/machinery/door/firedoor/New()
+/obj/machinery/door/firedoor/Initialize(mapload)
 	..()
 
 	var/area/A = get_area(src)

@@ -25,6 +25,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/lasers
 	name = "Lasers"
 	container = /obj/structure/largecrate
+
 /datum/supply_drop_loot/lasers/New()
 	..()
 	contents = list(
@@ -36,6 +37,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/ballistics
 	name = "Ballistics"
 	container = /obj/structure/largecrate
+
 /datum/supply_drop_loot/ballistics/New()
 	..()
 	contents = list(
@@ -48,6 +50,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/seeds
 	name = "Seeds"
 	container = /obj/structure/closet/crate
+
 /datum/supply_drop_loot/seeds/New()
 	..()
 	contents = list(
@@ -71,6 +74,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/food
 	name = "Food"
 	container = /obj/structure/largecrate
+
 /datum/supply_drop_loot/food/New()
 	..()
 	contents = list(
@@ -88,6 +92,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/armour
 	name = "Armour"
 	container = /obj/structure/largecrate
+
 /datum/supply_drop_loot/armour/New()
 	..()
 	contents = list(
@@ -107,6 +112,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/materials
 	name = "Materials"
 	container = /obj/structure/largecrate
+
 /datum/supply_drop_loot/materials/New()
 	..()
 	contents = list(
@@ -123,6 +129,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/medical
 	name = "Medical"
 	container = /obj/structure/closet/crate/medical
+
 /datum/supply_drop_loot/medical/New()
 	..()
 	contents = list(
@@ -141,6 +148,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/hydroponics
 	name = "Hydroponics"
 	container = /obj/structure/largecrate
+
 /datum/supply_drop_loot/hydroponics/New()
 	..()
 	contents = list(
@@ -151,6 +159,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/power
 	name = "Power"
 	container = /obj/structure/largecrate
+
 /datum/supply_drop_loot/power/New()
 	..()
 	contents = list(

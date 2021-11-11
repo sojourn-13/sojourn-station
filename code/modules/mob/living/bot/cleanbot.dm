@@ -23,7 +23,7 @@
 	var/maximum_search_range = 7
 	var/give_up_cooldown = 0
 
-/mob/living/bot/cleanbot/New()
+/mob/living/bot/cleanbot/Initialize(mapload)
 	..()
 	get_targets()
 

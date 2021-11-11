@@ -247,7 +247,7 @@
 	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
 	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
 
-/obj/machinery/cryopod/New()
+/obj/machinery/cryopod/Initialize(mapload)
 	announce = new /obj/item/device/radio/intercom(src)
 	..()
 

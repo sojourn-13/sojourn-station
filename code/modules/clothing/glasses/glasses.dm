@@ -13,7 +13,7 @@
 	if(toggleable)
 		toggle(user, !active)
 
-/obj/item/clothing/glasses/New()
+/obj/item/clothing/glasses/Initialize(mapload)
 	..()
 	START_PROCESSING(SSobj, src)
 	if(toggleable)	// We need to spawn them switched off, because they consume power

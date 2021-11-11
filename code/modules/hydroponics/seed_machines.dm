@@ -6,7 +6,7 @@
 	var/list/genes = list()
 	var/genesource = "unknown"
 
-/obj/item/disk/botany/New()
+/obj/item/disk/botany/Initialize(mapload)
 	..()
 	pixel_x = rand(-5,5)
 	pixel_y = rand(-5,5)

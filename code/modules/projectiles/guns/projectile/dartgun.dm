@@ -8,7 +8,7 @@
 	muzzle_type = null
 	var/reagent_amount = 15
 
-/obj/item/projectile/bullet/chemdart/New()
+/obj/item/projectile/bullet/chemdart/Initialize(mapload)
 	create_reagents(reagent_amount)
 	..()
 
@@ -65,7 +65,7 @@
 	var/beaker_type = /obj/item/reagent_containers/glass/beaker
 	var/list/starting_chems = null
 
-/obj/item/gun/projectile/dartgun/dartgun/New()
+/obj/item/gun/projectile/dartgun/dartgun/Initialize(mapload)
 	..()
 	if(starting_chems)
 		for(var/chem in starting_chems)

@@ -461,7 +461,7 @@
 	siemens_coefficient = 0.4
 	light_overlay = "helmet_light_dual"
 
-/obj/item/clothing/head/space/void/assault/New()
+/obj/item/clothing/head/space/void/assault/Initialize(mapload)
 	icon_state = "assaulthelm-[pick("b","w","p","o","g","r")]"
 	item_state = icon_state
 	..()
@@ -470,7 +470,7 @@
 	name = "reaver assault helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in. This one was made for a Void Wolf Reaver."
 
-/obj/item/clothing/head/space/void/assault/void_wolf/New()
+/obj/item/clothing/head/space/void/assault/void_wolf/Initialize(mapload)
 	icon_state = "assault_wolf"
 	item_state = "assault_wolf"
 

@@ -16,7 +16,7 @@
 	var/datum/effect/effect/system/trail/ion/trail
 	var/stabilization_enabled = 1
 
-/obj/mecha/working/hoverpod/New()
+/obj/mecha/working/hoverpod/Initialize(mapload)
 	..()
 	trail = new /datum/effect/effect/system/trail/ion()
 	trail.set_up(src)
@@ -83,7 +83,7 @@
 	cargo_capacity = 2
 	max_equip = 2
 
-/obj/mecha/working/hoverpod/combatpod/New()
+/obj/mecha/working/hoverpod/combatpod/Initialize(mapload)
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
 	ME.attach(src)
@@ -94,7 +94,7 @@
 /obj/mecha/working/hoverpod/shuttlepod
 	desc = "Who knew a tiny ball could fit three people?"
 
-/obj/mecha/working/hoverpod/shuttlepod/New()
+/obj/mecha/working/hoverpod/shuttlepod/Initialize(mapload)
 	..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/passenger
 	ME.attach(src)

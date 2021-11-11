@@ -17,7 +17,7 @@
 	var/scoop_food = 1
 	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
 
-/obj/item/material/kitchen/utensil/New()
+/obj/item/material/kitchen/utensil/Initialize(mapload)
 	..()
 	if (prob(60))
 		src.pixel_y = rand(0, 4)

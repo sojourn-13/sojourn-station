@@ -4,7 +4,7 @@
 	det_time = 20
 	var/datum/effect/effect/system/smoke_spread/bad/smoke
 
-/obj/item/grenade/smokebomb/New()
+/obj/item/grenade/smokebomb/Initialize(mapload)
 	..()
 	src.smoke = new
 	src.smoke.attach(src)

@@ -39,7 +39,7 @@
 	follow_message = "says, \"I follow friend.\""
 	stop_message ="says, \"I stop follow friend.\""
 
-/mob/living/carbon/superior_animal/fungi/New()
+/mob/living/carbon/superior_animal/fungi/Initialize(mapload)
 	..()
 	nutrition = 20 // Else they make a bottle as soon as they spawn.
 	switch(pick("red","blue","green","gray","purple","yellow","orange","aqua"))

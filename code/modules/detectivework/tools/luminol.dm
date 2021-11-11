@@ -9,6 +9,6 @@
 	volume = 250
 	price_tag = 50
 
-/obj/item/reagent_containers/spray/luminol/New()
+/obj/item/reagent_containers/spray/luminol/Initialize(mapload)
 	..()
 	reagents.add_reagent("luminol", 250)

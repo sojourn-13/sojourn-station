@@ -6,7 +6,7 @@
 	gender = NEUTER
 	matter = null // Don't shove it in the autholathe.
 
-/obj/item/stack/material/cyborg/New()
+/obj/item/stack/material/cyborg/Initialize(mapload)
 	if(..())
 		name = "[material.display_name] synthesiser"
 		desc = "A device that synthesises [material.display_name]."

@@ -9,7 +9,7 @@
 	var/silk_id = "" //using by snare controller to teleport user to controller's mark
 	price_tag = 250
 
-/obj/item/clothing/accessory/bs_silk/New()
+/obj/item/clothing/accessory/bs_silk/Initialize(mapload)
 	. = ..()
 	matter = list(MATERIAL_STEEL = 8, MATERIAL_GLASS = 5, MATERIAL_SILVER = 10)
 /*/obj/item/clothing/accessory/bs_silk/proc/toggle_lock()

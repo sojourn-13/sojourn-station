@@ -74,7 +74,7 @@
 	var/blocked = 0 //Player cannot attack/heal while set
 	var/turtle = 0
 
-/obj/machinery/computer/arcade/battle/New()
+/obj/machinery/computer/arcade/battle/Initialize(mapload)
 	..()
 	var/name_action
 	var/name_part1

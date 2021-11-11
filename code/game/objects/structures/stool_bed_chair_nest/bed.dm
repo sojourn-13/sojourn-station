@@ -306,7 +306,7 @@
 	var/max_stored = 4
 	var/list/obj/item/roller/held = list()
 
-/obj/item/roller_holder/New()
+/obj/item/roller_holder/Initialize(mapload)
 	..()
 	held.Add(new /obj/item/roller(src))
 

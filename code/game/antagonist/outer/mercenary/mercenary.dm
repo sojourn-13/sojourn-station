@@ -59,7 +59,7 @@
 /obj/item/card/id/merc
 	icon_state = "syndicate"
 
-/obj/item/card/id/merc/New()
+/obj/item/card/id/merc/Initialize(mapload)
 	. = ..()
 	access = list(access_mercenary,//This access governs their ship and base
 	access_external_airlocks,

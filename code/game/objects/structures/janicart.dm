@@ -310,7 +310,7 @@
 	applies_material_colour = 0
 
 
-/obj/structure/bed/chair/janicart/New()
+/obj/structure/bed/chair/janicart/Initialize(mapload)
 	..()
 	create_reagents(100)
 

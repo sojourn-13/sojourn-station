@@ -23,6 +23,6 @@
 
 /obj/item/gun/projectile/automatic/armsmg/blackshield
 
-/obj/item/gun/projectile/automatic/armsmg/blackshield/New()
+/obj/item/gun/projectile/automatic/armsmg/blackshield/Initialize(mapload)
 	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/drum(src)
 	. =..()

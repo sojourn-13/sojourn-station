@@ -8,7 +8,7 @@
 	light_color = COLOR_LIGHTING_ORANGE_DARK
 	var/wax = 2000
 
-/obj/item/flame/candle/New()
+/obj/item/flame/candle/Initialize(mapload)
 	wax = rand(800, 1000) // Enough for 27-33 minutes. 30 minutes on average.
 	..()
 

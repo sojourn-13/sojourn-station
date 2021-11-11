@@ -48,7 +48,7 @@
 	var/name_tag = null
 	var/building_terminal = 0 //Suggestions about how to avoid clickspam building several terminals accepted!
 	var/obj/machinery/power/terminal/terminal = null
-	var/should_be_mapped = 0 // If this is set to 0 it will send out warning on New()
+	var/should_be_mapped = 0 // If this is set to 0 it will send out warning on Initialize(mapload)
 	var/skill_check = STAT_LEVEL_ADEPT
 
 /obj/machinery/power/smes/dummysimple
@@ -68,7 +68,7 @@
 	return smes_amt / SMESRATE
 
 
-/obj/machinery/power/smes/New()
+/obj/machinery/power/smes/Initialize(mapload)
 	..()
 	spawn(5)
 		GLOB.smes_list += src

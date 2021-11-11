@@ -41,7 +41,7 @@
 	// turf animation
 	var/atom/movable/overlay/c_animation
 
-/obj/machinery/door/New()
+/obj/machinery/door/Initialize(mapload)
 	GLOB.all_doors += src
 	..()
 
@@ -62,7 +62,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*1.5)
 	attack_animation(user)
 
-/obj/machinery/door/New()
+/obj/machinery/door/Initialize(mapload)
 	. = ..()
 	if(density)
 		layer = closed_layer

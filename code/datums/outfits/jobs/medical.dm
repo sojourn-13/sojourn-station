@@ -6,7 +6,7 @@
 	pda_type = /obj/item/modular_computer/pda/science/medical
 	pda_slot = slot_l_store
 
-/decl/hierarchy/outfit/job/medical/New()
+/decl/hierarchy/outfit/job/medical/Initialize(mapload)
 	..()
 	BACKPACK_OVERRIDE_MEDICAL
 

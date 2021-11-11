@@ -202,7 +202,7 @@
 		/obj/item/book/ritual/cruciform,
 		)
 
-/obj/item/shield/riot/nt/New()
+/obj/item/shield/riot/nt/Initialize(mapload)
 	container = new /obj/item/storage/internal(src)
 	container.storage_slots = storage_slots
 	container.can_hold = can_hold
@@ -264,7 +264,7 @@
 		/obj/item/book/ritual/cruciform,
 		)
 
-/obj/item/shield/buckler/nt/New()
+/obj/item/shield/buckler/nt/Initialize(mapload)
 	container = new /obj/item/storage/internal(src)
 	container.storage_slots = storage_slots
 	container.can_hold = can_hold

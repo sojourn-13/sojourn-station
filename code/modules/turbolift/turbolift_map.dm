@@ -130,7 +130,7 @@
 	turbolifts -= src
 	return ..()
 
-/obj/turbolift_map_obj/turbolift_map_base/New()
+/obj/turbolift_map_obj/turbolift_map_base/Initialize(mapload)
 	turbolifts += src
 	..()
 

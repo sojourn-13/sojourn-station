@@ -96,10 +96,10 @@
 	if(isrobot(usr) && Adjacent(usr) && open_hatch)
 		wires.Interact(usr)
 
-// Proc: New()
+// Proc: Initialize(mapload)
 // Parameters: None
 // Description: Set wires with requed type
-/obj/machinery/power/smes/buildable/New()
+/obj/machinery/power/smes/buildable/Initialize(mapload)
 	..()
 	src.wires = new /datum/wires/smes(src)
 

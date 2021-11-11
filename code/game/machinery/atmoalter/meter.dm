@@ -12,7 +12,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 15
 
-/obj/machinery/meter/New()
+/obj/machinery/meter/Initialize(mapload)
 	..()
 	src.target = locate(/obj/machinery/atmospherics/pipe) in loc
 	return 1
@@ -110,7 +110,7 @@
 
 // TURF METER - REPORTS A TILE'S AIR CONTENTS
 
-/obj/machinery/meter/turf/New()
+/obj/machinery/meter/turf/Initialize(mapload)
 	..()
 	src.target = loc
 	return 1

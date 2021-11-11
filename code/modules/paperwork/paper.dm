@@ -70,7 +70,7 @@
 	desc = "A gift card with a heart on the cover."
 	icon_state = "greetingcard_heart"
 
-/obj/item/paper/card/New()
+/obj/item/paper/card/Initialize(mapload)
 	..()
 	pixel_y = rand(-8, 8)
 	pixel_x = rand(-9, 9)

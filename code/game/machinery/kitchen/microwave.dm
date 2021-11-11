@@ -26,7 +26,7 @@
 *   Initialising
 ********************/
 
-/obj/machinery/microwave/New()
+/obj/machinery/microwave/Initialize(mapload)
 	..()
 	create_reagents(100)
 	if(!available_recipes)

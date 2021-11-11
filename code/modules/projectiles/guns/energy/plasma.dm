@@ -122,7 +122,7 @@
 		to_chat(user, SPAN_NOTICE("The [src.name] currently contain [container.reagents.total_volume] of chemicals."))
 
 // We want that every gun got a random chance of exploding.
-/obj/item/gun/energy/plasma/super_heavy/New()
+/obj/item/gun/energy/plasma/super_heavy/Initialize(mapload)
 	..()
 	explode_chance = rand(explode_chance_min, explode_chance_max) // If there's no coolant, it got a random chance to explode, the chance itself is random.
 
