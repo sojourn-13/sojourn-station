@@ -23,7 +23,7 @@ var/datum/controller/failsafe/Failsafe
 	var/master_iteration = 0
 	var/running = TRUE
 
-/datum/controller/failsafe/Initialize(mapload)
+/datum/controller/failsafe/New()
 	// Highlander-style: there can only be one! Kill off the old and replace it with the new.
 	if(Failsafe != src)
 		if(istype(Failsafe))

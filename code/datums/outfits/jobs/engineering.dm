@@ -9,7 +9,7 @@
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	backpack_contents = list(/obj/item/gun/matter/launcher/breaker = 1)
 
-/decl/hierarchy/outfit/job/engineering/Initialize(mapload)
+/decl/hierarchy/outfit/job/engineering/New()
 	..()
 	BACKPACK_OVERRIDE_ENGINEERING
 

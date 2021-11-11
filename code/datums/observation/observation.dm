@@ -62,7 +62,7 @@
 	var/list/event_sources = list()     // Associative list of event sources, each with their own associative list. This associative list contains an instance/list of procs to call when the event is raised.
 	var/list/global_listeners = list()  // Associative list of instances that listen to all events of this type (as opposed to events belonging to a specific source) and the proc to call.
 
-/decl/observ/Initialize(mapload)
+/decl/observ/New()
 	GLOB.all_observable_events += src
 	..()
 

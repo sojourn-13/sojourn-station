@@ -10,7 +10,7 @@
 	if(.)
 		log_and_message_admins("has triggered a falsified [src]", user)
 /*
-/datum/uplink_item/abstract/announcements/announce/Initialize(mapload)
+/datum/uplink_item/abstract/announcements/announce/New()
 	..()
 	name = "Colony-wide Announcement"
 	item_cost = 2

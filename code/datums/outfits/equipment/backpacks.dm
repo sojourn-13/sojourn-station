@@ -37,7 +37,7 @@
 	var/is_default = FALSE
 	var/list/tweaks
 
-/decl/backpack_outfit/Initialize(mapload)
+/decl/backpack_outfit/New()
 	tweaks = tweaks || list()
 
 	if(FLAGS_EQUALS(flags, BACKPACK_HAS_TYPE_SELECTION|BACKPACK_HAS_SUBTYPE_SELECTION))

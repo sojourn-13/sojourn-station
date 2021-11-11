@@ -3,7 +3,7 @@
 	var/icon_state = "Face"
 	var/name
 
-/decl/ai_holo/Initialize(mapload)
+/decl/ai_holo/New()
 	..()
 	name = icon_state
 

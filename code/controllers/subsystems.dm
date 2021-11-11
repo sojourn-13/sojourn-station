@@ -33,7 +33,7 @@
 	var/static/list/failure_strikes //How many times we suspect a subsystem type has crashed the MC, 3 strikes and you're out!
 
 //Do not override
-//datum/controller/subsystem/Initialize(mapload)
+//datum/controller/subsystem/New()
 //	return
 
 // Used to initialize the subsystem BEFORE the map has loaded
@@ -180,7 +180,7 @@
 	if(next_fire - world.time < wait)
 		next_fire += (wait*cycles)
 
-//usually called via datum/controller/subsystem/Initialize(mapload) when replacing a subsystem (i.e. due to a recurring crash)
+//usually called via datum/controller/subsystem/New() when replacing a subsystem (i.e. due to a recurring crash)
 //should attempt to salvage what it can from the old instance of subsystem
 /datum/controller/subsystem/Recover()
 

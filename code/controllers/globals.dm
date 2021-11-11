@@ -7,7 +7,7 @@ GLOBAL_REAL(GLOB, /datum/controller/global_vars)
 	var/list/gvars_datum_in_built_vars
 	var/list/gvars_datum_init_order
 
-/datum/controller/global_vars/Initialize(mapload)
+/datum/controller/global_vars/New()
 	if(GLOB)
 		CRASH("Multiple instances of global variable controller created")
 	GLOB = src

@@ -36,7 +36,7 @@
 	id_type = /obj/item/card/id/hydro
 	pda_type = /obj/item/modular_computer/pda
 
-/decl/hierarchy/outfit/job/service/gardener/Initialize(mapload)
+/decl/hierarchy/outfit/job/service/gardener/New()
 	..()
 	//backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/backpack/hydroponics;
 	//backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/hyd;
