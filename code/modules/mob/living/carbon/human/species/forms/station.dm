@@ -202,7 +202,7 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
@@ -215,7 +215,7 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
@@ -228,7 +228,7 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
@@ -241,7 +241,7 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
@@ -254,7 +254,7 @@
 	blood_color = "#191919"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
-	appearance_flags = HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR
 	death_sound = 'sound/machines/shutdown.ogg'
 	death_message = "falls over crashing to the ground as their electronic eyes fade off."
 	knockout_message = "has been knocked offline!"
