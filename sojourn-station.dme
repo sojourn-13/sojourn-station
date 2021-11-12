@@ -1252,6 +1252,7 @@
 #include "code\game\objects\structures\fireaxe_cabinet.dm"
 #include "code\game\objects\structures\firepits.dm"
 #include "code\game\objects\structures\girders.dm"
+#include "code\game\objects\structures\glass_floor.dm"
 #include "code\game\objects\structures\grille.dm"
 #include "code\game\objects\structures\inflatable.dm"
 #include "code\game\objects\structures\janicart.dm"
