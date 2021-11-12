@@ -2,17 +2,13 @@
 	These datums are used to handle ztravel in multiz/movement.dm. That is, vertical movement between
 	floors/zlevels. This system is designed to handle jetpacks, climbing, superhuman jumping, etc.
 	In future it can be expanded to flight and grappling hooks
-
 	Each vertical_travel_method datum details one possible method of motion
-
 	Each one contains a proc used to query whether the mob is currently able to ztravel via this method
 	Each one also contains an optional animation proc which is run asynchronously (in a spawn call)
 		This animation proc is used to do pixel offsets, scaling, etc
-
 	For now, one of every possible method is created and used to test, then deleted if it can't run
 	This design offers a future possibility of optimisation by having each mob store a list of methods
 	which they could possibly use, based on equipment. And only checking those
-
 	The #1 rule when writing a VTM datum: Always call parent, using .=..() at the top of your function
 	Unless you're reeeally sure what you're doing
 */
@@ -121,6 +117,15 @@
 	M.set_plane(prev_plane)
 	if (travelsound)
 		travelsound.stop()
+	M.used_now = FALSE
+
+
+/datum/vertical_travel_method/proc/delete_self()
+	var/mob/owner = M
+	if(ismob(owner))
+		spawn(3)
+		owner.current_vertical_travel_method = null
+	qdel(src)
 
 
 /datum/vertical_travel_method/proc/calculate_time()
@@ -136,29 +141,34 @@
 //Combines testing and starting. Autostarts if possible
 /datum/vertical_travel_method/proc/attempt(var/dir)
 	.=can_perform(dir)
-	if (. == TRUE)
+	if (.)
 		spawn()
 			start(dir)
-		return TRUE
-	else if (istext(.))
-		to_chat(M, SPAN_NOTICE(.))
-	return FALSE
 
 /*
 	Can perform checks whether its possible to do this ztravel method.
 	Naturally the return value can be true or false, but it can also be a text string.
 	In this case, it's treated as a failure with an error message, which will be shown to the user.
-
 	This should be used for rare edge cases where someone is almost able to do a transition, but minor details ruin it
 	Like if they're wearing a jetpack but it's empty or not turned on.
 	Generally, use a message in a case where a user would expect it to work, to explain why it doesn't.
 */
 /datum/vertical_travel_method/proc/can_perform(var/dir)
+	if(M.used_now)
+		to_chat(M, SPAN_NOTICE("You are busy at the moment."))
+		return FALSE
+
 	if (dir != direction)
 		direction = dir
 
 	if (!get_destination())
+		to_chat(M, SPAN_NOTICE("There is nothing in that direction."))
 		return FALSE
+
+	if(ismob(M))
+		var/mob/O = M
+		if(O.resting)
+			return FALSE
 
 	return TRUE
 
@@ -168,6 +178,7 @@
 	calculate_time()
 	announce_start()
 	start_time = world.time
+	M.used_now = TRUE
 	spawn()
 		start_animation()
 
@@ -188,6 +199,8 @@
 	if (prob(slip_chance))
 		slip()
 
+	delete_self()
+
 /datum/vertical_travel_method/proc/finish()
 	animating = FALSE
 	reset_values()
@@ -195,7 +208,7 @@
 	//this is bullshit, but animation is always halted on z change. Vars such as floating remain the same
 	//So we gotta "prepare" it right after successful zmove
 	var/mob/mob = M
-	if(istype(mob, /mob))
+	if(ismob(mob))
 		mob.stop_floating()
 		mob.update_floating()
 	// end_of_dirty_bullshit.dm
@@ -204,6 +217,7 @@
 	if (prob(slip_chance))
 		slip()
 	announce_end()
+	delete_self()
 
 /datum/vertical_travel_method/proc/get_destination()
 	destination = (direction == UP) ? GetAbove(origin) : GetBelow(origin)
