@@ -1773,6 +1773,7 @@
 #include "code\modules\genetics\recipes\fail_recipes.dm"
 #include "code\modules\genetics\recipes\milk_recipes.dm"
 #include "code\modules\genetics\recipes\mutation_recipe_defines.dm"
+#include "code\modules\genetics\recipes\sproachder_recipes.dm"
 #include "code\modules\ghosttrap\trap.dm"
 #include "code\modules\goonchat\assets.dm"
 #include "code\modules\goonchat\browserOutput.dm"
