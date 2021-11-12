@@ -24,7 +24,7 @@ var/global/datum/shuttle_controller/shuttle_controller
 		if(istype(C.program, /datum/computer/file/embedded_program/docking))
 			C.program.tag = null //clear the tags, 'cause we don't need 'em anymore
 
-/datum/shuttle_controller/Initialize(mapload)
+/datum/shuttle_controller/New()
 	shuttles = list()
 	process_shuttles = list()
 

@@ -18,7 +18,7 @@
 	var/list/standard_security_levels               // List of all normally selectable security levels
 	var/list/comm_console_security_levels           // List of all selectable security levels for the command and communication console - basically standard_security_levels - 1
 
-/decl/security_state/Initialize(mapload)
+/decl/security_state/New()
 	// Setup the severe security level
 	if(!(severe_security_level in all_security_levels))
 		severe_security_level = all_security_levels[all_security_levels.len]

@@ -4,22 +4,22 @@
 	var/list/datum/alarm_handler/alarm_handlers // The particular list of alarm handlers this alarm monitor should present to the user.
 	available_to_ai = FALSE
 
-/datum/nano_module/alarm_monitor/Initialize(mapload)
+/datum/nano_module/alarm_monitor/New()
 	..()
 	alarm_handlers = list()
 
 /datum/nano_module/alarm_monitor/all
 	available_to_ai = TRUE
 
-/datum/nano_module/alarm_monitor/all/Initialize(mapload)
+/datum/nano_module/alarm_monitor/all/New()
 	..()
 	alarm_handlers = SSalarm.all_handlers
 
-/datum/nano_module/alarm_monitor/engineering/Initialize(mapload)
+/datum/nano_module/alarm_monitor/engineering/New()
 	..()
 	alarm_handlers = list(atmosphere_alarm, camera_alarm, fire_alarm, power_alarm)
 
-/datum/nano_module/alarm_monitor/security/Initialize(mapload)
+/datum/nano_module/alarm_monitor/security/New()
 	..()
 	alarm_handlers = list(camera_alarm, motion_alarm)
 

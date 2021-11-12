@@ -44,7 +44,7 @@
 			light = new /datum/light_source(src, .)
 
 
-/atom/Initialize(mapload)
+/atom/New()
 	. = ..()
 
 	if(light_power && light_range)

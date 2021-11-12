@@ -23,7 +23,7 @@
 	var/static_light = 0
 	var/static_environ
 
-/area/Initialize(mapload)
+/area/New()
 	icon_state = ""
 	layer = AREA_LAYER
 	uid = ++global_uid

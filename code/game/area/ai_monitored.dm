@@ -3,7 +3,7 @@
 	var/obj/machinery/camera/motioncamera = null
 
 
-/area/ai_monitored/Initialize(mapload)
+/area/ai_monitored/New()
 	..()
 	// locate and store the motioncamera
 	spawn (20) // spawn on a delay to let turfs/objs load
