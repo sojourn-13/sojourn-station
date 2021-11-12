@@ -593,7 +593,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Colours"] = "platecarrier_mil"
-	options["Deseret Combat"] = "platecarrier_tan_mil"
+	options["Desert Combat"] = "platecarrier_tan_mil"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -625,7 +625,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Colours"] = "platecarrier_mil_fullbody"
-	options["Deseret Combat"] = "platecarrier_tan_mil_fullbody"
+	options["Desert Combat"] = "platecarrier_tan_mil_fullbody"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -656,7 +656,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Colours"] = "platecarrier_corpsman"
-	options["Deseret Combat"] = "platecarrier_tan_corpsman"
+	options["Desert Combat"] = "platecarrier_tan_corpsman"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_corpsman"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -688,7 +688,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Colours"] = "platecarrier_corpsman_fullbody"
-	options["Deseret Combat"] = "platecarrier_tan_corpsman_fullbody"
+	options["Desert Combat"] = "platecarrier_tan_corpsman_fullbody"
 	options["Woodlands Blackshield Combat"] = "platecarrier_green_corpsman_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -898,7 +898,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Colours"] = "commander_mil"
-	options["Deseret Combat"] = "commander_tan"
+	options["Desert Combat"] = "commander_tan"
 	options["Woodlands Combat"] = "commander_green"
 	options["Woodlands Blackshield Combat"] = "commander_green_mil"
 
