@@ -55757,7 +55757,12 @@
 "mLm" = (
 /obj/effect/window_lwall_spawn,
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/dark/techfloor,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "mLM" = (
 /obj/machinery/seed_storage/garden,
@@ -57172,6 +57177,11 @@
 	opacity = 0
 	},
 /area/nadezhda/hallway/side/f2section1)
+"naV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/medical/genetics)
 "naX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
@@ -67039,6 +67049,16 @@
 /obj/random/gun_combat/low_chance,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
+"pus" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking{
+	name = "\improper Upper Research Hallway"
+	})
 "puH" = (
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -83061,6 +83081,11 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"sZl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/research,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/medical/genetics)
 "sZo" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/effect/overlay/water,
@@ -85197,10 +85222,10 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
-/obj/item/storage/box,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/recharger/industrial,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/genetics)
 "txh" = (
@@ -92817,7 +92842,7 @@
 /area/nadezhda/command/merchant)
 "vfX" = (
 /obj/structure/table/reinforced,
-/obj/machinery/recharger/industrial,
+/obj/random/toy/action_figure_onlymoebius,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
 "vge" = (
@@ -96789,9 +96814,8 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -27;
-	req_one_access = newlist();
-	target_temperature = 313.15
+	icon_state = "alarm0";
+	pixel_x = -26
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
@@ -172975,7 +172999,7 @@ axb
 fqL
 fqL
 xVd
-udx
+naV
 txc
 oZJ
 elK
@@ -174181,7 +174205,7 @@ sFI
 sFI
 sFI
 oZJ
-lOV
+sZl
 kgH
 kgH
 tmD
@@ -175204,7 +175228,7 @@ kgH
 kgH
 azS
 pNn
-xAN
+pus
 dQX
 emo
 rLA
