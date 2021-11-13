@@ -9,10 +9,15 @@
 	var/board = list()
 	var/selected = -1
 
-/obj/item/board/New()
+/obj/item/storage/pill_bottle/chechker
+	name = "bag for checkers"
+	desc = "It's a small bag with checkers inside."
+	icon = 'icons/obj/dice.dmi'
+	icon_state = "dicebag"
+
+/obj/item/storage/pill_bottle/chechker/New()
 	..()
-	var i
-	for(i = 0; i < 12; i++)
+	for(var/i = 1 to 16)
 		new /obj/item/checker(src.loc)
 		new /obj/item/checker/red(src.loc)
 
@@ -167,13 +172,39 @@ obj/item/board/attackby(obj/item/I as obj, mob/user as mob)
 			board_icons -= null
 	src.updateDialog()
 
-/obj/item/checker/
+/obj/item/checker
 	name = "black checker"
 	desc = "It is plastic and shiny."
 	icon = 'icons/obj/pieces.dmi'
-	icon_state = "checker_black"
+	icon_state = "checker"
 	w_class = ITEM_SIZE_TINY
+	var/colour_team = "_black"
+	var/king = FALSE
 
 /obj/item/checker/red
 	name = "red checker"
-	icon_state = "checker_red"
+	colour_team = "_red"
+
+/obj/item/checker/New()
+	..()
+	update_icon()
+
+/obj/item/checker/attack_self(var/mob/user as mob)
+	user.visible_message("[user] flips \the [src]!")
+	if(king)
+		king = FALSE
+	else
+		king = TRUE
+	update_icon()
+
+/obj/item/checker/update_icon()
+	..()
+
+	if(king)
+		king = FALSE
+		icon_state = "checker[colour_team]_king"
+	else
+		king = TRUE
+		icon_state = "checker[colour_team]"
+
+

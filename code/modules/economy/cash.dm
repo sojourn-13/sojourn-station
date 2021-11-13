@@ -66,6 +66,8 @@
 				credit_type = "_alt"
 			if(prob(20))
 				credit_type = "_coin"
+			if(prob(10))
+				credit_type = "_crushed"
 			var/image/banknote = image('icons/obj/items.dmi', "[i][credit_type]")
 			var/matrix/M = matrix()
 			M.Translate(rand(-6, 6), rand(-4, 8))
@@ -78,6 +80,8 @@
 			credit_type = "_alt"
 		if(prob(20))
 			credit_type = "_coin"
+		if(prob(10))
+			credit_type = "_crushed"
 		var/image/banknote = image('icons/obj/items.dmi', "1[credit_type]")
 		var/matrix/M = matrix()
 		M.Translate(rand(-6, 6), rand(-4, 8))
@@ -135,7 +139,7 @@
 	return stats
 */
 
-//Sprites by Près de l'oiseau#2625
+//Sprites by Près de l'oiseau#2625 (alts, coins) && Ceurelian#3684 (defaults, crushed)
 /obj/item/spacecash/bundle/c1
 	name = "1 credit"
 	icon_state = "1"
@@ -143,10 +147,12 @@
 	worth = 1
 
 	New()
-		if(prob(33))
+		if(prob(30))
 			icon_state = "1_alt"
-		if(prob(33))
+		if(prob(30))
 			icon_state = "1_coin"
+		if(prob(10))
+			icon_state = "1_crushed"
 
 /obj/item/spacecash/bundle/c10
 	name = "10 credits"
@@ -155,10 +161,12 @@
 	worth = 10
 
 	New()
-		if(prob(33))
+		if(prob(30))
 			icon_state = "10_alt"
-		if(prob(33))
+		if(prob(30))
 			icon_state = "10_coin"
+		if(prob(10))
+			icon_state = "10_crushed"
 
 /obj/item/spacecash/bundle/c20
 	name = "20 credits"
@@ -167,10 +175,12 @@
 	worth = 20
 
 	New()
-		if(prob(33))
+		if(prob(30))
 			icon_state = "20_alt"
-		if(prob(33))
+		if(prob(30))
 			icon_state = "20_coin"
+		if(prob(10))
+			icon_state = "20_crushed"
 
 /obj/item/spacecash/bundle/c50
 	name = "50 credits"
@@ -179,10 +189,12 @@
 	worth = 50
 
 	New()
-		if(prob(33))
+		if(prob(30))
 			icon_state = "50_alt"
-		if(prob(33))
+		if(prob(30))
 			icon_state = "50_coin"
+		if(prob(10))
+			icon_state = "50_crushed"
 
 /obj/item/spacecash/bundle/c100
 	name = "100 credits"
@@ -191,10 +203,12 @@
 	worth = 100
 
 	New()
-		if(prob(33))
+		if(prob(30))
 			icon_state = "100_alt"
-		if(prob(33))
+		if(prob(30))
 			icon_state = "100_coin"
+		if(prob(10))
+			icon_state = "100_crushed"
 
 /obj/item/spacecash/bundle/c200
 	name = "200 credits"
@@ -203,10 +217,12 @@
 	worth = 200
 
 	New()
-		if(prob(33))
+		if(prob(30))
 			icon_state = "200_alt"
-		if(prob(33))
+		if(prob(30))
 			icon_state = "200_coin"
+		if(prob(10))
+			icon_state = "200_crushed"
 
 /obj/item/spacecash/bundle/c500
 	name = "500 credits"
@@ -215,10 +231,12 @@
 	worth = 500
 
 	New()
-		if(prob(33))
+		if(prob(30))
 			icon_state = "500_alt"
-		if(prob(33))
+		if(prob(30))
 			icon_state = "500_coin"
+		if(prob(10))
+			icon_state = "500_crushed"
 
 /obj/item/spacecash/bundle/c1000
 	name = "1000 credits"
@@ -227,10 +245,12 @@
 	worth = 1000
 
 	New()
-		if(prob(33))
+		if(prob(30))
 			icon_state = "1000_alt"
-		if(prob(33))
+		if(prob(30))
 			icon_state = "1000_coin"
+		if(prob(10))
+			icon_state = "1000_crushed"
 
 proc/spawn_money(var/sum, spawnloc, mob/living/carbon/human/human_user as mob)
 	if(sum in list(1000,500,200,100,50,20,10,1))
