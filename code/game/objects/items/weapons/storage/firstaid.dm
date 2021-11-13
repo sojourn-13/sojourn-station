@@ -489,13 +489,14 @@
 	w_class = ITEM_SIZE_SMALL
 	can_hold = list(/obj/item/reagent_containers/pill,
 		/obj/item/dice,
+		/obj/item/checker,
 		/obj/item/paper
 		)
 	allow_quick_gather = TRUE
 	use_to_pickup = TRUE
 	use_sound = null
 	matter = list(MATERIAL_PLASTIC = 1)
-	max_storage_space = 12
+	max_storage_space = 32
 
 /obj/item/storage/pill_bottle/antitox
 	name = "bottle of Dylovene pills"

@@ -63,7 +63,7 @@ var/global/list/modifications_types = list(
 			to_chat(usr, "[name] can't be attached to [parent.name]")
 			return FALSE
 
-	if(department_specific.len)
+	if(department_specific.len && !(department_specific ~= ALL_DEPARTMENTS))
 		if(H && H.mind)
 			var/department = H.mind.assigned_job.department
 			if(!department || !department_specific.Find(department))

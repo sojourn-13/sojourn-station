@@ -582,12 +582,61 @@
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
 
+/obj/item/clothing/suit/armor/platecarrier/militia/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "platecarrier_mil"
+	options["Desert Combat"] = "platecarrier_tan_mil"
+	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /obj/item/clothing/suit/armor/platecarrier/militia/full
 	name = "blackshield full body plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, as well as additional shoulderpads and kneepads, decorated with the IFF stripes of Blackshield."
 	icon_state = "platecarrier_mil_fullbody"
 	item_state = "platecarrier_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
+/obj/item/clothing/suit/armor/platecarrier/militia/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "platecarrier_mil_fullbody"
+	options["Desert Combat"] = "platecarrier_tan_mil_fullbody"
+	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman
 	name = "Corpsman plate carrier"
@@ -596,6 +645,30 @@
 	item_state = "platecarrier_corpsman"
 	armor = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0)
 
+/obj/item/clothing/suit/armor/platecarrier/corpsman/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "platecarrier_corpsman"
+	options["Desert Combat"] = "platecarrier_tan_corpsman"
+	options["Woodlands Blackshield Combat"] = "platecarrier_green_corpsman"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/platecarrier/corpsman/full
 	name = "Corpsman full body plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman liverly and has a stain resistant coating as well as additional shoulderpads and kneepads for added protection."
@@ -603,6 +676,30 @@
 	item_state = "platecarrier_corpsman_fullbody"
 	armor = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
+/obj/item/clothing/suit/armor/platecarrier/corpsman/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "platecarrier_corpsman_fullbody"
+	options["Desert Combat"] = "platecarrier_tan_corpsman_fullbody"
+	options["Woodlands Blackshield Combat"] = "platecarrier_green_corpsman_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/platecarrier/green
 	name = "green plate carrier"
@@ -672,6 +769,29 @@
 	icon_state = "flakvest_mil"
 	item_state = "flakvest_mil"
 
+/obj/item/clothing/suit/armor/flackvest/militia/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "flakvest_mil"
+	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/flackvest/militia/full
 	name = "blackshield full flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
@@ -680,6 +800,30 @@
 	item_state = "flakvest_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	slowdown = 0.6 // Bulkier due to protecting more
+
+/obj/item/clothing/suit/armor/flackvest/militia/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "flakvest_mil_fullbody"
+	options["Woodlands Blackshield Combat"] = "flakvest_green_mil_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/suit/armor/flackvest/green
 	name = "flak vest"
@@ -754,8 +898,9 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Colours"] = "commander_mil"
-	options["Deseret Combat"] = "commander_tan"
+	options["Desert Combat"] = "commander_tan"
 	options["Woodlands Combat"] = "commander_green"
+	options["Woodlands Blackshield Combat"] = "commander_green_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

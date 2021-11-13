@@ -40,6 +40,31 @@
 			This one bears the IFF stripes of the Blackshield."
 	icon_state = "helmet_mil_alt"
 
+/obj/item/clothing/head/helmet/ballistic/militia/proc/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "helmet_mil_alt"
+	options["Desert Combat"] = "helmet_tan_mil"
+	options["Woodlands Blackshield Combat"] = "helmet_green_mil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /obj/item/clothing/head/helmet/ballistic/green
 	name = "green ballistic helmet"
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
