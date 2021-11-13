@@ -96814,9 +96814,8 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -27;
-	req_one_access = newlist();
-	target_temperature = 313.15
+	icon_state = "alarm0";
+	pixel_x = -26
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
