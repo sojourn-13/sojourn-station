@@ -1,8 +1,8 @@
 /datum/job/clubmanager
 	title = "Bartender"
 	flag = CLUBMANAGER
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_CIVILIAN
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -37,8 +37,8 @@
 /datum/job/clubworker
 	title = "Chef"
 	flag = CLUBWORKER
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_CIVILIAN
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -74,8 +74,8 @@
 /datum/job/hydro
 	title = "Gardener"
 	flag = BOTANIST
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_CIVILIAN
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -114,8 +114,8 @@
 /datum/job/artist
 	title = "Artist"
 	flag = ARTIST
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_CIVILIAN
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -154,8 +154,8 @@
 /datum/job/janitor
 	title = "Janitor"
 	flag = JANITOR
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_CIVILIAN
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
