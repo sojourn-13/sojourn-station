@@ -82,7 +82,7 @@
 	name = "Nadezhda Contractors"
 	id = DEPARTMENT_CIVILIAN
 	account_budget = 3000
-	account_initial_balance = 500
+	account_initial_balance = 3000
 	funding_type = FUNDING_EXTERNAL
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
 
