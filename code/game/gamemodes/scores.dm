@@ -154,6 +154,11 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	var/obj/item/cell/large/high/HC = /obj/item/cell/large/high
 	var/min_charge = initial(HC.maxcharge) * 0.6
 
+	//calculate guild profits in a sane way
+	var/ending_balance = get_account_credits(department_accounts[DEPARTMENT_LSS])
+	var/datum/department/guild/guild_var = new/datum/department/guild
+	GLOB.supply_profit = ending_balance - guild_var.account_initial_balance
+
 	//Check station's power levels
 	for(var/area/A in ship_areas)
 		if(A.fire || A.atmosalm)
@@ -210,7 +215,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	GLOB.score_neotheology_faction_item_loss -= GLOB.neotheology_faction_item_loss * 150 //300
 	GLOB.neotheology_objectives_score = GLOB.neotheology_objectives_completed * 25 // ~100
 	GLOB.score_mess -= GLOB.dirt_areas * 25 //~250
-	GLOB.biomatter_score = round(GLOB.biomatter_neothecnology_amt/50) //350?  //target_max~350//
+	GLOB.biomatter_score = round(GLOB.biomatter_neothecnology_amt/10) //350?  //target_max~1750//
 	GLOB.grup_ritual_score += GLOB.grup_ritual_performed * 5
 	GLOB.new_neothecnology_convert_score = GLOB.new_neothecnology_convert * 50 // ~150-300
 
@@ -239,9 +244,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	//Guild score
 	GLOB.score_guild_faction_item_loss -= 150 * GLOB.guild_faction_item_loss // ~-300
 	GLOB.guild_objectives_score = GLOB.guild_objectives_completed * 25 // ~100
-	//calculate guild profits in a sane way
-	var/ending_balance = get_account_credits(department_accounts[DEPARTMENT_LSS])
-	GLOB.supply_profit = ending_balance - 15000
+	GLOB.guild_profit_score	= round(GLOB.supply_profit/50) // ? review it //target_max~500//
 	GLOB.guild_shared_gears_score = GLOB.guild_shared_gears * 30 // ~150-300
 
 	GLOB.guild_score = GLOB.initial_guild_score + GLOB.guild_objectives_score + GLOB.guild_profit_score
