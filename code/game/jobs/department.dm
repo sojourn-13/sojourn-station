@@ -72,7 +72,7 @@
 	id = DEPARTMENT_SECURITY
 	funding_type = FUNDING_EXTERNAL
 	account_initial_balance = 20000 //20k do to being state funded
-	account_budget = 1000 //Pays for a few people, likely the most played department, we dont require them to really do trades
+	account_budget = 3500 //Really is the most played department has most slots and isnt exspected to trade much at all
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
