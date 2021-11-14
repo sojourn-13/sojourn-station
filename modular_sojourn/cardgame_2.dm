@@ -41,12 +41,14 @@
 	name = "squirl card box"
 	desc = "A box of cards that only have Squirl CarpCarpCo Cards."
 	card_target =  /obj/item/card_carp/squirl
+	icon_state = "folly_deck"
 	endless = TRUE
 
 /obj/item/cardholder/shell
 	name = "shell card box"
 	desc = "A box of cards that only have Shell CarpCarpCo Cards."
 	card_target =  /obj/item/card_carp/shell
+	icon_state = "folly_deck"
 	endless = TRUE
 
 /obj/item/card_carp
@@ -72,14 +74,14 @@
 	When a player takes damage, the scale or tally system gets moved one tords the person, when the a player has 5 damage to them, they lose."
 	var/real_desc = ""
 	icon = 'modular_sojourn/cardgame_sprites.dmi'
-	icon_state = "card_blank"
+	icon_state = "cardblank"
 	var/cant_box = FALSE
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/card_carp/squirl
 	name = "Squirl"
 	desc = "A Squirl, Health is 1, Damage is 0, No spawn requirements."
-	icon_state = "card_squirls"
+	icon_state = "card_squirl"
 
 /obj/item/card_carp/shell
 	name = "Shell"
@@ -96,190 +98,195 @@
 	desc = "A Goat, Health is 2, Damage is 0, No spawn requirements. Gives 3 blood."
 	icon_state = "card_goat"
 
+/obj/item/card_carp/adder
+	name = "Adder"
+	desc = "A Goat, Health is 1, Damage is 0, Requires 1 blood. On attack, removes any card it hits."
+	icon_state = "card_adder"
+
 /obj/item/card_carp/cat
 	name = "Cat"
 	desc = "A Feline, Health is 1, Damage is 0, No spawn requirements. Can give blood without removing itself."
-	icon_state = "card_goat"
+	icon_state = "card_cat"
 
-/obj/item/card_carp/stoat
-	name = "Stoat"
-	desc = "A Stoat, Health is 3, Damage is 1, Requires 1 blood."
-	icon_state = "card_stoat"
+/obj/item/card_carp/stote
+	name = "Stote"
+	desc = "A Stote, Health is 3, Damage is 1, Requires 1 blood."
+	icon_state = "card_stote"
 
 /obj/item/card_carp/stinkbug
 	name = "Stink Bug"
 	desc = "A Stink Bug, Health is 2, Damage is 1, Requires 2 bodies. Rebuffs opposing card by 1 damage."
-	icon_state = "card_goat"
+	icon_state = "card_stinkbug"
 
 /obj/item/card_carp/stunted_wolf
 	name = "Stunted Wolf"
 	desc = "Sad looking Wolf, Health is 2, Damage is 2, Requires 1 bodies."
-	icon_state = "card_goat"
+	icon_state = "card_stuntedwolf"
 
 /obj/item/card_carp/croaker_lord
 	name = "Bullfrog"
 	desc = "A Bullfrog, Health is 1, Damage is 3, Requires 1 blood."
-	icon_state = "card_goat"
+	icon_state = "card_frog"
 
 /obj/item/card_carp/wolf
 	name = "Wolf"
 	desc = "A Wolf, Health is 2, Damage is 3, Requires 2 blood."
-	icon_state = "card_goat"
+	icon_state = "card_wolf"
 
 /obj/item/card_carp/manti
 	name = "Mantis"
 	desc = "A Mantis, Health is 1, Damage is 1, Requires 1 blood. Bifurcated Strikes."
-	icon_state = "card_goat"
+	icon_state = "card_mantis"
 
 /obj/item/card_carp/manti_lord
 	name = "Mantis Lord"
 	desc = "A Mantis, Health is 1, Damage is 1, Requires 2 blood, 2 bodies. Trifurcated Strike." //Cant play this at turn one you cheater >:T
-	icon_state = "card_goat"
+	icon_state = "card_mantislord"
 
 /obj/item/card_carp/mole
 	name = "Mole"
 	desc = "A Mole, Health is 5, Damage is 0, Requires 1 blood. If a card unopposed attacks a player, move to block."
-	icon_state = "card_goat"
+	icon_state = "card_mole"
 
 /obj/item/card_carp/mole_man
 	name = "Mole Man"
 	desc = "A Mole, Health is 12, Damage is 0, Requires 2 blood. If a card unopposed attacks a player, move to block."
-	icon_state = "card_goat"
+	icon_state = "card_moleman"
 
 /obj/item/card_carp/coyote
 	name = "Coyote"
 	desc = "A Coyote, Health is 1, Damage is 2, Requires 4 bodies."
-	icon_state = "card_goat"
+	icon_state = "card_coyote"
 
 /obj/item/card_carp/elk
 	name = "Elk"
 	desc = "A Elk, Health is 4, Damage is 2, Requires 2 blood."
-	icon_state = "card_goat"
+	icon_state = "card_elk_spawn"
 
 /obj/item/card_carp/magpie
 	name = "Magpie"
 	desc = "A Magpie, Health is 1, Damage is 1, Requires 1 blood. Flying."
-	icon_state = "card_goat"
+	icon_state = "card_magpie"
 
 /obj/item/card_carp/river_otter
 	name = "River Otter"
 	desc = "A River Otter, Health is 1, Damage is 1, Requires 1 blood. If a card unopposed attacks a player, move to block."
-	icon_state = "card_goat"
+	icon_state = "card_riverotter"
 
 /obj/item/card_carp/grizzly
 	name = "Grizzly"
 	desc = "A Grizzly, Health is 6, Damage is 4, Requires 3 blood."
-	icon_state = "card_goat"
+	icon_state = "card_bear"
 
 /obj/item/card_carp/great_white
 	name = "Great White Carp"
 	desc = "A Great White Carp, Health is 4, Damage is 5, Requires 3 blood. If a card unopposed attacks a player, move to block."
-	icon_state = "card_goat"
+	icon_state = "card_carp"
 
 /obj/item/card_carp/kingfisher
 	name = "Kingfisher"
 	desc = "A Kingfisher, Health is 12, Damage is 2, Requires 1 blood. If a card unopposed attacks a player, move to block."
-	icon_state = "card_goat"
+	icon_state = "card_kingfisher"
 
 /obj/item/card_carp/sparrow
 	name = "Sparrow"
 	desc = "A Sparrow, Health is 1, Damage is 2, Requires 1 blood. Flying."
-	icon_state = "card_goat"
+	icon_state = "card_sparrow"
 
 /obj/item/card_carp/turkey_vulture
 	name = "Turkey Vulture"
 	desc = "A Turkey Vulture, Health is 3, Damage is 3, Requires 8 bodies. Flying."
-	icon_state = "card_goat"
+	icon_state = "card_turnkyvaulter"
 
 /obj/item/card_carp/warren
 	name = "Warren"
 	desc = "A Warren, Health is 3, Damage is 0, Requires 1 blood. On death return to hand."
-	icon_state = "card_goat"
+	icon_state = "card_warren"
 
 /obj/item/card_carp/rabbit
 	name = "Rabbit"
 	desc = "A Rabbit, Health is 1, Damage is 0, No Requirements."
-	icon_state = "card_goat"
+	icon_state = "card_rabbit"
 
 /obj/item/card_carp/bat
 	name = "Bat"
 	desc = "A Bat, Health is 1, Damage is 2, Requires 1 body. Flying"
-	icon_state = "card_goat"
+	icon_state = "card_bat"
 
 /obj/item/card_carp/daus
 	name = "Daus"
 	desc = "A Daus, Health is 2, Damage is 2, Requires 2 blood. On death, draw an extra card."
-	icon_state = "card_goat"
+	icon_state = "card_daus"
 
 /obj/item/card_carp/geck
 	name = "Geck"
 	desc = "A Geck, Health is 1, Damage is 1, No Requirements."
-	icon_state = "card_goat"
+	icon_state = "card_aplha"
 
 /obj/item/card_carp/larva
 	name = "Larva"
 	desc = "A Larva, Health is 3, Damage is 0, Requires 1 body. Gives 2 blood."
-	icon_state = "card_goat"
+	icon_state = "card_larva"
 
 /obj/item/card_carp/pupa
 	name = "Pupa"
 	desc = "A Pupa, Health is 3, Damage is 1, Requires 3 body. Gives 1 blood per larva in hand."
-	icon_state = "card_goat"
+	icon_state = "card_pupa"
 
 /obj/item/card_carp/mothman
 	name = "Mothman"
 	desc = "A Mothman, Health is 1 Per larva In hand, Damage is 1 per Pupa in hand, No Requirement. Gives 1 blood per corps."
-	icon_state = "card_goat"
+	icon_state = "card_mothman"
 
 /obj/item/card_carp/beaver
 	name = "Beaver"
 	desc = "A Beaver, Health is 1, Damage is 3, Requires 2 blood."
-	icon_state = "card_goat"
+	icon_state = "card_bever"
 
 /obj/item/card_carp/wyrm
 	name = "Ring Wyrm"
 	desc = "A Wyrm, Health is 1, Damage is 0, Requires 1 blood. On death, kills attaking card."
-	icon_state = "card_goat"
+	icon_state = "card_ring"
 
 /obj/item/card_carp/cockroach
-	name = "Cockroach"
-	desc = "A Cockroach, Health is 1, Damage is 1, Requires 2 bodies. On death, return to hand."
-	icon_state = "card_goat"
+	name = "Roachling"
+	desc = "A Roachling, Health is 1, Damage is 1, Requires 2 bodies. On death, return to hand."
+	icon_state = "card_roach"
 
 /obj/item/card_carp/ant
 	name = "Ant"
 	desc = "An Ant, Health is 1, Damage is 1 per Ant on field, Requires 1 blood."
-	icon_state = "card_goat"
+	icon_state = "card_workerant"
 
 /obj/item/card_carp/antqueen
 	name = "Queen Ant"
 	desc = "A Queen Ant, Health is 1 per Ant on field, Damage is 1, Requires 1 body."
-	icon_state = "card_goat"
+	icon_state = "card_queen"
 
 /obj/item/card_carp/rpelt
 	name = "Rabbet Pelt"
 	desc = "A small pelt, Health is 3, Damage is 0, Requires 2 bodies. Can be placed on any open field slot. Does not move."
-	icon_state = "card_goat"
+	icon_state = "card_rabbit_pelt"
 
 /obj/item/card_carp/dpelt
 	name = "Deer Pelt"
 	desc = "A medium pelt, Health is 5, Damage is 0, Requires 4 bodies. Can be placed on any open field slot. Does not move."
-	icon_state = "card_goat"
+	icon_state = "card_wolf_pelt"
 
 /obj/item/card_carp/gpelt
 	name = "Gilded Pelt"
 	desc = "A gilded pelt, Health is 10, Damage is 0, Requires 6 bodies. Can be placed on any open field slot. Does not move."
-	icon_state = "card_goat"
+	icon_state = "card_pelt"
 
 /obj/item/card_carp/tree
 	name = "Tree"
 	desc = "A Tree, Health is 10, Damage is 0, Cant be placed. Does not move. Blocks Flying."
-	icon_state = "card_goat"
+	icon_state = "card_13"
 
 /obj/item/card_carp/rock
 	name = "Rock"
 	desc = "A Rock, Health is 7, Damage is 0, Cant be placed. Does not move."
-	icon_state = "card_goat"
+	icon_state = "card_child"
 
 /obj/random/card_carp
 	name = "random card carp"
@@ -287,13 +294,14 @@
 
 /obj/random/card_carp/item_to_spawn()
 	return pickweight(list(
-				/obj/item/card_carp/goat = 5,
+				/obj/item/card_carp/goat = 1,
 				/obj/item/card_carp/cat = 7,
-				/obj/item/card_carp/stoat = 12,
+				/obj/item/card_carp/stote = 12,
 				/obj/item/card_carp/stinkbug = 10,
 				/obj/item/card_carp/stunted_wolf = 13,
 				/obj/item/card_carp/croaker_lord = 15,
 				/obj/item/card_carp/wolf = 17,
+				/obj/item/card_carp/adder = 5,
 				/obj/item/card_carp/manti = 10,
 				/obj/item/card_carp/manti_lord = 8,
 				/obj/item/card_carp/mole = 10,
@@ -303,7 +311,7 @@
 				/obj/item/card_carp/magpie = 16,
 				/obj/item/card_carp/river_otter = 15,
 				/obj/item/card_carp/grizzly = 14,
-				/obj/item/card_carp/great_white = 1,
+				/obj/item/card_carp/great_white = 2,
 				/obj/item/card_carp/kingfisher = 2,
 				/obj/item/card_carp/sparrow = 12,
 				/obj/item/card_carp/turkey_vulture = 12,
@@ -366,6 +374,10 @@
 	icon_state = "scale"
 	var/tally = 0 //Number
 	w_class = ITEM_SIZE_SMALL
+
+/obj/item/scale/New()
+	..()
+	update_icon()
 
 /obj/item/scale/examine(mob/user)
 	..()
