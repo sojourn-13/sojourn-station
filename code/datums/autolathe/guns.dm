@@ -172,6 +172,12 @@
 	name = "BR .35 \"Grease Gun\" assault SMG"
 	build_path = /obj/item/gun/projectile/automatic/greasegun
 
+// .40 S M G S
+
+/datum/design/autolathe/gun/vector
+	name = "SA \"Trajectory\" .40 Magnum SMG"
+	build_path = /obj/item/gun/projectile/automatic/vector
+
 //S H O T G U N S
 
 /datum/design/autolathe/gun/doublebarrel

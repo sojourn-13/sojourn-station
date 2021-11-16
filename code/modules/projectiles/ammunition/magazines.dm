@@ -214,6 +214,50 @@
 	icon_state = "magnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
+////.40 SMG////
+
+/obj/item/ammo_magazine/smg_magnum_40
+	name = "smg magnum magazine (.40 Magnum)"
+	desc = "A 30 round magazine marked for .40 Magnum."
+	icon_state = "smg_magnum"
+	origin_tech = list(TECH_COMBAT = 3)
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_SMG
+	matter = list(MATERIAL_STEEL = 4)
+	caliber = CAL_MAGNUM
+	ammo_type = /obj/item/ammo_casing/magnum_40
+	max_ammo = 30
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/smg_magnum_40/empty
+	icon_state = "smg_magnum"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/smg_magnum_40/practice
+	name = "smg magazine (.40 Magnum practice)"
+	icon_state = "smg_magnum_p"
+	ammo_type = /obj/item/ammo_casing/magnum_40/practice
+
+/obj/item/ammo_magazine/smg_magnum_40/hv
+	name = "smg magazine (.40 Magnum high-velocity)"
+	icon_state = "smg_magnum_hv"
+	ammo_type = /obj/item/ammo_casing/magnum_40/hv
+
+/obj/item/ammo_magazine/smg_magnum_40/rubber
+	name = "smg magazine (.40 Magnum rubber)"
+	icon_state = "smg_magnum_r"
+	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
+
+/obj/item/ammo_magazine/smg_magnum_40/lethal
+	name = "smg magazine (.40 Magnum hollow-point)"
+	icon_state = "smg_magnum_l"
+	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
+
+/obj/item/ammo_magazine/smg_magnum_40/old
+	name = "old smg magazine (.40 Magnumo)"
+	icon_state = "smg_magnum_s"
+	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
+
 ////.257 Carbine////
 
 /obj/item/ammo_magazine/light_rifle_257
