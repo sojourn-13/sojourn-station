@@ -33,6 +33,9 @@
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	holder_type = /obj/item/holder/nanobot // What the nanobot become when picked up.
 	viewRange = 3
+	//So we dont have meat
+	meat_amount = 3
+	meat_type = /obj/item/scrap_lump
 
 	do_gibs = FALSE
 	colony_friend = TRUE

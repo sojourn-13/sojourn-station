@@ -288,6 +288,7 @@
 		/obj/item/taperoll/medical,
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses,
+		/obj/item/device/radio,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/projectile/boltgun/flare_gun
 	)
@@ -324,6 +325,7 @@
 		/obj/item/device/hailer,
 		/obj/item/device/megaphone,
 		/obj/item/melee,
+		/obj/item/device/radio,
 		/obj/item/tool/knife,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,
