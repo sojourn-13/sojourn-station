@@ -132,7 +132,7 @@
 		else if(istype(W,/obj/item/reagent_containers/food/snacks/grown))
 			if(wood)
 				wood.add_charge(4000)
-		else if(istype(M,/obj/item/remains))
+		else if(istype(W,/obj/item/remains))
 			if(metal)
 				metal.add_charge(2000)
 			if(glass)
