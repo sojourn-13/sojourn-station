@@ -36,7 +36,7 @@
 	var/grabbed_something = 0
 
 	for(var/mob/M in T)
-		if(istype(M,/mob/living/simple_animal/lizard) || ismouse(M) || istype(M,/obj/item/remains))
+		if(istype(M,/mob/living/simple_animal/lizard) || ismouse(M))
 			src.loc.visible_message(SPAN_DANGER("[src.loc] sucks [M] into its decompiler. There's a horrible crunching noise."),SPAN_DANGER("It's a bit of a struggle, but you manage to suck [M] into your decompiler. It makes a series of visceral crunching noises."))
 			new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
 			qdel(M)
@@ -132,6 +132,11 @@
 		else if(istype(W,/obj/item/reagent_containers/food/snacks/grown))
 			if(wood)
 				wood.add_charge(4000)
+		else if(istype(W,/obj/item/remains))
+			if(metal)
+				metal.add_charge(2000)
+			if(glass)
+				glass.add_charge(2000)
 		else if(istype(W,/obj/item/pipe))
 			// This allows drones and engiborgs to clear pipe assemblies from floors.
 		else
