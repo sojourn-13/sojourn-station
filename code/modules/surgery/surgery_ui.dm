@@ -75,7 +75,7 @@
 			actions_list.Add(list(list(
 					"name" = "Extract",
 					"target" = "\ref[organ]",
-					"step" = BP_IS_ROBOTIC(organ) ? /datum/surgery_step/robotic/remove_item : /datum/surgery_step/remove_item
+					"step" = BP_IS_ROBOTIC(src) ? /datum/surgery_step/robotic/remove_item : /datum/surgery_step/remove_item
 				)))
 		actions_list.Add(organ.get_actions())
 		organ_data["actions"] = actions_list
