@@ -38,19 +38,13 @@
 	meat_amount = 4
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
-	var/weapon1 = /obj/item/melee/energy/sword/pirate
-	var/weapon2 = /obj/item/shield/riot
+	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/shield/riot)
 	faction = "pirate"
 
 
 /mob/living/carbon/superior_animal/human/voidwolf/death()
 	..()
-	if(weapon1)
-		new weapon1 (src.loc)
-		weapon1 = null
-	if(weapon2)
-		new weapon2 (src.loc)
-		weapon2 = null
+	drop_death_loot()
 
 /mob/living/carbon/superior_animal/human/voidwolf/emp_act(severity)
 	..()
@@ -69,8 +63,7 @@
 	icon_dead = "voidengie_dead"
 	attacktext = "burnt"
 	attack_sound = 'sound/items/Welder.ogg'
-	weapon1 = /obj/item/tool/weldingtool/advanced
-	weapon2 = null
+	drop_items = list(/obj/item/tool/weldingtool/advanced)
 
 /*Ranged Void Wolfs*/
 /mob/living/carbon/superior_animal/human/voidwolf/ranged
@@ -87,8 +80,7 @@
 	rapid = TRUE
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/gun/energy/cog
-	weapon2 = null
+	drop_items = list(/obj/item/gun/energy/cog)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 16
@@ -110,7 +102,7 @@
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/laser.ogg'
-	weapon2 = /obj/item/gun/energy/gun/martin
+	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/gun/energy/gun/martin)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 4
@@ -132,8 +124,7 @@
 	ranged = TRUE
 	rapid = TRUE
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/gun/energy/cog
-	weapon2 = null
+	drop_items = list(/obj/item/gun/energy/cog)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 16
@@ -157,8 +148,7 @@
 	ranged = TRUE
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
-	weapon1 = /obj/item/melee/energy/sword/pirate
-	weapon2 = /obj/item/gun/energy/gun
+	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/gun/energy/gun)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 8
@@ -181,8 +171,7 @@
 	rapid = TRUE
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/beam/weak/smg
-	weapon1 = /obj/item/gun/energy/firestorm
-	weapon2 = null
+	drop_items = list(/obj/item/gun/energy/firestorm)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
@@ -199,8 +188,7 @@
 	icon_state = "reaver_bulldog"
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	weapon1 = /obj/item/gun/projectile/automatic/c20r
-	weapon2 = null
+	drop_items = list(/obj/item/gun/projectile/automatic/c20r)
 	rounds_left = 32
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
 	mags_left = 3
@@ -216,8 +204,7 @@
 	icon_state = "reaver_gyro"
 	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
-	weapon1 = /obj/item/gun/projectile/gyropistol
-	weapon2 = null
+	drop_items = list(/obj/item/gun/projectile/gyropistol)
 	rapid = FALSE
 	rounds_left = 4
 	mag_type = /obj/item/ammo_magazine/a75/empty
@@ -237,8 +224,7 @@
 	ranged = FALSE
 	rapid = FALSE
 	limited_ammo = FALSE
-	weapon1 = /obj/item/tool/sword/saber/cutlass
-	weapon2 = /obj/item/shield/buckler/energy/reaver
+	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver)
 	armor = list(
 		melee = 0,
 		bullet = 0,
@@ -280,11 +266,6 @@
 	..()
 	new /obj/effect/gibspawner/human(src.loc)
 	playsound(src, 'sound/effects/Explosion2.ogg', 75, 1, -3)
-	if(weapon1)
-		new weapon1(src.loc)
-		weapon1 = null
-	if(weapon2)
-		new weapon2(src.loc)
-		weapon2 = null
+	drop_death_loot()
 	qdel(src)
 	return

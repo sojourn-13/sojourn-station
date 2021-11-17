@@ -19,8 +19,7 @@
 	melee_damage_upper = 15
 	attacktext = "punched"
 	a_intent = I_HURT
-	var/corpse = /obj/landmark/corpse/antagonist/russian
-	var/weapon1 = /obj/item/tool/knife
+	drop_items = list(/obj/landmark/corpse/antagonist/russian, /obj/item/tool/knife)
 	min_oxy = 5
 	max_oxy = 0
 	min_tox = 0
@@ -38,8 +37,7 @@
 
 /mob/living/simple_animal/hostile/russian/ranged
 	icon_state = "russianranged"
-	corpse = /obj/landmark/corpse/antagonist/russian/ranged
-	weapon1 = /obj/item/gun/projectile/revolver
+	drop_items = list(/obj/landmark/corpse/antagonist/russian/ranged, /obj/item/gun/projectile/revolver)
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet
 	projectilesound = 'sound/weapons/Gunshot.ogg'
@@ -48,9 +46,6 @@
 
 /mob/living/simple_animal/hostile/russian/death()
 	..()
-	if(corpse)
-		new corpse (src.loc)
-	if(weapon1)
-		new weapon1 (src.loc)
+	drop_death_loot()
 	qdel(src)
 	return
