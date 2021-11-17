@@ -58,3 +58,11 @@
 //I use these instead of directly checking the mutations datum in some cases because it is quicker.
 #define ROACH_BLOOD          11
 #define CLOAKING          	 12
+
+
+//Thresholds for mutagenic Destabilization
+#define DESTABILIZE_LEVEL_WASONCE 110 //Threshold for turning into the wasonce.
+#define DESTABILIZE_LEVEL_CLONE_DAMAGE 100 //Threshold for periodic clone_damage
+#define DESTABILIZE_LEVEL_BASE 100 //The lowest destabilization level for activating processing
+
+#define DESTABILIZE_CHECK_INTERVAL 10 SECONDS //How often
