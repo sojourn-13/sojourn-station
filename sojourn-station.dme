@@ -1231,6 +1231,7 @@
 #include "code\game\objects\random\mob\slime.dm"
 #include "code\game\objects\random\mob\spider.dm"
 #include "code\game\objects\random\traps\traps.dm"
+#include "code\game\objects\random\traps\turrets.dm"
 #include "code\game\objects\structures\artstuff.dm"
 #include "code\game\objects\structures\artwork_statue.dm"
 #include "code\game\objects\structures\barsign.dm"
