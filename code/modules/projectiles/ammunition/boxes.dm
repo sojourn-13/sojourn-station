@@ -345,7 +345,7 @@
 /obj/item/ammo_magazine/ammobox/kurtz_50/lethal
 	name = "ammunition box (.50 kurtz hollow-point)"
 	desc = "A box of self-defense grade .50 Kurtz hollow-points."
-	icon_state = "box50-hv"
+	icon_state = "box50-lethal"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/laser
