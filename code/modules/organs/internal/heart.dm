@@ -34,3 +34,12 @@
 	name = "centralized capillary"
 	desc = "The centralized heart of a plantoid, functioning as little more than a capillary."
 	icon_state = "heart_plant-on"
+
+/obj/item/organ/internal/heart/huge
+	name = "huge heart"
+	icon_state = "heart_huge"
+	organ_efficiency = list(OP_HEART = 150)
+	specific_organ_size = 2.3
+	max_blood_storage = 100
+	nutriment_req = 15
+	dead_icon = "heart_huge"

@@ -94,7 +94,12 @@
 
 	license = 5
 	designs = list(
-		/datum/design/bioprinter/lungs
+		/datum/design/bioprinter/lungs,
+		/datum/design/bioprinter/heart,
+		/datum/design/bioprinter/liver,
+		/datum/design/bioprinter/nerves,
+		/datum/design/bioprinter/muscle,
+		/datum/design/bioprinter/blood_vessel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/computer
