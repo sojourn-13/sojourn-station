@@ -6,7 +6,7 @@
 /datum/export/weapon/baton
 	cost = 100
 	unit_name = "stun baton"
-	export_types = list(/obj/item/melee/baton)
+	export_types = list(/obj/item/tool/baton)
 
 /datum/export/weapon/knife
 	cost = 300

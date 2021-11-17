@@ -100,7 +100,7 @@
 //Tools --------------------------
 /datum/craft_recipe/guild/arcwelder
 	name = "arc welder"
-	result = /obj/item/tool/arcwelder
+	result = /obj/item/tool/baton/arcwelder
 	steps = list(
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_CUTTING, 20, "time" = 40),
@@ -304,6 +304,20 @@
 	list(QUALITY_HAMMERING, 45, "time" = 40),
 	list(/obj/item/tool_upgrade/augment/fuel_tank, 1, "time" = 30)
 	)
+
+/datum/craft_recipe/guild/bastion
+	name = "Bastion Shield"
+	result = /obj/item/shield/riot/bastion
+	steps = list(
+	list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 30),
+	list(QUALITY_SAWING, 30, "time" = 60),
+	list(CRAFT_MATERIAL, 2, MATERIAL_STEEL, "time" = 30),
+	list(QUALITY_WELDING, 40, "time"= 60),
+	list(/obj/item/shield/riot, 1, "time" = 30),
+	list(QUALITY_HAMMERING, 45, "time" = 40),
+	list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 30)
+	)
+
 
 //Wearables =========================
 /datum/craft_recipe/guild/technosuit

@@ -44,6 +44,8 @@
 #define COMSIG_EXAMINE "examine"								//from atom/examine(): (mob/user, distance)
 #define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"  //update_overlays()
 #define COMSIG_ATOM_UNFASTEN "atom_unfasten" // set_anchored()
+#define COMSIG_CLICK_ALT "alt_click"//from atom/AltClick(): (/mob)
+#define COMSIG_CLICK_CTRL "ctrl_click"//from atom/CtrlClick(): (/mob)
 
 // /area signals
 #define COMSIG_AREA_SANCTIFY "sanctify_area"
@@ -116,6 +118,9 @@
 #define COMSIG_MESSAGE_RECEIVED "radio_message_received"
 // /obj/item/radio signals
 
+//obj/item/gun signals
+#define COMSIG_GUN_POST_FIRE "gun_post_fire"	//from base of /obj/item/gun/proc/handle_post_fire(): (atom/target, pointblank, reflex)
+
 /*******Component Specific Signals*******/
 //Janitor
 
@@ -123,6 +128,11 @@
 #define COMSIG_STORAGE_INSERTED "item_inserted"
 #define COMSIG_STORAGE_TAKEN "item_taken"
 #define COMSIG_STORAGE_OPENED "new_backpack_who_dis"
+
+// /datum/component/heat signals
+#define COMSIG_HEAT_SPECIAL "heat_special"
+#define COMSIG_HEAT_OVERHEAT "heat_overheated"
+#define COMSIG_HEAT_VENT "heat_venting"
 
 // OVERMAP
 #define COMSIG_SHIP_STILL "ship_still" // /obj/effect/overmap/ship/Process() && is_still()

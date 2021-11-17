@@ -54,6 +54,8 @@
 		/datum/design/autolathe/gun/basstet,
 		/datum/design/autolathe/gun/strelki,
 		/datum/design/autolathe/gun/ostwind = 3,
+		/datum/design/autolathe/gun/bulldog = 3,
+		/datum/design/autolathe/gun/bulldog_rds = 3,
 		//shotguns
 		/datum/design/autolathe/gun/riot_shotgun = 4,
 		//machinegun
@@ -62,16 +64,18 @@
 		//ion
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher
-		/datum/design/autolathe/gun/grenade_launcher_lenar = 6,
+		/datum/design/autolathe/gun/grenade_launcher_lenar = 10,
 		//sniper
-		/datum/design/autolathe/gun/nordwind = 14, //basic uses the whole disk...
+		/datum/design/autolathe/gun/nordwind = 10,
 		/datum/design/autolathe/device/landmine = 0,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//Misc
+		/datum/design/autolathe/tool/ironhammer,
 		/datum/design/autolathe/sec/riot,
 		/datum/design/autolathe/sec/buckler = 0,
-		/datum/design/autolathe/container/ammocan_ih,
+		/datum/design/autolathe/sec/bastion = 0,
+		/datum/design/autolathe/container/ammocan_ih = 0,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
@@ -147,8 +151,9 @@
 		//Misc
 		/datum/design/autolathe/device/landmine = 0,
 		/datum/design/autolathe/sec/riot = 2,
+		/datum/design/autolathe/sec/bastion = 0,
 		/datum/design/autolathe/sec/buckler,
-		/datum/design/autolathe/container/ammocan_ih,
+		/datum/design/autolathe/container/ammocan_ih = 0,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo
@@ -161,6 +166,10 @@
 		/datum/design/autolathe/ammo/pistol_lethal,
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg_practice = 0,

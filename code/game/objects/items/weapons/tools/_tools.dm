@@ -16,6 +16,11 @@
 
 	var/tool_in_use = FALSE
 
+	//Stunbatons
+	var/hitcost = 0
+	var/stunforce = 0
+	var/agonyforce = 0
+
 	var/sparks_on_use = FALSE	//Set to TRUE if you want to have sparks on each use of a tool
 	var/eye_hazard = FALSE	//Set to TRUE should damage users eyes if they without eye protection
 
@@ -71,8 +76,11 @@
 //Fuel and cell spawn
 /obj/item/tool/New()
 	..()
+	if(cell)
+		cell = new cell(src) //So when we have a cell spawn it spawns a cell, otherwise it will pick a suitable cell
+
 	if(!cell && suitable_cell)
-		cell = new suitable_cell(src)
+		cell = new suitable_cell(src) //No cell? We add are suitable cell
 
 	if(use_fuel_cost)
 		create_reagents(max_fuel)
@@ -818,6 +826,11 @@
 	force = initial(force)
 	force_upgrade_mults = initial(force_upgrade_mults)
 	force_upgrade_mods = initial(force_upgrade_mods)
+
+	hitcost = initial(hitcost)
+	stunforce = initial(stunforce)
+	agonyforce = initial(agonyforce)
+
 	switched_on_force = initial(switched_on_force)
 	extra_bulk = initial(extra_bulk)
 	item_flags = initial(item_flags)

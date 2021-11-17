@@ -93,13 +93,13 @@
 	desc = "A .40 Magnum laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/magnum_40
 
-/obj/item/ammo_casing/magnum/scrap
+/obj/item/ammo_casing/magnum_40/scrap
 	desc = "An old .40 Magnum bullet casing."
 	icon_state = "magnum_c_s"
 	spent_icon = "magnum_c_s-spent"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/scrap
 
-/obj/item/ammo_casing/magnum/scrap/prespawned
+/obj/item/ammo_casing/magnum_40/scrap/prespawned
 	amount = 6
 
 //// .257 carbine ////
@@ -152,12 +152,11 @@
 
 /obj/item/ammo_casing/light_rifle_257/lethal
 	desc = "A .257 hollow-point bullet casing."
-	caliber = "lrifle"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/lethal
 
 /obj/item/ammo_casing/light_rifle_257/laser
 	desc = "A .257 laser casing."
-	caliber = "lrifle"
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
 
 //// 7.5 Rifle ////
@@ -199,6 +198,7 @@
 
 /obj/item/ammo_casing/rifle_75/lethal
 	desc = "A 7.5mm hollow-point bullet casing."
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
 
 /obj/item/ammo_casing/rifle_75/scrap
@@ -214,7 +214,6 @@
 /obj/item/ammo_casing/rifle_75/laser
 	desc = "A 7.5mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/rifle_75
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 ////.408 rifle////
 
@@ -368,7 +367,6 @@
 	desc = "A .50 Kurtz laser casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/beam/weak/kurtz_50
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim

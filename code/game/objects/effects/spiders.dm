@@ -114,13 +114,13 @@
 	desc = "They seem to pulse slightly with an inner life"
 	icon_state = "eggs"
 	var/amount_grown = 0
-	var/spiderlings_lower = 3
-	var/spiderlings_upper = 6
+	var/spiderlings_lower = 2
+	var/spiderlings_upper = 4
 
 /obj/effect/spider/eggcluster/minor
 	amount_grown = 20
-	spiderlings_lower = 2
-	spiderlings_upper = 4
+	spiderlings_lower = 1
+	spiderlings_upper = 2
 
 /obj/effect/spider/eggcluster/New(var/location, var/atom/parent)
 	pixel_x = rand(3,-3)

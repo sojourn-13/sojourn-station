@@ -869,7 +869,7 @@
 "CR" = (/obj/machinery/computer/teleporter,/obj/effect/floor_decal/industrial/outline,/turf/simulated/floor/tiled/dark/panels,/area/centcom/raider_base)
 "CX" = (/obj/item/modular_computer/console{dir = 4},/obj/effect/floor_decal/border/carpet/green{dir = 1},/turf/simulated/floor/carpet/turcarpet,/area/centcom/evac)
 "Dj" = (/obj/machinery/bodyscanner,/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
-"Dp" = (/obj/structure/table/rack/shelf,/obj/item/melee/baton/excelbaton,/obj/item/melee/baton/excelbaton,/obj/item/tool_upgrade/augment/ai_tool_excelsior,/obj/item/tool_upgrade/augment/ai_tool_excelsior,/obj/item/tool_upgrade/augment/ai_tool_excelsior,/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
+"Dp" = (/obj/structure/table/rack/shelf,/obj/item/tool/baton/excelbaton,/obj/item/tool/baton/excelbaton,/obj/item/tool_upgrade/augment/ai_tool_excelsior,/obj/item/tool_upgrade/augment/ai_tool_excelsior,/obj/item/tool_upgrade/augment/ai_tool_excelsior,/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
 "Ds" = (/obj/structure/sign/directions/medical{dir = 4},/turf/simulated/wall/r_wall,/area/centcom/evac)
 "Dt" = (/obj/structure/table/rack/shelf,/obj/item/clothing/under/excelsior,/obj/item/clothing/under/excelsior/mixed,/obj/item/clothing/under/excelsior/officer,/obj/item/clothing/under/excelsior/orange,/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
 "DH" = (/obj/machinery/door/airlock/glass_security,/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)

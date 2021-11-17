@@ -56,7 +56,7 @@
 
 /datum/design/autolathe/device/excelbaton
 	name = "Expropriator"
-	build_path = /obj/item/melee/baton/excelbaton
+	build_path = /obj/item/tool/baton/excelbaton
 
 /datum/design/autolathe/device/camera
 	name = "hand camera"

@@ -102,7 +102,7 @@
 
 /datum/design/research/item/weapon/slimebaton
 	name = "Soteria xenobio baton"
-	build_path = /obj/item/melee/baton/slimebaton
+	build_path = /obj/item/tool/baton/slimebaton
 
 /datum/design/research/item/weapon/bluespace_dagger
 	name = "Soteria \"Displacement Dagger\""
@@ -147,6 +147,11 @@
 /datum/design/research/item/weapon/hydrogen_welder
 	name = "Hydrogen Torch"
 	build_path = /obj/item/tool/plasma_torch
+
+/datum/design/research/item/weapon/hydrogrenade
+	name = "Hydrogen Grenade"
+	desc = "A hilt that can support an hydrogen fuel cell. It has a flimsy safe guard that prevents it from exploding from the weakest impact."
+	build_path = /obj/item/hydrogen_grenade
 
 // Ammo
 /datum/design/research/item/ammo
@@ -261,11 +266,21 @@
 	materials = list(MATERIAL_STEEL = 30, MATERIAL_GLASS = 30, MATERIAL_PLASMA = 15) //Takes plasma
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal
 
+/datum/design/research/item/ammo/hydroflaskette
+	name = "Compressed metallic hydrogen flask"
+	desc = "A small flask for metallic hydrogen. Used in hydroplasma weapons and tools."
+	build_path = /obj/item/hydrogen_fuel_cell
+
 //Disks
 /datum/design/research/item/disk/blackshield
 	name = "Blackshield Sovereignty Disk"
 	desc = "A unique disk for printing and creating Blackshield arms and ammunition."
 	build_path = /obj/item/computer_hardware/hard_drive/portable/design/blackshield
+
+/datum/design/research/item/weapon/bastion
+	name = "bastion shield"
+	build_path = /obj/item/shield/riot/bastion
+	materials = list(MATERIAL_PLASMAGLASS = 3, MATERIAL_OSMIUM = 1) //So making it at the guild is objectively always better
 
 //Weapon mods
 /datum/design/research/item/weapon/weapon_upgrade

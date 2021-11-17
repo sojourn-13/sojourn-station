@@ -250,7 +250,7 @@
 
 //Guild stock parts (rating 5)
 /obj/item/stock_parts/capacitor/handmade
-	name = "crafted ultra capacitor"
+	name = "handcrafted ultra capacitor"
 	desc = "A guild tinkered super-high capacity capacitor used in the construction of a variety of devices. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
 	icon_state = "guild_capacitor"
 	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
@@ -259,7 +259,7 @@
 	price_tag = 600
 
 /obj/item/stock_parts/scanning_module/handmade
-	name = "manually over-tuned scanning module"
+	name = "handcrafted over-tuned scanning module"
 	desc = "An over engineered and expensive yet compact, high resolution phasic scanning module used in the construction of certain devices. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
 	icon_state = "guild_scan_module"
 	origin_tech = list(TECH_MAGNET = 5)
@@ -268,7 +268,7 @@
 	price_tag = 600
 
 /obj/item/stock_parts/manipulator/handmade
-	name = "perfected forged manipulator"
+	name = "handcrafted forged manipulator"
 	desc = "A buffed up pico manipulator with a added case to increase manipulation used in the construction of certain devices. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
 	icon_state = "guild_mani"
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
@@ -277,7 +277,7 @@
 	price_tag = 600
 
 /obj/item/stock_parts/micro_laser/handmade
-	name = "handmade perfected micro-laser"
+	name = "handcrafted perfected micro-laser"
 	icon_state = "guild_micro_laser"
 	desc = "An ultra-high micro laser with a perfected lens to increase productivity. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
 	origin_tech = list(TECH_MAGNET = 5)
@@ -286,7 +286,7 @@
 	price_tag = 600
 
 /obj/item/stock_parts/matter_bin/handmade
-	name = "hand cast matter bin"
+	name = "handcrafted cast matter bin"
 	desc = "A super matter bin with added compression cast onto the base itself for more effective storage. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
 	icon_state = "guild_matter_bin"
 	origin_tech = list(TECH_MATERIAL = 5)

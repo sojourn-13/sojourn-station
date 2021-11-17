@@ -117,7 +117,7 @@
 	pixel_x = -16
 	pixel_y = null
 
-/mob/living/carbon/superior_animal/giant_spider/nurse/attemptAttackOnTarget()
+/mob/living/carbon/superior_animal/giant_spider/nurse/UnarmedAttack()
 	..()
 	if(ishuman(target_mob))
 		var/mob/living/carbon/human/H = target_mob
@@ -228,6 +228,7 @@
 								if((M.stat == CONSCIOUS) || is_carrion(M)) //We do eat are own
 									continue
 								large_cocoon = 1
+								fed += 1 //we get half what we need to leg an egg
 
 								if(istype(M, /mob/living/carbon/human))
 									if(M.faction == "spiders")
@@ -239,7 +240,7 @@
 										M.adjustOxyLoss(200)
 										M.adjustBrainLoss(60)
 										M.updatehealth()
-										fed += 2 //we ate a person we are able to lay eggs
+										fed += 2 //we ate a person we are able to lay eggs and have 1 fed over
 
 								C = C || new(targetTurf)
 								M.forceMove(C)

@@ -58,7 +58,7 @@
 		finished = new /obj/item/tool/spear(get_turf(user))
 		to_chat(user, SPAN_NOTICE("You fasten \the [I] to the top of the rod with the cable."))
 	else if((QUALITY_CUTTING in I.tool_qualities) || (QUALITY_WIRE_CUTTING in I.tool_qualities))
-		finished = new /obj/item/melee/baton/cattleprod(get_turf(user))
+		finished = new /obj/item/tool/baton/cattleprod(get_turf(user))
 		to_chat(user, SPAN_NOTICE("You fasten the wire cutters to the top of the rod with the cable, prongs outward."))
 	if(finished)
 		user.drop_from_inventory(src)

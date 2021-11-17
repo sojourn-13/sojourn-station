@@ -83,7 +83,6 @@
 	name = "ammunition packet (.40 Magnum)"
 	icon_state = "magnum"
 	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = ".40"
 	caliber = CAL_MAGNUM
 	ammo_type = /obj/item/ammo_casing/magnum_40
 	max_ammo = 30
@@ -91,7 +90,7 @@
 /obj/item/ammo_magazine/ammobox/magnum_40/scrap
 	name = "ammunition packet (old .40 Magnum)"
 	icon_state = "magnum_s"
-	ammo_type = /obj/item/ammo_casing/magnum/scrap
+	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 /obj/item/ammo_magazine/ammobox/magnum_40/practice
 	name = "ammunition packet (.40 Magnum practice)"
@@ -191,7 +190,7 @@
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
 	name = "ammunition packet (.257 Carbine laser)"
-	icon_state = "lrifle_si"
+	icon_state = "clrifle_si"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
@@ -214,13 +213,6 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75
 	mag_type = SPEEDLOADER | MAGAZINE
 	max_ammo = 180
-
-/obj/item/ammo_magazine/ammobox/rifle_75/scrap
-	name = "ammunition packet (old 7.5mm Rifle)"
-	icon_state = "srifle_s"
-	max_ammo = 30 //Were a small packet not a box
-	w_class = ITEM_SIZE_SMALL
-	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
 /obj/item/ammo_magazine/ammobox/rifle_75/pickup(mob/user)
 	..()
@@ -282,9 +274,14 @@
 	icon_state = "rifle_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
+/obj/item/ammo_magazine/ammobox/rifle_75_small/scrap
+	name = "ammunition packet (old 7.5mm Rifle)"
+	icon_state = "srifle_s"
+	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
+
 /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
 	name = "ammunition packet (7.5mm Rifle laser)"
-	icon_state = "rifle_si"
+	icon_state = "srifle_si"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
 
 

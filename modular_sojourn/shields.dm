@@ -1,17 +1,9 @@
-/obj/item/weapon/shield/riot/bastion
-	name = "Prototype: Bastion Shield"
-	desc = "A Project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as surprisingly successful idea, both light enough to carry as a shield, and expands out into a combat barrier when deployed. Bow before the Cobalt Aegis."
-	icon = 'zzzz_modular_occulus/icons/obj/bastion.dmi'
+/obj/item/shield/riot/bastion
+	name = "Deployable: Bastion Shield"
+	desc = "A Project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as surprisingly successful idea, both light enough kit to carry out into a combat zone. A true marval of Guild, SI and Blackshield team work to pull off such a task."
+	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion"
-	item_icons = list(
-		slot_l_hand_str = 'zzzz_modular_occulus/icons/obj/bastion.dmi',
-		slot_r_hand_str = 'zzzz_modular_occulus/icons/obj/bastion.dmi',
-		slot_back_str = 'zzzz_modular_occulus/icons/obj/bastion.dmi')
-	item_state = null
-	item_state_slots = list(
-		slot_l_hand_str = "bastion_left",
-		slot_r_hand_str = "bastion_right",
-		slot_back_str = "bastion_back")
+	item_state = "bastion"
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
@@ -20,28 +12,24 @@
 	throw_range = 4
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_MATERIAL = 4, TECH_COMBAT = 4)
-	matter = list(MATERIAL_PHORONGLASS = 5, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 10, MATERIAL_OSMIUM = 2)
-	price_tag = 2500
+	matter = list(MATERIAL_PLASMAGLASS = 1, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 10)
+	price_tag = 1200
 	attack_verb = list("shoved", "bashed")
 	var/structure_form_type = /obj/structure/shield_deployed
 
-/obj/item/weapon/shield/riot/bastion/update_state()
-	if(!picking_human)
-		return
-	if(MOVING_QUICKLY(picking_human))
-		item_state_slots = list(slot_l_hand_str = "bastion_left_run",	slot_r_hand_str = "bastion_right_run",	slot_back_str = "bastion_back_run")
-		armor = getArmor(arglist(armor_carry)) //OCCULUS CRUTCH FIX - REMOVE WHEN UPSTREAM PAYS ATTENTION TO THEIR RUNTIMES
-		visible_message("[picking_human] lowers [gender_datums[picking_human.gender].his] [src.name].")
-	else
-		item_state_slots = list(slot_l_hand_str = "bastion_left_walk",	slot_r_hand_str = "bastion_right_walk",	slot_back_str = "bastion_back_walk")
-		armor = getArmor(arglist(armor_brace)) //OCCULUS CRUTCH FIX - REMOVE WHEN UPSTREAM PAYS ATTENTION TO THEIR RUNTIMES
-		visible_message("[picking_human] raises [gender_datums[picking_human.gender].his] [src.name] to cover [gender_datums[picking_human.gender].him]self!")
-	update_wear_icon()
+/obj/item/bastion_broken
+	name = "Broken: Bastion Shield"
+	desc = "Once project inspired by an idea for a true deployable barrier, once the \"Bastion Shield\" was surprisingly successful idea, both light enough kit to carry out into a combat zone. Once a marval of Guild, SI and Blackshield team work to pull off such a task. \
+	Now a broken shell of its former self, maybe it still has scrap inside..."
+	icon = 'icons/obj/bastion.dmi'
+	icon_state = "bastion_broken"
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 4)
+	w_class = ITEM_SIZE_NORMAL
 
-/obj/item/weapon/shield/riot/bastion/attack_self(mob/user)
+/obj/item/shield/riot/bastion/attack_self(mob/user)
 	deploy(user)
 
-/obj/item/weapon/shield/riot/bastion/proc/deploy(var/mob/user)
+/obj/item/shield/riot/bastion/proc/deploy(var/mob/user)
 	var/turf/T = get_turf(src) //When held, this will still find the user's location
 	if (istype(T))
 		var/obj/structure/shield_deployed/R = new structure_form_type(user.loc)
@@ -54,38 +42,39 @@
 /obj/structure/shield_deployed
 	name = "Bastion Barrier"
 	desc = "A Deployed Bastion shield, ready to be used as a combat barrier for gunfights."
-	icon = 'zzzz_modular_occulus/icons/obj/bastion.dmi'
+	icon = 'icons/obj/bastion.dmi'
 	icon_state = "barrier"
 	density = TRUE
 	anchored = TRUE
 	throwpass = 1
 	climbable = TRUE
-	var/max_health = 500
-	var/health = 500
+	maxHealth = 300 //Lets not like, be unkillable or what not, would suck to eat like 500 shots or hits
+	health = 300
 	var/reinforced = FALSE
-	var/item_form_type = /obj/item/weapon/shield/riot/bastion
+	var/item_form_type = /obj/item/shield/riot/bastion
 
 /obj/structure/shield_deployed/update_icon()
 	if(reinforced)
 		icon_state = "barrier_reinforced"
 	else
 		icon_state = "barrier"
-	
+
 /obj/structure/shield_deployed/proc/damage(damage)
 	health -= damage
 	if(health <= 0)
-		collapse()
+		new /obj/item/bastion_broken(get_turf(src))
+		qdel(src)
 
 /obj/structure/shield_deployed/attackby(obj/item/I, mob/living/user)
 	.=..()
 	if(I.has_quality(QUALITY_WELDING))
-		if(health == max_health)
+		if(health == maxHealth)
 			to_chat(user, SPAN_NOTICE("\The [src] is already fully repaired!"))
 			return
-		if(health < max_health)
+		if(health < maxHealth)
 			to_chat(user, SPAN_NOTICE("You start reparing \the [src]."))
 			if(do_after(user, 30))
-				health = max_health
+				health = maxHealth
 				to_chat(user, SPAN_NOTICE("\The [src] is now fully repaired!"))
 				return
 	if(I.has_quality(QUALITY_BOLT_TURNING))
@@ -124,7 +113,7 @@
 	if(istype(mover,/obj/item/projectile))
 		if(locate(/mob/living/) in get_turf(loc))
 			return (check_cover(mover,target))
-		
+
 		var/obj/item/projectile/P = mover
 		var/chance = 40
 		if(get_dist(P.starting, loc) <= 1)
@@ -161,8 +150,8 @@
 		return 1
 	if(get_turf(P.original) == cover)
 		var/chance = 40
-		if(reinforced == TRUE)			
-			chance += 40	
+		if(reinforced == TRUE)
+			chance += 40
 		if(health==0)
 			chance = 0
 		if(prob(chance))
@@ -193,10 +182,10 @@
 	..()
 	if(!CanMouseDrop(over_object))	return
 	if(!(ishuman(usr) || isrobot(usr)))	return
-	if(reinforced)	
+	if(reinforced)
 		to_chat(usr, SPAN_NOTICE("\The [src] needs collapsed first!"))
 		return
-	if(health < max_health)
+	if(health < maxHealth)
 		to_chat(usr, SPAN_NOTICE("\The [src] is damaged and needs repaired first!"))
 		return
 	if(get_dir(loc, usr) == dir)
@@ -212,7 +201,7 @@
 	usr.visible_message(SPAN_WARNING("[user] starts climbing onto \the [src]!"))
 	climbers |= user
 
-	var/delay = (issmall(user) ? 20 : 34)
+	var/delay = (issmall(user) ? 20 : 34) * user.mod_climb_delay
 	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
 	if(!do_after(user, duration))
 		climbers -= user
