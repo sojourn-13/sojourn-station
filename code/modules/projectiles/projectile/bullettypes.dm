@@ -446,7 +446,7 @@
 	name = "slug"
 	icon_state = "slug"
 	damage_types = list(BRUTE = 54)
-	armor_penetration = 10
+	armor_penetration = 25
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
 	//Slugs are meant for long range shooting
