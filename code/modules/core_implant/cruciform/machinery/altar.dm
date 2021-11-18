@@ -10,7 +10,8 @@
 	/obj/item/implant/core_implant/cruciform/tessellate,
 	/obj/item/implant/core_implant/cruciform/lemniscate,
 	/obj/item/implant/core_implant/cruciform/monomial,
-	/obj/item/implant/core_implant/cruciform/divisor
+	/obj/item/implant/core_implant/cruciform/divisor,
+	/obj/item/cruciform_upgrade
 	)
 	var/list/available_slots = list()
 

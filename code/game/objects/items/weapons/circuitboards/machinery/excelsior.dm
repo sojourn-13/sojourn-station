@@ -97,6 +97,22 @@
 		/obj/item/stock_parts/console_screen = 1
 	)
 
+/obj/item/circuitboard/ex_bluespace_repairer
+	name = "excelsior bluespace aliner"
+	build_name = ""
+	build_path = /obj/machinery/power/ex_bluespace_repairer
+	board_type = "machine"
+	icon_state = "exl_fancy"
+	origin_tech = list(TECH_BLUESPACE = 6, TECH_ILLEGAL = 1)
+	req_components = list(
+		/obj/item/stock_parts/manipulator/excelsior = 1,
+		/obj/item/stock_parts/micro_laser/excelsior = 1,
+		/obj/item/stock_parts/scanning_module/excelsior = 3,
+		/obj/item/stock_parts/console_screen = 1,
+		/obj/item/stock_parts/subspace/crystal = 1
+	)
+
+
 //Putting these here since its an antag type item and making a full .dm for 9 lines of code is.. dumb. -Kaz, Trilby
 
 /obj/item/circuitboard/jukebox

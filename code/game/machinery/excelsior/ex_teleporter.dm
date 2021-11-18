@@ -55,6 +55,7 @@ var/global/excelsior_last_draft = 0
 		/obj/item/circuitboard/excelsiorshieldwallgen = 150,
 		/obj/item/circuitboard/excelsior_boombox = 150,
 		/obj/item/circuitboard/excelsior_autodoc = 50,
+		/obj/item/circuitboard/ex_bluespace_repairer = 70,
 		/obj/item/circuitboard/diesel = 150,
 		/obj/item/reagent_containers/glass/bottle/petrel = 30, //its just welder fuel to go in diesel gens/mins/traps
 		/obj/item/tool/baton/excelbaton = 200,
