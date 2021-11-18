@@ -71,8 +71,8 @@
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
 	funding_type = FUNDING_EXTERNAL
-	account_initial_balance = 20000 //20k do to being state funded
-	account_budget = 3500 //Really is the most played department has most slots and isnt exspected to trade much at all
+	account_initial_balance = 25000 //25k do to being state funded
+	account_budget = 1500 //Really is the most played department has most slots and isnt exspected to trade much at all
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
