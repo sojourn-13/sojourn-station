@@ -166,7 +166,7 @@
 		T = get_step(src, refuse_output_side)
 		state("[current_item] refused.")
 	if(T)
-		current_item.forceMove(T)
+		current_item.loc = T
 		current_item = null
 
 
