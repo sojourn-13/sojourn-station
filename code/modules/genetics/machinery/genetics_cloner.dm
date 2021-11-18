@@ -254,6 +254,8 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 
 	if(ispath(clone_type, /obj/item))
 		nonliving_occupant = new clone_type()
+		nonliving_occupant.loc = src
+		
 
 	feed_the_beast = 0
 

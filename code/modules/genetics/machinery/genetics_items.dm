@@ -293,12 +293,143 @@ icon_state='innards'
 /obj/item/genetics/reject
 	name = "Genetic Reject"
 	desc = "A product of hasty genetics work. Whatever this mound of flesh could have been, it will never see the light of day."
-	icon = 'icons/obj/surgery.dmi'
+	icon = 'icons/obj/genetics/dna_syringes.dmi'
 	icon_state = "innards"
 
 /obj/item/genetics/reject/New(var/parent_name)
 	if(parent_name)
 		name = "Genetic Reject of [parent_name]"
+
+/*
+=================Flesh Sac=================
+A holder for items we make with Genetics. Helps add a visceral element to object creation through this process.
+*/
+/obj/item/genetics/flesh_sac
+	name = "Flesh Sac"
+	desc = "An undilating facsimile of life, carrying with it unknown contents."
+	icon = 'icons/obj/genetics/flesh_sac.dmi'
+	icon_state = "flesh_sac"
+	w_class = ITEM_SIZE_GARGANTUAN
+	density = TRUE
+	var/list/loot = list()
+
+/obj/item/genetics/flesh_sac/attackby(obj/item/I as obj, mob/user as mob)
+	..()
+	if(QUALITY_CUTTING in I.tool_qualities)
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_BIO))
+			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
+			new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+			user.visible_message(SPAN_NOTICE("[user] rips open the [src] in a shower of gore!"))
+			for(var/loot_item in loot)
+				if(ispath(loot_item, /obj))
+					var/obj/instanced_item = new loot_item()
+					instanced_item.loc = src.loc
+			qdel(src)
+		else
+			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
+			new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+			user.visible_message(SPAN_NOTICE("[user] destroys the contents of the [src]."))
+			qdel(src)
+
+/obj/item/genetics/flesh_sac/heart
+	loot = list(/obj/item/organ/internal/heart)
+
+/obj/item/genetics/flesh_sac/b_heart
+	loot = list(/obj/item/organ/internal/heart/huge/baboon)
+
+/obj/item/genetics/flesh_sac/lungs
+	loot = list(/obj/item/organ/internal/lungs)
+
+/obj/item/genetics/flesh_sac/g_lungs
+	loot = list(/obj/item/organ/internal/lungs/long)
+
+/obj/item/genetics/flesh_sac/liver
+	loot = list(/obj/item/organ/internal/liver)
+
+/obj/item/genetics/flesh_sac/g_liver
+	loot = list(/obj/item/organ/internal/liver/big)
+
+/obj/item/genetics/flesh_sac/blood_vessels
+	loot = list(
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel)
+
+/obj/item/genetics/flesh_sac/e_blood_vessels
+	loot = list(
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive)
+
+/obj/item/genetics/flesh_sac/muscles
+	loot = list(
+		/obj/item/organ/internal/muscle,
+		/obj/item/organ/internal/muscle,
+		/obj/item/organ/internal/muscle,
+		/obj/item/organ/internal/muscle)
+
+/obj/item/genetics/flesh_sac/s_muscles
+	desc = "An undilating facsimile of life, carrying with it unknown contents. Whatever it is, it has amazing abs."
+	loot = list(
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle)
+
+/obj/item/genetics/flesh_sac/nerves
+	loot = list(
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve)
+
+/obj/item/genetics/flesh_sac/s_nerves
+	desc = "An undilating facsimile of life, carrying with it unknown contents. It twitches at the slightest breath of air."
+	loot = list(
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve)
+
+/obj/item/genetics/flesh_sac/superior
+	name = "The Great Ball"
+	desc = "An undilating facsimile of life, carrying with it unknown contents. It looks like it is about to burst."
+	loot = list(
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/liver/big,
+		/obj/item/organ/internal/lungs/long,
+		/obj/item/organ/internal/heart/huge)
 /*
 =================Genetics Circuits=================
 Circuit boards for different Genetics Machines.

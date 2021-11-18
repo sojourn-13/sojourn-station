@@ -45,6 +45,8 @@
 
 	var/last_destability_check
 
+	var/stage = 0
+
 //Build a holder from scratch
 /datum/genetics/genetics_holder/New(mob/living/holding_mob)
 	if(holding_mob)
@@ -492,6 +494,7 @@
 		//Stop processing if we fall below the base value, or if the holder is already dead- Since we won't be needing it anymore
 		if(total_instability < DESTABILIZE_LEVEL_BASE)
 			STOP_PROCESSING(SSprocessing, src)
+			stage = 0
 			processing_destabilization = FALSE
 			return
 	else
@@ -511,12 +514,27 @@
 
 	last_destability_check = world.time
 
+	if(total_instability >= DESTABILIZE_LEVEL_WAS)
+		stage++
+		switch(stage)
+			if(1)
+				to_chat(holder, SPAN_DANGER("You don't feel too good."))
+			if(6)
+				holder.visible_message(SPAN_DANGER("The muscles beneath the skin of \the [holder] ripple and bulge."))
+				to_chat(holder, SPAN_DANGER("Your form wavers. Ascention calls to you."))
+			if(12)
+				to_chat(holder, SPAN_DANGER("You feel yourself becoming... More. You answer the call."))
+			if(13)
+				holder.visible_message(SPAN_DANGER("[holder] shifts and reforms into... By science... What is that!?"))
+				new /mob/living/carbon/superior_animal/wasonce(holder)
+	if((total_instability >= DESTABILIZE_LEVEL_CLONE_DAMAGE) && (holder.getCloneLoss() < 30))
+		holder.damage_through_armor(1, CLONE, pick(BP_ALL_LIMBS))
+		
 
 
 
 
-
-//holder.visible_message(SPAN_DANGER("\The [holder]'s body begins to warp and change! BY SCIENCE, WHAT IS THAT!?"))
+//
 /datum/genetics/genetics_holder/ui_data(var/list/known_mutations)
 	var/list/data = list()
 	data["instability"] = total_instability
