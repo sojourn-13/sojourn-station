@@ -47,6 +47,8 @@
 	meat_amount = 4
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
+	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
+
 	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
 	faction = "excelsior"
 

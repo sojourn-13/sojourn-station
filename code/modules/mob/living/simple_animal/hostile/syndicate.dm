@@ -35,6 +35,7 @@
 	status_flags = CANPUSH
 	leather_amount = 0
 	bones_amount = 0
+	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
 /mob/living/simple_animal/hostile/syndicate/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()
