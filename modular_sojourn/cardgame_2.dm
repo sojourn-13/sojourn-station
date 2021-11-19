@@ -3,7 +3,7 @@
 /obj/item/cardholder
 	w_class = ITEM_SIZE_SMALL
 	name = "randomizer card box"
-	desc = "A small box that will when cards are added and drawn randomize their locations. This only works, and fits CardCarpCo Cards. Alt Click to draw a card."
+	desc = "A small box that self shuffles every time a card is added or drawn, making it always random. This only works with and fits CardCarpCo Cards. Alt Click to draw a card."
 	icon = 'modular_sojourn/cardgame_sprites.dmi'
 	icon_state = "card_holder"
 	var/obj/item/card_carp/card_target = null //What card were going to get
@@ -38,8 +38,8 @@
 
 
 /obj/item/cardholder/squirl
-	name = "squirl card box"
-	desc = "A box of cards that only have Squirl CarpCarpCo Cards."
+	name = "squirrel card box"
+	desc = "A box of cards that only have Squirrel CarpCarpCo Cards."
 	card_target =  /obj/item/card_carp/squirl
 	icon_state = "folly_deck"
 	endless = TRUE
@@ -53,14 +53,14 @@
 
 /obj/item/card_carp
 	name = "Rules Card"
-	desc = "To start the game: Place down a scale or tally system, make sure its balance at 0.<BR>\n\
+	desc = "To start the game: Place down a scale or tally system, make sure its balance is at 0.<BR>\n\
 	The field is a 4 x 5, both sides are not allowed to place any card on one a others 2x5 that is declared at game start.<BR>\n\
-	Both players draw 3 cards + 1 Squirl or Shell card.<BR>\n\
-	Players are at the start of the game allowed to to place any obstacle cards they wish on any side of the field.<BR>\n\
-	At the start of a Players turn draw, one Shell|Squirl card OR one card in your deck<BR>\n\
+	Both players draw 3 cards + 1 Squirrel or Shell card.<BR>\n\
+	Players at the start of the game are allowed to place any obstacle cards they wish on any side of the field.<BR>\n\
+	At the start of a Players turn draw, one Shell|Squirrel card OR one card in your deck<BR>\n\
 	<BR>\n\
 	Playing Cards:<BR>\n\
-	When plaing a card that has a blood cost, the blood comes form played on the field cards, unless a card states otherwise, a drained blood card must be discarded into a discard pile.<BR>\n\
+	When playing a card that has a blood cost, the blood comes form played cards on the field, unless a card states otherwise, a drained blood card must be discarded into a discard pile.<BR>\n\
 	When a Card requires bodies, they use the discard pile, replacing the used cards back in the deck.<BR>\n\
 	Flying:<BR>\n\
 	Flying cards will be stated.<BR>\n\
@@ -68,10 +68,10 @@
 	<BR>\n\
 	Cards:<BR>\n\
 	Each card has a play requirement, Health, Damage, and cards can have modifers that will be noted.<BR>\n\
-	When a player most place their card in the first land their side, and when a turn ends they move 1 lane. A card can only ever move 1 lane before, then every turn past that will resaults an a attack.<BR>\n\
-	A card that attacks, if it over kills the card it is facing attacks the card behind it, takes the remaining damage.<BR>\n\
+	When a player must place their card in the first land their side, and when a turn ends they move 1 lane. A card can only ever move 1 lane before, then every turn past that will results in an a attack.<BR>\n\
+	A card that attacks, if it over kills the card it is facing, attacks the card behind it, which takes the remaining damage.<BR>\n\
 	If a card has no opposing card, then the card attacks the other player.<BR>\n\
-	When a player takes damage, the scale or tally system gets moved one tords the person, when the a player has 5 damage to them, they lose."
+	When a player takes damage, the scale or tally system gets moved one towards the person, when the a player has 5 damage, they lose."
 	var/real_desc = ""
 	icon = 'modular_sojourn/cardgame_sprites.dmi'
 	icon_state = "cardblank"
@@ -79,8 +79,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/card_carp/squirl
-	name = "Squirl"
-	desc = "A Squirl, Health is 1, Damage is 0, No spawn requirements."
+	name = "Squirrel"
+	desc = "A Squirrel, Health is 1, Damage is 0, No spawn requirements."
 	icon_state = "card_squirl"
 
 /obj/item/card_carp/shell
