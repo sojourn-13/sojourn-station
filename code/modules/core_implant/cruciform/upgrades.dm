@@ -65,7 +65,7 @@
 
 /obj/item/cruciform_upgrade/natures_blessing
 	name = "Natures blessing"
-	desc = "This upgrade slowly heals and fertilizes all plants near the follower. Useful for Agrolytes."
+	desc = "This upgrade slowly heals and fertilizes all plants near the follower. Useful for the aspiring Agrolytes."
 	icon_state = "natures_blessing"
 	matter = list(MATERIAL_BIOMATTER = 100, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 5)
 
@@ -88,7 +88,7 @@
 
 /obj/item/cruciform_upgrade/faiths_shield
 	name = "Faiths shield"
-	desc = "This upgrade will slightly increase follower resistance to physical and burn injuries from any source."
+	desc = "This upgrade will slightly increase a followers resistance to physical and burn damage from any source."
 	icon_state = "faiths_shield"
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 10)
 	var/shield_mod = 0.1
@@ -105,7 +105,7 @@
 
 /obj/item/cruciform_upgrade/cleansing_presence
 	name = "Cleansing presence"
-	desc = "This upgrade cleans tiles that the follower walks upon. Will slowly cause space vines and maint-shrooms to wither and die in the follower’s presence. Useful for Custodians."
+	desc = "This upgrade cleans tiles that the follower walks upon. Will slowly cause space vines and maint-shrooms to wither and die in the follower’s presence. Useful for the cleanly."
 	icon_state = "cleansing_presence"
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_SILVER = 5, MATERIAL_PLASTEEL = 5)
 	var/area_radius = 5
@@ -127,8 +127,8 @@
 			shroom.check_health()
 
 /obj/item/cruciform_upgrade/martyr_gift
-	name = "Martyr gift"
-	desc = "This upgrade upon the death of the follower, causes a large radius that doesn’t damage terrain nor does it damage followers of NT. It will cause massive burns to any non-cruciformed crewmembers or critters within its radius. However, in process of doing so, this upgrade destroys itself, albeit cruciform remains intact."
+	name = "Martyrs gift"
+	desc = "This upgrade causes a follower to cause a healing burst upon dying. It will heal for a massive amount to all humanoid creatures, even those without cruciforms. However, in process of doing so, this upgrade destroys itself."
 	icon_state = "martyr_gift"
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 5, MATERIAL_PLASMA = 5)
 	var/burn_damage = 50 //Nukes everyone and every mob around it
@@ -160,7 +160,7 @@
 	wearer.species.radiation_mod -= receive_damage_mod
 
 /obj/item/cruciform_upgrade/speed_of_the_chosen
-	name = "Speed of the chosen"
+	name = "Angel Aclarity"
 	desc = "This upgrade increases movement speed of the follower."
 	icon_state = "speed_of_the_chosen"
 	matter = list(MATERIAL_BIOMATTER = 120, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 5)
