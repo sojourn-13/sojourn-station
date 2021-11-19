@@ -11,20 +11,21 @@
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_DRUM
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
+	origin_tech = list(TECH_COMBAT = 11, TECH_MATERIAL = 3) //So rnd has a use to get their hands on one
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 2000
-	penetration_multiplier = 1
-	damage_multiplier = 1
+	penetration_multiplier = 1.5 //50% more ap
+	damage_multiplier = 1.1
 	zoom_factor = 0.3
 	fire_delay = 12
-	recoil_buildup = 20
-	one_hand_penalty = 30
+	recoil_buildup = 15
+	one_hand_penalty = 20
 	fire_sound = 'sound/weapons/guns/fire/heavy_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
-	gun_tags = list(GUN_PROJECTILE)
+	max_upgrades = 7 // Highly modular to allow many mods and upgrades to this!
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SIGHT)
 	init_firemodes = list(
 	SEMI_AUTO_NODELAY
 	)
