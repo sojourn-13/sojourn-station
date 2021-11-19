@@ -33,7 +33,7 @@
 	item_state = null
 	item_charge_meter = TRUE
 	desc = "A shotgun that epitomizes the truth that the tallest of buildings and grandest achievments are built by digging the deepest into the earth, \
-	fires superheated-shot in a crimson splutter, as the Reductor rail rifle. , \
+	fires superheated-shot in a crimson splutter, as the Reductor rail rifle. \
 	This Artificier craft is said to have been conceived originally by Soteria, opted into cooperation with the guild so that it might actually see regular use, in the practised hands of any guild adept. There is no adoption without loss."
 	fire_sound = 'sound/weapons/emitter2.ogg'
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/energy
