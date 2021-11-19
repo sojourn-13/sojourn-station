@@ -219,6 +219,39 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/abdicatorshotgun
+	name ="abdicator energy shotgun"
+	result = /obj/item/gun/energy/cog/shotgun
+	steps = list(
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_CUTTING, 60, "time" = 30),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASMA, "time" = 30),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 20),
+		list(QUALITY_HAMMERING, 40, "time" = 20),
+		list(/obj/item/stock_parts/smes_coil, 1, "time" = 30),
+		list(QUALITY_WELDING, 40, "time" = 30),
+		list(/obj/item/cell/large, 1, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
+		list(/obj/item/stack/cable_coil, 30, "time" = 25),
+		list(QUALITY_WIRE_CUTTING, 40, "time" = 15),
+		list(/obj/item/stock_parts/subspace/ansible, 1, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 20),
+		list(QUALITY_HAMMERING, 40, "time" = 20),
+		list(CRAFT_MATERIAL, 6, MATERIAL_RGLASS, "time" = 10),
+		list(/obj/item/stock_parts/capacitor/adv, 1, "time" = 30),
+		list(/obj/item/stock_parts/micro_laser/high, 1, "time" = 30),
+		list(/obj/item/computer_hardware/tesla_link, 1, "time" = 30),
+		list(/obj/item/computer_hardware/led, 1, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_URANIUM, "time" = 20),
+		list(QUALITY_HAMMERING, 40, "time" = 30),
+		list(CRAFT_MATERIAL, 25, MATERIAL_PLASTIC, "time" = 20),
+		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 20)
+	)
+
 /datum/craft_recipe/guild/ten_shot_conversion
 	name = "ten-shot conversion shotgun"
 	result = /obj/item/gun/projectile/revolver/sixshot/conversion
