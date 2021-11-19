@@ -31,7 +31,7 @@
 			var/i = 0
 			for(var/obj/item/ore/O in BOX.contents)
 				contents -= O
-				O.loc = src.output_dir
+				O.loc = get_step(src, output_dir).loc
 				if(++i>=10)
 					return
 
@@ -40,6 +40,6 @@
 			for(var/i = 0; i<10; i++)
 				O = locate(/obj/item) in input
 				if(O)
-					O.loc = src.output_dir
+					O.loc = get_step(src, output_dir).loc
 				else
 					break

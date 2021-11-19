@@ -114,10 +114,10 @@
 						qdel(M)
 					else
 						contents -= M
-						M.loc = src.output_dir
+						M.loc = get_step(src, output_dir).loc
 				else
 					contents -= O
-					O.loc = src.output_dir
+					O.loc = get_step(src, output_dir).loc
 
 	//Output amounts that are past stack_amt.
 	for (var/material_name in stack_storage)
