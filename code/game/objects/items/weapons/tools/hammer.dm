@@ -112,7 +112,7 @@
 
 /obj/item/tool/hammer/ironhammer
 	name = "GmbH \"Ironhammer\" Breaching Hammer"
-	desc = "A modified sledgehammer produced by Seinmetall for police forces across Sol space.  "
+	desc = "A modified sledgehammer produced by Seinmetall for police forces across Sol space."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "iron_hammer"
 	item_state = "iron_hammer"
