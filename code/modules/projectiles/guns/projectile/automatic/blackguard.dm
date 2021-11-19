@@ -18,10 +18,10 @@
 	price_tag = 2500
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.35 //Really hard to upgrade
-	recoil_buildup = 15
-	one_hand_penalty = 20
+	recoil_buildup = 10
+	one_hand_penalty = 15
 
-	max_upgrades = 3 // Trigger, and guards or a laser sight
+	max_upgrades = 4 // Trigger, and guards or a laser sight, one less upgrade slot
 
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
@@ -30,7 +30,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_BAYONET)
 
 	init_firemodes = list(
-		list(mode_name="semiauto", mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=8, move_delay=null, icon="semi")
+		SEMI_AUTO_NODELAY,
+		BURST_2_ROUND
 		)
 
 /obj/item/gun/projectile/automatic/blackguard/update_icon()
