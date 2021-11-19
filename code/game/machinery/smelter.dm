@@ -151,7 +151,7 @@
 	return 0
 
 /obj/machinery/smelter/proc/eject(obj/O, output_dir)
-	O.loc = output_dir
+	O.loc = get_step(src, output_dir)
 
 
 /obj/machinery/smelter/proc/eject_material_stack(material)
