@@ -248,11 +248,14 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 	if(ispath(clone_type, /mob/living))
 		occupant = new clone_type()
 		occupant.loc = src
+		occupant.drop_items = null
 		clone_info.inject_mutations(occupant)
 		protein_mod = occupant.clone_difficulty
 
 	if(ispath(clone_type, /obj/item))
 		nonliving_occupant = new clone_type()
+		nonliving_occupant.loc = src
+		
 
 	feed_the_beast = 0
 

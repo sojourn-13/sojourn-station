@@ -20,6 +20,9 @@ Has ability of every roach.
 	health = 2000
 	contaminant_immunity = TRUE
 
+	faction= "deepmaint"
+	friendly_to_colony = FALSE
+
 	viewRange = 16
 
 	armor = list(melee = 40, bullet = 30, energy = 0, bomb = 20, bio = 50, rad = 100, agony = 100)
@@ -35,7 +38,7 @@ Has ability of every roach.
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 
 	//When something is knocked over, this creature devours it and grows.
-	var/list/captives
+	var/list/captives = list()
 
 	flash_resistances = 100 // Too Thick to care about flash...
 
@@ -51,22 +54,33 @@ Has ability of every roach.
 
 /mob/living/carbon/superior_animal/wasonce/New(var/mob/living/victim)
 	..()
-
-	//kill victim
+	loc = get_turf(victim)
+	//kill the victim
 	if(istype(victim, /mob/living))
-		victim.damage_through_armor(201, BRUTE, BP_CHEST)
 		akira = victim
+		//Kill them properly.
+		akira.damage_through_armor(100, BRUTE, BP_CHEST)
+		akira.damage_through_armor(20, CLONE, BP_HEAD)
+		akira.damage_through_armor(20, CLONE, BP_CHEST)
+		akira.damage_through_armor(20, CLONE, BP_GROIN)
+		akira.damage_through_armor(20, CLONE, BP_L_ARM)
+		akira.damage_through_armor(20, CLONE, BP_R_ARM)
+		akira.damage_through_armor(20, CLONE, BP_L_LEG)
+		akira.damage_through_armor(20, CLONE, BP_R_LEG)
+		akira.damage_through_armor(20, CLONE, BP_HEAD)
 
-		name = "What was once [victim]"
-		if ((istype(victim, /mob/living/carbon/human)))
-			var/mob/living/carbon/human/h_victim = victim
+
+
+		name = "Was once [akira]"
+		if ((istype(akira, /mob/living/carbon/human)))
+			var/mob/living/carbon/human/h_victim = akira
 			var/obj/item/implant/core_implant/cruciform/CI = h_victim.get_core_implant(/obj/item/implant/core_implant/cruciform, FALSE)
 			if (CI)
 				var/mob/N = CI.wearer
 				CI.name = "[N]'s Cruciform"
 				CI.uninstall()
 
-		victim.forceMove(src)
+		akira.forceMove(src)
 
 	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.
 	pixel_y = -16
@@ -100,6 +114,18 @@ Has ability of every roach.
 				L.visible_message(SPAN_DANGER("\the [src] uses its mass to knock over \the [L]!"))
 	. = ..()
 
+/mob/living/carbon/superior_animal/wasonce/death()
+	gib()
+
+
+/mob/living/carbon/superior_animal/wasonce/gib()
+	for(var/mob/living/drop_victim in captives)
+		drop_victim.loc = get_turf(src)
+	captives = list()
+
+	akira.loc = get_turf(src)
+	akira.gib()
+	..()
 
 /mob/living/carbon/superior_animal/wasonce/findTarget()
 	var/atom/best_target = null

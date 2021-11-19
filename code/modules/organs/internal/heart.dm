@@ -17,7 +17,7 @@
 
 /obj/item/organ/internal/heart/prosthetic
 	name = "prosthetic heart"
-	desc = "A metal heart, doesn't beat like a normal heart, but do the same job."
+	desc = "A metal heart, doesn't beat like a normal heart, but does the same job."
 	icon_state = "heart-prosthetic"
 	dead_icon = "heart-prosthetic"
 	price_tag = 100
@@ -34,3 +34,16 @@
 	name = "centralized capillary"
 	desc = "The centralized heart of a plantoid, functioning as little more than a capillary."
 	icon_state = "heart_plant-on"
+
+/obj/item/organ/internal/heart/huge
+	name = "huge heart"
+	desc = "An oversized heart, large enough for two (metaphorical) wolves."
+	icon_state = "heart_huge"
+	organ_efficiency = list(OP_HEART = 150)
+	specific_organ_size = 2.3
+	max_blood_storage = 100
+	nutriment_req = 15
+	dead_icon = "heart_huge"
+
+/obj/item/organ/internal/heart/huge/baboon
+	name = "mega-baboon heart"

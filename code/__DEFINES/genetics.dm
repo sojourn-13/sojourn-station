@@ -1,4 +1,3 @@
-//All mutations:
 #define MUTATION_COPY /datum/genetics/mutation/copy_mob
 #define MUTATION_COW_SKIN /datum/genetics/mutation/cow_skin
 #define MUTATION_IMBECILE /datum/genetics/mutation/imbecile
@@ -10,7 +9,7 @@
 #define MUTATION_CLUMSY /datum/genetics/mutation/disability/clumsy
 #define MUTATION_TOURETTES /datum/genetics/mutation/disability/tourettes
 #define MUTATION_NERVOUSNESS /datum/genetics/mutation/disability/nervousness
-#define MUTATION_BLINDNESS /datum/genetics/mutation/disability/nervousness
+#define MUTATION_BLINDNESS /datum/genetics/mutation/disability/blindness
 #define MUTATION_DEAF /datum/genetics/mutation/disability/deaf
 #define MUTATION_NEARSIGHTED /datum/genetics/mutation/disability/nearsighted
 #define MUTATION_EMP /datum/genetics/mutation/emp
@@ -25,6 +24,23 @@
 #define MUTATION_PSN_BREATH /datum/genetics/mutation/psn_breath
 #define MUTATION_CLOAKING /datum/genetics/mutation/cloaking
 #define MUTATION_GREATER_CLOAKING /datum/genetics/mutation/greater_cloaking
+#define MUTATION_HEART /datum/genetics/mutation/sac_mutation/heart
+#define MUTATION_B_HEART /datum/genetics/mutation/sac_mutation/b_heart
+#define MUTATION_LUNG /datum/genetics/mutation/sac_mutation/lungs
+#define MUTATION_G_LUNG /datum/genetics/mutation/sac_mutation/g_lungs
+#define MUTATION_LIVER /datum/genetics/mutation/sac_mutation/liver
+#define MUTATION_G_LIVER /datum/genetics/mutation/sac_mutation/g_liver
+#define MUTATION_BLOOD_VESSEL /datum/genetics/mutation/sac_mutation/blood_vessels
+#define MUTATION_E_BLOOD_VESSEL /datum/genetics/mutation/sac_mutation/e_blood_vessels
+#define MUTATION_MUSCLES /datum/genetics/mutation/sac_mutation/muscles
+#define MUTATION_S_MUSCLES /datum/genetics/mutation/sac_mutation/s_muscles
+#define MUTATION_NERVES /datum/genetics/mutation/sac_mutation/nerves
+#define MUTATION_S_NERVES /datum/genetics/mutation/sac_mutation/s_nerves
+#define MUTATION_ALL_ORGANS /datum/genetics/mutation/sac_mutation/upgraded_organs
+#define MUTATION_HYPERION /datum/genetics/mutation/hyperion
+//^^^ All mutations!
+
+
 //Exclusive Mutation types:
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
 #define MUT_TYPE_SKIN 1 //An exclusive mutation type for skin.
@@ -49,6 +65,7 @@
 //TODO: Add more for all organs
 
 //Cloning difficulty defines. Adjusts how much protein is required to create one creature
+#define CLONE_ITEM 0.5
 #define CLONE_EASY 0.7
 #define CLONE_MEDIUM 1
 #define CLONE_HARD 1.2
@@ -58,3 +75,11 @@
 //I use these instead of directly checking the mutations datum in some cases because it is quicker.
 #define ROACH_BLOOD          11
 #define CLOAKING          	 12
+
+
+//Thresholds for mutagenic Destabilization
+#define DESTABILIZE_LEVEL_WAS 110 //Threshold for turning into the wasonce.
+#define DESTABILIZE_LEVEL_CLONE_DAMAGE 100 //Threshold for periodic clone_damage
+#define DESTABILIZE_LEVEL_BASE 100 //The lowest destabilization level for activating processing
+
+#define DESTABILIZE_CHECK_INTERVAL 10 SECONDS //How often

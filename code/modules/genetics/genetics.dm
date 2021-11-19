@@ -34,20 +34,18 @@
 
 	var/list/mutation_pool = list() //Each gene held by the creature. Uses /datum/genetics/mutation.
 
-	var/max_instability = 1000 //How much instability we can deal with before bad things happen.
-
 	//Amount of copies allowed in a given mutation within the mutation pool. If 0, there is no limit.
 	var/max_copies = 0
 
 	var/total_instability = 0 //How much instability is present in the gene pool.
 
-	var/track_instability = TRUE //If we should bother tracking instability
-
 	var/initialized = FALSE //Whether or not the held genes have been applied to the holder.
 
-//A subset of genetics_holders for databases
-/datum/genetics/genetics_holder/virtual
-	track_instability = FALSE
+	var/processing_destabilization = FALSE //Whether or not we've kicked off the process to cause destabilization.
+
+	var/last_destability_check
+
+	var/stage = 0
 
 //Build a holder from scratch
 /datum/genetics/genetics_holder/New(mob/living/holding_mob)
@@ -65,9 +63,7 @@
 		duplicate.holder = holder
 	else
 		duplicate.holder = null
-	duplicate.max_instability = max_instability
 	duplicate.max_copies = max_copies
-	duplicate.track_instability = track_instability
 	duplicate.initialized = FALSE
 	for (var/datum/genetics/mutation/old_mutation in mutation_pool)
 		var/datum/genetics/mutation/new_mutation = old_mutation.copy()
@@ -335,10 +331,6 @@
 	new_mutation.active = pick(TRUE,FALSE)
 	return(new_mutation)
 
-
-
-
-
 //Search function for a specific mutation living in a genetics holder.
 //Key- relates to a stored identifying string in the mutation datum, can be different for datums of the same object
 //active_required- Mutation must be active in order to return properly.
@@ -362,7 +354,7 @@
 	#endif
 	var/datum/genetics/mutation/mutation_to_remove = getMutation(key)
 	if(mutation_to_remove)
-		total_instability -= (mutation_to_remove.instability * amt_to_remove)
+
 		mutation_to_remove.count -= amt_to_remove
 		//make a return mutation object
 		var/datum/genetics/mutation/return_mutation = mutation_to_remove.copy()
@@ -375,9 +367,13 @@
 
 
 			return_mutation.count = amt_to_remove + mutation_to_remove.count
+			total_instability -= (mutation_to_remove.instability * (amt_to_remove + mutation_to_remove.count))
+			check_destabilize()
 			qdel(mutation_to_remove)
 		else
 			return_mutation.count = amt_to_remove
+			total_instability -= (mutation_to_remove.instability * amt_to_remove)
+			check_destabilize()
 		return return_mutation
 	else
 		#ifdef JANEDEBUG
@@ -387,6 +383,7 @@
 
 /datum/genetics/genetics_holder/proc/removeAllMutations()
 	total_instability = 0
+	check_destabilize()
 	for (var/datum/genetics/mutation/mutation_to_remove in mutation_pool)
 		if(mutation_to_remove.active)
 			if(istype(holder, /mob/living/carbon/human))
@@ -429,8 +426,8 @@
 			mutation_pool += incoming_mutation
 			sortMutation(mutation_pool)
 
-	if(track_instability)
-		total_instability += (incoming_mutation.instability * incoming_mutation.count)
+	total_instability += (incoming_mutation.instability * incoming_mutation.count)
+	check_destabilize()
 
 //Inject a mutagen into a living person.
 //MAKE SURE HOLDER IS SET FIRST.
@@ -475,10 +472,6 @@
 
 	target.unnatural_mutations.initialized = TRUE
 
-	//The part where bad things happen.
-	if(target.unnatural_mutations.track_instability && (target.unnatural_mutations.total_instability > target.unnatural_mutations.max_instability))
-		target.unnatural_mutations.destabilize()
-
 	return TRUE
 
 /datum/genetics/genetics_holder/proc/unmark_all_mutations()
@@ -489,13 +482,59 @@
 	for(var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		selected_mutation.marked = TRUE
 
-//Function handling instability of a creature exceeding their maximum.
-/datum/genetics/genetics_holder/proc/destabilize()
-	//TODO: All of this.
+//Function for kicking off destabilization events.
+//Generally, we call it whenever a mutation is added.
+//However, it can also get called if a person with mutations is revived for any reason
+/datum/genetics/genetics_holder/proc/check_destabilize()
+	//check if the holder is a valid mob. Sometimes it's not set, so we use this instead.
+	if(!holder_is_living())
+		return
 
-	//Akira message:
-	holder.visible_message(SPAN_DANGER("\The [holder]'s body begins to warp and change! BY SCIENCE, WHAT IS THAT!?"))
+	if(processing_destabilization)
+		//Stop processing if we fall below the base value, or if the holder is already dead- Since we won't be needing it anymore
+		if(total_instability < DESTABILIZE_LEVEL_BASE)
+			STOP_PROCESSING(SSprocessing, src)
+			stage = 0
+			processing_destabilization = FALSE
+			return
+	else
+		//Start the process if we hit the threshold base value
+		if(total_instability >= DESTABILIZE_LEVEL_BASE)
+			last_destability_check = world.time
+			START_PROCESSING(SSprocessing, src)
+			processing_destabilization = TRUE
+			return
+	return
 
+//Function for processing destabilization, it will only start if total_instability in a valid holder exceeds DESTABILIZE_LEVEL_BASE.
+//Doesn't start OR stop unless check_destabilize() tells it to.
+/datum/genetics/genetics_holder/Process()
+	if(world.time < last_destability_check + DESTABILIZE_CHECK_INTERVAL)
+		return
+
+	last_destability_check = world.time
+
+	if(total_instability >= DESTABILIZE_LEVEL_WAS)
+		stage++
+		switch(stage)
+			if(1)
+				to_chat(holder, SPAN_DANGER("You don't feel too good."))
+			if(6)
+				holder.visible_message(SPAN_DANGER("The muscles beneath the skin of \the [holder] ripple and bulge."))
+				to_chat(holder, SPAN_DANGER("Your form wavers. Ascention calls to you."))
+			if(12)
+				to_chat(holder, SPAN_DANGER("You feel yourself becoming... More. You answer the call."))
+			if(13)
+				holder.visible_message(SPAN_DANGER("[holder] shifts and reforms into... By science... What is that!?"))
+				new /mob/living/carbon/superior_animal/wasonce(holder)
+	if((total_instability >= DESTABILIZE_LEVEL_CLONE_DAMAGE) && (holder.getCloneLoss() < 30))
+		holder.damage_through_armor(1, CLONE, pick(BP_ALL_LIMBS))
+		
+
+
+
+
+//
 /datum/genetics/genetics_holder/ui_data(var/list/known_mutations)
 	var/list/data = list()
 	data["instability"] = total_instability
@@ -507,6 +546,15 @@
 	data["mutation_pool"] = mutation_pool_data
 
 	return data
+
+//Quick Check if our holder is living
+/datum/genetics/genetics_holder/proc/holder_is_living()
+	return ((holder && istype(holder, /mob/living/carbon/human)) ? TRUE : FALSE)
+
+//Quick Check if our holder is human
+/datum/genetics/genetics_holder/proc/holder_is_human()
+	return ((holder && istype(holder, /mob/living/carbon/human)) ? TRUE : FALSE)
+
 
 /*
 * =================================================================================================
@@ -651,7 +699,7 @@
 	#ifdef JANEDEBUG
 	log_debug("Ran the default Player implant proc for [name] as per usual")
 	#endif
-	if(istype(container.holder, /mob/living/carbon/human))
+	if(container.holder_is_human())
 		if(gain_text)
 			to_chat(container.holder, SPAN_NOTICE("[gain_text]"))
 		return TRUE
@@ -663,18 +711,19 @@
 	#ifdef JANEDEBUG
 	log_debug("Ran the default Mob proc for [name]")
 	#endif
+	return container.holder_is_living()
+
 
 //What happens when a gene is removed from a player.
 /datum/genetics/mutation/proc/onPlayerRemove()
 	#ifdef JANEDEBUG
 	log_debug("Ran the default Player Remove proc for [name] as per usual")
 	#endif
-	if(istype(container.holder, /mob/living/carbon/human))
-		return TRUE
-	return FALSE
+	return container.holder_is_human()
 
 //What happens when a gene is removed from a mob.
 /datum/genetics/mutation/proc/onMobRemove()
+	return container.holder_is_living()
 
 //Managing a constantly updating process on a mob.
 //Takes the mutation's Process proc and should be called in onPlayerImplant and onMobImplant.

@@ -91,3 +91,5 @@
 	var/burn_mod_perk = 1
 	var/toxin_mod_perk = 1
 	var/oxy_mod_perk = 1
+
+	var/list/drop_items = list() //Held items a creature can drop when they die. Accessed through drop_death_loot()

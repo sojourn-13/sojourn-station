@@ -15,8 +15,8 @@
 /obj/item/organ/internal/lungs/long
 	name = "long lungs"
 	icon_state = "long_lungs"
-	organ_efficiency = list(OP_LUNGS = 133)
-	specific_organ_size = 3
+	organ_efficiency = list(OP_LUNGS = 150)
+	specific_organ_size = 2.3
 	breath_modulo = 8
 
 /obj/item/organ/internal/lungs/prosthetic

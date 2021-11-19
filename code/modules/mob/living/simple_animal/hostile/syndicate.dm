@@ -21,8 +21,6 @@
 	melee_damage_upper = 10
 	attacktext = "punched"
 	a_intent = I_HURT
-	var/weapon1
-	var/weapon2
 	min_oxy = 5
 	max_oxy = 0
 	min_tox = 0
@@ -37,15 +35,13 @@
 	status_flags = CANPUSH
 	leather_amount = 0
 	bones_amount = 0
+	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
 /mob/living/simple_animal/hostile/syndicate/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()
 	new /obj/effect/gibspawner/human(src.loc)
 	playsound(src, 'sound/effects/Explosion2.ogg', 75, 1, -3)
-	if(weapon1)
-		new weapon1(src.loc)
-	if(weapon2)
-		new weapon2(src.loc)
+	drop_death_loot()
 	qdel(src)
 	return
 
@@ -56,8 +52,7 @@
 	maxHealth = 250 //Boosted because melee given armor/shield
 	health = 250
 	icon_state = "syndicatemelee"
-	weapon1 = /obj/item/melee/energy/sword/red
-	weapon2 = /obj/item/shield/buckler/energy
+	drop_items = list(/obj/item/melee/energy/sword/red, /obj/item/shield/buckler/energy)
 	attacktext = "slashed"
 	status_flags = 0
 	armor = list(
@@ -108,7 +103,7 @@
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol_35
 
-	weapon1 = /obj/item/gun/projectile/automatic/c20r
+	drop_items = list(/obj/item/gun/projectile/automatic/c20r)
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space
 	icon_state = "syndicaterangedpsace"
@@ -137,7 +132,7 @@
 	melee_damage_upper = 15
 	maxHealth = 100
 	health = 100
-	weapon1 = /obj/item/tool/knife/tacknife
+	drop_items = list(/obj/item/tool/knife/tacknife)
 
 /mob/living/simple_animal/hostile/syndicate/melee/heavy
 	name = "\improper Mercenary heavy"
@@ -152,7 +147,7 @@
 	ranged_cooldown = 2
 	rapid = 0
 	icon_state = "syndicate_pistol"
-	weapon1 = /obj/item/gun/projectile/clarissa/makarov
+	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
 
 /mob/living/simple_animal/hostile/syndicate/ranged/heavy
 	ranged_cooldown = 3
@@ -164,7 +159,7 @@
 	ranged_cooldown = 4
 	rapid = 0
 	icon_state = "syndicate_shotgun"
-	weapon1 = /obj/item/gun/projectile/shotgun/pump/combat/sawn
+	drop_items = list(/obj/item/gun/projectile/shotgun/pump/combat/sawn)
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun
 
@@ -175,14 +170,14 @@
 	melee_damage_upper = 15
 	maxHealth = 100
 	health = 100
-	weapon1 = /obj/item/tool/knife/tacknife
+	drop_items = list(/obj/item/tool/knife/tacknife, /obj/item/shield/buckler/energy)
 
 //space range
 /mob/living/simple_animal/hostile/syndicate/ranged/space/weak
 	ranged_cooldown = 2
 	rapid = 0
 	icon_state = "syndicate_space_pistol"
-	weapon1 = /obj/item/gun/projectile/clarissa/makarov
+	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space/heavy
 	ranged_cooldown = 2
@@ -194,7 +189,7 @@
 	ranged_cooldown = 4
 	rapid = 0
 	icon_state = "syndicate_space_shotgun"
-	weapon1 = /obj/item/gun/projectile/shotgun/pump/combat/sawn
+	drop_items = list(/obj/item/gun/projectile/shotgun/pump/combat/sawn)
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun
 
@@ -256,8 +251,6 @@
 	melee_damage_upper = 10
 	attacktext = "punched"
 	a_intent = I_HURT
-	var/weapon1
-	var/weapon2
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0
@@ -280,10 +273,7 @@
 	..()
 	new /obj/effect/gibspawner/human(src.loc)
 	playsound(src, 'sound/effects/Explosion1.ogg', 75, 1, -3)
-	if(weapon1)
-		new weapon1(src.loc)
-	if(weapon2)
-		new weapon2(src.loc)
+	drop_death_loot()
 	qdel(src)
 	return
 
@@ -297,8 +287,7 @@
 	maxHealth = 450 //Boosted because melee given armor/shield
 	health = 450
 	icon_state = "syndicate_stormtrooper_sword"
-	weapon1 = /obj/item/melee/energy/sword/red
-	weapon2 = /obj/item/shield/buckler/energy
+	drop_items = list(/obj/item/melee/energy/sword/red, /obj/item/shield/buckler/energy)
 	attacktext = "slashed"
 
 //elite range
@@ -309,7 +298,7 @@
 	icon_state = "syndicate_stormtrooper_smg"
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol_35
-	weapon1 = /obj/item/gun/projectile/automatic/c20r
+	drop_items = list(/obj/item/gun/projectile/automatic/c20r)
 
 /mob/living/simple_animal/hostile/elitemercenary/range/gunslinger
 	ranged_cooldown = 2
@@ -317,7 +306,7 @@
 	icon_state = "syndicate_stormtrooper_pistol"
 	projectilesound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/kurtz_50
-	weapon1 = /obj/item/gun/projectile/revolver/mateba
+	drop_items = list(/obj/item/gun/projectile/revolver/mateba)
 
 /mob/living/simple_animal/hostile/elitemercenary/range/space/heavy/shotgun
 	ranged_cooldown = 4
@@ -325,4 +314,4 @@
 	icon_state = "syndicate_stormtrooper_shotgun"
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun
-	weapon1 = /obj/item/gun/projectile/shotgun/pump/combat
+	drop_items = list(/obj/item/gun/projectile/shotgun/pump/combat)
