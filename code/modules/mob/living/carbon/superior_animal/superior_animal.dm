@@ -339,6 +339,9 @@
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
+	if(ckey)
+		return
+
 	objectsInView = null
 
 	//CONSCIOUS UNCONSCIOUS DEAD

@@ -750,6 +750,7 @@
 	if (AI_inactive)
 		activate_ai()
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
+		return
 	else
 		AI_inactive = TRUE
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
@@ -761,10 +762,11 @@
 	set category = "Mob verbs"
 	var/common_known = FALSE
 
-	if (!common_known)
+	if(!common_known)
 		add_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to ON."))
 		common_known = TRUE
+		return
 	else
 		remove_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))
