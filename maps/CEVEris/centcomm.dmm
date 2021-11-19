@@ -762,7 +762,7 @@
 "oH" = (/obj/structure/largecrate/animal/goat,/turf/simulated/shuttle/floor/mining{icon_state = "9,23"},/area/centcom/evac)
 "oI" = (/obj/structure/largecrate/animal/pig,/turf/simulated/shuttle/floor/mining{icon_state = "9,23"},/area/centcom/evac)
 "oJ" = (/obj/effect/window_lwall_spawn/smartspawnplasma,/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
-"oK" = (/turf/space,/obj/machinery/door/blast/regular/open{id = "shipjackshutters"},/obj/effect/window_lwall_spawn/plasma/reinforced,/turf/simulated/floor/plating/under,/area/shuttle/skipjack_area)
+"oK" = (/obj/machinery/door/blast/regular/open{id = "shipjackshutters"},/obj/effect/window_lwall_spawn/plasma/reinforced,/turf/space,/turf/simulated/floor/plating/under,/area/shuttle/skipjack_area)
 "oY" = (/obj/machinery/optable/altar,/turf/simulated/floor/carpet/oracarpet,/area/centcom/evac)
 "oZ" = (/obj/structure/table/woodentable,/obj/item/device/binoculars,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "pc" = (/obj/structure/table/woodentable,/obj/item/paper_bin{pixel_y = 4},/obj/item/pen{pixel_y = 4},/turf/simulated/floor/tiled/dark/gray_perforated,/area/centcom/evac)
@@ -798,7 +798,7 @@
 "sU" = (/obj/machinery/vending/fitness,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "sW" = (/obj/structure/flora/small/grassb2,/turf/simulated/floor/fixed/fgrass,/area/centcom/evac)
 "ti" = (/obj/machinery/light{dir = 1},/obj/machinery/body_scanconsole,/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
-"tl" = (/obj/structure/filingcabinet/filingcabinet,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
+"tl" = (/obj/machinery/account_database{dir = 4},/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "tt" = (/obj/structure/table/standard,/obj/random/material_resources,/obj/random/material_resources,/obj/random/material_rare,/obj/random/material_rare,/obj/random/lathe_disk/advanced,/obj/random/material_rare,/obj/random/material_resources,/obj/random/material,/obj/random/material,/turf/simulated/floor/tiled/techmaint,/area/centcom/raider_base)
 "tu" = (/obj/structure/railing,/obj/structure/railing{dir = 8},/turf/simulated/floor/beach/sand,/area/centcom/evac)
 "tz" = (/turf/simulated/floor/carpet/turcarpet,/area/centcom/evac)
@@ -931,7 +931,7 @@
 "KL" = (/obj/random/closet,/turf/simulated/floor/tiled/dark,/area/centcom/raider_base)
 "KR" = (/turf/unsimulated/wall,/area/centcom/evac)
 "Lb" = (/obj/structure/railing{dir = 1},/turf/simulated/floor/beach/sand,/area/centcom/evac)
-"Lk" = (/obj/machinery/door/airlock/glass_command,/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/centcom/evac)
+"Lk" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/vault,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/centcom/evac)
 "LD" = (/obj/structure/closet/secure_closet/freezer/fridge,/turf/simulated/floor/tiled/cafe,/area/centcom/raider_base)
 "LE" = (/obj/structure/table/woodentable,/obj/item/organ/internal/bone/head,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "Mc" = (/obj/random/closet_wardrobe,/obj/effect/floor_decal/industrial/warningwhite/full,/turf/simulated/floor/carpet/turcarpet,/area/centcom/raider_base)
@@ -955,6 +955,7 @@
 "Ok" = (/obj/structure/table/rack/shelf,/turf/simulated/floor/tiled/dark/gray_perforated,/area/centcom/evac)
 "Om" = (/obj/structure/closet/crate,/obj/random/common_oddities,/obj/random/common_oddities,/obj/random/common_oddities,/obj/effect/floor_decal/industrial/outline,/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/white/cargo,/area/centcom/raider_base)
 "OA" = (/obj/structure/table/rack/shelf,/obj/item/toy/figure/character/bobblehead/excelsior,/turf/simulated/floor/tiled/dark/gray_platform,/area/centcom/evac)
+"OH" = (/obj/structure/filingcabinet/employment,/turf/simulated/floor/tiled/dark/golden,/area/centcom/evac)
 "OK" = (/obj/machinery/light/floor{dir = 8; pixel_x = 5},/turf/simulated/floor/tiled/white/gray_platform,/area/centcom/merc_base)
 "OU" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/tiled/white/gray_perforated,/area/centcom/merc_base)
 "OZ" = (/obj/structure/table/rack/shelf,/obj/random/gun_fancy,/obj/random/gun_fancy,/obj/effect/floor_decal/industrial/outline,/turf/simulated/floor/tiled/white/cargo,/area/centcom/raider_base)
@@ -1151,7 +1152,7 @@ qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohohohohocNQwrwEPEPEPEPEPEP
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoxxrTQXhocNQwrwEPEPEPEPEPEPEPEPEPEPEPEPxOIScNLkcNtzupWKpmcNhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHhlhlhlhlhlhlqHqHqHqHqHqHqHqHqHqHqHbObPbQbPbOqHqHqHhfhfhfhfbJbJhFbJbJbJbJbJbJbJhlhlhlhlhlhlhlhlhlhlhlhlhlhleYitqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoBpcNcNFkcNQwrwEPEPEPEPEPEPEPEPEPEPEPEPxOIScNhoNKtztzMvtzsBhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHhlhlhlhlhlhlqHqHqHqHqHqHqHqHqHqHbPbPbRdhegbPbPqHqHhfiNiNiNchiNiNhTbJhUinisiybJhlhlhlhlhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhoznBKEBhocNQwtuUFUFUFUFUFUFUFUFUFUFUFUFwdIScNhotlHSHSHSHSZUhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHhlhlhlhlhlqHqHqHqHqHqHqHqHqHbPbPezfEgffEhpbPbPqHhfiNiNckckiNiNiNiAiOiOiOiCbJbJbJbJbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
-qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohohohohocNaDXZXZXZXZXZXZXZXZXZXZXZXZXZXZaDcNhoQNcNJbcLcLLEhoKRKRKRKRKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHqHqHqHqHqHqHbPhqfEkqkqkqfEhsbPqHhfiNiEiFiDcniNiNbJiOiOiOiPbJkNiXiYbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
+qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohohohohocNaDXZXZXZXZXZXZXZXZXZXZXZXZXZXZaDcNhoQNcNJbOHcLLEhoKRKRKRKRKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHhlhlhlhlqHqHqHqHqHqHqHqHqHbPhqfEkqkqkqfEhsbPqHhfiNiEiFiDcniNiNbJiOiOiOiPbJkNiXiYbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRKRKRKRKRhoBmXISyreSNcNcNcNcNcNcNcNcNcNaDcNcNcNhohoBUzkzkzkhohohoxDhohoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHhlhlqHqHqHqHqHqHqHqHqHqHbPhHfEkqkqkqhLkrbPqHhfiNiNgZgZiNiNjabJjbkijciZbJlSkwjmbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRhohohohohohohohohohohohohohoTLVfnVhohohoXccNcNcNcNXcyREXsdEXhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHbPhSfEkqhrkqfEijbPqHhfiNiNiNkGiNiNjnbJbJbJbJbJbJjokOjpbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
 qHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHKRKRKRKRhoCtcNdjcNcNcNcNcNdjcNcNZqcNXCcNdjcNdndnaDFMFMFMFMFMFMhoKRqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHhkqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHiririvivirivivirirqHhfhfhfhfbJjqjqjqbJjujujCjDbJjEkwjFbJhlhlhlhlhlhlhlhlhlhleYfpqHqHqHqHqHqHqHqHqHqHqHqHqHfWfWfWfWfWqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHqHfpeYqHqHqHqHqHqHqHqHqHqHqH
