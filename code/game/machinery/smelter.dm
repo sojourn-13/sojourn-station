@@ -74,7 +74,7 @@
 	for(var/obj/O in get_step(src, input_side))
 		if(O.anchored)
 			continue
-		O.forceMove(src)
+		O.loc = src
 		var/list/materials = result_materials(O)
 		if(!materials?.len || !are_valid_materials(materials))
 			eject(O, refuse_output_side)
@@ -151,7 +151,7 @@
 	return 0
 
 /obj/machinery/smelter/proc/eject(obj/O, output_dir)
-	O.forceMove(get_step(src, output_dir))
+	O.loc = get_step(src, output_dir)
 
 
 /obj/machinery/smelter/proc/eject_material_stack(material)
