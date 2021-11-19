@@ -611,23 +611,23 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "bN" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/mre/can,
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can,
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = -9
 	},
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -719,26 +719,26 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "cb" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
