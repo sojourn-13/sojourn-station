@@ -25,6 +25,8 @@
 	recoil_buildup = 12
 	one_hand_penalty = 20 //automatic rifle level
 
+	gun_tags = list(GUN_PROJECTILE, GUN_SIGHT, GUN_MAGWELL)
+
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY)
 

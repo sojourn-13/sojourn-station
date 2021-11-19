@@ -2579,6 +2579,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\sts.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\survivalrifle.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\texan.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\vector.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\vintorez.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\wirbelwind.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\anti_materiel_sniper.dm"
