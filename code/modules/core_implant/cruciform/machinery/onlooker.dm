@@ -1,9 +1,8 @@
 
-//Sprite by Près de l'oiseau#2625
+//Sprite by PrÃ¨s de l'oiseau#2625
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer
 	name = "Absolute Nullifer"
-	desc = "A massive and floating piller that Brown with the work of Brynn came up with to help read instablity in an area, \
-	block teleportation and warn people about a rooms entropy."
+	desc = "A floating pillar of size that was developed by the church numerals under Browne's direction for monitoring bluespace entropy."
 	icon = 'icons/obj/machines/church_looker.dmi'
 	icon_state = "Nullifer_i_sleep"
 	idle_power_usage = 600 //Were not that demanding as were so costly already
