@@ -579,6 +579,19 @@
 	. = ..()
 	icon_state = "birdshot-[rand(1,4)]"
 
+//'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
+/obj/item/projectile/bullet/pellet/shotgun/energy
+	name = "Unstable energy bolt"
+	icon_state = "l_birdshot-1"
+	damage_types = list(BURN = 13) //slightly less than buck, but FAR more painful
+	armor_penetration = 10 //heated shot melt armor.
+	embed = FALSE
+	can_ricochet = FALSE
+	sharp = FALSE
+	muzzle_type = /obj/effect/projectile/plasma/muzzle
+	color = "#9D2300"
+	check_armour = ARMOR_ENERGY
+
 //For the love of God don't make this common.
 /obj/item/projectile/bullet/shotgun/payload
 	name = "explosive bolt"
