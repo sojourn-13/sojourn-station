@@ -71,7 +71,7 @@ Has ability of every roach.
 
 
 
-		name = "What was once [akira]"
+		name = "Was once [akira]"
 		if ((istype(akira, /mob/living/carbon/human)))
 			var/mob/living/carbon/human/h_victim = akira
 			var/obj/item/implant/core_implant/cruciform/CI = h_victim.get_core_implant(/obj/item/implant/core_implant/cruciform, FALSE)
