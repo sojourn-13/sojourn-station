@@ -161,7 +161,7 @@
 
 /obj/item/cruciform_upgrade/speed_of_the_chosen
 	name = "Angel Aclarity"
-	desc = "This upgrade increases movement speed of the follower."
+	desc = "This upgrade increases the movement speed of the follower."
 	icon_state = "speed_of_the_chosen"
 	matter = list(MATERIAL_BIOMATTER = 120, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 5)
 	var/speed_increase = 0.1 //10% faster, stacks with other sorces so its to be balanced with that
