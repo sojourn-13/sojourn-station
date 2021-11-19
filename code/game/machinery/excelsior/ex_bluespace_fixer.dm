@@ -1,8 +1,8 @@
 
-//Sprite base by Près de l'oiseau#2625
+//Sprite base by PrÃ¨s de l'oiseau#2625
 /obj/machinery/power/ex_bluespace_repairer
-	name = "excelsior bluespace aliner"
-	desc = "Large semi radio tower like machinery, that is used to aline and repair bluespace, \
+	name = "excelsior bluespace alinger"
+	desc = "Large semi-radio-like tower like machinery, that is used to aline and repair bluespace, \
 	used mostly when a the long range teleporters start to destable local space, \
 	and warn people about a rooms entropy."
 	icon = 'icons/obj/machines/excelsior/bluespace_fixer.dmi'
