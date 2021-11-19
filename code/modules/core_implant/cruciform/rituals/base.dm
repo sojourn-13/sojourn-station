@@ -290,7 +290,7 @@
 /datum/ritual/cruciform/base/uninstall_upgrade
 	name = "Uninstall Cruciform Upgrade"
 	phrase = "Deus meus ut quid habebant affectus."
-	desc = "This litany will command cruciform uprgrade to detach from cruciform."
+	desc = "This litany will command a cruciform uprgrade to detach from a cruciform."
 	power = 20
 
 /datum/ritual/cruciform/base/uninstall_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
