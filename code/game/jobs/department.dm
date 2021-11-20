@@ -78,6 +78,7 @@
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
 	funding_type = FUNDING_NONE
+	account_budget = 0
 	account_initial_balance = 17500 //15k do to being state funded
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
 
@@ -98,21 +99,24 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	account_budget = 15000 //For buying medical and items and payments
+	account_budget = 0
+	account_initial_balance = 15000 //For buying medical and items and payments
 	funding_type = FUNDING_NONE
 	funding_source = "Soteria Institution."
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	account_budget = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
+	account_budget = 0
+	account_initial_balance = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
 	funding_type = FUNDING_NONE
 	funding_source = "Soteria Institution."
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
-	account_budget = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
+	account_budget = 0
+	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
 	funding_type = FUNDING_NONE
 	funding_source = "Church of Absolute"
 
@@ -138,11 +142,13 @@
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
+	account_budget = 0
 	account_initial_balance = 10000 //Has a lot of workers and people
 	funding_type = FUNDING_NONE
 
 /datum/department/independent
 	name = "Independent Allied Factions"
 	id = DEPARTMENT_INDEPENDENT
+	account_budget = 0
 	account_initial_balance = 0
 	funding_type = FUNDING_NONE
