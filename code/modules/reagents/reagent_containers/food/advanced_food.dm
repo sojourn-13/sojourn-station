@@ -23,7 +23,6 @@
 	..()
 
 	var/iconstring = initial(icon_state)
-	var/itemstring = ""
 
 	if (open)
 		iconstring += "_full"
