@@ -95,13 +95,19 @@
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/tank/emergency_oxygen(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
-	new /obj/item/reagent_containers/food/snacks/mre(src)
+	if(prob(50))
+		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+	else
+		new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
 
 /obj/item/storage/box/survival/extended/populate_contents()
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/tank/emergency_oxygen/engi(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
-	new /obj/item/reagent_containers/food/snacks/mre(src)
+	if(prob(50))
+		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+	else
+		new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
 	new /obj/item/device/lighting/glowstick/yellow(src)
 
 /obj/item/storage/box/gloves

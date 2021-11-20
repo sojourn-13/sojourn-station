@@ -95,6 +95,7 @@
 	icon_state = "sheet-iron"
 	default_type = MATERIAL_IRON
 	price_tag = 1
+	novariants = FALSE
 
 /obj/item/stack/material/iron/random
 	rand_min = 3
@@ -116,6 +117,7 @@
 	icon_state = "sheet-diamond"
 	default_type = MATERIAL_DIAMOND
 	price_tag = 25
+	novariants = FALSE
 
 /obj/item/stack/material/durasteel
 	name = "durasteel"
@@ -136,6 +138,7 @@
 	icon_state = "sheet-uranium"
 	default_type = MATERIAL_URANIUM
 	price_tag = 10
+	novariants = FALSE
 
 /obj/item/stack/material/uranium/random
 	rand_min = 2
@@ -146,6 +149,7 @@
 	icon_state = "sheet-plasma"
 	default_type = MATERIAL_PLASMA
 	price_tag = 8
+	novariants = FALSE
 
 /obj/item/stack/material/plasma/random
 	rand_min = 3
@@ -170,6 +174,7 @@
 	icon_state = "sheet-gold"
 	default_type = MATERIAL_GOLD
 	price_tag = 10
+	novariants = FALSE
 
 /obj/item/stack/material/gold/random
 	rand_min = 2
@@ -180,6 +185,7 @@
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_SILVER
 	price_tag = 5
+	novariants = FALSE
 
 /obj/item/stack/material/silver/random
 	rand_min = 3
@@ -191,6 +197,7 @@
 	icon_state = "sheet-adamantine"
 	default_type = MATERIAL_PLATINUM
 	price_tag = 20
+	novariants = FALSE
 
 /obj/item/stack/material/platinum/random
 	rand_min = 1
@@ -310,6 +317,7 @@
 	icon_state = "sheet-glass"
 	default_type = MATERIAL_GLASS
 	price_tag = 2
+	novariants = FALSE
 
 /obj/item/stack/material/glass/full
 	amount = 120
@@ -350,6 +358,7 @@
 	icon_state = "sheet-biomatter"
 	default_type = MATERIAL_BIOMATTER
 	price_tag = 1 //to keep biomatter in the player economy as the church and science use it.
+	novariants = FALSE
 	var/biomatter_in_sheet = 1
 
 /obj/item/stack/material/biomatter/random

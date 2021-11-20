@@ -30345,7 +30345,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "gYB" = (
-/obj/item/reagent_containers/food/snacks/mre/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "gYD" = (
@@ -35813,7 +35813,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "iqG" = (
-/obj/item/reagent_containers/food/snacks/mre/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
 /obj/structure/scrap/science/large,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -39966,7 +39966,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "joe" = (
 /obj/structure/closet/crate/trashcart,
-/obj/item/reagent_containers/food/snacks/mre/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "joj" = (
@@ -66987,8 +66987,8 @@
 "ptt" = (
 /obj/structure/catwalk,
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/mre,
-/obj/item/reagent_containers/food/snacks/mre,
+/obj/item/reagent_containers/food/snacks/openable,
+/obj/item/reagent_containers/food/snacks/openable,
 /obj/item/material/kitchen/utensil/spoon/mre,
 /turf/simulated/floor/plating/under,
 /area/mine/gulag)
@@ -87662,7 +87662,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
 "uaY" = (
-/obj/item/reagent_containers/food/snacks/mre,
+/obj/item/reagent_containers/food/snacks/openable,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ubj" = (

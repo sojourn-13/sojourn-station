@@ -62,10 +62,13 @@
 	..()
 
 /obj/item/storage/ration_pack/populate_contents()
-	new /obj/item/reagent_containers/food/snacks/mre(src)
-	new /obj/item/reagent_containers/food/snacks/mre/can(src)
+	if(prob(50))
+		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+	else
+		new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
+	new /obj/item/reagent_containers/food/snacks/openable/can(src)
 	new /obj/item/storage/fancy/mre_cracker(src)
-	new /obj/item/reagent_containers/food/snacks/candy/mre(src)
+	new /obj/item/reagent_containers/food/snacks/openable/mre(src)
 	new /obj/item/material/kitchen/utensil/spoon/mre(src)
 	if(prob(50))
 		new /obj/item/reagent_containers/food/snacks/mre_paste(src)
