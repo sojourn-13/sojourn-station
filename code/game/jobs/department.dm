@@ -78,7 +78,7 @@
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
 	funding_type = FUNDING_NONE
-	account_budget = 0
+	account_budget = 0 // No extra income barring what is needed to pay the staff, in order to encourage trade.
 	account_initial_balance = 17500 //15k do to being state funded
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
 
@@ -99,7 +99,7 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	account_budget = 0
+	account_budget = 0 // No extra income except what is needed to pay the doctors.
 	account_initial_balance = 15000 //For buying medical and items and payments
 	funding_type = FUNDING_NONE
 	funding_source = "Soteria Institution."
@@ -107,7 +107,7 @@
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	account_budget = 0
+	account_budget = 0 // No extra income except to pay the staff
 	account_initial_balance = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
 	funding_type = FUNDING_NONE
 	funding_source = "Soteria Institution."
@@ -142,13 +142,13 @@
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	account_budget = 0
+	account_budget = 0 // No regular money gain to encourage prospectors to loot and sell.
 	account_initial_balance = 10000 //Has a lot of workers and people
-	funding_type = FUNDING_NONE
+	funding_type = FUNDING_NONE // Salaries won't be supported by an external source to encourage prospectors to loot and sell
 
 /datum/department/independent
 	name = "Independent Allied Factions"
 	id = DEPARTMENT_INDEPENDENT
-	account_budget = 0
+	account_budget = 0 // They are not part of the colony, so they don't get regular payment.
 	account_initial_balance = 0
 	funding_type = FUNDING_NONE
