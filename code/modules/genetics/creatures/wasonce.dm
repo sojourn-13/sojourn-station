@@ -114,9 +114,6 @@ Has ability of every roach.
 				L.visible_message(SPAN_DANGER("\the [src] uses its mass to knock over \the [L]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/wasonce/death()
-	gib()
-
 
 /mob/living/carbon/superior_animal/wasonce/gib()
 	for(var/mob/living/drop_victim in captives)
