@@ -559,18 +559,11 @@
 		to_chat(usr, SPAN_WARNING("This tool is far to complex to read let alone use."))
 		return
 	var/area/my_area = get_area(src)
-	switch(my_area.bluespace_entropy)
-		if(0 to my_area.bluespace_hazard_threshold*0.3)
-			to_chat(user, SPAN_NOTICE("The scanner reads the room to not be in danger of annomlies bluespace."))
+	if(my_area.bluespace_entropy)
+		to_chat(user, SPAN_NOTICE("The scanner reads the room to [my_area.bluespace_entropy] annomlies bluespace."))
 
-		if(my_area.bluespace_hazard_threshold*0.7 to INFINITY)
-			to_chat(user, SPAN_NOTICE("The scanner reads the room to have some level of danger form annomlies bluespace."))
-
-	if(GLOB.bluespace_entropy > GLOB.bluespace_hazard_threshold*0.7)
-		to_chat(user, SPAN_NOTICE("The scanner is giving off several warnings of entropy in area being to high!"))
-
-	if(my_area.bluespace_entropy > my_area.bluespace_hazard_threshold*0.95 || GLOB.bluespace_hazard_threshold > GLOB.bluespace_hazard_threshold*0.95)
-		to_chat(user, SPAN_NOTICE("Entropy in area has its readings off the chart..."))
+	if(GLOB.bluespace_entropy)
+		to_chat(user, SPAN_NOTICE("The scanner is giving off [GLOB.bluespace_entropy]!"))
 
 /obj/item/oddity/code_book
 	name = "Marshal Code Handbook"

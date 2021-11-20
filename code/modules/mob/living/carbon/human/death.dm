@@ -71,6 +71,24 @@
 			playsound(loc, form.death_sound, 80, 1, 1)
 	handle_hud_list()
 
+	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(C && C.active)
+		var/obj/item/cruciform_upgrade/upgrade = C.upgrade
+		if(upgrade && upgrade.active && istype(upgrade, CUPGRADE_MARTYR_GIFT))
+			var/obj/item/cruciform_upgrade/martyr_gift/martyr = upgrade
+			visible_message(SPAN_DANGER("The [C] emit a massive light!"))
+			var/damage_healed
+			for(var/mob/living/L in oviewers(6, src))
+				if(ishuman(L))
+					var/mob/living/carbon/human/H = L
+					damage_healed = martyr.damage_healed / get_dist(src, H)
+					H.adjustFireLoss(-damage_healed)
+					H.adjustBruteLoss(-damage_healed)
+					H.adjustToxLoss(-damage_healed)
+					to_chat(H, SPAN_DANGER("You are get healed by radiance!"))
+
+			qdel(martyr)
+			C.upgrade = null
 
 /mob/living/carbon/human/proc/ChangeToHusk()
 	if(HUSK in mutations)	return

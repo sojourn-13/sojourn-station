@@ -26,6 +26,13 @@
 	if(stats.getPerk(PERK_REZ_SICKNESS))
 		tally += 0.90
 
+	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(C && C.active)
+		var/obj/item/cruciform_upgrade/upgrade = C.upgrade
+		if(upgrade && upgrade.active && istype(upgrade, CUPGRADE_SPEED_OF_THE_CHOSEN))
+			var/obj/item/cruciform_upgrade/speed_of_the_chosen/sotc = upgrade
+			tally -= sotc.speed_increase
+
 	var/health_deficiency = (maxHealth - health)
 	var/hunger_deficiency = (MOB_BASE_MAX_HUNGER - nutrition)
 	if((hunger_deficiency >= 200) && species.reagent_tag != IS_SYNTHETIC)

@@ -125,6 +125,9 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		target.IgniteMob()
 
 	var/power = force
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		power *= H.damage_multiplier
 	if(HULK in user.mutations)
 		power *= 2
 	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
