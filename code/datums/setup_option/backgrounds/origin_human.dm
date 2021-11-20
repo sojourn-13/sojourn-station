@@ -3,7 +3,7 @@
 	desc = "A catch all term to describe Humans and Abhumans born within Terran Colonies. Those born here have access to much more prestigious and advanced education facilities, \
 	along with various military pathways to choose from. Colony born humans tend to be widely skilled and physically better off than most as a result of clean living and access to \
 	better form of education than most. You may have been born on a colony world or be the child of those that were, in either case you still reap the benefits of good genetics."
-
+a
 	restricted_to_species = list(FORM_HUMAN)
 
 	stat_modifiers = list(
@@ -40,6 +40,8 @@
 	their technical skills to you."
 
 	restricted_to_species = list(FORM_HUMAN)
+
+	perks = list(/datum/perk/intelligenceboost)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
