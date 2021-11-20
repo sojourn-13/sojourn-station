@@ -2,7 +2,8 @@
 //Sprite by Près de l'oiseau#2625
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer
 	name = "Absolute Nullifer"
-	desc = "A floating pillar of size that was developed by the church numerals under Browne's direction for monitoring bluespace entropy."
+	desc = "A floating pillar of size that was developed by the church numerals under Browne's direction for monitoring bluespace entropy. \
+	Also known to block telescience teleportation."
 	icon = 'icons/obj/machines/church_looker.dmi'
 	icon_state = "Nullifer_i_sleep"
 	idle_power_usage = 600 //Were not that demanding as were so costly already

@@ -77,24 +77,15 @@
 		if(upgrade && upgrade.active && istype(upgrade, CUPGRADE_MARTYR_GIFT))
 			var/obj/item/cruciform_upgrade/martyr_gift/martyr = upgrade
 			visible_message(SPAN_DANGER("The [C] emit a massive light!"))
-			var/burn_damage_done
+			var/damage_healed
 			for(var/mob/living/L in oviewers(6, src))
 				if(ishuman(L))
 					var/mob/living/carbon/human/H = L
-					if(H in disciples)
-						continue
-					else if (H.random_organ_by_process(BP_SPCORE) || H.mutations.len)
-						burn_damage_done = (martyr.burn_damage / get_dist(src, H)) * 2
-						H.adjustFireLoss(burn_damage_done)
-					else
-						burn_damage_done = martyr.burn_damage / get_dist(src, H)
-						H.adjustFireLoss(burn_damage_done)
-					to_chat(H, SPAN_DANGER("You are get hurt by radiance!"))
-				if(L.colony_friend)
-					return
-				else
-					burn_damage_done = martyr.burn_damage / get_dist(src, L)
-					L.damage_through_armor(burn_damage_done, BURN)
+					damage_healed = martyr.damage_healed / get_dist(src, H)
+					H.adjustFireLoss(-damage_healed)
+					H.adjustBruteLoss(-damage_healed)
+					H.adjustToxLoss(-damage_healed)
+					to_chat(H, SPAN_DANGER("You are get healed by radiance!"))
 
 			qdel(martyr)
 			C.upgrade = null
