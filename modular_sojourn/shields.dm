@@ -16,6 +16,12 @@
 	price_tag = 1200
 	attack_verb = list("shoved", "bashed")
 	var/structure_form_type = /obj/structure/shield_deployed
+	item_icons = list(
+		slot_back_str = 'icons/obj/bastion.dmi')
+	item_state_slots = list(
+		slot_back_str = "bastion_back"
+		)
+
 
 /obj/item/bastion_broken
 	name = "Broken: Bastion Shield"
