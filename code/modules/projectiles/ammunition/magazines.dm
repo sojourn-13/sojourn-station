@@ -254,7 +254,7 @@
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/smg_magnum_40/old
-	name = "old smg magazine (.40 Magnumo)"
+	name = "old smg magazine (.40 Magnum)"
 	icon_state = "smg_magnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
