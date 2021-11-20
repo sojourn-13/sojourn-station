@@ -14,7 +14,7 @@
 	//We don't bother with holding previous states, because it can be abused with certain items to be permanently invisible without the mutation.
 	container.holder.mutations.Add(mutation)
 	container.holder.invisibility = INVISIBILITY_WEAK
-	container.holder.alpha = 32
+	container.holder.alpha = 50
 	container.holder.visible_message(SPAN_DANGER("[container.holder.name] becomes slightly translucent."))
 	anim(get_turf(container.holder), container.holder,'icons/mob/mob.dmi',,"cloak",,container.holder.dir)
 
@@ -63,7 +63,7 @@
 		last_used = world.time //Sanity check
 		container.holder.mutations.Add(mutation)
 		container.holder.invisibility = INVISIBILITY_LEVEL_ONE
-		container.holder.alpha = 8
+		container.holder.alpha = 25
 		container.holder.visible_message(SPAN_DANGER("[container.holder.name] melds into the shadows!"))
 		anim(get_turf(container.holder), container.holder,'icons/mob/mob.dmi',,"cloak",,container.holder.dir)
 		state = CLOAK_INITIALIZED
