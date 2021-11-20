@@ -16,15 +16,15 @@
 /obj/item/cardholder/proc/draw_card(mob/user)
 	..()
 	if(endless)
-		new card_target(src.loc)
+		new card_target(src)
 	if(!contents)
 		to_chat(user, SPAN_NOTICE("The [src] has no cards."))
 	else
 		card_target = pick(contents)
-		card_target.forceMove(src.loc)
+		card_target.loc = src
 		card_target = /obj/item/card_carp //so we have vars
 
-/obj/item/cardholder/attackby(obj/item/card_carp/CARD as obj, mob/user as mob)
+/obj/item/cardholder/attackby(obj/item/CARD as obj, mob/user as mob)
 	..()
 	if(istype(CARD, /obj/item/card_carp))
 		var/obj/item/card_carp/CH
@@ -32,7 +32,7 @@
 			to_chat(user, SPAN_NOTICE("The [src] rejects [CH]."))
 			return
 		else
-			CH.forceMove(src.loc)
+			CH.loc = src
 			user.visible_message(SPAN_NOTICE("[user] puts [CH] into \the [src]."), SPAN_NOTICE("You put [CH] into \the [src]."))
 			return
 
@@ -381,7 +381,7 @@
 
 /obj/item/scale/examine(mob/user)
 	..()
-	to_chat(user, "<span class='info'>The : [tally]</span>")
+	to_chat(user, "<span class='info'>The scale reads a tally of : [tally]</span>")
 
 /obj/item/scale/update_icon()
 	if(tally >= 5 || -5 >= tally)
