@@ -77,7 +77,7 @@
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	funding_type = FUNDING_NONE
+	funding_type = FUNDING_EXTERNAL
 	account_initial_balance = 17500 //15k do to being state funded
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
 
@@ -99,21 +99,21 @@
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
 	account_budget = 15000 //For buying medical and items and payments
-	funding_type = FUNDING_NONE
+	funding_type = FUNDING_EXTERNAL
 	funding_source = "Soteria Institution."
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
 	account_budget = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
-	funding_type = FUNDING_NONE
+	funding_type = FUNDING_EXTERNAL
 	funding_source = "Soteria Institution."
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
 	account_budget = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
-	funding_type = FUNDING_NONE
+	funding_type = FUNDING_EXTERNAL
 	funding_source = "Church of Absolute"
 
 
@@ -133,7 +133,7 @@
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
 	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
-	funding_type = FUNDING_NONE //So we want to trade and make money not magiclly get it every hour
+	funding_type = FUNDING_EXTERNAL //So we want to trade and make money not magiclly get it every hour
 
 /datum/department/prospector
 	name = "Prospectors"
