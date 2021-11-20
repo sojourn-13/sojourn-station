@@ -1,6 +1,6 @@
 /obj/item/gun/energy/gun/nuclear
 	name = "Prototype: advanced energy gun"
-	desc = "An energy gun with an experimental miniaturized reactor. It offers a self charging cell and fires in both lethal and stun."
+	desc = "An energy gun with an experimental miniaturized reactor with a reserved spot for a scope to be attached. It offers a self charging cell and fires in both lethal and stun."
 	icon = 'icons/obj/guns/energy/nucgun.dmi'
 	icon_state = "nucgun"
 	item_charge_meter = TRUE
@@ -13,7 +13,7 @@
 	price_tag = 2000
 	charge_cost = 50
 	can_dual = FALSE
-
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE) //Were all three and can have a scope if someone wants
 	init_firemodes = list(
 		STUNBOLT,
 		LETHAL

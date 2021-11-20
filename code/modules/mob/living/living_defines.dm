@@ -73,6 +73,9 @@
 
 	//Mutations populated through horrendous genetic tampering.
 	var/datum/genetics/genetics_holder/unnatural_mutations
+	
+	//How much material is used by the cloning process
+	var/clone_difficulty = CLONE_MEDIUM
 
 	var/is_watching = TRUE  //used for remote viewing of multiz structures
 	var/can_multiz_pb = FALSE // used for point-blanking people that camp ladders.
@@ -88,3 +91,5 @@
 	var/burn_mod_perk = 1
 	var/toxin_mod_perk = 1
 	var/oxy_mod_perk = 1
+
+	var/list/drop_items = list() //Held items a creature can drop when they die. Accessed through drop_death_loot()

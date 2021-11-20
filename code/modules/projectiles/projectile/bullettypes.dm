@@ -446,11 +446,12 @@
 	name = "slug"
 	icon_state = "slug"
 	damage_types = list(BRUTE = 54)
-	armor_penetration = 10
+	armor_penetration = 25
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
-	affective_damage_range = 1
-	affective_ap_range = 1
+	//Slugs are meant for long range shooting
+	affective_damage_range = 5
+	affective_ap_range = 8
 
 /obj/item/projectile/bullet/shotgun/beanbag
 	name = "beanbag"
@@ -461,6 +462,8 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 1.65
+	affective_damage_range = 1
+	affective_ap_range = 2
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
 	name = "soporific coated beanbag"
@@ -477,6 +480,8 @@
 	agony = 5
 	armor_penetration = 0
 	embed = FALSE
+	affective_damage_range = 1
+	affective_ap_range = 1
 
 /obj/item/projectile/bullet/shotgun/incendiary
 	//This is the best ammo for pvp in a shotgun, beating the stunshell with its pain and cooks anyone in any armor!
@@ -493,27 +498,39 @@
 /obj/item/projectile/bullet/shotgun/scrap
 	damage_types = list(BRUTE = 48)
 	armor_penetration = 5
+	affective_damage_range = 3
+	affective_ap_range = 4
 
 /obj/item/projectile/bullet/shotgun/beanbag/scrap
 	damage_types = list(BRUTE = 9)
 	agony = 55
+	affective_damage_range = 1
+	affective_ap_range = 1
 
 /obj/item/projectile/bullet/pellet/shotgun/scrap
 	damage_types = list(BRUTE = 9)
+	affective_damage_range = 4
+	affective_ap_range = 4
 
 //Railgun
 /obj/item/projectile/bullet/shotgun/railgun
 	nocap_structures = TRUE
 	hitscan = TRUE
 	can_ricochet = FALSE
+	affective_damage_range = 10
+	affective_ap_range = 10
 
 /obj/item/projectile/bullet/shotgun/beanbag/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
+	affective_damage_range = 10
+	affective_ap_range = 10
 
 /obj/item/projectile/bullet/shotgun/incendiary/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
+	affective_damage_range = 10
+	affective_ap_range = 10
 
 /obj/item/projectile/bullet/kurtz_50/railgun
 	nocap_structures = TRUE
@@ -578,6 +595,19 @@
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()
 	. = ..()
 	icon_state = "birdshot-[rand(1,4)]"
+
+//'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
+/obj/item/projectile/bullet/pellet/shotgun/energy
+	name = "Unstable energy bolt"
+	icon_state = "l_birdshot-1"
+	damage_types = list(BURN = 13) //slightly less than buck, but FAR more painful
+	armor_penetration = 10 //heated shot melt armor.
+	embed = FALSE
+	can_ricochet = FALSE
+	sharp = FALSE
+	muzzle_type = /obj/effect/projectile/plasma/muzzle
+	color = "#9D2300"
+	check_armour = ARMOR_ENERGY
 
 //For the love of God don't make this common.
 /obj/item/projectile/bullet/shotgun/payload

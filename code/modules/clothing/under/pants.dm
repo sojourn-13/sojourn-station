@@ -247,6 +247,11 @@
 	desc = "A pair of baggy, two-tone military style cargo pants featuring an elastic waistband and leg cuffs."
 	icon_state = "gorka_pants"
 
+/obj/item/clothing/under/gorkapants/gorkacrewdark
+	name = "dark crew gorka pants"
+	desc = "A pair of baggy, two-tone utility pants featuring an elastic waistband and leg cuffs, and dark grey liverly."
+	icon_state = "gorka_pants_ih"
+
 /obj/item/clothing/under/gorkapants
 	name = "tan gorka pants"
 	desc = "A pair of baggy, two-tone military style cargo pants featuring an elastic waistband and leg cuffs."

@@ -46,20 +46,29 @@
 	bloodcolor = "#666600"
 
 	var/taming_window = 30 //How long you have to tame this roach, once it's pacified.
-	var/busy_time // how long it will take to eat/lay egg
+	eating_time = 2 MINUTES // how long it will take to eat/lay egg
 	var/busy_start_time // when it started eating/laying egg
 
 	var/atom/eat_target // target that the roach wants to eat
 	var/fed = 0 // roach gets fed after eating a corpse
-	var/probability_egg_laying = 25 // probability to lay an egg
+	var/probability_egg_laying = 75 // probability to lay an egg
 
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
 	known_languages = list(LANGUAGE_CHTMANT)
 
+	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
+
 /mob/living/carbon/superior_animal/roach/New()
 	..()
+
+/mob/living/carbon/superior_animal/roach/isValidAttackTarget(var/atom/O)
+	if (isliving(O))
+		var/mob/living/L = O
+		if(L.faction=="sproachder")
+			return
+	return ..(O)
 
 //When roaches die near a leader, the leader may call for reinforcements
 /mob/living/carbon/superior_animal/roach/death()

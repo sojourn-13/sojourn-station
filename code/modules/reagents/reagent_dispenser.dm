@@ -7,6 +7,7 @@
 	anchored = FALSE
 	reagent_flags = DRAINABLE | AMOUNT_VISIBLE
 	var/volume = 1500
+	var/starting_volume = 0
 	var/starting_reagent = null
 	var/amount_per_transfer_from_this = 10
 	var/possible_transfer_amounts = list(10,25,50,100)
@@ -20,9 +21,14 @@
 
 /obj/structure/reagent_dispensers/New()
 	create_reagents(volume)
-
+		
 	if (starting_reagent)
-		reagents.add_reagent(starting_reagent, volume)
+		//If a starting volume is not 0, use that for the volume amount
+		if(starting_volume)
+			reagents.add_reagent(starting_reagent, starting_volume)
+		else
+			reagents.add_reagent(starting_reagent, volume)
+		
 	if (!possible_transfer_amounts)
 		src.verbs -= /obj/structure/reagent_dispensers/verb/set_APTFT
 	..()

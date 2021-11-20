@@ -189,6 +189,12 @@
 	icon_state = "gorka"
 	item_state = "gorka"
 
+/obj/item/clothing/under/gorka/dark
+	name = "dark gorka"
+	desc = "A rugged set of vaguely militant two-tone dark utility wear with dark patches and markings."
+	icon_state = "gorka_ih"
+	item_state = "gorka_ih"
+
 /obj/item/clothing/under/gorka
 	name = "tan gorka"
 	desc = "A rugged set of vaguely militant and quite slavic two-tone clothes, this time coyote brown on tan."
@@ -234,6 +240,13 @@
 	desc = "A simple blue shirt with brown pants."
 	icon_state = "genericb"
 	item_state = "genericb"
+
+/obj/item/clothing/under/netrunner
+	name = "cybersuit"
+	desc = "Jumpsuit favored by surveillance officers and VR gamers alike. Ugly as sin. Luckily, in cyberspace no one can see your realspace clothing."
+	icon_state = "jensen"
+	item_state = "jensen"
+
 
 /obj/item/clothing/under/genericw
 	name = "white generic outfit"

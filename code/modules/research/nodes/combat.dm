@@ -151,7 +151,8 @@
 	unlocks_designs = list(/datum/design/research/item/weapon/temp_gun,
 							/datum/design/research/item/weapon/slimegun,
 							/datum/design/research/item/ammo/shotgun_fire,
-							/datum/design/research/item/ammo/shotgun_laser
+							/datum/design/research/item/ammo/shotgun_laser,
+							/datum/design/research/item/weapon/bastion
 							)
 
 /datum/technology/adv_exotic_weaponry
@@ -313,4 +314,6 @@
 							/datum/design/research/item/weapon/hydrogen_pistol,
 							/datum/design/research/item/weapon/hydrogen_cannon,
 							/datum/design/research/item/mecha/weapon/hydrogen,
-							/datum/design/research/item/weapon/hydrogen_welder)
+							/datum/design/research/item/weapon/hydrogen_welder,
+							/datum/design/research/item/weapon/hydrogrenade,
+							/datum/design/research/item/ammo/hydroflaskette)

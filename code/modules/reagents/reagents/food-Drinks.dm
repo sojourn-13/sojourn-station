@@ -2705,3 +2705,13 @@
 	M.stuttering = 0
 	M.confused = 0
 	M.Weaken(2)
+
+/datum/reagent/drink/antidepressant
+	name = "Antidepressant"
+	id = "antidepressant"
+	description = "A Bright red cocktail, chill as an empty chimney, yet bright and soothing as a smile. Non-alcoholic. A soul lightener, you can't stay sad at the taste of this."
+	taste_description = "a sweet, smooth mix of fruits and joy"
+	glass_unique_appearance = TRUE
+	glass_icon_state = "antidepresant"
+	glass_name = "Antidepressant"
+	glass_desc = "A Bright red cocktail, chill as an empty chimney, yet bright and soothing as a smile. Non-alcoholic. A soul lightener, you can't stay sad at the taste of this."

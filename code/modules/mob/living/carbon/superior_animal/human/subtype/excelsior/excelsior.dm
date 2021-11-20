@@ -47,13 +47,15 @@
 	meat_amount = 4
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
-	var/weapon1 = /obj/item/gun/projectile/clarissa/makarov
+	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
+
+	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
 	faction = "excelsior"
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	weapon1 = /obj/item/gun/projectile/automatic/ppsh
+	drop_items = list(/obj/item/gun/projectile/automatic/ppsh)
 	projectilesound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	rounds_left = 71
 	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
@@ -62,7 +64,7 @@
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak
 	icon_state = "excel_ak"
 	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
-	weapon1 = /obj/item/gun/projectile/automatic/ak47
+	drop_items = list(/obj/item/gun/projectile/automatic/ak47)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 20
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
@@ -72,7 +74,7 @@
 	icon_state = "excel_vintorez"
 	rapid = 0 //The gun cant rapid fire...
 	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
-	weapon1 = /obj/item/gun/projectile/automatic/vintorez
+	drop_items = list(/obj/item/gun/projectile/automatic/vintorez)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 10
 	mag_type = /obj/item/ammo_magazine/rifle_75_short/empty
@@ -81,7 +83,7 @@
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	weapon1 = /obj/item/gun/projectile/automatic/drozd
+	drop_items = list(/obj/item/gun/projectile/automatic/drozd)
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	rounds_left = 32
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
@@ -91,8 +93,6 @@
 	..()
 	new /obj/effect/gibspawner/human(src.loc)
 	playsound(src, 'sound/effects/Explosion2.ogg', 75, 1, -3)
-	if(weapon1)
-		new weapon1(src.loc)
-		weapon1 = null
+	drop_death_loot()
 	qdel(src)
 	return

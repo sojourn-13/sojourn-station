@@ -4,6 +4,7 @@
 	icon_state = "std_mod"
 	item_state = "electronic"
 	board_type = "other"
+	price_tag = 300
 
 /obj/item/circuitboard/mecha/main
 	build_name = "central control"

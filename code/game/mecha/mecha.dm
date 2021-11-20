@@ -930,9 +930,7 @@ assassination method if you time it right*/
 //////////////////////
 
 /obj/mecha/attackby(obj/item/I, mob/user)
-	if(!usr.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
-		to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
-		return
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	var/list/usable_qualities = list()
 	if(state == 1 || state == 2)
@@ -950,6 +948,9 @@ assassination method if you time it right*/
 	switch(tool_type)
 
 		if(QUALITY_BOLT_TURNING)
+			if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+				to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+				return
 			if(state == 1)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 					to_chat(user, SPAN_NOTICE("You undo the securing bolts and deploy the rollers."))
@@ -966,6 +967,9 @@ assassination method if you time it right*/
 
 		if(QUALITY_WELDING)
 			if(user.a_intent != I_HURT)
+				if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+					to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+					return
 				if(src.health >= initial(src.health))
 					to_chat(user, SPAN_NOTICE("The [src.name] is at full integrity"))
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -986,6 +990,9 @@ assassination method if you time it right*/
 			return
 
 		if(QUALITY_PRYING)
+			if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+				to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+				return
 			if(state == 2)
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 					to_chat(user, SPAN_NOTICE("You open the hatch to the power unit."))
@@ -1001,6 +1008,9 @@ assassination method if you time it right*/
 			return
 
 		if(QUALITY_SCREW_DRIVING)
+			if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+				to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+				return
 			if(hasInternalDamage(MECHA_INT_TEMP_CONTROL))
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 					to_chat(user, SPAN_NOTICE("You repair the damaged temperature controller."))
@@ -1021,6 +1031,9 @@ assassination method if you time it right*/
 			return
 
 		if(QUALITY_PULSING)
+			if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+				to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+				return
 			if(state >= 3 && src.occupant)
 				to_chat(user, "You attempt to eject the pilot using the maintenance controls.")
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -1038,6 +1051,10 @@ assassination method if you time it right*/
 			return
 
 	if(istype(I, /obj/item/mecha_parts/mecha_equipment))
+		if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+			return
+
 		var/obj/item/mecha_parts/mecha_equipment/E = I
 		spawn()
 			if(E.can_attach(src))
@@ -1047,6 +1064,7 @@ assassination method if you time it right*/
 			else
 				to_chat(user, "You were unable to attach [I] to [src]")
 		return
+
 	var/obj/item/card/id/id_card = I.GetIdCard()
 	if(id_card)
 		if(add_req_access || maint_access)
@@ -1059,6 +1077,10 @@ assassination method if you time it right*/
 			to_chat(user, SPAN_WARNING("Maintenance protocols disabled by operator."))
 
 	else if(istype(I, /obj/item/stack/cable_coil))
+		if(!user.stat_check(STAT_MEC, STAT_LEVEL_ADEPT))
+			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
+			return
+
 		if(state == 3 && hasInternalDamage(MECHA_INT_SHORT_CIRCUIT))
 			var/obj/item/stack/cable_coil/CC = I
 			if(CC.use(2))

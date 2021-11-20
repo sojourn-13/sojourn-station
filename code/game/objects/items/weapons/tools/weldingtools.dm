@@ -20,6 +20,7 @@
 	toggleable = TRUE
 	create_hot_spot = TRUE
 	glow_color = COLOR_ORANGE
+	price_tag = 25
 
 	heat = 2250
 
@@ -54,6 +55,7 @@
 	switched_on_qualities = list(QUALITY_WELDING = 15, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)
 	degradation = 1.5
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+	price_tag = 12
 
 //The improvised welding tool is created with a full tank of fuel.
 //It's implied that it's burning the oxygen in the emergency tank that was used to create it
@@ -73,6 +75,7 @@
 	heat = 3773
 	degradation = 0.7
 	max_upgrades = 4
+	price_tag = 200
 
 /obj/item/tool/weldingtool/bs
 	name = "bluespace welding tool"
@@ -97,3 +100,4 @@
 	heat = 2750
 	max_upgrades = 2
 	workspeed = 1.5
+	price_tag = 900

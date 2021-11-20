@@ -6808,7 +6808,7 @@
 	pixel_x = -1;
 	pixel_y = 1
 	},
-/obj/item/melee/baton,
+/obj/item/tool/baton,
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
 /turf/simulated/floor/tiled/white/techfloor,

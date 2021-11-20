@@ -119,7 +119,7 @@
 	desc = "Some sterile gauze to wrap around bloody stumps."
 	icon_state = "brutepack"
 	origin_tech = list(TECH_BIO = 1)
-	heal_brute = 4
+	heal_brute = 10
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 8)
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
@@ -145,7 +145,7 @@
 				)
 				var/used = 0
 				for (var/datum/wound/W in affecting.wounds)
-					if (W.internal)
+					if(W.internal)
 						continue
 					if(W.bandaged)
 						continue
@@ -153,6 +153,12 @@
 						break
 					if(!do_mob(user, M, W.damage/5))
 						to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
+						break
+					if(W.internal)
+						continue
+					if(W.bandaged)
+						continue
+					if(used == amount)
 						break
 					if (W.current_stage <= W.max_bleeding_stage)
 						user.visible_message(
@@ -213,7 +219,7 @@
 	gender = PLURAL
 	singular_name = "ointment"
 	icon_state = "ointment"
-	heal_burn = 4
+	heal_burn = 10
 	origin_tech = list(TECH_BIO = 1)
 	preloaded_reagents = list("silicon" = 4, "carbon" = 8)
 
@@ -281,7 +287,7 @@
 	singular_name = "advanced trauma kit"
 	desc = "An advanced trauma kit for severe injuries."
 	icon_state = "traumakit"
-	heal_brute = 8
+	heal_brute = 15
 	origin_tech = list(TECH_BIO = 2)
 	automatic_charge_overlays = TRUE
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
@@ -336,14 +342,20 @@
 			)
 			var/used = 0
 			for (var/datum/wound/W in affecting.wounds)
-				if (W.internal)
+				if(W.internal)
 					continue
-				if (W.bandaged && W.disinfected)
+				if(W.bandaged && W.disinfected)
 					continue
 				if(used == amount)
 					break
 				if(!do_mob(user, M, W.damage/5))
 					to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
+					break
+				if(W.internal)
+					continue
+				if(W.bandaged && W.disinfected)
+					continue
+				if(used == amount)
 					break
 				if (W.current_stage <= W.max_bleeding_stage)
 					user.visible_message(
@@ -399,7 +411,7 @@
 	singular_name = "advanced burn kit"
 	desc = "An advanced treatment kit for severe burns."
 	icon_state = "burnkit"
-	heal_burn = 8
+	heal_burn = 15
 	origin_tech = list(TECH_BIO = 2)
 	automatic_charge_overlays = TRUE
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
@@ -562,7 +574,7 @@
 	singular_name = "Absolutism Bruisepack"
 	desc = "An advanced bruisepack for severe injuries. Created by will of God."
 	icon_state = "nt_traumakit"
-	heal_brute = 10
+	heal_brute = 20
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)
@@ -576,7 +588,7 @@
 	singular_name = "Absolutism Burnpack"
 	desc = "An advanced treatment kit for severe burns. Created by will of God."
 	icon_state = "nt_burnkit"
-	heal_brute = 10
+	heal_brute = 20
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)

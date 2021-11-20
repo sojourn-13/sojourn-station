@@ -7,14 +7,14 @@
 	base_turf = /turf/simulated/floor/asteroid
 
 /area/colony/exposedsun
-	ship_area = TRUE
+	ship_area = FALSE
 	icon_state = "asteroid"
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/asteroid/dirt
 
 /area/colony/exposedsun/pastgate
-	ship_area = TRUE
+	ship_area = FALSE
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')

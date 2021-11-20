@@ -848,6 +848,15 @@ default behaviour is:
 /mob/living/proc/is_asystole()
 	return FALSE
 
+//Makes a creature drop loot if they have any set
+//must be called manually in death()
+/mob/living/proc/drop_death_loot()
+	if(drop_items)
+		for(var/drop_item in drop_items)
+			if(ispath(drop_item, /obj))
+				new drop_item(src.loc)
+		drop_items = null
+
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/proc/drip_blood(var/amt as num)
 	blood_splatter(src,src)

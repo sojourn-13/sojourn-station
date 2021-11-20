@@ -41,3 +41,18 @@
 	UnregisterSignal(linked, COMSIG_SHIP_STILL)
 	..()
 */
+
+/datum/individual_objective/bluecross
+	name = "Mantal Pice"
+	req_department = list(DEPARTMENT_COMMAND)
+	var/obj/item/target
+
+/datum/individual_objective/bluecross/proc/pick_bluecross_candidates()
+	var/obj/randomcatcher/CATCH = new /obj/randomcatcher
+	return CATCH.get_item(/obj/random/oddity_guns)
+
+/datum/individual_objective/bluecross/assign()
+	..()
+	target = pick_bluecross_candidates()
+	desc = "Sometimes having a tricket is just nice. Acquire a [target.name] if possable..."
+	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, .proc/task_completed)

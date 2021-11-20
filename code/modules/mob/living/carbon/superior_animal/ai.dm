@@ -108,7 +108,7 @@
 
 			for(var/obj/structure/low_wall/obstacle in get_step(src, dir))//This is only a miner issue... We will brake it
 				if(obstacle.density == TRUE) //Almost never will do anything, but in cases were theirs a non-dence lower wall
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 5,attacktext) //Lots of health
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 3,attacktext) //Lots of health
 					return
 
 			for(var/obj/structure/girder/obstacle in get_step(src, dir))//We know your tricks, they will now fail.
@@ -145,13 +145,15 @@
 				if(obstacle.density == TRUE)
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
-
+			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
 
 /mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 	if(obey_friends) // Are we only obeying friends?
 		if(speaker in friends) // Is the one talking a friend?
-			if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following) // Is he telling us to follow?
+			if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 				following = speaker
 				visible_emote("[follow_message]")
 
@@ -159,7 +161,7 @@
 				following = null
 				visible_emote("[stop_message]")
 	else // We are obeying everyone
-		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following) // Is he telling us to follow?
+		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 			following = speaker
 			visible_emote("[follow_message]")
 
@@ -176,6 +178,7 @@
 	if (AI_inactive)
 		activate_ai()
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
+		return
 	else
 		AI_inactive = TRUE
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
@@ -186,10 +189,11 @@
 	set category = "Mob verbs"
 	var/common_known = FALSE
 
-	if (common_known)
+	if(common_known)
 		add_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to ON."))
 		common_known = TRUE
+		return
 	else
 		remove_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))

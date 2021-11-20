@@ -87,6 +87,7 @@
 	name = "research overseer's encryption key"
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
+	translate_binary = 1
 
 /obj/item/device/encryptionkey/heads/moebius
 	name = "soteria command encryption key"

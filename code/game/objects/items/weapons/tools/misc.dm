@@ -32,108 +32,6 @@
 	glow_color = COLOR_BLUE_LIGHT
 	max_upgrades = 4 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
 
-/obj/item/tool/arcwelder
-	name = "arc welder"
-	desc = "A specialized tool designed by the Artificer's Guild. It functions as a portable battery powered welder, partial multitool, and incredibly painful taser. Due to its complex design it doesn't require welding goggles nor conduct shocks."
-	icon_state = "arc_welder"
-	item_state = "arc_welder"
-	w_class = ITEM_SIZE_NORMAL
-	worksound = WORKSOUND_WELDING
-	switched_on_qualities = list(QUALITY_WELDING = 45, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 15, QUALITY_CAUTERIZING = 10)
-	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 3)
-	price_tag = 1000 //valuable given its design
-	use_power_cost = 1.2
-	sparks_on_use = TRUE
-	force = WEAPON_FORCE_WEAK
-	switched_on_force = WEAPON_FORCE_PAINFUL
-	throwforce = WEAPON_FORCE_WEAK
-	suitable_cell = /obj/item/cell/medium
-	toggleable = TRUE
-	create_hot_spot = TRUE
-	glow_color = COLOR_BLUE_LIGHT
-	max_upgrades = 3
-	var/stunforce = 0
-	var/agonyforce = 40
-	var/hitcost = 100
-
-/obj/item/tool/arcwelder/cyborg
-	desc = "A specialized tool designed by the Artificer's Guild. It functions as a battery powered welder and multitool. This version has a regulation on it preventing it to be used as a taser."
-	name = "integrated arc welder"
-	suitable_cell = /obj/item/cell/medium/moebius/nuclear
-
-/obj/item/tool/arcwelder/turn_on(mob/user)
-	if (cell && cell.charge > 0)
-		item_state = "[initial(item_state)]_on"
-		to_chat(user, SPAN_NOTICE("You switch [src] on."))
-		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
-		..()
-		damtype = BURN
-	else
-		item_state = initial(item_state)
-		to_chat(user, SPAN_WARNING("[src] has no power!"))
-
-/obj/item/tool/arcwelder/turn_off(mob/user)
-	item_state = initial(item_state)
-	playsound(loc, 'sound/effects/sparks1.ogg', 50, 1)
-	to_chat(user, SPAN_NOTICE("You switch [src] off."))
-	..()
-	damtype = initial(damtype)
-
-/obj/item/tool/arcwelder/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
-	if(isrobot(target))
-		return ..()
-
-	var/agony = agonyforce
-	var/stun = stunforce
-	var/obj/item/organ/external/affecting = null
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		affecting = H.get_organ(hit_zone)
-
-	if(user.a_intent == I_HURT)
-		. = ..()
-		if (!.)
-			return 0
-
-		//whacking someone causes a much poorer electrical contact than deliberately prodding them.
-		stun *= 0.5
-		if(switched_on)		//Checks to see if the arc welder is on.
-			agony *= 0.5	//whacking someone causes a much poorer contact than prodding them.
-		else
-			agony = 0	//Shouldn't really stun if it's off, should it?
-		//we can't really extract the actual hit zone from ..(), unfortunately. Just act like they attacked the area they intended to.
-	else if(!switched_on)
-		if(affecting)
-			target.visible_message(SPAN_WARNING("[target] has been prodded in the [affecting.name] with [src] by [user]. Luckily it was off."))
-		else
-			target.visible_message(SPAN_WARNING("[target] has been prodded with [src] by [user]. Luckily it was off."))
-	else
-		if(affecting)
-			target.visible_message(SPAN_DANGER("[target] has been prodded in the [affecting.name] with [src] by [user]!"))
-		else
-			target.visible_message(SPAN_DANGER("[target] has been prodded with [src] by [user]!"))
-		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
-
-	//stun effects
-	if(switched_on)
-		target.stun_effect_act(stun, agony, hit_zone, src)
-		msg_admin_attack("[key_name(user)] stunned [key_name(target)] with the [src].")
-
-		deductcharge(hitcost)
-
-		if(ishuman(target))
-			var/mob/living/carbon/human/H = target
-			H.forcesay(hit_appends)
-
-/obj/item/tool/arcwelder/proc/deductcharge(var/power_drain)
-	if(cell)
-		if(cell.checked_use(power_drain))
-			return TRUE
-		else
-			switched_on = FALSE
-			update_icon()
-			return FALSE
-
 /obj/item/tool/medmultitool
 	name = "Greyson Positronic medical multitool"
 	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools and takes a medium cell in its handle.."
@@ -146,6 +44,7 @@
 	use_power_cost = 0.2 //Effective!
 	max_upgrades = 2
 	workspeed = 1.2
+	price_tag = 1400 // Super fancy
 
 /obj/item/tool/medmultitool/medimplant
 	name = "soteria medical omnitool"
@@ -160,6 +59,7 @@
 	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 15, QUALITY_BONE_GRAFTING = 40)
 	degradation = 0.5
 	workspeed = 0.8
+	price_tag = 600 // Not nearly as fancy.
 
 	use_power_cost = 1.2
 	suitable_cell = /obj/item/cell/medium
@@ -209,6 +109,7 @@
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 35, QUALITY_BOLT_TURNING = 35, QUALITY_DRILLING = 15, QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 10, QUALITY_PRYING = 25, QUALITY_DIGGING = 20, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30)
 	degradation = 0.5
 	workspeed = 0.8
+	price_tag = 600
 
 	use_power_cost = 0.8
 	suitable_cell = /obj/item/cell/medium

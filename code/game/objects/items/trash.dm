@@ -36,6 +36,16 @@
 	desc = "An empty packet of chips. Trash."
 	icon_state = "chips"
 
+/obj/item/trash/chips_green
+	name = "chips packet"
+	desc = "An empty packet of chips. Trash."
+	icon_state = "lays_green"
+
+/obj/item/trash/chips
+	name = "chips packet"
+	desc = "An empty packet of chips. Trash."
+	icon_state = "lays"
+
 /obj/item/trash/gamerchips
 	name = "boritos crips packet"
 	desc = "An empty packet of boritos crips. Trash."
@@ -114,6 +124,10 @@
 	name = "mre"
 	icon_state = "mre_trash"
 
+/obj/item/trash/mre/alt
+	name = "mre"
+	icon_state = "wok"
+
 /obj/item/trash/mre_paste
 	name = "nutrient paste"
 	icon_state = "paste_trash"
@@ -121,6 +135,14 @@
 /obj/item/trash/mre_candy
 	name = "candy"
 	icon_state = "mre_candy_trash"
+
+/obj/item/trash/mre_shokoladka
+	name = "shokoladka candy"
+	icon_state = "shokoladka"
+
+/obj/item/trash/mre_dalococh
+	name = "dalococh candy"
+	icon_state = "dalococh"
 
 /obj/item/trash/mre_can
 	name = "ration can"

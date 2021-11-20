@@ -30,6 +30,7 @@
 		/datum/design/autolathe/ammo/flare_shell,
 		/datum/design/autolathe/ammo/flare_shell_g,
 		/datum/design/autolathe/ammo/flare_shell_b,
+		/datum/design/autolathe/container/ammocan_ih,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/hos
@@ -53,6 +54,8 @@
 		/datum/design/autolathe/gun/basstet,
 		/datum/design/autolathe/gun/strelki,
 		/datum/design/autolathe/gun/ostwind = 3,
+		/datum/design/autolathe/gun/bulldog = 3,
+		/datum/design/autolathe/gun/bulldog_rds = 3,
 		//shotguns
 		/datum/design/autolathe/gun/riot_shotgun = 4,
 		//machinegun
@@ -61,15 +64,18 @@
 		//ion
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher
-		/datum/design/autolathe/gun/grenade_launcher_lenar = 6,
+		/datum/design/autolathe/gun/grenade_launcher_lenar = 10,
 		//sniper
-		/datum/design/autolathe/gun/nordwind = 14, //basic uses the whole disk...
+		/datum/design/autolathe/gun/nordwind = 10,
 		/datum/design/autolathe/device/landmine = 0,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//Misc
+		/datum/design/autolathe/tool/ironhammer,
 		/datum/design/autolathe/sec/riot,
 		/datum/design/autolathe/sec/buckler = 0,
+		/datum/design/autolathe/sec/bastion = 0,
+		/datum/design/autolathe/container/ammocan_ih = 0,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
@@ -107,6 +113,7 @@
 		/datum/design/autolathe/ammo/flare_shell = 0,
 		/datum/design/autolathe/ammo/flare_shell_g = 0,
 		/datum/design/autolathe/ammo/flare_shell_b = 0,
+		/datum/design/autolathe/container/ammocan_ih,
 		)
 
 //Blackshield
@@ -118,32 +125,35 @@
 	designs = list(
 		/datum/design/autolathe/gun/ten_dark,
 		/datum/design/autolathe/gun/NM_colt,
-		/datum/design/autolathe/gun/ladon,
-		/datum/design/autolathe/gun/naga,
+		/datum/design/autolathe/gun/ladon = 2,
+		/datum/design/autolathe/gun/naga = 2,
 		//SMGs
-		/datum/design/autolathe/gun/greasegun,
+		/datum/design/autolathe/gun/greasegun = 2,
 		//rifles
-		/datum/design/autolathe/gun/boltgun_sa,
+		/datum/design/autolathe/gun/boltgun_sa = 0,
 		/datum/design/autolathe/gun/zatvor,
-		/datum/design/autolathe/gun/sol,
-		/datum/design/autolathe/gun/omnirifle,
+		/datum/design/autolathe/gun/sol = 3,
+		/datum/design/autolathe/gun/omnirifle = 2,
 		/datum/design/autolathe/gun/standard_omnirifle,
 		/datum/design/autolathe/gun/omnicarbine,
-		/datum/design/autolathe/gun/rds_omnicarbine,
+		/datum/design/autolathe/gun/rds_omnicarbine = 2,
 		//machinegun
-		/datum/design/autolathe/gun/saw,
+		/datum/design/autolathe/gun/saw = 4,
+		/datum/design/autolathe/gun/ppv = 5,
 		//grenade launcher
-		/datum/design/autolathe/gun/grenade_launcher_china_lake,
+		/datum/design/autolathe/gun/grenade_launcher_china_lake = 2,
 		//STS
 		/datum/design/autolathe/gun/sts25,
-		/datum/design/autolathe/gun/sts30,
-		/datum/design/autolathe/gun/sts40,
+		/datum/design/autolathe/gun/sts30 = 2,
+		/datum/design/autolathe/gun/sts40 = 3,
 		//Flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//Misc
 		/datum/design/autolathe/device/landmine = 0,
 		/datum/design/autolathe/sec/riot = 2,
+		/datum/design/autolathe/sec/bastion = 0,
 		/datum/design/autolathe/sec/buckler,
+		/datum/design/autolathe/container/ammocan_ih = 0,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo
@@ -156,6 +166,10 @@
 		/datum/design/autolathe/ammo/pistol_lethal,
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg_practice = 0,
@@ -197,6 +211,7 @@
 		/datum/design/autolathe/ammo/flare_shell_b = 0,
 		/datum/design/autolathe/ammo/shotgun_box = 5, //Might want to up these, but really only a ten point difference from the other disk.
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 5,
+		/datum/design/autolathe/container/ammocan_ih,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger
@@ -394,6 +409,7 @@
 		//shells
 		/datum/design/autolathe/ammo/shotgun_pellet,
 		/datum/design/autolathe/ammo/shotgun,
+		/datum/design/autolathe/container/ammocan_serb,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms
@@ -414,6 +430,7 @@
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox_rubber,
 		/datum/design/autolathe/ammo/kurtz_ammobox_lethal,
+		/datum/design/autolathe/container/ammocan_serb,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle
@@ -439,6 +456,7 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox,
 		/datum/design/autolathe/ammo/shotgun_box = 5, //35 x 4 (140 shells well a full disk of 5 x 20 = 100)
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 5,
+		/datum/design/autolathe/container/ammocan_serb,
 	)
 
 
@@ -463,6 +481,7 @@
 		/datum/design/autolathe/ammo/mag_10x24 = 1,
 		/datum/design/autolathe/ammo/box_10x24 = 5,
 		/datum/design/autolathe/ammo/box_antim = 5,
+		/datum/design/autolathe/container/ammocan_serb = 0,
 		)
 
 // G U N S (minus excelsior and research)
@@ -488,6 +507,7 @@
 		/datum/design/autolathe/ammo/hpistol_rubber = 2,
 		/datum/design/autolathe/ammo/hpistol = 2,
 		/datum/design/autolathe/ammo/hpistol_lethal = 2,
+		/datum/design/autolathe/container/ammocan_serb,
 		)
 
 
@@ -642,6 +662,22 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox_rubber = 3,
 		/datum/design/autolathe/ammo/magnum_ammobox_lethal = 4,
+		)
+
+// .40 SMGS
+/obj/item/computer_hardware/hard_drive/portable/design/guns/vector
+	disk_name = "SA - .40 Trajectory SMG"
+	icon_state = "sa"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/vector = 0, //The gun is free as this is the only way to get it
+		/datum/design/autolathe/ammo/smg_magnum_40 = 3,
+		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 2,
+		//Free as well do to being the only way to get these mags
+		/datum/design/autolathe/ammo/smg_magnum_40_empty = 0,
+		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0,
+		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 4
 		)
 
 // .50 PISTOLS

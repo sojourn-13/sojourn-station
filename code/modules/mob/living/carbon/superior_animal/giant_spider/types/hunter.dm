@@ -243,6 +243,7 @@
 	meat_amount = 3
 	emote_see = list("chitters.","rubs its legs.","chitters in something that sounds like speech.")
 	mob_size = MOB_LARGE
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/New()
 	..()

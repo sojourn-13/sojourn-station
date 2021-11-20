@@ -21,7 +21,7 @@ list(
 	density = TRUE
 	anchored = TRUE
 	icon = 'icons/obj/machines/grinder.dmi'
-	icon_state = "grinder"
+	icon_state = "grinder_si"
 	reagent_flags = NO_REACT
 	circuit = /obj/item/circuitboard/advanced_grinder
 	limit = 25

@@ -17,3 +17,9 @@
 	nature = MODIFICATION_SILICON
 	matter = list(MATERIAL_STEEL = 1)
 	organ_efficiency = list(OP_BLOOD_VESSEL = 100)
+
+/obj/item/organ/internal/blood_vessel/extensive
+	name = "extensive blood vessels"
+	icon_state = "blood_vessel_extensive"
+	organ_efficiency = list(OP_BLOOD_VESSEL = 150)
+	specific_organ_size = 0.6

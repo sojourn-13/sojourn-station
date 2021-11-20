@@ -86,7 +86,7 @@
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 
-
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
 	armor = list(
 		melee = 40,
 		bullet = 20,
@@ -97,6 +97,30 @@
 	)
 	light_overlay = "helmet_light_dual"
 	siemens_coefficient = 0.8
+
+/obj/item/clothing/head/space/void/riggedvoidsuit/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["makeshift armored helmet"] = "makeshift_void"
+	options["alt makeshift armored helmet"] = "alt_scavenger_helmet"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/suit/space/void/riggedvoidsuit
 	name = "makeshift armored voidsuit"
@@ -115,7 +139,7 @@
 	siemens_coefficient = 0.8
 	slowdown = 1.6
 	helmet = /obj/item/clothing/head/space/void/riggedvoidsuit
-
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_GLASS = 10, MATERIAL_PLASTIC = 20)
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	flash_protection = FLASH_PROTECTION_MAJOR
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION

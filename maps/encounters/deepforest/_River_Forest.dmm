@@ -555,9 +555,9 @@
 "kg" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/door/blast/shutters/glass,
-/obj/item/reagent_containers/food/snacks/mre/can,
-/obj/item/reagent_containers/food/snacks/mre/can,
-/obj/item/reagent_containers/food/snacks/mre/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_light)
 "kj" = (
@@ -1963,9 +1963,9 @@
 "zv" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/door/blast/shutters/glass,
-/obj/item/reagent_containers/food/snacks/candy/mre,
-/obj/item/reagent_containers/food/snacks/candy/mre,
-/obj/item/reagent_containers/food/snacks/candy/mre,
+/obj/item/reagent_containers/food/snacks/openable/candy,
+/obj/item/reagent_containers/food/snacks/openable/candy,
+/obj/item/reagent_containers/food/snacks/openable/candy,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_light)
 "zz" = (
@@ -2493,9 +2493,9 @@
 "Fx" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/door/blast/shutters/glass,
-/obj/item/reagent_containers/food/snacks/mre,
-/obj/item/reagent_containers/food/snacks/mre,
-/obj/item/reagent_containers/food/snacks/mre,
+/obj/item/reagent_containers/food/snacks/openable,
+/obj/item/reagent_containers/food/snacks/openable,
+/obj/item/reagent_containers/food/snacks/openable,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_light)
 "Fy" = (

@@ -180,6 +180,7 @@
 //HUD element hidings flags
 #define F12_FLAG 1 // 0001
 #define TOGGLE_INVENTORY_FLAG 2 //0010
+#define TOGGLE_BOTTOM_FLAG 4 //0100
 
 // Default name for announsment system
 #define ANNOUNSER_NAME "Nadezhda Colony System Announcer"
@@ -216,6 +217,13 @@
 #define CRUCIFORM_OBEY /datum/core_module/cruciform/obey
 #define CRUCIFORM_PRIEST_CONVERT /datum/core_module/activatable/cruciform/priest_convert
 #define CRUCIFORM_OBEY_ACTIVATOR /datum/core_module/activatable/cruciform/obey_activator
+
+#define CUPGRADE_NATURES_BLESSING /obj/item/cruciform_upgrade/natures_blessing
+#define CUPGRADE_FAITHS_SHIELD /obj/item/cruciform_upgrade/faiths_shield
+#define CUPGRADE_CLEANSING_PSESENCE /obj/item/cruciform_upgrade/cleansing_presence
+#define CUPGRADE_MARTYR_GIFT /obj/item/cruciform_upgrade/martyr_gift
+#define CUPGRADE_WRATH_OF_GOD /obj/item/cruciform_upgrade/wrath_of_god
+#define CUPGRADE_SPEED_OF_THE_CHOSEN /obj/item/cruciform_upgrade/speed_of_the_chosen
 
 //https://secure.byond.com/docs/ref/info.html#/atom/var/mouse_opacity
 #define MOUSE_OPACITY_TRANSPARENT 0

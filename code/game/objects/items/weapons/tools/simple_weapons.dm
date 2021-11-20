@@ -51,6 +51,7 @@
 	attack_verb = list("chopped", "torn", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_SAWING = 15)
 	worksound = WORKSOUND_HARD_SLASH
+	price_tag = 30
 
 /obj/item/tool/fireaxe
 	name = "fire axe"
@@ -69,6 +70,12 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
 	worksound = WORKSOUND_HARD_SLASH
+	price_tag = 190
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "fireaxe0_back"
+		)
 
 /obj/item/tool/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
@@ -87,6 +94,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 40, QUALITY_SAWING = 30)
 	w_class = ITEM_SIZE_BULKY
+	price_tag = 30
 
 /obj/item/tool/fireaxe/militia_tomahawk
 	name = "blackshield tactical tomahawk"
@@ -98,6 +106,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
 	w_class = ITEM_SIZE_NORMAL
+	price_tag = 45
 
 /obj/item/tool/minihoe
 	name = "mini hoe"
@@ -128,6 +137,12 @@
 	slot_flags = SLOT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_SAWING = 10)
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "scythe0_back"
+		)
+
 
 //Flails
 /obj/item/tool/chainofcommand
@@ -186,6 +201,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_BULKY
+	price_tag = 100
 
 /obj/item/tool/sword/katana
 	name = "katana"
@@ -196,6 +212,11 @@
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_SHALLOW
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "katana_back"
+		)
 
 /obj/item/tool/sword/katana_makeshift
 	name = "makeshift katana"
@@ -206,6 +227,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_SHALLOW
+	price_tag = 40
 
 /obj/item/tool/sword/katana/nano
 	name = "\improper Soteria \"Muramasa\" katana"
@@ -222,6 +244,7 @@
 	switched_on_qualities = list(QUALITY_CUTTING = 25, QUALITY_SAWING = 15)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 6)
 	switched_on_force = WEAPON_FORCE_LETHAL
+	price_tag = 800
 
 /obj/item/tool/sword/katana/nano/turn_on(mob/user)
 	.=..()
@@ -253,6 +276,7 @@
 	max_fuel = 100
 	use_fuel_cost = 0.5
 	passive_fuel_cost = 0.1
+	price_tag = 700
 
 	switched_on_qualities = list(QUALITY_CUTTING = 25, QUALITY_SAWING = 15, QUALITY_CAUTERIZING = 10, QUALITY_WELDING = 15)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
@@ -264,6 +288,7 @@
 	heat = 2250
 	glow_color = COLOR_ORANGE
 	//Stronger when turned on. Will emit heat, turn its damage type to burn and set targets on fire.
+
 /obj/item/tool/sword/katana/firebrand/is_hot()
 	if(switched_on)
 		return heat
@@ -302,18 +327,20 @@
 		item_state = initial(item_state)
 
 /obj/item/tool/sword/saber
-	name = "premier's saber"
-	desc = "A finely made formal blade fit for the premier. Despite being primarily for show it cuts deep and painfully."
+	name = "decorative saber"
+	desc = "A finely made formal blade as a ornamental show of class or force. Despite being primarily for show it cuts deep and painfully."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "saber"
 	item_state = "saber"
 	armor_penetration = ARMOR_PEN_SHALLOW
+	price_tag = 400
 
 /obj/item/tool/sword/saber/cutlass
 	name = "cutlass"
 	desc = "A finely made sword for pirates or military men who take themselves too seriously."
 	icon_state = "cutlass"
 	item_state = "cutlass"
+	price_tag = 300
 
 /obj/item/tool/sword/saber/militiacommander
 	name = "Officer's Saber"
@@ -322,6 +349,7 @@
 	icon_state = "saber"
 	item_state = "saber"
 	armor_penetration = ARMOR_PEN_SHALLOW
+	price_tag = 350
 
 /obj/item/tool/sword/saber/militiasergeant
 	name = "Sergeant's Saber"
@@ -329,6 +357,7 @@
 	icon_state = "cutlass"
 	item_state = "cutlass"
 	armor_penetration = ARMOR_PEN_SHALLOW
+	price_tag = 325
 
 /obj/item/tool/sword/machete
 	name = "machete"
@@ -339,6 +368,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 10,  QUALITY_SAWING = 20) //So we can cut down trees
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
+	price_tag = 120
 
 /obj/item/tool/sword/cleaver
 	name = "sun cleaver"
@@ -352,6 +382,12 @@
 	w_class = ITEM_SIZE_BULKY
 	effective_faction = list("tengo", "tengolo_berserker", "xenomorph") // Which faction the cleaver is effective against.
 	damage_mult = 2 // The damage multiplier the cleaver get when attacking that faction.
+	price_tag = 200
+	item_icons = list(
+		slot_back_str = 'icons/obj/weapons-blades.dmi')
+	item_state_slots = list(
+		slot_back_str = "cleaver_back"
+		)
 
 /obj/item/tool/sword/huntingclaw
 	name = "hunting claw"
@@ -366,6 +402,7 @@
 	force = WEAPON_FORCE_ROBUST
 	armor_penetration = ARMOR_PEN_SHALLOW
 	w_class = ITEM_SIZE_NORMAL
+	price_tag = 500
 
 /obj/item/tool/gauntlet
 	name = "render gauntlet"
@@ -378,6 +415,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5)
 	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
+	price_tag = 200
 
 /obj/item/tool/power_fist
 	name = "power fist"
@@ -398,6 +436,7 @@
 	switched_on_qualities = list(QUALITY_HAMMERING = 30)
 	switched_off_qualities = list(QUALITY_HAMMERING = 10)
 	hitsound = 'sound/weapons/smash.ogg'
+	price_tag = 300
 
 /obj/item/tool/power_fist/turn_on(mob/user)
 	if (cell && cell.charge > 0)
@@ -436,10 +475,16 @@
 	hitsound = 'sound/weapons/slice.ogg' // Sounds more like a stab than a cut.
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	embed_mult = 1.5
+	price_tag = 50
 	//attack_distance = 2
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "spearglass0_back"
+		)
 
 /obj/item/tool/spear/hunter_halberd
-	name = "Halberd"
+	name = "halberd"
 	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself; "
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hunter_halberd"

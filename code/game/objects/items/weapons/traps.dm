@@ -15,8 +15,10 @@
 	var/deployed = FALSE
 	var/prob_catch = 100
 
-	var/base_damage = 40
-	var/fail_damage = 5
+	price_tag = 50 //So its worth making or gathering
+
+	var/base_damage = 45
+	var/fail_damage = 15
 	var/base_difficulty = 85
 	var/time_to_escape = 40
 	var/target_zone
@@ -349,14 +351,14 @@ Very rarely it might escape
 	Has integrity that depletes and it will eventually break
 */
 /obj/item/beartrap/makeshift
-	base_damage = 16
-	fail_damage = 4
-	base_difficulty = 80
 	name = "jury-rigged mechanical trap"
 	desc = "A wicked looking construct of spiky bits of metal and wires. Will snap shut on anyone who steps in it. It'll do some nasty damage."
 	icon_state = "sawtrap"
+	price_tag = 30 //So its worth making or gathering
+	base_damage = 30
+	fail_damage = 20
+	base_difficulty = 80
 	matter = list(MATERIAL_STEEL = 15)
-	base_damage = 20
 	var/integrity = 100
 
 //It takes 5 damage whenever it snaps onto a mob

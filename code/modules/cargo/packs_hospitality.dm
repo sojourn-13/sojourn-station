@@ -258,6 +258,15 @@
 	crate_name  = "musical band crate"
 	group = "Hospitality"
 
+/datum/supply_pack/checkers
+	name = "Checker Cate"
+	cost = 150
+	contains = list(/obj/item/board,
+					/obj/item/storage/pill_bottle/chechker)
+	containertype = /obj/structure/closet/crate
+	crate_name  = "king crate"
+	group = "Hospitality"
+
 /datum/supply_pack/boombox
 	contains = list(/obj/item/media/boombox)
 	name = "Boombox delivery"

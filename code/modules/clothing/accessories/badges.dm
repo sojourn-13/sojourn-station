@@ -117,7 +117,7 @@
 
 /obj/item/clothing/accessory/badge/marshal
 	name = "commando's badge"
-	desc = "A leather-backed gold badge displaying the crest of the Brigadier, signifying the wearer as one of the brigadier's agents."
+	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
 	icon_state = "marshalbadge"
-	badge_string = "Brigadier's Commando"
+	badge_string = "Special Agent"
 

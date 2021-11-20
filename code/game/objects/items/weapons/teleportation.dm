@@ -259,6 +259,12 @@ Frequency:
 	var/entropy_value = 1
 	price_tag = 350
 
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "telespear_back"
+		)
+
 /obj/item/tele_spear/attack(mob/living/carbon/human/M, mob/living/carbon/user)
 	playsound(src.loc, 'sound/effects/EMPulse.ogg', 65, 1)
 	var/turf/teleport_location = pick( getcircle(user.loc, 8) )

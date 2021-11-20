@@ -29,20 +29,27 @@
 
 /obj/item/gun/projectile/shotgun/pug/update_icon()
 	cut_overlays()
-	icon_state = "[initial(icon_state)]"
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
 	if(ammo_magazine)
-		add_overlay("m12[ammo_magazine.ammo_color]")
 		if(ammo_magazine.max_ammo==10)
 			add_overlay("sbaw")
+		else
+			add_overlay("m12[ammo_magazine.ammo_color]")
+
 	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
 		add_overlay("slide")
-	if(wielded)//I hate this snowflake bullshit but I don't feel like messing with it.
+
+	if(wielded)
+		itemstring += "_doble"
 		if(ammo_magazine)
 			item_state = wielded_item_state + "_mag"
 		else
 			item_state = wielded_item_state
-	else
-		item_state = initial(item_state)
+
+	icon_state = iconstring
+	set_item_state(itemstring)
 
 /obj/item/gun/projectile/shotgun/pug/Initialize()
 	. = ..()

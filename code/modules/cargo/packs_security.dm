@@ -66,15 +66,26 @@
 	group = "Enforcement"
 
 //Specialty packs that have a theme, these come with a single handgun, ammo, and something thematic. -Kaz
-/datum/supply_pack/thebullcrate
-	name = "LS The Bull Specialty Crate"
+/datum/supply_pack/westernshootercrate
+	name = "LS Western Shooter Specialty Crate"
 	contains = list(/obj/item/gun/projectile/revolver, //400
 					/obj/item/ammo_magazine/speed_loader_magnum_40/lethal,
 					/obj/item/ammo_magazine/speed_loader_magnum_40/lethal,
 					/obj/item/gun_upgrade/barrel/gauss)
 	cost = 750
 	containertype = /obj/structure/closet/crate/secure/weapon
-	crate_name = "LS The Bull Specialty Crate"
+	crate_name = "LS Western Shooter Specialty Crate"
+	group = "Enforcement"
+
+/datum/supply_pack/lasershowcrate
+	name = "LS Laser Show Specialty Crate"
+	contains = list(/obj/item/gun/energy/firestorm, //1100
+					/obj/item/cell/medium/super,
+					/obj/item/cell/medium/super,
+					/obj/item/tool_upgrade/reinforcement/heatsink)
+	cost = 1850
+	containertype = /obj/structure/closet/crate/secure/weapon
+	crate_name = "LS Laser Show Specialty Crate"
 	group = "Enforcement"
 
 /datum/supply_pack/clownguncrate

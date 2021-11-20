@@ -27,9 +27,9 @@ List of powers in this page :
 // Give the user a perk that make him move faster
 /obj/item/organ/internal/nanogate/proc/nanite_muscle()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Muscle (2)"
+	set name = "Nanite Augment - Nanofiber Muscles (3)"
 	set desc = "Spend some of your nanites to create nanite muscle to allow you to move faster."
-	nano_point_cost = 2 // Install two augments on both legs
+	nano_point_cost = 3 // Install two augments on both legs
 
 	if(!owner.stats.getPerk(PERK_NANITE_MUSCLE)) // Do they already have the perk?
 		if(pay_power_cost(nano_point_cost))
@@ -42,7 +42,7 @@ List of powers in this page :
 // Give the user a perk that reduce incoming damage
 /obj/item/organ/internal/nanogate/proc/nanite_armor()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Armor (3)"
+	set name = "Nanite Augment - Nanite Skin-Weave (3)"
 	set desc = "Spend some of your nanites to create nanite weave mesh to protect your body."
 	nano_point_cost = 3
 
@@ -57,8 +57,8 @@ List of powers in this page :
 // Allow the user to inject themselves with a chosen nanite.
 /obj/item/organ/internal/nanogate/proc/nanite_chem()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Chemical (1)"
-	set desc = "Convert some of your nanites into more specialized nanites."
+	set name = "Nanite Augment - Nanite Refabrication (1)"
+	set desc = "Convert some of your nanites into more specialized nanites. Only works for biological entities."
 	nano_point_cost = 1
 
 	var/list/choices_perk = typesof(PERK_NANITE_CHEM)
@@ -74,7 +74,7 @@ List of powers in this page :
 // Give the user a tool or gun mod
 /obj/item/organ/internal/nanogate/proc/nanite_mod()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Tool Mod (1)"
+	set name = "Nanite Augment - Modification Fabrication (1)"
 	set desc = "Spend some of your nanites to create a tool or gun mod."
 	nano_point_cost = 1
 	var/list/choices_mods = typesof(/obj/item/tool_upgrade) // Get every tool mod
@@ -128,7 +128,7 @@ List of powers in this page :
 // Give the user a perk that allow them to create an ammo box every 30 minutes
 /obj/item/organ/internal/nanogate/proc/nanite_ammo()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Ammo (1)"
+	set name = "Nanite Augment - Munition Fabrication (1)"
 	set desc = "Spend some of your nanites to create an ammo."
 	nano_point_cost = 1
 

@@ -20,6 +20,7 @@
 	var/list/origin_tech = list()	//Used by R&D to determine what research bonuses it grants.
 	var/list/attack_verb = list() //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 
+	var/extra_bulk = 0 	//Extra physicial volume added by certain mods
 
 	var/heat_protection = 0 //flags which determine which body parts are protected from heat. Use the HEAD, UPPER_TORSO, LOWER_TORSO, etc. flags. See setup.dm
 	var/cold_protection = 0 //flags which determine which body parts are protected from cold. Use the HEAD, UPPER_TORSO, LOWER_TORSO, etc. flags. See setup.dm
@@ -542,6 +543,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		var/obj/item/action = A
 		action.update_icon()
 
+/obj/item/get_storage_cost()
+	return (..() + extra_bulk)
+
 /obj/item/proc/refresh_upgrades()
 	force = initial(force)
 	item_flags = initial(item_flags)
@@ -550,6 +554,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	color = initial(color)
 	sharp = initial(sharp)
 	prefixes = list()
+
+	extra_bulk = initial(extra_bulk)
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_APPVAL, src)

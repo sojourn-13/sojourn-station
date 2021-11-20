@@ -26,3 +26,27 @@
 /datum/design/autolathe/clothing/si_xenobio_suit
 	name = "SI Bio Suit"
 	build_path = /obj/item/clothing/suit/bio_suit/cmo/si_made
+
+/datum/design/autolathe/clothing/formanhat
+	name = "Salvaged Helmet"
+	build_path = /obj/item/clothing/head/helmet/foreman
+
+/datum/design/autolathe/clothing/formansuit
+	name = "Armored Rig"
+	build_path = /obj/item/clothing/suit/storage/vest/scav
+
+/datum/design/autolathe/clothing/scav_armor
+	name = "Scavenger Armor"
+	build_path = /obj/item/clothing/suit/storage/scavengerarmor
+	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 10) //so hand crafting is better
+
+/datum/design/autolathe/clothing/scav_armor_void
+	name = "Void Scavenger Armor"
+	build_path = /obj/item/clothing/suit/space/void/riggedvoidsuit
+	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 10) //so hand crafting is better
+
+/datum/design/autolathe/clothing/scav_helm_void
+	name = "Void Scavenger Helmet"
+	build_path = /obj/item/clothing/head/space/void/riggedvoidsuit
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 8, MATERIAL_PLASTEEL = 3) //so hand crafting is better
+

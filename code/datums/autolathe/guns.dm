@@ -44,7 +44,7 @@
 
 /datum/design/autolathe/gun/rex10
 	name = "H&S REX .35 \"Cowboy\""
-	build_path = /obj/item/gun/projectile/revolver/rex10
+	build_path = /obj/item/gun/projectile/revolver/rev10/rex10
 
 /datum/design/autolathe/gun/mk58
 	name = "OT HG .35 \"Mk58\""
@@ -172,6 +172,12 @@
 	name = "BR .35 \"Grease Gun\" assault SMG"
 	build_path = /obj/item/gun/projectile/automatic/greasegun
 
+// .40 S M G S
+
+/datum/design/autolathe/gun/vector
+	name = "SA \"Trajectory\" .40 Magnum SMG"
+	build_path = /obj/item/gun/projectile/automatic/vector
+
 //S H O T G U N S
 
 /datum/design/autolathe/gun/doublebarrel
@@ -279,6 +285,10 @@
 	name = "SA CAR 7.5 \"Kalashnikov\""
 	build_path = /obj/item/gun/projectile/automatic/ak47/sa
 
+/datum/design/autolathe/gun/ak47_saiga
+	name = "SA CAR 20mm \"Saiga\""
+	build_path = /obj/item/gun/projectile/automatic/ak47/saiga
+
 /datum/design/autolathe/gun/mg_pk
 	name = "SA - 7.5mm Pulemyot Kalashnikova MG"
 	build_path = /obj/item/gun/projectile/automatic/lmg/pk
@@ -295,8 +305,12 @@
 	name = "BR  7.5mm \"strelki\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind/strelki
 
+/datum/design/autolathe/gun/maxim
+	name = "Excelsior Maxim"
+	build_path = /obj/item/gun/projectile/automatic/maxim
+
 /datum/design/autolathe/gun/ak47
-	name = "Excelsior .257 AK"
+	name = "Excelsior 7.5mm AK"
 	build_path = /obj/item/gun/projectile/automatic/ak47
 
 /datum/design/autolathe/gun/dp

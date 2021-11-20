@@ -47,7 +47,7 @@
 		if(31 to 35)
 			spawn_money(rand(300,800), src)
 		if(36 to 40)
-			new/obj/item/melee/baton(src)
+			new/obj/item/tool/baton(src)
 		if(41 to 45)
 			new/obj/item/clothing/under/shorts(src)
 			new/obj/item/clothing/under/shorts/athleticblue(src)

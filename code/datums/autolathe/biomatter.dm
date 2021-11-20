@@ -273,6 +273,31 @@
 	materials = list(MATERIAL_BIOMATTER = 30)
 	build_path = /obj/item/organ/internal/lungs/long
 
+/datum/design/bioprinter/heart
+	name = "Huge Heart"
+	materials = list(MATERIAL_BIOMATTER = 45)
+	build_path = /obj/item/organ/internal/heart/huge
+
+/datum/design/bioprinter/liver
+	name = "Big Liver"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/liver/big
+
+/datum/design/bioprinter/nerves
+	name = "Hypersensitive Nerves"
+	materials = list(MATERIAL_BIOMATTER = 15, MATERIAL_GOLD = 1)
+	build_path = /obj/item/organ/internal/nerve/sensitive_nerve
+
+/datum/design/bioprinter/muscle
+	name = "Super Muscle"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/muscle/super_muscle
+
+/datum/design/bioprinter/blood_vessel
+	name = "Extensive Blood Vessels"
+	materials = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASTIC = 2)
+	build_path = /obj/item/organ/internal/blood_vessel/extensive
+
 /datum/design/autolathe/firstaid/nt
 	name = "Absolutism Medkit"
 	build_path = /obj/item/storage/firstaid/nt
@@ -301,6 +326,35 @@
 /datum/design/bioprinter/bioimplant/omuscle
 	name = "Organic muscle implant"
 	build_path = /obj/item/biogoop/muscle
+
+//[/CRUCIFORM UPGRAED]
+
+/datum/design/autolathe/cruciform_upgrade
+	build_path = /obj/item/cruciform_upgrade
+
+/datum/design/autolathe/cruciform_upgrade/natures_blessing
+	name = "Natures blessing"
+	build_path = /obj/item/cruciform_upgrade/natures_blessing
+
+/datum/design/autolathe/cruciform_upgrade/faiths_shield
+	name = "Faiths shield"
+	build_path = /obj/item/cruciform_upgrade/faiths_shield
+
+/datum/design/autolathe/cruciform_upgrade/cleansing_presence
+	name = "Cleansing presence"
+	build_path = /obj/item/cruciform_upgrade/cleansing_presence
+
+/datum/design/autolathe/cruciform_upgrade/martyr_gift
+	name = "Martyr gift"
+	build_path = /obj/item/cruciform_upgrade/martyr_gift
+
+/datum/design/autolathe/cruciform_upgrade/wrath_of_god
+	name = "Wrath of god"
+	build_path = /obj/item/cruciform_upgrade/wrath_of_god
+
+/datum/design/autolathe/cruciform_upgrade/speed_of_the_chosen
+	name = "Speed of the chosen"
+	build_path = /obj/item/cruciform_upgrade/speed_of_the_chosen
 
 //[/POUCHES]
 /datum/design/bioprinter/pouch/ammo

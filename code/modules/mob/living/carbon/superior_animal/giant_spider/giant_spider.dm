@@ -46,6 +46,13 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
-/mob/living/carbon/superior_animal/giant_spider/New(location, atom/parent)
-	..()
+/mob/living/carbon/superior_animal/giant_spider/New(var/location, var/atom/parent)
 	get_light_and_color(parent)
+	..()
+
+/mob/living/carbon/superior_animal/giant_spider/isValidAttackTarget(var/atom/O)
+	if (isliving(O))
+		var/mob/living/L = O
+		if(L.faction=="sproachder")
+			return
+	return ..(O)

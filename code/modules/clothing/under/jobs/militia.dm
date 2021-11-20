@@ -27,17 +27,160 @@
 	icon_state = "greenutility"
 	item_state = "greenutility"
 
+/obj/item/clothing/under/rank/fatigues/green/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Green Utility Uniform"] = "greenutility"
+	options["Green Utility Uniform Alt"] = "greenutility_alt"
+	options["Green Utility Uniform Corpsman"] = "greenutility_Corpsman"
+	options["Green Utility Uniform Corpsman Alt"] = "greenutility_alt_med"
+	options["Green Utility Pans"] = "greenutility_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/fatigues/grey
 	name = "grey utility uniform"
 	desc = "A grey utility uniform, bearing the old marks of patches long since removed."
 	icon_state = "greyutility"
 	item_state = "greyutility"
 
+/obj/item/clothing/under/rank/fatigues/grey/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Grey Utility Uniform"] = "greyutility"
+	options["Grey Utility Uniform Alt"] = "greyutility_alt"
+	options["Grey Utility Pans"] = "greyutility_pants"
+	options["Grey Utility Corpsman"] = "greyutility_Corpsman"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/fatigues/navy
 	name = "navy utility uniform"
 	desc = "A navy utility uniform, bearing the old marks of patches long since removed."
 	icon_state = "navyutility"
 	item_state = "navyutility"
+
+/obj/item/clothing/under/rank/fatigues/navy/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Navy Utility Uniform"] = "navyutility"
+	options["Navy Utility Uniform Alt"] = "navyutility_alt"
+	options["Navy Utility Pans"] = "navyutility_pants"
+	options["Dark Utility Pans"] = "blackutility_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/rank/fatigues/tan
+	name = "tan utility uniform"
+	desc = "A tan utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "tanutility"
+	item_state = "tanutility"
+
+/obj/item/clothing/under/rank/fatigues/tan/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Tan Utility Uniform"] = "tanutility"
+	options["Tan Utility Uniform Alt"] = "tanutility_alt"
+	options["Tan Utility Pans"] = "tanutility_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/rank/fatigues/camo
+	name = "camo utility uniform"
+	desc = "A camo utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "camoutility"
+	item_state = "camoutility"
+
+/obj/item/clothing/under/rank/fatigues/camo/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Camo Utility Uniform"] = "camoutility"
+	options["Camo Utility Uniform Corpsman Alt"] = "camoutility_alt_med"
+	options["Camo Utility Uniform Alt"] = "camoutility_alt"
+	options["Camo Utility Pans"] = "camoutility_pants"
+	options["Camo Utility Corpsman"] = "camoutility_med"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*
  * Trooper/Corpsman

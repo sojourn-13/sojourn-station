@@ -49,6 +49,27 @@
 	crate_name = "cow crate"
 	group = "Hydroponics"
 
+/datum/supply_pack/pig
+	name = "Pig Crate"
+	cost = 200
+	containertype = /obj/structure/largecrate/animal/pig
+	crate_name = "pig crate"
+	group = "Hydroponics"
+
+/datum/supply_pack/bear
+	name = "Bear Crate"
+	cost = 500
+	containertype = /obj/structure/largecrate/animal/bear
+	crate_name = "bear crate"
+	group = "Hydroponics"
+
+/datum/supply_pack/bear
+	name = "Polar Bear Crate"
+	cost = 500
+	containertype = /obj/structure/largecrate/animal/p_bear
+	crate_name = "polar bear crate"
+	group = "Hydroponics"
+
 /datum/supply_pack/goat
 	name = "Goat Crate"
 	cost = 200

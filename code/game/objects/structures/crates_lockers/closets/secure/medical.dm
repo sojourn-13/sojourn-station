@@ -15,6 +15,7 @@
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
+	new /obj/item/storage/hcases/med(src)
 
 /obj/structure/closet/secure_closet/anesthetics
 	name = "anesthetics closet"
@@ -143,9 +144,10 @@
 	new /obj/item/taperoll/medical(src)
 	new /obj/item/storage/belt/medical/emt(src)
 	new /obj/item/clothing/suit/storage/hazardvest_black(src)
-	new /obj/item/melee/baton(src)
+	new /obj/item/tool/baton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/pouch/medical_supply(src)
+	new /obj/item/storage/hcases/med(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
 	name = "soteria biolab overseer's locker"
@@ -185,6 +187,7 @@
 	new /obj/item/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
 	new /obj/item/device/defib_kit/compact/combat/adv(src)
 	new /obj/item/oddity/chem_book(src)
+	new /obj/item/storage/hcases/med(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"

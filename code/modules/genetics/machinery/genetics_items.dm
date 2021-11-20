@@ -89,7 +89,7 @@ This is a bugtesting item, please forgive the memes.
 	set category = "Object"
 	set name = "Combine Genes"
 	set src in view(1)
-	
+
 	//Generate the list
 	var/list/option_list = list()
 	var/list/count_list = list() 	//yes I needed 2 lists to make this damn thing work, it's a debug item don't @ me
@@ -98,7 +98,7 @@ This is a bugtesting item, please forgive the memes.
 		count_list[mutagen.name] = mutagen.count
 	option_list["End Selection"] = 1
 	count_list["End Selection"] = 1
-	
+
 	var/list/combined_mutations = list()
 	for(var/iterations = 0; iterations < 9; iterations++)
 
@@ -109,7 +109,7 @@ This is a bugtesting item, please forgive the memes.
 				updated_option_list["[option]"] = option_list[option]
 
 		var/choice = input("Select a gene to combine", "Current Mutations:") in updated_option_list
-		
+
 		if(!choice || choice=="End Selection")
 			break
 		else
@@ -128,14 +128,14 @@ This is a bugtesting item, please forgive the memes.
 
 			//Go back and decrement the original options list
 			count_list[selected_mutation.name] -= 1
-		
+
 	to_chat(usr, SPAN_NOTICE("\The [usr] combines some mutations!"))
 	held_mutations.combine(combined_mutations, MUT_TYPE_COMBINATION)
-	
 
 
-	
-	
+
+
+
 
 /*
 =================Mutagenic Purger=================
@@ -147,8 +147,8 @@ It also resets instability to 0 so bad things don't happen.
 /obj/item/genetics/purger
 	name = "Blue-Ink Mutagenic Purger"
 	desc = "An economic gene-fixer specifically made to purge mutations from the body. It takes a very long time to print."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "cimplanter2"
+	icon = 'icons/obj/genetics/dna_syringes.dmi'
+	icon_state = "dna_purger_b"
 	item_state = "syringe_0"
 	throw_speed = 1
 	throw_range = 5
@@ -173,7 +173,7 @@ It also resets instability to 0 so bad things don't happen.
 	user.do_attack_animation(target)
 
 	if(do_mob(user, target, 50) && !used)
-		icon_state = "cimplanter0"
+		icon_state = "dna_purger_empty"
 		used = TRUE
 		to_chat(target, SPAN_NOTICE("You feel your body begin to stabilize, and your anomalous mutations leave you."))
 		target.unnatural_mutations.removeAllMutations()
@@ -191,6 +191,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	desc = "A container for holding, analyzing and transferring mutagens."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "slide"
+	var/unique_id
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_GLASS = 1)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
@@ -201,14 +202,21 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 		name = "Mutagenic Sample Plate"
 		icon_state = "slideblood"
 		genetics_holder = incoming_holder.Copy()
+	unique_id = sequential_id(type)
 
 /obj/item/genetics/sample/proc/unload_genetics()
 	var/datum/genetics/genetics_holder/outbound_genetics_holder = genetics_holder.Copy()
 	name = "Empty Mutagenic Sample Plate"
-	genetics_holder = null
+	genetics_holder.removeAllMutations()
 	icon_state = "slide"
 	return outbound_genetics_holder
 
+/obj/item/genetics/sample/proc/sample_data(var/list/known_mutations)
+	var/list/data = list()
+	data["name"] = name
+	data["unique_id"] = unique_id
+	data += genetics_holder.ui_data(known_mutations)
+	return data
 /*
 =================Mutagenic Implanter=================
 Essentially a holder item for mutagenic samples. Installed on various machines and used for cloning, modifying, and so on.
@@ -218,8 +226,8 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 /obj/item/genetics/mut_injector
 	name = "Mutagenic Injector"
 	desc = "A specialized syringe for injecting Mutagens into a host's system."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "dnainjector0"
+	icon = 'icons/obj/genetics/dna_syringes.dmi'
+	icon_state = "dna_injector_0"
 	item_state = "syringe_0"
 	throw_speed = 1
 	throw_range = 5
@@ -248,7 +256,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	user.do_attack_animation(target)
 
 	if(do_mob(user, target, 50) && src && loaded_sample)
-		icon_state = "dnainjector0"
+		icon_state = "dna_injector_0"
 		var/datum/genetics/genetics_holder/injection = loaded_sample.unload_genetics()
 		to_chat(user, SPAN_NOTICE("\The [user] injects a sample into \the [target]"))
 		injection.inject_mutations(target)
@@ -257,14 +265,14 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	..()
 	if (istype(I, /obj/item/genetics/sample))
 		var/obj/item/genetics/sample/incoming_sample = I
-		
+
 		if(loaded_sample)
 			to_chat(user, SPAN_NOTICE("The mutagenic injector is already loaded!"))
 
 		if(!loaded_sample && user.unEquip(incoming_sample, src))
 			to_chat(user, SPAN_NOTICE("You load the mutagenic injector with a sample plate."))
 			loaded_sample = incoming_sample
-			icon_state = "dnainjector"
+			icon_state = "dna_injector_1"
 
 /obj/item/genetics/mut_injector/attack_self(var/mob/user)
 	if(!loaded_sample)
@@ -272,7 +280,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	user.put_in_hands(loaded_sample)
 	to_chat(user, SPAN_NOTICE("You remove the sample plate from \the [src]."))
 	loaded_sample = null
-	icon_state = "dnainjector0"
+	icon_state = "dna_injector_0"
 	return
 
 /*
@@ -285,12 +293,143 @@ icon_state='innards'
 /obj/item/genetics/reject
 	name = "Genetic Reject"
 	desc = "A product of hasty genetics work. Whatever this mound of flesh could have been, it will never see the light of day."
-	icon = 'icons/obj/surgery.dmi'
+	icon = 'icons/obj/genetics/dna_syringes.dmi'
 	icon_state = "innards"
 
 /obj/item/genetics/reject/New(var/parent_name)
 	if(parent_name)
 		name = "Genetic Reject of [parent_name]"
+
+/*
+=================Flesh Sac=================
+A holder for items we make with Genetics. Helps add a visceral element to object creation through this process.
+*/
+/obj/item/genetics/flesh_sac
+	name = "Flesh Sac"
+	desc = "An undilating facsimile of life, carrying with it unknown contents."
+	icon = 'icons/obj/genetics/flesh_sac.dmi'
+	icon_state = "flesh_sac"
+	w_class = ITEM_SIZE_GARGANTUAN
+	density = TRUE
+	var/list/loot = list()
+
+/obj/item/genetics/flesh_sac/attackby(obj/item/I as obj, mob/user as mob)
+	..()
+	if(QUALITY_CUTTING in I.tool_qualities)
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_BIO))
+			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
+			new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+			user.visible_message(SPAN_NOTICE("[user] rips open the [src] in a shower of gore!"))
+			for(var/loot_item in loot)
+				if(ispath(loot_item, /obj))
+					var/obj/instanced_item = new loot_item()
+					instanced_item.loc = src.loc
+			qdel(src)
+		else
+			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
+			new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+			user.visible_message(SPAN_NOTICE("[user] destroys the contents of the [src]."))
+			qdel(src)
+
+/obj/item/genetics/flesh_sac/heart
+	loot = list(/obj/item/organ/internal/heart)
+
+/obj/item/genetics/flesh_sac/b_heart
+	loot = list(/obj/item/organ/internal/heart/huge/baboon)
+
+/obj/item/genetics/flesh_sac/lungs
+	loot = list(/obj/item/organ/internal/lungs)
+
+/obj/item/genetics/flesh_sac/g_lungs
+	loot = list(/obj/item/organ/internal/lungs/long)
+
+/obj/item/genetics/flesh_sac/liver
+	loot = list(/obj/item/organ/internal/liver)
+
+/obj/item/genetics/flesh_sac/g_liver
+	loot = list(/obj/item/organ/internal/liver/big)
+
+/obj/item/genetics/flesh_sac/blood_vessels
+	loot = list(
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel,
+		/obj/item/organ/internal/blood_vessel)
+
+/obj/item/genetics/flesh_sac/e_blood_vessels
+	loot = list(
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive)
+
+/obj/item/genetics/flesh_sac/muscles
+	loot = list(
+		/obj/item/organ/internal/muscle,
+		/obj/item/organ/internal/muscle,
+		/obj/item/organ/internal/muscle,
+		/obj/item/organ/internal/muscle)
+
+/obj/item/genetics/flesh_sac/s_muscles
+	desc = "An undilating facsimile of life, carrying with it unknown contents. Whatever it is, it has amazing abs."
+	loot = list(
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle)
+
+/obj/item/genetics/flesh_sac/nerves
+	loot = list(
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve,
+		/obj/item/organ/internal/nerve)
+
+/obj/item/genetics/flesh_sac/s_nerves
+	desc = "An undilating facsimile of life, carrying with it unknown contents. It twitches at the slightest breath of air."
+	loot = list(
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve)
+
+/obj/item/genetics/flesh_sac/superior
+	name = "The Great Ball"
+	desc = "An undilating facsimile of life, carrying with it unknown contents. It looks like it is about to burst."
+	loot = list(
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/nerve/sensitive_nerve,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/muscle/super_muscle,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/blood_vessel/extensive,
+		/obj/item/organ/internal/liver/big,
+		/obj/item/organ/internal/lungs/long,
+		/obj/item/organ/internal/heart/huge)
 /*
 =================Genetics Circuits=================
 Circuit boards for different Genetics Machines.
@@ -317,6 +456,17 @@ Circuit boards for different Genetics Machines.
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
 
+/obj/item/circuitboard/genetics/gene_analyzer
+	build_name = "Belvoix Genetic Analyzer"
+	build_path = /obj/machinery/genetics/gene_analyzer
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
+	req_components = list(
+		/obj/item/stock_parts/scanning_module = 4, //Affects Genes Analyzed
+		/obj/item/stock_parts/matter_bin = 4, //Affects Max Sample plates
+	)
+
+
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit
 	disk_name = "Genetics Studio Design Kit"
 	icon_state = "moebius"
@@ -325,7 +475,8 @@ Circuit boards for different Genetics Machines.
 		/datum/design/autolathe/genetics/pulper = 0,
 		/datum/design/autolathe/genetics/cloner = 0,
 		/datum/design/autolathe/genetics/clone_console = 0,
-		/datum/design/autolathe/genetics/purger = 0
+		/datum/design/autolathe/genetics/purger = 0,
+		/datum/design/autolathe/genetics/mut_injector = 0
 	)
 
 

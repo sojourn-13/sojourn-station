@@ -386,8 +386,12 @@
 	..(icon_gib,1)
 
 /mob/living/simple_animal/bullet_act(var/obj/item/projectile/Proj, var/def_zone = null)
-	if(!Proj || Proj.nodamage)
+	if(!Proj)
 		return
+
+	if(Proj.nodamage)
+		if(istype(Proj, /obj/item/projectile/ion))
+			Proj.on_hit(loc)
 
 	for(var/damage_type in Proj.damage_types)
 		var/damage = Proj.damage_types[damage_type]
@@ -746,6 +750,7 @@
 	if (AI_inactive)
 		activate_ai()
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
+		return
 	else
 		AI_inactive = TRUE
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
@@ -757,10 +762,11 @@
 	set category = "Mob verbs"
 	var/common_known = FALSE
 
-	if (!common_known)
+	if(!common_known)
 		add_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to ON."))
 		common_known = TRUE
+		return
 	else
 		remove_language(LANGUAGE_COMMON)
 		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))

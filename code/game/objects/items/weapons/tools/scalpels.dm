@@ -16,6 +16,7 @@
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_WIRE_CUTTING = 10)
+	price_tag = 45
 
 /obj/item/tool/scalpel/advanced
 	name = "advanced scalpel"
@@ -25,6 +26,7 @@
 	tool_qualities = list(QUALITY_CUTTING = 45, QUALITY_WIRE_CUTTING = 10)
 	degradation = 0.12
 	max_upgrades = 4
+	price_tag = 300
 
 /obj/item/tool/scalpel/advanced/si
 	icon_state = "scalpel_t4_SI"
@@ -42,6 +44,7 @@
 	use_power_cost = 0.12
 	suitable_cell = /obj/item/cell/small
 	max_upgrades = 4
+	price_tag = 550
 
 
 //A makeshift knife, for doing all manner of cutting and stabbing tasks in a half-assed manner
@@ -61,3 +64,4 @@
 	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_WIRE_CUTTING = 5, QUALITY_DRILLING = 5)
 	degradation = 4 //Gets worse with use
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+	price_tag = 1

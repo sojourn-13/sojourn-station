@@ -60,9 +60,9 @@
 
 /datum/supply_pack/riot
 	name = "Marshal Riot Gear Crate"
-	contains = list(/obj/item/melee/baton,
-					/obj/item/melee/baton,
-					/obj/item/melee/baton,
+	contains = list(/obj/item/tool/baton,
+					/obj/item/tool/baton,
+					/obj/item/tool/baton,
 					/obj/item/shield/riot,
 					/obj/item/shield/riot,
 					/obj/item/shield/riot,

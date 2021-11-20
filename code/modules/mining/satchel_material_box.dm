@@ -59,10 +59,10 @@
 		to_chat(usr, "\red The material box is empty")
 		return
 
-	var/turf/T = get_turf(src)
-	for(var/obj/O in contents) // Empty everything
-		O.forceMove(T) // Move the item on the ground
-	to_chat(usr, "\blue You empty the material box")
+	for (var/obj/item/ore/O in contents)
+		contents -= O
+		O.loc = src.loc
+	to_chat(usr, "\blue You empty the ore box")
 	return TRUE
 
 /obj/structure/material_box/ex_act(severity)

@@ -133,6 +133,8 @@
 	deathmessage = "collapses into a pile of scrap!"
 	speak_chance = 5
 
+	friendly_to_colony = FALSE
+
 	move_to_delay = 1
 	turns_per_move = 4
 	see_in_dark = 10
@@ -150,6 +152,8 @@
 	viewRange = 14
 	default_pixel_x = -16
 	randpixel = 0
+
+	can_burrow = FALSE //We cant borrow to the colony or away
 
 	//Death and harvest vars
 	meat_amount = 3

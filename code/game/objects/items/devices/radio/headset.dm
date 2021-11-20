@@ -149,10 +149,15 @@
 
 /obj/item/device/radio/headset/heads/rd
 	name = "research overseer's headset"
-	desc = "Headset of the researching God."
+	desc = "Headset of the researching overseer, a headset belonging to hopefully the most logical person on the colony... Automatically translates binary channels."
 	icon_state = "com_headset"
 	item_state = "headset"
+	translate_binary = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
+
+/obj/item/device/radio/headset/heads/rd/recalculateChannels(var/setDescription = FALSE)
+	..(setDescription)
+	translate_binary = TRUE
 
 /obj/item/device/radio/headset/heads/hos
 	name = "warrant officer headset"

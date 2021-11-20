@@ -3,7 +3,6 @@
 	role_text = "Commando"
 	role_text_plural = "Commandos"
 	bantype = ROLE_BANTYPE_CREW_SIDED
-	protected_jobs = list(JOBS_COMMAND, JOBS_SECURITY)
 	antaghud_indicator = "huddeathsquad"
 
 	stat_modifiers = list(

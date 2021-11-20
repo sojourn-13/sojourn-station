@@ -43,7 +43,7 @@
 				var/list/ingredient_mutations_sorted = ingredient_mutations
 				sortList(ingredient_mutations_sorted)
 				for (var/key in ingredient_mutations_sorted)
-					compare_string = compare_string + "G~" + key
+					compare_string = compare_string + "G~" + "[key]"
 			else
 				compare_string = compare_string + "G~" + ingredient_mutations
 		
@@ -56,7 +56,7 @@
 					compare_string = compare_string + "M~"
 			else
 				compare_string = compare_string + "M~"
-
+		log_debug("initialize_mutation_recipes(): Loaded recipe [example_recipe] with string [compare_string]")
 		if(!GLOB.mutation_recipe_list[compare_string])
 			GLOB.mutation_recipe_list[compare_string] = list()
 		GLOB.mutation_recipe_list[compare_string] += example_recipe
@@ -89,10 +89,8 @@
 
 //A configurable path return, in case we want variation in result for children of the main recipe definition.
 /datum/genetics/mutation_recipe/proc/get_result()
-	log_debug("made new mutation using default method.")
 	if(ispath(result_path, /datum/genetics/mutation))
-		log_debug("Found a replacement but, this is probably baaaaad-> [result_path]")
 		var/datum/genetics/mutation/new_mutation = new result_path()
 		return new_mutation
-	log_debug("Didn't find a mutation where we were loooking; returned NOTHING instead")
+	log_debug("Mutation_Recipe.get_result(): Didn't find a mutation where we were looking; returned NOTHING instead")
 	return null

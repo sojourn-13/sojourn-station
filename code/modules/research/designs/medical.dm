@@ -143,13 +143,13 @@
 	name = "Advanced Sugery Kit"
 	desc = "A box for advanced surgery tools."
 	build_path = /obj/item/storage/firstaid/surgery/si/empty
-	category = CAT_TOOLS
+	category = "Medical"
 
 /datum/design/research/item/medical/medimplant_sci
 	name = "Soteria Medical Omnitool"
 	desc = "An all-in-one smart medical tool implant based on the legendary Greyson Positronic model."
 	build_path = /obj/item/tool/medmultitool/medimplant/sci
-	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 3, MATERIAL_SILVER = 5)
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 1)
 	category = CAT_TOOLS
 
 /datum/design/research/item/scalpel_laser

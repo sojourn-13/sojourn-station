@@ -98,6 +98,7 @@
 #define GUN_UPGRADE_HONK "why"
 #define GUN_UPGRADE_FULLAUTO "full auto"
 #define GUN_UPGRADE_EXPLODE "self destruct"
+#define GUN_UPGRADE_RAIL "barrel rail adapter"
 #define GUN_UPGRADE_RIGGED "rigged"
 #define GUN_UPGRADE_AUTOEJECT "autoeject"
 #define GUN_UPGRADE_CELLMINUS "small cell adapter"

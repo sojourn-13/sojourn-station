@@ -13,6 +13,21 @@
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 90
 
+//Genetic Ambusher
+
+/obj/random/mob/ambusher
+	name = "random ambusher"
+	icon_state = "hostilemob-brown-low"
+	alpha = 128
+
+/obj/random/mob/ambusher/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/shadow))
+
+/obj/random/mob/ambusher/low_chance
+	name = "low chance ambusher"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 99 // These things should not be escaping from science often.
+
 //Carps
 
 /obj/random/mob/carp
@@ -122,6 +137,32 @@
 	name = "lower chance cluster of xenomorphs"
 	icon_state = "hostilemob-brown-cluster-low"
 	spawn_nothing_percentage = 80
+
+//Preppers
+/obj/random/mob/prepper
+	name = "random prepper base mob"
+	icon_state = "hostilemob-cyan"
+	alpha = 128
+
+//This is made out of a 100 fo easyer math
+/obj/random/mob/prepper/item_to_spawn()
+	return pickweight(list(/mob/living/simple_animal/hostile/hivebot = 4,
+		/mob/living/simple_animal/hostile/hivebot/range = 3,
+		/mob/living/simple_animal/hostile/republicon = 4,
+		/mob/living/simple_animal/hostile/republicon/range = 2,
+		/mob/living/carbon/superior_animal/sentinal_seeker = 1
+		))
+
+/obj/random/mob/prepper_ranged
+	name = "random prepper base mob (range only)"
+	icon_state = "hostilemob-blue"
+	alpha = 128
+
+/obj/random/mob/prepper_ranged/item_to_spawn()
+	return pickweight(list(		/mob/living/simple_animal/hostile/hivebot/range = 3,
+		/mob/living/simple_animal/hostile/republicon/range = 1
+		))
+
 
 //local fauna - surface
 /obj/random/mob/tengolo

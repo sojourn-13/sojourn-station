@@ -71,6 +71,12 @@
 
 				bloodDNA = null
 
+			var/obj/item/implant/core_implant/cruciform/C = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+			if(C && C.active)
+				var/obj/item/cruciform_upgrade/upgrade = C.upgrade
+				if(upgrade && upgrade.active && istype(upgrade, CUPGRADE_CLEANSING_PSESENCE))
+					clean_ultimate(H)
+
 		if(src.wet)
 
 			if(M.buckled || (src.wet == 1 && MOVING_DELIBERATELY(M)))

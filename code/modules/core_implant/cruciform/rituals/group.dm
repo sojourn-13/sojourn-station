@@ -34,6 +34,7 @@
 /datum/group_ritual_effect/cruciform/stat/trigger_success(var/mob/starter, var/list/participants)
 	. = ..()
 	GLOB.miracle_points--
+	GLOB.grup_ritual_performed++ //I guess here?
 
 /datum/group_ritual_effect/cruciform/stat/success(var/mob/living/M, var/cnt)
 	if(cnt < 3 || !stat_buff)

@@ -235,6 +235,12 @@
 	name = "compact roller bed"
 	item_form_type = /obj/item/roller/compact	//The folded-up object path.
 
+/obj/structure/bed/roller/compact/update_icon()
+	if(density)
+		icon_state = "adv_up"
+	else
+		icon_state = "adv_down"
+
 /obj/structure/bed/roller/update_icon()
 	if(density)
 		icon_state = "up"
@@ -265,6 +271,7 @@
 /obj/item/roller/compact
 	name = "compact roller bed"
 	desc = "A more durable and compact version of a collapsed roller bed that can be carried around in bags."
+	icon_state = "adv_folded"
 	slot_flags = NONE
 	w_class = ITEM_SIZE_NORMAL
 	structure_form_type = /obj/structure/bed/roller/compact

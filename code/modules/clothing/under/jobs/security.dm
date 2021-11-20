@@ -43,6 +43,11 @@
 	icon_state = "security_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
+/obj/item/clothing/under/rank/security/turtleneck
+	name = "Marshal officers turtleneck"
+	desc = "Military style turtleneck, made of a slightly sturdier material than standard jumpsuits, to allow for robust protection"
+	icon_state = "securityrturtle"
+
 /obj/item/clothing/under/rank/medspec
 	name = "militia corpmen's jumpsuit"
 	desc = "A durable corpsman's jumpsuit, designed to provide moderate combat protection."
