@@ -241,6 +241,12 @@
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "riot"
+		)
+
 
 /obj/item/shield/riot/handle_shield(mob/user)
 	. = ..()
@@ -491,6 +497,11 @@
 	durability = 800
 	armor = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "nt_shield"
+		)
 
 /obj/item/shield/riot/crusader/handle_shield(mob/user)
 	. = ..()

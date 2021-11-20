@@ -36,6 +36,11 @@
 	use_power_cost = 2
 	suitable_cell = /obj/item/cell/medium
 	max_upgrades = 4
+	item_icons = list(
+		slot_back_str = 'icons/obj/tools.dmi')
+	item_state_slots = list(
+		slot_back_str = "onehammer_back"
+		)
 
 /obj/item/tool/hammer/powered_hammer/turn_on(mob/user)
 
