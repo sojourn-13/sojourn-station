@@ -6,13 +6,15 @@
 a
 	restricted_to_species = list(FORM_HUMAN)
 
+	perks = list(/datum/perk/factotum)
+
 	stat_modifiers = list(
-		STAT_ROB = 3,
-		STAT_TGH = 3,
-		STAT_VIG = 3,
-		STAT_BIO = 3,
-		STAT_MEC = 3,
-		STAT_COG = 3
+		STAT_ROB = 4,
+		STAT_TGH = 4,
+		STAT_VIG = 4,
+		STAT_BIO = 4,
+		STAT_MEC = 4,
+		STAT_COG = 4
 	)
 
 /datum/category_item/setup_option/background/ethnicity/humanfrontier
@@ -23,13 +25,15 @@ a
 
 	restricted_to_species = list(FORM_HUMAN)
 
+	perks = list(/datum/perk/job/natural_armour)
+
 	stat_modifiers = list(
-		STAT_ROB = 6,
-		STAT_TGH = 6,
-		STAT_VIG = 6,
-		STAT_BIO = 0,
-		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_BIO = -5,
+		STAT_MEC = -5,
+		STAT_COG = -5
 	)
 
 /datum/category_item/setup_option/background/ethnicity/humanspacer
@@ -44,10 +48,10 @@ a
 	perks = list(/datum/perk/intelligenceboost)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
-		STAT_BIO = 6,
-		STAT_MEC = 6,
-		STAT_COG = 6
+		STAT_ROB = -5,
+		STAT_TGH = -5,
+		STAT_VIG = -5,
+		STAT_BIO = 10,
+		STAT_MEC = 10,
+		STAT_COG = 10
 	)
