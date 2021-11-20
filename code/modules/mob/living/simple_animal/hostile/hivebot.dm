@@ -153,6 +153,8 @@
 	default_pixel_x = -16
 	randpixel = 0
 
+	can_burrow = FALSE //We cant borrow to the colony or away
+
 	//Death and harvest vars
 	meat_amount = 3
 	meat_type = /obj/item/scrap_lump
