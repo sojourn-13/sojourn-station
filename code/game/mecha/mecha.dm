@@ -1055,15 +1055,15 @@ assassination method if you time it right*/
 			to_chat(usr, SPAN_WARNING("You lack the mechanical knowledge to do this!"))
 			return
 
-			var/obj/item/mecha_parts/mecha_equipment/E = I
-			spawn()
-				if(E.can_attach(src))
-					user.drop_item()
-					E.attach(src)
-					user.visible_message("[user] attaches [I] to [src]", "You attach [I] to [src]")
-				else
-					to_chat(user, "You were unable to attach [I] to [src]")
-			return
+		var/obj/item/mecha_parts/mecha_equipment/E = I
+		spawn()
+			if(E.can_attach(src))
+				user.drop_item()
+				E.attach(src)
+				user.visible_message("[user] attaches [I] to [src]", "You attach [I] to [src]")
+			else
+				to_chat(user, "You were unable to attach [I] to [src]")
+		return
 
 	var/obj/item/card/id/id_card = I.GetIdCard()
 	if(id_card)

@@ -40,7 +40,7 @@
 			This one bears the IFF stripes of the Blackshield."
 	icon_state = "helmet_mil_alt"
 
-/obj/item/clothing/head/helmet/ballistic/militia/proc/toggle_style()
+/obj/item/clothing/head/helmet/ballistic/militia/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr

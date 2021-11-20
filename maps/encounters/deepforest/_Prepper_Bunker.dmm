@@ -48,12 +48,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "ak" = (
-/obj/structure/safe,
 /obj/item/clothing/head/helmet/night_vision_helm,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
-/obj/item/storage/box/syndie_kit/imp_uplink,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "al" = (
@@ -97,9 +96,7 @@
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = 32
 	},
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "as" = (
@@ -256,7 +253,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "aS" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "aT" = (
@@ -403,11 +400,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"bn" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon/range,
-/turf/simulated/floor/tiled/dark/monofloor,
-/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "bo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk/cigbutt,
@@ -505,7 +497,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "by" = (
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "bz" = (
@@ -604,30 +596,28 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "bN" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = 11
 	},
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/mre/can,
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can,
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = -9
 	},
-/obj/item/reagent_containers/food/snacks/mre/can{
+/obj/item/reagent_containers/food/snacks/openable/can{
 	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -712,33 +702,31 @@
 "ca" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "cb" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 9
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = -6;
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/mre{
+/obj/item/reagent_containers/food/snacks/openable/mre/alt{
 	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -829,13 +817,6 @@
 /obj/effect/decal/cleanable/mucus,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"cr" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
-/turf/simulated/floor/tiled/dark/monofloor,
-/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "cs" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/fancy/mre_cracker{
@@ -904,9 +885,7 @@
 "cz" = (
 /obj/item/trash/mre_can,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "cA" = (
@@ -1440,12 +1419,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
-"dT" = (
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
-/turf/simulated/floor/tiled/dark/monofloor,
-/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "dU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1471,7 +1444,7 @@
 "dY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light_construct,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "dZ" = (
@@ -1583,7 +1556,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "ep" = (
-/mob/living/simple_animal/hostile/republicon/range,
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "eq" = (
@@ -1727,7 +1700,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "eQ" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/mob/living/simple_animal/hostile/hivebot,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "eR" = (
@@ -2146,7 +2118,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "fZ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "ga" = (
@@ -5475,9 +5447,7 @@
 "qe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qf" = (
@@ -5511,7 +5481,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "qk" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/mob/living/simple_animal/hostile/hivebot,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "ql" = (
@@ -6572,16 +6542,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "th" = (
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "ti" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tj" = (
@@ -6700,9 +6666,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tB" = (
 /obj/structure/bed/chair,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tC" = (
@@ -6868,9 +6832,7 @@
 "tT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tU" = (
@@ -6879,9 +6841,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tV" = (
@@ -6889,9 +6849,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tW" = (
@@ -7246,9 +7204,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "uL" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "uM" = (
@@ -7424,18 +7380,14 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vo" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vq" = (
@@ -7645,9 +7597,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vY" = (
@@ -7771,9 +7721,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "wp" = (
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "wq" = (
@@ -8067,7 +8015,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/republicon/range,
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "xj" = (
@@ -8266,7 +8214,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "xD" = (
 /obj/structure/catwalk,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "xE" = (
@@ -8541,12 +8489,6 @@
 "yg" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"yh" = (
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yi" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -8642,7 +8584,7 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yv" = (
@@ -8655,21 +8597,13 @@
 /obj/structure/closet/random_tech,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"yx" = (
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yy" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yA" = (
@@ -8699,9 +8633,7 @@
 "yF" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yG" = (
@@ -8726,9 +8658,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yI" = (
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yJ" = (
@@ -8766,9 +8696,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "yQ" = (
@@ -9052,10 +8980,6 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
-"zC" = (
-/mob/living/simple_animal/hostile/republicon/range,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "zD" = (
 /obj/structure/railing/grey{
 	dir = 8;
@@ -9128,9 +9052,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "zN" = (
@@ -9239,9 +9161,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Ac" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Ad" = (
@@ -9267,11 +9186,11 @@
 	dir = 4;
 	icon_state = "shower"
 	},
-/mob/living/simple_animal/hostile/republicon/range,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Ah" = (
-/mob/living/simple_animal/hostile/republicon/range,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Ai" = (
@@ -9390,6 +9309,7 @@
 "Az" = (
 /obj/structure/railing/grey,
 /obj/structure/flora/small/lavarock3,
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "AA" = (
@@ -9481,11 +9401,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "AP" = (
 /obj/random/junk,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/entryway)
-"AQ" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "AR" = (
@@ -9644,9 +9559,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Br" = (
 /obj/effect/decal/cleanable/filth,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Bs" = (
@@ -9762,9 +9675,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "BF" = (
@@ -9824,19 +9735,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/entryway)
-"BL" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
@@ -9961,7 +9859,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon/range,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "BX" = (
@@ -10014,12 +9912,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/barricade,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/entryway)
-"Cf" = (
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Cg" = (
@@ -10453,7 +10345,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Dh" = (
 /obj/random/common_oddities,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Di" = (
@@ -10481,10 +10373,6 @@
 /obj/item/clothing/gloves/thick/ablasive/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"Dn" = (
-/mob/living/simple_animal/hostile/republicon,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Do" = (
 /obj/structure/closet/random_hostilemobs,
 /obj/effect/decal/cleanable/dirt,
@@ -10503,12 +10391,6 @@
 "Dr" = (
 /obj/random/junk/cigbutt,
 /obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/entryway)
-"Ds" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Dt" = (
@@ -10550,9 +10432,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Dy" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Dz" = (
@@ -10777,7 +10657,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Ei" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Ej" = (
@@ -10872,7 +10752,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Ew" = (
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Ex" = (
@@ -11033,31 +10913,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"EP" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"EQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "ER" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/contraband/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"ES" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon/range,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "ET" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -11076,9 +10936,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "EW" = (
@@ -11091,9 +10949,7 @@
 "EX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "EY" = (
@@ -11161,11 +11017,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Fh" = (
 /obj/structure/closet/radiation,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/floor4)
-"Fi" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Fj" = (
@@ -11578,7 +11429,7 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Gt" = (
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Gu" = (
@@ -11737,7 +11588,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "GW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "GX" = (
@@ -12096,9 +11947,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Ib" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Ic" = (
@@ -12252,9 +12101,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "IC" = (
 /obj/machinery/light/small,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "ID" = (
@@ -12449,7 +12296,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
 "Jn" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/republicon,
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
 "Jo" = (
@@ -12587,9 +12434,7 @@
 "JM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Kf" = (
@@ -12643,6 +12488,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"Ls" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/syndie_kit/imp_uplink,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "Lt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -12707,11 +12557,6 @@
 /obj/random/closet_wardrobe,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"Mm" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Mo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -12720,9 +12565,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "Ms" = (
@@ -12739,6 +12582,11 @@
 	dir = 4
 	},
 /turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"MA" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/random/mob/prepper,
+/turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "MI" = (
 /obj/item/modular_computer/console/preset/civilian/professional{
@@ -12871,6 +12719,10 @@
 /obj/machinery/power/port_gen/pacman/diesel/anchored,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"OX" = (
+/obj/random/mob/prepper_ranged,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "OZ" = (
 /obj/structure/boulder,
 /obj/effect/step_trigger/vault_bunker_1E,
@@ -12964,7 +12816,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "RA" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "RQ" = (
@@ -13004,6 +12856,11 @@
 /obj/effect/decal/cleanable/cobweb2{
 	dir = 8
 	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"SG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "SH" = (
@@ -13142,7 +12999,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/hivebot/range,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "UH" = (
@@ -13167,7 +13024,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "Va" = (
-/mob/living/simple_animal/hostile/republicon/range,
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "Vb" = (
@@ -13192,7 +13049,7 @@
 "Vj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/mob/living/simple_animal/hostile/hivebot,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Vo" = (
@@ -13262,6 +13119,7 @@
 	pixel_y = 4;
 	specialfunctions = 4
 	},
+/obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "Xe" = (
@@ -13270,9 +13128,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
 "Xl" = (
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Xm" = (
@@ -13313,6 +13169,11 @@
 	},
 /turf/unsimulated/mineral,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"Ye" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/prepper,
+/turf/simulated/floor/tiled/white/panels,
+/area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "Yf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -13397,12 +13258,20 @@
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"YX" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/random/mob/prepper_ranged,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "YY" = (
 /obj/effect/step_trigger/vault_bunker_2B,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Zi" = (
-/mob/living/simple_animal/hostile/hivebot,
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Zo" = (
@@ -13443,18 +13312,20 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/range{
-	health = 300
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Zw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/mob/living/simple_animal/hostile/hivebot{
-	health = 400
-	},
+/obj/random/mob/prepper,
 /turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"ZA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/prepper_ranged,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "ZB" = (
 /mob/living/carbon/superior_animal/sentinal_seeker,
@@ -14732,7 +14603,7 @@ GY
 Dz
 wh
 wh
-yx
+Xl
 wh
 wh
 wh
@@ -14949,14 +14820,14 @@ wm
 wm
 wh
 wh
-yx
+Xl
 wO
 wO
 wh
 wh
 wm
 wh
-yx
+Xl
 wh
 wh
 wO
@@ -15224,7 +15095,7 @@ yg
 EW
 Fd
 yq
-Fi
+Ib
 yq
 FD
 vL
@@ -15350,7 +15221,7 @@ vL
 EO
 EX
 Fe
-Fi
+Ib
 yq
 yq
 FD
@@ -15598,7 +15469,7 @@ vL
 Cm
 yg
 yq
-yq
+Ib
 yq
 vL
 vL
@@ -16111,7 +15982,7 @@ yq
 Ep
 yq
 yq
-yq
+Ib
 Cb
 yQ
 yq
@@ -16497,7 +16368,7 @@ yg
 yg
 yg
 yg
-yg
+Ah
 yg
 yg
 Gp
@@ -17129,7 +17000,7 @@ yg
 EZ
 yg
 Fl
-Ah
+yI
 Fw
 FF
 vL
@@ -17742,7 +17613,7 @@ xg
 vL
 vL
 yf
-yg
+yI
 yD
 yN
 yV
@@ -17759,11 +17630,11 @@ yN
 DD
 vL
 vL
-yh
+Ah
 yq
 yq
-yq
-yh
+Ib
+yg
 yg
 vL
 vL
@@ -17874,7 +17745,7 @@ yE
 yO
 yO
 yW
-yW
+ZA
 zT
 Am
 yg
@@ -17995,8 +17866,8 @@ wh
 xg
 vL
 vL
-yh
-yh
+yg
+yg
 yF
 yP
 yW
@@ -18133,7 +18004,7 @@ zV
 Am
 AI
 AY
-yh
+Ah
 yg
 yU
 yq
@@ -18143,7 +18014,7 @@ yq
 Es
 yq
 yq
-yh
+Ah
 yg
 yg
 Fy
@@ -18522,7 +18393,7 @@ yq
 yq
 yg
 yq
-EP
+Ib
 yg
 yg
 vL
@@ -18649,7 +18520,7 @@ yq
 yg
 yg
 yg
-EQ
+EX
 yg
 yg
 vL
@@ -18672,7 +18543,7 @@ FL
 yg
 yg
 yq
-yh
+Ah
 Gq
 vL
 vL
@@ -18776,7 +18647,7 @@ yg
 yg
 yg
 Et
-EP
+Ib
 yg
 yg
 vL
@@ -18798,9 +18669,9 @@ vL
 vL
 yg
 yq
-yh
+Ah
 ZG
-yh
+Ah
 vL
 vL
 vj
@@ -18923,7 +18794,7 @@ Hh
 Hr
 vL
 vL
-yh
+Ah
 yq
 Gq
 Is
@@ -21916,7 +21787,7 @@ Um
 Lc
 ho
 ma
-jj
+wp
 hb
 ho
 tP
@@ -22420,8 +22291,8 @@ kF
 wr
 zi
 hb
-Va
 hb
+Va
 lt
 Sy
 ho
@@ -22958,7 +22829,7 @@ yT
 yT
 zd
 Av
-Mm
+RA
 Bz
 Cd
 Ct
@@ -23210,7 +23081,7 @@ bH
 bH
 yT
 yT
-Mm
+RA
 Av
 Bg
 Bx
@@ -24100,7 +23971,7 @@ bH
 yT
 yT
 ze
-AQ
+RA
 zd
 Bw
 yT
@@ -24354,7 +24225,7 @@ bH
 yT
 yT
 Av
-Mm
+zd
 Av
 Bw
 yT
@@ -24482,7 +24353,7 @@ yT
 yT
 Av
 zd
-Av
+Zi
 Bx
 yT
 yT
@@ -25129,7 +25000,7 @@ yT
 yT
 yT
 Nz
-PJ
+qk
 PJ
 ZU
 yT
@@ -25373,7 +25244,7 @@ zc
 Av
 Bk
 BE
-Cf
+Zi
 yT
 yT
 yT
@@ -25748,7 +25619,7 @@ ab
 yT
 zc
 zd
-zC
+Zi
 Aa
 Ax
 zd
@@ -25761,7 +25632,7 @@ RA
 Bn
 zd
 zd
-zC
+Zi
 Av
 Av
 Av
@@ -25881,7 +25752,7 @@ Ay
 zG
 zd
 BC
-Av
+OX
 Av
 AO
 Bf
@@ -26018,7 +25889,7 @@ EF
 Cg
 Fb
 Fb
-Fn
+YX
 Fn
 Fb
 FI
@@ -26133,7 +26004,7 @@ zF
 Ad
 Ay
 zd
-Dn
+Zi
 BH
 Av
 Vj
@@ -26256,7 +26127,7 @@ ab
 yT
 ze
 zd
-zd
+RA
 Ae
 AA
 zd
@@ -26269,7 +26140,7 @@ Av
 Av
 zd
 zd
-ES
+RA
 zG
 zd
 zd
@@ -26383,7 +26254,7 @@ ab
 yT
 yT
 zp
-Ds
+zG
 zd
 zd
 zG
@@ -26514,7 +26385,7 @@ zB
 Af
 AB
 Av
-ES
+RA
 BK
 Av
 yT
@@ -26641,8 +26512,8 @@ yT
 yT
 ze
 Av
-Bl
-BL
+Zi
+BW
 Bl
 yT
 yT
@@ -26893,7 +26764,7 @@ bH
 bH
 yT
 yT
-zC
+Zi
 Av
 zG
 BM
@@ -27126,7 +26997,7 @@ rQ
 rS
 rP
 rP
-rP
+Ye
 rP
 rP
 rV
@@ -28268,7 +28139,7 @@ oz
 oz
 oz
 rV
-sn
+MA
 sn
 uA
 uP
@@ -28423,7 +28294,7 @@ zd
 BO
 Cd
 Cq
-AQ
+RA
 DP
 yT
 Ee
@@ -28544,7 +28415,7 @@ bH
 bH
 yT
 yT
-ES
+RA
 Av
 Av
 BN
@@ -29052,7 +28923,7 @@ bH
 bH
 yT
 yT
-Dn
+Zi
 zd
 Av
 BS
@@ -29435,7 +29306,7 @@ yT
 yT
 zd
 Av
-AQ
+SG
 BH
 yT
 yT
@@ -29566,7 +29437,7 @@ zd
 BK
 yT
 CL
-Dn
+Zi
 Be
 DZ
 Ee
@@ -29942,7 +29813,7 @@ bH
 yT
 yT
 zd
-Av
+OX
 Bo
 BT
 yT
@@ -30703,7 +30574,7 @@ bH
 bH
 yT
 yT
-zC
+Zi
 Av
 zd
 BW
@@ -30963,7 +30834,7 @@ zG
 BX
 Ck
 CB
-Ds
+JM
 DU
 yT
 Ee
@@ -31816,10 +31687,10 @@ qN
 hb
 kq
 ho
-iR
+vo
 ho
 hb
-iR
+vo
 rL
 rZ
 sw
@@ -31943,10 +31814,10 @@ ho
 ho
 ho
 ho
-iR
+vo
 ho
 ho
-iR
+vo
 rM
 sa
 sw
@@ -32133,7 +32004,7 @@ dN
 Xa
 aK
 aJ
-ay
+ep
 ay
 aJ
 aJ
@@ -32257,10 +32128,10 @@ cn
 cn
 bj
 bj
-ep
+ay
 aJ
 aJ
-bn
+aJ
 ay
 aJ
 aJ
@@ -32573,7 +32444,7 @@ nZ
 oB
 ip
 qe
-jj
+wp
 qQ
 hb
 rj
@@ -32830,13 +32701,13 @@ qg
 qB
 qR
 ho
-iR
+vo
 ho
-iR
+vo
 hb
-jj
+wp
 og
-jj
+wp
 aw
 aw
 aw
@@ -33770,7 +33641,7 @@ ae
 ae
 aN
 bg
-ay
+by
 aJ
 aJ
 aJ
@@ -33897,7 +33768,7 @@ ae
 ae
 aO
 bg
-by
+ay
 aJ
 ay
 bo
@@ -33906,18 +33777,18 @@ ay
 ay
 ay
 aJ
-dT
-dT
-dT
+ep
+ep
+ep
 ay
 ay
 ay
 ay
 ay
 ay
-dT
-dT
-dT
+ep
+ep
+ep
 ay
 cw
 ay
@@ -35170,7 +35041,7 @@ aJ
 bB
 bM
 ca
-cr
+fZ
 cz
 aJ
 aJ
@@ -35801,7 +35672,7 @@ ae
 yJ
 aB
 aV
-bn
+fZ
 aJ
 aJ
 ay
@@ -36315,7 +36186,7 @@ ay
 ay
 ay
 aJ
-bn
+fZ
 aJ
 aJ
 ay
@@ -36462,7 +36333,7 @@ ae
 ae
 gU
 Ul
-ay
+Ls
 ae
 ae
 ae

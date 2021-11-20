@@ -234,8 +234,6 @@
 	new /obj/item/clothing/under/rank/trooper/skirt(src)
 	new /obj/item/clothing/under/rank/trooper/skirt(src)
 	new /obj/item/clothing/under/rank/trooper/skirt(src)
-	new /obj/item/clothing/under/rank/fatigues(src)
-	new /obj/item/clothing/under/rank/fatigues(src)
 	new /obj/item/clothing/under/rank/fatigues/green(src)
 	new /obj/item/clothing/under/rank/fatigues/green(src)
 	new /obj/item/clothing/under/rank/fatigues/grey(src)

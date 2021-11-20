@@ -189,6 +189,12 @@
 	icon_state = "gorka"
 	item_state = "gorka"
 
+/obj/item/clothing/under/gorka/dark
+	name = "dark gorka"
+	desc = "A rugged set of vaguely militant two-tone dark utility wear with dark patches and markings."
+	icon_state = "gorka_ih"
+	item_state = "gorka_ih"
+
 /obj/item/clothing/under/gorka
 	name = "tan gorka"
 	desc = "A rugged set of vaguely militant and quite slavic two-tone clothes, this time coyote brown on tan."

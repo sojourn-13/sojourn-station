@@ -305,6 +305,33 @@
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/practice
 	materials = list(MATERIAL_STEEL = 9)
 
+
+//.35 SMG
+/datum/design/autolathe/ammo/smg_magnum_40
+	name = "SMG magazine (.40 Magnum)"
+	build_path = /obj/item/ammo_magazine/smg_magnum_40
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/smg_magnum_40_rubber
+	name = "SMG magazine (.40 Magnum rubber)"
+	build_path = /obj/item/ammo_magazine/smg_magnum_40/rubber
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/smg_magnum_40_practice
+	name = "SMG magazine (.40 Magnum practice)"
+	build_path = /obj/item/ammo_magazine/smg_magnum_40/practice
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/smg_magnum_40_lethal
+	name = "SMG magazine (.40 Magnum hollow-point)"
+	build_path = /obj/item/ammo_magazine/smg_magnum_40/lethal
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/smg_magnum_40_empty
+	name = "SMG magazine (.40 Magnum Empty)"
+	build_path = /obj/item/ammo_magazine/smg_magnum_40/empty
+	materials = list(MATERIAL_STEEL = 12)
+
 // .50 Kurtz mags and speed loaders
 //mags
 

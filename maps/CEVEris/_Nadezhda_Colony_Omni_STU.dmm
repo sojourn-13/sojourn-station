@@ -7371,6 +7371,12 @@
 /area/nadezhda/crew_quarters/dorm1{
 	name = "Dormitory 1"
 	})
+"bNK" = (
+/obj/machinery/account_database{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/command/captain/quarters)
 "bNO" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -30339,7 +30345,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "gYB" = (
-/obj/item/reagent_containers/food/snacks/mre/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "gYD" = (
@@ -35807,7 +35813,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "iqG" = (
-/obj/item/reagent_containers/food/snacks/mre/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
 /obj/structure/scrap/science/large,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -39960,7 +39966,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "joe" = (
 /obj/structure/closet/crate/trashcart,
-/obj/item/reagent_containers/food/snacks/mre/can,
+/obj/item/reagent_containers/food/snacks/openable/can,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "joj" = (
@@ -47180,16 +47186,12 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "kSi" = (
-/obj/structure/table/rack,
-/obj/item/tank/jetpack/oxygen,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/head/helmet/space/capspace,
-/obj/item/clothing/suit/space/captain,
+/obj/structure/bed/chair/comfy/black,
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-s"
 	},
-/turf/simulated/floor/carpet/turcarpet,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/captain/quarters)
 "kSj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -66985,8 +66987,8 @@
 "ptt" = (
 /obj/structure/catwalk,
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/snacks/mre,
-/obj/item/reagent_containers/food/snacks/mre,
+/obj/item/reagent_containers/food/snacks/openable,
+/obj/item/reagent_containers/food/snacks/openable,
 /obj/item/material/kitchen/utensil/spoon/mre,
 /turf/simulated/floor/plating/under,
 /area/mine/gulag)
@@ -87660,7 +87662,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
 "uaY" = (
-/obj/item/reagent_containers/food/snacks/mre,
+/obj/item/reagent_containers/food/snacks/openable,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ubj" = (
@@ -88407,6 +88409,11 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "ulw" = (
+/obj/structure/table/rack,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/head/helmet/space/capspace,
+/obj/item/clothing/suit/space/captain,
 /obj/machinery/light,
 /obj/machinery/newscaster{
 	pixel_y = -34
@@ -122138,8 +122145,8 @@ jwy
 epL
 ulw
 bBv
-cwW
-cwW
+eOx
+eOx
 cwW
 xqi
 soy
@@ -122340,8 +122347,8 @@ wUu
 epL
 tbg
 kSi
-cwW
-cwW
+bNK
+eOx
 cwW
 eqg
 piz

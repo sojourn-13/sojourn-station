@@ -94,6 +94,9 @@
 
 	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
 
+	var/folding_stock = FALSE //Can we fold are stock?
+	var/folded = FALSE //IS are stock folded?
+
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
 
@@ -135,6 +138,10 @@
 	firemodes = null
 	return ..()
 
+/obj/item/gun/examine(mob/user)
+	..()
+	if(folding_stock)
+		to_chat(user, "<span class='info'>This gun can be folded by Ctrl Shift Clicking it.</span>")
 
 /obj/item/gun/proc/set_item_state(state, hands = FALSE, back = FALSE, onsuit = FALSE)
 	var/wield_state = null
@@ -671,6 +678,43 @@
 		return
 	toggle_safety(user)
 
+/obj/item/gun/CtrlShiftClick(mob/user)
+	. = ..()
+
+	var/able = can_interact(user)
+
+	if(able == 1)
+		return
+
+	if(able == 2)
+		to_chat(user, SPAN_NOTICE("You cannot [folded ? "unfold" : "fold"] the stock while \the [src] is in a container."))
+		return
+
+	fold()
+
+/obj/item/gun/proc/can_interact(mob/user)
+	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
+		return 1
+	if(istype(loc, /obj/item/storage))
+		return 2
+	return 0
+
+/obj/item/gun/proc/fold(user)
+//Were going to do some insainly dumb things to not doup or brake anything with storage or gun mods, well being modular
+	if(folding_stock)
+		if(folded)
+			refresh_upgrades() //First we grab are upgrades to not do anything silly
+			to_chat(user, SPAN_NOTICE("You unfold the stock on \the [src]."))
+			extra_bulk += 4 //Simular to 4 plates, your getting a lot out of this tho
+			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
+			recoil_buildup *= 0.5 //50% less recoil
+			one_hand_penalty *= 0.5 //50% less recoil
+			damage_multiplier += 0.1 //10% more damage
+			folded = FALSE
+		else
+			refresh_upgrades() //First we grab are upgrades to not do anything silly
+			to_chat(user, SPAN_NOTICE("You fold the stock on \the [src]."))
+			folded = TRUE
 
 //Updating firing modes at appropriate times
 /obj/item/gun/pickup(mob/user)
@@ -712,6 +756,10 @@
 
 	data["recoil_buildup"] = recoil_buildup
 	data["recoil_buildup_max"] = initial(recoil_buildup)*10
+
+	data["extra_volume"] = extra_bulk
+
+	data["upgrades_max"] = max_upgrades
 
 	data += ui_data_projectile(get_dud_projectile())
 
@@ -797,6 +845,8 @@
 	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
+
+	extra_bulk = initial(extra_bulk)
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_ADDVAL, src)

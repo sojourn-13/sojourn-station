@@ -15,6 +15,8 @@ var/list/disciples = list()
 	power_regen = 0.5
 	price_tag = 10000
 	var/channeling_boost = 0  // used for the power regen boost if the wearer has the channeling perk
+	var/obj/item/cruciform_upgrade/upgrade
+
 
 /obj/item/implant/core_implant/cruciform/install(mob/living/target, organ, mob/user)
 	. = ..()

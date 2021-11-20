@@ -36,6 +36,11 @@
 	use_power_cost = 2
 	suitable_cell = /obj/item/cell/medium
 	max_upgrades = 4
+	item_icons = list(
+		slot_back_str = 'icons/obj/tools.dmi')
+	item_state_slots = list(
+		slot_back_str = "onehammer_back"
+		)
 
 /obj/item/tool/hammer/powered_hammer/turn_on(mob/user)
 
@@ -112,13 +117,14 @@
 
 /obj/item/tool/hammer/ironhammer
 	name = "GmbH \"Ironhammer\" Breaching Hammer"
-	desc = "A modified sledgehammer produced by Seinmetall for police forces across Sol space. This tool can take down standard walls and if the user is strong enough, reinforced walls."
+	desc = "A modified sledgehammer produced by Seinmetall for police forces across Sol space."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "iron_hammer"
 	item_state = "iron_hammer"
 	wielded_icon = "iron_hammer_wielded"
 	w_class = ITEM_SIZE_HUGE
 	armor_penetration = ARMOR_PEN_DEEP
+	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_ROBUST
 	structure_damage_factor = STRUCTURE_DAMAGE_BORING
 	tool_qualities = list(QUALITY_HAMMERING = 40, QUALITY_PRYING = 1)

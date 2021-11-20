@@ -71,6 +71,11 @@
 	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
 	worksound = WORKSOUND_HARD_SLASH
 	price_tag = 190
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "fireaxe0_back"
+		)
 
 /obj/item/tool/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
@@ -132,6 +137,12 @@
 	slot_flags = SLOT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	tool_qualities = list(QUALITY_CUTTING = 15, QUALITY_SAWING = 10)
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "scythe0_back"
+		)
+
 
 //Flails
 /obj/item/tool/chainofcommand
@@ -201,6 +212,11 @@
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_SHALLOW
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "katana_back"
+		)
 
 /obj/item/tool/sword/katana_makeshift
 	name = "makeshift katana"
@@ -367,6 +383,11 @@
 	effective_faction = list("tengo", "tengolo_berserker", "xenomorph") // Which faction the cleaver is effective against.
 	damage_mult = 2 // The damage multiplier the cleaver get when attacking that faction.
 	price_tag = 200
+	item_icons = list(
+		slot_back_str = 'icons/obj/weapons-blades.dmi')
+	item_state_slots = list(
+		slot_back_str = "cleaver_back"
+		)
 
 /obj/item/tool/sword/huntingclaw
 	name = "hunting claw"
@@ -456,6 +477,11 @@
 	embed_mult = 1.5
 	price_tag = 50
 	//attack_distance = 2
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "spearglass0_back"
+		)
 
 /obj/item/tool/spear/hunter_halberd
 	name = "halberd"

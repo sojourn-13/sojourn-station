@@ -47,6 +47,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state = options[choice]
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -78,6 +79,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state = options[choice]
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -109,6 +111,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state = options[choice]
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -139,6 +142,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state = options[choice]
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -148,8 +152,8 @@
 /obj/item/clothing/under/rank/fatigues/camo
 	name = "camo utility uniform"
 	desc = "A camo utility uniform, bearing the old marks of patches long since removed."
-	icon_state = "tanutility"
-	item_state = "tanutility"
+	icon_state = "camoutility"
+	item_state = "camoutility"
 
 /obj/item/clothing/under/rank/fatigues/camo/verb/toggle_style()
 	set name = "Adjust Style"
@@ -162,6 +166,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Camo Utility Uniform"] = "camoutility"
+	options["Camo Utility Uniform Corpsman Alt"] = "camoutility_alt_med"
 	options["Camo Utility Uniform Alt"] = "camoutility_alt"
 	options["Camo Utility Pans"] = "camoutility_pants"
 	options["Camo Utility Corpsman"] = "camoutility_med"
@@ -170,6 +175,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state = options[choice]
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()

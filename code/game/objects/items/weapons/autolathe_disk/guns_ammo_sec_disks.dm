@@ -664,6 +664,22 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_lethal = 4,
 		)
 
+// .40 SMGS
+/obj/item/computer_hardware/hard_drive/portable/design/guns/vector
+	disk_name = "SA - .40 Trajectory SMG"
+	icon_state = "sa"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/vector = 0, //The gun is free as this is the only way to get it
+		/datum/design/autolathe/ammo/smg_magnum_40 = 3,
+		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 2,
+		//Free as well do to being the only way to get these mags
+		/datum/design/autolathe/ammo/smg_magnum_40_empty = 0,
+		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0,
+		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 4
+		)
+
 // .50 PISTOLS
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/lamia

@@ -8,7 +8,10 @@
 
 /obj/item/storage/box/vendor_lootbox/populate_contents()
 	if(prob(10)) //Small double chance to get a decent theme pack. First pack, colony survival pack.
-		new /obj/item/reagent_containers/food/snacks/mre(src)
+		if(prob(50))
+			new /obj/item/reagent_containers/food/snacks/openable/mre(src)
+		else
+			new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
 		new /obj/item/tool/knife/dagger(src)
 		new /obj/item/stack/medical/advanced/bruise_pack(src)
 		new /obj/item/stack/medical/advanced/ointment(src)

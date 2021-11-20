@@ -119,7 +119,7 @@
 			list(name="Ammo Drum (20mm Buckshot)", cost=550, path=/obj/item/ammo_magazine/m12/pellet),
 			list(name="Ammo Drum (20mm Beanbag)", cost=550, path=/obj/item/ammo_magazine/m12/beanbag),
 			list(name="SBAW Magazine (20mm Sabot Slug)", cost=850, path=/obj/item/ammo_magazine/sbaw),
-			list(name="SBAW Magazine (20mm Sabot Slug)", cost=450, path=/obj/item/ammo_magazine/sbaw/empty),
+			list(name="SBAW Magazine (20mm Empty)", cost=450, path=/obj/item/ammo_magazine/sbaw/empty),
 			list(name="SBAW Magazine (20mm Buckshot)", cost=850, path=/obj/item/ammo_magazine/sbaw/pellet),
 			list(name="SBAW Magazine (20mm Beanbag)", cost=850, path=/obj/item/ammo_magazine/sbaw/beanbag),
 			list(name="SBAW Magazine (20mm HEFI)", cost=850, path=/obj/item/ammo_magazine/sbaw/he),

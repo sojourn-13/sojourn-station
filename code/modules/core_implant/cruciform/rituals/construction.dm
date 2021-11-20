@@ -82,7 +82,11 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 	for(var/item_type in blueprint.materials)
 		var/t = locate(item_type) in target_turf.contents
-		qdel(t)
+		if(istype(t, /obj/item/stack))
+			var/obj/item/stack/S = t
+			S.use(blueprint.materials[item_type])
+		else
+			qdel(t)
 
 	effect.success()
 	user.visible_message(SPAN_NOTICE("You hear a soft humming sound as [user] finishes his ritual."),SPAN_NOTICE("You take a deep breath as the divine manifestation finishes."))
@@ -351,5 +355,86 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/steel = 5,
 		/obj/item/stack/material/biomatter = 20,
 		/obj/item/stack/material/gold = 3
+	)
+	build_time = 8 SECONDS
+
+//Requires a lot but heals bluespace, for free, like really good
+/datum/nt_blueprint/machinery/entropy_repairer
+	name = "Absolute Nullifer"
+	build_path = /obj/machinery/telesci_inhibitor/nt_bluespace_seer
+	materials = list(
+		/obj/item/stack/material/steel = 35,
+		/obj/item/stack/material/plastic = 30,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/silver = 10,
+		/obj/item/stack/material/gold = 5
+	)
+	build_time = 8 SECONDS
+
+
+//Church implant upgrade, basiclly biomatter dumps?
+/datum/nt_blueprint/cruciform_upgrade
+
+/datum/nt_blueprint/cruciform_upgrade/natures_blessing
+	name = "Cruciform Natures blessing Upgrade"
+	build_path = /obj/item/cruciform_upgrade/natures_blessing
+	materials = list(
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/gold = 5
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/faiths_shield
+	name = "Cruciform Faiths shield Upgrade"
+	build_path = /obj/item/cruciform_upgrade/faiths_shield
+	materials = list(
+		/obj/item/stack/material/plasteel = 15,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/gold = 5
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/cleansing_presence
+	name = "Cruciform Cleansing Presence Upgrade"
+	build_path = /obj/item/cruciform_upgrade/cleansing_presence
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 70,
+		/obj/item/stack/material/silver = 5
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/martyr_gift
+	name = "Cruciform Martyr Gift Upgrade"
+	build_path = /obj/item/cruciform_upgrade/martyr_gift
+	materials = list(
+		/obj/item/stack/material/plasteel = 15,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/gold = 5,
+		/obj/item/stack/material/plasma = 10
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/wrath_of_god
+	name = "Cruciform Wrath of god Upgrade"
+	build_path = /obj/item/cruciform_upgrade/wrath_of_god
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 70,
+		/obj/item/stack/material/silver = 5
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/speed_of_the_chosen
+	name = "Cruciform Spped of the chosen Upgrade"
+	build_path = /obj/item/cruciform_upgrade/speed_of_the_chosen
+	//Speed is king, so we requires a kings randsom to make!
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 70,
+		/obj/item/stack/material/silver = 10,
+		/obj/item/stack/material/gold = 3,
+		/obj/item/stack/material/plasma = 1
 	)
 	build_time = 8 SECONDS
