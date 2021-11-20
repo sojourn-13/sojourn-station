@@ -528,8 +528,8 @@
 				holder.visible_message(SPAN_DANGER("[holder] shifts and reforms into... By science... What is that!?"))
 				new /mob/living/carbon/superior_animal/wasonce(holder)
 	if((total_instability >= DESTABILIZE_LEVEL_CLONE_DAMAGE) && (holder.getCloneLoss() < 30))
-		holder.damage_through_armor(1, CLONE, pick(BP_ALL_LIMBS))
-		
+		holder.adjustCloneLoss(1)
+
 
 
 
@@ -599,7 +599,7 @@
 	var/implanted = FALSE
 
 	//reference for the instability a mutation contributes to a genome.
-	var/instability = 0
+	var/instability = 10
 
 	//Series of bitflags for setting certain restrictions on a mutation, like needing an arm or a leg.
 	//A few are outlined in code/__DEFINES/genetics, we'll add more as needed.

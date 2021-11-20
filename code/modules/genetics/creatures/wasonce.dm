@@ -44,11 +44,11 @@ Has ability of every roach.
 
 	sanity_damage = 3
 
-	ranged = 1 // RUN, COWARD!
-	ranged_cooldown = 5 //Takes awhile
-	ranged_middlemouse_cooldown = 0
-	projectiletype = /obj/item/projectile/flamer_lob //To make things falling over easier
-	fire_verb = "spits a flaming glob of phlegm"
+	//ranged = 1 // RUN, COWARD!
+	//ranged_cooldown = 5 //Takes awhile
+	//ranged_middlemouse_cooldown = 0
+	//projectiletype = /obj/item/projectile/flamer_lob //To make things falling over easier
+	//fire_verb = "spits a flaming glob of phlegm"
 
 	stance=HOSTILE_STANCE_IDLE
 
@@ -59,15 +59,8 @@ Has ability of every roach.
 	if(istype(victim, /mob/living))
 		akira = victim
 		//Kill them properly.
-		akira.damage_through_armor(100, BRUTE, BP_CHEST)
-		akira.damage_through_armor(20, CLONE, BP_HEAD)
-		akira.damage_through_armor(20, CLONE, BP_CHEST)
-		akira.damage_through_armor(20, CLONE, BP_GROIN)
-		akira.damage_through_armor(20, CLONE, BP_L_ARM)
-		akira.damage_through_armor(20, CLONE, BP_R_ARM)
-		akira.damage_through_armor(20, CLONE, BP_L_LEG)
-		akira.damage_through_armor(20, CLONE, BP_R_LEG)
-		akira.damage_through_armor(20, CLONE, BP_HEAD)
+		akira.adjustBruteLoss(150)
+		akira.adjustCloneLoss(100)
 
 
 
@@ -80,7 +73,7 @@ Has ability of every roach.
 				CI.name = "[N]'s Cruciform"
 				CI.uninstall()
 
-		akira.forceMove(src)
+		akira.loc = src
 
 	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.
 	pixel_y = -16
