@@ -25,17 +25,24 @@ Has ability of every roach.
 
 	viewRange = 16
 
-	armor = list(melee = 40, bullet = 30, energy = 0, bomb = 20, bio = 50, rad = 100, agony = 100)
+	attacktext = "delivered a crushing blow to"
 
-	var/knockdown_odds = 30 //Maybe stay away from it
+	armor = list(melee = 60, bullet = 30, energy = 0, bomb = 20, bio = 50, rad = 100, agony = 100)
+
+	var/knockdown_odds = 60 //Maybe stay away from it
 
 	can_burrow = FALSE
-	melee_damage_lower = 15
-	melee_damage_upper = 20
-	move_to_delay = 3
+	melee_damage_lower = 30
+	melee_damage_upper = 35
+	move_to_delay = 4
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
+	
+	life_cycles_before_sleep = 3000 //Keep this awake for longer than the regular mob.
+
+	var/datum/genetics/genetics_holder/injector
+
 
 	//When something is knocked over, this creature devours it and grows.
 	var/list/captives = list()
@@ -54,6 +61,10 @@ Has ability of every roach.
 
 /mob/living/carbon/superior_animal/wasonce/New(var/mob/living/victim)
 	..()
+
+	injector = new(src)
+	
+
 	loc = get_turf(victim)
 	//kill the victim
 	if(istype(victim, /mob/living))
@@ -91,15 +102,14 @@ Has ability of every roach.
 			H = L
 		if(H)
 			if (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened)
-				//EAT! EEEEAAAT!
-				if(do_after(src, 20, H))
-					H.visible_message(SPAN_DANGER("\the [src] absorbs \the [L] into its mass!"))
-					H.forceMove(src)
-					maxHealth += 500
-					health += 500
-					captives += H
+				H.visible_message(SPAN_DANGER("\the [src] absorbs \the [L] into its mass!"))
+				H.loc = src
+				maxHealth += 500
+				health += 500
+				captives += H
+				return
 
-		if(istype(L) && !L.weakened && prob(knockdown_odds))
+		if(istype(L) && prob(knockdown_odds))
 			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
 				return
 			else
@@ -117,7 +127,20 @@ Has ability of every roach.
 	akira.gib()
 	
 
+/mob/living/carbon/superior_animal/wasonce/Life()
+		
 
+	if(captives.len && prob(15))
+		var/fail_mutation_path = pick(injector.getFailList())
+		var/datum/genetics/mutation/injecting_mutation = new fail_mutation_path()
+		injector.addMutation(injecting_mutation)
+		for(var/mob/living/captive in captives)
+			injector.inject_mutations(captive)
+			to_chat(captive, SPAN_DANGER(pick(
+				"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
+				"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole")))
+		injector.removeAllMutations()
+	..()
 
 /mob/living/carbon/superior_animal/wasonce/findTarget()
 	var/atom/best_target = null
