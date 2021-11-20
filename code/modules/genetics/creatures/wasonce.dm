@@ -114,18 +114,17 @@ Has ability of every roach.
 				L.visible_message(SPAN_DANGER("\the [src] uses its mass to knock over \the [L]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/wasonce/death()
-	gib()
-
-
-/mob/living/carbon/superior_animal/wasonce/gib()
+/mob/living/carbon/superior_animal/wasonce/death(gibbed)
+	..()
 	for(var/mob/living/drop_victim in captives)
 		drop_victim.loc = get_turf(src)
 	captives = list()
 
 	akira.loc = get_turf(src)
 	akira.gib()
-	..()
+	
+
+
 
 /mob/living/carbon/superior_animal/wasonce/findTarget()
 	var/atom/best_target = null
