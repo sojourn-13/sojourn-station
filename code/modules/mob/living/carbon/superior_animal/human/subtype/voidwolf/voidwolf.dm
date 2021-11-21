@@ -227,15 +227,6 @@
 	rapid = FALSE
 	limited_ammo = FALSE
 	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver)
-	armor = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 0,
-		agony = 1000 //Pain damage proof, and rubber proof.
-	)
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
 	..()
