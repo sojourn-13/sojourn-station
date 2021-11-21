@@ -982,7 +982,7 @@
 	icon_state = "mecha_clamp"
 	equip_cooldown = 15
 	energy_drain = 0
-	var/dam_force = 0
+	var/dam_force = 90
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
@@ -1025,9 +1025,15 @@
 			if(chassis.occupant.a_intent == I_HURT)
 				chassis.occupant_message(SPAN_DANGER("You obliterate [target] with [src.name], leaving blood and guts everywhere."))
 				chassis.visible_message(SPAN_DANGER("[chassis] destroys [target] in an unholy fury."))
+				M.take_overall_damage(dam_force)
+				M.adjustOxyLoss(round(dam_force/9))
+				M.updatehealth()
 			if(chassis.occupant.a_intent == I_DISARM)
-				chassis.occupant_message(SPAN_DANGER("You tear [target]'s limbs off with [src.name]."))
-				chassis.visible_message(SPAN_DANGER("[chassis] rips [target]'s arms off."))
+				chassis.occupant_message(SPAN_DANGER("You tear at [target]'s limbs with [src.name]."))
+				chassis.visible_message(SPAN_DANGER("[chassis] rips [target]'s."))
+				M.take_overall_damage(dam_force/6)
+				M.adjustOxyLoss(round(dam_force/2))
+				M.updatehealth()
 			else
 				step_away(M,chassis)
 				chassis.occupant_message("You smash into [target], sending them flying.")
