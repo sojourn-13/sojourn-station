@@ -14,27 +14,36 @@
 	return
 
 /obj/item/cardholder/proc/draw_card(mob/user)
-	..()
+	var/turf/T = get_turf(src)
 	if(endless)
-		new card_target(src)
+		new card_target(T)
+		return
 	if(!contents)
 		to_chat(user, SPAN_NOTICE("The [src] has no cards."))
+		return
 	else
 		card_target = pick(contents)
-		card_target.loc = src
+		card_target.loc = T
 		card_target = /obj/item/card_carp //so we have vars
 
-/obj/item/cardholder/attackby(obj/item/CARD as obj, mob/user as mob)
+/obj/item/cardholder/proc/add_card(mob/user, atom/used_atom)
+	var/obj/item/card_carp/C = used_atom
+	if(C.cant_box && endless) //Putting squirls back in their box
+		user.visible_message(SPAN_NOTICE("[user] puts [C] into \the [src]."), SPAN_NOTICE("You put [C] into \the [src]."))
+		qdel(C)
+		return
+	if(C.cant_box || endless)
+		to_chat(user, SPAN_NOTICE("The [src] rejects [C]."))
+		return
+	else
+		C.loc = src
+		user.visible_message(SPAN_NOTICE("[user] puts [C] into \the [src]."), SPAN_NOTICE("You put [C] into \the [src]."))
+		return
+
+/obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
 	..()
-	if(istype(CARD, /obj/item/card_carp))
-		var/obj/item/card_carp/CH
-		if(CH.cant_box || endless)
-			to_chat(user, SPAN_NOTICE("The [src] rejects [CH]."))
-			return
-		else
-			CH.loc = src
-			user.visible_message(SPAN_NOTICE("[user] puts [CH] into \the [src]."), SPAN_NOTICE("You put [CH] into \the [src]."))
-			return
+	if(istype(C, /obj/item/card_carp))
+		add_card()
 
 
 /obj/item/cardholder/squirl
@@ -352,18 +361,18 @@
 
 /obj/item/pack_card_carp/attack_self(var/mob/user as mob)
 	user.visible_message("[user] rips open \the [src]!")
-
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp(src)
-	new /obj/random/card_carp/pelt(src)
+	var/turf/T = get_turf(src)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp/pelt(T)
 
 	qdel(src)
 
