@@ -43,8 +43,7 @@
 /obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
 	..()
 	if(istype(C, /obj/item/card_carp))
-		add_card()
-
+		add_card(user, C)
 
 /obj/item/cardholder/squirl
 	name = "squirrel card box"
