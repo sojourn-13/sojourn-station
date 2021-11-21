@@ -22,8 +22,8 @@ cannot isolate or combine desired genes.
 	density = TRUE
 	anchored = TRUE
 	//TODO:
-	icon = 'icons/obj/salvageable.dmi'
-	icon_state = "implant_container0"
+	icon = 'icons/obj/genetics/dna_machine_samples.dmi'
+	icon_state = "dna_machine"
 
 	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/circuitboard/genetics/gene_analyzer
@@ -93,7 +93,7 @@ cannot isolate or combine desired genes.
 		if(user.unEquip(I, src))
 			sample_plates += incoming_sample
 			to_chat(user, SPAN_WARNING("You load a Sample plate into the Analyzer."))
-			update_icon()
+			//update_icon()
 			return
 	else
 		. = ..()
@@ -112,13 +112,13 @@ cannot isolate or combine desired genes.
 
 		if(active_sample && active_sample.unique_id == outbound_sample.unique_id)
 			active_sample = null
-
+/*
 /obj/machinery/genetics/gene_analyzer/update_icon()
 	if(sample_plates.len >= max_plates)
 		icon_state = "implant_container1"
 	else
 		icon_state = "implant_container0"
-
+*/
 /obj/machinery/genetics/gene_analyzer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	// this is the data which will be sent to the ui
 	var/list/data = form_data()

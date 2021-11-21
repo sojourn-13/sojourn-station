@@ -189,8 +189,8 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 /obj/item/genetics/sample
 	name = "Empty Mutagenic Sample Plate"
 	desc = "A container for holding, analyzing and transferring mutagens."
-	icon = 'icons/obj/forensics.dmi'
-	icon_state = "slide"
+	icon = 'icons/obj/genetics/dna_machine_samples.dmi'
+	icon_state = "sample_0c"
 	var/unique_id
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_GLASS = 1)
@@ -200,7 +200,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 /obj/item/genetics/sample/New(var/datum/genetics/genetics_holder/incoming_holder)
 	if(incoming_holder)
 		name = "Mutagenic Sample Plate"
-		icon_state = "slideblood"
+		icon_state = "sample_1c"
 		genetics_holder = incoming_holder.Copy()
 	unique_id = sequential_id(type)
 
@@ -208,7 +208,7 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 	var/datum/genetics/genetics_holder/outbound_genetics_holder = genetics_holder.Copy()
 	name = "Empty Mutagenic Sample Plate"
 	genetics_holder.removeAllMutations()
-	icon_state = "slide"
+	icon_state = "sample_0c"
 	return outbound_genetics_holder
 
 /obj/item/genetics/sample/proc/sample_data(var/list/known_mutations)
