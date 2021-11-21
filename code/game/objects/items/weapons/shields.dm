@@ -516,6 +516,7 @@
 	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "eshield0" // eshield1 for expanded
+	item_state  = "eshield0" // eshield1 for expanded
 	flags = CONDUCT
 	force = 3
 	throwforce = 5
@@ -527,6 +528,11 @@
 	var/active = 0
 	max_durability = 150 //So we can brake and need healing time to time
 	durability = 150
+	item_icons = list(
+		slot_back_str = null)
+	item_state_slots = list(
+		slot_back_str = null
+		)
 
 /obj/item/shield/buckler/energy/handle_shield(mob/user)
 	if(!active)
@@ -580,6 +586,7 @@
 	name = "reaver combat shield"
 	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere. This one was created for void wolves, generally employed by reavers."
 	icon_state = "voidwolfshield0" // eshield1 for expanded
+	item_state = "voidwolfshield0"
 
 /obj/item/shield/buckler/energy/reaver/update_icon()
 	icon_state = "voidwolfshield[active]"
