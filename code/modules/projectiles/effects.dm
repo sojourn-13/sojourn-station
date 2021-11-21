@@ -145,6 +145,10 @@
 /obj/effect/projectile/plasma/muzzle
 	icon_state = "muzzle_plasma"
 
+/obj/effect/projectile/plasma/muzzle/red
+	icon_state = "muzzle_plasma"
+	color = "#9D2300"
+
 /obj/effect/projectile/plasma/muzzle/light
 	icon_state = "muzzle_plasma_pink" //Hue shift of 168
 

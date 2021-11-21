@@ -16,15 +16,15 @@
 /obj/item/cardholder/proc/draw_card(mob/user)
 	..()
 	if(endless)
-		new card_target(src.loc)
+		new card_target(src)
 	if(!contents)
 		to_chat(user, SPAN_NOTICE("The [src] has no cards."))
 	else
 		card_target = pick(contents)
-		card_target.forceMove(src.loc)
+		card_target.loc = src
 		card_target = /obj/item/card_carp //so we have vars
 
-/obj/item/cardholder/attackby(obj/item/card_carp/CARD as obj, mob/user as mob)
+/obj/item/cardholder/attackby(obj/item/CARD as obj, mob/user as mob)
 	..()
 	if(istype(CARD, /obj/item/card_carp))
 		var/obj/item/card_carp/CH
@@ -32,7 +32,7 @@
 			to_chat(user, SPAN_NOTICE("The [src] rejects [CH]."))
 			return
 		else
-			CH.forceMove(src.loc)
+			CH.loc = src
 			user.visible_message(SPAN_NOTICE("[user] puts [CH] into \the [src]."), SPAN_NOTICE("You put [CH] into \the [src]."))
 			return
 
@@ -353,17 +353,17 @@
 /obj/item/pack_card_carp/attack_self(var/mob/user as mob)
 	user.visible_message("[user] rips open \the [src]!")
 
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp/pelt(src.loc)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp/pelt(src)
 
 	qdel(src)
 
@@ -372,6 +372,7 @@
 	name = "Scale"
 	desc = "10 Point Scale, used when talling marks. AltClick to remove a tally, CtrlShiftClick to add a tally"
 	icon_state = "scale"
+	icon = 'modular_sojourn/cardgame_sprites.dmi'
 	var/tally = 0 //Number
 	w_class = ITEM_SIZE_SMALL
 
@@ -381,7 +382,7 @@
 
 /obj/item/scale/examine(mob/user)
 	..()
-	to_chat(user, "<span class='info'>The : [tally]</span>")
+	to_chat(user, "<span class='info'>The scale reads a tally of : [tally]</span>")
 
 /obj/item/scale/update_icon()
 	if(tally >= 5 || -5 >= tally)

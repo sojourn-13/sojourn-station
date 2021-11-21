@@ -20,9 +20,11 @@
 	)
 	twohanded = TRUE
 
+	var/has_alt_icon = TRUE
+
 /obj/item/gun/energy/cog/New()
 	..()
-	if(prob(50))
+	if(prob(50) && has_alt_icon)
 		icon = 'icons/obj/guns/energy/cog_alt.dmi'
 	return
 
@@ -48,3 +50,4 @@
 	init_firemodes = list(
 	WEAPON_NORMAL
 	)
+	has_alt_icon = FALSE
