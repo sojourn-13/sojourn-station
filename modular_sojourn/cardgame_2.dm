@@ -26,24 +26,20 @@
 		card_target.loc = T
 		card_target = /obj/item/card_carp //so we have vars
 
-/obj/item/cardholder/proc/add_card(mob/user, atom/used_atom)
-	var/obj/item/card_carp/C = used_atom
-	if(C.cant_box && endless) //Putting squirls back in their box
-		user.visible_message(SPAN_NOTICE("[user] puts [C] into \the [src]."), SPAN_NOTICE("You put [C] into \the [src]."))
-		qdel(C)
-		return
-	if(C.cant_box || endless)
-		to_chat(user, SPAN_NOTICE("The [src] rejects [C]."))
-		return
-	else
-		C.loc = src
-		user.visible_message(SPAN_NOTICE("[user] puts [C] into \the [src]."), SPAN_NOTICE("You put [C] into \the [src]."))
-		return
-
 /obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
 	..()
 	if(istype(C, /obj/item/card_carp))
-		add_card(user, C)
+		var/obj/item/card_carp/card = C
+		if(card.cant_box && endless) //Putting squirls back in their box
+			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
+			qdel(card)
+		else if(card.cant_box || endless)
+			to_chat(user, SPAN_NOTICE("The [src] rejects \the [card]."))
+		else
+			card.loc = src
+			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
+		return
+
 
 /obj/item/cardholder/squirl
 	name = "squirrel card box"
