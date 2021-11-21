@@ -23,13 +23,12 @@
 	..()
 
 	var/iconstring = initial(icon_state)
-	var/itemstring = ""
 
 	if (open)
-		itemstring += "_full"
+		iconstring += "_full"
 
 	if (warm)
-		itemstring += "_hot"
+		iconstring += "_hot"
 
 	icon_state = iconstring
 

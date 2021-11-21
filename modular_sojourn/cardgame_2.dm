@@ -353,17 +353,17 @@
 /obj/item/pack_card_carp/attack_self(var/mob/user as mob)
 	user.visible_message("[user] rips open \the [src]!")
 
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp/pelt(src.loc)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp(src)
+	new /obj/random/card_carp/pelt(src)
 
 	qdel(src)
 
@@ -372,6 +372,7 @@
 	name = "Scale"
 	desc = "10 Point Scale, used when talling marks. AltClick to remove a tally, CtrlShiftClick to add a tally"
 	icon_state = "scale"
+	icon = 'modular_sojourn/cardgame_sprites.dmi'
 	var/tally = 0 //Number
 	w_class = ITEM_SIZE_SMALL
 
