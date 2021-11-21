@@ -6,14 +6,14 @@
 
 /datum/perk/job/natural_armour/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk += 0.2
-	holder.burn_mod_perk += 0.2
-	holder.oxy_mod_perk += 0.1
-
-/datum/perk/job/natural_armour/remove()
 	holder.brute_mod_perk -= 0.2
 	holder.burn_mod_perk -= 0.2
 	holder.oxy_mod_perk -= 0.1
+
+/datum/perk/job/natural_armour/remove()
+	holder.brute_mod_perk += 0.2
+	holder.burn_mod_perk += 0.2
+	holder.oxy_mod_perk += 0.1
 
 //======================================
 
