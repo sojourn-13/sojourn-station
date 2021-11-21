@@ -25,7 +25,7 @@
 	var/iconstring = initial(icon_state)
 
 	if (open)
-		iconstring += "_full"
+		iconstring += "_open"
 
 	if (warm)
 		iconstring += "_hot"
@@ -97,6 +97,7 @@
 	alt_desc = "A nice mix of noodles and herbs all waiting to be eaten."
 	icon_state = "wok"
 	trash = /obj/item/trash/mre/alt
+	nutriment_desc = list("pasta" = 1, "salt" = 3, "herbs" = 3)
 
 /obj/item/reagent_containers/food/snacks/openable/can
 	name = "ration can"
