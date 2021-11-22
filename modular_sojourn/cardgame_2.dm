@@ -23,7 +23,7 @@
 		return
 	else
 		card_target = pick(contents)
-		card_target.loc = T
+		card_target.forceMove(T) //Forcemove bad but works
 		card_target = /obj/item/card_carp //so we have vars
 
 /obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
@@ -33,10 +33,10 @@
 		if(card.cant_box && endless) //Putting squirls back in their box
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 			qdel(card)
-		else if(card.cant_box || endless)
+		if(card.cant_box || endless)
 			to_chat(user, SPAN_NOTICE("The [src] rejects \the [card]."))
 		else
-			card.loc = src
+			card.forceMove(src) //Forcemove bad but works
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 		return
 
