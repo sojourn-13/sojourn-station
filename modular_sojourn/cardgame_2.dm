@@ -14,7 +14,7 @@
 	return
 
 /obj/item/cardholder/proc/draw_card(mob/user)
-	var/turf/T = get_turf(src)
+	var/turf/T = get_turf(user)
 	if(endless)
 		new card_target(T)
 		return
@@ -23,7 +23,7 @@
 		return
 	else
 		card_target = pick(contents)
-		card_target.forceMove(T) //Forcemove bad but works
+		user.put_in_hands(card_target) //Forcemove bad but works
 		card_target = /obj/item/card_carp //so we have vars
 
 /obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
