@@ -14,7 +14,7 @@
 	return
 
 /obj/item/cardholder/proc/draw_card(mob/user)
-	var/turf/T = get_turf(src)
+	var/turf/T = get_turf(user)
 	if(endless)
 		new card_target(T)
 		return
@@ -23,7 +23,7 @@
 		return
 	else
 		card_target = pick(contents)
-		card_target.loc = T
+		user.put_in_hands(card_target)
 		card_target = /obj/item/card_carp //so we have vars
 
 /obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
@@ -33,10 +33,12 @@
 		if(card.cant_box && endless) //Putting squirls back in their box
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 			qdel(card)
-		else if(card.cant_box || endless)
+			return
+		if(card.cant_box || endless)
 			to_chat(user, SPAN_NOTICE("The [src] rejects \the [card]."))
+			return
 		else
-			card.loc = src
+			card.forceMove(src) //Forcemove bad but works
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 		return
 
@@ -101,6 +103,11 @@
 	name = "Goat"
 	desc = "A Goat, Health is 2, Damage is 0, No spawn requirements. Gives 3 blood."
 	icon_state = "card_goat"
+
+/obj/item/card_carp/crab
+	name = "Crab"
+	desc = "A Crab, Health is 1, Damage is 2, Requires 1 blood. Gives 1 blood. On death, all other crabs in play die."
+	icon_state = "card_crab"
 
 /obj/item/card_carp/adder
 	name = "Adder"
@@ -299,6 +306,7 @@
 /obj/random/card_carp/item_to_spawn()
 	return pickweight(list(
 				/obj/item/card_carp/goat = 1,
+				/obj/item/card_carp/crab = 4,
 				/obj/item/card_carp/cat = 7,
 				/obj/item/card_carp/stote = 12,
 				/obj/item/card_carp/stinkbug = 10,
