@@ -27,12 +27,12 @@
 	perks = list(/datum/perk/job/natural_armour)
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 10,
-		STAT_VIG = 10,
-		STAT_BIO = -5,
-		STAT_MEC = -5,
-		STAT_COG = -5
+		STAT_ROB = 6,
+		STAT_TGH = 6,
+		STAT_VIG = 6,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
 	)
 
 /datum/category_item/setup_option/background/ethnicity/humanspacer
@@ -47,10 +47,10 @@
 	perks = list(/datum/perk/intelligenceboost)
 
 	stat_modifiers = list(
-		STAT_ROB = -5,
-		STAT_TGH = -5,
-		STAT_VIG = -5,
-		STAT_BIO = 10,
-		STAT_MEC = 10,
-		STAT_COG = 10
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 6,
+		STAT_MEC = 6,
+		STAT_COG = 6
 	)
