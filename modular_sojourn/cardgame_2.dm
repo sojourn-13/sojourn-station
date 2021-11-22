@@ -33,8 +33,10 @@
 		if(card.cant_box && endless) //Putting squirls back in their box
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 			qdel(card)
+			return
 		if(card.cant_box || endless)
 			to_chat(user, SPAN_NOTICE("The [src] rejects \the [card]."))
+			return
 		else
 			card.forceMove(src) //Forcemove bad but works
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
