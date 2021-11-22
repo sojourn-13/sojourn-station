@@ -23,7 +23,7 @@
 		return
 	else
 		card_target = pick(contents)
-		user.put_in_hands(card_target) //Forcemove bad but works
+		user.put_in_hands(card_target)
 		card_target = /obj/item/card_carp //so we have vars
 
 /obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
@@ -103,6 +103,11 @@
 	name = "Goat"
 	desc = "A Goat, Health is 2, Damage is 0, No spawn requirements. Gives 3 blood."
 	icon_state = "card_goat"
+
+/obj/item/card_carp/crab
+	name = "Crab"
+	desc = "A Crab, Health is 1, Damage is 2, Requires 1 blood. Gives 1 blood. On death, all other crabs in play die."
+	icon_state = "card_crab"
 
 /obj/item/card_carp/adder
 	name = "Adder"
@@ -301,6 +306,7 @@
 /obj/random/card_carp/item_to_spawn()
 	return pickweight(list(
 				/obj/item/card_carp/goat = 1,
+				/obj/item/card_carp/crab = 4,
 				/obj/item/card_carp/cat = 7,
 				/obj/item/card_carp/stote = 12,
 				/obj/item/card_carp/stinkbug = 10,
