@@ -3,7 +3,12 @@
 	desc = "Your early life was spent in a poor environment, be it from your family's economical position or the place you lived in. This barred access to education, but it let you learn fast \
 	that desperate people will use force as commonly as they'll beg for aid. A sharp eye and careful or creative thinking let you avoid getting hurt and allowed you to thrive, so at least you got \
 	that going for you."
-
+	restricted_to_species = list(	//Exalted Humans are pay 2 win, they can't be born poor.
+		FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, 
+		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, 
+		FORM_CINDAR, FORM_FBP, FORM_UNBRANDED, 
+		FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, 
+		FORM_FOLKEN, FORM_MYCUS)
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 3,
@@ -71,7 +76,7 @@
 	to most drugs so you can inject more varied amounts than others."
 
 	perks = list(/datum/perk/addict)
-	restricted_to_species = list(FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_CINDAR)
+	restricted_to_species = list(FORM_HUMAN, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_CINDAR)
 
 	stat_modifiers = list(
 		STAT_ROB = -5,

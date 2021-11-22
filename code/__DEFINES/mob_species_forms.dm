@@ -54,6 +54,7 @@
 
 // Forms for the Appearances
 #define FORM_HUMAN				"Human"
+#define FORM_EXALT_HUMAN		"Exalt Human"
 #define FORM_CANINE				"Canine"
 #define FORM_FELINE				"Feline"
 #define FORM_SHARK				"Shark"

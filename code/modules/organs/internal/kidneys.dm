@@ -18,12 +18,16 @@
 /obj/item/organ/internal/kidney/left/cindarite
 	name = "cindarite kidney"
 	icon_state = "kidney_left_cindar"
-	desc = "A dense set of tightly packed kidneys that work twice as better than a standard kidney."
+	desc = "A dense set of tightly packed kidneys that work twice as better than a standard kidney.\
+	Likely worth more on the black market."
 	price_tag = 5000
 	organ_efficiency = list(OP_KIDNEYS = 100)
 
 /obj/item/organ/internal/kidney/right/cindarite
 	icon_state = "kidney_right_cindar"
+	desc = "A dense set of tightly packed kidneys that work twice as better than a standard kidney.\
+	Likely worth more on the black market."
+	price_tag = 5000 //The right kidney should be worth as much as the left one.
 
 /obj/item/organ/internal/kidney/prosthetic
 	name = "prosthetic kidneys"
@@ -37,3 +41,19 @@
 /obj/item/organ/internal/kidney/prosthetic/left
 /obj/item/organ/internal/kidney/prosthetic/right
 	icon_state = "kidneys-prosthetic2"
+
+/obj/item/organ/internal/kidney/left/exalt
+	name = "Exalt kidney"
+	icon_state = "kidney_left"
+	desc = "A dense set of Artisinal kidneys. Works twice as well as a common peasant's kidney.\
+	Likely worth more on the black market."
+	price_tag = 4000
+	organ_efficiency = list(OP_KIDNEYS = 150)
+
+/obj/item/organ/internal/kidney/right/exalt
+	name = "Exalt kidney"
+	icon_state = "kidney_right"
+	desc = "A dense set of Artisinal kidneys. Works twice as well as a common peasant's kidney.\
+	Likely worth more on the black market."
+	price_tag = 4000
+	organ_efficiency = list(OP_KIDNEYS = 150)

@@ -8,7 +8,9 @@
 
 	//No changes.
 
-/*#define FORM_HUMAN				"Human"
+/*
+#define FORM_EXALT_HUMAN		"Exalt Human"
+#define FORM_HUMAN				"Human"
 #define FORM_CANINE				"Canine"
 #define FORM_SHARK				"Shark"
 #define FORM_LIZARD				"Lizard"
@@ -28,6 +30,8 @@
 	damage_overlays
 	damage_mask
 	blood_mask*/
+/datum/species_form/human/exalt
+	name = FORM_EXALT_HUMAN
 
 /datum/species_form/canine
 	playable = TRUE

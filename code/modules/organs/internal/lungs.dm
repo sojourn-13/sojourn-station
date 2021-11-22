@@ -1,6 +1,7 @@
 /obj/item/organ/internal/lungs
 	name = "lungs"
 	icon_state = "lungs"
+	desc = "This organ is breathtaking."
 	gender = PLURAL
 	organ_efficiency = list(OP_LUNGS = 100)
 	parent_organ_base = BP_CHEST
@@ -23,6 +24,7 @@
 	name = "prosthetic lungs"
 	desc = "Lungs made out of metal. Still work just as well as normal lungs."
 	icon_state = "lungs-prosthetic"
+	price_tag = 1500
 	price_tag = 100
 	nature = MODIFICATION_SILICON
 	matter = list(MATERIAL_STEEL = 1)
@@ -31,3 +33,9 @@
 	name = "air sacs"
 	desc = "Lungs made for a plantoid species, works just as well as a normal set."
 	icon_state = "lungs_plant"
+
+/obj/item/organ/internal/lungs/long/exalt
+	name = "exalt lungs"
+	desc = "Augmented lungs for filtering out poor air, and the air of the poors.\
+	Likely worth more on the black market."
+	price_tag = 2250

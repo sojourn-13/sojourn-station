@@ -79,6 +79,10 @@ SUBSYSTEM_DEF(economy)
 		if (wage <= 0)
 			continue //This person will not be paid
 
+		//Modify their wage based on nepotism modifier
+		var/nepotism = R.get_nepotismMod()
+		wage = wage * nepotism
+
 		//Alright we have their wage and their department, lets add it to the department's pending payments
 		LAZYAPLUS(department.pending_wages, R, wage)
 
