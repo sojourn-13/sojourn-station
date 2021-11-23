@@ -14,27 +14,33 @@
 	return
 
 /obj/item/cardholder/proc/draw_card(mob/user)
-	..()
+	var/turf/T = get_turf(user)
 	if(endless)
-		new card_target(src.loc)
+		new card_target(T)
+		return
 	if(!contents)
 		to_chat(user, SPAN_NOTICE("The [src] has no cards."))
+		return
 	else
 		card_target = pick(contents)
-		card_target.forceMove(src.loc)
+		user.put_in_hands(card_target)
 		card_target = /obj/item/card_carp //so we have vars
 
-/obj/item/cardholder/attackby(obj/item/card_carp/CARD as obj, mob/user as mob)
+/obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
 	..()
-	if(istype(CARD, /obj/item/card_carp))
-		var/obj/item/card_carp/CH
-		if(CH.cant_box || endless)
-			to_chat(user, SPAN_NOTICE("The [src] rejects [CH]."))
+	if(istype(C, /obj/item/card_carp))
+		var/obj/item/card_carp/card = C
+		if(card.cant_box && endless) //Putting squirls back in their box
+			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
+			qdel(card)
+			return
+		if(card.cant_box || endless)
+			to_chat(user, SPAN_NOTICE("The [src] rejects \the [card]."))
 			return
 		else
-			CH.forceMove(src.loc)
-			user.visible_message(SPAN_NOTICE("[user] puts [CH] into \the [src]."), SPAN_NOTICE("You put [CH] into \the [src]."))
-			return
+			card.forceMove(src) //Forcemove bad but works
+			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
+		return
 
 
 /obj/item/cardholder/squirl
@@ -97,6 +103,11 @@
 	name = "Goat"
 	desc = "A Goat, Health is 2, Damage is 0, No spawn requirements. Gives 3 blood."
 	icon_state = "card_goat"
+
+/obj/item/card_carp/crab
+	name = "Crab"
+	desc = "A Crab, Health is 1, Damage is 2, Requires 1 blood. Gives 1 blood. On death, all other crabs in play die."
+	icon_state = "card_crab"
 
 /obj/item/card_carp/adder
 	name = "Adder"
@@ -295,6 +306,7 @@
 /obj/random/card_carp/item_to_spawn()
 	return pickweight(list(
 				/obj/item/card_carp/goat = 1,
+				/obj/item/card_carp/crab = 4,
 				/obj/item/card_carp/cat = 7,
 				/obj/item/card_carp/stote = 12,
 				/obj/item/card_carp/stinkbug = 10,
@@ -352,18 +364,18 @@
 
 /obj/item/pack_card_carp/attack_self(var/mob/user as mob)
 	user.visible_message("[user] rips open \the [src]!")
-
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp(src.loc)
-	new /obj/random/card_carp/pelt(src.loc)
+	var/turf/T = get_turf(src)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp(T)
+	new /obj/random/card_carp/pelt(T)
 
 	qdel(src)
 
@@ -372,6 +384,7 @@
 	name = "Scale"
 	desc = "10 Point Scale, used when talling marks. AltClick to remove a tally, CtrlShiftClick to add a tally"
 	icon_state = "scale"
+	icon = 'modular_sojourn/cardgame_sprites.dmi'
 	var/tally = 0 //Number
 	w_class = ITEM_SIZE_SMALL
 
@@ -381,7 +394,7 @@
 
 /obj/item/scale/examine(mob/user)
 	..()
-	to_chat(user, "<span class='info'>The : [tally]</span>")
+	to_chat(user, "<span class='info'>The scale reads a tally of : [tally]</span>")
 
 /obj/item/scale/update_icon()
 	if(tally >= 5 || -5 >= tally)

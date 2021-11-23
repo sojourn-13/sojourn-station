@@ -4,6 +4,9 @@
 	or they can be emagged to accept any ID for use in disguises.
 */
 
+
+//All badge sprites done by - CeUvi
+
 /obj/item/clothing/accessory/badge
 	name = "Ranger's badge"
 	desc = "A marshal ranger badge, made from gold and set on leather."

@@ -600,13 +600,12 @@
 /obj/item/projectile/bullet/pellet/shotgun/energy
 	name = "Unstable energy bolt"
 	icon_state = "l_birdshot-1"
-	damage_types = list(BURN = 13) //slightly less than buck, but FAR more painful
-	armor_penetration = 10 //heated shot melt armor.
+	damage_types = list(BURN = 15) //slightly less than buck, but FAR more painful
+	armor_penetration = 15 //heated shot melt armor.
 	embed = FALSE
 	can_ricochet = FALSE
 	sharp = FALSE
-	muzzle_type = /obj/effect/projectile/plasma/muzzle
-	color = "#9D2300"
+	muzzle_type = /obj/effect/projectile/plasma/muzzle/red
 	check_armour = ARMOR_ENERGY
 
 //For the love of God don't make this common.

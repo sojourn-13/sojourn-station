@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/automatic/vector
-	name = "\"Trajectory\" Magum SMG"
+	name = "\"Trajectory\" Magnum SMG"
 	desc = "A .40 SMG who's design data was recently acquired by Overboss Hogg through various connections with offworld traders. \
 	A Scarborough Arms logo is stamped on the side, though the SMG seems far better designed then most their usual product line. \
 	Regardless it sports robust recoil control system that dampens it's shots to near nothing, a array of firing modes for the discerning shooter, \
@@ -30,8 +30,8 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_2_ROUND,
-		BURST_3_ROUND
+		BURST_3_ROUND,
+		FULL_AUTO_400
 		)
 
 /obj/item/gun/projectile/automatic/vector/update_icon()

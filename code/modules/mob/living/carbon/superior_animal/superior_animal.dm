@@ -490,7 +490,7 @@
 	if(life_cycles_before_scan)
 		life_cycles_before_scan--
 		return FALSE
-	if(check_surrounding_area(7))
+	if(check_surrounding_area(viewRange))
 		activate_ai()
 		life_cycles_before_scan = initial(life_cycles_before_scan)/6 //So it doesn't fall asleep just to wake up the next tick
 		return TRUE

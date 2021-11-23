@@ -194,7 +194,7 @@
 //Valuable resource, cargo can sell it.
 /obj/item/stack/material/platinum
 	name = "platinum"
-	icon_state = "sheet-adamantine"
+	icon_state = "sheet-platinum"
 	default_type = MATERIAL_PLATINUM
 	price_tag = 20
 	novariants = FALSE

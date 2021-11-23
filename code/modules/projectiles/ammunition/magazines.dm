@@ -254,7 +254,7 @@
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/smg_magnum_40/old
-	name = "old smg magazine (.40 Magnumo)"
+	name = "old smg magazine (.40 Magnum)"
 	icon_state = "smg_magnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
@@ -767,7 +767,7 @@
 	var/count = 0
 	for(var/obj/item/ammo_casing/AC in stored_ammo)
 		count++
-		overlays += "stripper_[AC.shell_color]-[count]"
+		add_overlay("stripper_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_rifle_75/Initialize()
 	. = ..()
@@ -788,7 +788,7 @@
 	var/count = 0
 	for(var/obj/item/ammo_casing/AC in stored_ammo)
 		count++
-		overlays += "stripper_[AC.shell_color]-[count]"
+		add_overlay("stripper_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_light_rifle_257/Initialize()
 	. = ..()
@@ -809,7 +809,7 @@
 	var/count = 0
 	for(var/obj/item/ammo_casing/AC in stored_ammo)
 		count++
-		overlays += "stripper_[AC.shell_color]-[count]"
+		add_overlay("stripper_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408/Initialize()
 	. = ..()

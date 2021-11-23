@@ -716,6 +716,8 @@
 			to_chat(user, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = TRUE
 
+		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
+
 //Updating firing modes at appropriate times
 /obj/item/gun/pickup(mob/user)
 	.=..()

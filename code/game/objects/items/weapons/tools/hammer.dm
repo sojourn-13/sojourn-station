@@ -125,11 +125,14 @@
 	w_class = ITEM_SIZE_HUGE
 	armor_penetration = ARMOR_PEN_DEEP
 	slot_flags = SLOT_BELT|SLOT_BACK
-	force = WEAPON_FORCE_ROBUST
+	force = WEAPON_FORCE_LETHAL
 	structure_damage_factor = STRUCTURE_DAMAGE_BORING
 	tool_qualities = list(QUALITY_HAMMERING = 40, QUALITY_PRYING = 1)
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 15)
 
+/obj/item/tool/hammer/ironhammer/attack()
+	..()
+	usr.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
 
 /obj/item/tool/hammer/mace
 	name = "mace"

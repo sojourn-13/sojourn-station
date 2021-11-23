@@ -18,7 +18,7 @@
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
-			if(istype(src.meat_type, /obj/item/reagent_containers/food/snacks/meat))
+			if(ispath(src.meat_type, /obj/item/reagent_containers/food/snacks/meat))
 				var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new meat_type(get_turf(src))
 				butchered_meat.name = "[src.name] [butchered_meat.name]"
 				butchered_meat.initialize_genetics(src)

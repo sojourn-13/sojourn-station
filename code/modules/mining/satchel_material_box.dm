@@ -59,9 +59,9 @@
 		to_chat(usr, "\red The material box is empty")
 		return
 
-	for (var/obj/item/ore/O in contents)
-		contents -= O
-		O.loc = src.loc
+	for (var/obj/item/stack/M in contents)
+		contents -= M
+		M.loc = src.loc
 	to_chat(usr, "\blue You empty the ore box")
 	return TRUE
 
