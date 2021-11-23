@@ -40,12 +40,12 @@
 	default_form = FORM_EXALT_HUMAN
 	obligate_name = FALSE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	blurb = "Since its inception, Humankind has always sought to become something beyond itself. Their genetic code has been tweaked to make them healthier, \
-	smarter, and stronger. Their metabolism is modified to predispose them towards staying fit and athletic for the duration of an extended lifespan. Their \
-	organs are specially modified to operate with greater efficiency than the average human's. However, no life is perfect. Life as an Exalt is an expensive \
-	one, and low-income humans can't support. A combination of royalty fees for licensed genomes and costly maintenance leave even middle-class exalts \
-	paying huge sums of money, often taken directly from their paychecks. Exalts usually resemble especially handsome baseline humans, \
-	but anything is possible with enough splicing."
+	blurb = "Since its inception, Humankind has always sought to become something beyond itself- Exalts were their answer. Starting with baseline human DNA, \
+	an Exalt's genetic code has been tweaked to make them healthier, smarter, and stronger. Their metabolism is modified to predispose them towards staying \
+	fit and athletic for the duration of an extended lifespan. Their organs are specially modified to operate with greater efficiency than the average human's. \
+	However, no life is perfect. Life as an Exalt is an expensive one, and low-income humans can't support. A combination of royalty fees for licensed genomes \
+	and costly maintenance leave even middle-class exalts paying huge sums of money, often taken directly from their paychecks. Exalts usually resemble \
+	especially handsome humans, but anything is possible with enough splicing."
 	num_alternate_languages = 2
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
