@@ -2082,10 +2082,8 @@
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
 "hV" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced,
+/obj/structure/multiz/stairs/active/bottom,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper)
 "hW" = (
 /turf/simulated/floor/asteroid/grass,
@@ -8575,10 +8573,6 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest)
-"FT" = (
-/obj/structure/sign/departmentold/medical1,
-/turf/simulated/wall/r_wall,
-/area/colony/exposedsun/pastgate)
 "FU" = (
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/grass,
@@ -11481,10 +11475,8 @@
 /turf/simulated/mineral/planet,
 /area/colony/exposedsun/pastgate)
 "SC" = (
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced,
+/obj/structure/multiz/stairs/enter/bottom,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper)
 "SD" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -58970,7 +58962,7 @@ ab
 ab
 ab
 ab
-ab
+fF
 fF
 fC
 gA
@@ -59178,9 +59170,9 @@ ab
 ab
 ab
 ab
-ab
-ab
 fF
+fF
+fD
 fC
 fT
 OM
@@ -59387,9 +59379,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-go
+fF
+fD
+fC
 fC
 fU
 Yd
@@ -59596,9 +59588,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-go
+fF
+fD
+fC
 fV
 fV
 Yd
@@ -59805,9 +59797,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-FT
+fF
+fD
+Vp
 Oi
 gM
 PF
@@ -60014,9 +60006,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-go
+fF
+fD
+fC
 fV
 fV
 NY
@@ -60223,9 +60215,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-go
+fF
+fD
+fC
 fC
 gJ
 SX
@@ -60432,9 +60424,9 @@ ab
 ab
 ab
 ab
-ab
-ab
 fF
+fF
+fD
 fC
 St
 OM
@@ -60637,12 +60629,12 @@ fF
 "}
 (28,1,2) = {"
 ab
-ct
 ab
 ab
 ab
 ab
 ab
+fF
 fF
 fC
 gJ
@@ -61055,7 +61047,7 @@ fF
 "}
 (30,1,2) = {"
 ab
-dP
+ab
 ab
 ab
 ab
@@ -62309,7 +62301,7 @@ fF
 "}
 (36,1,2) = {"
 ab
-ab
+ct
 ab
 ab
 ab
@@ -62727,7 +62719,7 @@ fF
 "}
 (38,1,2) = {"
 ab
-ab
+dP
 ab
 ab
 ab
