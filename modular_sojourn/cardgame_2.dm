@@ -14,7 +14,7 @@
 	return
 
 /obj/item/cardholder/proc/draw_card(mob/user)
-	var/turf/T = get_turf(user)
+	var/turf/T = get_turf(src)
 	if(endless)
 		new card_target(T)
 		return
@@ -23,7 +23,7 @@
 		return
 	else
 		card_target = pick(contents)
-		user.put_in_hands(card_target)
+		card_target.loc = T
 		card_target = /obj/item/card_carp //so we have vars
 
 /obj/item/cardholder/attackby(obj/item/C, mob/user as mob)
@@ -38,7 +38,7 @@
 			to_chat(user, SPAN_NOTICE("The [src] rejects \the [card]."))
 			return
 		else
-			card.forceMove(src) //Forcemove bad but works
+			src.contents += card
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 		return
 
@@ -88,11 +88,13 @@
 	name = "Squirrel"
 	desc = "A Squirrel, Health is 1, Damage is 0, No spawn requirements."
 	icon_state = "card_squirl"
+	cant_box = TRUE
 
 /obj/item/card_carp/shell
 	name = "Shell"
 	desc = "A Robotic Shell, Health is 1, Damage is 0, On death gives 1 power."
 	icon_state = "card_squirls"
+	cant_box = TRUE
 
 /obj/item/card_carp/moon
 	name = "Moon"
