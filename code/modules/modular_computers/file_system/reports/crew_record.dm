@@ -75,7 +75,13 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_secRecord(H && H.sec_record && !jobban_isbanned(H, "Records") ? html_decode(H.sec_record) : "No record supplied")
 
 	//Hex: Don't questions, just trust me on this one
-	set_nepotismMod(1)
+	var/nepotism = 1
+	if(H && H.stats.getPerk(PERK_NEPOTISM))
+		nepotism += 0.5
+	if(H && H.stats.getPerk(PERK_DEBTOR))
+		nepotism -= 0.5
+	set_nepotismMod(nepotism)
+	//set_nepotismMod(1)
 
 	// Employment record
 	var/employment_record = "No record supplied"
