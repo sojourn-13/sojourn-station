@@ -239,7 +239,7 @@
 
 /datum/ritual/cruciform/base/install_upgrade
 	name = "Install Cruciform Upgrade"
-	phrase = "Deum benedicite mihi voluntas in suum donum"
+	phrase = "Deum benedicite mihi voluntas in suum donum."
 	desc = "This litany will command a cruciform upgrade to attach to follower's cruciform. They must lie on an altar with the upgrade must be near them."
 	power = 20
 
