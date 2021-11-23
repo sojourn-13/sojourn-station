@@ -572,6 +572,7 @@
 
 /obj/item/shield/buckler/energy/update_icon()
 	icon_state = "eshield[active]"
+	item_state = "eshield[active]"
 	update_wear_icon()
 	if(active)
 		set_light(1.5, 1.5, COLOR_LIGHTING_BLUE_BRIGHT)
@@ -586,6 +587,7 @@
 
 /obj/item/shield/buckler/energy/reaver/update_icon()
 	icon_state = "voidwolfshield[active]"
+	item_state = "voidwolfshield[active]"
 	update_wear_icon()
 	if(active)
 		set_light(1.5, 1.5, COLOR_LIGHTING_RED_BRIGHT)
