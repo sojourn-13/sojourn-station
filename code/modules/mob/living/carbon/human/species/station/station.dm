@@ -90,7 +90,7 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/exalt_human/get_bodytype()
-	return "Human"
+	return "Exalt Human"
 
 /datum/species/sablekyne
 	name = "Sablekyne"

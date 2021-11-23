@@ -1,5 +1,6 @@
 // 'Regular' species.
 #define SPECIES_HUMAN			"Human"
+#define SPECIES_EXALT_HUMAN		"Exalt Human"
 #define SPECIES_HUMAN_VATBORN	"Vatborn"
 #define SPECIES_UNATHI			"Lizard"
 #define SPECIES_SKRELL			"Mar'qua"

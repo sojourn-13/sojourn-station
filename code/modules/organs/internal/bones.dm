@@ -70,6 +70,7 @@
 	if(!reinforced) //Just in case
 		organ_efficiency[OP_BONE] += 33
 		reinforced = TRUE
+		price_tag += 300
 		name = "reinforced [name]"
 		icon_state = "reinforced_[icon_state]"
 

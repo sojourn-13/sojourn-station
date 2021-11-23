@@ -30,8 +30,12 @@
 	damage_overlays
 	damage_mask
 	blood_mask*/
-/datum/species_form/human/exalt
+/datum/species_form/exalt
 	name = FORM_EXALT_HUMAN
+	base = 'icons/mob/human_races/r_human_white.dmi'
+	deform = 'icons/mob/human_races/r_def_human_white.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_SKIN_COLOR
+	playable = TRUE
 
 /datum/species_form/canine
 	playable = TRUE

@@ -178,7 +178,7 @@
 	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\
 	You will trundle around the colony, armed with your trusty janicart full of cleaning supplies, disposing of trash and pests.<br>\
 	Some minor maintenance also falls within your duties. Fix lights, correct broken vendors, replace floor tiles - ease the guild burden.<br>\
-	Although your wage is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
+	Although your status is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
 
 	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
 		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\

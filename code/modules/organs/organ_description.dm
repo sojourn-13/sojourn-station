@@ -169,14 +169,13 @@
 
 ////EXALT////
 /datum/organ_description/chest/exalt
-	default_type = /obj/item/organ/external/exalt/chest
+	default_type = /obj/item/organ/external/chest/exalt
 
 /datum/organ_description/groin/exalt
-	default_type = /obj/item/organ/external/exalt/groin
+	default_type = /obj/item/organ/external/groin/exalt
 
 /datum/organ_description/head/exalt
-	default_type = /obj/item/organ/external/exalt/head
-	functions = null
+	default_type = /obj/item/organ/external/head/exalt
 
 /datum/organ_description/arm/left/exalt
 	default_type = /obj/item/organ/external/exalt

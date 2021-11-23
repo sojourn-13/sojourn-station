@@ -151,6 +151,7 @@
 #define MODIFICATION_SILICON 2	// Fully robotic, no organic parts
 #define MODIFICATION_LIFELIKE 3	// Robotic, made to appear organic
 #define MODIFICATION_REMOVED 4	// Removed completly
+#define MODIFICATION_SUPERIOR 5 //Better than good, a cut above.
 
 // Damage above this value must be repaired with surgery.
 #define ROBOLIMB_SELF_REPAIR_CAP 30

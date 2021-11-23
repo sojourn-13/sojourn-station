@@ -204,7 +204,10 @@
 /obj/item/organ/external/proc/make_bones()
 	if(default_bone_type)
 		var/obj/item/organ/internal/bone/bone
-		if(nature < MODIFICATION_SILICON)
+		if(nature == MODIFICATION_SUPERIOR)
+			bone = new default_bone_type
+			bone.reinforce()
+		else if(nature < MODIFICATION_SILICON)
 			bone = new default_bone_type
 		else
 			var/mecha_bone = text2path("[default_bone_type]/robotic")
@@ -214,7 +217,9 @@
 
 /obj/item/organ/external/proc/make_nerves()
 	var/obj/item/organ/internal/nerve/nerve
-	if(nature < MODIFICATION_SILICON)
+	if(nature == MODIFICATION_SUPERIOR)
+		nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt
+	else if(nature < MODIFICATION_SILICON)
 		nerve = new /obj/item/organ/internal/nerve
 	else
 		nerve = new /obj/item/organ/internal/nerve/robotic
@@ -223,7 +228,9 @@
 
 /obj/item/organ/external/proc/make_muscles()
 	var/obj/item/organ/internal/muscle/muscle
-	if(nature < MODIFICATION_SILICON)
+	if(nature == MODIFICATION_SUPERIOR)
+		muscle = new /obj/item/organ/internal/muscle/super_muscle/exalt
+	else if(nature < MODIFICATION_SILICON)
 		muscle = new /obj/item/organ/internal/muscle
 	else
 		muscle = new /obj/item/organ/internal/muscle/robotic
@@ -232,7 +239,9 @@
 
 /obj/item/organ/external/proc/make_blood_vessels()
 	var/obj/item/organ/internal/blood_vessel/blood_vessel
-	if(nature < MODIFICATION_SILICON)	//No robotic blood vesseles
+	if(nature == MODIFICATION_SUPERIOR)
+		blood_vessel = new /obj/item/organ/internal/blood_vessel/extensive/exalt
+	else if(nature < MODIFICATION_SILICON)	//No robotic blood vesseles
 		blood_vessel = new /obj/item/organ/internal/blood_vessel
 
 	blood_vessel?.replaced(src)
