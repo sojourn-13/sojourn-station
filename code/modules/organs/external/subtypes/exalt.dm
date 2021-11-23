@@ -10,10 +10,5 @@
 	default_description = /datum/organ_description/head/exalt
 	nature = MODIFICATION_SUPERIOR
 
-/obj/item/organ/external/head/exalt/New(mob/living/carbon/human/holder, datum/organ_description/OD)
-	..(holder, OD)
-	var/obj/item/organ_module/install_implant = new /obj/item/organ_module/active/hud/night_bio
-	install_implant.install(src)
-
 /obj/item/organ/external/exalt
 	nature = MODIFICATION_SUPERIOR

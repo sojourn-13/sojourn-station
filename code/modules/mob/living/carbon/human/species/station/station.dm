@@ -63,7 +63,9 @@
 		STAT_VIG = 5
 	)
 
-	perks = list(/datum/perk/tenacity, /datum/perk/iwillsurvive, /datum/perk/slymarbo,  /datum/perk/debtor, /datum/perk/splicer)
+	darksight = 6
+
+	perks = list(/datum/perk/debtor, /datum/perk/splicer)
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/exalt,
