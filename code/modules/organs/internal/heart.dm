@@ -41,7 +41,7 @@
 	icon_state = "heart_huge"
 	organ_efficiency = list(OP_HEART = 150)
 	specific_organ_size = 2.3
-	price_tag = 150
+	price_tag = 4500
 	max_blood_storage = 100
 	nutriment_req = 15
 	dead_icon = "heart_huge"
