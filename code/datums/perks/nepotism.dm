@@ -1,6 +1,6 @@
 /datum/perk/nepotism
 	name = "Nepotism"
-	desc = "You earn higher pay than your fellow peers. Aren't you a lucky one."
+	desc = "You earn about 30% higher pay than your fellow peers- The spirit of capitalism smiles upon you."
 	gain_text = "You feel comforted, knowing the amount of money coming your way."
 
 /datum/perk/debtor
