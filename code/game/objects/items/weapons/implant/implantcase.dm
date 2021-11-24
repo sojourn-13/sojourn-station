@@ -4,8 +4,8 @@
 	name = "glass case"
 	desc = "A case containing an implant."
 	icon = 'icons/obj/items.dmi'
-	icon_state = "implantpad"
-	item_state = "implantpad"
+	icon_state = "implantcase"
+	item_state = "implantcase"
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_TINY
