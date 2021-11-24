@@ -14,7 +14,7 @@
 
 
 /mob/living/carbon/superior_animal/roach/pick_armor()
-	switch (pickweight(list("basic" = 15, "Biosilicified" = 5, "Lambertian" = 3, "Insensitive" = 4)))
+	switch (pickweight(list("basic" = 15, "Biosilicified" = 5, "Lambertian" = 3, "Durable" = 4)))
 
 		if("basic") //No changes, we are base level
 			return
@@ -48,7 +48,7 @@
 			flash_resistances += 2
 			return
 
-		if("Insensitive")
+		if("Durable")
 			add_armor = list(
 			melee = 5,
 			bullet = 5,
@@ -60,5 +60,5 @@
 			)
 			gives_prefex = TRUE
 			flash_resistances += 1
-			prefex = "Insensitive"
+			prefex = "Durable"
 			return
