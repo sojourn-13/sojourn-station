@@ -9,6 +9,7 @@
 	damage_multiplier = 1.36
 	recoil_buildup = 25
 	max_shells = 6
+	price_tag = 750
 
 /obj/item/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
@@ -16,12 +17,14 @@
 	Unlike a standard valkyrie this rifle has an over charged coolant mechanism and redundant power loop to conserve energy between shots."
 	charge_cost = 200
 	fire_delay = 25
+	price_tag = 3750
 
 /obj/item/gun/projectile/automatic/lmg/saw/unicorn
 	name = "\"Unicorn\" light machinegun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A small carved inscription of a unicorn has been cut into place near some additional added weights, giving this rifle amazing recoil control."
 	recoil_buildup = 1
+	price_tag = 3550
 
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
@@ -29,6 +32,7 @@
 	Unlike a standard mistral magnum this one has a bluespace crystal in the cylinder and weighted barrel for better recoil control. How many bullets does it hold? Uses .40 Magnum rounds."
 	max_shells = 60
 	recoil_buildup = 20
+	price_tag = 3000
 
 /obj/item/gun/projectile/revolver/mistral/elite/New()
 	..()
@@ -44,6 +48,7 @@
 	penetration_multiplier = 2
 	recoil_buildup = 75
 	one_hand_penalty = 50
+	price_tag = 3250
 	gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/gun/energy/ntpistol/mana
@@ -51,17 +56,20 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A standard issue serenity pistol from the church of absolute, nothing seems different about it, yet it seems to conserve power unusually well."
 	charge_cost = 2
+	price_tag = 2550
 
 /obj/item/gun/projectile/automatic/maxim/replica
 	name = "\"Maxim\" light machinegun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A common design used by certain nefarious political groups, this model however has been stripped of its fellows evil machinations, making it safe to use by anyone."
+	price_tag = 1884
 
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	Someone has inscribed 'inferno' in a stylized multi-color crayon on the side while modifying its internal power capacitor to be much more effeciant."
 	charge_cost = 5
+	price_tag = 1000
 
 /obj/item/gun/energy/lasersmg/chaos_engine
 	name = "Hell's Teeth \"Chaos Engine\""
@@ -75,6 +83,7 @@
 	one_hand_penalty = 2
 	init_offset = 10 //makeshift laser
 	charge_cost = 5
+	price_tag = 1500
 
 /obj/item/gun/projectile/silenced/rat
 	name = "\"Rat Man\" silenced pistol"
@@ -85,6 +94,7 @@
 	recoil_buildup = 4
 	one_hand_penalty = 6
 	penetration_multiplier = 1.1
+	price_tag = 2350
 
 /obj/item/gun/projectile/boltgun/bluecross
 	name = "\"Krag Jørgensen\" boltgun"
@@ -127,7 +137,7 @@
 	max_shells = 4
 	recoil_buildup = 60
 	one_hand_penalty = 80
-	price_tag = 10000
+	price_tag = 3000
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
 	name = "\"Lockpick-o-Matic\""
@@ -142,6 +152,7 @@
 	possible_colors = list("rainbow")
 	recoil_buildup = 3
 	one_hand_penalty = 5 //despine it being handgun, it's better to hold in two hands while shooting. SMG level.
+	price_tag = 300
 
 /obj/item/gun/energy/captain/zapper
 	name = "\"Retro-Funk\" Zapper"
@@ -152,6 +163,7 @@
 	charge_cost = 50
 	item_charge_meter = FALSE
 	charge_meter = FALSE
+	price_tag = 1500
 
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
@@ -183,7 +195,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
-	price_tag = 420
+	price_tag = 1420
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
@@ -249,21 +261,14 @@
 	armor_penetration = ARMOR_PEN_HALF
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	max_upgrades = 3
-	tool_qualities = list(QUALITY_HAMMERING = 100)
+	price_tag = 3500 //the materals
+	matter = list(MATERIAL_WOOD = 4, MATERIAL_DURASTEEL = 1)
 
 /obj/item/tool/knife/dagger/assassin/ubersaw //Waiting for code to be done to deal blood damage/take % of blood
 	name = "\"Uber\" syringe-dagger"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			Whoever made this was very pro-active about collecting samples in the middle of active combat. They probably lost their medical license."
-
-/obj/item/material/butterfly/frenchman
-	name = "\"Frenchman\" butterfly blade"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			A french flag has been embossed on the handle, the deftness of this blade and how supremely lethal its diamond edged blade is would make this perfect for sinking said blade \
-			into a monsters back... or another colonist."
-	icon_state = "frenchmen"
-	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_DIAMOND = 3)
-	backstab_damage = 50
+	price_tag = 1900
 
 /obj/item/tool/wrench/big_wrench/freedom
 	name = "\"Freedom\" wrench"
@@ -278,6 +283,7 @@
 	throwforce = WEAPON_FORCE_PAINFUL
 	degradation = 0.7
 	max_upgrades = 4
+	price_tag = 1500
 
 /obj/item/tool/saw/hyper/doombringer
 	name = "\"Doombringer\" chainsword"
@@ -295,6 +301,7 @@
 	degradation = 0.1
 	use_power_cost = 1
 	suitable_cell = /obj/item/cell/medium
+	price_tag = 1850
 
 //Armor
 
