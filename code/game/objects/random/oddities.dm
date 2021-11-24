@@ -49,7 +49,7 @@
 /obj/random/oddity_guns/item_to_spawn()
 	return pickweight(list(
 				//Bullet
-				/obj/item/gun/projectile/handmade_pistol/anti_material/reliable = 1,
+				//obj/item/gun/projectile/handmade_pistol/anti_material/reliable = 1,
 				/obj/item/gun/projectile/deaglebolt = 1,
 				/obj/item/gun/projectile/automatic/lmg/saw/unicorn = 1,
 				/obj/item/gun/projectile/revolver/mistral/elite = 1,
@@ -65,7 +65,7 @@
 				/obj/item/gun/projectile/colt/cult = 1,
 				//Energy
 				/obj/item/gun/energy/sniperrifle/saint = 1,
-				/obj/item/gun/energy/lasersmg/inferno = 1,
+				//obj/item/gun/energy/lasersmg/inferno = 1,
 				/obj/item/gun/energy/ntpistol/mana = 1,
 				/obj/item/gun/energy/captain/zapper = 1,
 				/obj/item/gun/energy/xray/psychic_cannon = 1,
@@ -76,7 +76,7 @@
 				/obj/item/tool/nailstick/ogre = 1,
 				/obj/item/tool/wrench/big_wrench/freedom = 1,
 				/obj/item/tool/saw/hyper/doombringer = 1,
-				/obj/item/material/butterfly/frenchman = 1,
+				//obj/item/material/butterfly/frenchman = 1,
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,
 				//Misc - things that are not a "gun" but still good for this
