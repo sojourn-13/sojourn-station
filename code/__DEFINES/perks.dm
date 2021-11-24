@@ -104,3 +104,10 @@
 #define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_chem/purgers
 #define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_chem/oxyrush
 #define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_chem/nantidotes
+
+//Wage Perks
+#define PERK_NEPOTISM /datum/perk/nepotism
+#define PERK_DEBTOR /datum/perk/debtor
+
+//Genetics Perks
+#define PERK_SPLICED /datum/perk/spliced

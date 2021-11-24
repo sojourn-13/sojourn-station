@@ -36,14 +36,21 @@
 	icon_state = "heart_plant-on"
 
 /obj/item/organ/internal/heart/huge
-	name = "huge heart"
-	desc = "An oversized heart, large enough for two (metaphorical) wolves."
+	name = "six-chambered heart"
+	desc = "A complex heart, good enough to hold two (metaphorical) wolves."
 	icon_state = "heart_huge"
 	organ_efficiency = list(OP_HEART = 150)
 	specific_organ_size = 2.3
+	price_tag = 4500
 	max_blood_storage = 100
 	nutriment_req = 15
 	dead_icon = "heart_huge"
 
 /obj/item/organ/internal/heart/huge/baboon
 	name = "mega-baboon heart"
+	desc = "Beats to the drums of the jungle."
+
+/obj/item/organ/internal/heart/huge/exalt
+	name = "Exalt heart"
+	desc = "A genetically enhanced heart, pumping with the spirit of capitalism.\
+	Likely worth more on the black market."

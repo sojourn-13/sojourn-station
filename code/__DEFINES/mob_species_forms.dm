@@ -1,5 +1,6 @@
 // 'Regular' species.
 #define SPECIES_HUMAN			"Human"
+#define SPECIES_EXALT_HUMAN		"Exalt Human"
 #define SPECIES_HUMAN_VATBORN	"Vatborn"
 #define SPECIES_UNATHI			"Lizard"
 #define SPECIES_SKRELL			"Mar'qua"
@@ -54,6 +55,7 @@
 
 // Forms for the Appearances
 #define FORM_HUMAN				"Human"
+#define FORM_EXALT_HUMAN		"Exalt Human"
 #define FORM_CANINE				"Canine"
 #define FORM_FELINE				"Feline"
 #define FORM_SHARK				"Shark"

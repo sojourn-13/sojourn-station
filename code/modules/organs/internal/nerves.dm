@@ -18,7 +18,14 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 
 /obj/item/organ/internal/nerve/sensitive_nerve
-	name = "sensitive nerves"
+	name = "sensitive nerve synapses"
+	desc = "This organ is the touchy-feely sort. It seems a little bigger more complex than standard nerves."
+	price_tag = 150
 	icon_state = "nerve_sensitive"
 	organ_efficiency = list(OP_NERVE = 150)
 	specific_organ_size = 0.6
+
+/obj/item/organ/internal/nerve/sensitive_nerve/exalt
+	name = "exalt nerve synapses"
+	desc = "Extra sensitive to poorness. This exalted organ is bigger and more complex than standard nerves.\
+	Likely worth more on the black market."

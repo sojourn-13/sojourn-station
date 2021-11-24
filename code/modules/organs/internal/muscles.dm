@@ -20,6 +20,13 @@
 
 /obj/item/organ/internal/muscle/super_muscle
 	name = "super muscle"
+	desc = "A wierd flex, but more than okay. This muscle has been genetically altered to be stronger than normal."
 	icon_state = "human_muscle_super"
+	price_tag = 150
 	organ_efficiency = list(OP_MUSCLE = 150)
 	specific_organ_size = 0.6
+
+/obj/item/organ/internal/muscle/super_muscle/exalt
+	name = "exalt muscle"
+	desc = "Used for carrying this colony. This muscle makes an Exalt stronger than normal.\
+	Likely worth more on the black market."

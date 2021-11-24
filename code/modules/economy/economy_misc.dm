@@ -46,8 +46,8 @@
 #define GEAR_EVA 15
 
 
-// TODO: make niggas poor after implementation
-/var/list/economic_species_modifier = list(/datum/species/human	= 10)
+// TODO: not use the gamer word in the literal code
+// /var/list/economic_species_modifier = list(/datum/species/human	= 10)
 
 //---- Descriptions of destination types
 //Space stations can be purpose built for a number of different things, but generally require regular shipments of essential supplies.

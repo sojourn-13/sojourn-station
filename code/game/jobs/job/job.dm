@@ -109,12 +109,13 @@
 	if(!account_allowed || (H.mind && H.mind.initial_account))
 		return
 
-	//give them an account in the station database
-	var/species_modifier = (H.species ? economic_species_modifier[H.species.type] : 2)
-	if(!species_modifier)
-		species_modifier = economic_species_modifier[/datum/species/human]
-
-	var/money_amount = one_time_payment(species_modifier)
+	var/nepotism = 1
+	if(H && H.stats.getPerk(PERK_NEPOTISM))
+		nepotism += 0.3
+	if(H && H.stats.getPerk(PERK_DEBTOR))
+		nepotism -= 0.5
+	
+	var/money_amount = one_time_payment(nepotism)
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null)
 	if(H.mind)
 		var/remembered_info = ""
