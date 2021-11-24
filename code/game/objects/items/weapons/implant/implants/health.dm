@@ -1,7 +1,10 @@
 /obj/item/implant/health
 	name = "health implant"
+	icon_state = "implant_health"
 	var/healthstring = ""
 	origin_tech = list(TECH_MATERIAL=3, TECH_BIO=4)
+
+	overlay_icon = "health"
 
 /obj/item/implant/health/proc/sensehealth()
 	if(!implanted)

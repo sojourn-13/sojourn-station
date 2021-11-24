@@ -1,5 +1,5 @@
 /datum/category_item/setup_option/background/homeworld
-	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_KRIOSAN, FORM_CINDAR, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_FBP, FORM_UNBRANDED)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_KRIOSAN, FORM_CINDAR, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_FBP, FORM_UNBRANDED)
 
 /datum/category_item/setup_option/background/homeworld/amethyn
 	name = "Amethyn"
@@ -148,7 +148,7 @@
 	The remaining people who choose to settle here and work the mines adapted over several generations to thrive in bad atmosphere and have almost become dependent on it. \
 	This adaptation, coupled with working the diamond mines, have made them physically tough but comparably weak to people of other home-worlds."
 
-	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
 	perks = list(/datum/perk/chaingun_smoker)
 
 	stat_modifiers = list(
@@ -168,7 +168,7 @@
 	technology used to produce star ship engines or planetary nuclear reactors. People from this planet tend to be physically tougher than most, cheerfully resolute and have naturally \
 	evolved to resist most forms of toxins."
 
-	restricted_to_species = list(FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
 	perks = list(/datum/perk/blood_of_lead)
 
 	stat_modifiers = list(
@@ -207,7 +207,7 @@
 	natural armor that require either great strength to break or superior firepower. Due to the planets hostility few other than sablekyne choose to live on the planet, those that do are often \
 	family members to humans, abhumans, or naramads stationed there as part of the Terran Federation planetary defense force. "
 
-	restricted_to_species = list(FORM_SABLEKYNE, FORM_HUMAN, FORM_NARAMAD)
+	restricted_to_species = list(FORM_SABLEKYNE, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_NARAMAD)
 
 	stat_modifiers = list(
 		STAT_ROB = 5,
@@ -226,7 +226,7 @@
 	that make it an appealing place both to live and visit. Donbettyr is largely home to those well adapted to living in wet environments, with humans, abhumans, akula, and very rarely mar'qua \
 	choosing to live there. The harsh storms and weather, coupled with swimming as the most common leisure activity, toughens most who spend there lives here."
 
-	restricted_to_species = list(FORM_AKULA, FORM_HUMAN, FORM_MARQUA, FORM_SABLEKYNE)
+	restricted_to_species = list(FORM_AKULA, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_MARQUA, FORM_SABLEKYNE)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -246,7 +246,7 @@
 	citizenship to any other race. Life in the homeworlds is one of monotony, but such living enhances the intelligence of denizens as toil and reassignment happen often enough to \
 	broaden your skill sets."
 
-	restricted_to_species = list(FORM_MARQUA, FORM_HUMAN, FORM_CINDAR)
+	restricted_to_species = list(FORM_MARQUA, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_CINDAR)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -280,7 +280,7 @@
 	the Terran Federation are uniquely capable of adapting to the harsh world. Unfortunately Norian has next to nothing in the way of proper education, even among the Terran planetary defense forces. \
 	People from this planet tend to be the hardiest of individuals, but just as often they prove to be dull and lacking in attention to detail."
 
-	restricted_to_species = list(FORM_NARAMAD, FORM_HUMAN, FORM_SABLEKYNE, FORM_AKULA)
+	restricted_to_species = list(FORM_NARAMAD, FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,

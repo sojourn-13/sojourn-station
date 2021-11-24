@@ -167,6 +167,40 @@
 /datum/organ_description/leg/right/full
 	additional_limb_parts = BP_R_LEG_EXTRA
 
+////EXALT////
+/datum/organ_description/chest/exalt
+	default_type = /obj/item/organ/external/chest/exalt
+
+/datum/organ_description/groin/exalt
+	default_type = /obj/item/organ/external/groin/exalt
+
+/datum/organ_description/head/exalt
+	default_type = /obj/item/organ/external/head/exalt
+
+/datum/organ_description/arm/left/exalt
+	default_type = /obj/item/organ/external/exalt
+
+/datum/organ_description/arm/right/exalt
+	default_type = /obj/item/organ/external/exalt
+
+/datum/organ_description/leg/left/exalt
+	default_type = /obj/item/organ/external/exalt
+
+/datum/organ_description/leg/right/exalt
+	default_type = /obj/item/organ/external/exalt
+
+/datum/organ_description/arm/left/exalt/full
+	additional_limb_parts = BP_L_ARM_EXTRA
+
+/datum/organ_description/arm/right/exalt/full
+	additional_limb_parts = BP_R_ARM_EXTRA
+
+/datum/organ_description/leg/left/exalt/full
+	additional_limb_parts = BP_L_LEG_EXTRA
+
+/datum/organ_description/leg/right/exalt/full
+	additional_limb_parts = BP_R_LEG_EXTRA
+
 ////SLIME////
 /datum/organ_description/chest/slime
 	name = "upper body"

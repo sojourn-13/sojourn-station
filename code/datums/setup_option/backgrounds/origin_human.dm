@@ -4,7 +4,7 @@
 	along with various military pathways to choose from. Colony born humans tend to be widely skilled and physically better off than most as a result of clean living and access to \
 	better form of education than most. You may have been born on a colony world or be the child of those that were, in either case you still reap the benefits of good genetics."
 
-	restricted_to_species = list(FORM_HUMAN)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN)
 
 	stat_modifiers = list(
 		STAT_ROB = 3,
@@ -21,7 +21,7 @@
 	and hostile fauna. Only the strong survive out here, thus Frontier Space is often populated by the toughest of humanity, yet such living rarely comes with a proper education. \
 	You may not have been born on the frontier but your parents were and they gave you a what you needed to be tough and independent like them."
 
-	restricted_to_species = list(FORM_HUMAN)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN)
 
 	stat_modifiers = list(
 		STAT_ROB = 6,
@@ -39,7 +39,7 @@
 	controlled space, however, weakens the body. You might have been born to spacers who finally put down roots on a planet or stayed in space, in either case they made sure to pass along \
 	their technical skills to you."
 
-	restricted_to_species = list(FORM_HUMAN)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,

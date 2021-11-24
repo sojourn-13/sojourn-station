@@ -806,7 +806,7 @@
 /obj/item/mecha_parts/mecha_equipment/generator
 	name = "plasma generator"
 	desc = "Generates power using solid plasma as fuel. Pollutes the environment."
-	icon_state = "tesla"
+	icon_state = "plasma"
 	origin_tech = list(TECH_PLASMA = 2, TECH_POWER = 2, TECH_ENGINEERING = 1)
 	equip_cooldown = 10
 	energy_drain = 0
@@ -943,8 +943,8 @@
 
 /obj/item/mecha_parts/mecha_equipment/generator/nuclear
 	name = "\improper ExoNuclear reactor"
-	desc = "Generates power using uranium. Pollutes the environment."
-	icon_state = "tesla"
+	desc = "Generates power using uranium recklessly. Radiates the environment."
+	icon_state = "uranium"
 	origin_tech = list(TECH_POWER = 3, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 5, MATERIAL_GLASS = 10)
 	max_fuel = 50000

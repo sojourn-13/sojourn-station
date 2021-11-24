@@ -23,3 +23,15 @@
 	name = "enzyme pouch"
 	desc = "An enzyme stomach, work just as well as a normal one, designed for plantoids."
 	icon_state = "stomach_plant"
+
+/obj/item/organ/internal/stomach/improved
+	name = "improved stomach"
+	desc = "A bottomless pit with extra bottoms tacked on."
+	organ_efficiency = list(OP_STOMACH = 150)
+	price_tag = 1150
+
+
+/obj/item/organ/internal/stomach/improved/exalt
+	name = "exalt stomach"
+	desc = "A bottomless pit for holding only the most refined of foods.\
+	Likely worth more on the black market."

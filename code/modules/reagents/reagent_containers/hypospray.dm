@@ -1,13 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
-/// HYPOSPRAY
+/// HYPOSPRAY //Sprites by INFRARED_BARON#8170
 ////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
 	desc = "The Soteria medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
 	icon = 'icons/obj/syringe.dmi'
-	item_state = "hypo"
-	icon_state = "hypo"
+	item_state = "hypospray"
+	icon_state = "hypospray"
 	amount_per_transfer_from_this = 5
 	unacidable = 1
 	volume = 40
@@ -15,6 +15,16 @@
 	reagent_flags = OPENCONTAINER
 	slot_flags = SLOT_BELT
 	preloaded_reagents = list("tricordrazine" = 40)
+
+/obj/item/reagent_containers/hypospray/New()
+	..()
+	update_icon()
+
+/obj/item/reagent_containers/hypospray/update_icon()
+	if(reagents?.total_volume > 0)
+		icon_state = "hypospray"
+	else
+		icon_state = "hypospray_empty"
 
 /obj/item/reagent_containers/hypospray/attack(mob/living/M as mob, mob/user as mob)
 	if(!reagents.total_volume)
@@ -88,8 +98,8 @@
 	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel."
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
-	icon_state = "autoinjector"
-	item_state = "autoinjector"
+	icon_state = "syrette_inopravoline"
+	item_state = "syrette_inopravoline"
 	amount_per_transfer_from_this = 5
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 	reagent_flags = REFILLABLE | DRAINABLE | AMOUNT_VISIBLE
@@ -104,30 +114,37 @@
 /obj/item/reagent_containers/hypospray/autoinjector/update_icon()
 	cut_overlays()
 	if(reagents.total_volume > 0)
-		icon_state = initial(icon_state)
-		var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "autoinjector")
-		filling_overlay.color = reagents.get_color()
-		add_overlay(filling_overlay)
+		icon_state = "[initial(icon_state)]"
 	else
-		icon_state = "[initial(icon_state)]0"
+		icon_state = "[initial(icon_state)]_spent"
 
 
 /obj/item/reagent_containers/hypospray/autoinjector/antitoxin
 	name = "autoinjector (anti-toxin)"
+	icon_state = "syrette_antitox"
+	item_state = "syrette_antitox"
 	preloaded_reagents = list("anti_toxin" = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/tricordrazine
 	name = "autoinjector (tricordrazine)"
+	icon_state = "syrette_tricord"
+	item_state = "syrette_tricord"
 	preloaded_reagents = list("tricordrazine" = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/spaceacillin
 	name = "autoinjector (spaceacillin)"
+	icon_state = "syrette_spacealine"
+	item_state = "syrette_spacealine"
 	preloaded_reagents = list("spaceacillin" = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/hyperzine
 	name = "autoinjector (hyperzine)"
+	icon_state = "syrette_hyperzine"
+	item_state = "syrette_hyperzine"
 	preloaded_reagents = list("hyperzine" = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/drugs
 	name = "autoinjector (drugs)"
+	icon_state = "syrette_fun1"
+	item_state = "syrette_fun1"
 	preloaded_reagents = list("space_drugs" = 5)

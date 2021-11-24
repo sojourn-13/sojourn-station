@@ -172,3 +172,70 @@
 	..()
 	pixel_x = -16
 	pixel_y = 0
+
+/mob/living/carbon/superior_animal/sentinal_seeker/attack_hand(mob/living/carbon/M as mob)
+	..()
+	var/mob/living/carbon/human/H = M
+
+	switch(M.a_intent)
+		if (I_HELP)
+			help_shake_act(M)
+
+		if (I_GRAB)
+			if(!weakened && stat == CONSCIOUS)
+				M.adjustBruteLoss(150)
+				M.Weaken(5)
+				visible_message(SPAN_WARNING("\red [src] immediately impales [M] with one of its three-foot blade tentacles!"))
+				return 1
+			else
+				if(M == src || anchored)
+					return 0
+				for(var/obj/item/grab/G in src.grabbed_by)
+					if(G.assailant == M)
+						to_chat(M, SPAN_NOTICE("You already grabbed [src]."))
+						return
+
+				var/obj/item/grab/G = new /obj/item/grab(M, src)
+				if(buckled)
+					to_chat(M, SPAN_NOTICE("You cannot grab [src], \he is buckled in!"))
+				if(!G) //the grab will delete itself in New if affecting is anchored
+					return
+
+				M.put_in_active_hand(G)
+				G.synch()
+				LAssailant = M
+
+				M.do_attack_animation(src)
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				visible_message(SPAN_WARNING("[M] has grabbed [src] passively!"))
+
+				return 1
+
+		if (I_DISARM)
+			if(!weakened && stat == CONSCIOUS)
+				M.visible_message("\red [src] impales [M] with one of its three-foot blade tentacles!!")
+				M.Weaken(5)
+				M.adjustBruteLoss(150)
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+
+			M.do_attack_animation(src)
+
+		if (I_HURT)
+			var/damage = 3
+			if ((stat == CONSCIOUS) && prob(10))
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				M.visible_message("\red [M] missed \the [src]")
+			else
+				if (istype(H))
+					damage += max(0, (H.stats.getStat(STAT_ROB) / 10))
+					if (HULK in H.mutations)
+						damage *= 2
+
+				playsound(loc, "punch", 25, 1, -1)
+				M.visible_message("\red [M] has punched \the [src]")
+
+				adjustBruteLoss(damage)
+				updatehealth()
+				M.do_attack_animation(src)
+
+				return 1

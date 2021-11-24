@@ -382,8 +382,6 @@
 		return FALSE
 
 /datum/genetics/genetics_holder/proc/removeAllMutations()
-	total_instability = 0
-	check_destabilize()
 	for (var/datum/genetics/mutation/mutation_to_remove in mutation_pool)
 		if(mutation_to_remove.active)
 			if(istype(holder, /mob/living/carbon/human))
@@ -393,7 +391,7 @@
 				mutation_to_remove.onPlayerRemove()
 			if(istype(holder, /mob/living))
 				mutation_to_remove.onMobRemove()
-	mutation_pool = list()
+		removeMutation(mutation_to_remove.key, mutation_to_remove.count)
 	initialized = FALSE
 
 //Proc for easily adding mutations to a genetics holder, so it can be called quickly.

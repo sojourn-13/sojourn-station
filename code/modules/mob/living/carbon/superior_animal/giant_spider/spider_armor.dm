@@ -22,7 +22,7 @@
   //So, at the very end, result = list(brute = 0, burn = 5)
 */
 /mob/living/carbon/superior_animal/giant_spider/pick_armor()
-	switch (pickweight(list("basic" = 5, "padded" = 1, "lustrous" = 1, "insensitive" = 3)))
+	switch (pickweight(list("basic" = 5, "padded" = 1, "lustrous" = 1, "durable" = 3)))
 
 		if("basic") //No changes, we are base level
 			return
@@ -56,7 +56,7 @@
 			flash_resistances += 2
 			return
 
-		if("insensitive")
+		if("durable")
 			add_armor = list(
 			melee = 5,
 			bullet = 5,
@@ -68,5 +68,5 @@
 			)
 			gives_prefex = TRUE
 			flash_resistances += 1
-			prefex = "insensitive"
+			prefex = "durable"
 			return

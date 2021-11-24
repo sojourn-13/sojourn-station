@@ -219,7 +219,6 @@
 	Sometimes it was more localized, crawling to the abandoned tunnels of destroyed and long forgotten ship looking for valuables and answers to why they were brought to this state. \
 	Life as a scavenger was rough, but it did let you adjust to frontier work comfortably. Your life of avoiding hazards be they incidental or made with malcontent has at least made you more ready \
 	to dodge potential traps."
-
 	perks = list(/datum/perk/sure_step)
 
 	stat_modifiers = list(
@@ -240,6 +239,21 @@
 
 	perks = list(/datum/perk/psi_attunement)
 
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/career/nepotism
+	name = "Product of Nepotism"
+	desc = "Your existence has been deemed to be \"of particular worth to the colony.\" you were either head-hunted for a position here, or simply knew the right people to talk to.\
+	As a result, you've earned yourself a contract granting higher pay than other colonists on the station. Whether or not you earned that pay is up for debate, but for now,\
+	you can enjoy the closest thing to the high life that this backwater dump has going for it."
+	perks = list(/datum/perk/nepotism)
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,

@@ -251,13 +251,13 @@
 	cut_overlays()
 
 	if(mode == SYRINGE_BROKEN)
-		icon_state = "broken"
+		icon_state = "large_broken"
 		return
 
 	var/rounded_vol
 	if(/obj/item/reagent_containers/syringe/large)
 		if(reagents && reagents.total_volume)
-			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
+			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 30)
 			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe-[rounded_vol]")
 			filling_overlay.color = reagents.get_color()
 			add_overlay(filling_overlay)

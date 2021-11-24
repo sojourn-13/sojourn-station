@@ -1,12 +1,14 @@
 /obj/item/implant/compressed
 	name = "compressed matter implant"
 	desc = "Based on compressed matter technology, can store a single item."
-	icon_state = "implant_evil"
+	icon_state = "implant_storage"
 	var/activation_emote = "sigh"
 	var/obj/item/scanned = null
 	is_legal = FALSE
 	origin_tech = list(TECH_MATERIAL=2, TECH_MAGNET=4, TECH_BLUESPACE=5, TECH_ILLEGAL=4)
 	var/entropy_value = 5 //modular for admins to punish people taht scan bigger items
+
+	overlay_icon = "storage"
 
 /obj/item/implant/compressed/trigger(emote, mob/living/source)
 	if(!scanned)

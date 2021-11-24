@@ -1,6 +1,6 @@
 /obj/item/implant/excelsior
 	name = "excelsior implant"
-	implant_color = "r"
+	icon_state = "implant_excel"
 	allowed_organs = list(BP_HEAD)
 	origin_tech = list(TECH_ILLEGAL = 2)
 	var/antag_id = ROLE_EXCELSIOR_REV
@@ -9,6 +9,8 @@
 		/obj/item/implant/death_alarm
 	)
 	var/disguise
+
+	overlay_icon = "excel"
 
 /obj/item/implant/excelsior/Initialize()
 	. = ..()

@@ -137,6 +137,7 @@
 	options["vector default"] = "acolyte"
 	options["tangent ridge helmet"] = "tangent_ridge_helmet_switched"
 	options["tangent ridge helmet open"] = "tangent_ridge_helmet"
+	options["greater heart armor"] = "greater_heart"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

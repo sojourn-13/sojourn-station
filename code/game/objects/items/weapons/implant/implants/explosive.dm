@@ -1,12 +1,14 @@
 /obj/item/implant/explosive
 	name = "explosive implant"
 	desc = "A military grade micro bio-explosive. Highly dangerous and EMP proof."
+	icon_state = "implant_explosive"
 	var/elevel = "Localized Limb"
 	var/phrase = "supercalifragilisticexpialidocious"
 	icon_state = "implant_evil"
-	implant_color = "r"
 	is_legal = FALSE
 	origin_tech = list(TECH_MATERIAL=2, TECH_COMBAT=3, TECH_BIO=4, TECH_ILLEGAL=4)
+
+	overlay_icon = "explosive"
 
 /obj/item/implant/explosive/New()
 	..()

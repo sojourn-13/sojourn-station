@@ -156,10 +156,10 @@
 /obj/item/reagent_containers/make_old()
 	.=..()
 	if (.)
-		var/actual_volume = reagents.total_volume
-		for(var/datum/reagent/R in reagents.reagent_list)
+		var/actual_volume = reagents?.total_volume
+		for(var/datum/reagent/R in reagents?.reagent_list)
 			R.volume = rand(0, R.volume)
-		reagents.add_reagent("toxin", rand(0, actual_volume - reagents.total_volume))
+		reagents?.add_reagent("toxin", rand(0, actual_volume - reagents?.total_volume))
 
 
 //Sealed survival food, always edible

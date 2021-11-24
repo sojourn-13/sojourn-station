@@ -74,6 +74,15 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_fingerprint(H ? md5(H.dna.uni_identity) : "")
 	set_secRecord(H && H.sec_record && !jobban_isbanned(H, "Records") ? html_decode(H.sec_record) : "No record supplied")
 
+	//Hex: Don't questions, just trust me on this one
+	var/nepotism = 1
+	if(H && H.stats.getPerk(PERK_NEPOTISM))
+		nepotism += 0.3
+	if(H && H.stats.getPerk(PERK_DEBTOR))
+		nepotism -= 0.5
+	set_nepotismMod(nepotism)
+	//set_nepotismMod(1)
+
 	// Employment record
 	var/employment_record = "No record supplied"
 	if(H)
@@ -224,6 +233,9 @@ FIELD_LONG("Employment Record", emplRecord, access_heads, access_heads)
 FIELD_SHORT("Home System", homeSystem, access_heads, access_change_ids)
 FIELD_SHORT("Faction", faction, access_heads, access_heads)
 FIELD_LONG("Qualifications", skillset, access_heads, access_heads)
+
+//WAGE RECORDS
+FIELD_NUM("Employee Value Index", nepotismMod, access_captain, access_captain)
 
 // ANTAG RECORDS
 FIELD_LONG("Exploitable Information", antagRecord, access_syndicate, access_syndicate)
