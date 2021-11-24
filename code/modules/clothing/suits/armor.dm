@@ -217,6 +217,7 @@
 	var/list/options = list()
 	options["vector default"] = "acolyte"
 	options["tangent plate armor"] = "tangent_plate_armor"
+	options["greater heart armor"] = "greater_heart"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
