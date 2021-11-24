@@ -5673,6 +5673,16 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/crew_quarters/fitness)
+"btH" = (
+/obj/structure/table/rack,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/void/medical,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/void/medical,
+/obj/item/rig/medical/equipped,
+/obj/machinery/camera/network/medbay,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/medical/cryo)
 "btP" = (
 /obj/structure/sign/department/drones,
 /turf/simulated/wall/r_wall,
@@ -68170,6 +68180,9 @@
 /obj/structure/sign/department/dock{
 	pixel_x = -28
 	},
+/obj/machinery/camera/network/third_section{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section1)
 "pGJ" = (
@@ -101538,6 +101551,10 @@
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
+"wZT" = (
+/obj/random/flora/small_jungle_tree,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "wZW" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt,
@@ -174255,7 +174272,7 @@ wJT
 qqw
 nwg
 kgE
-xYO
+btH
 vWv
 jfY
 nwy
@@ -195458,7 +195475,7 @@ leU
 leU
 leU
 leU
-leU
+xzG
 leU
 inG
 dxr
@@ -195857,7 +195874,7 @@ leU
 nCH
 leU
 xzG
-leU
+eGp
 leU
 iqS
 leU
@@ -196257,14 +196274,14 @@ uEB
 uEB
 uEB
 sbB
-leU
-uvO
-leU
-leU
-leU
-uvO
-leU
-nCH
+hvW
+hvW
+hvW
+hvW
+hvW
+hvW
+hvW
+hvW
 leU
 iXU
 sbB
@@ -196458,17 +196475,17 @@ uEB
 uEB
 uEB
 wzx
-kuB
+xcy
 leU
-iZg
-leU
-leU
-leU
-leU
-iZg
+vvF
+vvF
 leU
 leU
+hvW
+hvW
+hvW
 leU
+eGp
 sbB
 inG
 dxr
@@ -196862,13 +196879,13 @@ xcy
 sbB
 gMo
 leU
+hvW
 leU
 leU
 leU
-uvO
 leU
-tSB
 leU
+hvW
 hvW
 hvW
 leU
@@ -197062,17 +197079,17 @@ wzx
 wzx
 sbB
 sbB
-sbB
+wZT
 nCH
 leU
-leU
-leU
-iZg
-leU
-leU
-leU
-leU
-leU
+hvW
+hvW
+hvW
+hvW
+hvW
+hvW
+hvW
+hvW
 leU
 hvW
 wTT
@@ -197270,8 +197287,8 @@ leU
 hvW
 leU
 leU
-leU
 hvW
+leU
 kYq
 leU
 leU
@@ -197470,8 +197487,8 @@ leU
 hvW
 leU
 leU
-leU
-uvO
+hvW
+hvW
 leU
 leU
 leU
