@@ -1,9 +1,12 @@
 /obj/item/implant/adrenalin
 	name = "adrenalin"
 	desc = "Removes all stuns and knockdowns."
+	icon_state = "implant_chem"
 	var/uses = 3
 	allowed_organs = list(BP_CHEST)
 	origin_tech = list(TECH_MATERIAL=2, TECH_BIO=4, TECH_COMBAT=3, TECH_ILLEGAL=4)
+
+	overlay_icon = "chem"
 
 /obj/item/implant/adrenalin/get_data()
 	var/data = {"

@@ -1,8 +1,11 @@
 /obj/item/implant/uplink
 	name = "uplink"
 	desc = "Summon things."
+	icon_state = "implant_uplink"
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 2, TECH_ILLEGAL = 3)
 	var/activation_emote
+
+	overlay_icon = "uplink"
 
 /obj/item/implant/uplink/New(var/loc, var/amount)
 	amount = amount || IMPLANT_TELECRYSTAL_AMOUNT(DEFAULT_TELECRYSTAL_AMOUNT)

@@ -1,8 +1,11 @@
 /obj/item/implant/tracking
 	name = "tracking implant"
 	desc = "Track with this."
+	icon_state = "implant_tracking"
 	var/id = 1.0
 	origin_tech = list(TECH_MATERIAL=2, TECH_MAGNET=2, TECH_DATA=2, TECH_BIO=2)
+
+	overlay_icon = "tracking"
 
 /obj/item/implant/tracking/get_data()
 	var/data = {"<b>Implant Specifications:</b><BR>

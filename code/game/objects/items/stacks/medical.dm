@@ -16,6 +16,8 @@
 	var/charge_x_offset = 2		//The spacing between each charge indicator. Should be 2 to leave a 1px gap between each blip.
 	var/natural_remedy = FALSE
 
+	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
+
 /obj/item/stack/medical/attack(mob/living/M, mob/living/user)
 	var/types = M.get_classification()
 	if (!(types & CLASSIFICATION_ORGANIC))
@@ -98,6 +100,9 @@
 	..()
 	if(!automatic_charge_overlays)	//Checks if the item has this feature enabled
 		return	//If it does not, do nothing
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+		return
 	var/ratio = CEILING(CLAMP(amount / max_amount, 0, 1) * charge_sections, 1)
 	cut_overlays()
 	var/iconState = "[icon_state]_charge"
@@ -117,10 +122,11 @@
 	name = "roll of gauze"
 	singular_name = "gauze length"
 	desc = "Some sterile gauze to wrap around bloody stumps."
-	icon_state = "brutepack"
+	icon_state = "brutepack" //sprites by @LiLJard @Ajajumbo123
 	origin_tech = list(TECH_BIO = 1)
 	heal_brute = 10
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 8)
+	fancy_icon = TRUE
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -212,16 +218,18 @@
 	singular_name = "non sterile bandage"
 	desc = "Parts of clothes that can be wrapped around bloody stumps."
 	icon_state = "hm_brutepack"
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/ointment
 	name = "ointment"
 	desc = "Used to treat those nasty burns."
 	gender = PLURAL
-	singular_name = "ointment"
+	singular_name = "ointment" //sprites by @LiLJard @Ajajumbo123
 	icon_state = "ointment"
 	heal_burn = 10
 	origin_tech = list(TECH_BIO = 1)
 	preloaded_reagents = list("silicon" = 4, "carbon" = 8)
+	fancy_icon = TRUE
 
 /obj/item/stack/medical/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -281,6 +289,7 @@
 	desc = "Freshly gathered spider webs that you can slather on burns to prevent infection."
 	icon_state = "spidergoo"
 	natural_remedy = TRUE
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/advanced/bruise_pack
 	name = "advanced trauma kit"
@@ -303,6 +312,7 @@
 	consumable = TRUE
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/advanced/bruise_pack/mending_ichor
 	name = "mending ichor"
@@ -313,6 +323,7 @@
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -427,6 +438,7 @@
 	consumable = TRUE
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/advanced/ointment/regenerative_ichor
 	name = "regenerative ichor"
@@ -437,6 +449,7 @@
 	consumable = TRUE	// Will the stack disappear entirely once the amount is used up?
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -498,9 +511,10 @@
 /obj/item/stack/medical/splint
 	name = "medical splints"
 	singular_name = "medical splint"
-	icon_state = "splint"
+	icon_state = "splint" //sprites by @LiLJard @Ajajumbo123
 	amount = 5
 	max_amount = 5
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/splint/improvised
 	name = "improvised bone splint"
@@ -578,10 +592,7 @@
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)
-
-/obj/item/stack/medical/advanced/bruise_pack/nt/update_icon()
-	icon_state = "[initial(icon_state)][amount]"
-	..()
+	fancy_icon = TRUE
 
 /obj/item/stack/medical/advanced/ointment/nt
 	name = "Absolutism Burnpack"
@@ -592,7 +603,5 @@
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)
+	fancy_icon = TRUE
 
-/obj/item/stack/medical/advanced/ointment/nt/update_icon()
-	icon_state = "[initial(icon_state)][amount]"
-	..()
