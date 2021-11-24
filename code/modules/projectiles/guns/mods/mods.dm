@@ -148,7 +148,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.3,
 		GUN_UPGRADE_CHARGECOST = 1.15,
-		UPGRADE_BULK = 1,
+		UPGRADE_BULK = 0.5,
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
@@ -228,7 +228,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_MAGUP = 3,
-		UPGRADE_BULK = 2
+		UPGRADE_BULK = 1
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	I.gun_loc_tag = GUN_MECHANISM
@@ -582,7 +582,6 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_OFFSET = 0.9,
-		UPGRADE_BULK = 1,
 		GUN_UPGRADE_ZOOM = 1.2
 		)
 	I.gun_loc_tag = GUN_SCOPE
