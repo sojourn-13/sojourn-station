@@ -17,10 +17,11 @@
 	preloaded_reagents = list("tricordrazine" = 40)
 
 /obj/item/reagent_containers/hypospray/New()
+	..()
 	update_icon()
 
 /obj/item/reagent_containers/hypospray/update_icon()
-	if(reagents.total_volume > 0)
+	if(reagents?.total_volume > 0)
 		icon_state = "hypospray"
 	else
 		icon_state = "hypospray_empty"
