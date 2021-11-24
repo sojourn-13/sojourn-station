@@ -5,11 +5,13 @@
 
 /obj/item/implant/spying
 	name = "spying implant"
-	icon_state = "implant_evil"
+	icon_state = "implant_uplink"
 	is_legal = FALSE
 	var/timer
 	var/datum/mind/owner
 	cruciform_resist = TRUE
+
+	overlay_icon = "uplink"
 
 /obj/item/implant/spying/attack_self(mob/user)
 	if(owner == user.mind)

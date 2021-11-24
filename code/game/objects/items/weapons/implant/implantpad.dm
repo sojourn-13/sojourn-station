@@ -15,8 +15,12 @@
 
 
 /obj/item/implantpad/proc/update()
+	cut_overlays()
 	if (src.case)
-		src.icon_state = "implantpad-1"
+		if(src.case.implant)
+			if(istype(src.case.implant, /obj/item/implant))
+				src.icon_state = "implantpad-1"
+				add_overlay("implant_[case.implant:overlay_icon]")
 	else
 		src.icon_state = "implantpad-0"
 	return

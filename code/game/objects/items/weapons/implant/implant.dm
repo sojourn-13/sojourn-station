@@ -5,13 +5,12 @@
 /obj/item/implant
 	name = "implant"
 	icon = 'icons/obj/device.dmi'
-	icon_state = "implant"
+	icon_state = "implant_deathalarm"
 	w_class = ITEM_SIZE_TINY
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_GLASS = 1)
 	var/implanted = FALSE
 	var/mob/living/carbon/human/wearer = null
 	var/obj/item/organ/external/part = null
-	var/implant_color = "b"
 	var/allow_reagents = FALSE
 	var/malfunction = MALFUNCTION_NONE
 	var/is_legal = TRUE
@@ -19,6 +18,8 @@
 	var/position_flag = 0
 	var/external = FALSE
 	var/cruciform_resist = FALSE
+
+	var/overlay_icon = "deathalarm"
 
 /obj/item/implant/attackby(obj/item/I as obj, mob/user as mob)
 	..()

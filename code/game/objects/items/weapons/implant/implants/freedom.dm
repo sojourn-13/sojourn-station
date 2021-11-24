@@ -4,13 +4,15 @@
 /obj/item/implant/freedom
 	name = "freedom implant"
 	desc = "Use this to escape from those evil Red Shirts."
-	implant_color = "r"
+	icon_state = "implant_freedom"
 	var/activation_emote = "chuckle"
 	var/uses = 1.0
 	var/install_organ = INSTALL_HANDS
 	is_legal = FALSE
 	origin_tech = list(TECH_COMBAT=5, TECH_MAGNET=3, TECH_BIO=4, TECH_ILLEGAL=2)
 	allowed_organs = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+
+	overlay_icon = "freedom"
 
 /obj/item/implant/freedom/trigger(emote, mob/living/carbon/source)
 	if (src.uses < 1)
