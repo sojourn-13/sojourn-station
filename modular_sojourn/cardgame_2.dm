@@ -39,6 +39,7 @@
 			return
 		else
 			src.contents += card
+			user.drop_from_inventory(card)
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 		return
 
