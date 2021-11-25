@@ -702,9 +702,9 @@
 /obj/item/gun/proc/fold(user)
 //Were going to do some insainly dumb things to not doup or brake anything with storage or gun mods, well being modular
 	if(folding_stock)
-		if(folded)
+		if(!folded)
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
-			to_chat(user, SPAN_NOTICE("You unfold the stock on \the [src]."))
+			to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
 			extra_bulk += 4 //Simular to 4 plates, your getting a lot out of this tho
 			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
 			recoil_buildup *= 0.5 //50% less recoil
@@ -713,7 +713,7 @@
 			folded = FALSE
 		else
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
-			to_chat(user, SPAN_NOTICE("You fold the stock on \the [src]."))
+			to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = TRUE
 
 		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
