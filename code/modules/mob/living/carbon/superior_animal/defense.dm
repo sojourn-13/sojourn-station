@@ -395,6 +395,12 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 
 	return 1
 
+//Disables roaches/spiders/xenos ect form mess with atmo to prevent lag of that kind
+/mob/living/carbon/superior_animal/handle_post_breath(datum/gas_mixture/breath)
+	return
+	//if(breath)
+	//	loc.assume_air(breath) //by default, exhale
+
 /mob/living/carbon/superior_animal/handle_fire()
 	if(..())
 		return
