@@ -47,6 +47,7 @@
 	options["Demonic Welding"] = "demonwelding"
 	options["Knight Welding"] = "knightwelding"
 	options["Fancy Welding"] = "fancywelding"
+	options["Faithful Welding"] = "cultwelding"
 	options["Aquatic Welding"] = "norah_briggs_1"
 	options["Rustic Welding"] = "yuki_matsuda_1"
 	options["Flame Welding"] = "alice_mccrea_1"
