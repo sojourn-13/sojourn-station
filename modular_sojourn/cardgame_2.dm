@@ -38,8 +38,8 @@
 			to_chat(user, SPAN_NOTICE("The [src] rejects \the [card]."))
 			return
 		else
+			user.remove_from_mob(card)
 			src.contents += card
-			user.drop_from_inventory(card)
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 		return
 
