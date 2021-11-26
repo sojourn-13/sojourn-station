@@ -39,7 +39,7 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if(folded)
+	if(!folded)
 		iconstring += "_stock"
 
 	if (ammo_magazine)

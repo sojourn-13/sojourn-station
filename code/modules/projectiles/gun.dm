@@ -710,11 +710,11 @@
 			recoil_buildup *= 0.5 //50% less recoil
 			one_hand_penalty *= 0.5 //50% less recoil
 			damage_multiplier += 0.1 //10% more damage
-			folded = FALSE
+			folded = TRUE
 		else
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
 			to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
-			folded = TRUE
+			folded = FALSE
 
 		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
 
