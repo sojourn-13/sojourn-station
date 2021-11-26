@@ -1773,9 +1773,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper)
 "gM" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 1
-	},
+/obj/structure/multiz/stairs/active,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/dungeon/outside/prepper)
 "gN" = (
@@ -10584,9 +10582,7 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
 "Oi" = (
-/obj/structure/multiz/stairs/active{
-	dir = 1
-	},
+/obj/structure/multiz/stairs/enter,
 /obj/machinery/light/small{
 	dir = 1
 	},
