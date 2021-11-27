@@ -3,6 +3,7 @@
 #include "_Greyson_Field_Office.dmm"
 #include "_Prepper_Bunker.dmm"
 #include "_River_Forest.dmm"
+#include "_River_To_Swamp.dmm"
 
 /obj/map_data/nadezda_f
 	name = "Deep Forest"
@@ -43,3 +44,14 @@
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	height = 2
+
+/obj/map_data/river_to_colony
+	name = "Crash Ship"
+	is_station_level = FALSE
+	is_player_level = TRUE
+	is_contact_level = FALSE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	height = 5
+
+
