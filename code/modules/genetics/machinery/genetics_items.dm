@@ -466,21 +466,28 @@ Circuit boards for different Genetics Machines.
 		/obj/item/stock_parts/matter_bin = 4, //Affects Max Sample plates
 	)
 
-
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit
 	disk_name = "Genetics Studio Design Kit"
-	icon_state = "moebius"
-	license = 1
+	icon = 'icons/obj/genetics/genetics_disks.dmi'
+	icon_state = "genetics_factory"
+	license = 6
 	designs = list(
-		/datum/design/autolathe/genetics/pulper = 0,
-		/datum/design/autolathe/genetics/cloner = 0,
-		/datum/design/autolathe/genetics/clone_console = 0,
+		/datum/design/autolathe/genetics/pulper = 1,
+		/datum/design/autolathe/genetics/cloner = 1,
+		/datum/design/autolathe/genetics/clone_console = 1,
 		/datum/design/autolathe/genetics/purger = 0,
 		/datum/design/autolathe/genetics/mut_injector = 0
 	)
 
-
-
+/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit_public
+	disk_name = "Genetics Studio Resupply Kit"
+	icon = 'icons/obj/genetics/genetics_disks.dmi'
+	icon_state = "genetics_purger"
+	license = 1
+	designs = list(
+		/datum/design/autolathe/genetics/purger = 0,
+		/datum/design/autolathe/genetics/mut_injector = 0
+	)
 
 /*
 /obj/item/circuitboard/genetics_server

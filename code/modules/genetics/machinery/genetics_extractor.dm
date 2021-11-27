@@ -17,12 +17,13 @@
 	var/list/meat = list() //Container for meat added to the extractor.
 	var/mob/living/occupant = null //Container for whole mobs loaded into the extractor
 	var/occupant_meat_count = 0 //The amount of meat an occupant would have.
+	var/occupant_meat_type
 	var/occupant_bonus = 2 //The amount of EXTRA Sample plates adding a whole mob to a pulper gives.
 	var/meat_limit = 5	//The maximum amount of individual pieces of meat that can be loaded into the device
 	var/pulping = FALSE //Whether or not the device is extracting genetics
 
 /obj/machinery/genetics/pulper/attackby(obj/item/I, mob/user)
-	
+
 	if(default_deconstruction(I, user))
 		return
 	if(default_part_replacement(I, user))
@@ -42,7 +43,7 @@
 		if(occupant)
 			src.visible_message(SPAN_WARNING("The pulper sings: \"The Pulper has a whole creature in there, process that first~!\""))
 			return
-		
+
 		user.drop_item()
 		I.forceMove(src)
 		src.meat += I
@@ -68,15 +69,18 @@
 
 	//Check if the creature actually bears meat, IE: It has DNA
 	var/temp_meat_count = 0
+	var/temp_meat_type
 	if (isanimal(target))
 		var/mob/living/simple_animal/animal = target
 		if(ispath(animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
 			temp_meat_count = animal.meat_amount
+			temp_meat_type = animal.meat_type
 	else if (issuperioranimal(target))
 		var/mob/living/carbon/superior_animal/s_animal = target
 		if(ispath(s_animal.meat_type, /obj/item/reagent_containers/food/snacks/meat))
 			temp_meat_count = s_animal.meat_amount
-	
+			temp_meat_type = s_animal.meat_type
+
 	if(temp_meat_count <= 0)
 		src.visible_message(SPAN_WARNING("The pulper gently reminds: \"That is creature has no genetic material, hun~\""))
 
@@ -85,6 +89,7 @@
 		src.visible_message(SPAN_DANGER("[user] has forced [target] into \the [src]!"))
 		occupant = target
 		occupant_meat_count = temp_meat_count
+		occupant_meat_type = temp_meat_type
 		target.loc = src
 
 /obj/machinery/genetics/pulper/attack_hand(mob/user as mob)
@@ -105,16 +110,16 @@
 	if(!occupant && meat.len == 0)
 		visible_message(SPAN_DANGER("You hear a loud metallic grinding sound."))
 		return
-	
+
 	use_power(1000)
 
 	pulping = TRUE
-	
+
 	visible_message(SPAN_DANGER("You hear a loud squelchy grinding sound."))
-	
+
 	update_icon()
-	spawn(gib_time)
-		if(occupant && (occupant.loc == src)) //Escape in time?
+	spawn(gib_time) //Escape in time?
+		if(occupant && (occupant.loc == src)  && occupant_meat_count && ispath(occupant_meat_type, /obj/item/reagent_containers/food/snacks/meat))
 			src.visible_message(SPAN_WARNING("The pulper says ecstatically: \"Pulping~! Creature~!\""))
 			//big-range splatter
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
@@ -142,12 +147,12 @@
 
 		if(meat.len >= 0)
 			src.visible_message(SPAN_WARNING("The pulper says ecstatically: \"Pulping~! Meat~!\""))
-			
+
 			//low-range splatter
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
 			var/obj/effect/decal/cleanable/blood/splatter/animated/B = new(src.loc)
 			B.target_turf = pick(range(2, src))
-			
+
 			for(var/obj/item/reagent_containers/food/snacks/meat/meat_target in meat)
 				//Ensures we only do this if the meat has genetics holders
 				if(meat_target.source_name)
@@ -183,9 +188,9 @@
 	if(occupant)
 		src.occupant.loc = src.loc
 		src.occupant = null
-	
+
 	occupant_meat_count = 0
-	
+
 	for(var/obj/O in meat)
 		O.loc = src.loc
 	meat = list()
