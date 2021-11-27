@@ -2,7 +2,10 @@
 	. = ..()
 	if(.)
 		//visible_emote("charges at [.]!") //commented out to reduce chat lag
-		playsound(src.loc, list('sound/hallucinations/hell_screech.ogg'), 120, 1)
+		if(last_noise <= (world.time += 10 SECONDS))
+			playsound(src.loc, list('sound/hallucinations/hell_screech.ogg'), 120, 1)
+			last_noise = world.time
+		alpha = 255
 
 /mob/living/carbon/superior_animal/psi_monster/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
@@ -23,8 +26,10 @@
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
+	new /obj/effect/decal/cleanable/psi_ash(src.loc)
+	qdel(src)
+
 	. = ..()
-	dust()
 
 /*
 /mob/living/carbon/superior_animal/psi_monster/spitter/boiler/death(var/gibbed,var/message = deathmessage)
@@ -56,6 +61,6 @@
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
-	//playsound(src.loc, 'sound/effects/splat.ogg', max(10,min(50,maxHealth)), 1)
+	new /obj/effect/decal/cleanable/psi_ash(src.loc)
+	qdel(src)
 	. = ..()
-	dust()

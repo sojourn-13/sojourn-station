@@ -5,6 +5,8 @@
 		var/mob/living/L = A
 		if(istype(L) && L.reagents)
 			L.reagents.add_reagent(poison_type, poison_per_bite)
+	alpha = 255
+
 /*
 /mob/living/carbon/superior_animal/psi_monster/warrior/bull/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))

@@ -46,6 +46,7 @@
 
 	var/poison_per_bite = 0
 	var/poison_type = "space_drugs"
+	var/last_noise = -30000
 	pass_flags = PASSTABLE
 	faction = "psi_monster"
 
@@ -142,3 +143,20 @@
 				M.do_attack_animation(src)
 
 				return 1
+
+
+/obj/effect/decal/cleanable/psi_ash
+	name = "strange ashes"
+	desc = "Something about these ashes feels off, as if an infinite potential exists within the dust."
+	gender = PLURAL
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "ash"
+	anchored = TRUE
+
+/obj/effect/decal/cleanable/psi_ash/attack_hand(mob/user as mob)
+	if(user.stats.getPerk(PERK_PSION) && prob(25))
+		new /obj/item/gun/minigun(src.loc)
+	else if(prob(10))
+		new /obj/item/gun/minigun(src.loc)
+	to_chat(user, SPAN_NOTICE("[src] sifts through your fingers."))
+	qdel(src)

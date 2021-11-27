@@ -24,6 +24,7 @@ Has ability of every roach.
 	friendly_to_colony = FALSE
 
 	viewRange = 16
+	randpixel = 0
 
 	attacktext = "delivered a crushing blow to"
 
@@ -38,7 +39,7 @@ Has ability of every roach.
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
-	
+
 	life_cycles_before_sleep = 3000 //Keep this awake for longer than the regular mob.
 
 	var/datum/genetics/genetics_holder/injector
@@ -63,7 +64,7 @@ Has ability of every roach.
 	..()
 
 	injector = new(src)
-	
+
 
 	loc = get_turf(victim)
 	//kill the victim
@@ -125,10 +126,10 @@ Has ability of every roach.
 
 	akira.loc = get_turf(src)
 	akira.gib()
-	
+
 
 /mob/living/carbon/superior_animal/wasonce/Life()
-		
+
 
 	if(captives.len && prob(15))
 		var/fail_mutation_path = pick(injector.getFailList())
