@@ -543,6 +543,8 @@
 		base_state = icon_state
 	if(up)
 		icon_state = "[base_state]_up"
+	else
+		icon_state = "[base_state]"
 
 /obj/item/clothing/head/helmet/faceshield/refresh_upgrades()
 	. = ..()
