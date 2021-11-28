@@ -1773,7 +1773,9 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper)
 "gM" = (
-/obj/structure/multiz/stairs/active,
+/obj/structure/multiz/stairs/enter{
+	dir = 1
+	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/dungeon/outside/prepper)
 "gN" = (
@@ -2080,7 +2082,9 @@
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
 "hV" = (
-/obj/structure/multiz/stairs/active/bottom,
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper)
 "hW" = (
@@ -10582,7 +10586,9 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
 "Oi" = (
-/obj/structure/multiz/stairs/enter,
+/obj/structure/multiz/stairs/active{
+	dir = 1
+	},
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -11471,7 +11477,9 @@
 /turf/simulated/mineral/planet,
 /area/colony/exposedsun/pastgate)
 "SC" = (
-/obj/structure/multiz/stairs/enter/bottom,
+/obj/structure/multiz/stairs/active/bottom{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/prepper)
 "SD" = (

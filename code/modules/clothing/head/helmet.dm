@@ -522,7 +522,7 @@
 	tool_qualities = list()
 	max_upgrades = 0
 	var/up = FALSE
-
+	var/base_state
 
 /obj/item/clothing/head/helmet/faceshield/riot
 	name = "riot helmet"
@@ -534,13 +534,20 @@
 	price_tag = 150
 
 /obj/item/clothing/head/helmet/faceshield/attack_self()
+	if(!base_state)
+		base_state = icon_state
 	toggle()
 
 /obj/item/clothing/head/helmet/faceshield/update_icon()
-	icon_state = up ? "[initial(icon_state)]_up" : initial(icon_state)
+	if(!base_state)
+		base_state = icon_state
+	if(up)
+		icon_state = "[base_state]_up"
 
 /obj/item/clothing/head/helmet/faceshield/refresh_upgrades()
 	. = ..()
+	if(!base_state)
+		base_state = icon_state
 	if(up)
 		armor = getArmor(arglist(armor_up))
 		flash_protection = flash_protection_up
@@ -782,19 +789,6 @@
 	desc = "\"I do not know who I am, I don\'t know why I\'m here. All I know is that I must kill.\""
 	icon_state = "maska"
 	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
-	var/icon_swap_to_old = TRUE
-
-/obj/item/clothing/head/helmet/faceshield/altyn/maska/update_icon() //needed for fancy new icon
-	var/iconstring = initial(icon_state)
-	if (!icon_swap_to_old)
-		iconstring = "maska"
-	else
-		iconstring = "maska_killa"
-
-	if (up)
-		iconstring += "_up"
-
-	icon_state = iconstring
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska/verb/toggle_style()
 	set name = "Adjust Style"
@@ -806,13 +800,21 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["maska"] = "TRUE"
-	options["maska killa"] = "FALSE"
+	options["maska"] = "maska"
+	options["maska killa"] = "maska_killa"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_swap_to_old = options[choice]
+		base_state = options[choice]
+		icon_state = options[choice]
+		item_state = options[choice]
+		if(up)
+			icon_state = "[base_state]up"
+		item_state_slots = list(
+		slot_l_hand_str = options[choice],
+		slot_r_hand_str = options[choice],
+		)
 		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()

@@ -100,9 +100,6 @@
 	..()
 	if(!automatic_charge_overlays)	//Checks if the item has this feature enabled
 		return	//If it does not, do nothing
-	if(fancy_icon)
-		icon_state = "[initial(icon_state)][amount]"
-		return
 	var/ratio = CEILING(CLAMP(amount / max_amount, 0, 1) * charge_sections, 1)
 	cut_overlays()
 	var/iconState = "[icon_state]_charge"
@@ -127,6 +124,11 @@
 	heal_brute = 10
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 8)
 	fancy_icon = TRUE
+
+/obj/item/stack/medical/bruise_pack/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -230,6 +232,11 @@
 	origin_tech = list(TECH_BIO = 1)
 	preloaded_reagents = list("silicon" = 4, "carbon" = 8)
 	fancy_icon = TRUE
+
+/obj/item/stack/medical/ointment/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()
 
 /obj/item/stack/medical/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -594,6 +601,11 @@
 	origin_tech = list(TECH_BIO = 4)
 	fancy_icon = TRUE
 
+/obj/item/stack/medical/advanced/bruise_pack/nt/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()
+
 /obj/item/stack/medical/advanced/ointment/nt
 	name = "Absolutism Burnpack"
 	singular_name = "Absolutism Burnpack"
@@ -605,3 +617,7 @@
 	origin_tech = list(TECH_BIO = 4)
 	fancy_icon = TRUE
 
+/obj/item/stack/medical/advanced/ointment/nt/update_icon()
+	if(fancy_icon)
+		icon_state = "[initial(icon_state)][amount]"
+	..()
