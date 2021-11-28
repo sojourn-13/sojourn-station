@@ -958,4 +958,7 @@
 		to_chat(usr, SPAN_WARNING("[src] beeps: 'Notifications enabled.'"))
 		speaker_enabled = TRUE
 		report_health_alerts()
-		schedule_scan()
+
+
+
+
