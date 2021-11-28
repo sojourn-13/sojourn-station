@@ -49,3 +49,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
+
+/obj/item/gun/projectile/clarissa/moebius
+	name = "SI HG .35 Auto \"Malpractice\"" // SI stands for Soteria Institution
+	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
+	price_tag = 200

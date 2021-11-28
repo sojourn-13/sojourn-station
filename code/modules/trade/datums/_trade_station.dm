@@ -57,9 +57,9 @@
 		x = rand(forced_overmap_zone[1][1], forced_overmap_zone[1][2])
 		y = rand(forced_overmap_zone[2][1], forced_overmap_zone[2][2])
 	else
-		x = rand(OVERMAP_EDGE, maps_data.overmap_size)
-		y = rand(OVERMAP_EDGE, maps_data.overmap_size)
-	place_overmap(min(x, maps_data.overmap_size - OVERMAP_EDGE), min(y, maps_data.overmap_size - OVERMAP_EDGE))
+		x = rand(OVERMAP_EDGE, GLOB.maps_data.overmap_size)
+		y = rand(OVERMAP_EDGE, GLOB.maps_data.overmap_size)
+	place_overmap(min(x, GLOB.maps_data.overmap_size - OVERMAP_EDGE), min(y, GLOB.maps_data.overmap_size - OVERMAP_EDGE))
 
 	SStrade.all_stations += src
 	if(start_discovered)
@@ -120,7 +120,7 @@
 	qdel(overmap_location)
 	return ..()
 
-/datum/trade_station/proc/place_overmap(x, y, z = maps_data.overmap_z)
+/datum/trade_station/proc/place_overmap(x, y, z = GLOB.maps_data.overmap_z)
 	overmap_location = locate(x, y, z)
 
 	overmap_object = new(overmap_location)

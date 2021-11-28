@@ -344,7 +344,7 @@ SUBSYSTEM_DEF(job)
 
 		// EMAIL GENERATION
 		if(rank != "Robot" && rank != "AI")		//These guys get their emails later.
-			ntnet_global.create_email(H, H.real_name, pick(maps_data.usable_email_tlds))
+			ntnet_global.create_email(H, H.real_name, pick(GLOB.maps_data.usable_email_tlds))
 		// If they're head, give them the account info for their department
 
 		if(H.mind && (job.head_position || job.department_account_access))
@@ -538,7 +538,7 @@ SUBSYSTEM_DEF(job)
 		if(pref_spawn)
 			SP = get_spawn_point(pref_spawn, late = TRUE)
 		else
-			SP = get_spawn_point(maps_data.default_spawn, late = TRUE)
+			SP = get_spawn_point(GLOB.maps_data.default_spawn, late = TRUE)
 			to_chat(H, SPAN_WARNING("You have not selected spawnpoint in preference menu."))
 	else
 		SP = get_spawn_point(rank)

@@ -1068,3 +1068,25 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		rad = 25
 	)
 	price_tag = 50
+
+/obj/item/clothing/suit/armor/paramedic
+	name = "advanced paramedic armor"
+	desc = "Lightwieght and moderatily armored suit meant to be used to rush into danger to save lives."
+	icon_state = "trauma_team"
+	item_state = "trauma_team"
+	matter = list(
+		MATERIAL_PLASTEEL = 10,
+		MATERIAL_STEEL = 5,
+		MATERIAL_PLASTIC = 5,
+		MATERIAL_PLATINUM = 3
+		)
+	armor = list(
+		melee = 30,
+		bullet = 30,
+		energy = 30,
+		bomb = 10,
+		bio = 100,
+		rad = 50
+	)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	slowdown = -0.3
