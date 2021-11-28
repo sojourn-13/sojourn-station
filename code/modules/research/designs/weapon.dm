@@ -45,6 +45,9 @@
 	name = "\"Centauri\" Energy PDW"
 	build_path = /obj/item/gun/energy/centauri
 
+/datum/design/research/item/weapon/clarissa
+	build_path = /obj/item/gun/projectile/clarissa/moebius
+
 /datum/design/research/item/weapon/decloner
 	name = "Prototype: Biological Demolecularizer"
 	build_path = /obj/item/gun/energy/decloner
@@ -90,6 +93,14 @@
 	name = "'Mark II' environmental protection helmet"
 	desc = "You feel like this helmet is cheap, for some reason."
 	build_path = /obj/item/clothing/head/helmet/soteriasuit
+
+/datum/design/research/item/paramedic_armor
+	name = "Paramedic armor"
+	build_path = /obj/item/clothing/suit/armor/paramedic
+
+/datum/design/research/item/paramedic_helmet
+	name = "Advanced paramedic helmet"
+	build_path = /obj/item/clothing/head/helmet/faceshield/paramedic
 
 /datum/design/research/item/clothing/armor_laserproof
 	name = "Reflector armor vest"

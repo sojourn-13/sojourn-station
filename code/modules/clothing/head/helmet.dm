@@ -845,3 +845,113 @@
 		bio = 0,
 		rad = 0
 	)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic
+	name = "Advanced paramedic helmet"
+	desc = "A smart helmet that aids in medical tracking."
+	icon_state = "trauma_team"
+	item_state = "trauma_team"
+	flags_inv = HIDEEARS|BLOCKHAIR
+	item_flags = BLOCK_GAS_SMOKE_EFFECT|AIRTIGHT
+	matter = list(
+		MATERIAL_PLASTEEL = 10,
+		MATERIAL_GLASS = 5,
+		MATERIAL_PLASTIC = 5,
+		MATERIAL_PLATINUM = 2
+		)
+	armor_up = list(
+		melee = 5,
+		bullet = 20,
+		energy = 10,
+		bomb = 10,
+		bio = 100,
+		rad = 50
+		)
+
+	armor_down = list(
+		melee = 25,
+		bullet = 25,
+		energy = 25,
+		bomb = 20,
+		bio = 100,
+		rad = 50)
+	up = TRUE
+	var/speaker_enabled = TRUE
+	var/scan_scheduled = FALSE
+	var/scan_interval = 15 SECONDS
+	var/repeat_report_after = 60 SECONDS
+	var/list/crewmembers_recently_reported = list()
+
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/equipped(mob/M)
+	. = ..()
+	schedule_scan()
+
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/schedule_scan()
+	if(scan_scheduled)
+		return
+
+	if(!speaker_enabled)
+		return
+
+	scan_scheduled = TRUE
+	spawn(scan_interval)
+		if(QDELETED(src))
+			return
+		scan_scheduled = FALSE
+		report_health_alerts()
+
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/schedule_memory_cleanup(entry)
+	spawn(repeat_report_after)
+		if(QDELETED(src))
+			return
+		crewmembers_recently_reported.Remove(entry)
+
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/report_health_alerts()
+	if(!speaker_enabled)
+		return
+
+	if(!ishuman(loc))
+		return
+
+	var/mob/living/carbon/human/user = loc
+
+	var/list/crewmembers = list()
+	var/list/z_levels_to_scan = list(1, 2, 3, 4, 5, 8, 9)
+
+	for(var/z_level in z_levels_to_scan)
+		crewmembers += crew_repository.health_data(z_level)
+
+	if(crewmembers.len)
+		for(var/i = 1, i <= crewmembers.len, i++)
+			var/list/entry = crewmembers[i]
+			if(entry["alert"])
+				if(entry["name"] in crewmembers_recently_reported)
+					continue
+				crewmembers_recently_reported += entry["name"]
+				schedule_memory_cleanup(entry["name"])
+				to_chat(user, SPAN_WARNING("[src] beeps: '[entry["name"]]'s on-suit sensors broadcast an emergency signal. Access monitoring software for details.'"))
+
+	schedule_scan()
+
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
+	toogle_speaker()
+
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toogle_speaker()
+	set name = "Toogle helmet's speaker"
+	set category = "Object"
+	set src in usr
+
+	if(speaker_enabled)
+		to_chat(usr, SPAN_WARNING("[src] beeps: 'Notifications disabled.'"))
+		speaker_enabled = FALSE
+	else
+		to_chat(usr, SPAN_WARNING("[src] beeps: 'Notifications enabled.'"))
+		speaker_enabled = TRUE
+		report_health_alerts()
+		schedule_scan()

@@ -1,6 +1,6 @@
 /datum/technology/basic_combat
 	name = "Basic Combat Systems"
-	desc = "Basic combat systems and integration of security database HUD in glasses."
+	desc = "Basic combat systems and integration of security database HUD in glasses. As well as a low power pistol"
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.1
@@ -11,7 +11,8 @@
 	required_tech_levels = list()
 	cost = 0
 
-	unlocks_designs = list(/datum/design/research/item/clothing/security)
+	unlocks_designs = list(/datum/design/research/item/clothing/security,
+							/datum/design/research/item/weapon/clarissa)
 
 // TO ADD: synth flashes?
 /datum/technology/basic_nonlethal
@@ -294,6 +295,8 @@
 
 	unlocks_designs = list(/datum/design/research/item/clothing/medarmor,
 							/datum/design/research/item/clothing/armor_laserproof,
+							/datum/design/research/item/paramedic_armor,
+							/datum/design/research/item/paramedic_helmet,
 							/datum/design/research/item/clothing/rig_advhazmat)
 
 /datum/technology/advanced_unstable_plasma_weapons

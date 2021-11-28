@@ -21,7 +21,7 @@
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	belt = /obj/item/storage/belt/medical
 	glasses = /obj/item/clothing/glasses/hud/health
-	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1)
+	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/modular_computer/tablet/moebius)
 
 /decl/hierarchy/outfit/job/medical/doctor
 	name = OUTFIT_JOB_NAME("Soteria - Medical Doctor")
@@ -30,7 +30,7 @@
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	belt = /obj/item/storage/belt/medical
-	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1)
+	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/modular_computer/tablet/moebius)
 
 /decl/hierarchy/outfit/job/medical/trauma_team
 	name = OUTFIT_JOB_NAME("Soteria - Trauma Team")
@@ -45,7 +45,7 @@
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/handcuffs
-	backpack_contents = list(/obj/item/rig/trauma_suit/equipped = 1, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/storage/firstaid/soteria/large = 1, /obj/item/gun/energy/sst/formatbound = 1, /obj/item/cell/medium/moebius/high = 2, /obj/item/ammo_magazine/smg_35/hv = 2)
+	backpack_contents = list(/obj/item/rig/trauma_suit/equipped = 1, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/storage/firstaid/soteria/large = 1, /obj/item/gun/energy/sst/formatbound = 1, /obj/item/cell/medium/moebius/high = 2, /obj/item/ammo_magazine/smg_35/hv = 2, /obj/item/modular_computer/tablet/moebius)
 	suit_store = /obj/item/gun/projectile/automatic/c20r/sci
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
