@@ -506,6 +506,7 @@
 	taste_description = "banana"
 	color = "#c3b000a9"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "banana"
 	glass_name = "banana juice"
 	glass_desc = "The raw essence of a banana. HONK!"
@@ -517,6 +518,7 @@
 	taste_description = "berries"
 	color = "#990066d0"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "berryjuice"
 	glass_name = "berry juice"
 	glass_desc = "Berry juice. Or maybe it's jam. Who cares?"
@@ -528,6 +530,7 @@
 	taste_description = "carrots"
 	color = "#FF8C00d0" // rgb: 255, 140, 0
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "carrotjuice"
 	glass_name = "carrot juice"
 	glass_desc = "It is just like a carrot but without crunching."
@@ -543,6 +546,7 @@
 	taste_description = "grapes"
 	color = "#863333d0"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "grapejuice"
 	glass_name = "grape juice"
 	glass_desc = "It's grrrrrape!"
@@ -555,6 +559,7 @@
 	taste_mult = 1.1
 	color = "#AFAF00d0"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "lemonjuice"
 	glass_name = "lemon juice"
 	glass_desc = "Sour..."
@@ -582,6 +587,7 @@
 	taste_description = "oranges"
 	color = "#E78108d0"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "glass_orange"
 	glass_name = "orange juice"
 	glass_desc = "Vitamins! Yay!"
@@ -598,6 +604,7 @@
 	color = "#863353d0"
 	strength = 5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "poisonberryjuice"
 	glass_name = "poison berry juice"
 	glass_desc = "Looks like some deadly juice."
@@ -611,6 +618,7 @@
 	nutrition = 2
 	color = "#302000d0"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "glass_brown"
 	glass_name = "potato juice"
 	glass_desc = "Juice from a potato. Bleh."
@@ -622,6 +630,7 @@
 	taste_description = "tomatoes"
 	color = "#731008d0"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "glass_red"
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
@@ -637,6 +646,7 @@
 	taste_description = "sweet watermelon"
 	color = "#b83333b7"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "glass_red"
 	glass_name = "watermelon juice"
 	glass_desc = "Delicious juice made from watermelon."
@@ -661,6 +671,7 @@
 	taste_description = "milk"
 	color = "#DFDFDF"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "glass_white"
 	glass_name = "milk"
 	glass_desc = "White and nutritious goodness!"
@@ -677,6 +688,7 @@
 	taste_description = "strawberry milk"
 	color = "#DFDFDF"
 
+	glass_unique_appearance = FALSE
 	glass_icon_state = "glass_red"
 	glass_name = "strawberry milk"
 	glass_desc = "Strawberry sweet and lactose goodness!"
@@ -688,6 +700,7 @@
 	taste_description = "chocolate milk"
 	color = "#DFDFDF"
 
+	glass_unique_appearance = FALSE
 	glass_icon_state = "chocolateglass"
 	glass_name = "Chocolate milk"
 	glass_desc = "Chocolate and lactose goodness!"
@@ -722,6 +735,7 @@
 	color = "#aee5e4e1"
 	adj_temp = -9
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "milkshake"
 	glass_name = "milkshake"
 	glass_desc = "Glorious brain-freezing mixture."
@@ -734,6 +748,8 @@
 	color = "#DFD7AF"
 	taste_description = "melted icecream"
 
+	glass_unique_appearance = FALSE
+
 /datum/reagent/drink/tea
 	name = "Tea"
 	id = "tea"
@@ -745,6 +761,7 @@
 	adj_sleepy = -3
 	adj_temp = 20
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "teaglass"
 	glass_name = "black tea"
 	glass_desc = "Tasty black tea. It has antioxidants; it's good for you!"
@@ -761,6 +778,7 @@
 	color = "#B43A00d0"
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "icedteaglass"
 	glass_name = "iced tea"
 	glass_desc = "No relation to a certain rap artist/ actor."
@@ -804,6 +822,7 @@
 	adj_temp = 25
 	overdose = 45
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "hot_coffee"
 	glass_name = "coffee"
 	glass_desc = "Don't drop it, or you'll send scalding liquid and glass shards everywhere."
@@ -1005,6 +1024,7 @@
 	nutrition = 2
 	adj_temp = 5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "chocolateglass"
 	glass_name = "hot chocolate"
 	glass_desc = "Made with love! And cocoa beans."
@@ -1019,6 +1039,7 @@
 	adj_drowsy = -3
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "glass_clear"
 	glass_name = "soda water"
 	glass_desc = "Soda water. Why not make a scotch and soda?"
@@ -1031,6 +1052,7 @@
 	color = "#421C52d0"
 	adj_drowsy = -3
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "gsodaglass"
 	glass_name = "grape soda"
 	glass_desc = "Looks like a delicious drink!"
@@ -1046,6 +1068,7 @@
 	adj_sleepy = -2
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "glass_clear"
 	glass_name = "tonic water"
 	glass_desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
@@ -1058,6 +1081,7 @@
 	color = "#FFFF00d0"
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "lemonadeglass"
 	glass_name = "lemonade"
 	glass_desc = "Oh the nostalgia..."
@@ -1070,6 +1094,7 @@
 	color = "#CCCC99d0"
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "kiraspecial"
 	glass_name = "Kira Special"
 	glass_desc = "Long live the guy who everyone had mistaken for a girl. Baka!"
@@ -1083,6 +1108,7 @@
 	color = "#9F3400d0"
 	adj_temp = -2
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "brownstar"
 	glass_name = "Brown Star"
 	glass_desc = "It's not what it sounds like..."
@@ -1095,6 +1121,7 @@
 	color = "#485000d0"
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "rewriter"
 	glass_name = "Rewriter"
 	glass_desc = "The secret of the sanctuary of the Librarian..."
@@ -1114,6 +1141,7 @@
 	adj_sleepy = -2
 	nerve_system_accumulations = 50
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "nuka_colaglass"
 	glass_name = "Nuka-Cola"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland"
@@ -1134,6 +1162,7 @@
 	taste_description = "100% pure pomegranate"
 	color = "#FF004Fd0"
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "grenadineglass"
 	glass_name = "grenadine syrup"
 	glass_desc = "Sweet and tangy, a bar syrup used to add color or flavor to drinks."
@@ -1163,6 +1192,7 @@
 	adj_sleepy = -1
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "Space_mountain_wind_glass"
 	glass_name = "Space Mountain Wind"
 	glass_desc = "Space Mountain Wind. As you know, there are no mountains in space, only wind."
@@ -1188,6 +1218,7 @@
 	color = "#202800d0"
 	adj_temp = -8
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "space-up_glass"
 	glass_name = "Space-up"
 	glass_desc = "Space-up. It helps keep your cool."
@@ -1200,6 +1231,7 @@
 	color = "#878F00d0"
 	adj_temp = -8
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "lemonlime"
 	glass_name = "lemon lime soda"
 	glass_desc = "A tangy substance made of 0.5% natural citrus!"
@@ -1253,6 +1285,7 @@
 	color = "#619494"
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "iceglass"
 	glass_name = "ice"
 	glass_desc = "Generally, you're supposed to put something else in there too..."
@@ -1270,6 +1303,7 @@
 	color = "#33EE00d0"
 	strength = 12
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "absintheglass"
 	glass_name = "absinthe"
 	glass_desc = "Wormwood, anise, oh my."
@@ -1283,6 +1317,7 @@
 	color = "#664300d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "aleglass"
 	glass_name = "ale"
 	glass_desc = "A freezing pint of delicious ale"
@@ -1297,6 +1332,7 @@
 	strength = 35
 	nutriment_factor = 1
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "beerglass"
 	glass_name = "beer"
 	glass_desc = "A freezing pint of beer"
@@ -1315,6 +1351,7 @@
 	strength = 60
 	adj_temp = -5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "Kvass_Glass"
 	glass_name = "Kvass"
 	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder than normal."
@@ -1328,6 +1365,7 @@
 	color = "#0000CDd0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "curacaoglass"
 	glass_name = "blue curacao"
 	glass_desc = "Exotically blue, fruity drink, distilled from oranges."
@@ -1341,6 +1379,7 @@
 	color = "#E33232d0" // rgb: 227, 50, 50
 	strength = 10
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "alco-redglass"
 	glass_name = "Mister Red"
 	glass_desc = "Candy is dandy but liquor is quicker."
@@ -1354,6 +1393,7 @@
 	color = "#FFFFFFd0" // rgb: 255, 255, 255
 	strength = 40
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "alco-whiteglass"
 	glass_name = "Rigingu"
 	glass_desc = "A alcohol drink from Japanese origin known for being salty."
@@ -1367,6 +1407,7 @@
 	color = "#FFFFFFd0" // rgb: 255, 255, 255
 	strength = 200 //Oh no
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "miss_fortuneglass"
 	glass_name = "Miss Fortune"
 	glass_desc = "A mix of many colors that somehow tastes good."
@@ -1382,6 +1423,7 @@
 	color = "#AB3C05d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "cognacglass"
 	glass_name = "cognac"
 	glass_desc = "Damn, you feel like some kind of French aristocrat just by holding this."
@@ -1395,6 +1437,7 @@
 	color = "#664300d0"
 	strength = 30
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "rumglass"
 	glass_name = "rum"
 	glass_desc = "Popular with the sailors. Not very popular with everyone else."
@@ -1441,6 +1484,7 @@
 	color = "#664300d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "kahluaglass"
 	glass_name = "RR coffee liquor"
 	glass_desc = "DAMN, THIS THING LOOKS ROBUST"
@@ -1454,6 +1498,7 @@
 	color = "#138808d0" // rgb: 19, 136, 8
 	strength = 30
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "emeraldglass"
 	glass_name = "melon liquor"
 	glass_desc = "A relatively sweet and fruity 46 proof liquor."
@@ -1468,6 +1513,7 @@
 	color = "#664300d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "rumglass"
 	glass_name = "rum"
 	glass_desc = "Now you want to Pray for a pirate suit, don't you?"
@@ -1494,6 +1540,7 @@
 	color = "#FFFF91d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "tequillaglass"
 	glass_name = "Tequila"
 	glass_desc = "Now where's the salt and lemon?"
@@ -1508,6 +1555,7 @@
 	strength = 25
 	nutriment_factor = 1
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "thirteen_loko_glass"
 	glass_name = "Thirteen Loko"
 	glass_desc = "This is a container of Thirteen Loko, it appears to be of the highest quality. The drink, not the container."
@@ -1529,6 +1577,7 @@
 	color = "#91FF91d0" // rgb: 145, 255, 145
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "vermouthglass"
 	glass_name = "vermouth"
 	glass_desc = "You wonder why you're even drinking this straight."
@@ -1542,6 +1591,7 @@
 	color = "#358adfd0" // rgb: 0, 100, 200
 	strength = 5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "ginvodkaglass"
 	glass_name = "vodka"
 	glass_desc = "Number one drink and fueling choice for Russians worldwide."
@@ -1559,6 +1609,7 @@
 	color = "#664300d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "whiskeyglass"
 	glass_name = "whiskey"
 	glass_desc = "The silky, smoky whiskey goodness inside makes the drink look very classy."
@@ -1572,6 +1623,7 @@
 	color = "#7E4043d0" // rgb: 126, 64, 67
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "wineglass"
 	glass_name = "wine"
 	glass_desc = "A very classy looking drink."
@@ -1585,6 +1637,7 @@
 	color = "#7E4043d0" // rgb: 126, 64, 67
 	strength = 30
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "wineglass"
 	glass_name = "cahors"
 	glass_desc = "It looks like wine, but more dark."
@@ -1619,6 +1672,7 @@
 	color = "#00664dd0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "alliescocktail"
 	glass_name = "Allies cocktail"
 	glass_desc = "A drink made from your allies."
@@ -1632,6 +1686,7 @@
 	color = "#192c00d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "aloe"
 	glass_name = "Aloe"
 	glass_desc = "Very, very, very good."
@@ -1646,6 +1701,7 @@
 	color = "#124da7d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "amasecglass"
 	glass_name = "Amasec"
 	glass_desc = "Always handy before COMBAT!!!"
@@ -1659,6 +1715,7 @@
 	color = "#665700d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "andalusia"
 	glass_name = "Andalusia"
 	glass_desc = "A nice, strange named drink."
@@ -1674,6 +1731,7 @@
 	adj_temp = 20
 	targ_temp = 330
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "antifreeze"
 	glass_name = "Anti-freeze"
 	glass_desc = "The ultimate refreshment."
@@ -1750,6 +1808,7 @@
 	color = "#664300d0"
 	strength = 10
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "b&p"
 	glass_name = "Barefoot"
 	glass_desc = "Barefoot and pregnant"
@@ -1783,6 +1842,7 @@
 	strength = 40
 	nutriment_factor = 2
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "glass_brown"
 	glass_name = "bilk"
 	glass_desc = "A brew of milk and beer. For those alcoholics who fear osteoporosis."
@@ -1810,6 +1870,7 @@
 	color = "#660000d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "bloodymaryglass"
 	glass_name = "Bloody Mary"
 	glass_desc = "Tomato juice, mixed with Vodka and a lil' bit of lime. Tastes like liquid murder."
@@ -1822,6 +1883,7 @@
 	color = "#8CFF8Cd0"
 	strength = 30
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "booger"
 	glass_name = "Booger"
 	glass_desc = "Ewww..."
@@ -1835,6 +1897,7 @@
 	color = "#664300d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "bravebullglass"
 	glass_name = "Brave Bull"
 	glass_desc = "Tequilla and coffee liquor, brought together in a mouthwatering mixture. Drink up."
@@ -1848,6 +1911,7 @@
 	color = "#2E6671"
 	strength = 5
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "changelingsting"
 	glass_name = "Changeling Sting"
 	glass_desc = "A stingy drink."
@@ -1860,6 +1924,7 @@
 	color = "#664300d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "martiniglass"
 	glass_name = "classic martini"
 	glass_desc = "Damn, the bartender even stirred it, not shook it."
@@ -1873,6 +1938,7 @@
 	color = "#3E1B00d0"
 	strength = 10
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "cubalibreglass"
 	glass_name = "Cuba Libre"
 	glass_desc = "A classic mix of rum and cola. Makes you want to scream 'VIVA!' at the top of your lungs."
@@ -1902,6 +1968,7 @@
 	color = "#A68310d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "devilskiss"
 	glass_name = "Devil's Kiss"
 	glass_desc = "Creepy time!"
@@ -1916,6 +1983,7 @@
 	color = "#2E6671d0"
 	strength = 12
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "driestmartiniglass"
 	glass_name = "Driest Martini"
 	glass_desc = "Only for the experienced. You think you see sand floating in the glass."
@@ -1929,6 +1997,7 @@
 	color = "#664300d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "ginfizzglass"
 	glass_name = "gin fizz"
 	glass_desc = "Refreshingly lemony, deliciously dry."
@@ -1943,6 +2012,7 @@
 	color = "#664300d0"
 	strength = 90
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "grogglass"
 	glass_name = "grog"
 	glass_desc = "A fine and cepa drink for Space."
@@ -1955,6 +2025,7 @@
 	color = "#2E6671d0"
 	strength = 10
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "erikasurprise"
 	glass_name = "Erika Surprise"
 	glass_desc = "The surprise is, it's green!"
@@ -1985,6 +2056,7 @@
 	color = "#004166d0"
 	strength = 20
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "gintonicglass"
 	glass_name = "gin and tonic"
 	glass_desc = "A mild but still great cocktail. Drink up, like a true Englishman."
@@ -2030,6 +2102,7 @@
 	strength = 1
 	toxicity = 2
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "hoochbottle"
 	glass_name = "Hooch"
 	glass_desc = "Prohibition can bite my shiny positronic behind."
@@ -2072,6 +2145,7 @@
 	color = "#664300d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "irishcoffeeglass"
 	glass_name = "Irish coffee"
 	glass_desc = "Coffee and alcohol. More fun than a Mimosa to drink in the morning."
@@ -2085,6 +2159,7 @@
 	color = "#664300d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "irishcreamglass"
 	glass_name = "Irish cream"
 	glass_desc = "It's cream, mixed with whiskey. What else would you expect from the Irish?"
@@ -2113,6 +2188,7 @@
 	color = "#664300d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "manhattanglass"
 	glass_name = "Manhattan"
 	glass_desc = "The Ranger's undercover drink of choice. They never could stomach gin..."
@@ -2127,6 +2203,7 @@
 	strength = 10
 	druggy = 30
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "proj_manhattanglass"
 	glass_name = "Manhattan Project"
 	glass_desc = "A scientist's drink of choice, for pondering ways to blow up the colony."
@@ -2140,6 +2217,7 @@
 	color = "#664300d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "manlydorfglass"
 	glass_name = "The Manly Dorf"
 	glass_desc = "A manly concoction made from Ale and Beer. Intended for true men only."
@@ -2152,6 +2230,7 @@
 	color = "#8CFF8Cd0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "margaritaglass"
 	glass_name = "margarita"
 	glass_desc = "On the rocks with salt on the rim. Arriba~!"
@@ -2167,6 +2246,7 @@
 	strength = 30
 	nutriment_factor = 1
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "meadglass"
 	glass_name = "mead"
 	glass_desc = "A Viking's beverage, though a cheap one."
@@ -2181,6 +2261,7 @@
 	color = "#664300d0"
 	strength = 12
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "moonshinebottle"
 	glass_name = "moonshine"
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night."
@@ -2215,6 +2296,7 @@
 	color = "#585840d0"
 	strength = 20
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "patronglass"
 	glass_name = "Patron"
 	glass_desc = "Drinking patron in the bar, with all the sub-par ladies."
@@ -2230,6 +2312,7 @@
 	druggy = 50
 	halluci = 10
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "pwineglass"
 	glass_name = "???"
 	glass_desc = "A black ichor with an oily purple sheer on top. Are you sure you should drink this?"
@@ -2258,6 +2341,7 @@
 	color = "#C73C00d0"
 	strength = 30
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "red_meadglass"
 	glass_name = "red mead"
 	glass_desc = "A true Viking's beverage, though its color is strange."
@@ -2286,6 +2370,7 @@
 	adj_temp = 50
 	targ_temp = 360
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "sbitenglass"
 	glass_name = "Sbiten"
 	glass_desc = "A spicy mix of Vodka and Peppers. Very hot."
@@ -2299,6 +2384,7 @@
 	color = "#A68310d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "screwdriverglass"
 	glass_name = "Screwdriver"
 	glass_desc = "A simple, yet superb mixture of Vodka and orange juice. Just the thing for the tired Adept."
@@ -2345,6 +2431,7 @@
 	color = "#FFFFFFd0"
 	strength = 20
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "snowwhite"
 	glass_name = "Snow White"
 	glass_desc = "A cold refreshment."
@@ -2358,6 +2445,7 @@
 	color = "#00A86Bd0"
 	strength = 50
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "sdreamglass"
 	glass_name = "Sui Dream"
 	glass_desc = "A froofy, fruity, and sweet mixed drink. Understanding the name only brings shame."
@@ -2371,6 +2459,7 @@
 	color = "#716c2ed0"
 	strength = 10
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "syndicatebomb"
 	glass_name = "Syndicate Bomb"
 	glass_desc = "Tastes like terrorism!"
@@ -2384,6 +2473,7 @@
 	color = "#FFE48Cd0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "tequillasunriseglass"
 	glass_name = "Tequilla Sunrise"
 	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Sol...if you ever lived there."
@@ -2429,6 +2519,7 @@
 	color = "#004666d0"
 	strength = 12
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "martiniglass"
 	glass_name = "vodka martini"
 	glass_desc ="A bastardization of the classic martini. Still great."
@@ -2442,6 +2533,7 @@
 	color = "#0064C8d0" // rgb: 0, 100, 200
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "vodkatonicglass"
 	glass_name = "vodka and tonic"
 	glass_desc = "For when a gin and tonic isn't Russian enough."
@@ -2470,6 +2562,7 @@
 	color = "#3E1B00d0"
 	strength = 25
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "whiskeycolaglass"
 	glass_name = "whiskey cola"
 	glass_desc = "An innocent-looking mixture of cola and Whiskey. Delicious."
@@ -2482,6 +2575,7 @@
 	color = "#533600d0"
 	strength = 15
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "whiskeysodaglass2"
 	glass_name = "whiskey soda"
 	glass_desc = "Ultimate refreshment."
@@ -2497,6 +2591,7 @@
 	strength_mod = 10
 	toxicity = 10
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "ginvodkaglass"
 	glass_name = "atomic vodka"
 	glass_desc = "Booze for true drunkards."
@@ -2515,6 +2610,7 @@
 	color = "#664300d0"
 	strength = 10
 
+	glass_unique_appearance = TRUE
 	glass_icon_state = "whiskeyglass"
 	glass_name = "Special Blend Whiskey"
 	glass_desc = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."

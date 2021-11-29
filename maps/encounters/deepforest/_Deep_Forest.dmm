@@ -2082,7 +2082,7 @@
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
 "hV" = (
-/obj/structure/multiz/stairs/enter/bottom{
+/obj/structure/multiz/stairs/active/bottom{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -11477,7 +11477,7 @@
 /turf/simulated/mineral/planet,
 /area/colony/exposedsun/pastgate)
 "SC" = (
-/obj/structure/multiz/stairs/active/bottom{
+/obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,

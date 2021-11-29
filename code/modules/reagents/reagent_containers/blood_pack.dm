@@ -20,7 +20,7 @@
 	icon_state = "bloodpack"
 	volume = 200
 	reagent_flags = OPENCONTAINER
-	filling_states = "-10;10;25;50;75;80;100"
+	filling_states = "25;50;75;100"
 	var/blood_type = null
 
 /obj/item/reagent_containers/blood/Initialize()
