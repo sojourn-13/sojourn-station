@@ -29,15 +29,15 @@
 			L.visible_message(SPAN_DANGER("\the [src] rams \the [L] off there feet!"))
 
 	. = ..()
+*/
 
-/mob/living/carbon/superior_animal/psi_monster/spitter/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior_animal/psi_monster/pus_maggot/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if(isliving(A))
 		var/mob/living/L = A
-		if(istype(L) && prob(50))
+		if(istype(L) && prob(75))
 			var/damage = rand(melee_damage_lower, melee_damage_upper)
-			L.damage_through_armor(damage, TOX)
-			playsound(src, 'sound/xenomorph/alien_help1.ogg', 50, 1, -3)
-			L.visible_message(SPAN_DANGER("\the [src] vomits up some toxic bile all over \the [L]!"))
-*/
+			L.damage_through_armor(damage, BURN)
+			playsound(src, burn_attack_sound, 50, 1, -3)
+			L.visible_message(SPAN_DANGER(burn_attack_text))

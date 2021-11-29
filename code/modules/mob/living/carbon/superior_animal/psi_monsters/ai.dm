@@ -1,10 +1,9 @@
 /mob/living/carbon/superior_animal/psi_monster/findTarget()
 	. = ..()
 	if(.)
-		//visible_emote("charges at [.]!") //commented out to reduce chat lag
-		if(last_noise <= (world.time += 10 SECONDS))
-			playsound(src.loc, list('sound/hallucinations/hell_screech.ogg'), 120, 1)
-			last_noise = world.time
+		if(last_noise <= (world.time) && aggro_noise)
+			playsound(src.loc, list(aggro_noise), 120, 1)
+			last_noise = world.time + 30 SECONDS
 		alpha = 255
 
 /mob/living/carbon/superior_animal/psi_monster/death(var/gibbed,var/message = deathmessage)

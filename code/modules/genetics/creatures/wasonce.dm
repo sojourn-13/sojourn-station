@@ -20,7 +20,7 @@ Has ability of every roach.
 	health = 2000
 	contaminant_immunity = TRUE
 
-	faction= "deepmaint"
+	faction= "psi_monster"
 	friendly_to_colony = FALSE
 
 	viewRange = 16

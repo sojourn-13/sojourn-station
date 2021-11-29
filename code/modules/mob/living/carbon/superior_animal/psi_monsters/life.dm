@@ -4,5 +4,5 @@
 	if(L.get_lumcount() < 0.8)
 		heal_overall_damage(1,1)
 		updatehealth()
-	if(health >= (maxHealth * 0.9) && (L.get_lumcount() <= 0.8))
-		alpha = 10
+	if(health >= (maxHealth * 0.9) && (L.get_lumcount() <= 0.8) && stance == HOSTILE_STANCE_IDLE)
+		alpha = chameleon_skill

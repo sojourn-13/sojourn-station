@@ -12,13 +12,14 @@
 	pass_flags = PASSTABLE
 
 	mob_size = MOB_LARGE
-	viewRange = 12
+	viewRange = 8
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 	maxHealth = 120
 	health = 120
 	randpixel = 0
 	attack_sound = 'sound/voice/insect_battle_bite.ogg'
+	var/aggro_noise = 'sound/hallucinations/hell_screech.ogg'
 	attack_sound_chance = 100
 	speak_emote = list("murmurs", "howls", "whispers")
 	emote_see = list("groans in pain.", "moans in agony.", "chitters madly!")
@@ -28,7 +29,7 @@
 	overkill_dust = 40
 
 	move_to_delay = 2
-	turns_per_move = 8
+	turns_per_move = 6
 	see_in_dark = 10
 	leather_amount = 0
 	bones_amount = 0
@@ -45,8 +46,9 @@
 	min_breath_poison_type = 0
 
 	var/poison_per_bite = 0
-	var/poison_type = "space_drugs"
+	var/poison_type = "mindmelter"
 	var/last_noise = -30000
+	var/chameleon_skill = 10
 	pass_flags = PASSTABLE
 	faction = "psi_monster"
 
