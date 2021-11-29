@@ -234,6 +234,8 @@
 		return 1
 
 /obj/item/stack/proc/add(var/extra)
+	if(amount < 1)
+		qdel(src)
 	if(!uses_charge)
 		if(amount + extra > get_max_amount())
 			return 0

@@ -93,7 +93,7 @@
 /datum/reagent/proc/consumed_amount_human(mob/living/carbon/human/consumer, alien, location)
 	var/removed
 	if(location == CHEM_INGEST)
-		var/calculated_buff = ((consumer.get_organ_efficiency(OP_LIVER) + consumer.get_organ_efficiency(OP_HEART) + consumer.get_organ_efficiency(OP_STOMACH)) / 3) / 100
+		var/calculated_buff = (consumer.get_organ_efficiency(OP_LIVER) + consumer.get_organ_efficiency(OP_HEART) + consumer.get_organ_efficiency(OP_STOMACH)) / 300
 		if(ingest_met)
 			removed = ingest_met * calculated_buff
 		else
@@ -103,7 +103,7 @@
 	// on half of overdose, chemicals will start be metabolized faster,
 	// also blood circulation affects chemical strength (meaining if target has low blood volume or has something that lowers blood circulation chemicals will be consumed less and effect will diminished)
 	if(location == CHEM_BLOOD)
-		var/calculated_buff = ((consumer.get_organ_efficiency(OP_LIVER) + consumer.get_organ_efficiency(OP_HEART) * 2) / 3) / 100
+		var/calculated_buff = (consumer.get_organ_efficiency(OP_LIVER) + consumer.get_organ_efficiency(OP_HEART)) / 200
 		if(!constant_metabolism)
 			if(overdose)
 				removed = CLAMP(metabolism * volume/(overdose/2) * consumer.get_blood_circulation()/100 * calculated_buff, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
