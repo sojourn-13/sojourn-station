@@ -30,8 +30,8 @@
 					/obj/item/device/scanner/gas = 5,
 					/obj/item/device/t_scanner = 5,
 					/obj/item/tool/screwdriver = 5,
-					/obj/item/clothing/gloves/insulated/cheap = 2,
-					/obj/item/clothing/gloves/insulated = 1,
+					/obj/item/clothing/gloves/insulated/cheap = 4,
+					/obj/item/clothing/gloves/insulated = 2,
 					/obj/item/storage/pouch/engineering_tools = 2,
 					/obj/item/storage/pouch/engineering_supply = 2,
 					/obj/item/weldpack/canister = 4,
@@ -118,8 +118,8 @@
 					/obj/item/cell/large = 500,
 					/obj/item/tool/weldingtool = 40,
 					/obj/item/clothing/head/welding = 80,
-					/obj/item/weldpack/canister = 200,
-					/obj/item/weldpack = 300,
+					/obj/item/weldpack/canister = 100,
+					/obj/item/weldpack = 200,
 					/obj/item/light/tube = 10,
 					/obj/item/clothing/suit/fire = 150,
 					/obj/item/stock_parts/scanning_module = 40,
@@ -183,6 +183,8 @@
 					 /obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 5,
 					 /obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 2,
 					 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 10,
+					 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 2,
+					 /obj/item/computer_hardware/hard_drive/portable/design/guns/survivalrifle = 2,
 					 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 3,
 					 /obj/item/circuitboard/autolathe = 3,
 					 /obj/item/circuitboard/vending = 10)
@@ -198,13 +200,15 @@
 				 /obj/item/computer_hardware/hard_drive/portable/design/medical = 200,
 				 /obj/item/computer_hardware/hard_drive/portable/design/computer = 250,
 				 /obj/item/computer_hardware/hard_drive/portable/design/security = 300,
-				 /obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 1500,
-				 /obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 1000,
+				 /obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 500,
+				 /obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 600,
 				 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 350,
+				 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 850,
+				 /obj/item/computer_hardware/hard_drive/portable/design/guns/survivalrifle = 750,
 				 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 300,
 				 /obj/item/circuitboard/autolathe = 350,
 				 /obj/item/circuitboard/vending = 200,
-				 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 500)
+				 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 400)
 
 //This one's from bay12
 /obj/machinery/vending/plasmaresearch
