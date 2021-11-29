@@ -584,6 +584,18 @@
 /obj/item/stack/nanopaste,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"cs" = (
+/obj/structure/table/rack,
+/obj/random/gun_normal,
+/obj/random/gun_normal,
+/obj/random/gun_normal,
+/obj/random/dungeon_gun_mods/low_chance,
+/obj/random/dungeon_gun_mods/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/prepper)
 "ct" = (
 /mob/living/simple_animal/hostile/hivebot,
 /turf/unsimulated/mineral,
@@ -1561,6 +1573,9 @@
 	pixel_y = 30
 	},
 /obj/random/mob/prepper,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
 "fV" = (
@@ -1768,7 +1783,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper)
 "gM" = (
-/obj/structure/multiz/stairs/enter,
+/obj/structure/multiz/stairs/active,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/dungeon/outside/prepper)
 "gN" = (
@@ -2076,7 +2091,7 @@
 /area/nadezhda/dungeon/outside/zoo)
 "hV" = (
 /obj/structure/multiz/stairs/active/bottom,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper)
 "hW" = (
 /turf/simulated/floor/asteroid/grass,
@@ -10572,10 +10587,7 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
 "Oi" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/multiz/stairs/active,
+/obj/structure/multiz/stairs/enter,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/dungeon/outside/prepper)
 "Oj" = (
@@ -11462,7 +11474,7 @@
 /area/colony/exposedsun/pastgate)
 "SC" = (
 /obj/structure/multiz/stairs/enter/bottom,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper)
 "SD" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -60205,7 +60217,7 @@ fF
 fD
 fC
 fC
-gJ
+cs
 SX
 OM
 gJ
