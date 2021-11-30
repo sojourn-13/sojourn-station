@@ -401,20 +401,20 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 	//if(breath)
 	//	loc.assume_air(breath) //by default, exhale
 
-/mob/living/carbon/superior_animal/handle_fire()
-	if(..())
-		return
-
-	var/burn_temperature = fire_burn_temperature()
-	var/thermal_protection = get_heat_protection(burn_temperature)
-
-	if (thermal_protection < 1 && bodytemperature < burn_temperature)
-		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
-	if(stat == DEAD)
-		spawn(900)//how much time it takes to dust a corpse, in tenths of second
-		//90 seconds || 1min 30seconds
-		if(stat == DEAD) //Double check were not dusting something that has been revived
-			dust()
+/mob/living/carbon/superior_animal/handle_fire(flammable_gas, turf/location)
+	// if its lower than 0 , just bring it back to 0
+	fire_stacks = fire_stacks > 0 ? min(0, ++fire_stacks) : fire_stacks
+	// branchless programming , faster than conventional the more we avoid if checks
+	var/handling_needed = on_fire && (fire_stacks < 0 || flammable_gas < 1)
+	if(handling_needed)
+		ExtinguishMob() //Fire's been put out.
+		return TRUE
+	if(!on_fire)
+		return FALSE
+	adjustFireLoss(2 * bodytemperature / max_bodytemperature) // scaling with how much you are over your body temp
+	bodytemperature += fire_stacks * 5 // 5 degrees per firestack
+	if(isturf(location))
+		location.hotspot_expose( FIRESTACKS_TEMP_CONV(fire_stacks), 50, 1)
 
 /mob/living/carbon/superior_animal/update_fire()
 	cut_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
