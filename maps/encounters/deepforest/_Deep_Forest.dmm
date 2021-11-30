@@ -585,9 +585,16 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cs" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/mob/prepper,
-/turf/simulated/floor/tiled/dark/bluecorner,
+/obj/structure/table/rack,
+/obj/random/gun_normal,
+/obj/random/gun_normal,
+/obj/random/gun_normal,
+/obj/random/dungeon_gun_mods/low_chance,
+/obj/random/dungeon_gun_mods/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
 "ct" = (
 /mob/living/simple_animal/hostile/hivebot,
@@ -1566,6 +1573,9 @@
 	pixel_y = 30
 	},
 /obj/random/mob/prepper,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
 "fV" = (
@@ -1773,9 +1783,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper)
 "gM" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 1
-	},
+/obj/structure/multiz/stairs/active,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/dungeon/outside/prepper)
 "gN" = (
@@ -2082,10 +2090,8 @@
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
 "hV" = (
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
+/obj/structure/multiz/stairs/active/bottom,
+/turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper)
 "hW" = (
 /turf/simulated/floor/asteroid/grass,
@@ -2776,11 +2782,6 @@
 "ki" = (
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/white/panels,
-/area/nadezhda/dungeon/outside/prepper)
-"kk" = (
-/obj/random/junk,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/prepper)
 "kl" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -7647,7 +7648,7 @@
 /area/nadezhda/outside/meadow)
 "BZ" = (
 /obj/structure/salvageable/computer,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "Ca" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9994,7 +9995,7 @@
 /area/nadezhda/outside/one_star)
 "LA" = (
 /obj/structure/salvageable/implant_container,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "LB" = (
 /mob/living/simple_animal/schlorgo,
@@ -10360,7 +10361,7 @@
 "Ni" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/salvageable/bliss,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "Nj" = (
 /obj/structure/table/marble,
@@ -10586,12 +10587,7 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
 "Oi" = (
-/obj/structure/multiz/stairs/active{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/structure/multiz/stairs/enter,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/dungeon/outside/prepper)
 "Oj" = (
@@ -10659,7 +10655,7 @@
 /area/nadezhda/outside/one_star)
 "Oz" = (
 /obj/structure/salvageable/personal,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "OA" = (
 /obj/structure/flora/small/busha2,
@@ -11053,7 +11049,7 @@
 "QC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/salvageable/computer,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "QE" = (
 /obj/machinery/porta_turret/One_star{
@@ -11477,10 +11473,8 @@
 /turf/simulated/mineral/planet,
 /area/colony/exposedsun/pastgate)
 "SC" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
+/obj/structure/multiz/stairs/enter/bottom,
+/turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/prepper)
 "SD" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -13096,7 +13090,7 @@
 "ZD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/salvageable/machine,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "ZE" = (
 /obj/effect/decal/cleanable/rubble,
@@ -59614,11 +59608,11 @@ fO
 fC
 fC
 SX
-WY
-kk
-WY
-WY
-hK
+OM
+SX
+OM
+OM
+fX
 ip
 fC
 lo
@@ -59823,11 +59817,11 @@ jp
 fC
 fC
 Zy
-cs
+UW
 QC
 Oz
 LA
-WY
+OM
 la
 fC
 fX
@@ -60032,11 +60026,11 @@ fC
 fC
 fC
 OM
-WY
-WY
-WY
-WY
-OR
+OM
+OM
+OM
+OM
+Yd
 OM
 li
 fX
@@ -60223,7 +60217,7 @@ fF
 fD
 fC
 fC
-gJ
+cs
 SX
 OM
 gJ
@@ -60241,11 +60235,11 @@ fC
 fC
 fC
 OM
-cs
+UW
 ZD
 Ni
 QC
-OR
+Yd
 jm
 lj
 fX
@@ -60450,11 +60444,11 @@ CB
 YP
 fC
 OM
-kk
-WY
-WY
-hK
-WY
+SX
+OM
+OM
+fX
+OM
 fX
 fC
 jm
@@ -60659,11 +60653,11 @@ OM
 UW
 fC
 OM
-WY
+OM
 ZD
 BZ
 ZD
-kk
+SX
 fX
 fC
 gS
