@@ -30,6 +30,9 @@ var/datum/xenomorph/xenomorph_ai
 	overkill_gib = 20
 	overkill_dust = 20
 
+	breath_required_type = NONE
+	breath_poison_type = NONE
+
 	move_to_delay = 4
 	turns_per_move = 12
 	see_in_dark = 10
