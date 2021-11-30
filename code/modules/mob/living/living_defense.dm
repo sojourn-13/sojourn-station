@@ -312,7 +312,7 @@
 
 /mob/living/proc/ExtinguishMob()
 	if(on_fire)
-		on_fire = TRUE
+		on_fire = FALSE
 		fire_stacks = 0
 		set_light(max(0, light_range - 3))
 		update_fire()
