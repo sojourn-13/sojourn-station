@@ -1783,7 +1783,6 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper)
 "gM" = (
-/obj/structure/multiz/stairs/active,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/dungeon/outside/prepper)
 "gN" = (
@@ -2090,8 +2089,8 @@
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
 "hV" = (
-/obj/structure/multiz/stairs/active/bottom,
-/turf/simulated/floor/wood/wild4,
+/obj/structure/multiz/ladder/up,
+/turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper)
 "hW" = (
 /turf/simulated/floor/asteroid/grass,
@@ -10587,7 +10586,7 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
 "Oi" = (
-/obj/structure/multiz/stairs/enter,
+/obj/structure/multiz/ladder,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/dungeon/outside/prepper)
 "Oj" = (
@@ -11472,10 +11471,6 @@
 /obj/structure/flora/big/bush1,
 /turf/simulated/mineral/planet,
 /area/colony/exposedsun/pastgate)
-"SC" = (
-/obj/structure/multiz/stairs/enter/bottom,
-/turf/simulated/floor/wood/wild4,
-/area/nadezhda/dungeon/outside/prepper)
 "SD" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -17998,7 +17993,7 @@ ab
 ab
 Ok
 hV
-SC
+is
 is
 dT
 ZQ
