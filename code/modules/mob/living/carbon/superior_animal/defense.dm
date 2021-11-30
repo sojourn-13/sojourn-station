@@ -276,7 +276,7 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 		layer = LYING_MOB_LAYER
 
 	AI_inactive = TRUE //Optimation, were dead
-
+	density = 0 //In death were no longer blocking. 
 	. = ..()
 
 /mob/living/carbon/superior_animal/rejuvenate()
