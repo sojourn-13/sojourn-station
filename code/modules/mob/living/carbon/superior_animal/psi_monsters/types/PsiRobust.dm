@@ -75,6 +75,7 @@
 	wander = FALSE
 	environment_smash = FALSE
 	destroy_surroundings = FALSE
+	turns_per_move = 4
 
 	ranged = TRUE
 	rapid = TRUE

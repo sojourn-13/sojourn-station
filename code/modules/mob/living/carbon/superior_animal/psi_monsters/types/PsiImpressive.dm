@@ -45,6 +45,7 @@
 	burn_attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	healing_factor = 0 // Head is a source of light.
 	light_range = 6 // Makes it harder for other psi monsters to regen. Because rage.
+	chameleon_skill = 155 // Has a harder time cloaking given its natural light.
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	attacktext = "clawed"
 
