@@ -7,29 +7,6 @@
 			L.reagents.add_reagent(poison_type, poison_per_bite)
 	alpha = 255
 
-/*
-/mob/living/carbon/superior_animal/psi_monster/warrior/bull/UnarmedAttack(var/atom/A, var/proximity)
-	if(isliving(A))
-		var/mob/living/L = A
-		if(istype(L) && !L.weakened && prob(15))
-			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
-				return
-			L.Weaken(3)
-			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
-
-	. = ..()
-
-/mob/living/carbon/superior_animal/psi_monster/warrior/bull/crusher/UnarmedAttack(var/atom/A, var/proximity)
-	if(isliving(A))
-		var/mob/living/L = A
-		if(istype(L) && !L.weakened && prob(30))
-			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
-				return
-			L.Weaken(8)
-			L.visible_message(SPAN_DANGER("\the [src] rams \the [L] off there feet!"))
-
-	. = ..()
-*/
 
 /mob/living/carbon/superior_animal/psi_monster/pus_maggot/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()

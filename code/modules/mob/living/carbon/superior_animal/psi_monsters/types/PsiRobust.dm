@@ -12,6 +12,7 @@
 	emote_see = list("chitters in greetings.", "whispers, \"Let me caress your flesh...\"", "twitches its antenni.")
 	poison_per_bite = 2
 	turns_per_move = 4 // Slow
+	attacktext = "punched"
 
 /mob/living/carbon/superior_animal/psi_monster/floating_nightmare
 	name = "hovering nightmare"
@@ -42,6 +43,7 @@
 	turns_per_move = 8
 	poison_per_bite = 1
 	poison_type = "xenotoxin"
+	attacktext = "tongued"
 
 /mob/living/carbon/superior_animal/psi_monster/memory
 	name = "memory"
@@ -55,3 +57,30 @@
 	melee_damage_upper = 31
 	emote_see = list("screams, \"They did this they did this!\"", "howls, \"They could have done something!\"", "whispers, \"I could have done somthing...\"", "groans, \"Kill me, please...\"", "weeps, \"It will never end.\"")
 	speak_chance = 15
+	attacktext = "stroked"
+
+/mob/living/carbon/superior_animal/psi_monster/flesh_tower
+	name = "flesh tower"
+	desc = "A billowing tower of flesh, oozing pus and acid. Thought to locate its targets psionically, though it seems incapable of seeing its own kind, often hitting and even killing them in its bid \
+	to end the lives of intruders in this realm. Something about this creature strikes you as familiar."
+	icon_state = "floaterx"
+	icon_living = "floaterx"
+
+	maxHealth = 140
+	health = 140
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+	emote_see = list("flexes!", "wriggles lewdly!", "oozes goo.")
+	anchored = TRUE
+	wander = FALSE
+	environment_smash = FALSE
+	destroy_surroundings = FALSE
+
+	ranged = TRUE
+	rapid = TRUE
+	comfy_range = 8
+	projectiletype = /obj/item/projectile/goo
+	projectilesound = 'sound/effects/creatures/acid_spit.ogg'
+	limited_ammo = FALSE
+	mag_drop = FALSE
+	attacktext = "slapped"

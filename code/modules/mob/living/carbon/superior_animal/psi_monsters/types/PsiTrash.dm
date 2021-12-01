@@ -16,6 +16,7 @@
 	emote_see = list("shuffles around discretely.", "warbles quietly.", "murmurs nonsense.")
 	chameleon_skill = 1
 	speak_chance = 2
+	attacktext = "clawed"
 
 /mob/living/carbon/superior_animal/psi_monster/thought_melter
 	name = "thought melter"
@@ -30,6 +31,7 @@
 	emote_see = list("garbles inane speech.", "howls with laughter!", "growls foul unintelligable words.")
 	speak_chance = 10
 	poison_per_bite = 1
+	attacktext = "caressed"
 
 /mob/living/carbon/superior_animal/psi_monster/pus_maggot
 	name = "pus maggot"
@@ -44,3 +46,4 @@
 	emote_see = list("drools acid onto the floor.", "wriggles in glee!", "rolls over!")
 	var/burn_attack_text = "vomits up some acidic pus all over!"
 	var/burn_attack_sound = 'sound/effects/splat.ogg'
+	attacktext = "gnawed"

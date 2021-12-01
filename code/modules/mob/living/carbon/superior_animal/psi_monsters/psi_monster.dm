@@ -25,8 +25,8 @@
 	emote_see = list("groans in pain.", "moans in agony.", "chitters madly!")
 	speak_chance = 5
 	deathmessage = "looses a guttural snarl as it crumbles to dust!"
-	overkill_gib = 40
-	overkill_dust = 40
+	overkill_gib = 0 // Set so we don't lose its death dust special clause.
+	overkill_dust = 0
 
 	move_to_delay = 2
 	turns_per_move = 6
@@ -49,8 +49,12 @@
 	var/poison_type = "mindmelter"
 	var/last_noise = -30000
 	var/chameleon_skill = 10
+	var/healing_factor = 1
 	pass_flags = PASSTABLE
 	faction = "psi_monster"
+
+	var/first_teleport = FALSE
+	var/second_teleport = FALSE
 
 	fleshcolor = "#3c0000"
 	bloodcolor = "#3c0000"
