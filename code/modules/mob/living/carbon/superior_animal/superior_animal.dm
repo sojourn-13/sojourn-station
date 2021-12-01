@@ -408,6 +408,8 @@
 	handle_cheap_chemicals_in_body()
 	if(!(ticks_processed%3))
 		// handle_status_effects() this is handled here directly to save a bit on procedure calls
+		if((weakened - 3 <= 1 && weakened > 1) || (stunned - 3 <= 1 && stunned > 1))
+			spawn(5) update_icons()
 		paralysis = max(paralysis-3,0)
 		stunned = max(stunned-3,0)
 		weakened = max(weakened-3,0)
