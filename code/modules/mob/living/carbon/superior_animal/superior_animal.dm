@@ -286,6 +286,8 @@
 			lying = buckled.buckle_lying
 	if(lying)
 		set_density(FALSE)
+	if(stat == DEAD)
+		set_density(FALSE)
 	else
 		canmove = TRUE
 		set_density(initial(density))
