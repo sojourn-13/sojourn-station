@@ -410,8 +410,12 @@
 		paralysis = max(paralysis-3,0)
 	if(stunned)
 		stunned = max(stunned-3,0)
+		if(stunned <= 0)
+			spawn (5) update_icons()
 	if(weakened)
 		weakened = max(weakened-3,0)
+		if(weakened <= 0 )
+			spawn(5) update_icons()
 
 /mob/living/carbon/superior_animal/proc/handle_cheap_regular_status_updates()
 	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
