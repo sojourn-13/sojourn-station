@@ -14,17 +14,6 @@
 			B.disabled = FALSE
 			B.replaced(head)
 
-/mob/proc/make_psion_psych()
-	var/mob/living/carbon/human/user = src
-	if(user.is_mannequin) //Quick return to stop them adding mages to mannequins
-		return
-	if(istype(user))
-		var/obj/item/organ/external/head = user.get_organ(BP_HEAD)
-
-		if(head)
-			var/obj/item/organ/internal/psionic_tumor/psychiatrist/B = new /obj/item/organ/internal/psionic_tumor/psychiatrist
-			B.disabled = FALSE
-			B.replaced(head)
 
 // Main process, this runs through all the needed checks for a psion. Removal of implants like cruciforms and synthetics are called here.
 // This also handles psi points limits and regeneration, the effect is dynamic so increases to cognition through things like stims and chems will update accordingly.
@@ -56,7 +45,19 @@
 			owner.show_message("\blue Your psionic power has been freed from its captivity!")
 			inhibited = FALSE
 
-		if(psi_points > max_psi_points && owner.stats.initialized == TRUE) //Tracks Deltas in Cog changing maximum psi, but also acts as a short circuit check for round-start psionics.
+		//Here we can call one-time functions that run once perks are done loading. You can make code that runs only once like adding owner verbs and so on here.
+		if(perks_initialized == FALSE && owner.stats.initialized == TRUE)
+			psi_points = max_psi_points
+
+			var/datum/perk/psi_psychology/shrink_perk = owner.stats.getPerk(PERK_PSI_PSYCHOLOGIST)
+			if(shrink_perk)
+				for(var/proc_path in shrink_perk.psi_perk_verbs)
+					owner_verbs |= proc_path //Add them to the owner verbs for recordkeeping (and later removal)
+					verbs |= proc_path //Add them to the verb list so players can USE the perks.
+
+			perks_initialized = TRUE
+
+		if(psi_points > max_psi_points) //Tracks Deltas in Cog changing maximum psi.
 			psi_points = max_psi_points
 
 		if(world.time > last_psi_point_gain)
@@ -73,6 +74,8 @@
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
 	disabled = TRUE
+	perks_initialized = FALSE //Resets psi points the next time it is inserted.
+	owner_verbs = initial(owner_verbs) //Removes potential psychologist traits so psychs and CBO's can't share their powers with the class
 
 // This proc removes all implants. Synthetic limbs and implants are exploded out of the body while organ_modules and synthetic organs are teleported away.
 /obj/item/organ/internal/psionic_tumor/proc/remove_synthetics()

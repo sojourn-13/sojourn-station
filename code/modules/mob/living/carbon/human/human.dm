@@ -1222,8 +1222,6 @@ var/list/rank_prefix = list(\
 			switch(I.implant_organ_type)
 				if("psionic tumor")
 					src.make_psion()
-				if("cultured tumor")
-					src.make_psion_psych()
 				if("nanogate")
 					src.give_nanogate("Standard")
 				if("artificer nanogate")

@@ -39,6 +39,12 @@
 	name = "Mind Master"
 	desc = "Your training as a Soteria psychologist and understanding of psychiatry has given you a deep understanding of how the mind works. As a result, if you became a psion, you have an \
 	expanded set of powers that aid you in your work, with additional essence to use your abilities."
+	var/list/psi_perk_verbs = list(
+		/obj/item/organ/internal/psionic_tumor/proc/peace_of_mind,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_brain,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_gift
+	)
 
 /datum/perk/psi_grace
 	name = "Psionic Grace"
