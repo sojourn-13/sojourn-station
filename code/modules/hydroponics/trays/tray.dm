@@ -7,6 +7,8 @@
 	reagent_flags = OPENCONTAINER
 	volume = 100
 
+	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion
+
 	var/mechanical = 1         // Set to 0 to stop it from drawing the alert lights.
 	var/base_name = "tray"
 

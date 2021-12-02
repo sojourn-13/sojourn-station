@@ -237,7 +237,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
+		for(var/obj/item/reagent_containers/borghypo/H in R.module.contents)
 			if(H.accepts_reagent_upgrades)
 				H.reagent_ids += additional_reagents
 				return TRUE
