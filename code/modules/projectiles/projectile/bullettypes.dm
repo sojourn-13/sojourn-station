@@ -72,7 +72,7 @@
 
 /obj/item/projectile/bullet/pistol_35/biomatter
 	name = "biomatter bullet"
-	damage_types = list(TOXIN = 18)
+	damage_types = list(TOX = 18)
 	agony = 20
 	armor_penetration = 0
 	penetrating = 0
@@ -152,7 +152,7 @@
 
 /obj/item/projectile/bullet/magnum_40/biomatter
 	name = "biomatter bullet"
-	damage_types = list(TOXIN = 26)
+	damage_types = list(TOX = 26)
 	agony = 32
 	armor_penetration = 0
 	penetrating = 0
