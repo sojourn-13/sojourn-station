@@ -122,6 +122,8 @@
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter = 3,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 4
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/lemant
@@ -140,6 +142,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		/datum/design/autolathe/ammo/shotgun_pellet = 2,
 		/datum/design/autolathe/ammo/shotgun = 2,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 3,
 		)
 
 //Church shotgun
@@ -273,7 +276,9 @@
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/gun/taser,
-		/datum/design/autolathe/gun/sniperrifle = 6
+		/datum/design/autolathe/gun/sniperrifle = 6,
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms
