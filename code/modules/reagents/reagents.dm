@@ -91,7 +91,7 @@
 	return removed
 
 /datum/reagent/proc/consumed_amount_human(mob/living/carbon/human/consumer, alien, location)
-	var/removed
+	var/removed = metabolism
 	if(location == CHEM_INGEST)
 		var/calculated_buff = (consumer.get_organ_efficiency(OP_LIVER) + consumer.get_organ_efficiency(OP_HEART) + consumer.get_organ_efficiency(OP_STOMACH)) / 300
 		if(ingest_met)
