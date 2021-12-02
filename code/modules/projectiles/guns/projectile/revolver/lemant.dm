@@ -31,7 +31,7 @@
 	icon = 'icons/obj/guns/projectile/lemant_claw.dmi'
 	icon_state = "lemant_claw"
 	item_state = "lemant_claw"
-	force = 20 // Up from 10, essentially a knife by harder to mod. -Kaz
+	force = WEAPON_FORCE_PAINFUL // Up from 10, essentially a knife by harder to mod. -Kaz
 	recoil_buildup = 3 //Addded weight, better control. -Kaz
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_BAYONET)
 
