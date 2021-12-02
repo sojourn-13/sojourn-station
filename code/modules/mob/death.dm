@@ -20,6 +20,7 @@
 		animation.master = src
 		flick(anim, animation)
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+	STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
 
 /mob/proc/check_delete(var/atom/movable/overlay/animation)
 	if(animation)	qdel(animation)
@@ -52,7 +53,7 @@
 		animation.master = src
 		flick(anim, animation)
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
-
+	STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
 
 /mob/proc/death(gibbed,deathmessage="seizes up and falls limp...",show_dead_message = "You have died.")
 	if(stat == DEAD)
@@ -117,8 +118,6 @@
 	updateicon()
 	to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
 	return 1
-
-
 
 
 //This proc retrieves the relevant time of death from
