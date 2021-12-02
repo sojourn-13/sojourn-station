@@ -21,7 +21,7 @@
 	max_blood_storage = 80
 	oxygen_req = 8
 	nutriment_req = 6
-	var/psi_points = 0 //psi_points start 0 so it can be increased in the psionic_tumor/Process() step once perks load.
+	var/psi_points = 0 //psi_points start at 0 so it can be increased in the psionic_tumor/Process() step once perks load.
 	var/max_psi_points = 0
 	var/disabled = TRUE //Whether or not the implant functions.
 	var/last_psi_point_gain
