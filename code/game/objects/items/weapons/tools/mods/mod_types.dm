@@ -838,7 +838,7 @@
 	name = "ballistic plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its ballistic resistance."
 	icon_state = "bullet"
-	matter = list(MATERIAL_PLASTEEL = 30)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10)
 	price_tag = 750
 
 /obj/item/tool_upgrade/armor/bullet/New()
@@ -854,7 +854,7 @@
 	name = "energy plating"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its energy resistance."
 	icon_state = "energy"
-	matter = list(MATERIAL_PLATINUM = 30)
+	matter = list(MATERIAL_PLATINUM = 3, MATERIAL_PLASTIC = 12)
 	price_tag = 1000
 
 /obj/item/tool_upgrade/armor/energy/New()
@@ -870,7 +870,7 @@
 	name = "bomb proofing"
 	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its bomb resistance."
 	icon_state = "bomb"
-	matter = list(MATERIAL_PLASTEEL = 20)
+	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 20)
 	price_tag = 450
 
 /obj/item/tool_upgrade/armor/bomb/New()
