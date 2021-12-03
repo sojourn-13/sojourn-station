@@ -14647,12 +14647,11 @@
 /obj/item/clothing/suit/armor/heavy/riot,
 /obj/item/clothing/suit/armor/heavy/riot,
 /obj/item/clothing/suit/armor/heavy/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical)
 "dwP" = (
