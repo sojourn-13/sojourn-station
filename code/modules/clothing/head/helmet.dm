@@ -776,7 +776,7 @@
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
 	armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
-	armor_down = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 
@@ -790,7 +790,8 @@
 	name = "maska helmet"
 	desc = "\"I do not know who I am, I don\'t know why I\'m here. All I know is that I must kill.\""
 	icon_state = "maska"
-	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
+	armor = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
+
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska/verb/toggle_style()
 	set name = "Adjust Style"
@@ -863,22 +864,8 @@
 		MATERIAL_PLASTIC = 5,
 		MATERIAL_PLATINUM = 2
 		)
-	armor_up = list(
-		melee = 5,
-		bullet = 20,
-		energy = 10,
-		bomb = 10,
-		bio = 100,
-		rad = 50
-		)
-
-	armor_down = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
-		bomb = 20,
-		bio = 100,
-		rad = 50)
+	armor_up = list(melee = 5, bullet = 20, energy = 10, bomb = 10, bio = 100, rad = 50)
+	armor = list(melee = 25, bullet = 25, energy = 25, bomb = 20, bio = 100, rad = 50)
 	up = TRUE
 	var/speaker_enabled = TRUE
 	var/scan_scheduled = FALSE
@@ -886,11 +873,9 @@
 	var/repeat_report_after = 60 SECONDS
 	var/list/crewmembers_recently_reported = list()
 
-
 /obj/item/clothing/head/helmet/faceshield/paramedic/equipped(mob/M)
 	. = ..()
 	schedule_scan()
-
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/proc/schedule_scan()
 	if(scan_scheduled)
@@ -941,10 +926,8 @@
 
 	schedule_scan()
 
-
 /obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
 	toogle_speaker()
-
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/verb/toogle_speaker()
 	set name = "Toogle helmet's speaker"
