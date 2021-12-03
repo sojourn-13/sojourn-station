@@ -6,7 +6,7 @@
 	organ_efficiency = list(BP_NANOGATE = 100)
 	parent_organ_base = BP_HEAD // It's at the base of the skull in the spine.
 	icon_state = "nanogate" //TODO: Replace this with a proper sprite.
-	force = 1.
+	force = 1
 	w_class = ITEM_SIZE_SMALL
 	specific_organ_size = 0.5
 	throwforce = 1
