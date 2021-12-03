@@ -39,6 +39,7 @@
 	R.pixel_x = 0
 	R.old_x = 0
 	R.default_pixel_x = 0
+	R.stats.removeAllPerks() //We dont want to stack perks on perks so we remove them all, sads
 
 	return TRUE
 

@@ -21,7 +21,7 @@ var/global/list/robot_modules = list(
 	name = "robot module"
 	icon = 'icons/obj/module.dmi'
 	icon_state = "std_module"
-	w_class = 100.0
+	w_class = 100
 	item_state = "electronic"
 	flags = CONDUCT
 	var/hide_on_manifest = FALSE
@@ -53,16 +53,16 @@ var/global/list/robot_modules = list(
 
 	//Module stats, these are applied to the robot
 	health = 200 //Max health. Apparently this is already defined in item.dm
-	var/speed_factor = 1.0 //Speed factor, applied as a divisor on movement delay
+	var/speed_factor = 1.3 //Speed factor, applied as a divisor on movement delay
 	var/power_efficiency = 1.0 //Power efficiency, applied as a divisor on power taken from the internal cell
 
 	//Stat modifiers for skillchecks
 	var/list/stat_modifiers = list(
 		STAT_BIO = 25,
 		STAT_COG = 120,
-		STAT_MEC = 15, //weldering cracks
-		STAT_ROB = 5,
-		STAT_TGH = 5,
+		STAT_MEC = 35, //weldering cracks
+		STAT_ROB = 15,
+		STAT_TGH = 15,
 	)
 
 	desc = "This is a robot module parent class. You shouldn't see this description"
@@ -293,6 +293,13 @@ var/global/list/robot_modules = list(
 	O.synths = list(medicine)
 	src.modules += B
 	src.modules += O
+
+	//We are stronk so we get less no knockdowns
+	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
+	//So we cant be escaped as quickly
+	R.stats.addPerk(PERK_PARKOUR)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 /obj/item/robot_module/standard/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -332,7 +339,7 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/medical/general
 	name = "medical robot module"
 	health = 180 //bit weaker
-	speed_factor = 1.0 //normal speed
+	speed_factor = 1.3 //normal speed
 	power_efficiency = 0.9 //Very poor, shackled to a charger
 	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,
 							  /obj/item/borg/upgrade/jetpack)
@@ -340,7 +347,7 @@ var/global/list/robot_modules = list(
 	stat_modifiers = list(
 		STAT_BIO = 60,
 		STAT_COG = 120,
-		STAT_MEC = 15, //weldering cracks
+		STAT_MEC = 35, //weldering cracks
 	)
 
 /obj/item/robot_module/medical/general/New(var/mob/living/silicon/robot/R)
@@ -394,6 +401,12 @@ var/global/list/robot_modules = list(
 	S.synths = list(medicine)
 	src.modules += S
 
+	//We know medical care and have all the data on it
+	R.stats.addPerk(PERK_MEDICAL_EXPERT)
+	R.stats.addPerk(PERK_SURGICAL_MASTER)
+	R.stats.addPerk(PERK_ADVANCED_MEDICAL)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 /obj/item/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -437,7 +450,7 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_eng"
 					)
 	health = 240 //Slightly above average
-	speed_factor = 1.1 //Slightly above average
+	speed_factor = 1.4 //Slightly above average
 	power_efficiency = 0.9 //Slightly below average
 
 	desc = "The engineering module is designed for setting up and maintaining core colony systems, \
@@ -536,6 +549,11 @@ var/global/list/robot_modules = list(
 	FWT.synths = list(wood)
 	src.modules += FWT
 
+	//We know guild work and robotics.
+	R.stats.addPerk(PERK_HANDYMAN)
+	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 
@@ -574,7 +592,7 @@ var/global/list/robot_modules = list(
 							 /obj/item/borg/upgrade/bigknife)
 
 	health = 320 //Very tanky!
-	speed_factor = 0.85 //Kinda slow
+	speed_factor = 1.15 //Kinda slow
 	power_efficiency = 1.55 //Decent, we are meant to be going out and learing spiders
 
 	desc = "Focused on keeping the peace and fighting off threats to the colony, the security module is a \
@@ -585,7 +603,7 @@ var/global/list/robot_modules = list(
 		STAT_TGH = 60,
 		STAT_BIO = 25,
 		STAT_COG = 120,
-		STAT_MEC = 15 //weldering cracks
+		STAT_MEC = 35 //weldering cracks
 	)
 
 /obj/item/robot_module/security/general
@@ -623,6 +641,13 @@ var/global/list/robot_modules = list(
 	//src.modules += new /obj/item/device/holowarrant(src)
 	//src.modules += new /obj/item/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
 	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
+
+	//We are stronk so we get less no knockdowns
+	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
+	//So we cant be escaped as quickly
+	R.stats.addPerk(PERK_PARKOUR)
+
+	R.stats.addPerk(PERK_SI_SCI)
 	..(R)
 
 /obj/item/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -661,7 +686,7 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_janitor"
 					)
 	health = 250 //Bulky
-	speed_factor = 1.15 //Fast
+	speed_factor = 1.45 //Fast
 	power_efficiency = 0.8 //Poor
 
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
@@ -673,7 +698,7 @@ var/global/list/robot_modules = list(
 		STAT_TGH = 25,
 		STAT_BIO = 30,
 		STAT_COG = 120,
-		STAT_MEC = 15 //weldering cracks
+		STAT_MEC = 35 //weldering cracks
 	)
 
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
@@ -698,6 +723,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.emag += new /obj/item/reagent_containers/spray/lube(src)
+
+	//Silent cleaners
+	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 /obj/item/robot_module/custodial/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -734,7 +764,7 @@ var/global/list/robot_modules = list(
 				  	)
 
 	health = 130 //fragile
-	speed_factor = 1.2 //Quick
+	speed_factor = 1.5 //Quick
 	power_efficiency = 1 //Base line
 
 	desc = "A lightweight unit designed to serve humans directly, in housekeeping, cooking, bartending, \
@@ -794,6 +824,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/reagent_containers/borghypo/service(src)
 	src.emag += new /obj/item/reagent_containers/food/drinks/bottle/small/beer_two(src)
 
+	//Seller and cleaner mix, so quite and knowing the deal!
+	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
+	R.stats.addPerk(PERK_MARKET_PROF)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 /obj/item/robot_module/service/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -820,7 +855,7 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_miner"
 				)
 	health = 250 //Pretty tough
-	speed_factor = 0.9 //meh
+	speed_factor = 1.2 //meh
 	power_efficiency = 1.5 //Best efficiency
 
 	stat_modifiers = list(
@@ -828,7 +863,7 @@ var/global/list/robot_modules = list(
 		STAT_TGH = 50,
 		STAT_BIO = 25,
 		STAT_COG = 120,
-		STAT_MEC = 30 //Drills
+		STAT_MEC = 50 //Drills
 	)
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
@@ -858,6 +893,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
+
+	//Seller so quite and knowing the deal!
+	R.stats.addPerk(PERK_MARKET_PROF)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 /obj/item/robot_module/research
@@ -874,7 +914,7 @@ var/global/list/robot_modules = list(
 					)
 
 	health = 160 //Weak
-	speed_factor = 1.0 //Average
+	speed_factor = 1.3 //Average
 	power_efficiency = 0.75 //Poor efficiency
 
 	desc = "Built for working in a well-equipped lab, and designed to handle a wide variety of research \
@@ -925,6 +965,13 @@ var/global/list/robot_modules = list(
 	N.charge_costs = list(1000)
 	N.synths = list(nanite)
 	src.modules += N
+
+	//We know medical and robotics, were a mix.
+	R.stats.addPerk(PERK_MEDICAL_EXPERT)
+	R.stats.addPerk(PERK_SURGICAL_MASTER)
+	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 
@@ -1018,6 +1065,12 @@ var/global/list/robot_modules = list(
 	var/obj/item/stack/material/cyborg/plastic/P = new (src)
 	P.synths = list(plastic)
 	src.modules += P
+
+	//We know guild work and robotics.
+	R.stats.addPerk(PERK_HANDYMAN)
+	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 /obj/item/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
