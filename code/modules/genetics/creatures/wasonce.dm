@@ -8,6 +8,7 @@ Has ability of every roach.
 	desc = "A burbling mass of bones, flesh, and regret. Its strength is matched only by the maddened suffering it endures."
 	icon = 'icons/mob/genetics/wasonce.dmi'
 	icon_state = "wasonce"
+	icon_living = "wasonce"
 	density = TRUE
 
 	//The poor bastard stuck inside this thing
@@ -19,14 +20,21 @@ Has ability of every roach.
 	maxHealth = 2000
 	health = 2000
 	contaminant_immunity = TRUE
+
+	// Psi_monster stuff.
 	chameleon_skill = 255 // Psionics not developed, can't turn invisible.
 	healing_factor = 25
+	size_pixel_offset_x = -16
 
 	faction= "psi_monster"
 	friendly_to_colony = FALSE
 
-	viewRange = 16
+	viewRange = 12
 	randpixel = 0
+	pixel_x = -16
+	pixel_y = 0
+	default_pixel_x = -16
+	default_pixel_y = 0
 
 	attacktext = "delivered a crushing blow to"
 
@@ -89,9 +97,6 @@ Has ability of every roach.
 				CI.uninstall()
 
 		akira.loc = src
-
-	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.
-	pixel_y = -16
 
 	//Start swinging right out the gate.
 	handle_ai()

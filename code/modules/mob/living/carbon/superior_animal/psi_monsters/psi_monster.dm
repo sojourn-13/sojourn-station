@@ -55,6 +55,7 @@
 
 	var/first_teleport = FALSE
 	var/second_teleport = FALSE
+	var/size_pixel_offset_x = 0
 
 	fleshcolor = "#3c0000"
 	bloodcolor = "#3c0000"
@@ -64,6 +65,19 @@
 	friendly_to_colony = FALSE
 
 	known_languages = list(LANGUAGE_COMMON)
+
+/mob/living/carbon/superior_animal/psi_monster/New()
+	..()
+	if(!icon_living)
+		icon_living = icon_state
+	if(!icon_dead)
+		icon_dead = "[icon_state]_dead"
+
+	objectsInView = new
+
+	verbs -= /mob/verb/observe
+	pixel_x = size_pixel_offset_x
+	pixel_y = 0
 
 /mob/living/carbon/superior_animal/psi_monster/slip(var/slipped_on,stun_duration=8)
 	return FALSE

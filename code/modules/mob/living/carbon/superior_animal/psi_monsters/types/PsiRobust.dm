@@ -14,7 +14,7 @@
 	turns_per_move = 4 // Slow
 	attacktext = "punched"
 
-/mob/living/carbon/superior_animal/psi_monster/floating_nightmare
+/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare
 	name = "hovering nightmare"
 	desc = "The hovering nightmare is a flying creature resembling a misshapen skull. It is fast, remaining low to the ground and moving quickly through the use of psionics and will. It's bite is \
 	far worse than its bark."
@@ -28,7 +28,7 @@
 	emote_see = list("begins to melt, blackened skin sloughing down its form until it pulls taught.", "howls, \"Birth, flesh, death, decay, birth, flesh, death, decay!\"", "howls in agony!")
 	turns_per_move = 10
 
-/mob/living/carbon/superior_animal/psi_monster/runner
+/mob/living/carbon/superior_animal/psi_monster/licker
 	name = "licker"
 	desc = "The licker, named for its long venom laced tongue. Some speculate that it was once an insect of some form, given its choice of venom, what is known that while fast it isn't that strong. \
 	What out for the fleshy pink thing it is to eager to touch you with."

@@ -18,8 +18,8 @@
 /mob/living/carbon/superior_animal/psi_monster/mind_gazer
 	name = "mind gazer"
 	desc = "One of the more twisted creatures in this other world, its origin unknown, but its nightmarish speed and strength greatly feared."
-	icon_state = "regugriator22"
-	icon_living = "regugriator22"
+	icon_state = "eelo"
+	icon_living = "eelo"
 
 	maxHealth = 400
 	health = 400
@@ -40,11 +40,11 @@
 	health = 600
 	melee_damage_lower = 25
 	melee_damage_upper = 30
-	emote_see = list("crackles and pops as its head burns!", "looses a haunting scream!", "claws at its head, trying to put out the fire!")
+	emote_see = list("crackles and pops as its head burns!", "looses a haunting scream!", "claws at its head, trying to put out the flames!")
 	burn_attack_text = "wreathes its claws in fire before striking!"
 	burn_attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	healing_factor = 0 // Head is a source of light.
-	light_range = 6 // Makes it harder for other psi monsters to regen. Because rage.
+	light_range = 4 // Makes it harder for other psi monsters to regen. Because rage.
 	chameleon_skill = 155 // Has a harder time cloaking given its natural light.
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	attacktext = "clawed"
@@ -78,15 +78,18 @@
 	health = 1000
 	chameleon_skill = 10
 	healing_factor = 10
+	pixel_x = 0
+	pixel_y =0
+	default_pixel_x = 0
+	default_pixel_y = 0
+	size_pixel_offset_x = 0
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/pitch_horror
+/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
 	desc = "Left to fester, to grow, to mutate into a terrible thing of eyes and teeth. What never should have been twisted into something unbearable to the minds of men. It comes and brings \
 	mutating horror in its wake. Only the light may halt its unnatural regeneration."
 	icon = 'icons/mob/psi_monsters.dmi'
 	icon_state = "hyper"
 	icon_living = "hyper"
-	chameleon_skill = 10
-	healing_factor = 50
 	maxHealth = 1500
 	health = 1500
