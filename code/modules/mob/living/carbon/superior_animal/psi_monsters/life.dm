@@ -9,7 +9,6 @@
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/Life()
 	. = ..()
-	log_and_message_admins("[src] DID HIS FUCKING LIFE TICK.")
 	if(health <= (maxHealth * 0.66) && first_teleport == FALSE)
 		var/turf/simulated/floor/target
 		var/list/validtargets = list()
