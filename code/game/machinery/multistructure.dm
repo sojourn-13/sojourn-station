@@ -108,6 +108,11 @@
 	// Will attempt to create MS on spawn
 	check_MS()
 
+/obj/machinery/multistructure/New()
+	. = ..()
+	// Will attempt to create MS on spawn
+	check_MS()
+
 
 /obj/machinery/multistructure/attackby(obj/item/I, mob/user)
 	check_MS()
