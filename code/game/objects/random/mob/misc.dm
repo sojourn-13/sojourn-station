@@ -82,6 +82,69 @@
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 60
 
+//psionic monsters
+/obj/random/mob/psi_monster
+	name = "random psi_monster"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/psi_monster/item_to_spawn()
+	return pickweight(list(/mob/living/carbon/superior_animal/psi_monster = 9,
+				//trash
+				/mob/living/carbon/superior_animal/psi_monster/memory_eater = 8,
+				/mob/living/carbon/superior_animal/psi_monster/thought_melter = 8,
+				/mob/living/carbon/superior_animal/psi_monster/pus_maggot = 8,
+				//robust
+				/mob/living/carbon/superior_animal/psi_monster/ponderous = 6,
+				/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare = 6,
+				/mob/living/carbon/superior_animal/psi_monster/licker = 6,
+				/mob/living/carbon/superior_animal/psi_monster/memory = 6,
+				/mob/living/carbon/superior_animal/psi_monster/flesh_tower = 6,
+				//impressive
+				/mob/living/carbon/superior_animal/psi_monster/flesh_behemoth = 2,
+				/mob/living/carbon/superior_animal/psi_monster/mind_gazer = 4,
+				/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo = 4,
+				/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher = 4,
+				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly = 3,
+				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror = 2,
+				))
+
+/obj/random/mob/psi_monster_mega_fauna
+	name = "random mega psi monster"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/psi_monster_mega_fauna/item_to_spawn()
+	return pickweight(list(/mob/living/carbon/superior_animal/psi_monster/dreaming_king = 1,
+				/mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown =1,
+				))
+
+/obj/random/mob/psi_monster/low_chance
+	name = "low chance random psi_monster"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/cluster/psi_monster
+	name = "cluster of psi_monsters"
+	icon_state = "hostilemob-brown-cluster"
+	alpha = 128
+	min_amount = 3
+	max_amount = 6
+	spread_range = 0
+
+/obj/random/cluster/psi_monster/item_to_spawn()
+	return /obj/random/mob/psi_monster
+
+/obj/random/cluster/psi_monster/low_chance
+	name = "low chance cluster of psi_monsters"
+	icon_state = "hostilemob-brown-cluster-low"
+	spawn_nothing_percentage = 60
+
+/obj/random/cluster/psi_monster/lower_chance
+	name = "lower chance cluster of psi_monsters"
+	icon_state = "hostilemob-brown-cluster-low"
+	spawn_nothing_percentage = 80
+
 //xenomorphs
 /obj/random/mob/xenomorphs
 	name = "random xenomorph"

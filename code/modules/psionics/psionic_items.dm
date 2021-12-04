@@ -623,16 +623,20 @@
 
 // Special items.
 /obj/item/device/psionic_catalyst
-	name = "Psionic Catalyst"
+	name = "psionic catalyst"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for what it is made from. Holding it feels... wrong."
 	icon = 'icons/obj/device.dmi'
-	icon_state = "techno_tribalism"
-	item_state = "techno_tribalism"
+	icon_state = "psi_catalyst"
+	item_state = "psi_catalyst"
 	origin_tech = list(TECH_BIO = 9, TECH_MATERIAL = 9, TECH_PLASMA = 3)
 	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2, MATERIAL_PLASMA = 1, MATERIAL_DIAMOND = 1)
 	price_tag = 0
 	var/stored_power
+
+/obj/item/device/psionic_catalyst/Initialize()
+    . = ..()
+    src.transform *= 0.5
 
 /obj/item/device/psionic_catalyst/New()
 	..()

@@ -175,8 +175,8 @@
 
 /obj/effect/decal/cleanable/psi_ash/attack_hand(mob/user as mob)
 	if(user.stats.getPerk(PERK_PSION) && prob(25))
-		new /obj/item/gun/minigun(src.loc)
+		new /obj/item/device/psionic_catalyst(src.loc)
 	else if(prob(10))
-		new /obj/item/gun/minigun(src.loc)
+		new /obj/item/device/psionic_catalyst(src.loc)
 	to_chat(user, SPAN_NOTICE("[src] sifts through your fingers."))
 	qdel(src)

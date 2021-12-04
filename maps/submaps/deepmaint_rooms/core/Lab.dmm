@@ -1,683 +1,118 @@
-//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/simulated/floor/tiled/white,
-/area/awaymission)
-"b" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/awaymission)
-"c" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/bodybags,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"d" = (
-/obj/effect/decal/cleanable/blood/gibs/core,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"e" = (
-/obj/structure/table/reinforced,
-/obj/machinery/microscope,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"f" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/autoinjectors,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"g" = (
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/turf/simulated/floor/tiled/steel/panels,
-/area/awaymission)
-"h" = (
-/obj/machinery/chem_heater,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"j" = (
-/turf/simulated/wall/r_wall,
-/area/awaymission)
-"n" = (
-/obj/effect/damagedfloor/rust,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/awaymission)
-"o" = (
-/obj/machinery/shield_conduit,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/awaymission)
-"q" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/beakers,
-/obj/machinery/light/built,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"r" = (
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/awaymission)
-"s" = (
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"t" = (
-/turf/simulated/floor/tiled/steel/panels,
-/area/awaymission)
-"u" = (
-/obj/effect/decal/cleanable/blood,
-/obj/machinery/light/built,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"v" = (
-/obj/machinery/light/built{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"w" = (
-/obj/structure/table/reinforced,
-/obj/machinery/centrifuge,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"x" = (
-/obj/effect/decal/cleanable/blood/gibs/core,
-/turf/simulated/floor/tiled/steel/panels,
-/area/awaymission)
-"y" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"z" = (
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/awaymission)
-"A" = (
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"B" = (
-/obj/effect/decal/cleanable/blood/gibs/robot/down,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/awaymission)
-"C" = (
-/obj/machinery/door/airlock/vault{
-	name = "Laboratory 1"
-	},
-/turf/simulated/floor/tiled/white,
-/area/awaymission)
-"D" = (
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/light/built{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/panels,
-/area/awaymission)
-"E" = (
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/awaymission)
-"F" = (
-/obj/effect/decal/cleanable/blood/gibs/robot/down,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/awaymission)
-"G" = (
-/obj/effect/damagedfloor/fire,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"H" = (
-/obj/machinery/light/built{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"I" = (
-/obj/effect/decal/cleanable/blood,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/awaymission)
-"J" = (
-/obj/effect/window_lwall_spawn/plasma/reinforced,
-/turf/simulated/floor/tiled/white,
-/area/awaymission)
-"K" = (
-/obj/effect/damagedfloor/rust,
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/awaymission)
-"L" = (
-/obj/item/stool,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/awaymission)
-"M" = (
-/obj/structure/salvageable/machine_os,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"N" = (
-/obj/structure/table/reinforced,
-/obj/machinery/light/built,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"O" = (
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/awaymission)
-"P" = (
-/turf/simulated/wall/ironplasma,
-/area/awaymission)
-"Q" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/masks,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"R" = (
-/obj/effect/decal/cleanable/blood,
-/obj/item/stool,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/awaymission)
-"U" = (
-/obj/machinery/light/built,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"V" = (
-/obj/machinery/door/airlock/vault{
-	name = "Laboratory 1"
-	},
-/obj/machinery/door/blast/regular/open,
-/turf/simulated/floor/tiled/white,
-/area/awaymission)
-"W" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/beakers,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"X" = (
-/obj/effect/damagedfloor/fire,
-/turf/simulated/floor/tiled/steel/monofloor,
-/area/awaymission)
-"Y" = (
-/obj/machinery/radiocarbon_spectrometer,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/awaymission)
-"Z" = (
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/awaymission)
+"aa" = (/turf/simulated/floor/tiled/white,/area/awaymission)
+"ab" = (/obj/machinery/light/built{dir = 1},/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"ac" = (/obj/structure/table/reinforced,/obj/item/storage/box/bodybags,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"ad" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"ae" = (/obj/structure/table/reinforced,/obj/machinery/microscope,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"af" = (/obj/structure/table/reinforced,/obj/item/storage/box/autoinjectors,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"ag" = (/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/steel/panels,/area/awaymission)
+"ah" = (/obj/random/junk/low_chance,/turf/simulated/floor/tiled/white,/area/awaymission)
+"ai" = (/obj/random/scrap/dense_even,/turf/simulated/floor/tiled/white,/area/awaymission)
+"aj" = (/turf/simulated/wall/r_wall,/area/awaymission)
+"ak" = (/obj/machinery/light/small,/obj/random/junk/low_chance,/turf/simulated/floor/tiled/white,/area/awaymission)
+"al" = (/obj/random/cluster/psi_monster/lower_chance,/obj/machinery/light/small,/turf/simulated/floor/tiled/white,/area/awaymission)
+"am" = (/obj/machinery/light/small{dir = 4; pixel_y = 0},/turf/simulated/floor/tiled/white,/area/awaymission)
+"an" = (/obj/effect/damagedfloor/rust,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"ao" = (/obj/machinery/shield_conduit,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"ap" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/white,/area/awaymission)
+"aq" = (/obj/effect/decal/cleanable/blood/gibs/robot/down,/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"ar" = (/obj/machinery/light/built{dir = 1},/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"as" = (/obj/effect/floor_decal/rust,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"at" = (/turf/simulated/floor/tiled/steel/panels,/area/awaymission)
+"au" = (/obj/effect/decal/cleanable/blood,/obj/machinery/light/built,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"av" = (/obj/effect/decal/cleanable/blood/gibs/robot/limb,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aw" = (/obj/structure/table/reinforced,/obj/machinery/centrifuge,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"ax" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/simulated/floor/tiled/steel/panels,/area/awaymission)
+"ay" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/glass/beaker/large,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"az" = (/obj/effect/decal/cleanable/ash,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"aA" = (/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aB" = (/obj/effect/decal/cleanable/blood/gibs/robot/down,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"aC" = (/obj/machinery/door/airlock/vault{name = "Laboratory 1"},/turf/simulated/floor/tiled/white,/area/awaymission)
+"aD" = (/obj/effect/floor_decal/industrial/warning/fulltile,/obj/machinery/light/built{dir = 1},/turf/simulated/floor/tiled/steel/panels,/area/awaymission)
+"aE" = (/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"aF" = (/obj/effect/decal/cleanable/blood/gibs/robot/down,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"aG" = (/obj/effect/damagedfloor/fire,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aH" = (/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"aI" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"aJ" = (/obj/effect/window_lwall_spawn/plasma/reinforced,/turf/simulated/floor/tiled/white,/area/awaymission)
+"aK" = (/obj/effect/damagedfloor/fire,/obj/random/scrap/sparse_even,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"aL" = (/obj/item/stool,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"aM" = (/obj/structure/salvageable/machine_os,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aN" = (/obj/random/scrap/sparse_even,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"aO" = (/turf/simulated/floor/tiled/steel/gray_platform,/area/awaymission)
+"aP" = (/turf/simulated/wall/ironplasma,/area/awaymission)
+"aQ" = (/obj/structure/table/reinforced,/obj/item/storage/box/masks,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aR" = (/obj/effect/decal/cleanable/blood,/obj/item/stool,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"aS" = (/obj/effect/damagedfloor/rust,/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"aT" = (/obj/item/psi_injector,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aU" = (/obj/machinery/light/built,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aV" = (/obj/machinery/door/airlock/vault{name = "Laboratory 1"},/obj/machinery/door/blast/regular/open,/turf/simulated/floor/tiled/white,/area/awaymission)
+"aW" = (/obj/structure/table/reinforced,/obj/item/storage/box/beakers,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aX" = (/obj/effect/damagedfloor/fire,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"aY" = (/obj/machinery/radiocarbon_spectrometer,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"aZ" = (/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"ba" = (/obj/effect/floor_decal/rust,/obj/effect/decal/cleanable/blood/gibs/core,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bb" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/simulated/floor/tiled/steel/gray_platform,/area/awaymission)
+"bc" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bd" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"be" = (/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"bf" = (/obj/effect/damagedfloor/fire,/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bg" = (/obj/effect/damagedfloor/rust,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/gray_platform,/area/awaymission)
+"bh" = (/obj/effect/floor_decal/rust,/obj/random/cluster/psi_monster,/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/gibs/core,/turf/simulated/floor/tiled/steel/gray_platform,/area/awaymission)
+"bi" = (/obj/effect/floor_decal/rust,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bj" = (/obj/effect/damagedfloor/fire,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"bk" = (/obj/effect/decal/cleanable/blood/gibs/core,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"bl" = (/obj/effect/floor_decal/rust,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"bm" = (/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bn" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/tiled/steel/gray_platform,/area/awaymission)
+"bo" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"bp" = (/obj/random/oddity_guns,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+"bq" = (/obj/effect/floor_decal/rust,/obj/effect/decal/cleanable/blood/gibs/core,/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"br" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood/gibs/core,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bs" = (/obj/effect/decal/cleanable/blood,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bt" = (/obj/machinery/light/small{dir = 8},/obj/random/junk/low_chance,/turf/simulated/floor/tiled/white,/area/awaymission)
+"bu" = (/obj/random/pack/machine,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bv" = (/obj/machinery/power/emitter/anchored,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bw" = (/obj/random/scrap/dense_even,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bx" = (/obj/random/cluster/psi_monster/low_chance,/turf/simulated/floor/tiled/white,/area/awaymission)
+"by" = (/obj/machinery/light/built{dir = 8},/obj/random/pack/machine,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bz" = (/obj/structure/table/reinforced,/obj/random/pouch,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"bA" = (/obj/structure/table/reinforced,/obj/item/psi_injector,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"bB" = (/obj/structure/table/reinforced,/obj/random/rations,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"bC" = (/obj/machinery/light/built{dir = 4},/obj/random/pack/machine,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bD" = (/obj/random/cluster/psi_monster/lower_chance,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"bE" = (/obj/effect/decal/cleanable/blood/gibs/robot/down,/obj/structure/table/reinforced,/obj/random/surgery_tool,/obj/random/surgery_tool,/obj/random/surgery_tool,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"bF" = (/obj/structure/table/reinforced,/obj/random/tank,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"bG" = (/obj/effect/decal/cleanable/blood,/obj/structure/table/reinforced,/obj/random/techpart,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
+"bH" = (/obj/machinery/chem_heater,/obj/structure/table/reinforced,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bI" = (/obj/structure/table/reinforced,/obj/random/medical,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bJ" = (/obj/structure/table/reinforced,/obj/machinery/light/built,/obj/random/powercell,/obj/random/powercell,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bK" = (/obj/random/pack/tech_loot,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bL" = (/obj/random/traps/low_chance,/turf/simulated/floor/tiled/white,/area/awaymission)
+"bM" = (/obj/random/pack/junk_machine,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bN" = (/obj/structure/table/reinforced,/obj/machinery/light/built,/obj/random/toolbox,/turf/simulated/floor/tiled/steel/gray_perforated,/area/awaymission)
+"bO" = (/obj/random/cluster/psi_monster/lower_chance,/obj/random/junk/low_chance,/turf/simulated/floor/tiled/white,/area/awaymission)
+"bP" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/white,/area/awaymission)
 
 (1,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-"}
-(2,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-"}
-(3,1,1) = {"
-a
-a
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-a
-a
-"}
-(4,1,1) = {"
-a
-a
-j
-P
-P
-P
-P
-P
-P
-P
-P
-g
-A
-A
-v
-e
-w
-h
-j
-a
-a
-"}
-(5,1,1) = {"
-a
-a
-j
-P
-B
-E
-E
-E
-n
-o
-J
-g
-Y
-Z
-Z
-L
-F
-A
-j
-a
-a
-"}
-(6,1,1) = {"
-a
-a
-j
-P
-b
-X
-E
-E
-E
-E
-J
-g
-M
-L
-I
-Z
-Z
-y
-j
-a
-a
-"}
-(7,1,1) = {"
-a
-a
-j
-P
-E
-E
-E
-X
-E
-E
-J
-g
-M
-L
-Z
-Z
-L
-N
-j
-a
-a
-"}
-(8,1,1) = {"
-a
-a
-j
-P
-X
-n
-E
-z
-E
-n
-J
-g
-M
-L
-Z
-Z
-I
-W
-j
-a
-a
-"}
-(9,1,1) = {"
-a
-a
-j
-P
-E
-A
-G
-s
-E
-E
-J
-g
-A
-F
-Z
-Z
-Z
-A
-j
-a
-a
-"}
-(10,1,1) = {"
-a
-a
-j
-P
-A
-s
-K
-A
-s
-E
-P
-D
-A
-A
-A
-u
-j
-j
-j
-a
-a
-"}
-(11,1,1) = {"
-a
-a
-j
-P
-G
-O
-r
-O
-A
-E
-V
-g
-x
-t
-t
-t
-C
-a
-C
-a
-a
-"}
-(12,1,1) = {"
-a
-a
-j
-P
-s
-A
-O
-G
-A
-E
-P
-D
-A
-A
-d
-U
-j
-j
-j
-a
-a
-"}
-(13,1,1) = {"
-a
-a
-j
-P
-E
-A
-s
-s
-X
-E
-J
-g
-A
-Z
-Z
-Z
-Z
-A
-j
-a
-a
-"}
-(14,1,1) = {"
-a
-a
-j
-P
-E
-X
-X
-E
-E
-X
-J
-g
-M
-Z
-Z
-F
-I
-f
-j
-a
-a
-"}
-(15,1,1) = {"
-a
-a
-j
-P
-E
-E
-E
-E
-E
-E
-J
-g
-M
-R
-Z
-Z
-L
-q
-j
-a
-a
-"}
-(16,1,1) = {"
-a
-a
-j
-P
-b
-E
-E
-X
-E
-E
-J
-g
-A
-L
-Z
-I
-Z
-c
-j
-a
-a
-"}
-(17,1,1) = {"
-a
-a
-j
-P
-B
-E
-E
-E
-E
-B
-J
-g
-M
-F
-Z
-L
-Z
-A
-j
-a
-a
-"}
-(18,1,1) = {"
-a
-a
-j
-P
-P
-P
-P
-P
-P
-P
-P
-g
-A
-A
-H
-e
-Q
-A
-j
-a
-a
-"}
-(19,1,1) = {"
-a
-a
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-j
-a
-a
-"}
-(20,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-"}
-(21,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+ahahaiahahahahaaaaaaaaaaahahaaahahaaaaaaaa
+aiaiaiaaahakaaaaaaaaaaaaaaaaalaaahaaaaahaa
+aiahajajajajajajajajajajajajajajajajajahah
+aaamajaPaPaPaPaPaPaPaPaPaPaPaPaPaPaPajapah
+aaaaajaPaqaraEaXaEavaGasaEaEazabaBaPajaaah
+aaaaajaPaHaKaNaSaTbabbbcbcaXaEaEaEaPajahah
+aaaaajaPaHaEbdbebfbgbhaObibjbkbkaEaPajahaa
+aaaaajaPbdbkaKblbibmbnaGbaboboaXaEaPajaaaa
+ahaaajaPanbpazbdbebqbrbsbjbdaEbdbdaPajaaaa
+ahaaajaPaoaEaEanaBaEaEaEaEaXaEaEaBaPajahaa
+aaamajaPaJaJaJaJaJaPaVaPaJaJaJaJaJaPajbtaa
+aaaaajagagagagagagaDagaDagagagagagagajahaa
+aaaaajbuaYaMaMaMbvaAaxaAbvaMaMbwaMbuajaaaa
+aabxajbuaZaLaLaLaFaAataAaZaZaRaLaFbuajaaaa
+aaaaajbyaZaIaZaZaZaAatadaZbzbAbBaZbCajaaah
+aaaaajaeaLaZbDaZaZauataUaZbEbFbGaLaeajaaah
+ahaaajawaFaZaLaIaZajaCajaZaIaLaZaZaQajahaa
+ahamajbHbIaybJaWbKajbLajbMafbNacbMbMajbtaa
+aaaaajajajajajajajajaCajajajajajajajajbOaa
+aaahaaaaaaaaaiaiaabPaabPaaaaaaaaaaahahaaaa
+aaaaaaahahaiaiaiaiaaaaaaaaaaahahaaaaahahaa
 "}
