@@ -524,7 +524,7 @@
 				to_chat(holder, SPAN_DANGER("You feel yourself becoming... More. You answer the call."))
 			if(13)
 				holder.visible_message(SPAN_DANGER("[holder] shifts and reforms into... By science... What is that!?"))
-				new /mob/living/carbon/superior_animal/wasonce(holder)
+				new /mob/living/carbon/superior_animal/psi_monster/wasonce(holder)
 	if((total_instability >= DESTABILIZE_LEVEL_CLONE_DAMAGE) && (holder.getCloneLoss() < 30))
 		holder.adjustCloneLoss(1)
 

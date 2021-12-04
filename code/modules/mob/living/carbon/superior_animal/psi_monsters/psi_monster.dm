@@ -12,23 +12,24 @@
 	pass_flags = PASSTABLE
 
 	mob_size = MOB_LARGE
-	viewRange = 12
+	viewRange = 8
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 	maxHealth = 120
 	health = 120
 	randpixel = 0
 	attack_sound = 'sound/voice/insect_battle_bite.ogg'
+	var/aggro_noise = 'sound/hallucinations/hell_screech.ogg'
 	attack_sound_chance = 100
 	speak_emote = list("murmurs", "howls", "whispers")
 	emote_see = list("groans in pain.", "moans in agony.", "chitters madly!")
 	speak_chance = 5
 	deathmessage = "looses a guttural snarl as it crumbles to dust!"
-	overkill_gib = 40
-	overkill_dust = 40
+	overkill_gib = 0 // Set so we don't lose its death dust special clause.
+	overkill_dust = 0
 
 	move_to_delay = 2
-	turns_per_move = 8
+	turns_per_move = 6
 	see_in_dark = 10
 	leather_amount = 0
 	bones_amount = 0
@@ -45,9 +46,16 @@
 	min_breath_poison_type = 0
 
 	var/poison_per_bite = 0
-	var/poison_type = "space_drugs"
+	var/poison_type = "mindmelter"
+	var/last_noise = -30000
+	var/chameleon_skill = 10
+	var/healing_factor = 1
 	pass_flags = PASSTABLE
 	faction = "psi_monster"
+
+	var/first_teleport = FALSE
+	var/second_teleport = FALSE
+	var/size_pixel_offset_x = 0
 
 	fleshcolor = "#3c0000"
 	bloodcolor = "#3c0000"
@@ -57,6 +65,19 @@
 	friendly_to_colony = FALSE
 
 	known_languages = list(LANGUAGE_COMMON)
+
+/mob/living/carbon/superior_animal/psi_monster/New()
+	..()
+	if(!icon_living)
+		icon_living = icon_state
+	if(!icon_dead)
+		icon_dead = "[icon_state]_dead"
+
+	objectsInView = new
+
+	verbs -= /mob/verb/observe
+	pixel_x = size_pixel_offset_x
+	pixel_y = 0
 
 /mob/living/carbon/superior_animal/psi_monster/slip(var/slipped_on,stun_duration=8)
 	return FALSE
@@ -142,3 +163,20 @@
 				M.do_attack_animation(src)
 
 				return 1
+
+
+/obj/effect/decal/cleanable/psi_ash
+	name = "strange ashes"
+	desc = "Something about these ashes feels off, as if an infinite potential exists within the dust."
+	gender = PLURAL
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "ash"
+	anchored = TRUE
+
+/obj/effect/decal/cleanable/psi_ash/attack_hand(mob/user as mob)
+	if(user.stats.getPerk(PERK_PSION) && prob(25))
+		new /obj/item/gun/minigun(src.loc)
+	else if(prob(10))
+		new /obj/item/gun/minigun(src.loc)
+	to_chat(user, SPAN_NOTICE("[src] sifts through your fingers."))
+	qdel(src)

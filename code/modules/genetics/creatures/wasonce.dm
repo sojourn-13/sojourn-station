@@ -3,11 +3,12 @@ Boss of this maints.
 Has ability of every roach.
 */
 
-/mob/living/carbon/superior_animal/wasonce
+/mob/living/carbon/superior_animal/psi_monster/wasonce
 	name = "Was Once"
 	desc = "A burbling mass of bones, flesh, and regret. Its strength is matched only by the maddened suffering it endures."
 	icon = 'icons/mob/genetics/wasonce.dmi'
 	icon_state = "wasonce"
+	icon_living = "wasonce"
 	density = TRUE
 
 	//The poor bastard stuck inside this thing
@@ -20,10 +21,20 @@ Has ability of every roach.
 	health = 2000
 	contaminant_immunity = TRUE
 
-	faction= "deepmaint"
+	// Psi_monster stuff.
+	chameleon_skill = 255 // Psionics not developed, can't turn invisible.
+	healing_factor = 25
+	size_pixel_offset_x = -16
+
+	faction= "psi_monster"
 	friendly_to_colony = FALSE
 
-	viewRange = 16
+	viewRange = 12
+	randpixel = 0
+	pixel_x = -16
+	pixel_y = 0
+	default_pixel_x = -16
+	default_pixel_y = 0
 
 	attacktext = "delivered a crushing blow to"
 
@@ -34,11 +45,12 @@ Has ability of every roach.
 	can_burrow = FALSE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	move_to_delay = 4
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
-	
+
 	life_cycles_before_sleep = 3000 //Keep this awake for longer than the regular mob.
 
 	var/datum/genetics/genetics_holder/injector
@@ -59,11 +71,11 @@ Has ability of every roach.
 
 	stance=HOSTILE_STANCE_IDLE
 
-/mob/living/carbon/superior_animal/wasonce/New(var/mob/living/victim)
+/mob/living/carbon/superior_animal/psi_monster/wasonce/New(var/mob/living/victim)
 	..()
 
 	injector = new(src)
-	
+
 
 	loc = get_turf(victim)
 	//kill the victim
@@ -86,15 +98,12 @@ Has ability of every roach.
 
 		akira.loc = src
 
-	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.
-	pixel_y = -16
-
 	//Start swinging right out the gate.
 	handle_ai()
 	playsound(src.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 
 // NOM
-/mob/living/carbon/superior_animal/wasonce/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior_animal/psi_monster/wasonce/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		var/mob/living/carbon/human/H
@@ -117,7 +126,7 @@ Has ability of every roach.
 				L.visible_message(SPAN_DANGER("\the [src] uses its mass to knock over \the [L]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/wasonce/death(gibbed)
+/mob/living/carbon/superior_animal/psi_monster/wasonce/death(gibbed)
 	..()
 	for(var/mob/living/drop_victim in captives)
 		drop_victim.loc = get_turf(src)
@@ -125,10 +134,10 @@ Has ability of every roach.
 
 	akira.loc = get_turf(src)
 	akira.gib()
-	
 
-/mob/living/carbon/superior_animal/wasonce/Life()
-		
+
+/mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
+
 
 	if(captives.len && prob(15))
 		var/fail_mutation_path = pick(injector.getFailList())
@@ -142,7 +151,7 @@ Has ability of every roach.
 		injector.removeAllMutations()
 	..()
 
-/mob/living/carbon/superior_animal/wasonce/findTarget()
+/mob/living/carbon/superior_animal/psi_monster/wasonce/findTarget()
 	var/atom/best_target = null
 	var/distance_weighting = 0
 
@@ -155,7 +164,7 @@ Has ability of every roach.
 				best_target = O
 	return best_target
 
-/mob/living/carbon/superior_animal/wasonce/isValidAttackTarget(var/atom/O)
+/mob/living/carbon/superior_animal/psi_monster/wasonce/isValidAttackTarget(var/atom/O)
 	if (isliving(O))
 		var/mob/living/L = O
 		if((L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0)) || (!attack_same && (L.faction == src.faction)) || (L in friends))
@@ -177,5 +186,5 @@ Has ability of every roach.
 		var/obj/mecha/M = O
 		return isValidAttackTarget(M.occupant) / 4
 
-/mob/living/carbon/superior_animal/wasonce/slip(var/slipped_on)
+/mob/living/carbon/superior_animal/psi_monster/wasonce/slip(var/slipped_on)
 	return FALSE
