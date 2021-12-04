@@ -13,7 +13,7 @@
 							  /obj/item/borg/upgrade/bigknife)
 
 	health = 210 //Very tanky!
-	speed_factor = 1.1 //Kinda slow
+	speed_factor = 1.4 //Kinda slow
 	power_efficiency = 1.55 //Decent we are meant to be around the colony
 
 	stat_modifiers = list(
@@ -21,7 +21,7 @@
 		STAT_TGH = 60,
 		STAT_BIO = 25,
 		STAT_COG = 120,
-		STAT_MEC = 15 //weldering cracks
+		STAT_MEC = 35 //weldering cracks
 	)
 
 	desc = "Focused on keeping the peace and fighting off threats to the colony, the IH K9 Module is a \
@@ -53,7 +53,12 @@
 	R.pixel_x 	 = -16
 	R.old_x 	 = -16
 	R.default_pixel_x = -16
+	//We are stronk so we get less no knockdowns
+	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
+	//So we cant be escaped as quickly
+	R.stats.addPerk(PERK_PARKOUR)
 
+	R.stats.addPerk(PERK_SI_SCI)
 	..(R)
 
 /obj/item/robot_module/robot/knine/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -84,13 +89,13 @@
 							  /obj/item/borg/upgrade/jetpack,
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 	health = 120 //Fragile
-	speed_factor = 1.25 //Bit faster
+	speed_factor = 1.55 //Bit faster
 	power_efficiency = 0.9 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
 		STAT_BIO = 60,
 		STAT_COG = 120,
-		STAT_MEC = 15 //weldering cracks
+		STAT_MEC = 35 //weldering cracks
 	)
 
 	desc = "A versatile medical hound, equipped with all the tools necessary for surgery, chemistry, and \
@@ -127,6 +132,12 @@
 	R.pixel_x 	 = -16
 	R.old_x  	 = -16
 	R.default_pixel_x = -16
+
+	//We know medical care and have all the data on it
+	R.stats.addPerk(PERK_MEDICAL_EXPERT)
+	R.stats.addPerk(PERK_SURGICAL_MASTER)
+	R.stats.addPerk(PERK_ADVANCED_MEDICAL)
+	R.stats.addPerk(PERK_SI_SCI)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -180,7 +191,7 @@
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 	health = 175 //Bulky
-	speed_factor = 1.1 //Slow
+	speed_factor = 1.4 //Slow
 	power_efficiency = 0.8 //Poor
 
 	stat_modifiers = list(
@@ -188,7 +199,7 @@
 		STAT_TGH = 25,
 		STAT_BIO = 25,
 		STAT_COG = 120,
-		STAT_MEC = 15 //weldering cracks
+		STAT_MEC = 35 //weldering cracks
 	)
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
 	but requiring a large capacity. The huge chassis consequentially grants it a degree of toughness, \
@@ -218,6 +229,10 @@
 	R.old_x  	 = -16
 	R.default_pixel_x = -16
 
+	//Silent cleaners
+	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 
@@ -246,7 +261,7 @@
 							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 	health = 115 //Weak
-	speed_factor = 1.3 //Average
+	speed_factor = 1.6 //Average
 	power_efficiency = 0.75 //Poor efficiency
 
 	desc = "Built for working in a well-equipped lab, and designed to handle a wide variety of research \
@@ -256,7 +271,7 @@
 	stat_modifiers = list(
 		STAT_BIO = 40,
 		STAT_COG = 120,
-		STAT_MEC = 30
+		STAT_MEC = 40
 	)
 
 /obj/item/robot_module/robot/science/New(var/mob/living/silicon/robot/R)
@@ -301,6 +316,13 @@
 	R.pixel_x 	 = -16
 	R.old_x 	 = -16
 	R.default_pixel_x = -16
+
+	//We know medical and robotics, were a mix.
+	R.stats.addPerk(PERK_MEDICAL_EXPERT)
+	R.stats.addPerk(PERK_SURGICAL_MASTER)
+	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..()
 
 /obj/item/robot_module/robot/engiedog
@@ -318,7 +340,7 @@
 							  /obj/item/borg/upgrade/jetpack)
 
 	health = 170 //Slightly above average
-	speed_factor = 1.4 //Slightly above average
+	speed_factor = 1.7 //Slightly above average
 	power_efficiency = 0.9 //Slightly below average
 
 	desc = "The engineering module is designed for setting up and maintaining core colony systems, \
@@ -327,8 +349,8 @@
 
 	stat_modifiers = list(
 		STAT_COG = 120,
-		STAT_MEC = 40,
-		STAT_BIO = 25
+		STAT_MEC = 80,
+		STAT_BIO = 35
 	)
 
 
@@ -421,6 +443,12 @@
 	R.pixel_x 	 = -16
 	R.old_x 	 = -16
 	R.default_pixel_x = -16
+
+	//We know guild work and robotics.
+	R.stats.addPerk(PERK_HANDYMAN)
+	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..()
 
 /obj/item/robot_module/robot/engiedog/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
