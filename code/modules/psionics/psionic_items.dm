@@ -621,6 +621,40 @@
 		pointgranted = 1
 
 // Special items.
+/obj/item/device/psionic_catalyst
+	name = "Psionic Catalyst"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for what it is made from. Holding it feels... wrong."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "techno_tribalism"
+	item_state = "techno_tribalism"
+	origin_tech = list(TECH_BIO = 9, TECH_MATERIAL = 9, TECH_PLASMA = 3)
+	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2, MATERIAL_PLASMA = 1, MATERIAL_DIAMOND = 1)
+	price_tag = 0
+	var/stored_power
+
+/obj/item/device/psionic_catalyst/New()
+	..()
+	stored_power = pick(subtypesof(/obj/item/organ/internal/psionic_tumor/conquest/proc/))
+	//name += stored_power.catalyst_name
+	//desc += stored_power.catalyst_desc
+	// These just dont work, commented out for now.
+
+/obj/item/device/psionic_catalyst/verb/invoke_power(var/mob/living/carbon/human/M)
+	set name = "Invoke Psionic Catalyst"
+	set desc = "Invoke the psionic potential within the catalyst, adding a copy of its power to your own."
+	set category = "Object"
+
+	if(!usr.stats.getPerk(PERK_PSION))
+		to_chat(usr, "<span class='notice'>You lack the psionic potential to invoke this.</span>")
+		return
+
+	playsound(src.loc, 'sound/hallucinations/ghosty_wind.ogg', 25, 1)
+	to_chat(usr, "You invoke the power left within this catalyst, copying a fraction of its remembered strength and adding it to your own.")
+	M.random_organ_by_process(BP_PSION).owner_verbs += stored_power
+	M.verbs += stored_power
+
+
 /obj/item/clothing/mask/gas/bonedog
 	name = "Mask of the Bone Dog"
 	desc = "The ivory bleached skull of some kind of canine. Was this a trophy of a wolf slain in battle or a token of a lost pet taken and remembered by its master? Perhaps it is the skull of a kriosan, \
