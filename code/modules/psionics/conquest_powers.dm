@@ -122,6 +122,26 @@
 		var/datum/effect/effect/system/smoke_spread/bad/smoke
 		smoke = new
 		playsound(loc, 'sound/effects/smoke.ogg', 50, 1, -3)
+		sleep(9)
+		for(var/mob/M in range(10, owner))
+			if(!M.stat && !isAI(M))
+				shake_camera(M, 3, 1)
+		playsound(owner.loc, 'sound/voice/shriek1.ogg', 20, 1, 8, 8)
+		sleep(9)
+		for(var/mob/M in range(10, owner))
+			if(!M.stat && !isAI(M))
+				shake_camera(M, 3, 1)
+		playsound(owner.loc, 'sound/voice/shriek1.ogg', 60, 1, 8, 8)
+		sleep(9)
+		for(var/mob/M in range(10, owner))
+			if(!M.stat && !isAI(M))
+				shake_camera(M, 3, 1)
+		playsound(owner.loc, 'sound/voice/shriek1.ogg', 80, 1, 8, 8)
+		sleep(9)
+		for(var/mob/M in range(10, owner))
+			if(!M.stat && !isAI(M))
+				shake_camera(M, 3, 1)
+		playsound(owner.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 		new /obj/effect/gibspawner/human(owner.loc, owner.dna, owner.species.flesh_color, owner.species.blood_color)
 		new /obj/effect/gibspawner/human(owner.loc, owner.dna, owner.species.flesh_color, owner.species.blood_color)
 		new /obj/effect/gibspawner/human(owner.loc, owner.dna, owner.species.flesh_color, owner.species.blood_color)
@@ -179,18 +199,15 @@
 					to_chat(owner, "They refuses your gift!")
 					return
 				else
-					if(pay_power_cost(psi_point_cost))
+					if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 						visible_message(
 							SPAN_WARNING("[src] grabs [L]! Psionic energy alights [src]'s eyes as they focus intently on [L] !"),
 							SPAN_WARNING("You project your psionic essence, turning it towards [L].")
 						)
-						if(do_after(src, 150 , incapacitation_flags = INCAPACITATION_DEFAULT))
-							L.make_psion()
-							owner.adjustBrainLoss(10)
-							to_chat(owner, "You feel a horrible splitting migraine as the process ends.")
-							to_chat(L, "Your mind is aflame with possibilities! You can see, you can SEE, YOU CAN SEE IT ALL!")
-						else
-							to_chat(src, "You must not move while performing the ascension. Your psi essence is wasted!")
+						L.make_psion()
+						owner.adjustBrainLoss(10)
+						to_chat(owner, "You feel a horrible splitting migraine as the process ends.")
+						to_chat(L, "Your mind is aflame with possibilities! You can see, you can SEE, YOU CAN SEE IT ALL!")
 	else
 		to_chat(src, "You must face your target!")
 
@@ -228,10 +245,10 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/mind_jack()
 	set category = "Psionic powers"
-	set name = "Mind Jack (5)"
-	set desc = "Expend five psi points to force a lesser creature to ally with you, changing it to not only ally with colonists but to turn on its former friends. Does not work on creatures \
+	set name = "Mind Jack (3)"
+	set desc = "Expend three psi points to force a lesser creature to ally with you, changing it to not only ally with colonists but to turn on its former friends. Does not work on creatures \
 	incapable of violence, such as rats."
-	psi_point_cost = 5
+	psi_point_cost = 3
 
 	var/mob/living/carbon/superior_animal/S = get_grabbed_mob(owner)
 	if(S)
