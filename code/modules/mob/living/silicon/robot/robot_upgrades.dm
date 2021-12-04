@@ -39,6 +39,7 @@
 	R.pixel_x = 0
 	R.old_x = 0
 	R.default_pixel_x = 0
+	R.stats.removeAllPerks() //We dont want to stack perks on perks so we remove them all, sads
 
 	return TRUE
 
@@ -237,7 +238,7 @@
 		to_chat(usr, "There's no mounting point for the module!")
 		return FALSE
 	else
-		for(var/obj/item/reagent_containers/borghypo/H in R.module.modules)
+		for(var/obj/item/reagent_containers/borghypo/H in R.module.contents)
 			if(H.accepts_reagent_upgrades)
 				H.reagent_ids += additional_reagents
 				return TRUE

@@ -47,6 +47,7 @@
 	options["Demonic Welding"] = "demonwelding"
 	options["Knight Welding"] = "knightwelding"
 	options["Fancy Welding"] = "fancywelding"
+	options["Faithful Welding"] = "cultwelding"
 	options["Aquatic Welding"] = "norah_briggs_1"
 	options["Rustic Welding"] = "yuki_matsuda_1"
 	options["Flame Welding"] = "alice_mccrea_1"
@@ -55,8 +56,11 @@
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
+		base_state = options[choice]
 		icon_state = options[choice]
 		item_state = options[choice]
+		if(up)
+			icon_state = "[base_state]up"
 		item_state_slots = list(
 		slot_l_hand_str = options[choice],
 		slot_r_hand_str = options[choice],

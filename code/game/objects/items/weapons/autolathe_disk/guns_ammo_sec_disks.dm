@@ -530,7 +530,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/firefly
-	disk_name = "GmbH - .35 Firefly Pistol"
+	disk_name = "Seinemetall Defense GmbH - .35 Firefly Pistol"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -543,7 +543,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/glock
-	disk_name = "GmbH - .35 Sky Auto Pistol"
+	disk_name = "Seinemetall Defense GmbH - .35 Sky Auto Pistol"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -613,7 +613,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark
-	disk_name = "GmbH - .40 Auto-Mag Ladon Handgun"
+	disk_name = "Seinemetall Defense GmbH - .40 Auto-Mag Ladon Handgun"
 	icon_state = "onestar"
 
 	license = 8
@@ -639,7 +639,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/rafale
-	disk_name = "GmbH - .40 Auto-Mag Rafale"
+	disk_name = "Seinemetall Defense GmbH - .40 Auto-Mag Rafale"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -800,7 +800,7 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/state
-	disk_name = "GmbH - 20mm State Auto Shotgun"
+	disk_name = "Seinemetall Defense GmbH - 20mm State Auto Shotgun"
 	desc = "Known as the state, an odd shotgun, often redesigned every few years in a way few people are fully happy with."
 	icon_state = "frozenstar"
 
@@ -839,7 +839,7 @@
 // SMGs
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/wirbelwind
-	disk_name = "GmbH - .35 Wirbelwind SMG"
+	disk_name = "Seinemetall Defense GmbH - .35 Wirbelwind SMG"
 	icon_state = "frozenstar"
 
 	license = 12
@@ -940,7 +940,7 @@
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ostwind
-	disk_name = "GmbH - .257 Ostwind Carbine"
+	disk_name = "Seinemetall Defense GmbH - .257 Ostwind Carbine"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -958,7 +958,7 @@
 
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog
-	disk_name = "GmbH - .257 Bulldog Carbine"
+	disk_name = "Seinemetall Defense GmbH - .257 Bulldog Carbine"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -1154,7 +1154,7 @@
 // Grenade Launchers
 
 obj/item/computer_hardware/hard_drive/portable/design/guns/lenar
-	disk_name = "GmbH - Lenar Grenade Launcher"
+	disk_name = "Seinemetall Defense GmbH - Lenar Grenade Launcher"
 	icon_state = "frozenstar"
 
 	license = 3
@@ -1249,7 +1249,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver
-	disk_name = "GmbH - \"Zeus\" Stun Revolver"
+	disk_name = "Seinemetall Defense GmbH - \"Zeus\" Stun Revolver"
 	icon_state = "frozenstar"
 
 	license = 8//2 guns 2 cells
@@ -1279,7 +1279,7 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ion_pistol
-	disk_name = "GmbH - \"Aedes\" Ion Pistol"
+	disk_name = "Seinemetall Defense GmbH - \"Aedes\" Ion Pistol"
 	icon_state = "frozenstar"
 
 	license = 6//2 guns 2 cells

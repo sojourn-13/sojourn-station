@@ -57,7 +57,7 @@
 		error("Trying to create existing spawnpoint.")
 	return SP
 
-/proc/get_datum_spawn_locations(name = maps_data.default_spawn, free_only = TRUE, late = FALSE)
+/proc/get_datum_spawn_locations(name = GLOB.maps_data.default_spawn, free_only = TRUE, late = FALSE)
 	var/datum/spawnpoint/SP = get_spawn_point(name, late)
 	if (SP)
 		return SP.get_spawn_locations()
@@ -193,7 +193,7 @@
 		C.set_occupant(M, FALSE)
 
 		//When spawning in cryo, you start off asleep for a few moments and wake up
-		//M.Paralyse(2) we were asleep, now awake. No need to paralyse! - Also lasted longer then a few moments do to MC 
+		//M.Paralyse(2) we were asleep, now awake. No need to paralyse! - Also lasted longer then a few moments do to MC
 
 		//You can get yourself out of the cryopod, or it will auto-eject after one minute
 		spawn(600)

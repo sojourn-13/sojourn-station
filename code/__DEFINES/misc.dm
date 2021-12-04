@@ -275,9 +275,9 @@
 
 #define any2ref(x) "\ref[x]"
 
-#define MAP_IMAGE_PATH "nano/images/[maps_data.path]/"
+#define MAP_IMAGE_PATH "nano/images/[GLOB.maps_data.path]/"
 
-#define map_image_file_name(z_level) "[maps_data.path]-[z_level].png"
+#define map_image_file_name(z_level) "[GLOB.maps_data.path]-[z_level].png"
 
 // Spawns multiple objects of the same type
 #define cast_new(type, num, args...) if((num) == 1) { new type(args) } else { for(var/i in 1 to num) { new type(args) } }
@@ -362,3 +362,7 @@
 /// Required minimum values to see reagents in a beaker
 #define HUMAN_REQ_COG_FOR_REG 35
 #define HUMAN_REQ_BIO_FOR_REG 50
+
+/// Misc atmos equations
+
+#define FIRESTACKS_TEMP_CONV(firestacks) min(5200,max(2.25*round(FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE*(fire_stacks/FIRE_MAX_FIRESUIT_STACKS)**2), 700))

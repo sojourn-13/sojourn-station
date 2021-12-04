@@ -32252,12 +32252,12 @@
 /obj/item/clothing/suit/armor/heavy/riot/ironhammer,
 /obj/item/clothing/suit/armor/heavy/riot/ironhammer,
 /obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/head/helmet/faceshield/riot,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical)
 "hwC" = (
@@ -54459,6 +54459,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "mvX" = (
@@ -79914,7 +79915,7 @@
 /obj/item/genetics/mut_injector,
 /obj/item/genetics/mut_injector,
 /obj/item/genetics/mut_injector,
-/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit,
+/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit_public,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/genetics)
 "skg" = (

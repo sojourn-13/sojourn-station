@@ -77,6 +77,12 @@
 	icon_state = "pistol_si"
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
+/obj/item/ammo_magazine/ammobox/pistol_35/biomatter
+	name = "ammunition packet (.35 Auto Costic)"
+	desc = "A box of costic caseless .35 Auto."
+	icon_state = "pistol_bio"
+	ammo_type = /obj/item/ammo_casing/pistol_35/biomatter
+
 //// . 40 ////
 
 /obj/item/ammo_magazine/ammobox/magnum_40
@@ -117,6 +123,12 @@
 	name = "ammunition packet (.40 Magnum Laser)"
 	icon_state = "magnum_si"
 	ammo_type = /obj/item/ammo_casing/magnum_40/laser
+
+/obj/item/ammo_magazine/ammobox/magnum_40/biomatter
+	name = "ammunition packet (.40 Magnum Costic)"
+	desc = "A box of costic caseless .40 Magnum."
+	icon_state = "magnum_bio"
+	ammo_type = /obj/item/ammo_casing/magnum_40/biomater
 
 //// .257 carbine ////
 

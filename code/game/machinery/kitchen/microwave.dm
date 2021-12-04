@@ -94,7 +94,7 @@
 						src.icon_state = "[initial(icon_state)]"
 						src.broken = 0 // Fix it!
 						src.dirty = 0 // just to be sure
-						src.reagent_flags = OPENCONTAINER
+						src.reagent_flags = OPENCONTAINER | NO_REACT
 						return
 					return
 
@@ -119,7 +119,7 @@
 				src.dirty = 0 // It's clean!
 				src.broken = 0 // just to be sure
 				src.icon_state = "[initial(icon_state)]"
-				src.reagent_flags = OPENCONTAINER
+				src.reagent_flags = OPENCONTAINER | NO_REACT
 		else //Otherwise bad luck!!
 			to_chat(user, SPAN_WARNING("It's dirty!"))
 			return 1

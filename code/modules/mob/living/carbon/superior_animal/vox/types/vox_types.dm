@@ -59,8 +59,8 @@
 
 	reload_message = "picks up a rock!"
 
-	maxHealth = 70 //Glass cannon
-	health = 70
+	maxHealth = 35 //Glass cannon
+	health = 35
 
 /mob/living/carbon/superior_animal/vox/hider/UnarmedAttack()
 	..()
@@ -89,8 +89,8 @@
 
 	reload_message = "picks up a rock!"
 
-	maxHealth = 180
-	health = 180
+	maxHealth = 90
+	health = 90
 
 /mob/living/carbon/superior_animal/vox/weak
 	name = "Yaro mafarauci"
@@ -104,8 +104,8 @@
 
 	knock_over_odds = 15
 
-	maxHealth = 80
-	health = 80
+	maxHealth = 40
+	health = 40
 
 /mob/living/carbon/superior_animal/vox/rage
 	name = "Jan barazana"

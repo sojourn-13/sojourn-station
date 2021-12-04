@@ -150,6 +150,7 @@
 	icon_state = "psishield1"
 	item_state = "psishield1"
 	w_class = ITEM_SIZE_BULKY
+	slot_flags = null
 	origin_tech = list()
 	matter = list()
 	price_tag = 0

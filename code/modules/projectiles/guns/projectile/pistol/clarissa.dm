@@ -49,3 +49,9 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 		)
+
+/obj/item/gun/projectile/clarissa/moebius
+	name = "SI HG .35 Auto \"Malpractice\"" // SI stands for Soteria Institution
+	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Commit\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds."
+	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
+	price_tag = 200

@@ -4,7 +4,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
 	disk_name = "Church of Absolute Bioprinter Products and Utilities"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
-	icon_state = "neotheology"
+	icon_state = "neotheology_testament_u"
 
 	license = -1
 	designs = list(
@@ -65,7 +65,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment
 	disk_name = "Church of Absolute Bioaugmentation Disk"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
-	icon_state = "neotheology"
+	icon_state = "neotheology_testament"
 
 	license = -1
 	designs = list(
@@ -82,7 +82,7 @@
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter_public
 	disk_name = "Church of Absolute Basic Bioprinter Pack"
-	icon_state = "neotheology"
+	icon_state = "neotheology_testament_u"
 
 	license = -1
 	designs = list(
@@ -122,6 +122,8 @@
 		/datum/design/autolathe/ammo/magnum_rubber,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter = 3,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 4
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/lemant
@@ -140,6 +142,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		/datum/design/autolathe/ammo/shotgun_pellet = 2,
 		/datum/design/autolathe/ammo/shotgun = 2,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 3,
 		)
 
 //Church shotgun
@@ -273,12 +276,14 @@
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/gun/taser,
-		/datum/design/autolathe/gun/sniperrifle = 6
+		/datum/design/autolathe/gun/sniperrifle = 6,
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms
 	disk_name = "Absolute Armory - New Testament Armaments"
-	icon_state = "neotheology"
+	icon_state = "neotheology_testament"
 	license = -1
 	designs = list(
 		//weapons
@@ -361,7 +366,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_cells
 	disk_name = "Absolute Armory - Power Cells Pack"
-	icon_state = "neotheology"
+	icon_state = "neotheology_testament"
 
 	license = -1
 	designs = list(

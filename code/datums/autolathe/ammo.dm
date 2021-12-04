@@ -228,6 +228,11 @@
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/lethal
 	materials = list(MATERIAL_STEEL = 6)
 
+/datum/design/autolathe/ammo/pistol_ammobox_biomatter
+	name = "ammunition box (.35 Auto Costic)"
+	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
+	materials = list(MATERIAL_BIOMATTER = 35)
+
 // .40 Speed Loaders + mags
 //speed loaders
 
@@ -305,6 +310,10 @@
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/practice
 	materials = list(MATERIAL_STEEL = 9)
 
+/datum/design/autolathe/ammo/magnum_ammobox_biomatter
+	name = "ammunition box (.40 Auto-Mag Costic)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
+	materials = list(MATERIAL_BIOMATTER = 50)
 
 //.35 SMG
 /datum/design/autolathe/ammo/smg_magnum_40

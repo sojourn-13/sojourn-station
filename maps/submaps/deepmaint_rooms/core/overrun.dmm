@@ -17,21 +17,21 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "ak" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "am" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/girder,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "an" = (
 /obj/item/stack/material/wood,
 /obj/structure/low_wall,
-/obj/item/weapon/reagent_containers/food/snacks/candy/mre,
+/obj/item/reagent_containers/food/snacks/candy/mre,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "ar" = (
@@ -58,7 +58,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "az" = (
-/obj/item/weapon/gun/projectile/automatic/vintorez{
+/obj/item/gun/projectile/automatic/vintorez{
 	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds.";
 	name = "Unmarked Vintorez silenced carbine"
 	},
@@ -76,7 +76,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "aD" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/table,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
@@ -90,7 +90,7 @@
 /area/deepmaint)
 "aH" = (
 /obj/machinery/deployable/barrier,
-/obj/item/weapon/circuitboard/broken,
+/obj/item/circuitboard/broken,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "aK" = (
@@ -127,7 +127,7 @@
 /area/deepmaint)
 "aT" = (
 /obj/structure/low_wall,
-/obj/item/weapon/reagent_containers/food/snacks/candy/mre,
+/obj/item/reagent_containers/food/snacks/candy/mre,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "aU" = (
@@ -170,7 +170,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "bj" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/barricade,
 /obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -201,7 +201,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "bD" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "bG" = (
@@ -218,7 +218,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "bK" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/item/inflatable/torn,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
@@ -288,7 +288,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "cf" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/random/material,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
@@ -303,7 +303,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "ck" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -331,18 +331,18 @@
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "cq" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/random/structures,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "cr" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/item/stack/material/wood,
 /obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "cs" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/item/stack/material/plastic/random,
 /obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -373,7 +373,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "iD" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/table,
 /obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -394,11 +394,11 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "kc" = (
-/obj/item/weapon/circuitboard/broken,
+/obj/item/circuitboard/broken,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "mm" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/item/stack/material/wood,
 /obj/structure/grille/broken,
 /obj/item/stack/rods,
@@ -406,7 +406,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "mp" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/item/stack/material/wood,
 /obj/random/structures,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -418,7 +418,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "oo" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/grille/broken,
 /obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -458,7 +458,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/deepmaint)
 "rO" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/random/scrap,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
@@ -491,17 +491,17 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "tY" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/random/gun_cheap,
 /obj/random/material,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "uf" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "uN" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/random/closet_maintloot,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
@@ -519,7 +519,7 @@
 /area/deepmaint)
 "xL" = (
 /obj/item/inflatable/torn,
-/obj/item/weapon/circuitboard/broken,
+/obj/item/circuitboard/broken,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "yb" = (
@@ -540,13 +540,13 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "zk" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/item/stack/material/plasteel/random,
 /obj/structure/table,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "Ap" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/grille/broken,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
@@ -562,7 +562,7 @@
 /area/deepmaint)
 "DV" = (
 /obj/structure/table,
-/obj/item/weapon/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "Ed" = (
@@ -596,7 +596,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "GL" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/random/junk,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
@@ -605,14 +605,14 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "IJ" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "Jw" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/random/traps,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
@@ -646,7 +646,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "OI" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/grille/broken,
 /obj/random/traps,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -676,11 +676,11 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "Sx" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/tiled/dark,
 /area/deepmaint)
 "Tf" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/item/stack/material/plastic/random,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
@@ -722,7 +722,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "YL" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/barricade,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)

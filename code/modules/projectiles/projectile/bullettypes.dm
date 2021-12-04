@@ -70,6 +70,18 @@
 	affective_damage_range = 1
 	affective_ap_range = 1
 
+/obj/item/projectile/bullet/pistol_35/biomatter
+	name = "biomatter bullet"
+	damage_types = list(TOX = 18)
+	agony = 20
+	armor_penetration = 0
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.65
+	check_armour = ARMOR_BIO
+
 //Revolvers and high-caliber pistols
 //*********************************//
 /// .40 Magnum ///
@@ -137,6 +149,18 @@
 	armor_penetration = 5
 	affective_damage_range = 1
 	affective_ap_range = 1
+
+/obj/item/projectile/bullet/magnum_40/biomatter
+	name = "biomatter bullet"
+	damage_types = list(TOX = 26)
+	agony = 32
+	armor_penetration = 0
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.65
+	check_armour = ARMOR_BIO
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50

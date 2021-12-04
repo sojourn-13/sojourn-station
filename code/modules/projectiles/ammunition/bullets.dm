@@ -49,6 +49,12 @@
 	desc = "A .35 Auto laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
 
+/obj/item/ammo_casing/pistol_35/biomatter
+	desc = "A caseless .35 Auto costic."
+	projectile_type = /obj/item/projectile/bullet/pistol_35/biomatter
+	icon_state = "clrifle_c_s"
+	is_caseless = TRUE
+
 //// .40 ////
 
 /obj/item/ammo_casing/magnum_40
@@ -101,6 +107,12 @@
 
 /obj/item/ammo_casing/magnum_40/scrap/prespawned
 	amount = 6
+
+/obj/item/ammo_casing/magnum_40/biomater
+	desc = "A caseless .40 Magnum costic."
+	projectile_type = /obj/item/projectile/bullet/magnum_40/biomatter
+	icon_state = "clrifle_c_p"
+	is_caseless = TRUE
 
 //// .257 carbine ////
 

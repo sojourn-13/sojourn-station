@@ -3,7 +3,7 @@
 
 	// What it does if it can repair itself
 	if(repair_rate)
-		heal_overall_damage(repair_rate, repair_rate)
+		heal_overall_damage(repair_rate, repair_rate, repair_rate, repair_rate)
 
 	// What it does if it is supposed to act as a medbot.
 	if(medbot)

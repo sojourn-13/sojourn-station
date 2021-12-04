@@ -1085,6 +1085,9 @@
 /obj/item/ammo_magazine/price_tag = 60
 
 /obj/item/ammo_magazine/ammobox/price_tag = 40
+
+/obj/item/ammo_casing/flare/price_tag = 10
+
 /*
 /obj/item/ammo_magazine/get_item_cost(export)
 	. = ..()

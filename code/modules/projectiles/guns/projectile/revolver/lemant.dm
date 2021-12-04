@@ -28,9 +28,10 @@
 	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds nine .40 rounds and one single action underslung 20mm shell. \
 	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
 	Someone added a spike to the grip, allowing it to function as a rather deadly knife when pistol whipping, handy given how long it takes to reload."
+	icon = 'icons/obj/guns/projectile/lemant_claw.dmi'
 	icon_state = "lemant_claw"
 	item_state = "lemant_claw"
-	force = 20 // Up from 10, essentially a knife by harder to mod. -Kaz
+	force = WEAPON_FORCE_PAINFUL // Up from 10, essentially a knife by harder to mod. -Kaz
 	recoil_buildup = 3 //Addded weight, better control. -Kaz
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_BAYONET)
 

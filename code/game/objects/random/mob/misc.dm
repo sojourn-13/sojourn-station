@@ -146,10 +146,10 @@
 
 //This is made out of a 100 fo easyer math
 /obj/random/mob/prepper/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/hivebot = 8,
-		/mob/living/simple_animal/hostile/hivebot/range = 6,
-		/mob/living/simple_animal/hostile/republicon = 8,
-		/mob/living/simple_animal/hostile/republicon/range = 4,
+	return pickweight(list(/mob/living/simple_animal/hostile/hivebot = 16,
+		/mob/living/simple_animal/hostile/hivebot/range = 12,
+		/mob/living/simple_animal/hostile/republicon = 16,
+		/mob/living/simple_animal/hostile/republicon/range = 8,
 		/mob/living/carbon/superior_animal/sentinal_seeker = 1 //Were rare and tanky
 		))
 
