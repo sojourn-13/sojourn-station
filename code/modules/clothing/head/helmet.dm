@@ -533,93 +533,6 @@
 	body_parts_covered = HEAD|FACE|EARS
 	siemens_coefficient = 1
 
-// toggleable face guard
-/obj/item/clothing/head/helmet/faceshield
-	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
-	var/tint_up = TINT_NONE
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
-	var/flags_inv_up = HIDEEARS
-	body_parts_covered = HEAD|EARS|EYES|FACE
-	var/body_parts_covered_up = HEAD|EARS
-	flash_protection = FLASH_PROTECTION_MAJOR
-	var/flash_protection_up = FLASH_PROTECTION_NONE
-	action_button_name = "Flip Face Shield"
-	tool_qualities = list()
-	max_upgrades = 0
-	var/up = FALSE
-	var/base_state
-
-/obj/item/clothing/head/helmet/faceshield/riot
-	name = "riot helmet"
-	desc = "It's a helmet specifically designed to protect against close range attacks."
-	icon_state = "riot"
-	armor_up = list(melee = 35, bullet = 25, energy = 25, bomb = 20, bio = 0, rad = 0)
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	price_tag = 150
-
-/obj/item/clothing/head/helmet/faceshield/attack_self()
-	if(!base_state)
-		base_state = icon_state
-	toggle()
-
-/obj/item/clothing/head/helmet/faceshield/update_icon()
-	if(!base_state)
-		base_state = icon_state
-	if(up)
-		icon_state = "[base_state]_up"
-	else
-		icon_state = "[base_state]"
-
-/obj/item/clothing/head/helmet/faceshield/refresh_upgrades()
-	. = ..()
-	if(!base_state)
-		base_state = icon_state
-	if(up)
-		armor = getArmor(arglist(armor_up))
-		flash_protection = flash_protection_up
-		tint = tint_up
-		flags_inv = flags_inv_up
-		body_parts_covered = body_parts_covered_up
-	else
-		flash_protection = initial(flash_protection)
-		tint = initial(tint)
-		flags_inv = initial(flags_inv)
-		body_parts_covered = initial(body_parts_covered)
-
-//I wanted to name it set_up() but some how I thought that would be misleading
-/obj/item/clothing/head/helmet/faceshield/proc/set_is_up(is_up)
-	if(up == is_up) return
-	up = is_up
-
-	refresh_upgrades()
-
-	update_icon()
-	update_wear_icon()	//update our mob overlays
-
-/obj/item/clothing/head/helmet/faceshield/verb/toggle()
-	set category = "Object"
-	set name = "Adjust face shield"
-	set src in usr
-
-	if(!usr.incapacitated())
-		src.set_is_up(!src.up)
-
-		if(src.up)
-			to_chat(usr, "You push the [src] up out of your face.")
-		else
-			to_chat(usr, "You flip the [src] down to protect your face.")
-
-		usr.update_action_buttons()
-
-/obj/item/clothing/head/helmet/faceshield/helmet_visor
-	name = "marshal helmet"
-	desc = "It's a helmet specifically designed for general police work. Comes with a visor face cover and extra padding for dealing with criminal scum in melee."
-	icon_state = "helmet_visor"
-	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	armor = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	price_tag = 150
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
@@ -645,9 +558,10 @@
 /*
  * Special helmets with HUDs
  */
+
 /obj/item/clothing/head/helmet/riot_hud
 	name = "marshal riot helmet"
-	desc = "Standard-issue marshal helmet with a basic HUD and targeting system included."
+	desc = "Standard-issue marshal helmet with a basic HUD and targeting system included, produced by Seinemetall Defense GmbH after more classic riot helmets were not able to handle the day to day riots."
 	icon_state = "light_riot"
 	body_parts_covered = HEAD|FACE|EARS
 	armor = list(
@@ -785,7 +699,6 @@
 	update_wear_icon()
 	..()
 
-// S E R B I A //
 
 /obj/item/clothing/head/helmet/steelpot
 	name = "steelpot helmet"
@@ -796,12 +709,131 @@
 	body_parts_covered = HEAD|EARS
 	siemens_coefficient = 1
 
+
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle
+	name = "\improper Type-34C Semi-Enclosed Head Wear"
+	desc = "Civilian model of a popular helmet used by certain law enforcement agencies. It does not have any armor plating, but has a neo-laminated fabric lining."
+	icon_state = "cyberpunkgoggle"
+	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
+	siemens_coefficient = 0.9	//More conductive than most helmets
+	armor = list(
+		melee = 5,
+		bullet = 20,
+		energy = 10,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored
+	name = "\improper Type-34 Semi-Enclosed Headwear"
+	desc = "Armored helmet used by certain law enforcement agencies. It's hard to believe there's someone somewhere behind that."
+	armor = list(
+		melee = 30,
+		bullet = 30,
+		energy = 30,
+		bomb = 20,
+		bio = 0,
+		rad = 0
+	)
+
+// toggleable face guard
+/obj/item/clothing/head/helmet/faceshield
+	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
+	var/tint_up = TINT_NONE
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
+	var/flags_inv_up = HIDEEARS
+	body_parts_covered = HEAD|EARS|EYES|FACE
+	var/body_parts_covered_up = HEAD|EARS
+	flash_protection = FLASH_PROTECTION_MAJOR
+	var/flash_protection_up = FLASH_PROTECTION_NONE
+	action_button_name = "Flip Face Shield"
+	tool_qualities = list()
+	max_upgrades = 0
+	var/up = FALSE
+	var/base_state
+
+/obj/item/clothing/head/helmet/faceshield/riot
+	name = "riot helmet"
+	desc = "It's a outdated helmet specifically designed to protect against close range attacks."
+	icon_state = "riot"
+	armor_up = list(melee = 35, bullet = 25, energy = 25, bomb = 20, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 35, bio = 0, rad = 0)
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	price_tag = 150
+
+/obj/item/clothing/head/helmet/faceshield/attack_self()
+	if(!base_state)
+		base_state = icon_state
+	toggle()
+
+/obj/item/clothing/head/helmet/faceshield/update_icon()
+	if(!base_state)
+		base_state = icon_state
+	if(up)
+		icon_state = "[base_state]_up"
+	else
+		icon_state = "[base_state]"
+
+/obj/item/clothing/head/helmet/faceshield/refresh_upgrades()
+	. = ..()
+	if(!base_state)
+		base_state = icon_state
+	if(up)
+		armor = getArmor(arglist(armor_up))
+		flash_protection = flash_protection_up
+		tint = tint_up
+		flags_inv = flags_inv_up
+		body_parts_covered = body_parts_covered_up
+	else
+		flash_protection = initial(flash_protection)
+		tint = initial(tint)
+		flags_inv = initial(flags_inv)
+		body_parts_covered = initial(body_parts_covered)
+
+//I wanted to name it set_up() but some how I thought that would be misleading
+/obj/item/clothing/head/helmet/faceshield/proc/set_is_up(is_up)
+	if(up == is_up) return
+	up = is_up
+
+	refresh_upgrades()
+
+	update_icon()
+	update_wear_icon()	//update our mob overlays
+
+/obj/item/clothing/head/helmet/faceshield/verb/toggle()
+	set category = "Object"
+	set name = "Adjust face shield"
+	set src in usr
+
+	if(!usr.incapacitated())
+		src.set_is_up(!src.up)
+
+		if(src.up)
+			to_chat(usr, "You push the [src] up out of your face.")
+		else
+			to_chat(usr, "You flip the [src] down to protect your face.")
+
+		usr.update_action_buttons()
+
+/obj/item/clothing/head/helmet/faceshield/helmet_visor
+	name = "marshal helmet"
+	desc = "It's a helmet specifically designed for general police work. Comes with a visor face cover and extra padding for dealing with criminal scum in melee."
+	icon_state = "helmet_visor"
+	armor_up = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	price_tag = 150
+
+
+// S E R B I A //
+
 /obj/item/clothing/head/helmet/faceshield/altyn
 	name = "altyn helmet"
 	desc = "A titanium helmet of serbian origin. Still widely used despite being discontinued."
 	icon_state = "altyn"
 	armor_up = list(melee = 20, bullet = 15, energy = 0, bomb = 15, bio = 0, rad = 0)
-	armor_down = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, energy = 0, bomb = 35, bio = 0, rad = 0)
 	siemens_coefficient = 1
 	up = TRUE
 
@@ -815,7 +847,8 @@
 	name = "maska helmet"
 	desc = "\"I do not know who I am, I don\'t know why I\'m here. All I know is that I must kill.\""
 	icon_state = "maska"
-	armor_down = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
+	armor = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
+
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska/verb/toggle_style()
 	set name = "Adjust Style"
@@ -848,33 +881,6 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/head/helmet/visor/cyberpunkgoggle
-	name = "\improper Type-34C Semi-Enclosed Head Wear"
-	desc = "Civilian model of a popular helmet used by certain law enforcement agencies. It does not have any armor plating, but has a neo-laminated fabric lining."
-	icon_state = "cyberpunkgoggle"
-	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
-	siemens_coefficient = 0.9	//More conductive than most helmets
-	armor = list(
-		melee = 5,
-		bullet = 20,
-		energy = 10,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
-
-/obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored
-	name = "\improper Type-34 Semi-Enclosed Headwear"
-	desc = "Armored helmet used by certain law enforcement agencies. It's hard to believe there's someone somewhere behind that."
-	armor = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
-		bomb = 20,
-		bio = 0,
-		rad = 0
-	)
-
 /obj/item/clothing/head/helmet/faceshield/paramedic
 	name = "Advanced paramedic helmet"
 	desc = "A smart helmet that aids in medical tracking."
@@ -888,22 +894,8 @@
 		MATERIAL_PLASTIC = 5,
 		MATERIAL_PLATINUM = 2
 		)
-	armor_up = list(
-		melee = 5,
-		bullet = 20,
-		energy = 10,
-		bomb = 10,
-		bio = 100,
-		rad = 50
-		)
-
-	armor_down = list(
-		melee = 25,
-		bullet = 25,
-		energy = 25,
-		bomb = 20,
-		bio = 100,
-		rad = 50)
+	armor_up = list(melee = 5, bullet = 20, energy = 10, bomb = 10, bio = 100, rad = 50)
+	armor = list(melee = 25, bullet = 25, energy = 25, bomb = 20, bio = 100, rad = 50)
 	up = TRUE
 	var/speaker_enabled = TRUE
 	var/scan_scheduled = FALSE
@@ -911,11 +903,9 @@
 	var/repeat_report_after = 60 SECONDS
 	var/list/crewmembers_recently_reported = list()
 
-
 /obj/item/clothing/head/helmet/faceshield/paramedic/equipped(mob/M)
 	. = ..()
 	schedule_scan()
-
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/proc/schedule_scan()
 	if(scan_scheduled)
@@ -966,10 +956,8 @@
 
 	schedule_scan()
 
-
 /obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
 	toogle_speaker()
-
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/verb/toogle_speaker()
 	set name = "Toogle helmet's speaker"

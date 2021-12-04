@@ -23,7 +23,7 @@
 	build_path = /obj/item/gun/projectile/clarissa/makarov
 
 /datum/design/autolathe/gun/firefly
-	name = "GmbH HG .35 \"Firefly\""
+	name = "Seinemetall Defense GmbH HG .35 \"Firefly\""
 	build_path = /obj/item/gun/projectile/firefly
 
 /datum/design/autolathe/gun/colt
@@ -69,11 +69,11 @@
 	build_path = /obj/item/gun/projectile/ladon/hs
 
 /datum/design/autolathe/gun/ladon_sa
-	name = "GmbH HG .40 \"Sigia\""
+	name = "Seinemetall Defense GmbH HG .40 \"Sigia\""
 	build_path = /obj/item/gun/projectile/ladon/sa
 
 /datum/design/autolathe/gun/rafale
-	name = "GmbH SHG .40 \"Rafale\""
+	name = "Seinemetall Defense GmbH SHG .40 \"Rafale\""
 	build_path = /obj/item/gun/projectile/silenced
 
 /datum/design/autolathe/gun/mk58_wood
@@ -123,7 +123,7 @@
 	build_path = /obj/item/gun/projectile/lamia/scoped/dark
 
 /datum/design/autolathe/gun/scoped_lamia
-	name = "GmbH HG .50 Kurtz \"Lamia\" Advanced"
+	name = "Seinemetall Defense GmbH HG .50 Kurtz \"Lamia\" Advanced"
 	build_path = /obj/item/gun/projectile/lamia/scoped
 
 /datum/design/autolathe/gun/basilisk
@@ -149,7 +149,7 @@
 	build_path = /obj/item/gun/projectile/automatic/straylight
 
 /datum/design/autolathe/gun/wirbelwind
-	name = "GmbH SMG ,35 \"Wirbelwind\""
+	name = "Seinemetall Defense GmbH SMG ,35 \"Wirbelwind\""
 	build_path = /obj/item/gun/projectile/automatic/wirbelwind
 
 /datum/design/autolathe/gun/drozd
@@ -201,7 +201,7 @@
 	build_path = /obj/item/gun/projectile/shotgun/pump/gladstone
 
 /datum/design/autolathe/gun/riot_shotgun
-	name = "GmbH SG \"State\""
+	name = "Seinemetall Defense GmbH SG \"State\""
 	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun
 
 /datum/design/autolathe/gun/sbaw
@@ -223,11 +223,11 @@
 	build_path = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
 
 /datum/design/autolathe/gun/bulldog
-	name = "GmbH CAR .257 \"Bulldog\""
+	name = "Seinemetall Defense GmbH CAR .257 \"Bulldog\""
 	build_path = /obj/item/gun/projectile/automatic/bulldog
 
 /datum/design/autolathe/gun/bulldog_rds
-	name = "GmbH CAR .257 \"Bulldog\" Dot Sight"
+	name = "Seinemetall Defense GmbH CAR .257 \"Bulldog\" Dot Sight"
 	build_path = /obj/item/gun/projectile/automatic/bulldog/rds
 
 /datum/design/autolathe/gun/basstet
@@ -239,7 +239,7 @@
 	build_path = /obj/item/gun/projectile/automatic/pitbull
 
 /datum/design/autolathe/gun/ostwind
-	name = "GmbH AR .257 \"Ostwind\""
+	name = "Seinemetall Defense GmbH AR .257 \"Ostwind\""
 	build_path = /obj/item/gun/projectile/automatic/ostwind
 
 /datum/design/autolathe/gun/sts25
@@ -274,7 +274,7 @@
 	build_path = /obj/item/gun/projectile/automatic/vintorez
 
 /datum/design/autolathe/gun/nordwind
-	name = "GmbH DMR - 7.5mm  \"Nordwind\""
+	name = "Seinemetall Defense GmbH DMR - 7.5mm  \"Nordwind\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind
 
 /datum/design/autolathe/gun/sts30
@@ -390,7 +390,7 @@
 	build_path = /obj/item/gun/projectile/grenade
 
 /datum/design/autolathe/gun/grenade_launcher_lenar
-	name = "GmbH GL \"Lenar\""
+	name = "Seinemetall Defense GmbH GL \"Lenar\""
 	build_path = /obj/item/gun/projectile/grenade/lenar
 
 /datum/design/autolathe/gun/grenade_launcher_china_lake
@@ -404,11 +404,11 @@
 	build_path = /obj/item/gun/energy/taser
 
 /datum/design/autolathe/gun/revolver_taser
-	name = "GmbH - \"Zeus\" Stun Revolver"
+	name = "Seinemetall Defense GmbH - \"Zeus\" Stun Revolver"
 	build_path = /obj/item/gun/energy/taser
 
 /datum/design/autolathe/gun/ion_pistol
-	name = "GmbH - \"Aedes\" Ion Pistol"
+	name = "Seinemetall Defense GmbH - \"Aedes\" Ion Pistol"
 	build_path = /obj/item/gun/energy/ionpistol
 
 /datum/design/autolathe/gun/titanica
