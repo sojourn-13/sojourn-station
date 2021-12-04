@@ -73,6 +73,12 @@
 	Console = new /obj/item/modular_computer/console/preset/nanobot(src)
 	update_icon()
 
+/mob/living/carbon/superior_animal/nanobot/rejuvenate()
+	..()
+	//We trgain are consol and radio if revived!
+	Radio = new/obj/item/device/radio(src)
+	Console = new /obj/item/modular_computer/console/preset/nanobot(src)
+
 /mob/living/carbon/superior_animal/nanobot/examine(mob/user)
 	..()
 	if(iscarbon(user) || issilicon(user))
@@ -93,6 +99,11 @@
 		to_chat(src, "You are suddenly shunted out of your nanobot as it dies.")
 		controller.adjustBrainLoss(rand(5, 10)) // Get some brain damage.
 		return_mind() // Send them back
+	//We lose are items as not to make them farmable by lonestar when people leave the round/get lost
+	Radio = null
+	Console = null
+	for(var/internals_items in contents)
+		qdel(internals_items)
 	. = ..()
 
 /mob/living/carbon/superior_animal/nanobot/update_icon()

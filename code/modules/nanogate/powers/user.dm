@@ -99,13 +99,25 @@ List of powers in this page :
 						/obj/item/gun_upgrade/scope
 						)
 
-	// Removing the mods that shouldn't be available : AKA Bluespace, Greyson and AI stuff
+	// Removing the mods that shouldn't be available : AKA Bluespace, Greyson, AI and guild handmade only stuff
 	choices_mods -= list(/obj/item/tool_upgrade/augment/holding_tank,
 						/obj/item/tool_upgrade/augment/ai_tool,
 						/obj/item/tool_upgrade/augment/ai_tool_excelsior,
 						/obj/item/tool_upgrade/augment/repair_nano,
 						/obj/item/tool_upgrade/augment/randomizer,
 						/obj/item/tool_upgrade/artwork_tool_mod,
+						/obj/item/tool_upgrade/augment/sanctifier,	//Has biomatter, sadly nanites are not able to use that
+						/obj/item/tool_upgrade/armor/melee,
+						/obj/item/tool_upgrade/armor/bullet,
+						/obj/item/tool_upgrade/armor/energy,
+						/obj/item/tool_upgrade/armor/bomb,
+						/obj/item/gun_upgrade/barrel/forged,
+						/obj/item/gun_upgrade/barrel/bore,
+						/obj/item/gun_upgrade/barrel/excruciator,	//Sadly has biomatter
+						/obj/item/gun_upgrade/mechanism/upgrade_kit,
+						/obj/item/gun_upgrade/mechanism/clock_block,//Brass and unknown tech
+						/obj/item/gun_upgrade/trigger/boom,			//Illegal
+						/obj/item/gun_upgrade/scope/watchman,
 						/obj/item/gun_upgrade/mechanism/glass_widow,
 						/obj/item/gun_upgrade/mechanism/greyson_master_catalyst,
 						/obj/item/gun_upgrade/mechanism/brass_kit,
