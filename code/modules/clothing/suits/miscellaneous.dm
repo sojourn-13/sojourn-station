@@ -293,12 +293,12 @@ obj/item/clothing/suit/fluff/kimono
 	icon_open = "windbreaker_open"
 	icon_closed = "windbreaker"
 	armor = list(
-		melee = 10,
-		bullet = 10,
-		energy = 0,
+		melee = 0,
+		bullet = 0,
+		energy = 5,
 		bomb = 0,
 		bio = 30,
-		rad = 0
+		rad = 10
 	)
 	body_parts_covered = UPPER_TORSO|ARMS
 

@@ -456,10 +456,9 @@
 	desc = "A sturdy grey jacket made out of synthetic leather."
 	icon_state = "leather_jacket"
 	item_state = "leather_jacket"
-	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 	price_tag = 80
 
@@ -470,7 +469,7 @@
 	item_state = "midriff_leather"
 	icon_open = "midriff_leather_open"
 	icon_closed = "midriff_leather"
-	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/toggle/leather/bikermidriff
@@ -478,7 +477,7 @@
 	desc = "A stylish, midriff jacket made of synthetic leather. Red inner padding and thick layers, it'd be a great jacket for cruising down the road; If not for the length"
 	icon_state = "bikermidriff"
 	item_state = "bikermidriff"
-	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/toggle/leather/bikermidriff/verb/toggle_style()
@@ -700,8 +699,8 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "aerostatic_bomber_jacket"
 	item_state = "aerostatic_bomber_jacket"
 	armor = list(
-		melee = 10,
-		bullet = 10,
+		melee = 5,
+		bullet = 5,
 		energy = 0,
 		bomb = 5,
 		bio = 30,
@@ -716,8 +715,8 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "jamrock_blazer"
 	item_state = "jamrock_blazer"
 	armor = list(
-		melee = 10,
-		bullet = 10,
+		melee = 5,
+		bullet = 5,
 		energy = 0,
 		bomb = 5,
 		bio = 30,
@@ -841,7 +840,7 @@ obj/item/clothing/suit/sweater/blue
 		bullet = 5,
 		energy = 5,
 		bomb = 5,
-		bio = 0,
+		bio = 5,
 		rad = 0
 	)
 
