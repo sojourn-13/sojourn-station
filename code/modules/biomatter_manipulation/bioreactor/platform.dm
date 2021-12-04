@@ -13,10 +13,9 @@
 	active_power_usage = 400
 	var/make_glasswalls_after_creation = FALSE
 
-/obj/machinery/multistructure/bioreactor_part/platform/Initialize()
+/obj/machinery/multistructure/bioreactor_part/platform/Initialize(mapload)
 	. = ..()
 	update_icon()
-
 
 /obj/machinery/multistructure/bioreactor_part/platform/Process()
 	if(!MS)
