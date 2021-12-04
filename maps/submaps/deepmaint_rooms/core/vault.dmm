@@ -340,18 +340,18 @@
 /area/deepmaint)
 "bf" = (
 /obj/structure/table/rack,
-/obj/item/weapon/pinpointer/nukeop,
+/obj/item/pinpointer/nukeop,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/deepmaint)
 "bg" = (
 /obj/structure/safe,
-/obj/item/weapon/plastique,
-/obj/item/weapon/plastique,
-/obj/item/weapon/gun/projectile/shotgun/pump/china,
-/obj/item/weapon/storage/box/baton_rounds,
-/obj/item/weapon/storage/box/flash_grenade_shells,
-/obj/item/weapon/storage/box/frag_grenade_shells,
-/obj/item/weapon/storage/box/syndicate,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/gun/projectile/shotgun/pump/china,
+/obj/item/storage/box/baton_rounds,
+/obj/item/storage/box/flash_grenade_shells,
+/obj/item/storage/box/frag_grenade_shells,
+/obj/item/storage/box/syndicate,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/deepmaint)
 "bh" = (
@@ -579,13 +579,13 @@
 /area/deepmaint)
 "bQ" = (
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/glass/beaker{
+/obj/item/reagent_containers/glass/beaker{
 	pixel_x = 5
 	},
-/obj/item/weapon/reagent_containers/glass/beaker{
+/obj/item/reagent_containers/glass/beaker{
 	pixel_x = 5
 	},
-/obj/item/weapon/material/kitchen/rollingpin,
+/obj/item/material/kitchen/rollingpin,
 /turf/simulated/floor/tiled/cafe,
 /area/deepmaint)
 "bR" = (
@@ -611,11 +611,11 @@
 /area/deepmaint)
 "bU" = (
 /obj/structure/table/standard,
-/obj/item/weapon/packageWrap,
-/obj/item/weapon/reagent_containers/food/condiment/enzyme{
+/obj/item/packageWrap,
+/obj/item/reagent_containers/food/condiment/enzyme{
 	layer = 5
 	},
-/obj/item/weapon/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/food/condiment/enzyme{
 	layer = 5
 	},
 /turf/simulated/floor/tiled/cafe,

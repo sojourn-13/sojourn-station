@@ -84,7 +84,7 @@
 /turf/simulated/floor/plating,
 /area/deepmaint)
 "as" = (
-/obj/item/weapon/tool/pickaxe,
+/obj/item/tool/pickaxe,
 /turf/simulated/floor/asteroid,
 /area/deepmaint)
 "at" = (
@@ -282,7 +282,7 @@
 /area/deepmaint)
 "bd" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet,
+/obj/item/bedsheet,
 /turf/simulated/floor/carpet,
 /area/deepmaint)
 "be" = (

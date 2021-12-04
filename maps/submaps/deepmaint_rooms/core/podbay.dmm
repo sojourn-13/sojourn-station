@@ -391,7 +391,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "bm" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "bn" = (
@@ -464,7 +464,7 @@
 /area/deepmaint)
 "bx" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/toolbox/mechanical{
+/obj/item/storage/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = -1
 	},
@@ -677,7 +677,7 @@
 /turf/simulated/floor/tiled/dark/panels,
 /area/deepmaint)
 "bX" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /turf/simulated/floor/tiled/dark/panels,
 /area/deepmaint)
 "bY" = (
