@@ -19,7 +19,8 @@
 	step_delay = 1
 	check_armour = ARMOR_MELEE
 	can_ricochet = FALSE
-	embed = TRUE
+	embed = FALSE
+	sharp = FALSE
 	affective_damage_range = 2
 	affective_ap_range = 2
 
