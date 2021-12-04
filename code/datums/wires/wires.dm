@@ -80,6 +80,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 		return
 	if(wd.skill_level > mec_stat)
 		return
+	return wd.description
 
 /datum/wires/proc/get_description(index)
 	for(var/datum/wire_description/desc in descriptions)
