@@ -152,6 +152,7 @@
 	attack_verb = list()
 	tool_qualities = initial(tool_qualities)
 
+/* Outdated and dosnt fit with shield balance as easy as it is to make or get them
 /obj/item/melee/energy/sword/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(active && default_parry_check(user, attacker, damage_source) && prob(50))
 		user.visible_message(SPAN_DANGER("\The [user] parries [attack_text] with \the [src]!"))
@@ -162,12 +163,12 @@
 		playsound(user.loc, 'sound/weapons/blade1.ogg', 50, 1)
 		return 1
 	return 0
+*/
 
 /obj/item/melee/energy/sword/pirate
 	name = "energy cutlass"
 	desc = "Arrrr matey."
 	icon_state = "cutlass0"
-
 
 /obj/item/melee/energy/sword/sabre
 	name = "laser saber"
@@ -188,8 +189,8 @@
 /obj/item/melee/energy/sword/sabre/dagger/activate(mob/living/user)
 	if(!active)
 		to_chat(user, SPAN_NOTICE("\The [src] is now energized."))
-	icon_state = "daggergreen" //So we dont use sword icons
 	..()
+	icon_state = "daggergreen" //So we dont use sword icons
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "strikes", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 35,  QUALITY_WIRE_CUTTING = 25, QUALITY_LASER_CUTTING = 25, QUALITY_WELDING = 20, QUALITY_CAUTERIZING = 30)
 
