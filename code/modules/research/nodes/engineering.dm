@@ -35,7 +35,7 @@
 
 	required_technologies = list(/datum/technology/basic_engineering)
 	required_tech_levels = list()
-	cost = 250
+	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/atmosalerts,
 						   /datum/design/research/circuit/air_management)
@@ -52,7 +52,7 @@
 
 	required_technologies = list(/datum/technology/monitoring)
 	required_tech_levels = list()
-	cost = 250
+	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/gas_heater,
 						   /datum/design/research/circuit/gas_cooler)
@@ -69,7 +69,7 @@
 
 	required_technologies = list(/datum/technology/monitoring)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/circuit/rdconsole,
 							/datum/design/research/circuit/rdservercontrol,
@@ -91,7 +91,7 @@
 
 	required_technologies = list(/datum/technology/adv_replication)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(
 		/datum/design/research/item/computer_part/portabledrive/advanced,
@@ -119,7 +119,7 @@
 
 	required_technologies = list(/datum/technology/adv_replication)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(
 							/datum/design/research/item/wirer,
@@ -143,7 +143,7 @@
 
 	required_technologies = list(/datum/technology/custom_circuits)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/item/custom_circuit_assembly/advanced_designs)
 
@@ -176,7 +176,7 @@
 
 	required_technologies = list(/datum/technology/basic_engineering)
 	required_tech_levels = list()
-	cost = 250
+	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/ordercomp,
 						   /datum/design/research/circuit/supplycomp)
@@ -194,7 +194,7 @@
 
 	required_technologies = list(/datum/technology/basic_engineering)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(/datum/design/research/item/weapon/mining/drill)
 
@@ -210,7 +210,7 @@
 
 	required_technologies = list(/datum/technology/basic_mining)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/circuit/miningdrill,
 							/datum/design/research/circuit/miningdrillbrace,
@@ -232,7 +232,7 @@
 									/datum/technology/advanced_mining
 								)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/item/tool/pneumatic_crowbar,
 							/datum/design/research/item/tool/rcd,
@@ -250,7 +250,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 600
+	cost = 900
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/hatton,
 							/datum/design/research/item/ammo/hatton
@@ -267,7 +267,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/stick,
 							/datum/design/research/item/weapon/toolmod/heatsink,
@@ -288,7 +288,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/ergonomicgrip,
 							/datum/design/research/item/weapon/toolmod/ratchet,
@@ -313,7 +313,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/laserguide,
 							/datum/design/research/item/weapon/toolmod/stabilizedgrip,
@@ -334,7 +334,7 @@
 
 	required_technologies = list(/datum/technology/adv_tools)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/toolmod/cellmount,
 							/datum/design/research/item/weapon/toolmod/celladapt,
@@ -387,7 +387,7 @@
 
 	required_technologies = list(/datum/technology/basic_engineering)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(/datum/design/research/item/part/high_micro_laser,
 							/datum/design/research/item/part/adv_matter_bin)
@@ -403,7 +403,7 @@
 
 	required_technologies = list(/datum/technology/adv_parts)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(/datum/design/research/item/part/ultra_micro_laser,
 						/datum/design/research/item/part/super_matter_bin,
@@ -420,7 +420,7 @@
 
 	required_technologies = list(/datum/technology/ultra_parts)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(/datum/design/research/item/part/RPED,
 							 /datum/design/research/circuit/secure_airlock,
@@ -438,7 +438,7 @@
 
 	required_technologies = list(/datum/technology/super_adv_engineering, /datum/technology/weapon_recharging)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 7)
-	cost = 2500
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/circuit/industrial_autolathe,
 							/datum/design/research/circuit/recharger_industrial,
@@ -459,7 +459,7 @@
 
 	required_technologies = list(/datum/technology/super_adv_engineering)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 10)
-	cost = 1250
+	cost = 1875
 
 	unlocks_designs = list(	/datum/design/research/item/storage,
 							/datum/design/research/item/ai_container,
@@ -479,7 +479,7 @@
 
 	required_technologies = list(/datum/technology/rig_industeral)
 	required_tech_levels = list()
-	cost = 1250
+	cost = 1875
 
 	unlocks_designs = list(	/datum/design/research/item/rig_drill,
 							/datum/design/research/item/rig_anomaly_scanner,

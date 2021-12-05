@@ -29,7 +29,7 @@
 
 	required_technologies = list(/datum/technology/ice_and_fire, /datum/technology/basic_biotech)
 	required_tech_levels = list()
-	cost = 250
+	cost = 375
 
 	unlocks_designs = list(	/datum/design/research/item/medical/cryobag,
 							/datum/design/research/item/medical/red,
@@ -47,7 +47,7 @@
 
 	required_technologies = list(/datum/technology/basic_biotech)
 	required_tech_levels = list()
-	cost = 100
+	cost = 150
 
 	unlocks_designs = list(	/datum/design/research/circuit/med_data,
 							/datum/design/research/circuit/operating,
@@ -80,7 +80,7 @@
 
 	required_technologies = list(/datum/technology/basic_med_machines)
 	required_tech_levels = list()
-	cost = 250
+	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/sleeper,
 							/datum/design/research/item/medical/compact_roller_bed)
@@ -96,7 +96,7 @@
 
 	required_technologies = list(/datum/technology/basic_biotech)
 	required_tech_levels = list()
-	cost = 200
+	cost = 300
 
 	unlocks_designs = list(	/datum/design/research/circuit/biogenerator,
 							/datum/design/research/circuit/extractor,
@@ -119,7 +119,7 @@
 									/datum/technology/hydroponics
 								)
 	required_tech_levels = list()
-	cost = 350
+	cost = 525
 
 	unlocks_designs = list(	/datum/design/research/circuit/chemmaster,
 							/datum/design/research/circuit/chemical_dispenser,
@@ -171,7 +171,7 @@
 
 	required_technologies = list(/datum/technology/adv_med_machines)
 	required_tech_levels = list()
-	cost = 250
+	cost = 375
 
 	unlocks_designs = list(	/datum/design/research/item/medical/mass_spectrometer,
 							/datum/design/research/item/medical/reagent_scanner,
@@ -192,7 +192,7 @@
 
 	required_technologies = list(/datum/technology/basic_medical_tools)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/item/implant/chemical,
 							/datum/design/research/item/part/adv_sensor,
@@ -225,7 +225,7 @@
 								/datum/technology/portable_chemistry
 								)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/item/autodoc,
 							/datum/design/research/item/autodoc_commercial,
@@ -279,7 +279,7 @@
 
 	required_technologies = list(/datum/technology/improved_biotech)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/item/part/phasic_sensor,
 							/datum/design/research/item/part/pico_mani,
@@ -303,7 +303,7 @@
 									/datum/technology/portable_biotech
 								)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 1500
 
 	unlocks_designs = list(
 							/datum/design/research/item/mechfab/modules/multitool/surgical,
@@ -331,7 +331,7 @@
 	required_technologies = list(	/datum/technology/top_biotech
 								)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 1500
 
 	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/armor,
 							/datum/design/research/item/mechfab/modules/armblade,
@@ -359,7 +359,7 @@
 									/datum/technology/rig_industeral
 								)
 	required_tech_levels = list()
-	cost = 2500
+	cost = 3750
 
 	unlocks_designs = list(	/datum/design/research/item/chem_injector,
 							/datum/design/research/item/healthscanner,
@@ -378,7 +378,7 @@
 	required_technologies = list(	/datum/technology/rig_medical_stuff
 								)
 	required_tech_levels = list()
-	cost = 150
+	cost = 225
 
 	unlocks_designs = list(	/datum/design/research/item/medical/medimplant_sci
 							)
