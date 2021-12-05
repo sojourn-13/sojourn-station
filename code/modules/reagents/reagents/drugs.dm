@@ -341,7 +341,7 @@
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0) //Drains the stomic faster
 
 /datum/reagent/drug/hyperzine/withdrawal_act(mob/living/carbon/M)
-	M.add_chemical_effect(CE_SPEEDBOOST, -1)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/drug/sanguinum

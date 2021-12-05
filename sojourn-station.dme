@@ -2738,6 +2738,7 @@
 #include "code\modules\reagents\reagents\medicine.dm"
 #include "code\modules\reagents\reagents\nanites.dm"
 #include "code\modules\reagents\reagents\other.dm"
+#include "code\modules\reagents\reagents\race.dm"
 #include "code\modules\reagents\reagents\stims.dm"
 #include "code\modules\reagents\reagents\toxins.dm"
 #include "code\modules\reagents\recipes\recipes.dm"
