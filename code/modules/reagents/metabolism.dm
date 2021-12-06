@@ -1,3 +1,5 @@
+#define NSA_THRESHOLD_MINIMUM 20 //The lowest someone's NSA Threshhold can reach
+
 /datum/reagents/metabolism
 	var/metabolism_class //CHEM_TOUCH, CHEM_INGEST, or CHEM_BLOOD
 	var/mob/living/carbon/parent
@@ -29,6 +31,10 @@
 /datum/metabolism_effects
 	var/list/nerve_system_accumulations = list() // Nerve system accumulations
 	var/nsa_threshold = 100
+	var/nsa_bonus = 0 //For various perks and organs affecting the nsa threshhold
+	var/nsa_chem_bonus = 0 //For chems (detox in specific) affecting the nsa threshhold
+	var/nsa_mult = 1 //Multiplier for nsa, used by specific perks. Added so the number doesn't fuck with other numbers.
+	var/nsa_organ_bonus = 0 //For efficiency modifiers on the nerves
 	var/nsa_current = 0
 
 	var/mob/living/carbon/parent
@@ -40,6 +46,14 @@
 	var/addiction_tick = 1
 	/// The final chance for an addiction to manifest is multiplied by this value before being passed to prob.
 	var/addiction_chance_multiplier = 1
+
+/datum/metabolism_effects/proc/calculate_nsa(calc_nerves = FALSE)
+	 = 0
+	for(var/obj/item/organ/internal/nerve/target_nerve in internal_organs_by_efficiency[OP_NERVE])
+		nsa_organ_bonus = (get_organ_efficiency(OP_NERVE) - 700) / 2
+	nsa_threshold = round((100 + nsa_bonus + nsa_chem_bonus + efficiency_bonus) * nsa_mult)
+	nsa_threshold = max(nsa_threshold, NSA_THRESHOLD_MINIMUM) //Can't be below for any reason. Keeps 
+	return nsa_threshold
 
 /datum/metabolism_effects/proc/adjust_nsa(value, tag)
 	if(!tag)

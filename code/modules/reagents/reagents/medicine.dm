@@ -892,19 +892,22 @@
 	metabolism = REM/2
 
 /datum/reagent/medicine/detox/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.metabolism_effects.nsa_threshold == initial(M.metabolism_effects.nsa_threshold))
-		M.metabolism_effects.nsa_threshold += rand(20, 60)
+	if(!M.metabolism_effects.nsa_chem_bonus)
+		M.metabolism_effects.nsa_chem_bonus += rand(20, 60)
+		M.metabolism_effects.calculate_nsa()
 
 /datum/reagent/medicine/detox/on_mob_delete(mob/living/L)
 	..()
 	var/mob/living/carbon/C = L
 	if(istype(C))
-		C.metabolism_effects.nsa_threshold = initial(C.metabolism_effects.nsa_threshold)
+		C.metabolism_effects.nsa_threshold = initial(C.metabolism_effects.nsa_chem_bonus)
+		M.metabolism_effects.calculate_nsa()
 
 /datum/reagent/medicine/detox/overdose(mob/living/carbon/M, alien)
 	var/mob/living/carbon/C = M
 	if(istype(C))
-		C.metabolism_effects.nsa_threshold = initial(C.metabolism_effects.nsa_threshold) - rand(20, 40)
+		C.metabolism_effects.nsa_chem_bonus = -rand(20, 40)
+		M.metabolism_effects.calculate_nsa()
 
 /datum/reagent/medicine/purger
 	name = "Purger"

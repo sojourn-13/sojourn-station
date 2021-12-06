@@ -10,6 +10,25 @@
 	nutriment_req = 0.5
 	w_class =  ITEM_SIZE_TINY
 
+//Handle surgical insertion of a nerve modifying the NSA
+/obj/item/organ/internal/nerve/replaced_mob(mob/living/carbon/human/target)
+	..(target)
+	target.calculate_nsa_bonus(TRUE)
+
+//Handle surgical removal of a nerve modifying the NSA. Great way to tank your NSA into the shitter.
+/obj/item/organ/internal/nerve/removed_mob(mob/living/user)
+	..(user)
+	user.calculate_nsa_bonus(TRUE)
+
+
+/obj/item/organ/internal/nerve/take_damage(amount, silent)
+	..(amount, silent)
+	user.calculate_nsa_bonus(TRUE)
+
+/obj/item/organ/internal/nerve/heal_damage(amount, natural = TRUE)
+	..(amount, natural)
+	user.calculate_nsa_bonus(TRUE)
+
 /obj/item/organ/internal/nerve/robotic
 	name = "nerve wire"
 	icon_state = "wire"
