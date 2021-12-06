@@ -13,21 +13,23 @@
 //Handle surgical insertion of a nerve modifying the NSA
 /obj/item/organ/internal/nerve/replaced_mob(mob/living/carbon/human/target)
 	..(target)
-	target.calculate_nsa_bonus(TRUE)
+	target.metabolism_effects.calculate_nsa(TRUE)
 
 //Handle surgical removal of a nerve modifying the NSA. Great way to tank your NSA into the shitter.
 /obj/item/organ/internal/nerve/removed_mob(mob/living/user)
+	owner.metabolism_effects.calculate_nsa(TRUE)
 	..(user)
-	user.calculate_nsa_bonus(TRUE)
 
 
+//Handle NSA changing due to organ damage
 /obj/item/organ/internal/nerve/take_damage(amount, silent)
 	..(amount, silent)
-	user.calculate_nsa_bonus(TRUE)
+	owner.metabolism_effects.calculate_nsa(TRUE)
 
+//Handle NSA changing due to organs healing
 /obj/item/organ/internal/nerve/heal_damage(amount, natural = TRUE)
 	..(amount, natural)
-	user.calculate_nsa_bonus(TRUE)
+	owner.metabolism_effects.calculate_nsa(TRUE)
 
 /obj/item/organ/internal/nerve/robotic
 	name = "nerve wire"

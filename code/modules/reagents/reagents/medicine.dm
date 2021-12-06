@@ -901,7 +901,7 @@
 	var/mob/living/carbon/C = L
 	if(istype(C))
 		C.metabolism_effects.nsa_threshold = initial(C.metabolism_effects.nsa_chem_bonus)
-		M.metabolism_effects.calculate_nsa()
+		C.metabolism_effects.calculate_nsa()
 
 /datum/reagent/medicine/detox/overdose(mob/living/carbon/M, alien)
 	var/mob/living/carbon/C = M
