@@ -945,3 +945,17 @@
 		name = "Marqua Eyes"
 		icon_state = "frogeyes"
 		body_parts = list(BP_HEAD)
+
+/*Horse*/
+
+	horseface
+		name = "Horse Face"
+		icon_state = "horseface"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+	horsemuzzle
+		name = "Horse Muzzle"
+		icon_state = "horsemuzzle"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
