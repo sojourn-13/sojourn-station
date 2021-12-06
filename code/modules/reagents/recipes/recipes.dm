@@ -423,6 +423,15 @@
 	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
 	return
 
+/datum/chemical_reaction/alt_silversolidification
+	result = null
+	required_reagents = list("iron" =5, "frostoil" =5, MATERIAL_SILVER =20)
+	result_amount =1
+
+/datum/chemical_reaction/silversolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
+	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
+	return
+
 /datum/chemical_reaction/cardboardification
 	result = null
 	required_reagents = list("woodpulp" = 5, "water" = 5)
