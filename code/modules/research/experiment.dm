@@ -33,6 +33,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/list/saved_tech_levels = list() // list("materials" = list(1, 4, ...), ...)
 	var/list/saved_autopsy_weapons = list()
 	var/list/saved_artifacts = list()
+	var/list/saved_odd_matter = list()
+	var/list/saved_really_old = list()
+	var/list/saved_rock_aged = list()
 	var/list/saved_symptoms = list()
 	var/list/saved_slimecores = list()
 	var/list/saved_fruituid = list()
@@ -195,10 +198,37 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	for(var/traitname in I.scanned_fruittraits)
 		if (traitname in saved_fruittraits)
 			continue
-		var/ given = rand (1500,2500)
+		var/given = rand (1500,2500)
 		saved_fruittraits += traitname
 		points += given
 
+		////////////////////////////////////////// ROCK DATA
+
+
+	for(var/odd_matter in I.scanned_odd_matter)
+		if(odd_matter in saved_odd_matter)
+			continue
+
+		var/given = rand (3000,3500) //Really odd data!
+		if(odd_matter in odd_matter)
+			points = given
+
+		points += given
+		saved_slimecores += odd_matter
+
+	for(var/really_old in I.scanned_really_old)
+		if (really_old in saved_really_old)
+			continue
+		var/given = rand (4000,5000) //Really odd data
+		saved_odd_matter += really_old
+		points += given
+
+	for(var/rock_aged in I.scanned_rock_aged)
+		if (rock_aged in saved_rock_aged)
+			continue
+		var/given = rand (2000,3000) //Old rocks
+		saved_rock_aged += rock_aged
+		points += given
 
 	I.clear_data()
 	return round(points)
@@ -287,14 +317,23 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	origin_tech = list(TECH_ENGINEERING = 1, TECH_BIO = 1)
 
 	var/datum/experiment_data/experiments
+	//Autopsy weapon data
 	var/list/scanned_autopsy_weapons = list()
+	//Xenoarch Data
 	var/list/scanned_artifacts = list()
+	var/list/scanned_odd_matter = list()
+	var/list/scanned_really_old = list()
+	var/list/scanned_rock_aged = list()
+	//Viro Data
 	var/list/scanned_symptoms = list()
+	//Slime cores data
 	var/list/scanned_slimecores = list()
+	//Hydro/Plant data
 	var/list/scanned_fruituid = list()
 	var/list/scanned_fruitnames = list()
 	var/list/scanned_fruitchems = list()
 	var/list/scanned_fruittraits = list()
+	//Datablock Data
 	var/datablocks = 0
 
 /obj/item/device/science_tool/Initialize()
@@ -333,6 +372,22 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 				"second_effect" = report.artifact_second_effect,
 			))
 			scanneddata += 1
+
+	if(istype(O, /obj/item/paper/geo_info))
+		var/obj/item/paper/geo_info/rock_report = O
+		for(var/odd_matter in rock_report.odd_matter)
+			if(rock_report.odd_matter)
+				scanned_odd_matter += rock_report.odd_matter
+				scanneddata += 1
+		for(var/really_old in rock_report.really_old)
+			if(rock_report.really_old)
+				scanned_really_old += rock_report.really_old
+				scanneddata += 1
+		for(var/rock_aged in rock_report.rock_aged)
+			if(rock_report.rock_aged)
+				scanned_rock_aged += rock_report.rock_aged
+				scanneddata += 1
+
 
 	if(istype(O, /obj/item/paper/virus_report))
 		var/obj/item/paper/virus_report/report = O
