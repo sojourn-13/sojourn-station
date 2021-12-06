@@ -79,11 +79,13 @@
 /datum/perk/solborn/assign(mob/living/carbon/human/H)
 	..()
 	holder.metabolism_effects.addiction_chance_multiplier = 1.2
-	holder.metabolism_effects.nsa_threshold -= 15
+	holder.metabolism_effects.nsa_bonus -= 15
+	holder.metabolism_effects.calculate_nsa()
 
 /datum/perk/solborn/remove()
 	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_threshold += 15
+	holder.metabolism_effects.nsa_bonus += 15
+	holder.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/klutz
@@ -108,11 +110,13 @@
 /datum/perk/addict/assign(mob/living/carbon/human/H)
 	..()
 	holder.metabolism_effects.addiction_chance_multiplier = 2
-	holder.metabolism_effects.nsa_threshold += 20
+	holder.metabolism_effects.nsa_bonus += 20
+	holder.metabolism_effects.calculate_nsa()
 
 /datum/perk/addict/remove()
 	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_threshold -= 20
+	holder.metabolism_effects.nsa_bonus -= 20
+	holder.metabolism_effects.calculate_nsa()
 	..()
 /*
 /datum/perk/merchant
@@ -198,12 +202,14 @@
 /datum/perk/chemist/assign(mob/living/carbon/human/H)
 	..()
 	if(holder)
-		holder.metabolism_effects.nsa_threshold *= 1.25
+		holder.metabolism_effects.nsa_mult += 0.25
+		holder.metabolism_effects.calculate_nsa()
 
 // Added on top , removed first
 /datum/perk/selfmedicated/chemist/remove()
 	if(holder)
-		holder.metabolism_effects.nsa_threshold /= 1.25
+		holder.metabolism_effects.nsa_mult -= 0.25
+		holder.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/bartender
