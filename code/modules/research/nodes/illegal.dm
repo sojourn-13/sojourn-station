@@ -9,7 +9,7 @@
 
 	required_technologies = list()
 	required_tech_levels = list(RESEARCH_BLUESPACE = 5)
-	cost = 1000
+	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/item/binaryencrypt)
 
@@ -24,7 +24,7 @@
 
 	required_technologies = list()
 	required_tech_levels = list(RESEARCH_BIOTECH = 3, RESEARCH_ENGINEERING = 5, RESEARCH_ILLEGAL = 2) //Got to get 2 others
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(/datum/design/research/item/cleaner)
 
@@ -40,7 +40,7 @@
 
 	required_technologies = list(/datum/technology/binary_encryption_key)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 5)
-	cost = 1250
+	cost = 1875
 
 	unlocks_designs = list(/datum/design/research/item/night_goggles,
 							/datum/design/research/item/rig_nvgoggles,
@@ -58,7 +58,7 @@
 
 	required_technologies = list(/datum/technology/night_sight)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 20)
-	cost = 1250
+	cost = 1875
 
 	unlocks_designs = list(/datum/design/research/item/thermal_goggles,
 							/datum/design/research/item/rig_thermalgoggles,
@@ -76,7 +76,7 @@
 
 	required_technologies = list(/datum/technology/binary_encryption_key)
 	required_tech_levels = list(RESEARCH_ENGINEERING = 10)
-	cost = 1500
+	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/item/chameleon_kit)
 
@@ -91,7 +91,7 @@
 
 	required_technologies = list(/datum/technology/chameleon_kit)
 	required_tech_levels = list(RESEARCH_BIOTECH = 5)
-	cost = 1500
+	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/item/implant/freedom)
 
@@ -108,7 +108,7 @@
 								 /datum/technology/freedom_implant)
 
 	required_tech_levels = list()
-	cost = 2000
+	cost = 3000
 
 	unlocks_designs = list(	/datum/design/research/circuit/mindswapper)
 
@@ -128,7 +128,7 @@
 
 	required_technologies = list(/datum/technology/borg_syndicate_module)
 	required_tech_levels = list(RESEARCH_ROBOTICS = 5)
-	cost = 1500
+	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/aimodule/core/tyrant)
 
@@ -143,7 +143,7 @@
 
 	required_technologies = list(/datum/technology/freedom_implant)
 	required_tech_levels = list(RESEARCH_ROBOTICS = 10)
-	cost = 2500
+	cost = 3750
 
 	unlocks_designs = list(/datum/design/research/item/robot_upgrade/syndicate)
 
@@ -158,6 +158,6 @@
 
 	required_technologies = list(/datum/technology/freedom_implant)
 	required_tech_levels = list(RESEARCH_BIOTECH = 10)
-	cost = 1500
+	cost = 2250
 
 	unlocks_designs = list(/datum/design/research/item/medical/combat_defibs)

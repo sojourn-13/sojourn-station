@@ -24,7 +24,7 @@
 
 	required_technologies = list(/datum/technology/basic_bluespace)
 	required_tech_levels = list()
-	cost = 100
+	cost = 150
 
 	unlocks_designs = list()
 
@@ -39,7 +39,7 @@
 
 	required_technologies = list(/datum/technology/radio_transmission)
 	required_tech_levels = list()
-	cost = 500
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/circuit/comconsole,
 							/datum/design/research/circuit/message_monitor,
@@ -67,7 +67,7 @@
 
 	required_technologies = list(/datum/technology/telecommunications)
 	required_tech_levels = list()
-	cost = 400
+	cost = 600
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/tcom/bus,
@@ -103,7 +103,7 @@
 	x = 0.5
 	y = 0.4
 	required_technologies = list(/datum/technology/basic_bluespace)
-	cost = 400
+	cost = 600
 
 	unlocks_designs = list(	/datum/design/research/item/ano_scanner,
 							/datum/design/research/item/beacon_locator,
@@ -121,7 +121,7 @@
 
 	required_technologies = list(/datum/technology/spatial_scan)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/circuit/shield/hull,
 							/datum/design/research/circuit/telesci/inhibit)
@@ -137,7 +137,7 @@
 
 	required_technologies = list(/datum/technology/spatial_scan)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(/datum/design/research/circuit/teleconsole)
 
@@ -151,7 +151,7 @@
 	x = 0.5
 	y = 0.6
 	required_technologies = list(/datum/technology/teleportation)
-	cost = 400
+	cost = 600
 
 	unlocks_designs = list(	/datum/design/research/circuit/telesci/console,
 							/datum/design/research/circuit/telesci/hub,
@@ -174,7 +174,7 @@
 
 	required_technologies = list(/datum/technology/teleportation)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 2250
 
 	unlocks_designs = list(	/datum/design/research/item/beaker/bluespace,
 							/datum/design/research/item/beaker/noreact,
@@ -194,7 +194,7 @@
 
 	required_technologies = list(/datum/technology/bluespace_tools)
 	required_tech_levels = list()
-	cost = 750
+	cost = 1125
 
 	unlocks_designs = list(	/datum/design/research/item/belt_holding,
 							/datum/design/research/item/pouch_holding,
