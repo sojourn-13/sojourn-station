@@ -73,7 +73,23 @@
 	M.add_chemical_effect(CE_STABLE)
 	M.add_chemical_effect(CE_PAINKILLER, 45, TRUE)
 	M.add_chemical_effect(CE_PULSE, -1)
-	M.add_chemical_effect(CE_SLOWDOWN, 1)
+	//We also sleep are target, this will make it not as good to use against spiders still active or simple animals.
+	var/effective_dose = dose
+	if(issmall(M))
+		effective_dose *= 2
+
+	if(effective_dose < 1)
+		if(effective_dose == metabolism * 2 || prob(5))
+			M.emote("yawn")
+	else if(effective_dose < 3)
+		M.eye_blurry = max(M.eye_blurry, 10)
+	else if(effective_dose < 4)
+		if(prob(50))
+			M.Weaken(2)
+		M.drowsyness = max(M.drowsyness, 20)
+	else
+		M.sleeping = max(M.sleeping, 20)
+		M.drowsyness = max(M.drowsyness, 60)
 
 /datum/reagent/stim/kriotol
 	name = "Kriotol"
