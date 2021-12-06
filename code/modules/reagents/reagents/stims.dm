@@ -179,7 +179,7 @@
 		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
 		if(istype(L))
 			L.take_damage(5, 0)
-	M.add_chemical_effect(CE_SPEEDBOOST, -1)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
 
 /datum/reagent/stim/machine_spirit
 	name = "Machine Spirit"
@@ -352,7 +352,7 @@
 		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
 		if(istype(L))
 			L.take_damage(7, 0)
-	M.add_chemical_effect(CE_SPEEDBOOST, -1)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.paralysis = max(M.paralysis, 20)
 
