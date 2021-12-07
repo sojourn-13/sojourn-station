@@ -262,12 +262,18 @@
 		src.reagents.remove_any(used_coolant)
 		used_coolant = 0
 
+// Special paper for the science tool
+/obj/item/paper/geo_info
+	var/rock_aged
+	var/really_old
+	var/odd_matter
+
 /obj/machinery/radiocarbon_spectrometer/proc/complete_scan()
 	src.visible_message("\blue \icon[src] makes an insistent chime.", 2)
 
 	if(scanned_item)
 		//create report
-		var/obj/item/paper/P = new(src)
+		var/obj/item/paper/geo_info/P = new(src)
 		P.name = "[src] report #[++report_num]: [scanned_item.name]"
 		P.copy_overlays(list("paper_stamped"), TRUE)
 
@@ -297,8 +303,10 @@
 			data = " - Spectometric analysis on mineral sample has determined type [finds_as_strings[responsive_carriers.Find(G.source_mineral)]]<br>"
 			if(G.age_billion > 0)
 				data += " - Radiometric dating shows age of [G.age_billion].[G.age_million] billion years<br>"
+				P.really_old = G.age_billion
 			else if(G.age_million > 0)
 				data += " - Radiometric dating shows age of [G.age_million].[G.age_thousand] million years<br>"
+				P.rock_aged = G.age_million
 			else
 				data += " - Radiometric dating shows age of [G.age_thousand * 1000 + G.age] years<br>"
 			data += " - Chromatographic analysis shows the following materials present:<br>"
@@ -307,6 +315,7 @@
 					var/index = responsive_carriers.Find(carrier)
 					if(index > 0 && index <= finds_as_strings.len)
 						data += "	> [100 * G.find_presence[carrier]]% [finds_as_strings[index]]<br>"
+						P.odd_matter = G.find_presence[carrier]
 
 			if(G.artifact_id && G.artifact_distance >= 0)
 				anom_found = 1
@@ -315,6 +324,7 @@
 
 		if(!anom_found)
 			data += " - No anomalous data<br>"
+
 
 		P.info = "<b>[src] analysis report #[report_num]</b><br>"
 		P.info += "<b>Scanned item:</b> [scanned_item.name]<br><br>" + data
