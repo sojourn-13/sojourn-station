@@ -255,8 +255,7 @@ obj/item/clothing/suit/fluff/kimono
 		rad = 0
 	)
 	body_parts_covered = UPPER_TORSO
-	cold_protection = UPPER_TORSO
-	min_cold_protection_temperature = T0C - 20
+
 
 /obj/item/clothing/suit/ivory
 	name = "ivory tabard"
