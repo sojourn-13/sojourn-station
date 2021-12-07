@@ -150,9 +150,6 @@
 		if(/obj/machinery/power/supermatter)
 			return "Super dense plasma clump - Appears to have been shaped or hewn, structure is composed of matter 2000% denser than ordinary carbon matter residue.\
 			Potential application as unrefined plasma source."
-		if(/obj/machinery/power/supermatter)
-			return "Super dense plasma clump - Appears to have been shaped or hewn, structure is composed of matter 2000% denser than ordinary carbon matter residue.\
-			Potential application as unrefined plasma source."
 		if(/obj/machinery/giga_drill)
 			return "Automated mining drill - structure composed of titanium-carbide alloy, with tip and drill lines edged in an alloy of diamond and plasma."
 		if(/obj/machinery/replicator)

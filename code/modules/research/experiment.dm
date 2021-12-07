@@ -214,7 +214,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			points = given
 
 		points += given
-		saved_slimecores += odd_matter
+		saved_odd_matter += odd_matter
 
 	for(var/really_old in I.scanned_really_old)
 		if (really_old in saved_really_old)
@@ -341,7 +341,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	experiments = new
 
 /obj/item/device/science_tool/attack(mob/living/M, mob/living/user)
-	if(!user.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
+	if(!usr.stats?.getPerk(PERK_SI_SCI) || !user.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
 		to_chat(user, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
 		return
 
@@ -387,7 +387,6 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			if(rock_report.rock_aged)
 				scanned_rock_aged += rock_report.rock_aged
 				scanneddata += 1
-
 
 	if(istype(O, /obj/item/paper/virus_report))
 		var/obj/item/paper/virus_report/report = O
@@ -487,6 +486,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 /obj/item/device/science_tool/proc/clear_data()
 	scanned_autopsy_weapons = list()
 	scanned_artifacts = list()
+	scanned_odd_matter = list()
+	scanned_really_old = list()
+	scanned_rock_aged = list()
 	scanned_symptoms = list()
 	scanned_slimecores = list()
 	scanned_fruitnames = list()
