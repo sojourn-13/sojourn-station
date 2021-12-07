@@ -214,7 +214,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			points = given
 
 		points += given
-		saved_slimecores += odd_matter
+		saved_odd_matter += odd_matter
 
 	for(var/really_old in I.scanned_really_old)
 		if (really_old in saved_really_old)
