@@ -3,8 +3,8 @@
 	icon_state = "plasma_bolt"
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
-	damage_types = list(BURN = 100)
-	armor_penetration = 30
+	damage_types = list(BURN = 70)
+	armor_penetration = 40
 	check_armour = ARMOR_ENERGY
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
@@ -31,14 +31,13 @@
 
 // Overcharged Shots
 /obj/item/projectile/hydrogen/max
-	damage_types = list(BURN = 150)
-	armor_penetration = 50
-
+	damage_types = list(BURN = 90)
+	armor_penetration = 60
 
 /obj/item/projectile/hydrogen/pistol/max
-	damage_types = list(BURN = 150)
-	armor_penetration = 50
+	damage_types = list(BURN = 80)
+	armor_penetration = 60
 
 /obj/item/projectile/hydrogen/cannon/max
-	damage_types = list(BURN = 150)
-	armor_penetration = 50
+	damage_types = list(BURN = 100)
+	armor_penetration = 60

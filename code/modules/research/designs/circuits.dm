@@ -410,6 +410,11 @@
 	build_path = /obj/item/circuitboard/mindswapper
 	category = CAT_MEDI
 
+/datum/design/research/circuit/tesla_turret
+	name = "experimental tesla turret"
+	build_path = /obj/item/circuitboard/tesla_turret
+	category = CAT_POWER
+
 //Industrial Printing
 
 /datum/design/research/circuit/industrial_chems

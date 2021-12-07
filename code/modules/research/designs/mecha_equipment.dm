@@ -42,7 +42,6 @@
 	desc = "Exosuit-mounted syringe gun and chemical synthesizer."
 	build_path = /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun
 
-
 /datum/design/research/item/mecha/passenger
 	name = "Passenger compartment"
 	build_path = /obj/item/mecha_parts/mecha_equipment/tool/passenger
@@ -121,6 +120,10 @@
 /datum/design/research/item/mecha/weapon/grenade_launcher
 	name = "SGL-6 grenade launcher"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
+
+/datum/design/research/item/mecha/weapon/mecha_sword
+	name = "Mecha Sword"
+	build_path = /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 
 // *** Nonweapon modules
 /datum/design/research/item/mecha/wormhole_gen
