@@ -158,25 +158,16 @@
 	icon_state = "trooper"
 
 /obj/structure/closet/secure_closet/militia/armor/populate_contents()
-///camo green
-	new /obj/item/clothing/head/helmet/ballistic/green(src)
-	new /obj/item/clothing/head/helmet/ballistic/green(src)
-	new /obj/item/clothing/suit/armor/platecarrier/green(src)
-	new /obj/item/clothing/suit/armor/platecarrier/green(src)
-	new /obj/item/storage/belt/webbing/green(src)
-	new /obj/item/storage/belt/webbing/green(src)
-///camo tan
-	new /obj/item/clothing/head/helmet/ballistic/tan(src)
-	new /obj/item/clothing/head/helmet/ballistic/tan(src)
-	new /obj/item/clothing/suit/armor/platecarrier/tan(src)
-	new /obj/item/clothing/suit/armor/platecarrier/tan(src)
-	new /obj/item/storage/belt/webbing(src)
-	new /obj/item/storage/belt/webbing(src)
-///standerd issue
+	new /obj/item/clothing/head/helmet/ballistic/militia(src)
+	new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	new /obj/item/clothing/head/helmet/ballistic/militia(src)
 	new /obj/item/clothing/suit/armor/platecarrier/militia(src)
 	new /obj/item/clothing/suit/armor/platecarrier/militia(src)
+	new /obj/item/clothing/suit/armor/platecarrier/militia(src)
+	new /obj/item/clothing/suit/armor/platecarrier/militia(src)
+	new /obj/item/storage/belt/webbing/black(src)
+	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/hcases/ammo/serb(src)
