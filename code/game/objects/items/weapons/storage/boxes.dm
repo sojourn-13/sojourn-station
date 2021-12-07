@@ -810,3 +810,33 @@
 /obj/item/storage/box/guild_capacitor/populate_contents()
 	for(var/i in 1 to 4)
 		new /obj/item/stock_parts/capacitor/handmade(src)
+
+/////Blackshield uniform boxes
+
+/obj/item/storage/box/blackshield_uniform
+	name = "Blackshield uniforms Package"
+	desc = "A box consist of Blackshield uniform, this one is in the colour tan."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/head/helmet/ballistic/tan(src)
+		new /obj/item/clothing/suit/armor/platecarrier/tan(src)
+		new /obj/item/clothing/under/rank/trooper/tan(src)
+		new /obj/item/storage/belt/webbing(src)
+		new /obj/item/clothing/gloves/thick(src)
+		new /obj/item/clothing/shoes/jackboots(src)
+
+/obj/item/storage/box/blackshield_uniform/green
+	name = "Blackshield uniforms Package"
+	desc = "A box consist of Blackshield uniform, this one is in the colour green."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/head/helmet/ballistic/green(src)
+		new /obj/item/clothing/suit/armor/platecarrier/green(src)
+		new /obj/item/clothing/under/rank/trooper/green(src)
+		new /obj/item/storage/belt/webbing/green(src)
+		new /obj/item/clothing/gloves/thick(src)
+		new /obj/item/clothing/shoes/jackboots(src)
