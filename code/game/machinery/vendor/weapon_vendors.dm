@@ -352,7 +352,7 @@
 					/obj/item/storage/box/blackshield_uniform/green = 20
 					)
 	prices = list(
-					/obj/item/storage/box/blackshield_uniform = 500
+					/obj/item/storage/box/blackshield_uniform = 500,
 					/obj/item/storage/box/blackshield_uniform/green = 500
 					)
 	auto_price = FALSE
