@@ -8,7 +8,7 @@
 	twohanded = FALSE
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 6, TECH_PLASMA = 5)
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_MHYDROGEN = 3, MATERIAL_OSMIUM = 2, MATERIAL_TRITIUM = 1)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 1, MATERIAL_TRITIUM = 1)
 	projectile_type = /obj/item/projectile/hydrogen/pistol
 	use_plasma_cost = 10 // How much plasma is used per shot
 	heat_per_shot = 25
@@ -25,7 +25,7 @@
 	burnt to a crisp."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "cannon"
-	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_MHYDROGEN = 8, MATERIAL_OSMIUM = 6, MATERIAL_TRITIUM = 3)
+	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_MHYDROGEN = 2, MATERIAL_TRITIUM = 1)
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
 	projectile_type = /obj/item/projectile/hydrogen/cannon
 	use_plasma_cost = 20 // How much plasma is used per shot
@@ -45,7 +45,7 @@
 	use_plasma_cost = 10
 	heat_per_shot = 0 // No heat gain.
 	origin_tech = list(TECH_COMBAT = 15, TECH_MATERIAL = 7, TECH_PLASMA = 25)
-	matter = list(MATERIAL_PLASTEEL = 65, MATERIAL_MHYDROGEN = 15, MATERIAL_OSMIUM = 10, MATERIAL_TRITIUM = 5)
+	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_MHYDROGEN = 3, MATERIAL_TRITIUM = 2)
 	init_firemodes = list(
 		list(mode_name = "standard", mode_desc="A large ball of hydrogen to blow up bulwarks or weak targets", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay = 30, icon = "destroy", use_plasma_cost = 10, icon_state = "prifle"),
 		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound = 'sound/effects/supermatter.ogg', fire_delay = 50, icon = "kill", use_plasma_cost = 20, icon_state = "prifle_crit")
@@ -55,7 +55,7 @@
 	name = "\improper Welder Gun"
 	desc = "A plasma welder converted to shoot plasma bolts. Has less range than a \"Classia\"-Pattern Plasma Pistol."
 	icon_state = "welder"
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 3, MATERIAL_OSMIUM = 2, MATERIAL_TRITIUM = 1)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 1, MATERIAL_TRITIUM = 1)
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 7, TECH_PLASMA = 7)
 	projectile_type = /obj/item/projectile/hydrogen/pistol/welder
 	twohanded = FALSE

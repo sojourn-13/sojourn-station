@@ -90,7 +90,8 @@
 							/datum/design/research/item/powercell/medium/hyper,
 							/datum/design/research/item/powercell/small/hyper,
 							/datum/design/research/item/part/smes_coil/super_io,
-							/datum/design/research/item/part/smes_coil/super_capacity)
+							/datum/design/research/item/part/smes_coil/super_capacity,
+							/datum/design/research/circuit/tesla_turret)
 
 /datum/technology/solar_power
 	name = "Basic Power Generation"

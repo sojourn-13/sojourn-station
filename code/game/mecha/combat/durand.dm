@@ -59,6 +59,8 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
+	ME.attach(src)
 	return
 
 /obj/mecha/combat/durand/verb/defence_mode()
