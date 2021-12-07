@@ -1071,7 +1071,7 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 
 /obj/item/clothing/suit/armor/paramedic
 	name = "advanced paramedic armor"
-	desc = "Lightwieght and moderatily armored suit meant to be used to rush into danger to save lives."
+	desc = "Lightweight and moderately armored suit meant to be used to rush into danger to save lives."
 	icon_state = "trauma_team"
 	item_state = "trauma_team"
 	matter = list(
