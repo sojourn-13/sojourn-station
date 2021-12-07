@@ -138,6 +138,11 @@
 	build_path = /obj/item/circuitboard/destructive_analyzer
 	category = CAT_COMP
 
+/datum/design/research/circuit/slime_compresser
+	name = "slime compresser"
+	build_path = /obj/item/circuitboard/slime_compresser
+	category = CAT_MACHINE
+
 /datum/design/research/circuit/protolathe
 	name = "protolathe"
 	build_path = /obj/item/circuitboard/protolathe

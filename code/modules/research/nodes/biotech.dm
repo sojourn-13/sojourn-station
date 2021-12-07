@@ -83,6 +83,7 @@
 	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/sleeper,
+							/datum/design/research/circuit/slime_compresser,
 							/datum/design/research/item/medical/compact_roller_bed)
 
 /datum/technology/hydroponics

@@ -20,6 +20,16 @@
 	. = ..()
 	update_icon()
 
+/obj/machinery/telesci_inhibitor/attackby(var/obj/item/I, var/mob/user as mob)
+
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
+	..()
+
 /obj/machinery/telesci_inhibitor/update_icon()
 	if(stat & NOPOWER)
 		if(panel_open)

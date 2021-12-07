@@ -112,6 +112,16 @@
 	)
 */
 
+/obj/item/circuitboard/slime_compresser
+	build_name = "Circuit board (Slime Compresser)"
+	build_path = /obj/machinery/slime_compresser
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 1)
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 1,
+		/obj/item/stock_parts/manipulator = 1
+	)
+
 /obj/item/circuitboard/matter_nanoforge
 	build_name = "Circuit board (Matter NanoForge)"
 	build_path = /obj/machinery/matter_nanoforge
