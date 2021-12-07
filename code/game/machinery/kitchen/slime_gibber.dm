@@ -8,6 +8,8 @@
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 
+	circuit = /obj/item/circuitboard/slime_compresser
+
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	active_power_usage = 500
@@ -26,6 +28,16 @@
 	if(user.stat || user.restrained())
 		return
 	move_into_gibber(user,target)
+
+/obj/machinery/slime_compresser/attackby(var/obj/item/I, var/mob/user as mob)
+
+	if(default_deconstruction(I, user))
+		return
+
+	if(default_part_replacement(I, user))
+		return
+
+	..()
 
 /obj/machinery/slime_compresser/proc/move_into_gibber(mob/user,mob/living/carbon/slime/victim)
 
