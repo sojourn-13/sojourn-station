@@ -342,6 +342,21 @@
 	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!;Its not a lootbox, its surprise mechanics!"
 	auto_price = FALSE
 
+/obj/machinery/vending/blackshield_uniform
+	name = "Blackshield Uniform Vendor"
+	desc = "A vendor that can dispense specialized uniform kits for Blackshield Troopers."
+	icon_state = "trashvend"
+	vendor_department = DEPARTMENT_SECURITY
+	products = list(
+					/obj/item/storage/box/blackshield_uniform = 20
+					/obj/item/storage/box/blackshield_uniform/green = 20
+					)
+	prices = list(
+					/obj/item/storage/box/blackshield_uniform = 500
+					/obj/item/storage/box/blackshield_uniform/green = 500
+					)
+	auto_price = FALSE
+
 //For Blackshield Kits
 /obj/machinery/vending/blackshield_kit
 	name = "\improper Blackshield Kit Vendor"
