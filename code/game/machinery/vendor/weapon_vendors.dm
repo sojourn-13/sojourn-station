@@ -348,7 +348,7 @@
 	icon_state = "trashvend"
 	vendor_department = DEPARTMENT_SECURITY
 	products = list(
-					/obj/item/storage/box/blackshield_uniform = 20
+					/obj/item/storage/box/blackshield_uniform = 20,
 					/obj/item/storage/box/blackshield_uniform/green = 20
 					)
 	prices = list(
