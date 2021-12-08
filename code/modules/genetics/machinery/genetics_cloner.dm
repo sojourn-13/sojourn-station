@@ -251,11 +251,19 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 		occupant.drop_items = null
 		clone_info.inject_mutations(occupant)
 		protein_mod = occupant.clone_difficulty
+		//Run any special cloning mutations that only proc on creature creation.
+		for (var/datum/genetics/mutation/clone_create_mutation in clone_info.mutation_pool)
+			if(clone_create_mutation.active)
+				clone_create_mutation.postCloneCreation(occupant)
+
 
 	if(ispath(clone_type, /obj/item))
 		nonliving_occupant = new clone_type()
 		nonliving_occupant.loc = src
-		
+		//Run any special cloning mutations that only proc on creature creation.
+		for (var/datum/genetics/mutation/clone_create_mutation in clone_info.mutation_pool)
+			if(clone_create_mutation.active)
+				clone_create_mutation.postCloneCreation(nonliving_occupant)
 
 	feed_the_beast = 0
 
