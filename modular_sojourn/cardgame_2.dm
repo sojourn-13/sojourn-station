@@ -66,7 +66,6 @@
 	Both players draw 3 cards + 1 Squirrel.<BR>\n\
 	Players at the pre-start of the game are allowed to place any obstacle cards they wish on any side of the field.<BR>\n\
 	At the start of a Players turn draw, one Squirrel card OR one card in their deck<BR>\n\
-	<BR>\n\
 	Playing Cards:<BR>\n\
 	When playing a card that has a blood cost, the blood comes form played cards on the field, unless a card states otherwise, a drained blood card must be discarded into a discard pile.<BR>\n\
 	When a Card requires bodies, they use the discard pile, replacing the used cards back in the deck.<BR>\n\
@@ -75,14 +74,12 @@
 	Flying:<BR>\n\
 	Flying cards will be stated.<BR>\n\
 	A card that flies will attack the player directly, unless a card opposing it blocks such fliers attack.<BR>\n\
-	<BR>\n\
 	Attacking:<BR>\n\
 	When a player ends their turn, the cards form left to right act.<BR>\n\
 	Any cards in the back row that are able to move forward on the side of the person whom is ending their turn moves forwards and attacks.<BR>\n\
 	If their is a stack of cards and the attacking card kills the card opposing it, any extra damage to the card gets tranfered up the card stack.<BR>\n\
 	Cards can not attack cards on the same side as them, even if said card is an obstacle or pelt of the other player(s) deck.<BR>\n\
 	No matter what side the card dies, whomever plays the card gets said card back.<BR>\n\
-	<BR>\n\
 	Cards:<BR>\n\
 	Each card has a play requirement, Health, Damage, and cards can have modifers that will be noted.<BR>\n\
 	When a player must place their card in the first land their side, and when a turn ends they move 1 lane. A card can only ever move 1 lane before, then every turn past that will results in an a attack.<BR>\n\
@@ -176,7 +173,7 @@
 
 /obj/item/card_carp/croaker_lord
 	name = "Bullfrog"
-	desc = "A Bullfrog, Health is 1, Damage is 3, Requires 1 blood. Stops Flying attacks"
+	desc = "A Bullfrog, Health is 1, Damage is 3, Requires 1 blood. Stops Flying attacks."
 	icon_state = "card_frog"
 	current_health = 2
 
@@ -194,7 +191,7 @@
 
 /obj/item/card_carp/manti_lord
 	name = "Mantis Lord"
-	desc = "A Mantis, Health is 1, Damage is 1, Requires 2 blood, 2 bodies. Trifurcated Strike, Stops Flying attacks" //Cant play this at turn one you cheater >:T
+	desc = "A Mantis, Health is 1, Damage is 1, Requires 2 blood, 2 bodies. Trifurcated Strike, Stops Flying attacks." //Cant play this at turn one you cheater >:T
 	icon_state = "card_mantislord"
 	current_health = 1
 
@@ -206,7 +203,7 @@
 
 /obj/item/card_carp/mole_man
 	name = "Mole Man"
-	desc = "A Mole, Health is 12, Damage is 0, Requires 2 blood. If a card unopposed attacks a player, move to block, Stops Flying attacks"
+	desc = "A Mole, Health is 12, Damage is 0, Requires 2 blood. If a card unopposed attacks a player, move to block, Stops Flying attacks."
 	icon_state = "card_moleman"
 	current_health = 12
 
@@ -247,9 +244,9 @@
 
 /obj/item/card_carp/kingfisher
 	name = "Kingfisher"
-	desc = "A Kingfisher, Health is 12, Damage is 2, Requires 1 blood. If a card unopposed attacks a player, move to block."
+	desc = "A Kingfisher, Health is 2, Damage is 2, Requires 1 blood. If a card unopposed attacks a player, move to block."
 	icon_state = "card_kingfisher"
-	current_health = 12
+	current_health = 2
 
 /obj/item/card_carp/sparrow
 	name = "Sparrow"
@@ -343,19 +340,19 @@
 
 /obj/item/card_carp/rpelt
 	name = "Rabbet Pelt"
-	desc = "A small pelt, Health is 3, Damage is 0, Requires 2 bodies. Can be placed on any open field slot. Does not move."
+	desc = "A small pelt, Health is 3, Damage is 0, Requires 2 bodies. Can be placed on any open field slot. Does not move, stops Flying attacks."
 	icon_state = "card_rabbit_pelt"
 	current_health = 3
 
 /obj/item/card_carp/dpelt
 	name = "Deer Pelt"
-	desc = "A medium pelt, Health is 5, Damage is 0, Requires 4 bodies. Can be placed on any open field slot. Does not move."
+	desc = "A medium pelt, Health is 5, Damage is 0, Requires 4 bodies. Can be placed on any open field slot. Does not move, stops Flying attacks."
 	icon_state = "card_wolf_pelt"
 	current_health = 5
 
 /obj/item/card_carp/gpelt
 	name = "Gilded Pelt"
-	desc = "A gilded pelt, Health is 10, Damage is 0, Requires 6 bodies. Can be placed on any open field slot. Does not move."
+	desc = "A gilded pelt, Health is 10, Damage is 0, Requires 6 bodies. Can be placed on any open field slot. Does not move, stops Flying attacks."
 	icon_state = "card_pelt"
 	current_health = 10
 
@@ -380,11 +377,11 @@
 				/obj/item/card_carp/goat = 1,
 				/obj/item/card_carp/crab = 4,
 				/obj/item/card_carp/cat = 7,
-				/obj/item/card_carp/stote = 12,
+				/obj/item/card_carp/stote = 11,
 				/obj/item/card_carp/stinkbug = 10,
-				/obj/item/card_carp/stunted_wolf = 13,
-				/obj/item/card_carp/croaker_lord = 15,
-				/obj/item/card_carp/wolf = 17,
+				/obj/item/card_carp/stunted_wolf = 12,
+				/obj/item/card_carp/croaker_lord = 13,
+				/obj/item/card_carp/wolf = 14,
 				/obj/item/card_carp/adder = 5,
 				/obj/item/card_carp/manti = 10,
 				/obj/item/card_carp/manti_lord = 8,
@@ -393,7 +390,7 @@
 				/obj/item/card_carp/coyote = 14,
 				/obj/item/card_carp/elk = 12,
 				/obj/item/card_carp/magpie = 16,
-				/obj/item/card_carp/river_otter = 15,
+				/obj/item/card_carp/river_otter = 13,
 				/obj/item/card_carp/grizzly = 14,
 				/obj/item/card_carp/great_white = 2,
 				/obj/item/card_carp/kingfisher = 2,
@@ -401,7 +398,7 @@
 				/obj/item/card_carp/turkey_vulture = 12,
 				/obj/item/card_carp/warren = 15,
 				/obj/item/card_carp/rabbit = 10,
-				/obj/item/card_carp/bat = 17,
+				/obj/item/card_carp/bat = 14,
 				/obj/item/card_carp/daus = 4,
 				/obj/item/card_carp/geck = 12,
 				/obj/item/card_carp/larva = 16,
@@ -429,7 +426,7 @@
 
 /obj/item/pack_card_carp
 	name = "CardCarpCo Pack"
-	desc = "For those with disposible income. Contains 10 cards, and a pelt card."
+	desc = "For those with disposible income. Contains 5 cards, and a pelt card."
 	icon = 'modular_sojourn/cardgame_sprites.dmi'
 	icon_state = "card_pack"
 	w_class = ITEM_SIZE_TINY
@@ -437,11 +434,6 @@
 /obj/item/pack_card_carp/attack_self(var/mob/user as mob)
 	user.visible_message("[user] rips open \the [src]!")
 	var/turf/T = get_turf(src)
-	new /obj/random/card_carp(T)
-	new /obj/random/card_carp(T)
-	new /obj/random/card_carp(T)
-	new /obj/random/card_carp(T)
-	new /obj/random/card_carp(T)
 	new /obj/random/card_carp(T)
 	new /obj/random/card_carp(T)
 	new /obj/random/card_carp(T)
