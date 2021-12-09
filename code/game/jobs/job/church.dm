@@ -45,7 +45,7 @@
 	You represent the interest of the church and its disciples within the colony - identified by the cruciform implant upon their breast.<br>\
 	Your most pressing duty is as a spiritual leader. Preach to the flock, inspire faith and strength, and convert those seeking salvation.<br>\
 	While you are no trained psychologist, you can provide support and guidance to all - in both bright and dark times.<br>\
-	More practically, you can use your cloner to revive those who cannot be saved by medical science, and hold funerals for the truly lost.<br>\
+	Additional duty may require holding funerals for the truly lost, or host parties and group praying.<br>\
 	The Crusader protocol may also be enacted under your command when facing a Hivemind threat. Use this boost, and your ritual book, to defeat evil."
 
 	duties = "Represent the interests of church disciples on the colony. Protect them from persecution and speak for them.<br>\
