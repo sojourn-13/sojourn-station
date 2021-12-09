@@ -203,7 +203,7 @@
 	else
 		set_light(l_range = 4, l_power = 2, l_color = COLOR_YELLOW)
 		to_chat(user, SPAN_WARNING("The beacon has been lit!"))
-		glowing = 1
+		glowing = TRUE
 		update_icon()
 		damtype = BURN
 		spawn(1200)
