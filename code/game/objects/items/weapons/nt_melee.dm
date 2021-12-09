@@ -181,7 +181,7 @@
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
-	var/glowing = 0
+	var/glowing = FALSE
 	sharp = FALSE
 	embed_mult = 0
 
