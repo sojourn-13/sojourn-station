@@ -208,7 +208,7 @@
 		damtype = BURN
 		spawn(1200)
 			set_light(l_range = 0, l_power = 0, l_color = COLOR_YELLOW)
-			glowing = 0
+			glowing = FALSE
 			damtype = initial(damtype)
 			update_icon()
 
