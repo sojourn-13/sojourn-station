@@ -327,6 +327,7 @@
 	#ifdef JANEDEBUG
 	log_debug("getRecipeResult: resulting recipe- [recipe.type]")
 	#endif
+	
 	var/datum/genetics/mutation/new_mutation = recipe.get_result()
 	new_mutation.active = pick(TRUE,FALSE)
 	return(new_mutation)
@@ -691,6 +692,8 @@
 //What happens when the mob is spawned in the cloner.
 /datum/genetics/mutation/proc/onClone()
 
+//Modifier function that happens directly after cloning. Used to instantiate clones in special ways.
+/datum/genetics/mutation/proc/postCloneCreation(var/result)
 
 //What happens when the genes are applied to a player.
 /datum/genetics/mutation/proc/onPlayerImplant()
