@@ -51,6 +51,7 @@ var/datum/xenomorph/xenomorph_ai
 	min_breath_required_type = 0
 	min_air_pressure = 0 //below this, brute damage is dealt
 	min_breath_poison_type = 0
+	default_pixel_x = -14
 
 	var/poison_per_bite = 0
 	var/poison_type = "xenotoxin"

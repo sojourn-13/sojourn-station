@@ -19,6 +19,7 @@
 	default_pixel_x = -16
 	default_pixel_y = 0
 	size_pixel_offset_x = -16
+	momento_mori = /obj/effect/decal/cleanable/psi_ash/king
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown
 	name = "Hound of the Crown"
@@ -29,3 +30,11 @@
 	emote_see = list("looses a ground shaking growl.", "sniffs the air, its jaw opening and closing as black drool seeps from its teeth.", "suddenly howls!")
 	poison_per_bite = 5
 	turns_per_move = 12
+	momento_mori = /obj/effect/decal/cleanable/psi_ash/hound
+
+/obj/random/psi_megafauna
+	name = "random calamity"
+	icon_state = "ammo-green"
+
+/obj/random/psi_megafauna/item_to_spawn()
+	return pick_n_take(psi_mega_fauna)

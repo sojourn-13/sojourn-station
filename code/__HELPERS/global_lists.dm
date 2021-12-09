@@ -139,6 +139,9 @@ var/global/list/organ_tag_to_name = list(
 	back  = "back"
 	)
 
+// Boss spawners
+var/list/psi_mega_fauna = list(/mob/living/carbon/superior_animal/psi_monster/dreaming_king, /mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown)
+
 // Visual nets
 var/list/datum/visualnet/visual_nets = list()
 var/datum/visualnet/camera/cameranet = new()

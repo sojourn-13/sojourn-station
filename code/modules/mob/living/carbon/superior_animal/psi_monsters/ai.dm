@@ -4,7 +4,14 @@
 		if(last_noise <= (world.time) && aggro_noise)
 			playsound(src.loc, list(aggro_noise), 120, 1)
 			last_noise = world.time + 30 SECONDS
-		alpha = 255
+		animate(src, alpha = chameleon_skill, time = 2)
+		sleep(2)
+		animate(src, alpha = 55, time = 2)
+		sleep(2)
+		animate(src, alpha = 155, time = 2)
+		sleep(2)
+		animate(src, alpha = 255, time = 2)
+		sleep(2)
 
 /mob/living/carbon/superior_animal/psi_monster/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)
@@ -25,7 +32,7 @@
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
-	new /obj/effect/decal/cleanable/psi_ash(src.loc)
+	new momento_mori(src.loc)
 	qdel(src)
 
 	. = ..()
@@ -44,6 +51,6 @@
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
-	new /obj/effect/decal/cleanable/psi_ash(src.loc)
+	new momento_mori(src.loc)
 	qdel(src)
 	. = ..()
