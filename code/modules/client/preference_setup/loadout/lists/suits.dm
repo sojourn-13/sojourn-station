@@ -52,6 +52,10 @@
 	display_name = "blacksilk tabard"
 	path = /obj/item/clothing/suit/blacksilk
 
+/datum/gear/suit/numerical_grab
+	display_name = "numerical garb"
+	path = /obj/item/clothing/suit/storage/numericalgarb
+
 /datum/gear/suit/hoodies
 	display_name = "hoodie selection"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
