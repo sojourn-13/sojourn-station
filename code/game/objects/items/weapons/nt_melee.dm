@@ -170,6 +170,81 @@
 	if (tipbroken)
 		to_chat(user, SPAN_WARNING("\The [src] is broken. It looks like it could be repaired with a hammer."))
 
+/obj/item/tool/sword/nt/flanged
+	name = "flanged mace"
+	desc = "A saintly looking mace, designed to be a beacon of hope in the darkest of times. Devotees can activate it to light their path. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	icon_state = "nt_flanged"
+	item_state = "nt_flanged"
+	force = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_HALF
+	w_class = ITEM_SIZE_BULKY
+	price_tag = 800
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
+	var/glowing = FALSE
+	sharp = FALSE
+	embed_mult = 0
+
+/obj/item/tool/sword/nt/flanged/attack_self(mob/user)
+	var/mob/living/carbon/human/theuser = user
+	var/obj/item/implant/core_implant/cruciform/CI = theuser.get_core_implant()
+	if(!CI || !CI.active || !CI.wearer || !istype(CI,/obj/item/implant/core_implant/cruciform))
+		to_chat(user, SPAN_WARNING("You do not have a cruciform with which to light this beacon!"))
+		return
+	if(CI.power < 20)
+		to_chat(user, SPAN_WARNING("You do not have enough power to light up the beacon!"))
+		return
+	if(isBroken)
+		to_chat(user, SPAN_WARNING("The [src] is broken."))
+		return
+	if(glowing)
+		to_chat(user, SPAN_WARNING("The flanged mace is still lit up."))
+		return
+	else
+		set_light(l_range = 4, l_power = 2, l_color = COLOR_YELLOW)
+		to_chat(user, SPAN_WARNING("The beacon has been lit!"))
+		glowing = TRUE
+		update_icon()
+		damtype = BURN
+		spawn(1200)
+			set_light(l_range = 0, l_power = 0, l_color = COLOR_YELLOW)
+			glowing = FALSE
+			damtype = initial(damtype)
+			update_icon()
+
+/obj/item/tool/sword/nt/flanged/update_icon()
+	if(glowing)
+		icon_state = initial(icon_state) + "_glow"
+		item_state = initial(item_state) + "_glow"
+	else
+		icon_state = initial(icon_state)
+		item_state = initial(item_state)
+	..()
+
+/obj/item/tool/sword/nt/warhammer
+	name = "warhammer"
+	desc = "A saintly looking warhammer, designed to knock back attackers when held in both hands. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	icon_state = "nt_warhammer"
+	item_state = "nt_warhammer"
+	wielded_icon = "nt_warhammer_wielded"
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_EXTREME
+	w_class = ITEM_SIZE_BULKY
+	price_tag = 800
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
+	var/glowing = FALSE
+	sharp = FALSE
+	embed_mult = 0
+
+/obj/item/tool/sword/nt/warhammer/attack(atom/movable/target, mob/user)
+	if(wielded && prob(50))
+		var/whack_speed = 1
+		var/throwdir = get_dir(user,target)
+		target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
+	..()
+
+
 /obj/item/tool/sword/nt/spear/attackby(obj/item/I, var/mob/user)
 	. = ..()
 	if (I.has_quality(QUALITY_HAMMERING))
