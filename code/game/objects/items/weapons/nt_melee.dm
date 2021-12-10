@@ -181,6 +181,7 @@
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
+	tool_qualities = list(QUALITY_HAMMERING = 10) //Not designed for that fine nailing
 	var/glowing = FALSE
 	sharp = FALSE
 	embed_mult = 0
@@ -233,6 +234,7 @@
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
+	tool_qualities = list(QUALITY_HAMMERING = 30) //Not designed for that fine nailing
 	var/glowing = FALSE
 	sharp = FALSE
 	embed_mult = 0
