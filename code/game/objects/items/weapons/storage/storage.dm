@@ -24,6 +24,15 @@
 	var/insertion_sound
 	var/extraction_sound
 
+/obj/item/storage/debug
+	name = "Destickinator"
+	desc = "A case that can fit legitmently anything inside it, used by Bluespace Technicians and the like to remove stuck items form their hands. \
+	Seems its somehow was made stable as well, allowing you to de-stick even bluespace items without risk of your hand being lost."
+	icon_state = "desticker"
+	w_class = ITEM_SIZE_PLANET
+	max_w_class = 999
+	max_storage_space = 999
+
 /obj/item/storage/New()
 	can_hold |= can_hold_extra
 	. = ..()

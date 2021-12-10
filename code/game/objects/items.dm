@@ -161,6 +161,8 @@
 			size = "colossal"
 		if(ITEM_SIZE_TITANIC)
 			size = "titanic"
+		if(ITEM_SIZE_PLANET)
+			size = "planetary"
 	message += "\nIt is a [size] item."
 
 	for(var/Q in tool_qualities)

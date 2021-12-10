@@ -5,7 +5,7 @@
 	costly fuel supply and risks involved stopped the tool from ever seeing commercial success, a choice for a specialist and nobody else."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "welder"
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 3, MATERIAL_OSMIUM = 2, MATERIAL_TRITIUM = 1)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 1, MATERIAL_TRITIUM = 1)
 	eye_hazard = TRUE
 	degradation = FALSE
 	create_hot_spot = TRUE

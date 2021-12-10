@@ -10,6 +10,8 @@
 		handle_embedded_objects() //Moving with objects stuck in you can cause bad times.
 	if(CE_SPEEDBOOST in chem_effects)
 		tally -= chem_effects[CE_SPEEDBOOST]
+	if(CE_SLOWDOWN in chem_effects)
+		tally += chem_effects[CE_SLOWDOWN]
 	if(isturf(loc))
 		var/turf/T = loc
 		if(T.get_lumcount() < 0.6)

@@ -1,4 +1,4 @@
-/MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
@@ -492,7 +492,6 @@
 /obj/random/cluster/xenomorphs,
 /turf/simulated/floor/carpet/turcarpet,
 /area/deepmaint)
-
 (1,1,1) = {"
 aa
 aa

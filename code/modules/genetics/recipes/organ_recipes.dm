@@ -22,6 +22,15 @@
 	required_mutations = list(MUTATION_NERVES, MUTATION_HYPERION)
 	result_path = MUTATION_S_NERVES
 
-/datum/genetics/mutation_recipe/combination/great_ball
-	required_mutations = list(MUTATION_B_HEART, MUTATION_G_LUNG, MUTATION_G_LIVER, MUTATION_E_BLOOD_VESSEL, MUTATION_S_MUSCLES, MUTATION_S_NERVES)
-	result_path = MUTATION_ALL_ORGANS
+/datum/genetics/mutation_recipe/irradiation/flesh_sac_player
+	required_on_clone_types = list(/mob/living/carbon/human)
+	result_path = MUTATION_SAC
+
+/datum/genetics/mutation_recipe/irradiation/flesh_sac_s_mob
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/human)
+	result_path = MUTATION_SAC
+
+/datum/genetics/mutation_recipe/combination/flesh_sac_greater
+	required_mutations = list(MUTATION_HYPERION)
+	required_on_clone_types = list(/obj/item/genetics/flesh_sac)
+	result_path = MUTATION_G_SAC

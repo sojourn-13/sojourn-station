@@ -233,7 +233,6 @@
 	// Small mobs don't give as much nutrition.
 	if(issmall(src.occupant))
 		slab_nutrition *= 0.5
-	slab_nutrition /= slab_count
 
 	update_icon()
 	spawn(gib_time)

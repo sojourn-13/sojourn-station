@@ -196,7 +196,6 @@ cannot isolate or combine desired genes.
 			for(var/datum/genetics/mutation/target_mutation in mutations_to_combine.mutation_pool)
 				var/datum/genetics/mutation/new_mutation = target_mutation.copy()
 				active_sample.genetics_holder.addMutation(new_mutation)
-			mutations_to_combine.removeAllMutations()
 		active_mutation = null
 		if(active_sample && active_sample.genetics_holder)
 			active_sample.genetics_holder.unmark_all_mutations()
@@ -349,7 +348,8 @@ cannot isolate or combine desired genes.
 			sleep(50)
 			active_mutation = mutations_to_combine.combine(mutation_amount_pair)
 
-			active_sample.genetics_holder.addMutation(active_mutation)
+			var/datum/genetics/mutation/new_mutation = active_mutation.copy()
+			active_sample.genetics_holder.addMutation(new_mutation)
 			menu_state = MENU_COMBINE_RESULT
 	if(menu_state == MENU_ANALYZE)
 		if(href_list["mark"])

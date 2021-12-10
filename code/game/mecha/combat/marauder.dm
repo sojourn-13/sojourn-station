@@ -24,9 +24,14 @@
 	force = 45
 	max_equip = 10
 
-//Iron Lords gift, will remove this if destroyed in game or sold.
+//Iron Lords gift, will remove this if destroyed in game or sold. - It has been destoryed sadly
+/*
 /obj/mecha/combat/dreadnought/security
-	desc = "Heavy-duty, combat exosuit, developed after the Durand model. Rarely found among civilian populations. Anyone who kept up with colony news would know this one was gifted by the Iron Lord void wolves as apart of a trade agreement and unfortunately is the only one of its kind. If destroyed, it would disappear forever."
+	desc = "Heavy-duty, combat exosuit, developed after the Durand model. \
+	Rarely found among civilian populations. \
+	Anyone who kept up with colony news would know this one was gifted by the \
+	Iron Lord void wolves as apart of a trade agreement and unfortunately is the only one of its kind. \
+	If destroyed, it would disappear forever."
 	name = "Iron Tyrant"
 	price_tag = 2500000 //best mech in the game
 
@@ -105,7 +110,7 @@
 
 /obj/mecha/combat/dreadnought/hephaestus_do_not_use_only_for_events/add_cell()
 	cell = new /obj/item/cell/large/moebius/nuclear(src)
-
+*/
 /obj/mecha/combat/dreadnought/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
 	name = "Seraph"

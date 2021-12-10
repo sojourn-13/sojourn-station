@@ -25,7 +25,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	max_upgrades = 3
 	fire_delay = 10
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_MHYDROGEN = 5, MATERIAL_OSMIUM = 3, MATERIAL_TRITIUM = 2)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_MHYDROGEN = 3, MATERIAL_TRITIUM = 1)
 	init_firemodes = list(
 		list(mode_name = "standard", mode_desc="A large ball of hydrogen to blow up bulwarks or weak targets", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/lasercannonfire.ogg', fire_delay=30, icon="destroy", use_plasma_cost = 10),
 		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=50, icon="kill", use_plasma_cost = 20)

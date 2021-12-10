@@ -12,9 +12,9 @@ List of powers in this page :
 // Give the user a perk that constantly heal a tiny bit of damage.
 /obj/item/organ/internal/nanogate/proc/nanite_regen()
 	set category = "Nanogate Powers"
-	set name = "Nanite Regeneration (8)"
+	set name = "Nanite Regeneration (7)"
 	set desc = "Spend a large portion of your nanites to restore and repair your body by enhancing your natural healing."
-	nano_point_cost = 8
+	nano_point_cost = 7
 
 	if(!owner.stats.getPerk(PERK_NANITE_REGEN)) // Do they already have the bot?
 		if(pay_power_cost(nano_point_cost))

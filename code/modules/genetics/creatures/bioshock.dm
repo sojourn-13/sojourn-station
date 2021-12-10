@@ -1,5 +1,5 @@
 //Oh by glob
-//An Admin-only creature for acquiring and testing mutations. 
+//An Admin-only creature for acquiring and testing mutations.
 /mob/living/simple_animal/hostile/bioshock
 	name = "Bioshock"
 	desc = "Has every mutation in it. Every one Hex hadn't tested yet, at least"
@@ -63,6 +63,7 @@
 		MUTATION_S_MUSCLES,
 		MUTATION_NERVES,
 		MUTATION_S_NERVES,
-		MUTATION_ALL_ORGANS,
+		MUTATION_SAC,
+		MUTATION_G_SAC,
 		MUTATION_HYPERION)
 	clone_difficulty = CLONE_EASY

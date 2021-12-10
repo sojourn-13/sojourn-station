@@ -14,10 +14,11 @@
 	damage_multiplier = 1
 	penetration_multiplier = 0.9
 	recoil_buildup = 8
-	one_hand_penalty = 15
-	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
+	one_hand_penalty = 12
+	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
-	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
+	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 
 /obj/item/gun/projectile/avasarala/update_icon()

@@ -69,7 +69,7 @@
 /area/deepmaint)
 "gu" = (
 /obj/effect/decal/cleanable/blood/writing{
-	desc = "It looks like a writing in blood. It says: "NOT SAFE ANYWHERE!"."
+	desc = "It looks like a writing in blood. It says: ''NOT SAFE ANYWHERE!''."
 	},
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)

@@ -224,6 +224,14 @@
 	name = "sanctifier"
 	build_path = /obj/item/tool_upgrade/augment/sanctifier
 
+/datum/design/autolathe/sword/nt_warhammer
+	name = "NT Warhammer"
+	build_path = /obj/item/tool/sword/nt/warhammer
+
+/datum/design/autolathe/sword/nt_flanged
+	name = "NT Flanged Mace"
+	build_path = /obj/item/tool/sword/nt/flanged
+
 //[GRENADES]
 /datum/design/autolathe/grenade/nt_smokebomb
 	name = "NT SG \"Holy Fog\""

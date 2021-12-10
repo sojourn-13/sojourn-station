@@ -10,6 +10,28 @@
 	nutriment_req = 0.5
 	w_class =  ITEM_SIZE_TINY
 
+//Handle surgical insertion of a nerve modifying the NSA
+/obj/item/organ/internal/nerve/replaced_mob(mob/living/carbon/human/target)
+	..(target)
+	if(owner && owner.metabolism_effects)
+		owner.metabolism_effects.calculate_nsa(TRUE)
+
+//Handle surgical removal of a nerve modifying the NSA. Great way to tank your NSA into the shitter.
+/obj/item/organ/internal/nerve/removed_mob(mob/living/user)
+	owner.metabolism_effects.calculate_nsa(TRUE)
+	..(user)
+
+
+//Handle NSA changing due to organ damage
+/obj/item/organ/internal/nerve/take_damage(amount, silent)
+	..(amount, silent)
+	owner.metabolism_effects.calculate_nsa(TRUE)
+
+//Handle NSA changing due to organs healing
+/obj/item/organ/internal/nerve/heal_damage(amount, natural = TRUE)
+	..(amount, natural)
+	owner.metabolism_effects.calculate_nsa(TRUE)
+
 /obj/item/organ/internal/nerve/robotic
 	name = "nerve wire"
 	icon_state = "wire"

@@ -312,9 +312,17 @@ A holder for items we make with Genetics. Helps add a visceral element to object
 	w_class = ITEM_SIZE_GARGANTUAN
 	density = TRUE
 	var/list/loot = list()
+	var/max_loot_size = 10
+	var/loot_size = 0
 
 /obj/item/genetics/flesh_sac/attackby(obj/item/I as obj, mob/user as mob)
 	..()
+	if(loot_size > max_loot_size)
+		playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
+		new /obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+		user.visible_message(SPAN_NOTICE("The [src] bursts into a mass of unidentifiable meat the moment \the [user] touches it! Must have been too full..."))
+		qdel(src)
+
 	if(QUALITY_CUTTING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_BIO))
 			playsound(src.loc, 'sound/effects/splat.ogg', 50, 1)
@@ -331,81 +339,12 @@ A holder for items we make with Genetics. Helps add a visceral element to object
 			user.visible_message(SPAN_NOTICE("[user] destroys the contents of the [src]."))
 			qdel(src)
 
-/obj/item/genetics/flesh_sac/heart
-	loot = list(/obj/item/organ/internal/heart)
+/obj/item/genetics/flesh_sac/greater
+	name = "Flesh Sac"
+	desc = "An undilating facsimile of life, carrying with it unknown contents. Seems capable of much holding more than usual."
+	max_loot_size = 40
 
-/obj/item/genetics/flesh_sac/b_heart
-	loot = list(/obj/item/organ/internal/heart/huge/baboon)
-
-/obj/item/genetics/flesh_sac/lungs
-	loot = list(/obj/item/organ/internal/lungs)
-
-/obj/item/genetics/flesh_sac/g_lungs
-	loot = list(/obj/item/organ/internal/lungs/long)
-
-/obj/item/genetics/flesh_sac/liver
-	loot = list(/obj/item/organ/internal/liver)
-
-/obj/item/genetics/flesh_sac/g_liver
-	loot = list(/obj/item/organ/internal/liver/big)
-
-/obj/item/genetics/flesh_sac/blood_vessels
-	loot = list(
-		/obj/item/organ/internal/blood_vessel,
-		/obj/item/organ/internal/blood_vessel,
-		/obj/item/organ/internal/blood_vessel,
-		/obj/item/organ/internal/blood_vessel,
-		/obj/item/organ/internal/blood_vessel,
-		/obj/item/organ/internal/blood_vessel,
-		/obj/item/organ/internal/blood_vessel)
-
-/obj/item/genetics/flesh_sac/e_blood_vessels
-	loot = list(
-		/obj/item/organ/internal/blood_vessel/extensive,
-		/obj/item/organ/internal/blood_vessel/extensive,
-		/obj/item/organ/internal/blood_vessel/extensive,
-		/obj/item/organ/internal/blood_vessel/extensive,
-		/obj/item/organ/internal/blood_vessel/extensive,
-		/obj/item/organ/internal/blood_vessel/extensive,
-		/obj/item/organ/internal/blood_vessel/extensive)
-
-/obj/item/genetics/flesh_sac/muscles
-	loot = list(
-		/obj/item/organ/internal/muscle,
-		/obj/item/organ/internal/muscle,
-		/obj/item/organ/internal/muscle,
-		/obj/item/organ/internal/muscle)
-
-/obj/item/genetics/flesh_sac/s_muscles
-	desc = "An undilating facsimile of life, carrying with it unknown contents. Whatever it is, it has amazing abs."
-	loot = list(
-		/obj/item/organ/internal/muscle/super_muscle,
-		/obj/item/organ/internal/muscle/super_muscle,
-		/obj/item/organ/internal/muscle/super_muscle,
-		/obj/item/organ/internal/muscle/super_muscle)
-
-/obj/item/genetics/flesh_sac/nerves
-	loot = list(
-		/obj/item/organ/internal/nerve,
-		/obj/item/organ/internal/nerve,
-		/obj/item/organ/internal/nerve,
-		/obj/item/organ/internal/nerve,
-		/obj/item/organ/internal/nerve,
-		/obj/item/organ/internal/nerve,
-		/obj/item/organ/internal/nerve)
-
-/obj/item/genetics/flesh_sac/s_nerves
-	desc = "An undilating facsimile of life, carrying with it unknown contents. It twitches at the slightest breath of air."
-	loot = list(
-		/obj/item/organ/internal/nerve/sensitive_nerve,
-		/obj/item/organ/internal/nerve/sensitive_nerve,
-		/obj/item/organ/internal/nerve/sensitive_nerve,
-		/obj/item/organ/internal/nerve/sensitive_nerve,
-		/obj/item/organ/internal/nerve/sensitive_nerve,
-		/obj/item/organ/internal/nerve/sensitive_nerve,
-		/obj/item/organ/internal/nerve/sensitive_nerve)
-
-/obj/item/genetics/flesh_sac/superior
+/obj/item/genetics/flesh_sac/greater/superior
 	name = "The Great Ball"
 	desc = "An undilating facsimile of life, carrying with it unknown contents. It looks like it is about to burst."
 	loot = list(

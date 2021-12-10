@@ -16,7 +16,8 @@
 #define ITEM_SIZE_COLOSSAL       7
 /// Something so large that it extends beyond the confines of its tile, (e.g. scrap beacon)
 #define ITEM_SIZE_TITANIC        8
-
+/// Can hold anything and as big as everything, (e.g. destickenator)
+#define ITEM_SIZE_PLANET         9
 
 
 #define BASE_STORAGE_COST(w_class) (2**(w_class-1)) //1,2,4,8,16,...

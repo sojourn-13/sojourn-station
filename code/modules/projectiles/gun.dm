@@ -705,11 +705,14 @@
 		if(!folded)
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
 			to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
-			extra_bulk += 4 //Simular to 4 plates, your getting a lot out of this tho
+			extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
 			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
 			recoil_buildup *= 0.5 //50% less recoil
 			one_hand_penalty *= 0.5 //50% less recoil
 			damage_multiplier += 0.1 //10% more damage
+			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
+			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
+			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
 			folded = TRUE
 		else
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
