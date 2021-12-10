@@ -200,6 +200,11 @@
 	icon_state = "boater_hat"
 	desc = "A formal beige summer hat."
 
+/obj/item/clothing/head/numerical_hat
+	name = "numerical hat"
+	icon_state = "numerical_hat"
+	desc = "A red tall hat for nurmerical of the faith."
+
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
 	desc = "A rugged and reliable working cap."
