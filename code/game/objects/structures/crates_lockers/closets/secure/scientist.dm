@@ -16,6 +16,7 @@
 	new /obj/item/device/radio/headset/headset_sci(src)
 	new /obj/item/tank/air(src)
 	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/storage/belt/sci(src)
 
 /obj/structure/closet/secure_closet/reinforced/RD
 	name = "soteria research overseer's locker"
@@ -36,6 +37,7 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/shield_projector/rectangle/soteria_personal(src)
+	new /obj/item/storage/belt/sci(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/rped/rd(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/computer/rd(src)

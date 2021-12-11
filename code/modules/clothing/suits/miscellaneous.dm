@@ -406,3 +406,18 @@ obj/item/clothing/suit/fluff/kimono
 	min_cold_protection_temperature = T0C - 20
 	price_tag = 50
 
+/obj/item/clothing/suit/storage/numericalgarb
+	name = "numerical garb"
+	desc = "A red padded cloak meant for numerical shockingly made to be biomatter restant."
+	icon_state = "numericalgarb"
+	item_state = "numericalgarb"
+	armor = list(
+		melee = 10,
+		bullet = 0, //well armored its not going to help a bullet
+		energy = 10,
+		bomb = 5,
+		bio = 100,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+	price_tag = 60

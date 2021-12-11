@@ -9555,14 +9555,13 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "coO" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/belt,
-/obj/item/storage/belt,
-/obj/item/storage/belt,
-/obj/item/storage/belt,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 24
 	},
+/obj/item/folder/yellow,
+/obj/item/folder/red,
+/obj/item/clipboard,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "coU" = (
@@ -54547,6 +54546,7 @@
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "mxr" = (
 /obj/structure/table/glass,
+/obj/item/folder/black,
 /obj/item/toy/plushie/corgi/robo,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/rnd/rbreakroom)
@@ -59488,6 +59488,7 @@
 /area/nadezhda/security/armory_blackshield)
 "nDW" = (
 /obj/structure/table/glass,
+/obj/item/folder/cyan,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/rbreakroom)
 "nDY" = (
@@ -92051,6 +92052,7 @@
 	})
 "uYg" = (
 /obj/structure/table/glass,
+/obj/item/folder/blue,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/rnd/rbreakroom)
 "uYk" = (
@@ -93341,6 +93343,7 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
+/obj/item/folder,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "vlW" = (
