@@ -177,10 +177,11 @@
 	icon_state = "nt_flanged"
 	item_state = "nt_flanged"
 	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_HALF
+	armor_penetration = ARMOR_PEN_MASSIVE
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
+	tool_qualities = list(QUALITY_HAMMERING = 10) //Not designed for that fine nailing
 	var/glowing = FALSE
 	sharp = FALSE
 	embed_mult = 0
@@ -228,11 +229,12 @@
 	icon_state = "nt_warhammer"
 	item_state = "nt_warhammer"
 	wielded_icon = "nt_warhammer_wielded"
-	force = WEAPON_FORCE_BRUTAL
+	force = WEAPON_FORCE_DANGEROUS //Naturally weaker do to knockbacking are targets (can stun lock)
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
+	tool_qualities = list(QUALITY_HAMMERING = 30) //Not designed for that fine nailing
 	var/glowing = FALSE
 	sharp = FALSE
 	embed_mult = 0
