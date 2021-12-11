@@ -36,6 +36,9 @@
 		var/mob/M = src.loc
 		M.update_inv_belt()
 
+/obj/item/storage/belt/sci
+	icon_state = "scibelt"
+	item_state = "scibelt"
 
 /obj/item/storage/belt/utility
 	name = "tool belt"
