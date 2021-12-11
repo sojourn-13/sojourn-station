@@ -11,7 +11,6 @@
 		animate(src, alpha = 155, time = 2)
 		sleep(2)
 		animate(src, alpha = 255, time = 2)
-		sleep(2)
 
 /mob/living/carbon/superior_animal/psi_monster/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)

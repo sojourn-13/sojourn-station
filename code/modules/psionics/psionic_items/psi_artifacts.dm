@@ -25,7 +25,7 @@
 
 // If you renew it every 25 minutes (in the 5 minute window before it ends), you effectively have +30 cog/+15 vig with some upkeep. Great for a psion and thematic with the kriosan skull. -Kaz
 // Thematically, the dead must be remembered periodically, lest they and the things they offer be forgotten.
-/obj/item/clothing/mask/gas/bonedog/verb/invoke_spirit(var/mob/living/carbon/human/M)
+/obj/item/clothing/mask/gas/bonedog/verb/invoke_spirit()
 	set name = "Invoke Mask"
 	set desc = "Invoke the psionic potential left in this skull."
 	set category = "Object"
@@ -42,5 +42,5 @@
 
 	playsound(src.loc, 'sound/hallucinations/ghosty_wind.ogg', 25, 1) // Faintly spooky wind
 	to_chat(usr, "You invoke the hidden potential from this long forgotten mask, your mind becomes cunning, your eyes sharp, you hear the wind howling. The effect is temporary, but powerful.")
-	M.stats.addTempStat(STAT_COG, 30, 30 MINUTES, "bonedog_mask")
-	M.stats.addTempStat(STAT_VIG, 15, 30 MINUTES, "bonedog_mask")
+	usr.stats.addTempStat(STAT_COG, 30, 30 MINUTES, "bonedog_mask")
+	usr.stats.addTempStat(STAT_VIG, 15, 30 MINUTES, "bonedog_mask")

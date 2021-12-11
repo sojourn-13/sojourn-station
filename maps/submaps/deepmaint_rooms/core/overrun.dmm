@@ -9,6 +9,7 @@
 "ai" = (/obj/machinery/light{dir = 8},/obj/random/cluster/psi_monster/low_chance,/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "aj" = (/obj/random/material,/turf/simulated/floor/tiled/dark/brown_perforated,/area/deepmaint)
 "ak" = (/obj/item/material/shard,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/steel,/area/deepmaint)
+"al" = (/obj/structure/low_wall,/obj/random/psi_megafauna,/turf/simulated/floor/tiled/dark/brown_perforated,/area/deepmaint)
 "am" = (/obj/item/material/shard,/obj/structure/girder,/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "an" = (/obj/item/stack/material/wood,/obj/structure/low_wall,/turf/simulated/floor/tiled/dark/brown_perforated,/area/deepmaint)
 "ar" = (/obj/random/closet_maintloot,/turf/simulated/floor/tiled/dark/gray_perforated,/area/deepmaint)
@@ -151,8 +152,8 @@ cnrPcdIJbUjvcgcgcgbfbgcgbijXcgBQbjcaYmcmcn
 cncgLwdZbUrOeBvjbkahrubGcgabaQzkbmaccccmbn
 cnMFcgufbUPGbkbGcgbNcgaucgbOrugebmacakYmbn
 cnbrcgbNaAbGcgaEbMbManaEzicgbViDuNbUcmbDbn
-cnbNadeeXBxLbNbIaVaYbYbMOpcgbygedFbUcpbDcn
-bnIpOUcgEiybaubIxoafbZaCbNsDbrsmFKbUcmcmcn
+cnbNadeeXBxLbNalaVaYbYbMOpcgbygedFbUcpbDcn
+bnIpOUcgEiybaualxoafbZaCbNsDbrsmFKbUcmcmcn
 bnMFcgbNbGkcaxbHazagyKbIaAYfaQqRYLbUamJwbn
 cncgbicdbKDOcgOpbMaCFObIbNcgbOaDtWcaaLcmcn
 cncgZlbibQbGbibRaEbGbGbNcgbrcdEdbacocmbDcn

@@ -12,7 +12,6 @@
 		animate(src, alpha = 55, time = 2)
 		sleep(2)
 		animate(src, alpha = chameleon_skill, time = 2)
-		sleep(2)
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/Life()
 	. = ..()

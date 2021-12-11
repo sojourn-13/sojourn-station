@@ -55,7 +55,7 @@
 "bc" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/steel,/area/deepmaint)
 "bd" = (/obj/random/junk,/obj/structure/disposalpipe/segment{dir = 8; icon_state = "pipe-s"},/turf/simulated/floor/plating/under,/area/deepmaint)
 "be" = (/obj/structure/table/rack,/obj/random/science,/obj/random/science,/obj/random/science,/obj/random/science/low_chance,/obj/random/science/low_chance,/turf/simulated/floor/tiled/dark/techfloor,/area/deepmaint)
-"bf" = (/obj/structure/table/rack,/obj/random/oddity_guns,/turf/simulated/floor/tiled/dark/techfloor,/area/deepmaint)
+"bf" = (/obj/structure/table/rack,/obj/random/oddity_guns,/obj/random/psi_megafauna,/turf/simulated/floor/tiled/dark/techfloor,/area/deepmaint)
 "bg" = (/obj/structure/safe,/obj/item/plastique,/obj/item/plastique,/obj/item/gun/projectile/shotgun/pump/china,/obj/item/storage/box/baton_rounds,/obj/item/storage/box/flash_grenade_shells,/obj/item/storage/box/frag_grenade_shells,/obj/item/storage/box/syndicate,/turf/simulated/floor/tiled/dark/techfloor,/area/deepmaint)
 "bh" = (/obj/structure/table/rack,/obj/random/pack/rare,/obj/random/pack/rare,/obj/random/pack/rare,/obj/random/pack/rare/low_chance,/obj/random/pack/rare/low_chance,/turf/simulated/floor/tiled/dark/techfloor,/area/deepmaint)
 "bi" = (/obj/structure/table/rack,/obj/random/material_rare,/obj/random/material_rare,/obj/random/material_rare,/obj/random/material_rare,/obj/random/material_rare/low_chance,/obj/random/material_rare/low_chance,/turf/simulated/floor/tiled/dark/techfloor,/area/deepmaint)

@@ -2,7 +2,7 @@
 //			Psionic Melee Weapons
 //////////////////////////////
 /obj/item/tool/sword/cult
-	name = "Non-Euclidean Blade"
+	name = "non-euclidean blade"
 	desc = "A blade forged from the mind of a psion using an oddity. An odd but deadly sword, yet holding it makes you feel... strange."
 	icon = 'icons/obj/psionic/occsword.dmi'
 	icon_state = "non-euclidian_blade"
@@ -19,7 +19,7 @@
 	tool_qualities = list(QUALITY_PULSING = 7, QUALITY_SCREW_DRIVING = 3)
 
 /obj/item/tool/hammer/homewrecker/cult
-	name = "Soulcrusher"
+	name = "soulcrusher"
 	desc = "An extremely heavy sledgehammer that looks like twisted forged iron still glowing with the remnants of the psionic power that shaped it. The head of it burns with a subtle heat, the core \
 	filled with the fires of ambition to create and destroy."
 	icon = 'icons/obj/psionic/occhammer.dmi'
@@ -33,7 +33,7 @@
 	matter = list()
 
 /obj/item/tool/saw/chain/cult
-	name = "Chainripper"
+	name = "chainripper"
 	desc = "A chainsaw forged from the mind of a psion, the blades glowing with the energy and heat of its psychic power. Though a saw, it cuts cleanly and leaves charring in its wake."
 	icon = 'icons/obj/psionic/occchain.dmi'
 	icon_state = "chainripper"
@@ -44,7 +44,7 @@
 	max_fuel = 123
 
 /obj/item/tool/sword/machete/cult
-	name = "Scorch Sword"
+	name = "scorch sword"
 	desc = "A blade quite common in the jungle crafted from the mind of a psion using an oddity. When you hold it, the blade's edge glows with heat."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "psi_machete"
@@ -54,7 +54,7 @@
 	tool_qualities = list(QUALITY_LASER_CUTTING = 21, QUALITY_CUTTING = 10,  QUALITY_SAWING = 20, QUALITY_CAUTERIZING = 12) //So we can cut down trees
 
 /obj/item/tool/sword/cleaver/cult
-	name = "Moon Cleaver"
+	name = "moon cleaver"
 	desc = "A black bladed mockery of the lodge's tools for hunting tengolos and their twisted evolution. This weapon, forged from a psion, hunts what few consider anything but archetypes \
 	of primal fears. Fit for the culling of spiders."
 	icon = 'icons/obj/weapons.dmi'
@@ -66,7 +66,7 @@
 	matter = list()
 
 /obj/item/tool/power_fist/cult
-	name = "Mind Rocker"
+	name = "mind rocker"
 	desc = "A hydraulic combat gauntlet forged from the mind of a psion. When all else fails, you still have your fists."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "psi_powerfist"
