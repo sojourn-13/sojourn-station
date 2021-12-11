@@ -45,7 +45,7 @@
 	desc = "A last stand before ruin."
 	mappath = 'maps/submaps/deepmaint_rooms/core/overrun.dmm'
 
-/*
+
 /datum/map_template/deepmaint_template/big/Lab
 	name = "Lab"
 	desc = "A lab before ruin."
@@ -74,4 +74,4 @@
 	name = "medbay"
 	desc = "A medbay stand before ruin."
 	mappath = 'maps/submaps/deepmaint_rooms/core/overrun.dmm'
-*/
+

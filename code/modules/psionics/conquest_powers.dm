@@ -1,5 +1,4 @@
-// These powers are obtained by killing bosses in deep maints nad have a scary thematic scheme. Unlike other powers, these are immensely powerful.
-
+// These powers are obtained by killing bosses/enemies in deep maints and have a scary thematic scheme. Unlike other powers, these are immensely powerful or thematic,
 /obj/item/organ/internal/psionic_tumor/proc/nightmare_mind()
 	set category = "Psionic powers"
 	set name = "Nightmarish Mind (1)"
@@ -30,6 +29,7 @@
 				var/obj/effect/decal/cleanable/blood/writing/sign = new /obj/effect/decal/cleanable/blood/writing(T)
 				sign.message = "He dreamed of this place."
 
+
 /obj/item/organ/internal/psionic_tumor/proc/rust()
 	set category = "Psionic powers"
 	set name = "Rust (1)"
@@ -53,19 +53,20 @@
 	if(get_grabbed_mob(owner))
 		if(pay_power_cost(psi_point_cost))
 			var/mob/living/L
-			L = get_grabbed_mob(src)
-			for(var/obj/objects in L.contents)
-				if(istype(objects, /obj/item/organ))
-					continue
-				if(istype(objects, /obj/parallax))
-					continue
-				if(istype(objects, /obj/item/grab))
-					continue
-				else
-					objects.make_old()
-					visible_message(
-					SPAN_DANGER("[objects] rusts and decays!"),
-					)
+			L = get_grabbed_mob(owner)
+			if(istype(L, /mob/living/carbon))
+				for(var/obj/objects in L.contents)
+					if(istype(objects, /obj/item/organ))
+						continue
+					if(istype(objects, /obj/parallax))
+						continue
+					if(istype(objects, /obj/item/grab))
+						continue
+					else
+						objects.make_old()
+						visible_message(
+						SPAN_DANGER("[objects] rusts and decays!"),
+						)
 	else
 		to_chat(src, "You must grab your target!")
 
@@ -73,7 +74,7 @@
 /obj/item/organ/internal/psionic_tumor/proc/seek_the_dream()
 	set category = "Psionic powers"
 	set name = "Seek the Dream (5)"
-	set desc = "Expend five psi points and wither your body to call several dreaming daemons from somewhere else. They are not inherently allied to you."
+	set desc = "Expend five psi points and wither your body and mind to call three dreaming daemons from somewhere else. They are not inherently allied to you."
 	psi_point_cost = 5
 
 	if(pay_power_cost(psi_point_cost))
@@ -122,6 +123,26 @@
 		var/datum/effect/effect/system/smoke_spread/bad/smoke
 		smoke = new
 		playsound(loc, 'sound/effects/smoke.ogg', 50, 1, -3)
+		sleep(9)
+		for(var/mob/M in range(10, owner))
+			if(!M.stat && !isAI(M))
+				shake_camera(M, 3, 1)
+		playsound(owner.loc, 'sound/voice/shriek1.ogg', 20, 1, 8, 8)
+		sleep(9)
+		for(var/mob/M in range(10, owner))
+			if(!M.stat && !isAI(M))
+				shake_camera(M, 3, 1)
+		playsound(owner.loc, 'sound/voice/shriek1.ogg', 60, 1, 8, 8)
+		sleep(9)
+		for(var/mob/M in range(10, owner))
+			if(!M.stat && !isAI(M))
+				shake_camera(M, 3, 1)
+		playsound(owner.loc, 'sound/voice/shriek1.ogg', 80, 1, 8, 8)
+		sleep(9)
+		for(var/mob/M in range(10, owner))
+			if(!M.stat && !isAI(M))
+				shake_camera(M, 3, 1)
+		playsound(owner.loc, 'sound/voice/shriek1.ogg', 100, 1, 8, 8)
 		new /obj/effect/gibspawner/human(owner.loc, owner.dna, owner.species.flesh_color, owner.species.blood_color)
 		new /obj/effect/gibspawner/human(owner.loc, owner.dna, owner.species.flesh_color, owner.species.blood_color)
 		new /obj/effect/gibspawner/human(owner.loc, owner.dna, owner.species.flesh_color, owner.species.blood_color)
@@ -158,7 +179,7 @@
 	set desc = "Expend a massive pool of ten psi points and your own body to become something greater. To grasp at perfection, one must make sacrifices..."
 	psi_point_cost = 10
 
-	if(pay_power_cost(psi_point_cost))
+	if(alert(usr, "Are you sure you want to do this? It will absoutely kill you.", "Merge Flesh and Steel", "Yes", "No") == "Yes" && pay_power_cost(psi_point_cost))
 		new /obj/machinery/hivemind_machine/node(owner.loc)
 		owner.gib()
 		log_and_message_admins("[owner] has merged flesh and steel and become a hivemind node!")
@@ -179,18 +200,15 @@
 					to_chat(owner, "They refuses your gift!")
 					return
 				else
-					if(pay_power_cost(psi_point_cost))
+					if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 						visible_message(
 							SPAN_WARNING("[src] grabs [L]! Psionic energy alights [src]'s eyes as they focus intently on [L] !"),
 							SPAN_WARNING("You project your psionic essence, turning it towards [L].")
 						)
-						if(do_after(src, 150 , incapacitation_flags = INCAPACITATION_DEFAULT))
-							L.make_psion()
-							owner.adjustBrainLoss(10)
-							to_chat(owner, "You feel a horrible splitting migraine as the process ends.")
-							to_chat(L, "Your mind is aflame with possibilities! You can see, you can SEE, YOU CAN SEE IT ALL!")
-						else
-							to_chat(src, "You must not move while performing the ascension. Your psi essence is wasted!")
+						L.make_psion()
+						owner.adjustBrainLoss(10)
+						to_chat(owner, "You feel a horrible splitting migraine as the process ends.")
+						to_chat(L, "Your mind is aflame with possibilities! You can see, you can SEE, YOU CAN SEE IT ALL!")
 	else
 		to_chat(src, "You must face your target!")
 
@@ -198,25 +216,26 @@
 /obj/item/organ/internal/psionic_tumor/proc/cerebral_hemorrhage()
 	set category = "Psionic powers"
 	set name = "Cerebral Hemorrhage (5)"
-	set desc = "Expend five psi points to destroy the brain of anyone you are grappling. Lesser creatures will be instantly slain in a messy fashion."
+	set desc = "Expend five psi points to destroy the brain of anyone you are grappling. Lesser creatures will be instantly slain in a messy fashion, unless they are harmless."
 	psi_point_cost = 5
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
-	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
-		usr.visible_message(
-				SPAN_DANGER("[usr] places a hand on [L], a terrible crackle of psionic energy lancing their eyes!"),
-				SPAN_DANGER("You place your hand upon [L], focusing your thoughts before you snuff out their life!")
-				)
-		L.adjustBrainLoss(60)
+	if(istype(L, /mob/living/carbon/human))
+		if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+			usr.visible_message(
+					SPAN_DANGER("[usr] places a hand on [L], a terrible crackle of psionic energy lancing their eyes!"),
+					SPAN_DANGER("You place your hand upon [L], focusing your thoughts before you snuff out their life!")
+					)
+			L.adjustBrainLoss(60)
 	var/mob/living/carbon/superior_animal/S = get_grabbed_mob(owner)
-	if(S)
+	if(istype(S, /mob/living/carbon/superior_animal) && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand on [S], a terrible crackle of psionic energy lancing their eyes before their whole form is overwhelmed!"),
 				SPAN_DANGER("You place your hand upon [S], focusing your thoughts before you snuff out their life!")
 				)
 		S.gib()
-	var/mob/living/simple_animal/A = get_grabbed_mob(owner)
-	if(A)
+	var/mob/living/simple_animal/hostile/A = get_grabbed_mob(owner)
+	if(istype(A, /mob/living/simple_animal/hostile) && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand on [A], a terrible crackle of psionic energy lancing their eyes before their whole form is overwhelmed!"),
 				SPAN_DANGER("You place your hand upon [A], focusing your thoughts before you snuff out their life!")
@@ -228,13 +247,13 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/mind_jack()
 	set category = "Psionic powers"
-	set name = "Mind Jack (5)"
-	set desc = "Expend five psi points to force a lesser creature to ally with you, changing it to not only ally with colonists but to turn on its former friends. Does not work on creatures \
-	incapable of violence, such as rats."
-	psi_point_cost = 5
+	set name = "Mindjack (3)"
+	set desc = "Expend three psi points to force a lesser creature to ally with you, changing it to not only ally with colonists but to turn on its former friends. Does not work on creatures \
+	incapable of proper violence, such as rats."
+	psi_point_cost = 3
 
 	var/mob/living/carbon/superior_animal/S = get_grabbed_mob(owner)
-	if(S)
+	if(istype(S, /mob/living/carbon/superior_animal) && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand on [S], a ripple of psionic energy blasting through the air as its forced to serve!"),
 				SPAN_DANGER("You place your hand upon [S], focusing your will and making this creature serve!")
@@ -244,7 +263,7 @@
 		S.friendly_to_colony = TRUE
 		S.loseTarget()
 	var/mob/living/simple_animal/hostile/A = get_grabbed_mob(owner)
-	if(A)
+	if(istype(A, /mob/living/simple_animal/hostile) && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand on [A], a ripple of psionic energy blasting through the air as its forced to serve!"),
 				SPAN_DANGER("You place your hand upon [A], focusing your will and making this creature serve!")

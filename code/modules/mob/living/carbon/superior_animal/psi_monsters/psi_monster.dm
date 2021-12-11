@@ -50,6 +50,7 @@
 	var/last_noise = -30000
 	var/chameleon_skill = 10
 	var/healing_factor = 1
+	var/momento_mori = /obj/effect/decal/cleanable/psi_ash
 	pass_flags = PASSTABLE
 	faction = "psi_monster"
 
@@ -172,11 +173,28 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
 	anchored = TRUE
+	var/catalyst_drop = /obj/random/psi_catalyst
+	var/psion_chance = 25
+	var/normie_chance = 10
 
 /obj/effect/decal/cleanable/psi_ash/attack_hand(mob/user as mob)
-	if(user.stats.getPerk(PERK_PSION) && prob(25))
-		new /obj/item/gun/minigun(src.loc)
-	else if(prob(10))
-		new /obj/item/gun/minigun(src.loc)
+	if(user.stats.getPerk(PERK_PSION) && prob(psion_chance))
+		new catalyst_drop(src.loc)
+	else if(prob(normie_chance))
+		new catalyst_drop(src.loc)
 	to_chat(user, SPAN_NOTICE("[src] sifts through your fingers."))
 	qdel(src)
+
+/obj/effect/decal/cleanable/psi_ash/king
+	name = "ashes of the throne bound tyrant"
+	desc = "He will be back."
+	catalyst_drop = /obj/item/device/psionic_catalyst/cerebral_hemorrhage
+	psion_chance = 100
+	normie_chance = 100
+
+/obj/effect/decal/cleanable/psi_ash/hound
+	name = "ashes of the faithful hound"
+	desc = "Ever in his foot steps, his faithful beast follows, loyal beyond death."
+	catalyst_drop = /obj/item/device/psionic_catalyst/enslavement
+	psion_chance = 100
+	normie_chance = 100

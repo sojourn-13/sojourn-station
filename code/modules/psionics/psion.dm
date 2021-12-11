@@ -133,7 +133,7 @@
 // This proc handles paying for your powers and checks if you attempt to use your power while you are dead or unconcious. Placed here so it doesn't need to be in every power function.
 /obj/item/organ/internal/psionic_tumor/proc/pay_power_cost(var/psi_cost)
 	if(disabled == 1)
-		to_chat(src, "Your implant isn't functioning!.")
+		to_chat(src, "Your connection is cut to your psionic essence, something is wrong!.")
 		return FALSE
 	if(owner.stat == DEAD)
 		to_chat(src, "You are dead.")

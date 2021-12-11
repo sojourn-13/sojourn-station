@@ -5,7 +5,13 @@
 		heal_overall_damage(healing_factor,healing_factor)
 		updatehealth()
 	if(health >= (maxHealth * 0.9) && (L.get_lumcount() <= 0.8) && stance == HOSTILE_STANCE_IDLE)
-		alpha = chameleon_skill
+		animate(src, alpha = 255, time = 2)
+		sleep(2)
+		animate(src, alpha = 155, time = 2)
+		sleep(2)
+		animate(src, alpha = 55, time = 2)
+		sleep(2)
+		animate(src, alpha = chameleon_skill, time = 2)
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/Life()
 	. = ..()
