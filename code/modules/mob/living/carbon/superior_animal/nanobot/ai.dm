@@ -85,7 +85,7 @@
 			visible_emote("state, \"Injecting [t].\"")
 			visible_message(SPAN_WARNING("[src] is trying to inject [H]!"))
 			currently_healing = TRUE
-			if(do_mob(src, H, 30))
+			if(do_mob(src, H, 30, TRUE, FALSE)) // Wait 3 seconds, can't break and doesn't spawn a progress bar for the bot that can't see it anyway.
 				H.reagents.add_reagent(t, injection_amount)
 				visible_message(SPAN_WARNING("[src] injects [H] with the syringe!"))
 			currently_healing = FALSE
