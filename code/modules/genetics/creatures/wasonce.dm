@@ -25,6 +25,7 @@ Has ability of every roach.
 	chameleon_skill = 255 // Psionics not developed, can't turn invisible.
 	healing_factor = 25
 	size_pixel_offset_x = -16
+	momento_mori = /obj/effect/gibspawner
 
 	faction= "psi_monster"
 	friendly_to_colony = FALSE

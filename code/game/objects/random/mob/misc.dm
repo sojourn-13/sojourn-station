@@ -105,8 +105,8 @@
 				/mob/living/carbon/superior_animal/psi_monster/mind_gazer = 4,
 				/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo = 4,
 				/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher = 4,
-				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly = 3,
-				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror = 2,
+				//mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly = 3,
+				//mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror = 2,
 				))
 
 /obj/random/mob/psi_monster_mega_fauna

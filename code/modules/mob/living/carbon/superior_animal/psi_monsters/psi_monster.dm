@@ -18,7 +18,7 @@
 	maxHealth = 120
 	health = 120
 	randpixel = 0
-	attack_sound = 'sound/voice/insect_battle_bite.ogg'
+	attack_sound = list('sound/xenomorph/alien_claw_flesh1.ogg', 'sound/xenomorph/alien_claw_flesh2.ogg', 'sound/xenomorph/alien_claw_flesh3.ogg', 'sound/xenomorph/alien_tail_attack.ogg')
 	var/aggro_noise = 'sound/hallucinations/hell_screech.ogg'
 	attack_sound_chance = 100
 	speak_emote = list("murmurs", "howls", "whispers")
@@ -41,8 +41,12 @@
 	acceptableTargetDistance = 5
 	flash_resistances = 50 //No eyes.
 
+	breath_required_type = 0 // Doesn't need to breath, in a space suit
+	breath_poison_type = 0 // Can't be poisoned
+	min_air_pressure = 0 // Doesn't need pressure
+	breath_required_type = NONE
+	breath_poison_type = NONE
 	min_breath_required_type = 0
-	min_air_pressure = 0 //below this, brute damage is dealt
 	min_breath_poison_type = 0
 
 	var/poison_per_bite = 0
