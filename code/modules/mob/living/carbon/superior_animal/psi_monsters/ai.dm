@@ -4,13 +4,13 @@
 		if(last_noise <= (world.time) && aggro_noise)
 			playsound(src.loc, list(aggro_noise), 120, 1)
 			last_noise = world.time + 30 SECONDS
-		animate(src, alpha = chameleon_skill, time = 2)
+/*		animate(src, alpha = chameleon_skill, time = 2)
 		sleep(2)
 		animate(src, alpha = 55, time = 2)
 		sleep(2)
 		animate(src, alpha = 155, time = 2)
 		sleep(2)
-		animate(src, alpha = 255, time = 2)
+		animate(src, alpha = 255, time = 2)*/
 
 /mob/living/carbon/superior_animal/psi_monster/death(var/gibbed,var/message = deathmessage)
 	if (stat != DEAD)

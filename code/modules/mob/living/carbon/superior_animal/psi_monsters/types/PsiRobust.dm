@@ -9,7 +9,7 @@
 	health = 200
 	melee_damage_lower = 14
 	melee_damage_upper = 19
-	emote_see = list("chitters in greetings.", "whispers, \"Let me caress your flesh...\"", "twitches its antenni.")
+	emote_see = list("chitters in greeting.", "whispers, \"Let me caress your flesh...\"", "twitches its antenni.")
 	poison_per_bite = 2
 	turns_per_move = 4 // Slow
 	attacktext = "punched"
