@@ -52,6 +52,18 @@
 	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
 	faction = "excelsior"
 
+/mob/living/carbon/superior_animal/human/excelsior/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
+	return
+
+/mob/living/carbon/superior_animal/human/excelsior/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
+	return
+
+/mob/living/carbon/superior_animal/human/excelsior/handle_cheap_breath(datum/gas_mixture/breath as anything)
+	return
+
+/mob/living/carbon/superior_animal/human/excelsior/handle_cheap_environment(datum/gas_mixture/environment as anything)
+	return
+
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv

@@ -13,7 +13,7 @@
 	melee_damage_upper = 2
 	var/emergency_protocols = 0
 	known_commands = list("stay", "stop", "attack", "follow", "heal", "emergency protocol")
-
+	needs_environment = FALSE
 	response_help = "waves their hands through"
 	response_harm = "hits"
 	response_disarm = "fans at"

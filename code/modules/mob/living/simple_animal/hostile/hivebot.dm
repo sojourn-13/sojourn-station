@@ -31,7 +31,7 @@
 	//Drops
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
-
+	needs_environment = FALSE
 	armor = list(melee = 15, bullet = 5, energy = 20, bomb = 25, bio = 100, rad = 25)
 
 

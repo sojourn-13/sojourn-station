@@ -62,6 +62,7 @@
 	var/fire_alert = 0
 
 	//Atmos effect - Yes, you can make creatures that require plasma or co2 to survive. N2O is a trace gas and handled separately, hence why it isn't here. It'd be hard to add it. Hard and me don't mix (Yes, yes make all the dick jokes you want with that.) - Errorage
+	var/needs_environment = TRUE
 	var/min_oxy = 5
 	var/max_oxy = 0					//Leaving something at 0 means it's off - has no maximum
 	var/min_tox = 0
@@ -255,7 +256,7 @@
 
 		var/atom/A = loc
 
-		if(istype(A,/turf))
+		if(istype(A,/turf) && needs_environment)
 			var/turf/T = A
 
 			var/datum/gas_mixture/Environment = T.return_air()
@@ -291,17 +292,18 @@
 						atmos_suitable = 0
 
 		//Atmos effect
-		if(bodytemperature < minbodytemp)
-			fire_alert = 2
-			adjustBruteLoss(cold_damage_per_tick)
-		else if(bodytemperature > maxbodytemp)
-			fire_alert = 1
-			adjustBruteLoss(heat_damage_per_tick)
-		else
-			fire_alert = 0
+		if(needs_environment)
+			if(bodytemperature < minbodytemp)
+				fire_alert = 2
+				adjustBruteLoss(cold_damage_per_tick)
+			else if(bodytemperature > maxbodytemp)
+				fire_alert = 1
+				adjustBruteLoss(heat_damage_per_tick)
+			else
+				fire_alert = 0
 
-		if(!atmos_suitable)
-			adjustBruteLoss(unsuitable_atoms_damage)
+			if(!atmos_suitable)
+				adjustBruteLoss(unsuitable_atoms_damage)
 
 		if(!AI_inactive)
 			//Speaking
@@ -742,36 +744,6 @@
 	to_chat(src, span("notice","You are now [resting ? "resting" : "getting up"]"))
 	update_icons()
 
-/mob/living/simple_animal/verb/toggle_AI()
-	set name = "Toggle AI"
-	set desc = "Toggles on/off the mobs AI."
-	set category = "Mob verbs"
-
-	if (AI_inactive)
-		activate_ai()
-		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
-		return
-	else
-		AI_inactive = TRUE
-		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
-
-
-/mob/living/simple_animal/verb/learn_common()
-	set name = "Learn Common"
-	set desc = "Toggles weather or not you can hear and understand Common or not."
-	set category = "Mob verbs"
-	var/common_known = FALSE
-
-	if(!common_known)
-		add_language(LANGUAGE_COMMON)
-		to_chat(src, SPAN_NOTICE("You toggle knowing common to ON."))
-		common_known = TRUE
-		return
-	else
-		remove_language(LANGUAGE_COMMON)
-		to_chat(src, SPAN_NOTICE("You toggle knowing common to OFF."))
-		common_known = TRUE
-
 //This is called when an animal 'speaks'. It does nothing here, but descendants should override it to add audio
 /mob/living/simple_animal/proc/speak_audio()
 	return
@@ -807,3 +779,17 @@
 	s.start()
 
 	return shock_damage
+
+//Putting this here do to no idea were it would fit other then here
+/mob/living/simple_animal/verb/toggle_AI()
+	set name = "Toggle AI"
+	set desc = "Toggles on/off the mobs AI."
+	set category = "Mob verbs"
+
+	if (AI_inactive)
+		activate_ai()
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to ON."))
+		return
+	else
+		AI_inactive = TRUE
+		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
