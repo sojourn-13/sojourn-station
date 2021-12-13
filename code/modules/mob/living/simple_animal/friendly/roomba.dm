@@ -28,7 +28,7 @@
 	bones_amount = 0
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-
+	needs_environment = FALSE
 	//Drops
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null

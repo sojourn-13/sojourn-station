@@ -25,6 +25,8 @@
 	var/megafauna_max_cooldown = 20
 	var/emp_proof = FALSE
 
+	needs_environment = FALSE
+
 /mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
 	. = ..()
 	for(var/action_type in attack_action_types)

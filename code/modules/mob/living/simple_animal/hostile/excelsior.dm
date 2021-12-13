@@ -27,6 +27,8 @@
 
 	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408/hv
 
+	needs_environment = FALSE
+
 /mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught/death(gibbed, var/list/force_grant)
 	if(health <= 0)
 		visible_message("<b>[src]</b> blows apart in an explosion!")

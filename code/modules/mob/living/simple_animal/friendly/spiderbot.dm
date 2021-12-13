@@ -1,10 +1,5 @@
 /mob/living/simple_animal/spiderbot
 
-	min_oxy = 0
-	max_tox = 0
-	max_co2 = 0
-	minbodytemp = 0
-	maxbodytemp = 500
 	mob_size = MOB_SMALL
 	leather_amount = 0
 	bones_amount = 0
@@ -22,7 +17,7 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "spiderbot-chassis"
 	icon_dead = "spiderbot-smashed"
-
+	needs_environment = FALSE
 	wander = 0
 
 	health = 10

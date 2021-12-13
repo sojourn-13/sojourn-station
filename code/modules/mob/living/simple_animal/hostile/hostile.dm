@@ -218,6 +218,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 /mob/living/simple_animal/hostile/Life()
 
 	. = ..()
+
+	if(ckey)
+		return
+
 	if(!stasis && !AI_inactive)
 		if(!.)
 			walk(src, 0)
