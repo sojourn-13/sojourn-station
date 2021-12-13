@@ -4,7 +4,8 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	title = "Premier"
 	flag = PREMIER
 	department = DEPARTMENT_COMMAND
-	head_position = 1
+	head_position = TRUE
+	aster_guild_member = TRUE
 	department_flag = COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
@@ -67,7 +68,8 @@ Treat your command officers with respect, and listen to their council. Try not t
 	title = "Steward"
 	flag = STEWARD
 	department = DEPARTMENT_COMMAND
-	head_position = 1
+	head_position = TRUE
+	aster_guild_member = TRUE
 	department_flag = COMMAND
 	faction = MAP_FACTION
 	total_positions = 1

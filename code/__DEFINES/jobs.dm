@@ -15,15 +15,17 @@
 #define CREDS "&cent;"
 
 
-#define DEPARTMENT_COMMAND	"Command"
-#define DEPARTMENT_MEDICAL	"Medical"
-#define DEPARTMENT_ENGINEERING	"Engineering"
-#define DEPARTMENT_SCIENCE	"Science"
-#define DEPARTMENT_SECURITY "Security"
-#define DEPARTMENT_LSS "Lonestar"
-#define DEPARTMENT_CIVILIAN	"Civilian"
-#define DEPARTMENT_CHURCH	"Church"
+#define DEPARTMENT_COMMAND	"Nadezhda Enployment"
+#define DEPARTMENT_MEDICAL	"Soteria Institute: Medical Department"
+#define DEPARTMENT_ENGINEERING	"Artificer Guild"
+#define DEPARTMENT_SCIENCE	"Soteria Institute: Research Department"
+#define DEPARTMENT_SECURITY "Marshal & Blackshield"
+#define DEPARTMENT_LSS "Lonestar Employment Sector"
+#define DEPARTMENT_CIVILIAN	"Contractors"
+#define DEPARTMENT_CHURCH	"Church of Absoulte"
 #define DEPARTMENT_PROSPECTOR "Prospectors"
-#define DEPARTMENT_INDEPENDENT "Independent"
+#define DEPARTMENT_INDEPENDENT "Contractors"
 
 #define ALL_DEPARTMENTS list(DEPARTMENT_COMMAND, DEPARTMENT_MEDICAL, DEPARTMENT_ENGINEERING, DEPARTMENT_SCIENCE, DEPARTMENT_SECURITY, DEPARTMENT_LSS, DEPARTMENT_CIVILIAN, DEPARTMENT_CHURCH, DEPARTMENT_PROSPECTOR, DEPARTMENT_INDEPENDENT)
+
+#define ASTER_DEPARTMENTS list(DEPARTMENT_COMMAND, DEPARTMENT_LSS)
