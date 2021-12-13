@@ -75,6 +75,10 @@ SUBSYSTEM_DEF(economy)
 		var/datum/money_account/EA = department_accounts[ED.id]
 		var/datum/computer_file/report/crew_record/R = get_crewmember_record(A.owner_name)
 
+		//Modify their wage based on nepotism modifier
+		var/nepotism = R.get_nepotismMod()
+		A.wage = A.wage * nepotism
+
 		if(amount_to_pay <= EA.money)
 			transfer_funds(EA, A, "Payroll Funding", "Nadezhda colony payroll system", amount_to_pay)
 			paid_internal += amount_to_pay
