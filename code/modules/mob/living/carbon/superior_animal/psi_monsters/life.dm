@@ -1,17 +1,15 @@
 /mob/living/carbon/superior_animal/psi_monster/Life()
 	. = ..()
 	var/turf/L = get_turf(src)
-	if(L.get_lumcount() < 0.8)
+	if(L.get_lumcount() < 0.8 && maxHealth > health) //So were not endlessly healing a full health mob
 		heal_overall_damage(healing_factor,healing_factor)
 		updatehealth()
-/*	if(health >= (maxHealth * 0.9) && (L.get_lumcount() <= 0.8) && stance == HOSTILE_STANCE_IDLE)
-		animate(src, alpha = 255, time = 2)
-		sleep(2)
-		animate(src, alpha = 155, time = 2)
-		sleep(2)
-		animate(src, alpha = 55, time = 2)
-		sleep(2)
-		animate(src, alpha = chameleon_skill, time = 2)*/
+	if(health >= (maxHealth * 0.9) && (L.get_lumcount() <= 0.8) && stance == HOSTILE_STANCE_IDLE && alpha == 255) //We dont want this triggering 40 times
+		//We do if src in case someone has a gun to 1 shot them mid-animation and kills them on the spot.
+		if(src) animate(src, alpha = 200, time = 2)
+		spawn(3) if(src) animate(src, alpha = 155, time = 2)
+		spawn(3) if(src) animate(src, alpha = 55, time = 2)
+		spawn(3) if(src) animate(src, alpha = chameleon_skill, time = 2)
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/Life()
 	. = ..()
@@ -28,7 +26,6 @@
 		do_sparks(1, 0, src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
-		new /obj/effect/gibspawner/human(src.loc)
 		if(prob(50))
 			new /obj/effect/gibspawner/human(src.loc)
 			new /obj/effect/gibspawner/human(src.loc)
@@ -40,7 +37,6 @@
 		src.forceMove(target)
 
 		do_sparks(1, 0, src.loc)
-		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		if(prob(50))
@@ -66,7 +62,6 @@
 		do_sparks(1, 0, src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
-		new /obj/effect/gibspawner/human(src.loc)
 		if(prob(50))
 			new /obj/effect/gibspawner/human(src.loc)
 			new /obj/effect/gibspawner/human(src.loc)
@@ -78,7 +73,6 @@
 		src.forceMove(target)
 
 		do_sparks(1, 0, src.loc)
-		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
 		if(prob(50))
