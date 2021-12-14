@@ -71,6 +71,7 @@ Has ability of every roach.
 	//fire_verb = "spits a flaming glob of phlegm"
 
 	stance=HOSTILE_STANCE_IDLE
+	var/real_mutator = TRUE
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/New(var/mob/living/victim)
 	..()
@@ -138,7 +139,7 @@ Has ability of every roach.
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
 
 
-	if(captives.len && prob(15))
+	if(captives.len && prob(15) && real_mutator)
 		var/fail_mutation_path = pick(injector.getFailList())
 		var/datum/genetics/mutation/injecting_mutation = new fail_mutation_path()
 		injector.addMutation(injecting_mutation)
