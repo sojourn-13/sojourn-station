@@ -84,6 +84,7 @@
 	default_pixel_y = 0
 	size_pixel_offset_x = 0
 	real_mutator = FALSE
+	lethal_to_captive = TRUE //We kill are captives
 	knockdown_odds = 30 //Maybe stay away from it
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
