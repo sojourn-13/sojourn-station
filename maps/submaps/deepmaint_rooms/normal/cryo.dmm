@@ -164,7 +164,6 @@
 /area/deepmaint)
 "A" = (
 /obj/structure/table/standard,
-/obj/random/oddity_guns,
 /obj/random/pouch/low_chance,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/deepmaint)

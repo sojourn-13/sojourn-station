@@ -48,8 +48,9 @@
 /obj/random/pack/rare,
 /obj/random/pack/rare,
 /obj/random/pack/rare/low_chance,
-/obj/random/oddity_guns,
 /obj/random/lathe_disk/advanced/onestar,
+/obj/random/dungeon_gun_mods,
+/obj/random/dungeon_gun_mods,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
 "l" = (

@@ -75,7 +75,7 @@
 /obj/item/tool/cautery{
 	pixel_y = 4
 	},
-/obj/random/oddity_guns,
+/obj/item/storage/firstaid/surgery/traitor,
 /turf/simulated/floor/tiled/dark/panels,
 /area/deepmaint)
 "n" = (

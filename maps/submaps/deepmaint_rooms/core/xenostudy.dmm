@@ -7,11 +7,6 @@
 /obj/item/material/shard/shrapnel/scrap,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"bw" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/oddity/common/broken_glass,
-/turf/simulated/floor/reinforced,
-/area/deepmaint)
 "bO" = (
 /obj/structure/closet/secure_closet/freezer/blood,
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -172,6 +167,11 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
+"pL" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/oddity/common/broken_glass,
+/turf/simulated/floor/reinforced,
+/area/deepmaint)
 "qu" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -194,7 +194,7 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/deepmaint)
-"rp" = (
+"rr" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/oddity/ls/puzzlebox,
 /turf/simulated/floor/reinforced,
@@ -747,7 +747,7 @@ Am
 Ut
 oW
 Ut
-bw
+pL
 Ut
 oW
 Ut
@@ -1019,7 +1019,7 @@ IC
 IC
 Wy
 Ut
-rp
+rr
 Ut
 oW
 mU
