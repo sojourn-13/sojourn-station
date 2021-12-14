@@ -10,8 +10,8 @@
 /area/deepmaint)
 "ad" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
+	dir = 4;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/steel/bar_flat,
 /area/deepmaint)
@@ -308,8 +308,8 @@
 /area/deepmaint)
 "ba" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
+	dir = 4;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
@@ -394,8 +394,8 @@
 "bn" = (
 /obj/random/junk,
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
+	dir = 4;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/steel/bar_flat,
 /area/deepmaint)
@@ -426,10 +426,6 @@
 	},
 /obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
-/area/deepmaint)
-"kV" = (
-/obj/random/oddity_guns,
-/turf/simulated/floor/tiled/steel/bar_dance,
 /area/deepmaint)
 "qh" = (
 /obj/structure/disposalpipe/segment,
@@ -629,7 +625,7 @@ ab
 aU
 as
 ac
-kV
+ac
 ac
 as
 bh
@@ -699,7 +695,7 @@ as
 av
 ab
 ay
-kV
+ac
 au
 ar
 aC
@@ -767,7 +763,7 @@ ab
 LI
 as
 ac
-kV
+ac
 ac
 as
 bi

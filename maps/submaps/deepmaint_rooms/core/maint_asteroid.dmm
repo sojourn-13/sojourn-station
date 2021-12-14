@@ -165,8 +165,8 @@
 /area/deepmaint)
 "aK" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
+	dir = 4;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
@@ -202,9 +202,6 @@
 "aQ" = (
 /obj/structure/table/woodentable,
 /obj/item/seeds/ambrosiavulgarisseed,
-/obj/item/seeds/ambrosiavulgarisseed,
-/obj/item/seeds/ambrosiavulgarisseed,
-/obj/random/oddity_guns,
 /turf/simulated/floor/asteroid,
 /area/deepmaint)
 "aR" = (
@@ -239,7 +236,6 @@
 /obj/structure/table/woodentable,
 /obj/random/pack/gun_loot,
 /obj/random/pack/gun_loot/low_chance,
-/obj/random/oddity_guns,
 /turf/simulated/floor/carpet,
 /area/deepmaint)
 "aY" = (
@@ -268,8 +264,8 @@
 /area/deepmaint)
 "be" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
+	dir = 4;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/carpet,
 /area/deepmaint)

@@ -28,11 +28,6 @@
 /obj/structure/salvageable/data_os,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission)
-"ah" = (
-/obj/structure/table/steel_reinforced,
-/obj/random/card_carp,
-/turf/simulated/floor/tiled/steel,
-/area/awaymission)
 "ai" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/random/junk/low_chance,
@@ -58,7 +53,8 @@
 /area/awaymission)
 "am" = (
 /obj/structure/table/steel_reinforced,
-/obj/random/oddity_guns,
+/obj/random/card_carp,
+/obj/random/card_carp,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission)
 "an" = (
@@ -552,7 +548,7 @@ aa
 ac
 aa
 aX
-ah
+am
 ay
 aG
 an

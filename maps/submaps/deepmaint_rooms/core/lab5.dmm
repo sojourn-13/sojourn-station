@@ -164,6 +164,7 @@
 /area/deepmaint)
 "aH" = (
 /obj/structure/flora/small/grassb2,
+/obj/random/cluster/psi_monster/lower_chance,
 /turf/simulated/floor/fixed/fgrass,
 /area/deepmaint)
 "aI" = (
@@ -272,6 +273,14 @@
 /obj/random/psi_catalyst,
 /turf/simulated/floor/fixed/fgrass,
 /area/deepmaint)
+"HJ" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
 
 (1,1,1) = {"
 aa
@@ -307,7 +316,7 @@ aa
 aa
 aa
 aa
-ar
+HJ
 aa
 aa
 aa
@@ -620,7 +629,7 @@ aa
 "}
 (16,1,1) = {"
 aa
-aa
+aQ
 aF
 ab
 aD
@@ -722,7 +731,7 @@ aa
 aa
 aa
 az
-aa
+aQ
 aa
 aa
 aa

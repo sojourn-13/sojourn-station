@@ -39,7 +39,6 @@
 /area/deepmaint)
 "ak" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/random/oddity_guns,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
 "al" = (
@@ -154,7 +153,6 @@
 /area/deepmaint)
 "aN" = (
 /obj/structure/closet/secure_closet/freezer/meat,
-/obj/random/oddity_guns,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
 "aR" = (
@@ -175,7 +173,6 @@
 "aU" = (
 /obj/structure/table/marble,
 /obj/item/tool/knife,
-/obj/random/oddity_guns,
 /turf/simulated/floor/tiled/cafe,
 /area/deepmaint)
 "aW" = (

@@ -8,7 +8,6 @@
 "ac" = (
 /obj/structure/table/woodentable,
 /obj/random/psi_megafauna,
-/obj/random/oddity_guns,
 /turf/simulated/floor/carpet/turcarpet,
 /area/deepmaint)
 "ad" = (
@@ -18,6 +17,7 @@
 "ae" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp/green,
+/obj/random/gun_energy_cheap,
 /turf/simulated/floor/carpet/turcarpet,
 /area/deepmaint)
 "af" = (
@@ -223,6 +223,7 @@
 /obj/structure/table/woodentable,
 /obj/random/powercell,
 /obj/random/powercell,
+/obj/random/gun_energy_cheap,
 /obj/random/gun_energy_cheap,
 /turf/simulated/floor/carpet/turcarpet,
 /area/deepmaint)

@@ -52,10 +52,6 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "az" = (
-/obj/item/gun/projectile/automatic/vintorez{
-	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds.";
-	name = "Unmarked Vintorez silenced carbine"
-	},
 /obj/random/material,
 /obj/item/trash/mre,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -571,6 +567,10 @@
 /obj/item/ammo_magazine/rifle_75/highvelocity,
 /obj/item/trash/mre_can,
 /obj/structure/bed/chair,
+/obj/item/gun/projectile/automatic/vintorez{
+	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds.";
+	name = "Unmarked Vintorez silenced carbine"
+	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "Gp" = (
