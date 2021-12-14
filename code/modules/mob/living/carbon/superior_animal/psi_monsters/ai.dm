@@ -15,9 +15,6 @@
 		target_mob = null
 		playsound(src.loc, list('sound/hallucinations/growl1.ogg', 'sound/hallucinations/growl2.ogg', 'sound/hallucinations/growl3.ogg'), 120, 1)
 
-		density = FALSE
-		layer = LYING_MOB_LAYER
-
 	for(var/obj/item/I in src)
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
@@ -32,13 +29,10 @@
 	if (!anim)
 		anim = 0
 
-	spawn(3)
-		if(src)
+	for(var/obj/item/I in src)
+		drop_from_inventory(I)
+		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
-		for(var/obj/item/I in src)
-			drop_from_inventory(I)
-			I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
-
-		new momento_mori(src.loc)
+	new momento_mori(src.loc)
 
 	. = ..()
