@@ -781,16 +781,7 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
-"uQ" = (
-/obj/structure/table/rack,
-/obj/random/dungeon_armor_mods,
-/obj/random/dungeon_armor_mods,
-/obj/random/dungeon_armor_mods,
-/obj/random/dungeon_gun_mods,
-/obj/random/dungeon_gun_mods,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/deepmaint)
-"Eo" = (
+"rQ" = (
 /obj/structure/table/rack,
 /obj/random/dungeon_gun_energy,
 /obj/random/dungeon_gun_energy,
@@ -799,7 +790,16 @@
 /obj/random/dungeon_gun_energy,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/deepmaint)
-"JQ" = (
+"HV" = (
+/obj/structure/table/rack,
+/obj/random/dungeon_armor_mods,
+/obj/random/dungeon_armor_mods,
+/obj/random/dungeon_armor_mods,
+/obj/random/dungeon_gun_mods,
+/obj/random/dungeon_gun_mods,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/deepmaint)
+"Lr" = (
 /obj/structure/table/rack,
 /obj/random/dungeon_gun_ballistic,
 /obj/random/dungeon_gun_ballistic,
@@ -1000,7 +1000,7 @@ aB
 ab
 be
 bk
-uQ
+HV
 ab
 aV
 ab
@@ -1069,7 +1069,7 @@ aJ
 ab
 bh
 ah
-JQ
+Lr
 ab
 aY
 ab
@@ -1092,7 +1092,7 @@ aB
 ab
 bi
 bl
-Eo
+rQ
 ab
 aV
 ab

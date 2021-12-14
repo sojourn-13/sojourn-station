@@ -652,6 +652,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
+"gC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/psi_monster,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
 "ko" = (
 /obj/structure/salvageable/computer,
 /turf/simulated/floor/tiled/steel,
@@ -715,11 +720,6 @@
 /obj/effect/decal/cleanable/blood/oil,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/reinforced,
-/area/deepmaint)
-"ta" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/psi_monster,
-/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "tC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -897,7 +897,7 @@ bs
 bx
 at
 bP
-ta
+gC
 aa
 aa
 aa

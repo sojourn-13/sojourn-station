@@ -444,6 +444,10 @@
 /obj/random/common_oddities,
 /turf/simulated/floor/wood/wild4,
 /area/deepmaint)
+"lB" = (
+/obj/random/cluster/psi_monster,
+/turf/simulated/floor/wood,
+/area/deepmaint)
 "lD" = (
 /obj/structure/table/standard,
 /obj/item/trash/snack_bowl,
@@ -494,10 +498,6 @@
 /obj/random/cloth/shoes/low_chance,
 /turf/simulated/floor/wood,
 /area/deepmaint)
-"xw" = (
-/obj/random/cluster/psi_monster/lower_chance,
-/turf/simulated/floor/tiled/steel,
-/area/deepmaint)
 "xG" = (
 /obj/machinery/vending/cigarette,
 /obj/machinery/light,
@@ -521,6 +521,10 @@
 /obj/random/cloth/suit,
 /turf/simulated/floor/wood,
 /area/deepmaint)
+"Br" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
 "Ev" = (
 /obj/structure/table/standard,
 /obj/random/junkfood/rotten,
@@ -529,10 +533,6 @@
 "Fv" = (
 /obj/item/trash/liquidfood,
 /turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"Iw" = (
-/obj/random/cluster/psi_monster,
-/turf/simulated/floor/wood,
 /area/deepmaint)
 "Oc" = (
 /obj/structure/table/standard,
@@ -644,7 +644,7 @@ aa
 aa
 aa
 af
-xw
+Br
 aa
 "}
 (3,1,1) = {"
@@ -680,7 +680,7 @@ cg
 bZ
 bZ
 bZ
-Iw
+lB
 bZ
 bF
 bJ
@@ -956,7 +956,7 @@ bZ
 bZ
 az
 bZ
-Iw
+lB
 bZ
 aA
 aD
@@ -1035,7 +1035,7 @@ af
 bE
 aa
 af
-xw
+Br
 aa
 "}
 (20,1,1) = {"

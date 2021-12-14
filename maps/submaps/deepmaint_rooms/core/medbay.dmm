@@ -28,10 +28,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
-"cB" = (
-/obj/effect/floor_decal/industrial/botleft,
-/turf/simulated/floor/tiled/dark,
-/area/deepmaint)
 "cX" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/blood/splatter,
@@ -73,11 +69,11 @@
 "fa" = (
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
-"fN" = (
-/obj/structure/closet/secure_closet/freezer/blood,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stock_parts/matter_bin,
-/turf/simulated/floor/tiled/steel/techfloor,
+"fA" = (
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
 /area/deepmaint)
 "gu" = (
 /obj/effect/decal/cleanable/blood/writing{
@@ -87,16 +83,6 @@
 /area/deepmaint)
 "gL" = (
 /turf/simulated/floor/tiled/steel/techfloor,
-/area/deepmaint)
-"gP" = (
-/obj/effect/floor_decal/industrial/loading/white{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/deepmaint)
-"hD" = (
-/obj/item/stock_parts/manipulator,
-/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "in" = (
 /obj/machinery/door/firedoor,
@@ -119,13 +105,17 @@
 /obj/structure/girder,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
+"jY" = (
+/obj/item/stock_parts/manipulator,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/deepmaint)
 "kI" = (
 /obj/structure/firedoor_assembly,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
-"lh" = (
-/obj/machinery/body_scanconsole,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+"lM" = (
+/obj/effect/floor_decal/industrial/botright,
+/turf/simulated/floor/tiled/dark,
 /area/deepmaint)
 "lN" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -134,11 +124,6 @@
 "mr" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /turf/simulated/floor/tiled/white,
-/area/deepmaint)
-"mv" = (
-/obj/structure/table/glass,
-/obj/item/storage/freezer/medical,
-/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "my" = (
 /obj/structure/filingcabinet/filingcabinet,
@@ -170,12 +155,12 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
-"pu" = (
-/obj/machinery/chem_master,
-/turf/simulated/floor/tiled/white,
-/area/deepmaint)
 "pB" = (
 /turf/simulated/wall,
+/area/deepmaint)
+"pR" = (
+/obj/machinery/body_scanconsole,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "qe" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -197,16 +182,16 @@
 /obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
+"rw" = (
+/obj/item/stock_parts/capacitor,
+/turf/simulated/floor/tiled/white,
+/area/deepmaint)
 "rB" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/random/psi_megafauna,
 /turf/simulated/floor/wood,
-/area/deepmaint)
-"rW" = (
-/obj/random/medical_lowcost/low_chance,
-/turf/simulated/floor/tiled/dark,
 /area/deepmaint)
 "uc" = (
 /obj/machinery/door/blast/regular,
@@ -219,10 +204,6 @@
 "vg" = (
 /obj/machinery/smartfridge,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/deepmaint)
-"vp" = (
-/obj/random/cluster/psi_monster/low_chance,
-/turf/simulated/floor/tiled/white,
 /area/deepmaint)
 "vC" = (
 /turf/simulated/floor/tiled/steel/brown_perforated,
@@ -287,10 +268,6 @@
 /obj/item/material/shard,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
-"zN" = (
-/obj/item/stock_parts/capacitor,
-/turf/simulated/floor/tiled/white,
-/area/deepmaint)
 "zT" = (
 /obj/item/material/shard,
 /obj/effect/decal/cleanable/blood/gibs/xeno,
@@ -302,6 +279,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
+"AD" = (
+/obj/random/cluster/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white,
+/area/deepmaint)
 "AO" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -311,6 +292,14 @@
 "Be" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/white,
+/area/deepmaint)
+"BV" = (
+/turf/simulated/wall/r_wall,
+/area/deepmaint)
+"Ci" = (
+/obj/structure/table/glass,
+/obj/item/storage/freezer/medical,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "CC" = (
 /obj/structure/table/reinforced,
@@ -406,18 +395,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
-"IP" = (
-/turf/simulated/wall/r_wall,
+"ID" = (
+/obj/random/cluster/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "Jk" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/tiled/dark,
-/area/deepmaint)
-"Jr" = (
-/obj/effect/floor_decal/industrial/botright,
 /turf/simulated/floor/tiled/dark,
 /area/deepmaint)
 "JJ" = (
@@ -442,12 +428,20 @@
 /obj/structure/door_assembly,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
+"MR" = (
+/obj/machinery/chem_master,
+/turf/simulated/floor/tiled/white,
+/area/deepmaint)
 "Ng" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/syringes,
 /obj/item/storage/box/beakers,
 /obj/random/oddity_guns,
 /turf/simulated/floor/tiled/white,
+/area/deepmaint)
+"Nx" = (
+/obj/effect/floor_decal/industrial/botleft,
+/turf/simulated/floor/tiled/dark,
 /area/deepmaint)
 "Or" = (
 /obj/item/material/shard,
@@ -503,6 +497,12 @@
 	},
 /turf/simulated/wall,
 /area/deepmaint)
+"VO" = (
+/obj/structure/closet/secure_closet/freezer/blood,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/deepmaint)
 "Wl" = (
 /obj/structure/barricade,
 /turf/simulated/floor/tiled/white,
@@ -510,13 +510,13 @@
 "WG" = (
 /turf/simulated/floor/wood,
 /area/deepmaint)
+"Xe" = (
+/obj/random/medical_lowcost/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
 "Xh" = (
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/white,
-/area/deepmaint)
-"Xy" = (
-/obj/random/cluster/psi_monster/low_chance,
-/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "XK" = (
 /obj/structure/showcase/horrific_experiment_cryo,
@@ -583,17 +583,17 @@ SW
 SW
 SW
 SW
-Xy
+ID
 SW
 "}
 (3,1,1) = {"
 SW
 SW
-IP
-IP
-IP
-IP
-IP
+BV
+BV
+BV
+BV
+BV
 pB
 pB
 pB
@@ -612,11 +612,11 @@ SW
 (4,1,1) = {"
 SW
 SW
-IP
+BV
 my
 yH
 vP
-IP
+BV
 dT
 pB
 Be
@@ -635,7 +635,7 @@ SW
 (5,1,1) = {"
 SW
 SW
-IP
+BV
 mX
 rB
 Or
@@ -658,7 +658,7 @@ SW
 (6,1,1) = {"
 SW
 SW
-IP
+BV
 WG
 ep
 Or
@@ -670,7 +670,7 @@ JJ
 EW
 fa
 fa
-vp
+AD
 Sa
 fa
 zu
@@ -681,11 +681,11 @@ SW
 (7,1,1) = {"
 SW
 SW
-IP
-IP
-IP
-IP
-IP
+BV
+BV
+BV
+BV
+BV
 Id
 pB
 dw
@@ -705,7 +705,7 @@ SW
 SW
 SW
 pB
-pu
+MR
 qW
 Ng
 pB
@@ -728,7 +728,7 @@ SW
 SW
 SW
 pB
-zN
+rw
 xb
 uZ
 Gp
@@ -845,7 +845,7 @@ SW
 pB
 xq
 CK
-vp
+AD
 fa
 Go
 CK
@@ -866,9 +866,9 @@ SW
 SW
 SW
 pB
-gP
-rW
-gP
+fA
+Xe
+fA
 Vy
 xA
 fa
@@ -901,7 +901,7 @@ dy
 zr
 bN
 pB
-fN
+VO
 vC
 gL
 pB
@@ -912,11 +912,11 @@ SW
 SW
 SW
 pB
-cB
+Nx
 LO
-lh
+pR
 pB
-hD
+jY
 nv
 nv
 pB
@@ -937,7 +937,7 @@ SW
 pB
 SR
 Jk
-Jr
+lM
 pB
 XK
 Ej
@@ -947,7 +947,7 @@ Gs
 dc
 Ll
 pB
-mv
+Ci
 dc
 Ll
 pB

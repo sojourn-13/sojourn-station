@@ -494,7 +494,11 @@
 /obj/random/cluster/psi_monster,
 /turf/simulated/floor/carpet/turcarpet,
 /area/deepmaint)
-"so" = (
+"ry" = (
+/obj/random/cluster/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"xs" = (
 /obj/structure/table/rack,
 /obj/random/pack/tech_loot,
 /obj/random/pack/tech_loot,
@@ -504,7 +508,7 @@
 /obj/random/melee,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/deepmaint)
-"vs" = (
+"Qv" = (
 /obj/structure/table/woodentable,
 /obj/item/pen/blue{
 	pixel_x = 5;
@@ -517,11 +521,7 @@
 /obj/random/common_oddities,
 /turf/simulated/floor/wood,
 /area/deepmaint)
-"HX" = (
-/obj/random/cluster/psi_monster/low_chance,
-/turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"Ll" = (
+"XZ" = (
 /obj/structure/table/woodentable,
 /obj/random/gun_combat,
 /turf/simulated/floor/wood,
@@ -675,7 +675,7 @@ ar
 af
 be
 ar
-Ll
+XZ
 ar
 bt
 aN
@@ -689,7 +689,7 @@ ab
 aa
 "}
 (8,1,1) = {"
-HX
+ry
 ab
 ag
 ao
@@ -706,7 +706,7 @@ af
 aw
 an
 an
-vs
+Qv
 aY
 ab
 aa
@@ -775,7 +775,7 @@ af
 aw
 an
 bC
-vs
+Qv
 aY
 ab
 aa
@@ -824,7 +824,7 @@ aJ
 aU
 be
 ab
-HX
+ry
 "}
 (14,1,1) = {"
 aa
@@ -875,7 +875,7 @@ aa
 (16,1,1) = {"
 aa
 ab
-so
+xs
 aR
 ab
 bf

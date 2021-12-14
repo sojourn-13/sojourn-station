@@ -1,12 +1,15 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"as" = (
+"ae" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
+"bi" = (
 /obj/item/material/shard/shrapnel/scrap,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"ax" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white/brown_perforated,
+"bO" = (
+/obj/structure/closet/secure_closet/freezer/blood,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "cq" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -25,25 +28,9 @@
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"db" = (
-/obj/structure/table/glass,
-/obj/random/medical,
-/obj/random/medical,
-/obj/random/medical/low_chance,
-/obj/random/medical/low_chance,
-/obj/random/medical/low_chance,
-/obj/random/medical/low_chance,
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/deepmaint)
 "df" = (
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/reinforced,
-/area/deepmaint)
-"dq" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "ei" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -52,47 +39,29 @@
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"er" = (
-/obj/machinery/chem_master,
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/deepmaint)
 "ey" = (
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"eD" = (
-/turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
 "eF" = (
 /obj/structure/table/standard,
 /obj/machinery/electrolyzer,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
-"fj" = (
-/obj/effect/decal/cleanable/blood,
-/turf/simulated/floor/tiled/steel/brown_perforated,
+"fi" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor/reinforced,
 /area/deepmaint)
-"fZ" = (
-/obj/structure/table/standard,
-/obj/machinery/centrifuge,
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/deepmaint)
-"gx" = (
-/obj/random/pack/junk_machine,
-/turf/simulated/floor/tiled/steel,
+"fk" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/reinforced,
 /area/deepmaint)
 "gB" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/simulated/floor/reinforced,
-/area/deepmaint)
-"hP" = (
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
-/obj/item/oddity/common/old_knife,
-/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "it" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -116,50 +85,22 @@
 /obj/random/medical/low_chance,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"iF" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/simulated/floor/reinforced,
-/area/deepmaint)
-"iY" = (
+"jd" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
 /obj/random/psi_megafauna,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"jd" = (
-/obj/random/cluster/psi_monster,
+"ji" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"jI" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/dropper{
-	pixel_y = -4
-	},
-/obj/item/storage/box/syringes{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/beakers,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/deepmaint)
-"jL" = (
-/obj/machinery/light_construct,
-/obj/structure/kitchenspike,
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/deepmaint)
-"ka" = (
-/obj/structure/table/glass,
-/obj/item/storage/freezer/medical,
-/obj/item/cell/medium/high,
-/turf/simulated/floor/tiled/steel/techfloor,
+"kn" = (
+/obj/random/pack/junk_machine,
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "ks" = (
 /obj/structure/table/standard{
@@ -172,10 +113,6 @@
 /area/deepmaint)
 "lo" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"lK" = (
-/obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "lU" = (
@@ -194,29 +131,26 @@
 /obj/item/oddity/common/healthscanner,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"mF" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced,
+"mC" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"na" = (
-/obj/structure/table/glass,
-/obj/item/storage/firstaid/surgery,
+"mR" = (
+/obj/machinery/gibber/autogibber,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
-"nw" = (
-/obj/random/cluster/psi_monster/low_chance,
-/turf/simulated/floor/tiled/steel,
+"mU" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor/reinforced,
 /area/deepmaint)
-"nC" = (
-/obj/random/lowkeyrandom/low_chance,
-/turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"oc" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/steel,
+"oH" = (
+/obj/machinery/optable,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "oW" = (
 /turf/simulated/wall,
@@ -228,6 +162,18 @@
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
+"pK" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor/reinforced,
+/area/deepmaint)
+"qu" = (
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/item/oddity/common/old_knife,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/deepmaint)
 "qD" = (
 /obj/machinery/shower{
 	dir = 4
@@ -235,26 +181,18 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"rc" = (
-/obj/random/scrap/dense_weighted,
-/obj/machinery/light/small{
-	dir = 4
-	},
+"qG" = (
+/obj/item/material/shard/shrapnel/scrap,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
-"rp" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/decal/cleanable/blood/splatter,
+"qP" = (
 /obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/steel/brown_perforated,
 /area/deepmaint)
-"rH" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/simulated/floor/reinforced,
+"rF" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/surgery,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "rM" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -263,6 +201,10 @@
 "rO" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/reinforced,
+/area/deepmaint)
+"rT" = (
+/obj/machinery/chem_master,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "rX" = (
 /obj/effect/floor_decal/rust,
@@ -279,9 +221,18 @@
 /obj/machinery/chem_heater,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
-"sp" = (
-/obj/effect/decal/cleanable/blood,
-/turf/simulated/floor/reinforced,
+"te" = (
+/obj/structure/table/glass,
+/obj/random/medical,
+/obj/random/medical,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/deepmaint)
+"tO" = (
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
 "tP" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -304,13 +255,19 @@
 /obj/random/medical_lowcost/low_chance,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"tZ" = (
-/obj/item/material/shard/shrapnel/scrap,
-/turf/simulated/floor/reinforced,
-/area/deepmaint)
-"uV" = (
+"tU" = (
+/obj/machinery/light_construct,
+/obj/structure/kitchenspike,
+/obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/tiled/steel/techfloor,
+/area/deepmaint)
+"vd" = (
+/obj/random/scrap/dense_weighted,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
 /area/deepmaint)
 "vn" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -318,6 +275,17 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/reinforced,
+/area/deepmaint)
+"vT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/deepmaint)
+"wb" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "ww" = (
 /obj/structure/table/standard{
@@ -328,28 +296,17 @@
 /obj/random/material,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"xT" = (
-/obj/random/cluster/psi_monster/low_chance,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel,
+"yp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/reinforced,
 /area/deepmaint)
 "yy" = (
 /obj/effect/decal/cleanable/mucus,
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
-"yW" = (
-/obj/structure/medical_stand,
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/deepmaint)
-"zd" = (
-/obj/effect/damagedfloor/fire,
-/obj/random/pack/junk_machine,
-/turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"ze" = (
+"yU" = (
 /obj/machinery/chemical_dispenser,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 5
@@ -368,14 +325,6 @@
 /obj/random/oddity_guns,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
-"Bb" = (
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/simulated/floor/tiled/steel/brown_perforated,
-/area/deepmaint)
-"Bz" = (
-/obj/random/cluster/psi_monster,
-/turf/simulated/floor/reinforced,
-/area/deepmaint)
 "BA" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -384,24 +333,60 @@
 /obj/random/pack/junk_machine/low_chance,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"BK" = (
-/obj/machinery/optable,
-/obj/effect/decal/cleanable/blood,
-/turf/simulated/floor/tiled/steel/techfloor,
+"BB" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor/reinforced,
 /area/deepmaint)
 "CX" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/white/brown_perforated,
+/area/deepmaint)
+"Dg" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/dropper{
+	pixel_y = -4
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/beakers,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/deepmaint)
+"Dk" = (
+/obj/effect/damagedfloor/fire,
+/obj/random/pack/junk_machine,
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "Do" = (
 /obj/machinery/optable,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"FA" = (
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/decal/cleanable/blood/gibs,
+"ED" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/reinforced,
+/area/deepmaint)
+"GC" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/reinforced,
+/area/deepmaint)
+"Hz" = (
+/obj/random/cluster/psi_monster/low_chance,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"HD" = (
+/obj/structure/medical_stand,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "IC" = (
 /turf/simulated/floor/tiled/steel,
@@ -415,12 +400,6 @@
 	},
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"IS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/office/light,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
 "IZ" = (
 /obj/structure/closet/l3closet/virology,
@@ -444,10 +423,9 @@
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
-"Kx" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/simulated/floor/reinforced,
+"Jz" = (
+/obj/random/cluster/psi_monster,
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "Kz" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -456,11 +434,18 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"Lf" = (
+"Lo" = (
+/obj/random/cluster/psi_monster/low_chance,
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"Lv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/office/light,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
 "LN" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -475,11 +460,6 @@
 /obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"My" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced,
-/area/deepmaint)
 "MA" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -492,13 +472,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"Oo" = (
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
-/obj/item/tool/omnitool,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "Pd" = (
@@ -527,11 +500,6 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"Qe" = (
-/obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/simulated/floor/reinforced,
-/area/deepmaint)
 "Qk" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -542,34 +510,40 @@
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
+"Rb" = (
+/obj/random/cluster/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
 "Rl" = (
 /obj/machinery/door/blast/regular/open,
 /obj/structure/catwalk,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
-"Sg" = (
-/obj/random/cluster/psi_monster/low_chance,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled/steel,
-/area/deepmaint)
-"SI" = (
-/obj/structure/closet/secure_closet/freezer/blood,
+"Tr" = (
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/tiled/steel/techfloor,
+/area/deepmaint)
+"TE" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "TU" = (
 /obj/machinery/door/blast/regular,
 /obj/structure/catwalk,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
-"Up" = (
-/obj/machinery/gibber/autogibber,
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/deepmaint)
 "Ut" = (
 /turf/simulated/floor/reinforced,
+/area/deepmaint)
+"Uy" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor/reinforced,
+/area/deepmaint)
+"UQ" = (
+/obj/structure/table/standard,
+/obj/machinery/centrifuge,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "UV" = (
 /obj/effect/decal/cleanable/blood/gibs,
@@ -580,13 +554,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "Vb" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/deepmaint)
-"Ve" = (
-/obj/effect/decal/cleanable/blood/gibs,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -609,13 +576,26 @@
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
+"VD" = (
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/item/tool/omnitool,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"VY" = (
+/obj/item/material/shard/shrapnel/scrap,
+/obj/item/material/shard/shrapnel/scrap,
+/obj/item/material/shard/shrapnel/scrap,
+/turf/simulated/floor/reinforced,
+/area/deepmaint)
 "Wy" = (
 /turf/simulated/wall/r_wall,
 /area/deepmaint)
-"Xh" = (
-/obj/item/material/shard/shrapnel/scrap,
-/obj/item/material/shard/shrapnel/scrap,
-/obj/item/material/shard/shrapnel/scrap,
+"Xf" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
 "XQ" = (
@@ -625,22 +605,42 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
+"Yl" = (
+/obj/random/cluster/psi_monster,
+/turf/simulated/floor/reinforced,
+/area/deepmaint)
+"Yq" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
 "YQ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"ZF" = (
-/obj/random/scrap/dense_weighted,
+"Zz" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/reinforced,
+/area/deepmaint)
+"ZM" = (
+/obj/structure/table/glass,
+/obj/item/storage/freezer/medical,
+/obj/item/cell/medium/high,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 
 (1,1,1) = {"
 IC
 IC
 IC
-nC
+TE
 IC
 IC
 IC
@@ -649,33 +649,33 @@ IC
 IC
 IC
 IC
-as
-nC
-nC
+bi
+TE
+TE
 IC
 IC
 IC
-nC
-nC
-nC
+TE
+TE
+TE
 "}
 (2,1,1) = {"
 IC
-nC
-nC
-nC
+TE
+TE
+TE
 IC
 IC
-oc
+Yq
 IC
 IC
-nC
-nC
+TE
+TE
 IC
 IC
 IC
 IC
-Sg
+Hz
 IC
 IC
 IC
@@ -694,7 +694,7 @@ Wy
 Wy
 Wy
 Wy
-Xh
+VY
 Wy
 Wy
 Wy
@@ -722,15 +722,15 @@ gB
 Ut
 Wy
 sn
-er
-ze
+rT
+yU
 Wy
 IC
 IC
 "}
 (5,1,1) = {"
 IC
-nw
+Rb
 Wy
 Ut
 Am
@@ -741,19 +741,19 @@ Am
 Ut
 oW
 Ut
-tZ
+qG
 Ut
 Wy
-ax
-eD
-IS
+vT
+tO
+Lv
 Wy
 IC
 IC
 "}
 (6,1,1) = {"
 IC
-lK
+mC
 Wy
 Ut
 Ut
@@ -767,15 +767,15 @@ Ut
 rO
 Ut
 Wy
-mF
-jI
+ED
+Dg
 Pd
 Wy
-Lf
+wb
 IC
 "}
 (7,1,1) = {"
-nC
+TE
 IC
 Wy
 CX
@@ -790,9 +790,9 @@ CX
 Rl
 CX
 Wy
-My
+yp
 Ut
-fZ
+UQ
 Wy
 IC
 IC
@@ -818,7 +818,7 @@ Ut
 eF
 Wy
 IC
-nC
+TE
 "}
 (9,1,1) = {"
 IC
@@ -852,16 +852,16 @@ zl
 IC
 lU
 ks
-gx
-iY
+kn
+jd
 IC
 Jh
 rM
 lo
 oW
 df
-sp
-Up
+GC
+mR
 Wy
 IC
 IC
@@ -875,7 +875,7 @@ XQ
 UV
 Qy
 ey
-jd
+Jz
 PA
 ey
 Do
@@ -883,8 +883,8 @@ IC
 lo
 TU
 Ut
-Qe
-jL
+fi
+tU
 Wy
 IC
 IC
@@ -898,8 +898,8 @@ zl
 ey
 mv
 ww
-zd
-Oo
+Dk
+VD
 IC
 MA
 ey
@@ -907,13 +907,13 @@ sk
 oW
 Ut
 Ut
-hP
+qu
 Wy
 IC
-nC
+TE
 "}
 (13,1,1) = {"
-nC
+TE
 Wy
 Wy
 Wy
@@ -933,10 +933,10 @@ Ut
 df
 Wy
 IC
-nC
+TE
 "}
 (14,1,1) = {"
-nC
+TE
 IC
 Wy
 LN
@@ -956,10 +956,10 @@ rX
 Ut
 Wy
 IC
-nC
+TE
 "}
 (15,1,1) = {"
-nC
+TE
 IC
 Wy
 CX
@@ -975,33 +975,33 @@ TU
 CX
 oW
 Ut
-Bz
+Yl
 df
 Wy
 IC
 IC
 "}
 (16,1,1) = {"
-nC
-lK
+TE
+mC
 Wy
 Ut
 Ut
 Ut
 oW
-FA
-rH
+pK
+Xf
 Ut
 oW
-ZF
+fk
 Ut
-ZF
+fk
 oW
-SI
-Bb
-uV
+bO
+qP
+Tr
 Wy
-xT
+Lo
 IC
 "}
 (17,1,1) = {"
@@ -1012,17 +1012,17 @@ Ut
 Am
 Ut
 oW
-iF
+mU
 vn
-rp
+BB
 oW
-ZF
-ZF
-ZF
+fk
+fk
+fk
 oW
-db
-fj
-BK
+te
+ae
+oH
 Wy
 IC
 IC
@@ -1035,20 +1035,20 @@ Ut
 Vb
 Ut
 oW
-Kx
-Ve
-Kx
+Uy
+Zz
+Uy
 oW
-ZF
-rc
-ZF
+fk
+vd
+fk
 oW
-ka
-na
-yW
+ZM
+rF
+HD
 Wy
 IC
-nC
+TE
 "}
 (19,1,1) = {"
 IC
@@ -1071,16 +1071,16 @@ Wy
 Wy
 Wy
 IC
-nC
+TE
 "}
 (20,1,1) = {"
 IC
-nC
+TE
 IC
 IC
 IC
 IC
-dq
+ji
 IC
 IC
 IC
@@ -1089,30 +1089,30 @@ IC
 IC
 IC
 IC
-dq
-nC
+ji
+TE
 IC
 IC
 IC
-nC
+TE
 "}
 (21,1,1) = {"
 IC
 IC
 IC
-nC
-nC
+TE
+TE
 IC
-nw
+Rb
 IC
-nC
-nC
+TE
+TE
 IC
 IC
 IC
-nC
-nC
-nC
+TE
+TE
+TE
 IC
 IC
 IC

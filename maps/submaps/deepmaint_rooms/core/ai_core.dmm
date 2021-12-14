@@ -407,7 +407,7 @@
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/space)
-"gr" = (
+"cY" = (
 /obj/structure/table/reinforced,
 /obj/random/pack/rare,
 /obj/random/pack/rare,
@@ -418,36 +418,7 @@
 /obj/random/dungeon_gun_energy,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
-"pL" = (
-/obj/random/oddity_guns,
-/turf/simulated/floor/tiled/steel/bar_dance,
-/area/deepmaint)
-"FS" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/catwalk,
-/obj/random/cluster/psi_monster/low_chance,
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"Od" = (
-/obj/structure/table/reinforced,
-/obj/random/pack/rare,
-/obj/random/pack/rare,
-/obj/random/pack/rare/low_chance,
-/obj/random/pack/rare/low_chance,
-/obj/random/dungeon_gun_ballistic,
-/turf/simulated/floor/bluegrid,
-/area/deepmaint)
-"Ou" = (
-/obj/structure/table/reinforced,
-/obj/random/pack/rare,
-/obj/random/pack/rare,
-/obj/random/pack/rare/low_chance,
-/obj/random/pack/rare/low_chance,
-/obj/random/dungeon_gun_ballistic,
-/obj/random/dungeon_gun_ballistic,
-/turf/simulated/floor/bluegrid,
-/area/deepmaint)
-"PB" = (
+"jp" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
 	icon_state = "pipe-s";
@@ -455,6 +426,35 @@
 	},
 /obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
+/area/deepmaint)
+"kV" = (
+/obj/random/oddity_guns,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/deepmaint)
+"qh" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/catwalk,
+/obj/random/cluster/psi_monster/low_chance,
+/turf/simulated/floor/plating/under,
+/area/deepmaint)
+"Ff" = (
+/obj/structure/table/reinforced,
+/obj/random/pack/rare,
+/obj/random/pack/rare,
+/obj/random/pack/rare/low_chance,
+/obj/random/pack/rare/low_chance,
+/obj/random/dungeon_gun_ballistic,
+/obj/random/dungeon_gun_ballistic,
+/turf/simulated/floor/bluegrid,
+/area/deepmaint)
+"LI" = (
+/obj/structure/table/reinforced,
+/obj/random/pack/rare,
+/obj/random/pack/rare,
+/obj/random/pack/rare/low_chance,
+/obj/random/pack/rare/low_chance,
+/obj/random/dungeon_gun_ballistic,
+/turf/simulated/floor/bluegrid,
 /area/deepmaint)
 
 (1,1,1) = {"
@@ -543,7 +543,7 @@ ab
 ab
 aB
 at
-FS
+qh
 aA
 aN
 ab
@@ -629,7 +629,7 @@ ab
 aU
 as
 ac
-pL
+kV
 ac
 as
 bh
@@ -649,7 +649,7 @@ af
 ab
 aR
 ab
-gr
+cY
 au
 au
 ba
@@ -691,7 +691,7 @@ aa
 aa
 aK
 aO
-PB
+jp
 ab
 aR
 ab
@@ -699,7 +699,7 @@ as
 av
 ab
 ay
-pL
+kV
 au
 ar
 aC
@@ -741,7 +741,7 @@ af
 ab
 aR
 ab
-Ou
+Ff
 au
 au
 bb
@@ -764,10 +764,10 @@ af
 ab
 aR
 ab
-Od
+LI
 as
 ac
-pL
+kV
 ac
 as
 bi
@@ -865,7 +865,7 @@ ab
 ab
 aD
 at
-FS
+qh
 aE
 aN
 ab

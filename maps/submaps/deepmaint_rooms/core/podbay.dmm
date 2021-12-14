@@ -615,28 +615,19 @@
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/deepmaint)
-"kj" = (
-/obj/random/pack/tech_loot,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/deepmaint)
-"vh" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/blood/drip,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/deepmaint)
-"wo" = (
-/obj/random/pack/gun_loot,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/deepmaint)
-"xs" = (
-/obj/random/pack/machine/low_chance,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/deepmaint)
-"NI" = (
+"kl" = (
 /obj/random/pack/rare,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/deepmaint)
-"Ox" = (
+"mb" = (
+/obj/random/pack/machine/low_chance,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/deepmaint)
+"ty" = (
+/obj/random/pack/machine/low_chance,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/deepmaint)
+"tM" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/item/remains/human,
@@ -646,12 +637,21 @@
 /obj/random/pack/gun_loot,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/deepmaint)
-"Pg" = (
+"Al" = (
+/obj/random/pack/tech_loot,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/deepmaint)
+"Dp" = (
 /obj/random/pack/machine,
 /turf/simulated/floor/tiled/dark,
 /area/deepmaint)
-"Tc" = (
-/obj/random/pack/machine/low_chance,
+"UZ" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/deepmaint)
+"XT" = (
+/obj/random/pack/gun_loot,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/deepmaint)
 
@@ -665,9 +665,9 @@ aa
 aa
 aa
 aa
-Pg
-Pg
-Pg
+Dp
+Dp
+Dp
 aa
 aa
 aa
@@ -757,9 +757,9 @@ aK
 aS
 bb
 ah
-xs
+ty
 bs
-xs
+ty
 af
 al
 bC
@@ -773,7 +773,7 @@ aa
 (6,1,1) = {"
 aa
 ab
-NI
+kl
 am
 aA
 aK
@@ -789,14 +789,14 @@ bD
 bL
 bS
 bc
-NI
+kl
 ab
 aa
 "}
 (7,1,1) = {"
 aa
 ab
-kj
+Al
 an
 aB
 aL
@@ -812,7 +812,7 @@ bE
 bM
 bT
 bd
-kj
+Al
 ab
 aa
 "}
@@ -842,7 +842,7 @@ aa
 (9,1,1) = {"
 aa
 ab
-Tc
+mb
 ap
 aD
 aL
@@ -858,14 +858,14 @@ bG
 bO
 bV
 bf
-Tc
+mb
 ab
 aa
 "}
 (10,1,1) = {"
 aa
 ab
-Tc
+mb
 aq
 aD
 aH
@@ -878,10 +878,10 @@ bn
 af
 aq
 bP
-vh
+UZ
 bP
 bg
-Tc
+mb
 ab
 aa
 "}
@@ -901,7 +901,7 @@ bo
 af
 ar
 aE
-Ox
+tM
 aE
 bh
 af
@@ -1012,7 +1012,7 @@ aI
 ag
 bp
 af
-wo
+XT
 ag
 aI
 aQ

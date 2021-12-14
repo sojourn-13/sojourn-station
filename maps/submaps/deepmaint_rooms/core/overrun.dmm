@@ -459,6 +459,10 @@
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
+"th" = (
+/obj/random/cluster/psi_monster/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/deepmaint)
 "tJ" = (
 /obj/structure/grille/broken,
 /obj/item/trash/material/metal,
@@ -498,10 +502,6 @@
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
-"xq" = (
-/obj/random/cluster/psi_monster/low_chance,
-/turf/simulated/floor/tiled/dark/brown_perforated,
-/area/deepmaint)
 "xL" = (
 /obj/item/inflatable/torn,
 /obj/item/circuitboard/broken,
@@ -534,10 +534,6 @@
 /obj/item/material/shard,
 /obj/structure/grille/broken,
 /turf/simulated/floor/tiled/dark/brown_perforated,
-/area/deepmaint)
-"AF" = (
-/obj/random/cluster/psi_monster/low_chance,
-/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "BQ" = (
 /obj/item/stack/material/wood,
@@ -599,6 +595,10 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
+/area/deepmaint)
+"IW" = (
+/obj/random/cluster/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "Jw" = (
 /obj/item/material/shard,
@@ -777,7 +777,7 @@ cd
 Lw
 cg
 cg
-xq
+th
 OU
 cg
 bi
@@ -786,7 +786,7 @@ uf
 br
 cg
 aH
-xq
+th
 cg
 bn
 "}
@@ -907,7 +907,7 @@ cn
 "}
 (9,1,1) = {"
 cn
-AF
+IW
 cm
 co
 OI
@@ -1059,7 +1059,7 @@ aQ
 bO
 cd
 LG
-xq
+th
 Ap
 oL
 ac

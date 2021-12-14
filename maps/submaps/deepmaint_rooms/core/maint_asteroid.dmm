@@ -290,20 +290,20 @@
 "bi" = (
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/deepmaint)
-"yO" = (
+"kT" = (
 /obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
-"Gf" = (
-/obj/random/cluster/psi_monster/low_chance,
-/turf/simulated/floor/asteroid,
-/area/deepmaint)
-"Vw" = (
+"EB" = (
 /obj/structure/table/woodentable,
 /obj/item/seeds/ambrosiavulgarisseed,
 /obj/item/seeds/ambrosiavulgarisseed,
 /obj/item/seeds/ambrosiavulgarisseed,
 /obj/random/psi_megafauna,
+/turf/simulated/floor/asteroid,
+/area/deepmaint)
+"UE" = (
+/obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/asteroid,
 /area/deepmaint)
 
@@ -363,7 +363,7 @@ ah
 ah
 ac
 ac
-Gf
+UE
 ag
 ah
 ah
@@ -500,7 +500,7 @@ ar
 av
 aA
 aA
-yO
+kT
 aD
 aD
 aO
@@ -643,7 +643,7 @@ af
 aL
 af
 af
-Gf
+UE
 af
 af
 af
@@ -680,7 +680,7 @@ aa
 ab
 ad
 af
-Gf
+UE
 ay
 ah
 ah
@@ -710,7 +710,7 @@ ah
 ah
 af
 af
-Vw
+EB
 ah
 ah
 ah
