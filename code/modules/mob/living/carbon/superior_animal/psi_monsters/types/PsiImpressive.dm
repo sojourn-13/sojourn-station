@@ -83,7 +83,7 @@
 	default_pixel_x = 0
 	default_pixel_y = 0
 	size_pixel_offset_x = 0
-	real_mutator = FALSE
+	real_mutator = TRUE
 	lethal_to_captive = TRUE //We kill are captives
 	knockdown_odds = 30 //Maybe stay away from it
 
