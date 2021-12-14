@@ -21,9 +21,10 @@
 
 	new momento_mori(src.loc)
 
-	dust(src) //Leaves a second dust pile but this is better then deleting the mob directly
+	qdel(src)
 
 	. = ..()
+	STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
 
 /mob/living/carbon/superior_animal/psi_monster/gib(var/anim = icon_gib, var/do_gibs = 1)
 	if (!anim)
