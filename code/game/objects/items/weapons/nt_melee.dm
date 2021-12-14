@@ -238,6 +238,8 @@
 	var/glowing = FALSE
 	sharp = FALSE
 	embed_mult = 0
+	effective_faction = list("spider") // Spiders are weak to crushing.
+	damage_mult = 2
 
 /obj/item/tool/sword/nt/warhammer/attack(atom/movable/target, mob/user)
 	if(wielded && prob(50))

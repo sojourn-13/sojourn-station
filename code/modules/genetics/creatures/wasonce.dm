@@ -133,7 +133,7 @@ Has ability of every roach.
 	akira.loc = get_turf(src)
 	akira.gib()
 	//So we dont nullspace are akira'ed or victims
-	gib(src) //Were a bloody mess
+	. = ..()
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
 
