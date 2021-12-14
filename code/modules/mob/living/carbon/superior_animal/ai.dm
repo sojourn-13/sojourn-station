@@ -9,7 +9,7 @@
 	var/turf/T = get_turf(src)
 	if(!T)
 		return //We're contained inside something, a locker perhaps.
-	return hearers(viewRange, src)
+	return hearers(src, viewRange)
 
 
 	/* There was an attempt at optimization, but it was unsanitized, and was more expensive than just checking hearers.
