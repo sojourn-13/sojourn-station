@@ -8,9 +8,9 @@
 	maxHealth = 200
 	health = 200
 	defaultHUD = "BorgStyle"
-	mob_bump_flag = ROBOT
-	mob_swap_flags = ROBOT|MONKEY|SLIME|SIMPLE_ANIMAL
-	mob_push_flags = ~HEAVY //trundle trundle
+	mob_bump_flag = HEAVY
+	mob_swap_flags = ROBOT
+	mob_push_flags = HEAVY //trundle trundle
 
 	var/lights_on = 0 // Is our integrated light on?
 	var/used_power_this_tick = 0

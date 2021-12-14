@@ -317,5 +317,6 @@
 	icon_state = "gripper-sheet"
 
 	can_hold = list(
-		/obj/item/stack/material
+		/obj/item/stack/material,
+		/obj/item/stack/sheet/refined_scrap
 		)

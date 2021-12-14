@@ -21,7 +21,7 @@ Has ability of every roach.
 	health = 2000
 	contaminant_immunity = TRUE
 
-	// Psi_monster stuff.
+	//Psi_monster stuff.
 	chameleon_skill = 255 // Psionics not developed, can't turn invisible.
 	healing_factor = 25
 	size_pixel_offset_x = -16
@@ -77,16 +77,14 @@ Has ability of every roach.
 
 	injector = new(src)
 
-
 	loc = get_turf(victim)
 	//kill the victim
 	if(istype(victim, /mob/living))
 		akira = victim
-		//Kill them properly.
-		akira.adjustBruteLoss(150)
+		//Kill them properly. - 300 damage to bypass most health mods, this should kill anyone even power gamers with best stats, best perks.
+		akira.adjustBruteLoss(80)
+		akira.adjustToxLoss(220)
 		akira.adjustCloneLoss(100)
-
-
 
 		name = "Was once [akira]"
 		if ((istype(akira, /mob/living/carbon/human)))
@@ -128,14 +126,14 @@ Has ability of every roach.
 	. = ..()
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/death(gibbed)
-	..()
 	for(var/mob/living/drop_victim in captives)
 		drop_victim.loc = get_turf(src)
 	captives = list()
 
 	akira.loc = get_turf(src)
 	akira.gib()
-
+	//So we dont nullspace are akira'ed or victims
+	. = ..()
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
 

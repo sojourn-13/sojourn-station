@@ -89,24 +89,24 @@
 	alpha = 128
 
 /obj/random/mob/psi_monster/item_to_spawn()
-	return pickweight(list(/mob/living/carbon/superior_animal/psi_monster = 9,
+	return pickweight(list(/mob/living/carbon/superior_animal/psi_monster = 8,
 				//trash
-				/mob/living/carbon/superior_animal/psi_monster/memory_eater = 8,
-				/mob/living/carbon/superior_animal/psi_monster/thought_melter = 8,
-				/mob/living/carbon/superior_animal/psi_monster/pus_maggot = 8,
+				/mob/living/carbon/superior_animal/psi_monster/memory_eater = 7,
+				/mob/living/carbon/superior_animal/psi_monster/thought_melter = 7,
+				/mob/living/carbon/superior_animal/psi_monster/pus_maggot = 7,
 				//robust
-				/mob/living/carbon/superior_animal/psi_monster/ponderous = 6,
-				/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare = 6,
-				/mob/living/carbon/superior_animal/psi_monster/licker = 6,
-				/mob/living/carbon/superior_animal/psi_monster/memory = 6,
-				/mob/living/carbon/superior_animal/psi_monster/flesh_tower = 6,
+				/mob/living/carbon/superior_animal/psi_monster/ponderous = 5,
+				/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare = 5,
+				/mob/living/carbon/superior_animal/psi_monster/licker = 5,
+				/mob/living/carbon/superior_animal/psi_monster/memory = 5,
+				/mob/living/carbon/superior_animal/psi_monster/flesh_tower = 5,
 				//impressive
-				/mob/living/carbon/superior_animal/psi_monster/flesh_behemoth = 2,
-				/mob/living/carbon/superior_animal/psi_monster/mind_gazer = 4,
-				/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo = 4,
-				/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher = 4,
-				//mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly = 3,
-				//mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror = 2,
+				/mob/living/carbon/superior_animal/psi_monster/flesh_behemoth,
+				/mob/living/carbon/superior_animal/psi_monster/mind_gazer = 3,
+				/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo = 3,
+				/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher = 3,
+				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly = 2,
+				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror,
 				))
 
 /obj/random/mob/psi_monster_mega_fauna

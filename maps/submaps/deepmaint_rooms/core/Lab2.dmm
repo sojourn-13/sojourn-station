@@ -1,110 +1,937 @@
-"aa" = (/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ab" = (/obj/random/pack/tech_loot/low_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ac" = (/obj/random/junk/low_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ad" = (/obj/structure/table/steel_reinforced,/obj/random/junk/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"ae" = (/obj/structure/table/steel_reinforced,/obj/random/junk/low_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"af" = (/obj/machinery/light/small,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ag" = (/obj/structure/salvageable/data_os,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ah" = (/obj/structure/table/steel_reinforced,/obj/random/card_carp,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ai" = (/obj/effect/decal/cleanable/blood/gibs/body,/obj/random/junk/low_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"aj" = (/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ak" = (/obj/random/pack/tech_loot/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"al" = (/obj/structure/table/rack/shelf,/obj/random/firstaid/low_chance,/obj/random/firstaid/low_chance,/obj/random/firstaid/low_chance,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/steel,/area/awaymission)
-"am" = (/obj/structure/table/steel_reinforced,/obj/random/oddity_guns,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"an" = (/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled/steel/panels,/area/awaymission)
-"ao" = (/obj/structure/table/steel_reinforced,/obj/random/lathe_disk/advanced/low_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ap" = (/obj/random/pack/machine,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/steel,/area/awaymission)
-"aq" = (/obj/structure/salvageable/autolathe,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"ar" = (/obj/random/pack/machine,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"as" = (/obj/structure/table/steel_reinforced,/obj/random/dungeon_gun_energy/low_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"at" = (/obj/machinery/door/airlock/vault{name = "Laboratory 2"},/turf/simulated/floor/tiled/steel,/area/awaymission)
-"au" = (/obj/effect/decal/cleanable/blood/splatter,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"av" = (/turf/simulated/floor/tiled/steel/bar_flat,/area/awaymission)
-"aw" = (/obj/random/pack/machine/low_chance,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"ax" = (/obj/effect/floor_decal/rust,/turf/simulated/floor/tiled/steel/bar_dance,/area/awaymission)
-"ay" = (/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"az" = (/obj/structure/table/steel_reinforced,/obj/random/junk/low_chance,/obj/random/dungeon_ammo/low_chance,/obj/random/dungeon_ammo/low_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"aA" = (/obj/random/pack/machine/low_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"aB" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/steel,/area/awaymission)
-"aC" = (/obj/effect/window_lwall_spawn/plasma/reinforced,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"aD" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/decal/cleanable/blood/splatter,/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
-"aE" = (/obj/random/pack/tech_loot/low_chance,/turf/simulated/floor/tiled/steel/bar_flat,/area/awaymission)
-"aF" = (/obj/effect/damagedfloor/rust,/turf/simulated/floor/tiled/steel/bar_flat,/area/awaymission)
-"aG" = (/obj/random/pack/tech_loot/low_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"aH" = (/obj/random/pack/machine/low_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"aI" = (/obj/structure/salvageable/console_os,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"aJ" = (/turf/simulated/floor/tiled/steel/bar_dance,/area/awaymission)
-"aK" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
-"aL" = (/obj/effect/floor_decal/industrial/warning,/obj/machinery/power/emitter,/turf/simulated/floor/tiled/steel/panels,/area/awaymission)
-"aM" = (/obj/effect/floor_decal/industrial/warning,/turf/simulated/wall/r_wall,/area/awaymission)
-"aN" = (/obj/effect/decal/cleanable/blood/splatter,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"aO" = (/obj/effect/decal/cleanable/blood/splatter,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"aP" = (/obj/random/pack/machine,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"aQ" = (/obj/machinery/light/small{dir = 4; pixel_y = 0},/obj/random/junk/low_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"aR" = (/obj/machinery/door/airlock/centcom,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"aS" = (/obj/structure/table/steel_reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lathe_disk/advanced,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"aT" = (/obj/random/pack/machine/low_chance,/obj/machinery/light/small{dir = 4; pixel_y = 0},/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"aU" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/machinery/power/emitter{anchored = 1; dir = 8; id = "EngineEmitter"; state = 2},/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
-"aV" = (/obj/structure/salvageable/console_broken_os{dir = 4},/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
-"aW" = (/obj/random/cluster/psi_monster/lower_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"aX" = (/turf/simulated/wall/r_wall,/area/awaymission)
-"aY" = (/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"aZ" = (/obj/effect/damagedfloor/rust,/turf/simulated/floor/tiled/steel/bar_dance,/area/awaymission)
-"ba" = (/obj/random/cluster/psi_monster/lower_chance,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"bb" = (/obj/effect/floor_decal/industrial/warning,/obj/random/pack/machine,/turf/simulated/floor/tiled/steel/panels,/area/awaymission)
-"bc" = (/obj/random/junk/low_chance,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bd" = (/obj/effect/floor_decal/rust,/obj/random/cluster/psi_monster,/obj/random/psi_megafauna,/turf/simulated/floor/tiled/steel/bar_flat,/area/awaymission)
-"be" = (/obj/random/pack/machine/low_chance,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bf" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/decal/cleanable/blood/gibs/body,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
-"bg" = (/obj/random/junk/cigbutt,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bh" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/steel/bar_dance,/area/awaymission)
-"bi" = (/obj/effect/floor_decal/industrial/warning{dir = 6},/turf/simulated/wall/r_wall,/area/awaymission)
-"bj" = (/obj/random/furniture/pottedplant,/turf/simulated/floor/tiled/steel/bar_flat,/area/awaymission)
-"bk" = (/obj/structure/bed/chair{dir = 8},/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bl" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/white/techfloor_grid,/area/awaymission)
-"bm" = (/obj/effect/decal/cleanable/blood/gibs/body,/obj/random/pack/tech_loot,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bn" = (/obj/random/pack/tech_loot,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"bo" = (/obj/machinery/light/small{dir = 4; pixel_y = 0},/turf/simulated/floor/tiled/steel,/area/awaymission)
-"bp" = (/obj/machinery/light/small{dir = 4; pixel_y = 0},/obj/random/pack/machine/low_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"bq" = (/obj/random/pack/gun_loot,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"br" = (/obj/machinery/light/small,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bs" = (/obj/random/closet_tech/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bt" = (/obj/structure/table/steel_reinforced,/obj/random/gun_energy_cheap/low_chance,/obj/random/ammo_lowcost/low_chance,/obj/random/ammo_lowcost/low_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"bu" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/wall/r_wall,/area/awaymission)
-"bv" = (/obj/random/pack/tech_loot/low_chance,/obj/random/pack/gun_loot,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bw" = (/obj/random/closet_maintloot/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bx" = (/obj/effect/decal/cleanable/blood/splatter,/obj/random/closet_maintloot/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"by" = (/obj/structure/table/steel_reinforced,/obj/random/junk/low_chance,/obj/machinery/light/small,/obj/random/lathe_disk/advanced/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bz" = (/obj/structure/table/steel_reinforced,/obj/random/ammo_fancy,/obj/random/ammo_fancy,/obj/random/ammo/low_chance,/obj/random/lathe_disk/advanced/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bA" = (/obj/structure/table/steel_reinforced,/obj/random/firstaid,/obj/random/lathe_disk/advanced/low_chance,/obj/random/lathe_disk/advanced/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bB" = (/obj/machinery/light/small,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"bC" = (/obj/structure/table/steel_reinforced,/obj/random/ammo/shotgun/low_chance,/obj/random/ammo/shotgun/low_chance,/obj/random/ammo_fancy/low_chance,/obj/random/ammo_fancy/low_chance,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bD" = (/obj/random/pack/rare,/turf/simulated/floor/tiled/steel,/area/awaymission)
-"bE" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/steel,/area/awaymission)
-"bF" = (/obj/structure/salvageable/server_os,/turf/simulated/floor/tiled/white/techfloor,/area/awaymission)
-"bG" = (/obj/structure/table/steel_reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
-"bH" = (/obj/structure/table/steel_reinforced,/obj/random/junk/low_chance,/obj/machinery/light/small,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/steel/monofloor,/area/awaymission)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"ab" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"ac" = (
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"ad" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"ae" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"af" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"ag" = (
+/obj/structure/salvageable/data_os,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"ai" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"aj" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"ak" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"al" = (
+/obj/structure/table/rack/shelf,
+/obj/random/firstaid/low_chance,
+/obj/random/firstaid/low_chance,
+/obj/random/firstaid/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"am" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/card_carp,
+/obj/random/card_carp,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"an" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/steel/panels,
+/area/awaymission)
+"ao" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"ap" = (
+/obj/random/pack/machine,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"aq" = (
+/obj/structure/salvageable/autolathe,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"ar" = (
+/obj/random/pack/machine,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"as" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/dungeon_gun_energy/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"at" = (
+/obj/machinery/door/airlock/vault{
+	name = "Laboratory 2"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"au" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"av" = (
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"aw" = (
+/obj/random/pack/machine/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"ax" = (
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/awaymission)
+"ay" = (
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"az" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/obj/random/dungeon_ammo/low_chance,
+/obj/random/dungeon_ammo/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"aA" = (
+/obj/random/pack/machine/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"aB" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"aC" = (
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"aD" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"aE" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"aF" = (
+/obj/effect/damagedfloor/rust,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"aG" = (
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"aH" = (
+/obj/random/pack/machine/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"aI" = (
+/obj/structure/salvageable/console_os,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"aJ" = (
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/awaymission)
+"aK" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"aL" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/power/emitter,
+/turf/simulated/floor/tiled/steel/panels,
+/area/awaymission)
+"aM" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/wall/r_wall,
+/area/awaymission)
+"aN" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"aO" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"aP" = (
+/obj/random/pack/machine,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"aQ" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/random/junk/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"aR" = (
+/obj/machinery/door/airlock/centcom,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"aS" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/lowkeyrandom/low_chance,
+/obj/random/lathe_disk/advanced,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"aT" = (
+/obj/random/pack/machine/low_chance,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"aU" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/power/emitter{
+	anchored = 1;
+	dir = 8;
+	id = "EngineEmitter";
+	state = 2
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"aV" = (
+/obj/structure/salvageable/console_broken_os{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"aW" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"aX" = (
+/turf/simulated/wall/r_wall,
+/area/awaymission)
+"aY" = (
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"aZ" = (
+/obj/effect/damagedfloor/rust,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/awaymission)
+"ba" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"bb" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/random/pack/machine,
+/turf/simulated/floor/tiled/steel/panels,
+/area/awaymission)
+"bc" = (
+/obj/random/junk/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bd" = (
+/obj/effect/floor_decal/rust,
+/obj/random/cluster/psi_monster,
+/obj/random/psi_megafauna,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"be" = (
+/obj/random/pack/machine/low_chance,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bf" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"bg" = (
+/obj/random/junk/cigbutt,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bh" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/awaymission)
+"bi" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/turf/simulated/wall/r_wall,
+/area/awaymission)
+"bj" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/tiled/steel/bar_flat,
+/area/awaymission)
+"bk" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bl" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/awaymission)
+"bm" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/random/pack/tech_loot,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bn" = (
+/obj/random/pack/tech_loot,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"bo" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"bp" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/random/pack/machine/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"bq" = (
+/obj/random/pack/gun_loot,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"br" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bs" = (
+/obj/random/closet_tech/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bt" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/gun_energy_cheap/low_chance,
+/obj/random/ammo_lowcost/low_chance,
+/obj/random/ammo_lowcost/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"bu" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall,
+/area/awaymission)
+"bv" = (
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/pack/gun_loot,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bw" = (
+/obj/random/closet_maintloot/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bx" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/random/closet_maintloot/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"by" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/obj/machinery/light/small,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bz" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/ammo_fancy,
+/obj/random/ammo_fancy,
+/obj/random/ammo/low_chance,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bA" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/firstaid,
+/obj/random/lathe_disk/advanced/low_chance,
+/obj/random/lathe_disk/advanced/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bB" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"bC" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/ammo/shotgun/low_chance,
+/obj/random/ammo/shotgun/low_chance,
+/obj/random/ammo_fancy/low_chance,
+/obj/random/ammo_fancy/low_chance,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bD" = (
+/obj/random/pack/rare,
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"bE" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/awaymission)
+"bF" = (
+/obj/structure/salvageable/server_os,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/awaymission)
+"bG" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/lowkeyrandom/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
+"bH" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/junk/low_chance,
+/obj/machinery/light/small,
+/obj/random/lowkeyrandom/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/awaymission)
 
 (1,1,1) = {"
-aaaaaaacacacacaaaaaaaaaaaaacacacacaaacacaa
-acaaaaaaaaafaaaaaaacacaaafaaaaaaaaaaaaaaaa
-acaaaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaaaa
-aaaaaXagahalamaeaoapaqaraXasawazaHaIaXaaaa
-aaacaXaNayayayayayayayayaRaaaaauaaaHaXaBac
-aaaQaXayaGaWaNayaXaXaXaXaXaHbaaaaaaHaXaaaa
-aaaaaXbbanaLaLanaMaPbcaPaRauaaaaaaaSaXacaa
-aaaaaXaXaCaCaCaCaXaKaYaOaXaXaXaXaaaTaXacaa
-aaacaXaXaJaJaJaZaCaUaYaXaXbeaAaiaaaHaXaaaa
-acaaaXaXaJavavaxaXbfaYaCaVbgaaaaaXaXaXaBaa
-acaaaXaXbhbdbjaJataDaYaCaVbkaaauataaataaaa
-acaaaXaXaJaEaFaJaXblaYaCaVbgaaaaaXaXaXaBaa
-aaaaaXaXaJaJaJaxaCaUaYaXaXbmbnaaaaaHaXaaaa
-aaaaaXaXaXaXaXaXbiaKaYakaXaXaXaXaabpaXaaac
-acacaXbqayayaybsbuadbraYaRaaaHaHajaHaXaaac
-acboaXbvaybtaNbsaXaXaXaXaXaabaauaaaaaXaaaa
-aaaaaXbwayayaWayayayayayaRaaaaaaaaabaXaBaa
-acaaaXbxaybybzbAbCbBbFayaXbGbHbGbDbDaXaaaa
-aaaaaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaXaaaa
-aaaaaaaaaabEacaaaaaaaaaabEaaacacacaaaaacac
-acacaaaaacacaaaaacacacaaaaaaaaaaacacacacaa
+aa
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+ac
+aa
+aa
+ac
+ac
+aa
+ac
+aa
+aa
+ac
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+ac
+aQ
+aa
+aa
+ac
+aa
+aa
+aa
+aa
+aa
+ac
+bo
+aa
+aa
+aa
+aa
+ac
+"}
+(3,1,1) = {"
+aa
+aa
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aa
+aa
+"}
+(4,1,1) = {"
+ac
+aa
+aX
+ag
+aN
+ay
+bb
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+bq
+bv
+bw
+bx
+aX
+aa
+aa
+"}
+(5,1,1) = {"
+ac
+aa
+aX
+am
+ay
+aG
+an
+aC
+aJ
+aJ
+bh
+aJ
+aJ
+aX
+ay
+ay
+ay
+ay
+aX
+aa
+ac
+"}
+(6,1,1) = {"
+ac
+af
+aX
+al
+ay
+aW
+aL
+aC
+aJ
+av
+bd
+aE
+aJ
+aX
+ay
+bt
+ay
+by
+aX
+bE
+ac
+"}
+(7,1,1) = {"
+ac
+aa
+aX
+am
+ay
+aN
+aL
+aC
+aJ
+av
+bj
+aF
+aJ
+aX
+ay
+aN
+aW
+bz
+aX
+ac
+aa
+"}
+(8,1,1) = {"
+aa
+aa
+aX
+ae
+ay
+ay
+an
+aC
+aZ
+ax
+aJ
+aJ
+ax
+aX
+bs
+bs
+ay
+bA
+aX
+aa
+aa
+"}
+(9,1,1) = {"
+aa
+aa
+aX
+ao
+ay
+aX
+aM
+aX
+aC
+aX
+at
+aX
+aC
+bi
+bu
+aX
+ay
+bC
+aX
+aa
+ac
+"}
+(10,1,1) = {"
+aa
+ac
+aX
+ap
+ay
+aX
+aP
+aK
+aU
+bf
+aD
+bl
+aU
+aK
+ad
+aX
+ay
+bB
+aX
+aa
+ac
+"}
+(11,1,1) = {"
+aa
+ac
+aX
+aq
+ay
+aX
+bc
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+br
+aX
+ay
+bF
+aX
+aa
+ac
+"}
+(12,1,1) = {"
+aa
+aa
+aX
+ar
+ay
+aX
+aP
+aO
+aX
+aC
+aC
+aC
+aX
+ak
+aY
+aX
+ay
+ay
+aX
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+af
+aX
+aX
+aR
+aX
+aR
+aX
+aX
+aV
+aV
+aV
+aX
+aX
+aR
+aX
+aR
+aX
+aX
+bE
+aa
+"}
+(14,1,1) = {"
+ac
+aa
+aX
+as
+aa
+aH
+au
+aX
+be
+bg
+bk
+bg
+bm
+aX
+aa
+aa
+aa
+bG
+aX
+aa
+aa
+"}
+(15,1,1) = {"
+ac
+aa
+aX
+aw
+aa
+ba
+aa
+aX
+aA
+aa
+aa
+aa
+bn
+aX
+aH
+ba
+aa
+bH
+aX
+ac
+aa
+"}
+(16,1,1) = {"
+ac
+aa
+aX
+az
+au
+aa
+aa
+aX
+ai
+aa
+au
+aa
+aa
+aX
+aH
+au
+aa
+bG
+aX
+ac
+aa
+"}
+(17,1,1) = {"
+ac
+aa
+aX
+aH
+aa
+aa
+aa
+aa
+aa
+aX
+at
+aX
+aa
+aa
+aj
+aa
+aa
+bD
+aX
+ac
+ac
+"}
+(18,1,1) = {"
+aa
+aa
+aX
+aI
+aH
+aH
+aS
+aT
+aH
+aX
+aa
+aX
+aH
+bp
+aH
+aa
+ab
+bD
+aX
+aa
+ac
+"}
+(19,1,1) = {"
+ac
+aa
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+at
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aa
+ac
+"}
+(20,1,1) = {"
+ac
+aa
+aa
+aa
+aB
+aa
+ac
+ac
+aa
+aB
+aa
+aB
+aa
+aa
+aa
+aa
+aB
+aa
+aa
+ac
+ac
+"}
+(21,1,1) = {"
+aa
+aa
+aa
+aa
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+aa
+aa
+aa
+aa
+ac
+aa
 "}

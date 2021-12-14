@@ -84,7 +84,7 @@
 	pixel_x = size_pixel_offset_x
 	pixel_y = 0
 
-/mob/living/carbon/superior_animal/psi_monster/slip(var/slipped_on,stun_duration=8)
+/mob/living/carbon/superior_animal/psi_monster/slip()
 	return FALSE
 // Can't slip
 
