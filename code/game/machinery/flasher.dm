@@ -49,7 +49,8 @@
 
 //Don't want to render prison breaks impossible
 /obj/machinery/flasher/attackby(obj/item/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/tool/wirecutters))
+	var/tool_type = W.get_tool_type(user, list(QUALITY_WIRE_CUTTING), src)
+	if(tool_type == QUALITY_WIRE_CUTTING)
 		add_fingerprint(user)
 		src.disable = !src.disable
 		if (src.disable)
@@ -121,7 +122,8 @@
 			src.flash()
 
 /obj/machinery/flasher/portable/attackby(obj/item/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/tool/wrench))
+	var/tool_type = W.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
+	if(tool_type == QUALITY_BOLT_TURNING)
 		add_fingerprint(user)
 		src.anchored = !src.anchored
 

@@ -174,9 +174,12 @@
 
 
 
-/obj/machinery/cash_register/attackby(obj/O as obj, user as mob)
+/obj/machinery/cash_register/attackby(obj/item/O as obj, user as mob)
 	// Check for a method of paying (ID, PDA, e-wallet, cash, ect.)
 	var/obj/item/card/id/I = O.GetIdCard()
+	var/tool_type = O.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
+	if(tool_type == QUALITY_BOLT_TURNING)
+		toggle_anchors(O, user)
 	if(I)
 		scan_card(I, O)
 	else if (istype(O, /obj/item/spacecash/ewallet))
@@ -196,9 +199,7 @@
 			scan_cash(SC)
 	else if(istype(O, /obj/item/card/emag))
 		return ..()
-	else if(istype(O, /obj/item/tool/wrench))
-		var/obj/item/tool/wrench/W = O
-		toggle_anchors(W, user)
+
 	// Not paying: Look up price and add it to transaction_amount
 	else
 		scan_item_price(O)
