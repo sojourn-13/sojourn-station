@@ -3,7 +3,8 @@
 	title = "Chief Executive Officer"
 	flag = MERCHANT
 	department = DEPARTMENT_LSS
-	head_position = 1
+	head_position = TRUE
+	aster_guild_member = TRUE
 	department_flag = LSS | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1

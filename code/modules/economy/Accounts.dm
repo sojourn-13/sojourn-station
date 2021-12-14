@@ -1,4 +1,3 @@
-
 /datum/money_account
 	var/owner_name = ""
 	var/account_name = "" //Some accounts have a name that is distinct from the name of the owner
@@ -7,6 +6,13 @@
 	var/money = 0
 	var/list/transaction_log = list()
 	var/suspended = 0
+	var/employer // Linked department account's define. DEPARTMENT_COMMAND or some such
+	var/wage = 0 // How much money account should recieve on a payday
+	var/wage_original // Value passed from job datum on account creation
+	var/wage_manual = FALSE // If wage have been set manually. Prevents wage auto update on players joining/leaving deparment
+	var/debt = 0 // How much money employer owe us
+	var/department_id // Easy identification for department accounts
+	var/can_make_accounts // Individual guild members and their departments authorized to register new accounts
 	var/security_level = 0	//0 - auto-identify from worn ID, require only account number
 							//1 - require manual login / account number and pin
 							//2 - require card and manual login
@@ -76,14 +82,17 @@
 /datum/transaction/proc/Copy()
 	return new/datum/transaction(amount, target_name, purpose, source_terminal, date, time)
 
-
-/proc/create_account(new_owner_name = "Default user", starting_funds = 0, obj/machinery/account_database/source_db)
+/proc/create_account(new_owner_name = "Default user", starting_funds = 0, obj/machinery/account_database/source_db, department, wage, aster_guild_member)
 
 	//create a new account
 	var/datum/money_account/M = new()
 	M.owner_name = new_owner_name
 	M.remote_access_pin = rand(1111, 9999)
 	M.money = starting_funds
+	M.employer = department
+	M.wage_original = wage
+	M.wage = wage
+	M.can_make_accounts = aster_guild_member
 
 	//create an entry in the account transaction log for when it was created
 	var/datum/transaction/T = new()
@@ -94,7 +103,7 @@
 		//set a random date, time and location some time over the past few decades
 		T.date = "[num2text(rand(1,31))] [pick("January","February","March","April","May","June","July","August","September","October","November","December")], 25[rand(10,56)]"
 		T.time = "[rand(0,24)]:[rand(11,59)]"
-		T.source_terminal = "Lonestar Guild Banking Terminal #[rand(111,1111)]"
+		T.source_terminal = "NT Banking Terminal #[rand(111,1111)]"
 
 		M.account_number = rand(11111, 99999)
 	else
@@ -130,7 +139,16 @@
 	//add the account
 	M.transaction_log.Add(T)
 	all_money_accounts.Add(M)
+	personal_accounts.Add(M)
 
+	// Increase personnel budget of our department, if have one
+	if(department && wage)
+		var/datum/money_account/EA = department_accounts[department]
+		var/datum/department/D = GLOB.all_departments[department]
+		if(D && EA)
+			D.budget_personnel += wage
+			if(!EA.wage_manual) // Update department account's wage if it's not in manual mode
+				EA.wage = (D.budget_base + D.budget_personnel)
 	return M
 
 //Charges an account a certain amount of money which is functionally just removed from existence
@@ -138,7 +156,7 @@
 	var/datum/money_account/D = get_account(attempt_account_number)
 	if (D)
 		//create a transaction log entry
-		var/datum/transaction/T = new(amount*-1, target_name, purpose, terminal_id)
+		var/datum/transaction/T = new(-amount, target_name, purpose, terminal_id)
 		return T.apply_to(D)
 
 	return FALSE
