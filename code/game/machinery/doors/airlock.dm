@@ -1048,7 +1048,7 @@ There are 9 wires.
 			return
 		return
 
-	var/tool_type = I.get_tool_type(user, list(QUALITY_PRYING, QUALITY_SCREW_DRIVING, QUALITY_WELDING), src)
+	var/tool_type = I.get_tool_type(user, list(QUALITY_PRYING, QUALITY_SCREW_DRIVING, QUALITY_WELDING, p_open ? QUALITY_PULSING : null), src)
 	switch(tool_type)
 		if(QUALITY_PRYING)
 			if(!repairing)
