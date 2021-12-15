@@ -134,7 +134,6 @@ Has ability of every roach.
 	akira.gib()
 	//So we dont nullspace are akira'ed or victims
 	..()
-	qdel(src)
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
 
