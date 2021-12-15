@@ -125,7 +125,7 @@ Has ability of every roach.
 				L.visible_message(SPAN_DANGER("\the [src] uses its mass to knock over \the [L]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/psi_monster/wasonce/death(gibbed)
+/mob/living/carbon/superior_animal/psi_monster/wasonce/death(gibbed, deathmessage = "shreeks in its death as it voilently mutate into a explostion of gibs!")
 	for(var/mob/living/drop_victim in captives)
 		drop_victim.loc = get_turf(src)
 	captives = list()
@@ -134,6 +134,7 @@ Has ability of every roach.
 	akira.gib()
 	//So we dont nullspace are akira'ed or victims
 	..()
+	qdel(src)
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
 
