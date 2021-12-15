@@ -85,7 +85,7 @@
 	size_pixel_offset_x = 0
 	real_mutator = TRUE
 	lethal_to_captive = TRUE //We kill are captives
-	knockdown_odds = 30 //Maybe stay away from it
+	knockdown_odds = 15
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
@@ -96,3 +96,4 @@
 	icon_living = "hyper"
 	maxHealth = 1250
 	health = 1250
+	knockdown_odds = 30
