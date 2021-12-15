@@ -72,6 +72,9 @@ Has ability of every roach.
 
 	stance=HOSTILE_STANCE_IDLE
 
+	var/lethal_to_captive = FALSE
+	var/real_mutator = TRUE
+
 /mob/living/carbon/superior_animal/psi_monster/wasonce/New(var/mob/living/victim)
 	..()
 
@@ -138,7 +141,7 @@ Has ability of every roach.
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
 
 
-	if(captives.len && prob(15))
+	if(captives.len && prob(15) && real_mutator)
 		var/fail_mutation_path = pick(injector.getFailList())
 		var/datum/genetics/mutation/injecting_mutation = new fail_mutation_path()
 		injector.addMutation(injecting_mutation)
@@ -148,6 +151,10 @@ Has ability of every roach.
 				"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
 				"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole")))
 		injector.removeAllMutations()
+	if(lethal_to_captive && captives.len && prob(15))
+		for(var/mob/living/captive in captives)
+			captive.adjustBruteLoss(5)
+			captive.adjustFireLoss(5)
 	..()
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/findTarget()

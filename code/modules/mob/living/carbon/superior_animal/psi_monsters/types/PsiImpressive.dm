@@ -74,8 +74,8 @@
 	icon_state = "oormat"
 	icon_living = "oormat"
 
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 800
+	health = 800
 	chameleon_skill = 10
 	healing_factor = 10
 	pixel_x = 0
@@ -83,6 +83,9 @@
 	default_pixel_x = 0
 	default_pixel_y = 0
 	size_pixel_offset_x = 0
+	real_mutator = TRUE
+	lethal_to_captive = TRUE //We kill are captives
+	knockdown_odds = 15
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
@@ -91,5 +94,6 @@
 	icon = 'icons/mob/psi_monsters.dmi'
 	icon_state = "hyper"
 	icon_living = "hyper"
-	maxHealth = 1500
-	health = 1500
+	maxHealth = 1250
+	health = 1250
+	knockdown_odds = 30
