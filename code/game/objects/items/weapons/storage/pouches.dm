@@ -4,7 +4,7 @@
 	icon = 'icons/inventory/pockets/icon.dmi'
 	icon_state = "pouch"
 	item_state = "pouch"
-	price_tag = 200
+	price_tag = 100
 	cant_hold = list(/obj/item/storage/pouch) //Pouches in pouches was a misstake
 
 	w_class = ITEM_SIZE_SMALL
@@ -54,7 +54,7 @@
 /obj/item/storage/pouch/small_generic/leather
 	icon_state = "small_leather"
 	item_state = "small_leather"
-	price_tag = 150
+	price_tag = 250
 
 /obj/item/storage/pouch/medium_generic
 	name = "medium generic pouch"
@@ -69,7 +69,7 @@
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
 	item_state = "medium leather"
-	price_tag = 200
+	price_tag = 400
 
 /obj/item/storage/pouch/medium_generic/opifex
 	name = "opifex smuggle pouch"
@@ -88,13 +88,13 @@
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_BIOMATTER = 20)
-	price_tag = 300
+	price_tag = 250
 
 /obj/item/storage/pouch/large_generic/leather
 	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_leather"
 	item_state = "large_leather"
-	price_tag = 300
+	price_tag = 500
 
 /obj/item/storage/pouch/medical_supply
 	name = "medical supply pouch"
