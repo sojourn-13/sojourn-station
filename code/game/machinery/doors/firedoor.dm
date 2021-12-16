@@ -47,7 +47,7 @@
 
 	var/last_update = 0
 	var/delay_between_updates = 5 SECONDS
-	var/list/tile_info = list(F_NORTH = null, F_SOUTH = null, F_EAST = null, F_WEST = null)
+	var/list/tile_info = list(F_NORTH = list(), F_SOUTH = list(), F_EAST = list(), F_WEST = list())
 	var/list/registered_zas_zones = list(F_NORTH = null , F_SOUTH = null , F_EAST = null , F_WEST = null)
 	// MUST be in same order as FIREDOOR_ALERT_*
 	var/list/ALERT_STATES=list(
@@ -381,27 +381,28 @@
 	for(var/cardinal_target in tile_info)
 		var/alerts = 0
 		var/list/data = tile_info[cardinal_target]
-		var/turf/target_turf = data[FIREDOOR_TURF]
-		spawn(5) // we need this here else the air subsystem pauses whenever we do return_air
-			data[FIREDOOR_ATMOS] = target_turf.return_air() // problem?
-			if(!data[FIREDOOR_ATMOS])
-				alerts |= FIREDOOR_ALERT_COLD
-				lockdown = TRUE
-				continue
-			data[FIREDOOR_ALERT] = 0
-			if(data[FIREDOOR_ATMOS])
-				var/datum/gas_mixture/gasses = data[FIREDOOR_ATMOS]
-				if(gasses.temperature >= FIREDOOR_MAX_TEMP)
-					alerts |= FIREDOOR_ALERT_HOT
-					lockdown = TRUE
-				if(gasses.temperature <= FIREDOOR_MIN_TEMP)
+		if(data.len > 0)
+			var/turf/target_turf = data[FIREDOOR_TURF]
+			spawn(5) // we need this here else the air subsystem pauses whenever we do return_air
+				data[FIREDOOR_ATMOS] = target_turf.return_air() // problem?
+				if(!data[FIREDOOR_ATMOS])
 					alerts |= FIREDOOR_ALERT_COLD
 					lockdown = TRUE
-				if(gasses.return_pressure() <= FIREDOOR_MIN_PRESSURE)
-					alerts |= FIREDOOR_ALERT_COLD
-					lockdown = TRUE
-				data[FIREDOOR_ALERT] = alerts
-			tile_info[cardinal_target] = data
+					continue
+				data[FIREDOOR_ALERT] = 0
+				if(data[FIREDOOR_ATMOS])
+					var/datum/gas_mixture/gasses = data[FIREDOOR_ATMOS]
+					if(gasses.temperature >= FIREDOOR_MAX_TEMP)
+						alerts |= FIREDOOR_ALERT_HOT
+						lockdown = TRUE
+					if(gasses.temperature <= FIREDOOR_MIN_TEMP)
+						alerts |= FIREDOOR_ALERT_COLD
+						lockdown = TRUE
+					if(gasses.return_pressure() <= FIREDOOR_MIN_PRESSURE)
+						alerts |= FIREDOOR_ALERT_COLD
+						lockdown = TRUE
+					data[FIREDOOR_ALERT] = alerts
+				tile_info[cardinal_target] = data
 	spawn(10) update_icon()
 	return TRUE
 
