@@ -132,9 +132,9 @@ Has ability of every roach.
 	for(var/mob/living/drop_victim in captives)
 		drop_victim.loc = get_turf(src)
 	captives = list()
-
-	akira.loc = get_turf(src)
-	akira.gib()
+	if(akira)
+		akira.loc = get_turf(src)
+		akira.gib()
 
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
