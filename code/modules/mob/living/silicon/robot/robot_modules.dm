@@ -1076,7 +1076,13 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	if(src.modules)
 		var/obj/item/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
-		KBG.reagents.add_reagent("silicate", 2 * amount)
+		if(KBG)
+			KBG.reagents.add_reagent("silicate", 2 * amount)
+		
+		var/obj/item/device/lightreplacer/LR = locate() in src.modules
+		if(LR)
+			LR.Charge(R, amount)
+			
 	..()
 
 /obj/item/robot_module/drone/construction
@@ -1088,8 +1094,3 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/rcd/borg(src)
 	..(R)
 
-/obj/item/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
-	var/obj/item/device/lightreplacer/LR = locate() in src.modules
-	LR.Charge(R, amount)
-	..()
-	return
