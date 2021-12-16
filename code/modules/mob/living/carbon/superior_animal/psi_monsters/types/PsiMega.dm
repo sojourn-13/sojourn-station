@@ -12,7 +12,8 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 60
 	attacktext = "delivered a devastating blow to"
-	emote_see = list("smears its sticky claws along its shoulders.", "bellows in a low voice, \"Render unto the king all which you have.\"", "intones, \"Kneel before the crown.\"")
+	emote_see = list("smears its sticky claws along its shoulders.", "bellows in a low voice, \"Render unto the king all which you have.\"", "intones, \"Kneel before the crown.\"", \
+	"repeats in a different voice, \"He's completely insane. You see that, right? No care for the rules.\"", "speaks loudly, \"We meet again. Farewell.\"", "yells loudly, \"A taste of your former glory!\"")
 	healing_factor = 0
 	pixel_x = -16
 	pixel_y = 0
@@ -20,6 +21,8 @@
 	default_pixel_y = 0
 	size_pixel_offset_x = -16
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/king
+	first_teleport_callout = "<b><font size='3px'>\the Dreaming King looses a terrible scream before journeying to nowhere, his words bellowing in rage, \"Only the king may wear the crown!\"</font></b>"
+	second_teleport_callout = "<b><font size='3px'>\the Dreaming King looses an agonized howl before journeying to nowhere, his words bellowing in rage, \"I will never die!\"</font></b>"
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown
 	name = "Hound of the Crown"
@@ -27,10 +30,13 @@
 	into powerless nulls. After all, they are the most common thieves in this other wordly realm."
 	icon_state = "bigred"
 	icon_living = "bigred"
-	emote_see = list("looses a ground shaking growl.", "sniffs the air, its jaw opening and closing as black drool seeps from its teeth.", "suddenly howls!")
+	emote_see = list("looses a ground shaking growl.", "sniffs the air, its jaw opening and closing as black drool seeps from its teeth.", "suddenly howls!", "spasms slightly, shivering from jaw to tail.", \
+	"growls lowly, \"Live. Die. Serve. Live. Die. Serve.\"", "growls lowly, \"The flesh cries out for more...\"", "growls lowly, \"At your side.\"")
 	poison_per_bite = 5
 	turns_per_move = 12
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/hound
+	first_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses a terrible scream before journeying to nowhere, the thing screaming in pure blackened hate!</font></b>"
+	second_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses an agonized howl before journeying to nowhere, its words echoing, \"Nobody stands before the king!\"</font></b>"
 
 /obj/random/psi_megafauna
 	name = "random calamity"

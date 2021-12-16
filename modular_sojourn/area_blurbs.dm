@@ -52,6 +52,9 @@ ty ilu - bear
 /area/nadezhda/maintenance/arcade
 	narrate = "Once a place of fun and games, now rotted and rusted."
 
+/area/deepmaint
+	narrate = "The twisted labyrinth of deep maints. A demented worn down ruin where things that never should have been shamble in the dust and darkness. Do you hear it? Music echoes in the halls, building to a crescendo we never see."
+
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside/trashcave
