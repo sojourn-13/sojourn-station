@@ -396,3 +396,10 @@
 	icon_state = "wolf"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/axolotl
+	name = "Axolotl Gills"
+	desc = ""
+	icon_state = "axolotl"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
