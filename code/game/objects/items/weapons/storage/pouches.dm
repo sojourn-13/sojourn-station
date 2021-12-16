@@ -64,12 +64,12 @@
 	storage_slots = null //Uses generic capacity
 	max_storage_space = DEFAULT_SMALL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
-	price_tag = 300
+	price_tag = 400
 
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
 	item_state = "medium leather"
-	price_tag = 400
+	price_tag = 500
 
 /obj/item/storage/pouch/medium_generic/opifex
 	name = "opifex smuggle pouch"
@@ -88,13 +88,13 @@
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_BIOMATTER = 20)
-	price_tag = 400
+	price_tag = 800
 
 /obj/item/storage/pouch/large_generic/leather
 	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_leather"
 	item_state = "large_leather"
-	price_tag = 500
+	price_tag = 900
 
 /obj/item/storage/pouch/medical_supply
 	name = "medical supply pouch"
@@ -380,7 +380,7 @@
 	max_storage_space = DEFAULT_HUGE_STORAGE
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 5, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	origin_tech = list(TECH_BLUESPACE = 4)
-	price_tag = 1000
+	price_tag = 3000
 
 /obj/item/storage/pouch/holding/New()
 	..()
