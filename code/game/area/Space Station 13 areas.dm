@@ -863,7 +863,7 @@ area/space/atmosalert()
 	name = "Deep Maintenance"
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = new /datum/turf_initializer/maintenance()
-	forced_ambience = list('sound/ambience/maintambience.ogg')
+	ambience = list('sound/ambience/occ_scaryambie.ogg')
 	base_turf = /turf/simulated/floor/tiled
 	has_gravity = 1
 	requires_power = 0

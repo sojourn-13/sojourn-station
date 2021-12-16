@@ -133,8 +133,9 @@ Has ability of every roach.
 		drop_victim.loc = get_turf(src)
 	captives = list()
 
-	akira.loc = get_turf(src)
-	akira.gib()
+	if(akira)
+		akira.loc = get_turf(src)
+		akira.gib()
 	//So we dont nullspace are akira'ed or victims
 	..()
 	qdel(src) //Delete you!

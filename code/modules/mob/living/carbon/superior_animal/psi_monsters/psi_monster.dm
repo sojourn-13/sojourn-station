@@ -60,6 +60,8 @@
 
 	var/first_teleport = FALSE
 	var/second_teleport = FALSE
+	var/first_teleport_callout = "Error text!"
+	var/second_teleport_callout = "Error text!"
 	var/size_pixel_offset_x = 0
 
 	fleshcolor = "#3c0000"
