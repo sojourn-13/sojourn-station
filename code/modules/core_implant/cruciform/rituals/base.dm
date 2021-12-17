@@ -210,7 +210,7 @@
 
 /datum/ritual/cruciform/base/revelation
 	name = "Revelation"
-	phrase = "Patris ostendere viam"
+	phrase = "Patris ostendere viam."
 	desc = "A person close to you will have a vision that could increase ther faith... or that's what you hope will happen."
 	power = 50
 	nutri_cost = 50//high cost
