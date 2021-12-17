@@ -191,8 +191,8 @@
 	cost = 7500
 
 /datum/technology/GP_fuel_toolmods
-	name = "Greyson Positronic Bluespace Holding Tank & Randomizer"
-	desc = "GP pre-programed Randomizer blue paint and Bluespace Fuel Tank ."
+	name = "Greyson Positronic Bluespace Holding Tank"
+	desc = "GP Bluespace Fuel Tank ."
 	tech_type = RESEARCH_GREYSON
 
 	x = 0.6
@@ -203,9 +203,8 @@
 								 /datum/technology/bluespace_extended)
 	required_tech_levels = list()
 
-	unlocks_designs = list(/datum/design/research/item/greyson/holding_tank,
-						   /datum/design/research/item/greyson/randomizer)
-	cost = 3750 //Not THAT high-tech, but still...
+	unlocks_designs = list(/datum/design/research/item/greyson/holding_tank)
+	cost = 1750 //Not THAT high-tech, but still...
 
 /datum/technology/GP_robotics
 	name = "Greyson Positronic Positronics"

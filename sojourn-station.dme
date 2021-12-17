@@ -2026,6 +2026,7 @@
 #include "code\modules\mob\living\carbon\slime\powers.dm"
 #include "code\modules\mob\living\carbon\slime\say.dm"
 #include "code\modules\mob\living\carbon\slime\slime.dm"
+#include "code\modules\mob\living\carbon\slime\slime_cores.dm"
 #include "code\modules\mob\living\carbon\slime\subtypes.dm"
 #include "code\modules\mob\living\carbon\slime\update_icons.dm"
 #include "code\modules\mob\living\carbon\superior_animal\ai.dm"

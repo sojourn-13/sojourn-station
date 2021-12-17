@@ -106,3 +106,22 @@
 				/obj/item/pen/crayon/mime = 0.2,\
 				/obj/item/pen/crayon/rainbow = 0.2,\
 				/obj/item/storage/fancy/crayons = 1))
+
+/obj/random/rations/roachcube
+	name = "random roachcube rations"
+	icon_state = "food-green"
+
+/obj/random/rations/roachcube/item_to_spawn()
+	return pickweight(list(/obj/item/reagent_containers/food/snacks/cube/roach = 4,\
+						/obj/item/reagent_containers/food/snacks/cube/fuhrer = 1,\
+						/obj/item/reagent_containers/food/snacks/cube/jager = 3,\
+						/obj/item/reagent_containers/food/snacks/cube/kraftwerk = 2,\
+						/obj/item/reagent_containers/food/snacks/cube/roachling = 5,\
+						/obj/item/reagent_containers/food/snacks/cube/seuche = 2,\
+						/obj/item/reagent_containers/food/snacks/cube/panzer = 4,\
+						/obj/item/reagent_containers/food/snacks/cube/elektromagnetisch = 1,\
+						/obj/item/reagent_containers/food/snacks/cube/glowing = 2,\
+						/obj/item/reagent_containers/food/snacks/cube/grestrahlte = 2))
+
+
+
