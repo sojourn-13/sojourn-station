@@ -74,7 +74,7 @@ SUBSYSTEM_DEF(economy)
 		if(R)
 			nepotism = R.get_nepotismMod()
 		
-		var/amount_to_pay = A.debt + (A.wage * R.get_nepotismMod())
+		var/amount_to_pay = A.debt + (A.wage * nepotism)
 		
 		if(amount_to_pay <= 0)
 			continue
