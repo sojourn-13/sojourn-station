@@ -38,6 +38,7 @@
 		reset()
 		message = "Successfully decrypted and saved operational key codes."
 		size += 1
+		recalculate_size()
 
 /datum/computer_file/program/coin_miner/proc/reset()
 	running = FALSE
