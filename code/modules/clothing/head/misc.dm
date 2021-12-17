@@ -203,7 +203,30 @@
 /obj/item/clothing/head/numerical_hat
 	name = "numerical hat"
 	icon_state = "numerical_hat"
-	desc = "A red tall hat for nurmerical of the faith."
+	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to gray or gray to red"
+
+/obj/item/clothing/head/numerical_hat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Red Hat"] = "numerical_hat"
+	options["Gray Hat"] = "numerical_hatgrey"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/flatcap
 	name = "flat cap"

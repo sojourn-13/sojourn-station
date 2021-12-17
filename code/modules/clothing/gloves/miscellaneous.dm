@@ -96,13 +96,13 @@
 	price_tag = 250
 
 /obj/item/clothing/gloves/thick/hunter
-    desc = "Tough, tight fitting and reinforced with bone this pair of leather gloves blend a perfect compromise between durability and comfort thanks to the different materials used."
-    name = "hunter gloves"
-    icon_state = "huntergloves"
-    item_state = "huntergloves"
-    armor = list(melee = 30, bullet = 10, energy = 20, bomb = 10, bio = 5, rad = 0)
-    siemens_coefficient = 0.5
-    price_tag = 200
+	desc = "Tough, tight fitting and reinforced with bone this pair of leather gloves blend a perfect compromise between durability and comfort thanks to the different materials used."
+	name = "hunter gloves"
+	icon_state = "huntergloves"
+	item_state = "huntergloves"
+	armor = list(melee = 30, bullet = 10, energy = 20, bomb = 10, bio = 5, rad = 0)
+	siemens_coefficient = 0.5
+	price_tag = 200
 
 /obj/item/clothing/gloves/knuckles
 	name = "knuckle gloves"
@@ -125,6 +125,23 @@
 	desc = "A pair of ash elegant evening gloves."
 	icon_state = "ash_evening_gloves"
 	item_state = "ash_evening_gloves"
+
+/obj/item/clothing/gloves/ash_evening
+	name = "ash evening gloves"
+	initial_name = "ash evening gloves"
+	desc = "A pair of ash elegant evening gloves."
+	icon_state = "ash_evening_gloves"
+	item_state = "ash_evening_gloves"
+
+/obj/item/clothing/gloves/goldenring
+	name = "golden ring"
+	initial_name = "golden ring"
+	desc = "Large ring made of gold, to put on the naked hand, sadly cant fit any gloves over its bulk." //Todo: make rings be able to be placed on gloves and on the bar hand
+	icon_state = "goldenring"
+	item_state = "goldenring"
+	price_tag = 250
+	siemens_coefficient = 1.0 //Its not protecting you
+	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
