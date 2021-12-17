@@ -120,10 +120,6 @@
 //Todo chest/lower and head?
 
 //Greyson Tool / Upgrades ========================
-/datum/design/research/item/greyson/randomizer
-	name = "GP BSL \"Randomizer\" tool polish" //Not blue space I guess, but still uses BS tag?
-	build_path = /obj/item/tool_upgrade/augment/randomizer
-	category = CAT_TOOLMODS
 
 /datum/design/research/item/greyson/holding_tank
 	name = "GP Expanded Fuel Tank of Holding"
