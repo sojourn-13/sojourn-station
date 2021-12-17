@@ -1265,7 +1265,7 @@ I said no!
 
 /datum/recipe/cube/
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 15)
+	reagents = list("protein" = 15, "egg" = 3)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
 	result = /obj/item/reagent_containers/food/snacks/cube/roach
 
