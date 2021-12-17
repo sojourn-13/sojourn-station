@@ -251,6 +251,7 @@
 		/obj/item/clothing/gloves/ash_evening = 3,
 		/obj/item/clothing/gloves/aerostatic_gloves = 3,
 		/obj/item/clothing/gloves/latex = 3,
+		/obj/item/clothing/gloves/goldenring = 5,
 		//Masks
 		/obj/item/clothing/mask/gas/colony = 2,
 		/obj/item/clothing/mask/gas/big_shot = 2,
@@ -484,6 +485,7 @@
 		/obj/item/clothing/gloves/ash_evening = 70,
 		/obj/item/clothing/gloves/aerostatic_gloves = 50,
 		/obj/item/clothing/gloves/latex = 30,
+		/obj/item/clothing/gloves/goldenring = 300,
 		//Masks
 		/obj/item/clothing/mask/gas/colony = 35,
 		/obj/item/clothing/mask/gas/big_shot = 80,

@@ -13,6 +13,13 @@
 	slot = slot_gloves
 	cost = 1
 
+/datum/gear/gloves/goldring
+	display_name = "gloves, gold ring"
+	sort_category = "Gloves and Handwear"
+	path = /obj/item/clothing/gloves/goldenring
+	slot = slot_gloves
+	cost = 0 //Legit doesnt do much
+
 /datum/gear/gloves/color
 	display_name = "gloves basic selection"
 	sort_category = "Gloves and Handwear"
