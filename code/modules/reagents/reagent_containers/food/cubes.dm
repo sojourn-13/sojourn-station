@@ -12,6 +12,7 @@
 	matter = list(MATERIAL_BIOMATTER = 20)
 	var/wrapped = FALSE
 	var/monkey_type = "Monkey"
+	volume = 20
 	preloaded_reagents = list("protein" = 10)
 
 /obj/item/reagent_containers/food/snacks/monkeycube/attack_self(mob/user as mob)
