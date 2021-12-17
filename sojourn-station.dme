@@ -2295,6 +2295,7 @@
 #include "code\modules\modular_computers\file_system\programs\generic\audio_player.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\bounty_board.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\camera.dm"
+#include "code\modules\modular_computers\file_system\programs\generic\coin_miner.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\configurator.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\crew_manifest.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\drink_catalog.dm"

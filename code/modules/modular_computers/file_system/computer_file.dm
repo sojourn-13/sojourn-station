@@ -8,6 +8,8 @@ var/global/file_uid = 0
 	var/unsendable = FALSE									// Whether the file may be sent to someone via NTNet transfer or other means.
 	var/undeletable = FALSE									// Whether the file may be deleted. Setting to TRUE prevents deletion/renaming/etc.
 	var/uid													// UID of this file
+	var/clone_able = TRUE									// Used if we cant clone a file
+	var/added_wealth = 0									// How much is are file on export worth?
 
 /datum/computer_file/New()
 	..()
@@ -23,6 +25,8 @@ var/global/file_uid = 0
 
 // Returns independent copy of this file.
 /datum/computer_file/proc/clone(rename = 0)
+	if(!clone_able)
+		return
 	var/datum/computer_file/temp = new type
 	temp.unsendable = unsendable
 	temp.undeletable = undeletable
