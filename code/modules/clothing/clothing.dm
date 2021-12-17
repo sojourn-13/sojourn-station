@@ -596,6 +596,7 @@ BLIND     // can't see anything
 		/obj/item/ammo_casing,
 		/obj/item/handcuffs,
 		/obj/item/tank,
+		/obj/item/tool, //People are going to so abuse this
 		/obj/item/device/suit_cooling_unit,
 		/obj/item/cell,
 		/obj/item/storage/fancy,
