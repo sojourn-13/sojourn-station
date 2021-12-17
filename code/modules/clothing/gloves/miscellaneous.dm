@@ -126,6 +126,20 @@
 	icon_state = "ash_evening_gloves"
 	item_state = "ash_evening_gloves"
 
+/obj/item/clothing/gloves/ash_evening
+	name = "ash evening gloves"
+	initial_name = "ash evening gloves"
+	desc = "A pair of ash elegant evening gloves."
+	icon_state = "ash_evening_gloves"
+	item_state = "ash_evening_gloves"
+
+/obj/item/clothing/gloves/goldenring
+	name = "golden ring"
+	initial_name = "golden ring"
+	desc = "Large ring made of gold, to put on the naked hand, sadly cant fit any gloves over its bulk." //Todo: make rings be able to be placed on gloves and on the bar hand
+	icon_state = "goldenring"
+	item_state = "goldenring"
+
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
 	desc = "A pair of sterile latex gloves."
