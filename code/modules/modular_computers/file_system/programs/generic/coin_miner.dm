@@ -25,7 +25,10 @@
 		return
 	var/obj/item/computer_hardware/processor_unit/CPU = computer.processor_unit
 	var/obj/item/computer_hardware/card_slot/RFID = computer.card_slot
-	if(!istype(CPU) || !CPU.check_functionality() || !istype(RFID) || !RFID.check_functionality())
+	var/obj/item/computer_hardware/hard_drive/HD = computer.hard_drive
+	var/obj/item/computer_hardware/hard_drive/portable/PD = computer.portable_drive
+
+	if(!istype(CPU) || !CPU.check_functionality() || !istype(RFID) || !RFID.check_functionality() || !istype(HD))
 		message = "A fatal hardware error has been detected."
 		return
 	if(!istype(RFID.stored_card))
@@ -34,11 +37,15 @@
 
 	progress += get_speed()
 
+
 	if(progress >= target_progress)
 		reset()
 		message = "Successfully decrypted and saved operational key codes."
 		size += 1
-		recalculate_size()
+		//So are program gets bigger and takes the space!
+		HD.recalculate_size()
+		if(PD)
+			PD.recalculate_size()
 
 /datum/computer_file/program/coin_miner/proc/reset()
 	running = FALSE
