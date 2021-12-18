@@ -12,7 +12,8 @@
 	matter = list(MATERIAL_BIOMATTER = 20)
 	var/wrapped = FALSE
 	var/monkey_type = "Monkey"
-	volume = 20
+	 //Well this looks like a pill but better, but its required do to roach cubes do to how many reagents get added to the cube on microwaving
+	volume = 200
 	preloaded_reagents = list("protein" = 10)
 
 /obj/item/reagent_containers/food/snacks/monkeycube/attack_self(mob/user as mob)
