@@ -98,8 +98,10 @@
 /turf/simulated/floor/rock/grey,
 /area/colony/exposedsun/crashed_shop)
 "cw" = (
-/obj/structure/multiz/stairs/active/bottom,
-/turf/simulated/floor/wood/wild4,
+/obj/effect/damagedfloor/fire,
+/obj/effect/damagedfloor/fire,
+/obj/structure/multiz/ladder/up,
+/turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "cy" = (
 /obj/structure/flora/small/rock4,
@@ -227,10 +229,6 @@
 /area/colony/exposedsun/crashed_shop)
 "gk" = (
 /turf/unsimulated/wall/jungle,
-/area/colony/exposedsun/crashed_shop)
-"gy" = (
-/obj/structure/multiz/stairs/active,
-/turf/simulated/floor/reinforced,
 /area/colony/exposedsun/crashed_shop)
 "gL" = (
 /obj/item/scrap_lump,
@@ -763,8 +761,11 @@
 /turf/simulated/floor/wood/wild5,
 /area/colony/exposedsun/crashed_shop)
 "yY" = (
-/obj/structure/multiz/stairs/enter,
-/turf/simulated/floor/reinforced,
+/obj/effect/damagedfloor/fire,
+/obj/effect/damagedfloor/fire,
+/obj/effect/damagedfloor/fire,
+/obj/structure/multiz/ladder,
+/turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "zf" = (
 /turf/simulated/floor/beach/sand,
@@ -905,10 +906,6 @@
 /obj/structure/girder,
 /obj/structure/lattice,
 /turf/simulated/floor/plating/under,
-/area/colony/exposedsun/crashed_shop)
-"DW" = (
-/obj/structure/multiz/stairs/enter/bottom,
-/turf/simulated/floor/wood/wild4,
 /area/colony/exposedsun/crashed_shop)
 "Ei" = (
 /obj/random/mob/voidwolf,
@@ -3385,7 +3382,7 @@ EU
 cj
 cj
 cw
-DW
+Lw
 aZ
 aZ
 aZ
@@ -9946,7 +9943,7 @@ Us
 UP
 UP
 yY
-gy
+dP
 Lw
 aZ
 aZ
