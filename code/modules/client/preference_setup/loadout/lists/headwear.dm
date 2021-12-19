@@ -98,7 +98,7 @@
 	path = /obj/item/clothing/head/ranger
 
 /datum/gear/head/numerical_hat
-	display_name = "numerical hat "
+	display_name = "numerical hat"
 	path = /obj/item/clothing/head/numerical_hat
 
 /datum/gear/head/tanker_helmet/color_presets
