@@ -196,6 +196,7 @@
 	damage_multiplier = 0.8
 	price_tag = 650
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	w_class = ITEM_SIZE_SMALL
 	can_dual = TRUE
 	recoil_buildup = 4
 	one_hand_penalty = 20
