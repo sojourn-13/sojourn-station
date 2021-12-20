@@ -5601,6 +5601,11 @@
 /obj/structure/sign/department/ai,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/docking)
+"bsS" = (
+/obj/structure/largecrate,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/danger,
+/area/colony)
 "bsU" = (
 /obj/structure/flora/big/bush1,
 /obj/effect/decal/cleanable/dirt,
@@ -6088,7 +6093,8 @@
 "byg" = (
 /obj/item/scrap_lump,
 /obj/item/stack/cable_coil/random,
-/turf/simulated/floor/plating/under,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/danger,
 /area/colony)
 "byh" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -10625,6 +10631,14 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/pool)
+"cBk" = (
+/obj/effect/floor_decal/industrial/warningwhite,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/third_section{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/hallway/surface/section1)
 "cBl" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
@@ -11740,6 +11754,9 @@
 /obj/random/tool_upgrade/rare/low_chance,
 /obj/random/tool_upgrade/rare/low_chance,
 /obj/random/tool_upgrade/low_chance,
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/circuitlab)
 "cNW" = (
@@ -13537,6 +13554,7 @@
 /area/nadezhda/outside/forest)
 "djR" = (
 /obj/structure/computerframe,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony)
 "djS" = (
@@ -18821,8 +18839,9 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/panic_room)
 "exy" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/decal/cleanable/blood/oil,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating/under,
 /area/colony)
 "exD" = (
 /obj/structure/sign/warning/hazard_coldloop,
@@ -31005,11 +31024,6 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
-"hfZ" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid/dirt/mud,
-/area/colony)
 "hgj" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -40964,6 +40978,7 @@
 /area/nadezhda/engineering/atmos)
 "jym" = (
 /obj/machinery/constructable_frame/machine_frame/vertical,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony)
 "jyo" = (
@@ -51628,6 +51643,7 @@
 /area/nadezhda/rnd/lab)
 "lPF" = (
 /obj/item/frame/apc,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony)
 "lPP" = (
@@ -53658,9 +53674,9 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "mnr" = (
-/obj/structure/lattice,
 /obj/item/scrap_lump,
-/turf/simulated/floor/asteroid/dirt/mud,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating/under,
 /area/colony)
 "mnA" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -54459,6 +54475,9 @@
 	dir = 1
 	},
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit,
+/obj/item/contraband/poster/placed/generic/why{
+	pixel_y = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "mvX" = (
@@ -65426,9 +65445,9 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/gmaster)
 "oXA" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid/dirt,
+/obj/machinery/constructable_frame/machine_frame,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/danger,
 /area/colony)
 "oXE" = (
 /turf/simulated/wall/r_wall,
@@ -65580,8 +65599,8 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "pan" = (
-/obj/effect/decal/cleanable/blood/oil,
-/turf/simulated/floor/plating/under,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt,
 /area/colony)
 "paF" = (
 /obj/random/junk/low_chance,
@@ -67402,10 +67421,6 @@
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
-"pxW" = (
-/obj/structure/largecrate,
-/turf/simulated/floor/tiled/dark/danger,
-/area/colony)
 "pyb" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -68181,9 +68196,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/department/dock{
 	pixel_x = -28
-	},
-/obj/machinery/camera/network/third_section{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section1)
@@ -78804,7 +78816,8 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "rWU" = (
-/obj/machinery/constructable_frame/machine_frame,
+/obj/structure/closet/crate/trashcart,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony)
 "rXb" = (
@@ -81880,6 +81893,9 @@
 /obj/machinery/light{
 	light_color = "#b9e8ea"
 	},
+/obj/machinery/camera/network/research{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/medical/genetics)
 "sJV" = (
@@ -82266,6 +82282,11 @@
 /obj/structure/bookcase,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"sPE" = (
+/obj/item/scrap_lump,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/danger,
+/area/colony)
 "sPG" = (
 /obj/machinery/computer/arcade,
 /turf/simulated/floor/wood,
@@ -90020,11 +90041,6 @@
 /obj/structure/sign/department/bar,
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/cafeteria)
-"uDo" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/lattice,
-/turf/simulated/floor/plating/under,
-/area/colony)
 "uDr" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -90162,8 +90178,8 @@
 /area/nadezhda/pros/foreman)
 "uEA" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/structure/closet/crate/trashcart,
-/turf/simulated/floor/asteroid/dirt/mud,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating/under,
 /area/colony)
 "uEB" = (
 /turf/simulated/mineral,
@@ -93243,9 +93259,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section1)
 "vkN" = (
-/obj/structure/boulder,
-/obj/random/spider_trap_burrowing,
-/turf/simulated/floor/rock,
+/obj/item/scrap_lump,
+/turf/simulated/floor/asteroid/dirt,
 /area/colony)
 "vkU" = (
 /obj/machinery/door/airlock{
@@ -96526,6 +96541,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/pool)
 "vVE" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony)
 "vVF" = (
@@ -106794,6 +106810,7 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "yim" = (
 /obj/item/caution/cone,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/colony)
 "yiC" = (
@@ -138709,11 +138726,11 @@ rqH
 wOc
 aQK
 aQK
-sFI
-sFI
+vVE
+vVE
 oXA
-wGT
-iKC
+bsS
+oXA
 djR
 jym
 hYY
@@ -138911,11 +138928,11 @@ mGr
 fgi
 aQK
 aQK
-sFI
-sFI
-oXA
-uHN
-uDo
+vvS
+vvS
+sPE
+vVE
+vVE
 byg
 djR
 hYY
@@ -139113,11 +139130,11 @@ eoC
 qCC
 aQK
 aQK
-sFI
-exy
-wGT
-uHN
-uDo
+vvS
+vvS
+vvS
+vVE
+vVE
 vVE
 vVE
 hYY
@@ -139315,12 +139332,12 @@ aQK
 aQK
 aQK
 aQK
-sFI
+vvS
 exy
 uEA
-hfZ
-iKC
-cpA
+vvS
+vVE
+vVE
 vVE
 ewJ
 itt
@@ -139517,12 +139534,12 @@ rqH
 wOc
 aQK
 aQK
-sFI
-exy
-uHN
-hfZ
-pan
-cpA
+wGT
+wGT
+uEA
+uEA
+vvS
+vVE
 yim
 hYY
 mOS
@@ -139719,13 +139736,13 @@ mGr
 fgi
 aQK
 aQK
-sFI
-exy
+wGT
+uHN
 uHN
 mnr
-cpA
+vvS
 lPF
-rWU
+vVE
 hYY
 hYY
 vRq
@@ -139921,13 +139938,13 @@ eoC
 qCC
 aQK
 aQK
-sFI
-sFI
-exy
+pan
 uHN
-iKC
+uHN
+uEA
+uEA
 rWU
-pxW
+vVE
 hYY
 hYY
 rcI
@@ -140123,13 +140140,13 @@ aQK
 aQK
 aQK
 aQK
-sFI
-sFI
-sFI
-xGi
-xGi
-xGi
-xGi
+vkN
+pan
+uHN
+uEA
+exy
+uEA
+uEA
 xGi
 kZI
 ezw
@@ -140327,12 +140344,12 @@ aQK
 aQK
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+uHN
+wGT
+uHN
+uHN
+uHN
+xGi
 kZI
 eyN
 kZI
@@ -140534,7 +140551,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+xGi
 kZI
 eyN
 kZI
@@ -140735,8 +140752,8 @@ sFI
 sFI
 sFI
 sFI
-pqo
-pqo
+gwc
+gwc
 kZI
 eyN
 kZI
@@ -140937,7 +140954,7 @@ sFI
 sFI
 sFI
 sFI
-pqo
+gwc
 led
 rQi
 eyN
@@ -160471,7 +160488,7 @@ wBa
 wBa
 wBa
 hSx
-hSx
+sFI
 iJv
 qdI
 cEg
@@ -160672,8 +160689,8 @@ oQv
 lii
 sYI
 wBa
-hSx
-hSx
+sFI
+sFI
 iJv
 iJv
 iJv
@@ -160874,9 +160891,9 @@ oQv
 pTV
 vva
 wBa
-hSx
-hSx
-hSx
+sFI
+sFI
+sFI
 sFI
 sFI
 sFI
@@ -161078,7 +161095,7 @@ geb
 wBa
 xGi
 xGi
-hSx
+sFI
 sFI
 sFI
 sFI
@@ -161280,7 +161297,7 @@ vwa
 nvh
 vXv
 xGi
-hSx
+sFI
 sFI
 sFI
 sFI
@@ -161482,7 +161499,7 @@ vJG
 nvh
 vXv
 xGi
-hSx
+sFI
 sFI
 sFI
 sFI
@@ -161684,7 +161701,7 @@ hzZ
 gHh
 vuA
 xGi
-hSx
+sFI
 sFI
 sFI
 sFI
@@ -161886,8 +161903,8 @@ mUF
 wBa
 wBa
 xGi
-hSx
-hSx
+sFI
+sFI
 sFI
 sFI
 tzg
@@ -162875,8 +162892,8 @@ sFI
 sFI
 sFI
 sFI
-hSx
-hSx
+sFI
+sFI
 sFI
 eEn
 eEn
@@ -163077,8 +163094,8 @@ sFI
 sFI
 sFI
 sFI
-hSx
-hSx
+sFI
+sFI
 hSx
 eEn
 fCG
@@ -163094,7 +163111,7 @@ eEn
 hSx
 hSx
 hSx
-vkN
+caB
 hSx
 hSx
 hSx
@@ -163280,7 +163297,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 fFQ
@@ -163482,7 +163499,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 grK
@@ -163684,7 +163701,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 hlT
@@ -164492,7 +164509,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 eEn
@@ -164694,7 +164711,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 eEn
@@ -164708,7 +164725,7 @@ eEn
 eEn
 eEn
 hSx
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -164896,8 +164913,8 @@ sFI
 sFI
 sFI
 sFI
+sFI
 hSx
-xGi
 eEn
 eEn
 oPz
@@ -164910,8 +164927,8 @@ eWl
 eEn
 eEn
 hSx
-sFI
-sFI
+hSx
+hSx
 sFI
 sFI
 sFI
@@ -165098,7 +165115,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 eEn
@@ -165112,7 +165129,7 @@ nev
 eEn
 eEn
 hSx
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -165300,7 +165317,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 eEn
@@ -165314,8 +165331,8 @@ keQ
 eEn
 eEn
 hSx
-sFI
-sFI
+hSx
+hSx
 sFI
 sFI
 sFI
@@ -165516,8 +165533,8 @@ lNd
 eEn
 eEn
 hSx
-sFI
-sFI
+hSx
+hSx
 sFI
 sFI
 sFI
@@ -165704,7 +165721,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 eEn
@@ -165718,8 +165735,8 @@ lrJ
 eEn
 eEn
 hSx
-sFI
-sFI
+hSx
+hSx
 sFI
 sFI
 sFI
@@ -165906,7 +165923,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 eEn
@@ -165920,8 +165937,8 @@ eEn
 eEn
 eEn
 hSx
-sFI
-sFI
+hSx
+hSx
 sFI
 sFI
 sFI
@@ -166108,7 +166125,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 eEn
 eEn
@@ -166122,7 +166139,7 @@ eEn
 eEn
 eEn
 hSx
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -166324,7 +166341,7 @@ hSx
 hSx
 hSx
 hSx
-sFI
+hSx
 sFI
 sFI
 sFI
@@ -166515,7 +166532,7 @@ sFI
 sFI
 hSx
 hSx
-hSx
+sFI
 hSx
 hSx
 hSx
@@ -166525,8 +166542,8 @@ hSx
 hSx
 hSx
 hSx
-sFI
-sFI
+hSx
+hSx
 sFI
 sFI
 sFI
@@ -166718,16 +166735,16 @@ crC
 crC
 crC
 crC
-tYb
+crC
 tYb
 tYb
 tYb
 dfa
 tYb
 tYb
+tYb
 crC
-crC
-crC
+tYb
 crC
 crC
 crC
@@ -166921,7 +166938,7 @@ sFI
 sFI
 sFI
 sFI
-hSx
+sFI
 hSx
 hSx
 hSx
@@ -206955,7 +206972,7 @@ vdS
 itX
 muD
 pGz
-tCw
+cBk
 oMz
 nXX
 fnO
