@@ -23285,6 +23285,10 @@
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/meadow)
+"fxA" = (
+/obj/effect/step_trigger/colony_to_crash_2_B,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "fxH" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/ammo_magazine/ammobox/rifle_75/practice,
@@ -23927,6 +23931,10 @@
 /obj/random/credits/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"fEe" = (
+/obj/effect/step_trigger/colony_to_crash_1_B,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "fEf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
@@ -86085,6 +86093,9 @@
 "tHU" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/command/meeting_room)
+"tHW" = (
+/turf/unsimulated/mineral/transition,
+/area/nadezhda/outside/forest)
 "tHZ" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/beach/sand,
@@ -188470,9 +188481,9 @@ dpg
 dpg
 oHS
 sOw
-tfX
-tfX
-tfX
+tMV
+tMV
+tMV
 tfX
 tfX
 tfX
@@ -188672,9 +188683,9 @@ tir
 dpg
 dpg
 sku
-sku
-tfX
-tfX
+fEe
+tHW
+tMV
 tfX
 tfX
 tfX
@@ -188874,9 +188885,9 @@ dpg
 dpg
 tir
 sku
-sku
-tfX
-tfX
+fxA
+tHW
+tMV
 tfX
 tfX
 tfX
@@ -189076,9 +189087,9 @@ dpg
 jNC
 dpg
 sku
-tfX
-tfX
-tfX
+tMV
+tMV
+tMV
 tfX
 tfX
 tfX
