@@ -62,15 +62,19 @@
 	if(rapid)
 		spawn(6)
 			Shoot(target, loc, src)
+			sleep(1) //Lets make sure we shoot so we add a small stop gap to not go to fast
 			handle_ammo_check()
 		spawn(10)
 			Shoot(target, loc, src)
+			sleep(1)
 			handle_ammo_check()
 		spawn(14)
 			Shoot(target, loc, src)
+			sleep(1)
 			handle_ammo_check()
 	else
 		Shoot(target, loc, src)
+		sleep(1)
 		handle_ammo_check()
 
 	stance = HOSTILE_STANCE_IDLE

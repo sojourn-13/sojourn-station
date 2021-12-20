@@ -34,7 +34,7 @@
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/Laser.ogg'
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
-	price_tag = 400
+	price_tag = 200
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 	equip_cooldown = 15
@@ -43,6 +43,7 @@
 	energy_drain = 60
 	projectile = /obj/item/projectile/beam/heavylaser
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	price_tag = 500
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
 	equip_cooldown = 5
@@ -53,7 +54,7 @@
 	projectile = /obj/item/projectile/beam/heavylaser
 	projectiles = 8
 	projectiles_per_shot = 2
-	fire_cooldown = 0
+	fire_cooldown = 1
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
@@ -71,20 +72,8 @@
 	icon_state = "mecha_pulse"
 	energy_drain = 120
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 6, TECH_POWER = 4)
-	projectile = /obj/item/projectile/beam/pulse/heavy
+	projectile = /obj/item/projectile/beam/pulse
 	fire_sound = 'sound/weapons/marauder.ogg'
-
-/obj/item/projectile/beam/pulse/heavy
-	name = "heavy pulse laser"
-	icon_state = "pulse1_bl"
-	var/life = 20
-
-	Bump(atom/A, var/forced)
-		A.bullet_act(src, def_zone)
-		src.life -= 10
-		if(life <= 0)
-			qdel(src)
-		return
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	name = "\improper PBT \"Pacifier\" mounted taser"
@@ -99,11 +88,11 @@
 	desc = "A Sollex-Pattern hydrogen-plasma cannon, modified to fit on combat exosuits. Unlike its hand-held counter-part, this one doesn't need cooling, as it use the Exosuit's systems for that purpose."
 	icon_state = "hydrogen_cannon"
 	energy_drain = 600
-	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_MHYDROGEN = 8, MATERIAL_OSMIUM = 6, MATERIAL_TRITIUM = 3)
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_MHYDROGEN = 3, MATERIAL_TRITIUM = 1)
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
 	projectile = /obj/item/projectile/hydrogen/cannon/max
-	fire_cooldown = 0
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	price_tag = 1300 //state of the art
 
 /* Commenting this out rather than removing it because it may be useful for reference.
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/honker
