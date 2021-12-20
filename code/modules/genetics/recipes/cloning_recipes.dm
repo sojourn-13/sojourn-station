@@ -68,6 +68,17 @@
 
 /datum/genetics/mutation_recipe/combination/emperor_spider/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor, "emperor spider")
+
+//=======================
+//Reaper
+/datum/genetics/mutation_recipe/combination/reaper
+	required_on_clone_types = list(
+		/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor, 
+		/mob/living/carbon/superior_animal/giant_spider/nurse/queen
+	)
+/datum/genetics/mutation_recipe/combination/reaper/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider, "reaper spider")
+
 //======================================================================
 //Increase Cow.
 /datum/genetics/mutation_recipe/combination/tatonka_1
@@ -206,9 +217,9 @@
 
 //======================================================================
 //Nightmare Stalkers
-/datum/genetics/mutation_recipe/combination/nightmare
+/datum/genetics/mutation_recipe/combination/dream_daemon
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/nightmare)
 	required_mutations = list(MUTATION_EMP)
 
-/datum/genetics/mutation_recipe/combination/nightmare/get_result()
-	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/nightmare, "nightmare stalker")
+/datum/genetics/mutation_recipe/combination/dream_daemon/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/nightmare/dream_daemon, "dream daemon")

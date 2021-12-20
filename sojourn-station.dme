@@ -1767,6 +1767,7 @@
 #include "code\modules\genetics\mutations\cow_moo.dm"
 #include "code\modules\genetics\mutations\cow_skin.dm"
 #include "code\modules\genetics\mutations\disability.dm"
+#include "code\modules\genetics\mutations\dwarfism.dm"
 #include "code\modules\genetics\mutations\emp_blast.dm"
 #include "code\modules\genetics\mutations\friend_bug.dm"
 #include "code\modules\genetics\mutations\friendly.dm"
