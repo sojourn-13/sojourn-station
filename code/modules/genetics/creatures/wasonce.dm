@@ -184,7 +184,7 @@ Has ability of every roach.
 		var/mob/living/carbon/human/H
 		if(ishuman(L))
 			H = L
-		if (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened)
+		if (H && (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened))
 			return 1
 
 		return 4
