@@ -119,6 +119,9 @@
 /obj/machinery/mineral/processing_unit/laber
 	name = "labor material processor"
 
+/obj/machinery/mineral/processing_unit/scrap_heaven
+	name = "scrap_heaven material processor"
+
 /obj/machinery/mineral/processing_unit/New()
 	..()
 
