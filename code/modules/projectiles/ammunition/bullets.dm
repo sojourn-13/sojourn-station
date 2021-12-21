@@ -282,7 +282,6 @@
 /obj/item/ammo_casing/heavy_rifle_408/laser
 	desc = "A .408 Omni laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
-	matter = list(MATERIAL_STEEL = 1, MATERIAL_SILVER = 0.5, MATERIAL_GOLD = 0.5)
 
 ///10mm caseless
 /obj/item/ammo_casing/c10x24
