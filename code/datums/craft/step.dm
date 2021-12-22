@@ -151,7 +151,7 @@
 			building = FALSE
 			return
 
-	else if(reqed_quality)  
+	else if(reqed_quality)
 		if(!istype(I,/obj/item/tool))
 			to_chat(user, SPAN_WARNING("You need to use a tool to complete this step."))
 			return
