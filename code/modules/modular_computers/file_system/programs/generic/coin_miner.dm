@@ -24,15 +24,15 @@
 	if(!running)
 		return
 	var/obj/item/computer_hardware/processor_unit/CPU = computer.processor_unit
-	var/obj/item/computer_hardware/card_slot/RFID = computer.card_slot
 	var/obj/item/computer_hardware/hard_drive/HD = computer.hard_drive
 	var/obj/item/computer_hardware/hard_drive/portable/PD = computer.portable_drive
 
-	if(!istype(CPU) || !CPU.check_functionality() || !istype(RFID) || !RFID.check_functionality() || !istype(HD))
+	if(!istype(CPU) || !CPU.check_functionality() || !istype(HD))
 		message = "A fatal hardware error has been detected."
 		return
-	if(!istype(RFID.stored_card))
-		message = "ID card has been removed from the device. Operation aborted."
+
+	if(HD.used_capacity >= HD.max_capacity || PD.used_capacity >= PD.max_capacity)
+		message = "Storage capacity error, clear space."
 		return
 
 	progress += get_speed()
