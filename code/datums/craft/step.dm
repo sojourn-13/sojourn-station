@@ -151,7 +151,10 @@
 			building = FALSE
 			return
 
-	else if(reqed_quality)
+	else if(reqed_quality)  
+		if(!istype(I,/obj/item/tool))
+			to_chat(user, SPAN_WARNING("You need to use a tool to complete this step."))
+			return
 		var/q = I.get_tool_quality(reqed_quality)
 		if(!q)
 			to_chat(user, SPAN_WARNING("Wrong type of tool. You need a tool with [reqed_quality] quality"))
