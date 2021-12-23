@@ -31,6 +31,9 @@
 	dynamic_lighting = FALSE
 	icon_state = "erisgreen"
 
+/area/colony/exposedsun/crashed_shop/workshop
+	icon_state = "erisyellow"
+
 /area/nadezhda
 	ship_area = TRUE
 	icon_state = "erisyellow"

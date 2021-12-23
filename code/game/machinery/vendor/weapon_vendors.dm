@@ -322,17 +322,31 @@
 	product_slogans = list("Imagine the rare stuff and buy more!", "Rare stuff if you buy more!", "Buy and get random items!", "Don't quit, buy more!", "Its not a lootbox, its surprise mechanics!")
 	vendor_department = DEPARTMENT_PROSPECTOR
 	products = list(
-		/obj/item/storage/box/vendor_lootbox = 3,
-		/obj/item/storage/box/vendor_lootbox/combat_basic_light = 3,
-		/obj/item/storage/box/vendor_lootbox/combat_basic_medium = 3,
-		/obj/item/storage/box/vendor_lootbox/combat_basic_high = 3,
-		/obj/item/storage/box/vendor_lootbox/medicine_basic = 3,
-		/obj/item/storage/box/vendor_lootbox/medicine_moderate = 3,
-		/obj/item/storage/box/vendor_lootbox/medicine_high = 3,
-		/obj/item/storage/box/vendor_lootbox/oddity_low = 3,
-		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 3,
-		/obj/item/storage/box/vendor_lootbox/oddity_high = 3,
-		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 3
+		/obj/item/storage/box/vendor_lootbox = 4,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_light = 4,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_medium = 4,
+		/obj/item/storage/box/vendor_lootbox/combat_basic_high = 4,
+		/obj/item/storage/box/vendor_lootbox/medicine_basic = 4,
+		/obj/item/storage/box/vendor_lootbox/medicine_moderate = 4,
+		/obj/item/storage/box/vendor_lootbox/medicine_high = 4,
+		/obj/item/storage/box/vendor_lootbox/oddity_low = 4,
+		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 4,
+		/obj/item/storage/box/vendor_lootbox/oddity_high = 4,
+		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 4,
+		/obj/item/ammo_kit = 5,
+		/obj/item/gun/projectile/handmade_pistol = 3,
+		/obj/item/gun/projectile/handmade_pistol/magnum = 3,
+		/obj/item/gun/projectile/handmade_pistol/shotgun = 3,
+		/obj/item/gun/projectile/handmade_pistol/anti_material = 3,
+		/obj/item/gun/projectile/revolver/handmade = 3,
+		/obj/item/gun/projectile/boltgun/handmade = 3,
+		/obj/item/gun/projectile/shotgun/slidebarrel = 3,
+		/obj/item/gun/projectile/shotgun/pump/china/makeshift = 3,
+		/obj/item/gun/projectile/automatic/motherfucker = 3,
+		/obj/item/gun/energy/laser/makeshift = 3,
+		/obj/item/gun/energy/shrapnel = 3,
+		/obj/item/gun/projectile/shotgun/doublebarrel = 2,
+		/obj/item/gun/projectile/automatic/vector = 2
 		)
 	prices = list(
 		/obj/item/storage/box/vendor_lootbox = 50,
@@ -345,7 +359,21 @@
 		/obj/item/storage/box/vendor_lootbox/oddity_low = 150,
 		/obj/item/storage/box/vendor_lootbox/oddity_moderate = 300,
 		/obj/item/storage/box/vendor_lootbox/oddity_high = 600,
-		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 100
+		/obj/item/grenade/spawnergrenade/manhacks/junkbot = 100,
+		/obj/item/ammo_kit = 25,
+		/obj/item/gun/projectile/handmade_pistol = 50,
+		/obj/item/gun/projectile/handmade_pistol/magnum = 60,
+		/obj/item/gun/projectile/handmade_pistol/shotgun = 70,
+		/obj/item/gun/projectile/handmade_pistol/anti_material = 75,
+		/obj/item/gun/projectile/revolver/handmade = 100,
+		/obj/item/gun/projectile/boltgun/handmade = 150,
+		/obj/item/gun/projectile/shotgun/slidebarrel = 250,
+		/obj/item/gun/projectile/shotgun/pump/china/makeshift = 400,
+		/obj/item/gun/projectile/automatic/motherfucker = 300,
+		/obj/item/gun/energy/laser/makeshift = 400,
+		/obj/item/gun/energy/shrapnel = 500,
+		/obj/item/gun/projectile/shotgun/doublebarrel = 650,
+		/obj/item/gun/projectile/automatic/vector = 1100 // Pricy
 		)
 	product_ads = "Imagine the rare stuff and buy more!;Rare stuff if you buy more!;Buy and get random items!;Don't quit, buy more!;Its not a lootbox, its surprise mechanics!"
 	auto_price = FALSE
@@ -364,6 +392,8 @@
 		/obj/item/storage/box/bs_kit/grizzly = 3,
 		/obj/item/storage/box/bs_kit/stallion = 5,
 		/obj/item/storage/box/bs_kit/lamia = 3,
+		/obj/item/storage/box/bs_kit/rex10 = 3,
+		/obj/item/storage/box/bs_kit/mistral = 3,
 		/obj/item/storage/box/bs_kit/colt = 3,
 		/obj/item/storage/box/bs_kit/martin = 5,
 		/obj/item/storage/box/bs_kit/sawn_shotgun = 5,
@@ -381,6 +411,8 @@
 		/obj/item/storage/box/bs_kit/grizzly = 750,
 		/obj/item/storage/box/bs_kit/stallion = 500,
 		/obj/item/storage/box/bs_kit/lamia = 750,
+		/obj/item/storage/box/bs_kit/rex10 = 500,
+		/obj/item/storage/box/bs_kit/mistral = 750,
 		/obj/item/storage/box/bs_kit/colt = 750,
 		/obj/item/storage/box/bs_kit/martin = 500,
 		/obj/item/storage/box/bs_kit/sawn_shotgun = 500,
@@ -441,6 +473,93 @@
 					/obj/item/storage/box/bs_kit/bullet_armor = "Bullet-Proof"
 					)
 	var/selection = input(redeemer, "Pick your armor", "Blackshield Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+
+//For Marshal Kits
+/obj/machinery/vending/marshal_kit
+	name = "\improper Marshal Kit Vendor"
+	desc = "A vendor that can dispense specialized equipment kits for Marshal Officers."
+	icon_state = "trashvend"
+	products = list(
+		/obj/item/storage/box/m_kit/wirbelwind = 5,
+		/obj/item/storage/box/m_kit/state_auto = 5,
+		/obj/item/storage/box/m_kit/bulldog = 5,
+		/obj/item/storage/box/m_kit/gear_lasgun = 5,
+		/obj/item/storage/box/m_kit/firefly = 5,
+		/obj/item/storage/box/m_kit/colt = 5,
+		/obj/item/storage/box/m_kit/ladon = 5,
+		/obj/item/storage/box/m_kit/glock = 5,
+		/obj/item/storage/box/m_kit/standard_armor = 5,
+		/obj/item/storage/box/m_kit/standard_armor_alt = 5,
+		/obj/item/storage/box/m_kit/laser_armor = 5,
+		/obj/item/storage/box/m_kit/riot = 5
+		)
+	prices = list( // 500$ for default marshal stuff, 750 for the rest
+		/obj/item/storage/box/m_kit/wirbelwind = 500,
+		/obj/item/storage/box/m_kit/state_auto = 750,
+		/obj/item/storage/box/m_kit/bulldog = 750,
+		/obj/item/storage/box/m_kit/gear_lasgun = 750,
+		/obj/item/storage/box/m_kit/firefly = 750,
+		/obj/item/storage/box/m_kit/colt = 750,
+		/obj/item/storage/box/m_kit/glock = 500,
+		/obj/item/storage/box/m_kit/ladon = 750,
+		/obj/item/storage/box/m_kit/standard_armor = 500,
+		/obj/item/storage/box/m_kit/standard_armor_alt = 500,
+		/obj/item/storage/box/m_kit/riot = 750,
+		/obj/item/storage/box/m_kit/laser_armor = 1250
+		)
+	auto_price = FALSE
+
+/obj/machinery/vending/marshal_kit/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/voucher/marshal))
+		var/obj/item/voucher/marshal/Voucher = I
+		switch(Voucher.voucher_type)
+			if("Primary")
+				RedeemPrimary(I, user)
+			if("Secondary")
+				RedeemSecondary(I, user)
+			if("Armor")
+				RedeemArmor(I, user)
+		return
+	return ..()
+
+/obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/m_kit/wirbelwind = "Wirbelwind",
+					/obj/item/storage/box/m_kit/state_auto = "State Auto-Shotgun",
+					/obj/item/storage/box/m_kit/bulldog = "Bulldog",
+					/obj/item/storage/box/m_kit/gear_lasgun = "Gear Lasgun"
+					)
+	var/selection = input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+
+/obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/m_kit/firefly = "Firefly",
+					/obj/item/storage/box/m_kit/colt = "Colt",
+					/obj/item/storage/box/m_kit/ladon = "Ladon",
+					/obj/item/storage/box/m_kit/glock = "Glock"
+					)
+	var/selection = input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+
+/obj/machinery/vending/marshal_kit/proc/RedeemArmor(obj/item/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/m_kit/standard_armor = "Standard Visor",
+					/obj/item/storage/box/m_kit/standard_armor_alt = "Standard Full Helm",
+					/obj/item/storage/box/m_kit/laser_armor = "Ablative",
+					/obj/item/storage/box/m_kit/riot = "Riot"
+					)
+	var/selection = input(redeemer, "Pick your armor", "Marshal Voucher Redemption") as null|anything in items
 	if(selection)
 		new selection(loc)
 		qdel(voucher)

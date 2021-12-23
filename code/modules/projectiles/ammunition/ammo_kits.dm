@@ -6,6 +6,7 @@
 	flags = CONDUCT
 	throwforce = 1
 	w_class = ITEM_SIZE_SMALL
+	price_tag = 25
 
 /obj/item/ammo_kit/Initialize()
 	. = ..()

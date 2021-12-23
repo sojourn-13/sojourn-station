@@ -125,6 +125,25 @@
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
+/obj/item/storage/box/bs_kit/rex10
+	name = "\improper Cowboy Secondary Kit"
+	desc = "The standard Blackshield equipment kit."
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/rev10/rex10(src)
+		new /obj/item/ammo_magazine/ammobox/pistol_35/hv(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
+
+/obj/item/storage/box/bs_kit/mistral
+	name = "\improper Mistral Secondary Kit"
+	desc = "The standard Blackshield equipment kit."
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/mistral(src)
+		new /obj/item/ammo_magazine/speed_loader_magnum_40/lethal(src)
+		new /obj/item/ammo_magazine/speed_loader_magnum_40/lethal(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
+
 /obj/item/storage/box/bs_kit/colt
 	name = "\improper Colt Secondary Kit"
 	desc = "The standard Blackshield equipment kit."
