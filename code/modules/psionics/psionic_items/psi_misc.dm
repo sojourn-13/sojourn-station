@@ -32,7 +32,7 @@
 		if(PT) // Is the target a psion
 			if(PT.max_psi_points - PT.psi_points >= point_per_use) // Is there space to give the psion the points?
 				if(use) // Do we have uses left?
-					user.visible_message("[user] injects [target] with [T.name].", "You inject [target] with [T.name]!")
+					user.visible_message("[user] injects [target] with the [src].", "You inject [target] with the [src]!")
 					PT.psi_points += point_per_use
 					use--
 					update_icon()

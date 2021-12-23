@@ -55,9 +55,13 @@
 	var/chameleon_skill = 10
 	var/healing_factor = 1
 	var/momento_mori = /obj/effect/decal/cleanable/psi_ash
+	var/death_present = FALSE
+	var/death_spawn_gift = null
+	var/death_gasp = "Error text!"
 	pass_flags = PASSTABLE
 	faction = "psi_monster"
 
+	// Boss monster variables.
 	var/first_teleport = FALSE
 	var/second_teleport = FALSE
 	var/first_teleport_callout = "Error text!"
@@ -204,3 +208,9 @@
 	catalyst_drop = /obj/item/device/psionic_catalyst/enslavement
 	psion_chance = 100
 	normie_chance = 100
+
+/obj/effect/decal/cleanable/psi_ash/low_chance
+	name = "weak ashes"
+	desc = "Something about these ashes feels off, as if an infinite potential exists within the dust, but it is weaker feeling than normal."
+	psion_chance = 10
+	normie_chance = 5

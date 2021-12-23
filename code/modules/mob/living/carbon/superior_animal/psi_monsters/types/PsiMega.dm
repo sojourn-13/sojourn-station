@@ -23,6 +23,8 @@
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/king
 	first_teleport_callout = "<b><font size='3px'>\the Dreaming King looses a terrible scream before journeying to nowhere, his words bellowing in rage, \"Only the king may wear the crown!\"</font></b>"
 	second_teleport_callout = "<b><font size='3px'>\the Dreaming King looses an agonized howl before journeying to nowhere, his words bellowing in rage, \"I will never die!\"</font></b>"
+	var/dreaming_king = TRUE
+	var/hound_of_the_crown = FALSE
 
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/hound_crown
 	name = "Hound of the Crown"
@@ -37,6 +39,9 @@
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/hound
 	first_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses a terrible scream before journeying to nowhere, the thing screaming in pure blackened hate!</font></b>"
 	second_teleport_callout = "<b><font size='3px'>\the Hound of the Crown looses an agonized howl before journeying to nowhere, its words echoing, \"Nobody stands before the king!\"</font></b>"
+	dreaming_king = FALSE
+	hound_of_the_crown = TRUE
+
 
 /obj/random/psi_megafauna
 	name = "random calamity"

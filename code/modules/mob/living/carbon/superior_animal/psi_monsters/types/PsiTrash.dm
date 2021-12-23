@@ -47,3 +47,6 @@
 	var/burn_attack_text = "vomits up some acidic pus all over!"
 	var/burn_attack_sound = 'sound/effects/splat.ogg'
 	attacktext = "gnawed"
+
+/mob/living/carbon/superior_animal/psi_monster/pus_maggot/summoned
+	momento_mori = /obj/effect/decal/cleanable/psi_ash/low_chance
