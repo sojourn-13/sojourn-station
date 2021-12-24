@@ -41,6 +41,7 @@
 #define MUTATION_NERVES /datum/genetics/mutation/sac_contents/nerves
 #define MUTATION_S_NERVES /datum/genetics/mutation/sac_contents/s_nerves
 #define MUTATION_HYPERION /datum/genetics/mutation/hyperion
+#define MUTATION_BLOODCOIN /datum/genetics/mutation/bloodcoin
 //^^^ All mutations!
 
 

@@ -9,7 +9,7 @@
 /datum/genetics/mutation/unbalanced/onMobImplant()
 	cooldown = 30
 	initializeProcessing()
-	
+
 /datum/genetics/mutation/unbalanced/onMobRemove()
 	haltProcessing()
 
@@ -20,10 +20,10 @@
 	if(!prob(cooldown)) //Steadily building, but still unpredictable chance that the cooldown procs
 		cooldown++
 		return
-	
+
 	cooldown = 0
 
-	if(!weakened && !lying)
+	if(!container.holder.weakened && !container.holder.lying)
 		to_chat(container.holder, SPAN_NOTICE("You lose your balance for a bit, and fall over!"))
 
 	container.holder.Weaken(30)

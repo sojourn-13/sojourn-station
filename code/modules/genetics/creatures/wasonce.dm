@@ -147,10 +147,10 @@ Has ability of every roach.
 		var/fail_mutation_path = pick(injector.getFailList())
 		var/datum/genetics/mutation/injecting_mutation = new fail_mutation_path()
 		injector.addMutation(injecting_mutation)
-		for(var/mob/living/carbon/human in captives)
-			if(captive.species.reagent_tag == IS_SYNTHETIC && (captive.getBruteLoss < 300))
+		for(var/mob/living/carbon/human/captive in captives)
+			if(captive.species.reagent_tag == IS_SYNTHETIC && (captive.getBruteLoss() < 300))
 				to_chat(captive, SPAN_DANGER(pick("The immense strength of the creature is crushing. Wasn't... Flesh supposed to be weak?")))
-				adjustBruteLossByPart(15, pick(captive.organs))
+				captive.adjustBruteLossByPart(15, pick(captive.organs))
 			else
 				injector.inject_mutations(captive)
 				to_chat(captive, SPAN_DANGER(pick(

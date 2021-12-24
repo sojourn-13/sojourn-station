@@ -6,6 +6,7 @@
 /datum/genetics/mutation_recipe/irradiation/roach/get_result()
 	var/list/random_roach = pick(
 		list("type" = /mob/living/carbon/superior_animal/roach, "name" = "Kampfer Roach"),
+		list("type" = /mob/living/carbon/superior_animal/roach/fat, "name" = "Obese Kampfer Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/tank, "name" = "Panzer Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/toxic, "name" = "Gestrahlte Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/glowing, "name" = "Gluhend Roach"),
@@ -73,7 +74,7 @@
 //Reaper
 /datum/genetics/mutation_recipe/combination/reaper
 	required_on_clone_types = list(
-		/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor, 
+		/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor,
 		/mob/living/carbon/superior_animal/giant_spider/nurse/queen
 	)
 /datum/genetics/mutation_recipe/combination/reaper/get_result()
