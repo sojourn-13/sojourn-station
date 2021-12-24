@@ -184,7 +184,7 @@ A more player-friendly version of the Belvoix scanner, reports basic information
 
 	if(istype(target, /mob/living))
 		var/mob/living/living_target = target
-		held_mutations.initializeFromMob(living_target)
+		held_mutations = living_target.unnatural_mutations.Copy()
 	else if (istype(target, /obj/item/reagent_containers/food/snacks/meat))
 		var/obj/item/reagent_containers/food/snacks/meat/meat_target = target
 		held_mutations.initializeFromMeat(meat_target)
@@ -519,38 +519,18 @@ Circuit boards for different Genetics Machines.
 
 /*
 =================Xenogenetics Poster=================
-Poster in R&D that gives helpful tips about Mutation Recipes. 
+Poster in R&D that gives helpful tips about Mutation Recipes.
 Neglects to mention where to find its pieces.
 */
-/obj/item/contraband/poster/placed/generic/xenogenetics
+
+/obj/structure/sign/genetics
 	name = "Xenogenetics Informational poster"
 	desc = "Contains helpful device on Genetics. Unless you're reading this placeholder text, at least."
 	icon = 'icons/obj/genetics/genetic_poster.dmi'
 	icon_state = "genetic_poster"
+	
 
-/obj/item/contraband/poster/placed/generic/xenogenetics/New()
-	..()
-	var/list/blurb_list
-	for(var/list/recipe_string_result in GLOB.mutation_recipe_list)
-		for(var/datum/genetics/mutation_recipe/source_recipe in recipe_string_result)
-			if(source_recipe.blurb)
-				blurb_list += source_recipe.blurb
-	var/chosen_blurb = pick(blurb_list)
-	desc = "The poster says: [chosen_blurb]"
-
-/datum/poster/xenogenetics
-	name = "Xenogenetics Informational poster"
-	desc = "Contains helpful device on Genetics. Unless you're reading this placeholder text, at least."
-	icon = 'icons/obj/genetics/genetic_poster.dmi'
-	icon_state = "genetic_poster"
-
-/datum/poster/xenogenetics/set_design(var/obj/item/contraband/poster/P)
-	..(P)
-	var/list/blurb_list
-	for(var/list/recipe_string_result in GLOB.mutation_recipe_list)
-		for(var/datum/genetics/mutation_recipe/source_recipe in recipe_string_result)
-			if(source_recipe.blurb)
-				blurb_list += source_recipe.blurb
-	var/chosen_blurb = pick(blurb_list)
-	desc = "The poster says: [chosen_blurb]"
-	return 1
+/obj/structure/sign/genetics/Initialize()
+	tag="genetic_poster_1"
+	
+	

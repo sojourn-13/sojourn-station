@@ -21,7 +21,8 @@
 	recipe_paths -= /datum/genetics/mutation_recipe
 	recipe_paths -= /datum/genetics/mutation_recipe/combination
 	recipe_paths -= /datum/genetics/mutation_recipe/irradiation
-
+	
+	var/list/blurb_list //A list of helpful blurbs we use in a SINGULAR cursed piece of signage.
 	for (var/path in recipe_paths)
 		var/datum/genetics/mutation_recipe/example_recipe = new path()
 		var/compare_string //string used to ask if a given recipe is valid.
@@ -59,7 +60,13 @@
 		log_debug("initialize_mutation_recipes(): Loaded recipe [example_recipe] with string [compare_string]")
 		if(!GLOB.mutation_recipe_list[compare_string])
 			GLOB.mutation_recipe_list[compare_string] = list()
+		blurb_list += example_recipe.blurb
 		GLOB.mutation_recipe_list[compare_string] += example_recipe
+
+	//We set a single dynamically generated recipe-help sign here. Yes. Very important.
+	var/obj/structure/sign/genetics/help_sign = locate("genetic_poster_1")
+	if(help_sign)
+		help_sign.desc = "The poster says: [pick(blurb_list)]"
 
 /*
 * =================================================================================================

@@ -6,6 +6,7 @@
 	key = "MUTATION_COPY_SHOULD/NOT/SHOW"
 	desc = "An isolated section of the gene pool that can be used for cloning a creature."
 	clone_gene = TRUE
+	instability = 0
 
 /datum/genetics/mutation/copy_mob/New(var/incoming_type, var/incoming_name)
 		source_mob = incoming_type

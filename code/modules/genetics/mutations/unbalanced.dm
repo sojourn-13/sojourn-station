@@ -26,5 +26,5 @@
 	if(!container.holder.weakened && !container.holder.lying)
 		to_chat(container.holder, SPAN_NOTICE("You lose your balance for a bit, and fall over!"))
 
-	container.holder.Weaken(30)
+	container.holder.Weaken(10)
 	return
