@@ -40,22 +40,20 @@
 						GiveUp(eat_target) //give up if we can't reach target
 						return
 				else if(prob(probability_egg_laying)) // chance to lay an egg
-					if(istype(src, /mob/living/carbon/superior_animal/roach/golden) && fed <= 0)
-						return
-					else
-						var/obj/effect/spider/eggcluster/tasty_eggs = locate(/obj/effect/spider/eggcluster) in get_turf(src)
-						var/obj/effect/spider/spiderling/tasty_bugs = locate(/obj/effect/spider/spiderling) in orange(1, src)//cant as easy scuttle away
-						if(tasty_eggs)
-							visible_message(SPAN_WARNING("[src] eats [tasty_eggs]."),"", SPAN_NOTICE("You hear something eating something."))
-							tasty_eggs.Destroy()
-							fed += rand(3, 12) // this would otherwise pop out this many big spiders
-						if(tasty_bugs)
-							visible_message(SPAN_WARNING("[src] eats [tasty_bugs]."),"", SPAN_NOTICE("You hear something eating something."))
-							tasty_bugs.Destroy()
-							fed += rand(0, 1) //Some times a single bug isnt all that filling
+					var/obj/effect/spider/eggcluster/tasty_eggs = locate(/obj/effect/spider/eggcluster) in get_turf(src)
+					var/obj/effect/spider/spiderling/tasty_bugs = locate(/obj/effect/spider/spiderling) in orange(1, src)//cant as easy scuttle away
+					if(tasty_eggs)
+						visible_message(SPAN_WARNING("[src] eats [tasty_eggs]."),"", SPAN_NOTICE("You hear something eating something."))
+						tasty_eggs.Destroy()
+						fed += rand(3, 12) // this would otherwise pop out this many big spiders
+					if(tasty_bugs)
+						visible_message(SPAN_WARNING("[src] eats [tasty_bugs]."),"", SPAN_NOTICE("You hear something eating something."))
+						tasty_bugs.Destroy()
+						fed += rand(0, 1) //Some times a single bug isnt all that filling
 
-						else if(fed <= 0)
-							return
+					else if(fed <= 0)
+						return
+						
 					busy = LAYING_EGG
 					src.visible_message(SPAN_NOTICE("\The [src] begins to lay an egg."))
 					stop_automated_movement = 1
@@ -126,6 +124,7 @@
 								if(ispath(snack.trash,/obj/item))
 									var/obj/item/TrashItem = new snack.trash()
 									TrashItem.loc = eat_target.loc
+							fed += 1
 							qdel(eat_target)
 
 						eat_target = null

@@ -1,6 +1,7 @@
 //======================================================================
 //Roach Combinations
 /datum/genetics/mutation_recipe/irradiation/roach
+	blurb = "Roach DNA can be irradiated into a plethora of different breeds!"
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/roach)
 
 /datum/genetics/mutation_recipe/irradiation/roach/get_result()
@@ -20,6 +21,7 @@
 //=======================
 //kaiser
 /datum/genetics/mutation_recipe/combination/kaiser
+	blurb = "Warning- The Gigantism gene combined with roach DNA can have hazardous results!"
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/roach)
 	required_mutations = list(MUTATION_GIGANTISM)
 
@@ -27,9 +29,15 @@
 	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/roach/kaiser, "kaiser roach")
 
 
+//=======================
+//gold roach
+/datum/genetics/mutation_recipe/combination/golden_roach
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/roach, /mob/living/carbon/superior_animal/roach)
+	result_path = MUTATION_GOLD_ROACH
 //======================================================================
 //Spider Combinations
 /datum/genetics/mutation_recipe/irradiation/spider
+	blurb = "Spider DNA can be irradiated into a plethora of different breeds!"
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/giant_spider)
 
 /datum/genetics/mutation_recipe/irradiation/spider/get_result()
@@ -55,6 +63,7 @@
 //=======================
 //Empress
 /datum/genetics/mutation_recipe/combination/queen_spider
+	blurb = "The Gigantism gene only produces an Empress spider when combined with egg-laying spider DNA"
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/giant_spider/nurse)
 	required_mutations = list(MUTATION_GIGANTISM)
 
@@ -66,6 +75,7 @@
 /datum/genetics/mutation_recipe/combination/emperor_spider
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/giant_spider/tarantula)
 	required_mutations = list(MUTATION_GIGANTISM)
+	blurb = "The Gigantism gene only produces an Empress spider when combined with Tarantula-type spider DNA."
 
 /datum/genetics/mutation_recipe/combination/emperor_spider/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor, "emperor spider")
@@ -77,6 +87,7 @@
 		/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor,
 		/mob/living/carbon/superior_animal/giant_spider/nurse/queen
 	)
+	blurb = "Do NOT, under ANY CIRCUMSTANCES, clone the combination of an emperor and an empress spider."
 /datum/genetics/mutation_recipe/combination/reaper/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider, "reaper spider")
 
@@ -84,6 +95,7 @@
 //Increase Cow.
 /datum/genetics/mutation_recipe/combination/tatonka_1
 	required_on_clone_types = list(/mob/living/simple_animal/cow, /mob/living/simple_animal/cow)
+	blurb = "When you get right down to it, Tatonkas are really just two cows stitched together."
 
 /datum/genetics/mutation_recipe/combination/tatonka_1/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/tatonka, "tatonka")
@@ -93,6 +105,7 @@
 /datum/genetics/mutation_recipe/combination/tangu_1
 	required_mutations = list(MUTATION_COW_SKIN, MUTATION_COW_SKIN)
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/lodge/tatonka)
+	blurb = "Tangu are like tatonka, only the DNA to clone them has been combined with 2 layers of cow skin."
 
 /datum/genetics/mutation_recipe/combination/tangu_1/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/tatonka/tangu, "tangu")
@@ -102,6 +115,7 @@
 //Create Mukwah, so people can blame us for making them
 /datum/genetics/mutation_recipe/irradiation/mukwah
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/bear)
+	blurb = "Mukwah are bears that have been irradiated by the planet's anomalous energy."
 
 /datum/genetics/mutation_recipe/irradiation/mukwah/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/mukwah, "mukwah")
@@ -111,7 +125,7 @@
 //Doggos
 /datum/genetics/mutation_recipe/irradiation/cerberus
 	required_on_clone_types = list(/mob/living/simple_animal/pig)
-
+	blurb = "Cerberus are formerly pigs, irradiated by the planet's anomalous energy."
 /datum/genetics/mutation_recipe/irradiation/cerberus/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus, "cerberus")
 	return new_mutation
@@ -119,7 +133,7 @@
 /datum/genetics/mutation_recipe/combination/chimera
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/lodge/cerberus)
 	required_mutations = list(MUTATION_NERVOUSNESS)
-
+	blurb = "Chimera are Cerberus that develop with an accelerated heart beat. Combining their DNA with the Nervousness mutation should do the trick."
 /datum/genetics/mutation_recipe/combination/chimera/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/cerberus/chimera, "chimera")
 	return new_mutation
@@ -128,6 +142,7 @@
 //Chickos
 /datum/genetics/mutation_recipe/irradiation/clucker
 	required_on_clone_types = list(/mob/living/simple_animal/chicken)
+	blurb = "Cluckers are chickens irradiated by the planet's anomalous energy."
 
 /datum/genetics/mutation_recipe/irradiation/clucker/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/clucker, "Clucker")
@@ -136,6 +151,7 @@
 //Tengolos
 /datum/genetics/mutation_recipe/irradiation/tengolo
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/diyaab)
+	blurb = "Tengolo Brutes, Chargers, and Stalkers are the Diyaabs' closest relatives."
 
 /datum/genetics/mutation_recipe/irradiation/tengolo/get_result()
 	var/list/random_tengolo = pick(
@@ -148,12 +164,14 @@
 //Hell Pigs
 /datum/genetics/mutation_recipe/combination/hell_pig
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengcharge, /mob/living/simple_animal/pig)
+	blurb = "Hell Pigs can be created from a combination of Pig DNA and Tengolo Charger DNA."
 
 /datum/genetics/mutation_recipe/combination/hell_pig/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig, "Hell Pig")
 //=======================
 /datum/genetics/mutation_recipe/combination/hell_pig_2
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengcharge, /mob/living/simple_animal/hostile/retaliate/tahca)
+	blurb = "Hell Pigs can be created from a combination of Tahca DNA and Tengolo Charger DNA."
 
 /datum/genetics/mutation_recipe/combination/hell_pig_2/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig, "Hell Pig")
@@ -161,6 +179,7 @@
 /datum/genetics/mutation_recipe/combination/hell_pig_3
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengcharge)
 	required_mutations = list(MUTATION_GIGANTISM)
+	blurb = "Hell Pigs can be made with a Tengolo Charger and the gigantism mutation."
 
 /datum/genetics/mutation_recipe/combination/hell_pig_3/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig, "Hell Pig")
@@ -169,12 +188,14 @@
 //Slepnir
 /datum/genetics/mutation_recipe/combination/slepnir
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengbrute, /mob/living/simple_animal/pig)
+	blurb = "Slepnir can be created from a combination of Pig DNA and Tengolo Brute DNA."
 
 /datum/genetics/mutation_recipe/combination/slepnir/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/slepnir, "Slepnir")
 //=======================
 /datum/genetics/mutation_recipe/combination/slepnir_2
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengbrute, /mob/living/simple_animal/hostile/retaliate/tahca)
+	blurb = "Slepnir can be created from a combination of Tahca DNA and Tengolo Brute DNA."
 
 /datum/genetics/mutation_recipe/combination/slepnir_2/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/slepnir, "Slepnir")
@@ -182,6 +203,7 @@
 /datum/genetics/mutation_recipe/combination/slepnir_3
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengbrute)
 	required_mutations = list(MUTATION_GIGANTISM)
+	blurb = "Slepnir can be made with a Tengolo Brute and the gigantism mutation."
 
 /datum/genetics/mutation_recipe/combination/slepnir_3/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/slepnir, "Slepnir")
@@ -190,12 +212,14 @@
 //Wendigo
 /datum/genetics/mutation_recipe/combination/wendigo
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengstalker, /mob/living/simple_animal/pig)
+	blurb = "Wendigo can be created from a combination of Pig DNA and Tengolo Stalker DNA."
 
 /datum/genetics/mutation_recipe/combination/wendigo/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/wendigo, "Wendigo")
 //=======================
 /datum/genetics/mutation_recipe/combination/wendigo_2
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengstalker, /mob/living/simple_animal/hostile/retaliate/tahca)
+	blurb = "Wendigo can be created from a combination of Tahca DNA and Tengolo Stalker DNA."
 
 /datum/genetics/mutation_recipe/combination/wendigo_2/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/wendigo, "Wendigo")
@@ -203,6 +227,7 @@
 /datum/genetics/mutation_recipe/combination/wendigo_3
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/tengstalker)
 	required_mutations = list(MUTATION_GIGANTISM)
+	blurb = "Wendigo can be made with a Tengolo Stalker and the gigantism mutation."
 
 /datum/genetics/mutation_recipe/combination/wendigo_3/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/hell_pig/wendigo, "Wendigo")
@@ -212,6 +237,7 @@
 /datum/genetics/mutation_recipe/combination/croaker_lord
 	required_on_clone_types = list(/mob/living/simple_animal/frog)
 	required_mutations = list(MUTATION_GIGANTISM)
+	blurb = "Croaker lords are frogs with gigantism."
 
 /datum/genetics/mutation_recipe/combination/croaker_lord/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/retaliate/croakerlord, "croaker lord")
@@ -221,6 +247,7 @@
 /datum/genetics/mutation_recipe/combination/dream_daemon
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/nightmare)
 	required_mutations = list(MUTATION_EMP)
+	blurb = "Dream Deamons surpass Nightmare Stalkers in size and stealth thanks to an electromagnetic field surrounding them."
 
 /datum/genetics/mutation_recipe/combination/dream_daemon/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/nightmare/dream_daemon, "dream daemon")

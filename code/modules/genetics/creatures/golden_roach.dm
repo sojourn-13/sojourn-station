@@ -1,10 +1,12 @@
 /mob/living/carbon/superior_animal/roach/golden
-	name = "Gold Beetle"
-	desc = "A weighty creature similar to the roaches that inhabit the colony. Though it seems related to the local roaches, it lacks any of features that make them an annoyance to colonists."
+	name = "golden roach"
+	desc = "A weighty insect almost identical to some of the roaches that inhabit the colony. Though it seems related to the local roaches, it lacks many of features that make them an annoyance to colonists."
 	icon = 'icons/mob/genetics/seuche_gold.dmi'
 	icon_state = "seuche_gold"
 	blattedin_revives_left = 0
-	meat_amount = 2
+	meat_amount = 4
+	eating_time = 1 MINUTES
+	snacker = TRUE
 	clone_difficulty = CLONE_EASY
 	can_burrow = FALSE
 	colony_friend = TRUE
@@ -15,7 +17,7 @@
 	name = "roach egg"
 	desc = "A cockroach egg, can be eaten with proper preparation. It seems to pulse slightly with an inner life."
 	icon = 'icons/obj/genetics/g_roach_egg.dmi'
-	icon_state = "roach_egg_gold"
+	icon_state = "gold_egg"
 	preloaded_reagents = list("egg" = 9)
 	spawn_type = /mob/living/carbon/superior_animal/roach/roachling_gold
 
@@ -23,7 +25,8 @@
 /mob/living/carbon/superior_animal/roach/roachling_gold
 	name = "Golden Roachling"
 	desc = "A tiny cockroach, colored a shimmering gold. It never stays still for long."
-	icon_state = "roachling"
+	icon = 'icons/mob/genetics/roachling_gold.dmi'
+	icon_state = "roachling_gold"
 
 	turns_per_move = 3
 	maxHealth = 10
@@ -38,10 +41,11 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	meat_amount = 1
-	eating_time = 90 SECONDS //Takes less time
+	eating_time = 30 SECONDS //Takes less time
 	life_cycles_before_sleep = 800 //We need more time to eat
 	probability_egg_laying = 0 //We are too young to lay eggs!
 	var/amount_grown = 0
+	snacker = TRUE
 	can_burrow = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE

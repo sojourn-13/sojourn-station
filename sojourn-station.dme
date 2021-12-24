@@ -1773,6 +1773,7 @@
 #include "code\modules\genetics\mutations\friend_bug.dm"
 #include "code\modules\genetics\mutations\friendly.dm"
 #include "code\modules\genetics\mutations\gigantism.dm"
+#include "code\modules\genetics\mutations\gold_roach.dm"
 #include "code\modules\genetics\mutations\imbecile.dm"
 #include "code\modules\genetics\mutations\ingredients.dm"
 #include "code\modules\genetics\mutations\item_makers.dm"

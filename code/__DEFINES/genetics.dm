@@ -16,6 +16,7 @@
 #define MUTATION_UNBALANCED /datum/genetics/mutation/unbalanced
 #define MUTATION_EMP /datum/genetics/mutation/emp
 #define MUTATION_ROACH_BLOOD /datum/genetics/mutation/roachblood
+#define MUTATION_GOLD_ROACH /datum/genetics/mutation/gold_roach
 #define MUTATION_CHOC_MILK /datum/genetics/mutation/milk_c
 #define MUTATION_PROT_MILK /datum/genetics/mutation/milk_p
 #define MUTATION_ROBUST_MILK /datum/genetics/mutation/milk_r
@@ -41,7 +42,6 @@
 #define MUTATION_NERVES /datum/genetics/mutation/sac_contents/nerves
 #define MUTATION_S_NERVES /datum/genetics/mutation/sac_contents/s_nerves
 #define MUTATION_HYPERION /datum/genetics/mutation/hyperion
-#define MUTATION_BLOODCOIN /datum/genetics/mutation/bloodcoin
 //^^^ All mutations!
 
 

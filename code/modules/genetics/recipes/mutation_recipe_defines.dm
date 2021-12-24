@@ -77,6 +77,8 @@
 	
 	var/recipe_type //Type of a given recipe, so we can differentiate between irradiation and clone type mutations.
 
+	var/blurb = "" //A note that the genetics poster uses to give you hints about the sacred formulas each round
+
 	var/priority = 1 //Let's face it, we can make overlap by mistake. If two mutation recipes exist for a compare string, the valid recipe with the highest priority will win out.
 
 //Default datums for combination type recipes
