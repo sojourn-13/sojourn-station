@@ -5543,6 +5543,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "bqW" = (
@@ -13064,6 +13068,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/colony)
+"dbW" = (
+/obj/machinery/light,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = -22
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/tactical)
 "dck" = (
 /obj/structure/table/woodentable,
 /obj/random/credits,
@@ -17409,6 +17422,13 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/colony)
+"ecq" = (
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/security/detectives_office)
 "ecr" = (
 /obj/structure/sink{
 	dir = 1;
@@ -38145,6 +38165,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/officer,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "iOx" = (
@@ -66158,6 +66182,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/security/barracks)
+"pbU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = -22
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security{
+	name = "Security Training"
+	})
 "pbV" = (
 /obj/structure/flora/small/rock1,
 /turf/simulated/floor/beach/sand,
@@ -66311,6 +66346,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/multi_tile{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/prisoncells)
@@ -66583,6 +66621,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
@@ -100070,6 +100113,15 @@
 /obj/effect/damagedfloor/rust,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"wzI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = -22
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/sechall)
 "wzJ" = (
 /obj/random/scrap/dense_even,
 /obj/effect/decal/cleanable/cobweb2,
@@ -117557,7 +117609,7 @@ rcP
 sEl
 cMV
 yli
-waU
+dbW
 jIp
 sWQ
 odw
@@ -117566,7 +117618,7 @@ puh
 xER
 gSj
 vrE
-kyV
+ecq
 eth
 bni
 rXZ
@@ -118971,7 +119023,7 @@ lYA
 lbl
 aOS
 vim
-rxu
+pbU
 jjg
 jhz
 hVp
@@ -119197,7 +119249,7 @@ fCp
 bfl
 rfW
 wed
-rAb
+wzI
 cwr
 eDI
 bwh
