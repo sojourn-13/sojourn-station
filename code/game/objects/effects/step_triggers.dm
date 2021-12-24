@@ -396,3 +396,36 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /obj/effect/step_trigger/riverforest_to_huntinglodge_2_B
 	id = "riverforest_to_huntinglodge_2_B"
 	id_target = "riverforest_to_huntinglodge_1_B"
+
+//Crash ship
+/obj/effect/step_trigger/riverforest_to_crash_1_A
+	id = "riverforest_to_crash_1_A"
+	id_target = "riverforest_to_crash_2_A"
+
+/obj/effect/step_trigger/riverforest_to_crash_2_A
+	id = "riverforest_to_crash_2_A"
+	id_target = "riverforest_to_crash_1_A"
+
+/obj/effect/step_trigger/riverforest_to_crash_1_B
+	id = "riverforest_to_crash_1_B"
+	id_target = "riverforest_to_crash_2_B"
+
+/obj/effect/step_trigger/riverforest_to_crash_2_B
+	id = "riverforest_to_crash_2_B"
+	id_target = "riverforest_to_crash_1_B"
+//Colony to crash
+/obj/effect/step_trigger/colony_to_crash_1_A
+	id = "colony_to_crash_1_A"
+	id_target = "colony_to_crash_2_A"
+
+/obj/effect/step_trigger/colony_to_crash_2_A
+	id = "colony_to_crash_2_A"
+	id_target = "colony_to_crash_1_A"
+
+/obj/effect/step_trigger/colony_to_crash_1_B
+	id = "colony_to_crash_1_B"
+	id_target = "colony_to_crash_2_B"
+
+/obj/effect/step_trigger/colony_to_crash_2_B
+	id = "colony_to_crash_2_B"
+	id_target = "colony_to_crash_1_B"

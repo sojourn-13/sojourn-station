@@ -170,15 +170,18 @@
 
 /mob/living/carbon/slime/adjustFireLoss(amount)
 	..(-abs(amount)) // Heals them
+	handle_regular_status_updates()
 	return
 
 /mob/living/carbon/slime/bullet_act(var/obj/item/projectile/Proj)
 	attacked += 10
 	..(Proj)
+	handle_regular_status_updates()
 	return 0
 
 /mob/living/carbon/slime/emp_act(severity)
 	powerlevel = 0 // oh no, the power!
+	handle_regular_status_updates()
 	..()
 
 /mob/living/carbon/slime/ex_act(severity)
@@ -202,7 +205,7 @@
 
 	adjustBruteLoss(b_loss)
 	adjustFireLoss(f_loss)
-
+	handle_regular_status_updates()
 	updatehealth()
 
 
@@ -215,7 +218,7 @@
 /mob/living/carbon/slime/attack_hand(mob/living/carbon/human/M as mob)
 
 	..()
-
+	handle_regular_status_updates()
 	if(Victim)
 		if(Victim == M)
 			if(prob(60))
@@ -371,6 +374,7 @@
 								if(user)
 									step_away(src, user)
 							canmove = 1
+	handle_regular_status_updates()
 	..()
 
 /mob/living/carbon/slime/restrained()
@@ -390,6 +394,7 @@ mob/living/carbon/slime/toggle_throw_mode()
 			powerlevel = 10
 			adjustToxLoss(-10)
 	nutrition = max(nutrition, get_max_nutrition())
+	handle_regular_status_updates()
 
 /mob/living/carbon/slime/cannot_use_vents()
 	if(Victim)
