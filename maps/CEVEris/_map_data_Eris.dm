@@ -5,7 +5,6 @@
 //#include "_Nadezhda_Colony_Underground.dmm"
 //#include "_Nadezhda_Colony_Transition.dmm"
 //#include "_Nadezhda_Colony_Surface.dmm"
-//#include "_Nadezhda_Colony_labercamp.dmm"
 #include "_Nadezhda_Solar_Area.dmm"
 #include "_Hunting_Lodge.dmm"
 #include "../encounters/deepforest/deepforest.dm"
@@ -90,3 +89,5 @@
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	height = 2
+
+

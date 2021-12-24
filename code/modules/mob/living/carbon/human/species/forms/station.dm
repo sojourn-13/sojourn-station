@@ -310,3 +310,10 @@
 	base = 'icons/mob/human_races/r_mycus.dmi'
 	deform = null
 	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | HAS_SKIN_COLOR
+
+/datum/species_form/axolotl
+	playable = TRUE
+	name = FORM_AXOLOTL
+	base = 'icons/mob/human_races/r_axolotl_white.dmi'
+	deform = null
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR

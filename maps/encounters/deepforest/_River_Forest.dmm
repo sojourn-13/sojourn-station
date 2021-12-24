@@ -2156,6 +2156,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_underground)
+"BE" = (
+/obj/effect/step_trigger/riverforest_to_crash_2_B,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/river_forest_light)
 "BH" = (
 /obj/item/trash/chips,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -2331,6 +2335,10 @@
 "DH" = (
 /obj/item/remains/unathi,
 /turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/river_forest_light)
+"DK" = (
+/obj/effect/step_trigger/riverforest_to_crash_1_B,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "DL" = (
 /obj/structure/boulder,
@@ -108821,8 +108829,8 @@ Mb
 Mb
 Mb
 Mb
-BN
-xa
+RQ
+DK
 xa
 xa
 xa
@@ -109078,8 +109086,8 @@ Mb
 Mb
 Mb
 Mb
-BN
-xa
+RQ
+BE
 xa
 xa
 xa

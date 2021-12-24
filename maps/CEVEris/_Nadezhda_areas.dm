@@ -19,6 +19,13 @@
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 
+/area/colony/exposedsun/crashed_shop
+	ship_area = FALSE
+	icon_state = "erisblue"
+	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
+	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+
+
 /area/nadezhda
 	ship_area = TRUE
 	icon_state = "erisyellow"
@@ -228,6 +235,7 @@
 	dynamic_lighting = FALSE
 	flags = null
 	is_dungeon_lootable = TRUE
+	ship_area = FALSE
 
 /area/nadezhda/outside/one_star
 	name = "Greyson Positronic Base"

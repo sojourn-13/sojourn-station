@@ -31,7 +31,7 @@
 	result = /obj/item/storage/bag/sheetsnatcher
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 30),
-		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 20), //So knifes and other misc tools work on it.
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
 		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)

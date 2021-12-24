@@ -90,6 +90,7 @@
 #define FORM_UNBRANDED			"Unbranded Full Body Prosthetic"
 #define FORM_FOLKEN				"Folken"
 #define FORM_MYCUS				"Mycus"
+#define FORM_AXOLOTL			"Axolotl"
 
 #define FORM_BIRD				"Avian"
 
