@@ -138,7 +138,7 @@ A more player-friendly version of the Belvoix scanner, reports basic information
 
 */
 /obj/item/device/scanner/petite_scanner
-	name = "Petite Mutagenic Scanner"
+	name = "Small Mutagenic Scanner"
 	desc = "A compact device for monitoring the basics of a creature's genetic makeup."
 	icon = 'icons/obj/genetics/dna_scanner.dmi'
 	icon_state = "dna_scanner"
