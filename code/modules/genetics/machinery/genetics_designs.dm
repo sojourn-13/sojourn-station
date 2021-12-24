@@ -17,7 +17,7 @@ Designs for various genetics components
 
 /datum/design/autolathe/genetics/mut_injector
 	name = "Mutagenic Injector"
-	build_path = /obj/item/genetics/purger
+	build_path = /obj/item/genetics/mut_injector
 
 /datum/design/autolathe/genetics/pulper
 	name = "Xenofauna Genetics Pulper Board"

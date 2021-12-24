@@ -250,7 +250,15 @@
 	limb_efficiency = 0
 	limb_efficiency += owner.get_specific_organ_efficiency(OP_NERVE, organ_tag) + owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
 	if(BP_IS_ROBOTIC(src))
-		limb_efficiency = limb_efficiency / 2
+		var basic_count = 0
+		var extra_organs = 0
+		//Balancing to reflect prosthetic limbs being able to stack organs way easier than biological folks.
+		for(var/organ in internal_organs)
+			if(basic_count == 0 || basic_count == 1)
+				basic_count++
+			else
+				extra_organs++
+		limb_efficiency = (limb_efficiency) / (2 + (extra_organs/2))
 		return
 	limb_efficiency = (limb_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)) / 3
 

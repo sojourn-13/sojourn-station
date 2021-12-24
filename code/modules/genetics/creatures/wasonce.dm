@@ -147,11 +147,15 @@ Has ability of every roach.
 		var/fail_mutation_path = pick(injector.getFailList())
 		var/datum/genetics/mutation/injecting_mutation = new fail_mutation_path()
 		injector.addMutation(injecting_mutation)
-		for(var/mob/living/captive in captives)
-			injector.inject_mutations(captive)
-			to_chat(captive, SPAN_DANGER(pick(
-				"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
-				"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole")))
+		for(var/mob/living/carbon/human in captives)
+			if(captive.species.reagent_tag == IS_SYNTHETIC && (captive.getBruteLoss < 300))
+				to_chat(captive, SPAN_DANGER(pick("The immense strength of the creature is crushing. Wasn't... Flesh supposed to be weak?")))
+				adjustBruteLossByPart(15, pick(captive.organs))
+			else
+				injector.inject_mutations(captive)
+				to_chat(captive, SPAN_DANGER(pick(
+					"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
+					"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole.")))
 		injector.removeAllMutations()
 	if(lethal_to_captive && captives.len && prob(15))
 		for(var/mob/living/captive in captives)
