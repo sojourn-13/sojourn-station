@@ -15,6 +15,7 @@
 	var/running = FALSE
 	var/progress = 0
 	var/target_progress = 100
+	usage_flags = PROGRAM_ALL
 
 /datum/nano_module/program/coin_miner
 	name = "Key-Authenticated Zipped K-oin"
