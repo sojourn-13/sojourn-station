@@ -1,4 +1,5 @@
 #define MUTATION_COPY /datum/genetics/mutation/copy_mob
+#define MUTATION_MKNEWAIFUHAIR /datum/genetics/mutation/bald
 #define MUTATION_COW_SKIN /datum/genetics/mutation/cow_skin
 #define MUTATION_IMBECILE /datum/genetics/mutation/imbecile
 #define MUTATION_GIGANTISM /datum/genetics/mutation/gigantism
