@@ -122,3 +122,12 @@
 	status_flags |= DISFIGURED
 	update_body(0)
 	return
+
+/mob/living/carbon/human/proc/ChangeHairToBald()
+//We only change the icon_state of the hair datum, so it doesn't mess up their UI/UE
+	if(f_style)
+		f_style = "Shaved"
+	if(h_style)
+		h_style = "Bald"
+	update_hair(0)
+	return
