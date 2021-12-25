@@ -14,5 +14,4 @@
 	container.holder.stats.changeStat(STAT_COG, 10)
 
 /datum/genetics/mutation/bald/onPlayerRemove()
-	gain_text = "Your head feels normal again."
 	container.holder.stats.changeStat(STAT_COG, -10)
