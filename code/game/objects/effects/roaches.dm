@@ -8,6 +8,8 @@
 	w_class = ITEM_SIZE_TINY
 	health = 5
 	var/amount_grown = 0
+	var/spawn_type = /mob/living/carbon/superior_animal/roach/roachling
+	var/datum/genetics/genetics_holder/unnatural_mutations = new()
 
 /obj/item/roach_egg/afterattack(obj/O as obj, mob/user as mob, proximity)
 	if(istype(O,/obj/machinery/microwave))
@@ -73,8 +75,8 @@
 				O.implants -= src // Remove from implants and spawn the roachling on the ground
 				src.loc = O.owner ? O.owner.loc : O.loc
 
-			var/spawn_type = /mob/living/carbon/superior_animal/roach/roachling
-			new spawn_type(src.loc, src)
+			var/mob/living/baby = new spawn_type(src.loc, src)
+			baby.unnatural_mutations = unnatural_mutations.Copy()
 			qdel(src)
 		else
 			amount_grown += rand(0,2)

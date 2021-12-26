@@ -2,6 +2,7 @@
 #define MUTATION_COW_SKIN /datum/genetics/mutation/cow_skin
 #define MUTATION_IMBECILE /datum/genetics/mutation/imbecile
 #define MUTATION_GIGANTISM /datum/genetics/mutation/gigantism
+#define MUTATION_DWARFISM /datum/genetics/mutation/dwarfism
 #define MUTATION_RAND_UNSTABLE /datum/genetics/mutation/rand_unstable
 #define MUTATION_MOO /datum/genetics/mutation/cow_moo
 #define MUTATION_EPILEPSY /datum/genetics/mutation/disability/epilepsy
@@ -12,8 +13,10 @@
 #define MUTATION_BLINDNESS /datum/genetics/mutation/disability/blindness
 #define MUTATION_DEAF /datum/genetics/mutation/disability/deaf
 #define MUTATION_NEARSIGHTED /datum/genetics/mutation/disability/nearsighted
+#define MUTATION_UNBALANCED /datum/genetics/mutation/unbalanced
 #define MUTATION_EMP /datum/genetics/mutation/emp
 #define MUTATION_ROACH_BLOOD /datum/genetics/mutation/roachblood
+#define MUTATION_GOLD_ROACH /datum/genetics/mutation/gold_roach
 #define MUTATION_CHOC_MILK /datum/genetics/mutation/milk_c
 #define MUTATION_PROT_MILK /datum/genetics/mutation/milk_p
 #define MUTATION_ROBUST_MILK /datum/genetics/mutation/milk_r

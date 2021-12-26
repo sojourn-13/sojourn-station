@@ -9,7 +9,6 @@
 /datum/genetics/mutation_recipe/combination/g_liver
 	required_mutations = list(MUTATION_LIVER, MUTATION_HYPERION)
 	result_path = MUTATION_G_LIVER
-
 /datum/genetics/mutation_recipe/combination/e_blood_vessels
 	required_mutations = list(MUTATION_BLOOD_VESSEL, MUTATION_HYPERION)
 	result_path = MUTATION_E_BLOOD_VESSEL

@@ -137,6 +137,8 @@
 	speed = 2
 	wander = FALSE
 	fire_verb = "spits"
+
+	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_DWARFISM, MUTATION_NERVOUSNESS, MUTATION_DEAF, MUTATION_IMBECILE)
 	ranged = 1
 	projectilesound = 'sound/effects/creatures/acid_spit.ogg'
 	projectiletype = /obj/item/projectile/goo

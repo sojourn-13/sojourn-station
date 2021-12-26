@@ -92607,9 +92607,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/item/contraband/poster/placed/generic/work_for_a_future{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/genetics)
 "vdS" = (
@@ -99641,6 +99638,12 @@
 /obj/random/pouch/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"wCi" = (
+/obj/structure/sign/genetics{
+	pixel_y = 0
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/medical/genetics)
 "wCj" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -171843,7 +171846,7 @@ sFI
 sFI
 sFI
 sFI
-ula
+wCi
 vdO
 pEj
 sQI
