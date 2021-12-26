@@ -1061,8 +1061,10 @@
 /mob/living/carbon/superior_animal/lodge/clucker
 	price_tag = 300 //Eggs to hatch make this easy to mass do
 
- //Imagine dragging a loge animals allllll the way to the colony
+ //Trilby- Imagine dragging a loge animals allllll the way to the colony
  //Hex- Imagine this becoming relevant with cloning
+ //Trilby- Imagine still having to clone the animals and get the work to even do it
+
 /mob/living/carbon/superior_animal/lodge/tatonka
 	price_tag = 800
 
