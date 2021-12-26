@@ -33,8 +33,8 @@
 	eject_animatio = TRUE //we infact have bullet animations
 
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
-	name = "\"obrez\" boltgun"
-	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. Rifle was fine."
+	name = "\"obrez\" mosin boltgun"
+	desc = "A crudly mangled and sawn-down 7.5mm bolt action rifle. The rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"

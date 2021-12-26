@@ -63,7 +63,7 @@
 	)
 
 /datum/craft_recipe/gun/handmaderevolver
-	name = "handmade Revolver"
+	name = "handmade revolver"
 	result = /obj/item/gun/projectile/revolver/handmade
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),

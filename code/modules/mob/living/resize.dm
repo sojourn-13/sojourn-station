@@ -4,6 +4,7 @@ var/const/RESIZE_GIGANTOR = 1.5
 var/const/RESIZE_BIG = 1.15
 var/const/RESIZE_NORMAL = 1
 var/const/RESIZE_SMALL = 0.85
+var/const/RESIZE_POCKET_PRINCE = 0.75
 var/const/RESIZE_TINY = 0.25
 
 /mob/living/carbon/human/proc/resize(var/new_size)

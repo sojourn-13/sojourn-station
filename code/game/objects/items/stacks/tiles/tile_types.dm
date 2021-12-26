@@ -73,6 +73,12 @@
 	desc = "An easy to fit wooden floor tile. Mind the splinters."
 	icon_state = "tile_oldwood"
 
+/obj/item/stack/tile/wood/wood_old
+	name = "old wood floor tile"
+	singular_name = "old wood floor tile"
+	desc = "An easy to fit wooden floor tile. Mind the splinters."
+	icon_state = "tile_oldwood"
+
 /obj/item/stack/tile/wood/old/veridical
 	name = "old veridical wood floor tile"
 	singular_name = "old veridical wood floor tile"

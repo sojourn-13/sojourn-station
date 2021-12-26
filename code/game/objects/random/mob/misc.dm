@@ -145,6 +145,14 @@
 	icon_state = "hostilemob-brown-cluster-low"
 	spawn_nothing_percentage = 80
 
+/obj/random/cluster/psi_monster/maggot_death_gasp
+	name = "3 to 6 pus maggots"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/cluster/psi_monster/maggot_death_gasp/item_to_spawn()
+	return pickweight(list(/mob/living/carbon/superior_animal/psi_monster/pus_maggot/summoned = 1))
+
 //xenomorphs
 /obj/random/mob/xenomorphs
 	name = "random xenomorph"

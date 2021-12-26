@@ -27,6 +27,8 @@
 	deathmessage = "looses a guttural snarl as it crumbles to dust!"
 	overkill_gib = 0 // Set so we don't lose its death dust special clause.
 	overkill_dust = 0
+	contaminant_immunity = TRUE
+	mob_size = 3 // Can't contain that which isn't actually real.
 
 	move_to_delay = 2
 	turns_per_move = 6
@@ -48,6 +50,8 @@
 	breath_poison_type = NONE
 	min_breath_required_type = 0
 	min_breath_poison_type = 0
+	reagent_immune = TRUE
+	toxin_immune = TRUE
 
 	var/poison_per_bite = 0
 	var/poison_type = "mindmelter"
@@ -55,9 +59,13 @@
 	var/chameleon_skill = 10
 	var/healing_factor = 1
 	var/momento_mori = /obj/effect/decal/cleanable/psi_ash
+	var/death_present = FALSE
+	var/death_spawn_gift = null
+	var/death_gasp = "Error text!"
 	pass_flags = PASSTABLE
 	faction = "psi_monster"
 
+	// Boss monster variables.
 	var/first_teleport = FALSE
 	var/second_teleport = FALSE
 	var/first_teleport_callout = "Error text!"
@@ -204,3 +212,9 @@
 	catalyst_drop = /obj/item/device/psionic_catalyst/enslavement
 	psion_chance = 100
 	normie_chance = 100
+
+/obj/effect/decal/cleanable/psi_ash/low_chance
+	name = "weak ashes"
+	desc = "Something about these ashes feels off, as if an infinite potential exists within the dust, but it is weaker feeling than normal."
+	psion_chance = 10
+	normie_chance = 5

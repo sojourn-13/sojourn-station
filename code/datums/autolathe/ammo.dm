@@ -229,7 +229,7 @@
 	materials = list(MATERIAL_STEEL = 6)
 
 /datum/design/autolathe/ammo/pistol_ammobox_biomatter
-	name = "ammunition box (.35 Auto Costic)"
+	name = "ammunition box (.35 Auto Caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
 	materials = list(MATERIAL_BIOMATTER = 35)
 
@@ -311,7 +311,7 @@
 	materials = list(MATERIAL_STEEL = 9)
 
 /datum/design/autolathe/ammo/magnum_ammobox_biomatter
-	name = "ammunition box (.40 Auto-Mag Costic)"
+	name = "ammunition box (.40 Auto-Mag Caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
 	materials = list(MATERIAL_BIOMATTER = 50)
 

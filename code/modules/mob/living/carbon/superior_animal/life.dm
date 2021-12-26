@@ -87,7 +87,7 @@
 */
 
 /mob/living/carbon/superior_animal/handle_chemicals_in_body()
-	if(reagents)
+	if(reagents && !reagent_immune)
 		chem_effects.Cut()
 		analgesic = 0
 

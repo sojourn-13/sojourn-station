@@ -149,7 +149,8 @@
 					/obj/item/cell/medium = 15,
 					/obj/item/cell/medium/high = 15,
 					/obj/item/cell/small = 20,
-					/obj/item/cell/small/high = 20)
+					/obj/item/cell/small/high = 20,
+					/obj/item/computer_hardware/hard_drive/portable/advanced/coin = 60)
 	contraband = list(/obj/item/cell/large/super = 5,
 						/obj/item/cell/medium/super = 5,
 						/obj/item/cell/small/super = 5)
@@ -159,6 +160,7 @@
 					/obj/item/cell/medium/high = 400,
 					/obj/item/cell/small = 100,
 					/obj/item/cell/small/high = 200,
+					/obj/item/computer_hardware/hard_drive/portable/advanced/coin = 60,
 					/obj/item/cell/large/super = 900,
 					/obj/item/cell/medium/super = 600,
 					/obj/item/cell/small/super = 300)
@@ -186,6 +188,7 @@
 					 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 2,
 					 /obj/item/computer_hardware/hard_drive/portable/design/guns/survivalrifle = 2,
 					 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 3,
+					 /obj/item/computer_hardware/hard_drive/portable/advanced/coin = 300,
 					 /obj/item/circuitboard/autolathe = 3,
 					 /obj/item/circuitboard/vending = 10)
 	contraband = list(/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 3)
@@ -205,6 +208,7 @@
 				 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 350,
 				 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 850,
 				 /obj/item/computer_hardware/hard_drive/portable/design/guns/survivalrifle = 750,
+				 /obj/item/computer_hardware/hard_drive/portable/advanced/coin = 60,
 				 /obj/item/computer_hardware/hard_drive/portable/design/powerwork = 300,
 				 /obj/item/circuitboard/autolathe = 350,
 				 /obj/item/circuitboard/vending = 200,
