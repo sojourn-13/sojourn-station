@@ -99640,7 +99640,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "wCi" = (
 /obj/structure/sign/genetics{
-	step_y = 0
+	pixel_y = 0
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/genetics)
