@@ -234,6 +234,8 @@
 		muscle = new /obj/item/organ/internal/muscle
 	else
 		muscle = new /obj/item/organ/internal/muscle/robotic
+		muscle?.replaced(src)
+		muscle = new /obj/item/organ/internal/muscle/robotic
 
 	muscle?.replaced(src)
 

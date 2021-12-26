@@ -16,8 +16,8 @@
 	icon_state = "robotic_muscle"
 	desc = "Expand and contract"
 	nature = MODIFICATION_SILICON
-	organ_efficiency = list(OP_MUSCLE = 200)
-	specific_organ_size = 1
+	organ_efficiency = list(OP_MUSCLE = 100)
+	specific_organ_size = 0.5
 	matter = list(MATERIAL_STEEL = 1)
 
 /obj/item/organ/internal/muscle/super_muscle
