@@ -32,9 +32,13 @@
 		message = "A fatal hardware error has been detected."
 		return
 
-	if(HD.used_capacity >= HD.max_capacity || PD.used_capacity >= PD.max_capacity)
-		message = "Storage capacity error, clear space."
+	if(HD.used_capacity >= HD.max_capacity)
+		message = "Storage hard drive capacity error, clear space."
 		return
+	if(PD)
+		if(PD.used_capacity >= PD.max_capacity)
+			message = "Storage disk drive capacity error, clear space."
+			return
 
 	progress += get_speed()
 
