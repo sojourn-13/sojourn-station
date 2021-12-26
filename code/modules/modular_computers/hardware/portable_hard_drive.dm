@@ -55,6 +55,15 @@
 		/datum/computer_file/program/revelation/primed
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/advanced/coin
+	name = "data disk"
+	icon_state = "ruined"
+	disk_name = "Key-Authenticated Zipped K-oin"
+	max_capacity = 60 //50 x 60 = 3000
+	default_files = list(
+		/datum/computer_file/program/revelation/primed
+	)
+
 /obj/item/computer_hardware/hard_drive/portable/Initialize()
 	. = ..()
 	w_class = ITEM_SIZE_SMALL
