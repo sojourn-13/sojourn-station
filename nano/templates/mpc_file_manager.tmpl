@@ -31,7 +31,7 @@
 				<td>{{:value.size}}GQ
 				<td>
 					{{:helper.link('VIEW', null, { "PRG_openfile" : value.filename })}}
-					{{if !data.internal_disk.read_only} && !data.internal_disk.clone_able}
+					{{if !data.internal_disk.read_only && !data.internal_disk.clone_able}}
 						{{:helper.link('DELETE', null, { "PRG_deletefile" : value.filename }, value.undeletable ? 'disabled' : null)}}
 						{{:helper.link('RENAME', null, { "PRG_rename" : value.filename }, value.undeletable ? 'disabled' : null)}}
 						{{:helper.link('CLONE', null, { "PRG_clone" : value.filename }, value.undeletable ? 'disabled' : null)}}
