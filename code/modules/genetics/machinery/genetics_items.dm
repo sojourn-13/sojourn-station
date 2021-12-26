@@ -528,9 +528,52 @@ Neglects to mention where to find its pieces.
 	desc = "Contains helpful device on Genetics. Unless you're reading this placeholder text, at least."
 	icon = 'icons/obj/genetics/genetic_poster.dmi'
 	icon_state = "genetic_poster"
-	
+
 
 /obj/structure/sign/genetics/Initialize()
-	tag="genetic_poster_1"
-	
-	
+	var/blurb = pick(list(
+		"Roach DNA can be irradiated into a plethora of different breeds!",
+		"Warning- The Gigantism gene combined with roach DNA can have hazardous results!",
+		"Spider DNA can be irradiated into a plethora of different breeds!",
+		"The Gigantism gene only produces an Empress spider when combined with egg-laying spider DNA",
+		"The Gigantism gene only produces an Empress spider when combined with Tarantula-type spider DNA.",
+		"Do NOT, under ANY CIRCUMSTANCES, clone the combination of an emperor and an empress spider.",
+		"When you get right down to it, Tatonkas are really just two cows stitched together.",
+		"Tangu are like tatonka, only the DNA to clone them has been combined with 2 layers of cow skin.",
+		"Mukwah are bears that have been irradiated by the planet's anomalous energy.",
+		"Cerberus are formerly pigs, irradiated by the planet's anomalous energy.",
+		"Chimera are Cerberus that develop with an accelerated heart beat. Combining their DNA with the Nervousness mutation should do the trick.",
+		"Cluckers are chickens irradiated by the planet's anomalous energy.",
+		"Tengolo Brutes, Chargers, and Stalkers are the Diyaabs' closest relatives.",
+		"Hell Pigs can be created from a combination of Pig DNA and Tengolo Charger DNA.",
+		"Hell Pigs can be created from a combination of Tahca DNA and Tengolo Charger DNA.",
+		"Hell Pigs can be made with a Tengolo Charger and the gigantism mutation.",
+		"Slepnir can be created from a combination of Pig DNA and Tengolo Brute DNA.",
+		"Slepnir can be created from a combination of Tahca DNA and Tengolo Brute DNA.",
+		"Slepnir can be made with a Tengolo Brute and the gigantism mutation.",
+		"Wendigo can be created from a combination of Pig DNA and Tengolo Stalker DNA.",
+		"Wendigo can be created from a combination of Tahca DNA and Tengolo Stalker DNA.",
+		"Wendigo can be made with a Tengolo Stalker and the gigantism mutation.",
+		"Croaker lords are frogs with gigantism.",
+		"Dream Deamons surpass Nightmare Stalkers in size and stealth thanks to an electromagnetic field surrounding them.",
+		"Bears can be stained brown with chocolate milk.",
+		"Bears can be stained white with robust milk.",
+		"A bat is kind of like a chicken with leathery skin.",
+		"Sargoyle can be created by giving bats gigantism",
+		"Giant snakes have snake DNA combined with gigantism.",
+		"Opossum have mouse DNA combined with gigantism.",
+		"You can increase milk production in cows by combining two copies of the 'Moo' mutation.",
+		"Protein Milk, achievable by mixing the 'Moo' and 'Imbecile' mutation!",
+		"Chocolate Milk, achievable by irradiating the 'Moo' mutation!",
+		"The Hyperion mutation can enhance cloned organs, like the Heart.",
+		"The Hyperion mutation can enhance cloned organs, like the Lungs.",
+		"The Hyperion mutation can enhance cloned organs, like the Liver.",
+		"The Hyperion mutation can enhance cloned organs, like the Blood Vessels.",
+		"The Hyperion mutation can enhance cloned organs, like the Nerves.",
+		"The Hyperion mutation can enhance cloned organs, like the Muscles.",
+		"Flesh sacs can be achieved through irradiated human DNA- if you're a bad person.",
+		"Flesh sacs can be achieved through irradiated vatgrown DNA- if you're a morally ambiguous person.",
+		"Flesh sacs can be achieved through irradiated monkey DNA with only limited moral quandaries!",
+		"If you combine the mutations that make roaches and spiders accept you, you can create a mutation that will cause them to ignore you."))
+	desc = "Xenogenetics fact of the day: [blurb]"
+

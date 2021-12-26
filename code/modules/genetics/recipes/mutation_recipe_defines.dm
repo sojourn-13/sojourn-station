@@ -21,8 +21,6 @@
 	recipe_paths -= /datum/genetics/mutation_recipe
 	recipe_paths -= /datum/genetics/mutation_recipe/combination
 	recipe_paths -= /datum/genetics/mutation_recipe/irradiation
-	
-	var/list/blurb_list //A list of helpful blurbs we use in a SINGULAR cursed piece of signage.
 	for (var/path in recipe_paths)
 		var/datum/genetics/mutation_recipe/example_recipe = new path()
 		var/compare_string //string used to ask if a given recipe is valid.
@@ -60,13 +58,7 @@
 		log_debug("initialize_mutation_recipes(): Loaded recipe [example_recipe] with string [compare_string]")
 		if(!GLOB.mutation_recipe_list[compare_string])
 			GLOB.mutation_recipe_list[compare_string] = list()
-		blurb_list += example_recipe.blurb
 		GLOB.mutation_recipe_list[compare_string] += example_recipe
-
-	//We set a single dynamically generated recipe-help sign here. Yes. Very important.
-	var/obj/structure/sign/genetics/help_sign = locate("genetic_poster_1")
-	if(help_sign)
-		help_sign.desc = "The poster says: [pick(blurb_list)]"
 
 /*
 * =================================================================================================
@@ -83,8 +75,6 @@
 	var/list/required_on_clone_types = null //Path -or- list of paths for comparing with incoming clone type mutations.
 	
 	var/recipe_type //Type of a given recipe, so we can differentiate between irradiation and clone type mutations.
-
-	var/blurb = "" //A note that the genetics poster uses to give you hints about the sacred formulas each round
 
 	var/priority = 1 //Let's face it, we can make overlap by mistake. If two mutation recipes exist for a compare string, the valid recipe with the highest priority will win out.
 
