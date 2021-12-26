@@ -1764,6 +1764,7 @@
 #include "code\modules\genetics\machinery\genetics_designs.dm"
 #include "code\modules\genetics\machinery\genetics_extractor.dm"
 #include "code\modules\genetics\machinery\genetics_items.dm"
+#include "code\modules\genetics\mutations\bald.dm"
 #include "code\modules\genetics\mutations\cloaking.dm"
 #include "code\modules\genetics\mutations\copy_mob.dm"
 #include "code\modules\genetics\mutations\cow_moo.dm"
