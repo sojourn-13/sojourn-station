@@ -61,7 +61,7 @@
 	disk_name = "Key-Authenticated Zipped K-oin"
 	max_capacity = 60 //50 x 60 = 3000
 	default_files = list(
-		/datum/computer_file/program/revelation/primed
+		/datum/computer_file/program/coin_miner
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/Initialize()
