@@ -9,3 +9,4 @@
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	force = 5
 	max_shells = 1
+	price_tag = 400

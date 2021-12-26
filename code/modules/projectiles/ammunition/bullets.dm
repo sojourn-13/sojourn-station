@@ -50,7 +50,7 @@
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
 
 /obj/item/ammo_casing/pistol_35/biomatter
-	desc = "A caseless .35 Auto costic."
+	desc = "A caseless .35 Auto caustic."
 	projectile_type = /obj/item/projectile/bullet/pistol_35/biomatter
 	icon_state = "clrifle_c_s"
 	is_caseless = TRUE
@@ -108,8 +108,8 @@
 /obj/item/ammo_casing/magnum_40/scrap/prespawned
 	amount = 6
 
-/obj/item/ammo_casing/magnum_40/biomater
-	desc = "A caseless .40 Magnum costic."
+/obj/item/ammo_casing/magnum_40/biomatter
+	desc = "A caseless .40 Magnum Caustic."
 	projectile_type = /obj/item/projectile/bullet/magnum_40/biomatter
 	icon_state = "clrifle_c_p"
 	is_caseless = TRUE
