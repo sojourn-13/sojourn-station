@@ -310,5 +310,5 @@
 
 /datum/poster/furry63
 	name = "Why Not?"
-	desc = "A poster of a white rabbet with a blue science coat asking the all imporant question of WHY? Of course the answer is Why not!"
+	desc = "A poster of a white rabbit with a blue science coat asking the all imporant question of WHY? Of course the answer is Why not!"
 	icon_state = "poster36_legit"
