@@ -66,22 +66,22 @@ SUBSYSTEM_DEF(economy)
 		if(!A.employer)
 			continue
 
-		
+
 		var/datum/computer_file/report/crew_record/R = get_crewmember_record(A.owner_name)
 
 		//Modify their wage based on nepotism modifier
 		var/nepotism = 1
 		if(R)
 			nepotism = R.get_nepotismMod()
-		
+
 		var/amount_to_pay = A.debt + (A.wage * nepotism)
-		
+
 		if(amount_to_pay <= 0)
 			continue
 
 		var/datum/department/ED = GLOB.all_departments[A.employer]
 		var/datum/money_account/EA = department_accounts[ED.id]
-		
+
 
 
 		if(amount_to_pay <= EA.money)
@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(economy)
 					payroll_failure_mail(R, A, D.total_debt)
 
 	total_paid = paid_internal + paid_external
-	command_announcement.Announce("Hourly crew wages have been paid, please check your email for details. In total the crew of Nadezhda colony have earned [total_paid] credits, including [paid_external] credits from external sources.\n Please contact your Department Heads in case of errors or missing payments.", "Dispensation")
+	command_announcement.Announce("Hourly colonist wages have been paid, please check your email for details. In total the crew of Nadezhda colony have earned [total_paid] credits, including [paid_external] credits from external sources.\n Please contact your Department Heads in case of errors or missing payments.", "Dispensation")
 
 
 //Sent to a head of staff when their department account fails to pay out wages
