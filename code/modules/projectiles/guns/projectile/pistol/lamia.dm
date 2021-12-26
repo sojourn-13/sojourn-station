@@ -45,7 +45,7 @@
 
 /obj/item/gun/projectile/lamia/scoped
 	name = "\"Argos\" advanced heavy pistol"
-	desc = "Seinemetall Defense GmbH handgun .50 \"Lamia\" Based on the \"Argos\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
+	desc = "Seinemetall Defense GmbH handgun .50 \"Argos\" Based on the \"Lamia\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurtz."
 	icon_state = "scoped_lamia"
 	item_state = "scoped_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)
