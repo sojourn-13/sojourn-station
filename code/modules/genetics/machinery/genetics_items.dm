@@ -536,7 +536,7 @@ Neglects to mention where to find its pieces.
 		"Warning- The Gigantism gene combined with roach DNA can have hazardous results!",
 		"Spider DNA can be irradiated into a plethora of different breeds!",
 		"The Gigantism gene only produces an Empress spider when combined with egg-laying spider DNA",
-		"The Gigantism gene only produces an Empress spider when combined with Tarantula-type spider DNA.",
+		"The Gigantism gene only produces an Emperor spider when combined with Tarantula-type spider DNA.",
 		"Do NOT, under ANY CIRCUMSTANCES, clone the combination of an emperor and an empress spider.",
 		"When you get right down to it, Tatonkas are really just two cows stitched together.",
 		"Tangu are like tatonka, only the DNA to clone them has been combined with 2 layers of cow skin.",
