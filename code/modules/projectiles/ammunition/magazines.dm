@@ -721,7 +721,6 @@
 	name = "speed loader (.40 Magnum Caustic)"
 	icon_state = "slmagnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
-	matter = list(MATERIAL_BIOMATTER = 3)
 
 ////.50 speed loader////
 
