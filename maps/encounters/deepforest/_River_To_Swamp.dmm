@@ -46,7 +46,7 @@
 "aT" = (/obj/structure/scrap/vehicle,/turf/simulated/floor/tiled/dark/monofloor,/area/colony/exposedsun/crashed_shop)
 "aU" = (/obj/item/trash/material/metal,/turf/simulated/floor/tiled/dark/monofloor,/area/colony/exposedsun/crashed_shop)
 "aV" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/tiled/dark/brown_perforated,/area/colony/exposedsun/crashed_shop)
-"aW" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/simulated/floor/tiled/dark/brown_platform,/area/colony/exposedsun/crashed_shop)
+"aW" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/item/device/lighting/toggleable/lamp,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "aX" = (/turf/simulated/floor/tiled/dark/brown_perforated,/area/colony/exposedsun/crashed_shop)
 "aY" = (/obj/item/scrap_lump,/turf/simulated/floor/tiled/dark/brown_perforated,/area/colony/exposedsun/crashed_shop)
 "aZ" = (/obj/effect/damagedfloor/fire,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
@@ -109,7 +109,7 @@
 "ce" = (/obj/machinery/recharge_station,/turf/simulated/floor/tiled/dark/danger,/area/colony/exposedsun/crashed_shop/workshop)
 "cf" = (/obj/effect/damagedfloor/fire,/obj/structure/lattice,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "cg" = (/obj/structure/lattice,/obj/item/scrap_lump,/obj/effect/damagedfloor/fire,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
-"ch" = (/obj/machinery/mech_recharger,/turf/simulated/floor/tiled/dark/danger,/area/colony/exposedsun/crashed_shop/workshop)
+"ch" = (/obj/machinery/mech_recharger,/obj/random/mecha/low_chance,/turf/simulated/floor/tiled/dark/danger,/area/colony/exposedsun/crashed_shop/workshop)
 "ci" = (/obj/structure/urinal{pixel_y = 30},/turf/simulated/floor/tiled/techmaint,/area/colony/exposedsun/crashed_shop/workshop)
 "cj" = (/obj/effect/damagedfloor/fire,/obj/effect/damagedfloor/fire,/turf/simulated/wall/r_wall,/area/colony/exposedsun/crashed_shop)
 "ck" = (/obj/effect/damagedfloor/fire,/turf/simulated/floor/rock,/area/colony/exposedsun/crashed_shop/bottom_floor)
@@ -212,7 +212,7 @@
 "ed" = (/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/simulated/floor/tiled/dark/orangecorner,/area/colony/exposedsun/crashed_shop)
 "ee" = (/obj/item/trash/material/metal,/obj/structure/invislight,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "ef" = (/obj/structure/scrap/vehicle,/turf/simulated/floor/tiled/dark/orangecorner,/area/colony/exposedsun/crashed_shop)
-"eg" = (/obj/item/trash/material/metal,/turf/simulated/floor/tiled/dark/orangecorner,/area/colony/exposedsun/crashed_shop)
+"eg" = (/obj/structure/table/steel_reinforced,/obj/random/material/low_chance,/obj/random/material/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "eh" = (/obj/structure/invislight,/turf/simulated/floor/asteroid/dirt,/area/colony/exposedsun/crashed_shop)
 "ei" = (/obj/effect/damagedfloor/fire,/obj/structure/invislight,/turf/simulated/floor/asteroid/dirt,/area/colony/exposedsun/crashed_shop)
 "ej" = (/obj/item/scrap_lump,/turf/simulated/floor/tiled/dark/gray_platform,/area/colony/exposedsun/crashed_shop)
@@ -297,7 +297,7 @@
 "fK" = (/obj/effect/damagedfloor/fire,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop/bottom_floor)
 "fL" = (/obj/item/scrap_lump,/obj/item/stack/sheet/refined_scrap/random,/turf/simulated/floor/asteroid/dirt/burned,/area/colony/exposedsun/crashed_shop/bottom_floor)
 "fM" = (/obj/item/stack/material/steel/random,/turf/simulated/floor/rock,/area/colony/exposedsun/crashed_shop/bottom_floor)
-"fN" = (/obj/item/stack/rods/random,/obj/effect/damagedfloor/fire,/turf/simulated/floor/asteroid/dirt/burned,/area/colony/exposedsun/crashed_shop)
+"fN" = (/obj/structure/table/rack,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "fO" = (/turf/simulated/floor/rock,/area/colony/exposedsun/crashed_shop/bottom_floor)
 "fP" = (/obj/effect/damagedfloor/fire,/obj/item/scrap_lump,/turf/simulated/wall/r_wall,/area/colony/exposedsun/crashed_shop/bottom_floor)
 "fQ" = (/obj/item/stack/sheet/refined_scrap/random,/turf/simulated/floor/asteroid/dirt/burned,/area/colony/exposedsun/crashed_shop/bottom_floor)
@@ -435,13 +435,79 @@
 "is" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/light/small,/turf/simulated/floor/tiled/steel,/area/colony/exposedsun/crashed_shop/workshop)
 "it" = (/obj/machinery/conveyor/west{id = "sh_belt"},/obj/structure/plasticflaps,/turf/simulated/floor/tiled/steel/gray_platform,/area/colony/exposedsun/crashed_shop/workshop)
 "iu" = (/obj/machinery/conveyor/southwest{id = "sh_belt"},/obj/landmark/machinery/output,/obj/machinery/light/small{dir = 4; pixel_y = 8},/turf/simulated/floor/tiled/steel/gray_platform,/area/colony/exposedsun/crashed_shop/workshop)
+"iv" = (/obj/structure/table/rack,/obj/random/toolbox,/obj/random/toolbox/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iw" = (/obj/structure/table/rack,/obj/random/toolbox/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"ix" = (/obj/structure/reagent_dispensers/fueltank/derelict,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "iy" = (/obj/item/trash/material/metal,/obj/structure/scrap/vehicle,/obj/structure/lattice,/obj/effect/damagedfloor/fire,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "iz" = (/obj/effect/damagedfloor/fire,/mob/living/carbon/superior_animal/human/voidwolf/captain,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "iA" = (/turf/simulated/wall/r_wall,/area/colony/exposedsun/crashed_shop)
+"iB" = (/obj/structure/table/steel_reinforced,/obj/item/device/lighting/toggleable/lamp,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iC" = (/obj/structure/table/steel_reinforced,/obj/item/tool/weldingtool,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iD" = (/obj/structure/table/steel_reinforced,/obj/random/material_resources,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iE" = (/obj/structure/table/steel_reinforced,/obj/random/material_resources,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iF" = (/obj/structure/table/steel_reinforced,/obj/random/toolbox,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iG" = (/obj/structure/table/steel_reinforced,/obj/random/rig_module/low_chance,/obj/random/rig_module/rare/low_chance,/obj/random/techpart/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iH" = (/obj/structure/table/steel_reinforced,/obj/random/pouch/hardcase_scrap,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "iI" = (/obj/item/trash/material/metal,/obj/effect/damagedfloor/fire,/obj/structure/boulder,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iJ" = (/obj/structure/table/steel_reinforced,/obj/random/powercell/low_chance,/obj/random/powercell/low_chance,/obj/random/powercell/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iK" = (/obj/structure/table/steel_reinforced,/obj/random/rations/low_chance,/obj/random/rations/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iL" = (/obj/structure/table/steel_reinforced,/obj/random/science/low_chance,/obj/random/science/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iM" = (/obj/effect/damagedfloor/fire,/obj/structure/table/rack,/obj/item/tool/shovel/improvised,/obj/item/clothing/gloves/thick/handmade,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iN" = (/obj/structure/bed/chair,/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,/turf/simulated/floor/tiled/dark/brown_platform,/area/colony/exposedsun/crashed_shop)
+"iO" = (/obj/structure/table/steel_reinforced,/obj/item/tool/tape_roll/web,/obj/item/device/lighting/toggleable/lamp,/turf/simulated/floor/tiled/dark/brown_platform,/area/colony/exposedsun/crashed_shop)
+"iP" = (/obj/structure/table/steel_reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iQ" = (/obj/structure/table/steel_reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "iR" = (/obj/random/mob/voidwolf,/obj/structure/lattice,/obj/effect/damagedfloor/fire,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iS" = (/obj/structure/table/steel_reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/dark/gray_perforated,/area/colony/exposedsun/crashed_shop)
+"iT" = (/obj/structure/table/steel_reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/dark/gray_perforated,/area/colony/exposedsun/crashed_shop)
+"iU" = (/obj/structure/table/steel_reinforced,/obj/item/tool/tape_roll/web,/turf/simulated/floor/tiled/dark/gray_perforated,/area/colony/exposedsun/crashed_shop)
+"iV" = (/obj/structure/table/rack,/obj/item/tool/shovel/improvised,/obj/item/clothing/gloves/thick/handmade,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iW" = (/obj/structure/table/rack,/obj/item/tool/shovel/improvised,/obj/item/clothing/gloves/thick/handmade,/turf/simulated/floor/tiled/dark/gray_perforated,/area/colony/exposedsun/crashed_shop)
+"iX" = (/obj/structure/table/steel_reinforced,/obj/random/pouch/hardcase_scrap/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"iY" = (/obj/item/stack/rods/random,/obj/effect/damagedfloor/fire,/obj/structure/reagent_dispensers/fueltank/derelict,/turf/simulated/floor/asteroid/dirt/burned,/area/colony/exposedsun/crashed_shop)
+"iZ" = (/obj/effect/damagedfloor/fire,/obj/structure/table/rack,/obj/item/tool/weldingtool,/obj/random/toolbox,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"ja" = (/obj/effect/damagedfloor/fire,/obj/structure/table/rack,/obj/item/clothing/gloves/thick/handmade,/obj/item/tool/shovel/improvised,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jb" = (/obj/structure/table/steel_reinforced,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/medical_lowcost/low_chance,/obj/random/medical_lowcost/low_chance,/turf/simulated/floor/tiled/dark/violetcorener,/area/colony/exposedsun/crashed_shop)
+"jc" = (/obj/structure/table/steel_reinforced,/obj/random/lathe_disk/low_chance,/obj/random/lathe_disk/low_chance,/obj/random/melee/low_chance,/obj/random/medical_lowcost/low_chance,/obj/random/medical_lowcost/low_chance,/turf/simulated/floor/tiled/dark/violetcorener,/area/colony/exposedsun/crashed_shop)
+"jd" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/tiled/dark/violetcorener,/area/colony/exposedsun/crashed_shop)
+"je" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/material/low_chance,/obj/random/material/low_chance,/obj/random/material/low_chance,/obj/random/material_rare/low_chance,/obj/random/material_rare/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jf" = (/obj/structure/table/steel_reinforced,/obj/random/tool_upgrade/rare/low_chance,/obj/random/tool_upgrade/rare/low_chance,/obj/random/tool_upgrade/low_chance,/obj/random/techpart/low_chance,/obj/random/techpart/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jg" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/obj/random/melee/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jh" = (/obj/structure/table/steel_reinforced,/obj/item/device/lighting/toggleable/lamp,/turf/simulated/floor/tiled/dark/gray_platform,/area/colony/exposedsun/crashed_shop)
+"ji" = (/obj/structure/table/steel_reinforced,/obj/random/melee/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/colony/exposedsun/crashed_shop)
+"jj" = (/obj/item/stack/rods/random,/obj/effect/damagedfloor/fire,/obj/structure/reagent_dispensers/fueltank/derelict,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jk" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/medical_lowcost/low_chance,/obj/random/medical_lowcost/low_chance,/obj/random/medical_lowcost/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/colony/exposedsun/crashed_shop)
+"jl" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/material_rare/low_chance,/obj/random/material_rare/low_chance,/obj/random/material_rare/low_chance,/obj/random/material_rare/low_chance,/turf/simulated/floor/tiled/dark/gray_platform,/area/colony/exposedsun/crashed_shop)
+"jm" = (/obj/structure/table/rack,/obj/random/tool/low_chance,/obj/random/tool/low_chance,/obj/random/tool/low_chance,/obj/random/tool/low_chance,/obj/random/tool/low_chance,/obj/random/tool/advanced/onestar/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jn" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/item/device/lighting/toggleable/lamp,/turf/simulated/floor/tiled/dark/cargo,/area/colony/exposedsun/crashed_shop)
+"jo" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/medical_lowcost/low_chance,/obj/random/medical_lowcost/low_chance,/obj/random/medical_lowcost/low_chance,/obj/random/firstaid/low_chance,/turf/simulated/floor/tiled/dark/cargo,/area/colony/exposedsun/crashed_shop)
+"jp" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/rations/low_chance,/obj/random/rations/low_chance,/obj/random/pouch/hardcase/low_chance,/turf/simulated/floor/tiled/dark/cargo,/area/colony/exposedsun/crashed_shop)
+"jq" = (/obj/structure/table/rack,/obj/random/toolbox/low_chance,/obj/random/toolbox/low_chance,/obj/random/toolbox/low_chance,/turf/simulated/floor/tiled/dark/cargo,/area/colony/exposedsun/crashed_shop)
+"jr" = (/obj/effect/damagedfloor/fire,/obj/structure/table/rack,/obj/random/tool/advanced/low_chance,/obj/random/tool/advanced/low_chance,/obj/random/tool/advanced/low_chance,/obj/random/tool/low_chance,/turf/simulated/floor/tiled/dark/cargo,/area/colony/exposedsun/crashed_shop)
+"js" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/material/low_chance,/obj/random/material/low_chance,/obj/random/material/low_chance,/obj/random/material/low_chance,/turf/simulated/floor/tiled/dark/cargo,/area/colony/exposedsun/crashed_shop)
+"jt" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/material_rare/low_chance,/obj/random/material_rare/low_chance,/obj/random/material_rare/low_chance,/turf/simulated/floor/tiled/dark/cargo,/area/colony/exposedsun/crashed_shop)
+"ju" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/obj/random/material_resources/low_chance,/turf/simulated/floor/tiled/dark/cargo,/area/colony/exposedsun/crashed_shop)
 "jv" = (/obj/item/circuitboard/chemical_dispenser,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "jw" = (/obj/item/trash/material/metal,/obj/structure/scrap/vehicle,/obj/effect/damagedfloor/fire,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jx" = (/obj/effect/damagedfloor/fire,/obj/structure/reagent_dispensers/fueltank/derelict,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jy" = (/obj/effect/damagedfloor/fire,/obj/structure/table/rack,/obj/random/lathe_disk/low_chance,/obj/random/lathe_disk/low_chance,/obj/random/knife/low_chance,/obj/random/pouch/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jz" = (/obj/effect/damagedfloor/fire,/obj/structure/table/rack,/obj/random/circuitboard/low_chance,/obj/random/circuitboard/low_chance,/obj/random/circuitboard/low_chance,/obj/random/boxes/low_chance,/obj/random/powercell/low_chance,/obj/random/powercell/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jA" = (/obj/structure/table/rack,/obj/item/storage/bag/ore,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jB" = (/obj/structure/table/rack,/obj/item/tool/shovel/improvised,/turf/simulated/floor/tiled/dark/orangecorner,/area/colony/exposedsun/crashed_shop)
+"jC" = (/obj/structure/table/rack,/obj/item/device/lighting/toggleable/lantern,/turf/simulated/floor/tiled/dark/orangecorner,/area/colony/exposedsun/crashed_shop)
+"jD" = (/obj/structure/bed/chair,/turf/simulated/floor/tiled/dark/orangecorner,/area/colony/exposedsun/crashed_shop)
+"jE" = (/obj/structure/table/steel_reinforced,/obj/random/material_ore,/obj/random/material_ore,/obj/random/material_ore,/obj/random/material_ore,/obj/random/material_ore/low_chance,/obj/random/material_ore/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jF" = (/obj/structure/table/steel_reinforced,/obj/random/material_ore,/obj/random/material_ore,/obj/random/material_ore,/obj/random/material_ore,/obj/random/material_ore/low_chance,/obj/random/material_ore/low_chance,/obj/random/material_ore/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jG" = (/obj/structure/table/steel_reinforced,/obj/random/material_ore,/obj/random/material_ore,/obj/random/material_ore/low_chance,/obj/random/material_ore/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jH" = (/obj/item/stack/rods/random,/obj/structure/low_wall,/obj/structure/invislight,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jI" = (/obj/structure/table/steel_reinforced,/obj/random/rations/low_chance,/obj/random/rations/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/dark/monofloor,/area/colony/exposedsun/crashed_shop)
+"jJ" = (/obj/structure/table/steel_reinforced,/obj/random/tank/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/dark/monofloor,/area/colony/exposedsun/crashed_shop)
+"jK" = (/obj/effect/damagedfloor/fire,/obj/structure/table/rack,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jL" = (/obj/structure/lattice,/obj/effect/damagedfloor/fire,/obj/structure/table/rack,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jM" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/pouch/hardcase_scrap/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jN" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/material_rare/low_chance,/obj/random/material_rare/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jO" = (/obj/effect/damagedfloor/fire,/obj/effect/damagedfloor/fire,/obj/structure/bed/chair{dir = 8},/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
+"jP" = (/obj/effect/damagedfloor/fire,/obj/structure/table/steel_reinforced,/obj/random/powercell/low_chance,/obj/random/powercell/low_chance,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "jZ" = (/obj/structure/scrap/vehicle,/obj/effect/damagedfloor/fire,/obj/effect/damagedfloor/fire,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "kp" = (/obj/structure/girder,/obj/effect/damagedfloor/fire,/obj/effect/damagedfloor/fire,/turf/simulated/floor/plating/under,/area/colony/exposedsun/crashed_shop)
 "kJ" = (/obj/item/trash/material/metal,/obj/effect/damagedfloor/fire,/turf/simulated/wall/r_wall,/area/colony/exposedsun/crashed_shop)
@@ -585,34 +651,34 @@ agagaGaGaGaGaGaGfvckckckfwfxfufqfyfHfDfqfZfRfOfOfOfOfOfOfqfqfqfqfqfqfqfqfOfOfOfq
 agagaGaGaGaGaGaGfzfAckfBckfqfDfEfFfHfHfqbwfqfqbwfqfqfqfqbVfqfqfqfDfDfDfDbVfqfqfqfqfqfufqfqfqfqfqfqfqfqfqfqaPaPaPaPaPaPaPaOaGaGaGaGaGaGaGaGagagagagagagagagagagag
 agagaGaGaGaGaGaGfzfpckfGckfqfDfHfHfHfHfHfHfHfHfqfqfqfqbwfqfqfqclcyfHfHfHfqfqfqfqfqfqfDfDfDfqfqfqfqfqfqbVfqfqaPaPfqcWaPfqaOaOfYfYaGaGaGaGaGagagagagagagagagagagag
 agagaGaGaGaGaGaGckckfsfxckfqfDfHfJgRfHgSgSgTgTfpfpfpfpfpaJaJaJgVfKfpfpfpaJfpfpfpgWbVgXfpfpfpfpfpaJgWfWfufpaJaJfqfqfZaPbVaOaOaOfOaGaGaGaGaGaGagagagagagagagagagag
-agagaGaGaGaGaGaGfBflfKfKfBfLfDfDfFfFfHgSZUcjcjiAiAiAiAiAiAiAiAaZaZihihihihihihihAOAOQlihihiAiAiAiAfCfCfCiAiAaJbVfqfqaPaOaOaOaOfOfOfOfOaGaGaGaGagagagagagagagagag
-agagaGaGaGaGaGaGfMfOfOfPckfQfqfqfDgRfHgTcjcwaZaZfCfCfCLKfCLSfCfCaZaZfCaZLwLwLwyyaZfCfCfCfCLKfCfCaeaefCfCAOAOfqfqfqfqaPaOaOfOfOgYgYfOfOfOfOfOaGagagagagagagagagag
+agagaGaGaGaGaGaGfBflfKfKfBfLfDfDfFfFfHgSZUcjcjiAiAiAiAiAiAiAaJaZaZfpfpfpfpfpfpfpAOAOQlfpfpaJaJaJaJfCfCfCaJaJaJbVfqfqaPaOaOaOaOfOfOfOfOaGaGaGaGagagagagagagagagag
+agagaGaGaGaGaGaGfMfOfOfPckfQfqfqfDgRfHgTcjcwaZaWegegfNLKfCLSfCfCaZaZfCaZLwLwLwyyaZfCfCfCfCLKfCfCaeaefCfCAOAOfqfqfqfqaPaOaOfOfOgYgYfOfOfOfOfOaGagagagagagagagagag
 agagaGaGaGaGaGaGfOfRfOckckfqfqfqfDgZgRgTcjLwafafahaiahahajfCfCQRfCfCfCfCaZLwLwQlakPKfCfCaeaeLSfCfCfCaexkfCQlgWfqfqfqfqfqfOfOgYgYhagYfMfOfOaIaGaGagagagagagagagag
-agagaGaGaGaGaGaGfOfOfOfOfOfOfqfqfqfDfDfpiAaZafaffCfCfCfCfCaZfCalalalfCaeaZaZLwihihamaeanaeaeBrYTTLQlfCBraZihaJfqfqfqfqfqfOfOfWfWgYgYgYfOfOfOaGaGagagagagagagagag
-agagaGaGaGaGaGaGaGfSfOfOfUfVfqfqfqfyfDfpiAaZaoaZihgjihiAaZaZcjalalalBrfCfCapaZihihamaeaeanaeaetlTLihfCZfoLihaJfqfqfqbVfqfOfOfWfWgYgYhbfOfOfOaGaGagagagagagagagag
-agagaGaGaGaGaGaGaGfOfWfXfOfOfOfqfqfDfDfpiAaZafaZQRaqaqaqQlQliharfCalalasfCxkaZihihaZfCLSaeaeaetltlTLfCfCamihaJfqfqfqfqfqfRaMgYgYhcgYgYfOfOfOfOaGagagagagagagagag
-agagaGaGaGaGaGaGaGaGfWfWfOfOfOfZfqfDfDfpiAaZafaZfCfCfCfCaZQliharfCavaZaZaZfCaZihihaZBrfCfCIwtlmAtlTLaeaeaqihaJfqfqfqfqfSfOfOgYgYgYgYfOaIfOaGaGaGagagagagagagagag
-agagaGaGaGaGaGaGaGaGfWfWfOfOfOfqfqfqfqaJiAQlafClfCAOTLmAIwQlihQRfCfCaZihTLfCatihihHOfCCsAOihmAtltlTLaeaeaqihaJfqfqfqfqfOfOfOfOhdfOgYfOfOfOaGaGagagagagagagagagag
+agagaGaGaGaGaGaGfOfOfOfOfOfOfqfqfqfDfDfpiAaZafafiviwixfCfCaZfCalalalfCaeaZaZLwihihamaeanaeaeBrYTTLQlfCBraZfpaJfqfqfqfqfqfOfOfWfWgYgYgYfOfOfOaGaGagagagagagagagag
+agagaGaGaGaGaGaGaGfSfOfOfUfVfqfqfqfyfDfpiAaZaoaZihgjihiAaZaZcjalalalBrfCfCapaZihihamaeaeanaeaetlTLihfCZfoLfpaJfqfqfqbVfqfOfOfWfWgYgYhbfOfOfOaGaGagagagagagagagag
+agagaGaGaGaGaGaGaGfOfWfXfOfOfOfqfqfDfDfpiAaZafaZQRaqaqaqQlQliharfCalalasfCxkaZihihaZfCLSaeaeaetltlTLfCfCamfpaJfqfqfqfqfqfRaMgYgYhcgYgYfOfOfOfOaGagagagagagagagag
+agagaGaGaGaGaGaGaGaGfWfWfOfOfOfZfqfDfDfpiAaZafaZfCfCfCfCaZQliharfCavaZaZaZfCaZihihaZBrfCfCIwtlmAtlTLaeaeaqfpaJfqfqfqfqfSfOfOgYgYgYgYfOaIfOaGaGaGagagagagagagagag
+agagaGaGaGaGaGaGaGaGfWfWfOfOfOfqfqfqfqaJiAQlafClfCAOTLmAIwQlihQRfCfCaZihTLfCatihihHOfCCsAOihmAtltlTLaeaeaqfpaJfqfqfqfqfOfOfOfOhdfOgYfOfOfOaGaGagagagagagagagagag
 agagaGaGaGaGaGaGaGaGgafOfOfMfOfqfqfqfqgWAOaZaZycAOtlmAtlfCQliAfCfCfCTLfCfCfCauihihfCfCCsTLmAtltlAOAOaeaeaZQlgWfqfqfqfqhefOfOfOgYfOgYfOfOaGaGaGagagagagagagagagag
 agagaGaGaGaGaGaGaGaGfOfOfOfWfWfqfqfqfqfqAOaZaZafahTLtlfCfCAOiAAOalfCfCfCaZatfCfCfCaZaZTLtltltlAOQlaZfCaZLwQlhffqfqbVfqfOfOfOfOfSfOfOfOaGaGaGaGagagagagagagagagag
-agagaGaGaGaGaGaGaGaGaGfOfOgbfWfqfqfqhffDEUAOfCahahahfCalalalalalalawalaeatihfCfCaZaZZZaZGgGgTLAOfCihfCaZaZihaJfqfqfqfqfqfqaIfOfOfOfOfOaGaGaGaGagagagagagagagagag
-agagaGaGaGaGaGaGaGaGaGfOfOfWfWfqfqfqfHfDQlQlQlAOfCahavxkfCatatalfCaxaeaeaZiAfCalaZaZLwiAiAfCfCfCavfCaefCaZihaJfqfqfqfqfqfqfOfOfOfOfOfOaGaGaGaGagagagagagagagagag
-agagaGaGaGaGaGaGaGaGaGfOfOfWfWfqfqfqfDfDfHadQlQlfCfCfCLSfCQliAAOfCaqaqaqfCiAfCalfCLKyciAiAfCiAaefCfCCsfCaZiAaJfqfqfqfqfufqfOfOfOfOfOfOaGaGaGaGagagagagagagagagag
-agagaGaGaGaGaGaGaGaGaGfOfOfSfOfqfqfqfqfDfDfDaJihfCfCfCLSfCAOAOfCfCaqiAaqfCfCfCfCfCBrfCfCfCfCfCaefCfCCsfCfCiAaJfqfqfqfqcWfqhefOfMfOfOfOaGaGaGaGagagagagagagagagag
-agagaGaGaGaGaGaGaGaGaGfOfOfOfOfOfOfqfqfqfqfDaJihfCfCBraZaZGgAOCsfCfCiAfCalayaualalalalfCaqQRaqaefCfCCsfCBriAaJfqfqfqfqfqfqfqfOfOfOfRfOaGaGaGaGagagagagagagagagag
-agagaGaGaGaGaGaGaGaGaGfOfOfRfOfOfOfqfZfqfqfDaJihfCahahfCaZQlQlCsfCLwihfCazalizaZfCfCalalalawalalaefCfCfCfCiAaJfqfqbVfqfqfqfqfOfOfOfOfOaGaGaGaGagagagagagagagagag
-agagagaGaGaGaGaGaGaGaGfOfOfOfOfOfOfMfqfqfqfDaJiALKahahfCfCihihfCfCaZihavalalfCakaAiAalalalalLSalfCaeaeaefCfCAOacfqfqfqfqfqfZfOfSfOfOfOaGaGaGaGagagagagagagagagag
-agagagaGaGaGaGaGaGaGaGfOfOfOfOfOfOfWfqfqfqfDfDaJihfCfCahfCfCfCfCfCZfaZalfCfCfCihihiAiAfCfCfCfCfCLwanaeaexkfCfCAOfqfufqfqfqfqfOfOaIfOfOfOaGaGaGaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGfOfOfOfOfOfOhgfqfqfqcWfDaJihfCfCahfCfCfCxkfCfCfCalalalfCfCClihfCfCfCCsCsfCaZihfCfCLKfCaZiAaJfqfqfqfqfqfqfqfMfOfOfOfOaGaGaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGfOfOfMfOfOfOfOfqfufqfqfDaJihfCfCahahahfCahfCaZaZfCalalfCalalalfCfCfCfCfCfCfCfCfCfCfCfCaZihiAaJfqfqcWfqfqfqfOfOfOfOfOaGaGaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGaGfOfOfOfOfOfOfqfqfqfqfDaJiAihfCfCahaBfCfCfCaZihaqQRfCfCalazalfCalalalalalalfCfCfCalalaZaZihiAaJfqfqfqfqfqhefOfOfOfOfOfOaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGaGfOfOfOfRfOfqfqfqfqfqfDfDaJihiAaqQRfCClaZahfCLSfCfCaqaCalfCfCLwCQaZalapalalalalaDalfCLSaZLwiAiAaJfqfqfqfqfqfqfOaIfOfOfRaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGaGfOfOfOfOfOfqfqfqfqfqfDfDfDaJiAaqalalatatatatataZatalfCfCfCaZLwLwLwaZfCfCfCfCalalaCfCfCfCaZQlihaJfqfqfufqfqfqfOfOfMfOfOaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGaGaGfOfOfOfOcWfqfqfqfqhffDfDaJiAfCapalalatatataELwLwaZaZfCfCaZaZLwihcjcjihfCLSaZaZaZfCfCfCaZQlihaJfqfqfqfqfqfqfOfOfOfOfOaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGaGaGaGfOfOfOfqfqfqfqfqfqfDfDaJiACsCsCsfCQlQlihihihihiAihAOAOQlEUEUihZUZUihfCfCaZgjiAaZaZAOQlQliAaJfqfqfqfqfqfqfSfOfOfOfOaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGaGaGaGaGgcfOfqfqfqfqfWfqgZfDaJaJhhfqfqfqfDgXfpfpfpaJaJaJgWfqfqfDgXfpfpfpfpfqgXfpfpaJaJQlAOAOQlihaJfqfqbVfqfqfqfOfOfOfOaGaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGaGaGaGgcgcgcfqfqfqfqfWfqfqfDfDfDfWfqfqfqfqgZfKfKfKfKfKfDfDfDfqfDfDfqfqfqfqfqfqfDaJaJaJfDfufqgXfqfqfqcWfqfqfqfqhefOfOfOaGaGagagagagagagagag
-agagagaGaGaGaGaGaGaGaGaGaGaGgcgdgcfqfqfqfqfWfqfqfqfqfqfqfqfqfqfqfqfqfqfDfDfDfDfyfqfqfqfqfqfqfqfqfqfqfDaJaJfDgWfqfDfDfqfqfqfqfqfqfqfufOfOfOfOaGaGagagagagagagagag
+agagaGaGaGaGaGaGaGaGaGfOfOgbfWfqfqfqhffDEUAOfCahahahfCalalalalalalawalaeatihfCfCaZaZZZaZGgGgTLAOfCihfCaZaZfpaJfqfqfqfqfqfqaIfOfOfOfOfOaGaGaGaGagagagagagagagagag
+agagaGaGaGaGaGaGaGaGaGfOfOfWfWfqfqfqfHfDQlQlQlAOfCahavxkfCatatalfCaxaeaeaZiAfCalaZaZLwiAiAfCfCfCavfCaefCaZfpaJfqfqfqfqfqfqfOfOfOfOfOfOaGaGaGaGagagagagagagagagag
+agagaGaGaGaGaGaGaGaGaGfOfOfWfWfqfqfqfDfDfHadQlQlfCfCfCLSfCQliAAOfCaqaqaqfCiAfCalfCLKyciAiAfCiAaefCfCCsfCaZaJaJfqfqfqfqfufqfOfOfOfOfOfOaGaGaGaGagagagagagagagagag
+agagaGaGaGaGaGaGaGaGaGfOfOfSfOfqfqfqfqfDfDfDaJihfCfCfCLSfCAOAOfCfCaqiAaqfCfCfCfCfCBrfCfCfCfCfCaefCfCCsfCfCaJaJfqfqfqfqcWfqhefOfMfOfOfOaGaGaGaGagagagagagagagagag
+agagaGaGaGaGaGaGaGaGaGfOfOfOfOfOfOfqfqfqfqfDaJihfCfCBraZaZGgAOCsfCfCiAfCalayaualalalalfCaqQRaqaefCfCCsfCBraJaJfqfqfqfqfqfqfqfOfOfOfRfOaGaGaGaGagagagagagagagagag
+agagaGaGaGaGaGaGaGaGaGfOfOfRfOfOfOfqfZfqfqfDaJihfCahahfCaZQlQlCsfCLwihfCazalizaZfCfCalalalawalalaefCfCfCfCaJaJfqfqbVfqfqfqfqfOfOfOfOfOaGaGaGaGagagagagagagagagag
+agagagaGaGaGaGaGaGaGaGfOfOfOfOfOfOfMfqfqfqfDaJiALKahahfCfCihihfCfCaZihavalalfCakaAiAalalalalLSalfCaeaeaefCfCacacfqfqfqfqfqfZfOfSfOfOfOaGaGaGaGagagagagagagagagag
+agagagaGaGaGaGaGaGaGaGfOfOfOfOfOfOfWfqfqfqfDfpaJihfCfCahfCfCfCfCfCZfaZalfCfCfCihihiAiAfCiBiCiDiELwanaeaexkfCfCacaJfufqfqfqfqfOfOaIfOfOfOaGaGaGaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGfOfOfOfOfOfOhgfqfqfqcWfDaJihfCfCahfCfCfCxkfCfCfCalalalfCfCClihixfCiFCsCsiGaZihfCfCLKfCaZiAaJaJfqfqfqfqfqfqfMfOfOfOfOaGaGaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGfOfOfMfOfOfOfOfqfufqfqfDaJihfCfCahahahfCahfCaZaZfCalalfCalalalfCfCiHiJiKiLfCfCfCfCfCfCaZihiAaJaJfqcWfqfqfqfOfOfOfOfOaGaGaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGaGfOfOfOfOfOfOfqfqfqfqfDaJiAihfCfCahaBfCfCfCaZihaqQRfCfCalazalfCalalalalalalfCfCfCalalaZaZihiAaJaJaJfqfqfqhefOfOfOfOfOfOaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGaGfOfOfOfRfOfqfqfqfqfqfDfpaJihiAaqQRfCClaZahfCLSfCfCaqaCalfCfCLwCQaZalapalalalalaDalfCLSaZLwiAiAaJaJfqfqfqfqfqfOaIfOfOfRaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGaGfOfOfOfOfOfqfqfqfqfqfDfDfpaJiAaqalalatatatatataZatalfCfCfCaZLwLwLwaZfCfCfCfCalalaCfCfCfCaZQlihaJaJfqfufqfqfqfOfOfMfOfOaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGaGaGfOfOfOfOcWfqfqfqfqhffDfDaJiAfCapalalatatataELwLwaZaZfCfCaZaZLwihcjcjihfCLSaZaZaZfCfCfCaZQlihaJaJfqfqfqfqfqfOfOfOfOfOaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGaGaGaGfOfOfOfqfqfqfqfqfqfDfDaJiACsCsCsfCQlQlihihihihiAihAOAOQlEUEUihZUZUihfCfCaZgjiAaZaZAOQlQliAaJaJfqfqfqfqfqfSfOfOfOfOaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGaGaGaGaGgcfOfqfqfqfqfWfqgZfDaJaJhhfqfqfqfDgXihihihiAiAiAgWfqfqfDgXfpfpfpfpfqgXfpihiAaJadAOAOadihaJaJfqbVfqfqfqfOfOfOfOaGaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGaGaGaGgcgcgcfqfqfqfqfWfqfqfDfDfDfWfqfqfqfqgZfKfKfKfKfKfDfDfDfqfDfDfqfqfqfqfqfqfpaJaJaJfDfufqgXfqaJaJcWfqfqfqfqhefOfOfOaGaGagagagagagagagag
+agagagaGaGaGaGaGaGaGaGaGaGaGgcgdgcfqfqfqfqfWfqfqfqfqfqfqfqfqfqfqfqfqfqfDfDfDfDfyfqfqfqfqfqfqfqfqfqfqfDaJaJfpgWfqfDfDfqfqfqfqfqfqfqfufOfOfOfOaGaGagagagagagagagag
 agagagaGaGaGaGaGaGaGaGaGaGaGgfgcgcfufqbVfqfqfqfqfqcWfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqbVfqfqfqfqfqfufqfqfDaJfqfqfqfDfDfEfqfqfqfqfqfqfqfOfOaIfOaGaGagagagagagagagag
 agagagaGaGaGaGaGaGaGaGaGaGgcgcgggcgcfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfufqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfDaJfqfqfqfqfDfpfpfqfqfqfqfqfqfMfOhifOaGaGagagagagagagagag
 agagagaGaGaGaGaGaGaGaGaGaGgiglgcgdgcfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqbVfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqfqcWfqfOfOfRfOaGaGagagagagagagagag
@@ -669,11 +735,11 @@ gkmAmAmAmAbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUs
 gkmAmAmAmAbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsUsUsUsUPUPUPZUihihihihihiAiAiAUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsUsUsUsUPUPUPZUihihihihihiAiAiAUsUsUsUsUsCsCsCsCsaQQKQKQKQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAgk
-gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUPZUyYCJLwaZaZwVoLQRxcxcCsaRCsCsaRCsTyTyfCfCfCcPiAiAiAiAihihUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJmAmAmAmAmAmAmAgk
+gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUPZUyYCJLwiMiMwVoLQRxcxcCsaRCsCsaRCsTyTyfCfCfCcPiAiAiAiAihihUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsZUZUdPdPdmfCfCfCaSfCxcxcxcxcxcxcxcTyaTaUBrfCLKcPBrfCfCfCihihihihUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUscjcjLwaZcffCBraSaSfCxcxcxcxcxcaVxcTyaTaTcPcPcPcPfCTyalTywjTyihihQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
-gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUscjcjaZcPQKcPfCaWaSaSxcxcaXaXaYaXaXTyaTaTTycPUmcPTyTyalTyTyTyhqiAiAQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
-gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUscjcjaZfCcPoIfCfCfCaSfCfCfCaXaXaXaXQRxcaTaTcPcPfCTyTyfCTyTyfCBrfCiAQKQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAgk
+gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUscjcjaZcPQKcPfCiNiOaSxcxcaXaXaYaXaXTyaTaTTycPUmcPTyTyalTyTyTyhqiAiAQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
+gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUscjcjaZfCcPoIfCiPiQaSfCfCfCaXaXaXaXQRxcaTaTcPcPfCTyTyfCTyTyfCBrfCiAQKQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsUsUsUsiAiAfCfCBrfCTyfCfCaSxcrTxciAxcxcaXQRxcaTaTTyTybabavAAOTLtlfCalfCfCQKQKQKQKUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsUsUsUsiAiAfIfCahTyTyTytlfCxcrTxciAxcxcfCQRxcTyTyTybabafCfCTLtltlTyalfCaFfCSVSVxciAUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsUsUsQKQKQKfIahbbTyAOtlAOfCxcrTxciAxcxcLSfCBrbcbdfCbaaTfCfCtltlTLTyfCapBrfCfCxcztiAUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
@@ -696,11 +762,11 @@ gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsbrnnnnbsatalaZiAiAiAiAiAiAiAihihihihihihihihihih
 gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsdTdmnnbsatalwWTyTyTyTyxcxciAihihihihihihihihihihihihihxcxcztfCaZcjZULwfCfCxcbjbjfCiAQKUsUsUsUsUsUsUsUsUsUsUsbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsWHaZaZnnbsbvalfCLSbefCfCfCfCfCaZwWwWihihihihaZwVwVwVakakfCxcxcbjfCaZLwLwcfcfcfbybjbjiAUsUsUsUsUsUsUsUsUsUsUsUsbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJUsUsUsUsUsUsWHWHWHaZatatalfCBrfCbebebefCbebAbebBaZwWwWwWaZaZaZaZaZaZbBfCfCbjfCaZLZLwcfcfcfcfbjbjiAUsUsUsUsUsUsUsUsUsUsUsUsbJbJmAmAmAmAmAmAmAgk
-gkmAmAmAmAmAbJbJbJUsUsUsUsUsUsUsWHWHaZaZataZfCfCfCcPcPcPbCfCfCbebBaZaZbPbPcfcfFhamoLambBfCbjbjblaZPxLwcfCRcfcfLKfCiAUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
-gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsWHWHWHWHWHdTdTaabebebefCbebeUmcPcPcPcPbebebBaZaZaZaZaZbBaZbjbjbjfCfCfCHOcfcfcfcPLSiAUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
+gkmAmAmAmAmAbJbJbJUsUsUsUsUsUsUsWHWHaZaZataZfCfCfCcPcPcPbCfCfCbebBaZaZbPbPcfcfFhamoLambBfCiSiTblaZPxLwcfCRcfcfLKfCiAUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
+gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsWHWHWHWHWHdTdTaabebebefCbebeUmcPcPcPcPbebebBaZaZaZaZaZbBaZiTiUbjfCfCfCHOcfcfcfcPLSiAUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsUsWHWHWHWHUsQKQKwVwVaZaZaZfCfCfCfCfCfCbebebBbBaLaZHOaZaZwVfCfCfCbjbufCaZaZaZcfcPfCiAiAiAiAUsUsUsUsUsUsUsUsUsbJbJmAmAmAmAmAmAmAgk
-gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsUsWHWHUsUsUsUsUsdTdTiAiAiAiAxciAiAiAfCfCfCcPcPcfcfcfcfClaZfCfCiAiAiAfCfCfCxccPcPfCiAiAiAiAUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
-gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsWHWHUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAxcbDfCfCbjaZcfdmaZbjbjiAiAiAiAiAiAfCaqfCfCfCfCfCiAUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
+gkmAmAmAmAmAbJbJbJbJUsUsUsUsUsUsUsWHWHUsUsUsUsUsdTdTiAiAiAiAxciAiAiAfCfCfCcPcPcfcfcfcfClaZfCiViAiAiAfCfCfCxccPcPfCiAiAiAiAUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
+gkmAmAmAmAmAbJbJbJbJbJUsUsUsUsUsUsWHWHUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAxcbDfCfCbjaZcfdmaZbjiWiAiAiAiAiAiAfCaqfCfCfCfCfCiAUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAmAbJbJwdwdwdUsUsUsUsUsUsWHWHUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAfCbjaZbPcffCbjbjaqararaqLSiAfCaqQRbjbjfCfCiAiAUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAbJbJbJwdwdwdUsUsUsUsUsUsWHWHUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAfCbjaZcfcfbEfCaZaZaZClfCfCiAiAfCfCbjbFfCbjfCiAUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
 gkmAmAmAmAbJbJbJwdwdwdUsUsUsUsUsUsWHWHUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiALSbGbjcPcPZMcfbPwVaZaZfCaqiAiAcPcPcPcPbjfCfCiAUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAgk
@@ -749,7 +815,7 @@ mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUs
 mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAihihihihihUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAihihihiAcOCsCsCsOZCsCsNKNKNKekgegebqihihihihUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsQKQKQKUsUsUsUsUsUsQKUsUsUsUsUsUsUsiAiAihihLwaZaZLKgLaqaZaZfCfCfCNKfCYTaqgecQgewAbqihihUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsQKQKQKUsUsUsUsUsUsQKUsUsUsUsUsUsUsiAiAihihLwaZaZLKgLaqaZaZfCiJiXNKfCYTaqgecQgewAbqihihUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsihihihiAiAiAiAiAiAUsUsUsQKUsUsUsUsUsUsNKihihLwLwaZfCLSfCgegegeaZfCYTbjbjxkaZbBgegegegegeihihUsUsUsUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsihihihiAihihihaqaqcONKCsgPgPgPekNKNKcOdmLwLwmlmlgegefCaZgegegeaZaZfCbjYTBrbibefCfCfCcPcPgeihUsUsUsUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJbJUsbJUsUsUsUsUsiAiAgecQgeaeaexkfCaeaefCcPcPcPcPfCxkNKaZLwLwgegegegecPgegegegexfaZaZfCfCbefCiAiAfCYTfCYTcPgeUsUsUsUsUsbJbJmAmAmAmAmAmAmAmA
@@ -759,12 +825,12 @@ mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsihaZgecPfCaeTyfCaeLSNKNKaZcSaZfCfCfCLScPcP
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsihaZgecPfCaeaeaexkcRcTaZaZcRfCQKQKfCfCcPiAiAiAakanaZfCfCalfCfCfCUsQKUsQKUsUsUsUscUcUaZfCCsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsiANKDBUmaZihihEjaZfCcRBrfCfCQKQKUsfCiAiAiAihiAihaefCaZaZTLfCcXcYUsQKUsQKQKUsUsiAcUcZaZfCCsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsiANKfCfCaZihocmmihfCfCfCQKQKUsUsfCaeiAiAihgeihiAfCaZaZmmtlfCTyfCUsUsUsUsQKQKQKiAcUcULwdmfCUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsQKNKaqdaaZEjfNihihfCcRfCUsUsUsfCaeaedbiAihaZihiAdcddTLtlfCfCUsUsUsUsUsUsUsUsUsNKxfaZLwaZaFUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsQKiAdedfdgaZaZaZaZUsfCdhdibjcPcPcPcPaedmaZaZiAiAaqddQlfCfCiAiAUsUsUsUsUsUsUsUsNKaZZjdPaZiAUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsiAiATydfdfdfdffCUsaZdjaZbjcPcPcPoIfCoEaZdkihiAaqdldnfCLSfCiAihQKUsUsQKmniANKiafCaZLwaZiAUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsQKQKQKQKQKaRaZLKdffCUsaZdoaZfCfCfCfCfCfCaZaZdpaZfCdnfCdnfCCsUsihiAihUsUsUsiAarfCfCaeaZdqaZiAUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsQKQKCsaZBrdfQKQKcTfCBrdrfCiALKbebeaZaZbaLSfCfCCsUsUsUsUsUsihiAihQKUsUsfCaeaZanLwLwdmCsUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsQKQKCsoEaZfCQKQKcTcRfCdsiAiAaZbBbBihfCdtfCfCCsUsUsUsUsUsUsihiAihUsUsUsxkananjZLwxffCCsUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsQKNKaqdaaZEjiYihihfCcRfCUsUsUsfCaeaedbiAihaZihiAdcddTLtlfCfCUsUsUsUsUsUsUsUsUsNKxfaZLwaZaFUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsQKiAdedfdgaZaZiZjaUsfCdhdibjcPcPcPcPaedmaZaZiAiAaqddQlfCfCiAiAUsUsUsUsUsUsUsUsNKaZZjdPaZiAUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsiAiATyjbjcdfjdiBUsaZdjaZbjcPcPcPoIfCoEaZdkihiAaqdldnfCLSfCiAihQKUsUsQKmniANKiafCaZLwaZiAUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsQKQKQKQKQKaRjeLKdfjfUsaZdoaZfCfCfCfCfCfCaZaZdpaZfCdnfCdnfCCsUsihiAihUsUsUsiAarfCfCaeaZdqaZiAUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsQKQKCsjgBrdfQKQKcTfCBrdrfCiALKjhjiaZaZbaLSfCfCCsUsUsUsUsUsihiAihQKUsUsfCaeaZanLwLwdmCsUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsQKQKCsjjaZfCQKQKcTcRfCdsiAiAaZjkjlihfCdtfCfCCsUsUsUsUsUsUsihiAihUsUsUsxkananjZLwxffCCsUsUsUsUsbJbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsTyaZaZUsfCfCfCfCduihxkaZaZdmTyfCfCfCbaQKUsUsUsUsUsUsihiAUsUsQKUsfCandmLwaZaeaeCsUsUsbJbJbJbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAfCaZUsfCcPcPNKihihaZfCbebefCaXfCbabaQKQKUsUsUsUsQKQKiAUsUsQKUsNKaZaZzgaZaeaefCUsUsbJbJbJbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsiALSfCUsfCcPcPaZihNKaZfCfCbefCaXfCCsQKQKQKQKUsUsQKQKQKiAiAiANKNKfCandvaZaZfCfCaFWHWHeTeTeTeTeTbJmAmAmAmAmAmAmAmA
@@ -834,14 +900,14 @@ mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKUsUsUsUs
 mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKQKiAihihNKNKEjJsnMJsCsQKUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKQKiAihEjoEHurIWsJsiICsQKUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsQKUsUsQKQKQKQKUsUsUsUsUsUsUsUsQKQKQKQKUsQKQKQKUsUsUsQKQKQKQKUsiAiAiAiAiAiAiAiANKEjaZdqdCdPJsZcNKQKUsbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsQKQKihiAiAUsiAaQNKiAiANKCsCsCsfCcPfCiAiAiAiAiAcOCsDkNKiAiAiAiAiAiAiATymBaqiAiANKTyJsLwCJdDdEaZfCcOUsUsbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsQKQKihiAiAUsiAaQNKiAiANKCsCsaRfCcPaFiAiAiAiAiAcOCsDkcOiAiAiAiAiAiAiATymBaqiAiANKTyJsLwCJdDdEaZfCcOUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsQKQKihUsQKQKihdFdGdHTyUsUsUsUsfCcPfCLSararfCfCcPcPcTcTcTcTakakBrdmakaXaXfCararavBraZlMdPLwaZaZJsNKUsUsbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsQKUsihUsQKQKNKdjgedifCUsUsUsUsxkcPNKNKfCfCcPUmPSfCcTcTcTcTgegegegegeaXaXfCfCaXfCfCcUcUcUfCSloEnMCsQKUsUsbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsQKUsQKQKQKQKLSdjdIdjxkUsQKQKQKcPcPNKNKcPcPcPcRcTdJcTcTcTcTgeDMDMDMcPxkfCfCdAaXfCfCdKaXaXfCaZaZaZCsUsUsUsbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKQKCsdLavVicPQKQKUsUsfCfCNKNKfCfCfCcRcTcTcTcTcTdMgeDMDMDMDMcPfCfCfCfCcPUsUsUsUsNKTyavfCCsUsUsUsbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsQKUsihUsQKQKNKdjgedifCUsUsUsUsxkcPNKNKfCfCcPUmPSjmjnjojpcTgegegegegeaXaXfCfCaXfCfCcUcUcUfCSloEnMCsQKUsUsbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsQKUsQKQKQKQKLSdjdIdjxkUsQKQKQKcPcPNKNKcPcPcPjqcTdJcTcTcTcTgeDMDMDMcPxkfCfCdAaXfCfCdKaXaXfCaZaZaZCsUsUsUsbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKQKCsdLavVicPQKQKUsUsfCfCNKNKfCfCfCcRcTjrjsjtjudMgeDMDMDMDMcPfCfCfCfCcPUsUsUsUsNKTyavfCCsUsUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKQKCsarfCfCLSiAUsUsUsfCdNxkNKfCLKfCiAaZNZcTdOaZfCcPcPcPDMDMcPBriAaXaXQKQKUsUsUsNKNKfCfCCsQKUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsCsyTcPcPiAiAiAUsUsfCbabaNKNKfCiAiAihaZcTcTxfiAiAiABrcPcPcPfCfCfCaXUsQKQKUsUsLPNKNKfCDkQKUsUsbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsNKQKQKQKiAiAiAiAfCLSfCbaNKNKxkvcvciyaZaZaZaZfCTLiAiAiAiALSaXaXLSfCUsUsQKQKUsNKEjEjLSCsQKUsUsUsbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsNKQKQKQKiAiAiAiAfCLSfCbaNKNKxkvcvciyjxjyjzaZfCTLiAiAiAiALSaXaXLSfCUsUsQKQKUsNKEjEjLSCsQKUsUsUsbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsQKQKQKQKQKNKQKQKQKQKiAiAarbjfCfCfCfCfCfCiAiAiAiAihihnMAOfCfCfCfCfCfCaXdKfCfCUsUsUsQKQKTyaZEjaFNKUsUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKiANKQKQKQKQKQKcPfCbjLPDMcPUmcPfCfCiAPScPakihihxkLSfCfChqfCBrfCfCUsUsUsUsUsiAcPdjdQaZfCNKQKQKUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsQKQKQKihTyUsUsUsUsUsfCBrbjNKDMYtcPcPfCiAiAiAcPfCarNKNKNKfCfCLSxkfCfCNKUsUsUsUsiAfCaZdjdRjZaZLPQKQKUsbJbJmAmAmAmAmAmAmAmA
@@ -857,12 +923,12 @@ mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKBrcPcPcPaZdXdYdZcPUmfCiaNKNKUsUsUs
 mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKNKNKLSfCxfanananoEaZfCfCarNKUsUsUsUsUsLScPNKNKfCfCfCfCfCBrcPcPfCfCfCaZaZaZfCcPcPaFcPQKUsUsUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiANKNKNKfCTydmanaZNKNKaefCfCUsUsUsUsUsQKQKUsUsfCfCiANKfCLScPvccPcPcPcPYtalalxkfCfCcPQKUsUsUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsQKiAiANKfCbEcPaZanOTNKNKaeaxaefCBrfCxkQKQKUsUsUsfCfCiAiAiAxkfCcPbtcPcPcPcPalazfCLSfCCsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAiANKcPcPamananaeaeeafCfCfCfCfCfCcPfCfCfCLSebebecediANKNKfCfCViiygegecPcPcPBraqCsUsUsUsUsUsbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAiAiANKeeNKxkCsCsNKCsCsCsdmaZEjEjaaiAiAakakebebefebNKNKebebfCaZaZgegegegegefCaqCsUsUsUsUsUsbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAiANKcPcPamananaeaeeafCfCfCfCfCfCcPfCfCfCLSebebecediANKNKjAfCViiygegecPcPcPBraqCsUsUsUsUsUsbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAiAiANKeeNKxkCsCsNKCsCsCsdmaZEjEjaaiAiAakakebebefebNKNKjBjCfCaZaZgegegegegefCaqCsUsUsUsUsUsbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKQKUsUsUsUsUsUsUsUsUsUsUsUsUsUsihihamamBrebebfCebebavaZaZgegecQgeLpfCfCfCWHWHWHWHWHbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsihihihihaqfCfCfCegeffCfCBraZdmZjaZaZfCfCNKWHWHWHWHbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiALSfCfCfCfCfCfCaraZxfamaqaqarfCCsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAiANKCsCsDkCsNKcOiAiAiAiACsNKDkCsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsihihihihaqfCfCfCjDeffCfCBraZdmZjaZaZfCfCNKWHWHWHWHbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiALSfCjEjFjFjGfCaraZxfamaqaqarfCCsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiAiAcOCsCsjHCsNKcOiAiAiAiACsNKDkCsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsbJbJmAmAmAmAmAmAmAmA
@@ -915,13 +981,13 @@ mAmAmAbJbJbJbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUs
 mAmAmAbJbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsNKCsCsscmtmtPCbJmAmAmAmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKUsQKQKUsUsQKQKQKUsUsNKNKfCfCCsCseimtmtbJbJmAmAmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKQKQKQKQKNKiAiANKfCfCfCYTfCCsvsxwmtHTbJbJbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKNKihihihNKcONKbabadtbacPgegeaZfCaZaZmtxwmtbJbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKNKihihihNKcONKjIjJdtbacPgegeaZfCaZaZmtxwmtbJbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKQKQKQKNKaZaZZjaZaZaZbabaLpgegegegeaZZcBrfCNKscehxwbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKiANKNKaZaZcPcPcPcPbaaZgeiigegegeaZfCfCNKNKUsUsscbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKiAnMaZgegecPbadNbabaaZgegecggegeaZfCcOQKQKUsUsUsbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKiAiAaZaZaZfCTybababaxkiANKaZgegeiRaZfCNKQKUsUsUsUsbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKiADkaZLwaZCsavCsbabaNKiAiACsaZnMaZaZiAQKQKUsUsUsUsbJmAmAmAmAmAmAmAmA
-mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiACsaZaZfCCsCsCsbaaZiAiAiACsaZaZxkfCiAQKUsUsUsUsUsbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKiAnMaZgegecPbadNbabajKjLgecggegeaZfCcOQKQKUsUsUsbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKiAiAaWjMaZfCTybababaxkiANKaZgegeiRaZfCNKQKUsUsUsUsbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsQKiADkjNjOaZCsavCsbabaNKiAiACsaZnMaZaZiAQKQKUsUsUsUsbJmAmAmAmAmAmAmAmA
+mAmAmAbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiACsjPaZfCCsCsCsbaaZiAiAiACsaZaZxkfCiAQKUsUsUsUsUsbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAiANKihihNKNKNKfCaZEjihiANKaZgecPfCfCiAQKUsUsUsUsUsbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiANKNKiAiANKNKxkcPgeEjihiANKxkcPcPbjNKNKQKUsUsUsUsUsbJmAmAmAmAmAmAmAmA
 mAmAmAbJbJbJbJbJbJbJbJUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsUsiAcPcPcPfCaZEjEjcPgenMEjiAvcvccPcPbjiAQKUsUsUsUsUsUsbJmAmAmAmAmAmAmAmA

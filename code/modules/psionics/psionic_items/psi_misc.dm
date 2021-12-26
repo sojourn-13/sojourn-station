@@ -5,7 +5,7 @@
 /obj/item/psi_injector
 	name = "cerebrix inhaler"
 	desc = "A modified inhaler which delivers over-saturated cerebrix diluted in water before being aerosolized. Unlike a direct injection or drinking, this method prevents overdosing or nasty side \
-	side effects at the cost of spending more cerebrix for what it returns in essence."
+	side effects at the cost of spending more cerebrix for what it returns in essence. Useful for psions to allow them to directly and easily regain essence a limited number of times."
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "psi_inhaler"
 	force = WEAPON_FORCE_HARMLESS

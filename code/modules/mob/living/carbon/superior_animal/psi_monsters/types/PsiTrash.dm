@@ -44,7 +44,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	emote_see = list("drools acid onto the floor.", "wriggles in glee!", "rolls over!")
-	var/burn_attack_text = "vomits up some acidic pus all over!"
+	var/burn_attack_text = "The pus maggot vomits up some acidic pus all over!"
 	var/burn_attack_sound = 'sound/effects/splat.ogg'
 	attacktext = "gnawed"
 

@@ -44,7 +44,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	emote_see = list("crackles and pops as its head burns!", "looses a haunting scream!", "claws at its head, trying to put out the flames!")
-	burn_attack_text = "wreathes its claws in fire before striking!"
+	burn_attack_text = "The ash wendigo wreathes its claws in fire before striking!"
 	burn_attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	healing_factor = 0 // Head is a source of light.
 	light_range = 4 // Makes it harder for other psi monsters to regen. Because rage.
@@ -89,6 +89,7 @@
 	real_mutator = TRUE
 	lethal_to_captive = TRUE //We kill are captives
 	knockdown_odds = 15
+	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"

@@ -27,6 +27,8 @@
 	deathmessage = "looses a guttural snarl as it crumbles to dust!"
 	overkill_gib = 0 // Set so we don't lose its death dust special clause.
 	overkill_dust = 0
+	contaminant_immunity = TRUE
+	mob_size = 3 // Can't contain that which isn't actually real.
 
 	move_to_delay = 2
 	turns_per_move = 6
@@ -48,6 +50,8 @@
 	breath_poison_type = NONE
 	min_breath_required_type = 0
 	min_breath_poison_type = 0
+	reagent_immune = TRUE
+	toxin_immune = TRUE
 
 	var/poison_per_bite = 0
 	var/poison_type = "mindmelter"

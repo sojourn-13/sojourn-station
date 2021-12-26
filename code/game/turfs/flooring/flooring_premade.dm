@@ -88,7 +88,7 @@
 	name = "wooden floor"
 	icon = 'icons/turf/flooring/wood_old.dmi'
 	icon_state = "wood"
-	initial_flooring = /decl/flooring/wood
+	initial_flooring = /decl/flooring/wood/wood_old
 
 /*Tiled*/
 
