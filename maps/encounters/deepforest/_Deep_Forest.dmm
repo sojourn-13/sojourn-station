@@ -751,18 +751,6 @@
 /obj/structure/bed/padded,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
-"dg" = (
-/obj/structure/table/rack,
-/obj/random/gun_normal,
-/obj/random/gun_normal,
-/obj/random/gun_normal,
-/obj/random/dungeon_gun_mods/low_chance,
-/obj/random/dungeon_gun_mods/low_chance,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/dungeon/outside/prepper)
 "dh" = (
 /obj/structure/table/rack,
 /obj/random/junkfood,
@@ -11003,6 +10991,18 @@
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"Qp" = (
+/obj/structure/table/rack,
+/obj/random/gun_normal,
+/obj/random/gun_normal,
+/obj/random/gun_normal,
+/obj/random/dungeon_gun_mods/low_chance,
+/obj/random/dungeon_gun_mods/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/prepper)
 "Qr" = (
 /obj/structure/table/onestar,
 /obj/item/tool/crowbar,
@@ -60212,7 +60212,7 @@ fF
 fD
 fC
 fC
-dg
+Qp
 SX
 OM
 gJ

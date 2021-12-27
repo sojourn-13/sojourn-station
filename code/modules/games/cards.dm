@@ -5,14 +5,13 @@
 	var/desc = "regular old playing card."
 
 /obj/item/deck
-	w_class = ITEM_SIZE_SMALL
-	icon = 'icons/obj/playing_cards.dmi'
-	var/list/cards = list()
-
-/obj/item/deck
 	name = "deck of cards"
 	desc = "A simple deck of playing cards."
 	icon_state = "deck"
+
+	w_class = ITEM_SIZE_SMALL
+	icon = 'icons/obj/playing_cards.dmi'
+	var/list/cards = list()
 
 /obj/item/deck/cards/New()
 	..()
