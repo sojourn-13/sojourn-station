@@ -11,7 +11,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
-	price_tag = 1650
+	price_tag = 1100
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	recoil_buildup = 1.75
 	one_hand_penalty = 5 //bullpup rifle (this one is smaller and carbine, so it's 5)
@@ -44,7 +44,7 @@
 
 
 /obj/item/gun/projectile/automatic/bulldog/rds
-	name = "\"Bulldog\" carbine"
+	name = "\"Bulldog Red\" carbine"
 	desc = "A common carry gun manufactured by Seinemetall Defense GmbH for security and police far and wide. Compact and reliable. Uses .257 Carbine rounds. This one comes with red dot sight."
 	icon = 'icons/obj/guns/projectile/bulldog_rds.dmi'
 	icon_state = "bulldog_rds"

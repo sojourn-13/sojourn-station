@@ -14,6 +14,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/computer = 8,
 				/obj/item/computer_hardware/hard_drive/portable/design/security = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/surgery = 1,
+				/obj/item/computer_hardware/hard_drive/portable/advanced/coin = 1, //Not to common to ruin the balance of that
 
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 3,

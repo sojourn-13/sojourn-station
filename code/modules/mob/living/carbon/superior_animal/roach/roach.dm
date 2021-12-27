@@ -53,6 +53,8 @@
 	var/fed = 0 // roach gets fed after eating a corpse
 	var/probability_egg_laying = 75 // probability to lay an egg
 
+	var/snacker = FALSE
+
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 

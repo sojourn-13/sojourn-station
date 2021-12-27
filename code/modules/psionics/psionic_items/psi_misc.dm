@@ -5,7 +5,7 @@
 /obj/item/psi_injector
 	name = "cerebrix inhaler"
 	desc = "A modified inhaler which delivers over-saturated cerebrix diluted in water before being aerosolized. Unlike a direct injection or drinking, this method prevents overdosing or nasty side \
-	side effects at the cost of spending more cerebrix for what it returns in essence."
+	side effects at the cost of spending more cerebrix for what it returns in essence. Useful for psions to allow them to directly and easily regain essence a limited number of times."
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "psi_inhaler"
 	force = WEAPON_FORCE_HARMLESS
@@ -32,7 +32,7 @@
 		if(PT) // Is the target a psion
 			if(PT.max_psi_points - PT.psi_points >= point_per_use) // Is there space to give the psion the points?
 				if(use) // Do we have uses left?
-					user.visible_message("[user] injects [target] with [T.name].", "You inject [target] with [T.name]!")
+					user.visible_message("[user] injects [target] with the [src].", "You inject [target] with the [src]!")
 					PT.psi_points += point_per_use
 					use--
 					update_icon()

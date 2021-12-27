@@ -339,7 +339,7 @@
 	current_health = 1
 
 /obj/item/card_carp/rpelt
-	name = "Rabbet Pelt"
+	name = "rabbit Pelt"
 	desc = "A small pelt, Health is 3, Damage is 0, Requires 2 bodies. Can be placed on any open field slot. Does not move, stops Flying attacks."
 	icon_state = "card_rabbit_pelt"
 	current_health = 3

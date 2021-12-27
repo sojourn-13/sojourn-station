@@ -104,13 +104,14 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
 	name = "\improper LBX AC 10 \"Scattershot\""
 	icon_state = "mecha_scatter"
-	equip_cooldown = 20
+	equip_cooldown = 15
 	projectile = /obj/item/projectile/bullet/magnum_40
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 40
 	max_ammo = 40
 	projectiles_per_shot = 4
+	fire_cooldown = 2 //The scatter shot is meant to be fast but doing it all at once makes it a bit buggy and leaves flying bullets
 	deviation = 0.7
 	ammo_type = "12g"
 
@@ -121,8 +122,8 @@
 	name = "\improper jury-rigged flak cannon"
 	desc = "The design of this weapon brings a whole new meaning to the term scrap cannon."
 	icon_state = "mecha_makeshift_scatter"
-	equip_cooldown = 20
-	projectile = /obj/item/projectile/bullet/magnum_40
+	equip_cooldown = 15
+	projectile = /obj/item/projectile/bullet/magnum_40/scrap
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	fire_volume = 80
 	projectiles = 30
@@ -149,14 +150,14 @@
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg
 	name = "\improper Ultra AC 2"
 	icon_state = "mecha_uac2"
-	equip_cooldown = 10
+	equip_cooldown = 20
 	projectile = /obj/item/projectile/bullet/rifle_75
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	projectiles = 300
 	max_ammo = 300
 	projectiles_per_shot = 3
 	deviation = 0.3
-	fire_cooldown = 2
+	fire_cooldown = 3
 	ammo_type = "5.56"
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/loaded
@@ -166,14 +167,14 @@
 	name = "\improper jury-rigged lead repeater"
 	desc = "Few would call this weapon reliable, fewer know just how valuable it is."
 	icon_state = "mecha_makeshift_uac2"
-	equip_cooldown = 10
-	projectile = /obj/item/projectile/bullet/pistol_35
+	equip_cooldown = 20
+	projectile = /obj/item/projectile/bullet/pistol_35/scrap
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiles = 60
 	max_ammo = 60
 	projectiles_per_shot = 3
 	deviation = 0.4
-	fire_cooldown = 2
+	fire_cooldown = 3
 	required_type = list(/obj/mecha/combat, /obj/mecha/working, /obj/mecha/working)
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/scrap/loaded
