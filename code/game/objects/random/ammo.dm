@@ -166,6 +166,33 @@
 	icon_state = "ammo-grey-low"
 	spawn_nothing_percentage = 60
 
+//Rubber ammo, used in some spawns
+/obj/random/rubber_ammo
+	name = "random rubber ammunition"
+	icon_state = "ammo-grey"
+
+/obj/random/rubber_ammo/item_to_spawn()
+	return pickweight(list(
+				/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 3,
+				/obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag = 2,
+				/obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned = 4,
+				/obj/item/ammo_magazine/ammobox/magnum_40/rubber = 3,
+				/obj/item/ammo_magazine/ammobox/kurtz_50/rubber = 1,
+				/obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber = 2,
+				/obj/item/ammo_magazine/rifle_75_short/rubber = 2,
+				/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber = 1,
+				/obj/item/ammo_magazine/ammobox/pistol_35/rubber = 2,
+				/obj/item/ammo_magazine/smg_35/rubber = 2,
+				/obj/item/ammo_magazine/pistol_35/rubber = 6,
+				/obj/item/ammo_magazine/highcap_pistol_35/rubber = 5,
+				/obj/item/ammo_magazine/kurtz_50/rubber = 2,
+				/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 4,
+				/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 7))
+
+/obj/random/rubber_ammo/low_chance
+	name = "low chance random special ammunition"
+	icon_state = "ammo-grey-low"
+	spawn_nothing_percentage = 60
 
 //Dungeon based random spawners (use these only in dungeons, not maint)
 /obj/random/dungeon_ammo
@@ -191,3 +218,8 @@
 	name = "low chance random special ammunition"
 	icon_state = "ammo-grey-low"
 	spawn_nothing_percentage = 60
+
+/obj/random/dungeon_ammo/really_low_chance
+	name = "really low chance random special ammunition"
+	icon_state = "ammo-grey-low"
+	spawn_nothing_percentage = 90
