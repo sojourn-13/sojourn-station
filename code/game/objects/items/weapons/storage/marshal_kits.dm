@@ -51,7 +51,7 @@
 	desc = "The standard Marshal box kit containing a firefly .35 pistol. An all round solid firearm that provides good qualities in every area. Has less recoil than the colt and auto ejects its magazine."
 
 	populate_contents()
-		new /obj/item/gun/projectile/colt/NM_colt(src)
+		new /obj/item/gun/projectile/firefly(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
@@ -61,7 +61,7 @@
 	desc = "The standard Marshal box kit containing a colt pistol. A dependable if cheap pistol that is all round a solid choice. Stronger than the firefly per shot."
 
 	populate_contents()
-		new /obj/item/gun/projectile/firefly(src)
+		new /obj/item/gun/projectile/colt/NM_colt(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
@@ -83,7 +83,7 @@
 	for its low recoil and ability to take .35 drum mags and silencers."
 
 	populate_contents()
-		new /obj/item/gun/projectile/firefly(src)
+		new /obj/item/gun/projectile/glock(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
@@ -107,10 +107,10 @@
 
 /obj/item/storage/box/m_kit/laser_armor
 	name = "\improper Ablative Armor Kit"
-	desc = "An standard Marshal armor kit containing a full ablative suit for countering laser weaponry."
+	desc = "An standard Marshal armor kit containing a full ablative marshal branded suit for countering laser weaponry."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/vest/ablative(src)
+		new /obj/item/clothing/suit/armor/laserproof/ironhammer(src)
 		new /obj/item/clothing/head/helmet/laserproof(src)
 		new /obj/item/clothing/gloves/thick/ablasive(src)
 		new /obj/item/clothing/shoes/ablasive(src)
@@ -121,4 +121,4 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/heavy/riot/ironhammer(src)
-		new /obj/item/clothing/head/helmet/faceshield/riot(src)
+		new /obj/item/clothing/head/helmet/riot_hud(src)

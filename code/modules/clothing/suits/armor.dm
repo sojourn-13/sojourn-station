@@ -386,6 +386,8 @@
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
 /obj/item/clothing/suit/armor/laserproof/ironhammer
+	name = "marshal ablative armor vest"
+	desc = "A vest that excels in protecting the wearer against energy projectiles. This one is branded for the Nadezhda Marshals."
 	icon_state = "ablative_ironhammer"
 
 /obj/item/clothing/suit/armor/laserproof/rnd
@@ -466,6 +468,8 @@
 	price_tag = 250
 
 /obj/item/clothing/suit/armor/heavy/riot/ironhammer
+	name = "marshal riot suit"
+	desc = "A suit of armor with heavy padding to protect against melee attacks. Looks like it might impair movement. This one is branded for the Nadezhda Marshals."
 	icon_state = "riot_ironhammer"
 	item_state = "swat_suit"
 
