@@ -717,6 +717,11 @@
 	icon_state = "slmagnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
+/obj/item/ammo_magazine/speed_loader_magnum_40/biomatter
+	name = "speed loader (.40 Magnum Caustic)"
+	icon_state = "slmagnum_s"
+	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
+
 ////.50 speed loader////
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50

@@ -234,6 +234,8 @@
 		muscle = new /obj/item/organ/internal/muscle
 	else
 		muscle = new /obj/item/organ/internal/muscle/robotic
+		muscle?.replaced(src)
+		muscle = new /obj/item/organ/internal/muscle/robotic
 
 	muscle?.replaced(src)
 
@@ -247,12 +249,11 @@
 	blood_vessel?.replaced(src)
 
 /obj/item/organ/external/proc/update_limb_efficiency()
-	limb_efficiency = 0
-	limb_efficiency += owner.get_specific_organ_efficiency(OP_NERVE, organ_tag) + owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
-	if(BP_IS_ROBOTIC(src))
-		limb_efficiency = limb_efficiency / 2
-		return
-	limb_efficiency = (limb_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)) / 3
+	var/raw_efficiency = 0
+	raw_efficiency += owner.get_specific_organ_efficiency(OP_NERVE, organ_tag) + owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
+	if(!BP_IS_ROBOTIC(src))
+		raw_efficiency = raw_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)
+	limb_efficiency = round(((raw_efficiency/(240+((2*raw_efficiency)/10))) * 100)) //Diminishing returns as total limb efficiency increases.
 
 /obj/item/organ/external/proc/update_bionics_hud()
 	switch(organ_tag)
@@ -334,11 +335,12 @@
 	if(status & ORGAN_SPLINTED)
 		. += 0.5
 
-	var/muscle_eff = owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
 
 	var/nerve_eff = max(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag),1)
-	muscle_eff = (muscle_eff/100) - (muscle_eff/nerve_eff) //Need more nerves to control those new muscles
-	. += max(-(muscle_eff/2), MAX_MUSCLE_SPEED)
+	var/limb_eff = owner.get_limb_efficiency()
+	var/leg_eff = (limb_eff/100) - (limb_eff / nerve_eff)//Need more nerves to control those new muscles
+
+	. += max(-(leg_eff/2), MAX_MUSCLE_SPEED)
 
 	. += tally
 

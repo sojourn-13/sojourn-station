@@ -29,3 +29,9 @@
 /obj/item/gun/energy/cog/update_icon()
 	..()
 	set_item_state(null, back = TRUE)
+
+/obj/item/gun/energy/cog/gear
+	name = "\"Gear\" lasgun"
+	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous. \
+	This model has been modified to solely use stun rounds, making it the perfect economy class take down weapon."
+	projectile_type = /obj/item/projectile/beam/stun

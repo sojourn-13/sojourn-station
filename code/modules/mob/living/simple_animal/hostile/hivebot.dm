@@ -126,6 +126,8 @@
 	pass_flags = PASSTABLE
 
 	mob_size = MOB_LARGE
+	reagent_immune = TRUE
+	toxin_immune = TRUE
 
 	attack_sound = 'sound/weapons/rapidslice.ogg'
 	speak_emote = list("screams")

@@ -93348,7 +93348,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/item/contraband/poster/placed/generic/work_for_a_future{
+/obj/structure/sign/genetics{
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,

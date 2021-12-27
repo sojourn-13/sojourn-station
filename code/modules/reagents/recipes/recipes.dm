@@ -196,7 +196,7 @@
 
 /datum/chemical_reaction/psi_juice_inhaler
 	result = null
-	required_reagents = list("psi_juice" = 40, "water" = 40, "silicon" = 40)
+	required_reagents = list("psi_juice" = 30, "water" = 30, "silicon" = 30)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
