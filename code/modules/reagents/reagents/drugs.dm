@@ -182,10 +182,10 @@
 		C.psi_points += 1
 		holder.remove_reagent("psi_juice", 5)
 
-/datum/reagent/stim/psi_juice/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/drug/psi_juice/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_BASIC, STIM_TIME, "psi_juice")
 
-/datum/reagent/stim/psi_juice/withdrawal_act(mob/living/carbon/M)
+/datum/reagent/drug/psi_juice/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "psi_juice_w")
 
 /datum/reagent/drug/psi_juice/overdose(var/mob/living/carbon/M, var/alien)
