@@ -567,6 +567,18 @@
 	icon_state = "grass_jungle"
 	initial_flooring = /decl/flooring/grass2/jungle
 
+/turf/simulated/floor/asteroid/grass/snow_grass
+	icon_state = "snowgrass_nes"
+	initial_flooring = /decl/flooring/grass2/snow_grass
+
+/turf/simulated/floor/asteroid/grass/snowjungle
+	icon_state = "snowjungle"
+	initial_flooring = /decl/flooring/grass2/snowjungle
+
+/turf/simulated/floor/asteroid/grass/plowed_snow
+	icon_state = "plowed_snow"
+	initial_flooring = /decl/flooring/grass2/plowed_snow
+
 /turf/simulated/floor/asteroid/grass/dry
 	icon_state = "grass_dry"
 	initial_flooring = /decl/flooring/grass2/dry

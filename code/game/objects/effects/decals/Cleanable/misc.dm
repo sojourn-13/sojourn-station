@@ -42,6 +42,11 @@
 	icon_state = "dirt"
 	mouse_opacity = 0
 
+/obj/effect/decal/cleanable/dirt/snow
+	name = "snow"
+	desc = "A low dusting of the dark blue snow."
+	icon_state = "snow"
+
 /obj/effect/decal/cleanable/reagents
 	desc = "Someone should clean that up."
 	gender = PLURAL
