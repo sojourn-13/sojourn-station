@@ -86778,10 +86778,8 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/turret_protected/ai)
 "tHr" = (
-/obj/machinery/vending/weapon_machine{
-	categories = 3
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/vending/marshal_kit,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security)
 "tHy" = (
