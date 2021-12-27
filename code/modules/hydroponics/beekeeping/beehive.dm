@@ -146,7 +146,7 @@
 		update_icon()
 	smoked = max(0, smoked - 1)
 	if(!smoked && bee_count)
-		bee_count = min(bee_count * 1.005 + foods, 100)
+		bee_count = min(foods + bee_count * 1.005, 100) //We start with are plant food amount so we dont times a negitive if we ever have harmful plants
 		update_icon()
 
 /obj/machinery/beehive/proc/pollinate_flowers()
