@@ -43,6 +43,8 @@
 #define MUTATION_NERVES /datum/genetics/mutation/sac_contents/nerves
 #define MUTATION_S_NERVES /datum/genetics/mutation/sac_contents/s_nerves
 #define MUTATION_HYPERION /datum/genetics/mutation/hyperion
+#define MUTATION_COLD_RESISTANCE /datum/genetics/mutation/cold_resistance
+#define MUTATION_BAROTRAUMA /datum/genetics/mutation/barotrauma
 //^^^ All mutations!
 
 
