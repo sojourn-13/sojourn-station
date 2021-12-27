@@ -101,8 +101,6 @@
 	spawn_nothing_percentage = 60
 
 
-
-
 /obj/random/tool/advanced
 	name = "random advanced tool"
 	icon_state = "tool-orange"
@@ -163,4 +161,35 @@
 
 /obj/random/tool/advanced/onestar/low_chance
 	icon_state = "tool-orange-low"
+	spawn_nothing_percentage = 60
+
+
+/obj/random/handmade_tool
+	name = "random handmade tool"
+	icon_state = "box-green"
+
+/obj/random/handmade_tool/item_to_spawn()
+	return pickweight(list(
+				/obj/item/tool/screwdriver/improvised = 8,
+				/obj/item/tool/wirecutters/improvised = 6,
+				/obj/item/tool/weldingtool/improvised = 8,
+				/obj/item/tool/crowbar/improvised = 12,
+				/obj/item/tool/wrench/improvised = 6,
+				/obj/item/tool/hammer/homewrecker = 10,
+				/obj/item/tool/multitool/improvised = 4,
+				/obj/item/tool/saw/improvised = 6,
+				/obj/item/tool/shovel/improvised = 6,
+				/obj/item/clothing/head/welding = 5,
+				/obj/item/device/scanner/plant = 1,
+				/obj/item/device/scanner/mass_spectrometer = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/weldpack/canister = 2,
+				/obj/item/device/flash = 2,,
+				/obj/item/storage/makeshift_grinder = 2,
+				/obj/item/device/makeshift_electrolyser = 1,
+				/obj/item/device/makeshift_centrifuge = 1,))
+
+/obj/random/handmade_tool/low_chance
+	name = "low chance random handmade tool"
+	icon_state = "box-green-low"
 	spawn_nothing_percentage = 60
