@@ -50,7 +50,7 @@
 
 	duties = "Represent the interests of church disciples on the colony. Protect them from persecution and speak for them.<br>\
 		Hold mass, give sermons, preach to the faithful, and lead group ritual sessions.<br>\
-		Recover and clone the faithful dead. Hold funerals for those who cannot be saved."
+		Hold funerals for those who cannot be saved."
 
 	setup_restricted = TRUE
 
