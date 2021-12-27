@@ -8,7 +8,7 @@
 	extended_desc = "A endlessly compressed file that when processed turns into valueable credit on the non-solfed market. The bigger the file, the more its worth."
 	size = 1
 	available_on_ntnet = TRUE
-	requires_ntnet = TRUE
+	requires_ntnet = FALSE //We are all that we need to run by areselfs, so you can set up in the jungel or well scaving
 	clone_able = FALSE
 	added_wealth = 50 //Tons!
 	var/message = ""
