@@ -23,6 +23,9 @@
 	var/pulping = FALSE //Whether or not the device is extracting genetics
 
 /obj/machinery/genetics/pulper/attackby(obj/item/I, mob/user)
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 35)) //So someone that has basic chems or level up can be an assent
+		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		return
 
 	if(default_deconstruction(I, user))
 		return
