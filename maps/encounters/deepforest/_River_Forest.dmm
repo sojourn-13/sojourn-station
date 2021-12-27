@@ -2337,8 +2337,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "DK" = (
-/obj/effect/step_trigger/riverforest_to_crash_1_B,
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/step_trigger/riverforest_to_crash_1_A,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/river_forest_light)
 "DL" = (
 /obj/structure/boulder,
