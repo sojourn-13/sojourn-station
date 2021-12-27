@@ -146,11 +146,12 @@
 		update_icon()
 	smoked = max(0, smoked - 1)
 	if(!smoked && bee_count)
-		bee_count = min(bee_count * 1.005 + foods, 100)
+		bee_count = min(foods + bee_count * 1.005, 100) //We start with are plant food amount so we dont times a negitive if we ever have harmful plants
 		update_icon()
+	foods = 0 //We reset are food after pollinating and dong are bee making, to prevent stacking
 
 /obj/machinery/beehive/proc/pollinate_flowers()
-	var/coef = (foods + bee_count) / 100
+	var/coef = bee_count / 100
 	var/trays = 0
 	for(var/obj/machinery/portable_atmospherics/hydroponics/H in view(7, src))
 		if(H.seed && !H.dead)
@@ -159,6 +160,7 @@
 			++trays
 			if(H.seed.seed_name in bee_food_list)
 				++foods
+	coef = (foods + bee_count) / 100 //Redo are math to get extra honecomb
 	honeycombs = min(honeycombs + 0.1 * coef * min(trays, 5), frames * 100)
 
 /obj/machinery/honey_extractor
