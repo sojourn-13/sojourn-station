@@ -40,8 +40,8 @@
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/roe
-	name = "\improper Roe Primary Kit containing a roe boltgun, a bolt gun with less penetration and damage than a mosin, but with far better recoil control and built in scope."
-	desc = "The standard Blackshield equipment kit."
+	name = "\improper Roe Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a roe boltgun, a bolt gun with less penetration and damage than a mosin, but with far better recoil control and built in scope."
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun/light_wood(src)
