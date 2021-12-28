@@ -217,6 +217,9 @@
 	var/waiting_for_user_input=0 // Fix for #274 (Mash create block injector without answering dialog to make unlimited injectors) - N3X
 
 /obj/machinery/computer/scan_consolenew/attackby(obj/item/I as obj, mob/user as mob)
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80)) //Outdated tech
+		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		return
 	if (istype(I, /obj/item/disk/data)) //INSERT SOME diskS
 		if (!src.disk)
 			user.drop_from_inventory(I)
@@ -287,6 +290,9 @@
 	ui_interact(user)
 
 /obj/machinery/computer/scan_consolenew/attack_hand(user as mob)
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80)) //Again outdated tech
+		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		return
 	if(!..())
 		ui_interact(user)
 
