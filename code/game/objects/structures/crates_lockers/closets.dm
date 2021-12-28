@@ -303,6 +303,13 @@
 	for(var/mob/living/M in src.loc)
 		if(M.buckled || M.pinned.len)
 			continue
+
+		//sometimes, players use closets, to stuff mobs into it
+		//and it's works pretty good, you just weld it and that's all
+		//but not when they are to big...
+		if(M.mob_size >= MOB_LARGE)
+			continue
+
 		if(stored_units + added_units + M.mob_size > storage_capacity)
 			break
 		if(M.client)
