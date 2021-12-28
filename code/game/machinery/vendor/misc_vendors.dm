@@ -794,7 +794,7 @@
 	return
 
 /obj/machinery/vending/gamers
-	name = "Game Stop"
+	name = "Game Emporium"
 	desc = "A one time stop for all your card or board game needs!"
 	icon_state = "nutrimat"
 	icon_vend = "nutrimat-vend"
@@ -802,7 +802,7 @@
 	product_slogans = list("All purchases are non-refundable!",
 	"Once payed for no returning!",
 	"Buying any product makes you liable for its conduction!")
-	product_ads = "STOP, buy a game! At Game Stop!"
+	product_ads = "Emporium of fun games!"
 	products = list(
 					/obj/item/board = 7,
 					/obj/item/storage/pill_bottle/chechker = 7,
@@ -834,7 +834,7 @@
 					/obj/item/card_carp = 1)
 
 /obj/machinery/vending/gamers/hunters
-	name = "Pre-Payed Game Stop"
+	name = "Pre-Payed Game Emporium"
 	desc = "A one time stop for all your card or board game needs! This one has been already payed for in full."
 	products = list(
 					/obj/item/board = 4,
