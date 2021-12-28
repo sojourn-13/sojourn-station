@@ -3830,6 +3830,10 @@
 /obj/item/stack/rods/random,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"WP" = (
+/obj/machinery/vending/gamers/hunters,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "XX" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
@@ -11525,7 +11529,7 @@ aD
 aP
 bQ
 bQ
-dH
+WP
 cA
 cF
 cP
