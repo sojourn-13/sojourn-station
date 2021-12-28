@@ -11,9 +11,6 @@
 
 	deactivate(var/mob/M, var/connected, var/flags)
 		..(M,connected,flags)
-		if(istype(M, /mob/living/carbon/human))
-			var/mob/living/carbon/human/H = M
-			H.humanize()
 
 /datum/dna/gene/basic/nobreath
 	name="No Breathing"
