@@ -5,7 +5,7 @@
 /mob/living/carbon/human/monkey
 	icon_state = "monkey"
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
-
+/*
 /mob/living/carbon/human/monkey/New(var/new_loc)
 	..(new_loc, "Monkey")
 	dna.SetSEValue(MONKEYBLOCK,0xFFF)
@@ -14,7 +14,7 @@
 	var/datum/dna/gene/G = new /datum/dna/gene/basic/monkey
 	active_genes |= G.type
 	update_icon = 1
-
+*/
 /mob/living/carbon/human/dummy/mannequin
 	is_mannequin = TRUE
 
