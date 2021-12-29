@@ -11,6 +11,8 @@
 	health = 50
 	density = FALSE
 	mob_size = MOB_SMALL
+	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_SCREAMING, MUTATION_TOURETTES, MUTATION_THICK_FUR)
+
 
 	var/is_angry = FALSE
 	var/play_dead_until = 0
