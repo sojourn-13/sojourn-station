@@ -95,6 +95,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	twohanded = TRUE
+	can_dual = FALSE
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)

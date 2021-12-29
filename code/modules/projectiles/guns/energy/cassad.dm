@@ -20,6 +20,8 @@
 		list(mode_name="armor penetrating", mode_desc="Harder hitting plasma bolts to reduce armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#00AAFF"),
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
+	twohanded = TRUE
+	can_dual = FALSE
 
 /obj/item/gun/energy/pulse/cassad/update_icon()
 	..()

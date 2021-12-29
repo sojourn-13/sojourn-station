@@ -19,6 +19,7 @@
 	recoil_buildup = 0.9 //pulse weapons have a bit more recoil
 	one_hand_penalty = 5
 	twohanded = TRUE
+	can_dual = FALSE
 	damage_multiplier = 0.9
 	init_firemodes = list(
 		list(mode_name="destroy", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
@@ -80,6 +81,7 @@
 	recoil_buildup = 1
 	one_hand_penalty = 0
 	twohanded = FALSE
+	can_dual = TRUE
 	gun_tags = list(GUN_ENERGY)
 
 	init_firemodes = list(
@@ -98,6 +100,9 @@
 	charge_cost = 100
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 20, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10)
 	damage_multiplier = 1
+	twohanded = FALSE
+	can_dual = TRUE
+	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
 
 	var/explode_chance // the % of chance the gun has to explode each time it is fired without coolant. It is random between each gun.
 	var/explode_chance_min = 5 // The mininum of explode_chance

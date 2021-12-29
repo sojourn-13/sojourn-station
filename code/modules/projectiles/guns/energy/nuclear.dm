@@ -13,6 +13,7 @@
 	price_tag = 2000
 	charge_cost = 50
 	can_dual = FALSE
+	twohanded = TRUE
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE) //Were all three and can have a scope if someone wants
 	init_firemodes = list(
 		STUNBOLT,
