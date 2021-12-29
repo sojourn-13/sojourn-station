@@ -458,6 +458,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 /obj/machinery/genetics/cloner/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 90))
 		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		src.visible_message(SPAN_WARNING("The console pityingly suggests: \"Sorry hun, you were pressing some wierd buttons so I locked you out~ Maybe have a Scientist help~?\""))
 		return
 
 	if(default_deconstruction(I, user))

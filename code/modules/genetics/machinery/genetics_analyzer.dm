@@ -79,6 +79,7 @@ cannot isolate or combine desired genes.
 /obj/machinery/genetics/gene_analyzer/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80))
 		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		src.visible_message(SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
 		return
 	if(default_deconstruction(I, user))
 		return

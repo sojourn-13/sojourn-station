@@ -25,6 +25,7 @@
 /obj/machinery/genetics/pulper/attackby(obj/item/I, mob/user)
 	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 35)) //So someone that has basic chems or level up can be an assent
 		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		src.visible_message(SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
 		return
 
 	if(default_deconstruction(I, user))
