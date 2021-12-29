@@ -6,6 +6,7 @@
 /datum/genetics/mutation_recipe/irradiation/roach/get_result()
 	var/list/random_roach = pick(
 		list("type" = /mob/living/carbon/superior_animal/roach, "name" = "Kampfer Roach"),
+		list("type" = /mob/living/carbon/superior_animal/roach/fat, "name" = "Obese Kampfer Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/tank, "name" = "Panzer Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/toxic, "name" = "Gestrahlte Roach"),
 		list("type" = /mob/living/carbon/superior_animal/roach/glowing, "name" = "Gluhend Roach"),
