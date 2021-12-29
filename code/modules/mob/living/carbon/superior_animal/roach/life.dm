@@ -27,7 +27,7 @@
 							eatTargets += S
 
 					if(snacker)
-						for(var/obj/item/reagent_containers/food/snacks/food in oview(src,5))
+						for(var/obj/item/reagent_containers/food/snacks/food in oview(src,3))
 							if(istype(food.loc, /turf))
 								eatTargets += food
 
