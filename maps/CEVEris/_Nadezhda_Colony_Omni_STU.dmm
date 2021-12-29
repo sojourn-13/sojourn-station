@@ -68273,6 +68273,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
+"pyt" = (
+/turf/unsimulated/mineral/transition,
+/area/nadezhda/outside/forest)
 "pyu" = (
 /obj/structure/flora/small/grassb5,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -189216,7 +189219,7 @@ tMV
 tMV
 tMV
 tMV
-tfX
+tMV
 tfX
 tfX
 tfX
@@ -189414,11 +189417,11 @@ dpg
 dpg
 oHS
 sOw
+pyt
+pyt
 tMV
 tMV
 tMV
-tMV
-tfX
 tfX
 tfX
 tfX
@@ -189617,7 +189620,7 @@ dpg
 dpg
 sku
 fEe
-tMV
+pyt
 tMV
 tMV
 tfX
@@ -189819,9 +189822,9 @@ dpg
 tir
 sku
 fxA
+pyt
 tMV
-tfX
-tfX
+tMV
 tfX
 tfX
 tfX
@@ -190022,7 +190025,7 @@ dpg
 sku
 tMV
 tMV
-tfX
+tMV
 tfX
 tfX
 tfX
