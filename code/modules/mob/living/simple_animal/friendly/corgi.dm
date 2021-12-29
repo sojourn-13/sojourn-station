@@ -24,6 +24,7 @@
 	var/obj/item/inventory_head
 	var/obj/item/inventory_back
 	colony_friend = TRUE
+	inherent_mutations = list(MUTATION_BOTTOMLESS_BELLY, MUTATION_IMBECILE, MUTATION_CLUMSY, MUTATION_THICK_FUR)
 
 /mob/living/simple_animal/corgi/New()
 	..()

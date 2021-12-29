@@ -135,6 +135,7 @@
 	var/attack_reagent = "toxin"
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_TOXIN_RESISTANCE, MUTATION_UNBALANCED, MUTATION_CLUMSY)
 
 /mob/living/simple_animal/hostile/snake/AttackingTarget()
 	. = ..()

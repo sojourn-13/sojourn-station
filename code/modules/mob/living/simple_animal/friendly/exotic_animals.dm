@@ -81,6 +81,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+	inherent_mutations = list(MUTATION_HONK, MUTATION_IMBECILE, MUTATION_DEAF, MUTATION_NEARSIGHTED)
 	faction = "pond"
 	colony_friend = TRUE
 

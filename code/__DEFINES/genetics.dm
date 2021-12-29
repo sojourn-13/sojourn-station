@@ -43,8 +43,14 @@
 #define MUTATION_NERVES /datum/genetics/mutation/sac_contents/nerves
 #define MUTATION_S_NERVES /datum/genetics/mutation/sac_contents/s_nerves
 #define MUTATION_HYPERION /datum/genetics/mutation/hyperion
-#define MUTATION_COLD_RESISTANCE /datum/genetics/mutation/cold_resistance
+#define MUTATION_THICK_FUR /datum/genetics/mutation/thick_fur
 #define MUTATION_BAROTRAUMA /datum/genetics/mutation/barotrauma
+#define MUTATION_HONK /datum/genetics/mutation/honk
+#define MUTATION_BOTTOMLESS_BELLY /datum/genetics/mutation/bottomless_belly
+#define MUTATION_TOXIN_RESISTANCE /datum/genetics/mutation/toxin_resistance
+#define MUTATION_ECHOLOCATION /datum/genetics/mutation/echolocation
+#define MUTATION_SCREAMING /datum/genetics/mutation/screaming
+#define MUTATION_CAT_EYES /datum/genetics/mutation/cat_eyes
 //^^^ All mutations!
 
 
@@ -52,6 +58,7 @@
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
 #define MUT_TYPE_SKIN 1 //An exclusive mutation type for skin.
 #define MUT_TYPE_FACTION 2
+#define MUT_TYPE_EYES 3 //An exclusive mutation type for eyes.
 
 //Types of Mutation recipes:
 #define MUT_TYPE_COMBINATION 1

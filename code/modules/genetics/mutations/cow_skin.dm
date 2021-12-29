@@ -5,11 +5,12 @@
 	desc = "Causes the skin to become a little more leathery- the uncured sort."
 	exclusive_type = MUT_TYPE_SKIN
 	gain_text = "Your skin feels a little thicker than usual. Wait, are those... Cow splotches?"
+	instability = 20
 
 /datum/genetics/mutation/cow_skin/onMobImplant()
 	..()
 	container.holder.brute_mod_perk -= 0.1
-	
+
 /datum/genetics/mutation/cow_skin/onMobRemove()
 	..()
 	container.holder.brute_mod_perk += 0.1
