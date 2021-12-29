@@ -57,6 +57,9 @@ ty ilu - bear
 
 //Outside abandoned structures
 
+/area/colony/exposedsun/crashed_shop
+	narrate = "The barest peaking of light comes through the cavern roof, bathing the worn and rusted hulk trapped in the rock in faint light. The distant sound of welders, shuffling feet, and the murmuring of vat grown void wolves can be heard, trying to eke out salvage in this pit of junk."
+
 /area/nadezhda/dungeon/outside/trashcave
 	narrate = "Roaches and critters have made this damp and long abandoned cave their nest. A glint of gold shimmers from within the piles of scrap and rock walls, awaiting the curious prospector to unearth its hidden treasures."
 

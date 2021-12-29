@@ -638,6 +638,11 @@ var/list/flooring_types
 	icon_base = "wooden_floor_s5"
 	build_type = /obj/item/stack/tile/wood/old/veridical
 
+/decl/flooring/wood/wood_old
+	icon = 'icons/turf/flooring/wood_old.dmi'
+	icon_base = "wood"
+	build_type = /obj/item/stack/tile/wood/wood_old
+
 /decl/flooring/reinforced
 	name = "reinforced floor"
 	desc = "Heavily reinforced with steel rods."

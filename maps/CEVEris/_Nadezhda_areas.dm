@@ -20,11 +20,19 @@
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 
 /area/colony/exposedsun/crashed_shop
+	name = "Scrap Haven"
 	ship_area = FALSE
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = TRUE
 
+/area/colony/exposedsun/crashed_shop/bottom_floor
+	dynamic_lighting = FALSE
+	icon_state = "erisgreen"
+
+/area/colony/exposedsun/crashed_shop/workshop
+	icon_state = "erisyellow"
 
 /area/nadezhda
 	ship_area = TRUE

@@ -84,6 +84,12 @@
 	icon_state = "wooden_floor_s5"
 	initial_flooring = /decl/flooring/wood/wild5
 
+/turf/simulated/floor/wood_old
+	name = "wooden floor"
+	icon = 'icons/turf/flooring/wood_old.dmi'
+	icon_state = "wood"
+	initial_flooring = /decl/flooring/wood/wood_old
+
 /*Tiled*/
 
 /turf/simulated/floor/tiled

@@ -1030,6 +1030,13 @@
 	. = ..() * rating
 */
 
+
+
+/obj/item/computer_hardware/hard_drive/get_item_cost(export)
+	. = ..()
+	for(var/datum/computer_file/wealth_of_file in stored_files)
+		. += (wealth_of_file.added_wealth * wealth_of_file.size)
+
 /obj/item/organ
 	price_tag = 50 //Mass printable here
 
@@ -1054,8 +1061,10 @@
 /mob/living/carbon/superior_animal/lodge/clucker
 	price_tag = 300 //Eggs to hatch make this easy to mass do
 
- //Imagine dragging a loge animals allllll the way to the colony
+ //Trilby- Imagine dragging a loge animals allllll the way to the colony
  //Hex- Imagine this becoming relevant with cloning
+ //Trilby- Imagine still having to clone the animals and get the work to even do it
+
 /mob/living/carbon/superior_animal/lodge/tatonka
 	price_tag = 800
 

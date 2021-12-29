@@ -14,6 +14,9 @@
 /obj/machinery/mineral/processing_unit_console/laber
 	name = "labor camp production machine console"
 
+/obj/machinery/mineral/processing_unit_console/scrap_haven
+	name = "scrap haven production machine console"
+
 /obj/machinery/mineral/processing_unit_console/New()
 	..()
 	spawn()
@@ -118,6 +121,9 @@
 
 /obj/machinery/mineral/processing_unit/laber
 	name = "labor material processor"
+
+/obj/machinery/mineral/processing_unit/scrap_heaven
+	name = "scrap haven material processor"
 
 /obj/machinery/mineral/processing_unit/New()
 	..()

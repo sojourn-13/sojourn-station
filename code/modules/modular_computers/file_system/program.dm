@@ -36,6 +36,8 @@
 	. = ..()
 
 /datum/computer_file/program/clone()
+	if(!clone_able && copy_cat)
+		return
 	var/datum/computer_file/program/temp = ..()
 	temp.required_access = required_access
 	temp.nanomodule_path = nanomodule_path
@@ -44,6 +46,7 @@
 	temp.requires_ntnet = requires_ntnet
 	temp.requires_ntnet_feature = requires_ntnet_feature
 	temp.usage_flags = usage_flags
+	temp.copy_cat = TRUE
 	return temp
 
 // Used by programs that manipulate files.

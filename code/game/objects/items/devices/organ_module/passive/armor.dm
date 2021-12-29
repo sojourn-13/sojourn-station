@@ -19,15 +19,8 @@
 	matter = list(MATERIAL_BIOMATTER = 30)
 	is_organic_module = TRUE
 
-/obj/item/organ_module/armor/onInstall(obj/item/organ/external/E)
-	E.brute_mod -= 0.3
-
-/obj/item/organ_module/armor/onRemove(obj/item/organ/external/E)
-	E.brute_mod += 0.3
-
 /obj/item/biogoop/armor
 	name = "incomplete exeskeleton implant"
-
 
 /obj/item/biogoop/armor/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/nanopaste))
