@@ -3,7 +3,7 @@
 	name = "Cat Eyes"
 	key = "MUTATION_CAT_EYES"
 	desc = "Alters the eyes to see better in the dark."
-	gain_text = "Your eyes narrow into a predators."
+	gain_text = "Your eyes narrow into that of a predator."
 	exclusive_type = MUT_TYPE_EYES
 	instability = 30
 	var old_sight
