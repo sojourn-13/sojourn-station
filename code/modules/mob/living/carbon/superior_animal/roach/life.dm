@@ -27,7 +27,7 @@
 							eatTargets += S
 
 					if(snacker)
-						for(var/obj/item/reagent_containers/food/snacks/food in oview(src,viewRange))
+						for(var/obj/item/reagent_containers/food/snacks/food in oview(src,5))
 							if(istype(food.loc, /turf))
 								eatTargets += food
 
@@ -142,7 +142,8 @@
 							egg = new /obj/item/roach_egg/gold(loc, src)
 						else
 							egg = new /obj/item/roach_egg(loc, src)
-						egg.unnatural_mutations = unnatural_mutations.Copy()
+						if(unnatural_mutations.mutation_pool.len > 0)
+							egg.unnatural_mutations = unnatural_mutations.Copy()
 					fed--
 					update_openspace()
 					busy = 0

@@ -430,7 +430,7 @@
 
 //Inject a mutagen into a living person.
 //MAKE SURE HOLDER IS SET FIRST.
-/datum/genetics/genetics_holder/proc/inject_mutations(var/mob/living/target)
+/datum/genetics/genetics_holder/proc/inject_mutations(var/mob/living/target, var/activate_all=FALSE)
 	#ifdef JANEDEBUG
 	log_debug("beginning implant: [target.name] ->[target.key], [target.ckey]")
 	#endif
@@ -443,6 +443,8 @@
 	for(var/datum/genetics/mutation/injected_mutation in mutation_pool)
 		var/datum/genetics/mutation/new_mutation = injected_mutation.copy()
 		new_mutation.implanted = FALSE //Sanity checking for activation loop.
+		if(activate_all)
+			new_mutation.active=TRUE
 		target.unnatural_mutations.addMutation(new_mutation)
 
 	//Process individual mutations, set them to implanted, and apply their effects to the target.

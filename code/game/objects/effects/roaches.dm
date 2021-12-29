@@ -75,8 +75,11 @@
 				O.implants -= src // Remove from implants and spawn the roachling on the ground
 				src.loc = O.owner ? O.owner.loc : O.loc
 
-			var/mob/living/baby = new spawn_type(src.loc, src)
-			baby.unnatural_mutations = unnatural_mutations.Copy()
+			if(unnatural_mutations.mutation_pool.len > 0)
+				var/mob/living/baby = new spawn_type(src.loc, src)
+				baby.unnatural_mutations = unnatural_mutations.Copy()
+			else
+				new spawn_type(src.loc, src)
 			qdel(src)
 		else
 			amount_grown += rand(0,2)

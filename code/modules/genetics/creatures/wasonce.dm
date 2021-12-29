@@ -17,9 +17,8 @@ Has ability of every roach.
 	//Other bastards stuck inside this thing
 
 	//Fucking Mega Chonker
-	maxHealth = 2000
-	health = 2000
-	contaminant_immunity = TRUE
+	maxHealth = 1800
+	health = 1800
 
 	//Psi_monster stuff.
 	chameleon_skill = 255 // Psionics not developed, can't turn invisible.
@@ -115,8 +114,8 @@ Has ability of every roach.
 			if (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened)
 				H.visible_message(SPAN_DANGER("\the [src] absorbs \the [L] into its mass!"))
 				H.loc = src
-				maxHealth += 500
-				health += 500
+				maxHealth += 250
+				health += 250
 				captives += H
 				return
 
@@ -152,7 +151,7 @@ Has ability of every roach.
 				to_chat(captive, SPAN_DANGER(pick("The immense strength of the creature is crushing. Wasn't... Flesh supposed to be weak?")))
 				captive.adjustBruteLossByPart(15, pick(captive.organs))
 			else
-				injector.inject_mutations(captive)
+				injector.inject_mutations(captive, TRUE)
 				to_chat(captive, SPAN_DANGER(pick(
 					"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
 					"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole.")))
