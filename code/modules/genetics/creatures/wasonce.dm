@@ -17,8 +17,8 @@ Has ability of every roach.
 	//Other bastards stuck inside this thing
 
 	//Fucking Mega Chonker
-	maxHealth = 2000
-	health = 2000
+	maxHealth = 1800
+	health = 1800
 
 	//Psi_monster stuff.
 	chameleon_skill = 255 // Psionics not developed, can't turn invisible.
