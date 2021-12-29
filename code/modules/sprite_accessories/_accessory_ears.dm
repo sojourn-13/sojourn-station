@@ -403,3 +403,24 @@
 	icon_state = "axolotl"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/liftedhorns
+	name = "Lifted Horns"
+	desc = ""
+	icon_state = "liftedhorns"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/newcurlyhorn
+	name = "Bulky Curly Horn"
+	desc = ""
+	icon_state = "newcurlyhorn"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/newdragonhorns
+	name = "Bulky Dragon Horn"
+	desc = ""
+	icon_state = "newdragonhorns"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
