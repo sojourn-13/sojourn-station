@@ -203,9 +203,9 @@
 
 /obj/item/card_carp/mole_man
 	name = "Mole Man"
-	desc = "A Mole, Health is 12, Damage is 0, Requires 2 blood. If a card unopposed attacks a player, move to block, Stops Flying attacks."
+	desc = "A Mole, Health is 6, Damage is 0, Requires 2 blood. If a card unopposed attacks a player, move to block, Stops Flying attacks."
 	icon_state = "card_moleman"
-	current_health = 12
+	current_health = 6
 
 /obj/item/card_carp/coyote
 	name = "Coyote"
@@ -221,7 +221,7 @@
 
 /obj/item/card_carp/magpie
 	name = "Magpie"
-	desc = "A Magpie, Health is 1, Damage is 1, Requires 1 blood. Flying."
+	desc = "A Magpie, Health is 1, Damage is 1, Requires 2 blood. Flying. Well on the board all players draw two cards, rather then one."
 	icon_state = "card_magpie"
 	current_health = 1
 
@@ -235,6 +235,7 @@
 	name = "Grizzly"
 	desc = "A Grizzly, Health is 6, Damage is 4, Requires 3 blood."
 	icon_state = "card_bear"
+	current_health = 6
 
 /obj/item/card_carp/great_white
 	name = "Great White Carp"
@@ -280,7 +281,7 @@
 
 /obj/item/card_carp/daus
 	name = "Daus"
-	desc = "A Daus, Health is 2, Damage is 2, Requires 2 blood. On death, draw an extra card."
+	desc = "A Daus, Health is 2, Damage is 2, Requires 2 blood. On death, the player that placed the card draws an extra card."
 	icon_state = "card_daus"
 	current_health = 2
 
@@ -298,13 +299,13 @@
 
 /obj/item/card_carp/pupa
 	name = "Pupa"
-	desc = "A Pupa, Health is 3, Damage is 1, Requires 3 body. Gives 1 blood per larva in hand."
+	desc = "A Pupa, Health is 3, Damage is 1, Requires 3 body. Gives 1 blood per larva on board."
 	icon_state = "card_pupa"
 	current_health = 3
 
 /obj/item/card_carp/mothman
 	name = "Mothman"
-	desc = "A Mothman, Health is 1 + 1 Per larva In hand, Damage is 1 + 1 per Pupa in hand, No Requirement. Gives 1 blood per corps."
+	desc = "A Mothman, Health is 1 + 1 Per larva In hand, Damage is 1 + 1 per Pupa on board, No Requirement. Gives 1 blood per corps."
 	icon_state = "card_mothman"
 	current_health = 1
 
@@ -393,17 +394,17 @@
 				/obj/item/card_carp/river_otter = 13,
 				/obj/item/card_carp/grizzly = 14,
 				/obj/item/card_carp/great_white = 2,
-				/obj/item/card_carp/kingfisher = 2,
+				/obj/item/card_carp/kingfisher = 4,
 				/obj/item/card_carp/sparrow = 12,
 				/obj/item/card_carp/turkey_vulture = 12,
-				/obj/item/card_carp/warren = 15,
+				/obj/item/card_carp/warren = 12,
 				/obj/item/card_carp/rabbit = 10,
 				/obj/item/card_carp/bat = 14,
 				/obj/item/card_carp/daus = 4,
-				/obj/item/card_carp/geck = 12,
+				/obj/item/card_carp/geck = 9,
 				/obj/item/card_carp/larva = 16,
-				/obj/item/card_carp/pupa = 12,
-				/obj/item/card_carp/mothman = 3,
+				/obj/item/card_carp/pupa = 10,
+				/obj/item/card_carp/mothman = 6,
 				/obj/item/card_carp/beaver = 5,
 				/obj/item/card_carp/wyrm = 2,
 				/obj/item/card_carp/cockroach = 7,
