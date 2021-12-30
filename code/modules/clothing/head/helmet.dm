@@ -497,7 +497,7 @@
 
 /obj/item/clothing/head/armor/helmet/penance
 	name = "penance helmet"
-	desc = "A primitive helmet with a chainmailed coif. These were quickly made for trench conditions as logistical supply lines ran low on proper ballistic helmets, issued to consripts, thiefs, and cowards alike. Even after they were replaced, thousands of these shitty iron caps can be found as macabre military surplus. For some reason, you've decided to wear this ghastly thing."
+	desc = "An old iron-wrought helmet upon a chainmail coif. These were resurrected from the time of castle retinues to serve again upon the heads of terrified conscripts and penal soldiers in the battle of Krios when the surplus of kevlar dwindled to a luxury; now only a distant piece of trash on a disconnected world. Among Kriosians, wearing this is a sign of penance and military ritual. Among Men, it is poverty and desperation interchanged."
 	icon_state = "helmet_kriosanpenace"
 	flags_inv = BLOCKHAIR
 	armor = list(

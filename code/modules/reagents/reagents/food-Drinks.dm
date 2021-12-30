@@ -2617,7 +2617,7 @@
 	glass_center_of_mass = list("x"=16, "y"=12)
 
 /datum/reagent/ethanol/schnapps // Inside the hacked vendor, only exist since Lonestar sells to Kriosan Space and this is a highly requested drink there
-	name = "raspberry schnapps"
+	name = "Jaeger Schnapps"
 	id = "schnapps"
 	description = "A crystal clear glass that stings your senses with sub-par berries and acrid spirits. Finally, some real schnapps."
 	taste_description = "numbness, summer spirits, and washed-out raspberry"
