@@ -11,7 +11,7 @@
 	suitable_cell = /obj/item/cell/medium
 	cell_type = /obj/item/cell/medium/moebius
 	slot_flags = SLOT_BELT|SLOT_BACK
-	twohanded = FALSE // It is a shotgun, but beams don't have recoil
+	twohanded = TRUE
 	w_class = ITEM_SIZE_BULKY // It's a shotgun
 	can_dual = FALSE
 	projectile_type = /obj/item/projectile/beam/tesla/shotgun

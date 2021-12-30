@@ -456,6 +456,8 @@
 					/obj/item/storage/box/bs_kit/stallion = "Stallion",
 					/obj/item/storage/box/bs_kit/lamia = "Lamia",
 					/obj/item/storage/box/bs_kit/colt = "Colt",
+					/obj/item/storage/box/bs_kit/rex10 = "Cowboy",
+					/obj/item/storage/box/bs_kit/pilgrim = "Pilgrim",
 					/obj/item/storage/box/bs_kit/sawn_shotgun = "Sawn-Off Shotgun",
 					/obj/item/storage/box/bs_kit/martin = "Martin"
 					)

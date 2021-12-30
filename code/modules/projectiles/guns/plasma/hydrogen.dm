@@ -21,7 +21,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 5, TECH_PLASMA = 8)
 	w_class = ITEM_SIZE_BULKY
 	recoil_buildup = 1
-	twohanded = TRUE
+	twohanded = FALSE
+	can_dual = TRUE
 	max_upgrades = 3
 	fire_delay = 10
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
