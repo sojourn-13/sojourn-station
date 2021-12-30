@@ -251,7 +251,7 @@
 
 /obj/item/clothing/accessory/ccape/soldier
 	name = "soldier-lord trench cape"
-	desc = "A cloak for a warrior from the land of the midnight sun, those who call themselves 'Nobles of the Sword', the Reichsritter of the castellans, who don't lead as generals, but as soldiers, ready to fight shoulder-to-shoulder for Kaiser and Homeland. Most died in the Battle of Krios, Sol Federation troopers were trained to put down the giant, gene-modded castellan knights who lead the vorhut soldiery. The few 'Nobles of the Sword' that survived mostly do-so as disgraced nobles, mercenaries, and duelist, one day knowing their martial bloodlines will die."
+	desc = "A faded grey cape for the nobles-of-the-sword from the land of the Midnight Sun - Reichsritters who forsook high officership billets instead to lead infantry. They are a fading footnote of Kriosian aristocracy, brought to extinction numbers during the Battle of Krios by their leadership methods and the irrelevance of height and physique against the application of 6.5mm Creedmoor to the head by Solfed Scout-Snipers. Without anyone young or willing enough to sire enough to replace the dead, the cape has become the signature of exiled Castellans and the formal apparel of a few notable mercenary-men and duelists, and shall mean nothing in the next few generations."
 	icon_state = "krieg_cape"
 
 /obj/item/clothing/accessory/cape
@@ -267,7 +267,7 @@
 
 /obj/item/clothing/accessory/ccape/bleublood
 	name = "admirals dress cape"
-	desc = "A cloak lined with gold, and dyed in a noble blue. A proper cape of admirality, for many houses rely on the navy to exist, producing master navigator-captains who lead the otherwise meager Kriosan fleet to greatness. Ad Astra Per Aspera."
+	desc = "A blue-gold-cape flecked upon with the smell of expensive cologne and spilt wine - signatures of maritime nobility donned upon what is a cape of Kriosian naval colors.  The naval houses pride (and live upon) their contributions in academy-trained officers, and to see someone else in their colors is an active to passive insult varying on the distance from Kriosian space and proximity to common men."
 	icon_state = "bleu_cape"
 
 /obj/item/clothing/accessory/cape/outsider
