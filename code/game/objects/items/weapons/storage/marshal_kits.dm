@@ -72,7 +72,7 @@
 	has a much lower magazine capacity, making it a favorite for those with excellent aim."
 
 	populate_contents()
-		new /obj/item/gun/projectile/ladon/hs(src)
+		new /obj/item/gun/projectile/ladon(src)
 		new /obj/item/ammo_magazine/magnum_40/rubber(src)
 		new /obj/item/ammo_magazine/magnum_40/rubber(src)
 		new /obj/item/ammo_magazine/magnum_40/rubber(src)
