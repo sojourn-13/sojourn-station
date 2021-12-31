@@ -394,6 +394,7 @@
 //called after successfully firing
 /obj/item/gun/proc/handle_post_fire(mob/living/user, atom/target, var/pointblank=0, var/reflex=0)
 	SEND_SIGNAL(src, COMSIG_GUN_POST_FIRE, target, pointblank, reflex)
+	//The sound we play
 	if(silenced)
 		//Silenced shots have a lower range and volume
 		playsound(user, fire_sound_silenced, 15, 1, -3)
@@ -416,10 +417,9 @@
 		if(muzzle_flash)
 			set_light(muzzle_flash)
 
+	//Now we tell are user that one handing is a bad idea, even if its cooler
 	if(one_hand_penalty)
-		if(!wielded)
-			if(user.stats.getPerk(PERK_PERFECT_SHOT))
-				return
+		if(!wielded && !user.stats.getPerk(PERK_PERFECT_SHOT)
 			switch(one_hand_penalty)
 				if(1)
 					if(prob(50)) //don't need to tell them every single time
