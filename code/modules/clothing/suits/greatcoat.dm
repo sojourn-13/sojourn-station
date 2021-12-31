@@ -123,6 +123,26 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/greatcoat/absolutecoat
+	name = "absolutist coat"
+	desc = "A comfortable, decorated coat for the Absolutist faith and its supporters. Not as armored but just as ostentatious"
+	icon_state = "absolutecoat"
+	item_state = "absolutecoat"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 10,
+		bomb = 10,
+		bio = 100,
+		rad = 100
+	)
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
 /obj/item/clothing/suit/greatcoat/general
 	name = "grey greatcoat"
 	desc = "A grey greatcoat. It's thick and insulated with furs, it makes you feel snug and warm."
@@ -191,9 +211,9 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee = 10,
+		bullet = 10,
+		energy = 0,
 		bomb = 10,
 		bio = 0,
 		rad = 0
