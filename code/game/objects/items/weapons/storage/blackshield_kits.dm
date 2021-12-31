@@ -150,7 +150,7 @@
 	upgrade it into the pilgrim claw to enhance its melee damage."
 
 	populate_contents()
-		new /obj/item/gun/projectile/revolver/mistral(src)
+		new /obj/item/gun/projectile/revolver/lemant(src)
 		new /obj/item/ammo_magazine/ammobox/magnum_40/biomatter(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
