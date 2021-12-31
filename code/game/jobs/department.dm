@@ -12,11 +12,8 @@
 	var/account_initial_balance = 3500	//How much money this account starts off with
 	var/list/jobs_in_department = list()
 
-	//Must be one of the FUNDING_XXX defines in __defines/economy.dm
-	var/funding_type = FUNDING_INTERNAL
-
 	// With external, this is the name of an organisation
-	var/funding_source = DEPARTMENT_COMMAND
+	var/funding_source
 
 	// Budget for misc department expenses, paid regardless of it being manned or not
 	var/budget_base = 500
@@ -27,6 +24,12 @@
 
 	// How much account failed to pay to employees. Used for emails
 	var/total_debt = 0
+
+/datum/department/proc/get_total_budget()
+	if(funding_source)
+		return budget_base + budget_personnel
+	else
+		return FALSE
 
 /*************
 	Command
@@ -43,7 +46,6 @@
 	to a much lower starting value
 	*/
 	account_initial_balance = 50000
-	funding_type = FUNDING_EXTERNAL
 
 
 /*************
@@ -53,13 +55,12 @@
 /datum/department/ironhammer
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
-	funding_type = FUNDING_EXTERNAL
 	account_initial_balance = 25000 //25k do to being state funded
+	funding_source = DEPARTMENT_COMMAND
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	funding_type = FUNDING_EXTERNAL
 	account_initial_balance = 17500 //15k do to being state funded
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
 
@@ -68,7 +69,6 @@
 	name = "Nadezhda Contractors"
 	id = DEPARTMENT_CIVILIAN
 	account_initial_balance = 0
-	funding_type = FUNDING_EXTERNAL
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
 
 
@@ -80,21 +80,18 @@
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
 	account_initial_balance = 15000 //For buying medical and items and payments
-	funding_type = FUNDING_EXTERNAL
 	funding_source = "Soteria Institution."
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
 	account_initial_balance = 10000 //For buying materials and components and things of scientific value as well as pay the demanding staff
-	funding_type = FUNDING_EXTERNAL
 	funding_source = "Soteria Institution."
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
 	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
-	funding_type = FUNDING_EXTERNAL
 	funding_source = "Church of Absolute"
 
 
@@ -114,15 +111,13 @@
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
 	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
-	funding_type = FUNDING_EXTERNAL //So we want to trade and make money not magiclly get it every hour
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
 	account_initial_balance = 10000 //Has a lot of workers and people
-	funding_type = FUNDING_NONE // Salaries won't be supported by an external source to encourage prospectors to loot and sell
 
 /datum/department/independent
 	name = "Independent Allied Factions"
 	id = DEPARTMENT_INDEPENDENT
-	funding_type = FUNDING_NONE
+
