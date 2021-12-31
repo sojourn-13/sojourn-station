@@ -618,7 +618,7 @@
 		energy = 5,
 		bomb = 0,
 		bio = 100,
-		rad = 0
+		rad = 0)
 	min_cold_protection_temperature = T0C - 20
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 

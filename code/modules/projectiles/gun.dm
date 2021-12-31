@@ -419,7 +419,7 @@
 
 	//Now we tell are user that one handing is a bad idea, even if its cooler
 	if(one_hand_penalty)
-		if(!wielded && !user.stats.getPerk(PERK_PERFECT_SHOT)
+		if(!wielded && !user.stats.getPerk(PERK_PERFECT_SHOT))
 			switch(one_hand_penalty)
 				if(1)
 					if(prob(50)) //don't need to tell them every single time
