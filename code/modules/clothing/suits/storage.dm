@@ -607,6 +607,21 @@
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 
+/obj/item/clothing/suit/storage/toggle/absolutehoodie
+	name = "absolutist hoodie"
+	desc = "A cotton black hoodie that's just a size too big. Very comfy."
+	icon_state = "absolutehoodie"
+	item_state = "absolutehoodie"
+	armor = list(
+		melee = 5,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 100,
+		rad = 0
+	min_cold_protection_temperature = T0C - 20
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
 /*Peacoat*/
 
 obj/item/clothing/suit/storage/toggle/peacoat

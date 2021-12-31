@@ -206,3 +206,12 @@
 	item_state = "explorator"
 	armor = list(melee = 30, bullet = 20, energy = 15, bomb = 10, bio = 15, rad = 5)
 	hoodtype = /obj/item/clothing/head/hood/techpriest
+
+/obj/item/clothing/suit/hooded/absolutecloak
+	name = "absolutist cloak"
+	icon_state = "absolutecloak"
+	desc = "A simple charcoal cloak with gold livery for showing off your Absolute devotion. Comes with a large hood."
+	w_class = ITEM_SIZE_SMALL
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	flags_inv = HIDESUITSTORAGE
+	hoodtype = /obj/item/clothing/head/hood/absolutecloakhood

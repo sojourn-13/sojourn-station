@@ -76,3 +76,9 @@
 	desc = "For larping as the other techno cult."
 	icon_state = "techpriest"
 	item_state = "techpriest"
+
+/obj/item/clothing/head/hood/absolutecloakhood
+	name = "absolute cloak hood"
+	desc = "Protect yourself from the elements or conceal your identity, in the name of the Absolute."
+	icon_state = "absolutecloakhood"
+	item_state = "absolutecloakhood"
