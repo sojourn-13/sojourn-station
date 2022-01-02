@@ -115,6 +115,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "abk" = (
@@ -847,6 +850,7 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "ajf" = (
@@ -1910,6 +1914,12 @@
 /obj/random/junkfood/onlypizza,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"axf" = (
+/obj/machinery/camera/network/cev_eris{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/cyancorner,
+/area/nadezhda/crew_quarters/sleep/cryo2)
 "axl" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -5942,6 +5952,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "buP" = (
@@ -21614,6 +21627,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "eYc" = (
@@ -24241,6 +24257,7 @@
 /obj/machinery/alarm{
 	pixel_y = 26
 	},
+/obj/item/clipboard,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "fCe" = (
@@ -29452,6 +29469,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "gIE" = (
@@ -30974,9 +30995,6 @@
 /obj/machinery/door/firedoor/multi_tile,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
 /obj/machinery/door/airlock/multi_tile/glass{
 	name = "Marshals Brig";
 	req_one_access = list()
@@ -41866,9 +41884,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "jBZ" = (
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/tiled/white/cargo,
-/area/nadezhda/security/sechall)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/bag/trash,
+/obj/structure/closet/crate/secure/bin,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security{
+	name = "Security Training"
+	})
 "jCj" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/overlay/water,
@@ -43985,6 +44007,9 @@
 /obj/item/hand_labeler,
 /obj/item/storage/box/bodybags,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/item/clipboard,
+/obj/item/device/camera,
+/obj/item/device/camera_film,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/security/detectives_office)
 "kaN" = (
@@ -44555,6 +44580,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "khH" = (
@@ -46739,6 +46767,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "kFN" = (
@@ -47803,6 +47834,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "kRM" = (
@@ -49740,6 +49774,10 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "lmJ" = (
@@ -54400,6 +54438,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "moH" = (
@@ -58258,12 +58299,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/arrows/white,
+/obj/structure/disposalpipe/junction{
+	dir = 2;
+	icon_state = "pipe-y"
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "ngd" = (
@@ -64011,6 +64052,20 @@
 	icon_state = "10,15"
 	},
 /area/nadezhda/hallway/side/f2section2)
+"oxi" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/sechall)
 "oxk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -64700,6 +64755,9 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/arrows/white,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "oEc" = (
@@ -77973,22 +78031,7 @@
 	name = "Dormitory 2"
 	})
 "rBK" = (
-/obj/structure/closet,
-/obj/item/clothing/under/rank/commander/formal,
-/obj/item/clothing/head/rank/instructor_hat,
-/obj/item/clothing/under/instructor,
-/obj/item/clothing/head/rank/milcom,
-/obj/item/clothing/head/rank/milcom/beret,
-/obj/item/storage/pouch/large_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/ammo,
-/obj/item/storage/pouch/baton_holster,
-/obj/item/clothing/accessory/holster/hip,
-/obj/item/clothing/accessory/dogtags,
-/obj/item/clothing/accessory/badge/smc,
-/obj/item/clothing/accessory/holster/saber/cutlass,
-/obj/item/tool/sword/saber/cutlass,
-/obj/item/clothing/gloves/thick/combat,
+/obj/structure/closet/secure_closet/reinforced/commander,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/smc/quarters)
 "rBL" = (
@@ -79885,6 +79928,9 @@
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
@@ -84443,10 +84489,6 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
-"tbG" = (
-/obj/structure/closet/secure_closet/reinforced/commander,
-/turf/simulated/floor/wood,
-/area/nadezhda/command/smc/quarters)
 "tbJ" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = -32
@@ -88521,6 +88563,7 @@
 "tZD" = (
 /obj/structure/table/standard,
 /obj/item/folder/blue,
+/obj/item/folder/blue,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "tZE" = (
@@ -92029,6 +92072,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "uLY" = (
@@ -95804,6 +95850,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "vzJ" = (
@@ -96645,6 +96694,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "vJG" = (
@@ -98832,6 +98884,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/arrows/white,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "wiv" = (
@@ -114415,7 +114470,7 @@ nYD
 gEI
 xtY
 mGF
-rNn
+axf
 gzB
 rdK
 cVz
@@ -120445,7 +120500,7 @@ vTT
 izo
 sLa
 elA
-elA
+jBZ
 rzv
 vJt
 ubM
@@ -120856,7 +120911,7 @@ opS
 opS
 wtP
 gIC
-opS
+oxi
 kRI
 moG
 buM
@@ -121057,7 +121112,7 @@ eFd
 qoY
 fsl
 fHA
-jBZ
+oLf
 krD
 krD
 krD
@@ -162027,7 +162082,7 @@ ajL
 ajL
 ajL
 ajL
-tbG
+svM
 hso
 aBX
 cUV

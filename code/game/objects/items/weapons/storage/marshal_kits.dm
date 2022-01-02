@@ -110,7 +110,7 @@
 	desc = "An standard Marshal armor kit containing a full ablative marshal branded suit for countering laser weaponry."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/laserproof/ironhammer(src)
+		new /obj/item/clothing/suit/armor/vest/ablative(src)
 		new /obj/item/clothing/head/helmet/laserproof(src)
 		new /obj/item/clothing/gloves/thick/ablasive(src)
 		new /obj/item/clothing/shoes/ablasive(src)
@@ -121,4 +121,4 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/heavy/riot/ironhammer(src)
-		new /obj/item/clothing/head/helmet/riot_hud(src)
+		new /obj/item/clothing/head/helmet/faceshield/riot(src)
