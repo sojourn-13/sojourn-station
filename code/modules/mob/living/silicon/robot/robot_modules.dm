@@ -9,11 +9,11 @@ var/global/list/robot_modules = list(
 	"Engineering"					= /obj/item/robot_module/engineering/general,
 //	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condenced into contruction - todo, admin only
 	"Custodial" 					= /obj/item/robot_module/custodial,
-	"Soteria Medihound"				= /obj/item/robot_module/robot/medihound,
-	"Security K9 Unit"				= /obj/item/robot_module/robot/knine,
-	"Custodial Hound"				= /obj/item/robot_module/robot/scrubpup,
-	"Soteria Scihound"				= /obj/item/robot_module/robot/science,
-	"Guild Engihound"				= /obj/item/robot_module/robot/engiedog,
+	"Soteria Medical Module"				= /obj/item/robot_module/robot/medihound,
+	"Security K-Class Module"				= /obj/item/robot_module/robot/knine,
+	"Custodial Creature"				= /obj/item/robot_module/robot/scrubpup,
+	"Soteria Science Module"				= /obj/item/robot_module/robot/science,
+	"Guild Engineering Module"				= /obj/item/robot_module/robot/engiedog,
 	//"Combat" 					= /obj/item/robot_module/combat,
 	)
 
@@ -138,6 +138,10 @@ var/global/list/robot_modules = list(
 
 	R.handle_regular_hud_updates()
 	R.emagged_items_given = TRUE
+	R.stats.removeAllPerks() //Dont stack perks fix 1
+	R.stats.perks =  list() //READ BELOW COMMENT
+	R.stats.perk_stats =  list() //EMERGENCY BACKUP INCASE THE NEW FIX BREAKS DUE TO BUS - GENERALLY DO NOT DO THIS PLEASE.
+
 
 	R.pixel_x = initial(pixel_x)
 	R.pixel_y = initial(pixel_y)

@@ -138,7 +138,7 @@
 		perk_stats -= P.statclick
 
 /datum/stat_holder/proc/removeAllPerks()
-	for(var/datum/perk/P in perk_stats)
+	for(var/datum/perk/P in (perk_stats || perks))
 		removePerk(P)
 
 
