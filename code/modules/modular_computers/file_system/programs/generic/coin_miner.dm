@@ -17,6 +17,11 @@
 	var/target_progress = 100
 	usage_flags = PROGRAM_ALL
 
+/datum/computer_file/program/coin_miner/disk
+	available_on_ntnet = FALSE
+	clone_able = FALSE
+	copy_cat = TRUE //Were unable to be imported or exported hardware wise, as were already pre-downloaded somehow onto a disk.
+
 /datum/nano_module/program/coin_miner
 	name = "Key-Authenticated Zipped K-oin"
 
