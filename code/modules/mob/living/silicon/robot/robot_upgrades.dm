@@ -242,10 +242,7 @@
 		for(var/obj/item/reagent_containers/borghypo/H in R.module.contents)
 			if(H.accepts_reagent_upgrades)
 				H.reagent_ids += additional_reagents
-				for(var/T in H.reagent_ids)
-					var/datum/reagent/RN = GLOB.chemical_reagents_list[T]
-					H.reagent_names += RN.name
-
+			H.Reindex()
 			return TRUE
 
 
