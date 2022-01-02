@@ -56,12 +56,12 @@
 /obj/item/tool/sword/cleaver/cult
 	name = "moon cleaver"
 	desc = "A black bladed mockery of the lodge's tools for hunting tengolos and their twisted evolution. This weapon, forged from a psion, hunts what few consider anything but archetypes \
-	of primal fears. Fit for the culling of spiders."
+	of primal fears. Unlike the hunters this is made for cutting down human scum." //the hunt in the night
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "psi_cleaver"
 	item_state = "psi_cleaver"
-	tool_qualities = list(QUALITY_SAWING = 3, QUALITY_CLAMPING = 6, QUALITY_CAUTERIZING = 8, QUALITY_RETRACTING = 2, QUALITY_BONE_SETTING = 12)
-	effective_faction = list("spider") // Which faction the cleaver is effective against.
+	tool_qualities = list(QUALITY_SAWING = 3, QUALITY_SHOVELING = 8, QUALITY_DIGGING = 13, QUALITY_HAMMERING = 21)
+	effective_faction = list("pirate", "excelsior") // Which factions the cleaver is effective against.
 	origin_tech = list()
 	matter = list()
 
