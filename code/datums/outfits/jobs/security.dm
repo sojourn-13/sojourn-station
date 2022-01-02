@@ -35,7 +35,7 @@
 	glasses = /obj/item/clothing/glasses/ballistic
 	belt = /obj/item/gun/projectile/lamia
 	id_type = /obj/item/card/id/hos
-	head = /obj/item/clothing/head/rank/milcom/beret
+	head = /obj/item/clothing/head/rank/milcom
 	pda_type = /obj/item/modular_computer/pda/heads/hos
 	backpack_contents = list(/obj/item/handcuffs = 1,/obj/item/ammo_magazine/kurtz_50 = 2,/obj/item/device/lighting/toggleable/flashlight/seclite = 1, /obj/item/cell/small/high = 2, /obj/item/gun/energy/gun/martin = 1, /obj/item/tool/knife/boot/blackshield = 1)
 

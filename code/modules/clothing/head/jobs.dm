@@ -168,15 +168,34 @@
 	desc = "A faded black beret with the badge of a Blackshield Sergeant."
 	icon_state = "beret_militia"
 
-/obj/item/clothing/head/rank/milcom/beret
-	name = "blackshield commander's beret"
-	desc = "A faded black beret with its old SolFed badge replaced with that of the Blackshield Commander."
-	icon_state = "beret_militia"
-
 /obj/item/clothing/head/rank/milcom
 	name = "blackshield commander's cap"
 	desc = "A crisp peaked cap signifying the distinguished martial position of the Commander of the Blackshield."
 	icon_state = "commander_cap"
+
+/obj/item/clothing/head/rank/milcom/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["BC Beret"] = "beret_militia"
+	options["BC Cap"] = "commander_cap"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/instructor_hat
 	name = "campaign cover"
