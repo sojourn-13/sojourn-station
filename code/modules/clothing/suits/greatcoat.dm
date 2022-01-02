@@ -89,18 +89,30 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/ihc/bmc_cloaked
-	name = "blackshield commander's cloaked greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style, this time wrapped in a fancy cloak."
-	icon_state = "mc_coat_cloak"
-	item_state = "mc_coat_cloak"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
+/obj/item/clothing/suit/greatcoat/ihc/bmc/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["BC Cloaked Greatcoat"] = "mc_coat_cloak"
+	options["BC Greatcoat"] = "mc_coat"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 //Credit to Drawsstuff for the coat mob icon only. The coat item icon, hat mob icon, and hat item icon were created by Kazkin via recoloring ERIS sprites.
 /obj/item/clothing/suit/greatcoat/divisor

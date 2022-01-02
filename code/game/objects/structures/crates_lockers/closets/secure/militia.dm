@@ -16,17 +16,13 @@
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/tool/disciplinary_action(src)
 	new /obj/item/clothing/accessory/holster/saber/militiacommander(src)
-	new /obj/item/clothing/accessory/holster/leg(src)
 	new /obj/item/clothing/head/helmet/ballistic/militia(src)
-	new /obj/item/clothing/head/rank/milcom/beret(src)
 	new /obj/item/clothing/head/rank/milcom(src)
 	new /obj/item/clothing/mask/gas(src)
-	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/suit/armor/flackvest/commander(src)
 	new /obj/item/clothing/suit/armor/commander/militia(src)
 	new /obj/item/clothing/suit/greatcoat/ihc/bmc(src)
-	new /obj/item/clothing/suit/greatcoat/ihc/bmc_cloaked(src)
 	new /obj/item/clothing/under/rank/commander(src)
 	new /obj/item/storage/belt/webbing/black(src)
 	new /obj/item/storage/belt/security(src)
@@ -40,6 +36,15 @@
 	new /obj/item/storage/box/commanderuniform(src)
 	new /obj/item/roach_summon/panzer(src)
 	new /obj/item/storage/hcases/ammo/serb(src)
+	new /obj/item/clothing/under/rank/commander/formal(src)
+	new /obj/item/clothing/head/rank/instructor_hat(src)
+	new /obj/item/clothing/under/instructor(src)
+	new /obj/item/storage/pouch/large_generic(src)
+	new /obj/item/storage/pouch/medium_generic(src)
+	new /obj/item/clothing/accessory/holster/hip(src)
+	new /obj/item/clothing/accessory/dogtags(src)
+	new /obj/item/clothing/accessory/badge/smc(src)
+	new /obj/item/clothing/gloves/thick/combat(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 
@@ -119,7 +124,7 @@
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
-	req_access = list(access_medspec)
+	req_access = list(access_hos)
 	access_occupy = list(access_brig) //So we can claim
 	icon_state = "corpsman"
 
