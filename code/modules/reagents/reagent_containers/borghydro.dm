@@ -18,8 +18,7 @@
 	var/list/reagent_names = list()
 
 /obj/item/reagent_containers/borghypo/medical
-	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin", "inaprovaline", "tramadol", \
-						"spaceacillin", "stoxin")
+	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin", "inaprovaline", "tramadol", "spaceacillin", "stoxin")
 	accepts_reagent_upgrades = TRUE
 
 /obj/item/reagent_containers/borghypo/rescue
