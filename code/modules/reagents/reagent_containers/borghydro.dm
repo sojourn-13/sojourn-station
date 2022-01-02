@@ -33,9 +33,6 @@
 		var/datum/reagent/R = GLOB.chemical_reagents_list[T]
 		reagent_names += R.name
 
-return
-
-
 /obj/item/reagent_containers/borghypo/New()
 	..()
 
