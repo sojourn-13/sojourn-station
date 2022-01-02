@@ -42,9 +42,14 @@
 	passivePerk = FALSE
 	var/chem_id = "nanites"
 	var/chem_amount = 15
+	var/anti_cheat = FALSE //Used to prevent multy stacking clicking
 
 /datum/perk/nanite_chem/activate()
 	..()
+	if(anti_cheat)
+		to_chat(holder, "Something feels cold.")
+		return
+	anti_cheat = TRUE
 	to_chat(holder, "You feel a sudden rush as the pre-programed nanites enter your bloodstream.")
 	holder.reagents.add_reagent(chem_id, chem_amount)
 	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
@@ -85,11 +90,17 @@
 	active = FALSE
 	passivePerk = FALSE
 	var/cooldown = 60 MINUTES
+	var/anti_cheat = FALSE //No more spaming...
 
 /datum/perk/nanite_ammo/activate()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your nanites didn't ready an ammo box yet."))
 		return FALSE
+
+	if(anti_cheat)
+		to_chat(holder, "Something feels cold.")
+		return
+	anti_cheat = TRUE
 
 	var/list/ammo_boxes = typesof(/obj/item/ammo_magazine/ammobox)
 	//We cant print everything under the sun sadly, so we limet are options a small bit! No SI laser ammo, explosives, some higher end boxes/ammo, and church biomatter boxes
@@ -114,4 +125,5 @@
 	var/obj/item/choice = input(usr, "Which type of ammo do you want?", "Ammo Choice", null) as null|anything in ammo_boxes
 	usr.put_in_hands(new choice(usr.loc))
 	cooldown_time = world.time + cooldown
+	anti_cheat = FALSE
 	return ..()
