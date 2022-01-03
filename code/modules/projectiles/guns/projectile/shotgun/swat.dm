@@ -42,7 +42,7 @@
 	var/itemstring = ""
 
 	if(folded)
-		iconstring += "_stock"
+		iconstring += "-stock"
 
 	if(wielded)
 		itemstring += "_doble"
