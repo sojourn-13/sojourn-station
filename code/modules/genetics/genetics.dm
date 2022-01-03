@@ -489,7 +489,7 @@
 /datum/genetics/genetics_holder/proc/check_destabilize()
 	//check if the holder is a valid mob. Sometimes it's not set, so we use this instead.
 	if(!holder_is_living())
-		return
+		return "not living"
 
 	if(processing_destabilization)
 		//Stop processing if we fall below the base value, or if the holder is already dead- Since we won't be needing it anymore
@@ -497,15 +497,15 @@
 			STOP_PROCESSING(SSprocessing, src)
 			stage = 0
 			processing_destabilization = FALSE
-			return
+			return "turning off destabilization"
 	else
 		//Start the process if we hit the threshold base value
 		if(total_instability >= DESTABILIZE_LEVEL_BASE)
 			last_destability_check = world.time
 			START_PROCESSING(SSprocessing, src)
 			processing_destabilization = TRUE
-			return
-	return
+			return "turning on destabilization"
+	return "None of the above happened."
 
 //Function for processing destabilization, it will only start if total_instability in a valid holder exceeds DESTABILIZE_LEVEL_BASE.
 //Doesn't start OR stop unless check_destabilize() tells it to.
