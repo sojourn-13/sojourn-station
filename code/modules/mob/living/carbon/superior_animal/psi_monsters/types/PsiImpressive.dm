@@ -57,7 +57,7 @@
 	desc = "A hulking creature of bone, powerful and ponderous in its strength, its claws are coated in toxins that weaken the mind, its touching draining and its ability to rend flesh murderous."
 	icon_state = "farartbot"
 	icon_living = "farartbot"
-
+	life_cycles_before_sleep = 60
 	maxHealth = 800
 	health = 800
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
