@@ -143,7 +143,8 @@ A more player-friendly version of the Belvoix scanner, reports basic information
 	icon = 'icons/obj/genetics/dna_scanner.dmi'
 	icon_state = "dna_scanner"
 	item_state = "analyzer"
-	origin_tech = list(TECH_BLUESPACE = 5, TECH_BIO = 10, TECH_ILLEGAL = 10)
+	origin_tech = list(TECH_BIO = 10, TECH_PLASMA = 5)
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 1, MATERIAL_GLASS = 1, MATERIAL_PLASMA = 1)
 	charge_per_use = 0
 	var/datum/genetics/genetics_holder/held_mutations
 
@@ -193,7 +194,7 @@ A more player-friendly version of the Belvoix scanner, reports basic information
 	show_results(user)
 
 /obj/item/device/scanner/petite_scanner/proc/petite_scan()
-	if(held_mutations.mutation_pool.len == 0)
+	if(held_mutations.mutation_pool.len == 0 && held_mutations.total_instability == 0)
 		return SPAN_WARNING("No genetic info found.")
 	else
 		var/list/dat = list("===[scan_title]===")
@@ -484,25 +485,29 @@ Circuit boards for different Genetics Machines.
 
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit
 	disk_name = "Genetics Studio Design Kit"
+	desc = "A disc containing patented designs for the Xenogenetics lab. Contains additional licensed products from the lab's creator."
 	icon = 'icons/obj/genetics/genetics_disks.dmi'
 	icon_state = "genetics_factory"
-	license = 6
+	license = 10
 	designs = list(
 		/datum/design/autolathe/genetics/pulper = 1,
 		/datum/design/autolathe/genetics/cloner = 1,
 		/datum/design/autolathe/genetics/clone_console = 1,
 		/datum/design/autolathe/genetics/purger = 0,
-		/datum/design/autolathe/genetics/mut_injector = 0
+		/datum/design/autolathe/genetics/mut_injector = 0,
+		/datum/design/autolathe/genetics/petite_scanner = 1
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit_public
 	disk_name = "Genetics Studio Resupply Kit"
+	desc = "A disc containing quality-of-life designs for the Xenogenetics lab."
 	icon = 'icons/obj/genetics/genetics_disks.dmi'
 	icon_state = "genetics_purger"
-	license = 1
+	license = 3
 	designs = list(
 		/datum/design/autolathe/genetics/purger = 0,
-		/datum/design/autolathe/genetics/mut_injector = 0
+		/datum/design/autolathe/genetics/mut_injector = 0,
+		/datum/design/autolathe/genetics/petite_scanner = 1
 	)
 
 /*

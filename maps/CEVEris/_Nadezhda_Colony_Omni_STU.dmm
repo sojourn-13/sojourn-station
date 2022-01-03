@@ -23957,6 +23957,8 @@
 	tag = "icon-railing0 (NORTH)"
 	},
 /obj/effect/floor_decal/industrial/outline/red,
+/obj/structure/table/reinforced,
+/obj/item/device/scanner/petite_scanner,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
 "fzb" = (
