@@ -97,13 +97,13 @@
 		new /obj/item/clothing/suit/armor/platecarrier/ih(src)
 		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
 
-/obj/item/storage/box/m_kit/standard_armor_alt
-	name = "\improper Standard Full Helmet Armor Kit"
-	desc = "An standard Marshal armor kit with a plate carrier and full helmet."
+/obj/item/storage/box/m_kit/bullet_proof
+	name = "\improper Bullet Proof Kit"
+	desc = "An standard Marshal armor kit containing bullet proof armor and a helmet, perfect for dealing with hostile colonist and infiltrators, but bulky and slowing."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/platecarrier/ih(src)
-		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
+		new /obj/item/clothing/suit/armor/bulletproof/ironhammer(src)
+		new /obj/item/clothing/head/helmet/marshal_full(src)
 
 /obj/item/storage/box/m_kit/laser_armor
 	name = "\improper Ablative Armor Kit"

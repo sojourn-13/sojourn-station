@@ -308,6 +308,15 @@
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 200
 
+/obj/item/ammo_magazine/ammobox/c10x24_small
+	name = "ammunition packet (10x24mm caseless)"
+	icon_state = "box10mm"
+	desc = "A box of 10mm caseless round, how odd."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = "10x24"
+	ammo_type = /obj/item/ammo_casing/c10x24
+	max_ammo = 36 //3+1 reloads of the SWAT 2.6 of the bond, around 0.29 for smgs
+
 //// .223 laser shot!
 
 /obj/item/ammo_magazine/ammobox/laser_223

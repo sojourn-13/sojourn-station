@@ -536,9 +536,9 @@
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
-	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for melee protection."
+	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for bullet protection."
 	icon_state = "ironhammer_full"
-	armor = list(melee = 45, bullet = 40,energy = 15, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	flash_protection = FLASH_PROTECTION_MAJOR

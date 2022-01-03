@@ -345,7 +345,11 @@
 	slowdown = 0.6 // Heavier since it now covers more of the body
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
+	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.6 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
+	item_state = "bulletproof_fullbody"
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "ablative armor vest"
