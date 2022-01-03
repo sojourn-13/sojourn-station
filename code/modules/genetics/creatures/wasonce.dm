@@ -46,7 +46,7 @@ Has ability of every roach.
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
-	move_to_delay = 4
+	move_to_delay = 6
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
