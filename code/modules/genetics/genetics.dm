@@ -147,7 +147,7 @@
 	#ifdef JANEDEBUG
 	log_debug("findCloneMutation: getting a random active clone mutation for cloning")
 	#endif
-	var/list/clone_mutation_pool
+	var/list/clone_mutation_pool = list()
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		if(selected_mutation.clone_gene && selected_mutation.active)
 			clone_mutation_pool += selected_mutation
