@@ -20,7 +20,7 @@
 	)
 
 /obj/item/circuitboard/autolathe
-	build_name = "autolathe"
+	name = "circuit board (autolathe)"
 	build_path = /obj/machinery/autolathe
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2)
