@@ -16,6 +16,8 @@
 	var/item_state = null // Used to specify the item state for the on-mob over-lays.
 	var/inertia_dir = 0
 
+	var/cant_be_pulled = FALSE //Used for things that cant be anchored, but also shouldnt be pullable
+
 	//spawn_values
 	var/price_tag = 0 // The item price in credits. atom/movable so we can also assign a price to animals and other thing.
 	var/surplus_tag = FALSE //If true, attempting to export this will net you a greatly reduced amount of credits, but we don't want to affect the actual price tag for selling to others.

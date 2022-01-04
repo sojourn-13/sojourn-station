@@ -12,6 +12,8 @@ var/datum/xenomorph/xenomorph_ai
 	icon_gib = "drone_gibbed"
 	pass_flags = PASSTABLE
 
+	cant_be_pulled = TRUE
+
 	mob_size = MOB_LARGE
 	viewRange = 12
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
