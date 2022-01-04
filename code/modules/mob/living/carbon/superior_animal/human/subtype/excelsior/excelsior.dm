@@ -64,6 +64,10 @@
 /mob/living/carbon/superior_animal/human/excelsior/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
+/mob/living/carbon/superior_animal/human/excelsior/start_pulling(var/atom/movable/AM)
+	to_chat(src, SPAN_WARNING("Your hand gets pushed away form \the [src]. !"))
+	return
+
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv

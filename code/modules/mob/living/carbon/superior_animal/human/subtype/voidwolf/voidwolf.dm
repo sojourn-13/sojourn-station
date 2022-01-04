@@ -55,6 +55,10 @@
 /mob/living/carbon/superior_animal/human/voidwolf/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
+/mob/living/carbon/superior_animal/human/voidwolf/start_pulling(var/atom/movable/AM)
+	to_chat(src, SPAN_WARNING("Your hand gets pushed away form \the [src]. !"))
+	return
+
 /mob/living/carbon/superior_animal/human/voidwolf/death()
 	..()
 	drop_death_loot()
