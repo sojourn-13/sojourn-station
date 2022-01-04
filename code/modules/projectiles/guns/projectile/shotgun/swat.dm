@@ -4,8 +4,8 @@
 			The \"SWAT\" main appeal other then pure stopping power is the built in pistol to shoot three round for clearing down range targets trying to run away. \
 			Can hold up to 7+1 20mm shells in its tube magazine, and 9 10x24 rounds in its underslung pistol."
 	icon = 'icons/obj/guns/projectile/swat.dmi'
-	icon_state = "cshotgun"
-	item_state = "cshotgun"
+	icon_state = "swat"
+	item_state = "swat"
 	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	max_shells = 7 //Same as the gladstone
