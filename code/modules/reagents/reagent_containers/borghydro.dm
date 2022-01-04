@@ -27,7 +27,7 @@
 
 /obj/item/reagent_containers/borghypo/proc/Reindex()
 //We want to start from scratch
-	reagent_names = ""
+	reagent_names = list()
 	for(var/T in reagent_ids)
 		reagent_volumes[T] = volume
 		var/datum/reagent/R = GLOB.chemical_reagents_list[T]
