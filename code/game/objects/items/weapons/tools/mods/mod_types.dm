@@ -934,3 +934,21 @@
 	. = ..()
 	GET_COMPONENT(comp_sanity, /datum/component/atom_sanity)
 	. += comp_sanity.affect * 100
+// Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
+/obj/item/tool_upgrade/productivity/waxcoat
+	name = "Wax Coating"
+	desc = "A bucket of filtered beeswax, to be applied to tools or clothes; preventing stains, and preventing minor knicks and damage."
+	icon_state = "waxcoat"
+	matter = list(MATERIAL_BIOMATTER = 2, MATERIAL_PLASTIC = 5)
+	can_remove = FALSE
+	price_tag = 120
+
+/obj/item/tool_upgrade/productivity/waxcoat/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_BULK = -2,
+	UPGRADE_DEGRADATION_MULT = 0.90,
+	UPGRADE_ITEMFLAGPLUS = NOBLOODY
+	)
+	I.prefix = "waxed"
