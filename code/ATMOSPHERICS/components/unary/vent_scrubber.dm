@@ -39,9 +39,8 @@
 	var/welded = FALSE
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on
-	//After the winter update, change this back and replace everything on the map with standard "off" vent scrubbers.
-	//use_power = IDLE_POWER_USE
-	//icon_state = "map_scrubber_on"
+	use_power = IDLE_POWER_USE
+	icon_state = "map_scrubber_on"
 
 /obj/machinery/atmospherics/unary/vent_scrubber/New()
 	..()
