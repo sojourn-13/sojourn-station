@@ -69,6 +69,18 @@
 	..()
 	src.adjustBruteLoss(50)
 
+/mob/living/carbon/superior_animal/ambusher/handle_breath(datum/gas_mixture/breath) //we dont breath
+	return
+
+/mob/living/carbon/superior_animal/ambusher/handle_environment(var/datum/gas_mixture/environment) //stronk
+	return
+
+/mob/living/carbon/superior_animal/ambusher/handle_cheap_breath(datum/gas_mixture/breath as anything)
+	return
+
+/mob/living/carbon/superior_animal/ambusher/handle_cheap_environment(datum/gas_mixture/environment as anything)
+	return
+
 /mob/living/simple_animal/hostile/shadow
 	name = "odd shadow"
 	desc = "You see an odd shadow, cast by something above you. A brown, pungent substance drips onto the ground. A quick glance and you're greeted with a malformed visage, chittering mindlessly to itself."
@@ -85,6 +97,7 @@
 	flags = PROXMOVE
 	faction = "roach"
 	density = 0
+	needs_environment = FALSE //Were a shadow why do we care about spice or lacking air?
 
 /mob/living/simple_animal/hostile/shadow/HasProximity(atom/movable/AM as mob|obj)
 	if(ishuman(AM))
