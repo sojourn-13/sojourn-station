@@ -21,7 +21,7 @@
 	..()
 	if(anchored)
 		connect_to_network()
-	fuel_cell = new /obj/item/hydrogen_fuel_cell(src)
+	//fuel_cell = new /obj/item/hydrogen_fuel_cell(src) //On making new ones it was giving these
 
 // This proc run when the object is created
 /obj/machinery/power/hydrogen_gen/New()
