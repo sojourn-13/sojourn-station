@@ -42,6 +42,11 @@
 	icon_state = "dirt"
 	mouse_opacity = 0
 
+/obj/effect/decal/cleanable/dirt/Initialize(mapload, ...)
+	. = ..()
+	if(prob(66) //66% to just delete areself to help against effect/decal lag
+		qdel(src)
+
 /obj/effect/decal/cleanable/dirt/snow
 	name = "snow"
 	desc = "A low dusting of the dark blue snow."
