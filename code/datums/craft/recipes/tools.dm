@@ -262,7 +262,7 @@
 	name = "tool mod: wax coating"
 	result = /obj/item/tool_upgrade/productivity/waxcoat
 	steps = list(
-			list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
-			list(QUALITY_WIRE_CUTTING, 10, 50)
-			list(/obj/item/stack/wax, 10, 10)
+			list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
+			list(QUALITY_WIRE_CUTTING, 10, 50),
+			list(/obj/item/stack/wax, 10, 10),
 	)
