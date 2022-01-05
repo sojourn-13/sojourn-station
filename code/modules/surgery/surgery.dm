@@ -107,24 +107,28 @@
 	var/success = FALSE
 
 	var/difficulty_adjust = 0
+	var/time_adjust = 0
 
 	// Self-surgery increases failure chance
 	if(owner && user == owner)
-		difficulty_adjust = 20
+		difficulty_adjust = 60
+		time_adjust = 20
 
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
 		if(is_carrion(user))
-			difficulty_adjust = -50
+			difficulty_adjust = -90
+			time_adjust = -20
 
 	if(user.stats.getPerk(PERK_SURGICAL_MASTER))
-		difficulty_adjust = -30
+		difficulty_adjust = -40
+		time_adjust = -10
 
 	var/atom/surgery_target = get_surgery_target()
 	if(S.required_tool_quality)
 		success = tool.use_tool_extended(
 			user, surgery_target,
-			S.duration,
+			S.duration + time_adjust,
 			S.required_tool_quality,
 			S.difficulty + difficulty_adjust,
 			required_stat = S.required_stat
