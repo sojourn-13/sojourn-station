@@ -958,7 +958,6 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/part_replacer(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/hand_tele(src) //Why
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
