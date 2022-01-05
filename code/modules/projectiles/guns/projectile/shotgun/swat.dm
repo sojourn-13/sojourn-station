@@ -3,7 +3,7 @@
 	desc = "The prototype of a Seinemetall Defense GmbH original idea of the \"State\" reinvented to be the be all end all law enforcement shotgun. \
 			The \"SWAT\" main appeal other then pure stopping power is the built in pistol to shoot three round for clearing down range targets trying to run away. \
 			Can hold up to 7+1 20mm shells in its tube magazine, and 9 10x24 rounds in its underslung pistol."
-	icon = 'icons/obj/guns/projectile/swat.dmi'
+	icon = 'icons/obj/guns/projectile/swat.dmi' //Sprites by Toriate#0657 many loves and thanks to this amazing spriter!
 	icon_state = "swat"
 	item_state = "swat"
 	caliber = CAL_SHOTGUN
@@ -24,7 +24,7 @@
 		list(mode_name="fire 10x24 pistol", mode_desc="Shoot the built in 10x24 pistol",  burst=3, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
-	var/obj/item/gun/projectile/underslung/pistol_10x24
+	var/obj/item/gun/projectile/underslung/pistol_10x24/pistol_10x24
 
 /obj/item/gun/projectile/shotgun/pump/swat/Initialize()
 	. = ..()
@@ -53,7 +53,7 @@
 
 //Defined here, may be used elsewhere but for now its only used here. -Trilby
 /obj/item/gun/projectile/underslung_pistol_10x24
-	name = "underslung shotgun"
+	name = "built in pistol"
 	desc = "Not much more than a tube and a firing mechanism, this pistol is designed to be fitted to another gun."
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
