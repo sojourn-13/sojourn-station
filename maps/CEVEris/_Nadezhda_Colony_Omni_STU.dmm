@@ -21493,15 +21493,6 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"eWH" = (
-/obj/item/device/radio/intercom{
-	pixel_y = 24
-	},
-/turf/simulated/floor/tiled/steel/monofloor{
-	dir = 4;
-	icon_state = "monofloor"
-	},
-/area/nadezhda/hallway/surface/section1)
 "eWL" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/rock1,
@@ -74353,6 +74344,15 @@
 	tag = "icon-escpodwall21"
 	},
 /area/shuttle/surface_transport_lz)
+"qNp" = (
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/steel/monofloor{
+	dir = 4;
+	icon_state = "monofloor"
+	},
+/area/nadezhda/hallway/surface/section1)
 "qND" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/unpowered/simple/wood{
@@ -209963,7 +209963,7 @@ cwt
 uun
 mJp
 pwm
-eWH
+qNp
 cOd
 xkd
 gSE
