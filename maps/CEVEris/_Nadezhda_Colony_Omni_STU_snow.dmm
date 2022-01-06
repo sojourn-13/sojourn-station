@@ -84233,7 +84233,7 @@
 /turf/simulated/floor/asteroid/grass/snowjungle,
 /area/nadezhda/outside/pond)
 "teR" = (
-/obj/machinery/autolathe/loaded,
+/obj/machinery/autolathe/industrial,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "teU" = (
