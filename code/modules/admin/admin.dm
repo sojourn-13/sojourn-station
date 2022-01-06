@@ -25,7 +25,7 @@ var/global/floorIsLava = 0
 	log_attack(text)
 	lobby_message(message = text, color = "#FFA500")
 	for(var/client/C in admins)
-		if(check_rights(R_ADMIN, 0, C.mob))
+		if(check_rights(R_ADMIN | R_DEBUG, 0, C.mob))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
 				var/msg = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[text]</span></span>"
 				to_chat(C, msg)
@@ -39,7 +39,7 @@ var/global/floorIsLava = 0
  */
 /proc/message_adminTicket(msg, important = FALSE, quiet = FALSE, tag = "admin_ticket", tagtext = "Request for Help")
 	for(var/client/C in admins)
-		if(check_rights(R_ADMIN | R_MOD, 0, C.mob))
+		if(check_rights(R_ADMIN | R_MOD | R_DEBUG, 0, C.mob))
 			var/rendered = "<span class=\"adminhelp\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> [msg]</span></span>"
 			to_chat(C, rendered)
 			if(important || (!quiet && (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)))
