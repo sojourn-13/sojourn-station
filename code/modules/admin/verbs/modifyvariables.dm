@@ -129,7 +129,7 @@ var/list/VVckey_edit = list("key", "ckey")
 	message_admins("[key_name_admin(src)] modified [original_name]'s [objectvar]: ADDED=[var_value]")
 
 /client/proc/mod_list(var/list/L, atom/O, original_name, objectvar)
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_ADMIN | R_DEBUG))
 		return
 	if(!istype(L,/list)) src << "Not a List."
 
@@ -329,7 +329,7 @@ var/list/VVckey_edit = list("key", "ckey")
 	message_admins("[key_name_admin(src)] modified [original_name]'s varlist [objectvar]: [original_var]=[new_var]")
 
 /client/proc/modify_variables(var/atom/O, var/param_var_name = null, var/autodetect_class = 0)
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_ADMIN | R_DEBUG))
 		return
 
 	for(var/p in forbidden_varedit_object_types)
