@@ -67,7 +67,7 @@
 	return
 
 /mob/living/carbon/superior_animal/human/excelsior/start_pulling(var/atom/movable/AM)
-	to_chat(src, SPAN_WARNING("Your hand gets pushed away form \the [src]. !"))
+	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
