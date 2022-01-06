@@ -142,12 +142,12 @@
 				attack_generic(H,rand(1,3),"punched")
 				return
 
-			//adds a soft cap of 80 robustness. Deminishing returns by taking robustness/10 + 80
+			//adds a soft cap of 80 robustness. Deminishing returns by taking robustness/10 + 72
 			var/stat_damage = 3 // declared with a value of 3 before normal calculations for safty.
 			if (H.stats.getStat(STAT_ROB) >= 80)
-				var softcap = (H.stats.getStat((STAT_ROB) / 10) - 8)
-				var newrob = (H.stats.getStat(80 + softcap))
-				stat_damage = 3 + max(0, (H.stats.getStat((newrob) / 10)))
+				var softcap = H.stats.getStat(STAT_ROB) / 10
+				var newrob = (72 + softcap) / 10
+				stat_damage = 3 + max(0, newrob)
 			else
 				stat_damage = 3 + max(0, (H.stats.getStat(STAT_ROB) / 10))
 			var/limb_efficiency_multiplier = 1
