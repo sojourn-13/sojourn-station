@@ -146,7 +146,7 @@
 			var/stat_damage = 3 // declared with a value of 3 before normal calculations for safty.
 			if (H.stats.getStat(STAT_ROB) >= 80)
 				var softcap = (H.stats.getStat((STAT_ROB) / 10) - 8)
-				var newrob = (H.stats.getStat(STAT_ROB + softcap))
+				var newrob = (H.stats.getStat(80 + softcap))
 				stat_damage = 3 + max(0, (H.stats.getStat((newrob) / 10)))
 			else
 				stat_damage = 3 + max(0, (H.stats.getStat(STAT_ROB) / 10))
