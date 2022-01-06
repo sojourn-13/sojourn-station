@@ -101,7 +101,7 @@
 // Can't slip
 
 /mob/living/carbon/superior_animal/psi_monster/start_pulling(var/atom/movable/AM)
-	to_chat(src, SPAN_WARNING("Your hand gets stopped preventing you form pulling \the [src]. !"))
+	to_chat(src, SPAN_WARNING("Your hand gets stopped preventing you from pulling \the [src]. !"))
 	return
 
 /mob/living/carbon/superior_animal/psi_monster/attack_hand(mob/living/carbon/M as mob)
