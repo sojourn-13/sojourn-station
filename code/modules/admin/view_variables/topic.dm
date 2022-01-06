@@ -47,7 +47,7 @@
 		modify_variables(D, href_list["varnamechange"], 0)
 
 	else if(href_list["varnamemass"] && href_list["datummass"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_ADMIN|R_DEBUG))
 			return
 
 		var/atom/A = locate(href_list["datummass"])
