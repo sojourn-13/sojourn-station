@@ -749,6 +749,9 @@ default behaviour is:
 		to_chat(src, "<span class='warning'>It won't budge!</span>")
 		return
 
+	if (AM.cant_be_pulled)
+		return
+
 	var/mob/M = AM
 	if(ismob(AM))
 
@@ -816,7 +819,7 @@ default behaviour is:
 	if (!stats)
 		stats = new /datum/stat_holder(src)
 
-	
+
 	//Mutations populated through horrendous genetic tampering.
 	unnatural_mutations = new(src)
 
