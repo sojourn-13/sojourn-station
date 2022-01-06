@@ -100,7 +100,7 @@ var/datum/xenomorph/xenomorph_ai
 	pixel_y = 0
 
 /mob/living/carbon/superior_animal/xenomorph/start_pulling(var/atom/movable/AM)
-	to_chat(src, SPAN_WARNING("Your hand gets slashed away form \the [src]. !"))
+	to_chat(src, SPAN_WARNING("Your hand gets slashed away from \the [src]. !"))
 	return
 
 /mob/living/carbon/superior_animal/xenomorph/attack_hand(mob/living/carbon/M as mob)
