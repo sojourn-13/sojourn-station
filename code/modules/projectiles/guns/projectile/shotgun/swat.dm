@@ -30,6 +30,17 @@
 	. = ..()
 	pistol = new(src)
 
+/obj/item/gun/projectile/shotgun/pump/swat/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+	var/datum/firemode/cur_mode = firemodes[sel_mode]
+
+	if(cur_mode.settings["use_launcher"])
+		pistol.Fire(target, user, params, pointblank, reflex)
+		if(!pistol.chambered)
+			switch_firemodes() //switch back automatically
+	else
+		..()
+
+
 /obj/item/gun/projectile/shotgun/pump/swat/attackby(obj/item/I, mob/user)
 	if((istype(I, /obj/item/ammo_casing/c10x24)))
 		pistol.load_ammo(I, user)
