@@ -6050,10 +6050,6 @@
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
-"vZ" = (
-/obj/map_data/nadezda_s,
-/turf/unsimulated/mineral,
-/area/colony/exposedsun/pastgate)
 "wa" = (
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/tiled/white,
@@ -55184,7 +55180,7 @@ fF
 fF
 fF
 fF
-vZ
+fF
 "}
 (2,1,2) = {"
 ab

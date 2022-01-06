@@ -1,13 +1,20 @@
 #include "overmap-eris.dm"
 #include "shuttles-eris.dm"
 #include "../encounters/deeptunnels/deeptunnels.dm"
+
 #include "_Nadezhda_Colony_Omni_STU.dmm"
+//#include "_Nadezhda_Colony_Omni_STU_snow.dmm"
+
 //#include "_Nadezhda_Colony_Underground.dmm"
 //#include "_Nadezhda_Colony_Transition.dmm"
 //#include "_Nadezhda_Colony_Surface.dmm"
 #include "_Nadezhda_Solar_Area.dmm"
+
 #include "_Hunting_Lodge.dmm"
-#include "../encounters/deepforest/deepforest.dm"
+//#include "_Hunting_Lodge_snow.dmm"
+
+//#include "../encounters/deepforest/deepforest_snow.dm"
+
 //#include "../encounters/spacefortress/spacefortress.dm"
 #include "centcomm.dmm"
 
@@ -27,6 +34,15 @@
 	generate_asteroid = TRUE
 	height = 3
 
+/obj/map_data/nadezda_ues_snow //Omnie level has all three surface underground and stairs
+	name = "Nadezhda Omni Map"
+	is_station_level = TRUE
+	is_player_level = TRUE
+	is_contact_level = TRUE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	generate_asteroid = TRUE
+	height = 3
 
 /obj/map_data/nadezda_s
 	name = "Nadezhda Surface"
@@ -90,4 +106,11 @@
 	is_sealed = TRUE
 	height = 2
 
-
+/obj/map_data/hunting_lodge_snow
+	name = "Hunting Lodge"
+	is_station_level = FALSE
+	is_player_level = TRUE
+	is_contact_level = FALSE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	height = 2
