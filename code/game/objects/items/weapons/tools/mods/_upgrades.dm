@@ -267,7 +267,9 @@
 		T.armor.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
 		T.armor.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
-
+	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
+		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
+		
 	T.prefixes |= prefix
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
