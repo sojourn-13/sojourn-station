@@ -21,10 +21,10 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		list(mode_name="fire 10x24 pistol", mode_desc="Shoot the built in 10x24 pistol",  burst=3, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
+		list(mode_name="fire 10x24 pistol", mode_desc="Shoot the built in 10x24 pistol",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
-	var/obj/item/gun/projectile/underslung/pistol/pistol
+	var/obj/item/gun/projectile/automatic/underslung/pistol/pistol
 
 /obj/item/gun/projectile/shotgun/pump/swat/Initialize()
 	. = ..()
@@ -34,6 +34,7 @@
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(cur_mode.settings["use_launcher"])
+		//We trigger like this three times
 		pistol.Fire(target, user, params, pointblank, reflex)
 		if(!pistol.chambered)
 			switch_firemodes() //switch back automatically
@@ -63,7 +64,7 @@
 	set_item_state(itemstring)
 
 //Defined here, may be used elsewhere but for now its only used here. -Trilby
-/obj/item/gun/projectile/underslung/pistol
+/obj/item/gun/projectile/automatic/underslung/pistol
 	name = "built in pistol"
 	desc = "Not much more than a tube and a firing mechanism, this pistol is designed to be fitted to another gun."
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
@@ -76,3 +77,6 @@
 	twohanded = FALSE
 	caliber = "10x24"
 	handle_casings = EJECT_CASINGS
+	init_firemodes = list(
+		BURST_3_ROUND
+		)

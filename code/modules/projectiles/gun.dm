@@ -690,7 +690,7 @@
 		to_chat(user, SPAN_NOTICE("You cannot [folded ? "unfold" : "fold"] the stock while \the [src] is in a container."))
 		return
 
-	fold()
+	fold(span_chat = TRUE)
 
 /obj/item/gun/proc/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
@@ -699,12 +699,13 @@
 		return 2
 	return 0
 
-/obj/item/gun/proc/fold(user)
+/obj/item/gun/proc/fold(user, span_chat)
 //Were going to do some insainly dumb things to not doup or brake anything with storage or gun mods, well being modular
 	if(folding_stock)
 		if(!folded)
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
-			to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
+			if(span_chat)
+				to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
 			extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
 			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
 			recoil_buildup *= 0.5 //50% less recoil
@@ -716,7 +717,8 @@
 			folded = TRUE
 		else
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
-			to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
+			if(span_chat)
+				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = FALSE
 
 		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
@@ -850,6 +852,16 @@
 	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
+	//Lets get are prefixes and name fresh
+	name = initial(name)
+	max_upgrades = initial(max_upgrades)
+	color = initial(color)
+	prefixes = list()
+	item_flags = initial(item_flags)
+
+
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"
 
 	extra_bulk = initial(extra_bulk)
 
@@ -875,6 +887,8 @@
 	else
 		H.using_scope = null
 		refresh_upgrades()
+		if(folding_stock)
+			fold(span_chat = FALSE) //If we have a stock lets not remove all are boons cuz we looked down a scope
 
 /* //Eris has this but it, unsurpriingly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/gun/proc/generate_guntags()

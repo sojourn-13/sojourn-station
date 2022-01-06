@@ -608,7 +608,7 @@
 /obj/item/tool_upgrade/augment/expansion
 	name = "expansion port"
 	icon_state = "expand"
-	desc = "A bulky adapter which allows more modifications to be attached to the tool. A bit fragile but you can compensate. Due to its complex design it cannot be removed once installed."
+	desc = "A bulky adapter which allows more modifications to be attached to the tool or gun. A bit fragile but you can compensate. Due to its complex design it cannot be removed once installed."
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE
 	price_tag = 125
@@ -623,7 +623,12 @@
 	UPGRADE_HEALTH_THRESHOLD = -20,
 	UPGRADE_MAXUPGRADES = 3
 	)
+	I.weapon_upgrades = list(
+	UPGRADE_BULK = 2,
+	UPGRADE_MAXUPGRADES = 3
+	)
 	I.removal_time *= 20
+	I.gun_loc_tag = GUN_KNIFE //No stacking a melee with this
 	I.prefix = "custom"
 	I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING)
 
