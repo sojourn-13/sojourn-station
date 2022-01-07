@@ -45,8 +45,8 @@
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/handcuffs
-	backpack_contents = list(/obj/item/rig/trauma_suit/equipped = 1, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/storage/firstaid/soteria/large = 1, /obj/item/gun/energy/sst/formatbound = 1, /obj/item/cell/medium/moebius/high = 2, /obj/item/ammo_magazine/smg_35/hv = 2, /obj/item/modular_computer/tablet/moebius/preset = 1)
-	suit_store = /obj/item/gun/projectile/automatic/c20r/sci
+	backpack_contents = list(/obj/item/rig/trauma_suit/equipped = 1, /obj/item/clothing/suit/straight_jacket = 1, /obj/item/storage/firstaid/soteria/large = 1, /obj/item/gun/energy/sst/formatbound/preloaded = 1, /obj/item/cell/medium/moebius/high = 1, /obj/item/ammo_magazine/smg_35/hv = 1, /obj/item/modular_computer/tablet/moebius/preset = 1)
+	suit_store = /obj/item/gun/projectile/automatic/c20r/sci/preloaded
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
 	name = OUTFIT_JOB_NAME("Soteria - Psychiatrist")

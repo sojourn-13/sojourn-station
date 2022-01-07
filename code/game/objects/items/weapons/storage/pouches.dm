@@ -364,6 +364,13 @@
 
 	sliding_behavior = TRUE
 
+/obj/item/storage/pouch/baton_holster/telebaton
+
+/obj/item/storage/pouch/baton_holster/telebaton/New()
+	new/obj/item/melee/telebaton(src)
+	update_icon()
+	. = ..()
+
 /obj/item/storage/pouch/baton_holster/update_icon()
 	..()
 	cut_overlays()

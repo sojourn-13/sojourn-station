@@ -17,7 +17,7 @@
 //He gets a snazzy beret
 /decl/hierarchy/outfit/antagonist/mercenary/commander
 	name = "Serbian Mercenary Commander"
-	head = /obj/item/clothing/head/rank/commander/beret
+	head = /obj/item/clothing/head/rank/commander
 
 //This outfit is just for admin fun. Spawns them fully equipped
 //Actual mercs equip themselves by picking up their armor from their base
