@@ -34,10 +34,8 @@
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(cur_mode.settings["use_launcher"])
-		//We trigger like this three times
+		//We trigger like this three times, but we dont ever want to swap back even when unloaded, do that by hand to prevent issues
 		pistol.Fire(target, user, params, pointblank, reflex)
-		if(!pistol.chambered)
-			switch_firemodes() //switch back automatically
 	else
 		..()
 
