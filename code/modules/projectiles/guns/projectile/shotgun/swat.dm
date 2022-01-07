@@ -34,8 +34,10 @@
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(cur_mode.settings["use_launcher"])
-		//We trigger like this three times, but we dont ever want to swap back even when unloaded, do that by hand to prevent issues
+		//We trigger like this three times, and then if nothing is inside the pistol swap back to are normal shotgun mode
 		pistol.Fire(target, user, params, pointblank, reflex)
+		if(!pistol.contents)
+			switch_firemodes() //switch back automatically
 	else
 		..()
 
