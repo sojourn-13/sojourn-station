@@ -107,7 +107,7 @@
 				content = assortiment[category_name]
 			else
 				content = list()
-			//content.Add(SSspawn_data.valid_candidates(category_content_tag,,TRUE))
+			content.Add(category_content_tag)
 
 			if(istext(new_category_name) && islist(content))
 				var/category_name_index = assortiment.Find(category_name)
