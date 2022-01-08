@@ -1,7 +1,6 @@
 /datum/trade_station/cybermoebus
 	spawn_probability = 0 //were bugged
 	name_pool = list("FTS 'PentaOptium'" = "Free Trade Station 'PentaOptium'. \"Oh, you, I think I can sell you some cybernetics.\"")
-	offer_amout_devider_of_wanted_goods = 5 //less items wanted, do to being implants
 	assortiment = list(
 		"Soteria" = list(
 			/obj/item/organ/external/robotic/moebius/l_arm,
@@ -43,18 +42,18 @@
 	)
 
 	offer_types = list(
-		/obj/item/organ_module/active/simple/armblade,
-		/obj/item/organ_module/active/simple/armsmg,
-		/obj/item/organ_module/active/simple/armshield,
-		/obj/item/organ_module/active/simple/engineer,
-		/obj/item/organ_module/active/hud/med,
-		/obj/item/organ_module/active/hud/sec,
-		/obj/item/organ_module/active/hud/night,
-		/obj/item/organ_module/active/hud/thermal,
-		/obj/item/organ_module/active/hud/welder,
-		/obj/item/organ_module/active/multitool,
-		/obj/item/organ_module/active/simple/surgical,
-		/obj/item/organ_module/active/simple/taser
+		/obj/item/organ_module/active/simple/armblade = offer_data("implanted armblade", 300, 0),
+		/obj/item/organ_module/active/simple/armsmg = offer_data("implanted arm smg", 800, 0),
+		/obj/item/organ_module/active/simple/armshield = offer_data("implant arm shield", 900, 0),
+		/obj/item/organ_module/active/simple/engineer = offer_data("implanted engineering omni tool", 800, 0),
+		/obj/item/organ_module/active/hud/med = offer_data("implanted med hud", 600, 0),
+		/obj/item/organ_module/active/hud/sec = offer_data("implanted sec hud", 1000, 0),
+		/obj/item/organ_module/active/hud/night = offer_data("implanted nv goggles", 1300, 0),
+		/obj/item/organ_module/active/hud/thermal = offer_data("implanted thermal goggles", 2800, 0),
+		/obj/item/organ_module/active/hud/welder = offer_data("implanted welding goggles", 800, 0),
+		/obj/item/organ_module/active/multitool = offer_data("implanted multitool", 600, 0),
+		/obj/item/organ_module/active/simple/surgical = offer_data("implanted omni surgical tool", 600, 0),
+		/obj/item/organ_module/active/simple/taser = offer_data("implanted taser", 1485, 0),
 	)
 
 /obj/item/organ/external/robotic/moebius

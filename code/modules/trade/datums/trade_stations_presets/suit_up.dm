@@ -1,5 +1,7 @@
 /datum/trade_station/suit_up
-	name_pool = list("LTB 'Suit Up!'" = "Lonestar Trade Beacon 'Suit Up!'. They're sending a message. \"Suits, voidsuits and more for you, colonists!\"")
+	name_pool = list(
+		"ATB 'Suit Up!'" = "Aster's Trade Beacon 'Suit Up!':\n\"Suits, voidsuits and more for you, traveler!\""
+	)
 	assortiment = list(
 		"Voidsuits" = list(
 			/obj/item/clothing/suit/space/void,
@@ -40,7 +42,7 @@
 	)
 
 	offer_types = list(
-		/obj/item/tool/tape_roll,
-		/obj/item/tool/surgicaldrill,
-		/obj/item/cell/large
+		/obj/item/tool/tape_roll = offer_data("tape roll", 100, 0),
+		/obj/item/tool/surgicaldrill = offer_data("surgical drill", 400, 0),
+		/obj/item/cell/large = offer_data("large cell", 200, 0)
 	)
