@@ -51,11 +51,6 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-//Todo, remove this one. Currently cant do to map freeze - Trilby
-/obj/item/clothing/suit/greatcoat/cap/cap_coat_cloak
-	icon_state = "cap_coat_cloak"
-	item_state = "cap_coat_cloak"
-
 /obj/item/clothing/suit/greatcoat/cap/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"

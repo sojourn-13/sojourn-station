@@ -11302,6 +11302,10 @@
 "RJ" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/part_replacer,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/manipulator/pico,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
 "RK" = (
@@ -11381,6 +11385,10 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"Sb" = (
+/obj/random/traps/low_chance,
+/turf/simulated/floor/asteroid/dirt,
+/area/colony/exposedsun/pastgate)
 "Sc" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/random/mob/vox/low_chance,
@@ -12802,6 +12810,7 @@
 /obj/item/stock_parts/matter_bin/super,
 /obj/item/stock_parts/matter_bin/super,
 /obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/scanning_module/phasic,
 /obj/item/stock_parts/scanning_module/phasic,
 /obj/item/stock_parts/scanning_module/phasic,
 /obj/item/stock_parts/scanning_module/phasic,
@@ -66071,7 +66080,7 @@ gf
 gf
 Dx
 Dx
-Dx
+Sb
 fF
 fF
 sH
@@ -68784,7 +68793,7 @@ fE
 yT
 yX
 Dx
-gd
+DN
 gd
 le
 gd
@@ -69203,7 +69212,7 @@ fE
 fE
 YG
 Dx
-gd
+DN
 gd
 gd
 vD
@@ -69413,7 +69422,7 @@ QG
 QG
 Zv
 NP
-gd
+DN
 gd
 yT
 yT
@@ -71084,7 +71093,7 @@ fE
 fE
 YG
 YG
-Dx
+Sb
 YG
 gd
 gd
@@ -72548,7 +72557,7 @@ fE
 fE
 fE
 fE
-Dx
+Sb
 le
 zv
 yZ
@@ -72931,7 +72940,7 @@ hW
 Vy
 hW
 hW
-hW
+Vy
 hW
 Cp
 hA
@@ -73973,7 +73982,7 @@ hA
 CC
 Cl
 hW
-hW
+Vy
 hW
 hW
 CC
@@ -74393,7 +74402,7 @@ hW
 hW
 hW
 hW
-hW
+Vy
 Cl
 Cp
 hA
@@ -75064,13 +75073,13 @@ gd
 gd
 le
 gd
-Dx
+Sb
 il
 il
 hm
 hm
 il
-hm
+MT
 il
 hk
 hf
@@ -85767,7 +85776,7 @@ ta
 Zk
 il
 il
-hm
+MT
 il
 il
 il
@@ -89750,7 +89759,7 @@ hW
 hW
 hW
 hW
-hW
+Vy
 hW
 hW
 hW
@@ -93328,7 +93337,7 @@ hW
 hW
 hW
 hW
-hW
+Vy
 hW
 hW
 hW
