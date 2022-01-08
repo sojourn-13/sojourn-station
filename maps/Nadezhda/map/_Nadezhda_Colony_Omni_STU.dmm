@@ -13798,6 +13798,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /obj/structure/table/reinforced,
+/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/security/tactical_blackshield)
 "dic" = (
@@ -45619,6 +45620,7 @@
 	dir = 1
 	},
 /obj/random/firstaid/low_chance,
+/obj/random/booze/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/pros/prep)
 "krN" = (
@@ -79545,13 +79547,6 @@
 "rRY" = (
 /obj/machinery/autolathe,
 /obj/structure/catwalk,
-/obj/machinery/recharger/wallcharger{
-	pixel_x = -26;
-	pixel_y = -10
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = -26
-	},
 /obj/effect/floor_decal/border/borderfloor/cee,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/prep)
@@ -94331,7 +94326,6 @@
 /obj/structure/sign/painting/paintingsnow{
 	pixel_y = 32
 	},
-/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/bar)
 "via" = (
@@ -107675,7 +107669,7 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/obj/random/booze/low_chance,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/pros/prep)
 "yec" = (
@@ -107925,6 +107919,13 @@
 /obj/structure/table/steel,
 /obj/random/lathe_disk,
 /obj/effect/floor_decal/border/borderfloor/cee,
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -26
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -26;
+	pixel_y = -10
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/prep)
 "yhV" = (
