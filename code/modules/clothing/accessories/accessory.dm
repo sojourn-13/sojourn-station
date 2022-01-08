@@ -282,6 +282,12 @@
 	icon_state = "scav_mantle"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/cape/corpsmans_cape
+	name = "corpsmen cape"
+	desc = "A cape made from blue and white fabric denoting that they are a corpsmen, to be easily seen in the jungle."
+	icon_state = "corpsman cape"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
 /obj/item/clothing/accessory/cape/black
 	name = "attachable black cloak"
 	desc = "A simple black cloak you can attach to your suit for all your edgy needs."

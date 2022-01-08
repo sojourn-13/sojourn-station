@@ -408,7 +408,7 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/storage/numericalgarb
 	name = "numerical garb"
-	desc = "A padded cloak meant for numerical shockingly made to be biomatter restant. The fabtric is two coloured allowing you to flip it inside out to change from red to gray."
+	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and grey."
 	icon_state = "numericalgarb"
 	item_state = "numericalgarb"
 	armor = list(

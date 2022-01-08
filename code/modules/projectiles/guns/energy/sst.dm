@@ -46,6 +46,13 @@
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 5)
 	price_tag = 1600
 
+/obj/item/gun/energy/sst/formatbound/preloaded
+
+/obj/item/gun/energy/sst/formatbound/preloaded/New()
+	cell = new /obj/item/cell/medium/moebius/high(src)
+	update_icon()
+	. = ..()
+
 /obj/item/gun/energy/sst/humility
 	name = "\"SST Humility\" shotgun"
 	desc = "\"Soteria Surface Tension\" brand semi-automatic shotgun. Larger threats demanded larger ordinance and Soteria responded to the internal need for such equipment. \

@@ -47,6 +47,10 @@
 /obj/machinery/vending/blackshield_kit/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/voucher/blackshield))
 		var/obj/item/voucher/blackshield/Voucher = I
+		if(Voucher.stamped)
+			return
+		else
+			Voucher.stamped = TRUE
 		switch(Voucher.voucher_type)
 			if("Primary")
 				RedeemPrimary(I, user)
@@ -57,7 +61,7 @@
 		return
 	return ..()
 
-/obj/machinery/vending/blackshield_kit/proc/RedeemPrimary(obj/item/voucher, mob/redeemer)
+/obj/machinery/vending/blackshield_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					/obj/item/storage/box/bs_kit/mosin = "Mosin",
 					/obj/item/storage/box/bs_kit/sts = "STS",
@@ -71,8 +75,10 @@
 		new selection(loc)
 		qdel(voucher)
 		return TRUE
+	else
+		voucher.stamped = FALSE
 
-/obj/machinery/vending/blackshield_kit/proc/RedeemSecondary(obj/item/voucher, mob/redeemer)
+/obj/machinery/vending/blackshield_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					/obj/item/storage/box/bs_kit/stallion = "Stallion",
 					/obj/item/storage/box/bs_kit/lamia = "Lamia",
@@ -87,8 +93,10 @@
 		new selection(loc)
 		qdel(voucher)
 		return TRUE
+	else
+		voucher.stamped = FALSE
 
-/obj/machinery/vending/blackshield_kit/proc/RedeemArmor(obj/item/voucher, mob/redeemer)
+/obj/machinery/vending/blackshield_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					/obj/item/storage/box/bs_kit/standard_armor = "Plate",
 					/obj/item/storage/box/bs_kit/flak_armor = "Flak",
@@ -100,6 +108,8 @@
 		new selection(loc)
 		qdel(voucher)
 		return TRUE
+	else
+		voucher.stamped = FALSE
 
 //For Marshal Kits
 /obj/machinery/vending/marshal_kit
@@ -116,6 +126,7 @@
 		/obj/item/storage/box/m_kit/ladon = 5,
 		/obj/item/storage/box/m_kit/glock = 5,
 		/obj/item/storage/box/m_kit/standard_armor = 5,
+		/obj/item/storage/box/m_kit/bullet_proof = 5,
 		/obj/item/storage/box/m_kit/laser_armor = 5,
 		/obj/item/storage/box/m_kit/riot = 5
 		)
@@ -138,6 +149,10 @@
 /obj/machinery/vending/marshal_kit/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/voucher/marshal))
 		var/obj/item/voucher/marshal/Voucher = I
+		if(Voucher.stamped)
+			return
+		else
+			Voucher.stamped = TRUE
 		switch(Voucher.voucher_type)
 			if("Primary")
 				RedeemPrimary(I, user)
@@ -148,7 +163,7 @@
 		return
 	return ..()
 
-/obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher, mob/redeemer)
+/obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					/obj/item/storage/box/m_kit/wirbelwind = "Wirbelwind",
 					/obj/item/storage/box/m_kit/state_auto = "State Auto-Shotgun",
@@ -160,8 +175,10 @@
 		new selection(loc)
 		qdel(voucher)
 		return TRUE
+	else
+		voucher.stamped = FALSE
 
-/obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher, mob/redeemer)
+/obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					/obj/item/storage/box/m_kit/firefly = "Firefly",
 					/obj/item/storage/box/m_kit/colt = "Colt",
@@ -173,8 +190,10 @@
 		new selection(loc)
 		qdel(voucher)
 		return TRUE
+	else
+		voucher.stamped = FALSE
 
-/obj/machinery/vending/marshal_kit/proc/RedeemArmor(obj/item/voucher, mob/redeemer)
+/obj/machinery/vending/marshal_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					/obj/item/storage/box/m_kit/standard_armor = "Standard Visor",
 					/obj/item/storage/box/m_kit/bullet_proof = "Bullet Proof",
@@ -186,3 +205,5 @@
 		new selection(loc)
 		qdel(voucher)
 		return TRUE
+	else
+		voucher.stamped = FALSE

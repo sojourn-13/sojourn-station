@@ -46,6 +46,13 @@
 	suitable_cell = /obj/item/cell/small
 	cell_type = /obj/item/cell/small
 
+/obj/item/gun/energy/gun/martin/preloaded
+
+/obj/item/gun/energy/gun/martin/preloaded/New()
+	cell = new /obj/item/cell/small/high(src)
+	update_icon()
+	. = ..()
+
 /obj/item/gun/energy/gun/martin/proc/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	if(current_mode.name == "stun")

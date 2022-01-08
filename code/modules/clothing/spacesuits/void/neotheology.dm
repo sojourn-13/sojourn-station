@@ -127,6 +127,8 @@
 	icon_state = "ntvoidhelmet"
 	item_state = "ntvoidhelmet"
 	action_button_name = "Toggle Helmet Light"
+	brightness_on = 4 //luminosity when on
+	light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT //Holyer then thou!
 	armor = list(
 		melee = 40,
 		bullet = 30,

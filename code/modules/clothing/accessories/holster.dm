@@ -178,6 +178,13 @@ Sword holsters
 	sound_in = 'sound/effects/sheathin.ogg'
 	sound_out = 'sound/effects/sheathout.ogg'
 
+/obj/item/clothing/accessory/holster/saber/militiacommander/occupied
+	var/holstered_spawn = /obj/item/tool/sword/saber/militiacommander
+
+/obj/item/clothing/accessory/holster/saber/militiacommander/occupied/Initialize()
+	holstered = new holstered_spawn
+	update_icon()
+
 /obj/item/clothing/accessory/holster/saber/militiasergeant
 	name = "blackshield sergeant's scabbard"
 	desc = "A brown leather Scabbard with silver lining, on it the emblem of Blackshield, This one is designed for the Sergeant's Saber."
@@ -195,15 +202,19 @@ Sword holsters
 	if(contents.len)
 		add_overlay(image('icons/inventory/accessory/icon.dmi', "saber_layer"))
 
+/obj/item/clothing/accessory/holster/saber/militiasergeant/occupied
+	var/holstered_spawn = /obj/item/tool/sword/saber/militiasergeant
+
+/obj/item/clothing/accessory/holster/saber/militiasergeant/occupied/Initialize()
+	holstered = new holstered_spawn
+	update_icon()
 
 /obj/item/clothing/accessory/holster/saber/occupied
 	var/holstered_spawn = /obj/item/tool/sword/saber
 
 /obj/item/clothing/accessory/holster/saber/occupied/Initialize()
 	holstered = new holstered_spawn
-
-
-
+	update_icon()
 
 /obj/item/clothing/accessory/holster/saber/greatsword
 	name = "quickdraw scabbard"
@@ -223,6 +234,7 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/greatsword/occupied/Initialize()
 	holstered = new holstered_spawn
+	update_icon()
 
 //Subtype which is for printing from the biomachine
 /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
@@ -246,8 +258,7 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/greatsword/churchprint/occupied/Initialize()
 	holstered = new holstered_spawn
-
-
+	update_icon()
 
 /obj/item/clothing/accessory/holster/saber/machete
 	name = "machete scabbard"
@@ -267,6 +278,7 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/machete/occupied/Initialize()
 	holstered = new holstered_spawn
+	update_icon()
 
 /obj/item/clothing/accessory/holster/saber/huntingclaw
 	name = "Hunting Claw Sheath"
@@ -277,17 +289,17 @@ Sword holsters
 	can_hold = list(/obj/item/tool/sword/huntingclaw)
 
 /obj/item/clothing/accessory/holster/saber/huntingclaw/update_icon()
-    ..()
-    cut_overlays()
-    if(contents.len)
-        add_overlay(image('icons/inventory/accessory/icon.dmi', "huntingclaw_layer"))
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "huntingclaw_layer"))
 
 /obj/item/clothing/accessory/holster/saber/huntingclaw/occupied
-    var/holstered_spawn = /obj/item/tool/sword/huntingclaw
+	var/holstered_spawn = /obj/item/tool/sword/huntingclaw
 
 /obj/item/clothing/accessory/holster/saber/huntingclaw/occupied/Initialize()
-    holstered = new holstered_spawn
-
+	holstered = new holstered_spawn
+	update_icon()
 
 
 /obj/item/clothing/accessory/holster/saber/cutlass
@@ -313,4 +325,5 @@ Sword holsters
 
 /obj/item/clothing/accessory/holster/saber/cutlass/occupied/Initialize()
 	holstered = new holstered_spawn
+	update_icon()
 
