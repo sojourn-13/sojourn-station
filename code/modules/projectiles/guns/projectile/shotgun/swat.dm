@@ -34,9 +34,9 @@
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(cur_mode.settings["use_launcher"])
-		//We trigger like this three times
+		//We trigger like this three times, and then if nothing is inside the pistol swap back to are normal shotgun mode
 		pistol.Fire(target, user, params, pointblank, reflex)
-		if(!pistol.chambered)
+		if(!pistol.contents)
 			switch_firemodes() //switch back automatically
 	else
 		..()
@@ -75,6 +75,8 @@
 	max_shells = 9
 	safety = FALSE
 	twohanded = FALSE
+	load_method = SINGLE_CASING
+	ammo_type = /obj/item/ammo_casing/c10x24
 	caliber = "10x24"
 	handle_casings = EJECT_CASINGS
 	init_firemodes = list(
