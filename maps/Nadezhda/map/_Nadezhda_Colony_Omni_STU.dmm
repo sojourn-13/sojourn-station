@@ -84883,7 +84883,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "teR" = (
-/obj/machinery/autolathe/industrial,
+/obj/machinery/autolathe/loaded,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "teU" = (
