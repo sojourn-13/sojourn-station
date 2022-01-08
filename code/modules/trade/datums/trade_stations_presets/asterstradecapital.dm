@@ -1,11 +1,17 @@
 /datum/trade_station/asterstradecapital
-	name_pool = list("FTS 'Solnishko'" = "Free Trade Station 'Solnishko', they sending message \"Zdravstvuite, this is the Trade Station 'Solaris'. We have all of the best products on sale on the frontier! You couldn't get better prices!.\ Everything for sale here, don't be afraid to come aboard and check our wares!\"")
-	start_discovered = TRUE
-	spawn_always = TRUE
+	name_pool = list(
+		"FTS 'Solnishko'" = "Free Trade Station 'Solnishko', they sending message \"Zdravstvuite, this is the Trade Station 'Solaris'. We have all of the best products on sale on the frontier! You couldn't get better prices!.\ Everything for sale here, don't be afraid to come aboard and check our wares!\"",
+	)
 	forced_overmap_zone = list(
 		list(24, 26),
 		list(30, 30)
 	)
+	start_discovered = TRUE
+	spawn_always = TRUE
+	markup = COMMON_GOODS
+	base_income = 1600
+	wealth = 0
+	secret_inv_threshold = 16000
 	assortiment = list(
 		"Disk Designs" = list(
 			/obj/item/computer_hardware/hard_drive/portable/design/misc = good_data("Lonestar Miscellaneous Pack", list(1, 10)),
@@ -64,7 +70,7 @@
 			/obj/item/toy/figure/character/bobblehead/shitcurity,
 			/obj/item/toy/figure/character/bobblehead/metro_patrolman
 		),
-		"Holland and Sullivan Sidearms & Ammunitions" = list(
+		"Holland and Sullivan Sidearms & Ammunition" = list(
 			/obj/item/clothing/accessory/holster,
 			/obj/item/clothing/accessory/holster/armpit,
 			/obj/item/clothing/accessory/holster/waist,
@@ -106,3 +112,12 @@
 			/obj/item/organ_module/active/simple/armshield
 		),
 	)
+/* - Why mech stuff, also this isnt compatable in SoJ
+	offer_types = list(
+		/obj/item/mech_component/ = offer_data("mech component", 125, 10),															// base price: 150
+		/obj/item/mech_equipment/ = offer_data("mech equipment", 175, 10),															// base price: 200
+		/obj/item/robot_parts/robot_component/armour/exosuit/plain = offer_data("exosuit armor plating", 250, 8),					// base price: 300, sold at common
+		/obj/item/robot_parts/robot_component/armour/exosuit/radproof = offer_data("rad-proof exosuit armor plating", 415, 8),		// base price: 500, sold at common
+		/obj/item/robot_parts/robot_component/armour/exosuit/ablative = offer_data("ablative exosuit armor plating", 465, 8),		// base price: 550, sold at common
+		/obj/item/robot_parts/robot_component/armour/exosuit/combat = offer_data("combat exosuit armor plating", 830, 8),			// base price: 1000, sold at common
+	)*/

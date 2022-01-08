@@ -29,8 +29,10 @@
 
 /datum/computer_file/program/trade/proc/reset_shoplist()
 	RecursiveCut(shoppinglist)
-	for(var/i in station.assortiment)
-		shoppinglist[i] = list()
+	if(station)
+		for(var/i in station.assortiment)
+			shoppinglist[i] = list()
+
 /datum/computer_file/program/trade/proc/get_price_of_cart()
 	. = 0
 	for(var/i in shoppinglist)
@@ -53,14 +55,6 @@
 		trade_screen = !trade_screen
 		return 1
 
-	if(href_list["PRG_send"])
-		SStrade.sell(sending, account)
-		return 1
-
-	if(href_list["PRG_receive"])
-		SStrade.buy(receiving, account, shoppinglist, station)
-		return 1
-
 	if(href_list["PRG_account"])
 		var/acc_num = input("Enter account number", "Account linking", computer?.card_slot?.stored_card?.associated_account_number) as num|null
 		if(!acc_num)
@@ -77,10 +71,6 @@
 			return
 
 		account = A
-		return 1
-
-	if(href_list["PRG_account_unlink"])
-		account = null
 		return 1
 
 	if(href_list["PRG_station"])
@@ -104,18 +94,25 @@
 		reset_shoplist()
 		return 1
 
-	if(href_list["PRG_cart_add"])
+	if(href_list["PRG_cart_add"] || href_list["PRG_cart_add_input"])
+		var/ind
+		var/count2buy = 1
+		if(href_list["PRG_cart_add_input"])
+			count2buy = input(usr, "Input how many you want to add", "Trade", 2) as num
+			ind = text2num(href_list["PRG_cart_add_input"])
+		else
+			ind = text2num(href_list["PRG_cart_add"])
 		var/list/category = station.assortiment[choosed_category]
 		if(!islist(category))
 			return
-		var/path = LAZYACCESS(category, text2num(href_list["PRG_cart_add"]))
+		var/path = LAZYACCESS(category, ind)
 		if(!path)
 			return
-		var/good_amount = station.get_good_amount(choosed_category, text2num(href_list["PRG_cart_add"]))
+		var/good_amount = station.get_good_amount(choosed_category, ind)
 		if(!good_amount)
 			return
 
-		set_2d_matrix_cell(shoppinglist, choosed_category, path, clamp(get_2d_matrix_cell(shoppinglist, choosed_category, path) + 1, 0, good_amount))
+		set_2d_matrix_cell(shoppinglist, choosed_category, path, clamp(get_2d_matrix_cell(shoppinglist, choosed_category, path) + count2buy, 0, good_amount))
 		return 1
 
 	if(href_list["PRG_cart_remove"])
@@ -130,12 +127,28 @@
 		set_2d_matrix_cell(shoppinglist, choosed_category, path, clamp(get_2d_matrix_cell(shoppinglist, choosed_category, path) - 1, 0, good_amount))
 		return 1
 
-	if(href_list["PRG_offer_fulfill"])
-		var/datum/trade_station/S = LAZYACCESS(SStrade.discovered_stations, text2num(href_list["PRG_offer_fulfill"]))
-		if(!S)
-			return
-		SStrade.fulfill_offer(sending, account, station)
-		return 1
+	if(account)
+		if(href_list["PRG_receive"])
+			SStrade.buy(receiving, account, shoppinglist, station)
+			reset_shoplist()
+			return 1
+		if(href_list["PRG_account_unlink"])
+			account = null
+			return 1
+
+		if(href_list["PRG_offer_fulfill"])
+			var/datum/trade_station/S = LAZYACCESS(SStrade.discovered_stations, text2num(href_list["PRG_offer_fulfill"]))
+			if(!S)
+				return
+			var/atom/movable/path = text2path(href_list["PRG_offer_fulfill_path"])
+			SStrade.fulfill_offer(sending, account, station, path)
+			return 1
+
+		var/t2n = text2num(href_list["PRG_sell"])
+		if(isnum(t2n) && station)
+			var/path = get_2d_matrix_cell(station.assortiment, choosed_category, t2n)
+			SStrade.sell_thing(sending, account, locate(path) in SStrade.assess_offer(sending, station, path), station)
+			return 1
 
 /datum/nano_module/program/trade
 	name = "Trading Program"
@@ -189,12 +202,14 @@
 	if(PRG.station)
 		if(!PRG.choosed_category || !(PRG.choosed_category in PRG.station.assortiment))
 			PRG.set_choosed_category()
+		.["commision"] = PRG.station.commision
 		.["current_category"] = PRG.choosed_category ? PRG.station.assortiment.Find(PRG.choosed_category) : null
 		.["goods"] = list()
 		.["categories"] = list()
 		.["total"] = PRG.get_price_of_cart()
 		for(var/i in PRG.station.assortiment)
-			.["categories"] += list(list("name" = i, "index" = PRG.station.assortiment.Find(i)))
+			if(istext(i))
+				.["categories"] += list(list("name" = i, "index" = PRG.station.assortiment.Find(i)))
 		if(PRG.choosed_category)
 			var/list/assort = PRG.station.assortiment[PRG.choosed_category]
 			if(islist(assort))
@@ -207,11 +222,15 @@
 
 					var/amount = PRG.station.get_good_amount(PRG.choosed_category, index)
 
+					var/amount2sell = 0
+					if(PRG.station && PRG.sending)
+						amount2sell = length(SStrade.assess_offer(PRG.sending, PRG.station, path))
 					var/pathname = initial(AM.name)
 					var/list/good_packet = assort[path]
 					if(islist(good_packet))
 						pathname = good_packet["name"] ? good_packet["name"] : pathname
 					var/price = SStrade.get_import_cost(path, PRG.station)
+					var/sell_price = SStrade.get_sell_price(path, PRG.station)
 
 					var/count = max(0, get_2d_matrix_cell(PRG.shoppinglist, PRG.choosed_category, path))
 
@@ -220,21 +239,33 @@
 						"price" = price,
 						"count" = count ? count : 0,
 						"amount_available" = amount,
+						"sell_price" = sell_price,
+						"amount_available_around" = amount2sell,
 						"index" = index
 					))
 		if(!recursiveLen(.["goods"]))
 			.["goods"] = null
 
-	.["offers"] = list()
-	for(var/datum/trade_station/S in SStrade.discovered_stations)
-		var/atom/movable/offer_type = S.offer_type
-		var/list/offer = list("station" = S.name, "name" = initial(offer_type.name), "amount" = S.offer_amount, "price" = S.offer_price, "index" = SStrade.discovered_stations.Find(S))
-		if(PRG.sending)
-			offer["available"] = length(SStrade.assess_offer(PRG.sending, S))
-		.["offers"] += list(offer)
-	if(!recursiveLen(.["offers"]))
-		.["offers"] = null
+		.["offers"] = list()
+		for(var/offer_path in PRG.station.special_offers)
+			var/atom/movable/path = offer_path
+			var/list/offer_content = PRG.station.special_offers[offer_path]
+			var/list/offer = list(
+				"station" = PRG.station.name,
+				"name" = offer_content["name"],
+				"amount" = offer_content["amount"],
+				"price" = offer_content["price"],
+				"index" = SStrade.discovered_stations.Find(PRG.station),
+				"path" = path,
+			)
+			if(PRG.sending)
+				offer["available"] = length(SStrade.assess_offer(PRG.sending, PRG.station, offer_path))
+			.["offers"] += list(offer)
 
+		if(!recursiveLen(.["offers"]))
+			.["offers"] = null
+
+		.["time"] = time2text( (PRG.station.update_time - (world.time - PRG.station.update_timer_start)) , "mm:ss")
 
 #undef GOODS_SCREEN
 #undef OFFER_SCREEN

@@ -1,6 +1,5 @@
 /datum/trade_station/lancer
 	name_pool = list("IRS 'Lancer'" = "IRS Trash Railgun 'Lancer'. They're sending a message. \"Hoho, you want some Trash?\"")
-	offer_amout_devider_of_wanted_goods = 6 //less items do to cubes being really hard to stack and rather long to make food items
 	assortiment = list(
 		"Trash" = list(/obj/random/scrap/dense_weighted = custom_good_amount_range(list(2, 5)),
 				/obj/random/scrap/dense_even = custom_good_amount_range(list(4, 8)),
@@ -20,9 +19,9 @@
 	)
 
 	offer_types = list(
-		/obj/structure/scrap_cube,
-		/obj/item/reagent_containers/food/snacks/baconburger,
-		/obj/item/reagent_containers/food/snacks/blt
+		/obj/structure/scrap_cube = offer_data("compressed scrap cube", 80, 0),
+		/obj/item/reagent_containers/food/snacks/baconburger = offer_data("bacon burger", 150, 0),
+		/obj/item/reagent_containers/food/snacks/blt = offer_data("blt sandwich", 180, 0)
 	)
 //imo way better place of doing the whole list to be in same file as the ship - Trilby
 /obj/random/scrap

@@ -1,7 +1,6 @@
 /datum/trade_station/nt_cruisers
 	icon_states = "nt_cruiser"
 	markup = 1.2
-	offer_amout_devider_of_wanted_goods = 2 //less do to being supplied here by the church themselfs
 	name_pool = list(
 		"CAV 'Faith'" = "'Church of Absolute Vessel 'Faith' We are currently resupplying from Nadezhda, but we can sell a few items from our stock.",
 		"CAV 'Hope'" = "'Church of Absolute Vessel 'Hope' We're in the system for the next few hours before we make a round trip to the confederacy, we're certainly willing to sell our goods."
@@ -46,7 +45,7 @@
 	)
 
 	offer_types = list(
-		/obj/item/clothing/suit/space/void/NTvoid,
-		/obj/item/clothing/shoes/hermes_shoes,
-		/obj/item/reagent_containers/food/snacks/grown = 10 //10 credits a grown item
+		/obj/item/clothing/suit/space/void/NTvoid = offer_data("angel voidsuit", 1250, 0),
+		/obj/item/clothing/shoes/hermes_shoes = offer_data("hermes shoes", 420, 0),
+		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 0)
 	)

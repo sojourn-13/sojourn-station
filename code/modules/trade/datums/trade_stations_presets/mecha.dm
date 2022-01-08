@@ -1,7 +1,6 @@
 /datum/trade_station/mechas
 	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell exosuits. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
 		\"Hey, dudes, it seems you want some mechas? We currently got a surplus and spare parts.\"")
-	offer_amout_devider_of_wanted_goods = 5 //50% less
 	assortiment = list(
 		"Exosuit Parts" = list(
 			/obj/item/mecha_parts/chassis/ripley,
@@ -59,12 +58,12 @@
 	)
 
 	offer_types = list(
-		/obj/item/mech_ammo_box/scattershot,
-		/obj/item/mech_ammo_box/lmg,
-		/obj/item/tool_upgrade/productivity/motor,
-		/obj/item/tool_upgrade/augment/hydraulic,
-		/obj/item/tool_upgrade/augment/cell_mount,
-		/obj/item/tool_upgrade/reinforcement/plating,
-		/obj/item/gun_upgrade/mechanism/overdrive,
-		/obj/item/cell/large/moebius/nuclear
+		/obj/item/mech_ammo_box/scattershot = offer_data("LBX AC 10 ammunition box", 350, 0),
+		/obj/item/mech_ammo_box/lmg = offer_data("Ultra AC 2 ammunition box", 350, 0),
+		/obj/item/tool_upgrade/productivity/motor = offer_data("eletric motor", 250, 0),
+		/obj/item/tool_upgrade/augment/hydraulic = offer_data("hydraulic circuits", 280, 0),
+		/obj/item/tool_upgrade/augment/cell_mount = offer_data("large cell mount", 130, 0),
+		/obj/item/tool_upgrade/reinforcement/plating = offer_data("reinforced plating", 120, 0),
+		/obj/item/gun_upgrade/mechanism/overdrive = offer_data("overdrive chip", 175, 0),
+		/obj/item/cell/large/moebius/nuclear = offer_data("Soteria \"Atomcell 14000L\"", 575, 0)
 	)

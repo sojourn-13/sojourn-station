@@ -101,6 +101,9 @@
 	rand_min = 3
 	rand_max = 8
 
+/obj/item/stack/material/iron/full
+	amount = 120
+
 /obj/item/stack/material/sandstone
 	name = "sandstone brick"
 	icon_state = "sheet-sandstone"
@@ -119,11 +122,8 @@
 	price_tag = 25
 	novariants = FALSE
 
-/obj/item/stack/material/durasteel
-	name = "durasteel"
-	icon_state = "sheet-durasteel"
-	default_type = MATERIAL_DURASTEEL
-	price_tag = 1000
+/obj/item/stack/material/diamond/full
+	amount = 120
 
 /obj/item/stack/material/diamond/random
 	rand_min = 1
@@ -133,12 +133,21 @@
 	rand_min = 10
 	rand_max = 12
 
+/obj/item/stack/material/durasteel
+	name = "durasteel"
+	icon_state = "sheet-durasteel"
+	default_type = MATERIAL_DURASTEEL
+	price_tag = 1000
+
 /obj/item/stack/material/uranium
 	name = MATERIAL_URANIUM
 	icon_state = "sheet-uranium"
 	default_type = MATERIAL_URANIUM
 	price_tag = 10
 	novariants = FALSE
+
+/obj/item/stack/material/uranium/full
+	amount = 120
 
 /obj/item/stack/material/uranium/random
 	rand_min = 2
@@ -154,6 +163,9 @@
 /obj/item/stack/material/plasma/random
 	rand_min = 3
 	rand_max = 5
+
+/obj/item/stack/material/plasma/full
+	amount = 120
 
 /obj/item/stack/material/plastic
 	name = "plastic"
@@ -176,6 +188,9 @@
 	price_tag = 10
 	novariants = FALSE
 
+/obj/item/stack/material/gold/full
+	amount = 120
+
 /obj/item/stack/material/gold/random
 	rand_min = 2
 	rand_max = 6
@@ -191,6 +206,9 @@
 	rand_min = 3
 	rand_max = 8
 
+/obj/item/stack/material/silver/full
+	amount = 120
+
 //Valuable resource, cargo can sell it.
 /obj/item/stack/material/platinum
 	name = "platinum"
@@ -203,6 +221,9 @@
 	rand_min = 1
 	rand_max = 6
 
+/obj/item/stack/material/platinum/full
+	amount = 120
+
 //Extremely valuable to Research.
 /obj/item/stack/material/mhydrogen
 	name = "metallic hydrogen"
@@ -210,6 +231,9 @@
 	default_type = MATERIAL_MHYDROGEN
 	price_tag = 10
 	novariants = FALSE
+
+/obj/item/stack/material/mhydrogen/full
+	amount = 120
 
 //Fuel for MRSPACMAN generator.
 /obj/item/stack/material/tritium
@@ -219,12 +243,18 @@
 	apply_colour = 1
 	price_tag = 10
 
+/obj/item/stack/material/tritium/full
+	amount = 120
+
 /obj/item/stack/material/osmium
 	name = "osmium"
 	icon_state = "sheet-silver"
 	default_type = MATERIAL_OSMIUM
 	apply_colour = 1
 	price_tag = 12
+
+/obj/item/stack/material/osmium/full
+	amount = 120
 
 /obj/item/stack/material/steel
 	name = MATERIAL_STEEL

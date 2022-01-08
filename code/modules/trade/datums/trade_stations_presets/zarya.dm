@@ -1,7 +1,14 @@
 /datum/trade_station/station_zarya
-	name_pool = list("FTS 'Zarya'" = "Free Trade Station 'Zarya', they're sending a message \"Privet, this is free station 'Zarya'. We have everything for sale here, don't be afraid to scan our cargo and check our wares!\".")
+	name_pool = list(
+		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya':\n\"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
+	)
 	start_discovered = TRUE
 	spawn_always = TRUE
+	markup = COMMON_GOODS
+	offer_limit = 20
+	base_income = 1600
+	wealth = 0
+	secret_inv_threshold = 16000
 	assortiment = list(
 		"Vozduh" = list(
 			/obj/machinery/portable_atmospherics/canister/sleeping_agent,
@@ -42,4 +49,12 @@
 		)
 	)
 
-	offer_types = list()
+	offer_types = list(
+		/obj/item/tool_upgrade = offer_data("tool upgrade", 175, 0),
+		/obj/item/rig_module = offer_data("rig module", 400, 10),
+		/obj/item/rig/eva = offer_data("EVA suit control module", 600, 4),
+		/obj/item/rig/hazard = offer_data("hazard hardsuit control module", 600, 4),
+		/obj/item/rig/industrial = offer_data("industrial suit control module", 800, 4),
+		/obj/item/rig/hazmat = offer_data("AMI control module", 800, 4),
+		/obj/item/rig/combat = offer_data("combat hardsuit control module", 1000, 4),
+	)

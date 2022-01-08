@@ -1,7 +1,6 @@
 /datum/trade_station/fs_factory
 	name_pool = list("XSMS 'Kaida'" = "Xanaroth Syndicate Manufacturing Station 'Kaida'. \"Well if it isn't our favorite trade partner, we got some side deals just for you!\"")
 	markup = 0.2
-	offer_amout_devider_of_wanted_goods = 3 //less, hard to get items
 	assortiment = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/mac,
@@ -51,12 +50,12 @@
 	)
 
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun,
-		/obj/item/gun_upgrade/mechanism/overshooter,
-		/obj/item/gun_upgrade/mechanism/weintraub,
-		/obj/item/gun_upgrade/trigger/dangerzone,
-		/obj/item/gun_upgrade/muzzle/silencer,
-		/obj/item/gun_upgrade/barrel/bore,
-		/obj/item/gun_upgrade/barrel/forged,
-		/obj/item/gun_upgrade/magwell/auto_eject
+		/obj/item/gun/energy/laser/railgun= offer_data("\"Reductor\" rail rifle", 3500, 0),
+		/obj/item/gun_upgrade/mechanism/overshooter = offer_data("overshooter", 400, 0),
+		/obj/item/gun_upgrade/mechanism/weintraub = offer_data("\"Hurricane\" full auto kit", 450, 0),
+		/obj/item/gun_upgrade/trigger/dangerzone = offer_data("\"Dangerzone\" trigger", 250, 0),
+		/obj/item/gun_upgrade/muzzle/silencer = offer_data("silencer", 150, 0),
+		/obj/item/gun_upgrade/barrel/bore = offer_data("bored barrel", 750, 0),
+		/obj/item/gun_upgrade/barrel/forged = offer_data("forged barrel", 750, 0),
+		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 0)
 	)

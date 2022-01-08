@@ -1,7 +1,6 @@
 /datum/trade_station/bluespace_technical
 	spawn_probability = 10
 	name_pool = list("B-42-Alpha" = "Unknown signature, bluespace traces interfere with sensors. Unable to triangulate object.")
-	offer_amout_devider_of_wanted_goods = 3 //less goods wanted, they are rather hard to get items or a lot of sandwitches
 	assortiment = list(
 		"#$285@$532#$@" = list(
 			/obj/item/circuitboard/teleporter,
@@ -17,7 +16,7 @@
 	)
 
 	offer_types = list(
-		/obj/item/bluespace_crystal = 0.25,
-		/obj/item/device/mmi/digital/posibrain,
-		/obj/item/reagent_containers/food/snacks/csandwich = 4
+		/obj/item/bluespace_crystal = offer_data("bluespace crystal", 1000, 10),
+		/obj/item/device/mmi/digital/posibrain = offer_data("positronic brain", 750, 3),
+		/obj/item/reagent_containers/food/snacks/csandwich = offer_data("sandwich", 150, 1)
 	)
