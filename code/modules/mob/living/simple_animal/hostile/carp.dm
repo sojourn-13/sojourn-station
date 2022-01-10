@@ -13,6 +13,7 @@
 	speed = 4
 	maxHealth = 25
 	health = 25
+	var/knockdowncapable = TRUE //Fix
 
 	armor = list(melee = 5, bullet = 10, energy = 50, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
 
@@ -38,6 +39,7 @@
 	maxHealth = 10
 	health = 10
 
+	knockdowncapable = FALSE
 	harm_intent_damage = 8
 	melee_damage_lower = 4
 	melee_damage_upper = 6
@@ -122,6 +124,8 @@
 	var/mob/living/L = .
 	if(istype(L))
 		if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
+			return
+		if(knockdowncapable == FALSE)
 			return
 		if(prob(15))
 			L.Weaken(3)
