@@ -123,6 +123,6 @@
 	if(istype(L))
 		if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
 			return
-		if(prob(45 - L.stats.getStat(STAT_TGH))) //Anything above 45 toughness resists carp knockdown
+		if(prob(65 - L.stats.getStat(STAT_TGH))) //Anything above 65 toughness resists carp knockdown entirely
 			L.Weaken(3)
 			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
