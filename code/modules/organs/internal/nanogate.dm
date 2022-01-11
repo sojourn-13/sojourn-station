@@ -13,6 +13,7 @@
 	throw_speed = 3
 	throw_range = 5
 	layer = ABOVE_MOB_LAYER
+	nature = MODIFICATION_SILICON //Why wasn't this done by default?
 	origin_tech = list(TECH_ENGINEERING = 15, TECH_BIO = 5, TECH_DATA = 10)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_GOLD = 4, MATERIAL_SILVER = 4, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 1)
 	attack_verb = list("attacked", "slapped", "whacked")
