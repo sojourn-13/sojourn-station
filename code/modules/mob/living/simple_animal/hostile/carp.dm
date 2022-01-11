@@ -29,6 +29,7 @@
 	break_stuff_probability = 4
 
 	faction = "carp"
+	var/knockdown_odds = 35 //35TGH to null the basic cards knockdown
 
 /mob/living/simple_animal/hostile/carp/baby
 	name = "space carp spawn"
@@ -37,7 +38,7 @@
 	icon_gib = "carp_gib"
 	maxHealth = 10
 	health = 10
-
+	knockdown_odds = 25 //25TGH to null the basic cards knockdown
 	harm_intent_damage = 8
 	melee_damage_lower = 4
 	melee_damage_upper = 6
@@ -54,7 +55,7 @@
 	mob_size = MOB_LARGE
 
 	//pixel_x = -16
-
+	knockdown_odds = 40 //40TGH to null the basic cards knockdown
 	health = 75
 	maxHealth = 75
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
@@ -73,7 +74,7 @@
 	turns_per_move = 1
 	move_to_delay = 1
 	mob_size = MOB_LARGE
-
+	knockdown_odds = 45 //45TGH to null the basic cards knockdown
 	health = 275
 	maxHealth = 275
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
@@ -101,6 +102,7 @@
 	leather_amount = 10 //The amount of leather sheets dropped.
 	bones_amount = 10 //The amount of bone sheets dropped.
 	mob_size = MOB_LARGE
+	knockdown_odds = 45 //45TGH to null the basic cards knockdown, same as shark
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
 	special_parts = list(/obj/item/animal_part/wolf_tooth,
 						 /obj/item/animal_part/wolf_tooth,
@@ -120,9 +122,12 @@
 /mob/living/simple_animal/hostile/carp/AttackingTarget()
 	. =..()
 	var/mob/living/L = .
+	var/mob/living/carbon/human/H
 	if(istype(L))
 		if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
 			return
-		if(prob(15))
+		if(H && H.has_shield()) //Having a shield to block the knockdown!
+			L.visible_message(SPAN_DANGER("\the [src] tried to knocks down \the [L]! But [L] blocks \the [src] attack!"))
+		if(prob(knockdown_odds - L.stats.getStat(STAT_TGH))) //Anything above 45 toughness resists carp knockdown entirely
 			L.Weaken(3)
 			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
