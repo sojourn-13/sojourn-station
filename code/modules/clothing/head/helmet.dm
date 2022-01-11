@@ -53,6 +53,7 @@
 	options["Blackshield Colours"] = "helmet_mil_alt"
 	options["Desert Combat"] = "helmet_tan_mil"
 	options["Woodlands Blackshield Combat"] = "helmet_green_mil"
+	options["Anthromorphic Blackshield Helmet"] = "helmet_mil_anthro"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
