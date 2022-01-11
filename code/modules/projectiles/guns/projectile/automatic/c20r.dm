@@ -55,4 +55,5 @@
 /obj/item/gun/projectile/automatic/c20r/sci/preloaded
 
 /obj/item/gun/projectile/automatic/c20r/sci/preloaded/New()
+	. = ..()
 	ammo_magazine = new /obj/item/ammo_magazine/smg_35/hv(src)
