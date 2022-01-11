@@ -228,20 +228,23 @@
 
 /obj/random/dungeon_gun_ballistic/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/automatic/pulse_rifle = 2,
-				/obj/item/gun/projectile/automatic/sbaw = 3,
-				/obj/item/gun/projectile/automatic/chaingun = 2,
+				/obj/item/gun/projectile/automatic/sbaw = 1,
+				/obj/item/gun/projectile/automatic/chaingun = 1,
 				/obj/item/gun/projectile/automatic/lmg/pk = 3,
-				/obj/item/gun/projectile/automatic/dp = 1,
+				/obj/item/gun/projectile/automatic/dp = 2,
 				/obj/item/gun/projectile/automatic/bren = 1.5,
-				/obj/item/gun/projectile/automatic/bastard = 1,
+				/obj/item/gun/projectile/automatic/bastard = 2,
 				/obj/item/gun/projectile/automatic/mac/croon = 1,
 				/obj/item/gun/projectile/lamia/scoped/dark = 3,
 				/obj/item/gun/projectile/shotgun/pump/combat = 3,
-				/obj/item/gun/projectile/shotgun/pug = 3,
+				/obj/item/gun/projectile/shotgun/pug = 2,
 				/obj/item/gun/projectile/gyropistol = 1,
+				/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine = 2,
+				/obj/item/gun/projectile/automatic/omnirifle/standard = 1,
 				/obj/item/gun/projectile/automatic/sts/hrifle = 2,
 				/obj/item/gun/projectile/automatic/c20r = 3,
-				/obj/item/gun/projectile/basilisk = 3))
+				/obj/item/gun/projectile/basilisk = 3,
+				/obj/item/gun/projectile/revolver/deckard = 2))
 
 /obj/random/dungeon_gun_ballistic/low_chance
 	name = "low chance random special ballistic gun"
