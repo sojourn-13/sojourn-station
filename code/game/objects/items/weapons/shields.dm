@@ -545,7 +545,7 @@
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
 		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
-			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
+			return (base_block_chance - round(damage)) //This way are lasers and bullets that deal 35~ damage cant be blocked.
 	return base_block_chance
 
 /obj/item/shield/buckler/energy/attack_self(mob/living/user as mob)
