@@ -55,3 +55,9 @@
 	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Commit\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
 	price_tag = 200
+
+/obj/item/gun/projectile/clarissa/moebius/preloaded_cbo
+
+/obj/item/gun/projectile/clarissa/moebius/preloaded_cbo/New()
+	. = ..()
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/drum/soporific_cbo(src)
