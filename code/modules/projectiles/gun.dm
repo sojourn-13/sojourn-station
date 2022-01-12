@@ -218,19 +218,14 @@
 		handle_click_empty(user)
 		return FALSE
 
-	if((CLUMSY in M.mutations) && prob(40)) //Clumsy handling
-		var/obj/P = consume_next_projectile()
-		if(P)
-			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
-				handle_post_fire(user, user)
-				user.visible_message(
-					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
-					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
-					)
-				M.drop_item()
-		else
-			handle_click_empty(user)
-		return FALSE
+		if(CLUMSY in M.mutations)
+			user.drop_item()
+			user.visible_message(
+				SPAN_DANGER("\the [user] fumbles with \the [src], dropping it on the floor!"),
+				SPAN_DANGER("You fumble with \the [src] not knowing how to fire it or how to use it!")
+				)
+			return FALSE
+
 	if(rigged)
 		var/obj/P = consume_next_projectile()
 		if(P)

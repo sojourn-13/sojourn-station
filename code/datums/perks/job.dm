@@ -90,7 +90,7 @@
 
 /datum/perk/klutz
 	name = "Klutz"
-	desc = "You find a lot of tasks a little beyond your ability to perform, but being accident prone has at least made you used to getting hurt."
+	desc = "You find a lot of tasks a little beyond your ability to perform such is using any type of weaponry, but being accident prone has at least made you used to getting hurt."
 	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/klutz/assign(mob/living/carbon/human/H)
