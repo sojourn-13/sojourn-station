@@ -67,6 +67,7 @@
 	)
 	siemens_coefficient = 0.4
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	brightness_on = 8
 	on = 0
 	light_applied = 0
