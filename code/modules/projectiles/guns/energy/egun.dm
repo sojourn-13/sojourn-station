@@ -50,7 +50,7 @@
 
 /obj/item/gun/energy/gun/martin/preloaded/New()
 	cell = new /obj/item/cell/small/high(src)
-	update_icon()
+	add_overlay("taser_pdw")
 	. = ..()
 
 /obj/item/gun/energy/gun/martin/proc/update_mode()
