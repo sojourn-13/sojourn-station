@@ -3,6 +3,10 @@
 	icon_state = "meds-green"
 	spawn_nothing_percentage = 60
 
+/obj/random/medical/always_spawn
+	name = "random always spawn medicine"
+	spawn_nothing_percentage = 0
+
 /obj/random/medical/item_to_spawn()
 	return pickweight(list(/obj/item/stack/medical/bruise_pack = 4,\
 				/obj/item/stack/medical/ointment = 4,\
