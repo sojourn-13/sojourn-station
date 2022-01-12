@@ -295,6 +295,8 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 
 			missed = abs(power-targetBoom) * 8000 // each step away from the target will result in 8,000 points less
 			calculated_research_points = 40000 - missed
+			if calculated_research_points < 0
+				calculated_research_points = 0
 
 
 			RD.files.adjust_research_points(calculated_research_points)
