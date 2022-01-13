@@ -31,6 +31,10 @@
 	/obj/item/rig/hazard/equipped = 2,
 	))
 
+/obj/random/rig/always_spawn
+	name = "random always spawn rig suit"
+	spawn_nothing_percentage = 0
+
 /obj/random/rig/low_chance
 	name = "low chance random rig suit"
 	icon_state = "armor-blue-low"
@@ -54,6 +58,10 @@
 	name = "random damaged rig suit"
 	icon_state = "armor-red"
 	has_postspawn = TRUE
+
+/obj/random/rig/damaged/always_spawn
+	name = "random always spawn damaged rig suit"
+	spawn_nothing_percentage = 0
 
 /obj/random/rig/damaged/post_spawn(var/list/spawns)
 	for (var/obj/item/rig/module in spawns)
@@ -140,6 +148,10 @@
 	name = "random rare hardsuit module"
 	icon_state = "box-red"
 	spawn_nothing_percentage = 60
+
+/obj/random/rig_module/rare/always_spawn
+	name = "random always spawn rare hardsuit module"
+	spawn_nothing_percentage = 0
 
 /obj/random/rig_module/rare/item_to_spawn()
 	return pickweight(list(

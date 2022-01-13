@@ -105,6 +105,10 @@
 	name = "random advanced tool"
 	icon_state = "tool-orange"
 
+/obj/random/tool/advanced/always_spawn
+	name = "random always spawn advanced tool"
+	icon_state = "material-blue"
+
 /obj/random/tool/advanced/item_to_spawn()
 	return pickweight(list(
 				/obj/item/tool/screwdriver/combi_driver = 3,

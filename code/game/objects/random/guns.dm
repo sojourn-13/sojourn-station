@@ -50,6 +50,7 @@
 	spawn_nothing_percentage = 10
 
 /obj/random/gun_normal/always_spawn
+	name = "random always spawn normal gun"
 	spawn_nothing_percentage = 0
 
 /obj/random/gun_normal/item_to_spawn()
@@ -139,6 +140,9 @@
 	name = "random fancy gun"
 	icon_state = "gun-blue"
 	spawn_nothing_percentage = 30
+
+/obj/random/gun_fancy/alawys_spawn
+	name = "random always spawn fancy gun"
 
 /obj/random/gun_fancy/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/automatic/wirbelwind = 3,\
