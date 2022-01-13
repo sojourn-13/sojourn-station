@@ -50,8 +50,9 @@
 
 /obj/item/gun/energy/sst/formatbound/preloaded/New()
 	cell = new /obj/item/cell/medium/moebius/high(src)
-	update_icon()
 	. = ..()
+	update_icon()
+	
 
 /obj/item/gun/energy/sst/humility
 	name = "\"SST Humility\" shotgun"
