@@ -510,6 +510,20 @@
 		rad = 0
 	)
 
+/obj/item/clothing/head/armor/helmet/frog
+	name = "mar'qua helmet"
+	desc = "A very old helmet from times of the first mar'qua spacefarers. It is beaten around the edges and made out of metal instead of polymer and alloys like the modern ones. Still for the mar'qua in the colony this is probably the best they have."
+	icon_state = "helmet_frog"
+	flags_inv = BLOCKHAIR
+	armor = list(
+		melee = 20,
+		bullet = 20,
+		energy = 5,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)
+
 /obj/item/clothing/head/helmet/thunderdome
 	name = "\improper Thunderdome helmet"
 	desc = "<i>'Let the battle commence!'</i>"
