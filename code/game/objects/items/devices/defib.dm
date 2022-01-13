@@ -39,7 +39,7 @@
 
 /obj/item/device/defib_kit/Initialize() //updates mapped items
 	..()
-	update_icon
+	update_icon()
 
 /obj/item/device/defib_kit/Destroy()
 	. = ..()
