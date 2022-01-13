@@ -34,7 +34,12 @@
 
 	if(ispath(cell_type, suitable_cell))
 		cell = new cell_type(src)
+
 	update_icon()
+
+/obj/item/device/defib_kit/Initialize() //updates mapped items
+	..()
+	update_icon
 
 /obj/item/device/defib_kit/Destroy()
 	. = ..()
