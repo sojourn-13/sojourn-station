@@ -96,11 +96,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
-		STAT_TGH = 30,
-		STAT_VIG = -40,
-		STAT_BIO = -2,
-		STAT_MEC = -2,
-		STAT_COG = -15
+		STAT_TGH = 20,
+		STAT_VIG = -30,
+		STAT_BIO = -1,
+		STAT_MEC = -1,
+		STAT_COG = -10
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/no_light
