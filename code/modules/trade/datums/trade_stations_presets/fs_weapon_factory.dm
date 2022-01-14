@@ -1,6 +1,7 @@
 /datum/trade_station/fs_factory
 	name_pool = list("XSMS 'Kaida'" = "Xanaroth Syndicate Manufacturing Station 'Kaida'. \"Well if it isn't our favorite trade partner, we got some side deals just for you!\"")
-	markup = 0.2
+	spawn_always = TRUE
+	markup = RARE_GOODS		// dept-specific stuff should be more expensive for guild
 	assortiment = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/mac,
@@ -42,10 +43,19 @@
 			/obj/item/gun/projectile/shotgun/pump/china,
 			/obj/item/grenade/chem_grenade/incendiary,
 			/obj/item/grenade/chem_grenade/teargas,
-			/obj/item/grenade/empgrenade,
 			/obj/item/grenade/empgrenade/low_yield,
 			/obj/item/grenade/flashbang,
+			/obj/item/grenade/frag/stinger,
 			/obj/item/grenade/smokebomb
+		)
+	)
+	secret_inventory = list(
+		"High-End Grenades" = list(
+			/obj/item/grenade/empgrenade,
+			/obj/item/grenade/frag,
+			/obj/item/grenade/explosive,
+			/obj/item/grenade/anti_photon,
+			/obj/item/plastique
 		)
 	)
 

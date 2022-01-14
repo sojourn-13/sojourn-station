@@ -50,11 +50,11 @@
 	)
 
 	offer_types = list(
-		/obj/item/tool_upgrade = offer_data("tool upgrade", 175, 0),
-		/obj/item/rig_module = offer_data("rig module", 400, 10),
-		/obj/item/rig/eva = offer_data("EVA suit control module", 600, 4),
-		/obj/item/rig/hazard = offer_data("hazard hardsuit control module", 600, 4),
-		/obj/item/rig/industrial = offer_data("industrial suit control module", 800, 4),
-		/obj/item/rig/hazmat = offer_data("AMI control module", 800, 4),
-		/obj/item/rig/combat = offer_data("combat hardsuit control module", 1000, 4),
+		/obj/item/tool_upgrade = offer_data("tool upgrade", 200, 0),				// base price: 200
+		/obj/item/tool/crowbar/onestar = offer_data("greyson crowbar", 1000, 3),
+		/obj/item/tool/pickaxe/onestar = offer_data("greyson pickaxe", 1000, 3),
+		/obj/item/tool/pickaxe/jackhammer/onestar = offer_data("greyson jackhammer", 1000, 3),
+		/obj/item/tool/screwdriver/combi_driver/onestar = offer_data("greyson combi driver", 1000, 3),
+		/obj/item/tool/weldingtool/onestar  = offer_data("greyson welding tool", 1000, 3),
+		/obj/item/tool_upgrade/augment/repair_nano = offer_data("repair nano", 5000, 1),
 	)
