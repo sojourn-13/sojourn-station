@@ -25,6 +25,7 @@
 				/obj/item/tool/wrench/improvised = 6,
 				/obj/item/tool/wrench/big_wrench = 2,
 				/obj/item/tool/hammer = 8,
+				/obj/item/tool/hammer/deadblow = 4,
 				/obj/item/tool/hammer/homewrecker = 10,
 				/obj/item/tool/hammer/powered_hammer = 2,
 				/obj/item/tool/multitool = 3,
@@ -121,6 +122,7 @@
 				/obj/item/tool/saw/chain = 1,
 				/obj/item/tool/saw/hyper = 1,
 				/obj/item/tool/pickaxe/diamonddrill = 2,
+				/obj/item/tool/hammer/deadblow = 2,
 				/obj/item/tool/tape_roll/fiber = 2,
 				/obj/item/tool/multitool/advanced = 1,
 				/obj/item/tool/multitool/uplink = 0.05, //REALLY RARE

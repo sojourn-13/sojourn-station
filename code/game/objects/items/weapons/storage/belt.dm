@@ -82,6 +82,15 @@
 	new /obj/item/tool/wirecutters(src)
 	new /obj/item/stack/cable_coil/random(src)
 
+/obj/item/storage/belt/utility/full/guild/populate_contents()
+	new /obj/item/tool/hammer(src)
+	new /obj/item/tool/wrench(src)
+	new /obj/item/tool/weldingtool(src)
+	new /obj/item/tool/crowbar(src)
+	new /obj/item/tool/wirecutters(src)
+	new /obj/item/tool/saw(src)
+	new /obj/item/stack/cable_coil/random(src)
+
 /obj/item/storage/belt/utility/roboticist
 	name = "roboticist tool belt"
 	desc = "Can hold various tools."

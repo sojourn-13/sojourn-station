@@ -389,6 +389,7 @@
 			/datum/craft_recipe/guild/robotmelee,
 			/datum/craft_recipe/guild/plasma_glass,
 			/datum/craft_recipe/guild/arcwelder,
+			/datum/craft_recipe/guild/deadblow_hammer,
 			/datum/craft_recipe/guild/polytool,
 			/datum/craft_recipe/guild/combat_shovel,
 			/datum/craft_recipe/guild/supermop,

@@ -16,6 +16,17 @@
 	damage_mult = 2
 	hitsound = 'sound/weapons/smash.ogg'
 
+/obj/item/tool/hammer/deadblow
+	name = "deadblow hammer"
+	desc = "Used for applying blunt force to a surface. This one has sand inside its plasteel head to help do strikes much more constantly in the same place with the same force well reducing trama onto soft surfaces."
+	icon_state = "hammer"
+	item_state = "deadblow"
+	tool_qualities = list(QUALITY_HAMMERING = 45)
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_WOOD = 2, MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2)
+	attack_verb = list("attacked", "blunted", "brused", "smacked", "whacked", "striked", "bonked")
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_ENGINEERING = 3)
+
 /obj/item/tool/hammer/powered_hammer
 	name = "powered sledgehammer"
 	desc = "Used for applying excessive blunt force to a surface."
