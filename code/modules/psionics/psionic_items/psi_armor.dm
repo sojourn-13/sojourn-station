@@ -47,7 +47,7 @@
 		occultist.stats.changeStat(STAT_COG, 5)
 		pointgranted = 1
 
-/obj/item/clothing/head/space/occulthood
+/obj/item/clothing/head/helmet/space/occulthood
 	name = "psion hood"
 	icon_state = "hood"
 	item_state = "hood"
@@ -66,8 +66,7 @@
 		rad = 50
 	)
 	siemens_coefficient = 0.4
-	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	light_color = "#5B0E4F"
 	brightness_on = 8
 	on = 0
 	light_applied = 0
@@ -78,13 +77,13 @@
 	light_overlay = "helmet_light_occult" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
 										  //Currently it's located in the icons/obj/light_overlays folder, proc is at /obj/item/clothing/head/on_update_icon(mob/user) -Sigma
 
-/obj/item/clothing/head/space/occulthood/dropped()
+/obj/item/clothing/head/helmet/space/occulthood/dropped()
 	..()
 	occultist.stats.changeStat(STAT_COG, -5)
 	spawn(5)
 	qdel(src)
 
-/obj/item/clothing/head/space/occulthood/attack_self(mob/user) //Reflavoring because this is light from a place that does not know it.
+/obj/item/clothing/head/helmet/space/occulthood/attack_self(mob/user) //Reflavoring because this is light from a place that does not know it.
 	if(brightness_on)
 		if(!isturf(user.loc))
 			to_chat(user, "Your cannot hear your thoughts while in this [user.loc]")
@@ -95,7 +94,7 @@
 	else
 		return ..(user)
 
-/obj/item/clothing/head/space/occulthood/proc/update_occult_flashlight(mob/user = null)
+/obj/item/clothing/head/helmet/space/occulthood/proc/update_occult_flashlight(mob/user = null)
 	if(on && !light_applied)
 		set_light(brightness_on, l_color = "#5B0E4F")
 		light_applied = 1
@@ -105,7 +104,7 @@
 	update_icon(user)
 	user.update_action_buttons()
 
-/obj/item/clothing/head/space/occulthood/equipped(var/mob/M)
+/obj/item/clothing/head/helmet/space/occulthood/equipped(var/mob/M)
 	.=..()
 	occultist = M
 	if(!pointgranted)
@@ -171,7 +170,7 @@
 		rad = 50
 	)
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|NOSLIP //make these like spacesuit so it can be a real spacesuit
-	siemens_coefficient = 1 //Insulated!
+	siemens_coefficient = 0 //Insulated!
 	var/mob/living/carbon/human/occultist
 	var/pointgranted = 0 //Did we give you your cog?
 
