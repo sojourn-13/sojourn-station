@@ -112,6 +112,8 @@
 	new /obj/item/reagent_containers/pill/dexalin(src)
 	new /obj/item/reagent_containers/pill/dexalin(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
 

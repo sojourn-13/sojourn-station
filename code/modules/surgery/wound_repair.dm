@@ -212,8 +212,8 @@
 	can_infect = 1
 	blood_level = 1
 
-	duration = 70
-/*
+	duration = 20 //Really easy
+
 /datum/old_surgery_step/fix_vein/can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	if(!hasorgans(target))
 		return 0
@@ -226,7 +226,7 @@
 		break
 
 	return affected.open >= 1 && internal_bleeding
-*/
+
 /datum/old_surgery_step/fix_vein/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message(
