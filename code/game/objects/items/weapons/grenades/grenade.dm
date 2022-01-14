@@ -13,6 +13,7 @@
 	var/det_time = 40
 	var/loadable = TRUE
 	var/variance = 0 //How much the fuse time varies up or down. Punishes cooking with makeshift nades, proper ones should have 0
+	price_tag = 300
 
 /obj/item/grenade/proc/clown_check(var/mob/living/user)
 	if((CLUMSY in user.mutations) && prob(50))

@@ -13,7 +13,7 @@
 	waring_faction = "" //It was a inside job
 	waring_faction_multy = 5 //We know your weakness
 */
-
+	price_tag = 1500
 	flash_resistances = 15 //We are the light
 
 	//spawn_blacklisted = TRUE

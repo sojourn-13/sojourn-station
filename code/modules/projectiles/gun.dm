@@ -858,11 +858,6 @@
 	color = initial(color)
 	prefixes = list()
 	item_flags = initial(item_flags)
-
-
-	for (var/prefix in prefixes)
-		name = "[prefix] [name]"
-
 	extra_bulk = initial(extra_bulk)
 
 	//Now lets have each upgrade reapply its modifications
@@ -871,6 +866,9 @@
 
 	if(firemodes.len)
 		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
+
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"
 
 	update_icon()
 	//then update any UIs with the new stats

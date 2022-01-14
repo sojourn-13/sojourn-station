@@ -4,7 +4,7 @@
 	)
 	icon_states = "ship"
 	start_discovered = TRUE
-	markup = 0.5
+	markup = COMMON_GOODS * 1.5
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0

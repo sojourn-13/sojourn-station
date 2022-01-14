@@ -4,6 +4,9 @@
 	)
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
+	base_income = 3200
+	wealth = 0
+	secret_inv_threshold = 32000
 	offer_limit = 30
 	assortiment = list(
 		"Burgers" = list(

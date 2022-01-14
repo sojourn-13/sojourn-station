@@ -121,7 +121,7 @@
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/prime
 
-/obj/item/clothing/head/space/void/NTvoid
+/obj/item/clothing/head/helmet/space/void/NTvoid
 	name = "angel voidsuit helmet"
 	desc = "A voidsuit helmet designed by the church with a most holy mix of biomatter and inorganic matter."
 	icon_state = "ntvoidhelmet"
@@ -139,12 +139,6 @@
 	)
 	siemens_coefficient = 0.35
 	light_overlay = "helmet_light"
-
-	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
-	flash_protection = FLASH_PROTECTION_MAJOR
-	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
-
 
 /obj/item/clothing/suit/space/void/NTvoid
 	name = "angel voidsuit"
@@ -167,7 +161,7 @@
 	price_tag = 300
 
 
-	helmet = /obj/item/clothing/head/space/void/NTvoid
+	helmet = /obj/item/clothing/head/helmet/space/void/NTvoid
 
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	flash_protection = FLASH_PROTECTION_MAJOR

@@ -633,14 +633,17 @@
 		/mob/living/carbon/human/proc/codespeak_criminal,
 		/mob/living/carbon/human/proc/codespeak_unknown,
 		/mob/living/carbon/human/proc/codespeak_status,
+		/mob/living/carbon/human/proc/codespeak_detaining,
 		/mob/living/carbon/human/proc/codespeak_shutup,
 		/mob/living/carbon/human/proc/codespeak_understood,
 		/mob/living/carbon/human/proc/codespeak_yes,
 		/mob/living/carbon/human/proc/codespeak_no,
+		/mob/living/carbon/human/proc/codespeak_detain_local,
 		/mob/living/carbon/human/proc/codespeak_understood_local,
 		/mob/living/carbon/human/proc/codespeak_yes_local,
 		/mob/living/carbon/human/proc/codespeak_no_local,
 		/mob/living/carbon/human/proc/codespeak_warcrime_local,
+		/mob/living/carbon/human/proc/codespeak_rules_of_engagmentn_local,
 		/mob/living/carbon/human/proc/codespeak_run_local
 		)
 
