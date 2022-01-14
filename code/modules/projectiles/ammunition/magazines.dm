@@ -75,7 +75,7 @@
 /obj/item/ammo_magazine/highcap_pistol_35/drum/soporific_cbo
 	name = "standard auto drum (sleeper)"
 	icon_state = "ldrum_r"
-	ammo_type = /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
+	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 	name = "standard auto drum (hollow-point)"
