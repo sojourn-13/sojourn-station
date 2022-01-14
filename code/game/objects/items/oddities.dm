@@ -415,6 +415,7 @@
 		STAT_BIO = 9,
 		STAT_MEC = 9
 	)
+	price_tag = 12000
 	var/cooldown
 	var/entropy_value = 5
 	var/blink_range = 8

@@ -13,8 +13,8 @@
 	return
 
 /obj/item/grenade/empgrenade/low_yield
-	name = "HS EMP grenade \"Frye\" - C"
-	desc = "A weaker variant of the \"Frye\" emp grenade, with lesser radius."
+	name = "HS EMP grenade \"Power Zapper\" - C"
+	desc = "A weaker variant of the \"Power Zapper\" emp grenade, with lesser radius."
 	icon_state = "lyemp"
 	item_state = "empgrenade"
 	origin_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 3)

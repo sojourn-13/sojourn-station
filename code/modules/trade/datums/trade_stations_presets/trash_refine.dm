@@ -17,11 +17,31 @@
 		),
 		"Refined Scrap" = list(/obj/item/stack/sheet/refined_scrap = custom_good_amount_range(list(50, 75))),
 	)
-
+	secret_inventory = list(
+		"Premium Trash" = list(
+			/obj/structure/scrap = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/large = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/medical = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/medical/large = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/vehicle = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/vehicle/large = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/food = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/food/large = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/guns = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/guns/large = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/science = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/science/large = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/cloth = custom_good_amount_range(list(2,5)),			// Could be a concern with the armor part offer, but it's locked behind discovery and a secret inventory. Something to watch for.
+			/obj/structure/scrap/cloth/large = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/poor = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/poor/large = custom_good_amount_range(list(2,5)),
+		)
+	)
+	// TODO: offers
 	offer_types = list(
-		/obj/structure/scrap_cube = offer_data("compressed scrap cube", 80, 0),
-		/obj/item/reagent_containers/food/snacks/baconburger = offer_data("bacon burger", 150, 0),
-		/obj/item/reagent_containers/food/snacks/blt = offer_data("blt sandwich", 180, 0)
+		/obj/structure/scrap_cube = offer_data("compressed scrap cube", 80, 3),
+		/obj/item/reagent_containers/food/snacks/baconburger = offer_data("bacon burger", 150, 5),
+		/obj/item/reagent_containers/food/snacks/blt = offer_data("blt sandwich", 180, 12)
 	)
 //imo way better place of doing the whole list to be in same file as the ship - Trilby
 /obj/random/scrap

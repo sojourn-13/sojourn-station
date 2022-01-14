@@ -5,6 +5,7 @@
 	item_state = "emp"
 	det_time = 20
 	origin_tech = list(TECH_BLUESPACE = 4, TECH_MATERIAL = 4)
+	price_tag = 500
 
 /obj/item/grenade/anti_photon/prime()
 	playsound(src.loc, 'sound/effects/phasein.ogg', 50, 1, 5)

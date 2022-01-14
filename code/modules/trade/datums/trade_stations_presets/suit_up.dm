@@ -2,6 +2,13 @@
 	name_pool = list(
 		"ATB 'Suit Up!'" = "Aster's Trade Beacon 'Suit Up!':\n\"Suits, voidsuits and more for you, traveler!\""
 	)
+	start_discovered = TRUE
+	spawn_always = TRUE
+	markup = COMMON_GOODS
+	offer_limit = 20
+	base_income = 3200
+	wealth = 0
+	secret_inv_threshold = 24000
 	assortiment = list(
 		"Voidsuits" = list(
 			/obj/item/clothing/suit/space/void,
@@ -11,6 +18,15 @@
 			/obj/item/clothing/suit/space/void/medical = custom_good_amount_range(list(-5, 3)),
 			/obj/item/clothing/suit/space/void/security = custom_good_amount_range(list(-5, 1)),
 			/obj/item/clothing/suit/space/void/SCAF = custom_good_amount_range(list(-5, 1))
+		),
+		"RIGs" =  list(
+			/obj/item/rig/eva = custom_good_amount_range(list(1, 5)),
+			/obj/item/rig/medical = custom_good_amount_range(list(1, 5)),
+			/obj/item/rig/light = custom_good_amount_range(list(1, 5)),
+			/obj/item/rig/hazmat = custom_good_amount_range(list(1, 5)),
+			/obj/item/rig/combat = custom_good_amount_range(list(1, 5)),
+			/obj/item/rig/hazard = custom_good_amount_range(list(1, 5)),
+			/obj/item/rig/industrial = custom_good_amount_range(list(1, 5))
 		),
 		"Rig modules" = list(
 			/obj/item/rig_module/device/healthscanner,
