@@ -1,17 +1,19 @@
 #define AUTODOC_DAMAGE          1
 #define AUTODOC_EMBED_OBJECT	(1 << 1)
 #define AUTODOC_FRACTURE 		(1 << 2)
-#define AUTODOC_OPEN_WOUNDS		(1 << 3)
+#define AUTODOC_IB				(1 << 3)
+#define AUTODOC_OPEN_WOUNDS		(1 << 4)
 
-#define AUTODOC_BLOOD			(1 << 4)
-#define AUTODOC_TOXIN			(1 << 5)
-#define AUTODOC_DIALYSIS		(1 << 6)
+#define AUTODOC_BLOOD			(1 << 5)
+#define AUTODOC_TOXIN			(1 << 6)
+#define AUTODOC_DIALYSIS		(1 << 7)
 #define AUTODOC_DIALYSIS_AMOUNT 5
 
 #define AUTODOC_SCAN_COST           50
 #define AUTODOC_DAMAGE_COST         200
 #define AUTODOC_EMBED_OBJECT_COST	500
 #define AUTODOC_FRACTURE_COST       600
+#define AUTODOC_IB_COST				100
 #define AUTODOC_OPEN_WOUNDS_COST    200
 #define AUTODOC_BLOOD_COST          300
 #define AUTODOC_TOXIN_COST			200
@@ -96,9 +98,13 @@
 
 		if(external.wounds.len)
 			for(var/datum/wound/wound in external.wounds)
-				if(AUTODOC_OPEN_WOUNDS in possible_operations)
-					if(!wound.is_treated())
-						patchnote.surgery_operations |= AUTODOC_OPEN_WOUNDS
+				if(wound.internal)
+					if(AUTODOC_IB in possible_operations)
+						patchnote.surgery_operations |= AUTODOC_IB
+				else
+					if(AUTODOC_OPEN_WOUNDS in possible_operations)
+						if(!wound.is_treated())
+							patchnote.surgery_operations |= AUTODOC_OPEN_WOUNDS
 		if(patchnote.surgery_operations)
 			scanned_patchnotes.Add(patchnote)
 			picked_patchnotes.Add(patchnote.Copy())
@@ -167,6 +173,14 @@
 		external.mend_fracture()
 		patchnote.surgery_operations &= ~AUTODOC_FRACTURE
 
+	else if(patchnote.surgery_operations & AUTODOC_IB)
+		to_chat(patient, SPAN_NOTICE("Treating internal trauma in the patients [external]."))
+		for(var/datum/wound/wound in external.wounds)
+			if(wound.internal)
+				external.wounds -= wound
+				qdel(wound)
+				external.update_damages()
+		patchnote.surgery_operations &= ~AUTODOC_IB
 	return !patchnote.surgery_operations
 
 /datum/autodoc/Process()
@@ -263,6 +277,8 @@
 				organ["wound"] = note.surgery_operations & AUTODOC_OPEN_WOUNDS
 				organ["wound_picked"] = picked_patchnotes[i].surgery_operations & AUTODOC_OPEN_WOUNDS
 
+				organ["ib"] = note.surgery_operations & AUTODOC_IB
+				organ["ib_picked"] = picked_patchnotes[i].surgery_operations & AUTODOC_IB
 			organs+= list(organ)
 	data["organs"] = organs
 	return data
@@ -307,6 +323,8 @@
 				op = AUTODOC_DAMAGE
 			if("wound")
 				op = AUTODOC_OPEN_WOUNDS
+			if("ib")
+				op = AUTODOC_IB
 			if("fracture")
 				op = AUTODOC_FRACTURE
 			if("shrapnel")
@@ -351,6 +369,7 @@
 
 	data["damage_cost"] = AUTODOC_DAMAGE_COST
 	data["wound_cost"] = AUTODOC_OPEN_WOUNDS_COST
+	data["ib_cost"] = AUTODOC_IB_COST
 	data["fracture_cost"] = AUTODOC_FRACTURE_COST
 	data["shrapnel_cost"] = AUTODOC_EMBED_OBJECT_COST
 	data["toxin_cost"] = AUTODOC_TOXIN_COST
@@ -398,6 +417,8 @@
 			cost += AUTODOC_OPEN_WOUNDS_COST
 		if( patchnote.surgery_operations & AUTODOC_FRACTURE)
 			cost += AUTODOC_FRACTURE_COST
+		if( patchnote.surgery_operations & AUTODOC_IB)
+			cost += AUTODOC_IB_COST
 	return cost
 
 /datum/autodoc/capitalist_autodoc/proc/login()
@@ -437,6 +458,7 @@
 #undef AUTODOC_DAMAGE
 #undef AUTODOC_EMBED_OBJECT
 #undef AUTODOC_FRACTURE
+#undef AUTODOC_IB
 #undef AUTODOC_OPEN_WOUNDS
 
 #undef AUTODOC_BLOOD
@@ -448,6 +470,7 @@
 #undef AUTODOC_DAMAGE_COST
 #undef AUTODOC_EMBED_OBJECT_COST
 #undef AUTODOC_FRACTURE_COST
+#undef AUTODOC_IB_COST
 #undef AUTODOC_OPEN_WOUNDS_COST
 #undef AUTODOC_BLOOD_COST
 #undef AUTODOC_TOXIN_COST
