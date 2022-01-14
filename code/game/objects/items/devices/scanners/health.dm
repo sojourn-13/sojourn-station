@@ -207,7 +207,7 @@
 			if(!e)
 				continue
 			for(var/datum/wound/W in e.wounds) if(W.internal)
-				dat += text(SPAN_WARNING("Internal bleeding detected. Advanced scanner required for location."))
+				dat += text(SPAN_WARNING("Internal trauma detected. Advanced scanner required for location."))
 				break
 		if(H.vessel)
 			var/blood_volume = H.vessel.get_reagent_amount("blood")
