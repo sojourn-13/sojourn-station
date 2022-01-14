@@ -366,6 +366,8 @@
 		G.proj_damage_adjust[HALLOSS] += weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
 		G.proj_damage_adjust[IRRADIATE] += weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]
+	if(weapon_upgrades[UPGRADE_MAXUPGRADES])
+		G.max_upgrades += weapon_upgrades[UPGRADE_MAXUPGRADES]
 	if(weapon_upgrades[GUN_UPGRADE_HONK])
 		G.fire_sound = 'sound/items/bikehorn.ogg'
 	if(weapon_upgrades[GUN_UPGRADE_RIGGED])
