@@ -24,7 +24,7 @@
 		return
 
 	if ((CLUMSY in user.mutations) && prob(15))
-		to_chat(user, SPAN_WARNING("Uh ... why handcuffs are so hard to use?!"))
+		to_chat(user, SPAN_WARNING("Uh ... why are handcuffs so hard to use?!"))
 		place_handcuffs(user, user)
 		return
 
