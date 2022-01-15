@@ -16,7 +16,7 @@
 
 /obj/item/grenade/proc/clown_check(var/mob/living/user)
 	if((CLUMSY in user.mutations) && prob(10))
-		to_chat(user, SPAN_WARNING("Huh?... HELL, I PRIMED THE GRENADE-"))
+		to_chat(user, SPAN_WARNING("Huh? ... HELL, I PRIMED THE GRENADE!"))
 
 		activate(user)
 		add_fingerprint(user)
