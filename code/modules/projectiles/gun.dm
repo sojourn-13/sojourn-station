@@ -365,7 +365,8 @@
 	user.set_move_cooldown(move_delay)
 	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
 		next_fire_time = world.time + fire_delay - fire_delay * 0.33
-	else	if((CLUMSY in M.mutations) && prob(40)) //Clumsy handling
+
+	if((CLUMSY in user.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
 		if(P)
 			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
@@ -374,22 +375,11 @@
 					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
 					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
 					)
-				M.drop_item()
-		else
-			handle_click_empty(user)
-		return FALSE	if((CLUMSY in M.mutations) && prob(40)) //Clumsy handling
-		var/obj/P = consume_next_projectile()
-		if(P)
-			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
-				handle_post_fire(user, user)
-				user.visible_message(
-					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
-					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
-					)
-				M.drop_item()
+				user.drop_item()
 		else
 			handle_click_empty(user)
 		return FALSE
+
 		next_fire_time = world.time + fire_delay
 
 	if(muzzle_flash)
