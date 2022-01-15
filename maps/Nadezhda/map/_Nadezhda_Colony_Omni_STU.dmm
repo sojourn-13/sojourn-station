@@ -37327,7 +37327,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "izx" = (
-/mob/living/simple_animal/opossum/poppy,
+/mob/living/simple_animal/hostile/dino/tagilla,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/pros/foreman)
 "izG" = (

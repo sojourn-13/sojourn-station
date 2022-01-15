@@ -1,6 +1,8 @@
 /mob/living/simple_animal/hostile/dino
 	name = "primal render yearling"
-	desc = "A younger primal render, one that has yet to harden its scales, shed the baby fat, and grow its usual horns and claws. Unlike older ones it has yet to become as fantastically violent to everything, a trait that often gets it hunted by older renders to kill potential developing rivals."
+	desc = "A younger primal render, one that has yet to harden its scales, shed the baby fat, \
+	and grow its usual horns and claws. Unlike older ones it has yet to become as fantastically violent to everything, \
+	a trait that often gets it hunted by older renders to kill potential developing rivals."
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "biglizard"
 	icon_dead = "biglizard_dead"
@@ -31,3 +33,12 @@
 	leather_amount = 6 //The amount of leather sheets dropped.
 	bones_amount = 6 //The amount of bone sheets dropped.
 	mob_size = MOB_LARGE
+
+/mob/living/simple_animal/hostile/dino/tagilla
+	faction = "neutral"
+	name = "Tagilla"
+	desc = "A younger primal render, one that has yet to harden its scales, \
+	shed the baby fat, and grow its usual horns and claws. Unlike older ones it has yet to become as fantastically violent to everything, \
+	a trait that often gets it hunted by older renders to kill potential developing rivals. His older brother, Killa, is said to be a legendary render."
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
