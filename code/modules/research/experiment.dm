@@ -280,7 +280,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 /obj/item/device/radio/beacon/explosion_watcher/Initialize()
 	. = ..()
 	GLOB.explosion_watcher_list += src
-	targetBoom = rand(1,20)
+	targetBoom = rand(10,35)
 
 /obj/item/device/radio/beacon/explosion_watcher/Destroy()
 	GLOB.explosion_watcher_list -= src
@@ -304,7 +304,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. Received [calculated_research_points] research points", name ,"Science")
 	else
 		autosay("Detected explosion with power level [power], Expected explosion was [targetBoom]. Test Results Outside Expected Range", name ,"Science")
-	targetBoom = rand(1,20)
+	targetBoom = rand(10,35)
 
 // Universal tool to get research points from autopsy reports, virus info reports, archeology reports, slime cores
 /obj/item/device/science_tool
