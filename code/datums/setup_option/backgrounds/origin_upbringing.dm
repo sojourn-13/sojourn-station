@@ -90,7 +90,7 @@
 /datum/category_item/setup_option/background/bckgrnd/klutz
 	name = "Klutz"
 	desc = "Your entire life has been a series of unlucky and often self-inflicted accidents, you spent enough time hurting yourself due to your own clumsiness that you've built up a more \
-	pain tolerance than most of common folks, meaning that due to this clumsiness problem, you were always a good fighter due to your natural resistance. A shame, this doesn't stop you from time to time failing even the most basic tasks at times. In fact, you find some tasks that require precision damn near impossible, and even handling or using guns are literally impossible to use. And due to this problem, you have a serious problem of perception around, and you are not the most smart guy around here."
+	pain tolerance than most of common folks, meaning that due to this clumsiness problem, you've become quite tough and a little stronger too. A shame, this doesn't stop you from time to time failing even the most basic tasks at times. In fact, you find some tasks that require precision damn near impossible, and even handling or using guns is a dangerous prospect. Due to this problem, you have a terrible perception around the area around you."
 
 	perks = list(/datum/perk/klutz)
 	
