@@ -198,6 +198,12 @@
 	icon_state = "syrette_orange"
 	item_state = "syrette_orange"
 
+/obj/item/reagent_containers/hypospray/autoinjector/quickclot
+	name = "autoinjector (quickclot)"
+	preloaded_reagents = list("quickclot" = 5)
+	icon_state = "syrette_red"
+	item_state = "syrette_quickclot"
+
 /obj/item/reagent_containers/hypospray/autoinjector/spaceacillin
 	name = "autoinjector (spaceacillin)"
 	icon_state = "syrette_spacealine"
