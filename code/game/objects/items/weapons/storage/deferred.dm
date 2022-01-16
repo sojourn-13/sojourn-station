@@ -321,4 +321,43 @@
 	/obj/item/implanter/excelsior = 2,
 	/obj/item/storage/backpack = 1,
 	/obj/item/storage/backpack/satchel = 1)
+	
+	// Lunchboxes
+	
+/obj/item/storage/deferred/meatbox
+	name = "Lunchbox: Pork Katsu
+	desc = "A hand-made lunch box, locally sourced from the colony's gardens. This one is painted with a very happy looking pig. "
+	icon_state = "box_meat"
+	initial_contents = 
+	/obj/item/reagent_containers/food/snacks/katsudon
+	/obj/item/reagent_containers/food/snacks/tossedsalad
+	/obj/item/reagent_containers/food/drinks/cahorscup
+		name = "cahors cup"
+		desc = "A small cup of cahors. May the Absolute watch over you!"
+		icon_state = "cahorscup"
+		center_of_mass = list("x"=15, "y"=10)
+		base_icon = "cup"
+		preloaded_reagents = list("cahors" = 30)
+
+	
+/obj/item/storage/deferred/mushbox
+	name = "Lunchbox: Mushroom Suprise"
+	desc = "A hand made lunch box, locally sourced from the colony's gardens. This one is painted with a field of purple mushrooms. "
+	icon_state = "box_mushroom"
+	initial_contents =
+	/obj/item/reagent_containers/food/snacks/plumphelmetbiscuit
+	/obj/item/reagent_containers/food/snacks/mushroomsoup
+	/obj/item/reagent_containers/food/drinks/cahorscup
+
+/obj/item/storage/deferred/grainbox
+	name = "Lunchbox: Bread and Cheese"
+	desc = "A hand made lunch box, locally sourced from the colony's gardens. This one is painted with rolling fields of grain. "
+	icon_state = "box_veg"
+	initial_contents = 
+	/obj/item/reagent_containers/food/snacks/cheesewedge
+	/obj/item/reagent_containers/food/snacks/baguette
+	/obj/item/reagent_containers/food/drinks/cahorscup
+	
+	
+
 
