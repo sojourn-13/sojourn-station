@@ -605,10 +605,10 @@
 				if(A.employer && A.wage_original) // Dicrease personnel budget of our department, if have one
 					var/datum/money_account/EA = department_accounts[A.employer]
 					var/datum/department/D = GLOB.all_departments[A.employer]
-					if(D && EA)
+					if(EA && D) // Don't bother if department have no employer
 						D.budget_personnel -= A.wage_original
 						if(!EA.wage_manual) // Update department account's wage if it's not in manual mode
-							EA.wage = (D.budget_base + D.budget_personnel)
+							EA.wage = D.get_total_budget()
 		new_occupant.forceMove(src)
 		icon_state = occupied_icon_state
 

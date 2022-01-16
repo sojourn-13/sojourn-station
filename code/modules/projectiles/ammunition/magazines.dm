@@ -72,6 +72,11 @@
 	icon_state = "ldrum_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
+/obj/item/ammo_magazine/highcap_pistol_35/drum/soporific_cbo
+	name = "standard auto drum (sleeper)"
+	icon_state = "ldrum_r"
+	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
+
 /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 	name = "standard auto drum (hollow-point)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
@@ -716,6 +721,11 @@
 	name = "old speed loader (.40 Magnum)"
 	icon_state = "slmagnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
+
+/obj/item/ammo_magazine/speed_loader_magnum_40/biomatter
+	name = "speed loader (.40 Magnum Caustic)"
+	icon_state = "slmagnum_s"
+	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
 
 ////.50 speed loader////
 

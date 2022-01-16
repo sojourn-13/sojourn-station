@@ -345,7 +345,11 @@
 	slowdown = 0.6 // Heavier since it now covers more of the body
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
+	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.6 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
+	item_state = "bulletproof_fullbody"
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "ablative armor vest"
@@ -384,9 +388,6 @@
 			P.redirect(new_x, new_y, curloc, user)
 
 			return PROJECTILE_CONTINUE // complete projectile permutation
-
-/obj/item/clothing/suit/armor/laserproof/ironhammer
-	icon_state = "ablative_ironhammer"
 
 /obj/item/clothing/suit/armor/laserproof/rnd
 	name = "soteria ablative armor vest"
@@ -466,6 +467,8 @@
 	price_tag = 250
 
 /obj/item/clothing/suit/armor/heavy/riot/ironhammer
+	name = "marshal riot suit"
+	desc = "A suit of armor with heavy padding to protect against melee attacks. Looks like it might impair movement. This one is produced by Seinemetall Defense GmbH."
 	icon_state = "riot_ironhammer"
 	item_state = "swat_suit"
 

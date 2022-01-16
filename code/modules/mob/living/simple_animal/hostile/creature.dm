@@ -117,6 +117,7 @@
 	faction = "sargoyle"
 	speed = 6
 	has_special_parts = TRUE
+	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE)
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	armor = list(melee = 5, bullet = 10, energy = 0, bomb = 25, bio = 0, rad = 25)
 
@@ -137,6 +138,8 @@
 	speed = 2
 	wander = FALSE
 	fire_verb = "spits"
+
+	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_DWARFISM, MUTATION_NERVOUSNESS, MUTATION_DEAF, MUTATION_IMBECILE)
 	ranged = 1
 	projectilesound = 'sound/effects/creatures/acid_spit.ogg'
 	projectiletype = /obj/item/projectile/goo

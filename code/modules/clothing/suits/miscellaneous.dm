@@ -408,7 +408,7 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/storage/numericalgarb
 	name = "numerical garb"
-	desc = "A red padded cloak meant for numerical shockingly made to be biomatter restant."
+	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and grey."
 	icon_state = "numericalgarb"
 	item_state = "numericalgarb"
 	armor = list(
@@ -421,3 +421,26 @@ obj/item/clothing/suit/fluff/kimono
 	)
 	body_parts_covered = UPPER_TORSO|ARMS
 	price_tag = 60
+
+/obj/item/clothing/suit/storage/numericalgarb/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Red Garb"] = "numericalgarb"
+	options["Gray Garb"] = "numericalgarbgrey"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

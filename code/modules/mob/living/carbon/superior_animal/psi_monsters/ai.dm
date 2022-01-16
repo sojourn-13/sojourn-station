@@ -21,6 +21,10 @@
 
 	new momento_mori(src.loc)
 
+	if(death_present)
+		src.visible_message(SPAN_DANGER(death_gasp))
+		new death_spawn_gift(src.loc)
+
 	qdel(src)
 
 	. = ..()

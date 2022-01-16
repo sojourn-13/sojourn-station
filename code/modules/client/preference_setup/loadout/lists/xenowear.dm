@@ -47,6 +47,12 @@
 	slot = slot_head
 	sort_category = "Xenowear"
 
+/datum/gear/xenowear/froghelm
+	display_name = "marqua helmet"
+	path = /obj/item/clothing/head/armor/helmet/frog
+	slot = slot_head
+	sort_category = "Xenowear"
+
 /datum/gear/xenowear/castellancapes
 	display_name = "castellan cape selection"
 	path = /obj/item/clothing/accessory/ccape

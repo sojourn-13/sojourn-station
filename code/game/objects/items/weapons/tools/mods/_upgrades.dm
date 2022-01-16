@@ -269,7 +269,7 @@
 		T.armor.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
 	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
 		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-		
+
 	T.prefixes |= prefix
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
@@ -366,6 +366,8 @@
 		G.proj_damage_adjust[HALLOSS] += weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
 		G.proj_damage_adjust[IRRADIATE] += weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]
+	if(weapon_upgrades[UPGRADE_MAXUPGRADES])
+		G.max_upgrades += weapon_upgrades[UPGRADE_MAXUPGRADES]
 	if(weapon_upgrades[GUN_UPGRADE_HONK])
 		G.fire_sound = 'sound/items/bikehorn.ogg'
 	if(weapon_upgrades[GUN_UPGRADE_RIGGED])
@@ -652,6 +654,8 @@
 
 		to_chat(user, SPAN_WARNING("Requires a weapon with the following properties"))
 		to_chat(user, english_list(req_gun_tags))
+		to_chat(user, SPAN_WARNING("When applied to a weapon, this takes the following slot"))
+		to_chat(user, english_list(gun_loc_tag))
 
 /datum/component/item_upgrade/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_IATTACK)

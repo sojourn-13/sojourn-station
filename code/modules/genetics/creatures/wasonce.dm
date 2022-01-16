@@ -17,9 +17,8 @@ Has ability of every roach.
 	//Other bastards stuck inside this thing
 
 	//Fucking Mega Chonker
-	maxHealth = 2000
-	health = 2000
-	contaminant_immunity = TRUE
+	maxHealth = 1800
+	health = 1800
 
 	//Psi_monster stuff.
 	chameleon_skill = 255 // Psionics not developed, can't turn invisible.
@@ -47,7 +46,7 @@ Has ability of every roach.
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
-	move_to_delay = 4
+	move_to_delay = 6
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
@@ -115,8 +114,8 @@ Has ability of every roach.
 			if (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened)
 				H.visible_message(SPAN_DANGER("\the [src] absorbs \the [L] into its mass!"))
 				H.loc = src
-				maxHealth += 500
-				health += 500
+				maxHealth += 250
+				health += 250
 				captives += H
 				return
 
@@ -133,10 +132,12 @@ Has ability of every roach.
 		drop_victim.loc = get_turf(src)
 	captives = list()
 
-	akira.loc = get_turf(src)
-	akira.gib()
+	if(akira)
+		akira.loc = get_turf(src)
+		akira.gib()
 	//So we dont nullspace are akira'ed or victims
 	..()
+	qdel(src) //Delete you!
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/Life()
 
@@ -145,11 +146,15 @@ Has ability of every roach.
 		var/fail_mutation_path = pick(injector.getFailList())
 		var/datum/genetics/mutation/injecting_mutation = new fail_mutation_path()
 		injector.addMutation(injecting_mutation)
-		for(var/mob/living/captive in captives)
-			injector.inject_mutations(captive)
-			to_chat(captive, SPAN_DANGER(pick(
-				"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
-				"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole")))
+		for(var/mob/living/carbon/human/captive in captives)
+			if(captive.species.reagent_tag == IS_SYNTHETIC && (captive.getBruteLoss() < 300))
+				to_chat(captive, SPAN_DANGER(pick("The immense strength of the creature is crushing. Wasn't... Flesh supposed to be weak?")))
+				captive.adjustBruteLossByPart(15, pick(captive.organs))
+			else
+				injector.inject_mutations(captive, TRUE)
+				to_chat(captive, SPAN_DANGER(pick(
+					"The mass changes you...", "Veins slip into your flesh and merge with your own", "Parts of yourself fuse to the roiling flesh surrounding you.",
+					"You feel yourself breathing through multiple lungs.", "You feel yourself assimilating with the whole.")))
 		injector.removeAllMutations()
 	if(lethal_to_captive && captives.len && prob(15))
 		for(var/mob/living/captive in captives)
@@ -182,7 +187,7 @@ Has ability of every roach.
 		var/mob/living/carbon/human/H
 		if(ishuman(L))
 			H = L
-		if (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened)
+		if (H && (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened))
 			return 1
 
 		return 4

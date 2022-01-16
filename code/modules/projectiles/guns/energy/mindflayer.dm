@@ -7,3 +7,4 @@
 	fire_sound = 'sound/weapons/Laser.ogg'
 	price_tag = 1500
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	can_dual = FALSE

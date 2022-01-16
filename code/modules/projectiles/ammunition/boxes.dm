@@ -78,8 +78,8 @@
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
-	name = "ammunition packet (.35 Auto Costic)"
-	desc = "A box of costic caseless .35 Auto."
+	name = "ammunition packet (.35 Auto Caustic)"
+	desc = "A box of caustic caseless .35 Auto."
 	icon_state = "pistol_bio"
 	ammo_type = /obj/item/ammo_casing/pistol_35/biomatter
 
@@ -125,10 +125,10 @@
 	ammo_type = /obj/item/ammo_casing/magnum_40/laser
 
 /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
-	name = "ammunition packet (.40 Magnum Costic)"
-	desc = "A box of costic caseless .40 Magnum."
+	name = "ammunition packet (.40 Magnum Caustic)"
+	desc = "A box of caustic caseless .40 Magnum."
 	icon_state = "magnum_bio"
-	ammo_type = /obj/item/ammo_casing/magnum_40/biomater
+	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
 
 //// .257 carbine ////
 
@@ -307,6 +307,15 @@
 	caliber = "10x24"
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 200
+
+/obj/item/ammo_magazine/ammobox/c10x24_small
+	name = "ammunition packet (10x24mm caseless)"
+	icon_state = "box10mm"
+	desc = "A box of 10mm caseless round, how odd."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = "10x24"
+	ammo_type = /obj/item/ammo_casing/c10x24
+	max_ammo = 36 //3+1 reloads of the SWAT 2.6 of the bond, around 0.29 for smgs
 
 //// .223 laser shot!
 

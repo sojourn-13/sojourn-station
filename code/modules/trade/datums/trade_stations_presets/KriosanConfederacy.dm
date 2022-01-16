@@ -1,8 +1,14 @@
 /datum/trade_station/kriosanconfederacy
-	name_pool = list("Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself on our stock.\"")
+	name_pool = list(
+		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself on our stock.\""
+	)
+	offer_limit = 20
+	base_income = 1600
+	wealth = 0
+	markup = COMMON_GOODS * 1.5
+	secret_inv_threshold = 32000
 	start_discovered = TRUE //WE KNOW WERE ARE OVERHOUNDS ARE
 	spawn_always = TRUE //Were right next door
-	offer_amout_devider_of_wanted_goods = 10 //less do to needing hunters
 	assortiment = list(
 		"Hunting Gear" = list(
 			/obj/item/gun/projectile/boltgun/light,
@@ -22,30 +28,37 @@
 			/mob/living/simple_animal/cat = custom_good_name("Rat Slayer")
 		)
 	)
+	secret_inventory = list(
+		"Basic Gun Mods" = list(
+			/obj/item/gun_upgrade/barrel/forged,
+			/obj/item/tool_upgrade/productivity/ergonomic_grip,
+			/obj/item/tool_upgrade/refinement/laserguide,
+		)
+	)
 	offer_types = list(
-		/mob/living/simple_animal/hostile/helldiver,
-		/mob/living/carbon/superior_animal/lodge/tatonka,
-		/mob/living/carbon/superior_animal/lodge/tatonka/tangu,
-		/mob/living/carbon/superior_animal/lodge/clucker,
-		/mob/living/carbon/superior_animal/lodge/cerberus,
-		/mob/living/carbon/superior_animal/lodge/cerberus/chimera,
-		/obj/item/animal_part/tatonka_tongue,
-		/obj/item/animal_part/tatonka_horn,
-		/obj/item/animal_part/tangu_horn,
-		/obj/item/animal_part/clucker_feather,
-		/obj/item/animal_part/slepnir_hoof,
-		/obj/item/animal_part/cerberus_snout,
-		/obj/item/animal_part/helldiver_tooth,
-		/obj/item/animal_part/chimera_fang,
-		/obj/item/animal_part/render_claw,
-		/obj/item/animal_part/tahca_antler,
-		/obj/item/animal_part/wolf_tooth,
-		/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
-		/obj/item/gun/projectile/boltgun/baroque,
-		/obj/item/tool/spear/hunter_halberd,
-		/obj/item/tool/gauntlet,
-		/obj/item/tool/fireaxe/woodsman,
-		/obj/item/shield/buckler/handmade/bone,
-		/obj/item/tool/sword/huntingclaw
+		/mob/living/simple_animal/hostile/helldiver = offer_data("helldiver", 1500, 2),
+		/mob/living/carbon/superior_animal/lodge/tatonka = offer_data("tatonka", 1000, 2),
+		/mob/living/carbon/superior_animal/lodge/tatonka/tangu = offer_data("tangu", 1500, 1),
+		/mob/living/carbon/superior_animal/lodge/clucker = offer_data("clucker", 500, 3),
+		/mob/living/carbon/superior_animal/lodge/cerberus = offer_data("cerberus", 1200, 1),
+		/mob/living/carbon/superior_animal/lodge/cerberus/chimera = offer_data("chimera", 3000, 1),
+		/obj/item/animal_part/tatonka_tongue = offer_data("tatonka tongue", 120, 10),
+		/obj/item/animal_part/tatonka_horn = offer_data("tatonka horn", 100, 10),
+		/obj/item/animal_part/tangu_horn = offer_data("tangu horn", 200, 10),
+		/obj/item/animal_part/clucker_feather = offer_data("clucker feather", 150, 10),
+		/obj/item/animal_part/slepnir_hoof = offer_data("slepnir hoof", 350, 10),
+		/obj/item/animal_part/cerberus_snout = offer_data("cerberus snout", 450, 10),
+		/obj/item/animal_part/helldiver_tooth = offer_data("hell diver tooth", 1450, 10),
+		/obj/item/animal_part/chimera_fang = offer_data("chimera fang", 3550, 10),
+		/obj/item/animal_part/render_claw = offer_data("render claw", 1750, 10),
+		/obj/item/animal_part/tahca_antler = offer_data("tahca antler", 1250, 10),
+		/obj/item/animal_part/wolf_tooth = offer_data("pristine animal fang", 400, 10),
+		/obj/item/gun/projectile/shotgun/pump/hunter_crossbow = offer_data("hunter crossbow", 2500, 3),
+		/obj/item/gun/projectile/boltgun/baroque = offer_data("hunter baroque", 4500, 1),
+		/obj/item/tool/spear/hunter_halberd = offer_data("hunter halberd", 1300, 2),
+		/obj/item/tool/gauntlet = offer_data("render gauntlet", 2800, 2),
+		/obj/item/tool/fireaxe/woodsman = offer_data("woodsman axe", 900, 3),
+		/obj/item/shield/buckler/handmade/bone = offer_data("hunter bone shield", 1600, 1),
+		/obj/item/tool/sword/huntingclaw = offer_data("hunting claw", 1500, 2)
 	)
 

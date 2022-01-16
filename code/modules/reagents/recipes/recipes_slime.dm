@@ -49,12 +49,48 @@
 		M.loc = get_turf(holder.my_atom)
 	..()
 
+/datum/chemical_reaction/slime/roach_cube
+	result = null
+	required_reagents = list("blattedin" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/grey
+
+/datum/chemical_reaction/slime/roach_cube/on_reaction(var/datum/reagents/holder)
+	for(var/i = 1, i <= 3, i++)
+		var/obj/random/rations/roachcube/R = new /obj/random/rations/roachcube
+		R.loc = get_turf(holder.my_atom)
+	..()
+
+/datum/chemical_reaction/slime/spider_lings
+	result = null
+	required_reagents = list("pararein" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/grey
+
+/datum/chemical_reaction/slime/spider_lings/on_reaction(var/datum/reagents/holder)
+	for(var/i = 1, i <= 3, i++)
+		var/obj/effect/spider/spiderling/S = new /obj/effect/spider/spiderling
+		S.loc = get_turf(holder.my_atom)
+	..()
+
 //Green
 /datum/chemical_reaction/slime/mutate
 	result = "mutationtoxin"
 	required_reagents = list("plasma" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/green
+
+/datum/chemical_reaction/slime/mutate_clear
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/green
+
+/datum/chemical_reaction/slime/mutate_clear/on_reaction(var/datum/reagents/holder)
+	for(var/i = 1, i <= 1, i++)
+		var/obj/item/genetics/purger/slime/P = new /obj/item/genetics/purger/slime
+		P.loc = get_turf(holder.my_atom)
+	..()
 
 //Metal
 /datum/chemical_reaction/slime/metal
@@ -197,16 +233,6 @@
 	..()
 	empulse(get_turf(holder.my_atom), 3, 7)
 
-/datum/chemical_reaction/slime/cell
-	result = null
-	required_reagents = list("plasma" = 1)
-	result_amount = 1
-	required = /obj/item/slime_extract/yellow
-
-/datum/chemical_reaction/slime/cell/on_reaction(var/datum/reagents/holder, var/created_volume)
-	var/obj/item/cell/large/slime/P = new /obj/item/cell/large/slime
-	P.loc = get_turf(holder.my_atom)
-
 /datum/chemical_reaction/slime/glow
 	result = null
 	required_reagents = list("water" = 1)
@@ -249,6 +275,17 @@
 	var/obj/item/stack/material/plasma/P = new /obj/item/stack/material/plasma
 	P.amount = 10
 	P.loc = get_turf(holder.my_atom)
+
+/datum/chemical_reaction/slime/randomizer
+	result = null
+	required_reagents = list(MATERIAL_URANIUM = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/darkpurple
+
+/datum/chemical_reaction/slime/randomizer/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/tool_upgrade/augment/randomizer/R = new /obj/item/tool_upgrade/augment/randomizer
+	R.loc = get_turf(holder.my_atom)
 
 //Red
 /datum/chemical_reaction/slime/glycerol
@@ -296,6 +333,17 @@
 	var/obj/item/slimepotion/P = new /obj/item/slimepotion
 	P.loc = get_turf(holder.my_atom)
 
+/datum/chemical_reaction/slime/speed_vial
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/pink
+
+/datum/chemical_reaction/slime/speed_vial/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/slimes_speed/P = new /obj/item/slimes_speed
+	P.loc = get_turf(holder.my_atom)
+
 //Black
 /datum/chemical_reaction/slime/mutate2
 	result = "amutationtoxin"
@@ -315,6 +363,17 @@
 	..()
 	sleep(50)
 	explosion(get_turf(holder.my_atom), 1, 3, 6)
+
+/datum/chemical_reaction/slime/thermal
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/oil
+
+/datum/chemical_reaction/slime/thermal/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/slime_thermals/T = new /obj/item/slime_thermals
+	T.loc = get_turf(holder.my_atom)
 
 //Light Pink
 /datum/chemical_reaction/slime/potion2

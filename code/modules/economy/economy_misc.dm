@@ -115,12 +115,12 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 	department_account.wage = (department.budget_base + department.budget_personnel)
 	department_account.remote_access_pin = rand(1111, 111111)
 	department.account_pin = department_account.remote_access_pin
+	department_account.employer = department.funding_source
+	department_account.wage = department.get_total_budget()
 
 	department_account.department_id = department.id
 	if(department.id in DEPARTMENT_LSS)
 		department_account.can_make_accounts = TRUE
-	if(department.funding_type != FUNDING_NONE)
-		department_account.employer = department.funding_source
 
 	//create an entry in the account transaction log for when it was created
 	var/datum/transaction/T = new(department.account_initial_balance, department_account.owner_name, "Account creation", "Lonestar Shipping Solutions Terminal #277")

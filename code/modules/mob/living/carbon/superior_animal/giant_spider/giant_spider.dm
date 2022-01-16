@@ -43,6 +43,8 @@
 	var/poison_type = "pararein"
 	faction = "spiders"
 
+	price_tag = 250 //in case you sell these???
+
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 

@@ -1,7 +1,9 @@
 #define MUTATION_COPY /datum/genetics/mutation/copy_mob
+#define MUTATION_MKNEWAIFUHAIR /datum/genetics/mutation/bald
 #define MUTATION_COW_SKIN /datum/genetics/mutation/cow_skin
 #define MUTATION_IMBECILE /datum/genetics/mutation/imbecile
 #define MUTATION_GIGANTISM /datum/genetics/mutation/gigantism
+#define MUTATION_DWARFISM /datum/genetics/mutation/dwarfism
 #define MUTATION_RAND_UNSTABLE /datum/genetics/mutation/rand_unstable
 #define MUTATION_MOO /datum/genetics/mutation/cow_moo
 #define MUTATION_EPILEPSY /datum/genetics/mutation/disability/epilepsy
@@ -12,8 +14,10 @@
 #define MUTATION_BLINDNESS /datum/genetics/mutation/disability/blindness
 #define MUTATION_DEAF /datum/genetics/mutation/disability/deaf
 #define MUTATION_NEARSIGHTED /datum/genetics/mutation/disability/nearsighted
+#define MUTATION_UNBALANCED /datum/genetics/mutation/unbalanced
 #define MUTATION_EMP /datum/genetics/mutation/emp
 #define MUTATION_ROACH_BLOOD /datum/genetics/mutation/roachblood
+#define MUTATION_GOLD_ROACH /datum/genetics/mutation/gold_roach
 #define MUTATION_CHOC_MILK /datum/genetics/mutation/milk_c
 #define MUTATION_PROT_MILK /datum/genetics/mutation/milk_p
 #define MUTATION_ROBUST_MILK /datum/genetics/mutation/milk_r
@@ -39,6 +43,14 @@
 #define MUTATION_NERVES /datum/genetics/mutation/sac_contents/nerves
 #define MUTATION_S_NERVES /datum/genetics/mutation/sac_contents/s_nerves
 #define MUTATION_HYPERION /datum/genetics/mutation/hyperion
+#define MUTATION_THICK_FUR /datum/genetics/mutation/thick_fur
+#define MUTATION_BAROTRAUMA /datum/genetics/mutation/barotrauma
+#define MUTATION_HONK /datum/genetics/mutation/honk
+#define MUTATION_BOTTOMLESS_BELLY /datum/genetics/mutation/bottomless_belly
+#define MUTATION_TOXIN_RESISTANCE /datum/genetics/mutation/toxin_resistance
+#define MUTATION_ECHOLOCATION /datum/genetics/mutation/echolocation
+#define MUTATION_SCREAMING /datum/genetics/mutation/screaming
+#define MUTATION_CAT_EYES /datum/genetics/mutation/cat_eyes
 //^^^ All mutations!
 
 
@@ -46,6 +58,7 @@
 #define MUT_TYPE_NONE 0 //not an exclusive mutation type
 #define MUT_TYPE_SKIN 1 //An exclusive mutation type for skin.
 #define MUT_TYPE_FACTION 2
+#define MUT_TYPE_EYES 3 //An exclusive mutation type for eyes.
 
 //Types of Mutation recipes:
 #define MUT_TYPE_COMBINATION 1

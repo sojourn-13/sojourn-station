@@ -45,7 +45,7 @@
 
 
 //Pods
-/*
+
 /datum/shuttle/autodock/ferry/escape_pod/erispod/escape_pod1
 	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod1/station
@@ -67,8 +67,8 @@
 	number = 2
 /obj/effect/shuttle_landmark/escape_pod/transit/pod2
 	number = 2
-*/
-/*
+
+
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Vasiliy Dokuchaev"
 	move_time = 50
@@ -76,7 +76,7 @@
 	default_docking_controller = "vasiliy_dokuchaev_shuttle"
 	current_location = "nav_dock_expl"
 	landmark_transition = "nav_transit_expl"
-	range = 4
+	range = INFINITY  // Can go anywhere on overmap to avoidance depending on the jobs with bridge access to direct the ship
 	fuel_consumption = 3
 
 /obj/effect/shuttle_landmark/eris/dock/exploration_shuttle
@@ -90,10 +90,10 @@
 	name = "In transit"
 	landmark_tag = "nav_transit_expl"
 	base_turf = /turf/space
-*/
 
 
-/*
+
+
 /datum/shuttle/autodock/overmap/hulk
 	name = "Hulk"
 	move_time = 60
@@ -101,7 +101,7 @@
 	default_docking_controller = "hulk_shuttle"
 	current_location = "nav_dock_hulk"
 	landmark_transition = "nav_transit_hulk"
-	range = 2
+	range = INFINITY  // Can go anywhere on overmap to avoidance depending on the jobs with bridge access to direct the ship
 	fuel_consumption = 4
 
 /obj/effect/shuttle_landmark/eris/dock/hulk
@@ -115,7 +115,7 @@
 	name = "In transit"
 	landmark_tag = "nav_transit_hulk"
 	base_turf = /turf/space
-*/
+
 //Skipjack
 //antag Shuttles disabled by nanako, 2018-09-15
 //These shuttles are created with a subtypesof loop at runtime. Starting points for the skipjack and merc shuttle are not currentl mapped in
@@ -133,7 +133,7 @@
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
-	announcer = "Nadezhda Colony Sensor Array"
+	announcer = "CEV Eris Sensor Array"
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -171,18 +171,30 @@
 /datum/shuttle/autodock/multi/antag/mercenary
 	name = "Mercenary"
 	warmup_time = 0
+	move_time = 180
 	cloaked = 0
 	destination_tags = list(
 		"nav_merc_northeast",
 		"nav_merc_southwest",
 		"nav_merc_dock",
 		"nav_merc_start",
+		"nav_merc_atmos",
+		"nav_merc_sec2west",
+		"nav_merc_sec2east",
+		"nav_merc_junk",
+		"nav_merc_armory",
+		"nav_merc_engieva",
+		"nav_merc_mining",
+		"nav_merc_medbay",
+		"nav_merc_engine",
+		"nav_merc_sec3east4",
+		"nav_merc_sec3east5"
 		)
 	shuttle_area = /area/shuttle/mercenary
 	default_docking_controller = "merc_shuttle"
 	current_location = "nav_merc_start"
 	landmark_transition = "nav_merc_transition"
-	announcer = "Nadezhda Colony Sensor Array"
+	announcer = "CEV Eris Sensor Array"
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, unidentified vessel detected on long range sensors. \nVessel is approaching on an intercept course. \nHailing frequencies open."
 	departure_message = "Attention, unknown vessel has departed"
@@ -190,7 +202,7 @@
 //This fires, and the mission timer starts ticking, as soon as they leave Eris on course to the mercenary base
 /datum/shuttle/autodock/multi/antag/mercenary/announce_departure()
 	.=..()
-	var/datum/antag_faction/F = get_faction_by_id(FACTION_SERBS)
+	var/datum/faction/F = get_faction_by_id(FACTION_SERBS)
 	var/datum/objective/timed/merc/MO = (locate(/datum/objective/timed/merc) in F.objectives)
 	if (MO)
 		MO.end_mission()
@@ -198,7 +210,7 @@
 //This fires, and the mission timer starts ticking, as soon as they leave base
 /datum/shuttle/autodock/multi/antag/mercenary/announce_arrival()
 	.=..()
-	var/datum/antag_faction/F = get_faction_by_id(FACTION_SERBS)
+	var/datum/faction/F = get_faction_by_id(FACTION_SERBS)
 	var/datum/objective/timed/merc/MO = (locate(/datum/objective/timed/merc) in F.objectives)
 	if (MO)
 		MO.start_mission()
@@ -220,21 +232,75 @@
 	landmark_tag = "nav_merc_transition"
 
 /obj/effect/shuttle_landmark/merc/dock
-	name = "Docking Port"
+	name = "Docking Port Deck 5"
 	icon_state = "shuttle-red"
 	landmark_tag = "nav_merc_dock"
 	dock_target = "second_sec_1_access_console"
 
-/obj/effect/shuttle_landmark/merc/outsidecolony
-	name = "Outside the Colony"
+/obj/effect/shuttle_landmark/merc/northeast
+	name = "Northeast of the Vessel Deck 5"
 	icon_state = "shuttle-red"
 	landmark_tag = "nav_merc_northeast"
 
-/obj/effect/shuttle_landmark/merc/deepforest
-	name = "Deep Forest"
+/obj/effect/shuttle_landmark/merc/southwest
+	name = "Southwest of the Vessel Deck 5"
 	icon_state = "shuttle-red"
 	landmark_tag = "nav_merc_southwest"
 
+/obj/effect/shuttle_landmark/merc/atmos
+	name = "Atmospherics Deck 1"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_atmos"
+
+/obj/effect/shuttle_landmark/merc/sec2west
+	name = "Section II Deck 1 West"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_sec2west"
+
+/obj/effect/shuttle_landmark/merc/sec2east
+	name = "Section II Deck 1 East"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_sec2east"
+
+/obj/effect/shuttle_landmark/merc/junk
+	name = "Junk Beacon Deck 1"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_junk"
+
+/obj/effect/shuttle_landmark/merc/armory
+	name = "Armory Deck 1"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_armory"
+
+/obj/effect/shuttle_landmark/merc/engieva
+	name = "Engineering EVA Deck 3"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_engieva"
+
+/obj/effect/shuttle_landmark/merc/mining
+	name = "Mining Dock Deck 3"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_mining"
+
+/obj/effect/shuttle_landmark/merc/medbay
+	name = "Medbay Deck 4"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_medbay"
+
+/obj/effect/shuttle_landmark/merc/engine
+	name = "Engine Deck 4"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_engine"
+
+/obj/effect/shuttle_landmark/merc/sec3east4
+	name = "Section III Deck 4 East"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_sec3east4"
+
+/obj/effect/shuttle_landmark/merc/sec3east5
+	name = "Section III Deck 5 East"
+	icon_state = "shuttle-red"
+	landmark_tag = "nav_merc_sec3east5"
 
 //Cargo shuttle
 

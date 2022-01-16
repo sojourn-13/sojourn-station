@@ -126,6 +126,20 @@
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/deadblow_hammer
+	name = "deadblow hammer"
+	result = /obj/item/tool/hammer/deadblow
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 10),
+		list(QUALITY_CUTTING, 20, "time" = 20),
+		list(QUALITY_WELDING, 15, "time" = 20),
+		list(/obj/item/tool/hammer, 1, "time" = 5),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS, "time" = 10),
+		list(QUALITY_WIRE_CUTTING, 20, 30),
+		list(QUALITY_SCREW_DRIVING, 20, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
+	)
+
 /datum/craft_recipe/guild/combat_shovel
 	name = "combat crovel"
 	result = /obj/item/tool/shovel/combat
@@ -630,7 +644,7 @@
 	steps = list(
 		list(/obj/item/stock_parts/matter_bin/super, 1),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL), //Quick useless in most cases so were cheaper
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL), //Quite useless in most cases so were cheaper
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
@@ -760,15 +774,15 @@
 		list(QUALITY_SAWING, 60)
 	)
 */
-// Boxes for max crafting, should always cost around x5 materials or more.
+// Just speeder to make in bulk then one by one, and costs a upfrunt of 1 cardbord they can recoop
 /datum/craft_recipe/guild/guild_bin_box
 	name = "Box of Cast Matter Bins"
 	result = /obj/item/storage/box/guild_bin
 	steps = list(
 		list(/obj/item/stock_parts/matter_bin/super, 4),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(CRAFT_MATERIAL, 9, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 5, MATERIAL_PLASMAGLASS),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_HAMMERING, 40),
@@ -782,8 +796,8 @@
 	steps = list(
 		list(/obj/item/stock_parts/manipulator/pico, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 13, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 13, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(/obj/item/stack/cable_coil, 10),
@@ -812,10 +826,10 @@
 	steps = list(
 		list(/obj/item/stock_parts/scanning_module/phasic, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 6, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(CRAFT_MATERIAL, 6, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER),
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
@@ -826,10 +840,10 @@
 	steps = list(
 		list(/obj/item/stock_parts/capacitor/super, 4),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 6, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(CRAFT_MATERIAL, 6, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER),
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)

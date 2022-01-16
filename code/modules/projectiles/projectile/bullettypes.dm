@@ -34,6 +34,17 @@
 		if(istype(L) && L.reagents)
 			L.reagents.add_reagent("stoxin", 2)
 
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
+	name = "soporific condensed plastic bullet"
+	damage_types = list(BRUTE = 0)
+	agony = 25
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent("stoxin", 5)
+
 /obj/item/projectile/bullet/pistol_35/hv
 	damage_types = list(BRUTE = 20)
 	armor_penetration = 10

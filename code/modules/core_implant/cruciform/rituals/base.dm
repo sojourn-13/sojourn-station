@@ -199,7 +199,7 @@
 		fail("You feel stupid.",user,C,targets)
 		return FALSE
 
-	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically and they will not know who it is from unless you reveal yourself.", "Sending a message") as text|null
+	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically.", "Sending a message") as text|null
 	if (!text)
 		return
 	to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")
@@ -210,7 +210,7 @@
 
 /datum/ritual/cruciform/base/revelation
 	name = "Revelation"
-	phrase = "Patris ostendere viam"
+	phrase = "Patris ostendere viam."
 	desc = "A person close to you will have a vision that could increase ther faith... or that's what you hope will happen."
 	power = 50
 	nutri_cost = 50//high cost

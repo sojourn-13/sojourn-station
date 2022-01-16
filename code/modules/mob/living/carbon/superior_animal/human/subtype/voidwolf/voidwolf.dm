@@ -26,6 +26,7 @@
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
+	cant_be_pulled = TRUE
 
 //They are all waring space suits
 	breath_required_type = NONE
@@ -53,6 +54,10 @@
 	return
 
 /mob/living/carbon/superior_animal/human/voidwolf/handle_cheap_environment(datum/gas_mixture/environment as anything)
+	return
+
+/mob/living/carbon/superior_animal/human/voidwolf/start_pulling(var/atom/movable/AM)
+	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
 /mob/living/carbon/superior_animal/human/voidwolf/death()

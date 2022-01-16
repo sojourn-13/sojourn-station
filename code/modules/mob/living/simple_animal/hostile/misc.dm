@@ -49,6 +49,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	clone_difficulty = CLONE_EASY
+	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_EPILEPSY, MUTATION_UNBALANCED, MUTATION_IMBECILE)
 
 /mob/living/simple_animal/hostile/shantak
 	name = "shantak"
@@ -102,6 +103,8 @@
 	pass_flags = PASSTABLE
 	density = 0
 	mob_size = 2
+	//Schlorgo is a fucking mess
+	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_NO_PAIN, MUTATION_UNBALANCED, MUTATION_IMBECILE, MUTATION_TOURETTES)
 
 /mob/living/simple_animal/hostile/snake
 	name = "viper"
@@ -132,6 +135,7 @@
 	var/attack_reagent = "toxin"
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_TOXIN_RESISTANCE, MUTATION_UNBALANCED, MUTATION_CLUMSY)
 
 /mob/living/simple_animal/hostile/snake/AttackingTarget()
 	. = ..()

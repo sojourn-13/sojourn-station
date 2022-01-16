@@ -111,6 +111,26 @@
 	crate_name = "Bulk metal crate"
 	group = "Engineering"
 
+/datum/supply_pack/plastic120
+	name = "Plastic Sheets Crate (120)"
+	contains = list(/obj/item/stack/material/plastic)
+	amount = 120
+	cost = 400
+	containertype = /obj/structure/closet/crate/secure
+	crate_name = "plastic sheets crate"
+	group = "Engineering"
+
+/datum/supply_pack/plastic480
+	name = "Bulk Plastic Sheets Crate"
+	contains = list(/obj/item/stack/material/plastic/full,
+	/obj/item/stack/material/plastic/full,
+	/obj/item/stack/material/plastic/full,
+	/obj/item/stack/material/plastic/full)
+	cost = 1160
+	containertype = /obj/structure/largecrate
+	crate_name = "Bulk plastic crate"
+	group = "Engineering"
+
 /datum/supply_pack/glass120
 	name = "Glass Sheets Crate (120)"
 	contains = list(/obj/item/stack/material/glass)

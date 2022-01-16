@@ -523,7 +523,7 @@
 	throw_speed = 1
 	throw_range = 4
 	w_class = ITEM_SIZE_SMALL
-	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_COVERT = 4)
+	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	attack_verb = list("shoved", "bashed")
 	var/active = 0
 	max_durability = 150 //So we can brake and need healing time to time
@@ -545,13 +545,14 @@
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
 		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
-			return (base_block_chance - round(damage / 3)) //block bullets and beams using the old block chance
+			return (base_block_chance - round(damage)) //This way are lasers and bullets that deal 35~ damage cant be blocked.
 	return base_block_chance
 
 /obj/item/shield/buckler/energy/attack_self(mob/living/user as mob)
-	if ((CLUMSY in user.mutations) && prob(50))
-		to_chat(user, SPAN_WARNING("You beat yourself in the head with [src]."))
-		user.take_organ_damage(5)
+	if ((CLUMSY in user.mutations) && prob(15))
+		to_chat(user, SPAN_WARNING("You accidentally bash yourself with the [src]."))
+		user.damage_through_armor(10, BURN, user.hand)
+		user.Weaken(1 * force)
 	active = !active
 	if (active)
 		force = WEAPON_FORCE_PAINFUL

@@ -6,6 +6,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/escapedprisoner
+	ghost_role_perks = list(/datum/perk/fast_fingers, /datum/perk/quiet_as_mouse)
 	short_desc = "You're a prisoner, sentenced to hard work in one of Kriosan's labor camps, but it seems as \
 	though fate has other plans for you."
 	flavour_text = "Good. It seems as though your ship crashed. You remember that you were convicted of "
@@ -28,21 +29,6 @@
 	flavour_text += "[pick(crimes)]. but regardless of that, it seems like your crime doesn't matter now. You don't know where you are, but you know that it's out to kill you, and you're not going \
 	to lose this opportunity. Find a way to get out of this mess and back to where you rightfully belong - your [pick("house", "apartment", "spaceship", "station")]. There should be a teleporter somewhere, if it's still intact."
 
-/decl/hierarchy/outfit/escapedprisoner
-	name = "Escaped Prisoner"
-	uniform = /obj/item/clothing/under/orange
-	mask = /obj/item/clothing/mask/breath
-	shoes = /obj/item/clothing/shoes/orange
-	r_pocket = /obj/item/tank/emergency_oxygen
-	back = /obj/item/storage/backpack/sport/orange
-
-/decl/hierarchy/outfit/escapedprisoner/hobo
-	belt = /obj/item/gun/projectile/revolver/handmade
-	l_pocket = /obj/item/ammo_casing/magnum_40/scrap/prespawned
-
-/obj/effect/mob_spawn/human/prisoner_transport/hobo
-	outfit = /decl/hierarchy/outfit/escapedprisoner/hobo
-
 /obj/effect/mob_spawn/human/scavenger
 	name = "storage sleeper"
 	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in armor."
@@ -50,23 +36,12 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/scavenger
+	ghost_role_perks = list(/datum/perk/stalker, /datum/perk/lungs_of_iron, /datum/perk/sure_step)
 	short_desc = "You're a scavenger, who barely even owns the clothes on your back and the rifle in your hands."
 	flavour_text = "It seems you've arrived. You're here to get the good stuff and skedaddle with your life intact. \
 	There may be others to cooperate with, but don't count on it. There shouldn't be many if any cops this far out, and laws don't carry much truck around here."
 	assignedrole = "Comissioned Scavenger"
 	title = "Prospector Comission Scavenger"
-
-/decl/hierarchy/outfit/scavenger
-	name = "Scavenger"
-	uniform = /obj/item/clothing/under/genericb
-	head = /obj/item/clothing/head/helmet/steelpot
-	shoes = /obj/item/clothing/shoes/color/black
-	suit = /obj/item/clothing/suit/armor/flackvest
-	suit_store = /obj/item/gun/projectile/boltgun
-	back = /obj/item/storage/backpack/satchel
-	r_pocket = /obj/item/ammo_magazine/speed_loader_rifle_75
-	id_slot = slot_wear_id
-	id_type = /obj/item/card/id
 
 /obj/effect/mob_spawn/human/exl_civ
 	name = "storage sleeper"
@@ -74,6 +49,7 @@
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
+	ghost_role_perks = list(/datum/perk/job/bolt_reflect, /datum/perk/lungs_of_iron, /datum/perk/sure_step)
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior
 	short_desc = "You are a excelsior, move ever upwards."
 	flavour_text = "It seems you've arrived. You're here to get the good stuff and skedaddle with your life intact. \
@@ -99,6 +75,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/void_wolf
+	ghost_role_perks = list(/datum/perk/second_skin, /datum/perk/lungs_of_iron, /datum/perk/sure_step)
 	short_desc = "You are a Void wolf."
 	flavour_text = "It seems you've arrived. You're here to get the good stuff and skedaddle with your life intact. \
 	There may be others to cooperate with, but don't count on it."
@@ -112,3 +89,26 @@
 		STAT_VIG = 18,
 		STAT_COG = 10
 	)
+
+/obj/effect/mob_spawn/human/si_medical_ert
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."
+	mob_name = "a scavenger"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/si_medical_ert
+	ghost_role_perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci, /datum/perk/chemist, /datum/perk/sure_step)
+	short_desc = "You are a Medical Emergency Personnel."
+	flavour_text = "Something has happend to the upper colony to warrent your deployment, you are a doctor first, save as many lives as possable with your healing gear not gun."
+	assignedrole = "Medical Emergency Personnel"
+	title = "Medical Emergency Personnel"
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 5,
+		STAT_BIO = 65,
+		STAT_MEC = 35,
+		STAT_VIG = 10,
+		STAT_COG = 35
+	)
+
+

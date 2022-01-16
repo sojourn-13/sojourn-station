@@ -25,6 +25,7 @@
 	bones_amount = 4
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	faction = "russian"
+	inherent_mutations = list(MUTATION_EPILEPSY, MUTATION_THICK_FUR, MUTATION_IMBECILE, MUTATION_NERVOUSNESS)
 
 /mob/living/simple_animal/hostile/bear/FindTarget()
 	. = ..()

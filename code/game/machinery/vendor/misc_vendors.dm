@@ -13,7 +13,8 @@
 					/obj/item/computer_hardware/scanner/paper = 10,
 					/obj/item/computer_hardware/printer = 10,
 					/obj/item/computer_hardware/card_slot = 3,
-					/obj/item/computer_hardware/ai_slot = 4)
+					/obj/item/computer_hardware/ai_slot = 4,
+					/obj/item/computer_hardware/hard_drive/portable/advanced/coin = 10)
 	auto_price = FALSE
 
 /obj/machinery/vending/cigarette
@@ -251,6 +252,7 @@
 		/obj/item/clothing/gloves/ash_evening = 3,
 		/obj/item/clothing/gloves/aerostatic_gloves = 3,
 		/obj/item/clothing/gloves/latex = 3,
+		/obj/item/clothing/gloves/goldenring = 5,
 		//Masks
 		/obj/item/clothing/mask/gas/colony = 2,
 		/obj/item/clothing/mask/gas/big_shot = 2,
@@ -484,6 +486,7 @@
 		/obj/item/clothing/gloves/ash_evening = 70,
 		/obj/item/clothing/gloves/aerostatic_gloves = 50,
 		/obj/item/clothing/gloves/latex = 30,
+		/obj/item/clothing/gloves/goldenring = 300,
 		//Masks
 		/obj/item/clothing/mask/gas/colony = 35,
 		/obj/item/clothing/mask/gas/big_shot = 80,
@@ -789,3 +792,76 @@
 /obj/machinery/vending/fortune/postvend_effect()
 	playsound(loc, 'sound/machines/fortune_riff.ogg', 100, 1)
 	return
+
+/obj/machinery/vending/gamers
+	name = "Game Emporium"
+	desc = "A one time stop for all your card or board game needs!"
+	icon_state = "nutrimat"
+	icon_vend = "nutrimat-vend"
+	vendor_department = DEPARTMENT_CHURCH
+	product_slogans = list("All purchases are non-refundable!",
+	"Once payed for no returning!",
+	"Buying any product makes you liable for its conduction!")
+	product_ads = "Emporium of fun games!"
+	products = list(
+					/obj/item/board = 7,
+					/obj/item/storage/pill_bottle/chechker = 7,
+					/obj/item/deck/tarot = 4,
+					/obj/item/deck = 10,
+					/obj/item/pack = 50,
+					/obj/item/pack/spaceball = 44,
+					/obj/item/deck/cah = 7,
+					/obj/item/deck/cah/black = 7,
+					/obj/item/scale = 12,
+					/obj/item/pack_card_carp = 90,
+					/obj/item/cardholder = 40,
+					/obj/item/cardholder/squirl = 20,
+					/obj/item/card_carp = 50
+					)
+	prices = list(
+					/obj/item/board = 35,
+					/obj/item/storage/pill_bottle/chechker = 40,
+					/obj/item/deck/tarot = 60,
+					/obj/item/deck = 50,
+					/obj/item/pack = 35,
+					/obj/item/pack/spaceball = 30,
+					/obj/item/deck/cah = 17,
+					/obj/item/deck/cah/black = 23,
+					/obj/item/scale = 65,
+					/obj/item/pack_card_carp = 35,
+					/obj/item/cardholder = 42,
+					/obj/item/cardholder/squirl = 30,
+					/obj/item/card_carp = 1)
+
+/obj/machinery/vending/gamers/hunters
+	name = "Pre-Payed Game Emporium"
+	desc = "A one time stop for all your card or board game needs! This one has been already payed for in full."
+	products = list(
+					/obj/item/board = 4,
+					/obj/item/storage/pill_bottle/chechker = 4,
+					/obj/item/deck/tarot = 3,
+					/obj/item/deck = 5,
+					/obj/item/pack = 10,
+					/obj/item/pack/spaceball = 22,
+					/obj/item/deck/cah = 3,
+					/obj/item/deck/cah/black = 3,
+					/obj/item/scale = 2,
+					/obj/item/pack_card_carp = 9,
+					/obj/item/cardholder = 8,
+					/obj/item/cardholder/squirl = 4,
+					/obj/item/card_carp = 4
+					)
+	prices = list(
+					/obj/item/board = 0,
+					/obj/item/storage/pill_bottle/chechker = 0,
+					/obj/item/deck/tarot = 0,
+					/obj/item/deck = 0,
+					/obj/item/pack = 0,
+					/obj/item/pack/spaceball = 0,
+					/obj/item/deck/cah = 0,
+					/obj/item/deck/cah/black = 0,
+					/obj/item/scale = 0,
+					/obj/item/pack_card_carp = 0,
+					/obj/item/cardholder = 0,
+					/obj/item/cardholder/squirl = 0,
+					/obj/item/card_carp = 0)

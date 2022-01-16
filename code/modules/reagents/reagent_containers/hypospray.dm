@@ -131,6 +131,79 @@
 	item_state = "syrette_tricord"
 	preloaded_reagents = list("tricordrazine" = 5)
 
+/obj/item/reagent_containers/hypospray/autoinjector/kelotane
+	name = "autoinjector (kelotane)"
+	icon_state = "syrette_yellow"
+	item_state = "syrette_yellow"
+	preloaded_reagents = list("kelotane" = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/bicaridine
+	name = "autoinjector (bicaridine)"
+	icon_state = "syrette_red"
+	item_state = "syrette_red"
+	preloaded_reagents = list("bicaridine" = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/antirad
+	name = "autoinjector (anti-rad)"
+	icon_state = "syrette_green"
+	item_state = "syrette_green"
+	preloaded_reagents = list("hyronalin" = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/dexalin
+	name = "autoinjector (dexalin)"
+	icon_state = "syrette_cyan"
+	item_state = "syrette_cyan"
+	preloaded_reagents = list("dexalin" = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/tramadol
+	name = "autoinjector (tramadol)"
+	icon_state = "syrette_magenta"
+	item_state = "syrette_magenta"
+	preloaded_reagents = list("tramadol" = 5)
+
+// Intermediate
+/obj/item/reagent_containers/hypospray/autoinjector/polystem
+	name = "autoinjector (polystem)"
+	icon_state = "syrette_magenta"
+	item_state = "syrette_magenta"
+	preloaded_reagents = list("polystem" = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/meralyne
+	name = "autoinjector (meralyne)"
+	icon_state = "syrette_magenta"
+	item_state = "syrette_magenta"
+	preloaded_reagents = list("meralyne" = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/dermaline
+	name = "autoinjector (dermaline)"
+	icon_state = "syrette_orange"
+	item_state = "syrette_orange"
+	preloaded_reagents = list("dermaline" = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/dexalinplus
+	name = "autoinjector (dexalin plus)"
+	preloaded_reagents = list("dexalinp" = 5)
+	icon_state = "syrette_blue"
+	item_state = "syrette_blue"
+
+/obj/item/reagent_containers/hypospray/autoinjector/oxycodone
+	name = "autoinjector (oxycodone)"
+	preloaded_reagents = list("oxycodone" = 5)
+	icon_state = "syrette_blue"
+	item_state = "syrette_blue"
+
+/obj/item/reagent_containers/hypospray/autoinjector/ryetalyn
+	name = "autoinjector (ryetalyn)"
+	preloaded_reagents = list("ryetalyn" = 5)
+	icon_state = "syrette_orange"
+	item_state = "syrette_orange"
+
+/obj/item/reagent_containers/hypospray/autoinjector/quickclot
+	name = "autoinjector (quickclot)"
+	preloaded_reagents = list("quickclot" = 5)
+	icon_state = "syrette_red"
+	item_state = "syrette_quickclot"
+
 /obj/item/reagent_containers/hypospray/autoinjector/spaceacillin
 	name = "autoinjector (spaceacillin)"
 	icon_state = "syrette_spacealine"

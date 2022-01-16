@@ -124,6 +124,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/ammo_magazine,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
 		/obj/item/gun/projectile/boltgun/flare_gun
 		)
 

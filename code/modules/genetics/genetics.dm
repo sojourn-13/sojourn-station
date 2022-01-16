@@ -147,7 +147,7 @@
 	#ifdef JANEDEBUG
 	log_debug("findCloneMutation: getting a random active clone mutation for cloning")
 	#endif
-	var/list/clone_mutation_pool
+	var/list/clone_mutation_pool = list()
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		if(selected_mutation.clone_gene && selected_mutation.active)
 			clone_mutation_pool += selected_mutation
@@ -430,7 +430,7 @@
 
 //Inject a mutagen into a living person.
 //MAKE SURE HOLDER IS SET FIRST.
-/datum/genetics/genetics_holder/proc/inject_mutations(var/mob/living/target)
+/datum/genetics/genetics_holder/proc/inject_mutations(var/mob/living/target, var/activate_all=FALSE)
 	#ifdef JANEDEBUG
 	log_debug("beginning implant: [target.name] ->[target.key], [target.ckey]")
 	#endif
@@ -443,6 +443,8 @@
 	for(var/datum/genetics/mutation/injected_mutation in mutation_pool)
 		var/datum/genetics/mutation/new_mutation = injected_mutation.copy()
 		new_mutation.implanted = FALSE //Sanity checking for activation loop.
+		if(activate_all)
+			new_mutation.active=TRUE
 		target.unnatural_mutations.addMutation(new_mutation)
 
 	//Process individual mutations, set them to implanted, and apply their effects to the target.
@@ -487,7 +489,7 @@
 /datum/genetics/genetics_holder/proc/check_destabilize()
 	//check if the holder is a valid mob. Sometimes it's not set, so we use this instead.
 	if(!holder_is_living())
-		return
+		return "not living"
 
 	if(processing_destabilization)
 		//Stop processing if we fall below the base value, or if the holder is already dead- Since we won't be needing it anymore
@@ -495,15 +497,15 @@
 			STOP_PROCESSING(SSprocessing, src)
 			stage = 0
 			processing_destabilization = FALSE
-			return
+			return "turning off destabilization"
 	else
 		//Start the process if we hit the threshold base value
 		if(total_instability >= DESTABILIZE_LEVEL_BASE)
 			last_destability_check = world.time
 			START_PROCESSING(SSprocessing, src)
 			processing_destabilization = TRUE
-			return
-	return
+			return "turning on destabilization"
+	return "None of the above happened."
 
 //Function for processing destabilization, it will only start if total_instability in a valid holder exceeds DESTABILIZE_LEVEL_BASE.
 //Doesn't start OR stop unless check_destabilize() tells it to.

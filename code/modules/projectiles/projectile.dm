@@ -656,7 +656,13 @@
 	var/tempLoc = get_turf(A)
 
 	bumped = TRUE
-
+	if(istype(A, /obj/structure/multiz/stairs/active))
+		var/obj/structure/multiz/stairs/active/S = A
+		if(S.target)
+			forceMove(get_turf(S.target))
+			trajectory.loc_z = loc.z
+			bumped = FALSE
+			return FALSE
 	if(iscarbon(A))
 		var/mob/living/carbon/C = A
 		var/obj/item/shield/S

@@ -61,17 +61,17 @@
 /datum/map_template/deepmaint_template/big/lab5
 	name = "lab5"
 	desc = "A lab5 before ruin."
-	mappath = 'maps/submaps/deepmaint_rooms/core/overrun.dmm'
+	mappath = 'maps/submaps/deepmaint_rooms/core/lab5.dmm'
 
 
 /datum/map_template/deepmaint_template/big/xenostudy
 	name = "xenostudy"
 	desc = "A xenostudy before ruin."
-	mappath = 'maps/submaps/deepmaint_rooms/core/overrun.dmm'
+	mappath = 'maps/submaps/deepmaint_rooms/core/xenostudy.dmm'
 
 
 /datum/map_template/deepmaint_template/big/medbay
 	name = "medbay"
 	desc = "A medbay stand before ruin."
-	mappath = 'maps/submaps/deepmaint_rooms/core/overrun.dmm'
+	mappath = 'maps/submaps/deepmaint_rooms/core/medbay.dmm'
 

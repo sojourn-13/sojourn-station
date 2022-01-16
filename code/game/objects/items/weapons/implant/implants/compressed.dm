@@ -38,6 +38,7 @@
 	name = "implanter (C)"
 	icon_state = "cimplanter1"
 	implant = /obj/item/implant/compressed
+	price_tag = 4000
 
 /obj/item/implanter/compressed/update_icon()
 	if(implant)

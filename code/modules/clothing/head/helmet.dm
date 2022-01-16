@@ -53,6 +53,7 @@
 	options["Blackshield Colours"] = "helmet_mil_alt"
 	options["Desert Combat"] = "helmet_tan_mil"
 	options["Woodlands Blackshield Combat"] = "helmet_green_mil"
+	options["Anthromorphic Blackshield Helmet"] = "helmet_mil_anthro"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -497,13 +498,27 @@
 
 /obj/item/clothing/head/armor/helmet/penance
 	name = "penance helmet"
-	desc = "A primitive helmet with a chainmailed coif. These were quickly made for trench conditions as logistical supply lines ran low on proper ballistic helmets, issued to consripts, thiefs, and cowards alike. Even after they were replaced, thousands of these shitty iron caps can be found as macabre military surplus. For some reason, you've decided to wear this ghastly thing."
+	desc = "An old iron-wrought helmet upon a chainmail coif. These were resurrected from the time of castle retinues to serve again upon the heads of terrified conscripts and penal soldiers in the battle of Krios when the surplus of kevlar dwindled to a luxury; now only a distant piece of trash on a disconnected world. Among Kriosians, wearing this is a sign of penance and military ritual. Among Men, it is poverty and desperation interchanged."
 	icon_state = "helmet_kriosanpenace"
 	flags_inv = BLOCKHAIR
 	armor = list(
 		melee = 15,
 		bullet = 15,
 		energy = 0,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/head/armor/helmet/frog
+	name = "mar'qua helmet"
+	desc = "A very old helmet from times of the first mar'qua spacefarers. It is beaten around the edges and made out of metal instead of polymer and alloys like the modern ones. Still for the mar'qua in the colony this is probably the best they have."
+	icon_state = "helmet_frog"
+	flags_inv = BLOCKHAIR
+	armor = list(
+		melee = 20,
+		bullet = 20,
+		energy = 5,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -536,9 +551,9 @@
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
-	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for melee protection."
+	desc = "A full helmet with a built in glow visor. While a weak light its better than nothing and the full cover design makes it ideal for bullet protection."
 	icon_state = "ironhammer_full"
-	armor = list(melee = 45, bullet = 40,energy = 15, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 100, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	flash_protection = FLASH_PROTECTION_MAJOR

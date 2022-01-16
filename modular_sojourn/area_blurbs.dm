@@ -52,7 +52,13 @@ ty ilu - bear
 /area/nadezhda/maintenance/arcade
 	narrate = "Once a place of fun and games, now rotted and rusted."
 
+/area/deepmaint
+	narrate = "The twisted labyrinth of deep maints. A demented worn down ruin where things that never should have been shamble in the dust and darkness. Do you hear it? Music echoes in the halls, building to a crescendo we never see."
+
 //Outside abandoned structures
+
+/area/colony/exposedsun/crashed_shop
+	narrate = "The barest peaking of light comes through the cavern roof, bathing the worn and rusted hulk trapped in the rock in faint light. The distant sound of welders, shuffling feet, and the murmuring of vat grown void wolves can be heard, trying to eke out salvage in this pit of junk."
 
 /area/nadezhda/dungeon/outside/trashcave
 	narrate = "Roaches and critters have made this damp and long abandoned cave their nest. A glint of gold shimmers from within the piles of scrap and rock walls, awaiting the curious prospector to unearth its hidden treasures."

@@ -1,7 +1,14 @@
 /datum/trade_station/station_zarya
-	name_pool = list("FTS 'Zarya'" = "Free Trade Station 'Zarya', they're sending a message \"Privet, this is free station 'Zarya'. We have everything for sale here, don't be afraid to scan our cargo and check our wares!\".")
+	name_pool = list(
+		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya':\n\"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
+	)
 	start_discovered = TRUE
 	spawn_always = TRUE
+	markup = COMMON_GOODS
+	offer_limit = 20
+	base_income = 1600
+	wealth = 0
+	secret_inv_threshold = 16000
 	assortiment = list(
 		"Vozduh" = list(
 			/obj/machinery/portable_atmospherics/canister/sleeping_agent,
@@ -42,4 +49,12 @@
 		)
 	)
 
-	offer_types = list()
+	offer_types = list(
+		/obj/item/tool_upgrade = offer_data("tool upgrade", 200, 0),				// base price: 200
+		/obj/item/tool/crowbar/onestar = offer_data("greyson crowbar", 1000, 3),
+		/obj/item/tool/pickaxe/onestar = offer_data("greyson pickaxe", 1000, 3),
+		/obj/item/tool/pickaxe/jackhammer/onestar = offer_data("greyson jackhammer", 1000, 3),
+		/obj/item/tool/screwdriver/combi_driver/onestar = offer_data("greyson combi driver", 1000, 3),
+		/obj/item/tool/weldingtool/onestar  = offer_data("greyson welding tool", 1000, 3),
+		/obj/item/tool_upgrade/augment/repair_nano = offer_data("repair nano", 5000, 1),
+	)

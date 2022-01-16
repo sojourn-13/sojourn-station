@@ -89,24 +89,24 @@
 	alpha = 128
 
 /obj/random/mob/psi_monster/item_to_spawn()
-	return pickweight(list(/mob/living/carbon/superior_animal/psi_monster = 8,
+	return pickweight(list(/mob/living/carbon/superior_animal/psi_monster = 9,
 				//trash
-				/mob/living/carbon/superior_animal/psi_monster/memory_eater = 7,
-				/mob/living/carbon/superior_animal/psi_monster/thought_melter = 7,
-				/mob/living/carbon/superior_animal/psi_monster/pus_maggot = 7,
+				/mob/living/carbon/superior_animal/psi_monster/memory_eater = 8,
+				/mob/living/carbon/superior_animal/psi_monster/thought_melter = 8,
+				/mob/living/carbon/superior_animal/psi_monster/pus_maggot = 8,
 				//robust
-				/mob/living/carbon/superior_animal/psi_monster/ponderous = 5,
-				/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare = 5,
-				/mob/living/carbon/superior_animal/psi_monster/licker = 5,
-				/mob/living/carbon/superior_animal/psi_monster/memory = 5,
-				/mob/living/carbon/superior_animal/psi_monster/flesh_tower = 5,
+				/mob/living/carbon/superior_animal/psi_monster/ponderous = 6,
+				/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare = 6,
+				/mob/living/carbon/superior_animal/psi_monster/licker = 6,
+				/mob/living/carbon/superior_animal/psi_monster/memory = 6,
+				/mob/living/carbon/superior_animal/psi_monster/flesh_tower = 6,
 				//impressive
-				/mob/living/carbon/superior_animal/psi_monster/flesh_behemoth,
+				/mob/living/carbon/superior_animal/psi_monster/flesh_behemoth = 2,
 				/mob/living/carbon/superior_animal/psi_monster/mind_gazer = 3,
-				/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo = 3,
-				/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher = 3,
+				/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo = 4,
+				/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher = 4,
 				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly = 2,
-				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror,
+				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror = 1,
 				))
 
 /obj/random/mob/psi_monster_mega_fauna
@@ -144,6 +144,14 @@
 	name = "lower chance cluster of psi_monsters"
 	icon_state = "hostilemob-brown-cluster-low"
 	spawn_nothing_percentage = 80
+
+/obj/random/cluster/psi_monster/maggot_death_gasp
+	name = "3 to 6 pus maggots"
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/cluster/psi_monster/maggot_death_gasp/item_to_spawn()
+	return pickweight(list(/mob/living/carbon/superior_animal/psi_monster/pus_maggot/summoned = 1))
 
 //xenomorphs
 /obj/random/mob/xenomorphs

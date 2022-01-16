@@ -18,13 +18,20 @@
 	var/list/reagent_names = list()
 
 /obj/item/reagent_containers/borghypo/medical
-	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin", "inaprovaline", "tramadol", \
-						"spaceacillin", "stoxin")
+	reagent_ids = list("bicaridine", "kelotane", "anti_toxin", "dexalin", "inaprovaline", "tramadol", "spaceacillin", "stoxin")
 	accepts_reagent_upgrades = TRUE
 
 /obj/item/reagent_containers/borghypo/rescue
 	reagent_ids = list("tricordrazine", "inaprovaline", "tramadol")
 	accepts_reagent_upgrades = TRUE
+
+/obj/item/reagent_containers/borghypo/proc/Reindex()
+//We want to start from scratch
+	reagent_names = list()
+	for(var/T in reagent_ids)
+		reagent_volumes[T] = volume
+		var/datum/reagent/R = GLOB.chemical_reagents_list[T]
+		reagent_names += R.name
 
 /obj/item/reagent_containers/borghypo/New()
 	..()

@@ -21,7 +21,6 @@
 	recipe_paths -= /datum/genetics/mutation_recipe
 	recipe_paths -= /datum/genetics/mutation_recipe/combination
 	recipe_paths -= /datum/genetics/mutation_recipe/irradiation
-
 	for (var/path in recipe_paths)
 		var/datum/genetics/mutation_recipe/example_recipe = new path()
 		var/compare_string //string used to ask if a given recipe is valid.

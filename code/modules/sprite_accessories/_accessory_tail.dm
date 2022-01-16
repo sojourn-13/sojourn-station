@@ -399,6 +399,13 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/tail/axolotl
+	name = "Axolotl Tail"
+	desc = ""
+	icon_state = "axolotl"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /*//For all species tails. Includes haircolored tails.
 /datum/sprite_accessory/tail/special
 	name = "Blank tail. Do not select."

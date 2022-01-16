@@ -11,44 +11,32 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak
-	name = "warrant officer's cloaked greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style. This one has a cloak attached to it."
-	icon_state = "ihc_coat_cloak"
-	item_state = "ihc_coat_cloak"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
+/obj/item/clothing/suit/greatcoat/ihc/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/suit/greatcoat/ihc_blue
-	name = "warrant officer's blue greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style. This one is blue and fits the Warrant Officer's uniform."
-	icon_state = "ihc_coat_blue"
-	item_state = "ihc_coat_blue"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
+	if(!isliving(loc))
+		return
 
-/obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak_blue
-	name = "warrant officer's blue cloaked greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style. This blue one has a cloak attached to it."
-	icon_state = "ihc_coat_cloak_blue"
-	item_state = "ihc_coat_cloak_blue"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
+	var/mob/M = usr
+	var/list/options = list()
+	options["WO Greatcoat"] = "ihc_coat"
+	options["WO Cloaked Greatcoat"] = "ihc_coat_cloak"
+	options["WO Blue Greatcoat"] = "ihc_coat_blue"
+	options["WO Blue Cloaked Greatcoat"] = "ihc_coat_cloak_blue"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/suit/greatcoat/cap
 	name = "premier's greatcoat"
@@ -63,18 +51,29 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/cap/cap_coat_cloak
-	name = "premier's cloaked greatcoat"
-	desc = "A green greatcoat. Makes you feel like the leader you are supposed to be. This one has a cloak attached to it."
-	icon_state = "cap_coat_cloak"
-	item_state = "cap_coat_cloak"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 5, bio = 0, rad = 0)
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
+/obj/item/clothing/suit/greatcoat/cap/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Premier Cloaked Greatcoat"] = "cap_coat_cloak"
+	options["Premier Greatcoat"] = "cap_coat"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/greatcoat/ihc/bmc
 	name = "blackshield commander's greatcoat"
@@ -89,18 +88,30 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
-/obj/item/clothing/suit/greatcoat/ihc/bmc_cloaked
-	name = "blackshield commander's cloaked greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style, this time wrapped in a fancy cloak."
-	icon_state = "mc_coat_cloak"
-	item_state = "mc_coat_cloak"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
+/obj/item/clothing/suit/greatcoat/ihc/bmc/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["BC Cloaked Greatcoat"] = "mc_coat_cloak"
+	options["BC Greatcoat"] = "mc_coat"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 //Credit to Drawsstuff for the coat mob icon only. The coat item icon, hat mob icon, and hat item icon were created by Kazkin via recoloring ERIS sprites.
 /obj/item/clothing/suit/greatcoat/divisor
@@ -120,6 +131,26 @@
 	)
 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/greatcoat/absolutecoat
+	name = "absolutist coat"
+	desc = "A comfortable, decorated coat for the Absolutist faith and its supporters. Not as armored but just as ostentatious"
+	icon_state = "absolutecoat"
+	item_state = "absolutecoat"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor = list(
+		melee = 10,
+		bullet = 10,
+		energy = 10,
+		bomb = 10,
+		bio = 100,
+		rad = 100
+	)
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
@@ -191,9 +222,9 @@
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
 	armor = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee = 10,
+		bullet = 10,
+		energy = 0,
 		bomb = 10,
 		bio = 0,
 		rad = 0

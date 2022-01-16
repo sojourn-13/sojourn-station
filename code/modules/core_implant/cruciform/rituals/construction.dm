@@ -435,7 +435,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_time = 8 SECONDS
 
 /datum/nt_blueprint/cruciform_upgrade/speed_of_the_chosen
-	name = "Cruciform Spped of the chosen Upgrade"
+	name = "Cruciform Speed of the chosen Upgrade"
 	build_path = /obj/item/cruciform_upgrade/speed_of_the_chosen
 	//Speed is king, so we requires a kings randsom to make!
 	materials = list(

@@ -121,17 +121,7 @@
 	maxcharge = 300
 	minor_fault = 1
 	price_tag = 50
-
-/obj/item/cell/large/slime
-	name = "charged slime core"
-	desc = "A yellow slime core infused with plasma, it crackles with power."
-	origin_tech = list(TECH_POWER = 2, TECH_BIO = 4)
-	icon = 'icons/mob/slimes.dmi'
-	icon_state = "yellow slime extract"
-	autorecharging = TRUE
-	maxcharge = 10000 //We still have a reason to use nukie cells
 	matter = null
-	price_tag = 1000
 
 //MEDIUM CELLS - for energy weapons and large devices
 

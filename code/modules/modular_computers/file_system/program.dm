@@ -36,6 +36,8 @@
 	. = ..()
 
 /datum/computer_file/program/clone()
+	if(!clone_able && copy_cat)
+		return
 	var/datum/computer_file/program/temp = ..()
 	temp.required_access = required_access
 	temp.nanomodule_path = nanomodule_path
@@ -44,6 +46,7 @@
 	temp.requires_ntnet = requires_ntnet
 	temp.requires_ntnet_feature = requires_ntnet_feature
 	temp.usage_flags = usage_flags
+	temp.copy_cat = TRUE
 	return temp
 
 // Used by programs that manipulate files.
@@ -79,6 +82,11 @@
 /datum/computer_file/program/proc/update_computer_icon()
 	if(computer)
 		computer.update_icon()
+
+/datum/computer_file/program/proc/set_icon(string)
+	if(string && istext(string))
+		program_icon_state = string
+	update_computer_icon()
 
 // Attempts to create a log in global ntnet datum. Returns 1 on success, 0 on fail.
 /datum/computer_file/program/proc/generate_network_log(var/text)

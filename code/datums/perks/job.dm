@@ -90,7 +90,7 @@
 
 /datum/perk/klutz
 	name = "Klutz"
-	desc = "You find a lot of tasks a little beyond your ability to perform, but being accident prone has at least made you used to getting hurt."
+	desc = "You find a lot of tasks a little beyond your ability to perform such is using any type of weaponry, but being accident prone has at least made you used to getting hurt."
 	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/klutz/assign(mob/living/carbon/human/H)
@@ -389,6 +389,7 @@
 			/datum/craft_recipe/guild/robotmelee,
 			/datum/craft_recipe/guild/plasma_glass,
 			/datum/craft_recipe/guild/arcwelder,
+			/datum/craft_recipe/guild/deadblow_hammer,
 			/datum/craft_recipe/guild/polytool,
 			/datum/craft_recipe/guild/combat_shovel,
 			/datum/craft_recipe/guild/supermop,
@@ -633,14 +634,17 @@
 		/mob/living/carbon/human/proc/codespeak_criminal,
 		/mob/living/carbon/human/proc/codespeak_unknown,
 		/mob/living/carbon/human/proc/codespeak_status,
+		/mob/living/carbon/human/proc/codespeak_detaining,
 		/mob/living/carbon/human/proc/codespeak_shutup,
 		/mob/living/carbon/human/proc/codespeak_understood,
 		/mob/living/carbon/human/proc/codespeak_yes,
 		/mob/living/carbon/human/proc/codespeak_no,
+		/mob/living/carbon/human/proc/codespeak_detain_local,
 		/mob/living/carbon/human/proc/codespeak_understood_local,
 		/mob/living/carbon/human/proc/codespeak_yes_local,
 		/mob/living/carbon/human/proc/codespeak_no_local,
 		/mob/living/carbon/human/proc/codespeak_warcrime_local,
+		/mob/living/carbon/human/proc/codespeak_rules_of_engagmentn_local,
 		/mob/living/carbon/human/proc/codespeak_run_local
 		)
 

@@ -261,7 +261,7 @@
 	add_fingerprint(user)
 	if(on && user.targeted_organ == BP_EYES)
 
-		if((CLUMSY in user.mutations) && prob(50))	//too dumb to use flashlight properly
+		if((CLUMSY in user.mutations) && prob(15))	//too dumb to use flashlight properly
 			return ..()	//just hit them in the head
 
 		var/mob/living/carbon/human/H = M	//mob has protective eyewear

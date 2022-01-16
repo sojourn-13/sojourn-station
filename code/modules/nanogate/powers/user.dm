@@ -111,6 +111,7 @@ List of powers in this page :
 						/obj/item/tool_upgrade/armor/bullet,
 						/obj/item/tool_upgrade/armor/energy,
 						/obj/item/tool_upgrade/armor/bomb,
+						/obj/item/tool_upgrade/productivity/waxcoat, //Biomatter
 						/obj/item/gun_upgrade/barrel/forged,
 						/obj/item/gun_upgrade/barrel/bore,
 						/obj/item/gun_upgrade/barrel/excruciator,	//Sadly has biomatter

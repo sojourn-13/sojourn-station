@@ -638,6 +638,11 @@ var/list/flooring_types
 	icon_base = "wooden_floor_s5"
 	build_type = /obj/item/stack/tile/wood/old/veridical
 
+/decl/flooring/wood/wood_old
+	icon = 'icons/turf/flooring/wood_old.dmi'
+	icon_base = "wood"
+	build_type = /obj/item/stack/tile/wood/wood_old
+
 /decl/flooring/reinforced
 	name = "reinforced floor"
 	desc = "Heavily reinforced with steel rods."
@@ -815,6 +820,15 @@ var/list/flooring_types
 
 /decl/flooring/grass2/jungle
 	icon_base = "grass_jungle"
+
+/decl/flooring/grass2/snow_grass
+	icon_base = "snowgrass_nes"
+
+/decl/flooring/grass2/snowjungle
+	icon_base = "snowjungle"
+
+/decl/flooring/grass2/plowed_snow
+	icon_base = "plowed_snow"
 
 /decl/flooring/grass2/dry
 	icon_base = "grass_dry"

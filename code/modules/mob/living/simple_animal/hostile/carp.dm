@@ -79,6 +79,7 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	melee_damage_lower = 40
 	melee_damage_upper = 65
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
 
 	break_stuff_probability = 100
 
@@ -100,6 +101,7 @@
 	leather_amount = 10 //The amount of leather sheets dropped.
 	bones_amount = 10 //The amount of bone sheets dropped.
 	mob_size = MOB_LARGE
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
 	special_parts = list(/obj/item/animal_part/wolf_tooth,
 						 /obj/item/animal_part/wolf_tooth,
 						 /obj/item/animal_part/wolf_tooth)

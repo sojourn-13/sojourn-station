@@ -23,6 +23,8 @@
 	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/empty
 	mags_left = 2 //2+1
 
+	cant_be_pulled = TRUE
+
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	breath_required_type = 0 // Doesn't need to breath, in a space suit
@@ -62,6 +64,10 @@
 	return
 
 /mob/living/carbon/superior_animal/human/excelsior/handle_cheap_environment(datum/gas_mixture/environment as anything)
+	return
+
+/mob/living/carbon/superior_animal/human/excelsior/start_pulling(var/atom/movable/AM)
+	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh

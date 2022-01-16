@@ -586,10 +586,15 @@
 		attack_hand(user)
 
 		var/obj/item/storage/bag/produce/S = I
+		var/at_least_one = FALSE
 		for (var/obj/item/reagent_containers/food/snacks/grown/G in locate(user.x,user.y,user.z))
 			if(!S.can_be_inserted(G))
 				return
-			S.handle_item_insertion(G, 1)
+			if(!at_least_one)
+				at_least_one = TRUE
+			S.handle_item_insertion(G, suppress_warning = TRUE)
+		if(at_least_one)
+			to_chat(usr, SPAN_NOTICE("You put an assortment of produce in \the [I]."))
 
 	else if ( istype(I, /obj/item/plantspray) )
 

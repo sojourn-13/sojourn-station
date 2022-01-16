@@ -758,7 +758,7 @@
 	reagent_state = LIQUID
 	color = "#a6b85b"
 	overdose = REAGENTS_OVERDOSE/2
-	metabolism = REM/2
+	metabolism = REM/4 //we take a LONG time to remove areselfs!
 	scannable = 1
 
 /datum/reagent/medicine/quickclot/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
@@ -768,7 +768,7 @@
 		for(var/obj/item/organ/external/E in H.organs)
 			for(var/datum/wound/W in E.wounds)
 				if(W.internal)
-					W.heal_damage(5 * effect_multiplier)
+					W.heal_damage(10 * effect_multiplier)
 		var/obj/item/organ/internal/blood_vessel/B = H.random_organ_by_process(OP_BLOOD_VESSEL)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(B))

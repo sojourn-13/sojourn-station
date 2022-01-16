@@ -1265,13 +1265,13 @@ I said no!
 
 /datum/recipe/cube/
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 10)
+	reagents = list("protein" = 15, "egg" = 3)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
 	result = /obj/item/reagent_containers/food/snacks/cube/roach
 
 /datum/recipe/cube/fuhrer
 	fruit = list("potato" = 2)
-	reagents = list("protein" = 25)
+	reagents = list("protein" = 25, "fuhrerole" = 5)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer,
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer,
@@ -1280,43 +1280,43 @@ I said no!
 
 /datum/recipe/cube/jager
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 15)
+	reagents = list("protein" = 10, "blattedin" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/jager)
 	result = /obj/item/reagent_containers/food/snacks/cube/jager
 
 /datum/recipe/cube/kraftwerk
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "iron" = 10)
+	reagents = list("protein" = 10, "gewaltine" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk)
 	result = /obj/item/reagent_containers/food/snacks/cube/kraftwerk
 
 /datum/recipe/cube/elektromagnetisch
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "iron" = 10)
+	reagents = list("protein" = 10, "iron" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch)
 	result = /obj/item/reagent_containers/food/snacks/cube/elektromagnetisch
 
 /datum/recipe/cube/glowing
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, MATERIAL_URANIUM = 10)
+	reagents = list("protein" = 10, MATERIAL_URANIUM = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing)
 	result = /obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
 
 /datum/recipe/cube/roachling
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 5)
+	reagents = list("protein" = 5, "seligitillin" = 1)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
 	result = /obj/item/reagent_containers/food/snacks/cube/roachling
 
 /datum/recipe/cube/seuche
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "blattedin" = 10)
+	reagents = list("protein" = 10, "diplopterum" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche)
 	result = /obj/item/reagent_containers/food/snacks/cube/seuche
 
 /datum/recipe/cube/panzer
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 20)
+	reagents = list("protein" = 20, "starkellin" = 5)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer,
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer,
@@ -1325,6 +1325,6 @@ I said no!
 
 /datum/recipe/cube/gestrahlte
 	fruit = list("potato" = 1)
-	reagents = list("protein" = 10, "uranium" = 5)
+	reagents = list("protein" = 10, "toxin" = 5)
 	items = list(/obj/item/reagent_containers/food/snacks/meat/roachmeat)
 	result = /obj/item/reagent_containers/food/snacks/cube/grestrahlte

@@ -154,17 +154,19 @@
 
 	if (cover_open)
 		iconstring += "open"
-		itemstring += "open"
+		itemstring += "-open"
 	else
 		iconstring += "closed"
-		itemstring += "closed"
+		itemstring += "-closed"
 
 	if (ammo_magazine)
 		var/percent = (ammo_magazine.stored_ammo.len / ammo_magazine.max_ammo) * 100
 		var/number = round(percent, 25)
 		iconstring += "[number]"
+		itemstring += "-mag"
 	else
 		iconstring += "-empty"
+		itemstring += "-nomag"
 
 	icon_state = iconstring
 	set_item_state(itemstring)

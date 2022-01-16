@@ -34,7 +34,7 @@
 		damtype = BRUTE
 		force = WEAPON_FORCE_ROBUST
 
-	if ((CLUMSY in user.mutations) && prob(50))
+	if ((CLUMSY in user.mutations) && prob(10))
 		to_chat(user, SPAN_WARNING("You club yourself over the head."))
 		playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
 		user.Weaken(3 * force)
@@ -121,7 +121,7 @@
 			damtype = BRUTE
 			force = WEAPON_FORCE_DANGEROUS
 
-		if ((CLUMSY in user.mutations) && prob(50))
+		if ((CLUMSY in user.mutations) && prob(10))
 			to_chat(user, SPAN_WARNING("You club yourself over the head."))
 			user.Weaken(3 * force)
 			if(ishuman(user))

@@ -1,8 +1,14 @@
 /datum/trade_station/fbv_hellcat
-	name_pool = list("Ironlord Syndicate 'Hellcat'" = "They are sending message, \"Greetings. This is the Hellcat. We're currently escorting the Caduceus and we will be departing the system shortly alongside them. We are willing to depart with some extra supplies to get rid of while we're still here.\"")
+	name_pool = list(
+		"FBV 'Hellcat'" = "\"Greetings. This is the Hellcat. We're currently escorting the Caduceus and we will be departing the system shortly alongside them. We are willing to part with our spare supplies while we're here.\""
+	)
 	icon_states = "ship"
 	start_discovered = TRUE
-	markup = 0.5
+	markup = COMMON_GOODS * 1.5
+	offer_limit = 20
+	base_income = 1600
+	wealth = 0
+	secret_inv_threshold = 32000
 	forced_overmap_zone = list(
 		list(15, 20),
 		list(20, 25)
@@ -59,14 +65,20 @@
 			/obj/item/clothing/suit/armor/laserproof
 		),
 	)
-
+	secret_inventory = list(
+		"Basic Gun Mods" = list(
+			/obj/item/gun_upgrade/barrel/forged,
+			/obj/item/tool_upgrade/productivity/ergonomic_grip,
+			/obj/item/tool_upgrade/refinement/laserguide,
+		)
+	)
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun/pistol,
-		/obj/item/gun/energy/laser/railgun,
-		/obj/item/tool/shovel/combat,
-		/obj/item/tool_upgrade/armor/melee,
-		/obj/item/tool_upgrade/armor/bullet,
-		/obj/item/tool_upgrade/armor/bomb,
-		/obj/item/tool_upgrade/armor/energy,
-		/obj/item/tool/baton/arcwelder
+		/obj/item/gun/energy/laser/railgun/pistol = offer_data("\"Myrmidon\" rail pistol", 1500, 0),
+		/obj/item/gun/energy/laser/railgun = offer_data("\"Reductor\" rail rifle", 3500, 0),
+		/obj/item/tool/shovel/combat = offer_data("combat crovel", 500, 0),
+		/obj/item/tool_upgrade/armor/melee = offer_data("melee armor plate", 500, 0),
+		/obj/item/tool_upgrade/armor/bullet = offer_data("ballistic armor plate", 1200, 0),
+		/obj/item/tool_upgrade/armor/bomb = offer_data("bomb proofing armor plate", 800, 0),
+		/obj/item/tool_upgrade/armor/energy = offer_data("energy armor plate", 2000, 0),
+		/obj/item/tool/baton/arcwelder = offer_data("arc welder", 1500, 0),
 	)

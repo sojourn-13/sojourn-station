@@ -145,6 +145,11 @@ var/cop_code_last
 	set name = "No"
 	src.codesay("Negative", FALSE, FALSE)
 
+/mob/living/carbon/human/proc/codespeak_detaining()
+	set category = "Codespeak"
+	set name = "Detaining Suspect"
+	src.codesay("Detaining suspect", TRUE, FALSE)
+
 /mob/living/carbon/human/proc/codespeak_understood_local()
 	set category = "Codespeak"
 	set name = "(local) Ok"
@@ -162,8 +167,18 @@ var/cop_code_last
 
 /mob/living/carbon/human/proc/codespeak_warcrime_local()
 	set category = "Codespeak"
-	set name = "(local) Attack?"
-	src.codesay("Permission to engage?", FALSE, TRUE) //TODO: Replace with something that sounds good
+	set name = "(local) Attack Lethal?"
+	src.codesay("Permission to lethally engage?", FALSE, TRUE) //TODO: Replace with something that sounds good
+
+/mob/living/carbon/human/proc/codespeak_detain_local()
+	set category = "Codespeak"
+	set name = "(local) Detaining"
+	src.codesay("Permission to Detaining?", FALSE, TRUE) //TODO: Replace with something that sounds good
+
+/mob/living/carbon/human/proc/codespeak_rules_of_engagmentn_local()
+	set category = "Codespeak"
+	set name = "(local) Non-Lethal Attack?"
+	src.codesay("Non-Lethal Engeagement?", FALSE, TRUE) //TODO: Replace with something that sounds good
 
 /mob/living/carbon/human/proc/codespeak_run_local()
 	set category = "Codespeak"

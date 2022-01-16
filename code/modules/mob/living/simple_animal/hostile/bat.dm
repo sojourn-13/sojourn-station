@@ -19,6 +19,7 @@
 	melee_damage_upper = 10
 	attacktext = "bites"
 	attack_sound = 'sound/weapons/bite.ogg'
+	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE)
 
 	//Space carp aren't affected by atmos.
 	min_oxy = 0

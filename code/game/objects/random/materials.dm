@@ -51,6 +51,11 @@
 				/obj/item/stack/material/silver/random = 2,\
 				/obj/item/stack/material/glass/plasmaglass/random = 2))
 
+/obj/random/material_rare/always_spawn
+	name = "random always spawn rare material"
+	icon_state = "material-orange"
+	spawn_nothing_percentage = 0
+
 /obj/random/material_rare/low_chance
 	name = "low chance random rare material"
 	icon_state = "material-orange-low"

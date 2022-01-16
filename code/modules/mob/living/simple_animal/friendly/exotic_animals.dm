@@ -81,6 +81,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+	inherent_mutations = list(MUTATION_HONK, MUTATION_IMBECILE, MUTATION_DEAF, MUTATION_NEARSIGHTED)
 	faction = "pond"
 	colony_friend = TRUE
 
@@ -128,6 +129,7 @@
 				"Ararrrararr.")
 	emote_hear = list("screEEEEeeches!","chirps.")
 	emote_see = list("earflicks","sniffs at the ground")
+	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_IMBECILE, MUTATION_TOURETTES)
 	colony_friend = TRUE
 	faction = "pond"
 

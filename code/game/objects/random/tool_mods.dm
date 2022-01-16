@@ -41,6 +41,10 @@
 	name = "random rare tool upgrade"
 	icon_state = "tech-red"
 
+/obj/random/tool_upgrade/rare/always_spawn
+	name = "random always spawn rare tool upgrade"
+	spawn_nothing_percentage = 0
+
 //A fancier subset of the most desireable upgrades
 /obj/random/tool_upgrade/rare/item_to_spawn()
 	return pickweight(list(
