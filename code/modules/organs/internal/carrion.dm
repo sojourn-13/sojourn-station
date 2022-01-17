@@ -344,16 +344,25 @@
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			for(var/i = 1, i <= 4 ,i++) //4 per burrow
 				var/obj/structure/burrow/origin = SSmigration.choose_burrow_target(null, TRUE, 100)
-				var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 2,\
+				var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 35,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver = 14,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/carrier = 12,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 5,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 4,\
 				/mob/living/carbon/superior_animal/giant_spider/plasma = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 3,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula = 3,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor = 1,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter = 35,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 20,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/shocker = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/hunter/pepper = 10,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula = 10,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/ogre = 8,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/pit = 8,\
+				/mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing = 6
 				))
 				new spider_to_spawn(B)
 				origin.migrate_to(B, 3 SECONDS, 0)
@@ -463,6 +472,7 @@
 	var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 35,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\
+				/mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider = 15,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver = 14,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/carrier = 12,\
 				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 5,\

@@ -136,6 +136,14 @@
 	bitesize = 6
 	preloaded_reagents = list("protein" = 8, "pararein" = 8, "mutagen" = 8)
 
+/obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
+	desc = "A bloated slab of sickly-green meat cut from a spider. It seems to always be cold and even when warmed by flames it cools quickly."
+	icon_state = "xenomeat"
+	filling_color = "#E2FFDE"
+
+	bitesize = 6
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "frostoil" = 8)
+
 /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The smell from this one makes your nose go numb."
 	icon_state = "xenomeat"
