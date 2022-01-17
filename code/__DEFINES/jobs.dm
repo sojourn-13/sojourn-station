@@ -22,7 +22,7 @@
 #define DEPARTMENT_SECURITY "Marshal & Blackshield"
 #define DEPARTMENT_LSS "Lonestar Employment Sector"
 #define DEPARTMENT_CIVILIAN	"Contractors"
-#define DEPARTMENT_CHURCH	"Church of Absoulte"
+#define DEPARTMENT_CHURCH	"Church of Absolute"
 #define DEPARTMENT_PROSPECTOR "Prospectors"
 #define DEPARTMENT_INDEPENDENT "Contractors"
 

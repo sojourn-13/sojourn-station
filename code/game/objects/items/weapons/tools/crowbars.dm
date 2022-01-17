@@ -10,6 +10,7 @@
 	origin_tech = list(TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 4)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
+	hitsound = 'sound/weapons/smash.ogg'
 	tool_qualities = list(QUALITY_PRYING = 35, QUALITY_DIGGING = 10, QUALITY_HAMMERING = 10)
 	price_tag = 15
 
