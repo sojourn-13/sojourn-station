@@ -28,6 +28,10 @@
 	armor_penetration = 100
 	check_armour = ARMOR_BULLET
 
+/obj/item/projectile/bullet/rocket/railgun
+	name = "chemical shunted power cell"
+	icon_state = "emitter"
+
 /obj/item/projectile/bullet/rocket/launch(atom/target, target_zone, x_offset, y_offset, angle_offset)
 	set_light(2.5, 0.5, "#dddd00")
 	..(target, target_zone, x_offset, y_offset, angle_offset)

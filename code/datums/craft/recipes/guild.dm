@@ -236,7 +236,7 @@
 //An exspensive but powerful CQC weapon that also can be used as a flar gun
 /datum/craft_recipe/guild/abdicatorshotgun
 	name ="abdicator energy shotgun"
-	result = /obj/item/gun/energy/abdicator
+	result = /obj/item/gun/energy/laser/railgun/abdicator
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 15),
 		list(QUALITY_CUTTING, 30, "time" = 10),
