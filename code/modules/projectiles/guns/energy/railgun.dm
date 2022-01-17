@@ -25,7 +25,7 @@
 	init_firemodes = list(
 		list(mode_name="slug", mode_desc="fires a large metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
 		list(mode_name="non-lethal", mode_desc="fires a rubber pellet at light speed", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
-		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=30000, icon="grenade"),
+		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=30000, icon="grenade")
 	)
 	var/consume_cell = FALSE
 	price_tag = 2250
