@@ -946,7 +946,7 @@
 	icon_state = "waxcoat"
 	matter = list(MATERIAL_BIOMATTER = 2, MATERIAL_PLASTIC = 5)
 	can_remove = FALSE
-	price_tag = 120
+	price_tag = 380
 
 /obj/item/tool_upgrade/productivity/waxcoat/New()
 	..()
