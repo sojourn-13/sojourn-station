@@ -325,7 +325,7 @@
 	// Lunchboxes
 	
 /obj/item/storage/deferred/meatbox
-	name = "Lunchbox: Pork Katsu
+	name = "Lunchbox: Pork Katsu"
 	desc = "A hand-made lunch box, locally sourced from the colony's gardens. This one is painted with a very happy looking pig. "
 	icon_state = "box_meat"
 	initial_contents = 
