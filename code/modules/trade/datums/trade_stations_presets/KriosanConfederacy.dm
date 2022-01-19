@@ -22,10 +22,10 @@
 			/obj/item/ammo_magazine/rifle_10x24
 		),
 		"Pets" = list(
-			/mob/living/simple_animal/corgi = custom_good_name("Noble Corgi"),
-			/mob/living/simple_animal/corgi/puppy = custom_good_name("Young Corgi"),
-			/mob/living/simple_animal/lizard = custom_good_name("Crate Pusher"), //Donst have a price, intented
-			/mob/living/simple_animal/cat = custom_good_name("Rat Slayer")
+			/mob/living/simple_animal/corgi = good_data("Noble Corgi", list(4, 5)),
+			/mob/living/simple_animal/corgi/puppy = good_data("Young Corgi", list(3, 5)),
+			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5)), //Donst have a price, intented
+			/mob/living/simple_animal/cat = good_data("Rat Slayer", list(4, 5))
 		)
 	)
 	secret_inventory = list(
