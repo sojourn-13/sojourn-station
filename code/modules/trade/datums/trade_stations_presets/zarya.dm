@@ -50,7 +50,7 @@
 	)
 
 	offer_types = list(
-		/obj/item/tool_upgrade = offer_data("tool upgrade", 200, 0),				// base price: 200
+		//obj/item/tool_upgrade = offer_data("tool upgrade", 200, 0),				// base price: 200 exploitable with other trade stations
 		/obj/item/tool/crowbar/onestar = offer_data("greyson crowbar", 1000, 3),
 		/obj/item/tool/pickaxe/onestar = offer_data("greyson pickaxe", 1000, 3),
 		/obj/item/tool/pickaxe/jackhammer/onestar = offer_data("greyson jackhammer", 1000, 3),

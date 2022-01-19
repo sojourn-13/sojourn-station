@@ -155,7 +155,7 @@ SUBSYSTEM_DEF(trade)
 		if(istype(item_path, /obj/item/storage))			// Storage items are too resource intensive to check (populate_contents() means we have to create new instances of every object within the initial object)
 			return FALSE									// Also, directly selling storage items after emptying them is abusable
 
-	if(istype(item_path, /obj/item/reagent_containers))						// Check if item is a reagent container
+	if(istype(item_path, /obj/item/reagent_containers/glass))						// Check if item is a reagent container - TEMP Soj edit to make food trades work, this is a banaid untill eris fixes it with a real correction
 		var/obj/item/reagent_containers/current_container = item_path
 		var/datum/reagent/target_reagent = offer_path
 		var/target_volume = 0

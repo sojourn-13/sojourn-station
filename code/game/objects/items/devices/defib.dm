@@ -37,7 +37,7 @@
 
 	update_icon()
 
-/obj/item/device/defib_kit/Initialize() //updates mapped items
+/obj/item/device/defib_kit/Initialize(mapload) //updates mapped items
 	..()
 	update_icon()
 

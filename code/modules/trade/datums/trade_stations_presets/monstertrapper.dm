@@ -12,7 +12,7 @@
 	secret_inv_threshold = 32000
 	assortiment = list(
 		"Roach Cubes and Eggs" = list(
-			/obj/item/roach_egg = custom_good_amount_range(list(5, 20)),
+			/obj/item/roach_egg = custom_good_amount_range(list(5, 10)),
 			/obj/item/reagent_containers/food/snacks/cube/roachling = custom_good_amount_range(list(1, 5)),
 			/obj/item/reagent_containers/food/snacks/cube/roach = custom_good_amount_range(list(1, 5)),
 			/obj/item/reagent_containers/food/snacks/cube/jager = custom_good_amount_range(list(1, 5)),
@@ -42,9 +42,9 @@
 			/obj/item/reagent_containers/glass/bottle/fuhrerole = custom_good_amount_range(list(2, 2)),
 		),
 		"Just Spiders" = list(
-			/mob/living/carbon/superior_animal/giant_spider = custom_good_amount_range(list(5, 5)),
-			/mob/living/carbon/superior_animal/giant_spider/nurse = custom_good_amount_range(list(5, 5)),
-			/mob/living/carbon/superior_animal/giant_spider/hunter = custom_good_amount_range(list(5, 5))
+			/mob/living/carbon/superior_animal/giant_spider = custom_good_amount_range(list(2, 3)),
+			/mob/living/carbon/superior_animal/giant_spider/nurse = custom_good_amount_range(list(-2, 3)),
+			/mob/living/carbon/superior_animal/giant_spider/hunter = custom_good_amount_range(list(1, 2))
 		),
 	)
 	//Types of items bought by the station

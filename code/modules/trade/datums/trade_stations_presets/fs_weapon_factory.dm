@@ -9,9 +9,7 @@
 			/obj/item/gun/projectile/automatic/sts/lrifle,
 			/obj/item/gun/projectile/automatic/sts/rifle,
 			/obj/item/gun/projectile/automatic/sts/hrifle,
-			/obj/item/gun/projectile/automatic/greasegun,
 			/obj/item/gun/projectile/automatic/pitbull,
-			/obj/item/gun/projectile/boltgun/scout,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa,
 			/obj/item/gun/projectile/shotgun/pump/gladstone,
@@ -56,16 +54,23 @@
 			/obj/item/grenade/explosive,
 			/obj/item/grenade/anti_photon,
 			/obj/item/plastique
+		),
+		"Top Class Firearms" = list(
+			/obj/item/gun/projectile/boltgun/scout,
+			/obj/item/gun/projectile/avasarala,
+			/obj/item/gun/projectile/basilisk,
+			/obj/item/gun/projectile/revolver/mateba,
+			/obj/item/gun/projectile/revolver/tacticool_revolver
 		)
 	)
 
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun= offer_data("\"Reductor\" rail rifle", 3500, 0),
-		/obj/item/gun_upgrade/mechanism/overshooter = offer_data("overshooter", 400, 0),
-		/obj/item/gun_upgrade/mechanism/weintraub = offer_data("\"Hurricane\" full auto kit", 450, 0),
-		/obj/item/gun_upgrade/trigger/dangerzone = offer_data("\"Dangerzone\" trigger", 250, 0),
-		/obj/item/gun_upgrade/muzzle/silencer = offer_data("silencer", 150, 0),
-		/obj/item/gun_upgrade/barrel/bore = offer_data("bored barrel", 750, 0),
-		/obj/item/gun_upgrade/barrel/forged = offer_data("forged barrel", 750, 0),
-		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 0)
+		/obj/item/gun/energy/laser/railgun= offer_data("\"Reductor\" rail rifle", 3500, 1),
+		/obj/item/gun_upgrade/mechanism/overshooter = offer_data("overshooter", 400, 2),
+		/obj/item/gun_upgrade/mechanism/weintraub = offer_data("\"Hurricane\" full auto kit", 450, 3),
+		/obj/item/gun_upgrade/trigger/dangerzone = offer_data("\"Dangerzone\" trigger", 250, 3),
+		/obj/item/gun_upgrade/muzzle/silencer = offer_data("silencer", 150, 6),
+		/obj/item/gun_upgrade/barrel/bore = offer_data("bored barrel", 750, 2),
+		/obj/item/gun_upgrade/barrel/forged = offer_data("forged barrel", 750, 4),
+		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 5)
 	)

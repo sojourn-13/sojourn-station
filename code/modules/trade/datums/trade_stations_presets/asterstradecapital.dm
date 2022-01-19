@@ -125,22 +125,23 @@
 			/obj/item/tool_upgrade/refinement/laserguide
 		),
 		"Nicknacks & Bobbles" = list(
-			/obj/item/oddity/ls/collector_coin,
-			/obj/item/oddity/ls/pamphlet,
-			/obj/item/oddity/ls/rod_figure,
-			/obj/item/oddity/ls/chess_set,
-			/obj/item/oddity/ls/starscope,
-			/obj/item/oddity/ls/flashdrive,
-			/obj/item/oddity/ls/mutant_tooth,
-			/obj/item/oddity/ls/manual,
-			/obj/item/oddity/ls/bouquet,
-			/obj/item/oddity/ls/magazine,
-			/obj/item/oddity/ls/dogtags,
-			/obj/item/oddity/ls/silk_cloak,
-			/obj/item/oddity/ls/kriosan_sword,
-			/obj/item/oddity/ls/newton_odd,
-			/obj/item/oddity/ls/starprojector,
-			/obj/item/oddity/ls/inertdetonator
+			/obj/item/oddity/ls/collector_coin = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/pamphlet = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/rod_figure = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/chess_set = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/starscope = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/flashdrive = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/mutant_tooth = custom_good_amount_range(list(1, 3)),
+			/obj/item/oddity/ls/manual = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/bouquet = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/magazine = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/puzzlebox = custom_good_amount_range(list(-1, 2)),
+			/obj/item/oddity/ls/dogtags = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/silk_cloak = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/kriosan_sword = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/newton_odd = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/starprojector = custom_good_amount_range(list(3, 6)),
+			/obj/item/oddity/ls/inertdetonator = custom_good_amount_range(list(3, 6))
 		)
 	)
 

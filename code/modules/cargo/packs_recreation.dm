@@ -137,6 +137,6 @@
 					/obj/random/lonestar_oddities,
 					/obj/random/lonestar_oddities,
 					/obj/random/lonestar_oddities)
-	cost = 1200
+	cost = 1400 //These exports for a small bit
 	crate_name = "luxury imports crate"
 	group = "Recreation"

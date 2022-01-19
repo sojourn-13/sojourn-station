@@ -1119,6 +1119,9 @@
 	. *= ..()
 This was a misstake
 */
+
+/obj/item/device/lighting/glowstick/flare/price_tag = 30
+
 /obj/structure/medical_stand/price_tag = 100
 
 /obj/item/virusdish/price_tag = 300
