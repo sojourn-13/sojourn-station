@@ -83,7 +83,7 @@
 #define	COMMS_COLOR_PROSPECTOR "#209848"
 #define	COMMS_COLOR_BLSHIELD   "#00440f"
 #define	COMMS_COLOR_COMMAND    "#204090"
-#define	COMMS_COLOR_CENTCOMM   "#5c5c7c"
+#define	COMMS_COLOR_CENTCOM   "#5c5c7c"
 #define	COMMS_COLOR_SYNDICATE  "#6d3f40"
 
 #define GLASS_COLOR            "#74b1ee"

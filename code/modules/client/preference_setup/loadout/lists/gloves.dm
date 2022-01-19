@@ -64,6 +64,16 @@
 	slot = slot_gloves
 	cost = 1
 
+/datum/gear/gloves/rainbow
+	display_name = "gloves, rainbow"
+	path = /obj/item/clothing/gloves/color/rainbow
+	cost = 2
+
+/datum/gear/gloves/colored
+	display_name = "gloves, colored"
+	flags = GEAR_HAS_COLOR_SELECTION
+	path = /obj/item/clothing/gloves/color
+
 /datum/gear/gloves/knuckles
 	display_name = "knuckle gloves"
 	sort_category = "Gloves and Handwear"
