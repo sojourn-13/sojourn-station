@@ -23,7 +23,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_800,
 		BURST_3_ROUND,
 		BURST_8_ROUND,
 		)
