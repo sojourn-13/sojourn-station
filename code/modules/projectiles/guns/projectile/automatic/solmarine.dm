@@ -42,7 +42,7 @@
 		..()
 
 /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/attackby(obj/item/I, mob/user)
-	if((istype(I, /obj/item/ammo_casing/shotgun)))
+	if((istype(I, /obj/item/ammo_casing/shotgun)) && shotgun_haver)
 		shotgun.load_ammo(I, user)
 	else
 		..()

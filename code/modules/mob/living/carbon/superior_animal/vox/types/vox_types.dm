@@ -132,8 +132,6 @@
 	knock_over_odds = 30
 
 	armor = list(melee = 50, bullet = 40,  bomb = 60, bio = 0, rad = 0)
-	poison_per_bite = 2
-	poison_type = "pararein"
 	ranged = FALSE
 
 	can_burrow = TRUE

@@ -205,8 +205,8 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/medical_command
 	name = "Medical ID card"
 	desc = "An ID straight from the SI Medical Divisions."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Overlord"
+	registered_name = "Medical ERT"
+	assignment = "SI Medical ERT"
 	access = list(access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
 		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
