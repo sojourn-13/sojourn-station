@@ -102,7 +102,7 @@
 			list(name="Rifle Magazine (7.5 Rubber)", cost=400, path=/obj/item/ammo_magazine/rifle_75/rubber),
 			list(name="Rifle Magazine (7.5 Practice)", cost=100, path=/obj/item/ammo_magazine/rifle_75/practice),
 			list(name="Rifle Pan (7.5 standard)", cost=1600, path=/obj/item/ammo_magazine/maxim_75),
-			list(name="Rifle Pan (7.5 empty)", cost=300, path=/obj/obj/item/ammo_magazine/maxim_75/empty,
+			list(name="Rifle Pan (7.5 empty)", cost=300, path=/obj/obj/item/ammo_magazine/maxim_75/empty),
 		"7.5 Short Rifle",
 			list(name="Short Rifle Magazine (7.5 Standard)", cost=300, path=/obj/item/ammo_magazine/rifle_75_short),
 			list(name="Short Rifle Magazine (7.5 High velocity)", cost=300, path=/obj/item/ammo_magazine/rifle_75_short/highvelocity),
