@@ -76,6 +76,13 @@
 			list(name="SMG Magazine (.35 Auto hollow-point)", cost=180, path= /obj/item/ammo_magazine/smg_35/lethal),
 			list(name="SMG Magazine (.35 Auto rubber)", cost=180, path= /obj/item/ammo_magazine/smg_35/rubber),
 			list(name="SMG Magazine (.35 Auto practice)", cost=70, path= /obj/item/ammo_magazine/smg_35/practice),
+		"SMG Magnum",
+			list(name="SMG Magazine (.40 Magnum)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40),
+			list(name="SMG Magazine (.40 Magnum high-velocity)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40/hv),
+			list(name="SMG Magazine (.40 Magnum hollow-point)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40/lethal),
+			list(name="SMG Magazine (.40 Magnum rubber)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40/rubber),
+			list(name="SMG Magazine (.40 Magnum practice)", cost=420, path= /obj/item/ammo_magazine/smg_magnum_40/practice),
+			list(name="SMG Magazine (.40 Magnum empty)", cost=420, path= /obj/item/ammo_magazine/smg_magnum_40/empty),
 		".257 Carbine Long",
 			list(name="Carbine Magazine (Standard)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257),
 			list(name="Carbine Magazine (High velocity)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257/highvelocity),
@@ -94,6 +101,8 @@
 			list(name="Rifle Magazine (7.5 Hollow point)", cost=400, path=/obj/item/ammo_magazine/rifle_75/lethal),
 			list(name="Rifle Magazine (7.5 Rubber)", cost=400, path=/obj/item/ammo_magazine/rifle_75/rubber),
 			list(name="Rifle Magazine (7.5 Practice)", cost=100, path=/obj/item/ammo_magazine/rifle_75/practice),
+			list(name="Rifle Pan (7.5 standard)", cost=1600, path=/obj/item/ammo_magazine/maxim_75),
+			list(name="Rifle Pan (7.5 empty)", cost=300, path=/obj/obj/item/ammo_magazine/maxim_75/empty),
 		"7.5 Short Rifle",
 			list(name="Short Rifle Magazine (7.5 Standard)", cost=300, path=/obj/item/ammo_magazine/rifle_75_short),
 			list(name="Short Rifle Magazine (7.5 High velocity)", cost=300, path=/obj/item/ammo_magazine/rifle_75_short/highvelocity),
@@ -418,3 +427,4 @@
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE
+
