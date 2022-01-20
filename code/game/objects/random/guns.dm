@@ -115,6 +115,7 @@
 				/obj/item/gun/projectile/automatic/sts/hrifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine = 1,\
 				/obj/item/gun/projectile/automatic/greasegun = 1,\
+				/obj/item/gun/projectile/automatic/thompson = 0.5,
 				/obj/item/gun/projectile/automatic/bren = 0.5,
 				//obj/item/gun/projectile/automatic/lmg/saw = 0.5,
 				//obj/item/gun/projectile/automatic/pitbull = 1,
@@ -239,6 +240,7 @@
 				/obj/item/gun/projectile/automatic/bren = 1.5,
 				/obj/item/gun/projectile/automatic/bastard = 2,
 				/obj/item/gun/projectile/automatic/mac/croon = 1,
+				/obj/item/gun/projectile/automatic/ak47/sa/tac = 1,
 				/obj/item/gun/projectile/lamia/scoped/dark = 3,
 				/obj/item/gun/projectile/shotgun/pump/combat = 3,
 				/obj/item/gun/projectile/shotgun/pug = 2,
@@ -269,7 +271,8 @@
 				/obj/item/gun/energy/centurio = 2,
 				/obj/item/gun/energy/centauri = 1,
 				/obj/item/gun/energy/gun/nuclear = 2,
-				/obj/item/gun/energy/plasma/destroyer = 1))
+				/obj/item/gun/energy/plasma/destroyer = 1,
+				/obj/item/gun/energy/sunrise))
 
 /obj/random/dungeon_gun_energy/low_chance
 	name = "low chance random special energy gun"
