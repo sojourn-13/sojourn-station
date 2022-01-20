@@ -272,7 +272,7 @@
 				/obj/item/gun/energy/centauri = 1,
 				/obj/item/gun/energy/gun/nuclear = 2,
 				/obj/item/gun/energy/plasma/destroyer = 1,
-				/obj/item/gun/energy/sunrise))
+				/obj/item/gun/energy/sunrise = 1))
 
 /obj/random/dungeon_gun_energy/low_chance
 	name = "low chance random special energy gun"
