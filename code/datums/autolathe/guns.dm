@@ -178,6 +178,10 @@
 	name = "SA \"Trajectory\" .40 Magnum SMG"
 	build_path = /obj/item/gun/projectile/automatic/vector
 
+/datum/design/autolathe/gun/thompson
+	name = "Unbraded .40 Magnum \"Chicago Typewriter\""
+	build_path = /obj/item/gun/projectile/automatic/thompson
+
 //S H O T G U N S
 
 /datum/design/autolathe/gun/doublebarrel
@@ -321,6 +325,10 @@
 	name = "\"Kalashnabren\" LMG"
 	build_path = /obj/item/gun/projectile/automatic/bren
 
+/datum/design/autolathe/gun/ak47_tac
+	name = "SA AK 7.5 \"Breacher\""
+	build_path = /obj/item/gun/projectile/automatic/ak47/sa/tac
+
 // . 4 0 8 H E A V Y  R I F L E S
 
 /datum/design/autolathe/gun/standard_omnirifle
@@ -356,6 +364,10 @@
 /datum/design/autolathe/gun/lever
 	name = "H&S .40 lever action \"Armstrong\""
 	build_path = /obj/item/gun/projectile/boltgun/lever
+
+/datum/design/autholathe/gun/custer
+	name = "H&S .257 lever action \"Custer\""
+	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 // S N O W F L A K E S
 
@@ -478,6 +490,10 @@
 /datum/design/autolathe/gun/plasma/martyr
 	name = "NT PR \"Martyr\""
 	build_path = /obj/item/gun/energy/plasma/martyr
+
+/datum/design/autolathe/gun/sunrise
+	name = "NM \"Sunrise\" L-SMG"
+	build_path = /obj/item/gun/energy/sunrise
 
 // Gun mods
 
