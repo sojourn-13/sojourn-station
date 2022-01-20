@@ -19,8 +19,8 @@
 /obj/item/tool/hammer/deadblow
 	name = "deadblow hammer"
 	desc = "Used for applying blunt force to a surface. This one has sand inside its plasteel head to help do strikes much more constantly in the same place with the same force well reducing trama onto soft surfaces."
-	icon_state = "hammer"
-	item_state = "deadblow"
+	icon_state = "deadblow"
+	item_state = "hammer"
 	tool_qualities = list(QUALITY_HAMMERING = 45)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_WOOD = 2, MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2)
 	attack_verb = list("attacked", "blunted", "brused", "smacked", "whacked", "striked", "bonked")
