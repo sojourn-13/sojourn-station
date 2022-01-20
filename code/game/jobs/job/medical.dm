@@ -72,6 +72,7 @@
 	minimum_character_age = 25
 	alt_titles = list("Soteria Nurse", "Soteria Emergency Physician", "Soteria Surgeon", "Soteria Medical Intern")
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
+	department_account_access = TRUE
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
@@ -118,7 +119,6 @@
 	wage = WAGE_PROFESSIONAL
 	alt_titles = (null)
 	outfit_type = /decl/hierarchy/outfit/job/medical/trauma_team
-	department_account_access = TRUE
 
 	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
 
