@@ -42,12 +42,10 @@
 	icon_state = "ironhammer"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
-		/datum/design/autolathe/gun/rex10,
 		/datum/design/autolathe/gun/rev10,
 		/datum/design/autolathe/gun/firefly,
 		/datum/design/autolathe/gun/glock,
 		//SMGs
-		/datum/design/autolathe/gun/luger,
 		/datum/design/autolathe/gun/wirbelwind = 2,
 		/datum/design/autolathe/gun/straylight,
 		//rifles
@@ -64,12 +62,14 @@
 		//ion
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher
-		/datum/design/autolathe/gun/grenade_launcher_lenar = 10,
+		/datum/design/autolathe/gun/grenade_launcher_lenar = 7,
 		//sniper
-		/datum/design/autolathe/gun/nordwind = 10,
+		/datum/design/autolathe/gun/nordwind = 7,
 		/datum/design/autolathe/device/landmine = 0,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
+		//laser
+		/datum/design/autolathe/gun/sunrise =3,
 		//Misc
 		/datum/design/autolathe/tool/ironhammer,
 		/datum/design/autolathe/sec/riot,
@@ -680,6 +680,19 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 4
 		)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson
+	disk_name = "Unbranded - .40 Thompson SMG"
+	icon_state = "blackshield"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/thompson = 4,
+		/datum/design/autolathe/ammo/smg_magnum_40 = 2,
+		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
+		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,
+		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
+		)
+
 // .50 PISTOLS
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/lamia
@@ -909,7 +922,7 @@
 	disk_name = "H&S - .257 \"Solarian\" Carbine"
 	icon_state = "ironhammer"
 
-	license = 16
+	license = 18
 	designs = list(
 		/datum/design/autolathe/gun/sol = 6,
 		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
@@ -920,6 +933,9 @@
 		/datum/design/autolathe/ammo/lrifle_rubber = 2,
 		/datum/design/autolathe/ammo/lrifle = 2,
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+		/datum/design/autolathe/ammo/shotgun_pellet = 1,
+		/datum/design/autolathe/ammo/shotgun = 2,
+		/datum/design/autolathe/ammo/shotgun_beanbag = 1,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull
@@ -1018,6 +1034,19 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/custer
+	disk_name = "H&S - .257 Custer Repeating Rifle"
+	icon_state = "sa"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/custer = 3,
+		/datum/design/autolathe/ammo/lrifle_speed_loader,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small,
+		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
+	)
 
 // 7.5 Rifles
 
@@ -1036,6 +1065,26 @@
 		/datum/design/autolathe/ammo/rifle_rubber = 2,
 		/datum/design/autolathe/ammo/rifle = 2,
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov
+	disk_name = "SA - 7.5 Breacher Kalashnikov Rifle"
+	icon_state = "sa"
+
+	license = 18
+	designs = list(
+		/datum/design/autolathe/gun/ak47_tac = 6,
+		/datum/design/autolathe/ammo/rifle_short_practice = 0,
+		/datum/design/autolathe/ammo/rifle_short_rubber,
+		/datum/design/autolathe/ammo/rifle_short,
+		/datum/design/autolathe/ammo/rifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_practice = 1,
+		/datum/design/autolathe/ammo/rifle_rubber = 2,
+		/datum/design/autolathe/ammo/rifle = 2,
+		/datum/design/autolathe/ammo/rifle_lethal = 4,
+		/datum/design/autolathe/ammo/shotgun_pellet = 2,
+		/datum/design/autolathe/ammo/shotgun = 2,
+		/datum/design/autolathe/ammo/shotgun_beanbag = 1
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/bren
@@ -1285,6 +1334,16 @@ obj/item/computer_hardware/hard_drive/portable/design/guns/china
 	license = 6//2 guns 2 cells
 	designs = list(
 		/datum/design/autolathe/gun/ion_pistol = 2,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/sunrise
+	disk_name = "NM - \"Sunrise\" Laser SMG"
+	icon_state = "blackshield"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/sunrise = 3,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
