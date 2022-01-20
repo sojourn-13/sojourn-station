@@ -54,10 +54,14 @@
 		switch(Voucher.voucher_type)
 			if("Primary")
 				RedeemPrimary(I, user)
+			if("SargPrimary")
+				RedeemSargPrimary(I, user)
 			if("Secondary")
 				RedeemSecondary(I, user)
 			if("Armor")
 				RedeemArmor(I, user)
+			if("CorpsmanArmor")
+				RedeemCorpsmanArmor(I, user)
 		return
 	return ..()
 
@@ -67,6 +71,24 @@
 					/obj/item/storage/box/bs_kit/sts = "STS",
 					/obj/item/storage/box/bs_kit/cog = "Cog",
 					/obj/item/storage/box/bs_kit/greasegun = "Grease Gun",
+					/obj/item/storage/box/bs_kit/roe = "Roe light boltgun",
+					/obj/item/storage/box/bs_kit/grizzly = "Grizzly"
+					)
+	var/selection = input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
+
+/obj/machinery/vending/blackshield_kit/proc/RedeemSargPrimary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/bs_kit/mosin = "Mosin",
+					/obj/item/storage/box/bs_kit/sts_para = "STS Para",
+					/obj/item/storage/box/bs_kit/cog = "Cog",
+					/obj/item/storage/box/bs_kit/rds_omnicarbine = "Warthog Omni",
 					/obj/item/storage/box/bs_kit/roe = "Roe light boltgun",
 					/obj/item/storage/box/bs_kit/grizzly = "Grizzly"
 					)
@@ -99,6 +121,21 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					/obj/item/storage/box/bs_kit/standard_armor = "Plate",
+					/obj/item/storage/box/bs_kit/flak_armor = "Flak",
+					/obj/item/storage/box/bs_kit/laser_armor = "Ablative",
+					/obj/item/storage/box/bs_kit/bullet_armor = "Bullet-Proof"
+					)
+	var/selection = input(redeemer, "Pick your armor", "Blackshield Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
+/obj/machinery/vending/blackshield_kit/proc/RedeemCorpsmanArmor(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/bs_kit/standard_armor_corpsman = "Plate",
 					/obj/item/storage/box/bs_kit/flak_armor = "Flak",
 					/obj/item/storage/box/bs_kit/laser_armor = "Ablative",
 					/obj/item/storage/box/bs_kit/bullet_armor = "Bullet-Proof"

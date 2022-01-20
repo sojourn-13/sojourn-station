@@ -65,6 +65,30 @@
 		new /obj/item/ammo_magazine/light_rifle_257_short(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/sts_para
+	name = "\improper STS Primary Kit"
+	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/sts/rifle/blackshield(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/bs_kit/rds_omnicarbine
+	name = "\improper Warthog Omni Primary Kit"
+	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408(src)
+		new /obj/item/storage/pouch/ammo(src)
+
 /obj/item/storage/box/bs_kit/cog
 	name = "\improper Cog Primary Kit"
 	desc = "A kit designed for energy-based weaponry holding the cog rifle. While not as powerful or versatile as some ballistic options, its easy to produce and recharge-able energy cells make it an \
@@ -222,3 +246,11 @@
 		new /obj/item/clothing/head/helmet/laserproof(src)
 		new /obj/item/clothing/gloves/thick/ablasive(src)
 		new /obj/item/clothing/shoes/ablasive(src)
+
+/obj/item/storage/box/bs_kit/standard_armor_corpsman
+	name = "\improper Standard Corpsman Armor Kit"
+	desc = "An armor kit containg a corpsman plate carrier and a ballistic helmet."
+
+	populate_contents()
+		new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia(src)

@@ -19,6 +19,12 @@
 	icon_state = "voucher"
 	voucher_type = "Primary"
 
+/obj/item/voucher/blackshield/sargprimary
+	name = "\improper sargent armor voucher"
+	desc = "A token to redeem corpsman equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "SargPrimary"
+
 /obj/item/voucher/blackshield/secondary
 	name = "\improper blackshield secondary weapon voucher"
 	desc = "A token to redeem blackshield equipment from a vendor."
@@ -30,6 +36,12 @@
 	desc = "A token to redeem blackshield equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Armor"
+
+/obj/item/voucher/blackshield/armorcorpsman
+	name = "\improper corpsman armor voucher"
+	desc = "A token to redeem corpsman equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "CorpsmanArmor"
 
 // Marshal
 /obj/item/voucher/marshal
@@ -63,6 +75,24 @@
 
 	populate_contents()
 		new /obj/item/voucher/blackshield/primary(src)
+		new /obj/item/voucher/blackshield/secondary(src)
+		new /obj/item/voucher/blackshield/armor(src)
+
+/obj/item/storage/box/blackshield_voucher_corps
+	name = "\improper blackshield voucher box"
+	desc = "A box full of vouchers."
+
+	populate_contents()
+		new /obj/item/voucher/blackshield/primary(src)
+		new /obj/item/voucher/blackshield/secondary(src)
+		new /obj/item/voucher/blackshield/armorcorpsman(src)
+
+/obj/item/storage/box/blackshield_voucher_sarg
+	name = "\improper blackshield voucher box"
+	desc = "A box full of vouchers."
+
+	populate_contents()
+		new /obj/item/voucher/blackshield/sargprimary(src)
 		new /obj/item/voucher/blackshield/secondary(src)
 		new /obj/item/voucher/blackshield/armor(src)
 
