@@ -263,8 +263,12 @@
 	build_path = /obj/item/gun/projectile/boltgun/light_wood
 
 /datum/design/autolathe/gun/zatvor
-	name = "BR .257 \"zatvor\""
+	name = "BR 7.5 \"Zatvor\""
 	build_path = /obj/item/gun/projectile/boltgun/zatvor
+
+/datum/design/autolathe/gun/custer
+	name = "H&S .257 \"Custer\""
+	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 /datum/design/autolathe/gun/nail_gun
 	name = "GP .257 \"Nail\""
