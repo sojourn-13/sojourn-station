@@ -71,11 +71,11 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/sts/rifle/blackshield(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/rds_omnicarbine
