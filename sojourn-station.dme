@@ -2765,6 +2765,7 @@
 #include "code\modules\reagents\reagent_containers\food\snacks\meat.dm"
 #include "code\modules\reagents\reagent_containers\glass\beaker.dm"
 #include "code\modules\reagents\reagent_containers\glass\bottle.dm"
+#include "code\modules\reagents\reagent_containers\glass\bottled_chemicals.dm"
 #include "code\modules\reagents\reagent_containers\glass\bottle\robot.dm"
 #include "code\modules\reagents\reagents\core.dm"
 #include "code\modules\reagents\reagents\dispenser.dm"
