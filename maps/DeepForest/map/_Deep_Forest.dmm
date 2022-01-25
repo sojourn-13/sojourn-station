@@ -286,9 +286,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bj" = (
-/obj/machinery/drone_fabricator/derelict{
-	fabricator_tag = "Prepper Base"
-	},
+/obj/structure/salvageable/implant_container,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper)
 "bk" = (
@@ -403,6 +401,11 @@
 /obj/random/firstaid,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"bE" = (
+/obj/structure/window/reinforced,
+/obj/item/storage/hcases/med/has_items_spawn,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bF" = (
 /obj/item/mine_old{
 	layer = 2.6
@@ -428,6 +431,15 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"bK" = (
+/obj/structure/table/standard,
+/obj/item/stack/nanopaste,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bL" = (
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -563,10 +575,29 @@
 /obj/random/cloth/armor/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"cl" = (
+/obj/structure/table/standard,
+/obj/item/storage/deferred/rations,
+/obj/item/storage/firstaid/ifak,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cm" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/syndie_kit/imp_compress,
 /turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"cn" = (
+/obj/structure/table/standard,
+/obj/item/storage/deferred/crate/alcohol,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "co" = (
 /obj/structure/flora/small/bushc1,
@@ -583,6 +614,18 @@
 /obj/item/storage/deferred/meds,
 /obj/item/stack/nanopaste,
 /turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"cr" = (
+/obj/item/storage/hcases/med/has_items_spawn,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"cs" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/bodybags,
+/obj/item/roller,
+/obj/random/medical,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ct" = (
 /mob/living/simple_animal/hostile/hivebot,
@@ -607,6 +650,26 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"cy" = (
+/obj/structure/table/standard,
+/obj/item/device/scanner/mass_spectrometer/adv,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"cz" = (
+/obj/structure/table/standard,
+/obj/item/roller,
+/obj/random/medical,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
+"cA" = (
+/obj/structure/table/standard,
+/obj/random/medical,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cB" = (
 /obj/machinery/light/floor,
 /mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
@@ -625,8 +688,10 @@
 /turf/simulated/wall/wood_old,
 /area/asteroid/rogue)
 "cF" = (
-/obj/structure/window/reinforced,
-/turf/simulated/floor/tiled/white/brown_perforated,
+/obj/structure/table/standard,
+/obj/random/medical,
+/obj/random/medical_lowcost_handmade,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cG" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -745,12 +810,45 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/meadow)
+"de" = (
+/obj/structure/table/standard,
+/obj/item/stack/medical/bruise_pack,
+/obj/item/stack/medical/ointment,
+/obj/item/stack/medical/splint,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "df" = (
 /obj/random/furniture/bedsheet,
 /obj/landmark/join/late/dormitory_outsider,
 /obj/structure/bed/padded,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
+"dg" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/glass/bottle/aluminum,
+/obj/item/reagent_containers/glass/bottle/ammonia,
+/obj/item/reagent_containers/glass/bottle/carbon,
+/obj/item/reagent_containers/glass/bottle/copper,
+/obj/item/reagent_containers/glass/bottle/ethanol,
+/obj/item/reagent_containers/glass/bottle/hclacid,
+/obj/item/reagent_containers/glass/bottle/hydrazine,
+/obj/item/reagent_containers/glass/bottle/mercury,
+/obj/item/reagent_containers/glass/bottle/phosphorus,
+/obj/item/reagent_containers/glass/bottle/pacid,
+/obj/item/reagent_containers/glass/bottle/potassium,
+/obj/item/reagent_containers/glass/bottle/phosphorus,
+/obj/item/reagent_containers/glass/bottle/radium,
+/obj/item/reagent_containers/glass/bottle/sacid,
+/obj/item/reagent_containers/glass/bottle/silicon,
+/obj/item/reagent_containers/glass/bottle/sodium,
+/obj/item/reagent_containers/glass/bottle/sulfur,
+/obj/item/reagent_containers/glass/bottle/tungsten,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dh" = (
 /obj/structure/table/rack,
 /obj/random/junkfood,
@@ -792,21 +890,18 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "do" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
+/obj/structure/closet/random_medsupply,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dp" = (
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dq" = (
-/obj/machinery/sleeper{
-	dir = 4;
-	icon_state = "sleeper_0"
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/dungeon/outside/smuggler_zone_u)
+/obj/effect/decal/cleanable/dirt,
+/obj/random/traps/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/dungeon/outside/zoo)
 "dr" = (
 /obj/structure/table/reinforced,
 /obj/item/device/radio/uplink,
@@ -878,6 +973,10 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
+"dC" = (
+/obj/random/traps/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/dungeon/outside/zoo)
 "dD" = (
 /obj/random/cluster/spiders/low_chance,
 /obj/effect/decal/cleanable/rubble,
@@ -888,12 +987,15 @@
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/forest)
+"dF" = (
+/obj/random/traps/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo)
 "dG" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/bodybags,
-/obj/item/roller,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/dungeon/outside/smuggler_zone_u)
+/obj/item/stack/rods,
+/obj/random/traps/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/zoo)
 "dH" = (
 /obj/structure/sign/medsci/firstaidstation{
 	pixel_x = -30
@@ -901,10 +1003,9 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dI" = (
-/obj/structure/table/standard,
-/obj/item/roller,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/dungeon/outside/smuggler_zone_u)
+/obj/random/traps/low_chance,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/dungeon/outside/zoo)
 "dJ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -943,6 +1044,14 @@
 /obj/random/lathe_disk/advanced,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
+"dR" = (
+/obj/structure/table/onestar,
+/obj/structure/flora/pottedplant/dead{
+	oldified = 1;
+	pixel_y = 8
+	},
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/one_star)
 "dS" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/bushb1,
@@ -1532,6 +1641,11 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper)
+"fQ" = (
+/obj/machinery/light/floor,
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/nadezhda/outside/one_star)
 "fR" = (
 /obj/machinery/door/airlock/multi_tile/metal{
 	dir = 4;
@@ -2096,9 +2210,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
-"ia" = (
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
 "ib" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
@@ -4164,10 +4275,6 @@
 /obj/machinery/door/airlock/multi_tile/glass,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
-"pe" = (
-/obj/item/stack/rods,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/dungeon/outside/zoo)
 "pf" = (
 /obj/item/stack/rods,
 /obj/item/material/shard,
@@ -6050,19 +6157,8 @@
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
-"vZ" = (
-/obj/map_data/nadezda_s,
-/turf/unsimulated/mineral,
-/area/colony/exposedsun/pastgate)
 "wa" = (
 /obj/machinery/body_scanconsole,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"wb" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "wc" = (
@@ -6086,13 +6182,6 @@
 /obj/random/mob/voidwolf/low_chance,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
-"wg" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/tablet/lease/preset/chemistry,
-/obj/item/device/scanner/mass_spectrometer/adv,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "wh" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -6108,10 +6197,6 @@
 /obj/random/medical_lowcost/low_chance,
 /obj/random/medical_lowcost/low_chance,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"wj" = (
-/obj/machinery/chemical_dispenser,
-/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "wk" = (
 /obj/structure/table/standard,
@@ -6143,10 +6228,6 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/dungeon/outside/smuggler_zone_u)
-"wn" = (
-/obj/structure/closet/random_medsupply,
-/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "wo" = (
 /obj/random/pack/junk_machine,
@@ -11505,6 +11586,10 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
+"SK" = (
+/obj/structure/salvageable/personal,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/dungeon/outside/prepper)
 "SL" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -11721,10 +11806,6 @@
 "TC" = (
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/nadezhda/outside/one_star)
-"TD" = (
-/obj/structure/flora/pottedplant/dead,
-/turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/one_star)
 "TG" = (
 /mob/living/simple_animal/hostile/hivebot{
@@ -15037,13 +15118,13 @@ bm
 bn
 cc
 cf
-do
+bK
 dp
 dJ
 dp
 wd
 we
-wj
+dg
 bm
 sS
 aV
@@ -15246,7 +15327,7 @@ bm
 bo
 dN
 cg
-dp
+cl
 dp
 dK
 dp
@@ -15455,12 +15536,12 @@ bm
 bp
 cc
 cq
-dq
+cn
 ez
 wa
 dp
-cd
-wg
+de
+cy
 wl
 bm
 sS
@@ -15663,8 +15744,8 @@ sS
 bm
 bq
 cd
-cF
-dp
+bE
+cr
 dp
 dp
 dp
@@ -15879,7 +15960,7 @@ dp
 dp
 we
 wd
-wj
+dg
 bm
 sS
 aV
@@ -16088,7 +16169,7 @@ dp
 dp
 cc
 cc
-wn
+do
 bm
 sS
 aV
@@ -16291,13 +16372,13 @@ bm
 bD
 cd
 cd
-dG
-dI
-wb
-dp
+cs
+cz
+cA
+cF
 cc
 wh
-wn
+do
 bm
 sS
 aV
@@ -55193,7 +55274,7 @@ fF
 fF
 fF
 fF
-vZ
+fF
 "}
 (2,1,2) = {"
 ab
@@ -57742,7 +57823,7 @@ ym
 OM
 bj
 OM
-bj
+SK
 fC
 fC
 fD
@@ -57949,9 +58030,9 @@ kB
 fC
 ln
 OM
-fO
+bj
 OM
-fO
+SK
 fC
 fC
 fD
@@ -71398,14 +71479,14 @@ al
 pQ
 af
 af
-pJ
+fQ
 al
 al
 al
 al
-pI
+Ld
 af
-TD
+dR
 af
 Ov
 Oy
@@ -72652,14 +72733,14 @@ al
 pQ
 af
 af
-pJ
+fQ
 al
 al
 al
 al
-pI
+Ld
 af
-TD
+dR
 af
 sh
 sh
@@ -92050,7 +92131,7 @@ nE
 KA
 nZ
 pa
-ia
+dF
 pt
 pt
 pt
@@ -92257,7 +92338,7 @@ lx
 lx
 nE
 nT
-nZ
+dq
 oW
 ib
 pt
@@ -92663,8 +92744,8 @@ lx
 lx
 lx
 lx
-nj
-kn
+WL
+WL
 nW
 kn
 lx
@@ -92672,7 +92753,7 @@ WL
 kn
 lx
 lx
-kn
+WL
 wV
 nZ
 oX
@@ -92876,7 +92957,7 @@ kn
 kn
 ke
 kn
-lx
+WL
 lx
 lx
 YA
@@ -92885,7 +92966,7 @@ kn
 oF
 nT
 nZ
-nT
+dC
 ib
 pt
 pt
@@ -93084,7 +93165,7 @@ kn
 kn
 nS
 gt
-kn
+WL
 kn
 lx
 lx
@@ -93095,7 +93176,7 @@ nE
 nT
 nZ
 pb
-pe
+dG
 pt
 pt
 pq
@@ -93306,7 +93387,7 @@ nZ
 nZ
 pf
 pt
-pt
+dI
 pt
 py
 pD
