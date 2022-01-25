@@ -30,6 +30,7 @@
 		rad = 25
 	)
 	siemens_coefficient = 0.6
+	stiffness = LIGHT_STIFFNESS
 
 //Its a soft suit basicly but no slowdown
 /obj/item/clothing/head/helmet/space/os

@@ -273,6 +273,8 @@
 			add_blood()
 		if(prob(60)) // I mean, the thing is ew gross.
 			equip_delay += rand(0, 6 SECONDS)
+		if(prob(60)) // I mean, the thing is ew gross.
+			stiffness += pick(0, 0, 0.5, 0.5, 0.5, 1, 1.5)
 
 /obj/item/clothing/make_young()
 	if(!oldified)

@@ -35,6 +35,7 @@
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
 	w_class = ITEM_SIZE_NORMAL
 	//Decent all around, but less ballistic resistance
+	stiffness = LIGHT_STIFFNESS
 	armor = list(
 		melee = 60,
 		bullet = 60,

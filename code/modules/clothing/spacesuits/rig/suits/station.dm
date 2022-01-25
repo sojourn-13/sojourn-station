@@ -124,6 +124,8 @@ Advanced Voidsuit: Guild Master
 		rad = 100
 	)
 	slowdown = 0
+	stiffness = 0
+	obscuration = 0
 	drain = 2
 	offline_slowdown = 0
 	offline_vision_restriction = 0
@@ -336,7 +338,7 @@ Technomancer RIG
 	)
 	slowdown = 0
 	offline_vision_restriction = 1
-
+	stiffness = MEDIUM_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
 
 	extra_allowed = list(
@@ -373,7 +375,7 @@ Technomancer RIG
 		rad = 100
 	)
 	slowdown = 0
-
+	stiffness = MEDIUM_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
 
 	extra_allowed = list(
