@@ -24,6 +24,6 @@
 
 /obj/item/projectile/bullet/pellet/fragment/rubber
 	damage_types = list(BRUTE = 1)
-	agony = 32
+	agony = 25 // 20 x 7 = 175, if all hit, rather then 32 x 7 
 	embed = FALSE
 	sharp = FALSE
