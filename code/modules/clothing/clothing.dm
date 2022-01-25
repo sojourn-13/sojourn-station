@@ -242,8 +242,8 @@
 	action_button_name = "action_music"
 	var/obj/item/device/player/player = null
 	var/tick_cost = 0.1
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 
 /*

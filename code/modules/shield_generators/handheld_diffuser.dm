@@ -5,7 +5,7 @@
 	icon = 'icons/obj/machines/shielding.dmi'
 	icon_state = "hdiffuser_off"
 	var/active_power_use = 10 KILOWATTS * CELLRATE
-	var/obj/item/cell/small/cell
+	cell = null
 	var/enabled = 0
 
 /obj/item/device/shield_diffuser/update_icon()

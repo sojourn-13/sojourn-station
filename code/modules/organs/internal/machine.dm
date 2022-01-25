@@ -7,7 +7,7 @@
 	nature = MODIFICATION_SILICON
 	vital = TRUE
 	var/open
-	var/obj/item/cell/medium/cell = /obj/item/cell/medium/moebius/nuclear
+	cell = /obj/item/cell/medium/moebius/nuclear
 	//at 0.8 completely depleted after 60ish minutes of constant walking or 130 minutes of standing still
 	var/servo_cost = 0.5 // this will probably require tweaking
 	w_class = ITEM_SIZE_SMALL

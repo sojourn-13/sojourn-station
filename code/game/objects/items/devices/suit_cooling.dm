@@ -17,7 +17,7 @@
 
 	var/on = 0				//is it turned on?
 	var/cover_open = 0		//is the cover open?
-	var/obj/item/cell/large/cell
+	cell = null
 	var/max_cooling = 12				//in degrees per second - probably don't need to mess with heat capacity here
 	var/charge_consumption = 3		//charge per second at max_cooling
 	var/thermostat = T20C
