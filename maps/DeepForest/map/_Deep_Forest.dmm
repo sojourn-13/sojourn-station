@@ -286,9 +286,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "bj" = (
-/obj/machinery/drone_fabricator/derelict{
-	fabricator_tag = "Prepper Base"
-	},
+/obj/structure/salvageable/implant_container,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper)
 "bk" = (
@@ -11588,6 +11586,10 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
+"SK" = (
+/obj/structure/salvageable/personal,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/dungeon/outside/prepper)
 "SL" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -57821,7 +57823,7 @@ ym
 OM
 bj
 OM
-bj
+SK
 fC
 fC
 fD
@@ -58028,9 +58030,9 @@ kB
 fC
 ln
 OM
-fO
+bj
 OM
-fO
+SK
 fC
 fC
 fD
