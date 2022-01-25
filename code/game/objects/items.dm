@@ -84,6 +84,16 @@
 
 	var/list/effective_faction = list() // Which faction the item is effective against.
 	var/damage_mult = 1 // The damage multiplier the item get when attacking that faction.
+	//Stolen things form tool qualities
+	var/eye_hazard = FALSE
+	var/use_power_cost = 0
+	var/use_fuel_cost = 0
+	var/obj/item/cell/cell = null
+	var/suitable_cell = null	//Dont forget to edit this for a tool, if you want in to consume cells
+	var/passive_power_cost = 0 //Energy consumed per process tick while active
+	var/use_stock_cost = 0
+	var/stock = 0
+	var/sparks_on_use = FALSE
 
 /obj/item/Initialize()
 	if(islist(armor))

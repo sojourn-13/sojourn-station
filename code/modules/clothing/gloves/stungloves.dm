@@ -10,8 +10,8 @@
 	var/agonyforce = 30
 	var/status = FALSE		//whether the thing is on or not
 	var/hitcost = 100
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/medium
+	cell = null
+	suitable_cell = /obj/item/cell/medium
 
 /obj/item/clothing/gloves/stungloves/Initialize()
 	. = ..()

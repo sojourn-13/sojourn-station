@@ -1,8 +1,8 @@
 /obj/item/device/lighting/toggleable/flashlight
 	action_button_name = "Toggle Flashlight"
 	var/tick_cost = 0.2
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 	dir = WEST
 
 	var/obj/effect/effect/light/light_spot

@@ -8,8 +8,8 @@
 	prescription = TRUE
 	active = FALSE
 	var/tick_cost = 1
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 /obj/item/clothing/glasses/powered/Initialize()
 	. = ..()

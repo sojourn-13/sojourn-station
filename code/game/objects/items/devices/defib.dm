@@ -19,9 +19,9 @@
 	var/chargecost = 500 //Charge drain level
 	var/oxygain = 50 //How much oxyloss should this thing heal?
 
-	var/suitable_cell = /obj/item/cell/large
+	suitable_cell = /obj/item/cell/large
 	var/obj/item/cell/cell_type = null
-	var/obj/item/cell/cell = null
+	cell = null
 
 	var/obj/item/shockpaddles/linked/paddles
 
@@ -752,9 +752,9 @@
 
 	chargecost = 20
 
-	var/suitable_cell = /obj/item/cell/small
+	suitable_cell = /obj/item/cell/small
 	var/obj/item/cell/cell_type = null
-	var/obj/item/cell/cell = null
+	cell = null
 
 /obj/item/shockpaddles/standalone/New()
 	..()

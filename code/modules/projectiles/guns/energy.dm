@@ -10,8 +10,8 @@
 
 
 	var/charge_cost = 100 //How much energy is needed to fire.
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/medium
+	cell = null
+	suitable_cell = /obj/item/cell/medium
 	var/cell_type = /obj/item/cell/medium/high
 	var/projectile_type = /obj/item/projectile/beam/practice
 	var/modifystate

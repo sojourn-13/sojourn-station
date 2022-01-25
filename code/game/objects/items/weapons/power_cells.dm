@@ -389,8 +389,8 @@
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "centrifuge_makeshift"
 	matter = list(MATERIAL_STEEL = 30)
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell
+	cell = null
+	suitable_cell = /obj/item/cell
 
 /obj/item/device/manual_charger/attack_self(mob/user)
 	var/obj/item/cell/cell
