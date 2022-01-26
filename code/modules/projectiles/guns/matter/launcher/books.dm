@@ -38,6 +38,7 @@
 	desc = "A golden scepter with a leather wrapped around its handle, can be loaded with biomatter to heal those to cast its light onto. \
 	Can be used to brash people over the head but it will be unwieldly"
 	icon = 'icons/obj/guns/matter/harmony_scepter.dmi'
+	icon_state = "harmony_scepter"
 	projectile_type = /obj/item/projectile/beam/sniper/healing/staff
 	//Theirs better weapons then this!
 	force = WEAPON_FORCE_ROBUST
