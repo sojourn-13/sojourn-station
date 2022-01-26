@@ -123,6 +123,7 @@
 		data["body_coverage"] = body_part_string
 	data["slowdown"] = slowdown
 	data["stiffness"] = stiffness
+	data["obscuration"] = obscuration
 	if(heat_protection)
 		data["heat_protection"] = body_part_coverage_to_string(heat_protection)
 		data["heat_protection_temperature"] = max_heat_protection_temperature
