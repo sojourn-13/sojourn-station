@@ -198,6 +198,18 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 		L.adjustBruteLoss(-5)
 		L.adjustFireLoss(-5)
 
+/obj/item/projectile/beam/sniper/healing/staff
+	name = "harmony"
+
+/obj/item/projectile/beam/sniper/healing/staff/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjustOxyLoss(-20)
+		L.adjustToxLoss(-7)
+		L.adjustBruteLoss(-7)
+		L.adjustFireLoss(-7)
+
 /obj/item/projectile/beam/tesla
 	name = "lightning"
 	damage_types = list(BURN = 30)
