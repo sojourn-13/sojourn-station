@@ -12314,11 +12314,10 @@
 "cOJ" = (
 /obj/structure/table/rack/shelf,
 /obj/item/ammo_magazine/ammobox/light_rifle_257,
-/obj/item/ammo_magazine/heavy_rifle_408/hv,
-/obj/item/ammo_magazine/heavy_rifle_408/hv,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/ammo_magazine/light_rifle_257,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "cOK" = (
@@ -52250,7 +52249,6 @@
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/flashbangs,
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield,
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lNf" = (
@@ -81442,6 +81440,15 @@
 "slu" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
+/obj/item/cell/small/high{
+	pixel_y = 8
+	},
+/obj/item/cell/small/high{
+	pixel_y = 8
+	},
+/obj/item/cell/small/high{
+	pixel_y = 8
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "slz" = (
@@ -84392,8 +84399,6 @@
 "sXw" = (
 /obj/structure/table/rack/shelf,
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv,
-/obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/light_rifle_257,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 8
 	},
@@ -84411,6 +84416,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/item/ammo_magazine/heavy_rifle_408/hv,
+/obj/item/ammo_magazine/heavy_rifle_408/hv,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "sXy" = (
@@ -107829,15 +107836,13 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "ydE" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/cell/small/high{
-	pixel_y = 8
+/obj/item/computer_hardware/hard_drive/portable/design/security{
+	pixel_x = 7;
+	pixel_y = 0
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/cell/small/high{
-	pixel_y = 8
-	},
-/obj/item/cell/small/high{
-	pixel_y = 8
+/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo{
+	pixel_x = -6;
+	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
