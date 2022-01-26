@@ -28,6 +28,29 @@
 /turf/simulated/wall/tomb_king/New(var/newloc)
 	..(newloc, MATERIAL_STEEL)
 
+/turf/simulated/wall/church
+	name = "church wall"
+	desc = "A reinforced wall with golden triming, latin and with faithful depictions of tales told in images decorate the base."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "church_standard"
+	icon_base = "church_standard"
+	icon_base_override = "church_standard"
+	icon_base_reinf = "church_reinforced"
+
+/turf/simulated/wall/church/New(var/newloc)
+	..(newloc, MATERIAL_STEEL)
+
+/turf/simulated/wall/church_reinforced
+	name = "church wall"
+	desc = "A reinforced wall with golden triming, latin and with faithful depictions of tales told in images decorate the base."
+	icon_state = "church_reinforced"
+	icon_base_override = "church_standard"
+	icon_base_reinf_override = "church_reinforced"
+	icon = 'icons/turf/wall_masks.dmi'
+
+/turf/simulated/wall/church_reinforced/New(var/newloc)
+	..(newloc, MATERIAL_STEEL,MATERIAL_STEEL)
+
 /turf/simulated/wall/rock
 	name = "rock wall"
 	desc = "A wall of rocks."
@@ -209,6 +232,18 @@
 	icon_state = "oldwood"
 	icon_base_override = "oldwood"
 
+/turf/simulated/wall/wood_barrel
+	icon_state = "woodenwall"
+	icon_base_override = "woodenwall"
+
+/turf/simulated/wall/wood_barrel/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
+
+/turf/simulated/wall/wood/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
+
+/turf/simulated/wall/wood_old/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
 
 // Kind of wondering if this is going to bite me in the butt.
 /turf/simulated/wall/voxshuttle/New(var/newloc)
