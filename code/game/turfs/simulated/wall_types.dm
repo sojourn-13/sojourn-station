@@ -36,6 +36,8 @@
 	icon_base = "church_standard"
 	icon_base_override = "church_standard"
 	icon_base_reinf = "church_reinforced"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
 
 /turf/simulated/wall/church/New(var/newloc)
 	..(newloc, MATERIAL_STEEL)
@@ -47,6 +49,8 @@
 	icon_base_override = "church_standard"
 	icon_base_reinf_override = "church_reinforced"
 	icon = 'icons/turf/wall_masks.dmi'
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
 
 /turf/simulated/wall/church_reinforced/New(var/newloc)
 	..(newloc, MATERIAL_STEEL,MATERIAL_STEEL)
