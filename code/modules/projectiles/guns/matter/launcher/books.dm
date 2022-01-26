@@ -46,6 +46,7 @@
 	max_stored_matter = 20
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 10)
 	price_tag = 3000 //So its worth stealing >:D
+	w_class = ITEM_SIZE_HUGE
 
 /obj/item/gun/matter/holybook/staff/attack()
 	..()
