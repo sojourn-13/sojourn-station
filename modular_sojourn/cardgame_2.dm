@@ -143,7 +143,7 @@
 
 /obj/item/card_carp/adder
 	name = "Adder"
-	desc = "A Goat, Health is 1, Damage is 0, Requires 1 blood. On attack, removes any card it hits."
+	desc = "A Snake, Health is 1, Damage is 0, Requires 1 blood. On attack, removes any card it is facing."
 	icon_state = "card_adder"
 	current_health = 1
 
@@ -173,9 +173,9 @@
 
 /obj/item/card_carp/croaker_lord
 	name = "Bullfrog"
-	desc = "A Bullfrog, Health is 1, Damage is 3, Requires 1 blood. Stops Flying attacks."
+	desc = "A Bullfrog, Health is 3, Damage is 1, Requires 1 blood. Stops Flying attacks."
 	icon_state = "card_frog"
-	current_health = 2
+	current_health = 3
 
 /obj/item/card_carp/wolf
 	name = "Wolf"
