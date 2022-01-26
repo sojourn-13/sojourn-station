@@ -205,6 +205,7 @@
 	var/list/options = list()
 	options["BC Beret"] = "beret_militia"
 	options["BC Cap"] = "commander_cap"
+	options["BC Default"] = "hoshat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
