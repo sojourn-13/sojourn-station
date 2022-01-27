@@ -98,6 +98,8 @@
 	var/use_stock_cost = 0
 	var/stock = 0
 	var/sparks_on_use = FALSE
+	//Used for stashes
+	var/start_hidden = FALSE
 
 /obj/item/Initialize()
 	if(islist(armor))
