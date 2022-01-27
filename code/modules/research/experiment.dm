@@ -283,7 +283,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	. = ..()
 	GLOB.explosion_watcher_list += src
 	targetBoom = rand(10,35)
-	stored_points = 250000 //5.1 perfect bombs
+	stored_points = 250000 //6.1 perfect bombs
 
 /obj/item/device/radio/beacon/explosion_watcher/Destroy()
 	GLOB.explosion_watcher_list -= src
