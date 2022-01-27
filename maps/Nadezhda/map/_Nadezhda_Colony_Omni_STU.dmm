@@ -215,7 +215,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -875,7 +875,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "ahn" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "ahp" = (
@@ -1021,7 +1021,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/side/f2section1)
 "ajA" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /mob/living/simple_animal/corgi/Ian,
@@ -1576,7 +1576,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/item/circuitboard/vending,
@@ -2429,7 +2429,7 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
 "aBX" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/bcarpet,
@@ -3372,7 +3372,7 @@
 "aMd" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/ammo_magazine/ammobox/rifle_75/practice,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
@@ -3485,7 +3485,7 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/section5)
 "aNl" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -5221,7 +5221,7 @@
 /area/nadezhda/absolutism/bioreactor)
 "bkl" = (
 /obj/machinery/light/small,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -5773,7 +5773,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/hallway/side/f2section1)
 "bpO" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/monofloor{
@@ -5821,7 +5821,7 @@
 /area/nadezhda/engineering/atmos/surface)
 "bqs" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -6204,7 +6204,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "bvE" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monofloor,
@@ -6540,7 +6540,7 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 33
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -7217,7 +7217,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
 "bHP" = (
@@ -7510,7 +7510,7 @@
 /area/nadezhda/engineering/atmos)
 "bLo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -8133,7 +8133,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -8577,7 +8577,7 @@
 /turf/simulated/floor/tiled/steel/bar_flat,
 /area/nadezhda/crew_quarters/cafeteria)
 "bYE" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -9690,7 +9690,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/merchant)
 "cki" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
 "ckl" = (
@@ -9760,7 +9760,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
@@ -10348,7 +10348,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -10686,7 +10686,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/command/bridge)
 "cxb" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -11391,7 +11391,7 @@
 "cDR" = (
 /obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "cDX" = (
@@ -11648,7 +11648,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "cHC" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -12066,7 +12066,7 @@
 "cMX" = (
 /obj/structure/table/woodentable,
 /obj/item/maneki_neko,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-s"
@@ -12427,7 +12427,7 @@
 	pixel_x = -25;
 	pixel_y = 10
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -12814,7 +12814,7 @@
 /area/nadezhda/hallway/main/stairwell)
 "cUS" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -13077,7 +13077,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "cXS" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/main/stairwell)
@@ -13261,7 +13261,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "daI" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -15281,7 +15281,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "dxO" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -16840,7 +16840,7 @@
 /area/nadezhda/command/merchant)
 "dQX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -17325,7 +17325,7 @@
 "dVN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "dVP" = (
@@ -17464,7 +17464,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/machinery/light_switch{
@@ -18003,7 +18003,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "eez" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/machinery/light_switch{
@@ -19343,7 +19343,7 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/courtroom)
 "evn" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/machinery/camera/network/engineering,
@@ -19860,7 +19860,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "eCV" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -20179,7 +20179,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/sign/departmentold/engineering2{
 	name = "Thermoelectric Generator";
 	pixel_y = 32
@@ -20529,7 +20529,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "eKw" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -21357,7 +21357,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10{
@@ -21587,7 +21587,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/security/barracks)
 "eUT" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/structure/cable/green{
@@ -21849,7 +21849,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "eXP" = (
@@ -22129,7 +22129,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security)
 "fbc" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
@@ -23058,7 +23058,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/medical/psych)
 "fnE" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/violetcorener,
@@ -23670,7 +23670,7 @@
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "ftI" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -24051,7 +24051,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "fxu" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/landmark/join/late/cyborg,
@@ -26131,7 +26131,7 @@
 /area/nadezhda/pros/prep)
 "fTy" = (
 /obj/machinery/light,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/structure/table/marble,
@@ -26642,7 +26642,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/crematorium)
 "gab" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -26698,7 +26698,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -27320,7 +27320,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/colony)
 "gha" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -27551,7 +27551,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
@@ -27668,7 +27668,7 @@
 /area/nadezhda/outside/meadow)
 "gjX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -28077,7 +28077,7 @@
 /area/nadezhda/security/tactical_blackshield)
 "goM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -29052,7 +29052,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
@@ -29563,7 +29563,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/armory_blackshield)
 "gGv" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -29702,7 +29702,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/pool)
 "gIi" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
@@ -30083,7 +30083,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/machinery/light{
@@ -30984,7 +30984,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/medical/genetics)
 "gWz" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -31162,7 +31162,7 @@
 	name = "Dormitory 2"
 	})
 "gYl" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
@@ -32382,7 +32382,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "hov" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/bioreactor)
 "hoy" = (
@@ -32398,14 +32398,14 @@
 /area/colony)
 "hoE" = (
 /obj/machinery/light,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section1)
 "hoJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "hoK" = (
@@ -33515,7 +33515,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/machinery/alarm{
@@ -34362,7 +34362,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
 "hNP" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -38773,7 +38773,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
 "iPa" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -39312,7 +39312,7 @@
 /area/nadezhda/dungeon/outside/burned_outpost)
 "iVl" = (
 /obj/machinery/light,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/machinery/keycard_auth{
@@ -39743,7 +39743,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "jaW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -39909,7 +39909,7 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/main/stairwell)
 "jdx" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -40581,7 +40581,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "jkf" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "jkn" = (
@@ -41531,7 +41531,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/golden,
@@ -41640,7 +41640,7 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/circuitlab)
 "jwp" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -42269,7 +42269,7 @@
 /area/nadezhda/security/tactical_blackshield)
 "jCX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -42938,7 +42938,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "jLw" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/structure/disposalpipe/junction{
@@ -43393,7 +43393,7 @@
 "jPE" = (
 /obj/structure/table/woodentable,
 /obj/item/folder,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/carpet,
@@ -43532,7 +43532,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "jRn" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -44225,7 +44225,7 @@
 /obj/structure/sign/faction/neotheology_cross/gold{
 	pixel_y = 32
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/crematorium)
 "jZV" = (
@@ -44279,7 +44279,7 @@
 "kaB" = (
 /obj/structure/table/woodentable,
 /obj/item/tool/hydrogen_sword,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/purcarpet,
@@ -44757,7 +44757,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/cryo)
 "kgK" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -45028,7 +45028,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/quartermaster/hangarsupply)
 "kjj" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/random/furniture/pottedplant,
@@ -45470,7 +45470,7 @@
 /area/nadezhda/engineering/atmos)
 "knT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/item/stool/custom/bar_special,
@@ -46390,7 +46390,7 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/chapel)
 "kyt" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/golden,
@@ -47290,7 +47290,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "kIv" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/command/bridge)
 "kIJ" = (
@@ -47697,7 +47697,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "kMZ" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/machinery/alarm{
@@ -48795,7 +48795,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "kYV" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -49596,7 +49596,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "lic" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -51620,7 +51620,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/merchant)
 "lDO" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -51883,7 +51883,7 @@
 /area/nadezhda/medical/psych)
 "lId" = (
 /obj/machinery/light,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/structure/closet/wall_mounted/emcloset{
@@ -51903,7 +51903,7 @@
 /area/nadezhda/command/crematorium)
 "lIf" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -52648,7 +52648,7 @@
 /area/nadezhda/rnd/docking)
 "lQw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "lQD" = (
@@ -52694,7 +52694,7 @@
 /turf/simulated/floor/reinforced/airmix,
 /area/nadezhda/engineering/atmos)
 "lQV" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monofloor,
@@ -52990,7 +52990,7 @@
 	name = "\improper Blackshield - Firing Range"
 	})
 "lUT" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/security/detectives_office)
 "lUZ" = (
@@ -53237,7 +53237,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/barracks)
 "lYg" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 8;
@@ -53442,7 +53442,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
@@ -53514,7 +53514,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mbz" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
@@ -54194,7 +54194,7 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -54333,7 +54333,7 @@
 /area/nadezhda/security/laber_area)
 "mkk" = (
 /obj/machinery/light,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel,
@@ -54873,7 +54873,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/command/courtroom)
 "mpB" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/structure/closet/wall_mounted/firecloset{
@@ -54978,7 +54978,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mqJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -55377,7 +55377,7 @@
 /obj/structure/closet/wall_mounted/emcloset{
 	pixel_y = -32
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -55417,7 +55417,7 @@
 /obj/item/circuitboard/teleporter,
 /obj/item/device/aicard,
 /obj/structure/closet/secure_closet/reinforced/RD,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/item/computer_hardware/hard_drive/portable/design/genetics_kit,
@@ -55915,7 +55915,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "mCh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -56961,7 +56961,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -57281,7 +57281,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/command/tcommsat/computer)
 "mRW" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/reinforced,
@@ -58655,7 +58655,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "nha" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/machinery/light/small{
@@ -60369,7 +60369,7 @@
 /area/nadezhda/quartermaster/hangarsupply)
 "nCX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "nDh" = (
@@ -61484,7 +61484,7 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/quartermaster/hangarsupply)
 "nPb" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -61520,7 +61520,7 @@
 "nPA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -62853,7 +62853,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "ofJ" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/bluegrid{
@@ -62958,7 +62958,7 @@
 /area/nadezhda/engineering/atmos)
 "ogi" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
@@ -63756,7 +63756,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -64186,7 +64186,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/random/gun_cheap{
@@ -64840,7 +64840,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "oBq" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
 "oBs" = (
@@ -64931,7 +64931,7 @@
 /area/nadezhda/security/tactical)
 "oCL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
@@ -65455,7 +65455,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -65794,7 +65794,7 @@
 /area/nadezhda/medical/genetics)
 "oLU" = (
 /obj/structure/table/woodentable,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/bcarpet,
@@ -66673,7 +66673,7 @@
 /area/nadezhda/medical/genetics)
 "oYD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
@@ -66872,7 +66872,7 @@
 /obj/item/storage/secure/safe{
 	pixel_x = 34
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/wood,
@@ -66897,7 +66897,7 @@
 "pcN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -67643,7 +67643,7 @@
 /area/nadezhda/outside/bcave)
 "pkR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -69226,7 +69226,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "pEj" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -70638,7 +70638,7 @@
 /area/nadezhda/command/meeting_room)
 "pSI" = (
 /obj/structure/table/standard,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/machinery/newscaster{
@@ -71015,7 +71015,7 @@
 "pWT" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/orange,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/machinery/newscaster{
@@ -71794,7 +71794,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/danger,
@@ -71985,7 +71985,7 @@
 /obj/structure/table/woodentable,
 /obj/item/book/manual/wiki/security_ironparagraphs,
 /obj/item/stamp/hos,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/command/swo/quarters)
 "qiq" = (
@@ -73120,7 +73120,7 @@
 /area/nadezhda/quartermaster/miningdock)
 "qvL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
@@ -73242,7 +73242,7 @@
 "qxb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -73765,7 +73765,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "qDv" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -74040,7 +74040,7 @@
 "qGu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -75138,7 +75138,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "qSN" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/machinery/light_switch{
@@ -76290,7 +76290,7 @@
 "rdV" = (
 /obj/structure/table/standard,
 /obj/item/device/lighting/toggleable/lamp/green,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/oracarpet,
@@ -76501,7 +76501,7 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen/multi,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -76747,7 +76747,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
 "rji" = (
@@ -77119,7 +77119,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "rnS" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -77247,7 +77247,7 @@
 	pixel_y = 0
 	},
 /obj/item/stamp/denied,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
@@ -77693,7 +77693,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "ruk" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain/quarters)
 "rum" = (
@@ -78656,7 +78656,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
 "rEA" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/wood/wild3,
@@ -79029,7 +79029,7 @@
 /area/nadezhda/hallway/surface/section1)
 "rIG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/wood,
@@ -79134,7 +79134,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "rKG" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -79437,7 +79437,7 @@
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/sechall)
 "rOU" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -83139,7 +83139,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "sIg" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = 32
 	},
@@ -83739,7 +83739,7 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/evidencestorage)
 "sPG" = (
@@ -84829,7 +84829,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
@@ -84888,7 +84888,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel,
@@ -85769,7 +85769,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/security/detectives_office)
 "tmC" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/item/beehive_assembly,
@@ -85809,7 +85809,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "tne" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -86147,7 +86147,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -86751,7 +86751,7 @@
 "txU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
@@ -88931,7 +88931,7 @@
 /obj/random/medical/low_chance,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -89651,7 +89651,7 @@
 /turf/simulated/floor/rock,
 /area/colony)
 "uhL" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/machinery/camera/network/third_section{
@@ -89715,7 +89715,7 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
 "uiU" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/structure/closet/wall_mounted/firecloset{
@@ -90411,7 +90411,7 @@
 /obj/machinery/camera/network/security{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -91131,7 +91131,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "uzz" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/structure/closet/wall_mounted/firecloset{
@@ -91706,7 +91706,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "uEG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/techfloor,
@@ -92027,7 +92027,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "uHt" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/machinery/firealarm{
 	pixel_y = 28
 	},
@@ -92954,7 +92954,7 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "uRn" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
@@ -93225,7 +93225,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/hangarsupply)
 "uTK" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
 "uTL" = (
@@ -93318,7 +93318,7 @@
 	pixel_x = -26;
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/golden,
@@ -94153,7 +94153,7 @@
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
 "vdu" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/absolutism/vectorrooms)
 "vdy" = (
@@ -96862,7 +96862,7 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vHi" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -96979,7 +96979,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "vJb" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
@@ -97163,7 +97163,7 @@
 /obj/structure/sign/faction/neotheology{
 	pixel_y = -30
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/golden,
@@ -97250,7 +97250,7 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "vLT" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/panels,
@@ -99945,7 +99945,7 @@
 /obj/item/folder/red,
 /obj/item/folder/red,
 /obj/item/device/taperecorder,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -99957,7 +99957,7 @@
 /area/nadezhda/crew_quarters/pool)
 "wpB" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
@@ -100325,7 +100325,7 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
@@ -100844,7 +100844,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "wyI" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -101427,7 +101427,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "wFS" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -101532,7 +101532,7 @@
 	name = "\improper Outdoors - Pad"
 	})
 "wGD" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "wGR" = (
@@ -102365,7 +102365,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "wSF" = (
@@ -103608,7 +103608,7 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /turf/simulated/floor/wood,
@@ -103821,7 +103821,7 @@
 	name = "\improper Clinic"
 	})
 "xjM" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
 /obj/item/contraband/poster/placed/generic/the_owl{
@@ -104086,7 +104086,7 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/machinery/firealarm{
@@ -104478,7 +104478,7 @@
 "xrz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
@@ -104898,7 +104898,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "xwO" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/wood,
@@ -105295,7 +105295,7 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "xCj" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/structure/closet/wall_mounted/firecloset{
@@ -105830,7 +105830,7 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/campground)
 "xGJ" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = 32
 	},
@@ -105890,7 +105890,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "xHh" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
@@ -106275,7 +106275,7 @@
 /area/nadezhda/quartermaster/disposaldrop)
 "xLS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
 /turf/simulated/floor/rock/manmade/ruin3,
@@ -106857,7 +106857,7 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -107923,7 +107923,7 @@
 	pixel_y = 24
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "yei" = (
