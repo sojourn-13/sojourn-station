@@ -244,6 +244,8 @@
 		/obj/item/disk,
 		/obj/item/device/scanner/plant,//For farmbot construction
 		/obj/item/tool/minihoe,//Farmbots and xenoflora
+		/obj/item/seeds,
+		/obj/item/tank,
 		/obj/item/computer_hardware,
 		/obj/item/device/integrated_electronics,
 		/obj/item/integrated_circuit
