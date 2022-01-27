@@ -267,11 +267,13 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	desc = "Scans the level of kinetic energy from explosions. This beacon, is in fact bomb proof and to use it properly you must use the bomb within 10 tiles of this scanner."
 
 	channels = list("Science" = 1)
-	var targetBoom
+	var/targetBoom
+	var/stored_points //This is how many points we hve stored, we use them up when successfull
 
 /obj/item/device/radio/beacon/explosion_watcher/examine()
 	..()
 	to_chat(usr, "EXPECTED EXPLOSION - [targetBoom]")
+	to_chat(usr, "Points Left - [stored_points]")
 	return
 
 /obj/item/device/radio/beacon/explosion_watcher/ex_act(severity)
@@ -281,6 +283,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	. = ..()
 	GLOB.explosion_watcher_list += src
 	targetBoom = rand(10,35)
+	stored_points = 250000 //5.1 perfect bombs
 
 /obj/item/device/radio/beacon/explosion_watcher/Destroy()
 	GLOB.explosion_watcher_list -= src
@@ -294,10 +297,13 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			var missed
 
 			missed = abs(power-targetBoom) * 8000 // each step away from the target will result in 8,000 points less
-			calculated_research_points = max(0,40000 - missed)
+			if(stored_points >= 40000)
+				calculated_research_points = max(0,40000 - missed)
+			else
+				calculated_research_points = max(0,stored_points - missed)
 
 
-
+			stored_points -= calculated_research_points
 			RD.files.adjust_research_points(calculated_research_points)
 
 	if(calculated_research_points > 0)
