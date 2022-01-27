@@ -46,6 +46,7 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE * 0.5
 	max_w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_BIOMATTER = 5)
+	level = BELOW_PLATING_LEVEL //We can hide under tiles :D
 
 /obj/item/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
@@ -65,6 +66,7 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 	price_tag = 400
+	level = BELOW_PLATING_LEVEL //As we can
 
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"

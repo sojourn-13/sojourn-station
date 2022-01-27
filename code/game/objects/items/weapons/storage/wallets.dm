@@ -5,6 +5,7 @@
 	icon_state = "wallet"
 	price_tag = 20
 	w_class = ITEM_SIZE_SMALL
+	level = BELOW_PLATING_LEVEL //sneaky
 	cant_hold = list(
 		/obj/item/tool/screwdriver/combi_driver,
 		/obj/item/tool/screwdriver/combi_driver/onestar) //We can not hold these do to being bigger then the wallet itself
