@@ -86,7 +86,9 @@
 	item_state = "candlebox5"
 	throwforce = WEAPON_FORCE_HARMLESS
 	slot_flags = SLOT_BELT
-
+	can_hold = list(
+		/obj/item/flame/candle
+	)
 
 /obj/item/storage/fancy/candle_box/populate_contents()
 	for(var/i in 1 to 5)
