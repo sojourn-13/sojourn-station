@@ -222,6 +222,8 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["vector default"] = "acolyte"
+	options["tangent plate armor"] = "tangent_plate_armor"
+	options["greater heart armor"] = "greater_heart"
 	options["lemniscate armor"] = "lemniscate_armor"
 	options["monomial armor"] = "monomial_armor"
 	options["divisor armor"] = "divisor_armor"
