@@ -176,7 +176,7 @@
 	item_state = "ballistic"
 	action_button_name = "Switch Polarization"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 2)
-	flash_protection = FLASH_PROTECTION_NONE
+	flash_protection = FLASH_PROTECTION_MODERATE
 
 /obj/item/clothing/glasses/ballistic/attack_self()
 	adjust()
@@ -193,8 +193,8 @@
 			flags_inv |= HIDEEYES
 			body_parts_covered |= EYES
 			icon_state = initial(icon_state)
-			flash_protection = initial(flash_protection)
-			darkness_view = -1
+			flash_protection = FLASH_PROTECTION_MAJOR
+			darkness_view = -4
 			to_chat(usr, "You switch \the [src]' polarization on to protect your eyes.")
 		else
 			src.active = !src.active
