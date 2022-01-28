@@ -24,6 +24,7 @@
 			<div class="itemContent">
 				{{:helper.displayBar(data.slowdown, -5, 20, data.slowdown < 1 ? 'good' : data.slowdown > 1 ? 'bad': 'average', data.slowdown+' delay units')}}
 			</div>
+		{{/if}}
 		{{if data.stiffness != 1}}
 			<div class="itemLabel">
 				Stiffness:
@@ -31,6 +32,7 @@
 			<div class="itemContent">
 				{{:helper.displayBar(data.stiffness, -5, 20, data.stiffness < 1 ? 'good' : data.stiffness > 1 ? 'bad': 'average', data.stiffness+' delay units')}}
 			</div>
+		{{/if}}
 		{{if data.obscuration != 1}}
 			<div class="itemLabel">
 				Obscuration:
