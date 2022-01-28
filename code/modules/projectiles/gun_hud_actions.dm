@@ -34,8 +34,8 @@
 /obj/screen/item_action/top_bar/gun/scope/update_icon()
 	..()
 	var/obj/item/gun/G = owner
-	icon_state = "scope[G.zoom]"
-
+	if(G)
+		icon_state = "scope[G.zoom]"
 
 /obj/screen/item_action/top_bar/weapon_info
 	icon = 'icons/mob/screen/gun_actions.dmi'
