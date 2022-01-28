@@ -176,7 +176,7 @@
 	item_state = "ballistic"
 	action_button_name = "Switch Polarization"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 2)
-	flash_protection = FLASH_PROTECTION_NONE
+	flash_protection = FLASH_PROTECTION_MODERATE
 
 /obj/item/clothing/glasses/ballistic/attack_self()
 	adjust()
