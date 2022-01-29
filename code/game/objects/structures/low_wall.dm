@@ -50,7 +50,7 @@
 /obj/structure/low_wall/church
 	name = "Church low wall"
 	wall_color = "#FFFFFF"
-	icon_state = "greyson"
+	icon_state = "church"
 
 
 //Low walls mark the turf they're on as a wall.  This is vital for floor icon updating code
