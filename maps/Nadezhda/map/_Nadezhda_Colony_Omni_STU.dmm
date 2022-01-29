@@ -12227,10 +12227,6 @@
 	})
 "cNU" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/bag/circuits/mini/output,
-/obj/item/storage/bag/circuits/mini/power,
-/obj/item/storage/bag/circuits/mini/reagents,
-/obj/item/storage/bag/circuits/mini/smart,
 /obj/random/tool_upgrade/rare/low_chance,
 /obj/random/tool_upgrade/rare/low_chance,
 /obj/random/tool_upgrade/low_chance,
@@ -16274,7 +16270,6 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "dKD" = (
 /obj/structure/table/rack,
-/obj/item/storage/bag/circuits/all,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "dKE" = (
@@ -17437,7 +17432,6 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "dXb" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/bag/circuits/all,
 /obj/item/device/electronic_assembly/drone,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/circuitlab)
@@ -31206,8 +31200,6 @@
 /area/nadezhda/engineering/atmos)
 "gYv" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/bag/circuits/basic,
-/obj/item/storage/bag/circuits/basic,
 /obj/random/tool_upgrade/low_chance,
 /obj/random/powercell,
 /obj/random/powercell,

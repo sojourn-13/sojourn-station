@@ -404,6 +404,16 @@
 	build_path = /obj/item/circuitboard/bssilk_hub
 	category = CAT_BLUE
 
+/datum/design/research/circuit/teleporter/station
+	name = "Teleporter Station"
+	build_path = /obj/item/circuitboard/teleporterstation
+	category = CAT_BLUE
+
+/datum/design/research/circuit/teleporter/hub
+	name = "Teleporter Hub"
+	build_path = /obj/item/circuitboard/teleporterhub
+	category = CAT_BLUE
+
 //Experimental devices
 /datum/design/research/circuit/mindswapper
 	name = "experimental mind swapper"

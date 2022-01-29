@@ -12103,7 +12103,6 @@
 	icon_state = "tube1"
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/storage/bag/circuits/all,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
 "UV" = (
