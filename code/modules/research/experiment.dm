@@ -306,7 +306,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			stored_points -= calculated_research_points
 			RD.files.adjust_research_points(calculated_research_points)
 
-	if(calculated_research_points > 0)
+	if(calculated_research_points > 0 && stored_points)
 		autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. Received [calculated_research_points] Research Points", name ,"Science")
 	if(stored_points > 0)
 		autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. No Additional Data Points Able To Gather", name ,"Science")

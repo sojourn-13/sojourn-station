@@ -1886,13 +1886,13 @@
 	center_of_mass = list("x"=16, "y"=11)
 	bitesize = 5
 	preloaded_reagents = list("water" = 10)
-	matter = null
+	matter = list(MATERIAL_BIOMATTER = 1) //The bowl
 	New()
 		..()
 		if(prob(25))
 			src.desc = "A wish come true!"
-			reagents.add_reagent("nutriment", 8, list("something good" = 8))
-			matter = list(MATERIAL_BIOMATTER = 1)
+			reagents.add_reagent("nutriment", 8)
+			nutriment_desc = list("something good" = 8)
 
 /obj/item/reagent_containers/food/snacks/hotchili
 	name = "hot chili"
