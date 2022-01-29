@@ -19,7 +19,7 @@
 			/obj/item/computer_hardware/hard_drive/portable/design/janitor = good_data("Lonestar Janitor Pack", list(1, 10)),
 			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = good_data("H&S Nonlethal Magazines Pack", list(1, 10)),
 			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = good_data("H&S Lethal Magazines Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable = good_data("Blank Disk", list(1, 10)),
+			/obj/item/computer_hardware/hard_drive/portable = good_data("Blank Disk", list(1, 10))
 //			/obj/item/storage/deferred/disks = custom_good_amount_range(list(1, 5))
 		),
 		"Tools and Equipment" = list(
@@ -111,7 +111,7 @@
 			/obj/item/reagent_containers/spray/cleaner,
 			/obj/item/reagent_containers/glass/rag,
 			/obj/item/organ_module/active/simple/armshield
-		),
+		)
 	)
 
 	secret_inventory = list(
@@ -201,5 +201,5 @@
 		/obj/item/tool/knife = offer_data("spare knifes", 50, 30),
 		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
 		/datum/reagent/organic/nutriment/honey = offer_data("Honey bottle (60u)", 800, 1),
-		/obj/item/organ/external/robotic/one_star = offer_data("grayson external prosthetic", 1800, 4),
+		/obj/item/organ/external/robotic/one_star = offer_data("grayson external prosthetic", 1800, 4)
 	)

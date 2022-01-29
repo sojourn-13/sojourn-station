@@ -25,8 +25,7 @@
 			/obj/item/gun/energy/laser,
 			/obj/item/gun/energy/tesla_shotgun,
 			/obj/item/gun/energy/tesla_shotgun/manual,
-			/obj/item/gun/energy/tesla_shotgun/high_damage,
-
+			/obj/item/gun/energy/tesla_shotgun/high_damage
 		),
 		"Projectile weapons" = list(
 			/obj/item/gun/projectile/glock,
@@ -68,7 +67,7 @@
 		"Basic Gun Mods" = list(
 			/obj/item/gun_upgrade/barrel/gauss,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,
-			/obj/item/tool_upgrade/refinement/laserguide,
+			/obj/item/tool_upgrade/refinement/laserguide
 		)
 	)
 	offer_types = list(
@@ -79,5 +78,5 @@
 		/obj/item/tool_upgrade/armor/bullet = offer_data("ballistic armor plate", 1200, 3),
 		/obj/item/tool_upgrade/armor/bomb = offer_data("bomb proofing armor plate", 800, 3),
 		/obj/item/tool_upgrade/armor/energy = offer_data("energy armor plate", 2000, 2),
-		/obj/item/tool/baton/arcwelder = offer_data("arc welder", 1500, 2),
+		/obj/item/tool/baton/arcwelder = offer_data("arc welder", 1500, 2)
 	)

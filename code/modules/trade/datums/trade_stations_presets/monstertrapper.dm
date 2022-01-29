@@ -18,14 +18,14 @@
 			/obj/item/reagent_containers/food/snacks/cube/jager = custom_good_amount_range(list(1, 5)),
 			/obj/item/reagent_containers/food/snacks/cube/seuche = custom_good_amount_range(list(1, 5)),
 			/obj/item/reagent_containers/food/snacks/cube/panzer = custom_good_amount_range(list(1, 5)),
-			/obj/item/reagent_containers/food/snacks/cube/grestrahlte = custom_good_amount_range(list(1, 5)),
+			/obj/item/reagent_containers/food/snacks/cube/grestrahlte = custom_good_amount_range(list(1, 5))
 		),
 		"Roach Toxins" = list(
 			/obj/item/reagent_containers/glass/bottle/blattedin = custom_good_amount_range(list(-1, 2)),
 			/obj/item/reagent_containers/glass/bottle/diplopterum = custom_good_amount_range(list(-1, 2)),
 			/obj/item/reagent_containers/glass/bottle/seligitillin = custom_good_amount_range(list(-1, 2)),
 			/obj/item/reagent_containers/glass/bottle/starkellin = custom_good_amount_range(list(-1, 2)),
-			/obj/item/reagent_containers/glass/bottle/gewaltine = custom_good_amount_range(list(-1, 2)),
+			/obj/item/reagent_containers/glass/bottle/gewaltine = custom_good_amount_range(list(-1, 2))
 		),
 		"Spider Toxins" = list(
 			/obj/item/reagent_containers/glass/bottle/pararein = custom_good_amount_range(list(-1, 2)),
@@ -33,7 +33,7 @@
 		),
 		"Carp Toxins" = list(
 			/obj/item/reagent_containers/glass/bottle/carpotoxin = custom_good_amount_range(list(-1, 2))
-		),
+		)
 	)
 	secret_inventory = list(
 		"High-End Roach Product" = list(
@@ -45,7 +45,7 @@
 			/mob/living/carbon/superior_animal/giant_spider = custom_good_amount_range(list(2, 3)),
 			/mob/living/carbon/superior_animal/giant_spider/nurse = custom_good_amount_range(list(-2, 3)),
 			/mob/living/carbon/superior_animal/giant_spider/hunter = custom_good_amount_range(list(1, 2))
-		),
+		)
 	)
 	//Types of items bought by the station
 	offer_types = list(

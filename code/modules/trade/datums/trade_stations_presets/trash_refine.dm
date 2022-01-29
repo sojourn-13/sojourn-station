@@ -4,18 +4,21 @@
 		"Trash" = list(/obj/random/scrap/dense_weighted = custom_good_amount_range(list(2, 5)),
 				/obj/random/scrap/dense_even = custom_good_amount_range(list(4, 8)),
 				/obj/random/scrap/sparse_even = custom_good_amount_range(list(5, 9)),
-				/obj/random/scrap/sparse_weighted = custom_good_amount_range(list(6, 10)),
-				),
-		"Scrap Lump" = list(/obj/item/scrap_lump = custom_good_amount_range(list(80, 100))),
+				/obj/random/scrap/sparse_weighted = custom_good_amount_range(list(6, 10))
+		),
+		"Scrap Lump" = list(
+			/obj/item/scrap_lump = custom_good_amount_range(list(80, 100))
+		),
 		"Salvageable Machines" = list(
 			/obj/structure/salvageable/computer = custom_good_amount_range(list(5, 15)),
 			/obj/structure/salvageable/personal = custom_good_amount_range(list(0, 8)),
 			/obj/structure/salvageable/server = custom_good_amount_range(list(6, 12)),
 			/obj/structure/salvageable/data = custom_good_amount_range(list(6, 10)),
 			/obj/structure/salvageable/implant_container = custom_good_amount_range(list(3, 5)),
-			/obj/structure/salvageable/autolathe = custom_good_amount_range(list(0, 2)),
+			/obj/structure/salvageable/autolathe = custom_good_amount_range(list(0, 2))
 		),
-		"Refined Scrap" = list(/obj/item/stack/sheet/refined_scrap = custom_good_amount_range(list(50, 75))),
+		"Refined Scrap" = list(/obj/item/stack/sheet/refined_scrap = custom_good_amount_range(list(50, 75))
+		)
 	)
 	secret_inventory = list(
 		"Premium Trash" = list(
@@ -34,7 +37,7 @@
 			/obj/structure/scrap/cloth = custom_good_amount_range(list(2,5)),			// Could be a concern with the armor part offer, but it's locked behind discovery and a secret inventory. Something to watch for.
 			/obj/structure/scrap/cloth/large = custom_good_amount_range(list(2,5)),
 			/obj/structure/scrap/poor = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/poor/large = custom_good_amount_range(list(2,5)),
+			/obj/structure/scrap/poor/large = custom_good_amount_range(list(2,5))
 		)
 	)
 	// TODO: offers

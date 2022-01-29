@@ -54,7 +54,7 @@
 			/obj/item/rig_module/vision/medhud,
 			/obj/item/rig_module/vision/thermal,
 			/obj/item/rig_module/storage
-		),
+		)
 	)
 
 	offer_types = list(

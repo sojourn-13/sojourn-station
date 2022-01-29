@@ -44,7 +44,7 @@
 			/obj/item/gun/projectile/revolver/lemant,
 			/obj/item/gun/projectile/shotgun/pump/combat,
 			/obj/item/gun/projectile/grenade
-		),
+		)
 	)
 
 	secret_inventory = list(
@@ -58,17 +58,17 @@
 		"Tool & Weapon Mods" = list(
 			/obj/item/tool_upgrade/augment/sanctifier,
 			/obj/item/tool_upgrade/productivity/whetstone = custom_good_amount_range(list(-3, 2)),,
-			/obj/item/gun_upgrade/barrel/excruciator = custom_good_amount_range(list(-3, 2)),
+			/obj/item/gun_upgrade/barrel/excruciator = custom_good_amount_range(list(-3, 2))
 		),
 		"Plasma weapons" = list(
 			/obj/item/gun/energy/plasma/martyr,
 			/obj/item/gun/energy/plasma = custom_good_amount_range(list(-3, 2)),
-			/obj/item/gun/energy/plasma/destroyer = custom_good_amount_range(list(-3, 2)),
+			/obj/item/gun/energy/plasma/destroyer = custom_good_amount_range(list(-3, 2))
 		),
 		"Non-Recharging Biomatter Plasma Cells" = list(
 			/obj/item/cell/small/neotheology/plasma,
 			/obj/item/cell/medium/neotheology/plasma,
-			/obj/item/cell/large/neotheology/plasma,
+			/obj/item/cell/large/neotheology/plasma
 		)
 	)
 	offer_types = list(

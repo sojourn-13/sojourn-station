@@ -53,7 +53,7 @@
 		/obj/item/organ_module/active/hud/welder = offer_data("implanted welding goggles", 800, 0),
 		/obj/item/organ_module/active/multitool = offer_data("implanted multitool", 600, 0),
 		/obj/item/organ_module/active/simple/surgical = offer_data("implanted omni surgical tool", 600, 0),
-		/obj/item/organ_module/active/simple/taser = offer_data("implanted taser", 1485, 0),
+		/obj/item/organ_module/active/simple/taser = offer_data("implanted taser", 1485, 0)
 	)
 
 /obj/item/organ/external/robotic/moebius
