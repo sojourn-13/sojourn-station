@@ -32,7 +32,7 @@
 		"Basic Gun Mods" = list(
 			/obj/item/gun_upgrade/barrel/forged,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,
-			/obj/item/tool_upgrade/refinement/laserguide,
+			/obj/item/tool_upgrade/refinement/laserguide
 		)
 	)
 	offer_types = list(

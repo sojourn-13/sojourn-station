@@ -21,12 +21,12 @@
 	alpha = 128
 
 /obj/random/mob/ambusher/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/shadow))
+	return pickweight(list(/mob/living/carbon/superior_animal/shadow))
 
 /obj/random/mob/ambusher/low_chance
 	name = "low chance ambusher"
 	icon_state = "hostilemob-brown-low"
-	spawn_nothing_percentage = 99 // These things should not be escaping from science often.
+	spawn_nothing_percentage = 95 // These things should not be escaping from science often.
 
 //Carps
 

@@ -56,7 +56,7 @@
 			/obj/item/bodybag,
 			/obj/machinery/suspension_gen,
 			/obj/item/computer_hardware/hard_drive/portable/design
-		),
+		)
 	)
 	secret_inventory = list(
 		"Autoinjectors" = list(
@@ -79,5 +79,5 @@
 //		/datum/reagent/toxin/zombiepowder
 //		/datum/reagent/toxin/slimetoxin
 		/obj/item/organ/internal/kidney = offer_data("kidney", 400, 8),					// base price: 400
-		/obj/item/organ/internal/liver = offer_data("liver", 900, 8),					// base price: 900
+		/obj/item/organ/internal/liver = offer_data("liver", 900, 8)					// base price: 900
 		)

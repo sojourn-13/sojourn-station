@@ -75,5 +75,5 @@
 		/datum/reagent/ethanol/longislandicedtea = offer_data("Long Island Iced Tea bottle (60u)", 1500, 1),
 		/datum/reagent/ethanol/neurotoxin = offer_data("Neurotoxin bottle (60u)", 1500, 1),
 		/datum/reagent/ethanol/hippies_delight = offer_data("Hippie's Delight bottle (60u)", 1000, 1),
-		/datum/reagent/ethanol/silencer = offer_data("Silencer bottle (60u)", 1000, 1),
+		/datum/reagent/ethanol/silencer = offer_data("Silencer bottle (60u)", 1000, 1)
 	)

@@ -296,7 +296,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		if(RD.id == 1) // only core gets the science
 			var missed
 
-			missed = abs(power-targetBoom) * 8000 // each step away from the target will result in 8,000 points less
+			missed = abs(power-targetBoom) * 8000 // each step away from the target will result in 8,000 points less, this is a range of 11.
 			if(stored_points >= 40000)
 				calculated_research_points = max(0,40000 - missed)
 			else
@@ -307,7 +307,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 			RD.files.adjust_research_points(calculated_research_points)
 
 	if(calculated_research_points > 0)
-		autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. Received [calculated_research_points] research points", name ,"Science")
+		autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. Received [calculated_research_points] Research Points", name ,"Science")
+	if(stored_points > 0)
+		autosay("Detected explosion with power level [power]. Expected explosion was [targetBoom]. No Additional Data Points Able To Gather", name ,"Science")
 	else
 		autosay("Detected explosion with power level [power], Expected explosion was [targetBoom]. Test Results Outside Expected Range", name ,"Science")
 	targetBoom = rand(10,35)

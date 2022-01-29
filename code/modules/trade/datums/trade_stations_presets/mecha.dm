@@ -61,13 +61,13 @@
 			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser,
 			/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/flak/loaded,
 			/obj/item/mecha_parts/mecha_equipment/thruster
-		),
+		)
 	)
 	secret_inventory = list(
 		"Pre-Made Mechs" = list(
 			/obj/mecha/working/hoverpod/cargo_imported = custom_good_amount_range(list(1, 2)),
 			/obj/mecha/working/ripley/cargo_imported = custom_good_amount_range(list(-2, 3)),
-			/obj/mecha/working/iva/cargo_imported = custom_good_amount_range(list(-1,2)),
+			/obj/mecha/working/iva/cargo_imported = custom_good_amount_range(list(-1,2))
 		)
 	)
 
