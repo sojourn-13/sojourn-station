@@ -83,6 +83,7 @@
 
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
+	var/can_use_lying = 0
 	var/list/prefixes = list()
 
 

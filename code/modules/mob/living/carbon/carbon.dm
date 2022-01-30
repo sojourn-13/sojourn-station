@@ -358,6 +358,9 @@
 		playsound(src.loc, 'sound/misc/slip.ogg', 50, 1, -3)
 	Stun(stun_duration)
 	Weaken(FLOOR(stun_duration * 0.5, 1))
+	if(l_hand) unEquip(l_hand)
+	if(r_hand) unEquip(r_hand)
+
 	return 1
 
 /mob/living/carbon/proc/add_chemical_effect(var/effect, var/magnitude = 1, var/limited = FALSE)
