@@ -622,7 +622,6 @@ default behaviour is:
 			while(livmomentum > 0 && C.true_dir)
 				H.Move(get_step(H.loc, dir),dir)
 				livmomentum = (livmomentum - speed)
-				H.regen_slickness(0.25) // The longer you slide, the more stylish it is
 				sleep(world.tick_lag + 1)
 			C.mloop = 0
 		else
@@ -637,7 +636,7 @@ default behaviour is:
 mob/living/carbon/human/verb/stopSliding()
 	set hidden = 1
 	set instant = 1
-	src.livmomentum = 0
+	livmomentum = 0
 
 /mob/living/proc/cannot_use_vents()
 	return "You can't fit into that vent."
