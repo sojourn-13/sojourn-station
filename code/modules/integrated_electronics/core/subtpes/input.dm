@@ -342,6 +342,7 @@
 		)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 80
+	stat = CONSCIOUS // for examine proc.
 
 /obj/item/integrated_circuit/input/examiner/do_work()
 	var/atom/H = get_pin_data_as_type(IC_INPUT, 1, /atom)
@@ -355,7 +356,7 @@
 
 		if(istype(H, /mob/living/carbon/human))
 			var/mob/living/carbon/human/M = H
-			var/msg = M.examine()
+			var/msg = M.examine(src)
 			if(msg)
 				set_pin_data(IC_OUTPUT, 2, msg)
 
@@ -847,9 +848,9 @@
 	. = list()
 	. += "Current selection: [(current_console && current_console.id) || "None"]"
 	. += "Please select a teleporter to lock in on:"
-	for(var/obj/machinery/teleport/hub/R in SSmachines.processing)
-		var/obj/machinery/computer/teleporter/com = R.mconsole
-		if(istype(com, /obj/machinery/computer/teleporter) && com.locked && !com.one_time_use && com.operable())
+	for(var/obj/machinery/teleport/hub/R in world)
+		var/obj/machinery/computer/teleporter/com = locate(/obj/machinery/computer/teleporter, locate(R.x - 2, R.y, R.z))
+		if (istype(com, /obj/machinery/computer/teleporter) && com.locked && !com.one_time_use)
 			.["[com.id] ([R.icon_state == "tele1" ? "Active" : "Inactive"])"] = "tport=[any2ref(com)]"
 	.["None (Dangerous)"] = "tport=random"
 

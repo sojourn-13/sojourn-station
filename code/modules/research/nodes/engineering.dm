@@ -124,6 +124,8 @@
 	unlocks_designs = list(
 							/datum/design/research/item/wirer,
 							/datum/design/research/item/debugger,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
 							/datum/design/research/item/custom_circuit_assembly,
 							/datum/design/research/item/custom_circuit_assembly/medium,
 							/datum/design/research/item/custom_circuit_assembly/drone,
