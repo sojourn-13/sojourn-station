@@ -30,7 +30,7 @@
 		if(!M.implant && user.unEquip(src, M))
 			M.implant = src
 			M.update_icon()
-
+		return TRUE
 
 /obj/item/implant/proc/trigger(emote, mob/living/source)
 /obj/item/implant/proc/activate()

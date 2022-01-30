@@ -135,6 +135,27 @@
 		/obj/item/stock_parts/micro_laser = 1
 	)
 
+/obj/item/circuitboard/teleporterstation
+	name = "Circuit board (Teleporter station board)"
+	build_path = /obj/machinery/teleport/station
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
+	req_components = list(
+		/obj/item/bluespace_crystal/artificial = 3,
+		/obj/item/stack/cable_coil = 1,
+		/obj/item/stock_parts/subspace/filter = 1
+	)
+
+/obj/item/circuitboard/teleporterhub
+	name = "Circuit board (Teleporter hub board)"
+	build_path = /obj/machinery/teleport/hub
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
+	req_components = list(
+		/obj/item/bluespace_crystal/artificial = 2,
+		/obj/item/stock_parts/capacitor = 1
+	)
+
 obj/item/circuitboard/ntnet_relay
 	build_name = "Circuit board (NTNet Quantum Relay)"
 	build_path = /obj/machinery/ntnet_relay

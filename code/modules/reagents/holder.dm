@@ -566,6 +566,30 @@
 	var/S = specific_heat()
 	chem_temp = CLAMP(chem_temp + (J / (S * total_volume)), 2.7, 1000)
 
+/// Is this holder full or not
+/datum/reagents/proc/holder_full()
+	if(total_volume >= maximum_volume)
+		return TRUE
+	return FALSE
+
+/// Like add_reagent but you can enter a list. Format it like this: list(/datum/reagent/toxin = 10, "beer" = 15)
+/datum/reagents/proc/add_reagent_list(list/list_reagents, list/data=null)
+	for(var/r_id in list_reagents)
+		var/amt = list_reagents[r_id]
+		add_reagent(r_id, amt, data)
+
+/datum/reagents/proc/get_reagents()
+	. = list()
+	for(var/datum/reagent/current in reagent_list)
+		. += "[current.name] ([current.volume])"
+	return english_list(., "EMPTY", "", ", ", ", ")
+
+/proc/get_chem_id(chem_name)
+	for(var/X in GLOB.chemical_reagents_list)
+		var/datum/reagent/R = GLOB.chemical_reagents_list[X]
+		if(ckey(chem_name) == ckey(lowertext(R.name)))
+			return X
+
 // NanoUI / TG UI data
 /datum/reagents/ui_data()
 	var/list/data = list()

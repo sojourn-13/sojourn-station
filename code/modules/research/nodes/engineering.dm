@@ -124,6 +124,8 @@
 	unlocks_designs = list(
 							/datum/design/research/item/wirer,
 							/datum/design/research/item/debugger,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
 							/datum/design/research/item/custom_circuit_assembly,
 							/datum/design/research/item/custom_circuit_assembly/medium,
 							/datum/design/research/item/custom_circuit_assembly/drone,
@@ -145,7 +147,12 @@
 	required_tech_levels = list()
 	cost = 1500
 
-	unlocks_designs = list(/datum/design/research/item/custom_circuit_assembly/advanced_designs)
+	unlocks_designs = list(
+							/datum/design/research/item/custom_circuit_assembly/advanced_designs,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
+							/datum/design/research/item/custom_circuit_assembly/cloning
+							)
 
 /* No tesla engine?
 /datum/technology/tesla
