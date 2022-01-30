@@ -596,9 +596,11 @@ default behaviour is:
 			resting = FALSE
 			unstack = TRUE
 			to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")
+			resting = FALSE
 			update_lying_buckled_and_verb_status()
 		else
 			unstack = TRUE
+			resting = FALSE
 	else if (!resting)
 		var/client/C = src.client
 		var/speed = movement_delay()
@@ -624,8 +626,10 @@ default behaviour is:
 				livmomentum = (livmomentum - speed)
 				sleep(world.tick_lag + 1)
 			C.mloop = 0
+			resting = FALSE
 		else
 			to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")
+			resting = FALSE
 			update_lying_buckled_and_verb_status()
 
 /mob/living/simple_animal/spiderbot/is_allowed_vent_crawl_item(var/obj/item/carried_item)
@@ -633,7 +637,7 @@ default behaviour is:
 		return FALSE
 	return ..()
 
-mob/living/carbon/human/verb/stopSliding()
+/mob/living/carbon/human/verb/stopSliding()
 	set hidden = 1
 	set instant = 1
 	livmomentum = 0
