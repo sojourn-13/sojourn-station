@@ -201,7 +201,7 @@
 	icon_state = "hostilemob-brown"
 	alpha = 128
 
-/obj/random/cluster/xenomorphs/screache_removed/item_to_spawn()
+/obj/random/cluster/xenomorphs/screacher_removed_and_megafuna/item_to_spawn()
 	return pickweight(list(/mob/living/carbon/superior_animal/xenomorph = 9,
 				//trash
 				/mob/living/carbon/superior_animal/xenomorph/sentinel = 8,
@@ -212,7 +212,6 @@
 				//robust
 				/mob/living/carbon/superior_animal/xenomorph/warrior = 6,
 				/mob/living/carbon/superior_animal/xenomorph/defender = 6,
-				/mob/living/carbon/superior_animal/xenomorph/warrior/shrike = 6,
 				/mob/living/carbon/superior_animal/xenomorph/warrior/bull = 6,
 				/mob/living/carbon/superior_animal/xenomorph/spitter/boiler = 6,
 				//impressive
