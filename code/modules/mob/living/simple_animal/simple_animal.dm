@@ -737,7 +737,7 @@
 /mob/living/simple_animal/lay_down()
 	set name = "Rest"
 	set category = "Abilities"
-	if(resting)
+	if(resting && can_stand_up())
 		wake_up()
 	else if (!resting)
 		fall_asleep()

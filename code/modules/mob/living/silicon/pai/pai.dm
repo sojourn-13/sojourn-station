@@ -328,7 +328,7 @@
 		if(istype(rig))
 			rig.force_rest(src)
 	else
-		if(resting)
+		if(resting && can_stand_up())
 			resting = FALSE
 		else if (!resting)
 			resting = TRUE
