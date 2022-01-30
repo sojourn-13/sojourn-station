@@ -594,8 +594,7 @@
 	spawn_flags = IC_SPAWN_RESEARCH
 	action_flags = IC_ACTION_LONG_RANGE
 
-	origin_tech = list(TECH_MAGNET = 1, TECH_BLUESPACE = 3)
-	matter = list(MATERIAL_STEEL = 10000, MATERIAL_SILVER = 2000, MATERIAL_GOLD = 200)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_SILVER = 2, MATERIAL_GOLD = 2)
 	var/entropy_value = 1
 
 /obj/item/integrated_circuit/manipulation/bluespace_rift/do_work()
@@ -778,7 +777,6 @@
 	cooldown_per_use = 2 SECOND
 	power_draw_per_use = 50
 	spawn_flags = IC_SPAWN_DEFAULT
-	origin_tech = list(TECH_ENGINEERING = 2)
 
 	var/lock_enabled = FALSE
 

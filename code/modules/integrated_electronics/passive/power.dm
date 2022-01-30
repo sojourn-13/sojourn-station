@@ -138,7 +138,6 @@
 	appetite and will need to eat more often due to this.  This device will fail if used inside synthetic entities."
 	icon_state = "setup_implant"
 	complexity = 10
-	origin_tech = list(TECH_POWER = 4, TECH_ENGINEERING = 4, TECH_DATA = 4, TECH_BIO = 5)
 	spawn_flags = IC_SPAWN_RESEARCH
 
 /obj/item/integrated_circuit/passive/power/metabolic_siphon/proc/test_validity(var/mob/living/carbon/human/host)
@@ -163,7 +162,6 @@
 	more often due to this.  This device will fail if used inside organic entities."
 	icon_state = "setup_implant"
 	complexity = 10
-	origin_tech = list(TECH_POWER = 3, TECH_ENGINEERING = 4, TECH_DATA = 3)
 	spawn_flags = IC_SPAWN_RESEARCH
 
 /obj/item/integrated_circuit/passive/power/metabolic_siphon/synthetic/test_validity(var/mob/living/carbon/human/host)
