@@ -44,7 +44,7 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 
 	var/minimum = 0.4
 	var/scale = 0.8
-	var/limit = minimum / (1 - scale)
+	var/limit = 2 //minimum / (1 - scale) - Soj edit smallest bit of profrmance, eris will prob change this soon anyways
 
 	if(recoil >= limit)
 		recoil *= scale
