@@ -199,7 +199,7 @@
 /mob/living/simple_animal/hostile/renderpatriarch/lay_down()
 	set category = "IC"
 	var/state_changed = FALSE
-	if(resting && can_stand_up())
+	if(resting)
 		resting = FALSE
 		state_changed = TRUE
 
