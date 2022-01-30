@@ -1,6 +1,7 @@
 /obj/item/clothing/suit/storage
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 	var/obj/item/storage/internal/pockets
+	var/cant_hold = list(/obj/item/clothing/accessory)
 
 /obj/item/clothing/suit/storage/New()
 	..()
@@ -8,6 +9,7 @@
 	pockets.storage_slots = 2	//two slots
 	pockets.max_w_class = ITEM_SIZE_SMALL		//fit only pocket sized items
 	pockets.max_storage_space = 4
+	pockets.cant_hold |= extra_allowed
 
 /obj/item/clothing/suit/storage/Destroy()
 	qdel(pockets)
