@@ -8,6 +8,7 @@
 	icon_state = "card_holder"
 	var/obj/item/card_carp/card_target = null //What card were going to get
 	var/endless = FALSE //Are we going to give endless cards?
+	var/card_eater = FALSE
 
 /obj/item/cardholder/AltClick(mob/user)
 	draw_card()
@@ -30,6 +31,10 @@
 	..()
 	if(istype(C, /obj/item/card_carp))
 		var/obj/item/card_carp/card = C
+		if(card_eater) //Putting squirls back in their box
+			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
+			qdel(card)
+			return
 		if(card.cant_box && endless) //Putting squirls back in their box
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 			qdel(card)
@@ -57,6 +62,15 @@
 	card_target =  /obj/item/card_carp/shell
 	icon_state = "folly_deck"
 	endless = TRUE
+
+/obj/item/cardholder/endless
+	name = "celestial card box"
+	desc = "A box of cards that has a seemingly endless amout of CarpCarpCo Cards."
+	card_target =  /obj/random/card_carp/pelt_and_normal_cards
+	icon_state = "folly_deck"
+	endless = TRUE
+	card_eater = TRUE
+
 
 /obj/item/card_carp
 	name = "Rules Card"
@@ -368,6 +382,15 @@
 	desc = "A Rock, Health is 7, Damage is 0, Cant be placed. Does not move."
 	icon_state = "card_child"
 	current_health = 7
+
+/obj/random/card_carp/pelt_and_normal_cards
+	name = "pelt and normal random card carp"
+
+/obj/random/card_carp/item_to_spawn()
+	return pickweight(list(
+				/obj/random/card_carp = 20,
+				/obj/random/card_carp/pelt = 1,
+				))
 
 /obj/random/card_carp
 	name = "random card carp"
