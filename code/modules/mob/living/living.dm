@@ -611,10 +611,6 @@ default behaviour is:
 				to_chat(H, SPAN_NOTICE("You cant dive well cuffed!"))
 				return
 
-			if(resting || lying)
-				to_chat(H, SPAN_NOTICE("You cant dive well already on the ground!"))
-				return
-
 			if(buckled)
 				to_chat(H, SPAN_NOTICE("You cant dive well buckled!"))
 				return
