@@ -119,7 +119,7 @@
 	if(!usr.can_click())
 		return
 
-	if(usr.stat || usr.restrained() || usr.stunned || usr.weakened)
+	if(usr.stat || usr.restrained() || usr.stunned || usr.lying)
 		return TRUE
 
 	if(!(owner in usr))
