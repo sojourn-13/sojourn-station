@@ -10,7 +10,6 @@
 	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/greatcoat/ihc/verb/toggle_style()
 	set name = "Adjust Style"
@@ -134,7 +133,6 @@
 	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/greatcoat/absolutecoat
 	name = "absolutist coat"
@@ -243,4 +241,3 @@
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
-	stiffness = LIGHT_STIFFNESS

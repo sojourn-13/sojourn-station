@@ -82,8 +82,7 @@
 /datum/click_handler/fullauto/proc/stop_firing()
 	target = null
 	if(reciever)
-		if(isliving(reciever.loc))
-			reciever.check_safety_cursor(reciever.loc)
+		reciever.cursor_check()
 
 /datum/click_handler/fullauto/proc/do_fire()
 	reciever.afterattack(target, owner.mob, FALSE)

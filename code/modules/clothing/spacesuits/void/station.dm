@@ -24,7 +24,6 @@
 		rad = 100
 	)
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
-	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/head/helmet/space/void/engineering/verb/toggle_eyeglass()
 	set name = "Adjust Eyeglass node"
@@ -243,7 +242,6 @@
 		slot_l_hand_str = "sec_helm",
 		slot_r_hand_str = "sec_helm",
 		)
-	obscuration = MEDIUM_OBSCURATION
 
 	armor = list(
 		melee = 50,
@@ -303,7 +301,6 @@
 	)
 	siemens_coefficient = 0.7
 	light_overlay = "helmet_light_ihs"
-	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/suit/space/void/odst
 	name = "Sol Federation voidsuit"
@@ -419,7 +416,6 @@
 	)
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	light_overlay = "helmet_light_dual"
-	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/suit/space/void/atmos
 	desc = "A special suit that protects against hazardous, low pressure environments. Has improved thermal protection and minor radiation shielding."
@@ -436,7 +432,6 @@
 	)
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	helmet = /obj/item/clothing/head/helmet/space/void/atmos
-	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/space/void/security/equipped
 	tank = /obj/item/tank/jetpack/oxygen
@@ -454,7 +449,6 @@
 		slot_l_hand_str = "assaulthelm",
 		slot_r_hand_str = "assaulthelm",
 		)
-	obscuration = MEDIUM_OBSCURATION
 
 	armor = list(
 		melee = 40,
@@ -505,7 +499,6 @@
 	siemens_coefficient = 0.4
 	slowdown = 0.6
 	helmet = /obj/item/clothing/head/space/void/assault
-	stiffness = MEDIUM_STIFFNESS
 
 //Science
 /obj/item/clothing/head/space/void/medarmor
@@ -536,7 +529,6 @@
 	siemens_coefficient = 0.4
 	light_overlay = "helmet_light_dual"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 5, MATERIAL_PLASTIC = 5, MATERIAL_GLASS = 5)
-	obscuration = 0
 
 /obj/item/clothing/suit/space/void/medarmor
 	name = "soteria medical void armor"
@@ -546,32 +538,11 @@
 	armor = list(
 		melee = 35,
 		bullet = 35,
-		energy = 55,
+		energy = 30,
 		bomb = 40,
 		bio = 100,
 		rad = 90
 	)
 	siemens_coefficient = 0.4
 	helmet = /obj/item/clothing/head/space/void/medarmor
-	matter = list(MATERIAL_STEEL = 40, MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
-	stiffness = MEDIUM_STIFFNESS
-
-/obj/item/clothing/suit/space/void/science/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
-	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
-		var/obj/item/projectile/P = damage_source
-
-		var/reflectchance = 30 - round(damage/3)
-		if(!(def_zone in list(BP_CHEST, BP_GROIN)))
-			reflectchance /= 1.5
-		if(P.starting && prob(reflectchance))
-			visible_message(SPAN_DANGER("\The [user]\'s [name] reflects [attack_text]!"))
-
-			// Find a turf near or on the original location to bounce to
-			var/new_x = P.starting.x + pick(0, 0, 0, 0, 0, -1, 1, -2, 2)
-			var/new_y = P.starting.y + pick(0, 0, 0, 0, 0, -1, 1, -2, 2)
-			var/turf/curloc = get_turf(user)
-
-			// redirect the projectile
-			P.redirect(new_x, new_y, curloc, user)
-
-			return PROJECTILE_CONTINUE // complete projectile permutation
+	matter = list(MATERIAL_STEEL = 40, MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10)

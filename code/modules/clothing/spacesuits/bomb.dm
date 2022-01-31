@@ -15,8 +15,7 @@
 	)
 	max_upgrades = 3
 	siemens_coefficient = 0
-	tint = TINT_LOW
-	obscuration = HEAVY_OBSCURATION
+	tint = TINT_HEAVY
 	price_tag = 100
 
 /obj/item/clothing/suit/space/bomb
@@ -26,7 +25,7 @@
 	item_state = "bombsuit"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
-	slowdown = 1
+	slowdown = 2
 	armor = list(
 		melee = 20,
 		bullet = 20,
@@ -61,7 +60,7 @@
 /obj/item/clothing/suit/space/bomb/security
 	name = "juggernaut bomb suit"
 	desc = "For use when bombs, bullets, toxic enviroments, lasers, and melee are all a concern but speed is not."
-	slowdown = 2.25
+	slowdown = 3.25
 	equip_delay = 16 SECONDS
 	armor = list(
 		melee = 60,
