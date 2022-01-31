@@ -121,8 +121,6 @@ Class Procs:
 	var/current_power_usage = 0 // How much power are we currently using, dont change by hand, change power_usage vars and then use set_power_use
 	var/area/current_power_area // What area are we powering currently
 
-	var/machine_integrity = 360
-
 	var/blue_ink_tk_blocker = FALSE
 
 /obj/machinery/attack_tk(mob/user)

@@ -69,14 +69,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 		chance = 100
 	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
 		chance = damage
-	else if(istype(A, /obj/structure/low_wall))
-		chance = round(penetrating * armor_penetration * 2 / 150 * 180) // hardcoded, value is same as steel wall, will have to be changed once low walls have integrity
-	else if(istype(A, /obj/structure/table))
-		var/obj/structure/table/T = A
-		chance = round(penetrating * armor_penetration * 2 / T.maxHealth * 180)
-	else if(istype(A, /obj/structure/barricade))
-		var/obj/structure/barricade/B = A
-		chance = round(penetrating * armor_penetration * 2 / B.material.integrity * 180)
+
 	if(prob(chance))
 		if(A.opacity)
 			//display a message so that people on the other side aren't so confused
