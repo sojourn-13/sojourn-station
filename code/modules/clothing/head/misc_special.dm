@@ -26,8 +26,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/base_state
 	flash_protection = FLASH_PROTECTION_MAJOR
-	tint = TINT_MODERATE
-	obscuration = HEAVY_OBSCURATION
+	tint = TINT_HEAVY
 
 /obj/item/clothing/head/welding/attack_self()
 	if(!base_state)
@@ -85,7 +84,6 @@
 			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			flash_protection = initial(flash_protection)
 			tint = initial(tint)
-			obscuration = initial(obscuration)
 			icon_state = base_state
 			to_chat(usr, "You flip the [src] down to protect your eyes.")
 		else
@@ -93,7 +91,6 @@
 			body_parts_covered &= ~(EYES|FACE)
 			flash_protection = FLASH_PROTECTION_NONE
 			tint = TINT_NONE
-			obscuration = 0
 			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			icon_state = "[base_state]up"
 			to_chat(usr, "You push the [src] up out of your face.")

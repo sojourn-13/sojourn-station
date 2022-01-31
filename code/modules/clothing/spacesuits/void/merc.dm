@@ -15,7 +15,6 @@
 	species_restricted = list("Human")
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_green"
-	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/suit/space/void/SCAF
 	name = "SCAF suit"
@@ -36,7 +35,6 @@
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
 	price_tag = 950
-	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/space/void/SCAF/voidwolf
 	name = "REAVER-SCAF suit"
@@ -84,7 +82,6 @@
 	species_restricted = list("Human")
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_ihs"
-	obscuration = 0
 
 /obj/item/clothing/head/helmet/space/void/merc/update_icon()
 	..()
@@ -110,7 +107,6 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/merc
-	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/space/void/merc/equipped
 	boots = /obj/item/clothing/shoes/magboots

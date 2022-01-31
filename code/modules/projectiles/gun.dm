@@ -480,7 +480,10 @@
 
 	if(params)
 		P.set_clickpoint(params)
-	var/offset = user.calculate_offset(init_offset)
+	var/offset = init_offset
+	if(user.recoil)
+		offset += user.recoil
+	offset = min(offset, MAX_ACCURACY_OFFSET)
 	offset = rand(-offset, offset)
 
 	return !P.launch_from_gun(target, user, src, target_zone, angle_offset = offset)
@@ -543,7 +546,10 @@
 	var/view_size = round(world.view + zoom_factor)
 
 	zoom(zoom_offset, view_size)
-	check_safety_cursor(user)
+	if(safety)
+		user.remove_cursor()
+	else
+		user.update_cursor()
 	update_hud_actions()
 
 /obj/item/gun/examine(mob/user)
@@ -660,13 +666,10 @@
 	//Update firemode when safeties are toggled
 	update_firemode()
 	update_hud_actions()
-	check_safety_cursor(user)
-
-/obj/item/gun/proc/check_safety_cursor(mob/living/user)
 	if(safety)
 		user.remove_cursor()
 	else
-		user.update_cursor(src)
+		user.update_cursor()
 
 /obj/item/gun/proc/get_total_damage_adjust()
 	var/val = 0

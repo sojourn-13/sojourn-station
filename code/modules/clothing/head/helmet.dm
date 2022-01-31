@@ -88,7 +88,6 @@
 	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/botanist/verb/toggle_style()
 	set name = "Adjust Style"
@@ -125,7 +124,6 @@
 	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/acolyte/verb/toggle_style()
 	set name = "Adjust Style"
@@ -213,7 +211,6 @@
 	armor = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/custodian/verb/toggle_style()
 	set name = "Adjust Style"
@@ -335,7 +332,6 @@
 	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 25, bio = 10, rad = 10)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/foreman
 	name = "salvaged helmet"
@@ -360,7 +356,6 @@
 	action_button_name = "Toggle Headlamp"
 	light_overlay = "technohelmet_light"
 	brightness_on = 5 //Slightly better do to the sear costs
-	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/foreman/verb/toggle_style()
 	set name = "Adjust Style"
@@ -397,7 +392,6 @@
 	light_overlay = "technohelmet_light"
 	brightness_on = 4
 	max_upgrades = 2
-	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/technomancersuit/verb/toggle_style()
 	set name = "Adjust Style"
@@ -485,7 +479,6 @@
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.5
 	price_tag = 150
-	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/laserproof/iron_lock_security
 	name = "outdated ablative helmet"
@@ -504,7 +497,6 @@
 	desc = "What happens when someone combines ablative, melee, and bullet plating in the form of a fetching tan and visor. Not as singularly powerful as each individually but the best all round protection one can get."
 	icon_state = "merchelm"
 	armor = list(melee = 55, bullet = 55, energy = 55, bomb = 45, bio = 0, rad = 0) // best what you can get
-	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/head/helmet/handmade
 	name = "handmade combat helmet"
@@ -530,7 +522,6 @@
 	body_parts_covered = HEAD|FACE|EARS|EYES
 	siemens_coefficient = 0.6
 	price_tag = 85
-	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/head/armor/helmet/penance
 	name = "penance helmet"
@@ -791,9 +782,7 @@
 // toggleable face guard
 /obj/item/clothing/head/helmet/faceshield
 	//We cant just use the armor var to store the original since initial(armor) will return a null pointer
-	var/tint_down = TINT_LOW
 	var/tint_up = TINT_NONE
-	var/obscuration_down = MEDIUM_OBSCURATION
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHEADHAIR
 	var/flags_inv_up = HIDEEARS
 	body_parts_covered = HEAD|EARS|EYES|FACE
@@ -836,13 +825,11 @@
 		armor = getArmor(arglist(armor_up))
 		flash_protection = flash_protection_up
 		tint = tint_up
-		obscuration = initial(obscuration)
 		flags_inv = flags_inv_up
 		body_parts_covered = body_parts_covered_up
 	else
 		flash_protection = initial(flash_protection)
 		tint = initial(tint)
-		obscuration = initial(obscuration)
 		flags_inv = initial(flags_inv)
 		body_parts_covered = initial(body_parts_covered)
 
@@ -879,8 +866,7 @@
 	armor = list(melee = 35, bullet = 45,energy = 20, bomb = 25, bio = 0, rad = 0)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
-	tint = TINT_NONE
-	obscuration = LIGHT_OBSCURATION
+
 
 // S E R B I A //
 
@@ -944,8 +930,6 @@
 	item_state = "trauma_team"
 	flags_inv = HIDEEARS|BLOCKHAIR
 	item_flags = BLOCK_GAS_SMOKE_EFFECT|AIRTIGHT
-	tint_down = TINT_NONE
-	obscuration_down = LIGHT_OBSCURATION
 	matter = list(
 		MATERIAL_PLASTEEL = 10,
 		MATERIAL_GLASS = 5,

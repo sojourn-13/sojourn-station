@@ -11,7 +11,6 @@
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
 	extra_allowed = list(/obj/item/tool/hammer/ironhammer)
-	stiffness = 0
 
 /obj/item/clothing/suit/armor/refresh_upgrades()
 	var/obj/item/clothing/suit/armor/referencecarmor = new type()
@@ -44,7 +43,6 @@
 	item_state = "armor_fullbody"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/vest/security
 	name = "security armor"
@@ -57,7 +55,6 @@
 	icon_state = "armor_security_fullbody"
 	item_state = "armor_security_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/vest/detective
 	name = "ranger armor vest"
@@ -80,7 +77,6 @@
 	icon_state = "armor_ih_fullbody"
 	item_state = "armor_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/vest/handmade
 	name = "handmade armor vest"
@@ -102,7 +98,6 @@
 	icon_state = "armor_handmade_fullbody"
 	item_state = "armor_handmade_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 	armor = list(
 		melee = 30,
 		bullet = 20,
@@ -132,7 +127,6 @@
 	icon_state = "hm_armorvest_black_full"
 	item_state = "hm_armorvest_black_full"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = MEDIUM_STIFFNESS
 	armor = list(
 		melee = 30,
 		bullet = 20,
@@ -376,13 +370,11 @@
 	icon_state = "bulletproof_fullbody"
 	item_state = "bulletproof_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.6 // Heavier since it now covers more of the body
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
 	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.6 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
 	item_state = "bulletproof_fullbody"
@@ -603,7 +595,6 @@
 	item_state = "platecarrier_fullbody"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/ih
 	name = "plate carrier"
@@ -617,7 +608,6 @@
 	icon_state = "platecarrier_ih_fullbody"
 	item_state = "platecarrier_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/militia
 	name = "blackshield plate carrier"
@@ -657,7 +647,6 @@
 	icon_state = "platecarrier_mil_fullbody"
 	item_state = "platecarrier_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/militia/full/toggle_style()
 	set name = "Adjust Style"
@@ -723,7 +712,6 @@
 	item_state = "platecarrier_corpsman_fullbody"
 	armor = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman/full/toggle_style()
 	set name = "Adjust Style"
@@ -762,7 +750,6 @@
 	icon_state = "platecarrier_green_fullbody"
 	item_state = "platecarrier_green_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/tan
 	name = "tan plate carrier"
@@ -776,7 +763,6 @@
 	icon_state = "platecarrier_tan_fullbody"
 	item_state = "platecarrier_tan_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/hos
 	name = "advanced plate carrier"
@@ -802,7 +788,6 @@
 	desc = "An armored, padded vest meant for heavy-duty operations, it protects well against explosives and shrapnel. This set has had kneepads and shoulderpads attached for more protection."
 	icon_state = "flakvest_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.6 // Bulkier due to protecting more
 	armor = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
 
@@ -813,9 +798,6 @@
 /obj/item/clothing/suit/armor/flackvest/tan/full
 	name = "full body tan flak vest"
 	icon_state = "flakvest_tan_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
-	slowdown = 0.6 // Bulkier due to protecting more
 
 /obj/item/clothing/suit/armor/flackvest/militia
 	name = "blackshield flak vest"
@@ -856,7 +838,6 @@
 	item_state = "flakvest_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	slowdown = 0.6 // Bulkier due to protecting more
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/flackvest/militia/full/toggle_style()
 	set name = "Adjust Style"
@@ -898,7 +879,6 @@
 	item_state = "flakvest_green"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	slowdown = 0.6 // Bulkier due to protecting more
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/flackvest/commander
 	name = "commander's flak vest"
@@ -918,7 +898,6 @@
 	item_state = "commander_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	slowdown = 0.3 // Bulkier due to protecting more
-	stiffness = LIGHT_STIFFNESS
 	armor = list(
 		melee = 45,
 		bullet = 50,
@@ -940,7 +919,6 @@
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
-	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/armor/commander/militia
 	name = "blackshield commander's armored coat"
@@ -1012,7 +990,6 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		rad = 0
 		)
 	var/entropy_value = 2
-	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/armor/reactive/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
 	if(prob(50))
@@ -1122,7 +1099,6 @@ obj/item/clothing/suit/armor/commander/marshal_coat_ss
 		rad = 25
 	)
 	price_tag = 50
-	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/paramedic
 	name = "advanced paramedic armor"

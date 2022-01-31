@@ -13,9 +13,6 @@
 	var/list/restricted_accessory_slots
 	var/equip_delay = 0 //If set to a nonzero value, the item will require that much time to wear and remove
 
-	stiffness = 0 // Recoil caused by moving, defined in obj/item
-	obscuration = 0 // Similar to tint, but decreases firearm accuracy instead via giving minimum extra offset, defined in obj/item
-
 	//Used for hardsuits. If false, this piece cannot be retracted while the core module is engaged
 	var/retract_while_active = TRUE
 
@@ -122,8 +119,6 @@
 		var/body_part_string = body_part_coverage_to_string(body_parts_covered)
 		data["body_coverage"] = body_part_string
 	data["slowdown"] = slowdown
-	data["stiffness"] = stiffness
-	data["obscuration"] = obscuration
 	if(heat_protection)
 		data["heat_protection"] = body_part_coverage_to_string(heat_protection)
 		data["heat_protection_temperature"] = max_heat_protection_temperature

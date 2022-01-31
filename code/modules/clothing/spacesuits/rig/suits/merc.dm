@@ -20,8 +20,6 @@
 	drain = 3.5
 	offline_slowdown = 3
 	offline_vision_restriction = 1
-	stiffness = 0
-	obscuration = 0
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/merc
 

@@ -135,11 +135,11 @@
 #define CLASSIFICATION_WEIRD        8	// Slimes, constructs, demons, and other creatures of a magical or bluespace nature.
 #define CLASSIFICATION_INCORPOREAL 16 // Mobs that don't really have any physical form to them. Ghosts mostly
 
+
 #define TINT_NONE 0
-#define TINT_LOW 1
-#define TINT_MODERATE 2
-#define TINT_HEAVY 4
-#define TINT_BLIND 8
+#define TINT_MODERATE 1
+#define TINT_HEAVY 2
+#define TINT_BLIND 3
 
 #define FLASH_PROTECTION_REDUCED -1
 #define FLASH_PROTECTION_NONE 0
