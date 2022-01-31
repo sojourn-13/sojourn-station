@@ -603,9 +603,26 @@ default behaviour is:
 		var/client/C = src.client
 		var/speed = movement_delay()
 		resting = TRUE
-		var/dir = C.true_dir
-		if(ishuman(src) && !src.weakened && (dir))// If true_dir = 0(src isn't moving), doesn't proc
+		var/_dir = C.true_dir
+		if(ishuman(src) && !weakened && (_dir))// If true_dir = 0(src isn't moving), doesn't proc
 			var/mob/living/carbon/human/H = src
+//The sanity! - SoJ edits
+			if(H.handcuffed || H.legcuffed)
+				to_chat(H, SPAN_NOTICE("You cant dive well cuffed!"))
+				return
+
+			if(resting || lying)
+				to_chat(H, SPAN_NOTICE("You cant dive well already on the ground!"))
+				return
+
+			if(buckled)
+				to_chat(H, SPAN_NOTICE("You cant dive well buckled!"))
+				return
+
+			if(40 >= health)
+				to_chat(H, SPAN_NOTICE("Your to hurt to dive!"))
+				return
+//End of SoJ edits
 			livmomentum = 5 // Set momentum value as soon as possible for stopSliding to work better
 			to_chat(H, SPAN_NOTICE("You dive onwards!"))
 			pass_flags += PASSTABLE // Jump over them!
