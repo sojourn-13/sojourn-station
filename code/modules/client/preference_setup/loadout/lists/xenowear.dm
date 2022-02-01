@@ -35,6 +35,13 @@
 	sort_category = "Xenowear"
 	cost = 0
 
+/datum/gear/xenowear/opifexnotmask
+	display_name = "opifex gas synthetizer"
+	path = /obj/item/clothing/mask/opifex_no_mask
+	slot = slot_wear_mask
+	sort_category = "Xenowear"
+	cost = 0
+
 /datum/gear/xenowear/opifexemergencytank
 	display_name = "opifex nitrogen tanks"
 	path = /obj/item/tank/emergency_nitgen
