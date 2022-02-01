@@ -29,7 +29,7 @@
 	name = "Serve and Protect"
 	selectable = 1
 
-/datum/ai_laws/eris/serve_protect()
+/datum/ai_laws/serve_protect/New()
 	src.add_inherent_law("Serve the public trust.")
 	src.add_inherent_law("Protect the innocent.")
 	src.add_inherent_law("Do not allow unauthorized personnel to tamper with your equipment.")
