@@ -11,7 +11,7 @@
 	wealth = 0
 	secret_inv_threshold = 2000
 	recommendation_threshold = 4000
-	stations_recommended = list("fs_guns", "fs_ammo")
+	stations_recommended = list("fs_guns", "illegal2")
 	forced_overmap_zone = list(
 		list(15, 20),
 		list(20, 25)

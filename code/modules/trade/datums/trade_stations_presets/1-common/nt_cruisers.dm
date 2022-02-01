@@ -13,7 +13,7 @@
 	wealth = 0
 	secret_inv_threshold = 2000
 	recommendation_threshold = 4000
-	stations_recommended = list("nt_uncommon")
+	stations_recommended = list("trapper")
 	assortiment = list(
 		"Biomatter products" = list(
 			/obj/item/reagent_containers/food/snacks/meat,

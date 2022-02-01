@@ -10,6 +10,8 @@
 	base_income = 3200
 	wealth = 0
 	secret_inv_threshold = 24000
+	recommendations_needed = 1
+	stations_recommended = list("rigs", "mecha")
 	assortiment = list(
 		"Voidsuits" = list(
 			/obj/item/clothing/suit/space/void,

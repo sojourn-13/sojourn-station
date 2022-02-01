@@ -2,6 +2,7 @@
 	name_pool = list(
 		"McTB 'Dionis'" = "'McRonalds' Trade Beacon 'Dionis'. You hope they still have Happy Meals with a toy."
 	)
+	uid = "mcronalds"
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
 	base_income = 1600

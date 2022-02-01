@@ -2,6 +2,8 @@
 	name_pool = list(
 		"JNK 'Garbaj'" = "Junk collector.",
 	)
+	uid = "junker"
+	recommendations_needed = 1
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
 	base_income = 3200

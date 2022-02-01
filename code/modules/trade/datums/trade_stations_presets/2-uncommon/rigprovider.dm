@@ -10,7 +10,7 @@
 	wealth = 0
 	secret_inv_threshold = 2000
 	recommendation_threshold = 4000
-	stations_recommended = list("illegal1")
+	stations_recommended = list("illegal1", "mecha")
 	recommendations_needed = 1
 	assortiment = list(
 		"RIGs II" =  list(

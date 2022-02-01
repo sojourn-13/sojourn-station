@@ -14,7 +14,7 @@
 	wealth = 0
 	secret_inv_threshold = 2000
 	recommendation_threshold = 4000
-	stations_recommended = list("casino")
+	stations_recommended = list("casino" , "kriosanconfederacy")
 	assortiment = list(
 		"Disk Designs" = list(
 			/obj/item/computer_hardware/hard_drive/portable/design/misc = good_data("Lonestar Miscellaneous Pack", list(1, 10)),

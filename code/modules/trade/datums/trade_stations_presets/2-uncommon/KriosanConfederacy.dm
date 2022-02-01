@@ -3,7 +3,8 @@
 		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself on our stock.\""
 	)
 	uid = "kriosanconfederacy"
-	stations_recommended = list("nt_uncommon")
+	recommendations_needed = 1
+	stations_recommended = list("mcronalds")
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
