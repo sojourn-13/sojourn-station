@@ -194,6 +194,12 @@
 	feeding_port(user)
 	..()
 
+/obj/item/clothing/mask/gas/opifex/alt_mask
+	name = "opifex gas mask"
+	desc = "An archaic gas mask is used commonly by opifex to filter out oxygen and other biohazards. This one is outfitted to more long beaks."
+	icon_state = "gas_mask_opi_san"
+	item_state = "gas_mask_opi_san"
+
 /obj/item/clothing/mask/opifex_no_mask
 	name = "opifex gas synthetizer"
 	desc = "A newly advanced gas synthesizer is used commonly by opifex to filter oxygen from their lungs, being able to feed and eat any moment they wish with their beak exposed. They'll slowly die without wearing this, as will any other race that uses this device."
