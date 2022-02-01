@@ -16,7 +16,7 @@
 	deltimer(recoil_reduction_timer)
 	add_recoil(recoil_buildup)
 
-mob/proc/handle_movement_recoil() // Used in movement/mob.dm
+/mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 	return // Only the living have recoil
 
 /mob/living/handle_movement_recoil()
