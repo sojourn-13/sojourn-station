@@ -467,6 +467,7 @@
 	armor_penetration = ARMOR_PEN_MODERATE // It's a SPEAR!
 	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
 	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
 	throw_speed = 3
 	edge = TRUE
 	sharp = TRUE
