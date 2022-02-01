@@ -2,7 +2,7 @@
 	name = "welding kit"
 	desc = "A heavy-duty, portable welding fluid carrier."
 	slot_flags = SLOT_BACK
-	icon = 'icons/inventory/back/mob.dmi'
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "welderpack"
 	w_class = ITEM_SIZE_BULKY
 	var/max_fuel = 350
