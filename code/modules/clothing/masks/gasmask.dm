@@ -196,7 +196,7 @@
 
 /obj/item/clothing/mask/opifex_no_mask
 	name = "opifex gas synthetizer"
-	desc = "A newly advanced gas synthesizer is used commonly by opifex to filter oxygen from their lungs, being able to feed and eat any moment they wish with their beak exposed. They'll slowly die without wearing this, as will any other race that uses this mask."
+	desc = "A newly advanced gas synthesizer is used commonly by opifex to filter oxygen from their lungs, being able to feed and eat any moment they wish with their beak exposed. They'll slowly die without wearing this, as will any other race that uses this device."
 	icon_state = "gas_mask_free_beak"
 	item_state = "gas_mask_free_beak"
 	armor = list(melee = 2, bullet = 2, energy = 7, bomb = 5, bio = 0, rad = 15)
