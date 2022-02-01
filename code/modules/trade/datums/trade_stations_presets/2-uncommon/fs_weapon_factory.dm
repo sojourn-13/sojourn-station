@@ -2,6 +2,14 @@
 	name_pool = list("XSMS 'Kaida'" = "Xanaroth Syndicate Manufacturing Station 'Kaida'. \"Well if it isn't our favorite trade partner, we got some side deals just for you!\"")
 	spawn_always = TRUE
 	markup = RARE_GOODS		// dept-specific stuff should be more expensive for guild
+	uid = "fs_guns"
+	offer_limit = 20
+	base_income = 0
+	wealth = 0
+//	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("fs_experimental", "illegal1")
+	recommendations_needed = 1
 	assortiment = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/mac,

@@ -4,12 +4,15 @@
 	)
 	icon_states = "ship"
 	start_discovered = TRUE
+	uid = "moe_basic"
 	spawn_always = TRUE
 	markup = COMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 24000
+	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("moe_adv")
 	forced_overmap_zone = list(
 		list(20, 22),
 		list(20, 25)
@@ -74,10 +77,5 @@
 	offer_types = list(
 		/datum/reagent/medicine/ossisine = offer_data("ossissine bottle (60u)", 2000, 1),
 		/datum/reagent/nanites/uncapped/control_booster_utility = offer_data("Control Booster Utility bottle (60u)", 30000, 1),
-		/datum/reagent/nanites/uncapped/control_booster_combat = offer_data("Control Booster Combat bottle (60u)", 30000, 1),
-//		/datum/reagent/toxin/cyanide
-//		/datum/reagent/toxin/zombiepowder
-//		/datum/reagent/toxin/slimetoxin
-		/obj/item/organ/internal/kidney = offer_data("kidney", 400, 8),					// base price: 400
-		/obj/item/organ/internal/liver = offer_data("liver", 900, 8)					// base price: 900
+		/datum/reagent/nanites/uncapped/control_booster_combat = offer_data("Control Booster Combat bottle (60u)", 30000, 1)
 		)

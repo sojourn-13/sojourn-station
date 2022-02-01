@@ -1,14 +1,17 @@
 /datum/trade_station/station_zarya
 	name_pool = list(
-		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya':\n\"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
+		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya': \"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
 	)
+	uid = "techno_basic"
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = COMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 16000
+	secret_inv_threshold = 1000
+	recommendation_threshold = 3000
+	stations_recommended = list("techno_adv")
 	assortiment = list(
 		"Vozduh" = list(
 			/obj/machinery/portable_atmospherics/canister/sleeping_agent,
@@ -46,6 +49,12 @@
 			/obj/item/tool/omnitool,
 			/obj/structure/reagent_dispensers/fueltank,
 			/obj/machinery/floodlight
+		)
+	)
+
+	secret_inventory = list(
+		"Sverkhmateriya" = list(
+			/obj/machinery/power/supermatter
 		)
 	)
 
