@@ -3027,7 +3027,6 @@
 #include "code\modules\trade\datums\trade_stations_presets\2-uncommon\rigprovider.dm"
 #include "code\modules\trade\datums\trade_stations_presets\2-uncommon\suit_up.dm"
 #include "code\modules\trade\datums\trade_stations_presets\2-uncommon\trash_refine.dm"
-#include "code\modules\trade\datums\trade_stations_presets\3-rare\cybernetics.dm"
 #include "code\modules\trade\datums\trade_stations_presets\3-rare\mecha.dm"
 #include "code\modules\trade\datums\trade_stations_presets\3-rare\monstertrapper.dm"
 #include "code\modules\trade\datums\trade_stations_presets\4-unique\bluespace_tech.dm"
