@@ -44,6 +44,11 @@
 	path = /obj/item/clothing/under/gorkapants
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/bdu
+	display_name = "BDU selection"
+	path = /obj/item/clothing/under/bdu
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/jeans
 	display_name = "jeans selection"
 	path = /obj/item/clothing/under/jeans

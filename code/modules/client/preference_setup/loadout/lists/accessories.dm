@@ -43,6 +43,11 @@
 	path = /obj/item/clothing/accessory/tie
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/accessory/hawaiianshirt
+	display_name = "Hawaiian shirt selection"
+	path = /obj/item/clothing/accessory/hawaiian
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/accessory/fluffycape
 	display_name = "fluffy cape"
 	path = /obj/item/clothing/accessory/cape
@@ -62,6 +67,16 @@
 /datum/gear/accessory/greatcoat
 	display_name = "black greatcoat"
 	path = /obj/item/clothing/accessory/cape/blackalt
+
+/datum/gear/accessory/tacticalponcho
+	display_name = "tactical poncho selection"
+	path = /obj/item/clothing/accessory/tacticalponcho
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/tacticalponchohood
+	display_name = "tactical poncho hood selection"
+	path = /obj/item/clothing/head/tacticalhood
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/blackshieldpatch
 	display_name = "Blackshield arm patch"
