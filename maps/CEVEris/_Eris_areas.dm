@@ -617,7 +617,7 @@
 	icon_state = "engine"
 	sound_env = LARGE_ENCLOSED
 	flags = AREA_FLAG_CRITICAL
-	ambience = list('sound/ambience/technoengineambient.ogg')
+	//ambience = list('sound/ambience/technoengineambient.ogg')
 
 /area/eris/engineering/engine_airlock
 	name = "\improper Engine Room Airlock"
