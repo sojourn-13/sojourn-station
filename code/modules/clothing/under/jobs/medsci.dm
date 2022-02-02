@@ -121,7 +121,8 @@
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		var/base = initial(icon_state)
 		base += options[choice]
-		icon = base
+		icon_state = base
+		item_state = base
 		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
