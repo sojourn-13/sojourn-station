@@ -3783,8 +3783,7 @@
 	id_tag = "merc_shuttle_sensor_exterior";
 	name = "merc shuttle external sensor";
 	pixel_x = 12;
-	pixel_y = -24;
-	pixel_z = 0
+	pixel_y = -24
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/mercshuttle_area)
