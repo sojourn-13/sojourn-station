@@ -206,7 +206,8 @@
 	icon_state = "gas_mask_free_beak"
 	item_state = "gas_mask_free_beak"
 	armor = list(melee = 2, bullet = 2, energy = 7, bomb = 5, bio = 0, rad = 15)
-	filtered_gases = list("plasma", "sleeping_agent", "oxygen")
+	var/list/filtered_gases = list("plasma", "sleeping_agent", "oxygen")
+	var/gas_filter_strength = 1			//For gas mask filters
 	item_flags = AIRTIGHT
 	w_class = ITEM_SIZE_SMALL
 	cold_protection = 0.5 //Instead of giving gas protection, it gives you other types of protection
@@ -214,3 +215,16 @@
 	gas_transfer_coefficient = 0.001
 	permeability_coefficient = 0.001
 	siemens_coefficient = 0.001
+
+/obj/item/clothing/mask/opifex_no_mask/filter_air(datum/gas_mixture/air)
+	var/datum/gas_mixture/filtered = new
+
+	for(var/g in filtered_gases)
+		if(air.gas[g])
+			filtered.gas[g] = air.gas[g] * gas_filter_strength
+			air.gas[g] -= filtered.gas[g]
+
+	air.update_values()
+	filtered.update_values()
+
+	return filtered
