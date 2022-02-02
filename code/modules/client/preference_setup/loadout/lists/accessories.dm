@@ -48,6 +48,11 @@
 	path = /obj/item/clothing/accessory/hawaiian
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/accessory/kneepad
+	display_name = "kneepad selection"
+	path = /obj/item/clothing/accessory/kneepads
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/accessory/fluffycape
 	display_name = "fluffy cape"
 	path = /obj/item/clothing/accessory/cape
