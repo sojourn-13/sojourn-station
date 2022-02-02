@@ -214,7 +214,7 @@
 	freq_listening = list(PRO_FREQ)
 	autolinkers = list("prospector")
 
-/obj/machinery/telecomms/server/presets/centcomm
+/obj/machinery/telecomms/server/presets/centcom
 	id = "CentCom server"
 	freq_listening = list(DTH_FREQ)
 	produces_heat = 0

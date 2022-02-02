@@ -20343,10 +20343,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "eJe" = (
@@ -24872,10 +24869,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "fEJ" = (
@@ -29994,10 +29988,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/surface/section1)
 "gKn" = (
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "gKu" = (
@@ -37558,10 +37549,7 @@
 "izT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/skyyard)
 "izV" = (
@@ -44259,10 +44247,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "jZK" = (
@@ -45280,10 +45265,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/chapel)
 "kmc" = (
@@ -58807,10 +58789,7 @@
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 2
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/chapel)
 "nic" = (
@@ -59533,10 +59512,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "nrH" = (
@@ -66431,10 +66407,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "oTD" = (
@@ -70547,10 +70520,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest)
 "pQO" = (
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/chapel)
 "pQP" = (
@@ -70790,10 +70760,7 @@
 	dir = 4;
 	icon_state = "pipe-s"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/skyyard)
 "pTD" = (
@@ -76012,10 +75979,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "raP" = (
@@ -78925,10 +78889,7 @@
 /area/nadezhda/pros/foreman)
 "rGx" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/storage)
 "rGz" = (
@@ -87806,10 +87767,7 @@
 	dir = 4;
 	icon_state = "pipe-s"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/crematorium)
 "tJK" = (
@@ -104378,10 +104336,7 @@
 	})
 "xpb" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "xpc" = (
@@ -107012,10 +106967,7 @@
 /area/nadezhda/hallway/surface/section1)
 "xTb" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/bioreactor)
 "xTe" = (
