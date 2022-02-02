@@ -8,5 +8,5 @@
 	if(G == /datum/gear/gloves)
 		return
 	TEST_ASSERT(initial(G.display_name), "Loadout ([G]) has no display name.")
-	TEST_ASSERT(initial(G.cost), "Loadout ([G]) has no cost.")
+	//TEST_ASSERT(initial(G.cost), "Loadout ([G]) has no cost.")	//SoJ edits, we dont always want a cost
 	TEST_ASSERT(initial(G.path), "Loadout ([G]) has no path definition.")
