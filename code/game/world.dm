@@ -1,12 +1,10 @@
 
 /*
 	The initialization of the game happens roughly like this:
-
 	1. All global variables are initialized (including the global_init and tgstation's master controller instances including subsystems).
 	2. The map is initialized, and map objects are created.
 	3. world/New() runs.
 	4. tgstation's MC runs initialization for various subsystems (refer to its own defines for the load order).
-
 */
 var/global/datum/global_init/init = new ()
 
@@ -74,12 +72,8 @@ var/game_id
  * All atoms in both compiled and uncompiled maps are initialized()
  */
 /world/New()
-	// Begin loading of extools DLL and components
-	if(world.system_type == MS_WINDOWS) // IT ONLY WORKS ON WINDOWS
-		extools_initialize()
-		maptick_initialize()
-		debugger_initialize()
-	// End extools
+	//enable the debugger for VSC
+	enable_auxtools_debugger()
 	//logs
 	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
 	href_logfile = file("data/logs/[date_string] hrefs.htm")
@@ -294,6 +288,7 @@ var/world_topic_spam_protect_time = world.timeofday
 /world/proc/update_status()
 	var/s = ""
 
+/*
 	if (config && config.server_name)
 		s += "<b>[config.server_name]</b> &#8212; "
 
@@ -303,7 +298,17 @@ var/world_topic_spam_protect_time = world.timeofday
 //	s += "[game_version]"
 	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
-	s += ")"
+	s += ")"*/
+
+	if (config && config.server_name)
+		s += "<b>[config.server_name]</b> &#8212; "
+
+	s += "<b>[station_name()]</b>";
+	s += "\]"
+	if(server_ad)
+		s += "<br><small>"
+		s += server_ad
+		s += "</small></br>"
 
 	var/list/features = list()
 
@@ -329,9 +334,9 @@ var/world_topic_spam_protect_time = world.timeofday
 		if (M.client)
 			n++
 
-	if (n > 1)
+	if (n != 1)
 		features += "~[n] players"
-	else if (n > 0)
+	else
 		features += "~[n] player"
 
 
@@ -393,3 +398,24 @@ proc/establish_db_connection()
 /world/proc/incrementMaxZ()
 	maxz++
 	SSmobs.MaxZChanged()
+
+/world/proc/change_fps(new_value = 30)
+	if(new_value <= 0)
+		CRASH("change_fps() called with [new_value] new_value.")
+	if(fps == new_value)
+		return //No change required.
+
+	fps = new_value
+
+/world/Del()
+	disable_auxtools_debugger() //If we dont do this, we get phantom threads which can crash DD from memory access violations
+	..()
+
+
+// SoJ Edits
+/hook/startup/proc/loadAd()
+	world.load_ad()
+	return 1
+
+/world/proc/load_ad()
+	server_ad = file2text("config/advert.txt")
