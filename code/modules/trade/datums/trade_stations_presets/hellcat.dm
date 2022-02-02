@@ -4,7 +4,7 @@
 	)
 	icon_states = "ship"
 	start_discovered = TRUE
-	markup = 0.5
+	markup = COMMON_GOODS * 1.5
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
@@ -25,15 +25,13 @@
 			/obj/item/gun/energy/laser,
 			/obj/item/gun/energy/tesla_shotgun,
 			/obj/item/gun/energy/tesla_shotgun/manual,
-			/obj/item/gun/energy/tesla_shotgun/high_damage,
-
+			/obj/item/gun/energy/tesla_shotgun/high_damage
 		),
 		"Projectile weapons" = list(
 			/obj/item/gun/projectile/glock,
 			/obj/item/gun/projectile/clarissa,
 			/obj/item/gun/projectile/olivaw,
 			/obj/item/gun/projectile/revolver/detective,
-			/obj/item/gun/projectile/revolver/mistral,
 			/obj/item/gun/projectile/automatic/ak47/sa,
 			/obj/item/gun/projectile/automatic/mac
 		),
@@ -67,18 +65,18 @@
 	)
 	secret_inventory = list(
 		"Basic Gun Mods" = list(
-			/obj/item/gun_upgrade/barrel/forged,
+			/obj/item/gun_upgrade/barrel/gauss,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,
-			/obj/item/tool_upgrade/refinement/laserguide,
+			/obj/item/tool_upgrade/refinement/laserguide
 		)
 	)
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun/pistol = offer_data("\"Myrmidon\" rail pistol", 1500, 0),
-		/obj/item/gun/energy/laser/railgun = offer_data("\"Reductor\" rail rifle", 3500, 0),
-		/obj/item/tool/shovel/combat = offer_data("combat crovel", 500, 0),
-		/obj/item/tool_upgrade/armor/melee = offer_data("melee armor plate", 500, 0),
-		/obj/item/tool_upgrade/armor/bullet = offer_data("ballistic armor plate", 1200, 0),
-		/obj/item/tool_upgrade/armor/bomb = offer_data("bomb proofing armor plate", 800, 0),
-		/obj/item/tool_upgrade/armor/energy = offer_data("energy armor plate", 2000, 0),
-		/obj/item/tool/baton/arcwelder = offer_data("arc welder", 1500, 0),
+		/obj/item/gun/energy/laser/railgun/pistol = offer_data("\"Myrmidon\" rail pistol", 1500, 2),
+		/obj/item/gun/energy/laser/railgun = offer_data("\"Reductor\" rail rifle", 3500, 1),
+		/obj/item/tool/shovel/combat = offer_data("combat crovel", 500, 13),
+		/obj/item/tool_upgrade/armor/melee = offer_data("melee armor plate", 500, 5),
+		/obj/item/tool_upgrade/armor/bullet = offer_data("ballistic armor plate", 1200, 3),
+		/obj/item/tool_upgrade/armor/bomb = offer_data("bomb proofing armor plate", 800, 3),
+		/obj/item/tool_upgrade/armor/energy = offer_data("energy armor plate", 2000, 2),
+		/obj/item/tool/baton/arcwelder = offer_data("arc welder", 1500, 2)
 	)

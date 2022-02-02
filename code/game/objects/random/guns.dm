@@ -50,6 +50,7 @@
 	spawn_nothing_percentage = 10
 
 /obj/random/gun_normal/always_spawn
+	name = "random always spawn normal gun"
 	spawn_nothing_percentage = 0
 
 /obj/random/gun_normal/item_to_spawn()
@@ -114,6 +115,7 @@
 				/obj/item/gun/projectile/automatic/sts/hrifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine = 1,\
 				/obj/item/gun/projectile/automatic/greasegun = 1,\
+				/obj/item/gun/projectile/automatic/thompson = 0.5,
 				/obj/item/gun/projectile/automatic/bren = 0.5,
 				//obj/item/gun/projectile/automatic/lmg/saw = 0.5,
 				//obj/item/gun/projectile/automatic/pitbull = 1,
@@ -139,6 +141,9 @@
 	name = "random fancy gun"
 	icon_state = "gun-blue"
 	spawn_nothing_percentage = 30
+
+/obj/random/gun_fancy/alawys_spawn
+	name = "random always spawn fancy gun"
 
 /obj/random/gun_fancy/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/automatic/wirbelwind = 3,\
@@ -228,20 +233,24 @@
 
 /obj/random/dungeon_gun_ballistic/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/automatic/pulse_rifle = 2,
-				/obj/item/gun/projectile/automatic/sbaw = 3,
-				/obj/item/gun/projectile/automatic/chaingun = 2,
+				/obj/item/gun/projectile/automatic/sbaw = 1,
+				/obj/item/gun/projectile/automatic/chaingun = 1,
 				/obj/item/gun/projectile/automatic/lmg/pk = 3,
-				/obj/item/gun/projectile/automatic/dp = 1,
+				/obj/item/gun/projectile/automatic/dp = 2,
 				/obj/item/gun/projectile/automatic/bren = 1.5,
-				/obj/item/gun/projectile/automatic/bastard = 1,
+				/obj/item/gun/projectile/automatic/bastard = 2,
 				/obj/item/gun/projectile/automatic/mac/croon = 1,
+				/obj/item/gun/projectile/automatic/ak47/sa/tac = 1,
 				/obj/item/gun/projectile/lamia/scoped/dark = 3,
 				/obj/item/gun/projectile/shotgun/pump/combat = 3,
-				/obj/item/gun/projectile/shotgun/pug = 3,
+				/obj/item/gun/projectile/shotgun/pug = 2,
 				/obj/item/gun/projectile/gyropistol = 1,
+				/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine = 2,
+				/obj/item/gun/projectile/automatic/omnirifle/standard = 1,
 				/obj/item/gun/projectile/automatic/sts/hrifle = 2,
 				/obj/item/gun/projectile/automatic/c20r = 3,
-				/obj/item/gun/projectile/basilisk = 3))
+				/obj/item/gun/projectile/basilisk = 3,
+				/obj/item/gun/projectile/revolver/deckard = 2))
 
 /obj/random/dungeon_gun_ballistic/low_chance
 	name = "low chance random special ballistic gun"
@@ -262,7 +271,8 @@
 				/obj/item/gun/energy/centurio = 2,
 				/obj/item/gun/energy/centauri = 1,
 				/obj/item/gun/energy/gun/nuclear = 2,
-				/obj/item/gun/energy/plasma/destroyer = 1))
+				/obj/item/gun/energy/plasma/destroyer = 1,
+				/obj/item/gun/energy/sunrise = 1))
 
 /obj/random/dungeon_gun_energy/low_chance
 	name = "low chance random special energy gun"

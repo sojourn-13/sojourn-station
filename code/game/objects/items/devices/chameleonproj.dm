@@ -24,8 +24,7 @@ GLOBAL_LIST_INIT(champroj_whitelist, list())
 
 	var/tick_cost = 2 //how much charge is consumed per process tick from the cell
 	var/move_cost = 4 //how much charge is consumed per movement
-	var/obj/item/cell/cell
-	var/suitable_cell = /obj/item/cell/small
+	suitable_cell = /obj/item/cell/small
 
 /obj/item/device/chameleon/Initialize()
 	.=..()

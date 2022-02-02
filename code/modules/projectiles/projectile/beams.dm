@@ -161,7 +161,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	agony = 5
 	damage_types = list(BURN = 10)
 	armor_penetration = 0
-
+	eyeblur = 0
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
@@ -172,7 +172,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	icon_state = "xray"
 	damage_types = list(TOX = 10)
 	armor_penetration = 0
-
+	eyeblur = 0
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
@@ -184,7 +184,7 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	armor_penetration = 0
 	stun = 0
 	weaken = 0
-
+	eyeblur = 0
 	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
 	tracer_type = /obj/effect/projectile/laser_blue/tracer
 	impact_type = /obj/effect/projectile/laser_blue/impact
@@ -197,6 +197,18 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 		L.adjustToxLoss(-5)
 		L.adjustBruteLoss(-5)
 		L.adjustFireLoss(-5)
+
+/obj/item/projectile/beam/sniper/healing/staff
+	name = "harmony"
+
+/obj/item/projectile/beam/sniper/healing/staff/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjustOxyLoss(-20)
+		L.adjustToxLoss(-7)
+		L.adjustBruteLoss(-7)
+		L.adjustFireLoss(-7)
 
 /obj/item/projectile/beam/tesla
 	name = "lightning"

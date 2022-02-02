@@ -32,6 +32,13 @@
 	spent_icon = "pistol_c_r-spent"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber
 
+/obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
+	desc = "A .35 Auto soporific condensed plastic shell."
+	icon_state = "pistol_c_r"
+	spent_icon = "pistol_c_r-spent"
+	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
+	is_caseless = TRUE
+
 /obj/item/ammo_casing/pistol_35/lethal
 	desc = "A .35 Auto hollow-point bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal

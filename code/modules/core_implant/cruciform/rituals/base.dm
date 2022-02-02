@@ -240,14 +240,14 @@
 /datum/ritual/cruciform/base/install_upgrade
 	name = "Install Cruciform Upgrade"
 	phrase = "Deum benedicite mihi voluntas in suum donum."
-	desc = "This litany will command a cruciform upgrade to attach to follower's cruciform. They must lie on an altar with the upgrade must be near them."
+	desc = "This litany will command a cruciform upgrade to attach to follower's cruciform. They must lie on an altar with the upgrade near them."
 	power = 20
 
 /datum/ritual/cruciform/base/install_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/H = get_victim(user)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 	if(!CI)
-		fail("[H] don't have a cruciform installed.", user, C)
+		fail("[H] doesn't have a cruciform installed.", user, C)
 		return FALSE
 	if(CI.upgrade)
 		fail("Cruciform already has an upgrade installed.", user, C)
@@ -290,7 +290,7 @@
 /datum/ritual/cruciform/base/uninstall_upgrade
 	name = "Uninstall Cruciform Upgrade"
 	phrase = "Deus meus ut quid habebant affectus."
-	desc = "This litany will command a cruciform uprgrade to detach from a cruciform."
+	desc = "This litany will command a cruciform upgrade to detach from a cruciform."
 	power = 20
 
 /datum/ritual/cruciform/base/uninstall_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)

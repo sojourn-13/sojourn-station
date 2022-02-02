@@ -19,9 +19,9 @@
 	var/chargecost = 500 //Charge drain level
 	var/oxygain = 50 //How much oxyloss should this thing heal?
 
-	var/suitable_cell = /obj/item/cell/large
+	suitable_cell = /obj/item/cell/large
 	var/obj/item/cell/cell_type = null
-	var/obj/item/cell/cell = null
+	cell = null
 
 	var/obj/item/shockpaddles/linked/paddles
 
@@ -34,6 +34,11 @@
 
 	if(ispath(cell_type, suitable_cell))
 		cell = new cell_type(src)
+
+	update_icon()
+
+/obj/item/device/defib_kit/Initialize(mapload) //updates mapped items
+	..()
 	update_icon()
 
 /obj/item/device/defib_kit/Destroy()
@@ -209,6 +214,9 @@
 /obj/item/device/defib_kit/compact/combat/adv/loaded
 	cell_type = /obj/item/cell/medium/moebius/high
 
+/obj/item/device/defib_kit/compact/combat/adv/loaded/cbo
+	cell_type = /obj/item/cell/medium/moebius/omega
+
 /obj/item/shockpaddles/linked/combat
 	combat = 1
 	safety = 0
@@ -219,7 +227,6 @@
 	desc = "A pair of ploymore-gripped paddles with flat metals surfaces that are used to deliver powerful controled electric shocks."
 	si_only = TRUE
 	advanced_pads = TRUE
-
 
 //paddles
 
@@ -745,9 +752,9 @@
 
 	chargecost = 20
 
-	var/suitable_cell = /obj/item/cell/small
+	suitable_cell = /obj/item/cell/small
 	var/obj/item/cell/cell_type = null
-	var/obj/item/cell/cell = null
+	cell = null
 
 /obj/item/shockpaddles/standalone/New()
 	..()

@@ -41,7 +41,7 @@
 	meat_amount = 4
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
-	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/shield/riot)
+	drop_items = list(/obj/item/trash/material/e_sword_cutlass, /obj/item/shield/riot/damaged)
 	faction = "pirate"
 
 /mob/living/carbon/superior_animal/human/voidwolf/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
@@ -120,7 +120,7 @@
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/laser.ogg'
-	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/gun/energy/gun/martin)
+	drop_items = list(/obj/item/tool/weldingtool/advanced, /obj/item/gun/energy/gun/martin)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 4
@@ -166,7 +166,7 @@
 	ranged = TRUE
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
-	drop_items = list(/obj/item/melee/energy/sword/pirate, /obj/item/gun/energy/gun)
+	drop_items = list(/obj/item/trash/material/e_sword_cutlass, /obj/item/gun/energy/gun)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 8
@@ -242,7 +242,7 @@
 	ranged = FALSE
 	rapid = FALSE
 	limited_ammo = FALSE
-	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver)
+	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver/damaged)
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
 	..()
@@ -256,7 +256,6 @@
 		visible_message("\red \b [src] blocks the [O]!")
 		return
 	..()
-
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj)	return

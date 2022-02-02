@@ -27,8 +27,9 @@
 	if(round(world.time) % 5 == 0)
 		remove_foreign()
 
-	if(!owner.stats.getPerk(PERK_NANOGATE))
-		owner.stats.addPerk(PERK_NANOGATE)
+	if(owner)
+		if(!owner.stats.getPerk(PERK_NANOGATE))
+			owner.stats.addPerk(PERK_NANOGATE)
 
 /obj/item/organ/internal/nanogate/proc/remove_foreign()
 	for(var/obj/item/organ/O in owner.internal_organs)

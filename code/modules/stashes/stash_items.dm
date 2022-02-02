@@ -1,6 +1,7 @@
 //Stash items are typically spawned in a container which is bulky to deal with
 /obj/item/storage/deferred/stash
 	w_class = ITEM_SIZE_HUGE
+	start_hidden = TRUE
 
 /obj/item/storage/deferred/stash/sack
 	name = "hidden stash"

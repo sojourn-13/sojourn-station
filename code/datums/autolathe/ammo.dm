@@ -315,7 +315,7 @@
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
 	materials = list(MATERIAL_BIOMATTER = 50)
 
-//.35 SMG
+//.40 Magnum SMG
 /datum/design/autolathe/ammo/smg_magnum_40
 	name = "SMG magazine (.40 Magnum)"
 	build_path = /obj/item/ammo_magazine/smg_magnum_40

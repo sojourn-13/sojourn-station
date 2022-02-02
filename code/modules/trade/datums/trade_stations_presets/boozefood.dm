@@ -5,6 +5,7 @@
 	start_discovered = TRUE
 	spawn_always = TRUE
 	base_income = 1600
+	markup = COMMON_GOODS
 	wealth = 0
 	secret_inv_threshold = 16000
 	assortiment = list(
@@ -69,5 +70,10 @@
 
 	offer_types = list(
 		/obj/item/tool/knife = offer_data("spare knifes", 50, 0),
-		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 0) //10 credits a grown item basicl
+		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
+		/datum/reagent/ethanol/changelingsting = offer_data("Changeling Sting bottle (60u)", 1500, 1),
+		/datum/reagent/ethanol/longislandicedtea = offer_data("Long Island Iced Tea bottle (60u)", 1500, 1),
+		/datum/reagent/ethanol/neurotoxin = offer_data("Neurotoxin bottle (60u)", 1500, 1),
+		/datum/reagent/ethanol/hippies_delight = offer_data("Hippie's Delight bottle (60u)", 1000, 1),
+		/datum/reagent/ethanol/silencer = offer_data("Silencer bottle (60u)", 1000, 1)
 	)

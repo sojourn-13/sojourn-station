@@ -8,6 +8,7 @@
 	var/stat_increase = 5
 	var/apply_sanity_damage = 30
 	var/spent = FALSE
+	price_tag = 1200
 
 /obj/item/device/mental_imprinter/proc/imprint(mob/living/carbon/human/user)
 	var/stat = input(user, "Select stat to boost", "Mental imprinter") as null|anything in ALL_STATS
@@ -27,6 +28,7 @@
 
 	to_chat(user, SPAN_DANGER("[src] plunges into your eye, imprinting your mind with new information!"))
 	spent = TRUE
+	price_tag = 30
 
 /obj/item/device/mental_imprinter/attack(mob/M, mob/living/carbon/human/user, target_zone)
 	if(!istype(user) || M != user || target_zone != BP_EYES || user.incapacitated() || spent)

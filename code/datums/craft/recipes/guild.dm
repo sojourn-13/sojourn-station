@@ -126,6 +126,20 @@
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/deadblow_hammer
+	name = "deadblow hammer"
+	result = /obj/item/tool/hammer/deadblow
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 10),
+		list(QUALITY_CUTTING, 20, "time" = 20),
+		list(QUALITY_WELDING, 15, "time" = 20),
+		list(/obj/item/tool/hammer, 1, "time" = 5),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS, "time" = 10),
+		list(QUALITY_WIRE_CUTTING, 20, 30),
+		list(QUALITY_SCREW_DRIVING, 20, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
+	)
+
 /datum/craft_recipe/guild/combat_shovel
 	name = "combat crovel"
 	result = /obj/item/tool/shovel/combat
@@ -222,7 +236,7 @@
 //An exspensive but powerful CQC weapon that also can be used as a flar gun
 /datum/craft_recipe/guild/abdicatorshotgun
 	name ="abdicator energy shotgun"
-	result = /obj/item/gun/energy/abdicator
+	result = /obj/item/gun/energy/laser/railgun/abdicator
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 15),
 		list(QUALITY_CUTTING, 30, "time" = 10),

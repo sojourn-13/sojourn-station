@@ -322,3 +322,28 @@
 	/obj/item/storage/backpack = 1,
 	/obj/item/storage/backpack/satchel = 1)
 
+// Lunchboxes
+// These will be later used for the Lemniscate abilities that will be added. They do not have icon sprites yet however. - Kaz
+/obj/item/storage/deferred/meatbox
+	name = "lunchbox: Pork Katsu"
+	desc = "A hand-made lunch box, locally sourced from the colony's gardens. This one is painted with a very happy looking pig. "
+	icon_state = "box_meat"
+	initial_contents = list(/obj/item/reagent_containers/food/snacks/katsudon = 1,
+	/obj/item/reagent_containers/food/snacks/tossedsalad = 1,
+	/obj/item/reagent_containers/food/drinks/cans/cahors = 1)
+
+/obj/item/storage/deferred/mushbox
+	name = "lunchbox: Mushroom Suprise"
+	desc = "A hand made lunch box, locally sourced from the colony's gardens. This one is painted with a field of purple mushrooms. "
+	icon_state = "box_mushroom"
+	initial_contents = list(/obj/item/reagent_containers/food/snacks/plumphelmetbiscuit = 1,
+	/obj/item/reagent_containers/food/snacks/mushroomsoup = 1,
+	/obj/item/reagent_containers/food/drinks/cans/cahors = 1)
+
+/obj/item/storage/deferred/grainbox
+	name = "lunchbox: Bread and Cheese"
+	desc = "A hand made lunch box, locally sourced from the colony's gardens. This one is painted with rolling fields of grain. "
+	icon_state = "box_veg"
+	initial_contents = list(/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+	/obj/item/reagent_containers/food/snacks/baguette = 1,
+	/obj/item/reagent_containers/food/drinks/cans/cahors = 1)

@@ -39,7 +39,7 @@
 	if(!floortype && initial_flooring)
 		floortype = initial_flooring
 	if(floortype)
-		set_flooring(get_flooring_data(floortype), FALSE)
+		set_flooring_roundstart(get_flooring_data(floortype), FALSE)
 	..(newloc)
 
 
@@ -74,6 +74,21 @@
 		update_icon(1)
 
 	levelupdate()
+
+/turf/simulated/floor/proc/set_flooring_roundstart(var/decl/flooring/newflooring, var/update = TRUE)
+	flooring = newflooring
+	name = flooring.name
+	maxHealth = flooring.health
+	health = maxHealth
+	flooring_override = null
+
+	/*This is passed false in the New() flooring set, so that we're not calling everything up to
+	nine times when the world is created. This saves on tons of roundstart processing*/
+	if (update)
+		update_icon(1)
+
+	levelupdate()
+
 
 /turf/simulated/floor/examine(mob/user)
 	.=..()
@@ -115,11 +130,16 @@
 	else
 		ReplaceWithLattice() //IF there's nothing underneath, turn ourselves into an openspace
 
-
 /turf/simulated/floor/levelupdate()
 	if (flooring)
 		for(var/obj/O in src)
 			O.hide(O.hides_under_flooring() && (flooring.flags & TURF_HIDES_THINGS))
+
+/turf/simulated/floor/proc/levelupdate_roundstart()
+	if (flooring)
+		for(var/obj/item/O in src)
+			if(O.start_hidden)
+				O.hide(O.hides_under_flooring() && (flooring.flags & TURF_HIDES_THINGS))
 
 
 /turf/simulated/floor/proc/is_damaged()

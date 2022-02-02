@@ -9,7 +9,7 @@ var/global/list/empty_playable_ai_cores = list()
 	return 1
 
 /mob/living/silicon/ai/verb/wipe_core()
-	set name = "Wipe Core"
+	set name = "Wipe Core (Equivalent to cryo or robotic storage)"
 	set category = "OOC"
 	set desc = "Wipe your core. This is functionally equivalent to cryo or robotic storage, freeing up your job slot."
 

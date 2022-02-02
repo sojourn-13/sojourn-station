@@ -140,17 +140,17 @@
 	throw_range = 7
 	w_class = ITEM_SIZE_SMALL
 	var/armed = FALSE
-	var/obj/item/hydrogen_fuel_cell/cell = null // The flask the sword consume to stay active
+	var/obj/item/hydrogen_fuel_cell/cell_fue = null // The flask the sword consume to stay active
 	var/burn_min = 50 // How much burn damage the grenade do to nearby mobs.
 	var/burn_max = 75 // How much burn damage the grenade do to nearby mobs.
 	var/hydrogen_threshold = 10 // How much hydrogen must be in the cell for it to be viable.
 
 /obj/item/hydrogen_grenade/attack_self(mob/living/user as mob)
-	if(!cell)
+	if(!cell_fue)
 		to_chat(user, "There isn't any hydrogen cell in the grenade, you can't arm it.")
 		return
 
-	if(cell.plasma < hydrogen_threshold)
+	if(cell_fue.plasma < hydrogen_threshold)
 		to_chat(user, "There isn't enough hydrogen in the cell, arming it would be useless.")
 		return
 

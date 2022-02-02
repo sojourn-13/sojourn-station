@@ -28,7 +28,7 @@
 	grenade_effect(target)
 
 
-/obj/item/projectile/bullet/grenade/
+/obj/item/projectile/bullet/grenade
 	name = "blast shell"
 	var/devastation_range = 0
 	var/heavy_impact_range = 0

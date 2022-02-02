@@ -1,5 +1,5 @@
 /obj/item/grenade/frag
-	name = "NT DF grenade \"Pomme\""
+	name = "SA DF grenade \"Pomme\""
 	desc = "A military-grade defensive fragmentation grenade, designed to be thrown from cover."
 	icon_state = "frag"
 	item_state = "frggrenade"
@@ -47,8 +47,9 @@
 
 /obj/item/grenade/frag/stinger
 	name = "GmbH \"Stinger\""
-	desc = "A repurposed fragmentation grenade loaded in 50.Kurts rubbers, ready to serve the public trust."
+	desc = "A repurposed fragmentation grenade loaded in rubbers fragments, ready to serve the public trust. Lethal if used ontop of someone."
 	icon_state = "stinger"
 	item_state = "stinger"
 	loadable = TRUE
+	num_fragments = 70
 	fragment_type = /obj/item/projectile/bullet/pellet/fragment/rubber

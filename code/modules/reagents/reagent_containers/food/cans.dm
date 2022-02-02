@@ -96,6 +96,13 @@
 	center_of_mass = list("x"=16, "y"=10)
 	preloaded_reagents = list("melonsoda" = 30)
 
+/obj/item/reagent_containers/food/drinks/cans/cahors
+	name = "cahors can"
+	desc = "Cahors in a can. Not nearly as good as from a bottle or keg but pleasent none the less. For the faithful on the go."
+	icon_state = "cahors_can"
+	center_of_mass = list("x"=16, "y"=10)
+	preloaded_reagents = list("cahors" = 30)
+
 //CLAW ENERGY DRINKS
 
 /obj/item/reagent_containers/food/drinks/cans/monster

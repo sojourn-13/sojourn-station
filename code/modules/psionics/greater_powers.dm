@@ -211,4 +211,4 @@
 		owner.replace_in_slot(new /obj/item/clothing/shoes/occultgreaves, slot_shoes, skip_covering_check = TRUE)
 		owner.replace_in_slot(new /obj/item/clothing/suit/space/occultist, slot_wear_suit, skip_covering_check = TRUE)
 		owner.replace_in_slot(new /obj/item/clothing/gloves/occultgloves, slot_gloves, skip_covering_check = TRUE)
-		owner.replace_in_slot(new /obj/item/clothing/head/space/occulthood, slot_head, skip_covering_check = TRUE)
+		owner.replace_in_slot(new /obj/item/clothing/head/helmet/space/occulthood, slot_head, skip_covering_check = TRUE)

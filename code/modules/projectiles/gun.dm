@@ -218,19 +218,20 @@
 		handle_click_empty(user)
 		return FALSE
 
-	if((CLUMSY in M.mutations) && prob(40)) //Clumsy handling
+	if((CLUMSY in M.mutations) && prob(15))
 		var/obj/P = consume_next_projectile()
 		if(P)
 			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
 				handle_post_fire(user, user)
 				user.visible_message(
-					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
-					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
+					SPAN_DANGER("\The [user] fumbles with \the [src] and shoot themselves in the foot with \the [src]!"),
+					SPAN_DANGER("You fumble with the gun and accidentally shoot yourself in the foot with \the [src]!")
 					)
 				M.drop_item()
 		else
 			handle_click_empty(user)
 		return FALSE
+
 	if(rigged)
 		var/obj/P = consume_next_projectile()
 		if(P)
@@ -364,7 +365,21 @@
 	user.set_move_cooldown(move_delay)
 	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
 		next_fire_time = world.time + fire_delay - fire_delay * 0.33
-	else
+
+	if((CLUMSY in user.mutations) && prob(40)) //Clumsy handling
+		var/obj/P = consume_next_projectile()
+		if(P)
+			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
+				handle_post_fire(user, user)
+				user.visible_message(
+					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
+					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
+					)
+				user.drop_item()
+		else
+			handle_click_empty(user)
+		return FALSE
+
 		next_fire_time = world.time + fire_delay
 
 	if(muzzle_flash)
@@ -858,11 +873,6 @@
 	color = initial(color)
 	prefixes = list()
 	item_flags = initial(item_flags)
-
-
-	for (var/prefix in prefixes)
-		name = "[prefix] [name]"
-
 	extra_bulk = initial(extra_bulk)
 
 	//Now lets have each upgrade reapply its modifications
@@ -871,6 +881,9 @@
 
 	if(firemodes.len)
 		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
+
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"
 
 	update_icon()
 	//then update any UIs with the new stats
