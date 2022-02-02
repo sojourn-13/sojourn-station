@@ -1,14 +1,17 @@
-/datum/trade_station/collector
+/datum/trade_station/mat_refinery
 	start_discovered = TRUE
 	spawn_always = TRUE
 	name_pool = list(
-		"RS 'Recoll'" = "Refinery Ship 'Recoll':\n\"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at cheap prices aswell!\""
+		"RS 'Recoll'" = "Refinery Ship 'Recoll': \"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at cheap prices aswell!\""
 	)
+	uid = "materials"
 	markup = RARE_GOODS
 	base_income = 0		// Needs ore to refine
 	wealth = 0
 	offer_limit = 30
-	secret_inv_threshold = 32000	// Has many offers
+	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("trash")
 	assortiment = list(
 		"Flares"  = list(
 			/obj/item/device/lighting/glowstick/flare,

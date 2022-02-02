@@ -1,9 +1,9 @@
 /datum/trade_station/bluespace_technical
-	spawn_probability = 10
-	base_income = 1600
+	uid = "bluespace"
+	start_discovered = FALSE
+	spawn_always = TRUE
 	markup = UNIQUE_GOODS
-	wealth = 0
-	secret_inv_threshold = 16000
+	recommendations_needed = 1
 	name_pool = list("B-42-Alpha" = "Unknown signature, bluespace traces interfere with sensors. Unable to triangulate object.")
 	assortiment = list(
 		"#$285@$532#$@" = list(

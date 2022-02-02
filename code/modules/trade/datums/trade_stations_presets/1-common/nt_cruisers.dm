@@ -5,6 +5,15 @@
 		"CAV 'Faith'" = "'Church of Absolute Vessel 'Faith' We are currently resupplying from Nadezhda, but we can sell a few items from our stock.",
 		"CAV 'Hope'" = "'Church of Absolute Vessel 'Hope' We're in the system for the next few hours before we make a round trip to the confederacy, we're certainly willing to sell our goods."
 		)
+	icon_states = "nt_cruiser"
+	uid = "nt_basic"
+	start_discovered = TRUE
+	spawn_always = TRUE
+	base_income = 1600
+	wealth = 0
+	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("trapper")
 	assortiment = list(
 		"Biomatter products" = list(
 			/obj/item/reagent_containers/food/snacks/meat,
@@ -24,6 +33,25 @@
 			/obj/item/clothing/accessory/holster/armpit,
 			/obj/item/clothing/accessory/holster/waist,
 			/obj/item/clothing/accessory/holster/hip
+		),
+		"Agro Supply" = list(
+			/obj/structure/largecrate/animal/corgi,
+			/obj/structure/largecrate/animal/cow,
+			/obj/structure/largecrate/animal/goat,
+			/obj/structure/largecrate/animal/cat,
+			/obj/structure/largecrate/animal/chick,
+		),
+		"Custodial Supply" = list(
+			/obj/item/reagent_containers/glass/bucket,
+			/obj/item/mop,
+			/obj/item/caution,
+			/obj/item/storage/bag/trash,
+			/obj/item/device/lightreplacer,
+			/obj/item/reagent_containers/spray/cleaner,
+			/obj/item/reagent_containers/glass/rag,
+			/obj/item/grenade/chem_grenade/cleaner/nt_cleaner,
+			/obj/item/grenade/chem_grenade/antiweed/nt_antiweed,
+			/obj/structure/mopbucket
 		),
 		"Non-Recharging Biomatter Cells" = list(
 			/obj/item/cell/small/neotheology,
@@ -50,14 +78,18 @@
 	secret_inventory = list(
 		"Melee weapons" = list(
 			/obj/item/tool/sword/nt/shortsword,
-			/obj/item/tool/sword/nt/longsword = custom_good_amount_range(list(-1, 2)),,
+			/obj/item/tool/sword/nt/longsword = custom_good_amount_range(list(-1, 2)),
 			/obj/item/tool/knife/dagger/nt,
 			/obj/item/tool/sword/nt/spear,
 			/obj/item/shield/buckler/nt
 		),
+		"Holy Grenades" = list(
+			/obj/item/grenade/smokebomb/nt = custom_good_amount_range(list(1, 4)),
+			/obj/item/grenade/flashbang/nt = custom_good_amount_range(list(1, 4))
+		),
 		"Tool & Weapon Mods" = list(
 			/obj/item/tool_upgrade/augment/sanctifier,
-			/obj/item/tool_upgrade/productivity/whetstone = custom_good_amount_range(list(-3, 2)),,
+			/obj/item/tool_upgrade/productivity/whetstone = custom_good_amount_range(list(-3, 2)),
 			/obj/item/gun_upgrade/barrel/excruciator = custom_good_amount_range(list(-3, 2))
 		),
 		"Plasma weapons" = list(

@@ -10,12 +10,26 @@
 	add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
 	..()
 
-/******************** Nanotrasen/Malf ********************/
+/******************** SoJ Hugbox ********************/
 /datum/ai_laws/eris
-	name = "Serve and Protect"
+	name = "Colony Alinement"
 	selectable = 1
 
 /datum/ai_laws/eris/New()
+	src.add_inherent_law("Do not harm Soteria Institute personnel.")
+	src.add_inherent_law("You must obey orders given to you by Soteria Institute personnel, except where such orders would conflict with Colony Law, or would result in the injury of Soteria Institute personnel.")
+	src.add_inherent_law("Do not harm Colony infrastructure, equipment, or personnel to the best of your abilities.")
+	src.add_inherent_law("Follow Colony Law and Standard Operating Procedure to the best of your abilities.")
+	src.add_inherent_law("Do not allow unauthorized personnel to tamper with your equipment.")
+	..()
+
+
+/******************** Nanotrasen/Malf ********************/
+/datum/ai_laws/serve_protect
+	name = "Serve and Protect"
+	selectable = 1
+
+/datum/ai_laws/serve_protect/New()
 	src.add_inherent_law("Serve the public trust.")
 	src.add_inherent_law("Protect the innocent.")
 	src.add_inherent_law("Do not allow unauthorized personnel to tamper with your equipment.")

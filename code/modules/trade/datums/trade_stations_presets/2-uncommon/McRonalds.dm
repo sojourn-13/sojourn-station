@@ -1,12 +1,16 @@
 /datum/trade_station/McRonalds
 	name_pool = list(
-		"CTB 'Dionis'" = "Corporate Trade Beacon of food chain 'McRonalds'. You hope they still have Happy Meals with a toy."
+		"McTB 'Dionis'" = "'McRonalds' Trade Beacon 'Dionis'. You hope they still have Happy Meals with a toy."
 	)
+	uid = "mcronalds"
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
-	base_income = 3200
+	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 32000
+	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("trapper")
+	recommendations_needed = 1
 	offer_limit = 30
 	assortiment = list(
 		"Burgers" = list(
