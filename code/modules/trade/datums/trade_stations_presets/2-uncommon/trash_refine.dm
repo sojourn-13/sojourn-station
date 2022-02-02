@@ -1,5 +1,18 @@
 /datum/trade_station/lancer
-	name_pool = list("IRS 'Lancer'" = "IRS Trash Railgun 'Lancer'. They're sending a message. \"Hoho, you want some Trash?\"")
+	name_pool = list(
+		"ITR 'Lancer'" = "IRS Trash Railgun 'Lancer': \"Hoho, you want some Trash?\""
+	)
+	uid = "trash"
+	start_discovered = FALSE
+	spawn_always = TRUE
+	markup = UNCOMMON_GOODS
+	offer_limit = 20
+	base_income = 0
+	wealth = 0
+	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("junker")
+	recommendations_needed = 1
 	assortiment = list(
 		"Trash" = list(/obj/random/scrap/dense_weighted = custom_good_amount_range(list(2, 5)),
 				/obj/random/scrap/dense_even = custom_good_amount_range(list(4, 8)),

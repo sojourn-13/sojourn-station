@@ -6,12 +6,15 @@
 		list(24, 26),
 		list(30, 30)
 	)
+	uid = "asterstradecapital"
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = COMMON_GOODS
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 16000
+	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("casino" , "kriosanconfederacy")
 	assortiment = list(
 		"Disk Designs" = list(
 			/obj/item/computer_hardware/hard_drive/portable/design/misc = good_data("Lonestar Miscellaneous Pack", list(1, 10)),
@@ -20,7 +23,6 @@
 			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = good_data("H&S Nonlethal Magazines Pack", list(1, 10)),
 			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = good_data("H&S Lethal Magazines Pack", list(1, 10)),
 			/obj/item/computer_hardware/hard_drive/portable = good_data("Blank Disk", list(1, 10))
-//			/obj/item/storage/deferred/disks = custom_good_amount_range(list(1, 5))
 		),
 		"Tools and Equipment" = list(
 			/obj/item/clothing/suit/storage/hazardvest,
@@ -104,13 +106,7 @@
 			/obj/item/reagent_containers/glass/paint/white = good_data("White Paint", list(1, 10)),
 			/obj/item/storage/lunchbox = good_data("Lunchbox", list(1, 10)),
 			/obj/item/storage/lunchbox/rainbow = good_data("Rainbow Lunchbox", list(1, 10)),
-			/obj/item/storage/lunchbox/cat = good_data("Cat Lunchbox", list(1, 10)),
-			/obj/item/mop,
-			/obj/item/caution,
-			/obj/item/storage/bag/trash,
-			/obj/item/reagent_containers/spray/cleaner,
-			/obj/item/reagent_containers/glass/rag,
-			/obj/item/organ_module/active/simple/armshield
+			/obj/item/storage/lunchbox/cat = good_data("Cat Lunchbox", list(1, 10))
 		)
 	)
 

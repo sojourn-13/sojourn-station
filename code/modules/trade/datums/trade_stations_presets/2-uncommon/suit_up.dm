@@ -1,7 +1,8 @@
 /datum/trade_station/suit_up
 	name_pool = list(
-		"ATB 'Suit Up!'" = "Aster's Trade Beacon 'Suit Up!':\n\"Suits, voidsuits and more for you, traveler!\""
+		"ATB 'Suit Up!'" = "Aster's Trade Beacon 'Suit Up!': \"Suits, voidsuits and more for you, traveler!\""
 	)
+	uid = "suit_up"
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = COMMON_GOODS
@@ -9,6 +10,8 @@
 	base_income = 3200
 	wealth = 0
 	secret_inv_threshold = 24000
+	recommendations_needed = 1
+	stations_recommended = list("rigs", "mecha")
 	assortiment = list(
 		"Voidsuits" = list(
 			/obj/item/clothing/suit/space/void,

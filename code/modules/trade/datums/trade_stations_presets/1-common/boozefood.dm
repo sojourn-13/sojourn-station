@@ -1,13 +1,16 @@
 /datum/trade_station/boozefood
 	name_pool = list(
-		"LTB 'Vermouth'" = "Lonestar's Trade Beacon 'Vermouth' \nBest Drinks! Best Beverages! Ingredients for your cooks! Anything that is needed for your private bars and more!"
+		"LTB 'Vermouth'" = "Lonestar's Trade Beacon 'Vermouth' \"Best Drinks! Best Beverages! Ingredients for your cooks! Anything that is needed for your private bars and more!"
 	)
+	uid = "commissary"
 	start_discovered = TRUE
 	spawn_always = TRUE
 	base_income = 1600
 	markup = COMMON_GOODS
 	wealth = 0
-	secret_inv_threshold = 16000
+	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("mcronalds", "serbian")
 	assortiment = list(
 		"Basic Ingredients" = list(
 			/obj/item/reagent_containers/food/condiment/flour,
@@ -45,7 +48,7 @@
 			/obj/item/reagent_containers/food/drinks/cans/sodawater,
 			/obj/item/reagent_containers/food/drinks/cans/tonic
 		),
-		"Flasks, Glasses" = list(
+		"Commissary Supplies" = list(
 			/obj/item/reagent_containers/food/drinks/drinkingglass,
 			/obj/item/reagent_containers/food/drinks/drinkingglass/shot,
 			/obj/item/reagent_containers/food/drinks/drinkingglass/mug,
@@ -56,8 +59,9 @@
 			/obj/item/reagent_containers/food/drinks/pitcher,
 			/obj/item/reagent_containers/food/drinks/carafe,
 			/obj/item/reagent_containers/food/drinks/flask/barflask,
-			/obj/item/reagent_containers/food/drinks/flask/vacuumflask
-		),
+			/obj/item/reagent_containers/food/drinks/flask/vacuumflask,
+			/obj/item/storage/deferred/kitchen
+		)
 	)
 
 	secret_inventory = list(
@@ -71,9 +75,8 @@
 	offer_types = list(
 		/obj/item/tool/knife = offer_data("spare knifes", 50, 0),
 		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
-		/datum/reagent/ethanol/changelingsting = offer_data("Changeling Sting bottle (60u)", 1500, 1),
-		/datum/reagent/ethanol/longislandicedtea = offer_data("Long Island Iced Tea bottle (60u)", 1500, 1),
-		/datum/reagent/ethanol/neurotoxin = offer_data("Neurotoxin bottle (60u)", 1500, 1),
-		/datum/reagent/ethanol/hippies_delight = offer_data("Hippie's Delight bottle (60u)", 1000, 1),
-		/datum/reagent/ethanol/silencer = offer_data("Silencer bottle (60u)", 1000, 1)
+		/obj/item/reagent_containers/food/snacks/kampferburger = offer_data("kampfer burger", 400, 3),
+		/obj/item/reagent_containers/food/snacks/panzerburger = offer_data("panzer burger", 500, 2),
+		/obj/item/reagent_containers/food/snacks/jagerburger = offer_data("jager burger", 500, 2),
+		/obj/item/reagent_containers/food/snacks/seucheburger = offer_data("seuche burger", 500, 2)
 	)

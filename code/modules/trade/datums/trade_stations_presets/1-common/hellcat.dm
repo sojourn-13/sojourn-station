@@ -5,10 +5,13 @@
 	icon_states = "ship"
 	start_discovered = TRUE
 	markup = COMMON_GOODS * 1.5
+	uid = "guns_basic"
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	secret_inv_threshold = 32000
+	secret_inv_threshold = 2000
+	recommendation_threshold = 4000
+	stations_recommended = list("fs_guns", "illegal2")
 	forced_overmap_zone = list(
 		list(15, 20),
 		list(20, 25)
@@ -61,7 +64,7 @@
 			/obj/item/clothing/head/armor/helmet/tanker/gray,
 			/obj/item/clothing/suit/armor/bulletproof,
 			/obj/item/clothing/suit/armor/laserproof
-		),
+		)
 	)
 	secret_inventory = list(
 		"Basic Gun Mods" = list(

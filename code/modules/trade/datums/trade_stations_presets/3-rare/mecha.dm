@@ -7,6 +7,8 @@
 	secret_inv_threshold = 32000
 	start_discovered = TRUE
 	spawn_always = TRUE
+	uid = "mecha"
+	recommendations_needed = 2
 	assortiment = list(
 		"Exosuit Parts" = list(
 			/obj/item/mecha_parts/chassis/ripley,

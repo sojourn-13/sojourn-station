@@ -117,7 +117,7 @@
 		icon_state = "[initial(icon_state)]"
 	else
 		icon_state = "[initial(icon_state)]_spent"
-
+	price_tag = 0
 
 /obj/item/reagent_containers/hypospray/autoinjector/antitoxin
 	name = "autoinjector (anti-toxin)"
@@ -221,3 +221,13 @@
 	icon_state = "syrette_fun1"
 	item_state = "syrette_fun1"
 	preloaded_reagents = list("space_drugs" = 5)
+
+/obj/item/reagent_containers/hypospray/autoinjector/quickhealbrute
+	name = "autoinjector (brute-aid)"
+	preloaded_reagents = list("bicaridine" = 1, "meralyne" = 1, "seligitillin" = 1, "tricordrazine" = 1, "polystem" = 1)
+	price_tag = 100
+
+/obj/item/reagent_containers/hypospray/autoinjector/quickhealburn
+	name = "autoinjector (burn-aid)"
+	preloaded_reagents = list("kelotane" = 1.25, "dermaline" = 1.25, "tricordrazine" = 1.25, "polystem" = 1.25)
+	price_tag = 100
