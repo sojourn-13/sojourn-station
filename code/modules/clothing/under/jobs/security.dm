@@ -97,7 +97,6 @@
 		base += options[choice]
 		icon_state = base
 		item_state = base
-		icon_state_slot = base
 		item_state_slots = list(
 			slot_w_uniform = base
 			)
