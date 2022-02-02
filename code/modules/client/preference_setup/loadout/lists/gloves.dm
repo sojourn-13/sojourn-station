@@ -66,7 +66,7 @@
 
 /datum/gear/gloves/rainbow
 	display_name = "gloves, rainbow"
-	path = /obj/item/clothing/gloves/color/rainbow
+	path = /obj/item/clothing/gloves/rainbow
 	cost = 2
 
 /datum/gear/gloves/colored

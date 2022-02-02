@@ -18,7 +18,7 @@
 	..()
 
 /obj/effect/shuttle_landmark/escape_pod/
-	var/number
+	//var/number
 
 /obj/effect/shuttle_landmark/escape_pod/start
 	name = "Docked"
