@@ -23,6 +23,11 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 
 	heat = 100
 
+/obj/item/projectile/beam/musket
+	name = "charged laser"
+	armor_penetration = 30 //Good AP, its for slow firing weapon
+	eyeblur = 1
+
 /obj/item/projectile/beam/drone
 	damage_types = list(BURN = 15)
 	armor_penetration = 10 //Some AP

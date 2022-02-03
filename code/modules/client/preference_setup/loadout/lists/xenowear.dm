@@ -35,7 +35,7 @@
 	sort_category = "Xenowear"
 	cost = 0
 
-/datum/gear/xenowear/opifexgasmask
+/datum/gear/xenowear/opifexgasmask_long
 	display_name = "opifex long gas mask"
 	path = /obj/item/clothing/mask/gas/opifex/alt_mask
 	slot = slot_wear_mask

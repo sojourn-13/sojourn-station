@@ -28,7 +28,6 @@
 			/obj/item/storage/pouch/tubular,
 			/obj/item/storage/pouch/tubular/vial,
 			/obj/item/storage/pouch/ammo,
-			/obj/item/storage/pouch/medical_supply,
 			/obj/item/clothing/accessory/holster,
 			/obj/item/clothing/accessory/holster/armpit,
 			/obj/item/clothing/accessory/holster/waist,
