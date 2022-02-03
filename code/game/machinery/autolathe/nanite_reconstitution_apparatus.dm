@@ -494,8 +494,6 @@
 	if(stat)
 		return FALSE
 
-	var/filltype = 0       // Used to determine message.
-	var/reagents_filltype = 0
 	var/total_used = 0     // Amount of material used.
 	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
 
@@ -529,7 +527,6 @@
 					mass_per_sheet += O.matter[material]
 
 	// Determine what was the main material
-	var/main_material
 	var/main_material_amt = 0
 	for(var/material in total_material_gained)
 		stored_material[material] += total_material_gained[material]
@@ -580,7 +577,7 @@
 				to_chat(usr, SPAN_NOTICE("\The [src.name] is already active!"))
 			else
 				to_chat(usr, SPAN_NOTICE("You activate \the [src.name]."))
-				munch(loaded_item) //So we dont null what we want to eat
+				munch(loaded_item)
 		return 1
 
 	if(href_list["eject"])
