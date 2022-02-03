@@ -22,7 +22,7 @@
 	var/speed = 10
 
 	// based on levels of matter bins
-	var/storage_capacity = 120
+	var/storage_capacity = 360
 
 	var/list/stored_material = list()
 	var/mat_efficiency = 1
