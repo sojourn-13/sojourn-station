@@ -386,8 +386,8 @@
 
 		loaded_item = null
 
-/obj/machinery/nanite_reconstitution_apparatus/proc/eat(mob/living/user, obj/item/eating, bypassed = FALSE) // materialstack 'eating'.
-	if(!eating && istype(user) && !bypassed)
+/obj/machinery/nanite_reconstitution_apparatus/proc/eat(mob/living/user, obj/item/eating) // materialstack 'eating'.
+	if(!eating && istype(user))
 		eating = user.get_active_hand()
 
 	if(!istype(eating))
@@ -485,6 +485,60 @@
 		to_chat(user, SPAN_NOTICE("Some liquid flowed to \the [container]."))
 	else if(reagents_filltype == 2)
 		to_chat(user, SPAN_NOTICE("Some liquid flowed to the floor from \the [src]."))
+
+/obj/machinery/nanite_reconstitution_apparatus/proc/munch(obj/item/eating) // materialstack 'eating'.
+
+	if(!istype(eating))
+		return FALSE
+
+	if(stat)
+		return FALSE
+
+	var/filltype = 0       // Used to determine message.
+	var/reagents_filltype = 0
+	var/total_used = 0     // Amount of material used.
+	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
+
+	var/list/total_material_gained = list()
+
+	for(var/obj/O in eating.GetAllContents(includeSelf = TRUE))
+		var/list/_matter = O.get_matter()
+		if(_matter)
+			for(var/material in _matter)
+				if(material in allowed_materials)
+
+					if(!(material in stored_material))
+						stored_material[material] = 0
+
+					if(!(material in total_material_gained))
+						total_material_gained[material] = 0
+
+					if(stored_material[material] + total_material_gained[material] >= storage_capacity)
+						continue
+
+					var/total_material = _matter[material]
+
+					if(stored_material[material] + total_material > storage_capacity)
+						total_material = storage_capacity - stored_material[material]
+						filltype = 1
+					else
+						filltype = 2
+
+					total_material_gained[material] += total_material
+					total_used += total_material
+					mass_per_sheet += O.matter[material]
+
+	// Determine what was the main material
+	var/main_material
+	var/main_material_amt = 0
+	for(var/material in total_material_gained)
+		stored_material[material] += total_material_gained[material]
+		if(total_material_gained[material] > main_material_amt)
+			main_material_amt = total_material_gained[material]
+			main_material = material
+
+	loaded_item = null
+
 /*
 /obj/machinery/nanite_reconstitution_apparatus/proc/check_craftable_amount_by_material(datum/design/design, material)
 	return stored_material[material] / max(1, SANITIZE_LATHE_COST(design.materials[material])) // loaded material / required material
@@ -526,8 +580,7 @@
 				to_chat(usr, SPAN_NOTICE("\The [src.name] is already active!"))
 			else
 				to_chat(usr, SPAN_NOTICE("You activate \the [src.name]."))
-				eat(loaded_item, bypassed = TRUE) //So we dont null what we want to eat
-				loaded_item = null
+				munch(loaded_item) //So we dont null what we want to eat
 		return 1
 
 	if(href_list["eject"])
