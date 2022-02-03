@@ -20,12 +20,6 @@
 	)
 	twohanded = TRUE
 
-/obj/item/gun/energy/cog/New()
-	..()
-	if(prob(50))
-		icon = 'icons/obj/guns/energy/cog_alt.dmi'
-	return
-
 /obj/item/gun/energy/cog/update_icon()
 	..()
 	set_item_state(null, back = TRUE)
