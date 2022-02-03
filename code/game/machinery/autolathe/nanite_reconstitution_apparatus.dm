@@ -7,8 +7,8 @@
 
 /obj/machinery/nanite_reconstitution_apparatus //machine itself
 	name = "nanite reconstitution apparatus"
-	desc = "Machine used for restoring old guns and cloathing. Can also be used to resycle unwanted ammo, guns and even armor. \
-			Sadly it is unable to scap all materals form guns, mainly plasma, uranium and any advanced materal like ossium or platium."
+	desc = "Machine used for restoring old guns and clothing. Can also be used to recycle unwanted ammo, guns and even armor. \
+	Sadly it is unable to scrap all materials from guns, mainly plasma, uranium and any advanced material like osmium or platinum."
 	icon = 'icons/obj/machines/nanite_reconstitution_apparatus.dmi'
 	icon_state = "nra"
 	circuit = /obj/item/circuitboard/nanite_reconstitution_apparatus
