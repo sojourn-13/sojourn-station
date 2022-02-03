@@ -518,9 +518,6 @@
 
 					if(stored_material[material] + total_material > storage_capacity)
 						total_material = storage_capacity - stored_material[material]
-						filltype = 1
-					else
-						filltype = 2
 
 					total_material_gained[material] += total_material
 					total_used += total_material
@@ -532,7 +529,6 @@
 		stored_material[material] += total_material_gained[material]
 		if(total_material_gained[material] > main_material_amt)
 			main_material_amt = total_material_gained[material]
-			main_material = material
 
 	loaded_item = null
 
