@@ -81,7 +81,7 @@
 
 	if(force_discovered)  // Force trading station to be already discovered when spawned
 		start_discovered = TRUE
-
+/*
 	var/x = 1
 	var/y = 1
 	if(station_loc)  // Spawn trading station at custom location
@@ -94,7 +94,7 @@
 		x = rand(OVERMAP_EDGE, GLOB.maps_data.overmap_size)
 		y = rand(OVERMAP_EDGE, GLOB.maps_data.overmap_size)
 	place_overmap(min(x, GLOB.maps_data.overmap_size - OVERMAP_EDGE), min(y, GLOB.maps_data.overmap_size - OVERMAP_EDGE))
-
+*/
 	SStrade.all_stations += src
 	if(start_discovered)
 		SStrade.discovered_stations += src
@@ -293,11 +293,11 @@
 		GLOB.entered_event.register(overmap_location, src, .proc/discovered)
 
 /datum/trade_station/proc/discovered(_, obj/effect/overmap/ship/ship)
-	if(!istype(ship) || !ship.base)
-		return
+	//if(!istype(ship) || !ship.base)
+	return
 
-	SStrade.discovered_stations |= src
-	GLOB.entered_event.unregister(overmap_location, src, .proc/discovered)
+//	SStrade.discovered_stations |= src
+//	GLOB.entered_event.unregister(overmap_location, src, .proc/discovered)
 
 /datum/trade_station/proc/generate_offer()
 	if(!length(offer_types))
