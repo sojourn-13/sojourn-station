@@ -22,16 +22,6 @@
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
 
-/obj/item/gun/energy/ionrifle/update_icon(ignore_inhands)
-	..(TRUE)
-	if(!cell || cell.charge < charge_cost)
-		set_item_state("-empty", hands = TRUE)
-	else
-		set_item_state(null, hands = TRUE)
-	//Update here instead of parent proc because we override hands icon
-	if(!ignore_inhands)
-		update_wear_icon()
-
 /obj/item/gun/energy/ionpistol
 	name = "\"Aedes\" ion-pistol"
 	desc = "A compact ion pistol produced by Seinemetall Defense GmbH, used primarly by police specialist units to disable energy weapons or electronics. \
@@ -56,13 +46,3 @@
 
 /obj/item/gun/energy/ionpistol/emp_act(severity)
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
-
-/obj/item/gun/energy/ionpistol/update_icon(ignore_inhands)
-	..(TRUE)
-	if(!cell || cell.charge < charge_cost)
-		set_item_state("-empty", hands = TRUE)
-	else
-		set_item_state(null, hands = TRUE)
-	//Update here instead of parent proc because we override hands icon
-	if(!ignore_inhands)
-		update_wear_icon()
