@@ -59,7 +59,7 @@ var/global/datum/computer_file/data/email_account/service/nanogate/nano_mailer =
 		message.stored_data = "INCOMING TRANSMISSION FROM [owner.real_name]:\n\n \
 		MESSAGE: [say]\n\n \
 		----------------------------\n \
-		Sent via Nanogate Satillite Uplink\n\n"
+		Sent via Nanogate Satellite Uplink\n\n"
 
 		message.source = nano_mailer.login
 		if(!nano_mailer.send_mail(target, message))
