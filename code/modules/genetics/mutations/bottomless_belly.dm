@@ -4,7 +4,7 @@
 	key = "MUTATION_BAROTRAUMA"
 	desc = "This is what allows dogs to eat and eat and eat."
 	gain_text = "You have the munchies."
-	var old_max_nutrition
+	var/old_max_nutrition
 
 /datum/genetics/mutation/bottomless_belly/onPlayerImplant()
 	if(!..())

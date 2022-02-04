@@ -20,36 +20,35 @@
 			return TRUE
 	return FALSE
 
-// The main process
+//Special replace function to remove a psionic tumor on insert
+/obj/item/organ/internal/nanogate/replaced(obj/item/organ/external/affected)
+	inserted_and_processing = TRUE
+	if(affected.owner)
+		var/obj/item/organ/internal/psionic_tumor/installed_tumor = affected.owner.random_organ_by_process(BP_PSION)
+		if(installed_tumor)
+			to_chat(affected.owner, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\"."))
+			affected.owner.visible_message(SPAN_DANGER("Nanites inside [affected.owner] devour the ascended flesh!"))
+			installed_tumor.removed_mob()
+			qdel(installed_tumor)
+	..(affected)
+
+// The main process. Ends forever when it does what it needs to.
 /obj/item/organ/internal/nanogate/Process()
 	..()
-
-	if(round(world.time) % 5 == 0)
-		remove_foreign()
-
 	if(owner)
 		if(!owner.stats.getPerk(PERK_NANOGATE))
 			owner.stats.addPerk(PERK_NANOGATE)
+		return PROCESS_KILL
+	
 
-/obj/item/organ/internal/nanogate/proc/remove_foreign()
-	for(var/obj/item/organ/O in owner.internal_organs)
-		if(!(O.status & ORGAN_DEAD) && istype(O, /obj/item/organ/internal/psionic_tumor)) // If we have the forbidden organ and we didn't kill it already
-			to_chat(owner, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel an immense pain in [O.get_limb()]."))
-			if(istype(O, /obj/item/organ/external))
-				var/obj/item/organ/external/E = O
-				E.droplimb()
-			else
-				O.die()
-			return TRUE
-	return FALSE
 
 // Check if there's enough nano points and remove them.
 /obj/item/organ/internal/nanogate/proc/pay_power_cost(var/nano_cost)
 	if(owner.stat == DEAD)
-		to_chat(src, "You are dead.")
+		to_chat(usr, "You are dead.")
 		return FALSE
 	if(owner.stat == UNCONSCIOUS)
-		to_chat(src, "You cannot use your nanogates powers while unconsious.")
+		to_chat(usr, "You cannot use your nanogates powers while unconsious.")
 		return FALSE
 	if(nanite_points < nano_cost)
 		to_chat(usr,"You lack the nanites to do this.")
@@ -57,3 +56,12 @@
 	else
 		nanite_points -= nano_cost
 		return TRUE
+
+/obj/item/organ/internal/nanogate/removed_mob()
+	//Remove purchased powers
+	for (var/perk in perk_list)
+		if(ispath(perk, /datum/perk))
+			if(owner)
+				owner.stats.removePerk(perk)
+
+	..()

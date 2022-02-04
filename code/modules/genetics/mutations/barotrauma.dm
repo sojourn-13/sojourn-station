@@ -5,7 +5,7 @@
 	desc = "Alters the body to rapidly adjust to pressures way beyond normal ranges."
 	gain_text = "Your ears pop loudly."
 	instability = 20
-	var old_hazard
+	var/old_hazard
 
 /datum/genetics/mutation/barotrauma/onPlayerImplant()
 	if(!..())
