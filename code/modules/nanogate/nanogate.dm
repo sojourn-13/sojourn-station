@@ -38,7 +38,8 @@
 	if(owner)
 		if(!owner.stats.getPerk(PERK_NANOGATE))
 			owner.stats.addPerk(PERK_NANOGATE)
-			return PROCESS_KILL
+			perk_list += PERK_NANOGATE
+		return PROCESS_KILL
 	
 
 
@@ -58,12 +59,6 @@
 		return TRUE
 
 /obj/item/organ/internal/nanogate/removed_mob()
-	//Kill their robot
-	if(Stand)
-		if(owner)
-			to_chat(owner,"Your precious robot disintegrates!")
-		qdel(Stand)
-	
 	//Remove purchased powers
 	for (var/perk in perk_list)
 		if(ispath(perk, /datum/perk))

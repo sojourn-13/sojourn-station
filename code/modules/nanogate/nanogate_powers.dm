@@ -24,6 +24,8 @@ var/global/datum/computer_file/data/email_account/service/nanogate/nano_mailer =
 	nano_point_cost = 1 // It's not free.
 	if(pay_power_cost(nano_point_cost))
 		verbs += /obj/item/organ/internal/nanogate/proc/nanite_message
+
+		owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_message //Add to owner_verbs so it is removed properly.
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_antenna
 		usr.show_message("\blue You feel a brief headache as nanobots form an antenna inside of you.")
 
