@@ -38,7 +38,6 @@
 	if(owner)
 		if(!owner.stats.getPerk(PERK_NANOGATE))
 			owner.stats.addPerk(PERK_NANOGATE)
-			perk_list += PERK_NANOGATE
 		return PROCESS_KILL
 	
 
