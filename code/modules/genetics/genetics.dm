@@ -445,7 +445,7 @@
 		var/obj/item/organ/internal/nanogate/nanogate = human_target.random_organ_by_process(BP_NANOGATE)
 		if(nanogate)
 			to_chat(human_target, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel something eating away at you on a celluar level."))
-			holder.adjustCloneLoss(5)
+			holder.adjustCloneLoss(2)
 			return FALSE
 
 	//Add the mutations in a separate loop from the activation step.
