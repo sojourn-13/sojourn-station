@@ -40,9 +40,19 @@ List of powers in this page :
 			verbs += /obj/item/organ/internal/nanogate/proc/radio_mode
 			verbs += /obj/item/organ/internal/nanogate/proc/console_mode
 
+			//Add to owner_verbs so it can be removed properly should the need arise.
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_damage
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_health
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_armor
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_repair
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/autodoc_mode
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/radio_mode
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/console_mode 
+
 			//Add in the Opifex specific procs
 			if(istype(src, /obj/item/organ/internal/nanogate/opifex))
 				verbs += /obj/item/organ/internal/nanogate/proc/food_mode
+				owner_verbs += /obj/item/organ/internal/nanogate/proc/food_mode
 
 			verbs -= /obj/item/organ/internal/nanogate/proc/create_nanobot
 			
