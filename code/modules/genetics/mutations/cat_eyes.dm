@@ -6,8 +6,8 @@
 	gain_text = "Your eyes narrow into that of a predator."
 	exclusive_type = MUT_TYPE_EYES
 	instability = 30
-	var old_sight
-	var old_flash
+	var/old_sight
+	var/old_flash
 
 /datum/genetics/mutation/cat_eyes/onPlayerImplant()
 	if(!..())
