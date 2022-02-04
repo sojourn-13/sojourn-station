@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import shutil
 from collections import defaultdict
-from import frontend
+from . import frontend
 from .dmm import *
 
 def merge_map(new_map, old_map, delete_unused=False):
