@@ -100,3 +100,6 @@
 
 /datum/computer_file/data/email_account/service/payroll
 	login = EMAIL_PAYROLL
+
+/datum/computer_file/data/email_account/service/nanogate
+	login = EMAIL_NANOGATE

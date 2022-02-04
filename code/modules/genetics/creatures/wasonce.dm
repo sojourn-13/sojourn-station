@@ -162,6 +162,14 @@ Has ability of every roach.
 			captive.adjustFireLoss(5)
 	..()
 
+/mob/living/carbon/superior_animal/psi_monster/wasonce/return_air_for_internal_lifeform()
+	//assume that the cryo cell has some kind of breath mask or something that
+	//draws from the cryo tube's environment, instead of the cold internal air.
+	if(loc)
+		return loc.return_air()
+	else
+		return null
+
 /mob/living/carbon/superior_animal/psi_monster/wasonce/findTarget()
 	var/atom/best_target = null
 	var/distance_weighting = 0

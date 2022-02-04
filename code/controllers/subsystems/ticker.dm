@@ -222,6 +222,7 @@ SUBSYSTEM_DEF(ticker)
 	GLOB.storyteller.announce()
 
 	setup_economy()
+	setup_nanite_mailer()
 	newscaster_announcements = pick(newscaster_standard_feeds)
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)

@@ -26,6 +26,17 @@
 			B.disabled = FALSE
 			B.replaced(head)
 
+//Special proc call for psions to check for nanogate
+/obj/item/organ/internal/psionic_tumor/replaced(obj/item/organ/external/affected)
+	if(affected.owner)
+		var/obj/item/organ/internal/nanogate/installed_nanogate = affected.owner.random_organ_by_process(BP_NANOGATE)
+		if(installed_nanogate)
+			to_chat(affected.owner, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\"."))
+			affected.owner.visible_message(SPAN_DANGER("Nanites inside [affected.owner] devour the ascended flesh!"))
+			qdel(src)
+			return
+	..(affected)
+
 // Main process, this runs through all the needed checks for a psion. Removal of implants like cruciforms and synthetics are called here.
 // This also handles psi points limits and regeneration, the effect is dynamic so increases to cognition through things like stims and chems will update accordingly.
 /obj/item/organ/internal/psionic_tumor/Process()
