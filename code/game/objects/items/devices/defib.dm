@@ -35,10 +35,12 @@
 	if(ispath(cell_type, suitable_cell))
 		cell = new cell_type(src)
 
+	sleep(10)
 	update_icon()
 
 /obj/item/device/defib_kit/Initialize(mapload) //updates mapped items
 	..()
+	sleep(10)
 	update_icon()
 
 /obj/item/device/defib_kit/Destroy()
@@ -761,6 +763,7 @@
 
 	if(ispath(cell_type, suitable_cell))
 		cell = new cell_type(src)
+	sleep(5)
 	update_icon()
 
 /obj/item/device/defib_kit/attackby(obj/item/W, mob/user, params)
