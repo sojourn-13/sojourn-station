@@ -20,7 +20,7 @@
 		#ifdef JANEDEBUG
 		log_debug("Item: [src.type] Initial amount:[src.amount] Remainder: [remainder]")
 		#endif JANEDEBUG
-		src.amount -= remainder
+		amount -= remainder
 		new /obj/item/material/shard(get_turf(src), default_type, remainder)
 		if(src.amount == 0)
 			qdel(src)
