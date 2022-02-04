@@ -17,10 +17,8 @@
 	//Make shards if there is a remainder for any reason. If it rounds down to zero, remove it.'
 	var/remainder = amount - round(amount, 1)
 	if(remainder != 0)
-		#ifdef JANEDEBUG
 		log_debug("Item: [type] Initial amount:[amount] Remainder: [remainder]")
-		#endif JANEDEBUG
-		amount-=remainder
+		amount -= remainder
 		new /obj/item/material/shard(get_turf(src), default_type, remainder)
 		if(amount == 0)
 			qdel(src)
