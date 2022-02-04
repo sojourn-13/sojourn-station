@@ -5,7 +5,7 @@
 	var/level = ABOVE_PLATING_LEVEL
 	var/flags = 0
 	var/list/fingerprints
-	var/list/fingerprintshidden
+	var/list/fingerprintshidden //mew
 	var/fingerprintslast = null
 	var/list/blood_DNA
 	var/was_bloodied
