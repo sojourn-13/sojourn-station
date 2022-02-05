@@ -110,6 +110,12 @@
 	slot = slot_gloves
 	sort_category = "Xenowear"
 
+/datum/gear/xenowear/claw
+	display_name = "clawed glove"
+	path = /obj/item/clothing/gloves/botanic_leather/claw
+	slot = slot_gloves
+	sort_category = "Xenowear"
+
 /datum/gear/xenowear/loincloth
 	display_name = "loincloth"
 	path = /obj/item/clothing/under/loincloth

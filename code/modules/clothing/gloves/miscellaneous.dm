@@ -168,6 +168,12 @@
 	siemens_coefficient = 0.50 //thick work gloves
 	price_tag = 50
 
+/obj/item/clothing/gloves/botanic_leather/claw
+	name = "clawed glove"
+	desc = "A single claw took away from some type of animal, that protects against floral dangers such as thorns and barbs."
+	icon_state = "leather"
+	item_state = "leather"
+
 /obj/item/clothing/gloves/aerostatic_gloves
 	name = "red designer leather gloves"
 	desc = "A pair of elegant leather gloves."
