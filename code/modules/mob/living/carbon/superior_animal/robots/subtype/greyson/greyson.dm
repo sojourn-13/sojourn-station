@@ -34,6 +34,8 @@
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg = 12,
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle = 9,
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy = 4,
+				/mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley = 3,
+				/mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/phazon = 2
 				))
 
 /obj/random/mob/roomba/post_spawn(var/list/spawns)
