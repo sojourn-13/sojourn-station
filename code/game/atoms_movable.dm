@@ -15,7 +15,7 @@
 	var/mob/pulledby = null
 	var/item_state = null // Used to specify the item state for the on-mob over-lays.
 	var/inertia_dir = 0
-
+	var/can_anchor = TRUE
 	var/cant_be_pulled = FALSE //Used for things that cant be anchored, but also shouldnt be pullable
 
 	//spawn_values

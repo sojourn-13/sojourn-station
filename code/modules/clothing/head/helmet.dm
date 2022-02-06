@@ -138,7 +138,11 @@
 	options["vector default"] = "acolyte"
 	options["tangent ridge helmet"] = "tangent_ridge_helmet_switched"
 	options["tangent ridge helmet open"] = "tangent_ridge_helmet"
-	options["greater heart armor"] = "greater_heart"
+	options["greater heart helmet"] = "greater_heart"
+	options["tessellate helmet"] = "tessellate_helmet"
+	options["lemniscate helmet"] = "lemniscate_helmet"
+	options["divisor helmet"] = "divisor_helmet"
+	options["monomial helmet"] = "monomial_helmet"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -161,6 +165,29 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5)
+
+/obj/item/clothing/head/helmet/rosaria/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["rosaria default"] = "rosaria_helm"
+	options["rosaria alt"] = "rosaria_alt_helmet"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/prime
 	name = "prime hood"

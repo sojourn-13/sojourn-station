@@ -28,6 +28,9 @@
 	var/datum/species/species			//TODO: Fix this
 	var/datum/species_form/form
 
+	var/inserted_and_processing = TRUE //Organs are removed from the object subsystem when inserted inside of a person. 
+									   //This makes sure they can turn off processing while implanted in someone.
+
 	// Damage vars.
 	var/min_bruised_damage = 10      	// Damage before considered bruised
 	var/min_broken_damage = 30       	// Damage before becoming broken

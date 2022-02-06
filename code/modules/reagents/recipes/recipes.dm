@@ -505,11 +505,13 @@
 
 /datum/chemical_reaction/nitroglycerin/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
-	e.set_up(round (created_volume/2, 1), holder.my_atom, 0, 0)
-	//at created_volume/10, doble 120 beaker bomb is 5,
-	//at created_volume/4,  doble 120 beaker bomb is 21,
-	//at created_volume/2,  doble 120 beaker bomb is 43,
-	//Given the effort it takes and hydr needed for this 2 is fine.
+	e.set_up(round (created_volume/10, 1), holder.my_atom, 0, 0)
+	//None of this account for BS beakers or 2 buckets... - Same as old water + poss but hey this takes more effert even tho it still has no counter
+	//at created_volume/10, doble 240 beaker bomb is 24,
+	//at created_volume/6,  doble 240 beaker bomb is 40,
+	//at created_volume/4,  doble 240 beaker bomb is 60,
+	//at created_volume/2,  doble 240 beaker bomb is 120,
+	//Given the effort it takes and hydr needed for this 10 is fine, it requires BS beakers to make a max cap.
 	if(isliving(holder.my_atom))
 		e.amount *= 0.5
 		var/mob/living/L = holder.my_atom

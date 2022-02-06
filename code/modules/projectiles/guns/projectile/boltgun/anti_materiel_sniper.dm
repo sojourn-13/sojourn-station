@@ -28,7 +28,7 @@
 	bolt_training = FALSE
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	extra_damage_mult_scoped = 0.2
-	gun_tags = list(GUN_AMR, GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SIGHT) //AMR tag atm does nothing
+	gun_tags = list(GUN_AMR, GUN_PROJECTILE) //AMR tag atm does nothing
 
 /obj/item/weaponparts
 	var/part_color = ""

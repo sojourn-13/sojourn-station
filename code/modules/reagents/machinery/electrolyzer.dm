@@ -220,8 +220,8 @@
 	icon_state = "electrolysis_makeshift"
 	var/on = FALSE
 	var/tick_cost = 3
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 	var/obj/item/reagent_containers/beaker
 	var/obj/item/reagent_containers/separation_beaker
 

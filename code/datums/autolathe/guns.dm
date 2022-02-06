@@ -178,6 +178,10 @@
 	name = "SA \"Trajectory\" .40 Magnum SMG"
 	build_path = /obj/item/gun/projectile/automatic/vector
 
+/datum/design/autolathe/gun/thompson
+	name = "Unbraded .40 Magnum \"Chicago Typewriter\""
+	build_path = /obj/item/gun/projectile/automatic/thompson
+
 //S H O T G U N S
 
 /datum/design/autolathe/gun/doublebarrel
@@ -259,8 +263,12 @@
 	build_path = /obj/item/gun/projectile/boltgun/light_wood
 
 /datum/design/autolathe/gun/zatvor
-	name = "BR .257 \"zatvor\""
+	name = "BR 7.5 \"Zatvor\""
 	build_path = /obj/item/gun/projectile/boltgun/zatvor
+
+/datum/design/autolathe/gun/custer
+	name = "H&S .257 \"Custer\""
+	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 /datum/design/autolathe/gun/nail_gun
 	name = "GP .257 \"Nail\""
@@ -321,6 +329,10 @@
 	name = "\"Kalashnabren\" LMG"
 	build_path = /obj/item/gun/projectile/automatic/bren
 
+/datum/design/autolathe/gun/ak47_tac
+	name = "SA AK 7.5 \"Breacher\""
+	build_path = /obj/item/gun/projectile/automatic/ak47/sa/tac
+
 // . 4 0 8 H E A V Y  R I F L E S
 
 /datum/design/autolathe/gun/standard_omnirifle
@@ -356,6 +368,10 @@
 /datum/design/autolathe/gun/lever
 	name = "H&S .40 lever action \"Armstrong\""
 	build_path = /obj/item/gun/projectile/boltgun/lever
+
+/datum/design/autholathe/gun/custer
+	name = "H&S .257 lever action \"Custer\""
+	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 // S N O W F L A K E S
 
@@ -478,6 +494,22 @@
 /datum/design/autolathe/gun/plasma/martyr
 	name = "NT PR \"Martyr\""
 	build_path = /obj/item/gun/energy/plasma/martyr
+
+/datum/design/autolathe/gun/sunrise
+	name = "NM \"Sunrise\" L-SMG"
+	build_path = /obj/item/gun/energy/sunrise
+
+/datum/design/autolathe/gun/plasma/antebellum
+	name = "NT PR \"Antebellum\""
+	build_path = /obj/item/gun/energy/plasma/antebellum
+
+/datum/design/autolathe/gun/concillium
+	name = "NT Las-MG \"Concillium\""
+	build_path = /obj/item/gun/energy/concillium
+
+/datum/design/autolathe/gun/carpediem
+	name = "NT LM \"Carpediem\""
+	build_path = /obj/item/gun/energy/carpediem
 
 // Gun mods
 

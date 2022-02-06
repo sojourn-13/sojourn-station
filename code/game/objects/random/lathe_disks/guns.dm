@@ -62,6 +62,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/heavysniper = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 6,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/custer = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sika = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 6,
@@ -83,7 +84,8 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/bren = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/saw = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1))
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/concillium = 2))
 
 
 /obj/random/lathe_disk/smg
@@ -103,6 +105,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 1))
 
 /obj/random/lathe_disk/rifle
@@ -122,6 +125,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/pulse_rifle = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/basstet = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/basstet = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog = 3))
@@ -162,7 +166,8 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/protector = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lenar = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/china = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull = 1))
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/antebellum = 1))
 
 /obj/random/lathe_disk/shotgun
 	name = "random shotgun lathe disk"
@@ -238,6 +243,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/firestorm = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercore = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercannon = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/sunrise = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/centauri = 1,
 
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/nt_counselor = 3,
@@ -246,6 +252,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/themis = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lightfall = 4,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/carpedie = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye = 2,
 				/obj/random/lathe_disk/ion_gun/low_chance = 2,
 

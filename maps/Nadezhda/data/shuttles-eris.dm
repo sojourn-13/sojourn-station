@@ -3,7 +3,7 @@
 	category = /datum/shuttle/autodock/ferry/escape_pod/erispod
 //	sound_takeoff = 'sound/effects/rocket.ogg'
 //	sound_landing = 'sound/effects/rocket_backwards.ogg'
-	var/number
+	var/number = 1
 
 /datum/shuttle/autodock/ferry/escape_pod/erispod/New()
 	name = "Escape Pod [number]"
@@ -18,7 +18,7 @@
 	..()
 
 /obj/effect/shuttle_landmark/escape_pod/
-	var/number
+	var/number = 1
 
 /obj/effect/shuttle_landmark/escape_pod/start
 	name = "Docked"

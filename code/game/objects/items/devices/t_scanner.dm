@@ -22,12 +22,14 @@
 	var/icon_swap_to_old = TRUE
 
 	//TODO: Make devices have cell support as an inherent behaviour
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 	var/active_power_usage = 25 //Watts
 
 	var/turn_on_sound = 'sound/effects/Custom_flashlight.ogg'
 
+	//Advanced T-rays can find hidden stashes and boxes
+	var/advanced = FALSE
 	/*Enabled and active are seperate things.
 	Enabled determines the power status. Is the scanner turned on or not?
 	The scanner is enabled as long as it has power, and the power switch is turned on. While enabled it will use power
@@ -51,6 +53,13 @@
 	var/global/list/overlay_cache = list() //cache recent over-lays
 	var/datum/event_source //When listening for movement, this is the source we're listening to
 	var/mob/current_user //The last mob who interacted with us. We'll try to fetch the client from them
+
+/obj/item/device/t_scanner/advanced
+	name = "\improper High-Power T-ray scanner"
+	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes. This one scans deeper and more clearly showing hidden storage objects."
+	advanced = TRUE
+	active_power_usage = 75 //3x the Watts of a normal one
+	icon_swap_to_old = FALSE // We start looking soj fancy
 
 /obj/item/device/t_scanner/verb/toggle_style()
 	set name = "Adjust Sprite"
@@ -181,7 +190,11 @@ are technically visible but obscured, for example by catwalks or trash sitting o
 				continue
 			if(!O.invisibility && !O.hides_under_flooring())
 				continue //if it's already visible don't need an overlay for it
+			//Hiding contraband just got a lot easyer >:D, and stashes. Still can see the skull and bones tho on many spawns of stashs
+			if(istype(O, /obj/item/storage) && !advanced)
+				continue
 			. += O
+
 
 
 

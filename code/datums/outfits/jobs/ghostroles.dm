@@ -29,14 +29,14 @@
 	name = "Medical Emergency Personnel"
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
 	head = /obj/item/clothing/head/helmet/faceshield/paramedic
-	uniform = /obj/item/clothing/suit/armor/paramedic
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
+	uniform = /obj/item/clothing/under/rank/moebius_biolab_officer
+	suit = /obj/item/clothing/suit/armor/paramedic
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
-	id_type = /obj/item/card/id/cmo
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	belt = /obj/item/storage/belt/medical
 	glasses = /obj/item/clothing/glasses/hud/health
+	back = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/modular_computer/tablet/moebius/preset = 1, /obj/item/gun/projectile/automatic/c20r/sci/preloaded = 1, \
 							/obj/item/gun_upgrade/trigger/dnalock = 1, /obj/item/gun_upgrade/muzzle/silencer = 1, /obj/item/bodybag/cryobag = 2, \
 							/obj/item/storage/firstaid/blackshield/large = 1, /obj/item/storage/firstaid/surgery/si = 1, /obj/item/roller/compact  = 1, /obj/item/device/defib_kit/compact/combat/adv/loaded = 1)

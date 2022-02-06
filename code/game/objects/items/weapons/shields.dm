@@ -179,7 +179,7 @@
 	origin_tech = list(TECH_MATERIAL = 2)
 	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 5, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
-	price_tag = 500
+	price_tag = 100
 	attack_verb = list("shoved", "bashed")
 	max_durability = 150 //So we can brake and need healing time to time
 	durability = 150
@@ -234,7 +234,7 @@
 	w_class = ITEM_SIZE_HUGE
 	origin_tech = list(TECH_MATERIAL = 2)
 	matter = list(MATERIAL_GLASS = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 15)
-	price_tag = 500
+	price_tag = 230
 	base_block_chance = 60
 	attack_verb = list("shoved", "bashed")
 	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
@@ -247,6 +247,11 @@
 		slot_back_str = "riot"
 		)
 
+/obj/item/shield/riot/damaged
+
+/obj/item/shield/riot/damaged/Initialize()
+	. = ..()
+	durability -= rand(230, 50)
 
 /obj/item/shield/riot/handle_shield(mob/user)
 	. = ..()
@@ -585,6 +590,12 @@
 	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere. This one was created for void wolves, generally employed by reavers."
 	icon_state = "voidwolfshield0" // eshield1 for expanded
 	item_state = "voidwolfshield"
+
+/obj/item/shield/buckler/energy/reaver/damaged
+
+/obj/item/shield/buckler/energy/reaver/damaged/Initialize()
+	. = ..()
+	durability -= rand(130, 90)
 
 /obj/item/shield/buckler/energy/reaver/update_icon()
 	icon_state = "voidwolfshield[active]"

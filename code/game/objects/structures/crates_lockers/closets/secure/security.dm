@@ -54,6 +54,7 @@
 		new /obj/item/storage/backpack/satchel/ironhammer(src)
 	else
 		new /obj/item/storage/backpack/sport/ironhammer(src)
+	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/clothing/head/rank/commander(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/suit/armor/hos(src)
@@ -75,9 +76,7 @@
 	new /obj/item/ammo_magazine/ammobox/c10x24_small(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/cell/medium/high(src)
-	new /obj/item/gun/projectile/lamia/scoped(src)
-	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
+	new /obj/item/gun/energy/glock(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/clothing/accessory/holster/waist(src)
@@ -133,6 +132,7 @@
 	new /obj/item/clothing/suit/armor/commander/marshal_coat_ss(src)
 	new /obj/item/storage/box/trackimp(src)
 	new /obj/item/oddity/code_book(src)
+	new /obj/item/device/t_scanner/advanced(src)
 	if(prob(50))
 		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
 	else
@@ -164,6 +164,7 @@
 	new /obj/item/device/taperecorder(src)
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
+	new /obj/item/device/t_scanner/advanced(src)
 	if(prob(50))
 		new /obj/item/clothing/head/helmet/faceshield/helmet_visor(src)
 	else
@@ -227,6 +228,7 @@
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/implantpad(src)
+	new /obj/item/device/t_scanner/advanced(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"

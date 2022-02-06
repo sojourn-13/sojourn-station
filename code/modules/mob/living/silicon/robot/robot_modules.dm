@@ -9,11 +9,11 @@ var/global/list/robot_modules = list(
 	"Engineering"					= /obj/item/robot_module/engineering/general,
 //	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condenced into contruction - todo, admin only
 	"Custodial" 					= /obj/item/robot_module/custodial,
-	"Soteria Medical Module"				= /obj/item/robot_module/robot/medihound,
-	"Security K-Class Module"				= /obj/item/robot_module/robot/knine,
+	"Soteria Medical Creature Module"		= /obj/item/robot_module/robot/medihound,
+	"Security Creature-Class Module"		= /obj/item/robot_module/robot/knine,
 	"Custodial Creature"				= /obj/item/robot_module/robot/scrubpup,
-	"Soteria Science Module"				= /obj/item/robot_module/robot/science,
-	"Guild Engineering Module"				= /obj/item/robot_module/robot/engiedog,
+	"Soteria Science Creature Module"		= /obj/item/robot_module/robot/science,
+	"Guild Creature Module"				= /obj/item/robot_module/robot/engiedog,
 	//"Combat" 					= /obj/item/robot_module/combat,
 	)
 

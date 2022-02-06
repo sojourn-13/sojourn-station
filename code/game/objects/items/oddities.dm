@@ -591,6 +591,7 @@
 
 /obj/item/oddity/ls
 	prob_perk = 0
+	price_tag = 200
 
 /obj/item/oddity/ls/collector_coin
 	name = "Collector's Coin"
@@ -765,6 +766,7 @@
 	name = "Puzzlebox" //todo add cool sound
 	desc = "Looks oddly similar to a positronic brain. Something tells you you're better off not solving it."
 	icon_state = "puzzlebox"
+	price_tag = 650
 	var/openchance = 0.2
 	var/stumped_people = list()
 	oddity_stats = list(

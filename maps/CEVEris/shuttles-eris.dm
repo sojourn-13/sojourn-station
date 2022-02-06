@@ -1,9 +1,10 @@
+/*
 //Some helpers because so much copypasta for pods
 /datum/shuttle/autodock/ferry/escape_pod/erispod
 	category = /datum/shuttle/autodock/ferry/escape_pod/erispod
 //	sound_takeoff = 'sound/effects/rocket.ogg'
 //	sound_landing = 'sound/effects/rocket_backwards.ogg'
-	var/number
+	//var/number
 
 /datum/shuttle/autodock/ferry/escape_pod/erispod/New()
 	name = "Escape Pod [number]"
@@ -18,7 +19,7 @@
 	..()
 
 /obj/effect/shuttle_landmark/escape_pod/
-	var/number
+	//var/number
 
 /obj/effect/shuttle_landmark/escape_pod/start
 	name = "Docked"
@@ -198,7 +199,7 @@
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, unidentified vessel detected on long range sensors. \nVessel is approaching on an intercept course. \nHailing frequencies open."
 	departure_message = "Attention, unknown vessel has departed"
-
+/*
 //This fires, and the mission timer starts ticking, as soon as they leave Eris on course to the mercenary base
 /datum/shuttle/autodock/multi/antag/mercenary/announce_departure()
 	.=..()
@@ -214,7 +215,7 @@
 	var/datum/objective/timed/merc/MO = (locate(/datum/objective/timed/merc) in F.objectives)
 	if (MO)
 		MO.start_mission()
-
+*/
 //Docking controller chooses which of our airlocks should open onto the target location.
 //Merc ship has only one airlock, so set that here
 /obj/effect/shuttle_landmark/merc
@@ -321,3 +322,4 @@
 	name = "Dock"
 	landmark_tag = "nav_cargo_vessel"
 	dock_target = "cargo_bay"
+*/

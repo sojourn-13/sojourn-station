@@ -224,7 +224,7 @@
 
 /datum/perk/parkour
 	name = "Raiders Leap"
-	desc = "You can climb some objects faster than normal thanks to a life of raiding ships, settlements, and anywhere plunder was."
+	desc = "You cling to railings and low walls, climb faster, and get up after diving or sliding sooner hanks to a life of raiding ships, settlements, and anywhere plunder was"
 	//icon_state = "parkour" //https://game-icons.net/1x1/delapouite/jump-across.html
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)

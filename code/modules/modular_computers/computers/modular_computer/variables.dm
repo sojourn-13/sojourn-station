@@ -50,8 +50,8 @@
 	var/obj/item/computer_hardware/hard_drive/hard_drive						// Hard Drive component of this computer. Stores programs and files.
 
 	// Optional hardware (improves functionality, but is not critical for computer to work in most cases)
-	var/obj/item/cell/cell													// An internal power source for this computer. Can be recharged.
-	var/suitable_cell = /obj/item/cell/medium								//What type of battery do we take?
+	cell = null													// An internal power source for this computer. Can be recharged.
+	suitable_cell = /obj/item/cell/medium								//What type of battery do we take?
 	var/obj/item/computer_hardware/card_slot/card_slot						// ID Card slot component of this computer. Mostly for HoP modification console that needs ID slot for modification.
 	var/obj/item/computer_hardware/printer/printer							// Printer component of this computer, for your everyday paperwork needs.
 	var/obj/item/computer_hardware/hard_drive/portable/portable_drive		// Portable data storage

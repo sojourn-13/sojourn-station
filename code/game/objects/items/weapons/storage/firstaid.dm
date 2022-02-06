@@ -489,6 +489,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	item_state = "contsolid"
 	w_class = ITEM_SIZE_SMALL
+	level = BELOW_PLATING_LEVEL //sneaky
 	can_hold = list(/obj/item/reagent_containers/pill,
 		/obj/item/dice,
 		/obj/item/checker,

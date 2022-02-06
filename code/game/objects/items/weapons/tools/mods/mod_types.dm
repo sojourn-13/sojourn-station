@@ -920,25 +920,25 @@
 	. = ..()
 	name = get_weapon_name(capitalize = TRUE)
 	icon_state = "artmod_[rand(1,16)]"
-	var/sanity_value = 0.2 + pick(0,0.1,0.2)
-	AddComponent(/datum/component/atom_sanity, sanity_value, "")
+
 	var/obj/randomcatcher/CATCH = new(src)
-	var/obj/item/tool_upgrade/spawn_type = pickweight(list(/obj/random/tool_upgrade = max(100-prob_rare,0), /obj/random/tool_upgrade/rare = prob_rare), 0)
+	var/obj/item/tool_upgrade/spawn_type = pickweight(list(/obj/random/tool_upgrade/always = max(100-prob_rare,0), /obj/random/tool_upgrade/rare/always_spawn = prob_rare), 0)
 	spawn_type = CATCH.get_item(spawn_type)
 	spawn_type.TransferComponents(src)
 	GET_COMPONENT(tool_comp, /datum/component/item_upgrade)
 	for(var/upgrade in (tool_comp.tool_upgrades - GLOB.tool_aspects_blacklist))
 		if(isnum(tool_comp.tool_upgrades[upgrade]))
 			tool_comp.tool_upgrades[upgrade] = tool_comp.tool_upgrades[upgrade] * rand(5,15)/10
-	tool_comp.tool_upgrades[UPGRADE_BULK] = rand(-1,2)
+	tool_comp.tool_upgrades[UPGRADE_BULK] = rand(-1,1)
 	QDEL_NULL(spawn_type)
 	QDEL_NULL(CATCH)
-	price_tag += rand(0, 1000)
+	price_tag += rand(100, 3000)
 
 /obj/item/tool_upgrade/artwork_tool_mod/get_item_cost(export)
 	. = ..()
-	GET_COMPONENT(comp_sanity, /datum/component/atom_sanity)
-	. += comp_sanity.affect * 100
+	//GET_COMPONENT(comp_sanity, /datum/component/atom_sanity)
+	//. += comp_sanity.affect * 100
+
 // Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
 /obj/item/tool_upgrade/productivity/waxcoat
 	name = "Wax Coating"

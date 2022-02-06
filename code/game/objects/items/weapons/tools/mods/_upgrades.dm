@@ -655,7 +655,7 @@
 		to_chat(user, SPAN_WARNING("Requires a weapon with the following properties"))
 		to_chat(user, english_list(req_gun_tags))
 		to_chat(user, SPAN_WARNING("When applied to a weapon, this takes the following slot"))
-		to_chat(user, english_list(gun_loc_tag))
+		to_chat(user, "[gun_loc_tag]")
 
 /datum/component/item_upgrade/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_IATTACK)
