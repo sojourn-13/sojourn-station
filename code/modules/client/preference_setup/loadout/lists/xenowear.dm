@@ -92,15 +92,45 @@
 	slot = slot_shoes
 	sort_category = "Xenowear"
 
+/datum/gear/xenowear/footwraps1
+	display_name = "red footwraps"
+	path = /obj/item/clothing/shoes/footwraps2
+	slot = slot_shoes
+	sort_category = "Xenowear"
+
+/datum/gear/xenowear/footwraps2
+	display_name = "blue footwraps"
+	path = /obj/item/clothing/shoes/footwraps1
+	slot = slot_shoes
+	sort_category = "Xenowear"
+
 /datum/gear/xenowear/fingerlessgloves
 	display_name = "fingerless gloves"
 	path = /obj/item/clothing/gloves/fingerless
 	slot = slot_gloves
 	sort_category = "Xenowear"
 
+/datum/gear/xenowear/claw
+	display_name = "clawed glove"
+	path = /obj/item/clothing/gloves/botanic_leather/claw
+	slot = slot_gloves
+	sort_category = "Xenowear"
+
 /datum/gear/xenowear/loincloth
 	display_name = "loincloth"
 	path = /obj/item/clothing/under/loincloth
+	slot = slot_w_uniform
+	sort_category = "Xenowear"
+
+/datum/gear/xenowear/tribalhide
+	display_name = "tribal hide"
+	path = /obj/item/clothing/under/tribalhide
+	slot = slot_w_uniform
+	sort_category = "Xenowear"
+
+/datum/gear/xenowear/chestwrap
+	display_name = "chest wrap"
+	path = /obj/item/clothing/under/chestwrap
 	slot = slot_w_uniform
 	sort_category = "Xenowear"
 
