@@ -61,6 +61,7 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	alt_titles = list("Scrapper","Scavenger","Junk Technician","Sawbones")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR
 
@@ -105,6 +106,7 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	alt_titles = list("Pathfinder","Sapper","Scout","Frontiersmen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_DUMB
 

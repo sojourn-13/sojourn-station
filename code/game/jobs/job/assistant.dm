@@ -8,6 +8,7 @@
 	spawn_positions = -1
 	supervisors = "anyone who pays you"
 	difficulty = "Very Easy."
+	alt_titles = list("Off-Duty Colonist")
 	selection_color = "#dddddd"
 	initial_balance = 800
 	wage = WAGE_NONE //Get a job ya lazy bum
