@@ -21,7 +21,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 		UPGRADE_DEGRADATION_MULT = 0.65,
-		UPGRADE_FORCE_MOD = 1,
+		UPGRADE_FORCE_MOD = 1
 		)
 
 	I.required_qualities = list(QUALITY_BOLT_TURNING,QUALITY_PRYING, QUALITY_SAWING,QUALITY_SHOVELING,QUALITY_DIGGING,QUALITY_EXCAVATION)
@@ -377,7 +377,7 @@
 // 	 REFINEMENT: INCREASES PRECISION
 //------------------------------------------------
 /obj/item/tool_upgrade/refinement/laserguide
-	name = "Lonestars \"Guiding Light\" laser guide"
+	name = "\improper Lonestars \"Guiding Light\" laser guide"
 	desc = "A small visible laser which can be strapped onto any tool, giving an accurate representation of its target. Helps improve precision."
 	icon_state = "laser_guide"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_URANIUM = 1)
@@ -389,7 +389,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 0.9,
+	GUN_UPGRADE_RECOIL = 0.8,
 	UPGRADE_BULK = 1
 	)
 	I.gun_loc_tag = GUN_SIGHT
