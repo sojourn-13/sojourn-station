@@ -97,7 +97,7 @@
 				pref.real_name = random_name(pref.gender, pref.species)
 	*/
 /datum/category_item/player_setup_item/physical/basic/content()
-	if(global.all_species[pref.species]?.obligate_name)
+	if(global.all_species[pref.species])
 		pref.custom_species = global.all_species[pref.species]
 	if ((pref.species == "Human") && (pref.custom_species in global.all_species))
 		pref.custom_species = "Human"
@@ -189,7 +189,7 @@
 		return TOPIC_REFRESH
 
 	else if(href_list["species_name"])
-		if(global.all_species[pref.species]?.obligate_name)
+		if(global.all_species[pref.species])
 			return TOPIC_NOACTION
 		var/new_species_name = input(user, "Choose your character's species name. This is cosmetic.") as text|null
 		if(CanUseTopic(user))
