@@ -220,7 +220,7 @@
 		if (H.enabled)
 			H.disabled()
 	if(loud)
-		visible_message("\The [src] shuts down.", viewing_distance = 1)
+		visible_message("\The [src] shuts down.", range = 1)
 	enabled = FALSE
 	update_icon()
 

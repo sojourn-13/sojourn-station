@@ -719,7 +719,7 @@ its easier to just keep the beam vertical.
 	var/turf/T = get_turf(src)
 	var/list/mobs = list()
 	var/list/objs = list()
-	get_mobs_and_objs_in_view_fast(T,range, mobs, objs, ONLY_GHOSTS_IN_VIEW)
+	get_mobs_and_objs_in_view_fast(T, range, mobs, objs, ONLY_GHOSTS_IN_VIEW)
 
 	for(var/m in mobs)
 		var/mob/M = m

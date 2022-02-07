@@ -151,49 +151,36 @@
 // then adds additional mobs or objects if they are in range 'smartly',
 // based on their presence in lists of players or registered objects
 // Type: 1-audio, 2-visual, 0-neither
-/proc/get_mobs_and_objs_in_view_fast(var/turf/T, var/range, var/type = 1, var/remote_ghosts = TRUE)
-	var/list/mobs = list()
-	var/list/objs = list()
-
-	var/list/hear = dview(range,T,INVISIBILITY_MAXIMUM)
+/proc/get_mobs_and_objs_in_view_fast(turf/T, range, list/mobs, list/objs, checkghosts = GHOSTS_ALL_HEAR)
+	var/list/hear = list()
+	DVIEW(hear, range, T, INVISIBILITY_MAXIMUM)
 	var/list/hearturfs = list()
 
-	for(var/thing in hear)
-		if(istype(thing,/obj))
-			objs += thing
-			hearturfs |= get_turf(thing)
-		else if(istype(thing,/mob))
-			mobs += thing
-			hearturfs |= get_turf(thing)
-
-	//A list of every mob with a client
-	for(var/mob in SSmobs.mob_list)
-		//VOREStation Edit - Trying to fix some vorestation bug.
-		if(!istype(mob, /mob))
-			SSmobs.mob_list -= mob
-			crash_with("There is a null or non-mob reference inside player_list ([mob]).")
-			continue
-		//VOREStation Edit End - Trying to fix some vorestation bug.
-		if(get_turf(mob) in hearturfs)
-			mobs |= mob
+	for(var/am in hear)
+		var/atom/movable/AM = am
+		if (!AM.loc)
 			continue
 
-		var/mob/M = mob
-		if(M && M.stat == DEAD && remote_ghosts && !M.forbid_seeing_deadchat)
-			switch(type)
-				if(1) //Audio messages use ghost_ears
-					if(M.is_preference_enabled(/datum/client_preference/ghost_ears))
-						mobs |= M
-				if(2) //Visual messages use ghost_sight
-					if(M.is_preference_enabled(/datum/client_preference/ghost_sight))
-						mobs |= M
+		if(ismob(AM))
+			mobs[AM] = TRUE
+			hearturfs[AM.locs[1]] = TRUE
+		else if(isobj(AM))
+			objs[AM] = TRUE
+			hearturfs[AM.locs[1]] = TRUE
 
-	//For objects below the top level who still want to hear
+	for(var/m in GLOB.player_list)
+		var/mob/M = m
+		if(checkghosts == GHOSTS_ALL_HEAR && M.stat == DEAD && !isnewplayer(M) && (M.client && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH))
+			if (!mobs[M])
+				mobs[M] = TRUE
+			continue
+		if(M.loc && hearturfs[M.locs[1]])
+			if (!mobs[M])
+				mobs[M] = TRUE
+
 	for(var/obj in GLOB.hearing_objects)
 		if(get_turf(obj) in hearturfs)
 			objs |= obj
-
-	return list("mobs" = mobs, "objs" = objs)
 
 
 /proc/get_mobs_in_radio_ranges(list/obj/item/device/radio/radios)
