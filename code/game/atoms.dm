@@ -362,24 +362,49 @@ its easier to just keep the beam vertical.
 
 	if(desc)
 		to_chat(user, desc)
-
+//Soj Edits
 	if(reagents)
 		if(reagent_flags & TRANSPARENT)
 			to_chat(user, SPAN_NOTICE("It contains:"))
 			var/return_value = user.can_see_reagents()
+			var/cop_vision = user.can_see_illegal_reagents()
+			var/bar_vision = user.can_see_common_reagents()
 			if(return_value == TRUE) //Show each individual reagent
 				for(var/datum/reagent/R in reagents.reagent_list)
 					to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
-			/* Uncomment to check for consumer reagents also in can_see_reagents
-			else if(return_value == 2) // Check for consumer reagents
+			// Only display reagents marked as "Common", IE, a regular person will know what it is and does.
+			else if(bar_vision)
+				var/misc_reagent = 0
 				for(var/datum/reagent/R in reagents.reagent_list)
-					if(!(istype(R,/datum/reagent/ethanol) || istype(R,/datum/reagent/drink) || istype(R, /datum/reagent/water)))
-						//to_chat(user, SPAN_NOTICE("[R.volume] units of an unfamiliar substance")) For balance concers , don't let them know
-						continue
-					to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
-			*/
+					if(R.common)
+						to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
+					else if(cop_vision && R.illegal)
+						to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
+					else
+						misc_reagent += R.volume
+				if(misc_reagent != 0)
+					to_chat(user, SPAN_NOTICE("[misc_reagent] units of various reagents."))
+			else if(cop_vision)
+				var/misc_reagent = 0
+				for(var/datum/reagent/R in reagents.reagent_list)
+					if(R.illegal)
+						to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
+					else
+						misc_reagent += R.volume
+				if(misc_reagent != 0)
+					var/datum/reagent/master_reagent = reagents.get_master_reagent()
+					if(master_reagent.common && !master_reagent.illegal)
+						to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of what looks like [master_reagent.name]."))
+					else
+						to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
+			//Get the most populated reagent in the mix. If it is a "common" reagent, let the person see that, and only that.
 			else if(reagents && reagents.reagent_list.len)
-				to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
+				var/datum/reagent/master_reagent = reagents.get_master_reagent()
+				if(master_reagent.common)
+					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of what looks like [master_reagent.name]."))
+				else
+					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
+// End of SoJ changes
 		else
 			if(reagent_flags & AMOUNT_VISIBLE)
 				if(reagents.total_volume)
