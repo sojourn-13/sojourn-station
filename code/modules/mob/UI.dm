@@ -75,7 +75,7 @@ TODO: LATER
 
 /datum/interface/Destroy()
 	hide()
-	QDEL_NULL_LIST(_elements)
+	QDEL_LIST(_elements)
 	. = ..()
 
 /datum/interface/proc/buildUI()

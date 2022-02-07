@@ -153,9 +153,9 @@ var/global/list/robot_modules = list(
 	R.choose_icon()
 
 /obj/item/robot_module/Destroy()
-	QDEL_NULL_LIST(modules)
-	QDEL_NULL_LIST(synths)
-	QDEL_NULL_LIST(emag)
+	QDEL_LIST(modules)
+	QDEL_LIST(synths)
+	QDEL_LIST(emag)
 	qdel(jetpack)
 	qdel(malfAImodule)
 	malfAImodule = null
