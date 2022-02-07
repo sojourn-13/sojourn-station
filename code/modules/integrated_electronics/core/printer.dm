@@ -17,7 +17,7 @@
 	var/list/program			// Currently loaded save, in form of list
 	var/materials = list(MATERIAL_STEEL = 0)
 	var/metal_max = 25 * SHEET_MATERIAL_AMOUNT
-	var/weakref/idlock = null
+	var/datum/weakref/idlock = null
 
 /obj/item/device/integrated_circuit_printer/proc/check_interactivity(mob/user)
 	return CanUseTopic(user) && (get_dist(src, user) < 2)
@@ -31,7 +31,6 @@
 	name = "cyborg integrated circuit printer"
 	upgraded = TRUE
 	fast_clone = TRUE
-//	spawn_blacklisted = TRUE
 
 /obj/item/device/integrated_circuit_printer/debug //translation: "integrated_circuit_printer/local_server"
 	name = "debug circuit printer"
@@ -39,7 +38,6 @@
 	upgraded = TRUE
 	can_clone = TRUE
 	fast_clone = TRUE
-//	spawn_blacklisted = TRUE
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/device/integrated_circuit_printer/cyborg/afterattack(atom/target, mob/user, proximity)
