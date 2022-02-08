@@ -160,7 +160,8 @@
 /obj/item/card_carp/rat
 	name = "Rat"
 	desc = "A rat, a fastidiously clean creature. H1/P1. Cannot provide blood."
-	icon_state = "card_squirls"
+	icon_state = "card_squirl"
+	cant_box = TRUE
 	current_health = 1
 
 /obj/item/card_carp/shell
