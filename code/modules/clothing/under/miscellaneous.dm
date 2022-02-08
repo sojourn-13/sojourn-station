@@ -298,13 +298,11 @@
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		var/base = icon_state
+		var/base = initial(icon_state)
 		base += options[choice]
 		icon_state = base
 		item_state = base
-		item_state_slots = list(
-			slot_w_uniform = base
-			)
+		item_state_slots = null
 		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
@@ -363,14 +361,12 @@
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		var/base = icon_state
+		var/base = initial(icon_state)
 		base += options[choice]
 		icon_state = base
 		item_state = base
-		item_state_slots = list(
-			slot_w_uniform = base
-			)
-		to_chat(M, "You roll your [choice].")
+		item_state_slots = null
+		to_chat(usr, SPAN_NOTICE("You roll your [choice]."))
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
