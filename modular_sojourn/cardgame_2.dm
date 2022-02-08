@@ -382,8 +382,8 @@
 	current_health = 1
 
 /obj/item/card_carp/packrat
-	name = "Packrat"
-	desc = "A packrat, a humble creature here to offer aid. H2/P2. Requires 2 blood. Generous."
+	name = "Pack Rat"
+	desc = "A pack rat, a humble creature here to offer aid. H2/P2. Requires 2 blood. Generous."
 	icon_state = "card_packrat"
 	current_health = 2
 
