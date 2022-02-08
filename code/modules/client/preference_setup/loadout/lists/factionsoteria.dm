@@ -33,6 +33,13 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Soteria"
 
+/datum/gear/factionsoteria/si_bdu
+	display_name = "trauma team bdu"
+	path = /obj/item/clothing/under/rank/paramedic/bdu
+	allowed_roles = list("Soteria Doctor","Chief Biolab Overseer","Soteria Trauma Team")
+	slot = slot_wear_suit
+	sort_category = "Faction: Soteria"
+
 /datum/gear/factionsoteria/gorka_crew_med
 	display_name = "gorka jacket, soteria medical"
 	path = /obj/item/clothing/suit/gorka/toggle/crew_med
