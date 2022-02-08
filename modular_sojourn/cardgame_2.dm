@@ -107,7 +107,7 @@
 	When a player takes damage, the scale or tally system gets moved towards the person equal to the total amount of damage taken, when a player has 5 or more damage, they lose.<BR>\n\
 	Card Effects:<BR>\n\
 	Flying - Cards with flying ignore blockers, obstacles, and pelts unless that card is capable of blocking flyers. Having flying does not give a card the ability to block other flyers.<BR>\n\
-	Virulent - All cards with virulent kill all cards of the same type when dying. I.E. a crab with virulent kills all other crabs. Type is determined by matching words in the name.<BR>\n\
+	Destructive - All cards with destructive kill all cards of the same type when dying. I.E. a crab with virulent kills all other crabs. Type is determined by matching words in the name.<BR>\n\
 	Deathtouch - On attack, any card it is facing is considered killed. Damage and death touch do not carry over to any cards or player behind it.<BR>\n\
 	Eternal - This card does not die when used as a sacrifice for blood.<BR>\n\
 	Stinky - This card reduces any opposing cards power by 1.<BR>\n\
@@ -185,7 +185,7 @@
 
 /obj/item/card_carp/crab
 	name = "Crab"
-	desc = "A crab, the best sea to land raider. H1/P2, Requires 1 blood. Gives 1 blood. On death, all other crabs in play die."
+	desc = "A crab, the best sea to land raider. H1/P2, Requires 1 blood. Destructive."
 	icon_state = "card_crab"
 	current_health = 1
 
@@ -407,7 +407,7 @@
 
 /obj/item/card_carp/fieldmice
 	name = "Field Mice"
-	desc = "Field mice, the smaller cousins to the rats and just as tenacious. H2/P2. Requires 2 blood OR 2 bones. Undying."
+	desc = "Field mice, the smaller cousins to the rats and just as tenacious. H2/P2. Requires 2 blood OR 2 bones. Upon death, return to the owner's deck."
 	icon_state = "card_fieldmice"
 	current_health = 2
 
