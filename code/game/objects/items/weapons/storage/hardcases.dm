@@ -149,6 +149,26 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A lacquer coated ammo can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
 	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
+//////////////////////////////////////////Cards//////////////////////////////////////////
+
+/obj/item/storage/hcases/cardcarp
+	name = "gaming hard case"
+	desc = "A wooden hard case made specifically for card carp, but it can hold various other gaming items. Alt+click to open and close."
+	icon_state = "gaming"
+	matter = list(MATERIAL_WOOD = 10)
+	max_w_class = ITEM_SIZE_NORMAL * 1.3 // Side bars for decks tend to have lots of cards and given how specialized this is, a little extra space isn't bad. -Kaz
+
+	can_hold = list(
+		/obj/item/cardholder,
+		/obj/item/card_carp,
+		/obj/item/pack_card_carp,
+		/obj/item/scale,
+		/obj/item/board,
+		/obj/item/storage/pill_bottle/chechker,
+		/obj/item/deck,
+		/obj/item/pack
+		)
+
 //////////////////////////////////////////Parts//////////////////////////////////////////
 
 /obj/item/storage/hcases/parts
