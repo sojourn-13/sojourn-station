@@ -856,6 +856,7 @@
 					/obj/item/cardholder = 8,
 					/obj/item/cardholder/squirl = 4,
 					/obj/item/cardholder/ratbox = 4,
+					/obj/item/storage/hcases/cardcarp = 4,
 					/obj/item/card_carp = 4
 					)
 	prices = list(
@@ -872,4 +873,5 @@
 					/obj/item/cardholder = 0,
 					/obj/item/cardholder/squirl = 0,
 					/obj/item/cardholder/ratbox = 0,
+					/obj/item/storage/hcases/cardcarp = 0,
 					/obj/item/card_carp = 0)
