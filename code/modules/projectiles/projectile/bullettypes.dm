@@ -46,8 +46,8 @@
 			L.reagents.add_reagent("stoxin", 5)
 
 /obj/item/projectile/bullet/pistol_35/hv
-	damage_types = list(BRUTE = 20)
-	armor_penetration = 10
+	damage_types = list(BRUTE = 10)
+	armor_penetration = 20
 	step_delay = 0.5
 	affective_damage_range = 4
 	affective_ap_range = 4
@@ -65,8 +65,8 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18)
-	agony = 20
+	damage_types = list(BRUTE = 22)
+	agony = 18
 	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
@@ -117,8 +117,8 @@
 	step_delay = 0.4
 
 /obj/item/projectile/bullet/magnum_40/hv
-	damage_types = list(BRUTE = 28)
-	armor_penetration = 25
+	damage_types = list(BRUTE = 20)
+	armor_penetration = 33
 	penetrating = 1
 	step_delay = 0.25
 	nocap_structures = TRUE //Door breaching
@@ -146,9 +146,9 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 26)
+	damage_types = list(BRUTE = 29)
 	agony = 32
-	armor_penetration = 5
+	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -175,8 +175,8 @@
 
 /// .50 Kurtz ///
 /obj/item/projectile/bullet/kurtz_50
-	damage_types = list(BRUTE = 30)
-	armor_penetration = 20
+	damage_types = list(BRUTE = 35)
+	armor_penetration = 15
 	can_ricochet = TRUE
 	embed = TRUE
 	step_delay = 0.65
@@ -204,17 +204,17 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 35)
-	agony = 35
-	armor_penetration = 5
+	damage_types = list(BRUTE = 40)
+	agony = 40
+	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
 	step_delay = 0.8
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
-	damage_types = list(BRUTE = 40)
-	armor_penetration = 25
+	damage_types = list(BRUTE = 30)
+	armor_penetration = 35
 	penetrating = 2
 	can_ricochet = FALSE
 	step_delay = 0.45
@@ -248,8 +248,8 @@
 	step_delay = 0.5
 
 /obj/item/projectile/bullet/light_rifle_257/hv
-	damage_types = list(BRUTE = 26)
-	armor_penetration = 24
+	damage_types = list(BRUTE = 20)
+	armor_penetration = 30
 	penetrating = 2
 	hitscan = TRUE
 	affective_damage_range = 8 //Can snipe
@@ -270,9 +270,9 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 24)
-	agony = 20
-	armor_penetration = 5
+	damage_types = list(BRUTE = 26)
+	agony = 22
+	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -291,7 +291,7 @@
 ///7.5 Rifle///
 
 /obj/item/projectile/bullet/rifle_75
-	damage_types = list(BRUTE = 26)
+	damage_types = list(BRUTE = 25)
 	armor_penetration = 20
 	penetrating = 1
 	can_ricochet = TRUE
@@ -300,8 +300,8 @@
 	affective_ap_range = 5
 
 /obj/item/projectile/bullet/rifle_75/hv
-	damage_types = list(BRUTE = 25)
-	armor_penetration = 30
+	damage_types = list(BRUTE = 20)
+	armor_penetration = 35
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
@@ -341,7 +341,7 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 25)
+	damage_types = list(BRUTE = 30)
 	agony = 28
 	armor_penetration = 5
 	penetrating = 0
@@ -420,7 +420,7 @@
 
 /obj/item/projectile/bullet/c10x24
 	damage_types = list(BRUTE = 18)
-	armor_penetration = 15
+	armor_penetration = 18
 	penetrating = 2
 	can_ricochet = TRUE
 	sharp = TRUE
@@ -682,8 +682,8 @@
 /obj/item/projectile/bullet/crossbow_bolt
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 54)
-	armor_penetration = 10
+	damage_types = list(BRUTE = 45)
+	armor_penetration = 15
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
 	affective_damage_range = 7
@@ -693,16 +693,16 @@
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 56)
-	agony = 22
+	damage_types = list(BRUTE = 47)
+	agony = 29
 	armor_penetration = 5
 	step_delay = 0.9
 
 /obj/item/projectile/bullet/crossbow_bolt/hv
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 58)
-	armor_penetration = 40
+	damage_types = list(BRUTE = 45)
+	armor_penetration = 55
 	penetrating = 3
 	hitscan = TRUE
 	affective_damage_range = 9
