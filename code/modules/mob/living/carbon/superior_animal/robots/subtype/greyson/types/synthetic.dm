@@ -56,6 +56,11 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 45
 	attack_sound = 'sound/mecha/mechdrill.ogg'
+	flash_resistances = 100 // Robot
+
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/slip(var/slipped_on,stun_duration=8)
+	return FALSE
+// Big stompers can't be slipped!
 
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/phazon
 	name = "Greyson Positronic Phazon unit"
@@ -67,7 +72,7 @@
 	move_to_delay = 1
 	health = 800
 	maxHealth = 800
-	melee_damage_lower = 40
-	melee_damage_upper = 45
+	melee_damage_lower = 50
+	melee_damage_upper = 55
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	armor = list(melee = 30, bullet = 30, energy = 30, bomb = 30, bio = 100, rad = 100)

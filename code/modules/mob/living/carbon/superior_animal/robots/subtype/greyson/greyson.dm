@@ -4,7 +4,6 @@
 	icon = 'icons/mob/battle_roomba.dmi'
 	icon_state = "roomba"
 	faction = "greyson"
-	emp_damage = FALSE // Greyson is immune to EMP
 
 //spawners
 /obj/random/mob/roomba
