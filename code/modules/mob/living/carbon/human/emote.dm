@@ -913,7 +913,34 @@
 		if ("squeal")
 			message = "squeals."
 			playsound(loc, 'sound/voice/LizardSqueal.ogg', 50, 1, -1)
-
+		if ("moo")
+			m_type = 2
+			message = "moos."
+			playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1)
+		if ("warble")
+			m_type = 2
+			message = "warbles."
+			playsound(loc, 'sound/voice/warble.ogg', 50, 1, -1)
+		if ("lwarble")
+			m_type = 2
+			message = "warbles."
+			playsound(loc, 'sound/voice/lowwarble.ogg', 50, 1, -1)
+		if ("croon")
+			m_type = 2
+			message = "croons."
+			playsound(loc, 'sound/voice/croon1.ogg', 50, 1, -1)
+		if ("croon")
+			m_type = 2
+			message = "croons."
+			playsound(loc, 'sound/voice/croon2.ogg', 50, 1, -1)
+		if ("croak")
+			m_type = 2
+			message = "croaks."
+			playsound(loc, 'sound/voice/croak.ogg', 50, 1, -1)
+		if ("chitter")
+			m_type = 2
+			message = "chitters."
+			playsound(loc, 'sound/voice/chitter1.ogg', 50, 1, -1)
 		if ("help")
 			to_chat(src, "awoo, aslap-(none)/mob, bark, bellow, blink, blink_r, blush, bow-(none)/mob, burp, chirp, choke, chuckle, clap, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
 					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, mumble, nod, nya, pale, peep, point-atom, \
