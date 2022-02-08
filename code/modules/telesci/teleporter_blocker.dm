@@ -1,3 +1,6 @@
+
+//Sprites by - @Michiyamenotehifunana and @Sigmasquad!
+
 /obj/machinery/telesci_inhibitor
 	name = "bluespace inhibition node"
 	desc = "A double-layered network of ansible crystals which use area power distribution systems to cause massive interference in local bluespace fields, inhibiting teleportation."
@@ -9,6 +12,12 @@
 	idle_power_usage = 5000
 	circuit = /obj/item/circuitboard/tele_inhibitor
 	var/area/area
+
+/obj/machinery/telesci_inhibitor/proc/explode()
+	var/turf/T = get_turf(src)
+	explosion(T, -1, 1, 2, 5) //Like a landmine but with less flash.
+	bluespace_entropy(20, get_turf(src), TRUE)
+	qdel(src)
 
 /obj/machinery/telesci_inhibitor/Initialize()
 	. = ..()
@@ -31,16 +40,10 @@
 	..()
 
 /obj/machinery/telesci_inhibitor/update_icon()
-	if(stat & NOPOWER)
-		if(panel_open)
-			icon_state = "inhibitor-panel"
-		else
-			icon_state = "inhibitor"
-	else
-		if(panel_open)
-			icon_state = "inhibitor-on-panel"
-		else
-			icon_state = "inhibitor-on"
+	if(!(stat & NOPOWER))
+		overlays += "inhibitor-powered"
+	if(panel_open)
+		overlays += "inhibitor-panel"
 
 /obj/machinery/telesci_inhibitor/Destroy()
 	area.tele_inhibitors -= src

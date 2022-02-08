@@ -4,18 +4,32 @@
 #define REALTIMEOFDAY (world.timeofday + (MIDNIGHT_ROLLOVER * MIDNIGHT_ROLLOVER_CHECK))
 #define MIDNIGHT_ROLLOVER_CHECK ( rollovercheck_last_timeofday != world.timeofday ? update_midnight_rollover() : midnight_rollovers )
 
-#define DECISECONDS
-
 #define SECONDS *10
-#define SECOND SECONDS
 
 #define MINUTES SECONDS*60
-#define MINUTE MINUTES
 
 #define HOURS MINUTES*60
+
+#define TICKS *world.tick_lag
+
+#define MILLISECONDS * 0.01
+
+#define DS2TICKS(DS) ((DS)/world.tick_lag)
+
+#define TICKS2DS(T) ((T) TICKS)
+
+#define MS2DS(T) ((T) MILLISECONDS)
+
+#define DS2MS(T) ((T) * 100)
+
+
+#define SECOND SECONDS
+
+#define MINUTE MINUTES
+
 #define HOUR HOURS
 
-#define DAY *864000
+#define DAY DAYS
 #define DAYS *864000
 
 #define TimeOfGame (get_game_time())

@@ -33,7 +33,7 @@
 
 /obj/machinery/centrifuge/Destroy()
 	QDEL_NULL(mainBeaker)
-	QDEL_NULL_LIST(separationBeakers)
+	QDEL_LIST(separationBeakers)
 	return ..()
 
 /obj/machinery/centrifuge/update_icon()
@@ -252,7 +252,7 @@
 
 /obj/item/device/makeshift_centrifuge/Destroy()
 	QDEL_NULL(mainBeaker)
-	QDEL_NULL_LIST(separationBeakers)
+	QDEL_LIST(separationBeakers)
 	return ..()
 
 /obj/item/device/makeshift_centrifuge/attack_self(mob/user)

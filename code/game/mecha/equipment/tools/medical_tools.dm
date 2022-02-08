@@ -413,7 +413,7 @@
 		synth = new (list(src),0)
 
 	Destroy()
-		QDEL_NULL_LIST(syringes)
+		QDEL_LIST(syringes)
 		QDEL_NULL(synth)
 		return ..()
 

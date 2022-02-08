@@ -20,16 +20,6 @@
 	)
 	twohanded = TRUE
 
-/obj/item/gun/energy/cog/New()
-	..()
-	if(prob(50))
-		icon = 'icons/obj/guns/energy/cog_alt.dmi'
-	return
-
-/obj/item/gun/energy/cog/update_icon()
-	..()
-	set_item_state(null, back = TRUE)
-
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" lasgun"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous. \

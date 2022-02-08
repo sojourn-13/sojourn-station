@@ -90,6 +90,7 @@
 		recoil_buildup+= rand(0,10)
 		damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
 		penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
+	refresh_upgrades() //So we dont null upgrades.
 
 /obj/item/gun/make_young()
 	if(!oldified)
@@ -279,10 +280,14 @@
 /obj/item/clothing/make_young()
 	if(!oldified)
 		return
+	var/obj/item/clothing/referencecarmor = new type()
+	armor = referencecarmor.armor
+	qdel(referencecarmor)
 	slowdown = initial(slowdown)
 	heat_protection = initial(heat_protection)
 	cold_protection = initial(cold_protection)
 	equip_delay = initial(equip_delay)
+	refresh_upgrades() //So we dont null upgrades.
 	..()
 
 
@@ -533,3 +538,11 @@
 		process_warnings()
 		*/
 */
+
+
+// OCCULUS EDIT: Required check for nanite reconstitution apparatus; checks if old without youngifying it
+/obj/proc/is_old()
+	if(oldified)
+		return TRUE
+	return FALSE
+// OCCULUS EDIT END

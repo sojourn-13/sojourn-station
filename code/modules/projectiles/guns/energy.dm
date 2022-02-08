@@ -145,10 +145,19 @@
 
 		if(item_charge_meter)
 			set_item_state("-[item_modifystate][ratio]")
+
+		if(wielded)
+			item_state_slots[slot_l_hand_str] = "lefthand"  + wielded_item_state + "-[ratio]"
+			item_state_slots[slot_r_hand_str] = "righthand" + wielded_item_state + "-[ratio]"
+		else
+			item_state_slots[slot_l_hand_str] = "lefthand" + "-[ratio]"
+			item_state_slots[slot_r_hand_str] = "righthand" + "-[ratio]"
+
 	if(!item_charge_meter && item_modifystate)
 		set_item_state("-[item_modifystate]")
 	if(!ignore_inhands)
 		update_wear_icon()
+
 
 /obj/item/gun/energy/MouseDrop(over_object)
 	if(!self_recharge && !disposable)

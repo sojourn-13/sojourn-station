@@ -818,6 +818,7 @@
 					/obj/item/pack_card_carp = 90,
 					/obj/item/cardholder = 40,
 					/obj/item/cardholder/squirl = 20,
+					/obj/item/cardholder/ratbox = 20,
 					/obj/item/card_carp = 50
 					)
 	prices = list(
@@ -833,6 +834,7 @@
 					/obj/item/pack_card_carp = 35,
 					/obj/item/cardholder = 42,
 					/obj/item/cardholder/squirl = 30,
+					/obj/item/cardholder/ratbox = 30,
 					/obj/item/card_carp = 1)
 
 /obj/machinery/vending/gamers/hunters
@@ -851,6 +853,7 @@
 					/obj/item/pack_card_carp = 9,
 					/obj/item/cardholder = 8,
 					/obj/item/cardholder/squirl = 4,
+					/obj/item/cardholder/ratbox = 4,
 					/obj/item/card_carp = 4
 					)
 	prices = list(
@@ -866,4 +869,5 @@
 					/obj/item/pack_card_carp = 0,
 					/obj/item/cardholder = 0,
 					/obj/item/cardholder/squirl = 0,
+					/obj/item/cardholder/ratbox = 0,
 					/obj/item/card_carp = 0)

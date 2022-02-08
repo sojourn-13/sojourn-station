@@ -87,6 +87,23 @@
 	update_icon()
 	SSnano.update_uis(src) // update all UIs attached to src
 
+/obj/machinery/chemical_dispenser/proc/hacked(mob/user)
+	..()
+	if(!hackedcheck)
+		to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
+		dispensable_reagents += hacked_reagents
+		SSnano.update_uis(src)
+		hackedcheck = FALSE
+		return
+
+	else
+		to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
+		dispensable_reagents -= hacked_reagents
+		SSnano.update_uis(src)
+		hackedcheck = TRUE
+		return
+
+
 
 /obj/machinery/chemical_dispenser/Initialize()
 	. = ..()
@@ -199,20 +216,12 @@
 	if(default_part_replacement(I, user))
 		return
 
-	if(istype(I, /obj/item/tool/multitool) && length(hacked_reagents) && fancy_hack == FALSE)
-		hackedcheck = !hackedcheck
-		if(!hackedcheck)
-			to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
-			dispensable_reagents += hacked_reagents
-			SSnano.update_uis(src)
-			return
+	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
+		return
 
-		else
-			to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
-			dispensable_reagents -= hacked_reagents
-			SSnano.update_uis(src)
-			return
-
+	if(istype(I, /obj/item/tool/multitool) && length(hacked_reagents))
+		hacked()
 
 	var/obj/item/reagent_containers/B = I
 	if(beaker)
@@ -231,6 +240,9 @@
 /obj/machinery/chemical_dispenser/attack_hand(mob/living/user)
 	if(stat & BROKEN)
 		return
+	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
+		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
+		return
 	ui_interact(user)
 
 /obj/machinery/chemical_dispenser/soda
@@ -243,6 +255,7 @@
 	fancy_hack = FALSE
 	accept_beaker = FALSE
 	density = FALSE
+	simple_machinery = TRUE
 	level0 = list(
 		"water","ice","icetea","icegreentea","cola","spacemountainwind","dr_gibb","space_up",
 		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice")
@@ -255,19 +268,19 @@
 	hacked_reagents = list("thirteenloko","grapesoda")
 	circuit = /obj/item/circuitboard/chemical_dispenser/soda
 
-/obj/machinery/chemical_dispenser/soda/attackby(obj/item/I, mob/living/user)
-	..()
-	if(istype(I, /obj/item/tool/multitool) && length(hacked_reagents))
-		hackedcheck = !hackedcheck
-		if(!hackedcheck)
-			to_chat(user, "You change the mode from 'McNano' to 'Pizza King'.")
-			dispensable_reagents += hacked_reagents
-			SSnano.update_uis(src)
-
-		else
-			to_chat(user, "You change the mode from 'Pizza King' to 'McNano'.")
-			dispensable_reagents -= hacked_reagents
-			SSnano.update_uis(src)
+/obj/machinery/chemical_dispenser/soda/hacked(mob/user)
+	if(!hackedcheck)
+		to_chat(user, "You change the mode from 'McNano' to 'Pizza King'.")
+		dispensable_reagents += hacked_reagents
+		SSnano.update_uis(src)
+		hackedcheck = FALSE
+		return
+	else
+		to_chat(user, "You change the mode from 'Pizza King' to 'McNano'.")
+		dispensable_reagents -= hacked_reagents
+		SSnano.update_uis(src)
+		hackedcheck = TRUE
+		return
 
 /obj/machinery/chemical_dispenser/soda/update_icon()
 	cut_overlays()
@@ -288,6 +301,7 @@
 	fancy_hack = FALSE
 	accept_beaker = FALSE
 	density = FALSE
+	simple_machinery = TRUE
 	level0 = list(
 		"coffee","cream","tea","greentea","sugar","hot_coco","espresso")
 	hacked_reagents = list("ice")
@@ -305,6 +319,7 @@
 	fancy_hack = FALSE
 	accept_beaker = FALSE
 	density = FALSE
+	simple_machinery = TRUE
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
 	level0 = list(
 		"lemon_lime","sugar","orangejuice","limejuice",
@@ -320,20 +335,19 @@
 	hacked_reagents = list("goldschlager","patron","watermelonjuice","berryjuice")
 	circuit = /obj/item/circuitboard/chemical_dispenser/beer
 
-/obj/machinery/chemical_dispenser/beer/attackby(obj/item/I, mob/living/user)
-	..()
-
-	if(istype(I, /obj/item/tool/multitool) && length(hacked_reagents))
-		hackedcheck = !hackedcheck
-		if(!hackedcheck)
-			to_chat(user, "You disable the 'cheap bastards' lock, enabling hidden and very expensive boozes.")
-			dispensable_reagents += hacked_reagents
-			SSnano.update_uis(src)
-
-		else
-			to_chat(user, "You re-enable the 'cheap bastards' lock, disabling hidden and very expensive boozes.")
-			dispensable_reagents -= hacked_reagents
-			SSnano.update_uis(src)
+/obj/machinery/chemical_dispenser/beer/hacked(mob/user)
+	if(!hackedcheck)
+		to_chat(user, "You disable the 'cheap bastards' lock, enabling hidden and very expensive boozes.")
+		dispensable_reagents += hacked_reagents
+		SSnano.update_uis(src)
+		hackedcheck = FALSE
+		return
+	else
+		to_chat(user, "You re-enable the 'cheap bastards' lock, disabling hidden and very expensive boozes.")
+		dispensable_reagents -= hacked_reagents
+		SSnano.update_uis(src)
+		hackedcheck = TRUE
+		return
 
 /obj/machinery/chemical_dispenser/meds_admin_debug
 	name = "mysterious chemical dispenser"
