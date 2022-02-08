@@ -2477,15 +2477,6 @@
 /obj/random/booze,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"aCs" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "aCA" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp,
@@ -3388,9 +3379,6 @@
 /area/nadezhda/security{
 	name = "Security Training"
 	})
-"aMg" = (
-/turf/simulated/wall/church_reinforced,
-/area/nadezhda/outside/meadow)
 "aMj" = (
 /obj/random/structures,
 /obj/effect/spider/stickyweb,
@@ -4475,6 +4463,13 @@
 /obj/random/lowkeyrandom,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"bah" = (
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/obj/machinery/door/window/westright,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "bal" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -8721,9 +8716,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/surface/section1)
-"bZH" = (
-/turf/simulated/wall/church_reinforced,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "bZJ" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -10061,6 +10053,12 @@
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"coY" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "cpb" = (
 /obj/item/storage/secure/safe{
 	pixel_x = 6;
@@ -14672,6 +14670,10 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"dqI" = (
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "dqP" = (
 /obj/structure/railing/grey,
 /obj/structure/table/bench/padded,
@@ -16862,6 +16864,9 @@
 "dRl" = (
 /turf/simulated/open,
 /area/nadezhda/quartermaster/underground_to_surface_disposal)
+"dRo" = (
+/turf/simulated/wall/church_reinforced,
+/area/nadezhda/absolutism/vectorrooms)
 "dRq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/furniture/pottedplant,
@@ -17239,12 +17244,6 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
-"dUS" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "dVd" = (
 /obj/structure/lattice,
 /obj/machinery/light/floor{
@@ -20262,9 +20261,6 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/absolutism/skyyard)
-"eIg" = (
-/turf/simulated/wall/church_reinforced,
-/area/nadezhda/absolutism/chapel)
 "eIj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/water/top,
@@ -20343,10 +20339,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "eJe" = (
@@ -22417,6 +22410,14 @@
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"feE" = (
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/engineering/atmos)
 "feH" = (
 /obj/structure/table/standard,
 /obj/item/virusdish/random,
@@ -24872,10 +24873,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "fEJ" = (
@@ -25355,9 +25353,6 @@
 /obj/structure/flora/small/busha3,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
-"fJo" = (
-/turf/simulated/wall/wood_barrel,
-/area/nadezhda/crew_quarters/hydroponics/garden)
 "fJq" = (
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/dirt,
@@ -27083,6 +27078,9 @@
 	disk_name = "Absolute Armory - Plasma Shell Prime Pack";
 	license = 24
 	},
+/obj/item/computer_hardware/hard_drive/portable/design/guns/concillium,
+/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
+/obj/item/computer_hardware/hard_drive/portable/design/guns/antebellum,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "geH" = (
@@ -29994,10 +29992,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/surface/section1)
 "gKn" = (
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "gKu" = (
@@ -31151,9 +31146,6 @@
 	},
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
-"gXU" = (
-/turf/simulated/wall/church_reinforced,
-/area/asteroid/cave)
 "gXZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -33102,6 +33094,9 @@
 "hwH" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"hwM" = (
+/turf/simulated/wall/church_reinforced,
+/area/nadezhda/absolutism/skyyard)
 "hwT" = (
 /obj/structure/lattice,
 /obj/effect/floor_decal/spline/plain{
@@ -36608,17 +36603,6 @@
 /obj/random/closet_maintloot,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"ipq" = (
-/obj/machinery/door/airlock/atmos{
-	name = "Atmospherics";
-	req_access = newlist();
-	req_one_access = list(24,10)
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "ipr" = (
 /obj/structure/table/woodentable,
 /obj/random/tool_upgrade/rare/low_chance,
@@ -37558,10 +37542,7 @@
 "izT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/skyyard)
 "izV" = (
@@ -38314,10 +38295,6 @@
 	name = "N2O to Transit"
 	},
 /turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/engineering/atmos)
-"iJk" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal,
-/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "iJo" = (
 /obj/effect/decal/cleanable/dirt,
@@ -39287,9 +39264,6 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"iUx" = (
-/turf/simulated/wall/church_reinforced,
-/area/nadezhda/absolutism/vectorrooms)
 "iUC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable,
@@ -40552,14 +40526,6 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/abandoned_solars)
-"jjI" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/nadezhda/engineering/atmos)
 "jjJ" = (
 /obj/machinery/light{
 	dir = 8;
@@ -42278,8 +42244,9 @@
 /obj/item/gun/energy/plasma/destroyer,
 /obj/item/gun/energy/plasma/destroyer,
 /obj/item/gun/energy/plasma/destroyer,
-/obj/item/gun/energy/plasma/destroyer,
-/obj/item/gun/energy/plasma/destroyer,
+/obj/item/gun/energy/plasma/antebellum,
+/obj/item/gun/energy/carpediem,
+/obj/item/gun/energy/concillium,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "jCQ" = (
@@ -43610,15 +43577,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/security/detectives_office)
-"jRI" = (
-/obj/machinery/light/small,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 5;
-	icon_state = "intact";
-	tag = "icon-intact (NORTHEAST)"
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "jRJ" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8;
@@ -44259,10 +44217,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "jZK" = (
@@ -44721,14 +44676,6 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
-"kfY" = (
-/obj/machinery/door/airlock/atmos{
-	name = "Atmospherics";
-	req_access = newlist();
-	req_one_access = list(24,10)
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "kgc" = (
 /obj/structure/table/standard,
 /obj/random/medical,
@@ -45280,10 +45227,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/chapel)
 "kmc" = (
@@ -46035,6 +45979,15 @@
 /area/nadezhda/crew_quarters/dorm2{
 	name = "Dormitory 2"
 	})
+"ktl" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "kts" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -50932,6 +50885,15 @@
 "lvw" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/maintenance/substation/section2)
+"lvF" = (
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics";
+	req_access = newlist();
+	req_one_access = list(24,10)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "lvO" = (
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 1
@@ -52858,6 +52820,15 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
+"lSy" = (
+/obj/machinery/light/small,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5;
+	icon_state = "intact";
+	tag = "icon-intact (NORTHEAST)"
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "lSB" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -58807,10 +58778,7 @@
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 2
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/chapel)
 "nic" = (
@@ -59533,10 +59501,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "nrH" = (
@@ -61574,9 +61539,6 @@
 /obj/item/device/synthesized_instrument/violin,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/campground)
-"nPw" = (
-/turf/simulated/wall/church_reinforced,
-/area/nadezhda/absolutism/bioreactor)
 "nPy" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/range{
@@ -62048,6 +62010,14 @@
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/hallway/surface/section1)
+"nWt" = (
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics";
+	req_access = newlist();
+	req_one_access = list(24,10)
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "nWv" = (
 /obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/carpet/purcarpet,
@@ -62889,6 +62859,9 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"oft" = (
+/turf/simulated/wall/church_reinforced,
+/area/nadezhda/absolutism/bioreactor)
 "ofu" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 0;
@@ -64147,7 +64120,8 @@
 /obj/item/gun/projectile/mk58/wood,
 /obj/item/gun/projectile/mk58/wood,
 /obj/item/gun/projectile/mk58/wood,
-/obj/item/gun/projectile/mk58/wood,
+/obj/item/gun/projectile/revolver/lemant/claw,
+/obj/item/ammo_magazine/ammobox/magnum_40/biomatter,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "ouw" = (
@@ -66431,10 +66405,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/vectorrooms)
 "oTD" = (
@@ -70050,15 +70021,6 @@
 /obj/item/book/manual/wiki/chef_recipes,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
-"pMD" = (
-/obj/machinery/door/airlock/atmos{
-	name = "Atmospherics";
-	req_access = newlist();
-	req_one_access = list(24,10)
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "pMI" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/random/flora/small_jungle_tree,
@@ -70547,10 +70509,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest)
 "pQO" = (
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/chapel)
 "pQP" = (
@@ -70790,10 +70749,7 @@
 	dir = 4;
 	icon_state = "pipe-s"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/skyyard)
 "pTD" = (
@@ -72144,13 +72100,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
-"qjK" = (
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 8
-	},
-/obj/machinery/door/window/westright,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/atmos)
 "qjR" = (
 /obj/structure/medical_stand,
 /turf/simulated/floor/tiled/white/cyancorner,
@@ -76012,10 +75961,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "raP" = (
@@ -78925,10 +78871,7 @@
 /area/nadezhda/pros/foreman)
 "rGx" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/storage)
 "rGz" = (
@@ -83044,6 +82987,9 @@
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"sEO" = (
+/turf/simulated/wall/church_reinforced,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "sEQ" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 4
@@ -86638,6 +86584,17 @@
 /obj/landmark/join/start/supsec,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
+"tvL" = (
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics";
+	req_access = newlist();
+	req_one_access = list(24,10)
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/atmos)
 "tvQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -87806,10 +87763,7 @@
 	dir = 4;
 	icon_state = "pipe-s"
 	},
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/crematorium)
 "tJK" = (
@@ -90253,9 +90207,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/main/stairwell)
-"uoM" = (
-/turf/simulated/wall/church_reinforced,
-/area/nadezhda/absolutism/skyyard)
 "upe" = (
 /obj/machinery/door/airlock/command{
 	name = "Telecommunications";
@@ -94697,6 +94648,9 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"vir" = (
+/turf/simulated/wall/church_reinforced,
+/area/nadezhda/absolutism/chapel)
 "vis" = (
 /obj/structure/ore_box,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -96999,6 +96953,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
+"vHA" = (
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "vHN" = (
 /obj/structure/table/bench/marble,
 /obj/effect/decal/cleanable/dirt,
@@ -100061,6 +100018,9 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/pool)
+"wpF" = (
+/turf/simulated/wall/church_reinforced,
+/area/asteroid/cave)
 "wpH" = (
 /obj/machinery/atmospherics/binary/pump/high_power,
 /obj/machinery/light{
@@ -102365,6 +102325,9 @@
 /obj/item/contraband/poster,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"wQY" = (
+/turf/simulated/wall/church_reinforced,
+/area/nadezhda/outside/meadow)
 "wRk" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -104378,10 +104341,7 @@
 	})
 "xpb" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "xpc" = (
@@ -104810,6 +104770,12 @@
 /area/nadezhda/crew_quarters/dorm3{
 	name = "Dormitory 3"
 	})
+"xuI" = (
+/obj/machinery/nanite_reconstitution_apparatus/loaded,
+/obj/item/reagent_containers/glass/beaker/vial/uncapnanites,
+/obj/item/reagent_containers/glass/beaker/vial/uncapnanites,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/security/armory)
 "xuN" = (
 /obj/random/furniture/pottedplant,
 /obj/structure/cable/yellow{
@@ -107012,10 +106978,7 @@
 /area/nadezhda/hallway/surface/section1)
 "xTb" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/window_lwall_spawn/smartspawn/church{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/bioreactor)
 "xTe" = (
@@ -122215,7 +122178,7 @@ eAI
 eAI
 frf
 nKC
-nKC
+xuI
 uqw
 knD
 wcv
@@ -176317,7 +176280,7 @@ ghx
 gIW
 hCc
 crV
-jjI
+feE
 gIW
 hCc
 crV
@@ -178122,10 +178085,10 @@ sFI
 sFI
 sFI
 crV
-dUS
-pMD
-iJk
-jRI
+coY
+lvF
+dqI
+lSy
 crV
 crV
 crV
@@ -178324,10 +178287,10 @@ crV
 crV
 crV
 crV
-qjK
+bah
 crV
 crV
-ipq
+tvL
 crV
 crV
 crV
@@ -178526,10 +178489,10 @@ iNR
 crV
 rdU
 rdU
-kfY
+nWt
 rdU
 crV
-aCs
+ktl
 vQv
 edQ
 crV
@@ -210501,14 +210464,14 @@ sbB
 vUJ
 vUJ
 xfb
-aMg
-aMg
-aMg
-aMg
-aMg
-aMg
-aMg
-aMg
+wQY
+wQY
+wQY
+wQY
+wQY
+wQY
+wQY
+wQY
 fXR
 vAX
 fXR
@@ -210681,27 +210644,27 @@ poE
 epc
 rjh
 gSM
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-aMg
-aMg
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+wQY
+wQY
 klX
 nib
-aMg
-aMg
-aMg
-aMg
+wQY
+wQY
+wQY
+wQY
 bVb
 opH
 opH
@@ -210710,7 +210673,7 @@ opH
 opH
 opH
 opH
-aMg
+wQY
 wVU
 gyc
 wVU
@@ -210895,15 +210858,15 @@ pci
 qHh
 dtG
 pci
-eIg
-aMg
-aMg
+vir
+wQY
+wQY
 klX
 nib
-aMg
-aMg
-aMg
-aMg
+wQY
+wQY
+wQY
+wQY
 kMD
 opH
 jyK
@@ -210912,11 +210875,11 @@ opH
 jCL
 ylF
 opH
-aMg
-aMg
-aMg
-aMg
-aMg
+wQY
+wQY
+wQY
+wQY
+wQY
 sbB
 vUJ
 vUJ
@@ -211097,7 +211060,7 @@ xtm
 mcP
 mcP
 doA
-eIg
+vir
 xDI
 cNE
 kyt
@@ -211118,8 +211081,8 @@ opH
 opH
 opH
 opH
-aMg
-aMg
+wQY
+wQY
 vUJ
 vUJ
 sbB
@@ -211287,19 +211250,19 @@ sty
 epc
 wXd
 pmt
-eIg
-eIg
+vir
+vir
 pQO
 pQO
 pQO
 pQO
-eIg
-eIg
+vir
+vir
 qFY
 mcP
 mcP
 ndM
-eIg
+vir
 boU
 fiW
 lLw
@@ -211321,7 +211284,7 @@ xrD
 cxF
 opH
 opH
-aMg
+wQY
 vUJ
 vUJ
 gRK
@@ -211490,18 +211453,18 @@ fqE
 qMM
 mqc
 wGn
-eIg
+vir
 fiW
 fiW
 fiW
 fiW
-eIg
-eIg
+vir
+vir
 cxA
 mcP
 mcP
 xOv
-eIg
+vir
 rjV
 fiW
 lLw
@@ -211523,7 +211486,7 @@ bPu
 cxF
 hvz
 opH
-aMg
+wQY
 vUJ
 eqh
 eqh
@@ -211703,7 +211666,7 @@ aFx
 aFx
 qKJ
 vKM
-eIg
+vir
 xDI
 fiW
 lLw
@@ -211725,7 +211688,7 @@ cxF
 cxF
 vqG
 opH
-aMg
+wQY
 vUJ
 eqh
 eqf
@@ -211927,7 +211890,7 @@ cxF
 cxF
 dBR
 opH
-aMg
+wQY
 owI
 eqh
 eqf
@@ -212107,7 +212070,7 @@ vFt
 ekp
 wbe
 pNu
-eIg
+vir
 xDI
 fiW
 iIr
@@ -212129,7 +212092,7 @@ cxF
 ujR
 opH
 opH
-aMg
+wQY
 vUJ
 eqh
 eqf
@@ -212298,18 +212261,18 @@ sAh
 wXd
 uPn
 wGn
-eIg
+vir
 fiW
 fiW
 fiW
 fiW
-eIg
-eIg
+vir
+vir
 ktR
 aQF
 mcP
 riP
-eIg
+vir
 xDI
 fiW
 iIr
@@ -212331,7 +212294,7 @@ ugj
 hmk
 opH
 opH
-aMg
+wQY
 vUJ
 eqh
 eqf
@@ -212499,19 +212462,19 @@ xjG
 rIb
 qMM
 qrQ
-eIg
-eIg
+vir
+vir
 pQO
 pQO
 pQO
 pQO
-eIg
-eIg
+vir
+vir
 dNI
 aQF
 mcP
 rrG
-eIg
+vir
 boU
 fiW
 iIr
@@ -212533,7 +212496,7 @@ opH
 opH
 opH
 opH
-aMg
+wQY
 vUJ
 eqh
 eqf
@@ -212713,7 +212676,7 @@ dNI
 aQF
 mcP
 rrG
-eIg
+vir
 uOA
 tby
 uYT
@@ -212730,12 +212693,12 @@ rrx
 pZI
 cye
 opH
-aMg
-aMg
-aMg
-aMg
-aMg
-aMg
+wQY
+wQY
+wQY
+wQY
+wQY
+wQY
 vUJ
 eqh
 eqf
@@ -212915,15 +212878,15 @@ pci
 dNo
 sfi
 pci
-eIg
-eIg
-eIg
+vir
+vir
+vir
 klX
 nib
-eIg
-eIg
-eIg
-eIg
+vir
+vir
+vir
+vir
 fuZ
 opH
 rHD
@@ -212932,7 +212895,7 @@ qTC
 uCH
 ggs
 opH
-aMg
+wQY
 wVU
 gyc
 wVU
@@ -213105,27 +213068,27 @@ bqz
 bqz
 cnn
 qmD
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
-eIg
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
+vir
 klX
 nib
-eIg
-eIg
-eIg
-eIg
+vir
+vir
+vir
+vir
 mXo
 opH
 opH
@@ -213134,7 +213097,7 @@ opH
 opH
 opH
 opH
-aMg
+wQY
 fXR
 vAX
 fXR
@@ -213316,7 +213279,7 @@ wzU
 wzU
 wzU
 wzU
-iUx
+dRo
 mHf
 gou
 tZm
@@ -213329,14 +213292,14 @@ yfE
 qyo
 ntC
 pDI
-aMg
-aMg
-aMg
-aMg
-aMg
-aMg
-aMg
-aMg
+wQY
+wQY
+wQY
+wQY
+wQY
+wQY
+wQY
+wQY
 rWq
 leU
 leU
@@ -213518,7 +213481,7 @@ wzU
 wzU
 wzU
 wzU
-iUx
+dRo
 elF
 qox
 qox
@@ -213526,10 +213489,10 @@ qQZ
 rOh
 qQZ
 rqj
-iUx
-iUx
-iUx
-iUx
+dRo
+dRo
+dRo
+dRo
 mVE
 pLt
 qgJ
@@ -213715,12 +213678,12 @@ pwm
 pwm
 pwm
 oXE
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
 oQZ
 qox
 qox
@@ -213731,7 +213694,7 @@ qQZ
 qQZ
 ccn
 cZV
-iUx
+dRo
 koL
 fxv
 jHx
@@ -213917,12 +213880,12 @@ pwm
 uXK
 uXK
 oXE
-iUx
+dRo
 lkJ
 vkU
 opN
 hMs
-iUx
+dRo
 cNP
 rYv
 qQZ
@@ -214119,12 +214082,12 @@ iMD
 dFx
 bAk
 oXE
-iUx
-iUx
-iUx
+dRo
+dRo
+dRo
 nlp
 ugn
-iUx
+dRo
 int
 rYv
 qox
@@ -214135,7 +214098,7 @@ qQZ
 vMI
 rOh
 fgb
-iUx
+dRo
 dCC
 yjK
 vUJ
@@ -214321,12 +214284,12 @@ pwm
 nBw
 fLG
 oXE
-iUx
+dRo
 lkJ
 vkU
 sUM
 eSm
-iUx
+dRo
 vsl
 rYv
 hAv
@@ -214523,12 +214486,12 @@ pwm
 pOS
 qWG
 oXE
-iUx
-iUx
-iUx
+dRo
+dRo
+dRo
 sSM
 sUM
-iUx
+dRo
 sGE
 rYv
 hAv
@@ -214725,12 +214688,12 @@ pwm
 vvK
 bAk
 oXE
-iUx
+dRo
 qza
 vdu
 rMH
 juo
-iUx
+dRo
 jAU
 rYv
 hAv
@@ -214926,13 +214889,13 @@ bAk
 dkg
 bZF
 bAk
-iUx
-iUx
+dRo
+dRo
 grQ
 sUM
 sUM
 mPy
-iUx
+dRo
 usX
 ahn
 uaN
@@ -215330,13 +215293,13 @@ nRM
 buS
 pwm
 pwm
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
 sPG
 qWp
 qQZ
@@ -215526,19 +215489,19 @@ lIg
 dVl
 vaT
 qkp
-nPw
-nPw
-nPw
+oft
+oft
+oft
 oKC
-nPw
-nPw
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
+oft
+oft
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
 sPG
 qWp
 ekD
@@ -215549,7 +215512,7 @@ iWQ
 iRf
 qox
 xzr
-bZH
+sEO
 wfn
 vFR
 vUJ
@@ -215728,7 +215691,7 @@ vaT
 vaT
 vaT
 qkp
-nPw
+oft
 eWs
 mCq
 nJR
@@ -215739,25 +215702,25 @@ xyg
 bME
 eoh
 qIF
-nPw
-iUx
-iUx
+oft
+dRo
+dRo
 olA
-iUx
-iUx
-iUx
+dRo
+dRo
+dRo
 wSl
-iUx
-iUx
-iUx
-bZH
-bZH
+dRo
+dRo
+dRo
+sEO
+sEO
 wfn
 hvW
 vUJ
 rIN
 frU
-fJo
+vHA
 frU
 rEL
 vUJ
@@ -215930,7 +215893,7 @@ sfG
 imO
 lNu
 tPK
-nPw
+oft
 hov
 uww
 oJb
@@ -215941,18 +215904,18 @@ nbK
 rKo
 bRX
 qIF
-nPw
-iUx
-iUx
+oft
+dRo
+dRo
 oBo
 nmo
 diT
-iUx
+dRo
 oBo
 uqM
 fBV
-iUx
-bZH
+dRo
+sEO
 kVO
 fAA
 leU
@@ -216132,7 +216095,7 @@ kRE
 gxW
 mfV
 lem
-nPw
+oft
 uHt
 uww
 sAo
@@ -216143,18 +216106,18 @@ afV
 mCq
 iDu
 qIF
-nPw
-iUx
-iUx
+oft
+dRo
+dRo
 guj
 qQZ
 hHU
-iUx
+dRo
 guj
 qQZ
 qQZ
 gzV
-bZH
+sEO
 oMM
 vIL
 vUJ
@@ -216334,7 +216297,7 @@ sfG
 imO
 bJC
 pEI
-nPw
+oft
 ifo
 qBQ
 hkR
@@ -216345,23 +216308,23 @@ vcq
 mCq
 mCq
 kFi
-nPw
-iUx
+oft
+dRo
 gzV
 kZn
 xwO
 quT
-iUx
+dRo
 tTa
 xwO
 quT
-iUx
-bZH
-bZH
+dRo
+sEO
+sEO
 owa
-bZH
-bZH
-fJo
+sEO
+sEO
+vHA
 wJU
 hbO
 uOU
@@ -216547,27 +216510,27 @@ vcq
 mCq
 pDr
 uUh
-nPw
-iUx
-iUx
+oft
+dRo
+dRo
 mjw
 gzV
 vtp
-iUx
+dRo
 mjw
 gzV
 vtp
-iUx
+dRo
 uVK
 uVK
 kVt
-bZH
-bZH
-fJo
-fJo
-fJo
-fJo
-fJo
+sEO
+sEO
+vHA
+vHA
+vHA
+vHA
+vHA
 cRj
 jZc
 jZc
@@ -216738,7 +216701,7 @@ lLF
 xJm
 vaT
 eIx
-nPw
+oft
 ylz
 sZu
 efu
@@ -216749,17 +216712,17 @@ tNb
 daZ
 jNI
 uUh
-nPw
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
-iUx
+oft
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
+dRo
 kbl
 kFQ
 sMN
@@ -216940,7 +216903,7 @@ wan
 wxz
 vaT
 pkv
-nPw
+oft
 pPU
 puT
 nTE
@@ -216951,7 +216914,7 @@ hpm
 hpm
 lHE
 uUh
-nPw
+oft
 uVK
 uVK
 uVK
@@ -217142,7 +217105,7 @@ dXg
 kLp
 vaT
 nvI
-nPw
+oft
 meA
 eNx
 qfx
@@ -217153,7 +217116,7 @@ ctC
 wIe
 mCq
 sPh
-nPw
+oft
 uVx
 xrs
 tPN
@@ -217344,7 +217307,7 @@ wIg
 uob
 gUg
 brN
-nPw
+oft
 oPl
 uUJ
 deL
@@ -217355,7 +217318,7 @@ qHo
 jTL
 mCq
 hmj
-nPw
+oft
 mce
 jkf
 fPi
@@ -217369,8 +217332,8 @@ uVK
 xEe
 fsi
 ucs
-bZH
-bZH
+sEO
+sEO
 gMH
 rjJ
 mYf
@@ -217546,7 +217509,7 @@ fsM
 aom
 vaT
 soq
-nPw
+oft
 azM
 uUJ
 oSN
@@ -217557,7 +217520,7 @@ sDT
 qPy
 mCq
 uPd
-nPw
+oft
 qQO
 epB
 cfH
@@ -217748,7 +217711,7 @@ bqj
 vaT
 pwm
 soq
-nPw
+oft
 cuT
 dYM
 dKo
@@ -217759,7 +217722,7 @@ jeg
 vcq
 mCq
 vfg
-nPw
+oft
 uVK
 uVK
 xqJ
@@ -217773,7 +217736,7 @@ uVK
 lze
 fsi
 ycP
-bZH
+sEO
 itH
 jje
 qmQ
@@ -217950,7 +217913,7 @@ pwm
 pwm
 gTr
 mAy
-nPw
+oft
 tgh
 mCq
 bkk
@@ -217961,7 +217924,7 @@ mCq
 mCq
 mCq
 gHI
-nPw
+oft
 tzJ
 iZz
 fpd
@@ -218151,8 +218114,8 @@ xGz
 xGz
 pwm
 soq
-nPw
-nPw
+oft
+oft
 sJX
 vcq
 vGk
@@ -218353,7 +218316,7 @@ pwm
 pwm
 pwm
 soz
-nPw
+oft
 hSC
 vcq
 jHL
@@ -218563,11 +218526,11 @@ oYg
 nSn
 hNx
 sJb
-nPw
+oft
 mCq
 rhf
 mCq
-nPw
+oft
 pIr
 acB
 eCm
@@ -218765,11 +218728,11 @@ cox
 cox
 cox
 mAy
-nPw
+oft
 lZC
-nPw
+oft
 wuN
-nPw
+oft
 uVK
 uVK
 uVK
@@ -218783,7 +218746,7 @@ uVK
 uVK
 rqm
 kNn
-bZH
+sEO
 ewj
 gYP
 sdN
@@ -218959,11 +218922,11 @@ pwm
 pwm
 soz
 pwm
-gXU
-gXU
-gXU
-gXU
-gXU
+wpF
+wpF
+wpF
+wpF
+wpF
 uVK
 jXd
 jXd
@@ -218985,7 +218948,7 @@ veZ
 uVK
 jwd
 fBw
-bZH
+sEO
 kHd
 khb
 sdN
@@ -219187,7 +219150,7 @@ veZ
 uVK
 fsi
 fBw
-bZH
+sEO
 kHd
 khb
 sdN
@@ -219588,10 +219551,10 @@ vzY
 vzY
 vzY
 vzY
-uoM
-uoM
+hwM
+hwM
 pTz
-bZH
+sEO
 lQG
 rcO
 sdN
@@ -219793,7 +219756,7 @@ bLR
 msU
 vzY
 iRu
-bZH
+sEO
 lQG
 rcO
 sdN
@@ -220197,8 +220160,8 @@ vzY
 vzY
 vzY
 eip
-bZH
-bZH
+sEO
+sEO
 rcO
 sdN
 xPP
@@ -220400,7 +220363,7 @@ npq
 vzY
 eip
 npq
-bZH
+sEO
 rcO
 vWy
 cAo
@@ -220602,7 +220565,7 @@ vzY
 vzY
 eip
 npq
-bZH
+sEO
 rcO
 khb
 xPP
@@ -220804,7 +220767,7 @@ lYa
 bci
 bkH
 npq
-bZH
+sEO
 rcO
 khb
 xPP
@@ -221006,7 +220969,7 @@ vzY
 vzY
 eip
 npq
-bZH
+sEO
 dua
 khb
 xPP
@@ -221208,7 +221171,7 @@ npq
 vzY
 eip
 npq
-bZH
+sEO
 rcO
 khb
 xPP
@@ -221400,17 +221363,17 @@ veZ
 veZ
 veZ
 veZ
-uoM
-uoM
+hwM
+hwM
 luo
-uoM
-uoM
-uoM
-uoM
+hwM
+hwM
+hwM
+hwM
 vzY
 iRu
 npq
-bZH
+sEO
 rcO
 khb
 xPP
@@ -221602,17 +221565,17 @@ veZ
 veZ
 veZ
 veZ
-uoM
+hwM
 gEm
 bcG
 dKJ
 uSd
 bcG
-uoM
+hwM
 vzY
 rAI
 nld
-bZH
+sEO
 bZy
 oly
 cSF
@@ -221804,17 +221767,17 @@ veZ
 veZ
 veZ
 veZ
-uoM
+hwM
 gEm
 bcG
 cxn
 kLt
 bcG
-uoM
+hwM
 vzY
 uPQ
 tJz
-bZH
+sEO
 wyk
 oly
 oly
@@ -222005,15 +221968,15 @@ veZ
 veZ
 veZ
 veZ
-uoM
-uoM
+hwM
+hwM
 gEm
 bcG
 ggt
 bcG
 eIc
-uoM
-uoM
+hwM
+hwM
 uPQ
 pDF
 feb
@@ -222207,7 +222170,7 @@ cPp
 veZ
 veZ
 wLD
-uoM
+hwM
 aav
 eVr
 eVr
@@ -222215,7 +222178,7 @@ avn
 eVr
 eVr
 uVt
-uoM
+hwM
 usM
 qso
 grg
@@ -222409,7 +222372,7 @@ cPp
 veZ
 veZ
 veZ
-uoM
+hwM
 rdX
 hGI
 bcG
@@ -222417,10 +222380,10 @@ bcG
 bcG
 hGI
 sjl
-uoM
+hwM
 grJ
 qso
-bZH
+sEO
 rFf
 woI
 woI
@@ -222611,7 +222574,7 @@ cPp
 veZ
 veZ
 veZ
-uoM
+hwM
 kDY
 bcG
 bcG
@@ -222813,7 +222776,7 @@ veZ
 wLD
 veZ
 veZ
-uoM
+hwM
 vkH
 bcG
 bcG
@@ -223015,7 +222978,7 @@ wLD
 veZ
 veZ
 veZ
-uoM
+hwM
 uSK
 bcG
 bcG
@@ -223217,7 +223180,7 @@ wLD
 wLD
 cPp
 kIT
-uoM
+hwM
 rdX
 hGI
 bcG
@@ -223225,10 +223188,10 @@ bcG
 bcG
 hGI
 rdX
-uoM
+hwM
 grJ
 qZZ
-bZH
+sEO
 kUT
 oly
 wAe
@@ -223427,7 +223390,7 @@ gRn
 rdX
 rdX
 rdX
-uoM
+hwM
 usM
 qso
 gKn
@@ -223621,7 +223584,7 @@ veZ
 veZ
 veZ
 wLD
-uoM
+hwM
 qdx
 wvN
 wvN
@@ -223629,7 +223592,7 @@ nsn
 mkK
 jlx
 jlx
-uoM
+hwM
 usM
 qso
 gKn
@@ -223823,18 +223786,18 @@ veZ
 veZ
 veZ
 wLD
-uoM
-uoM
-uoM
-uoM
-uoM
-uoM
-uoM
-uoM
-uoM
+hwM
+hwM
+hwM
+hwM
+hwM
+hwM
+hwM
+hwM
+hwM
 uPQ
 qso
-bZH
+sEO
 uqm
 ktK
 oly
@@ -224034,7 +223997,7 @@ veZ
 veZ
 veZ
 veZ
-gXU
+wpF
 nFi
 yeP
 xoL
@@ -224238,7 +224201,7 @@ veZ
 veZ
 sUr
 wcb
-bZH
+sEO
 cnM
 vzQ
 oly
@@ -224440,16 +224403,16 @@ veZ
 veZ
 sUr
 wxE
-bZH
-bZH
-bZH
-bZH
-bZH
-bZH
-bZH
-bZH
-bZH
-bZH
+sEO
+sEO
+sEO
+sEO
+sEO
+sEO
+sEO
+sEO
+sEO
+sEO
 shE
 hxv
 vUJ

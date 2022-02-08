@@ -75,6 +75,11 @@
 	desc = "A sturdy cloth that covers the private areas."
 	icon_state = "loincloth"
 
+/obj/item/clothing/under/chestwrap
+	name = "chest wrap"
+	desc = "A sturdy cloth that covers the private areas of females."
+	icon_state = "chestwrap"
+
 /obj/item/clothing/under/gharness
 	name = "gear harness"
 	desc = "A series of belts and straps to hold your equipment. Originally designed for simple drones and synths, this is hardly a modest option for organics."

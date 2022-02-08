@@ -65,9 +65,6 @@ proc/BC_WhitelistKey(var/key)
 		else // Already in
 			return 0
 
-		return
-
-
 //////////////////////////////////////////////////////////////////////////////////
 ADMIN_VERB_ADD(/client/proc/BC_RemoveKeyVerb, R_ADMIN, FALSE)
 /client/proc/BC_RemoveKeyVerb()

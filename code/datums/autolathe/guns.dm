@@ -499,6 +499,18 @@
 	name = "NM \"Sunrise\" L-SMG"
 	build_path = /obj/item/gun/energy/sunrise
 
+/datum/design/autolathe/gun/plasma/antebellum
+	name = "NT PR \"Antebellum\""
+	build_path = /obj/item/gun/energy/plasma/antebellum
+
+/datum/design/autolathe/gun/concillium
+	name = "NT Las-MG \"Concillium\""
+	build_path = /obj/item/gun/energy/concillium
+
+/datum/design/autolathe/gun/carpediem
+	name = "NT LM \"Carpediem\""
+	build_path = /obj/item/gun/energy/carpediem
+
 // Gun mods
 
 /datum/design/autolathe/gun/cop_mod

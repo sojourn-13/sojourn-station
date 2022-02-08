@@ -439,6 +439,15 @@
 	if(issilicon(target))
 		return FALSE
 
+	//Opifex or Nanogate can't use genetics. If they try, their body begins removing the affected cells- manually.
+	if(ishuman(target))
+		var/mob/living/carbon/human/human_target = target
+		var/obj/item/organ/internal/nanogate/nanogate = human_target.random_organ_by_process(BP_NANOGATE)
+		if(nanogate)
+			to_chat(human_target, SPAN_DANGER("You hear a synthetic voice, \"FOREIGN ORGANISM DETECTED. NEUTRALIZING\" before you feel something eating away at you on a celluar level."))
+			holder.adjustCloneLoss(2)
+			return FALSE
+
 	//Add the mutations in a separate loop from the activation step.
 	for(var/datum/genetics/mutation/injected_mutation in mutation_pool)
 		var/datum/genetics/mutation/new_mutation = injected_mutation.copy()

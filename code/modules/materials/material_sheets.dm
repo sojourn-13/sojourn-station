@@ -12,17 +12,15 @@
 	var/material/material
 	var/apply_colour //temp pending icon rewrite
 
-/obj/item/stack/material/New(var/loc, var/material_count=null)
+/obj/item/stack/material/New(loc, material_count=null)
 	.=..(loc, material_count)
 	//Make shards if there is a remainder for any reason. If it rounds down to zero, remove it.'
-	var/remainder = src.amount - round(src.amount, 1)
+	var/remainder = amount - round(amount, 1)
 	if(remainder != 0)
-		#ifdef JANEDEBUG
-		log_debug("Item: [src.type] Initial amount:[src.amount] Remainder: [remainder]")
-		#endif JANEDEBUG
-		src.amount -= remainder
+		log_debug("Item: [type] Initial amount:[amount] Remainder: [remainder]")
+		amount -= remainder
 		new /obj/item/material/shard(get_turf(src), default_type, remainder)
-		if(src.amount == 0)
+		if(amount == 0)
 			qdel(src)
 			return
 

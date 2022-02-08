@@ -34,8 +34,9 @@
 	icon_state = "tech-orange-low"
 	spawn_nothing_percentage = 80
 
-
-
+/obj/random/tool_upgrade/always
+	name = "always random tool upgrade"
+	spawn_nothing_percentage = 0
 
 /obj/random/tool_upgrade/rare
 	name = "random rare tool upgrade"

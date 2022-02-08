@@ -6,8 +6,8 @@
 	gain_text = "You see the world thru sound."
 	exclusive_type = MUT_TYPE_EYES
 	instability = 40
-	var old_vision
-	var old_flash
+	var/old_vision
+	var/old_flash
 
 /datum/genetics/mutation/echolocation/onPlayerImplant()
 	if(!..())

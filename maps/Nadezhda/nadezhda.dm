@@ -12,12 +12,12 @@
 //#include "_Nadezhda_Colony_Surface.dmm"
 #include "map/_Nadezhda_Solar_Area.dmm"
 
-/*
+
 /obj/map_data/eris
 	name = "Eris"
 	is_sealed = TRUE
 	height = 1
-*/
+
 
 /obj/map_data/nadezda_ues //Omnie level has all three surface underground and stairs
 	name = "Nadezhda Omni Map"
