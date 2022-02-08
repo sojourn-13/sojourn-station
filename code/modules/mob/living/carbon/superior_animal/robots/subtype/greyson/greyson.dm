@@ -4,6 +4,7 @@
 	icon = 'icons/mob/battle_roomba.dmi'
 	icon_state = "roomba"
 	faction = "greyson"
+	cant_be_pulled = TRUE
 
 //spawners
 /obj/random/mob/roomba
