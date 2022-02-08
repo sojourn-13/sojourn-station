@@ -235,6 +235,8 @@
 	..()
 
 /datum/perk/bluespace/on_process()
+	if(!..())
+		return
 	if(cooldown_time <= world.time)
 		holder.stats.removePerk(type)
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))
