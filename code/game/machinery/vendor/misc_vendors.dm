@@ -820,7 +820,8 @@
 					/obj/item/cardholder/squirl = 20,
 					/obj/item/cardholder/ratbox = 20,
 					/obj/item/storage/hcases/cardcarp = 20,
-					/obj/item/card_carp = 50
+					/obj/item/card_carp = 50,
+					/obj/item/card_carp/index = 50
 					)
 	prices = list(
 					/obj/item/board = 35,
@@ -837,7 +838,8 @@
 					/obj/item/cardholder/squirl = 30,
 					/obj/item/cardholder/ratbox = 30,
 					/obj/item/storage/hcases/cardcarp = 20,
-					/obj/item/card_carp = 1)
+					/obj/item/card_carp = 1,
+					/obj/item/card_carp/index = 1)
 
 /obj/machinery/vending/gamers/hunters
 	name = "Pre-Payed Game Emporium"
@@ -857,7 +859,8 @@
 					/obj/item/cardholder/squirl = 4,
 					/obj/item/cardholder/ratbox = 4,
 					/obj/item/storage/hcases/cardcarp = 4,
-					/obj/item/card_carp = 4
+					/obj/item/card_carp = 4,
+					/obj/item/card_carp/index = 4
 					)
 	prices = list(
 					/obj/item/board = 0,
@@ -874,4 +877,5 @@
 					/obj/item/cardholder/squirl = 0,
 					/obj/item/cardholder/ratbox = 0,
 					/obj/item/storage/hcases/cardcarp = 0,
-					/obj/item/card_carp = 0)
+					/obj/item/card_carp = 0,
+					/obj/item/card_carp/index = 0)
