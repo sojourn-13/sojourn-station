@@ -2,10 +2,6 @@
 "a" = (
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"b" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/cafe,
-/area/crawler)
 "c" = (
 /turf/simulated/floor/tiled/cafe,
 /area/crawler)
@@ -22,13 +18,6 @@
 "f" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
-/area/crawler)
-"g" = (
-/obj/machinery/light/floor,
-/obj/effect/floor_decal/industrial/danger{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "h" = (
 /obj/structure/table/onestar,
@@ -78,20 +67,6 @@
 /obj/structure/medical_stand,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
-"q" = (
-/obj/machinery/light/floor,
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"r" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "s" = (
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/derelict,
@@ -104,7 +79,6 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/obj/effect/floor_decal/sign,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "v" = (
@@ -123,8 +97,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "y" = (
-/obj/structure/low_wall,
-/obj/effect/window_lwall_spawn,
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "z" = (
@@ -227,13 +200,13 @@ a
 "}
 (3,1,1) = {"
 a
-b
+c
 l
 j
 j
 j
 A
-b
+c
 a
 "}
 (4,1,1) = {"
@@ -259,18 +232,18 @@ y
 i
 "}
 (6,1,1) = {"
-i
+a
 j
 j
-g
 u
-g
+u
+u
 j
 j
 i
 "}
 (7,1,1) = {"
-i
+a
 j
 x
 x
@@ -281,12 +254,12 @@ x
 i
 "}
 (8,1,1) = {"
-i
+a
 j
 j
-q
 v
-r
+v
+v
 j
 j
 i
@@ -315,13 +288,13 @@ a
 "}
 (11,1,1) = {"
 a
-b
+c
 n
 j
 j
 j
 D
-b
+c
 a
 "}
 (12,1,1) = {"

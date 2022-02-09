@@ -13,12 +13,6 @@
 "d" = (
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
-"e" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
 "f" = (
 /obj/structure/railing,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
@@ -69,10 +63,6 @@
 /obj/structure/catwalk,
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/crawler)
-"p" = (
-/obj/machinery/light/built,
-/turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 "q" = (
 /obj/structure/railing{
@@ -161,7 +151,7 @@ l
 s
 s
 s
-p
+d
 b
 b
 "}
@@ -190,11 +180,11 @@ m
 (7,1,1) = {"
 m
 b
-e
+d
 i
 k
 i
-p
+d
 b
 m
 "}
@@ -234,11 +224,11 @@ b
 (11,1,1) = {"
 b
 b
-e
+d
 j
 d
 j
-p
+d
 b
 b
 "}

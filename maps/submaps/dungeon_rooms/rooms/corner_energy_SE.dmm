@@ -3,8 +3,10 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "b" = (
-/obj/crawler/crawler_wallbreaker,
-/turf/simulated/floor/bluegrid,
+/obj/machinery/power/terminal,
+/obj/structure/catwalk,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "c" = (
 /turf/simulated/floor/tiled/derelict,
@@ -42,7 +44,7 @@
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "j" = (
-/obj/machinery/light/floor,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "k" = (
@@ -73,14 +75,12 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "p" = (
-/obj/effect/floor_decal/industrial/warning{
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"q" = (
-/turf/simulated/floor/bluegrid,
+/obj/structure/lattice,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/plating/under,
 /area/crawler)
 "r" = (
 /obj/effect/floor_decal/industrial/loading{
@@ -88,10 +88,6 @@
 	},
 /obj/random/powercell,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"s" = (
-/obj/crawler/crawler_wallbreaker/vertical,
-/turf/simulated/floor/bluegrid,
 /area/crawler)
 "t" = (
 /obj/machinery/power/terminal,
@@ -102,26 +98,9 @@
 /obj/machinery/power/smes/buildable,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/crawler)
-"v" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"w" = (
-/obj/effect/floor_decal/industrial/warning,
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "x" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"y" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor,
-/turf/simulated/floor/plating/under,
 /area/crawler)
 "z" = (
 /obj/structure/railing/grey{
@@ -176,9 +155,9 @@
 a
 a
 a
-q
-q
-s
+a
+a
+o
 a
 a
 a
@@ -191,7 +170,7 @@ c
 c
 x
 z
-y
+A
 a
 "}
 (3,1,1) = {"
@@ -199,7 +178,7 @@ a
 i
 h
 c
-c
+j
 x
 z
 A
@@ -220,17 +199,17 @@ a
 a
 h
 a
-j
 c
+j
 x
 z
 A
 C
 "}
 (6,1,1) = {"
-b
+C
 c
-j
+c
 c
 D
 x
@@ -239,24 +218,24 @@ A
 C
 "}
 (7,1,1) = {"
-b
+C
 c
 c
 c
 c
-w
+x
 z
 A
 C
 "}
 (8,1,1) = {"
-b
+C
 d
 d
 d
-p
+d
 a
-i
+p
 A
 C
 "}
@@ -275,7 +254,7 @@ C
 a
 f
 k
-t
+b
 G
 t
 u
@@ -298,7 +277,7 @@ a
 Q
 n
 g
-v
+n
 W
 n
 Q
