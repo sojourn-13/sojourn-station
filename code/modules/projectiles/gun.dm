@@ -900,7 +900,7 @@
 		if(folding_stock)
 			fold(span_chat = FALSE) //If we have a stock lets not remove all are boons cuz we looked down a scope
 
-/* //Eris has this but it, unsurpriingly, has issues, just gonna comment it out for now incase I use the code for something else later.
+/* //Eris has this but it, unsurpringly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/gun/proc/generate_guntags()
 	if(!zoom_factor && !(slot_flags & SLOT_HOLSTER))
 		gun_tags |= GUN_SCOPE
