@@ -1,4 +1,5 @@
-obj/item/gun/projectile/shotgun/Kodiak
+/obj/item/gun/projectile/shotgun/Kodiak
+
 	name = "\"Kodiak\"Slugthrower"
 	desc = "An over-under shotgun, based on the venerable Grizzly.  Reclaimed metals keeps costs affordable, and Church gunsmiths have been able to smooth out a bit of the recoil. Shame about the capacity, though."
 	icon = 'icons/obj/guns/projectile/kodiak.dmi'
