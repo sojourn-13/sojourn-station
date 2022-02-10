@@ -1262,6 +1262,7 @@
 #include "code\game\objects\random\lathe_disks\lathe_disks.dm"
 #include "code\game\objects\random\lathe_disks\onestar.dm"
 #include "code\game\objects\random\lathe_disks\tools.dm"
+#include "code\game\objects\random\mob\greyson.dm"
 #include "code\game\objects\random\mob\misc.dm"
 #include "code\game\objects\random\mob\roach.dm"
 #include "code\game\objects\random\mob\slime.dm"

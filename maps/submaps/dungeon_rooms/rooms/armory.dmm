@@ -10,14 +10,6 @@
 /obj/structure/closet/onestar/tier3,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
-"d" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/onestar/tier3,
-/turf/simulated/floor/tiled/dark/brown_perforated,
-/area/crawler)
 "e" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -34,15 +26,6 @@
 "h" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
-	},
-/turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/crawler)
-"i" = (
-/obj/machinery/light/built{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/crawler)
@@ -73,33 +56,12 @@
 "m" = (
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/crawler)
-"n" = (
-/obj/machinery/light/built{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/crawler)
 "o" = (
 /obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/crawler)
-"p" = (
-/obj/machinery/light/small/built{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/crawler)
 "q" = (
 /obj/machinery/door/airlock/vault/bolted,
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/crawler)
-"r" = (
-/obj/machinery/light/small/built{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "s" = (
@@ -111,14 +73,6 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "u" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/onestar/tier2,
-/turf/simulated/floor/tiled/dark/brown_perforated,
-/area/crawler)
-"v" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/closet/onestar/tier2,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -424,13 +378,13 @@ f
 k
 a
 y
-p
+f
 E
 a
 "}
 (3,1,1) = {"
 a
-d
+c
 f
 l
 a
@@ -467,7 +421,7 @@ b
 o
 o
 b
-i
+e
 e
 H
 s
@@ -489,7 +443,7 @@ b
 o
 o
 b
-n
+h
 h
 I
 s
@@ -518,7 +472,7 @@ a
 "}
 (11,1,1) = {"
 a
-v
+u
 f
 z
 a
@@ -534,7 +488,7 @@ f
 A
 a
 D
-r
+f
 K
 a
 "}

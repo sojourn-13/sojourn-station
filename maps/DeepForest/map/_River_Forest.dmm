@@ -385,6 +385,11 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/river_forest_underground)
+"fW" = (
+/obj/item/stool,
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/nadezhda/outside/one_star/fo_internal)
 "fX" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
@@ -1039,7 +1044,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "pQ" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/obj/random/mob/roomba/range,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "pS" = (
@@ -1242,8 +1247,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/river_forest_light)
 "sj" = (
-/obj/machinery/shower,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "sl" = (
@@ -1557,6 +1561,10 @@
 /obj/random/material_resources,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_underground)
+"vr" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/nadezhda/outside/one_star/fo_internal)
 "vt" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -2696,7 +2704,7 @@
 /area/nadezhda/outside/forest/river_forest_underground)
 "HJ" = (
 /obj/structure/bed/chair/custom/onestar/red,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/obj/random/mob/roomba/range,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "HK" = (
@@ -2908,7 +2916,7 @@
 /turf/simulated/floor/asteroid/grass/colonialjungle2,
 /area/nadezhda/outside/forest/river_forest_light)
 "KC" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/obj/random/mob/roomba/range,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "KF" = (
@@ -3541,6 +3549,11 @@
 "Su" = (
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_light)
+"Sx" = (
+/obj/machinery/light/floor,
+/obj/random/mob/roomba/mecha,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/nadezhda/outside/one_star/fo_internal)
 "SF" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/asteroid/grass,
@@ -3842,7 +3855,7 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/river_forest_light)
 "VW" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/asteroid/grass/colonialjungle2,
 /area/nadezhda/outside/forest/river_forest_light)
 "VY" = (
@@ -29376,7 +29389,7 @@ bl
 Ij
 MD
 Ij
-pQ
+vr
 fN
 bz
 IP
@@ -29639,7 +29652,7 @@ bz
 IP
 Ij
 As
-sH
+vr
 As
 Ij
 AC
@@ -30917,7 +30930,7 @@ fN
 MD
 MD
 MD
-ee
+pQ
 Ij
 Ij
 Ij
@@ -31951,7 +31964,7 @@ ca
 Ij
 Ij
 Ij
-sH
+vr
 Ij
 Ij
 Ij
@@ -33488,7 +33501,7 @@ MD
 XA
 Du
 MD
-ee
+pQ
 MD
 Ak
 Vp
@@ -34007,7 +34020,7 @@ MD
 Ij
 Ij
 aS
-sH
+vr
 Ij
 Ij
 aS
@@ -36572,7 +36585,7 @@ MD
 MD
 Ak
 MD
-ee
+pQ
 MD
 Ak
 ZR
@@ -36835,7 +36848,7 @@ Ij
 Ij
 Ij
 Ij
-ee
+pQ
 Ij
 Ij
 Ij
@@ -37343,7 +37356,7 @@ MD
 MD
 oi
 Ij
-ee
+pQ
 Ij
 Ij
 Ij
@@ -37592,8 +37605,8 @@ fN
 fN
 MD
 Ij
-sj
-tQ
+XK
+fW
 Ij
 MD
 MD
@@ -39130,7 +39143,7 @@ Ij
 Ij
 Ij
 Ij
-ee
+pQ
 ca
 Ij
 Ij
@@ -41957,7 +41970,7 @@ oi
 oi
 cM
 Ij
-ee
+pQ
 Ij
 Ak
 Yr
@@ -42985,7 +42998,7 @@ Yr
 oi
 cM
 Ij
-ee
+pQ
 Ij
 Ak
 oi
@@ -44768,7 +44781,7 @@ fN
 RF
 Ij
 Ij
-TO
+sj
 ZT
 fN
 ca
@@ -45025,7 +45038,7 @@ fN
 RF
 TO
 aS
-TO
+sj
 ZT
 ZT
 ca
@@ -45282,7 +45295,7 @@ fN
 lG
 Ij
 Ij
-TO
+sj
 ZT
 fN
 ee
@@ -45310,7 +45323,7 @@ iC
 oi
 Ij
 Ij
-TI
+vr
 Ij
 oi
 oi
@@ -45543,7 +45556,7 @@ Ij
 ld
 fN
 ca
-pb
+vr
 Ij
 Ak
 fz
@@ -46326,7 +46339,7 @@ iC
 oi
 Ij
 Ij
-TI
+vr
 Ij
 oi
 oi
@@ -46594,7 +46607,7 @@ Yr
 Lm
 oi
 cM
-ee
+pQ
 Ij
 Ij
 Ak
@@ -48125,7 +48138,7 @@ oi
 oi
 cM
 Ij
-TI
+vr
 pb
 Ak
 fz
@@ -48394,7 +48407,7 @@ aC
 oi
 Ij
 ca
-ee
+pQ
 Ij
 oi
 oi
@@ -50695,7 +50708,7 @@ fN
 Oq
 Ij
 Ij
-aS
+Sx
 Ij
 Ij
 Oq

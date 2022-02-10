@@ -7,6 +7,7 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "c" = (
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/crawler)
 "d" = (
@@ -80,9 +81,34 @@
 "r" = (
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
+"s" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"A" = (
+/obj/machinery/power/supply_beacon,
+/turf/simulated/floor/asteroid,
+/area/crawler)
+"G" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
 "P" = (
 /obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"R" = (
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor/asteroid,
+/area/crawler)
+"X" = (
+/obj/random/mob/roomba/mecha/low,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"Y" = (
+/obj/structure/lattice,
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
+/turf/simulated/floor/asteroid,
 /area/crawler)
 
 (1,1,1) = {"
@@ -111,9 +137,9 @@ a
 a
 d
 a
-f
-f
-f
+Y
+R
+Y
 a
 d
 a
@@ -121,33 +147,33 @@ a
 (4,1,1) = {"
 a
 d
-f
+Y
 h
 h
 h
-f
+Y
 d
 a
 "}
 (5,1,1) = {"
 a
 d
-f
+Y
 h
+A
 h
-h
-f
+Y
 d
 b
 "}
 (6,1,1) = {"
 b
 d
-f
+Y
 h
 h
 h
-f
+Y
 d
 b
 "}
@@ -178,7 +204,7 @@ a
 o
 p
 r
-r
+X
 r
 q
 o
@@ -198,11 +224,11 @@ a
 (11,1,1) = {"
 a
 j
-e
+s
 r
+G
 r
-r
-e
+s
 j
 a
 "}

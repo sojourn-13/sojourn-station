@@ -25,19 +25,9 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "h" = (
-/obj/machinery/light/floor,
+/obj/structure/table/onestar,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"i" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
-"j" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "k" = (
 /obj/structure/railing/grey{
@@ -61,6 +51,7 @@
 /area/crawler)
 "p" = (
 /obj/structure/target_stake,
+/obj/item/target/syndicate,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 "q" = (
@@ -74,11 +65,6 @@
 /obj/item/tool/crowbar/onestar,
 /obj/item/gun/energy/captain,
 /obj/item/computer_hardware/hard_drive/portable/design/onestar/cog,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"s" = (
-/obj/structure/railing/grey,
-/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "t" = (
@@ -142,11 +128,11 @@ a
 (2,1,1) = {"
 a
 c
-h
 g
 g
 g
-h
+g
+g
 u
 a
 "}
@@ -186,11 +172,11 @@ b
 (6,1,1) = {"
 b
 e
-i
 n
 n
 n
-i
+n
+n
 e
 b
 "}
@@ -199,7 +185,7 @@ b
 f
 a
 o
-o
+h
 o
 a
 f
@@ -208,11 +194,11 @@ b
 (8,1,1) = {"
 b
 g
-j
+k
 e
 e
 e
-s
+t
 g
 b
 "}
