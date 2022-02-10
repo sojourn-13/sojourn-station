@@ -23,12 +23,6 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"f" = (
-/obj/structure/window/reinforced{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
 "g" = (
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
@@ -54,21 +48,6 @@
 "l" = (
 /obj/random/structures/os,
 /turf/simulated/floor/tiled/techmaint_panels,
-/area/crawler)
-"m" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"n" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "o" = (
 /obj/crawler/crawler_wallbreaker/vertical,
@@ -116,13 +95,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/crawler)
-"B" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/random/powercell,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
 "C" = (
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/wall/untinted/onestar_reinforced,
@@ -155,8 +127,8 @@
 a
 a
 a
-a
-a
+C
+C
 o
 a
 a
@@ -242,17 +214,17 @@ C
 (9,1,1) = {"
 a
 e
-m
+e
 r
-m
+e
 g
-B
+Q
 g
 C
 "}
 (10,1,1) = {"
 a
-f
+g
 k
 b
 G
@@ -263,7 +235,7 @@ a
 "}
 (11,1,1) = {"
 a
-f
+g
 l
 L
 u
@@ -275,11 +247,11 @@ a
 (12,1,1) = {"
 a
 Q
-n
 g
-n
+g
+g
 W
-n
+g
 Q
 a
 "}
