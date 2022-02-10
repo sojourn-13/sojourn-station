@@ -2384,6 +2384,7 @@
 #include "code\modules\modular_computers\file_system\programs\research\email_administration.dm"
 #include "code\modules\modular_computers\file_system\programs\research\mech_remote.dm"
 #include "code\modules\modular_computers\file_system\programs\research\ntmonitor.dm"
+#include "code\modules\modular_computers\file_system\programs\research\passive_pointes.dm"
 #include "code\modules\modular_computers\file_system\programs\security\digitalwarrant.dm"
 #include "code\modules\modular_computers\file_system\reports\bounty_entry.dm"
 #include "code\modules\modular_computers\file_system\reports\crew_record.dm"

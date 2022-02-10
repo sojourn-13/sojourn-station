@@ -55,7 +55,8 @@
 	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/gas_heater,
-						   /datum/design/research/circuit/gas_cooler)
+						   /datum/design/research/circuit/gas_cooler,
+						   /datum/design/research/item/computer_part/gas)
 
 // TO ADD: idcardconsole
 /datum/technology/adv_replication
@@ -186,7 +187,8 @@
 	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/ordercomp,
-						   /datum/design/research/circuit/supplycomp)
+						   /datum/design/research/circuit/supplycomp,
+						   /datum/design/research/item/computer_part/price)
 
 //TOOLS BRANCH
 // TO ADD: ore_redemption, mining_equipment_vendor, mining_fabricator?
