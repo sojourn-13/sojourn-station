@@ -80,7 +80,15 @@
 	slot = slot_head
 	sort_category = "Faction: Security"
 
-/datum/gear/factionSecurity/gorka_ih
+/datum/gear/factionsecurity/bdu
+	display_name = "security BDU selection"
+	path = /obj/item/clothing/under/rank/bdu
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	flags = GEAR_HAS_TYPE_SELECTION
+	slot = slot_w_uniform
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/gorka_ih
 	display_name = "gorka jacket, security"
 	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")

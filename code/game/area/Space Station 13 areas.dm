@@ -53,7 +53,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 	var/vessel = "Nadezhda Colony" //The ship or station this area is on. This is so far just for the benefit of shield generators
 	//Consoles can only control shields on the same vessel as them
-
+	var/holomap_color // Color of this area on station holomap
 /*Adding a wizard area teleport list because motherfucking lag -- Urist*/
 /*I am far too lazy to make it a proper list of areas so I'll just make it run the usual telepot routine at the start of the game*/
 

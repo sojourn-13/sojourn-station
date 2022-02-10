@@ -325,6 +325,16 @@
 	desc = "A roll of treated canvas used for wrapping claws or paws."
 	icon_state = "clothwrap"
 
+/obj/item/clothing/shoes/footwraps1
+	name = "blue footwraps"
+	desc = "A roll of treated canvas used for wrapping claws or paws."
+	icon_state = "leg-wrap"
+
+/obj/item/clothing/shoes/footwraps2
+	name = "red footwraps"
+	desc = "A roll of treated canvas used for wrapping claws or paws."
+	icon_state = "leg-wrap2"
+
 /*Winter Boots*/
 
 /obj/item/clothing/shoes/winter

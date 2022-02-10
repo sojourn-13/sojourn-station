@@ -26,8 +26,6 @@
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
-	cant_be_pulled = TRUE
-
 //They are all waring space suits
 	breath_required_type = NONE
 	breath_poison_type = NONE

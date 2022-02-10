@@ -21,7 +21,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
 		UPGRADE_DEGRADATION_MULT = 0.65,
-		UPGRADE_FORCE_MOD = 1,
+		UPGRADE_FORCE_MOD = 1
 		)
 
 	I.required_qualities = list(QUALITY_BOLT_TURNING,QUALITY_PRYING, QUALITY_SAWING,QUALITY_SHOVELING,QUALITY_DIGGING,QUALITY_EXCAVATION)
@@ -377,7 +377,7 @@
 // 	 REFINEMENT: INCREASES PRECISION
 //------------------------------------------------
 /obj/item/tool_upgrade/refinement/laserguide
-	name = "Lonestars \"Guiding Light\" laser guide"
+	name = "\improper Lonestars \"Guiding Light\" laser guide"
 	desc = "A small visible laser which can be strapped onto any tool, giving an accurate representation of its target. Helps improve precision."
 	icon_state = "laser_guide"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_URANIUM = 1)
@@ -389,7 +389,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 0.9,
+	GUN_UPGRADE_RECOIL = 0.8,
 	UPGRADE_BULK = 1
 	)
 	I.gun_loc_tag = GUN_SIGHT
@@ -916,29 +916,34 @@
 	icon_state = "artmod_1"
 	price_tag = 200
 
-/obj/item/tool_upgrade/artwork_tool_mod/Initialize(mapload, prob_rare = 33)
-	. = ..()
+/obj/item/tool_upgrade/augment/artwork_tool_mod/New()
+	..()
 	name = get_weapon_name(capitalize = TRUE)
 	icon_state = "artmod_[rand(1,16)]"
-	var/sanity_value = 0.2 + pick(0,0.1,0.2)
-	AddComponent(/datum/component/atom_sanity, sanity_value, "")
-	var/obj/randomcatcher/CATCH = new(src)
-	var/obj/item/tool_upgrade/spawn_type = pickweight(list(/obj/random/tool_upgrade = max(100-prob_rare,0), /obj/random/tool_upgrade/rare = prob_rare), 0)
-	spawn_type = CATCH.get_item(spawn_type)
-	spawn_type.TransferComponents(src)
-	GET_COMPONENT(tool_comp, /datum/component/item_upgrade)
-	for(var/upgrade in (tool_comp.tool_upgrades - GLOB.tool_aspects_blacklist))
-		if(isnum(tool_comp.tool_upgrades[upgrade]))
-			tool_comp.tool_upgrades[upgrade] = tool_comp.tool_upgrades[upgrade] * rand(5,15)/10
-	tool_comp.tool_upgrades[UPGRADE_BULK] = rand(-1,2)
-	QDEL_NULL(spawn_type)
-	QDEL_NULL(CATCH)
-	price_tag += rand(0, 1000)
 
-/obj/item/tool_upgrade/artwork_tool_mod/get_item_cost(export)
-	. = ..()
-	GET_COMPONENT(comp_sanity, /datum/component/atom_sanity)
-	. += comp_sanity.affect * 100
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_DEGRADATION_MULT = rand(-1,3),
+	UPGRADE_HEALTH_THRESHOLD = rand(-5,10),
+	UPGRADE_WORKSPEED = rand(-1,3),
+	UPGRADE_PRECISION = rand(-3,15),
+	UPGRADE_FORCE_MOD = rand(-2,5),
+	UPGRADE_BULK = rand(-1,1),
+	price_tag += rand(100, 3000)
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = rand(-0.4,0.2),
+	GUN_UPGRADE_DAMAGE_MULT = rand(-0.2,0.4),
+	GUN_UPGRADE_PEN_MULT = rand(-0.2,0.4),
+	GUN_UPGRADE_FIRE_DELAY_MULT = rand(-0.4,0.2),
+	GUN_UPGRADE_MOVE_DELAY_MULT = rand(-0.4,0.2),
+	GUN_UPGRADE_MUZZLEFLASH = rand(-0.4,0.2),
+	GUN_UPGRADE_CHARGECOST = rand(-0.4,0.2),
+	GUN_UPGRADE_OVERCHARGE_MAX = rand(-0.4,0.2),
+	GUN_UPGRADE_OVERCHARGE_RATE = rand(-0.4,0.2)
+	)
+	I.prefix = "artistic"
+
 // Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
 /obj/item/tool_upgrade/productivity/waxcoat
 	name = "Wax Coating"

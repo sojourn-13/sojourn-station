@@ -82,7 +82,7 @@
 	price_tag = 150
 	init_firemodes = list(
 		LETHAL,
- 		WEAPON_CHARGE
+		WEAPON_CHARGE
 	)
 	twohanded = FALSE
 	suitable_cell = /obj/item/cell/small

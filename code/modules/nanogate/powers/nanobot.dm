@@ -30,13 +30,38 @@ List of powers in this page :
 			Stand.icon_state = input(owner, "Choose your nanobot's model : ", "Nanobot Model") in list("nanobot", "wide", "squats", "heavy", "blitz")
 			Stand.icon_living = Stand.icon_state
 			Stand.icon_dead = "[Stand.icon_state]_dead"
+
+			//Add Nanobot verbs here, at activation
+			verbs += /obj/item/organ/internal/nanogate/proc/stand_damage
+			verbs += /obj/item/organ/internal/nanogate/proc/stand_health
+			verbs += /obj/item/organ/internal/nanogate/proc/stand_armor
+			verbs += /obj/item/organ/internal/nanogate/proc/stand_repair
+			verbs += /obj/item/organ/internal/nanogate/proc/autodoc_mode
+			verbs += /obj/item/organ/internal/nanogate/proc/radio_mode
+			verbs += /obj/item/organ/internal/nanogate/proc/console_mode
+
+			//Add to owner_verbs so it can be removed properly should the need arise.
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_damage
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_health
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_armor
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/stand_repair
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/autodoc_mode
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/radio_mode
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/console_mode 
+
+			//Add in the Opifex specific procs
+			if(istype(src, /obj/item/organ/internal/nanogate/opifex))
+				verbs += /obj/item/organ/internal/nanogate/proc/food_mode
+				owner_verbs += /obj/item/organ/internal/nanogate/proc/food_mode
+
 			verbs -= /obj/item/organ/internal/nanogate/proc/create_nanobot
+			
 	else
 		to_chat(owner, "Your nanogate is already as its limit controlling one Nanobot. Making more would end badly.")
 
 // Boost the nanobot's damage
 /obj/item/organ/internal/nanogate/proc/stand_damage()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Upgrade Nanobot - Damage (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobot with greater offensive power."
 	nano_point_cost = 1
@@ -53,7 +78,7 @@ List of powers in this page :
 
 // Boost the nanobot's health
 /obj/item/organ/internal/nanogate/proc/stand_health()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Upgrade Nanobot - Health (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobot to endure far more punishment."
 	nano_point_cost = 1
@@ -70,7 +95,7 @@ List of powers in this page :
 
 // Boost the nanobot's armor
 /obj/item/organ/internal/nanogate/proc/stand_armor()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Upgrade Nanobot - Armor (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobots armor to better reduce and mitigate incoming damage."
 	nano_point_cost = 1
@@ -86,7 +111,7 @@ List of powers in this page :
 
 // Boost the nanobot's armor
 /obj/item/organ/internal/nanogate/proc/stand_repair()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Upgrade Nanobot - Self-Repair (1)"
 	set desc = "Spend some of your nanites to upgrade your nanobot to enable self repair diagnostics."
 	nano_point_cost = 1
@@ -102,7 +127,7 @@ List of powers in this page :
 
 // Powers that activate various modes for the bot.
 /obj/item/organ/internal/nanogate/proc/autodoc_mode()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Activate Nanobot Protocol - Medibot (4)"
 	set desc = "Spend some of your nanites to activate a medical protocol in your nanobot."
 	nano_point_cost = 4
@@ -116,7 +141,7 @@ List of powers in this page :
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
 /obj/item/organ/internal/nanogate/proc/radio_mode()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Activate Nanobot Protocol - Radio (1)"
 	set desc = "Spend some of your nanites to activate a protocol in your bot."
 	nano_point_cost = 1
@@ -130,7 +155,7 @@ List of powers in this page :
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
 /obj/item/organ/internal/nanogate/proc/console_mode()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Activate Nanobot Protocol - Console (1)"
 	set desc = "Spend some of your nanites to activate convert your nanobots into a modular console capable of functioning as a portable computer."
 	nano_point_cost = 1
@@ -144,7 +169,7 @@ List of powers in this page :
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
 /obj/item/organ/internal/nanogate/proc/food_mode()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Activate Nanobot Protocol - Food (1)"
 	set desc = "Spend some of your nanites to activate a protocol in your bot, allowing you to generate safe and stimulant laced food."
 	nano_point_cost = 1
@@ -158,7 +183,7 @@ List of powers in this page :
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
 /obj/item/organ/internal/nanogate/proc/control_bot()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Activate Nanobot Remote Control (1)"
 	set desc = "Spend some of your nanites to remotely control your nanobot at will."
 	nano_point_cost = 1
@@ -172,7 +197,7 @@ List of powers in this page :
 		to_chat(owner, "You do not have a nanobot to upgrade!")
 
 /obj/item/organ/internal/nanogate/proc/control()
-	set category = "Nanogate Powers"
+	set category = "Nanogate Robot"
 	set name = "Remote Control"
 	set desc = "Remotely control your nanobot. Don't die while controlling it though!"
 	nano_point_cost = 0

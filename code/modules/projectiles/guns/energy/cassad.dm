@@ -23,6 +23,3 @@
 	twohanded = TRUE
 	can_dual = FALSE
 
-/obj/item/gun/energy/pulse/cassad/update_icon()
-	..()
-	set_item_state(null, back = TRUE)

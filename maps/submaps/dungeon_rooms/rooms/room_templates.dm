@@ -19,6 +19,20 @@
 	room_tag = "dead_end"
 	directional_flags = list("west")
 
+/datum/map_template/dungeon_template/room/shooting_range
+	name = "shooting_range"
+	desc = "Enjoy your stay."
+	mappath = 'maps/submaps/dungeon_rooms/rooms/shootingrange.dmm'
+	room_tag = "dead_end"
+	directional_flags = list("west", "north", "south")
+
+/datum/map_template/dungeon_template/room/refinery
+	name = "refinery"
+	desc = "Enjoy your stay."
+	mappath = 'maps/submaps/dungeon_rooms/rooms/refinery.dmm'
+	room_tag = "dead_end"
+	directional_flags = list("east")
+
 /datum/map_template/dungeon_template/room/autolathe_south_east
 	name = "autolathe_South-East"
 	desc = "Enjoy your stay."
@@ -32,6 +46,13 @@
 	mappath = 'maps/submaps/dungeon_rooms/rooms/cargo_horizontal.dmm'
 	room_tag = "dead_end"
 	directional_flags = list("west")
+
+/datum/map_template/dungeon_template/room/cargo_vertical
+	name = "cargo_vertical"
+	desc = "Enjoy your stay."
+	mappath = 'maps/submaps/dungeon_rooms/rooms/cargo_vertical.dmm'
+	room_tag = "dead_end"
+	directional_flags = list("south")
 
 /datum/map_template/dungeon_template/room/checkpoint_horizontal
 	name = "checkpoint_horizontal"
@@ -47,6 +68,12 @@
 	directional_flags = list("south", "north")
 	room_tag = "above_only"
 
+/datum/map_template/dungeon_template/room/corner_energy_SE
+	name = "corner_energy_SE"
+	desc = "Enjoy your stay."
+	mappath = 'maps/submaps/dungeon_rooms/rooms/corner_energy_SE.dmm'
+	directional_flags = list("west", "north")
+	room_tag = "above_only"
 
 /datum/map_template/dungeon_template/room/commanderoffice
 	name = "commanderoffice"
@@ -69,18 +96,12 @@
 /datum/map_template/dungeon_template/room/garden
 	name = "garden"
 	desc = "Enjoy your stay."
-	mappath = 'maps/submaps/dungeon_rooms/rooms/garden.dmm'
+	mappath = 'maps/submaps/dungeon_rooms/rooms/garden.dmm' //Allows getto bricord do to flowers and looks nice
 
 /datum/map_template/dungeon_template/room/Hallway_4way
 	name = "Hallway_4way"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/Hallway_4way.dmm'
-
-/datum/map_template/dungeon_template/room/Hallway_4way
-	name = "Hallway_4way"
-	desc = "Enjoy your stay."
-	mappath = 'maps/submaps/dungeon_rooms/rooms/Hallway_4way.dmm'
-
 
 /datum/map_template/dungeon_template/room/hallway_executive
 	name = "hallway_executive"
@@ -88,30 +109,28 @@
 	mappath = 'maps/submaps/dungeon_rooms/rooms/hallway_executive.dmm'
 	directional_flags = list("south", "north")
 	room_tag = "above_only"
-
-
+/*
 /datum/map_template/dungeon_template/room/Hallway_North_South
 	name = "Hallway_North-South"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/Hallway_North-South.dmm'
 	directional_flags = list("south", "north")
 	room_tag = "above_only"
-
+*/
 /datum/map_template/dungeon_template/room/hallway_storage
 	name = "hallway_storage"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/hallway_storage.dmm'
 	directional_flags = list("south", "north")
 	room_tag = "above_only"
-
-
+/*
 /datum/map_template/dungeon_template/room/hallway_West_east
 	name = "hallway_West-East"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/hallway_West-East.dmm'
 	directional_flags = list("west", "east")
 	room_tag = "horizontal_only"
-
+*/
 /datum/map_template/dungeon_template/room/hallwayatmos_west_east
 	name = "hallwayatmos_west-east"
 	desc = "Enjoy your stay."
@@ -119,21 +138,19 @@
 	directional_flags = list("west", "east")
 	room_tag = "horizontal_only"
 
-
 /datum/map_template/dungeon_template/room/mechbay
 	name = "mechbay"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/mechbay.dmm'
 	room_tag = "dead_end"
 	directional_flags = list("east")
-/*
 
 /datum/map_template/dungeon_template/room/office
 	name = "office"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/office.dmm'
-	room_tag = "under_only"
-	directional_flags = list("north", "east")*/
+	room_tag = "dead_end"
+	directional_flags = list("east")
 
 /datum/map_template/dungeon_template/room/penitentiary
 	name = "penitentiary"
@@ -156,14 +173,12 @@
 	directional_flags = list("west", "east")
 	room_tag = "horizontal_only"
 
-
 /datum/map_template/dungeon_template/room/surgery
 	name = "surgery"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/surgery.dmm'
-	directional_flags = list("south", "north")
-	room_tag = "above_only"
-
+	room_tag = "dead_end"
+	directional_flags = list("north", "south")
 
 /datum/map_template/dungeon_template/room/blocker
 	name = "blocker"

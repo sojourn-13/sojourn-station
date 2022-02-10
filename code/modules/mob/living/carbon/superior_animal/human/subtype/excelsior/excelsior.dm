@@ -23,8 +23,6 @@
 	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/empty
 	mags_left = 2 //2+1
 
-	cant_be_pulled = TRUE
-
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	breath_required_type = 0 // Doesn't need to breath, in a space suit

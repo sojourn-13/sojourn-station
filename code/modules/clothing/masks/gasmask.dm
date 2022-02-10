@@ -193,3 +193,38 @@
 /obj/item/clothing/mask/gas/opifex/attack_self(mob/user)
 	feeding_port(user)
 	..()
+
+/obj/item/clothing/mask/gas/opifex/alt_mask
+	name = "opifex gas mask"
+	desc = "An archaic gas mask is used commonly by opifex to filter out oxygen and other biohazards. This one is outfitted to more long beaks."
+	icon_state = "gas_mask_opi_san"
+	item_state = "gas_mask_opi_san"
+
+/obj/item/clothing/mask/opifex_no_mask
+	name = "opifex gas synthetizer"
+	desc = "A newly advanced gas synthesizer is used commonly by opifex to filter oxygen from their lungs, being able to feed and eat any moment they wish with their beak exposed. They'll slowly die without wearing this, as will any other race that uses this device."
+	icon_state = "gas_mask_free_beak"
+	item_state = "gas_mask_free_beak"
+	armor = list(melee = 2, bullet = 2, energy = 7, bomb = 5, bio = 0, rad = 15)
+	var/list/filtered_gases = list("plasma", "sleeping_agent", "oxygen")
+	var/gas_filter_strength = 1			//For gas mask filters
+	item_flags = AIRTIGHT
+	w_class = ITEM_SIZE_SMALL
+	cold_protection = 0.5 //Instead of giving gas protection, it gives you other types of protection
+	heat_protection = 0.5
+	gas_transfer_coefficient = 0.001
+	permeability_coefficient = 0.001
+	siemens_coefficient = 0.001
+
+/obj/item/clothing/mask/opifex_no_mask/filter_air(datum/gas_mixture/air)
+	var/datum/gas_mixture/filtered = new
+
+	for(var/g in filtered_gases)
+		if(air.gas[g])
+			filtered.gas[g] = air.gas[g] * gas_filter_strength
+			air.gas[g] -= filtered.gas[g]
+
+	air.update_values()
+	filtered.update_values()
+
+	return filtered

@@ -1,4 +1,13 @@
-/*Flower Pins*/
+/obj/item/clothing/head/centhat
+	name = "\improper CentCom. hat"
+	icon_state = "centcom"
+	item_state_slots = list(
+		slot_l_hand_str = "centhat",
+		slot_r_hand_str = "centhat",
+		)
+	desc = "It's good to be emperor."
+	siemens_coefficient = 0.9
+	body_parts_covered = 0
 
 /obj/item/clothing/head/hairflower
 	name = "red flower pin"
@@ -172,8 +181,8 @@
 
 /*Misc*/
 
-/obj/item/clothing/head/rank/centcomm
-	name = "\improper CentComm. hat"
+/obj/item/clothing/head/rank/centcom
+	name = "\improper CentCom. hat"
 	icon_state = "centcom"
 	item_state_slots = list(
 		slot_l_hand_str = "centhat",
@@ -333,3 +342,32 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	armor = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
 
+// hoods for the tacticool ponchos.
+
+/obj/item/clothing/head/tacticalhood
+	name = "brown tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_brown"
+	item_state = "tacponhood_brown"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/green
+	name = "green tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_green"
+	item_state = "tacponhood_green"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/camo
+	name = "camo tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_camo"
+	item_state = "tacponhood_camo"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/ghillie
+	name = "ghillie hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_ghillie"
+	item_state = "tacponhood_ghillie"
+	flags_inv = HIDEEARS|BLOCKHAIR
