@@ -11,8 +11,7 @@
 /area/crawler)
 "e" = (
 /obj/structure/curtain/medical,
-/obj/structure/low_wall,
-/obj/effect/window_lwall_spawn,
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "f" = (
@@ -232,7 +231,7 @@ y
 i
 "}
 (6,1,1) = {"
-a
+i
 j
 j
 u
@@ -243,7 +242,7 @@ j
 i
 "}
 (7,1,1) = {"
-a
+i
 j
 x
 x
@@ -254,7 +253,7 @@ x
 i
 "}
 (8,1,1) = {"
-a
+i
 j
 j
 v

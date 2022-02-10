@@ -24,7 +24,7 @@
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/shootingrange.dmm'
 	room_tag = "dead_end"
-	directional_flags = list("west")
+	directional_flags = list("west", "north", "south")
 
 /datum/map_template/dungeon_template/room/refinery
 	name = "refinery"
@@ -72,7 +72,7 @@
 	name = "corner_energy_SE"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/corner_energy_SE.dmm'
-	directional_flags = list("east", "south")
+	directional_flags = list("west", "north")
 	room_tag = "above_only"
 
 /datum/map_template/dungeon_template/room/commanderoffice
@@ -88,12 +88,10 @@
 	mappath = 'maps/submaps/dungeon_rooms/rooms/crematorium.dmm'
 	directional_flags = list("west", "east", "south")
 
-/* - looks nice but not all that good
 /datum/map_template/dungeon_template/room/Escape_Pod_West_East
 	name = "Escape_Pod_West-East"
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/Escape_Pod_West-East.dmm'
-*/
 
 /datum/map_template/dungeon_template/room/garden
 	name = "garden"
@@ -180,7 +178,7 @@
 	desc = "Enjoy your stay."
 	mappath = 'maps/submaps/dungeon_rooms/rooms/surgery.dmm'
 	room_tag = "dead_end"
-	directional_flags = list("south")
+	directional_flags = list("north", "south")
 
 /datum/map_template/dungeon_template/room/blocker
 	name = "blocker"
