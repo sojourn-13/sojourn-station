@@ -1,7 +1,7 @@
 /datum/computer_file/program/point_miner
 	filename = "MetaCollection Data Analyzer"
 	filedesc = "MetaCollection Data Analyzer.bat"
-	nanomodule_path = /datum/nano_module/program/coin_miner
+	nanomodule_path = /datum/nano_module/program/point_miner
 	program_icon_state = "comm_logs"
 	program_key_state = "rd_key"
 	program_menu_icon = "cart"
@@ -78,7 +78,7 @@
 /datum/nano_module/program/point_miner/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	if(!ntnet_global)
 		return
-	var/datum/computer_file/program/coin_miner/PRG = program
+	var/datum/computer_file/program/point_miner/PRG = program
 	var/list/data = list()
 	if(!istype(PRG))
 		return
