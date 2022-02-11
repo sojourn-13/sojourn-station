@@ -217,8 +217,8 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 4, MATERIAL_GLASS = 10, MATERIAL_URANIUM = 2)
 	recoil_buildup = 2
 	damage_multiplier = 0.75
-	penetration_multiplier = 0.5
-	price_tag = 3500
+	penetration_multiplier = 1.0
+	price_tag = 3000
 	charge_cost = 20
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
