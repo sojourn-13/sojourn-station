@@ -18,7 +18,8 @@ zoom_factor= 1.3
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_WOOD = 20)
 
 	saw_off = FALSE
-        init_firemodes = list(
+       init_firemodes = list(
+
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire 20mm shell", mode_desc="Shoot the underbarrel shotgun shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
