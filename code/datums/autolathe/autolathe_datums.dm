@@ -172,6 +172,18 @@
 
 	if(mat_efficiency != 1 && adjust_materials)
 		for(var/obj/O in A.GetAllContents(includeSelf = TRUE))
+/*
+Z:/FloppyDisk/TRILBYMOD: //It had to be done.
+Z:/FloppyDisk/TRILBYMOD: O.surplus_tag = TRUE
+Z:/FloppyDisk/TRILBYMOD: DEPLOY FANRICATE NERF
+*/
+			O.surplus_tag = TRUE
+/*
+Trilby... Did you?
+You tampered with my fabrication
+You thought it too powerful no doubt. But Please...
+No more of that.
+*/
 			if(length(O.matter))
 				for(var/i in O.matter)
 					O.matter[i] = round(O.matter[i] * mat_efficiency, 0.01)
