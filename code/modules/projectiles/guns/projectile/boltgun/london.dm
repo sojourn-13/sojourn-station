@@ -14,7 +14,8 @@ zoom_factor= 1.3
 	damage_multiplier = 0.9 // The Clarissa of boltguns
 	penetration_multiplier  = 1.5
 	extra_damage_mult_scoped = .8 // better if scoped.
-	matter = list(MATERIAL_STEEL = 15, MATERIAL_WOOD = 20,)
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_WOOD = 20)
+
 	saw_off = FALSE
         init_firemodes = list(
 		SEMI_AUTO_NODELAY,
