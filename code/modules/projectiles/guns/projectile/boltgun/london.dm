@@ -8,7 +8,8 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_MAGNUM
 	max_shells = 1
-zoom_factor= 1.3
+	zoom_factor= 1.3
+
 	price_tag = 300
 	recoil_buildup = 10
 	damage_multiplier = 0.9 // The Clarissa of boltguns
