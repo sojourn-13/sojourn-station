@@ -1,6 +1,7 @@
 /obj/item/gun/projectile/boltgun/london
 	name = "\"London"\" Survival Rifle"
-	desc = "A single-shot combination rifle, initially based off shipside varmit guns. While almost certainly underpowowered for the local fauna,  it's decent with the scope, and  one of the cheapest longarms around. Chambered in .40 Magnum, with an underslung shotgun barrel.
+	desc = "A single-shot combination rifle, initially based off shipside varmit guns. While almost certainly underpowowered for the local fauna,  it's decent with the scope, and  one of the cheapest longarms around. Chambered in .40 Magnum, with an underslung shotgun barrel."
+
 	icon = 'icons/obj/guns/projectile/london.dmi'
 	icon_state = "london"
 	item_state = "london"
