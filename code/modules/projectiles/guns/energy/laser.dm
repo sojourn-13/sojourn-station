@@ -245,9 +245,6 @@
 		else
 			iconstring = "[initial(icon_state)][ratio]"
 
-		if(item_charge_meter)
-			itemstring += "-[item_modifystate][ratio]"
-
 	if (cell)
 		iconstring += "_mag"
 		itemstring += "_mag"
