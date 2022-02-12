@@ -40,7 +40,6 @@ var/global/datum/computer_file/data/email_account/service/nanogate/nano_mailer =
 
 	for(var/datum/computer_file/report/crew_record/record in GLOB.all_crew_records) // Check every email in the game
 		target_list += record.get_email() // Add the email to the list we can talk to
-		break
 
 	var/target = input("Who do you want to send a message to?") as null|anything in target_list
 	if (isnull(target))
