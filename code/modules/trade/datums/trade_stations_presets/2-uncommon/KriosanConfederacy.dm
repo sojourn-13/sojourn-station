@@ -41,9 +41,9 @@
 			/obj/item/gun_upgrade/barrel/forged,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,
 			/obj/item/tool_upgrade/refinement/laserguide
-		)
+		),
 		"Big Game Hunting Gear" = list(
-			/obj/item/gun/projectile/boltgun/scout = custom_good_amount_range(list(-5, 1)),
+			/obj/item/gun/projectile/boltgun/scout = custom_good_amount_range(list(-3, 1)),
 			/obj/item/tool/sword/saber = custom_good_amount_range(list(-1, 3)),
 			/obj/item/tool/sword/machete,
 			/obj/item/tool/spear //Useless other then to hand craft and sell it back to them
