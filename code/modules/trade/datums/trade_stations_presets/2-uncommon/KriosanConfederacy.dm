@@ -3,7 +3,6 @@
 		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself on our stock.\""
 	)
 	uid = "kriosanconfederacy"
-	recommendations_needed = 1
 	stations_recommended = list("mcronalds")
 	offer_limit = 20
 	base_income = 1600
@@ -17,17 +16,23 @@
 			/obj/item/gun/projectile/boltgun/light,
 			/obj/item/gun/projectile/boltgun/light_wood,
 			/obj/item/gun/projectile/boltgun/sa,
-			/obj/item/gun/projectile/automatic/survivalrifle
+			/datum/design/autolathe/gun/strelki,
+			/obj/item/gun/projectile/automatic/survivalrifle,
+			/obj/item/gun/projectile/shotgun/doublebarrel,
+			/obj/item/gun/projectile/shotgun/pump,
+			/obj/item/tool/knife/dagger
 		),
 		"Ammo" = list(
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
 			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
-			/obj/item/ammo_magazine/rifle_10x24
+			/obj/item/ammo_magazine/rifle_10x24,
+			/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+			/obj/item/ammo_magazine/ammobox/shotgun
 		),
 		"Pets" = list(
 			/mob/living/simple_animal/corgi = good_data("Noble Corgi", list(4, 5)),
 			/mob/living/simple_animal/corgi/puppy = good_data("Young Corgi", list(3, 5)),
-			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5)), //Donst have a price, intented
+			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5)),
 			/mob/living/simple_animal/cat = good_data("Rat Slayer", list(4, 5))
 		)
 	)
@@ -36,6 +41,12 @@
 			/obj/item/gun_upgrade/barrel/forged,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,
 			/obj/item/tool_upgrade/refinement/laserguide
+		)
+		"Big Game Hunting Gear" = list(
+			/obj/item/gun/projectile/boltgun/scout = custom_good_amount_range(list(-5, 1)),
+			/obj/item/tool/sword/saber = custom_good_amount_range(list(-1, 3)),
+			/obj/item/tool/sword/machete,
+			/obj/item/tool/spear //Useless other then to hand craft and sell it back to them
 		)
 	)
 	offer_types = list(

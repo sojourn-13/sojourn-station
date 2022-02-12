@@ -58,7 +58,7 @@
 			/obj/item/reagent_containers/hypospray/autoinjector,
 			/obj/item/bodybag,
 			/obj/machinery/suspension_gen,
-			/obj/item/computer_hardware/hard_drive/portable/design
+			/obj/item/computer_hardware/hard_drive/portable/design/medicald = custom_good_amount_range(list(3, 6))
 		)
 	)
 	secret_inventory = list(
