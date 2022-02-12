@@ -22,20 +22,11 @@
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "g" = (
-/obj/machinery/door/blast/shutters,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "h" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
-/area/crawler)
-"i" = (
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/plating/under,
 /area/crawler)
 "j" = (
 /obj/structure/catwalk,
@@ -48,39 +39,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/crawler)
-"l" = (
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/plating/under,
-/area/crawler)
-"m" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/plating/under,
-/area/crawler)
 "n" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/turf/simulated/floor/plating/under,
-/area/crawler)
-"o" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/machinery/light/floor,
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "p" = (
@@ -150,9 +113,9 @@ a
 a
 a
 a
-i
+n
 j
-m
+t
 a
 a
 a
@@ -172,9 +135,9 @@ b
 b
 a
 a
-l
+k
 j
-o
+p
 a
 a
 b
@@ -194,9 +157,9 @@ b
 b
 a
 a
-i
+n
 q
-m
+t
 a
 a
 b
@@ -216,9 +179,9 @@ b
 a
 a
 a
-l
+k
 j
-o
+p
 a
 a
 a

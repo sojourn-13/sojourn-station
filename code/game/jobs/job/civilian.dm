@@ -8,6 +8,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
+	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
@@ -44,6 +45,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
+	alt_titles = list("Culinary Artist","Cook")
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750

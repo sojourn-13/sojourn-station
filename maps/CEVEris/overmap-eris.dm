@@ -6,8 +6,8 @@
 	speed_mod = 5 SECONDS
 	base = 1
 
-	name_stages = list("CEV Eris", "unknown vessel", "unknown spatial phenomenon")
-	icon_stages = list("eris", "ship", "poi")
+	//name_stages = list("CEV Eris", "unknown vessel", "unknown spatial phenomenon")
+	//icon_stages = list("eris", "ship", "poi")
 
 	start_x = 9
 	start_y = 10
@@ -47,7 +47,7 @@
 	)*/
 
 /obj/effect/overmap/ship/eris/Process()
-	overmap_event_handler.scan_loc(src, loc, can_scan()) // Eris uses its sensors to scan nearby events
+	//overmap_event_handler.scan_loc(src, loc, can_scan()) // Eris uses its sensors to scan nearby events
 	.=..()
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle

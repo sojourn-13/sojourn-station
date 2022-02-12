@@ -7,6 +7,9 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "c" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/crawler)
 "d" = (
@@ -15,60 +18,43 @@
 "e" = (
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"f" = (
-/obj/structure/lattice,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/turf/simulated/floor/asteroid,
-/area/crawler)
 "g" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "h" = (
-/turf/simulated/floor/asteroid,
-/area/crawler)
-"i" = (
 /obj/structure/railing,
 /turf/simulated/floor/asteroid,
 /area/crawler)
 "j" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"k" = (
-/obj/crawler/crawler_wallbreaker/vertical,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
-"l" = (
-/obj/structure/catwalk,
-/turf/space,
-/area/crawler)
-"m" = (
-/obj/structure/catwalk,
-/obj/machinery/door/airlock/external,
-/turf/simulated/floor/asteroid,
-/area/crawler)
-"n" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/simulated/floor/asteroid,
-/area/crawler)
-"o" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/crawler)
-"p" = (
 /obj/structure/railing/grey{
 	dir = 4
 	},
 /obj/structure/railing/grey,
 /turf/simulated/floor/plating/under,
 /area/crawler)
-"q" = (
+"k" = (
+/obj/random/mob/roomba/mecha/low,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"l" = (
+/obj/machinery/power/supply_beacon,
+/turf/simulated/floor/asteroid,
+/area/crawler)
+"m" = (
+/obj/structure/catwalk,
+/turf/space,
+/area/crawler)
+"n" = (
+/turf/simulated/floor/asteroid,
+/area/crawler)
+"o" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid,
+/area/crawler)
+"p" = (
 /obj/structure/railing/grey{
 	dir = 4
 	},
@@ -80,130 +66,147 @@
 "r" = (
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
+"s" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
 "P" = (
 /obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/crawler)
+"R" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict,
+/area/crawler)
+"X" = (
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor/asteroid,
+/area/crawler)
+"Y" = (
+/obj/structure/lattice,
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
+/turf/simulated/floor/asteroid,
 /area/crawler)
 
 (1,1,1) = {"
 a
 a
-a
-a
-a
 g
-a
+g
+g
+g
+g
 a
 a
 "}
 (2,1,1) = {"
 a
-c
-d
-d
-d
-d
-d
-c
+P
+s
+r
+r
+r
+s
+P
 a
 "}
 (3,1,1) = {"
 a
-d
-a
-f
-f
-f
-a
-d
+P
+e
+r
+R
+r
+e
+P
 a
 "}
 (4,1,1) = {"
 a
-d
-f
-h
-h
-h
-f
-d
+c
+j
+r
+k
+r
+p
+c
 a
 "}
 (5,1,1) = {"
 a
 d
-f
-h
-h
-h
-f
+a
+Y
+X
+Y
+a
 d
-b
+a
 "}
 (6,1,1) = {"
-b
+a
 d
-f
+Y
 h
-h
-h
-f
+m
+o
+Y
 d
 b
 "}
 (7,1,1) = {"
 b
 d
-a
-i
+Y
+n
 l
 n
-a
+Y
 d
 b
 "}
 (8,1,1) = {"
 b
 d
-a
-f
+Y
+h
 m
-f
-a
+o
+Y
 d
 b
 "}
 (9,1,1) = {"
+b
+d
 a
-o
-p
-r
-r
-r
-q
-o
+Y
+X
+Y
+a
+d
 b
 "}
 (10,1,1) = {"
 a
-P
-e
+c
+j
 r
+k
 r
-r
-e
-P
-a
+p
+c
+b
 "}
 (11,1,1) = {"
 a
-j
-e
+P
+s
 r
 r
 r
-e
-j
+s
+P
 a
 "}
 (12,1,1) = {"
@@ -211,7 +214,7 @@ a
 P
 e
 r
-r
+R
 r
 e
 P
@@ -221,9 +224,9 @@ a
 a
 a
 g
-k
-k
-k
+g
+g
+g
 g
 a
 a

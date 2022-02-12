@@ -30,12 +30,6 @@
 /obj/structure/closet/onestar/tier3,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
-"h" = (
-/obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/liquid_fuel,
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
 "i" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict,
@@ -55,14 +49,8 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "m" = (
-/obj/structure/low_wall,
-/obj/effect/window_lwall_spawn,
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/tiled/techmaint,
-/area/crawler)
-"n" = (
-/obj/structure/table/onestar,
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "o" = (
 /obj/structure/railing/grey{
@@ -122,17 +110,6 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/tiled/dark/panels,
 /area/crawler)
-"x" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"y" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "z" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -172,11 +149,6 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"G" = (
-/obj/effect/floor_decal/industrial/warning,
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "H" = (
 /obj/machinery/conveyor/north{
 	id = 4
@@ -193,10 +165,6 @@
 "J" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"K" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "M" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -302,9 +270,9 @@ b
 b
 i
 X
-n
+i
 C
-y
+C
 i
 i
 b
@@ -324,9 +292,9 @@ b
 b
 j
 j
-x
+z
 C
-G
+J
 M
 M
 b
@@ -344,13 +312,13 @@ b
 "}
 (10,1,1) = {"
 a
-h
+t
 r
 A
 C
 J
 q
-K
+q
 a
 "}
 (11,1,1) = {"

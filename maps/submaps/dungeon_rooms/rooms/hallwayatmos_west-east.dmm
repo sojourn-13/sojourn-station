@@ -31,11 +31,6 @@
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"s" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor,
-/turf/simulated/floor/plating/under,
-/area/crawler)
 "u" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -107,9 +102,9 @@ a
 a
 e
 a
-s
+u
 z
-s
+u
 a
 e
 b
@@ -151,9 +146,9 @@ b
 a
 e
 a
-s
+u
 z
-s
+u
 a
 e
 b
