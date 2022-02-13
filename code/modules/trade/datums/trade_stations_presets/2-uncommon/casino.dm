@@ -8,7 +8,7 @@
 	wealth = 0
 	secret_inv_threshold = 2000
 	recommendation_threshold = 4000
-	stations_recommended = list("illegal1", "serbian")
+	stations_recommended = list("illegal1", "serbian", "greyson")
 	recommendations_needed = 1
 	assortiment = list(
 		"Assorted Goods" = list(
@@ -21,7 +21,6 @@
 			/obj/item/storage/deferred/disks = custom_good_amount_range(list(2, 4))
 	)
 	offer_types = list(
-		/obj/item/coin = offer_data("metal coin", 2000, 1),						// From what I can tell, these are pretty rare
 		/obj/item/oddity/common/coin = offer_data("strange coin", 800, 1),
 		/obj/item/oddity/common/old_money = offer_data("old money", 800, 1)
 	)

@@ -71,6 +71,19 @@
 			/obj/item/reagent_containers/hypospray/autoinjector/dexalin = custom_good_amount_range(list(10, 20)),
 			/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = custom_good_amount_range(list(10, 20)),
 			/obj/item/reagent_containers/hypospray/autoinjector/tramadol = custom_good_amount_range(list(5, 10)),
+		),
+		"Surgery II" = list(
+			/obj/item/tool/retractor/adv = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/bonesetter/adv = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/cautery/adv = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/hemostat/adv = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/scalpel/laser = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/scalpel/advanced = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/tape_roll/bonegel = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/saw/circular/medical = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/hammer = custom_good_amount_range(list(1, 2)),
+			/obj/item/tool/surgicaldrill/adv = custom_good_amount_range(list(1, 2)),
+			/obj/item/bone_brace = custom_good_amount_range(list(1, 2))
 		)
 	)
 
