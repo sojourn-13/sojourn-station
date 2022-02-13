@@ -16,7 +16,7 @@
 			/obj/item/gun/projectile/boltgun/light,
 			/obj/item/gun/projectile/boltgun/light_wood,
 			/obj/item/gun/projectile/boltgun/sa,
-			/datum/design/autolathe/gun/strelki,
+			/obj/item/gun/projectile/automatic/nordwind/strelki,
 			/obj/item/gun/projectile/automatic/survivalrifle,
 			/obj/item/gun/projectile/shotgun/doublebarrel,
 			/obj/item/gun/projectile/shotgun/pump,
