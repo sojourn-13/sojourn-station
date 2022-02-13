@@ -3058,6 +3058,7 @@
 #include "code\modules\trade\datums\trade_stations_presets\3-rare\mecha.dm"
 #include "code\modules\trade\datums\trade_stations_presets\3-rare\monstertrapper.dm"
 #include "code\modules\trade\datums\trade_stations_presets\4-unique\bluespace_tech.dm"
+#include "code\modules\trade\datums\trade_stations_presets\4-unique\greyson_ship.dm"
 #include "code\modules\trade\datums\trade_stations_presets\4-unique\illegalbeacon1.dm"
 #include "code\modules\trade\datums\trade_stations_presets\4-unique\illegalbeacon2.dm"
 #include "code\modules\trade\machinery\trade_beacon.dm"
