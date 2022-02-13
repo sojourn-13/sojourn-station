@@ -69,7 +69,7 @@
 		"Pre-Made Mechs" = list(
 			/obj/mecha/working/hoverpod/cargo_imported = custom_good_amount_range(list(1, 2)),
 			/obj/mecha/working/ripley/cargo_imported = custom_good_amount_range(list(-2, 3)),
-			/obj/mecha/working/iva/cargo_imported = custom_good_amount_range(list(-1,2))
+			/obj/mecha/working/ivan/cargo_imported = custom_good_amount_range(list(-1,2))
 		)
 	)
 
