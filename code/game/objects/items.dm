@@ -186,6 +186,8 @@
 			message += SPAN_NOTICE("\nThis item cost: [get_item_cost()][CREDITS]")
 		if(H.stats.getPerk(PERK_MARKET_PROF) && surplus_tag == TRUE)
 			message += SPAN_NOTICE("\nThis item has a surplus tag and is only worth ten percent its usual value on exports.")
+		if(H.stats.getPerk(PERK_MARKET_PROF) && autolathen_printed == TRUE)
+			message += SPAN_NOTICE("\nThis item is work ten percent less on the shuttle exported. But not for trade beacons!")
 
 	return ..(user, distance, "", message)
 

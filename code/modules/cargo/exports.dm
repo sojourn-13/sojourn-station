@@ -55,7 +55,9 @@ Credit dupes that require a lot of manual work shouldn't be removed, unless they
 		if(!found_export)
 			var/item_value = thing.get_item_cost(TRUE)
 			if(thing.surplus_tag)
-				item_value = round(item_value * 0.1)
+				item_value = round(item_value * 0.1) //90% less for buyed form the cargo shuttle, not beacons tho
+			if(thing.autolathen_printed)
+				item_value = round(item_value * 0.9) //10% less for autolathen printed items
 			if(item_value)
 				cost += item_value
 				sold_str += " [thing.name]"
