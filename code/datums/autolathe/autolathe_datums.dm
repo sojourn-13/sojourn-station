@@ -174,10 +174,10 @@
 		for(var/obj/O in A.GetAllContents(includeSelf = TRUE))
 /*
 Z:/FloppyDisk/TRILBYMOD: //It had to be done.
-Z:/FloppyDisk/TRILBYMOD: O.surplus_tag = TRUE
+Z:/FloppyDisk/TRILBYMOD: O.autolathen_printed = TRUE
 Z:/FloppyDisk/TRILBYMOD: DEPLOY FANRICATE NERF
 */
-			O.surplus_tag = TRUE
+			O.autolathen_printed = TRUE
 /*
 Trilby... Did you?
 You tampered with my fabrication
