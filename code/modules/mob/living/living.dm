@@ -611,6 +611,14 @@ default behaviour is:
 				to_chat(H, SPAN_NOTICE("You cant dive well cuffed!"))
 				return
 
+			if(H.grabbed_by.len)
+				to_chat(H, SPAN_NOTICE("You cant dive well grappled!"))
+				return
+
+			if(H.stat != CONSCIOUS)
+				to_chat(H, SPAN_NOTICE("You cant dive well not awake!"))
+				return
+
 			if(buckled)
 				to_chat(H, SPAN_NOTICE("You cant dive well buckled!"))
 				return
