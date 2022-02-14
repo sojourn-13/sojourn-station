@@ -46,7 +46,7 @@
 	if(progress >= target_progress)
 		reset()
 		message = "Successfully collected data points and saved metadata results."
-		HD = new/datum/computer_file/binary/research_points()
+		HD.store_file(new/datum/computer_file/binary/research_points())
 
 /datum/computer_file/program/point_miner/proc/reset()
 	running = FALSE
