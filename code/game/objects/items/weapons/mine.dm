@@ -28,6 +28,10 @@
 	var/excelsior = FALSE
 	anchored = FALSE
 
+/obj/item/mine/Initialize()
+	. = ..()
+	update_icon()
+
 /obj/item/mine/bullet_act()
 	if(prob(90))
 		explode()
