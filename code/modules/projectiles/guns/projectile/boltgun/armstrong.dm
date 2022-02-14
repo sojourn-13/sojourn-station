@@ -23,8 +23,8 @@
 	icon = 'icons/obj/guns/projectile/custer.dmi'
 	icon_state = "custer"
 	item_state = "custer"
-	caliber = CAL_LRIFLE
-	max_shells = 9
+	caliber = CAL_HRIFLE
+	max_shells = 7
 	price_tag = 950
 	recoil_buildup = 10
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_WOOD = 10)

@@ -33,7 +33,6 @@
 			/obj/item/tracker_electronics,
 			/obj/machinery/power/emitter,
 			/obj/machinery/power/rad_collector,
-			/obj/machinery/power/supermatter,
 			/obj/machinery/power/generator,
 			/obj/machinery/atmospherics/binary/circulator,
 			/obj/item/clothing/gloves/insulated
@@ -43,7 +42,7 @@
 			/obj/item/storage/briefcase/inflatable/empty,
 			/obj/item/inflatable/door,
 			/obj/item/inflatable/wall,
-			/obj/item/stack/material/steel/full,
+			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5)),
 			/obj/item/storage/belt/utility/full,
 			/obj/item/clothing/head/welding,
 			/obj/item/tool/omnitool,

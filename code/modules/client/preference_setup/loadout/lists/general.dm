@@ -81,3 +81,7 @@
 /datum/gear/vacflask
 	display_name = "vacuum flask"
 	path = /obj/item/reagent_containers/food/drinks/flask/vacuumflask
+
+/datum/gear/trackingimplanter
+	display_name = "implanter (tracking)"
+	path = /obj/item/implanter/tracking

@@ -38,7 +38,7 @@
 		),
 		"Syndicate Gun Mods" = list(
 			/obj/item/gun_upgrade/barrel/gauss,
-			/obj/item/gun_upgrade/mechanism/glass_widow,
+			//obj/item/gun_upgrade/mechanism/glass_widow,
 			/obj/item/gun_upgrade/scope/killer
 		)
 	)

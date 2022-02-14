@@ -22,10 +22,10 @@
 			/obj/item/ammo_casing/flare/prespawn
 			),
 		"Refined Materials" = list(
-			/obj/item/stack/material/plastic/full = good_data("plastic sheets (x120)", list(2, 5)),
+			/obj/item/stack/material/plastic/full = good_data("plastic sheets (x120)", list(4, 5)),
 			/obj/item/stack/material/cardboard/full = good_data("cardboard sheets (x120)", list(2, 5)),
-			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(2, 5)),
-			/obj/item/stack/material/plasteel/full = good_data("plasteel sheets (x120)", list(1, 2)),
+			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5)),
+			/obj/item/stack/material/plasteel/full = good_data("plasteel sheets (x120)", list(2, 3)),
 			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5)),
 			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5)),
 			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2))

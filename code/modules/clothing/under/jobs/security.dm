@@ -70,6 +70,40 @@
 	siemens_coefficient = 0.8
 	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 
+/obj/item/clothing/under/rank/bdu/marshal
+	name = "marshal officer's BDU"
+	desc = "A durable officer's Battle Dress Uniform, designed to provide moderate combat protection."
+	icon_state = "bdumarshal"
+	item_state = "bdumarshal"
+
+/obj/item/clothing/under/rank/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /*
  * Detective
  */

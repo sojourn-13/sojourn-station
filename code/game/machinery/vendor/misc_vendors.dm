@@ -797,7 +797,7 @@
 
 /obj/machinery/vending/gamers
 	name = "Game Emporium"
-	desc = "A one time stop for all your card or board game needs!"
+	desc = "A one stop shop for all your card or board game needs!"
 	icon_state = "nutrimat"
 	icon_vend = "nutrimat-vend"
 	vendor_department = DEPARTMENT_CHURCH
@@ -819,7 +819,9 @@
 					/obj/item/cardholder = 40,
 					/obj/item/cardholder/squirl = 20,
 					/obj/item/cardholder/ratbox = 20,
-					/obj/item/card_carp = 50
+					/obj/item/storage/hcases/cardcarp = 20,
+					/obj/item/card_carp = 50,
+					/obj/item/card_carp/index = 50
 					)
 	prices = list(
 					/obj/item/board = 35,
@@ -835,7 +837,9 @@
 					/obj/item/cardholder = 42,
 					/obj/item/cardholder/squirl = 30,
 					/obj/item/cardholder/ratbox = 30,
-					/obj/item/card_carp = 1)
+					/obj/item/storage/hcases/cardcarp = 20,
+					/obj/item/card_carp = 1,
+					/obj/item/card_carp/index = 1)
 
 /obj/machinery/vending/gamers/hunters
 	name = "Pre-Payed Game Emporium"
@@ -854,7 +858,9 @@
 					/obj/item/cardholder = 8,
 					/obj/item/cardholder/squirl = 4,
 					/obj/item/cardholder/ratbox = 4,
-					/obj/item/card_carp = 4
+					/obj/item/storage/hcases/cardcarp = 4,
+					/obj/item/card_carp = 4,
+					/obj/item/card_carp/index = 4
 					)
 	prices = list(
 					/obj/item/board = 0,
@@ -870,4 +876,6 @@
 					/obj/item/cardholder = 0,
 					/obj/item/cardholder/squirl = 0,
 					/obj/item/cardholder/ratbox = 0,
-					/obj/item/card_carp = 0)
+					/obj/item/storage/hcases/cardcarp = 0,
+					/obj/item/card_carp = 0,
+					/obj/item/card_carp/index = 0)

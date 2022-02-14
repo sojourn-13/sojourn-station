@@ -51,10 +51,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/crawler)
-"l" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "m" = (
 /obj/random/mob/roomba,
 /turf/simulated/floor/tiled/steel/gray_perforated,
@@ -98,9 +94,9 @@ a
 a
 c
 f
-l
 e
-l
+e
+e
 q
 n
 a
@@ -186,9 +182,9 @@ a
 a
 c
 f
-l
 e
-l
+e
+e
 q
 n
 a

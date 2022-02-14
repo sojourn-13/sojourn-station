@@ -342,3 +342,32 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	armor = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
 
+// hoods for the tacticool ponchos.
+
+/obj/item/clothing/head/tacticalhood
+	name = "brown tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_brown"
+	item_state = "tacponhood_brown"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/green
+	name = "green tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_green"
+	item_state = "tacponhood_green"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/camo
+	name = "camo tactical hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_camo"
+	item_state = "tacponhood_camo"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood/ghillie
+	name = "ghillie hood"
+	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
+	icon_state = "tacponhood_ghillie"
+	item_state = "tacponhood_ghillie"
+	flags_inv = HIDEEARS|BLOCKHAIR
