@@ -31,7 +31,7 @@
 	build_path = /obj/item/gun/projectile/colt
 
 /datum/design/autolathe/gun/glock
-	name = "GmbH HG .35 \"Sky\""
+	name = "Seinemetall Defense GmbH HG .35 \"Sky\""
 	build_path = /obj/item/gun/projectile/glock
 
 /datum/design/autolathe/gun/NM_colt
