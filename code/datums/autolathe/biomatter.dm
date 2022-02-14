@@ -233,6 +233,10 @@
 	build_path = /obj/item/tool/sword/nt/flanged
 
 //[GRENADES]
+/datum/design/autolathe/grenade/nt_heatwave
+	name = "NT HG \"Inferno\""
+	build_path = /obj/item/grenade/heatwave/nt
+
 /datum/design/autolathe/grenade/nt_smokebomb
 	name = "NT SG \"Holy Fog\""
 	build_path = /obj/item/grenade/smokebomb/nt
