@@ -87,5 +87,5 @@
 /obj/mecha/working/ripley/cargo_imported
 	price_tag = 5500
 
-/obj/mecha/working/iva/cargo_imported
+/obj/mecha/working/ivan/cargo_imported
 	price_tag = 4000
