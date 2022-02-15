@@ -21,6 +21,16 @@
 		M.adjustToxLoss(strength * multi)
 	M.add_chemical_effect(CE_TOXIN, 1)
 
+/datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(ishuman(M))
+		if(M.stats.getPerk(PERK_SNACKIVORE))
+			M.adjustOxyLoss(-0.6 * effect_multiplier)
+			M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
+			M.adjustToxLoss(-0.3 * effect_multiplier)
+			M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+
+	return ..()
+
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
 		M.adjustToxLoss(strength * issmall(M) ? 2 : 1)
