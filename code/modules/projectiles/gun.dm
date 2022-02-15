@@ -653,7 +653,6 @@
 
 /obj/item/gun/proc/toggle_firemode(mob/living/user)
 	if(currently_firing) // CHEATERS!
-		to_chat(user, SPAN_NOTICE("\The [src] cant swap fire modes well being used."))
 		return
 	var/datum/firemode/new_mode = switch_firemodes()
 	if(new_mode)
