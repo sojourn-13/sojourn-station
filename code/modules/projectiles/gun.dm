@@ -96,6 +96,7 @@
 
 	var/folding_stock = FALSE //Can we fold are stock?
 	var/folded = FALSE //IS are stock folded?
+	var/currently_firing = FALSE
 
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
@@ -308,6 +309,8 @@
 	if(!special_check(user))
 		return
 
+	currently_firing = TRUE
+
 	var/shoot_time = (burst - 1)* burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
 	next_fire_time = world.time + shoot_time
@@ -358,8 +361,6 @@
 			target = targloc
 			pointblank = 0
 
-
-
 	//update timing
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.set_move_cooldown(move_delay)
@@ -381,6 +382,8 @@
 		return FALSE
 
 		next_fire_time = world.time + fire_delay
+
+	currently_firing = FALSE
 
 	if(muzzle_flash)
 		set_light(0)
@@ -649,6 +652,8 @@
 	toggle_firemode(user)
 
 /obj/item/gun/proc/toggle_firemode(mob/living/user)
+	if(currently_firing) // CHEATERS!
+		return
 	var/datum/firemode/new_mode = switch_firemodes()
 	if(new_mode)
 		playsound(src.loc, 'sound/weapons/guns/interact/selector.ogg', 100, 1)
