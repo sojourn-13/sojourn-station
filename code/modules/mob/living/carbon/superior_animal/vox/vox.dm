@@ -26,7 +26,7 @@
 
 	armor = list(melee = 10, bullet = 15, energy = 5, bomb = 20, bio = 20, rad = 0)
 
-	fire_verb = "flings"
+	fire_verb = "flings a rock"
 
 	melee_damage_lower = 12
 	melee_damage_upper = 16
