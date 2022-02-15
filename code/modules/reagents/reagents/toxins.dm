@@ -24,10 +24,7 @@
 /datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(ishuman(M))
 		if(M.stats.getPerk(PERK_SNACKIVORE))
-			M.adjustOxyLoss(-0.6 * effect_multiplier)
-			M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
-			M.adjustToxLoss(-0.3 * effect_multiplier)
-			M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+			M.adjustToxLoss(-((0.6 + (M.getToxLoss() * 0.05)) * effect_multiplier))
 
 	return ..()
 
