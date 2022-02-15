@@ -36,6 +36,8 @@
 	//So we dont have meat
 	meat_amount = 3
 	meat_type = /obj/item/scrap_lump
+	reagent_immune = TRUE
+	toxin_immune = TRUE
 
 	do_gibs = FALSE
 	colony_friend = TRUE
@@ -43,8 +45,8 @@
 
 	known_languages = list(LANGUAGE_COMMON)
 
-	follow_message = "state, \"Beginning Escort Protocol.\""
-	stop_message = "state, \"Ending Escort Protocol.\""
+	follow_message = "states, \"Beginning Escort Protocol.\""
+	stop_message = "states, \"Ending Escort Protocol.\""
 	follow_distance = 2
 	var/list/creator = list() // Who's the bot's creator.
 	var/repair_rate = 0 // How fast does the bot repair itself.

@@ -308,7 +308,7 @@
 	desc = "You retrieve your custom kitted medical webbing hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This tool belt is yours alone and you should not allow any non-opifex to use it."
 	active = FALSE
 	passivePerk = FALSE
-	
+
 
 /datum/perk/opifex_backup_medical/activate()
 	var/mob/living/carbon/human/user = usr
@@ -592,3 +592,16 @@
 	mushroom.friends += user
 	mushroom.following = user
 	..()
+
+// Food related perks
+/datum/perk/carnivore
+	name = "Carnivore"
+	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate carnivore. You get very little nutrition from standard nutriment, but gain alot from meat and protein \
+	based products."
+	passivePerk = TRUE
+
+/datum/perk/herbivore
+	name = "Herbivore"
+	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate herbivore. You get very little nutrition from standard protein, but gain alot from grown foods and glucose \
+	based products."
+	passivePerk = TRUE

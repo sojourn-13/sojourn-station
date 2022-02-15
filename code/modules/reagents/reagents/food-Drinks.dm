@@ -9,7 +9,7 @@
 	taste_mult = 4
 	reagent_state = SOLID
 	metabolism = REM * 2
-	var/nutriment_factor = 6 // Per metabolism tick
+	var/nutriment_factor = 5 // Per metabolism tick
 	var/regen_factor = 0.8 //Used for simple animal health regeneration
 	var/injectable = 0
 	color = "#664330"
@@ -43,9 +43,11 @@
 	affect_ingest(M, alien, effect_multiplier * 1.2)
 
 /datum/reagent/organic/nutriment/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(M.species.reagent_tag == IS_CARNIVORE)
-		M.adjustNutrition(nutriment_factor * 0.25)
-		return
+	if(ishuman(M))
+		if(M.stats.getPerk(PERK_HERBIVORE))
+			nutriment_factor = nutriment_factor += 2
+		else if(M.stats.getPerk(PERK_CARNIVORE))
+			nutriment_factor = nutriment_factor -= 4
 
 	// Small bodymass, more effect from lower volume.
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier)) // For hunger and fatness
@@ -61,7 +63,7 @@
 	common = TRUE //It's basically sugar
 
 /datum/reagent/organic/nutriment/protein
-	name = "Animal Protein"
+	name = "Protein"
 	taste_description = "some sort of protein"
 	id = "protein"
 	description = "Essential nutrient for the human body."
@@ -69,10 +71,34 @@
 	common = TRUE //Protein Shake
 
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(M.species.reagent_tag == IS_CARNIVORE)
-		M.adjustNutrition(nutriment_factor * 1.50)
+	if(ishuman(M))
+		if(M.stats.getPerk(PERK_CARNIVORE))
+			nutriment_factor = nutriment_factor += 6
+		else if(M.stats.getPerk(PERK_HERBIVORE))
+			nutriment_factor = nutriment_factor -= 6
+
 	return ..()
 
+/datum/reagent/organic/nutriment/preservatives
+	name = "Preservatives"
+	taste_description = "bland preservatives"
+	id = "preservatives"
+	description = "A slurry of bland chemical preservatives that takes years, if not decades, to go bad."
+	color = "#440000"
+	common = TRUE //Snacks
+	nutriment_factor = 1
+	regen_factor = 0.2
+
+/datum/reagent/organic/nutriment/preservatives/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(ishuman(M))
+		if(M.stats.getPerk(PERK_SNACKIVORE))
+			M.adjustNutrition(nutriment_factor * 10)
+			M.adjustOxyLoss(-0.3 * effect_multiplier)
+			M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
+			M.adjustToxLoss(-0.1 * effect_multiplier)
+			M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+
+	return ..()
 
 /datum/reagent/organic/nutriment/protein/egg
 	name = "Egg Yolk"

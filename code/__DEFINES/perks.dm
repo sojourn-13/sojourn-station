@@ -111,3 +111,8 @@
 
 //Genetics Perks
 #define PERK_SPLICED /datum/perk/spliced
+
+// Food perks
+#define PERK_CARNIVORE /datum/perk/carnivore
+#define PERK_HERBIVORE /datum/perk/herbivore
+#define PERK_SNACKIVORE /datum/perk/oddity/snackivore
