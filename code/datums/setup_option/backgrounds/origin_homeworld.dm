@@ -46,16 +46,17 @@
 	land with only a smattering of plateaus being safe enough for permanent settlements in the face of the ever transient forests. Fortunately the second issue- a lack of valuable ores \
 	or gasses, has so far been a boon for Neapolitians who have managed to evade major interest from their large sometimes hostile neighbors. Individuals from Neapolis are often \
 	idealistic, artistic, and sometimes a little naive. As a lush garden world that boasts a highly productive and often self reliance on growable food, those from Neapolis are often \
-	described as having a green thumb. Decades of living on a garden world have also made many of Neapolis obligate herbivores, preferring organic diets."
+	described as having a green thumb. Decades of living on a garden world have also made many of Neapolis obligate herbivores, preferring organic diets, but the lack of protein makes them \
+	weaker on average."
 
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_CHTMANT)
 	perks = list(/datum/perk/greenthumb, /datum/perk/herbivore)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
+		STAT_ROB = -5,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
-		STAT_BIO = 0,
+		STAT_BIO = 5,
 		STAT_MEC = 0,
 		STAT_COG = 5
 	)
