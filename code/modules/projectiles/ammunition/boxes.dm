@@ -215,7 +215,7 @@
 
 /obj/item/ammo_magazine/ammobox/rifle_75
 	name = "ammunition box (7.5mm Rifle ball)"
-	icon_state = "boxhrifle"
+	icon_state = "boxrifle"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, Full Metal Jacket rounds."
 	matter = list(MATERIAL_STEEL = 10)
 	w_class = ITEM_SIZE_BULKY
@@ -236,25 +236,25 @@
 
 /obj/item/ammo_magazine/ammobox/rifle_75/rubber
 	name = "ammunition box (7.5mm Rifle rubber)"
-	icon_state = "boxhrifle-rubber"
+	icon_state = "boxrifle-rubber"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, deforming traumatic rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
 /obj/item/ammo_magazine/ammobox/rifle_75/practice
 	name = "ammunition box (7.5mm Rifle practice)"
-	icon_state = "boxhrifle-practice"
+	icon_state = "boxrifle-practice"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75/lethal
 	name = "ammunition box (7.5mm Rifle Hollow Point)"
-	icon_state = "boxhrifle-lethal"
+	icon_state = "boxrifle-lethal"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, hollow-point rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/ammobox/rifle_75/hv
 	name = "ammunition box (7.5mm Rifle High-Velocity)"
-	icon_state = "boxhrifle-hv"
+	icon_state = "boxrifle-hv"
 	desc = "A box of 7.5mm rifle ammunition. 180ct, high-velocity rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
