@@ -17,7 +17,7 @@
 	fire_sound = 'sound/weapons/railgun.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
-	price_tag = 10000
+	price_tag = 3000 //750 more than Reductor
 	one_hand_penalty = 80
 	damage_multiplier = 0.6
 	penetration_multiplier = 0.6 //It's a glorified railway rifle, no way it's even close to actual AMR.
