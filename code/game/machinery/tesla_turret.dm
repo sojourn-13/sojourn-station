@@ -24,6 +24,9 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	var/last_zap = 0
 	var/list/possible_targets = list(T_HUMAN, T_SILICON, T_SIMPLE_ANIMAL, T_SUPERIOR_ANIMAL)
 	var/current_target = null
+	
+	var/damage_cap = 90 // How much damage can the turret do per zap maximum.
+	var/power_damage_ratio = 400 // How much power does the machine consume per damage point.
 
 /obj/machinery/power/tesla_turret/anchored
 	anchored = TRUE
@@ -131,6 +134,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 		return FALSE
 	last_zap = world.time
 	var/power = (powernet.avail/2)
+	power = min(power, damage_cap * power_damage_ratio)
 	draw_power(power)
 	playsound(src, 'sound/effects/lightningshock.ogg', 100, 1, extrarange = 5)
 
@@ -140,7 +144,7 @@ Will blast electricity at any target within 5 tiles radius matching criteria cho
 	if(zapdir)
 		. = zapdir
 
-	var/shock_damage = CLAMP(round(power/400), 10, 90) + rand(-5, 5)
+	var/shock_damage = round(power / power_damage_ratio) + rand(-5, 5)
 	target.electrocute_act(shock_damage, src)
 	log_game("Tesla Turret([src.x],[src.y],[src.z]) shocked [key_name(target)] for [shock_damage]dmg.")
 	message_admins("Tesla Turret([src.x],[src.y],[src.z]) zapped [key_name_admin(target)] for [shock_damage]dmg!")
