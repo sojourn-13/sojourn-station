@@ -230,6 +230,18 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	price_tag = 40
 
+/obj/item/tool/sword/katana/vibro
+	name = "\"Jetstream\" vibrokatana"
+	desc = "A modern katana sharpened and painted over with red all over it's blade. Just swinging it makes your ears ring from it's sharp edge cutting up against the air. The handle has a thunderbolt logo and a quote 'Show me a good time, Jack' under it."
+	icon_state = "katana_vibro"
+	item_state = "katana_vibro"
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 2, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 1)
+	hitsound = 'sound/weapons/anime_sword.wav'
+	tool_qualities = list(QUALITY_CUTTING = 35, QUALITY_SAWING = 10) // It can cut throught armor like nothing
+	slot_flags = SLOT_BELT | SLOT_BACK
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_MASSIVE
+
 /obj/item/tool/sword/katana/nano
 	name = "\improper Soteria \"Muramasa\" katana"
 	desc = "After an extensive binge of ancient animated recordings, a scientist decided to upgrade a recovered katana."
