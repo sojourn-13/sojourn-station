@@ -16,7 +16,7 @@
 	ammo_type = /obj/item/ammo_casing/antim
 	fire_sound = 'sound/weapons/railgun.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
-	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 20, 	 = 10)
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 10000
 	one_hand_penalty = 80
 	damage_multiplier = 0.6
