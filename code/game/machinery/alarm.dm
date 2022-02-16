@@ -402,7 +402,7 @@
 			to_chat(usr, "Air Alarm mode changed to Filtering.")
 			for(var/device_id in alarm_area.air_scrub_names)
 				send_signal(device_id, list("power"= 0) )
-				
+
 			for(var/device_id in alarm_area.air_vent_names)
 				send_signal(device_id, list("power"= 0) )
 
@@ -410,12 +410,12 @@
 			if(mode == AALARM_MODE_PANIC)
 				to_chat(usr, "Air Alarm mode changed to Panic.")
 				for(var/device_id in alarm_area.air_scrub_names)
-					send_signal(device_id, list("power"= 1, "panic_siphon"= 1) )	
+					send_signal(device_id, list("power"= 1, "panic_siphon"= 1) )
 			else
 				to_chat(usr, "Air Alarm mode changed to Cycle.")
 				for(var/device_id in alarm_area.air_scrub_names)
 					send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0) )
-				
+
 			for(var/device_id in alarm_area.air_vent_names)
 				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default") )
 
@@ -467,7 +467,7 @@
 	frequency.post_signal(src, alert_signal)
 
 /obj/machinery/alarm/attack_ai(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/alarm/attack_hand(mob/user)
 	. = ..()
@@ -476,10 +476,10 @@
 	return interact(user)
 
 /obj/machinery/alarm/interact(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 	wires.Interact(user)
 
-/obj/machinery/alarm/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, var/master_ui = null, var/datum/topic_state/state = GLOB.default_state)
+/obj/machinery/alarm/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, var/master_ui = null, var/datum/topic_state/state = GLOB.default_state)
 	var/data[0]
 	var/remote_connection = 0
 	var/remote_access = 0
@@ -980,7 +980,7 @@ FIRE ALARM
 	. = ..()
 	if (.)
 		return
-	return ui_interact(user)
+	return nano_ui_interact(user)
 
 /obj/machinery/firealarm/bullet_act()
 	return src.alarm()
@@ -1109,7 +1109,7 @@ FIRE ALARM
 	spawn(rand(0,15))
 		update_icon()
 
-/obj/machinery/firealarm/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.outside_state)
+/obj/machinery/firealarm/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.outside_state)
 	var/data[0]
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 

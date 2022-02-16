@@ -341,9 +341,9 @@
 /obj/machinery/computer/telesci_console/attack_hand(mob/user)
 	if(..())
 		return TRUE
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/computer/telesci_console/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/computer/telesci_console/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = form_data()
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -545,7 +545,7 @@
 			addLog("Closing bluespace tunnel by user request.")
 			closePortal()
 
-	ui_interact(user)
+	nano_ui_interact(user)
 	return FALSE
 
 /obj/machinery/computer/telesci_console/Destroy()
