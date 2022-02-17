@@ -650,7 +650,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_TRIGGER
-	I.prefix = "loose trigger"
+	I.prefix = "feather trigger"
 
 /obj/item/gun_upgrade/barrel/faulty
 	name = "Warped Barrel"
@@ -670,7 +670,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_BARREL
-	I.prefix = "warped barrel"
+	I.prefix = "refined barrel"
 
 /obj/item/gun_upgrade/muzzle/faulty
 	name = "Failed Makeshift Silencer"
@@ -689,7 +689,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MUZZLE
-	I.prefix = "deafened"
+	I.prefix = "silenced"
 
 /obj/item/gun_upgrade/mechanism/faulty
 	name = "Unknown Clockwork Mechanism"
@@ -725,7 +725,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_SCOPE
-	I.prefix = "miscoped"
+	I.prefix = "scoped"
 
 /obj/item/gun_upgrade/mechanism/faulty_trapped
 	name = "Jammed loader"
@@ -742,7 +742,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MECHANISM
-	I.prefix = "sticky trigger"
+	I.prefix = "feather trigger"
 
 #define TRASH_GUNMODS list(/obj/item/gun_upgrade/trigger/faulty, /obj/item/gun_upgrade/barrel/faulty, \
 		/obj/item/gun_upgrade/muzzle/faulty, /obj/item/gun_upgrade/mechanism/faulty, \
