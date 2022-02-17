@@ -127,6 +127,8 @@
 							/datum/design/research/circuit/chem_heater,
 							/datum/design/research/item/makeshift_centrifuge,
 							/datum/design/research/structure/bidon,
+							/datum/design/research/item/computer_part/medical,
+							/datum/design/research/item/computer_part/reagent,
 							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade
 							//datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
 							)

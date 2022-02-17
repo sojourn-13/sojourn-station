@@ -22,10 +22,6 @@
 "g" = (
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
-"h" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "i" = (
 /obj/structure/sign/warning/secure_area,
 /turf/simulated/wall/untinted/onestar,
@@ -65,9 +61,9 @@ e
 e
 c
 i
-h
 g
-h
+g
+g
 d
 c
 e
@@ -153,9 +149,9 @@ e
 e
 c
 d
-h
 g
-h
+g
+g
 i
 c
 e

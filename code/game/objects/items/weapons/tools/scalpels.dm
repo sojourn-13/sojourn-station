@@ -38,7 +38,7 @@
 	damtype = "fire"
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_MODERATE
-	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 4)
+	matter = list(MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1)
 	tool_qualities = list(QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 20, QUALITY_LASER_CUTTING = 60, QUALITY_CAUTERIZING = 20)
 	degradation = 0.11
 	use_power_cost = 0.12

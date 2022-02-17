@@ -96,6 +96,7 @@
 
 	var/folding_stock = FALSE //Can we fold are stock?
 	var/folded = FALSE //IS are stock folded?
+	var/currently_firing = FALSE
 
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
@@ -308,6 +309,8 @@
 	if(!special_check(user))
 		return
 
+	currently_firing = TRUE
+
 	var/shoot_time = (burst - 1)* burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
 	next_fire_time = world.time + shoot_time
@@ -358,8 +361,6 @@
 			target = targloc
 			pointblank = 0
 
-
-
 	//update timing
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.set_move_cooldown(move_delay)
@@ -381,6 +382,8 @@
 		return FALSE
 
 		next_fire_time = world.time + fire_delay
+
+	currently_firing = FALSE
 
 	if(muzzle_flash)
 		set_light(0)
@@ -480,10 +483,7 @@
 
 	if(params)
 		P.set_clickpoint(params)
-	var/offset = init_offset
-	if(user.recoil)
-		offset += user.recoil
-	offset = min(offset, MAX_ACCURACY_OFFSET)
+	var/offset = user.calculate_offset(init_offset)
 	offset = rand(-offset, offset)
 
 	return !P.launch_from_gun(target, user, src, target_zone, angle_offset = offset)
@@ -546,10 +546,7 @@
 	var/view_size = round(world.view + zoom_factor)
 
 	zoom(zoom_offset, view_size)
-	if(safety)
-		user.remove_cursor()
-	else
-		user.update_cursor()
+	check_safety_cursor(user)
 	update_hud_actions()
 
 /obj/item/gun/examine(mob/user)
@@ -567,10 +564,14 @@
 		to_chat(user, SPAN_NOTICE("This gun can be duel-wielded effectively, if you're skilled enough."))
 
 	if(iscarbon(user) || issilicon(user))
+		if(twohanded)
+			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands."))
+			return
 		if(one_hand_penalty && !user.stats.getPerk(PERK_PERFECT_SHOT))
 			to_chat(user, SPAN_WARNING("This gun needs to be wielded in both hands to be used most effectively."))
-		else if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
-			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands, if you weren't such a skilled shot."))
+			return
+		if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
+			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands to stablize the recoil, but your skill overcomes such things."))
 
 /obj/item/gun/proc/initialize_firemodes()
 	QDEL_LIST(firemodes)
@@ -651,6 +652,8 @@
 	toggle_firemode(user)
 
 /obj/item/gun/proc/toggle_firemode(mob/living/user)
+	if(currently_firing) // CHEATERS!
+		return
 	var/datum/firemode/new_mode = switch_firemodes()
 	if(new_mode)
 		playsound(src.loc, 'sound/weapons/guns/interact/selector.ogg', 100, 1)
@@ -666,10 +669,13 @@
 	//Update firemode when safeties are toggled
 	update_firemode()
 	update_hud_actions()
+	check_safety_cursor(user)
+
+/obj/item/gun/proc/check_safety_cursor(mob/living/user)
 	if(safety)
 		user.remove_cursor()
 	else
-		user.update_cursor()
+		user.update_cursor(src)
 
 /obj/item/gun/proc/get_total_damage_adjust()
 	var/val = 0
@@ -903,7 +909,7 @@
 		if(folding_stock)
 			fold(span_chat = FALSE) //If we have a stock lets not remove all are boons cuz we looked down a scope
 
-/* //Eris has this but it, unsurpriingly, has issues, just gonna comment it out for now incase I use the code for something else later.
+/* //Eris has this but it, unsurpringly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/gun/proc/generate_guntags()
 	if(!zoom_factor && !(slot_flags & SLOT_HOLSTER))
 		gun_tags |= GUN_SCOPE

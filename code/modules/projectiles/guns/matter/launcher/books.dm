@@ -34,9 +34,9 @@
 	projectile_type = /obj/item/projectile/beam/sniper/healing
 
 /obj/item/gun/matter/holybook/staff
-	name = "Harmony Scepter"
-	desc = "A golden scepter with a leather wrapped around its handle, can be loaded with biomatter to heal those to cast its light onto. \
-	Can be used to brash people over the head but it will be unwieldly"
+	name = "\improper Harmony Scepter"
+	desc = "A golden scepter with a leather wrapped handle, capable of being loaded with biomatter to fire off healing beams of energy that can heal most types of standard damage. Also heavy enough \
+	to bash your enemies over the head."
 	icon = 'icons/obj/guns/matter/harmony_scepter.dmi'
 	icon_state = "harmony_scepter"
 	projectile_type = /obj/item/projectile/beam/sniper/healing/staff
@@ -45,7 +45,7 @@
 	armor_penetration = ARMOR_PEN_EXTREME
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	max_stored_matter = 20
-	matter = list(MATERIAL_STEEL = 5, MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 10)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 10)
 	price_tag = 3000 //So its worth stealing >:D
 	w_class = ITEM_SIZE_HUGE
 

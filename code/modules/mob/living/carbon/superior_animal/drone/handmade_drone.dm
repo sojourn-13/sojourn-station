@@ -30,6 +30,8 @@
 	do_gibs = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	reagent_immune = TRUE
+	toxin_immune = TRUE
 
 	known_languages = list(LANGUAGE_COMMON)
 

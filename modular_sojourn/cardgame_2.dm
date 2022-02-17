@@ -128,12 +128,37 @@
 	destroyed unless otherwise noted it is not placed in the player's discard pile and is instead removed from the game. Each player can only play a maximum of 2 terrain cards during pre-match set up.<BR>\n\
 	Kinship - This card gains power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only add 1 power, no matter how many matching \
 	types they have, unless otherwise stated. Kinship cards do not count themselves for the purposes of gaining power."
-	var/real_desc = ""
 	icon = 'modular_sojourn/cardgame_sprites.dmi'
 	icon_state = "cardblank"
 	var/cant_box = FALSE
 	w_class = ITEM_SIZE_TINY
 	var/current_health = 0
+
+/obj/item/card_carp/index
+	name = "Index-Effects: CardCarp"
+	desc = "Card Effects:<BR>\n\
+	Flying - Cards with flying ignore blockers, obstacles, and pelts unless that card is capable of blocking flyers. Having flying does not give a card the ability to block other flyers.<BR>\n\
+	Destructive - All cards with destructive kill all cards of the same type when dying. I.E. a crab with virulent kills all other crabs. Type is determined by matching words in the name.<BR>\n\
+	Deathtouch - On attack, any card it is facing is considered killed. Damage and death touch do not carry over to any cards or player behind it.<BR>\n\
+	Eternal - This card does not die when used as a sacrifice for blood.<BR>\n\
+	Stinky - This card reduces any opposing cards power by 1.<BR>\n\
+	Defender - This card can block cards with flying.<BR>\n\
+	Prong Strike - This card attacks twice, dealing damage and attacking on the left and right side of the card. Prong Strike prevents attacking the card directly opposing this card. If a prong \
+	strike creatures attack would go off the grid it deals no damage and is negated.<BR>\n\
+	Tri Strike - As prong strike, but also attacks the opposing card.<BR>\n\
+	Guard - If an unoccupied space would be attacked by an opposing card, this card moves to that space and blocks that attack. This effect may happen mutiple times until all attacks are resolved or \
+	the guarding card is dead.<BR>\n\
+	Fortune - As long as this card remains on the field, all players draw two cards. Players may choose to draw once from each deck or twice from a single deck. Fortune cards do not stack with other \
+	fortune cards.<BR>\n\
+	Generous - When this card is played, the owner may draw a card of their choice from either deck.<BR>\n\
+	Undying - When this card dies, instead of being placed in the owner's discard pile, it is returned to the owner's hand.<BR>\n\
+	Chime - When this card dies, the owner of this card draws one card from a deck of their choice.<BR>\n\
+	Pelt - Pelt cards may be placed on any position on either players board when played. Pelt cards do not move but otherwise follow the same rules as other cards. Pelt cards cannot be sacrificed \
+	for blood and are added to the discard pile upon death.<BR>\n\
+	Terrain - Terrain  cards may be placed on any position on either players board before the game begins. Terrain cards do not move and cannot be sacrified for blood, nor do they give bones. When a terrain card is \
+	destroyed unless otherwise noted it is not placed in the player's discard pile and is instead removed from the game. Each player can only play a maximum of 2 terrain cards during pre-match set up.<BR>\n\
+	Kinship - This card gains power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only add 1 power, no matter how many matching \
+	types they have, unless otherwise stated. Kinship cards do not count themselves for the purposes of gaining power."
 
 /obj/item/card_carp/examine(mob/user)
 	..()

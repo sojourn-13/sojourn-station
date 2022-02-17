@@ -6,13 +6,6 @@
 /obj/structure/noticeboard,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"c" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/wood,
-/area/crawler)
 "d" = (
 /turf/simulated/floor/wood,
 /area/crawler)
@@ -37,21 +30,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/crawler)
-"i" = (
-/obj/structure/bed/chair/office/dark,
-/obj/machinery/light/floor,
-/turf/simulated/floor/wood,
-/area/crawler)
 "j" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "k" = (
 /obj/structure/table/onestar,
-/turf/simulated/floor/wood,
-/area/crawler)
-"l" = (
-/obj/machinery/light/floor,
 /turf/simulated/floor/wood,
 /area/crawler)
 "m" = (
@@ -208,11 +192,11 @@ a
 (2,1,1) = {"
 a
 d
-c
+s
 n
 e
 d
-l
+d
 x
 a
 "}
@@ -318,11 +302,11 @@ a
 (12,1,1) = {"
 a
 w
-i
+e
 d
 p
 d
-l
+d
 C
 a
 "}

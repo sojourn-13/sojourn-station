@@ -171,3 +171,8 @@
 /datum/category_item/underwear/undershirt/tiedye
 	name = "Tie-dye Shirt"
 	icon_state = "tiedye"
+
+/datum/category_item/underwear/undershirt/bandage
+	name = "Bandage Shirt"
+	icon_state = "bandage_shirt"
+	has_color = TRUE

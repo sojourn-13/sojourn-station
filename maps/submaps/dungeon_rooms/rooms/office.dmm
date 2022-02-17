@@ -2,14 +2,6 @@
 "aa" = (
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"ab" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/light/floor,
-/obj/item/remains/human,
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/crawler)
 "ac" = (
 /obj/structure/noticeboard,
 /turf/simulated/wall/untinted/onestar_reinforced,
@@ -19,6 +11,7 @@
 	dir = 4
 	},
 /obj/structure/bed/chair/office/dark,
+/obj/random/mob/roomba,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "ae" = (
@@ -89,7 +82,6 @@
 	dir = 4
 	},
 /obj/structure/table/onestar,
-/obj/item/stamp/chameleon,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "an" = (
@@ -136,7 +128,6 @@
 	dir = 6
 	},
 /obj/structure/table/onestar,
-/obj/item/clothing/accessory/medal/conduct,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "at" = (
@@ -211,12 +202,9 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "aB" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/bed/chair/office/dark,
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/dark/brown_platform,
+/obj/structure/table/onestar,
+/obj/item/device/toner,
+/turf/simulated/floor/tiled/dark/brown_perforated,
 /area/crawler)
 "aC" = (
 /obj/structure/window/reinforced{
@@ -325,6 +313,7 @@
 	dir = 8
 	},
 /obj/item/remains/human,
+/obj/random/mob/roomba,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/crawler)
 "aO" = (
@@ -350,7 +339,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/light/floor,
 /obj/item/remains/human,
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/dark/brown_platform,
@@ -445,6 +433,21 @@
 /obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
+"vJ" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/crawler)
+"DW" = (
+/obj/machinery/photocopier,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/crawler)
+"MQ" = (
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/crawler)
+"SY" = (
+/obj/random/mob/roomba,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/crawler)
 
 (1,1,1) = {"
 aa
@@ -481,7 +484,7 @@ aa
 "}
 (4,1,1) = {"
 ac
-ab
+aN
 aR
 aM
 ae
@@ -503,8 +506,8 @@ ar
 "}
 (6,1,1) = {"
 ar
-af
-af
+aB
+MQ
 af
 aW
 aZ
@@ -514,19 +517,19 @@ ar
 "}
 (7,1,1) = {"
 ar
-af
-aT
+vJ
+SY
 af
 af
 aZ
 ae
-aB
+aR
 ar
 "}
 (8,1,1) = {"
 ar
-af
-af
+DW
+MQ
 af
 aT
 af

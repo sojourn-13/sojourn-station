@@ -46,7 +46,7 @@
 	damage_step = 3
 
 /obj/item/grenade/frag/stinger
-	name = "GmbH \"Stinger\""
+	name = "Seinemetall Defense GmbH \"Stinger\""
 	desc = "A repurposed fragmentation grenade loaded in rubbers fragments, ready to serve the public trust. Lethal if used ontop of someone."
 	icon_state = "stinger"
 	item_state = "stinger"

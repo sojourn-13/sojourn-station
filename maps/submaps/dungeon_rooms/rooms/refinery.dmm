@@ -16,8 +16,10 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "e" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
+/obj/machinery/conveyor_switch/oneway{
+	id = 1
+	},
+/turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 "f" = (
 /turf/simulated/floor/tiled/derelict,
@@ -35,6 +37,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "j" = (
@@ -73,9 +76,6 @@
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"p" = (
-/turf/simulated/floor/bluegrid,
-/area/crawler)
 "q" = (
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
@@ -104,7 +104,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/crawler)
 "v" = (
-/obj/machinery/light/floor,
 /turf/simulated/floor/plating,
 /area/crawler)
 "w" = (
@@ -115,28 +114,17 @@
 /area/crawler)
 "x" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/conveyor_switch/oneway{
-	id = 1
-	},
-/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "y" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
 /obj/random/material,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"z" = (
-/obj/crawler/crawler_wallbreaker/vertical,
-/turf/simulated/floor/bluegrid,
-/area/crawler)
 "A" = (
-/obj/structure/salvageable/autolathe,
+/obj/structure/salvageable/autolathe_os,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 "B" = (
@@ -161,10 +149,6 @@
 "E" = (
 /obj/structure/plushie/beepsky,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
-"F" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "G" = (
 /obj/machinery/conveyor/northwest{
@@ -199,11 +183,11 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "L" = (
 /obj/structure/table/onestar,
-/obj/machinery/light/floor,
 /obj/random/material,
 /obj/random/material,
 /obj/random/material,
@@ -239,9 +223,9 @@
 a
 a
 a
-p
-p
-z
+o
+o
+o
 a
 a
 a
@@ -253,19 +237,19 @@ d
 q
 q
 q
-F
+T
 T
 a
 "}
 (3,1,1) = {"
 a
-e
+f
 f
 q
 M
 q
 f
-e
+f
 a
 "}
 (4,1,1) = {"
@@ -275,8 +259,8 @@ d
 M
 q
 Q
-F
-F
+T
+T
 a
 "}
 (5,1,1) = {"
@@ -306,7 +290,7 @@ c
 a
 j
 t
-a
+q
 C
 G
 a
@@ -317,8 +301,8 @@ c
 a
 k
 a
-a
-a
+q
+e
 H
 a
 c

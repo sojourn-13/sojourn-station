@@ -2,21 +2,8 @@
 "a" = (
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"b" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/light/small/built{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/derelict/white_red_edges,
-/area/crawler)
 "c" = (
 /turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
-"d" = (
-/obj/machinery/light/built{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/crawler)
 "e" = (
 /obj/structure/railing,
@@ -24,9 +11,6 @@
 /area/crawler)
 "f" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/light/small/built{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/crawler)
 "g" = (
@@ -101,10 +85,6 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/crawler)
-"t" = (
-/obj/machinery/light/built,
-/turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
 "u" = (
 /obj/crawler/crawler_wallbreaker,
 /turf/simulated/wall/untinted/onestar_reinforced,
@@ -151,11 +131,11 @@ a
 "}
 (2,1,1) = {"
 a
-b
+f
 g
 g
 g
-b
+f
 a
 a
 a
@@ -184,13 +164,13 @@ a
 "}
 (5,1,1) = {"
 a
-d
+r
 j
 p
 j
 r
 v
-t
+c
 u
 "}
 (6,1,1) = {"
@@ -234,7 +214,7 @@ q
 m
 r
 c
-t
+c
 u
 "}
 (10,1,1) = {"

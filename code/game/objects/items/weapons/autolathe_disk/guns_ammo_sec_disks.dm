@@ -188,6 +188,7 @@
 		/datum/design/autolathe/ammo/rifle_short,
 		/datum/design/autolathe/ammo/rifle_lethal,
 		/datum/design/autolathe/ammo/rifle_short_lethal,
+		/datum/design/autolathe/ammo/sl_rifle,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/magnum_ammobox,
@@ -1034,20 +1035,6 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/custer
-	disk_name = "H&S - .257 Custer Repeating Rifle"
-	icon_state = "sa"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/custer = 3,
-		/datum/design/autolathe/ammo/lrifle_speed_loader,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_rubber,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small,
-		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
-	)
-
 // 7.5 Rifles
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov
@@ -1175,6 +1162,18 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_hv = 3,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/custer
+	disk_name = "H&S - .408 Custer Repeating Rifle"
+	icon_state = "sa"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/custer = 3,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_rubber,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small,
+		/datum/design/autolathe/ammo/hrifle_ammobox_small_lethal = 2,
+	)
 
 // Heavy
 

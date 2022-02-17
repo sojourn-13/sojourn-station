@@ -31,7 +31,7 @@
 	build_path = /obj/item/gun/projectile/colt
 
 /datum/design/autolathe/gun/glock
-	name = "GmbH HG .35 \"Sky\""
+	name = "Seinemetall Defense GmbH HG .35 \"Sky\""
 	build_path = /obj/item/gun/projectile/glock
 
 /datum/design/autolathe/gun/NM_colt
@@ -266,10 +266,6 @@
 	name = "BR 7.5 \"Zatvor\""
 	build_path = /obj/item/gun/projectile/boltgun/zatvor
 
-/datum/design/autolathe/gun/custer
-	name = "H&S .257 \"Custer\""
-	build_path = /obj/item/gun/projectile/boltgun/lever/custer
-
 /datum/design/autolathe/gun/nail_gun
 	name = "GP .257 \"Nail\""
 	build_path = /obj/item/gun/projectile/automatic/nail_gun
@@ -363,15 +359,15 @@
 	name = "SA BR - .408  \"STS-40\""
 	build_path = /obj/item/gun/projectile/automatic/sts/hrifle
 
+/datum/design/autolathe/gun/custer
+	name = "H&S .408 \"Custer\""
+	build_path = /obj/item/gun/projectile/boltgun/lever/custer
+
 // .40 rifles
 
 /datum/design/autolathe/gun/lever
 	name = "H&S .40 lever action \"Armstrong\""
 	build_path = /obj/item/gun/projectile/boltgun/lever
-
-/datum/design/autholathe/gun/custer
-	name = "H&S .257 lever action \"Custer\""
-	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 // S N O W F L A K E S
 

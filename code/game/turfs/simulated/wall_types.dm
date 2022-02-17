@@ -53,7 +53,7 @@
 	reinf_color_override = "#FFFFFF"
 
 /turf/simulated/wall/church_reinforced/New(var/newloc)
-	..(newloc, MATERIAL_STEEL,MATERIAL_STEEL)
+	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
 
 /turf/simulated/wall/rock
 	name = "rock wall"

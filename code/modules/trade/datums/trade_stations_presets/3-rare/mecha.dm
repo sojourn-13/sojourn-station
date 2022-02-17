@@ -69,16 +69,16 @@
 		"Pre-Made Mechs" = list(
 			/obj/mecha/working/hoverpod/cargo_imported = custom_good_amount_range(list(1, 2)),
 			/obj/mecha/working/ripley/cargo_imported = custom_good_amount_range(list(-2, 3)),
-			/obj/mecha/working/iva/cargo_imported = custom_good_amount_range(list(-1,2))
+			/obj/mecha/working/ivan/cargo_imported = custom_good_amount_range(list(-1,2))
 		)
 	)
 
 	offer_types = list(
-		/obj/item/mech_ammo_box/scattershot = offer_data("LBX AC 10 ammunition box", 350, 0),
-		/obj/item/mech_ammo_box/lmg = offer_data("Ultra AC 2 ammunition box", 350, 0),
-		/obj/item/tool_upgrade/reinforcement/plating = offer_data("reinforced plating", 120, 0),
-		/obj/item/gun_upgrade/mechanism/overdrive = offer_data("overdrive chip", 175, 0),
-		/obj/item/cell/large/moebius/nuclear = offer_data("Soteria \"Atomcell 14000L\"", 575, 0)
+		/obj/item/mech_ammo_box/scattershot = offer_data("LBX AC 10 ammunition box", 350, 5),
+		/obj/item/mech_ammo_box/lmg = offer_data("Ultra AC 2 ammunition box", 350, 5),
+		/obj/item/tool_upgrade/reinforcement/plating = offer_data("reinforced plating", 120, 2),
+		/obj/item/gun_upgrade/mechanism/overdrive = offer_data("overdrive chip", 175, 2),
+		/obj/item/cell/large/moebius/nuclear = offer_data("Soteria \"Atomcell 14000L\"", 575, 3)
 	)
 
 /obj/mecha/working/hoverpod/cargo_imported
@@ -87,5 +87,5 @@
 /obj/mecha/working/ripley/cargo_imported
 	price_tag = 5500
 
-/obj/mecha/working/iva/cargo_imported
+/obj/mecha/working/ivan/cargo_imported
 	price_tag = 4000

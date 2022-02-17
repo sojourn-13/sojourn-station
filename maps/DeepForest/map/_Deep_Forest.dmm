@@ -677,7 +677,6 @@
 /area/nadezhda/outside/one_star)
 "cC" = (
 /obj/effect/decal/cleanable/blood/oil/streak,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "cD" = (
@@ -1169,7 +1168,7 @@
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "eo" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "ep" = (
@@ -1638,7 +1637,7 @@
 /area/nadezhda/dungeon/outside/prepper)
 "fQ" = (
 /obj/machinery/light/floor,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,
+/obj/random/mob/roomba/range,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "fR" = (
@@ -3314,6 +3313,10 @@
 /obj/random/cluster/roaches/low_chance,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
+"lK" = (
+/obj/random/mob/roomba/mecha/low,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/nadezhda/outside/one_star)
 "lL" = (
 /obj/machinery/disease2/incubator,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -4248,7 +4251,7 @@
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "pa" = (
@@ -4452,10 +4455,6 @@
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
-"pR" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
-/turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/nadezhda/outside/one_star)
 "pS" = (
 /obj/structure/bed/chair/custom/onestar{
 	dir = 1
@@ -4544,8 +4543,8 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "qf" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
-/turf/simulated/floor/tiled/derelict/white_big_edges,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "qg" = (
 /obj/structure/window/reinforced{
@@ -4671,7 +4670,7 @@
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "qD" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "qE" = (
@@ -4800,6 +4799,7 @@
 /obj/machinery/light/floor,
 /obj/structure/bed/chair/custom/onestar,
 /obj/item/remains,
+/obj/random/mob/roomba/range,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "rb" = (
@@ -4833,13 +4833,14 @@
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
 "rh" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/asteroid/rogue)
 "ri" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
-/turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/asteroid/rogue)
+/obj/machinery/light/floor,
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/nadezhda/outside/one_star)
 "rj" = (
 /obj/item/tank/onestar_regenerator,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
@@ -8139,6 +8140,10 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"DO" = (
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star)
 "DP" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/ausbushes/brflowers,
@@ -9104,6 +9109,10 @@
 /obj/structure/flora/small/bushb3,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"HQ" = (
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/tiled/derelict,
+/area/nadezhda/outside/one_star)
 "HR" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/big/bush2,
@@ -9700,7 +9709,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "Ki" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "Kj" = (
@@ -9805,10 +9814,6 @@
 /obj/machinery/light/floor,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
-"KE" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
-/turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/nadezhda/outside/one_star)
 "KF" = (
 /obj/item/folder/cyan,
 /obj/item/folder/cyan,
@@ -9823,7 +9828,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
 "KH" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/obj/random/mob/roomba/mecha/low,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
 "KI" = (
@@ -9831,7 +9836,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/asteroid/rogue)
 "KJ" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/obj/random/mob/roomba/range/low,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/asteroid/rogue)
 "KK" = (
@@ -9893,11 +9898,6 @@
 /obj/item/clothing/suit/armor/heavy,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
-"KV" = (
-/obj/random/lathe_disk,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
-/turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/nadezhda/outside/one_star)
 "KW" = (
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -9928,10 +9928,6 @@
 "Lc" = (
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/nadezhda/outside/one_star)
-"Ld" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "Le" = (
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
@@ -10821,7 +10817,7 @@
 "Pe" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/item/clothing/head/hairflower/yellow,
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
 "Pf" = (
@@ -10998,7 +10994,7 @@
 /obj/machinery/light/floor{
 	pixel_y = -7
 	},
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
 "PV" = (
@@ -11036,6 +11032,10 @@
 /obj/landmark/storyevent/midgame_stash_spawn,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"Qf" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
+/area/nadezhda/outside/one_star)
 "Qg" = (
 /turf/simulated/floor/asteroid/grass/colonialjungle4,
 /area/nadezhda/outside/forest)
@@ -11281,6 +11281,11 @@
 /obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper)
+"Rl" = (
+/obj/structure/catwalk,
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/one_star)
 "Rm" = (
 /obj/structure/bed/chair/custom/onestar{
 	dir = 1
@@ -11375,10 +11380,9 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
 "RH" = (
-/obj/machinery/light/floor,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
-/turf/simulated/floor/tiled/derelict,
-/area/nadezhda/outside/one_star)
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/asteroid/rogue)
 "RI" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/random/mob/vox,
@@ -11686,6 +11690,10 @@
 /obj/random/single,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"Td" = (
+/obj/random/mob/roomba/job,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
+/area/nadezhda/outside/one_star)
 "Te" = (
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/mineral/planet,
@@ -11795,7 +11803,7 @@
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/forest)
 "TB" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "TC" = (
@@ -12461,6 +12469,11 @@
 	},
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
+"Wr" = (
+/obj/structure/catwalk,
+/obj/random/mob/roomba/mecha/low,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/one_star)
 "Ws" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/big/bush3,
@@ -12486,6 +12499,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"Wz" = (
+/obj/random/mob/roomba/job,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
+/area/nadezhda/outside/one_star)
 "WB" = (
 /obj/structure/table/rack/shelf,
 /obj/random/tool/advanced/low_chance,
@@ -12571,7 +12588,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "WU" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/obj/random/mob/roomba/range,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
 "WV" = (
@@ -12584,6 +12601,10 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/derelict,
+/area/nadezhda/outside/one_star)
+"WX" = (
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "WY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12705,7 +12726,7 @@
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
 "XF" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,
+/obj/random/mob/roomba/range/low,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
 "XG" = (
@@ -12754,7 +12775,7 @@
 /area/nadezhda/outside/one_star)
 "XR" = (
 /obj/structure/window/reinforced,
-/mob/living/carbon/superior_animal/robot/greyson/custodian/chef,
+/obj/random/mob/roomba/job,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
 "XS" = (
@@ -13063,9 +13084,9 @@
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
 "Zf" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/obj/random/mob/roomba/mecha/low,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/nadezhda/outside/one_star)
+/area/asteroid/rogue)
 "Zg" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/derelict,
@@ -13215,6 +13236,10 @@
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"ZM" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict,
+/area/nadezhda/outside/one_star)
 "ZN" = (
 /obj/structure/flora/small/bushb3,
 /turf/simulated/mineral/planet,
@@ -28638,7 +28663,7 @@ aV
 af
 af
 pO
-yO
+ri
 pO
 af
 ai
@@ -29060,18 +29085,18 @@ qv
 KH
 af
 ai
-al
+qf
 al
 ak
 af
 av
-al
-qF
 qf
+qF
+ak
 af
 af
 ak
-aC
+KJ
 aC
 aC
 aC
@@ -29269,7 +29294,7 @@ ak
 ax
 af
 ai
-qf
+ak
 qI
 ak
 af
@@ -29699,7 +29724,7 @@ re
 af
 ak
 aC
-ri
+aC
 yf
 yf
 aC
@@ -29709,7 +29734,7 @@ aC
 aC
 aC
 aC
-rh
+aC
 aC
 aC
 ak
@@ -30119,7 +30144,7 @@ ak
 aC
 aC
 aC
-aC
+RH
 aC
 aC
 aC
@@ -30335,7 +30360,7 @@ JJ
 aC
 aC
 JO
-aC
+Zf
 pQ
 aC
 aC
@@ -30537,7 +30562,7 @@ ak
 aC
 aC
 aC
-aC
+RH
 aC
 aC
 aC
@@ -30749,7 +30774,7 @@ aC
 aC
 aC
 aC
-ri
+aC
 aC
 aC
 aC
@@ -30957,10 +30982,10 @@ aC
 yf
 yf
 aC
-aC
-aC
-aC
 rh
+aC
+aC
+aC
 aC
 aC
 aC
@@ -31370,7 +31395,7 @@ az
 af
 af
 ak
-rh
+aC
 aC
 yf
 yf
@@ -31569,8 +31594,8 @@ KH
 af
 aj
 qF
-al
-KE
+qf
+ak
 af
 aw
 qT
@@ -31579,7 +31604,7 @@ az
 af
 af
 ak
-aC
+KJ
 aC
 aC
 aC
@@ -31782,7 +31807,7 @@ pQ
 as
 af
 ak
-KV
+qU
 ra
 rd
 af
@@ -31982,7 +32007,7 @@ aV
 af
 af
 pO
-yO
+ri
 pO
 af
 aj
@@ -65430,11 +65455,11 @@ ao
 ao
 ao
 ao
-qJ
 ao
 ao
+Ki
 ao
-qJ
+ao
 ao
 ao
 ao
@@ -65608,16 +65633,16 @@ ao
 ao
 pl
 ao
-KZ
+ao
 ao
 pl
 ao
 ao
-KZ
+ao
 pl
 ao
 ao
-KZ
+ao
 ao
 pl
 ao
@@ -65637,7 +65662,7 @@ ao
 ao
 ao
 ao
-ao
+ZM
 ao
 ao
 ao
@@ -65645,7 +65670,7 @@ Sj
 ao
 ao
 ao
-ao
+ZM
 ao
 ao
 ao
@@ -65814,20 +65839,20 @@ pI
 ao
 ao
 ao
-KZ
+ZM
+ao
+ao
+ao
+ao
+ao
+ZM
 ao
 ao
 ao
 ao
 ao
 ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
+ZM
 ao
 ao
 ao
@@ -65850,7 +65875,7 @@ ao
 RU
 OT
 Zw
-Zf
+al
 Zm
 RP
 ao
@@ -66054,7 +66079,7 @@ Pp
 so
 ao
 ao
-RH
+pl
 ao
 SE
 ak
@@ -66267,7 +66292,7 @@ ao
 ao
 SE
 cC
-ak
+Wz
 YV
 YV
 SE
@@ -66481,9 +66506,9 @@ PL
 VE
 RU
 ao
-qJ
 ao
-KZ
+ao
+ao
 ao
 ao
 ao
@@ -66653,7 +66678,7 @@ af
 ao
 pT
 ao
-qa
+Ki
 ao
 Vz
 ao
@@ -66682,15 +66707,15 @@ ao
 ao
 ao
 ao
-ao
-ao
-qJ
-ao
+ZM
 ao
 ao
 ao
 ao
 ao
+ao
+ao
+ZM
 ao
 ao
 ao
@@ -66895,9 +66920,9 @@ ao
 ao
 ao
 pl
+Ki
 ao
 ao
-KZ
 ao
 pl
 ao
@@ -67115,7 +67140,7 @@ ao
 ao
 ao
 ao
-KZ
+ao
 Nr
 Nr
 pI
@@ -67316,12 +67341,12 @@ KZ
 ao
 ao
 ao
-KM
 ao
 ao
 ao
 ao
-KM
+ao
+ao
 ao
 ao
 ao
@@ -67735,10 +67760,10 @@ ao
 pI
 pI
 Oa
-pI
+WU
 ao
 ao
-pI
+WU
 Oa
 pI
 pI
@@ -68110,15 +68135,15 @@ yP
 pI
 pl
 ao
-ao
 Ki
+ao
 ao
 ao
 Ph
 Wx
 pl
 ao
-qa
+Ki
 pN
 ao
 ao
@@ -68142,7 +68167,7 @@ pN
 pN
 pN
 pN
-ru
+Td
 pN
 Wn
 Kh
@@ -68349,7 +68374,7 @@ ro
 af
 al
 al
-ru
+Td
 sf
 sf
 pN
@@ -68561,7 +68586,7 @@ al
 pN
 sf
 sf
-ru
+Td
 al
 Pi
 af
@@ -68737,7 +68762,7 @@ yP
 pI
 rN
 ao
-qa
+Ki
 pI
 af
 ao
@@ -69161,7 +69186,7 @@ af
 ao
 ao
 ao
-qa
+Ki
 ao
 ao
 ao
@@ -69192,15 +69217,15 @@ ZU
 pN
 pN
 pN
+lK
 pN
 pN
-pN
-pN
+Td
 af
 qA
 QU
 qA
-qA
+Wr
 rV
 sp
 af
@@ -69208,7 +69233,7 @@ pI
 ao
 ao
 ao
-WU
+pI
 yP
 hW
 Dl
@@ -69417,7 +69442,7 @@ pI
 ao
 ao
 ao
-pI
+WU
 yP
 hW
 hW
@@ -70204,7 +70229,7 @@ pk
 pk
 af
 pM
-pR
+TB
 al
 al
 al
@@ -70249,7 +70274,7 @@ qA
 Sf
 sw
 af
-pI
+Qf
 ao
 Rs
 Rs
@@ -70408,14 +70433,14 @@ au
 rk
 ao
 ao
-KL
+ao
 ao
 ao
 HX
 pN
 pN
 pN
-pV
+qD
 pV
 al
 pk
@@ -70437,7 +70462,7 @@ ru
 pN
 qh
 af
-al
+DO
 al
 al
 XQ
@@ -70617,7 +70642,7 @@ au
 rs
 ao
 ao
-ao
+HQ
 ao
 ao
 IC
@@ -70625,7 +70650,7 @@ pN
 pN
 pN
 pV
-pV
+qD
 al
 pk
 ao
@@ -70639,9 +70664,9 @@ KW
 pN
 pN
 pN
-rb
-rb
-rb
+qD
+qD
+qD
 pN
 pN
 pN
@@ -70831,7 +70856,7 @@ pk
 pk
 af
 pM
-pR
+al
 al
 qD
 pN
@@ -71064,7 +71089,7 @@ ZT
 pN
 pN
 af
-al
+DO
 al
 al
 XQ
@@ -71287,7 +71312,7 @@ rT
 af
 ZZ
 af
-qA
+Rl
 qA
 sl
 Qo
@@ -71492,7 +71517,7 @@ al
 al
 al
 al
-Ld
+WU
 af
 dR
 af
@@ -71676,7 +71701,7 @@ af
 pk
 pk
 pI
-qZ
+Td
 pN
 pN
 rq
@@ -71712,7 +71737,7 @@ qA
 rV
 sg
 af
-pI
+Qf
 ao
 Qi
 Qi
@@ -71886,7 +71911,7 @@ QE
 pk
 PY
 pN
-rK
+qD
 pN
 ao
 pN
@@ -71919,7 +71944,7 @@ qA
 Kg
 sl
 qA
-Tq
+Rl
 af
 pI
 ao
@@ -72094,7 +72119,7 @@ af
 qi
 pk
 pI
-qZ
+Td
 pN
 SD
 af
@@ -72112,7 +72137,7 @@ dm
 af
 XF
 al
-Ld
+WU
 af
 UM
 al
@@ -72126,7 +72151,7 @@ af
 TH
 rV
 qA
-qA
+Wr
 sh
 MI
 af
@@ -72304,7 +72329,7 @@ QE
 pk
 pI
 pN
-rK
+qD
 pN
 rq
 pN
@@ -72502,7 +72527,7 @@ PT
 Wm
 ao
 pN
-qZ
+Td
 qh
 pN
 pZ
@@ -72512,7 +72537,7 @@ af
 pk
 pk
 pI
-qZ
+Td
 pN
 pN
 ao
@@ -72546,7 +72571,7 @@ QU
 sl
 sl
 qA
-qA
+Rl
 af
 pI
 ao
@@ -72746,7 +72771,7 @@ al
 al
 al
 al
-Ld
+WU
 af
 dR
 af
@@ -72966,7 +72991,7 @@ qA
 si
 si
 af
-pI
+Qf
 ao
 Vv
 Vv
@@ -73154,7 +73179,7 @@ ZT
 pN
 Le
 af
-al
+DO
 al
 al
 XQ
@@ -73168,7 +73193,7 @@ af
 af
 af
 af
-qA
+Rl
 qA
 Kg
 sl
@@ -73339,7 +73364,7 @@ pk
 pk
 af
 pM
-pR
+TB
 al
 qD
 pN
@@ -73543,7 +73568,7 @@ au
 rk
 ao
 ao
-ao
+HQ
 ao
 ao
 HX
@@ -73551,7 +73576,7 @@ pN
 pN
 pN
 pV
-pV
+qD
 al
 af
 qe
@@ -73565,9 +73590,9 @@ KW
 pN
 pN
 pN
-rb
-rb
-rb
+qD
+qD
+qD
 pN
 pN
 pN
@@ -73752,14 +73777,14 @@ au
 rs
 ao
 ao
-KL
+ao
 ao
 ao
 IC
 pN
 pN
 pN
-pV
+qD
 pV
 al
 af
@@ -73781,7 +73806,7 @@ ru
 pN
 qh
 af
-al
+DO
 al
 al
 XQ
@@ -73966,7 +73991,7 @@ pk
 pk
 af
 pM
-pR
+TB
 al
 al
 al
@@ -74392,7 +74417,7 @@ Ui
 af
 SD
 pI
-qZ
+Td
 pN
 pI
 af
@@ -74602,7 +74627,7 @@ af
 af
 pN
 pN
-qZ
+Td
 pN
 pk
 pm
@@ -74810,7 +74835,7 @@ pI
 pI
 pk
 pN
-qZ
+Td
 pN
 pN
 pk
@@ -74836,7 +74861,7 @@ pN
 pN
 pN
 pN
-Le
+pN
 pN
 pN
 Zh
@@ -75047,12 +75072,12 @@ pN
 pN
 pN
 pN
-pN
+WX
 af
 qA
 QU
 qA
-qA
+Wr
 qA
 qA
 af
@@ -75640,7 +75665,7 @@ af
 pI
 sk
 pT
-KM
+Ki
 ao
 NO
 XB
@@ -75657,7 +75682,7 @@ af
 af
 af
 pN
-qZ
+qD
 pI
 pN
 My
@@ -76086,7 +76111,7 @@ pN
 pN
 pN
 pN
-pR
+TB
 pN
 af
 Sd
@@ -76293,7 +76318,7 @@ pN
 pN
 pN
 pN
-ru
+Td
 pN
 al
 pN
@@ -76478,11 +76503,11 @@ Ph
 Wx
 pl
 ao
-qa
+ZM
 pN
 pN
 qh
-pN
+qD
 pN
 pN
 pN
@@ -76708,7 +76733,7 @@ pN
 pN
 af
 pI
-KW
+WU
 pI
 pI
 pJ
@@ -76721,12 +76746,12 @@ ao
 pl
 ao
 ao
-KM
+HQ
 KZ
 ao
 Xx
 ao
-KM
+HQ
 ao
 ao
 ao
@@ -77097,7 +77122,7 @@ yP
 pI
 rC
 sv
-KZ
+ao
 pI
 af
 pI
@@ -77306,7 +77331,7 @@ yP
 pI
 rz
 LU
-KZ
+ao
 pI
 af
 pI
@@ -77933,7 +77958,7 @@ yP
 pI
 ao
 ao
-ao
+ZM
 pI
 af
 af
@@ -78144,7 +78169,7 @@ pI
 pI
 pl
 pI
-Sl
+pI
 pI
 pI
 pI
@@ -78360,7 +78385,7 @@ ao
 ao
 ao
 ao
-KZ
+ao
 ao
 ao
 ao
@@ -78566,7 +78591,7 @@ ao
 ao
 ao
 ao
-ao
+ZM
 ao
 ao
 ao

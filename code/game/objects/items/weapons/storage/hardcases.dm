@@ -22,13 +22,14 @@
 /obj/item/storage/hcases/verb/apply_sticker(mob/user)
 	set name = "Apply Sticker"
 	set category = "Object"
-	set src in view(1)
+	set src in usr
 
-	if(can_interact(user) == 1)
+	if(!isliving(loc))
 		return
-	sticker(user)
+//	sticker(user)
 
-/obj/item/storage/hcases/proc/sticker(mob/user)
+///obj/item/storage/hcases/proc/sticker(mob/user)
+	var/mob/M = usr
 	var/list/options = list()
 	options["Orange"] = "[sticker_name]_sticker_o"
 	options["Blue"] = "[sticker_name]_sticker_b"
@@ -38,12 +39,11 @@
 	options["IH Blue"] = "[sticker_name]_sticker_ih"
 
 
-	var/choice = input(user,"Which color do you want?") as null|anything in options
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+	if(src && choice && !M.incapacitated() && Adjacent(M))
 
-	if(!choice)
-		return
+		sticker = options[choice]
 
-	sticker = options[choice]
 	update_icon()
 
 /obj/item/storage/hcases/update_icon()
@@ -62,7 +62,7 @@
 /obj/item/storage/hcases/verb/quick_open_close(mob/user)
 	set name = "Close Lid"
 	set category = "Object"
-	set src in view(1)
+	set src in oview(1)
 
 	if(can_interact(user) == 1)	//can't use right click verbs inside bags so only need to check for ablity
 		return
@@ -156,7 +156,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A wooden hard case made specifically for card carp, but it can hold various other gaming items. Alt+click to open and close."
 	icon_state = "gaming"
 	matter = list(MATERIAL_WOOD = 10)
-	max_w_class = ITEM_SIZE_NORMAL * 1.3 // Side bars for decks tend to have lots of cards and given how specialized this is, a little extra space isn't bad. -Kaz
+	max_storage_space = DEFAULT_BULKY_STORAGE // Side bars for decks tend to have lots of cards and given how specialized this is, a little extra space isn't bad. -Kaz
 
 	can_hold = list(
 		/obj/item/cardholder,
