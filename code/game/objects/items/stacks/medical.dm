@@ -641,5 +641,5 @@
 
 /obj/item/stack/medical/advanced/ointment/nt/update_icon()
 	if(fancy_icon)
-		icon_state = "[initial(icon_state)][round(amount/2)]"
+		icon_state = "[initial(icon_state)][amount]"
 	..()
