@@ -56,7 +56,7 @@
 		return
 	//Useability tweak for borgs
 	if (istype(I,/obj/item/gripper))
-		ui_interact(user)
+		nano_ui_interact(user)
 		return
 	return insert(I, user)
 
@@ -114,12 +114,12 @@
 		return
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/reagentgrinder/on_deconstruction()
 	eject()
 
-/obj/machinery/reagentgrinder/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/reagentgrinder/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	if(!nano_template)
 		return
 

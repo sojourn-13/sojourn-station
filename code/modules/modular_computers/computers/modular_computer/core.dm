@@ -191,7 +191,7 @@
 		active_program = null
 	var/mob/user = usr
 	if(user && istype(user))
-		ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
+		nano_ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
 	update_icon()
 
 // Returns 0 for No Signal, 1 for Low Signal and 2 for Good Signal. 3 is for wired connection (always-on)
@@ -237,7 +237,7 @@
 	autorun_program(hard_drive)
 
 	if(user)
-		ui_interact(user)
+		nano_ui_interact(user)
 
 /obj/item/modular_computer/proc/autorun_program(obj/item/computer_hardware/hard_drive/disk)
 	var/datum/computer_file/data/autorun = disk?.find_file_by_name("AUTORUN")
@@ -253,7 +253,7 @@
 	active_program = null
 	update_icon()
 	if(istype(user))
-		ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
+		nano_ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
 
 /obj/item/modular_computer/proc/run_program(prog_name, obj/item/computer_hardware/hard_drive/disk)
 	var/datum/computer_file/program/P = null
@@ -292,7 +292,7 @@
 	if(P.run_program(user))
 		active_program = P
 		all_threads.Add(P)
-		active_program.ui_interact(user)
+		active_program.nano_ui_interact(user)
 		update_uis()
 		update_icon()
 	return TRUE

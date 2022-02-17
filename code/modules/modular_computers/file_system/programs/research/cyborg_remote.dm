@@ -16,7 +16,7 @@
 	name = "Cyborg Remote Access & Monitor"
 	available_to_ai = TRUE
 
-/datum/nano_module/program/remote_cyborg_controle/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/remote_cyborg_controle/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/data[0]
 	var/safety = 1
 	data["robots"] = get_cyborgs(user)
