@@ -689,7 +689,7 @@
 	I.removal_time *= rand(10, 14)/10
 	I.removal_difficulty *= rand(5, 15)/10
 	I.gun_loc_tag = GUN_MUZZLE
-	I.prefix = "silence"
+	I.prefix = "silenced"
 
 /obj/item/gun_upgrade/mechanism/faulty
 	name = "Unknown Clockwork Mechanism"
