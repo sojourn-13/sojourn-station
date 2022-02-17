@@ -282,7 +282,6 @@ var/list/rank_prefix = list(\
 	"Steward" = "Steward",\
 	"Guild Master" = "Master",\
 	"Chief Biolab Overseer" = "Overseer",\
-	"Soteria Doctor" = "Doctor",\
 	"Chief Research Overseer" = "Overseer",\
 	"Chief Executive Officer" = "Executive",\
 	"Prime" = "Prime",\
