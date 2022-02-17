@@ -22641,10 +22641,7 @@
 /area/nadezhda/outside/forest)
 "fhu" = (
 /obj/structure/table/rack/shelf,
-/obj/random/medical,
-/obj/item/storage/box/autoinjectors,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/firstaid/blackshield/large,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "fhy" = (
@@ -51449,10 +51446,6 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "lBM" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/firstaid/combat,
-/obj/random/medical,
-/obj/random/medical,
-/obj/item/storage/deferred/surgery,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lBQ" = (
