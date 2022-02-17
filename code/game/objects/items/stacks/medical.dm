@@ -127,7 +127,7 @@
 
 /obj/item/stack/medical/bruise_pack/update_icon()
 	if(fancy_icon)
-		icon_state = "[initial(icon_state)][round(amount/2)]"
+		icon_state = "[initial(icon_state)][amount]"
 	..()
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
@@ -235,7 +235,7 @@
 
 /obj/item/stack/medical/ointment/update_icon()
 	if(fancy_icon)
-		icon_state = "[initial(icon_state)][round(amount/2)]"
+		icon_state = "[initial(icon_state)][amount)]"
 	..()
 
 /obj/item/stack/medical/ointment/attack(mob/living/carbon/M, mob/living/user)
