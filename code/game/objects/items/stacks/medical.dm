@@ -2,8 +2,8 @@
 	name = "medical pack"
 	singular_name = "medical pack"
 	icon = 'icons/obj/stack/items.dmi'
-	amount = 10
-	max_amount = 10
+	amount = 5
+	max_amount = 5
 	w_class = ITEM_SIZE_TINY
 	throw_speed = 4
 	throw_range = 20
@@ -310,8 +310,6 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
 	w_class = ITEM_SIZE_SMALL
-	amount = 5
-	max_amount = 5
 
 /obj/item/stack/medical/advanced/bruise_pack/large
 	name = "large advanced trauma kit"
@@ -447,8 +445,6 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
 	w_class = ITEM_SIZE_SMALL
-	amount = 5
-	max_amount = 5
 
 /obj/item/stack/medical/advanced/ointment/large
 	name = "large advanced burn kit"
