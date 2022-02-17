@@ -7,16 +7,16 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 /datum/turret_network
 	var/channel
 	var/list/turrets = list()
-	var/enabled = 0
-	var/lethal = 0
-	var/locked = 1
-	var/check_arrest = 1	//checks if the perp is set to arrest
-	var/check_records = 1	//checks if a security record exists at all
-	var/check_weapons = 0	//checks if it can shoot people that have a weapon they aren't authorized to have
-	var/check_access = 0	//if this is active, the turret shoots everything that does not meet its access requirements
-	var/check_anomalies = 1	//checks if it can shoot at unidentified lifeforms (ie xenos)
-	var/check_synth = 0 	//if active, will shoot at anything not an AI or cyborg
-	var/ailock = 0 			//Silicons cannot use this
+	var/enabled = FALSE
+	var/lethal = FALSE
+	var/locked = TRUE
+	var/check_arrest = TRUE		//checks if the perp is set to arrest
+	var/check_records = TRUE	//checks if a security record exists at all
+	var/check_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
+	var/check_access = FALSE	//if this is active, the turret shoots everything that does not meet its access requirements
+	var/check_anomalies = TRUE	//checks if it can shoot at unidentified lifeforms (ie xenos)
+	var/check_synth = FALSE 	//if active, will shoot at anything not an AI or cyborg
+	var/ailock = FALSE			//Silicons cannot use this
 	var/colony_allied_turret = FALSE //If we target friendly to colony critters
 	var/list/current_access_list = list(access_moebius, access_robotics, access_security, access_heads)
 
@@ -69,7 +69,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/check_access = FALSE	//if this is active, the turret shoots everything that does not meet the access requirements
 	var/check_ids = FALSE		//if this is active, the turret shoots everything that does have a valid ID.
 	var/check_anomalies = TRUE	//checks if it can shoot at unidentified lifeforms (ie xenos)
-	var/check_synth	 = FALSE 	//if active, will shoot at anything not an AI or cyborg
+	var/check_synth	= FALSE 	//if active, will shoot at anything not an AI or cyborg
 	var/ailock = FALSE 			// AI cannot use this
 
 	var/enabled = TRUE				//determines if the turret is on
@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 	var/datum/effect/effect/system/spark_spread/spark_system	//the spark system, used for generating... sparks?
 
-	var/wrenching = 0
+	var/wrenching = FALSE
 	var/last_target					//last target fired at, prevents turrets from erratically firing at all valid targets in range
 
 	var/hackfail = FALSE				//if the turret has gotten pissed at someone who tried to hack it, but failed, it will immediately reactivate and target them.
@@ -133,13 +133,13 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 /obj/machinery/tesla_turret/proc/isLocked(mob/user)
 	if(ailock && issilicon(user))
 		to_chat(user, SPAN_NOTICE("There seems to be a firewall preventing you from accessing this device."))
-		return 1
+		return TRUE
 
 	if(locked && !issilicon(user))
 		to_chat(user, SPAN_NOTICE("Access denied."))
-		return 1
+		return TRUE
 
-	return 0
+	return FALSE
 
 /obj/machinery/tesla_turret/attack_hand(mob/user)
 	if(!emagged || isLocked(user))
@@ -153,9 +153,9 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 /obj/machinery/tesla_turret/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	data["channel"] = shock_net.channel
-	data["access"] = 1
+	data["access"] = 1 // What does this one do and can we change it to TRUE? -R4d6
 	data["enabled"] = shock_net.enabled
-	data["is_lethal"] = 1
+	data["is_lethal"] = TRUE
 	data["lethal"] = shock_net.lethal
 	var/settings[0]
 	settings[++settings.len] = list("category" = "Target Unauthorized Weapons", "setting" = "check_weapons", "value" = shock_net.check_weapons)
@@ -177,36 +177,37 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 /obj/machinery/tesla_turret/Topic(href, href_list)
 	if(..())
-		return 1
+		return TRUE
 
 	if(href_list["command"] && href_list["value"])
 		var/value = text2num(href_list["value"])
-		if(href_list["command"] == "enable")
-			shock_net.enabled = value
-		else if(href_list["command"] == "lethal")
-			shock_net.lethal = value
-		else if(href_list["command"] == "check_synth")
-			shock_net.check_synth = value
-		else if(href_list["command"] == "check_weapons")
-			shock_net.check_weapons = value
-		else if(href_list["command"] == "check_records")
-			shock_net.check_records = value
-		else if(href_list["command"] == "check_arrest")
-			shock_net.check_arrest = value
-		else if(href_list["command"] == "check_access")
-			shock_net.check_access = value
-		else if(href_list["command"] == "check_anomalies")
-			shock_net.check_anomalies = value
-		else if(href_list["command"] == "colony_allied_turret")
-			shock_net.colony_allied_turret = value
-		else if(href_list["command"] == "ailock")
-			shock_net.ailock = value
+		switch(href_list["command"])
+			if("enable")
+				shock_net.enabled = value
+			if("lethal")
+				shock_net.lethal = value
+			if("check_synth")
+				shock_net.check_synth = value
+			if("check_weapons")
+				shock_net.check_weapons = value
+			if("check_records")
+				shock_net.check_records = value
+			if("check_arrest")
+				shock_net.check_arrest = value
+			if("check_access")
+				shock_net.check_access = value
+			if("check_anomalies")
+				shock_net.check_anomalies = value
+			if("colony_allied_turret")
+				shock_net.colony_allied_turret = value
+			if("ailock")
+				shock_net.ailock = value
 
 		playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 
 		shock_net.update_turrets()
 
-		return 1
+		return TRUE
 
 
 /obj/machinery/tesla_turret/power_change()
@@ -282,7 +283,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 						"<span class='notice'>You begin [anchored ? "un" : ""]securing the turret.</span>" \
 					)
 
-				wrenching = 1
+				wrenching = TRUE
 				if(do_after(user, 50, src))
 					//This code handles moving the turret around. After all, it's a portable turret!
 					if(!anchored)
@@ -302,24 +303,24 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 						disabled = TRUE
 						to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
 						update_icon()
-				wrenching = 0
+				wrenching = FALSE
 				return TRUE //No whacking the turret with tools on help intent
 
 			if(QUALITY_SCREW_DRIVING)
 				var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
 				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
 					if(panel_open)
-						panel_open = 0
+						panel_open = FALSE
 						to_chat(user, SPAN_NOTICE("You carefully shut the secondary maintenance hatch and screw it back into place."))
 					else
-						panel_open = 1
+						panel_open = TRUE
 						to_chat(user, SPAN_NOTICE("You gently unscrew the seconday maintenance hatch, gaining access to the turret's internal circuitry and debug functions."))
 					return TRUE //No whacking the turret with tools on help intent
 
 			if(QUALITY_WIRE_CUTTING)
 				if(overridden)
 					if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30))
-						overridden = 0
+						overridden = FALSE
 						shock_net.current_access_list = initial(shock_net.current_access_list)
 						shock_net.update_turrets()
 						to_chat(user, SPAN_WARNING("You reconnect the turret network's security protocol override."))
@@ -327,7 +328,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 					switch(I.use_tool_extended(user, src, WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_VERY_HARD,  required_stat = STAT_MEC))
 						if(TOOL_USE_SUCCESS)
 							to_chat(user, SPAN_NOTICE("You disconnect the turret network's security protocol override!"))
-							overridden = 1
+							overridden = TRUE
 							shock_net.current_access_list.Cut()
 							shock_net.update_turrets()
 						if(TOOL_USE_FAIL)
@@ -335,10 +336,10 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 								SPAN_DANGER("[user] cut the wrong wire and tripped the security protocol on the [src]! Run!"),
 								SPAN_DANGER("You accidentally cut the wrong wire, tripping the security protocol! Run!")
 							)
-							enabled = 1
-							hackfail = 1
+							enabled = TRUE
+							hackfail = TRUE
 							sleep(300)
-							hackfail = 0
+							hackfail = FALSE
 				return TRUE //No whacking the turret with tools on help intent
 
 			if(QUALITY_PULSING)
@@ -372,22 +373,22 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	else if(QUALITY_PULSING in I.tool_qualities && user.a_intent != I_HURT)
 		if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD,  required_stat = STAT_COG))
 			if((TOOL_USE_SUCCESS) && (isLocked(user)))
-				locked = 0
+				locked = FALSE
 				to_chat(user, SPAN_NOTICE("You manage to hack the ID reader, unlocking the access panel with a satisfying click."))
 				updateUsrDialog()
 			else if((TOOL_USE_SUCCESS) && (!isLocked(user)))
-				locked = 1
+				locked = TRUE
 				to_chat(user, SPAN_NOTICE("You manage to hack the ID reader and the access panel's locking lugs snap shut."))
 				updateUsrDialog()
 			else if((TOOL_USE_FAIL) && (!overridden) && (min(prob(35 - STAT_COG), 5)))
-				enabled = 1
-				hackfail = 1
+				enabled = TRUE
+				hackfail = TRUE
 				user.visible_message(
 					SPAN_DANGER("[user] tripped the security protocol on the [src]! Run!"),
 					SPAN_DANGER("You trip the security protocol! Run!")
 				)
 				sleep(300)
-				hackfail = 0
+				hackfail = FALSE
 			else
 				to_chat(user, SPAN_WARNING("You fail to hack the ID reader, but avoid tripping the security protocol."))
 			return TRUE //No whacking the turret with tools on help intent
@@ -417,19 +418,19 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		//the turret shoot much, much faster.
 		to_chat(user, SPAN_WARNING("You short out the turret network's id recognition."))
 		visible_message("[src] hums oddly...")
-		emagged = 1
-		locked = 0
-		enabled = 0 //turns off the turret temporarily
+		emagged = TRUE
+		locked = False
+		enabled = FALSE //turns off the turret temporarily
 		spawn(60) //6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
-			enabled = 1 //turns it back on.
-		return 1
+			enabled = TRUE //turns it back on.
+		return TRUE
 
 /obj/machinery/tesla_turret/proc/take_damage(var/force)
 	force -= resistance
 	if (force <= 0)
 		return FALSE
 
-	.=TRUE //Some damage was done
+	. = TRUE //Some damage was done
 	health -= force
 	if (force > 5 && prob(45))
 		spark_system.start()
@@ -478,7 +479,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/list/targets = list()			//list of primary targets
 	var/list/secondarytargets = list()	//targets that are least important
 
-	for(var/mob/M in mobs_in_view(world.view, src))
+	for(var/mob/M in mobs_in_view(world.view, src))	// Why do we check every mob in an 15x15 area (Or radius of 7) if we later limit it to a radius of 6 (or area of 13x13) -R4d6
 		assess_and_assign(M, targets, secondarytargets)
 
 	if(!tryToShootAt(targets))
@@ -492,12 +493,14 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 			secondarytargets += L
 
 /obj/machinery/tesla_turret/proc/assess_living(var/mob/living/L)
-	var/obj/item/card/id/id_card = L.GetIdCard()
-
-	if(id_card && (id_card.registered_name in shock_net.registered_names))
+	if(!L) // If there's no one to shoot
 		return TURRET_NOT_TARGET
-
-	if(!istype(L))
+	
+	if(!istype(L)) // If it's somehow not a living mob
+		return TURRET_NOT_TARGET
+	
+	var/obj/item/card/id/id_card = L.GetIdCard() // Copy the target's ID card
+	if(id_card && (id_card.registered_name in shock_net.registered_names)) // Check their access
 		return TURRET_NOT_TARGET
 
 	if(L.invisibility >= INVISIBILITY_LEVEL_ONE) // Cannot see him. see_invisible is a mob-var
@@ -505,9 +508,10 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 	if(L.stat)		//if the perp is dead/dying, no need to bother really
 		return TURRET_NOT_TARGET	//move onto next potential victim!
-
-	if(!L)
+	
+	if(get_dist(src, L) > 6)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET
+
 	/*
 	if(colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
@@ -528,13 +532,10 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		else
 			return TURRET_NOT_TARGET
 
-	if(get_dist(src, L) > 6)	//if it's too far away, why bother?
-		return TURRET_NOT_TARGET
-
 	if(!check_trajectory(L, src))	//check if we have true line of sight
 		return TURRET_NOT_TARGET
 
-	if(hackfail)
+	if(hackfail) // Did someone attempted to hack the turret?
 		return TURRET_PRIORITY_TARGET
 
 	if(lethal && locate(/mob/living/silicon/ai) in get_turf(L))		//don't accidentally kill the AI!
@@ -558,18 +559,18 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 /obj/machinery/tesla_turret/proc/assess_perp(var/mob/living/carbon/human/H)
 	if(!H || !istype(H))
-		return 0
+		return FALSE
 	return H.assess_perp(src, check_access, check_weapons, check_records, check_arrest)
 
 /obj/machinery/tesla_turret/proc/tryToShootAt(var/list/mob/living/targets)
 	if(targets.len && last_target && (last_target in targets) && target(last_target))
-		return 1
+		return TRUE
 
 	while(targets.len > 0)
 		var/mob/living/M = pick(targets)
 		targets -= M
 		if(target(M))
-			return 1
+			return TRUE
 
 
 
@@ -579,7 +580,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(target)
 		last_target = target
 		zap(target)
-		return 1
+		return TRUE
 	return
 
 /obj/machinery/tesla_turret/proc/channel_sync()
@@ -605,10 +606,10 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		return
 	if(last_fired)	//prevents rapid-fire shooting
 		return
-	last_fired = 1
+	last_fired = TRUE
 	spawn()
 		sleep(shot_delay)
-		last_fired = 0
+		last_fired = FALSE
 
 
 	var/power = min(apc.terminal.powernet.avail/2, damage_cap * power_damage_ratio) //Drains based on ALL available power on an APC's grid
