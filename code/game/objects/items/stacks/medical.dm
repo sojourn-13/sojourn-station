@@ -235,7 +235,7 @@
 
 /obj/item/stack/medical/ointment/update_icon()
 	if(fancy_icon)
-		icon_state = "[initial(icon_state)][amount)]"
+		icon_state = "[initial(icon_state)][amount]"
 	..()
 
 /obj/item/stack/medical/ointment/attack(mob/living/carbon/M, mob/living/user)
