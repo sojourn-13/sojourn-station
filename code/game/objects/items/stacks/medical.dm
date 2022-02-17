@@ -624,7 +624,7 @@
 
 /obj/item/stack/medical/advanced/bruise_pack/nt/update_icon()
 	if(fancy_icon)
-		icon_state = "[initial(icon_state)][amount)]"
+		icon_state = "[initial(icon_state)][amount]"
 	..()
 
 /obj/item/stack/medical/advanced/ointment/nt
