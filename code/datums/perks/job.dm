@@ -398,6 +398,7 @@
 			/datum/craft_recipe/guild/heavypulserifle,
 			/datum/craft_recipe/guild/guild_bull,
 			/datum/craft_recipe/guild/guildsniper,
+			/datum/craft_recipe/guild/guildrailspike,
 			/datum/craft_recipe/guild/abdicatorshotgun,
 			/datum/craft_recipe/guild/ten_shot_conversion,
 			/datum/craft_recipe/guild/mace,

@@ -708,3 +708,14 @@
 	affective_damage_range = 9
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors
+
+/obj/item/projectile/bullet/crossbow_bolt/railway
+	name = "railway spike"
+	icon_state = "SpearFlight"
+	damage_types = list(BRUTE = 55)
+	armor_penetration = 65 //Diamond Tipped
+	penetrating = 3
+	knockback = 1
+	affective_damage_range = 9
+	affective_ap_range = 9
+	nocap_structures = TRUE //Can do well againt walls and doors

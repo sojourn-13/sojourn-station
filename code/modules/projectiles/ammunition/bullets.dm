@@ -759,4 +759,15 @@
 /obj/item/ammo_casing/crossbow_bolts/speed/bulk //Admin spawn stuff
 	amount = 10
 
+//Guild Pneumatic Ammo
+/obj/item/ammo_casing/crossbow_bolts/pneumatic
+	name = "railway spike"
+	desc = "A massive handmade rod tipped at the end with diamonds."
+	icon_state = "rail_spike"
+	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/railway
+	matter = list(MATERIAL_STEEL = 1)
+	maxamount = 10
+	is_caseless = TRUE
 
+/obj/item/ammo_casing/crossbow_bolts/pneumatic/bulk //Admin spawn stuff
+	amount = 10

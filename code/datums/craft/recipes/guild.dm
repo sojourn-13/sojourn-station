@@ -297,8 +297,8 @@
 	)
 
 /datum/craft_recipe/guild/guildsniper
-	name = "elefant pneumatic rifle"
-	result = /obj/item/gun/projectile/boltgun/elefant
+	name = "venator pneumatic rifle"
+	result = /obj/item/gun/projectile/venator
 	icon_state = "gun"
 	steps = list(
 		list(/obj/item/gun/projectile/shotgun/pump/china, 1, "time" = 30),
@@ -319,6 +319,22 @@
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
+
+/datum/craft_recipe/guild/guildrailspike
+	name = "railway spikes"
+	result = /obj/item/ammo_casing/crossbow_bolts/pneumatic/bulk
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 60),
+		list(QUALITY_CUTTING, 40, "time" = 40),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND, "time" = 30),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 30),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 40, 30)
+	)
+	flags = CRAFT_BATCH
 
 /datum/craft_recipe/guild/mace
 	name = "war mace"
