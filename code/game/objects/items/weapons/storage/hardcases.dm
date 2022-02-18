@@ -236,6 +236,22 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A lacquer coated hardcase with medical markings that can hold a lot of medical supplies. Alt+click to open and close."
 	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
+/obj/item/storage/hcases/med/medical_job
+
+/obj/item/storage/hcases/med/medical_job/populate_contents()
+	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment/large(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/splint(src)
+	new /obj/item/reagent_containers/syringe/inaprovaline(src)
+	new /obj/item/device/scanner/health(src)
+	//Has medicals items inside it to save on spawn storage.
+	new /obj/item/storage/firstaid/soteria(src)
+	new /obj/item/modular_computer/tablet/moebius/preset(src)
+
+
 //////////////////////////////////////////Engineering//////////////////////////////////////////
 
 /obj/item/storage/hcases/engi
