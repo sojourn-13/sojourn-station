@@ -307,6 +307,8 @@
 /obj/item/storage/firstaid/nt/populate_contents()
 	if (empty) return
 	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
+	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
+	new /obj/item/stack/medical/advanced/ointment/nt(src)
 	new /obj/item/stack/medical/advanced/ointment/nt(src)
 	new /obj/item/reagent_containers/syringe/large/antitoxin(src)
 	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
@@ -450,8 +452,6 @@
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
