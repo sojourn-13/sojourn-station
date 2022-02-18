@@ -208,7 +208,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A hardcase with medical markings that can hold a lot of medical supplies. Alt+click to open and close."
 	icon_state = "hcase_medi"
 	matter = list(MATERIAL_STEEL = 20)
-
+	max_storage_space = DEFAULT_NORMAL_STORAGE + 5 // 25 Storage Space, 10 more than the First Aid Kits's 15 to make the hardcase worth using.
 	max_w_class = ITEM_SIZE_NORMAL
 
 	can_hold = list(
@@ -234,7 +234,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "scrap_medi"
 	sticker_name = "scrap"
 	desc = "A lacquer coated hardcase with medical markings that can hold a lot of medical supplies. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
+	max_storage_space = DEFAULT_NORMAL_STORAGE // A better fancy box, but smaller than the non-scrap one (20 space), as with all the other hardcases who have ~20% less space. Still more space than the regular medkits.
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
 
