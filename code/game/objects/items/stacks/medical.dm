@@ -310,6 +310,14 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
 
+/obj/item/stack/medical/advanced/bruise_pack/large
+	name = "large advanced trauma kit"
+	singular_name = "large advanced trauma kit"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	amount = 10
+	max_amount = 10
+	charge_sections = 10
+
 /obj/item/stack/medical/advanced/bruise_pack/tatonka_tongue
 	name = "tatonka blood tongue"
 	singular_name = "tatonka blood tongue"
@@ -435,6 +443,14 @@
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
+
+/obj/item/stack/medical/advanced/ointment/large
+	name = "large advanced burn kit"
+	singular_name = "large advanced burn kit"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	amount = 10
+	max_amount = 10
+	charge_sections = 10
 
 /obj/item/stack/medical/advanced/ointment/powder_pouch
 	name = "tatonka powder pouch"
