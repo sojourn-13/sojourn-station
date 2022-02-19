@@ -750,7 +750,7 @@
 		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible."
 	icon_state = "ai_tool"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 3, MATERIAL_GOLD = 3, MATERIAL_DIAMOND = 1)
-	price_tag = 225
+	price_tag = 725
 
 /obj/item/tool_upgrade/augment/ai_tool/New()
 	..()
@@ -809,7 +809,7 @@
 	desc = "Very rare tool mod from Greyson powered by their nanomachines. It repairs the tool while in use and makes it near unbreakable."
 	icon_state = "repair_nano"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
-	price_tag = 100
+	price_tag = 325
 
 /obj/item/tool_upgrade/augment/repair_nano/New()
 	..()

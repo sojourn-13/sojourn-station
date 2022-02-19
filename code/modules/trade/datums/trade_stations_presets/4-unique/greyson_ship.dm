@@ -3,9 +3,10 @@
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS
-	recommendations_needed = 1
+	recommendations_needed = 2
 	secret_inv_threshold = 2000
 	recommendation_threshold = 4000
+	stations_recommended = list("greyson_printer")
 	name_pool = list("Tuixiaoayuan" = "A heavily armored Greyson Positronic trade shuttle somehow still producing and supplying their own good, \
 	likely never raided do to it only really producing clothing rather then anything of value.")
 	assortiment = list(
@@ -34,12 +35,13 @@
 	//Return policy I guess
 
 	offer_types = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = offer_data("GP Stockparts Disk", 2000, 1),
-		/obj/item/computer_hardware/hard_drive/portable/design/onestar/armor = offer_data("GP Ablasive Armor Disk", 2000, 1),
+		/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = offer_data("GP Stockparts Disk", 500, 1),
+		/obj/item/computer_hardware/hard_drive/portable/design/onestar/armor = offer_data("GP Ablasive Armor Disk", 500, 1),
 		/obj/item/computer_hardware/hard_drive/portable/design/onestar/spring = offer_data("GP Spring Disk", 2000, 1),
 		/obj/item/computer_hardware/hard_drive/portable/design/onestar/rivet = offer_data("GP Rivet Disk", 2000, 1),
 		/obj/item/computer_hardware/hard_drive/portable/design/onestar/nail_gun = offer_data("GP Nail Gun Disk", 2000, 1),
 		/obj/item/computer_hardware/hard_drive/portable/design/onestar/scaffold = offer_data("GP Scaffold Disk", 2000, 1),
-		/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog = offer_data("GP Cog Disk", 150, 1)
+		/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog = offer_data("GP Cog Disk", 150, 1),
+		/obj/item/computer_hardware/hard_drive/portable/design/onestar = offer_data("GP Tools Disk", 100, 1)
 	)
 
