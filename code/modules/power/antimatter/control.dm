@@ -216,12 +216,20 @@
 
 /obj/machinery/power/am_control_unit/proc/toggle_power()
 	active = !active
+	var/aleft_msg = "Antimatter Engine [active ? "starting up.": "shutting down."
 	if(active)
 		use_power = 2
 		visible_message("The [src.name] starts up.")
+		for(var/obj/machinery/am_shielding/Core in linked_cores)
+			flick("core_activating", Core)
+			Core.icon_state = "core_activated"
 	else
 		use_power = IDLE_POWER_USE
 		visible_message("The [src.name] shuts down.")
+		for(var/obj/machinery/am_shielding/Core in linked_cores)
+			flick("core_desactivating", Core)
+			Core.icon_state = "core_inactive"
+	radio.autosay(alert_msg, "Antimatter Automated Announcement", "Engineering")
 	update_icon()
 	return
 
