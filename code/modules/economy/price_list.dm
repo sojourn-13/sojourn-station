@@ -1022,6 +1022,10 @@
 	for(var/atom/movable/i in req_components)
 		if(ispath(i))
 			. += SStrade.get_new_cost(i) * log(10, price_tag / 2)
+
+/obj/item/aiModule
+	price_tag = 200
+
 /* SoJ edit we have are own vaules for this
 /obj/item/stock_parts
 	price_tag = 100

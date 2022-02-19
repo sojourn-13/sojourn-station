@@ -243,7 +243,7 @@
 	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 caliber weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4)
-	price_tag = 250
+	price_tag = 800
 
 /obj/item/gun_upgrade/mechanism/glass_widow/New()
 	..()
@@ -510,7 +510,7 @@
 	desc = "One of the rarest and most powerful weapon modification ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
 	icon_state = "psionic_catalyst"
 	matter = list(MATERIAL_PLATINUM = 5, MATERIAL_PLASTEEL = 3, MATERIAL_DIAMOND = 10)
-	price_tag = 450
+	price_tag = 4500
 
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst/New()
 	..()

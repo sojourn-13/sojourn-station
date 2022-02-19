@@ -17,6 +17,12 @@
 			/obj/item/stock_parts/micro_laser/high = custom_good_amount_range(list(1, 3)),
 			/obj/item/stock_parts/matter_bin/adv = custom_good_amount_range(list(1, 3))
 		),
+		"Spare Boards" = list(
+			/obj/item/circuitboard = good_data("Spare Boards", list(-5, -1)),
+			/obj/item/circuitboard/vending = good_data("Custom Vendor Board", list(4, 5)),
+			/obj/item/circuitboard/autolathe = good_data("Autolathe Boards", list(-5, 1)),
+			/obj/item/aiModule = good_data("Spare AI Module Board", list(-5, -1))
+		),
 		"Telecoms Parts" = list(
 			/obj/item/stock_parts/subspace/ansible,
 			/obj/item/stock_parts/subspace/filter,
@@ -75,5 +81,6 @@
 		/datum/reagent/ethanol/longislandicedtea = offer_data("Long Island Iced Tea bottle (60u)", 1500, 1),
 		/datum/reagent/ethanol/neurotoxin = offer_data("Neurotoxin bottle (60u)", 2500, 1),
 		/datum/reagent/ethanol/hippies_delight = offer_data("Hippie's Delight bottle (60u)", 2500, 1),
-		/datum/reagent/ethanol/silencer = offer_data("Silencer bottle (60u)", 2500, 1)
+		/datum/reagent/ethanol/silencer = offer_data("Silencer bottle (60u)", 2500, 1),
+		/obj/item/oddity/common = offer_data("Random Common Oddity", 500, 5)
 	)
