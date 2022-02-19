@@ -216,7 +216,7 @@
 
 /obj/machinery/power/am_control_unit/proc/toggle_power()
 	active = !active
-	var/aleft_msg = "Antimatter Engine [active ? "starting up.":"shutting down."]"
+	var/alert_msg = "Antimatter Engine [active ? "starting up.":"shutting down."]"
 	if(active)
 		use_power = 2
 		visible_message("The [src.name] starts up.")
