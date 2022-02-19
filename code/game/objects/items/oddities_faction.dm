@@ -601,7 +601,7 @@
 	icon_state = "nt_pedestal[sword?"1":"0"]"
 
 /obj/item/storage/sheath/joyeuse
-	name = "Joyeuse sheath"
+	name = "\improper Joyeuse sheath"
 	desc = "A specially designed sheathe for the joyeuse, which is the only object that shall fit in it."
 	can_hold = list(
 		/obj/item/tool/sword/crusader/nt_sword_truth

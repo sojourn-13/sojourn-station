@@ -46,7 +46,7 @@
 	if(progress >= target_progress)
 		reset()
 		message = "Successfully collected data points and saved metadata results."
-		HD = new/datum/computer_file/binary/research_points()
+		HD.store_file(new/datum/computer_file/binary/research_points())
 
 /datum/computer_file/program/point_miner/proc/reset()
 	running = FALSE
@@ -75,7 +75,7 @@
 		return 1
 
 
-/datum/nano_module/program/point_miner/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/point_miner/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	if(!ntnet_global)
 		return
 	var/datum/computer_file/program/point_miner/PRG = program

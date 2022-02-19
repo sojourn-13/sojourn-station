@@ -3,12 +3,14 @@
 	desc = "Your early life was spent in a poor environment, be it from your family's economical position or the place you lived in. This barred access to education, but it let you learn fast \
 	that desperate people will use force as commonly as they'll beg for aid. A sharp eye and careful or creative thinking let you avoid getting hurt and allowed you to thrive, so at least you got \
 	that going for you."
+
 	restricted_to_species = list(	//Exalted Humans are pay 2 win, they can't be born poor.
-		FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, 
-		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, 
-		FORM_CINDAR, FORM_FBP, FORM_UNBRANDED, 
-		FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, 
+		FORM_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN,
+		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD,
+		FORM_CINDAR, FORM_FBP, FORM_UNBRANDED,
+		FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH,
 		FORM_FOLKEN, FORM_MYCUS)
+
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 3,
@@ -93,7 +95,7 @@
 	pain tolerance than most of common folks, meaning that due to this clumsiness problem, you've become quite tough and a little stronger too. A shame, this doesn't stop you from time to time failing even the most basic tasks at times. In fact, you find some tasks that require precision damn near impossible, and even handling or using guns is a dangerous prospect. Due to this problem, you have a terrible perception around the area around you."
 
 	perks = list(/datum/perk/klutz)
-	
+
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 20,
@@ -180,6 +182,29 @@
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
+/datum/category_item/setup_option/background/bckgrnd/razor_maniac
+	name = "Razor Girl/Boy"
+	desc = "Razor Girls/Boys are those who heavily augment themselves, often times for the purpose of combat or merely because they enjoy the utility offered. Razors, sometimes called metal heads, \
+	are a distinctly human and abhuman sub-culture and benefit greatly from the advanced cybernetics humans are known, though outliers from other races also adopt it. The most common and consistent \
+	sign that someone is a razor is the implantation of metal claws implanted in the arm, serving as a hidden and potentially deadly weapon. Most razors further augment this by using cybernetics to \
+	enhance their physical strength and endurance or replace organic limbs with stronger synthetics."
+
+	restricted_to_species = list(
+		FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN,
+		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD,
+		FORM_CINDAR)
+
+	racial_implants = (/obj/item/organ_module/active/simple/wolverine)
+
+	stat_modifiers = list(
+		STAT_ROB = 3,
+		STAT_TGH = 2,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,

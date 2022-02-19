@@ -387,10 +387,10 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 
 	if(..())
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
 
-/obj/machinery/computer/rdconsole/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null) // Here we go again
+/obj/machinery/computer/rdconsole/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null) // Here we go again
 	if((screen == SCREEN_PROTO && !linked_lathe) || (screen == SCREEN_IMPRINTER && !linked_imprinter))
 		screen = SCREEN_MAIN // Kick us from protolathe or imprinter screen if they were destroyed
 

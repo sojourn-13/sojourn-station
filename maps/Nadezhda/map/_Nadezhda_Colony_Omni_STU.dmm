@@ -2702,6 +2702,10 @@
 /obj/item/honey_frame,
 /obj/item/bee_pack,
 /obj/item/bee_smoker,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -28
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "aFu" = (
@@ -5007,6 +5011,11 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/smc/quarters)
+"bhm" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/colony)
 "bho" = (
 /obj/machinery/power/breakerbox{
 	RCon_tag = "Absolutism Bypass"
@@ -5976,6 +5985,11 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/nadezhda/medical/reception)
+"bsB" = (
+/obj/machinery/trade_beacon/sending,
+/obj/effect/floor_decal/industrial/outline/blue,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/crew_quarters/hydroponics)
 "bsI" = (
 /obj/structure/sign/department/ai,
 /turf/simulated/wall/r_wall,
@@ -17327,10 +17341,6 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
-"dVA" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/crew_quarters/hydroponics)
 "dVH" = (
 /obj/structure/railing,
 /obj/structure/railing{
@@ -22642,10 +22652,7 @@
 /area/nadezhda/outside/forest)
 "fhu" = (
 /obj/structure/table/rack/shelf,
-/obj/random/medical,
-/obj/item/storage/box/autoinjectors,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/firstaid/blackshield/large,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "fhy" = (
@@ -32389,13 +32396,6 @@
 /obj/random/cloth/armor/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"hoh" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/machinery/camera/network/cev_eris{
-	dir = 1
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/crew_quarters/hydroponics)
 "hom" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -33443,12 +33443,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/prep)
 "hBg" = (
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
+/obj/item/modular_computer/console/preset/trade{
+	dir = 1
 	},
-/obj/machinery/honey_extractor,
-/turf/simulated/floor/tiled/white/brown_perforated,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/crew_quarters/hydroponics)
 "hBm" = (
 /obj/effect/decal/cleanable/dirt,
@@ -41059,6 +41057,7 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "jpD" = (
 /obj/structure/sink/puddle,
+/obj/structure/window/reinforced,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/crew_quarters/hydroponics)
 "jpE" = (
@@ -43564,12 +43563,6 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"jRm" = (
-/mob/living/simple_animal/chicken{
-	name = "Commander Clucky"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/crew_quarters/hydroponics)
 "jRn" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
@@ -51064,11 +51057,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/engine_room)
 "lxj" = (
-/obj/structure/reagent_dispensers/watertank/huge,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/machinery/honey_extractor,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "lxm" = (
@@ -51501,10 +51490,6 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "lBM" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/firstaid/combat,
-/obj/random/medical,
-/obj/random/medical,
-/obj/item/storage/deferred/surgery,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lBQ" = (
@@ -51823,18 +51808,19 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/pros/foreman)
 "lGq" = (
+/obj/structure/reagent_dispensers/watertank/huge,
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = -32
+	},
+/obj/effect/floor_decal/industrial/warningred,
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 8;
+	icon_state = "box_corners_red"
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
 	dir = 4;
 	icon_state = "box_corners_red"
 	},
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 8;
-	icon_state = "box_corners_red"
-	},
-/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "lGF" = (
@@ -71831,8 +71817,8 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "qgd" = (
-/mob/living/simple_animal/chicken,
-/turf/simulated/floor/asteroid/grass,
+/obj/effect/floor_decal/industrial/hatch/blue,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "qgh" = (
 /obj/structure/flora/small/busha3,
@@ -86990,6 +86976,7 @@
 /area/nadezhda/absolutism/storage)
 "tzM" = (
 /obj/structure/flora/ausbushes/grassybush,
+/obj/structure/window/reinforced,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "tzO" = (
@@ -97695,11 +97682,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/command/panic_room)
 "vQD" = (
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/mob/living/simple_animal/chicken,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "vQI" = (
 /obj/structure/closet/secure_closet/personal,
@@ -98208,13 +98192,10 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "vWf" = (
-/obj/machinery/door/window{
-	name = "botany isolation";
-	pixel_x = 3;
-	req_access = list(35)
+/mob/living/simple_animal/chicken{
+	name = "Commander Clucky"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/tiled/white/brown_perforated,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "vWr" = (
 /obj/effect/floor_decal/industrial/danger,
@@ -106030,11 +106011,14 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "xHQ" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/ore,
-/obj/machinery/portable_atmospherics/hydroponics,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/colony)
+/obj/machinery/door/window{
+	dir = 2;
+	name = "botany isolation";
+	pixel_x = 3;
+	req_access = list(35)
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics)
 "xIc" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -128068,8 +128052,8 @@ ikK
 lUy
 lUy
 vAB
-vQD
-vWf
+eTn
+fMt
 hBg
 dQP
 bwh
@@ -128265,14 +128249,14 @@ atv
 dXF
 dQP
 pnd
-pnd
+vQD
 uWQ
 xwT
 pnd
 tzM
-pnd
-xwT
-hoh
+qgd
+qgd
+qgd
 dQP
 ibO
 gtG
@@ -128469,11 +128453,11 @@ dQP
 hMe
 oLE
 xwi
-pnd
+vWf
 lHT
-pnd
-jRm
-lHT
+xHQ
+qgd
+bsB
 qgd
 dQP
 wYs
@@ -128674,9 +128658,9 @@ slX
 ydT
 siI
 jpD
-slX
-siI
-dVA
+qgd
+qgd
+qgd
 dQP
 wYs
 pnI
@@ -166445,7 +166429,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+xVw
 sFI
 sFI
 sFI
@@ -166646,13 +166630,13 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
 xVw
-sFI
-sFI
-sFI
-sFI
+xdf
+xdf
+ucx
+vHf
+jhW
+xVw
 sFI
 sFI
 sFI
@@ -166849,13 +166833,13 @@ sFI
 sFI
 sFI
 sFI
-xVw
 xdf
-vHf
+bhm
+ccJ
 vHf
 mtO
-xVw
-sFI
+jhW
+jhW
 sFI
 sFI
 sFI
@@ -167051,13 +167035,13 @@ sFI
 sFI
 sFI
 sFI
-sFI
-vHf
+mtO
 ccJ
 ccJ
+ccJ
 vHf
-mpu
-xHQ
+xdf
+ucx
 xVw
 sFI
 sFI
@@ -167253,7 +167237,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+vHf
 vHf
 ccJ
 ccJ
@@ -167455,7 +167439,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+jhW
 vHf
 vHf
 svB
@@ -168674,8 +168658,8 @@ rWw
 iTa
 rMR
 xVw
-vHf
-vHf
+jhW
+jhW
 vHf
 vHf
 vHf

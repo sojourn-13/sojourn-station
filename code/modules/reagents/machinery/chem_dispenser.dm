@@ -142,7 +142,7 @@
 
 	return data
 
-/obj/machinery/chemical_dispenser/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/chemical_dispenser/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -243,7 +243,7 @@
 	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/chemical_dispenser/soda
 	icon_state = "soda_dispenser"

@@ -105,7 +105,7 @@ cannot isolate or combine desired genes.
 /obj/machinery/genetics/gene_analyzer/attack_hand(mob/user)
 	if(..())
 		return TRUE
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/genetics/gene_analyzer/proc/eject(var/obj/item/genetics/sample/outbound_sample)
 	log_debug("Called sample plate eject function")
@@ -123,7 +123,7 @@ cannot isolate or combine desired genes.
 	else
 		icon_state = "implant_container0"
 */
-/obj/machinery/genetics/gene_analyzer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/genetics/gene_analyzer/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	// this is the data which will be sent to the ui
 	var/list/data = form_data()
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

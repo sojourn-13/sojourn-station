@@ -58,6 +58,14 @@
 	name = "folder, yellow"
 	result = /obj/item/folder/yellow
 
+/datum/craft_recipe/plasticflaps
+	name = "plastic flaps"
+	result = /obj/structure/plasticflaps
+	steps = list(
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTIC) //I can see people abusing this a lot
+	)
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+
 /datum/craft_recipe/metal_rod
 	name = "metal rod"
 	result = /obj/item/stack/rods

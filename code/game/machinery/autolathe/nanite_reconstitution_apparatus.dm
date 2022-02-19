@@ -112,7 +112,7 @@
 	return data
 
 
-/obj/machinery/nanite_reconstitution_apparatus/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS) //Calls specific templates for the UI
+/obj/machinery/nanite_reconstitution_apparatus/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS) //Calls specific templates for the UI
 	var/list/data = ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -304,7 +304,7 @@
 				flick("d_analyzer_la", src)
 				addtimer(CALLBACK(src, .proc/reset_busy), 1 SECONDS)
 				user.set_machine(src)
-				ui_interact(user)
+				nano_ui_interact(user)
 		else
 			to_chat(user, SPAN_NOTICE("\the [I] is not designed for this!"))
 
@@ -313,7 +313,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/nanite_reconstitution_apparatus/proc/insert_beaker(mob/living/user, obj/item/reagent_containers/glass/beaker)
 	if(!beaker && istype(user))

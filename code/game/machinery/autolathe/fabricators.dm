@@ -270,7 +270,7 @@
 	update_icon()
 	return
 
-/obj/machinery/bulletfabricator/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/bulletfabricator/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
 	user.set_machine(src)
 	var/list/data = list()
 	data["points"] = points
@@ -316,7 +316,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/bulletfabricator/proc/activate()
 	if (usr.stat)

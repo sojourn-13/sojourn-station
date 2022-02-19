@@ -4,7 +4,7 @@
 	icon = 'icons/obj/stack/items.dmi'
 	amount = 5
 	max_amount = 5
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	throw_speed = 4
 	throw_range = 20
 	var/heal_brute = 0
@@ -309,6 +309,15 @@
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
+	w_class = ITEM_SIZE_SMALL
+
+/obj/item/stack/medical/advanced/bruise_pack/large
+	name = "large advanced trauma kit"
+	singular_name = "large advanced trauma kit"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	amount = 10
+	max_amount = 10
+	charge_sections = 10
 
 /obj/item/stack/medical/advanced/bruise_pack/tatonka_tongue
 	name = "tatonka blood tongue"
@@ -435,6 +444,15 @@
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
+	w_class = ITEM_SIZE_SMALL
+
+/obj/item/stack/medical/advanced/ointment/large
+	name = "large advanced burn kit"
+	singular_name = "large advanced burn kit"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	amount = 10
+	max_amount = 10
+	charge_sections = 10
 
 /obj/item/stack/medical/advanced/ointment/powder_pouch
 	name = "tatonka powder pouch"
@@ -600,6 +618,7 @@
 	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)
 	fancy_icon = TRUE
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/medical/advanced/bruise_pack/nt/update_icon()
 	if(fancy_icon)
@@ -616,6 +635,7 @@
 	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)
 	fancy_icon = TRUE
+	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/medical/advanced/ointment/nt/update_icon()
 	if(fancy_icon)

@@ -376,6 +376,11 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
 
+			for(var/obj/structure/plasticflaps/obstacle in get_step(src,dir)) //Weak plastic will not bar us
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
+
 			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 				return

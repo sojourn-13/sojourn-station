@@ -384,7 +384,7 @@
 					if(hit_zone == BP_EYES)
 						attack_eye(affecting, assailant)
 					else if(hit_zone == BP_HEAD)
-						headbut(affecting, assailant)
+						headbutt(affecting, assailant)
 					else if(hit_zone == BP_CHEST)
 						suplex(affecting, assailant)
 					else if(hit_zone == BP_GROIN)

@@ -270,16 +270,22 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Marshal Officer" = "Officer",\
-	"Ranger" = "Ranger",\
+	"Warrant Officer" = "Warrant Officer",\
 	"Supply Specialist" = "Specialist",\
-	"Sergeant" = "Sergeant",\
-	"Marshal Warrant Officer" = "Warrant Officer",\
+	"Ranger" = "Ranger",\
+	"Marshal Officer" = "Officer",\
 	"Blackshield Commander" = "Commander",\
+	"Sergeant" = "Sergeant",\
 	"Corpsman" = "Corpsman",\
 	"Blackshield Trooper" = "Trooper",\
 	"Premier" = "Premier",\
 	"Steward" = "Steward",\
+	"Guild Master" = "Master",\
+	"Chief Biolab Overseer" = "Overseer",\
+	"Chief Research Overseer" = "Overseer",\
+	"Chief Executive Officer" = "Executive",\
+	"Prime" = "Prime",\
+	"Foreman" = "Foreman",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)

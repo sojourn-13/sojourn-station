@@ -369,7 +369,8 @@
 		/datum/design/autolathe/grenade/nt_explosive,
 		/datum/design/autolathe/grenade/nt_flashbang,
 		/datum/design/autolathe/grenade/nt_frag,
-		/datum/design/autolathe/grenade/nt_smokebomb
+		/datum/design/autolathe/grenade/nt_smokebomb,
+		/datum/design/autolathe/grenade/nt_heatwave
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns

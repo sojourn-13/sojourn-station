@@ -156,7 +156,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A wooden hard case made specifically for card carp, but it can hold various other gaming items. Alt+click to open and close."
 	icon_state = "gaming"
 	matter = list(MATERIAL_WOOD = 10)
-	max_w_class = ITEM_SIZE_NORMAL * 1.3 // Side bars for decks tend to have lots of cards and given how specialized this is, a little extra space isn't bad. -Kaz
+	max_storage_space = DEFAULT_BULKY_STORAGE // Side bars for decks tend to have lots of cards and given how specialized this is, a little extra space isn't bad. -Kaz
 
 	can_hold = list(
 		/obj/item/cardholder,
@@ -235,6 +235,22 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	sticker_name = "scrap"
 	desc = "A lacquer coated hardcase with medical markings that can hold a lot of medical supplies. Alt+click to open and close."
 	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
+
+/obj/item/storage/hcases/med/medical_job
+
+/obj/item/storage/hcases/med/medical_job/populate_contents()
+	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment/large(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/splint(src)
+	new /obj/item/reagent_containers/syringe/inaprovaline(src)
+	new /obj/item/device/scanner/health(src)
+	//Has medicals items inside it to save on spawn storage.
+	new /obj/item/storage/firstaid/soteria(src)
+	new /obj/item/modular_computer/tablet/moebius/preset(src)
+
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
 

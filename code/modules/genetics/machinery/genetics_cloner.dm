@@ -679,12 +679,12 @@ and which aren't.
 		return
 	if(..())
 		return TRUE
-	ui_interact(user)
+	nano_ui_interact(user)
 
  /**
-  * The ui_interact proc is used to open and update Nano UIs
-  * If ui_interact is not used then the UI will not update correctly
-  * ui_interact is currently defined for /atom/movable (which is inherited by /obj and /mob)
+  * The nano_ui_interact proc is used to open and update Nano UIs
+  * If nano_ui_interact is not used then the UI will not update correctly
+  * nano_ui_interact is currently defined for /atom/movable (which is inherited by /obj and /mob)
   *
   * @param user /mob The mob who is interacting with this ui
   * @param ui_key string A string key to use for this ui. Allows for multiple unique uis on one obj/mob (defaut value "main")
@@ -692,7 +692,7 @@ and which aren't.
   *
   * @return nothing
   */
-/obj/machinery/computer/genetics/clone_console/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/computer/genetics/clone_console/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	// this is the data which will be sent to the ui
 	var/list/data = form_data()
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

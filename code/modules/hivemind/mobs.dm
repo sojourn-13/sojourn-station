@@ -23,6 +23,8 @@
 	var/ability_cooldown = 30 SECONDS
 	var/list/target_speak = list()			//this is like speak list, but when we see our target
 
+	mob_classification = CLASSIFICATION_SYNTHETIC
+
 	//internals
 	var/obj/machinery/hivemind_machine/master
 	var/special_ability_cooldown = 0		//use ability_cooldown, don't touch this

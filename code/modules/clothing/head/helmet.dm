@@ -560,6 +560,30 @@
 		rad = 0
 	)
 
+/obj/item/clothing/head/armor/helmet/frog/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Base Helmet"] = "helmet_frog"
+	options["Blackshield Helmet"] = "helmet_frog_mil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your mask's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/helmet/thunderdome
 	name = "\improper Thunderdome helmet"
 	desc = "<i>'Let the battle commence!'</i>"

@@ -11,10 +11,15 @@
 	var/reverse = 0 //if resulting object faces opposite its dir (like light fixtures)
 
 /obj/item/frame/attackby(obj/item/I, mob/user)
-	if(I.get_tool_type(user, QUALITY_BOLT_TURNING, src))
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
-			new refund_type( get_turf(src.loc), refund_amt)
-			qdel(src)
+	var/tool_type = I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
+	switch(tool_type)
+		if(QUALITY_BOLT_TURNING)
+			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				new refund_type( get_turf(src.loc), refund_amt)
+				qdel(src)
+			return
+
+		if(ABORT_CHECK)
 			return
 	..()
 

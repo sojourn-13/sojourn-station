@@ -153,9 +153,9 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/electrolyzer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/electrolyzer/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -291,7 +291,7 @@
 
 /obj/item/device/makeshift_electrolyser/attack_self(mob/user as mob)
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 	add_fingerprint(user)
 
 /obj/item/device/makeshift_electrolyser/MouseDrop(over_object)
@@ -320,7 +320,7 @@
 		return
 	return ..()
 
-/obj/item/device/makeshift_electrolyser/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/item/device/makeshift_electrolyser/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -351,7 +351,7 @@
 	if(loc != user && ..())
 		return TRUE
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/item/device/makeshift_electrolyser/Topic(href, href_list)
 	if(..())

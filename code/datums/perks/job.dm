@@ -180,7 +180,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body and can dive into disposal chutes. Disposals deal no damage to you as well."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -224,15 +224,18 @@
 
 /datum/perk/parkour
 	name = "Raiders Leap"
-	desc = "You cling to railings and low walls, climb faster, and get up after diving or sliding sooner hanks to a life of raiding ships, settlements, and anywhere plunder was"
+	desc = "A life as a void wolf has given you amazing agility. You can climb railings, walls, and ladders much faster than others. In addition you can dodge, combat roll, and stand up from prone much \
+	faster. Finally, your rough and tumble movement makes falling from high heights deal alot less damage compared to others and you always land on your feet."
 	//icon_state = "parkour" //https://game-icons.net/1x1/delapouite/jump-across.html
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
 	holder.mod_climb_delay -= 0.95
+	holder.falls_mod -= 0.8
 
 /datum/perk/parkour/remove()
 	holder.mod_climb_delay += 0.95
+	holder.falls_mod += 0.8
 	..()
 
 /datum/perk/chaingun_smoker
