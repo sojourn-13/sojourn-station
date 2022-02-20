@@ -96,6 +96,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	recoil_buildup = 3.25
 	penetration_multiplier = 1.2
+	brace_penalty = 10 //So we have a reason to entrench rather then charge every combat
 	one_hand_penalty = 15
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

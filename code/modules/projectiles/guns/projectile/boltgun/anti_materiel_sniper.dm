@@ -29,6 +29,8 @@
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	extra_damage_mult_scoped = 0.2
 	gun_tags = list(GUN_AMR, GUN_PROJECTILE) //AMR tag atm does nothing
+	slowdown_hold = 1.5  //Were entrenched
+	brace_penalty = 30 //No running and gunning
 
 /obj/item/weaponparts
 	var/part_color = ""

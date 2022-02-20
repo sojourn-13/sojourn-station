@@ -25,7 +25,8 @@
 	twohanded = TRUE
 	one_hand_penalty = 30 //not like it's used anyway, but LMG level
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
-
+	slowdown_hold = 1
+	brace_penalty = 10 //wellmade
 	init_firemodes = list(
 		FULL_AUTO_400,
 		list(mode_name="short bursts", mode_desc = "Short, rapid 5 round bursts", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),

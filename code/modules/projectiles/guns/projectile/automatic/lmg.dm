@@ -23,7 +23,8 @@
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	recoil_buildup = 0.25
 	one_hand_penalty = 30 //you're not Stallone. LMG level.
-
+	slowdown_hold = 1
+	brace_penalty = 20
 	init_firemodes = list(
 		FULL_AUTO_400,
 		BURST_5_ROUND,

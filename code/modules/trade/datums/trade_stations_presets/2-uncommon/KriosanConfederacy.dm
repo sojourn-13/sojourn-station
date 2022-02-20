@@ -40,7 +40,8 @@
 		"Basic Gun Mods" = list(
 			/obj/item/gun_upgrade/barrel/forged,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,
-			/obj/item/tool_upgrade/refinement/laserguide
+			/obj/item/tool_upgrade/refinement/laserguide,
+			/obj/item/gun_upgrade/underbarrel/bipod
 		),
 		"Big Game Hunting Gear" = list(
 			/obj/item/gun/projectile/boltgun/scout = custom_good_amount_range(list(-3, 1)),
