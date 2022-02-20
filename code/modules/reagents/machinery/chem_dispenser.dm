@@ -93,14 +93,14 @@
 		to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
 		dispensable_reagents += hacked_reagents
 		SSnano.update_uis(src)
-		hackedcheck = FALSE
+		hackedcheck = TRUE
 		return
 
 	else
 		to_chat(user, "You change the mode from 'Unsafe' to 'Safe'.")
 		dispensable_reagents -= hacked_reagents
 		SSnano.update_uis(src)
-		hackedcheck = TRUE
+		hackedcheck = FALSE
 		return
 
 
@@ -273,13 +273,13 @@
 		to_chat(user, "You change the mode from 'McNano' to 'Pizza King'.")
 		dispensable_reagents += hacked_reagents
 		SSnano.update_uis(src)
-		hackedcheck = FALSE
+		hackedcheck = TRUE
 		return
 	else
 		to_chat(user, "You change the mode from 'Pizza King' to 'McNano'.")
 		dispensable_reagents -= hacked_reagents
 		SSnano.update_uis(src)
-		hackedcheck = TRUE
+		hackedcheck = FALSE
 		return
 
 /obj/machinery/chemical_dispenser/soda/update_icon()
@@ -340,13 +340,13 @@
 		to_chat(user, "You disable the 'cheap bastards' lock, enabling hidden and very expensive boozes.")
 		dispensable_reagents += hacked_reagents
 		SSnano.update_uis(src)
-		hackedcheck = FALSE
+		hackedcheck = TRUE
 		return
 	else
 		to_chat(user, "You re-enable the 'cheap bastards' lock, disabling hidden and very expensive boozes.")
 		dispensable_reagents -= hacked_reagents
 		SSnano.update_uis(src)
-		hackedcheck = TRUE
+		hackedcheck = FALSE
 		return
 
 /obj/machinery/chemical_dispenser/meds_admin_debug
