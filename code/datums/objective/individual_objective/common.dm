@@ -200,7 +200,7 @@
 	if(completed) return
 	UnregisterSignal(target, COMSIG_HUMAN_SANITY)
 	..()
-*/
+
 /datum/individual_objective/obsession
 	name = "Obsessive Observation"
 	var/mob/living/carbon/human/target
@@ -236,7 +236,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_MOB_LIFE)
 	..()
-/*
+
 /datum/individual_objective/greed
 	name = "Greed"
 	units_requested = 10 MINUTES

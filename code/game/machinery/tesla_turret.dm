@@ -148,9 +148,9 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(!anchored)
 		to_chat(user, SPAN_NOTICE("\The [src] has to be secured first!"))
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/tesla_turret/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/tesla_turret/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	data["channel"] = shock_net.channel
 	data["access"] = 1 // What does this one do and can we change it to TRUE? -R4d6
