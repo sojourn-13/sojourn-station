@@ -625,7 +625,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/shock_damage = CLAMP(round(power/400), 10, 90) + rand(-5, 5)
 	if(ishuman(target))
 		target.electrocute_act(shock_damage, src, 1, ran_zone())
-	else:
+	else
 		target.electrocute_act(shock_damage, src)
 	log_game("Tesla Turret([src.x],[src.y],[src.z]) shocked [key_name(target)] for [shock_damage]dmg.")
 	message_admins("Tesla Turret([src.x],[src.y],[src.z]) zapped [key_name_admin(target)] for [shock_damage]dmg!")
