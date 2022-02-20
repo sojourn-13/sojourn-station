@@ -404,7 +404,7 @@
 		target.attack_hand(src.occupant)
 		return 1
 	if(istype(target, /obj/machinery/embedded_controller))
-		target.ui_interact(src.occupant)
+		target.nano_ui_interact(src.occupant)
 		return 1
 	return 0
 

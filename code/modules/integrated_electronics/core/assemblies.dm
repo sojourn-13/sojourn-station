@@ -125,11 +125,11 @@
 
 /obj/item/device/electronic_assembly/interact(mob/user, circuit)
 	if(opened)
-		ui_interact(user, circuit)
+		nano_ui_interact(user, circuit)
 	if(use_ui_window)
-		closed_ui_interact(user)
+		closed_nano_ui_interact(user)
 
-/obj/item/device/electronic_assembly/proc/closed_ui_interact(mob/user)
+/obj/item/device/electronic_assembly/proc/closed_nano_ui_interact(mob/user)
 	if(!check_interactivity(user))
 		return
 	var/datum/browser/popup = new(user, "scannerpanel", name, 600, 330) // Set up the popup browser window
@@ -159,7 +159,7 @@
 	else
 		qdel(popup)
 
-/obj/item/device/electronic_assembly/ui_interact(mob/user, obj/item/integrated_circuit/circuit_pins)
+/obj/item/device/electronic_assembly/nano_ui_interact(mob/user, obj/item/integrated_circuit/circuit_pins)
 	. = ..()
 	if(!check_interactivity(user))
 		return

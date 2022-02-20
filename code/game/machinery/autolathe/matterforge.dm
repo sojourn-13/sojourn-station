@@ -153,7 +153,7 @@
 
 	return data
 
-/obj/machinery/matter_nanoforge/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/matter_nanoforge/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/list/data = ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -182,7 +182,7 @@
 	user.set_machine(src)
 	if(!design_list?.len)
 		get_designs()
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/matter_nanoforge/Topic(href, href_list)
 	if(..())

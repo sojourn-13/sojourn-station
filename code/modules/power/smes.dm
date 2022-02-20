@@ -258,7 +258,7 @@
 	add_fingerprint(user)
 	if(!check_user(user)) //To try and make this more guild only
 		return
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/power/smes/proc/check_user(mob/user)
 	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, skill_check))
@@ -328,7 +328,7 @@
 
 	return tool_type || 1
 
-/obj/machinery/power/smes/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/power/smes/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 
 	if(stat & BROKEN)
 		return

@@ -74,8 +74,7 @@
 		)
 	)
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun/pistol = offer_data("\"Myrmidon\" rail pistol", 3500, 2),
-		/obj/item/gun/energy/laser/railgun = offer_data("\"Reductor\" rail rifle", 5500, 1),
+		/obj/item/gun/energy/laser/railgun/pistol = offer_data("\"Myrmidon\" rail pistol or rifle", 5000, 2),
 		/obj/item/tool/shovel/combat = offer_data("combat crovel", 500, 13),
 		/obj/item/tool_upgrade/armor/melee = offer_data("melee armor plate", 500, 5),
 		/obj/item/tool_upgrade/armor/bullet = offer_data("ballistic armor plate", 1200, 3),

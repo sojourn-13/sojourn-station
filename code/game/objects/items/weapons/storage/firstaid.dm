@@ -15,7 +15,7 @@
 	throw_speed = 2
 	throw_range = 8
 	matter = list(MATERIAL_PLASTIC = 5)
-	max_storage_space = 15
+	max_storage_space = 10
 	price_tag = 200
 	var/empty = FALSE
 
@@ -29,8 +29,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	new /obj/item/device/scanner/health(src)
@@ -49,7 +47,6 @@
 
 	if (empty) return
 	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/pill/kelotane(src)
 	new /obj/item/reagent_containers/pill/kelotane(src)
 	new /obj/item/reagent_containers/pill/kelotane(src) //Replaced ointment with these since they actually work --Errorage
@@ -65,8 +62,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/bruise_pack(src)
-	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/spaceacillin(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
@@ -131,8 +126,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
@@ -356,8 +349,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
@@ -390,8 +381,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
@@ -426,8 +415,6 @@
 	if (empty) return
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/stack/medical/advanced/ointment(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)

@@ -374,6 +374,25 @@
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
 
+// Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
+/obj/item/tool_upgrade/productivity/waxcoat
+	name = "Wax Coating"
+	desc = "A bucket of filtered beeswax, to be applied to tools or clothes; preventing stains, and preventing minor knicks and damage."
+	icon_state = "waxcoat"
+	matter = list(MATERIAL_BIOMATTER = 2, MATERIAL_PLASTIC = 5)
+	can_remove = FALSE
+	price_tag = 380
+
+/obj/item/tool_upgrade/productivity/waxcoat/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_BULK = -2,
+	UPGRADE_DEGRADATION_MULT = 0.90,
+	UPGRADE_ITEMFLAGPLUS = NOBLOODY
+	)
+	I.prefix = "waxed"
+
 // 	 REFINEMENT: INCREASES PRECISION
 //------------------------------------------------
 /obj/item/tool_upgrade/refinement/laserguide
@@ -731,7 +750,7 @@
 		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible."
 	icon_state = "ai_tool"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 3, MATERIAL_GOLD = 3, MATERIAL_DIAMOND = 1)
-	price_tag = 225
+	price_tag = 725
 
 /obj/item/tool_upgrade/augment/ai_tool/New()
 	..()
@@ -790,7 +809,7 @@
 	desc = "Very rare tool mod from Greyson powered by their nanomachines. It repairs the tool while in use and makes it near unbreakable."
 	icon_state = "repair_nano"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
-	price_tag = 100
+	price_tag = 325
 
 /obj/item/tool_upgrade/augment/repair_nano/New()
 	..()
@@ -821,71 +840,6 @@
 	)
 	I.prefix = "hydraulic"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
-
-//Armor mods
-/obj/item/tool_upgrade/armor/melee
-	name = "melee plating"
-	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its melee resistance."
-	icon_state = "melee"
-	matter = list(MATERIAL_STEEL = 30)
-	price_tag = 275
-
-/obj/item/tool_upgrade/armor/melee/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_MELEE_ARMOR = 20
-	)
-	I.prefix = "reinforced"
-	I.required_qualities = list(QUALITY_ARMOR)
-
-/obj/item/tool_upgrade/armor/bullet
-	name = "ballistic plating"
-	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its ballistic resistance."
-	icon_state = "bullet"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 10)
-	price_tag = 750
-
-/obj/item/tool_upgrade/armor/bullet/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_BALLISTIC_ARMOR = 20
-	)
-	I.prefix = "kevlar-plated"
-	I.required_qualities = list(QUALITY_ARMOR)
-
-/obj/item/tool_upgrade/armor/energy
-	name = "energy plating"
-	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its energy resistance."
-	icon_state = "energy"
-	matter = list(MATERIAL_PLATINUM = 3, MATERIAL_PLASTIC = 12)
-	price_tag = 1000
-
-/obj/item/tool_upgrade/armor/energy/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_ENERGY_ARMOR = 20
-	)
-	I.prefix = "ablative-plated"
-	I.required_qualities = list(QUALITY_ARMOR)
-
-/obj/item/tool_upgrade/armor/bomb
-	name = "bomb proofing"
-	desc = "A sturdy bit of plasteel that can be bolted onto any armor to enhance its bomb resistance."
-	icon_state = "bomb"
-	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 20)
-	price_tag = 450
-
-/obj/item/tool_upgrade/armor/bomb/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_BOMB_ARMOR = 40
-	)
-	I.prefix = "bomb-proofed"
-	I.required_qualities = list(QUALITY_ARMOR)
 
 // Randomizes a bunch of weapon stats on application - stats are set on creation of the item to prevent people from re-rolling until they get what they want
 /obj/item/tool_upgrade/augment/randomizer
@@ -943,22 +897,3 @@
 	GUN_UPGRADE_OVERCHARGE_RATE = rand(-0.4,0.2)
 	)
 	I.prefix = "artistic"
-
-// Wax coating- shrinks tool and give it anti-staining properties, can be applied to clothes
-/obj/item/tool_upgrade/productivity/waxcoat
-	name = "Wax Coating"
-	desc = "A bucket of filtered beeswax, to be applied to tools or clothes; preventing stains, and preventing minor knicks and damage."
-	icon_state = "waxcoat"
-	matter = list(MATERIAL_BIOMATTER = 2, MATERIAL_PLASTIC = 5)
-	can_remove = FALSE
-	price_tag = 380
-
-/obj/item/tool_upgrade/productivity/waxcoat/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.tool_upgrades = list(
-	UPGRADE_BULK = -2,
-	UPGRADE_DEGRADATION_MULT = 0.90,
-	UPGRADE_ITEMFLAGPLUS = NOBLOODY
-	)
-	I.prefix = "waxed"

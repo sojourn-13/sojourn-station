@@ -21,7 +21,7 @@
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	belt = /obj/item/storage/belt/medical
 	glasses = /obj/item/clothing/glasses/hud/health
-	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/modular_computer/tablet/moebius/preset = 1, /obj/item/gun/projectile/clarissa/moebius/preloaded_cbo = 1, /obj/item/gun_upgrade/trigger/dnalock = 1, /obj/item/gun_upgrade/muzzle/silencer = 1)
+	backpack_contents = list(/obj/item/storage/hcases/med/medical_job = 1, /obj/item/gun/projectile/clarissa/moebius/preloaded_cbo = 1, /obj/item/gun_upgrade/trigger/dnalock = 1, /obj/item/gun_upgrade/muzzle/silencer = 1)
 
 /decl/hierarchy/outfit/job/medical/doctor
 	name = OUTFIT_JOB_NAME("Soteria - Medical Doctor")
@@ -30,7 +30,7 @@
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	belt = /obj/item/storage/belt/medical
-	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/modular_computer/tablet/moebius/preset = 1)
+	backpack_contents = list(/obj/item/storage/hcases/med/medical_job = 1)
 
 /decl/hierarchy/outfit/job/medical/trauma_team
 	name = OUTFIT_JOB_NAME("Soteria - Trauma Team")

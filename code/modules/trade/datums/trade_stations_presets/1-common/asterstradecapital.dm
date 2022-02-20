@@ -16,15 +16,6 @@
 	recommendation_threshold = 4000
 	stations_recommended = list("casino" , "kriosanconfederacy")
 	assortiment = list(
-		"Disk Designs" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/misc = good_data("Lonestar Miscellaneous Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/robustcells = good_data("Lonestar Robustcells", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/janitor = good_data("Lonestar Janitor Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = good_data("H&S Nonlethal Magazines Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = good_data("H&S Lethal Magazines Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable/design/security = good_data("Security Miscellaneous Pack", list(1, 10)),
-			/obj/item/computer_hardware/hard_drive/portable = good_data("Blank Disk", list(1, 10))
-		),
 		"Tools and Equipment" = list(
 			/obj/item/clothing/suit/storage/hazardvest,
 			/obj/item/storage/pouch/small_generic,

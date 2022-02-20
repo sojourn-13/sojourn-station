@@ -194,7 +194,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 	if(!do_old_surgery(M, user, tool))
 		if(affected && affected.open && tool && tool.tool_qualities)
 			// Open or update surgery UI
-			affected.ui_interact(user)
+			affected.nano_ui_interact(user)
 
 			to_chat(user, SPAN_WARNING("You can't see any useful way to use [tool] on [M]."))
 			return 1 //Prevents attacking the patient when trying to do surgery
@@ -207,7 +207,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 /obj/item/organ/external/do_surgery(mob/living/user, obj/item/tool)
 	if(!tool)
 		if(is_open())
-			ui_interact(user)
+			nano_ui_interact(user)
 			return TRUE
 		return FALSE
 
