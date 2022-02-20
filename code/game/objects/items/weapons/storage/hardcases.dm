@@ -250,6 +250,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	//Has medicals items inside it to save on spawn storage.
 	new /obj/item/storage/firstaid/soteria(src)
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
+	//We make sure are max storage is not cheating
+	max_storage_space = DEFAULT_SMALL_STORAGE * 1.5 //a better fancy box
 
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
