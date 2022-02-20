@@ -6,8 +6,8 @@
 		Turret Status:
 	</div>
 	<div class="itemContentNarrow">
-		{{:helper.link('Enabled', null, {'command' : 'enable', 'value' : 1},  data.enabled ?'redButton' : null)}}
-		{{:helper.link('Disabled',null, {'command' : 'enable', 'value' : 0}, !data.enabled ? 'selected' : null)}}
+		{{:helper.link('Enabled', null, {'command' : 'enable', 'value' : 1},  data.enabled ?'selected' : null)}}
+		{{:helper.link('Disabled',null, {'command' : 'enable', 'value' : 0}, !data.enabled ? 'redButton' : null)}}
 	</div>
 </div>
 
@@ -17,8 +17,8 @@
 			Lethal Mode:
 		</div>
 		<div class="itemContentNarrow">
-			{{:helper.link('On', null, {'command' : 'lethal', 'value' : 1},  data.lethal ?'redButton' : null)}}
-			{{:helper.link('Off',null, {'command' : 'lethal', 'value' : 0}, !data.lethal ? 'selected' : null)}}
+			{{:helper.link('On', null, {'command' : 'lethal', 'value' : 1},  data.lethal ?'selected' : null)}}
+			{{:helper.link('Off',null, {'command' : 'lethal', 'value' : 0}, !data.lethal ? 'redButton' : null)}}
 		</div>
 	</div>	
 {{/if}}

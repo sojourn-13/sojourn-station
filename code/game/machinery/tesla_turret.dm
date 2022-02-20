@@ -15,9 +15,9 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/check_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
 	var/check_access = FALSE	//if this is active, the turret shoots everything that does not meet its access requirements
 	var/check_anomalies = TRUE	//checks if it can shoot at unidentified lifeforms (ie xenos)
-	var/check_synth = FALSE 	//if active, will shoot at anything not an AI or cyborg
+	var/check_synth = FALSE		//if active, will shoot at anything not an AI or cyborg
 	var/ailock = FALSE			//Silicons cannot use this
-	var/colony_allied_turret = FALSE //If we target friendly to colony critters
+	var/colony_allied_turret = TRUE //If we target friendly to colony critters
 	var/list/current_access_list = list(access_moebius, access_robotics, access_security, access_heads)
 
 	var/list/registered_names = list()
@@ -33,7 +33,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 /obj/machinery/tesla_turret
 	name = "Blue-Lightning Tesla Coil Turret"
-	desc = "An experimental Tesla Coil Turret for point-defense and pest control, developed as Soteria's answer to the Absolute's Oblelisk. Bears a Blue-Ink Logo on its central Pylon."
+	desc = "An experimental Tesla Coil Turret for point-defense and pest control, developed as Soteria's answer to the Absolute's Obelisks. Bears a Blue-Ink Logo on its central Pylon."
 	anchored = TRUE
 	density = TRUE
 	icon = 'icons/obj/tesla_turret.dmi'
@@ -142,13 +142,13 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	return FALSE
 
 /obj/machinery/tesla_turret/attack_hand(mob/user)
-	if(!emagged || isLocked(user))
+	if(!emagged && isLocked(user))
 		return
 
 	if(!anchored)
-		to_chat(usr, SPAN_NOTICE("\The [src] has to be secured first!"))
+		to_chat(user, SPAN_NOTICE("\The [src] has to be secured first!"))
 		return
-	shock_net.ui_interact(user)
+	ui_interact(user)
 
 /obj/machinery/tesla_turret/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
@@ -419,7 +419,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		to_chat(user, SPAN_WARNING("You short out the turret network's id recognition."))
 		visible_message("[src] hums oddly...")
 		emagged = TRUE
-		locked = False
+		locked = FALSE
 		enabled = FALSE //turns off the turret temporarily
 		spawn(60) //6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
 			enabled = TRUE //turns it back on.
@@ -495,10 +495,10 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 /obj/machinery/tesla_turret/proc/assess_living(var/mob/living/L)
 	if(!L) // If there's no one to shoot
 		return TURRET_NOT_TARGET
-	
+
 	if(!istype(L)) // If it's somehow not a living mob
 		return TURRET_NOT_TARGET
-	
+
 	var/obj/item/card/id/id_card = L.GetIdCard() // Copy the target's ID card
 	if(id_card && (id_card.registered_name in shock_net.registered_names)) // Check their access
 		return TURRET_NOT_TARGET
@@ -508,7 +508,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 	if(L.stat)		//if the perp is dead/dying, no need to bother really
 		return TURRET_NOT_TARGET	//move onto next potential victim!
-	
+
 	if(get_dist(src, L) > 6)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET
 
@@ -602,7 +602,6 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 /obj/machinery/tesla_turret/proc/zap(mob/living/target)
 	if(!apc || !apc.terminal || !apc.terminal.powernet)
-		log_debug("tesla not hooked up to powernet; can't fire.")
 		return
 	if(last_fired)	//prevents rapid-fire shooting
 		return
@@ -624,7 +623,10 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		. = zapdir
 
 	var/shock_damage = CLAMP(round(power/400), 10, 90) + rand(-5, 5)
-	target.electrocute_act(shock_damage, src)
+	if(ishuman(target))
+		target.electrocute_act(shock_damage, src, 1, ran_zone())
+	else:
+		target.electrocute_act(shock_damage, src)
 	log_game("Tesla Turret([src.x],[src.y],[src.z]) shocked [key_name(target)] for [shock_damage]dmg.")
 	message_admins("Tesla Turret([src.x],[src.y],[src.z]) zapped [key_name_admin(target)] for [shock_damage]dmg!")
 	if(issilicon(target))
