@@ -142,7 +142,7 @@
 	if(control_unit && control_unit != AMC)
 		return 0//Already have one
 	control_unit = AMC
-	control_unit.add_shielding(src,1)
+	control_unit.add_shielding(src, TRUE)
 	return 1
 
 //Scans cards for shields or the control unit and if all there it
@@ -183,11 +183,11 @@
 	icon_state = "core_empty"
 	return
 
-/obj/machinery/am_shielding/proc/check_stability(var/injecting_fuel = 0)
+/obj/machinery/am_shielding/proc/check_stability(var/injecting_fuel = FALSE)
 	if(stability > 0)
 		return
 	if(injecting_fuel && control_unit)
-		control_unit.exploding = 1
+		control_unit.exploding = TRUE
 	if(src)
 		overheat()
 	return

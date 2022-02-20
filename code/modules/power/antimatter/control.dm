@@ -14,17 +14,17 @@
 	var/obj/item/am_containment/fueljar
 	var/update_shield_icons = 0
 	var/stability = 100
-	var/exploding = 0
+	var/exploding = FALSE
 
-	var/active = 0//On or not
+	var/active = FALSE//On or not
 	var/fuel_injection = 2//How much fuel to inject
-	var/shield_icon_delay = 0//delays resetting for a short time
+	var/shield_icon_delay = FALSE//delays resetting for a short time
 	var/reported_core_efficiency = 0
 
 	var/power_cycle = 0
 	var/power_cycle_delay = 4//How many ticks till produce_power is called
 	var/stored_core_stability = 0
-	var/stored_core_stability_delay = 0
+	var/stored_core_stability_delay = FALSE
 
 	var/stored_power = 0//Power to deploy per tick
 
@@ -90,7 +90,7 @@
 			return
 		for(var/obj/machinery/am_shielding/AMS in linked_cores)
 			AMS.stability -= core_damage
-			AMS.check_stability(1)
+			AMS.check_stability(TRUE)
 		playsound(src.loc, 'sound/effects/bang.ogg', 50, 1)
 	check_stability()
 	return
@@ -189,16 +189,16 @@
 		interact(user)
 	return
 
-/obj/machinery/power/am_control_unit/proc/add_shielding(obj/machinery/am_shielding/AMS, AMS_linking = 0)
+/obj/machinery/power/am_control_unit/proc/add_shielding(obj/machinery/am_shielding/AMS, AMS_linking = FALSE)
 	if(!istype(AMS))
-		return 0
+		return FALSE
 	if(!anchored)
-		return 0
+		return FALSE
 	if(!AMS_linking && !AMS.link_control(src))
-		return 0
+		return FALSE
 	linked_shielding.Add(AMS)
 	update_shield_icons = 1
-	return 1
+	return TRUE
 
 /obj/machinery/power/am_control_unit/proc/remove_shielding(obj/machinery/am_shielding/AMS)
 	if(!istype(AMS))
@@ -210,6 +210,7 @@
 	return 1
 
 /obj/machinery/power/am_control_unit/proc/check_stability()//TODO: make it break when low also might want to add a way to fix it like a part or such that can be replaced
+	check_core_stability()
 	if(stability <= 0)
 		qdel(src)
 	return
@@ -236,7 +237,7 @@
 /obj/machinery/power/am_control_unit/proc/check_shield_icons()//Forces icon_update for all shields
 	if(shield_icon_delay)
 		return
-	shield_icon_delay = 1
+	shield_icon_delay = TRUE
 	if(update_shield_icons == 2)//2 means to clear everything and rebuild
 		for(var/obj/machinery/am_shielding/AMS in linked_shielding)
 			if(AMS.processing)
@@ -249,12 +250,12 @@
 		for(var/obj/machinery/am_shielding/AMS in linked_shielding)
 			AMS.update_icon()
 	spawn(20)
-		shield_icon_delay = 0
+		shield_icon_delay = FALSE
 
 /obj/machinery/power/am_control_unit/proc/check_core_stability()
 	if(stored_core_stability_delay || linked_cores.len <= 0)
 		return
-	stored_core_stability_delay = 1
+	stored_core_stability_delay = TRUE
 	stored_core_stability = 0
 	for(var/obj/machinery/am_shielding/AMS in linked_cores)
 		stored_core_stability += AMS.stability
@@ -276,7 +277,7 @@
 	to_chat(usr, "announce_stability is now set to [announce_stability]")
 
 /obj/machinery/power/am_control_unit/proc/reset_stored_core_stability_delay()
-	stored_core_stability_delay = 0
+	stored_core_stability_delay = FALSE
 
 /obj/machinery/power/am_control_unit/interact(mob/user)
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
