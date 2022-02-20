@@ -241,6 +241,7 @@
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_MASSIVE
+	max_upgrades = 6 //More modability
 
 /obj/item/tool/sword/katana/nano
 	name = "\improper Soteria \"Muramasa\" katana"
