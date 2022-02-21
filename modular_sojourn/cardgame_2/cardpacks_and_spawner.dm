@@ -83,7 +83,7 @@
 
 /obj/item/pack_card_carp
 	name = "CardCarpCo Pack"
-	desc = "For those with disposible income. Contains 5, and a pelt card."
+	desc = "For those with disposible income. Contains 5 cards and a pelt card."
 	icon = 'modular_sojourn/cardgame_2/cardgame_sprites.dmi'
 	icon_state = "card_pack"
 	w_class = ITEM_SIZE_TINY
