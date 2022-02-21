@@ -57,7 +57,7 @@
 
 /obj/item/cardholder/rabbit
 	name = "rabbit card box"
-	desc = "A box of cards that only have squirrel CarpCarpCo Cards. The second most commonly used side deck for most players."
+	desc = "A box of cards that only have rabbit CarpCarpCo Cards. The second most commonly used side deck for most players, rabbits are H1/P0 with kinship and frail."
 	card_target =  /obj/item/card_carp/rabbit
 	icon_state = "folly_deck"
 	endless = TRUE
@@ -71,7 +71,7 @@
 
 /obj/item/cardholder/beebox
 	name = "beebox card box"
-	desc = "A box of cards that only have rat CarpCarpCo Cards. An unusual choice for a side deck, replacing squirrels by giving H1/P0 beebox that cannot give bones."
+	desc = "A box of cards that only have bee CarpCarpCo Cards. An unusual choice for a side deck, replacing squirrels by giving H1/P0 bee cards that cannot give bones."
 	card_target =  /obj/item/card_carp/beebox
 	icon_state = "folly_deck"
 	endless = TRUE
