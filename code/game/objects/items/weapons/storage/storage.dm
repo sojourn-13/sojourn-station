@@ -24,6 +24,8 @@
 	var/insertion_sound
 	var/extraction_sound
 
+	var/exspand_when_spawned = TRUE
+
 /obj/item/storage/debug
 	name = "Destickinator"
 	desc = "A case that can fit legitmently anything inside it, used by Bluespace Technicians and the like to remove stuck items form their hands. \
@@ -559,7 +561,8 @@
 	var/total_storage_space = 0
 	for(var/obj/item/I in contents)
 		total_storage_space += I.get_storage_cost()
-	max_storage_space = max(total_storage_space, max_storage_space) //prevents spawned containers from being too small for their contents
+	if(exspand_when_spawned)
+		max_storage_space = max(total_storage_space, max_storage_space) //prevents spawned containers from being too small for their contents
 
 // Override in subtypes
 /obj/item/storage/proc/populate_contents()
