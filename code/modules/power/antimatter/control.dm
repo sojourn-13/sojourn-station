@@ -230,7 +230,8 @@
 		for(var/obj/machinery/am_shielding/Core in linked_cores)
 			flick("core_desactivating", Core)
 			Core.icon_state = "core_inactive"
-	radio.autosay(alert_msg, "Antimatter Automated Announcement", "Engineering")
+	if(announce_stability)
+		radio.autosay(alert_msg, "Antimatter Automated Announcement", "Engineering")
 	update_icon()
 	return
 
