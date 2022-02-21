@@ -243,8 +243,10 @@ SUBSYSTEM_DEF(trade)
 		beacon.activate()
 
 		var/datum/money_account/A = account
-		var/datum/transaction/T = new(offer_price, account.get_name(), "Special deal", station.name)
+		var/datum/transaction/T = new(round(offer_price * 0.8), account.get_name(), "Special deal", station.name)
+		var/datum/transaction/TL = new(round(offer_price * 0.2), department_accounts[DEPARTMENT_LSS].get_name(), "Special deal", station.name)
 		T.apply_to(A)
+		TL.apply_to(A)
 		station.add_to_wealth(offer_price, TRUE)
 		// clear offer, wait until next tick to generate a new one
 		offer_content["amount"] = 0
@@ -304,6 +306,8 @@ SUBSYSTEM_DEF(trade)
 		qdel(thing)
 		senderBeacon.activate()
 		var/datum/money_account/A = account
-		var/datum/transaction/T = new(cost, account.get_name(), "Sold item", station.name)
+		var/datum/transaction/T = new(round(cost * 0.8), account.get_name(), "Sold item", station.name)
+		var/datum/transaction/TL = new(round(cost * 0.2), department_accounts[DEPARTMENT_LSS].get_name(), "Sold item", station.name)
 		T.apply_to(A)
+		TL.apply_to(department_accounts[DEPARTMENT_LSS])
 		station.add_to_wealth(cost)

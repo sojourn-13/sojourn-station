@@ -31,12 +31,12 @@
 	icon_state = "e-screwdriver"
 	worksound = WORKSOUND_DRIVER_TOOL
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1)
-	tool_qualities = list(QUALITY_SCREW_DRIVING = 40, QUALITY_DRILLING = 10, QUALITY_BONE_SETTING = 10)
+	tool_qualities = list(QUALITY_SCREW_DRIVING = 50, QUALITY_DRILLING = 10, QUALITY_BONE_SETTING = 10)
 	degradation = 0.7
 	max_upgrades = 4
 	use_power_cost = 0.18
 	suitable_cell = /obj/item/cell/small
-	price_tag = 240
+	price_tag = 300
 
 /obj/item/tool/screwdriver/combi_driver
 	name = "combination drill"
@@ -46,12 +46,12 @@
 	worksound = WORKSOUND_DRIVER_TOOL
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)
-	tool_qualities = list(QUALITY_SCREW_DRIVING = 50, QUALITY_BOLT_TURNING = 50, QUALITY_DRILLING = 20)
+	tool_qualities = list(QUALITY_SCREW_DRIVING = 40, QUALITY_BOLT_TURNING = 40, QUALITY_DRILLING = 20)
 	degradation = 0.7
 	use_power_cost = 0.54
 	suitable_cell = /obj/item/cell/small
 	max_upgrades = 4
-	price_tag = 800 // Highly prized
+	price_tag = 600 // Highly prized
 
 /obj/item/tool/screwdriver/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(!istype(M) || user.a_intent == "help")

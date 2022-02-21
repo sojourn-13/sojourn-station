@@ -1,3 +1,7 @@
+//////////////////////////////////////////////////
+/////////         TESSELLATE             /////////
+//////////////////////////////////////////////////
+
 /datum/ritual/cruciform/tessellate
 	name = "cruciform"
 	phrase = null
@@ -17,9 +21,9 @@
 	cooldown = TRUE
 	cooldown_time = 15 MINUTES
 	cooldown_category = "grepose"
-	power = 60 //stronger healing higher cost
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
+	power = 60
+	nutri_cost = 50
+	blood_cost = 50
 
 /datum/ritual/cruciform/tessellate/heal_heathen_special/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/people_around = list()
@@ -98,12 +102,95 @@
 		participant.adjustOxyLoss(-40)
 		participant.adjustBrainLoss(-5)
 		participant.updatehealth()
+/*
+/datum/ritual/cruciform/tessellate/canticle_of_absolution
+	name = "Canticle of Absolution"
+	phrase = "PLACE HOLDER TEXT."
+	desc = "Cures the person in front of you of all genetic instability and cone damage while removing all forms of genetic mutation. This litany requires a great deal of power and thus may \
+	only be used once per hour."
+	cooldown = TRUE
+	cooldown_time = 60 MINUTES
+	power = 50
+	nutri_cost = 100
+	blood_cost = 50
+
+/datum/ritual/cruciform/tessellate/canticle_of_absolution/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
+	if(!T)
+		fail("No target in front of you.", user, C)
+		return FALSE
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	to_chat(T, SPAN_NOTICE("You feel your body returning to its natural state."))
+	to_chat(user, SPAN_NOTICE("You bring [T.name] back to their natural state."))
+
+	T.adjustCloneLoss(-200)
+	T.unnatural_mutations.removeAllMutations()
+
+	return TRUE
+
+/datum/ritual/cruciform/tessellate/desperate_calculation
+	name = "Martyr's Calculation"
+	phrase = "PLACE HOLDER TEXT."
+	desc = "An immensely powerful healing litany that restores any who hear it around the speaker, however the strength of the litany requires so much that the body of the speaker is temporarily stunned. \
+	Due to the strength of this hymn, it can only be used once every half hour."
+	cooldown = TRUE
+	power = 50
+	cooldown_time = 30 MINUTES
+	cooldown_category = "dcalculation" //Seperate cooldown since it stuns the user.
+	nutri_cost = 100
+	blood_cost = 50
+
+/datum/ritual/cruciform/tessellate/desperate_calculation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/list/people_around = list()
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	for(var/mob/living/carbon/human/H in view(user))
+		if(H != user && !isdeaf(H))
+			people_around.Add(H)
+
+	if(people_around.len > 0)
+		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany."))
+		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
+		for(var/mob/living/carbon/human/participant in people_around)
+			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
+			heal_other(participant)
+			add_effect(participant, FILTER_HOLY_GLOW, 25)
+		set_personal_cooldown(user)
+		user.Weaken(10)
+		return TRUE
+	else
+		fail("Your cruciform sings, alone, unto the void.", user, C)
+		return FALSE
+
+/datum/ritual/cruciform/tessellate/desperate_calculation/proc/heal_other(mob/living/carbon/human/participant)
+		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away most of your pain</span>")
+		participant.reagents.add_reagent("laudanum", 10)
+		participant.adjustBruteLoss(-40)
+		participant.adjustFireLoss(-40)
+		participant.adjustToxLoss(-40)
+		participant.adjustOxyLoss(-80)
+		participant.adjustBrainLoss(-10)
+		participant.updatehealth()
+*/
+//////////////////////////////////////////////////
+/////////         LEMNISCATE             /////////
+//////////////////////////////////////////////////
 
 /datum/ritual/cruciform/lemniscate
 	name = "cruciform"
 	phrase = null
 	implant_type = /obj/item/implant/core_implant/cruciform/lemniscate
 	category = "Lemniscate"
+
 /datum/ritual/targeted/cruciform/lemniscate
 	name = "cruciform targeted"
 	phrase = null
@@ -190,6 +277,10 @@
 	phrase = "Confortare et esto robustus. Nolite timere nec paveatis a conspectu eorum quia Dominus Deus tuus ipse est ductor tuus. Et non dimittet nec derelinquet te."
 	stats_to_boost = list(STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
 
+//////////////////////////////////////////////////
+/////////         MONOMIAL               /////////
+//////////////////////////////////////////////////
+
 /datum/ritual/cruciform/monomial
 	name = "cruciform"
 	phrase = null
@@ -272,6 +363,10 @@
 	user.stats.changeStat(STAT_BIO, -10)
 	user.stats.changeStat(STAT_MEC, -10)
 
+//////////////////////////////////////////////////
+/////////         DIVISOR                /////////
+//////////////////////////////////////////////////
+
 /datum/ritual/cruciform/divisor
 	name = "cruciform"
 	phrase = null
@@ -338,6 +433,10 @@
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
 	set_personal_cooldown(user)
 	return TRUE
+
+//////////////////////////////////////////////////
+/////////         FACTORIAL              /////////
+//////////////////////////////////////////////////
 
 /datum/ritual/cruciform/factorial
 	name = "cruciform"
