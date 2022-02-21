@@ -336,9 +336,12 @@
 		/obj/item/device/radio/headset,
 		/obj/item/device/hailer,
 		/obj/item/device/megaphone,
+		/obj/item/device/t_scanner/advanced,
+		/obj/item/device/holowarrant,
 		/obj/item/melee,
 		/obj/item/device/radio,
 		/obj/item/tool/knife,
+		/obj/item/tool/shovel/combat,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/energy/gun,
@@ -351,6 +354,10 @@
 		/obj/item/ammo_casing/flare,
 		/obj/item/taperoll,
 		/obj/item/pen,
+		/obj/item/device/taperecorder,
+		/obj/item/clipboard,
+		/obj/item/device/camera,
+		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks
 	)
