@@ -473,6 +473,10 @@
 	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257
 	materials = list(MATERIAL_STEEL = 20)
 
+/datum/design/autolathe/ammo/lrifle_ammobox_lethal
+	name = "ammunitioon box .257 Carbine (hollow-point)
+	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257/lethal
+
 /datum/design/autolathe/ammo/lrifle_ammobox_rubber
 	name = "ammunition box .257 Carbine (rubber)"
 	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257/rubber
@@ -572,6 +576,11 @@
 /datum/design/autolathe/ammo/rifle_ammobox
 	name = "ammunition box 7.5mm Rifle (ball)"
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75
+	materials = list(MATERIAL_STEEL = 5)
+
+/datum/design/autolathe/ammo/rifle_ammobox_lethal
+	name = "ammunition box 7.5mm Rifle (hollow point)"
+	build_path = /obj/item/ammo_magazine/ammobox/rifle_75/lethal
 	materials = list(MATERIAL_STEEL = 5)
 
 /datum/design/autolathe/ammo/sl_rifle
