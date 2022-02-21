@@ -1,4 +1,4 @@
-
+//Sprite by Aeger Medela#2891
 /obj/item/scale
 	name = "Scale"
 	desc = "10 Point Scale, used when talling marks. AltClick to remove a tally, CtrlShiftClick to add a tally"
@@ -38,11 +38,12 @@
 	update_icon()
 	return
 
+//Sprite by Gidgit#0143
 /obj/item/bone_counter
 	name = "Skull Counter"
 	desc = "Point Skull Counter, used when talling marks. AltClick to remove a tally, CtrlShiftClick to add a tally.\
 	Used for eather exstended life, or more commonly as a way to keep track of bones in CardCarp."
-	icon_state = "scale"
+	icon_state = "skull"
 	icon = 'modular_sojourn/cardgame_2/cardgame_sprites.dmi'
 	var/tally = 0 //Number
 	w_class = ITEM_SIZE_SMALL
