@@ -57428,7 +57428,6 @@
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
 /obj/item/computer_hardware/hard_drive/portable/design/circuits,
 /obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/engineering,
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
 /obj/item/stack/material/steel/full,
 /obj/item/stack/material/glass{
@@ -83241,6 +83240,7 @@
 /area/nadezhda/quartermaster/underground_to_surface_disposal)
 "sII" = (
 /obj/structure/table/standard,
+/obj/item/computer_hardware/hard_drive/portable/design/engineering,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/engineering/workshop)
 "sIO" = (
