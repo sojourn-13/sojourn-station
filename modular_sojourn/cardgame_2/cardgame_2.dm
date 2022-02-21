@@ -1,4 +1,3 @@
-
 /obj/item/card_carp
 	name = "Rules Card"
 	desc = "To start the game: Place down a scale or tally system, make sure its balance is at 0.<BR>\n\
@@ -6,13 +5,15 @@
 	The field of play is a (recommended) 4 x 5 grid, players may only play cards on their side of the field unless otherwise noted.<BR>\n\
 	At the beginning of the game, both players draw 3 cards + 1 fodder card.<BR>\n\
 	After drawing their initial cards, players may place any terrian or blocker cards anywhere on the field.<BR>\n\
-	At the beginning of each turn, a player may draw 1 fodder card or 1 card from their deck box.<BR>\n\
+	At the beginning of each turn, a player may draw 1 fodder card or 1 card from their deck box. Players draw on their very first turn.<BR>\n\
 	Playing Cards:<BR>\n\
-	Some cards have an associated blood cost. This cost is paid by sacrificing a total amount of cards on the summoners field to equal the amount required. Unless otherwise stated, one card is one bloods.<BR>\n\
-	Some cards have an associated bones cost. Bones are paid by using a players discard pile. Cards are discarded when they are sacrified or die. Cards used to pay for bone costs are placed back \
-	into deck box they were drawn from. Unless otherwise stated, one card is one bone.<BR>\n\
+	Some cards have an associated blood cost. This cost is paid by sacrificing a total amount of cards on the players field to equal the amount required. Unless otherwise stated, one card is one blood. \
+	Any excess blood disappears after a creature is played. You may not sacrifice additional cards while paying a blood cost i.e. if a wolf requires 2 blood, you cannot sacrifice 3 squirrels. \
+	If for example you sacrificed one black goat which gives 3 blood to play a wolf that cost 2 blood, the excess amount may not be used for any other purpose and disappears immediately.<BR>\n\
+	Some cards have an associated bones cost. Bones are paid by using the counters in the bone pile. When a card is sacrificed or dies it is added to the player's discard pile, the bone pile then \
+	gains 1 tally unless otherwise noted. When paying bones, a player must put an equal number of cards back into the deck box it was drawn from equal to the value of bones paid.<BR>\n\
 	Blood costs may NOT be paid using cards not on the field or in the discard pile.<BR>\n\
-	Bone costs may ONLY be paid using cards in the discard pile.<BR>\n\
+	Bone costs may ONLY be paid using cards in the discard pile. All players share the same bone pile, allowing for bones to be paid using either player's discard counter/bone pile.<BR>\n\
 	Attacking:<BR>\n\
 	When a player ends their turn, all cards from left to right act. Left to right is determined by the attacking players position.<BR>\n\
 	Any card in the back row capable of moving to the first row does so, moving first and then attacking. Cards in the back row cannot attack.<BR>\n\
@@ -25,33 +26,7 @@
 	All cards follow the format of Health/Power. A wolf card with 2 health and 3 power is represented as H2/P3 on the card.<BR>\n\
 	Cards must be played first in the back row and only move onto the front row at the end of the owner's turn. Only cards moving into or already present in the front row may attack.<BR>\n\
 	If a card has no opposing card opposite to it, the card deals damage the other player.<BR>\n\
-	When a player takes damage, the scale or tally system gets moved towards the person equal to the total amount of damage taken, when a player has 5 or more damage, they lose.<BR>\n\
-	Card Effects:<BR>\n\
-	Flying - Cards with flying ignore blockers, obstacles, and pelts unless that card is capable of blocking flyers. Having flying does not give a card the ability to block other flyers.<BR>\n\
-	Destructive - All cards with destructive kill all cards of the same type when dying. I.E. a crab with virulent kills all other crabs. Type is determined by matching words in the name.<BR>\n\
-	Deathtouch - On attack, any card it is facing is considered killed.<BR>\n\
-	Eternal - This card does not die when used as a sacrifice for blood.<BR>\n\
-	Stinky - This card reduces any opposing cards power by 1.<BR>\n\
-	Defender - This card can block cards with flying.<BR>\n\
-	Prong Strike - This card attacks twice, dealing damage and attacking on the left and right side of the card. Prong Strike prevents attacking the card directly opposing this card. If a prong \
-	strike creatures attack would go off the grid it deals no damage and is negated.<BR>\n\
-	Tri Strike - As prong strike, but also attacks the opposing card.<BR>\n\
-	Toxic - On death, all cards attacking it die.<BR>\n\
-	Guard - If an unoccupied space would be attacked by an opposing card, this card moves to that space and blocks that attack. This effect may happen mutiple times until all attacks are resolved or \
-	the guarding card is dead.<BR>\n\
-	Fortune - As long as this card remains on the field, all players draw two cards. Players may choose to draw once from each deck or twice from a single deck. Fortune cards do not stack with other \
-	fortune cards.<BR>\n\
-	Frail - If the card attacks with attacking damage, dies. Cards that gain power through other effects count as attacking damage.<BR>\n\
-	Generous - When this card is played, the owner may draw a card of their choice from either deck.<BR>\n\
-	Undying - When this card dies, instead of being placed in the owner's discard pile, it is returned to the owner's hand.<BR>\n\
-	Chime - When this card dies, the owner of this card draws one card from a deck of their choice.<BR>\n\
-	Boneless - When this card dies, place it back into the box it was drawn form.<BR>\n\
-	Pelt - Pelt cards may be placed on any position on either players board when played. Pelt cards do not move but otherwise follow the same rules as other cards. Pelt cards cannot be sacrificed \
-	for blood and are added to the discard pile upon death.<BR>\n\
-	Terrain - Terrain  cards may be placed on any position on either players board before the game begins. Terrain cards do not move and cannot be sacrified for blood, nor do they give bones. When a terrain card is \
-	destroyed unless otherwise noted it is not placed in the player's discard pile and is instead removed from the game. Each player can only play a maximum of 2 terrain cards during pre-match set up.<BR>\n\
-	Kinship - This card gains power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only add 1 power, no matter how many matching \
-	types they have, unless otherwise stated. Kinship cards do not count themselves for the purposes of gaining power."
+	When a player takes damage, the scale or tally system gets moved towards the person equal to the total amount of damage taken, when a player has 5 or more damage, they lose."
 	icon = 'modular_sojourn/cardgame_2/cardgame_sprites.dmi'
 	icon_state = "cardblank"
 	var/cant_box = FALSE
@@ -62,7 +37,7 @@
 	name = "Index-Effects: CardCarp"
 	desc = "Card Effects:<BR>\n\
 	Flying - Cards with flying ignore blockers, obstacles, and pelts unless that card is capable of blocking flyers. Having flying does not give a card the ability to block other flyers.<BR>\n\
-	Destructive - All cards with destructive kill all cards of the same type when dying. I.E. a crab with virulent kills all other crabs. Type is determined by matching words in the name.<BR>\n\
+	Destructive - All cards with destructive kill all cards of the same kin type when dying. I.E. a crab with destructive kills all other crabs. Type is determined by matching words in the name.<BR>\n\
 	Deathtouch - On attack, any card it is facing is considered killed.<BR>\n\
 	Eternal - This card does not die when used as a sacrifice for blood.<BR>\n\
 	Stinky - This card reduces any opposing cards power by 1.<BR>\n\
@@ -73,13 +48,13 @@
 	Toxic - On death, all cards attacking it die.<BR>\n\
 	Guard - If an unoccupied space would be attacked by an opposing card, this card moves to that space and blocks that attack. This effect may happen mutiple times until all attacks are resolved or \
 	the guarding card is dead.<BR>\n\
-	Fortune - As long as this card remains on the field, all players draw two cards. Players may choose to draw once from each deck or twice from a single deck. Fortune cards do not stack with other \
-	fortune cards.<BR>\n\
-	Frail - If the card attacks with attacking damage, dies. Cards that gain power through other effects count as attacking damage.<BR>\n\
+	Fortune - As long as this card remains on the field, all players draw an additional card when ever they may draw a card. The additional card may be chosen from the main or fodder deck. Fortune \
+	cards do not stack with other fortune cards.<BR>\n\
+	Frail - If this card attacks and deals damage to either a player or another card, it dies.<BR>\n\
 	Generous - When this card is played, the owner may draw a card of their choice from either deck.<BR>\n\
 	Undying - When this card dies, instead of being placed in the owner's discard pile, it is returned to the owner's hand.<BR>\n\
 	Chime - When this card dies, the owner of this card draws one card from a deck of their choice.<BR>\n\
-	Boneless - When this card dies, place it back into the box it was drawn form.<BR>\n\
+	Boneless - When this card dies, place it back into the box it was drawn from.<BR>\n\
 	Pelt - Pelt cards may be placed on any position on either players board when played. Pelt cards do not move but otherwise follow the same rules as other cards. Pelt cards cannot be sacrificed \
 	for blood and are added to the discard pile upon death.<BR>\n\
 	Terrain - Terrain  cards may be placed on any position on either players board before the game begins. Terrain cards do not move and cannot be sacrified for blood, nor do they give bones. When a terrain card is \
@@ -102,6 +77,10 @@
 	user.visible_message(SPAN_NOTICE("[user] resets \the [src] health pool."), SPAN_NOTICE("You put a health points to max on \the [src]."))
 	return
 
+/////////////////////////////
+///    FODDER CARDS      ////
+/////////////////////////////
+
 /obj/item/card_carp/squirl
 	name = "Squirrel"
 	desc = "A squirrel, the rodent lynchpin to most decks. H1/P0."
@@ -123,6 +102,13 @@
 	cant_box = TRUE
 	current_health = 1
 
+/obj/item/card_carp/rabbit
+	name = "Rabbit"
+	desc = "A rabbit, a greatly undervalued card. H1/P0. Kinship, Frail."
+	icon_state = "card_rabbit"
+	cant_box = TRUE
+	current_health = 1
+
 /obj/item/card_carp/shell
 	name = "Shell"
 	desc = "A robotic shell, serves little purpose. H1/P0."
@@ -130,11 +116,19 @@
 	cant_box = TRUE
 	current_health = 1
 
+/////////////////////////////
+///    SPECIAL CARDS     ////
+/////////////////////////////
+
 /obj/item/card_carp/moon
 	name = "Moon"
 	desc = "The moon, scenic and dangerous and only used by blatent cheaters. H40/P1. Defender. Takes up all rows on the owner's side. Deals 1 damage to all cards on the opposing side. Cannot hit opposing player as long as 1 card is capable of blocking."
 	icon_state = "card_moon"
 	current_health = 40
+
+/////////////////////////////
+///    REGULARD CARDS    ////
+/////////////////////////////
 
 /obj/item/card_carp/goat
 	name = "Goat"
@@ -174,7 +168,7 @@
 
 /obj/item/card_carp/stunted_wolf
 	name = "Stunted Wolf"
-	desc = "A sad looking wolf, longing for something. H2/P2. Requires 2 bone. Frail"
+	desc = "A sad looking wolf, longing for something. H2/P2. Requires 2 bones. Frail"
 	icon_state = "card_stuntedwolf"
 	current_health = 2
 
@@ -274,12 +268,6 @@
 	icon_state = "card_warren"
 	current_health = 3
 
-/obj/item/card_carp/rabbit
-	name = "Rabbit"
-	desc = "A rabbit, a greatly undervalued card. H1/P0. Kinship, Frail"
-	icon_state = "card_rabbit"
-	current_health = 1
-
 /obj/item/card_carp/bat
 	name = "Bat"
 	desc = "A bat, blind but not deaf. H1/P2. Requires 1 bone. Flying"
@@ -298,15 +286,21 @@
 	icon_state = "card_geck"
 	current_health = 1
 
+/obj/item/card_carp/lost_rabbit
+	name = "Lost Rabbit"
+	desc = "A lost rabbit, far from its warren and its kin. H1/P0. Kinship, Frail."
+	icon_state = "card_rabbit"
+	current_health = 1
+
 /obj/item/card_carp/larva
 	name = "Moth Larva"
-	desc = "A moth larva, brimming with potential. H1/P0. Requires 1 bone. Gives 2 blood. Kinship, Fail."
+	desc = "A moth larva, brimming with potential. H1/P0. Requires 1 bone. Gives 2 blood. Kinship, Frail."
 	icon_state = "card_larva"
 	current_health = 3
 
 /obj/item/card_carp/pupa
 	name = "Moth Pupa"
-	desc = "A moth pupa, almost all it can be. H2/P1. Requires 3 bones. Gives 3 blood. Kinship, Fail."
+	desc = "A moth pupa, almost all it can be. H2/P1. Requires 3 bones. Gives 3 blood. Kinship, Frail."
 	icon_state = "card_pupa"
 	current_health = 3
 
