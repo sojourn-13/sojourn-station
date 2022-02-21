@@ -156,13 +156,14 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A wooden hard case made specifically for card carp, but it can hold various other gaming items. Alt+click to open and close."
 	icon_state = "gaming"
 	matter = list(MATERIAL_WOOD = 10)
-	max_storage_space = DEFAULT_BULKY_STORAGE // Side bars for decks tend to have lots of cards and given how specialized this is, a little extra space isn't bad. -Kaz
+	max_storage_space = DEFAULT_BULKY_STORAGE * 2 // Side bars for decks tend to have lots of cards and given how specialized this is, a little extra space isn't bad. -Kaz
 
 	can_hold = list(
 		/obj/item/cardholder,
 		/obj/item/card_carp,
 		/obj/item/pack_card_carp,
 		/obj/item/scale,
+		/obj/item/bone_counter,
 		/obj/item/board,
 		/obj/item/storage/pill_bottle/chechker,
 		/obj/item/deck,
