@@ -74,7 +74,7 @@
 	mappath = 'maps/submaps/dungeon_rooms/rooms/corner_energy_SE.dmm'
 	directional_flags = list("west", "north")
 	room_tag = "above_only"
-/*
+*/
 /datum/map_template/dungeon_template/room/commanderoffice
 	name = "commanderoffice"
 	desc = "Enjoy your stay."
