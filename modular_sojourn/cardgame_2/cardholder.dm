@@ -71,7 +71,7 @@
 
 /obj/item/cardholder/beebox
 	name = "beebox card box"
-	desc = "A box of cards that only have rat CarpCarpCo Cards. An unusual choice for a side deck, replacing squirrels by giving H1/P0 beebox that cannot be used as bodies."
+	desc = "A box of cards that only have rat CarpCarpCo Cards. An unusual choice for a side deck, replacing squirrels by giving H1/P0 beebox that cannot give bones."
 	card_target =  /obj/item/card_carp/beebox
 	icon_state = "folly_deck"
 	endless = TRUE
