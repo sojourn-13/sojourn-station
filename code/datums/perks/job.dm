@@ -451,7 +451,8 @@
 	holder.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/perk/handyman/remove()
-    holder.mind.knownCraftRecipes.Remove(known_recipes)
+	holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
@@ -495,6 +496,7 @@
 
 /datum/perk/robotics_expert/remove()
 	holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
