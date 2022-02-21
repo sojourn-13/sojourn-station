@@ -474,7 +474,7 @@
 	materials = list(MATERIAL_STEEL = 20)
 
 /datum/design/autolathe/ammo/lrifle_ammobox_lethal
-	name = "ammunitioon box .257 Carbine (hollow-point)
+	name = "ammunitioon box .257 Carbine (hollow-point)"
 	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257/lethal
 
 /datum/design/autolathe/ammo/lrifle_ammobox_rubber
