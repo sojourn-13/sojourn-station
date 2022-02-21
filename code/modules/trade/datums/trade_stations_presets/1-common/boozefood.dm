@@ -33,17 +33,28 @@
 			/obj/item/reagent_containers/food/drinks/bottle/kahlua,
 			/obj/item/reagent_containers/food/drinks/bottle/small/beer,
 			/obj/item/reagent_containers/food/drinks/bottle/small/ale,
-			/obj/item/reagent_containers/food/drinks/bottle/orangejuice,
-			/obj/item/reagent_containers/food/drinks/bottle/tomatojuice,
-			/obj/item/reagent_containers/food/drinks/bottle/limejuice,
-			/obj/item/reagent_containers/food/drinks/bottle/cream,
-			/obj/item/reagent_containers/food/drinks/bottle/cola,
-			/obj/item/reagent_containers/food/drinks/bottle/space_up,
-			/obj/item/reagent_containers/food/drinks/bottle/space_mountain_wind,
 			/obj/item/reagent_containers/food/drinks/bottle/bluecuracao,
 			/obj/item/reagent_containers/food/drinks/bottle/grenadine,
 			/obj/item/reagent_containers/food/drinks/bottle/melonliquor,
 			/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+			/obj/item/reagent_containers/food/drinks/cans/thirteenloko
+		),
+		"Soft-Drinks" = list(
+			/obj/item/reagent_containers/food/drinks/bottle/orangejuice,
+			/obj/item/reagent_containers/food/drinks/bottle/tomatojuice,
+			/obj/item/reagent_containers/food/drinks/bottle/limejuice,
+			/obj/item/reagent_containers/food/drinks/bottle/pineapplejuice,
+			/obj/item/reagent_containers/food/drinks/bottle/cream,
+			/obj/item/reagent_containers/food/drinks/bottle/cola,
+			/obj/item/reagent_containers/food/drinks/bottle/space_up,
+			/obj/item/reagent_containers/food/drinks/bottle/space_mountain_wind,
+			/obj/item/reagent_containers/food/drinks/cans/starkist,
+			/obj/item/reagent_containers/food/drinks/cans/space_up,
+			/obj/item/reagent_containers/food/drinks/cans/lemon_lime,
+			/obj/item/reagent_containers/food/drinks/cans/iced_tea,
+			/obj/item/reagent_containers/food/drinks/cans/grape_juice,
+			/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+			/obj/item/reagent_containers/food/drinks/cans/melonsoda,
 			/obj/item/reagent_containers/food/drinks/cans/dr_gibb,
 			/obj/item/reagent_containers/food/drinks/cans/sodawater,
 			/obj/item/reagent_containers/food/drinks/cans/tonic
@@ -68,7 +79,18 @@
 		"Drinks II" = list(
 			/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
 			/obj/item/reagent_containers/food/drinks/bottle/pwine,
-			/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
+			/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing,
+			/obj/item/reagent_containers/food/drinks/bottle/neulandschnapps,
+			/obj/item/reagent_containers/food/drinks/bottle/fernet,
+			/obj/item/reagent_containers/food/drinks/bottle/nanatsunoumi,
+			/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+			/obj/item/reagent_containers/food/drinks/bottle/small/kvass
+
+		),
+		"Kegs" = list(
+			/obj/structure/reagent_dispensers/beerkeg/cargo,
+			/obj/structure/reagent_dispensers/meadkeg/cargo,
+			/obj/structure/reagent_dispensers/premiumwhiske/cargo
 		)
 	)
 
@@ -80,3 +102,23 @@
 		/obj/item/reagent_containers/food/snacks/jagerburger = offer_data("jager burger", 500, 2),
 		/obj/item/reagent_containers/food/snacks/seucheburger = offer_data("seuche burger", 500, 2)
 	)
+
+/obj/structure/reagent_dispensers/beerkeg/cargo
+	price_tag = 1000
+
+/obj/structure/reagent_dispensers/beerkeg/cargo/New()
+	price_tag = 100
+
+/obj/structure/reagent_dispensers/meadkeg/cargo
+	price_tag = 3800
+
+/obj/structure/reagent_dispensers/meadkeg/cargo/New()
+	price_tag = 900
+
+/obj/structure/reagent_dispensers/premiumwhiske/cargo
+	price_tag = 5000
+
+/obj/structure/reagent_dispensers/premiumwhiske/cargo/New()
+	price_tag = 500
+
+

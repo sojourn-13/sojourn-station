@@ -34,7 +34,11 @@
 			/obj/item/reagent_containers/food/snacks/sliceable/lemoncake = custom_good_amount_range(list(1, 3))
 		),
 		"Misc" = list(
-			/obj/item/reagent_containers/food/snacks/fishandchips = custom_good_name("Fishps")
+			/obj/item/reagent_containers/food/snacks/fishandchips = custom_good_name("Fishps"),
+			/obj/item/reagent_containers/food/condiment/pack/ketchup = custom_good_name("Ketchup Packet"),
+			/obj/item/reagent_containers/food/condiment/pack/hotsauce = custom_good_name("Hotsauce Packet"),
+			/obj/item/reagent_containers/food/condiment/pack/salt = custom_good_name("Salt Packet"),
+			/obj/item/reagent_containers/food/condiment/pack/pepper = custom_good_name("Prepper Packet")
 		)
 	)
 	secret_inventory = list(
@@ -49,5 +53,8 @@
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat = offer_data("roach meat", 300, 0),
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche = offer_data("seuche roach meat", 400, 0),
 		/obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk = offer_data("kraftwerk roach meat", 600, 0),
-		/obj/item/reagent_containers/food/snacks/meat/roachmeat/jager = offer_data("seuche roach meat", 350, 0)
+		/obj/item/reagent_containers/food/snacks/meat/roachmeat/jager = offer_data("seuche roach meat", 350, 0),
+		/obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer = offer_data("fuhrer roach meat", 450, 5), //Caps it
+		/obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser = offer_data("kaiser roach meat", 5000, 1)
 	)
+

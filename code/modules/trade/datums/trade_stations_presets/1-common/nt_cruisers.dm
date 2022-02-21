@@ -100,6 +100,10 @@
 			/obj/item/cell/small/neotheology/plasma,
 			/obj/item/cell/medium/neotheology/plasma,
 			/obj/item/cell/large/neotheology/plasma
+		),
+		"Wine" = list(
+			/obj/item/reagent_containers/food/drinks/cans/cahors/cargo,
+			/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo
 		)
 	)
 	offer_types = list(
@@ -107,3 +111,15 @@
 		/obj/item/clothing/shoes/hermes_shoes = offer_data("hermes shoes", 420, 10),
 		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120)
 	)
+
+/obj/item/reagent_containers/food/drinks/cans/cahors/cargo
+	price_tag = 600
+
+/obj/item/reagent_containers/food/drinks/cans/cahors/cargo/New()
+	price_tag = 60
+
+/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo
+	price_tag = 1200
+
+/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo/New()
+	price_tag = 100
