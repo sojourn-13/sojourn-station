@@ -45,9 +45,9 @@
 /datum/reagent/organic/nutriment/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(ishuman(M))
 		if(M.stats.getPerk(PERK_HERBIVORE))
-			nutriment_factor = nutriment_factor += 2
+			nutriment_factor = 7
 		else if(M.stats.getPerk(PERK_CARNIVORE))
-			nutriment_factor = nutriment_factor -= 4
+			nutriment_factor = 1
 
 	// Small bodymass, more effect from lower volume.
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier)) // For hunger and fatness
@@ -73,9 +73,9 @@
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(ishuman(M))
 		if(M.stats.getPerk(PERK_CARNIVORE))
-			nutriment_factor = nutriment_factor += 6
+			nutriment_factor = 7
 		else if(M.stats.getPerk(PERK_HERBIVORE))
-			nutriment_factor = nutriment_factor -= 6
+			nutriment_factor = 1
 
 	return ..()
 
