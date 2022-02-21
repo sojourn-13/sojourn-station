@@ -374,6 +374,10 @@
 		G.rigged = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 		G.rigged = 2
+	if(weapon_upgrades[GUN_UPGRADE_FOREGRIP])
+		G.braceable = 0
+	if(weapon_upgrades[GUN_UPGRADE_BIPOD])
+		G.braceable = 2
 	if(weapon_upgrades[GUN_UPGRADE_RAIL])
 		G.gun_tags.Add(GUN_SCOPE)
 	if(weapon_upgrades[UPGRADE_COLOR])

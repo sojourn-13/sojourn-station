@@ -85,6 +85,8 @@
 #define GUN_UPGRADE_CELLMINUS "small cell adapter"
 #define GUN_UPGRADE_THERMAL "thermal scope"
 #define GUN_UPGRADE_DNALOCK "biocoded"
+#define GUN_UPGRADE_FOREGRIP "foregrip"
+#define GUN_UPGRADE_BIPOD "bipod"
 //Location Tag defines
 
 #define GUN_UNDERBARREL "underbarrel slot"

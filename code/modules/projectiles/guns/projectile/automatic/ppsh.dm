@@ -22,6 +22,7 @@
 	one_hand_penalty = 20
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
+	brace_penalty = 5 //Holding the line, not pushing
 	init_firemodes = list(
 		FULL_AUTO_800,
 		BURST_3_ROUND,

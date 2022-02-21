@@ -4,7 +4,14 @@
 	deltimer(recoil_reduction_timer)
 	if(G.one_hand_penalty)//If the gun has a two handed penalty and is not weilded.
 		if(!G.wielded && !usr.stats.getPerk(PERK_PERFECT_SHOT))
-			recoil += G.one_hand_penalty //Then the one hand penalty will be added to the recoil.
+			recoil += G.one_hand_penalty // Then the one hand penalty will be added to the recoil.
+
+	if(G.braced)
+		recoil--
+		if(G.braceable > 1)
+			recoil--
+	else if(G.brace_penalty)
+		recoil += G.brace_penalty
 
 	var/debug_recoil = min(0.3, G.fire_delay)
 	if(G.fire_delay == 0)

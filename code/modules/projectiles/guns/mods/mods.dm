@@ -631,6 +631,28 @@
 	I.gun_loc_tag = GUN_MAGWELL
 	I.prefix = "auto dropped"
 
+//Underbarrel aka bipods
+
+/obj/item/gun_upgrade/underbarrel
+
+/obj/item/gun_upgrade/underbarrel/bipod
+	name = "H&S \"Stand\" bipod"
+	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun\'s weight, making it unwieldy unless braced."
+	icon_state = "bipod"
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3)
+	price_tag = 130
+
+/obj/item/gun_upgrade/underbarrel/bipod/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_BIPOD = TRUE,
+		GUN_UPGRADE_RECOIL = 0.9,
+		UPGRADE_BULK = 1
+		)
+	I.gun_loc_tag = GUN_UNDERBARREL
+	I.prefix = "stablized"
+
 //Trash mods, for putting on old guns
 
 /obj/item/gun_upgrade/trigger/faulty

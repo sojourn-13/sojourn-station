@@ -21,6 +21,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/scout
+	slowdown_hold = 1
+	brace_penalty = 15
 
 /obj/item/gun/projectile/boltgun/sawn/scout
 	name = "\"obrez\" heavy boltgun"
@@ -34,3 +36,5 @@
 	max_shells = 5
 	one_hand_penalty = 15
 	saw_off = FALSE
+	slowdown_hold = FALSE
+	brace_penalty = FALSE
