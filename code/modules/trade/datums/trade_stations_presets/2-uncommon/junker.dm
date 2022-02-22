@@ -1,6 +1,6 @@
 /datum/trade_station/junker
 	name_pool = list(
-		"JNK 'Garbaj'" = "Junk collector.",
+		"JNK 'Garbaj'" = "Junk collector. We buy what other people won't.",
 	)
 	uid = "junker"
 	recommendations_needed = 1

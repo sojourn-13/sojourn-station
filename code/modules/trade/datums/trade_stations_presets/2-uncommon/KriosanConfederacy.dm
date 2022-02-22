@@ -1,6 +1,6 @@
 /datum/trade_station/kriosanconfederacy
 	name_pool = list(
-		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself on our stock.\""
+		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself with our stock.\""
 	)
 	uid = "kriosanconfederacy"
 	stations_recommended = list("mcronalds")

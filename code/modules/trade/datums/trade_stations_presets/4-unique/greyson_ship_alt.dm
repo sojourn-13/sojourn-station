@@ -6,8 +6,8 @@
 	recommendations_needed = 1
 	secret_inv_threshold = 2000
 	recommendation_threshold = 4000
-	name_pool = list("Dayinji" = "A heavily armored Greyson Positronic trade shuttle only trading newly minted disks, \
-	never raidly do its many combat drone fabicrations. Well it produces drones, it buys most GP tools and gear.")
+	name_pool = list("Dayinji" = "A still functioning, heavily armed greyson ship that still produces and offers wares, likely entirely unaware of Greyson Positronics collapse given its \
+	automated. It's a wonder it hasn't been raided, but then again its protected by a massive army of still functioning combat drones. This one specializes in a wide variety of interesting goods.")
 	assortiment = list(
 		"Sheji pan" = list(
 			/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = good_data("GP Stockpart Disk", list(0, 1)),
