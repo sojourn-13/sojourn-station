@@ -2,7 +2,7 @@
 	start_discovered = TRUE
 	spawn_always = TRUE
 	name_pool = list(
-		"RS 'Recoll'" = "Refinery Ship 'Recoll': \"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at cheap prices aswell!\""
+		"RS 'Recoll'" = "Refinery Ship 'Recoll': \"Hey! We are a small refinery looking for customers. We accept all types of ores and we sell refined materials at cheap prices as well!\""
 	)
 	uid = "materials"
 	markup = RARE_GOODS

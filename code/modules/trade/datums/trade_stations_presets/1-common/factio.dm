@@ -1,6 +1,6 @@
 /datum/trade_station/station_factio
 	name_pool = list(
-		"PRT 'Factor'" = "Printing Receiver Trader 'Factor': \"Printer, this is the trade beacon 'Factor'. Will sell you disks, and buy what they print."
+		"PRT 'Factor'" = "Autoproduction Trader 'Factor': \"Production facility, this is the trade beacon 'Factor'. We will sell you disks and buy what they print."
 	)
 	uid = "factio_basic"
 	start_discovered = TRUE

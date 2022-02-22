@@ -1,5 +1,5 @@
 /datum/trade_station/mechas
-	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell exosuits. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
+	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell are exosuit parts. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
 		\"Hey, dudes, it seems you want some mechas? We currently got a surplus and spare parts.\"")
 	base_income = 1600
 	wealth = 0

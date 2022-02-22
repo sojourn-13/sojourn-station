@@ -1,6 +1,6 @@
 /datum/trade_station/station_ghostkitchen
 	name_pool = list(
-		"GK 'Spector'" = "Ghost Kitchen 'Spector': \"We got tons of orders that needs filling, will take anything you can cook."
+		"GK 'Spector'" = "Ghost Kitchen 'Spector': \"We got tons of orders that need filling, will take anything you can cook."
 	)
 	uid = "ghostkitchen"
 	start_discovered = TRUE
