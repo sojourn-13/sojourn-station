@@ -33,7 +33,7 @@
 	var/list/name_pool = list()
 
 	var/markup = COMMON_GOODS
-	var/markdown = 0.6				// Default markdown is 60%
+	var/markdown = 0.8				// Default markdown is 20% - SoJ edit they get less markdown
 	var/list/assortiment = list()
 	var/list/offer_types = list()	// Defines special offers
 	var/list/offer_limit = 20		// For limiting sell offer quantity. 0 is no cap. Offer_data has its own cap, but this may still be useful.
