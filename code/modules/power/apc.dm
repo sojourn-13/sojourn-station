@@ -352,12 +352,12 @@
 			set_light(0)
 
 	if(!(update_state & UPDATE_ALLGOOD))
-		if(get_overlays().len)
+		if(overlays.len)
 			cut_overlays()
 			return
 
 	if(update > 1)
-		if(get_overlays().len)
+		if(overlays.len)
 			cut_overlays()
 		if(!(stat & (BROKEN|MAINT)) && update_state & UPDATE_ALLGOOD)
 			add_overlay(status_overlays_lock[locked+1])
