@@ -187,7 +187,15 @@
 /obj/machinery/power/am_control_unit/attack_hand(mob/user as mob)
 	if(anchored)
 		interact(user)
+	else
+		to_chat(user, SPAN_NOTICE("The console need to be anchored first."))
 	return
+
+/obj/machinery/power/am_control_unit/attack_ai(mob/user as mob)
+	if(anchored)
+		interact(user)
+	else
+		to_chat(user, SPAN_NOTICE("The console need to be anchored first."))
 
 /obj/machinery/power/am_control_unit/proc/add_shielding(obj/machinery/am_shielding/AMS, AMS_linking = FALSE)
 	if(!istype(AMS))
