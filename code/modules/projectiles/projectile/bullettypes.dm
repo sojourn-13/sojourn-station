@@ -660,11 +660,11 @@
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	explosion(target, 0, 0, 3)
-	return TRUE
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
+	return TRUE
 
 //Miscellaneous
 /obj/item/projectile/bullet/blank
