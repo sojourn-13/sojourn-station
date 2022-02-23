@@ -204,7 +204,7 @@
 	var/datum/real_instrument/real_instrument
 	icon = 'icons/obj/musician.dmi'
 	//Initialization data
-	var/list/instrument_list
+	var/list/instrument_list = list()
 	var/datum/instrument/instrument
 	var/path = /datum/instrument
 	var/sound_player = /datum/sound_player
@@ -215,7 +215,7 @@
 		var/datum/instrument/new_instrument = new type
 		if (!new_instrument.id) continue
 		new_instrument.create_full_sample_deviation_map()
-		src.instrument_list[new_instrument.name] = new_instrument
+		src.instrument_list["[new_instrument.name]"] = new_instrument
 	src.real_instrument = new /datum/real_instrument(src, new sound_player(src, instrument_list[pick(instrument_list)]), instrument_list)
 
 /obj/structure/synthesized_instrument/Destroy()
