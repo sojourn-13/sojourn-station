@@ -154,9 +154,7 @@
 	if(istype(T))
 		health -= seed.handle_environment(T,T.return_air(),null,1)
 
-	// Maintshrooms will not grow in the light
-	if(seed.type == /datum/seed/mushroom/maintshroom && T.get_lumcount() > MIN_LIGHT_LIMIT)
-		return
+
 
 	if(health < max_health)
 		//Plants can grow through closed airlocks, but more slowly, since they have to force metal to make space
@@ -168,7 +166,7 @@
 		refresh_icon()
 		if(health > max_health)
 			health = max_health
-	else if(health == max_health && !plant && (seed.type != /datum/seed/mushroom/maintshroom))
+	else if(health == max_health && !plant)
 		plant = new(T,seed)
 		plant.dir = src.dir
 		plant.transform = src.transform
