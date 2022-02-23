@@ -1,6 +1,6 @@
 /obj/item/shield/riot/bastion
 	name = "Deployable: Bastion Shield"
-	desc = "A Project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as surprisingly successful idea, both light enough kit to carry out into a combat zone. A true marval of Guild, SI and Blackshield team work to pull off such a task."
+	desc = "A Project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as surprisingly successful idea, both light enough kit to carry out into a combat zone. A true marval of Guild, SI and Blackshield team work to pull off such a task. When deployed can even brace a gun on it."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion"
 	item_state = "bastion"
@@ -47,7 +47,7 @@
 
 /obj/structure/shield_deployed
 	name = "Bastion Barrier"
-	desc = "A Deployed Bastion shield, ready to be used as a combat barrier for gunfights."
+	desc = "A Deployed Bastion shield, ready to be used as a combat barrier for gunfights, can brace guns."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "barrier"
 	density = TRUE
@@ -71,8 +71,13 @@
 		new /obj/item/bastion_broken(get_turf(src))
 		qdel(src)
 
+
 /obj/structure/shield_deployed/attackby(obj/item/I, mob/living/user)
 	.=..()
+	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))
+		var/obj/item/gun/G = I
+		G.gun_brace(user, src)
+		return
 	if(I.has_quality(QUALITY_WELDING))
 		if(health == maxHealth)
 			to_chat(user, SPAN_NOTICE("\The [src] is already fully repaired!"))

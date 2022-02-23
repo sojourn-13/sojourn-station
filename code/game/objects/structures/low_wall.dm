@@ -149,13 +149,9 @@
 
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
 /obj/structure/low_wall/proc/check_cover(obj/item/projectile/P, turf/from)
-	var/turf/cover
-	cover = get_step(loc, get_dir(from, loc))
-	if(!cover)
-		return 1
 	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
-	if (get_turf(P.original) == cover)
+	if (TRUE)
 		var/chance = 20
 		if (ismob(P.original))
 			var/mob/M = P.original
