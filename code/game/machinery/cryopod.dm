@@ -452,6 +452,9 @@
 			if(M.name == name)
 				record = CR
 				break
+		if(record) // Leave early if we get a match
+			break
+
 	record?.Destroy() // Delete the crew record
 
 	// Delete the mob.
