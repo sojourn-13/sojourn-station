@@ -34,10 +34,10 @@
 
 /obj/item/storage/box/vendor_lootbox/combat_basic_light/populate_contents()
 	if(prob(10)) //Medical man!
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
+		new /obj/item/stack/medical/bruise_pack(src)
+		new /obj/item/stack/medical/bruise_pack(src)
+		new /obj/item/stack/medical/ointment(src)
+		new /obj/item/stack/medical/ointment(src)
 		new /obj/item/storage/pill_bottle/dylovene(src)
 	else if(prob(10)) //Time to kick ass!
 		new /obj/item/clothing/gloves/thick/combat(src)
@@ -59,10 +59,10 @@
 
 /obj/item/storage/box/vendor_lootbox/combat_basic_medium/populate_contents()
 	if(prob(10))
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
+		new /obj/item/stack/medical/bruise_pack(src)
+		new /obj/item/stack/medical/bruise_pack(src)
+		new /obj/item/stack/medical/ointment(src)
+		new /obj/item/stack/medical/ointment(src)
 		new /obj/item/storage/pill_bottle/dylovene(src)
 	else if(prob(10))
 		new /obj/item/clothing/gloves/thick/combat(src)
@@ -84,10 +84,10 @@
 
 /obj/item/storage/box/vendor_lootbox/combat_basic_high/populate_contents()
 	if(prob(10))
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
+		new /obj/item/stack/medical/bruise_pack(src)
+		new /obj/item/stack/medical/bruise_pack(src)
+		new /obj/item/stack/medical/ointment(src)
+		new /obj/item/stack/medical/ointment(src)
 		new /obj/item/storage/pill_bottle/dylovene(src)
 	else if(prob(10))
 		new /obj/item/clothing/gloves/thick/combat(src)
@@ -109,7 +109,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_basic/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)
@@ -132,7 +132,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_moderate/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)
@@ -155,7 +155,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_high/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)

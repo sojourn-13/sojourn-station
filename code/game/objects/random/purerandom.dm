@@ -26,7 +26,7 @@
 				/obj/item/tool/pickaxe = 3,
 				/obj/item/pen = 3,
 				/obj/item/storage/box/donkpockets = 3,
-				/obj/item/storage/firstaid/adv = 6,
+				/obj/item/storage/firstaid/regular = 6,
 				/obj/item/storage/firstaid/surgery = 6,
 				/obj/item/storage/ration_pack = 6,
 				/obj/item/locator = 2,

@@ -10,8 +10,7 @@
 
 /datum/old_surgery_step/slime/cut_flesh
 	required_tool_quality = QUALITY_CUTTING
-
-	duration = 40
+	duration = 20
 
 /datum/old_surgery_step/slime/cut_flesh/can_use(mob/living/user, mob/living/carbon/slime/target, target_zone, obj/item/tool)
 	return ..() && istype(target) && target.core_removal_stage == 0
@@ -31,8 +30,7 @@
 
 /datum/old_surgery_step/slime/cut_innards
 	required_tool_quality = QUALITY_CUTTING
-
-	duration = 40
+	duration = 20
 
 /datum/old_surgery_step/slime/cut_innards/can_use(mob/living/user, mob/living/carbon/slime/target, target_zone, obj/item/tool)
 	return ..() && istype(target) && target.core_removal_stage == 1
@@ -52,8 +50,7 @@
 
 /datum/old_surgery_step/slime/saw_core
 	required_tool_quality = QUALITY_SAWING
-
-	duration = 60
+	duration = 30
 
 /datum/old_surgery_step/slime/saw_core/can_use(mob/living/user, mob/living/carbon/slime/target, target_zone, obj/item/tool)
 	return ..() && (istype(target) && target.core_removal_stage == 2 && target.cores > 0) //This is being passed a human as target, unsure why.

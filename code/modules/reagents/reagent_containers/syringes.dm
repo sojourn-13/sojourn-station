@@ -66,6 +66,10 @@
 		to_chat(user, SPAN_WARNING("This syringe is broken!"))
 		return
 
+	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stats?.getPerk(PERK_SURGICAL_MASTER) && !user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_COG, 30) && !usr.stat_check(STAT_BIO, 15)) //Needles need 15 bio or 30 cog and has many perk bypasses
+		to_chat(user, SPAN_WARNING("You have no idea how to use it properly!"))
+		return
+
 	if(user.a_intent == I_HURT && ismob(target))
 		if((CLUMSY in user.mutations) && prob(10))
 			target = user

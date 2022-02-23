@@ -189,7 +189,7 @@
 	new /obj/item/tool/scalpel/advanced(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/device/scanner/health(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src) //For organ repair I guess
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/storage/pill_bottle/prosurgeon(src)
 	make_exact_fit()
@@ -291,8 +291,8 @@
 	..()
 	if (empty) return
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/pill/bicaridine(src)
 
 	return
@@ -379,10 +379,10 @@
 
 /obj/item/storage/firstaid/soteria/large/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
@@ -413,10 +413,10 @@
 
 /obj/item/storage/firstaid/blackshield/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/reagent_containers/glass/bottle/stoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/tricord(src)
@@ -447,16 +447,16 @@
 
 /obj/item/storage/firstaid/blackshield/large/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/storage/pill_bottle/bicaridine(src)
 	new /obj/item/storage/pill_bottle/dermaline(src)

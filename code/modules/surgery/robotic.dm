@@ -1,7 +1,7 @@
 /datum/surgery_step/robotic
-	difficulty = FAILCHANCE_EASY
 	required_stat = STAT_MEC
 	inflict_agony = 0 // Robotic organs can't feel pain anyway
+	difficulty = -60 //Its easyer for robotics to this
 
 /datum/surgery_step/robotic/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	return BP_IS_ROBOTIC(organ)

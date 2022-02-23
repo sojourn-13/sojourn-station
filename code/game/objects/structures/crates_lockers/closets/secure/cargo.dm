@@ -42,7 +42,7 @@
 	if(prob(55))
 		new /obj/item/storage/firstaid/regular(src)
 	if(prob(40))
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 	if(prob(65))
 		new /obj/item/reagent_containers/syringe/stim/turbo(src)
 	if(prob(65))
@@ -293,7 +293,7 @@
 	if(prob(90))
 		new /obj/item/storage/firstaid/ifak(src)
 	if(prob(80))
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 	else
 		new /obj/item/storage/firstaid/combat(src)
 	new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
@@ -390,7 +390,7 @@
 	if(prob(60))
 		new /obj/item/storage/firstaid/ifak(src)
 	else if(prob(70))
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 	else
 		new /obj/item/storage/firstaid/combat(src)
 	if(prob(40))

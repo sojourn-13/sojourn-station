@@ -15,6 +15,7 @@
 	var/charge_sections = 5		// How many indicator blips are there?
 	var/charge_x_offset = 2		//The spacing between each charge indicator. Should be 2 to leave a 1px gap between each blip.
 	var/natural_remedy = FALSE
+	var/perk_check = FALSE
 
 	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
 
@@ -310,6 +311,7 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
 	w_class = ITEM_SIZE_SMALL
+	perk_check = TRUE
 
 /obj/item/stack/medical/advanced/bruise_pack/large
 	name = "large advanced trauma kit"
@@ -329,6 +331,7 @@
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
 	fancy_icon = FALSE
+	perk_check = FALSE
 
 /obj/item/stack/medical/advanced/bruise_pack/mending_ichor
 	name = "mending ichor"
@@ -340,6 +343,7 @@
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
 	fancy_icon = FALSE
+	perk_check = FALSE
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -350,6 +354,11 @@
 
 	if(!ishuman(M))
 		return
+
+	if(perk_check)
+		if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stats?.getPerk(PERK_SURGICAL_MASTER) && !user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
+			to_chat(user, SPAN_WARNING("This is far to complicated to use without training."))
+			return
 
 	var/mob/living/carbon/human/H = M
 	var/obj/item/organ/external/affecting = H.get_organ(user.targeted_organ)
@@ -445,6 +454,7 @@
 	splittable = FALSE	// Is the stack capable of being splitted?
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
 	w_class = ITEM_SIZE_SMALL
+	perk_check = TRUE
 
 /obj/item/stack/medical/advanced/ointment/large
 	name = "large advanced burn kit"
@@ -464,6 +474,7 @@
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
 	fancy_icon = FALSE
+	perk_check = FALSE
 
 /obj/item/stack/medical/advanced/ointment/regenerative_ichor
 	name = "regenerative ichor"
@@ -475,6 +486,7 @@
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
 	fancy_icon = FALSE
+	perk_check = FALSE
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -482,6 +494,11 @@
 
 	if(amount < 1)
 		return
+
+	if(perk_check)
+		if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stats?.getPerk(PERK_SURGICAL_MASTER) && !user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
+			to_chat(user, SPAN_WARNING("This is far to complicated to use without training."))
+			return
 
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -611,7 +628,7 @@
 /obj/item/stack/medical/advanced/bruise_pack/nt
 	name = "Absolutism Bruisepack"
 	singular_name = "Absolutism Bruisepack"
-	desc = "An advanced bruisepack for severe injuries. Created by will of God."
+	desc = "An advanced bruisepack for severe injuries. Created by will of God and easy to use."
 	icon_state = "nt_traumakit"
 	heal_brute = 20
 	automatic_charge_overlays = FALSE
@@ -619,6 +636,7 @@
 	origin_tech = list(TECH_BIO = 4)
 	fancy_icon = TRUE
 	w_class = ITEM_SIZE_SMALL
+	perk_check = FALSE
 
 /obj/item/stack/medical/advanced/bruise_pack/nt/update_icon()
 	if(fancy_icon)
@@ -628,7 +646,7 @@
 /obj/item/stack/medical/advanced/ointment/nt
 	name = "Absolutism Burnpack"
 	singular_name = "Absolutism Burnpack"
-	desc = "An advanced treatment kit for severe burns. Created by will of God."
+	desc = "An advanced treatment kit for severe burns. Created by will of God and easy to use."
 	icon_state = "nt_burnkit"
 	heal_brute = 20
 	automatic_charge_overlays = FALSE
@@ -636,6 +654,7 @@
 	origin_tech = list(TECH_BIO = 4)
 	fancy_icon = TRUE
 	w_class = ITEM_SIZE_SMALL
+	perk_check = FALSE
 
 /obj/item/stack/medical/advanced/ointment/nt/update_icon()
 	if(fancy_icon)

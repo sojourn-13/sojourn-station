@@ -111,18 +111,23 @@
 
 	// Self-surgery increases failure chance
 	if(owner && user == owner)
-		difficulty_adjust = 60
-		time_adjust = 20
+		difficulty_adjust = 120
+		time_adjust = 50
 
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
 		if(is_carrion(user))
-			difficulty_adjust = -90
-			time_adjust = -20
+			difficulty_adjust = -250
+			time_adjust = -80
 
 	if(user.stats.getPerk(PERK_SURGICAL_MASTER))
 		difficulty_adjust = -40
 		time_adjust = -10
+
+	//If you dont know what your doing, you get REALLY worse surgery odds, you need advanced tools and high bio
+	if(!user.stats.getPerk(PERK_SURGICAL_MASTER) && !usr.stat_check(STAT_COG, 180) && !usr.stat_check(STAT_BIO, 90))
+		difficulty_adjust = 80
+		time_adjust = 30
 
 	var/atom/surgery_target = get_surgery_target()
 	if(S.required_tool_quality)

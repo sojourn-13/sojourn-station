@@ -19,10 +19,10 @@
 	item_cost = 5
 	path = /obj/item/storage/firstaid/combat
 
-/datum/uplink_item/item/medical/advanced
-	name = "Advanced medical kit"
-	item_cost = 4
-	path = /obj/item/storage/firstaid/adv
+/datum/uplink_item/item/medical/aidkit
+	name = "Medical kit"
+	item_cost = 2
+	path = /obj/item/storage/firstaid/regular
 
 /datum/uplink_item/item/medical/toxin
 	name = "Toxin medical kit"
