@@ -446,12 +446,10 @@
 	// Remove the mob's record.
 	var/datum/computer_file/report/crew_record/record
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records) // loop through the records
-		var/name = CR.get_name()
-		//Minds should never be deleted, so our crew record must be in here somewhere
-		for(var/datum/mind/M in SSticker.minds) // loop through the minds
-			if(M.name == name)
-				record = CR
-				break
+		var/CR_name = CR.get_name()
+		if(occupant.mind.name == CR_name)
+			record = CR
+			break
 		if(record) // Leave early if we get a match
 			break
 
