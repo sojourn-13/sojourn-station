@@ -165,6 +165,11 @@
 				remove_shielding(AMS)
 			return
 
+	if(istype(I, /obj/item/gripper)) // Are we attacking with a borg gripper?
+		var/obj/item/gripper/G = I
+		if(istype(G.wrapped, /obj/item/am_containment))
+			attackby(G.wrapped, user, params)
+
 	else if(istype(I, /obj/item/am_containment))
 		if(fueljar)
 			to_chat(user, "\red There is already a [fueljar] inside!")
