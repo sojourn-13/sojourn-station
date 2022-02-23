@@ -78,6 +78,7 @@
 	var/fuel = fueljar.usefuel(fuel_injection)
 
 	stored_power = fuel * 300000 // 300 kW per unit of fuel injected, or 600 kW per Core
+	stored_power *= 100 / stored_core_stability // Produce progressively more power the more unstable the engine is.
 	//Now check if the cores could deal with it safely, this is done after so you can overload for more power if needed, still a bad idea
 	if(fuel > (2*core_power))//More fuel has been put in than the current cores can deal with
 		if(prob(50))
@@ -280,6 +281,7 @@
 /obj/machinery/power/am_control_unit/proc/reset_stored_core_stability_delay()
 	stored_core_stability_delay = FALSE
 
+// TODO : Allow users to turn off announce_stability. -R4d6
 /obj/machinery/power/am_control_unit/interact(mob/user)
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
 		if(!isAI(user))
