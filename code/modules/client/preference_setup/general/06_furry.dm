@@ -189,7 +189,7 @@ datum/preferences
 	if(href_list["marking_color"])
 		var/pos = text2num(href_list["marking_color"])
 		pos = pref.body_markings[pos]
-		if(pos && pos in pref.body_markings)
+		if(pos && (pos in pref.body_markings))
 			var/color = input(user, "Choose the marking color:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.body_markings[pos]) as color|null
 			if(color && (pos in pref.body_markings) && CanUseTopic(user))
 				pref.body_markings[pos] = color

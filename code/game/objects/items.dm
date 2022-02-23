@@ -49,7 +49,7 @@
 	var/stiffness = 0 // How much recoil is caused by moving
 	var/obscuration = 0 // How much firearm accuracy is decreased
 
-	var/datum/armor/armor // Ref to the armor datum
+	var/datum/armor/armor = list() // Ref to the armor datum
 	var/datum/armor/armor_up // Ref to the armor datum
 	var/datum/armor/armor_down // Ref to the armor datum
 
@@ -548,7 +548,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	return
 
 /obj/item/proc/on_embed_removal(mob/living/user)
-	return
+	if(!hud_actions)
+		return
 
 	for(var/action in hud_actions)
 		user.client.screen -= action

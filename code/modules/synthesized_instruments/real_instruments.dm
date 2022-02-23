@@ -1,7 +1,7 @@
 //This is the combination of logic pertaining music
 //An atom should use the logic and call it as it wants
 /datum/real_instrument
-	var/datum/instrument/instruments
+	var/datum/instrument/instruments = list()
 	var/datum/sound_player/player
 	var/datum/nano_module/song_editor/song_editor
 	var/datum/nano_module/usage_info/usage_info
@@ -16,7 +16,7 @@
 	owner = who
 	maximum_lines = GLOB.musical_config.max_lines
 	maximum_line_length = GLOB.musical_config.max_line_length
-	instruments = what //This can be a list, or it can also not be one
+	instruments = what //This can be a list, or it can also not be one //WHAT
 
 /datum/real_instrument/proc/Topic_call(href, href_list, usr)
 	var/target = href_list["target"]
