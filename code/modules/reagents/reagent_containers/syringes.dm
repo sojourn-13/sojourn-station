@@ -225,27 +225,26 @@
 		return
 
 	var/rounded_vol
-	if(/obj/item/reagent_containers/syringe)
-		if(reagents && reagents.total_volume)
-			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
-			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe[rounded_vol]")
-			filling_overlay.color = reagents.get_color()
-			add_overlay(filling_overlay)
-		else
-			rounded_vol = 0
+	if(reagents && reagents.total_volume)
+		rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 15)
+		var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe[rounded_vol]")
+		filling_overlay.color = reagents.get_color()
+		add_overlay(filling_overlay)
+	else
+		rounded_vol = 0
 
-		icon_state = "[rounded_vol]"
-		item_state = "syringe_[rounded_vol]"
+	icon_state = "[rounded_vol]"
+	item_state = "syringe_[rounded_vol]"
 
-		if(ismob(loc))
-			var/injoverlay
-			switch(mode)
-				if (SYRINGE_DRAW)
-					injoverlay = "draw"
-				if (SYRINGE_INJECT)
-					injoverlay = "inject"
-			add_overlay(injoverlay)
-			update_wear_icon()
+	if(ismob(loc))
+		var/injoverlay
+		switch(mode)
+			if (SYRINGE_DRAW)
+				injoverlay = "draw"
+			if (SYRINGE_INJECT)
+				injoverlay = "inject"
+		add_overlay(injoverlay)
+		update_wear_icon()
 
 /obj/item/reagent_containers/syringe/large/update_icon()
 	cut_overlays()
@@ -255,27 +254,26 @@
 		return
 
 	var/rounded_vol
-	if(/obj/item/reagent_containers/syringe/large)
-		if(reagents && reagents.total_volume)
-			rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 30)
-			var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe-[rounded_vol]")
-			filling_overlay.color = reagents.get_color()
-			add_overlay(filling_overlay)
-		else
-			rounded_vol = 0
+	if(reagents && reagents.total_volume)
+		rounded_vol = CLAMP(round((reagents.total_volume / volume * 15),5), 1, 30)
+		var/image/filling_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "syringe-[rounded_vol]")
+		filling_overlay.color = reagents.get_color()
+		add_overlay(filling_overlay)
+	else
+		rounded_vol = 0
 
-		icon_state = "-[rounded_vol]"
-		item_state = "syringe_-[rounded_vol]"
+	icon_state = "-[rounded_vol]"
+	item_state = "syringe_-[rounded_vol]"
 
-		if(ismob(loc))
-			var/injoverlay
-			switch(mode)
-				if (SYRINGE_DRAW)
-					injoverlay = "draw"
-				if (SYRINGE_INJECT)
-					injoverlay = "inject"
-			add_overlay(injoverlay)
-			update_wear_icon()
+	if(ismob(loc))
+		var/injoverlay
+		switch(mode)
+			if (SYRINGE_DRAW)
+				injoverlay = "draw"
+			if (SYRINGE_INJECT)
+				injoverlay = "inject"
+		add_overlay(injoverlay)
+		update_wear_icon()
 
 /obj/item/reagent_containers/syringe/blitzshell
 	name = "blitzshell syringe"
