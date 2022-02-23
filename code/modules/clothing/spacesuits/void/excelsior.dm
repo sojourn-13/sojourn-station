@@ -12,7 +12,7 @@
 		MATERIAL_PLASTEEL = 3
 	)
 
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 60,
 		energy = 60,
@@ -36,7 +36,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	//Decent all around, but less ballistic resistance
 	stiffness = LIGHT_STIFFNESS
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 60,
 		energy = 60,

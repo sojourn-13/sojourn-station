@@ -33,7 +33,7 @@
 	name = "shield"
 	var/base_block_chance = 35
 	var/slowdown_time = 1
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	var/max_durability = 250 //So we can brake and need healing time to time
 	var/durability = 250
 
@@ -177,7 +177,7 @@
 	throw_range = 6
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_MATERIAL = 2)
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 5, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
 	price_tag = 100
 	attack_verb = list("shoved", "bashed")
@@ -237,7 +237,7 @@
 	price_tag = 230
 	base_block_chance = 60
 	attack_verb = list("shoved", "bashed")
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
@@ -361,7 +361,7 @@
 	price_tag = 0
 	base_block_chance = 70
 	attack_verb = list("smashed", "bashed")
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	max_durability = 250 //So we can brake and need healing time to time
 	durability = 250
 	var/cooldown = 0 //shield bash cooldown. based on world.time
@@ -439,7 +439,7 @@
 	throw_range = 6
 	matter = list(MATERIAL_STEEL = 6)
 	base_block_chance = 40
-	armor = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	max_durability = 100 //So we can brake and need healing time to time
 	durability = 100
 
@@ -461,7 +461,7 @@
 	flags = null
 	throw_speed = 2
 	throw_range = 6
-	armor = list(melee = 15, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BONE = 6)
 	base_block_chance = 50
 
@@ -500,7 +500,7 @@
 	price_tag = 2000
 	max_durability = 800 //Well clearly made to last it should require some repair post crusade
 	durability = 800
-	armor = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
 	item_icons = list(
 		slot_back_str = 'icons/inventory/back/mob.dmi')
