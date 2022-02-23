@@ -446,14 +446,11 @@
 	// Remove the mob's record.
 	var/datum/computer_file/report/crew_record/record
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records) // loop through the records
-		var/CR_name = CR.get_name()
-		if(occupant.mind.name == CR_name)
+		if(occupant.mind.name == CR.get_name())
 			record = CR
 			break
-		if(record) // Leave early if we get a match
-			break
-
-	record?.Destroy() // Delete the crew record
+	if(record)
+		record.Destroy() // Delete the crew record
 
 	// Delete the mob.
 	qdel(occupant)
