@@ -262,7 +262,7 @@
 			if(!armor) //Possible to run before the initialize proc, thus having to modify the armor list
 				for(var/i in armor_list)
 					armor_list[i] = rand(0, armor_list[i])
-			else if(is_proper_datum(armor))
+			else
 				armor = armor.setRating(melee = rand(0, armor.getRating(ARMOR_MELEE)), bullet =  rand(0, armor.getRating(ARMOR_BULLET)), energy = rand(0, armor.getRating(ARMOR_ENERGY)), bomb = rand(0, armor.getRating(ARMOR_BOMB)), bio = rand(0, armor.getRating(ARMOR_BIO)), rad = rand(0, armor.getRating(ARMOR_RAD)))
 		if(prob(40))
 			heat_protection = rand(0, round(heat_protection * 0.5))
