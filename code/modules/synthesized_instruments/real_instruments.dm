@@ -1,7 +1,8 @@
 //This is the combination of logic pertaining music
 //An atom should use the logic and call it as it wants
 /datum/real_instrument
-	var/datum/instrument/instruments = list()
+	var/datum/instrument/instrument
+	var/list/instrument_list = list()
 	var/datum/sound_player/player
 	var/datum/nano_module/song_editor/song_editor
 	var/datum/nano_module/usage_info/usage_info
@@ -11,12 +12,15 @@
 	var/datum/nano_module/env_editor/env_editor
 	var/datum/nano_module/echo_editor/echo_editor
 
-/datum/real_instrument/New(obj/who, datum/sound_player/how, datum/instrument/what)
+/datum/real_instrument/New(obj/who, datum/sound_player/how, var/what)
 	player = how
 	owner = who
 	maximum_lines = GLOB.musical_config.max_lines
 	maximum_line_length = GLOB.musical_config.max_line_length
-	instruments = what //This can be a list, or it can also not be one //WHAT
+	if(islist(what))
+		instrument_list = what //This can be a list, or it can also not be one
+	else if(istype(what, /datum/instrument))
+		instrument = what
 
 /datum/real_instrument/proc/Topic_call(href, href_list, usr)
 	var/target = href_list["target"]
@@ -98,16 +102,16 @@
 			src.player.song.soft_coeff = new_coeff
 		if ("instrument")
 			var/list/categories = list()
-			for (var/key in instruments)
-				var/datum/instrument/instrument = instruments[key]
+			for (var/key in instrument_list)
+				var/datum/instrument/instrument = instrument_list[key]
 				categories |= instrument.category
 
 			var/category = input(usr, "Choose a category") as text|anything in categories
 			if(!CanInteractWith(usr, owner, GLOB.physical_state))
 				return
 			var/list/instruments_available = list()
-			for (var/key in instruments)
-				var/datum/instrument/instrument = instruments[key]
+			for (var/key in instrument_list)
+				var/datum/instrument/instrument = instrument_list[key]
 				if (instrument.category == category)
 					instruments_available += key
 
@@ -115,7 +119,7 @@
 			if(!CanInteractWith(usr, owner, GLOB.physical_state))
 				return
 			if (new_instrument)
-				src.player.song.instrument_data = instruments[new_instrument]
+				src.player.song.instrument_data = instrument_list[new_instrument]
 		if ("autorepeat") src.player.song.autorepeat = value
 		if ("decay") src.player.song.linear_decay = value
 		if ("echo") src.player.apply_echo = value
@@ -200,7 +204,8 @@
 	var/datum/real_instrument/real_instrument
 	icon = 'icons/obj/musician.dmi'
 	//Initialization data
-	var/datum/instrument/instruments = list()
+	var/list/instrument_list
+	var/datum/instrument/instrument
 	var/path = /datum/instrument
 	var/sound_player = /datum/sound_player
 
@@ -210,14 +215,14 @@
 		var/datum/instrument/new_instrument = new type
 		if (!new_instrument.id) continue
 		new_instrument.create_full_sample_deviation_map()
-		src.instruments[new_instrument.name] = new_instrument
-	src.real_instrument = new /datum/real_instrument(src, new sound_player(src, instruments[pick(instruments)]), instruments)
+		src.instrument_list[new_instrument.name] = new_instrument
+	src.real_instrument = new /datum/real_instrument(src, new sound_player(src, instrument_list[pick(instrument_list)]), instrument_list)
 
 /obj/structure/synthesized_instrument/Destroy()
 	QDEL_NULL(src.real_instrument)
-	for(var/key in instruments)
-		qdel(instruments[key])
-	instruments = null
+	for(var/key in instrument_list)
+		qdel(instrument_list[key])
+	instrument_list = null
 	. = ..()
 
 /obj/structure/synthesized_instrument/attackby(var/obj/item/tool/tool, mob/user)
@@ -261,7 +266,8 @@
 /obj/item/device/synthesized_instrument
 	var/datum/real_instrument/real_instrument
 	icon = 'icons/obj/musician.dmi'
-	var/datum/instrument/instruments = list()
+	var/list/instrument_list = list()
+	var/datum/instrument/instrument
 	var/path = /datum/instrument
 	var/sound_player = /datum/sound_player
 
@@ -271,14 +277,14 @@
 		var/datum/instrument/new_instrument = new type
 		if (!new_instrument.id) continue
 		new_instrument.create_full_sample_deviation_map()
-		src.instruments[new_instrument.name] = new_instrument
-	src.real_instrument = new /datum/real_instrument(src, new sound_player(src, instruments[pick(instruments)]), instruments)
+		src.instrument_list[new_instrument.name] = new_instrument
+	src.real_instrument = new /datum/real_instrument(src, new sound_player(src, instrument_list[pick(instrument_list)]), instrument_list)
 
 /obj/item/device/synthesized_instrument/Destroy()
 	QDEL_NULL(src.real_instrument)
-	for(var/key in instruments)
-		qdel(instruments[key])
-	instruments = null
+	for(var/key in instrument_list)
+		qdel(instrument_list[key])
+	instrument_list = null
 	. = ..()
 
 
