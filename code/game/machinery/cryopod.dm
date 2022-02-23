@@ -449,8 +449,8 @@
 		if(occupant.mind.name == CR.get_name()) // Check the mind's name to the record's name
 			record = CR
 			break
-	if(record)
-		record.Destroy() // Delete the crew record
+
+	record?.Destroy() // Delete the crew record
 
 	// Delete the mob.
 	qdel(occupant)
