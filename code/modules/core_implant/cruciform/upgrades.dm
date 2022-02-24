@@ -105,7 +105,7 @@
 
 /obj/item/cruciform_upgrade/cleansing_presence
 	name = "Cleansing presence"
-	desc = "This upgrade cleans tiles that the follower walks upon. Will slowly cause space vines and maint-shrooms to wither and die in the follower’s presence. Useful for the cleanly."
+	desc = "This upgrade cleans tiles that the follower walks upon. Useful for the cleanly."
 	icon_state = "cleansing_presence"
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_SILVER = 5, MATERIAL_PLASTEEL = 5)
 	var/area_radius = 5
@@ -120,11 +120,7 @@
 
 /obj/item/cruciform_upgrade/cleansing_presence/Process()
 	wearer.clean_blood()
-	var/list/affected = range(area_radius, src)
-	for(var/obj/effect/plant/shroom in affected)
-		if(istype(shroom.seed, /datum/seed/mushroom/maintshroom))
-			shroom.health -= (shroom.max_health * 0.1)
-			shroom.check_health()
+
 
 /obj/item/cruciform_upgrade/martyr_gift
 	name = "Martyrs gift"

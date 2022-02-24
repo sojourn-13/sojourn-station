@@ -313,7 +313,7 @@
         return FALSE
     if(seed.get_trait(TRAIT_STINGS))
         var/mob/living/carbon/human/H = user
-        if(istype(H) && H.gloves)
+        if(istype(H) && H.gloves.permeability_coefficient <= 0.05 && H.gloves.permeability_coefficient > 0)
             return  ..()
         if(!reagents || reagents.total_volume <= 0)
             return  ..()

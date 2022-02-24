@@ -25,6 +25,7 @@
 	new /obj/item/clothing/gloves/botanic_leather(src)
 	new /obj/item/clothing/mask/gas/alternate(src)
 	new /obj/item/tank/air(src)
+	new /obj/item/clothing/shoes/galoshes(src)
 
 /obj/structure/closet/secure_closet/personal/hydroponics/
 	name = "botanist's locker"
