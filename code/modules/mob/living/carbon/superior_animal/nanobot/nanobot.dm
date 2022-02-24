@@ -38,6 +38,8 @@
 	meat_type = /obj/item/scrap_lump
 	reagent_immune = TRUE
 	toxin_immune = TRUE
+	cold_protection = 1
+	heat_protection = 1
 
 	do_gibs = FALSE
 	colony_friend = TRUE
