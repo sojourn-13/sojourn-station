@@ -121,8 +121,12 @@
 			time_adjust = -20
 
 	if(user.stats.getPerk(PERK_SURGICAL_MASTER))
-		difficulty_adjust = -40
-		time_adjust = -10
+		difficulty_adjust = -90
+		time_adjust = -130
+
+	if(!user.stats.getPerk(PERK_ADVANCED_MEDICAL))
+		difficulty_adjust = 90
+		time_adjust = 120
 
 	var/atom/surgery_target = get_surgery_target()
 	if(S.required_tool_quality)

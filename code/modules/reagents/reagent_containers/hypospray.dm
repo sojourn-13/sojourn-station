@@ -95,20 +95,27 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector
 	name = "autoinjector (inaprovaline)"
-	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel."
+	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel. Anyone with a syringe and some chemicals can refill or even replace the loaded reagents, provided \
+	they know how to properly use a syringe."
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 	icon_state = "syrette_inopravoline"
 	item_state = "syrette_inopravoline"
 	amount_per_transfer_from_this = 5
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
-	reagent_flags = REFILLABLE | DRAINABLE | AMOUNT_VISIBLE
+	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE
 	volume = 5
 	preloaded_reagents = list("inaprovaline" = 5)
+	var/can_be_refilled = TRUE //For cargos
+
+/obj/item/reagent_containers/hypospray/autoinjector/examine(mob/user)
+	..()
+	if(can_be_refilled)
+		to_chat(user, "<span class='info'>This one is refillable.</span>")
 
 /obj/item/reagent_containers/hypospray/autoinjector/on_reagent_change()
 	..()
-	if(reagents?.total_volume <= 0) //Prevents autoinjectors from being refilled.
+	if(reagents?.total_volume <= 0 && !can_be_refilled) //Prevents autoinjectors from being refilled when it cant be refilled
 		reagent_flags &= ~REFILLABLE
 
 /obj/item/reagent_containers/hypospray/autoinjector/update_icon()
@@ -201,8 +208,8 @@
 /obj/item/reagent_containers/hypospray/autoinjector/quickclot
 	name = "autoinjector (quickclot)"
 	preloaded_reagents = list("quickclot" = 5)
-	icon_state = "syrette_red"
-	item_state = "syrette_quickclot"
+	icon_state = "syrette_quickclot"
+	item_state = "syrette_red"
 
 /obj/item/reagent_containers/hypospray/autoinjector/spaceacillin
 	name = "autoinjector (spaceacillin)"
@@ -226,8 +233,10 @@
 	name = "autoinjector (brute-aid)"
 	preloaded_reagents = list("bicaridine" = 1, "meralyne" = 1, "seligitillin" = 1, "tricordrazine" = 1, "polystem" = 1)
 	price_tag = 100
+	can_be_refilled = FALSE
 
 /obj/item/reagent_containers/hypospray/autoinjector/quickhealburn
 	name = "autoinjector (burn-aid)"
 	preloaded_reagents = list("kelotane" = 1.25, "dermaline" = 1.25, "tricordrazine" = 1.25, "polystem" = 1.25)
 	price_tag = 100
+	can_be_refilled = FALSE

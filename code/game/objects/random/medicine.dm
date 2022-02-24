@@ -77,7 +77,6 @@
 	return pickweight(list(/obj/item/storage/firstaid/regular = 3,\
 				/obj/item/storage/firstaid/toxin = 1,\
 				/obj/item/storage/firstaid/o2 = 1,\
-				/obj/item/storage/firstaid/adv = 0.5,\
 				/obj/item/storage/firstaid/fire = 1))
 
 /obj/random/firstaid/low_chance

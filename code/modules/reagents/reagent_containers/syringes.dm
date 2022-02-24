@@ -42,6 +42,10 @@
 	update_icon()
 
 /obj/item/reagent_containers/syringe/attack_self(mob/user as mob)
+	if(user.stats.getStat(STAT_BIO) < 15)
+		to_chat(user, SPAN_WARNING("You have no idea how to properly use this syringe!"))
+		return
+
 	switch(mode)
 		if(SYRINGE_DRAW)
 			mode = SYRINGE_INJECT
@@ -64,6 +68,10 @@
 
 	if(mode == SYRINGE_BROKEN)
 		to_chat(user, SPAN_WARNING("This syringe is broken!"))
+		return
+
+	if(user.stats.getStat(STAT_BIO) < 15)
+		to_chat(user, SPAN_WARNING("You have no idea how to properly use this syringe!"))
 		return
 
 	if(user.a_intent == I_HURT && ismob(target))
