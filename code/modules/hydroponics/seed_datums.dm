@@ -193,6 +193,7 @@
 	..()
 	set_trait(TRAIT_YIELD,2)
 	set_trait(TRAIT_PRODUCT_COLOUR,"#A86747")
+	set_trait(TRAIT_CARNIVOROUS, 2)
 
 /datum/seed/tomato/blue
 	name = "bluetomato"
@@ -827,6 +828,7 @@
 	display_name = "Clownana tree"
 	has_mob_product = /mob/living/simple_animal/hostile/retaliate/clown/banana
 	exude_gasses = list("sleeping_agent" = 8)
+	can_self_harvest = 1
 
 /datum/seed/banana/clownana/New()
 	..()
@@ -1231,7 +1233,8 @@
 	set_trait(TRAIT_PRODUCTION,6)
 	set_trait(TRAIT_YIELD,4)
 	set_trait(TRAIT_POTENCY,10)
-	set_trait(TRAIT_SPREAD,3)
+	set_trait(TRAIT_SPREAD,2)
+	set_trait(TRAIT_WALL_HUGGER,1)
 	set_trait(TRAIT_PRODUCT_ICON,"treefruit")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#96D278")
 	set_trait(TRAIT_PLANT_COLOUR,"#6F7A63")
@@ -1408,7 +1411,7 @@
 	set_trait(TRAIT_PRODUCTION,1)
 	set_trait(TRAIT_YIELD,3)
 	set_trait(TRAIT_POTENCY,3)
-	set_trait(TRAIT_SPREAD,1)
+	set_trait(TRAIT_SPREAD,2)
 	set_trait(TRAIT_STINGS, 1)
 
 // Alien weeds.

@@ -119,7 +119,7 @@
 	if(!is_mature())
 		return
 	var/mob/living/carbon/human/H = victim
-	if(istype(H) && H.shoes)
+	if(istype(H) && H.shoes.permeability_coefficient <= 0.05 && H.shoes.permeability_coefficient > 0)
 		return
 	seed.do_thorns(victim,src)
 	seed.do_sting(victim,src,pick(BP_LEGS))

@@ -42,9 +42,6 @@
 				neighbors |= floor
 				continue
 
-			//Maintshooms cannot, spread trait must be 3 or more
-			if(seed.get_trait(TRAIT_SPREAD) < 3)
-				continue
 
 			//If these two are not the same then we're attempting to enter a portal or stairs
 			//We will allow it
