@@ -28,9 +28,9 @@ List of powers in this page :
 // Give the user a perk that make him move faster
 /obj/item/organ/internal/nanogate/proc/nanite_muscle()
 	set category = "Nanogate Powers"
-	set name = "Nanite Augment - Nanofiber Muscles (3)"
+	set name = "Nanite Augment - Nanofiber Muscles (5)"
 	set desc = "Spend some of your nanites to create nanite muscle to allow you to move faster."
-	nano_point_cost = 3 // Install two augments on both legs
+	nano_point_cost = 5 // Install two augments on both legs
 
 	if(!owner.stats.getPerk(PERK_NANITE_MUSCLE)) // Do they already have the perk?
 		if(pay_power_cost(nano_point_cost))
