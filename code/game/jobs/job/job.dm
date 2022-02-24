@@ -81,8 +81,13 @@
 		target.stats.changeStat(name, stat_modifiers[name])
 	for(var/perk in perks)
 		target.stats.addPerk(perk)
-
 	return TRUE
+
+/datum/job/proc/alt_TitleTweaks(var/mob/living/carbon/human/target)
+	if (!ishuman(target))
+		return FALSE
+	if (target.mind.role_alt_title == "Sawbones")
+		perks = list(/datum/perk/medicalexpertise, /datum/perk/stalker)
 
 /datum/job/proc/add_additiional_language(var/mob/living/carbon/human/target)
 	if(!ishuman(target))

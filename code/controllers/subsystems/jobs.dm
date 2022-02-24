@@ -327,6 +327,8 @@ SUBSYSTEM_DEF(job)
 			for(var/datum/gear/G in spawn_in_storage)
 				G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
+		job.alt_TitleTweaks(H)
+
 		job.add_stats(H)
 
 		job.add_knownCraftRecipes(H)

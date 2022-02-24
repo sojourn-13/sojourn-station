@@ -358,6 +358,10 @@
 		to_chat(user, SPAN_WARNING("What [user.targeted_organ]?"))
 		return TRUE
 
+	if (icon_state == "traumakit" && (!(user.stats.getPerk(PERK_MEDICAL_EXPERT) || user.stats.getPerk(PERK_SURGICAL_MASTER))))
+		to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Trauma Kit in this way."))
+		return 1
+
 	if(affecting.open == 0)
 		if(affecting.is_bandaged() && affecting.is_disinfected())
 			to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been treated."))
@@ -490,6 +494,10 @@
 		if(!affecting)
 			to_chat(user, SPAN_WARNING("What [user.targeted_organ]?"))
 			return TRUE
+
+		if (icon_state == "burnkit" && (!(user.stats.getPerk(PERK_MEDICAL_EXPERT) || user.stats.getPerk(PERK_SURGICAL_MASTER))))
+		to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Burn Kit in this way."))
+		return 1
 
 		if(affecting.open == 0)
 			if(affecting.is_salved())
