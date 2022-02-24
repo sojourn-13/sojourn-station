@@ -223,9 +223,9 @@
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))
 
 /obj/item/stack/medical/bruise_pack/handmade
-	name = "non sterile bandages"
-	singular_name = "non sterile bandage"
-	desc = "Parts of clothes that can be wrapped around bloody stumps."
+	name = "non-sterile bandages"
+	singular_name = "non-sterile bandage"
+	desc = "Parts of cloth that can be wrapped around bloody stumps."
 	icon_state = "hm_brutepack"
 	fancy_icon = FALSE
 
@@ -353,6 +353,9 @@
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
 	fancy_icon = FALSE
+	perk_required = FALSE
+	needed_perk = null
+	bio_requirement = 0
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -494,6 +497,9 @@
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
 	fancy_icon = FALSE
+	perk_required = FALSE
+	needed_perk = null
+	bio_requirement = 0
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -559,6 +565,7 @@
 	amount = 5
 	max_amount = 5
 	fancy_icon = FALSE
+	bio_requirement = -25
 
 /obj/item/stack/medical/splint/improvised
 	name = "improvised bone splint"

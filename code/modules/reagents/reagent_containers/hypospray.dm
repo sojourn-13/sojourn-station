@@ -103,7 +103,7 @@
 	item_state = "syrette_inopravoline"
 	amount_per_transfer_from_this = 5
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
-	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE
+	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE | REFILLABLE
 	volume = 5
 	preloaded_reagents = list("inaprovaline" = 5)
 	var/can_be_refilled = TRUE //For cargos
@@ -116,7 +116,7 @@
 /obj/item/reagent_containers/hypospray/autoinjector/on_reagent_change()
 	..()
 	if(reagents?.total_volume <= 0 && !can_be_refilled) //Prevents autoinjectors from being refilled when it cant be refilled
-		reagent_flags &= ~REFILLABLE
+		reagent_flags &= ~INJECTABLE
 
 /obj/item/reagent_containers/hypospray/autoinjector/update_icon()
 	cut_overlays()
