@@ -10,8 +10,6 @@
 /obj/random/medical/item_to_spawn()
 	return pickweight(list(/obj/item/stack/medical/bruise_pack = 4,\
 				/obj/item/stack/medical/ointment = 4,\
-				/obj/item/stack/medical/advanced/bruise_pack = 1,\
-				/obj/item/stack/medical/advanced/ointment = 1,\
 				/obj/item/stack/medical/splint = 1,\
 				/obj/item/bodybag = 2,\
 				/obj/item/bodybag/cryobag = 1,\
@@ -77,7 +75,6 @@
 	return pickweight(list(/obj/item/storage/firstaid/regular = 3,\
 				/obj/item/storage/firstaid/toxin = 1,\
 				/obj/item/storage/firstaid/o2 = 1,\
-				/obj/item/storage/firstaid/adv = 0.5,\
 				/obj/item/storage/firstaid/fire = 1))
 
 /obj/random/firstaid/low_chance

@@ -125,7 +125,7 @@
 	new /obj/item/storage/backpack/militia(src)
 	new /obj/item/storage/backpack/duffelbag(src)
 	new /obj/item/storage/firstaid/ifak(src)
-	new /obj/item/storage/firstaid/adv(src)
+	new /obj/item/storage/firstaid/regular(src)
 	new /obj/item/storage/firstaid/combat(src)
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
