@@ -80,7 +80,7 @@
 		"sacid" =          -2,
 		"hclacid" =        -2,
 		"pacid" =          -4,
-		"plantbgone" =     -8,
+		"plantbgone" =     -5,
 		"adminordrazine" = -5
 		)
 	var/global/list/pestkiller_reagents = list(
