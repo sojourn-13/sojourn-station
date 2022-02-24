@@ -32,6 +32,8 @@
 	friendly_to_colony = TRUE
 	reagent_immune = TRUE
 	toxin_immune = TRUE
+	cold_protection = 1
+	heat_protection = 1
 
 	known_languages = list(LANGUAGE_COMMON)
 
