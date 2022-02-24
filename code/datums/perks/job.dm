@@ -589,7 +589,7 @@
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/si_sci
-	name = "SI Science Trainning"
+	name = "SI Science Training"
 	desc = "You know how to use RnD core consoles and Exosuit Fabs."
 
 /datum/perk/greenthumb
