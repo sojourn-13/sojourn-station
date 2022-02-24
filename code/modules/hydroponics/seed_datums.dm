@@ -1410,7 +1410,7 @@
 	set_trait(TRAIT_MATURATION,5)
 	set_trait(TRAIT_PRODUCTION,1)
 	set_trait(TRAIT_YIELD,3)
-	set_trait(TRAIT_POTENCY,3)
+	set_trait(TRAIT_POTENCY,40)
 	set_trait(TRAIT_SPREAD,2)
 	set_trait(TRAIT_STINGS, 1)
 
