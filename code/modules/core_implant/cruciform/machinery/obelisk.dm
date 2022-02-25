@@ -87,7 +87,12 @@ GLOBAL_VAR_INIT(miracle_points, 5)
 					animal.take_overall_damage(damage)
 					if(!--to_fire)
 						return
-
+			else if(istype(A, /obj/effect/plant))
+				var/obj/effect/plant/shroom = A
+				if(shroom.seed.type == /datum/seed/mushroom/maintshroom)
+					qdel(shroom)
+					if(!--to_fire)
+						return
 
 /obj/machinery/power/nt_obelisk/proc/check_for_faithful(list/affected)
 	var/got_neoteo = FALSE
