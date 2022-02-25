@@ -85,4 +85,9 @@
 					biomatter_ammo -= biomatter_use_per_shot
 					if(!--to_fire)
 						return
-
+			else if(istype(A, /obj/effect/plant))
+				var/obj/effect/plant/shroom = A
+				if(shroom.seed.type == /datum/seed/mushroom/maintshroom)
+					qdel(shroom)
+					if(!--to_fire)
+						return

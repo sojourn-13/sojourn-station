@@ -127,6 +127,9 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 	if (world.time > next_migrate)
 		do_migrate()
 
+	if (world.time > next_plantspread)
+		handle_plant_spreading()
+
 
 //Tells all the burrows to refresh their population lists
 /datum/controller/subsystem/migration/proc/do_scan()
@@ -306,6 +309,105 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 
 
 
+
+
+
+
+
+/*************************************************
+	Plant Handling
+*************************************************/
+/*
+	This proc allows plants like maintshrooms to spread through burrows
+	Run every 10 minutes
+*/
+/datum/controller/subsystem/migration/proc/handle_plant_spreading()
+	next_plantspread = world.time + burrow_plantspread_interval//Setup the next spread tick
+
+	//We loop through every burrow and see what it needs
+	for (var/obj/structure/burrow/B in GLOB.all_burrows)
+
+		//Branch 1: No plants yet
+		if (!B.plant)
+			//This burrow has no plant registered, lets look for nearby plants
+			for (var/obj/effect/plant/P in dview(1, B.loc))
+
+				//Make sure this is a spreading plant, no sending potatoes through a burrow
+				if (P.seed.get_trait(TRAIT_SPREAD) >= 2)
+
+					//We have found a plant, good to go!
+					B.plant = P.seed //Set the seed
+					spread_plants_from(B) //And spread the plants from this burrow to others
+
+		else
+			//Branch 2: It has plants
+			//Lets check the validity of all its plantspread burrows
+			for (var/b in B.plantspread_burrows)
+				//This is a list of refs, so resolve it
+				var/obj/structure/burrow/C = locate(b)
+				if (QDELETED(C))
+					//If the specified burrow is no longer there, lets remove it from the list
+					B.plantspread_burrows.Remove(b)
+
+			//Now that those are validated, do we still have spread burrows left?
+			if (!B.plantspread_burrows.len)
+				//If not, then we are suddenly no longer a burrow which has plants.
+				//Players must have rekt all the nearby burrows
+				B.plant = null
+
+				//There may still be a plant in or near our turf, and if so it will be re-registered next tick
+				//For now, we've got to wait 10 minutes til we can spread plants again
+				continue
+
+
+			//Alright, we do still have burrows. Lets check the master plant in our turf, is it alright?
+			for (var/obj/effect/plant in B.loc)
+				//Yea its still there, we're done
+				continue
+
+			//The plant in our turf has gone. Since we're still connected to the plant network, we respawn it
+			B.spread_plants()
+			//If people cut down all the plants near us, but didn't collapse this burrow, they're in for a bad time
+			//Plants are back baby!
+
+/*
+	Finds burrows near to the specified one, and sends plants from it to them
+*/
+/datum/controller/subsystem/migration/proc/spread_plants_from(var/obj/structure/burrow/B)
+	var/list/sorted = get_sorted_burrow_network(B)
+	/*
+	This gives us a list of burrows in ascending order of distance. The order is important, we dont want plants to
+	travel too far from the source*/
+
+
+
+	var/list/viewlist = find_visible_burrows(B, 10) //Capture a list of nearby burrows
+	var/i = 0 //Number of burrows we've sent plants to. We're done when this gets high enough
+	//Lets go through this list and find places to send plants to
+	while (i < plantspread_burrows_num && sorted.len)
+		var/obj/structure/burrow/C = sorted[1] //Grab the first element
+		sorted.Cut(1,2)//And remove it from the list
+
+
+		//It already has plants, no good
+		if (C.plant)
+			continue
+
+		//We don't want to send to other burrows in the same room as us.
+		//The point of burrows is to let things move between rooms
+		if (C in viewlist)
+			continue
+
+		//Chance to reject it anyways to make plant spreading less predictable
+		if (prob(60))
+			continue
+
+		//If it has no plants yet, it should be okay to send things to it
+		i++ //Increment this
+		B.plantspread_burrows.Add("\ref[C]") //Add them to each other's plantspread lists
+		C.plantspread_burrows.Add("\ref[B]")
+		C.plant = B.plant //Make them share the same seed
+		C.spread_plants() //And make some plants at the new burrow
 
 /*************************************************
 	Burrow Finding and Sorting

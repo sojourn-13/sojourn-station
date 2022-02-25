@@ -32,7 +32,7 @@
 
 	T = get_turf(origin)
 	var/datum/seed/seed = plant_controller.create_random_seed(1)
-	seed.set_trait(TRAIT_SPREAD,2)             // So it will function properly as vines.
+	seed.set_trait(TRAIT_SPREAD,3)             // So it will function properly as vines.
 	seed.set_trait(TRAIT_POTENCY,rand(potency_min, potency_max)) // 70-100 potency will help guarantee a wide spread and powerful effects.
 	seed.set_trait(TRAIT_MATURATION,rand(maturation_min, maturation_max))
 	seed.force_layer = LOW_OBJ_LAYER //Vines will grow in the background underneath and around objects
@@ -48,6 +48,8 @@
 	log_and_message_admins("Spacevines spawned at \the [jumplink(T)]", location = T)
 
 
+	//Force an immediate spread
+	SSmigration.handle_plant_spreading()
 
 	for (var/a in origin.plantspread_burrows)
 		var/obj/structure/burrow/B = locate(a)
