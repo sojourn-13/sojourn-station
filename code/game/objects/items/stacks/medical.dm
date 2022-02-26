@@ -33,7 +33,7 @@
 		return 1
 
 	if(ishuman(M))
-		if(perk_required && !user.stats.getPerk(needed_perk))
+		if(perk_required && !user.stats.getPerk(needed_perk) || !user.stats.getPerk(needed_perk_alt))
 			if(user.stats.getStat(STAT_BIO) < bio_requirement)
 				to_chat(user, SPAN_WARNING("You lack the biological skill or training to figure out how to properly use this!"))
 				return 1
