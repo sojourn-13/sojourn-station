@@ -17,6 +17,7 @@
 	var/natural_remedy = FALSE
 	var/perk_required = FALSE
 	var/needed_perk = null
+	var/needed_perk_alt = null
 	var/bio_requirement = 0
 
 	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
@@ -319,6 +320,7 @@
 	w_class = ITEM_SIZE_SMALL
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
+	needed_perk_alt = PERK_SURGICAL_MASTER
 	bio_requirement = 75
 
 /obj/item/stack/medical/advanced/bruise_pack/large
@@ -463,6 +465,7 @@
 	w_class = ITEM_SIZE_SMALL
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
+	needed_perk_alt = PERK_SURGICAL_MASTER
 	bio_requirement = 75
 
 /obj/item/stack/medical/advanced/ointment/large
