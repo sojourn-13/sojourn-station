@@ -101,7 +101,7 @@
 	desc = "Cahors in a can. Not nearly as good as from a bottle or keg but pleasent none the less. For the faithful on the go."
 	icon_state = "cahors_can"
 	center_of_mass = list("x"=16, "y"=10)
-	preloaded_reagents = list("cahors" = 30)
+	preloaded_reagents = list("ntcahors" = 30)
 
 //CLAW ENERGY DRINKS
 
