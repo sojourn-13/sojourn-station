@@ -8,7 +8,7 @@
 	density = 1
 	anchored = 1
 
-//	circuit = /obj/item/circuitboard/autodoc ??
+	circuit = /obj/item/circuitboard/autodoc
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 60
 	active_power_usage = 10000
