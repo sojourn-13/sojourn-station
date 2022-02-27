@@ -782,16 +782,15 @@
 /datum/reagent/medicine/ossisine
 	name = "Ossisine"
 	id = "ossisine"
-	description = "Paralyzes user and restores broken bones. Medicate in critical conditions only."
+	description = "Restores broken bones. Medicate in critical conditions only. Overdose makes cellular failure and paralyses the user."
 	taste_description = "calcium"
 	reagent_state = LIQUID
 	color = "#660679"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 11 //Can be used in hypos and the like
 	metabolism = REM * 1.5 // Hard stun, impractical use for the situations it's used, and healing per removed unit, this was needed.
 	scannable = 1
 
 /datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
-	M.paralysis = max(M.paralysis, 5)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -814,6 +813,7 @@
 
 
 /datum/reagent/medicine/ossisine/overdose(mob/living/carbon/M, alien)
+	M.paralysis = max(M.paralysis, 5)
 	M.adjustCloneLoss(2)
 
 /datum/reagent/medicine/noexcutite
