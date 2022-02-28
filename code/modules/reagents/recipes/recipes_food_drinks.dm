@@ -63,7 +63,7 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
-*/
+
 /datum/chemical_reaction/icecreambase
 	required_reagents = list("sugar" = 1, "ice" = 1, "cream" = 1)
 	result = "icecreambase"
