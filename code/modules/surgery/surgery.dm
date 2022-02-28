@@ -16,6 +16,8 @@
 	var/blood_level = 0
 	// How much pain should a surgery step cause?
 	var/inflict_agony = 60
+	// Are we doing surgery on a metal or flesh
+	var/is_robotic = FALSE
 
 // returns how well a given tool is suited for this step
 /datum/surgery_step/proc/tool_quality(obj/item/tool)
@@ -104,20 +106,17 @@
 		return FALSE
 
 	S.begin_step(user, src, tool, target)	//start on it
+	var/atom/surgery_target = get_surgery_target()
 	var/success = FALSE
 
 	var/difficulty_adjust = 0
 	var/time_adjust = 0
 
-	if(!user.stats.getPerk(PERK_ADVANCED_MEDICAL))
-		difficulty_adjust = 90
-		time_adjust = 120
-
-	if(user.stats.getPerk(PERK_SURGICAL_MASTER))
+	if(user.stats.getPerk(PERK_SURGICAL_MASTER) && !S.is_robotic)
 		difficulty_adjust = -90
 		time_adjust = -130
 
-	if(user.stats.getPerk(PERK_MASTER_HERBALIST))
+	if(user.stats.getPerk(PERK_MASTER_HERBALIST) && !S.is_robotic)
 		difficulty_adjust = -90
 		time_adjust = -130
 
@@ -132,7 +131,10 @@
 			difficulty_adjust = -150
 			time_adjust = -40
 
-	var/atom/surgery_target = get_surgery_target()
+	if(user.stats.getPerk(PERK_ROBOTICS_EXPERT) && S.is_robotic)
+		difficulty_adjust = -90
+		time_adjust = -130
+
 	if(S.required_tool_quality)
 		success = tool.use_tool_extended(
 			user, surgery_target,
