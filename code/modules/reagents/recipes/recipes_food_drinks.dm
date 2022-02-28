@@ -55,7 +55,7 @@
 
 /datum/chemical_reaction/chocolate_bar2
 	result = null
-	required_reagents = list("milk" = 2, "coco" = 2, "sugar" = 2)
+	required_reagents = list("chocolatemilk" = 2, "coco" = 1, "sugar" = 2) // Not the prettiest fix but the most practical. -Seb
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
@@ -63,7 +63,7 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
-
+*/
 /datum/chemical_reaction/icecreambase
 	required_reagents = list("sugar" = 1, "ice" = 1, "cream" = 1)
 	result = "icecreambase"
@@ -86,9 +86,9 @@
 	required_reagents = list("water" = 5, "coco" = 1)
 	result_amount = 5
 
-/datum/chemical_reaction/soysauce
+/datum/chemical_reaction/soysauce // Fermented soy, with the addition of wheat in a salt brine is a method for making Shoyu. Makes more sense than mixing soy "milk" with fucking SULPHURIC ACID. - Seb
 	result = "soysauce"
-	required_reagents = list("soymilk" = 4, "sacid" = 1)
+	required_reagents = list("soymilk" = 1, "sodiumchloride" = 1, "flour" = 1) 
 	result_amount = 5
 
 /datum/chemical_reaction/ketchup
