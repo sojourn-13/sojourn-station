@@ -806,16 +806,19 @@
 	M.paralysis = max(M.paralysis, 5)
 	M.adjustCloneLoss(2)
 	
-	//if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
-	var/list/brokenBP = list()
-	for(var/obj/item/organ/external/E in H.organs)
-		if(E.is_broken())
-			brokenBP += E
-		if(brokenBP.len)
-			var/obj/item/organ/external/E = pick(brokenBP)
-			E.mend_fracture()
-			M.pain(E.name, 60, TRUE)
-			dose = 0
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/bone/B = H.random_organ_by_process(OP_BONE)
+		//if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
+		var/list/brokenBP = list()
+		for(var/obj/item/organ/external/E in H.organs)
+			if(E.is_broken())
+				brokenBP += E
+			if(brokenBP.len)
+				var/obj/item/organ/external/E = pick(brokenBP)
+				E.mend_fracture()
+				M.pain(E.name, 60, TRUE)
+				dose = 0
 
 /datum/reagent/medicine/noexcutite
 	name = "Noexcutite"
