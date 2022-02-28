@@ -96,10 +96,16 @@
 		tool = user.get_active_hand()
 
 	var/quality = S.tool_quality(tool)
+
 	if(!quality)
 		if(!no_tool_message)
 			S.require_tool_message(user)
 		return FALSE
+
+	if (istype(tool,/obj/item/stack/medical/advanced/bruise_pack))
+		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 120)))
+			to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Trauma Kit in this way."))
+			return FALSE
 
 	if(!S.can_use(user, src, tool, target) || !S.prepare_step(user, src, tool, target))
 		SSnano.update_uis(src)
