@@ -53,6 +53,7 @@
 	var/list/spiderlist = list()
 	var/list/active_spiders = list()
 	var/geneticpoints = 10
+	var/autoassign_groups = FALSE
 
 	var/mob/living/simple_animal/spider_core/associated_spider = null
 
@@ -96,6 +97,13 @@
 		active_spiders += spider
 		spider.owner_core = src
 		spider.update_owner_mob()
+		if(autoassign_groups)
+			var/obj/item/implant/carrion_spider/A
+			for(var/obj/item/implant/carrion_spider/F in active_spiders)
+				if(istype(F, spider.type))
+					A = F
+					spider.assigned_groups = A.assigned_groups
+					break
 
 		owner.put_in_active_hand(spider)
 
@@ -116,15 +124,20 @@
 				"name" = initial(S.name),
 				"location" = "[spider_location]",
 				"spider" = "\ref[item]",
-				"implanted" = S.wearer
+				"implanted" = S.wearer,
+				"assigned_group_1" = S.check_group(SPIDER_GROUP_1),
+				"assigned_group_2" = S.check_group(SPIDER_GROUP_2),
+				"assigned_group_3" = S.check_group(SPIDER_GROUP_3),
+				"assigned_group_4" = S.check_group(SPIDER_GROUP_4)
 			)
 		)
 
 	data["list_of_spiders"] = spiders_in_list
+	data["autoassigning"] = autoassign_groups
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "carrion_spiders.tmpl", "Carrion Spiders", 400, 400)
+		ui = new(user, src, ui_key, "carrion_spiders.tmpl", "Carrion Spiders", 600, 400)
 		ui.set_initial_data(data)
 		ui.open()
 		ui.set_auto_update(1)
@@ -143,8 +156,55 @@
 	if(href_list["activate_all"])
 		for(var/spider in active_spiders)
 			var/obj/item/implant/carrion_spider/CS = spider
-			if(istype(CS))
+			if(istype(CS) && !CS.ignore_activate_all)
 				CS.activate()
+
+	if(href_list["activate_group_1"])
+		for(var/spider in active_spiders)
+			var/obj/item/implant/carrion_spider/CS = spider
+			if(istype(CS) && CS.check_group(SPIDER_GROUP_1))
+				CS.activate()
+
+	if(href_list["activate_group_2"])
+		for(var/spider in active_spiders)
+			var/obj/item/implant/carrion_spider/CS = spider
+			if(istype(CS) && CS.check_group(SPIDER_GROUP_2))
+				CS.activate()
+
+	if(href_list["activate_group_3"])
+		for(var/spider in active_spiders)
+			var/obj/item/implant/carrion_spider/CS = spider
+			if(istype(CS) && CS.check_group(SPIDER_GROUP_3))
+				CS.activate()
+
+	if(href_list["activate_group_4"])
+		for(var/spider in active_spiders)
+			var/obj/item/implant/carrion_spider/CS = spider
+			if(istype(CS) && CS.check_group(SPIDER_GROUP_4))
+				CS.activate()
+
+	if(href_list["toggle_group_1"])
+		var/obj/item/implant/carrion_spider/activated_spider = locate(href_list["toggle_group_1"]) in active_spiders
+		if(activated_spider)
+			activated_spider.toggle_group(SPIDER_GROUP_1)
+
+	if(href_list["toggle_group_2"])
+		var/obj/item/implant/carrion_spider/activated_spider = locate(href_list["toggle_group_2"]) in active_spiders
+		if(activated_spider)
+			activated_spider.toggle_group(SPIDER_GROUP_2)
+
+	if(href_list["toggle_group_3"])
+		var/obj/item/implant/carrion_spider/activated_spider = locate(href_list["toggle_group_3"]) in active_spiders
+		if(activated_spider)
+			activated_spider.toggle_group(SPIDER_GROUP_3)
+
+	if(href_list["toggle_group_4"])
+		var/obj/item/implant/carrion_spider/activated_spider = locate(href_list["toggle_group_4"]) in active_spiders
+		if(activated_spider)
+			activated_spider.toggle_group(SPIDER_GROUP_4)
+
+	if(href_list["toggle_autoassign"])
+		autoassign_groups = !autoassign_groups
 
 	if(href_list["P"])
 		purchasePower(href_list["P"])
@@ -367,9 +427,13 @@
 				var/organ_rotten = FALSE
 				if (O.status & ORGAN_DEAD)
 					organ_rotten = TRUE
-				geneticpointgain = organ_rotten ? 1 : 3
-				chemgain = organ_rotten ? 4 : 10
-				taste_description = "internal organs are delicious[organ_rotten ? ", but rotten ones less so." : "."]"
+				if(O.species != all_species[SPECIES_HUMAN])
+					chemgain = 5
+					taste_description = "this non-human organ is very bland." // no removal of hunger here, getting and storing a ton of monkey organs isn't too easy, and 5 chem points isn't terribly much.
+				else
+					geneticpointgain = organ_rotten ? 1 : 3
+					chemgain = organ_rotten ? 4 : 10
+					taste_description = "internal organs are delicious[organ_rotten ? ", but rotten ones less so." : "."]"
 			else
 				geneticpointgain = 2
 				chemgain = 5
@@ -419,26 +483,9 @@
 		for (var/obj/structure/burrow/B in find_nearby_burrows())
 			for(var/i = 1, i <= 4 ,i++) //4 per burrow
 				var/obj/structure/burrow/origin = SSmigration.choose_burrow_target(null, TRUE, 100)
-				var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 35,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver = 14,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/carrier = 12,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 5,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/plasma = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor = 1,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter = 35,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 20,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/shocker = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/pepper = 10,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula = 10,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/ogre = 8,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/pit = 8,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing = 6
-				))
+				var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 4,\
+					/mob/living/carbon/superior_animal/giant_spider/nurse = 2,\
+					/mob/living/carbon/superior_animal/giant_spider/hunter = 2))
 				new spider_to_spawn(B)
 				origin.migrate_to(B, 3 SECONDS, 0)
 		last_call = world.time
@@ -559,26 +606,9 @@
 	..()
 
 /obj/structure/spider_nest/proc/spawn_spider()
-	var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 35,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse = 30,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/midwife = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/orb_weaver = 14,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/carrier = 12,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/queen = 5,\
-				/mob/living/carbon/superior_animal/giant_spider/nurse/recluse = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/plasma = 4,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor = 1,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter = 35,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/cloaker = 20,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/viper = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/shocker = 15,\
-				/mob/living/carbon/superior_animal/giant_spider/hunter/pepper = 10,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula = 10,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/ogre = 8,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/pit = 8,\
-				/mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing = 6
-				))
+	var/spider_to_spawn = pickweight(list(/mob/living/carbon/superior_animal/giant_spider = 4,\
+		/mob/living/carbon/superior_animal/giant_spider/nurse = 2,\
+		/mob/living/carbon/superior_animal/giant_spider/hunter = 2))
 	new spider_to_spawn(loc)
 	visible_message(SPAN_WARNING("A spider spews out of \The [src]"))
 	spider_spawns--
