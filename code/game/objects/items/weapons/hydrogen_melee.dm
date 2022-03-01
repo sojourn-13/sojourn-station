@@ -6,6 +6,7 @@
 	icon_state = "sword"
 	item_state = "sword"
 	contained_sprite = TRUE
+	item_state_slots = list(slot_l_hand_str = "sword_left", slot_r_hand_str = "sword_right")
 	origin_tech = list(TECH_PLASMA = 10, TECH_POWER = 5, TECH_COMBAT = 12, TECH_MATERIAL = 7) // Currently it is a unique, CRO-only item.
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_MHYDROGEN = 0.8, MATERIAL_OSMIUM = 0.8, MATERIAL_TRITIUM = 0.8)
 	force = WEAPON_FORCE_WEAK
@@ -120,8 +121,11 @@
 
 /obj/item/tool/hydrogen_sword/update_icon()
 	cut_overlays()
+	item_state_slots = list(slot_l_hand_str = "[icon_state]_left", slot_r_hand_str = "[icon_state]_right")
 	if(active)
 		add_overlay("[icon_state]_active")
+
+	item_state_slots = list(slot_l_hand_str = "[icon_state]_active_left", slot_r_hand_str = "[icon_state]_active_right")
 
 
 // Hydrogen Grenade, explode when hitting something, even if thrown.
@@ -140,17 +144,17 @@
 	throw_range = 7
 	w_class = ITEM_SIZE_SMALL
 	var/armed = FALSE
-	var/obj/item/hydrogen_fuel_cell/cell_fue = null // The flask the sword consume to stay active
+	var/obj/item/hydrogen_fuel_cell/fuel_cell = null // The flask the sword consume to stay active
 	var/burn_min = 50 // How much burn damage the grenade do to nearby mobs.
 	var/burn_max = 75 // How much burn damage the grenade do to nearby mobs.
 	var/hydrogen_threshold = 10 // How much hydrogen must be in the cell for it to be viable.
 
 /obj/item/hydrogen_grenade/attack_self(mob/living/user as mob)
-	if(!cell_fue)
+	if(!fuel_cell)
 		to_chat(user, "There isn't any hydrogen cell in the grenade, you can't arm it.")
 		return
 
-	if(cell_fue.plasma < hydrogen_threshold)
+	if(fuel_cell.plasma < hydrogen_threshold)
 		to_chat(user, "There isn't enough hydrogen in the cell, arming it would be useless.")
 		return
 
@@ -162,26 +166,26 @@
 
 /obj/item/hydrogen_grenade/attackby(obj/item/W as obj, mob/living/user as mob)
 	if(istype(W, /obj/item/hydrogen_fuel_cell))
-		if(cell)
+		if(fuel_cell)
 			to_chat(usr, SPAN_WARNING("[src] is already loaded."))
 			return
 
 		if(insert_item(W, user))
-			cell = W
+			fuel_cell = W
 			update_icon()
 	else
 		..()
 
 /obj/item/hydrogen_grenade/MouseDrop(over_object)
-	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, usr))
-		cell = null
+	if((src.loc == usr) && istype(over_object, /obj/screen/inventory/hand) && eject_item(fuel_cell, usr))
+		fuel_cell = null
 		if(armed)
 			armed = FALSE
 		update_icon()
 
 /obj/item/hydrogen_grenade/update_icon()
 	cut_overlays()
-	if(cell)
+	if(fuel_cell)
 		add_overlay("[icon_state]_loaded")
 	if(armed)
 		add_overlay("[icon_state]_armed")
