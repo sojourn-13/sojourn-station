@@ -4,9 +4,7 @@
 	desc = "An energy sword that uses super heated hydrogen shaped into plasma. The only thing preventing this from blowing up in your face is a magnetic field produced by the hilt."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "sword"
-	item_state = "sword"
-	contained_sprite = TRUE
-	item_state_slots = list(slot_l_hand_str = "sword_left", slot_r_hand_str = "sword_right")
+	item_state = "hydrogen"
 	origin_tech = list(TECH_PLASMA = 10, TECH_POWER = 5, TECH_COMBAT = 12, TECH_MATERIAL = 7) // Currently it is a unique, CRO-only item.
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_MHYDROGEN = 0.8, MATERIAL_OSMIUM = 0.8, MATERIAL_TRITIUM = 0.8)
 	force = WEAPON_FORCE_WEAK
@@ -121,11 +119,10 @@
 
 /obj/item/tool/hydrogen_sword/update_icon()
 	cut_overlays()
-	item_state_slots = list(slot_l_hand_str = "[icon_state]_left", slot_r_hand_str = "[icon_state]_right")
+	item_state = "[initial(item_state)][active ? "_active" : ""]"
 	if(active)
 		add_overlay("[icon_state]_active")
-
-	item_state_slots = list(slot_l_hand_str = "[icon_state]_active_left", slot_r_hand_str = "[icon_state]_active_right")
+	update_wear_icon()
 
 
 // Hydrogen Grenade, explode when hitting something, even if thrown.
