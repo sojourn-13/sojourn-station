@@ -1,7 +1,8 @@
 /datum/surgery_step/robotic
-	difficulty = FAILCHANCE_EASY
+	difficulty = FAILCHANCE_EASY //WAY easyer to do it on a robot then any old carbon!
 	required_stat = STAT_MEC
 	inflict_agony = 0 // Robotic organs can't feel pain anyway
+	is_robotic = TRUE // Metal over flesh
 
 /datum/surgery_step/robotic/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	return BP_IS_ROBOTIC(organ)
@@ -13,8 +14,6 @@
 		SPAN_WARNING("[user]'s hand slips, \the [tool] hitting [organ.get_surgery_name()] harmlessly."),
 		SPAN_WARNING("Your hand slips, \the [tool] hitting [organ.get_surgery_name()] harmlessly.")
 	)
-
-
 
 /datum/surgery_step/robotic/open
 	required_tool_quality = QUALITY_SCREW_DRIVING

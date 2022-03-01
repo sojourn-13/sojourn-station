@@ -54,6 +54,8 @@
 		plant_controller.remove_plant(src)
 	for(var/obj/effect/plant/neighbor in range(1,src))
 		plant_controller.add_plant(neighbor)
+	if(seed.type == /datum/seed/mushroom/maintshroom)
+		GLOB.all_maintshrooms -= src
 	. = ..()
 
 /obj/effect/plant/single
@@ -89,7 +91,11 @@
 		growth_threshold = max_health/VINE_GROWTH_STAGES
 		icon = 'icons/obj/hydroponics_vines.dmi'
 		growth_type = 2 // Vines by default.
-		if(seed.get_trait(TRAIT_CARNIVOROUS) == 2)
+		if(seed.type == /datum/seed/mushroom/maintshroom)
+			growth_type = 0 // this is maintshroom
+			density = FALSE
+			GLOB.all_maintshrooms += src
+		else if(seed.get_trait(TRAIT_CARNIVOROUS) == 2)
 			growth_type = 1 // WOOOORMS.
 		else if(!(seed.seed_noun in list("seeds","pits")))
 			if(seed.seed_noun == "nodes")
@@ -188,7 +194,8 @@
 
 	if(growth>2 && growth == max_growth)
 		layer = (seed && seed.force_layer) ? seed.force_layer : 5
-
+		if(seed.type != /datum/seed/mushroom/maintshroom)
+			set_opacity(TRUE)
 		if(islist(seed.chems) && !isnull(seed.chems["woodpulp"]))
 			density = 1
 	else

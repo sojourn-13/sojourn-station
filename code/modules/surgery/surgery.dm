@@ -16,6 +16,8 @@
 	var/blood_level = 0
 	// How much pain should a surgery step cause?
 	var/inflict_agony = 60
+	// Are we doing surgery on a metal or flesh
+	var/is_robotic = FALSE
 
 // returns how well a given tool is suited for this step
 /datum/surgery_step/proc/tool_quality(obj/item/tool)
@@ -94,30 +96,33 @@
 		tool = user.get_active_hand()
 
 	var/quality = S.tool_quality(tool)
+
 	if(!quality)
 		if(!no_tool_message)
 			S.require_tool_message(user)
 		return FALSE
+
+	if (istype(tool,/obj/item/stack/medical/advanced/bruise_pack))
+		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 120)))
+			to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Trauma Kit in this way."))
+			return FALSE
 
 	if(!S.can_use(user, src, tool, target) || !S.prepare_step(user, src, tool, target))
 		SSnano.update_uis(src)
 		return FALSE
 
 	S.begin_step(user, src, tool, target)	//start on it
+	var/atom/surgery_target = get_surgery_target()
 	var/success = FALSE
 
 	var/difficulty_adjust = 0
 	var/time_adjust = 0
 
-	if(!user.stats.getPerk(PERK_ADVANCED_MEDICAL))
-		difficulty_adjust = 90
-		time_adjust = 120
-
-	if(user.stats.getPerk(PERK_SURGICAL_MASTER))
+	if(user.stats.getPerk(PERK_SURGICAL_MASTER) && !S.is_robotic)
 		difficulty_adjust = -90
 		time_adjust = -130
 
-	if(user.stats.getPerk(PERK_MASTER_HERBALIST))
+	if(user.stats.getPerk(PERK_MASTER_HERBALIST) && !S.is_robotic)
 		difficulty_adjust = -90
 		time_adjust = -130
 
@@ -132,7 +137,10 @@
 			difficulty_adjust = -150
 			time_adjust = -40
 
-	var/atom/surgery_target = get_surgery_target()
+	if(user.stats.getPerk(PERK_ROBOTICS_EXPERT) && S.is_robotic)
+		difficulty_adjust = -90
+		time_adjust = -130
+
 	if(S.required_tool_quality)
 		success = tool.use_tool_extended(
 			user, surgery_target,

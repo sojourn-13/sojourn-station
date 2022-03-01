@@ -58,6 +58,11 @@
 	build_path = /obj/item/circuitboard/sleeper
 	category = CAT_MEDI
 
+/datum/design/research/circuit/autodoc
+	name = "Autodoc"
+	build_path = /obj/item/circuitboard/autodoc
+	category = CAT_MEDI
+
 /datum/design/research/circuit/clonepod
 	name = "clone pod"
 	build_path = /obj/item/circuitboard/clonepod

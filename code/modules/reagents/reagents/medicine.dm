@@ -782,29 +782,18 @@
 /datum/reagent/medicine/ossisine
 	name = "Ossisine"
 	id = "ossisine"
-	description = "Paralyzes user and restores broken bones. Medicate in critical conditions only."
+	description = "Restores broken bones. Medicate in critical conditions only. Overdose makes cellular failure and paralyses the user."
 	taste_description = "calcium"
 	reagent_state = LIQUID
 	color = "#660679"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 11 //Can be used in hypos and the like
 	metabolism = REM * 1.5 // Hard stun, impractical use for the situations it's used, and healing per removed unit, this was needed.
 	scannable = 1
 
 /datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
-	M.paralysis = max(M.paralysis, 5)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
-			var/list/brokenBP = list()
-			for(var/obj/item/organ/external/E in H.organs)
-				if(E.is_broken())
-					brokenBP += E
-			if(brokenBP.len)
-				var/obj/item/organ/external/E = pick(brokenBP)
-				E.mend_fracture()
-				M.pain(E.name, 60, TRUE)
-				dose = 0
 		var/obj/item/organ/internal/bone/B = H.random_organ_by_process(OP_BONE)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(B))
@@ -814,7 +803,21 @@
 
 
 /datum/reagent/medicine/ossisine/overdose(mob/living/carbon/M, alien)
+	M.paralysis = max(M.paralysis, 5)
 	M.adjustCloneLoss(2)
+	
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		//if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
+		var/list/brokenBP = list()
+		for(var/obj/item/organ/external/E in H.organs)
+			if(E.is_broken())
+				brokenBP += E
+		if(brokenBP.len)
+			var/obj/item/organ/external/E = pick(brokenBP)
+			E.mend_fracture()
+			M.pain(E.name, 60, TRUE)
+			dose = 0
 
 /datum/reagent/medicine/noexcutite
 	name = "Noexcutite"

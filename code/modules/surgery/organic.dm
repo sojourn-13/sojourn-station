@@ -153,7 +153,9 @@
 /datum/surgery_step/break_bone
 	target_organ_type = /obj/item/organ/internal/bone
 	required_tool_quality = QUALITY_HAMMERING
-	duration = 80
+	//its easyer and faster to harm then heal
+	difficulty = 0
+	duration = 20
 	blood_level = 1
 
 /datum/surgery_step/break_bone/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
@@ -329,7 +331,9 @@
 
 /datum/surgery_step/remove_item
 	required_tool_quality = QUALITY_CLAMPING
-	duration = 90
+	//Easyer to jank something out then it is to heal the wound you made
+	difficulty = 0
+	duration = 30
 
 /datum/surgery_step/remove_item/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool, atom/movable/target)
 	return BP_IS_ORGANIC(organ) && organ.is_open() && organ.can_remove_item(target)

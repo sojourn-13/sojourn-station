@@ -15,11 +15,11 @@
 
 /obj/structure/salvageable/attackby(obj/item/I, mob/user)
 	if(I.get_tool_type(usr, list(QUALITY_PRYING), src))
-		to_chat(user, SPAN_NOTICE("You start salvage anything useful from \the [src]."))
+		to_chat(user, SPAN_NOTICE("You start to salvage anything useful from \the [src]."))
 		if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PRYING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			dismantle()
 			if(prob(user.stats.getStat(STAT_COG)+user.stats.getStat(STAT_MEC)) && user.stats.getPerk(PERK_HANDYMAN))
-				to_chat(user, SPAN_NOTICE("Thanks to your training on salvaging machines you find additional materials in \the [src]."))
+				to_chat(user, SPAN_NOTICE("Thanks to your training on salvaging machines, you find additional materials in \the [src]."))
 				new /obj/random/material_handyman(src.loc)
 				new /obj/item/stack/sheet/refined_scrap/random(src.loc) //So we can fuel scap-pacmans
 				if(prob(50))
@@ -29,7 +29,7 @@
 				if(prob(5))
 					new /obj/item/scrap_lump(src.loc)
 			else if(user.stats.getPerk(PERK_HANDYMAN))
-				to_chat(user, SPAN_NOTICE("You don't find any additional rare materials, but you do manage to salvage some refined scrap from \the [src]."))
+				to_chat(user, SPAN_NOTICE("You don't find any additional rare materials, but you do manage to salvage some scrap from \the [src]."))
 				new /obj/item/stack/sheet/refined_scrap/random(src.loc)
 				if(prob(50))
 					new /obj/item/scrap_lump(src.loc)

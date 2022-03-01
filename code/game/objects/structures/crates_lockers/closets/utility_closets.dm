@@ -67,7 +67,7 @@
 	new /obj/item/extinguisher(src)
 	new /obj/item/clothing/head/hardhat/red(src)
 	new /obj/item/inflatable/door(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
 
 /*
  * Tool Closet
