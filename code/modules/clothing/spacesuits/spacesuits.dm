@@ -12,7 +12,7 @@
 		slot_r_hand_str = "s_helmet",
 		)
 	permeability_coefficient = 0.01
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 10,
 		energy = 10,
@@ -75,7 +75,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 10)
 	slowdown = 3
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 10,
 		energy = 10,

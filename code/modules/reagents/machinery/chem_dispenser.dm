@@ -88,7 +88,7 @@
 	SSnano.update_uis(src) // update all UIs attached to src
 
 /obj/machinery/chemical_dispenser/proc/hacked(mob/user)
-	..()
+	//..()
 	if(!hackedcheck)
 		to_chat(user, "You change the mode from 'Safe' to 'Unsafe'.")
 		dispensable_reagents += hacked_reagents

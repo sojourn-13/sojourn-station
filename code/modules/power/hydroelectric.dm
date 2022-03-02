@@ -177,7 +177,7 @@
 			tricklein = rand(4,9)
 			if(malfnumber > rand(1,100))
 				var/malftrigger = rand(1,workingturbines)
-				connected_turbines[malftrigger].Malfunction()
+				connected_turbines[malftrigger]?:Malfunction()
 				malfnumber = 0
 			tidechange = 0
 		return

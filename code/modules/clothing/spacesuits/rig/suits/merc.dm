@@ -8,7 +8,7 @@
 	desc = "A blood-red hardsuit featuring some fairly advanced technology."
 	icon_state = "merc_rig"
 	suit_type = "crimson hardsuit"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 40,
 		energy = 30,

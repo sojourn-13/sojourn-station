@@ -63,7 +63,7 @@
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 100, bullet = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
+	armor_list = list(melee = 100, bullet = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0
@@ -218,7 +218,7 @@
 	icon_state = "gorka_ih_med_b"
 	item_state = "gorka_ih_med_b"
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medspec/gorka_ih_med_g
 	name = "medical specialist gorka"
@@ -226,7 +226,7 @@
 	icon_state = "gorka_ih_med_g"
 	item_state = "gorka_ih_med_g"
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medical/gorka_crew_med
 	name = "medical crew gorka"
@@ -687,7 +687,7 @@
 	icon_state = "johnny"
 	item_state = "johnny"
 	price_tag = 60
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,
@@ -702,7 +702,7 @@
 	icon_state = "raider"
 	item_state = "raider"
 	price_tag = 60
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,
@@ -716,7 +716,7 @@
 	icon_state = "tribalm"
 	item_state = "tribalm"
 	price_tag = 50
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,

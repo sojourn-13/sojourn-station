@@ -330,7 +330,7 @@
 			if (seed.evolutions && seed.evolutions.len)
 				for(var/rid in seed.evolutions)
 
-					var/list/checkEvoChems = seed.evolutions[rid].Copy()
+					var/list/checkEvoChems = seed.evolutions[rid]?:Copy()
 
 					if (checkEvoChems ~= (checkEvoChems & seed.chems))
 						evolve_species(rid)

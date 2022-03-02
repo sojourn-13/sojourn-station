@@ -15,7 +15,7 @@
 		slot_l_hand_str = "eng_helm",
 		slot_r_hand_str = "eng_helm",
 		)
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 30,
 		energy =30,
@@ -55,7 +55,7 @@
 	desc = "A special suit that protects against hazardous, low pressure environments. Has radiation shielding."
 	icon_state = "technosuit_void"
 	item_state = "technosuit_void"
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 30,
 		energy = 30,
@@ -88,7 +88,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 3)
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 20,
 		energy = 20,
@@ -129,7 +129,7 @@
 	icon_state = "makeshift_void"
 	item_state = "makeshift_void"
 	siemens_coefficient = 0.4
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 20,
 		energy = 20,
@@ -162,7 +162,7 @@
 		slot_l_hand_str = "mining_helm",
 		slot_r_hand_str = "mining_helm",
 		)
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 25,
 		energy = 25,
@@ -178,7 +178,7 @@
 	item_state = "miner_suit"
 	icon_state = "miner_suit"
 	slowdown = 0.35
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 25,
 		energy = 25,
@@ -198,7 +198,7 @@
 		slot_l_hand_str = "medical_helm",
 		slot_r_hand_str = "medical_helm",
 		)
-	armor = list(
+	armor_list = list(
 		melee = 20, // It's a literal glass cube
 		bullet = 10,
 		energy = 35,
@@ -220,7 +220,7 @@
 		/obj/item/stack/medical,
 		/obj/item/roller
 	)
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 10,
 		energy = 35,
@@ -245,7 +245,7 @@
 		)
 	obscuration = MEDIUM_OBSCURATION
 
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 40,
@@ -263,7 +263,7 @@
 	desc = "A bulky suit that protects against hazardous, low pressure environments. Sacrifices mobility for protection"
 	item_state = "ihvoidsuit"
 	slowdown = 1
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 40,
@@ -293,7 +293,7 @@
 		slot_r_hand_str = "sec_helm",
 		)
 
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 40,
@@ -311,7 +311,7 @@
 	icon_state = "odst"
 	item_state = "odst"
 	slowdown = 1
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 40,
@@ -409,7 +409,7 @@
 		slot_l_hand_str = "atmos_helm",
 		slot_r_hand_str = "atmos_helm",
 		)
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 10,
 		energy = 10,
@@ -426,7 +426,7 @@
 	icon_state = "rig-atmos"
 	name = "atmos voidsuit"
 	item_state = "atmos_voidsuit"
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 10,
 		energy = 10,
@@ -456,7 +456,7 @@
 		)
 	obscuration = MEDIUM_OBSCURATION
 
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 65,
 		energy = 50,
@@ -494,7 +494,7 @@
 	desc = "A specialty import from the Kriosan Confederacy, usually imported by Lonestar LLC thanks to the companies' long standing trade agreement. It costs a king's ransom, albeit for a good reason \
 	given its sturdy craftmenship and reinforced armor layers."
 	item_state = "assaultsuit"
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 75,
 		energy = 60,
@@ -525,7 +525,7 @@
 		slot_r_hand_str = "assaulthelm",
 		)
 
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 30,
 		energy = 20,
@@ -543,7 +543,7 @@
 	icon_state = "armor_medical"
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	item_state = "armor_medical"
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 35,
 		energy = 55,

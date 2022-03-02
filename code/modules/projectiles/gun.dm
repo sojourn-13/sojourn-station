@@ -385,8 +385,6 @@
 			handle_click_empty(user)
 		return FALSE
 
-		next_fire_time = world.time + fire_delay
-
 	currently_firing = FALSE
 
 	if(muzzle_flash)

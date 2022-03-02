@@ -23,7 +23,7 @@
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 
 	// These values are passed on to all component pieces.
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 20,

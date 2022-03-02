@@ -4,7 +4,7 @@
 	icon_state = "capspace"
 	item_state = "capspace"
 	desc = "A special helmet designed for work in a hazardous, low-pressure environment. Only for the most fashionable of figureheads."
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 30,
 		energy = 40,
@@ -19,7 +19,7 @@
 	desc = "A bulky, heavy-duty piece of exclusive armor."
 	icon_state = "caparmor"
 	item_state = "capspacesuit"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 30,
 		energy = 50,
