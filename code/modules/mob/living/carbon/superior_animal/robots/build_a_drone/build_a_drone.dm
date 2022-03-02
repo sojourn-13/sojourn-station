@@ -4,7 +4,15 @@
 	desc = "A custom-built drone. They come in a variety of color and equipment."
 	icon = 'icons/mob/build_a_drone.dmi'
 	icon_state = "drone_st"
+	faction = "neutral"
 	cleaning = FALSE
+	drop1 = null
+	drop2 = null
+	cell_drop = /obj/item/cell/large
+	ranged = FALSE
+	limited_ammo = FALSE
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 	// Vars that determine the parts used for the sprite.
 	var/chassis = "" // The chassis of the drone.
@@ -19,6 +27,7 @@
 	// Different from the right/left_tools, those vars are for the type of weapon, which determine its attacks.
 	var/right_weapon_type
 	var/left_weapon_type
+	var/list/possible_ranged_attack = list() // List of possible ranged attack that the drone switch between
 
 /mob/living/carbon/superior_animal/robot/custom_drone/New()
 	..()
@@ -50,4 +59,57 @@
 	right_tool = _right_tool
 	left_tool = _left_tool
 	update_icon()
+	update_weaponry()
 	return TRUE
+
+/mob/living/carbon/superior_animal/robot/custom_drone/proc/update_weaponry()
+	possible_ranged_attack = list() // Reset the attacks
+	ranged = initial(ranged)
+
+	switch(right_weapon_type) // The equipment determine the drops
+		if(TOOL_LASER)
+			drop1 = /obj/item/gun/energy/cog
+			possible_ranged_attack.Add(/obj/item/projectile/beam)
+			ranged = TRUE
+		if(TOOL_GUN)
+			drop1 = /obj/item/gun/projectile/spring
+			possible_ranged_attack.Add(/obj/item/projectile/bullet/pistol_35)
+			ranged = TRUE
+		if(TOOL_BOMB)
+			drop1 = /obj/item/plastique // Plastic Explosives.
+		else
+			drop1 = /obj/item/scrap_lump
+
+	switch(left_weapon_type) // The equipment determine the drops
+		if(TOOL_MEDIC)
+			drop2 = /obj/item/reagent_containers/syringe/large
+		if(TOOL_WELDER)
+			drop2 = /obj/item/tool/weldingtool
+		if(TOOL_FLAMER)
+			drop2 = /obj/item/gun/flamethrower
+			possible_ranged_attack.Add(/obj/item/projectile/flamer_lob/flamethrower)
+			ranged = TRUE
+		else
+			drop2 = /obj/item/scrap_lump
+
+/mob/living/carbon/superior_animal/robot/custom_drone/OpenFire(target_mob)
+	projectiletype = pick(possible_ranged_attack) // Random attack based on what we can do
+	if(projectiletype == /obj/item/projectile/beam) // We attack with the cog, who can fire in bursts
+		rapid = TRUE
+	..()
+	rapid = FALSE // Reset after the attack is done to preset the spring or flamethrower from shooting in bursts
+
+/mob/living/carbon/superior_animal/robot/custom_drone/UnarmedAttack(var/atom/A, var/proximity)
+	. = ..()
+	if(.) // Make sure our attacks hit first.
+		if(left_weapon_type == TOOL_MEDIC) // Do we use chemical attacks?
+			if(isliving(A))
+				var/mob/living/L = A
+				if(istype(L) && L.reagents)
+					L.reagents.add_reagent("toxin", 2) // 2 unit of toxin per minute
+
+		if(right_weapon_type == TOOL_BOMB) // Explode on attack
+			src.visible_message(SPAN_DANGER("\The [src] makes an odd warbling noise, fizzles, and explodes!"))
+			drop1 = null // We don't get the explosive
+			explosion(get_turf(loc), 0, 0, 2, 3) // Same strength as the dropped explosive.
+			death()
