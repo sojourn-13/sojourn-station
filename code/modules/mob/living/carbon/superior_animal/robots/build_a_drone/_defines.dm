@@ -2,10 +2,12 @@
 
 // This is the different types of attack the build-a-drone can do.
 #define TOOL_LASER 1 // Ranged Laser attack
-#define TOOL_MEDIC 2 // Melee Chem attack
-#define TOOL_FLAMER 3 // Ranged Fire Attack
-#define TOOL_GUN 4 // Bullet Attack
-#define TOOL_WELDER 5 // Melee Fire Attack
+#define TOOL_GUN 2 // Bullet Attack
+#define TOOL_BOMB 3 // Explode on impact. Unavailable currently but possible.
+#define TOOL_MEDIC 4 // Melee Chem attack
+#define TOOL_FLAMER 5 // Ranged Fire Attack
+#define TOOL_WELDER 6 // Melee Fire Attack
+
 
 // Global lists of the drones parts
 var/global/list/drone_chassis_options = list("Greyson Chassis" = "drone_os",
@@ -67,8 +69,8 @@ var/global/list/drone_right_weapon_type_options = list(	"Energy" = TOOL_LASER,
 														"Ballistic" = TOOL_GUN)
 
 var/global/list/drone_left_weapon_type_options = list(	"Syringe" = TOOL_MEDIC,
-														"Welder" = TOOL_WELDER,
-														"Flamer" = TOOL_FLAMER)
+														"Flamer" = TOOL_FLAMER,
+														"Welder" = TOOL_WELDER)
 
 var/global/list/drone_laser_options = list(	"Greyson Laser" = "tool_laser_os",
 											"Red Greyson Laser" = "tool_laser_os_red",
@@ -149,38 +151,41 @@ var/global/list/drone_welder_options = list("Greyson Welder" = "tool_welder_os",
 											"Orange Pink Welder" = "tool_welder_orange_2_pink",
 											"Orange Green Welder" = "tool_welder_orange_2_green")
 
-proc/build_a_drone()
-	var/chassis_choice = input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_chassis_options
+/proc/build_a_drone(mob/user)
+	if(user)
+		usr = user
+
+	var/chassis_choice = drone_chassis_options[input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_chassis_options]
 
 	if(!chassis_choice) // We didn't chose a chassis, leave the proc.
 		return FALSE
 
-	var/radio_choice = input("Select the radio of your drone ", "Radio : ") as null | anything in drone_radio_options
-	var/shell_choice = input("Select the color of the shell of your drone ", "Shell : ") as null | anything in drone_shell_options
-	var/marks_choice = input("Select the markings of your drone ", "Markings : ") as null | anything in drone_marks_options
-	var/screen_choice = input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_screen_options
-	var/scanner_choice = input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_scanner_options
-	var/right_weapon_type_choice = input("Select the first weapon type of your drone ", "Right Weapon : ") as null | anything in drone_right_weapon_type_options
-	var/left_weapon_type_choice = input("Select the second weapon type of your drone ", "Left Weapon : ") as null | anything in drone_left_weapon_type_options
+	var/radio_choice = drone_radio_options[input("Select the radio of your drone ", "Radio : ") as null | anything in drone_radio_options]
+	var/shell_choice = drone_shell_options[input("Select the color of the shell of your drone ", "Shell : ") as null | anything in drone_shell_options]
+	var/marks_choice = drone_marks_options[input("Select the markings of your drone ", "Markings : ") as null | anything in drone_marks_options]
+	var/screen_choice = drone_screen_options[input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_screen_options]
+	var/scanner_choice = drone_scanner_options[input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_scanner_options]
+	var/right_weapon_type_choice = drone_right_weapon_type_options[input("Select the first weapon type of your drone ", "Right Weapon : ") as null | anything in drone_right_weapon_type_options]
+	var/left_weapon_type_choice = drone_left_weapon_type_options[input("Select the second weapon type of your drone ", "Left Weapon : ") as null | anything in drone_left_weapon_type_options]
 	var/right_tool_choice
 	var/left_tool_choice
 
 	switch(right_weapon_type_choice)
 		if(TOOL_LASER)
-			right_tool_choice = input("Select the energy weapon of your drone ", "Laser : ") as null | anything in drone_laser_options
+			right_tool_choice = drone_laser_options[input("Select the energy weapon of your drone ", "Laser : ") as null | anything in drone_laser_options]
 		if(TOOL_GUN)
-			right_tool_choice = input("Select the ballistic weapon of your drone ", "Gun : ") as null | anything in drone_laser_options
+			right_tool_choice = drone_gun_options[input("Select the ballistic weapon of your drone ", "Gun : ") as null | anything in drone_gun_options]
 
 	if(right_weapon_type_choice && !right_tool_choice) // If we chose to have a weapon in the right slot, but didn't actually chose anything
 		right_weapon_type_choice = null // Set it to null so that it doesn't have an invisible weapon.
 
 	switch(left_weapon_type_choice)
 		if(TOOL_MEDIC)
-			left_tool_choice = input("Select the syringe of your drone ", "Syringe : ") as null | anything in drone_medic_options
+			left_tool_choice = drone_medic_options[input("Select the syringe of your drone ", "Syringe : ") as null | anything in drone_medic_options]
 		if(TOOL_FLAMER)
-			left_tool_choice = input("Select the flamer of your drone ", "Flamer : ") as null | anything in drone_flamer_options
+			left_tool_choice = drone_flamer_options[input("Select the flamer of your drone ", "Flamer : ") as null | anything in drone_flamer_options]
 		if(TOOL_WELDER)
-			left_tool_choice = input("Select the welder of your drone ", "Welder : ") as null | anything in drone_welder_options
+			left_tool_choice = drone_welder_options[input("Select the welder of your drone ", "Welder : ") as null | anything in drone_welder_options]
 
 	if(left_weapon_type_choice && !left_tool_choice) // If we chose to have a weapon in the left slot, but didn't actually chose anything
 		left_weapon_type_choice = null // Set it to null so that it doesn't have an invisible weapon.
@@ -188,3 +193,6 @@ proc/build_a_drone()
 	var/mob/living/carbon/superior_animal/robot/custom_drone/CD = new(usr.loc) // Spawn a new drone
 	CD.customize(chassis_choice, radio_choice, shell_choice, marks_choice, screen_choice, scanner_choice, right_weapon_type_choice, left_weapon_type_choice, right_tool_choice, left_tool_choice) // Customize the drone's sprite
 	return TRUE
+
+mob/proc/mob_build_a_drone()
+	build_a_drone(usr)

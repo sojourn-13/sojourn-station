@@ -6,3 +6,5 @@
 	name = "Greyson Drone"
 	faction = "greyson"
 	customize("drone_os", "radio_os", "shell_os", "marks_os", "screen_os", "tool_scanner_os", TOOL_LASER, TOOL_FLAMER, "tool_laser_os", "tool_flamer_os")
+	colony_friend = FALSE
+	friendly_to_colony = FALSE
