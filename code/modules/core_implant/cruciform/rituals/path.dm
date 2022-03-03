@@ -102,40 +102,10 @@
 		participant.adjustOxyLoss(-40)
 		participant.adjustBrainLoss(-5)
 		participant.updatehealth()
-/*
-/datum/ritual/cruciform/tessellate/canticle_of_absolution
-	name = "Canticle of Absolution"
-	phrase = "PLACE HOLDER TEXT."
-	desc = "Cures the person in front of you of all genetic instability and cone damage while removing all forms of genetic mutation. This litany requires a great deal of power and thus may \
-	only be used once per hour."
-	cooldown = TRUE
-	cooldown_time = 60 MINUTES
-	power = 50
-	nutri_cost = 100
-	blood_cost = 50
-
-/datum/ritual/cruciform/tessellate/canticle_of_absolution/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
-	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
-	if(!T)
-		fail("No target in front of you.", user, C)
-		return FALSE
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
-	to_chat(T, SPAN_NOTICE("You feel your body returning to its natural state."))
-	to_chat(user, SPAN_NOTICE("You bring [T.name] back to their natural state."))
-
-	T.adjustCloneLoss(-200)
-	T.unnatural_mutations.removeAllMutations()
-
-	return TRUE
 
 /datum/ritual/cruciform/tessellate/desperate_calculation
 	name = "Martyr's Calculation"
-	phrase = "PLACE HOLDER TEXT."
+	phrase = "Et consideremus quomodo ad dilectionem et ad bene operandum se invicem stimemus."
 	desc = "An immensely powerful healing litany that restores any who hear it around the speaker, however the strength of the litany requires so much that the body of the speaker is temporarily stunned. \
 	Due to the strength of this hymn, it can only be used once every half hour."
 	cooldown = TRUE
@@ -180,7 +150,33 @@
 		participant.adjustOxyLoss(-80)
 		participant.adjustBrainLoss(-10)
 		participant.updatehealth()
-*/
+
+/datum/ritual/cruciform/tessellate/realignment
+	name = "Realignment"
+	phrase = "Quidvis facere licet, inquis - sed non omnia expediunt.'Ius mihi faciendum est' - sed non vincar ab aliquo."
+	desc = "Heals all toxins and liver damage, purges all toxic chemical reagents and stimulants in the blood stream, and slows down anyone in front of you while curing all addictions."
+	power = 50
+	nutri_cost = 25
+	blood_cost = 25
+
+/datum/ritual/cruciform/tessellate/realignment/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
+	if(!T)
+		fail("No target in front of you.", user, C)
+		return FALSE
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	to_chat(T, SPAN_NOTICE("You feel yourself growing more focused with each passing second."))
+	to_chat(user, SPAN_NOTICE("You grant [T.name] cleansing."))
+
+	T.reagents.add_reagent("alignitol", 10)
+
+	return TRUE
+
 //////////////////////////////////////////////////
 /////////         LEMNISCATE             /////////
 //////////////////////////////////////////////////
@@ -276,6 +272,28 @@
 	name = "Pilgrim's Path"
 	phrase = "Confortare et esto robustus. Nolite timere nec paveatis a conspectu eorum quia Dominus Deus tuus ipse est ductor tuus. Et non dimittet nec derelinquet te."
 	stats_to_boost = list(STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
+
+/datum/ritual/cruciform/lemniscate/food_for_the_masses
+	name = "Food for the Masses"
+	phrase = "Et consideremus quomodo ad dilectionem et ad bene operandum se invicem stimemus."
+	desc = "You call upon the churches limited fabrication abilities, creating a lunch box in hand that contains special upgraded food for you and others. While highly nutritious, it is also packed with \
+	healing chemicals and stimulants. The strain of using this litany, however, forces the speaker to wait a minimum of an hour to use it again."
+	cooldown = TRUE
+	power = 50
+	cooldown_time = 30 MINUTES
+	cooldown_category = "food_masses" //Seperate cooldown since it stuns the user.
+	nutri_cost = 100
+	blood_cost = 50
+
+/datum/ritual/targeted/cruciform/lemniscate/food_for_the_masses/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	user.put_in_hands((user.loc))
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	set_personal_cooldown(user)
 
 //////////////////////////////////////////////////
 /////////         MONOMIAL               /////////

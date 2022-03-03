@@ -201,13 +201,6 @@
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1
 
-/datum/reagent/medicine/dexalinp/holy
-	name = "Helaxin Negative"
-	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
-	id = "holydexalinp"
-	scannable = 0
-	appear_in_default_catalog = FALSE
-
 /datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.adjustOxyLoss(-30 * effect_multiplier)
 	M.add_chemical_effect(CE_OXYGENATED, 2)
@@ -403,6 +396,7 @@
 	scannable = 0
 	metabolism = 0.2
 	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/anodyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 90) // Tweaking the numbers here so that they are closer to what litanies used to do, this one is a flat -10 loss to what it used to be...
@@ -418,9 +412,31 @@
 	scannable = 0
 	metabolism = 0.5
 	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/laudanum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 40) // ...yet this one is a buff, making it an acceptably low painkiller range while keeping a 50 difference between tiers like Tram-to-Para ratio - Seb
+
+/datum/reagent/medicine/dexalinp/holy
+	name = "Helaxin Negative"
+	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
+	id = "holydexalinp"
+	scannable = 0
+	appear_in_default_catalog = FALSE
+	overdose = 0
+
+/datum/reagent/medicine/cindpetamol/holy
+	name = "Alignitol"
+	id = "alignitol"
+	description = "A chemical of unknown origin that purges toxins and addictions from the body, making it highly effective at aiding others, but has the side effect of putting users unconcious."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#FF3300"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 0
+	overdose = 0
 
 /* Other medicine */
 
