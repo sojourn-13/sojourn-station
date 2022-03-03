@@ -615,20 +615,20 @@ obj/item/clothing/accessory/scarf/green
 /obj/item/clothing/accessory/kneepads
 	name = "cheap kneepads"
 	desc = "A set of cheap, dingy old kneepads. Great for a round or two of hand-egg, but probably won't offer any real protection in a combat situation."
-	icon_state = "kneepads_cheap"
-	item_state = "kneepads_cheap"
+	icon_state = "kneepad_cheap"
+	item_state = "kneepad_cheap"
 
 /obj/item/clothing/accessory/kneepads/basic
 	name = "basic kneepads"
 	desc = "A set of decent kneepads. Good for construction work or other mild to heavy duty work! Probably won't offer any real protection in a combat situation."
-	icon_state = "kneepads_basic"
-	item_state = "kneepads_basic"
+	icon_state = "kneepad_basic"
+	item_state = "kneepad_basic"
 
 /obj/item/clothing/accessory/kneepads/expensive
 	name = "fancy kneepads"
 	desc = "A set of advanced leg-guards. Perfect for the that chic mercenary look, but less useful for true combat."
-	icon_state = "kneepads_expensive"
-	item_state = "kneepads_expensive"
+	icon_state = "kneepad_expensive"
+	item_state = "kneepad_expensive"
 
 
 /*Ranks*/
