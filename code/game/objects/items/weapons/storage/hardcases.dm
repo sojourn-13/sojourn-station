@@ -171,15 +171,17 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/voucher/marshal/specprimary(src)
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
 
-/obj/item/storage/hcases/ammo/ih/spec_officer/populate_contents()
+/obj/item/storage/hcases/ammo/ih/ranger_officer/populate_contents()
 	new /obj/item/handcuffs(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
+	new /obj/item/voucher/marshal/primary(src)
 	new /obj/item/cell/small/high(src)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer
