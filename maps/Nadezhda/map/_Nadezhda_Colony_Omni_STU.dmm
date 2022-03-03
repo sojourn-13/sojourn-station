@@ -72381,7 +72381,7 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "qms" = (
 /obj/structure/table/rack,
-/obj/item/rcd,
+/obj/item/rcd/industrial,
 /obj/item/stack/material/compressed_matter/full,
 /obj/item/stack/material/compressed_matter/full,
 /obj/effect/floor_decal/industrial/outline/yellow,

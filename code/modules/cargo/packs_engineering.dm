@@ -283,6 +283,15 @@
 	crate_name = "omnitool crate"
 	group = "Engineering"
 
+/datum/supply_pack/industrial_rcd
+	contains = list(/obj/item/rcd/industrial,
+					/obj/item/rcd/industrial)
+	name = "Industrial RCD Crate"
+	cost = 4000
+	containertype = /obj/structure/closet/crate
+	crate_name = "industrial RCD crate"
+	group = "Engineering"
+
 /datum/supply_pack/fueltank
 	name = "Fuel Tank Crate"
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
