@@ -8,7 +8,7 @@
 // Primary kits
 /obj/item/storage/box/m_kit/thompson
 	name = "\improper Thompson Kit"
-	desc = "The standard Marshal box kit containing a thompson submachine gun.An SMG worthy of main-carry, as long as one doesn't mind looking a bit dated "
+	desc = "The standard Marshal box kit containing a thompson submachine gun. An SMG worthy of main-carry, as long as one doesn't mind looking a bit dated "
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/thompson(src)
