@@ -836,7 +836,6 @@
 /obj/item/reagent_containers/glass/bottle/hclacid,
 /obj/item/reagent_containers/glass/bottle/hydrazine,
 /obj/item/reagent_containers/glass/bottle/mercury,
-/obj/item/reagent_containers/glass/bottle/phosphorus,
 /obj/item/reagent_containers/glass/bottle/pacid,
 /obj/item/reagent_containers/glass/bottle/potassium,
 /obj/item/reagent_containers/glass/bottle/phosphorus,
@@ -846,6 +845,9 @@
 /obj/item/reagent_containers/glass/bottle/sodium,
 /obj/item/reagent_containers/glass/bottle/sulfur,
 /obj/item/reagent_containers/glass/bottle/tungsten,
+/obj/item/reagent_containers/glass/bottle/acetone,
+/obj/item/reagent_containers/glass/bottle/iron,
+/obj/item/reagent_containers/glass/bottle/lithium,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dh" = (
@@ -901,6 +903,30 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/zoo)
+"dr" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/glass/bottle/aluminum,
+/obj/item/reagent_containers/glass/bottle/ammonia,
+/obj/item/reagent_containers/glass/bottle/carbon,
+/obj/item/reagent_containers/glass/bottle/copper,
+/obj/item/reagent_containers/glass/bottle/ethanol,
+/obj/item/reagent_containers/glass/bottle/hclacid,
+/obj/item/reagent_containers/glass/bottle/hydrazine,
+/obj/item/reagent_containers/glass/bottle/mercury,
+/obj/item/reagent_containers/glass/bottle/phosphorus,
+/obj/item/reagent_containers/glass/bottle/pacid,
+/obj/item/reagent_containers/glass/bottle/potassium,
+/obj/item/reagent_containers/glass/bottle/radium,
+/obj/item/reagent_containers/glass/bottle/sacid,
+/obj/item/reagent_containers/glass/bottle/silicon,
+/obj/item/reagent_containers/glass/bottle/sodium,
+/obj/item/reagent_containers/glass/bottle/sulfur,
+/obj/item/reagent_containers/glass/bottle/tungsten,
+/obj/item/reagent_containers/glass/bottle/acetone,
+/obj/item/reagent_containers/glass/bottle/iron,
+/obj/item/reagent_containers/glass/bottle/lithium,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ds" = (
 /obj/structure/salvageable/console_os{
 	dir = 1
@@ -16282,7 +16308,7 @@ dp
 dp
 we
 wd
-dg
+dr
 bm
 sS
 aV

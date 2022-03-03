@@ -84,7 +84,8 @@
 
 	unlocks_designs = list(/datum/design/research/circuit/sleeper,
 							/datum/design/research/circuit/slime_compresser,
-							/datum/design/research/item/medical/compact_roller_bed)
+							/datum/design/research/item/medical/compact_roller_bed,
+							/datum/design/research/circuit/sleeper)
 
 /datum/technology/hydroponics
 	name = "Hydroponics"

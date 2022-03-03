@@ -71,7 +71,7 @@
 	var/init_offset = 0
 
 	var/mouthshoot = FALSE //To stop people from suiciding twice... >.>
-
+	var/scoped_offset_reduction = 3
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
 	/*	SILENCER HANDLING */
 	var/silenced = FALSE
@@ -384,8 +384,6 @@
 		else
 			handle_click_empty(user)
 		return FALSE
-
-		next_fire_time = world.time + fire_delay
 
 	currently_firing = FALSE
 
@@ -923,17 +921,10 @@
 
 /obj/item/gun/zoom(tileoffset, viewsize)
 	..()
-	if(!ishuman(usr))
-		return
-	var/mob/living/carbon/human/H = usr
 	if(zoom)
-		H.using_scope = src
-		damage_multiplier += extra_damage_mult_scoped
+		init_offset -= scoped_offset_reduction
 	else
-		H.using_scope = null
 		refresh_upgrades()
-		if(folding_stock)
-			fold(span_chat = FALSE) //If we have a stock lets not remove all are boons cuz we looked down a scope
 
 /* //Eris has this but it, unsurpringly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/gun/proc/generate_guntags()

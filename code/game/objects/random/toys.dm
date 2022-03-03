@@ -19,7 +19,7 @@
 				/obj/item/toy/figure/character/command/captain,\
 				/obj/item/toy/figure/character/villains/ninja,\
 				/obj/item/toy/figure/character/villains/wizard,\
-				/obj/item/toy/figure/character/villains/syndie
+				/obj/item/toy/figure/character/villains/syndie,\
 				/obj/item/toy/figure/character/technomancer/ce,\
 				/obj/item/toy/figure/character/technomancer/engineer,\
 				/obj/item/toy/figure/character/ironhammer/detective,\

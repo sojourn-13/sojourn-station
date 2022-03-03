@@ -288,7 +288,7 @@
 	body_parts_covered = HEAD|FACE|EARS
 	siemens_coefficient = 1
 	price_tag = 600
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 15,
 		energy = 10,
@@ -302,7 +302,7 @@
 	desc = "A flat brim cap warn by Greyson Positronic office workers to keep out light and sport their logo at the same time."
 	icon_state = "os_cap"
 	item_state = "os_cap"
-	armor = list(
+	armor_list = list(
 		melee = 5,
 		bullet = 0,
 		energy = 0,
@@ -340,7 +340,7 @@
 	icon_state = "ragged_hood"
 	item_state = "ragged_hood"
 	flags_inv = HIDEEARS|BLOCKHAIR
-	armor = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
+	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 5, rad = 5)
 
 // hoods for the tacticool ponchos.
 

@@ -374,6 +374,8 @@
 	..()
 
 /datum/perk/rezsickness/on_process()
+	if(!..())
+		return
 	if(cooldown_time <= world.time)
 		holder.stats.removePerk(type)
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))
@@ -518,6 +520,7 @@
 /datum/perk/blackshield_conditioning/remove()
 	holder.brute_mod_perk += 0.15
 	holder.burn_mod_perk += 0.10
+	..()
 
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
@@ -535,6 +538,7 @@
 	holder.burn_mod_perk += 0.05
 	holder.oxy_mod_perk += 0.10
 	holder.toxin_mod_perk += 0.15
+	..()
 
 /datum/perk/job/butcher
 	name = "Master Butcher"
@@ -580,6 +584,7 @@
 
 /datum/perk/job/butcher/remove()
 	holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/job/master_herbalist
 	name = "Naturalist"
@@ -589,7 +594,7 @@
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/si_sci
-	name = "SI Science Trainning"
+	name = "SI Science Training"
 	desc = "You know how to use RnD core consoles and Exosuit Fabs."
 
 /datum/perk/greenthumb

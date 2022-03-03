@@ -295,7 +295,7 @@
 				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
 			return TRUE //No whacking the turret with cells on help intent
 
-		else if(istype(I, ammo_box) && I:stored_ammo.len)
+		else if(istype(I, ammo_box) && I?:stored_ammo?:len)
 			var/obj/item/ammo_magazine/A = I
 			if(ammo >= ammo_max)
 				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
@@ -465,7 +465,7 @@
 				cell = I
 				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
 
-		else if(istype(I, ammo_box) && I:stored_ammo.len)
+		else if(istype(I, ammo_box) && I?:stored_ammo?:len)
 			var/obj/item/ammo_magazine/A = I
 			if(ammo >= ammo_max)
 				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))

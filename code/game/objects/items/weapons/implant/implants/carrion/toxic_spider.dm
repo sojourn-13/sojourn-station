@@ -27,4 +27,4 @@
 	S.set_up(gas_storage, 10, 100, location)
 	S.start()
 	die()
-	..()
+	//..()

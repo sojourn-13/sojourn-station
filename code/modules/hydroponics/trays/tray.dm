@@ -263,7 +263,7 @@
 	if(user)
 		seed.harvest(user,yield_mod)
 	else
-		seed.harvest(get_turf(src),yield_mod)
+		seed.selfharvest(get_turf(src),yield_mod)
 	// Reset values.
 	harvest = 0
 	lastproduce = age
@@ -330,7 +330,7 @@
 			if (seed.evolutions && seed.evolutions.len)
 				for(var/rid in seed.evolutions)
 
-					var/list/checkEvoChems = seed.evolutions[rid].Copy()
+					var/list/checkEvoChems = seed.evolutions[rid]?:Copy()
 
 					if (checkEvoChems ~= (checkEvoChems & seed.chems))
 						evolve_species(rid)

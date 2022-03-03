@@ -437,5 +437,5 @@ mob/living/carbon/superior_animal/adjustToxLoss(var/amount)
 
 
 /mob/living/carbon/superior_animal/proc/pick_armor()
-	..()
+	return
 

@@ -324,7 +324,9 @@ var/list/mob_hat_cache = list()
 //Reboot procs.
 
 /mob/living/silicon/robot/drone/proc/we_live_again(var/mob/living/silicon/robot/R) //we shall live again!
-	..() //Can never go wrong with one of these!
+	//..() //Can never go wrong with one of these!
+	//Hex: Yes you can! STOP MAKING LINTER CHAN CRY!
+
 	R.stat = CONSCIOUS //We live again!
 	GLOB.dead_mob_list -= R //Were not dead...
 	GLOB.living_mob_list |= R //Were infact alive

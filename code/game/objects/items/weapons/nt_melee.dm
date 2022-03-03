@@ -265,7 +265,7 @@
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
 	force = WEAPON_FORCE_DANGEROUS
-	armor = list(melee = 20, bullet = 30, energy = 30, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 20, bullet = 30, energy = 30, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_GOLD = 5)
 	price_tag = 1000
 	base_block_chance = 60

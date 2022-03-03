@@ -4,7 +4,7 @@
 	desc = "A lighter, less armoured rig suit."
 	icon_state = "ninja_rig"
 	suit_type = "light suit"
-	armor = list(
+	armor_list = list(
 		melee = 25,
 		bullet = 20,
 		energy = 20,
@@ -42,7 +42,7 @@
 	desc = "An ultra light, unarmoured rig suit. The precursor to the Soteria retainer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
 	icon_state = "hacker_rig"
 	suit_type = "light suit"
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 0,
@@ -75,7 +75,7 @@
 /obj/item/rig/light/hacker/steward
 	name = "SI 'Retainer' control module"
 	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 25,
 		energy = 30,
@@ -146,7 +146,7 @@
 	suit_type = "ominous"
 	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	icon_state = "ninja_rig"
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 30,
 		energy = 20,

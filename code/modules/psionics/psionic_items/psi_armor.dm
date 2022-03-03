@@ -18,7 +18,7 @@
 	matter = list()
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS //It has gloves, hood, and shoes for the rest of them
 	slowdown = 0.3 //Slightly faster than the red suit. Maybe do it at 0.2?
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 35,
 		energy = 35,
@@ -57,7 +57,7 @@
 	Strange, it seems to have far more room on the inside than one would think."
 	slot_flags = SLOT_HEAD
 	matter = list()
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 35,
 		energy = 35,
@@ -122,7 +122,7 @@
 	slot_flags = SLOT_GLOVES
 	siemens_coefficient = 1 //Insulated!
 	matter = list()
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 35,
 		energy = 35,
@@ -161,7 +161,7 @@
 	icon_override = 'icons/obj/psionic/occmob.dmi'
 	slot_flags = SLOT_FEET
 	matter = list()
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 35,
 		energy = 35,

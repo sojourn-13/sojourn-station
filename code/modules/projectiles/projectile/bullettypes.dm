@@ -444,10 +444,11 @@
 	damage_types = list(BRUTE = 60)
 	embed = TRUE
 	armor_penetration = 60
-	agony = 70
+	agony = 100
 	penetrating = 2
 	affective_damage_range = 9
 	affective_ap_range = 9
+	penetrating = -5
 
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 63)
@@ -660,11 +661,11 @@
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	explosion(target, 0, 0, 3)
-	return TRUE
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
+	return TRUE
 
 //Miscellaneous
 /obj/item/projectile/bullet/blank

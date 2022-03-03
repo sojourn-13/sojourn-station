@@ -7,7 +7,7 @@
 	icon_closed = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		bomb = 0,
@@ -46,7 +46,7 @@
 	icon_state = "labcoat_medspec_open"
 	icon_open = "labcoat_medspec_open"
 	icon_closed = "labcoat_medspec"
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		bomb = 0,
@@ -78,7 +78,7 @@
 	item_state = "labcoat_membrane" //Is this even used for anything?
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		bomb = 0,

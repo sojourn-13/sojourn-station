@@ -2515,7 +2515,7 @@
 
 /obj/item/reagent_containers/food/snacks/honeypudding
 	name = "honey pudding"
-	desc = "A tasty dessert that is made with honey and cocoa powerder for a delightful pudding." // IT'S CHOCOLATE NOT COCAINE! - Seb
+	desc = "A tasty dessert that is made with honey and cocoa powder for a delightful pudding." // IT'S CHOCOLATE NOT COCAINE! - Seb
 	icon_state = "pudding"
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)

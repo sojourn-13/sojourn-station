@@ -6,7 +6,7 @@
 	desc = "A sleek and dangerous hardsuit for active combat."
 	icon_state = "security_rig"
 	suit_type = "combat hardsuit"
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 45,
 		energy = 30,
@@ -59,7 +59,7 @@
 	desc = "A Blackshield RIG module that has been tailored for CQC. Due to its plating, it's slightly bulkier than normal standard security hardsuits."
 	icon_state = "blackshield_rig"
 	suit_type = "light suit"
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 55,
 		energy = 40,
@@ -98,7 +98,7 @@
 /obj/item/clothing/head/helmet/space/rig/combat/blackshield
 	name = "blackshield hazard hood"
 	desc = "A hazard hood modded to help against CQC combat."
-	armor = list(
+	armor_list = list(
 		melee = 65,
 		bullet = 55,
 		energy = 40,

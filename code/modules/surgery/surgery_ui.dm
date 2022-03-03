@@ -160,10 +160,11 @@
 			return TRUE
 
 		if("remove_shrapnel")
+			//soj edits to be insainly easyer for corpsmen
 			if(istype(usr, /mob/living))
 				var/mob/living/user = usr
 				var/target_stat = BP_IS_ROBOTIC(src) ? STAT_MEC : STAT_BIO
-				var/removal_time = 70 * usr.stats.getMult(target_stat, STAT_LEVEL_PROF)
+				var/removal_time = 50 * usr.stats.getMult(target_stat, STAT_LEVEL_PROF)
 				var/target = get_surgery_target()
 				var/obj/item/I = user.get_active_hand()
 
@@ -180,7 +181,7 @@
 					wait = do_after(user, removal_time, target, needhand = FALSE)
 
 				if(wait)
-					if(prob(100 - (FAILCHANCE_VERY_EASY + usr.stats.getStat(target_stat)))) //70 bio or mech will make you never fail when doing surgery
+					if(prob(30 - (FAILCHANCE_VERY_EASY + usr.stats.getStat(target_stat)))) //30 bio or mech will make you never fail when doing surgery
 						for(var/obj/item/material/shard/shrapnel/shrapnel in src.implants)
 							implants -= shrapnel
 							shrapnel.loc = get_turf(src)

@@ -5,7 +5,7 @@
 	icon_state = "void"
 
 	heat_protection = HEAD
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 10,
@@ -23,7 +23,7 @@
 	item_state = "void"
 	desc = "A high-tech dark red space suit."
 	slowdown = 1
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 10,

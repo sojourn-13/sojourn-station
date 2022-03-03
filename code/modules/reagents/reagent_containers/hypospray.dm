@@ -15,6 +15,8 @@
 	reagent_flags = OPENCONTAINER
 	slot_flags = SLOT_BELT
 	preloaded_reagents = list("tricordrazine" = 40)
+	var/injtime = 0 //A simple delay in injecting
+
 
 /obj/item/reagent_containers/hypospray/New()
 	..()
@@ -32,14 +34,16 @@
 		return
 	if (!istype(M))
 		return
-	var/injtime //Injecting through a hardsuit takes long time due to needing to find a port.
 	// Handling errors and injection duration
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
 		var/obj/item/clothing/suit/space/SS = H.get_equipped_item(slot_wear_suit)
 		var/obj/item/rig/RIG = H.get_equipped_item(slot_back)
+		if(H.a_intent == I_HURT)
+			user.visible_message(SPAN_WARNING("[user] trys to inject [M] with [src]! But [M] is actively resisting"), SPAN_WARNING("You inject begin injecting [M] with [src] but they seem to be resisting."))
+			injtime += 30
 		if((istype(RIG) && RIG.suit_is_deployed()) || istype(SS))
-			injtime = 30
+			injtime += 30
 			var/obj/item/organ/external/affected = H.get_organ(BP_CHEST)
 			if(BP_IS_ROBOTIC(affected))
 				to_chat(user, SPAN_WARNING("Injection port on [M]'s suit is refusing your [src]."))
@@ -107,6 +111,7 @@
 	volume = 5
 	preloaded_reagents = list("inaprovaline" = 5)
 	var/can_be_refilled = TRUE //For cargos
+	injtime = 5 //Instant was a bit to powerful well refilling
 
 /obj/item/reagent_containers/hypospray/autoinjector/examine(mob/user)
 	..()
