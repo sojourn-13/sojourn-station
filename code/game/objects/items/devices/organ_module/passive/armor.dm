@@ -32,3 +32,9 @@
 			qdel(src)
 			return
 	return ..()
+
+/obj/item/organ_module/emp_armor
+	name = "osmium shielding"
+	desc = "An old Greyson design, these plates of pure osmium allow any vitally-augmented person, from a frail grandmother to the most durable FBP, complete protection from EMPs on that bodypart."
+	icon_state = "armor-chest"
+	matter = list(MATERIAL_OSMIUM = 20) // Cost a fuck ton of compressed platinum

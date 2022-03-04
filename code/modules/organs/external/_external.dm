@@ -275,6 +275,8 @@
 /obj/item/organ/external/emp_act(severity)
 	if(!BP_IS_ROBOTIC(src))
 		return
+	if(istype(module, /obj/item/organ_module/emp_armor)) // If the limb has the anti-EMP armor.
+		return
 	switch (severity)
 		if (1)
 			take_damage(20)

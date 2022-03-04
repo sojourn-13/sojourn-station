@@ -28,7 +28,7 @@
 	var/datum/species/species			//TODO: Fix this
 	var/datum/species_form/form
 
-	var/inserted_and_processing = TRUE //Organs are removed from the object subsystem when inserted inside of a person. 
+	var/inserted_and_processing = TRUE //Organs are removed from the object subsystem when inserted inside of a person.
 									   //This makes sure they can turn off processing while implanted in someone.
 
 	// Damage vars.
@@ -275,6 +275,8 @@
 
 /obj/item/organ/emp_act(severity)
 	if(!BP_IS_ROBOTIC(src))
+		return
+	if(istype(parent?.module, /obj/item/organ_module/emp_armor)) // If the limb has the anti-EMP armor.
 		return
 	switch (severity)
 		if (1)
