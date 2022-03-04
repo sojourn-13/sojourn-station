@@ -593,6 +593,10 @@
 	max_ammo = 99
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/c10x24/empty
+	icon_state = "10x24"
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/rifle_10x24
 	name = "light rifle magazine"
 	desc = "A 20 round magazine marked for 10x24 rounds."
