@@ -706,6 +706,35 @@
 	I.prefix = "sanctified"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
+/obj/item/tool_upgrade/augment/sanctifier_plus
+	name = "overclocked sanctifier"
+	icon_state = "sanctifier_plus"
+	desc = "Recommended for crusades against mutants, wild life, and heretics. Does this device actually make a better weapon or is it something else? Regardless, it makes one more thoughtful during labor. \
+	This one has been overclocked by members of the factortial path, increasing both its benefits and its drawbacks."
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 2)
+	price_tag = 20
+
+/obj/item/tool_upgrade/augment/sanctifier_plus/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_SANCTIFY = TRUE,
+	UPGRADE_FORCE_MOD = 12,
+	UPGRADE_PRECISION = 15,
+	UPGRADE_HEALTH_THRESHOLD = 15,
+	UPGRADE_DEGRADATION_MULT = 0.7,
+	UPGRADE_WORKSPEED = -0.75
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 0.6,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.3,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 1.3,
+	GUN_UPGRADE_CHARGECOST = 0.7
+	)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "over sanctified"
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
+
 /*
 /obj/item/tool_upgrade/augment/hammer_addon
 	name = "flat surface"

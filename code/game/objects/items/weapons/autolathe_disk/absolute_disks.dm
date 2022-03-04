@@ -296,7 +296,6 @@
 	)
 
 //Absolute Armory gun packs
-
 /obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns
 	disk_name = "Absolute Armory of the Old Testament"
 	desc = "A rare and expensive disk containing designs for highly advanced energy and ballistic weaponry from the Old Testament, the Absolutes arms division."

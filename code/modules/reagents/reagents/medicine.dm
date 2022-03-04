@@ -380,6 +380,7 @@
 	overdose = 0
 	scannable = 0
 	metabolism = 0.2
+	appear_in_default_catalog = FALSE
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/nepenthe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -433,6 +434,16 @@
 	reagent_state = LIQUID
 	color = "#FF3300"
 	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 0
+	overdose = 0
+
+/datum/reagent/medicine/spaceacillin/holy
+	name = "Holycilin"
+	id = "holycilin"
+	description = "A chemical of unknown origin, believed to be derived from cahors and spaceacillin that functions identical to the latter."
+	taste_description = "sweetness"
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
 	scannable = 0
@@ -821,7 +832,7 @@
 /datum/reagent/medicine/ossisine/overdose(mob/living/carbon/M, alien)
 	M.paralysis = max(M.paralysis, 5)
 	M.adjustCloneLoss(2)
-	
+
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		//if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3

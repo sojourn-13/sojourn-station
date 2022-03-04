@@ -44,3 +44,5 @@
 	new /obj/item/reagent_containers/food/snacks/poppypretzel/holy(src)
 	new /obj/item/reagent_containers/food/snacks/toastedsandwich/holy(src)
 	new /obj/item/reagent_containers/food/snacks/toastedsandwich/holy(src)
+	new /obj/item/reagent_containers/food/drinks/cans/cahors/lemniscate(src)
+	new /obj/item/reagent_containers/food/drinks/cans/cahors/lemniscate(src)

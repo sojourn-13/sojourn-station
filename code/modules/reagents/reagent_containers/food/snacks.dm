@@ -1754,7 +1754,7 @@
 	name = "omni-poppy pretzel"
 	desc = "A pretzal sprinkled with the seeds and spices of custom tailored plants grown by the church. Contains quite a few healing properties."
 	bitesize = 3
-	preloaded_reagents = list("bicaridine" = 3, "anti_toxin" = 3, "dexalinp" = 3, "dermaline" = 3, "laudanum" = 3)
+	preloaded_reagents = list("bicaridine" = 6, "anti_toxin" = 6, "dexalinp" = 6, "dermaline" = 6, "laudanum" = 6)
 
 /obj/item/reagent_containers/food/snacks/meatballsoup
 	name = "meatball soup"
