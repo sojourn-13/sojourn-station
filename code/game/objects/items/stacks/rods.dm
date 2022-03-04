@@ -16,10 +16,12 @@
 	attack_verb = list("hit", "bludgeoned", "whacked")
 	price_tag = 1
 	novariants = FALSE
+	stacktype_alt = /obj/item/stack/rods/random
 
 /obj/item/stack/rods/random
 	rand_min = 2
 	rand_max = 5
+	stacktype_alt = /obj/item/stack/rods
 
 /obj/item/stack/rods/cyborg
 	name = "metal rod synthesizer"
