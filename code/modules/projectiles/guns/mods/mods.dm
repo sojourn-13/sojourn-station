@@ -483,6 +483,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 */
+/* //The handholder rail and its consequences have been a disaster for Sojournkind.
 /obj/item/gun_upgrade/mechanism/gun_rail
 	name = "H&S \"HandHolder\" Barrel Rail"
 	desc = "A simple magnetic barrel rail, designed to fit onto a variety of weapons. Easy to attach, impossible to remove."
@@ -490,7 +491,7 @@
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 	can_remove = FALSE
 	price_tag = 60
-
+*/
 /obj/item/gun_upgrade/mechanism/gun_rail/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
