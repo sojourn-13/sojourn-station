@@ -1565,6 +1565,36 @@
 	set_trait(TRAIT_INVASIVE,1)
 
 
+///////////////////
+// The following were lovingly stolen/ported from Occulus-Eris
+// Coding: ShadzFen
+// Spriting: Sigmasquad
+
+/datum/seed/blueberry
+	name = "blueberries"
+	seed_name = "blueberry"
+	display_name = "blueberry bush"
+	chems = list("nutriment" = list(1,10), "blueberryjuice" = list(10,10))
+	kitchen_tag = "blueberries"
+
+
+/datum/seed/blueberry/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_JUICY,1)
+	set_trait(TRAIT_MATURATION,5)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"berry")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#3BA4EC")
+	set_trait(TRAIT_PLANT_ICON,"bush")
+	set_trait(TRAIT_IDEAL_HEAT, 298)
+	set_trait(TRAIT_IDEAL_LIGHT, 7)
+	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+
 /datum/seed/strawberry
 	name = "strawberries"
 	seed_name = "strawberries"
@@ -1649,3 +1679,5 @@
 	set_trait(TRAIT_IDEAL_LIGHT, 7)
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/////////////////
