@@ -491,7 +491,7 @@
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 	can_remove = FALSE
 	price_tag = 60
-*/
+
 /obj/item/gun_upgrade/mechanism/gun_rail/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
@@ -505,7 +505,7 @@
 	I.breakable = FALSE
 	I.unique_removal = TRUE
 	I.unique_removal_type = GUN_SCOPE
-
+*/
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"
 	desc = "One of the rarest and most powerful weapon modification ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
