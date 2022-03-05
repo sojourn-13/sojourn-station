@@ -430,8 +430,8 @@
 	to_chat(T, SPAN_NOTICE("You feel slightly better as your pain eases."))
 	to_chat(user, SPAN_NOTICE("You ease the pain of [T.name]."))
 
-	if(user.sanity.insight >= 50 && user.species?.reagent_tag != IS_SYNTHETIC && T.species?.reagent_tag != IS_SYNTHETIC)
-		user.sanity.insight -= 50
+	if(user.sanity.insight >= 25 && user.species?.reagent_tag != IS_SYNTHETIC && T.species?.reagent_tag != IS_SYNTHETIC)
+		user.sanity.insight -= 25
 		T.sanity.insight += 50
 		to_chat(user, "<span class='info'>You offer your insight to [T.name], your meditation boosting another, allowing them a glimpse at your perceptions.</span>")
 		to_chat(T, "<span class='info'>You feel inspired, a new perspective offered by another, showing you the same picture from a different angle.</span>")
