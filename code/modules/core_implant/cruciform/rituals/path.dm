@@ -128,14 +128,14 @@
 			people_around.Add(H)
 
 	if(people_around.len > 0)
-		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany."))
+		user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
 			heal_other(participant)
 			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_personal_cooldown(user)
-		user.Weaken(10)
+		user.AdjustSleeping(30)
 		return TRUE
 	else
 		fail("Your cruciform sings, alone, unto the void.", user, C)
