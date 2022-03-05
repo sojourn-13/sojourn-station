@@ -311,7 +311,7 @@
 /obj/item/shockpaddles/proc/can_defib(mob/living/carbon/human/H) //This is checked before doing the defib operation
 	if((H.species.flags & NO_SCAN && H.species.reagent_tag != IS_SYNTHETIC)) //Synths and FBPs should now bypass the NO_SCAN requirement
 		return "buzzes: \"Unrecogized physiology. Operation aborted.\""
-	else if(H.isSynthetic() && !use_on_synthetic && !si_only) // The Advanced defibs will now work on both flesh and synth
+	else if(H.isSynthetic() && !use_on_synthetic && !advanced_pads) // All Advanced defibs will now work on both flesh and synth
 		return "buzzes: \"Synthetic Body. Operation aborted.\""
 	else if(!H.isSynthetic() && use_on_synthetic)
 		return "buzzes: \"Organic Body. Operation aborted.\""
