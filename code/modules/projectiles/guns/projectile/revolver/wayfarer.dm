@@ -1,9 +1,9 @@
 //Sprite by Rebel
 /obj/item/gun/projectile/revolver/wayfarer
 	name = "\"Wayfarer\" caseless revolver"
-	desc = "A exstreamly well hand made revolver of a mix of steel, iron and plasteel with a polished wooden stock. \
-	The barrel inside it refined to be ideal for 10x24 caseless and easy to clean. \
-	Well produced by Excelsior it dosnt have the normal markings other then the quote - \
+	desc = "A sleek and well-made revolver that has been hand-produced with care, menacing with reinforcements of plasteel which reinforces the barrel assembly, which has been forged from a mix of high-carbon steel, banded with low-carbon iron around the cylinder; and possesses a polished mahogany handle for a grip. \
+	The Barrel is refined to use high-power 10x24 caseless munitions while being easy to clean. \
+	While seemingly produced by Excelsior; hinted by the stamp placed upon its grip, it lacks most of the normal markings - and is instead tagged with a simple quote - \
 	\"The hopeless don't revolt, because revolution is an act of hope.\""
 	icon = 'icons/obj/guns/projectile/wayfarer.dmi'
 	icon_state = "wayfarer"
