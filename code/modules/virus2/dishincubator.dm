@@ -128,12 +128,12 @@
 		SSnano.update_uis(src)
 
 	if(beaker)
-		if(foodsupply < 100 && beaker.reagents.remove_reagent("virusfood",5))
-			if(foodsupply + 10 <= 100)
-				foodsupply += 10
+		if(foodsupply < 100 && (foodsupply + 5) <= 100)
+			if (beaker.reagents.has_reagent("virusfood", 1) < 0)
+				return
 			else
-				beaker.reagents.add_reagent("virusfood",(100 - foodsupply)/2)
-				foodsupply = 100
+				beaker.reagents.remove_reagent("virusfood", 1)
+				foodsupply += 5
 			SSnano.update_uis(src)
 
 		if (locate(/datum/reagent/toxin) in beaker.reagents.reagent_list && toxins < 100)
