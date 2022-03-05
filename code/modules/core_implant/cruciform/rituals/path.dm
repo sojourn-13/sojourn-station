@@ -782,7 +782,7 @@
 					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Cancel Litany")
-			fail("You decide not to obtain a prosthetic at this time.", user, C)
+			fail("You decide not to obtain church artifice at this time.", user, C)
 			return FALSE
 		set_personal_cooldown(user)
 	return TRUE
@@ -881,7 +881,7 @@
 					user.vessel.remove_reagent("blood",blood_cost)
 			return TRUE
 		if (response == "Cancel Litany")
-			fail("You decide not to obtain a prosthetic at this time.", user, C)
+			fail("You decide not to obtain church artifice at this time.", user, C)
 			return FALSE
 		set_personal_cooldown(user)
 	return TRUE
