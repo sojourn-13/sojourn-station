@@ -334,6 +334,7 @@
 	desc = "A small red brick that makes a silly sound."
 	icon_state = "brick"
 	force = WEAPON_FORCE_DANGEROUS
+	throwforce  = WEAPON_FORCE_BRUTAL
 	oddity_stats = list(
 		STAT_MEC = 8,
 		STAT_TGH = 8,
