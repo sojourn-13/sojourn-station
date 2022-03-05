@@ -592,7 +592,7 @@
 	if(!was_triggired)
 		for (var/mob/living/simple_animal/hostile/S in range(14, H))
 			if (S.stat != DEAD)
-				to_chat(H, SPAN_WARNING("Adversaries are near. You can feel something nasty and hostile."))
+				to_chat(H, SPAN_WARNING("A simple hostile brute is nearby, nasty and stupid."))
 				was_triggired = TRUE
 
 	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine) in view(7, H))
