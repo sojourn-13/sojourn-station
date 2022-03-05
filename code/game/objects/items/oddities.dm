@@ -329,6 +329,18 @@
 		STAT_MEC = 10,
 	)
 
+/obj/item/oddity/common/redbrick
+	name = "red brick"
+	desc = "A small red brick that makes a silly sound."
+	icon_state = "brick"
+	force = WEAPON_FORCE_DANGEROUS
+	oddity_stats = list(
+		STAT_MEC = 8,
+		STAT_TGH = 8,
+		STAT_ROB = 6,
+	)
+	hitsound = 'sound/weapons/redbrick.ogg'
+
 /obj/item/oddity/common/mirror
 	name = "cracked mirror"
 	desc = "A thousand mirror images stare back at you as you examine the trinket. What if you're the reflection, staring back out at the real world? At the real you?"
@@ -571,7 +583,7 @@
 	desc = "A heavy book with details and translations of the Marshal codes."
 	icon_state = "book_code"
 	oddity_stats = list(
-		STAT_COG = 0
+		STAT_VIG = 20
 	)
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = /datum/perk/codespeak
@@ -581,7 +593,7 @@
 	desc = "A heavy book with details and translations of chemistry and its affects on the body, even has some guides on how to properly use chemicals."
 	icon_state = "instructional_bio"
 	oddity_stats = list(
-		STAT_BIO = 0
+		STAT_BIO = 20
 	)
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = /datum/perk/chemist
@@ -726,8 +738,8 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	slot_flags = SLOT_BELT
-	sharp = 1
-	edge = 1
+	sharp = TRUE
+	edge = TRUE
 	armor_penetration = ARMOR_PEN_SHALLOW
 
 	oddity_stats = list(
