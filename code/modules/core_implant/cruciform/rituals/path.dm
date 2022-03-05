@@ -411,7 +411,7 @@
 /datum/ritual/cruciform/monomial/inner_peace
 	name = "Inner Peace"
 	phrase = "Nolite iudicare, aut vos iudicabimini."
-	desc = "You impart a portion of your inner peace on another, gifting them with insight beyond what they are normally capable of. In doing so, you sacrifice some of your own."
+	desc = "You impart a portion of your inner peace on another, gifting them with insight beyond what they are normally capable of. In doing so, you sacrifice some of your own. Requires ten minutes between uses."
 	cooldown = TRUE
 	cooldown_time = 10 MINUTES
 	cooldown_category = "inner_peace"
