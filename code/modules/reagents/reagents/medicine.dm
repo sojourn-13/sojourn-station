@@ -377,7 +377,7 @@
 	taste_description = "fading sorrow"
 	reagent_state = LIQUID
 	color = "#AA5656"
-	overdose = 60
+	overdose = 0
 	scannable = 0
 	metabolism = 0.2
 	appear_in_default_catalog = FALSE
@@ -393,7 +393,7 @@
 	taste_description = "numbness"
 	reagent_state = LIQUID
 	color = "#BAA845"
-	overdose = 60
+	overdose = 0
 	scannable = 0
 	metabolism = 0.2
 	nerve_system_accumulations = 0
@@ -409,7 +409,7 @@
 	taste_description = "home"
 	reagent_state = LIQUID
 	color = "#488531"
-	overdose = 60
+	overdose = 0
 	scannable = 0
 	metabolism = 0.5
 	nerve_system_accumulations = 0
@@ -424,7 +424,7 @@
 	id = "holydexalinp"
 	scannable = 0
 	appear_in_default_catalog = FALSE
-	overdose = 60
+	overdose = 0
 
 /datum/reagent/medicine/cindpetamol/holy
 	name = "Alignitol"
@@ -437,7 +437,7 @@
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
 	scannable = 0
-	overdose = 60
+	overdose = 0
 
 /datum/reagent/medicine/spaceacillin/holy
 	name = "Holycilin"
@@ -447,7 +447,7 @@
 	appear_in_default_catalog = FALSE
 	constant_metabolism = TRUE
 	scannable = 0
-	overdose = 60
+	overdose = 0
 
 /* Other medicine */
 
