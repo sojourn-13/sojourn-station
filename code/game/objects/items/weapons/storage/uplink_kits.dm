@@ -316,6 +316,15 @@
 	new /obj/item/device/spy_sensor(src)
 
 
+/obj/item/storage/box/syndie_kit/exl_revolver
+	name = "\"Wayfarer\" caseless revolver kit"
+	desc = "A well made 10x24 claseless revolver and some ammo."
+
+/obj/item/storage/box/syndie_kit/exl_revolver/populate_contents()
+	new /obj/item/gun/projectile/revolver/wayfarer(src)
+	new /obj/item/ammo_magazine/ammobox/c10x24_small(src)
+	new /obj/item/ammo_magazine/ammobox/c10x24_small(src)
+
 /obj/item/storage/secure/briefcase/money
 	name = "suspicious briefcase"
 	desc = "An ominous briefcase that has the unmistakeable smell of old, stale cigarette smoke, and gives those who look at it a bad feeling."

@@ -2730,6 +2730,7 @@
 #include "code\modules\projectiles\guns\projectile\revolver\revolver.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\sixshot.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\tacticool_revolver.dm"
+#include "code\modules\projectiles\guns\projectile\revolver\wayfarer.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun\bull.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun\combatsg.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun\doublebarrel.dm"
