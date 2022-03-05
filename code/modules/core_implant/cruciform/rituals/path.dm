@@ -412,6 +412,9 @@
 	name = "Inner Peace"
 	phrase = "Nolite iudicare, aut vos iudicabimini."
 	desc = "You impart a portion of your inner peace on another, gifting them with insight beyond what they are normally capable of. In doing so, you sacrifice some of your own."
+	cooldown = TRUE
+	cooldown_time = 10 MINUTES
+	cooldown_category = "inner_peace"
 	power = 90
 	nutri_cost = 25
 	blood_cost = 25
@@ -435,6 +438,7 @@
 		T.sanity.insight += 50
 		to_chat(user, "<span class='info'>You offer your insight to [T.name], your meditation boosting another, allowing them a glimpse at your perceptions.</span>")
 		to_chat(T, "<span class='info'>You feel inspired, a new perspective offered by another, showing you the same picture from a different angle.</span>")
+		set_personal_cooldown(user)
 	else
 		to_chat(user, SPAN_WARNING("You lack the personal insight to impart more to another, time and meditation will allow you to try again."))
 
