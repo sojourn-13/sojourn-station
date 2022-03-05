@@ -630,7 +630,7 @@
 			if(60 to INFINITY)
 				M.stats.addPerk(/datum/perk/rezsickness)
 				log_and_message_admins("Added mild rez sickness to [M].")
-	else
+	else if(!M.isSynthetic())
 		M.stats.addPerk(/datum/perk/rezsickness)
 		log_and_message_admins("Added mild rez sickness to [M].")
 
