@@ -39,11 +39,10 @@
 				/obj/item/card_carp/cockroach = 4,
 				/obj/item/card_carp/ant = 3,
 				/obj/item/card_carp/antqueen = 2,
-				/obj/item/card_carp/tree = 2,
-				/obj/item/card_carp/rock = 3,
 				/obj/item/card_carp/ratking = 3,
 				/obj/item/card_carp/plaguerat = 5,
 				/obj/item/card_carp/kangaroorat = 3,
+				/obj/random/card_carp/terrain = 3,
 				/obj/random/card_carp/rare = 1 //Rare is rare
 				))
 
@@ -52,7 +51,7 @@
 	icon_state = "techloot-grey"
 
 
-/obj/random/card_carp/item_to_spawn()
+/obj/random/card_carp/rare/item_to_spawn()
 	return pickweight(list(
 				/obj/item/card_carp/goat = 1,
 				/obj/item/card_carp/manti_lord = 4,
@@ -69,6 +68,19 @@
 				/obj/item/card_carp/fieldmice = 4
 				))
 
+/obj/random/card_carp/terrain
+	name = "random terrain card carp"
+	icon_state = "techloot-grey"
+
+
+/obj/random/card_carp/terrain/item_to_spawn()
+	return pickweight(list(
+				/obj/item/card_carp/tree = 4,
+				/obj/item/card_carp/pinetree = 2,
+				/obj/item/card_carp/rock = 3,
+				/obj/item/card_carp/bloodrock = 1
+				))
+
 /obj/random/card_carp/pelt
 	name = "random card carp pelt"
 	icon_state = "techloot-grey"
@@ -77,6 +89,7 @@
 	return pickweight(list(
 				/obj/item/card_carp/rpelt = 20,
 				/obj/item/card_carp/dpelt = 10,
+				/obj/item/card_carp/pinepelt = 5,
 				/obj/item/card_carp/gpelt = 1 //SO RARE
 				))
 

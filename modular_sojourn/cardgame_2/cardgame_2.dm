@@ -40,6 +40,7 @@
 	Destructive - All cards with destructive kill all cards of the same kin type when dying. I.E. a crab with destructive kills all other crabs. Type is determined by matching words in the name.<BR>\n\
 	Deathtouch - On attack, any card it is facing is considered killed.<BR>\n\
 	Eternal - This card does not die when used as a sacrifice for blood.<BR>\n\
+	Thorns - When attacked deal one damage back to the card that attacked them.<BR>\n\
 	Stinky - This card reduces any opposing cards power by 1.<BR>\n\
 	Defender - This card can block cards with flying.<BR>\n\
 	Prong Strike - This card attacks twice, dealing damage and attacking on the left and right side of the card. Prong Strike prevents attacking the card directly opposing this card. If a prong \
@@ -54,11 +55,15 @@
 	Generous - When this card is played, the owner may draw a card of their choice from either deck.<BR>\n\
 	Undying - When this card dies, instead of being placed in the owner's discard pile, it is returned to the owner's hand.<BR>\n\
 	Chime - When this card dies, the owner of this card draws one card from a deck of their choice.<BR>\n\
+	Blood Donor - This card when sacrificed counts as three blood rather then one.<BR>\n\
 	Boneless - When this card dies, place it back into the box it was drawn from.<BR>\n\
+	Bloodless - This card can not be used for blood in summaning or playing other cards.<BR>\n\
 	Pelt - Pelt cards may be placed on any position on either players board when played. Pelt cards do not move but otherwise follow the same rules as other cards. Pelt cards cannot be sacrificed \
 	for blood and are added to the discard pile upon death.<BR>\n\
-	Terrain - Terrain  cards may be placed on any position on either players board before the game begins. Terrain cards do not move and cannot be sacrified for blood, nor do they give bones. When a terrain card is \
+	Terrain - Terrain  cards may be placed on any position on either players board before the game begins. Terrain cards do not move. When a terrain card is \
 	destroyed unless otherwise noted it is not placed in the player's discard pile and is instead removed from the game. Each player can only play a maximum of 2 terrain cards during pre-match set up.<BR>\n\
+	Rivalry - This card loses power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only remove 1 power, no matter how many matching \
+	types they have, unless otherwise stated. Rivalry cards do not count themselves for the purposes of losing power.<BR>\n\
 	Kinship - This card gains power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only add 1 power, no matter how many matching \
 	types they have, unless otherwise stated. Kinship cards do not count themselves for the purposes of gaining power."
 
@@ -97,7 +102,7 @@
 
 /obj/item/card_carp/rat
 	name = "Rat"
-	desc = "A rat, a fastidiously clean creature. H1/P1. Cannot provide blood."
+	desc = "A rat, a fastidiously clean creature. H1/P1. Bloodless, Rivalry."
 	icon_state = "card_rat"
 	cant_box = TRUE
 	current_health = 1
@@ -132,7 +137,7 @@
 
 /obj/item/card_carp/goat
 	name = "Goat"
-	desc = "A black goat, perfect for serving your stronger creatures. H2/P0, Requires 1 blood and 1 bone. Gives 3 blood."
+	desc = "A black goat, perfect for serving your stronger creatures. H2/P0, Requires 1 blood and 1 bone. Blood Donor."
 	icon_state = "card_goat"
 	current_health = 2
 
@@ -222,25 +227,25 @@
 
 /obj/item/card_carp/magpie
 	name = "Magpie"
-	desc = "A magpie, one of the often forgotten members of the corvid family. H1/P1. Requires 2 blood. Flying. Fortune."
+	desc = "A magpie, one of the often forgotten members of the corvid family. H1/P1. Requires 2 blood. Flying. Fortune, Thorns."
 	icon_state = "card_magpie"
 	current_health = 1
 
 /obj/item/card_carp/river_otter
 	name = "River Otter"
-	desc = "A river otter, soft and kind. H1/P1. Requires 1 blood. Gaurd."
+	desc = "A river otter, soft and kind. H1/P1. Requires 1 blood. Gaurd, Thorns."
 	icon_state = "card_riverotter"
 	current_health = 1
 
 /obj/item/card_carp/grizzly
 	name = "Grizzly"
-	desc = "A grizzly bear, the most dangerous of all predators. H6/P4. Requires 3 blood."
+	desc = "A grizzly bear, the most dangerous of all predators. H6/P4. Requires 4 blood."
 	icon_state = "card_bear"
 	current_health = 6
 
 /obj/item/card_carp/great_white
 	name = "Great White Carp"
-	desc = "A great white carp, adept in water and space. H4/P5. Requires 3 blood. Gaurd."
+	desc = "A great white carp, adept in water and space. H4/P5. Requires 6 blood. Gaurd."
 	icon_state = "card_carp"
 	current_health = 4
 
@@ -382,10 +387,20 @@
 	icon_state = "card_queen"
 	current_health = 1
 
+/////////////////////////////
+///    PELT CARDS     ////
+/////////////////////////////
+
 /obj/item/card_carp/rpelt
 	name = "Rabbit Pelt"
 	desc = "A small pelt of a rabbit. H3/P0. Requires 2 bones. Pelt. Defender."
 	icon_state = "card_rabbit_pelt"
+	current_health = 3
+
+/obj/item/card_carp/pinepelt
+	name = "Porcupine Pelt"
+	desc = "A small pelt of a porcupine still has its quills. H3/P0. Requires 4 bones. Pelt. Defender, Thorns."
+	icon_state = "card_wolf_pelt"
 	current_health = 3
 
 /obj/item/card_carp/dpelt
@@ -400,14 +415,31 @@
 	icon_state = "card_pelt"
 	current_health = 10
 
+/////////////////////////////
+///    TERRAIN CARDS     ////
+/////////////////////////////
+
 /obj/item/card_carp/tree
 	name = "Tree"
-	desc = "A tree, there to hide behind and obstruct. H10/P0. Terrain. Defender."
+	desc = "A tree, there to hide behind and obstruct. H10/P0. Terrain. Defender, Bloodless, Boneless."
 	icon_state = "card_13"
 	current_health = 10
 
+/obj/item/card_carp/pinetree
+	name = "Pine Tree"
+	desc = "A tree with sharp needles, there to hide behind and obstruct. H5/P0. Terrain. Defender, Thorn, Bloodless, Boneless"
+	icon_state = "card_13"
+	current_health = 5
+
 /obj/item/card_carp/rock
 	name = "Rock"
-	desc = "A rock, the pioneers favorite. H7/P0. Terrain."
+	desc = "A rock, the pioneers favorite, hitting it wouldnt be to good for you. H7/P0. Terrain. Thorn, Bloodless, Boneless"
 	icon_state = "card_child"
 	current_health = 7
+
+/obj/item/card_carp/bloodrock
+	name = "Blood Stone"
+	desc = "A refined stone, the blood on it is still useable, hitting it wouldnt be to good for you. H3/P0. Terrain. Thorn, Boneless, Blood Donor"
+	icon_state = "card_child"
+	current_health = 3
+
