@@ -135,7 +135,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo
 	name = "ammo hard case"
-	desc = "A generic ammo can. Can hold ammo magazines, boxes, bullets, a asortment of grenades and some gear. Alt+click to open and close."
+	desc = "A generic ammo can. Can hold ammo magazines, boxes, bullets, a assortment of grenades and some gear. Alt+click to open and close."
 	icon_state = "ammo_case"
 	sticker_name = "ammo"
 	matter = list(MATERIAL_STEEL = 20)
@@ -158,7 +158,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih
 	icon_state = "ammo_case_ih"
-	desc = "An ammo can for Marshals. Can hold ammo magazines, boxes, bullets, a asortment of grenades and some gear. Alt+click to open and close."
+	desc = "An ammo can for Marshals. Can hold ammo magazines, boxes, bullets, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/ih/wo
 	exspand_when_spawned = FALSE //No exspanding cheats
