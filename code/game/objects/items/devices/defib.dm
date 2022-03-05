@@ -291,7 +291,7 @@
 
 /obj/item/shockpaddles/proc/can_use(mob/user, mob/M)
 	if(si_only)
-		if(!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT))
+		if(!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !user.stats?.getPerk(PERK_ROBOTICS_EXPERT) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT)) // PERK_ADVANCED_MEDICAL was listed twice. Changed one to PERK_ROBOTICS_EXPERT since synth repair is Robotics territory
 			to_chat(user, "<span class='warning'>\The [src] is so complex your need training to use this.</span>")
 			return 0
 	if(busy)
@@ -309,9 +309,9 @@
 
 //Checks for various conditions to see if the mob is revivable
 /obj/item/shockpaddles/proc/can_defib(mob/living/carbon/human/H) //This is checked before doing the defib operation
-	if((H.species.flags & NO_SCAN))
+	if((H.species.flags & NO_SCAN && H.species.reagent_tag != IS_SYNTHETIC)) //Synths and FBPs should now bypass the NO_SCAN requirement
 		return "buzzes: \"Unrecogized physiology. Operation aborted.\""
-	else if(H.isSynthetic() && !use_on_synthetic)
+	else if(H.isSynthetic() && !use_on_synthetic && !si_only) // The Advanced defibs will now work on both flesh and synth
 		return "buzzes: \"Synthetic Body. Operation aborted.\""
 	else if(!H.isSynthetic() && use_on_synthetic)
 		return "buzzes: \"Organic Body. Operation aborted.\""
@@ -368,9 +368,8 @@
 			var/working_organ = FALSE
 			for(var/obj/item/organ/org in organs)
 				if(org.damage <= org.max_damage)
-					working_organ = TRUE
 					break
-			if(!working_organ)
+			if(!working_organ && H.species.reagent_tag != IS_SYNTHETIC) // Synthetic bodies can survive in stasis with non-functional vital organs. Also the proc reports FBP vitals as too damaged even in full health so...
 				return "buzzes: \"Resuscitation failed - Excessive damage to vital organ ([name]). Further attempts futile.\""
 	return null
 
