@@ -42,7 +42,7 @@
 
 /datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	H.nutrition += 100
-	H.adjustToxLoss(5)
+	H.adjustToxLoss(10)
 	return TRUE
 
 /datum/ritual/cruciform/base/glow_book
@@ -109,8 +109,8 @@
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
 	power = 25
 	ignore_stuttering = TRUE
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
+	nutri_cost = 25
+	blood_cost = 25
 
 /datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
@@ -135,8 +135,8 @@
 	phrase = "Et fumus tormentorum eorum ascendet in saecula saeculorum: nec habent requiem die ac nocte, qui adoraverunt bestiam, et imaginem ejus, et si quis acceperit caracterem nominis ejus."
 	desc = "Gain knowledge of your surroundings to reveal evil in people and places. This can tell you about hostile creatures around you, rarely can help you spot traps and sometimes let you sense a monster disguised as a person."
 	power = 35
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
+	nutri_cost = 25
+	blood_cost = 25
 
 /datum/ritual/cruciform/base/reveal/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	var/was_triggired = FALSE
@@ -147,7 +147,7 @@
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
 	log_and_message_admins("performed reveal litany")
-	if(prob(5)) //Aditional fail chance that hidded from user
+	if(prob(5)) //Additional fail chance that hidded from user
 		to_chat(H, SPAN_NOTICE("There is nothing there. You feel safe."))
 		return TRUE
 	for (var/mob/living/carbon/superior_animal/S in range(14, H))
@@ -273,12 +273,13 @@
 		fail("[H] must lie on the altar.", user, C)
 		return FALSE
 
+/* // Getting naked for a common upgrade is just annoying, not exactly thematic. -Kaz
 	for(var/obj/item/clothing/CL in H)
 		if(H.l_hand == CL || H.r_hand == CL)
 			continue
 		fail("[H] must be undressed.", user, C)
 		return FALSE
-
+*/
 
 
 	if(!CU.install(H, CI) || CU.wearer != H)

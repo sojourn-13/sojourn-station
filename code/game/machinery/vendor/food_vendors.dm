@@ -277,6 +277,7 @@
 					/obj/item/storage/lunchbox = 3,
 					/obj/item/storage/lunchbox/rainbow = 3,
 					/obj/item/storage/lunchbox/cat = 3,
+					/obj/item/storage/lunchbox/lemniscate = 5,
 					/obj/item/reagent_containers/food/drinks/pitcher = 3,
 					/obj/item/reagent_containers/food/drinks/teapot = 3,
 					/obj/item/reagent_containers/food/drinks/mug = 3,

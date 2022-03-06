@@ -210,3 +210,31 @@
 	name = "The Path"
 	phrase = "Amor est patiens, caritas est genus. Non invidia, non glorietur, non est superbus."
 	stats_to_boost = list(STAT_MEC = 15, STAT_COG = 15, STAT_BIO = 15, STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
+
+/datum/ritual/cruciform/omni/canticle_of_absolution
+	name = "Canticle of Absolution"
+	phrase = "Declinatio a via ante te est haeresis, ad id quod eras, et quod semper eris, revertere."
+	desc = "Cures the person in front of you of all genetic instability and clone damage while removing all forms of genetic mutation. This litany requires a great deal of power and thus may \
+	only be used once per hour."
+	power = 50
+	nutri_cost = 100
+	blood_cost = 50
+
+/datum/ritual/cruciform/omni/canticle_of_absolution/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
+	if(!T)
+		fail("No target in front of you.", user, C)
+		return FALSE
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	to_chat(T, SPAN_NOTICE("You feel your body returning to its natural state."))
+	to_chat(user, SPAN_NOTICE("You bring [T.name] back to their natural state."))
+
+	T.adjustCloneLoss(-200)
+	T.unnatural_mutations.removeAllMutations()
+
+	return TRUE

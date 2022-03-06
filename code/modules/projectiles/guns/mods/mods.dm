@@ -154,6 +154,25 @@
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.prefix = "focused"
 
+/obj/item/gun_upgrade/barrel/excruciator_plus
+	name = "Factorial \"EXCRUCIATOR\" hyper lens"
+	desc = "It's time for us to shine. This device has been modified by members of the factorial path, doubling its strength and drawbacks, for better or worse."
+	icon_state = "Excruciator_plus"
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_GLASS = 1)
+	price_tag = 160
+
+/obj/item/gun_upgrade/barrel/excruciator_plus/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.45,
+		GUN_UPGRADE_CHARGECOST = 1.25,
+		UPGRADE_BULK = 0.75,
+		)
+	I.gun_loc_tag = GUN_BARREL
+	I.req_gun_tags = list(GUN_ENERGY)
+	I.prefix = "focused"
+
 /obj/item/gun_upgrade/trigger
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
 

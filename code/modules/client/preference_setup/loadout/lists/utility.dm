@@ -13,6 +13,22 @@
 	path = /obj/item/storage/secure/briefcase
 	cost = 2
 
+/datum/gear/lunchbox
+	display_name = "lunch box"
+	path = /obj/item/storage/lunchbox
+
+/datum/gear/lunchbox_cat
+	display_name = "cat lunch box"
+	path = /obj/item/storage/lunchbox/cat
+
+/datum/gear/lunchbox_rainbow
+	display_name = "rainbow lunch box"
+	path = /obj/item/storage/lunchbox/rainbow
+
+/datum/gear/lunchbox_church
+	display_name = "church lunch box"
+	path = /obj/item/storage/lunchbox/lemniscate
+
 /datum/gear/utility/hand_radio
 	display_name = "station bound radio"
 	path = /obj/item/device/radio
