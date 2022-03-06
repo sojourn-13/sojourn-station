@@ -46,18 +46,8 @@
 	var/list/data = list()
 	var/curr_category = get_category(usr)
 
-	var/list/unlocked_names
-
-	unlocked_names = SScraft.cat_names.Copy(1,0)
-
-	for(var/path in subtypesof(/datum/craft_recipe))
-		var/datum/craft_recipe/CX = path
-		CX = new CX
-		if (!CX.avaliableToEveryone && !user.stats.getPerk(CX.requiredPerk))
-			unlocked_names.Remove(CX.category)
-
 	data["is_admin"] = check_rights(show_msg = FALSE)
-	data["categories"] = unlocked_names
+	data["categories"] = SScraft.cat_names
 	data["cur_category"] = curr_category
 	var/datum/craft_recipe/CR = get_item(usr)
 	data["cur_item"] = null
