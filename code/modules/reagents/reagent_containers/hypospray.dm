@@ -41,7 +41,7 @@
 		var/obj/item/rig/RIG = H.get_equipped_item(slot_back)
 		if(H.a_intent == I_HURT)
 			user.visible_message(SPAN_WARNING("[user] trys to inject [M] with [src]! But [M] is actively resisting"), SPAN_WARNING("You inject begin injecting [M] with [src] but they seem to be resisting."))
-			injtime += 30
+			injtime += 10 //Not as good as having a real suit on
 		if((istype(RIG) && RIG.suit_is_deployed()) || istype(SS))
 			injtime += 30
 			var/obj/item/organ/external/affected = H.get_organ(BP_CHEST)
@@ -73,7 +73,7 @@
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 		user.do_attack_animation(M)
 		if(injtime)
-			user.visible_message(SPAN_WARNING("[user] begins hunting for an injection port on [M]'s suit!"), SPAN_WARNING("You begins hunting for an injection port on [M]'s suit!"))
+			user.visible_message(SPAN_WARNING("[user] begins injecting [M]!"), SPAN_WARNING("You begins injecting [M]!"))
 			if(do_mob(user, M, injtime))
 				user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
 			else
@@ -111,7 +111,7 @@
 	volume = 5
 	preloaded_reagents = list("inaprovaline" = 5)
 	var/can_be_refilled = TRUE //For cargos
-	injtime = 5 //Instant was a bit to powerful well refilling
+	injtime = 2 //Instant was a bit to powerful well refilling
 
 /obj/item/reagent_containers/hypospray/autoinjector/examine(mob/user)
 	..()

@@ -23,6 +23,7 @@
 	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
 
 /obj/item/stack/medical/attack(mob/living/M, mob/living/user)
+	..()
 	var/types = M.get_classification()
 	if (!(types & CLASSIFICATION_ORGANIC))
 		to_chat(user, SPAN_WARNING("\The [src] cannot be applied to [M]!"))
@@ -322,6 +323,7 @@
 	needed_perk = PERK_MEDICAL_EXPERT
 	needed_perk_alt = PERK_SURGICAL_MASTER
 	bio_requirement = 75
+	stacktype_alt = /obj/item/stack/medical/advanced/bruise_pack/large
 
 /obj/item/stack/medical/advanced/bruise_pack/large
 	name = "large advanced trauma kit"
@@ -330,6 +332,7 @@
 	amount = 10
 	max_amount = 10
 	charge_sections = 10
+	stacktype_alt = /obj/item/stack/medical/advanced/bruise_pack
 
 /obj/item/stack/medical/advanced/bruise_pack/tatonka_tongue
 	name = "tatonka blood tongue"
@@ -344,6 +347,7 @@
 	perk_required = TRUE
 	needed_perk = PERK_BUTCHER
 	bio_requirement = 10 // So simple a tribal can do it, still has a small check to use.
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/bruise_pack/mending_ichor
 	name = "mending ichor"
@@ -358,6 +362,7 @@
 	perk_required = FALSE
 	needed_perk = null
 	bio_requirement = 0
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -467,6 +472,7 @@
 	needed_perk = PERK_MEDICAL_EXPERT
 	needed_perk_alt = PERK_SURGICAL_MASTER
 	bio_requirement = 75
+	stacktype_alt = /obj/item/stack/medical/advanced/ointment/large
 
 /obj/item/stack/medical/advanced/ointment/large
 	name = "large advanced burn kit"
@@ -475,6 +481,7 @@
 	amount = 10
 	max_amount = 10
 	charge_sections = 10
+	stacktype_alt = /obj/item/stack/medical/advanced/ointment
 
 /obj/item/stack/medical/advanced/ointment/powder_pouch
 	name = "tatonka powder pouch"
@@ -489,6 +496,7 @@
 	perk_required = TRUE
 	needed_perk = PERK_BUTCHER
 	bio_requirement = 10 // So simple a tribal can do it, still has a small check to use.
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/ointment/regenerative_ichor
 	name = "regenerative ichor"
@@ -503,6 +511,7 @@
 	perk_required = FALSE
 	needed_perk = null
 	bio_requirement = 0
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -651,6 +660,7 @@
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
 	bio_requirement = 15
+	stacktype_alt = null
 
 
 /obj/item/stack/medical/advanced/bruise_pack/nt/update_icon()
@@ -672,6 +682,7 @@
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
 	bio_requirement = 15
+	stacktype_alt = null
 
 /obj/item/stack/medical/advanced/ointment/nt/update_icon()
 	if(fancy_icon)
