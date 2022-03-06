@@ -334,6 +334,8 @@ var/list/rank_prefix = list(\
 		id = wear_id.GetIdCard()
 	if(!id)
 		id = get_idcard()
+	if(id.show_title == 0)
+		return ""
 	if(id)
 		rank = id.rank
 		if(rank_prefix[rank])
