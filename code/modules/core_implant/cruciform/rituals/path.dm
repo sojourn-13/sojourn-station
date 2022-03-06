@@ -294,7 +294,7 @@
 		else
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
-	new /obj/item/storage/lunchbox/lemniscate/full(user.loc)
+	new /obj/item/storage/lunchbox/lemniscate/full(usr.loc)
 	to_chat(user, SPAN_NOTICE("A lemniscate branded lunchbox that smells delicious appears at your feet, still warm and fresh from the kitchens!"))
 	set_personal_cooldown(user)
 
