@@ -216,11 +216,11 @@
 	if(src && choice)
 		M.add_language(choice)
 		M.stats.removePerk(/datum/perk/linguist)
-	return TRUE
 
 	if(anti_cheat)
 		return FALSE
 	anti_cheat = TRUE
+	return TRUE
 
 /datum/perk/linguist/remove()
 	..()
