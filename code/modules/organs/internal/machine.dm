@@ -92,7 +92,48 @@
 	..()
 	// This is very ghetto way of rebooting an IPC. TODO better way.
 	if(owner.stat == DEAD)
-		owner.set_stat(CONSCIOUS)
+		/* Code stolen from 'modules/mob/living/living.dm' after line 428. We can't directly call the revive() proc, because that heal everything, but we can take some parts of it.
+		 * Even if certain parts doesn't apply to synthetics, the synths fucky enough that I think it is better if they stays, just in case. -R4d6 */
+		if (owner.reagents)
+			owner.reagents.clear_reagents()
+
+		// shut down various types of badness
+		owner.setToxLoss(0)
+		owner.setOxyLoss(0)
+		owner.setCloneLoss(0)
+		owner.setBrainLoss(0)
+		owner.SetParalysis(0)
+		owner.SetStunned(0)
+		owner.SetWeakened(0)
+		owner.setHalLoss(0)
+
+		// shut down ongoing problems
+		owner.radiation = 0
+		owner.bodytemperature = T20C
+		owner.sdisabilities = 0
+		owner.disabilities = 0
+
+		// fix blindness and deafness
+		owner.blinded = 0
+		owner.eye_blind = 0
+		owner.eye_blurry = 0
+		owner.ear_deaf = 0
+		owner.ear_damage = 0
+
+		// remove the character from the list of the dead
+		if(owner.stat == DEAD)
+			GLOB.dead_mob_list -= owner
+			GLOB.living_mob_list += owner
+			owner.tod = null
+			owner.timeofdeath = 0
+			owner.set_stat(CONSCIOUS)
+
+		// make the icons look correct
+		owner.regenerate_icons()
+		BITSET(owner.hud_updateflag, HEALTH_HUD)
+		BITSET(owner.hud_updateflag, STATUS_HUD)
+		BITSET(owner.hud_updateflag, LIFE_HUD)
+
 		owner.visible_message(SPAN_DANGER("\The [owner] twitches visibly!"))
 
 
