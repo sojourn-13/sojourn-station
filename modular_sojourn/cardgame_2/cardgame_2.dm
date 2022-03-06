@@ -301,19 +301,19 @@
 	name = "Moth Larva"
 	desc = "A moth larva, brimming with potential. H1/P0. Requires 1 bone. Gives 2 blood. Kinship, Frail."
 	icon_state = "card_larva"
-	current_health = 3
+	current_health = 1
 
 /obj/item/card_carp/pupa
 	name = "Moth Pupa"
-	desc = "A moth pupa, almost all it can be. H2/P1. Requires 3 bones. Gives 3 blood. Kinship, Frail."
+	desc = "A moth pupa, almost all it can be. H2/P1. Requires 2 bones. Blood Donor, Kinship, Frail."
 	icon_state = "card_pupa"
-	current_health = 3
+	current_health = 2
 
 /obj/item/card_carp/mothman
 	name = "Moth Man"
-	desc = "A moth man, the last of his mysterious people. H3/P4. Kinship. Requires 6 bones and 2 blood."
+	desc = "A moth man, the last of his mysterious people. H3/P4. Kinship. Requires 4 bones and 2 blood."
 	icon_state = "card_mothman"
-	current_health = 1
+	current_health = 3
 
 /obj/item/card_carp/beaver
 	name = "Beaver"
