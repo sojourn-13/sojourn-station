@@ -171,7 +171,7 @@
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
-	I.prefix = "focused"
+	I.prefix = "hyper focused"
 
 /obj/item/gun_upgrade/trigger
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
