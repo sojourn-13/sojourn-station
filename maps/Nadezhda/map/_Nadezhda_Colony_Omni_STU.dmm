@@ -2127,7 +2127,6 @@
 /area/nadezhda/hallway/side/f2section1)
 "axL" = (
 /obj/structure/table/steel,
-/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/pros/prep)
 "axS" = (
