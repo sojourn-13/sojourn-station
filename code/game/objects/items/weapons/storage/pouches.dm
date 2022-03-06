@@ -318,6 +318,11 @@
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/silenced,
+		/obj/item/gun/projectile/ladon,
+		/obj/item/gun/projectile/glock,
+		/obj/item/gun/projectile/automatic/straylight,
+		/obj/item/gun/energy/glock,
+		/obj/item/gun/energy/ionpistol,
 		/obj/item/gun/energy/gun,
 		/obj/item/gun/energy/chameleon,
 		//obj/item/gun/energy/captain, //too unwieldy, use belt/suit slot or other storage

@@ -195,6 +195,8 @@
 				RedeemPrimary(I, user)
 			if("Secondary")
 				RedeemSecondary(I, user)
+			if("SpecPrimary")
+				RedeemSpecPrimary(I, user)
 			if("Armor")
 				RedeemArmor(I, user)
 		return
@@ -202,7 +204,7 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					/obj/item/storage/box/m_kit/wirbelwind = "Wirbelwind",
+					/obj/item/storage/box/m_kit/thompson = "Thompson",
 					/obj/item/storage/box/m_kit/state_auto = "State Auto-Shotgun",
 					/obj/item/storage/box/m_kit/bulldog = "Bulldog",
 					/obj/item/storage/box/m_kit/gear_lasgun = "Gear Lasgun"
@@ -215,8 +217,28 @@
 	else
 		voucher.stamped = FALSE
 
+/obj/machinery/vending/marshal_kit/proc/RedeemSpecPrimary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					/obj/item/storage/box/m_kit/thompson = "Thompson",
+					/obj/item/storage/box/m_kit/state_auto = "State Auto-Shotgun",
+					/obj/item/storage/box/m_kit/bulldog = "Bulldog",
+					/obj/item/storage/box/m_kit/gear_lasgun = "Gear Lasgun",
+					/obj/item/storage/box/m_kit/pug = "Pug shotgun",
+					/obj/item/storage/box/m_kit/typewriter = "Sunrise Las-SMG"
+					)
+	var/selection = input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
+
+
 /obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
+					/obj/item/storage/box/m_kit/wirbelwind = "Wirbelwind",
 					/obj/item/storage/box/m_kit/firefly = "Firefly",
 					/obj/item/storage/box/m_kit/colt = "Colt",
 					/obj/item/storage/box/m_kit/ladon = "Ladon",

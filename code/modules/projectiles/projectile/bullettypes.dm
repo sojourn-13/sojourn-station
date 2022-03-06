@@ -343,7 +343,7 @@
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 30)
 	agony = 28
-	armor_penetration = 5
+	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -391,8 +391,8 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
-	damage_types = list(BRUTE = 32)
-	armor_penetration = 40
+	damage_types = list(BRUTE = 24)
+	armor_penetration = 48
 	penetrating = 3
 	hitscan = TRUE
 	affective_damage_range = 9 //Sniping cal
@@ -401,9 +401,9 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 30)
+	damage_types = list(BRUTE = 40)
 	agony = 32
-	armor_penetration = 15 //Half of normal
+	armor_penetration = 0 //Half of normal
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE

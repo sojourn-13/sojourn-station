@@ -74,10 +74,12 @@
 /datum/gear/utility/clipboard
 	display_name = "clipboard"
 	path = /obj/item/clipboard
+	cost = 0
 
 /datum/gear/utility/corpreg
-	display_name = "corporate regulations"
+	display_name = "colony law"
 	path = /obj/item/book/manual/security_space_law
+	cost = 0
 
 /datum/gear/utility/crowbar
 	display_name = "crowbar"
@@ -91,6 +93,7 @@
 	display_name = "folder selection"
 	path = /obj/item/folder
 	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 0
 
 /datum/gear/utility/advancedlaptop
 	display_name = "laptop, advanced"
