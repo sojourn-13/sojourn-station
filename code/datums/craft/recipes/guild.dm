@@ -3,6 +3,7 @@
 	time = 100
 	related_stats = list(STAT_COG)
 	avaliableToEveryone = FALSE
+	requiredPerk = PERK_HANDYMAN
 
 //Materal Craft ------------------
 
