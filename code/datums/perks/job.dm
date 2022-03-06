@@ -204,6 +204,10 @@
 	..()
 	var/mob/M = usr
 	var/list/options = list()
+	if(anti_cheat)
+		to_chat(holder, "Recalling more then one babble is not as easy for someone unskilled as you.")
+		return FALSE
+	anti_cheat = TRUE
 	options["German"] = LANGUAGE_GERMAN
 	options["Jives"] = LANGUAGE_JIVE
 	options["Jana"] = LANGUAGE_JANA
@@ -216,10 +220,7 @@
 	if(src && choice)
 		M.add_language(choice)
 		M.stats.removePerk(/datum/perk/linguist)
-
-	if(anti_cheat)
-		return FALSE
-	anti_cheat = TRUE
+	anti_cheat = FALSE
 	return TRUE
 
 /datum/perk/linguist/remove()
