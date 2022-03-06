@@ -30,6 +30,8 @@
 #define LANGUAGE_GERMAN		"German"
 #define LANGUAGE_JANA	    "Jana"
 #define LANGUAGE_LATIN 		"Ancient Latin"
+#define LANGUAGE_ESPERANTO	"Esperanto"
+#define LANGUAGE_YASSARI	"Yassari"
 
 #define LANGUAGE_ROBOT "Robot Talk"
 #define LANGUAGE_DRONE "Drone Talk"

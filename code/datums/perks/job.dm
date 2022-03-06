@@ -193,6 +193,39 @@
 	holder.falls_mod += 0.4
 	..()
 
+/datum/perk/linguist
+	name = "Linguist"
+	desc = "Having dedicated time and learning to foreign tongues, you find yourself knowing an extra language. Be it from your upbringing or schooling, you're fluent in not one, not two, but three languages!"
+	active = FALSE
+	passivePerk = FALSE
+	var/anti_cheat = FALSE
+
+/datum/perk/linguist/activate()
+	..()
+	if(anti_cheat)
+		to_chat(holder, "Recalling more then one babble is not as easy for someone unskilled as you.")
+		return FALSE
+	anti_cheat = TRUE
+	var/mob/M = usr
+	var/list/options = list()
+	options["German"] = LANGUAGE_GERMAN
+	options["Jives"] = LANGUAGE_JIVE
+	options["Jana"] = LANGUAGE_JANA
+	options["Serbian"] = LANGUAGE_SERBIAN
+	options["Russian"] = LANGUAGE_CYRILLIC
+	options["Esperanto"] = LANGUAGE_ESPERANTO
+	options["Yassari"] = LANGUAGE_YASSARI
+	options["Latin"] = LANGUAGE_LATIN
+	var/choice = input(M,"What language do you know?","Linguist Choice") as null|anything in options
+	if(src && choice)
+		M.add_language(choice)
+		M.stats.removePerk(/datum/perk/linguist)
+	anti_cheat = FALSE
+	return TRUE
+
+/datum/perk/linguist/remove()
+	..()
+
 /datum/perk/chemist
 	name = "Periodic Table"
 	desc = "You know what the atoms around you react to and in what way they do. You are used to making organic substitutes and using them. \
