@@ -2176,6 +2176,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\friendly.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\roomba.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\synthetic.dm"
+#include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\turrets.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\mining\mining_drone.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\mining\types\aether.dm"
 #include "code\modules\mob\living\carbon\superior_animal\vox\ai.dm"

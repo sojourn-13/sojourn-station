@@ -26,6 +26,8 @@
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg = 12,
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle = 9,
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy = 4,
+				/mob/living/carbon/superior_animal/robot/greyson/stalker = 2,
+				/mob/living/carbon/superior_animal/robot/greyson/stalker/dual = 1,
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley = 3,
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/phazon = 2
 				))
@@ -91,7 +93,9 @@
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol = 15,
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg = 6,
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle = 5,
-				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy = 4
+				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy = 4,
+				/mob/living/carbon/superior_animal/robot/greyson/stalker = 3,
+				/mob/living/carbon/superior_animal/robot/greyson/stalker/dual = 1
 				))
 
 /obj/random/mob/roomba/mecha
