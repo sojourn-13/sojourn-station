@@ -584,7 +584,7 @@
 	desc = "A heavy book with details and translations of the Marshal codes."
 	icon_state = "book_code"
 	oddity_stats = list(
-		STAT_VIG = 20
+		STAT_VIG = 0
 	)
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = /datum/perk/codespeak
@@ -594,7 +594,7 @@
 	desc = "A heavy book with details and translations of chemistry and its affects on the body, even has some guides on how to properly use chemicals."
 	icon_state = "instructional_bio"
 	oddity_stats = list(
-		STAT_BIO = 20
+		STAT_BIO = 0
 	)
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = /datum/perk/chemist
