@@ -2705,6 +2705,7 @@
 	dir = 1;
 	pixel_y = -28
 	},
+/obj/item/tool/crowbar/improvised,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "aFu" = (
@@ -31079,9 +31080,7 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gWX" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/nadezhda/crew_quarters/hydroponics)
 "gXa" = (
@@ -36643,6 +36642,18 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/hallway/surface/section1)
 "ipB" = (
+/obj/item/cartridge/signal/science,
+/obj/item/cartridge/signal/science{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/cartridge/signal/science{
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/clothing/glasses/welding/superior,
+/obj/structure/table/woodentable,
+/obj/structure/table/woodentable,
 /obj/structure/table/woodentable,
 /obj/item/device/von_krabin,
 /turf/simulated/floor/wood,
@@ -38554,13 +38565,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "iMs" = (
-/obj/structure/table/woodentable,
-/obj/item/paper/monitorkey,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 0;
 	pixel_y = -30
 	},
 /obj/effect/floor_decal/industrial/warningred,
+/obj/machinery/papershredder,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "iMv" = (
@@ -44957,21 +44967,11 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/security/barracks)
 "kim" = (
-/obj/item/cartridge/signal/science,
-/obj/item/cartridge/signal/science{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/science{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/machinery/keycard_auth{
 	pixel_x = 0;
 	pixel_y = -24
 	},
-/obj/item/clothing/glasses/welding/superior,
-/obj/structure/table/woodentable,
+/obj/machinery/photocopier,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "kiD" = (
@@ -67062,11 +67062,6 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/crew_quarters/hydroponics/garden)
-"pdE" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/nadezhda/crew_quarters/hydroponics)
 "pdG" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -69190,6 +69185,7 @@
 	},
 /obj/item/stamp/rd,
 /obj/structure/table/woodentable,
+/obj/item/paper/monitorkey,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "pDw" = (
@@ -83130,10 +83126,6 @@
 /obj/structure/flora/small/bushc1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/surface/section1)
-"sGX" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/crew_quarters/hydroponics)
 "sGY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/brown_perforated,
@@ -86491,13 +86483,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/vectorrooms)
-"tuJ" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/plating,
-/area/nadezhda/crew_quarters/hydroponics)
 "tuK" = (
 /mob/living/simple_animal/hostile/bear,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -126630,7 +126615,7 @@ frq
 bwh
 qug
 okS
-tuJ
+gWX
 kbm
 vdm
 usQ
@@ -126832,7 +126817,7 @@ frq
 jVE
 atv
 bwh
-pdE
+gWX
 ogZ
 jYr
 dAo
@@ -127034,7 +127019,7 @@ frq
 wzg
 dhS
 jwp
-pdE
+gWX
 ogZ
 jYr
 ahD
@@ -127236,7 +127221,7 @@ cwr
 jlJ
 atv
 jVE
-pdE
+gWX
 ogZ
 jYr
 dAo
@@ -127438,7 +127423,7 @@ rTM
 hmE
 ybi
 jVE
-pdE
+gWX
 iaU
 jYr
 ahD
@@ -128854,13 +128839,13 @@ kSb
 orK
 dQP
 dQP
-sGX
-sGX
-sGX
-sGX
-sGX
-sGX
-sGX
+gWX
+gWX
+gWX
+gWX
+gWX
+gWX
+gWX
 eUv
 dQP
 tzu
