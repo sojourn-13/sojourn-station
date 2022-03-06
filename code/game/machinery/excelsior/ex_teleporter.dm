@@ -64,6 +64,7 @@ var/global/excelsior_last_draft = 0
 		/obj/item/storage/firstaid/toxin = 100,
 		/obj/item/storage/firstaid/adv = 300,
 		/obj/item/storage/firstaid/surgery/traitor = 500,
+		/obj/item/storage/box/syndie_kit/exl_revolver = 800,
 		/obj/item/computer_hardware/hard_drive/portable/design/excelsior = 1000,
 		/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons = 500,
 		/obj/item/computer_hardware/hard_drive/portable/design/ex_parts = 450,
