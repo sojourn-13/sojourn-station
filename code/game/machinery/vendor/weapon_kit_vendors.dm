@@ -154,10 +154,11 @@
 	desc = "A vendor that can dispense specialized equipment kits for Marshal Officers."
 	icon_state = "trashvend"
 	products = list(
-		/obj/item/storage/box/m_kit/wirbelwind = 5,
+		/obj/item/storage/box/m_kit/thompson = 5,
 		/obj/item/storage/box/m_kit/state_auto = 5,
 		/obj/item/storage/box/m_kit/bulldog = 5,
 		/obj/item/storage/box/m_kit/gear_lasgun = 5,
+		/obj/item/storage/box/m_kit/wirbelwind = 5,
 		/obj/item/storage/box/m_kit/firefly = 5,
 		/obj/item/storage/box/m_kit/colt = 5,
 		/obj/item/storage/box/m_kit/ladon = 5,
@@ -168,10 +169,11 @@
 		/obj/item/storage/box/m_kit/riot = 5
 		)
 	prices = list( // 500$ for default marshal stuff, 750 for the rest
-		/obj/item/storage/box/m_kit/wirbelwind = 500,
+		/obj/item/storage/box/m_kit/thompson = 750,
 		/obj/item/storage/box/m_kit/state_auto = 750,
 		/obj/item/storage/box/m_kit/bulldog = 750,
 		/obj/item/storage/box/m_kit/gear_lasgun = 750,
+		/obj/item/storage/box/m_kit/wirbelwind = 500,
 		/obj/item/storage/box/m_kit/firefly = 500,
 		/obj/item/storage/box/m_kit/colt = 750,
 		/obj/item/storage/box/m_kit/glock = 750,
