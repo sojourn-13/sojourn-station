@@ -23,9 +23,8 @@
 	var/pulping = FALSE //Whether or not the device is extracting genetics
 
 /obj/machinery/genetics/pulper/attackby(obj/item/I, mob/user)
-	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 35)) //So someone that has basic chems or level up can be an assent
-		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
-		src.visible_message(SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 35) && !user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, 70)) //So someone that has basic chems or level up can be an assent
+		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
 		return
 
 	if(default_deconstruction(I, user))
@@ -99,6 +98,9 @@
 /obj/machinery/genetics/pulper/attack_hand(mob/user as mob)
 	if(stat & (NOPOWER|BROKEN))
 		to_chat(user, SPAN_WARNING("The pulper is inactive and blessedly silent."))
+		return
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 35) && !user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, 70)) //So someone that has basic chems or level up can be an assent
+		to_chat(usr, SPAN_WARNING("The console pityingly suggests: \"Sorry hun, maybe you should get help from a scientist~?\""))
 		return
 	if(pulping)
 		src.visible_message( SPAN_DANGER("The pulper trills: \"The pulper is running~! Wait for it to finish.\""))

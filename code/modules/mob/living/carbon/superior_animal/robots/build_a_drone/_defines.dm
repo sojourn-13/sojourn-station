@@ -169,6 +169,7 @@ var/global/list/drone_welder_options = list("Greyson Welder" = "tool_welder_os",
 	var/left_weapon_type_choice = drone_left_weapon_type_options[input("Select the second weapon type of your drone ", "Left Weapon : ") as null | anything in drone_left_weapon_type_options]
 	var/right_tool_choice
 	var/left_tool_choice
+	var/name // The name of the bot
 
 	switch(right_weapon_type_choice)
 		if(TOOL_LASER)
@@ -190,9 +191,13 @@ var/global/list/drone_welder_options = list("Greyson Welder" = "tool_welder_os",
 	if(left_weapon_type_choice && !left_tool_choice) // If we chose to have a weapon in the left slot, but didn't actually chose anything
 		left_weapon_type_choice = null // Set it to null so that it doesn't have an invisible weapon.
 
+	name = input("Please enter the name of your drone.", "Name") as text
+
 	var/mob/living/carbon/superior_animal/robot/custom_drone/CD = new(usr.loc) // Spawn a new drone
 	CD.customize(chassis_choice, radio_choice, shell_choice, marks_choice, screen_choice, scanner_choice, right_weapon_type_choice, left_weapon_type_choice, right_tool_choice, left_tool_choice) // Customize the drone's sprite
+	CD.name = name
+	CD.friends += usr
 	return TRUE
 
 mob/proc/mob_build_a_drone()
-	build_a_drone(usr)
+	return build_a_drone(usr)

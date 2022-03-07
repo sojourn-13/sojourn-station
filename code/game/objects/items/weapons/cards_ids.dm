@@ -102,7 +102,6 @@ var/const/NO_EMAG_ACT = -50
 	var/registered_name = "Unknown" // The name registered_name on the card
 	var/list/associated_email_login = list("login" = "", "password" = "")
 	var/associated_account_number = 0
-	var/show_title = 0
 
 	var/age = "\[UNSET\]"
 	var/blood_type = "\[UNSET\]"

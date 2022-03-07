@@ -71,6 +71,23 @@
 		STAT_COG = 0
 	)
 
+/datum/category_item/setup_option/background/bckgrnd/linguist
+	name = "Aspiring Linguist"
+	desc = "Be it from your education or from a multi-lingual family, you've found yourself studying languages non-stop throughout your childhood and early adulthood. Unlike most you're silver-tongued \
+	in both your knowledge of English, your secondary or native language - and your tertiary! Being tri-lingual has its upsides, making you an adept trader of sorts. Though its downside is that you may \
+	have not studied as hard as some others have in other subjects."
+
+	perks = list(/datum/perk/linguist)
+
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
 /datum/category_item/setup_option/background/bckgrnd/drugaddict
 	name = "Chem Addict"
 	desc = "For whatever reason, be it from an early age and bad parenting or personal choice you became a devout user of illicit drugs. The constant use over the years has weakened your body \
