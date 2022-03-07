@@ -196,11 +196,6 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/GetIdCard()
 	return src
 
-/obj/item/card/id/verb/Toggle_Title(mob/user as mob)
-	set src in view(1)
-	show_title = !show_title
-	user.visible_message("[user] alters the title on the ID card.")
-
 /obj/item/card/id/syndicate_command
 	name = "syndicate ID card"
 	desc = "An ID straight from the Syndicate."
