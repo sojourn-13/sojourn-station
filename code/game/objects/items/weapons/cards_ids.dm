@@ -102,6 +102,7 @@ var/const/NO_EMAG_ACT = -50
 	var/registered_name = "Unknown" // The name registered_name on the card
 	var/list/associated_email_login = list("login" = "", "password" = "")
 	var/associated_account_number = 0
+	var/show_title = 0
 
 	var/age = "\[UNSET\]"
 	var/blood_type = "\[UNSET\]"
@@ -194,6 +195,11 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/GetIdCard()
 	return src
+
+/obj/item/card/id/verb/Toggle_Title(mob/user as mob)
+	set src in view(1)
+	show_title = !show_title
+	user.visible_message("[user] alters the title on the ID card.")
 
 /obj/item/card/id/syndicate_command
 	name = "syndicate ID card"
