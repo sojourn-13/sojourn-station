@@ -275,7 +275,7 @@
 	phrase = "Confortare et esto robustus. Nolite timere nec paveatis a conspectu eorum quia Dominus Deus tuus ipse est ductor tuus. Et non dimittet nec derelinquet te."
 	stats_to_boost = list(STAT_ROB = 15, STAT_TGH = 15, STAT_VIG = 15)
 
-/datum/ritual/cruciform/lemniscate/food_for_the_masses
+/datum/ritual/targeted/cruciform/lemniscate/food_for_the_masses
 	name = "Food for the Masses"
 	phrase = "Sive ergo manducatis sive bibitis vel aliud quid facitis omnia in gloriam Dei facite."
 	desc = "You call upon the churches limited fabrication abilities, creating a lunch box in hand that contains special upgraded food for you and others. While highly nutritious, it is also packed with \
@@ -284,8 +284,8 @@
 	power = 50
 	cooldown_time = 60 MINUTES
 	cooldown_category = "food_masses"
-	nutri_cost = 100
-	blood_cost = 50
+	nutri_cost = 50
+	blood_cost = 25
 
 /datum/ritual/targeted/cruciform/lemniscate/food_for_the_masses/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
@@ -306,8 +306,8 @@
 	cooldown = TRUE
 	cooldown_time = 15 MINUTES
 	power = 35
-	nutri_cost = 50
-	blood_cost = 50
+	nutri_cost = 25
+	blood_cost = 25
 
 /datum/ritual/cruciform/lemniscate/zoom_litany/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C,list/targets)
 	if(H.species?.reagent_tag != IS_SYNTHETIC)
