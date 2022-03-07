@@ -10,4 +10,4 @@
 	var/dll = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (dll)
 		call(dll, "auxtools_init")()
-		enable_debugging())
+		enable_debugging()
