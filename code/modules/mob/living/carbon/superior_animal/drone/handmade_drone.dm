@@ -30,6 +30,7 @@
 	do_gibs = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	cant_be_pulled = FALSE
 	reagent_immune = TRUE
 	toxin_immune = TRUE
 	cold_protection = 1
