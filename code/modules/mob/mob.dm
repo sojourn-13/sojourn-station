@@ -107,6 +107,37 @@
 			return M
 	return 0
 
+// Show a message to all mobs and objects in earshot of this one
+// This would be for audible actions by the src mob
+// message is the message output to anyone who can hear.
+// self_message (optional) is what the src mob hears.
+// deaf_message (optional) is what deaf people will see.
+// hearing_distance (optional) is the range, how many tiles away the message can be heard.
+/mob/audible_message(var/message, var/deaf_message, var/hearing_distance, var/self_message)
+
+	var/range = world.view
+	if(hearing_distance)
+		range = hearing_distance
+
+	var/turf/T = get_turf(src)
+
+	var/list/mobs = list()
+	var/list/objs = list()
+	get_mobs_and_objs_in_view_fast(T, range, mobs, objs)
+
+
+	for(var/m in mobs)
+		var/mob/M = m
+		if(self_message && M==src)
+			M.show_message(self_message,2,deaf_message,1)
+			continue
+
+		M.show_message(message,2,deaf_message,1)
+
+	for(var/o in objs)
+		var/obj/O = o
+		O.show_message(message,2,deaf_message,1)
+
 /mob/proc/movement_delay()
 	. = 0
 
@@ -981,11 +1012,6 @@ mob/proc/yank_out_object()
 			H.shock_stage+=20
 		affected.take_damage((selection.w_class * 3), 0, 0, 1, "Embedded object extraction")
 
-		//if(prob(selection.w_class * 5)) //I'M SO ANEMIC I COULD JUST -DIE-.
-			//var/datum/wound/internal_bleeding/I = new (min(selection.w_class * 5, 15))
-			//affected.wounds += I
-			//H.custom_pain("Something tears wetly in your [affected] as [selection] is pulled free!", 1)
-
 		if (ishuman(U))
 			var/mob/living/carbon/human/human_user = U
 			human_user.bloody_hands(H)
@@ -1209,7 +1235,7 @@ mob/proc/yank_out_object()
 	set src = usr
 
 	if(HUDneed["move intent"])
-		HUDneed["move intent"].Click()  // Yep , this is all.
+		HUDneed["move intent"]:Click()  // Yep , this is all.
 
 /mob/proc/adjustEarDamage()
 	return

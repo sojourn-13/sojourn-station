@@ -14,7 +14,7 @@
 	origin_tech = list(TECH_BIO = 9, TECH_MATERIAL = 9, TECH_PLASMA = 3)
 	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2, MATERIAL_PLASMA = 1, MATERIAL_DIAMOND = 1)
 	price_tag = 0
-	var/obj/item/organ/internal/psionic_tumor/proc/stored_power
+	var/stored_power
 
 /obj/item/device/psionic_catalyst/nightmare_mind
 	name = "psionic catalyst: Nightmarish Thoughts"

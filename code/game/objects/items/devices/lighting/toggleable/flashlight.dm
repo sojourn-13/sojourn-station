@@ -1,8 +1,8 @@
 /obj/item/device/lighting/toggleable/flashlight
 	action_button_name = "Toggle Flashlight"
 	var/tick_cost = 0.2
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 	dir = WEST
 
 	var/obj/effect/effect/light/light_spot
@@ -261,7 +261,7 @@
 	add_fingerprint(user)
 	if(on && user.targeted_organ == BP_EYES)
 
-		if((CLUMSY in user.mutations) && prob(50))	//too dumb to use flashlight properly
+		if((CLUMSY in user.mutations) && prob(15))	//too dumb to use flashlight properly
 			return ..()	//just hit them in the head
 
 		var/mob/living/carbon/human/H = M	//mob has protective eyewear

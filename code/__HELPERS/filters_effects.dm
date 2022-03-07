@@ -9,7 +9,7 @@
 
 #define FILTER_HOLY_GLOW filter(type="drop_shadow", x=0, y=0, size=5, offset=2, color=rgb(255,255,170))
 
-/proc/add_effect(var/mob/user, var/dm_filter/effect, var/duration)
+/proc/add_effect(mob/user, effect, duration)
 	if(user && effect)
 		user.filters += effect
 		if(duration)
@@ -18,7 +18,7 @@
 		return TRUE
 	return FALSE
 
-/proc/remove_effect(var/mob/user, var/dm_filter/effect)
+/proc/remove_effect(mob/user, effect)
 	if(user && effect)
 		user.filters -= effect
 		return TRUE

@@ -25,6 +25,8 @@
 	A small carved inscription of a unicorn has been cut into place near some additional added weights, giving this rifle amazing recoil control."
 	recoil_buildup = 1
 	price_tag = 3550
+	slowdown_hold = 0
+	brace_penalty = 2
 
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
@@ -63,6 +65,8 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A common design used by certain nefarious political groups, this model however has been stripped of its fellows evil machinations, making it safe to use by anyone."
 	price_tag = 1884
+	slowdown_hold = 0
+	brace_penalty = 5
 
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""

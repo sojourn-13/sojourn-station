@@ -71,3 +71,20 @@
 /obj/item/trash/material/device/Initialize()
 	. = ..()
 	icon_state = "device[rand(3)]"
+
+/obj/item/trash/material/e_sword_cutlass
+	name = "broken energy cutlass"
+	desc = "A broken device that can be recycled in an autolathe."
+	w_class = ITEM_SIZE_SMALL
+	icon_state = "cutlass0"
+	matter_chances = list(
+		list(MATERIAL_STEEL, 100, 3),
+		list(MATERIAL_GLASS, 90, 1),
+		list(MATERIAL_PLASTIC, 100, 4),
+		list(MATERIAL_SILVER, 70, 2),
+		list(MATERIAL_GOLD, 40, 1),
+	)
+
+/obj/item/trash/material/e_sword_cutlass/Initialize()
+	. = ..()
+	icon_state = "cutlass[rand(3)]"

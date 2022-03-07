@@ -189,7 +189,6 @@ This file contains the underlying code for stash datums
 			//Coords is the fallback
 			selected_direction = DIRECTION_COORDS
 			return TRUE
-	return FALSE
 
 
 //This proc is called after location is set, it creates the necessary info to direct the user

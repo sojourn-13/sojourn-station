@@ -329,6 +329,19 @@
 		STAT_MEC = 10,
 	)
 
+/obj/item/oddity/common/redbrick
+	name = "red brick"
+	desc = "A small red brick that makes a silly sound."
+	icon_state = "brick"
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce  = WEAPON_FORCE_BRUTAL
+	oddity_stats = list(
+		STAT_MEC = 8,
+		STAT_TGH = 8,
+		STAT_ROB = 6,
+	)
+	hitsound = 'sound/weapons/redbrick.ogg'
+
 /obj/item/oddity/common/mirror
 	name = "cracked mirror"
 	desc = "A thousand mirror images stare back at you as you examine the trinket. What if you're the reflection, staring back out at the real world? At the real you?"
@@ -415,6 +428,7 @@
 		STAT_BIO = 9,
 		STAT_MEC = 9
 	)
+	price_tag = 12000
 	var/cooldown
 	var/entropy_value = 5
 	var/blink_range = 8
@@ -570,7 +584,7 @@
 	desc = "A heavy book with details and translations of the Marshal codes."
 	icon_state = "book_code"
 	oddity_stats = list(
-		STAT_COG = 0
+		STAT_VIG = 0
 	)
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = /datum/perk/codespeak
@@ -590,6 +604,7 @@
 
 /obj/item/oddity/ls
 	prob_perk = 0
+	price_tag = 200
 
 /obj/item/oddity/ls/collector_coin
 	name = "Collector's Coin"
@@ -724,8 +739,8 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	slot_flags = SLOT_BELT
-	sharp = 1
-	edge = 1
+	sharp = TRUE
+	edge = TRUE
 	armor_penetration = ARMOR_PEN_SHALLOW
 
 	oddity_stats = list(
@@ -764,6 +779,7 @@
 	name = "Puzzlebox" //todo add cool sound
 	desc = "Looks oddly similar to a positronic brain. Something tells you you're better off not solving it."
 	icon_state = "puzzlebox"
+	price_tag = 650
 	var/openchance = 0.2
 	var/stumped_people = list()
 	oddity_stats = list(

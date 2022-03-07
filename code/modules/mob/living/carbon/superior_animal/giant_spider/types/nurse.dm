@@ -39,6 +39,20 @@
 	egg_inject_chance = 5 //Yes
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/midwife
 
+/mob/living/carbon/superior_animal/giant_spider/nurse/cave_spider
+	name = "cave spider"
+	desc = "Furry and white, it makes you shudder to look at it. This one has brilliant blue eyes and a pale cold body."
+	icon_state = "nurse_E"
+	icon_living = "nurse_E"
+	maxHealth = 140 // Slow but tanky
+	health = 140
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	poison_per_bite = 4
+	poison_type = "frostoil"
+	move_to_delay = 6 // Very slow
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
+
 /mob/living/carbon/superior_animal/giant_spider/nurse/carrier
 	name = "carrier spider"
 	desc = "Furry and tan, it makes you shudder to look at it. This one has brilliant green eyes, its body swollen with pulsating eggs."

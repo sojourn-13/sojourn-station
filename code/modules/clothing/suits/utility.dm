@@ -19,7 +19,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	extra_allowed = list(/obj/item/extinguisher,
 						 /obj/item/storage/toolbox)
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 0,
 		energy = 30,
@@ -59,7 +59,7 @@
 	desc = "A hood with radiation protective properties."
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 30,
@@ -81,7 +81,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	extra_allowed = list(/obj/item/clothing/head/radiation)
 	slowdown = 0.4
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 30,

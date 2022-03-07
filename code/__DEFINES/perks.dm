@@ -78,6 +78,7 @@
 #define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
 #define PERK_GREENTHUMB /datum/perk/greenthumb
+#define PERK_ADDICT /datum/perk/addict
 
 // Psionic perks
 #define PERK_PSION /datum/perk/psion
@@ -111,3 +112,8 @@
 
 //Genetics Perks
 #define PERK_SPLICED /datum/perk/spliced
+
+// Food perks
+#define PERK_CARNIVORE /datum/perk/carnivore
+#define PERK_HERBIVORE /datum/perk/herbivore
+#define PERK_SNACKIVORE /datum/perk/oddity/snackivore

@@ -9,7 +9,7 @@
 	density = TRUE
 	anchored = TRUE
 	turn_on_sound = null
-
+	layer = ABOVE_MOB_LAYER
 	New()
 		update_icon()
 

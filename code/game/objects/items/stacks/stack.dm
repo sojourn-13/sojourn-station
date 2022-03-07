@@ -30,6 +30,7 @@
 	//Used for the /random subtypes of material stacks. any stack works
 	var/rand_min = 0
 	var/rand_max = 0
+	var/stacktype_alt = null
 
 
 
@@ -187,7 +188,9 @@
 		list_recipes(usr, text2num(href_list["sublist"]))
 
 	if (href_list["make"])
-		if (src.get_amount() < 1) qdel(src) //Never should happen
+		if (src.get_amount() < 1)
+			if(consumable)
+				qdel(src) //Never should happen
 
 		var/list/recipes_list = recipes
 		if (href_list["sublist"])
@@ -234,7 +237,7 @@
 		return 1
 
 /obj/item/stack/proc/add(var/extra)
-	if(amount < 1)
+	if(amount < 1 && consumable)
 		qdel(src)
 	if(!uses_charge)
 		if(amount + extra > get_max_amount())
@@ -261,7 +264,8 @@
 	if (!get_amount())
 		return 0
 	if ((stacktype != S.stacktype) && !type_verified)
-		return 0
+		if((stacktype != S.stacktype_alt) && !type_verified)
+			return 0
 	if (isnull(tamount))
 		tamount = src.get_amount()
 

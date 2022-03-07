@@ -110,7 +110,7 @@
 	// Step 7, Swipe the ID to activate it.
 	else if((istype(W, /obj/item/card/id)) && (build_step == 6))
 		var/obj/item/card/id/C = W // New var to use ID-only vars.
-		if(!access_robotics in C.access) // Are you authorized to start the roomba ?
+		if(!(access_robotics in C.access)) // Are you authorized to start the roomba ?
 			to_chat(user, "You do not have the authorization to start the roomba.")
 			return
 		build_step++

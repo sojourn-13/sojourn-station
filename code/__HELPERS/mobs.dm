@@ -189,10 +189,11 @@ Proc for attack log creation, because really why not
 	if (progbar)
 		qdel(progbar)
 
-/proc/do_after(mob/user, delay, atom/target = null, needhand = 1, progress = 1, var/incapacitation_flags = INCAPACITATION_DEFAULT)
+/proc/do_after(mob/user, delay, atom/target, needhand = 1, progress = 1, var/incapacitation_flags = INCAPACITATION_DEFAULT, immobile = 1)
 	if(!user)
 		return 0
-	var/atom/target_loc = null
+
+	var/atom/target_loc
 	if(target)
 		target_loc = target.loc
 
@@ -220,13 +221,14 @@ Proc for attack log creation, because really why not
 		if (progress)
 			progbar.update(world.time - starttime)
 
-		if(!user || user.incapacitated(incapacitation_flags) || user.loc != original_loc)
-			. = 0
-			break
+		if(immobile)
+			if(!user || user.incapacitated(incapacitation_flags) || user.loc != original_loc)
+				. = 0
+				break
 
-		if(target_loc && (!target || target_loc != target.loc))
-			. = 0
-			break
+			if(target_loc && (!target || target_loc != target.loc))
+				. = 0
+				break
 
 		if(needhand)
 			if(user.get_active_hand() != holding)
@@ -376,3 +378,22 @@ Proc for attack log creation, because really why not
 		return
 
 	return mind.assigned_job.head_position
+
+//This gets an input while also checking a mob for whether it is incapacitated or not.
+/mob/proc/get_input(message, title, default, choice_type, obj/required_item)
+	if(src.incapacitated() || (required_item && !GLOB.hands_state.can_use_topic(required_item,src)))
+		return null
+	var/choice
+	if(islist(choice_type))
+		choice = input(src, message, title, default) as null|anything in choice_type
+	else
+		switch(choice_type)
+			if(MOB_INPUT_TEXT)
+				choice = input(src, message, title, default) as null|text
+			if(MOB_INPUT_NUM)
+				choice = input(src, message, title, default) as null|num
+			if(MOB_INPUT_MESSAGE)
+				choice = input(src, message, title, default) as null|message
+	if(isnull(choice) || src.incapacitated() || (required_item && !GLOB.hands_state.can_use_topic(required_item,src)))
+		return null
+	return choice

@@ -82,6 +82,15 @@
 	new /obj/item/tool/wirecutters(src)
 	new /obj/item/stack/cable_coil/random(src)
 
+/obj/item/storage/belt/utility/full/guild/populate_contents()
+	new /obj/item/tool/hammer(src)
+	new /obj/item/tool/wrench(src)
+	new /obj/item/tool/weldingtool(src)
+	new /obj/item/tool/crowbar(src)
+	new /obj/item/tool/wirecutters(src)
+	new /obj/item/tool/saw(src)
+	new /obj/item/stack/cable_coil/random(src)
+
 /obj/item/storage/belt/utility/roboticist
 	name = "roboticist tool belt"
 	desc = "Can hold various tools."
@@ -327,9 +336,12 @@
 		/obj/item/device/radio/headset,
 		/obj/item/device/hailer,
 		/obj/item/device/megaphone,
+		/obj/item/device/t_scanner/advanced,
+		/obj/item/device/holowarrant,
 		/obj/item/melee,
 		/obj/item/device/radio,
 		/obj/item/tool/knife,
+		/obj/item/tool/shovel/combat,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/energy/gun,
@@ -342,6 +354,10 @@
 		/obj/item/ammo_casing/flare,
 		/obj/item/taperoll,
 		/obj/item/pen,
+		/obj/item/device/taperecorder,
+		/obj/item/clipboard,
+		/obj/item/device/camera,
+		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks
 	)

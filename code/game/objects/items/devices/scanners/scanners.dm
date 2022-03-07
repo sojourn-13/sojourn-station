@@ -12,8 +12,8 @@
 
 	origin_tech = null
 
-	var/obj/item/cell/cell = null
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 	var/scan_title
 	var/scan_data

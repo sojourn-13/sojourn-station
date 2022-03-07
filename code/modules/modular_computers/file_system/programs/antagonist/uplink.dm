@@ -1,6 +1,6 @@
 /datum/computer_file/program/uplink
 	filename = "taxquickly"
-	filedesc = "TaxQuickly 2559"
+	filedesc = "TaxQuickly 2545"
 	program_icon_state = "uplink"
 	extended_desc = "An online tax filing software. It is a few years out of date."
 	size = 0 // it is cloud based
@@ -44,7 +44,7 @@
 		return 1
 	return 1
 
-/datum/nano_module/program/uplink/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/uplink/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/datum/computer_file/program/uplink/PRG = program
 	data["error"] = error

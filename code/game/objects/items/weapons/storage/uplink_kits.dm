@@ -62,13 +62,13 @@
 			return
 */
 
-			if("smoothoperator")
-				new /obj/item/storage/box/syndie_kit/pistol(src)
-				new /obj/item/storage/bag/trash(src)
-				new /obj/item/soap/syndie(src)
-				new /obj/item/bodybag(src)
-				new /obj/item/clothing/shoes/reinforced(src)
-				return
+		if("smoothoperator")
+			new /obj/item/storage/box/syndie_kit/pistol(src)
+			new /obj/item/storage/bag/trash(src)
+			new /obj/item/soap/syndie(src)
+			new /obj/item/bodybag(src)
+			new /obj/item/clothing/shoes/reinforced(src)
+			return
 
 /obj/item/storage/box/syndie_kit
 	name = "box"
@@ -315,6 +315,15 @@
 	new /obj/item/device/spy_sensor(src)
 	new /obj/item/device/spy_sensor(src)
 
+
+/obj/item/storage/box/syndie_kit/exl_revolver
+	name = "\"Wayfarer\" caseless revolver kit"
+	desc = "A well made 10x24 claseless revolver and some ammo."
+
+/obj/item/storage/box/syndie_kit/exl_revolver/populate_contents()
+	new /obj/item/gun/projectile/revolver/wayfarer(src)
+	new /obj/item/ammo_magazine/ammobox/c10x24_small(src)
+	new /obj/item/ammo_magazine/ammobox/c10x24_small(src)
 
 /obj/item/storage/secure/briefcase/money
 	name = "suspicious briefcase"

@@ -10,7 +10,7 @@
 	item_state = "ass_jacket"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 5,
 		bullet = 5,
 		energy = 5,
@@ -27,7 +27,7 @@
 	item_state = "cargo_jacket"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 5,
 		bullet = 5,
 		energy = 5,
@@ -44,7 +44,7 @@
 	item_state = "qm_coat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 10,
 		energy = 5,
@@ -89,7 +89,7 @@
 	item_state = "artist_armor"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 0,
@@ -109,7 +109,7 @@
 	permeability_coefficient = 0.50
 	siemens_coefficient = 0.7
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 5)
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 20,
 		energy = 10,
@@ -124,7 +124,7 @@
 	icon_state = "nt_sportsjacket"
 	item_state = "nt_sportsjacket"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 15,
 		bullet = 10,
 		energy = 5,
@@ -171,7 +171,7 @@
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/suit/storage/rank/det_trench
@@ -181,7 +181,7 @@
 	item_state = "det_suit"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 20,
 		energy = 20,
@@ -227,7 +227,7 @@
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	price_tag = 50
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 0,
 		energy = 0,

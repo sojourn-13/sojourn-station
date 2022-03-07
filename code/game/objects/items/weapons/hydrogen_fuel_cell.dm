@@ -89,7 +89,7 @@
 			insert_item(W, user)
 
 	// Wrench to remove the gun
-	if(QUALITY_BOLT_TURNING)
+	if(QUALITY_BOLT_TURNING in W.tool_qualities)
 		if(the_gun) // Do we have the gun?
 			var/obj/item/tool/T = W // New var to use tool-only procs.
 			user.visible_message(

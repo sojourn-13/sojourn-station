@@ -119,7 +119,7 @@
 	icon_state = "shield_[dir_sum]" // Update the icon
 
 	if(core_check()) // Check if we can become a core.
-		add_overlay("core[pick(1, 2)]")
+		icon_state = "core_empty"
 		if(!processing) // Become a core if we weren't one already
 			setup_core()
 	else if(processing) // Shutdown if we're somehow a core without the conditions
@@ -142,7 +142,7 @@
 	if(control_unit && control_unit != AMC)
 		return 0//Already have one
 	control_unit = AMC
-	control_unit.add_shielding(src,1)
+	control_unit.add_shielding(src, TRUE)
 	return 1
 
 //Scans cards for shields or the control unit and if all there it
@@ -171,6 +171,7 @@
 		return
 	control_unit.linked_cores.Add(src)
 	control_unit.reported_core_efficiency += efficiency
+	icon_state = "core_inactive"
 	return
 
 /obj/machinery/am_shielding/proc/shutdown_core()
@@ -179,13 +180,14 @@
 		return
 	control_unit.linked_cores.Remove(src)
 	control_unit.reported_core_efficiency -= efficiency
+	icon_state = "core_empty"
 	return
 
-/obj/machinery/am_shielding/proc/check_stability(var/injecting_fuel = 0)
+/obj/machinery/am_shielding/proc/check_stability(var/injecting_fuel = FALSE)
 	if(stability > 0)
 		return
 	if(injecting_fuel && control_unit)
-		control_unit.exploding = 1
+		control_unit.exploding = TRUE
 	if(src)
 		overheat()
 	return

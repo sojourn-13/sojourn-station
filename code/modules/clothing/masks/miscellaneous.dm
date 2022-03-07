@@ -37,7 +37,7 @@
 	item_flags = FLEXIBLEMATERIAL
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.01
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,

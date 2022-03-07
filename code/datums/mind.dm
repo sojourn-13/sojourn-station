@@ -368,7 +368,7 @@
 /datum/mind/proc/manifest_status(var/datum/computer_file/report/crew_record/CR)
 	var/inactive_time = world.time - last_activity
 	if (inactive_time >= 60 MINUTES)
-		return null //The server hasn't seen us alive in an hour.
+		return "SSD" //The server hasn't seen us alive in an hour.
 		//We will not show on the manifest at all
 
 	//Ok we're definitely going to show on the manifest, lets see if any status is set for us in the records

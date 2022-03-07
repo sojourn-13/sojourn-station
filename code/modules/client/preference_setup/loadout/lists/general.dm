@@ -14,7 +14,7 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/c_bible
-	display_name = "Christian Bible"
+	display_name = "christian bible"
 	path = /obj/item/book/manual/religion/c_bible
 
 /datum/gear/cardholder
@@ -57,7 +57,7 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/neotheologybook
-	display_name = "Absolutism ritual book"
+	display_name = "absolutism ritual book"
 	path = /obj/item/book/ritual/cruciform
 
 /datum/gear/psi_juice
@@ -81,3 +81,7 @@
 /datum/gear/vacflask
 	display_name = "vacuum flask"
 	path = /obj/item/reagent_containers/food/drinks/flask/vacuumflask
+
+/datum/gear/trackingimplanter
+	display_name = "implanter (tracking)"
+	path = /obj/item/implanter/tracking

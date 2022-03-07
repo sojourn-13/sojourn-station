@@ -32,6 +32,7 @@
 				/obj/item/storage/fancy/cigarettes/frozen = 7,
 				/obj/item/storage/fancy/cigarettes/shodan = 7,
 				/obj/item/storage/fancy/cigarettes/toha = 7,
+				/obj/item/storage/fancy/cigarettes/faith = 7,
 				/obj/item/storage/fancy/cigarettes/fortress = 7,
 				/obj/item/storage/fancy/cigarettes/fortressred = 7,
 				/obj/item/storage/fancy/cigarettes/fortressblue = 7,
@@ -73,6 +74,7 @@
 				/obj/item/storage/fancy/cigarettes/frozen = 70,
 				/obj/item/storage/fancy/cigarettes/shodan = 75,
 				/obj/item/storage/fancy/cigarettes/toha = 100,
+				/obj/item/storage/fancy/cigarettes/faith = 65,
 				/obj/item/storage/fancy/cigarettes/fortress = 50,
 				/obj/item/storage/fancy/cigarettes/fortressred = 50,
 				/obj/item/storage/fancy/cigarettes/fortressblue = 50,
@@ -795,7 +797,7 @@
 
 /obj/machinery/vending/gamers
 	name = "Game Emporium"
-	desc = "A one time stop for all your card or board game needs!"
+	desc = "A one stop shop for all your card or board game needs!"
 	icon_state = "nutrimat"
 	icon_vend = "nutrimat-vend"
 	vendor_department = DEPARTMENT_CHURCH
@@ -808,30 +810,42 @@
 					/obj/item/storage/pill_bottle/chechker = 7,
 					/obj/item/deck/tarot = 4,
 					/obj/item/deck = 10,
-					/obj/item/pack = 50,
+					/obj/item/pack/cardemon = 50,
 					/obj/item/pack/spaceball = 44,
 					/obj/item/deck/cah = 7,
 					/obj/item/deck/cah/black = 7,
 					/obj/item/scale = 12,
+					/obj/item/bone_counter = 12,
 					/obj/item/pack_card_carp = 90,
 					/obj/item/cardholder = 40,
 					/obj/item/cardholder/squirl = 20,
-					/obj/item/card_carp = 50
+					/obj/item/cardholder/ratbox = 20,
+					/obj/item/cardholder/beebox = 20,
+					/obj/item/cardholder/rabbit = 20,
+					/obj/item/storage/hcases/cardcarp = 20,
+					/obj/item/card_carp = 50,
+					/obj/item/card_carp/index = 50
 					)
 	prices = list(
 					/obj/item/board = 35,
 					/obj/item/storage/pill_bottle/chechker = 40,
 					/obj/item/deck/tarot = 60,
 					/obj/item/deck = 50,
-					/obj/item/pack = 35,
+					/obj/item/pack/cardemon = 35,
 					/obj/item/pack/spaceball = 30,
 					/obj/item/deck/cah = 17,
 					/obj/item/deck/cah/black = 23,
 					/obj/item/scale = 65,
+					/obj/item/bone_counter = 85,
 					/obj/item/pack_card_carp = 35,
 					/obj/item/cardholder = 42,
 					/obj/item/cardholder/squirl = 30,
-					/obj/item/card_carp = 1)
+					/obj/item/cardholder/ratbox = 30,
+					/obj/item/cardholder/beebox = 30,
+					/obj/item/cardholder/rabbit = 30,
+					/obj/item/storage/hcases/cardcarp = 20,
+					/obj/item/card_carp = 1,
+					/obj/item/card_carp/index = 1)
 
 /obj/machinery/vending/gamers/hunters
 	name = "Pre-Payed Game Emporium"
@@ -841,27 +855,39 @@
 					/obj/item/storage/pill_bottle/chechker = 4,
 					/obj/item/deck/tarot = 3,
 					/obj/item/deck = 5,
-					/obj/item/pack = 10,
+					/obj/item/pack/cardemon = 10,
 					/obj/item/pack/spaceball = 22,
 					/obj/item/deck/cah = 3,
 					/obj/item/deck/cah/black = 3,
-					/obj/item/scale = 2,
+					/obj/item/scale = 4,
+					/obj/item/bone_counter = 2,
 					/obj/item/pack_card_carp = 9,
 					/obj/item/cardholder = 8,
 					/obj/item/cardholder/squirl = 4,
-					/obj/item/card_carp = 4
+					/obj/item/cardholder/ratbox = 4,
+					/obj/item/cardholder/beebox = 4,
+					/obj/item/cardholder/rabbit = 4,
+					/obj/item/storage/hcases/cardcarp = 4,
+					/obj/item/card_carp = 4,
+					/obj/item/card_carp/index = 4
 					)
 	prices = list(
 					/obj/item/board = 0,
 					/obj/item/storage/pill_bottle/chechker = 0,
 					/obj/item/deck/tarot = 0,
 					/obj/item/deck = 0,
-					/obj/item/pack = 0,
+					/obj/item/pack/cardemon = 0,
 					/obj/item/pack/spaceball = 0,
 					/obj/item/deck/cah = 0,
 					/obj/item/deck/cah/black = 0,
 					/obj/item/scale = 0,
+					/obj/item/bone_counter = 0,
 					/obj/item/pack_card_carp = 0,
 					/obj/item/cardholder = 0,
 					/obj/item/cardholder/squirl = 0,
-					/obj/item/card_carp = 0)
+					/obj/item/cardholder/ratbox = 0,
+					/obj/item/cardholder/beebox = 0,
+					/obj/item/cardholder/rabbit = 0,
+					/obj/item/storage/hcases/cardcarp = 0,
+					/obj/item/card_carp = 0,
+					/obj/item/card_carp/index = 0)

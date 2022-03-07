@@ -290,10 +290,8 @@
 	else
 		new /obj/item/storage/belt/utility/handmade/full(src)
 	new /obj/item/storage/firstaid/regular(src)
-	if(prob(90))
+	if(prob(95))
 		new /obj/item/storage/firstaid/ifak(src)
-	if(prob(80))
-		new /obj/item/storage/firstaid/adv(src)
 	else
 		new /obj/item/storage/firstaid/combat(src)
 	new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
@@ -387,10 +385,8 @@
 	//Salvager improved
 	new /obj/item/storage/belt/utility/full(src)
 	new /obj/item/storage/firstaid/regular(src)
-	if(prob(60))
+	if(prob(70))
 		new /obj/item/storage/firstaid/ifak(src)
-	else if(prob(70))
-		new /obj/item/storage/firstaid/adv(src)
 	else
 		new /obj/item/storage/firstaid/combat(src)
 	if(prob(40))

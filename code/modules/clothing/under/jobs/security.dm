@@ -14,7 +14,7 @@
 	icon_state = "warden"
 	item_state = "r_suit"
 	siemens_coefficient = 0.8
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/head/rank/warden
 	name = "supply specialist's helmet"
@@ -27,7 +27,7 @@
 	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for more robust protection. It has the words \"Supply Specialist\" written on the shoulders."
 	icon_state = "warden_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/under/rank/security
 	name = "marshal officer's jumpsuit"
@@ -35,7 +35,7 @@
 	icon_state = "security"
 	item_state = "ba_suit"
 	siemens_coefficient = 0.8
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/under/rank/security/skirt
 	name = "marshal officer's jumpskirt"
@@ -54,21 +54,55 @@
 	icon_state = "medspec"
 	item_state = "ba_suit"
 	siemens_coefficient = 0.8
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 5, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 5, rad = 0)
 
 /obj/item/clothing/under/rank/medspec/skirt
 	name = "militia corpmen's jumpskirt"
 	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for robust protection. It has the words \"Corpsman\" written on the shoulders."
 	icon_state = "medspec_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 5, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 5, rad = 0)
 
 /obj/item/clothing/under/tactical
 	name = "tactical turtleneck"
 	desc = "A reinforced military turtleneck, designed to provide moderate combat protection."
 	icon_state = "syndicate"
 	siemens_coefficient = 0.8
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/under/rank/bdu/marshal
+	name = "marshal officer's BDU"
+	desc = "A durable officer's Battle Dress Uniform, designed to provide moderate combat protection."
+	icon_state = "bdumarshal"
+	item_state = "bdumarshal"
+
+/obj/item/clothing/under/rank/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*
  * Detective
@@ -93,7 +127,7 @@
 	icon_state = "det_corporate"
 	item_state = "det_corporate"
 
-	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/inspector/black
@@ -110,7 +144,7 @@
 		slot_r_hand_str = "det_hat",
 		)
 	allowed = list(/obj/item/reagent_containers/food/snacks/candy_corn, /obj/item/pen)
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 0,
 		energy = 0,
@@ -134,14 +168,14 @@
 	icon_state = "hos"
 	item_state = "r_suit"
 	siemens_coefficient = 0.8
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/under/rank/ih_commander/skirt
 	name = "warrant officer's jumpskirt"
 	desc = "It's a jumpskirt worn by those few with the dedication to achieve the position of \"Warrant Officer\". It has additional armor to protect the wearer."
 	icon_state = "hos_skirt"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/head/rank/commander
 	name = "warrant officer's Hat"
@@ -169,7 +203,7 @@
 	icon_state = "hos"
 	item_state = "hos"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 40,
 		energy = 30,

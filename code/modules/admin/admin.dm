@@ -5,11 +5,11 @@ var/global/floorIsLava = 0
 #define LIMITED_ANTAG 1
 #define ANTAG 2
 
-#define ADMIN_QUE(user,display) "<a href='?_src_=holder;adminmoreinfo=\ref[user]'>[display]</a>"
-#define ADMIN_PP(user,display) "<a href='?_src_=holder;adminplayeropts=\ref[user]'>[display]</a>"
-#define ADMIN_VV(atom,display) "<a href='?_src_=vars;Vars=\ref[atom]'>[display]</a>"
-#define ADMIN_SM(user,display) "<a href='?_src_=holder;subtlemessage=\ref[user]'>[display]</a>"
-#define ADMIN_TP(user,display) "<a href='?_src_=holder;traitor=\ref[user]'>[display]</a>"
+#define ADMIN_QUE_DISPLAY(user,display) "<a href='?_src_=holder;adminmoreinfo=\ref[user]'>[display]</a>"
+#define ADMIN_PP_DISPLAY(user,display) "<a href='?_src_=holder;adminplayeropts=\ref[user]'>[display]</a>"
+#define ADMIN_VV_DISPLAY(atom,display) "<a href='?_src_=vars;Vars=\ref[atom]'>[display]</a>"
+#define ADMIN_SM_DISPLAY(user,display) "<a href='?_src_=holder;subtlemessage=\ref[user]'>[display]</a>"
+#define ADMIN_TP_DISPLAY(user,display) "<a href='?_src_=holder;traitor=\ref[user]'>[display]</a>"
 
 ////////////////////////////////
 /proc/message_admins(var/msg, tag = "admin_log", tagtext = "ADMIN LOG")
@@ -25,7 +25,7 @@ var/global/floorIsLava = 0
 	log_attack(text)
 	lobby_message(message = text, color = "#FFA500")
 	for(var/client/C in admins)
-		if(check_rights(R_ADMIN, 0, C.mob))
+		if(check_rights(R_ADMIN | R_DEBUG, 0, C.mob))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
 				var/msg = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[text]</span></span>"
 				to_chat(C, msg)
@@ -39,7 +39,7 @@ var/global/floorIsLava = 0
  */
 /proc/message_adminTicket(msg, important = FALSE, quiet = FALSE, tag = "admin_ticket", tagtext = "Request for Help")
 	for(var/client/C in admins)
-		if(check_rights(R_ADMIN | R_MOD, 0, C.mob))
+		if(check_rights(R_ADMIN | R_MOD | R_DEBUG, 0, C.mob))
 			var/rendered = "<span class=\"adminhelp\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> [msg]</span></span>"
 			to_chat(C, rendered)
 			if(important || (!quiet && (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)))
@@ -1121,13 +1121,13 @@ ADMIN_VERB_ADD(/datum/admins/proc/toggleguests, R_ADMIN, FALSE)
 		if(0)
 			return "<b>[key_name(C, link, name, highlight_special)]</b>"
 		if(1)	//Private Messages
-			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE(M,"?")])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE_DISPLAY(M,"?")])</b>"
 		if(2)	//Admins
-			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE(M,"?")]) ([ADMIN_PP(M,"PP")]) ([ADMIN_VV(M,"VV")]) ([ADMIN_SM(M,"SM")]) ([admin_jump_link(M, UNLINT(src))]) ([ADMIN_TP(M,"TP")])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE_DISPLAY(M,"?")]) ([ADMIN_PP_DISPLAY(M,"PP")]) ([ADMIN_VV_DISPLAY(M,"VV")]) ([ADMIN_SM_DISPLAY(M,"SM")]) ([admin_jump_link(M, UNLINT(src))]) ([ADMIN_TP_DISPLAY(M,"TP")])</b>"
 		if(3)	//Devs
-			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_VV(M,"VV")])([admin_jump_link(M, UNLINT(src))])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_VV_DISPLAY(M,"VV")])([admin_jump_link(M, UNLINT(src))])</b>"
 		if(4)	//Mentors
-			return "<b>[key_name(C, link, name, highlight_special)] ([ADMIN_QUE(M,"?")]) ([ADMIN_PP(M,"PP")]) ([ADMIN_VV(M,"VV")]) ([ADMIN_SM(M,"SM")]) ([admin_jump_link(M, UNLINT(src))])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)] ([ADMIN_QUE_DISPLAY(M,"?")]) ([ADMIN_PP_DISPLAY(M,"PP")]) ([ADMIN_VV_DISPLAY(M,"VV")]) ([ADMIN_SM_DISPLAY(M,"SM")]) ([admin_jump_link(M, UNLINT(src))])</b>"
 
 
 //
@@ -1336,9 +1336,3 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_artifact, R_ADMIN, FALSE)
 			A.secondary_effect.trigger = secondary_trigger
 		else
 			QDEL_NULL(A.secondary_effect)
-
-#undef ADMIN_QUE
-#undef ADMIN_PP
-#undef ADMIN_VV
-#undef ADMIN_SM
-#undef ADMIN_TP

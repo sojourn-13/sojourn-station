@@ -7,6 +7,14 @@
 //Checks if all high bits in req_mask are set in bitfield
 #define BIT_TEST_ALL(bitfield, req_mask) ((~(bitfield) & (req_mask)) == 0)
 
+/// isnum() returns TRUE for NaN. Also, NaN != NaN. Checkmate, BYOND.
+#define isnan(x) ( (x) != (x) )
+
+#define isinf(x) (isnum((x)) && (((x) == text2num("inf")) || ((x) == text2num("-inf"))))
+
+/// NaN isn't a number, damn it. Infinity is a problem too.
+#define isnum_safe(x) ( isnum((x)) && !isnan((x)) && !isinf((x)) )
+
 //Inverts the colour of an HTML string
 /proc/invertHTML(HTMLstring)
 	if(!istext(HTMLstring))
@@ -503,6 +511,19 @@ Turf and target are seperate in case you want to teleport some distance from a t
 		target = locate(1, target.y, target.z)
 
 	return target
+
+// More complex proc that uses basic trigonometry to get a turf away from target . Accurate
+// it gets the difference between the center and target x and y axis. If they are - or + is handled without hardcode
+// The ratios are divided by their total (x + y ) and then multiplied by distance x / (x+y) * distance
+// this value is added ontop of the center coordinates , giving us our "away" turf.
+/proc/get_turf_away_from_target_complex(atom/center, atom/target, distance)
+	var/list/distance_reports = list(center.x - target.x, center.y - target.y)
+	var/distance_total = distance_reports[1] + distance_reports[2]
+	distance_reports[1] = round(distance_reports[1] / distance_total * distance)
+	distance_reports[2] = round(distance_reports[2] / distance_total * distance)
+	distance_reports[1] = center.x + distance_reports[1]
+	distance_reports[2] = center.y + distance_reports[2]
+	return locate(distance_reports[1], distance_reports[2], center.z)
 
 // returns turf relative to A in given direction at set range
 // result is bounded to map size
@@ -1316,12 +1337,13 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	. = view(range, GLOB.dview_mob)
 	GLOB.dview_mob.loc = null
 
+
 /mob/dview
 	invisibility = 101
-	density = 0
+	density = FALSE
 
-	anchored = 1
-	simulated = 0
+	anchored = TRUE
+	simulated = FALSE
 
 	see_in_dark = 1e6
 
@@ -1348,3 +1370,55 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return 1
 	else
 		return 0
+
+//gives us the stack trace from CRASH() without ending the current proc.
+/proc/stack_trace(msg)
+	CRASH(msg)
+
+/datum/proc/stack_trace(msg)
+	CRASH(msg)
+
+/proc/pass(...)
+	return
+
+// \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+// If it ever becomes necesary to get a more performant REF(), this lies here in wait
+// #define REF(thing) (thing && istype(thing, /datum) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+/proc/REF(input)
+	// if(istype(input, /datum))
+	// 	var/datum/thing = input
+	// 	if(thing.datum_flags & DF_USE_TAG)
+	// 		if(!thing.tag)
+	// 			stack_trace("A ref was requested of an object with DF_USE_TAG set but no tag: [thing]")
+	// 			thing.datum_flags &= ~DF_USE_TAG
+	// 		else
+	// 			return "\[[url_encode(thing.tag)]\]"
+	return "\ref[input]"
+
+// Makes a call in the context of a different usr
+// Use sparingly
+/world/proc/PushUsr(mob/M, datum/callback/CB, ...)
+	var/temp = usr
+	usr = M
+	if (length(args) > 2)
+		. = CB.Invoke(arglist(args.Copy(3)))
+	else
+		. = CB.Invoke()
+	usr = temp
+
+//datum may be null, but it does need to be a typed var
+#define NAMEOF(datum, X) (#X || ##datum.##X)
+
+#define VARSET_LIST_CALLBACK(target, var_name, var_value) CALLBACK(GLOBAL_PROC, /proc/___callbackvarset, ##target, ##var_name, ##var_value)
+//dupe code because dm can't handle 3 level deep macros
+#define VARSET_CALLBACK(datum, var, var_value) CALLBACK(GLOBAL_PROC, /proc/___callbackvarset, ##datum, NAMEOF(##datum, ##var), ##var_value)
+
+/proc/___callbackvarset(list_or_datum, var_name, var_value)
+	if(length(list_or_datum))
+		list_or_datum[var_name] = var_value
+		return
+	var/datum/D = list_or_datum
+	// if(IsAdminAdvancedProcCall())
+	// 	D.vv_edit_var(var_name, var_value) //same result generally, unless badmemes
+	// else
+	D.vars[var_name] = var_value

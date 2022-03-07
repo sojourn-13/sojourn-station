@@ -9,6 +9,12 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		if(blueprint_type == /datum/nt_blueprint/machinery)
 			continue
+		if(blueprint_type == /datum/nt_blueprint/mob)
+			continue
+		if(blueprint_type == /datum/nt_blueprint/cruciform_upgrade)
+			continue
+		if(blueprint_type == /datum/nt_blueprint/weapons)
+			continue
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
 	return list
@@ -188,6 +194,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/storage/toolbox = 1
 	)
 	build_time = 5 SECONDS
+
 /datum/nt_blueprint/machinery/solidifier
 	name = "Biomatter Solidifier"
 	build_path = /obj/machinery/biomatter_solidifier
@@ -435,7 +442,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_time = 8 SECONDS
 
 /datum/nt_blueprint/cruciform_upgrade/speed_of_the_chosen
-	name = "Cruciform Spped of the chosen Upgrade"
+	name = "Cruciform Speed of the chosen Upgrade"
 	build_path = /obj/item/cruciform_upgrade/speed_of_the_chosen
 	//Speed is king, so we requires a kings randsom to make!
 	materials = list(
@@ -444,5 +451,45 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/silver = 10,
 		/obj/item/stack/material/gold = 3,
 		/obj/item/stack/material/plasma = 1
+	)
+	build_time = 8 SECONDS
+
+
+//Church weapons, faster but more exspensive way for vectors to get their armorments without a disk
+/datum/nt_blueprint/weapons
+
+/datum/nt_blueprint/weapons/antebellum
+	name = "\"Antebellum\" Blunderbuss lasgun"
+	build_path = /obj/item/gun/energy/plasma/antebellum
+	materials = list(
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/wood = 15,
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 3 SECONDS
+
+/datum/nt_blueprint/weapons/carpediem
+	name = "\"Carpediem\" lasgun"
+	build_path = /obj/item/gun/energy/carpediem
+	materials = list(
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/wood = 10,
+		/obj/item/stack/material/glass = 3,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 6 SECONDS
+
+/datum/nt_blueprint/weapons/concillium
+	name = "\"Concillium\" las-machinegun"
+	build_path = /obj/item/gun/energy/concillium
+	materials = list(
+		/obj/item/stack/material/plasteel = 30,
+		/obj/item/stack/material/wood = 25,
+		/obj/item/stack/material/glass = 15,
+		/obj/item/stack/material/gold = 3,
+		/obj/item/stack/material/silver = 5
 	)
 	build_time = 8 SECONDS

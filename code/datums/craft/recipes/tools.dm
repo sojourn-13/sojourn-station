@@ -257,3 +257,12 @@
 		list(QUALITY_HAMMERING, 15, 150),
 		list(QUALITY_SAWING, 15, 150)
 	)
+//A bucket of wax to be applied to tools
+/datum/craft_recipe/tool/waxcoat
+	name = "tool mod: wax coating"
+	result = /obj/item/tool_upgrade/productivity/waxcoat
+	steps = list(
+			list(CRAFT_MATERIAL, 1, MATERIAL_STEEL),
+			list(QUALITY_WIRE_CUTTING, 10, 50),
+			list(/obj/item/stack/wax, 4, 4)
+	)

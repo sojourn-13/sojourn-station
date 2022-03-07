@@ -81,7 +81,7 @@
 	return data
 
 
-/obj/item/book/ritual/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/item/book/ritual/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -96,7 +96,7 @@
 
 
 /obj/item/book/ritual/interact(mob/living/carbon/human/H)
-	ui_interact(H)
+	nano_ui_interact(H)
 
 
 /obj/item/book/ritual/Topic(href, href_list)

@@ -5,7 +5,7 @@
 	icon_state = "void"
 
 	heat_protection = HEAD
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 10,
@@ -14,7 +14,7 @@
 		rad = 75
 	)
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
-
+	obscuration = LIGHT_OBSCURATION
 	light_overlay = "helmet_light"
 
 /obj/item/clothing/suit/space/void
@@ -23,7 +23,7 @@
 	item_state = "void"
 	desc = "A high-tech dark red space suit."
 	slowdown = 1
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 10,
@@ -37,11 +37,17 @@
 	breach_threshold = 5
 	resilience = 0.09
 	can_breach = 1
-
+	stiffness = HEAVY_STIFFNESS // Very hard to aim in
 	//Inbuilt devices.
 	var/obj/item/clothing/shoes/magboots/boots = null // Deployable boots, if any.
 	var/obj/item/clothing/head/helmet/helmet = /obj/item/clothing/head/helmet/space/void   // Deployable helmet, if any.
 	var/obj/item/tank/tank = null              // Deployable tank, if any.
+
+	valid_accessory_slots = list()
+	restricted_accessory_slots = list()
+
+	tool_qualities = list()
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/Initialize()
 	if(boots && ispath(boots))

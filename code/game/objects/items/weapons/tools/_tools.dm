@@ -21,15 +21,15 @@
 	var/stunforce = 0
 	var/agonyforce = 0
 
-	var/sparks_on_use = FALSE	//Set to TRUE if you want to have sparks on each use of a tool
-	var/eye_hazard = FALSE	//Set to TRUE should damage users eyes if they without eye protection
+	sparks_on_use = FALSE	//Set to TRUE if you want to have sparks on each use of a tool
+	eye_hazard = FALSE	//Set to TRUE should damage users eyes if they without eye protection
 
-	var/use_power_cost = 0	//For tool system, determinze how much power tool will drain from cells, 0 means no cell needed
-	var/obj/item/cell/cell = null
-	var/suitable_cell = null	//Dont forget to edit this for a tool, if you want in to consume cells
-	var/passive_power_cost = 1 //Energy consumed per process tick while active
+	use_power_cost = 0	//For tool system, determinze how much power tool will drain from cells, 0 means no cell needed
+	cell = null
+	suitable_cell = null	//Dont forget to edit this for a tool, if you want in to consume cells
+	passive_power_cost = 1 //Energy consumed per process tick while active
 
-	var/use_fuel_cost = 0	//Same, only for fuel. And for the sake of God, DONT USE CELLS AND FUEL SIMULTANEOUSLY.
+	use_fuel_cost = 0	//Same, only for fuel. And for the sake of God, DONT USE CELLS AND FUEL SIMULTANEOUSLY.
 	var/passive_fuel_cost = 0.03 //Fuel consumed per process tick while active
 	var/max_fuel = 0
 
@@ -37,8 +37,8 @@
 
 	//Third type of resource, stock. A tool that uses physical objects (or itself) in order to work
 	//Currently used for tape roll
-	var/use_stock_cost = 0
-	var/stock = 0
+	use_stock_cost = 0
+	stock = 0
 	var/max_stock = 0
 	var/allow_decimal_stock = TRUE
 	var/delete_when_empty = TRUE
@@ -234,7 +234,7 @@
 
 	return data
 
-/obj/item/tool/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/obj/item/tool/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -756,7 +756,7 @@
 		adjustToolHealth(-degradation, user)
 
 //Power and fuel drain, sparks spawn
-/obj/item/tool/proc/check_tool_effects(var/mob/living/user, var/time)
+/obj/item/proc/check_tool_effects(var/mob/living/user, var/time)
 
 	if(use_power_cost)
 		if(!cell || !cell.check_charge(use_power_cost*time))
@@ -785,7 +785,7 @@
 	return TRUE
 
 //Returns the amount of fuel in tool
-/obj/item/tool/proc/get_fuel()
+/obj/item/proc/get_fuel()
 	return ( reagents ? reagents.get_reagent_amount("fuel") : 0 )
 
 /obj/item/tool/proc/consume_fuel(var/volume)
@@ -957,7 +957,7 @@
 
 //Decides whether or not to damage a player's eyes based on what they're wearing as protection
 //Note: This should probably be moved to mob
-/obj/item/tool/proc/eyecheck(var/mob/user)
+/obj/item/proc/eyecheck(var/mob/user)
 	if(!iscarbon(user))
 		return TRUE
 	if(ishuman(user))
@@ -1096,4 +1096,4 @@
 /obj/item/tool/ui_action_click(mob/living/user, action_name)
 	switch(action_name)
 		if("Tool information")
-			ui_interact(user)
+			nano_ui_interact(user)

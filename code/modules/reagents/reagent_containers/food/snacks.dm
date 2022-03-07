@@ -392,7 +392,7 @@
 	center_of_mass = list("x"=15, "y"=15)
 	nutriment_amt = 1
 	nutriment_desc = list("candy" = 1)
-	preloaded_reagents = list("sugar" = 3)
+	preloaded_reagents = list("sugar" = 3, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/reagent_containers/food/snacks/candy/donor
@@ -401,7 +401,7 @@
 	bitesize = 5
 	trash = /obj/item/trash/candy
 	nutriment_desc = list("candy" = 10)
-	preloaded_reagents = list("nutriment" = 10, "sugar" = 6)
+	preloaded_reagents = list("nutriment" = 6, "sugar" = 6, "preservatives" = 4)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/reagent_containers/food/snacks/candy/proteinbar
@@ -409,8 +409,8 @@
 	desc = "SwoleMAX brand protein bars, guaranteed to get you feeling perfectly overconfident."
 	icon_state = "proteinbar"
 	trash = /obj/item/trash/candy/proteinbar
-	nutriment_amt = 9
-	nutriment_desc = list("nutriment" = 7, "protein" = 8)
+	nutriment_amt = 5
+	nutriment_desc = list("nutriment" = 7, "protein" = 8, "preservatives" = 4)
 	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/reagent_containers/food/snacks/candy/pistachios_pack
@@ -418,9 +418,9 @@
 	desc = "A packet of pistachios with added salt. A somewhat healthy light snack."
 	icon_state = "pistachios_pack"
 	trash = /obj/item/trash/pistachios
-	nutriment_amt = 4
+	nutriment_amt = 1
 	nutriment_desc = list("pistachios" = 3, "protein" = 2, "sodiumchloride" = 2)
-	preloaded_reagents = list("nutriment" = 1, "sodiumchloride" = 6)
+	preloaded_reagents = list("nutriment" = 1, "sodiumchloride" = 6, "preservatives" = 3)
 	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/reagent_containers/food/snacks/candy/sunflowerseeds
@@ -428,8 +428,8 @@
 	desc = "Bag of sunflower seeds that have been fried and salted for people that like to chew their food for way to long."
 	icon_state = "semki_pack"
 	trash = /obj/item/trash/semki
-	nutriment_amt = 3
-	nutriment_desc = list("nutriment" = 2, "protein" = 1)
+	nutriment_amt = 1
+	nutriment_desc = list("nutriment" = 2, "protein" = 1, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/reagent_containers/food/snacks/candy/energybar
@@ -439,7 +439,7 @@
 	trash = /obj/item/trash/energybar
 	nutriment_amt = 1
 	nutriment_desc = list("nutriment" = 1, "sugar" = 29)
-	preloaded_reagents = list("nutriment" = 1, "sugar" = 29)
+	preloaded_reagents = list("nutriment" = 1, "sugar" = 19, "preservatives" = 10)
 	matter = list(MATERIAL_BIOMATTER = 1)
 
 /obj/item/reagent_containers/food/snacks/candy_corn
@@ -449,9 +449,9 @@
 	filling_color = "#FFFCB0"
 	bitesize = 2
 	center_of_mass = list("x"=14, "y"=10)
-	nutriment_amt = 4
+	nutriment_amt = 2
 	nutriment_desc = list("candy corn" = 4)
-	preloaded_reagents = list("nutriment" = 4, "sugar" = 2)
+	preloaded_reagents = list("nutriment" = 4, "sugar" = 2, "preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/chips
 	name = "chips packet"
@@ -461,8 +461,8 @@
 	filling_color = "#E8C31E"
 	bitesize = 1
 	center_of_mass = list("x"=15, "y"=15)
-	nutriment_amt = 3
-	nutriment_desc = list("salt" = 1, "chips" = 2)
+	nutriment_amt = 1
+	nutriment_desc = list("salt" = 1, "chips" = 2, "preservatives" = 3)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/reagent_containers/food/snacks/gamerchips
@@ -473,9 +473,10 @@
 	filling_color = "#E8C31E"
 	bitesize = 1
 	center_of_mass = list("x"=15, "y"=15)
-	nutriment_amt = 3
+	nutriment_amt = 1
 	nutriment_desc = list("cool ranch" = 2, "corn" = 1)
 	matter = list(MATERIAL_BIOMATTER = 3)
+	preloaded_reagents = list("preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/cookie
 	name = "cookie"
@@ -484,8 +485,9 @@
 	filling_color = "#DBC94F"
 	bitesize = 1
 	center_of_mass = list("x"=17, "y"=18)
-	nutriment_amt = 5
+	nutriment_amt = 1
 	nutriment_desc = list("sweetness" = 3, "cookie" = 2)
+	preloaded_reagents = list("preservatives" = 1)
 
 /obj/item/reagent_containers/food/snacks/chocolatebar
 	name = "chocolate bar"
@@ -494,9 +496,9 @@
 	filling_color = "#7D5F46"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=15)
-	nutriment_amt = 2
+	nutriment_amt = 1
 	nutriment_desc = list("chocolate" = 5)
-	preloaded_reagents = list("sugar" = 2, "coco" = 2)
+	preloaded_reagents = list("sugar" = 2, "coco" = 2, "preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/chocolateegg
 	name = "chocolate egg"
@@ -505,9 +507,9 @@
 	filling_color = "#7D5F46"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=13)
-	nutriment_amt = 3
+	nutriment_amt = 1
 	nutriment_desc = list("chocolate" = 5)
-	preloaded_reagents = list("sugar" = 2, "coco" = 2)
+	preloaded_reagents = list("sugar" = 2, "coco" = 2, "preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/chocolatecoin
 	name = "chocolate coin"
@@ -516,9 +518,9 @@
 	filling_color = "#7D5F46"
 	bitesize = 1
 	center_of_mass = list("x"=15, "y"=15)
-	nutriment_amt = 3
+	nutriment_amt = 1
 	nutriment_desc = list("chocolate" = 5)
-	preloaded_reagents = list("sugar" = 2, "coco" = 2)
+	preloaded_reagents = list("sugar" = 2, "coco" = 2, "preservatives" = 2)
 	var/open = FALSE
 
 /obj/item/reagent_containers/food/snacks/chocolatecoin/attack_self(mob/user)
@@ -552,8 +554,8 @@
 	desc = "Goes great with Robust Coffee."
 	icon_state = "donut1"
 	bitesize = 3
-	nutriment_amt = 3
-	preloaded_reagents = list("sprinkles" = 1)
+	nutriment_amt = 1
+	preloaded_reagents = list("sprinkles" = 1, "preservatives" = 2)
 	New()
 		..()
 		if(prob(30))
@@ -568,9 +570,9 @@
 	desc = "Like life, it never quite tastes the same."
 	icon_state = "donut1"
 	filling_color = "#ED11E6"
-	nutriment_amt = 2
+	nutriment_amt = 1
 	bitesize = 10
-	preloaded_reagents = list("sprinkles" = 1)
+	preloaded_reagents = list("sprinkles" = 1, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 12)
 	New()
 		..()
@@ -609,9 +611,9 @@
 	icon_state = "jdonut1"
 	filling_color = "#ED1169"
 	center_of_mass = list("x"=16, "y"=11)
-	nutriment_amt = 3
+	nutriment_amt = 1
 	bitesize = 5
-	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 5)
+	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
 	New()
 		..()
@@ -627,9 +629,9 @@
 	icon_state = "jdonut1"
 	filling_color = "#ED1169"
 	center_of_mass = list("x"=16, "y"=11)
-	nutriment_amt = 3
+	nutriment_amt = 1
 	bitesize = 5
-	preloaded_reagents = list("sprinkles" = 1, "slimejelly" = 5)
+	preloaded_reagents = list("sprinkles" = 1, "slimejelly" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
 	New()
 		..()
@@ -646,8 +648,8 @@
 	filling_color = "#ED1169"
 	bitesize = 5
 	center_of_mass = list("x"=16, "y"=11)
-	nutriment_amt = 3
-	preloaded_reagents = list("sprinkles" = 1, "cherryjelly" = 5)
+	nutriment_amt = 1
+	preloaded_reagents = list("sprinkles" = 1, "cherryjelly" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
 	New()
 		..()
@@ -751,8 +753,8 @@
 	var/buff_power = 6
 	price_tag = 500
 	var/buff_time = 20 MINUTES
-	nutriment_amt = 3
-	preloaded_reagents = list("sprinkles" = 2)
+	nutriment_amt = 1
+	preloaded_reagents = list("sprinkles" = 2, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/On_Consume(var/mob/eater, var/mob/feeder = null)
@@ -772,7 +774,7 @@
 	icon_state = "donut_mec"
 	overlay_state = "donut_mec_c"
 	stats_buff = list(STAT_MEC)
-	preloaded_reagents = list("sprinkles" = 1, "lemonjuice" = 1)
+	preloaded_reagents = list("sprinkles" = 1, "lemonjuice" = 1, "preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/cog
 	name = "Purple Masterpiece Donut"
@@ -780,7 +782,7 @@
 	icon_state = "donut_cog"
 	overlay_state = "donut_cog_c"
 	stats_buff = list(STAT_COG)
-	preloaded_reagents = list("sprinkles" = 1, "grapejuice" = 1)
+	preloaded_reagents = list("sprinkles" = 1, "grapejuice" = 1, "preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/bio
 	name = "Green Masterpiece Donut"
@@ -788,7 +790,7 @@
 	icon_state = "donut_bio"
 	overlay_state = "donut_bio_c"
 	stats_buff = list(STAT_BIO)
-	preloaded_reagents = list("sprinkles" = 1, "mint" = 1)
+	preloaded_reagents = list("sprinkles" = 1, "mint" = 1, "preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/rob
 	name = "Brown Masterpiece Donut"
@@ -796,7 +798,7 @@
 	icon_state = "donut_rob"
 	overlay_state = "donut_rob_c"
 	stats_buff = list(STAT_ROB)
-	preloaded_reagents = list("sprinkles" = 1, "coco" = 1)
+	preloaded_reagents = list("sprinkles" = 1, "coco" = 1, "preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/tgh
 	name = "Cream Masterpiece Donut"
@@ -811,7 +813,7 @@
 	icon_state = "donut_vig"
 	overlay_state = "donut_vig_c"
 	stats_buff = list(STAT_VIG)
-	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 1)
+	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 1, "preservatives" = 2)
 
 /obj/item/reagent_containers/food/snacks/friedegg
 	name = "fried egg"
@@ -939,7 +941,7 @@
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("heartiness" = 1, "dough" = 2)
 	nutriment_amt = 2
-	preloaded_reagents = list("protein" = 2)
+	preloaded_reagents = list("protein" = 2, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
 	var/warm = 0
@@ -966,7 +968,7 @@
 	name = "\improper sin-pocket"
 	desc = "The food of choice for the veteran. Do <B>NOT</B> overconsume."
 	filling_color = "#6D6D00"
-	heated_reagents = list("doctorsdelight" = 5, "hyperzine" = 1)
+	heated_reagents = list("doctorsdelight" = 5, "hyperzine" = 1, "preservatives" = 5)
 	var/has_been_heated = 0
 
 /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket/attack_self(mob/user)
@@ -1392,6 +1394,7 @@
 	New()
 		..()
 		if(prob(10))
+			sleep(10)
 			name = "exceptional plump pie"
 			desc = "Microwave is taken by a fey mood! It has cooked an exceptional plump pie!"
 			reagents.add_reagent("tricordrazine", 5)
@@ -1497,7 +1500,7 @@
 	filling_color = "#631212"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=9)
-	preloaded_reagents = list("protein" = 4)
+	preloaded_reagents = list("protein" = 4, "preservatives" = 3)
 	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/reagent_containers/food/snacks/no_raisin
@@ -1518,7 +1521,7 @@
 	filling_color = "#FFE591"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=11)
-	preloaded_reagents = list("sugar" = 4)
+	preloaded_reagents = list("sugar" = 4, "preservatives" = 5)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/reagent_containers/food/snacks/cheesiehonkers
@@ -1530,7 +1533,8 @@
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=9)
 	nutriment_desc = list("cheese" = 5, "chips" = 2)
-	nutriment_amt = 4
+	preloaded_reagents = list("preservatives" = 2)
+	nutriment_amt = 2
 	matter = list(MATERIAL_BIOMATTER = 4)
 
 /obj/item/reagent_containers/food/snacks/syndicake
@@ -1541,9 +1545,9 @@
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("sweetness" = 3, "cake" = 1)
-	nutriment_amt = 4
+	nutriment_amt = 2
 	trash = /obj/item/trash/syndi_cakes
-	preloaded_reagents = list("doctorsdelight" = 5)
+	preloaded_reagents = list("doctorsdelight" = 5, "preservatives" = 5)
 	matter = list(MATERIAL_BIOMATTER = 12)
 
 /obj/item/reagent_containers/food/snacks/loadedbakedpotato
@@ -1740,12 +1744,17 @@
 	icon_state = "poppypretzel"
 	bitesize = 2
 	filling_color = "#916E36"
-	bitesize = 2
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("poppy seeds" = 2, "pretzel" = 3)
 	nutriment_amt = 5
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 6)
+
+/obj/item/reagent_containers/food/snacks/poppypretzel/holy
+	name = "omni-poppy pretzel"
+	desc = "A pretzal sprinkled with the seeds and spices of custom tailored plants grown by the church. Contains quite a few healing properties."
+	bitesize = 3
+	preloaded_reagents = list("bicaridine" = 6, "anti_toxin" = 6, "dexalinp" = 6, "dermaline" = 6, "laudanum" = 6)
 
 /obj/item/reagent_containers/food/snacks/meatballsoup
 	name = "meatball soup"
@@ -1878,7 +1887,7 @@
 				matter = list(MATERIAL_BIOMATTER = 13)
 
 /obj/item/reagent_containers/food/snacks/wishsoup
-	name = "wish Soup"
+	name = "wish soup"
 	desc = "I wish this was soup."
 	icon_state = "wishsoup"
 	trash = /obj/item/trash/snack_bowl
@@ -1886,13 +1895,14 @@
 	center_of_mass = list("x"=16, "y"=11)
 	bitesize = 5
 	preloaded_reagents = list("water" = 10)
-	matter = null
+	matter = list(MATERIAL_BIOMATTER = 1) //The bowl
 	New()
 		..()
 		if(prob(25))
+			sleep(10)
 			src.desc = "A wish come true!"
-			reagents.add_reagent("nutriment", 8, list("something good" = 8))
-			matter = list(MATERIAL_BIOMATTER = 1)
+			reagents.add_reagent("nutriment", 8)
+			nutriment_desc = list("something good" = 8)
 
 /obj/item/reagent_containers/food/snacks/hotchili
 	name = "hot chili"
@@ -2033,7 +2043,7 @@
 	matter = list(MATERIAL_BIOMATTER = 17)
 
 /obj/item/reagent_containers/food/snacks/toasted_guild_sandwich
-	name = "delux toasted sandwich"
+	name = "deluxe toasted sandwich"
 	desc = "A perfectly toasted sandwich with all the works."
 	icon_state = "toastedsandwich"
 	filling_color = "#D9BE29"
@@ -2044,6 +2054,12 @@
 	preloaded_reagents = list("protein" = 3, "machine binding ritual" = 3, "glucose" = 2)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 23)
+
+/obj/item/reagent_containers/food/snacks/toastedsandwich/holy
+	name = "precept sandwich"
+	desc = "A classic sandwich grilled in butter and toasted perfectly. Comes packed with protein-rich meat made from mukwahs and cheese derived from tangu milk, making it an immensely empowering meal. \
+	Side effects include enhanced toughness, robustness, movement speed, and twitching."
+	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10, "hyperzine" = 10)
 
 /obj/item/reagent_containers/food/snacks/grilledcheese
 	name = "grilled cheese sandwich"
@@ -2393,7 +2409,7 @@
 	filling_color = "#F2F2F2"
 	bitesize = 1
 	center_of_mass = list("x"=16, "y"=14)
-	preloaded_reagents = list("mint" = 1)
+	preloaded_reagents = list("mint" = 2, "preservatives" = 1)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/reagent_containers/food/snacks/mushroomsoup
@@ -2499,7 +2515,7 @@
 
 /obj/item/reagent_containers/food/snacks/honeypudding
 	name = "honey pudding"
-	desc = "A tasty dessert that is made with honey and cocoa powerder for a delightful pudding." // IT'S CHOCOLATE NOT COCAINE! - Seb
+	desc = "A tasty dessert that is made with honey and cocoa powder for a delightful pudding." // IT'S CHOCOLATE NOT COCAINE! - Seb
 	icon_state = "pudding"
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)
@@ -3713,7 +3729,7 @@
 	center_of_mass = list("x"=16, "y"=15)
 	nutriment_desc = list("chalk" = 6)
 	nutriment_amt = 20
-	preloaded_reagents = list("iron" = 3)
+	preloaded_reagents = list("iron" = 3, "preservatives" = 5)
 	matter = list(MATERIAL_BIOMATTER = 8)
 
 /obj/item/reagent_containers/food/snacks/tastybread
@@ -3725,7 +3741,8 @@
 	bitesize = 2
 	center_of_mass = list("x"=17, "y"=16)
 	nutriment_desc = list("bread" = 2, "sweetness" = 3)
-	nutriment_amt = 6
+	nutriment_amt = 4
+	preloaded_reagents = list("preservatives" = 5)
 	matter = list(MATERIAL_BIOMATTER = 3)
 
 /obj/item/reagent_containers/food/snacks/organ
@@ -3746,7 +3763,7 @@
 	bitesize = 1
 	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
 	nutriment_amt = 0
-	preloaded_reagents = list("gum drops" = 3)
+	preloaded_reagents = list("gum drops" = 3, "preservatives" = 1)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
 /obj/item/reagent_containers/food/snacks/candy_drop_red
@@ -3757,5 +3774,5 @@
 	bitesize = 1
 	nutriment_desc = list("chalk" = 3, "sweetness" = 3)
 	nutriment_amt = 0
-	preloaded_reagents = list("gum drops" = 5, "hacker" = 15)
+	preloaded_reagents = list("gum drops" = 5, "hacker" = 15, "preservatives" = 5)
 	matter = list(MATERIAL_BIOMATTER = 12)

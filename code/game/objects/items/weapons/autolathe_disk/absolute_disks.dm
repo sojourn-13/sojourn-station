@@ -221,6 +221,27 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/carpedie
+	disk_name = "Absolute Armory - Carpedie Lasgun Rifle"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/carpediem = 3,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/concillium
+	disk_name = "Absolute Armory - Concillium Las-MG"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/concillium = 3,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/halicon
 	disk_name = "Absolute Armory - Halcyon Ion Rifle"
 	icon_state = "neotheology"
@@ -261,11 +282,20 @@
 
 	license = 3
 	designs = list(
-		/datum/design/autolathe/gun/grenade_launcher, // "NT GL \"Protector\""
+		/datum/design/autolathe/gun/grenade_launcher, // "OT GL \"Protector\""
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/antebellum
+	disk_name = "Absolute Armory - Antebellum Blunderbuss lasgun"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/plasma/antebellum = 3,
+		/datum/design/bioprinter/nt_cells/medium,
 	)
 
 //Absolute Armory gun packs
-
 /obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns
 	disk_name = "Absolute Armory of the Old Testament"
 	desc = "A rare and expensive disk containing designs for highly advanced energy and ballistic weaponry from the Old Testament, the Absolutes arms division."
@@ -338,7 +368,8 @@
 		/datum/design/autolathe/grenade/nt_explosive,
 		/datum/design/autolathe/grenade/nt_flashbang,
 		/datum/design/autolathe/grenade/nt_frag,
-		/datum/design/autolathe/grenade/nt_smokebomb
+		/datum/design/autolathe/grenade/nt_smokebomb,
+		/datum/design/autolathe/grenade/nt_heatwave
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns
@@ -354,6 +385,9 @@
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
 		/datum/design/autolathe/gun/ionrifle = 3,
+		/datum/design/autolathe/gun/plasma/antebellum,
+		/datum/design/autolathe/gun/concillium = 10,
+		/datum/design/autolathe/gun/carpediem = 4
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt_plasma_shells

@@ -25,6 +25,7 @@
 				/obj/item/tool/wrench/improvised = 6,
 				/obj/item/tool/wrench/big_wrench = 2,
 				/obj/item/tool/hammer = 8,
+				/obj/item/tool/hammer/deadblow = 4,
 				/obj/item/tool/hammer/homewrecker = 10,
 				/obj/item/tool/hammer/powered_hammer = 2,
 				/obj/item/tool/multitool = 3,
@@ -105,6 +106,10 @@
 	name = "random advanced tool"
 	icon_state = "tool-orange"
 
+/obj/random/tool/advanced/always_spawn
+	name = "random always spawn advanced tool"
+	icon_state = "material-blue"
+
 /obj/random/tool/advanced/item_to_spawn()
 	return pickweight(list(
 				/obj/item/tool/screwdriver/combi_driver = 3,
@@ -117,6 +122,7 @@
 				/obj/item/tool/saw/chain = 1,
 				/obj/item/tool/saw/hyper = 1,
 				/obj/item/tool/pickaxe/diamonddrill = 2,
+				/obj/item/tool/hammer/deadblow = 2,
 				/obj/item/tool/tape_roll/fiber = 2,
 				/obj/item/tool/multitool/advanced = 1,
 				/obj/item/tool/multitool/uplink = 0.05, //REALLY RARE

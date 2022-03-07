@@ -697,8 +697,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/quality_multiplier = 1
 
 	var/charge_per_use = 0.2
-	var/obj/item/cell/cell
-	var/suitable_cell = /obj/item/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 /obj/item/clothing/mask/vape/Initialize(mapload)
 	. = ..()

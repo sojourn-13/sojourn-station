@@ -33,11 +33,11 @@
 	desc = "If everything else failed - bring a bigger wrench."
 	icon_state = "big-wrench"
 	w_class = ITEM_SIZE_NORMAL
-	tool_qualities = list(QUALITY_BOLT_TURNING = 45, QUALITY_HAMMERING = 30)
+	tool_qualities = list(QUALITY_BOLT_TURNING = 50, QUALITY_HAMMERING = 30)
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 1)
 	force = WEAPON_FORCE_DANGEROUS
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	throwforce = WEAPON_FORCE_PAINFUL
 	degradation = 0.7
 	max_upgrades = 4
-	price_tag = 175
+	price_tag = 225

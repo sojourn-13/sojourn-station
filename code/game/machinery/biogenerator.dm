@@ -56,7 +56,9 @@
 		"Medicine",
 			list(name="Medical splints", cost=100, path=/obj/item/stack/medical/splint),
 			list(name="Roll of gauze", cost=100, path=/obj/item/stack/medical/bruise_pack),
+			list(name="Roll of gauze * 5", cost=560, path=/obj/item/storage/box/gauzebulk),
 			list(name="Ointment", cost=100, path=/obj/item/stack/medical/ointment),
+			list(name="Ointment * 5", cost=560, path=/obj/item/storage/box/ointmentbulk),
 			list(name="Advanced trauma kit", cost=200, path=/obj/item/stack/medical/advanced/bruise_pack),
 			list(name="Advanced trauma kit x5", cost=1060, path=/obj/item/storage/box/advancedtraumakit),
 			list(name="Advanced burn kit", cost=200, path=/obj/item/stack/medical/advanced/ointment),
@@ -150,7 +152,7 @@
 	update_icon()
 	return
 
-/obj/machinery/biogenerator/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/biogenerator/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
 	user.set_machine(src)
 	var/list/data = list()
 	data["points"] = points
@@ -196,7 +198,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/biogenerator/proc/activate()
 	if (usr.stat)

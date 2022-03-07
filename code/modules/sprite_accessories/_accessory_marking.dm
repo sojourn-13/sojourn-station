@@ -959,3 +959,75 @@
 		icon_state = "horsemuzzle"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
+
+/*Bandages*/
+
+	bandage_head
+		name = "Bandage - Head"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+//Left Arm
+
+	bandage_l_arm
+		name = "Bandage - Left Arm"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM)
+		
+//Left Hand
+
+	bandage_l_hand
+		name = "Bandage - Left Hand"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_HAND)
+
+//Left Leg
+
+	bandage_l_leg
+		name = "Bandage - Left Leg"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG)
+
+//Left Foot
+
+	bandage_l_foot
+		name = "Bandage - Left Foot"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT)
+
+//Right Arm
+
+	bandage_r_arm
+		name = "Bandage - Right Arm"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM)
+		
+//Right Hand
+
+	bandage_r_hand
+		name = "Bandage - Right Hand"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_HAND)
+
+//Right Leg
+
+	bandage_r_leg
+		name = "Bandage - Right Leg"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG)
+
+//Right Foot
+
+	bandage_r_foot
+		name = "Bandage - Right Foot"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_FOOT)

@@ -76,6 +76,13 @@
 			list(name="SMG Magazine (.35 Auto hollow-point)", cost=180, path= /obj/item/ammo_magazine/smg_35/lethal),
 			list(name="SMG Magazine (.35 Auto rubber)", cost=180, path= /obj/item/ammo_magazine/smg_35/rubber),
 			list(name="SMG Magazine (.35 Auto practice)", cost=70, path= /obj/item/ammo_magazine/smg_35/practice),
+		"SMG Magnum",
+			list(name="SMG Magazine (.40 Magnum)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40),
+			list(name="SMG Magazine (.40 Magnum high-velocity)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40/hv),
+			list(name="SMG Magazine (.40 Magnum hollow-point)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40/lethal),
+			list(name="SMG Magazine (.40 Magnum rubber)", cost=1080, path= /obj/item/ammo_magazine/smg_magnum_40/rubber),
+			list(name="SMG Magazine (.40 Magnum practice)", cost=420, path= /obj/item/ammo_magazine/smg_magnum_40/practice),
+			list(name="SMG Magazine (.40 Magnum empty)", cost=420, path= /obj/item/ammo_magazine/smg_magnum_40/empty),
 		".257 Carbine Long",
 			list(name="Carbine Magazine (Standard)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257),
 			list(name="Carbine Magazine (High velocity)", cost=300, path=/obj/item/ammo_magazine/light_rifle_257/highvelocity),
@@ -94,6 +101,8 @@
 			list(name="Rifle Magazine (7.5 Hollow point)", cost=400, path=/obj/item/ammo_magazine/rifle_75/lethal),
 			list(name="Rifle Magazine (7.5 Rubber)", cost=400, path=/obj/item/ammo_magazine/rifle_75/rubber),
 			list(name="Rifle Magazine (7.5 Practice)", cost=100, path=/obj/item/ammo_magazine/rifle_75/practice),
+			list(name="Rifle Pan (7.5 standard)", cost=1600, path=/obj/item/ammo_magazine/maxim_75),
+			list(name="Rifle Pan (7.5 empty)", cost=300, path=/obj/item/ammo_magazine/maxim_75/empty),
 		"7.5 Short Rifle",
 			list(name="Short Rifle Magazine (7.5 Standard)", cost=300, path=/obj/item/ammo_magazine/rifle_75_short),
 			list(name="Short Rifle Magazine (7.5 High velocity)", cost=300, path=/obj/item/ammo_magazine/rifle_75_short/highvelocity),
@@ -170,21 +179,21 @@
 			list(name="Packet (7.5 Rubber)", cost=990, path=/obj/item/ammo_magazine/ammobox/rifle_75_small/rubber),
 			list(name="Packet (7.5 Practice)", cost=850, path=/obj/item/ammo_magazine/ammobox/rifle_75_small/practice),
 		".257 Ammo Box",
-			list(name="Box (.257 Standard)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257),
-			list(name="Box (.257 High velocity)", cost=4300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity),
-			list(name="Box (.257 Hollow-point)", cost=4300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/lethal),
-			list(name="Box (.257 Rubber)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber),
-			list(name="Box (.257 Practice)", cost=2600, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/practice),
+			list(name="Box (.257 Standard)", cost=2800, path=/obj/item/ammo_magazine/ammobox/light_rifle_257),
+			list(name="Box (.257 High velocity)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity),
+			list(name="Box (.257 Hollow-point)", cost=3300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/lethal),
+			list(name="Box (.257 Rubber)", cost=2800, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber),
+			list(name="Box (.257 Practice)", cost=200, path=/obj/item/ammo_magazine/ammobox/light_rifle_257/practice),
 			list(name="Linked Ammunition Box (.257 Standard)", cost=1000, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257),
 			list(name="Linked Ammunition Box (.257 High velocity)", cost=1000, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/highvelocity),
 			list(name="Linked Ammunition Box (.257 Hollow-point)", cost=1000, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/lethal),
 			list(name="Linked Ammunition Box (.257 Rubber)", cost=675, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/rubber),
 			list(name="Linked Ammunition Box (.257 Empty)", cost=200, path=/obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty),
 		"7.5 Ammo Boxes",
-			list(name="Box (7.5 Standard)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75),
-			list(name="Box (7.5 High velocity)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/hv),
-			list(name="Box (7.5 Hollow point)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/lethal),
-			list(name="Box (7.5 Rubber)", cost=1320, path=/obj/item/ammo_magazine/ammobox/rifle_75/rubber),
+			list(name="Box (7.5 Standard)", cost=3500, path=/obj/item/ammo_magazine/ammobox/rifle_75),
+			list(name="Box (7.5 High velocity)", cost=4000, path=/obj/item/ammo_magazine/ammobox/rifle_75/hv),
+			list(name="Box (7.5 Hollow point)", cost=4000, path=/obj/item/ammo_magazine/ammobox/rifle_75/lethal),
+			list(name="Box (7.5 Rubber)", cost=3500, path=/obj/item/ammo_magazine/ammobox/rifle_75/rubber),
 			list(name="Box (7.5 Practice)", cost=200, path=/obj/item/ammo_magazine/ammobox/rifle_75/practice),
 			list(name="Linked Ammunition Box (7.5mm Rifle)", cost=1000, path=/obj/item/ammo_magazine/rifle_75_linked_box),
 			list(name="Linked Ammunition Box (7.5mm High velocity)", cost=1300, path=/obj/item/ammo_magazine/rifle_75_linked_box/highvelocity),
@@ -261,7 +270,7 @@
 	update_icon()
 	return
 
-/obj/machinery/bulletfabricator/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/bulletfabricator/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
 	user.set_machine(src)
 	var/list/data = list()
 	data["points"] = points
@@ -307,7 +316,7 @@
 		return TRUE
 
 	user.set_machine(src)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/bulletfabricator/proc/activate()
 	if (usr.stat)
@@ -418,3 +427,4 @@
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE
+

@@ -84,7 +84,7 @@
 		return TRUE
 	if(!variantof || variantof == name || name == start_form)
 		return FALSE
-	return GLOB.all_species_form_list[variantof]?.has_ancestor(ancestor_form, start_form ? start_form : name)
+	return GLOB.all_species_form_list[variantof]?:has_ancestor(ancestor_form, start_form ? start_form : name)
 
 /datum/species_form/proc/get_mob_icon(var/slot, var/icon_state)
 	var/icon/I

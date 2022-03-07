@@ -173,7 +173,7 @@
 	var/processing = 0
 	var/honey = 0
 	var/spin_time = 50
-	circuit = /obj/item/circuitboard/seed_extractor
+	circuit = /obj/item/circuitboard/honey_extractor
 
 /obj/machinery/honey_extractor/RefreshParts()
 	..()

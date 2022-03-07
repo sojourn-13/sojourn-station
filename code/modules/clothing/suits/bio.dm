@@ -8,7 +8,7 @@
 		)
 	desc = "A hood that protects the head and face from biological comtaminants."
 	permeability_coefficient = 0.01
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,
@@ -33,7 +33,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	item_flags = COVER_PREVENT_MANIPULATION
 	slowdown = 0.4
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 0,

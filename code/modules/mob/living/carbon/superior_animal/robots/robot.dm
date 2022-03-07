@@ -30,6 +30,10 @@
 	bones_amount = 0
 	randpixel = 0
 	viewRange = 8
+	reagent_immune = TRUE
+	toxin_immune = TRUE
+	cold_protection = 1
+	heat_protection = 1
 	var/cleaning = TRUE
 	var/emp_damage = TRUE // Does EMP & Ion weapons cause damage?
 

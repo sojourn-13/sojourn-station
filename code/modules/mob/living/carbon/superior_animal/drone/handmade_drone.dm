@@ -30,6 +30,11 @@
 	do_gibs = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	cant_be_pulled = FALSE
+	reagent_immune = TRUE
+	toxin_immune = TRUE
+	cold_protection = 1
+	heat_protection = 1
 
 	known_languages = list(LANGUAGE_COMMON)
 
@@ -137,7 +142,7 @@
 										SPAN_NOTICE("You start to reactivate [src.name]..")
 										)
 				if(T.use_tool(user, src, user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? WORKTIME_LONG : WORKTIME_EXTREMELY_LONG, QUALITY_PULSING, FAILCHANCE_EASY, required_stat = STAT_COG)) // Bring the bot back. It's long as fuck. Bit faster if it's your job.
-					revive() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it
+					rejuvenate() // That proc fully heal the bot, but we don't care because we make sure it is fully healed before calling it
 			else
 				to_chat(user, "[src] need to be fully repaired before reactivation is possible.")
 			return

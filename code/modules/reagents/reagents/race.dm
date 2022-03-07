@@ -117,7 +117,6 @@
 	color = "#5f95e2"
 	nerve_system_accumulations = 0
 	addiction_chance = 100
-
 	appear_in_default_catalog = FALSE
 
 /datum/reagent/stim/robustitol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)

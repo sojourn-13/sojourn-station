@@ -29,7 +29,7 @@
 
 	if(user.a_intent != I_HELP)
 		if(user.targeted_organ in list(BP_HEAD, BP_EYES))
-			if((CLUMSY in user.mutations) && prob(50))
+			if((CLUMSY in user.mutations) && prob(15))
 				M = user
 			return eyestab(M,user)
 		else
@@ -94,10 +94,10 @@
 	thrown_force_divisor = 1 // as above
 
 /obj/item/material/kitchen/rollingpin/attack(mob/living/M as mob, mob/living/user as mob)
-	if ((CLUMSY in user.mutations) && prob(50))
-		to_chat(user, SPAN_WARNING("\The [src] slips out of your hand and hits your head."))
+	if ((CLUMSY in user.mutations) && prob(15))
+		to_chat(user, SPAN_WARNING("\The [src] accidentally slips out of your hand."))
 		user.drop_from_inventory(src)
-		user.take_organ_damage(10)
+		user.take_organ_damage(2)
 		user.Paralyse(2)
 		return
 	return ..()

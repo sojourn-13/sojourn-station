@@ -64,6 +64,7 @@ var/global/excelsior_last_draft = 0
 		/obj/item/storage/firstaid/toxin = 100,
 		/obj/item/storage/firstaid/adv = 300,
 		/obj/item/storage/firstaid/surgery/traitor = 500,
+		/obj/item/storage/box/syndie_kit/exl_revolver = 800,
 		/obj/item/computer_hardware/hard_drive/portable/design/excelsior = 1000,
 		/obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons = 500,
 		/obj/item/computer_hardware/hard_drive/portable/design/ex_parts = 450,
@@ -162,16 +163,16 @@ var/global/excelsior_last_draft = 0
 				return
 
  /**
-  * The ui_interact proc is used to open and update Nano UIs
-  * If ui_interact is not used then the UI will not update correctly
-  * ui_interact is currently defined for /atom/movable
+  * The nano_ui_interact proc is used to open and update Nano UIs
+  * If nano_ui_interact is not used then the UI will not update correctly
+  * nano_ui_interact is currently defined for /atom/movable
   *
   * @param user /mob The mob who is interacting with this ui
   * @param ui_key string A string key to use for this ui. Allows for multiple unique uis on one obj/mob (defaut value "main")
   *
   * @return nothing
   */
-/obj/machinery/complant_teleporter/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+/obj/machinery/complant_teleporter/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	if(stat & (BROKEN|NOPOWER)) return
 	if(user.stat || user.restrained()) return
 
@@ -310,7 +311,7 @@ var/global/excelsior_last_draft = 0
 	if(stat & BROKEN)
 		return
 	current_user = user
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/complant_teleporter/affect_grab(var/mob/user, var/mob/target)
 	try_put_inside(target, user)

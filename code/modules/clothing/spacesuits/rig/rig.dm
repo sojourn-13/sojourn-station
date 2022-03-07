@@ -23,7 +23,7 @@
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
 
 	// These values are passed on to all component pieces.
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 20,
@@ -37,7 +37,8 @@
 	permeability_coefficient = 0.1
 	unacidable = 1
 	slowdown = 0
-
+	stiffness = LIGHT_STIFFNESS
+	obscuration = LIGHT_OBSCURATION
 	var/interface_path = "hardsuit.tmpl"
 	var/ai_interface_path = "hardsuit.tmpl"
 	var/interface_title = "Hardsuit Controller"
@@ -63,7 +64,7 @@
 	var/obj/item/clothing/suit/space/rig/chest					// Deployable chestpiece, if any.
 	var/obj/item/clothing/head/helmet/space/rig/helmet = null	// Deployable helmet, if any.
 	var/obj/item/clothing/gloves/rig/gloves = null				// Deployable gauntlets, if any.
-	var/obj/item/cell/large/cell								// Power supply, if any.
+	cell = null								// Power supply, if any.
 	var/obj/item/rig_module/selected_module = null				// Primary system (used with middle-click)
 	var/obj/item/rig_module/vision/visor						// Kinda shitty to have a var for a module, but saves time.
 	var/obj/item/rig_module/voice/speech						// As above.
@@ -71,6 +72,8 @@
 	var/mob/living/carbon/human/wearer							// The person currently wearing the rig.
 	var/image/mob_icon											// Holder for on-mob icon.
 	var/list/installed_modules = list()							// Power consumption/use bookkeeping.
+
+	suitable_cell = /obj/item/cell/large
 
 	// Rig status vars.
 	var/active = FALSE
@@ -156,6 +159,7 @@
 	if(helm_type)
 		helmet = new helm_type(src)
 		verbs |= /obj/item/rig/proc/toggle_helmet
+		helmet.obscuration = obscuration
 	if(boot_type)
 		boots = new boot_type(src)
 		verbs |= /obj/item/rig/proc/toggle_boots
@@ -165,6 +169,7 @@
 		if(allowed)
 			chest.allowed |= allowed
 		chest.slowdown = offline_slowdown
+		chest.stiffness = stiffness
 		verbs |= /obj/item/rig/proc/toggle_chest
 
 	if(initial_modules && initial_modules.len)
@@ -441,7 +446,7 @@
 	cell.use(cost*10)
 	return 1
 
-/obj/item/rig/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/nano_state =GLOB.inventory_state)
+/obj/item/rig/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/nano_state =GLOB.inventory_state)
 	if(!user)
 		return
 

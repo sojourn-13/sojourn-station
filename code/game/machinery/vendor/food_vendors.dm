@@ -1,4 +1,3 @@
-
 /obj/machinery/vending/boozeomat
 	name = "Booze-O-Mat"
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
@@ -176,14 +175,17 @@
 					/obj/item/seeds/ambrosiarobusto = 3,
 					/obj/item/seeds/bananaseed = 3,
 					/obj/item/seeds/berryseed = 3,
+					/obj/item/seeds/blueberryseed = 3,
 					/obj/item/seeds/carrotseed = 3,
 					/obj/item/seeds/chantermycelium = 3,
 					/obj/item/seeds/chiliseed = 3,
+					/obj/item/seeds/cinnamonseed = 2,
 					/obj/item/seeds/cornseed = 3,
 					/obj/item/seeds/eggplantseed = 3,
 					/obj/item/seeds/potatoseed = 3,
 					/obj/item/seeds/soyaseed = 3,
 					/obj/item/seeds/sunflowerseed = 3,
+					/obj/item/seeds/mintseed = 2,
 					/obj/item/seeds/tomatoseed = 3,
 					/obj/item/seeds/towermycelium = 3,
 					/obj/item/seeds/wheatseed = 3,
@@ -196,6 +198,7 @@
 					/obj/item/seeds/limeseed = 3,
 					/obj/item/seeds/lemonseed = 3,
 					/obj/item/seeds/orangeseed = 3,
+					/obj/item/seeds/strawberryseed = 3,
 					/obj/item/seeds/grassseed = 3,
 					/obj/item/seeds/cocoapodseed = 3,
 					/obj/item/seeds/plumpmycelium = 2,
@@ -210,6 +213,7 @@
 					/obj/item/seeds/gelthi = 2,
 					/obj/item/seeds/mtearseed = 2,
 					/obj/item/seeds/shandseed = 2,
+					/obj/item/seeds/pineappleseed = 2,
 					)
 
 	contraband = list(
@@ -278,6 +282,7 @@
 					/obj/item/storage/lunchbox = 3,
 					/obj/item/storage/lunchbox/rainbow = 3,
 					/obj/item/storage/lunchbox/cat = 3,
+					/obj/item/storage/lunchbox/lemniscate = 5,
 					/obj/item/reagent_containers/food/drinks/pitcher = 3,
 					/obj/item/reagent_containers/food/drinks/teapot = 3,
 					/obj/item/reagent_containers/food/drinks/mug = 3,

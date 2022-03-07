@@ -232,7 +232,7 @@
 	icon_open = "gorka_jacket_tan_open"
 	icon_closed = "gorka_jacket_tan"
 	blood_overlay_type = "coat"
-	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -308,7 +308,7 @@
 	icon_closed = "gorka_jacket_crew_sci"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -320,7 +320,7 @@
 	desc = "A hood from a gorka jacket, oddly cozy."
 	icon_state = "gorka_jacket_crew_sci_hood"
 	permeability_coefficient = 0.50
-	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 5, rad = 5)
+	armor_list = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 5, rad = 5)
 	flags_inv = HIDEEARS|BLOCKHEADHAIR
 	body_parts_covered = HEAD|EARS
 
@@ -332,7 +332,7 @@
 	icon_closed = "gorka_jacket_crew_med"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
-	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 5, rad = 0)
+	armor_list = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 5, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -344,7 +344,7 @@
 	desc = "A hood from a gorka jacket, oddly cozy."
 	icon_state = "gorka_jacket_crew_med_hood"
 	permeability_coefficient = 0.50
-	armor = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 5, rad = 5)
+	armor_list = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 5, rad = 5)
 	flags_inv = HIDEEARS|BLOCKHEADHAIR
 	body_parts_covered = HEAD|EARS
 
@@ -355,7 +355,7 @@
 	icon_open = "gorka_jacket_ih_open"
 	icon_closed = "gorka_jacket_ih"
 	blood_overlay_type = "coat"
-	armor = list(melee = 25, bullet = 25, energy = 15, bomb = 15, bio = 0, rad = 0)
+	armor_list = list(melee = 25, bullet = 25, energy = 15, bomb = 15, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -366,7 +366,7 @@
 	name = "security gorka hood"
 	desc = "A hood from a gorka jacket, oddly robust."
 	icon_state = "gorka_jacket_ih_hood"
-	armor = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 0, rad = 0)
 	flags_inv = HIDEEARS|BLOCKHEADHAIR
 	body_parts_covered = HEAD|EARS
 

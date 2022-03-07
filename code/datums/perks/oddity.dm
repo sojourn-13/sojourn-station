@@ -136,6 +136,12 @@
 	holder.stats.changeStat(STAT_BIO, 5)
 	..()
 
+/datum/perk/oddity/snackivore
+	name = "Snackivore"
+	desc = "The secret of the lounge lizards! Your body adapts to eating the worse kind of food in existence, allowing you to draw an exceptional amount of nutrition from snack foods. More so \
+	it passively heals you like tricord, with pure toxins healing you the most. Rejoice trash mammals!"
+	passivePerk = TRUE
+
 /datum/perk/oddity/sharp_mind
 	name = "Sharpened Mind"
 	desc = "Narrowing in and extrapolating the inner workings of the world has never felt so much easier."
@@ -235,6 +241,8 @@
 	..()
 
 /datum/perk/bluespace/on_process()
+	if(!..())
+		return
 	if(cooldown_time <= world.time)
 		holder.stats.removePerk(type)
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))

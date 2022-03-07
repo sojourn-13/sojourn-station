@@ -16,6 +16,8 @@
 	var/blood_level = 0
 	// How much pain should a surgery step cause?
 	var/inflict_agony = 60
+	// Are we doing surgery on a metal or flesh
+	var/is_robotic = FALSE
 
 // returns how well a given tool is suited for this step
 /datum/surgery_step/proc/tool_quality(obj/item/tool)
@@ -94,37 +96,55 @@
 		tool = user.get_active_hand()
 
 	var/quality = S.tool_quality(tool)
+
 	if(!quality)
 		if(!no_tool_message)
 			S.require_tool_message(user)
 		return FALSE
+
+	if (istype(tool,/obj/item/stack/medical/advanced/bruise_pack))
+		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 120)))
+			to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Trauma Kit in this way."))
+			return FALSE
 
 	if(!S.can_use(user, src, tool, target) || !S.prepare_step(user, src, tool, target))
 		SSnano.update_uis(src)
 		return FALSE
 
 	S.begin_step(user, src, tool, target)	//start on it
+	var/atom/surgery_target = get_surgery_target()
 	var/success = FALSE
 
 	var/difficulty_adjust = 0
+	var/time_adjust = 0
+
+	if(user.stats.getPerk(PERK_SURGICAL_MASTER) && !S.is_robotic)
+		difficulty_adjust = -90
+		time_adjust = -130
+
+	if(user.stats.getPerk(PERK_MASTER_HERBALIST) && !S.is_robotic)
+		difficulty_adjust = -90
+		time_adjust = -130
 
 	// Self-surgery increases failure chance
 	if(owner && user == owner)
-		difficulty_adjust = 20
+		difficulty_adjust = 60
+		time_adjust = 20
 
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
 		if(is_carrion(user))
-			difficulty_adjust = -50
+			difficulty_adjust = -150
+			time_adjust = -40
 
-	if(user.stats.getPerk(PERK_SURGICAL_MASTER))
-		difficulty_adjust = -30
+	if(user.stats.getPerk(PERK_ROBOTICS_EXPERT) && S.is_robotic)
+		difficulty_adjust = -90
+		time_adjust = -130
 
-	var/atom/surgery_target = get_surgery_target()
 	if(S.required_tool_quality)
 		success = tool.use_tool_extended(
 			user, surgery_target,
-			S.duration,
+			S.duration + time_adjust,
 			S.required_tool_quality,
 			S.difficulty + difficulty_adjust,
 			required_stat = S.required_stat
@@ -190,7 +210,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 	if(!do_old_surgery(M, user, tool))
 		if(affected && affected.open && tool && tool.tool_qualities)
 			// Open or update surgery UI
-			affected.ui_interact(user)
+			affected.nano_ui_interact(user)
 
 			to_chat(user, SPAN_WARNING("You can't see any useful way to use [tool] on [M]."))
 			return 1 //Prevents attacking the patient when trying to do surgery
@@ -203,7 +223,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 /obj/item/organ/external/do_surgery(mob/living/user, obj/item/tool)
 	if(!tool)
 		if(is_open())
-			ui_interact(user)
+			nano_ui_interact(user)
 			return TRUE
 		return FALSE
 

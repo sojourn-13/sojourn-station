@@ -2,12 +2,11 @@
 	holder_type = /obj/item/rig
 	wire_count = 5
 	descriptions = list(
-		new /datum/wire_description(RIG_SECURITY, "This wire runs to suit locks."),
-		new /datum/wire_description(RIG_INTERFACE_SHOCK, "This wire runs to the main power cell to the interface."),
-		new /datum/wire_description(RIG_SYSTEM_CONTROL, "This wire runs to the main power cell."),
-		new /datum/wire_description(RIG_INTERFACE_LOCK, "This wire runs to the software interface."),
-		new /datum/wire_description(RIG_AI_OVERRIDE, "This wire runs to the clear button next to the AI controles."),
-	)
+			new /datum/wire_description(RIG_SECURITY, "Security"),
+			new /datum/wire_description(RIG_AI_OVERRIDE, "AI override"),
+			new /datum/wire_description(RIG_SYSTEM_CONTROL, "System control"),
+			new /datum/wire_description(RIG_INTERFACE_LOCK, "Interface lock"),
+			new /datum/wire_description(RIG_INTERFACE_SHOCK, "Interface shock"))
 //The defines for the wires are moved to rig.dm, as they are used there
 /*
  * Rig security can be snipped to disable ID access checks on rig.

@@ -173,15 +173,15 @@
 		external.mend_fracture()
 		patchnote.surgery_operations &= ~AUTODOC_FRACTURE
 
-//	else if(patchnote.surgery_operations & AUTODOC_IB)
-//		to_chat(patient, SPAN_NOTICE("Treating internal bleeding in the patients [external]."))
-//		for(var/datum/wound/wound in external.wounds)
-//			if(wound.internal)
-//				external.wounds -= wound
-//				qdel(wound)
-//				external.update_damages()
-//		patchnote.surgery_operations &= ~AUTODOC_IB
-//	return !patchnote.surgery_operations
+	else if(patchnote.surgery_operations & AUTODOC_IB)
+		to_chat(patient, SPAN_NOTICE("Treating internal trauma in the patients [external]."))
+		for(var/datum/wound/wound in external.wounds)
+			if(wound.internal)
+				external.wounds -= wound
+				qdel(wound)
+				external.update_damages()
+		patchnote.surgery_operations &= ~AUTODOC_IB
+	return !patchnote.surgery_operations
 
 /datum/autodoc/Process()
 	if(!patient)
@@ -198,7 +198,7 @@
 /datum/autodoc/proc/fail()
 	current_step++
 
-/datum/autodoc/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 2, var/datum/topic_state/state)
+/datum/autodoc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 2, var/datum/topic_state/state)
 	if(!patient)
 		if(ui)
 			ui.close()

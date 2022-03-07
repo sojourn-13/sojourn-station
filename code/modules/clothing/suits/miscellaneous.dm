@@ -246,7 +246,7 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "Sleek grey vest with pockets in it. You feel absolutely punk wearing this sturdy leather coat."
 	icon_state = "punk_vest"
 	item_state = "punk_vest"
-	armor = list(
+	armor_list = list(
 		melee = 5,
 		bullet = 5,
 		energy = 5,
@@ -274,7 +274,7 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A dark vest made out of light, breathable fabric. Feeling lucky, punk?"
 	icon_state = "punkvest"
 	item_state = "punkvest"
-	armor = list(
+	armor_list = list(
 		melee = 5,
 		bullet = 5,
 		energy = 0,
@@ -291,7 +291,7 @@ obj/item/clothing/suit/fluff/kimono
 	item_state = "windbreaker" //Is this even used for anything?
 	icon_open = "windbreaker_open"
 	icon_closed = "windbreaker"
-	armor = list(
+	armor_list = list(
 		melee = 0,
 		bullet = 0,
 		energy = 5,
@@ -306,7 +306,7 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A red vest with golden streaks. It's made out of tough materials, and can protect fairly well against bullets. Wake the fuck up, Samurai."
 	icon_state = "cyberpunk"
 	item_state = "cyberpunk"
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 10,
 		energy = 10,
@@ -320,7 +320,7 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A rigged yet sturdy scavenger armor. Strong and protective as most vests, it is made entirely from reclaimed materials. It even has pockets!"
 	icon_state = "scav_armor"
 	item_state = "scav_armor"
-	armor = list(
+	armor_list = list(
 		melee = 35, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
 		bullet = 35,
 		energy = 35,
@@ -360,7 +360,7 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A well armoured trench coat. The label on the inside claims it comes from somewhere dangerous."
 	icon_state = "triadkillers"
 	item_state = "triadkillers"
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,
@@ -377,7 +377,7 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A red jacket designed for riding on a bike. Has a pill icon on the back."
 	icon_state = "akira"
 	item_state = "akira"
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 10,
 		energy = 10,
@@ -393,7 +393,7 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A haphazardly-made cloak made of reclaimed leather and other fiber materials, it's all you have for protection... for now."
 	icon_state = "outcast_cloak"
 	item_state = "outcast_cloak"
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 10,
 		energy = 20, //Decent starting armor but intentionally shitty because outsiders are hard mode. Scavenge better. Triumph or die! -Kaz
@@ -408,10 +408,10 @@ obj/item/clothing/suit/fluff/kimono
 
 /obj/item/clothing/suit/storage/numericalgarb
 	name = "numerical garb"
-	desc = "A padded cloak meant for numerical shockingly made to be biomatter restant. The fabtric is two coloured allowing you to flip it inside out to change from red to gray."
+	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and grey."
 	icon_state = "numericalgarb"
 	item_state = "numericalgarb"
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 0, //well armored its not going to help a bullet
 		energy = 10,

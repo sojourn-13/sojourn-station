@@ -7,7 +7,7 @@
 	icon_state = "director"
 	item_state = "lb_suit"
 
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/scientist
 	desc = "A dark navy scientist's jacket complete with navy pants. The fibre offers minor biohazard protection."
@@ -16,7 +16,7 @@
 	item_state = "w_suit"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/under/rank/chemist
 	desc = "A orange chemist's shirt complete with tan pants. The fiber offers minor biohazard protection."
@@ -25,7 +25,7 @@
 	item_state = "chemistry"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /*
  * Medical
@@ -37,7 +37,7 @@
 	item_state = "cmo"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/virologist
 	desc = "A green virologist's shirt complete with tan pants. The fiber offers minor biohazard protection."
@@ -46,7 +46,7 @@
 	item_state = "w_suit"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medical
 	desc = "A blue doctor's shirt complete with tan pants. The fiber offers minor biohazard protection."
@@ -55,7 +55,7 @@
 	item_state = "medical"
 
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/scrubs
 	name = "blue scrubs"
@@ -87,7 +87,7 @@
 	icon_state = "paramedic"
 	item_state = "paramedic"
 	permeability_coefficient = 0.50
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,
@@ -95,3 +95,37 @@
 		bio = 30,
 		rad = 0
 	)
+
+/obj/item/clothing/under/rank/paramedic/bdu
+	desc = "An old BDU that someone appears to have dyed in the signature colours of Soteria Trauma Team. It is made with reinforced fibers and sterile materials."
+	name = "soteria trauma team bdu"
+	icon_state = "bdutt"
+	item_state = "bdutt"
+
+/obj/item/clothing/under/rank/paramedic/bdu/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["suit up"] = ""
+	options["suit down"] = "_pants"
+	options["sleeves up"] = "_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1

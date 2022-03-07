@@ -90,7 +90,7 @@
 
 /datum/perk/klutz
 	name = "Klutz"
-	desc = "You find a lot of tasks a little beyond your ability to perform, but being accident prone has at least made you used to getting hurt."
+	desc = "You find a lot of tasks a little beyond your ability to perform such is using any type of weaponry, but being accident prone has at least made you used to getting hurt."
 	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/klutz/assign(mob/living/carbon/human/H)
@@ -180,7 +180,7 @@
 
 /datum/perk/space_asshole
 	name = "Rough Life"
-	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
+	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body and can dive into disposal chutes. Disposals deal no damage to you as well."
 	//icon_state = "bomb" // https://game-icons.net
 
 /datum/perk/space_asshole/assign(mob/living/carbon/human/H)
@@ -191,6 +191,39 @@
 /datum/perk/space_asshole/remove()
 	holder.mob_bomb_defense -= 25
 	holder.falls_mod += 0.4
+	..()
+
+/datum/perk/linguist
+	name = "Linguist"
+	desc = "Having dedicated time and learning to foreign tongues, you find yourself knowing an extra language. Be it from your upbringing or schooling, you're fluent in not one, not two, but three languages!"
+	active = FALSE
+	passivePerk = FALSE
+	var/anti_cheat = FALSE
+
+/datum/perk/linguist/activate()
+	..()
+	if(anti_cheat)
+		to_chat(holder, "Recalling more then one babble is not as easy for someone unskilled as you.")
+		return FALSE
+	anti_cheat = TRUE
+	var/mob/M = usr
+	var/list/options = list()
+	options["German"] = LANGUAGE_GERMAN
+	options["Jives"] = LANGUAGE_JIVE
+	options["Jana"] = LANGUAGE_JANA
+	options["Serbian"] = LANGUAGE_SERBIAN
+	options["Russian"] = LANGUAGE_CYRILLIC
+	options["Esperanto"] = LANGUAGE_ESPERANTO
+	options["Yassari"] = LANGUAGE_YASSARI
+	options["Latin"] = LANGUAGE_LATIN
+	var/choice = input(M,"What language do you know?","Linguist Choice") as null|anything in options
+	if(src && choice)
+		M.add_language(choice)
+		M.stats.removePerk(/datum/perk/linguist)
+	anti_cheat = FALSE
+	return TRUE
+
+/datum/perk/linguist/remove()
 	..()
 
 /datum/perk/chemist
@@ -224,15 +257,18 @@
 
 /datum/perk/parkour
 	name = "Raiders Leap"
-	desc = "You can climb some objects faster than normal thanks to a life of raiding ships, settlements, and anywhere plunder was."
+	desc = "A life as a void wolf has given you amazing agility. You can climb railings, walls, and ladders much faster than others. In addition you can dodge, combat roll, and stand up from prone much \
+	faster. Finally, your rough and tumble movement makes falling from high heights deal alot less damage compared to others and you always land on your feet."
 	//icon_state = "parkour" //https://game-icons.net/1x1/delapouite/jump-across.html
 
 /datum/perk/parkour/assign(mob/living/carbon/human/H)
 	..()
 	holder.mod_climb_delay -= 0.95
+	holder.falls_mod -= 0.8
 
 /datum/perk/parkour/remove()
 	holder.mod_climb_delay += 0.95
+	holder.falls_mod += 0.8
 	..()
 
 /datum/perk/chaingun_smoker
@@ -371,6 +407,8 @@
 	..()
 
 /datum/perk/rezsickness/on_process()
+	if(!..())
+		return
 	if(cooldown_time <= world.time)
 		holder.stats.removePerk(type)
 		to_chat(holder, SPAN_NOTICE("[lose_text]"))
@@ -389,6 +427,7 @@
 			/datum/craft_recipe/guild/robotmelee,
 			/datum/craft_recipe/guild/plasma_glass,
 			/datum/craft_recipe/guild/arcwelder,
+			/datum/craft_recipe/guild/deadblow_hammer,
 			/datum/craft_recipe/guild/polytool,
 			/datum/craft_recipe/guild/combat_shovel,
 			/datum/craft_recipe/guild/supermop,
@@ -447,7 +486,8 @@
 	holder.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/perk/handyman/remove()
-    holder.mind.knownCraftRecipes.Remove(known_recipes)
+	holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
@@ -491,6 +531,7 @@
 
 /datum/perk/robotics_expert/remove()
 	holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
@@ -512,6 +553,7 @@
 /datum/perk/blackshield_conditioning/remove()
 	holder.brute_mod_perk += 0.15
 	holder.burn_mod_perk += 0.10
+	..()
 
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
@@ -529,6 +571,7 @@
 	holder.burn_mod_perk += 0.05
 	holder.oxy_mod_perk += 0.10
 	holder.toxin_mod_perk += 0.15
+	..()
 
 /datum/perk/job/butcher
 	name = "Master Butcher"
@@ -574,16 +617,17 @@
 
 /datum/perk/job/butcher/remove()
 	holder.mind.knownCraftRecipes.Remove(known_recipes)
+	..()
 
 /datum/perk/job/master_herbalist
 	name = "Naturalist"
 	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
 	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
-	or plant trays you always harvest an additional bonus!"
+	or plant trays you always harvest an additional bonus! You are also a capable surgeon, able to alot more easily perform surgical steps to the point of rivaling real surgeons."
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/si_sci
-	name = "SI Science Trainning"
+	name = "SI Science Training"
 	desc = "You know how to use RnD core consoles and Exosuit Fabs."
 
 /datum/perk/greenthumb
@@ -633,14 +677,17 @@
 		/mob/living/carbon/human/proc/codespeak_criminal,
 		/mob/living/carbon/human/proc/codespeak_unknown,
 		/mob/living/carbon/human/proc/codespeak_status,
+		/mob/living/carbon/human/proc/codespeak_detaining,
 		/mob/living/carbon/human/proc/codespeak_shutup,
 		/mob/living/carbon/human/proc/codespeak_understood,
 		/mob/living/carbon/human/proc/codespeak_yes,
 		/mob/living/carbon/human/proc/codespeak_no,
+		/mob/living/carbon/human/proc/codespeak_detain_local,
 		/mob/living/carbon/human/proc/codespeak_understood_local,
 		/mob/living/carbon/human/proc/codespeak_yes_local,
 		/mob/living/carbon/human/proc/codespeak_no_local,
 		/mob/living/carbon/human/proc/codespeak_warcrime_local,
+		/mob/living/carbon/human/proc/codespeak_rules_of_engagmentn_local,
 		/mob/living/carbon/human/proc/codespeak_run_local
 		)
 

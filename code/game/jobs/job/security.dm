@@ -187,6 +187,7 @@
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
+	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 
@@ -236,6 +237,7 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
+	alt_titles = list("Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 
@@ -289,6 +291,7 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
+	alt_titles = list("Combat Medic","Combat Surgeon")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 
@@ -341,7 +344,7 @@
 	spawn_positions = 4
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	alt_titles = list("Blackshield Cadet")
+	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 

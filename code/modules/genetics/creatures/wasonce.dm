@@ -46,7 +46,7 @@ Has ability of every roach.
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
-	move_to_delay = 4
+	move_to_delay = 6
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
@@ -161,6 +161,14 @@ Has ability of every roach.
 			captive.adjustBruteLoss(5)
 			captive.adjustFireLoss(5)
 	..()
+
+/mob/living/carbon/superior_animal/psi_monster/wasonce/return_air_for_internal_lifeform()
+	//assume that the cryo cell has some kind of breath mask or something that
+	//draws from the cryo tube's environment, instead of the cold internal air.
+	if(loc)
+		return loc.return_air()
+	else
+		return null
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/findTarget()
 	var/atom/best_target = null

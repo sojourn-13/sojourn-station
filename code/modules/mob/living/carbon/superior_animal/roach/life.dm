@@ -117,7 +117,7 @@
 										if(tasty.meat_amount >= 6)// ate a fuhrer or kaiser
 											var/mob/living/carbon/superior_animal/roach/roachling/bigboss = src
 											bigboss.big_boss = TRUE
-						else if(istype(eat_target, /obj/item/reagent_containers/food/snacks))
+						else if(snacker && istype(eat_target, /obj/item/reagent_containers/food/snacks))
 							src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target]."))
 							var/obj/item/reagent_containers/food/snacks/snack = eat_target
 							if(snack.trash)

@@ -1,6 +1,6 @@
 /datum/computer_file/program/tax
 	filename = "taxapp"
-	filedesc = "TaxQuickly 2565"
+	filedesc = "TaxQuickly 2561"
 	program_icon_state = "uplink"
 	extended_desc = "An online tax filing software."
 	size = 0 // it is cloud based
@@ -249,7 +249,7 @@
 	return TOPIC_HANDLED
 
 
-/datum/nano_module/program/tax/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/tax/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	data["stored_login"] = account_num ? account_num : ""
 	data["popup"] = popup

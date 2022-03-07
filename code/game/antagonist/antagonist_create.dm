@@ -1,9 +1,9 @@
-/datum/antagonist/proc/create_antagonist(var/datum/mind/target, var/datum/antag_faction/new_faction, var/doequip = TRUE, var/announce = TRUE, var/update = TRUE)
+/datum/antagonist/proc/create_antagonist(datum/mind/target, datum/antag_faction/new_faction, doequip = TRUE, announce = TRUE, update = TRUE, check = TRUE)
 	if(!istype(target) || !target.current)
 		log_debug("ANTAGONIST Wrong target passed to create_antagonist of [id]! Target: [target == null?"NULL":target] \ref[target]")
 		return FALSE
 
-	if(!can_become_antag(target))
+	if(check && !can_become_antag(target))
 		log_debug("ANTAGONIST [target.name] cannot become this antag, but passed roleset candidate.")
 		return FALSE
 
@@ -25,7 +25,7 @@
 			spawn(3)
 				var/mob/living/carbon/human/H = owner.current
 				if(istype(H))
-					H.change_appearance(APPEARANCE_ALL, H.loc, H, TRUE, list("Human"), state = GLOB.z_state)
+					H.change_appearance(APPEARANCE_ALL, H.loc, H, TRUE, list(SPECIES_HUMAN), state = GLOB.z_state)
 
 	GLOB.current_antags.Add(src)
 	special_init()
@@ -46,7 +46,7 @@
 /datum/antagonist/proc/special_init()
 
 
-/datum/antagonist/proc/create_from_ghost(var/mob/observer/ghost, var/datum/antag_faction/new_faction, var/doequip = TRUE, var/announce = TRUE, var/update = TRUE)
+/datum/antagonist/proc/create_from_ghost(mob/observer/ghost, datum/antag_faction/new_faction, doequip = TRUE, announce = TRUE, update = TRUE)
 	if(!istype(ghost))
 		log_debug("ANTAGONIST Wrong target passed to create_from_ghost of [id]! Ghost: [ghost == null?"NULL":ghost] \ref[ghost]")
 		return FALSE

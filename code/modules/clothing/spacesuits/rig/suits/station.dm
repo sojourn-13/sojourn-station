@@ -31,7 +31,7 @@
 	suit_type = "industrial hardsuit"
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 30,
 		energy = 10,
@@ -75,7 +75,7 @@
 	suit_type = "EVA hardsuit"
 	desc = "A light rig for repairs and maintenance to the outside of habitats and vessels."
 	icon_state = "eva_rig"
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 10,
 		energy = 10,
@@ -115,7 +115,7 @@ Advanced Voidsuit: Guild Master
 	suit_type = "advanced voidsuit"
 	desc = "An advanced voidsuit that protects against hazardous, low pressure environments. Shines with a high polish."
 	icon_state = "ce_rig"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 40,
 		energy = 40,
@@ -124,6 +124,8 @@ Advanced Voidsuit: Guild Master
 		rad = 100
 	)
 	slowdown = 0
+	stiffness = 0
+	obscuration = 0
 	drain = 2
 	offline_slowdown = 0
 	offline_vision_restriction = 0
@@ -170,7 +172,7 @@ Technomancer RIG
 	suit_type = "technomancer RIG suit"
 	desc = "An advanced RIG suit that protects against hazardous, low pressure and high temperature environments."
 	icon_state = "techno_rig"
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 30,
 		energy = 30,
@@ -220,7 +222,7 @@ Technomancer RIG
 	suit_type = "hazmat hardsuit"
 	desc = "An Anomalous Material Interaction hardsuit that protects against the strangest energies the universe can throw at it."
 	icon_state = "science_rig"
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 40,
@@ -271,7 +273,7 @@ Technomancer RIG
 	desc = "An Anomalous Material Interaction hardsuit that protects against the strangest energies the universe can throw at it. \
 	This advanced verson is made with speed in mind as well better armor plates at the cost of power."
 	icon_state = "science_ami_rig"
-	armor = list(
+	armor_list = list(
 		melee = 35,
 		bullet = 30,
 		energy = 40,
@@ -326,7 +328,7 @@ Technomancer RIG
 	suit_type = "rescue hardsuit"
 	desc = "A relatively lightweight and durable RIG suit designed for medical rescue in hazardous locations."
 	icon_state = "medical_rig"
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 10,
 		energy = 10,
@@ -336,7 +338,7 @@ Technomancer RIG
 	)
 	slowdown = 0
 	offline_vision_restriction = 1
-
+	stiffness = MEDIUM_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
 
 	extra_allowed = list(
@@ -364,7 +366,7 @@ Technomancer RIG
 	desc = "An upgraded hardsuit designed by the Soteria for their trauma team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
 	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
 	icon_state = "tt_rig"
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 35,
 		energy = 25,
@@ -373,7 +375,7 @@ Technomancer RIG
 		rad = 100
 	)
 	slowdown = 0
-
+	stiffness = MEDIUM_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
 
 	extra_allowed = list(
@@ -404,7 +406,7 @@ Technomancer RIG
 	suit_type = "hazard hardsuit"
 	desc = "A security hardsuit designed for prolonged EVA in dangerous environments."
 	icon_state = "hazard_rig"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 40,
 		energy = 40,

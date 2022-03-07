@@ -85,36 +85,37 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /obj/item/gun/hydrogen/attackby(obj/item/W as obj, mob/living/user as mob)
 
 	// Securing or unsecuring the cell
-	if(QUALITY_SCREW_DRIVING)
-		if((flask) && !(connected) && !(istype(W, /obj/item/hydrogen_fuel_cell/backpack)))
-			var/obj/item/tool/T = W // New var to use tool-only procs.
-			if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
-				if(secured)
-					user.visible_message(
-											SPAN_NOTICE("[user] unsecure the plasma flask."),
-											SPAN_NOTICE("You unsecure the plasma flask.")
-										)
-					secured = FALSE
-				else
-					user.visible_message(
-											SPAN_NOTICE("[user] secure the plasma flask."),
-											SPAN_NOTICE("You secure the plasma flask.")
-										)
-					secured = TRUE
-				return
-			else // When you fail
-				if(prob(75) && secured) // Get burned.
-					user.visible_message(
-											SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burns \his hand."),
-											SPAN_NOTICE("You make a mistake while unsecuring the flask and burns your hand.")
-										)
-					if(user.hand == user.l_hand) // Are we using the left arm?
-						user.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
-					else // If not then it must be the right arm.
-						user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
-				return
-		else
-			to_chat(user, "There is no flask to remove.")
+	if(istype(W, /obj/item/tool)) // Is it a tool?
+		var/obj/item/tool/T = W // To use tool-only checks
+		if(QUALITY_SCREW_DRIVING in T.tool_qualities)
+			if((flask) && !(connected) && !(istype(W, /obj/item/hydrogen_fuel_cell/backpack)))
+				if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
+					if(secured)
+						user.visible_message(
+												SPAN_NOTICE("[user] unsecure the plasma flask."),
+												SPAN_NOTICE("You unsecure the plasma flask.")
+											)
+						secured = FALSE
+					else
+						user.visible_message(
+												SPAN_NOTICE("[user] secure the plasma flask."),
+												SPAN_NOTICE("You secure the plasma flask.")
+											)
+						secured = TRUE
+					return
+				else // When you fail
+					if(prob(75) && secured) // Get burned.
+						user.visible_message(
+												SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burns \his hand."),
+												SPAN_NOTICE("You make a mistake while unsecuring the flask and burns your hand.")
+											)
+						if(user.hand == user.l_hand) // Are we using the left arm?
+							user.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+						else // If not then it must be the right arm.
+							user.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+					return
+			else
+				to_chat(user, "There is no flask to remove.")
 
 	// We do not want to insert the backpack, thank you very much.
 	if(istype(W, /obj/item/hydrogen_fuel_cell/backpack))

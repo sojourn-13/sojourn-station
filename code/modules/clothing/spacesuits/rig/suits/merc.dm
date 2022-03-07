@@ -8,7 +8,7 @@
 	desc = "A blood-red hardsuit featuring some fairly advanced technology."
 	icon_state = "merc_rig"
 	suit_type = "crimson hardsuit"
-	armor = list(
+	armor_list = list(
 		melee = 40,
 		bullet = 40,
 		energy = 30,
@@ -20,6 +20,8 @@
 	drain = 3.5
 	offline_slowdown = 3
 	offline_vision_restriction = 1
+	stiffness = 0
+	obscuration = 0
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/merc
 

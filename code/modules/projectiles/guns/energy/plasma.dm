@@ -135,7 +135,7 @@
 
 	if(istype(W, /obj/item/tool)) // Is it a tool?
 		var/obj/item/tool/T = W // To use tool-only checks
-		if(QUALITY_BOLT_TURNING) // Can we turn bolts with the tool?
+		if(QUALITY_BOLT_TURNING in T.tool_qualities) // Can we turn bolts with the tool?
 			if(container) // Do we have something to remove?
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
 					to_chat(user, "You remove the [container.name] from the [src.name].")

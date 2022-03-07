@@ -24,6 +24,8 @@
 	var/insertion_sound
 	var/extraction_sound
 
+	var/exspand_when_spawned = TRUE
+
 /obj/item/storage/debug
 	name = "Destickinator"
 	desc = "A case that can fit legitmently anything inside it, used by Bluespace Technicians and the like to remove stuck items form their hands. \
@@ -353,7 +355,7 @@
 //This proc handles items being inserted. It does not perform any checks of whether an item can or can't be inserted. That's done by can_be_inserted()
 //The stop_warning parameter will stop the insertion message from being displayed. It is intended for cases where you are inserting multiple items at once,
 //such as when picking up all the items on a tile with one click.
-/obj/item/storage/proc/handle_item_insertion(obj/item/W as obj, prevent_warning = FALSE, mob/user)
+/obj/item/storage/proc/handle_item_insertion(obj/item/W as obj, prevent_warning = FALSE, mob/user, suppress_warning = FALSE)
 	if (!istype(W)) return 0
 	if (usr)
 		usr.prepare_for_slotmove(W)
@@ -368,14 +370,15 @@
 		W.dropped(usr)
 		add_fingerprint(usr)
 
-		if(!prevent_warning && W.w_class >= ITEM_SIZE_NORMAL)
-			if(insertion_sound)
-				playsound(get_turf(src), insertion_sound, 100)
-			visible_message(SPAN_NOTICE("[usr] puts [W] in [src]."),
-							SPAN_NOTICE("You put [W] in [src].")
-							)
-		else
-			to_chat(usr, SPAN_NOTICE("You put [W] in [src]."))
+		if(!suppress_warning)
+			if(!prevent_warning && W.w_class >= ITEM_SIZE_NORMAL)
+				if(insertion_sound)
+					playsound(get_turf(src), insertion_sound, 100)
+				visible_message(SPAN_NOTICE("[usr] puts \a [W] in \the [src]."),
+								SPAN_NOTICE("You put \a [W] in \the [src].")
+				)
+			else
+				to_chat(usr, SPAN_NOTICE("You put \a [W] in \the [src]."))
 
 	refresh_all()
 
@@ -492,7 +495,7 @@
 			break
 		if(can_be_inserted(I, TRUE))
 			. |= TRUE
-			handle_item_insertion(I, TRUE, user)
+			handle_item_insertion(I, TRUE, user, TRUE)
 
 	if(user)
 		if(.)
@@ -558,7 +561,8 @@
 	var/total_storage_space = 0
 	for(var/obj/item/I in contents)
 		total_storage_space += I.get_storage_cost()
-	max_storage_space = max(total_storage_space, max_storage_space) //prevents spawned containers from being too small for their contents
+	if(exspand_when_spawned)
+		max_storage_space = max(total_storage_space, max_storage_space) //prevents spawned containers from being too small for their contents
 
 // Override in subtypes
 /obj/item/storage/proc/populate_contents()

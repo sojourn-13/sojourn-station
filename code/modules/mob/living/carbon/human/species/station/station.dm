@@ -100,7 +100,6 @@
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
 	obligate_form = TRUE
-	reagent_tag = IS_CARNIVORE
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
 	num_alternate_languages = 2
@@ -156,7 +155,7 @@
 	permitted_tail  = list("Sablekyne Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/laststand,/datum/perk/bone, /datum/perk/brawn)
+	perks = list(/datum/perk/laststand,/datum/perk/bone, /datum/perk/brawn, /datum/perk/carnivore)
 
 /datum/species/sablekyne/get_bodytype()
 	return "Sablekyne"
@@ -305,7 +304,7 @@
 	permitted_tail  = list("Akula Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/recklessfrenzy, /datum/perk/iron_flesh)
+	perks = list(/datum/perk/recklessfrenzy, /datum/perk/iron_flesh, /datum/perk/carnivore)
 
 /datum/species/akula/get_bodytype()
 	return "Akula"

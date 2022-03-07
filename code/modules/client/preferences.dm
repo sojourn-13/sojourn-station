@@ -223,7 +223,7 @@
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 			if("Equipment")
 				categoriesChanged=null
-				QDEL_NULL_LIST(character.worn_underwear) //4
+				QDEL_LIST(character.worn_underwear) //4
 				character.worn_underwear = list() //4
 				for(var/underwear_category_name in all_underwear) //4
 					var/datum/category_group/underwear/underwear_category = GLOB.underwear.categories_by_name[underwear_category_name]
@@ -295,7 +295,7 @@
 	character.update_hair(0) //2
 	character.force_update_limbs()//2
 
-	QDEL_NULL_LIST(character.worn_underwear) //4
+	QDEL_LIST(character.worn_underwear) //4
 	character.worn_underwear = list() //4
 	for(var/underwear_category_name in all_underwear) //4
 		var/datum/category_group/underwear/underwear_category = GLOB.underwear.categories_by_name[underwear_category_name]

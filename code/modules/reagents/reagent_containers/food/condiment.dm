@@ -278,6 +278,16 @@
 	name = "sugar pack"
 	preloaded_reagents = list("sugar" = 10)
 
+//Salt
+/obj/item/reagent_containers/food/condiment/pack/salt
+	name = "salt pack"
+	preloaded_reagents = list("sodiumchloride" = 10)
+
+//Pepper
+/obj/item/reagent_containers/food/condiment/pack/pepper
+	name = "pepper pack"
+	preloaded_reagents = list("blackpepper" = 10)
+
 //Hot sauce
 /obj/item/reagent_containers/food/condiment/pack/hotsauce
 	name = "hotsauce pack"

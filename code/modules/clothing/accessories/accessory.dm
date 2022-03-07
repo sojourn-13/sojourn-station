@@ -282,6 +282,12 @@
 	icon_state = "scav_mantle"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
+/obj/item/clothing/accessory/cape/corpsmans_cape
+	name = "corpsmen cape"
+	desc = "A cape made from blue and white fabric denoting that they are a corpsmen, to be easily seen in the jungle."
+	icon_state = "corpsman_cape"
+	slot_flags = SLOT_ACCESSORY_BUFFER
+
 /obj/item/clothing/accessory/cape/black
 	name = "attachable black cloak"
 	desc = "A simple black cloak you can attach to your suit for all your edgy needs."
@@ -305,6 +311,96 @@
 	desc = "A comfortable black greatcoat, perfect for winter, or simply showing off ones archaic fashion sense."
 	icon_state = "cloakalt"
 	slot_flags = SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticalponcho
+	name = "brown tactical poncho"
+	desc = "A sleek brown poncho. Great for gunfights at high noon or hiding in the underbrush."
+	icon_state = "tacpon_brown"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticalponcho/green
+	name = "green tactical poncho"
+	desc = "A sleek, green poncho. Tactical and stylish!"
+	icon_state = "tacpon_green"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticalponcho/camo
+	name = "camo tactical poncho"
+	desc = "A sleek, tactical camo poncho. Great for remaining inconspicuous in even the most densely  wooded combat enviroments"
+	icon_state = "tacpon_camo"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticalponcho/ghillie
+	name = "ghillie poncho"
+	desc = "A highly tactical partial ghillie suit adjusted for the upper body, it only makes you look a little goofy when not lying down!"
+	icon_state = "tacpon_ghillie"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/*Shirts*/
+/obj/item/clothing/accessory/hawaiian
+	name = "black Hawaiian shirt"
+	desc = "A cool Hawaiian pattern shirt in dark black. Beach Goth 2620 is written on the inner tag."
+	icon_state = "hawaiiblack"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/hawaiian/fuschia
+	name = "fuschia Hawaiian shirt"
+	desc = "A Hawaiian pattern shirt in brilliant fuschia. You'll be saying 'Mahalo' when someone takes it out of your sight."
+	icon_state = "hawaiifuchs"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/hawaiian/jade
+	name = "jade Hawaiian shirt"
+	desc = "A Hawaiian pattern shirt of jade and silver. The vine pattern is really pleasing to the eyes!"
+	icon_state = "hawaiivine"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/hawaiian/orange
+	name = "orange Hawaiian shirt"
+	desc = "A Hawaiian pattern shirt in stunning orange and blue. A true masterpiece that straddles the line between tacky and ageless."
+	icon_state = "hawaiiorange"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/hawaiian/motu
+	name = "questionable Hawaiian shirt"
+	desc = "A Hawaiian pattern shirt in - wait a minute...hawaii shirts don't have skulls, lightning, or beloved cartoon character he-man on them, you've been had!."
+	icon_state = "hawaiimotu"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/hawaiian/vice
+	name = "teal Hawaiian shirt"
+	desc = "A Hawaiian shirt with palm-tree pattern and a fetching teal shade. The designer tag reads 'Malibu Club Merch' and has an obviously stamped signature from the presumed designer, 'Tony'"
+	icon_state = "hawaiivice"
+	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/hawaiian/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["button"] = ""
+	options["unbutton"] = "_open"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You [choice] your shirt. Aloha!.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 
 /*Scarves*/
 
@@ -514,6 +610,26 @@ obj/item/clothing/accessory/scarf/green
 	desc = "A lightweight polymer frame designed to hold a neck upright comfortably."
 	icon_state = "neckbrace"
 	item_state = "neckbrace"
+
+
+/obj/item/clothing/accessory/kneepads
+	name = "cheap kneepads"
+	desc = "A set of cheap, dingy old kneepads. Great for a round or two of hand-egg, but probably won't offer any real protection in a combat situation."
+	icon_state = "kneepad_cheap"
+	item_state = "kneepad_cheap"
+
+/obj/item/clothing/accessory/kneepads/basic
+	name = "basic kneepads"
+	desc = "A set of decent kneepads. Good for construction work or other mild to heavy duty work! Probably won't offer any real protection in a combat situation."
+	icon_state = "kneepad_basic"
+	item_state = "kneepad_basic"
+
+/obj/item/clothing/accessory/kneepads/expensive
+	name = "fancy kneepads"
+	desc = "A set of advanced leg-guards. Perfect for the that chic mercenary look, but less useful for true combat."
+	icon_state = "kneepad_expensive"
+	item_state = "kneepad_expensive"
+
 
 /*Ranks*/
 

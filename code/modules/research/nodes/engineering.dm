@@ -55,7 +55,8 @@
 	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/gas_heater,
-						   /datum/design/research/circuit/gas_cooler)
+						   /datum/design/research/circuit/gas_cooler,
+						   /datum/design/research/item/computer_part/gas)
 
 // TO ADD: idcardconsole
 /datum/technology/adv_replication
@@ -124,6 +125,8 @@
 	unlocks_designs = list(
 							/datum/design/research/item/wirer,
 							/datum/design/research/item/debugger,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
 							/datum/design/research/item/custom_circuit_assembly,
 							/datum/design/research/item/custom_circuit_assembly/medium,
 							/datum/design/research/item/custom_circuit_assembly/drone,
@@ -145,7 +148,12 @@
 	required_tech_levels = list()
 	cost = 1500
 
-	unlocks_designs = list(/datum/design/research/item/custom_circuit_assembly/advanced_designs)
+	unlocks_designs = list(
+							/datum/design/research/item/custom_circuit_assembly/advanced_designs,
+							/datum/design/research/item/detailer,
+							/datum/design/research/item/analyzer,
+							/datum/design/research/item/custom_circuit_assembly/cloning
+							)
 
 /* No tesla engine?
 /datum/technology/tesla
@@ -179,7 +187,8 @@
 	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/ordercomp,
-						   /datum/design/research/circuit/supplycomp)
+						   /datum/design/research/circuit/supplycomp,
+						   /datum/design/research/item/computer_part/price)
 
 //TOOLS BRANCH
 // TO ADD: ore_redemption, mining_equipment_vendor, mining_fabricator?

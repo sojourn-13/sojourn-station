@@ -72,6 +72,11 @@
 	icon_state = "ldrum_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
+/obj/item/ammo_magazine/highcap_pistol_35/drum/soporific_cbo
+	name = "standard auto drum (sleeper)"
+	icon_state = "ldrum_r"
+	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
+
 /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 	name = "standard auto drum (hollow-point)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
@@ -587,6 +592,10 @@
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 99
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/c10x24/empty
+	icon_state = "10x24"
+	initial_ammo = 0
 
 /obj/item/ammo_magazine/rifle_10x24
 	name = "light rifle magazine"

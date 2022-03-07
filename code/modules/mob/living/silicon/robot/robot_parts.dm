@@ -47,7 +47,8 @@
 	body_part = "chest"
 	matter = list(MATERIAL_STEEL = 25)
 	var/wires = 0.0
-	var/obj/item/cell/large/cell = null
+	cell = null
+	suitable_cell = /obj/item/cell/large
 
 /obj/item/robot_parts/chest/is_ready(var/mob/living/user)
 	if(!wires)

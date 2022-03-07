@@ -166,6 +166,18 @@
 	display_name = "red jacket"
 	path = /obj/item/clothing/suit/storage/akira
 
+/datum/gear/suit/absolute_hoodie
+	display_name = "absolute hoodie"
+	path = /obj/item/clothing/suit/storage/toggle/absolutehoodie
+
+/datum/gear/suit/absolute_great_coat
+	display_name = "absolute great coat"
+	path = /obj/item/clothing/suit/greatcoat/absolutecoat
+
+/datum/gear/suit/absolute_cloak
+	display_name = "absolutist cloak"
+	path = /obj/item/clothing/suit/hooded/absolutecloak
+
 /datum/gear/suit/radhat
 	display_name = "radiation hood"
 	path = /obj/item/clothing/head/radiation

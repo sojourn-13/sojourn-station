@@ -139,7 +139,10 @@
 	required_tech_levels = list()
 	cost = 1125
 
-	unlocks_designs = list(/datum/design/research/circuit/teleconsole)
+	unlocks_designs = list(/datum/design/research/circuit/teleconsole,
+							/datum/design/research/circuit/teleporter/station,
+							/datum/design/research/circuit/teleporter/hub
+	)
 
 /datum/technology/adv_spatial_scan
 	name = "Advanced Spatial Analyzing"

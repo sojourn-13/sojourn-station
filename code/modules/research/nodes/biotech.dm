@@ -84,7 +84,8 @@
 
 	unlocks_designs = list(/datum/design/research/circuit/sleeper,
 							/datum/design/research/circuit/slime_compresser,
-							/datum/design/research/item/medical/compact_roller_bed)
+							/datum/design/research/item/medical/compact_roller_bed,
+							/datum/design/research/circuit/sleeper)
 
 /datum/technology/hydroponics
 	name = "Hydroponics"
@@ -127,6 +128,8 @@
 							/datum/design/research/circuit/chem_heater,
 							/datum/design/research/item/makeshift_centrifuge,
 							/datum/design/research/structure/bidon,
+							/datum/design/research/item/computer_part/medical,
+							/datum/design/research/item/computer_part/reagent,
 							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade
 							//datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
 							)
@@ -235,7 +238,8 @@
 							/datum/design/research/structure/bidonadv,
 							/datum/design/research/structure/bidontrigger,
 							/datum/design/research/item/medical/compact_defibs,
-							/datum/design/research/item/implant/alarm
+							/datum/design/research/item/implant/alarm,
+							/datum/design/research/item/petite_scanner
 							)
 
 /datum/technology/tracker_tablet

@@ -4,6 +4,7 @@
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 	body_parts_covered = 0
+	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/glasses/eyepatch/attack_self()
 	adjust()
@@ -91,6 +92,7 @@
 	icon_state = "3d"
 	item_state = "3d"
 	body_parts_covered = 0
+	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/glasses/regular/gglasses
 	name = "green glasses"
@@ -114,6 +116,7 @@
 	item_state = "sunglasses"
 	darkness_view = -1
 	flash_protection = FLASH_PROTECTION_MODERATE
+	obscuration = LIGHT_OBSCURATION
 
 /obj/item/clothing/glasses/sunglasses/big
 	name = "large sunglasses"
@@ -121,6 +124,8 @@
 	icon_state = "bigsunglasses"
 	item_state = "bigsunglasses"
 	flash_protection = FLASH_PROTECTION_MAJOR
+	darkness_view = -3
+	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/glasses/aviator
 	name = "black aviators"
@@ -154,6 +159,7 @@
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	tint = TINT_BLIND
+	obscuration = HEAVY_OBSCURATION
 
 /obj/item/clothing/glasses/blindfold/tape
 	name = "length of tape"
@@ -178,6 +184,7 @@
 
 /obj/item/clothing/glasses/ballistic/verb/adjust()
 	set name = "Adjust goggle polarization"
+	set category = "Object"
 	set src in usr
 
 	if(usr.canmove && !usr.stat && !usr.restrained())
@@ -186,8 +193,8 @@
 			flags_inv |= HIDEEYES
 			body_parts_covered |= EYES
 			icon_state = initial(icon_state)
-			flash_protection = initial(flash_protection)
-			darkness_view = -1
+			flash_protection = FLASH_PROTECTION_MAJOR
+			darkness_view = -4
 			to_chat(usr, "You switch \the [src]' polarization on to protect your eyes.")
 		else
 			src.active = !src.active

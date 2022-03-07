@@ -45,6 +45,10 @@
 	var/rigged = FALSE
 	var/recoil_buildup = 2 //How quickly recoil builds up
 
+	var/braced = FALSE //for gun_brace proc.
+	var/brace_penalty = FALSE//penalty if not braced.
+	var/braceable = 1 //can the gun be used for gun_brace proc, modifies recoil. If the gun has foregrip mod installed, it's not braceable. Bipod mod increases value by 1.
+
 	var/muzzle_flash = 3
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
@@ -67,7 +71,7 @@
 	var/init_offset = 0
 
 	var/mouthshoot = FALSE //To stop people from suiciding twice... >.>
-
+	var/scoped_offset_reduction = 3
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
 	/*	SILENCER HANDLING */
 	var/silenced = FALSE
@@ -96,6 +100,7 @@
 
 	var/folding_stock = FALSE //Can we fold are stock?
 	var/folded = FALSE //IS are stock folded?
+	var/currently_firing = FALSE
 
 /obj/item/gun/proc/loadAmmoBestGuess()
 	return
@@ -218,19 +223,20 @@
 		handle_click_empty(user)
 		return FALSE
 
-	if((CLUMSY in M.mutations) && prob(40)) //Clumsy handling
+	if((CLUMSY in M.mutations) && prob(15))
 		var/obj/P = consume_next_projectile()
 		if(P)
 			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
 				handle_post_fire(user, user)
 				user.visible_message(
-					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
-					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
+					SPAN_DANGER("\The [user] fumbles with \the [src] and shoot themselves in the foot with \the [src]!"),
+					SPAN_DANGER("You fumble with the gun and accidentally shoot yourself in the foot with \the [src]!")
 					)
 				M.drop_item()
 		else
 			handle_click_empty(user)
 		return FALSE
+
 	if(rigged)
 		var/obj/P = consume_next_projectile()
 		if(P)
@@ -307,6 +313,8 @@
 	if(!special_check(user))
 		return
 
+	currently_firing = TRUE
+
 	var/shoot_time = (burst - 1)* burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
 	next_fire_time = world.time + shoot_time
@@ -357,15 +365,27 @@
 			target = targloc
 			pointblank = 0
 
-
-
 	//update timing
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	user.set_move_cooldown(move_delay)
 	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
 		next_fire_time = world.time + fire_delay - fire_delay * 0.33
-	else
-		next_fire_time = world.time + fire_delay
+
+	if((CLUMSY in user.mutations) && prob(40)) //Clumsy handling
+		var/obj/P = consume_next_projectile()
+		if(P)
+			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
+				handle_post_fire(user, user)
+				user.visible_message(
+					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
+					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
+					)
+				user.drop_item()
+		else
+			handle_click_empty(user)
+		return FALSE
+
+	currently_firing = FALSE
 
 	if(muzzle_flash)
 		set_light(0)
@@ -431,6 +451,9 @@
 				if(4 to INFINITY)
 					to_chat(user, "<span class='warning'>You struggle to keep \the [src] on target with just one hand!</span>")
 
+	if(brace_penalty && !braced)
+		to_chat(user, "<span class='warning'>You struggle to keep \the [src] on target while carrying it!</span>")
+
 	user.handle_recoil(src)
 	update_icon()
 
@@ -465,10 +488,7 @@
 
 	if(params)
 		P.set_clickpoint(params)
-	var/offset = init_offset
-	if(user.recoil)
-		offset += user.recoil
-	offset = min(offset, MAX_ACCURACY_OFFSET)
+	var/offset = user.calculate_offset(init_offset)
 	offset = rand(-offset, offset)
 
 	return !P.launch_from_gun(target, user, src, target_zone, angle_offset = offset)
@@ -521,6 +541,25 @@
 		mouthshoot = FALSE
 		return
 
+/obj/item/gun/proc/gun_brace(mob/living/user, atom/target)
+	if(braceable && user.unstack)
+		var/atom/original_loc = user.loc
+		var/brace_direction = get_dir(user, target)
+		user.unstack = FALSE
+		user.facing_dir = null
+		to_chat(user, SPAN_NOTICE("You brace your weapon on \the [target]."))
+		braced = TRUE
+		while(user.loc == original_loc && user.dir == brace_direction)
+			sleep(2)
+		to_chat(user, SPAN_NOTICE("You stop bracing your weapon."))
+		braced = FALSE
+		user.unstack = TRUE
+	else
+		if(!user.unstack)
+			to_chat(user, SPAN_NOTICE("You are already bracing your weapon!"))
+		else
+			to_chat(user, SPAN_WARNING("You can\'t properly place your weapon on \the [target] because of the foregrip!"))
+
 /obj/item/gun/proc/toggle_scope(mob/living/user)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
@@ -531,10 +570,7 @@
 	var/view_size = round(world.view + zoom_factor)
 
 	zoom(zoom_offset, view_size)
-	if(safety)
-		user.remove_cursor()
-	else
-		user.update_cursor()
+	check_safety_cursor(user)
 	update_hud_actions()
 
 /obj/item/gun/examine(mob/user)
@@ -552,13 +588,17 @@
 		to_chat(user, SPAN_NOTICE("This gun can be duel-wielded effectively, if you're skilled enough."))
 
 	if(iscarbon(user) || issilicon(user))
+		if(twohanded)
+			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands."))
+			return
 		if(one_hand_penalty && !user.stats.getPerk(PERK_PERFECT_SHOT))
 			to_chat(user, SPAN_WARNING("This gun needs to be wielded in both hands to be used most effectively."))
-		else if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
-			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands, if you weren't such a skilled shot."))
+			return
+		if((one_hand_penalty && user.stats.getPerk(PERK_PERFECT_SHOT)))
+			to_chat(user, SPAN_NOTICE("This gun would need to be wielded in both hands to stablize the recoil, but your skill overcomes such things."))
 
 /obj/item/gun/proc/initialize_firemodes()
-	QDEL_CLEAR_LIST(firemodes)
+	QDEL_LIST(firemodes)
 
 	for(var/i in 1 to init_firemodes.len)
 		var/list/L = init_firemodes[i]
@@ -636,6 +676,8 @@
 	toggle_firemode(user)
 
 /obj/item/gun/proc/toggle_firemode(mob/living/user)
+	if(currently_firing) // CHEATERS!
+		return
 	var/datum/firemode/new_mode = switch_firemodes()
 	if(new_mode)
 		playsound(src.loc, 'sound/weapons/guns/interact/selector.ogg', 100, 1)
@@ -651,10 +693,13 @@
 	//Update firemode when safeties are toggled
 	update_firemode()
 	update_hud_actions()
+	check_safety_cursor(user)
+
+/obj/item/gun/proc/check_safety_cursor(mob/living/user)
 	if(safety)
 		user.remove_cursor()
 	else
-		user.update_cursor()
+		user.update_cursor(src)
 
 /obj/item/gun/proc/get_total_damage_adjust()
 	var/val = 0
@@ -690,7 +735,7 @@
 		to_chat(user, SPAN_NOTICE("You cannot [folded ? "unfold" : "fold"] the stock while \the [src] is in a container."))
 		return
 
-	fold()
+	fold(span_chat = TRUE)
 
 /obj/item/gun/proc/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
@@ -699,12 +744,13 @@
 		return 2
 	return 0
 
-/obj/item/gun/proc/fold(user)
+/obj/item/gun/proc/fold(user, span_chat)
 //Were going to do some insainly dumb things to not doup or brake anything with storage or gun mods, well being modular
 	if(folding_stock)
 		if(!folded)
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
-			to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
+			if(span_chat)
+				to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
 			extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
 			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
 			recoil_buildup *= 0.5 //50% less recoil
@@ -716,7 +762,8 @@
 			folded = TRUE
 		else
 			refresh_upgrades() //First we grab are upgrades to not do anything silly
-			to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
+			if(span_chat)
+				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = FALSE
 
 		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
@@ -850,7 +897,12 @@
 	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
-
+	//Lets get are prefixes and name fresh
+	name = initial(name)
+	max_upgrades = initial(max_upgrades)
+	color = initial(color)
+	prefixes = list()
+	item_flags = initial(item_flags)
 	extra_bulk = initial(extra_bulk)
 
 	//Now lets have each upgrade reapply its modifications
@@ -860,23 +912,21 @@
 	if(firemodes.len)
 		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
 
+	for (var/prefix in prefixes)
+		name = "[prefix] [name]"
+
 	update_icon()
 	//then update any UIs with the new stats
 	SSnano.update_uis(src)
 
 /obj/item/gun/zoom(tileoffset, viewsize)
 	..()
-	if(!ishuman(usr))
-		return
-	var/mob/living/carbon/human/H = usr
 	if(zoom)
-		H.using_scope = src
-		damage_multiplier += extra_damage_mult_scoped
+		init_offset -= scoped_offset_reduction
 	else
-		H.using_scope = null
 		refresh_upgrades()
 
-/* //Eris has this but it, unsurpriingly, has issues, just gonna comment it out for now incase I use the code for something else later.
+/* //Eris has this but it, unsurpringly, has issues, just gonna comment it out for now incase I use the code for something else later.
 /obj/item/gun/proc/generate_guntags()
 	if(!zoom_factor && !(slot_flags & SLOT_HOLSTER))
 		gun_tags |= GUN_SCOPE

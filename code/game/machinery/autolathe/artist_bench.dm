@@ -6,18 +6,6 @@
 #define ERR_PAUSED "paused"
 #define ERR_NOINSIGHT "no insight"
 
-#define CAL_PISTOL ".35"
-#define CAL_35A ".35 auto"
-#define CAL_MAGNUM ".40 magnum"
-#define CAL_LRIFLE ".257 carbine"
-#define CAL_RIFLE "7.5mm rifle"
-#define CAL_HRIFLE ".408 heavy rifle"
-#define CAL_ANTIM ".60-06 Anti Material"
-#define CAL_SHOTGUN "Shotgun Shell"
-#define CAL_50	".50 kurtz"
-#define CAL_70 ".70"
-#define CAL_GRENADE "grenade"
-
 /obj/machinery/autolathe/artist_bench
 	name = "artist's bench"
 	desc = "Insert wood, steel, glass, plasteel, plastic and a bit of your soul to create a beautiful work of art."
@@ -55,7 +43,7 @@
 	return data
 
 
-/obj/machinery/autolathe/artist_bench/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = NANOUI_FOCUS)
+/obj/machinery/autolathe/artist_bench/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = NANOUI_FOCUS)
 	var/list/data = ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

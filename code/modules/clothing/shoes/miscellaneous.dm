@@ -20,7 +20,7 @@
 /obj/item/clothing/shoes/ablasive
 	name = "ablative jackboots"
 	desc = "A thick pair of boots that excels in protecting the wearer against energy projectiles."
-	armor = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
+	armor_list = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
 	siemens_coefficient = 0.6
@@ -36,7 +36,7 @@
 	desc = "When you want to turn up the heat."
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
-	armor = list(melee = 20, bullet = 10, energy = 25, bomb = 10, bio = 10, rad = 0)
+	armor_list = list(melee = 20, bullet = 10, energy = 25, bomb = 10, bio = 10, rad = 0)
 	item_flags = NOSLIP
 	siemens_coefficient = 0.6
 
@@ -45,7 +45,7 @@
 	desc = "When you REALLY want to turn up the heat."
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
-	armor = list(melee = 20, bullet = 10, energy = 25, bomb = 10, bio = 10, rad = 0)
+	armor_list = list(melee = 20, bullet = 10, energy = 25, bomb = 10, bio = 10, rad = 0)
 	item_flags = NOSLIP
 	siemens_coefficient = 0.4
 	can_hold_knife = 1
@@ -155,7 +155,7 @@
 	name = "lizardskin shoes"
 	desc = "A green pair of shoes made of lizardskin, likely a young render..."
 	icon_state = "lizardskin_shoes"
-	armor = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 10, rad = 0)
+	armor_list = list(melee = 20, bullet = 15, energy = 10, bomb = 10, bio = 10, rad = 0)
 
 /obj/item/clothing/shoes/church_blacksilk_boots
 	name = "blacksilk boots"
@@ -325,6 +325,16 @@
 	desc = "A roll of treated canvas used for wrapping claws or paws."
 	icon_state = "clothwrap"
 
+/obj/item/clothing/shoes/footwraps1
+	name = "blue footwraps"
+	desc = "A roll of treated canvas used for wrapping claws or paws."
+	icon_state = "leg-wrap"
+
+/obj/item/clothing/shoes/footwraps2
+	name = "red footwraps"
+	desc = "A roll of treated canvas used for wrapping claws or paws."
+	icon_state = "leg-wrap2"
+
 /*Winter Boots*/
 
 /obj/item/clothing/shoes/winter
@@ -340,7 +350,7 @@
 	desc = "A pair of reinforced winter boots with a security design."
 	icon_state = "winterboots_sec"
 	can_hold_knife = TRUE
-	armor = list(melee = 10, bullet = 0, energy = 15, bomb = 20, bio = 0, rad = 0) //Laser?
+	armor_list = list(melee = 10, bullet = 0, energy = 15, bomb = 20, bio = 0, rad = 0) //Laser?
 
 /obj/item/clothing/shoes/winter/science
 	name = "science winter boots"
@@ -395,4 +405,4 @@
 	desc = "A pair of rugged boots designed for hazardous environment exploration."
 	icon_state = "explorer"
 	can_hold_knife = TRUE
-	armor = list(melee = 10, bullet = 0, energy = 15, bomb = 20, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 0, energy = 15, bomb = 20, bio = 0, rad = 0)

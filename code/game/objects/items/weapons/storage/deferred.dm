@@ -322,3 +322,96 @@
 	/obj/item/storage/backpack = 1,
 	/obj/item/storage/backpack/satchel = 1)
 
+
+// TRADE
+
+// Gambling - markup = 10
+/obj/item/storage/deferred/disks
+	name = "autolathe disk box"
+	desc = "A small collection of autolathe disks"
+	initial_contents = list(/obj/random/lathe_disk = 7)
+	price_tag = 300
+
+///obj/item/storage/deferred/gun_parts
+//	name = "gun part box"
+//	desc = "Uppers, lowers, and everything in between"
+//	initial_contents = list(/obj/spawner/gun_parts = 7)
+//	price_tag = 300
+
+/obj/item/storage/deferred/powercells
+	name = "powercell box"
+	desc = "A small collection of powercells"
+	initial_contents = list(/obj/random/powercell/large_safe = 2,
+							/obj/random/powercell/medium_safe = 2,
+							/obj/random/powercell/small_safe = 3)
+	price_tag = 500
+
+/obj/item/storage/deferred/electronics
+	name = "circuit board box"
+	desc = "A small collection of circuit boards"
+	initial_contents = list(/obj/random/circuitboard = 7)
+	price_tag = 500
+
+// Kitchen supply - markup = 1.2
+/obj/item/storage/deferred/kitchen
+	name = "galley supply box"
+	desc = "A small collection of kitchen essentials"
+	initial_contents = list(
+		/obj/item/tool/knife = 1,
+		/obj/item/tool/knife/butch = 1,
+		/obj/item/material/kitchen/rollingpin = 1,
+		/obj/item/packageWrap = 1,
+		/obj/item/reagent_containers/food/condiment/saltshaker = 1,
+		/obj/item/reagent_containers/food/condiment/peppermill = 1,
+		/obj/item/reagent_containers/food/condiment/cookingoil = 1,
+		/obj/item/reagent_containers/food/condiment/sugar = 1
+	)
+	price_tag = 350
+
+// MoeSci supply - markup = 3.6
+/obj/item/storage/deferred/slime
+	name = "slime supply box"
+	desc = "A slime startup kit"
+	initial_contents = list(
+		/obj/item/slime_extract/grey = 4,
+		/obj/item/extinguisher = 1,
+		/obj/item/storage/box/monkeycubes = 1
+	)
+	price_tag = 5000
+
+/obj/item/storage/deferred/xenobotany
+	name = "xenobotany supply box"
+	desc = "A small collection of interesting seeds"
+	initial_contents = list(
+		/obj/item/seeds/random = 7
+	)
+	price_tag = 200
+
+/obj/item/storage/deferred/rnd
+	name = "research box"
+	desc = "A small collection of intellectual curiosities"
+	initial_contents = list(
+		/obj/item/computer_hardware/hard_drive/portable/research_points = 3,
+		/obj/item/computer_hardware/hard_drive/portable/research_points/rare = 1
+	)
+	price_tag = 10000
+
+// Trapper - markup = 4.8
+/obj/item/storage/deferred/roacheggs
+	name = "roach egg box"
+	desc = "A carton for eggs of the roach variety"
+	initial_contents = list(
+		/obj/item/roach_egg = 12
+	)
+	price_tag = 100
+
+// Serb - markup = 3.6
+/obj/item/storage/deferred/serb_rifle
+	name = "SA rifle pack"
+	desc = "A small collection of SA disks"
+	initial_contents = list(
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/sts40 = 1,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
+		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1
+	)
+	price_tag = 9000

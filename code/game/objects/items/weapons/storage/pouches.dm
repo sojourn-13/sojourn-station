@@ -46,6 +46,7 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE * 0.5
 	max_w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_BIOMATTER = 5)
+	level = BELOW_PLATING_LEVEL //We can hide under tiles :D
 
 /obj/item/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
@@ -65,6 +66,7 @@
 	max_storage_space = DEFAULT_SMALL_STORAGE
 	max_w_class = ITEM_SIZE_NORMAL
 	price_tag = 400
+	level = BELOW_PLATING_LEVEL //As we can
 
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
@@ -316,6 +318,11 @@
 		/obj/item/gun/projectile/revolver/lemant,
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/silenced,
+		/obj/item/gun/projectile/ladon,
+		/obj/item/gun/projectile/glock,
+		/obj/item/gun/projectile/automatic/straylight,
+		/obj/item/gun/energy/glock,
+		/obj/item/gun/energy/ionpistol,
 		/obj/item/gun/energy/gun,
 		/obj/item/gun/energy/chameleon,
 		//obj/item/gun/energy/captain, //too unwieldy, use belt/suit slot or other storage
@@ -363,6 +370,13 @@
 		)
 
 	sliding_behavior = TRUE
+
+/obj/item/storage/pouch/baton_holster/telebaton
+
+/obj/item/storage/pouch/baton_holster/telebaton/New()
+	new/obj/item/melee/telebaton(src)
+	update_icon()
+	. = ..()
 
 /obj/item/storage/pouch/baton_holster/update_icon()
 	..()

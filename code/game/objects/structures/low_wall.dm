@@ -46,7 +46,11 @@
 	wall_color = "#FFFFFF"
 	icon_state = "greyson"
 
-
+//Churchlowwall
+/obj/structure/low_wall/church
+	name = "Church low wall"
+	wall_color = "#FFFFFF"
+	icon_state = "church"
 
 
 //Low walls mark the turf they're on as a wall.  This is vital for floor icon updating code
@@ -145,13 +149,9 @@
 
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
 /obj/structure/low_wall/proc/check_cover(obj/item/projectile/P, turf/from)
-	var/turf/cover
-	cover = get_step(loc, get_dir(from, loc))
-	if(!cover)
-		return 1
 	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
-	if (get_turf(P.original) == cover)
+	if (TRUE)
 		var/chance = 20
 		if (ismob(P.original))
 			var/mob/M = P.original
@@ -410,12 +410,15 @@
 					return
 
 	//Turn on harm intent to override this behaviour and instead attack the wall
-	if (!(locate(/obj/structure/window) in loc) && user.a_intent != I_HURT)
+	if (!(locate(/obj/structure/window) in loc) && user.a_intent != I_HURT && user.a_intent != I_HELP)
 		if (user.unEquip(I, src.loc))
 			set_pixel_click_offset(I, params)
 			return
-
-
+	//Gun bracing
+	if(!(locate(/obj/structure/window) in loc) && user.a_intent == I_HELP && istype(I, /obj/item/gun))
+		var/obj/item/gun/G = I
+		G.gun_brace(user, src) //.../modules/projectiles/gun.dm
+		return
 	//Hitting the wall with stuff
 	if(!istype(I,/obj/item/rcd) && !istype(I, /obj/item/reagent_containers))
 		if(!I.force)

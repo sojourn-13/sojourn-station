@@ -202,6 +202,16 @@ var/const/NO_EMAG_ACT = -50
 	assignment = "Syndicate Overlord"
 	access = list(access_syndicate, access_external_airlocks)
 
+/obj/item/card/id/medical_command
+	name = "Medical ID card"
+	desc = "An ID straight from the SI Medical Divisions."
+	registered_name = "Medical ERT"
+	assignment = "SI Medical ERT"
+	access = list(access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
+		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
+		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
+		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits)
+
 /obj/item/card/id/captains_spare
 	name = "premier's spare ID"
 	desc = "A golden and pompous spare ID, for when a new premier is elected or in the shameful case an existing one lost his original badge. The most stolen item on the colony."
@@ -232,6 +242,7 @@ var/const/NO_EMAG_ACT = -50
 	item_state = "tdgreen"
 	registered_name = "Administrator"
 	assignment = "Administrator"
+
 /obj/item/card/id/all_access/New()
 	access = get_access_ids()
 	..()
@@ -242,9 +253,10 @@ var/const/NO_EMAG_ACT = -50
 	icon_state = "centcom"
 	registered_name = "Central Command"
 	assignment = "General"
-	New()
-		access = get_all_centcom_access()
-		..()
+
+/obj/item/card/id/all_access/New()
+	access = get_all_centcom_access()
+	..()
 
 /obj/item/card/id/gold
 	icon_state = MATERIAL_GOLD

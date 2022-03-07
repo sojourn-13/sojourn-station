@@ -4,7 +4,7 @@
 	desc = "A lighter, less armoured rig suit made from nanites and attached to someone's spine."
 	icon_state = "ihs_rig_old"
 	suit_type = "nanite suit"
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 30,
 		energy = 30,
@@ -35,13 +35,13 @@
 
 /obj/item/rig/nanite/New()
 	..()
-	Initialize()
 
 /obj/item/rig/nanite/Process()
 	..()
 	charge_tick++
-	if(charge_tick < recharge_time) return 0
+	if(charge_tick < recharge_time)
 		charge_tick = 0
+		return FALSE
 
 	if(!cell || cell.charge >= cell.maxcharge)
 		return FALSE // check if we actually need to recharge

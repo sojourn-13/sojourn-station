@@ -90,6 +90,10 @@
 	name = "hammer"
 	build_path = /obj/item/tool/hammer
 
+/datum/design/autolathe/tool/deadblow_hammer
+	name = "deadblow hammer"
+	build_path = /obj/item/tool/hammer/deadblow
+
 /datum/design/autolathe/tool/powered_hammer
 	name = "powered sledgehammer"
 	build_path = /obj/item/tool/hammer/powered_hammer

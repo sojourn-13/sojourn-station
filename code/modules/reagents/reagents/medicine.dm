@@ -201,13 +201,6 @@
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1
 
-/datum/reagent/medicine/dexalinp/holy
-	name = "Helaxin Negative"
-	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
-	id = "holydexalinp"
-	scannable = 0
-	appear_in_default_catalog = FALSE
-
 /datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.adjustOxyLoss(-30 * effect_multiplier)
 	M.add_chemical_effect(CE_OXYGENATED, 2)
@@ -387,6 +380,7 @@
 	overdose = 0
 	scannable = 0
 	metabolism = 0.2
+	appear_in_default_catalog = FALSE
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/nepenthe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -403,6 +397,7 @@
 	scannable = 0
 	metabolism = 0.2
 	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/anodyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 90) // Tweaking the numbers here so that they are closer to what litanies used to do, this one is a flat -10 loss to what it used to be...
@@ -418,9 +413,41 @@
 	scannable = 0
 	metabolism = 0.5
 	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/laudanum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 40) // ...yet this one is a buff, making it an acceptably low painkiller range while keeping a 50 difference between tiers like Tram-to-Para ratio - Seb
+
+/datum/reagent/medicine/dexalinp/holy
+	name = "Helaxin Negative"
+	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
+	id = "holydexalinp"
+	scannable = 0
+	appear_in_default_catalog = FALSE
+	overdose = 0
+
+/datum/reagent/medicine/cindpetamol/holy
+	name = "Alignitol"
+	id = "alignitol"
+	description = "A chemical of unknown origin that purges toxins and addictions from the body, making it highly effective at aiding others, but has the side effect of putting users unconcious."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#FF3300"
+	nerve_system_accumulations = 0
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 0
+	overdose = 0
+
+/datum/reagent/medicine/spaceacillin/holy
+	name = "Holycilin"
+	id = "holycilin"
+	description = "A chemical of unknown origin, believed to be derived from cahors and spaceacillin that functions identical to the latter."
+	taste_description = "sweetness"
+	appear_in_default_catalog = FALSE
+	constant_metabolism = TRUE
+	scannable = 0
+	overdose = 0
 
 /* Other medicine */
 
@@ -758,7 +785,7 @@
 	reagent_state = LIQUID
 	color = "#a6b85b"
 	overdose = REAGENTS_OVERDOSE/2
-	metabolism = REM/2
+	metabolism = REM/4 //we take a LONG time to remove areselfs!
 	scannable = 1
 
 /datum/reagent/medicine/quickclot/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
@@ -768,7 +795,7 @@
 		for(var/obj/item/organ/external/E in H.organs)
 			for(var/datum/wound/W in E.wounds)
 				if(W.internal)
-					W.heal_damage(5 * effect_multiplier)
+					W.heal_damage(10 * effect_multiplier)
 		var/obj/item/organ/internal/blood_vessel/B = H.random_organ_by_process(OP_BLOOD_VESSEL)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(B))
@@ -782,29 +809,18 @@
 /datum/reagent/medicine/ossisine
 	name = "Ossisine"
 	id = "ossisine"
-	description = "Paralyzes user and restores broken bones. Medicate in critical conditions only."
+	description = "Restores broken bones. Medicate in critical conditions only. Overdose makes cellular failure and paralyses the user."
 	taste_description = "calcium"
 	reagent_state = LIQUID
 	color = "#660679"
-	overdose = REAGENTS_OVERDOSE/2
+	overdose = 11 //Can be used in hypos and the like
 	metabolism = REM * 1.5 // Hard stun, impractical use for the situations it's used, and healing per removed unit, this was needed.
 	scannable = 1
 
 /datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
-	M.paralysis = max(M.paralysis, 5)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
-			var/list/brokenBP = list()
-			for(var/obj/item/organ/external/E in H.organs)
-				if(E.is_broken())
-					brokenBP += E
-			if(brokenBP.len)
-				var/obj/item/organ/external/E = pick(brokenBP)
-				E.mend_fracture()
-				M.pain(E.name, 60, TRUE)
-				dose = 0
 		var/obj/item/organ/internal/bone/B = H.random_organ_by_process(OP_BONE)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(B))
@@ -814,7 +830,21 @@
 
 
 /datum/reagent/medicine/ossisine/overdose(mob/living/carbon/M, alien)
+	M.paralysis = max(M.paralysis, 5)
 	M.adjustCloneLoss(2)
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		//if(dose >= overdose) //Less gaming, do surgery you lazy butt. // Love you too Seb <3
+		var/list/brokenBP = list()
+		for(var/obj/item/organ/external/E in H.organs)
+			if(E.is_broken())
+				brokenBP += E
+		if(brokenBP.len)
+			var/obj/item/organ/external/E = pick(brokenBP)
+			E.mend_fracture()
+			M.pain(E.name, 60, TRUE)
+			dose = 0
 
 /datum/reagent/medicine/noexcutite
 	name = "Noexcutite"

@@ -77,7 +77,7 @@
 	var/internal_damage = 0 //contains bitflags
 
 	var/list/operation_req_access = list()//required access level for mecha operation
-	var/list/internals_req_access = list(access_engine,access_robotics)//required access level to open cell compartment
+	var/list/internals_req_access = list()//required access level to open cell compartment
 	var/list/dna_req_access = list(access_heads)
 
 	var/datum/global_iterator/pr_int_temp_processor //normalizes internal air mixture temperature
@@ -404,7 +404,7 @@
 		target.attack_hand(src.occupant)
 		return 1
 	if(istype(target, /obj/machinery/embedded_controller))
-		target.ui_interact(src.occupant)
+		target.nano_ui_interact(src.occupant)
 		return 1
 	return 0
 
@@ -941,7 +941,7 @@ assassination method if you time it right*/
 		usable_qualities.Add(QUALITY_SCREW_DRIVING)
 	if(state == 2 || state == 3)
 		usable_qualities.Add(QUALITY_PRYING)
-	if(state >= 3 && src.occupant)
+	if((state >= 3 && src.occupant) || src.dna)
 		usable_qualities.Add(QUALITY_PULSING)
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
@@ -1045,6 +1045,14 @@ assassination method if you time it right*/
 						src.occupant_message(SPAN_WARNING("An attempt to eject you was made using the maintenance controls."))
 						src.log_message("Eject attempt made using maintenance controls - rejected.")
 					return
+			if(src.dna)
+				if(I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+					src.dna = null
+					to_chat(user, SPAN_WARNING("You have reset the mech's DNA lock forcefuly."))
+					src.log_message("DNA lock was forcefuly removed.")
+				else
+					to_chat(user, SPAN_WARNING("You failed to reset the mech's DNA lock."))
+					src.log_message("A failed attempt at reseting the DNA lock has been logged.")
 			return
 
 		if(ABORT_CHECK)

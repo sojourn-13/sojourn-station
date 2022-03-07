@@ -26,7 +26,7 @@
 	path = /obj/item/clothing/accessory/necklace
 
 /datum/gear/accessory/fractalrosary
-	display_name = "fractal Rosary"
+	display_name = "fractal rosary"
 	path = /obj/item/clothing/accessory/fractalrosary
 
 /datum/gear/accessory/neckbrace
@@ -41,6 +41,16 @@
 /datum/gear/accessory/tie
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory/tie
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/hawaiianshirt
+	display_name = "hawaiian shirt selection"
+	path = /obj/item/clothing/accessory/hawaiian
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/kneepad
+	display_name = "kneepad selection"
+	path = /obj/item/clothing/accessory/kneepads
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/fluffycape
@@ -63,6 +73,16 @@
 	display_name = "black greatcoat"
 	path = /obj/item/clothing/accessory/cape/blackalt
 
+/datum/gear/accessory/tacticalponcho
+	display_name = "tactical poncho selection"
+	path = /obj/item/clothing/accessory/tacticalponcho
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/tacticalponchohood
+	display_name = "tactical poncho hood selection"
+	path = /obj/item/clothing/head/tacticalhood
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/accessory/blackshieldpatch
-	display_name = "Blackshield arm patch"
+	display_name = "blackshield arm patch"
 	path = /obj/item/clothing/accessory/patches/blackshield

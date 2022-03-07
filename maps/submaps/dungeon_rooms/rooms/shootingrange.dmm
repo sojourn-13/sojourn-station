@@ -25,19 +25,8 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "h" = (
-/obj/machinery/light/floor,
+/obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
-/area/crawler)
-"i" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
-"j" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "k" = (
 /obj/structure/railing/grey{
@@ -50,22 +39,21 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "m" = (
-/turf/simulated/floor/bluegrid,
+/obj/structure/table/onestar,
+/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "n" = (
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 "o" = (
-/obj/structure/table/onestar,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
+/obj/random/mob/roomba,
+/turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/crawler)
 "p" = (
 /obj/structure/target_stake,
+/obj/item/target/syndicate,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
-/area/crawler)
-"q" = (
-/obj/crawler/crawler_wallbreaker/vertical,
-/turf/simulated/floor/bluegrid,
 /area/crawler)
 "r" = (
 /obj/structure/safe/floor{
@@ -74,11 +62,6 @@
 /obj/item/tool/crowbar/onestar,
 /obj/item/gun/energy/captain,
 /obj/item/computer_hardware/hard_drive/portable/design/onestar/cog,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"s" = (
-/obj/structure/railing/grey,
-/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "t" = (
@@ -132,9 +115,9 @@
 a
 a
 a
-m
-m
-q
+l
+l
+l
 a
 a
 a
@@ -142,11 +125,11 @@ a
 (2,1,1) = {"
 a
 c
-h
+g
+y
 g
 g
 g
-h
 u
 a
 "}
@@ -185,46 +168,46 @@ b
 "}
 (6,1,1) = {"
 b
-e
-i
 n
 n
 n
-i
-e
+n
+n
+n
+n
 b
 "}
 (7,1,1) = {"
 b
-f
-a
-o
-o
-o
-a
-f
+n
+n
+n
+n
+n
+n
+n
 b
 "}
 (8,1,1) = {"
 b
-g
-j
-e
-e
-e
-s
-g
+n
+n
+n
+n
+o
+n
+n
 b
 "}
 (9,1,1) = {"
 a
-g
-k
-e
-e
-e
-t
-g
+f
+a
+h
+m
+h
+a
+f
 b
 "}
 (10,1,1) = {"
@@ -240,13 +223,13 @@ a
 "}
 (11,1,1) = {"
 a
-g
+y
 e
 p
 r
 p
 e
-g
+y
 a
 "}
 (12,1,1) = {"

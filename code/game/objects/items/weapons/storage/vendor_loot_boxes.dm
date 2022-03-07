@@ -109,7 +109,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_basic/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)
@@ -132,7 +132,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_moderate/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)
@@ -155,7 +155,7 @@
 
 /obj/item/storage/box/vendor_lootbox/medicine_high/populate_contents()
 	if(prob(10)) //Lucky!
-		new /obj/item/storage/firstaid/adv(src)
+		new /obj/item/storage/firstaid/regular(src)
 		new /obj/item/storage/firstaid/fire(src)
 		new /obj/item/storage/firstaid/toxin(src)
 		new /obj/item/storage/firstaid/o2(src)
@@ -174,35 +174,36 @@
 /obj/item/storage/box/vendor_lootbox/oddity_low
 	name = "\"Kinda Strange\" surprise mechanics box"
 	desc = "A prospector branded 'surprise mechanics' box, available at the prospector vending machine. While the practice of loading boxes with random junk and selling it lottery style is questionable, \
-	people do what they will with their money. It contains a single oddity!"
+	people do what they will with their money. It contains a single oddity or a bluecross item!"
 
 /obj/item/storage/box/vendor_lootbox/oddity_low/populate_contents()
 	if(prob(1)) //Lucky!
 		new /obj/random/oddity_guns(src)
 	else
-		new /obj/random/common_oddities(src)
+		new /obj/random/common_oddities/always_spawn(src)
 
 /obj/item/storage/box/vendor_lootbox/oddity_moderate
 	name = "\"Really Weird\" surprise mechanics box"
 	desc = "A prospector branded 'surprise mechanics' box, available at the prospector vending machine. While the practice of loading boxes with random junk and selling it lottery style is questionable, \
-	people do what they will with their money. This box has two oddities!"
+	people do what they will with their money. This box has two oddities or a bluecross item!"
 
 /obj/item/storage/box/vendor_lootbox/oddity_moderate/populate_contents()
 	if(prob(5)) //Lucky!
 		new /obj/random/oddity_guns(src)
 	else
-		new /obj/random/common_oddities(src)
-		new /obj/random/common_oddities(src)
+		new /obj/random/common_oddities/always_spawn(src)
+		new /obj/random/common_oddities/always_spawn(src)
 
 /obj/item/storage/box/vendor_lootbox/oddity_high
 	name = "\"Impossible\" surprise mechanics box"
 	desc = "A prospector branded 'surprise mechanics' box, available at the prospector vending machine. While the practice of loading boxes with random junk and selling it lottery style is questionable, \
-	people do what they will with their money. Triple oddities in this one! Weird!"
+	people do what they will with their money. Triple oddities in this one or a bluecross item! Weird!"
 
 /obj/item/storage/box/vendor_lootbox/oddity_high/populate_contents()
 	if(prob(10)) //Lucky!
 		new /obj/random/oddity_guns(src)
 	else
-		new /obj/random/common_oddities(src)
-		new /obj/random/common_oddities(src)
-		new /obj/random/common_oddities(src)
+		new /obj/random/common_oddities/always_spawn(src)
+		new /obj/random/common_oddities/always_spawn(src)
+		new /obj/random/common_oddities/always_spawn(src)
+

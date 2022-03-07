@@ -31,7 +31,7 @@
 	build_path = /obj/item/gun/projectile/colt
 
 /datum/design/autolathe/gun/glock
-	name = "GmbH HG .35 \"Sky\""
+	name = "Seinemetall Defense GmbH HG .35 \"Sky\""
 	build_path = /obj/item/gun/projectile/glock
 
 /datum/design/autolathe/gun/NM_colt
@@ -178,6 +178,10 @@
 	name = "SA \"Trajectory\" .40 Magnum SMG"
 	build_path = /obj/item/gun/projectile/automatic/vector
 
+/datum/design/autolathe/gun/thompson
+	name = "Unbraded .40 Magnum \"Chicago Typewriter\""
+	build_path = /obj/item/gun/projectile/automatic/thompson
+
 //S H O T G U N S
 
 /datum/design/autolathe/gun/doublebarrel
@@ -259,7 +263,7 @@
 	build_path = /obj/item/gun/projectile/boltgun/light_wood
 
 /datum/design/autolathe/gun/zatvor
-	name = "BR .257 \"zatvor\""
+	name = "BR 7.5 \"Zatvor\""
 	build_path = /obj/item/gun/projectile/boltgun/zatvor
 
 /datum/design/autolathe/gun/nail_gun
@@ -321,6 +325,10 @@
 	name = "\"Kalashnabren\" LMG"
 	build_path = /obj/item/gun/projectile/automatic/bren
 
+/datum/design/autolathe/gun/ak47_tac
+	name = "SA AK 7.5 \"Breacher\""
+	build_path = /obj/item/gun/projectile/automatic/ak47/sa/tac
+
 // . 4 0 8 H E A V Y  R I F L E S
 
 /datum/design/autolathe/gun/standard_omnirifle
@@ -350,6 +358,10 @@
 /datum/design/autolathe/gun/sts40
 	name = "SA BR - .408  \"STS-40\""
 	build_path = /obj/item/gun/projectile/automatic/sts/hrifle
+
+/datum/design/autolathe/gun/custer
+	name = "H&S .408 \"Custer\""
+	build_path = /obj/item/gun/projectile/boltgun/lever/custer
 
 // .40 rifles
 
@@ -479,6 +491,22 @@
 	name = "NT PR \"Martyr\""
 	build_path = /obj/item/gun/energy/plasma/martyr
 
+/datum/design/autolathe/gun/sunrise
+	name = "NM \"Sunrise\" L-SMG"
+	build_path = /obj/item/gun/energy/sunrise
+
+/datum/design/autolathe/gun/plasma/antebellum
+	name = "NT PR \"Antebellum\""
+	build_path = /obj/item/gun/energy/plasma/antebellum
+
+/datum/design/autolathe/gun/concillium
+	name = "NT Las-MG \"Concillium\""
+	build_path = /obj/item/gun/energy/concillium
+
+/datum/design/autolathe/gun/carpediem
+	name = "NT LM \"Carpediem\""
+	build_path = /obj/item/gun/energy/carpediem
+
 // Gun mods
 
 /datum/design/autolathe/gun/cop_mod
@@ -488,3 +516,7 @@
 /datum/design/autolathe/gun/dnalock_mod
 	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
 	build_path = /obj/item/gun_upgrade/trigger/dnalock
+
+/datum/design/autolathe/gun/bipod_mod
+	name = "H&S \"Stand\" bipod"
+	build_path = /obj/item/gun_upgrade/underbarrel/bipod

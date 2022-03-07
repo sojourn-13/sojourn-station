@@ -142,7 +142,14 @@
 				attack_generic(H,rand(1,3),"punched")
 				return
 
-			var/stat_damage = 3 + max(0, (H.stats.getStat(STAT_ROB) / 10))
+			//adds a soft cap of 80 robustness. Deminishing returns by taking robustness/10 + 72
+			var/stat_damage = 3 // declared with a value of 3 before normal calculations for safty.
+			if (H.stats.getStat(STAT_ROB) >= 80)
+				var softcap = H.stats.getStat(STAT_ROB) / 10
+				var newrob = (72 + softcap) / 10
+				stat_damage = 3 + max(0, newrob)
+			else
+				stat_damage = 3 + max(0, (H.stats.getStat(STAT_ROB) / 10))
 			var/limb_efficiency_multiplier = 1
 			var/block = 0
 			var/accurate = 0
@@ -341,7 +348,7 @@
 		return 0
 
 	user.visible_message(SPAN_WARNING("[user] begins to dislocate [src]'s [organ.joint]!"))
-	if(do_after(user, 100, progress = 0))
+	if(do_after(user, 100))
 		organ.dislocate(1)
 		src.visible_message("<span class='danger'>[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses")]!</span>")
 		return 1

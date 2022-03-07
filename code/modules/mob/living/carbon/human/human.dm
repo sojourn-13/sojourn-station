@@ -8,7 +8,7 @@
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
 	var/obj/item/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_lying_buckled_and_verb_status() call.
-	var/obj/item/gun/using_scope // This is not very good either, because I've copied it. Sorry.
+	var/using_scope // This is not very good either, because I've copied it. Sorry.
 
 /mob/living/carbon/human/New(var/new_loc, var/new_species, var/new_form)
 
@@ -270,16 +270,22 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Marshal Officer" = "Officer",\
-	"Ranger" = "Ranger",\
+	"Warrant Officer" = "Warrant Officer",\
 	"Supply Specialist" = "Specialist",\
-	"Sergeant" = "Sergeant",\
-	"Marshal Warrant Officer" = "Warrant Officer",\
+	"Ranger" = "Ranger",\
+	"Marshal Officer" = "Officer",\
 	"Blackshield Commander" = "Commander",\
+	"Sergeant" = "Sergeant",\
 	"Corpsman" = "Corpsman",\
 	"Blackshield Trooper" = "Trooper",\
 	"Premier" = "Premier",\
 	"Steward" = "Steward",\
+	"Guild Master" = "Master",\
+	"Chief Biolab Overseer" = "Overseer",\
+	"Chief Research Overseer" = "Overseer",\
+	"Chief Executive Officer" = "Executive",\
+	"Prime" = "Prime",\
+	"Foreman" = "Foreman",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)

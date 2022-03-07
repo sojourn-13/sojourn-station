@@ -71,15 +71,35 @@
 	desc = "A navy blue marshal beret."
 	icon_state = "policeberet"
 
-/obj/item/clothing/head/rank/commander/beret
+/obj/item/clothing/head/rank/commander
 	name = "warrant officer beret"
 	desc = "A grey warrant officer beret signifying a command position."
 	icon_state = "beret_navy_hos"
 
-/obj/item/clothing/head/rank/commander/cap
-	name = "warrant officer cap"
-	desc = "A marshal cap signifying a command position."
-	icon_state = "ihc_cap"
+/obj/item/clothing/head/rank/commander/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["WO Beret"] = "beret_navy_hos"
+	options["WO Cap"] = "ihc_cap"
+	options["WO Default"] = "hoshat"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/warden/beret
 	name = "supply specialist beret"
@@ -185,6 +205,7 @@
 	var/list/options = list()
 	options["BC Beret"] = "beret_militia"
 	options["BC Cap"] = "commander_cap"
+	options["BC Default"] = "hoshat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
