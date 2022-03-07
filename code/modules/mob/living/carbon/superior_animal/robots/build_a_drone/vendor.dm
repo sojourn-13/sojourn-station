@@ -2,7 +2,7 @@
 
 /obj/machinery/vending/build_a_drone
 	name = "Build-a-Drone Kit Vendor"
-	desc = "A vendor selling customized drones for a hefty price. All profit goes to Soteria."
+	desc = "A vendor selling customized drones for a hefty price. All profits goes to the Soteria."
 	icon_state = "trashvend"
 	products = list(/obj/item/build_a_drone_kit = 20)
 	auto_price = TRUE
@@ -10,7 +10,7 @@
 
 /obj/item/build_a_drone_kit
 	name = "build-a-drone kit"
-	desc = "A self-assembling Build-A-Drone kit designed by Soteria's Robotic Division. No refund."
+	desc = "A self-assembling Build-A-Drone kit designed by Soteria's Robotic Division. No refunds."
 	icon = 'icons/obj/storage/backpack.dmi'
 	icon_state = "radiopack" // Look neat and unused by anything else.
 	item_state = "electronic"
