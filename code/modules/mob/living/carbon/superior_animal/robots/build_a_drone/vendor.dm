@@ -3,7 +3,8 @@
 /obj/machinery/vending/build_a_drone
 	name = "Build-a-Drone Kit Vendor"
 	desc = "A vendor selling customized drones for a hefty price. All profits goes to the Soteria."
-	icon_state = "trashvend"
+	icon_state = "wallresearch"
+	density = FALSE
 	products = list(/obj/item/build_a_drone_kit = 20)
 	auto_price = TRUE
 	vendor_department = DEPARTMENT_SCIENCE // Soteria get paid for the drones
@@ -15,7 +16,7 @@
 	icon_state = "radiopack" // Look neat and unused by anything else.
 	item_state = "electronic"
 	w_class = ITEM_SIZE_BULKY
-	price_tag = 2000
+	price_tag = 800
 	matter = list(MATERIAL_STEEL = 10) // Drones cost a lot of steel
 
 /obj/item/build_a_drone_kit/attack_self(mob/user as mob)

@@ -101580,6 +101580,13 @@
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
+"wGF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/build_a_drone{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1)
 "wGR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -131860,7 +131867,7 @@ uCp
 mgk
 uCp
 cwr
-bwh
+wGF
 bwh
 pVB
 ryn
