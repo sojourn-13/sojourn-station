@@ -450,7 +450,7 @@
 	desc = "A litany fashioned after the idea that body and mind can be a fixed point, resisting change in all ways. For a single minute, the speaker slows down drastically, but reduces all damage they \
 	may recieve by half, letting them remain as they are for longer."
 	cooldown = TRUE
-	cooldown_time = 30 MINUTES
+	cooldown_time = 10 MINUTES
 	cooldown_category = "bulwark_of_harmony"
 	effect_time = 1 MINUTES
 	power = 90
