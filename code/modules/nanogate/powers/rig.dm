@@ -26,6 +26,18 @@ List of powers in this page :
 			nanite_rig.seal_delay = initial(nanite_rig.seal_delay) // resetting the seal delay
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig
 
+			// Add the nanite rig verbs at activation
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+
+			//Add to owner_verbs so it can be removed properly should the need arise.
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+
 // Create the *opifex* nanite rig
 /obj/item/organ/internal/nanogate/proc/nanite_rig_opifex()
 	set category = "Nanogate Powers"
@@ -44,6 +56,18 @@ List of powers in this page :
 			owner.replace_in_slot(nanite_rig, slot_back, skip_covering_check = TRUE)
 			nanite_rig.seal_delay = initial(nanite_rig.seal_delay) // resetting the seal delay
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_opifex
+
+			// Add the nanite rig verbs at activation
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
+			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
+
+			//Add to owner_verbs so it can be removed properly should the need arise.
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
+			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
 
 // Give the nanite rig a storage module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_storage()
