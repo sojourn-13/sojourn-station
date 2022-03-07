@@ -481,7 +481,7 @@
 	oxygen_mod_monomial = (user.oxy_mod_perk * 0.5)
 	user.oxy_mod_perk -= oxygen_mod_monomial
 
-	user.add_chemical_effect(CE_SLOWDOWN, 3, 1 MINUTES, "monomial_slow")
+	user.add_chemical_effect(CE_SLOWDOWN, 5, 1 MINUTES, "monomial_slow")
 
 	to_chat(user, SPAN_NOTICE("You feel your body stiffening, your stout refusal to change slowing down the world around you as you remain at a fixed point."))
 	set_personal_cooldown(user)
