@@ -13,6 +13,7 @@
 	limited_ammo = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	cant_be_pulled = FALSE
 
 	// Vars that determine the parts used for the sprite.
 	var/chassis = "" // The chassis of the drone.
