@@ -2,7 +2,6 @@
 	category = "Soteria"
 	time = 100
 	related_stats = list(STAT_BIO)
-	avaliableToEveryone = FALSE
 	requiredPerk = PERK_NERD //Give me your lunch money.
 
 //Soteria healing kits
