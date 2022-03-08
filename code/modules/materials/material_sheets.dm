@@ -322,7 +322,7 @@
 	rand_max = 7
 
 /obj/item/stack/material/cloth/soteria
-	amount = 5
+	amount = 4
 
 /obj/item/stack/material/silk
 	name = "silk"

@@ -21,7 +21,7 @@
 	result = /obj/item/stack/medical/bruise_pack/soteria
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_CLOTH, "time" = 1),
+		list(CRAFT_MATERIAL, 8, MATERIAL_CLOTH, "time" = 1),
 		list(QUALITY_CUTTING, 30, "time" = 5),
 		list(QUALITY_CAUTERIZING, 30, "time" = 1),
 		list(/obj/item/stack/sterilizer_crystal, 1),
@@ -34,7 +34,7 @@
 	result = /obj/item/stack/medical/ointment/soteria
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 1),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 1),
 		list(QUALITY_CUTTING, 30, "time" = 5),
 		list(QUALITY_CAUTERIZING, 30, "time" = 1),
 		list(/obj/item/stack/sterilizer_crystal, 1),
