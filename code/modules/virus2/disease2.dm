@@ -65,9 +65,11 @@
 
 	if(mob.stat == DEAD)
 		return
+	/*
 	if(stage <= 1 && clicks == 0) 	// with a certain chance, the mob may become immune to the disease before it starts properly
 		if(prob(5))
 			mob.antibodies |= antigen // 20% immunity is a good chance IMO, because it allows finding an immune person easily
+	*/
 
 	// Some species are flat out immune to organic viruses.
 	var/mob/living/carbon/human/H = mob
@@ -79,28 +81,36 @@
 		if(prob(1))
 			majormutate()
 
-	//Space antibiotics stop disease completely
+	/*Space antibiotics stop disease completely
 	if(mob.reagents.has_reagent("spaceacillin"))
 		if(stage == 1 && prob(20))
 			src.cure(mob)
 		return
+	*/
 
 	//Virus food speeds up disease progress
 	if(mob.reagents.has_reagent("virusfood"))
 		mob.reagents.remove_reagent("virusfood",0.1)
 		clicks += 10
 
+	/*
 	if(prob(1) && prob(stage)) // Increasing chance of curing as the virus progresses
 		src.cure(mob)
 		mob.antibodies |= src.antigen
+	*/
 
 	//Moving to the next stage
 	if(clicks > max(stage*100, 200) && prob(10))
-		if((stage <= max_stage) && prob(20)) // ~60% of viruses will be cured by the end of S4 with this
+		/*if((stage <= max_stage) && prob(20)) // ~60% of viruses will be cured by the end of S4 with this
 			src.cure(mob)
 			mob.antibodies |= src.antigen
-		stage++
-		clicks = 0
+		*/
+		if (mob.reagents.has_reagent("spaceacillin"))
+			mob.reagents.remove_reagent("spaceacillin",0.5)
+			return
+		else
+			stage++
+			clicks = 0
 
 	//Do nasty effects
 	for(var/datum/disease2/effectholder/e in effects)

@@ -56,6 +56,12 @@
 	icon_state = "voucher"
 	voucher_type = "Primary"
 
+/obj/item/voucher/marshal/specprimary
+	name = "\improper Specialist primary weapon voucher"
+	desc = "A token to redeem marshal equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "SpecPrimary"
+
 /obj/item/voucher/marshal/secondary
 	name = "\improper marshal secondary weapon voucher"
 	desc = "A token to redeem marshal equipment from a vendor."

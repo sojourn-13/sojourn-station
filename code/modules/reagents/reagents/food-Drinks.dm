@@ -2837,3 +2837,54 @@
 	glass_icon_state = "antidepresant"
 	glass_name = "Antidepressant"
 	glass_desc = "A Bright red cocktail, chill as an empty chimney, yet bright and soothing as a smile. Non-alcoholic. A soul lightener, you can't stay sad at the taste of this."
+
+
+/datum/reagent/drink/blendedmint
+	name = "Blended Mint"
+	id = "blendedmint"
+	description = "A common condiment to mix with cocktails or other foods. It's just a cup of leaves innit."
+	taste_description = "dry mint leaves"
+	taste_mult = 0.5
+	color = "#98CD49"
+
+
+	glass_icon_state = "booger"
+	glass_name = "blended mint leaves"
+	glass_desc = "Very dry and bland, but with a minty aftertaste! Not the best thing to be \"drinking\" though."
+
+/datum/reagent/drink/cinnamonpowder
+	name = "Cinnamon Powder"
+	id = "cinnamonpowder"
+	description = "A common condiment to mix with milkshakes or desserts. Not to be used for challenges."
+	taste_description = "dry cinnamon powder"
+	taste_mult = 0.5
+	color = "#D78F5F"
+
+
+	glass_icon_state = "glass_brown"
+	glass_name = "cinnamon powder"
+	glass_desc = "Pure grinded up cinnamon powder. Delicious when used as a condiment, but a cough hazard when taken by itself."
+
+/datum/reagent/drink/blueberryjuice
+	name = "Blueberry Juice"
+	id = "blueberryjuice"
+	description = "Used to mix with cocktails, milkshakes or if you just want some refreshing blueberry juice."
+	taste_description = "fresh fruity blueberry"
+	taste_mult = 1.1
+	color = "#4D0121"
+
+	glass_icon_state = "grapejuice"
+	glass_name = "blueberry juice"
+	glass_desc = "Rather simple when it comes to fruit juices, but still refreshing!"
+
+/datum/reagent/drink/strawberryjuice
+	name = "Strawberry Juice"
+	id = "strawberryjuice"
+	description = "Used to mix with cocktails, milkshakes or if you just want some sweet refreshing strawberry juice."
+	taste_description = "sweet fruity strawberry"
+	taste_mult = 1.1
+	color = "#C20032"
+
+	glass_icon_state = "berryjuice"
+	glass_name = "strawberry juice"
+	glass_desc = "Sweet and sugary, but also very refreshing!"

@@ -187,6 +187,7 @@
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
+	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 

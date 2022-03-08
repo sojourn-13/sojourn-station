@@ -13,6 +13,7 @@
 	limited_ammo = FALSE
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	cant_be_pulled = FALSE
 
 	// Vars that determine the parts used for the sprite.
 	var/chassis = "" // The chassis of the drone.
@@ -31,6 +32,33 @@
 
 /mob/living/carbon/superior_animal/robot/custom_drone/New()
 	..()
+
+/mob/living/carbon/superior_animal/robot/custom_drone/examine(mob/user)
+	..()
+
+	var/right_weapon
+	var/left_weapon
+
+	switch(right_weapon_type) // The equipment determine the drops
+		if(TOOL_LASER)
+			right_weapon = "laser gun"
+		if(TOOL_GUN)
+			right_weapon = "gun"
+		if(TOOL_BOMB)
+			right_weapon = "bomb"
+
+	switch(left_weapon_type) // The equipment determine the drops
+		if(TOOL_MEDIC)
+			left_weapon = "syringe"
+		if(TOOL_WELDER)
+			right_weapon = "welder"
+		if(TOOL_FLAMER)
+			right_weapon = "flamer"
+
+	if(right_weapon)
+		to_chat(user, SPAN_NOTICE("[src] has a [right_weapon]."))
+	if(left_weapon)
+		to_chat(user, SPAN_NOTICE("[src] has a [left_weapon]."))
 
 /mob/living/carbon/superior_animal/robot/custom_drone/update_icon()
 	cut_overlays()
@@ -113,3 +141,30 @@
 			drop1 = null // We don't get the explosive
 			explosion(get_turf(loc), 0, 0, 2, 3) // Same strength as the dropped explosive.
 			death()
+
+// For repairing damage to the synths.
+/mob/living/carbon/superior_animal/robot/custom_drone/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(W, /obj/item/tool))
+			T = W
+
+		if(QUALITY_WELDING in T.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					user.visible_message(
+										SPAN_NOTICE("[user] [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name]."),
+										SPAN_NOTICE("You [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name].")
+										)
+					if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
+						heal_overall_damage(50, 50)
+					else
+						heal_overall_damage(rand(30, 50), rand(30, 50))
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+	// If nothing was ever triggered, continue as normal
+	..()

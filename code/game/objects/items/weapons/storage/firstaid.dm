@@ -395,7 +395,7 @@
 	desc = "A compact version of Soteria creation, this high-capacity CBT Kit allows a Corpsman to carry all the necessary tools for battlefield triage." //Yes, it's exactly what you're thinking.
 	icon_state = "cbtk"
 	item_state = "cbtk"
-	storage_slots = 12 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
+	storage_slots = 14 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 	can_hold = list(
@@ -415,6 +415,8 @@
 	if (empty) return
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
@@ -430,7 +432,7 @@
 	icon_state = "cbtk_large"
 	item_state = "cbtk_large"
 	w_class = ITEM_SIZE_BULKY //Big boy meds
-	storage_slots = 18 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
+	storage_slots = 20 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.
 
 	can_hold = list(
 		/obj/item/stack/medical,
@@ -452,6 +454,8 @@
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)

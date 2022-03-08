@@ -247,6 +247,7 @@
 	if(announce_stability)
 		radio.autosay(alert_msg, "Antimatter Automated Announcement", "Engineering")
 	update_icon()
+	check_stability()
 	return
 
 /obj/machinery/power/am_control_unit/proc/check_shield_icons()//Forces icon_update for all shields

@@ -35,6 +35,7 @@
 				/obj/item/oddity/common/lighter = 3,
 				/obj/item/oddity/common/mirror = 3,
 				/obj/item/oddity/common/disk = 2,
+				/obj/item/oddity/common/redbrick = 2,
 				/obj/item/oddity/rare/eldritch_tie = 0.01 //SO RARE
 				))
 

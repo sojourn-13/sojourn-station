@@ -135,7 +135,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo
 	name = "ammo hard case"
-	desc = "A generic ammo can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "A generic ammo can. Can hold ammo magazines, boxes, bullets, a assortment of grenades and some gear. Alt+click to open and close."
 	icon_state = "ammo_case"
 	sticker_name = "ammo"
 	matter = list(MATERIAL_STEEL = 20)
@@ -145,12 +145,20 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/ammo_casing,
 		/obj/item/ammo_magazine/ammobox,
 		/obj/item/ammo_kit,
-		/obj/item/gun/projectile/boltgun/flare_gun
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs
 		)
 
 /obj/item/storage/hcases/ammo/ih
 	icon_state = "ammo_case_ih"
-	desc = "An ammo can for Marshals. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "An ammo can for Marshals. Can hold ammo magazines, boxes, bullets, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/ih/wo
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -171,15 +179,17 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/voucher/marshal/specprimary(src)
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
 
-/obj/item/storage/hcases/ammo/ih/spec_officer/populate_contents()
+/obj/item/storage/hcases/ammo/ih/ranger_officer/populate_contents()
 	new /obj/item/handcuffs(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
+	new /obj/item/voucher/marshal/primary(src)
 	new /obj/item/cell/small/high(src)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer

@@ -118,16 +118,6 @@
 		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 
-/datum/craft_recipe/box/adv
-	icon_state = "clothing"
-	steps = list(
-		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
-		list(QUALITY_ADHESIVE, 10, "time" = 60)
-	)
-	related_stats = list(STAT_COG)
-	result = /obj/item/storage/box/data_disk/basic/empty
-	name = "box - disks"
-
 /datum/craft_recipe/box
 	category = "Storage"
 	name = "box"
@@ -137,30 +127,45 @@
 	)
 	related_stats = list(STAT_COG)
 
-/datum/craft_recipe/box/adv/syringes
+/datum/craft_recipe/box/syringes
 	name = "box - syringes"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/syringes/empty
 
-
-/datum/craft_recipe/box/adv/bodybags
+/datum/craft_recipe/box/bodybags
 	name = "box - bodybags"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/bodybags/empty
 
-
-/datum/craft_recipe/box/adv/condimentbottles
+/datum/craft_recipe/box/condimentbottles
 	name = "box - condiment bottles"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/condimentbottles/empty
 
-
-/datum/craft_recipe/box/adv/mixed_lights
+/datum/craft_recipe/box/mixed_lights
 	name = "box - light storage"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/lights/mixed/empty
 
-
-/datum/craft_recipe/box/adv/pillbottles
+/datum/craft_recipe/box/pillbottles
 	name = "box - pill bottles"
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
 	result = /obj/item/storage/box/pillbottles/empty
-
 
 /datum/craft_recipe/storage/bookshelf
 	name = "book shelf"

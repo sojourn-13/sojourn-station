@@ -28,3 +28,21 @@
 	desc = "Meowbox."
 	icon_state = "lunchbox_cat"
 	item_state = "lunchbox_cat"
+
+/obj/item/storage/lunchbox/lemniscate
+	name = "church lunchbox"
+	desc = "Because even the faithful need to eat."
+	icon_state = "lemniscate"
+	item_state = "lemniscate"
+
+/obj/item/storage/lunchbox/lemniscate/full
+	name = "lemniscate lunchbox"
+	desc = "Because even the faithful need to eat. Comes with a special blend of highly helpful food stuffs packaged and meant to be shared."
+
+/obj/item/storage/lunchbox/lemniscate/full/populate_contents()
+	new /obj/item/reagent_containers/food/snacks/poppypretzel/holy(src)
+	new /obj/item/reagent_containers/food/snacks/poppypretzel/holy(src)
+	new /obj/item/reagent_containers/food/snacks/toastedsandwich/holy(src)
+	new /obj/item/reagent_containers/food/snacks/toastedsandwich/holy(src)
+	new /obj/item/reagent_containers/food/drinks/cans/cahors/lemniscate(src)
+	new /obj/item/reagent_containers/food/drinks/cans/cahors/lemniscate(src)

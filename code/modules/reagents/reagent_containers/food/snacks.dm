@@ -1744,12 +1744,17 @@
 	icon_state = "poppypretzel"
 	bitesize = 2
 	filling_color = "#916E36"
-	bitesize = 2
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("poppy seeds" = 2, "pretzel" = 3)
 	nutriment_amt = 5
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 6)
+
+/obj/item/reagent_containers/food/snacks/poppypretzel/holy
+	name = "omni-poppy pretzel"
+	desc = "A pretzal sprinkled with the seeds and spices of custom tailored plants grown by the church. Contains quite a few healing properties."
+	bitesize = 3
+	preloaded_reagents = list("bicaridine" = 6, "anti_toxin" = 6, "dexalinp" = 6, "dermaline" = 6, "laudanum" = 6)
 
 /obj/item/reagent_containers/food/snacks/meatballsoup
 	name = "meatball soup"
@@ -2049,6 +2054,12 @@
 	preloaded_reagents = list("protein" = 3, "machine binding ritual" = 3, "glucose" = 2)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 23)
+
+/obj/item/reagent_containers/food/snacks/toastedsandwich/holy
+	name = "precept sandwich"
+	desc = "A classic sandwich grilled in butter and toasted perfectly. Comes packed with protein-rich meat made from mukwahs and cheese derived from tangu milk, making it an immensely empowering meal. \
+	Side effects include enhanced toughness, robustness, movement speed, and twitching."
+	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10, "hyperzine" = 10)
 
 /obj/item/reagent_containers/food/snacks/grilledcheese
 	name = "grilled cheese sandwich"
