@@ -120,12 +120,13 @@
 
 /datum/craft_recipe/box/adv
 	icon_state = "clothing"
-	avaliableToEveryone = FALSE
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD),
 		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 	related_stats = list(STAT_COG)
+	result = /obj/item/storage/box/data_disk/basic/empty
+	name = "box - disks"
 
 /datum/craft_recipe/box
 	category = "Storage"
@@ -139,27 +140,27 @@
 /datum/craft_recipe/box/adv/syringes
 	name = "box - syringes"
 	result = /obj/item/storage/box/syringes/empty
-	avaliableToEveryone = TRUE
+
 
 /datum/craft_recipe/box/adv/bodybags
 	name = "box - bodybags"
 	result = /obj/item/storage/box/bodybags/empty
-	avaliableToEveryone = TRUE
+
 
 /datum/craft_recipe/box/adv/condimentbottles
 	name = "box - condiment bottles"
 	result = /obj/item/storage/box/condimentbottles/empty
-	avaliableToEveryone = TRUE
+
 
 /datum/craft_recipe/box/adv/mixed_lights
 	name = "box - light storage"
 	result = /obj/item/storage/box/lights/mixed/empty
-	avaliableToEveryone = TRUE
+
 
 /datum/craft_recipe/box/adv/pillbottles
 	name = "box - pill bottles"
 	result = /obj/item/storage/box/pillbottles/empty
-	avaliableToEveryone = TRUE
+
 
 /datum/craft_recipe/storage/bookshelf
 	name = "book shelf"

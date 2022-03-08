@@ -329,7 +329,6 @@ SUBSYSTEM_DEF(job)
 
 		job.add_stats(H)
 
-		job.add_knownCraftRecipes(H)
 
 		job.add_additiional_language(H)
 
