@@ -317,6 +317,7 @@
 #include "code\datums\craft\recipes\misc.dm"
 #include "code\datums\craft\recipes\repairs.dm"
 #include "code\datums\craft\recipes\robot.dm"
+#include "code\datums\craft\recipes\soteria.dm"
 #include "code\datums\craft\recipes\storage.dm"
 #include "code\datums\craft\recipes\tools.dm"
 #include "code\datums\craft\recipes\wall.dm"

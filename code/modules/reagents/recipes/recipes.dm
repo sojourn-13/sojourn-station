@@ -862,3 +862,22 @@
 	result = "chemweapon1"
 	required_reagents = list("hydrazine" = 1, "cyanide" = 1, "potassium_chloride" = 1, "lexorin" = 1)
 	result_amount = 2
+
+/datum/chemical_reaction/sterilizer
+	result = "sterilizer"
+	required_reagents = list("dermaline" = 1, "sodium" = 1, "sterilzine" = 1)
+	result_amount = 3
+	catalysts = list("cronexidone" = 5)
+
+/datum/chemical_reaction/sterilizer_crystal
+	result = null
+	required_reagents = list("sterilizer" = 20, "sulfur" = 20, "tungsten" = 20)
+	result_amount = 1
+	maximum_temperature = 755
+	minimum_temperature = 373
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+
+/datum/chemical_reaction/sterilizer_crystal/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/stack/sterilizer_crystal(location)

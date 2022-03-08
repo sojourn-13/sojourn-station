@@ -231,6 +231,18 @@
 	icon_state = "hm_brutepack"
 	fancy_icon = FALSE
 
+/obj/item/stack/medical/bruise_pack/soteria
+	name = "Soteria medical gauze"
+	singular_name = "Soteria medical gauze"
+	desc = "An advanced sterile gauze to wrap around bloody stumps. Unlike the regular gauze, these have more charges, and sterilize wounds as ointment would, as well as treating small amounts of toxins. Hand-made, with love, by Soteria Medical staff."
+	icon_state = "sr_brutepack"
+	fancy_icon = TRUE
+	amount = 8
+	max_amount = 8
+	heal_brute = 5
+	var/heal_toxin = 5
+	price_tag = 25
+
 /obj/item/stack/medical/ointment
 	name = "ointment"
 	desc = "Used to treat those nasty burns."
@@ -306,6 +318,15 @@
 	icon_state = "spidergoo"
 	natural_remedy = TRUE
 	fancy_icon = FALSE
+
+/obj/item/stack/medical/ointment/soteria
+	name = "Soteria branded ointment"
+	singular_name = "Soteria branded ointment"
+	desc = "Used to treat those nasty burns. Unlike regular ointment this one has a Soteria logo on it, containing more ointment per-tube."
+	icon_state = "sr_ointment"
+	heal_burn = 15
+	amount = 8
+	max_amount = 8
 
 /obj/item/stack/medical/advanced/bruise_pack
 	name = "advanced trauma kit"
