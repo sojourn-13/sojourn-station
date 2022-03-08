@@ -20,6 +20,7 @@
 	var/needed_perk = null
 	var/needed_perk_alt = null
 	var/bio_requirement = 0
+	var/disinfectant  = FALSE
 
 	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
 
@@ -78,6 +79,10 @@
 
 			to_chat(user, SPAN_WARNING("This isn't useful at all on a robotic limb."))
 			return 1
+
+		for(var/datum/wound/W in affecting.wounds)
+			if(disinfectant && W.!disinfected)
+				W.disinfect()
 
 		H.UpdateDamageIcon()
 
@@ -240,6 +245,7 @@
 	desc = "An advanced sterile gauze to wrap around bloody stumps. Unlike the regular gauze, these have more charges, and sterilize wounds as ointment would, as well as treating small amounts of toxins. Hand-made, with love, by Soteria Medical staff."
 	icon_state = "sr_brutepack"
 	fancy_icon = TRUE
+	disinfectant  = TRUE
 	amount = 8
 	max_amount = 8
 	heal_brute = 5
@@ -255,6 +261,7 @@
 	origin_tech = list(TECH_BIO = 1)
 	preloaded_reagents = list("silicon" = 4, "carbon" = 8)
 	fancy_icon = TRUE
+	disinfectant  = TRUE
 
 /obj/item/stack/medical/ointment/update_icon()
 	if(fancy_icon)
@@ -348,6 +355,7 @@
 	needed_perk_alt = PERK_SURGICAL_MASTER
 	bio_requirement = 75
 	stacktype_alt = /obj/item/stack/medical/advanced/bruise_pack/large
+	disinfectant  = TRUE
 
 /obj/item/stack/medical/advanced/bruise_pack/large
 	name = "large advanced trauma kit"
@@ -447,7 +455,6 @@
 						SPAN_NOTICE("You smear some bioglue over \a [W.desc] on [M]'s [affecting.name].")
 					)
 				W.bandage()
-				W.disinfect()
 				W.heal_damage(heal_brute)
 				if(prob(10 + user.stats.getStat(STAT_BIO)) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 					to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
@@ -497,6 +504,7 @@
 	needed_perk_alt = PERK_SURGICAL_MASTER
 	bio_requirement = 75
 	stacktype_alt = /obj/item/stack/medical/advanced/ointment/large
+	disinfectant  = TRUE
 
 /obj/item/stack/medical/advanced/ointment/large
 	name = "large advanced burn kit"
