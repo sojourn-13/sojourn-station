@@ -11,7 +11,7 @@
 
 
 /datum/nano_module/program/tax
-	name = "TaxQuickly 2565"
+	name = "TaxQuickly 2561"
 	var/popup_message = ""
 	var/popup = FALSE
 	var/logined = FALSE
