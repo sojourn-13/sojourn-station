@@ -22,3 +22,21 @@
 /obj/item/build_a_drone_kit/attack_self(mob/user as mob)
 	if(build_a_drone(user)) // If the user get their drone
 		spawn(10) qdel(src) // Delete the kit
+
+//This one's from bay12
+/obj/machinery/vending/cart
+	name = "PTech"
+	desc = "PDAs and hardware."
+	product_slogans = "PDAs for everyone!;You get a PDA! And you get a PDA!;You lost it again?;"
+	icon_state = "cart"
+	icon_deny = "cart-deny"
+	products = list(/obj/item/modular_computer/pda = 10,
+					/obj/item/computer_hardware/scanner/medical = 6,
+					/obj/item/computer_hardware/scanner/reagent = 6,
+					/obj/item/computer_hardware/scanner/atmos = 6,
+					/obj/item/computer_hardware/scanner/paper = 10,
+					/obj/item/computer_hardware/printer = 10,
+					/obj/item/computer_hardware/card_slot = 3,
+					/obj/item/computer_hardware/ai_slot = 4,
+					/obj/item/computer_hardware/hard_drive/portable/advanced/coin = 10)
+	auto_price = FALSE
