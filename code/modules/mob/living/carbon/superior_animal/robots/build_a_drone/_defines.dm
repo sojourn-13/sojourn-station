@@ -156,7 +156,6 @@ var/global/list/drone_welder_options = list("Greyson Welder" = "tool_welder_os",
 		usr = user
 
 	var/chassis_choice = drone_chassis_options[input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_chassis_options]
-
 	if(!chassis_choice) // We didn't chose a chassis, leave the proc.
 		return FALSE
 
@@ -166,8 +165,9 @@ var/global/list/drone_welder_options = list("Greyson Welder" = "tool_welder_os",
 	var/shell_choice = drone_shell_options[input("Select the color of the shell of your drone ", "Shell : ") as null | anything in drone_shell_options]
 	if(!shell_choice) // We didn't chose a shell, leave the proc.
 		return FALSE
-	// Marking are optional
 	var/marks_choice = drone_marks_options[input("Select the markings of your drone ", "Markings : ") as null | anything in drone_marks_options]
+	if(!marks_choice) // We didn't chose a marking, leave the proc.
+		return FALSE
 	var/screen_choice = drone_screen_options[input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_screen_options]
 	if(!screen_choice) // We didn't chose a screen, leave the proc.
 		return FALSE
