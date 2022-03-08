@@ -9,6 +9,7 @@
 	throw_range = 20
 	var/heal_brute = 0
 	var/heal_burn = 0
+	var/heal_toxin = 0
 	price_tag = 10
 	matter = list(MATERIAL_BIOMATTER = 5)
 	var/automatic_charge_overlays = FALSE	//Do we handle over-lays with base update_icon()? | Stolen from TG egun code
@@ -92,6 +93,8 @@
 		var/med_skill = user.stats.getStat(STAT_BIO)
 		if (do_after(user, 30, M))
 			M.heal_organ_damage((src.heal_brute + (med_skill * 2)), (src.heal_burn + (med_skill * 2)))
+			if(heal_toxin)
+				M.adjustToxLoss(-heal_toxin)
 			if(prob(10 + med_skill) && user.stats.getPerk(PERK_MEDICAL_EXPERT))
 				to_chat(user, SPAN_NOTICE("You have managed to waste less [src]."))
 			else
@@ -240,7 +243,6 @@
 	amount = 8
 	max_amount = 8
 	heal_brute = 5
-	var/heal_toxin = 5
 	price_tag = 25
 
 /obj/item/stack/medical/ointment
@@ -325,6 +327,7 @@
 	desc = "Used to treat those nasty burns. Unlike regular ointment this one has a Soteria logo on it, containing more ointment per-tube."
 	icon_state = "sr_ointment"
 	heal_burn = 15
+	heal_toxin = 5
 	amount = 8
 	max_amount = 8
 
