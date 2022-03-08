@@ -21,6 +21,11 @@
 	desc = "An empty candy bar wrapper. Trash."
 	icon_state= "candy"
 
+/obj/item/trash/spacetwinkie
+	name = "space twinkie wrapper"
+	desc = "An empty candy bar wrapper not even a bit of filling stuck inside. Trash."
+	icon_state= "space_twinkie"
+
 /obj/item/trash/candy/proteinbar
 	name = "protein bar"
 	desc = "An empty protein bar wrapper. Trash."
