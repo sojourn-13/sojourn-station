@@ -81,7 +81,7 @@
 			return 1
 
 		for(var/datum/wound/W in affecting.wounds)
-			if(disinfectant && W.!disinfected)
+			if(disinfectant)
 				W.disinfect()
 
 		H.UpdateDamageIcon()
