@@ -4,6 +4,10 @@
 	desc = "A custom-built drone. They come in a variety of color and equipment."
 	icon = 'icons/mob/build_a_drone.dmi'
 	icon_state = "drone_st"
+	health = 100 // 10 more than Greyson's armored roomba
+	maxHealth = 100
+	melee_damage_lower = 10
+	melee_damage_upper = 15
 	faction = "neutral"
 	cleaning = FALSE
 	drop1 = null
