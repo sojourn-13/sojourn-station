@@ -5575,6 +5575,10 @@
 /obj/item/contraband/poster/placed/recruitment/rebels,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/centcom/evac)
+"rq" = (
+/mob/living/carbon/superior_animal/genetics/fratellis,
+/turf/simulated/floor/fixed/fgrass,
+/area/centcom/evac)
 "rr" = (
 /obj/structure/closet/crate,
 /obj/random/lathe_disk,
@@ -21900,7 +21904,7 @@ qH
 KR
 ho
 dK
-zA
+rq
 zA
 dM
 aD

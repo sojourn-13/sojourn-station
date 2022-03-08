@@ -1800,6 +1800,7 @@
 #include "code\modules\genetics\genetics.dm"
 #include "code\modules\genetics\creatures\ambusher.dm"
 #include "code\modules\genetics\creatures\bioshock.dm"
+#include "code\modules\genetics\creatures\fratellis.dm"
 #include "code\modules\genetics\creatures\golden_roach.dm"
 #include "code\modules\genetics\creatures\wasonce.dm"
 #include "code\modules\genetics\machinery\advanced_grinder.dm"
