@@ -129,6 +129,7 @@
 	alt_desc = "Some brand of non-melting military chocolate. This one is open, and still unmelted."
 	icon_state = "mre_candy"
 	trash = /obj/item/trash/mre_candy
+	nutriment_desc = list("sweetness" = 1, "chocolate" = 3)
 	preloaded_reagents = list("sugar" = 3, "coco" = 2)
 
 

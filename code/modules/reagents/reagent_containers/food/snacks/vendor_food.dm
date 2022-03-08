@@ -156,7 +156,7 @@
 
 /obj/item/reagent_containers/food/snacks/openable/syndicake
 	name = "syndi-cakes"
-	icon_state = "syndi_cakes"
+	icon_state = "syndi_cakes" //Sprite by Michiyamenotehifunana
 	desc = "An extremely moist snack cake that tastes just as good after being nuked."
 	alt_desc = "An open packet of extremely moist snack cake that tastes just as good after being nuked."
 	filling_color = "#FF5D05"
@@ -170,7 +170,7 @@
 
 /obj/item/reagent_containers/food/snacks/openable/no_raisin
 	name = "4No Raisins"
-	icon_state = "4no_raisins"
+	icon_state = "4no_raisins" //Sprite by Michiyamenotehifunana
 	desc = "A brand of boxed raisins. Dry but tasty."
 	alt_desc = "A opend brand of boxed raisins. Dry but tasty."
 	trash = /obj/item/trash/raisins
@@ -182,7 +182,7 @@
 
 /obj/item/reagent_containers/food/snacks/openable/spacetwinkie
 	name = "Space Twinkie"
-	icon_state = "space_twinkie"
+	icon_state = "space_twinkie" //Sprite by Michiyamenotehifunana
 	desc = "A golden sponge cake with a creamy filling."
 	alt_desc = "A opend golden sponge cake with a creamy filling."
 	filling_color = "#FFE591"
@@ -196,7 +196,7 @@
 	name = "\improper liquidfood ration"
 	desc = "A prepackaged grey slurry of all the essential nutrients for a spacefarer on the go. Should this be crunchy?"
 	alt_desc = "A prepackaged grey slurry of all the essential nutrients for a spacefarer on the go. Looking inside tends to loose your apatite."
-	icon_state = "liquidfood"
+	icon_state = "liquidfood" //Sprite by Michiyamenotehifunana
 	trash = /obj/item/trash/liquidfood
 	filling_color = "#A8A8A8"
 	bitesize = 4
@@ -210,7 +210,7 @@
 	name = "bread tube"
 	desc = "Bread in a tube. Chewy...and surprisingly tasty."
 	alt_desc = "Bread halfway in a tube. Chewy...and surprisingly tasty."
-	icon_state = "tastybread"
+	icon_state = "tastybread" //Sprite by Michiyamenotehifunana
 	trash = /obj/item/trash/tastybread
 	filling_color = "#A66829"
 	bitesize = 2
