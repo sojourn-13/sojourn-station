@@ -138,6 +138,7 @@
 	bitesize = 1
 	center_of_mass = list("x"=15, "y"=15)
 	nutriment_amt = 1
+	nutriment_desc = list("salt" = 2, "oil fried potato" = 1)
 	nutriment_desc = list("salt" = 1, "chips" = 2, "preservatives" = 3)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
