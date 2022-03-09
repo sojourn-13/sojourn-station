@@ -111,7 +111,7 @@
 	volume = 5
 	preloaded_reagents = list("inaprovaline" = 5)
 	var/can_be_refilled = TRUE //For cargos
-	var/baseline_sprite = "syrette_inopravoline"
+	var/baseline_sprite = "syrette_inopravoline" //Mostly used for chemmasters so we dont need to init(sprite name), to allow mid-round changing of icons.
 	injtime = 2 //Instant was a bit to powerful well refilling
 
 /obj/item/reagent_containers/hypospray/autoinjector/examine(mob/user)
