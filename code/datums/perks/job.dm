@@ -419,68 +419,6 @@
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
-	var/known_recipes = list(
-			/datum/craft_recipe/guild/melee,
-			/datum/craft_recipe/guild/bullet,
-			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/robotmelee,
-			/datum/craft_recipe/guild/plasma_glass,
-			/datum/craft_recipe/guild/arcwelder,
-			/datum/craft_recipe/guild/deadblow_hammer,
-			/datum/craft_recipe/guild/polytool,
-			/datum/craft_recipe/guild/combat_shovel,
-			/datum/craft_recipe/guild/supermop,
-			/datum/craft_recipe/guild/railgunpistol,
-			/datum/craft_recipe/guild/railgunrifle,
-			/datum/craft_recipe/guild/heavypulserifle,
-			/datum/craft_recipe/guild/guild_bull,
-			/datum/craft_recipe/guild/abdicatorshotgun,
-			/datum/craft_recipe/guild/ten_shot_conversion,
-			/datum/craft_recipe/guild/pilgrim_wayfarer,
-			/datum/craft_recipe/guild/mace,
-			/datum/craft_recipe/guild/claymore,
-			/datum/craft_recipe/guild/machete,
-			/datum/craft_recipe/guild/katana,
-			/datum/craft_recipe/guild/firebrand,
-			/datum/craft_recipe/guild/bastion,
-			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing,
-			/datum/craft_recipe/guild/sheet_stacker,
-			/datum/craft_recipe/guild/plasmablock,
-			/datum/craft_recipe/guild/rubbermesh,
-			/datum/craft_recipe/guild/booster,
-			/datum/craft_recipe/guild/injector,
-			/datum/craft_recipe/guild/weintraub,
-			/datum/craft_recipe/guild/overshooter,
-			/datum/craft_recipe/guild/dangerzone,
-			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/heavy_barrel,
-			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/kit,
-			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine,
-			/datum/craft_recipe/guild/watchman,
-			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox,
-			/datum/craft_recipe/guild/guild_bin,
-			/datum/craft_recipe/guild/guild_manip,
-			/datum/craft_recipe/guild/guild_laser,
-			/datum/craft_recipe/guild/guild_scanner,
-			/datum/craft_recipe/guild/guild_capacitor,
-			//datum/craft_recipe/guild/guild_bin_alt,
-			//datum/craft_recipe/guild/guild_manip_alt,
-			//datum/craft_recipe/guild/guild_laser_alt,
-			//datum/craft_recipe/guild/guild_scanner_alt,
-			//datum/craft_recipe/guild/guild_capacitor_alt,
-			//datum/craft_recipe/guild/guild_mine_trap,
-			/datum/craft_recipe/guild/guild_bin_box,
-			/datum/craft_recipe/guild/guild_manip_box,
-			/datum/craft_recipe/guild/guild_laser_box,
-			/datum/craft_recipe/guild/guild_scanner_box,
-			/datum/craft_recipe/guild/guild_capacitor_box
-			)
 
 /datum/perk/handyman/assign(mob/living/carbon/human/H)
 	..()
@@ -488,7 +426,6 @@
 
 /datum/perk/handyman/remove()
 	..()
-
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
