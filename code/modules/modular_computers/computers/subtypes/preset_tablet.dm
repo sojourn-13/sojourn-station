@@ -102,6 +102,7 @@
 	cell = new /obj/item/cell/small/moebius/high(src)
 	scanner = new /obj/item/computer_hardware/scanner/medical(src)
 	gps_sensor = new /obj/item/computer_hardware/gps_sensor(src)
+	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
 
 /obj/item/modular_computer/tablet/moebius/preset/install_default_programs()
 	..()

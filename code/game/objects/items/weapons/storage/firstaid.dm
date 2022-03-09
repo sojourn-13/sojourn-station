@@ -30,6 +30,7 @@
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
 	new /obj/item/device/scanner/health(src)
 
@@ -152,7 +153,7 @@
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport."
 	icon_state = "surgeon"
 	item_state = "firstaid-surgeon"
-	max_storage_space = 18
+	max_storage_space = 19
 	matter = list(MATERIAL_PLASTIC = 10) //holds more
 	can_hold = list(
 		/obj/item/tool/bonesetter,
@@ -162,6 +163,7 @@
 		/obj/item/tool/retractor,
 		/obj/item/tool/scalpel,
 		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/tool/surgicaldrill,
 		/obj/item/device/scanner,
 		/obj/item/storage/pill_bottle,
 		/obj/item/stack/medical,
@@ -176,6 +178,7 @@
 	new /obj/item/tool/retractor(src)
 	new /obj/item/tool/scalpel(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
+	new /obj/item/tool/surgicaldrill(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	make_exact_fit()
 
@@ -189,6 +192,7 @@
 	new /obj/item/tool/scalpel/advanced(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/device/scanner/health(src)
+	new /obj/item/tool/surgicaldrill/adv(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/storage/pill_bottle/prosurgeon(src)
@@ -201,7 +205,7 @@
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"
 	icon = 'icons/obj/storage/deferred.dmi'
-	max_storage_space = 18
+	max_storage_space = 19
 
 /obj/item/storage/firstaid/surgery/si/empty
 	empty = TRUE
@@ -215,6 +219,7 @@
 	new /obj/item/tool/scalpel/advanced/si(src)
 	new /obj/item/tool/cautery/adv/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
+	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 

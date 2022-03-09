@@ -51,6 +51,7 @@
 #define MUTATION_ECHOLOCATION /datum/genetics/mutation/echolocation
 #define MUTATION_SCREAMING /datum/genetics/mutation/screaming
 #define MUTATION_CAT_EYES /datum/genetics/mutation/cat_eyes
+#define MUTATION_REGENERATION /datum/genetics/mutation/hyperion
 //^^^ All mutations!
 
 

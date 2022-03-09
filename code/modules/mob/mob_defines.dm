@@ -54,7 +54,6 @@
 	var/hand = null
 	var/real_name = null
 
-	var/bhunger = 0			//Carbon
 	var/ajourn = 0
 	var/seer = 0 //for cult//Carbon, probably Human
 

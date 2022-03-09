@@ -118,7 +118,6 @@
 		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)
 
-
 /datum/craft_recipe/box
 	category = "Storage"
 	name = "box"

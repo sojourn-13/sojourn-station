@@ -60,6 +60,7 @@
 #define PERK_MEDICAL_EXPERT /datum/perk/medicalexpertise
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
+#define PERK_NERD /datum/perk/chemist
 #define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
 #define PERK_BOLT_REFLECT /datum/perk/job/bolt_reflect

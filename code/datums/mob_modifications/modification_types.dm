@@ -56,17 +56,7 @@
 		L.set_default_language(_languages[1])
 
 // ############################
-/datum/mobModification/craftingRecipes
-	var/list/_craftingRecipes = list()
 
-/datum/mobModification/craftingRecipes/addData(var/value)
-	_craftingRecipes.Add(value)
-
-/datum/mobModification/craftingRecipes/apply(var/mob/M)
-	if(!..())
-		return
-	for(var/recipe in _craftingRecipes)
-		M.mind.knownCraftRecipes.Add(recipe)
 
 // ############################
 // this is used to create custom modifications

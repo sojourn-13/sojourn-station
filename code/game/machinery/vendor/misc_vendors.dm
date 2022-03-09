@@ -1,21 +1,4 @@
 
-//This one's from bay12
-/obj/machinery/vending/cart
-	name = "PTech"
-	desc = "PDAs and hardware."
-	product_slogans = "PDAs for everyone!;You get a PDA! And you get a PDA!;You lost it again?;"
-	icon_state = "cart"
-	icon_deny = "cart-deny"
-	products = list(/obj/item/modular_computer/pda = 10,
-					/obj/item/computer_hardware/scanner/medical = 6,
-					/obj/item/computer_hardware/scanner/reagent = 6,
-					/obj/item/computer_hardware/scanner/atmos = 6,
-					/obj/item/computer_hardware/scanner/paper = 10,
-					/obj/item/computer_hardware/printer = 10,
-					/obj/item/computer_hardware/card_slot = 3,
-					/obj/item/computer_hardware/ai_slot = 4,
-					/obj/item/computer_hardware/hard_drive/portable/advanced/coin = 10)
-	auto_price = FALSE
 
 /obj/machinery/vending/cigarette
 	name = "Smooth Cigarettes" //OCD had to be uppercase to look nice with the new formating
@@ -806,8 +789,10 @@
 	"Buying any product makes you liable for its conduction!")
 	product_ads = "Emporium of fun games!"
 	products = list(
-					/obj/item/board = 7,
+					/obj/item/storage/pill_bottle/dice = 7,
+					/obj/item/storage/pill_bottle/dice_nerd = 5,
 					/obj/item/storage/pill_bottle/chechker = 7,
+					/obj/item/board = 7,
 					/obj/item/deck/tarot = 4,
 					/obj/item/deck = 10,
 					/obj/item/pack/cardemon = 50,
@@ -827,8 +812,10 @@
 					/obj/item/card_carp/index = 50
 					)
 	prices = list(
-					/obj/item/board = 35,
+					/obj/item/storage/pill_bottle/dice = 20,
+					/obj/item/storage/pill_bottle/dice_nerd = 35,
 					/obj/item/storage/pill_bottle/chechker = 40,
+					/obj/item/board = 35,
 					/obj/item/deck/tarot = 60,
 					/obj/item/deck = 50,
 					/obj/item/pack/cardemon = 35,
@@ -851,8 +838,10 @@
 	name = "Pre-Payed Game Emporium"
 	desc = "A one time stop for all your card or board game needs! This one has been already payed for in full."
 	products = list(
-					/obj/item/board = 4,
+					/obj/item/storage/pill_bottle/dice = 3,
+					/obj/item/storage/pill_bottle/dice_nerd = 2,
 					/obj/item/storage/pill_bottle/chechker = 4,
+					/obj/item/board = 4,
 					/obj/item/deck/tarot = 3,
 					/obj/item/deck = 5,
 					/obj/item/pack/cardemon = 10,
@@ -872,8 +861,10 @@
 					/obj/item/card_carp/index = 4
 					)
 	prices = list(
-					/obj/item/board = 0,
+					/obj/item/storage/pill_bottle/dice = 0,
+					/obj/item/storage/pill_bottle/dice_nerd = 0,
 					/obj/item/storage/pill_bottle/chechker = 0,
+					/obj/item/board = 0,
 					/obj/item/deck/tarot = 0,
 					/obj/item/deck = 0,
 					/obj/item/pack/cardemon = 0,

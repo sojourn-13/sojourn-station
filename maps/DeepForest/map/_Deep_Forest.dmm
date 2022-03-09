@@ -12164,7 +12164,7 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ua" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/reagent_containers/food/snacks/syndicake,
+/obj/item/reagent_containers/food/snacks/openable/syndicake,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ub" = (

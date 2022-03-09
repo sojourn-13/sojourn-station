@@ -209,10 +209,10 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["German"] = LANGUAGE_GERMAN
-	options["Jives"] = LANGUAGE_JIVE
+	options["Jive"] = LANGUAGE_JIVE
 	options["Jana"] = LANGUAGE_JANA
 	options["Serbian"] = LANGUAGE_SERBIAN
-	options["Russian"] = LANGUAGE_CYRILLIC
+	options["Techno-Russian"] = LANGUAGE_CYRILLIC
 	options["Esperanto"] = LANGUAGE_ESPERANTO
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Latin"] = LANGUAGE_LATIN
@@ -419,75 +419,12 @@
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
-	var/known_recipes = list(
-			/datum/craft_recipe/guild/melee,
-			/datum/craft_recipe/guild/bullet,
-			/datum/craft_recipe/guild/energy,
-			/datum/craft_recipe/guild/bomb,
-			/datum/craft_recipe/guild/robotmelee,
-			/datum/craft_recipe/guild/plasma_glass,
-			/datum/craft_recipe/guild/arcwelder,
-			/datum/craft_recipe/guild/deadblow_hammer,
-			/datum/craft_recipe/guild/polytool,
-			/datum/craft_recipe/guild/combat_shovel,
-			/datum/craft_recipe/guild/supermop,
-			/datum/craft_recipe/guild/railgunpistol,
-			/datum/craft_recipe/guild/railgunrifle,
-			/datum/craft_recipe/guild/heavypulserifle,
-			/datum/craft_recipe/guild/guild_bull,
-			/datum/craft_recipe/guild/abdicatorshotgun,
-			/datum/craft_recipe/guild/ten_shot_conversion,
-			/datum/craft_recipe/guild/pilgrim_wayfarer,
-			/datum/craft_recipe/guild/mace,
-			/datum/craft_recipe/guild/claymore,
-			/datum/craft_recipe/guild/machete,
-			/datum/craft_recipe/guild/katana,
-			/datum/craft_recipe/guild/firebrand,
-			/datum/craft_recipe/guild/bastion,
-			/datum/craft_recipe/guild/technosuit,
-			/datum/craft_recipe/guild/technohelmet,
-			/datum/craft_recipe/guild/webbing,
-			/datum/craft_recipe/guild/sheet_stacker,
-			/datum/craft_recipe/guild/plasmablock,
-			/datum/craft_recipe/guild/rubbermesh,
-			/datum/craft_recipe/guild/booster,
-			/datum/craft_recipe/guild/injector,
-			/datum/craft_recipe/guild/weintraub,
-			/datum/craft_recipe/guild/overshooter,
-			/datum/craft_recipe/guild/dangerzone,
-			/datum/craft_recipe/guild/forged,
-			/datum/craft_recipe/guild/heavy_barrel,
-			/datum/craft_recipe/guild/silencer,
-			/datum/craft_recipe/guild/kit,
-			/datum/craft_recipe/guild/turretcircuit,
-			/datum/craft_recipe/guild/rocket_engine,
-			/datum/craft_recipe/guild/watchman,
-			/datum/craft_recipe/guild/matter_nanoforge,
-			/datum/craft_recipe/guild/matter_nanoforge_blackbox,
-			/datum/craft_recipe/guild/guild_bin,
-			/datum/craft_recipe/guild/guild_manip,
-			/datum/craft_recipe/guild/guild_laser,
-			/datum/craft_recipe/guild/guild_scanner,
-			/datum/craft_recipe/guild/guild_capacitor,
-			//datum/craft_recipe/guild/guild_bin_alt,
-			//datum/craft_recipe/guild/guild_manip_alt,
-			//datum/craft_recipe/guild/guild_laser_alt,
-			//datum/craft_recipe/guild/guild_scanner_alt,
-			//datum/craft_recipe/guild/guild_capacitor_alt,
-			//datum/craft_recipe/guild/guild_mine_trap,
-			/datum/craft_recipe/guild/guild_bin_box,
-			/datum/craft_recipe/guild/guild_manip_box,
-			/datum/craft_recipe/guild/guild_laser_box,
-			/datum/craft_recipe/guild/guild_scanner_box,
-			/datum/craft_recipe/guild/guild_capacitor_box
-			)
 
 /datum/perk/handyman/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
+
 
 /datum/perk/handyman/remove()
-	holder.mind.knownCraftRecipes.Remove(known_recipes)
 	..()
 
 /datum/perk/stalker
@@ -509,29 +446,12 @@
 /datum/perk/robotics_expert
 	name = "Robotics Expert"
 	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
-	var/known_recipes = list(
-			/datum/craft_recipe/robotic/custom_board,
-			/datum/craft_recipe/robotic/roomba_frame,
-			/datum/craft_recipe/robotic/roomba_treads,
-			/datum/craft_recipe/robotic/roomba_knife,
-			/datum/craft_recipe/robotic/roomba_armor,
-			/datum/craft_recipe/robotic/roomba_armor/heavy,
-			/datum/craft_recipe/robotic/sword_frame,
-			/datum/craft_recipe/robotic/mantis_frame,
-			/datum/craft_recipe/robotic/head_frame,
-			/datum/craft_recipe/robotic/left_arm_frame,
-			/datum/craft_recipe/robotic/right_arm_frame,
-			/datum/craft_recipe/robotic/left_leg_frame,
-			/datum/craft_recipe/robotic/right_leg_frame,
-			/datum/craft_recipe/robotic/mining_bot
-			)
+
 
 /datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/perk/robotics_expert/remove()
-	holder.mind.knownCraftRecipes.Remove(known_recipes)
 	..()
 
 /datum/perk/job/bolt_reflect
@@ -577,47 +497,12 @@
 /datum/perk/job/butcher
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
-	var/known_recipes = list(
-			/datum/craft_recipe/lodge/baroqe,
-			/datum/craft_recipe/lodge/hunter_crossbow,
-			/datum/craft_recipe/lodge/hunting_halberd,
-			/datum/craft_recipe/lodge/render_gauntlet,
-			/datum/craft_recipe/lodge/skinning_knife,
-			/datum/craft_recipe/lodge/woodsmans_axe,
-			/datum/craft_recipe/lodge/bone_shield,
-			/datum/craft_recipe/lodge/hunter_hood,
-			/datum/craft_recipe/lodge/hunter_armor_basic,
-			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
-			/datum/craft_recipe/lodge/hunter_armor_metalman,
-			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
-			/datum/craft_recipe/lodge/blood_tongue,
-			/datum/craft_recipe/lodge/powder_pouch,
-			/datum/craft_recipe/lodge/tangu_juice,
-			/datum/craft_recipe/lodge/clucker_juice,
-			/datum/craft_recipe/lodge/tahca_antiviral,
-			/datum/craft_recipe/lodge/crossbow_bolts,
-			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
-			/datum/craft_recipe/lodge/crossbow_bolts/speed,
-			/datum/craft_recipe/lodge/duct_tape_weak,
-			/datum/craft_recipe/lodge/duct_tape,
-			/datum/craft_recipe/lodge/chimera_fang,
-			/datum/craft_recipe/lodge/soap,
-			/datum/craft_recipe/lodge/hunting_claw,
-			/datum/craft_recipe/lodge/sun_cleaver,
-			/datum/craft_recipe/lodge/hunter_boots,
-			/datum/craft_recipe/lodge/hunter_gloves,
-			/datum/craft_recipe/lodge/sheath,
-			/datum/craft_recipe/lodge/hunting_belt,
-			/datum/craft_recipe/lodge/leather_medium_pouch,
-			/datum/craft_recipe/lodge/leather_large_pouch
-			)
+
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/perk/job/butcher/remove()
-	holder.mind.knownCraftRecipes.Remove(known_recipes)
 	..()
 
 /datum/perk/job/master_herbalist
