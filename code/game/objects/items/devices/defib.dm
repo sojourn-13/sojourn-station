@@ -22,21 +22,17 @@
 	suitable_cell = /obj/item/cell/large
 	var/obj/item/cell/cell_type = null
 	cell = null
-
+	var/paddle_type = /obj/item/shockpaddles/linked
 	var/obj/item/shockpaddles/linked/paddles
 
 /obj/item/device/defib_kit/New() //starts without a cell for rnd
 	..()
-	if(ispath(paddles))
-		paddles = new paddles(src, src)
-	else
-		paddles = new(src, src)
+	
+	paddles = new paddle_type(src, src)
 
 	if(ispath(cell_type, suitable_cell))
 		cell = new cell_type(src)
 
-	sleep(10)
-	update_icon()
 
 /obj/item/device/defib_kit/Initialize(mapload) //updates mapped items
 	..()
@@ -197,7 +193,7 @@
 /obj/item/device/defib_kit/compact/combat
 	name = "combat defibrillator"
 	desc = "A belt-equipped blood-red defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
-	paddles = /obj/item/shockpaddles/linked/combat
+	paddle_type = /obj/item/shockpaddles/linked/combat
 
 	oxygain = 40
 
@@ -208,7 +204,7 @@
 /obj/item/device/defib_kit/compact/combat/adv
 	name = "advanced defibrillator"
 	desc = "A belt-equipped SI branded defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
-	paddles = /obj/item/shockpaddles/linked/combat/advanced
+	paddle_type = /obj/item/shockpaddles/linked/combat/advanced
 	icon_state = "advdefibcompact"
 
 	oxygain = 40
@@ -844,7 +840,7 @@
 	icon_state = "jumperunit"
 	item_state = "defibunit"
 //	item_state = "jumperunit"
-	paddles = /obj/item/shockpaddles/linked/jumper
+	paddle_type = /obj/item/shockpaddles/linked/jumper
 
 /obj/item/device/defib_kit/jumper_kit/loaded
 	cell_type = /obj/item/cell/large
