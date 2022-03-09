@@ -52,3 +52,15 @@
 					return
 			else
 				to_chat(user, SPAN_NOTICE("Nothing to fix in here.")) //back to the original
+
+
+//For medical crafting; not nanopaste but hey, it's close.
+/obj/item/stack/sterilizer_crystal
+	name = "sterilizer crystals"
+	singular_name = "sterilizer crystal"
+	desc = "A solid, crystalized form of steralized reagents. Used by Soteria typically in making medical supplies. Or by crack-addicts who want a mouth full of cleaning solution."
+	icon = 'icons/obj/stack/items.dmi'
+	icon_state = "sterilizer_crystal"
+	amount = 5
+	w_class = ITEM_SIZE_TINY
+	price_tag = 40

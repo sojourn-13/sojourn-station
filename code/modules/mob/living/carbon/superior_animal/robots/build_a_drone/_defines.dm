@@ -156,14 +156,23 @@ var/global/list/drone_welder_options = list("Greyson Welder" = "tool_welder_os",
 		usr = user
 
 	var/chassis_choice = drone_chassis_options[input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_chassis_options]
-
 	if(!chassis_choice) // We didn't chose a chassis, leave the proc.
 		return FALSE
 
 	var/radio_choice = drone_radio_options[input("Select the radio of your drone ", "Radio : ") as null | anything in drone_radio_options]
+	if(!radio_choice) // We didn't chose a radio, leave the proc.
+		return FALSE
 	var/shell_choice = drone_shell_options[input("Select the color of the shell of your drone ", "Shell : ") as null | anything in drone_shell_options]
+	if(!shell_choice) // We didn't chose a shell, leave the proc.
+		return FALSE
 	var/marks_choice = drone_marks_options[input("Select the markings of your drone ", "Markings : ") as null | anything in drone_marks_options]
+	if(!marks_choice) // We didn't chose a marking, leave the proc.
+		return FALSE
 	var/screen_choice = drone_screen_options[input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_screen_options]
+	if(!screen_choice) // We didn't chose a screen, leave the proc.
+		return FALSE
+	
+	// Scanner and weapons are optional, and at this point they probably want to have the drone anyway instead of being a mistake.
 	var/scanner_choice = drone_scanner_options[input("Select the chassis of your drone ", "Chassis : ") as null | anything in drone_scanner_options]
 	var/right_weapon_type_choice = drone_right_weapon_type_options[input("Select the first weapon type of your drone ", "Right Weapon : ") as null | anything in drone_right_weapon_type_options]
 	var/left_weapon_type_choice = drone_left_weapon_type_options[input("Select the second weapon type of your drone ", "Left Weapon : ") as null | anything in drone_left_weapon_type_options]
@@ -192,6 +201,8 @@ var/global/list/drone_welder_options = list("Greyson Welder" = "tool_welder_os",
 		left_weapon_type_choice = null // Set it to null so that it doesn't have an invisible weapon.
 
 	name = input("Please enter the name of your drone.", "Name") as text
+	if(!name)
+		name = "Generic Drone"
 
 	var/mob/living/carbon/superior_animal/robot/custom_drone/CD = new(usr.loc) // Spawn a new drone
 	CD.customize(chassis_choice, radio_choice, shell_choice, marks_choice, screen_choice, scanner_choice, right_weapon_type_choice, left_weapon_type_choice, right_tool_choice, left_tool_choice) // Customize the drone's sprite

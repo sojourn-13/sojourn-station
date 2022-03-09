@@ -49,7 +49,7 @@
 	num_alternate_languages = 2
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
-	max_age = 400 //Effectively ageless, but human history is only so long.
+	max_age = 200 //Effectively ageless, but human history is only so long.
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.1
 
 	dark_color = "#ffffff"

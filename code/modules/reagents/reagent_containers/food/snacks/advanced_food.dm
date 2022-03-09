@@ -17,6 +17,8 @@
 	var/warm = FALSE
 	var/open = FALSE
 	var/list/heated_reagents = list("tricordrazine" = 5)
+	var/bitten_icon_alt = FALSE
+	var/bitten_icon_alt_active = FALSE
 	matter = list(MATERIAL_BIOMATTER = 6)
 
 /obj/item/reagent_containers/food/snacks/openable/update_icon()
@@ -26,6 +28,9 @@
 
 	if (open)
 		iconstring += "_open"
+
+	if (bitten_icon_alt_active)
+		iconstring += "_bite"
 
 	if (warm)
 		iconstring += "_hot"
@@ -37,6 +42,11 @@
 	if(!open)
 		open()
 		to_chat(user, SPAN_WARNING("You viciously open \the [src] with your teeth, you animal."))
+	if(bitten_icon_alt)
+		bitten_icon_alt_active = TRUE
+		update_icon()
+		//So we dont need to run update icon every attack
+		bitten_icon_alt = FALSE
 
 /obj/item/reagent_containers/food/snacks/openable/proc/heat()
 	for(var/reagent in heated_reagents)
@@ -119,6 +129,7 @@
 	alt_desc = "Some brand of non-melting military chocolate. This one is open, and still unmelted."
 	icon_state = "mre_candy"
 	trash = /obj/item/trash/mre_candy
+	nutriment_desc = list("sweetness" = 1, "chocolate" = 3)
 	preloaded_reagents = list("sugar" = 3, "coco" = 2)
 
 
@@ -127,12 +138,14 @@
 	alt_desc = "Shokoladka branded non-melting military chocolate. This one is open, and still unmelted."
 	icon_state = "shokoladka"
 	trash = /obj/item/trash/mre_shokoladka
+	bitten_icon_alt = TRUE
 
 /obj/item/reagent_containers/food/snacks/openable/candy/dalococh
 	desc = "Dalococh branded non-melting military chocolate."
 	alt_desc = "Dalococh branded non-melting military chocolate. This one is open, and still unmelted."
 	icon_state = "dalococh"
 	trash = /obj/item/trash/mre_dalococh
+	bitten_icon_alt = TRUE
 
 //Other mre food items
 

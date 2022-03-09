@@ -21,6 +21,11 @@
 	desc = "An empty candy bar wrapper. Trash."
 	icon_state= "candy"
 
+/obj/item/trash/spacetwinkie
+	name = "space twinkie wrapper"
+	desc = "An empty candy bar wrapper not even a bit of filling stuck inside. Trash."
+	icon_state= "space_twinkie" //Sprite by Michiyamenotehifunana
+
 /obj/item/trash/candy/proteinbar
 	name = "protein bar"
 	desc = "An empty protein bar wrapper. Trash."
@@ -64,7 +69,7 @@
 /obj/item/trash/syndi_cakes
 	name = "syndi cakes"
 	desc = "An empty box of syndi cakes.Trash."
-	icon_state = "syndi_cakes"
+	icon_state = "syndi_cakes" //Sprite by Michiyamenotehifunana
 
 /obj/item/trash/waffles
 	name = "dirty tray"
@@ -113,12 +118,12 @@
 /obj/item/trash/liquidfood
 	name = "\improper \"LiquidFood\" ration"
 	desc = "An empty ration packet. Trash."
-	icon_state = "liquidfood"
+	icon_state = "liquidfood" //Sprite by Michiyamenotehifunana
 
 /obj/item/trash/tastybread
 	name = "bread tube"
 	desc = "An empty bread tube. Trash."
-	icon_state = "tastybread"
+	icon_state = "tastybread" //Sprite by Michiyamenotehifunana
 
 /obj/item/trash/mre
 	name = "mre"

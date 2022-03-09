@@ -31,7 +31,7 @@
 	pref.UI_style_color	= sanitize_hexcolor(pref.UI_style_color, initial(pref.UI_style_color))
 	pref.UI_style_alpha	= sanitize_integer(pref.UI_style_alpha, 0, 255, initial(pref.UI_style_alpha))
 	pref.ooccolor		= sanitize_hexcolor(pref.ooccolor, initial(pref.ooccolor))
-//	pref.clientfps	    = sanitize_integer(pref.clientfps, CLIENT_MIN_FPS, CLIENT_MAX_FPS, initial(pref.clientfps))
+	pref.clientfps	    = sanitize_integer(pref.clientfps, CLIENT_MIN_FPS, CLIENT_MAX_FPS, initial(pref.clientfps)) //Enabled by SoJ
 
 /datum/category_item/player_setup_item/player_global/ui/content(var/mob/user)
 	. += "<b>UI Settings</b><br>"
@@ -76,8 +76,8 @@
 			pref.ooccolor = new_ooccolor
 			return TOPIC_REFRESH
 
-/*
-	else if(href_list["select_fps"])
+
+	else if(href_list["select_fps"]) //Re-abled by SoJ
 		var/version_message
 		if (user.client && user.client.byond_version < 511)
 			version_message = "\nYou need to be using byond version 511 or later to take advantage of this feature, your version of [user.client.byond_version] is too low"
@@ -91,7 +91,7 @@
 			if(target_mob && target_mob.client)
 				target_mob.client.apply_fps(pref.clientfps)
 			return TOPIC_REFRESH
-*/
+
 	else if(href_list["reset"])
 		switch(href_list["reset"])
 			if("ui")

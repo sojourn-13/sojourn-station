@@ -18,8 +18,8 @@
 *
 * ".Copy() just works"
 *
-* Example of an inherant_mutations list:
-* inherant_mutations= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
+* Example of an inherent_mutations list:
+* inherent_mutations= List(MUTATION_COW_SKIN, MUTATION_IMBECILE, MUTATION_MKNEWAIFUHAIR)
 **/
 //#define JANEDEBUG 1
 

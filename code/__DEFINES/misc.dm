@@ -120,7 +120,11 @@
 #define MATERIAL_UNMELTABLE 0x1
 #define MATERIAL_BRITTLE    0x2
 #define MATERIAL_PADDING    0x4
+//Soj Changes
+#define CLIENT_MIN_FPS 0 //SERVER sync
 
+#define CLIENT_MAX_FPS 60 //Do not go above this or byond goes fucky
+//Soj End of SoJ
 #define TABLE_BRITTLE_MATERIAL_MULTIPLIER 4 // Amount table damage is multiplied by if it is made of a brittle material (e.g. glass)
 
 #define BOMBCAP_DVSTN_RADIUS (max_explosion_range/4)
