@@ -458,7 +458,7 @@ var/global/chicken_count = 0
 		return FALSE
 
 	var/egg = new egg_type(get_turf(src))
-	if(istype(egg, /obj/item/reagent_containers))
+	if(!(istype(egg, /obj/item/reagent_containers/food/snacks/cube/roach) || istype(egg, /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel)) istype(egg, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/RC = egg
 		RC.reagents.clear_reagents() // Remove all of the previous chem, just in case
 		RC.reagents.add_reagent(chem, chem_to_egg) // Add the reagent in quantity it is supposed to have.
