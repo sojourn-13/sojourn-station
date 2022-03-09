@@ -47964,7 +47964,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/mob/living/simple_animal/corgi/E_M,
+/mob/living/simple_animal/corgi/E_N,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/robotics)
 "kOW" = (
