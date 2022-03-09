@@ -723,6 +723,9 @@
 	for(var/i in 1 to 7)
 		new /obj/item/computer_hardware/hard_drive/portable/basic(src)
 
+/obj/item/storage/box/data_disk/basic/empty/populate_contents()
+	return
+
 /obj/item/storage/box/trooperuniform
 	name = "Trooper/Corpsman Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
