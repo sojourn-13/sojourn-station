@@ -45,6 +45,8 @@
 #define isburrow(A) istype(A, /obj/structure/burrow)
 //---------------------------------------------------
 
+#define issynthetic(A) istype(A, /mob) && A.mob_classification == CLASSIFICATION_SYNTHETIC //For when we really, really don't want any robots
+
 #define issilicon(A) istype(A, /mob/living/silicon)
 
 #define isAI(A) istype(A, /mob/living/silicon/ai)
