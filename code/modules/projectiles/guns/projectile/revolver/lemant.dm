@@ -6,6 +6,7 @@
 	icon_state = "lemant"
 	item_state = "lemant"
 	caliber = CAL_MAGNUM
+	load_method = SINGLE_CASING
 	drawChargeMeter = FALSE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 9
