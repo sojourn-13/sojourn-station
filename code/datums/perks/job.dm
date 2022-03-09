@@ -209,10 +209,10 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["German"] = LANGUAGE_GERMAN
-	options["Jives"] = LANGUAGE_JIVE
+	options["Jive"] = LANGUAGE_JIVE
 	options["Jana"] = LANGUAGE_JANA
 	options["Serbian"] = LANGUAGE_SERBIAN
-	options["Russian"] = LANGUAGE_CYRILLIC
+	options["Techno-Russian"] = LANGUAGE_CYRILLIC
 	options["Esperanto"] = LANGUAGE_ESPERANTO
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Latin"] = LANGUAGE_LATIN
@@ -484,11 +484,11 @@
 
 /datum/perk/handyman/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
+
 
 /datum/perk/handyman/remove()
-	holder.mind.knownCraftRecipes.Remove(known_recipes)
 	..()
+
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
@@ -509,29 +509,12 @@
 /datum/perk/robotics_expert
 	name = "Robotics Expert"
 	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
-	var/known_recipes = list(
-			/datum/craft_recipe/robotic/custom_board,
-			/datum/craft_recipe/robotic/roomba_frame,
-			/datum/craft_recipe/robotic/roomba_treads,
-			/datum/craft_recipe/robotic/roomba_knife,
-			/datum/craft_recipe/robotic/roomba_armor,
-			/datum/craft_recipe/robotic/roomba_armor/heavy,
-			/datum/craft_recipe/robotic/sword_frame,
-			/datum/craft_recipe/robotic/mantis_frame,
-			/datum/craft_recipe/robotic/head_frame,
-			/datum/craft_recipe/robotic/left_arm_frame,
-			/datum/craft_recipe/robotic/right_arm_frame,
-			/datum/craft_recipe/robotic/left_leg_frame,
-			/datum/craft_recipe/robotic/right_leg_frame,
-			/datum/craft_recipe/robotic/mining_bot
-			)
+
 
 /datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/perk/robotics_expert/remove()
-	holder.mind.knownCraftRecipes.Remove(known_recipes)
 	..()
 
 /datum/perk/job/bolt_reflect
@@ -577,47 +560,12 @@
 /datum/perk/job/butcher
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
-	var/known_recipes = list(
-			/datum/craft_recipe/lodge/baroqe,
-			/datum/craft_recipe/lodge/hunter_crossbow,
-			/datum/craft_recipe/lodge/hunting_halberd,
-			/datum/craft_recipe/lodge/render_gauntlet,
-			/datum/craft_recipe/lodge/skinning_knife,
-			/datum/craft_recipe/lodge/woodsmans_axe,
-			/datum/craft_recipe/lodge/bone_shield,
-			/datum/craft_recipe/lodge/hunter_hood,
-			/datum/craft_recipe/lodge/hunter_armor_basic,
-			/datum/craft_recipe/lodge/hunter_armor_bonedaddy,
-			/datum/craft_recipe/lodge/hunter_armor_metalman,
-			/datum/craft_recipe/lodge/hunter_armor_leatherdom,
-			/datum/craft_recipe/lodge/blood_tongue,
-			/datum/craft_recipe/lodge/powder_pouch,
-			/datum/craft_recipe/lodge/tangu_juice,
-			/datum/craft_recipe/lodge/clucker_juice,
-			/datum/craft_recipe/lodge/tahca_antiviral,
-			/datum/craft_recipe/lodge/crossbow_bolts,
-			/datum/craft_recipe/lodge/crossbow_bolts/lethal,
-			/datum/craft_recipe/lodge/crossbow_bolts/speed,
-			/datum/craft_recipe/lodge/duct_tape_weak,
-			/datum/craft_recipe/lodge/duct_tape,
-			/datum/craft_recipe/lodge/chimera_fang,
-			/datum/craft_recipe/lodge/soap,
-			/datum/craft_recipe/lodge/hunting_claw,
-			/datum/craft_recipe/lodge/sun_cleaver,
-			/datum/craft_recipe/lodge/hunter_boots,
-			/datum/craft_recipe/lodge/hunter_gloves,
-			/datum/craft_recipe/lodge/sheath,
-			/datum/craft_recipe/lodge/hunting_belt,
-			/datum/craft_recipe/lodge/leather_medium_pouch,
-			/datum/craft_recipe/lodge/leather_large_pouch
-			)
+
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)
 	..()
-	holder.mind.knownCraftRecipes.Add(known_recipes)
 
 /datum/perk/job/butcher/remove()
-	holder.mind.knownCraftRecipes.Remove(known_recipes)
 	..()
 
 /datum/perk/job/master_herbalist

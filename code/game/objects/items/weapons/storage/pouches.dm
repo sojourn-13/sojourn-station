@@ -362,7 +362,7 @@
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/tank/emergency_nitgen,
 		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/reagent_containers/food/snacks/tastybread,
+		/obj/item/reagent_containers/food/snacks/openable/tastybread,
 		/obj/item/reagent_containers/food/snacks/baguette,
 		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/reagent_containers/food/drinks/cans,

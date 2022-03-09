@@ -218,7 +218,11 @@
 /obj/item/organ/external/proc/make_nerves()
 	var/obj/item/organ/internal/nerve/nerve
 	if(nature == MODIFICATION_SUPERIOR)
-		nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt
+		if(organ_tag != BP_L_LEG && organ_tag != BP_R_LEG)
+			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt
+		else
+			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt_leg
+		
 	else if(nature < MODIFICATION_SILICON)
 		nerve = new /obj/item/organ/internal/nerve
 	else

@@ -243,6 +243,7 @@
 		/obj/item/slime_extract,
 		/obj/item/reagent_containers/glass,
 		/obj/item/reagent_containers/food/snacks/monkeycube,
+		/obj/item/reagent_containers/blood,
 		/obj/item/device/assembly,//For building bots and similar complex R&D devices
 		/obj/item/device/scanner/health,//For building medibots
 		/obj/item/disk,
@@ -266,6 +267,7 @@
 		/obj/item/reagent_containers/glass,
 		/obj/item/reagent_containers/pill,
 		/obj/item/reagent_containers/spray,
+		/obj/item/reagent_containers/blood,
 		/obj/item/storage/pill_bottle,
 		/obj/item/hand_labeler,
 		/obj/item/am_containment,

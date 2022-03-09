@@ -1581,7 +1581,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "gn" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/chips,
+/obj/item/reagent_containers/food/snacks/openable/chips,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "go" = (
@@ -2241,7 +2241,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "iw" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/chips,
+/obj/item/reagent_containers/food/snacks/openable/chips,
 /obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -3264,7 +3264,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "mj" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/chips,
+/obj/item/reagent_containers/food/snacks/openable/chips,
 /obj/random/tool/advanced/onestar/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -3313,7 +3313,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "mr" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/chips,
+/obj/item/reagent_containers/food/snacks/openable/chips,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "ms" = (
@@ -3714,7 +3714,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "nL" = (
 /obj/structure/table/onestar,
-/obj/item/reagent_containers/food/snacks/chips,
+/obj/item/reagent_containers/food/snacks/openable/chips,
 /obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)

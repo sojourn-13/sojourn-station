@@ -53,15 +53,20 @@
 	for(var/path in subtypesof(/datum/craft_recipe))
 		var/datum/craft_recipe/CX = path
 		CX = new CX
-		if (!CX.avaliableToEveryone && !user.stats.getPerk(CX.requiredPerk))
-			unlocked_names.Remove(CX.category)
+
+		if (CX.requiredPerk && !user.stats.getPerk(CX.requiredPerk))	// Goes through all the different subtypes of recipes, and checks to see if they require a perk.
+			unlocked_names.Remove(CX.category)							// If it requires a perk and the user doesn't possess that perk, it removes the category from being displayed.
+
+		if (!unlocked_names.Find(curr_category))						// If somehow the current category selected is not in the listed categories
+			while (!unlocked_names.Find(curr_category))					// Picks a random category and assigns it to be the current category.
+				curr_category = pick(SScraft.cat_names)
+			SScraft.current_category[user.ckey] = curr_category
 
 	data["is_admin"] = check_rights(show_msg = FALSE)
 	data["categories"] = unlocked_names
 	data["cur_category"] = curr_category
 	var/datum/craft_recipe/CR = get_item(usr)
 	data["cur_item"] = null
-
 	if(CR)
 		data["cur_item"] = list(
 			"name" = CR.name,
@@ -72,10 +77,9 @@
 		)
 	var/list/items = list()
 	for(var/datum/craft_recipe/recipe in SScraft.categories[curr_category])
-		if(recipe.avaliableToEveryone || (recipe.type in user.mind.knownCraftRecipes))
-			items += list(list(
-				"name" = (recipe.name),
-				"ref" = "\ref[recipe]"
+		items += list(list(
+			"name" = (recipe.name),
+			"ref" = "\ref[recipe]"
 			))
 	data["items"] = items
 

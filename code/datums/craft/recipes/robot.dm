@@ -2,7 +2,6 @@
 	category = "Robots"
 	time = 100
 	related_stats = list(STAT_MEC)
-	avaliableToEveryone = FALSE // Only Roboticists know how to make robots. When adding new recipe, also add them to code/game/jobs/job/science.dm
 	requiredPerk = PERK_ROBOTICS_EXPERT
 
 // Control Module used in all the custom bots.

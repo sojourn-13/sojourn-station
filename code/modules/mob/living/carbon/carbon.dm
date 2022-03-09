@@ -20,7 +20,6 @@
 	qdel(touching)
 	// We don't qdel(bloodstr) because it's the same as qdel(reagents)
 	QDEL_LIST(internal_organs)
-	QDEL_LIST(stomach_contents)
 	QDEL_LIST(hallucinations)
 	return ..()
 
@@ -49,36 +48,10 @@
 		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
 			germ_level++
 
-/mob/living/carbon/relaymove(var/mob/living/user, direction)
-	if((user in src.stomach_contents) && istype(user))
-		if(user.last_special <= world.time)
-			user.last_special = world.time + 50
-			src.visible_message(SPAN_DANGER("You hear something rumbling inside [src]'s stomach..."))
-			var/obj/item/I = user.get_active_hand()
-			if(I && I.force)
-				var/d = rand(round(I.force / 4), I.force)
-				if(ishuman(src))
-					var/mob/living/carbon/human/H = src
-					var/obj/item/organ/external/organ = H.get_organ(BP_CHEST)
-					if (istype(organ))
-						if(organ.take_damage(d, 0))
-							H.UpdateDamageIcon()
-					H.updatehealth()
-				else
-					src.take_organ_damage(d)
-				user.visible_message(SPAN_DANGER("[user] attacks [src]'s stomach wall with the [I.name]!"))
-				playsound(user.loc, 'sound/effects/attackblob.ogg', 50, 1)
 
-				if(prob(src.getBruteLoss() - 50))
-					for(var/atom/movable/A in stomach_contents)
-						A.loc = loc
-						stomach_contents.Remove(A)
-					src.gib()
 
 /mob/living/carbon/gib()
 	for(var/mob/M in src)
-		if(M in src.stomach_contents)
-			src.stomach_contents.Remove(M)
 		M.loc = src.loc
 		for(var/mob/N in viewers(src, null))
 			if(N.client)

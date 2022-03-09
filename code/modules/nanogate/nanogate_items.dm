@@ -35,7 +35,6 @@
 
 /obj/item/rig/nanite/New()
 	..()
-	Initialize()
 
 /obj/item/rig/nanite/Process()
 	..()

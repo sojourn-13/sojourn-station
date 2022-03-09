@@ -146,8 +146,7 @@
 	)
 
 	inherent_verbs = list(
-		/mob/living/proc/ventcrawl,
-		/mob/living/carbon/human/proc/regurgitate
+		/mob/living/proc/ventcrawl
 	)
 
 /datum/species/xenos/drone/handle_post_spawn(var/mob/living/carbon/human/H)
@@ -179,8 +178,7 @@
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/gut,
 		/mob/living/carbon/human/proc/leap,
-		/mob/living/carbon/human/proc/psychic_whisper,
-		/mob/living/carbon/human/proc/regurgitate
+		/mob/living/carbon/human/proc/psychic_whisper
 	)
 
 /datum/species/xenos/sentinel
@@ -202,8 +200,7 @@
 
 	inherent_verbs = list(
 		/mob/living/proc/ventcrawl,
-		/mob/living/carbon/human/proc/tackle,
-		/mob/living/carbon/human/proc/regurgitate,
+		/mob/living/carbon/human/proc/tackle
 	)
 
 /datum/species/xenos/queen
@@ -230,8 +227,7 @@
 
 	inherent_verbs = list(
 		/mob/living/proc/ventcrawl,
-		/mob/living/carbon/human/proc/psychic_whisper,
-		/mob/living/carbon/human/proc/regurgitate,
+		/mob/living/carbon/human/proc/psychic_whisper
 	)
 
 /datum/species/xenos/queen/handle_login_special(var/mob/living/carbon/human/H)
