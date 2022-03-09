@@ -437,6 +437,7 @@
 			/datum/craft_recipe/guild/guild_bull,
 			/datum/craft_recipe/guild/abdicatorshotgun,
 			/datum/craft_recipe/guild/ten_shot_conversion,
+			/datum/craft_recipe/guild/pilgrim_wayfarer,
 			/datum/craft_recipe/guild/mace,
 			/datum/craft_recipe/guild/claymore,
 			/datum/craft_recipe/guild/machete,

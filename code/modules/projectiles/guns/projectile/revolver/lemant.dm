@@ -31,9 +31,23 @@
 	icon = 'icons/obj/guns/projectile/lemant_claw.dmi'
 	icon_state = "lemant_claw"
 	item_state = "lemant_claw"
-	force = WEAPON_FORCE_PAINFUL // Up from 10, essentially a knife by harder to mod. -Kaz
+	force = WEAPON_FORCE_PAINFUL // Up from 10, essentially a knife but harder to mod. -Kaz
 	recoil_buildup = 3 //Addded weight, better control. -Kaz
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_BAYONET)
+	price_tag = 475 // Still an upgrade.
+
+/obj/item/gun/projectile/revolver/lemant/belt
+	name = "\"Pilgrim Wayfarer\" magnum revolver"
+	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds seventeen .40 rounds and one single action underslung 20mm shell. \
+	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
+	This model is a conversion by the Artificer Guild, known as the pilgrim wayfarer, it uses a belt fed rotation instead of a cylinder, increasing the number of shots before needing to reload. \
+	Reloading still takes ages, even with speed loaders."
+	icon = 'icons/obj/guns/projectile/lemant_way.dmi'
+	icon_state = "lemant_way"
+	item_state = "lemant_way"
+	max_shells = 17
+	price_tag = 550
+	recoil_buildup = 3 // Exceptional weight helps with recoil control, but unwieldy enough to merely match the claw. -Kaz
 
 //Defined here, may be used elsewhere but for now its only used here. -Kaz
 /obj/item/gun/projectile/underslung_shotgun
