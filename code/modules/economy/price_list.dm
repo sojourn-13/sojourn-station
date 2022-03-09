@@ -483,9 +483,6 @@
 /obj/item/reagent_containers/food/snacks/openable/chips
 	price_tag = 10
 
-/obj/item/reagent_containers/food/snacks/chips
-	price_tag = 10
-
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	price_tag = 10
 

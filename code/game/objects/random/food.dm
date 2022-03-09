@@ -3,7 +3,7 @@
 	icon_state = "food-green"
 
 /obj/random/rations/item_to_spawn()
-	return pickweight(list(/obj/item/reagent_containers/food/snacks/chips = 2,\
+	return pickweight(list(/obj/item/reagent_containers/food/snacks/openable/chips = 2,\
 				/obj/item/reagent_containers/food/snacks/candy = 2,\
 				/obj/item/reagent_containers/food/snacks/openable/tastybread = 2,\
 				/obj/item/reagent_containers/food/snacks/openable/no_raisin = 2,\
