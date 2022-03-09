@@ -7,7 +7,7 @@
 	icon_state = "lays"
 	trash = /obj/item/trash/chips
 	filling_color = "#948051"
-	nutriment_desc = list("heartiness" = 1, "beans" = 3)
+	nutriment_desc = list("salt" = 1, "chips" = 2, "preservatives" = 3)
 	nutriment_amt = 6
 	preloaded_reagents = list("protein" = 3, "sodiumchloride" = 5)
 	cooked = TRUE
