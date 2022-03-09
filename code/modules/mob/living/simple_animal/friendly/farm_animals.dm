@@ -385,6 +385,9 @@ var/global/chicken_count = 0
 /mob/living/simple_animal/metal_chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
+		if(G.reagents.total_volume >= reagents.maximum_volume - reagents.total_volume)
+			to_chat(user, "\blue [name] is completly full!")
+			return
 		user.visible_message("\blue [user] feeds [O] to [name]! She clucks happily.","\blue You feed [O] to [name]! She clucks happily.")
 		user.drop_item()
 		G.reagents.trans_to_mob(src, G.reagents.total_volume, CHEM_BLOOD)
