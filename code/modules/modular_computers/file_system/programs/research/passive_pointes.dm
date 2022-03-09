@@ -45,8 +45,11 @@
 
 	if(progress >= target_progress)
 		reset()
+		computer.visible_message(SPAN_NOTICE("[computer] state, \"Decryption Succesfully Completed.\""))
+		playsound(computer.loc, 'sound/machines/ping.ogg', 50, 1 -3)
 		message = "Successfully collected data points and saved metadata results."
-		HD.store_file(new/datum/computer_file/binary/research_points())
+		var/datum/computer_file/binary/research_points/RP = new(target_progress/1000) // 1 Size = 1000 points.
+		HD.store_file(RP)
 
 /datum/computer_file/program/point_miner/proc/reset()
 	running = FALSE
@@ -67,6 +70,7 @@
 		if(running)
 			return 1
 		var/obj/item/computer_hardware/processor_unit/CPU = computer.processor_unit
+		operator_skill = get_operator_skill(usr, STAT_COG)
 		if(!istype(CPU) || !CPU.check_functionality())
 			message = "A fatal hardware error has been detected."
 			return
