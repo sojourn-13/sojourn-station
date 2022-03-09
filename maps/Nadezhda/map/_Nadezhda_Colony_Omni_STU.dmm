@@ -98311,7 +98311,6 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
 	},
-/mob/living/simple_animal/metal_chicken,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "vXl" = (
