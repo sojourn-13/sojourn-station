@@ -52,9 +52,9 @@
 		if(TOOL_MEDIC)
 			left_weapon = "syringe"
 		if(TOOL_WELDER)
-			right_weapon = "welder"
+			left_weapon = "welder"
 		if(TOOL_FLAMER)
-			right_weapon = "flamer"
+			left_weapon = "flamer"
 
 	if(right_weapon)
 		to_chat(user, SPAN_NOTICE("[src] has a [right_weapon]."))
