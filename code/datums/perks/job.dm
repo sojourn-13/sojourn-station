@@ -209,10 +209,10 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["German"] = LANGUAGE_GERMAN
-	options["Jives"] = LANGUAGE_JIVE
+	options["Jive"] = LANGUAGE_JIVE
 	options["Jana"] = LANGUAGE_JANA
 	options["Serbian"] = LANGUAGE_SERBIAN
-	options["Russian"] = LANGUAGE_CYRILLIC
+	options["Techno-Russian"] = LANGUAGE_CYRILLIC
 	options["Esperanto"] = LANGUAGE_ESPERANTO
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Latin"] = LANGUAGE_LATIN
