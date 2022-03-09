@@ -280,8 +280,8 @@
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 	)
 
-/datum/craft_recipe/guild/pilgrim_wayfarer
-	name = "pilgrim wayfarer"
+/datum/craft_recipe/guild/pilgrim_devout
+	name = "pilgrim devout"
 	result = /obj/item/gun/projectile/revolver/lemant/belt
 	steps = list(
 		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 30),
