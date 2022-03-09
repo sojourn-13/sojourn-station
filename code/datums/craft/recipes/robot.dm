@@ -173,6 +173,7 @@
 		list(/obj/item/robot_parts/robot_component/actuator, 2, "time" = 60),
 		list(/obj/item/robot_parts/robot_component/camera, 1, "time" = 60),
 		list(/obj/structure/reagent_dispensers/bidon, 1, "time" = 30),
+		list(/obj/item/circuitboard/chicken, 1,"time" = 30),
 		list(QUALITY_WELDING, 10, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 10, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)

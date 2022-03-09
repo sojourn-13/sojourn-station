@@ -379,9 +379,6 @@ var/global/chicken_count = 0
 	..()
 	reagents.maximum_volume = 6000 // So that they can hold enough chem, same quantity as a bidon
 
-/mob/living/simple_animal/metal_chicken/death()
-	..()
-
 /mob/living/simple_animal/metal_chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
@@ -471,6 +468,7 @@ var/global/chicken_count = 0
 	..()
 	visible_message("<b>[src]</b> blows apart!")
 	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	new /obj/item/circuitboard/chicken(src.loc)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
