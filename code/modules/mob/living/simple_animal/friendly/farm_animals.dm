@@ -386,8 +386,8 @@ var/global/chicken_count = 0
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 		// If it is a tool, assign it to the tool variable defined earlier.
-		if(istype(W, /obj/item/tool))
-			T = W
+		if(istype(O, /obj/item/tool))
+			T = O
 
 		if(QUALITY_WELDING in T.tool_qualities)
 			if(health < maxHealth)
