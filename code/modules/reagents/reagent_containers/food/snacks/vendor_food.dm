@@ -132,7 +132,7 @@
 /obj/item/reagent_containers/food/snacks/openable/chips
 	name = "chips packet"
 	desc = "An unbranded packet of crisps. Salty."
-	icon_state = "chips"
+	icon_state = "lays_green"
 	trash = /obj/item/trash/chips
 	filling_color = "#E8C31E"
 	bitesize = 1
@@ -189,6 +189,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=11)
 	trash = /obj/item/trash/spacetwinkie
+	nutriment_desc = list("sweetness" = 3, "cake" = 1)
 	preloaded_reagents = list("sugar" = 4, "preservatives" = 5)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
