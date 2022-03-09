@@ -865,7 +865,7 @@
 
 /datum/chemical_reaction/sterilizer
 	result = "sterilizer"
-	required_reagents = list("dermaline" = 1, "sodium" = 1, "sterilzine" = 1)
+	required_reagents = list("dermaline" = 1, "sodium" = 1, "sterilizine" = 1)
 	result_amount = 3
 	catalysts = list("cronexidone" = 5)
 
