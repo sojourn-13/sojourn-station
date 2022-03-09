@@ -167,3 +167,36 @@
 				for(var/i in list(1,2,4,8,4,2,1,2,4,8,4,2,1,2,4,8,4,2))
 					set_dir(i)
 					sleep(1)
+
+/mob/living/simple_animal/corgi/E_M
+	name = "E-N"
+	real_name = "E-N"
+	gender = FEMALE
+	desc = "It's a robot corgi."
+	icon_state = "E-N"
+	response_help  = "pets"
+	response_disarm = "bops"
+	response_harm   = "kicks"
+	autoseek_food = 0
+	beg_for_food = 0
+	mob_classification = CLASSIFICATION_SYNTHETIC
+	min_oxy = 0
+	max_oxy = 0
+	min_tox = 0
+	max_tox = 0
+	min_co2 = 0
+	max_co2 = 0
+	min_n2 = 0
+	max_n2 = 0
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
+/mob/living/simple_animal/corgi/death()
+	..()
+	visible_message("<b>[src]</b> blows apart!")
+	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(3, 1, src)
+	s.start()
+	qdel(src)
+	return
