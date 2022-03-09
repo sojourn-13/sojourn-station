@@ -48,7 +48,8 @@
 		computer.visible_message(SPAN_NOTICE("[computer] state, \"Decryption Succesfully Completed.\""))
 		playsound(computer.loc, 'sound/machines/ping.ogg', 50, 1 -3)
 		message = "Successfully collected data points and saved metadata results."
-		HD.store_file(new/datum/computer_file/binary/research_points())
+		var/datum/computer_file/binary/research_points/RP = new(target_progress/1000) // 1 Size = 1000 points.
+		HD.store_file(RP)
 
 /datum/computer_file/program/point_miner/proc/reset()
 	running = FALSE
