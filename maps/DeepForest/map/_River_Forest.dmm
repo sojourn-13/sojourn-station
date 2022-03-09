@@ -2659,7 +2659,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Hh" = (
-/obj/item/reagent_containers/food/snacks/chips,
+/obj/item/reagent_containers/food/snacks/openable/chips,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Hi" = (
@@ -3441,7 +3441,7 @@
 /area/nadezhda/outside/forest/river_forest_underground)
 "Rf" = (
 /obj/structure/table/bench/wooden,
-/obj/item/reagent_containers/food/snacks/chips,
+/obj/item/reagent_containers/food/snacks/openable/chips,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Ri" = (
