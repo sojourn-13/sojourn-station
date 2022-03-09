@@ -189,6 +189,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=11)
 	trash = /obj/item/trash/spacetwinkie
+	nutriment_desc = list("sweetness" = 3, "cake" = 1)
 	preloaded_reagents = list("sugar" = 4, "preservatives" = 5)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
