@@ -168,7 +168,7 @@
 					set_dir(i)
 					sleep(1)
 
-/mob/living/simple_animal/corgi/E_M
+/mob/living/simple_animal/corgi/E_N
 	name = "E-N"
 	real_name = "E-N"
 	gender = FEMALE
