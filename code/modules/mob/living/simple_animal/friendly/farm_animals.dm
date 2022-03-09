@@ -383,6 +383,22 @@ var/global/chicken_count = 0
 	..()
 
 /mob/living/simple_animal/metal_chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
+	if(user.a_intent == I_HELP) // Are we helping ?
+		// If it is a tool, assign it to the tool variable defined earlier.
+		if(istype(W, /obj/item/tool))
+			T = W
+
+		if(QUALITY_WELDING in T.tool_qualities)
+			if(health < maxHealth)
+				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					health = maxHealth
+					to_chat(user, "You repair the damage to [src].")
+					return
+				return
+			to_chat(user, "[src] doesn't need repairs.")
+			return
+
 	if(istype(O, /obj/item/reagent_containers/food)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(G.reagents.total_volume >= reagents.maximum_volume - reagents.total_volume)
