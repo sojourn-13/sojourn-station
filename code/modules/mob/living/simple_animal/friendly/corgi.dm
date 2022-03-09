@@ -202,7 +202,7 @@
 	return
 
 // For repairing damage to the synths.
-/mob/living/simple_animal/corgi/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/simple_animal/corgi/E_M/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 
