@@ -399,7 +399,7 @@ var/global/chicken_count = 0
 	. =..()
 	if(!.)
 		return
-	if(!stat && prob(10) && lay_egg())
+	if(!stat && prob(50) && lay_egg())
 		visible_message("[src] [pick("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")]")
 
 /mob/living/simple_animal/metal_chicken/proc/lay_egg()
