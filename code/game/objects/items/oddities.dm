@@ -341,6 +341,8 @@
 		STAT_ROB = 6,
 	)
 	hitsound = 'sound/weapons/redbrick.ogg'
+	effective_faction = list("roach") // roach are weak to bricks.
+	damage_mult = 2
 
 /obj/item/oddity/common/mirror
 	name = "cracked mirror"

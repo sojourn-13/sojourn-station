@@ -422,6 +422,7 @@
 						  QUALITY_SAWING = 30,
 						  QUALITY_DIGGING = 40,
 						  QUALITY_SCREW_DRIVING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -437,6 +438,7 @@
 						  QUALITY_SAWING = 30,
 						  QUALITY_DIGGING = 40,
 						  QUALITY_SCREW_DRIVING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -451,6 +453,7 @@
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_SAWING = 30,
 						  QUALITY_SCREW_DRIVING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -460,11 +463,12 @@
 	desc = "Omni tool for Security borgs, mostly just for cutting up body and clearing borrows."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 20,
-						  QUALITY_HAMMERING = 10, //For undoing random things like barrer placements
+						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
 						  QUALITY_BOLT_TURNING = 10,
 						  QUALITY_SAWING = 15, //Sawing for guns
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_DIGGING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -474,11 +478,12 @@
 	desc = "Omni tool for Janitor borgs, mostly just for cutting up body and clearing borrows."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 20,
-						  QUALITY_HAMMERING = 10, //For undoing random things like barrer placements
+						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
 						  QUALITY_BOLT_TURNING = 30,
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_DIGGING = 40,
 						  QUALITY_SCREW_DRIVING = 40) //Tiles and the like
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
 	degradation = 0
@@ -488,7 +493,7 @@
 	desc = "Omni tool for Science borgs, has a bit of everything but also leaves a lot to be wanted."
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 30,
-						  QUALITY_HAMMERING = 10, //For undoing random things like barrer placements
+						  QUALITY_HAMMERING = 35, //For undoing random things like barrer placements
 						  QUALITY_BOLT_TURNING = 30,
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_WIRE_CUTTING = 40,
@@ -534,14 +539,16 @@
 	name = "Surgery omni tool"
 	desc = "A surgery omni tool for borgs, uses internal power cell rather then its own."
 	icon_state = "medimplant_sci"
-	tool_qualities = list(QUALITY_CLAMPING = 30,
-						  QUALITY_RETRACTING = 30,
-						  QUALITY_BONE_SETTING = 30,
-						  QUALITY_CAUTERIZING = 30,
-						  QUALITY_SAWING = 15,
-						  QUALITY_CUTTING = 30,
-						  QUALITY_WIRE_CUTTING = 25,
-						  QUALITY_BONE_GRAFTING = 50)
+	tool_qualities = list(QUALITY_CLAMPING = 60,
+						  QUALITY_RETRACTING = 60,
+						  QUALITY_BONE_SETTING = 60,
+						  QUALITY_CAUTERIZING = 60,
+						  QUALITY_SAWING = 45,
+						  QUALITY_CUTTING = 60,
+						  QUALITY_WIRE_CUTTING = 55,
+						  QUALITY_BONE_GRAFTING = 80,
+						  QUALITY_DRILLING = 40)
+	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0 //Dosnt legitmently use power
 	suitable_cell = null
 	degradation = 0
