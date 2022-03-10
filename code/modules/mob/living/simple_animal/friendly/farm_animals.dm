@@ -449,7 +449,7 @@ var/global/chicken_count = 0
 				egg_type = /obj/item/clothing/mask/smokable/cigarette
 			if("pararein")
 				egg_type = /obj/effect/spider/spiderling
-			if("blattadin ")
+			if("blattedin")
 				egg_type = /obj/item/reagent_containers/food/snacks/cube/roach
 			else // Empty bottle that then get filled with left-over chems
 				egg_type = /obj/item/reagent_containers/glass/bottle
