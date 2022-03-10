@@ -215,7 +215,7 @@
 	options["Techno-Russian"] = LANGUAGE_CYRILLIC
 	options["Esperanto"] = LANGUAGE_ESPERANTO
 	options["Yassari"] = LANGUAGE_YASSARI
-	options["Latin"] = LANGUAGE_LATIN
+	options["Ancient Latin"] = LANGUAGE_LATIN
 	var/choice = input(M,"What language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)

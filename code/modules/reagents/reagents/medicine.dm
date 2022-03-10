@@ -1108,3 +1108,15 @@
 	description = "An all-purpose antiviral agent derived from tahca horns crushed into a blood mixed extract."
 	constant_metabolism = TRUE
 
+/datum/reagent/medicine/sterilizer
+	name = "sterilizer"
+	id = "sterilizer"
+	description = "Sterilizing solution used in making medical supplies. Don't.. drink it."
+	taste_description = "soap"
+	reagent_state = LIQUID
+	color = "#00FFFF"
+	scannable = 1
+
+/datum/reagent/medicine/sterilizer/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(prob(10 * effect_multiplier))
+		M.vomit()
