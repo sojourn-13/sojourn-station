@@ -6,7 +6,7 @@
 	board_type = "other"
 
 /obj/item/circuitboard/chicken
-	build_name = "SMGT board"
+	build_name = "CHICK board"
 	icon_state = "mcontroller"
 	origin_tech = list(TECH_DATA = 4, TECH_BIO = 2)
 	board_type = "other"
