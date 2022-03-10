@@ -338,8 +338,8 @@ var/global/chicken_count = 0
 		..()
 
 /mob/living/simple_animal/metal_chicken
-	name = "\improper Soteria Mobile Chemical Transmuter"
-	desc = "The Soteria Mobile Chemical Transmuter, or SMGT, is a biomechanical chemical that can convert useless organic material into more useful metallic material."
+	name = "\improper C.H.I.C.K"
+	desc = "The Chemical Housing Internal Combustion Ki, or CHICK, is a biomechanical robot that can convert useless organic material into more useful metallic material using an internalized combustion and chemical processor."
 	icon = 'icons/mob/mobs-domestic.dmi'
 	icon_state = "robot_chicken"
 	speak = list("cluck!","BWAAAAARK BWAK BWAK BWAK!","bwaak bwak.")
