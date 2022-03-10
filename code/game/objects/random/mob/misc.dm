@@ -340,7 +340,8 @@
 
 /obj/random/mob/undergroundmob/item_to_spawn()
 	return pickweight(list(/mob/living/simple_animal/hostile/wurm = 20,
-		/mob/living/simple_animal/hostile/wurm/adult = 10,
+		/mob/living/simple_animal/hostile/wurm/silver = 15,
+		/mob/living/simple_animal/hostile/wurm/osmium = 10,
 		/mob/living/simple_animal/hostile/sargoyle = 20,
 		/mob/living/simple_animal/hostile/helldiver = 10,
 		/obj/random/mob/nightmare = 1

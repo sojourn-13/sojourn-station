@@ -273,3 +273,16 @@
 		list(/obj/item/stack/material/cloth, 1, time = 15)
 	)
 
+/datum/craft_recipe/weapon/pipebomb
+	name = "improvised pipebomb"
+	result = /obj/item/grenade/frag/pipebomb
+	steps = list(
+		list(/obj/item/cell/small, 1),
+		list(QUALITY_SAWING, 10),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMA),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/device/assembly/igniter, 1),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 5))

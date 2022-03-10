@@ -12971,7 +12971,7 @@
 /area/colony/exposedsun/pastgate)
 "Xm" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm/adult,
+/mob/living/simple_animal/hostile/wurm/osmium,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "Xo" = (
