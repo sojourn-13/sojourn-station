@@ -427,7 +427,6 @@
 /datum/perk/handyman/remove()
 	..()
 
-
 /datum/perk/stalker
 	name = "Anomaly Hunter"
 	desc = "Special training from senior Prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."
