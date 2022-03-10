@@ -162,7 +162,7 @@
 	)
 
 /datum/craft_recipe/robotic/chicken
-	name = "Soteria Mobile Chemical Transmuter"
+	name = "Chemical Housing Internal Combustion Kit"
 	result = /mob/living/simple_animal/metal_chicken
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
