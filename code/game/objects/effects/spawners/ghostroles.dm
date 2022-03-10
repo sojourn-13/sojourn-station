@@ -111,4 +111,24 @@
 		STAT_COG = 35
 	)
 
+/obj/effect/mob_spawn/human/kriosan_trooper
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Kriosan trooper."
+	mob_name = "a scavenger"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/doggo
+	ghost_role_perks = list(/datum/perk/exceptional_aim, /datum/perk/enhancedsenses)
+	short_desc = "You are a kriosan trooper."
+	flavour_text = "*bark."
+	assignedrole = "Kriosan Trooper"
+	title = "Kriosan Trooper"
+	stat_modifiers = list(
+		STAT_ROB = 28,
+		STAT_TGH = 32,
+		STAT_BIO = 27,
+		STAT_MEC = 16,
+		STAT_VIG = 46,
+		STAT_COG = 18
+	)
 
