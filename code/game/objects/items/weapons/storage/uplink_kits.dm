@@ -1,8 +1,8 @@
 /obj/item/storage/box/syndicate/populate_contents()
 	switch (pickweight(list("bloodyspai" = 1, "stealth" = 1, "screwed" = 1, "guns" = 1, "murder" = 1, "freedom" = 1, "hacker" = 1, /*"lordsingulo" = 1,*/ "smoothoperator" = 1)))
 		if("bloodyspai")
-			new /obj/item/clothing/under/admin/chameleon(src)
-			new /obj/item/clothing/mask/gas/voice(src)
+			new /obj/item/clothing/under/chameleon(src)
+			new /obj/item/clothing/mask/chameleon/voice(src)
 			new /obj/item/card/id/syndicate(src)
 			new /obj/item/clothing/shoes/syndigaloshes(src)
 			return
@@ -125,18 +125,19 @@
 
 /obj/item/storage/box/syndie_kit/chameleon
 	name = "chameleon kit"
-	desc = "Comes with all the clothes you need to impersonate most people. Acting lessons sold separately. The box itself is made of plasteel."
-	matter = list(MATERIAL_PLASTEEL = 1)
+	desc = "Comes with all the clothes you need to impersonate most people. Acting lessons sold seperately. Wearing the uniform will allow fot quick switching between appearances."
 
 /obj/item/storage/box/syndie_kit/chameleon/populate_contents()
-	new /obj/item/clothing/under/admin/chameleon(src)
-	new /obj/item/clothing/head/admin/chameleon(src)
-	new /obj/item/clothing/suit/admin/chameleon(src)
-	new /obj/item/clothing/shoes/admin/chameleon(src)
+	new /obj/item/clothing/under/chameleon(src)
+	new /obj/item/clothing/head/chameleon(src)
+	new /obj/item/clothing/suit/chameleon(src)
+	new /obj/item/clothing/shoes/chameleon(src)
 	new /obj/item/storage/backpack/chameleon(src)
-	new /obj/item/clothing/gloves/admin/chameleon(src)
-	new /obj/item/clothing/mask/admin/chameleon(src)
-	new /obj/item/clothing/glasses/admin/chameleon(src)
+	new /obj/item/storage/backpack/satchel/chameleon(src)
+	new /obj/item/clothing/gloves/chameleon(src)
+	new /obj/item/clothing/mask/chameleon(src)
+	new /obj/item/clothing/glasses/chameleon(src)
+	new /obj/item/device/radio/headset/chameleon(src)
 	new /obj/item/gun/energy/chameleon(src)
 
 /obj/item/storage/box/syndie_kit/clerical
