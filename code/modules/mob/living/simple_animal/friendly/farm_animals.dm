@@ -386,7 +386,7 @@ var/global/chicken_count = 0
 		if(istype(O, /obj/item/tool))
 			T = O
 
-		if(QUALITY_WELDING in T.tool_qualities)
+		if(QUALITY_WELDING in T?.tool_qualities)
 			if(health < maxHealth)
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 					health = maxHealth
