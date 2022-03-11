@@ -52,7 +52,7 @@
 			new/obj/item/clothing/under/shorts(src)
 			new/obj/item/clothing/under/shorts/athleticblue(src)
 		if(46 to 50)
-			new/obj/item/clothing/under/admin/chameleon(src)
+			new/obj/item/clothing/under/chameleon(src)
 			for(var/i = 0, i < 7, i++)
 				new/obj/item/clothing/accessory/tie/yellow(src)
 		if(51 to 52) // Uncommon, 2% each

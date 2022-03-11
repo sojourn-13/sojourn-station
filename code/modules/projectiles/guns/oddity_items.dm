@@ -94,10 +94,10 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A spray painted decal of a rat man with a grinning face has been placed on the grip, the deadliest killers are often those ignored or underestimated by others after all. \
 	This particular pistol has been oiled, cleaned, and appears to be so well maintenanced that its become 110% of its normal potential."
-	damage_multiplier = 1.4
-	recoil_buildup = 4
-	one_hand_penalty = 6
-	penetration_multiplier = 1.1
+	damage_multiplier = 1.8
+	recoil_buildup = 2
+	one_hand_penalty = 3
+	penetration_multiplier = 3.1
 	price_tag = 2350
 
 /obj/item/gun/projectile/boltgun/bluecross
