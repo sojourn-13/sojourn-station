@@ -160,9 +160,7 @@
 	psi_point_cost = 0
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/gun/kinetic_blaster/KB = new(src)
-		KB.holder = owner
-		KB.PT = src
+		var/obj/item/gun/kinetic_blaster/KB = new(src, owner, src)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before a kinetic blaster forms over it!",
 			"You clench your hand into a fist, electric energy crackling around your fingers before a kinetic blaster forms over it!"

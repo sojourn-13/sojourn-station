@@ -7,9 +7,7 @@
 	psi_point_cost = 0
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/gun/kinetic_blaster/cryo/KB = new(src)
-		KB.holder = owner
-		KB.PT = src
+		var/obj/item/gun/kinetic_blaster/cryo/KB = new(src, owner, src)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before a kinetic blaster forms over it!",
 			"You clench your hand into a fist, electric energy crackling around your fingers before a kinetic blaster forms over it!"
@@ -24,9 +22,7 @@
 	psi_point_cost = 0
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/gun/kinetic_blaster/pyro/KB = new(src)
-		KB.holder = owner
-		KB.PT = src
+		var/obj/item/gun/kinetic_blaster/pyro/KB = new(src, owner, src)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before a kinetic blaster forms over it!",
 			"You clench your hand into a fist, electric energy crackling around your fingers before a kinetic blaster forms over it!"
@@ -41,9 +37,7 @@
 	psi_point_cost = 0
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/gun/kinetic_blaster/electro/KB = new(src)
-		KB.holder = owner
-		KB.PT = src
+		var/obj/item/gun/kinetic_blaster/electro/KB = new(src, owner, src)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before a kinetic blaster forms over it!",
 			"You clench your hand into a fist, electric energy crackling around your fingers before a kinetic blaster forms over it!"
@@ -59,8 +53,7 @@
 	var/timer = 10 SECONDS
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/shield_projector/line/psionic/shield = new(src, owner.stats.getStat(STAT_COG))
-		shield.dir = owner.dir
+		var/obj/item/shield_projector/line/psionic/shield = new(src, owner.stats.getStat(STAT_COG), owner.dir)
 		owner.visible_message(
 			"[owner] do something weird!",
 			"You do something weird!"

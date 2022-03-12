@@ -231,8 +231,10 @@
 	var/mob/living/carbon/holder // The one that prevent the fist from fading
 	var/obj/item/organ/internal/psionic_tumor/PT // The psionic organ of the holder.
 
-/obj/item/gun/kinetic_blaster/New()
+/obj/item/gun/kinetic_blaster/New(var/loc, var/mob/living/carbon/maker, var/obj/item/organ/internal/psionic_tumor/tumor)
 	..()
+	holder = maker
+	PT = tumor
 	START_PROCESSING(SSobj, src)
 
 /obj/item/gun/kinetic_blaster/consume_next_projectile()
@@ -243,7 +245,6 @@
 	return new projectile_type(src, holder.stats.getPerk(PERK_PSI_MANIA) ? 40 : holder.stats.getStat(STAT_COG))
 
 /obj/item/gun/kinetic_blaster/Process()
-	..()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		visible_message("[src] fades into nothingness.")
 		STOP_PROCESSING(SSobj, src)
