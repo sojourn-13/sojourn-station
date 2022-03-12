@@ -310,7 +310,7 @@
 	var/list/explosion_values = list(0, 1, 2, 4) // Explosions strengths, same value as a regular missile.
 
 /obj/item/projectile/kinetic_blast/pyro/on_impact(atom/target)
-	explosion(loc, explosion_values[0], explosion_values[1], explosion_values[2], explosion_values[3])
+	explosion(loc, explosion_values[1], explosion_values[2], explosion_values[3], explosion_values[4])
 	return TRUE
 
 /obj/item/projectile/kinetic_blast/electro

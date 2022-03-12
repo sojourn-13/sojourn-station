@@ -45,14 +45,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
-		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster,
-		/obj/item/organ/internal/psionic_tumor/proc/cryo_kinetic_blaster,
-		/obj/item/organ/internal/psionic_tumor/proc/pyro_kinetic_blaster,
-		/obj/item/organ/internal/psionic_tumor/proc/electro_kinetic_blaster,
-		/obj/item/organ/internal/psionic_tumor/proc/kinetic_barrier,
-		/obj/item/organ/internal/psionic_tumor/proc/chosen_control,
-		/obj/item/organ/internal/psionic_tumor/proc/detect_thoughts,
-		/obj/item/organ/internal/psionic_tumor/proc/psychoactive_manipulation
+		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster
 	)
 
 /obj/item/organ/internal/psionic_tumor/psychiatrist
