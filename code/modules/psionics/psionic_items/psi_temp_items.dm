@@ -63,21 +63,22 @@
 /obj/item/tool/hammer/telekinetic_fist/attack(atom/movable/target, mob/user)
 	var/whack_speed = 0
 
-	if(user.stats.getStat(STAT_ROB) <= 0)
-		force = WEAPON_FORCE_HARMLESS
-		whack_speed = 2
-	else if(user.stats.getStat(STAT_ROB) <= 15)
-		force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
-		whack_speed = 4
-	else if(user.stats.getStat(STAT_ROB) <= 25)
-		force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
-		whack_speed = 6
-	else if(user.stats.getStat(STAT_ROB) <= 35)
-		force = WEAPON_FORCE_ROBUST // As strong as a machete
-		whack_speed = 6
-	else if(user.stats.getStat(STAT_ROB) > 35)
-		force = WEAPON_FORCE_BRUTAL
-		whack_speed = 6
+	switch(user.stats.getStat(STAT_ROB))
+		if(1 to 14)
+			force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
+			whack_speed = 4
+		if(15 to 24)
+			force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
+			whack_speed = 6
+		if(25 to 34)
+			force = WEAPON_FORCE_ROBUST // As strong as a machete
+			whack_speed = 6
+		if(35 to INFINITY)
+			force = WEAPON_FORCE_BRUTAL
+			whack_speed = 6
+		else
+			force = WEAPON_FORCE_HARMLESS
+			whack_speed = 2
 
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
@@ -123,18 +124,21 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/tool/knife/psionic_blade/attack(atom/target, mob/user)
-	if(user.stats.getStat(STAT_ROB) <= 0)
-		force = WEAPON_FORCE_HARMLESS
-	else if(user.stats.getStat(STAT_ROB) <= 15)
-		force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
-	else if(user.stats.getStat(STAT_ROB) <= 25)
-		force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
-	else if(user.stats.getStat(STAT_ROB) <= 35)
-		force = WEAPON_FORCE_ROBUST // As strong as a machete
-	else if(user.stats.getStat(STAT_ROB) > 35)
-		force = WEAPON_FORCE_BRUTAL
+	switch(user.stats.getStat(STAT_ROB))
+		if(1 to 14)
+			force = WEAPON_FORCE_NORMAL // As strong as a kitchen knife
+		if(15 to 24)
+			force = WEAPON_FORCE_DANGEROUS // As strong as a butcher cleaver
+		if(25 to 34)
+			force = WEAPON_FORCE_ROBUST // As strong as a machete
+		if(35 to INFINITY)
+			force = WEAPON_FORCE_BRUTAL
+		else
+			force = WEAPON_FORCE_HARMLESS
+
 	if(user.stats.getPerk(PERK_PSI_MANIA))
 		force = WEAPON_FORCE_BRUTAL
+
 	..()
 	force = initial(force) // Reset the damage just in case
 

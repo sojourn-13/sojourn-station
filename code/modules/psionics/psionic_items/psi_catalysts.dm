@@ -86,6 +86,46 @@
 	Kneel."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/mind_jack
 
+/obj/item/device/psionic_catalyst/kinetic_blaster
+	name = "Kinetic Blaster"
+	desc = ""
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster
+
+/obj/item/device/psionic_catalyst/cryo_kinetic_blaster
+	name = "Cryo-Kinetic Blaster"
+	desc = ""
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/cryo_kinetic_blaster
+
+/obj/item/device/psionic_catalyst/pyro_kinetic_blaster
+	name = "Pyro-Kinetic Blaster"
+	desc = ""
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/pyro_kinetic_blaster
+
+/obj/item/device/psionic_catalyst/electro_kinetic_blaster
+	name = "Electro-Kinetic Blaster"
+	desc = ""
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/electro_kinetic_blaster
+
+/obj/item/device/psionic_catalyst/kinetic_barrier
+	name = "Kinetic Barrier"
+	desc = ""
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/kinetic_barrier
+
+/obj/item/device/psionic_catalyst/chosen_control
+	name = "Chosen Control"
+	desc = ""
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/chosen_control
+
+/obj/item/device/psionic_catalyst/detect_thoughts
+	name = "Detect Thoughts"
+	desc = ""
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/detect_thoughts
+
+/obj/item/device/psionic_catalyst/psychoactive_manipulation
+	name = "Psychoactive Manipulation"
+	desc = ""
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/psychoactive_manipulation
+
 /obj/item/device/psionic_catalyst/Initialize()
 	. = ..()
 	src.transform *= 0.5
