@@ -223,7 +223,7 @@
 		projectile_type = force
 
 		if(holder.stats.getPerk(PERK_PSI_MANIA))
-			force = /obj/item/projectile/kinetic_blast/brutal
+			projectile_type = /obj/item/projectile/kinetic_blast/brutal
 			armor_penetration = ARMOR_PEN_HALF
 
 	START_PROCESSING(SSobj, src)
@@ -294,7 +294,7 @@
 		projectile_type = force
 
 		if(holder.stats.getPerk(PERK_PSI_MANIA))
-			force = /obj/item/projectile/kinetic_blast_electro/brutal
+			projectile_type = /obj/item/projectile/kinetic_blast_electro/brutal
 			armor_penetration = ARMOR_PEN_HALF
 
 	START_PROCESSING(SSobj, src)
@@ -344,16 +344,16 @@
 	impact_type = /obj/effect/projectile/tesla/impact
 
 /obj/item/projectile/kinetic_blast_electro/normal
-	damage_types = list(BRUTE = WEAPON_FORCE_NORMAL * 1.5)
+	damage_types = list(BURN = WEAPON_FORCE_NORMAL * 1.5)
 
 /obj/item/projectile/kinetic_blast_electro/dangerous
-	damage_types = list(BRUTE = WEAPON_FORCE_DANGEROUS * 1.5)
+	damage_types = list(BURN = WEAPON_FORCE_DANGEROUS * 1.5)
 
 /obj/item/projectile/kinetic_blast_electro/robust
-	damage_types = list(BRUTE = WEAPON_FORCE_ROBUST * 1.5)
+	damage_types = list(BURN = WEAPON_FORCE_ROBUST * 1.5)
 
 /obj/item/projectile/kinetic_blast_electro/brutal
-	damage_types = list(BRUTE = WEAPON_FORCE_BRUTAL * 1.5)
+	damage_types = list(BURN = WEAPON_FORCE_BRUTAL * 1.5)
 
 /obj/item/device/lighting/toggleable/lantern/psionics
 	name = "lantern"
