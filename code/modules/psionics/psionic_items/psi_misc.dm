@@ -68,3 +68,32 @@
 	psi_blocking = 10
 	price_tag = 150
 
+// The object that make the shield
+/obj/item/shield_projector/line/psionic
+	name = "psionic shield projector"
+	desc = ""
+	line_length = 3
+	always_on = TRUE
+	high_color = "#8000ff"
+	low_color = "#FF0000"
+
+/obj/item/shield_projector/line/psionic/New(loc, var/cog)
+	..()
+	switch(cog)
+		if(40 to 49)
+			line_length = 5
+		if(50 to INFINITY)
+			line_length = 7
+		else
+			line_length = 3 // Mininum size I think we can make without errors
+
+/obj/item/shield_projector/line/psionic/create_shield(newloc, new_dir)
+	var/obj/effect/directional_shield/psionic/S = new(newloc, src)
+	S.dir = new_dir
+	active_shields += S
+
+// The shield itself
+/obj/effect/directional_shield/psionic
+	name = "directional combat shield"
+	desc = "A wide shield, which has the property to block incoming projectiles but allow outgoing projectiles to pass it."
+	density = TRUE // People can't move pass these shields.
