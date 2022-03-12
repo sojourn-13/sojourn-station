@@ -17,48 +17,48 @@ GLOBAL_LIST_INIT(wurm_waves, list(/datum/wurm_wave/dormant,
 
 /datum/wurm_wave/dormant
 	burrow_count = 2
-	burrow_interval = 30 SECONDS
+	burrow_interval = 300 SECONDS
 	wurm_spawn = 2
-	spawn_interval = 24 SECONDS
+	spawn_interval = 120 SECONDS
 	special_probability = 0
 	mineral_multiplier = 1.0
 
 /datum/wurm_wave/negligible
 	burrow_count = 3
-	burrow_interval = 24 SECONDS
+	burrow_interval = 240 SECONDS
 	wurm_spawn = 2
-	spawn_interval = 24 SECONDS
+	spawn_interval = 120 SECONDS
 	special_probability = 4
 	mineral_multiplier = 1.4
 
 /datum/wurm_wave/typical
 	burrow_count = 3
-	burrow_interval = 20 SECONDS
+	burrow_interval = 200 SECONDS
 	wurm_spawn = 3
-	spawn_interval = 18 SECONDS
+	spawn_interval = 90 SECONDS
 	special_probability = 3
 	mineral_multiplier = 1.7
 
 /datum/wurm_wave/substantial
 	burrow_count = 4
-	burrow_interval = 24 SECONDS
+	burrow_interval = 240 SECONDS
 	wurm_spawn = 3
-	spawn_interval = 18 SECONDS
+	spawn_interval = 90 SECONDS
 	special_probability = 3
 	mineral_multiplier = 2
 
 /datum/wurm_wave/major
 	burrow_count = 5
-	burrow_interval = 20 SECONDS
+	burrow_interval = 200 SECONDS
 	wurm_spawn = 4
-	spawn_interval = 14 SECONDS
+	spawn_interval = 70 SECONDS
 	special_probability = 3
 	mineral_multiplier = 2.3
 
 /datum/wurm_wave/abnormal
 	burrow_count = 7
-	burrow_interval = 18 SECONDS
+	burrow_interval = 180 SECONDS
 	wurm_spawn = 4
-	spawn_interval = 12 SECONDS
+	spawn_interval = 60 SECONDS
 	special_probability = 2
 	mineral_multiplier = 3.0
