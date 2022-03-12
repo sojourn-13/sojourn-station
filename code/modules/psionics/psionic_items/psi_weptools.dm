@@ -221,9 +221,8 @@
 /obj/item/gun/kinetic_blaster
 	name = "psionic kinetic blaster"
 	desc = "A psionic-powered kinetic blaster. It has a small sticker addressed to a 'Possum', which says : \"Give this weapon a better description.\""
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "carbine-20"
-	item_state = "gun"
+	icon = 'icons/obj/guns/energy/zapper.dmi'
+	icon_state = "zap"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	fire_sound_text = "laser blast"
 	max_upgrades = 0
@@ -231,6 +230,10 @@
 	var/use_amount = 1 // How many psi-points is used per shot
 	var/mob/living/carbon/holder // The one that prevent the fist from fading
 	var/obj/item/organ/internal/psionic_tumor/PT // The psionic organ of the holder.
+
+/obj/item/gun/kinetic_blaster/New()
+	..()
+	START_PROCESSING(SSobj, src)
 
 /obj/item/gun/kinetic_blaster/consume_next_projectile()
 	if(!ispath(projectile_type)) // Do we actually shoot something?
@@ -295,7 +298,7 @@
 	nodamage = TRUE //Determines if the projectile will skip any damage inflictions
 	taser_effect = TRUE //If set then the projectile will apply it's agony damage using stun_effect_act() to mobs it hits, and other damage will be ignored
 
-/obj/item/projectile/kinetic_blast/cryo/New(cog = 0)
+/obj/item/projectile/kinetic_blast/cryo/New(cog)
 	..()
 	agony = round(clamp(cog/10, 0, 40))
 

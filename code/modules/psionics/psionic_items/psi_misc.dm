@@ -79,13 +79,10 @@
 
 /obj/item/shield_projector/line/psionic/New(loc, var/cog)
 	..()
-	switch(cog)
-		if(40 to 49)
-			line_length = 5
-		if(50 to INFINITY)
-			line_length = 7
-		else
-			line_length = 3 // Mininum size I think we can make without errors
+	if(cog >= 40)
+		line_length = 5
+	else
+		line_length = 3 // Mininum size I think we can make without errors
 
 /obj/item/shield_projector/line/psionic/create_shield(newloc, new_dir)
 	var/obj/effect/directional_shield/psionic/S = new(newloc, src)

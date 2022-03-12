@@ -59,7 +59,8 @@
 	var/timer = 10 SECONDS
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/shield_projector/line/psionic/shield = new(src)
+		var/obj/item/shield_projector/line/psionic/shield = new(src, owner.stats.getStat(STAT_COG))
+		shield.dir = owner.dir
 		owner.visible_message(
 			"[owner] do something weird!",
 			"You do something weird!"
