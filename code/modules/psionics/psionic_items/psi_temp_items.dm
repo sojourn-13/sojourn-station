@@ -220,11 +220,11 @@
 			else
 				force = /obj/item/projectile/kinetic_blast
 
-		projectile_type = force
-
 		if(holder.stats.getPerk(PERK_PSI_MANIA))
-			projectile_type = /obj/item/projectile/kinetic_blast/brutal
+			force = /obj/item/projectile/kinetic_blast/brutal
 			armor_penetration = ARMOR_PEN_HALF
+
+		projectile_type = force
 
 	START_PROCESSING(SSobj, src)
 
@@ -291,11 +291,11 @@
 			else
 				force = /obj/item/projectile/kinetic_blast_electro
 
-		projectile_type = force
-
 		if(holder.stats.getPerk(PERK_PSI_MANIA))
-			projectile_type = /obj/item/projectile/kinetic_blast_electro/brutal
+			force = /obj/item/projectile/kinetic_blast_electro/brutal
 			armor_penetration = ARMOR_PEN_HALF
+
+		projectile_type = force
 
 	START_PROCESSING(SSobj, src)
 
