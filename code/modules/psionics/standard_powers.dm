@@ -155,8 +155,8 @@
 
 /obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster()
 	set category = "Psionic powers"
-	set name = "Kinetic Blaster (0)"
-	set desc = "Gain a psionic-powered kinetic blaster"
+	set name = "Kinetic Orb (0)"
+	set desc = "Expend none of your essence to create a kinetic orb in hand, a ranged weapon that grows in power with your cognition and expends a single psi point per shot."
 	psi_point_cost = 0
 
 	if(pay_power_cost(psi_point_cost))

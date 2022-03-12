@@ -16,6 +16,7 @@
 	price_tag = 0
 	var/stored_power
 
+// Found catalysts
 /obj/item/device/psionic_catalyst/nightmare_mind
 	name = "psionic catalyst: Nightmarish Thoughts"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
@@ -86,44 +87,55 @@
 	Kneel."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/mind_jack
 
-/obj/item/device/psionic_catalyst/kinetic_blaster
-	name = "Kinetic Blaster"
-	desc = ""
-	stored_power = /obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster
 
+// Researched catalysts
 /obj/item/device/psionic_catalyst/cryo_kinetic_blaster
-	name = "Cryo-Kinetic Blaster"
-	desc = ""
+	name = "psionic catalyst: Cryo-Kinetic Orb"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	The cold and the winter are what has seperated the living from the doomed."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/cryo_kinetic_blaster
 
 /obj/item/device/psionic_catalyst/pyro_kinetic_blaster
-	name = "Pyro-Kinetic Blaster"
-	desc = ""
+	name = "psionic catalyst: Pyro-Kinetic Orb"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	Fire often destroys everything it touches, even if we wish it did not."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/pyro_kinetic_blaster
 
 /obj/item/device/psionic_catalyst/electro_kinetic_blaster
-	name = "Electro-Kinetic Blaster"
-	desc = ""
+	name = "psionic catalyst: Electro-Kinetic Orb"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	How shocking."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/electro_kinetic_blaster
 
 /obj/item/device/psionic_catalyst/kinetic_barrier
-	name = "Kinetic Barrier"
-	desc = ""
+	name = "psionic catalyst: Kinetic Barrier"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	Protection of body and mind."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/kinetic_barrier
 
 /obj/item/device/psionic_catalyst/chosen_control
-	name = "Chosen Control"
-	desc = ""
+	name = "psionic catalyst: Chosen Control"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	The universe bends to your will alone and at times, it must be reminded."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/chosen_control
 
 /obj/item/device/psionic_catalyst/detect_thoughts
-	name = "Detect Thoughts"
-	desc = ""
+	name = "psionic catalyst: Locate Mind-Essence"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	We all have some spark."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/detect_thoughts
 
 /obj/item/device/psionic_catalyst/psychoactive_manipulation
-	name = "Psychoactive Manipulation"
-	desc = ""
+	name = "psionic catalyst: Psychoactive Manipulation"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	Are we truly changing anything?"
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/psychoactive_manipulation
 
 /obj/item/device/psionic_catalyst/Initialize()
