@@ -190,6 +190,31 @@
 
 
 // -----------------------------
+//          Xenobio bag
+// -----------------------------
+
+/obj/item/storage/bag/xenobio
+	name = "xenobio bag"
+	desc = "A mini backpack meant for storing everything you would want to have large storage of in xenobio."
+	icon = 'icons/obj/hydroponics_machines.dmi'
+	icon_state = "xenobag"
+	max_storage_space = 50
+	max_w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_NORMAL
+	can_hold = list(/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/food/snacks/monkeycube,
+		/obj/item/slime_extract,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/stack/material/plasma,
+		/obj/item/slime_thermals,
+		/obj/item/slimepotion,
+		/obj/item/slimepotion2,
+		/obj/item/slimes_speed,
+		/obj/item/slimesteroid,
+		/obj/item/slimesteroid2)
+
+
+// -----------------------------
 //        Sheet Snatcher
 // -----------------------------
 // Because it stacks stacks, this doesn't operate normally.
