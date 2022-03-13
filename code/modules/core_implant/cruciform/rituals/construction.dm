@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 10,
-		/obj/item/stack/material/gold = 10,
+		/obj/item/stack/material/gold = 16,
 		/obj/item/stack/cable_coil = 15,
 		/obj/item/stack/material/plasteel = 5,
 		/obj/item/stack/material/biomatter = 30,
@@ -158,6 +158,37 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/book/ritual/cruciform = 1 //Limiting factor
 	)
 	build_time = 20 SECONDS //We dont want to make these in combat
+
+/datum/nt_blueprint/mob/pawm
+	name = "Pawn Bot"
+	build_path = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/pawm
+	materials = list(
+		/obj/item/stack/material/steel = 10,
+		/obj/item/stack/material/plastic = 5,
+		/obj/item/stack/material/silver = 8,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 3,
+		/obj/item/stack/material/biomatter = 15,
+		/obj/item/tool/sword/nt/longsword = 1,
+		/obj/item/tool/sword/nt/shortsword = 1,
+		/obj/item/paper = 1 //Limiting factor
+	)
+	build_time = 1 SECONDS //We do want to mid-comat summan these
+
+/datum/nt_blueprint/mob/bishop
+	name = "Bishop Bot"
+	build_path = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/bishop
+	materials = list(
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 15,
+		/obj/item/stack/material/gold = 8,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 10,
+		/obj/item/stack/material/biomatter = 60,
+		/obj/item/book/ritual/cruciform/priest = 1 //Limiting factor
+	)
+	build_time = 60 SECONDS //These need a lot of prep
+
 
 //For making machinery
 /datum/nt_blueprint/machinery

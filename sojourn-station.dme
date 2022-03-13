@@ -2181,6 +2181,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\robots\build_a_drone\build_a_drone.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\build_a_drone\presets.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\greyson.dm"
+#include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\church.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\custodian.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\friendly.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\roomba.dm"

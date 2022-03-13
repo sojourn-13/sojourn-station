@@ -36,6 +36,7 @@
 	heat_protection = 1
 	var/cleaning = TRUE
 	var/emp_damage = TRUE // Does EMP & Ion weapons cause damage?
+	var/termiation = TRUE
 
 	can_burrow = FALSE
 	colony_friend = FALSE
@@ -106,7 +107,8 @@
 	if(cell_drop)
 		new cell_drop (src.loc)
 		cell_drop = null
-	qdel(src)
+	if(termiation)
+		qdel(src)
 	return
 
 /mob/living/carbon/superior_animal/robot/emp_act(severity)
