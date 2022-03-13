@@ -2400,6 +2400,7 @@
 #include "code\modules\modular_computers\file_system\programs\generic\trade.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\wordprocessor.dm"
 #include "code\modules\modular_computers\file_system\programs\medical\chem_catalog.dm"
+#include "code\modules\modular_computers\file_system\programs\medical\debug_catalog.dm"
 #include "code\modules\modular_computers\file_system\programs\medical\suit_sensors.dm"
 #include "code\modules\modular_computers\file_system\programs\research\ai_restorer.dm"
 #include "code\modules\modular_computers\file_system\programs\research\cyborg_remote.dm"
