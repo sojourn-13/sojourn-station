@@ -151,7 +151,10 @@
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		if(selected_mutation.clone_gene && selected_mutation.active)
 			clone_mutation_pool += selected_mutation
-	return pick(clone_mutation_pool)
+	if(clone_mutation_pool.len)
+		return pick(clone_mutation_pool)
+	else
+		return null
 
 //Randomly toggle random mutations in a holder as active; helps obfuscate unidentified mutations.
 /datum/genetics/genetics_holder/proc/randomizeActivations()

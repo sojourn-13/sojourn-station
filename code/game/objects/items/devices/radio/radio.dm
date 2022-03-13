@@ -540,9 +540,12 @@ var/global/list/default_medbay_channels = list(
 		if (!accept)
 			for (var/ch_name in channels)
 				var/datum/radio_frequency/RF = secure_radio_connections[ch_name]
-				if (RF.frequency==freq && (channels[ch_name]&FREQ_LISTENING))
+				if (RF && RF.frequency==freq && (channels[ch_name]&FREQ_LISTENING))
 					accept = 1
 					break
+				else if(!RF)
+					log_debug("radio.recieve_range(): Channel name found in channels no secure_radio_connection analog set.")
+					log_debug("radio.recieve_range(): ch_name: [ch_name]")
 		if (!accept)
 			return -1
 	return canhear_range
