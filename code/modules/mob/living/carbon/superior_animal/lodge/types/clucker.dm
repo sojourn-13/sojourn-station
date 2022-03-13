@@ -56,19 +56,6 @@
 		if(prob(34)) //A little over one in three, so as not to cuck the Lodge, but not make them OP either
 			START_PROCESSING(SSobj, E)
 
-
-/obj/item/reagent_containers/food/snacks/egg/clucker/amount_grown = 0
-/obj/item/reagent_containers/food/snacks/egg/clucker/Process()
-	if(isturf(loc))
-		amount_grown += rand(1,2)
-		if(amount_grown >= 100)
-			visible_message("[src] hatches with a quiet cracking sound.")
-			new /mob/living/carbon/superior_animal/lodge/chick_clucker(get_turf(src))
-			STOP_PROCESSING(SSobj, src)
-			qdel(src)
-	else
-		STOP_PROCESSING(SSobj, src)
-
 //Baby Clucker
 //Looks nearly the same as a regular chick. Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/chick_clucker
