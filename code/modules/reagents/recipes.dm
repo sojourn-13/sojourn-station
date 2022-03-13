@@ -219,6 +219,14 @@
 		dat["catalyst"] = list()
 		for(var/id in catalysts)
 			dat["catalyst"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = catalysts[id]))
+	if(inhibitors)
+		dat["inhibitors"] = list()
+		for(var/id in inhibitors)
+			dat["inhibitors"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = inhibitors[id]))
+	if(byproducts)
+		dat["byproducts"] = list()
+		for(var/id in byproducts)
+			dat["byproducts"] += list(list("type" = get_reagent_type_by_id(id), "reagent" = get_reagent_name_by_id(id), "units" = byproducts[id]))
 
 	dat["minimum_temperature"] = minimum_temperature
 	if(maximum_temperature != INFINITY)
