@@ -155,25 +155,25 @@
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 				return
 
-/mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
+/mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/living/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
-	if(obey_friends) // Are we only obeying friends?
-		if(speaker in friends) // Is the one talking a friend?
-			if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
-				following = speaker
-				visible_emote("[follow_message]")
-
-			if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
-				following = null
-				visible_emote("[stop_message]")
-	else // We are obeying everyone
+	if(obey_check(speaker)) // Are we only obeying the one talking?
 		if(findtext(message, "Follow") && findtext(message, "[src.name]") && !following && !anchored) // Is he telling us to follow?
 			following = speaker
 			visible_emote("[follow_message]")
-
 		if(findtext(message, "Stop") && findtext(message, "[src.name]") && following) // Else, is he telling us to stop?
 			following = null
 			visible_emote("[stop_message]")
+
+// Check if we obey the person talking.
+/mob/living/carbon/superior_animal/proc/obey_check(var/mob/living/speaker = null)
+	if(!obey_friends) // Are we following anyone who ask?
+		return TRUE // We obey them
+
+	if(speaker in friends) // Is the one talking a friend?
+		return TRUE
+
+	return FALSE
 
 //Putting this here do to no idea were it would fit other then here
 /mob/living/carbon/superior_animal/verb/toggle_AI()
