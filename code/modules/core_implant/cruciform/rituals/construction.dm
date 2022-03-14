@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 /datum/nt_blueprint/mob/rook
 	name = "Rook Golem"
-	build_path = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/rook
+	build_path = /mob/living/carbon/superior_animal/robot/church/rook
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 10,
@@ -160,8 +160,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_time = 20 SECONDS //We dont want to make these in combat
 
 /datum/nt_blueprint/mob/pawm
-	name = "Pawn Bot"
-	build_path = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/pawm
+	name = "Pawn Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/pawm
 	materials = list(
 		/obj/item/stack/material/steel = 10,
 		/obj/item/stack/material/plastic = 5,
@@ -176,8 +176,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_time = 1 SECONDS //We do want to mid-comat summan these
 
 /datum/nt_blueprint/mob/bishop
-	name = "Bishop Bot"
-	build_path = /mob/living/carbon/superior_animal/robot/greyson/synthetic/allied/bishop
+	name = "Bishop Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/bishop
 	materials = list(
 		/obj/item/stack/material/steel = 15,
 		/obj/item/stack/material/plastic = 15,
