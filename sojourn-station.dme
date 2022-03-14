@@ -2946,6 +2946,7 @@
 #include "code\modules\research\xenoarchaeology\machinery\artifact_scanner.dm"
 #include "code\modules\research\xenoarchaeology\machinery\coolant.dm"
 #include "code\modules\research\xenoarchaeology\machinery\geosample_scanner.dm"
+#include "code\modules\research\xenoarchaeology\machinery\psionic_harvester.dm"
 #include "code\modules\research\xenoarchaeology\tools\ano_device_battery.dm"
 #include "code\modules\research\xenoarchaeology\tools\anomaly_suit.dm"
 #include "code\modules\research\xenoarchaeology\tools\gearbelt.dm"

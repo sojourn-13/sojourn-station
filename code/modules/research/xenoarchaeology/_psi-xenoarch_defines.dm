@@ -3,7 +3,7 @@
 
 // Researched Powers
 #define CRYO_BLASTER /obj/item/device/psionic_catalyst/cryo_kinetic_blaster
-#define PYRO_BLASTER /obj/item/device/psionic_catalyst/pryo_kinetic_blaster
+#define PYRO_BLASTER /obj/item/device/psionic_catalyst/pyro_kinetic_blaster
 #define ELECTRO_BLASTER /obj/item/device/psionic_catalyst/electro_kinetic_blaster
 #define KINETIC_BARRIER /obj/item/device/psionic_catalyst/kinetic_barrier
 #define CHOSEN_CONTROL /obj/item/device/psionic_catalyst/chosen_control

@@ -15,10 +15,11 @@
 
 /obj/machinery/psionic_harvester/attack_hand(var/mob/user as mob)
 	current_artifact = check_artifacts()
-	current_artifact?.forceMove(src) // Move the artifact into the machine. the '?.' prevent runtimes
-	ping("Psionic Artifact located. Processing...")
-	processing = TRUE
-	progress = initial(progress) // Reset the progress on the artifact
+	if(current_artifact)
+		current_artifact.forceMove(src) // Move the artifact into the machine. the '?.' prevent runtimes
+		ping("Psionic Artifact located. Processing...")
+		processing = TRUE
+		progress = initial(progress) // Reset the progress on the artifact
 
 // Check around the machine for viable artifacts and return the first viable one.
 /obj/machinery/psionic_harvester/proc/check_artifacts()
@@ -35,13 +36,19 @@
 /obj/machinery/psionic_harvester/Process()
 	if(processing)
 		progress += rand(1, 5)
-		if(!artifact) // If we are processing without an artifact.
+		if(!current_artifact) // If we are processing without an artifact.
 			processing = FALSE
 			ping("No Artifact Detected")
 
-	if(progress >= 100) // We are finished processing the artifact
+	if(progress >= 100 && current_artifact) // We are finished processing the artifact
 		ping("Artifact Processing finished.")
 		processing = FALSE
-		new current_artifact.psi_power(getTurf(src)) // Create the catalyst
+		new current_artifact.psi_power(get_turf(src)) // Create the catalyst
 		qdel(current_artifact) // Delete the artifact
 		current_artifact = null // Just in case the delete went wrong
+		progress = initial(progress)
+
+	update_icon()
+
+/obj/machinery/psionic_harvester/update_icon()
+	icon_state = "[initial(icon_state)][processing ? "_on" : ""]"
