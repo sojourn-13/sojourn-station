@@ -14,7 +14,7 @@
 
 /mob/living/carbon/superior_animal/robot/church/obey_check(var/mob/living/speaker = null)
 	. = ..() // Check for fren.
-	if(speaker?.get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(speaker?.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		return TRUE // We obey everyone with a cruciform
 
 /mob/living/carbon/superior_animal/robot/church/attackby(obj/item/W as obj, mob/user as mob)
