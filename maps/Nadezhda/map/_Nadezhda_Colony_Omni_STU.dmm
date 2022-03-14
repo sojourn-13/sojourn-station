@@ -100273,7 +100273,8 @@
 	id = "medbay exit";
 	name = "Medbay Exit Button";
 	pixel_x = 0;
-	pixel_y = 0
+	pixel_y = 0;
+	blue_ink_tk_blocker = 1
 	},
 /obj/structure/table/glass,
 /obj/machinery/door/blast/regular{

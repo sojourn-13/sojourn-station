@@ -2619,9 +2619,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ib" = (
-/obj/structure/table/rack/shelf,
-/obj/item/storage/bag/produce,
-/obj/item/storage/bag/produce,
+/obj/machinery/reagentgrinder/industrial,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "ic" = (
@@ -3098,6 +3096,8 @@
 /obj/item/seeds/wheatseed,
 /obj/item/seeds/poppyseed,
 /obj/item/seeds/poppyseed,
+/obj/item/storage/bag/produce,
+/obj/item/storage/bag/produce,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_shed_dark)
 "jt" = (
