@@ -1,3 +1,6 @@
+var/const/MAX_CLUCKERS = 10
+var/global/clucker_count = 0
+
 //clucker
 //Basically a mutant chicken that produces feathers, meat, and a single bit of bones if butchered by a hunter. Credit to scar#1579 for the sprite.
 /mob/living/carbon/superior_animal/lodge/clucker
@@ -26,6 +29,11 @@
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
+	clucker_count += 1
+
+/mob/living/carbon/superior_animal/lodge/clucker/death()
+	..()
+	clucker_count -= 1
 
 /mob/living/carbon/superior_animal/lodge/clucker/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
@@ -53,7 +61,7 @@
 		var/obj/item/reagent_containers/food/snacks/egg/clucker/E = new(get_turf(src))
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
-		if(prob(34)) //A little over one in three, so as not to cuck the Lodge, but not make them OP either
+		if(clucker_count < MAX_CLUCKERS && prob(34)) //Statistically, one out of four eggs will be capable of hatching //A little over one in three, so as not to cuck the Lodge, but not make them OP either
 			START_PROCESSING(SSobj, E)
 
 
