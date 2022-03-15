@@ -543,12 +543,14 @@ var/global/list/default_medbay_channels = list(
 				if (RF && RF.frequency==freq && (channels[ch_name]&FREQ_LISTENING))
 					accept = 1
 					break
+				#ifdef JANEDEBUG
 				else if(!RF)
 					log_debug("radio.receive_range(): Channel name found in channels no secure_radio_connection analog set.")
 					log_debug("radio.receive_range(): ch_name: [ch_name]")
 					log_debug("radio.receive_range(): freq: [freq]")
 					log_debug("radio.receive_range(): level: [level]")
 					log_debug("radio.receive_range(): Is ch_name listening?: [channels[ch_name]&FREQ_LISTENING]")
+				#endif
 		if (!accept)
 			return -1
 	return canhear_range
@@ -642,7 +644,6 @@ var/global/list/default_medbay_channels = list(
 					keyslot.loc = T
 					keyslot = null
 
-			recalculateChannels()
 			to_chat(user, "You pop out the encryption key in the radio!")
 
 		else
@@ -658,7 +659,7 @@ var/global/list/default_medbay_channels = list(
 			W.loc = src
 			keyslot = W
 
-		recalculateChannels()
+	recalculateChannels()
 
 	return
 
@@ -760,6 +761,7 @@ var/global/list/default_medbay_channels = list(
 	channels = op
 	for (var/ch_name in op)
 		secure_radio_connections[ch_name] = SSradio.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
+	recalculateChannels()
 	return
 
 /obj/item/device/radio/off
