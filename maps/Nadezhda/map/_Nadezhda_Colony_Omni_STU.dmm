@@ -27245,7 +27245,7 @@
 /area/nadezhda/security/armory)
 "gfK" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
 "gfQ" = (

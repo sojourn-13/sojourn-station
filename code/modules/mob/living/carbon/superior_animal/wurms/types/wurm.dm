@@ -19,14 +19,14 @@
 #define WURM_SPEED_HIGH 3
 
 // Normal types of wurms
-GLOBAL_LIST_INIT(wurms_normal, list(/mob/living/simple_animal/hostile/wurm/iron,
-									/mob/living/simple_animal/hostile/wurm/silver))
+GLOBAL_LIST_INIT(wurms_normal, list(/mob/living/carbon/superior_animal/wurm/iron,
+									/mob/living/carbon/superior_animal/wurm/silver))
 
 // Special types of wurms
-GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmium,
-									/mob/living/simple_animal/hostile/wurm/diamond))
+GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osmium,
+									/mob/living/carbon/superior_animal/wurm/diamond))
 
-/mob/living/simple_animal/hostile/wurm
+/mob/living/carbon/superior_animal/wurm
 	name = "wurm youngling"
 	desc = "A plasma eating wurm capable of firing volatile globs of electric acid if they spot prey. Hated by lonestar miners as many do not know it is there until they are hit by acid. This one is merely a youngling and not nearly as dangerous as an adult."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -42,6 +42,18 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 	destroy_surroundings = TRUE
 
 	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_DWARFISM, MUTATION_NERVOUSNESS, MUTATION_DEAF, MUTATION_IMBECILE)
+
+	contaminant_immunity = TRUE
+	cold_protection = 1
+	heat_protection = 1
+	breath_required_type = 0
+	breath_poison_type = 0
+	min_breath_required_type = 0
+	min_breath_poison_type = 0
+	min_air_pressure = 0 //below this, brute damage is dealt
+	max_air_pressure = 10000 //above this, brute damage is dealt
+	min_bodytemperature = 0 //below this, burn damage is dealt
+	max_bodytemperature = 10000 //above this, burn damage is dealt
 
 	// Armor related variables
 	var/melee = 0
@@ -63,7 +75,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 	//Controller that spawned the wurm
 	var/datum/wurm_controller/controller
 
-/mob/living/simple_animal/hostile/wurm/New(loc, obj/machinery/mining/drill/drill, datum/wurm_controller/parent)
+/mob/living/carbon/superior_animal/wurm/New(loc, obj/machinery/mining/drill/drill, datum/wurm_controller/parent)
 	..()
 	if(parent)
 		controller = parent  // Link wurms with wurm controller
@@ -74,7 +86,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 			target_mob = drill
 			stance = HOSTILE_STANCE_ATTACK
 
-/mob/living/simple_animal/hostile/wurm/death(gibbed, deathmessage = "explodes in a shower of ichor and gore!")
+/mob/living/carbon/superior_animal/wurm/death(gibbed, deathmessage = "explodes in a shower of ichor and gore!")
 
 	if(controller) // Unlink from controller
 		controller.wurm -= src
@@ -90,14 +102,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 	..()
 	new /obj/effect/gibspawner/generic(src.loc)
 
-/mob/living/simple_animal/hostile/wurm/FindTarget()
-	. = ..()
-	if(.)
-		icon_state = "worm"
-		icon_living = "worm"
-		wander = 1
-
-/mob/living/simple_animal/hostile/wurm/getarmor(def_zone, type)
+/mob/living/carbon/superior_animal/wurm/getarmor(def_zone, type)
 	return vars[type]
 
 //////////////////
@@ -105,7 +110,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 //////////////////
 
 //Iron Wurm - ranged, low health
-/mob/living/simple_animal/hostile/wurm/iron
+/mob/living/carbon/superior_animal/wurm/iron
 	name = "worker wurm"
 	desc = "A wurm that does odd-jobs around its colony. Jeez.. even wurms have assistants."
 	icon_state = "worm"
@@ -113,7 +118,6 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 	ranged = 1
 	projectilesound = 'sound/effects/creatures/acid_spit.ogg'
 	projectiletype = /obj/item/projectile/goo
-	minimum_distance = 4
 
 //Health related variables
 	maxHealth = WURM_HEALTH_LOW
@@ -137,7 +141,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 
 
 //Silver Wurm - melee, slow, tanky, low damage
-/mob/living/simple_animal/hostile/wurm/silver
+/mob/living/carbon/superior_animal/wurm/silver
 	name = "miner wurm"
 	desc = "A wurm that has been hardened by the very surface beneath your feet."
 	icon_state = "worm"
@@ -165,7 +169,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 
 
 //Osmium Wurm - melee, fast, med-damage
-/mob/living/simple_animal/hostile/wurm/osmium
+/mob/living/carbon/superior_animal/wurm/osmium
 	name = "warrior wurm"
 	desc = "A larger, scarier wurm for when trouble abrews."
 	icon_state = "worm"
@@ -193,7 +197,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/simple_animal/hostile/wurm/osmi
 
 
 //Diamond Wurm - melee, doesn't give a fuck, high-damage
-/mob/living/simple_animal/hostile/wurm/diamond
+/mob/living/carbon/superior_animal/wurm/diamond
 	name = "wurm crusher"
 	desc = "A huge wurm that specializes in crushing rocks. And heads."
 	icon = 'icons/mob/64x64.dmi'
