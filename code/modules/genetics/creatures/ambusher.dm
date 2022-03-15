@@ -50,7 +50,7 @@
 /mob/living/carbon/superior_animal/ambusher/Life()
 	. = ..()
 	heal_overall_damage(0.1,0.1)
-	if (src.z >= 6)
+	if (src.z >= 4)
 		visible_message(SPAN_WARNING("\red The [src] suddenly collapses, its skin bubbles under the warm sunlight!"))
 		gib()
 		return
