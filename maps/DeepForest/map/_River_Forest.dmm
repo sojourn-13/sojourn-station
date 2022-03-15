@@ -28,28 +28,28 @@
 /obj/item/stack/material/bone,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ag" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ah" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ai" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "aj" = (
 /obj/item/oddity/common/broken_glass,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ak" = (
@@ -65,13 +65,13 @@
 "al" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "am" = (
 /obj/item/oddity/common/broken_glass,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "an" = (
@@ -1701,7 +1701,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "wL" = (
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "wM" = (
@@ -3203,7 +3203,7 @@
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_dark)
 "Nt" = (
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Nx" = (
@@ -4152,7 +4152,7 @@
 /area/nadezhda/outside/forest/river_forest_underground)
 "Zm" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Zo" = (

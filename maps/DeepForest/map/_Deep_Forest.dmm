@@ -10790,7 +10790,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper)
 "Og" = (
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "Oh" = (
@@ -12971,7 +12971,7 @@
 /area/colony/exposedsun/pastgate)
 "Xm" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "Xo" = (

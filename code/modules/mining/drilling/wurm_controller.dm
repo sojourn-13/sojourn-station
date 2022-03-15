@@ -2,7 +2,7 @@
 
 	var/turf/loc  // Location of the wurm_controller
 	var/list/obj/structure/wurm_burrow/burrows = list()  // List of wurm burrows tied to the controller
-	var/list/mob/living/simple_animal/hostile/wurm = list() //List of wurms tied to the controller
+	var/list/mob/living/carbon/superior_animal/wurm = list() //List of wurms tied to the controller
 	var/processing = TRUE
 	var/obj/machinery/mining/drill/DD
 
@@ -100,7 +100,7 @@
 			qdel(BU)
 
 		// Delete wurms
-		for(var/mob/living/simple_animal/hostile/wurm/GO)
+		for(var/mob/living/carbon/superior_animal/wurm/GO)
 			GO.ore = null  // Do not spawn ores
 			GO.death(FALSE, "burrows into the ground.")
 

@@ -8039,7 +8039,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/livingarea)
 "tg" = (
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "th" = (
