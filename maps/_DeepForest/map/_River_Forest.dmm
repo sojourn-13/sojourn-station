@@ -431,6 +431,10 @@
 /obj/item/remains/tajaran,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/river_forest_underground)
+"hk" = (
+/obj/random/traps,
+/turf/simulated/floor/beach/sand/drywater,
+/area/nadezhda/outside/forest/river_forest_light)
 "hu" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
@@ -1503,6 +1507,10 @@
 /obj/item/remains,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
+"uX" = (
+/obj/random/traps,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/river_forest_light)
 "uY" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/fancy/candle_box,
@@ -3749,6 +3757,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
+"UQ" = (
+/obj/random/traps,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/river_forest_light)
 "UT" = (
 /obj/random/flora,
 /turf/simulated/floor/asteroid/grass,
@@ -74635,7 +74647,7 @@ ti
 ti
 sh
 xd
-xd
+CH
 sh
 Xo
 Ss
@@ -75406,7 +75418,7 @@ ti
 ya
 sh
 xd
-CH
+xd
 qI
 Ug
 sh
@@ -75922,7 +75934,7 @@ zi
 DF
 xd
 RE
-ti
+Sa
 ti
 Mb
 Mb
@@ -76432,7 +76444,7 @@ ti
 ti
 ti
 Qo
-CH
+xd
 xd
 xd
 zi
@@ -76945,11 +76957,11 @@ ti
 ti
 ti
 ti
-RE
+hk
 xd
 xd
 RE
-ti
+Sa
 ti
 BN
 Mb
@@ -77713,13 +77725,13 @@ ti
 ti
 ti
 ti
-ti
+Sa
 qy
 xd
 xd
 xd
 RE
-ti
+Sa
 ti
 ti
 BN
@@ -78230,7 +78242,7 @@ xd
 xd
 xd
 xd
-RE
+hk
 ti
 ti
 ti
@@ -78484,7 +78496,7 @@ tB
 RE
 xd
 xd
-CH
+xd
 sh
 sh
 ti
@@ -80016,7 +80028,7 @@ ti
 sh
 Ej
 xd
-xd
+CH
 xd
 xd
 xd
@@ -80274,7 +80286,7 @@ jU
 xd
 xd
 xd
-CH
+xd
 Kf
 tB
 tB
@@ -81298,7 +81310,7 @@ ti
 tB
 CU
 xd
-xd
+CH
 tB
 ti
 ti
@@ -81811,7 +81823,7 @@ tB
 Ih
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -83861,9 +83873,9 @@ ti
 Jq
 Xy
 xd
-xd
-xd
 CH
+xd
+xd
 tB
 ti
 ti
@@ -84375,7 +84387,7 @@ tB
 xd
 rL
 xd
-xd
+CH
 jU
 ti
 ti
@@ -84632,7 +84644,7 @@ xd
 xd
 xd
 xd
-CH
+xd
 sh
 ti
 ti
@@ -84887,7 +84899,7 @@ tB
 xd
 xd
 xd
-xd
+CH
 xd
 jU
 ti
@@ -85144,7 +85156,7 @@ jU
 CH
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -87701,7 +87713,7 @@ tB
 ti
 ti
 CU
-tB
+uX
 xd
 xd
 xd
@@ -88208,7 +88220,7 @@ ti
 sh
 jU
 xd
-xd
+CH
 xd
 xd
 CH
@@ -88216,7 +88228,7 @@ xd
 Jq
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -89233,7 +89245,7 @@ tB
 tB
 VV
 xd
-CH
+xd
 tB
 ti
 ti
@@ -89743,7 +89755,7 @@ ti
 tB
 tB
 CU
-xd
+CH
 VV
 VV
 tB
@@ -90000,7 +90012,7 @@ tB
 tB
 tB
 xd
-CH
+xd
 VV
 tB
 ti
@@ -91023,7 +91035,7 @@ ti
 ti
 ti
 ti
-sh
+UQ
 xd
 xd
 tB
@@ -91283,7 +91295,7 @@ ti
 tB
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -93338,7 +93350,7 @@ lB
 ni
 CU
 xd
-CH
+xd
 xd
 Kf
 ti
@@ -93594,7 +93606,7 @@ lB
 lB
 tB
 xd
-xd
+CH
 xd
 tB
 ti
@@ -94106,7 +94118,7 @@ sh
 sh
 lB
 lB
-tB
+uX
 xd
 xd
 xd
@@ -94621,7 +94633,7 @@ nw
 tB
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -94874,7 +94886,7 @@ sh
 sh
 sh
 sh
-tB
+uX
 xd
 xd
 xd
@@ -95132,7 +95144,7 @@ sh
 sh
 tB
 xd
-CH
+xd
 xd
 tB
 ti
