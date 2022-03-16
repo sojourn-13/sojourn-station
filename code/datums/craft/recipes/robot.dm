@@ -177,3 +177,19 @@
 		list(QUALITY_BOLT_TURNING, 10, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
 	)
+
+// Hydrogen Knight Rig recipe
+/datum/craft_recipe/robotic/hydrogen_knight
+	name = "Hydrogen Knight Rigsuit"
+	result = /obj/item/rig/hydrogen_knight
+	icon_state = "device"
+	steps = list(
+		list(/obj/item/rig, 1, "time" = 20), // Any rig as base
+		list(CRAFT_MATERIAL, 60, MATERIAL_STEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 30, MATERIAL_PLASTEEL, "time" = 60), // 20 Plasteel Sheets so that it is costly as fuck.
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTIC, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 10, "time" = 90),
+		list(QUALITY_SCREW_DRIVING, 10, "time" = 90),
+		list(QUALITY_WELDING, 60, "time" = WORKTIME_EXTREMELY_LONG), // 250 seconds of welding because it is slow.
+		list(/obj/item/hydrogen_fuel_cell, 1, "time" = 20) // The result rig start with the cell, might as well put it there.
+	)
