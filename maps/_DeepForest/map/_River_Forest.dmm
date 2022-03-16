@@ -261,6 +261,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
+"cW" = (
+/obj/item/stack/material/steel/random,
+/turf/simulated/floor/rock/dark,
+/area/nadezhda/outside/forest/river_forest_underground)
 "cY" = (
 /obj/structure/multiz/stairs/active,
 /obj/structure/window/reinforced{
@@ -1913,6 +1917,10 @@
 /obj/item/storage/box/bloodpacks,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
+"yR" = (
+/obj/item/stack/material/steel/random,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/river_forest_underground)
 "yU" = (
 /obj/structure/flora/small/rock2,
 /obj/random/scrap,
@@ -2965,6 +2973,10 @@
 /obj/item/ore/slag,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_light)
+"KZ" = (
+/obj/item/stack/material/wood/random,
+/turf/simulated/floor/rock/dark,
+/area/nadezhda/outside/forest/river_forest_underground)
 "La" = (
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/beach/sand,
@@ -3405,6 +3417,11 @@
 "Qh" = (
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_light)
+"Qj" = (
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/turf/simulated/floor/rock/dark,
+/area/nadezhda/outside/forest/river_forest_underground)
 "Qm" = (
 /obj/structure/invislight,
 /turf/simulated/floor/rock/grey,
@@ -3894,6 +3911,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "Wp" = (
 /obj/random/mob/undergroundmob,
+/obj/item/stack/material/wood/random,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Wt" = (
@@ -19041,7 +19059,7 @@ qa
 qa
 qa
 qa
-FE
+yR
 Kh
 SW
 ZH
@@ -19297,8 +19315,8 @@ ss
 qa
 qa
 qa
-FE
-uh
+yR
+cW
 WA
 cu
 Kh
@@ -19554,10 +19572,10 @@ ss
 qa
 qa
 Np
-uh
+KZ
 Wp
-uh
-FE
+KZ
+yR
 qa
 qa
 qa
@@ -19811,9 +19829,9 @@ ss
 qa
 Np
 Np
-uh
-uh
-FE
+Qj
+cW
+yR
 qa
 qa
 qa
@@ -20069,7 +20087,7 @@ qa
 ZH
 Kh
 Np
-FE
+yR
 qa
 qa
 qa
