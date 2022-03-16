@@ -428,7 +428,7 @@
 
 /obj/item/cell/large/hydrogen/attackby(obj/item/W, mob/user)
 	..()
-	if(istype(W, /obj/item/reagent_containers/syringe))
+	if(istype(W, /obj/item/hydrogen_fuel_cell))
 		var/obj/item/hydrogen_fuel_cell/H = W
 		insert_item(H, user) // Insert the fuel cell into the adapter
 		fuel_cell = H

@@ -8,6 +8,7 @@
 	slowdown = 0 // Lot of stuff used in its construction that justify not having any slowdown
 	offline_slowdown = 1
 	offline_vision_restriction = 1
+	emp_protection = 100 // Osmium plating + Ion Jaunter mean it is pretty much immune to EMPs
 
 	chest_type = /obj/item/clothing/suit/space/rig/hydrogen_knight
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/hydrogen_knight
@@ -37,5 +38,6 @@
 /obj/item/clothing/gloves/rig/hydrogen_knight
 	name = "hydrogen knight gauntlets"
 
-
-
+// Osmium plating + Ion Jaunter mean it is pretty much immune to EMPs
+/obj/item/rig/hydrogen_knight/emp_act(severity_class)
+	return
