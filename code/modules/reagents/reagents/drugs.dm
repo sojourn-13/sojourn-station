@@ -45,6 +45,44 @@
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "spacedrugs")
 	..()
 
+/datum/reagent/drug/lean
+	name = "antihistamine hydrochloride"
+	id = "lean"
+	description = "A weak sleeping agent mixed with carbondated water to make it into a drinkable substaince, but unstable in the blood. Oftin mixed with soda or coffee to get a high."
+	taste_description = "bitter sweetness"
+	taste_mult = 3
+	reagent_state = LIQUID
+	color = "#B33DE2"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE
+	addiction_chance = 0 //its not an addiction they can stop at any time, its a life style!
+	sanity_gain = 1.5
+	illegal = TRUE
+	glass_icon_state = "lean"
+	glass_name = "Suspect Solo Cup"
+	glass_desc = "A suspect looking solo cup of a sleeping agent mixed with soda water to be drinkable."
+
+/datum/reagent/drug/lean/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustToxLoss(2) //a strong toxin when injected
+	..()
+
+/datum/reagent/drug/lean/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.sleeping = max(M.sleeping, 3) //Meant to put you to sleep but can be over powerd by coffee
+	M.drowsyness = max(M.drowsyness, 20)
+	M.hallucination(120, 30)
+	M.druggy = max(M.druggy, 15 * effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 25)
+	if(prob(10 * effect_multiplier) && isturf(M.loc) && !istype(M.loc, /turf/space) && M.canmove && !M.restrained())
+		step(M, pick(cardinal))
+	if(prob(7 * effect_multiplier))
+		M.emote(pick("yawn", "drool"))
+	M.add_chemical_effect(CE_PULSE, -1)
+	if(sanity_gain)
+		var/mob/living/carbon/human/H = M
+		if(istype(H))
+			H.sanity.onDrug(src, effect_multiplier)
+		SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+	..()
 
 /datum/reagent/drug/serotrotium
 	name = "Serotrotium"
