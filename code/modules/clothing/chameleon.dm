@@ -92,6 +92,7 @@
 	/obj/item/clothing/shoes/reinforced,
 	/obj/item/storage/backpack/satchel/neotheology,
 	/obj/item/clothing/gloves/thick,
+	/obj/item/clothing/mask/gas/germanmask,
 	/obj/item/clothing/glasses/sunglasses,
 	/obj/item/gun/energy/laser,
 	/obj/item/device/radio/headset/church)
