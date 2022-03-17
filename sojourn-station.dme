@@ -1591,6 +1591,7 @@
 #include "code\modules\client\preference_setup\general\03_flavor.dm"
 #include "code\modules\client\preference_setup\general\04_equipment.dm"
 #include "code\modules\client\preference_setup\general\06_furry.dm"
+#include "code\modules\client\preference_setup\general\07_stats.dm"
 #include "code\modules\client\preference_setup\global\01_ui.dm"
 #include "code\modules\client\preference_setup\global\02_prefixes.dm"
 #include "code\modules\client\preference_setup\global\03_pai.dm"
