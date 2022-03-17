@@ -159,7 +159,22 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	)
 	build_time = 20 SECONDS //We dont want to make these in combat
 
-/datum/nt_blueprint/mob/pawm
+/datum/nt_blueprint/mob/knight
+	name = "Knight Golem"
+	build_path = /mob/living/carbon/superior_animal/robot/church/knight
+	materials = list(
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 10,
+		/obj/item/stack/material/gold = 10,
+		/obj/item/stack/cable_coil = 15,
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/tool/sword/nt/longsword = 1,
+		/obj/item/book/ritual/cruciform = 1 //Limiting factor
+	)
+	build_time = 20 SECONDS //We dont want to make these in combat
+
+/datum/nt_blueprint/mob/pawn
 	name = "Pawn Golem"
 	build_path = /mob/living/carbon/superior_animal/robot/church/pawm
 	materials = list(
