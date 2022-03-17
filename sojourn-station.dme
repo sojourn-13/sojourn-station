@@ -2182,6 +2182,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\robots\build_a_drone\presets.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\church\church.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\church\types\bishop.dm"
+#include "code\modules\mob\living\carbon\superior_animal\robots\subtype\church\types\knight.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\church\types\pawn.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\church\types\rook.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\greyson.dm"
