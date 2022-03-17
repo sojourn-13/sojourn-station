@@ -603,7 +603,7 @@
 		for(var/organ in target.organs)
 			if (organ in subtypesof(/obj/item/organ/internal/carrion))
 				to_chat(H, SPAN_DANGER("A black terrible evil brushes against your mind suddenly, a horrible monstrous entity who's mere glancing ire is enough to leave you in a breathless cold sweat..."))
-			was_triggired = TRUE
+				was_triggired = TRUE
 
 	if(!was_triggired)
 		to_chat(H, SPAN_NOTICE("There is nothing here. You feel safe."))
