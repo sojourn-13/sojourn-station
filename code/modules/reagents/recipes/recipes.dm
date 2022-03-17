@@ -363,6 +363,13 @@
 	required_reagents = list("mindbreaker" = 1, "acetone" = 1, "inaprovaline" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/lean
+	result = "lean"
+	required_reagents = list("oxycodone" = 1, "chloralhydrate" = 1, "stoxin" = 1, "sodawater" = 1)
+	byproducts= list("redcandyliquor" = 1) //Its called old fastion sleeping agent
+	result_amount = 1
+
+
 /* Centrifuge */
 
 /datum/chemical_reaction/curing
