@@ -60,8 +60,6 @@ var/global/list/default_medbay_channels = list(
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 	var/const/FREQ_LISTENING = 1
 	var/list/internal_channels
-
-/obj/item/device/radio
 	var/datum/radio_frequency/radio_connection
 	var/list/datum/radio_frequency/secure_radio_connections = new
 
@@ -761,7 +759,6 @@ var/global/list/default_medbay_channels = list(
 	channels = op
 	for (var/ch_name in op)
 		secure_radio_connections[ch_name] = SSradio.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
-	recalculateChannels()
 	return
 
 /obj/item/device/radio/off
