@@ -4,8 +4,6 @@
 	desc = "A portable generator for emergency backup power"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "portgen0"
-	var/off_icon = "portgen0"
-	var/on_icon = "portgen1"
 	density = 1
 	anchored = 0
 	use_power = NO_POWER_USE
@@ -425,9 +423,9 @@
 
 /obj/machinery/power/port_gen/pacman/update_icon()
 	if(active)
-		icon_state = "[on_icon]"
+		icon_state = "portgen1"
 	else
-		icon_state = "[off_icon]"
+		icon_state = "portgen0"
 
 /obj/machinery/power/port_gen/pacman/Topic(href, href_list)
 	if(..())
@@ -455,9 +453,7 @@
 /obj/machinery/power/port_gen/pacman/super
 	name = "S.U.P.E.R.P.A.C.M.A.N portable generator"
 	desc = "A power generator that utilizes uranium sheets as fuel. Can run for much longer than the standard PACMAN type generators. Rated for 80 kW max safe output."
-	icon_state = "portgen3"
-	off_icon = "portgen3"
-	on_icon = "portgen3_1"
+	icon_state = "portgen1"
 	sheet_path = /obj/item/stack/material/uranium
 	sheet_name = "Uranium Sheets"
 	time_per_fuel_unit = 576 //same power output, but a 50 sheet stack will last 2 hours at max safe power
@@ -485,8 +481,6 @@
 	name = "M.R.S.P.A.C.M.A.N portable generator"
 	desc = "An advanced power generator that runs on tritium. Rated for 200 kW maximum safe output!"
 	icon_state = "portgen2"
-	off_icon = "portgen2"
-	on_icon = "portgen2_1"
 	sheet_path = /obj/item/stack/material/tritium
 	sheet_name = "Tritium Fuel Sheets"
 
@@ -508,9 +502,7 @@
 /obj/machinery/power/port_gen/pacman/camp
 	name = "C.A.M.P.E.R.P.A.C.M.A.N portable generator"
 	desc = "This pacman got its named form its low power rating of burning wood as fuel, tends to be used well people go out camping. Rated for 20 kW maximum safe output!"
-	icon_state = "portgen3"
-	off_icon = "portgen3"
-	on_icon = "portgen3_1"
+	icon_state = "portgen2"
 	sheet_path = /obj/item/stack/material/wood
 	sheet_name = "Wood Planks Fuel Sheets"
 
@@ -529,8 +521,6 @@
 	name = "M.I.S.S.P.A.C.M.A.N portable generator"
 	desc = "Using a girls best friend. Rated for 200 kW maximum safe output!"
 	icon_state = "portgen2"
-	off_icon = "portgen2"
-	on_icon = "portgen2_1"
 	sheet_path = /obj/item/stack/material/diamond
 	sheet_name = "Diamond Sheet Fuel Sheets"
 
