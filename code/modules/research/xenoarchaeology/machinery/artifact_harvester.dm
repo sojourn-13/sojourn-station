@@ -15,7 +15,7 @@
 	var/last_process = 0
 
 //Upon creation attempt to connect to scan pad.
-/obj/machinery/artifact_harvester/New()
+/obj/machinery/artifact_harvester/Initialize() //This can't be new. Needs to happen after the maps loaded. Occulist Edit
 	..()
 	reconnect_scanner()
 

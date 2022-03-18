@@ -4793,6 +4793,7 @@
 /area/mine/hallway)
 "mf" = (
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/anomaly_container,
 /obj/machinery/door/window/brigdoor/eastright{
 	dir = 2;
 	req_access = list(5)
@@ -9291,6 +9292,7 @@
 /area/mine/lockers)
 "OR" = (
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/anomaly_container,
 /obj/machinery/door/window/brigdoor/eastright{
 	dir = 1;
 	req_access = list(5)
@@ -9395,6 +9397,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/anomaly_container,
 /obj/machinery/door/window/brigdoor/eastright{
 	dir = 2;
 	req_access = list(5)
@@ -9451,6 +9454,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/anomaly_container,
 /obj/machinery/door/window/brigdoor/eastright{
 	req_access = list(5)
 	},
@@ -9561,6 +9565,7 @@
 "Ym" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/anomaly_container,
 /obj/machinery/door/window/brigdoor/eastright{
 	dir = 1;
 	req_access = list(5)
