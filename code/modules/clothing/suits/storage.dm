@@ -85,6 +85,23 @@
 	icon_state = "puffervest"
 	item_state = "puffervest"
 
+/obj/item/clothing/suit/storage/puffer/purple
+	name = "purple puffer jacket"
+	desc = "A comfortable purple puffer vest."
+	icon_state = "puffycoatpurple"
+	item_state = "puffycoatpurple"
+
+/obj/item/clothing/suit/storage/puffer/blue
+	name = "blue puffer jacket"
+	desc = "A comfortable blue puffer vest."
+	icon_state = "puffycoatblue"
+	item_state = "puffycoatblue"
+
+/obj/item/clothing/suit/storage/puffer/red
+	name = "red puffer jacket"
+	desc = "A comfortable red puffer vest."
+	icon_state = "puffycoatred"
+	item_state = "puffycoatred"
 /*Dusters*/
 
 /obj/item/clothing/suit/storage/duster/brown

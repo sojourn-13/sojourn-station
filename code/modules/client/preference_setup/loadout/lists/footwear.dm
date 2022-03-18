@@ -11,6 +11,11 @@
 	slot = slot_shoes
 	sort_category = "Shoes and Footwear"
 
+/datum/gear/shoes/sneakers
+	display_name = "sneaker selection"
+	path = /obj/item/clothing/shoes/sneakers
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/shoes/cowboys
 	display_name = "cowboy boots selection"
 	path = /obj/item/clothing/shoes/cowboy

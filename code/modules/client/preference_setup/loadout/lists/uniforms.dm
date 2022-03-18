@@ -15,6 +15,11 @@
 	path = /obj/item/clothing/under/top
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/hawaiian
+	display_name = "Hawaiian-shirt selection"
+	path = /obj/item/clothing/under/hawaiian
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/uniform/dismas
 	display_name = "highwayman clothes"
 	path = /obj/item/clothing/under/dismas
