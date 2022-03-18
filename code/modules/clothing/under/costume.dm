@@ -208,6 +208,9 @@ obj/item/clothing/under/costume/history/pirate
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		item_state = options[choice]
+		item_state_slots = list(
+			slot_w_uniform = options[choice]
+		)
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
