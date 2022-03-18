@@ -365,7 +365,7 @@
 
 /datum/chemical_reaction/lean
 	result = "lean"
-	required_reagents = list("oxycodone" = 1, "chloralhydrate" = 1, "stoxin" = 1, "sodawater" = 1)
+	required_reagents = list("tramadol" = 1, "chloralhydrate" = 1, "stoxin" = 1, "sodawater" = 1)
 	byproducts= list("redcandyliquor" = 1) //Its called old fastion sleeping agent
 	result_amount = 1
 
