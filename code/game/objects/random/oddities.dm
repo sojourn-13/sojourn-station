@@ -42,6 +42,7 @@
 /obj/random/common_oddities/always_spawn
 	name = "random always spawn common odities"
 	icon_state = "techloot-black"
+	spawn_nothing_percentage = 0
 
 /obj/random/common_oddities/low_chance
 	name = "low chance random common odities"
@@ -108,6 +109,7 @@
 /obj/random/lonestar_oddities
 	name = "lonestar curios"
 	icon_state = "techloot-grey"
+	spawn_nothing_percentage = 0
 
 /obj/random/lonestar_oddities/item_to_spawn()
 	return pickweight(list(
