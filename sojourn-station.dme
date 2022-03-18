@@ -2901,6 +2901,7 @@
 #include "code\modules\research\nodes\illegal.dm"
 #include "code\modules\research\nodes\power.dm"
 #include "code\modules\research\nodes\robotics.dm"
+#include "code\modules\research\xenoarchaeology\anomaly_container.dm"
 #include "code\modules\research\xenoarchaeology\chemistry.dm"
 #include "code\modules\research\xenoarchaeology\geosample.dm"
 #include "code\modules\research\xenoarchaeology\manuals.dm"
