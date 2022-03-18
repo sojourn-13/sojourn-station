@@ -108,9 +108,18 @@
 			else
 				continue
 		if(aspect_noun_or_adjective == "noun")
-			message = pick("This item has [a_or_an] [stat_color][aspect]</span> aspect of [stat_noun]", "Aura of [stat_color][aspect]</span>[stat_noun] pertains to it")
+			message = pick(\
+			"This item has [a_or_an] [stat_color][aspect]</span> aspect of [stat_noun]",\
+			"Aura of [stat_color][aspect]</span> [stat_noun] pertains to it")
 		else if(aspect_noun_or_adjective == "adjective")
-			message = pick("It feels [stat_color][aspect]</span> like [stat_noun]", "It [stat_color][aspect]</span> smells of [stat_noun]", "It [stat_color][aspect]</span> reminds you of [stat_noun]", "It makes you feel [stat_color][aspect]</span> [stat_adjective]", "This feels like it might make you [stat_color][aspect]</span> [stat_adjective]", "[stat_color][aspect]</span> [stat_adjective].")
+			message = pick(\
+			"It feels [stat_color][aspect]</span> like [stat_noun]",\
+			"It [stat_color][aspect]</span> smells of [stat_noun]",\
+			"It [stat_color][aspect]</span> reminds you of [stat_noun]", \
+			"It makes you feel [stat_color][aspect]</span> [stat_adjective]", \
+			"This feels like it might make you [stat_color][aspect]</span> [stat_adjective]", \
+			//"[stat_color][aspect]</span> [stat_adjective]."
+			)
 		if(message)
 			to_chat(user, SPAN_NOTICE(message))
 
