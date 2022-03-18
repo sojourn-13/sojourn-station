@@ -37,28 +37,6 @@
 
 /obj/item/oddity/examine(user)
 	..()
-	if(perk)
-		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>"))
-		if(usr.stats?.getPerk(PERK_STALKER))
-			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
-			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
-	for(var/stat in oddity_stats)
-		var/aspect
-		switch(oddity_stats[stat])
-			if(30 to INFINITY)
-				aspect = "a <span style='color:#cd00ff;'>REALITY-BENDING</span>"
-			if(10 to 30)
-				aspect = "an <span style='color:#d0b050;'>overwhelming</span>"
-			if(6 to 10)
-				aspect = "a <span class='red'>strong</span>"
-			if(3 to 6)
-				aspect = "a <span class='green'>medium</span>"
-			if(1 to 3)
-				aspect = "a <span class='blue'>weak</span>"
-			else
-				continue
-		to_chat(user, SPAN_NOTICE("This item has [aspect] aspect of [stat]"))
-
 
 //Oddities are separated into categories depending on their origin. They are meant to be used both in maints and derelicts, so this is important
 //This is done by subtypes, because this way even densiest code monkey will not able to misuse them
