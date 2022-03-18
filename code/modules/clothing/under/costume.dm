@@ -188,6 +188,31 @@ obj/item/clothing/under/costume/history/pirate
 	icon_state = "mime"
 	item_state = "ba_suit"
 
+/obj/item/clothing/under/costume/job/mime/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["mime default"] = "mime"
+	options["mime skirt"] = "mime_d"
+	options["mime default down"] = "mime_skirt"
+	options["mime skirt down"] = "mime_skirt_d"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your suits's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/costume/job/nurse
 	name = "nurse dress"
 	desc = "A white medical dress worn by a nurse."
