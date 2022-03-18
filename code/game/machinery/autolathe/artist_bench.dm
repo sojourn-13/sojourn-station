@@ -257,13 +257,13 @@
 	else if(full_artwork == "artwork_oddity")
 		var/obj/item/oddity/artwork/O = new(src)
 		var/list/oddity_stats = list(STAT_MEC = rand(0,1), STAT_COG = rand(0,1), STAT_BIO = rand(0,1), STAT_ROB = rand(0,1), STAT_TGH = rand(0,1), STAT_VIG = rand(0,1))//May not be nessecary
-		var/stats_amt = 3
+		var/stats_amt = 2
 		if(ins_used >= 85)//Arbitrary values
-			stats_amt += 3
+			stats_amt += 2
 		if(ins_used >= 70)
-			stats_amt += 3
+			stats_amt += 2
 		if(ins_used >= 55)
-			stats_amt += 3//max = 3*4*2+6 = 30 points, min 3*4+6 = 18
+			stats_amt += 2//max = 2*4*2+6 = 24 points, min 2*4+6 = 14
 		for(var/i in 1 to stats_amt)
 			var/stat = pick(ALL_STATS)
 			oddity_stats[stat] = min(oddity_stats[stat]+rand(1,2))
