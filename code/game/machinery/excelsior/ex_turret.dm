@@ -21,7 +21,7 @@
 	shot_delay = 0.3
 
 /obj/machinery/porta_turret/excelsior/preloaded
-	ammo = 160
+	ammo = ammo_max
 
 /obj/machinery/porta_turret/excelsior/proc/has_power_source_nearby()
 	for (var/a in excelsior_teleporters)
