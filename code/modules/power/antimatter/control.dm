@@ -15,6 +15,7 @@
 	var/update_shield_icons = 0
 	var/stability = 100
 	var/exploding = FALSE
+	var/list/explosion_strength = list(8, 12, 18, 12)
 
 	var/active = FALSE//On or not
 	var/fuel_injection = 2//How much fuel to inject
@@ -44,7 +45,7 @@
 
 /obj/machinery/power/am_control_unit/Process()
 	if(exploding)
-		explosion(get_turf(src),8,12,18,12)
+		explosion(get_turf(src), explosion_strength[1], explosion_strength[2], explosion_strength[3], explosion_strength[4])
 		if(src)
 			qdel(src)
 
