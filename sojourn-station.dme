@@ -3159,6 +3159,7 @@
 #include "maps\_dungeons\deepmaint\deepmaint.dm"
 #include "maps\CEVEris\_Eris_areas.dm"
 #include "maps\CEVEris\_map_data_Eris.dm"
+#include "maps\SpaceFortress\spacefortress.dm"
 #include "maps\submaps\deepmaint_rooms\template.dm"
 #include "maps\submaps\deepmaint_rooms\core\core_rooms.dm"
 #include "maps\submaps\deepmaint_rooms\normal\normal_rooms.dm"

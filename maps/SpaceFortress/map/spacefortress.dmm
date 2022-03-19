@@ -1100,15 +1100,6 @@
 /obj/structure/filingcabinet/filingcabinet,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/outpost/abandoned_fortress)
-"xg" = (
-/obj/machinery/shieldwallgen/excelsior,
-/obj/machinery/shieldwallgen/excelsior,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/outpost/abandoned_fortress)
 "xp" = (
 /obj/machinery/door/airlock/multi_tile{
 	name = "Dorms"
@@ -1266,6 +1257,7 @@
 /area/outpost/abandoned_fortress)
 "Ci" = (
 /obj/machinery/power/am_control_unit{
+	anchored = 1;
 	announce_stability = 0
 	},
 /turf/simulated/floor/tiled/steel/brown_perforated,
@@ -2063,7 +2055,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/outpost/abandoned_fortress)
 "XE" = (
-/obj/item/am_shielding_container,
+/obj/machinery/am_shielding,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/outpost/abandoned_fortress)
 "XH" = (
@@ -12578,7 +12570,7 @@ zb
 eA
 ie
 Qv
-xg
+Qv
 Qv
 ie
 ie
