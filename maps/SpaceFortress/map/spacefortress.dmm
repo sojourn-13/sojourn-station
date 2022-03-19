@@ -296,10 +296,6 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/outpost/abandoned_fortress/powered_lit)
-"gN" = (
-/obj/machinery/autolathe/excelsior,
-/turf/simulated/floor/tiled/derelict,
-/area/outpost/abandoned_fortress/powered_lit)
 "gP" = (
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/outpost/abandoned_fortress/powered_lit)
@@ -957,10 +953,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress/powered_lit)
-"uu" = (
-/obj/machinery/complant_teleporter,
-/turf/simulated/floor/tiled/derelict,
-/area/outpost/abandoned_fortress/powered_lit)
 "uv" = (
 /obj/structure/table/rack/shelf,
 /obj/item/stack/material/steel/full,
@@ -1371,7 +1363,7 @@
 /turf/simulated/mineral,
 /area/outpost/abandoned_fortress/powered_lit)
 "Eg" = (
-/obj/structure/salvageable/server,
+/obj/structure/salvageable/bliss,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/outpost/abandoned_fortress/powered_lit)
 "Ei" = (
@@ -1650,10 +1642,6 @@
 /obj/structure/table/onestar,
 /obj/random/card_carp/pelt,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/outpost/abandoned_fortress/powered_lit)
-"KJ" = (
-/obj/machinery/door/airlock/glass,
-/turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/outpost/abandoned_fortress/powered_lit)
 "La" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -6890,8 +6878,8 @@ Qw
 Qw
 Qw
 eA
-gN
-uu
+Fl
+QC
 ie
 Gb
 Nk
@@ -9200,7 +9188,7 @@ ie
 eA
 gP
 eA
-KJ
+kQ
 Qw
 Qw
 Qw
@@ -11334,7 +11322,7 @@ gP
 gP
 eA
 ie
-Hd
+Zm
 Qw
 Qw
 Qw
@@ -11450,7 +11438,7 @@ Qw
 Qw
 Qw
 Qw
-Hd
+Zm
 ie
 SI
 SI
@@ -11547,7 +11535,7 @@ SI
 SI
 SI
 ie
-Hd
+Zm
 Qw
 Qw
 Qw
@@ -11663,7 +11651,7 @@ Qw
 Qw
 Qw
 Qw
-Hd
+Zm
 ie
 eA
 gP
@@ -12118,11 +12106,11 @@ gP
 gP
 eA
 ie
-Hd
+Zm
 Qw
 Qw
 Qw
-Hd
+Zm
 ie
 SI
 SI
@@ -12219,7 +12207,7 @@ SI
 SI
 SI
 ie
-Hd
+Zm
 Qw
 Qw
 Qw
@@ -12335,7 +12323,7 @@ Qw
 Qw
 Qw
 Qw
-Hd
+Zm
 ie
 eA
 gP
@@ -12790,11 +12778,11 @@ gP
 gP
 eA
 ie
-Hd
+Zm
 Qw
 Qw
 Qw
-Hd
+Zm
 ie
 SI
 SI
@@ -12891,7 +12879,7 @@ SI
 SI
 SI
 ie
-Hd
+Zm
 Qw
 Qw
 Qw
@@ -13007,7 +12995,7 @@ Qw
 Qw
 Qw
 Qw
-Hd
+Zm
 ie
 eA
 gP

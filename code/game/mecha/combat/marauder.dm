@@ -29,6 +29,9 @@
 	desc = "What was once a heavily augmented person is now a walking tank, modeled after a dreadnought combat mech, Warhound Gloria is the pinnacle of excelsior engineering. A \
 	heavily armored and even more heavily equipped bastion for the people's revolution. The modified combat armor appears to be specialized at withstanding electro-magnetic pulses, but \
 	otherwise functions as a standard dreadnought."
+	icon_state = "mauler"
+	initial_icon = "mauler"
+	wreckage = /obj/effect/decal/mecha_wreckage/mauler
 
 /obj/mecha/combat/dreadnought/gloria/emp_act(severity)
 	return
@@ -40,7 +43,6 @@
 		for(ME in equipment)
 			ME.detach(src)
 			qdel(ME)
-	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse(src)

@@ -125,7 +125,7 @@
 	shuttle_area = /area/shuttle/mercshuttle_area
 	current_location = "nav_mercshuttle_homebase"
 	landmark_transition = "nav_mercshuttle_transit"
-	destination_tags = list("nav_mercshuttle_homebase", "nav_mercshuttle_colony", "nav_mercshuttle_forest", "nav_mercshuttle_river") //  "nav_skipjack_spacefortress" was lost
+	destination_tags = list("nav_mercshuttle_homebase", "nav_mercshuttle_colony", "nav_mercshuttle_forest", "nav_mercshuttle_river", "nav_mercshuttle_spacefortress")
 
 /obj/effect/shuttle_landmark/mercshuttle_home
 	name = "Mercenary Shuttle Homebase"
@@ -158,7 +158,7 @@
 	autoset = TRUE
 
 /obj/effect/shuttle_landmark/mercshuttle_space_fortress
-	name = "Space Fortress Dock"
+	name = "Excelsior Fortress Hanger"
 	landmark_tag = "nav_mercshuttle_spacefortress"
 	base_turf = /turf/space
 	autoset = TRUE
