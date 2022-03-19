@@ -1,9 +1,9 @@
 // The Hydrogen Knight rig suit, handmade by Soteria roboticists and Soteria's answer to the Church's Crusader Armor
 /obj/item/rig/hydrogen_knight
 	name = "Hydrogen Knight suit control module"
-	suit_type = "Hydrogen Knight"
+	suit_type = "hydrogen knight"
 	desc = "An armored, knight-like suit designed by Soteria's best roboticists and powered by hydrogen."
-	icon_state = "eva_rig"
+	icon_state = "hydrogen_knight"
 	armor_list = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 100, rad = 100) // Same stats as the Crusader Shield, except the bio and rad protection, for obvious reasons
 	slowdown = 0 // Lot of stuff used in its construction that justify not having any slowdown
 	offline_slowdown = 1
@@ -25,18 +25,18 @@
 	req_one_access = list()
 
 /obj/item/clothing/suit/space/rig/hydrogen_knight
-	name = "hydrogen knight suit"
+	name = "suit"
 	armor_list = list(melee = 65, bullet = 65, energy = 65, bomb = 70, bio = 100, rad = 100) // Same stats as the crusader armor
 
 /obj/item/clothing/head/helmet/space/rig/hydrogen_knight
-	name = "hydrogen knight helm"
+	name = "helmet"
 	armor_list = list(melee = 65, bullet = 65, energy = 65, bomb = 70, bio = 100, rad = 100) // Same stats as the crusader helmet
 
 /obj/item/clothing/shoes/magboots/rig/hydrogen_knight
-	name = "hydrogen knight boots"
+	name = "boots"
 
 /obj/item/clothing/gloves/rig/hydrogen_knight
-	name = "hydrogen knight gauntlets"
+	name = "gauntlets"
 
 // Osmium plating + Ion Jaunter mean it is pretty much immune to EMPs
 /obj/item/rig/hydrogen_knight/emp_act(severity_class)
