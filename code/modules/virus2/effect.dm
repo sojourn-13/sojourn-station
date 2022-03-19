@@ -168,8 +168,8 @@
 			for (var/obj/item/organ/external/E in H.organs)
 				if (E.status & ORGAN_BROKEN && prob(30))
 					E.mend_fracture()
-		var/heal_amt = -5*multiplier
-		mob.apply_damages(heal_amt,heal_amt,heal_amt,heal_amt)
+		var/heal_amt = 5*multiplier
+		mob.heal_overall_damage(heal_amt,heal_amt,heal_amt,heal_amt)
 
 	deactivate(var/mob/living/carbon/mob,var/multiplier)
 		if(ishuman(mob))
