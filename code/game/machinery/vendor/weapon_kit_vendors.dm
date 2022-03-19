@@ -11,6 +11,7 @@
 		/obj/item/storage/box/bs_kit/roe = 3,
 		/obj/item/storage/box/bs_kit/greasegun = 3,
 		/obj/item/storage/box/bs_kit/grizzly = 3,
+		/obj/item/storage/box/bs_kit/bull = 3,
 		/obj/item/storage/box/bs_kit/stallion = 5,
 		/obj/item/storage/box/bs_kit/lamia = 3,
 		/obj/item/storage/box/bs_kit/rex10 = 3,
@@ -30,6 +31,7 @@
 		/obj/item/storage/box/bs_kit/roe = 750,
 		/obj/item/storage/box/bs_kit/greasegun = 750,
 		/obj/item/storage/box/bs_kit/grizzly = 750,
+		/obj/item/storage/box/bs_kit/bull = 750,
 		/obj/item/storage/box/bs_kit/stallion = 750,
 		/obj/item/storage/box/bs_kit/lamia = 750,
 		/obj/item/storage/box/bs_kit/rex10 = 500,
@@ -72,7 +74,8 @@
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Grease Gun Kit" = /obj/item/storage/box/bs_kit/greasegun,
 					"Roe light boltgun Kit" = /obj/item/storage/box/bs_kit/roe,
-					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly)
+					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly,
+					"Rushing Bull Kit" = /obj/item/storage/box/bs_kit/bull)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -89,7 +92,8 @@
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Warthog Omni Kit" = /obj/item/storage/box/bs_kit/rds_omnicarbine,
 					"Roe light boltgun Kit" = /obj/item/storage/box/bs_kit/roe,
-					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly)
+					"Grizzly Kit" = /obj/item/storage/box/bs_kit/grizzly,
+					"Rushing Bull Kit" = /obj/item/storage/box/bs_kit/bull)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

@@ -131,6 +131,19 @@
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/bull
+	name = "\improper Rushing Bull Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a tactical shotgun. While a higher powered weapon by most other issued geared, standard slug are a powerful choice even in this."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/bull_autoshotgun(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/storage/pouch/ammo(src)
+
 // Side-arms Kits
 /obj/item/storage/box/bs_kit/stallion
 	name = "\improper Stallion Secondary Kit"
