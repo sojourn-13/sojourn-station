@@ -75,7 +75,7 @@
 	name = "Excelsior Fortress"
 	icon_state = "yellow"
 	requires_power = FALSE
-	luminosity = 1
+	dynamic_lighting = 0
 
 // Main mining outpost
 /area/outpost/mining_main
