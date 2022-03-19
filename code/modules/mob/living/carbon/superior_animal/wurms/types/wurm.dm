@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	max_air_pressure = 10000 //above this, brute damage is dealt
 	min_bodytemperature = 0 //below this, burn damage is dealt
 	max_bodytemperature = 10000 //above this, burn damage is dealt
-
+	friendly_to_colony = FALSE
 	// Armor related variables
 	var/melee = 0
 	var/bullet = 0
