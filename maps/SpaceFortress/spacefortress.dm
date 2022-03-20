@@ -1,4 +1,4 @@
-#include "map/spacefortress.dmm"
+//#include "map/spacefortress.dmm"
 
 /obj/map_data/spacefortress
 	name = "Excelsior Fortress"
