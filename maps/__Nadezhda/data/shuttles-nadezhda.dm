@@ -125,7 +125,7 @@
 	shuttle_area = /area/shuttle/mercshuttle_area
 	current_location = "nav_mercshuttle_homebase"
 	landmark_transition = "nav_mercshuttle_transit"
-	destination_tags = list("nav_mercshuttle_homebase", "nav_mercshuttle_colony", "nav_mercshuttle_forest", "nav_mercshuttle_river", "nav_mercshuttle_spacefortress")
+	destination_tags = list("nav_mercshuttle_homebase", "nav_mercshuttle_colony", "nav_mercshuttle_forest", "nav_mercshuttle_river")
 
 /obj/effect/shuttle_landmark/mercshuttle_home
 	name = "Mercenary Shuttle Homebase"
