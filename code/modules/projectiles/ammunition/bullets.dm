@@ -294,6 +294,7 @@
 /obj/item/ammo_casing/c10x24
 	desc = "A 10mm x 24 caseless cartidge."
 	caliber = "10x24"
+	icon_state = "caseless"
 	projectile_type = /obj/item/projectile/bullet/c10x24
 	is_caseless = TRUE
 
@@ -360,21 +361,29 @@
 	desc = "A .50 Kurtz bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50
+	icon_state = "lrifle_c_l"
+	spent_icon = "lrifle_c_l-spent"
 
 /obj/item/ammo_casing/kurtz_50/rubber
 	desc = "A .50 Kurtz rubber bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber
+	icon_state = "lrifle_c_r"
+	spent_icon = "lrifle_c_r-spent"
 
 /obj/item/ammo_casing/kurtz_50/practice
 	desc = "A .50 Kurtz practice bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/practice
+	icon_state = "lrifle_c_p"
+	spent_icon = "lrifle_c_p-spent"
 
 /obj/item/ammo_casing/kurtz_50/hv
 	desc = "A .50 Kurtz high-velocity bullet casing."
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/hv
+	icon_state = "lrifle_c_hv"
+	spent_icon = "lrifle_c_hv-spent"
 
 /obj/item/ammo_casing/kurtz_50/lethal
 	desc = "A .50 Kurtz hollow point bullet casing."
@@ -659,6 +668,11 @@
 	reload_delay = 15
 	is_caseless = TRUE
 	w_class = ITEM_SIZE_NORMAL
+
+/obj/item/ammo_casing/rocket/emp
+	name = "PG-7EMP grenade"
+	desc = "A 40mm EMP/Flash warhead designed for the RPG-7 launcher. Has a tubular shape."
+	projectile_type = /obj/item/projectile/bullet/rocket/emp
 
 /obj/item/ammo_casing/a75
 	desc = "A .70 gyrojet casing."
