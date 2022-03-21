@@ -216,7 +216,18 @@
 	var/list/oddity_stats = list(STAT_MEC = 0, STAT_COG = 0, STAT_BIO = 0, STAT_ROB = 0, STAT_TGH = 0, STAT_VIG = 0)
 	var/last_produce = -30 MINUTES
 	var/items_count = 0
-	var/max_count = 5
+/*
+Z:/FloppyDisk/TRILBYMOD: //It had to be done.
+Z:/FloppyDisk/TRILBYMOD: var/max_count = 5
+Z:/FloppyDisk/TRILBYMOD: DEPLOY CUBE NERF
+*/
+	var/max_count = 3
+/*
+Trilby... Did you?
+You tampered with my cube
+You thought it too powerful no doubt. But Please...
+No more of that.
+*/
 	var/cooldown = 30 MINUTES
 
 /obj/item/device/techno_tribalism/New()
