@@ -405,7 +405,7 @@
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
-
+/*
 /datum/reagent/drug/sanguinum/overdose(var/mob/living/carbon/M, var/alien)
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
@@ -419,3 +419,33 @@
 			//var/list/obj/item/organ/external/unluckyPart = pick(bodyParts)
 			//var/datum/wound/internal_bleeding/I = new (15)
 			//unluckyPart.wounds += I
+*/
+/datum/reagent/drug/nosfernium
+	name = "Nosfernium"
+	id = "nosfernium"
+	description = "A chemical for when the body is bleed dry, and if its not will ensure you are left a skeleton."
+	taste_description = "teeth"
+	reagent_state = LIQUID
+	color = "#e06270"
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE/6
+	nerve_system_accumulations = 80
+	addiction_chance = 30
+
+/datum/reagent/drug/nosfernium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 3 * effect_multiplier)
+	M.adjustToxLoss(1.5)
+	M.adjustNutrition(-10)
+	if(prob(10 * effect_multiplier))
+		M.vomit()
+	if(prob(5))
+		spawn
+			M.emote("me", 1, "pukes up blood!")
+		M.drip_blood(20)
+
+/datum/reagent/drug/nosfernium/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
+	M.adjustNutrition(-25)
+
+datum/reagent/drug/sanguinum/overdose(var/mob/living/carbon/M, var/alien)
+	M.adjustBrainLoss(5) // This is meant to be lethal. If you survive this give your doctor a pat on the back.
