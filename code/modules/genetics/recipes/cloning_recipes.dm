@@ -37,13 +37,6 @@
 /datum/genetics/mutation_recipe/irradiation/spider
 	required_on_clone_types = list(/mob/living/carbon/superior_animal/giant_spider)
 
-	//=======================
-//plasma roach 
-/datum/genetics/mutation_recipe/combination/plasmaroach 
-	required_on_clone_types = list(/mob/living/carbon/superior_animal/roach/toxic, /mob/living/carbon/superior_animal/giant_spider/plasma)
-	result_path = MUTATION_PLASMA_ROACH
-//======================================================================
-
 /datum/genetics/mutation_recipe/irradiation/spider/get_result()
 	var/list/random_spider = pick(
 		list("type" = /mob/living/carbon/superior_animal/giant_spider, "name" = "guardian spider"),
