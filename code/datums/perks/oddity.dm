@@ -180,7 +180,7 @@
 
 /datum/perk/oddity/iron_will
 	name = "Will of Iron"
-	desc = "The body is able to subcum to many negitive affects but the mind can simplely ingore them. Getting addicted to things is much harder and you can stomic more chemicals."
+	desc = "The body is able to succumb to many negative affects but the mind can simply ignore them. Getting addicted to things is much harder and you can stomach more chemicals."
 	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
 
 /datum/perk/oddity/iron_will/assign(mob/living/carbon/human/H)
@@ -196,8 +196,8 @@
 	..()
 
 /datum/perk/oddity/mind_of_matter
-	name = "Mind over Matter"
-	desc = "The real world is no match for your pursentance even facing brutal harm to yourself. Your now through will alone able to take more brusing and burn, really any punishment this day has to give."
+	name = "Will to Power"
+	desc = "The mind protects the body by imposing limits to prevent severe harm to the self. With enough focus, you can push yourself past that limit."
 	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
 
 /datum/perk/oddity/mind_of_matter/assign(mob/living/carbon/human/H)
