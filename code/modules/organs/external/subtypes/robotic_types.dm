@@ -296,17 +296,17 @@ obj/item/organ/external/robotic/synthskin/groin
 
 /obj/item/organ/external/robotic/church/groin
 	default_description = /datum/organ_description/groin
-	max_damage = 50 //Same as before
+	max_damage = 200
 
 /obj/item/organ/external/robotic/church/torso
 	name = "\"Absolute\" Torso"
 	default_description = /datum/organ_description/chest
-	max_damage = 50 //Same as before
+	max_damage = 200
 
 /obj/item/organ/external/robotic/church/head
 	name = "\"Absolute\" Head"
 	default_description = /datum/organ_description/head
-	max_damage = 50 //Same as before
+	max_damage = 200
 
 // Excelsior
 /obj/item/organ/external/robotic/excelsior
