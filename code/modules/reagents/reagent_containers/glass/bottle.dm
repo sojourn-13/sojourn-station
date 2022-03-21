@@ -147,6 +147,18 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("tahcacillin" = 60)
 
+/obj/item/reagent_containers/glass/bottle/nosfernium
+	name = "nosfernium bottle"
+	desc = "A small bottle. Contains the blood based chemical nosfernium. Handle with care."
+	icon_state = "bottle"
+	preloaded_reagents = list("nosfernium" = 60)
+
+/obj/item/reagent_containers/glass/bottle/viroputine
+	name = "viroputine bottle"
+	desc = "A horrific replicating chemical. Fruit of questionable virology research."
+	icon_state = "bottle"
+	preloaded_reagents = list("viroputine" = 60)
+
 /obj/item/reagent_containers/glass/bottle/organic
 	name = "resin bottle"
 	desc = "A small bottle made of organic resin with a small bark-like lid."
@@ -195,6 +207,7 @@
 
 /obj/item/reagent_containers/glass/bottle/organic/dermatane
 	preloaded_reagents = list("dermaline" = 30, "kelotane" = 30)
+
 
 // === Used by trade stations
 /obj/item/reagent_containers/glass/bottle/carpotoxin

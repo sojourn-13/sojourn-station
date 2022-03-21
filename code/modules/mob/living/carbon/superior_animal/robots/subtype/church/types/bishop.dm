@@ -1,6 +1,7 @@
 /mob/living/carbon/superior_animal/robot/church/bishop
 	name = "Bishop Golem"
-	desc = "A tall but frail imposing golem that has a rather powerful staff to strike down anything it can target, just make sure to not stand anywae near its gazing view..." //Todo: Have kaz rewrite this and better lore, maybe Greyson AI helped make it?
+	desc = "The Bishop, a golem made by the church and fashioned after the time honored game of chess by Brynn. Frail compared to other church golems, but his plasma infused staff can send out a \
+	devastating and dangerous explosive, making him dangerous for his potential collateral. Use with caution."
 	faction = "neutral"
 	fleshcolor = "#964B00"
 	bloodcolor = "#964B00"

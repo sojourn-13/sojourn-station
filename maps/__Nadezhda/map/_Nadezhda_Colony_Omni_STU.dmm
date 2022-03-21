@@ -22,12 +22,12 @@
 	name = "strange cracks"
 	},
 /obj/random/mob/nightmare/low_chance,
-/turf/simulated/floor/asteroid/dirt/burned,
-/area/colony)
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "aad" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "aae" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/cobweb2{
@@ -8054,7 +8054,7 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "bRJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light_switch{
@@ -8226,7 +8226,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "bTf" = (
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -14486,7 +14486,7 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "dnH" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
@@ -16216,7 +16216,7 @@
 "dJd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dark,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "dJr" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
@@ -26247,7 +26247,7 @@
 /obj/random/material,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "fUH" = (
 /obj/machinery/conveyor/east{
 	dir = 2;
@@ -27245,7 +27245,7 @@
 /area/nadezhda/security/armory)
 "gfK" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony)
 "gfQ" = (
@@ -27456,11 +27456,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
-"ghC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techmaint,
-/area/colony)
 "ghI" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
@@ -30030,7 +30025,7 @@
 /obj/random/closet_maintloot,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "gKI" = (
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 8
@@ -37326,7 +37321,7 @@
 /obj/random/material,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "iwx" = (
 /obj/structure/table/reinforced,
 /obj/item/device/lighting/toggleable/lamp/green,
@@ -37485,7 +37480,7 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dark,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "iyu" = (
 /obj/random/gun_shotgun/low_chance,
 /obj/random/scrap/dense_weighted,
@@ -45754,12 +45749,6 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"kqT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/plating/under,
-/area/colony)
 "kqX" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -48084,10 +48073,6 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
-"kQb" = (
-/obj/structure/boulder,
-/turf/simulated/floor/plating/under,
-/area/colony)
 "kQs" = (
 /obj/machinery/washing_machine,
 /turf/simulated/floor/tiled/white,
@@ -53594,7 +53579,7 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "mbF" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/plating/under,
@@ -61723,7 +61708,7 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dark,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1north)
 "nRL" = (
 /obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -63247,7 +63232,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "oiX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
@@ -69887,11 +69872,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology/xenoflora)
-"pKO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/plating/under,
-/area/colony)
 "pKQ" = (
 /obj/item/device/radio/intercom{
 	dir = 2;
@@ -74432,7 +74412,7 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrocka1,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "qKv" = (
 /obj/machinery/light{
 	dir = 8
@@ -88749,10 +88729,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/colony)
-"tYp" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techmaint,
-/area/colony)
 "tYq" = (
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/techmaint,
@@ -94880,11 +94856,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
-"vll" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/tiled/techmaint,
-/area/colony)
 "vlz" = (
 /obj/machinery/light{
 	dir = 1
@@ -97309,7 +97280,7 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrockb2,
 /turf/simulated/floor/tiled/techmaint,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "vLX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -99320,7 +99291,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "wiT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -103226,7 +103197,7 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrockb2,
 /turf/simulated/floor/tiled/techmaint,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "xcv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -106450,7 +106421,7 @@
 /obj/random/closet_maintloot,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "xMP" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/cable/green{
@@ -107684,7 +107655,7 @@
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
-/area/colony)
+/area/nadezhda/maintenance/undergroundfloor1south)
 "yax" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -117008,8 +116979,8 @@ guy
 guy
 guy
 sFI
-vvS
-kQb
+nke
+vwH
 sFI
 sFI
 sFI
@@ -117210,8 +117181,8 @@ guy
 guy
 guy
 sFI
-kqT
-pKO
+euZ
+vIH
 sFI
 sFI
 sFI
@@ -117413,7 +117384,7 @@ sFI
 sFI
 sFI
 dnD
-vll
+qSu
 sFI
 sFI
 sFI
@@ -118019,7 +117990,7 @@ opi
 jiL
 vwH
 yaw
-vll
+qSu
 sFI
 sFI
 sFI
@@ -118624,7 +118595,7 @@ jqg
 sQd
 guy
 wJt
-ghC
+iPi
 dnD
 sFI
 sFI
@@ -119230,7 +119201,7 @@ wJt
 sFI
 sFI
 sFI
-tYp
+lXe
 oiT
 sFI
 sFI
@@ -120039,7 +120010,7 @@ sFI
 sFI
 sFI
 mbD
-pKO
+vIH
 sFI
 sFI
 sFI
@@ -120240,8 +120211,8 @@ wJt
 sFI
 sFI
 sFI
-tYp
-tYp
+lXe
+lXe
 sFI
 sFI
 sFI
@@ -137493,11 +137464,11 @@ wjj
 qQg
 uOC
 iYe
-hSx
-sFI
-sFI
-sFI
-sFI
+xFF
+rOW
+rOW
+rOW
+rOW
 sFI
 sFI
 sFI
@@ -137695,11 +137666,11 @@ oJG
 iYe
 iYe
 iYe
-hSx
-hSx
-hSx
-hSx
-sFI
+xFF
+xFF
+xFF
+xFF
+rOW
 sFI
 sFI
 sFI
@@ -137900,8 +137871,8 @@ iYe
 iys
 dJd
 iys
-hSx
-sFI
+xFF
+rOW
 sFI
 sFI
 sFI
@@ -138102,8 +138073,8 @@ oJG
 dJd
 aac
 aad
-hSx
-sFI
+xFF
+rOW
 sFI
 sFI
 sFI
@@ -138304,8 +138275,8 @@ iYe
 nRv
 nRv
 nRv
-hSx
-sFI
+xFF
+rOW
 sFI
 sFI
 sFI
@@ -138503,11 +138474,11 @@ oJG
 iYe
 iYe
 iYe
-hSx
-hSx
-hSx
-hSx
-sFI
+xFF
+xFF
+xFF
+xFF
+rOW
 sFI
 sFI
 sFI
@@ -138705,11 +138676,11 @@ wjj
 wjj
 iYe
 iYe
-hSx
-sFI
-sFI
-sFI
-sFI
+xFF
+rOW
+rOW
+rOW
+rOW
 sFI
 sFI
 sFI

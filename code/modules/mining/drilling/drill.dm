@@ -51,6 +51,7 @@
 /obj/machinery/mining/drill/Destroy()
 	for(var/obj/machinery/mining/brace/b in supports)
 		b.disconnect()
+	GLOB.drill_list -= src
 	return ..()
 
 /obj/machinery/mining/drill/Initialize()
@@ -58,6 +59,7 @@
 	var/obj/item/cell/large/high/C = new(src)
 	component_parts += C
 	cell = C
+	GLOB.drill_list += src
 	update_icon()
 
 /obj/machinery/mining/drill/Process()
@@ -323,12 +325,14 @@
 
 /obj/machinery/mining/drill/proc/take_damage(value)
 	health = min(max(health - value, 0), max_health)
-	if(health == 0)
+	if(0 >= health)
 		system_error("critical damage")
-		if(prob(10)) // Some chance that the drill completely blows up
-			var/turf/O = get_turf(src)
-			if(!O) return
+		var/turf/O = get_turf(src)
+		if(O)
 			explosion(O, -1, 1, 4, 10)
+			qdel(src)
+			return
+		else
 			qdel(src)
 
 /obj/machinery/mining/drill/examine(mob/user)

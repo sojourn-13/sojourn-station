@@ -28,28 +28,28 @@
 /obj/item/stack/material/bone,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ag" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ah" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ai" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "aj" = (
 /obj/item/oddity/common/broken_glass,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ak" = (
@@ -65,13 +65,13 @@
 "al" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "am" = (
 /obj/item/oddity/common/broken_glass,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "an" = (
@@ -261,6 +261,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
+"cW" = (
+/obj/item/stack/material/steel/random,
+/turf/simulated/floor/rock/dark,
+/area/nadezhda/outside/forest/river_forest_underground)
 "cY" = (
 /obj/structure/multiz/stairs/active,
 /obj/structure/window/reinforced{
@@ -431,6 +435,10 @@
 /obj/item/remains/tajaran,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/river_forest_underground)
+"hk" = (
+/obj/random/traps,
+/turf/simulated/floor/beach/sand/drywater,
+/area/nadezhda/outside/forest/river_forest_light)
 "hu" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
@@ -1503,6 +1511,10 @@
 /obj/item/remains,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
+"uX" = (
+/obj/random/traps,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/river_forest_light)
 "uY" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/fancy/candle_box,
@@ -1701,7 +1713,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "wL" = (
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "wM" = (
@@ -1905,6 +1917,10 @@
 /obj/item/storage/box/bloodpacks,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
+"yR" = (
+/obj/item/stack/material/steel/random,
+/turf/simulated/floor/rock/grey,
+/area/nadezhda/outside/forest/river_forest_underground)
 "yU" = (
 /obj/structure/flora/small/rock2,
 /obj/random/scrap,
@@ -2957,6 +2973,10 @@
 /obj/item/ore/slag,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_light)
+"KZ" = (
+/obj/item/stack/material/wood/random,
+/turf/simulated/floor/rock/dark,
+/area/nadezhda/outside/forest/river_forest_underground)
 "La" = (
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/beach/sand,
@@ -3203,7 +3223,7 @@
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_dark)
 "Nt" = (
-/mob/living/simple_animal/hostile/wurm/osmium,
+/mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Nx" = (
@@ -3397,6 +3417,11 @@
 "Qh" = (
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_light)
+"Qj" = (
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/turf/simulated/floor/rock/dark,
+/area/nadezhda/outside/forest/river_forest_underground)
 "Qm" = (
 /obj/structure/invislight,
 /turf/simulated/floor/rock/grey,
@@ -3749,6 +3774,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
+"UQ" = (
+/obj/random/traps,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest/river_forest_light)
 "UT" = (
 /obj/random/flora,
 /turf/simulated/floor/asteroid/grass,
@@ -3882,6 +3911,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "Wp" = (
 /obj/random/mob/undergroundmob,
+/obj/item/stack/material/wood/random,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Wt" = (
@@ -4152,7 +4182,7 @@
 /area/nadezhda/outside/forest/river_forest_underground)
 "Zm" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/simple_animal/hostile/wurm,
+/mob/living/carbon/superior_animal/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Zo" = (
@@ -19029,7 +19059,7 @@ qa
 qa
 qa
 qa
-FE
+yR
 Kh
 SW
 ZH
@@ -19285,8 +19315,8 @@ ss
 qa
 qa
 qa
-FE
-uh
+yR
+cW
 WA
 cu
 Kh
@@ -19542,10 +19572,10 @@ ss
 qa
 qa
 Np
-uh
+KZ
 Wp
-uh
-FE
+KZ
+yR
 qa
 qa
 qa
@@ -19799,9 +19829,9 @@ ss
 qa
 Np
 Np
-uh
-uh
-FE
+Qj
+cW
+yR
 qa
 qa
 qa
@@ -20057,7 +20087,7 @@ qa
 ZH
 Kh
 Np
-FE
+yR
 qa
 qa
 qa
@@ -74635,7 +74665,7 @@ ti
 ti
 sh
 xd
-xd
+CH
 sh
 Xo
 Ss
@@ -75406,7 +75436,7 @@ ti
 ya
 sh
 xd
-CH
+xd
 qI
 Ug
 sh
@@ -75922,7 +75952,7 @@ zi
 DF
 xd
 RE
-ti
+Sa
 ti
 Mb
 Mb
@@ -76432,7 +76462,7 @@ ti
 ti
 ti
 Qo
-CH
+xd
 xd
 xd
 zi
@@ -76945,11 +76975,11 @@ ti
 ti
 ti
 ti
-RE
+hk
 xd
 xd
 RE
-ti
+Sa
 ti
 BN
 Mb
@@ -77713,13 +77743,13 @@ ti
 ti
 ti
 ti
-ti
+Sa
 qy
 xd
 xd
 xd
 RE
-ti
+Sa
 ti
 ti
 BN
@@ -78230,7 +78260,7 @@ xd
 xd
 xd
 xd
-RE
+hk
 ti
 ti
 ti
@@ -78484,7 +78514,7 @@ tB
 RE
 xd
 xd
-CH
+xd
 sh
 sh
 ti
@@ -80016,7 +80046,7 @@ ti
 sh
 Ej
 xd
-xd
+CH
 xd
 xd
 xd
@@ -80274,7 +80304,7 @@ jU
 xd
 xd
 xd
-CH
+xd
 Kf
 tB
 tB
@@ -81298,7 +81328,7 @@ ti
 tB
 CU
 xd
-xd
+CH
 tB
 ti
 ti
@@ -81811,7 +81841,7 @@ tB
 Ih
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -83861,9 +83891,9 @@ ti
 Jq
 Xy
 xd
-xd
-xd
 CH
+xd
+xd
 tB
 ti
 ti
@@ -84375,7 +84405,7 @@ tB
 xd
 rL
 xd
-xd
+CH
 jU
 ti
 ti
@@ -84632,7 +84662,7 @@ xd
 xd
 xd
 xd
-CH
+xd
 sh
 ti
 ti
@@ -84887,7 +84917,7 @@ tB
 xd
 xd
 xd
-xd
+CH
 xd
 jU
 ti
@@ -85144,7 +85174,7 @@ jU
 CH
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -87701,7 +87731,7 @@ tB
 ti
 ti
 CU
-tB
+uX
 xd
 xd
 xd
@@ -88208,7 +88238,7 @@ ti
 sh
 jU
 xd
-xd
+CH
 xd
 xd
 CH
@@ -88216,7 +88246,7 @@ xd
 Jq
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -89233,7 +89263,7 @@ tB
 tB
 VV
 xd
-CH
+xd
 tB
 ti
 ti
@@ -89743,7 +89773,7 @@ ti
 tB
 tB
 CU
-xd
+CH
 VV
 VV
 tB
@@ -90000,7 +90030,7 @@ tB
 tB
 tB
 xd
-CH
+xd
 VV
 tB
 ti
@@ -91023,7 +91053,7 @@ ti
 ti
 ti
 ti
-sh
+UQ
 xd
 xd
 tB
@@ -91283,7 +91313,7 @@ ti
 tB
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -93338,7 +93368,7 @@ lB
 ni
 CU
 xd
-CH
+xd
 xd
 Kf
 ti
@@ -93594,7 +93624,7 @@ lB
 lB
 tB
 xd
-xd
+CH
 xd
 tB
 ti
@@ -94106,7 +94136,7 @@ sh
 sh
 lB
 lB
-tB
+uX
 xd
 xd
 xd
@@ -94621,7 +94651,7 @@ nw
 tB
 xd
 xd
-CH
+xd
 tB
 ti
 ti
@@ -94874,7 +94904,7 @@ sh
 sh
 sh
 sh
-tB
+uX
 xd
 xd
 xd
@@ -95132,7 +95162,7 @@ sh
 sh
 tB
 xd
-CH
+xd
 xd
 tB
 ti

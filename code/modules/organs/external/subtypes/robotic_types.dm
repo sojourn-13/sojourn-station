@@ -115,14 +115,17 @@
 /obj/item/organ/external/robotic/technomancer/groin
 	name = "\"Artificer Guild\" Groin"
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/technomancer/torso
 	name = "\"Artificer Guild\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/technomancer/head
 	name = "\"Artificer Guild\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // synthskin
 /obj/item/organ/external/robotic/synthskin
@@ -134,14 +137,17 @@
 obj/item/organ/external/robotic/synthskin/groin
 	name = "Full Body Prosthetic \"Synth-Skin\" Groin"
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/synthskin/torso
 	name = "Full Body Prosthetic \"Synth-Skin\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/synthskin/head
 	name = "Full Body Prosthetic \"Synth-Skin\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // FBPs
 /obj/item/organ/external/robotic/full_body_prosthetic
@@ -150,17 +156,20 @@ obj/item/organ/external/robotic/synthskin/groin
 	force_icon = 'icons/mob/human_races/cyberlimbs/unmarked_1.dmi'
 	model = "fbp"
 
-obj/item/organ/external/robotic/full_body_prosthetic/groin
+/obj/item/organ/external/robotic/full_body_prosthetic/groin
 	name = "Prosthetic Groin"
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/full_body_prosthetic/torso
 	name = "Prosthetic Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/full_body_prosthetic/head
 	name = "Prosthetic Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // Junktech
 /obj/item/organ/external/robotic/junktech
@@ -213,14 +222,17 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/moebius/groin
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/moebius/torso
 	name = "\"Soteria\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/moebius/head
 	name = "\"Soteria\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // Blackshied
 /obj/item/organ/external/robotic/blackshield
@@ -249,14 +261,17 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/blackshield/groin
 	default_description = /datum/organ_description/groin
+	max_damage = 200
 
 /obj/item/organ/external/robotic/blackshield/torso
 	name = "\"Blackshield\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 200
 
 /obj/item/organ/external/robotic/blackshield/head
 	name = "\"Blackshield\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 200
 
 // Church of the Absolute
 /obj/item/organ/external/robotic/church
@@ -281,14 +296,17 @@ obj/item/organ/external/robotic/full_body_prosthetic/groin
 
 /obj/item/organ/external/robotic/church/groin
 	default_description = /datum/organ_description/groin
+	max_damage = 50 //Same as before
 
 /obj/item/organ/external/robotic/church/torso
 	name = "\"Absolute\" Torso"
 	default_description = /datum/organ_description/chest
+	max_damage = 50 //Same as before
 
 /obj/item/organ/external/robotic/church/head
 	name = "\"Absolute\" Head"
 	default_description = /datum/organ_description/head
+	max_damage = 50 //Same as before
 
 // Excelsior
 /obj/item/organ/external/robotic/excelsior

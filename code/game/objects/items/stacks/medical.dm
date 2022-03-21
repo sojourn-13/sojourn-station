@@ -142,6 +142,11 @@
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 8)
 	fancy_icon = TRUE
 
+/obj/item/stack/medical/bruise_pack/blacshield
+	stacktype_alt = /obj/item/stack/medical/bruise_pack
+	icon_state = "bs_brutepack"
+
+
 /obj/item/stack/medical/bruise_pack/update_icon()
 	if(fancy_icon)
 		icon_state = "[initial(icon_state)][amount]"
@@ -262,6 +267,10 @@
 	preloaded_reagents = list("silicon" = 4, "carbon" = 8)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
+
+/obj/item/stack/medical/ointment/blacshield
+	stacktype_alt = /obj/item/stack/medical/ointment
+	icon_state = "bs_ointment"
 
 /obj/item/stack/medical/ointment/update_icon()
 	if(fancy_icon)

@@ -339,9 +339,9 @@
 	alpha = 128
 
 /obj/random/mob/undergroundmob/item_to_spawn()
-	return pickweight(list(/mob/living/simple_animal/hostile/wurm = 20,
-		/mob/living/simple_animal/hostile/wurm/silver = 15,
-		/mob/living/simple_animal/hostile/wurm/osmium = 10,
+	return pickweight(list(/mob/living/carbon/superior_animal/wurm = 20,
+		/mob/living/carbon/superior_animal/wurm/silver = 15,
+		/mob/living/carbon/superior_animal/wurm/osmium = 10,
 		/mob/living/simple_animal/hostile/sargoyle = 20,
 		/mob/living/simple_animal/hostile/helldiver = 10,
 		/obj/random/mob/nightmare = 1

@@ -1,6 +1,7 @@
 /mob/living/carbon/superior_animal/robot/church/pawm
 	name = "Pawn Golem"
-	desc = "A rather well made but still weak golem with two swords ready to duel strike down any thing it can target. Do to its high speed its unable to take much punishment." //Todo: Have kaz rewrite this and better lore, maybe Greyson AI helped make it?
+	desc = "The Pawn, a golem made by the church and fashioned after the time honored game of chess by Brynn. Those who underestimate pawns always lose, being the weakest of church golems, \
+	their twin blades and light armor make them an extremely fast and heavy striker."
 	faction = "neutral"
 	icon_state = "pawn_golem"
 	attacktext = "duel strikes"
@@ -12,8 +13,8 @@
 	meat_amount = 1
 	health = 250
 	maxHealth = 250
-	melee_damage_lower = 60 //Tons of damage but a weak bot, just like a pawn
-	melee_damage_upper = 90
+	melee_damage_lower = 30 //Tons of damage but a weak bot, just like a pawn
+	melee_damage_upper = 40
 	meat_type = /obj/item/stack/material/silver/random
 	drop1 = /obj/item/tool/sword/nt/longsword
 	drop2 = /obj/item/tool/sword/nt/shortsword

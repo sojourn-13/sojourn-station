@@ -363,6 +363,13 @@
 	required_reagents = list("mindbreaker" = 1, "acetone" = 1, "inaprovaline" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/lean
+	result = "lean"
+	required_reagents = list("tramadol" = 1, "chloralhydrate" = 1, "stoxin" = 1, "sodawater" = 1)
+	byproducts= list("redcandyliquor" = 1) //Its called old fastion sleeping agent
+	result_amount = 1
+
+
 /* Centrifuge */
 
 /datum/chemical_reaction/curing
@@ -712,6 +719,23 @@
 	result = "sanguinum"
 	required_reagents = list("bicaridine" = 1, "spaceacillin" = 1, "mercury" = 1)
 	result_amount = 3
+
+/datum/chemical_reaction/nosfernium // yes I'm aware of the cancer that the mix is. Its meant to be annoying for reasons.
+	result = "nosfernium" // reagent/drug
+	required_reagents = list("sanguinum" = 27, "bicaridine" = 34, "milk" = 1, "iron" = 29, "lithium" = 16, "sugar" = 8)
+	catalysts = list("plasma" = 21)
+	result_amount = 1
+	byproducts= list("viroputine" = 1) // reagent/other
+	minimum_temperature = 358
+	maximum_temperature = 373
+
+/datum/chemical_reaction/nosfernium2
+	result = "nosfernium" // reagent/drug
+	required_reagents = list("viroputine" = 1, "nosfernium" = 1, "milk" = 5, "blood" = 5)
+	result_amount = 2
+	byproducts= list("viroputine" = 1) // reagent/other
+	minimum_temperature = 358
+	maximum_temperature = 373
 
 /datum/chemical_reaction/kyphotorin
 	result = "kyphotorin"

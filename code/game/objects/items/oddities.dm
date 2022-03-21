@@ -14,11 +14,12 @@
 
 //You choose what stat can be increased, and a maximum value that will be added to this stat
 //The minimum is defined above. The value of change will be decided by random
-	var/random_stats = TRUE
-	var/list/oddity_stats
+	var/random_stats = TRUE //Do we randomize the stats at all on spawn?
+	var/list/oddity_stats  //This is are stat field form cog to vig and were we put are value
 	var/sanity_value = 1
-	var/datum/perk/oddity/perk
-	var/prob_perk = 10
+	var/datum/perk/oddity/perk //This is so we can link a perk into the oddity
+	var/prob_perk = 40 //how likely it is to role a perk - if prek isnt present, out of 100
+	var/min_stats = 1 //The lowest amount it can give when randomizing
 
 
 /obj/item/oddity/Initialize()
@@ -29,7 +30,7 @@
 	if(oddity_stats)
 		if(random_stats)
 			for(var/stat in oddity_stats)
-				oddity_stats[stat] = rand(1, oddity_stats[stat])
+				oddity_stats[stat] = rand(min_stats, oddity_stats[stat])
 		AddComponent(/datum/component/inspiration, oddity_stats, perk)
 
 /proc/get_oddity_perk()
@@ -37,28 +38,6 @@
 
 /obj/item/oddity/examine(user)
 	..()
-	if(perk)
-		to_chat(user, SPAN_NOTICE("<span style='color:orange'>A strange aura comes from this oddity, it is more than just a curio, its an anomaly...</span>"))
-		if(usr.stats?.getPerk(PERK_STALKER))
-			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
-			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
-	for(var/stat in oddity_stats)
-		var/aspect
-		switch(oddity_stats[stat])
-			if(30 to INFINITY)
-				aspect = "a <span style='color:#cd00ff;'>REALITY-BENDING</span>"
-			if(10 to 30)
-				aspect = "an <span style='color:#d0b050;'>overwhelming</span>"
-			if(6 to 10)
-				aspect = "a <span class='red'>strong</span>"
-			if(3 to 6)
-				aspect = "a <span class='green'>medium</span>"
-			if(1 to 3)
-				aspect = "a <span class='blue'>weak</span>"
-			else
-				continue
-		to_chat(user, SPAN_NOTICE("This item has [aspect] aspect of [stat]"))
-
 
 //Oddities are separated into categories depending on their origin. They are meant to be used both in maints and derelicts, so this is important
 //This is done by subtypes, because this way even densiest code monkey will not able to misuse them
@@ -69,141 +48,156 @@
 	name = "strange blueprint"
 	desc = "There's no telling what this design is supposed to be. Whatever could be built from this likely wouldn't work yet the Greyson Positronic logo near the top makes one wonder."
 	icon_state = "blueprint"
+	prob_perk = 10 //Old blueprints nothing much to manifest on
 	oddity_stats = list(
-		STAT_COG = 5,
-		STAT_MEC = 7,
+		STAT_COG = 3,
+		STAT_MEC = 4
 	)
 
 /obj/item/oddity/common/coin
 	name = "strange coin"
 	desc = "It appears to be more of a collectible than any sort of actual currency. What metal it's made from seems to be a mystery."
 	icon_state = "coin"
+	prob_perk = 50 //The coin is a 50/50 as thats what the mind perceives the odds being
 	oddity_stats = list(
-		STAT_ROB = 5,
-		STAT_TGH = 5,
+		STAT_ROB = 4,
+		STAT_TGH = 4
 	)
 
 /obj/item/oddity/common/photo_landscape
 	name = "alien landscape photo"
 	desc = "There is some ire about the planet in this photograph."
+	prob_perk = 30 //Unknown and alien, leaving a good amount to imagine being their
 	icon_state = "photo_landscape"
 	oddity_stats = list(
-		STAT_COG = 5,
-		STAT_TGH = 5,
+		STAT_COG = 4,
+		STAT_TGH = 4
 	)
 
 /obj/item/oddity/common/photo_coridor
 	name = "surreal maint photo"
 	desc = "The corridor in this photograph looks familiar, though something seems wrong about it; it's as if everything in it was replaced with an exact replica of itself."
 	icon_state = "photo_corridor"
+	prob_perk = 25 //Limited by the grounding of something familiar its hard to imagine newness inside it
 	oddity_stats = list(
-		STAT_MEC = 5,
-		STAT_TGH = 5,
+		STAT_MEC = 4,
+		STAT_TGH = 4
 	)
 
 /obj/item/oddity/common/photo_eyes
 	name = "observer photo"
 	desc = "Just looking at this photo sparks a primal fear in your heart."
 	icon_state = "photo_corridor"
+	prob_perk = 45 //Something deep inside the mind can manifest itself drastically
 	oddity_stats = list(
-		STAT_ROB = 6,
-		STAT_TGH = 6,
-		STAT_VIG = 6,
+		STAT_ROB = 5,
+		STAT_TGH = 5,
+		STAT_VIG = 5
 	)
 
 /obj/item/oddity/common/old_newspaper
 	name = "odd newspaper clipping" //Old old news papers are a good joke
 	desc = "It contains a report on some old and strange phenomenon. Maybe it's lies, maybe it's corporate experiments gone wrong. The date listed on it is impossible, yet it bears the stamp of the Nadezhda."
 	icon_state = "old_newspaper"
+	prob_perk = 10 //Grounded in rality and able to be discarded as yellow journalism
 	oddity_stats = list(
-		STAT_MEC = 4,
-		STAT_COG = 4,
-		STAT_BIO = 4,
+		STAT_MEC = 2,
+		STAT_COG = 2,
+		STAT_BIO = 2
 	)
 
 /obj/item/oddity/common/paper_crumpled
 	name = "turn-out page"
 	desc = "This ALMOST makes sense, it details connections and similarities between groups, yet the nonsensical phrasing makes it seem like one huge conspiracy."
 	icon_state = "paper_crumpled"
+	prob_perk = 5 //Inked manmen dont really make one imagine something new
 	oddity_stats = list(
-		STAT_MEC = 6,
-		STAT_COG = 6,
-		STAT_BIO = 6,
+		STAT_MEC = 3,
+		STAT_COG = 3,
+		STAT_BIO = 3
 	)
 
 /obj/item/oddity/common/broken_glass
 	name = "smashed glass jar"
 	desc = "A broken glass jar, covered in dust and left with a stained rim."
 	icon_state = "broken_glassjar"
+	prob_perk = 35 //Unknown liquids unknown containment allowing for room to speculate without grounding
 	oddity_stats = list(
 		STAT_BIO = 10,
-		STAT_ROB = 5,
+		STAT_ROB = 5
 	)
 
 /obj/item/oddity/common/paper_omega
 	name = "collection of obscure reports"
 	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was Greyson, Soteria, or an independent group."
 	icon_state = "paper_omega"
+	prob_perk = 45 //The skeptical mind of the inker helps keep it grounded but it shows something unable to be shaken out of the mind
 	oddity_stats = list(
-		STAT_MEC = 8,
-		STAT_COG = 8,
-		STAT_BIO = 8,
+		STAT_MEC = 6,
+		STAT_COG = 6,
+		STAT_BIO = 6
 	)
 
 /obj/item/oddity/common/book_eyes
 	name = "observer book"
 	desc = "This book details information on some cybernetic creatures. Who did this? How is this even possible? The illustrations bear uncomfortable likeness to hivemind abominations."
 	icon_state = "book_eyes"
+	prob_perk = 15 //A book of robotic beings well fearing an upraising its paranioa in the puplics mind, only given power by mar qua
 	oddity_stats = list(
-		STAT_ROB = 9,
-		STAT_TGH = 9,
-		STAT_VIG = 9,
+		STAT_ROB = 7,
+		STAT_TGH = 7,
+		STAT_VIG = 7
 	)
 
 /obj/item/oddity/common/book_omega
 	name = "occult book"
 	desc = "Most of the stories in this book seem to be the writings of madmen, but at least the stories are interesting. Some of the phrases are written in Latin, an odd thing in this day and age."
 	icon_state = "book_omega"
+	prob_perk = 15 //old wrighting with the madmans ink allows the mind to go a bit more wild then just a single paper
 	oddity_stats = list(
-		STAT_BIO = 6,
-		STAT_ROB = 6,
-		STAT_VIG = 6,
+		STAT_BIO = 5,
+		STAT_ROB = 5,
+		STAT_VIG = 5
 	)
 
 /obj/item/oddity/common/broken_key
 	name = "broken key"
 	desc = "A yellow or golden key that goes to who knows what. The end bit broken off..."
+	prob_perk = 75 //A key to an unknown item or place, this one gets quite the imagination...
 	icon_state = "broken_key"
 	oddity_stats = list(
-		STAT_COG = 15,
+		STAT_COG = 10
 	)
 
 /obj/item/oddity/common/book_bible
 	name = "old bible"
 	desc = "Oh, how quickly we forgot."
 	icon_state = "book_bible"
+	prob_perk = 5 //Grounded and talked about, hard to think outside the box when given its history and known lore
 	oddity_stats = list(
-		STAT_ROB = 5,
-		STAT_VIG = 5,
+		STAT_ROB = 4,
+		STAT_VIG = 4
 	)
 
 /obj/item/oddity/common/book_log
 	name = "forgotten logs"
 	desc = "A once detailed book containing information on all manner of things, slashes and now ruined pages are whats left..."
 	icon_state = "book_log"
+	prob_perk = 15 //Grounded in the real life and the real planets nature anomliest yes but still has links to the plan
 	oddity_stats = list(
-		STAT_TGH = 8,
-		STAT_ROB = 5,
-		STAT_MEC = 5,
+		STAT_TGH = 7,
+		STAT_ROB = 6,
+		STAT_MEC = 3
 	)
 
 /obj/item/oddity/common/old_money
 	name = "old money"
 	desc = "It's not like the organization that issued this exists anymore."
 	icon_state = "old_money"
+	prob_perk = 5 //Money well having power grants some power
 	oddity_stats = list(
-		STAT_ROB = 4,
-		STAT_TGH = 4,
+		STAT_ROB = 5,
+		STAT_TGH = 2
 	)
 
 /obj/item/oddity/common/healthscanner
@@ -211,38 +205,42 @@
 	desc = "It's broken and stuck on some really strange readings. Was this even human?"
 	icon_state = "healthscanner"
 	item_state = "electronic"
+	prob_perk = 10 //Powerful as unreadable data is its not all that able to be exspanded on
 	oddity_stats = list(
-		STAT_COG = 8,
-		STAT_BIO = 8,
+		STAT_COG = 4,
+		STAT_BIO = 6
 	)
 
 /obj/item/oddity/common/old_pda
 	name = "broken pda"
 	desc = "An old unknown era PDA. These were issued to their employees all throughout the galaxy."
+	prob_perk = 3 //Old pda old phones old things are not all that odd but a small story on what data it could have had, not able to be manifested on
 	icon_state = "old_pda"
 	item_state = "electronic"
 	oddity_stats = list(
-		STAT_COG = 6,
-		STAT_MEC = 6,
+		STAT_COG = 3,
+		STAT_MEC = 6
 	)
 
 /obj/item/oddity/common/towel
 	name = "trustworthy towel"
 	desc = "It's always good to have one with you."
 	icon_state = "towel"
+	prob_perk = 2 //A trinket nothing more
 	oddity_stats = list(
-		STAT_ROB = 6,
-		STAT_TGH = 6,
+		STAT_ROB = 4,
+		STAT_TGH = 4
 	)
 
 /obj/item/oddity/common/teddy
 	name = "teddy bear"
 	desc = "He will be there for you, even in tough times."
 	icon_state = "teddy"
+	prob_perk = 7 //itself is a oddity to think it would be able to protect
 	oddity_stats = list(
 		STAT_ROB = 7,
 		STAT_TGH = 7,
-		STAT_VIG = 7,
+		STAT_VIG = 7
 	)
 
 /obj/item/oddity/common/old_knife
@@ -250,19 +248,19 @@
 	desc = "Is this blood older than you? You can't tell and will never know."
 	icon_state = "old_knife"
 	item_state = "knife"
+	prob_perk = 5 //Only so much you can imagine a knife about
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
 	force = WEAPON_FORCE_DANGEROUS
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	slot_flags = SLOT_BELT
-	sharp = 1
-	edge = 1
+	sharp = TRUE
+	edge = TRUE
 
 	oddity_stats = list(
-		STAT_ROB = 10,
-		STAT_TGH = 10,
-		STAT_VIG = 10,
+		STAT_ROB = 7,
+		STAT_TGH = 7
 	)
 
 /obj/item/oddity/common/rusted_sword
@@ -276,27 +274,29 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	slot_flags = SLOT_BELT
-	sharp = 1
-	edge = 1
+	sharp = TRUE
+	edge = TRUE
 
+	prob_perk = 7 //only so much you can think about a sword
 	oddity_stats = list(
-		STAT_MEC = 10, //What maintance prevents
-		STAT_BIO = 10, //Understanding rot and rust
-		STAT_VIG = 10, //Showings of degrading
+		STAT_MEC = 7, //What maintance prevents
+		STAT_BIO = 7, //Understanding rot and rust
 	)
 
 /obj/item/oddity/common/old_id
 	name = "old id"
 	desc = "There is a story behind this name. Untold and cruel in fate."
 	icon_state = "old_id"
+	prob_perk = 5 //Old thing just some plastic thats hard to read nothing to exspand the mind on
 	oddity_stats = list(
-		STAT_VIG = 9,
+		STAT_VIG = 8
 	)
 
 /obj/item/oddity/techno
 	name = "Unknown technological part"
 	desc = "A technological part made by Artificer Perfection Cube."
 	icon_state = "techno_part1"
+	prob_perk = 25 //Unknown tech unknown parts unknown uses by a cult much to exspand the mind in
 
 /obj/item/oddity/techno/Initialize()
 	icon_state = "techno_part[rand(1,7)]"
@@ -306,27 +306,30 @@
 	name = "old radio"
 	desc = "Close your eyes, bring it closer and listen. You can almost hear it, in the edge of your consciousness. The world is ticking."
 	icon_state = "old_radio"
+	prob_perk = 3 //Russian radio numbers well intresting wouldnt be exspanded on other then thinking idealy
 	oddity_stats = list(
-		STAT_COG = 9,
-		STAT_VIG = 9,
+		STAT_COG = 7,
+		STAT_VIG = 8
 	)
 
 /obj/item/oddity/common/paper_bundle
 	name = "paper bundle"
 	desc = "Somewhere there is a truth, hidden under all of this scrap."
 	icon_state = "paper_bundle"
+	prob_perk = 20 //Data, so much data to grasp straws on
 	oddity_stats = list(
-		STAT_BIO = 6,
-		STAT_ROB = 6,
-		STAT_VIG = 6,
+		STAT_BIO = 4,
+		STAT_ROB = 4,
+		STAT_VIG = 6
 	)
 
 /obj/item/oddity/common/disk
 	name = "broken design disk"
 	desc = "This disk is corrupted and completely unusable. It has a hand-drawn picture of some strange mechanism on it - looking at it for too long makes your head hurt."
 	icon_state = "disc"
+	prob_perk = 60 //Something corrupted and ruined like a design disk must have been tampred by something or someone this is easy to endlessly think about
 	oddity_stats = list(
-		STAT_MEC = 10,
+		STAT_MEC = 10
 	)
 
 /obj/item/oddity/common/redbrick
@@ -336,67 +339,75 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce  = WEAPON_FORCE_BRUTAL
 	oddity_stats = list(
-		STAT_MEC = 8,
-		STAT_TGH = 8,
-		STAT_ROB = 6,
+		STAT_MEC = 4,
+		STAT_TGH = 4,
+		STAT_ROB = 3
 	)
 	hitsound = 'sound/weapons/redbrick.ogg'
 	effective_faction = list("roach") // roach are weak to bricks.
 	damage_mult = 2
+	prob_perk = 0 //Just a brick
+
 
 /obj/item/oddity/common/mirror
 	name = "cracked mirror"
 	desc = "A thousand mirror images stare back at you as you examine the trinket. What if you're the reflection, staring back out at the real world? At the real you?"
 	icon_state = "mirror"
+	prob_perk = 40 //Bad luck to think on
 	oddity_stats = list(
-		STAT_COG = 4,
-		STAT_VIG = 4,
+		STAT_COG = 2,
+		STAT_VIG = 4
 	)
 
 /obj/item/oddity/common/lighter
 	name = "rusted lighter"
 	desc = "This zippo lighter is rusted shut. It smells faintly of sulphur and blood."
 	icon_state = "syndicate_lighter"
+	prob_perk = 10 //hard to manifest on this
 	oddity_stats = list(
-		STAT_TGH = 10,
+		STAT_TGH = 7
 	)
 
 /obj/item/oddity/common/device
 	name = "odd device"
 	desc = "Something about this gadget both disturbs and interests you. Its manufacturer's name has been mostly smudged away, but you can see a strange mechanism as their logo."
 	icon_state = "device"
+	prob_perk = 60 //something unknown does unknown and cant really be used leading to wild speculation
 	oddity_stats = list(
 		STAT_MEC = 8,
-		STAT_COG = 8,
+		STAT_COG = 6
 	)
 
 /obj/item/oddity/common/book_unholy
 	name = "unholy book"
 	desc = "The writings inside entail some strange ritual. Pages have been torn out or smudged to illegibility."
 	icon_state = "book_skull"
+	prob_perk = 80 //Cult around this gives it great power
 	oddity_stats = list(
-		STAT_COG = 7,
-		STAT_MEC = 7,
+		STAT_COG = 3,
+		STAT_MEC = 7
 	)
 
 /obj/item/oddity/common/photo_crime
 	name = "crime scene photo"
 	desc = "It is unclear whether this is a victim of suicide or murder. His face is frozen in a look of agony and terror, and you shudder to think at what his last moments might have been."
 	icon_state = "photo_crime"
+	prob_perk = 30 //The idea of death can manifest something onto any canvus its on
 	oddity_stats = list(
-		STAT_COG = 7,
-		STAT_VIG = 7,
+		STAT_COG = 9,
+		STAT_VIG = 9
 	)
 
 /obj/item/oddity/rare/eldritch_tie
 	name = "Horrifying tie"
 	desc = "A tie no one would be caught dead wearing!"
 	icon_state = "eldritch_tie"
+	min_stats = 10
 	oddity_stats = list(
-		STAT_COG = 6,
-		STAT_TGH = 6,
-		STAT_BIO = 6,
-		STAT_ROB = 6,
+		STAT_COG = 12,
+		STAT_TGH = 12,
+		STAT_BIO = 12,
+		STAT_ROB = 12
 	)
 	price_tag = 2000 //Its a good tie for a collector
 	perk = /datum/perk/sure_step //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
@@ -407,13 +418,14 @@
 	name = "Colony Games Trophy"
 	desc = "A trophy earned during the monthly competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
 	icon_state = "golden_cup"
+	min_stats = 5
 	oddity_stats = list(
-		STAT_ROB = 9,
-		STAT_TGH = 9,
-		STAT_VIG = 9,
-		STAT_BIO = 9,
-		STAT_ROB = 9,
-		STAT_VIG = 9,
+		STAT_ROB = 8,
+		STAT_TGH = 8,
+		STAT_VIG = 8,
+		STAT_BIO = 8,
+		STAT_ROB = 8,
+		STAT_VIG = 8
 	)
 	perk = /datum/perk/oddity/gunslinger
 
@@ -422,6 +434,7 @@
 	desc = "A broken necklace that has a blue crystal as a trinket."
 	icon_state = "broken_necklace"
 	origin_tech = list(TECH_BLUESPACE = 9)
+	min_stats = 7
 	oddity_stats = list(
 		STAT_COG = 9,
 		STAT_VIG = 9,
@@ -434,6 +447,7 @@
 	var/cooldown
 	var/entropy_value = 5
 	var/blink_range = 8
+	prob_perk = 0 //Pure
 
 /obj/item/oddity/broken_necklace/New()
 	..()
@@ -499,6 +513,7 @@
 	desc = "The core and data of all the designs for the Matter Nano-Forge. The craftsmanship being some of the best possible by hand tools alone."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "blackcube"
+	min_stats = 10
 	oddity_stats = list(
 		STAT_COG = 15,
 		STAT_MEC = 15
@@ -586,7 +601,7 @@
 	desc = "A heavy book with details and translations of the Marshal codes."
 	icon_state = "book_code"
 	oddity_stats = list(
-		STAT_VIG = 0
+		STAT_VIG = 6
 	)
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = /datum/perk/codespeak
@@ -596,7 +611,7 @@
 	desc = "A heavy book with details and translations of chemistry and its affects on the body, even has some guides on how to properly use chemicals."
 	icon_state = "instructional_bio"
 	oddity_stats = list(
-		STAT_BIO = 0
+		STAT_BIO = 6
 	)
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = /datum/perk/chemist
@@ -613,7 +628,7 @@
 	desc = "Got it for a good price!"
 	icon_state = "collector_coin"
 	oddity_stats = list(
-		STAT_COG = 3,
+		STAT_COG = 2
 	)
 
 /obj/item/oddity/ls/pamphlet
@@ -621,7 +636,7 @@
 	desc = "A leaflet with all the great reasons you should visit 'Humanity's Cradle'. A keepsake for those wanting overexposed photos of a past life."
 	icon_state = "earth_pamphlet"
 	oddity_stats = list(
-		STAT_TGH = 3,
+		STAT_TGH = 2
 	)
 
 /obj/item/oddity/ls/rod_figure
@@ -632,8 +647,8 @@
 	item_state = "nullrod"
 	w_class = ITEM_SIZE_NORMAL
 	oddity_stats = list(
-		STAT_TGH = 3,
-		STAT_MEC = 3,
+		STAT_TGH = 2,
+		STAT_MEC = 2
 	)
 
 /obj/item/oddity/ls/chess_set
@@ -642,7 +657,7 @@
 	icon_state = "chess_set"
 	w_class = ITEM_SIZE_NORMAL
 	oddity_stats = list(
-		STAT_COG = 6,
+		STAT_COG = 5
 	)
 
 /obj/item/oddity/ls/starscope
@@ -650,8 +665,8 @@
 	desc = "Replica of an ancient, alien device. It was used for sublight, space travel, acting as a 'star compass'."
 	icon_state = "starscope"
 	oddity_stats = list(
-		STAT_COG = 3,
-		STAT_MEC = 6,
+		STAT_COG = 2,
+		STAT_MEC = 5
 	)
 
 /obj/item/oddity/ls/flashdrive
@@ -659,7 +674,7 @@
 	desc = "An outdated, Earther, data storage device. Little more than a technical curiosity, now.	"
 	icon_state = "flashdrive"
 	oddity_stats = list(
-		STAT_MEC = 3,
+		STAT_MEC = 2
 	)
 
 /obj/item/oddity/ls/mutant_tooth
@@ -667,7 +682,7 @@
 	desc = "A Cindarite tooth featuring an uncommon (and very painful) mutation. You can't wait to study it!"
 	icon_state = "mutant_tooth"
 	oddity_stats = list(
-		STAT_BIO = 9,
+		STAT_BIO = 7
 	)
 
 /obj/item/oddity/ls/manual
@@ -675,12 +690,12 @@
 	desc = "A rugged, somewhat poor compilation of notes and pages from a variety of books and manuals. The first few pages feature information ranging from how to make a molotov cocktail to how to hotwire a shuttle."
 	icon_state = "manual"
 	oddity_stats = list(
-		STAT_COG = 3,
-		STAT_MEC = 2,
-		STAT_BIO = 2,
-		STAT_TGH = 2,
-		STAT_VIG = 2,
-		STAT_ROB = 2,
+		STAT_COG = 2,
+		STAT_MEC = 1,
+		STAT_BIO = 1,
+		STAT_TGH = 1,
+		STAT_VIG = 1,
+		STAT_ROB = 1
 	)
 
 /obj/item/oddity/ls/bouquet
@@ -690,7 +705,7 @@
 	item_state = "bouquet"
 	w_class = ITEM_SIZE_NORMAL
 	oddity_stats = list(
-		STAT_TGH = 6,
+		STAT_TGH = 5
 	)
 
 /obj/item/oddity/ls/magazine
@@ -698,8 +713,8 @@
 	desc = "A good, swimming magazine. Nowadays, it's mostly for collection purposes."
 	icon_state = "magazine"
 	oddity_stats = list(
-		STAT_TGH = 3,
-		STAT_BIO = 3,
+		STAT_TGH = 2,
+		STAT_BIO = 2
 	)
 
 /obj/item/oddity/ls/dogtags
@@ -707,8 +722,8 @@
 	desc = "Mementos from the war. Krios has recently begun exporting their surplus."
 	icon_state = "tags"
 	oddity_stats = list(
-		STAT_TGH = 3,
-		STAT_ROB = 3,
+		STAT_TGH = 2,
+		STAT_ROB = 2
 	)
 
 //Lonestar Clothing Oddities
@@ -722,8 +737,8 @@
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	oddity_stats = list(
-		STAT_TGH = 3,
-		STAT_COG = 3,
+		STAT_TGH = 2,
+		STAT_COG = 2
 	)
 
 //Lonestar Weapon Oddities
@@ -746,7 +761,7 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 
 	oddity_stats = list(
-		STAT_ROB = 10,
+		STAT_ROB = 7
 	)
 
 //Lonestar Misc Oddities
@@ -758,7 +773,7 @@
 	icon_state = "newtoncradle"
 	var/on = FALSE
 	oddity_stats = list(
-		STAT_MEC = 6,
+		STAT_MEC = 6
 	)
 
 /obj/item/oddity/ls/newton_odd/AltClick(var/mob/user)
@@ -785,8 +800,8 @@
 	var/openchance = 0.2
 	var/stumped_people = list()
 	oddity_stats = list(
-		STAT_COG = 6,
-		STAT_VIG = 3,
+		STAT_COG = 5,
+		STAT_VIG = 2
 	)
 
 /obj/item/oddity/ls/puzzlebox/attack_self(mob/user as mob)
@@ -808,7 +823,7 @@
 	icon_state = "projector"
 	var/on = FALSE
 	oddity_stats = list(
-		STAT_COG = 10,
+		STAT_COG = 8
 	)
 
 /obj/item/oddity/ls/starprojector/attack_self(mob/user as mob)
@@ -829,8 +844,8 @@
 	var/inert = FALSE
 	var/boom = 1
 	oddity_stats = list(
-		STAT_MEC = 6,
-		STAT_TGH = 3,
+		STAT_MEC = 5,
+		STAT_TGH = 2
 	)
 
 /obj/item/oddity/ls/inertdetonator/attack_self(mob/user as mob)
@@ -854,7 +869,9 @@
 	name = "Opened Puzzlebox" //todo add cool sound; make sure path is correct
 	desc = "The box... it's been opened."
 	icon_state = "puzzlebox_open"
+	prob_perk = 100 //Pandoras box
+	min_stats = 15
 	oddity_stats = list(
-		STAT_COG = 15,
-		STAT_VIG = 15,
+		STAT_COG = 25,
+		STAT_VIG = 25
 	)

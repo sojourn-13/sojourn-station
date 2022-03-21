@@ -303,8 +303,6 @@
 				if(T)
 					keyslot2.loc = T
 					keyslot2 = null
-
-			recalculateChannels()
 			to_chat(user, "You pop out the encryption keys in the headset!")
 
 		else
@@ -326,7 +324,7 @@
 			keyslot2 = W
 
 
-		recalculateChannels()
+	recalculateChannels()
 
 	return
 
