@@ -94,7 +94,7 @@
 	// Disable wave
 	processing = FALSE
 	// Delete controller and all golems after given delay
-	spawn(3 MINUTES)
+	spawn(1 MINUTES)
 		// Delete burrows
 		for(var/obj/structure/wurm_burrow/BU in burrows)
 			qdel(BU)

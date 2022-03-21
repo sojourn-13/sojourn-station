@@ -83,8 +83,20 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	if(drill)
 		DD = drill
 		if(prob(50))
-			target_mob = drill
+			drill_sabo = TRUE
 			stance = HOSTILE_STANCE_ATTACK
+
+		for(var/O in oview(5, src)) // Check our surroundings.
+			if(istype(O, /turf/simulated/mineral)) // Is it a minable turf?
+				var/turf/simulated/mineral/M = O
+				mine(M) // Mine the turf
+				continue
+
+// Mine a tile
+/mob/living/carbon/superior_animal/wurm/proc/mine(var/turf/simulated/mineral/M)
+	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
+	M.GetDrilled() // Mine the turf
+	return TRUE
 
 /mob/living/carbon/superior_animal/wurm/death(gibbed, deathmessage = "explodes in a shower of ichor and gore!")
 
