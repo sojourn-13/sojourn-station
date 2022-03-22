@@ -2,7 +2,7 @@
 	name = "tiberium golem"
 	desc = "A weird creature made of tiberium"
 	icon = 'icons/obj/tiberium.dmi'
-	icon_state = "golem_tiberium"
+	icon_state = "golem_tiberium" // Sprite from Eris, I don't know who made them. -R4d6
 	faction = "tiberium"
 	attacktext = "smashed"
 	breath_required_type = 0 // Doesn't need to breath, in a space suit
@@ -10,8 +10,8 @@
 	min_air_pressure = 0 // Doesn't need pressure
 	move_to_delay = 4
 	turns_per_move = 5
-	light_range = 3
-	light_color = COLOR_LIGHTING_GREEN_DARK
+	light_range = 2
+	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
 	armor = list(melee = 30, bullet = 20, energy = 35, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered

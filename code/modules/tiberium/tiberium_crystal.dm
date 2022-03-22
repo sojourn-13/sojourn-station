@@ -5,6 +5,8 @@
 	icon_state = "tiberium_crystal"
 	anchored = TRUE
 	density = FALSE // We can walk through them
+	light_range = 3 // Glow in the dark
+	light_color = COLOR_LIGHTING_GREEN_BRIGHT
 
 	var/growth // the growth level of the crystal. The higher it is, the older the crystal is.
 	var/max_growth = GROWTH_HUGE // Maximum growth level, in case we want to do stuff relative to size
@@ -49,18 +51,8 @@
 	if(user.a_intent == I_HELP && user.Adjacent(src) && I.has_quality(QUALITY_EXCAVATION))
 		src.visible_message(SPAN_NOTICE("[user] starts excavating crystals from [src]."), SPAN_NOTICE("You start excavating crystal from [src]."))
 		if(do_after(user, WORKTIME_SLOW, src))
-			switch(growth)
-				if(GROWTH_SEED)
-					new /obj/item/stack/material/tiberium/one(get_turf(src))
-				if(GROWTH_SMALL)
-					new /obj/item/stack/material/tiberium/two(get_turf(src))
-				if(GROWTH_MEDIUM)
-					new /obj/item/stack/material/tiberium/three(get_turf(src))
-				if(GROWTH_BIG)
-					new /obj/item/stack/material/tiberium/four(get_turf(src))
-				if(GROWTH_HUGE)
-					new /obj/item/stack/material/tiberium/five(get_turf(src))
-
+			var/obj/item/stack/material/tiberium/T = new(get_turf(src))
+			T.amount = growth // Drop more crystal the further along we are
 			src.visible_message(SPAN_NOTICE("[user] excavates a crystal from [src]."), SPAN_NOTICE("You excavate a crystal from [src]."))
 			qdel(src)
 		else
