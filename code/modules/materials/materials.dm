@@ -818,3 +818,4 @@ var/list/name_to_material
 	icon_colour = "#007A00"
 	sheet_singular_name = "crystal"
 	sheet_plural_name = "crystals"
+	stack_origin_tech = list(TECH_MATERIAL = 9)
