@@ -97,6 +97,7 @@
 
 /datum/craft_recipe/tiberium_seed
 	name = "tiberium growth"
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	result = /obj/structure/tiberium_crystal
 	icon_state = "device"
 	steps = list(
