@@ -5,6 +5,7 @@
 	item_state = "labcoat" //Is this even used for anything?
 	icon_open = "labcoat_open"
 	icon_closed = "labcoat"
+	icon_drape = "labcoat_drip"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor_list = list(
