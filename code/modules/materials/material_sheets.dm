@@ -429,3 +429,30 @@
 
 /obj/item/stack/material/compressed_matter/full
 	amount = 120
+
+/obj/item/stack/material/tiberium
+	name = "tiberium crystals"
+	desc = "A weird green crystal that seems to grow on its own."
+	singular_name = "tiberium crystal"
+	icon_state = "diamond" // Placeholder sprite
+	default_type = MATERIAL_TIBERIUM
+	novariants = TRUE
+	price_tag = 250 // Tiberium mining is extremly dangerous and very profitable
+
+/obj/item/stack/material/tiberium/one
+	amount = 1
+
+/obj/item/stack/material/tiberium/two
+	amount = 2
+
+/obj/item/stack/material/tiberium/three
+	amount = 3
+
+/obj/item/stack/material/tiberium/four
+	amount = 4
+
+/obj/item/stack/material/tiberium/five
+	amount = 5
+
+/obj/item/stack/material/tiberium/full
+	amount = 120
