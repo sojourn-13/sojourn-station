@@ -94,3 +94,11 @@
 		list(/obj/item/clothing/under, 1, "time" = 25),
 		list(QUALITY_CUTTING, 10, "time" = 30)
 	)
+
+/datum/craft_recipe/tiberium_seed
+	name = "tiberium growth"
+	result = /obj/structure/tiberium_crystal
+	icon_state = "device"
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_TIBERIUM, "time" = 25)
+	)
