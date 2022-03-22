@@ -3074,6 +3074,7 @@
 #include "code\modules\tiberium\_defines.dm"
 #include "code\modules\tiberium\tiberium_crystal.dm"
 #include "code\modules\tiberium\tiberium_processor.dm"
+#include "code\modules\tiberium\tiberium_spire.dm"
 #include "code\modules\tips_and_tricks\gameplay.dm"
 #include "code\modules\tips_and_tricks\jobs.dm"
 #include "code\modules\tips_and_tricks\mobs.dm"

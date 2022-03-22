@@ -27,7 +27,7 @@
 
 	// If the crystal was mapped in, spawn at full growth, else spawn as a seed.
 	if(mapload)
-		growth = GROWTH_HUGE
+		growth = max_growth
 	else
 		growth = GROWTH_SEED
 	golem_timer = 0 // Reset the timer
@@ -94,6 +94,8 @@
 
 		var/valid_crystal = 0
 		for(var/obj/structure/tiberium_crystal/TC in range(golem_range, src))
+			if(istype(TC, istype(TC, /obj/structure/tiberium_crystal/spire))
+				continue // Ignore the tiberium spire if there's one
 			if(TC.golem)
 				return FALSE // Don't spawn a golem if any nearby growth spawned one, to prevent a fuckton of golems from spawning
 			if(TC.growth >= max_growth)
