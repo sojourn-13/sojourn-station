@@ -26,10 +26,11 @@
 	START_PROCESSING(SSobj, src)
 
 	// If the crystal was mapped in, spawn at full growth, else spawn as a seed.
-	if(mapload)
-		growth = max_growth
-	else
-		growth = GROWTH_SEED
+	if(!growth) // As long as we didn't manually set a growth level
+		if(mapload)
+			growth = max_growth
+		else
+			growth = GROWTH_SEED
 	golem_timer = 0 // Reset the timer
 	update_icon()
 
@@ -102,6 +103,6 @@
 				valid_crystal++
 
 		if(valid_crystal >= golem_threshold)
-			golem = new golem(get_turf(src)) // Spawn a golem
+			golem = new(get_turf(src)) // Spawn a golem
 			return TRUE
 		return FALSE
