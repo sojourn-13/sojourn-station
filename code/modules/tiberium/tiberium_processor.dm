@@ -2,8 +2,8 @@
 /obj/machinery/tiberium_processor
 	name = "tiberium processor"
 	desc = "A machine to convert tiberium crystals into other raw materials"
-	icon = 'icons/obj/machines/autolathe.dmi'
-	icon_state = "greyson"
+	icon = 'icons/obj/machines/grinder.dmi'
+	icon_state = "tiberium_processor"
 	density = TRUE
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
