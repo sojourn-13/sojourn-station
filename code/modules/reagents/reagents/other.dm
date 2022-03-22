@@ -364,7 +364,7 @@
 
 /datum/reagent/other/space_cleaner/touch_obj(obj/O)
 	O.clean_blood()
-	O.color = "white"
+	//O.color = "white" Why would we color every door and item white?
 
 /datum/reagent/other/space_cleaner/touch_turf(turf/T)
 	if(volume >= 1)
@@ -374,12 +374,12 @@
 				S.wet_floor(1, TRUE)
 		T.clean_blood()
 		for(var/obj/effect/O in T)
-			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay))
+			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
 				qdel(O)
 		for(var/mob/living/carbon/slime/M in T)
 			M.adjustToxLoss(rand(5, 10))
 
-	T.color = "white"
+	//T.color = "white" First the doors now every floor piece?
 	return TRUE
 
 /datum/reagent/other/space_cleaner/affect_touch(mob/living/carbon/M, alien, effect_multiplier)

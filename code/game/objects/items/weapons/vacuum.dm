@@ -48,7 +48,7 @@
 
 /obj/item/holyvacuum/afterattack(atom/A, mob/user, proximity)
 	if(!proximity) return
-	if(istype(A, /turf) || istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
+	if(istype(A, /turf) || istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay) && !istype(A, /obj/effect/overlay/water))
 		if(amount >= max_amount)
 			to_chat(user, SPAN_NOTICE("The storage tank of the [src] is full!"))
 			return
