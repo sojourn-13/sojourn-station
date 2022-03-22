@@ -104,5 +104,6 @@
 
 		if(valid_crystal >= golem_threshold)
 			golem = new(get_turf(src)) // Spawn a golem
+			golem.node = src
 			return TRUE
 		return FALSE

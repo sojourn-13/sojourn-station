@@ -38,8 +38,11 @@
 	friendly_to_colony = FALSE
 	known_languages = list(LANGUAGE_COMMON)
 
+	var/obj/structure/tiberium_crystal/node
+
 
 /mob/living/carbon/superior_animal/tiberium_golem/death()
 	..()
 	new /obj/item/stack/material/tiberium(get_turf(src))
+	node?.golem = null // Remove the golem from the node since for some reason it doesn't do it with qdel()
 	qdel(src)

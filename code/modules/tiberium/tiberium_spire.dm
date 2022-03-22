@@ -29,8 +29,12 @@
 
 // Spires always spawn a golem each
 /obj/structure/tiberium_crystal/spire/handle_golems()
-	if(!golem)
-		golem = new(get_turf(src)) // Spawn a golem
-		return TRUE
-	else
-		return FALSE
+	if(++golem_timer >= initial(golem_timer))
+		golem_timer = 0
+
+		if(!golem)
+			golem = new(get_turf(src)) // Spawn a golem
+			golem.node = src
+			return TRUE
+		else
+			return FALSE
