@@ -98,7 +98,7 @@
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		H.forcesay(hit_appends)
-
+		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
 
 /obj/item/clothing/gloves/stungloves/emp_act(severity)
 	if(cell)

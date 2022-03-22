@@ -86,7 +86,7 @@
 	id_type = /obj/item/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman
 	head = /obj/item/clothing/head/rank/corpsman/beret
-	pda_type = /obj/item/modular_computer/pda/forensics
+	pda_type = /obj/item/modular_computer/pda/corpsman
 	belt = /obj/item/storage/belt/medical/emt
 	gloves = /obj/item/clothing/gloves/thick
 	l_hand = /obj/item/storage/firstaid/blackshield
