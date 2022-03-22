@@ -28,5 +28,5 @@
 		to_chat(user, "<b><font color='purple'>You have the feeling this spire goes deep. Very deep...")
 
 /obj/structure/tiberium_crystal/attackby(obj/item/I, mob/user)
-	src.visible_message(SPAN_NOTICE("[user] cannot make a dent into [src]."), SPAN_NOTICE("You cannot make a dent into [src].")
+	src.visible_message(SPAN_NOTICE("[user] cannot make a dent into [src]."), SPAN_NOTICE("You cannot make a dent into [src]."))
 	return // Can't destroy it
