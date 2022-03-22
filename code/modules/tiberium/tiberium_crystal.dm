@@ -94,7 +94,7 @@
 
 		var/valid_crystal = 0
 		for(var/obj/structure/tiberium_crystal/TC in range(golem_range, src))
-			if(istype(TC, istype(TC, /obj/structure/tiberium_crystal/spire))
+			if(istype(TC, /obj/structure/tiberium_crystal/spire))
 				continue // Ignore the tiberium spire if there's one
 			if(TC.golem)
 				return FALSE // Don't spawn a golem if any nearby growth spawned one, to prevent a fuckton of golems from spawning
