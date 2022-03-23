@@ -18,7 +18,7 @@
 
 	var/golem_threshold = 10 // How many fully-grown tiberium crystals need to be in a location for a golem to spawn
 	var/golem_timer = 100 // How many ticks between golem spawning
-	var/golem_range = 3 // Radius that the crystal check for the above threshold
+	var/golem_range = 2 // Radius that the crystal check for the above threshold
 	var/mob/living/carbon/superior_animal/tiberium_golem/golem // The golem that the growth spawned
 
 /obj/structure/tiberium_crystal/Initialize(mapload, ...)
@@ -90,6 +90,9 @@
 
 // This proc handle the spawning of golems
 /obj/structure/tiberium_crystal/proc/handle_golems()
+	if(golem)
+		return FALSE
+
 	if(++golem_timer >= initial(golem_timer))
 		golem_timer = 0
 
@@ -103,7 +106,17 @@
 				valid_crystal++
 
 		if(valid_crystal >= golem_threshold)
+			// Psions get an early warning
+			var/sound/S = sound('sound/synthesized_instruments/chromatic/vibraphone1/c5.ogg')
+			for(var/mob/living/carbon/human/H in view(src))
+				if(H.stats.getPerk(PERK_PSION))
+					to_chat(H, "<b><font color='purple'>[src] chimes.</b></font>")
+					H.playsound_local(get_turf(src), S, 50) // Only psionics can hear that
+
+			sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
+
 			golem = new(get_turf(src)) // Spawn a golem
 			golem.node = src
+			src.visible_message("[src] create a crystal golem to defend itself.")
 			return TRUE
 		return FALSE
