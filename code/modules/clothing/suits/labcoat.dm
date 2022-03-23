@@ -83,7 +83,6 @@
 	desc = "A longer labcoat with buttons on the side. It has a significantly larger collar than the standard lab coat, to help protect your face from your mistakes."
 	icon_state = "labcoat_membrane"
 	item_state = "labcoat_membrane" //Is this even used for anything?
-	icon_drape = null
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	armor_list = list(
