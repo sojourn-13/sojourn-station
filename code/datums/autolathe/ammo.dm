@@ -274,6 +274,13 @@
 	build_path = /obj/item/ammo_magazine/magnum_40/rubber
 	materials = list(MATERIAL_STEEL = 3)
 
+/datum/design/autolathe/ammo/magnum_pepperball
+	name = "magazine (.40 Auto-Mag pepperspray)"
+	build_path = /obj/item/ammo_magazine/magnum_40/rubber/pepperball
+	materials = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2)
+	chemicals = list("condensedcapsaicin" = 5)
+
+
 /datum/design/autolathe/ammo/magnum
 	name = "magazine (.40 Auto-Mag)"
 	build_path = /obj/item/ammo_magazine/magnum_40
@@ -304,6 +311,13 @@
 	name = "ammunition box (.40 Auto-Mag rubber)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/rubber
 	materials = list(MATERIAL_STEEL = 9)
+
+/datum/design/autolathe/ammo/magnum_ammobox_pepperball
+	name = "ammunition box (.40 Auto-Mag pepperspray)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/rubber/pepperball
+	materials = list(MATERIAL_PLASTIC = 9)
+	chemicals = list("condensedcapsaicin" = 150)
+
 
 /datum/design/autolathe/ammo/magnum_ammobox_practice
 	name = "ammunition box (.40 Auto-Mag practice)"

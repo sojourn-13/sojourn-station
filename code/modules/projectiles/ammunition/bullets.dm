@@ -96,6 +96,12 @@
 	spent_icon = "magnum_c_r-spent"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber
 
+/obj/item/ammo_casing/magnum_40/rubber/pepperball
+	desc = "A .40 Magnum pepper-spray projectile casing."
+	icon_state = "magnum_c_l"
+	is_caseless = TRUE
+	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/pepperball
+
 /obj/item/ammo_casing/magnum_40/lethal
 	desc = "A .40 Magnum hollow point bullet casing."
 	icon_state = "magnum_c_l"
