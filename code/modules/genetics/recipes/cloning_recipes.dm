@@ -37,7 +37,7 @@
 //=======================
 //plasma roach 
 /datum/genetics/mutation_recipe/combination/plasma_roach 
-	required_on_clone_types = list(/mob/living/carbon/superior_animal/roach/toxic, /mob/living/carbon/superior_animal/giant_spider/plasma)
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/roach/toxic, /mob/living/carbon/superior_animal/giant_spider/hunter/plasma)
 	result_path = MUTATION_PLASMA_ROACH
 //======================================================================
 //Spider Combinations
