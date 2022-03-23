@@ -14,7 +14,7 @@
 	var/spread_range = 1 // Radius that the crystal can spawn new crystals.
 
 	var/rad_range = 2 // Radius that the crystal irradiate
-	var/rad_damage = 1 // How much rad damage the crystal inflict per tick
+	var/rad_damage = 0.5 // How much rad damage the crystal inflict per tick
 
 	var/golem_threshold = 10 // How many fully-grown tiberium crystals need to be in a location for a golem to spawn
 	var/golem_timer = 100 // How many ticks between golem spawning
@@ -36,6 +36,9 @@
 
 /obj/structure/tiberium_crystal/Process()
 	irradiate()
+
+
+	handle_duplicate_crystals()
 
 	if(prob(growth_prob))
 		handle_growth()
@@ -81,6 +84,8 @@
 	for(var/turf/T in orange(spread_range, get_turf(src)))
 		if(locate(/obj/structure/tiberium_crystal) in T) // skip turfs that already have a crystal
 			continue
+		if(istype(T, /turf/simulated/open) || istype(T, /turf/space))
+			continue // Ignore turfs that are actually air
 		if(T.Enter(src)) // If we can "enter" on the tile then we can spread to it.
 			turf_list += T
 
@@ -120,3 +125,8 @@
 			src.visible_message("[src] create a crystal golem to defend itself.")
 			return TRUE
 		return FALSE
+
+// Check for duplicate crystals in the same turf
+/obj/structure/tiberium_crystal/proc/handle_duplicate_crystals()
+	for(var/obj/structure/tiberium_crystal/TC in orange(0, src)) // Check the turf we are in
+		qdel(TC)
