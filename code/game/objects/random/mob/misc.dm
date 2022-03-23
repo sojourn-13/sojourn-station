@@ -14,7 +14,7 @@
 	spawn_nothing_percentage = 90
 
 //Genetic Ambusher
-
+/*
 /obj/random/mob/ambusher
 	name = "random ambusher"
 	icon_state = "hostilemob-brown-low"
@@ -27,7 +27,7 @@
 	name = "low chance ambusher"
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 95 // These things should not be escaping from science often.
-
+*/
 //Carps
 
 /obj/random/mob/carp
