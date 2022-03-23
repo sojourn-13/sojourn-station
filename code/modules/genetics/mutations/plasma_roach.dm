@@ -10,7 +10,7 @@
 	..()
 	if(container.mutation_pool.len > 1)
 		return pickweight(list(/mob/living/carbon/superior_animal/roach = 7,
-			/mob/living/carbon/superior_animal/roach/toxic = 2,
+			/mob/living/carbon/superior_animal/roach/fat = 2,
 			/mob/living/carbon/superior_animal/roach/tank = 2,
 			/mob/living/carbon/superior_animal/roach/toxic = 2,
 			/mob/living/carbon/superior_animal/roach/glowing = 2,

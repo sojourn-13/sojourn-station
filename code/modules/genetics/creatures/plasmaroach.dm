@@ -15,7 +15,7 @@
 	can_burrow = FALSE
 	colony_friend = FALSE
 	friendly_to_colony = FALSE //Should be ignored if you have the roach friend gene. 
-inherent_mutations = list(MUTATION_ROACH_BLOOD , MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY, MUTATION_NERVOUSNESS, POISON_GAS)
+inherent_mutations = list(MUTATION_ROACH_BLOOD , MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY, MUTATION_NERVOUSNESS,)
 
 	contaminant_immunity = TRUE
 
