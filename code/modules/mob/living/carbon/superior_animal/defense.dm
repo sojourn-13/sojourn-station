@@ -1,20 +1,24 @@
 /mob/living/carbon/superior_animal/proc/harvest(var/mob/user)
-	var/actual_meat_amount = max(1,(meat_amount/2))
 	drop_embedded()
-	if(user.stats.getPerk(PERK_BUTCHER))
-		var/actual_leather_amount = max(0,(leather_amount/2))
-		if(actual_leather_amount > 0 && (stat == DEAD))
-			for(var/i=0;i<actual_leather_amount;i++)
-				new /obj/item/stack/material/leather(get_turf(src))
+	var/actual_meat_amount = max(1,(meat_amount/2))
+	var/actual_leather_amount = max(0,(leather_amount/2))
+	var/actual_bones_amount = max(0,(bones_amount/2))
 
-		var/actual_bones_amount = max(0,(bones_amount/2))
-		if(actual_bones_amount > 0 && (stat == DEAD))
-			for(var/i=0;i<actual_bones_amount;i++)
-				new /obj/item/stack/material/bone(get_turf(src))
-
+	if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
+		actual_leather_amount = max(0,(leather_amount))
+		actual_meat_amount = max(1,(meat_amount))
+		actual_bones_amount = max(0,(bones_amount))
 		if(has_special_parts)
 			for(var/animal_part in special_parts)
 				new animal_part(get_turf(src))
+
+	if(actual_leather_amount > 0 && (stat == DEAD))
+		for(var/i=0;i<actual_leather_amount;i++)
+			new /obj/item/stack/material/leather(get_turf(src))
+
+	if(actual_bones_amount > 0 && (stat == DEAD))
+		for(var/i=0;i<actual_bones_amount;i++)
+			new /obj/item/stack/material/bone(get_turf(src))
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)

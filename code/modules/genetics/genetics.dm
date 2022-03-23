@@ -76,7 +76,7 @@
 	log_debug("func initializeFromMob called. Mob: [source]")
 	#endif
 	//No robots allowed.
-	if(issilicon(source))
+	if(issynthetic(source))
 		return
 	addInherentMutations(source.inherent_mutations, source.type, source.name)
 	addUnnaturalMutations(source.unnatural_mutations.mutation_pool)
@@ -151,7 +151,10 @@
 	for (var/datum/genetics/mutation/selected_mutation in mutation_pool)
 		if(selected_mutation.clone_gene && selected_mutation.active)
 			clone_mutation_pool += selected_mutation
-	return pick(clone_mutation_pool)
+	if(clone_mutation_pool.len)
+		return pick(clone_mutation_pool)
+	else
+		return null
 
 //Randomly toggle random mutations in a holder as active; helps obfuscate unidentified mutations.
 /datum/genetics/genetics_holder/proc/randomizeActivations()
@@ -327,7 +330,7 @@
 	#ifdef JANEDEBUG
 	log_debug("getRecipeResult: resulting recipe- [recipe.type]")
 	#endif
-	
+
 	var/datum/genetics/mutation/new_mutation = recipe.get_result()
 	new_mutation.active = pick(TRUE,FALSE)
 	return(new_mutation)
@@ -436,7 +439,7 @@
 	#endif
 
 	//No robots allowed.
-	if(issilicon(target))
+	if(issynthetic(target))
 		return FALSE
 
 	//Opifex or Nanogate can't use genetics. If they try, their body begins removing the affected cells- manually.

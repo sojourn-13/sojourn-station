@@ -242,13 +242,6 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
 	)
 
-/datum/craft_recipe/storage/table
-	name = "table frame"
-	result = /obj/structure/table
-	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
-	)
-
 /datum/craft_recipe/storage/ammo_case
 	name = "Scrap ammo case"
 	result = /obj/item/storage/hcases/ammo/scrap

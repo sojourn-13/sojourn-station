@@ -44,7 +44,8 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
-		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
+		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster
 	)
 
 /obj/item/organ/internal/psionic_tumor/psychiatrist
@@ -66,6 +67,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
+		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster,
 		// Psych unique powers just for them. Do not add these to other lists. -Kaz
 		/obj/item/organ/internal/psionic_tumor/proc/peace_of_mind,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other,

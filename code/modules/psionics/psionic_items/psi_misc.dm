@@ -68,3 +68,45 @@
 	psi_blocking = 10
 	price_tag = 150
 
+// The object that make the shield
+/obj/item/shield_projector/line/psionic
+	name = "psionic shield projector"
+	desc = ""
+	line_length = 3
+	always_on = TRUE
+	high_color = "#8000ff"
+	low_color = "#FF0000"
+
+/obj/item/shield_projector/line/psionic/New(loc, var/cog, var/_dir)
+	dir = _dir
+	if(cog >= 40)
+		line_length = 5
+	else
+		line_length = 3 // Mininum size I think we can make without errors
+	..()
+
+/obj/item/shield_projector/line/psionic/create_shield(newloc, new_dir)
+	var/obj/effect/directional_shield/psionic/S = new(newloc, src)
+	S.dir = new_dir
+	active_shields += S
+
+// The shield itself
+/obj/effect/directional_shield/psionic
+	name = "directional combat shield"
+	desc = "A wide shield, which has the property to block incoming projectiles but allow outgoing projectiles to pass it."
+	density = TRUE // People can't move pass these shields.
+
+/obj/effect/directional_shield/psionic/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+    if(air_group || (height==0))
+        return TRUE
+    else if(istype(mover, /obj/item/projectile))
+        var/obj/item/projectile/P = mover
+        if(istype(P, /obj/item/projectile/test)) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
+            return TRUE
+
+        var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
+        if(check_parry_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
+            return FALSE
+        else
+            return TRUE
+    return FALSE

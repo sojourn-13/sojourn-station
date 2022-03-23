@@ -145,7 +145,7 @@
 
 
 /obj/machinery/electrolyzer/attack_hand(mob/user)
-	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs bio 15 so cog 30 to bypass
+	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !user.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs bio 15 so cog 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 

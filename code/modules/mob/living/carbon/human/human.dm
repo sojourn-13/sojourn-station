@@ -1047,7 +1047,7 @@ var/list/rank_prefix = list(\
 	set desc = "Shows or hides your title."
 	set category = "IC"
 	show_title = !show_title
-	src.visible_message("You change your mind about showing your title.")
+	to_chat(usr, "You change your mind about showing your title.")
 
 /mob/living/carbon/human/verb/check_pulse()
 	set category = "Object"
