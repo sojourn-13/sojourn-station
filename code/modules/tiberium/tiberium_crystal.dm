@@ -49,6 +49,10 @@
 	transform = initial(transform)
 	transform *= ((1/max_growth) * growth) // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
 
+	for(var/U in underlays)
+		underlays -= U
+	underlays += ("crystal_floor_[clamp(growth, 1, 5)]")
+
 /obj/structure/tiberium_crystal/attackby(obj/item/I, mob/user)
 	if(user.a_intent == I_HELP && user.Adjacent(src) && I.has_quality(QUALITY_EXCAVATION))
 		src.visible_message(SPAN_NOTICE("[user] starts excavating crystals from [src]."), SPAN_NOTICE("You start excavating crystal from [src]."))
