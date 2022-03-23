@@ -79,7 +79,7 @@
 
 
 		for(var/obj/effect/O in src)
-			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay))
+			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
 				qdel(O)
 				cleanedsomething = TRUE
 				break //Only clean one per loop iteration
