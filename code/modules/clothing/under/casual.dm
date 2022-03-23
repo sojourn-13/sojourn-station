@@ -223,6 +223,31 @@
 	icon_state = "texan_suit"
 	item_state = "texan_suit"
 
+/*Hawaiian 'fits*/
+
+/obj/item/clothing/under/hawaiian
+	name = "black Hawaiian shirt"
+	desc = "A black, flowery Hawaiian shirt paired with striking tangerine hued pants."
+	icon_state = "animalstyle"
+	item_state = "animalstyle"
+
+/obj/item/clothing/under/hawaiian/vintage
+	name = "pink Hawaiian shirt"
+	desc = "A powder-pink Hawaiian shirt paired with dark khaki slacks.."
+	icon_state = "3005vintage"
+	item_state = "3005vintage"
+
+/obj/item/clothing/under/hawaiian/tropico
+	name = "green Hawaiian shirt"
+	desc = "A leafy green Hawaiian shirt paired with khaki slacks.."
+	icon_state = "tropicopuke"
+	item_state = "tropicopuke"
+
+/obj/item/clothing/under/hawaiian/vice
+	name = "aquamarine Hawaiian shirt"
+	desc = "An ocean blue Hawaiian shirt paired with bluejeans. The shirt label read 'Vercetti! Remember the name!'."
+	icon_state = "miamivice"
+	item_state = "miamivice"
 
 /*Turtlenecks*/
 

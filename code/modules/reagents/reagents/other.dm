@@ -270,6 +270,18 @@
 /datum/reagent/adrenaline/withdrawal_act(mob/living/carbon/M)
 	M.adjustOxyLoss(15)
 
+/datum/reagent/other/viroputine
+	name = "Viroputine"
+	id = "viroputine"
+	description = "A horrid by product of nosfernium that creates more of it. vary bad withdrawels."
+	taste_description = "chalky backwash"
+	reagent_state = LIQUID
+	color = "#A5F0EE"
+	addiction_chance = 5
+
+/datum/reagent/other/viroputine/withdrawal_act(mob/living/carbon/M)
+	M.drowsyness = max(M.drowsyness, 20)
+
 /datum/reagent/other/diethylamine
 	name = "Diethylamine"
 	id = "diethylamine"

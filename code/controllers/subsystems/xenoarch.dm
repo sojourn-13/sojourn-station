@@ -63,6 +63,7 @@ SUBSYSTEM_DEF(xenoarch)
 				if(F.excavation_required <= F.view_range)
 					archeo_turf.archaeo_overlay = "overlay_archaeo[rand(1,3)]"
 					archeo_turf.add_overlay(archeo_turf.archaeo_overlay)
+					archeo_turf.update_icon()	//occulist edit. Hopefully fixes xeno arch not showing up ever in minerals view (It did not) -Rynn
 
 			//have a chance for an artifact to spawn here, but not in animal or plant digsites
 			if(isnull(M.artifact_find) && digsite != 1 && digsite != 2)

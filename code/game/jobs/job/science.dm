@@ -71,7 +71,7 @@
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 
-	alt_titles = list("Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Assistant", "Geneticist")
+	alt_titles = list("Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Assistant", "Soteria Geneticist")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
 
 	software_on_spawn = list(/datum/computer_file/program/signaller, /datum/computer_file/program/chem_catalog)

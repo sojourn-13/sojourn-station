@@ -104,14 +104,14 @@
 			SSnano.update_uis(src)
 
 		if(radiation)
-			if(radiation > 50 & prob(5))
+			if(radiation > 50 & prob(5+max(radiation,50)))
 				dish.virus2.majormutate()
 				if(dish.info)
 					dish.info = "OUTDATED : [dish.info]"
 					dish.basic_info = "OUTDATED: [dish.basic_info]"
 					dish.analysed = 0
 				ping("\The [src] pings, \"Mutant viral strain detected.\"")
-			else if(prob(5))
+			else if(radiation < 50 & prob(5+max(radiation,50)))
 				dish.virus2.minormutate()
 			radiation -= 1
 			SSnano.update_uis(src)

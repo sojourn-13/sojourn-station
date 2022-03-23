@@ -30,12 +30,12 @@
 /obj/item/device/encryptionkey/headset_bs
 	name = "blackshield radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list( "Blackshield" = 1)// "Marshal" = 1 removed do to blackshield being marshals illegal
+	channels = list("Blackshield" = 1)// "Marshal" = 1 removed do to blackshield being marshals illegal
 
 /obj/item/device/encryptionkey/headset_mar
 	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list( "Marshal" = 1, "Blackshield" = 1)
+	channels = list("Marshal" = 1, "Blackshield" = 1)
 
 /obj/item/device/encryptionkey/headset_eng
 	name = "guild radio encryption key"

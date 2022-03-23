@@ -186,7 +186,8 @@
 		/obj/item/seeds,
 		/obj/item/grown,
 		/obj/item/reagent_containers/food/snacks/egg,
-		/obj/item/reagent_containers/food/snacks/meat)
+		/obj/item/reagent_containers/food/snacks/meat,
+		/obj/item/reagent_containers/food/snacks/chickenbreast)
 
 
 // -----------------------------

@@ -188,4 +188,4 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 
 /obj/item/gun/hydrogen/proc/doVentsplosion()
 	src.visible_message(SPAN_DANGER("[src]'s overpressure valves open, releasing a powerful shockwave!"))
-	explosion(loc, 0, 0, 2)
+	heatwave(loc, 2, 3, overheat_damage * 2, TRUE, 50, TRUE) // Heatwave happen on the turf of the gun, heavy range is 2, light range is 3. It does a fuck ton of damage and set things on fire. The damage ingore 50 armor and it notify admins when it happen
