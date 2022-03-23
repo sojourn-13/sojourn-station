@@ -37,11 +37,9 @@
 /obj/structure/tiberium_crystal/Process()
 	irradiate()
 
-
-	handle_duplicate_crystals()
-
 	if(prob(growth_prob))
 		handle_growth()
+		handle_duplicate_crystals()
 
 	// Only try to spawn golems if we are at maximum growth
 	if(growth >= max_growth)
@@ -129,4 +127,6 @@
 // Check for duplicate crystals in the same turf
 /obj/structure/tiberium_crystal/proc/handle_duplicate_crystals()
 	for(var/obj/structure/tiberium_crystal/TC in orange(0, src)) // Check the turf we are in
+		if(TC.growth > growth)
+			continue // Don't delete crystals bigger than us
 		qdel(TC)

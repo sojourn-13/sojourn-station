@@ -12,7 +12,7 @@
 	growth_prob = 5 // Spread crystals faster
 	golem_timer = 200 // Longer delay between golems
 	spread_range = 2
-	rad_damage = 2
+	rad_damage = 1
 	rad_range = 3
 
 /obj/structure/tiberium_crystal/spire/update_icon()
