@@ -198,10 +198,10 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	. = ..()
 	if(isliving(target))
 		var/mob/living/L = target
-		L.adjustOxyLoss(-10)
-		L.adjustToxLoss(-5)
-		L.adjustBruteLoss(-5)
-		L.adjustFireLoss(-5)
+		L.adjustOxyLoss(-5)
+		L.adjustToxLoss(-3)
+		L.adjustBruteLoss(-3)
+		L.adjustFireLoss(-3)
 
 /obj/item/projectile/beam/sniper/healing/staff
 	name = "harmony"
@@ -210,10 +210,10 @@ In pvp they also have more lasting damages, such as infections, and pain form bu
 	. = ..()
 	if(isliving(target))
 		var/mob/living/L = target
-		L.adjustOxyLoss(-20)
-		L.adjustToxLoss(-7)
-		L.adjustBruteLoss(-7)
-		L.adjustFireLoss(-7)
+		L.adjustOxyLoss(-7)
+		L.adjustToxLoss(-4)
+		L.adjustBruteLoss(-4)
+		L.adjustFireLoss(-4)
 
 /obj/item/projectile/beam/tesla
 	name = "lightning"
