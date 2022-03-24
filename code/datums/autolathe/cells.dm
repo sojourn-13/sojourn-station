@@ -23,11 +23,11 @@
 	build_path = /obj/item/cell/medium/excelsior
 
 /datum/design/autolathe/cell/small
-	name = "Lonestar \"Robustcell 200S\""
+	name = "Lonestar \"Robustcell 100S\""
 	build_path = /obj/item/cell/small
 
 /datum/design/autolathe/cell/small/high
-	name = "Lonestar \"Robustcell 300S\""
+	name = "Lonestar \"Robustcell 200S\""
 	build_path = /obj/item/cell/small/high
 
 /datum/design/autolathe/cell/small/excelsior

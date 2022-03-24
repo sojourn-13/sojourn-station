@@ -21,13 +21,6 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=4)
 
-/obj/item/reagent_containers/food/snacks/breadslice/attackby(obj/item/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/reagent_containers/food/snacks/butterslice))
-		new /obj/item/reagent_containers/food/snacks/butterbread(src)
-		to_chat(user, "You spread the butter on the toast.")
-		qdel(W)
-		qdel(src)
-
 /obj/item/reagent_containers/food/snacks/butterbread
 	name = "buttered toast"
 	desc = "A freshly toasted slice of bread with melting butter on top, the humblest of meals for the simple man."
