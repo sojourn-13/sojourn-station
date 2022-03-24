@@ -908,8 +908,9 @@
 // Machinery that stabilizes the portal
 //////////////////////////////
 /obj/structure/jtb_pillar
-	name = "space-time interference dampener"
-	desc = "An ominous pillar that can stabilize a bluespace portal by dampening local space-time interferences."
+	name = "bluespace anchoring pylon"
+	desc = "An ominous pylon that can stabilize a short range of bluespace for a singular portal teleportation to nearby ship wrecks and astroid fields littered with potential salvage. \
+	While stable, it is not quite fully understood, being the product of Soteria's captured Greyson Positronics AI, Brynn. For an unknown reason, the pylons only work in the presence of obelisks."
 	icon = 'icons/obj/structures/junk_tractor_beam.dmi'
 	icon_state = "pillar"
 	layer = ABOVE_MOB_LAYER

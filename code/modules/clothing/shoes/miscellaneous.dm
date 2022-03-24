@@ -298,6 +298,23 @@
 	icon_state = "whitehi"
 	item_state_slots = list(slot_r_hand_str = "white", slot_l_hand_str = "white")
 
+
+/*Sneakers*/
+/obj/item/clothing/shoes/sneakers
+	name = "purple sneakers"
+	desc = "A pair of purple sneaker-style shoes. Drippy!"
+	icon_state = "sneakerspurple"
+
+/obj/item/clothing/shoes/sneakers/blue
+	name = "blue sneakers"
+	desc = "A pair of blue sneaker-style shoes. Drippy!"
+	icon_state = "sneakersblue"
+
+/obj/item/clothing/shoes/sneakers/red
+	name = "red sneakers"
+	desc = "A pair of red sneaker-style shoes. Drippy!"
+	icon_state = "sneakersblue"
+
 /*Cowboy*/
 
 /obj/item/clothing/shoes/cowboy

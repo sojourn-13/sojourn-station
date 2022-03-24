@@ -50,7 +50,7 @@
 
 /obj/item/clothing/under/rank/medical
 	desc = "A blue doctor's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "sotera doctor's uniform"
+	name = "soteria doctor's uniform"
 	icon_state = "medical"
 	item_state = "medical"
 

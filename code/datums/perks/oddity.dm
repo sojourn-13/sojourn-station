@@ -178,6 +178,38 @@
 	holder.stats.changeStat(STAT_VIG, -5)
 	..()
 
+/datum/perk/oddity/iron_will
+	name = "Will of Iron"
+	desc = "The body is able to succumb to many negative affects but the mind can simply ignore them. Getting addicted to things is much harder and you can stomach more chemicals."
+	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+
+/datum/perk/oddity/iron_will/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 0.2
+	holder.metabolism_effects.nsa_bonus += 20
+	holder.metabolism_effects.calculate_nsa()
+
+/datum/perk/oddity/iron_will/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_bonus -= 20
+	holder.metabolism_effects.calculate_nsa()
+	..()
+
+/datum/perk/oddity/mind_of_matter
+	name = "Will to Power"
+	desc = "The mind protects the body by imposing limits to prevent severe harm to the self. With enough focus, you can push yourself past that limit."
+	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+
+/datum/perk/oddity/mind_of_matter/assign(mob/living/carbon/human/H)
+	..()
+	holder.maxHealth += 20
+	holder.health += 20
+
+/datum/perk/oddity/mind_of_matter/remove()
+	holder.maxHealth -= 20
+	holder.health -= 20
+	..()
+
 ///////////////////////////////////////
 //////// JOB ODDITYS PERKS ////////////
 ///////////////////////////////////////

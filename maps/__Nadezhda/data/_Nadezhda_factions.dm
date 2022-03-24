@@ -115,3 +115,16 @@
 
 	stamptext = "This paper has been stamped with the seal of a void wolf captain."
 	stampshape = "paper_stamp-dots"
+
+/datum/faction/nadezhda/puppers
+	name = "Colony Allies - Kriosan Confederacy"
+
+	fax_alert = "KRIOSAN CONFEDERACY FAX"
+	fax_response = "Enbarked Transmission"
+
+	color = "#4dff00"
+	darkcolor = "#00a110"
+	lightcolor = "#67f74a"
+
+	stamptext = "This paper has been stamped with the seal of a Kriosan Diplomat."
+	stampshape = "paper_stamp-dots"

@@ -98,7 +98,7 @@
 	var/airtight = 1 //If set, will adjust AIRTIGHT and STOPPRESSUREDAMAGE flags on components. Otherwise it should leave them untouched.
 
 	var/emp_protection = 0
-
+	// 2022- Just so everyone knows , this doesn't get checked at all down the line. It only checks if its on the back , regardles of its value.
 	var/rig_wear_slot = slot_back //Changing this allows for rigs that are worn as a belt or a tie or something
 
 	// Wiring! How exciting.
@@ -110,6 +110,12 @@
 	//allowed = list(/obj/item/storage/backpack) // nope
 	var/list/extra_allowed = list()
 
+/obj/item/rig/New()
+	..()
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "[initial(icon_state)]")
 
 /obj/item/rig/proc/getCurrentGlasses()
 	if(wearer && visor && visor && visor.vision && visor.vision.glasses && (!helmet || (wearer.head && helmet == wearer.head)))
@@ -597,6 +603,9 @@
 	else if(href_list["toggle_suit_lock"])
 		if (locked != -1)
 			locked = !locked
+
+	// Makes it so the UI instantly updates, instead of using the MC tick, way faster at high stress.
+	nano_ui_interact(usr)
 
 	usr.set_machine(src)
 	src.add_fingerprint(usr)
