@@ -26,22 +26,6 @@ GLOBAL_VAR_INIT(miracle_points, 5)
 	var/static/stat_buff
 	var/list/currently_affected = list()
 
-/obj/machinery/power/nt_obelisk/eotp
-	name = "Eye of the Absolute"
-	desc = "An obelisk known as the eye, a powerful and difficult to build device that functions as the pinnacle of defense, in the name of god of course."
-	icon = 'icons/obj/eotp.dmi'
-
-	use_power = NO_POWER_USE
-	idle_power_usage = 0
-	active_power_usage = 0
-
-	active = FALSE
-	damage = 40
-	max_targets = 10
-
-	nt_buff_power = 8
-	nt_buff_cd = 5
-
 /obj/machinery/power/nt_obelisk/Destroy()
 	for(var/i in currently_affected)
 		var/mob/living/carbon/human/H = i
