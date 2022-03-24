@@ -788,6 +788,19 @@
 	build_path = /obj/item/ammo_casing/grenade/flash
 	materials = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 0.5, MATERIAL_GLASS = 0.5)
 
+/datum/design/autolathe/ammo/fs_stinger
+	name = "Seinemetall Defense GmbH sting shell"
+	build_path = /obj/item/ammo_casing/grenade
+
+/* Todo: these
+/datum/design/autolathe/ammo/nt_stinger
+	name = "OT sting shell"
+	build_path = /obj/item/ammo_casing/grenade/weak
+
+/datum/design/autolathe/ammo/shell_heatwave
+	name = "NT heatwave shell"
+	build_path = /obj/item/ammo_casing/grenade/heatwave
+*/
 // Flare Shells
 /datum/design/autolathe/ammo/flare_shell
 	name = ".22 red flare shell"
