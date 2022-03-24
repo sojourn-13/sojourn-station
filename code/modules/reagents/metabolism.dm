@@ -54,13 +54,12 @@
 		var/mob/living/carbon/human/parent_human = parent
 		nsa_organ_bonus = (parent_human.get_organ_efficiency(OP_NERVE) - 700) / 2
 	nsa_threshold = round((100 + nsa_bonus + nsa_chem_bonus + nsa_organ_bonus) * nsa_mult)
-	nsa_threshold = max(nsa_threshold, NSA_THRESHOLD_MINIMUM) //Can't be below for any reason. Keeps 
+	nsa_threshold = max(nsa_threshold, NSA_THRESHOLD_MINIMUM) //Can't be below for any reason. Keeps
 	return nsa_threshold
 
 /datum/metabolism_effects/proc/adjust_nsa(value, tag)
 	if(!tag)
-		crash_with("no tag given to adjust_nsa()")
-		return
+		CRASH("no tag given to adjust_nsa()")
 	nerve_system_accumulations[tag] = value
 
 /datum/metabolism_effects/proc/remove_nsa(tag)
