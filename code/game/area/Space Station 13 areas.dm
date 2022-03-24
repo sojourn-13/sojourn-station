@@ -889,7 +889,13 @@ area/space/atmosalert()
 			START_PROCESSING(SSturf, TC) // Make the crystal start processing
 
 /area/crystal_field/Exited(atom/movable/Obj, atom/newloc)
-	if(!locate(/mob/living) in contents) // If we don't have any mobs inside the area, stop processing the crystals
+	var/is_mob = FALSE
+	for(var/mob/living/L in contents) // Check every mob
+		if(!istype(L, /mob/living/carbon/superior_animal/tiberium_golem)) // Ignore golems
+			is_mob = TRUE
+			break // No need to check further
+
+	if(!is_mob) // If we don't have any mobs inside the area, stop processing the crystals
 		for(var/obj/structure/tiberium_crystal/TC in contents)
 			if(TC.is_processing) // Safety check to make sure the crystals are processing before shutting them
 				STOP_PROCESSING(SSturf, TC) // Make the crystal stop processing
