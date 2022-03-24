@@ -516,7 +516,7 @@
 	if(O.oddity_stats)
 		if(O.random_stats)
 			for(var/stat in O.oddity_stats)
-				O.oddity_stats[stat] = (rand(1, O.oddity_stats[stat]) + 5)
+				O.oddity_stats[stat] = (rand(1, O.oddity_stats[stat]) + 3)
 
 /datum/perk/folken_healing
 	name = "Folken Photo-Healing"

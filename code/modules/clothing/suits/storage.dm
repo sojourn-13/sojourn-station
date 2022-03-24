@@ -38,8 +38,75 @@
 /obj/item/clothing/suit/storage/toggle
 	var/icon_open
 	var/icon_closed
-	verb/toggle()
-		set name = "Toggle Coat Buttons"
+	var/icon_drape
+
+/obj/item/clothing/suit/storage/toggle/New()
+	..()
+	check_coat_verbs()
+
+
+//Updates the verb list to accomodate with the jacket's current state
+/obj/item/clothing/suit/storage/toggle/proc/check_coat_verbs()
+	if(icon_state == icon_open)
+		src.verbs -= /obj/item/clothing/suit/storage/toggle/verb/unbutton
+		if(icon_closed)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/button
+		if(icon_drape)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/drape
+	else if(icon_state == icon_closed)
+		src.verbs -= /obj/item/clothing/suit/storage/toggle/verb/button
+		if(icon_drape)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/drape
+		if(icon_open)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/unbutton
+	else if(icon_state == icon_drape)
+		src.verbs -= /obj/item/clothing/suit/storage/toggle/verb/drape
+		if(icon_closed)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/button
+		if(icon_open)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/unbutton
+
+
+/obj/item/clothing/suit/storage/toggle/verb/button()
+	set name = "Button Coat"
+	set category = "Object"
+	set src in usr
+	//Can't do it sometimes
+	if(!usr.canmove || usr.stat || usr.restrained())
+		return 0
+	icon_state = icon_closed
+	to_chat(usr, "You button the coat.")
+	check_coat_verbs()
+	update_wear_icon()
+
+
+/obj/item/clothing/suit/storage/toggle/verb/unbutton()
+	set name = "Unbutton Coat"
+	set category = "Object"
+	set src in usr
+	//Can't do it sometimes
+	if(!usr.canmove || usr.stat || usr.restrained())
+		return 0
+	icon_state = icon_open
+	to_chat(usr, "You unbutton the coat.")
+	check_coat_verbs()
+	update_wear_icon()
+
+/obj/item/clothing/suit/storage/toggle/verb/drape() //COAT CAPES
+	set name = "Drape Coat"
+	set category = "Object"
+	set src in usr
+	//Can't do it sometimes
+	if(!usr.canmove || usr.stat || usr.restrained())
+		return 0
+	icon_state = icon_drape
+	to_chat(usr, "You drape the coat over your shoulders.")
+	check_coat_verbs()
+	update_wear_icon()
+
+/*
+/obj/item/clothing/suit/storage/toggle/verb/toggle()
+		set name = "Unbutton Coat Buttons"
 		set category = "Object"
 		set src in usr
 		if(!usr.canmove || usr.stat || usr.restrained())
@@ -55,7 +122,7 @@
 			to_chat(usr, "This coat cannot be opened or closed.")
 			return
 		update_wear_icon()	//so our over-lays update
-
+*/
 
 /obj/item/clothing/suit/storage/vest/merc/New()
 	..()

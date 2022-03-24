@@ -110,6 +110,12 @@
 	//allowed = list(/obj/item/storage/backpack) // nope
 	var/list/extra_allowed = list()
 
+/obj/item/rig/New()
+	..()
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "[initial(icon_state)]")
 
 /obj/item/rig/proc/getCurrentGlasses()
 	if(wearer && visor && visor && visor.vision && visor.vision.glasses && (!helmet || (wearer.head && helmet == wearer.head)))

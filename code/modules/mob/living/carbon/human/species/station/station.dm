@@ -946,6 +946,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	total_health = 75
 
 	dark_color = "#FFFFFF"
 	light_color = "#000000"

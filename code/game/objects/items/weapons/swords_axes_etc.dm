@@ -13,6 +13,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "baton"
 	item_state = "classic_baton"
+	hitsound = 'sound/effects/woodhit.ogg'
 	slot_flags = SLOT_BELT
 	damtype = BRUTE
 	armor_penetration = ARMOR_PEN_SHALLOW
