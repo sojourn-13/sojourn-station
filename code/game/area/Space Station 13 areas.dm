@@ -884,9 +884,11 @@ area/space/atmosalert()
 			STOP_PROCESSING(SSturf, TC) // Stop the crystals from processing
 
 /area/crystal_field/Entered(atom/movable/Obj, atom/newloc)
-	if(istype(Obj, /mob/living)) // If a mob enter the area, start processing
+	if(istype(Obj, /mob/living) && !istype(Obj, /mob/living/carbon/superior_animal/tiberium_golem)) // If a mob enter the area, start processing, except if it is a golem
 		for(var/obj/structure/tiberium_crystal/TC in contents)
-			START_PROCESSING(SSturf, TC) // Make the crystal start processing
+			if(!TC.is_processing) // Safety check to make sure the crystals aren't processing before shutting them
+				START_PROCESSING(SSturf, TC) // Make the crystal start processing
+		//to_chat(usr, "The crystals seems to wake up") // TODO, better sentence and have it only be visible to psions -R4d6
 
 /area/crystal_field/Exited(atom/movable/Obj, atom/newloc)
 	var/is_mob = FALSE
@@ -899,6 +901,7 @@ area/space/atmosalert()
 		for(var/obj/structure/tiberium_crystal/TC in contents)
 			if(TC.is_processing) // Safety check to make sure the crystals are processing before shutting them
 				STOP_PROCESSING(SSturf, TC) // Make the crystal stop processing
+		//to_chat(usr, "The crystals seems to go to sleep") // TODO, better sentence and have it only be visible to psions -R4d6
 
 /area/awaymission/beach
 	name = "Beach"
