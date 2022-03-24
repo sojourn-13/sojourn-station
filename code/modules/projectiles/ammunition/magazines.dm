@@ -209,6 +209,11 @@
 	icon_state = "magnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
+/obj/item/ammo_magazine/magnum_40/rubber/pepperball
+	name = "magazine(.40 pepperball)"
+	icon_state = "magnum_l"
+	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
+
 /obj/item/ammo_magazine/magnum_40/lethal
 	name = "magazine (.40 Magnum hollow-point)"
 	icon_state = "magnum_l"

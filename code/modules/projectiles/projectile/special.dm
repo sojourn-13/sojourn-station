@@ -41,6 +41,41 @@
 	set_light(0)
 	return TRUE
 
+/obj/item/projectile/bullet/rocket/emp
+	name = "EMP rocket"
+	icon_state = "rocket_e"
+	damage_types = list(BRUTE = 10, BURN = 30)
+	armor_penetration = 100
+	check_armour = ARMOR_BULLET
+	var/heavy_emp_range = 3
+	var/light_emp_range = 8
+
+/obj/item/projectile/bullet/rocket/emp/launch(atom/target, target_zone, x_offset, y_offset, angle_offset)
+	set_light(2.5, 0.5, "#dddd00")
+	..(target, target_zone, x_offset, y_offset, angle_offset)
+
+/obj/item/projectile/bullet/rocket/emp/on_impact(atom/target)
+	..()
+	for(var/obj/structure/closet/L in hear(7, get_turf(src)))
+		if(locate(/mob/living/carbon/, L))
+			for(var/mob/living/carbon/M in L)
+				flashbang_bang(get_turf(src), M)
+
+
+	for(var/mob/living/carbon/M in hear(7, get_turf(src)))
+		flashbang_bang(get_turf(src), M)
+
+	for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
+		var/damage = round(30/(get_dist(B,get_turf(src))+1))
+		B.health -= damage
+		B.update_icon()
+
+	new/obj/effect/sparks(src.loc)
+	new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
+	empulse(target, heavy_emp_range, light_emp_range)
+	qdel(src)
+	return
+
 /obj/item/projectile/temp
 	name = "freeze beam"
 	icon_state = "ice_2"

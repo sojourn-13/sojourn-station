@@ -78,3 +78,4 @@
 
 /obj/item/organ/external/robotic/groin
 	default_description = /datum/organ_description/groin
+	max_damage = 200

@@ -113,6 +113,11 @@
 	icon_state = "magnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
+/obj/item/ammo_magazine/ammobox/magnum_40/rubber/pepperball
+	name = "ammunition packet (.40 Magnum pepperspray)"
+	desc = "A box of police grade .40 Auto-Mag pepperspray type rounds."
+	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
+
 /obj/item/ammo_magazine/ammobox/magnum_40/lethal
 	name = "ammunition packet (.40 Magnum hollow-point)"
 	desc = "A box of self-defense grade .40 Auto-Mag hollow-points."

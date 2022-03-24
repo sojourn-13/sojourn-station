@@ -658,6 +658,7 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
+	total_health = 75
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
@@ -706,6 +707,7 @@
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
+	total_health = 75
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
@@ -760,6 +762,7 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	slowdown = 0.3
 	radiation_mod = 0
+	total_health = 75
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
@@ -824,6 +827,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	total_health = 75
 
 	dark_color = "#FA8128"
 	light_color = "#FCAE1E"
@@ -883,7 +887,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
-
+	total_health = 75
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
 
@@ -942,6 +946,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	total_health = 75
 
 	dark_color = "#FFFFFF"
 	light_color = "#000000"

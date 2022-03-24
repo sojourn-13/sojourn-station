@@ -3388,13 +3388,6 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel,
 /area/colony)
-"aMq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "aMu" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm4{
@@ -11914,11 +11907,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/meadow)
-"cKf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/maintenance/undergroundfloor1east)
 "cKp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -14512,11 +14500,6 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
-"dog" = (
-/obj/structure/catwalk,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance/undergroundfloor1west)
 "dol" = (
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -16294,11 +16277,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"dKC" = (
-/obj/structure/catwalk,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "dKD" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -17456,11 +17434,6 @@
 /obj/item/device/electronic_assembly/drone,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/circuitlab)
-"dXf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance/undergroundfloor1south)
 "dXg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -26416,13 +26389,6 @@
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/bridge)
-"fWP" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 1
-	},
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance/undergroundfloor1south)
 "fWR" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/bushb3,
@@ -32069,12 +32035,6 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/workshop)
-"hiL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance/undergroundfloor1east)
 "hiT" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/quartermaster/miningdock)
@@ -35877,11 +35837,6 @@
 /obj/effect/floor_decal/industrial/box/red,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/bioreactor)
-"ift" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "ifw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/security{
@@ -44001,20 +43956,6 @@
 /obj/effect/floor_decal/industrial/box/red/corners,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
-"jWD" = (
-/obj/structure/catwalk,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance/undergroundfloor1east)
-"jWI" = (
-/obj/structure/catwalk,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance/undergroundfloor1east)
 "jWO" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -79297,13 +79238,6 @@
 	icon_state = "13,15"
 	},
 /area/nadezhda/hallway/side/f2section2)
-"rLY" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/maintenance/undergroundfloor1east)
 "rMa" = (
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/command/gmaster)
@@ -84446,7 +84380,6 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "sXu" = (
 /obj/structure/bed/chair,
-/obj/random/mob/ambusher,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "sXw" = (
@@ -92498,10 +92431,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"uMw" = (
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance/undergroundfloor1west)
 "uMx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -93220,7 +93149,6 @@
 	},
 /obj/structure/bed/roller,
 /obj/effect/decal/cleanable/blood,
-/obj/random/mob/ambusher/low_chance,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "uTx" = (
@@ -94056,11 +93984,6 @@
 /obj/machinery/microwave,
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/nadezhda/pros/foreman)
-"vch" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/mob/ambusher/low_chance,
-/turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/maintenance/undergroundfloor1east)
 "vcl" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -100240,12 +100163,12 @@
 	dir = 1
 	},
 /obj/machinery/button/remote/airlock{
+	blue_ink_tk_blocker = 1;
 	desc = "A remote control switch.";
 	id = "medbay exit";
 	name = "Medbay Exit Button";
 	pixel_x = 0;
-	pixel_y = 0;
-	blue_ink_tk_blocker = 1
+	pixel_y = 0
 	},
 /obj/structure/table/glass,
 /obj/machinery/door/blast/regular{
@@ -110811,7 +110734,7 @@ lEX
 lEX
 cXq
 rUi
-uMw
+rUi
 cVz
 fOk
 lEX
@@ -113466,7 +113389,7 @@ mdX
 oTD
 keT
 cVz
-dog
+rdK
 lEX
 lEX
 lEX
@@ -115131,7 +115054,7 @@ rdK
 rdK
 rdK
 rdK
-dog
+rdK
 rdK
 rdK
 rdK
@@ -118369,7 +118292,7 @@ xGi
 trc
 byT
 byT
-fWP
+nqv
 hMS
 klz
 nZp
@@ -120079,7 +120002,7 @@ ato
 vBf
 eNE
 xDh
-ift
+eNE
 eNE
 aIV
 bVE
@@ -128865,7 +128788,7 @@ lXe
 fPX
 jfy
 klz
-dXf
+lXe
 klz
 klz
 nUG
@@ -134211,7 +134134,7 @@ sFI
 rOW
 rOW
 qPK
-dKC
+gLP
 eNE
 eNE
 eNE
@@ -134305,7 +134228,7 @@ iHj
 rQi
 gsS
 iHj
-hiL
+iHj
 aeC
 gwc
 sFI
@@ -134641,7 +134564,7 @@ trc
 trc
 mEn
 sCN
-ift
+eNE
 trc
 sFI
 sFI
@@ -137597,7 +137520,7 @@ fGW
 oQV
 oQV
 hKB
-jWI
+hKB
 hKB
 xyy
 rQi
@@ -140970,7 +140893,7 @@ sFI
 kZI
 bwE
 uDE
-cKf
+uDE
 lCm
 kZI
 rQi
@@ -142899,7 +142822,7 @@ hcQ
 hcQ
 uoC
 qPK
-dKC
+gLP
 dMQ
 qPK
 wPw
@@ -143744,7 +143667,7 @@ kZI
 lpc
 pdJ
 pdJ
-vch
+pdJ
 pdJ
 osj
 kZI
@@ -145966,7 +145889,7 @@ rQi
 oQL
 xLp
 mlu
-jWI
+hKB
 lTS
 rQi
 pqo
@@ -146194,7 +146117,7 @@ sFI
 kZI
 gsS
 hKB
-rLY
+hbP
 ntZ
 kZI
 sFI
@@ -147057,7 +146980,7 @@ wPL
 wPL
 add
 hKB
-jWD
+rQr
 fDG
 fDG
 fDG
@@ -162550,7 +162473,7 @@ sFI
 sFI
 uuI
 kvl
-aMq
+cEg
 uuI
 sFI
 sFI

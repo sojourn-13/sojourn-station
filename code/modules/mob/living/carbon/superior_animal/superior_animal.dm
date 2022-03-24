@@ -161,6 +161,7 @@
 	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
 
 	var/list/known_languages = list() // The languages that the superior mob know.
+	var/drill_sabo = FALSE //Do we attack drills directly over others?
 
 /mob/living/carbon/superior_animal/New()
 	..()

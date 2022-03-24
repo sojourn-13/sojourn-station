@@ -45,6 +45,7 @@
 		if(istype(L) && L.reagents)
 			L.reagents.add_reagent("stoxin", 5)
 
+
 /obj/item/projectile/bullet/pistol_35/hv
 	damage_types = list(BRUTE = 10)
 	armor_penetration = 20
@@ -134,6 +135,24 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.5
+
+/obj/item/projectile/bullet/magnum_40/rubber/pepperball
+	name = "pepperball"
+	damage_types = list(brute = 0)
+	agony = 0
+	step_delay = 0.6 //a little slower than rubber rounds - these are just pepperspray balls
+	var/spray = "condensedcapsaicin"
+
+/obj/item/projectile/bullet/magnum_40/rubber/pepperball/New()
+	..()
+	create_reagents(5)
+	reagents.add_reagent(spray, 5)
+
+/obj/item/projectile/bullet/magnum_40/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			reagents.trans_to_mob(L:, 5, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific
 	name = "soporific coated rubber bullet"
@@ -416,7 +435,7 @@
 	affective_damage_range = 3
 	affective_ap_range = 3
 
-///Snowflake caseless///
+///Snowflake  ///
 
 /obj/item/projectile/bullet/c10x24
 	damage_types = list(BRUTE = 18)
@@ -709,3 +728,4 @@
 	affective_damage_range = 9
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors
+
