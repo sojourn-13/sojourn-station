@@ -869,6 +869,31 @@ area/space/atmosalert()
 	requires_power = 0
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 
+// This area is mostly there to prevent the initial crystals from processing when there is no one nearby.
+// In an ideal situation, it would be wider than the potential full size of the field to prevent any escapes. -R4d6
+/area/crystal_field
+	name = "Crystal Field"
+	icon_state = "crystal_field"
+	has_gravity = 1
+	requires_power = 0 // Weird crystal power stuff
+
+/area/crystal_field/New()
+	..()
+	spawn(20) // I don't know if the area get initialized before or after the crystals inside it, so better safe than sorry. -R4d6
+		for(var/obj/structure/tiberium_crystal/TC in contents)
+			STOP_PROCESSING(SSturf, TC) // Stop the crystals from processing
+
+/area/crystal_field/Entered(atom/movable/Obj, atom/newloc)
+	if(istype(Obj, /mob/living)) // If a mob enter the area, start processing
+		for(var/obj/structure/tiberium_crystal/TC in contents)
+			START_PROCESSING(SSturf, TC) // Make the crystal start processing
+
+/area/crystal_field/Exited(atom/movable/Obj, atom/newloc)
+	if(!locate(/mob/living) in contents) // If we don't have any mobs inside the area, stop processing the crystals
+		for(var/obj/structure/tiberium_crystal/TC in contents)
+			if(TC.is_processing) // Safety check to make sure the crystals are processing before shutting them
+				STOP_PROCESSING(SSturf, TC) // Make the crystal stop processing
+
 /area/awaymission/beach
 	name = "Beach"
 	icon_state = "null"

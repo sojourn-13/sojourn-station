@@ -23,7 +23,7 @@
 
 /obj/structure/tiberium_crystal/Initialize(mapload, ...)
 	..()
-	START_PROCESSING(SSobj, src)
+	START_PROCESSING(SSturf, src)
 
 	// If the crystal was mapped in, spawn at full growth, else spawn as a seed.
 	if(!growth) // As long as we didn't manually set a growth level
@@ -33,6 +33,10 @@
 			growth = GROWTH_SEED
 	golem_timer = 0 // Reset the timer
 	update_icon()
+
+/obj/structure/tiberium_crystal/Destroy()
+	..()
+	STOP_PROCESSING(SSturf, src)
 
 /obj/structure/tiberium_crystal/Process()
 	irradiate()
