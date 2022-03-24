@@ -128,8 +128,8 @@ SUBSYSTEM_DEF(trade)
 		if(istype(A))
 			path = A.type
 		else
-			crash_with("Unacceptable get_new_cost() by path ([path]) and type ([A?.type]).")
-			return 0
+			. = 0
+			CRASH("Unacceptable get_new_cost() by path ([path]) and type ([A?.type]).")
 
 	if(!GLOB.price_cache[path])
 		var/atom/movable/AM = new path
