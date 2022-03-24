@@ -111,6 +111,8 @@
 				return FALSE // Don't spawn a golem if any nearby growth spawned one, to prevent a fuckton of golems from spawning
 			if(TC.growth >= max_growth)
 				valid_crystal++
+			if(valid_crystal >= golem_threshold)
+				break // We have enough crystals, leave early
 
 		if(valid_crystal >= golem_threshold)
 			// Psions get an early warning
