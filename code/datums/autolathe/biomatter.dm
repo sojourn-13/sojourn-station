@@ -220,8 +220,12 @@
 	name = "NT Buckler"
 	build_path = /obj/item/shield/buckler/nt
 
+/datum/design/autolathe/nt/sword/nt_verutum
+	name = "OT Javelin"
+	build_path = /obj/item/stack/thrown/nt/verutum
+
 /datum/design/autolathe/tool_upgrade/sanctifier
-	name = "sanctifier"
+	name = "NT Sanctifier"
 	build_path = /obj/item/tool_upgrade/augment/sanctifier
 
 /datum/design/autolathe/sword/nt_warhammer

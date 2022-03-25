@@ -1,9 +1,16 @@
 /obj/item/reagent_containers/food/snacks/breadslice/attackby(obj/item/W as obj, mob/user as mob)
 
+	if(istype(W,/obj/item/reagent_containers/food/snacks/butterslice))
+		new /obj/item/reagent_containers/food/snacks/butterbread(src)
+		to_chat(user, "You spread the butter on the toast.")
+		qdel(W)
+		qdel(src)
+
 	if(istype(W,/obj/item/material/shard) || istype(W,/obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/csandwich/S = new(get_turf(src))
 		S.attackby(W,user)
 		qdel(src)
+
 	..()
 
 /obj/item/reagent_containers/food/snacks/csandwich

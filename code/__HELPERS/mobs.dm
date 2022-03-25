@@ -264,7 +264,35 @@ Proc for attack log creation, because really why not
 /proc/is_neotheology_disciple(mob/living/L)
 	if(istype(L) && L.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		return TRUE
+	return FALSE
 
+/proc/is_acolyte(mob/living/L)
+	if(!isliving(L))
+		return FALSE
+	var/obj/item/implant/core_implant/cruciform/C = L.get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(C && C.get_module(CRUCIFORM_COMMON))
+		return TRUE
+	return FALSE
+
+/proc/is_preacher(mob/living/L)
+	if(!isliving(L))
+		return FALSE
+	var/obj/item/implant/core_implant/cruciform/C = L.get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(C && C.get_module(CRUCIFORM_PRIEST) && C.get_module(CRUCIFORM_REDLIGHT))
+		return TRUE
+	return FALSE
+
+/proc/is_inquisidor(mob/living/L)
+	if(!isliving(L))
+		return FALSE
+	var/obj/item/implant/core_implant/cruciform/C = L.get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(C && C.get_module(CRUCIFORM_INQUISITOR))
+		return TRUE
+	return FALSE
+
+/proc/is_carrion(mob/living/carbon/human/H)
+	if(istype(H) && (H.organ_list_by_process(BP_SPCORE)).len)
+		return TRUE
 	return FALSE
 
 /proc/is_excelsior(var/mob/M)
@@ -288,13 +316,6 @@ Proc for attack log creation, because really why not
 /mob/living/carbon/human/get_classification()
 	. = ..()
 	. |= CLASSIFICATION_ORGANIC | CLASSIFICATION_HUMANOID
-
-
-/proc/is_carrion(mob/living/carbon/human/H)
-	if(istype(H) && (H.organ_list_by_process(BP_SPCORE)).len)
-		return TRUE
-
-	return FALSE
 
 /mob/proc/can_see_reagents()
 	return TRUE

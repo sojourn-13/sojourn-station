@@ -95,7 +95,37 @@
 	name = "slime core"
 	desc = "A complex, organic knot of jelly and crystalline particles."
 	icon = 'icons/mob/slimes.dmi'
-	icon_state = "green slime extract"
+	icon_state = "bluespace slime extract"
+	parent_organ_base = BP_CHEST
+	var/mob/living/carbon/human/host_copy
+	var/regenerating = FALSE
+	var/revival_chem = "plasma"
+	var/respawn_delay = 100 // Delay, in deciseconds (1/10th of a second), before the slime actually revive after being injected.
+
+/obj/item/organ/internal/brain/slime/attackby(obj/item/I, mob/user)
+	if(host_copy && istype(I, /obj/item/reagent_containers/syringe) && !regenerating)
+		var/obj/item/reagent_containers/syringe/S = I
+		if(S.mode == 1 && S.reagents.remove_reagent(revival_chem, 5)) // We inject 5u of plasma // the 1 correspond to SYRINGE_INJECT, but we're before the define
+			to_chat(user, SPAN_NOTICE("You inject [revival_chem] into [src]."))
+			src.visible_message("[src] start to wobble and wiggle...")
+			regenerating = TRUE
+			spawn(100) regen_body()
+
+/obj/item/organ/internal/brain/slime/removed_mob()
+	host_copy = new(src, FORM_SLIME, FORM_SLIME) // Copy the body as backup. I don't think the appearance is saved, but it's fine for now. -R4d6
+	host_copy?.real_name = owner.real_name
+	..()
+
+/obj/item/organ/internal/brain/slime/proc/regen_body()
+	if(loc != get_turf(src))
+		forceMove(src, get_turf(src))
+	if(host_copy)
+		forceMove(host_copy, get_turf(src)) // Eject the copy
+		replaced(host_copy.get_organ(BP_CHEST)) // Put the core in
+		for(var/O in host_copy.organ_list_by_process(BP_BRAIN)) // Remove any surplus cores
+			if(O != src) // It's not our brain.
+				qdel()
+	src.visible_message("[src] expand into a humanoid form")
 
 /obj/item/organ/internal/brain/golem
 	name = "scroll"

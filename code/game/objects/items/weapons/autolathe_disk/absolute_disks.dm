@@ -1,8 +1,14 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // To make a design unprotect use -1
 // Absolute
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
-	disk_name = "Church of Absolute Bioprinter Products and Utilities"
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt
+	disk_name = "NeoTheology Armory"
+	icon_state = "neotheology"
+	license = -1
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt/bioprinter
+	disk_name = "Church of Absolute Bioprinter Products and Utilities Plus"
 	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
 	icon_state = "neotheology_testament_u"
 
@@ -55,6 +61,68 @@
 		/datum/design/bioprinter/nt_cells/medium/plasma,
 		/datum/design/bioprinter/nt_cells/small,
 		/datum/design/bioprinter/nt_cells/small/plasma,
+		//utilities
+		/datum/design/autolathe/gun/nt_sprayer,
+		/datum/design/autolathe/device/grenade/nt_cleaner,
+		/datum/design/autolathe/device/grenade/nt_weedkiller,
+		/datum/design/bioprinter/holyvacuum
+	)
+
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
+	disk_name = "Church of Absolute Bioprinter Products and Utilities"
+	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
+	icon_state = "neotheology_testament_u"
+
+	license = 50
+	designs = list(
+		//products
+		/datum/design/bioprinter/meat,
+		/datum/design/bioprinter/milk,
+		/datum/design/bioprinter/soap,
+		/datum/design/bioprinter/ez,
+		/datum/design/bioprinter/l4z,
+		/datum/design/bioprinter/rh,
+		//general clothes
+		/datum/design/bioprinter/wallet,
+		/datum/design/bioprinter/botanic_leather,
+		/datum/design/bioprinter/leather/leather_jacket,
+		/datum/design/bioprinter/belt/utility,
+		/datum/design/bioprinter/belt/medical,
+		/datum/design/bioprinter/belt/security,
+		/datum/design/bioprinter/belt/medical/emt,
+		/datum/design/bioprinter/belt/misc/champion,
+		//church clothes
+		/datum/design/bioprinter/belt/utility/neotheology,
+		/datum/design/bioprinter/nt_clothes/sports_jacket,
+		/datum/design/bioprinter/nt_clothes/acolyte_uniform,
+		/datum/design/bioprinter/nt_clothes/sports_uniform,
+		/datum/design/bioprinter/nt_clothes/church_uniform,
+		/datum/design/bioprinter/nt_clothes/hermes_shoes,
+		//medical
+		/datum/design/autolathe/firstaid/nt = 8,
+		//backpacks
+		/datum/design/bioprinter/leather/storage/backpack/satchel/neotheology,
+		/datum/design/bioprinter/leather/storage/backpack/neotheology,
+		/datum/design/bioprinter/leather/storage/backpack/sport/neotheology,
+		//pouches
+		/datum/design/bioprinter/pouch/engineering_supply,
+		/datum/design/bioprinter/pouch/engineering_tools,
+		/datum/design/bioprinter/pouch/janitor_supply,
+		/datum/design/bioprinter/pouch/small_generic/purple = 2,
+		/datum/design/bioprinter/pouch/small_generic = 2,
+		/datum/design/bioprinter/pouch/medium_generic = 4,
+		/datum/design/bioprinter/pouch/large_generic = 8,
+		/datum/design/bioprinter/pouch/tubular,
+		/datum/design/bioprinter/pouch/tubular/vial,
+		/datum/design/bioprinter/sling,
+		//power cells
+		/datum/design/bioprinter/nt_cells/large = 4,
+		/datum/design/bioprinter/nt_cells/large/plasma = 5,
+		/datum/design/bioprinter/nt_cells/medium = 3,
+		/datum/design/bioprinter/nt_cells/medium/plasma = 4,
+		/datum/design/bioprinter/nt_cells/small = 1,
+		/datum/design/bioprinter/nt_cells/small/plasma = 2,
 		//utilities
 		/datum/design/autolathe/gun/nt_sprayer,
 		/datum/design/autolathe/device/grenade/nt_cleaner,
@@ -126,6 +194,27 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 4
 		)
 
+//Church shotgun
+/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58
+	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack Plus"
+	icon_state = "neotheology"
+
+	license = 20
+	designs = list(
+		/datum/design/autolathe/gun/mk58 = 3,
+		/datum/design/autolathe/gun/mk58_wood = 3,
+		/datum/design/autolathe/ammo/pistol_practice = 0,
+		/datum/design/autolathe/ammo/pistol_rubber,
+		/datum/design/autolathe/ammo/pistol,
+		/datum/design/autolathe/ammo/pistol_lethal = 2,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter = 2,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 3
+		)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/lemant
 	disk_name = "Absolute Armory - .40/20mm Pilgrim revolver"
 	icon_state = "neotheology"
@@ -146,6 +235,26 @@
 		)
 
 //Church shotgun
+/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant
+	disk_name = "Absolute Armory - .40/20mm Pilgrim revolver Plus"
+	icon_state = "neotheology"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/lemant,
+		/datum/design/autolathe/ammo/slmagnum_practice = 0,
+		/datum/design/autolathe/ammo/slmagnum_rubber,
+		/datum/design/autolathe/ammo/slmagnum,
+		/datum/design/autolathe/ammo/slmagnum_lethal = 2,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination,
+		/datum/design/autolathe/ammo/shotgun_pellet = 2,
+		/datum/design/autolathe/ammo/shotgun = 2,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2,
+		)
+
+//Church shotgun
 /obj/item/computer_hardware/hard_drive/portable/design/guns/regulator
 	disk_name = "Absolute Armory - 20mm Regulator Shotgun"
 	icon_state = "neotheology"
@@ -156,6 +265,21 @@
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_illumination,
+		)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/regulator
+	disk_name = "Absolute Armory - 20mm Regulator Shotgun Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/regulator,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination,
+		/datum/design/autolathe/ammo/shotgun_box = 3,
+		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
 		)
 
 // ENERGY SMALL ARMS
@@ -180,6 +304,27 @@
 		/datum/design/autolathe/cell/small/high,
 	)
 
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/counselor
+	disk_name = "Absolute Armory - Counselor PDW E Plus"
+	icon_state = "neotheology"
+
+	license = 10
+	designs = list(
+		/datum/design/autolathe/gun/taser,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt/nt_counselor
+	disk_name = "Absolute Armory - NT LP \"Serenity\" Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ntpistol,
+		/datum/design/autolathe/cell/small/high,
+	)
+
 
 // ENERGY ARMS
 
@@ -192,11 +337,31 @@
 		/datum/design/autolathe/gun/energy_crossbow,
 	)
 
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis
+	disk_name = "Absolute Armory - Nemesis Energy Crossbow Plus"
+	icon_state = "neotheology"
+
+	license = 3
+	designs = list(
+		/datum/design/autolathe/gun/energy_crossbow,
+	)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/themis
 	disk_name = "Absolute Armory - Themis Energy Crossbow"
 	icon_state = "neotheology"
 
 	license = 1
+	designs = list(
+		/datum/design/autolathe/gun/large_energy_crossbow,
+	)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/themis
+	disk_name = "Absolute Armory - Themis Energy Crossbow Plus"
+	icon_state = "neotheology"
+
+	license = 2
 	designs = list(
 		/datum/design/autolathe/gun/large_energy_crossbow,
 	)
@@ -211,6 +376,17 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall
+	disk_name = "Absolute Armory - Lightfall Laser Gun Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/laser,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye
 	disk_name = "Absolute Armory - Valkyrie Energy Rifle"
 	icon_state = "neotheology"
@@ -218,6 +394,17 @@
 	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/sniperrifle = 3,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+//for the EOTP
+obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye
+	disk_name = "Absolute Armory - Valkyrie Energy Rifle Plus"
+	icon_state = "neotheology"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/sniperrifle = 2,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -231,6 +418,17 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/carpedie
+	disk_name = "Absolute Armory - Carpedie Lasgun Rifle Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/carpediem = 2,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/concillium
 	disk_name = "Absolute Armory - Concillium Las-MG"
 	icon_state = "neotheology"
@@ -241,6 +439,16 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
+//for the EOTP
+obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
+	disk_name = "Absolute Armory - Concillium Las-MG Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/concillium = 2,
+		/datum/design/autolathe/cell/medium/high,
+	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/halicon
 	disk_name = "Absolute Armory - Halcyon Ion Rifle"
@@ -249,6 +457,17 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/ionrifle = 2,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/halicon
+	disk_name = "Absolute Armory - Halcyon Ion Rifle Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ionrifle,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -261,6 +480,28 @@
 	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/pulse = 3,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/dominion
+	disk_name = "Absolute Armory - Dominion Plasma Rifle Plus"
+	icon_state = "neotheology"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/pulse = 2,
+		/datum/design/autolathe/cell/medium/high,
+	)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/purger
+	disk_name = "Absolute Armory - Purger Plasma Rifle Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/pulse_destroyer = 2,
 		/datum/design/autolathe/cell/medium/high,
 	)
 
@@ -285,6 +526,21 @@
 		/datum/design/autolathe/gun/grenade_launcher, // "OT GL \"Protector\""
 	)
 
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/protector
+	disk_name = "OT GL - Grenade Launcher Plus"
+	icon_state = "neotheology"
+
+	license = 5
+	designs = list(
+		/datum/design/autolathe/gun/grenade_launcher,
+		/datum/design/autolathe/ammo/grenade,
+		/datum/design/autolathe/ammo/grenade/frag = 2,
+		/datum/design/autolathe/ammo/grenade/emp = 2,
+		/datum/design/autolathe/ammo/grenade/blast = 2,
+		/datum/design/autolathe/ammo/grenade/flash = 2
+	)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/antebellum
 	disk_name = "Absolute Armory - Antebellum Blunderbuss lasgun"
 	icon_state = "neotheology"
@@ -295,12 +551,39 @@
 		/datum/design/bioprinter/nt_cells/medium,
 	)
 
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/antebellum
+	disk_name = "Absolute Armory - Antebellum Blunderbuss lasgun Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/plasma/antebellum,
+		/datum/design/bioprinter/nt_cells/medium,
+	)
+
 //Absolute Armory gun packs
 /obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns
 	disk_name = "Absolute Armory of the Old Testament"
 	desc = "A rare and expensive disk containing designs for highly advanced energy and ballistic weaponry from the Old Testament, the Absolutes arms division."
 	icon_state = "neotheology"
 	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/mk58,
+		/datum/design/autolathe/gun/mk58_wood = 2,
+		/datum/design/autolathe/gun/regulator = 3,
+		/datum/design/autolathe/gun/taser,
+		/datum/design/autolathe/gun/sniperrifle = 6,
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
+	)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns
+	disk_name = "Absolute Armory of the Old Testament Plus"
+	desc = "A rare and expensive disk containing designs for highly advanced energy and ballistic weaponry from the Old Testament, the Absolutes arms division."
+	icon_state = "neotheology"
+	license = 18
 	designs = list(
 		/datum/design/autolathe/gun/mk58,
 		/datum/design/autolathe/gun/mk58_wood = 2,
@@ -372,6 +655,39 @@
 		/datum/design/autolathe/grenade/nt_heatwave
 	)
 
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/grenades
+	disk_name = "Absolute Armory - Grenades Pack Plus"
+	icon_state = "neotheology"
+	license = 16
+	designs = list(
+		/datum/design/autolathe/grenade/nt_explosive,
+		/datum/design/autolathe/grenade/nt_flashbang,
+		/datum/design/autolathe/grenade/nt_frag,
+		/datum/design/autolathe/grenade/nt_smokebomb,
+		/datum/design/autolathe/grenade/nt_heatwave
+	)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns
+	disk_name = "Absolute Armory of the New Testament Plus"
+	desc = "A rare and expensive disk containing designs for highly advanced energy weapons from the Old Testament, the Absolutes arms division. Nicknamed the new testament for containing its latest weaponry designs."
+	icon_state = "neotheology"
+	license = 18
+	designs = list(
+		/datum/design/autolathe/gun/energy_crossbow = 10,
+		/datum/design/autolathe/gun/large_energy_crossbow = 12,
+		/datum/design/autolathe/gun/ntpistol,
+		/datum/design/autolathe/gun/laser = 2,
+		/datum/design/autolathe/gun/pulse = 5,
+		/datum/design/autolathe/gun/pulse_destroyer = 8,
+		/datum/design/autolathe/gun/ionrifle = 3,
+		/datum/design/autolathe/gun/plasma/antebellum,
+		/datum/design/autolathe/gun/concillium = 10,
+		/datum/design/autolathe/gun/carpediem = 4
+	)
+
+
 /obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns
 	disk_name = "Absolute Armory of the New Testament"
 	desc = "A rare and expensive disk containing designs for highly advanced energy weapons from the Old Testament, the Absolutes arms division. Nicknamed the new testament for containing its latest weaponry designs."
@@ -400,11 +716,23 @@
 		/datum/design/autolathe/ammo/shotgun_plasma,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt_cells
-	disk_name = "Absolute Armory - Power Cells Pack"
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells
+	disk_name = "Absolute Armory - Plasma Shell Pack Plus"
+	desc = "A rare and expensive disk containing designs for highly advanced plasma based shotgun shells."
+	icon_state = "neotheology"
+	license = 10 // 36 heavy plasma shells or 56 normal shots.
+	designs = list(
+		/datum/design/autolathe/ammo/shotgun_plasma_heavy = 2,
+		/datum/design/autolathe/ammo/shotgun_plasma,
+	)
+
+//for the EOTP
+/obj/item/computer_hardware/hard_drive/portable/design/nt/cells
+	disk_name = "Absolute Armory - Power Cells Pack Plus"
 	icon_state = "neotheology_testament"
 
-	license = -1
+	license = 12
 	designs = list(
 		/datum/design/bioprinter/nt_cells/large,
 		/datum/design/bioprinter/nt_cells/large/plasma,
@@ -412,4 +740,18 @@
 		/datum/design/bioprinter/nt_cells/medium/plasma,
 		/datum/design/bioprinter/nt_cells/small,
 		/datum/design/bioprinter/nt_cells/small/plasma
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt_cells
+	disk_name = "Absolute Armory - Power Cells Pack"
+	icon_state = "neotheology_testament"
+
+	license = 12
+	designs = list(
+		/datum/design/bioprinter/nt_cells/large = 3,
+		/datum/design/bioprinter/nt_cells/large/plasma = 4,
+		/datum/design/bioprinter/nt_cells/medium = 2,
+		/datum/design/bioprinter/nt_cells/medium/plasma = 3,
+		/datum/design/bioprinter/nt_cells/small,
+		/datum/design/bioprinter/nt_cells/small/plasma = 2
 		)
