@@ -79,6 +79,12 @@
 			new /obj/plant_spawner/towercaps(get_turf(src))
 			new /obj/plant_spawner/towercaps(get_turf(src))
 			new stump_type(get_turf(src))
+			if(prob(5))
+				for(var/mob/M in viewers(world.view, src.loc))
+					to_chat(M, "<font color='red'>A pack of spiders erupt from the Tree's bark, burrowing out to attack!</font>")
+				new /mob/living/carbon/superior_animal/giant_spider/hunter(get_turf(src))
+				new /mob/living/carbon/superior_animal/giant_spider/hunter(get_turf(src))
+				new /mob/living/carbon/superior_animal/giant_spider/hunter/viper(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You cut down a tree."))
 			qdel(src)
 			return
