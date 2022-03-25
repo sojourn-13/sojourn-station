@@ -1052,13 +1052,13 @@
 	reagent_tag = IS_SLIME
 	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
-	spawn_flags = IS_RESTRICTED
 	siemens_coefficient = 3 //conductive
 	darksight = 3
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 2
+	spawn_flags = IS_RESTRICTED
 
 	burn_mod = 1.15
 	brute_mod = 1.15
@@ -1091,9 +1091,5 @@
 /datum/species/slime/handle_death(var/mob/living/carbon/human/H)
 	spawn(1)
 		if(H)
-			var/obj/item/organ/internal/brain/slime/core = H.get_organ(BP_BRAIN)
-			if(istype(core)) // This is very, very dumb, but if it works, it works. -R4d6
-				core.host_copy = new H(src, FORM_SLIME, FORM_SLIME) // Copy the body as backup. I don't think the appearance is saved, but it's fine for now. -R4d6
-				core.host_copy.real_name = H.real_name
 			H.gib()
 
