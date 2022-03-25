@@ -472,6 +472,7 @@
 #include "code\datums\setup_option\backgrounds\origin_naramad.dm"
 #include "code\datums\setup_option\backgrounds\origin_opifex.dm"
 #include "code\datums\setup_option\backgrounds\origin_sablekyne.dm"
+#include "code\datums\setup_option\backgrounds\origin_slime.dm"
 #include "code\datums\setup_option\backgrounds\origin_synthetic.dm"
 #include "code\datums\setup_option\backgrounds\origin_upbringing.dm"
 #include "code\datums\topic\admin.dm"
