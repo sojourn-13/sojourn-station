@@ -1072,8 +1072,6 @@
 	breath_type = null
 	poison_type = null
 
-	spawn_flags = CAN_JOIN
-
 	bump_flag = SLIME
 	swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
