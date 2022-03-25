@@ -1051,7 +1051,7 @@
 	obligate_form = TRUE
 	reagent_tag = IS_SLIME
 	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
-	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	spawn_flags = IS_RESTRICTED
 	siemens_coefficient = 3 //conductive
 	darksight = 3
