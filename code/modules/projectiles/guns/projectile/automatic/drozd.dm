@@ -24,6 +24,13 @@
 		SEMI_AUTO_NODELAY
 		)
 
+/obj/item/gun/projectile/automatic/drozd/NM_colony
+	name = "\"Kompleks\" SMG"
+	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters. Uses .35 rounds."
+	icon = 'icons/obj/guns/projectile/drozd.dmi'
+	origin_tech = list(TECH_COMBAT = 4)
+	price_tag = 600
+
 /obj/item/gun/projectile/automatic/drozd/update_icon()
 	..()
 

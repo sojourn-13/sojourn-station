@@ -29,6 +29,12 @@
 		BURST_8_ROUND,
 		)
 
+/obj/item/gun/projectile/automatic/ppsh/NM_colony
+	name = "\"Ekaterina\" assault SMG"
+	desc = "An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 35 Auto; taking only specific drum magizines."
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	price_tag = 800
+
 /obj/item/gun/projectile/automatic/ppsh/update_icon()
 	..()
 	if(ammo_magazine)
