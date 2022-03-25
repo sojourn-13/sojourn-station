@@ -3,7 +3,6 @@
 	desc = "TODO"
 
 	restricted_to_species = list(FORM_SLIME)
-	racial_implants = (/obj/item/organ_module/active/simple/surgical)
 	restricted_jobs = list()
 
 	stat_modifiers = list(
@@ -20,7 +19,6 @@
 	desc = "TODO"
 
 	restricted_to_species = list(FORM_SLIME)
-	racial_implants = (/obj/item/organ_module/active/simple/surgical)
 	restricted_jobs = list()
 
 	stat_modifiers = list(
@@ -38,7 +36,6 @@
 	desc = "TODO"
 
 	restricted_to_species = list(FORM_SLIME)
-	racial_implants = (/obj/item/organ_module/active/simple/surgical)
 	restricted_jobs = list()
 
 	stat_modifiers = list(
