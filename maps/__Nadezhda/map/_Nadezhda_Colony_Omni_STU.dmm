@@ -20766,6 +20766,11 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"eMJ" = (
+/obj/structure/closet/bombcloset/security,
+/obj/machinery/blackshield_teleporter,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/armory_blackshield)
 "eMK" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -165051,7 +165056,7 @@ eEn
 hlT
 nPp
 vJJ
-xwc
+eMJ
 jiT
 wpL
 czH
@@ -165253,7 +165258,7 @@ eEn
 hRg
 nRk
 uDX
-hCr
+xwc
 ydE
 wpL
 nPp
