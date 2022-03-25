@@ -48,8 +48,6 @@
 		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
 			germ_level++
 
-
-
 /mob/living/carbon/gib()
 	for(var/mob/M in src)
 		M.loc = src.loc
