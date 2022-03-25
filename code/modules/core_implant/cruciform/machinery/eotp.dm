@@ -149,7 +149,10 @@ var/global/obj/machinery/power/eotp/eotp
 			for(var/mob/living/carbon/human/H in disciples)
 				to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. The Angels are watching with their benevolent Eye."))
 				if(H.sanity && prob(50))
-					H.sanity.changeLevel(20)
+					H.adjustOxyLoss(-50)
+					H.adjustToxLoss(-15)
+					H.adjustBruteLoss(-15)
+					H.adjustFireLoss(-15)
 
 		else
 			for(var/mob/living/carbon/human/H in disciples)
@@ -165,7 +168,10 @@ var/global/obj/machinery/power/eotp/eotp
 	else if(type_release == INSPIRATION)
 		for(var/mob/living/carbon/human/H in disciples)
 			if(H.sanity && prob(50))
-				H.sanity.breakdown(TRUE)
+				H.adjustOxyLoss(-50)
+				H.adjustToxLoss(-15)
+				H.adjustBruteLoss(-15)
+				H.adjustFireLoss(-15)
 
 	else if(type_release == ODDITY)
 		var/oddity_reward = pick(subtypesof(/obj/item/oddity/nt))
