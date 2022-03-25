@@ -97,15 +97,17 @@
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "bluespace slime extract"
 	parent_organ_base = BP_CHEST
+	var/regenerating = FALSE
 	var/revival_chem = "plasma"
 	var/respawn_delay = 100 // Delay, in deciseconds (1/10th of a second), before the slime actually revive after being injected.
 
 /obj/item/organ/internal/brain/slime/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/reagent_containers/syringe))
+	if(istype(I, /obj/item/reagent_containers/syringe) && !regenerating)
 		var/obj/item/reagent_containers/syringe/S = I
 		if(S.mode == 1 && S.reagents.remove_reagent(revival_chem, 5)) // We inject 5u of plasma // the 1 correspond to SYRINGE_INJECT, but we're before the define
 			to_chat(user, SPAN_NOTICE("You inject plasma into [src]."))
 			src.visible_message("[src] start to wobble and wiggle...")
+			regenerating = TRUE
 			spawn(100) regen_body()
 
 /obj/item/organ/internal/brain/slime/proc/regen_body()

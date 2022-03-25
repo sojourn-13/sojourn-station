@@ -33,7 +33,7 @@
 
 /obj/item/organ/internal/bone/get_actions()
 	var/list/actions_list = list()
-	if(BP_IS_ROBOTIC(src))
+	if(BP_IS_ROBOTIC(src) || istype(src, /obj/item/organ/internal/bone/slime)) // Can't break slime bones
 		if(parent.status & ORGAN_BROKEN)
 			actions_list.Add(list(list(
 				"name" = "Mend break",

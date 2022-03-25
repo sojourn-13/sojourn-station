@@ -610,36 +610,50 @@
 /datum/perk/speed_boost
 	name = "Gelatinous speed"
 	desc = "Increase your speed for a short amount of time."
-	cooldown_time = 10 MINUTES
+	var/cooldown = 10 MINUTES
+	passivePerk = FALSE
 	var/nutrition_cost = 100
 
 /datum/perk/speed_boost/activate()
-	..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		return FALSE
+	cooldown_time = world.time + cooldown
+
 	holder.nutrition -= nutrition_cost
 	// TODO : Add Speedy Chemical Injection here -R4d6
 
 /datum/perk/limb_regen
 	name = "Gelatinous Regeneration"
 	desc = "Spend nutrition in exchange of regenerating your limbs"
-	cooldown_time = 30 MINUTES
+	var/cooldown = 30 MINUTES
+	passivePerk = FALSE
 	var/nutrition_cost = 500 // I don't know if nutrition even goes that high, but that's Possum's problem. -R4d6
 	var/list/limbs = list(BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
 /datum/perk/limb_regen/activate()
-	..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		return FALSE
+	cooldown_time = world.time + cooldown
+	holder.nutrition -= nutrition_cost
 	holder.restore_all_organs() // Function located in 'code/modules/mob/living/carbon/human/human_damage.dm' Line 334. I couldn't find anything better for regenerating missing limbs and I'm too tired to try and code it in, so it will have to do. -R4d6
 
 /datum/perk/slime_stat_boost
 	name = "Gelatinous Stat Boost"
 	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
-	cooldown_time = 15 MINUTES
+	var/cooldown = 15 MINUTES
+	passivePerk = FALSE
 	var/nutrition_cost = 100
 	var/list/stats_to_boost = list() // Which stats we boost
-	var/amount_to_boost = 5 // How much the stats are boosted
-	var/duration = 5 MINUTES // How long the stats are boosted for
+	var/amount_to_boost = 90 // How much the stats are boosted
+	var/duration = 0.5 MINUTES // How long the stats are boosted for
 
 /datum/perk/slime_stat_boost/activate()
-	..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		return FALSE
+	cooldown_time = world.time + cooldown
 	holder.nutrition -= nutrition_cost
 	for(var/I in stats_to_boost)
 		holder.stats.addTempStat(I, amount_to_boost, duration, "Slime Biology")

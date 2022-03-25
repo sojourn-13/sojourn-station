@@ -2522,6 +2522,7 @@
 #include "code\modules\organs\internal\nanogate.dm"
 #include "code\modules\organs\internal\nerves.dm"
 #include "code\modules\organs\internal\psionic.dm"
+#include "code\modules\organs\internal\slime.dm"
 #include "code\modules\organs\internal\stomach.dm"
 #include "code\modules\overmap\_defines.dm"
 #include "code\modules\overmap\overmap_shuttle.dm"
