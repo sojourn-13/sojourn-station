@@ -322,7 +322,7 @@
 	name = FORM_SLIME
 	base = 'icons/mob/human_races/r_slime.dmi'
 	deform = 'icons/mob/human_races/r_slime.dmi'
-	playable = FALSE
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
 
 	blood_color = "#05FF9B"
 	flesh_color = "#05FFFB"

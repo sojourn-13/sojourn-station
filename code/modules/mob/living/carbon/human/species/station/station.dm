@@ -1052,13 +1052,12 @@
 	reagent_tag = IS_SLIME
 	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
-	spawn_flags = IS_RESTRICTED
 	siemens_coefficient = 3 //conductive
 	darksight = 3
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 2
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
 
 	burn_mod = 1.15
 	brute_mod = 1.15
