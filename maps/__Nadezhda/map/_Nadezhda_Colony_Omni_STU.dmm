@@ -80587,6 +80587,10 @@
 /obj/structure/sign/warning/caution/small,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/pros/prep)
+"sbj" = (
+/obj/machinery/power/eotp,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/absolutism/bioreactor)
 "sbr" = (
 /obj/landmark/join/start/cargo_tech,
 /turf/simulated/floor/tiled/steel,
@@ -216199,7 +216203,7 @@ mxC
 gcr
 gzw
 vcq
-mCq
+sbj
 mCq
 kFi
 beK

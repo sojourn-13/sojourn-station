@@ -1073,10 +1073,31 @@
 	return TRUE
 
 //Etops
+
+/datum/ritual/cruciform/priest/offering/buy_item
+	name = "Order armaments"
+	phrase = "Et qui non habet, vendat tunicam suam et emat gladium."
+	desc = "Allows you to spend a point to unlock a disks and gear."
+	success_message = "Your prayers have been heard."
+	fail_message = "Your prayers have not been answered."
+	power = 20
+
+/datum/ritual/cruciform/priest/offering/buy_item/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C, targets)
+	var/list/OBJS = get_front(H)
+
+	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in OBJS
+	if(!EOTP)
+		fail("You must be in front of the Eye of the Protector.", H, C)
+		return FALSE
+
+	eotp.nano_ui_interact(H)
+	return TRUE
+
+
 /datum/ritual/cruciform/priest/offering
 	name = "Offerings"
 	category = "Offerings"
-	success_message = "tus plegarais han sido escuchadas"
+	success_message = "Tus plegarais han sido escuchadas."
 	fail_message = "Your prayers have not been answered."
 	power = 30
 	var/list/req_offerings = list()
@@ -1164,7 +1185,7 @@
 
 /datum/ritual/cruciform/priest/offering/holy_guidance
 	name = "Holy guidance"
-	phrase = "Domine deus, lux via"
+	phrase = "Domine deus, lux via."
 	desc = "Present your prayers to the Will of the Protector."
 	req_offerings = list(/obj/item/oddity = 1, /obj/item/reagent_containers/food/snacks/grown = 40)
 	miracles = list(ALERT, INSPIRATION, ODDITY, STAT_BUFF, ENERGY_REWARD)

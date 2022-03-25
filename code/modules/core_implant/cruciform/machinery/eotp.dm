@@ -1,4 +1,4 @@
-
+GLOBAL_VAR_INIT(miracle_points, 0)
 var/global/obj/machinery/power/eotp/eotp
 
 /obj/machinery/power/eotp
@@ -29,7 +29,7 @@ var/global/obj/machinery/power/eotp/eotp
 	var/list/mob/living/carbon/human/scanned = list()
 	var/max_power = 100
 	var/power = 0
-	var/power_gaine = 2
+	var/power_gaine = 5
 	var/max_observation = 800
 	var/observation = 0
 	var/min_observation = -100
@@ -42,7 +42,7 @@ var/global/obj/machinery/power/eotp/eotp
 	var/last_rescan = 0
 	var/list/armaments = list()
 	var/armaments_points = 0
-	var/max_armaments_points = 500 //Upped form 100
+	var/max_armaments_points = 1200 //Upped form 100
 	var/armaments_rate = 100
 	var/static/list/unneeded_armaments = list(/datum/armament/item/gun, /datum/armament/item, /datum/armament/item/disk)
 
@@ -149,7 +149,11 @@ var/global/obj/machinery/power/eotp/eotp
 			for(var/mob/living/carbon/human/H in disciples)
 				to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. The Angels are watching with their benevolent Eye."))
 				if(H.sanity && prob(50))
-					H.sanity.changeLevel(20)
+					//H.sanity.changeLevel(20)
+					H.adjustOxyLoss(-50)
+					H.adjustToxLoss(-15)
+					H.adjustBruteLoss(-15)
+					H.adjustFireLoss(-15)
 
 		else
 			for(var/mob/living/carbon/human/H in disciples)
@@ -165,7 +169,11 @@ var/global/obj/machinery/power/eotp/eotp
 	else if(type_release == INSPIRATION)
 		for(var/mob/living/carbon/human/H in disciples)
 			if(H.sanity && prob(50))
-				H.sanity.breakdown(TRUE)
+				//H.sanity.breakdown(TRUE)
+				H.adjustOxyLoss(-50)
+				H.adjustToxLoss(-15)
+				H.adjustBruteLoss(-15)
+				H.adjustFireLoss(-15)
 
 	else if(type_release == ODDITY)
 		var/oddity_reward = pick(subtypesof(/obj/item/oddity/nt))
