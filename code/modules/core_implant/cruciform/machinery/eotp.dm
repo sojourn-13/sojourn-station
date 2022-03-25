@@ -1,4 +1,4 @@
-
+GLOBAL_VAR_INIT(miracle_points, 0)
 var/global/obj/machinery/power/eotp/eotp
 
 /obj/machinery/power/eotp
@@ -29,7 +29,7 @@ var/global/obj/machinery/power/eotp/eotp
 	var/list/mob/living/carbon/human/scanned = list()
 	var/max_power = 100
 	var/power = 0
-	var/power_gaine = 2
+	var/power_gaine = 5
 	var/max_observation = 800
 	var/observation = 0
 	var/min_observation = -100
