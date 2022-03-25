@@ -32,7 +32,7 @@
 #define MATERIAL_CARPET "carpet"
 #define MATERIAL_BIOMATTER "biomatter"
 #define MATERIAL_COMPRESSED_MATTER "compressed matter"
-#define MATERIAL_TIBERIUM "tiberium"
+#define MATERIAL_AMERIDIAN "ameridian"
 
 #define MATERIAL_LIST list(\
 	MATERIAL_STEEL,\
@@ -66,7 +66,7 @@
 	MATERIAL_CARPET,\
 	MATERIAL_BIOMATTER,\
 	MATERIAL_COMPRESSED_MATTER, \
-	MATERIAL_TIBERIUM)
+	MATERIAL_AMERIDIAN)
 
 #define PLASTEEL_COLOUR "#8e9799"
 //Color to exactly match concept art #b0bcbe

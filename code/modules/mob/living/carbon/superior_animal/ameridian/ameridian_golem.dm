@@ -1,9 +1,9 @@
-/mob/living/carbon/superior_animal/tiberium_golem
-	name = "tiberium golem"
-	desc = "A weird creature made of tiberium"
-	icon = 'icons/obj/tiberium.dmi'
-	icon_state = "golem_tiberium" // Sprite from Eris, I don't know who made them. -R4d6
-	faction = "tiberium"
+/mob/living/carbon/superior_animal/ameridian_golem
+	name = "ameridian golem"
+	desc = "A weird creature made of ameridian"
+	icon = 'icons/obj/ameridian.dmi'
+	icon_state = "golem_ameridian" // Sprite from Eris, I don't know who made them. -R4d6
+	faction = "ameridian"
 	attacktext = "smashed"
 	breath_required_type = 0 // Doesn't need to breath, in a space suit
 	breath_poison_type = 0 // Can't be poisoned
@@ -38,11 +38,11 @@
 	friendly_to_colony = FALSE
 	known_languages = list(LANGUAGE_COMMON)
 
-	var/obj/structure/tiberium_crystal/node
+	var/obj/structure/ameridian_crystal/node
 
 
-/mob/living/carbon/superior_animal/tiberium_golem/death()
+/mob/living/carbon/superior_animal/ameridian_golem/death()
 	..()
-	new /obj/item/stack/material/tiberium(get_turf(src))
+	new /obj/item/stack/material/ameridian(get_turf(src))
 	node?.golem = null // Remove the golem from the node since for some reason it doesn't do it with qdel()
 	qdel(src)

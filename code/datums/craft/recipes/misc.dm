@@ -95,11 +95,11 @@
 		list(QUALITY_CUTTING, 10, "time" = 30)
 	)
 
-/datum/craft_recipe/tiberium_seed
-	name = "tiberium growth"
+/datum/craft_recipe/ameridian_seed
+	name = "ameridian growth"
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
-	result = /obj/structure/tiberium_crystal
+	result = /obj/structure/ameridian_crystal
 	icon_state = "device"
 	steps = list(
-		list(CRAFT_MATERIAL, 5, MATERIAL_TIBERIUM, "time" = 25)
+		list(CRAFT_MATERIAL, 5, MATERIAL_AMERIDIAN, "time" = 25)
 	)

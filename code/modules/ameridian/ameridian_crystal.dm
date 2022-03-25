@@ -1,8 +1,8 @@
-/obj/structure/tiberium_crystal
-	name = "tiberium crystal"
+/obj/structure/ameridian_crystal
+	name = "ameridian crystal"
 	desc = "A strange crystal formation that seems to grow on its own..."
-	icon = 'icons/obj/tiberium.dmi'
-	icon_state = "tiberium_crystal"
+	icon = 'icons/obj/ameridian.dmi'
+	icon_state = "ameridian_crystal"
 	anchored = TRUE
 	density = FALSE // We can walk through them
 	light_range = 3 // Glow in the dark
@@ -16,12 +16,12 @@
 	var/rad_range = 2 // Radius that the crystal irradiate
 	var/rad_damage = 0.5 // How much rad damage the crystal inflict per tick
 
-	var/golem_threshold = 10 // How many fully-grown tiberium crystals need to be in a location for a golem to spawn
+	var/golem_threshold = 10 // How many fully-grown ameridian crystals need to be in a location for a golem to spawn
 	var/golem_timer = 100 // How many ticks between golem spawning
 	var/golem_range = 2 // Radius that the crystal check for the above threshold
-	var/mob/living/carbon/superior_animal/tiberium_golem/golem // The golem that the growth spawned
+	var/mob/living/carbon/superior_animal/ameridian_golem/golem // The golem that the growth spawned
 
-/obj/structure/tiberium_crystal/Initialize(mapload, ...)
+/obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	..()
 	START_PROCESSING(SSturf, src)
 
@@ -34,11 +34,11 @@
 	golem_timer = 0 // Reset the timer
 	update_icon()
 
-/obj/structure/tiberium_crystal/Destroy()
+/obj/structure/ameridian_crystal/Destroy()
 	..()
 	STOP_PROCESSING(SSturf, src)
 
-/obj/structure/tiberium_crystal/Process()
+/obj/structure/ameridian_crystal/Process()
 	irradiate()
 
 	if(prob(growth_prob))
@@ -49,7 +49,7 @@
 	if(growth >= max_growth)
 		handle_golems()
 
-/obj/structure/tiberium_crystal/update_icon()
+/obj/structure/ameridian_crystal/update_icon()
 	transform = initial(transform)
 	transform *= ((1/max_growth) * growth) // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
 
@@ -57,11 +57,11 @@
 		underlays -= U
 	underlays += ("crystal_floor_[clamp(growth, 1, 5)]")
 
-/obj/structure/tiberium_crystal/attackby(obj/item/I, mob/user)
+/obj/structure/ameridian_crystal/attackby(obj/item/I, mob/user)
 	if(user.a_intent == I_HELP && user.Adjacent(src) && I.has_quality(QUALITY_EXCAVATION))
 		src.visible_message(SPAN_NOTICE("[user] starts excavating crystals from [src]."), SPAN_NOTICE("You start excavating crystal from [src]."))
 		if(do_after(user, WORKTIME_SLOW, src))
-			var/obj/item/stack/material/tiberium/T = new(get_turf(src))
+			var/obj/item/stack/material/ameridian/T = new(get_turf(src))
 			T.amount = growth // Drop more crystal the further along we are
 			src.visible_message(SPAN_NOTICE("[user] excavates a crystal from [src]."), SPAN_NOTICE("You excavate a crystal from [src]."))
 			qdel(src)
@@ -71,24 +71,24 @@
 		..()
 
 // This proc is responsible for giving radiation damage to every nearby organics.
-/obj/structure/tiberium_crystal/proc/irradiate()
+/obj/structure/ameridian_crystal/proc/irradiate()
 	for(var/mob/living/l in range(src, rad_range))
 		if(issynthetic(l)) // Don't irradiate synths
 			continue
 		l.apply_effect(rad_damage, IRRADIATE)
 
 // This proc handle the growth & spread of the crystal
-/obj/structure/tiberium_crystal/proc/handle_growth()
+/obj/structure/ameridian_crystal/proc/handle_growth()
 	if(growth >= max_growth) // If we are at max growth.
 		spread()
 	else
 		growth += 1 // Keep Growing
 		update_icon()
 
-/obj/structure/tiberium_crystal/proc/spread()
+/obj/structure/ameridian_crystal/proc/spread()
 	var/list/turf_list = list()
 	for(var/turf/T in orange(spread_range, get_turf(src)))
-		if(locate(/obj/structure/tiberium_crystal) in T) // skip turfs that already have a crystal
+		if(locate(/obj/structure/ameridian_crystal) in T) // skip turfs that already have a crystal
 			continue
 		if(istype(T, /turf/simulated/open) || istype(T, /turf/space))
 			continue // Ignore turfs that are actually air
@@ -97,10 +97,10 @@
 
 	if(turf_list.len)
 		var/turf/T = pick(turf_list)
-		new /obj/structure/tiberium_crystal(T) // We spread
+		new /obj/structure/ameridian_crystal(T) // We spread
 
 // This proc handle the spawning of golems
-/obj/structure/tiberium_crystal/proc/handle_golems()
+/obj/structure/ameridian_crystal/proc/handle_golems()
 	if(golem)
 		return FALSE
 
@@ -108,12 +108,12 @@
 		golem_timer = 0
 
 		var/valid_crystal = 0
-		for(var/obj/structure/tiberium_crystal/TC in range(golem_range, src))
-			if(istype(TC, /obj/structure/tiberium_crystal/spire))
-				continue // Ignore the tiberium spire if there's one
-			if(TC.golem)
+		for(var/obj/structure/ameridian_crystal/AC in range(golem_range, src))
+			if(istype(AC, /obj/structure/ameridian_crystal/spire))
+				continue // Ignore the ameridian spire if there's one
+			if(AC.golem)
 				return FALSE // Don't spawn a golem if any nearby growth spawned one, to prevent a fuckton of golems from spawning
-			if(TC.growth >= max_growth)
+			if(AC.growth >= max_growth)
 				valid_crystal++
 			if(valid_crystal >= golem_threshold)
 				break // We have enough crystals, leave early
@@ -135,8 +135,8 @@
 		return FALSE
 
 // Check for duplicate crystals in the same turf
-/obj/structure/tiberium_crystal/proc/handle_duplicate_crystals()
-	for(var/obj/structure/tiberium_crystal/TC in orange(0, src)) // Check the turf we are in
+/obj/structure/ameridian_crystal/proc/handle_duplicate_crystals()
+	for(var/obj/structure/ameridian_crystal/TC in orange(0, src)) // Check the turf we are in
 		if(TC.growth > growth)
 			continue // Don't delete crystals bigger than us
 		qdel(TC)

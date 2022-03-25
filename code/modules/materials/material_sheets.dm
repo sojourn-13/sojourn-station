@@ -430,15 +430,15 @@
 /obj/item/stack/material/compressed_matter/full
 	amount = 120
 
-/obj/item/stack/material/tiberium
-	name = "tiberium crystals"
+/obj/item/stack/material/ameridian
+	name = "ameridian shard"
 	desc = "A weird green crystal that seems to grow on its own."
-	singular_name = "tiberium crystal"
-	icon = 'icons/obj/tiberium.dmi'
-	icon_state = "tiberium_crystal_item"
-	default_type = MATERIAL_TIBERIUM
+	singular_name = "ameridian crystal"
+	icon = 'icons/obj/ameridian.dmi'
+	icon_state = "ameridian_crystal_item"
+	default_type = MATERIAL_AMERIDIAN
 	novariants = TRUE
-	price_tag = 250 // Tiberium mining is extremly dangerous and very profitable
+	price_tag = 250 // Ameridian mining is extremly dangerous and very profitable
 
-/obj/item/stack/material/tiberium/full
+/obj/item/stack/material/ameridian/full
 	amount = 120

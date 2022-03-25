@@ -1,19 +1,19 @@
-// This machine process Tiberium into other raw materials with code stolen from the bullet fabricator
-/obj/machinery/tiberium_processor
-	name = "tiberium processor"
-	desc = "A machine to convert tiberium crystals into other raw materials"
+// This machine process Ameridian into other raw materials with code stolen from the bullet fabricator
+/obj/machinery/ameridian_processor
+	name = "ameridian processor"
+	desc = "A machine to convert ameridian crystals into other raw materials"
 	icon = 'icons/obj/machines/grinder.dmi'
-	icon_state = "tiberium_processor"
+	icon_state = "ameridian_processor"
 	density = TRUE
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 40
-	circuit = /obj/item/circuitboard/bullet_fab
+	circuit = /obj/item/circuitboard/ameridian_processor
 	var/processing = FALSE
 	var/obj/item/reagent_containers/glass/beaker = null
 	var/points = 0
-	var/point_ratio = 100 // How many points is a single tiberium sheet worth
+	var/point_ratio = 100 // How many points is a single ameridian sheet worth
 	var/menustat = "menu"
 	var/build_eff = 1
 	var/eat_eff = 1
@@ -61,19 +61,12 @@
 			list(name="Tritium (120)", cost=24000, path=/obj/item/stack/material/tritium/full),
 	)
 
-/obj/machinery/tiberium_processor/New()
+/obj/machinery/ameridian_processor/New()
 	..()
 	create_reagents(1000)
 	beaker = new /obj/item/reagent_containers/glass/beaker/large(src) //???
 
-/obj/machinery/tiberium_processor/update_icon()
-	if(!processing)
-		icon_state = "greyson"
-	else
-		icon_state = "greyson_work"
-	return
-
-/obj/machinery/tiberium_processor/attackby(var/obj/item/I, var/mob/user)
+/obj/machinery/ameridian_processor/attackby(var/obj/item/I, var/mob/user)
 
 	if(istype(I, /obj/item/stack/material/cyborg))
 		return //Prevents borgs throwing their stuff into it
@@ -85,11 +78,11 @@
 		return
 	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
-	else if(!istype(I, /obj/item/stack/material/tiberium))
+	else if(!istype(I, /obj/item/stack/material/ameridian))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
 	else
 		var/i = 0
-		for(var/obj/item/stack/material/tiberium/G in contents)
+		for(var/obj/item/stack/material/ameridian/G in contents)
 			i++
 		if(i >= 120)
 			to_chat(user, SPAN_NOTICE("\The [src] is full! Activate it."))
@@ -100,7 +93,7 @@
 	update_icon()
 	return
 
-/obj/machinery/tiberium_processor/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/ameridian_processor/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
 	user.set_machine(src)
 	var/list/data = list()
 	data["points"] = points
@@ -135,29 +128,29 @@
 	if (!ui)
 		// the ui does not exist, so we'll create a new() one
 		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "tiberium_processor.tmpl", "Tiberium Processor", 550, 655)
+		ui = new(user, src, ui_key, "ameridian_processor.tmpl", "Ameridian Processor", 550, 655)
 		// when the ui is first opened this is the data it will use
 		ui.set_initial_data(data)
 		// open the new ui window
 		ui.open()
 
-/obj/machinery/tiberium_processor/attack_hand(mob/user as mob)
+/obj/machinery/ameridian_processor/attack_hand(mob/user as mob)
 	if(..())
 		return TRUE
 
 	user.set_machine(src)
 	nano_ui_interact(user)
 
-/obj/machinery/tiberium_processor/proc/activate()
+/obj/machinery/ameridian_processor/proc/activate()
 	if (usr.stat)
 		return
 	if (stat) //NOPOWER etc
 		return
 	if(processing)
-		to_chat(usr, SPAN_NOTICE("The tiberium processor is in the process of working."))
+		to_chat(usr, SPAN_NOTICE("The ameridian processor is in the process of working."))
 		return
 	var/S = 0
-	for(var/obj/item/stack/material/tiberium/T in contents)
+	for(var/obj/item/stack/material/ameridian/T in contents)
 		S += 5
 		points += T.amount * point_ratio
 		//if(I.reagents.get_reagent_amount("nutriment") < 0.1)
@@ -177,7 +170,7 @@
 		menustat = "void"
 	return
 
-/obj/machinery/tiberium_processor/proc/create_product(var/item, var/amount)
+/obj/machinery/ameridian_processor/proc/create_product(var/item, var/amount)
 	var/list/recipe = null
 	if(processing)
 		return
@@ -219,7 +212,7 @@
 		update_icon()
 		return TRUE
 
-/obj/machinery/tiberium_processor/Topic(href, href_list)
+/obj/machinery/ameridian_processor/Topic(href, href_list)
 	if(stat & BROKEN) return
 	if(usr.stat || usr.restrained()) return
 	if(!in_range(src, usr)) return
@@ -239,7 +232,7 @@
 			menustat = "menu"
 	updateUsrDialog()
 
-/obj/machinery/tiberium_processor/RefreshParts()
+/obj/machinery/ameridian_processor/RefreshParts()
 	..()
 	var/man_rating = 0
 	var/bin_rating = 0

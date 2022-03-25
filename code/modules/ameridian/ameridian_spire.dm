@@ -1,9 +1,9 @@
-// Tiberium Spire, an indestructible building that constantly refill missing tiberium around it.
-/obj/structure/tiberium_crystal/spire
-	name = "tiberium spire"
+// Ameridian Spire, an indestructible building that constantly refill missing ameridian around it.
+/obj/structure/ameridian_crystal/spire
+	name = "ameridian spire"
 	desc = "A strange crystal formation that seems to grow on its own..."
-	icon = 'icons/obj/tiberium.dmi'
-	icon_state = "tiberium_crystal_purple"
+	icon = 'icons/obj/ameridian.dmi'
+	icon_state = "ameridian_crystal_purple"
 	anchored = TRUE
 	density = TRUE
 	light_range = 7 // Glow in the dark
@@ -15,21 +15,21 @@
 	rad_damage = 1
 	rad_range = 3
 
-/obj/structure/tiberium_crystal/spire/update_icon()
+/obj/structure/ameridian_crystal/spire/update_icon()
 	transform = initial(transform)
 	transform *= 1.5 // 50% bigger
 
-/obj/structure/tiberium_crystal/spire/examine(mob/user)
+/obj/structure/ameridian_crystal/spire/examine(mob/user)
 	..()
 	if(user.stats?.getPerk(PERK_PSION)) // Are we a psion and is there something to see?
 		to_chat(user, "<b><font color='purple'> You have the feeling this spire goes deep. Very deep...")
 
-/obj/structure/tiberium_crystal/spire/attackby(obj/item/I, mob/user)
+/obj/structure/ameridian_crystal/spire/attackby(obj/item/I, mob/user)
 	src.visible_message(SPAN_NOTICE("[user] cannot make a dent into [src]."), SPAN_NOTICE("You cannot make a dent into [src]."))
 	return // Can't destroy it
 
 // Spires always spawn a golem each
-/obj/structure/tiberium_crystal/spire/handle_golems()
+/obj/structure/ameridian_crystal/spire/handle_golems()
 	if(golem)
 		return FALSE
 

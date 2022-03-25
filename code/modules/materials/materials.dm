@@ -812,10 +812,10 @@ var/list/name_to_material
 	ignition_point = T0C+232
 	melting_point = T0C+300
 
-/material/tiberium
-	name = MATERIAL_TIBERIUM
-	stack_type = /obj/item/stack/material/tiberium
+/material/ameridian
+	name = MATERIAL_AMERIDIAN
+	stack_type = /obj/item/stack/material/ameridian
 	icon_colour = "#007A00"
-	sheet_singular_name = "crystal"
-	sheet_plural_name = "crystals"
+	sheet_singular_name = "shard"
+	sheet_plural_name = "shards"
 	stack_origin_tech = list(TECH_MATERIAL = 9)
