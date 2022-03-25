@@ -605,3 +605,51 @@
 	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate herbivore. You get very little nutrition from standard protein, but gain alot from grown foods and glucose \
 	based products."
 	passivePerk = TRUE
+
+///////////////////////////////////// Slime perks
+/datum/perk/speed_boost
+	name = "Gelatinous speed"
+	desc = "Increase your speed for a short amount of time."
+	cooldown_time = 10 MINUTES
+	var/nutrition_cost = 100
+
+/datum/perk/speed_boost/activate()
+	..()
+	holder.nutrition -= nutrition_cost
+	// TODO : Add Speedy Chemical Injection here -R4d6
+
+/datum/perk/limb_regen
+	name = "Gelatinous Regeneration"
+	desc = "Spend nutrition in exchange of regenerating your limbs"
+	cooldown_time = 30 MINUTES
+	var/nutrition_cost = 500 // I don't know if nutrition even goes that high, but that's Possum's problem. -R4d6
+	var/list/limbs = list(BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+
+/datum/perk/limb_regen/activate()
+	..()
+	holder.restore_all_organs() // Function located in 'code/modules/mob/living/carbon/human/human_damage.dm' Line 334. I couldn't find anything better for regenerating missing limbs and I'm too tired to try and code it in, so it will have to do. -R4d6
+
+/datum/perk/slime_stat_boost
+	name = "Gelatinous Stat Boost"
+	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
+	cooldown_time = 15 MINUTES
+	var/nutrition_cost = 100
+	var/list/stats_to_boost = list() // Which stats we boost
+	var/amount_to_boost = 5 // How much the stats are boosted
+	var/duration = 5 MINUTES // How long the stats are boosted for
+
+/datum/perk/slime_stat_boost/activate()
+	..()
+	holder.nutrition -= nutrition_cost
+	for(var/I in stats_to_boost)
+		holder.stats.addTempStat(I, amount_to_boost, duration, "Slime Biology")
+
+/datum/perk/slime_stat_boost/mental
+	name = "Gelatinous Mental Stat Boost"
+	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
+	stats_to_boost = list(STAT_BIO, STAT_MEC, STAT_COG)
+
+/datum/perk/slime_stat_boost/physical
+	name = "Gelatinous Physical Stat Boost"
+	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
+	stats_to_boost = list(STAT_ROB, STAT_TGH, STAT_VIG)

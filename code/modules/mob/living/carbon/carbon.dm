@@ -48,7 +48,36 @@
 		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
 			germ_level++
 
-
+		if(src.species?.reagent_tag == IS_SLIME) // Slimes clean the floor. Code stolen from the roombas
+			var/turf/tile = loc
+			var/nutrition_gained = 5 // Up here for ease of modification
+			if(isturf(tile))
+				tile.clean_blood()
+				for(var/A in tile)
+					if(istype(A, /obj/effect))
+						if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
+							qdel(A)
+							src.nutrition += nutrition_gained // Gain some nutrition
+					else if(istype(A, /obj/item))
+						var/obj/item/cleaned_item = A
+						cleaned_item.clean_blood()
+					else if(ishuman(A))
+						var/mob/living/carbon/human/cleaned_human = A
+						if(cleaned_human.lying)
+							if(cleaned_human.head)
+								cleaned_human.head.clean_blood()
+								cleaned_human.update_inv_head(0)
+							if(cleaned_human.wear_suit)
+								cleaned_human.wear_suit.clean_blood()
+								cleaned_human.update_inv_wear_suit(0)
+							else if(cleaned_human.w_uniform)
+								cleaned_human.w_uniform.clean_blood()
+								cleaned_human.update_inv_w_uniform(0)
+							if(cleaned_human.shoes)
+								cleaned_human.shoes.clean_blood()
+								cleaned_human.update_inv_shoes(0)
+							cleaned_human.clean_blood(1)
+							to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
 
 /mob/living/carbon/gib()
 	for(var/mob/M in src)
