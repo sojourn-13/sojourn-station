@@ -47,7 +47,7 @@
 // Try to use the hydrogen, return true if we used it, false if we couldn't consume it.
 // The hydrogen fuel cell already have a proc that consume the indicated amount and return FALSE if there wasn't enough.
 /obj/machinery/power/hydrogen_gen/proc/UseFuel()
-	return fuel_cell.use(hydrogen_usage)
+	return fuel_cell?.use(hydrogen_usage)
 
 // Proc to insert the fuel cell in the generator
 /obj/machinery/power/hydrogen_gen/proc/InsertFuelCell(obj/item/hydrogen_fuel_cell/C, mob/user)
@@ -81,7 +81,7 @@
 		add_avail(power_gen * power_output)
 		src.updateDialog()
 	else
-		active = 0
+		active = FALSE
 
 	update_icon()
 
