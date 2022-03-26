@@ -283,9 +283,9 @@
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/cape/corpsmans_cape
-	name = "corpsmen cape"
-	desc = "A cape made from blue and white fabric denoting that they are a corpsmen, to be easily seen in the jungle."
-	icon_state = "corpsman cape"
+	name = "corpsman cape"
+	desc = "A cape made from blue and white fabric denoting that they are a corpsman, to be easily seen in the jungle."
+	icon_state = "corpsman_cape"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/cape/black

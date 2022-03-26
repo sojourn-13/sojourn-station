@@ -665,6 +665,7 @@
 	var/datum/firemode/new_mode = firemodes[sel_mode]
 	new_mode.update()
 	update_hud_actions()
+	folding_check()
 	return new_mode
 
 /obj/item/gun/attack_self(mob/user)
@@ -766,6 +767,29 @@
 			folded = FALSE
 
 		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
+
+/obj/item/gun/proc/folding_check(user, span_chat)
+//Were going to do some insainly dumb things to not doup or brake anything with storage or gun mods, well being modular
+	if(!folding_stock)
+		return //quick return
+
+	if(!folded)
+		refresh_upgrades() //First we grab are upgrades to not do anything silly
+		extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
+		//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
+		recoil_buildup *= 0.5 //50% less recoil
+		one_hand_penalty *= 0.5 //50% less recoil
+		damage_multiplier += 0.1 //10% more damage
+		proj_step_multiplier  -= 0.4 //40% more sped on the bullet
+		penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
+		extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
+		folded = TRUE
+	else
+		refresh_upgrades() //First we grab are upgrades to not do anything silly
+		folded = FALSE
+
+		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
+
 
 //Updating firing modes at appropriate times
 /obj/item/gun/pickup(mob/user)
@@ -894,6 +918,7 @@
 	attack_verb = list()
 	one_hand_penalty = initial(one_hand_penalty)
 	auto_eject = initial(auto_eject) //SoJ edit
+	extra_bulk = initial(extra_bulk) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
 	//Lets get are prefixes and name fresh
