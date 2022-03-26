@@ -23,7 +23,7 @@
 
 /obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	..()
-	START_PROCESSING(SSturf, src)
+	START_PROCESSING(SSobj, src)
 
 	// If the crystal was mapped in, spawn at full growth, else spawn as a seed.
 	if(!growth) // As long as we didn't manually set a growth level
