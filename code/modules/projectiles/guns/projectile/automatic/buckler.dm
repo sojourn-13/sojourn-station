@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/automatic/buckler
-	name = "\"Buckler\" Magnum SMG"
+	name = "\"Buckler\" SMG"
 	desc = "A haphazard amalgamation of the practical experience of blackshield and the gunsmithing expertise of the marshals came to create this compact SMG. \
 	With the average trooper in mind, the 'Buckler' was designed for flexibility and low maintenance, \
 	with an extendable stock it can easily be stored and kept out of the hands of certain prospectors. \
