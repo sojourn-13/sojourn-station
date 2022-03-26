@@ -274,6 +274,13 @@
 	build_path = /obj/item/ammo_magazine/magnum_40/rubber
 	materials = list(MATERIAL_STEEL = 3)
 
+/datum/design/autolathe/ammo/magnum_pepperball
+	name = "magazine (.40 Auto-Mag pepperspray)"
+	build_path = /obj/item/ammo_magazine/magnum_40/rubber/pepperball
+	materials = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2)
+	chemicals = list("condensedcapsaicin" = 5)
+
+
 /datum/design/autolathe/ammo/magnum
 	name = "magazine (.40 Auto-Mag)"
 	build_path = /obj/item/ammo_magazine/magnum_40
@@ -304,6 +311,13 @@
 	name = "ammunition box (.40 Auto-Mag rubber)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/rubber
 	materials = list(MATERIAL_STEEL = 9)
+
+/datum/design/autolathe/ammo/magnum_ammobox_pepperball
+	name = "ammunition box (.40 Auto-Mag pepperspray)"
+	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/rubber/pepperball
+	materials = list(MATERIAL_PLASTIC = 9)
+	chemicals = list("condensedcapsaicin" = 150)
+
 
 /datum/design/autolathe/ammo/magnum_ammobox_practice
 	name = "ammunition box (.40 Auto-Mag practice)"
@@ -774,6 +788,19 @@
 	build_path = /obj/item/ammo_casing/grenade/flash
 	materials = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 0.5, MATERIAL_GLASS = 0.5)
 
+/datum/design/autolathe/ammo/fs_stinger
+	name = "Seinemetall Defense GmbH sting shell"
+	build_path = /obj/item/ammo_casing/grenade
+
+/* Todo: these
+/datum/design/autolathe/ammo/nt_stinger
+	name = "OT sting shell"
+	build_path = /obj/item/ammo_casing/grenade/weak
+
+/datum/design/autolathe/ammo/shell_heatwave
+	name = "NT heatwave shell"
+	build_path = /obj/item/ammo_casing/grenade/heatwave
+*/
 // Flare Shells
 /datum/design/autolathe/ammo/flare_shell
 	name = ".22 red flare shell"

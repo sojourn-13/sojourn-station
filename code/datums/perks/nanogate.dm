@@ -12,7 +12,7 @@
 	name = "Nanite Regeneration"
 	desc = "You configure your nanite matrix to begin aiding in your natural healing."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
-	var/regen_rate = 1
+	var/regen_rate = 0.5 //This seems low but this is per human handle_chemicals_in_body meaning this is rather robust
 
 /datum/perk/nanite_muscle
 	name = "Nanofiber Muscle Therapy"

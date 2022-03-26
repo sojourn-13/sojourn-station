@@ -219,8 +219,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	build_time = 8 SECONDS
 
 /datum/nt_blueprint/machinery/eotp
-	name = "Eye of the Absolute"
-	build_path = /obj/machinery/power/nt_obelisk/eotp
+	name = "Will of the Protector"
+	build_path = /obj/machinery/power/eotp
 	materials = list(
 		/obj/item/stack/material/plasteel = 15,
 		/obj/item/stack/material/biomatter = 10,

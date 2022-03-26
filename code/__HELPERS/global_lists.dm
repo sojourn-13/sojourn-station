@@ -31,6 +31,7 @@ GLOBAL_LIST_EMPTY(shuttle_landmarks_list)		//list of all /obj/effect/shuttle_lan
 GLOBAL_LIST_EMPTY(old_surgery_steps)			//list of all old-style (not bound to organs) surgery steps
 GLOBAL_LIST_EMPTY(surgery_steps)					//list of all new organ-based surgery steps
 GLOBAL_LIST_EMPTY(mechas_list)				//list of all mechs. Used by hostile mobs target tracking. Not sure this is used anymore
+GLOBAL_LIST_EMPTY(drill_list)				//list of all mining drills. Used by hostile mobs target tracking. Not sure this is used anymore
 
 GLOBAL_LIST_EMPTY(all_burrows)				//list of all burrows
 GLOBAL_LIST_EMPTY(all_maintshrooms)			//list of all maintshrooms

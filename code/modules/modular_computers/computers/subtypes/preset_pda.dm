@@ -40,6 +40,9 @@
 	icon_state = "pda-s"
 	scanner_type = /obj/item/computer_hardware/scanner/reagent
 
+/obj/item/modular_computer/pda/corpsman
+	icon_state = "pda-s"
+	scanner_type = /obj/item/computer_hardware/scanner/medical
 
 /obj/item/modular_computer/pda/science
 	hard_drive_type = /obj/item/computer_hardware/hard_drive/small/adv

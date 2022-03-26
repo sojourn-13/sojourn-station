@@ -46,7 +46,6 @@
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 99
-	projectiletype = /obj/item/projectile/beam/midlaser
 	mag_type = /obj/item/ammo_magazine/c10x24/empty
 	mags_left = 1
 	casingtype = null

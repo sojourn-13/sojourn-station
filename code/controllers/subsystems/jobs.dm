@@ -310,6 +310,7 @@ SUBSYSTEM_DEF(job)
 	var/datum/job/job = GetJob(rank)
 	var/list/spawn_in_storage = list()
 
+
 	if(job)
 		H.job = rank
 
@@ -407,6 +408,15 @@ SUBSYSTEM_DEF(job)
 			C.access.Add(job.cruciform_access)
 			C.install_default_modules_by_path(job)
 			C.security_clearance = job.security_clearance
+
+		//Occulus Edit, Right here! Custom skills.
+		H.stats.changeStat(STAT_BIO, H.client.prefs.BIOMOD)
+		H.stats.changeStat(STAT_COG, H.client.prefs.COGMOD)
+		H.stats.changeStat(STAT_MEC, H.client.prefs.MECMOD)
+		H.stats.changeStat(STAT_ROB, H.client.prefs.ROBMOD)
+		H.stats.changeStat(STAT_TGH, H.client.prefs.TGHMOD)
+		H.stats.changeStat(STAT_VIG, H.client.prefs.VIGMOD)
+		// This could be cleaner and better, however it should apply your stats once on spawn properly if here. If anyone wants to do this in a cleaner manner be my guest.
 
 		BITSET(H.hud_updateflag, ID_HUD)
 		BITSET(H.hud_updateflag, SPECIALROLE_HUD)

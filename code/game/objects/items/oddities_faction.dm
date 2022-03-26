@@ -58,7 +58,7 @@
 	var/active = FALSE
 	var/area_radius = 7
 
-	var/buff_power = 5
+	var/buff_power = 15 //Makes it viable to have around
 
 	var/stats_buff = list(STAT_BIO, STAT_COG, STAT_MEC)
 	var/list/mob/living/carbon/human/currently_affected = list()
@@ -216,7 +216,18 @@
 	var/list/oddity_stats = list(STAT_MEC = 0, STAT_COG = 0, STAT_BIO = 0, STAT_ROB = 0, STAT_TGH = 0, STAT_VIG = 0)
 	var/last_produce = -30 MINUTES
 	var/items_count = 0
-	var/max_count = 5
+/*
+Z:/FloppyDisk/TRILBYMOD: //It had to be done.
+Z:/FloppyDisk/TRILBYMOD: var/max_count = 5
+Z:/FloppyDisk/TRILBYMOD: DEPLOY CUBE NERF
+*/
+	var/max_count = 3
+/*
+Trilby... Did you?
+You tampered with my cube
+You thought it too powerful no doubt. But Please...
+No more of that.
+*/
 	var/cooldown = 30 MINUTES
 
 /obj/item/device/techno_tribalism/New()
@@ -266,7 +277,7 @@
 				oddity_stats[STAT_VIG] += 3
 				oddity_stats[STAT_COG] += 1
 			else
-				crash_with("[W], incompatible department")
+				CRASH("[W], incompatible department")
 
 		else if(istype(W, /obj/item/tool))
 			var/useful = FALSE

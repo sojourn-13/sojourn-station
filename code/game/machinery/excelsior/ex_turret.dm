@@ -15,9 +15,13 @@
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/working_range = 30 // how far this turret operates from excelsior teleporter
-	health = 160
+	health = 300
+	maxHealth = 300
 	auto_repair = 1
 	shot_delay = 0.3
+
+/obj/machinery/porta_turret/excelsior/preloaded
+	ammo = 160
 
 /obj/machinery/porta_turret/excelsior/proc/has_power_source_nearby()
 	for (var/a in excelsior_teleporters)
@@ -112,6 +116,9 @@
 		return TURRET_NOT_TARGET
 
 	if(is_excelsior(L))
+		return TURRET_NOT_TARGET
+
+	if(L.faction == "excelsior") //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
 	if(L.lying)
