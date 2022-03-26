@@ -51,7 +51,6 @@
 /obj/machinery/mining/drill/Destroy()
 	for(var/obj/machinery/mining/brace/b in supports)
 		b.disconnect()
-	GLOB.drill_list -= src
 	return ..()
 
 /obj/machinery/mining/drill/Initialize()
@@ -59,7 +58,6 @@
 	var/obj/item/cell/large/high/C = new(src)
 	component_parts += C
 	cell = C
-	GLOB.drill_list += src
 	update_icon()
 
 /obj/machinery/mining/drill/Process()

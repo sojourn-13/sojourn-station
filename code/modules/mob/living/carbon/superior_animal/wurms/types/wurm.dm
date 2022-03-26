@@ -3,10 +3,10 @@
 #define WURM_HEALTH_HIGH 75
 #define WURM_HEALTH_ULTRA 100
 
-#define WURM_ARMOR_LOW 20
-#define WURM_ARMOR_MED 35
-#define WURM_ARMOR_HIGH 50
-#define WURM_ARMOR_ULTRA 65
+//#define WURM_ARMOR_LOW 20
+//#define WURM_ARMOR_MED 35
+//#define WURM_ARMOR_HIGH 50
+//#define WURM_ARMOR_ULTRA 65
 
 #define WURM_DMG_LOW 15
 #define WURM_DMG_MED 25
@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	min_bodytemperature = 0 //below this, burn damage is dealt
 	max_bodytemperature = 10000 //above this, burn damage is dealt
 	friendly_to_colony = FALSE
-	// Armor related variables
+	/* Armor related variables - Soj edit we have are own
 	var/melee = 0
 	var/bullet = 0
 	var/energy = 0
@@ -63,7 +63,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	var/bio = 0
 	var/rad = 0
 
-	// Damage multiplier when destroying surroundings
+	 Damage multiplier when destroying surroundings*/
 	var/surrounds_mult = 0.5
 
 	// Type of ore to spawn when the wurm dies
@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	if(drill)
 		DD = drill
 		if(prob(50))
-			drill_sabo = TRUE
+			target_mob  = drill
 			stance = HOSTILE_STANCE_ATTACK
 
 		for(var/O in oview(5, src)) // Check our surroundings.
@@ -97,6 +97,12 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
+
+/mob/living/carbon/superior_animal/wurm/isValidAttackTarget(atom/O)
+	// wurms can actively try to attack the drill
+	if(istype(O, /obj/machinery/mining/drill))
+		return TRUE
+	return ..()
 
 /mob/living/carbon/superior_animal/wurm/death(gibbed, deathmessage = "explodes in a shower of ichor and gore!")
 
@@ -113,9 +119,6 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 
 	..()
 	new /obj/effect/gibspawner/generic(src.loc)
-
-/mob/living/carbon/superior_animal/wurm/getarmor(def_zone, type)
-	return vars[type]
 
 //////////////////
 //Types of Wurms//
@@ -144,9 +147,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	melee = WURM_ARMOR_LOW
-	bullet = WURM_ARMOR_MED
-	energy = WURM_ARMOR_MED
+	armor = list(melee = 20, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/ore/iron
@@ -172,9 +173,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_LOW
 
 //Armor related variables
-	melee = WURM_ARMOR_HIGH
-	bullet = WURM_ARMOR_MED
-	energy = WURM_ARMOR_LOW
+	armor = list(melee = 50, bullet = 35, energy = 20, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/ore/silver
@@ -200,9 +199,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	melee = WURM_ARMOR_MED
-	bullet = WURM_ARMOR_HIGH
-	energy = WURM_ARMOR_LOW
+	armor = list(melee = 35, bullet = 59, energy = 20, bomb = 50, bio = 100, rad = 0)
+
 
 //Loot related variables
 	ore = /obj/item/ore/osmium
@@ -229,9 +227,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	melee = WURM_ARMOR_LOW
-	bullet = WURM_ARMOR_MED
-	energy = WURM_ARMOR_HIGH
+	armor = list(melee = 20, bullet = 35, energy = 50, bomb = 50, bio = 100, rad = 0)
+
 
 //Loot related variables
 	ore = /obj/item/ore/osmium

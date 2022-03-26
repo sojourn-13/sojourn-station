@@ -25,6 +25,7 @@
 	extra_damage_mult_scoped = 0.5 //High class gun
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
+	ammo_magazine = /obj/item/ammo_magazine/rifle_75
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
