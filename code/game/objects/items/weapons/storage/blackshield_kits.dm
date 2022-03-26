@@ -65,6 +65,21 @@
 		new /obj/item/ammo_magazine/light_rifle_257_short(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/watchtower
+	name = "\improper DMR watchtower Kit"
+	desc = "The standard Blackshield equipment kit containing an Watchtower DMR, a longer range rifle simular to the Strelki but with much better recoil controle at the cost of penitration power and scope range."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/nordwind/watchtower(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+//Sargents
+
 /obj/item/storage/box/bs_kit/sts_para
 	name = "\improper STS Primary Kit"
 	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
@@ -77,6 +92,7 @@
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/storage/pouch/ammo(src)
+
 
 /obj/item/storage/box/bs_kit/rds_omnicarbine
 	name = "\improper Warthog Omni Primary Kit"
@@ -117,6 +133,20 @@
 		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/buckler
+	name = "\improper Buckler Gun Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a buckler smg, a choice for speed with its rather high rate of fire and good recoil controle comes with a folding stock."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/buckler(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+
 /obj/item/storage/box/bs_kit/grizzly
 	name = "\improper Grizzly Primary Kit"
 	desc = "The standard Blackshield equipment kit containing a grizzly shotgun. While outshone by most other shotguns, standard slug and buckshot are a powerful choice even in this. \
@@ -124,6 +154,19 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/shotgun/pump(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/prespawned(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/bs_kit/rushing_bull
+	name = "\improper Rushing Bull Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a tactical shotgun. While a higher powered weapon by most other issued geared, standard slug are a powerful choice even in this."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/bull_autoshotgun(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
@@ -188,6 +231,16 @@
 		new /obj/item/gun/projectile/colt(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src) //Highcaps
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
+
+/obj/item/storage/box/bs_kit/makarov
+	name = "\improper Makarov Secondary Kit"
+	desc = "The standard Blackshield equipment kit containing a standard makarov. Its power comes form its size making a good holdout pistol or able to be placed in almost any storage container making it deal for a overloaded trooper."
+
+	populate_contents()
+		new /obj/item/gun/projectile/clarissa/makarov(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35(src) //Highcaps
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 

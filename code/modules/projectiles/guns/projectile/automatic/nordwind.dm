@@ -30,6 +30,31 @@
 		BURST_3_ROUND
 		)
 
+/obj/item/gun/projectile/automatic/nordwind/watchtower
+	name = "\"Watchtower\" DMR"
+	desc = "A designated marksman rifle designed in cooperation between the marshals and the blackshield, made with lightweight materials and simple, easy to maintain components. \
+	A favorite of troopers who prefer to friendly fire rather than to be friendly fired."
+	icon = 'icons/obj/guns/projectile/watchtower.dmi'
+	icon_state = "watchtower"
+	item_state = "watchtower"
+	slot_flags = SLOT_BACK
+	load_method = MAGAZINE
+	mag_well = MAG_WELL_RIFLE
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10)
+	price_tag = 750
+	zoom_factor = 0.8
+	recoil_buildup = 14
+	damage_multiplier = 0.9
+	extra_damage_mult_scoped = 0.1
+	penetration_multiplier = 0.8
+	one_hand_penalty = 25
+	see_invisible_gun = -1
+	auto_eject = FALSE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+		)
+
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
 	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\

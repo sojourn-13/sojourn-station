@@ -47,6 +47,18 @@
 		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
+/datum/craft_recipe/repairs/rushing_bull_shotgun
+	name = "Rushing Bull tactical shotgun"
+	result = /obj/item/gun/projectile/automatic/bull_autoshotgun
+	steps = list(
+		list(/obj/item/gun/projectile/automatic/cattle_autoshotgun, 1, "time" = 60),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 30, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 60)
+	)
+
 /datum/craft_recipe/repairs/grizzly_shotgun
 	name = "Grizzly shotgun"
 	result = /obj/item/gun/projectile/shotgun/pump
