@@ -140,3 +140,10 @@
 		if(TC.growth > growth)
 			continue // Don't delete crystals bigger than us
 		qdel(TC)
+
+// Proc for admins to manually allow the crystals to process or not
+/obj/structure/ameridian_crystal/proc/toggle_processing()
+	if(is_processing)
+		STOP_PROCESSING(SSobj, src)
+	else
+		START_PROCESSING(SSobj, src)

@@ -48,3 +48,13 @@
 		golem.node = src
 		src.visible_message("[src] create a crystal golem to defend itself.")
 		return TRUE
+
+// Probably will cause a lag-spike if called.
+/obj/structure/ameridian_crystal/spire/proc/mass_crystal_process_toggle()
+	var/possible_answer = list("Yes", "No")
+	var/choice = input(usr, "Are you sure you want to do this?", "Toggle All Processing", "No") as anything in possible_answer
+	if(choice == "Yes")
+		for(var/obj/structure/ameridian_crystal/AC in world) // Loop through every single crystal in the world, probably will freeze the server for a moment or two
+			AC.toggle_processing()
+		return TRUE
+	return FALSE
