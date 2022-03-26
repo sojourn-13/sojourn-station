@@ -78,7 +78,7 @@
 			for(var/i = 1,i <= light_spot_range, i++)
 				var/turf/T = locate(L.x,L.y - i,L.z)
 				if (lightSpotPassable(T))
-					if(T.is_space())
+					if(T?.is_space())
 						break
 					NT = T
 				else
