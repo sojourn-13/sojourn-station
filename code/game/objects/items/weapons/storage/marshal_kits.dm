@@ -85,15 +85,26 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 
-/obj/item/storage/box/m_kit/colt
-	name = "\improper Colt Secondary Kit"
-	desc = "The standard Marshal box kit containing a colt pistol. A dependable if cheap pistol that is all round a solid choice. Stronger than the firefly per shot."
+/obj/item/storage/box/m_kit/bronco
+	name = "\improper Bronco Secondary Kit"
+	desc = "The standard Marshal box kit containing a bronco pistol. A dependable if cheap pistol that is all round a solid choice. Stronger than the firefly per shot."
 
 	populate_contents()
 		new /obj/item/gun/projectile/colt/NM_colt(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+
+/obj/item/storage/box/m_kit/makarov
+	name = "\improper Makarov Secondary Kit"
+	desc = "The standard Marshal box kit containing a makarov pistol. A pocket pistol of the hidden police in old eras, now a days a dependable holdout pistol that fits just about anyware and dependable when in a shootout."
+
+	populate_contents()
+		new /obj/item/gun/projectile/colt/NM_colt(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+
 
 /obj/item/storage/box/m_kit/ladon
 	name = "\improper Ladon Secondary Kit"
