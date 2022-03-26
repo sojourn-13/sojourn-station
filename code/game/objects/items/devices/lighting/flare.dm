@@ -68,6 +68,13 @@
 	turn_on_sound = 'sound/effects/torch_on.ogg'
 	preloaded_reagents = list("woodpulp" = 10)
 
+/obj/item/device/lighting/glowstick/flare/torch/Process()
+	..()
+	if(on)
+		var/turf/pos = get_turf(src)
+		if(pos)
+			pos.hotspot_expose(produce_heat, 5)
+
 /obj/item/device/lighting/glowstick/flare/torch/burn_out()
 	STOP_PROCESSING(SSobj, src)
 	on = FALSE
@@ -121,10 +128,11 @@
 		if(fuel <= 0)
 			to_chat(user, SPAN_NOTICE("The [src] has no more cloth to burn."))
 			return
-		if(on)
+		else if(on)
 			to_chat(user, SPAN_NOTICE("The [src] is already lit."))
 			return
 		else
+			on = TRUE
 			START_PROCESSING(SSobj, src)
 			update_icon()
 			user.visible_message(

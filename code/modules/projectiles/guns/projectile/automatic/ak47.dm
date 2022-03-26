@@ -29,6 +29,12 @@
 		SEMI_AUTO_NODELAY
 		)
 
+/obj/item/gun/projectile/automatic/ak47/NM_colony
+	name = "polymer \"Kalashnikov\" carbine"
+	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length carbine and chambered in 7.5. This is an abysmal, printed copy."
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
+	price_tag = 800
+
 /obj/item/gun/projectile/automatic/ak47/update_icon()
 	..()
 
@@ -62,6 +68,12 @@
 	mag_well = MAG_WELL_DRUM
 	recoil_buildup = 25
 	one_hand_penalty = 30
+
+/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
+	name = "\"Saigini 12\" carbine"
+	desc = "A bulked up and modified version of the kalashnikov made to fire 20mm shotgun slugs, similar to the sol federation SBAW design. Uses 20mm in SBAW magazines."
+	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
+	price_tag = 800
 
 /obj/item/gun/projectile/automatic/ak47/akl
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
@@ -113,6 +125,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = WEAPON_FORCE_NORMAL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	price_tag = 650
 	recoil_buildup = 4
 	one_hand_penalty = 20

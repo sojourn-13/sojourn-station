@@ -869,6 +869,40 @@ area/space/atmosalert()
 	requires_power = 0
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 
+// This area is mostly there to prevent the initial crystals from processing when there is no one nearby.
+// In an ideal situation, it would be wider than the potential full size of the field to prevent any escapes. -R4d6
+/area/crystal_field
+	name = "Crystal Field"
+	icon_state = "crystal_field"
+	has_gravity = 1
+	requires_power = 0 // Weird crystal power stuff
+
+/area/crystal_field/New()
+	..()
+	spawn(20) // I don't know if the area get initialized before or after the crystals inside it, so better safe than sorry. -R4d6
+		for(var/obj/structure/ameridian_crystal/TC in contents)
+			STOP_PROCESSING(SSturf, TC) // Stop the crystals from processing
+
+/area/crystal_field/Entered(atom/movable/Obj, atom/newloc)
+	if(istype(Obj, /mob/living) && !istype(Obj, /mob/living/carbon/superior_animal/ameridian_golem)) // If a mob enter the area, start processing, except if it is a golem
+		for(var/obj/structure/ameridian_crystal/TC in contents)
+			if(!TC.is_processing) // Safety check to make sure the crystals aren't processing before shutting them
+				START_PROCESSING(SSturf, TC) // Make the crystal start processing
+		//to_chat(usr, "The crystals seems to wake up") // TODO, better sentence and have it only be visible to psions -R4d6
+
+/area/crystal_field/Exited(atom/movable/Obj, atom/newloc)
+	var/is_mob = FALSE
+	for(var/mob/living/L in contents) // Check every mob
+		if(!istype(L, /mob/living/carbon/superior_animal/ameridian_golem)) // Ignore golems
+			is_mob = TRUE
+			break // No need to check further
+
+	if(!is_mob) // If we don't have any mobs inside the area, stop processing the crystals
+		for(var/obj/structure/ameridian_crystal/AC in contents)
+			if(AC.is_processing) // Safety check to make sure the crystals are processing before shutting them
+				STOP_PROCESSING(SSturf, AC) // Make the crystal stop processing
+		//to_chat(usr, "The crystals seems to go to sleep") // TODO, better sentence and have it only be visible to psions -R4d6
+
 /area/awaymission/beach
 	name = "Beach"
 	icon_state = "null"

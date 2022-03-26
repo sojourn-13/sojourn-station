@@ -80,6 +80,10 @@
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
 #define PERK_GREENTHUMB /datum/perk/greenthumb
 #define PERK_ADDICT /datum/perk/addict
+#define PERK_SPEED /datum/perk/speed_boost
+#define PERK_LIMB_REGEN /datum/perk/limb_regen
+#define PERK_MIND_BOOST /datum/perk/slime_stat_boost/mental
+#define PERK_BODY_BOOST /datum/perk/slime_stat_boost/physical
 
 // Psionic perks
 #define PERK_PSION /datum/perk/psion
