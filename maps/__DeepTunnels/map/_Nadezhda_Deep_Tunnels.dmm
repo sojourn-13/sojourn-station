@@ -9,15 +9,15 @@
 "ac" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "ad" = (
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid,
-/area/mine/explored)
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/mine/unexplored)
 "ae" = (
 /obj/random/mob/undergroundmob/low_chance,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "af" = (
 /obj/structure/railing{
 	dir = 8
@@ -26,7 +26,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "ag" = (
 /obj/structure/railing{
 	dir = 8
@@ -36,10 +36,7 @@
 	},
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
-"ah" = (
-/turf/simulated/mineral/random/high_chance,
-/area/mine/hallway)
+/area/mine/unexplored)
 "ai" = (
 /turf/simulated/wall/r_wall,
 /area/mine/hallway)
@@ -61,7 +58,7 @@
 "am" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "an" = (
 /obj/structure/cable/ender{
 	id = "mining outpost to engine";
@@ -191,7 +188,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "aK" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -335,10 +332,6 @@
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
-"bi" = (
-/obj/random/mob/nightmare/low_chance,
-/turf/simulated/floor/asteroid,
-/area/mine/explored)
 "bj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/monofloor,
@@ -589,7 +582,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -604,7 +597,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -623,7 +616,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -641,7 +634,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -657,7 +650,7 @@
 	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -754,7 +747,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -771,7 +764,7 @@
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -855,7 +848,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1022,7 +1015,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1253,7 +1246,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "dF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warningdust{
@@ -1278,7 +1271,7 @@
 "dI" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green,
+/obj/structure/cable,
 /obj/machinery/power/apc{
 	dir = 2;
 	locked = 0;
@@ -1289,7 +1282,7 @@
 /turf/simulated/floor/tiled/steel/panels,
 /area/mine/prep)
 "dJ" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -1298,7 +1291,7 @@
 /area/mine/lockers)
 "dK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -1465,7 +1458,7 @@
 /area/mine/lockers)
 "el" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1543,7 +1536,7 @@
 	},
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "ev" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1553,7 +1546,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -1566,7 +1559,7 @@
 	icon_state = "alarm0";
 	pixel_y = -22
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -1612,12 +1605,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1625,7 +1618,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
 "eD" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -1700,11 +1693,11 @@
 "eN" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid,
-/area/mine/lockers)
+/area/mine/unexplored)
 "eO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1720,7 +1713,7 @@
 /turf/simulated/wall/r_wall,
 /area/mine/power)
 "eQ" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1734,7 +1727,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1802,17 +1795,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
-"fc" = (
-/turf/simulated/floor/asteroid,
-/area/mine/lockers)
-"fd" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/lockers)
-"fe" = (
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid,
-/area/mine/medical)
 "ff" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -1823,7 +1805,7 @@
 /area/mine/hallway)
 "fh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -1838,12 +1820,12 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -1863,7 +1845,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -1877,12 +1859,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -1896,7 +1878,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -1911,7 +1893,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -1925,12 +1907,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -1941,7 +1923,7 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "fp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -1952,7 +1934,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -1967,12 +1949,12 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -2060,7 +2042,7 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
-/area/mine/medical)
+/area/mine/unexplored)
 "fH" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/powercell/low_chance,
@@ -2069,7 +2051,7 @@
 /area/mine/hallway)
 "fI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2089,12 +2071,12 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2108,7 +2090,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2121,7 +2103,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2136,7 +2118,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2151,7 +2133,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2165,7 +2147,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2175,12 +2157,12 @@
 "fQ" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -2195,7 +2177,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2212,7 +2194,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2224,7 +2206,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -2278,10 +2260,6 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/processing)
-"gb" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/medical)
 "gc" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -2294,7 +2272,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2319,7 +2297,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
 "gh" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -2340,7 +2318,7 @@
 	name = "Break Room";
 	req_access = list(48)
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2384,7 +2362,7 @@
 /area/mine/processing)
 "gm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2405,16 +2383,13 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/asteroid,
 /area/mine/processing)
-"gq" = (
-/turf/simulated/floor/asteroid,
-/area/mine/medical)
 "gr" = (
 /turf/simulated/wall/r_wall,
 /area/mine/medical)
 "gs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2444,7 +2419,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2490,7 +2465,7 @@
 "gE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2557,7 +2532,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2620,7 +2595,7 @@
 /area/mine/livingarea)
 "gW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -2696,7 +2671,7 @@
 /area/mine/processing)
 "hh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green,
+/obj/structure/cable,
 /obj/machinery/power/apc{
 	dir = 2;
 	locked = 0;
@@ -2781,7 +2756,7 @@
 	dir = 9;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3229,7 +3204,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3279,7 +3254,7 @@
 	name = "North APC";
 	pixel_y = 28
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -3390,7 +3365,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
 "iM" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -3398,7 +3373,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
 "iN" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3406,7 +3381,7 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/outpoststorage)
 "iO" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -3450,7 +3425,7 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/outpostmachineroom)
 "iW" = (
-/obj/structure/cable/green,
+/obj/structure/cable,
 /obj/machinery/power/apc{
 	dir = 2;
 	locked = 0;
@@ -3508,7 +3483,7 @@
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
 "jb" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3560,7 +3535,7 @@
 	name = "North APC";
 	pixel_y = 28
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -3592,7 +3567,7 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
 	},
-/obj/structure/cable/green,
+/obj/structure/cable,
 /obj/machinery/power/apc{
 	dir = 2;
 	locked = 0;
@@ -3785,14 +3760,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"jK" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
 "jL" = (
 /obj/machinery/status_display{
 	density = 0;
@@ -3908,7 +3875,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolthree)
 "jV" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -3926,7 +3893,7 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -4026,7 +3993,7 @@
 	icon_state = "map";
 	tag = "icon-map (NORTH)"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4110,7 +4077,7 @@
 /area/nadezhda/rnd/outpostbotany)
 "ks" = (
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/nadezhda/rnd/outpostgeneral)
 "kt" = (
 /obj/machinery/atmospherics/unary/freezer{
 	cooling = 5;
@@ -4119,14 +4086,6 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/rnd/outpostbotany)
-"ku" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/outpostgeneral)
 "kv" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -4150,7 +4109,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "kx" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4177,7 +4136,7 @@
 "kC" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4202,7 +4161,7 @@
 "kF" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4231,7 +4190,7 @@
 "kI" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4291,14 +4250,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolthree)
 "kV" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "kW" = (
 /obj/machinery/button/remote/airlock{
 	id = "riso3";
@@ -4308,7 +4267,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "kX" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -4412,7 +4371,7 @@
 /area/nadezhda/rnd/outpostgeneral)
 "lk" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4441,7 +4400,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -4459,7 +4418,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -4473,16 +4432,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
-"lr" = (
-/turf/simulated/wall/r_wall,
-/area/nadezhda/rnd/anomal)
 "ls" = (
 /obj/machinery/light{
 	dir = 8;
@@ -4490,24 +4446,24 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lt" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lu" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lv" = (
 /obj/machinery/button/remote/airlock{
 	id = "riso4";
@@ -4524,62 +4480,60 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lw" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lx" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
 	icon_state = "intact";
 	tag = "icon-intact (NORTHEAST)"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/industrial/caution/red,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ly" = (
 /obj/machinery/atmospherics/valve/digital/open{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lz" = (
 /turf/unsimulated/mask,
-/area/mine/explored)
+/area/nadezhda/rnd/outpostgeneral)
 "lA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 9
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/caution/red,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
-"lB" = (
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
-"lC" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -4722,58 +4676,58 @@
 	tag = "icon-intact (NORTHEAST)"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lY" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "lZ" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ma" = (
 /obj/machinery/power/emitter/anchored{
 	dir = 1;
 	icon_state = "emitter";
 	tag = "icon-emitter (NORTH)"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mb" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mc" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "md" = (
 /obj/machinery/power/emitter/anchored{
 	dir = 1;
 	icon_state = "emitter";
 	tag = "icon-emitter (NORTH)"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "me" = (
 /obj/structure/railing{
 	anchored = 1;
@@ -4795,11 +4749,11 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4838,7 +4792,7 @@
 "mm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -4938,29 +4892,29 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mB" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 1;
@@ -4968,19 +4922,19 @@
 	tag = "icon-map (NORTH)"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mD" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mE" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/floor_decal/industrial/danger{
@@ -5123,7 +5077,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -5159,18 +5113,18 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/reagent_dispensers/coolanttank,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mX" = (
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "mY" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/outpostbreakroom)
 "mZ" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -5223,7 +5177,7 @@
 	pixel_x = -28;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -5354,7 +5308,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "nr" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5550,7 +5504,7 @@
 	name = "Toxins Lab";
 	req_access = list(5)
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5572,7 +5526,7 @@
 	icon_state = "danger";
 	tag = "icon-danger (WEST)"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5595,7 +5549,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5606,7 +5560,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "nK" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5621,7 +5575,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
 "nL" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5639,7 +5593,7 @@
 /area/nadezhda/rnd/mixing)
 "nM" = (
 /obj/machinery/door/firedoor,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5663,7 +5617,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -5797,17 +5751,17 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "nX" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/atmos,
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "nY" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "nZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -5815,11 +5769,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -6068,14 +6017,14 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ox" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "oy" = (
 /turf/simulated/floor/wood,
 /area/nadezhda/rnd/outpostbreakroom)
@@ -6163,14 +6112,14 @@
 	req_access = list(65)
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "oN" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "oO" = (
 /obj/machinery/door/airlock/external{
 	id_tag = "riso2";
@@ -6189,11 +6138,6 @@
 /obj/structure/disposalpipe/junction,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "oR" = (
@@ -6326,7 +6270,7 @@
 	pixel_x = -28;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -6336,7 +6280,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 8
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6352,7 +6296,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6361,7 +6305,7 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisoltwo)
 "pk" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -6375,24 +6319,24 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pl" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pm" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pn" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 4;
@@ -6400,7 +6344,7 @@
 	tag = "icon-map (EAST)"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "po" = (
 /obj/machinery/door/airlock/science{
 	name = "Anomaly Research";
@@ -6410,7 +6354,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pp" = (
 /obj/item/storage/toolbox/mechanical,
 /obj/structure/table/reinforced,
@@ -6532,66 +6476,61 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisoltwo)
 "pE" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pF" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pG" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pH" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pI" = (
 /obj/structure/bed/chair,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pJ" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pK" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/reagent_containers/food/condiment/peppermill{
@@ -6634,6 +6573,12 @@
 /area/nadezhda/rnd/mixing)
 "pQ" = (
 /mob/living/simple_animal/mouse/white,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "pR" = (
@@ -6658,23 +6603,23 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pU" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pV" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pW" = (
 /obj/machinery/atmospherics/unary/heater{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pX" = (
 /obj/structure/table/standard,
 /obj/item/flame/lighter/random,
@@ -6682,22 +6627,14 @@
 	pixel_y = -4
 	},
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pY" = (
 /obj/structure/table/standard,
 /obj/item/tool/multitool{
 	pixel_x = 10
 	},
-/obj/item/reagent_containers/food/drinks{
-	pixel_x = -5
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "pZ" = (
 /obj/structure/table/standard,
 /obj/item/anobattery{
@@ -6717,7 +6654,7 @@
 	pixel_y = 6
 	},
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qa" = (
 /obj/machinery/camera/network/research{
 	dir = 8
@@ -6725,11 +6662,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qb" = (
@@ -6773,33 +6705,33 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qj" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qk" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ql" = (
 /obj/machinery/atmospherics/unary/freezer{
 	dir = 8;
 	icon_state = "freezer"
 	},
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qm" = (
 /obj/structure/table/standard,
 /obj/item/clothing/head/welding,
 /obj/item/clothing/glasses/powered/science,
 /obj/item/clothing/glasses/powered/science,
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qn" = (
 /obj/structure/table/standard,
 /obj/item/anodevice{
@@ -6807,13 +6739,8 @@
 	pixel_y = 3
 	},
 /obj/item/anodevice,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qo" = (
 /obj/structure/table/standard,
 /obj/item/tool/crowbar{
@@ -6824,7 +6751,7 @@
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qp" = (
 /obj/structure/table/standard,
 /obj/machinery/button/remote/airlock{
@@ -6890,7 +6817,7 @@
 	pixel_x = -28;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -6900,7 +6827,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 8
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6916,7 +6843,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6928,15 +6855,10 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
 	},
 /obj/machinery/light{
 	dir = 8;
@@ -6944,38 +6866,33 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qB" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qC" = (
 /obj/structure/bed/chair{
 	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qD" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -6984,7 +6901,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qE" = (
 /obj/machinery/door/airlock/external{
 	id_tag = "riso1";
@@ -7041,21 +6958,16 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisolone)
 "qL" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qM" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qN" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/plating,
@@ -7086,26 +6998,19 @@
 /area/nadezhda/rnd/outpostmedical)
 "qS" = (
 /obj/machinery/portable_atmospherics/canister/air,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/structure/cable/green,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qT" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qU" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qV" = (
 /obj/machinery/atmospherics/omni/filter{
 	tag_east = 1;
@@ -7113,19 +7018,14 @@
 	tag_west = 3
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qW" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qX" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
@@ -7133,29 +7033,16 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qY" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "qZ" = (
 /obj/effect/window_lwall_spawn/smartspawn,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -7163,18 +7050,13 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ra" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -7185,11 +7067,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -7208,7 +7085,7 @@
 /obj/machinery/door/airlock/glass_research{
 	name = "Medical Outpost"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -7216,7 +7093,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "re" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -7231,7 +7108,7 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -7241,30 +7118,30 @@
 /obj/machinery/portable_atmospherics/canister/plasma,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "rh" = (
 /obj/machinery/portable_atmospherics/canister/sleeping_agent,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ri" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "rj" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "rk" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "rl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/violetcorener,
@@ -7309,11 +7186,11 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "rs" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "rt" = (
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/outpostgeneral)
@@ -7323,7 +7200,7 @@
 /obj/item/clothing/suit/space/anomaly,
 /obj/item/clothing/head/helmet/space/anomaly,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "rv" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/r_wall,
@@ -7529,10 +7406,6 @@
 	name = "murky water"
 	},
 /area/nadezhda/rnd/mixing)
-"rW" = (
-/obj/random/cluster/roaches/low_chance,
-/turf/simulated/floor/asteroid,
-/area/mine/explored)
 "rX" = (
 /turf/simulated/floor/carpet,
 /area/mine/livingarea)
@@ -7669,7 +7542,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7712,7 +7585,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7740,7 +7613,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/cable/green,
+/obj/structure/cable,
 /obj/machinery/power/apc{
 	dir = 2;
 	locked = 0;
@@ -7814,10 +7687,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/medical)
-"sB" = (
-/obj/random/cluster/spiders/low_chance,
-/turf/simulated/floor/asteroid,
-/area/mine/explored)
 "sC" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
@@ -7963,21 +7832,16 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
-"sT" = (
-/obj/structure/boulder,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/livingarea)
 "sU" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/livingarea)
+/area/mine/unexplored)
 "sV" = (
 /turf/simulated/mineral/random/high_chance,
-/area/mine/medical)
+/area/mine/unexplored)
 "sW" = (
 /obj/machinery/door/airlock/science{
 	id_tag = "rdor3";
@@ -8000,18 +7864,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
-"sY" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/livingarea)
-"sZ" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/livingarea)
-"ta" = (
-/turf/simulated/floor/asteroid,
-/area/mine/livingarea)
 "tb" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel,
@@ -8025,26 +7877,27 @@
 "td" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/wall/r_wall,
-/area/mine/livingarea)
-"te" = (
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid,
-/area/mine/livingarea)
+/area/mine/unexplored)
 "tf" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid,
-/area/mine/livingarea)
+/area/mine/unexplored)
 "tg" = (
 /mob/living/carbon/superior_animal/wurm/osmium,
 /turf/simulated/floor/asteroid,
-/area/mine/explored)
+/area/mine/unexplored)
 "th" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
 /obj/machinery/camera/network/engineering{
 	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -8102,7 +7955,7 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "tp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -8141,11 +7994,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
@@ -8157,7 +8005,7 @@
 	},
 /obj/machinery/space_heater,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "tv" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/machinery/camera/network/research{
@@ -8237,6 +8085,11 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
 "tH" = (
@@ -8251,10 +8104,6 @@
 "tK" = (
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
-"tL" = (
-/obj/random/mob/undergroundmob/low_chance,
-/turf/simulated/floor/asteroid,
-/area/mine/lockers)
 "tM" = (
 /obj/machinery/door/airlock/multi_tile/glass{
 	name = "Research Outpost";
@@ -8286,12 +8135,12 @@
 /obj/structure/table/standard,
 /obj/item/book/manual/anomaly_spectroscopy,
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "tV" = (
 /obj/structure/table/standard,
 /obj/item/book/manual/anomaly_testing,
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "tW" = (
 /obj/structure/sign/department/anomaly{
 	pixel_y = 32
@@ -8309,7 +8158,7 @@
 /obj/item/clothing/suit/space/anomaly,
 /obj/item/clothing/head/helmet/space/anomaly,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "tZ" = (
 /obj/machinery/light{
 	dir = 8;
@@ -8318,17 +8167,17 @@
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ua" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ub" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "uc" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -8360,12 +8209,12 @@
 /obj/structure/table/standard,
 /obj/item/device/scanner/mass_spectrometer,
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "uh" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
 /turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "ui" = (
 /turf/simulated/shuttle/floor/mining,
 /area/turbolift/Mining/underground)
@@ -8758,18 +8607,10 @@
 /mob/living/simple_animal/hostile/nightmare,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
-"vk" = (
-/obj/random/mob/undergroundmob,
-/turf/simulated/floor/asteroid,
-/area/mine/explored)
 "vl" = (
 /obj/random/mob/undergroundmob,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
-"vm" = (
-/obj/random/traps/low_chance,
-/turf/simulated/floor/asteroid,
-/area/mine/explored)
 "vn" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid,
@@ -8854,9 +8695,14 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "yi" = (
 /obj/machinery/artifact_scanpad,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
 "ys" = (
@@ -8910,7 +8756,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "BG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/mining,
@@ -8933,7 +8779,7 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -8978,7 +8824,7 @@
 /area/nadezhda/rnd/mixing)
 "DW" = (
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "DY" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/white/techfloor_grid,
@@ -8992,7 +8838,7 @@
 	icon_state = "map";
 	tag = "icon-map (NORTH)"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -9031,7 +8877,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/rnd/mixing)
 "ET" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -9039,7 +8885,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/effect/floor_decal/industrial/stand_clear/red,
 /turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "Fm" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
@@ -9081,7 +8927,7 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "Gz" = (
 /turf/simulated/mineral,
 /area/nadezhda/rnd/mixing)
@@ -9090,7 +8936,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "GW" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 0;
@@ -9118,12 +8964,20 @@
 "HY" = (
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "Iz" = (
 /obj/structure/lattice,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/rnd/mixing)
+"IF" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/rnd/anomalisolfive)
 "IH" = (
 /turf/simulated/floor/asteroid,
 /area/nadezhda/rnd/mixing)
@@ -9132,12 +8986,21 @@
 /obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
+"JI" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "JM" = (
 /obj/machinery/light,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "JV" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -9211,6 +9074,15 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
+"Lw" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "LE" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
 /turf/simulated/floor/beach/water/swamp,
@@ -9241,7 +9113,20 @@
 /area/nadezhda/rnd/anomalisolfour)
 "MT" = (
 /obj/machinery/artifact_analyser,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfive)
+"Oc" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/anomalisolfive)
 "Ol" = (
 /obj/structure/catwalk,
@@ -9294,7 +9179,7 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "OY" = (
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/plasma{
@@ -9317,6 +9202,16 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"Pr" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/rnd/outpostgeneral)
 "Qy" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -9381,10 +9276,15 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "Su" = (
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
@@ -9399,7 +9299,7 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "SI" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Toxins Lab";
@@ -9455,7 +9355,7 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "Um" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Toxins Lab";
@@ -9470,12 +9370,28 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
+"UL" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "UO" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/simulated/floor/asteroid,
-/area/nadezhda/rnd/mixing)
+/area/mine/unexplored)
 "VU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -9522,20 +9438,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
-"Xj" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/port_gen/pacman/diesel/anchored,
-/turf/simulated/floor/asteroid,
-/area/mine/unexplored)
 "Xk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/mining{
@@ -9551,7 +9453,7 @@
 /area/nadezhda/rnd/outpostgeneral)
 "XA" = (
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "XH" = (
 /turf/simulated/floor/fixed/hydrotile/shallowcoolant,
 /area/nadezhda/rnd/mixing)
@@ -9581,7 +9483,7 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/anomal)
+/area/nadezhda/rnd/outpostgeneral)
 "Yp" = (
 /obj/machinery/light{
 	dir = 4
@@ -9593,7 +9495,7 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -9627,7 +9529,7 @@
 	icon_state = "map";
 	tag = "icon-map (NORTH)"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -9852,32 +9754,32 @@ gC
 "}
 (2,1,1) = {"
 aa
-tK
-tK
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -10026,13 +9928,13 @@ jE
 jE
 jE
 jE
-lr
-lr
-lr
-lr
-lr
-lr
-lr
+ih
+ih
+ih
+ih
+ih
+ih
+ih
 ov
 ov
 ov
@@ -10043,40 +9945,40 @@ pS
 pS
 pS
 lz
-lr
-lr
-lr
-lr
-lr
-lr
-lr
+ih
+ih
+ih
+ih
+ih
+ih
+ih
 aa
 "}
 (3,1,1) = {"
 aa
-tK
-np
-tK
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -10228,10 +10130,10 @@ kR
 jU
 kh
 kB
-lB
+jH
 tZ
 ua
-lC
+qN
 mW
 nq
 nW
@@ -10245,40 +10147,40 @@ qw
 qI
 pS
 lz
-lr
+ih
 mf
 HY
 Uf
 BD
 OR
-lr
+ih
 aa
 "}
 (4,1,1) = {"
 aa
-aa
-Xj
-tK
-tK
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -10433,7 +10335,7 @@ kC
 kV
 lt
 lX
-lC
+qN
 mW
 DW
 to
@@ -10447,40 +10349,40 @@ qx
 qJ
 pS
 lz
-lr
+ih
 rr
 XA
 XA
 XA
 rr
-lr
+ih
 aa
 "}
 (5,1,1) = {"
 aa
-aa
-aa
-tK
-tK
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -10632,13 +10534,13 @@ kU
 jW
 kg
 kD
-lB
+jH
 lu
 ly
-lC
-lC
+qN
+qN
 oM
-lC
+qN
 ov
 oO
 pj
@@ -10648,40 +10550,40 @@ qE
 qy
 qK
 pS
-lr
-lr
+ih
+ih
 SD
 XA
 XA
 XA
 Ym
-lr
+ih
 aa
 "}
 (6,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -10839,51 +10741,51 @@ lu
 lY
 lX
 ls
-lB
-lB
+jH
+jH
 ow
-lB
+jH
 pk
 pE
 pT
 qj
 qz
-lZ
+jH
 qS
 rg
-lr
+ih
 rr
 XA
 XA
 XA
 rr
-lr
+ih
 aa
 "}
 (7,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -11036,7 +10938,7 @@ Yj
 xP
 Gi
 kE
-lB
+jH
 lw
 lZ
 mz
@@ -11050,40 +10952,40 @@ pF
 pU
 qk
 qA
-lB
+jH
 qT
 rh
-lr
+ih
 mf
 XA
 XA
 XA
 OR
-lr
+ih
 aa
 "}
 (8,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -11242,11 +11144,11 @@ ET
 lx
 ma
 mA
-lB
-lB
-lB
-lB
-lB
+jH
+jH
+jH
+jH
+jH
 pm
 pG
 pl
@@ -11255,37 +11157,37 @@ mA
 mb
 qU
 ri
-lr
-lr
-lr
+ih
+ih
+ih
 Gv
-lr
-lr
-lr
+ih
+ih
+ih
 aa
 "}
 (9,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -11440,7 +11342,7 @@ VY
 BR
 Cf
 kG
-lB
+jH
 ly
 mb
 mB
@@ -11456,8 +11358,8 @@ pV
 pV
 lX
 qj
-lB
-lB
+jH
+jH
 yd
 GQ
 XA
@@ -11468,26 +11370,26 @@ aa
 "}
 (10,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -11646,12 +11548,12 @@ lv
 mB
 mc
 mC
-lB
+jH
 tV
 nX
 uh
-lB
-lB
+jH
+jH
 lu
 pW
 ql
@@ -11660,7 +11562,7 @@ pU
 qV
 rj
 rs
-lr
+ih
 ks
 ks
 ks
@@ -11670,25 +11572,25 @@ aa
 "}
 (11,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -11844,25 +11746,25 @@ IX
 Ry
 HL
 kH
-lB
+jH
 ly
-lB
-lB
-lB
-lB
-lB
-lB
-lB
-lB
+jH
+jH
+jH
+jH
+jH
+jH
+jH
+jH
 lu
 pX
 qm
 qB
 qB
 qW
-lB
+jH
 tu
-lr
+ih
 lz
 ks
 ks
@@ -11872,24 +11774,24 @@ aa
 "}
 (12,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -12062,9 +11964,9 @@ qn
 qC
 qL
 qX
-lB
+jH
 tY
-lr
+ih
 lz
 ks
 ks
@@ -12074,24 +11976,24 @@ aa
 "}
 (13,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 ti
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -12243,21 +12145,21 @@ ip
 iH
 jR
 iX
-jG
+IF
 MT
 Yp
 kj
 kJ
-lB
-lB
-lB
+jH
+JI
+jH
 mD
 mX
-lB
+jH
 nY
 ox
 oN
-lB
+jH
 pJ
 pZ
 qo
@@ -12266,7 +12168,7 @@ qM
 qY
 rk
 ru
-lr
+ih
 lz
 ks
 ks
@@ -12276,22 +12178,22 @@ aa
 "}
 (14,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -12445,30 +12347,30 @@ jO
 jQ
 jS
 th
+Oc
 jG
 jG
 jG
 jG
-jG
-jG
-lC
-lC
-lC
-lC
-lC
-lC
-lC
+ih
+Pr
+qN
+qN
+qN
+qN
+qN
+qN
 po
 qi
-lC
-lC
-lC
-lC
-lC
+qN
+qN
+qN
+qN
+qN
 qZ
-lr
-lr
-lr
+ih
+ih
+ih
 lz
 ks
 ks
@@ -12478,21 +12380,6 @@ aa
 "}
 (15,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 ti
 ti
 ti
@@ -12515,8 +12402,23 @@ ti
 ti
 ti
 ti
-ks
-ks
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+tK
 ti
 ti
 ti
@@ -12680,20 +12582,6 @@ aa
 "}
 (16,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 ti
 ti
 ti
@@ -12717,8 +12605,6 @@ ti
 ti
 ti
 ti
-sB
-bi
 ti
 ti
 ti
@@ -12733,6 +12619,8 @@ ti
 ti
 ti
 ti
+ji
+uf
 ti
 ti
 ti
@@ -12796,9 +12684,23 @@ ti
 ti
 ti
 ti
-ks
-rW
-ks
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+ii
+tK
 ti
 ti
 ti
@@ -12855,7 +12757,7 @@ nj
 nt
 jH
 jH
-jH
+JI
 jH
 jH
 jH
@@ -12872,9 +12774,9 @@ jH
 ra
 jH
 ih
-ti
-ti
-ti
+lz
+lz
+lz
 ks
 ks
 ks
@@ -12882,20 +12784,6 @@ aa
 "}
 (17,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 ti
 ti
 ti
@@ -12919,8 +12807,6 @@ ti
 ti
 ti
 ti
-ks
-ks
 ti
 ti
 ti
@@ -12935,6 +12821,8 @@ ti
 ti
 ti
 ti
+tK
+tK
 ti
 ti
 ti
@@ -12998,9 +12886,23 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+tK
+tK
 ti
 ti
 ti
@@ -13057,20 +12959,20 @@ nl
 nE
 jJ
 kX
-jJ
+UL
 sv
 jJ
 kX
 nu
 nZ
-jJ
+rm
 oQ
-kX
-jJ
+Lw
+rm
 qa
-kX
+Lw
 tt
-jJ
+rm
 rb
 rl
 rv
@@ -13084,19 +12986,19 @@ aa
 "}
 (18,1,1) = {"
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -13276,9 +13178,9 @@ tW
 jH
 jH
 ih
-ti
-ti
-ti
+lz
+lz
+lz
 ks
 Xo
 ks
@@ -13287,18 +13189,6 @@ aa
 (19,1,1) = {"
 aa
 ti
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 ti
 ti
 ti
@@ -13355,8 +13245,20 @@ ti
 ti
 ti
 ti
-ks
-ks
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+tK
 ti
 ti
 ti
@@ -13490,13 +13392,6 @@ aa
 aa
 ti
 ti
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 ti
 ti
 ti
@@ -13557,8 +13452,15 @@ ti
 ti
 ti
 ti
-ks
-sB
+ti
+ti
+ti
+ti
+ti
+ti
+ti
+tK
+ji
 ti
 ti
 ti
@@ -13759,8 +13661,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -15274,8 +15176,8 @@ iM
 jb
 jb
 mZ
-jK
-jK
+lZ
+lZ
 nV
 ih
 iQ
@@ -16057,11 +15959,11 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -16259,11 +16161,11 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -16461,11 +16363,11 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -16488,7 +16390,7 @@ jx
 na
 jM
 nn
-ku
+lu
 jH
 jH
 jH
@@ -16505,7 +16407,7 @@ jH
 jH
 jH
 jH
-ku
+lu
 vf
 ry
 rA
@@ -16663,11 +16565,11 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -16690,7 +16592,7 @@ um
 ih
 jH
 no
-ku
+lu
 kL
 lj
 jH
@@ -16707,7 +16609,7 @@ jH
 jH
 jH
 jH
-ku
+lu
 jH
 qN
 rA
@@ -16868,8 +16770,8 @@ ti
 ti
 ti
 ti
-vm
-ks
+vn
+tK
 ti
 ti
 ti
@@ -16945,9 +16847,9 @@ ti
 ti
 ti
 ti
-ks
-rW
-ks
+tK
+ii
+tK
 ti
 ti
 ti
@@ -17069,23 +16971,23 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ih
 ih
 ih
@@ -17147,9 +17049,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -17271,23 +17173,23 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ih
 ih
 ih
@@ -17473,23 +17375,23 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 tM
 iD
 SZ
@@ -17675,23 +17577,23 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ij
 rH
 iT
@@ -17874,11 +17776,11 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -17886,14 +17788,14 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ih
 ih
 ih
@@ -18076,11 +17978,11 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -18088,14 +17990,14 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -18275,14 +18177,14 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ae
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -18435,9 +18337,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -18477,14 +18379,14 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -18637,9 +18539,9 @@ ti
 ti
 ti
 ti
-ks
-sB
-ks
+tK
+ji
+tK
 ti
 ti
 ti
@@ -18682,11 +18584,11 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -18884,11 +18786,11 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -19088,9 +18990,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -19290,9 +19192,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -19492,9 +19394,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -19694,9 +19596,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -20463,9 +20365,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -20618,9 +20520,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -20665,9 +20567,9 @@ ti
 ti
 ti
 ti
-ks
+tK
 tg
-ks
+tK
 ti
 ti
 ti
@@ -20820,9 +20722,9 @@ ti
 ti
 ti
 ti
-ks
-rW
-ks
+tK
+ii
+tK
 ti
 ti
 ti
@@ -20867,9 +20769,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -21022,9 +20924,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -21744,9 +21646,9 @@ ti
 ti
 ti
 ti
-ks
+tK
 UO
-ks
+tK
 YV
 oD
 oD
@@ -21946,9 +21848,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 jA
 TT
 Er
@@ -22148,9 +22050,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 Za
 LL
 Za
@@ -22351,15 +22253,15 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 IH
 YH
 IH
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -22553,15 +22455,15 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 Kv
 YH
 IH
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -22705,8 +22607,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -22755,15 +22657,15 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 Kv
 YH
 IH
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -22864,8 +22766,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -22907,8 +22809,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -22962,10 +22864,10 @@ ti
 Kv
 YH
 IH
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -23066,8 +22968,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 tK
 ti
 ti
@@ -23109,8 +23011,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -23164,10 +23066,10 @@ ti
 Kv
 YH
 IH
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -23366,8 +23268,8 @@ ti
 Kv
 YH
 IH
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -23568,8 +23470,8 @@ ti
 Kv
 YH
 IH
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -23807,7 +23709,7 @@ ti
 ti
 ti
 ti
-ks
+tK
 ti
 ti
 ti
@@ -24008,8 +23910,8 @@ ti
 ti
 ti
 ti
-ks
-sB
+tK
+ji
 ti
 ti
 ti
@@ -24210,9 +24112,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -24413,8 +24315,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -25980,8 +25882,8 @@ ti
 ti
 ti
 ti
-ks
-rW
+tK
+ii
 ti
 ti
 ti
@@ -26182,8 +26084,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -26384,8 +26286,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -26672,9 +26574,9 @@ ti
 ti
 ti
 ti
-ks
-vk
-ks
+tK
+vl
+tK
 ti
 ti
 ti
@@ -26874,9 +26776,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -29952,9 +29854,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 tK
@@ -30154,9 +30056,9 @@ ti
 ti
 ti
 ti
-ks
-sB
-ks
+tK
+ji
+tK
 ti
 ti
 tK
@@ -30356,9 +30258,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 tK
@@ -31403,10 +31305,10 @@ ti
 ti
 ti
 ti
-ks
-rW
-ks
-ks
+tK
+ii
+tK
+tK
 ti
 ti
 ti
@@ -31605,10 +31507,10 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-bi
+tK
+tK
+tK
+uf
 ti
 ti
 ti
@@ -31807,10 +31709,10 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -32009,10 +31911,10 @@ ti
 ti
 ti
 ti
-ks
-sB
-ks
-ks
+tK
+ji
+tK
+tK
 ti
 ti
 ti
@@ -32212,8 +32114,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -32489,9 +32391,9 @@ ti
 ti
 ti
 ti
-ks
-rW
-ks
+tK
+ii
+tK
 ti
 ti
 ti
@@ -32691,9 +32593,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -32763,8 +32665,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -32895,7 +32797,7 @@ ti
 ti
 ti
 ti
-ks
+tK
 ti
 ti
 ti
@@ -32965,8 +32867,8 @@ ti
 ti
 ti
 ti
-rW
-ks
+ii
+tK
 ti
 ti
 ti
@@ -33128,18 +33030,18 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33167,8 +33069,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -33330,21 +33232,21 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33532,22 +33434,22 @@ ti
 ti
 ti
 ti
-ks
-ks
-ad
+tK
+tK
+eN
 am
-ks
-ks
+tK
+tK
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33734,22 +33636,22 @@ ti
 ti
 ti
 ti
-ks
+tK
 am
 am
-ks
-ks
-ks
+tK
+tK
+tK
 am
 am
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33798,9 +33700,9 @@ ti
 tK
 tK
 tK
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -33936,22 +33838,22 @@ ti
 ti
 ti
 eN
-fc
-tL
-ks
-ks
+tK
+ae
+tK
+tK
 am
-ks
-ks
-ks
+tK
+tK
+tK
 fo
-ks
-ks
-ks
-vm
-ks
-ks
-ks
+tK
+tK
+tK
+vn
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34000,9 +33902,9 @@ ti
 tK
 tK
 tK
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34138,23 +34040,23 @@ bf
 bf
 bf
 bf
-fc
-fc
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34202,9 +34104,9 @@ ti
 tK
 tK
 tK
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34340,23 +34242,23 @@ bf
 bf
 bf
 bf
-fd
-fc
-ks
-ks
 am
-ks
-ks
-ks
+tK
+tK
+tK
+am
+tK
+tK
+tK
 fo
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34543,21 +34445,21 @@ gh
 ej
 bf
 eN
-fd
-ks
 am
-ks
-ks
+tK
 am
-ks
+tK
+tK
+am
+tK
 fo
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34744,22 +34646,22 @@ di
 dJ
 ej
 bf
-fe
+eN
 fG
-gb
-gq
-gb
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-ks
-ks
-ks
-ks
+am
+tK
+am
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -34934,8 +34836,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 be
 be
 bf
@@ -34956,12 +34858,12 @@ ff
 gr
 gr
 gr
-fe
-gq
-ks
-ks
-ks
-ks
+eN
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -35136,8 +35038,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 be
 be
 bf
@@ -35159,11 +35061,11 @@ gN
 gr
 gr
 sV
-gq
-ks
-ks
+tK
+tK
+tK
 am
-ks
+tK
 ti
 ti
 ti
@@ -35338,8 +35240,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bf
 bf
 bf
@@ -35361,11 +35263,11 @@ sA
 gr
 gr
 sV
-gq
-ks
+tK
+tK
 am
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -35540,8 +35442,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bg
@@ -35564,9 +35466,9 @@ gr
 gr
 sV
 sV
-ks
-ks
-ks
+tK
+tK
+tK
 am
 ti
 ti
@@ -35742,8 +35644,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bO
@@ -35766,11 +35668,11 @@ gr
 gr
 sV
 sV
-ks
-ks
-ks
-ks
-ad
+tK
+tK
+tK
+tK
+eN
 ti
 ti
 ti
@@ -35944,8 +35846,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bP
@@ -35968,10 +35870,10 @@ gr
 gr
 gr
 gr
-gt
-ta
-ks
-ks
+np
+tK
+tK
+tK
 ab
 ti
 ti
@@ -36146,8 +36048,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 an
@@ -36170,9 +36072,9 @@ gt
 gt
 gt
 gt
-gt
-ta
-ks
+np
+tK
+tK
 am
 ab
 ti
@@ -36348,8 +36250,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bg
@@ -36372,10 +36274,10 @@ gP
 hr
 sn
 gt
-gt
-sZ
-ks
-ks
+np
+am
+tK
+tK
 ti
 ti
 ti
@@ -36550,8 +36452,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bg
@@ -36575,9 +36477,9 @@ rX
 hr
 gt
 td
-ta
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -36752,12 +36654,12 @@ ti
 ti
 ti
 ti
-aC
-ah
-ah
-ah
-ah
-ah
+tK
+sV
+sV
+sV
+sV
+sV
 cw
 cO
 do
@@ -36776,10 +36678,10 @@ sL
 hr
 hr
 gt
-gt
+np
 tf
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -36888,8 +36790,8 @@ ti
 ti
 ti
 ti
-sB
-ks
+ji
+tK
 ti
 ti
 ti
@@ -36954,12 +36856,12 @@ ti
 ti
 ti
 ti
-aC
-ah
-aC
-aC
-aR
-ah
+tK
+sV
+tK
+tK
+eN
+sV
 cw
 cP
 dp
@@ -36978,10 +36880,10 @@ gt
 gt
 rY
 gt
-gt
-sZ
-ks
-ks
+np
+am
+tK
+tK
 ab
 ti
 ti
@@ -37090,8 +36992,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -37156,12 +37058,12 @@ ti
 ti
 ti
 ti
-aC
-aC
-aC
-aC
-aC
-aR
+tK
+tK
+tK
+tK
+tK
+eN
 cw
 cQ
 dp
@@ -37180,9 +37082,9 @@ gv
 gv
 gv
 tb
-gw
-sZ
-ks
+ad
+am
+tK
 am
 ab
 ti
@@ -37292,8 +37194,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -37358,12 +37260,12 @@ ti
 ti
 ti
 ti
-aC
-ar
-aC
-ar
-aC
-aR
+tK
+am
+tK
+am
+tK
+eN
 cw
 cR
 dp
@@ -37382,10 +37284,10 @@ gv
 sO
 gv
 tc
-gw
-sZ
-ks
-ks
+ad
+am
+tK
+tK
 ab
 ti
 ti
@@ -37560,12 +37462,12 @@ ti
 ti
 ti
 ti
-aC
-aC
-aC
-aC
-ar
-aC
+tK
+tK
+tK
+tK
+am
+tK
 cw
 cS
 dq
@@ -37584,10 +37486,10 @@ gt
 gt
 ia
 gt
-gt
-te
+np
+eN
 am
-ks
+tK
 ti
 ti
 ti
@@ -37761,13 +37663,13 @@ ti
 ti
 ti
 ti
-aC
-aC
-ar
-aC
-aC
-aC
-aC
+tK
+tK
+am
+tK
+tK
+tK
+tK
 cw
 cT
 dr
@@ -37786,10 +37688,10 @@ gt
 sP
 gV
 gt
-te
-te
+eN
+eN
 am
-ks
+tK
 ti
 ti
 ti
@@ -37962,14 +37864,14 @@ ti
 ti
 ti
 ti
-aC
-aC
-aC
-aC
-aC
-aC
-aC
-ar
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+am
 cw
 cT
 ds
@@ -37988,10 +37890,10 @@ gt
 sQ
 gV
 gt
-sZ
-ta
-ks
-ks
+am
+tK
+tK
+tK
 ti
 ti
 ti
@@ -38164,14 +38066,14 @@ ti
 ti
 ti
 ti
-ar
-ar
-ar
-aR
-ar
-aC
-aC
-aC
+am
+am
+am
+eN
+am
+tK
+tK
+tK
 cw
 cU
 dt
@@ -38190,10 +38092,10 @@ gt
 gt
 gV
 gt
-ta
-ta
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -38362,8 +38264,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 ai
 ai
 ai
@@ -38392,9 +38294,9 @@ gt
 sR
 gV
 gt
-ta
-ta
-ks
+tK
+tK
+tK
 am
 ti
 ti
@@ -38564,8 +38466,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 ai
 ai
 ai
@@ -38594,10 +38496,10 @@ gt
 sS
 sX
 gt
-sZ
-ta
-ks
-ks
+am
+tK
+tK
+tK
 ti
 ti
 ti
@@ -38766,8 +38668,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 ai
 by
 cD
@@ -38796,8 +38698,8 @@ gt
 gt
 gt
 gt
-sZ
-ta
+am
+tK
 am
 am
 ti
@@ -38968,8 +38870,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 ai
 by
 by
@@ -38995,13 +38897,13 @@ gw
 gw
 gw
 gt
-sT
-sY
-sZ
-ks
-ks
-ks
-ks
+fG
+fo
+am
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -39170,8 +39072,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 ai
 ay
 ay
@@ -39198,12 +39100,12 @@ st
 st
 sM
 sU
-sZ
-ta
-ks
-ks
 am
-ks
+tK
+tK
+tK
+am
+tK
 ti
 ti
 ti
@@ -39372,8 +39274,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 ai
 aT
 aT
@@ -39400,13 +39302,13 @@ st
 st
 sN
 sU
-ta
-sZ
-ks
-ks
-ks
-ks
-ks
+tK
+am
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -39574,8 +39476,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 ak
 ui
 ui
@@ -39601,14 +39503,14 @@ sd
 su
 af
 af
-ks
+tK
 am
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -39776,8 +39678,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 al
 ui
 ui
@@ -39801,16 +39703,16 @@ aK
 hc
 se
 ez
-ks
-ks
-ks
+tK
+tK
+tK
 am
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -39849,8 +39751,8 @@ ti
 ti
 ti
 ti
-rW
-ks
+ii
+tK
 ti
 ti
 ti
@@ -39978,8 +39880,8 @@ ti
 ti
 ti
 ti
-ai
-ai
+np
+np
 al
 ui
 ui
@@ -40003,15 +39905,15 @@ aK
 he
 se
 aC
-ks
-ks
-ks
-ks
-ks
-ad
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+eN
+tK
+tK
+tK
 ti
 ti
 ti
@@ -40051,8 +39953,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -40083,8 +39985,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -40180,8 +40082,8 @@ ti
 ti
 ti
 ti
-aD
-aD
+np
+np
 al
 ui
 ui
@@ -40205,14 +40107,14 @@ aK
 he
 sf
 ar
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -40285,8 +40187,8 @@ ti
 ti
 ti
 ti
-ks
-rW
+tK
+ii
 ti
 ti
 ti
@@ -40382,8 +40284,8 @@ ti
 ti
 ti
 ti
-aD
-aD
+np
+np
 av
 aw
 aw
@@ -40407,12 +40309,12 @@ aK
 hc
 me
 aC
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -40487,8 +40389,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -40569,8 +40471,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -40584,8 +40486,8 @@ ti
 ti
 ti
 ti
-aD
-aD
+np
+np
 tH
 tH
 tH
@@ -40609,12 +40511,12 @@ aK
 hf
 hc
 sf
-ks
+tK
 am
-ks
+tK
 am
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -40770,8 +40672,8 @@ ti
 ti
 ti
 ti
-ks
-rW
+tK
+ii
 ti
 ti
 ti
@@ -40786,8 +40688,8 @@ ti
 ti
 ti
 ti
-aD
-aD
+np
+np
 aD
 aD
 aD
@@ -40811,12 +40713,12 @@ ai
 ai
 sh
 sf
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -40972,8 +40874,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -41013,12 +40915,12 @@ gy
 aK
 hc
 sf
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -41215,12 +41117,12 @@ gA
 aK
 hc
 sf
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -41417,11 +41319,11 @@ bR
 aK
 hc
 sg
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ae
 ti
 ti
@@ -41620,11 +41522,11 @@ aK
 hf
 sw
 dE
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -41822,11 +41724,11 @@ ee
 ee
 sx
 dE
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -42024,11 +41926,11 @@ hg
 ee
 si
 dE
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -42227,10 +42129,10 @@ ee
 si
 dE
 am
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -42428,11 +42330,11 @@ QN
 ee
 si
 dE
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -42630,11 +42532,11 @@ hi
 ee
 sy
 dE
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -42833,10 +42735,10 @@ ee
 si
 dE
 am
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -43034,11 +42936,11 @@ hk
 ee
 si
 dE
-ad
-ks
-ks
-ks
-ks
+eN
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -43236,11 +43138,11 @@ hl
 ee
 si
 eu
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -43415,8 +43317,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 at
 as
 aD
@@ -43438,11 +43340,11 @@ ee
 ee
 sx
 dE
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -43566,9 +43468,9 @@ ti
 ti
 ti
 ti
-ks
-rW
-ks
+tK
+ii
+tK
 ti
 ti
 ti
@@ -43617,8 +43519,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 at
 aO
 aD
@@ -43640,11 +43542,11 @@ fZ
 gp
 sz
 dE
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -43743,8 +43645,8 @@ ti
 ti
 ti
 ti
-ks
-bi
+tK
+uf
 ti
 ti
 ti
@@ -43768,9 +43670,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -43819,8 +43721,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 at
 aP
 bb
@@ -43841,12 +43743,12 @@ gJ
 hm
 si
 aJ
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -43945,8 +43847,8 @@ ti
 ti
 ti
 ti
-rW
-ks
+ii
+tK
 ti
 ti
 ti
@@ -44021,8 +43923,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 at
 aQ
 uc
@@ -44037,17 +43939,17 @@ eh
 eh
 eh
 fD
-ks
-ks
-ks
+tK
+tK
+tK
 af
 ag
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -44147,8 +44049,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -44224,7 +44126,7 @@ ti
 ti
 ti
 ti
-ks
+tK
 am
 aQ
 ud
@@ -44243,13 +44145,13 @@ am
 ac
 ac
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -44426,7 +44328,7 @@ ti
 ti
 ti
 ab
-ks
+tK
 am
 aQ
 uc
@@ -44442,16 +44344,16 @@ eM
 fb
 fF
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -44627,9 +44529,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 at
 bd
 bv
@@ -44641,19 +44543,19 @@ at
 am
 am
 am
-ks
-ks
+tK
+tK
 ac
-ks
+tK
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -44678,8 +44580,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -44829,9 +44731,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 at
 at
 at
@@ -44840,22 +44742,22 @@ as
 as
 at
 at
-ks
+tK
 am
-ks
+tK
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -44880,8 +44782,8 @@ ti
 ti
 ti
 ti
-rW
-ks
+ii
+tK
 ti
 ti
 ti
@@ -44911,9 +44813,9 @@ ti
 ti
 ti
 ti
-ks
-rW
-ks
+tK
+ii
+tK
 ti
 ti
 ti
@@ -45031,30 +44933,30 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
 am
-ks
-ks
-ks
+tK
+tK
+tK
 am
-ks
-ks
+tK
+tK
 am
 am
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -45082,8 +44984,8 @@ ti
 ti
 ti
 ti
-ks
-ks
+tK
+tK
 ti
 ti
 ti
@@ -45113,9 +45015,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
@@ -45234,29 +45136,29 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -45437,28 +45339,28 @@ ti
 ti
 ti
 ae
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -45641,26 +45543,26 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
 ti
 ti
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
-ks
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
+tK
 ti
 ti
 ti
@@ -46220,9 +46122,9 @@ ti
 ti
 ti
 ti
-ks
-rW
-ks
+tK
+ii
+tK
 ti
 ti
 ti
@@ -46422,9 +46324,9 @@ ti
 ti
 ti
 ti
-ks
-ks
-ks
+tK
+tK
+tK
 ti
 ti
 ti
