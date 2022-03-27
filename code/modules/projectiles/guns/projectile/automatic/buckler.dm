@@ -6,7 +6,6 @@
 	Although the focus on ease-of-use and durability resulted in a slightly lackluster performance and muzzle velocity, \
 	causing issues with use in longer-range engagements."
 	icon = 'icons/obj/guns/projectile/buckler.dmi'
-	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	icon_state = "buckler"
 	item_state = "buckler"
 	w_class = ITEM_SIZE_NORMAL
@@ -15,13 +14,13 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 3)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
+	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 12, MATERIAL_GLASS = 5)
 	price_tag = 700
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
 	recoil_buildup = 1.25
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_35)
 	one_hand_penalty = 10
 	folding_stock = TRUE //we can fold are stocks
 
@@ -36,7 +35,7 @@
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
-	if(folded)
+	if(!folded)
 		iconstring += "_stock"
 
 	if (ammo_magazine)

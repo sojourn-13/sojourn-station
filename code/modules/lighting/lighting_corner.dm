@@ -136,4 +136,3 @@
 	if (!force)
 		return QDEL_HINT_LETMELIVE
 	CRASH("Who decided to force qdel() a lighting corner? Why did you do this?")
-	return ..()

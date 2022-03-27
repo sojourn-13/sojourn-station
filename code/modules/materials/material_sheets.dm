@@ -438,7 +438,7 @@
 	icon_state = "ameridian_crystal_item"
 	default_type = MATERIAL_AMERIDIAN
 	novariants = TRUE
-	price_tag = 250 // Ameridian mining is extremly dangerous and very profitable
+	price_tag = 150 // Ameridian mining is extremly dangerous and very profitable
 
 /obj/item/stack/material/ameridian/full
 	amount = 120

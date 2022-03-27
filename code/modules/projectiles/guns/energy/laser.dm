@@ -132,7 +132,7 @@
 	if(wielded)
 		itemstring += "_doble"
 
-	if(folded)
+	if(!folded)
 		iconstring += "_stock"
 
 
@@ -188,7 +188,7 @@
 	if(wielded)
 		itemstring += "_doble"
 
-	if(folded)
+	if(!folded)
 		iconstring += "_stock"
 
 

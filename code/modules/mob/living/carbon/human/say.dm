@@ -37,7 +37,7 @@
 		return
 	..()
 
-/mob/living/carbon/human/me_verb(message as text)
+/mob/living/carbon/human/me_verb(message as message) //SoJ edit.
 	if(suppress_communication)
 		to_chat(src, get_suppressed_message())
 		return
