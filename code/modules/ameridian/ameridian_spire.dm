@@ -10,7 +10,7 @@
 	light_color = COLOR_LIGHTING_PURPLE_BRIGHT
 	growth = 6 // Bigger than other crystals
 	growth_prob = 5 // Spread crystals faster
-	golem_timer = 200 // Longer delay between golems
+	golem_timer = 100
 	spread_range = 2
 	rad_damage = 1
 	rad_range = 3
@@ -27,6 +27,9 @@
 /obj/structure/ameridian_crystal/spire/attackby(obj/item/I, mob/user)
 	src.visible_message(SPAN_NOTICE("[user] cannot make a dent into [src]."), SPAN_NOTICE("You cannot make a dent into [src]."))
 	return // Can't destroy it
+
+/obj/structure/ameridian_crystal/spire/ex_act(severitiy)
+	return
 
 // Spires always spawn a golem each
 /obj/structure/ameridian_crystal/spire/handle_golems()
