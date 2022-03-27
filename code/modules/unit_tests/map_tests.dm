@@ -7,7 +7,8 @@
 	var/static/list/exempt_areas = typesof(
 		/area/space, /area/skipjack_station,
 		/area/shuttle, /area/holodeck,
-		/area/supply/station)
+		/area/supply/station,
+		/area/turbolift)
 
 	var/static/list/exempt_from_atmos = typesof(
 		/area/eris/maintenance, /area/eris/storage,
@@ -17,7 +18,8 @@
 
 	var/static/list/exempt_from_apc = typesof(
 		/area/eris/engineering/construction,
-		/area/eris/medical/genetics)
+		/area/eris/medical/genetics,
+		/area/turbolift)
 
 	for(var/area/A in GLOB.map_areas)
 		if(A.z == 1 && !(A.type in exempt_areas))
