@@ -4297,6 +4297,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "kW" = (
@@ -6933,11 +6938,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
@@ -7086,13 +7086,6 @@
 /area/nadezhda/rnd/outpostmedical)
 "qS" = (
 /obj/machinery/portable_atmospherics/canister/air,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/structure/cable/green,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "qT" = (
@@ -7139,9 +7132,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -8809,6 +8799,19 @@
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
+"wM" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28;
+	pixel_y = 0
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
 "wP" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -8833,6 +8836,12 @@
 	name = "murky water"
 	},
 /area/nadezhda/rnd/mixing)
+"xy" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
 "xP" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -8983,6 +8992,12 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"Ea" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/mine/unexplored)
 "Eh" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -9085,6 +9100,15 @@
 "Gz" = (
 /turf/simulated/mineral,
 /area/nadezhda/rnd/mixing)
+"GJ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/mine/unexplored)
 "GQ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -9235,6 +9259,10 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/mine/hallway)
+"Mq" = (
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/mine/unexplored)
 "MR" = (
 /obj/machinery/artifact_scanpad,
 /turf/simulated/floor/tiled/dark,
@@ -9618,6 +9646,12 @@
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
+"Zr" = (
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
 "Zu" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -10056,7 +10090,7 @@ aa
 aa
 tK
 np
-tK
+xy
 aa
 aa
 aa
@@ -10228,7 +10262,7 @@ kR
 jU
 kh
 kB
-lB
+wM
 tZ
 ua
 lC
@@ -10258,7 +10292,7 @@ aa
 aa
 aa
 Xj
-tK
+Zr
 tK
 aa
 aa
@@ -10459,9 +10493,9 @@ aa
 (5,1,1) = {"
 aa
 aa
-aa
-tK
-tK
+Mq
+GJ
+Ea
 aa
 aa
 aa
@@ -10848,7 +10882,7 @@ pE
 pT
 qj
 qz
-lZ
+lB
 qS
 rg
 lr
