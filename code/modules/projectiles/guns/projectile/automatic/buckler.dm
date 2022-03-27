@@ -20,7 +20,7 @@
 	damage_multiplier = 0.9
 	penetration_multiplier = 1.1
 	recoil_buildup = 1.25
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_35)
 	one_hand_penalty = 10
 	folding_stock = TRUE //we can fold are stocks
 

@@ -783,11 +783,8 @@
 		proj_step_multiplier  -= 0.4 //40% more sped on the bullet
 		penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
 		extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
-		folded = TRUE
 	else
 		refresh_upgrades() //First we grab are upgrades to not do anything silly
-		folded = FALSE
-
 		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
 
 
