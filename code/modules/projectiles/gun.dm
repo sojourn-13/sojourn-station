@@ -99,7 +99,7 @@
 	var/pumpshotgun_sound = 'sound/weapons/shotgunpump.ogg'
 
 	var/folding_stock = FALSE //Can we fold are stock?
-	var/folded = FALSE //IS are stock folded?
+	var/folded = TRUE //IS are stock folded? - and that is yes we start folded
 	var/currently_firing = FALSE
 
 /obj/item/gun/proc/loadAmmoBestGuess()
@@ -135,6 +135,12 @@
 	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/weapon_info
 	action.owner = src
 	hud_actions += action
+	refresh_upgrades()
+
+/obj/item/gun/pickup()
+	..()
+	refresh_upgrades() //Run it again, just in case
+	update_icon()
 
 /obj/item/gun/Destroy()
 	for(var/i in firemodes)
@@ -744,28 +750,17 @@
 	return 0
 
 /obj/item/gun/proc/fold(user, span_chat)
-//Were going to do some insainly dumb things to not doup or brake anything with storage or gun mods, well being modular
 	if(folding_stock)
 		if(!folded)
-			refresh_upgrades() //First we grab are upgrades to not do anything silly
 			if(span_chat)
 				to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
-			extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
-			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
-			recoil_buildup *= 0.5 //50% less recoil
-			one_hand_penalty *= 0.5 //50% less recoil
-			damage_multiplier += 0.1 //10% more damage
-			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
-			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
-			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
 			folded = TRUE
 		else
-			refresh_upgrades() //First we grab are upgrades to not do anything silly
 			if(span_chat)
 				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = FALSE
-
-		update_icon() //Likely has alt icons for being folded or not so we refresh are icon
+	refresh_upgrades() //First we grab are upgrades to not do anything silly
+	update_icon() //Likely has alt icons for being folded or not so we refresh are icon
 
 //Updating firing modes at appropriate times
 /obj/item/gun/pickup(mob/user)
@@ -913,6 +908,18 @@
 
 	for (var/prefix in prefixes)
 		name = "[prefix] [name]"
+
+	if(folding_stock)// TODO: make this somehow modular - (it prob will be a massive line if var/stock_name_of_change
+		if(!folded) //Exstended! This means are stock is out
+			extra_bulk += 6 //Simular to 6 plates, your getting a lot out of this tho
+			//Not modular *yet* as it dosnt need to be for what is basiclly just 10% more damage and 50% less recoil
+			recoil_buildup *= 0.5 //50% less recoil
+			one_hand_penalty *= 0.5 //50% less recoil
+			damage_multiplier += 0.1 //10% more damage
+			proj_step_multiplier  -= 0.4 //40% more sped on the bullet
+			penetration_multiplier += 0.2 //Makes the gun have more AP when shooting
+			extra_damage_mult_scoped += 0.2 //Gives 20% more damage when its scoped. Makes folding stock snipers more viable
+
 
 	update_icon()
 	//then update any UIs with the new stats
