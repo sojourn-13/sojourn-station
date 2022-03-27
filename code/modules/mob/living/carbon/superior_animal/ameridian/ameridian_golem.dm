@@ -48,7 +48,7 @@
 // Beefier variant
 /mob/living/carbon/superior_animal/ameridian_golem/strong
 	name = "ameridian behemoth"
-	desc = "A weird creature made of ameridian. It is bigger, stronger and pakc a harder punch than its brethen."
+	desc = "A weird creature made of ameridian. It is bigger, stronger and pack a harder punch than its brethen."
 	icon_state = "golem_ameridian_purple"
 	health = 500
 	maxHealth = 500
