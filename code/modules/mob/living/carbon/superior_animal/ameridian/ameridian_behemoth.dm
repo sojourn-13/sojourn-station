@@ -16,6 +16,7 @@
 	if(M.a_intent == I_GRAB || M.a_intent == I_DISARM)
 		visible_message(SPAN_WARNING("[src] punch [M] when \he stupidly try to grab it!"))
 		UnarmedAttack(M, 1)
-		M.throw_at(get_edge_target_turf(src, pick(alldirs)), rand(3,6), 30)
+		var/throwdir = get_dir(src, M)
+		M.throw_at(get_edge_target_turf(src, throwdir), rand(3,6), 30)
 	else
 		..()
