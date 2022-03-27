@@ -10,11 +10,7 @@
 	move_to_delay = 2
 	armor = list(melee = 70, bullet = 60, energy = 80, bomb = 40, bio = 100, rad = 100) //We want to be gunned down, not lasered
 	drop_amount = 3
-
-/mob/living/carbon/superior_animal/ameridian_golem/behemoth/New()
-	..()
-	transform = initial(transform)
-	transform *= 1.25 // 25% bigger
+	size_factor = 1.25 // 25% bigger
 
 /mob/living/carbon/superior_animal/ameridian_golem/behemoth/attack_hand(mob/living/carbon/M as mob)
 	if(M.a_intent == I_GRAB || M.a_intent == I_DISARM)

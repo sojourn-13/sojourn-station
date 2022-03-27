@@ -21,11 +21,6 @@
 	var/golem_range = 2 // Radius that the crystal check for the above threshold
 	var/mob/living/carbon/superior_animal/ameridian_golem/golem // The golem that the growth spawned
 
-	// Weighted list of possible spawn
-	var/list/possible_spawns = list(/mob/living/carbon/superior_animal/ameridian_golem = 5000,
-									/mob/living/carbon/superior_animal/ameridian_golem/runner = 2000,
-									/mob/living/carbon/superior_animal/ameridian_golem/behemoth = 1)
-
 /obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	..()
 	START_PROCESSING(SSobj, src)
@@ -69,6 +64,7 @@
 			var/obj/item/stack/material/ameridian/T = new(get_turf(src))
 			T.amount = growth // Drop more crystal the further along we are
 			src.visible_message(SPAN_NOTICE("[user] excavates a crystal from [src]."), SPAN_NOTICE("You excavate a crystal from [src]."))
+			activate_mobs_in_range(src, 15) // Wake up the nearby golems
 			qdel(src)
 		else
 			to_chat(user, SPAN_WARNING("You must stay still to finish excavation."))
@@ -133,8 +129,7 @@
 
 			sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
 
-			var/golem_type = pickweight(possible_spawns)
-			golem = new golem_type(get_turf(src)) // Spawn a golem
+			golem = new(get_turf(src)) // Spawn a golem
 			golem.node = src
 			src.visible_message("[src] create a crystal golem to defend itself.")
 			return TRUE

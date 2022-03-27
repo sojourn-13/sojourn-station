@@ -39,6 +39,11 @@
 	known_languages = list(LANGUAGE_COMMON)
 	var/obj/structure/ameridian_crystal/node
 	var/drop_amount = 1 // How many crystals we drop on death
+	var/size_factor = 1 // Size, in %, of the golem
+
+/mob/living/carbon/superior_animal/ameridian_golem/Initialize()
+	..()
+	update_icon()
 
 /mob/living/carbon/superior_animal/ameridian_golem/death()
 	..()
@@ -47,3 +52,7 @@
 		loot.amount = drop_amount
 	node?.golem = null // Remove the golem from the node since for some reason it doesn't do it with qdel()
 	qdel(src)
+
+/mob/living/carbon/superior_animal/ameridian_golem/update_icon()
+	transform = initial(transform)
+	transform *= size_factor // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
