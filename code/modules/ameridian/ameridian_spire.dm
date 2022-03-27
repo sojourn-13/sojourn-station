@@ -47,7 +47,7 @@
 
 		sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
 
-		golem = new(get_turf(src)) // Spawn a golem
+		golem = new /mob/living/carbon/superior_animal/ameridian_golem/strong(get_turf(src)) // Spawn a golem
 		golem.node = src
 		src.visible_message("[src] create a crystal golem to defend itself.")
 		return TRUE

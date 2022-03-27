@@ -18,7 +18,7 @@
 
 	do_gibs = FALSE
 
-	attack_sound = 'sound/weapons/slice.ogg' //So we dont make bite sounds
+	attack_sound = 'sound/weapons/heavysmash.ogg' //So we dont make bite sounds
 
 	deathmessage = "shatters in a pile of rubbles."
 	health = 100
@@ -37,12 +37,27 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 	known_languages = list(LANGUAGE_COMMON)
-
 	var/obj/structure/ameridian_crystal/node
-
 
 /mob/living/carbon/superior_animal/ameridian_golem/death()
 	..()
 	new /obj/item/stack/material/ameridian(get_turf(src))
 	node?.golem = null // Remove the golem from the node since for some reason it doesn't do it with qdel()
 	qdel(src)
+
+// Beefier variant
+/mob/living/carbon/superior_animal/ameridian_golem/strong
+	name = "ameridian behemoth"
+	desc = "A weird creature made of ameridian. It is bigger, stronger and pakc a harder punch than its brethen."
+	icon_state = "golem_ameridian_purple"
+	health = 500
+	max_health = 500
+	melee_damage_lower = 40
+	melee_damage_upper = 50
+	move_to_delay = 2
+	armor = list(melee = 70, bullet = 60, energy = 80, bomb = 40, bio = 100, rad = 100) //We want to be gunned down, not lasered
+
+/mob/living/carbon/superior_animal/ameridian_golem/strong/New()
+	..()
+	transform = initial(transform)
+	transform *= 1.5 // 50% bigger
