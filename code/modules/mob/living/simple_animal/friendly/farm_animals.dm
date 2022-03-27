@@ -418,7 +418,7 @@ var/global/chicken_count = 0
 /mob/living/simple_animal/metal_chicken/proc/lay_egg()
 	if(!reagents.reagent_list.len)
 		return FALSE
-	var/chem = pick(reagents.reagent_list).id
+	var/chem = pick(reagents.reagent_list):id
 	var/egg_type
 	if(reagents.remove_reagent(chem, chem_to_egg, TRUE))
 		switch(chem)
