@@ -21,6 +21,11 @@
 	var/golem_range = 2 // Radius that the crystal check for the above threshold
 	var/mob/living/carbon/superior_animal/ameridian_golem/golem // The golem that the growth spawned
 
+	// Weighted list of possible spawn
+	var/list/possible_spawns = list(/mob/living/carbon/superior_animal/ameridian_golem = 5000,
+									/mob/living/carbon/superior_animal/ameridian_golem/runner = 2000,
+									/mob/living/carbon/superior_animal/ameridian_golem/behemoth = 1)
+
 /obj/structure/ameridian_crystal/Initialize(mapload, ...)
 	..()
 	START_PROCESSING(SSobj, src)
@@ -128,7 +133,8 @@
 
 			sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
 
-			golem = new(get_turf(src)) // Spawn a golem
+			var/golem_type = pickweight(possible_spawns)
+			golem = new golem_type(get_turf(src)) // Spawn a golem
 			golem.node = src
 			src.visible_message("[src] create a crystal golem to defend itself.")
 			return TRUE
@@ -147,3 +153,6 @@
 		STOP_PROCESSING(SSobj, src)
 	else
 		START_PROCESSING(SSobj, src)
+
+/obj/structure/ameridian_crystal/proc/handle_golem_distance()
+	return

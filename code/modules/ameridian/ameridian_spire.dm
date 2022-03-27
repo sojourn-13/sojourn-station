@@ -14,6 +14,7 @@
 	spread_range = 2
 	rad_damage = 1
 	rad_range = 3
+	var/respawn_distance = 10 // How many tiles do we let the golem get before spawning another
 
 /obj/structure/ameridian_crystal/spire/update_icon()
 	transform = initial(transform)
@@ -33,6 +34,8 @@
 
 // Spires always spawn a golem each
 /obj/structure/ameridian_crystal/spire/handle_golems()
+	handle_golem_distance() // So that someone doesn't grab the golem and kidnap it to render the spire harmless
+
 	if(golem)
 		return FALSE
 
@@ -40,14 +43,14 @@
 		golem_timer = 0
 		// Psions get an early warning
 		var/sound/S = sound('sound/synthesized_instruments/chromatic/vibraphone1/c5.ogg')
-		for(var/mob/living/carbon/human/H in view(src))
+		for(var/mob/living/carbon/human/H in viewers(src))
 			if(H.stats.getPerk(PERK_PSION))
 				to_chat(H, "<b><font color='purple'>[src] chimes.")
 				H.playsound_local(get_turf(src), S, 50) // Only psionics can hear that
 
-		sleep((S.len + 1) SECONDS) // Wait until the sound is done, we're using S.len in case the sound change for another with a different duration. We add a second to give a slightly longer warning time.
+		sleep((S.len + 6) SECONDS) // 10 Seconds before the beefy golem spawn
 
-		golem = new /mob/living/carbon/superior_animal/ameridian_golem/strong(get_turf(src)) // Spawn a golem
+		golem = new /mob/living/carbon/superior_animal/ameridian_golem/behemoth(get_turf(src)) // Spawn a golem
 		golem.node = src
 		src.visible_message("[src] create a crystal golem to defend itself.")
 		return TRUE
@@ -61,3 +64,12 @@
 			AC.toggle_processing()
 		return TRUE
 	return FALSE
+
+/obj/structure/ameridian_crystal/spire/handle_golem_distance()
+	if(golem && get_dist(get_turf(src), get_turf(golem)) > respawn_distance) // We have a golem and it is far away
+		golem.node = null // Null the golem's node.
+		golem = null // We can spawn another golem
+		golem_timer = initial(golem_timer) - 5 // We will spawn another golem~
+		return TRUE
+	else
+		return FALSE
