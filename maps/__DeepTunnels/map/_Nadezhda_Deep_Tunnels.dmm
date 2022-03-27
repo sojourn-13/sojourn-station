@@ -10,10 +10,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
-"ad" = (
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid,
-/area/mine/unexplored)
 "ae" = (
 /obj/random/mob/undergroundmob/low_chance,
 /turf/simulated/floor/asteroid,
@@ -38,7 +34,13 @@
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "ah" = (
-/turf/simulated/mineral/random/high_chance,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
 /area/mine/unexplored)
 "ai" = (
 /turf/simulated/wall/r_wall,
@@ -59,7 +61,7 @@
 	},
 /area/mine/hallway)
 "am" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal{
+/obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
 /turf/simulated/floor/asteroid,
@@ -337,10 +339,6 @@
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
-"bi" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/mine/unexplored)
 "bj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/monofloor,
@@ -1699,6 +1697,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
+"eN" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
 "eO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1800,12 +1802,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
-"fd" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/mine/unexplored)
 "ff" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -1930,6 +1926,11 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
+"fo" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
 "fp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -2266,6 +2267,10 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/processing)
+"gb" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
 "gc" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -7004,19 +7009,24 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/anomalisolone)
 "qL" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qM" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qN" = (
@@ -7077,11 +7087,6 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qX" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
@@ -7091,14 +7096,14 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qY" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -7763,6 +7768,12 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/medical)
+"sB" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/mine/unexplored)
 "sC" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal{
 	dir = 4
@@ -7908,12 +7919,19 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
+"sT" = (
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/mine/unexplored)
 "sU" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
+/area/mine/unexplored)
+"sV" = (
+/turf/simulated/mineral/random/high_chance,
 /area/mine/unexplored)
 "sW" = (
 /obj/machinery/door/airlock/science{
@@ -7937,19 +7955,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
-"sY" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/unexplored)
-"sZ" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/unexplored)
-"ta" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/mine/unexplored)
 "tb" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel,
@@ -7965,13 +7970,10 @@
 /turf/simulated/wall/r_wall,
 /area/mine/unexplored)
 "te" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
+/turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "tf" = (
 /obj/effect/decal/cleanable/rubble,
@@ -8195,10 +8197,8 @@
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "tL" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
 /area/mine/unexplored)
 "tM" = (
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -9993,7 +9993,7 @@ aa
 aa
 tK
 np
-tL
+am
 aa
 aa
 aa
@@ -10195,7 +10195,7 @@ aa
 aa
 aa
 Xj
-am
+te
 tK
 aa
 aa
@@ -10396,9 +10396,9 @@ aa
 (5,1,1) = {"
 aa
 aa
-ta
-te
-fd
+sT
+ah
+sB
 aa
 aa
 aa
@@ -33271,7 +33271,7 @@ tK
 tK
 tK
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -33471,11 +33471,11 @@ ti
 ti
 tK
 tK
-ad
-sZ
+eN
+gb
 tK
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -33672,14 +33672,14 @@ ti
 ti
 ti
 tK
-sZ
-sZ
+gb
+gb
 tK
 tK
 tK
-sZ
-sZ
-sZ
+gb
+gb
+gb
 tK
 tK
 tK
@@ -33872,16 +33872,16 @@ ti
 ti
 ti
 ti
-ad
+eN
 tK
 ae
 tK
 tK
-sZ
+gb
 tK
 tK
 tK
-sY
+fo
 tK
 tK
 tK
@@ -34277,16 +34277,16 @@ bf
 bf
 bf
 bf
-sZ
+gb
 tK
 tK
 tK
-sZ
+gb
 tK
 tK
 tK
-sY
-sZ
+fo
+gb
 tK
 tK
 tK
@@ -34479,15 +34479,15 @@ dh
 gh
 ej
 bf
-ad
-sZ
+eN
+gb
 tK
-sZ
+gb
 tK
 tK
-sZ
+gb
 tK
-sY
+fo
 tK
 tK
 tK
@@ -34681,11 +34681,11 @@ di
 dJ
 ej
 bf
-ad
+eN
 fG
-sZ
+gb
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -34871,8 +34871,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 be
 be
 bf
@@ -34893,7 +34893,7 @@ ff
 gr
 gr
 gr
-ad
+eN
 tK
 tK
 tK
@@ -35073,8 +35073,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 be
 be
 bf
@@ -35095,11 +35095,11 @@ sj
 gN
 gr
 gr
-ah
+sV
 tK
 tK
 tK
-sZ
+gb
 tK
 ti
 ti
@@ -35275,8 +35275,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bf
 bf
 bf
@@ -35297,10 +35297,10 @@ gN
 sA
 gr
 gr
-ah
+sV
 tK
 tK
-sZ
+gb
 tK
 tK
 ti
@@ -35477,8 +35477,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bg
@@ -35499,12 +35499,12 @@ sk
 jl
 gr
 gr
-ah
-ah
+sV
+sV
 tK
 tK
 tK
-sZ
+gb
 ti
 ti
 ti
@@ -35679,8 +35679,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bO
@@ -35701,13 +35701,13 @@ sl
 sC
 gr
 gr
-ah
-ah
+sV
+sV
 tK
 tK
 tK
 tK
-ad
+eN
 ti
 ti
 ti
@@ -35881,8 +35881,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bP
@@ -36083,8 +36083,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 an
@@ -36110,7 +36110,7 @@ gt
 np
 tK
 tK
-sZ
+gb
 ab
 ti
 ti
@@ -36285,8 +36285,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bg
@@ -36310,7 +36310,7 @@ hr
 sn
 gt
 np
-sZ
+gb
 tK
 tK
 ti
@@ -36487,8 +36487,8 @@ ti
 ti
 ti
 ti
-ah
-ah
+sV
+sV
 bg
 bg
 bg
@@ -36690,11 +36690,11 @@ ti
 ti
 ti
 tK
-ah
-ah
-ah
-ah
-ah
+sV
+sV
+sV
+sV
+sV
 cw
 cO
 do
@@ -36892,11 +36892,11 @@ ti
 ti
 ti
 tK
-ah
+sV
 tK
 tK
-ad
-ah
+eN
+sV
 cw
 cP
 dp
@@ -36916,7 +36916,7 @@ gt
 rY
 gt
 np
-sZ
+gb
 tK
 tK
 ab
@@ -37098,7 +37098,7 @@ tK
 tK
 tK
 tK
-ad
+eN
 cw
 cQ
 dp
@@ -37117,10 +37117,10 @@ gv
 gv
 gv
 tb
-bi
-sZ
+tL
+gb
 tK
-sZ
+gb
 ab
 ti
 ti
@@ -37296,11 +37296,11 @@ ti
 ti
 ti
 tK
-sZ
+gb
 tK
-sZ
+gb
 tK
-ad
+eN
 cw
 cR
 dp
@@ -37319,8 +37319,8 @@ gv
 sO
 gv
 tc
-bi
-sZ
+tL
+gb
 tK
 tK
 ab
@@ -37501,7 +37501,7 @@ tK
 tK
 tK
 tK
-sZ
+gb
 tK
 cw
 cS
@@ -37522,8 +37522,8 @@ gt
 ia
 gt
 np
-ad
-sZ
+eN
+gb
 tK
 ti
 ti
@@ -37700,7 +37700,7 @@ ti
 ti
 tK
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -37723,9 +37723,9 @@ gt
 sP
 gV
 gt
-ad
-ad
-sZ
+eN
+eN
+gb
 tK
 ti
 ti
@@ -37906,7 +37906,7 @@ tK
 tK
 tK
 tK
-sZ
+gb
 cw
 cT
 ds
@@ -37925,7 +37925,7 @@ gt
 sQ
 gV
 gt
-sZ
+gb
 tK
 tK
 tK
@@ -38101,11 +38101,11 @@ ti
 ti
 ti
 ti
-sZ
-sZ
-sZ
-ad
-sZ
+gb
+gb
+gb
+eN
+gb
 tK
 tK
 tK
@@ -38332,7 +38332,7 @@ gt
 tK
 tK
 tK
-sZ
+gb
 ti
 ti
 ti
@@ -38531,7 +38531,7 @@ gt
 sS
 sX
 gt
-sZ
+gb
 tK
 tK
 tK
@@ -38733,10 +38733,10 @@ gt
 gt
 gt
 gt
-sZ
+gb
 tK
-sZ
-sZ
+gb
+gb
 ti
 ti
 ti
@@ -38933,8 +38933,8 @@ gw
 gw
 gt
 fG
-sY
-sZ
+fo
+gb
 tK
 tK
 tK
@@ -39135,11 +39135,11 @@ st
 st
 sM
 sU
-sZ
+gb
 tK
 tK
 tK
-sZ
+gb
 tK
 ti
 ti
@@ -39338,7 +39338,7 @@ st
 sN
 sU
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -39539,7 +39539,7 @@ su
 af
 af
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -39741,7 +39741,7 @@ ez
 tK
 tK
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -39945,7 +39945,7 @@ tK
 tK
 tK
 tK
-ad
+eN
 tK
 tK
 tK
@@ -40547,9 +40547,9 @@ hf
 hc
 sf
 tK
-sZ
+gb
 tK
-sZ
+gb
 tK
 tK
 ti
@@ -42163,7 +42163,7 @@ iW
 ee
 si
 dE
-sZ
+gb
 tK
 tK
 tK
@@ -42769,7 +42769,7 @@ hj
 ee
 si
 dE
-sZ
+gb
 tK
 tK
 tK
@@ -42971,7 +42971,7 @@ hk
 ee
 si
 dE
-ad
+eN
 tK
 tK
 tK
@@ -44162,7 +44162,7 @@ ti
 ti
 ti
 tK
-sZ
+gb
 aQ
 ud
 ud
@@ -44176,10 +44176,10 @@ eh
 eh
 fa
 fE
-sZ
+gb
 ac
 ac
-sZ
+gb
 tK
 tK
 tK
@@ -44364,7 +44364,7 @@ ti
 ti
 ab
 tK
-sZ
+gb
 aQ
 uc
 uc
@@ -44378,7 +44378,7 @@ ei
 eM
 fb
 fF
-sZ
+gb
 tK
 tK
 tK
@@ -44575,14 +44575,14 @@ cf
 cs
 cs
 at
-sZ
-sZ
-sZ
+gb
+gb
+gb
 tK
 tK
 ac
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -44778,9 +44778,9 @@ as
 at
 at
 tK
-sZ
+gb
 tK
-sZ
+gb
 tK
 tK
 tK
@@ -44974,15 +44974,15 @@ tK
 tK
 tK
 tK
-sZ
+gb
 tK
 tK
 tK
-sZ
+gb
 tK
 tK
-sZ
-sZ
+gb
+gb
 tK
 tK
 tK
