@@ -2,9 +2,9 @@
 	name = "\"Rushing Bull\" tactical shotgun" //With correct mods this can be better then the pug
 	desc = "Lightweight, ergonomic and with a fast cycling speed, this semi-automatic shotgun is a breacher's dream. \
 	The internal components a work of art, able to operate smoothly no matter the circumstance. \
-	A discreet black finish coats it's composite polymers and metallic alloys, the Blackshield colors stamped to remind of it's origins. \
-	Under the ejection port stands the figure of a large Sablekyne, his large horns presented forward as they rage on. \
-	The last thing they saw coming. Best used with slugs rather then buckshot do to its rifling."
+	A discreet black finish coats its composite polymers and metallic alloys, Blackshield colors stamped to denote its origins. \
+	Under the ejection port stands the figure of a large Sablekyne, large horns pointing forward as they rage on. \
+	The last thing they saw coming. Best used with slugs rather than buckshot due to its rifling."
 	icon = 'icons/obj/guns/projectile/rushingbull.dmi'
 	icon_state = "rushingbull"
 	item_state = "rushingbull"
@@ -36,9 +36,9 @@
 
 /obj/item/gun/projectile/automatic/cattle_autoshotgun
 	name = "\"Cattle Stampede\" tactical shotgun" //With correct mods this can be better then the pug
-	desc = "A smaller verson of \"Rushing Bull\" tactical shotgun slimmed down for use as a side arm and better recoil controle. \
-	This fine shotgun has a internal mag of 5 shells rather then the normal 8 inside the normal verson of this gun. \
-	Even has the ablity to clip onto the belt."
+	desc = "A smaller version of the \"Rushing Bull\" tactical shotgun, slimmed down for use as a side arm with better recoil control. \
+	This fine shotgun has a shorter internal tube magazine, taking 5 shells instead of the normal 8 of its regular version. \
+	Its compact size allows it to be carried under one's belt with ease."
 	icon = 'icons/obj/guns/projectile/rushingbull_sawn.dmi'
 	icon_state = "rushingbull_sawn"
 	item_state = "rushingbull_sawn"
