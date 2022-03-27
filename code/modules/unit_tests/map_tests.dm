@@ -8,18 +8,18 @@
 		/area/space, /area/skipjack_station,
 		/area/shuttle, /area/holodeck,
 		/area/supply/station,
-		/area/turbolift)
+		/area/turbolift, /area/mine)
 
 	var/static/list/exempt_from_atmos = typesof(
 		/area/eris/maintenance, /area/eris/storage,
 		/area/eris/engineering/atmos/storage,
 		/area/eris/engineering/construction,
-		/area/eris/rnd/server)
+		/area/eris/rnd/server, /area/mine)
 
 	var/static/list/exempt_from_apc = typesof(
 		/area/eris/engineering/construction,
 		/area/eris/medical/genetics,
-		/area/turbolift)
+		/area/turbolift, /area/mine)
 
 	for(var/area/A in GLOB.map_areas)
 		if(A.z == 1 && !(A.type in exempt_areas))
