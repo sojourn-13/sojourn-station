@@ -11,13 +11,8 @@
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "ad" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "ae" = (
 /obj/random/mob/undergroundmob/low_chance,
@@ -42,6 +37,9 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"ah" = (
+/turf/simulated/mineral/random/high_chance,
+/area/mine/unexplored)
 "ai" = (
 /turf/simulated/wall/r_wall,
 /area/mine/hallway)
@@ -61,8 +59,13 @@
 	},
 /area/mine/hallway)
 "am" = (
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
 /area/mine/unexplored)
 "an" = (
 /obj/structure/cable/ender{
@@ -337,6 +340,12 @@
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
+"bi" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/mine/unexplored)
 "bj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/monofloor,
@@ -1695,10 +1704,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
-"eN" = (
-/obj/structure/boulder,
-/turf/simulated/floor/asteroid,
-/area/mine/unexplored)
 "eO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1800,6 +1805,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
+"fd" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
+"fe" = (
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/mine/unexplored)
 "ff" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -1924,12 +1937,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
-"fo" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/mine/unexplored)
 "fp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -2044,11 +2051,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/processing)
-"fG" = (
-/obj/structure/boulder,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid,
-/area/mine/unexplored)
 "fH" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/powercell/low_chance,
@@ -2389,12 +2391,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/asteroid,
 /area/mine/processing)
-"gq" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid,
-/area/mine/unexplored)
 "gr" = (
 /turf/simulated/wall/r_wall,
 /area/mine/medical)
@@ -4284,6 +4280,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "kW" = (
@@ -6917,11 +6918,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
@@ -7070,13 +7066,6 @@
 /area/nadezhda/rnd/outpostmedical)
 "qS" = (
 /obj/machinery/portable_atmospherics/canister/air,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/structure/cable/green,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/anomal)
 "qT" = (
@@ -7123,9 +7112,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -7513,19 +7499,6 @@
 	name = "murky water"
 	},
 /area/nadezhda/rnd/mixing)
-"rW" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/white/violetcorener,
-/area/nadezhda/rnd/anomal)
 "rX" = (
 /turf/simulated/floor/carpet,
 /area/mine/livingarea)
@@ -7952,15 +7925,17 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
+"sT" = (
+/obj/structure/boulder,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid,
+/area/mine/unexplored)
 "sU" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
 /turf/simulated/floor/asteroid,
-/area/mine/unexplored)
-"sV" = (
-/turf/simulated/mineral/random/high_chance,
 /area/mine/unexplored)
 "sW" = (
 /obj/machinery/door/airlock/science{
@@ -7989,9 +7964,11 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
-"ta" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/white/violetcorener,
+"sZ" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "tb" = (
 /obj/structure/table/steel_reinforced,
@@ -8006,12 +7983,6 @@
 "td" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/wall/r_wall,
-/area/mine/unexplored)
-"te" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "tf" = (
 /obj/effect/decal/cleanable/rubble,
@@ -8235,8 +8206,10 @@
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "tL" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "tM" = (
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -8741,10 +8714,27 @@
 /mob/living/simple_animal/hostile/nightmare,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"vk" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/mine/unexplored)
 "vl" = (
 /obj/random/mob/undergroundmob,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"vm" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28;
+	pixel_y = 0
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/anomal)
 "vn" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid,
@@ -10031,11 +10021,7 @@ aa
 aa
 tK
 np
-<<<<<<< Updated upstream
-tK
-=======
-te
->>>>>>> Stashed changes
+sZ
 aa
 aa
 aa
@@ -10207,11 +10193,7 @@ kR
 jU
 kh
 kB
-<<<<<<< Updated upstream
-lB
-=======
-rW
->>>>>>> Stashed changes
+vm
 tZ
 ua
 lC
@@ -10241,11 +10223,7 @@ aa
 aa
 aa
 Xj
-<<<<<<< Updated upstream
-tK
-=======
-gq
->>>>>>> Stashed changes
+tL
 tK
 aa
 aa
@@ -10446,15 +10424,9 @@ aa
 (5,1,1) = {"
 aa
 aa
-<<<<<<< Updated upstream
-aa
-tK
-tK
-=======
-ta
-ad
-fo
->>>>>>> Stashed changes
+fe
+am
+bi
 aa
 aa
 aa
@@ -10841,7 +10813,7 @@ pE
 pT
 qj
 qz
-lZ
+lB
 qS
 rg
 lr
@@ -33327,7 +33299,7 @@ tK
 tK
 tK
 tK
-am
+fd
 tK
 tK
 tK
@@ -33527,11 +33499,11 @@ ti
 ti
 tK
 tK
-eN
-am
+ad
+fd
 tK
 tK
-am
+fd
 tK
 tK
 tK
@@ -33728,14 +33700,14 @@ ti
 ti
 ti
 tK
-am
-am
+fd
+fd
 tK
 tK
 tK
-am
-am
-am
+fd
+fd
+fd
 tK
 tK
 tK
@@ -33928,12 +33900,12 @@ ti
 ti
 ti
 ti
-eN
+ad
 tK
 ae
 tK
 tK
-am
+fd
 tK
 tK
 tK
@@ -34333,16 +34305,16 @@ bf
 bf
 bf
 bf
-am
+fd
 tK
 tK
 tK
-am
+fd
 tK
 tK
 tK
 sY
-am
+fd
 tK
 tK
 tK
@@ -34535,13 +34507,13 @@ dh
 gh
 ej
 bf
-eN
-am
+ad
+fd
 tK
-am
+fd
 tK
 tK
-am
+fd
 tK
 sY
 tK
@@ -34737,11 +34709,11 @@ di
 dJ
 ej
 bf
-eN
-fG
-am
+ad
+sT
+fd
 tK
-am
+fd
 tK
 tK
 tK
@@ -34927,8 +34899,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 be
 be
 bf
@@ -34949,7 +34921,7 @@ ff
 gr
 gr
 gr
-eN
+ad
 tK
 tK
 tK
@@ -35129,8 +35101,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 be
 be
 bf
@@ -35151,11 +35123,11 @@ sj
 gN
 gr
 gr
-sV
+ah
 tK
 tK
 tK
-am
+fd
 tK
 ti
 ti
@@ -35331,8 +35303,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 bf
 bf
 bf
@@ -35353,10 +35325,10 @@ gN
 sA
 gr
 gr
-sV
+ah
 tK
 tK
-am
+fd
 tK
 tK
 ti
@@ -35533,8 +35505,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 bg
 bg
 bg
@@ -35555,12 +35527,12 @@ sk
 jl
 gr
 gr
-sV
-sV
+ah
+ah
 tK
 tK
 tK
-am
+fd
 ti
 ti
 ti
@@ -35735,8 +35707,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 bg
 bg
 bO
@@ -35757,13 +35729,13 @@ sl
 sC
 gr
 gr
-sV
-sV
+ah
+ah
 tK
 tK
 tK
 tK
-eN
+ad
 ti
 ti
 ti
@@ -35937,8 +35909,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 bg
 bg
 bP
@@ -36139,8 +36111,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 bg
 bg
 an
@@ -36166,7 +36138,7 @@ gt
 np
 tK
 tK
-am
+fd
 ab
 ti
 ti
@@ -36341,8 +36313,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 bg
 bg
 bg
@@ -36366,7 +36338,7 @@ hr
 sn
 gt
 np
-am
+fd
 tK
 tK
 ti
@@ -36543,8 +36515,8 @@ ti
 ti
 ti
 ti
-sV
-sV
+ah
+ah
 bg
 bg
 bg
@@ -36746,11 +36718,11 @@ ti
 ti
 ti
 tK
-sV
-sV
-sV
-sV
-sV
+ah
+ah
+ah
+ah
+ah
 cw
 cO
 do
@@ -36948,11 +36920,11 @@ ti
 ti
 ti
 tK
-sV
+ah
 tK
 tK
-eN
-sV
+ad
+ah
 cw
 cP
 dp
@@ -36972,7 +36944,7 @@ gt
 rY
 gt
 np
-am
+fd
 tK
 tK
 ab
@@ -37154,7 +37126,7 @@ tK
 tK
 tK
 tK
-eN
+ad
 cw
 cQ
 dp
@@ -37173,10 +37145,10 @@ gv
 gv
 gv
 tb
-tL
-am
+vk
+fd
 tK
-am
+fd
 ab
 ti
 ti
@@ -37352,11 +37324,11 @@ ti
 ti
 ti
 tK
-am
+fd
 tK
-am
+fd
 tK
-eN
+ad
 cw
 cR
 dp
@@ -37375,8 +37347,8 @@ gv
 sO
 gv
 tc
-tL
-am
+vk
+fd
 tK
 tK
 ab
@@ -37557,7 +37529,7 @@ tK
 tK
 tK
 tK
-am
+fd
 tK
 cw
 cS
@@ -37578,8 +37550,8 @@ gt
 ia
 gt
 np
-eN
-am
+ad
+fd
 tK
 ti
 ti
@@ -37756,7 +37728,7 @@ ti
 ti
 tK
 tK
-am
+fd
 tK
 tK
 tK
@@ -37779,9 +37751,9 @@ gt
 sP
 gV
 gt
-eN
-eN
-am
+ad
+ad
+fd
 tK
 ti
 ti
@@ -37962,7 +37934,7 @@ tK
 tK
 tK
 tK
-am
+fd
 cw
 cT
 ds
@@ -37981,7 +37953,7 @@ gt
 sQ
 gV
 gt
-am
+fd
 tK
 tK
 tK
@@ -38157,11 +38129,11 @@ ti
 ti
 ti
 ti
-am
-am
-am
-eN
-am
+fd
+fd
+fd
+ad
+fd
 tK
 tK
 tK
@@ -38388,7 +38360,7 @@ gt
 tK
 tK
 tK
-am
+fd
 ti
 ti
 ti
@@ -38587,7 +38559,7 @@ gt
 sS
 sX
 gt
-am
+fd
 tK
 tK
 tK
@@ -38789,10 +38761,10 @@ gt
 gt
 gt
 gt
-am
+fd
 tK
-am
-am
+fd
+fd
 ti
 ti
 ti
@@ -38988,9 +38960,9 @@ gw
 gw
 gw
 gt
-fG
+sT
 sY
-am
+fd
 tK
 tK
 tK
@@ -39191,11 +39163,11 @@ st
 st
 sM
 sU
-am
+fd
 tK
 tK
 tK
-am
+fd
 tK
 ti
 ti
@@ -39394,7 +39366,7 @@ st
 sN
 sU
 tK
-am
+fd
 tK
 tK
 tK
@@ -39595,7 +39567,7 @@ su
 af
 af
 tK
-am
+fd
 tK
 tK
 tK
@@ -39797,7 +39769,7 @@ ez
 tK
 tK
 tK
-am
+fd
 tK
 tK
 tK
@@ -40001,7 +39973,7 @@ tK
 tK
 tK
 tK
-eN
+ad
 tK
 tK
 tK
@@ -40603,9 +40575,9 @@ hf
 hc
 sf
 tK
-am
+fd
 tK
-am
+fd
 tK
 tK
 ti
@@ -42219,7 +42191,7 @@ iW
 ee
 si
 dE
-am
+fd
 tK
 tK
 tK
@@ -42825,7 +42797,7 @@ hj
 ee
 si
 dE
-am
+fd
 tK
 tK
 tK
@@ -43027,7 +42999,7 @@ hk
 ee
 si
 dE
-eN
+ad
 tK
 tK
 tK
@@ -44218,7 +44190,7 @@ ti
 ti
 ti
 tK
-am
+fd
 aQ
 ud
 ud
@@ -44232,10 +44204,10 @@ eh
 eh
 fa
 fE
-am
+fd
 ac
 ac
-am
+fd
 tK
 tK
 tK
@@ -44420,7 +44392,7 @@ ti
 ti
 ab
 tK
-am
+fd
 aQ
 uc
 uc
@@ -44434,7 +44406,7 @@ ei
 eM
 fb
 fF
-am
+fd
 tK
 tK
 tK
@@ -44631,14 +44603,14 @@ cf
 cs
 cs
 at
-am
-am
-am
+fd
+fd
+fd
 tK
 tK
 ac
 tK
-am
+fd
 tK
 tK
 tK
@@ -44834,9 +44806,9 @@ as
 at
 at
 tK
-am
+fd
 tK
-am
+fd
 tK
 tK
 tK
@@ -45030,15 +45002,15 @@ tK
 tK
 tK
 tK
-am
+fd
 tK
 tK
 tK
-am
+fd
 tK
 tK
-am
-am
+fd
+fd
 tK
 tK
 tK
