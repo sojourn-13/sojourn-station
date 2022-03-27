@@ -58,9 +58,9 @@
 	underlays += ("crystal_floor_[clamp(growth, 1, 5)]")
 
 /obj/structure/ameridian_crystal/attackby(obj/item/I, mob/user)
-	if(user.a_intent == I_HELP && user.Adjacent(src) && I.has_quality(QUALITY_EXCAVATION))
+	if(user.a_intent == I_HELP && user.Adjacent(src) && (I.has_quality(QUALITY_EXCAVATION) || I.has_quality(QUALITY_DIGGING) || I.has_quality(QUALITY_SHOVELING)))
 		src.visible_message(SPAN_NOTICE("[user] starts excavating crystals from [src]."), SPAN_NOTICE("You start excavating crystal from [src]."))
-		if(do_after(user, WORKTIME_SLOW, src))
+		if(do_after(user, WORKTIME_NORMAL, src))
 			var/obj/item/stack/material/ameridian/T = new(get_turf(src))
 			T.amount = growth // Drop more crystal the further along we are
 			src.visible_message(SPAN_NOTICE("[user] excavates a crystal from [src]."), SPAN_NOTICE("You excavate a crystal from [src]."))
