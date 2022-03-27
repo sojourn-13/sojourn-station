@@ -656,5 +656,5 @@
 /obj/item/ammo_magazine/ammobox/shotgun/scrap_slug
 	name = "old ammunition packet (20mm Slug)"
 	icon_state = "shot_scrap"
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet/scrap
+	ammo_type = /obj/item/ammo_casing/shotgun/scrap
 
