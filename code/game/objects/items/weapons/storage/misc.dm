@@ -74,3 +74,9 @@
 		new /obj/item/reagent_containers/food/snacks/mre_paste(src)
 	else
 		new /obj/item/reagent_containers/food/snacks/canned_peaches(src)
+	if(prob(33))
+		new /obj/item/reagent_containers/food/snacks/openable/candy
+	else if(prob(33))
+		new /obj/item/reagent_containers/food/snacks/openable/candy/shokoladka
+	else
+		new /obj/item/reagent_containers/food/snacks/openable/candy/dalococh
