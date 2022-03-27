@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/bull_autoshotgun
 	name = "\"Rushing Bull\" tactical shotgun" //With correct mods this can be better then the pug
 	desc = "Lightweight, ergonomic and with a fast cycling speed, this semi-automatic shotgun is a breacher's dream. \
-	The internal components a work of art, able to operate smoothly no matter the circumstance. \
+	The internal components are a work of art, able to operate smoothly no matter the circumstance. \
 	A discreet black finish coats its composite polymers and metallic alloys, Blackshield colors stamped to denote its origins. \
 	Under the ejection port stands the figure of a large Sablekyne, large horns pointing forward as they rage on. \
 	The last thing they saw coming. Best used with slugs rather than buckshot due to its rifling."
