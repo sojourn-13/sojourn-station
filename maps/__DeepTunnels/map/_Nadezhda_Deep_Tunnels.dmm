@@ -4527,6 +4527,11 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/caution/red,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "lD" = (
@@ -5767,11 +5772,6 @@
 	},
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
@@ -6138,11 +6138,6 @@
 /obj/structure/disposalpipe/junction,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "oR" = (
@@ -6526,11 +6521,6 @@
 "pI" = (
 /obj/structure/bed/chair,
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -6583,6 +6573,12 @@
 /area/nadezhda/rnd/mixing)
 "pQ" = (
 /mob/living/simple_animal/mouse/white,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "pR" = (
@@ -6637,11 +6633,6 @@
 /obj/item/tool/multitool{
 	pixel_x = 10
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/outpostgeneral)
 "pZ" = (
@@ -6671,11 +6662,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qb" = (
@@ -6753,11 +6739,6 @@
 	pixel_y = 3
 	},
 /obj/item/anodevice,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/outpostgeneral)
 "qo" = (
@@ -6907,11 +6888,6 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
@@ -6986,23 +6962,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qM" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qN" = (
@@ -7076,11 +7039,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qZ" = (
@@ -7091,12 +7049,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/outpostgeneral)
 "ra" = (
@@ -7105,11 +7057,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -7120,11 +7067,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -7952,6 +7894,11 @@
 /obj/machinery/camera/network/engineering{
 	dir = 1
 	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "ti" = (
@@ -8047,11 +7994,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
@@ -8142,6 +8084,11 @@
 	d2 = 2;
 	icon_state = "1-2";
 	pixel_y = 0
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -8751,6 +8698,11 @@
 /area/nadezhda/rnd/outpostgeneral)
 "yi" = (
 /obj/machinery/artifact_scanpad,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
 "ys" = (
@@ -9018,6 +8970,14 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/rnd/mixing)
+"IF" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/rnd/anomalisolfive)
 "IH" = (
 /turf/simulated/floor/asteroid,
 /area/nadezhda/rnd/mixing)
@@ -9026,6 +8986,15 @@
 /obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
+"JI" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "JM" = (
 /obj/machinery/light,
 /turf/simulated/floor/reinforced,
@@ -9105,6 +9074,15 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
+"Lw" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "LE" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
 /turf/simulated/floor/beach/water/swamp,
@@ -9135,7 +9113,20 @@
 /area/nadezhda/rnd/anomalisolfour)
 "MT" = (
 /obj/machinery/artifact_analyser,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/anomalisolfive)
+"Oc" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/anomalisolfive)
 "Ol" = (
 /obj/structure/catwalk,
@@ -9211,6 +9202,16 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"Pr" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/rnd/outpostgeneral)
 "Qy" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -9279,6 +9280,11 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
@@ -9364,6 +9370,22 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
+"UL" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "UO" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -12123,13 +12145,13 @@ ip
 iH
 jR
 iX
-jG
+IF
 MT
 Yp
 kj
 kJ
 jH
-jH
+JI
 jH
 mD
 mX
@@ -12325,13 +12347,13 @@ jO
 jQ
 jS
 th
-jG
+Oc
 jG
 jG
 jG
 jG
 ih
-qN
+Pr
 qN
 qN
 qN
@@ -12735,7 +12757,7 @@ nj
 nt
 jH
 jH
-jH
+JI
 jH
 jH
 jH
@@ -12937,20 +12959,20 @@ nl
 nE
 jJ
 kX
-jJ
+UL
 sv
 jJ
 kX
 nu
 nZ
-jJ
+rm
 oQ
-kX
-jJ
+Lw
+rm
 qa
-kX
+Lw
 tt
-jJ
+rm
 rb
 rl
 rv
