@@ -671,6 +671,7 @@
 			stat("Storyteller", "[master_storyteller]")
 			stat("Colony Time", stationtime2text())
 			stat("Round Duration", roundduration2text())
+			stat("Round End Timer", rounddurationcountdown2text())
 
 		if(client.holder)
 			if(statpanel("Status"))
