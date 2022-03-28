@@ -583,71 +583,82 @@ default behaviour is:
 		for(var/mob/living/carbon/slime/M in view(1,src))
 			M.UpdateFeed(src)
 
-
-
-
 /mob/living/verb/lay_down()
 	set name = "Rest"
 	set category = "IC"
 
 	if(resting && unstack)
 		unstack = FALSE
-		if((livmomentum <= 0) && do_after(src, (src.stats.getPerk(PERK_PARKOUR) ? 0.3 SECONDS : 0.7 SECONDS), null, 0, 1, INCAPACITATION_DEFAULT, immobile = 0))
+
+		if(do_after(src, (src.stats.getPerk(PERK_PARKOUR) ? 0.2 SECONDS : 0.4 SECONDS), null, 0, 1, INCAPACITATION_DEFAULT, immobile = 0))
 			resting = FALSE
 			unstack = TRUE
 			to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")
 			update_lying_buckled_and_verb_status()
 		else
 			unstack = TRUE
-	else if (!resting)
-		var/client/C = src.client
-		var/speed = movement_delay()
-		resting = TRUE
-		var/_dir = C.true_dir
-		if(ishuman(src) && !weakened && (_dir))// If true_dir = 0(src isn't moving), doesn't proc
-			var/mob/living/carbon/human/H = src
-//The sanity! - SoJ edits
-			if(H.handcuffed || H.legcuffed)
-				to_chat(H, SPAN_NOTICE("You cant dive well cuffed!"))
-				return
-
-			if(H.grabbed_by.len)
-				to_chat(H, SPAN_NOTICE("You cant dive well grappled!"))
-				return
-
-			if(H.stat != CONSCIOUS)
-				to_chat(H, SPAN_NOTICE("You cant dive well not awake!"))
-				return
-
-			if(buckled)
-				to_chat(H, SPAN_NOTICE("You cant dive well buckled!"))
-				return
-
-			if(40 >= health)
-				to_chat(H, SPAN_NOTICE("Your to hurt to dive!"))
-				return
-//End of SoJ edits
-			livmomentum = 5 // Set momentum value as soon as possible for stopSliding to work better
-			to_chat(H, SPAN_NOTICE("You dive onwards!"))
-			pass_flags += PASSTABLE // Jump over them!
-			H.allow_spin = FALSE
-			var/is_jump = FALSE
-			if(istype(get_step(H, dir), /turf/simulated/open))
-				is_jump = TRUE
-			H.throw_at(get_edge_target_turf(H, dir), 2 + is_jump, 1)// "Diving"; if you dive over a table, your momentum is set to 0. If you dive over space, you are thrown a tile further.
-			update_lying_buckled_and_verb_status()
-			pass_flags -= PASSTABLE // Jumpn't over them anymore!
-			H.allow_spin = TRUE
-			sleep(2)
-			C.mloop = 1
-			while(livmomentum > 0 && C.true_dir)
-				H.Move(get_step(H.loc, dir),dir)
-				livmomentum = (livmomentum - speed)
-				sleep(world.tick_lag + 1)
-			C.mloop = 0
+	else
+		if (!resting)
+			dive()
 		else
 			to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")
 			update_lying_buckled_and_verb_status()
+
+/mob/living/proc/dive()
+	var/client/C = src.client
+	var/speed = movement_delay()
+	resting = TRUE
+	var/_dir = C.true_dir
+	var/_hunger = (MOB_BASE_MAX_HUNGER - nutrition)
+	if(_hunger >= 250) //Will be shown on overlay as orange nutrition
+		to_chat(src, SPAN_WARNING("You weakly slump down!")) //You fall down because the rest still procs; a huge disadvantage
+		return
+//The sanity! - SoJ edits
+	if(ishuman(src) && !weakened && (_dir))// If true_dir = 0(src isn't moving), doesn't proc.
+		var/mob/living/carbon/human/H = src
+		if(H.handcuffed || H.legcuffed)
+			to_chat(H, SPAN_NOTICE("You cant dive well cuffed!"))
+			return
+
+		if(H.grabbed_by.len)
+			to_chat(H, SPAN_NOTICE("You cant dive well grappled!"))
+			return
+
+		if(H.stat != CONSCIOUS)
+			to_chat(H, SPAN_NOTICE("You cant dive well not awake!"))
+			return
+
+		if(buckled)
+			to_chat(H, SPAN_NOTICE("You cant dive well buckled!"))
+			return
+
+		if(40 >= health)
+			to_chat(H, SPAN_NOTICE("Your to hurt to dive!"))
+			return
+//End of SoJ edits
+	if(ishuman(src) && !weakened && (_dir))// If true_dir = 0(src isn't moving), doesn't proc.
+		livmomentum = 5 // Set momentum value as soon as possible for stopSliding to work better
+		nutrition -= 25
+		var/mob/living/carbon/human/H = src
+		var/range = 1 //checks for move intent; dive one tile further if on run intent
+		if (move_intent.flags & MOVE_INTENT_EXERTIVE)
+			range++
+		to_chat(H, SPAN_NOTICE("You dive onwards!"))
+		pass_flags += PASSTABLE // Jump over them!
+		H.allow_spin = FALSE
+		var/is_jump = FALSE
+		if(istype(get_step(H, _dir), /turf/simulated/open))
+			is_jump = TRUE
+		H.throw_at(get_edge_target_turf(H, _dir), range + is_jump, 1)// "Diving"; if you dive over a table, your momentum is set to 0. If you dive over space, you are thrown a tile further.
+		update_lying_buckled_and_verb_status()
+		pass_flags -= PASSTABLE // Jumpn't over them anymore!
+		H.allow_spin = TRUE
+		sleep(2)
+		C.mloop = 1
+		while(livmomentum > 0 && C.true_dir)
+			H.Move(get_step(H.loc, _dir),dir)
+			livmomentum = (livmomentum - speed)
+		C.mloop = 0
 
 /mob/living/simple_animal/spiderbot/is_allowed_vent_crawl_item(var/obj/item/carried_item)
 	if(carried_item == held_item)
