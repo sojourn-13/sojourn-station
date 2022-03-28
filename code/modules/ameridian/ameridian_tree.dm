@@ -6,7 +6,8 @@
 	anchored = TRUE
 	density = TRUE
 	light_range = 5 // Glow in the dark
-	growth = 6 // Bigger than other crystals
+	growth = 1 // Bigger than other crystals
+	max_growth = 1 // Doesn't grow
 	growth_prob = 2.5 // Spread crystals faster
 	spread_range = 2
 	rad_damage = 0.75
