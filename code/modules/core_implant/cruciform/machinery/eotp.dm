@@ -18,12 +18,12 @@ var/global/obj/machinery/power/eotp/eotp
 	var/list/rewards = list(ARMAMENTS, ALERT, INSPIRATION, ODDITY, STAT_BUFF, MATERIAL_REWARD, ENERGY_REWARD)
 	var/list/current_rewards
 
-	var/list/materials = list(/obj/item/stack/material/gold = 60,
-							/obj/item/stack/material/uranium = 30,
-							/obj/item/stack/material/plasma = 30,
-							/obj/item/stack/material/diamond = 30,
-							/obj/item/stack/material/plasteel = 120,
-							/obj/item/stack/material/silver = 60)
+	var/list/materials = list(/obj/item/stack/material/gold = 20,
+							/obj/item/stack/material/uranium = 10,
+							/obj/item/stack/material/plasma = 10,
+							/obj/item/stack/material/diamond = 10,
+							/obj/item/stack/material/plasteel = 30,
+							/obj/item/stack/material/silver = 20)
 
 
 	var/list/mob/living/carbon/human/scanned = list()
@@ -190,10 +190,11 @@ var/global/obj/machinery/power/eotp/eotp
 
 	else if(type_release == MATERIAL_REWARD)
 		var/materials_reward = pick(materials)
-		var/reward_min_amount = materials[materials_reward]
+		//var/reward_min_amount = materials[materials_reward] - Soj Edit we use a pick system
 		var/obj/item/stack/material/_item = new materials_reward(get_turf(src))
-		_item.amount = rand(reward_min_amount, _item.max_amount)
-		visible_message(SPAN_NOTICE("The [_item.name] appers out of bluespace near the [src]!"))
+		//4 10s, 5 15s, 2 20s, were likely to get get lower then higher
+		_item.amount = pick(10, 10, 10, 10, 15, 15, 15, 15, 15, 20, 20)
+		visible_message(SPAN_NOTICE("The [_item.name] appers out of the base of the  [src]!"))
 
 	else if(type_release == ENERGY_REWARD)
 		for(var/mob/living/carbon/human/H in disciples)
