@@ -15,6 +15,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		if(blueprint_type == /datum/nt_blueprint/weapons)
 			continue
+		if(blueprint_type == /datum/nt_blueprint/armor)
+			continue
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
 	return list
@@ -537,5 +539,31 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/glass = 15,
 		/obj/item/stack/material/gold = 3,
 		/obj/item/stack/material/silver = 5
+	)
+	build_time = 8 SECONDS
+
+//Armor. Specialty designs from within the church, can't reduce their creation value but have the benefit of being good.
+/datum/nt_blueprint/armor
+
+/datum/nt_blueprint/armor/fortress_chest
+	name = "\"Fortress\" heavy armor"
+	build_path = /obj/item/clothing/suit/armor/heavy/fortress
+	materials = list(
+		/obj/item/stack/material/plasteel = 25,
+		/obj/item/stack/material/steel = 15,
+		/obj/item/stack/material/plastic = 8,
+		/obj/item/stack/material/gold = 3,
+		/obj/item/stack/material/silver = 3
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/armor/fortress_helm
+	name = "\"Fortress\" helmet"
+	build_path = /obj/item/clothing/head/helmet/fortress
+	materials = list(
+		/obj/item/stack/material/plasteel = 3,
+		/obj/item/stack/material/plastic = 2,
+		/obj/item/stack/material/glass = 1,
+		/obj/item/stack/material/gold = 1
 	)
 	build_time = 8 SECONDS

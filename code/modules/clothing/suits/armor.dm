@@ -273,6 +273,15 @@
 		usr.update_action_buttons()
 		return 1
 
+// Slows you down, so I doubt many will use this despite the good stats. Only obtained via church creation litanies.
+/obj/item/clothing/suit/armor/heavy/fortress
+	name = "fortress armor"
+	desc = "Armor from the Church of Absolute, designed by the fermat prime Abraham, known for its exceedingly high protection against melee strikes and bullets, but its metal design \
+	hinders its protection against energy weapons and slows most wearers down. While many seek to live within the fortified safety of the colony walls, Abraham carried his fortress on his back."
+	icon_state = "fortress_armor"
+	armor_list = list(melee = 60, bullet = 60, energy = 20, bomb = 80, bio = 100, rad = 100)
+	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 3, MATERIAL_GOLD = 3)
+
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
 	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."

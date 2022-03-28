@@ -191,6 +191,18 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/head/helmet/fortress
+	name = "fortress helmet"
+	desc = "A visored helmet with a built in power cell and light."
+	icon_state = "fortress_armor"
+	action_button_name = "Toggle Helmet Light"
+	light_overlay = "helmet_light"
+	brightness_on = 5
+	armor_list = list(melee = 60, bullet = 60, energy = 20, bomb = 80, bio = 100, rad = 100)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_GOLD = 1)
+
 /obj/item/clothing/head/helmet/prime
 	name = "prime hood"
 	desc = "A visored helmet with a cloth hood covering it."
