@@ -6,7 +6,7 @@
 	body_parts_covered = FACE
 	w_class = ITEM_SIZE_SMALL
 	gas_transfer_coefficient = 0.90
-	voicechange = 1
+	muffle_voice = TRUE
 
 /obj/item/clothing/mask/muzzle/tape
 	name = "length of tape"
@@ -108,6 +108,7 @@
 	item_flags = FLEXIBLEMATERIAL
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 20
+	muffle_voice = TRUE
 
 /obj/item/clothing/mask/bandana/equipped(var/mob/user, var/slot)
 	switch(slot)
