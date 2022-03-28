@@ -88,7 +88,7 @@
 
 /datum/chemical_reaction/soysauce // Fermented soy, with the addition of wheat in a salt brine is a method for making Shoyu. Makes more sense than mixing soy "milk" with fucking SULPHURIC ACID. - Seb
 	result = "soysauce"
-	required_reagents = list("soymilk" = 1, "sodiumchloride" = 1, "flour" = 1) 
+	required_reagents = list("soymilk" = 1, "sodiumchloride" = 1, "flour" = 1)
 	result_amount = 5
 
 /datum/chemical_reaction/ketchup
@@ -393,6 +393,12 @@
 	result = "gargleblaster"
 	required_reagents = list("vodka" = 2, "gin" = 1, "whiskey" = 1, "cognac" = 1, "limejuice" = 1)
 	result_amount = 6
+//Eris "lore frendly" verson, commited out do to being unsupported  with pressure
+//datum/chemical_reaction/gargle_blaster
+//	result = "gargleblaster"
+//	required_reagents = list("sbiten" = 1, "carpotoxin" = 1, "singulo" = 1, "pwine" = 1, "fuhrerole" = 1, "limejuice" = 1)
+//	result_amount = 2
+//	maximum_pressure = 80
 
 /datum/chemical_reaction/brave_bull
 	result = "bravebull"
