@@ -810,7 +810,7 @@
 		return
 	if(prob(openchance))
 		new /mob/living/simple_animal/hostile/stranger(user.loc)
-		new /obj/item/oddity/nt/openedpuzzlebox(user.loc)
+		new /obj/item/oddity/rare/openedpuzzlebox(user.loc)
 		to_chat(user, SPAN_WARNING("[src] clicks and lights up!"))
 		qdel(src)
 	else
@@ -865,7 +865,7 @@
 //Lonestar Special
 //For unique oddities that don't fit into other categories
 
-/obj/item/oddity/nt/openedpuzzlebox
+/obj/item/oddity/rare/openedpuzzlebox
 	name = "Opened Puzzlebox" //todo add cool sound; make sure path is correct
 	desc = "The box... it's been opened."
 	icon_state = "puzzlebox_open"
