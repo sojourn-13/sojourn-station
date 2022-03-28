@@ -325,3 +325,21 @@
 
 /obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
 	chaos = TRUE
+
+// Special projectile that one-shot ameridian-related stuff
+/obj/item/projectile/sonic_bolt
+	name = "sonic bolt"
+	icon_state = "bolter"
+	damage_types = list(BRUTE = 10)
+	armor_penetration = 100
+	kill_count = 7
+	check_armour = ARMOR_ENERGY
+
+/obj/item/projectile/sonic_bolt/on_hit(atom/target)
+	if(istype(target, /mob/living/carbon/superior_animal/ameridian_golem))
+		var/mob/living/carbon/superior_animal/ameridian_golem/G = target
+		G.drop_amount = 0 // The crystal golem is obliterated, don't drop any loot.
+		G.death() // Golem die.
+		return TRUE
+
+	return ..()
