@@ -8,10 +8,3 @@
 	armor = list(melee = 20, bullet = 10, energy = 25, bomb = 15, bio = 100, rad = 100) //We want to be gunned down, not lasered
 	drop_amount = 0 // No loot
 	size_factor = 0.75 // 25% Smaller
-	var/pack_size = 2 // How many runners are spawned alongside it.
-
-/mob/living/carbon/superior_animal/ameridian_golem/runner/New(var/from_crystal = TRUE)
-	..()
-	if(from_crystal)
-		for(var/I = 0, I < pack_size, I++)
-			new /mob/living/carbon/superior_animal/ameridian_golem/runner(get_turf(src), from_crystal = FALSE)

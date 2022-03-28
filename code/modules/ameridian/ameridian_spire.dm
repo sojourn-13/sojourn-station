@@ -2,7 +2,6 @@
 /obj/structure/ameridian_crystal/spire
 	name = "ameridian spire"
 	desc = "A strange crystal formation that seems to grow on its own..."
-	icon = 'icons/obj/ameridian.dmi'
 	icon_state = "ameridian_crystal_purple"
 	anchored = TRUE
 	density = TRUE
@@ -11,7 +10,7 @@
 	growth = 6 // Bigger than other crystals
 	growth_prob = 5 // Spread crystals faster
 	golem_timer = 100
-	spread_range = 2
+	spread_range = 3
 	rad_damage = 1
 	rad_range = 3
 	var/respawn_distance = 10 // How many tiles do we let the golem get before spawning another
