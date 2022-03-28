@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"CH-LC Solaris laser cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy,
 		"MkIV ion heavy cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,
 		"SGL-6 grenade launcher" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang,
-		"Mounted rig combat injector" = /obj/item/rig_module/chem_dispenser/combat,
+		"Mounted rig combat injector" = /obj/item/rig_module/modular_injector/combat,
 		"hardsuit laser cannon"= /obj/item/rig_module/mounted,
 		"hardsuit laser gun"= /obj/item/rig_module/mounted/egun,
 		"hardsuit taser" = /obj/item/rig_module/mounted/taser,

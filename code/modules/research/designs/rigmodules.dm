@@ -17,13 +17,13 @@
 /datum/design/research/item/chem_dispenser
 	name = "mounted chemical dispenser"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
-	build_path = /obj/item/rig_module/chem_dispenser
+	build_path = /obj/item/rig_module/modular_injector
 	category = "RIG"
 
 /datum/design/research/item/chem_injector
 	name = "mounted chemical injector"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
-	build_path = /obj/item/rig_module/chem_dispenser/injector
+	build_path = /obj/item/rig_module/modular_injector/medical
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 10, MATERIAL_PLASTIC = 10, MATERIAL_GOLD = 1, MATERIAL_SILVER = 1, MATERIAL_DIAMOND = 1)
 	category = "RIG"
 
@@ -36,7 +36,7 @@
 /datum/design/research/item/combat_injector
 	name = "mounted combat injector"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
-	build_path = /obj/item/rig_module/chem_dispenser/combat
+	build_path = /obj/item/rig_module/modular_injector/combat
 	materials = list(MATERIAL_STEEL = 25, MATERIAL_GLASS = 15, MATERIAL_PLASTIC = 15, MATERIAL_GOLD = 2, MATERIAL_SILVER = 2, MATERIAL_DIAMOND = 1)
 	category = "RIG"
 
