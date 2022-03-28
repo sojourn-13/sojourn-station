@@ -3,7 +3,7 @@
 	name = "Hydrogen Knight suit control module"
 	suit_type = "hydrogen knight"
 	desc = "An armored, knight-like suit designed by Soteria's best roboticists and powered by hydrogen."
-	icon_state = "hydrogen_knight"
+	icon_state = "hydrogen_knight_rig"
 	armor_list = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 100, rad = 100) // Same stats as the Crusader Shield, except the bio and rad protection, for obvious reasons
 	slowdown = 0 // Lot of stuff used in its construction that justify not having any slowdown
 	offline_slowdown = 1
