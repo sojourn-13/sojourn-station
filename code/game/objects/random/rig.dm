@@ -118,10 +118,9 @@
 	/obj/item/rig_module/device/anomaly_scanner = 2,
 	/obj/item/rig_module/device/orescanner = 2,
 	/obj/item/rig_module/device/rcd = 0.5,
-	/obj/item/rig_module/chem_dispenser = 0.8,
-	/obj/item/rig_module/chem_dispenser/ninja = 2, //This version is same as normal but has much less of each chem
-	/obj/item/rig_module/chem_dispenser/combat = 0.8,
-	/obj/item/rig_module/chem_dispenser/injector = 0.5, //Like normal but can be used on other people as well as yourself
+	/obj/item/rig_module/modular_injector = 0.8,
+	/obj/item/rig_module/modular_injector/combat = 0.8,
+	/obj/item/rig_module/modular_injector/medical = 0.5, //Like normal but can be used on other people as well as yourself
 	/obj/item/rig_module/voice = 3,
 	/obj/item/rig_module/maneuvering_jets = 8, //Useful but common
 
@@ -173,8 +172,8 @@
 	//Utility
 	/obj/item/rig_module/device/drill = 1,
 	/obj/item/rig_module/device/rcd = 1,
-	/obj/item/rig_module/chem_dispenser/combat = 1,
-	/obj/item/rig_module/chem_dispenser/injector = 1, //Like normal but can be used on other people as well as yourself
+	/obj/item/rig_module/modular_injector/combat = 1,
+	/obj/item/rig_module/modular_injector/medical = 1, //Like normal but can be used on other people as well as yourself
 	/obj/item/rig_module/voice = 1,
 	/obj/item/rig_module/held/shield = 1,
 	//Vision
