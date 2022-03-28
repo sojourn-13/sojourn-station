@@ -38,26 +38,21 @@
 	friendly_to_colony = FALSE
 	known_languages = list(LANGUAGE_COMMON)
 	var/obj/structure/ameridian_crystal/node
+	var/drop_amount = 1 // How many crystals we drop on death
+	var/size_factor = 1 // Size, in %, of the golem
+
+/mob/living/carbon/superior_animal/ameridian_golem/Initialize()
+	..()
+	update_icon()
 
 /mob/living/carbon/superior_animal/ameridian_golem/death()
 	..()
-	new /obj/item/stack/material/ameridian(get_turf(src))
+	if(drop_amount)
+		var/obj/item/stack/material/ameridian/loot = new /obj/item/stack/material/ameridian(get_turf(src))
+		loot.amount = drop_amount
 	node?.golem = null // Remove the golem from the node since for some reason it doesn't do it with qdel()
 	qdel(src)
 
-// Beefier variant
-/mob/living/carbon/superior_animal/ameridian_golem/strong
-	name = "ameridian behemoth"
-	desc = "A weird creature made of ameridian. It is bigger, stronger and pack a harder punch than its brethen."
-	icon_state = "golem_ameridian_purple"
-	health = 500
-	maxHealth = 500
-	melee_damage_lower = 40
-	melee_damage_upper = 50
-	move_to_delay = 2
-	armor = list(melee = 70, bullet = 60, energy = 80, bomb = 40, bio = 100, rad = 100) //We want to be gunned down, not lasered
-
-/mob/living/carbon/superior_animal/ameridian_golem/strong/New()
-	..()
+/mob/living/carbon/superior_animal/ameridian_golem/update_icon()
 	transform = initial(transform)
-	transform *= 1.5 // 50% bigger
+	transform *= size_factor // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
