@@ -37,7 +37,7 @@
 	switch(tool_type)
 
 		if(QUALITY_WIRE_CUTTING)
-			if(salvage_num <= 0 || !isemptylist(wirecutters_salvage))
+			if(salvage_num <= 0 || isemptylist(wirecutters_salvage))
 				to_chat(user, "You don't see anything that can be removed with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -52,7 +52,7 @@
 			return
 
 		if(QUALITY_WELDING)
-			if(salvage_num <= 0 || !isemptylist(welder_salvage))
+			if(salvage_num <= 0 || isemptylist(welder_salvage))
 				to_chat(user, "You don't see anything that can be cut with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -69,7 +69,7 @@
 			return
 
 		if(QUALITY_PRYING)
-			if(!isemptylist(crowbar_salvage))
+			if(isemptylist(crowbar_salvage))
 				to_chat(user, "You don't see anything that can be pried with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
