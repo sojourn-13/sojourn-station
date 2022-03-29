@@ -49,7 +49,9 @@
 	..()
 	if(helm_type)
 		verbs -= /obj/item/rig/proc/toggle_helmet
-		verbs += /obj/item/rig/hydrogen_knight/toggle_helmet
+		verbs += /obj/item/rig/hydrogen_knight/toggle_helmet	// Yes, it make the Linter go mad. No I cannot do anything about it, because otherwise it is the COMPILER that go mad about it.
+																// And I don't know about you, but between the Compiler which is needed for the server to start and the Linter which isn't,
+																// I'm choosing the Compiler. -R4d6
 
 /obj/item/clothing/suit/space/rig/hydrogen_knight
 	name = "suit"
