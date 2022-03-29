@@ -54,6 +54,7 @@
 	new /obj/item/clothing/accessory/holster/saber/militiasergeant/occupied(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/gloves/thick/combat(src)
+	new /obj/item/clothing/head/helmet/ballistic/sergeant(src)
 	new /obj/item/clothing/head/rank/armorer/beret(src)
 	new /obj/item/clothing/head/rank/armorer/cap(src)
 	new /obj/item/clothing/under/rank/armorer(src)
