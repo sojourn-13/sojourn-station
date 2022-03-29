@@ -53,7 +53,7 @@
 	fire_sound_text = "a metallic click"
 	recoil_buildup = 0
 	silenced = TRUE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/chemdart
 	auto_eject = 0
 	mag_well = MAG_WELL_DART

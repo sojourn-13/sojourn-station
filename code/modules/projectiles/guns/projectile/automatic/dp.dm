@@ -12,7 +12,7 @@
 	caliber = CAL_RIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PAN
 	tac_reloads = FALSE
 	matter = list(MATERIAL_PLASTEEL = 50, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 10, MATERIAL_STEEL = 20)

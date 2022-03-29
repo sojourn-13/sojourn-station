@@ -24,6 +24,8 @@
 	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg' //placeholder, needs new sound
 	twohanded = TRUE
 	gun_tags = list(GUN_SCOPE)
+	allow_racking = FALSE
+	auto_rack = TRUE //so if we get loaded were good
 
 /obj/item/gun/projectile/rpg/update_icon()
 	..()

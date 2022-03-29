@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/projectile/generic_smg.dmi'
 	icon_state = "generic_smg"
 	w_class = ITEM_SIZE_NORMAL
-	load_method = SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
+	load_method = SINGLE_CASING|SPEEDLOADER //Default is speedloader because all might not have magazine sprites.
 	max_shells = 22
 	caliber = CAL_35A
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
@@ -17,6 +17,7 @@
 	cocked_sound = 'sound/weapons/guns/interact/smg_cock.ogg'
 	zoom_factor = 0 //Default zoom factor you want on all automatic weapons.
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	auto_rack = TRUE
 	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY,

@@ -31,6 +31,7 @@
 	sawn = /obj/item/gun/projectile/boltgun/sawn/true
 	var/bolt_training = TRUE
 	eject_animatio = TRUE //we infact have bullet animations
+	allow_racking = FALSE
 
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" mosin boltgun"

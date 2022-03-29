@@ -14,6 +14,9 @@
 	matter = list(MATERIAL_STEEL = 1)
 	recoil_buildup = 1
 
+	//Racking and chambering
+	var/allow_racking = TRUE //Do we allow the racking of the shot?
+	var/auto_rack = FALSE
 	var/caliber = CAL_MAGNUM		//determines which casings will fit
 	var/handle_casings = EJECT_CASINGS	//determines how spent casings should be handled
 	var/load_method = SINGLE_CASING|SPEEDLOADER //1 = Single shells, 2 = box or quick loader, 3 = magazine
@@ -29,7 +32,7 @@
 	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
 
 	//For SINGLE_CASING or SPEEDLOADER guns
-	var/max_shells = 0			//the number of casings that will fit inside
+	var/max_shells = 1			//the number of casings that will fit inside As of 3/29/2022 this has to be at lest 1 otherwise the gun can no fire without fire_from_mag
 	var/ammo_type = null		//the type of ammo that the gun comes preloaded with
 	var/list/loaded = list()	//stored ammo
 
@@ -39,6 +42,8 @@
 	var/mag_well = MAG_WELL_GENERIC	//What kind of magazines the gun can load
 	var/ammo_mag = "default" // magazines + gun itself. if set to default, then not used
 	var/tac_reloads = TRUE	// Enables guns to eject mag and insert new magazine.
+	var/fire_from_mag = TRUE //This allows us to fire directly from the mag rather then a loaded list or chamber
+
 	gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/gun/projectile/loadAmmoBestGuess()
@@ -92,7 +97,7 @@
 		chambered = loaded[1] //load next casing.
 		if(handle_casings != HOLD_CASINGS)
 			loaded -= chambered
-	else if(ammo_magazine && ammo_magazine.stored_ammo.len)
+	else if(ammo_magazine && ammo_magazine.stored_ammo.len && fire_from_mag)
 		chambered = ammo_magazine.stored_ammo[1]
 		if(handle_casings != HOLD_CASINGS)
 			ammo_magazine.stored_ammo -= chambered
@@ -107,9 +112,20 @@
 		chambered.expend()
 		process_chambered()
 
+	if(ammo_magazine && ammo_magazine.stored_ammo.len)
+		if(!loaded.len && max_shells)
+			loaded += ammo_magazine.stored_ammo[1]
+			ammo_magazine.stored_ammo -= loaded
+
 /obj/item/gun/projectile/handle_click_empty()
 	..()
 	process_chambered()
+
+	if(ammo_magazine && ammo_magazine.stored_ammo.len)
+		if(!loaded.len && max_shells)
+			loaded += ammo_magazine.stored_ammo[1]
+			ammo_magazine.stored_ammo -= loaded
+
 
 /obj/item/gun/projectile/proc/process_chambered()
 	if (!chambered) return
@@ -198,14 +214,24 @@
 				user.remove_from_mob(AM)
 				AM.loc = src
 				ammo_magazine = AM
-
+				//This is so that when re reload we also add a bullet to the loaded lens, like racking it
+				if(ammo_magazine.stored_ammo.len)
+					if(!loaded.len && max_shells)
+						loaded += ammo_magazine.stored_ammo[1]
+						ammo_magazine.stored_ammo -= loaded
 				if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
 				cock_gun(user)
 				update_firemode()
 			if(SPEEDLOADER)
+			//Soj edit - Badly codes in speed loader to mag form gun
 				if(loaded.len >= max_shells)
-					to_chat(user, SPAN_WARNING("[src] is full!"))
-					return
+					if(ammo_magazine)
+						if(ammo_magazine.stored_ammo.len >= ammo_magazine.max_ammo)
+							to_chat(user, SPAN_WARNING("[src] is full!"))
+							return
+					else
+						to_chat(user, SPAN_WARNING("[src] is full!"))
+						return
 				var/count = 0
 				if(AM.reload_delay)
 					to_chat(user, SPAN_NOTICE("It takes some time to reload [src] with [AM]..."))
@@ -218,6 +244,14 @@
 							loaded += C
 							AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
 							count++
+					for(var/obj/item/ammo_casing/C in AM.stored_ammo)
+						if(ammo_magazine.stored_ammo.len >= ammo_magazine.max_ammo)
+							break
+						if(C.caliber == caliber)
+							ammo_magazine.insertCasing(C)
+							AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
+							count++
+							AM.update_icon()
 				if(count)
 					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
 					if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
@@ -268,6 +302,7 @@
 		if(bulletinsert_sound) playsound(src.loc, bulletinsert_sound, 75, 1)
 
 	update_icon()
+
 
 //attempts to unload src. If allow_dump is set to 0, the speedloader unloading method will be disabled
 /obj/item/gun/projectile/proc/unload_ammo(mob/user, var/allow_dump=1)
@@ -350,8 +385,8 @@
 		bullets += loaded.len
 	if(ammo_magazine && ammo_magazine.stored_ammo)
 		bullets += ammo_magazine.stored_ammo.len
-	if(chambered)
-		bullets += 1
+//	if(chambered) Soj edit, chamber IS apart of loaded so no doble counting
+//		bullets += 1
 	return bullets
 
 /obj/item/gun/projectile/proc/get_max_ammo()

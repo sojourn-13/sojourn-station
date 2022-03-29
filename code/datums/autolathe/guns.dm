@@ -278,6 +278,10 @@
 	name = "GP .257 \"Nail\""
 	build_path = /obj/item/gun/projectile/automatic/nail_gun
 
+/datum/design/autolathe/gun/duty
+	name = "BR .257 \"Duty\" heavy rifle"
+	build_path = /obj/item/gun/projectile/automatic/duty
+
 ///R I F L E S
 //7 . 5 m m
 
@@ -374,6 +378,10 @@
 /datum/design/autolathe/gun/custer
 	name = "H&S .408 \"Custer\""
 	build_path = /obj/item/gun/projectile/boltgun/lever/custer
+
+/datum/design/autolathe/gun/blackguard
+	name = "BR .408 \"Blackguard\" Omni Rifle"
+	build_path = /obj/item/gun/projectile/automatic/blackguard
 
 // .40 rifles
 

@@ -12,7 +12,7 @@
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_PLASTIC = 6)
 	price_tag = 250
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	damage_multiplier = 0.7

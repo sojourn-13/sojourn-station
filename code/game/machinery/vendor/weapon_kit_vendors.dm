@@ -6,6 +6,7 @@
 	icon_state = "trashvend"
 	products = list( // 5 in stock for the default blackshield kit, 3 for the rest
 		/obj/item/storage/box/bs_kit/mosin = 5,
+		/obj/item/storage/box/bs_kit/duty = 2,
 		/obj/item/storage/box/bs_kit/sts = 3,
 		/obj/item/storage/box/bs_kit/sts_para = 2,
 		/obj/item/storage/box/bs_kit/rds_omnicarbine = 2,
@@ -32,6 +33,7 @@
 		)
 	prices = list( // 500$ for default Blackshield stuff, 750 for the rest
 		/obj/item/storage/box/bs_kit/mosin = 500,
+		/obj/item/storage/box/bs_kit/duty = 800,
 		/obj/item/storage/box/bs_kit/sts = 750,
 		/obj/item/storage/box/bs_kit/sts_para = 1200,
 		/obj/item/storage/box/bs_kit/rds_omnicarbine = 1200,
@@ -82,6 +84,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
+					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"STS Kit" = /obj/item/storage/box/bs_kit/sts,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Grease Gun Kit" = /obj/item/storage/box/bs_kit/greasegun,
@@ -102,6 +105,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemSargPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
+					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"Buckler SMG Kit" = /obj/item/storage/box/bs_kit/buckler,
 					"STS Para Kit" = /obj/item/storage/box/bs_kit/sts_para,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
