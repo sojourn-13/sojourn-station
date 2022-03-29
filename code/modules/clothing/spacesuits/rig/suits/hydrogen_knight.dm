@@ -25,34 +25,6 @@
 	req_access = list()
 	req_one_access = list()
 
-/obj/item/rig/hydrogen_knight/toggle_helmet()
-	set name = "Toggle Helmet"
-	set desc = "Deploys or retracts your helmet."
-	set category = "Hardsuit"
-	set src = usr.contents
-
-	if(!istype(wearer) || !wearer.back == src)
-		to_chat(usr, SPAN_WARNING("The hardsuit is not being worn."))
-		return
-
-	if(!active)
-		to_chat(usr, SPAN_WARNING("The helmet require the rig to be active."))
-		return
-
-	if(!check_suit_access(usr))
-		return
-
-	toggle_piece("helmet",wearer)
-
-// This shit is hardcoded to use the parent proc of toggle_helmet, so we need to override it here.
-/obj/item/rig/hydrogen_knight/Initialize()
-	..()
-	if(helm_type)
-		verbs -= /obj/item/rig/proc/toggle_helmet
-		verbs += /obj/item/rig/hydrogen_knight/toggle_helmet	// Yes, it make the Linter go mad. No I cannot do anything about it, because otherwise it is the COMPILER that go mad about it.
-																// And I don't know about you, but between the Compiler which is needed for the server to start and the Linter which isn't,
-																// I'm choosing the Compiler. -R4d6
-
 /obj/item/clothing/suit/space/rig/hydrogen_knight
 	name = "suit"
 	armor_list = list(melee = 80, bullet = 80, energy = 80, bomb = 70, bio = 100, rad = 100)
