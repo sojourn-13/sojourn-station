@@ -787,6 +787,13 @@
 	slowdown = 0.15
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 0, rad = 0)
 
+/obj/item/clothing/suit/armor/platecarrier/hos/full
+	name = "advanced plate carrier"
+	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes.This set has a set of equally advanced arm and leg-guards added for increased overall protection."
+	icon_state = "platecarrier_ih_fullbody"
+	item_state = "platecarrier_ih_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
 /obj/item/clothing/suit/armor/flackvest
 	name = "flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel."

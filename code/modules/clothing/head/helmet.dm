@@ -65,6 +65,18 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/head/helmet/ballistic/militia/bulletproof
+	name = "blackshield bulletproof helmet"
+	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles\
+	This one bears the IFF stripes of the blackshield."
+	armor_list = list(
+		melee = 25,
+		bullet = 60,
+		energy = 25,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)
 
 /obj/item/clothing/head/helmet/ballistic/green
 	name = "green ballistic helmet"
@@ -77,6 +89,102 @@
 	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
 			Smells like sweat."
 	icon_state = "helmet_tan"
+
+/obj/item/clothing/head/helmet/ballistic/shieldfull
+	name = "Blackshield full helm"
+	desc = "Standard military gear. A full-faced variant of the common ballistic helmet. This one bears a few\
+	key upgrades, notably the inclusion of a face-protecting plate and lit eyeshield."
+	icon_state = "bs_fullhelm"
+	item_state = "bs_fullhelm"
+	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = LIGHT_OBSCURATION
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+	light_overlay = "bsfullhelm_light"
+
+/obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman
+	name = "Corpsmans full helm"
+	desc = "Standard military gear. A full-faced vasriant of the common ballistic helmet. This one bears a few\
+	key upgrades, including sterile materials and contaminant resistant sealing."
+	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 20, rad = 0)
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+	light_overlay = "corpsmanfullhelm_light"
+
+/obj/item/clothing/head/helmet/ballistic/shieldfull/verb/toggle_style()
+	set name = "Adjust helmet"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard fullhelm"] = ""
+	options["Tan fullhelm"] = "_tan"
+	options["Green fullhelm"] = "_green"
+	options["Grey hooded fullhelm"] = "_gp"
+	options["Green hooeded fullhelm"] = "_grp"
+	options["Tan hooded fullhelm"] = "_tp"
+	options["camo hooded fullhelm"] = "_cp"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/helmet/ballistic/sergeant
+	name = "Sergeants ballistic gorget"
+	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\
+	this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
+	with the users range of motion or ability to communicate."
+	icon_state = "sergeanthelm"
+	item_state = "sergeanthelm"
+	armor_list = list(melee = 30, bullet = 45,energy = 20, bomb = 30, bio = 0, rad = 0)
+	flags_inv = HIDEMASK|HIDEEARS
+
+/obj/item/clothing/head/helmet/ballistic/sergeant/verb/toggle_style()
+	set name = "Adjust helmet"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["gorget standard"] = ""
+	options["goggles on"] = "_goggle"
+	options["cap on"] = "_cap"
+	options["beret on"] = "_beret"
+	options["head-strap on"] = "_bane"
+	var/choice = input(M,"What do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You put your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
+
 
 /obj/item/clothing/head/helmet/botanist
 	name = "botanist hood"
