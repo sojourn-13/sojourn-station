@@ -25,13 +25,6 @@
 	req_access = list()
 	req_one_access = list()
 
-// This shit is hardcoded to use the parent proc of toggle_helmet, so we need to override it here.
-/obj/item/rig/hydrogen_knight/Initialize()
-	..()
-	if(helm_type)
-		verbs -= /obj/item/rig/proc/toggle_helmet
-		verbs += /obj/item/rig/hydrogen_knight/toggle_helmet
-
 /obj/item/rig/hydrogen_knight/toggle_helmet()
 	set name = "Toggle Helmet"
 	set desc = "Deploys or retracts your helmet."
@@ -50,6 +43,13 @@
 		return
 
 	toggle_piece("helmet",wearer)
+
+// This shit is hardcoded to use the parent proc of toggle_helmet, so we need to override it here.
+/obj/item/rig/hydrogen_knight/Initialize()
+	..()
+	if(helm_type)
+		verbs -= /obj/item/rig/proc/toggle_helmet
+		verbs += /obj/item/rig/hydrogen_knight/toggle_helmet
 
 /obj/item/clothing/suit/space/rig/hydrogen_knight
 	name = "suit"
