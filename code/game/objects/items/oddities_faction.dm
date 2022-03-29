@@ -277,7 +277,7 @@ No more of that.
 				oddity_stats[STAT_VIG] += 3
 				oddity_stats[STAT_COG] += 1
 			else
-				crash_with("[W], incompatible department")
+				CRASH("[W], incompatible department")
 
 		else if(istype(W, /obj/item/tool))
 			var/useful = FALSE

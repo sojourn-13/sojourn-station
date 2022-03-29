@@ -6,6 +6,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_EXTREME // It's a pickaxe. It's destined to poke holes in things, even armor.
 	throwforce = WEAPON_FORCE_NORMAL
+	worksound = WORKSOUND_PICKAXE
 	icon_state = "pickaxe"
 	item_state = "pickaxe"
 	max_health = 500

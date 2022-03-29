@@ -204,26 +204,34 @@
 ////SLIME////
 /datum/organ_description/chest/slime
 	name = "upper body"
-	default_type = /obj/item/organ/external/unbreakable
+	default_type = /obj/item/organ/external/slime
+	default_bone_type = /obj/item/organ/internal/bone/slime
 
 /datum/organ_description/groin/slime
-	name = "fork"
-	default_type = /obj/item/organ/external/unbreakable
+	name = "groin"
+	default_type = /obj/item/organ/external/slime
+	default_bone_type = /obj/item/organ/internal/bone/slime
 
 /datum/organ_description/head/slime
-	default_type = /obj/item/organ/external/unbreakable
+	default_type = /obj/item/organ/external/slime
+	default_bone_type = /obj/item/organ/internal/bone/slime
+	vital = FALSE
 
 /datum/organ_description/arm/left/slime
-	default_type = /obj/item/organ/external/unbreakable
+	default_type = /obj/item/organ/external/slime
+	default_bone_type = /obj/item/organ/internal/bone/slime
 
 /datum/organ_description/arm/right/slime
-	default_type = /obj/item/organ/external/unbreakable
+	default_type = /obj/item/organ/external/slime
+	default_bone_type = /obj/item/organ/internal/bone/slime
 
 /datum/organ_description/leg/left/slime
-	default_type = /obj/item/organ/external/unbreakable
+	default_type = /obj/item/organ/external/slime
+	default_bone_type = /obj/item/organ/internal/bone/slime
 
 /datum/organ_description/leg/right/slime
-	default_type = /obj/item/organ/external/unbreakable
+	default_type = /obj/item/organ/external/slime
+	default_bone_type = /obj/item/organ/internal/bone/slime
 
 ////SYNTHETIC////
 //Soteria

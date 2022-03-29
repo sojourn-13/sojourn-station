@@ -33,6 +33,11 @@
 		list(mode_name="suppressing fire", mode_desc="DAKKA 16 shots back to back to keep targets inside cover",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
 
+/obj/item/gun/projectile/automatic/maxim/NM_colony
+	name = "\"Maxim\" machine gun"
+	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
+	price_tag = 1000
+
 /obj/item/gun/projectile/automatic/maxim/update_icon()
 	..()
 	if(ammo_magazine)

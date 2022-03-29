@@ -48,8 +48,6 @@
 		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
 			germ_level++
 
-
-
 /mob/living/carbon/gib()
 	for(var/mob/M in src)
 		M.loc = src.loc
@@ -239,6 +237,11 @@
 	var/atom/movable/item = src.get_active_hand()
 
 	if(!item) return
+
+	if(istype(item, /obj/item/stack/thrown))
+		var/obj/item/stack/thrown/V = item
+		V.fireAt(target, src)
+		return
 
 	if (istype(item, /obj/item/grab))
 		var/obj/item/grab/G = item

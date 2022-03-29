@@ -96,7 +96,8 @@
 					/obj/item/reagent_containers/food/snacks/openable/spacetwinkie = 2,
 					/obj/item/reagent_containers/food/snacks/cheesiehonkers = 2,
 					/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
-					/obj/item/reagent_containers/food/snacks/candy_drop_blue = 2,)
+					/obj/item/reagent_containers/food/snacks/candy_drop_blue = 2,
+					/obj/item/storage/fancy/dogtreats = 2,)
 	contraband = list(/obj/item/reagent_containers/food/snacks/openable/syndicake = 6)
 	prices = list(/obj/item/reagent_containers/food/snacks/candy = 20,
 					/obj/item/reagent_containers/food/drinks/dry_ramen = 25,
@@ -111,7 +112,8 @@
 					/obj/item/reagent_containers/food/snacks/candy/pistachios_pack = 60,
 					/obj/item/reagent_containers/food/snacks/chocolatebar = 75,
 					/obj/item/reagent_containers/food/snacks/openable/gamerchips = 80,
-					/obj/item/reagent_containers/food/snacks/candy_drop_blue = 90)
+					/obj/item/reagent_containers/food/snacks/candy_drop_blue = 90,
+					/obj/item/storage/fancy/dogtreats = 125)
 
 /obj/machinery/vending/cola
 	name = "Robust Softdrinks"

@@ -429,3 +429,16 @@
 
 /obj/item/stack/material/compressed_matter/full
 	amount = 120
+
+/obj/item/stack/material/ameridian
+	name = "ameridian shard"
+	desc = "A weird green crystal that seems to grow on its own."
+	singular_name = "ameridian crystal"
+	icon = 'icons/obj/ameridian.dmi'
+	icon_state = "ameridian_crystal_item"
+	default_type = MATERIAL_AMERIDIAN
+	novariants = TRUE
+	price_tag = 150 // Ameridian mining is extremly dangerous and very profitable
+
+/obj/item/stack/material/ameridian/full
+	amount = 120

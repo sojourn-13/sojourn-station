@@ -39,9 +39,9 @@ GLOBAL_LIST_INIT(excel_item_targets,list(
 		//"a cruciform" = /obj/item/implant/core_implant/cruciform,
 		//"the station blueprints" = /obj/item/blueprints,
 		//"a hand teleporter" = /obj/item/hand_tele,
-		"a bluespace Harpoon" = /obj/item/bluespace_harpoon,
+		//"a bluespace Harpoon" = /obj/item/bluespace_harpoon,
 		//"a rocket-powered charge hammer" = /obj/item/tool/hammer/charge,
-		"the captain's antique laser gun" = /obj/item/gun/energy/captain,
+		"the premier's antique laser gun" = /obj/item/gun/energy/captain
 
 	))
 
@@ -69,7 +69,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"Energy armor plating" = /obj/item/tool_upgrade/armor/energy,
 		"Bomb proofing armor plate" = /obj/item/tool_upgrade/armor/bomb,
 		"Hand RCD" = /obj/item/rcd,
-		"bluespace Harpoon" = /obj/item/bluespace_harpoon,
+		//"bluespace Harpoon" = /obj/item/bluespace_harpoon,
 		"Mech CCW armor booster" = /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster,
 		"Mech Exosuit projectile armor booster" = /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster,
 		"Mech Shield droid" = /obj/item/mecha_parts/mecha_equipment/combat_shield,
@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"CH-LC Solaris laser cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy,
 		"MkIV ion heavy cannon" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion,
 		"SGL-6 grenade launcher" = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang,
-		"Mounted rig combat injector" = /obj/item/rig_module/chem_dispenser/combat,
+		"Mounted rig combat injector" = /obj/item/rig_module/modular_injector/combat,
 		"hardsuit laser cannon"= /obj/item/rig_module/mounted,
 		"hardsuit laser gun"= /obj/item/rig_module/mounted/egun,
 		"hardsuit taser" = /obj/item/rig_module/mounted/taser,
@@ -89,7 +89,8 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"hardsuit integrated flash" = /obj/item/rig_module/device/flash,
 		"hardsuit integrated thermals" = /obj/item/rig_module/vision/thermal,
 		"hardsuit integrated power sink" = /obj/item/rig_module/power_sink,
-		"hardsuit integrated electrowarfare mod" = /obj/item/rig_module/electrowarfare_suite,
+		"hardsuit integrated electrowarfare mod" = /obj/item/rig_module/electrowarfare_suite
+		/*
 		"design disk Means of Production" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior,
 		"design disk Means of Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
 		"design disk Stocking Revolution" = /obj/item/computer_hardware/hard_drive/portable/design/ex_parts,
@@ -100,7 +101,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"design disk Kardashev-Mosin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_boltgun,
 		"design disk Kalashnikov" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ak,
 		"design disk Reclaimer" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_reclaimer,
-		"design disk Shpagin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,
+		"design disk Shpagin" = /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh,*/
 
 	))
 
@@ -313,7 +314,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 	var/target_type
 
 	var/static/list/possible_items = list(
-		"the captain's antique laser gun" = /obj/item/gun/energy/captain,
+		"the premier's antique laser gun" = /obj/item/gun/energy/captain,
 		"a hand teleporter" = /obj/item/hand_tele,
 		"an RCD" = /obj/item/rcd,
 		"a jetpack" = /obj/item/tank/jetpack,
@@ -329,7 +330,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"a Ironhammer commander's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
 		"a First Officer's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
 		"the hypospray" = /obj/item/reagent_containers/hypospray,
-		"the captain's pinpointer" = /obj/item/pinpointer,
+		"the premier's pinpointer" = /obj/item/pinpointer,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
 		"an Ironhammer hardsuit control module" = /obj/item/rig/combat/ironhammer
 	)
@@ -591,7 +592,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/blackshield/appropriate/New()
 	..()
 	if(!target_type)
-		var/list/candidates = GLOB.excel_item_targets.Copy()
+		var/list/candidates = GLOB.blackshield_item_targets.Copy()
 		for(var/datum/antag_contract/blackshield/appropriate/C in GLOB.blackshield_antag_contracts)
 			candidates.Remove(C.target_desc)
 		if(candidates.len)

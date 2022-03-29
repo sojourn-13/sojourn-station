@@ -13,6 +13,7 @@
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/captain(src)
+	new /obj/item/device/flash(src)
 	new /obj/item/gun/projectile/basilisk(src)
 	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/kurtz_50/rubber(src)

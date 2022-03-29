@@ -61,6 +61,7 @@
 	return pickweight(list(
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/heavysniper = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 3,
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 6,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/custer = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
@@ -105,6 +106,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 1))
 
@@ -186,6 +188,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 2, //Has a built in shotgun, so low odds but still here
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/state = 4,
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/rushingbull = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/pug = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sbaw = 1))
 

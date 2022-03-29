@@ -30,12 +30,6 @@
 		if ((M.z == src.z) && (get_dist(src, M) <= viewRange) && isValidAttackTarget(M))
 			filteredTargets += M
 
-	if(drill_sabo)
-		for (var/obj/machinery/mining/drill/D in GLOB.drill_list)
-			if ((D.z == src.z) && (get_dist(src, D) <= viewRange) && isValidAttackTarget(D))
-				filteredTargets += D
-
-
 	return safepick(nearestObjectsInList(filteredTargets, src, acceptableTargetDistance))
 
 /mob/living/carbon/superior_animal/proc/attemptAttackOnTarget()
@@ -77,7 +71,7 @@
 		var/obj/mecha/M = O
 		return isValidAttackTarget(M.occupant)
 
-	if (istype(O, /obj/machinery/mining/drill) && drill_sabo)
+	if (istype(O, /obj/machinery/mining/drill))
 		return isValidAttackTarget(O)
 
 /mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby

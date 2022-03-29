@@ -21,6 +21,7 @@
 		rad = 0
 	)
 	price_tag = 20
+	muffle_voice = TRUE
 
 /obj/item/clothing/mask/gas/filter_air(datum/gas_mixture/air)
 	var/datum/gas_mixture/filtered = new
@@ -71,6 +72,7 @@
 	var/list/states = list("True Form" = "artist", "The clown" = "clown",
 	"The mime" = "mime", "The Feminist" = "sexyclown", "The Madman" = "joker",
 	"The Rainbow Color" = "rainbow", "The Monkey" = "monkeymask", "The Owl" = "owl")
+	muffle_voice = FALSE
 
 /obj/item/clothing/mask/gas/artist_hat/attack_self(mob/user)
 	var/choice = input(user, "To what form do you wish to morph this mask?","Morph Mask") as null|anything in states
@@ -85,6 +87,7 @@
 	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask. This one contains hologram tech that allows it to change its appearence."
 	icon_state = "clown"
 	item_state = "clown_hat"
+	muffle_voice = FALSE
 
 /obj/item/clothing/mask/gas/clown_hat/attack_self(mob/user)
 	var/list/options = list()

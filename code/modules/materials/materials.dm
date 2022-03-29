@@ -811,3 +811,11 @@ var/list/name_to_material
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232
 	melting_point = T0C+300
+
+/material/ameridian
+	name = MATERIAL_AMERIDIAN
+	stack_type = /obj/item/stack/material/ameridian
+	icon_colour = "#007A00"
+	sheet_singular_name = "shard"
+	sheet_plural_name = "shards"
+	stack_origin_tech = list(TECH_MATERIAL = 9)

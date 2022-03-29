@@ -206,6 +206,12 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 
+/obj/item/clothing/glasses/ballistic/med
+	name = "ballistic medHUD"
+	desc = "A mediHUD visor constructed with more durable materials to protect your eyes against sudden flashes, debris and shrapnel."
+	icon_state = "ballisticmed"
+	item_state = "ballisticmed"
+
 /obj/item/clothing/glasses/ballistic/perscription
 	name = "perscription ballistic goggles"
 	desc = "Protects the eyes from sudden flash, debris, and light shrapnel, and astigmatism."

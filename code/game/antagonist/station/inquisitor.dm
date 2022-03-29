@@ -41,7 +41,7 @@
 	if(!C)
 		return FALSE
 
-	if (ispriest(owner.current))
+	if (is_preacher(owner.current))
 		was_priest = TRUE
 
 	C.make_inquisitor()
@@ -77,19 +77,3 @@
 
 	return TRUE
 
-
-//Returns true if the mob in question is a prime
-/proc/ispriest(var/mob/living/carbon/human/H)
-	if (!istype(H))
-		return FALSE
-
-	//We will get their cruciform implant, assuming they have one
-	var/obj/item/implant/core_implant/cruciform/C = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
-	if (!C)
-		return FALSE
-
-	//Check them for a priest module
-	if(C.get_module(CRUCIFORM_PRIEST))
-		return TRUE
-
-	return FALSE

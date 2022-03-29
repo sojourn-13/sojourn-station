@@ -109,3 +109,26 @@
 		return 1
 	return 0
 
+
+/mob/living/carbon/human/add_momentum(direction)
+	if(momentum_dir == direction)
+		momentum_speed++
+	else if(momentum_dir == reverse_dir[direction])
+		momentum_speed = 0
+		momentum_dir = direction
+	else
+		momentum_speed--
+		momentum_dir = direction
+	momentum_speed = CLAMP(momentum_speed, 0, 10)
+	update_momentum()
+
+/mob/living/carbon/human/proc/update_momentum()
+	if(momentum_speed)
+		momentum_reduction_timer = addtimer(CALLBACK(src, .proc/calc_momentum), 1 SECONDS, TIMER_STOPPABLE)
+	else
+		momentum_speed = 0
+		deltimer(momentum_reduction_timer)
+
+/mob/living/carbon/human/proc/calc_momentum()
+	momentum_speed--
+	update_momentum()

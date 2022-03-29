@@ -172,6 +172,10 @@
 	name = "BR .35 \"Grease Gun\" assault SMG"
 	build_path = /obj/item/gun/projectile/automatic/greasegun
 
+/datum/design/autolathe/gun/buckler
+	name = "BR .35 \"Buckler\" assault SMG"
+	build_path = /obj/item/gun/projectile/automatic/buckler
+
 // .40 S M G S
 
 /datum/design/autolathe/gun/vector
@@ -215,6 +219,10 @@
 /datum/design/autolathe/gun/sixshot
 	name = "SA \"Six Shooter\" revolving shotgun"
 	build_path = /obj/item/gun/projectile/revolver/sixshot
+
+/datum/design/autolathe/gun/rushing_bull
+	name = "BR \"Rushing Bull\" tactical shotgun"
+	build_path = /obj/item/gun/projectile/automatic/bull_autoshotgun
 
 //C A R B I N E S
 
@@ -280,6 +288,10 @@
 /datum/design/autolathe/gun/nordwind
 	name = "Seinemetall Defense GmbH DMR - 7.5mm  \"Nordwind\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind
+
+/datum/design/autolathe/gun/watchtower
+	name = "BR \"Watchtower\" DMR - 7.5mm"
+	build_path = /obj/item/gun/projectile/automatic/nordwind/watchtower
 
 /datum/design/autolathe/gun/sts30
 	name = "SA BR - 7.5mm  \"STS-30\""

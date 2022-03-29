@@ -152,7 +152,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents)
-			reagents.trans_to_mob(L:, 5, CHEM_TOUCH, copy = FALSE)
+			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific
 	name = "soporific coated rubber bullet"

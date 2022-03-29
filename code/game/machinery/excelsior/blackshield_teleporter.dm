@@ -14,13 +14,13 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	idle_power_usage = 40
 	active_power_usage = 15000
 	circuit = /obj/item/circuitboard/blackshield_teleporter
+	var/energy_gain = 0.1
 
-	var/max_energy = 2500
+	var/max_energy = 7500
 	var/processing_order = FALSE
 	var/nanoui_menu = 0 	// Based on Uplink
 	var/mob/current_user
 	var/time_until_scan
-	var/engery_amout = 0 //We start at zero, no grants yet!
 
 	var/list/nanoui_data = list()			// Additional data for NanoUI use
 	var/list/materials_list = list(
@@ -33,6 +33,8 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 
 	var/list/parts_list = list(
 		/obj/item/gun/projectile/automatic/slaught_o_matic = 15, //So blackshiled can trade with propis :P
+		/obj/item/gun/projectile/boltgun/flare_gun = 10, //DAZZLATION!
+		/obj/item/ammo_casing/flare/old = 10, //Rng colour for cheap! - dont want to add a spam list of every type ever
 		/obj/item/gun/projectile/boltgun = 50,
 		/obj/item/ammo_magazine/speed_loader_rifle_75 = 30, //More or less for ammo rather then speedloader
 		/obj/item/gun/projectile/colt/NM_colt = 70,
@@ -40,11 +42,26 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/sts/lrifle = 200,
 		/obj/item/ammo_magazine/light_rifle_257_short = 60,
 		/obj/item/gun/projectile/automatic/sts/rifle = 300,
+		/obj/item/gun/projectile/automatic/nordwind/watchtower = 600,
+		/obj/item/gun/projectile/automatic/nordwind/strelki = 600,
 		/obj/item/ammo_magazine/rifle_75_short = 90,
 		/obj/item/gun/projectile/automatic/sts/hrifle = 500,
 		/obj/item/ammo_magazine/heavy_rifle_408 = 120,
 		/obj/item/gun/projectile/automatic/basstet = 250,
 		/obj/item/ammo_magazine/light_rifle_257 = 100,
+		/obj/item/gun/projectile/automatic/blackguard = 300,
+		/obj/item/ammo_magazine/heavy_rifle_408 = 125,
+		/obj/item/gun/projectile/automatic/drozd/NM_colony = 300,
+		/obj/item/gun/projectile/automatic/buckler = 500,
+		/obj/item/ammo_magazine/smg_35 = 75,
+		/obj/item/gun/projectile/automatic/ak47/NM_colony = 325,
+		/obj/item/gun/projectile/automatic/vintorez/NM_colony = 400,
+		/obj/item/gun/projectile/automatic/ppsh/NM_colony = 450,
+		/obj/item/ammo_magazine/highcap_pistol_35/drum = 125,
+		/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony = 500,
+		/obj/item/gun/projectile/automatic/maxim/NM_colony = 600,
+		/obj/item/ammo_magazine/maxim_75 = 250,
+		/obj/item/gun/projectile/automatic/bull_autoshotgun = 700,
 		/obj/item/clothing/suit/space/void/security/odst/mil = 300,
 		/obj/item/clothing/suit/space/void/odst/corps = 300,
 		/obj/item/tool/baton = 200,
@@ -54,11 +71,11 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	var/entropy_value = 1 //It is still bluespace
 
 
-/obj/machinery/complant_teleporter/Initialize()
+/obj/machinery/blackshield_teleporter/Initialize()
 	blackshield_teleporters |= src
 	.=..()
 
-/obj/machinery/complant_teleporter/Destroy()
+/obj/machinery/blackshield_teleporter/Destroy()
 	blackshield_teleporters -= src
 	RefreshParts() // To avoid energy overfills if a teleporter gets destroyed
 	.=..()
@@ -74,17 +91,18 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	// +50% speed for each upgrade tier
 	var/coef = 1 + (((man_rating / man_amount) - 1) / 2)
 
+	energy_gain = initial(energy_gain) * coef
 	active_power_usage = initial(active_power_usage) * coef
 
 	var/obj/item/cell/C = locate() in component_parts
 	if(C)
 		max_energy = C.maxcharge //Big buff for max energy
-		for (var/obj/machinery/complant_teleporter/t in blackshield_teleporters)
+		for (var/obj/machinery/blackshield_teleporter/t in blackshield_teleporters)
 			blackshield_max_energy += t.max_energy
 		blackshield_energy = min(blackshield_energy, blackshield_max_energy)
 
 
-/obj/machinery/complant_teleporter/update_icon()
+/obj/machinery/blackshield_teleporter/update_icon()
 	overlays.Cut()
 
 	if(panel_open)
@@ -96,12 +114,12 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		icon_state = initial(icon_state)
 
 
-/obj/machinery/complant_teleporter/attackby(obj/item/I, mob/user)
+/obj/machinery/blackshield_teleporter/attackby(obj/item/I, mob/user)
 	if(default_deconstruction(I, user))
 		return
 	..()
 
-/obj/machinery/complant_teleporter/power_change()
+/obj/machinery/blackshield_teleporter/power_change()
 	..()
 	SSnano.update_uis(src) // update all UIs attached to src
 
@@ -109,12 +127,12 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	if(stat & (BROKEN|NOPOWER))
 		return
 
-	if(blackshield_energy < blackshield_max_energy)
+	if(blackshield_energy < (blackshield_max_energy - energy_gain))
+		blackshield_energy += energy_gain
 		SSnano.update_uis(src)
 	else
 		blackshield_energy = blackshield_max_energy
 		use_power = IDLE_POWER_USE
-
 
 /obj/machinery/blackshield_teleporter/ex_act(severity)
 	switch(severity)
@@ -146,7 +164,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "excelsior_teleporter.tmpl", name, 390, 450) //Todo:make a blackshield backround
+		ui = new(user, src, ui_key, "blackshield_teleporter.tmpl", name, 390, 450) //Todo:make a blackshield backround
 		ui.set_initial_data(data)
 		ui.open()
 

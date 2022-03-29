@@ -869,6 +869,58 @@ area/space/atmosalert()
 	requires_power = 0
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 
+// This area is mostly there to prevent the initial crystals from processing when there is no one nearby.
+// In an ideal situation, it would be wider than the potential full size of the field to prevent any escapes. -R4d6
+/area/crystal_field
+	name = "Crystal Field"
+	icon_state = "crystal_field"
+	has_gravity = 1
+	requires_power = 0 // Weird crystal power stuff
+	var/process_delay = 5 MINUTES // Delay between Process() calls
+
+/area/crystal_field/New()
+	..()
+	spawn(20) // I don't know if the area get initialized before or after the crystals inside it, so better safe than sorry. -R4d6
+		stop_crystal_processing() // Stop the crystals from processing
+		Process()
+
+/area/crystal_field/Entered(atom/movable/Obj, atom/newloc)
+	if(istype(Obj, /mob/living) && !istype(Obj, /mob/living/carbon/superior_animal/ameridian_golem)) // If a mob enter the area, start processing, except if it is a golem
+		start_crystal_processing()
+		//to_chat(usr, "The crystals seems to wake up") // TODO, better sentence and have it only be visible to psions -R4d6
+
+/area/crystal_field/Exited(atom/movable/Obj, atom/newloc)
+	if(!check_contents()) // If we don't have any mobs inside the area, stop processing the crystals
+		stop_crystal_processing()
+
+/area/crystal_field/Process()
+	if(check_contents()) // If we have any live creatures inside
+		start_crystal_processing()
+	else
+		stop_crystal_processing()
+
+	spawn(process_delay) .() // We loop forever
+
+// Check the area for living non-golem mobs
+// Return TRUE if there is any living mob that isn't an Ameridian golem
+/area/crystal_field/proc/check_contents()
+	. = FALSE // Default return value is false by default
+	for(var/mob/living/L in contents) // Check every mob
+		if(!istype(L, /mob/living/carbon/superior_animal/ameridian_golem) && L.stat != DEAD) // Ignore golems & dead people
+			. = TRUE
+			break // No need to check further
+
+// Iterate through every crystal in the area and prevent it from processing
+/area/crystal_field/proc/stop_crystal_processing()
+	for(var/obj/structure/ameridian_crystal/AC in contents)
+		if(AC.is_processing) // Safety check to make sure the crystals are processing before shutting them
+			STOP_PROCESSING(SSobj, AC) // Make the crystal stop processing
+
+/area/crystal_field/proc/start_crystal_processing()
+	for(var/obj/structure/ameridian_crystal/AC in contents)
+		if(!AC.is_processing) // Safety check to make sure the crystals are not processing before starting them
+			START_PROCESSING(SSobj, AC) // Make the crystal start processing
+
 /area/awaymission/beach
 	name = "Beach"
 	icon_state = "null"

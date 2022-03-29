@@ -50,7 +50,7 @@ if (!(Test-Path $PythonExe -PathType Leaf)) {
 	[System.IO.Compression.ZipFile]::ExtractToDirectory($Archive, $PythonDir)
 
 	# Copy a ._pth file without "import site" commented, so pip will work
-	Copy-Item "$Bootstrap/python39._pth" $PythonDir `
+	Copy-Item "$Bootstrap/python36._pth" $PythonDir `
 		-ErrorAction Stop
 
 	Remove-Item $Archive
@@ -76,6 +76,7 @@ if (!(Test-Path "$PythonDir/Scripts/pip.exe")) {
 # Use pip to install our requirements
 if (!(Test-Path "$PythonDir/requirements.txt") -or ((Get-FileHash "$Tools/requirements.txt").hash -ne (Get-FileHash "$PythonDir/requirements.txt").hash)) {
 	$host.ui.RawUI.WindowTitle = "Updating dependencies..."
+
 	& $PythonExe -m pip install -U pip -r "$Tools/requirements.txt"
 	if ($LASTEXITCODE -ne 0) {
 		exit $LASTEXITCODE

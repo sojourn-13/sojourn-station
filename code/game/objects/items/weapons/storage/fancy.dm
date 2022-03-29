@@ -73,6 +73,27 @@
 	for(var/i in 1 to storage_slots)
 		new /obj/item/reagent_containers/food/snacks/mre_cracker(src)
 
+
+//Kriosan treats
+
+obj/item/storage/fancy/dogtreats
+	icon_state = "dogtreats"
+	name = "\improper packet of Kriosan treats"
+	desc = "A small purple packet with a handful of Kriosan treats, a hardy snack well beloved by Kriosans the galaxy over."
+	storage_slots = 4
+	icon_type = "dogtreats"
+	can_hold = list(
+		/obj/item/reagent_containers/food/snacks/dogtreats
+		)
+
+obj/item/storage/fancy/dogtreats/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/reagent_containers/food/snacks/dogtreats(src)
+
+/obj/item/storage/fancy/dogtreats/update_icon()
+	icon_state = "[initial(icon_state)][contents.len]"
+	return
+
 /*
  * Candle Box
  */
