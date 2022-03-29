@@ -124,6 +124,8 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Standard fullhelm"] = ""
+	options["Green fullhelm"] = "_tan"
+	options["Tan fullhelm"] = "_green"
 	options["Grey hooded fullhelm"] = "_gp"
 	options["Green hooeded fullhelm"] = "_grp"
 	options["Tan hooded fullhelm"] = "_tp"
