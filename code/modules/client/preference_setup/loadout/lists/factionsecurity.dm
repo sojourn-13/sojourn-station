@@ -110,13 +110,6 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/juniormarshalalt
-	display_name = "Junior Marshals uniform alt"
-	path = /obj/item/clothing/under/rank/security/cadet/alt
-	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/gorka_ih
 	display_name = "gorka jacket, security"
 	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih
