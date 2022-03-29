@@ -43,9 +43,29 @@
 	icon_state = "seccadet"
 	item_state = "seccadet"
 
-/obj/item/clothing/under/rank/security/cadet/alt
-	icon_state = "seccadetalt"
-	item_state = "seccadetalt"
+/obj/item/clothing/under/rank/security/cadet/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["cadet default"] = "seccadet"
+	options["cadet alt"] = "seccadetalt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/rank/security/skirt
 	name = "marshal officer's jumpskirt"

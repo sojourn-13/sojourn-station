@@ -227,6 +227,7 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Thompson Kit" = /obj/item/storage/box/m_kit/thompson,
+					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Bulldog Kit" = /obj/item/storage/box/m_kit/bulldog,
 					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun)
@@ -241,7 +242,6 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemSpecPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Thompson Kit" = /obj/item/storage/box/m_kit/thompson,
-					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Bulldog Kit" = /obj/item/storage/box/m_kit/bulldog,
 					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
