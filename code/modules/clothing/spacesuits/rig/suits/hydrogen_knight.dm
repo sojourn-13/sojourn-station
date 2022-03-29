@@ -30,7 +30,7 @@
 	..()
 	if(helm_type)
 		verbs -= /obj/item/rig/proc/toggle_helmet
-		verbs |= /obj/item/rig/hydrogen_knight/toggle_helmet
+		verbs += /obj/item/rig/hydrogen_knight/toggle_helmet
 
 /obj/item/rig/hydrogen_knight/toggle_helmet()
 	set name = "Toggle Helmet"
