@@ -9,7 +9,7 @@
 	caliber = CAL_LRIFLE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	price_tag = 1650

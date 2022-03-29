@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	origin_tech = list(TECH_COMBAT = 11, TECH_MATERIAL = 3) //So rnd has a use to get their hands on one
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)

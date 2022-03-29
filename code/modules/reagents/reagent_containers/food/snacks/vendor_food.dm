@@ -130,7 +130,7 @@
 /obj/item/reagent_containers/food/snacks/dogtreats
 	name = "\improper Kriosan treats"
 	desc = "A biscuit imported directly from Krios, well loved for their long shelf life and nutrition density, all in a fun and convenient shape!"
-	icon_state = "dogtreats_single"
+	icon_state = "dogtreat_single"
 	filling_color = "#E8DCA5"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=15)

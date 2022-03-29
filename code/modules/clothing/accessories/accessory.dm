@@ -294,6 +294,28 @@
 	icon_state = "cloak"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
+
+/obj/item/clothing/accessory/cape/blackshield
+	name = "grey Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a brooding grey."
+	icon_state = "blackshieldcloak"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/cape/blackshield/green
+	name = "green Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a fetching green."
+	icon_state = "blackshieldcloak_green"
+
+/obj/item/clothing/accessory/cape/blackshield/tan
+	name = "tan Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a light tan."
+	icon_state = "blackshieldcloak_tan"
+
+/obj/item/clothing/accessory/cape/blackshield/camo
+	name = "camo Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern."
+	icon_state = "blackshieldcloak_camo"
+
 /obj/item/clothing/accessory/cape/blackedge
 	name = "heavy black cloak"
 	desc = "A rough and heavy black cloak for draping over yourself like some kind of cave dwelling royal."
@@ -316,62 +338,62 @@
 	name = "brown tactical poncho"
 	desc = "A sleek brown poncho. Great for gunfights at high noon or hiding in the underbrush."
 	icon_state = "tacpon_brown"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/tacticalponcho/green
 	name = "green tactical poncho"
 	desc = "A sleek, green poncho. Tactical and stylish!"
 	icon_state = "tacpon_green"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/tacticalponcho/camo
 	name = "camo tactical poncho"
 	desc = "A sleek, tactical camo poncho. Great for remaining inconspicuous in even the most densely  wooded combat enviroments"
 	icon_state = "tacpon_camo"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/tacticalponcho/ghillie
 	name = "ghillie poncho"
 	desc = "A highly tactical partial ghillie suit adjusted for the upper body, it only makes you look a little goofy when not lying down!"
 	icon_state = "tacpon_ghillie"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /*Shirts*/
 /obj/item/clothing/accessory/hawaiian
 	name = "black Hawaiian shirt"
 	desc = "A cool Hawaiian pattern shirt in dark black. Beach Goth 2620 is written on the inner tag."
 	icon_state = "hawaiiblack"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/fuschia
 	name = "fuschia Hawaiian shirt"
 	desc = "A Hawaiian pattern shirt in brilliant fuschia. You'll be saying 'Mahalo' when someone takes it out of your sight."
 	icon_state = "hawaiifuchs"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/jade
 	name = "jade Hawaiian shirt"
 	desc = "A Hawaiian pattern shirt of jade and silver. The vine pattern is really pleasing to the eyes!"
 	icon_state = "hawaiivine"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/orange
 	name = "orange Hawaiian shirt"
 	desc = "A Hawaiian pattern shirt in stunning orange and blue. A true masterpiece that straddles the line between tacky and ageless."
 	icon_state = "hawaiiorange"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/motu
 	name = "questionable Hawaiian shirt"
 	desc = "A Hawaiian pattern shirt in - wait a minute...hawaii shirts don't have skulls, lightning, or beloved cartoon character he-man on them, you've been had!."
 	icon_state = "hawaiimotu"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/vice
 	name = "teal Hawaiian shirt"
 	desc = "A Hawaiian shirt with palm-tree pattern and a fetching teal shade. The designer tag reads 'Malibu Club Merch' and has an obviously stamped signature from the presumed designer, 'Tony'"
 	icon_state = "hawaiivice"
-	slot_flags = SLOT_ICLOTHING | SLOT_ACCESSORY_BUFFER
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/hawaiian/verb/toggle_style()
 	set name = "Adjust style"

@@ -12,7 +12,7 @@
 	price_tag = 1600
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.ogg'

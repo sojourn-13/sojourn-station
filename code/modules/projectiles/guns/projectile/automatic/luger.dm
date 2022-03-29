@@ -14,7 +14,7 @@
 	damage_multiplier = 1
 	recoil_buildup = 1.25
 	one_hand_penalty = 20
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	init_firemodes = list(
 		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
