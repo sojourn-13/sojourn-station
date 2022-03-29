@@ -313,7 +313,7 @@
 
 /obj/item/clothing/accessory/cape/blackshield/camo
 	name = "camo Blackshield cloak"
-	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern."
 	icon_state = "blackshieldcloak_camo"
 
 /obj/item/clothing/accessory/cape/blackedge
