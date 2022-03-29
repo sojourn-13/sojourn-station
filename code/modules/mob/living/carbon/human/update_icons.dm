@@ -950,7 +950,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			var/obj/item/clothing/head/hat = head
 			var/cache_key = "[hat.light_overlay]_[species.get_bodytype()]"
 			if(hat.on && light_overlay_cache[cache_key])
-				standing.copy_overlays(light_overlay_cache[cache_key], FALSE)
+				standing.overlays |= (light_overlay_cache[cache_key])
 
 		standing.color = head.color
 		overlays_standing[HEAD_LAYER] = standing
