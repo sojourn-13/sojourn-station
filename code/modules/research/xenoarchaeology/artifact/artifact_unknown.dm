@@ -86,37 +86,37 @@
 			name = "Cryo-Blaster"
 			desc = "[desc]" // Placeholder
 			psi_text = "You hear a very faint voice in the back of your mind : \
-						<b><font color='purple'> The cold and the winter are what has seperated the living from the doomed."
+						[SPAN_PSION(" The cold and the winter are what has seperated the living from the doomed.")]"
 		if(PYRO_BLASTER)
 			name = "Pyro-Blaster"
 			desc = "[desc]" // Placeholder
 			psi_text = "You hear a very faint voice in the back of your mind : \
-						<b><font color='purple'> Fire often destroys everything it touches, even if we wish it did not."
+						[SPAN_PSION(" Fire often destroys everything it touches, even if we wish it did not.")]"
 		if(ELECTRO_BLASTER)
 			name = "Electro-Blaster"
 			desc = "[desc]" // Placeholder
 			psi_text = "You hear a very faint voice in the back of your mind : \
-						<b><font color='purple'> How shocking."
+						[SPAN_PSION(" How shocking.")]"
 		if(KINETIC_BARRIER)
 			name = "Kinetic Barrier"
 			desc = "[desc]" // Placeholder
 			psi_text = "You hear a very faint voice in the back of your mind : \
-						<b><font color='purple'> Protection of body and mind."
+						[SPAN_PSION(" Protection of body and mind.")]"
 		if(CHOSEN_CONTROL)
 			name = "Chosen Control"
 			desc = "[desc]" // Placeholder
 			psi_text = "You hear a very faint voice in the back of your mind : \
-						<b><font color='purple'> The universe bends to your will alone and at times, it must be reminded."
+						[SPAN_PSION(" The universe bends to your will alone and at times, it must be reminded.")]"
 		if(DETECT_THOUGHTS)
 			name = "Detect Thoughts"
 			desc = "[desc]" // Placeholder
 			psi_text = "You hear a very faint voice in the back of your mind : \
-						<b><font color='purple'> We all have some spark."
+						[SPAN_PSION(" We all have some spark.")]"
 		if(PSYCHOACTIVE_MANIPULATION)
 			name = "Psychoactive Manipulation"
 			desc = "[desc]" // Placeholder
 			psi_text = "You hear a very faint voice in the back of your mind : \
-						<b><font color='purple'> Are we truly changing anything?"
+						[SPAN_PSION(" Are we truly changing anything?")]"
 
 /obj/machinery/artifact/examine(mob/user)
 	..()
