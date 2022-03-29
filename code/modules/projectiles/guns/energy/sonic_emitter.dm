@@ -9,7 +9,7 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 	price_tag = 500
 	charge_cost = 100
-	fire_sound = 'sound/weapons/emitter2.ogg'
+	fire_sound = 'sound/effects/basscannon.ogg'
 	suitable_cell = /obj/item/cell/large
 	cell_type = /obj/item/cell/large
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
