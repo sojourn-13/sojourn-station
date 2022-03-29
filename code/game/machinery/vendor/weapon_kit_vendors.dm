@@ -171,6 +171,7 @@
 	icon_state = "trashvend"
 	products = list(
 		/obj/item/storage/box/m_kit/thompson = 5,
+		/obj/item/storage/box/m_kit/breacher = 5,
 		/obj/item/storage/box/m_kit/state_auto = 5,
 		/obj/item/storage/box/m_kit/bulldog = 5,
 		/obj/item/storage/box/m_kit/gear_lasgun = 5,
@@ -187,6 +188,7 @@
 		)
 	prices = list( // 500$ for default marshal stuff, 750 for the rest
 		/obj/item/storage/box/m_kit/thompson = 750,
+		/obj/item/storage/box/m_kit/breacher = 750,
 		/obj/item/storage/box/m_kit/state_auto = 750,
 		/obj/item/storage/box/m_kit/bulldog = 750,
 		/obj/item/storage/box/m_kit/gear_lasgun = 750,
@@ -239,6 +241,7 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemSpecPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Thompson Kit" = /obj/item/storage/box/m_kit/thompson,
+					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Bulldog Kit" = /obj/item/storage/box/m_kit/bulldog,
 					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun,

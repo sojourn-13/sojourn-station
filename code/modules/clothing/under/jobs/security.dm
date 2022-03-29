@@ -37,6 +37,16 @@
 	siemens_coefficient = 0.8
 	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 
+/obj/item/clothing/under/rank/security/cadet
+	name = "Junior Marshal's jumpsuit"
+	desc = "A durable jumpsuit for fresh-faced Junior Officers, designed to provide moderate combat protection."
+	icon_state = "seccadet"
+	item_state = "seccadet"
+
+/obj/item/clothing/under/rank/security/cadet/alt
+	icon_state = "seccadetalt"
+	item_state = "seccadetalt"
+
 /obj/item/clothing/under/rank/security/skirt
 	name = "marshal officer's jumpskirt"
 	desc = "A durable officer's jumpsuit, designed to provide moderate combat protection."

@@ -272,7 +272,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
 
 /obj/item/storage/box/bs_kit/flak_armor
 	name = "\improper Flak Armor Kit"
@@ -280,7 +280,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/flackvest/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
 
 /obj/item/storage/box/bs_kit/bullet_armor
 	name = "\improper Bullet Armor Kit"
@@ -288,7 +288,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/bulletproof(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia/bulletproof(src)
 
 /obj/item/storage/box/bs_kit/laser_armor
 	name = "\improper Ablative Armor Kit"
@@ -306,4 +306,4 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman(src)
