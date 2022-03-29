@@ -1,6 +1,6 @@
 /obj/item/clothing/shoes/costume/history/centurion
 	name = "centurion sandals"
-	desc = "A pair of buckled leather strap sandals.."
+	desc = "A pair of buckled leather strap sandals."
 	icon_state = "roman"
 	item_state = "roman"
 	permeability_coefficient = 0.9

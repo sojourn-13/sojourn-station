@@ -1,6 +1,7 @@
 /datum/map_template
 	var/name = "Default Template Name"
 	var/desc = "Some text should go here. Maybe."
+	var/id = null
 	var/template_group = null // If this is set, no more than one template in the same group will be spawned, per submap seeding.
 	var/width = 0
 	var/height = 0
@@ -8,13 +9,22 @@
 	var/loaded = 0 // Times loaded this round
 	var/annihilate = FALSE // If true, all (movable) atoms at the location where the map is loaded will be deleted before the map is loaded in.
 
-	// The map generator has a set 'budget' it spends to place down different submaps. It will pick available submaps randomly until 
-	// it runs out. The cost of a submap should roughly corrispond with several factors such as size, loot, difficulty, desired scarcity, etc. 
-	// Set to -1 to force the submap to always be made.
-	var/cost = null 
+	var/cost = null // The map generator has a set 'budget' it spends to place down different submaps. It will pick available submaps randomly until
+					// it runs out. The cost of a submap should roughly corrispond with several factors such as size, loot, difficulty, desired scarcity, etc.
+					// Set to -1 to force the submap to always be made.
 	var/allow_duplicates = FALSE // If false, only one map template will be spawned by the game. Doesn't affect admins spawning then manually.
 	var/discard_prob = 0 // If non-zero, there is a chance that the map seeding algorithm will skip this template when selecting potential templates to use.
 
+	var/template_flags = TEMPLATE_FLAG_ALLOW_DUPLICATES
+
+	var/static/dmm_suite/maploader = new
+
+	///if true, creates a list of all atoms created by this template loading, defaults to FALSE
+	var/returns_created_atoms = FALSE
+
+	///the list of atoms created by this template being loaded, only populated if returns_created_atoms is TRUE
+	var/list/created_atoms = list()
+	//make sure this list is accounted for/cleared if you request it from ssatoms!
 
 /datum/map_template/New(path = null, rename = null)
 	if(path)
@@ -36,46 +46,58 @@
 			height = bounds[MAP_MAXY]
 	return bounds
 
-/datum/map_template/proc/initTemplateBounds(var/list/bounds)
-	if (SSatoms.initialized == INITIALIZATION_INSSATOMS)
-		return // let proper initialisation handle it later
+/datum/map_template/proc/initTemplateBounds(list/bounds)
+	if (!bounds) //something went wrong
+		stack_trace("[name] template failed to initialize correctly!")
+		return
 
-	var/machinery_was_awake = SSmachines.suspend() // Suspend machinery (if it was not already suspended)
 
-	var/list/atom/atoms = list()
-	var/list/area/areas = list()
-	var/list/obj/structure/cable/cables = list()
 	var/list/obj/machinery/atmospherics/atmos_machines = list()
-	var/list/turf/turfs = block(locate(bounds[MAP_MINX], bounds[MAP_MINY], bounds[MAP_MINZ]),
-	                   			locate(bounds[MAP_MAXX], bounds[MAP_MAXY], bounds[MAP_MAXZ]))
-	for(var/L in turfs)
-		var/turf/B = L
-		atoms += B
-		areas |= B.loc
-		for(var/A in B)
-			atoms += A
-			if(istype(A, /obj/structure/cable))
-				cables += A
-			else if(istype(A, /obj/machinery/atmospherics))
-				atmos_machines += A
-	atoms |= areas
+	var/list/obj/structure/cable/cables = list()
+	var/list/atom/movable/movables = list()
+	var/list/area/areas = list()
 
-	////admin_notice("<span class='danger'>Initializing newly created atom(s) in submap.</span>", R_DEBUG)
-	SSatoms.InitializeAtoms(atoms)
+	var/list/turfs = block(
+		locate(
+			bounds[MAP_MINX],
+			bounds[MAP_MINY],
+			bounds[MAP_MINZ]
+			),
+		locate(
+			bounds[MAP_MAXX],
+			bounds[MAP_MAXY],
+			bounds[MAP_MAXZ]
+			)
+		)
 
-	//admin_notice("<span class='danger'>Initializing atmos pipenets and machinery in submap.</span>", R_DEBUG)
-	SSmachines.setup_atmos_machinery(atmos_machines)
+	for(var/turf/current_turf as anything in turfs)
+		var/area/current_turfs_area = current_turf.loc
+		areas |= current_turfs_area
+		if(!SSatoms.initialized)
+			continue
 
-	//admin_notice("<span class='danger'>Rebuilding powernets due to submap creation.</span>", R_DEBUG)
-	SSmachines.setup_powernets_for_cables(cables)
+		for(var/movable_in_turf in current_turf)
+			movables += movable_in_turf
+			if(istype(movable_in_turf, /obj/structure/cable))
+				cables += movable_in_turf
+				continue
+			if(istype(movable_in_turf, /obj/machinery/atmospherics))
+				atmos_machines += movable_in_turf
+
+	if(!SSatoms.initialized)
+		return
+
+	SSatoms.InitializeAtoms(areas + turfs + movables, returns_created_atoms ? created_atoms : null)
+
+	// NOTE, now that Initialize and LateInitialize run correctly, do we really
+	// need these two below?
+	SSmachines.setup_template_powernets(cables)
+	SSair.setup_template_machinery(atmos_machines)
 
 	// Ensure all machines in loaded areas get notified of power status
 	for(var/I in areas)
 		var/area/A = I
 		A.power_change()
-
-	if(machinery_was_awake)
-		SSmachines.wake() // Wake only if it was awake before we tried to suspended it.
 
 	//admin_notice("<span class='danger'>Submap initializations finished.</span>", R_DEBUG)
 

@@ -12,7 +12,7 @@
 	if(!CM)
 		CM = new(src)
 	CM.set_category(category, src)
-	CM.ui_interact(src)
+	CM.nano_ui_interact(src)
 
 /datum/nano_module/craft
 	name = "Craft menu"
@@ -37,7 +37,7 @@
 /datum/nano_module/craft/proc/set_item(item_ref, mob/mob)
 	SScraft.current_item[mob.ckey] = locate(item_ref)
 
-/datum/nano_module/craft/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/craft/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
 	if(!usr)
 		return
 	if(usr.incapacitated())
@@ -46,12 +46,27 @@
 	var/list/data = list()
 	var/curr_category = get_category(usr)
 
+	var/list/unlocked_names
+
+	unlocked_names = SScraft.cat_names.Copy(1,0)
+
+	for(var/path in subtypesof(/datum/craft_recipe))
+		var/datum/craft_recipe/CX = path
+		CX = new CX
+
+		if (CX.requiredPerk && !user.stats.getPerk(CX.requiredPerk))	// Goes through all the different subtypes of recipes, and checks to see if they require a perk.
+			unlocked_names.Remove(CX.category)							// If it requires a perk and the user doesn't possess that perk, it removes the category from being displayed.
+
+		if (!unlocked_names.Find(curr_category))						// If somehow the current category selected is not in the listed categories
+			while (!unlocked_names.Find(curr_category))					// Picks a random category and assigns it to be the current category.
+				curr_category = pick(SScraft.cat_names)
+			SScraft.current_category[user.ckey] = curr_category
+
 	data["is_admin"] = check_rights(show_msg = FALSE)
-	data["categories"] = SScraft.cat_names
+	data["categories"] = unlocked_names
 	data["cur_category"] = curr_category
 	var/datum/craft_recipe/CR = get_item(usr)
 	data["cur_item"] = null
-
 	if(CR)
 		data["cur_item"] = list(
 			"name" = CR.name,
@@ -62,10 +77,9 @@
 		)
 	var/list/items = list()
 	for(var/datum/craft_recipe/recipe in SScraft.categories[curr_category])
-		if(recipe.avaliableToEveryone || (recipe.type in user.mind.knownCraftRecipes))
-			items += list(list(
-				"name" = (recipe.name),
-				"ref" = "\ref[recipe]"
+		items += list(list(
+			"name" = (recipe.name),
+			"ref" = "\ref[recipe]"
 			))
 	data["items"] = items
 

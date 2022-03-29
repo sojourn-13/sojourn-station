@@ -1,7 +1,7 @@
 // Species flags.
 #define NO_BLOOD          0x1    // Vessel var is not filled with blood, cannot bleed out.
 #define NO_BREATHE        0x2    // Cannot suffocate or take oxygen loss.
-#define NO_SCAN           0x4    // Cannot be scanned in a DNA machine/genome-stolen.
+#define NO_SCAN           0x4    // Cannot be scanned in a DNA machine/genome-stolen. Doesn't work with new genetics.
 #define NO_PAIN           0x8    // Cannot suffer halloss/recieves deceptive health indicator.
 #define NO_SLIP           0x10   // Cannot fall over.
 #define NO_POISON         0x20   // Cannot not suffer toxloss.
@@ -30,6 +30,8 @@
 #define LANGUAGE_GERMAN		"German"
 #define LANGUAGE_JANA	    "Jana"
 #define LANGUAGE_LATIN 		"Ancient Latin"
+#define LANGUAGE_ESPERANTO	"Esperanto"
+#define LANGUAGE_YASSARI	"Yassari"
 
 #define LANGUAGE_ROBOT "Robot Talk"
 #define LANGUAGE_DRONE "Drone Talk"

@@ -5,6 +5,17 @@
 	slot = slot_shoes
 	sort_category = "Shoes and Footwear"
 
+/datum/gear/trackshoes
+	display_name = "track shoes"
+	path = /obj/item/clothing/shoes/track_shoes
+	slot = slot_shoes
+	sort_category = "Shoes and Footwear"
+
+/datum/gear/shoes/sneakers
+	display_name = "sneaker selection"
+	path = /obj/item/clothing/shoes/sneakers
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/shoes/cowboys
 	display_name = "cowboy boots selection"
 	path = /obj/item/clothing/shoes/cowboy
@@ -31,8 +42,9 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/shoes/highheels
-	display_name = "high heels"
+	display_name = "high heels selection"
 	path = /obj/item/clothing/shoes/highheels
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/shoes/hitops
 	display_name = "high-tops selection"
@@ -52,6 +64,14 @@
 	display_name = "brown jackboots"
 	path = /obj/item/clothing/shoes/jackboots/german
 
+/datum/gear/shoes/redboot
+	display_name = "red boots"
+	path = /obj/item/clothing/shoes/jackboots/redboot
+
+/datum/gear/shoes/longboot
+	display_name = "long boots"
+	path = /obj/item/clothing/shoes/jackboots/longboot
+
 /datum/gear/shoes/laced_jackboots
 	display_name = "laced jackboots"
 	path = /obj/item/clothing/shoes/jackboots/laced_jackboots
@@ -63,6 +83,15 @@
 /datum/gear/shoes/reinforced
 	display_name = "reinforced shoes"
 	path = /obj/item/clothing/shoes/reinforced
+
+/datum/gear/shoes/aerostatic_boots
+	display_name = "aerostatic boots"
+	path = /obj/item/clothing/shoes/aerostatic_boots
+
+/datum/gear/shoes/render_boots
+	display_name = "lizardskin shoes"
+	cost = 2//somewhat armored
+	path =/obj/item/clothing/shoes/render
 
 /datum/gear/shoes/sandals
 	display_name = "sandals"

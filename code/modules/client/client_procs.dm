@@ -165,7 +165,6 @@
 	prefs = SScharacter_setup.preferences_datums[ckey]
 	if(!prefs)
 		prefs = new /datum/preferences(src)
-		SScharacter_setup.preferences_datums[ckey] = prefs
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 
@@ -361,7 +360,9 @@
 		'html/panels.css',
 		'html/images/loading.gif',
 		'html/images/ntlogo.png',
-		'html/images/talisman.png'
+		'html/images/talisman.png',
+		'html/images/nadezhdalogo.png',
+		'html/images/lonestarlogo.png'
 		)
 
 	spawn (10) //removing this spawn causes all clients to not get verbs.
@@ -398,12 +399,10 @@
 	set category = "OOC"
 	if(prefs)
 		prefs.ShowChoices(usr)
-/*
+//En-abled by SoJ
 /client/proc/apply_fps(var/client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
-		vars["fps"] = prefs.clientfps
-
-*/
+		vars["fps"] = prefs.clientfps 
 
 // Byond seemingly calls stat, each tick.
 // Calling things each tick can get expensive real quick.

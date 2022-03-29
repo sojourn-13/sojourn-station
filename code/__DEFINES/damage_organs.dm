@@ -72,6 +72,8 @@
 #define BP_B_R_ARM  "right humerus"
 #define BP_B_L_LEG  "left femur"
 #define BP_B_R_LEG  "right femur"
+#define BP_PSION "psionic organ"
+#define BP_NANOGATE "nanogate"
 
 // Unique carrion Organs.
 #define BP_SPCORE   "spider core"
@@ -123,7 +125,7 @@
 #define BODYPART_GAS_INTAKE			(1<<3)
 
 // Organs helpers.
-#define BP_IS_ORGANIC(org)  (org.nature == MODIFICATION_ORGANIC)
+#define BP_IS_ORGANIC(org)  (org.nature == MODIFICATION_ORGANIC || org.nature == MODIFICATION_SUPERIOR)
 #define BP_IS_ROBOTIC(org) (org.nature == MODIFICATION_SILICON || org.nature == MODIFICATION_LIFELIKE)
 #define BP_IS_SILICON(org) (org.nature == MODIFICATION_SILICON)	// Prothetics that are obvious
 #define BP_IS_REMOVED(org) (org.nature == MODIFICATION_REMOVED)
@@ -149,6 +151,7 @@
 #define MODIFICATION_SILICON 2	// Fully robotic, no organic parts
 #define MODIFICATION_LIFELIKE 3	// Robotic, made to appear organic
 #define MODIFICATION_REMOVED 4	// Removed completly
+#define MODIFICATION_SUPERIOR 5 //Better than good, a cut above.
 
 // Damage above this value must be repaired with surgery.
 #define ROBOLIMB_SELF_REPAIR_CAP 30

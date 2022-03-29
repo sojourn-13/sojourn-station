@@ -63,7 +63,8 @@
 				if (temp)
 					isactive[name] = temp
 				else
-					skip = TRUE
+					break
+					//skip = TRUE //Disabled so that no matter how afk, someone is still on the manifest.
 				break
 
 		if (skip)

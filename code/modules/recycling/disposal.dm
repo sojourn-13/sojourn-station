@@ -119,8 +119,8 @@
 			return
 
 
-	if(istype(I, /obj/item/weapon/storage/bag))
-		var/obj/item/weapon/storage/bag/T = I
+	if(istype(I, /obj/item/storage/bag))
+		var/obj/item/storage/bag/T = I
 		to_chat(user, "\blue You empty the bag.")
 		for(var/obj/item/O in T.contents)
 			T.remove_from_storage(O,src)
@@ -204,8 +204,8 @@
 		var/obj/item/I = A
 		if(!Adjacent(user) || !I.Adjacent(user) || user.stat)
 			return ..()
-		if(istype(I, /obj/item/weapon/storage/bag/trash))
-			var/obj/item/weapon/storage/bag/trash/T = I
+		if(istype(I, /obj/item/storage/bag/trash))
+			var/obj/item/storage/bag/trash/T = I
 			to_chat(user, SPAN_NOTICE("You empty the bag."))
 			for(var/obj/item/O in T.contents)
 				T.remove_from_storage(O,src)
@@ -498,18 +498,26 @@
 		qdel(H)
 
 /obj/machinery/disposal/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if (istype(mover,/obj/item) && mover.throwing)
+	if(ishuman(mover) && mover.throwing)
+		var/mob/living/carbon/human/H = mover
+		if(H.stats.getPerk(PERK_SPACE_ASSHOLE))
+			H.forceMove(src)
+			for(var/mob/M in viewers(src))
+				M.show_message("[H] dives into \the [src]!", 3)
+			flush = TRUE
+		return
+	else if (istype(mover,/obj/item) && mover.throwing)
 		var/obj/item/I = mover
 		if(istype(I, /obj/item/projectile))
 			return
-		if(prob(75))
-			I.forceMove(src)
-			for(var/mob/M in viewers(src))
-				M.show_message("\The [I] lands in \the [src].", 3)
 		else
-			for(var/mob/M in viewers(src))
-				M.show_message("\The [I] bounces off of \the [src]'s rim!", 3)
-		return 0
+			if(prob(75))
+				I.forceMove(src)
+				for(var/mob/M in viewers(src))
+					M.visible_message("\The [I] lands in \the [src].",,3)
+			else
+				for(var/mob/M in viewers(src))
+					M.visible_message("\The [I] bounces off of \the [src]\'s rim!",,3)
 	else
 		return ..(mover, target, height, air_group)
 
@@ -527,7 +535,7 @@
 	var/destinationTag = "" // changes if contains a delivery container
 	var/tomail = 0 //changes if contains wrapped package
 	var/has_mob = FALSE //If it contains a mob
-
+	var/from_cloner = FALSE // if the package originates from a genetics cloner
 	var/partialTag = "" //set by a partial tagger the first time round, then put in destinationTag if it goes through again.
 
 
@@ -588,11 +596,12 @@
 		if(!loc)
 			return // check if we got GC'd
 
-		if(has_mob && prob(5))
+		if(has_mob && prob(10) && !from_cloner) //Mobs shunted from the cloning vat are free from damage.
 			for(var/mob/living/H in src)
 				if(isdrone(H)) //Drones use the mailing code to move through the disposal system,
 					continue
-
+				if(H.stats.getPerk(PERK_SPACE_ASSHOLE)) //Assholes gain disposal immunity
+					continue
 				// Hurt any living creature jumping down disposals
 				var/multiplier = 1
 
@@ -1566,3 +1575,7 @@
 		dirs = alldirs.Copy()
 
 	src.streak(dirs)
+
+#undef SEND_PRESSURE
+#undef PRESSURE_TANK_VOLUME
+#undef PUMP_MAX_FLOW_RATE

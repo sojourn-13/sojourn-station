@@ -8,6 +8,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
+	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
@@ -18,7 +19,7 @@
 		STAT_VIG = 15,
 	)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, /datum/perk/bartender)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
 	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment.<br>\
@@ -44,6 +45,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
+	alt_titles = list("Culinary Artist","Cook")
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750
@@ -54,7 +56,7 @@
 		STAT_VIG = 5,
 	)
 
-	perks = list(/datum/perk/market_prof)
+	perks = list(/datum/perk/market_prof, /datum/perk/bartender, /datum/perk/foodappraise)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "The Chef works in the kitchen, ensuring that the colony remains well-fed and energetic.<br>\
@@ -82,7 +84,7 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	//alt_titles = list("Hydroponicist")
+	alt_titles = list("Hydroponicist")
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
@@ -94,7 +96,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb)
+	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb, /datum/perk/bartender)
 
 	description = "The Gardener toils in hydroponics - utilising seeds, tools, and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
@@ -125,7 +127,7 @@
 	access = list(access_theatre)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/artist
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
-	//alt_titles = list("Artist","Clown","Entertainer","Mime")
+	alt_titles = list("Artist","Clown","Entertainer","Mime")
 	stat_modifiers = list(
 		STAT_TGH = 30, //basically a punching bag, he can't robust anyone or shoot guns anyway
 	)
@@ -162,12 +164,12 @@
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
-	//alt_titles = list("Custodian","Sanitation Technician")
-	access = list(access_janitor, access_maint_tunnels, access_morgue)
+	alt_titles = list("Custodian","Sanitation Technician")
+	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
-	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat)
+	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
@@ -178,7 +180,7 @@
 	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\
 	You will trundle around the colony, armed with your trusty janicart full of cleaning supplies, disposing of trash and pests.<br>\
 	Some minor maintenance also falls within your duties. Fix lights, correct broken vendors, replace floor tiles - ease the guild burden.<br>\
-	Although your wage is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
+	Although your status is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
 
 	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
 		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\

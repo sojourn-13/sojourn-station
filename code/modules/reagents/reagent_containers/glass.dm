@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// (Mixing)Glass.
 ////////////////////////////////////////////////////////////////////////////////
-/obj/item/weapon/reagent_containers/glass
+/obj/item/reagent_containers/glass
 	name = " "
 	var/base_name = " "
 	desc = " "
@@ -28,12 +28,12 @@
 		/obj/structure/table,
 		/obj/structure/closet,
 		/obj/structure/sink,
-		/obj/item/weapon/storage,
+		/obj/item/storage,
 		/obj/machinery/atmospherics/unary/cryo_cell,
 		/obj/machinery/dna_scannernew,
-		/obj/item/weapon/grenade/chem_grenade,
+		/obj/item/grenade/chem_grenade,
 		/mob/living/bot/medbot,
-		/obj/item/weapon/storage/secure/safe,
+		/obj/item/storage/secure/safe,
 		/obj/structure/medical_stand,
 		/obj/machinery/disease2/incubator,
 		/obj/machinery/disposal,
@@ -48,14 +48,14 @@
 		/obj/machinery/electrolyzer
 		)
 
-/obj/item/weapon/reagent_containers/glass/Initialize()
+/obj/item/reagent_containers/glass/Initialize()
 	. = ..()
 	base_name = name
 
-/obj/item/weapon/reagent_containers/glass/proc/has_lid()
+/obj/item/reagent_containers/glass/proc/has_lid()
 	return !is_open_container()
 
-/obj/item/weapon/reagent_containers/glass/proc/toggle_lid()
+/obj/item/reagent_containers/glass/proc/toggle_lid()
 	// Switch it from REFILLABLE | DRAINABLE to INJECTABLE | DRAWABLE, or the other way around.
 	// This way, you can still use syringes through the lid.
 	reagent_flags ^= REFILLABLE | DRAINABLE | INJECTABLE | DRAWABLE
@@ -63,23 +63,23 @@
 	update_icon()
 	return TRUE
 
-/obj/item/weapon/reagent_containers/glass/is_closed_message(mob/user)
+/obj/item/reagent_containers/glass/is_closed_message(mob/user)
 	if(has_lid())
 		to_chat(user, SPAN_NOTICE("You need to take the lid off [src] first!"))
 
-/obj/item/weapon/reagent_containers/glass/self_feed_message(var/mob/user)
+/obj/item/reagent_containers/glass/self_feed_message(var/mob/user)
 	to_chat(user, SPAN_NOTICE("You swallow a gulp from \the [src]."))
 
-/obj/item/weapon/reagent_containers/glass/feed_sound(var/mob/user)
+/obj/item/reagent_containers/glass/feed_sound(var/mob/user)
 	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
 
-/obj/item/weapon/reagent_containers/glass/examine(mob/user)
+/obj/item/reagent_containers/glass/examine(mob/user)
 	if(!..(user, 2))
 		return
 	if(has_lid())
 		to_chat(user, SPAN_NOTICE("Airtight lid seals it completely."))
 
-/obj/item/weapon/reagent_containers/glass/attack_self(mob/user)
+/obj/item/reagent_containers/glass/attack_self(mob/user)
 	..()
 	if(toggle_lid())
 		playsound(src,'sound/effects/Lid_Removal_Bottle_mono.ogg',50,1)
@@ -88,7 +88,7 @@
 		else
 			to_chat(user, SPAN_NOTICE("You take the lid off \the [src]."))
 
-/obj/item/weapon/reagent_containers/glass/pre_attack(atom/A, mob/user, params)
+/obj/item/reagent_containers/glass/pre_attack(atom/A, mob/user, params)
 	if(user.a_intent == I_HURT)
 		user.investigate_log("splashed [src] filled with [reagents.log_list()] onto [A]", "chemistry")
 		if(standard_splash_mob(user, A))
@@ -104,7 +104,24 @@
 			return TRUE
 	return ..()
 
-/obj/item/weapon/reagent_containers/glass/attack(mob/M as mob, mob/user as mob, def_zone)
+/obj/item/reagent_containers/glass/pre_attack(atom/target, mob/user, params)
+	if(user.a_intent == I_DISARM)
+		if(is_drainable() && reagents.total_volume && istype(target, /obj/structure/sink))
+			to_chat(user, SPAN_NOTICE("You pour the solution into [target]."))
+			reagents.remove_any(reagents.total_volume)
+			return TRUE
+		if(is_open_container() && reagents.total_volume && istype(target, /obj/item/reagent_containers/glass))
+			if(reagents && !target.reagents.get_free_space())
+				to_chat(user, SPAN_NOTICE("[target] is full."))
+				return TRUE
+			else
+				playsound(src,'sound/effects/Liquid_transfer_mono.ogg',50,1)
+				to_chat(user, SPAN_NOTICE("You pour as much as you can into [target]."))
+				reagents.trans_to_obj(target, reagents.total_volume)
+			return TRUE
+	return ..()
+
+/obj/item/reagent_containers/glass/attack(mob/M as mob, mob/user as mob, def_zone)
 	if(force && !(flags & NOBLUDGEON) && user.a_intent == I_HURT)
 		return ..()
 
@@ -113,7 +130,7 @@
 
 	return 0
 
-/obj/item/weapon/reagent_containers/glass/afterattack(var/obj/target, var/mob/user, var/flag)
+/obj/item/reagent_containers/glass/afterattack(var/obj/target, var/mob/user, var/flag)
 	if(!flag)
 		return
 	for(var/type in can_be_placed_into)
@@ -124,8 +141,8 @@
 	if(standard_dispenser_refill(user, target))
 		return 1
 
-/obj/item/weapon/reagent_containers/glass/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/weapon/pen) || istype(I, /obj/item/device/lighting/toggleable/flashlight/pen))
+/obj/item/reagent_containers/glass/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/pen) || istype(I, /obj/item/device/lighting/toggleable/flashlight/pen))
 		var/tmp_label = sanitizeSafe(input(user, "Enter a label for [name]", "Label", label_text), MAX_NAME_LEN)
 		if(length(tmp_label) > 10)
 			to_chat(user, SPAN_NOTICE("The label can be at most 10 characters long."))
@@ -142,14 +159,14 @@
 
 	..()
 
-/obj/item/weapon/reagent_containers/glass/proc/update_name_label()
+/obj/item/reagent_containers/glass/proc/update_name_label()
 	playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
 	if(label_text == "")
 		name = base_name
 	else
 		name = "[base_name] ([label_text])"
 
-/obj/item/weapon/reagent_containers/glass/MouseDrop(obj/over_object,src_location,over_location)
+/obj/item/reagent_containers/glass/MouseDrop(obj/over_object,src_location,over_location)
 	. = ..()
 	if(istype(over_object, /obj/structure/reagent_dispensers))
 		reagents.trans_to(over_object, amount_per_transfer_from_this, ignore_isinjectable = 1)

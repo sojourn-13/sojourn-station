@@ -185,9 +185,11 @@
 	block_air_zones = 1
 
 /obj/machinery/door/blast/regular/open
-	icon_state = "pdoor0"
-	density = 0
-	opacity = 0
+
+//We now open when made
+/obj/machinery/door/blast/regular/open/Initialize(mapload)
+	..()
+	open()
 
 // SUBTYPE: Shutters
 // Nicer looking, and also weaker, shutters. Found in kitchen and similar areas.

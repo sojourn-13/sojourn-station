@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic
+/obj/item/gun/projectile/automatic
 	name = "automatic projectile gun"
 	desc = "A debug firearm, which should be reported if present in-game. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/generic_smg.dmi'
@@ -56,8 +56,8 @@
 				can_fire = FALSE
 
 			//Projectile weapons need to have enough ammo to fire
-			if(istype(gun, /obj/item/weapon/gun/projectile))
-				var/obj/item/weapon/gun/projectile/P = gun
+			if(istype(gun, /obj/item/gun/projectile))
+				var/obj/item/gun/projectile/P = gun
 				if (!P.get_ammo())
 					can_fire = FALSE
 

@@ -15,6 +15,8 @@
 	var/time = 0					//How many ticks it requires to build. If 0, calculated from the amount of materials used.
 	var/starts_unlocked = FALSE		//If the design starts unlocked.
 
+	var/takes_chemicals = TRUE		//This will make it so the item printed will not add its own chems when getting its chemicals in the item to print
+
 	var/list/ui_data = null			//Pre-generated UI data, to be sent into NanoUI/TGUI interfaces.
 
 	// An MPC file containing this design. You can use it directly, but only if it doesn't interact with the rest of MPC system. If it does, use copies.
@@ -114,8 +116,9 @@
 	for(var/m in materials)
 		total_materials += materials[m]
 
-	for(var/c in chemicals)
-		total_reagents += chemicals[c]
+	if(takes_chemicals)
+		for(var/c in chemicals)
+			total_reagents += chemicals[c]
 
 	time = 5 + total_materials + (total_reagents / 5)
 	time = max(round(time), 5)
@@ -147,7 +150,7 @@
 		var/list/RS = list()
 
 		for(var/reagent in chemicals)
-			var/datum/reagent/reagent_datum = chemical_reagents_list[reagent]
+			var/datum/reagent/reagent_datum = GLOB.chemical_reagents_list[reagent]
 			if(reagent_datum)
 				RS.Add(list(list("id" = reagent, "name" = reagent_datum.name, "req" = chemicals[reagent])))
 
@@ -180,4 +183,4 @@
 
 /datum/design/autolathe/corrupted
 	name = "ERROR"
-	build_path = /obj/item/weapon/material/shard/shrapnel/scrap
+	build_path = /obj/item/material/shard/shrapnel/scrap

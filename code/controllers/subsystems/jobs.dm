@@ -13,6 +13,7 @@ SUBSYSTEM_DEF(job)
 	var/list/job_debug = list()				//Debug info
 	var/list/job_mannequins = list()				//Cache of icons for job info window
 
+
 /datum/controller/subsystem/job/Initialize(start_timeofday)
 	if(!occupations.len)
 		SetupOccupations()
@@ -28,6 +29,10 @@ SUBSYSTEM_DEF(job)
 			continue
 		occupations += job
 		occupations_by_name[job.title] = job
+
+		if(job.alt_titles)
+			for(var/alt_title in job.alt_titles)
+				occupations_by_name[alt_title] = job
 
 	if(!occupations.len)
 		to_chat(world, SPAN_WARNING("Error setting up jobs, no job datums found!"))
@@ -62,6 +67,8 @@ SUBSYSTEM_DEF(job)
 			Debug("Player: [player] is now Rank: [rank], JCP:[job.current_positions], JPL:[position_limit]")
 			player.mind.assigned_role = rank
 			player.mind.assigned_job = job
+			if(job.alt_titles)
+				player.mind.role_alt_title = player.client.prefs.GetPlayerAltTitle(job)
 			unassigned -= player
 			job.current_positions++
 			return TRUE
@@ -303,6 +310,7 @@ SUBSYSTEM_DEF(job)
 	var/datum/job/job = GetJob(rank)
 	var/list/spawn_in_storage = list()
 
+
 	if(job)
 		H.job = rank
 
@@ -322,7 +330,6 @@ SUBSYSTEM_DEF(job)
 
 		job.add_stats(H)
 
-		job.add_knownCraftRecipes(H)
 
 		job.add_additiional_language(H)
 
@@ -337,7 +344,7 @@ SUBSYSTEM_DEF(job)
 
 		// EMAIL GENERATION
 		if(rank != "Robot" && rank != "AI")		//These guys get their emails later.
-			ntnet_global.create_email(H, H.real_name, pick(maps_data.usable_email_tlds))
+			ntnet_global.create_email(H, H.real_name, pick(GLOB.maps_data.usable_email_tlds))
 		// If they're head, give them the account info for their department
 
 		if(H.mind && (job.head_position || job.department_account_access))
@@ -358,7 +365,7 @@ SUBSYSTEM_DEF(job)
 		var/alt_title = null
 		if(H.mind)
 			H.mind.assigned_role = rank
-		//	alt_title = H.mind.role_alt_title
+			alt_title = H.mind.role_alt_title
 
 			switch(rank)
 				if("Robot")
@@ -395,11 +402,21 @@ SUBSYSTEM_DEF(job)
 				var/obj/item/clothing/glasses/G = H.glasses
 				G.prescription = 1
 
-		var/obj/item/weapon/implant/core_implant/C = H.get_core_implant()
+		var/obj/item/implant/core_implant/C = H.get_core_implant()
 		if(C)
 			C.install_default_modules_by_job(job)
 			C.access.Add(job.cruciform_access)
 			C.install_default_modules_by_path(job)
+			C.security_clearance = job.security_clearance
+
+		//Occulus Edit, Right here! Custom skills.
+		H.stats.changeStat(STAT_BIO, H.client.prefs.BIOMOD)
+		H.stats.changeStat(STAT_COG, H.client.prefs.COGMOD)
+		H.stats.changeStat(STAT_MEC, H.client.prefs.MECMOD)
+		H.stats.changeStat(STAT_ROB, H.client.prefs.ROBMOD)
+		H.stats.changeStat(STAT_TGH, H.client.prefs.TGHMOD)
+		H.stats.changeStat(STAT_VIG, H.client.prefs.VIGMOD)
+		// This could be cleaner and better, however it should apply your stats once on spawn properly if here. If anyone wants to do this in a cleaner manner be my guest.
 
 		BITSET(H.hud_updateflag, ID_HUD)
 		BITSET(H.hud_updateflag, SPECIALROLE_HUD)
@@ -407,8 +424,6 @@ SUBSYSTEM_DEF(job)
 
 	else
 		to_chat(H, "Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.")
-
-
 
 /proc/EquipCustomLoadout(var/mob/living/carbon/human/H, var/datum/job/job)
 	if(!H || !H.client)
@@ -530,7 +545,7 @@ SUBSYSTEM_DEF(job)
 		if(pref_spawn)
 			SP = get_spawn_point(pref_spawn, late = TRUE)
 		else
-			SP = get_spawn_point(maps_data.default_spawn, late = TRUE)
+			SP = get_spawn_point(GLOB.maps_data.default_spawn, late = TRUE)
 			to_chat(H, SPAN_WARNING("You have not selected spawnpoint in preference menu."))
 	else
 		SP = get_spawn_point(rank)
@@ -572,10 +587,138 @@ SUBSYSTEM_DEF(job)
 
 	return SP
 
-
-
 /datum/controller/subsystem/job/proc/ShouldCreateRecords(var/title)
 	if(!title) return 0
 	var/datum/job/job = GetJob(title)
 	if(!job) return 0
 	return job.create_record
+
+
+/****************************/
+/* Playtime Tracking System */
+/****************************/
+
+//Internal Only. May be changed without warning.
+/datum/playtime
+	var/realtime = 0 //The complete time a player has played this job.
+	var/forced = FALSE //Whether the job has been enabled manually for a player by an admin.
+	var/playtime = 0 //The amount of time which actually counts toward the job.
+
+/datum/playtime/New(var/datum/playtime/old)
+	if(!old) return
+	realtime = old.realtime
+	forced = old.forced
+	playtime = old.playtime
+
+/* Procs that alter the save */
+
+//Adds played time to a single, or provided list of jobs. Should only be called automatically.
+/datum/controller/subsystem/job/proc/JobTimeAdd(ckey, jobs, seconds)
+	if(!jobs) return
+	if(!islist(jobs)) jobs = list(jobs)
+	for(var/job in jobs)
+		var/datum/playtime/P = JobTimeGetDatum(ckey, job)
+		if(!P)
+			continue
+		P.playtime += seconds
+		P.realtime += seconds
+		JobTimeSetDatum(ckey, job, P)
+
+
+//Adds a played time to a singular job. Negative numbers subtract time.
+/datum/controller/subsystem/job/proc/JobTimeAlter(ckey, job_key, seconds)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	P.playtime += seconds
+	JobTimeSetDatum(ckey, job_key, P)
+
+//Sets the played time to a set value
+/datum/controller/subsystem/job/proc/JobTimeSet(ckey, job_key, seconds)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	P.playtime = seconds
+	JobTimeSetDatum(ckey, job_key, P)
+
+//Forces a job to be accessible regardless of time played, or disables it if 'enable' is set false.
+/datum/controller/subsystem/job/proc/JobTimeForce(ckey, job_key, enable = TRUE)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	P.forced = enable
+	JobTimeSetDatum(ckey, job_key, P)
+
+/* Procs that read the save */
+
+//Returns true if either the job from job_key has been forced, or the sum of all jobs in the list exceeds req_time
+/datum/controller/subsystem/job/proc/JobTimeAutoCheck(ckey, job_key, jobs, req_time)
+	if(JobTimeAllowCheck(ckey, job_key)) return TRUE
+	return JobTimeCheck(ckey, jobs) >= req_time
+
+//Returns the sum of all times in the list of jobs provided.
+//If 'jobs' is not a list, it will be encapsulated in one.
+/datum/controller/subsystem/job/proc/JobTimeCheck(ckey, jobs)
+	var/total = 0
+	if(!islist(jobs)) jobs = list(jobs)
+	for(var/job in jobs)
+		var/datum/playtime/P = JobTimeGetDatum(ckey, job)
+		total += P.playtime
+	return total
+
+
+//Returns whether or not a given job has been forcibly allowed by admins.
+/datum/controller/subsystem/job/proc/JobTimeAllowCheck(ckey, job_key)
+	var/datum/playtime/P = JobTimeGetDatum(ckey, job_key)
+	return P.forced
+
+//Returns an associative list. "job_key" = time
+//Force-states are not considered, only the actual time is returned.
+/datum/controller/subsystem/job/proc/JobTimeGetAll(ckey)
+	//Not Implemented
+
+/* Internal Savefile Stuff - DO NOT CALL FROM OUTSIDE */
+// Seriously, implementation can change wildly depending on our needs.
+
+//We'll only need to read once per key per job, so why do it more?
+/datum/controller/subsystem/job/var/list/playtime_cache = list()
+
+/datum/controller/subsystem/job/proc/JobTimeGetDatum(ckey, job_key, ignore_cache)
+
+	if(playtime_cache[ckey] == null) playtime_cache[ckey] = list()
+
+	var/datum/playtime/P
+	var/cached = TRUE
+	if(!ignore_cache)
+		P = playtime_cache[ckey][job_key]
+	if(!istype(P))
+		var/savefile/S = new("data/player_saves/[copytext(ckey, 1, 2)]/[ckey]/playtime.sav")
+		S.cd = job_key
+		P = new()
+		from_file(S["realtime"], P.realtime)
+		from_file(S["forced"], P.forced)
+		from_file(S["playtime"], P.playtime)
+		cached = FALSE
+	//Don't trust the savefile. We could sanitize on save, but if someone else fiddles with it, this will break.
+	//By sanitizing on load and decache, we ensure that any proc calling this gets a clean object.
+	if(!isnum(P.realtime)) P.realtime = 0
+	if(!isnum(P.playtime)) P.playtime = 0
+	if(!(P.forced == TRUE || P.forced == FALSE)) P.forced = FALSE
+
+	if(!cached)
+		playtime_cache[ckey][job_key] = new /datum/playtime(P) //So we don't load twice for no reason.
+
+	return P
+
+/datum/controller/subsystem/job/proc/JobTimeSetDatum(ckey, job_key, var/datum/playtime/datum)
+	if(!istype(datum)) return //I don't trust you to use the appropriate datums.
+
+	//Sanitize here too just to be safe.
+	if(!isnum(datum.realtime)) datum.realtime = 0
+	if(!isnum(datum.playtime)) datum.playtime = 0
+	if(!(datum.forced == TRUE || datum.forced == FALSE)) datum.forced = FALSE
+
+	var/savefile/S = new("data/player_saves/[copytext(ckey, 1, 2)]/[ckey]/playtime.sav")
+	S.cd = job_key
+	to_file(S["realtime"], datum.realtime)
+	to_file(S["forced"], datum.forced)
+	to_file(S["playtime"], datum.playtime)
+
+	//We cache it here rather than on the 'get' so that only changes that are saved get recorded.
+	//The cache is also a copy of the original, so that people don't get the smart idea to hold the datum and update it elsewhere.
+	if(playtime_cache[ckey] == null) playtime_cache[ckey] = list() // This should never be true, but I don't trust you lot to make sure you read before writing.
+	playtime_cache[ckey][job_key] = new /datum/playtime(datum)

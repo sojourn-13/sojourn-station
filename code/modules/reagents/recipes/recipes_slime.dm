@@ -45,8 +45,32 @@
 
 /datum/chemical_reaction/slime/monkey/on_reaction(var/datum/reagents/holder)
 	for(var/i = 1, i <= 3, i++)
-		var /obj/item/weapon/reagent_containers/food/snacks/monkeycube/M = new /obj/item/weapon/reagent_containers/food/snacks/monkeycube
+		var /obj/item/reagent_containers/food/snacks/monkeycube/M = new /obj/item/reagent_containers/food/snacks/monkeycube
 		M.loc = get_turf(holder.my_atom)
+	..()
+
+/datum/chemical_reaction/slime/roach_cube
+	result = null
+	required_reagents = list("blattedin" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/grey
+
+/datum/chemical_reaction/slime/roach_cube/on_reaction(var/datum/reagents/holder)
+	for(var/i = 1, i <= 3, i++)
+		var/obj/random/rations/roachcube/R = new /obj/random/rations/roachcube
+		R.loc = get_turf(holder.my_atom)
+	..()
+
+/datum/chemical_reaction/slime/spider_lings
+	result = null
+	required_reagents = list("pararein" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/grey
+
+/datum/chemical_reaction/slime/spider_lings/on_reaction(var/datum/reagents/holder)
+	for(var/i = 1, i <= 3, i++)
+		var/obj/effect/spider/spiderling/S = new /obj/effect/spider/spiderling
+		S.loc = get_turf(holder.my_atom)
 	..()
 
 //Green
@@ -55,6 +79,18 @@
 	required_reagents = list("plasma" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/green
+
+/datum/chemical_reaction/slime/mutate_clear
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/green
+
+/datum/chemical_reaction/slime/mutate_clear/on_reaction(var/datum/reagents/holder)
+	for(var/i = 1, i <= 1, i++)
+		var/obj/item/genetics/purger/slime/P = new /obj/item/genetics/purger/slime
+		P.loc = get_turf(holder.my_atom)
+	..()
 
 //Metal
 /datum/chemical_reaction/slime/metal
@@ -79,9 +115,9 @@
 	required = /obj/item/slime_extract/metal
 
 /datum/chemical_reaction/slime/metal_2/on_reaction(var/datum/reagents/holder)
-	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/plastic
-	M.amount = 15
-	M.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/plastic/P = new /obj/item/stack/material/plastic
+	P.amount = 15
+	P.loc = get_turf(holder.my_atom)
 	..()
 
 //Gold
@@ -92,10 +128,10 @@
 	required = /obj/item/slime_extract/gold
 
 /datum/chemical_reaction/slime/wealth/on_reaction(var/datum/reagents/holder)
-	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/gold
-	M.amount = 15
-	M.loc = get_turf(holder.my_atom)
-	var/obj/item/stack/material/plasteel/P = new /obj/item/stack/material/platinum
+	var/obj/item/stack/material/gold/G = new /obj/item/stack/material/gold
+	G.amount = 15
+	G.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/platinum/P = new /obj/item/stack/material/platinum
 	P.amount = 5
 	P.loc = get_turf(holder.my_atom)
 	..()
@@ -107,12 +143,12 @@
 	required = /obj/item/slime_extract/gold
 
 /datum/chemical_reaction/slime/wealth_light/on_reaction(var/datum/reagents/holder)
-	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/silver
-	M.amount = 15
-	M.loc = get_turf(holder.my_atom)
-	var/obj/item/stack/material/plasteel/P = new /obj/item/stack/material/glass
-	P.amount = 5
-	P.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/silver/S = new /obj/item/stack/material/silver
+	S.amount = 15
+	S.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/glass/G = new /obj/item/stack/material/glass
+	G.amount = 5
+	G.loc = get_turf(holder.my_atom)
 	..()
 
 //Silver
@@ -123,7 +159,7 @@
 	required = /obj/item/slime_extract/silver
 
 /datum/chemical_reaction/slime/bork/on_reaction(var/datum/reagents/holder)
-	var/list/borks = typesof(/obj/item/weapon/reagent_containers/food/snacks) - /obj/item/weapon/reagent_containers/food/snacks
+	var/list/borks = typesof(/obj/item/reagent_containers/food/snacks) - /obj/item/reagent_containers/food/snacks
 	playsound(get_turf(holder.my_atom), 'sound/effects/phasein.ogg', 100, 1)
 	for(var/mob/living/carbon/human/M in viewers(get_turf(holder.my_atom), null))
 		if(M.eyecheck() < FLASH_PROTECTION_MODERATE)
@@ -197,16 +233,6 @@
 	..()
 	empulse(get_turf(holder.my_atom), 3, 7)
 
-/datum/chemical_reaction/slime/cell
-	result = null
-	required_reagents = list("plasma" = 1)
-	result_amount = 1
-	required = /obj/item/slime_extract/yellow
-
-/datum/chemical_reaction/slime/cell/on_reaction(var/datum/reagents/holder, var/created_volume)
-	var/obj/item/weapon/cell/large/slime/P = new /obj/item/weapon/cell/large/slime
-	P.loc = get_turf(holder.my_atom)
-
 /datum/chemical_reaction/slime/glow
 	result = null
 	required_reagents = list("water" = 1)
@@ -228,7 +254,7 @@
 
 /datum/chemical_reaction/slime/psteroid/on_reaction(var/datum/reagents/holder, var/created_volume)
 	..()
-	var/obj/item/weapon/slimesteroid/P = new /obj/item/weapon/slimesteroid
+	var/obj/item/slimesteroid/P = new /obj/item/slimesteroid
 	P.loc = get_turf(holder.my_atom)
 
 /datum/chemical_reaction/slime/jam
@@ -250,6 +276,17 @@
 	P.amount = 10
 	P.loc = get_turf(holder.my_atom)
 
+/datum/chemical_reaction/slime/randomizer
+	result = null
+	required_reagents = list(MATERIAL_URANIUM = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/darkpurple
+
+/datum/chemical_reaction/slime/randomizer/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/tool_upgrade/augment/randomizer/R = new /obj/item/tool_upgrade/augment/randomizer
+	R.loc = get_turf(holder.my_atom)
+
 //Red
 /datum/chemical_reaction/slime/glycerol
 	result = "glycerol"
@@ -264,12 +301,12 @@
 	required = /obj/item/slime_extract/red
 
 /datum/chemical_reaction/slime/osmium/on_reaction(var/datum/reagents/holder)
-	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/osmium
-	M.amount = 15
-	M.loc = get_turf(holder.my_atom)
-	var/obj/item/stack/material/plasteel/P = new /obj/item/stack/material/mhydrogen
-	P.amount = 5
-	P.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/osmium/O = new /obj/item/stack/material/osmium
+	O.amount = 15
+	O.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/mhydrogen/H = new /obj/item/stack/material/mhydrogen
+	H.amount = 5
+	H.loc = get_turf(holder.my_atom)
 	..()
 
 /datum/chemical_reaction/slime/bloodlust
@@ -293,7 +330,18 @@
 
 /datum/chemical_reaction/slime/ppotion/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/weapon/slimepotion/P = new /obj/item/weapon/slimepotion
+	var/obj/item/slimepotion/P = new /obj/item/slimepotion
+	P.loc = get_turf(holder.my_atom)
+
+/datum/chemical_reaction/slime/speed_vial
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/pink
+
+/datum/chemical_reaction/slime/speed_vial/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/slimes_speed/P = new /obj/item/slimes_speed
 	P.loc = get_turf(holder.my_atom)
 
 //Black
@@ -316,6 +364,17 @@
 	sleep(50)
 	explosion(get_turf(holder.my_atom), 1, 3, 6)
 
+/datum/chemical_reaction/slime/thermal
+	result = null
+	required_reagents = list("water" = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/oil
+
+/datum/chemical_reaction/slime/thermal/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/slime_thermals/T = new /obj/item/slime_thermals
+	T.loc = get_turf(holder.my_atom)
+
 //Light Pink
 /datum/chemical_reaction/slime/potion2
 	result = null
@@ -325,7 +384,7 @@
 
 /datum/chemical_reaction/slime/potion2/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/weapon/slimepotion2/P = new /obj/item/weapon/slimepotion2
+	var/obj/item/slimepotion2/P = new /obj/item/slimepotion2
 	P.loc = get_turf(holder.my_atom)
 
 //Adamantine

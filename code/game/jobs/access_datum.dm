@@ -401,7 +401,11 @@
 	desc = "Paramedic's Office"
 	region = ACCESS_REGION_MEDBAY
 
-// /var/const/free_access_id = 69
+/var/const/access_sec_shop = 69 // Security doors to ther shop, only for WO/Spec officer
+/datum/access/access_sec_shop
+	id = access_sec_shop
+	desc = "Security Shop"
+	region = ACCESS_REGION_SECURITY
 
 /**************
 * NeoTheology *
@@ -460,6 +464,21 @@
 	id = access_foreman
 	desc = "Foreman's Quarters"
 	region = ACCESS_REGION_PROSPECTOR
+
+/**************
+* Hunt Lodge *
+***************/
+/var/const/access_huntmaster = 80
+/datum/access/huntmaster
+	id = access_huntmaster
+	desc = "Hunt Master"
+	region = ACCESS_REGION_NONE
+
+/var/const/access_hunter = 81
+/datum/access/hunter
+	id = access_hunter
+	desc = "Hunter"
+	region = ACCESS_REGION_NONE
 
 /******************
 * Central Command *

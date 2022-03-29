@@ -312,9 +312,9 @@
 /mob/living/carbon/human/get_breath_from_internal(volume_needed=BREATH_VOLUME)
 	if(internal)
 
-		var/obj/item/weapon/tank/rig_supply
-		if(istype(back,/obj/item/weapon/rig))
-			var/obj/item/weapon/rig/rig = back
+		var/obj/item/tank/rig_supply
+		if(istype(back,/obj/item/rig))
+			var/obj/item/rig/rig = back
 			if(!rig.offline && (rig.air_supply && internal == rig.air_supply))
 				rig_supply = rig.air_supply
 
@@ -745,6 +745,9 @@
 	if(in_stasis)
 		return
 
+	if(species.reagent_tag == IS_SYNTHETIC)
+		return
+
 	if(reagents)
 		chem_effects.Cut()
 		analgesic = 0
@@ -767,16 +770,32 @@
 
 	if(status_flags & GODMODE)	return 0	//godmode
 
-	if(species.light_dam)
+	if(stats.getPerk(PERK_NANITE_REGEN)) // Do they have the nanite regen perk?
+		var/datum/perk/nanite_regen/P = stats.getPerk(PERK_NANITE_REGEN) // Add a reference to the perk for us to use.
+		if(P && P.regen_rate) // Check if the perk is actually there and got regeneration enabled.
+			heal_overall_damage(P.regen_rate, P.regen_rate, P.regen_rate)
+
+	if(species.light_dam)//TODO: Use this proc for flora and mycus races. Search proc mycus. -Note for Kaz.
 		var/light_amount = 0
 		if(isturf(loc))
 			var/turf/T = loc
 			light_amount = round((T.get_lumcount()*10)-5)
 
-		if(light_amount > species.light_dam) //if there's enough light, start dying
+		if(stats.getPerk(PERK_FOLKEN_HEALING) || stats.getPerk(PERK_FOLKEN_HEALING_YOUNG)) // Folken will have this perk
+			if(light_amount >= species.light_dam) // Enough light threshold
+				if(stats.getPerk(PERK_FOLKEN_HEALING_YOUNG)) // They are young Folken and will heal faster
+					heal_overall_damage(2,2)
+					adjustNutrition(2)
+				else
+					heal_overall_damage(1,1)
+					adjustNutrition(1)
+
+		else if(stats.getPerk(PERK_DARK_HEAL)) // Is the species a Mycus?
+			if(light_amount <= species.light_dam) // Enough light threshold
+				heal_overall_damage(1,1)
+
+		else if(light_amount > species.light_dam) //if there's enough light, start dying
 			take_overall_damage(1,1)
-		else //heal in the dark
-			heal_overall_damage(1,1)
 
 	// TODO: stomach and bloodstream organ.
 	handle_trace_chems()
@@ -937,7 +956,7 @@
 
 	// now handle what we see on our screen
 
-	var/obj/item/weapon/implant/core_implant/cruciform/C = get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
+	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(C)
 		var/datum/core_module/cruciform/neotheologyhud/NT_hud = C.get_module(/datum/core_module/cruciform/neotheologyhud)
 		if(NT_hud)
@@ -1092,7 +1111,7 @@
 	if (BITTEST(hud_updateflag, ID_HUD))
 		var/image/holder = hud_list[ID_HUD]
 		if(wear_id)
-			var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
+			var/obj/item/card/id/I = wear_id.GetIdCard()
 			if(I)
 				holder.icon_state = "hud[ckey(I.GetJobName())]"
 			else
@@ -1129,11 +1148,11 @@
 		holder1.icon_state = "hudblank"
 		holder2.icon_state = "hudblank"
 
-		for(var/obj/item/weapon/implant/I in src)
+		for(var/obj/item/implant/I in src)
 			if(I.implanted)
-				if(istype(I,/obj/item/weapon/implant/tracking))
+				if(istype(I,/obj/item/implant/tracking))
 					holder1.icon_state = "hud_imp_tracking"
-				if(istype(I,/obj/item/weapon/implant/chem))
+				if(istype(I,/obj/item/implant/chem))
 					holder2.icon_state = "hud_imp_chem"
 
 		hud_list[IMPTRACK_HUD] = holder1
@@ -1183,6 +1202,9 @@
 
 	if (thermal_protection < 1 && bodytemperature < burn_temperature)
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
+		if(world.time >= next_onfire_hal)
+			next_onfire_hal = world.time + 50
+			adjustHalLoss(fire_stacks*10 + 3)
 
 /mob/living/carbon/human/rejuvenate()
 	sanity.setLevel(sanity.max_level)
@@ -1191,7 +1213,7 @@
 
 /mob/living/carbon/human/handle_vision()
 	if(client)
-		client.screen.Remove(global_hud.blurry, global_hud.druggy, global_hud.vimpaired, global_hud.darkMask, global_hud.nvg, global_hud.thermal, global_hud.meson, global_hud.science)
+		client.screen.Remove(global_hud.blurry, global_hud.druggy, global_hud.vimpaired, global_hud.darkMask, global_hud.lightMask, global_hud.nvg, global_hud.thermal, global_hud.meson, global_hud.science)
 	if(machine)
 		var/viewflags = machine.check_eye(src)
 		if(viewflags < 0)
@@ -1207,14 +1229,14 @@
 			isRemoteObserve = TRUE
 		else if(client.eye && istype(client.eye,/mob/observer/eye/god))
 			isRemoteObserve = TRUE
-		else if(client.eye && istype(client.eye,/obj/item/weapon/implant/carrion_spider/observer))
+		else if(client.eye && istype(client.eye,/obj/item/implant/carrion_spider/observer))
 			isRemoteObserve = TRUE
 		else if(client.eye && istype(client.eye,/obj/structure/multiz))
 			isRemoteObserve = TRUE
 		else if((mRemote in mutations) && remoteview_target)
 			if(remoteview_target.stat == CONSCIOUS)
 				isRemoteObserve = TRUE
-		if(!isRemoteObserve && client && !client.adminobs)
+		if(!isRemoteObserve && client && !client.adminobs && !using_scope)
 			remoteview_target = null
 			reset_view(null, FALSE)
 
@@ -1227,5 +1249,7 @@
 		return
 	if(XRAY in mutations)
 		sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
+	if(unnatural_mutations.getMutation("MUTATION_CAT_EYES", TRUE))
+		see_invisible = SEE_INVISIBLE_NOLIGHTING
 	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
 		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])

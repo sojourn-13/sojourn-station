@@ -1,10 +1,11 @@
-/obj/item/weapon/implant/carrion_spider/infection
+/obj/item/implant/carrion_spider/infection
+	name = "carrion infection spider"
 	icon_state = "spiderling_infection"
 	spider_price = 50
 	gene_price = 7
 	var/active = FALSE
 
-/obj/item/weapon/implant/carrion_spider/infection/activate()
+/obj/item/implant/carrion_spider/infection/activate()
 	..()
 	if(!wearer)
 		to_chat(owner_mob, SPAN_WARNING("[src] doesn't have a host"))
@@ -40,7 +41,7 @@
 			active = FALSE
 			to_chat(owner_mob, SPAN_WARNING("Conversion failed."))
 
-/obj/item/weapon/implant/carrion_spider/infection/Process()
+/obj/item/implant/carrion_spider/infection/Process()
 	..()
 	if(wearer && active)
 		if(prob(15)) //around ?? messages over 15 minutes on avarage

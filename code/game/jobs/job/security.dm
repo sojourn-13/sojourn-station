@@ -15,6 +15,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -32,7 +33,11 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/ass_of_concrete,
+				 /datum/perk/job/blackshield_conditioning,
+				 /datum/perk/job/bolt_reflect,
+				 /datum/perk/codespeak,
+				 /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -73,6 +78,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
+	playtimerequired = 1200
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 
@@ -80,7 +86,7 @@
 		access_security, access_eva, access_sec_doors, access_brig, access_armory, access_medspec,
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
-		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway,
+		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_sec_shop,
 		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_kitchen, access_medical_suits
 	)
 
@@ -90,7 +96,10 @@
 		STAT_VIG = 30,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/ass_of_concrete,
+				 /datum/perk/job/bolt_reflect,
+				 /datum/perk/codespeak,
+				 /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -134,7 +143,7 @@
 	access = list(
 		access_security, access_moebius, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen, access_medical_suits
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen, access_medical_suits, access_sec_shop, access_forensics_lockers
 	)
 
 	stat_modifiers = list(
@@ -145,6 +154,10 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+
+	perks = list(/datum/perk/market_prof,
+				 /datum/perk/codespeak,
+				 /datum/perk/chem_contraband)
 
 	description = "The Supply Specialist is the right hand of the warrant officer and the defacto controller of the armory and armory shop. <br>\
 	Your role is mainly a desk job - with duties rarely taking you outside of the colony or even the armory.<br>\
@@ -174,6 +187,7 @@
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
+	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 
@@ -191,7 +205,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect)
+	perks = list(/datum/perk/job/blackshield_conditioning, /datum/perk/job/bolt_reflect, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -223,6 +237,7 @@
 	spawn_positions = 2
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
+	alt_titles = list("Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 
@@ -234,7 +249,9 @@
 		access_external_airlocks, access_prospector, access_brig, access_kitchen, access_medical_suits
 	)
 
-	perks = list(/datum/perk/ear_of_quicksilver)
+	perks = list(/datum/perk/ear_of_quicksilver,
+				 /datum/perk/codespeak,
+				 /datum/perk/chem_contraband)
 
 	stat_modifiers = list(
 		STAT_BIO = 15,
@@ -274,6 +291,7 @@
 	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
+	alt_titles = list("Combat Medic","Combat Surgeon")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 
@@ -292,6 +310,7 @@
 	)
 
 	perks = list(/datum/perk/medicalexpertise)
+				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/suit_sensors,
@@ -325,13 +344,13 @@
 	spawn_positions = 4
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	//alt_titles = list("Blackshield Junior Trooper")
+	alt_titles = list("Blackshield Cadet", "Blackshield Militiamen")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
-	perks = list(/datum/perk/job/bolt_reflect,/datum/perk/job/blackshield_conditioning)
+	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
 
 	access = list(
 		access_security, access_eva,
@@ -375,7 +394,7 @@
 	spawn_positions = 4
 	supervisors = "the Warrant Officer"
 	difficulty = "Hard."
-	//alt_titles = list("Marshal Junior Operative")
+	alt_titles = list("Marshal Junior Officer")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 
@@ -391,6 +410,8 @@
 		STAT_TGH = 25,
 		STAT_VIG = 20,
 	)
+
+	perks = list(/datum/perk/codespeak, /datum/perk/chem_contraband)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)

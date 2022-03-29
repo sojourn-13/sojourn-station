@@ -1,18 +1,18 @@
 /*********************MANUALS (BOOKS)***********************/
 
-/obj/item/weapon/book/manual
+/obj/item/book/manual
 	icon = 'icons/obj/library.dmi'
 	due_date = 0 // Game time in 1/10th seconds
 	unique = TRUE   // FALSE - Normal book, TRUE - Should not be treated as normal book, unable to be copied, unable to be modified
 
 
-/obj/item/weapon/book/manual/engineering_construction
+/obj/item/book/manual/engineering_construction
 	name = "Colony Repairs and Construction"
 	icon_state ="book_construction"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Colony Repairs and Construction"
 
-/obj/item/weapon/book/manual/engineering_construction/New()
+/obj/item/book/manual/engineering_construction/New()
 	..()
 	dat = {"
 
@@ -27,13 +27,13 @@
 
 		"}
 
-/obj/item/weapon/book/manual/engineering_particle_accelerator
+/obj/item/book/manual/engineering_particle_accelerator
 	name = "Particle Accelerator User's Guide"
 	icon_state ="bookParticleAccelerator"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Particle Accelerator User's Guide"
 
-/obj/item/weapon/book/manual/engineering_particle_accelerator/New()
+/obj/item/book/manual/engineering_particle_accelerator/New()
 	..()
 	dat = {"<html>
 				<head>
@@ -74,13 +74,13 @@
 			"}
 
 
-/obj/item/weapon/book/manual/supermatter_engine
+/obj/item/book/manual/supermatter_engine
 	name = "Supermatter Engine Operating Manual"
 	icon_state = "book_supermatter"
 	author = "Central Engineering Division"
 	title = "Supermatter Engine Operating Manual"
 
-/obj/item/weapon/book/manual/supermatter_engine/New()
+/obj/item/book/manual/supermatter_engine/New()
 	..()
 	dat = {"<html>
 				<head>
@@ -147,13 +147,13 @@
 				</body>
 			</html>"}
 
-/obj/item/weapon/book/manual/engineering_hacking
+/obj/item/book/manual/engineering_hacking
 	name = "Hacking"
 	icon_state ="book_hacking"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
 
-/obj/item/weapon/book/manual/engineering_hacking/New()
+/obj/item/book/manual/engineering_hacking/New()
 	..()
 	dat = {"
 
@@ -169,7 +169,7 @@
 		"}
 
 
-/obj/item/weapon/book/manual/engineering_singularity_safety
+/obj/item/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"
 	icon_state ="book_singularity"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
@@ -216,11 +216,11 @@
 				<ol>
 					<li><b>GET THE FUCK OUT OF THERE!!! FORGET THE WOMEN AND CHILDREN, SAVE YOURSELF!!!</b></li>
 				</ol>
-				</body>
+			</body>
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/medical_cloning
+/obj/item/book/manual/medical_cloning
 	name = "Cloning Techniques of the 26th Century"
 	icon_state ="book_cloning"
 	author = "Medical Journal, volume 3"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
@@ -313,7 +313,7 @@
 				"}
 
 
-/obj/item/weapon/book/manual/ripley_build_and_repair
+/obj/item/book/manual/ripley_build_and_repair
 	name = "APLU \"Ripley\" Construction and Operation Manual"
 	icon_state ="book"
 	author = "Randall Varn, Einstein Engines Senior Mechanic"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
@@ -390,7 +390,7 @@
 			"}
 
 
-/obj/item/weapon/book/manual/research_and_development
+/obj/item/book/manual/research_and_development
 	name = "Research and Development 101"
 	icon_state = "book_research"
 	author = "Dr. L. Ight"
@@ -459,7 +459,7 @@
 			"}
 
 
-/obj/item/weapon/book/manual/robotics_cyborgs
+/obj/item/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"
 	icon_state = "book_robotics"
 	author = "XISC"
@@ -664,14 +664,14 @@
 		"}
 
 
-/obj/item/weapon/book/manual/security_space_law
+/obj/item/book/manual/security_space_law
 	name = "Corporate Regulations"
 	desc = "A set of corporate guidelines for keeping law and order on settlements."
 	icon_state = "bookSpaceLaw"
 	author = "The Company"
 	title = "Corporate Regulations"
 
-/obj/item/weapon/book/manual/security_space_law/New()
+/obj/item/book/manual/security_space_law/New()
 	..()
 	dat = {"
 
@@ -688,14 +688,14 @@
 
 
 
-/obj/item/weapon/book/manual/medical_diagnostics_manual
+/obj/item/book/manual/medical_diagnostics_manual
 	name = "Medical Diagnostics Manual"
 	desc = "First, do no harm. A detailed medical practitioner's guide."
 	icon_state = "book_medical"
 	author = "Medical Department"
 	title = "Medical Diagnostics Manual"
 
-/obj/item/weapon/book/manual/medical_diagnostics_manual/New()
+/obj/item/book/manual/medical_diagnostics_manual/New()
 	..()
 	dat = {"<html>
 				<head>
@@ -736,13 +736,13 @@
 		"}
 
 
-/obj/item/weapon/book/manual/engineering_guide
+/obj/item/book/manual/engineering_guide
 	name = "Engineering Textbook"
 	icon_state ="book_engineering"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
 
-/obj/item/weapon/book/manual/engineering_guide/New()
+/obj/item/book/manual/engineering_guide/New()
 	..()
 	dat = {"
 
@@ -757,7 +757,7 @@
 		"}
 
 
-/obj/item/weapon/book/manual/chef_recipes
+/obj/item/book/manual/chef_recipes
 	name = "Chef Recipes"
 	icon_state = "cooked_book"
 	author = "Victoria Ponsonby"
@@ -816,7 +816,7 @@
 			"}
 
 
-/obj/item/weapon/book/manual/barman_recipes
+/obj/item/book/manual/barman_recipes
 	name = "Barman Recipes"
 	icon_state = "barbook"
 	author = "Sir John Rose"
@@ -871,7 +871,7 @@
 			"}
 
 
-/obj/item/weapon/book/manual/detective
+/obj/item/book/manual/detective
 	name = "The Film Noir: Proper Procedures for Investigations"
 	icon_state ="book_forensics"
 	author = "The Company"
@@ -914,7 +914,7 @@
 				</body>
 			</html>"}
 
-/obj/item/weapon/book/manual/nuclear
+/obj/item/book/manual/nuclear
 	name = "Fission Mailed: Nuclear Sabotage 101"
 	icon_state ="book_nuclear"
 	author = "Syndicate"
@@ -965,7 +965,7 @@
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/atmospipes
+/obj/item/book/manual/atmospipes
 	name = "Pipes and You: Getting To Know Your Scary Tools"
 	icon_state = "book_atmos"
 	author = "Maria Crash, Senior Atmospherics Technician"
@@ -1073,7 +1073,7 @@
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/evaguide
+/obj/item/book/manual/evaguide
 	name = "EVA Gear and You: Not Spending All Day Inside"
 	icon_state = "book_eva"
 	author = "Maria Crash, Senior Atmospherics Technician"
@@ -1160,16 +1160,16 @@
 			</html>
 			"}
 
-/obj/item/weapon/book/manual/wiki
+/obj/item/book/manual/wiki
 	var/page_link = ""
 	window_size = "970x710"
 
-/obj/item/weapon/book/manual/wiki/attack_self()
+/obj/item/book/manual/wiki/attack_self()
 	if(!dat)
 		initialize_wikibook()
 	return ..()
 
-/obj/item/weapon/book/manual/wiki/proc/initialize_wikibook()
+/obj/item/book/manual/wiki/proc/initialize_wikibook()
 	if(config.wikiurl)
 		dat = {"
 			<html><head>
@@ -1193,42 +1193,42 @@
 			"}
 
 //engineering
-/obj/item/weapon/book/manual/wiki/engineering_guide
+/obj/item/book/manual/wiki/engineering_guide
 	name = "Engineering Textbook"
 	icon_state = "book_engineering"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
 	page_link = "Guide_to_Engineering"
 
-/obj/item/weapon/book/manual/wiki/engineering_construction
+/obj/item/book/manual/wiki/engineering_construction
 	name = "Colony Repairs and Construction"
 	icon_state ="book_construction"
 	author = "Engineering Encyclopedia"
 	title = "Colony Repairs and Construction"
 	page_link = "Guide_to_Construction"
 
-/obj/item/weapon/book/manual/wiki/engineering_atmos
+/obj/item/book/manual/wiki/engineering_atmos
 	name = "Pipes and You: Getting To Know Your Scary Tools"
 	icon_state = "book_atmos"
 	author = "Maria Crash, Senior Atmospherics Technician"
 	title = "Pipes and You: Getting To Know Your Scary Tools"
 	page_link = "Guide_to_Atmospherics"
 
-/obj/item/weapon/book/manual/wiki/engineering_hacking
+/obj/item/book/manual/wiki/engineering_hacking
 	name = "Hacking"
 	icon_state ="book_hacking"
 	author = "Engineering Encyclopedia"
 	title = "Hacking"
 	page_link = "Guide_to_Hacking"
 
-/obj/item/weapon/book/manual/wiki/engineering_singularity
+/obj/item/book/manual/wiki/engineering_singularity
 	name = "Singularity Safety in Special Circumstances"
 	icon_state ="book_singularity"
 	author = "Engineering Encyclopedia"
 	title = "Singularity Safety in Special Circumstances"
 	page_link = "Guide_to_Singularity"
 
-/obj/item/weapon/book/manual/wiki/engineering_supermatter
+/obj/item/book/manual/wiki/engineering_supermatter
 	name = "Supermatter Engine Operating Manual"
 	icon_state = "book_supermatter"
 	author = "Central Engineering Division"
@@ -1236,14 +1236,14 @@
 	page_link = "Guide_to_Supermatter"
 
 //science
-/obj/item/weapon/book/manual/wiki/science_research
+/obj/item/book/manual/wiki/science_research
 	name = "Research and Development 101"
 	icon_state = "book_rnd"
 	author = "Dr. L. Ight"
 	title = "Research and Development 101"
 	page_link = "Guide_to_Research_and_Development"
 
-/obj/item/weapon/book/manual/wiki/science_robotics
+/obj/item/book/manual/wiki/science_robotics
 	name = "Cyborgs for Dummies"
 	icon_state = "book_borg"
 	author = "XISC"
@@ -1251,7 +1251,7 @@
 	page_link = "Guide_to_Robotics"
 
 //security
-/obj/item/weapon/book/manual/wiki/security_ironparagraphs
+/obj/item/book/manual/wiki/security_ironparagraphs
 	name = "Marshal Paragraphs"
 	desc = "A set of corporate guidelines for keeping order on privately-owned space assets."
 	icon_state = "book_ironparagraphs"
@@ -1259,7 +1259,7 @@
 	title = "Marshal Paragraphs"
 	page_link = "Ironhammer_Paragraphs"
 
-/obj/item/weapon/book/manual/wiki/security_detective
+/obj/item/book/manual/wiki/security_detective
 	name = "The Film Noir: Proper Procedures for Investigations"
 	icon_state = "book_forensics"
 	author = "Ironhammer Security"
@@ -1267,7 +1267,7 @@
 	page_link = "Guide_to_Forensics"
 
 //medical
-/obj/item/weapon/book/manual/wiki/medical_guide
+/obj/item/book/manual/wiki/medical_guide
 	name = "Medical Diagnostics Manual"
 	desc = "First, do no harm. A detailed medical practitioner's guide."
 	icon_state = "book_medical"
@@ -1275,7 +1275,7 @@
 	title = "Medical Diagnostics Manual"
 	page_link = "Guide_to_Medical"
 
-/obj/item/weapon/book/manual/wiki/medical_chemistry
+/obj/item/book/manual/wiki/medical_chemistry
 	name = "Chemistry Textbook"
 	icon_state = "book"//TODO: Add icon
 	author = "Medical Journal, volume 2"
@@ -1283,7 +1283,7 @@
 	page_link = "Guide_to_Chemistry"
 
 //neotheology
-/obj/item/weapon/book/manual/wiki/neotheology_cloning //TODO: Completely change this to be NT-oriented.
+/obj/item/book/manual/wiki/neotheology_cloning //TODO: Completely change this to be NT-oriented.
 	name = "Cloning Rituals"
 	icon_state = "book"//TODO: Add icon
 	author = "The Church"
@@ -1291,21 +1291,75 @@
 	page_link = "Guide_to_Cloning"
 
 //service
-/obj/item/weapon/book/manual/wiki/barman_recipes
+/obj/item/book/manual/wiki/barman_recipes
 	name = "Barman Recipes"
 	icon_state = "book"
 	author = "Sir John Rose"
 	title = "Barman Recipes"
 	page_link = "Guide_to_Food_and_Drinks"
 
-/obj/item/weapon/book/manual/wiki/chef_recipes
+/obj/item/book/manual/wiki/chef_recipes
 	name = "Chef Recipes"
 	icon_state = "chefbook"
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
 	page_link = "Guide_to_Food_and_Drinks"
+	
+/obj/item/book/manual/religion/c_bible
+	name = "Christian Bible"
+	desc = "A book with a silver bolder and a golden crucifix in the middle. The glass in the middle seems to shimmer and shine."
+	icon_state = "c_bible"
+	author = "Unknown"
+	title = "Holy Bible"
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 18px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+				<h1>The Holy Bible</h1>
+				<h2>Genesis 1:1-1:12</h2>
+				<ol>
+				1:1 In the beginning God created the heaven and the earth.
 
-/obj/item/weapon/book/manual/fiction/ataleoftwocities
+				1:2 And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.
+
+				1:3 And God said, Let there be light: and there was light.
+
+				1:4 And God saw the light, that it was good: and God divided the light from the darkness.
+
+				1:5 And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.
+
+				1:6 And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.
+
+				1:7 And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so.
+
+				1:8 And God called the firmament Heaven. And the evening and the morning were the second day.
+
+				1:9 And God said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so.
+
+				1:10 And God called the dry land Earth; and the gathering together of the waters called he Seas: and God saw that it was good.
+
+				1:11 And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so.
+
+				1:12 And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good.
+				
+				</ol>
+				</body>
+			</html>
+			"}
+				
+/obj/item/book/manual/religion/h_book
+	name = "Holy Book"
+	desc = "An undescript book for an unnamed religion."
+	icon_state = "basic_bible"
+	author = "Unknown"
+
+/obj/item/book/manual/fiction/ataleoftwocities
 	name = "A Tale of Two Cities"
 	desc = "A novel about the adventures of a doctor in the midst of a revolution."
 	icon_state ="book2"
@@ -1320,7 +1374,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/aroundtheworld
+/obj/item/book/manual/fiction/aroundtheworld
 	name = "Around the World in 80 Days"
 	desc = "A novel about a wager to sail the world in only eighty days."
 	icon_state ="book2"
@@ -1335,7 +1389,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/theinvisibleman
+/obj/item/book/manual/fiction/theinvisibleman
 	name = "The Invisible Man"
 	desc = "A novel about a strange bandaged fellow with a dark secret."
 	icon_state ="book2"
@@ -1350,7 +1404,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/waroftheworlds
+/obj/item/book/manual/fiction/waroftheworlds
 	name = "The War of the Worlds"
 	desc = "A novel about survival in a world under invasion."
 	icon_state ="book2"
@@ -1365,7 +1419,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/achristmascarol
+/obj/item/book/manual/fiction/achristmascarol
 	name = "A Christmas Carol"
 	desc = "A novel about a miserable and bitter man who discovers the spirit of Christmas."
 	icon_state ="book2"
@@ -1380,7 +1434,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/muchadoaboutnothing
+/obj/item/book/manual/fiction/muchadoaboutnothing
 	name = "Much Ado About Nothing"
 	desc = "A comedic play about love, rumours, and trickery."
 	icon_state ="book2"
@@ -1395,7 +1449,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/romeoandjuliet
+/obj/item/book/manual/fiction/romeoandjuliet
 	name = "Romeo and Juliet"
 	desc = "A tragic play about lovers from two feuding families."
 	icon_state ="book2"
@@ -1410,7 +1464,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/kinglear
+/obj/item/book/manual/fiction/kinglear
 	name = "King Lear"
 	desc = "A tragic play about a troubled king who delves into madness."
 	icon_state ="book2"
@@ -1425,7 +1479,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/twelfthnight
+/obj/item/book/manual/fiction/twelfthnight
 	name = "Twelfth Night"
 	desc = "A comedic play about lovers, crossdressing, and a lot of confusion."
 	icon_state ="book2"
@@ -1440,7 +1494,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/macbeth
+/obj/item/book/manual/fiction/macbeth
 	name = "Macbeth"
 	desc = "A tragic play about the corruption of a noble and brave general."
 	icon_state ="book2"
@@ -1455,7 +1509,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/frankenstein
+/obj/item/book/manual/fiction/frankenstein
 	name = "Frankenstein"
 	desc = "A novel about a scientist who creates a terrifying monster."
 	icon_state ="book2"
@@ -1470,7 +1524,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/dracula
+/obj/item/book/manual/fiction/dracula
 	name = "Dracula"
 	desc = "A novel about the murderous reign of an evil vampire."
 	icon_state ="book2"
@@ -1485,7 +1539,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/journeytothecenter
+/obj/item/book/manual/fiction/journeytothecenter
 	name = "A Journey to the Center of the Earth"
 	desc = "A novel about an adventurous journey into the depths of a planet."
 	icon_state ="book2"
@@ -1500,7 +1554,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/rimeoftheancientmariner
+/obj/item/book/manual/fiction/rimeoftheancientmariner
 	name = "The Rime of the Ancient Mariner"
 	desc = "A poem about a mariner who is cursed and suffers terrible events."
 	icon_state ="book2"
@@ -1515,7 +1569,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/kublakhan
+/obj/item/book/manual/fiction/kublakhan
 	name = "Kubla Khan"
 	desc = "A rather abstract poem written about an ancient ruler."
 	icon_state ="book2"
@@ -1530,7 +1584,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/warandpeace
+/obj/item/book/manual/fiction/warandpeace
 	name = "War and Peace"
 	desc = "A novel examining a turbulent age through the stories of five families."
 	icon_state ="book2"
@@ -1545,7 +1599,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/robinsoncrusoe
+/obj/item/book/manual/fiction/robinsoncrusoe
 	name = "Robinson Crusoe"
 	desc = "A novel cataloguing the adventures of a shipwrecked sailor."
 	icon_state ="book2"
@@ -1560,7 +1614,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/thejunglebook
+/obj/item/book/manual/fiction/thejunglebook
 	name = "The Jungle Book"
 	desc = "A series of stories set in the untamed jungle."
 	icon_state ="book2"
@@ -1575,7 +1629,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/thetimemachine
+/obj/item/book/manual/fiction/thetimemachine
 	name = "The Time Machine"
 	desc = "A novel about a man who explores through time."
 	icon_state ="book2"
@@ -1590,7 +1644,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/wutheringheights
+/obj/item/book/manual/fiction/wutheringheights
 	name = "Wuthering Heights"
 	desc = "A novel about doomed love and subsequent revenge."
 	icon_state ="book2"
@@ -1605,7 +1659,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/fiction/littlewomen
+/obj/item/book/manual/fiction/littlewomen
 	name = "Little Women"
 	desc = "A novel following the lives of four sisters."
 	icon_state ="book2"
@@ -1621,7 +1675,7 @@
 		"}
 
 
-/obj/item/weapon/book/manual/nonfiction/metaphysics
+/obj/item/book/manual/nonfiction/metaphysics
 	name = "Metaphysics"
 	desc = "A complex philosophical work about existence, change, and understanding the world."
 	icon_state ="book2"
@@ -1636,7 +1690,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/meteorology
+/obj/item/book/manual/nonfiction/meteorology
 	name = "Meteorology"
 	desc = "A treatise delving into geology, geography, physics, and the elements."
 	icon_state ="book2"
@@ -1651,7 +1705,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/politics
+/obj/item/book/manual/nonfiction/politics
 	name = "Politics"
 	desc = "A philosophical work about political theory, constitutions, power, and the ideal state."
 	icon_state ="book2"
@@ -1666,7 +1720,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/ethics
+/obj/item/book/manual/nonfiction/ethics
 	name = "Nicomachean Ethics"
 	desc = "A philosophical work about how man should best live, and how this can be achieved."
 	icon_state ="book2"
@@ -1681,7 +1735,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/thescienceofright
+/obj/item/book/manual/nonfiction/thescienceofright
 	name = "The Science of Right"
 	desc = "A philosophical work about the rights man has, and should have."
 	icon_state ="book2"
@@ -1696,7 +1750,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/thetranscendentalist
+/obj/item/book/manual/nonfiction/thetranscendentalist
 	name = "The Transcendentalist"
 	desc = "A lecture and essay discussing the emergence of Transcendentalism."
 	icon_state ="book2"
@@ -1711,7 +1765,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/manthereformer
+/obj/item/book/manual/nonfiction/manthereformer
 	name = "Man The Reformer"
 	desc = "A lecture and essay discussing the ability of man to reform and change society."
 	icon_state ="book2"
@@ -1726,7 +1780,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/ageofreason
+/obj/item/book/manual/nonfiction/ageofreason
 	name = "The Age of Reason"
 	desc = "A work promoting rationality and intellectualism over religion."
 	icon_state ="book2"
@@ -1741,7 +1795,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/lifewithoutprinciple
+/obj/item/book/manual/nonfiction/lifewithoutprinciple
 	name = "Life Without Principle"
 	desc = "An essay discussing the core principles to living a righteous life."
 	icon_state ="book2"
@@ -1756,7 +1810,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/leviathan
+/obj/item/book/manual/nonfiction/leviathan
 	name = "Leviathan"
 	desc = "A work discussing the structure of society and government."
 	icon_state ="book2"
@@ -1771,7 +1825,7 @@
 		</html>
 		"}
 
-/obj/item/weapon/book/manual/nonfiction/suntzu
+/obj/item/book/manual/nonfiction/suntzu
 	name = "Sun Tzu on The Art of War"
 	desc = "A treatise concerning ancient military strategies and tactics."
 	icon_state ="book2"

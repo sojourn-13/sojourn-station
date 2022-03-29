@@ -12,6 +12,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
 	var/log_say = 0						// log client say
+	var/fps = 40						// Exactly what it says on the tin. Client
 	var/log_admin = 0					// log admin actions
 	var/log_debug = 1					// log debug output
 	var/log_game = 0					// log game events
@@ -47,7 +48,6 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/allow_Metadata = 0				// Metadata is supported.
 	var/popup_admin_pm = 0				//adminPMs to non-admins show in a pop-up 'reply' window when set to 1.
 	var/tick_limit_mc_init = TICK_LIMIT_MC_INIT_DEFAULT	//SSinitialization throttling
-	var/Ticklag = 0.33
 	var/socket_talk	= 0					// use socket_talk to communicate with other processes
 	var/list/resource_urls = null
 	var/antag_hud_allowed = 0			// Ghosts can turn on Antagovision to see a HUD of who is the bad guys this round.
@@ -222,6 +222,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 	var/profiler_permission = R_DEBUG | R_SERVER
 
+	var/allow_ic_printing = TRUE
+
 /datum/configuration/New()
 	fill_storyevents_list()
 
@@ -381,6 +383,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if ("vote_delay")
 					config.vote_delay = text2num(value)
 
+				if ("disable_ic_printing")
+					//config.allow_ic_printing = FALSE
+
 				if ("vote_period")
 					config.vote_period = text2num(value)
 
@@ -532,8 +537,11 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if("irc_bot_export")
 					irc_bot_export = 1
 
-				if("ticklag")
-					Ticklag = text2num(value)
+				if("fps")
+					fps = text2num(value)
+
+				if("fps")
+					fps = text2num(value)
 
 				if("tick_limit_mc_init")
 					tick_limit_mc_init = text2num(value)
@@ -749,11 +757,11 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if("use_loyalty_implants")
 					config.use_loyalty_implants = 1
 
-
-
-
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
+	fps = round(fps)
+	if(fps <= 0)
+		fps = initial(fps)
 
 /datum/configuration/proc/loadsql(filename)  // -- TLE
 	var/list/Lines = file2list(filename)

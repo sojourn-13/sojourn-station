@@ -30,7 +30,7 @@
 			AC.name = "SalonPro Nano-Mirror&trade;"
 			AC.flags = appearance_changer_flags
 			ui_users[user] = AC
-		AC.ui_interact(user)
+		AC.nano_ui_interact(user)
 
 /obj/structure/mirror/proc/shatter()
 	if(shattered)	return
@@ -81,14 +81,14 @@
 	ui_users.Cut()
 	. = ..()
 
-/obj/item/weapon/mirror
+/obj/item/mirror
 	name = "mirror"
 	desc = "A SalonPro brand mirror, but portable!"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "mirror"
 	var/list/ui_users = list()
 
-/obj/item/weapon/mirror/attack_self(mob/user as mob)
+/obj/item/mirror/attack_self(mob/user as mob)
 	if(ishuman(user))
 		var/datum/nano_module/appearance_changer/AC = ui_users[user]
 		if(!AC)
@@ -96,9 +96,9 @@
 			AC.name = "SalonPro Nano-Mirror&trade;"
 			AC.flags = APPEARANCE_HAIR
 			ui_users[user] = AC
-		AC.ui_interact(user)
+		AC.nano_ui_interact(user)
 
-/obj/item/weapon/mirror/Destroy()
+/obj/item/mirror/Destroy()
 	for(var/user in ui_users)
 		var/datum/nano_module/appearance_changer/AC = ui_users[user]
 		qdel(AC)

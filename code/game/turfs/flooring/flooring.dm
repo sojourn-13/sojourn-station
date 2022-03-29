@@ -231,14 +231,14 @@ var/list/flooring_types
 	//BSTs need this or they generate tons of soundspam while flying through the ship
 	if(!ishuman(M)|| M.incorporeal_move || !has_gravity(get_turf(M)))
 		return
+	var/mob/living/carbon/human/our_trippah = M
 	if(MOVING_QUICKLY(M))
 		if(M.stats.getPerk(PERK_SURE_STEP))
 			return
-		if(prob(5))
-			M.adjustBruteLoss(5)
-			M.slip(null, 6)
-			playsound(M, 'sound/effects/bang.ogg', 50, 1)
-			to_chat(M, SPAN_WARNING("You tripped over!"))
+ // The art of calculating the vectors required to avoid tripping on the metal beams requires big quantities of brain power
+		if(prob(50 - our_trippah.stats.getStat(STAT_COG))) //50 cog makes you unable to trip
+			our_trippah.adjustBruteLoss(5)
+			our_trippah.trip(src, 6)
 			return
 
 //============HULL PLATING=========\\
@@ -638,6 +638,11 @@ var/list/flooring_types
 	icon_base = "wooden_floor_s5"
 	build_type = /obj/item/stack/tile/wood/old/veridical
 
+/decl/flooring/wood/wood_old
+	icon = 'icons/turf/flooring/wood_old.dmi'
+	icon_base = "wood"
+	build_type = /obj/item/stack/tile/wood/wood_old
+
 /decl/flooring/reinforced
 	name = "reinforced floor"
 	desc = "Heavily reinforced with steel rods."
@@ -815,6 +820,15 @@ var/list/flooring_types
 
 /decl/flooring/grass2/jungle
 	icon_base = "grass_jungle"
+
+/decl/flooring/grass2/snow_grass
+	icon_base = "snowgrass_nes"
+
+/decl/flooring/grass2/snowjungle
+	icon_base = "snowjungle"
+
+/decl/flooring/grass2/plowed_snow
+	icon_base = "plowed_snow"
 
 /decl/flooring/grass2/dry
 	icon_base = "grass_dry"

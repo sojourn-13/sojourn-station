@@ -13,3 +13,23 @@
 //We got it covered in Process with more detailed thing
 /obj/item/organ/internal/liver/handle_regeneration()
 	return
+
+/obj/item/organ/internal/liver/prosthetic
+	name = "prosthetic liver"
+	desc = "A liver made of metal. Does the same job as a normal liver, and just as well."
+	icon_state = "liver-prosthetic"
+	price_tag = 100
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1)
+	organ_efficiency = list(OP_LIVER = 100)
+
+/obj/item/organ/internal/liver/big
+	name = "big liver"
+	icon_state = "liver_big"
+	organ_efficiency = list(OP_LIVER = 150)
+	specific_organ_size = 1.2
+
+/obj/item/organ/internal/liver/big/exalt
+	name = "exalt liver"
+	desc = "A robust liver for filtering robust chemicals."
+	specific_organ_size = 1

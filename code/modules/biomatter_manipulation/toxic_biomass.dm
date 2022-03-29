@@ -37,6 +37,7 @@
 	icon = 'icons/obj/bioreactor_misc.dmi'
 	icon_state = "biomass-1"
 	anchored = TRUE
+	layer = TURF_LAYER + 0.6
 
 
 /obj/effect/decal/cleanable/solid_biomass/Initialize()
@@ -55,7 +56,7 @@
 
 
 /obj/effect/decal/cleanable/solid_biomass/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/mop) || istype(I, /obj/item/weapon/soap))
+	if(istype(I, /obj/item/mop) || istype(I, /obj/item/soap))
 		to_chat(user, SPAN_NOTICE("You started removing this [src]. U-ugh. Disgusting..."))
 		if(do_after(user, 3 SECONDS, src))
 			to_chat(user, SPAN_NOTICE("You removed [src]."))

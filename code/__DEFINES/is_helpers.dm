@@ -1,5 +1,5 @@
 
-#define isweakref(A) istype(A, /weakref)
+#define isweakref(D) (istype(D, /datum/weakref))
 
 #define islist(A) istype(A, /list)
 
@@ -45,6 +45,8 @@
 #define isburrow(A) istype(A, /obj/structure/burrow)
 //---------------------------------------------------
 
+#define issynthetic(A) istype(A, /mob) && A.mob_classification == CLASSIFICATION_SYNTHETIC //For when we really, really don't want any robots
+
 #define issilicon(A) istype(A, /mob/living/silicon)
 
 #define isAI(A) istype(A, /mob/living/silicon/ai)
@@ -66,22 +68,22 @@
 
 #define isorgan(A) istype(A, /obj/item/organ/external)
 
-#define isgun(A) istype(A, /obj/item/weapon/gun)
+#define isgun(A) istype(A, /obj/item/gun)
 
 #define isarmor(A) istype(A, /obj/item/clothing)
 
-#define istool(A) istype(A, /obj/item/weapon/tool)
+#define istool(A) istype(A, /obj/item/tool)
 
-#define isWrench(A) istype(A, /obj/item/weapon/tool/wrench)
+#define isWrench(A) istype(A, /obj/item/tool/wrench)
 
-#define isWelder(A) istype(A, /obj/item/weapon/tool/weldingtool)
+#define isWelder(A) istype(A, /obj/item/tool/weldingtool)
 
 #define isCoil(A) istype(A, /obj/item/stack/cable_coil)
 
-#define isWirecutter(A) istype(A, /obj/item/weapon/tool/wirecutters)
+#define isWirecutter(A) istype(A, /obj/item/tool/wirecutters)
 
-#define isScrewdriver(A) istype(A, /obj/item/weapon/tool/screwdriver)
+#define isScrewdriver(A) istype(A, /obj/item/tool/screwdriver)
 
-#define isMultitool(A) istype(A, /obj/item/weapon/tool/multitool)
+#define isMultitool(A) istype(A, /obj/item/tool/multitool)
 
-#define isCrowbar(A) istype(A, /obj/item/weapon/tool/crowbar)
+#define isCrowbar(A) istype(A, /obj/item/tool/crowbar)

@@ -9,10 +9,10 @@
 	if(findtext(act,"s",-1) && !findtext(act,"_",-2))//Removes ending s's unless they are prefixed with a '_'
 		act = copytext(act,1,length(act))
 
-	var/muzzled = istype(src.wear_mask, /obj/item/clothing/mask/muzzle) || istype(src.wear_mask, /obj/item/weapon/grenade)
+	var/muzzled = istype(src.wear_mask, /obj/item/clothing/mask/muzzle) || istype(src.wear_mask, /obj/item/grenade)
 	//var/m_type = 1
 
-	for (var/obj/item/weapon/implant/I in src)
+	for (var/obj/item/implant/I in src)
 		if (I.implanted)
 			I.trigger(act, src)
 
@@ -59,16 +59,19 @@
 				use_sound = 'sound/machines/synth_no.ogg'
 			else if(act == "rcough")
 				display_msg = "emits a robotic cough"
-				if(get_gender() == FEMALE)
+				if(get_sex() == FEMALE)
 					use_sound = pick('sound/effects/mob_effects/f_machine_cougha.ogg','sound/effects/mob_effects/f_machine_coughb.ogg')
 				else
 					use_sound = pick('sound/effects/mob_effects/m_machine_cougha.ogg','sound/effects/mob_effects/m_machine_coughb.ogg', 'sound/effects/mob_effects/m_machine_coughc.ogg')
 			else if(act == "rsneeze")
 				display_msg = "emits a robotic sneeze"
-				if(get_gender() == FEMALE)
+				if(get_sex() == FEMALE)
 					use_sound = 'sound/effects/mob_effects/machine_sneeze.ogg'
 				else
 					use_sound = 'sound/effects/mob_effects/f_machine_sneeze.ogg'
+			else if(act == "slowclap")
+				display_msg = "activates their slow-clap processor" // Good, that's still working.
+				use_sound = 'sound/misc/slowclap.ogg'
 
 			if (param)
 				message = "[display_msg] at [param]."
@@ -209,6 +212,15 @@
 				playsound(loc, 'sound/misc/clapping.ogg', 80)
 				if(miming)
 					m_type = 1
+
+		if ("slowclap")
+			if (!src.restrained())
+				message = "sarcastically slow claps."
+				m_type = 2
+				playsound(loc, 'sound/misc/slowclap.ogg', 80)
+				if(miming)
+					m_type = 1
+
 		if ("flap")
 			if (!src.restrained())
 				message = "flaps [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] wings."
@@ -239,8 +251,8 @@
 				if (!muzzled)
 					message = "chuckles."
 					m_type = 2
-					if(get_gender() == FEMALE)
-						playsound(src, 'sound/voice/womanlaugh.ogg', 70)
+					if(get_sex() == FEMALE)
+						playsound(src, 'sound/effects/mob_effects/f_chuckle.ogg', 70)
 					else
 						playsound(src, 'sound/voice/manlaugh1.ogg', 70)
 				else
@@ -270,7 +282,7 @@
 				if (!muzzled)
 					message = "coughs!"
 					m_type = 2
-					if(get_gender() == FEMALE)
+					if(get_sex() == FEMALE)
 						switch(pick("1", "2"))
 							if("1")
 								playsound(src, 'sound/effects/mob_effects/f_cougha.ogg', 70)
@@ -312,8 +324,24 @@
 				if (!muzzled)
 					message = "gasps!"
 					m_type = 2
+					if(get_sex() == FEMALE)
+						switch(pick("1", "2", "3"))
+							if("1")
+								playsound(loc, 'sound/effects/mob_effects/gasp_f1.ogg', 80, 1)
+							if("2")
+								playsound(loc, 'sound/effects/mob_effects/gasp_f2.ogg', 80, 1)
+							if("3")
+								playsound(loc, 'sound/effects/mob_effects/gasp_f3.ogg', 80, 1)
+					else
+						switch(pick("1", "2", "3"))
+							if("1")
+								playsound(loc, 'sound/effects/mob_effects/gasp_m1.ogg', 80, 1)
+							if("2")
+								playsound(loc, 'sound/effects/mob_effects/gasp_m2.ogg', 80, 1)
+							if("3")
+								playsound(loc, 'sound/effects/mob_effects/gasp_m3.ogg', 80, 1)
 				else
-					message = "makes a weak noise."
+					message = "makes a noise."
 					m_type = 2
 			cloud_emote = "cloud-gasp"
 
@@ -329,8 +357,8 @@
 				if (!muzzled)
 					message = "giggles."
 					m_type = 2
-					if(get_gender() == FEMALE)
-						playsound(src, 'sound/voice/womanlaugh.ogg', 70)
+					if(get_sex() == FEMALE)
+						playsound(src, 'sound/effects/mob_effects/f_giggle.ogg', 70)
 					else
 						playsound(src, 'sound/voice/manlaugh1.ogg', 70)
 				else
@@ -408,6 +436,10 @@
 				if (!muzzled)
 					message = "sighs."
 					m_type = 2
+					if(get_sex() == FEMALE)
+						playsound(loc, 'sound/effects/mob_effects/f_sigh.ogg', 70)
+					else
+						playsound(loc, 'sound/effects/mob_effects/m_sigh.ogg', 70)
 				else
 					message = "makes a weak noise."
 					m_type = 2
@@ -420,7 +452,7 @@
 				if (!muzzled)
 					message = "laughs."
 					m_type = 2
-					if(get_gender() == FEMALE)
+					if(get_sex() == FEMALE)
 						playsound(src, 'sound/voice/womanlaugh.ogg', 70)
 					else
 						playsound(src, 'sound/voice/manlaugh1.ogg', 70)
@@ -464,6 +496,22 @@
 			else
 				message = "moans!"
 				m_type = 2
+				if(get_sex() == FEMALE)
+					switch(pick("1", "2", "3"))
+						if("1")
+							playsound(loc, 'sound/effects/mob_effects/moan_f1.ogg', 80)
+						if("2")
+							playsound(loc, 'sound/effects/mob_effects/moan_f2.ogg', 80)
+						if("3")
+							playsound(loc, 'sound/effects/mob_effects/moan_f4.ogg', 80)
+				else
+					switch(pick("1", "2", "3"))
+						if("1")
+							playsound(loc, 'sound/effects/mob_effects/moan_m1.ogg', 80)
+						if("2")
+							playsound(loc, 'sound/effects/mob_effects/moan_m3.ogg', 80)
+						if("3")
+							playsound(loc, 'sound/effects/mob_effects/moan_m5.ogg', 80)
 
 		if ("johnny")
 			var/M
@@ -547,19 +595,29 @@
 				if (!muzzled)
 					message = "sneezes."
 					m_type = 2
-					if(get_gender() == FEMALE)
-						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70, 1)
+					if(get_sex() == FEMALE)
+						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70)
 					else
-						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70, 0) //Please don't give it variance, you sneeze like Barry White 80% of the time.
+						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70)
 				else
 					message = "makes a strange noise."
 					m_type = 2
 
 		if ("sniff")
-			message = "sniffs."
-			m_type = 2
 			if(miming)
+				message = "sniffs."
 				m_type = 1
+			else
+				if (!muzzled)
+					message = "sniffs."
+					m_type = 2
+					if(get_sex() == FEMALE)
+						playsound(loc, 'sound/effects/mob_effects/f_sniff.ogg', 70)
+					else
+						playsound(loc, 'sound/effects/mob_effects/m_sniff.ogg', 70)
+				else
+					message = "makes a strange noise."
+					m_type = 2
 
 		if ("snore")
 			if (miming)
@@ -662,7 +720,7 @@
 					m_type = 2
 					if(prob(1))
 						playsound(loc, 'sound/voice/wilhelm_scream.ogg', 80, 1)
-					else if(get_gender() == FEMALE)
+					else if(get_sex() == FEMALE)
 						switch(pick("1", "2", "3", "4", "5"))
 							if("1")
 								playsound(loc, 'sound/voice/femalescream_1.ogg', 80, 1)
@@ -690,17 +748,17 @@
 					message = "makes a very loud noise."
 					m_type = 2
 			cloud_emote = "cloud-scream"
-		
+
 		if("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
 			if (miming)
 				message = "acts out a battlecry!"
 				m_type = 1
 			else if (!muzzled)
-				message = "releases a heroic roar, inspiring everyone around [get_gender() == MALE ? "him" : get_visible_gender() == FEMALE ? "her" : "them"]! URA!"
+				message = "releases a heroic roar, inspiring everyone around [gender_word("him")]! URA!"
 				m_type = 2
-				if(get_gender() == MALE)
+				if(get_sex() == MALE)
 					playsound(loc, 'sound/voice/ura.ogg', 80, 1) //URAH!!!
-				else if(get_gender() == FEMALE || PLURAL || NEUTER)
+				else if(get_sex() == FEMALE || PLURAL || NEUTER)
 					playsound(loc, 'sound/voice/femalewarcry.ogg', 80, 1)
 			else
 				message = "makes a very loud noise."
@@ -843,11 +901,50 @@
 			m_type = 2
 			playsound(loc, 'sound/voice/YeenCackle.ogg', 50, 1, -1)
 			cloud_emote = "cloud-scream"
-
+		if ("shriek")
+			message = "SHRIEKS!"
+			m_type = 2
+			playsound(loc, 'sound/voice/shriek.ogg', 50, 1, -1)
+			cloud_emote = "cloud-scream"
+		if ("bellow")
+			message = "bellows!"
+			m_type = 2
+			playsound(loc, 'sound/voice/LizardBellow.ogg', 50, 1, -1)
+		if ("squeal")
+			message = "squeals."
+			playsound(loc, 'sound/voice/LizardSqueal.ogg', 50, 1, -1)
+		if ("moo")
+			m_type = 2
+			message = "moos."
+			playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1)
+		if ("warble")
+			m_type = 2
+			message = "warbles."
+			playsound(loc, 'sound/voice/warble.ogg', 50, 1, -1)
+		if ("lwarble")
+			m_type = 2
+			message = "warbles."
+			playsound(loc, 'sound/voice/lowwarble.ogg', 50, 1, -1)
+		if ("croon1")
+			m_type = 2
+			message = "croons."
+			playsound(loc, 'sound/voice/croon1.ogg', 50, 1, -1)
+		if ("croon2")
+			m_type = 2
+			message = "croons."
+			playsound(loc, 'sound/voice/croon2.ogg', 50, 1, -1)
+		if ("croak")
+			m_type = 2
+			message = "croaks."
+			playsound(loc, 'sound/voice/croak.ogg', 50, 1, -1)
+		if ("chitter")
+			m_type = 2
+			message = "chitters."
+			playsound(loc, 'sound/voice/chitter1.ogg', 50, 1, -1)
 		if ("help")
-			to_chat(src, "awoo, aslap-(none)/mob, bark, blink, blink_r, blush, bow-(none)/mob, burp, chirp, choke, chuckle, clap, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
-					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, mumble, nod, nya, pale, peep, point-atom, \
-					raise, salute, scream, sneeze, shake, shiver, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, stopsway/swag, squeak, sway/wag, swish, tremble, twitch, \
+			to_chat(src, "awoo, aslap-(none)/mob, bark, bellow, blink, blink_r, blush, bow-(none)/mob, burp, chirp, chitter, choke, chuckle, clap, croon1, croon2, croak, collapse, cough, cry, custom, deathgasp, drool, eyebrow, fastsway/qwag, \
+					flip, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, nod, nya, pale, peep, point-atom, \
+					raise, salute, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, stopsway/swag, squeak, squeal, sway/wag, swish, tremble, twitch, \
 					twitch_v, vomit, weh, whimper, wink, yawn, ycackle. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
 
 		else

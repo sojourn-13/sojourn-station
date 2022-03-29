@@ -63,6 +63,13 @@
 			if (!src.restrained())
 				message = "claps."
 				m_type = 2
+
+		if ("slowclap")
+			if (!src.restrained())
+				message = "emits a sarcastically slow claps."
+				m_type = 2
+				playsound(loc, 'sound/misc/slowclap.ogg', 80)
+
 		if ("flap")
 			if (!src.restrained())
 				message = "flaps its wings."
@@ -83,6 +90,11 @@
 
 		if ("nod")
 			message = "nods."
+			m_type = 1
+
+		if ("honk")
+			message = "honks."
+			playsound(src.loc, 'sound/items/bikehorn.ogg', 50, 0)
 			m_type = 1
 
 		if ("deathgasp")
@@ -222,7 +234,7 @@
 			m_type = 1
 
 		if("law")
-			if (istype(module,/obj/item/weapon/robot_module/security))
+			if (istype(module,/obj/item/robot_module/security))
 				message = "shows its legal authorization barcode."
 
 				playsound(src.loc, 'sound/voice/biamthelaw.ogg', 50, 0)
@@ -231,7 +243,7 @@
 				to_chat(src, "You are not THE LAW, pal.")
 
 		if("halt")
-			if (istype(module,/obj/item/weapon/robot_module/security))
+			if (istype(module,/obj/item/robot_module/security))
 				message = "<B>[src]</B>'s speakers skreech, \"Halt! Security!\"."
 
 				playsound(src.loc, 'sound/voice/halt.ogg', 50, 0)

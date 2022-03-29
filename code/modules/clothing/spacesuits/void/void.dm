@@ -5,7 +5,7 @@
 	icon_state = "void"
 
 	heat_protection = HEAD
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 10,
@@ -14,7 +14,7 @@
 		rad = 75
 	)
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
-
+	obscuration = LIGHT_OBSCURATION
 	light_overlay = "helmet_light"
 
 /obj/item/clothing/suit/space/void
@@ -23,7 +23,7 @@
 	item_state = "void"
 	desc = "A high-tech dark red space suit."
 	slowdown = 1
-	armor = list(
+	armor_list = list(
 		melee = 30,
 		bullet = 20,
 		energy = 10,
@@ -37,11 +37,17 @@
 	breach_threshold = 5
 	resilience = 0.09
 	can_breach = 1
-
+	stiffness = HEAVY_STIFFNESS // Very hard to aim in
 	//Inbuilt devices.
 	var/obj/item/clothing/shoes/magboots/boots = null // Deployable boots, if any.
 	var/obj/item/clothing/head/helmet/helmet = /obj/item/clothing/head/helmet/space/void   // Deployable helmet, if any.
-	var/obj/item/weapon/tank/tank = null              // Deployable tank, if any.
+	var/obj/item/tank/tank = null              // Deployable tank, if any.
+
+	valid_accessory_slots = list()
+	restricted_accessory_slots = list()
+
+	tool_qualities = list()
+	max_upgrades = 0
 
 /obj/item/clothing/suit/space/void/Initialize()
 	if(boots && ispath(boots))
@@ -220,14 +226,14 @@
 	if(!isliving(user))
 		return
 
-	if(istype(W,/obj/item/clothing/accessory) || istype(W, /obj/item/weapon/hand_labeler))
+	if(istype(W,/obj/item/clothing/accessory) || istype(W, /obj/item/hand_labeler))
 		return ..()
 
 	if(is_worn())
 		to_chat(user, SPAN_WARNING("You cannot modify \the [src] while it is being worn."))
 		return
 
-	if(istype(W,/obj/item/weapon/tool/screwdriver))
+	if(istype(W,/obj/item/tool/screwdriver))
 		if(boots || tank || helmet)
 			var/choice = input("What component would you like to remove?") as null|anything in list(boots,tank,helmet)
 			if(!choice) return
@@ -257,10 +263,10 @@
 			boots = W
 			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		return
-	if(istype(W,/obj/item/weapon/tank))
+	if(istype(W,/obj/item/tank))
 		if(tank)
 			to_chat(user, "\The [src] already has an airtank installed.")
-		else if(istype(W,/obj/item/weapon/tank/plasma))
+		else if(istype(W,/obj/item/tank/plasma))
 			to_chat(user, "\The [W] cannot be inserted into \the [src]'s storage compartment.")
 		else
 			to_chat(user, "You insert \the [W] into \the [src]'s storage compartment.")

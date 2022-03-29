@@ -13,7 +13,7 @@
 	var/list/channels = list()
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
 
-/obj/item/device/encryptionkey/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/encryptionkey/attackby(obj/item/W as obj, mob/user as mob)
 
 /obj/item/device/encryptionkey/syndicate
 	icon_state = "cypherkey"
@@ -28,14 +28,14 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2)
 
 /obj/item/device/encryptionkey/headset_bs
-	name = "security radio encryption key"
+	name = "blackshield radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list( "Blackshield" = 1, "Marshal" = 1)
+	channels = list("Blackshield" = 1)// "Marshal" = 1 removed do to blackshield being marshals illegal
 
 /obj/item/device/encryptionkey/headset_mar
 	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list( "Marshal" = 1, "Blackshield" = 1)
+	channels = list("Marshal" = 1, "Blackshield" = 1)
 
 /obj/item/device/encryptionkey/headset_eng
 	name = "guild radio encryption key"
@@ -87,6 +87,7 @@
 	name = "research overseer's encryption key"
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
+	translate_binary = 1
 
 /obj/item/device/encryptionkey/heads/moebius
 	name = "soteria command encryption key"

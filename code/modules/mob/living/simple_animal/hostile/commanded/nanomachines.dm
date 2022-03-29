@@ -4,7 +4,8 @@
 /mob/living/simple_animal/hostile/commanded/nanomachine
 	name = "swarm"
 	desc = "a cloud of tiny, tiny robots."
-	icon_state = "blobsquiggle_grey"
+	icon = 'icons/mob/mobs-roach.dmi'
+	icon_state = "naniteswarm"
 	health = 10
 	maxHealth = 10
 	var/regen_time = 0
@@ -12,10 +13,15 @@
 	melee_damage_upper = 2
 	var/emergency_protocols = 0
 	known_commands = list("stay", "stop", "attack", "follow", "heal", "emergency protocol")
-
+	needs_environment = FALSE
 	response_help = "waves their hands through"
 	response_harm = "hits"
 	response_disarm = "fans at"
+
+
+/mob/living/simple_animal/hostile/commanded/nanomachine/emp_act(severity)
+	..()
+	qdel(src)
 
 /mob/living/simple_animal/hostile/commanded/nanomachine/Life()
 	regen_time++

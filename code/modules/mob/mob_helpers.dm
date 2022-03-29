@@ -141,14 +141,19 @@ var/list/global/organ_rel_size = list(
 		if(target.buckled || target.lying)
 			return zone
 		// if your target is being grabbed aggressively by someone you cannot miss either
-		for(var/obj/item/weapon/grab/G in target.grabbed_by)
+		for(var/obj/item/grab/G in target.grabbed_by)
 			if(G.state >= GRAB_AGGRESSIVE)
 				return zone
 
 	var/miss_chance = 10
 	if (zone in base_miss_chance)
 		miss_chance = base_miss_chance[zone]
-	miss_chance = max(miss_chance + miss_chance_mod, 0)
+	
+	//See-through people are harder to hit
+	if(CLOAKING in target.mutations)
+		miss_chance += 15
+
+	miss_chance = clamp(miss_chance + miss_chance_mod, 0, 90)
 	if(prob(miss_chance))
 		if(prob(70))
 			return null
@@ -520,24 +525,24 @@ proc/is_blind(A)
 		return SAFE_PERP
 
 	//Agent cards lower threatlevel.
-	var/obj/item/weapon/card/id/id = GetIdCard()
-	if(id && istype(id, /obj/item/weapon/card/id/syndicate))
+	var/obj/item/card/id/id = GetIdCard()
+	if(id && istype(id, /obj/item/card/id/syndicate))
 		threatcount -= 2
 	// A proper	CentCom id is hard currency.
-	else if(id && istype(id, /obj/item/weapon/card/id/centcom))
+	else if(id && istype(id, /obj/item/card/id/centcom))
 		return SAFE_PERP
 
 	if(check_access && !access_obj.allowed(src))
 		threatcount += 4
 
 	if(auth_weapons && !access_obj.allowed(src))
-		if(istype(l_hand, /obj/item/weapon/gun) || istype(l_hand, /obj/item/weapon/melee))
+		if(istype(l_hand, /obj/item/gun) || istype(l_hand, /obj/item/melee))
 			threatcount += 4
 
-		if(istype(r_hand, /obj/item/weapon/gun) || istype(r_hand, /obj/item/weapon/melee))
+		if(istype(r_hand, /obj/item/gun) || istype(r_hand, /obj/item/melee))
 			threatcount += 4
 
-		if(istype(belt, /obj/item/weapon/gun) || istype(belt, /obj/item/weapon/melee))
+		if(istype(belt, /obj/item/gun) || istype(belt, /obj/item/melee))
 			threatcount += 2
 
 		if(species.name != "Human")
@@ -571,7 +576,7 @@ proc/is_blind(A)
 
 #undef SAFE_PERP
 
-/mob/proc/get_multitool(var/obj/item/weapon/tool/multitool/P)
+/mob/proc/get_multitool(var/obj/item/tool/multitool/P)
 	if(istype(P))
 		return P
 

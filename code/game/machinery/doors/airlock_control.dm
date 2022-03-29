@@ -7,11 +7,7 @@
 	var/shockedby = list()
 	var/datum/radio_frequency/radio_connection
 	var/cur_command = null	//the command the door is currently attempting to complete
-
-/obj/machinery/door/airlock/Process()
-	..()
-	if (arePowerSystemsOn())
-		execute_current_command()
+	var/completing = FALSE
 
 /obj/machinery/door/airlock/receive_signal(datum/signal/signal)
 	if (!arePowerSystemsOn()) return //no power
@@ -32,8 +28,14 @@
 		return
 
 	do_command(cur_command)
-	if (command_completed(cur_command))
+	if(command_completed(cur_command))
+		completing = FALSE
 		cur_command = null
+		return TRUE
+	if(!completing)
+		addtimer(CALLBACK(src , .proc/execute_current_command), 2 SECONDS) // Fuck it , try again.
+		completing = TRUE
+	return FALSE
 
 /obj/machinery/door/airlock/proc/do_command(var/command)
 	switch(command)
@@ -60,7 +62,6 @@
 		if("secure_close")
 			unlock()
 			close()
-
 			lock()
 			sleep(2)
 
@@ -156,7 +157,7 @@
 	name = "airlock sensor"
 
 	anchored = 1
-	power_channel = ENVIRON
+	power_channel = STATIC_ENVIRON
 
 	var/id_tag
 	var/master_tag
@@ -305,7 +306,7 @@
 	name = "access button"
 
 	anchored = 1
-	power_channel = ENVIRON
+	power_channel = STATIC_ENVIRON
 
 	var/master_tag
 	var/frequency = 1449
@@ -324,7 +325,7 @@
 
 /obj/machinery/access_button/attackby(obj/item/I as obj, mob/user as mob)
 	//Swiping ID on the access button
-	if (istype(I, /obj/item/weapon/card/id) || istype(I, /obj/item/modular_computer))
+	if (istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
 		attack_hand(user)
 		return
 	..()

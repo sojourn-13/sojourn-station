@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/revolver/tacticool_revolver
+/obj/item/gun/projectile/revolver/tacticool_revolver
 	name = "\"Tacticool\" heavy revolver"
 	desc = "When people complained that the mataba was impractical due to its wrist snapping recoil Scarborough Arms decided what it really needed was a tactical scope for sniping. Uses .50 kurtz."
 	icon = 'icons/obj/guns/projectile/tacticool_revolver.dmi'
@@ -15,4 +15,4 @@
 	zoom_factor = 1.3
 	recoil_buildup = 4 //Less recoil due to the weight of the scope.
 	one_hand_penalty = 15
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)

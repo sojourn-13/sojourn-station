@@ -7,13 +7,13 @@
 	icon_state = "sleeper_0"
 	density = 1
 	anchored = 1
-	circuit = /obj/item/weapon/circuitboard/sleeper
+	circuit = /obj/item/circuitboard/sleeper
 	var/scanning = 2 // How many units are we removing per filter cycle? - Basic has 2 Scanners
 	var/mob/living/carbon/human/occupant = null
 	var/list/available_chemicals
 	var/list/level0 = list(
 		"inaprovaline" = "Inaprovaline", "stoxin" = "Soporific", "paracetamol" = "Paracetamol", "anti_toxin" = "Dylovene", "dexalin" = "Dexalin")
-	var/obj/item/weapon/reagent_containers/glass/beaker = null
+	var/obj/item/reagent_containers/glass/beaker = null
 	var/filtering = 0 //FALSE
 	var/pump
 
@@ -34,13 +34,13 @@
 	icon_state = "sleeper_0"
 	scanning = 4 //Hyper has 4 scanners.
 	color = "#a4bdba"
-	circuit = /obj/item/weapon/circuitboard/sleeper/hyper
+	circuit = /obj/item/circuitboard/sleeper/hyper
 	level0 = list(
 		"tricordrazine" ="Tricordrazine", "tramadol" = "Tramadol", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline", "carthatoline" = "Carthatoline", "peridaxon" = "Peridaxon")
 
 /obj/machinery/sleeper/Initialize()
 	. = ..()
-	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
 	update_icon()
 	RefreshParts()
 
@@ -48,7 +48,7 @@
 	..()
 	var/man_rating = 0
 	var/man_amount = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
 		man_amount++
 	man_rating -= man_amount
@@ -70,7 +70,7 @@
 
 	var/scanning_rating = 0
 	var/scanning_amount = 0
-	for(var/obj/item/weapon/stock_parts/scanning_module/S in component_parts)
+	for(var/obj/item/stock_parts/scanning_module/S in component_parts)
 		scanning_rating += S.rating
 		scanning_amount++
 	scanning_rating -= scanning_amount
@@ -106,16 +106,16 @@
 	icon_state = "sleeper_[occupant ? "1" : "0"]"
 
 /obj/machinery/sleeper/attack_hand(var/mob/user)
-	if(user.stats?.getPerk(PERK_MEDICAL_EXPERT) || !usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT))
+	if(!user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_ADEPT) && !usr.stat_check(STAT_COG, 50)) //Are we missing the perk AND to low on bio? Needs bio 25 so cog 50 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
 	if(..())
 		return 1
 
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/sleeper/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/sleeper/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
 	var/data[0]
 
 	data["power"] = stat & (NOPOWER|BROKEN) ? 0 : 1
@@ -193,7 +193,7 @@
 
 /obj/machinery/sleeper/attackby(var/obj/item/I, var/mob/user)
 	add_fingerprint(user)
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	if(istype(I, /obj/item/reagent_containers/glass))
 		if(!beaker)
 			beaker = I
 			user.drop_item()
@@ -256,6 +256,14 @@
 		return
 	if(occupant)
 		to_chat(user, SPAN_WARNING("\The [src] is already occupied."))
+		return
+
+	var/mob/living/carbon/human/H = M
+	if(H.species.reagent_tag == IS_SYNTHETIC)
+		if(M == user)
+			visible_message("\The [user] tries climbing into \the [src] but it refuses a synthetic life form.")
+		else
+			visible_message("\The [user] tries putting [M] into \the [src] but it refuses a synthetic life form.")
 		return
 
 	if(M == user)

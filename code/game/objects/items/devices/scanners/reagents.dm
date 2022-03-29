@@ -12,8 +12,12 @@
 	var/recent_fail = 0
 
 /obj/item/device/scanner/reagent/is_valid_scan_target(obj/O)
-	if(usr.stats?.getPerk(PERK_ADVANCED_MEDICAL) || !usr.stat_check(STAT_COG, STAT_LEVEL_BASIC))
+	if(!usr.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30))
 		to_chat(usr, SPAN_WARNING("Your cognitive understanding isn't high enough to use this!"))
+		return
+
+	// We don't scan clothing or boxes.
+	if(istype(O, /obj/item/clothing) && istype(O, /obj/item/storage))
 		return
 
 	return istype(O)

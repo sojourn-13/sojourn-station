@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/survivalrifle
+/obj/item/gun/projectile/automatic/survivalrifle
 	name = "\"Bond\" survival rifle"
 	desc = "A \"Bond\" marksman carbine manufactured by Hunters Inc. Compact, high velocity and high penetration despite its low fire rate. Uses the obscure 10x24 rounds."
 	icon = 'icons/obj/guns/projectile/survivalrifle.dmi'
@@ -12,10 +12,11 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
-	price_tag = 1000
+	price_tag = 1250
 	caliber = "10x24"
 	penetration_multiplier = 1.3
 	damage_multiplier = 1.1
+	extra_damage_mult_scoped = 0.5
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/m41_reload.ogg'
@@ -24,22 +25,12 @@
 	recoil_buildup = 12
 	one_hand_penalty = 20 //automatic rifle level
 
+	gun_tags = list(GUN_PROJECTILE, GUN_SIGHT, GUN_MAGWELL)
+
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY)
 
-/obj/item/ammo_magazine/rifle_10x24
-	name = "light rifle magazine"
-	desc = "A 20 round magazine marked for 10x24 rounds."
-	icon_state = "rifle"
-	mag_type = MAGAZINE
-	mag_well = MAG_WELL_RIFLE
-	matter = list(MATERIAL_STEEL = 8)
-	caliber = "10x24"
-	ammo_type = /obj/item/ammo_casing/c10x24
-	max_ammo = 20
-	multiple_sprites = 1
-
-/obj/item/weapon/gun/projectile/automatic/survivalrifle/update_icon()
+/obj/item/gun/projectile/automatic/survivalrifle/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]-full"
@@ -49,6 +40,6 @@
 		set_item_state()
 	return
 
-/obj/item/weapon/gun/projectile/automatic/survivalrifle/Initialize()
+/obj/item/gun/projectile/automatic/survivalrifle/Initialize()
 	. = ..()
 	update_icon()

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/avasarala
+/obj/item/gun/projectile/avasarala
 	name = "\"Avasarala\" heavy pistol"
 	desc = "An old weapon design, hyped up by its visual 'cool' factor but hardly good in any practical scenario. It's ineffective design and bafflingly badly done specs make it style over function all the way. Uses .50 kurtz."
 	icon = 'icons/obj/guns/projectile/avasarala.dmi'
@@ -11,16 +11,17 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1200 //Still worth alot despite being shit.
 	can_dual = TRUE
-	damage_multiplier = 0.9
+	damage_multiplier = 1
 	penetration_multiplier = 0.9
 	recoil_buildup = 8
-	one_hand_penalty = 15
-	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
+	one_hand_penalty = 12
+	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
-	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
+	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 
-/obj/item/weapon/gun/projectile/avasarala/update_icon()
+/obj/item/gun/projectile/avasarala/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -35,6 +36,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/basilisk/Initialize()
+/obj/item/gun/projectile/basilisk/Initialize()
 	. = ..()
 	update_icon()

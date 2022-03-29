@@ -3,6 +3,7 @@
 	icon_state = "bolt"
 	layer = ABOVE_MOB_LAYER
 	var/lifetime = 3
+	mouse_opacity = 0
 
 /obj/effect/projectile/New(var/turf/location)
 	init_plane()
@@ -19,7 +20,7 @@
 		qdel(src)	//see effect_system.dm - sets loc to null and lets GC handle removing these effects
 
 //----------------------------
-// Laser beam
+// Laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser/tracer
 	icon_state = "beam"
@@ -31,7 +32,7 @@
 	icon_state = "impact_laser"
 
 //----------------------------
-// Blue laser beam
+// Blue laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser_blue/tracer
 	icon_state = "beam_blue"
@@ -43,7 +44,7 @@
 	icon_state = "impact_blue"
 
 //----------------------------
-// Omni laser beam
+// Omni laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser_omni/tracer
 	icon_state = "beam_omni"
@@ -55,7 +56,7 @@
 	icon_state = "impact_omni"
 
 //----------------------------
-// Xray laser beam
+// Xray laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/xray/tracer
 	icon_state = "xray"
@@ -67,7 +68,7 @@
 	icon_state = "impact_xray"
 
 //----------------------------
-// Heavy laser beam
+// Heavy laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser_heavy/tracer
 	icon_state = "beam_heavy"
@@ -79,7 +80,7 @@
 	icon_state = "impact_beam_heavy"
 
 //----------------------------
-// Pulse laser beam
+// Pulse laser beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/laser_pulse/tracer
 	icon_state = "u_laser"
@@ -97,7 +98,7 @@
 	icon_state = "muzzle_pulse"
 
 //----------------------------
-// Emitter beam
+// Emitter beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/emitter/tracer
 	icon_state = "emitter"
@@ -109,7 +110,7 @@
 	icon_state = "impact_emitter"
 
 //----------------------------
-// Stun beam
+// Stun beam - Sprited by INFRARED_BARON
 //----------------------------
 /obj/effect/projectile/stun/tracer
 	icon_state = "stun"
@@ -119,6 +120,19 @@
 
 /obj/effect/projectile/stun/impact
 	icon_state = "impact_stun"
+
+//----------------------------
+// Tesla beam
+//----------------------------
+/obj/effect/projectile/tesla/New()
+	..()
+	icon_state = "lightning[rand(1,12)]"
+
+/obj/effect/projectile/tesla/tracer
+
+/obj/effect/projectile/tesla/muzzle
+
+/obj/effect/projectile/tesla/impact
 
 //----------------------------
 // Bullet
@@ -131,6 +145,10 @@
 //----------------------------
 /obj/effect/projectile/plasma/muzzle
 	icon_state = "muzzle_plasma"
+
+/obj/effect/projectile/plasma/muzzle/red
+	icon_state = "muzzle_plasma"
+	color = "#9D2300"
 
 /obj/effect/projectile/plasma/muzzle/light
 	icon_state = "muzzle_plasma_pink" //Hue shift of 168

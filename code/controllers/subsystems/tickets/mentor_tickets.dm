@@ -13,9 +13,9 @@ GLOBAL_REAL(SSmentor_tickets, /datum/controller/subsystem/tickets/mentor_tickets
 	ticket_help_type = "Mentorhelp"
 	ticket_help_span = "mentorhelp"
 	other_ticket_name = "Admin"
-	other_ticket_permission = R_ADMIN
-	close_rights = R_MENTOR | R_ADMIN
-	rights_needed = R_MENTOR | R_ADMIN | R_MOD
+	other_ticket_permission = R_ADMIN | R_MOD | R_DEBUG
+	close_rights = R_MOD | R_ADMIN | R_DEBUG
+	rights_needed = R_MENTOR | R_ADMIN | R_MOD | R_DEBUG
 
 /datum/controller/subsystem/tickets/mentor_tickets/Initialize()
 	close_messages = list("<font color='red' size='3'><b>- [ticket_name] Closed -</b></font>",

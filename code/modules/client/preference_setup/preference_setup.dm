@@ -264,6 +264,8 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 
 	. = OnTopic(href, href_list, usr)
 
+	sanitize_character()
+
 	// The user might have joined the game or otherwise had a change of mob while tweaking their preferences.
 	pref_mob = preference_mob()
 	if(!pref_mob || !pref_mob.client)

@@ -14,7 +14,7 @@
 	wage = WAGE_COMMAND
 
 	outfit_type = /decl/hierarchy/outfit/job/science/rd
-
+	playtimerequired = 1200
 	access = list(
 		access_rd, access_heads, access_tox, access_genetics, access_morgue,
 		access_tox_storage, access_teleporter, access_sec_doors,
@@ -31,7 +31,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert)
+	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci, /datum/perk/chemist)
 
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -71,7 +71,7 @@
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 
-	//alt_titles = list("Moebius Xenobiologist")
+	alt_titles = list("Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Assistant", "Soteria Geneticist")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
 
 	software_on_spawn = list(/datum/computer_file/program/signaller, /datum/computer_file/program/chem_catalog)
@@ -80,6 +80,8 @@
 		access_robotics, access_tox, access_tox_storage, access_moebius, access_xenobiology, access_xenoarch, access_research_equipment,
 		access_genetics, access_medical_suits
 	)
+
+	perks = list(/datum/perk/si_sci, /datum/perk/chemist) //We do hydro?
 
 	stat_modifiers = list(
 		STAT_MEC = 20,
@@ -113,6 +115,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Research Overseer"
 	difficulty = "Medium."
+	alt_titles = list("Soteria Junior Roboticist","Soteria Cyberneticist","Soteria Mechanist","Soteria Biomechanical Engineer")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE
@@ -131,7 +134,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert)
+	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
 
 	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
 	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\

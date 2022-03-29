@@ -27,17 +27,174 @@
 	icon_state = "greenutility"
 	item_state = "greenutility"
 
+/obj/item/clothing/under/rank/fatigues/green/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Green Utility Uniform"] = "greenutility"
+	options["Green Utility Uniform Alt"] = "greenutility_alt"
+	options["Green Utility Uniform Corpsman"] = "greenutility_Corpsman"
+	options["Green Utility Uniform Corpsman Alt"] = "greenutility_alt_med"
+	options["Green Utility Pans"] = "greenutility_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/fatigues/grey
 	name = "grey utility uniform"
 	desc = "A grey utility uniform, bearing the old marks of patches long since removed."
 	icon_state = "greyutility"
 	item_state = "greyutility"
 
+/obj/item/clothing/under/rank/fatigues/grey/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Grey Utility Uniform"] = "greyutility"
+	options["Grey Utility Uniform Alt"] = "greyutility_alt"
+	options["Grey Utility Pans"] = "greyutility_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/fatigues/navy
 	name = "navy utility uniform"
 	desc = "A navy utility uniform, bearing the old marks of patches long since removed."
 	icon_state = "navyutility"
 	item_state = "navyutility"
+
+/obj/item/clothing/under/rank/fatigues/navy/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Navy Utility Uniform"] = "navyutility"
+	options["Navy Utility Uniform Alt"] = "navyutility_alt"
+	options["Navy Utility Pans"] = "navyutility_pants"
+	options["Dark Utility Pans"] = "blackutility_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/rank/fatigues/tan
+	name = "tan utility uniform"
+	desc = "A tan utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "tanutility"
+	item_state = "tanutility"
+
+/obj/item/clothing/under/rank/fatigues/tan/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Tan Utility Uniform"] = "tanutility"
+	options["Tan Utility Uniform Alt"] = "tanutility_alt"
+	options["Tan Utility Pans"] = "tanutility_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/rank/fatigues/camo
+	name = "camo utility uniform"
+	desc = "A camo utility uniform, bearing the old marks of patches long since removed."
+	icon_state = "camoutility"
+	item_state = "camoutility"
+
+/obj/item/clothing/under/rank/fatigues/camo/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Camo Utility Uniform"] = "camoutility"
+	options["Camo Utility Uniform Corpsman Alt"] = "camoutility_alt_med"
+	options["Camo Utility Uniform Alt"] = "camoutility_alt"
+	options["Camo Utility Pans"] = "camoutility_pants"
+	options["Camo Utility Corpsman"] = "camoutility_med"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*
  * Trooper/Corpsman
@@ -47,6 +204,12 @@
 	name = "blackshield gorka suit"
 	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the insignia of the Blackshield."
 	icon_state = "gorka_ih"
+
+/obj/item/clothing/under/rank/trooper/skirt
+	name = "blackshield skirt"
+	desc = "A skirt in Blackshield colours and fitted for same attachments of shoulderboards. Sadly this likely will not help protect your feet or legs form cuts and scratches"
+	icon_state = "gorka_blackshield_skort"
+	item_state = "gorka_blackshield_skort"
 
 /obj/item/clothing/under/rank/trooper/green
 	name = "green blackshield gorka"
@@ -84,10 +247,27 @@
 	icon_state = "gorka_ih_med_b"
 	item_state = "gorka_ih_med_b"
 	permeability_coefficient = 0.50
-	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 	siemens_coefficient = 0.9
 
+/obj/item/clothing/under/rank/bdu/trooper
+	name = "Blackshield BDU"
+	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield."
+	icon_state = "bdubsstandard"
+	item_state = "bdubsstandard"
+
+/obj/item/clothing/under/rank/bdu/troopergreen
+	name = "Blackshield green BDU"
+	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield. This one is in a lovely olive drab."
+	icon_state = "bdubsgreen"
+	item_state = "bdubsgreen"
+
+/obj/item/clothing/under/rank/bdu/troopertan
+	name = "Blackshield tan BDU"
+	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield. This one is in shades of tan."
+	icon_state = "bdubstan"
+	item_state = "bdubstan"
 
 /*
  * Sergeant
@@ -95,12 +275,12 @@
 
 /obj/item/clothing/under/rank/armorer
 	name = "Sergeant's uniform"
-	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a blackshield sergeant."
+	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield Sergeant."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/armorer/green
 	name = "green sergeant's gorka"
-	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a blackshield sergeant."
+	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a Blackshield Sergeant."
 	icon_state = "gorka"
 	item_state = "gorka"
 
@@ -108,7 +288,7 @@
 	name = "tactical turtleneck"
 	desc = "A reinforced military turtleneck, designed to provide moderate combat protection."
 	icon_state = "syndicate"
-
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/instructor
@@ -143,6 +323,7 @@
 	name = "commander's combat uniform"
 	desc = "It's a uniform worn by those few with the dedication to achieve the position of \"Blackshield Commander\". It has additional armor to protect the wearer."
 	icon_state = "gorka_ih"
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0) // Let's not lie anymore about the armored aspect of it.
 
 	siemens_coefficient = 0.8
 

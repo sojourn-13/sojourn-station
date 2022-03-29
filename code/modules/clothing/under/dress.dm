@@ -200,6 +200,13 @@
 	item_state = "cheongsam-white"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
+/obj/item/clothing/under/sexymaid
+	name = "Skimpy maid dress"
+	desc = "More practical than latex, but still too short to of much use cleaning anything other than spears"
+	icon_state = "sexymaid"
+	item_state = "sexymaid"
+	price_tag = 45
+
 /*Skirts*/
 
 /obj/item/clothing/under/skirt/khaki
@@ -227,6 +234,16 @@
 	name = "short red skirt"
 	desc = "A short skirt with a shiny red design."
 	icon_state = "skirt_short_red"
+
+/obj/item/clothing/under/skirt/pleated
+	name = "pleated skirt"
+	desc = "A short, grey pleated skirt"
+	icon_state = "pleated"
+
+/obj/item/clothing/under/skirt/blackpleated
+	name = "black pleated skirt"
+	desc = "A short, black pleated skirt"
+	icon_state = "blackpleated"
 
 /obj/item/clothing/under/skirt
 	name = "swept skirt"

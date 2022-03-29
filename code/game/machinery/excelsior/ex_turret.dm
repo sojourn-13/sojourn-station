@@ -9,15 +9,19 @@
 	density = TRUE
 	lethal = TRUE
 	raised = TRUE
-	circuit = /obj/item/weapon/circuitboard/excelsior_turret
+	circuit = /obj/item/circuitboard/excelsior_turret
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/working_range = 30 // how far this turret operates from excelsior teleporter
-	health = 160
+	health = 300
+	maxHealth = 300
 	auto_repair = 1
 	shot_delay = 0.3
+
+/obj/machinery/porta_turret/excelsior/preloaded
+	ammo = 160
 
 /obj/machinery/porta_turret/excelsior/proc/has_power_source_nearby()
 	for (var/a in excelsior_teleporters)
@@ -48,7 +52,7 @@
 		return 0
 	return 1
 
-/obj/machinery/porta_turret/excelsior/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/porta_turret/excelsior/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
@@ -65,6 +69,7 @@
 	return FALSE
 
 /obj/machinery/porta_turret/excelsior/attackby(obj/item/ammo_magazine/I, mob/user)
+	log_and_message_admins(" - Exc Turret being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 	if(istype(I, ammo_box) && I.stored_ammo.len)
 		if(ammo >= ammo_max)
 			to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
@@ -113,6 +118,9 @@
 	if(is_excelsior(L))
 		return TURRET_NOT_TARGET
 
+	if(L.faction == "excelsior") //Dont target colony pets if were allied with them
+		return TURRET_NOT_TARGET
+
 	if(L.lying)
 		return TURRET_SECONDARY_TARGET
 
@@ -153,12 +161,12 @@
 	lethal = TRUE
 	raised = TRUE
 	colony_allied_turret = TRUE
-	circuit = /obj/item/weapon/circuitboard/artificer_turret
+	circuit = /obj/item/circuitboard/artificer_turret
 	installation = null
 	var/obj/item/ammo_magazine/ammo_box = /obj/item/ammo_magazine/ammobox/rifle_75
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 180
-	var/obj/item/weapon/cell/large/cell = null
+	var/obj/item/cell/large/cell = null
 	health = 150
 	auto_repair = 1
 	shot_delay = 3
@@ -202,7 +210,7 @@
 		return 0
 	return 1
 
-/obj/machinery/porta_turret/artificer/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/porta_turret/artificer/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/data[0]
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
@@ -229,7 +237,7 @@
 	return FALSE
 
 /obj/machinery/porta_turret/artificer/attackby(obj/item/I, mob/user)
-	if (user.a_intent != I_HURT)
+	if (user.a_intent == I_HELP)
 		if(stat & BROKEN)
 			if(QUALITY_PRYING in I.tool_qualities)
 				//If the turret is destroyed, you can remove it with a crowbar to
@@ -239,7 +247,7 @@
 					if(prob(70))
 						to_chat(user, SPAN_NOTICE("You remove the turret and salvage some components."))
 						if(prob(50))
-							new /obj/item/weapon/circuitboard/artificer_turret(loc)
+							new /obj/item/circuitboard/artificer_turret(loc)
 						if(prob(50))
 							new /obj/item/stack/material/steel(loc, rand(1,4))
 						if(prob(50))
@@ -247,14 +255,15 @@
 					else
 						to_chat(user, SPAN_NOTICE("You remove the turret but did not manage to salvage anything."))
 					qdel(src) // qdel
+				return TRUE //No whacking the turret with tools on help intent
 
 		else if(QUALITY_BOLT_TURNING in I.tool_qualities)
 			if(enabled)
 				to_chat(user, SPAN_WARNING("You cannot unsecure an active turret!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 			if(!anchored && isinspace())
 				to_chat(user, SPAN_WARNING("Cannot secure turrets in space!"))
-				return
+				return TRUE //No whacking the turret with tools on help intent
 
 			user.visible_message( \
 					"<span class='warning'>[user] begins [anchored ? "un" : ""]securing the turret.</span>", \
@@ -281,8 +290,9 @@
 					to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the turret."))
 					update_icon()
 			wrenching = 0
+			return TRUE //No whacking the turret with tools on help intent
 
-		else if(istype(I, /obj/item/weapon/cell/large))
+		else if(istype(I, /obj/item/cell/large))
 			if(cell)
 				to_chat(user, "<span class='notice'>\the [src] already has a cell.</span>")
 			else
@@ -290,12 +300,13 @@
 				I.forceMove(src)
 				cell = I
 				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
+			return TRUE //No whacking the turret with cells on help intent
 
-		else if(istype(I, ammo_box) && I:stored_ammo.len)
+		else if(istype(I, ammo_box) && I?:stored_ammo?:len)
 			var/obj/item/ammo_magazine/A = I
 			if(ammo >= ammo_max)
 				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))
-				return
+				return TRUE //No whacking the turret with ammo boxes on help intent
 
 			var/transfered_ammo = 0
 			for(var/obj/item/ammo_casing/AC in A.stored_ammo)
@@ -306,6 +317,7 @@
 				if(ammo == ammo_max)
 					break
 			to_chat(user, SPAN_NOTICE("You loaded [transfered_ammo] bullets into [src]. It now contains [ammo] ammo."))
+			return TRUE //No whacking the turret with ammo boxes on help intent
 
 	else
 		..()
@@ -393,7 +405,7 @@
 /obj/machinery/porta_turret/artificer/opifex
 	name = "opifex scrap turret"
 	desc = "A fully automated battery powered anti-wildlife turret designed by the opifex. It features a three round burst barrel and isn't as sturdy nor as functional as other turrets. Fires 7.5mm rounds and holds only a measly 30 rounds."
-	circuit = /obj/item/weapon/circuitboard/artificer_turret/opifex
+	circuit = /obj/item/circuitboard/artificer_turret/opifex
 	ammo_max = 30
 	health = 75
 
@@ -408,7 +420,7 @@
 					if(prob(70))
 						to_chat(user, SPAN_NOTICE("You remove the turret and salvage some components."))
 						if(prob(50))
-							new /obj/item/weapon/circuitboard/artificer_turret/opifex(loc)
+							new /obj/item/circuitboard/artificer_turret/opifex(loc)
 						if(prob(50))
 							new /obj/item/stack/material/steel(loc, rand(1,4))
 						if(prob(50))
@@ -451,7 +463,7 @@
 					update_icon()
 			wrenching = 0
 
-		else if(istype(I, /obj/item/weapon/cell/large))
+		else if(istype(I, /obj/item/cell/large))
 			if(cell)
 				to_chat(user, "<span class='notice'>\the [src] already has a cell.</span>")
 			else
@@ -460,7 +472,7 @@
 				cell = I
 				to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
 
-		else if(istype(I, ammo_box) && I:stored_ammo.len)
+		else if(istype(I, ammo_box) && I?:stored_ammo?:len)
 			var/obj/item/ammo_magazine/A = I
 			if(ammo >= ammo_max)
 				to_chat(user, SPAN_NOTICE("You cannot load more than [ammo_max] ammo."))

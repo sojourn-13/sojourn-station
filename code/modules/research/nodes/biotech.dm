@@ -13,7 +13,9 @@
 
 	unlocks_designs = list(	/datum/design/research/item/part/micro_mani,
 							/datum/design/research/item/part/basic_sensor,
-							/datum/design/research/item/medical/autopsy_scanner
+							/datum/design/research/item/medical/autopsy_scanner,
+							/datum/design/research/item/beaker/smoll,
+							/datum/design/research/item/beaker/big
 						)
 
 /datum/technology/medical_cooling
@@ -27,7 +29,7 @@
 
 	required_technologies = list(/datum/technology/ice_and_fire, /datum/technology/basic_biotech)
 	required_tech_levels = list()
-	cost = 500 //
+	cost = 375
 
 	unlocks_designs = list(	/datum/design/research/item/medical/cryobag,
 							/datum/design/research/item/medical/red,
@@ -45,7 +47,7 @@
 
 	required_technologies = list(/datum/technology/basic_biotech)
 	required_tech_levels = list()
-	cost = 200
+	cost = 150
 
 	unlocks_designs = list(	/datum/design/research/circuit/med_data,
 							/datum/design/research/circuit/operating,
@@ -78,10 +80,12 @@
 
 	required_technologies = list(/datum/technology/basic_med_machines)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
 	unlocks_designs = list(/datum/design/research/circuit/sleeper,
-							/datum/design/research/item/medical/compact_roller_bed)
+							/datum/design/research/circuit/slime_compresser,
+							/datum/design/research/item/medical/compact_roller_bed,
+							/datum/design/research/circuit/sleeper)
 
 /datum/technology/hydroponics
 	name = "Hydroponics"
@@ -94,11 +98,15 @@
 
 	required_technologies = list(/datum/technology/basic_biotech)
 	required_tech_levels = list()
-	cost = 400
+	cost = 300
 
 	unlocks_designs = list(	/datum/design/research/circuit/biogenerator,
+							/datum/design/research/circuit/extractor,
+							/datum/design/research/circuit/seed_extractor,
+							/datum/design/research/circuit/editor,
 							/datum/design/research/item/weapon/flora_gun,
-							/datum/design/research/item/botany_disk)
+							/datum/design/research/item/botany_disk
+							)
 
 /datum/technology/portable_chemistry
 	name = "Portable Chemistry"
@@ -113,15 +121,17 @@
 									/datum/technology/hydroponics
 								)
 	required_tech_levels = list()
-	cost = 700
+	cost = 525
 
 	unlocks_designs = list(	/datum/design/research/circuit/chemmaster,
 							/datum/design/research/circuit/chemical_dispenser,
 							/datum/design/research/circuit/chem_heater,
 							/datum/design/research/item/makeshift_centrifuge,
 							/datum/design/research/structure/bidon,
-							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade,
-							/datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
+							/datum/design/research/item/computer_part/medical,
+							/datum/design/research/item/computer_part/reagent,
+							/datum/design/research/item/robot_upgrade/medical_hypo_upgrade
+							//datum/design/research/item/robot_upgrade/rescue_hypo_upgrade
 							)
 /*
 /datum/technology/basic_food_processing
@@ -165,7 +175,7 @@
 
 	required_technologies = list(/datum/technology/adv_med_machines)
 	required_tech_levels = list()
-	cost = 500
+	cost = 375
 
 	unlocks_designs = list(	/datum/design/research/item/medical/mass_spectrometer,
 							/datum/design/research/item/medical/reagent_scanner,
@@ -186,11 +196,19 @@
 
 	required_technologies = list(/datum/technology/basic_medical_tools)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/item/implant/chemical,
 							/datum/design/research/item/part/adv_sensor,
 							/datum/design/research/item/part/nano_mani,
+							/datum/design/research/item/fire_kit,
+							/datum/design/research/item/regular_kit,
+							/datum/design/research/item/toxin_kit,
+							/datum/design/research/item/o2_kit,
+							/datum/design/research/item/adv_kit,
+							/datum/design/research/item/surgery_kit,
+							/datum/design/research/item/drill_s_adv,
+							/datum/design/research/item/scalpel_adv,
 							/datum/design/research/item/bonesetter_adv,
 							/datum/design/research/item/cautery_adv,
 							/datum/design/research/item/hemostat_adv,
@@ -211,16 +229,33 @@
 								/datum/technology/portable_chemistry
 								)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/item/autodoc,
 							/datum/design/research/item/autodoc_commercial,
 							/datum/design/research/item/chem_dispenser,
 							/datum/design/research/item/medhud,
 							/datum/design/research/structure/bidonadv,
+							/datum/design/research/structure/bidontrigger,
 							/datum/design/research/item/medical/compact_defibs,
-							/datum/design/research/item/implant/alarm
+							/datum/design/research/item/implant/alarm,
+							/datum/design/research/item/petite_scanner
 							)
+
+/datum/technology/tracker_tablet
+	name = "Tracker tablet"
+	desc = "Modified tablet frame with extra screens for use with sensor monitoring software."
+	tech_type = RESEARCH_BIOTECH
+
+	x = 0.55
+	y = 0.9
+	icon = "moetablet"
+
+	required_technologies = list(/datum/technology/portable_biotech)
+	required_tech_levels = list()
+	cost = 1000
+
+	unlocks_designs = list(/datum/design/research/item/tracker_tablet)
 
 /*
 /datum/technology/med_teleportation
@@ -249,7 +284,7 @@
 
 	required_technologies = list(/datum/technology/improved_biotech)
 	required_tech_levels = list()
-	cost = 1000
+	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/item/part/phasic_sensor,
 							/datum/design/research/item/part/pico_mani,
@@ -273,12 +308,13 @@
 									/datum/technology/portable_biotech
 								)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(
 							/datum/design/research/item/mechfab/modules/multitool/surgical,
 							/datum/design/research/item/mechfab/modules/multitool/engineer,
 							/datum/design/research/item/mechfab/modules/multitool/miner,
+							/datum/design/research/item/mechfab/modules/multitool/farmer,
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_arm,
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_arm,
 							/datum/design/research/item/mechfab/prosthesis_moebius/r_leg,
@@ -297,37 +333,23 @@
 	y = 0.9
 	icon = "scalpelmanager"
 
-	required_technologies = list(	/datum/technology/top_biotech,
-									/datum/technology/mind_biotech
+	required_technologies = list(	/datum/technology/top_biotech
 								)
 	required_tech_levels = list()
-	cost = 2000
+	cost = 1500
 
 	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/armor,
 							/datum/design/research/item/mechfab/modules/armblade,
+							/datum/design/research/item/mechfab/modules/wolverine,
 							/datum/design/research/item/mechfab/modules/energy_blade,
+							/datum/design/research/item/mechfab/modules/taser,
+							/datum/design/research/item/mechfab/modules/armsmg,
+							/datum/design/research/item/mechfab/modules/armshield,
 							/datum/design/research/item/mechfab/modules/runner,
 							/datum/design/research/item/mechfab/modules/hud/med,
 							/datum/design/research/item/mechfab/modules/hud/sec,
 							/datum/design/research/item/mechfab/modules/hud/welder
 							)
-
-
-/datum/technology/mind_biotech
-	name = "Mind Biotech"
-	desc = "Experimental biotechnology that explores the inner workings of sentient minds."
-	tech_type = RESEARCH_BIOTECH
-
-	x = 0.7
-	y = 0.6
-	icon = "mindswapper"
-
-	required_technologies = list(	/datum/technology/top_biotech)
-
-	required_tech_levels = list()
-	cost = 4000
-
-	unlocks_designs = list(	/datum/design/research/circuit/mindswapper)
 
 /datum/technology/rig_medical_stuff
 	name = "RIG Medical Addaptation"
@@ -342,7 +364,7 @@
 									/datum/technology/rig_industeral
 								)
 	required_tech_levels = list()
-	cost = 5000
+	cost = 3750
 
 	unlocks_designs = list(	/datum/design/research/item/chem_injector,
 							/datum/design/research/item/healthscanner,
@@ -361,7 +383,7 @@
 	required_technologies = list(	/datum/technology/rig_medical_stuff
 								)
 	required_tech_levels = list()
-	cost = 300
+	cost = 225
 
 	unlocks_designs = list(	/datum/design/research/item/medical/medimplant_sci
 							)

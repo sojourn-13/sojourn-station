@@ -1,5 +1,5 @@
-/obj/item/weapon/grenade/frag
-	name = "NT DF grenade \"Pomme\""
+/obj/item/grenade/frag
+	name = "SA DF grenade \"Pomme\""
 	desc = "A military-grade defensive fragmentation grenade, designed to be thrown from cover."
 	icon_state = "frag"
 	item_state = "frggrenade"
@@ -13,7 +13,7 @@
 	//The radius of the circle used to launch projectiles. Lower values mean less projectiles are used but if set too low gaps may appear in the spread pattern
 	var/spread_range = 7
 
-/obj/item/weapon/grenade/frag/prime()
+/obj/item/grenade/frag/prime()
 	set waitfor = 0
 	..()
 
@@ -36,7 +36,7 @@
 
 	qdel(src)
 
-/obj/item/weapon/grenade/frag/nt
+/obj/item/grenade/frag/nt
 	name = "NT DF grenade \"Holy Thunder\""
 	desc = "A military-grade defensive fragmentation grenade, designed to be thrown from cover."
 	icon_state = "frag_nt"
@@ -44,3 +44,22 @@
 	matter = list(MATERIAL_BIOMATTER = 75)
 	fragment_damage = 7
 	damage_step = 3
+
+/obj/item/grenade/frag/stinger
+	name = "Seinemetall Defense GmbH \"Stinger\""
+	desc = "A repurposed fragmentation grenade loaded in rubbers fragments, ready to serve the public trust. Lethal if used ontop of someone."
+	icon_state = "stinger"
+	item_state = "stinger"
+	loadable = TRUE
+	num_fragments = 70
+	fragment_type = /obj/item/projectile/bullet/pellet/fragment/rubber
+
+/obj/item/grenade/frag/pipebomb
+	name = "improvised pipebomb"
+	desc = "A jury rigged medium cell filled with plasma. Throw at authorities."
+	icon_state = "frag_pipebomb"
+	item_state = "fraggrenade_pipebomb"
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 2, MATERIAL_PLASMA = 2, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 2)
+	num_fragments = 25
+	fragment_damage = 10
+	damage_step = 5

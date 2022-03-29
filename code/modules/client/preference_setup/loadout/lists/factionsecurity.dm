@@ -7,14 +7,21 @@
 
 /datum/gear/factionsecurity/beretcommander
 	display_name = "beret, security head"
-	path = /obj/item/clothing/head/rank/commander/beret
-	allowed_roles = list("Blackshield Commander","Warrant Officer")
+	path = /obj/item/clothing/head/rank/commander
+	allowed_roles = list("Warrant Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/beretironhammer
 	display_name = "beret, security"
 	path = /obj/item/clothing/head/rank/ironhammer
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_head
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/berettrooper
+	display_name = "beret, blackshield"
+	path = /obj/item/clothing/head/rank/trooper/beret
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_head
 	sort_category = "Faction: Security"
@@ -66,7 +73,29 @@
 	allowed_roles = list("Supply Specialist", "Sergeant")
 	sort_category = "Faction: Security"
 
-/datum/gear/factionSecurity/gorka_ih
+/datum/gear/factionsecurity/captrooper
+	display_name = "cap, blackshield"
+	path = /obj/item/clothing/head/rank/trooper/cap
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_head
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/bdu
+	display_name = "security BDU selection"
+	path = /obj/item/clothing/under/rank/bdu
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	flags = GEAR_HAS_TYPE_SELECTION
+	slot = slot_w_uniform
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/turtleneck
+	display_name = "Marshal turtleneck"
+	path = /obj/item/clothing/under/rank/security/turtleneck
+	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
+	slot = slot_w_uniform
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/gorka_ih
 	display_name = "gorka jacket, security"
 	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
@@ -129,6 +158,13 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/cadet
+	display_name = "uniform, cadet"
+	path = /obj/item/clothing/under/rank/trooper/cadet
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_w_uniform
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/inspector
 	display_name = "uniform, patrol"
 	path = /obj/item/clothing/under/rank/inspector/uniform
@@ -164,12 +200,27 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/jumpskirttrooper
+	display_name = "jumpskirt, blackshield"
+	path = /obj/item/clothing/under/rank/trooper/skirt
+	allowed_roles = list("Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_w_uniform
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/security
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security
 	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_glasses
 	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/security_tact
+	display_name = "tactical security HUD"
+	path = /obj/item/clothing/glasses/sechud/tactical
+	allowed_roles = list(JOBS_SECURITY)
+	slot = slot_glasses
+	sort_category = "Faction: Security"
+	cost = 2 //has flash protection
 
 /datum/gear/factionsecurity/fatigueselection
 	display_name = "fatigue selection"
@@ -201,31 +252,10 @@
 	slot = slot_shoes
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/ihcgreatcoat
-	display_name= "greatcoat, commander"
-	path = /obj/item/clothing/suit/greatcoat/ihc
-	allowed_roles = list("Warrant Officer")
-	slot = slot_wear_suit
-	flags = GEAR_HAS_TYPE_SELECTION
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/ihcgreatcoatblue
-	display_name= "blue greatcoat, commander"
-	path = /obj/item/clothing/suit/greatcoat/ihc_blue
-	allowed_roles = list("Warrant Officer")
+/datum/gear/factionsecurity/armoredcossackcoat
+	display_name = "jaeger hussar coat"
+	path = /obj/item/clothing/suit/greatcoat/cossackarmoredcoat
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/ihcgreatcoatblue_cloak
-	display_name= "blue cloaked greatcoat, commander"
-	path = /obj/item/clothing/suit/greatcoat/ihc/ihc_coat_cloak
-	allowed_roles = list("Warrant Officer")
-	slot = slot_wear_suit
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/ihccap
-	display_name= "cap, commander"
-	path = /obj/item/clothing/head/rank/commander/cap
-	allowed_roles = list("Warrant Officer")
-	slot = slot_head
-	sort_category = "Faction: Security"
+	cost = 2

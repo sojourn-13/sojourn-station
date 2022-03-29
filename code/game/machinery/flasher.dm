@@ -48,8 +48,9 @@
 //		src.sd_SetLuminosity(0)
 
 //Don't want to render prison breaks impossible
-/obj/machinery/flasher/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/weapon/tool/wirecutters))
+/obj/machinery/flasher/attackby(obj/item/W as obj, mob/user as mob)
+	var/tool_type = W.get_tool_type(user, list(QUALITY_WIRE_CUTTING), src)
+	if(tool_type == QUALITY_WIRE_CUTTING)
 		add_fingerprint(user)
 		src.disable = !src.disable
 		if (src.disable)
@@ -120,8 +121,9 @@
 		else if (src.anchored)
 			src.flash()
 
-/obj/machinery/flasher/portable/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/weapon/tool/wrench))
+/obj/machinery/flasher/portable/attackby(obj/item/W as obj, mob/user as mob)
+	var/tool_type = W.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
+	if(tool_type == QUALITY_BOLT_TURNING)
 		add_fingerprint(user)
 		src.anchored = !src.anchored
 
@@ -147,7 +149,7 @@
 	active = 1
 	icon_state = "launcher1"
 
-	for(var/obj/machinery/flasher/M in SSmachines.machinery)
+	for(var/obj/machinery/flasher/M in GLOB.machines)
 		if(M.id == src.id)
 			spawn()
 				M.flash()

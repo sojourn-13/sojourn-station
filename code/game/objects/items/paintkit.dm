@@ -80,7 +80,7 @@
 	for(var/exotype in allowed_types)
 		to_chat(usr, "- [capitalize(exotype)]")
 
-/obj/mecha/attackby(var/obj/item/weapon/W, var/mob/user)
+/obj/mecha/attackby(var/obj/item/W, var/mob/user)
 	if(istype(W, /obj/item/device/kit/paint))
 		if(occupant)
 			to_chat(user, "You can't customize a mech while someone is piloting it - that would be unsafe!")
@@ -178,6 +178,13 @@
 	new_desc = "A fancy APLU exosuit paint job consisting of blue chrome and glowing red lights, perfect for pretending to be a combat mech."
 	new_icon = "combatripley"
 
+/obj/item/device/kit/paint/ripley/flathead
+	name = "\"Flathead\" APLU customization kit"
+	new_name = "\"Flathead\" APLU"
+	new_desc = "A fancy APLU exosuit paint job which add a fanceir head to any ripley."
+	new_icon_file = 'icons/mecha/mecha40.dmi'
+	new_icon = "flathead"
+
 //Clark models
 /obj/item/device/kit/paint/ripley/clark
 	name = "\"Clark\" APLU customization kit"
@@ -201,7 +208,15 @@
 	name = "\"Spider\" APLU customization kit"
 	new_name = "\"Spider\" APLU"
 	new_desc = "A highly modified APLU exosuit featuring tread based movement and a more robotic appearence. Someones idea of a good joke, but the metal spider head barely resembles a real giant spider."
-	new_icon = "veteranclarke"
+	new_icon = "spiderclarke"
+
+//Ivan kits.
+/obj/item/device/kit/paint/rust_ivan
+	name = "\"Rust\" Ivan customization kit"
+	new_name = "Ivan \"Rust\""
+	new_desc = "An old Ivan exosuit, rusted after spending Absolute-knows how long in a pile of trash."
+	new_icon = "ivan-rust"
+	allowed_types = list("ivan")
 
 //Odysseus kits.
 /obj/item/device/kit/paint/odysseus

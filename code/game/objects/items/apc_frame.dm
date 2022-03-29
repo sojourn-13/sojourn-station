@@ -7,12 +7,14 @@
 	icon_state = "frame"
 	flags = CONDUCT
 
-/obj/item/frame/apc/attackby(obj/item/weapon/tool/tool, mob/user)
+/* Soj Edit - code/game/machinery/wall_frames.dm legit has this but better and more modular why is this here?
+/obj/item/frame/apc/attackby(obj/item/tool/tool, mob/user)
 	..()
 	if (!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 		return
 	new /obj/item/stack/material/steel( get_turf(src.loc), 2 )
 	qdel(src)
+*/
 
 /obj/item/frame/apc/try_build(turf/on_wall)
 	if (get_dist(on_wall,usr)>1)
@@ -37,7 +39,7 @@
 			return
 		else
 			var/obj/item/stack/cable_coil/C = new /obj/item/stack/cable_coil(loc)
-			C.amount = 10
+			C.amount = 1
 			to_chat(usr, "You cut the cables and disassemble the unused power terminal.")
 			qdel(T)
 	new /obj/machinery/power/apc(loc, ndir, 1)

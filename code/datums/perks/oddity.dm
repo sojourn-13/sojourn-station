@@ -136,6 +136,12 @@
 	holder.stats.changeStat(STAT_BIO, 5)
 	..()
 
+/datum/perk/oddity/snackivore
+	name = "Snackivore"
+	desc = "The secret of the lounge lizards! Your body adapts to eating the worse kind of food in existence, allowing you to draw an exceptional amount of nutrition from snack foods. More so \
+	it passively heals you like tricord, with pure toxins healing you the most. Rejoice trash mammals!"
+	passivePerk = TRUE
+
 /datum/perk/oddity/sharp_mind
 	name = "Sharpened Mind"
 	desc = "Narrowing in and extrapolating the inner workings of the world has never felt so much easier."
@@ -172,6 +178,38 @@
 	holder.stats.changeStat(STAT_VIG, -5)
 	..()
 
+/datum/perk/oddity/iron_will
+	name = "Will of Iron"
+	desc = "The body is able to succumb to many negative affects but the mind can simply ignore them. Getting addicted to things is much harder and you can stomach more chemicals."
+	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+
+/datum/perk/oddity/iron_will/assign(mob/living/carbon/human/H)
+	..()
+	holder.metabolism_effects.addiction_chance_multiplier = 0.2
+	holder.metabolism_effects.nsa_bonus += 20
+	holder.metabolism_effects.calculate_nsa()
+
+/datum/perk/oddity/iron_will/remove()
+	holder.metabolism_effects.addiction_chance_multiplier = 1
+	holder.metabolism_effects.nsa_bonus -= 20
+	holder.metabolism_effects.calculate_nsa()
+	..()
+
+/datum/perk/oddity/mind_of_matter
+	name = "Will to Power"
+	desc = "The mind protects the body by imposing limits to prevent severe harm to the self. With enough focus, you can push yourself past that limit."
+	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+
+/datum/perk/oddity/mind_of_matter/assign(mob/living/carbon/human/H)
+	..()
+	holder.maxHealth += 20
+	holder.health += 20
+
+/datum/perk/oddity/mind_of_matter/remove()
+	holder.maxHealth -= 20
+	holder.health -= 20
+	..()
+
 ///////////////////////////////////////
 //////// JOB ODDITYS PERKS ////////////
 ///////////////////////////////////////
@@ -182,7 +220,7 @@
 /datum/perk/nt_oddity/holy_light
 	name = "Holy Light"
 	desc = "You have been blessed by the grace of the Absolute. You now provide a weak healing aura, healing both brute and burn damage to any cruciform bearers nearby as well as yourself."
-	icon_state = "third_eye"  //https://game-icons.net/1x1/lorc/third-eye.html
+	//icon_state = "third_eye"  //https://game-icons.net/1x1/lorc/third-eye.html
 	var/healing_power = 0.1
 	var/cooldown = 1 SECONDS // Just to make sure that perk don't go berserk.
 	var/initial_time
@@ -194,7 +232,7 @@
 /datum/perk/nt_oddity/holy_light/on_process()
 	if(!..())
 		return
-	if(!holder.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform))
+	if(!holder.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		return
 	if(world.time < initial_time + cooldown)
 		return
@@ -202,11 +240,47 @@
 	for(var/mob/living/L in viewers(holder, 7))
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
-			if(H.stat == DEAD || !(H.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)))
+			if(H.stat == DEAD || !(H.get_core_implant(/obj/item/implant/core_implant/cruciform)))
 				continue
 			H.adjustBruteLoss(-healing_power)
 			H.adjustFireLoss(-healing_power)
 
+/datum/perk/bluespace
+	name = "Bluespace Alinement"
+	desc = "The sci tool is taxing on the mind but rewarding... Along with some other side affects..."
+	gain_text = "With such much look and inside into stablizing bluespace you cant help but feel its affects."
+	lose_text = "Time cures all."
+	//icon_state = "" // - No icon, suggestion, vortex?
+	var/initial_time
+
+/datum/perk/bluespace/assign(mob/living/carbon/human/H)
+	..()
+	initial_time = world.time
+	cooldown_time = world.time + rand(20, 60) MINUTES
+	holder.stats.changeStat(STAT_COG, 5) //We keep this 5 per use
+	if(!H.stats?.getPerk(PERK_SI_SCI) && prob(60))
+		GLOB.bluespace_entropy += rand(80, 150) //You done fucked it up.
+	if(H.stats?.getPerk(PERK_SI_SCI) && prob(50))
+		GLOB.bluespace_entropy -= rand(20, 30) //High odds to do even better!
+	GLOB.bluespace_entropy -= rand(30, 50)
+
+/datum/perk/bluespace/remove(mob/living/carbon/human/H)
+	if(!H.stats?.getPerk(PERK_SI_SCI) && prob(30))
+		GLOB.bluespace_entropy += rand(80, 150)
+	if(H.stats?.getPerk(PERK_SI_SCI) && prob(50))
+		GLOB.bluespace_entropy -= rand(20, 30)
+	GLOB.bluespace_entropy += rand(30, 50)
+	..()
+
+/datum/perk/bluespace/on_process()
+	if(!..())
+		return
+	if(cooldown_time <= world.time)
+		holder.stats.removePerk(type)
+		to_chat(holder, SPAN_NOTICE("[lose_text]"))
+		return
+	if(holder.buckled)
+		cooldown_time -= 5 SECONDS //Resting grately speeds this up
 
 /datum/perk/guild/blackbox_insight
 	name = "Blackbox Tinkering"
@@ -223,3 +297,4 @@
 	holder.stats.changeStat(STAT_COG, -10) //we keep 5 of each
 	holder.stats.changeStat(STAT_MEC, -10)
 	..()
+

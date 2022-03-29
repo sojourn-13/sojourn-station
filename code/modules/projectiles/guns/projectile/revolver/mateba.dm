@@ -1,6 +1,6 @@
-/obj/item/weapon/gun/projectile/revolver/mateba
+/obj/item/gun/projectile/revolver/mateba
 	name = "\"Mateba\" heavy revolver"
-	desc = "One of the less practical weapons produced by Scarborough Arms, it's an oversized variant of their popular \"Mateba\" clones that's been scaled up to .50 kurtz, seemingly for the sole purpose of offending your wrist."
+	desc = "One of the less practical weapons produced by Scarborough Arms, it's an oversized variant of the popular \"Minotaur\" clones that's been scaled up to .50 kurtz, seemingly for the sole purpose of offending your wrist."
 	icon = 'icons/obj/guns/projectile/mateba.dmi'
 	icon_state = "mateba"
 	caliber = CAL_50
@@ -13,4 +13,4 @@
 	penetration_multiplier = 1.25
 	recoil_buildup = 8
 	one_hand_penalty = 15
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)

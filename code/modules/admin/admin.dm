@@ -1,25 +1,33 @@
 
 var/global/BSACooldown = 0
 var/global/floorIsLava = 0
+#define NO_ANTAG 0
+#define LIMITED_ANTAG 1
+#define ANTAG 2
 
+#define ADMIN_QUE_DISPLAY(user,display) "<a href='?_src_=holder;adminmoreinfo=\ref[user]'>[display]</a>"
+#define ADMIN_PP_DISPLAY(user,display) "<a href='?_src_=holder;adminplayeropts=\ref[user]'>[display]</a>"
+#define ADMIN_VV_DISPLAY(atom,display) "<a href='?_src_=vars;Vars=\ref[atom]'>[display]</a>"
+#define ADMIN_SM_DISPLAY(user,display) "<a href='?_src_=holder;subtlemessage=\ref[user]'>[display]</a>"
+#define ADMIN_TP_DISPLAY(user,display) "<a href='?_src_=holder;traitor=\ref[user]'>[display]</a>"
 
 ////////////////////////////////
-/proc/message_admins(var/msg)
+/proc/message_admins(var/msg, tag = "admin_log", tagtext = "ADMIN LOG")
 	lobby_message(message = msg, color = "#FFA500")
-	msg = "<span class=\"log_message\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
-	log_adminwarn(msg)
+	var/m = "<span class=\"log_message\"><span class=\"prefix\">[tagtext]:</span> <span class=\"message\">[msg]</span></span>"
+	log_adminwarn(m)
 	for(var/client/C in admins)
-		if(R_ADMIN & C.holder.rights)
-			to_chat(C, msg)
+		m = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[msg]</span></span>"
+		if(check_rights(R_ADMIN, 0, C.mob))
+			to_chat(C, m)
 
-/proc/msg_admin_attack(var/text) //Toggleable Attack Messages
+/proc/msg_admin_attack(var/text, tag = "attack", tagtext = "ATTACK:") //Toggleable Attack Messages
 	log_attack(text)
-	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	lobby_message(message = text, color = "#FFA500")
 	for(var/client/C in admins)
-		if(R_ADMIN & C.holder.rights)
+		if(check_rights(R_ADMIN | R_DEBUG, 0, C.mob))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
-				var/msg = rendered
+				var/msg = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[text]</span></span>"
 				to_chat(C, msg)
 
 /**
@@ -29,11 +37,12 @@ var/global/floorIsLava = 0
  * important - If the message is important. If TRUE it will ignore the PREF_HEAR preferences,
                send a sound and flash the window. Defaults to FALSE
  */
-/proc/message_adminTicket(msg, important = FALSE)
+/proc/message_adminTicket(msg, important = FALSE, quiet = FALSE, tag = "admin_ticket", tagtext = "Request for Help")
 	for(var/client/C in admins)
-		if(R_ADMIN & C.holder.rights)
-			to_chat(C, msg)
-			if(important || (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR))
+		if(check_rights(R_ADMIN | R_MOD | R_DEBUG, 0, C.mob))
+			var/rendered = "<span class=\"adminhelp\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> [msg]</span></span>"
+			to_chat(C, rendered)
+			if(important || (!quiet && (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)))
 				sound_to(C, 'sound/effects/adminhelp.ogg')
 
 /**
@@ -43,11 +52,12 @@ var/global/floorIsLava = 0
  * important - If the message is important. If TRUE it will ignore the PREF_HEAR preferences,
                send a sound and flash the window. Defaults to FALSE
  */
-/proc/message_mentorTicket(msg, important = FALSE)
+/proc/message_mentorTicket(msg, important = FALSE, quiet = FALSE, tag = "mentor_ticket", tagtext = "Request for Mentor")
 	for(var/client/C in admins)
 		if(check_rights(R_ADMIN | R_MENTOR | R_MOD, 0, C.mob))
-			to_chat(C, msg)
-			if(important || (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR))
+			var/rendered = "<span class=\"adminhelp\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> [msg]</span></span>"
+			to_chat(C, rendered)
+			if(important || (!quiet && (C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)))
 				sound_to(C, 'sound/effects/adminhelp.ogg')
 
 
@@ -827,19 +837,26 @@ ADMIN_VERB_ADD(/datum/admins/proc/immreboot, R_SERVER, FALSE)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////ADMIN HELPER PROCS
 
-/proc/is_special_character(mob/M as mob) // returns 1 for special characters
+/proc/is_special_character(mob/M) // returns 1 for special characters
 	if (!istype(M))
-		return FALSE
+		return NO_ANTAG
+
+	if(M.mind && player_is_limited_antag(M.mind))
+		return LIMITED_ANTAG
 
 	if(M.mind && player_is_antag(M.mind))
-		return TRUE
-
+		return ANTAG
 
 	if(isrobot(M))
 		var/mob/living/silicon/robot/R = M
 		if(R.emagged)
-			return TRUE
+			return ANTAG
 
+	return NO_ANTAG
+
+/proc/is_limited_antag(mob/M)
+	if(M.mind && player_is_limited_antag(M.mind))
+		return TRUE
 	return FALSE
 
 ADMIN_VERB_ADD(/datum/admins/proc/spawn_fruit, R_DEBUG, FALSE)
@@ -951,8 +968,8 @@ ADMIN_VERB_ADD(/datum/admins/proc/spawn_atom, R_DEBUG, FALSE)
 	else
 		var/newItem = new chosen(usr.loc)
 
-		if(istype(newItem, /obj/item/weapon/gun))
-			var/obj/item/weapon/gun/weapon = newItem
+		if(istype(newItem, /obj/item/gun))
+			var/obj/item/gun/weapon = newItem
 			weapon.loadAmmoBestGuess()
 
 
@@ -1099,23 +1116,18 @@ ADMIN_VERB_ADD(/datum/admins/proc/toggleguests, R_ADMIN, FALSE)
 		M = whom
 		C = M.client
 	else
-		return "<b>(*not an mob*)</b>"
+		return "<b>(*not a mob*)</b>"
 	switch(detail)
 		if(0)
 			return "<b>[key_name(C, link, name, highlight_special)]</b>"
-
 		if(1)	//Private Messages
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>)</b>"
-
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE_DISPLAY(M,"?")])</b>"
 		if(2)	//Admins
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;subtlemessage=[ref_mob]'>SM</A>) ([admin_jump_link(M, UNLINT(src))]) (<A HREF='?_src_=holder;check_antagonist=1'>CA</A>)</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_QUE_DISPLAY(M,"?")]) ([ADMIN_PP_DISPLAY(M,"PP")]) ([ADMIN_VV_DISPLAY(M,"VV")]) ([ADMIN_SM_DISPLAY(M,"SM")]) ([admin_jump_link(M, UNLINT(src))]) ([ADMIN_TP_DISPLAY(M,"TP")])</b>"
 		if(3)	//Devs
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M, UNLINT(src))])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)]([ADMIN_VV_DISPLAY(M,"VV")])([admin_jump_link(M, UNLINT(src))])</b>"
 		if(4)	//Mentors
-			var/ref_mob = "\ref[M]"
-			return "<b>[key_name(C, link, name, highlight_special)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[M]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A>) (<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>) (<A HREF='?_src_=holder;subtlemessage=[ref_mob]'>SM</A>) ([admin_jump_link(M, UNLINT(src))])</b>"
+			return "<b>[key_name(C, link, name, highlight_special)] ([ADMIN_QUE_DISPLAY(M,"?")]) ([ADMIN_PP_DISPLAY(M,"PP")]) ([ADMIN_VV_DISPLAY(M,"VV")]) ([ADMIN_SM_DISPLAY(M,"SM")]) ([admin_jump_link(M, UNLINT(src))])</b>"
 
 
 //
@@ -1225,3 +1237,102 @@ ADMIN_VERB_ADD(/datum/admins/proc/paralyze_mob, R_ADMIN, FALSE)
 			return 0
 		return 1
 	return 0
+//This proc lets us make artifacts with the effects and triggers we want.
+ADMIN_VERB_ADD(/datum/admins/proc/spawn_artifact, R_ADMIN, FALSE)
+/datum/admins/proc/spawn_artifact(effect in subtypesof(/datum/artifact_effect))
+	set category = "Debug"
+	set desc = "(atom path) Spawn an artifact with a specified effect."
+	set name = "Spawn Artifact"
+
+	if (!check_rights(R_ADMIN|R_DEBUG,0))
+		return
+
+	var/obj/machinery/artifact/A
+	var/primary_trigger
+
+	var/datum/artifact_effect/secondary_effect
+	var/secondary_trigger
+
+	if (ispath(effect))
+		primary_trigger = input(usr, "Choose a trigger", "Choose a trigger") as null | anything in list("TRIGGER_TOUCH", "TRIGGER_WATER", "TRIGGER_ACID", "TRIGGER_VOLATILE", "TRIGGER_TOXIN", "TRIGGER_FORCE", "TRIGGER_ENERGY", "TRIGGER_HEAT", "TRIGGER_COLD", "TRIGGER_PLASMA", "TRIGGER_OXY", "TRIGGER_CO2", "TRIGGER_NITRO")
+
+		if (!primary_trigger)
+			return
+		//This is a very ghetto way of doing it, but this is an admin ability and it shouldn't be called every second, so we should be fine. Feel free to rework the implementation.
+		switch(primary_trigger)
+			if("TRIGGER_TOUCH")
+				primary_trigger = 0
+			if("TRIGGER_WATER")
+				primary_trigger = 1
+			if("TRIGGER_ACID")
+				primary_trigger = 2
+			if("TRIGGER_VOLATILE")
+				primary_trigger = 3
+			if("TRIGGER_TOXIN")
+				primary_trigger = 4
+			if("TRIGGER_FORCE")
+				primary_trigger = 5
+			if("TRIGGER_ENERGY")
+				primary_trigger = 6
+			if("TRIGGER_HEAT")
+				primary_trigger = 7
+			if("TRIGGER_COLD")
+				primary_trigger = 8
+			if("TRIGGER_PLASMA")
+				primary_trigger = 9
+			if("TRIGGER_OXY")
+				primary_trigger = 10
+			if("TRIGGER_CO2")
+				primary_trigger = 11
+			if("TRIGGER_NITRO")
+				primary_trigger = 12
+
+		var/choice = alert(usr, "Secondary effect?", "Secondary effect", "Yes", "No") == "Yes"
+
+		if (choice)
+			secondary_effect = input(usr, "Choose an effect", "Choose effect") as null | anything in subtypesof(/datum/artifact_effect)
+
+			if (!ispath(secondary_effect))
+				return
+
+			secondary_trigger = input(usr, "Choose a trigger", "Choose a trigger") as null | anything in list("TRIGGER_TOUCH", "TRIGGER_WATER", "TRIGGER_ACID", "TRIGGER_VOLATILE", "TRIGGER_TOXIN", "TRIGGER_FORCE", "TRIGGER_ENERGY", "TRIGGER_HEAT", "TRIGGER_COLD", "TRIGGER_PLASMA", "TRIGGER_OXY", "TRIGGER_CO2", "TRIGGER_NITRO")
+
+			if (!secondary_trigger)
+				return
+			switch(secondary_trigger)
+				if("TRIGGER_TOUCH")
+					secondary_trigger = 0
+				if("TRIGGER_WATER")
+					secondary_trigger = 1
+				if("TRIGGER_ACID")
+					secondary_trigger = 2
+				if("TRIGGER_VOLATILE")
+					secondary_trigger = 3
+				if("TRIGGER_TOXIN")
+					secondary_trigger = 4
+				if("TRIGGER_FORCE")
+					secondary_trigger = 5
+				if("TRIGGER_ENERGY")
+					secondary_trigger = 6
+				if("TRIGGER_HEAT")
+					secondary_trigger = 7
+				if("TRIGGER_COLD")
+					secondary_trigger = 8
+				if("TRIGGER_PLASMA")
+					secondary_trigger = 9
+				if("TRIGGER_OXY")
+					secondary_trigger = 10
+				if("TRIGGER_CO2")
+					secondary_trigger = 11
+				if("TRIGGER_NITRO")
+					secondary_trigger = 12
+
+		A = new(usr.loc)
+		A.my_effect = new effect(A)
+		A.my_effect.trigger = primary_trigger
+
+		if (secondary_effect)
+			A.secondary_effect = new secondary_effect
+			A.secondary_effect.trigger = secondary_trigger
+		else
+			QDEL_NULL(A.secondary_effect)

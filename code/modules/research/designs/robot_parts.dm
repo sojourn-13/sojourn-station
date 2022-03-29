@@ -31,7 +31,6 @@
 	name = "Robot right leg"
 	build_path = /obj/item/robot_parts/r_leg
 
-
 /datum/design/research/item/mechfab/robot/component
 	name_category = "robot component"
 	category = CAT_ROBOT

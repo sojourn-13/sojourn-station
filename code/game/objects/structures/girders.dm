@@ -33,12 +33,13 @@
 		.[reinf_material.name] = 2
 
 /obj/structure/girder/attack_generic(var/mob/user, var/damage, var/attack_message = "smashes apart", var/wallbreaker)
-	if(!damage || !wallbreaker)
-		return 0
-	user.do_attack_animation(src)
-	visible_message(SPAN_DANGER("[user] [attack_message] the [src]!"))
-	spawn(1) dismantle()
-	return 1
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
 
 /obj/structure/girder/bullet_act(var/obj/item/projectile/Proj)
 	//Girders only provide partial cover. There's a chance that the projectiles will just pass through. (unless you are trying to shoot the girder)
@@ -67,7 +68,10 @@
 		reinforce_girder()
 
 /obj/structure/girder/attackby(obj/item/I, mob/user)
-
+	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))
+		var/obj/item/gun/G = I
+		G.gun_brace(user, src)
+		return
 	//Attempting to damage girders
 	//This supercedes all construction, deconstruction and similar actions. So change your intent out of harm if you don't want to smack it
 	if (usr.a_intent == I_HURT && user.Adjacent(src))
@@ -106,7 +110,7 @@
 					to_chat(user, SPAN_NOTICE("You start disassembling the girder..."))
 					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 						to_chat(user, SPAN_NOTICE("You dissasembled the girder!"))
-						dismantle()
+						dismantle(user)
 						return
 				if(!anchored)
 					to_chat(user, SPAN_NOTICE("You start securing the girder..."))
@@ -286,8 +290,8 @@
 	icon_state = "reinforced"
 	reinforcing = 0
 
-/obj/structure/girder/proc/dismantle()
-	drop_materials(drop_location())
+/obj/structure/girder/proc/dismantle(mob/living/user)
+	drop_materials(drop_location(), user)
 	qdel(src)
 
 /obj/structure/girder/attack_hand(mob/user as mob)
@@ -297,7 +301,15 @@
 		return
 	return ..()
 
-/obj/structure/girder/proc/take_damage(var/damage, var/damage_type = BRUTE, var/ignore_resistance = FALSE)
+/obj/structure/girder/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
+/obj/structure/girder/proc/take_damage(var/damage, var/damage_type = BRUTE, var/ignore_resistance = FALSE, mob/living/user)
 	if (!ignore_resistance)
 		damage -= resistance
 	if (!damage || damage <= 0)
@@ -305,7 +317,7 @@
 
 	health -= damage
 	if (health <= 0)
-		dismantle()
+		dismantle(user)
 
 
 /obj/structure/girder/ex_act(severity)

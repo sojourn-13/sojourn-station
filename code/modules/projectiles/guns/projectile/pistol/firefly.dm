@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/firefly
+/obj/item/gun/projectile/firefly
 	name = "\"Firefly\" pistol"
 	desc = "A simple and reliable sidearm produced by Seinemetall Defense GmbH for the officer on the street. Commonly issued as a sidearm by police forces and security companies. Uses .35 Auto magazines."
 	icon = 'icons/obj/guns/projectile/firefly.dmi'
@@ -21,7 +21,7 @@
 	one_hand_penalty = 7
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 
-/obj/item/weapon/gun/projectile/firefly/update_icon()
+/obj/item/gun/projectile/firefly/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -40,6 +40,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/firefly/Initialize()
+/obj/item/gun/projectile/firefly/Initialize()
 	. = ..()
 	update_icon()

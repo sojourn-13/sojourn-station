@@ -20,9 +20,11 @@
 /turf/simulated/floor/plating/under,
 /area/crawler)
 "f" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor,
-/turf/simulated/floor/plating/under,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "g" = (
 /obj/structure/window/reinforced{
@@ -69,11 +71,10 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "o" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
+/obj/machinery/power/terminal,
+/obj/structure/catwalk,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "p" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -84,13 +85,6 @@
 "q" = (
 /obj/crawler/crawler_wallbreaker/vertical,
 /turf/simulated/floor/bluegrid,
-/area/crawler)
-"r" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "s" = (
 /obj/machinery/power/smes/buildable,
@@ -105,13 +99,6 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
-"u" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
 "v" = (
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
@@ -125,10 +112,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"y" = (
-/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "A" = (
@@ -163,7 +146,7 @@
 "I" = (
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "N" = (
@@ -179,10 +162,12 @@
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
 /obj/random/powercell,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "U" = (
-/obj/item/weapon/tool_upgrade/augment/cell_mount,
+/obj/item/tool_upgrade/augment/cell_mount,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "Z" = (
@@ -206,7 +191,7 @@ a
 c
 g
 c
-r
+g
 Z
 g
 c
@@ -229,7 +214,7 @@ d
 i
 R
 s
-n
+o
 s
 Z
 a
@@ -250,7 +235,7 @@ b
 e
 k
 a
-u
+x
 x
 x
 x
@@ -260,7 +245,7 @@ C
 b
 e
 l
-o
+p
 v
 U
 v
@@ -274,7 +259,7 @@ l
 G
 v
 v
-y
+v
 v
 C
 "}
@@ -293,7 +278,7 @@ b
 a
 e
 l
-p
+f
 P
 v
 A
@@ -313,7 +298,7 @@ a
 "}
 (12,1,1) = {"
 a
-f
+e
 l
 p
 v

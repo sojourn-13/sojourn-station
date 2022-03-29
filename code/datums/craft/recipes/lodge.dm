@@ -2,7 +2,7 @@
 	category = "Lodge"
 	time = 100
 	related_stats = list(STAT_BIO)
-	avaliableToEveryone = FALSE
+	requiredPerk = PERK_BUTCHER
 
 // Weaponry -----------------
 /datum/craft_recipe/lodge/crossbow_bolts
@@ -14,16 +14,48 @@
 	)
 	flags = CRAFT_BATCH
 
+/datum/craft_recipe/lodge/crossbow_bolts/lethal
+	name = "Fragment Crossbow Bolt"
+	result = /obj/item/ammo_casing/crossbow_bolts/fragment/bulk
+	steps = list(
+		list(/obj/item/stack/rods, 10),
+		list(/obj/item/ore, 1)
+	)
+
+/datum/craft_recipe/lodge/crossbow_bolts/speed
+	name = "Aerodynamic Crossbow Bolts"
+	result = /obj/item/ammo_casing/crossbow_bolts/speed/bulk
+	time = 0
+	steps = list(
+		list(/obj/item/stack/rods, 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_BONE, "time" = 1), //Takes a second
+		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 1) //Takes a second
+	)
+
+/datum/craft_recipe/lodge/baroqe
+	name = "Baroque Bone Rifle"
+	result = /obj/item/gun/projectile/boltgun/baroque
+	icon_state = "gun"
+	steps = list(
+		list(CRAFT_MATERIAL, 20, MATERIAL_BONE, "time" = 60),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 20),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(QUALITY_WELDING, 30, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
+		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
+	)
+
 /datum/craft_recipe/lodge/hunter_crossbow
 	name = "Lodge Hunting Crossbow"
-	result = /obj/item/weapon/gun/projectile/shotgun/pump/hunter_crossbow
+	result = /obj/item/gun/projectile/shotgun/pump/hunter_crossbow
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/plastic, 8, "time" = 20),
-		list(/obj/item/weapon/tool_upgrade/augment/cell_mount, 1, "time" = 20),
-		list(/obj/item/weapon/cell/large, 1, "time" = 20),
-		list(/obj/item/weapon/tool_upgrade/augment/hydraulic, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 20),
+		list(/obj/item/tool_upgrade/augment/cell_mount, 1, "time" = 20),
+		list(/obj/item/cell/large, 1, "time" = 20),
+		list(/obj/item/tool_upgrade/augment/hydraulic, 1, "time" = 20),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
 		list(QUALITY_WIRE_CUTTING, 30, 30),
 		list(QUALITY_CUTTING, 30, "time" = 40),
@@ -35,22 +67,22 @@
 
 /datum/craft_recipe/lodge/hunting_halberd
 	name = "Hunter's Halberd"
-	result = /obj/item/weapon/tool/spear/hunter_halberd
+	result = /obj/item/tool/spear/hunter_halberd
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 22, MATERIAL_STEEL, "time" = 60),
-		list(/obj/item/stack/material/wood, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 20, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 20, "time" = 30),
-		list(/obj/item/weapon/tool_upgrade/augment/spikes, 1),
+		list(/obj/item/tool_upgrade/augment/spikes, 1),
 		list(QUALITY_WELDING, 30, "time" = 10)
 	)
 
 /datum/craft_recipe/lodge/render_gauntlet
 	name = "Render Gauntlet"
-	result = /obj/item/weapon/tool/gauntlet
+	result = /obj/item/tool/gauntlet
 	icon_state = "woodworking"
 	steps = list(
 		list(/obj/item/animal_part/render_claw, 1, "time" = 20),
@@ -58,43 +90,72 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_LEATHER, "time" = 60),
 		list(QUALITY_SAWING, 20, "time" = 40),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 10, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/skinning_knife
 	name = "Skinning Knife"
-	result = /obj/item/weapon/tool/knife/dagger/skinning
+	result = /obj/item/tool/knife/dagger/skinning
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 60),
-		list(/obj/item/stack/material/wood, 2, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 10, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 20, "time" = 30),
 		list(QUALITY_HAMMERING, 15, "time" = 40),
-		list(/obj/item/weapon/tool_upgrade/productivity/whetstone, 1, "time" = 30)
+		list(/obj/item/tool_upgrade/productivity/whetstone, 1, "time" = 30)
 	)
 
 /datum/craft_recipe/lodge/woodsmans_axe
 	name = "Woodsman's Axe"
-	result = /obj/item/weapon/tool/fireaxe/woodsman
+	result = /obj/item/tool/fireaxe/woodsman
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, "time" = 60),
-		list(/obj/item/stack/material/wood, 2, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 10, "time" = 40),
-		list(QUALITY_HAMMERING, 10, "time" = 40),
+		list(QUALITY_HAMMERING, 10, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/bone_shield
 	name = "Bone Buckler"
-	result = /obj/item/weapon/shield/riot/handmade/bone
+	result = /obj/item/shield/buckler/handmade/bone
 	icon_state = "woodworking"
 	steps = list(
 		list(CRAFT_MATERIAL, 6, MATERIAL_BONE, "time" = 60),
-		list(/obj/item/stack/material/wood, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD, "time" = 20),
 		list(QUALITY_SAWING, 10, "time" = 40),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 10, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/hunting_claw
+	name = "Hunting Claw"
+	result = /obj/item/tool/sword/huntingclaw
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(QUALITY_HAMMERING, 15, "time" = 60),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 30),
+		list(QUALITY_CUTTING, 15, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/sun_cleaver
+	name = "Sun Cleaver"
+	result = /obj/item/tool/sword/cleaver
+	icon_state = "woodworking"
+	steps = list(
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(QUALITY_HAMMERING, 15, "time" = 60),
+		list(QUALITY_WELDING, 15, "time" = 60),
+		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 30),
+		list(QUALITY_CUTTING, 15, "time" = 40),
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
 	)
 
 // Armor --------------------
@@ -143,7 +204,7 @@
 		list(QUALITY_SCREW_DRIVING, 15, "time" = 50),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
 		list(QUALITY_WIRE_CUTTING, 15, 30),
-		list(QUALITY_WELDING, 20, "time" = 90),
+		list(QUALITY_WELDING, 20, "time" = 90)
 	)
 
 /datum/craft_recipe/lodge/hunter_armor_leatherdom
@@ -155,7 +216,30 @@
 		list(CRAFT_MATERIAL, 20, MATERIAL_LEATHER, "time" = 60),
 		list(QUALITY_CUTTING, 15, "time" = 50),
 		list(/obj/item/stack/cable_coil, 10, "time" = 20),
-		list(QUALITY_WIRE_CUTTING, 15, 30),
+		list(QUALITY_WIRE_CUTTING, 15, 30)
+	)
+
+/datum/craft_recipe/lodge/hunter_boots
+	name = "Hunter Boots"
+	result = /obj/item/clothing/shoes/hunterboots
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(CRAFT_MATERIAL, 4, MATERIAL_WOOD, "time" = 30),
+		list(QUALITY_HAMMERING, 15, 30)
+	)
+
+/datum/craft_recipe/lodge/hunter_gloves
+	name = "Hunter Gloves"
+	result = /obj/item/clothing/gloves/thick/hunter
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 4, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(CRAFT_MATERIAL, 2, MATERIAL_BONE, "time" = 10),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 15, 30)
 	)
 
 // Medicine -----------------
@@ -165,7 +249,7 @@
 	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/animal_part/tatonka_tongue, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 15, "time" = 40),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/powder_pouch
@@ -173,78 +257,122 @@
 	result = /obj/item/stack/medical/advanced/ointment/powder_pouch
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_LEATHER, "time" = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 60),
 		list(/obj/item/animal_part/tatonka_horn, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 15, "time" = 40),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/tangu_juice
 	name = "Tangu Extract"
-	result = /obj/item/weapon/reagent_containers/glass/bottle/tangu_extract
+	result = /obj/item/reagent_containers/glass/bottle/tangu_extract
 	icon_state = "clothing"
 	steps = list(
-		list(/obj/item/weapon/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
 		list(/obj/item/animal_part/tangu_horn, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 30, "time" = 40),
+		list(QUALITY_HAMMERING, 30, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/clucker_juice
 	name = "Clucker Feather extract"
-	result = /obj/item/weapon/reagent_containers/glass/bottle/clucker_extract
+	result = /obj/item/reagent_containers/glass/bottle/clucker_extract
 	icon_state = "clothing"
 	steps = list(
-		list(/obj/item/weapon/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
 		list(/obj/item/animal_part/clucker_feather, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 15, "time" = 40),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/tahca_antiviral
 	name = "Tahca Extract"
-	result = /obj/item/weapon/reagent_containers/glass/bottle/tahcacillin
+	result = /obj/item/reagent_containers/glass/bottle/tahcacillin
 	icon_state = "clothing"
 	steps = list(
-		list(/obj/item/weapon/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
 		list(/obj/item/animal_part/tahca_antler, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 15, "time" = 40),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
 // Misc. --------------------
 
 /datum/craft_recipe/lodge/soap
 	name = "Handmade Soap"
-	result = /obj/item/weapon/soap/hunters
+	result = /obj/item/soap/hunters
 	steps = list(
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_WOOD, "time" = 60),
 		list(/obj/item/animal_part/cerberus_snout, 1, "time" = 20),
-		list(/obj/item/weapon/reagent_containers/food/snacks/egg/clucker, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 15, "time" = 40),
+		list(/obj/item/reagent_containers/food/snacks/egg/clucker, 1, "time" = 20),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/duct_tape_weak
 	name = "Duct Tape"
-	result = /obj/item/weapon/tool/tape_roll
+	result = /obj/item/tool/tape_roll
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_WOOD, "time" = 60),
 		list(/obj/item/animal_part/cerberus_snout, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 15, "time" = 40),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/duct_tape
 	name = "Flex Tape"
-	result = /obj/item/weapon/tool/tape_roll/flextape
+	result = /obj/item/tool/tape_roll/flextape
 	icon_state = "clothing"
 	steps = list(
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 60),
+		list(CRAFT_MATERIAL, 3, MATERIAL_WOOD, "time" = 60),
 		list(/obj/item/animal_part/slepnir_hoof, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 15, "time" = 40),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
 /datum/craft_recipe/lodge/chimera_fang
 	name = "Chimera Fang Trophy"
-	result = /obj/item/weapon/oddity/chimeric_fang_trophy
+	result = /obj/item/oddity/chimeric_fang_trophy
 	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/animal_part/chimera_fang, 1, "time" = 10),
-		list(QUALITY_CUTTING, 50, "time" = 90),
+		list(QUALITY_CUTTING, 50, "time" = 90)
+	)
+
+/datum/craft_recipe/lodge/sheath
+	name = "Claw Sheath"
+	result = /obj/item/clothing/accessory/holster/saber/huntingclaw
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 60),
+		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 10, 30),
+		list(CRAFT_MATERIAL, 10, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_CUTTING, 15, "time" = 50)
+	)
+
+/datum/craft_recipe/lodge/hunting_belt
+	name = "Hunting Belt"
+	result = /obj/item/storage/belt/hunter
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_LEATHER, "time" = 60),
+		list(QUALITY_CUTTING, 15, "time" = 50),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
+		list(QUALITY_WIRE_CUTTING, 10, 30),
+		list(CRAFT_MATERIAL, 3, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_CUTTING, 15, "time" = 50)
+	)
+
+/datum/craft_recipe/lodge/leather_medium_pouch
+	name = "medium leather pouch"
+	result = /obj/item/storage/pouch/medium_generic/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 4, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
+	)
+
+/datum/craft_recipe/lodge/leather_large_pouch
+	name = "large leather pouch"
+	result = /obj/item/storage/pouch/large_generic/leather
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_LEATHER, "time" = 30),
+		list(QUALITY_ADHESIVE, 10, "time" = 60)
 	)

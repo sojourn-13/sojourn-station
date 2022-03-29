@@ -12,8 +12,9 @@
 	selection_color = "#ecd37d"
 	ideal_character_age = 40
 	minimum_character_age = 30
+	playtimerequired = 1200
 	also_known_languages = list(LANGUAGE_LATIN = 100)
-
+	security_clearance = CLEARANCE_CLERGY
 	access = list(
 		access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
 	)
@@ -30,7 +31,7 @@
 		STAT_TGH = 10,
 	)
 
-	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling)
+	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling, /datum/perk/chemist)
 
 	software_on_spawn = list(/datum/computer_file/program/records,
 							 /datum/computer_file/program/reports)
@@ -44,12 +45,12 @@
 	You represent the interest of the church and its disciples within the colony - identified by the cruciform implant upon their breast.<br>\
 	Your most pressing duty is as a spiritual leader. Preach to the flock, inspire faith and strength, and convert those seeking salvation.<br>\
 	While you are no trained psychologist, you can provide support and guidance to all - in both bright and dark times.<br>\
-	More practically, you can use your cloner to revive those who cannot be saved by medical science, and hold funerals for the truly lost.<br>\
+	Additional duty may require holding funerals for the truly lost, or host parties and group praying.<br>\
 	The Crusader protocol may also be enacted under your command when facing a Hivemind threat. Use this boost, and your ritual book, to defeat evil."
 
 	duties = "Represent the interests of church disciples on the colony. Protect them from persecution and speak for them.<br>\
 		Hold mass, give sermons, preach to the faithful, and lead group ritual sessions.<br>\
-		Recover and clone the faithful dead. Hold funerals for those who cannot be saved."
+		Hold funerals for those who cannot be saved."
 
 	setup_restricted = TRUE
 
@@ -73,6 +74,8 @@
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/church/acolyte
 	also_known_languages = list(LANGUAGE_LATIN = 100)
+	security_clearance = CLEARANCE_COMMON
+	alt_titles = list("Divisor","Factorial","Monomial","Lemniscate","Tessellate")
 
 	stat_modifiers = list(
 	STAT_MEC = 25,

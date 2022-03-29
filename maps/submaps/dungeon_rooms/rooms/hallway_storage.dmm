@@ -6,10 +6,6 @@
 /obj/structure/extinguisher_cabinet,
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
-"c" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/crawler)
 "d" = (
 /obj/machinery/antigrav,
 /turf/simulated/floor/bluegrid,
@@ -94,14 +90,10 @@
 /area/crawler)
 "w" = (
 /obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 4
+	dir = 4;
+	icon_state = "warningcorner"
 	},
 /turf/simulated/floor/tiled/derelict,
-/area/crawler)
-"y" = (
-/obj/random/toy/plushie,
-/turf/simulated/floor/bluegrid,
 /area/crawler)
 "z" = (
 /obj/structure/salvageable/data_os,
@@ -170,11 +162,11 @@ a
 (2,1,1) = {"
 a
 d
-c
+n
 z
 a
 B
-c
+n
 I
 a
 "}
@@ -270,7 +262,7 @@ a
 a
 l
 n
-y
+B
 a
 F
 n
@@ -280,11 +272,11 @@ a
 (12,1,1) = {"
 a
 T
-c
+n
 z
 a
 X
-c
+n
 I
 a
 "}

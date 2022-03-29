@@ -1,35 +1,338 @@
-"a" = (/turf/simulated/floor/tiled/steel/brown_perforated,/area/deepmaint)
-"b" = (/turf/simulated/wall,/area/deepmaint)
-"c" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/steel/brown_perforated,/area/deepmaint)
-"d" = (/obj/machinery/door/airlock{name = "Unisex Restrooms"},/turf/simulated/floor/tiled/steel,/area/deepmaint)
-"e" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/steel/brown_perforated,/area/deepmaint)
-"f" = (/obj/machinery/recharge_station,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel,/area/deepmaint)
-"g" = (/obj/machinery/door/airlock/maintenance_common{name = "Service Maintenance"; req_access = list(12)},/turf/simulated/floor/tiled/steel/cargo,/area/deepmaint)
-"h" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock{name = "Unisex Restrooms"},/turf/simulated/floor/tiled/steel/cargo,/area/deepmaint)
-"i" = (/turf/simulated/floor/tiled/steel,/area/deepmaint)
-"j" = (/obj/machinery/light{dir = 1},/obj/random/pack/rare/low_chance,/turf/simulated/floor/tiled/steel,/area/deepmaint)
-"k" = (/obj/structure/table/rack,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot,/obj/random/pack/tech_loot/low_chance,/obj/random/pack/tech_loot/low_chance,/turf/simulated/floor/tiled/steel/panels,/area/deepmaint)
-"l" = (/turf/simulated/floor/tiled/steel/panels,/area/deepmaint)
-"m" = (/obj/structure/toilet{dir = 4},/obj/machinery/light{dir = 1},/obj/random/pack/rare/low_chance,/obj/random/pack/rare/low_chance,/obj/random/pack/rare/low_chance,/turf/simulated/floor/tiled/steel,/area/deepmaint)
-"n" = (/obj/random/cluster/xenomorphs/low_chance,/turf/simulated/floor/tiled/steel,/area/deepmaint)
-"o" = (/obj/structure/table/rack,/obj/random/pack/gun_loot,/obj/random/pack/gun_loot/low_chance,/obj/random/pack/gun_loot/low_chance,/turf/simulated/floor/tiled/steel/panels,/area/deepmaint)
-"p" = (/obj/structure/toilet{dir = 4},/obj/machinery/light{dir = 1},/obj/random/common_oddities/low_chance,/obj/random/pack/rare/low_chance,/turf/simulated/floor/tiled/steel,/area/deepmaint)
-"q" = (/turf/simulated/floor/tiled/steel/gray_platform,/area/deepmaint)
-"r" = (/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 0},/obj/structure/mirror{dir = 8; pixel_x = 28; pixel_y = 0},/turf/simulated/floor/tiled/steel/gray_platform,/area/deepmaint)
-"s" = (/obj/random/cluster/xenomorphs/low_chance,/turf/simulated/floor/tiled/steel/brown_perforated,/area/deepmaint)
-"t" = (/obj/random/cluster/xenomorphs/low_chance,/turf/simulated/floor/tiled/steel/gray_platform,/area/deepmaint)
-"u" = (/obj/machinery/light,/turf/simulated/floor/tiled/steel,/area/deepmaint)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
+"b" = (
+/turf/simulated/wall,
+/area/deepmaint)
+"c" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
+"d" = (
+/obj/machinery/door/airlock{
+	name = "Unisex Restrooms"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"e" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
+"f" = (
+/obj/machinery/recharge_station,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"g" = (
+/obj/machinery/door/airlock/maintenance_common{
+	name = "Service Maintenance";
+	req_access = list(12)
+	},
+/turf/simulated/floor/tiled/steel/cargo,
+/area/deepmaint)
+"h" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock{
+	name = "Unisex Restrooms"
+	},
+/turf/simulated/floor/tiled/steel/cargo,
+/area/deepmaint)
+"i" = (
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"j" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/pack/rare/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"k" = (
+/obj/structure/table/rack,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/pouch/low_chance,
+/turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"l" = (
+/turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"m" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/pack/rare/low_chance,
+/obj/random/pack/rare/low_chance,
+/obj/random/pack/rare/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"n" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"o" = (
+/obj/structure/table/rack,
+/obj/random/pack/gun_loot,
+/obj/random/pack/gun_loot/low_chance,
+/obj/random/pack/gun_loot/low_chance,
+/obj/random/powercell/low_chance,
+/turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"p" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/common_oddities/low_chance,
+/obj/random/pack/rare/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"q" = (
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
+"r" = (
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/structure/mirror{
+	dir = 8;
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
+"u" = (
+/obj/machinery/light,
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"v" = (
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/structure/mirror{
+	dir = 8;
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/random/ammo_fancy,
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
+"C" = (
+/obj/item/storage/hcases/ammo/blackmarket,
+/obj/random/dungeon_gun_mods,
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
+"E" = (
+/obj/random/cluster/psi_monster/lower_chance,
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
+"I" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/common_oddities/low_chance,
+/obj/random/pack/rare/low_chance,
+/obj/item/ammo_kit,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"N" = (
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/structure/mirror{
+	dir = 8;
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/random/dungeon_ammo,
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
+"P" = (
+/obj/random/psi_megafauna,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"T" = (
+/obj/structure/table/rack,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/powercell/low_chance,
+/turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"Z" = (
+/obj/random/dungeon_ammo,
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
 
 (1,1,1) = {"
-aaaaaaaaaaa
-cbbbdbbbbbe
-abfhijbkkba
-abbbinbllga
-abmhiibokba
-abbbiibbbba
-abphiiqqrba
-sbbbiitqrba
-abphiuqqrba
-cbbbdbbbbbe
-aaaaaaaaaaa
+a
+c
+a
+a
+a
+a
+a
+a
+E
+c
+a
+"}
+(2,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(3,1,1) = {"
+a
+b
+f
+b
+m
+b
+I
+b
+p
+b
+a
+"}
+(4,1,1) = {"
+a
+b
+h
+b
+h
+b
+h
+b
+h
+b
+a
+"}
+(5,1,1) = {"
+a
+d
+i
+i
+i
+i
+i
+i
+i
+d
+a
+"}
+(6,1,1) = {"
+a
+b
+j
+n
+i
+P
+i
+i
+u
+b
+a
+"}
+(7,1,1) = {"
+a
+b
+b
+b
+b
+b
+Z
+q
+q
+b
+a
+"}
+(8,1,1) = {"
+a
+b
+k
+l
+o
+b
+C
+Z
+q
+b
+a
+"}
+(9,1,1) = {"
+a
+b
+k
+l
+T
+b
+v
+r
+N
+b
+a
+"}
+(10,1,1) = {"
+a
+b
+b
+g
+b
+b
+b
+b
+b
+b
+a
+"}
+(11,1,1) = {"
+a
+e
+a
+a
+a
+a
+a
+a
+a
+e
+a
 "}

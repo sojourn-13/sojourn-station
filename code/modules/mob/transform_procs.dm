@@ -229,4 +229,4 @@
 
 	//Not in here? Must be untested!
 	return 0
-	qdel(src)
+

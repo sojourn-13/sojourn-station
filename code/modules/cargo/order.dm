@@ -1,9 +1,9 @@
-/obj/item/weapon/paper/manifest
+/obj/item/paper/manifest
 	var/order_cost = 0
 	var/order_id = 0
 	var/errors = 0
 
-/obj/item/weapon/paper/manifest/New(atom/A, id, cost)
+/obj/item/paper/manifest/New(atom/A, id, cost)
 	..()
 	order_id = id
 	order_cost = cost
@@ -15,10 +15,10 @@
 	if(prob(MANIFEST_ERROR_CHANCE))
 		errors |= MANIFEST_ERROR_ITEM
 
-/obj/item/weapon/paper/manifest/proc/is_approved()
+/obj/item/paper/manifest/proc/is_approved()
 	return stamped && !is_denied()
 
-/obj/item/weapon/paper/manifest/proc/is_denied()
+/obj/item/paper/manifest/proc/is_denied()
 	return stamped & STAMP_DENIAL
 
 /datum/supply_order
@@ -38,7 +38,7 @@
 	src.reason = reason
 
 /datum/supply_order/proc/generateRequisition(turf/T)
-	var/obj/item/weapon/paper/reqform = new(T)
+	var/obj/item/paper/reqform = new(T)
 
 	reqform.name = "requisition form - #[id] ([object.name])"
 	reqform.info += "<h3>[station_name()] Supply Requisition Form</h3><hr>"
@@ -58,7 +58,7 @@
 	return reqform
 
 /datum/supply_order/proc/generateManifest(obj/structure/closet/crate/C)
-	var/obj/item/weapon/paper/manifest/P = new(C, id, object.cost)
+	var/obj/item/paper/manifest/P = new(C, id, object.cost)
 
 	P.name = "shipping manifest - #[id] ([object.name])"
 	P.info += "<h2>Shipping Manifest</h2>"
@@ -87,7 +87,7 @@
 
 /datum/supply_order/proc/generate(turf/T)
 	var/obj/structure/closet/crate/C = object.generate(T)
-	var/obj/item/weapon/paper/manifest/M = generateManifest(C)
+	var/obj/item/paper/manifest/M = generateManifest(C)
 
 	if(M.errors & MANIFEST_ERROR_ITEM)
 		if(istype(C, /obj/structure/closet/crate/secure) || istype(C, /obj/structure/closet/crate/large))

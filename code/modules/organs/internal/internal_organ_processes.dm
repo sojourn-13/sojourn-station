@@ -24,7 +24,7 @@
 	if(process_list && process_list.len)
 		for(var/organ in process_list)
 			var/obj/item/organ/internal/I = organ
-			effective_efficiency += I.get_process_eficiency(process_define)
+			effective_efficiency += I.get_process_efficiency(process_define)
 
 	return effective_efficiency
 
@@ -39,7 +39,7 @@
 		for(var/organ in parent_organ.internal_organs)
 			var/obj/item/organ/internal/I = organ
 			if(process_define in I.organ_efficiency)
-				effective_efficiency += I.get_process_eficiency(process_define)
+				effective_efficiency += I.get_process_efficiency(process_define)
 
 	return effective_efficiency
 

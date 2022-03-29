@@ -26,19 +26,80 @@
 		STAT_VIG = 2
 	)
 
-	perks = list(/datum/perk/tenacity, /datum/perk/iwillsurvive)
+	perks = list(/datum/perk/tenacity, /datum/perk/iwillsurvive, /datum/perk/slymarbo)
 
 	spawn_flags = CAN_JOIN
 
 /datum/species/human/get_bodytype()
 	return "Human"
 
+
+/datum/species/exalt_human
+	name = "Exalt Human"
+	name_plural = "Exalt Humans"
+	default_form = FORM_EXALT_HUMAN
+	obligate_name = FALSE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "Since its inception, Humankind has always sought to become something beyond itself- Exalts were their answer. Starting with baseline human DNA, \
+	an Exalt's genetic code has been tweaked to make them healthier, smarter, and stronger. Their metabolism is modified to predispose them towards staying \
+	fit and athletic for the duration of an extended lifespan. Their organs are specially modified to operate with greater efficiency than the average human's. \
+	However, no life is perfect. Life as an Exalt is an expensive one, and low-income humans can't support. A combination of royalty fees for licensed genomes \
+	and costly maintenance leave even middle-class exalts paying huge sums of money, often taken directly from their paychecks. Exalts usually resemble \
+	especially handsome humans, but anything is possible with enough splicing."
+	num_alternate_languages = 2
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 200 //Effectively ageless, but human history is only so long.
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.1
+
+	dark_color = "#ffffff"
+	light_color = "#000000"
+
+	stat_modifiers = list(
+		STAT_BIO = 5,
+		STAT_COG = 5,
+		STAT_MEC = 5,
+		STAT_ROB = 5,
+		STAT_TGH = 5,
+		STAT_VIG = 5
+	)
+
+	darksight = 6
+
+	perks = list(/datum/perk/debtor, /datum/perk/splicer)
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/exalt,
+		BP_GROIN =  new /datum/organ_description/groin/exalt,
+		BP_HEAD  =  new /datum/organ_description/head/exalt,
+		BP_L_ARM =  new /datum/organ_description/arm/left/exalt/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/exalt/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/exalt/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/exalt/full
+	)
+
+	has_process = list(    // which required-organ checks are conducted.
+		OP_HEART        = /obj/item/organ/internal/heart/huge/exalt,
+		OP_LUNGS        = /obj/item/organ/internal/lungs/long/exalt,
+		OP_STOMACH      = /obj/item/organ/internal/stomach/improved/exalt,
+		OP_LIVER        = /obj/item/organ/internal/liver/big/exalt,
+		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney/left/exalt,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/exalt,
+		BP_BRAIN        = /obj/item/organ/internal/brain,
+		OP_APPENDIX     = /obj/item/organ/internal/appendix,
+		OP_EYES         = /obj/item/organ/internal/eyes
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/exalt_human/get_bodytype()
+	return "Exalt Human"
+
 /datum/species/sablekyne
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
 	obligate_form = TRUE
-	reagent_tag = IS_SABLEKYNE
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
 	num_alternate_languages = 2
@@ -94,7 +155,7 @@
 	permitted_tail  = list("Sablekyne Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/laststand,/datum/perk/bone)
+	perks = list(/datum/perk/laststand,/datum/perk/bone, /datum/perk/brawn, /datum/perk/carnivore)
 
 /datum/species/sablekyne/get_bodytype()
 	return "Sablekyne"
@@ -139,7 +200,7 @@
 	permitted_tail  = list()
 	permitted_wings = list()
 
-	perks = list(/datum/perk/suddenbrilliance,/datum/perk/inspired)
+	perks = list(/datum/perk/suddenbrilliance,/datum/perk/inspired, /datum/perk/alien_nerves)
 
 /datum/species/marqua/get_bodytype()
 	return "Mar'Qua"
@@ -200,7 +261,7 @@
 		)
 	permitted_wings = list()
 
-	perks = list(/datum/perk/enhancedsenses)
+	perks = list(/datum/perk/enhancedsenses, /datum/perk/exceptional_aim)
 
 /datum/species/kriosan/get_bodytype()
 	return "Kriosan"
@@ -243,7 +304,7 @@
 	permitted_tail  = list("Akula Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/recklessfrenzy)
+	perks = list(/datum/perk/recklessfrenzy, /datum/perk/iron_flesh, /datum/perk/carnivore)
 
 /datum/species/akula/get_bodytype()
 	return "Akula"
@@ -277,7 +338,7 @@
 	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/adrenalineburst,/datum/perk/born_warrior)
+	perks = list(/datum/perk/adrenalineburst,/datum/perk/born_warrior, /datum/perk/stay_hydrated)
 
 /datum/species/naramad/get_bodytype()
 	return "Naramad"
@@ -405,6 +466,7 @@
 		"Moth Wings, Snowy",
 		"Moth Wings, White",
 		"Moth Wings, Worker",
+		"Moth Wings, Plain",
 		"Spider Legs"
 		)
 
@@ -481,20 +543,209 @@
 		"Lizard Tail",
 		"Lizard Tail, Short"
 		)
-	permitted_wings = list("Spines,Aquatic",
+	permitted_wings = list("Spines, Aquatic",
 		"Spines, Long",
 		"Spines, Long Membrane",
 		"Spines, Short",
 		"Spines, Short Membrane",
 		)
 
-	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections)
+	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections, /datum/perk/second_skin)
 
 /datum/species/cindarite/get_bodytype()
 	return "Cindarite"
 
+/datum/species/folken
+	name = "Folken"
+	name_plural = "Folkens"
+	default_form = FORM_FOLKEN
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "N/A"
+	num_alternate_languages = 2
+	name_language = null	// Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 200
+	burn_mod = 2						// Burn damage multiplier.
+	light_dam = 1 // Same threshold as the Nightcrawler perk
+	vision_flags = SEE_SELF
+	flags = NO_PAIN | IS_PLANT
+	taste_sensitivity = TASTE_NUMB
+
+	dark_color = "#93eb9e"
+	light_color = "#93eb9e"
+
+	has_process = list(    // which required-organ checks are conducted.
+		OP_HEART =    /obj/item/organ/internal/heart/plant,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
+		OP_LUNGS =    /obj/item/organ/internal/lungs/plant,
+		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
+		OP_EYES =     /obj/item/organ/internal/eyes
+		)
+
+	perks = list(PERK_FOLKEN_HEALING)
+
+	stat_modifiers = list(
+		STAT_BIO = 10,
+		STAT_COG = 0,
+		STAT_MEC = 0,
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 10
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/folken/get_bodytype()
+	return "Folken"
+
+/datum/species/mycus
+	name = "Mycus"
+	name_plural = "Myci"
+	default_form = FORM_MYCUS
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch/hammer_fist, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "N/A"
+	num_alternate_languages = 2
+	name_language = null	// Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 200
+	flags = NO_PAIN | IS_PLANT | NO_POISON | NO_BREATHE
+	slowdown = 0.3
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.3
+
+	burn_mod = 2						// Burn damage multiplier.
+	light_dam = 1 // Same threshold as the Nightcrawler perk
+	taste_sensitivity = TASTE_NUMB
+
+	dark_color = "#49754f"
+	light_color = "#49754f"
+
+	has_process = list(    // which required-organ checks are conducted.
+		OP_HEART =    /obj/item/organ/internal/heart/plant,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
+		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
+		OP_EYES =     /obj/item/organ/internal/eyes
+		)
+
+	perks = list(PERK_DARK_HEAL)
+
+	stat_modifiers = list(
+		STAT_BIO = 0,
+		STAT_COG = 0,
+		STAT_MEC = 0,
+		STAT_ROB = 20,
+		STAT_TGH = 0,
+		STAT_VIG = 0
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/mycus/get_bodytype()
+	return "Mycus"
+
+/datum/species/full_body_prosthetic
+	name = "Full Body Prosthetic"
+	default_form = FORM_FBP
+	obligate_form = TRUE
+	obligate_name = FALSE
+	name_plural = "FBPs"
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	reagent_tag = IS_SYNTHETIC
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+	total_health = 75
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/full_body_prosthetic,
+		BP_GROIN =  new /datum/organ_description/groin/full_body_prosthetic,
+		BP_HEAD =   new /datum/organ_description/head/full_body_prosthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/full_body_prosthetic/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/full_body_prosthetic/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/full_body_prosthetic/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/full_body_prosthetic/full
+		)
+
+	has_process = list(    // which required-process checks are conducted and default organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
+		)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/full_body_prosthetic/get_bodytype()
+	return "Full Body Prosthetic"
+
+/datum/species/unbranded_synth
+	name = "Unbranded Full Body Prosthetic"
+	default_form = FORM_UNBRANDED
+	obligate_form = TRUE
+	obligate_name = FALSE
+	name_plural = "FBPs"
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	reagent_tag = IS_SYNTHETIC
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+	total_health = 75
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/unbranded,
+		BP_GROIN =  new /datum/organ_description/groin/unbranded,
+		BP_HEAD =   new /datum/organ_description/head/unbranded,
+		BP_L_ARM =  new /datum/organ_description/arm/left/unbranded/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/unbranded/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/unbranded/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/unbranded/full
+		)
+
+	has_process = list(    // which required-process checks are conducted and default organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
+		)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/unbranded_synth/get_bodytype()
+	return "Unbranded Full Body Prosthetic"
+
 /datum/species/soteria_synthetic
-	name = "Soteria Full Body Positronic"
+	name = "Soteria Synthetic"
 	name_plural = "synthetics"
 	default_form = FORM_SOTSYNTH
 	obligate_name = TRUE
@@ -506,10 +757,15 @@
 	min_age = 18
 	max_age = 110
 	siemens_coefficient = 2
+	reagent_tag = IS_SYNTHETIC
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
-	slowdown = 0.2
+	slowdown = 0.3
 	radiation_mod = 0
+	total_health = 75
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -518,16 +774,27 @@
 		BP_CHEST =  new /datum/organ_description/chest/soteria_synthetic,
 		BP_GROIN =  new /datum/organ_description/groin/soteria_synthetic,
 		BP_HEAD =   new /datum/organ_description/head/soteria_synthetic,
-		BP_L_ARM =  new /datum/organ_description/arm/left/soteria_synthetic,
-		BP_R_ARM =  new /datum/organ_description/arm/right/soteria_synthetic,
-		BP_L_LEG =  new /datum/organ_description/leg/left/soteria_synthetic,
-		BP_R_LEG =  new /datum/organ_description/leg/right/soteria_synthetic
+		BP_L_ARM =  new /datum/organ_description/arm/left/soteria_synthetic/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/soteria_synthetic/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/soteria_synthetic/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/soteria_synthetic/full
 		)
 
-	has_process = list(    // which required-process checks are conducted and defalut organs for them.
+	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_HEART = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain,
+		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
 		)
 
 	stat_modifiers = list(
@@ -538,10 +805,10 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/soteria_synthetic/get_bodytype()
-	return "Synthetic"
+	return "Soteria Synthetic"
 
 /datum/species/artificer_guild_synthetic
-	name = "Artificer Guild Full Body Positronic"
+	name = "Artificer Guild Synthetic"
 	name_plural = "synthetics"
 	default_form = FORM_AGSYNTH
 	obligate_name = TRUE
@@ -552,10 +819,15 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 110
-	siemens_coefficient = 0.5
+	siemens_coefficient = 0
+	reagent_tag = IS_SYNTHETIC
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+	total_health = 75
 
 	dark_color = "#FA8128"
 	light_color = "#FCAE1E"
@@ -564,16 +836,27 @@
 		BP_CHEST =  new /datum/organ_description/chest/artificer_guild_synthetic,
 		BP_GROIN =  new /datum/organ_description/groin/artificer_guild_synthetic,
 		BP_HEAD =   new /datum/organ_description/head/artificer_guild_synthetic,
-		BP_L_ARM =  new /datum/organ_description/arm/left/artificer_guild_synthetic,
-		BP_R_ARM =  new /datum/organ_description/arm/right/artificer_guild_synthetic,
-		BP_L_LEG =  new /datum/organ_description/leg/left/artificer_guild_synthetic,
-		BP_R_LEG =  new /datum/organ_description/leg/right/artificer_guild_synthetic
+		BP_L_ARM =  new /datum/organ_description/arm/left/artificer_guild_synthetic/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/artificer_guild_synthetic/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/artificer_guild_synthetic/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/artificer_guild_synthetic/full
 		)
 
 	has_process = list(    // which required-process checks are conducted and defalut organs for them.
 		OP_HEART = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain,
+		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
 		)
 
 	stat_modifiers = list(
@@ -583,4 +866,230 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/artificer_guild_synthetic/get_bodytype()
-	return "Synthetic"
+	return "Artificer Guild Synthetic"
+
+/datum/species/blackshield_synthetic
+	name = "Blackshield Synthetic"
+	name_plural = "synthetics"
+	default_form = FORM_BSSYNTH
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	num_alternate_languages = 3
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+	reagent_tag = IS_SYNTHETIC
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+	total_health = 75
+	dark_color = "#FFFFFF"
+	light_color = "#000000"
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/blackshield_synthetic,
+		BP_GROIN =  new /datum/organ_description/groin/blackshield_synthetic,
+		BP_HEAD =   new /datum/organ_description/head/blackshield_synthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/blackshield_synthetic/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/blackshield_synthetic/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/blackshield_synthetic/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/blackshield_synthetic/full
+		)
+
+	has_process = list(    // which required-process checks are conducted and default organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
+		)
+
+	stat_modifiers = list(
+		STAT_TGH = 10
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/blackshield_synthetic/get_bodytype()
+	return "Blackshield Synthetic"
+
+/datum/species/church_synthetic
+	name = "Absolute Synthetic"
+	name_plural = "synthetics"
+	default_form = FORM_CHURCHSYNTH
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	num_alternate_languages = 3
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+	reagent_tag = IS_SYNTHETIC
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+	total_health = 75
+
+	dark_color = "#FFFFFF"
+	light_color = "#000000"
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/church_synthetic,
+		BP_GROIN =  new /datum/organ_description/groin/church_synthetic,
+		BP_HEAD =   new /datum/organ_description/head/church_synthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/church_synthetic/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/church_synthetic/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/church_synthetic/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/church_synthetic/full
+		)
+
+	has_process = list(    // which required-process checks are conducted and default organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
+		)
+
+	stat_modifiers = list(
+		STAT_BIO = 10
+	)
+
+	spawn_flags = CAN_JOIN
+
+/datum/species/church_synthetic/get_bodytype()
+	return "Absolute Synthetic"
+
+/datum/species/nashef_synthetic
+	name = "Nashef-Agunabi"
+	name_plural = "synthetics"
+	default_form = FORM_NASHEF
+	obligate_name = TRUE
+	obligate_form = TRUE
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
+	blurb = "How did you find this? Report this to Kazkin if you're reading it."
+	num_alternate_languages = 3
+	name_language = null // Use the first-name last-name generator rather than a language scrambler
+	min_age = 18
+	max_age = 110
+	reagent_tag = IS_SYNTHETIC
+	hunger_factor = 0
+	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
+	radiation_mod = 0
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+
+	dark_color = "#FFFFFF"
+	light_color = "#000000"
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/nashef_synthetic,
+		BP_GROIN =  new /datum/organ_description/groin/nashef_synthetic,
+		BP_HEAD =   new /datum/organ_description/head/nashef_synthetic,
+		BP_L_ARM =  new /datum/organ_description/arm/left/nashef_synthetic/full,
+		BP_R_ARM =  new /datum/organ_description/arm/right/nashef_synthetic/full,
+		BP_L_LEG =  new /datum/organ_description/leg/left/nashef_synthetic/full,
+		BP_R_LEG =  new /datum/organ_description/leg/right/nashef_synthetic/full
+		)
+
+	has_process = list(    // which required-process checks are conducted and default organs for them.
+		OP_HEART = /obj/item/organ/internal/cell,
+		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		)
+
+	heat_discomfort_strings = list(
+		"System analysis reports higher than normal heat levels.",
+		"System analysis reports rising tempatures!",
+		"System analysis reports dangerous levels of heat!."
+		)
+	cold_discomfort_strings = list(
+		"System analysis reports lower than normal tempature.",
+		"System analysis reports rapidly decreasing tempatures!",
+		"System analysis reports dangerous levels of cold!."
+		)
+
+	stat_modifiers = list(
+		STAT_BIO = 10
+	)
+
+	spawn_flags = IS_RESTRICTED
+
+/datum/species/slime
+	name = "Slime"
+	name_plural = "slimes"
+
+	default_form = FORM_SLIME
+	obligate_form = TRUE
+	reagent_tag = IS_SLIME
+	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
+	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
+	siemens_coefficient = 3 //conductive
+	darksight = 3
+	virus_immune = TRUE
+	breath_type = null
+	poison_type = null
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 2
+	spawn_flags = IS_RESTRICTED
+
+	burn_mod = 1.15
+	brute_mod = 1.15
+	toxins_mod = -1 // This is dumb. I hope it works. -R4d6
+	oxy_mod = 0
+
+	has_process = list(
+		BP_BRAIN = /obj/item/organ/internal/brain/slime
+		)
+
+	breath_type = null
+	poison_type = null
+
+	bump_flag = SLIME
+	swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+	push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+
+	has_limbs = list(
+		BP_CHEST =  new /datum/organ_description/chest/slime,
+		BP_GROIN =  new /datum/organ_description/groin/slime,
+		BP_HEAD =   new /datum/organ_description/head/slime,
+		BP_L_ARM =  new /datum/organ_description/arm/left/slime,
+		BP_R_ARM =  new /datum/organ_description/arm/right/slime,
+		BP_L_LEG =  new /datum/organ_description/leg/left/slime,
+		BP_R_LEG =  new /datum/organ_description/leg/right/slime
+	)
+
+	perks = list(PERK_SPEED, PERK_LIMB_REGEN, PERK_MIND_BOOST, PERK_BODY_BOOST)
+
+/datum/species/slime/handle_death(var/mob/living/carbon/human/H)
+	spawn(1)
+		if(H)
+			H.gib()
+

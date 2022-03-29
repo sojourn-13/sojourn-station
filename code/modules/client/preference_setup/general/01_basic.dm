@@ -97,6 +97,11 @@
 				pref.real_name = random_name(pref.gender, pref.species)
 	*/
 /datum/category_item/player_setup_item/physical/basic/content()
+	if(global.all_species[pref.species]?:obligate_name)
+		pref.custom_species = global.all_species[pref.species]
+	if ((pref.species == "Human") && (pref.custom_species in global.all_species))
+		pref.custom_species = "Human"
+
 	. = list()
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
 	. += "<span class='info' style='color:#0000cc;background-color:#ffffff;padding:5px;'> This is <b>[pref.real_name]</b>, <b><font color='[pref.species_color]'>a[pref.species_aan] [pref.custom_species]</font></b>!</span> <br>"
@@ -119,6 +124,7 @@
 
 /datum/category_item/player_setup_item/physical/basic/OnTopic(var/href,var/list/href_list, var/mob/user)
 	var/datum/species/S = all_species[pref.species]
+	pref.categoriesChanged = "Basic"
 
 	if(href_list["rename"])
 		var/raw_name = input(user, "Choose your character's name:", "Character Name", pref.real_name)  as text|null
@@ -183,7 +189,7 @@
 		return TOPIC_REFRESH
 
 	else if(href_list["species_name"])
-		if(global.all_species[pref.species]?.obligate_name)
+		if(global.all_species[pref.species]?:obligate_name)
 			return TOPIC_NOACTION
 		var/new_species_name = input(user, "Choose your character's species name. This is cosmetic.") as text|null
 		if(CanUseTopic(user))
@@ -195,13 +201,13 @@
 				to_chat(user, SPAN_WARNING("Invalid species name. Either it's a single character, or more than [MAX_NAME_LEN] characters long. Aside from letters, it can only contain _, ' and ."))
 				return TOPIC_NOACTION
 	else if(href_list["species_aan"])
-		if(global.all_species[pref.species]?.obligate_name)
+		if(global.all_species[pref.species]?:obligate_name)
 			return TOPIC_NOACTION
 		if(CanUseTopic(user))
 			pref.species_aan = pref.species_aan == "n" ? "" : "n"
 			return TOPIC_REFRESH
 	else if(href_list["species_name_color"])
-		if(global.all_species[pref.species]?.obligate_name)
+		if(global.all_species[pref.species]?:obligate_name)
 			return TOPIC_NOACTION
 		var/new_color = input(user, "Choose your species name's color. This should be shared with others using that species if you propagate it.", CHARACTER_PREFERENCE_INPUT_TITLE, pref.species_color) as color|null
 		if(new_color && CanUseTopic(user))

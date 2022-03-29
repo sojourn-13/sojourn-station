@@ -3,7 +3,8 @@
 	title = "Chief Executive Officer"
 	flag = MERCHANT
 	department = DEPARTMENT_LSS
-	head_position = 1
+	head_position = TRUE
+	aster_guild_member = TRUE
 	department_flag = LSS | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
@@ -19,6 +20,7 @@
 	)
 	ideal_character_age = 40
 	minimum_character_age = 30
+	playtimerequired = 1200
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
@@ -46,7 +48,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 
 	outfit_type = /decl/hierarchy/outfit/job/cargo/merchant
 
-	perks = list(/datum/perk/timeismoney, /datum/perk/market_prof)
+	perks = list(/datum/perk/timeismoney, /datum/perk/market_prof, /datum/perk/bartender, /datum/perk/chem_contraband)
 
 /obj/landmark/join/start/merchant
 	name = "Chief Executive Officer"
@@ -63,6 +65,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	spawn_positions = 4
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
+	alt_titles = list("Cargo Specialist","Lonestar Junior Technician")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
@@ -113,6 +116,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	spawn_positions = 4
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
+	alt_titles = list("Lonestar Drill Technician","Lonestar Digger","Mining Specialist","Junior Lonestar Miner")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
 

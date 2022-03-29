@@ -1,5 +1,6 @@
 #define SIPHONING	0
 #define SCRUBBING	1
+#define SLEEPOUT_TIME	15 SECONDS // If ZAS TICK does not occur for 15 seconds, sleep us
 
 /obj/machinery/atmospherics/unary/vent_scrubber
 	icon = 'icons/atmos/vent_scrubber.dmi'
@@ -21,6 +22,10 @@
 	var/frequency = 1439
 	var/datum/radio_frequency/radio_connection
 
+	var/current_linked_zone = null
+	var/currently_processing = FALSE
+	var/last_zas_update = null
+
 	var/scrubbing = SCRUBBING
 	var/list/scrubbing_gas = list("carbon_dioxide","sleeping_agent","plasma")
 	var/expanded_range = FALSE
@@ -39,7 +44,7 @@
 
 /obj/machinery/atmospherics/unary/vent_scrubber/New()
 	..()
-	air_contents.volume = ATMOS_DEFAULT_VOLUME_FILTER * 2
+	air_contents.volume = ATMOS_DEFAULT_VOLUME_FILTER
 
 	initial_loc = get_area(loc)
 	area_uid = initial_loc.uid
@@ -47,9 +52,49 @@
 		assign_uid()
 		id_tag = num2text(uid)
 
+/obj/machinery/atmospherics/unary/vent_scrubber/Initialize(mapload)
+	if(mapload)
+		addtimer(CALLBACK(src, .proc/link_to_zas), 20 SECONDS)
+	else
+		link_to_zas()
+	..()
+
 /obj/machinery/atmospherics/unary/vent_scrubber/Destroy()
 	unregister_radio(src, frequency)
+	if(current_linked_zone)
+		UnregisterSignal(current_linked_zone, COMSIG_ZAS_TICK)
+		UnregisterSignal(current_linked_zone, COMSIG_ZAS_DELETE)
+		current_linked_zone = null
 	. = ..()
+
+/obj/machinery/atmospherics/unary/vent_scrubber/proc/link_to_zas()
+	SHOULD_NOT_SLEEP(TRUE)
+	if(current_linked_zone)
+		UnregisterSignal(current_linked_zone, COMSIG_ZAS_TICK)
+		UnregisterSignal(current_linked_zone, COMSIG_ZAS_DELETE)
+		current_linked_zone = null
+	var/turf/simulated/where_the_fuck_are_we = get_turf(src)
+	if(!istype(where_the_fuck_are_we))
+		. = FALSE
+		CRASH("[src] scrubber located in [loc] on a non-simulated turf.Delete this or make the turf it is on simulated.")
+	current_linked_zone = where_the_fuck_are_we.zone
+	RegisterSignal(current_linked_zone , COMSIG_ZAS_TICK, .proc/begin_processing)
+	RegisterSignal(current_linked_zone, COMSIG_ZAS_DELETE, .proc/relink_zas)
+
+/obj/machinery/atmospherics/unary/vent_scrubber/proc/relink_zas()
+	SHOULD_NOT_SLEEP(TRUE)
+	INVOKE_ASYNC(src , .proc/zas_relink_wrapper)
+
+/obj/machinery/atmospherics/unary/vent_scrubber/proc/zas_relink_wrapper()
+	addtimer(CALLBACK(src, .proc/link_to_zas), 2 SECONDS)
+
+/obj/machinery/atmospherics/unary/vent_scrubber/proc/begin_processing()
+	SHOULD_NOT_SLEEP(TRUE)
+	last_zas_update = world.time
+	if(!currently_processing)
+		START_PROCESSING(SSmachines, src)
+		return TRUE
+	return FALSE
 
 /obj/machinery/atmospherics/unary/vent_scrubber/update_icon(safety = 0)
 	if(!node1)
@@ -86,7 +131,7 @@
 
 /obj/machinery/atmospherics/unary/vent_scrubber/proc/broadcast_status()
 	if(!radio_connection)
-		return 0
+		return FALSE
 
 	var/datum/signal/signal = new
 	signal.transmission_method = 1 //radio signal
@@ -125,6 +170,9 @@
 		src.broadcast_status()
 
 /obj/machinery/atmospherics/unary/vent_scrubber/Process()
+	if(last_zas_update + SLEEPOUT_TIME < world.time)
+		currently_processing = FALSE
+		return PROCESS_KILL
 	..()
 
 	if (!node1)
@@ -132,19 +180,19 @@
 		return
 	//broadcast_status()
 	if(!use_power)
-		return 0
+		return FALSE
 
 	if(stat & (NOPOWER|BROKEN))
-		return 0
+		return FALSE
 
 	if(welded)
-		return 0
+		return FALSE
 
 	var/list/environments = get_target_environments(src, expanded_range)
 	if(!length(environments))
-		return 0
+		return FALSE
 
-	var/power_draw = 0
+	var/power_draw = 1 //Bandaid correction, vents atm gain 1w magiclly do to a math bug that is current unknown - Trilby
 	var/transfer_happened = FALSE
 
 	for(var/e in environments)
@@ -157,20 +205,34 @@
 			var/transfer_moles = min(environment.total_moles, environment.total_moles*MAX_SCRUBBER_FLOWRATE/environment.volume)
 			//group_multiplier gets divided out here
 			power_draw += scrub_gas(src, scrubbing_gas, environment, air_contents, transfer_moles, power_rating)
+			if(debug)
+				log_debug("Srub Gas: scrubbing gas [scrubbing_gas] - enviroment: [environment] - air contents: [air_contents] - transfer moles: [transfer_moles] - Power-rating: [power_rating]")
+
 		else //Just siphon all air
 			//limit flow rate from turfs
 			var/transfer_moles = min(environment.total_moles, environment.total_moles*MAX_SIPHON_FLOWRATE/environment.volume)
 			//group_multiplier gets divided out here
 			power_draw += pump_gas(src, environment, air_contents, transfer_moles, power_rating)
+
+			if(debug)
+				log_debug("Pump Gas: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
+
 		transfer_happened = TRUE
 
+	if(0 > power_draw) //Stops negitives, baindaid correction
+		if(!has_errored)
+			log_to_dd("Error: Scrubber has had a negitive power draw - X:[src.x] Y:[src.y] Z:[src.z]")
+			has_errored = TRUE
+		power_draw = 0
+
 	if(transfer_happened)
+
 		last_power_draw = power_draw
 		use_power(power_draw)
 		if(network)
-			network.update = 1
+			network.update = TRUE
 
-	return 1
+	return TRUE
 
 /obj/machinery/atmospherics/unary/vent_scrubber/hide(var/i) //to make the little pipe section invisible, the icon changes.
 	update_icon()
@@ -320,3 +382,4 @@
 
 #undef SIPHONING
 #undef SCRUBBING
+#undef SLEEPOUT_TIME

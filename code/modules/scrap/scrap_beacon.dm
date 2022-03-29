@@ -7,7 +7,7 @@
 	anchored = TRUE
 	density = TRUE
 	layer = MOB_LAYER + 1
-	var/summon_cooldown = 120 MINUTES
+	var/summon_cooldown = 60 MINUTES
 	var/impact_speed = 3
 	var/impact_prob = 100
 	var/impact_range = 2

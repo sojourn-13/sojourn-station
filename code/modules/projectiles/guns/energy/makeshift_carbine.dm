@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/laser/makeshift
+/obj/item/gun/energy/laser/makeshift
 	name = "makeshift laser carbine"
 	desc = "A makeshift laser carbine, rather wasteful on its charge, but none the less reliable"
 	icon = 'icons/obj/guns/energy/makeshift_carbine.dmi'
@@ -14,7 +14,7 @@
 	zoom_factor = 0
 	charge_cost = 100 //worst lightfall
 	fire_delay = 10 //ditto
-	price_tag = 500
+	price_tag = 400
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)

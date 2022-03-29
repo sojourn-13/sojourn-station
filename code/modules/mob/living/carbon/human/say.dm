@@ -37,7 +37,7 @@
 		return
 	..()
 
-/mob/living/carbon/human/me_verb(message as text)
+/mob/living/carbon/human/me_verb(message as message) //SoJ edit.
 	if(suppress_communication)
 		to_chat(src, get_suppressed_message())
 		return
@@ -50,6 +50,11 @@
 	var/alt_name = ""
 	if(name != rank_prefix_name(GetVoice()))
 		alt_name = "(as [rank_prefix_name(get_id_name())])"
+	var/last_symbol = copytext(message, length(message))
+	if(last_symbol=="@")
+		if(!src.stats.getPerk(/datum/perk/codespeak))
+			to_chat(src, "You don't know the codes, pal.")
+			return FALSE
 
 	message = capitalize(sanitize(message))
 	. = ..(message, alt_name = alt_name)
@@ -119,15 +124,19 @@
 
 	return ..()
 
-/mob/living/carbon/human/GetVoice()
+/mob/living/carbon/human/GetVoice(mask_check)
 
 	var/voice_sub
-	if(istype(back, /obj/item/weapon/rig))
-		var/obj/item/weapon/rig/rig = back
+	if(istype(back, /obj/item/rig))
+		var/obj/item/rig/rig = back
 		// todo: fix this shit
 		if(rig.speech && rig.speech.voice_holder && rig.speech.voice_holder.active && rig.speech.voice_holder.voice)
 			voice_sub = rig.speech.voice_holder.voice
 	else
+		if(mask_check && wear_mask)
+			var/obj/item/clothing/mask/mask = wear_mask
+			if(istype(mask) && mask.muffle_voice)
+				voice_sub = "Unknown"
 		for(var/obj/item/gear in list(wear_mask, wear_suit, head))
 			if(!gear)
 				continue
@@ -175,6 +184,8 @@
 			verb=pick("exclaims", "shouts", "yells")
 		else if(ending == "?")
 			verb="asks"
+		else if(ending=="@")
+			verb="reports"
 
 	return verb
 

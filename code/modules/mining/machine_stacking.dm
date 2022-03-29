@@ -113,9 +113,11 @@
 						stack_storage[material_name] = stored_amount + stack_amount
 						qdel(M)
 					else
-						M.forceMove(get_step(src, output_dir))
+						contents -= M
+						M.loc = get_step(src, output_dir)
 				else
-					O.forceMove(get_step(src, output_dir))
+					contents -= O
+					O.loc = get_step(src, output_dir)
 
 	//Output amounts that are past stack_amt.
 	for (var/material_name in stack_storage)

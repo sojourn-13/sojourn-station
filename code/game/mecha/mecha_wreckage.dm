@@ -10,7 +10,7 @@
 	density = 1
 	anchored = 0
 	opacity = 0
-	layer = BELOW_MOB_LAYER
+	layer = TURF_LAYER + 0.6
 	var/list/welder_salvage = list(/obj/item/stack/material/plasteel,/obj/item/stack/material/steel,/obj/item/stack/rods)
 	var/list/wirecutters_salvage = list(/obj/item/stack/cable_coil)
 	var/list/crowbar_salvage
@@ -37,7 +37,7 @@
 	switch(tool_type)
 
 		if(QUALITY_WIRE_CUTTING)
-			if(salvage_num <= 0 || !isemptylist(wirecutters_salvage))
+			if(salvage_num <= 0 || isemptylist(wirecutters_salvage))
 				to_chat(user, "You don't see anything that can be removed with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -52,7 +52,7 @@
 			return
 
 		if(QUALITY_WELDING)
-			if(salvage_num <= 0 || !isemptylist(welder_salvage))
+			if(salvage_num <= 0 || isemptylist(welder_salvage))
 				to_chat(user, "You don't see anything that can be cut with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -69,7 +69,7 @@
 			return
 
 		if(QUALITY_PRYING)
-			if(!isemptylist(crowbar_salvage))
+			if(isemptylist(crowbar_salvage))
 				to_chat(user, "You don't see anything that can be pried with [I].")
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -201,6 +201,10 @@
 	name = "Phazon wreckage"
 	icon_state = "phazon-broken"
 
+/obj/effect/decal/mecha_wreckage/greyson
+	name = "greyson wreckage"
+	icon = 'icons/mob/64x64.dmi'
+	icon_state = "greyson_mech-broken"
 
 /obj/effect/decal/mecha_wreckage/odysseus
 	name = "Odysseus wreckage"

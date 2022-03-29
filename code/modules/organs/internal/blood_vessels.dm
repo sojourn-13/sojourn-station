@@ -8,3 +8,25 @@
 	oxygen_req = 2
 	nutriment_req = 1
 	w_class =  ITEM_SIZE_TINY
+
+/obj/item/organ/internal/blood_vessel/prosthetic
+	name = "plastic tubes"
+	desc = "Some thin plastic tubes, can act as blood vesels."
+	icon_state = "blood_vessel-prosthetic"
+	price_tag = 100
+	nature = MODIFICATION_SILICON
+	matter = list(MATERIAL_STEEL = 1)
+	organ_efficiency = list(OP_BLOOD_VESSEL = 100)
+
+/obj/item/organ/internal/blood_vessel/extensive
+	name = "extensive blood vessels"
+	icon_state = "blood_vessel_extensive"
+	price_tag = 150
+	oxygen_req = 2
+	organ_efficiency = list(OP_BLOOD_VESSEL = 150)
+	specific_organ_size = 0.6
+
+
+/obj/item/organ/internal/blood_vessel/extensive/exalt
+	name = "Exalt blood vessels"
+	desc = "Genetically Improved blood vessels for pumping only the most blue of blood."

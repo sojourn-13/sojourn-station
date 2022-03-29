@@ -15,6 +15,7 @@
 	toggleable = 1
 	disruptable = 1
 	disruptive = 0
+	price_tag = 5000
 
 	use_power_cost = 50
 	active_power_cost = 10
@@ -82,6 +83,8 @@
 	redundant = 1
 	usable = 1
 	selectable = 1
+
+	price_tag = 3500
 
 	var/realign_time = 0 //Used for skill-less teleports.
 
@@ -156,7 +159,7 @@
 	H.forceMove(T)
 	phase_in(H,get_turf(H))
 
-	for(var/obj/item/weapon/grab/G in H.contents)
+	for(var/obj/item/grab/G in H.contents)
 		if(G.affecting)
 			phase_out(G.affecting,get_turf(G.affecting))
 			go_to_bluespace(get_turf(H), 3, TRUE, H, T)
@@ -176,7 +179,7 @@
 
 	engage_string = "Fabricate Net"
 
-	fabrication_type = /obj/item/weapon/energy_net
+	fabrication_type = /obj/item/energy_net
 	use_power_cost = 70
 
 /obj/item/rig_module/fabricator/energy_net/engage(atom/target)

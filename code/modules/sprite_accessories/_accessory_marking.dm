@@ -21,6 +21,7 @@
 		icon_state = "alurane"
 		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
 
+
 /*Anime Eyes*/
 
 	animeeyesinner
@@ -31,6 +32,16 @@
 	animeeyesouter
 		name = "Anime Eyes Outer"
 		icon_state = "animeeyesouter"
+		body_parts = list(BP_HEAD)
+
+	bugeyeleft
+		name = "Bug Eye (Left)"
+		icon_state = "bugeyeleft"
+		body_parts = list(BP_HEAD)
+
+	bugeyeright
+		name = "Bug Eye (right)"
+		icon_state = "bugeyeright"
 		body_parts = list(BP_HEAD)
 
 /*Back Stripe*/
@@ -115,6 +126,28 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_FOOT,BP_R_FOOT)
 
+/*Makeup + Lipstick*/
+
+	lipstick
+		name = "Lipstick (Human/Regular)"
+		icon_state = "lipstick"
+		body_parts = list(BP_HEAD)
+
+	lipstickkriosan
+		name = "Lipstick (Kriosan/Vulpkanin)"
+		icon_state = "lipstickkriosan"
+		body_parts = list(BP_HEAD)
+
+	lipsticknaramad
+		name = "Lipstick (Naramad)"
+		icon_state = "lipsticknaramad"
+		body_parts = list(BP_HEAD)
+
+	lipstickakula
+		name = "Lipstick (Akula)"
+		icon_state = "lipstickakula"
+		body_parts = list(BP_HEAD)
+
 /*Color Bands + Patches*/
 
 	bands
@@ -178,6 +211,12 @@
 	dragon_horns
 		name = "Dragon Horns"
 		icon_state = "dragon-horns"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+	elven_ears
+		name = "Elven Ears"
+		icon_state = "elfs"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
@@ -250,6 +289,135 @@
 		name = "Jagged Teeth"
 		icon_state = "jagged"
 		body_parts = list(BP_HEAD)
+
+/*Handlebars*/
+	handlebars
+		name = "Handlebars"
+		icon_state = "handlebars"
+		body_parts = list(BP_HEAD)
+
+/*FBP 'chasis' markings*/
+	athena_body
+		name = "FBP-Athena chassis"
+		icon_state ="athena"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	athena_head
+		name = "FBP-Athena head"
+		icon_state ="athena"
+		body_parts = list(BP_HEAD)
+
+	ward_body
+		name = "FBP-Ward Takehashi chassis"
+		icon_state ="ward"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	ward_head
+		name = "FBP-Ward Takehashi head"
+		icon_state ="ward"
+		body_parts = list(BP_HEAD)
+
+	hesphaistos_body
+		name = "FBP-Hesphaistos chassis"
+		icon_state ="hesphaistos"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	hesphaistos_head
+		name = "FBP-Hesphaistos head"
+		icon_state ="hesphaistos"
+		body_parts = list(BP_HEAD)
+
+	bishop_body
+		name = "FBP-Bishop chassis"
+		icon_state ="bishop"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	bishop_head
+		name = "FBP-Bishop head"
+		icon_state ="bishop"
+		body_parts = list(BP_HEAD)
+
+	xion_body
+		name = "FBP-Xion chassis"
+		icon_state ="xion"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	xion_head
+		name = "FBP-Xion head"
+		icon_state ="xion"
+		body_parts = list(BP_HEAD)
+
+	spirit_body
+		name = "FBP-Ward Spirit chassis"
+		icon_state ="spirit"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	spirit_head
+		name = "FBP-Ward Spirit head"
+		icon_state ="spirit"
+		body_parts = list(BP_HEAD)
+
+	bishop_alt_optics
+		name = "FBP-Bishop Alt. Optics (IPC)"
+		icon_state = "bishop_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	ward_alt_optics
+		name = "FBP-Ward Takahashi Alt. Optics (IPC)"
+		icon_state = "wardtakahashi_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	xion_alt_optics
+		name = "FBP-Xion Alt. Optics (IPC)"
+		icon_state = "xion_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	hesphaistos_alt_optics
+		name = "FBP-Hesphaistos Alt. Optics (IPC)"
+		icon_state = "hephaestus_alt_optics"
+		body_parts = list(BP_HEAD)
+
+	morpheus_alt_optics
+		name = "FBP-Morpheus Optics (IPC)"
+		icon_state = "morpheus_optics"
+		body_parts = list(BP_HEAD)
+
+	synthskin_human
+		name = "FBP-Human synthskin"
+		icon_state = "synthskinhuman"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_humanf
+		name = "FBP-Human Female synthskin"
+		icon_state = "synthskinhumanf"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_canine
+		name = "FBP-Canine synthskin"
+		icon_state = "synthskincanine"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_feline
+		name = "FBP-Feline synthskin"
+		icon_state = "synthskinfeline"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_shark
+		name = "FBP-Shark synthskin"
+		icon_state = "synthskinshark"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
+	synthskin_lizard
+		name = "FBP-Lizard synthskin"
+		icon_state = "synthskinlizard"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_TORSO,BP_HEAD)
+
 
 /*Modular Longsock*/
 
@@ -770,3 +938,96 @@
 		leftleg
 			name = "Sablekyne (Bone, L.Leg)"
 			body_parts = list (BP_L_LEG)
+
+/*Marqua*/
+
+	frogeyes
+		name = "Marqua Eyes"
+		icon_state = "frogeyes"
+		body_parts = list(BP_HEAD)
+
+/*Horse*/
+
+	horseface
+		name = "Horse Face"
+		icon_state = "horseface"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+	horsemuzzle
+		name = "Horse Muzzle"
+		icon_state = "horsemuzzle"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+/*Bandages*/
+
+	bandage_head
+		name = "Bandage - Head"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
+//Left Arm
+
+	bandage_l_arm
+		name = "Bandage - Left Arm"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_ARM)
+		
+//Left Hand
+
+	bandage_l_hand
+		name = "Bandage - Left Hand"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_HAND)
+
+//Left Leg
+
+	bandage_l_leg
+		name = "Bandage - Left Leg"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_LEG)
+
+//Left Foot
+
+	bandage_l_foot
+		name = "Bandage - Left Foot"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_L_FOOT)
+
+//Right Arm
+
+	bandage_r_arm
+		name = "Bandage - Right Arm"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_ARM)
+		
+//Right Hand
+
+	bandage_r_hand
+		name = "Bandage - Right Hand"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_HAND)
+
+//Right Leg
+
+	bandage_r_leg
+		name = "Bandage - Right Leg"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_LEG)
+
+//Right Foot
+
+	bandage_r_foot
+		name = "Bandage - Right Foot"
+		icon_state = "bandage"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_R_FOOT)

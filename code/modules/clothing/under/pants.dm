@@ -189,6 +189,21 @@
 	desc = "A pair of athletic white track pants."
 	icon_state = "trackpantswhite"
 
+/obj/item/clothing/under/pants/leggings
+	name = "jean leggings"
+	desc = "A pair of tight-fitting nean leggings."
+	icon_state = "leggings"
+
+/obj/item/clothing/under/pants/leggingswhite
+	name = "white leggings"
+	desc = "A pair of tight-fitting white leggings."
+	icon_state = "whiteleggings"
+
+/obj/item/clothing/under/pants/leggingsprint
+	name = "leopard print leggings"
+	desc = "A pair of tight-fitting leopard print leggings."
+	icon_state = "rawrxdleggings"
+
 /obj/item/clothing/under/pants
 	name = "yoga pants"
 	desc = "A pair of tight-fitting white yoga pants."
@@ -232,6 +247,11 @@
 	desc = "A pair of baggy, two-tone military style cargo pants featuring an elastic waistband and leg cuffs."
 	icon_state = "gorka_pants"
 
+/obj/item/clothing/under/gorkapants/gorkacrewdark
+	name = "dark crew gorka pants"
+	desc = "A pair of baggy, two-tone utility pants featuring an elastic waistband and leg cuffs, and dark grey liverly."
+	icon_state = "gorka_pants_ih"
+
 /obj/item/clothing/under/gorkapants
 	name = "tan gorka pants"
 	desc = "A pair of baggy, two-tone military style cargo pants featuring an elastic waistband and leg cuffs."
@@ -246,7 +266,7 @@
 
 /obj/item/clothing/under/rank/medspec/gorkapantsihmed
 	name = "medical specialist gorka pants"
-	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband, leg cuffs, and MedSpec markings."
+	desc = "A pair of baggy, two-tone military cargo pants featuring an elastic waistband, leg cuffs, and Corpsman markings."
 	icon_state = "gorka_pants_ih_med"
 
 /obj/item/clothing/under/rank/medical/gorkapantscrewmed

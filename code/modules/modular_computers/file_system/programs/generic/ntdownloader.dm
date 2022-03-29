@@ -146,7 +146,7 @@
 	name = "Software Download Tool"
 	var/obj/item/modular_computer/my_computer = null
 
-/datum/nano_module/program/computer_ntnetdownload/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_ntnetdownload/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	if(program)
 		my_computer = program.computer
 
@@ -175,7 +175,7 @@
 	data["disk_size"] = my_computer.hard_drive.max_capacity
 	data["disk_used"] = my_computer.hard_drive.used_capacity
 
-	var/obj/item/weapon/computer_hardware/hard_drive/HDD = program.computer.hard_drive
+	var/obj/item/computer_hardware/hard_drive/HDD = program.computer.hard_drive
 	if(!HDD)
 		return 1
 	var/list/datum/computer_file/program/installed_programs = list()

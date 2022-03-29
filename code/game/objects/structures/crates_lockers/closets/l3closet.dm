@@ -12,7 +12,7 @@
 /obj/structure/closet/l3closet/general/populate_contents()
 	new /obj/item/clothing/suit/bio_suit/general(src)
 	new /obj/item/clothing/head/bio_hood/general(src)
-	new /obj/item/weapon/reagent_containers/spray/sterilizine(src)
+	new /obj/item/reagent_containers/spray/sterilizine(src)
 
 /obj/structure/closet/l3closet/virology
 	icon_door = "bio_viro"
@@ -21,8 +21,8 @@
 	new /obj/item/clothing/suit/bio_suit/virology(src)
 	new /obj/item/clothing/head/bio_hood/virology(src)
 	new /obj/item/clothing/mask/breath(src)
-	new /obj/item/weapon/tank/oxygen(src)
-	new /obj/item/weapon/reagent_containers/spray/sterilizine(src)
+	new /obj/item/tank/oxygen(src)
+	new /obj/item/reagent_containers/spray/sterilizine(src)
 
 /obj/structure/closet/l3closet/security
 	icon_door = "bio_sec"

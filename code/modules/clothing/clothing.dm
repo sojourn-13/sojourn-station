@@ -3,6 +3,7 @@
 	siemens_coefficient = 0.9
 	item_flags = DRAG_AND_DROP_UNEQUIP
 	var/flash_protection = FLASH_PROTECTION_NONE	// Sets the item's level of flash protection.
+	var/psi_blocking = 0							// Sets the item's level of psionic protection.
 	var/tint = TINT_NONE							// Sets the item's level of visual impairment tint.
 	var/list/species_restricted						// Only these species can wear this kit.
 	var/gunshot_residue								// Used by forensics.
@@ -11,6 +12,9 @@
 	var/list/valid_accessory_slots
 	var/list/restricted_accessory_slots
 	var/equip_delay = 0 //If set to a nonzero value, the item will require that much time to wear and remove
+
+	stiffness = 0 // Recoil caused by moving, defined in obj/item
+	obscuration = 0 // Similar to tint, but decreases firearm accuracy instead via giving minimum extra offset, defined in obj/item
 
 	//Used for hardsuits. If false, this piece cannot be retracted while the core module is engaged
 	var/retract_while_active = TRUE
@@ -46,7 +50,7 @@
 //Delayed equipping
 /obj/item/clothing/pre_equip(var/mob/user, var/slot)
 	..(user, slot)
-	if (equip_delay > 0)
+	if (equip_delay > 0 && !user.stats.getPerk(PERK_SECOND_SKIN))
 		//If its currently worn, we must be taking it off
 		if (is_worn())
 			user.visible_message(
@@ -118,6 +122,8 @@
 		var/body_part_string = body_part_coverage_to_string(body_parts_covered)
 		data["body_coverage"] = body_part_string
 	data["slowdown"] = slowdown
+	data["stiffness"] = stiffness
+	data["obscuration"] = obscuration
 	if(heat_protection)
 		data["heat_protection"] = body_part_coverage_to_string(heat_protection)
 		data["heat_protection_temperature"] = max_heat_protection_temperature
@@ -127,7 +133,7 @@
 	data["equip_delay"] = equip_delay
 	return data
 
-/obj/item/clothing/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/obj/item/clothing/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -139,7 +145,7 @@
 
 /obj/item/clothing/ui_action_click(mob/living/user, action_name)
 	if(action_name == "Clothing information")
-		ui_interact(user)
+		nano_ui_interact(user)
 		return TRUE
 	return ..()
 
@@ -237,8 +243,8 @@
 	action_button_name = "action_music"
 	var/obj/item/device/player/player = null
 	var/tick_cost = 0.1
-	var/obj/item/weapon/cell/cell = null
-	var/suitable_cell = /obj/item/weapon/cell/small
+	cell = null
+	suitable_cell = /obj/item/cell/small
 
 
 /*
@@ -324,7 +330,7 @@ BLIND     // can't see anything
 	var/wired = 0
 	var/clipped = 0
 	body_parts_covered = ARMS
-	armor = list(melee = 10, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_GLOVES
 	attack_verb = list("challenged")
 
@@ -332,8 +338,8 @@ BLIND     // can't see anything
 /obj/item/clothing/gloves/proc/Touch(var/atom/A, var/proximity)
 	return 0 // return 1 to cancel attack_hand()
 
-/obj/item/clothing/gloves/attackby(obj/item/weapon/W, mob/user)
-	if(istype(W, /obj/item/weapon/tool/wirecutters) || istype(W, /obj/item/weapon/tool/scalpel))
+/obj/item/clothing/gloves/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/tool/wirecutters) || istype(W, /obj/item/tool/scalpel))
 		if (clipped)
 			to_chat(user, SPAN_NOTICE("The [src] have already been clipped!"))
 			update_icon()
@@ -451,7 +457,8 @@ BLIND     // can't see anything
 	slot_flags = SLOT_MASK
 	body_parts_covered = FACE|EYES
 
-	var/voicechange = 0
+	var/muffle_voice = FALSE
+	var/voicechange = FALSE
 	var/list/say_messages
 	var/list/say_verbs
 
@@ -474,7 +481,7 @@ BLIND     // can't see anything
 	var/noslip = 0
 	var/module_inside = 0
 
-	armor = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
 	permeability_coefficient = 0.50
 	slowdown = SHOES_SLOWDOWN
 	force = 2
@@ -533,14 +540,16 @@ BLIND     // can't see anything
 		siemens_coefficient = 0 // DAMN BOI
 		qdel(I)
 
+	if(istype(I, /obj/item/tool/knife/psionic_blade))
+		return ..()
 	if(!knifes)
 		knifes = list(
-			/obj/item/weapon/tool/knife,
-			/obj/item/weapon/material/shard,
-			/obj/item/weapon/material/butterfly,
-			/obj/item/weapon/material/kitchen/utensil,
-			/obj/item/weapon/tool/knife/tacknife,
-			/obj/item/weapon/tool/knife/shiv
+			/obj/item/tool/knife,
+			/obj/item/material/shard,
+			/obj/item/material/butterfly,
+			/obj/item/material/kitchen/utensil,
+			/obj/item/tool/knife/tacknife,
+			/obj/item/tool/knife/shiv
 		)
 	if(can_hold_knife && is_type_in_list(I, knifes))
 		if(holding)
@@ -584,24 +593,26 @@ BLIND     // can't see anything
 	var/fire_resist = T0C+100
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(
-		/obj/item/weapon/clipboard,
-		/obj/item/weapon/storage/pouch/,
-		/obj/item/weapon/gun,
-		/obj/item/weapon/melee,
-		/obj/item/weapon/material,
+		/obj/item/clipboard,
+		/obj/item/storage/pouch/,
+		/obj/item/gun,
+		/obj/item/melee,
+		/obj/item/material,
 		/obj/item/ammo_magazine,
 		/obj/item/ammo_casing,
-		/obj/item/weapon/handcuffs,
-		/obj/item/weapon/tank,
+		/obj/item/handcuffs,
+		/obj/item/tank,
+		/obj/item/tool, //People are going to so abuse this
 		/obj/item/device/suit_cooling_unit,
-		/obj/item/weapon/cell,
-		/obj/item/weapon/storage/fancy,
-		/obj/item/weapon/flamethrower,
+		/obj/item/cell,
+		/obj/item/storage/fancy,
+		/obj/item/flamethrower,
 		/obj/item/device/lighting,
 		/obj/item/device/scanner,
-		/obj/item/weapon/reagent_containers/spray,
+		/obj/item/reagent_containers/spray,
 		/obj/item/device/radio,
-		/obj/item/clothing/mask)
+		/obj/item/clothing/mask,
+		/obj/item/implant/carrion_spider/holographic)
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"
 	siemens_coefficient = 0.9
@@ -718,7 +729,7 @@ BLIND     // can't see anything
 	..()
 
 /obj/item/clothing/under/attackby(var/obj/item/I, var/mob/U)
-	if(I.get_tool_type(usr, list(QUALITY_SCREW_DRIVING), src) && ishuman(U))
+	if(I.get_tool_type(usr, list(QUALITY_SCREW_DRIVING), src) && ishuman(U) && !is_sharp(I)) // No setting sensors with knives!
 		set_sensors(U)
 	else
 		return ..()

@@ -1,6 +1,6 @@
-/obj/item/weapon/gun/projectile/glock
+/obj/item/gun/projectile/glock
 	name = "\"Sky\" pistol"
-	desc = "The SA sky pistol, a weapon bearing a close resemblance to the traditional glock, modified for semi-auto, burst, auto-eject mags and coming with a fitting for a silencer. Uses .35 Auto."
+	desc = "The Seinemetall Defense GmbH sky pistol, a weapon bearing a close resemblance to the traditional police high grade glock, modified for semi-auto, burst, auto-eject mags and coming with a fitting for a silencer. Uses .35 Auto."
 	icon = 'icons/obj/guns/projectile/glock.dmi'
 	icon_state = "glock"
 	item_state = "glock"
@@ -11,7 +11,7 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
-	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
+	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL|MAG_WELL_DRUM
 	damage_multiplier = 1.15
 	penetration_multiplier = 1
 	recoil_buildup = 2
@@ -20,11 +20,11 @@
 	auto_eject = TRUE
 
 	init_firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
+		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger",       burst=1, fire_delay=1.2, move_delay=null, 	icon="semi"),
+		list(mode_name="3-round bursts", mode_desc="Shoot three bullets almost instantly", burst=3, fire_delay=0.2, move_delay=4,    	icon="burst"),
 		)
 
-/obj/item/weapon/gun/projectile/glock/update_icon()
+/obj/item/gun/projectile/glock/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""

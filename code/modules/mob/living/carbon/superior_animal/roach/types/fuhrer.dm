@@ -21,10 +21,14 @@
 
 	flash_resistances = 5 //half stuns by flash, so we can still get up and be in the fight!
 
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/roachmeat/fuhrer
+	armor = list(melee = 15, bullet = 15, energy = 5, bomb = 5, bio = 20, rad = 0, agony = 0)
+
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer
 	meat_amount = 6
 
 	sanity_damage = 1
+
+	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_ROACH_FRIEND, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
 
 
 

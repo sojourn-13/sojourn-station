@@ -114,6 +114,13 @@
 	desc = "They seem to pulse slightly with an inner life"
 	icon_state = "eggs"
 	var/amount_grown = 0
+	var/spiderlings_lower = 2
+	var/spiderlings_upper = 4
+
+/obj/effect/spider/eggcluster/minor
+	amount_grown = 20
+	spiderlings_lower = 1
+	spiderlings_upper = 2
 
 /obj/effect/spider/eggcluster/New(var/location, var/atom/parent)
 	pixel_x = rand(3,-3)
@@ -133,7 +140,7 @@
 /obj/effect/spider/eggcluster/Process()
 	amount_grown += rand(0,2)
 	if(amount_grown >= 100)
-		var/num = rand(1,3)
+		var/num = rand(spiderlings_lower,spiderlings_upper)
 		var/obj/item/organ/external/O = null
 		if(istype(loc, /obj/item/organ/external))
 			O = loc
@@ -155,6 +162,7 @@
 	var/amount_grown = -1
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent
 	var/travelling_in_vent = 0
+	var/spawn_type = /obj/random/mob/spiders
 
 /obj/effect/spider/spiderling/New(var/location, var/atom/parent)
 	pixel_x = rand(6,-6)
@@ -257,8 +265,7 @@
 					break
 
 		if(amount_grown >= 100)
-			var/spawn_type = /obj/random/mob/spiders
-			new spawn_type(src.loc, src)
+			new spawn_type(src.loc, src) //This spawns the random mob spawner that the spiderling grows into
 			qdel(src)
 	else if(isorgan(loc))
 		if(!amount_grown) amount_grown = 1
@@ -284,7 +291,7 @@
 	name = "spiderling remains"
 	desc = "Green squishy mess."
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "greenshatter"
+	icon_state = "blueshatter"
 	anchored = TRUE
 
 /obj/effect/spider/cocoon
@@ -309,3 +316,7 @@
 	for(var/atom/movable/A in contents)
 		A.forceMove(get_turf(src))
 	return ..()
+
+/obj/effect/spider/spiderling/near_grown
+	amount_grown = 80
+	spawn_type = /obj/random/mob/spiders/spider_ling //This one cant spawn carrons

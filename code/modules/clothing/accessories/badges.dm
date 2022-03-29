@@ -4,6 +4,9 @@
 	or they can be emagged to accept any ID for use in disguises.
 */
 
+
+//All badge sprites done by - CeUvi
+
 /obj/item/clothing/accessory/badge
 	name = "Ranger's badge"
 	desc = "A marshal ranger badge, made from gold and set on leather."
@@ -70,7 +73,7 @@
 		return 1
 
 /obj/item/clothing/accessory/badge/holo/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	var/obj/item/weapon/card/id/id_card = O.GetIdCard()
+	var/obj/item/card/id/id_card = O.GetIdCard()
 	if(!id_card)
 		return
 
@@ -81,7 +84,7 @@
 		to_chat(user, "[src] rejects your insufficient access rights.")
 	return
 
-/obj/item/weapon/storage/box/holobadge
+/obj/item/storage/box/holobadge
 	name = "holobadge box"
 	desc = "A box claiming to contain holobadges."
 	New()
@@ -117,7 +120,7 @@
 
 /obj/item/clothing/accessory/badge/marshal
 	name = "commando's badge"
-	desc = "A leather-backed gold badge displaying the crest of the Brigadier, signifying the wearer as one of the brigadier's agents."
+	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
 	icon_state = "marshalbadge"
-	badge_string = "Brigadier's Commando"
+	badge_string = "Special Agent"
 

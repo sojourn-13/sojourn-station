@@ -13,10 +13,9 @@
 	active_power_usage = 400
 	var/make_glasswalls_after_creation = FALSE
 
-/obj/machinery/multistructure/bioreactor_part/platform/Initialize()
+/obj/machinery/multistructure/bioreactor_part/platform/Initialize(mapload)
 	. = ..()
 	update_icon()
-
 
 /obj/machinery/multistructure/bioreactor_part/platform/Process()
 	if(!MS)
@@ -102,7 +101,7 @@
 			//non robotic limbs will be consumed
 			if(istype(item, /obj/item/organ))
 				var/obj/item/organ/organ = item
-				if(istype(organ, /obj/item/organ/external) && organ.nature == MODIFICATION_ORGANIC)
+				if(istype(organ, /obj/item/organ/external) && (organ.nature == MODIFICATION_ORGANIC || organ.nature == MODIFICATION_SUPERIOR))
 					continue
 				var/obj/machinery/multistructure/bioreactor_part/platform/neighbor_platform = pick(MS_bioreactor.platforms)
 				organ.forceMove(get_turf(neighbor_platform))
@@ -225,8 +224,8 @@
 
 
 /obj/structure/window/reinforced/bioreactor/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/mop) || istype(I, /obj/item/weapon/soap))
-		if(istype(I, /obj/item/weapon/mop))
+	if(istype(I, /obj/item/mop) || istype(I, /obj/item/soap))
+		if(istype(I, /obj/item/mop))
 			if(I.reagents && !I.reagents.total_volume)
 				to_chat(user, SPAN_WARNING("Your [I] is dry!"))
 				return

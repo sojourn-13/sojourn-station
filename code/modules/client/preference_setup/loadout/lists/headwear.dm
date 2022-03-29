@@ -19,6 +19,11 @@
 	path = /obj/item/clothing/head/beret
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/beretcustom
+	display_name = "beret, customized"
+	path = /obj/item/clothing/head/beret/custom
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/head/boater
 	display_name = "boater hat"
 	path = /obj/item/clothing/head/boaterhat
@@ -87,6 +92,14 @@
 /datum/gear/head/rice_hat
 	display_name = "rice hat"
 	path = /obj/item/clothing/head/rice_hat
+
+/datum/gear/head/ranger
+	display_name = "ranger hat"
+	path = /obj/item/clothing/head/ranger
+
+/datum/gear/head/numerical_hat
+	display_name = "numerical hat"
+	path = /obj/item/clothing/head/numerical_hat
 
 /datum/gear/head/tanker_helmet/color_presets
 	display_name = "tanker helmet, color presets"

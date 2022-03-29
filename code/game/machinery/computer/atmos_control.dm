@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/atmoscontrol
+/obj/item/circuitboard/atmoscontrol
 	build_name = "central atmospherics computer"
 	build_path = /obj/machinery/computer/atmoscontrol
 
@@ -10,7 +10,7 @@
 	light_color = COLOR_LIGHTING_BLUE_MACHINERY
 	density = 1
 	anchored = 1.0
-	circuit = /obj/item/weapon/circuitboard/atmoscontrol
+	circuit = /obj/item/circuitboard/atmoscontrol
 	req_access = list(access_ce)
 	var/list/monitored_alarm_ids = null
 	var/datum/nano_module/atmos_control/atmos_control
@@ -27,7 +27,7 @@
 /obj/machinery/computer/atmoscontrol/attack_hand(mob/user)
 	if(..())
 		return 1
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/computer/atmoscontrol/emag_act(var/remaining_carges, var/mob/user)
 	if(!emagged)
@@ -37,7 +37,7 @@
 		atmos_control.emagged = 1
 		return 1
 
-/obj/machinery/computer/atmoscontrol/ui_interact(var/mob/user)
+/obj/machinery/computer/atmoscontrol/nano_ui_interact(var/mob/user)
 	if(!atmos_control)
 		atmos_control = new(src, req_access, req_one_access, monitored_alarm_ids)
-	atmos_control.ui_interact(user)
+	atmos_control.nano_ui_interact(user)

@@ -21,6 +21,13 @@
 		M.adjustToxLoss(strength * multi)
 	M.add_chemical_effect(CE_TOXIN, 1)
 
+/datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(ishuman(M))
+		if(M.stats.getPerk(PERK_SNACKIVORE))
+			M.adjustToxLoss(-((0.6 + (M.getToxLoss() * 0.05)) * effect_multiplier))
+
+	return ..()
+
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
 		M.adjustToxLoss(strength * issmall(M) ? 2 : 1)
@@ -41,6 +48,7 @@
 	taste_description = "money"
 	reagent_state = LIQUID
 	color = "#0C0C0C"
+	common = TRUE //Identifiable on sight
 
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
@@ -187,6 +195,7 @@
 	color = "#669900"
 	metabolism = REM
 	strength = 0.04
+	illegal = TRUE
 
 /datum/reagent/toxin/zombiepowder/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -212,6 +221,7 @@
 	reagent_state = LIQUID
 	strength = 0.01 // It's not THAT poisonous.
 	color = "#664330"
+	common = TRUE
 
 /datum/reagent/toxin/fertilizer/eznutrient
 	name = "EZ Nutrient"
@@ -263,6 +273,7 @@
 	color = "#8E18A9"
 	power = 10
 	meltdose = 4
+	illegal = TRUE
 
 
 /datum/reagent/toxin/lexorin
@@ -320,6 +331,7 @@
 	taste_mult = 1.3
 	reagent_state = LIQUID
 	color = "#801E28"
+	illegal = TRUE
 
 /datum/reagent/medicine/slimejelly/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(10))
@@ -366,6 +378,7 @@
 	color = "#000067"
 	metabolism = REM * 5
 	overdose = REAGENTS_OVERDOSE * 0.5
+	illegal = TRUE
 
 /datum/reagent/medicine/chloralhydrate/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/effective_dose = dose
@@ -396,6 +409,7 @@
 	glass_name = "beer"
 	glass_desc = "A freezing pint of beer"
 	glass_center_of_mass = list("x"=16, "y"=8)
+	common = TRUE //So people mistakenly believe it is, in fact, beer.
 
 /* Transformations */
 
@@ -432,7 +446,7 @@
 	M.cut_overlays()
 	M.invisibility = 101
 	for(var/obj/item/W in M)
-		if(istype(W, /obj/item/weapon/implant)) //TODO: Carn. give implants a dropped() or something
+		if(istype(W, /obj/item/implant)) //TODO: Carn. give implants a dropped() or something
 			qdel(W)
 			continue
 		W.layer = initial(W.layer)
@@ -463,16 +477,47 @@
 	reagent_state = LIQUID
 	color = "#a37d9c"
 	overdose = REAGENTS_OVERDOSE/3
-	addiction_chance = 0.1
-	nerve_system_accumulations = 5
+	addiction_chance = 0.01 //Will STILL likely always be addicting
+	nerve_system_accumulations = 10
 	strength = 0.1
 	heating_point = 523
 	heating_products = list("toxin")
 
 /datum/reagent/toxin/pararein/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "pararein")
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "pararein")
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "pararein")
+
+/datum/reagent/toxin/aranecolmin
+	name = "Aranecolmin"
+	id = "aranecolmin"
+	description = "Weak antitoxin used by warrior spiders. Speeds up metabolism immensely."
+	taste_description = "sludge"
+	reagent_state = LIQUID
+	color = "#acc107"
+	overdose = REAGENTS_OVERDOSE
+	addiction_chance = 10
+	nerve_system_accumulations = 5
+
+/datum/reagent/toxin/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_ANTITOX, 0.3)
+	if(M.bloodstr)
+		for(var/current in M.bloodstr.reagent_list)
+			var/datum/reagent/toxin/pararein/R = current
+			if(istype(R))
+				R.metabolism = initial(R.metabolism) * 3
+				break
+
+/datum/reagent/toxin/aranecolmin/on_mob_delete(mob/living/carbon/M)
+	..()
+	if(istype(M))
+		if(M.bloodstr)
+			for(var/current in M.bloodstr.reagent_list)
+				var/datum/reagent/toxin/pararein/R = current
+				if(istype(R))
+					R.metabolism = initial(R.metabolism)
+					break
 
 /datum/reagent/toxin/diplopterum
 	name = "Diplopterum"
@@ -667,6 +712,7 @@
 	reagent_state = LIQUID
 	color = "#527f4f"
 	strength = 0.3
+	common = TRUE //Church should know if they actually have biomatter or something else.
 
 /datum/reagent/toxin/biomatter/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -738,6 +784,7 @@
 	reagent_state = LIQUID
 	strength = 0.8
 	overdose = REAGENTS_OVERDOSE/2
+	illegal = TRUE
 
 /datum/reagent/toxin/combat/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()

@@ -64,7 +64,7 @@ var/global/use_preloader = FALSE
 		z_offset = world.maxz + 1
 
 	// If it's not a single dir, default to north (Default orientation)
-	if(!orientation in cardinal)
+	if(!(orientation in cardinal))
 		orientation = SOUTH
 
 	var/list/bounds = list(1.#INF, 1.#INF, 1.#INF, -1.#INF, -1.#INF, -1.#INF)
@@ -72,12 +72,13 @@ var/global/use_preloader = FALSE
 	var/key_len = 0
 
 	var/stored_index = 1
-	while(dmmRegex.Find(tfile, stored_index))
-		stored_index = dmmRegex.next
+	var/regex/localRegex = regex(dmmRegex)
+	while(localRegex.Find(tfile, stored_index))
+		stored_index = localRegex.next
 
 		// "aa" = (/type{vars=blah})
-		if(dmmRegex.group[1]) // Model
-			var/key = dmmRegex.group[1]
+		if(localRegex.group[1]) // Model
+			var/key = localRegex.group[1]
 			if(grid_models[key]) // Duplicate model keys are ignored in DMMs
 				continue
 			if(key_len != length(key))
@@ -86,18 +87,19 @@ var/global/use_preloader = FALSE
 				else
 					throw EXCEPTION("Inconsistant key length in DMM")
 			if(!measureOnly)
-				grid_models[key] = dmmRegex.group[2]
+				grid_models[key] = localRegex.group[2]
 
 		// (1,1,1) = {"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
-		else if(dmmRegex.group[3]) // Coords
+		else if(localRegex.group[3]) // Coords
 			if(!key_len)
-				throw EXCEPTION("Coords before model definition in DMM")
+				testing("[localRegex.group[3]]")
+				throw EXCEPTION("Coords before model definition in DMM - [dmm_file]")
 
-			var/xcrdStart = text2num(dmmRegex.group[3]) + x_offset - 1
+			var/xcrdStart = text2num(localRegex.group[3]) + x_offset - 1
 			//position of the currently processed square
 			var/xcrd
-			var/ycrd = text2num(dmmRegex.group[4]) + y_offset - 1
-			var/zcrd = text2num(dmmRegex.group[5]) + z_offset - 1
+			var/ycrd = text2num(localRegex.group[4]) + y_offset - 1
+			var/zcrd = text2num(localRegex.group[5]) + z_offset - 1
 
 			if(orientation & (EAST | WEST)) //VOREStation edit we just have to pray the upstream spacebrains take into consideration before their refator is done.
 				xcrd = ycrd // temp variable
@@ -109,7 +111,8 @@ var/global/use_preloader = FALSE
 				if(cropMap)
 					continue
 				else
-					world.maxz = zcrd //create a new z_level if needed
+					while(world.maxz < zcrd) //create a new z_level if needed
+						world.incrementMaxZ()
 				if(!no_changeturf)
 					WARNING("Z-level expansion occurred without no_changeturf set, this may cause problems")
 
@@ -117,7 +120,7 @@ var/global/use_preloader = FALSE
 			bounds[MAP_MINZ] = min(bounds[MAP_MINZ], zcrd)
 			bounds[MAP_MAXZ] = max(bounds[MAP_MAXZ], zcrd)
 
-			var/list/gridLines = splittext(dmmRegex.group[6], "\n")
+			var/list/gridLines = splittext(localRegex.group[6], "\n")
 
 			var/leadingBlanks = 0
 			while(leadingBlanks < gridLines.len && gridLines[++leadingBlanks] == "")
@@ -131,7 +134,8 @@ var/global/use_preloader = FALSE
 				gridLines.Cut(gridLines.len) // Remove only one blank line at the end.
 
 			bounds[MAP_MINY] = min(bounds[MAP_MINY], ycrd)
-			ycrd += gridLines.len - 1 // Start at the top and work down
+			if (orientation == SOUTH || orientation == NORTH) // Fix to avoid improper loading with EAST and WEST orientation
+				ycrd += gridLines.len - 1 // Start at the top and work down
 
 			if(!cropMap && ycrd > world.maxy)
 				if(!measureOnly)
@@ -143,7 +147,7 @@ var/global/use_preloader = FALSE
 			var/maxx = xcrdStart
 
 			// Assemble the grid of keys
-			var/list/key_list = list()
+			var/list/list/key_list = list()
 			for(var/line in gridLines)
 				var/list/line_keys = list()
 				xcrd = 1
@@ -158,8 +162,8 @@ var/global/use_preloader = FALSE
 						var/model_key = copytext(line, tpos, tpos + key_len)
 						line_keys[++line_keys.len] = model_key
 						#ifdef TESTING
-						else
-							++turfsSkipped
+					else
+						++turfsSkipped
 						#endif
 						CHECK_TICK
 					maxx = max(maxx, xcrd++)
@@ -169,7 +173,7 @@ var/global/use_preloader = FALSE
 			if(orientation != SOUTH)
 				var/num_cols = key_list[1].len
 				var/num_rows = key_list.len
-				var/list/new_key_list = list()
+				var/list/list/new_key_list = list()
 				// If it's rotated 180 degrees, the dimensions are the same
 				if(orientation == NORTH)
 					new_key_list.len = num_rows

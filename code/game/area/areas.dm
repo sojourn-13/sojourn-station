@@ -16,6 +16,13 @@
 	layer = AREA_LAYER
 	var/ship_area = FALSE
 
+	var/used_equip = 0
+	var/used_light = 0
+	var/used_environ = 0
+	var/static_equip
+	var/static_light = 0
+	var/static_environ
+
 /area/New()
 	icon_state = ""
 	layer = AREA_LAYER
@@ -192,11 +199,11 @@
 	if(always_unpowered)
 		return 0
 	switch(chan)
-		if(EQUIP)
+		if(STATIC_EQUIP)
 			return power_equip
-		if(LIGHT)
+		if(STATIC_LIGHT)
 			return power_light
-		if(ENVIRON)
+		if(STATIC_ENVIRON)
 			return power_environ
 
 	return 0
@@ -211,15 +218,27 @@
 /area/proc/usage(var/chan)
 	var/used = 0
 	switch(chan)
-		if(LIGHT)
-			used += used_light
-		if(EQUIP)
-			used += used_equip
-		if(ENVIRON)
-			used += used_environ
 		if(TOTAL)
-			used += used_light + used_equip + used_environ
+			used += static_light + static_equip + static_environ + used_equip + used_light + used_environ
+		if(STATIC_EQUIP)
+			used += static_equip + used_equip
+		if(STATIC_LIGHT)
+			used += static_light + used_light
+		if(STATIC_ENVIRON)
+			used += static_environ + used_environ
 	return used
+
+/area/proc/addStaticPower(value, powerchannel)
+	switch(powerchannel)
+		if(STATIC_EQUIP)
+			static_equip += value
+		if(STATIC_LIGHT)
+			static_light += value
+		if(STATIC_ENVIRON)
+			static_environ += value
+
+/area/proc/removeStaticPower(value, powerchannel)
+	addStaticPower(-value, powerchannel)
 
 /area/proc/clear_usage()
 	used_equip = 0
@@ -228,11 +247,11 @@
 
 /area/proc/use_power(var/amount, var/chan)
 	switch(chan)
-		if(EQUIP)
+		if(STATIC_EQUIP)
 			used_equip += amount
-		if(LIGHT)
+		if(STATIC_LIGHT)
 			used_light += amount
-		if(ENVIRON)
+		if(STATIC_ENVIRON)
 			used_environ += amount
 
 
@@ -256,6 +275,7 @@ var/list/mob/living/forced_ambiance_list = new
 
 	L.lastarea = newarea
 	play_ambience(L)
+	do_area_blurb(L) // This handles narration logic.
 
 /area/proc/play_ambience(var/mob/living/L)
     // Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
@@ -325,7 +345,7 @@ var/list/mob/living/forced_ambiance_list = new
 		var/mob/living/carbon/human/H = mob
 		if(istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & NOSLIP))
 			return
-		if(H.stats.getPerk(PERK_ASS_OF_CONCRETE))
+		if(H.stats.getPerk(PERK_ASS_OF_CONCRETE) || H.stats.getPerk(PERK_BRAWN))
 			return
 		if(MOVING_QUICKLY(H))
 			H.AdjustStunned(2)

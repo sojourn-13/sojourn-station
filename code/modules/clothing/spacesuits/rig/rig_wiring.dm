@@ -1,8 +1,12 @@
 /datum/wires/rig
-	random = 1
-	holder_type = /obj/item/weapon/rig
+	holder_type = /obj/item/rig
 	wire_count = 5
-
+	descriptions = list(
+			new /datum/wire_description(RIG_SECURITY, "Security"),
+			new /datum/wire_description(RIG_AI_OVERRIDE, "AI override"),
+			new /datum/wire_description(RIG_SYSTEM_CONTROL, "System control"),
+			new /datum/wire_description(RIG_INTERFACE_LOCK, "Interface lock"),
+			new /datum/wire_description(RIG_INTERFACE_SHOCK, "Interface shock"))
 //The defines for the wires are moved to rig.dm, as they are used there
 /*
  * Rig security can be snipped to disable ID access checks on rig.
@@ -13,7 +17,7 @@
 
 /datum/wires/rig/UpdateCut(index, mended)
 
-	var/obj/item/weapon/rig/rig = holder
+	var/obj/item/rig/rig = holder
 	switch(index)
 		if(RIG_SECURITY)
 			if(mended)
@@ -31,7 +35,7 @@
 
 /datum/wires/rig/UpdatePulsed(index)
 
-	var/obj/item/weapon/rig/rig = holder
+	var/obj/item/rig/rig = holder
 	switch(index)
 		if(RIG_SECURITY)
 			rig.security_check_enabled = !rig.security_check_enabled
@@ -53,7 +57,7 @@
 			rig.shock(usr,100)
 
 /datum/wires/rig/CanUse(var/mob/living/L)
-	var/obj/item/weapon/rig/rig = holder
+	var/obj/item/rig/rig = holder
 	return rig.open
 
 #undef RIG_SECURITY

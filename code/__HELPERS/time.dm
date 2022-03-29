@@ -70,6 +70,9 @@ proc/isDay(var/month, var/day)
 
 var/next_duration_update = 0
 var/last_roundduration2text = 0
+var/last_rounddurationcountdown2text = 0
+var/last_rounddurationcountdown2text_update =0
+var/endtime
 var/round_start_time = 0
 
 /hook/roundstart/proc/start_timer()
@@ -94,6 +97,20 @@ var/round_start_time = 0
 	next_duration_update = world.time + 1 MINUTES
 	return last_roundduration2text
 
+/proc/rounddurationcountdown2text(delay)
+	if(!round_start_time)
+		return "00:00"
+	if(last_rounddurationcountdown2text && world.time < last_rounddurationcountdown2text_update)
+		return last_rounddurationcountdown2text
+	//var/secs = ((mills % 36000) % 600) / 10 //Not really needed, but I'll leave it here for refrence.. or something
+	if(delay && !endtime)
+		endtime = delay + 1 MINUTE
+	if(!endtime)
+		return "N/A"
+	endtime = endtime - 1 MINUTE
+	last_rounddurationcountdown2text = "[endtime/600] minutes left until round end!"
+	last_rounddurationcountdown2text_update = world.time + 1 MINUTES
+	return last_rounddurationcountdown2text
 
 var/global/midnight_rollovers = 0
 var/global/rollovercheck_last_timeofday = 0

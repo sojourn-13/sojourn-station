@@ -18,6 +18,7 @@
 	meat_amount = 8
 	leather_amount = 8 //The amount of leather sheets dropped.
 	bones_amount = 6 //The amount of bone sheets dropped.
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_NEARSIGHTED, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/render
 	name = "primal render"
@@ -37,10 +38,16 @@
 	break_stuff_probability = 95
 	attacktext = "mauled"
 	faction = "deathclaw"
+
+	mob_size = MOB_LARGE
+
 	maxHealth = 900
 	health = 900
 	melee_damage_lower = 35
 	melee_damage_upper = 40
+
+	armor = list(melee = 35, bullet = 30, energy = 25, bomb = 5, bio = 10, rad = 25)
+
 	old_x = -16
 	old_y = 0
 	default_pixel_x = -16
@@ -48,13 +55,14 @@
 	pixel_y = 0
 	attack_sound = 'sound/weapons/deathclawattack.ogg'
 	meat_amount = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/primal
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
 	mob_size = 3
 	leather_amount = 16
 	bones_amount = 20
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/render_claw,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_GIGANTISM, MUTATION_IMBECILE, MUTATION_NEARSIGHTED, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/render/FindTarget()
 	. = ..()
@@ -110,6 +118,9 @@
 	bones_amount = 6 //The amount of bone sheets dropped.
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	mob_size = MOB_LARGE
+	armor = list(melee = 25, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25)
+	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/retaliate/gaslamp
 	name = "gaslamp"
@@ -142,24 +153,6 @@
 	min_n2 = 0
 	max_n2 = 0
 
-/mob/living/simple_animal/hostile/carp/greatwhite
-	name = "great white carp"
-	desc = "A very rare breed of carp and a very aggressive one."
-	icon = 'icons/mob/64x64.dmi'
-	icon_state = "megacarp"
-	icon_dead = "megacarp_dead"
-	maxHealth = 230
-	health = 230
-	//attack_same = 1 We no longer attack are yonger less rare of breeds
-	speed = 1
-	meat_amount = 10
-	melee_damage_lower = 15
-	melee_damage_upper = 25
-	old_y = -16
-	pixel_y = -16
-	leather_amount = 10 //The amount of leather sheets dropped.
-	bones_amount = 10 //The amount of bone sheets dropped.
-
 /mob/living/simple_animal/hostile/retaliate/hippo
 	name = "hippo"
 	desc = "Mostly know for the spectacular hit of the live action movie Hungry Hungry Hippos."
@@ -180,6 +173,7 @@
 
 	melee_damage_upper = 25
 	melee_damage_lower = 15
+	mob_size = MOB_LARGE
 
 	old_x = -16
 	old_y = 0
@@ -192,7 +186,7 @@
 	emote_hear = list("groan")
 	emote_see = list("shakes its head")
 	meat_amount = 10 //Infinite meat!
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
 
 /mob/living/simple_animal/hostile/nightmare
 	name = "nightmare stalker"
@@ -219,6 +213,27 @@
 	mob_size = 3
 	leather_amount = 0 //No actual skin
 	bones_amount = 30 //Lots of bone-like chitin
+	mob_size = MOB_LARGE
+	armor = list(melee = 15, bullet = 30, energy = 35, bomb = 5, bio = 10, rad = 25)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_CLOAKING)
+
+/mob/living/simple_animal/hostile/nightmare/dream_daemon
+	name = "dream daemon"
+	desc = "A creature of primal nightmares, bred in pitchest black... a rare sight of an evolved nightmare stalker, much deadlier, ruthless and agile than the average."
+	icon_state = "arachnid_daemon"
+	icon_living = "arachnid_daemon"
+	icon_rest = "arachnid_daemon_sleeping"
+	icon_dead = "arachnid_daemon_dead"
+	melee_damage_lower = 40
+	melee_damage_upper = 60
+	maxHealth = 900
+	health = 900
+	move_to_delay = 4
+	turns_per_move = 4
+	vision_range = 8
+	aggro_vision_range = 20
+	armor = list(melee = 20, bullet = 30, energy = 5, bomb = 5, bio = 10, rad = 25) //Lost its laser armor do to being a darker colour
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_GREATER_CLOAKING)
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
 	..()
@@ -235,7 +250,7 @@
 
 /mob/living/simple_animal/hostile/nightmare/LoseTarget()
 	..()
-	alpha = 50
+	alpha = 30
 
 /mob/living/simple_animal/hostile/nightmare/death()
 	..()
@@ -264,8 +279,11 @@
 	faction = "pond"
 	mob_size = 3
 	wander = 1
+	meat_amount = 10 //extra thicc
 	leather_amount = 20
 	bones_amount = 10
+	mob_size = MOB_LARGE
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 
 /mob/living/simple_animal/hostile/retaliate/croakerlord/adjustBruteLoss(var/damage)
 	..()
@@ -283,6 +301,7 @@
 	icon_state = "leaper"
 	icon_living = "leaper"
 
+// Credit to SlapDrink#0083 for the sprite.
 /mob/living/simple_animal/hostile/hell_pig
 	name = "hell pig"
 	desc = "The venerable evolution of a tengolo charger, morphing into a violent and destructive beast hostile to all but its own berserk kind. Hell pigs represent the end of a charger's life \
@@ -310,6 +329,9 @@
 	bones_amount = 10
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	mob_size = MOB_LARGE
+	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 5, bio = 10, rad = 25)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN)
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
 	name = "wendigo"
@@ -327,7 +349,11 @@
 	speak_emote = list("snarls!", "jerks erratically.")
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	armor = list(melee = 25, bullet = 20, energy = 0, bomb = 5, bio = 10, rad = 25)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 
+
+// Credit to scar#1579 for the sprite.
 /mob/living/simple_animal/hostile/hell_pig/slepnir
 	name = "slepnir"
 	desc = "The venerable evolution of a tengolo charger, morphing into a violent and destructive beast hostile to all but its own berserk kind. The slepnir, unlike its other berserk kin, only attacks \
@@ -347,3 +373,6 @@
 	speak_emote = list("stomps its hooves!", "whinnies!")
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	armor = list(melee = 5, bullet = 10, energy = 10, bomb = 5, bio = 10, rad = 25)
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
+

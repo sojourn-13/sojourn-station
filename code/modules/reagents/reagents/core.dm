@@ -12,6 +12,7 @@
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
 	nerve_system_accumulations = 0
+	common = TRUE //Everyone knows what blood looks like
 
 /datum/reagent/organic/blood/initialize_data(var/newdata)
 	..()
@@ -98,6 +99,14 @@
 	nerve_system_accumulations = 0
 	var/fire_suppression_effect = 1 //19000 times this.
 	reagent_type = "Water"
+	common = TRUE //You know what water is.
+
+/datum/reagent/water/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.stats.getPerk(PERK_STAY_HYDRATED))
+		M.adjustOxyLoss(-0.6 * effect_multiplier)
+		M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
+		M.adjustToxLoss(-0.3 * effect_multiplier)
+		M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 
 /datum/reagent/water/extinguisher
 	name = "Extinguisher"
@@ -134,7 +143,7 @@
 	id = "holywater"
 
 /datum/reagent/water/holywater/affect_ingest(mob/living/carbon/human/M, alien, effect_multiplier)
-	var/obj/item/weapon/implant/core_implant/I = M.get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
+	var/obj/item/implant/core_implant/I = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(!I && !I.wearer) //Do we have a core implant?
 		return
 	if(!I.active) //Is it active?
@@ -174,8 +183,8 @@
 	return TRUE
 
 /datum/reagent/water/touch_obj(obj/O)
-	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/monkeycube))
-		var/obj/item/weapon/reagent_containers/food/snacks/monkeycube/cube = O
+	if(istype(O, /obj/item/reagent_containers/food/snacks/monkeycube))
+		var/obj/item/reagent_containers/food/snacks/monkeycube/cube = O
 		if(!cube.wrapped)
 			cube.Expand()
 
@@ -217,6 +226,7 @@
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "welder fuel"
 	glass_desc = "Unless you are an industrial tool, this is probably not safe for consumption."
+	common = TRUE //Ubiquitous enough for everyone to have dealt with it, there are canisters of it all over the place.
 
 /datum/reagent/toxin/fuel/touch_turf(turf/T)
 	new /obj/effect/decal/cleanable/liquid_fuel(T, volume)

@@ -179,7 +179,7 @@
 		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
 		if(istype(L))
 			L.take_damage(5, 0)
-	M.add_chemical_effect(CE_SPEEDBOOST, -1)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
 
 /datum/reagent/stim/machine_spirit
 	name = "Machine Spirit"
@@ -352,7 +352,7 @@
 		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
 		if(istype(L))
 			L.take_damage(7, 0)
-	M.add_chemical_effect(CE_SPEEDBOOST, -1)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.paralysis = max(M.paralysis, 20)
 
@@ -502,3 +502,42 @@
 	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))
 		M.Stun(rand(1,5))
 	M.bodytemperature += TEMPERATURE_DAMAGE_COEFFICIENT
+
+/datum/reagent/stim/mind_melter
+	name = "Cerebrenal"
+	id = "mindmelter"
+	description = "A largely unknown and not quite understood chemical that impedes the mind and cognitive abilities based on how high the dosage is. Even small amounts can be quite troublesome, in particular to psions, with larger amounts actively damaging their psi organs."
+	taste_description = "your mind melting"
+	reagent_state = LIQUID
+	color = "#AEE5E4"
+	overdose = REAGENTS_OVERDOSE * 0.5
+	nerve_system_accumulations = 5
+	addiction_chance = 0
+
+/datum/reagent/stim/mind_melter/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	var/effective_dose = dose
+	if(effective_dose <= 2)
+		M.stats.addTempStat(STAT_COG, -10, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 4)
+		M.stats.addTempStat(STAT_COG, -20, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 6)
+		M.stats.addTempStat(STAT_COG, -30, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 8)
+		M.stats.addTempStat(STAT_COG, -40, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 10)
+		M.stats.addTempStat(STAT_COG, -50, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 12)
+		M.stats.addTempStat(STAT_COG, -60, STIM_TIME, "mindmelter")
+	else if(effective_dose <= 14)
+		M.stats.addTempStat(STAT_COG, -70, STIM_TIME, "mindmelter")
+
+/datum/reagent/stim/mind_melter/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(OP_HEART)
+		if(H && istype(H))
+			if(BP_IS_ROBOTIC(C))
+				return
+			if(C.damage > 0)
+				C.damage = max(C.damage - 2, 0)

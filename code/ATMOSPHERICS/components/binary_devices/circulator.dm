@@ -2,7 +2,7 @@
 //node2, air2, network2 correspond to output
 
 /obj/machinery/atmospherics/binary/circulator
-	name = "circulator"
+	name = "circulator binary atmospherics pipe"
 	desc = "A gas circulator turbine and heat exchanger."
 	icon = 	'icons/obj/machines/thermoelectric.dmi'
 	icon_state = "circ-unassembled"

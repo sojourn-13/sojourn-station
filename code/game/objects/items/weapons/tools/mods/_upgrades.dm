@@ -7,7 +7,7 @@
 
 
 /*/client/verb/debugupgrades()
-	for (var/t in subtypesof(/obj/item/weapon/tool_upgrade))
+	for (var/t in subtypesof(/obj/item/tool_upgrade))
 		new t(usr.loc)
 */
 /datum/component/item_upgrade
@@ -15,7 +15,7 @@
 	can_transfer = TRUE
 	var/prefix = "upgraded" //Added to the tool's name
 	var/install_time = WORKTIME_FAST
-
+	var/breakable = TRUE //Some mods meant to be tamper-resistant and should be removed only in a hard way
 	//The upgrade can be applied to a tool that has any of these qualities
 	var/list/required_qualities = list()
 
@@ -37,9 +37,12 @@
 	var/removal_time = WORKTIME_SLOW
 	var/removal_difficulty = FAILCHANCE_CHALLENGING
 	var/destroy_on_removal = FALSE
+	var/unique_removal = FALSE 		//Flag for unique removals.
+	var/unique_removal_type 		//What slot do we remove when this is removed? Used for rails.
 
 /datum/component/item_upgrade/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
+	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/attempt_install)
 	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
 	RegisterSignal(parent, COMSIG_REMOVE, .proc/uninstall)
 
@@ -75,10 +78,10 @@
 		if(user)
 			to_chat(user, SPAN_WARNING("You need to open [R]'s panel to access its tools."))
 	var/list/robotools = list()
-	for(var/obj/item/weapon/tool/robotool in R.module.modules)
+	for(var/obj/item/tool/robotool in R.module.modules)
 		robotools.Add(robotool)
 	if(robotools.len)
-		var/obj/item/weapon/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") in robotools + "Cancel"
+		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") in robotools + "Cancel"
 		if(chosen_tool == "Cancel")
 			return FALSE
 		return can_apply(chosen_tool,user)
@@ -86,7 +89,7 @@
 		to_chat(user, SPAN_WARNING("[R] has no modifiable tools."))
 	return FALSE
 
-/datum/component/item_upgrade/proc/check_tool(var/obj/item/weapon/tool/T, var/mob/living/user)
+/datum/component/item_upgrade/proc/check_tool(var/obj/item/tool/T, var/mob/living/user)
 	if(!tool_upgrades.len)
 		to_chat(user, SPAN_WARNING("\The [parent] can not be attached to a tool."))
 		return FALSE
@@ -136,7 +139,17 @@
 			return FALSE
 
 	if(tool_upgrades[UPGRADE_CELLPLUS])
-		if(!(T.suitable_cell == /obj/item/weapon/cell/medium || T.suitable_cell == /obj/item/weapon/cell/small))
+		if(!(T.suitable_cell == /obj/item/cell/medium || T.suitable_cell == /obj/item/cell/small))
+			if(user)
+				to_chat(user, SPAN_WARNING("This tool does not require a cell holding upgrade."))
+			return FALSE
+		if(T.cell)
+			if(user)
+				to_chat(user, SPAN_WARNING("Remove the cell from the tool first!"))
+			return FALSE
+
+	if(tool_upgrades[UPGRADE_CELLMINUS])
+		if(!(T.suitable_cell == /obj/item/cell/medium || T.suitable_cell == /obj/item/cell/large))
 			if(user)
 				to_chat(user, SPAN_WARNING("This tool does not require a cell holding upgrade."))
 			return FALSE
@@ -165,7 +178,7 @@
 
 	return TRUE
 
-/datum/component/item_upgrade/proc/check_gun(var/obj/item/weapon/gun/G, var/mob/living/user)
+/datum/component/item_upgrade/proc/check_gun(var/obj/item/gun/G, var/mob/living/user)
 	if(!weapon_upgrades.len)
 		if(user)
 			to_chat(user, SPAN_WARNING("\The [parent] can not be applied to guns!"))
@@ -189,7 +202,7 @@
 				to_chat(user, SPAN_WARNING("\The [G] lacks the following property: [I]"))
 			return FALSE
 
-	if((req_fuel_cell & REQ_CELL) && !istype(G, /obj/item/weapon/gun/energy))
+	if((req_fuel_cell & REQ_CELL) && !istype(G, /obj/item/gun/energy))
 		if(user)
 			to_chat(user, SPAN_WARNING("This weapon does not use power!"))
 		return FALSE
@@ -215,6 +228,9 @@
 
 /datum/component/item_upgrade/proc/uninstall(obj/item/I, mob/living/user)
 	var/obj/item/P = parent
+	if(unique_removal)
+		var/obj/item/gun/G = I
+		G.gun_tags.Remove(unique_removal_type)
 	I.item_upgrades -= P
 	if(destroy_on_removal)
 		UnregisterSignal(I, COMSIG_ADDVAL)
@@ -251,10 +267,12 @@
 		T.armor.energy += tool_upgrades[UPGRADE_ENERGY_ARMOR]
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
 		T.armor.bomb += tool_upgrades[UPGRADE_BOMB_ARMOR]
+	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
+		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 
 	T.prefixes |= prefix
 
-/datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/weapon/tool/T)
+/datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
 		T.aspects += list(SANCTIFIED)
 	if(tool_upgrades[UPGRADE_PRECISION])
@@ -264,15 +282,15 @@
 	if(tool_upgrades[UPGRADE_DEGRADATION_MULT])
 		T.degradation *= tool_upgrades[UPGRADE_DEGRADATION_MULT]
 	if(tool_upgrades[UPGRADE_FORCE_MULT])
-		T.force *= tool_upgrades[UPGRADE_FORCE_MULT]
-		T.switched_on_force *= tool_upgrades[UPGRADE_FORCE_MULT]
+		T.force_upgrade_mults += tool_upgrades[UPGRADE_FORCE_MULT] - 1
 	if(tool_upgrades[UPGRADE_FORCE_MOD])
-		T.force += tool_upgrades[UPGRADE_FORCE_MOD]
-		T.switched_on_force += tool_upgrades[UPGRADE_FORCE_MOD]
+		T.force_upgrade_mods += tool_upgrades[UPGRADE_FORCE_MOD]
 	if(tool_upgrades[UPGRADE_FUELCOST_MULT])
 		T.use_fuel_cost *= tool_upgrades[UPGRADE_FUELCOST_MULT]
 	if(tool_upgrades[UPGRADE_POWERCOST_MULT])
 		T.use_power_cost *= tool_upgrades[UPGRADE_POWERCOST_MULT]
+		T.hitcost *= tool_upgrades[UPGRADE_POWERCOST_MULT]
+		T.agonyforce *= tool_upgrades[UPGRADE_POWERCOST_MULT]
 	if(tool_upgrades[UPGRADE_BULK])
 		T.extra_bulk += tool_upgrades[UPGRADE_BULK]
 	if(tool_upgrades[UPGRADE_HEALTH_THRESHOLD])
@@ -289,14 +307,25 @@
 		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
 	if(tool_upgrades[UPGRADE_CELLPLUS])
 		switch(T.suitable_cell)
-			if(/obj/item/weapon/cell/medium)
-				T.suitable_cell = /obj/item/weapon/cell/large
+			if(/obj/item/cell/medium)
+				T.suitable_cell = /obj/item/cell/large
 				prefix = "large-cell"
-			if(/obj/item/weapon/cell/small)
-				T.suitable_cell = /obj/item/weapon/cell/medium
+			if(/obj/item/cell/small)
+				T.suitable_cell = /obj/item/cell/medium
+				prefix = "medium-cell"
+	if(tool_upgrades[UPGRADE_CELLMINUS])
+		switch(T.suitable_cell)
+			if(/obj/item/cell/medium)
+				T.suitable_cell = /obj/item/cell/small
+				prefix = "small-cell"
+			if(/obj/item/cell/large)
+				T.suitable_cell = /obj/item/cell/medium
+				prefix = "medium-cell"
+	T.force = initial(T.force) * T.force_upgrade_mults + T.force_upgrade_mods
+	T.switched_on_force = initial(T.switched_on_force) * T.force_upgrade_mults + T.force_upgrade_mods
 	T.prefixes |= prefix
 
-/datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/weapon/gun/G)
+/datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
 		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS])
@@ -315,6 +344,8 @@
 		G.recoil_buildup *= weapon_upgrades[GUN_UPGRADE_RECOIL]
 	if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 		G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
+	if(tool_upgrades[UPGRADE_BULK])
+		G.extra_bulk += weapon_upgrades[UPGRADE_BULK]
 	if(weapon_upgrades[GUN_UPGRADE_SILENCER])
 		G.silenced = weapon_upgrades[GUN_UPGRADE_SILENCER]
 	if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE])
@@ -335,18 +366,41 @@
 		G.proj_damage_adjust[HALLOSS] += weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
 		G.proj_damage_adjust[IRRADIATE] += weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]
+	if(weapon_upgrades[UPGRADE_MAXUPGRADES])
+		G.max_upgrades += weapon_upgrades[UPGRADE_MAXUPGRADES]
 	if(weapon_upgrades[GUN_UPGRADE_HONK])
 		G.fire_sound = 'sound/items/bikehorn.ogg'
 	if(weapon_upgrades[GUN_UPGRADE_RIGGED])
 		G.rigged = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 		G.rigged = 2
+	if(weapon_upgrades[GUN_UPGRADE_FOREGRIP])
+		G.braceable = 0
+	if(weapon_upgrades[GUN_UPGRADE_BIPOD])
+		G.braceable = 2
+	if(weapon_upgrades[GUN_UPGRADE_RAIL])
+		G.gun_tags.Add(GUN_SCOPE)
+	if(weapon_upgrades[UPGRADE_COLOR])
+		G.color = weapon_upgrades[UPGRADE_COLOR]
 	if(weapon_upgrades[GUN_UPGRADE_ZOOM])
 		G.zoom_factor += weapon_upgrades[GUN_UPGRADE_ZOOM]
 		G.initialize_scope()
 		if(istype(G.loc, /mob))
 			var/mob/user = G.loc
 			user.update_action_buttons()
+	if(weapon_upgrades[GUN_UPGRADE_THERMAL])
+		G.vision_flags = SEE_MOBS
+
+	if(weapon_upgrades[GUN_UPGRADE_DNALOCK])
+		G.dna_compare_samples = TRUE
+		if(G.dna_lock_sample == "not_set")
+			G.dna_lock_sample = usr.real_name
+
+	if(G.dna_compare_samples == FALSE)
+		G.dna_lock_sample = "not_set"
+
+	if(G.dna_lock_sample == "not_set") //that may look stupid, but without it previous two lines won't trigger on DNALOCK removal.
+		G.dna_compare_samples = FALSE
 
 	if(weapon_upgrades[GUN_UPGRADE_AUTOEJECT])
 		if(G.auto_eject)
@@ -357,24 +411,35 @@
 	if(!isnull(weapon_upgrades[GUN_UPGRADE_FORCESAFETY]))
 		G.restrict_safety = TRUE
 		G.safety = weapon_upgrades[GUN_UPGRADE_FORCESAFETY]
-	if(istype(G, /obj/item/weapon/gun/energy))
-		var/obj/item/weapon/gun/energy/E = G
+	if(istype(G, /obj/item/gun/energy))
+		var/obj/item/gun/energy/E = G
 		if(weapon_upgrades[GUN_UPGRADE_CHARGECOST])
 			E.charge_cost *= weapon_upgrades[GUN_UPGRADE_CHARGECOST]
 		if(weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX])
 			E.overcharge_rate *= weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX]
 		if(weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX])
 			E.overcharge_max *= weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX]
+		if(weapon_upgrades[GUN_UPGRADE_CELLMINUS])
+			switch(E.suitable_cell)
+				if(/obj/item/cell/medium)
+					E.suitable_cell = /obj/item/cell/small
+					prefix = "small-cell"
+				if(/obj/item/cell/large)
+					E.suitable_cell = /obj/item/cell/medium
+					prefix = "medium-cell"
 
-	if(istype(G, /obj/item/weapon/gun/projectile))
-		var/obj/item/weapon/gun/projectile/P = G
+	if(istype(G, /obj/item/gun/projectile))
+		var/obj/item/gun/projectile/P = G
 		if(weapon_upgrades[GUN_UPGRADE_MAGUP])
 			P.max_shells += weapon_upgrades[GUN_UPGRADE_MAGUP]
 
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
 
-/datum/component/item_upgrade/proc/add_values_gun(var/obj/item/weapon/gun/G)
+	G.prefixes |= prefix
+
+
+/datum/component/item_upgrade/proc/add_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_FULLAUTO])
 		G.add_firemode(FULL_AUTO_400)
 
@@ -460,6 +525,9 @@
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile piercing penetration by [amount] walls"))
 
+		if(weapon_upgrades[UPGRADE_BULK])
+			to_chat(user, SPAN_WARNING("Increases weapon size by [weapon_upgrades[UPGRADE_BULK]]"))
+
 		if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]-1
 			if(amount > 0)
@@ -487,6 +555,9 @@
 				to_chat(user, SPAN_WARNING("Slows down the weapons projectile by [amount*100]%"))
 			else
 				to_chat(user, SPAN_NOTICE("Speeds up the weapons projectile by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_DNALOCK] == 1)
+			to_chat(user, SPAN_WARNING("Adds a biometric scanner to the weapon."))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE])
 			to_chat(user, SPAN_NOTICE("Modifies projectile brute damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE]] damage points"))
@@ -575,6 +646,9 @@
 		if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 			to_chat(user, SPAN_WARNING("Rigs the weapon to explode."))
 
+		if(weapon_upgrades[GUN_UPGRADE_RAIL])
+			to_chat(user, SPAN_WARNING("Adds a scope slot."))
+
 		if(weapon_upgrades[GUN_UPGRADE_ZOOM])
 			var/amount = weapon_upgrades[GUN_UPGRADE_ZOOM]
 			if(amount > 0)
@@ -582,8 +656,10 @@
 			else
 				to_chat(user, SPAN_WARNING("Decreases scope zoom by x[amount]"))
 
-		to_chat(user, SPAN_WARNING("Requires a weapon with the following properties"))
+		to_chat(user, SPAN_WARNING("Requires a weapon with the following properties:"))
 		to_chat(user, english_list(req_gun_tags))
+		to_chat(user, SPAN_WARNING("When applied to a weapon, this takes the following slot:"))
+		to_chat(user, "[gun_loc_tag]")
 
 /datum/component/item_upgrade/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_IATTACK)
@@ -591,7 +667,7 @@
 	UnregisterSignal(parent, COMSIG_REMOVE)
 
 /datum/component/item_upgrade/PostTransfer()
-	return COMPONENT_TRANSFER
+	return COMPONENT_NOTRANSFER //I guess we use this? - Trilby
 
 /datum/component/upgrade_removal
 	dupe_mode = COMPONENT_DUPE_UNIQUE
@@ -608,9 +684,9 @@
 
 	var/obj/item/upgrade_loc = parent
 
-	var/obj/item/weapon/tool/T //For dealing damage to the item
+	var/obj/item/tool/T //For dealing damage to the item
 
-	if(istype(upgrade_loc, /obj/item/weapon/tool))
+	if(istype(upgrade_loc, /obj/item/tool))
 		T = upgrade_loc
 
 	if(istype(upgrade_loc, /obj/item/clothing))
@@ -624,7 +700,7 @@
 	if(upgrade_loc.item_upgrades.len && C.has_quality(QUALITY_SCREW_DRIVING))
 		var/list/possibles = upgrade_loc.item_upgrades.Copy()
 		possibles += "Cancel"
-		var/obj/item/weapon/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
+		var/obj/item/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
 		if (toremove == "Cancel")
 			return 1
 		if(!toremove.can_remove)
@@ -639,7 +715,11 @@
 			return 1
 		else
 			//You failed the check, lets see what happens
-			if(prob(50))
+			if(IU.breakable == FALSE)
+				to_chat(user, SPAN_DANGER("You failed to remove \the [toremove]."))
+				upgrade_loc.refresh_upgrades()
+				user.update_action_buttons()
+			else if(prob(50))
 				//50% chance to break the upgrade and remove it
 				to_chat(user, SPAN_DANGER("You successfully remove \the [toremove], but destroy it in the process."))
 				SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
@@ -658,7 +738,7 @@
 
 
 
-/obj/item/weapon/tool_upgrade
+/obj/item/tool_upgrade
 	name = "tool upgrade"
 	icon = 'icons/obj/tool_upgrades.dmi'
 	force = WEAPON_FORCE_HARMLESS

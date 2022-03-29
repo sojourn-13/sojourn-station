@@ -5,7 +5,7 @@
 	name = "bomb helmet"
 	desc = "A protective helmet designed for safety when handling explosives, biological problems, and radiation."
 	icon_state = "bombsuit"
-	armor = list(
+	armor_list = list(
 		melee = 20,
 		bullet = 20,
 		energy = 30,
@@ -15,7 +15,8 @@
 	)
 	max_upgrades = 3
 	siemens_coefficient = 0
-	tint = TINT_HEAVY
+	tint = TINT_LOW
+	obscuration = HEAVY_OBSCURATION
 	price_tag = 100
 
 /obj/item/clothing/suit/space/bomb
@@ -25,8 +26,8 @@
 	item_state = "bombsuit"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
-	slowdown = 2
-	armor = list(
+	slowdown = 1
+	armor_list = list(
 		melee = 20,
 		bullet = 20,
 		energy = 30,
@@ -47,7 +48,7 @@
 	desc = "For use when bombs, bullets, toxic enviroments, lasers, and melee are all a concern but speed is not."
 	equip_delay = 16 SECONDS
 	slowdown = 1.25 //so with full suit is 3.5 or 4.5
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 60,
 		energy = 60,
@@ -60,9 +61,9 @@
 /obj/item/clothing/suit/space/bomb/security
 	name = "juggernaut bomb suit"
 	desc = "For use when bombs, bullets, toxic enviroments, lasers, and melee are all a concern but speed is not."
-	slowdown = 3.25
+	slowdown = 2.25
 	equip_delay = 16 SECONDS
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 60,
 		energy = 60,

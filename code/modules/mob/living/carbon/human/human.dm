@@ -7,7 +7,9 @@
 
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
-	var/obj/item/weapon/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_lying_buckled_and_verb_status() call.
+	var/obj/item/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_lying_buckled_and_verb_status() call.
+	var/using_scope // This is not very good either, because I've copied it. Sorry.
+	var/show_title = TRUE
 
 /mob/living/carbon/human/New(var/new_loc, var/new_species, var/new_form)
 
@@ -90,8 +92,8 @@
 		//if(P)
 		//	stat(null, "Plasma Stored: [P.stored_plasma]/[P.max_plasma]")
 
-		if(back && istype(back,/obj/item/weapon/rig))
-			var/obj/item/weapon/rig/suit = back
+		if(back && istype(back,/obj/item/rig))
+			var/obj/item/rig/suit = back
 			var/cell_status = "ERROR"
 			if(suit.cell) cell_status = "[suit.cell.charge]/[suit.cell.maxcharge]"
 			stat(null, "Suit charge: [cell_status]")
@@ -103,10 +105,18 @@
 		if(maw_efficiency > 0)
 			stat("Gnawing hunger", "[carrion_hunger]/[round(maw_efficiency/10)]")
 
-		var/obj/item/weapon/implant/core_implant/cruciform/C = get_core_implant(/obj/item/weapon/implant/core_implant/cruciform)
-		if (C)
+		var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(C)
 			stat("Cruciform", "[C.power]/[C.max_power]")
 			stat("Channeling Boost", "[C.channeling_boost]")
+
+		var/obj/item/organ/internal/psionic_tumor/B = random_organ_by_process(BP_PSION)
+		if(B)
+			stat("Psi Essence", "[B.psi_points]/[B.max_psi_points]")
+
+		var/obj/item/organ/internal/nanogate/N = random_organ_by_process(BP_NANOGATE)
+		if(N)
+			stat("Nanites Point", "[N.nanite_points]")
 
 	else if(statpanel("Perks"))
 		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
@@ -114,6 +124,8 @@
 
 	if(mind)
 		statpanel("Perks",src.stats.perk_stats)
+
+	src.stats.initialized = TRUE
 
 /mob/living/carbon/human/ex_act(severity)
 	if(!blinded)
@@ -144,16 +156,13 @@
 			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
 				ear_damage += 30
 				ear_deaf += 120
-			if (prob(70) && !shielded)
-				Paralyse(10)
 
 		if(3.0)
 			b_loss += 100
 			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
 				ear_damage += 15
 				ear_deaf += 60
-			if (prob(50) && !shielded)
-				Paralyse(10)
+
 	if (bomb_defense)
 		b_loss = max(b_loss - bomb_defense, 0)
 		f_loss = max(f_loss - bomb_defense, 0)
@@ -202,7 +211,7 @@
 
 	// Do they get an option to set internals?
 	if(istype(wear_mask, /obj/item/clothing/mask) || istype(head, /obj/item/clothing/head/helmet/space))
-		if(istype(back, /obj/item/weapon/tank) || istype(belt, /obj/item/weapon/tank) || istype(s_store, /obj/item/weapon/tank))
+		if(istype(back, /obj/item/tank) || istype(belt, /obj/item/tank) || istype(s_store, /obj/item/tank))
 			dat += "<BR><A href='?src=\ref[src];item=internals'>Toggle internals.</A>"
 
 	// Other incidentals.
@@ -235,7 +244,7 @@
 
 // Get rank from ID, ID inside PDA, PDA, ID in wallet, etc.
 /mob/living/carbon/human/proc/get_authentification_rank(var/if_no_id = "No id", var/if_no_job = "No job")
-	var/obj/item/weapon/card/id/id = GetIdCard()
+	var/obj/item/card/id/id = GetIdCard()
 	if(istype(id))
 		return id.rank ? id.rank : if_no_job
 	else
@@ -244,7 +253,7 @@
 //gets assignment from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
 /mob/living/carbon/human/proc/get_assignment(var/if_no_id = "No id", var/if_no_job = "No job")
-	var/obj/item/weapon/card/id/id = GetIdCard()
+	var/obj/item/card/id/id = GetIdCard()
 	if(istype(id))
 		return id.assignment ? id.assignment : if_no_job
 	else
@@ -253,7 +262,7 @@
 //gets name from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
 /mob/living/carbon/human/proc/get_authentification_name(var/if_no_id = "Unknown")
-	var/obj/item/weapon/card/id/id = GetIdCard()
+	var/obj/item/card/id/id = GetIdCard()
 	if(id)
 		return id.registered_name || if_no_id
 	else
@@ -262,16 +271,22 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Marshal Officer" = "Officer",\
-	"Ranger" = "Ranger",\
+	"Warrant Officer" = "Warrant Officer",\
 	"Supply Specialist" = "Specialist",\
-	"Sergeant" = "Sergeant",\
-	"Marshal Warrant Officer" = "Warrant Officer",\
+	"Ranger" = "Ranger",\
+	"Marshal Officer" = "Officer",\
 	"Blackshield Commander" = "Commander",\
+	"Sergeant" = "Sergeant",\
 	"Corpsman" = "Corpsman",\
 	"Blackshield Trooper" = "Trooper",\
 	"Premier" = "Premier",\
 	"Steward" = "Steward",\
+	"Guild Master" = "Master",\
+	"Chief Biolab Overseer" = "Overseer",\
+	"Chief Research Overseer" = "Overseer",\
+	"Chief Executive Officer" = "Executive",\
+	"Prime" = "Prime",\
+	"Foreman" = "Foreman",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)
@@ -309,17 +324,19 @@ var/list/rank_prefix = list(\
 //Useful when player is being seen by other mobs
 /mob/living/carbon/human/proc/get_id_name(var/if_no_id = "Unknown")
 	. = if_no_id
-	var/obj/item/weapon/card/id/I = GetIdCard()
+	var/obj/item/card/id/I = GetIdCard()
 	if(istype(I))
 		return I.registered_name
 
 /mob/living/carbon/human/proc/get_id_rank()
 	var/rank
-	var/obj/item/weapon/card/id/id
+	var/obj/item/card/id/id
 	if (istype(wear_id, /obj/item/modular_computer/pda))
 		id = wear_id.GetIdCard()
 	if(!id)
 		id = get_idcard()
+	if(show_title == FALSE)
+		return ""
 	if(id)
 		rank = id.rank
 		if(rank_prefix[rank])
@@ -389,7 +406,7 @@ var/list/rank_prefix = list(\
 			var/perpname = "wot"
 			var/read = 0
 
-			var/obj/item/weapon/card/id/id = GetIdCard()
+			var/obj/item/card/id/id = GetIdCard()
 			if(istype(id))
 				perpname = id.registered_name
 			else
@@ -417,7 +434,7 @@ var/list/rank_prefix = list(\
 			var/perpname = "wot"
 			var/read = 0
 
-			var/obj/item/weapon/card/id/id = GetIdCard()
+			var/obj/item/card/id/id = GetIdCard()
 			if(istype(id))
 				perpname = id.registered_name
 			else
@@ -444,7 +461,7 @@ var/list/rank_prefix = list(\
 		if(hasHUD(usr,"security"))
 			var/perpname = "wot"
 			if(wear_id)
-				var/obj/item/weapon/card/id/id
+				var/obj/item/card/id/id
 				if (istype(wear_id, /obj/item/modular_computer/pda))
 					id = wear_id.GetIdCard()
 				if(!id)
@@ -476,7 +493,7 @@ var/list/rank_prefix = list(\
 			var/perpname = "wot"
 			var/modified = 0
 
-			var/obj/item/weapon/card/id/id = GetIdCard()
+			var/obj/item/card/id/id = GetIdCard()
 			if(istype(id))
 				perpname = id.registered_name
 			else
@@ -513,7 +530,7 @@ var/list/rank_prefix = list(\
 			var/read = 0
 
 			if(wear_id)
-				var/obj/item/weapon/card/id/id
+				var/obj/item/card/id/id
 				if (istype(wear_id, /obj/item/modular_computer/pda))
 					id = wear_id.GetIdCard()
 				if(!id)
@@ -546,7 +563,7 @@ var/list/rank_prefix = list(\
 			var/read = 0
 
 			if(wear_id)
-				var/obj/item/weapon/card/id/id
+				var/obj/item/card/id/id
 				if (istype(wear_id, /obj/item/modular_computer/pda))
 					id = wear_id.GetIdCard()
 				if(!id)
@@ -576,7 +593,7 @@ var/list/rank_prefix = list(\
 		if(hasHUD(usr,"medical"))
 			var/perpname = "wot"
 			if(wear_id)
-				var/obj/item/weapon/card/id/id
+				var/obj/item/card/id/id
 				if (istype(wear_id, /obj/item/modular_computer/pda))
 					id = wear_id.GetIdCard()
 				if(!id)
@@ -805,7 +822,8 @@ var/list/rank_prefix = list(\
 		return
 	var/list/creatures = list()
 	for(var/mob/living/carbon/h in world)
-		creatures += h
+		if(!h.is_mannequin) // Can't talk mannequins
+			creatures += h // Add the player to the list we can talk to
 	var/mob/target = input("Who do you want to project your mind to ?") as null|anything in creatures
 	if (isnull(target))
 		return
@@ -975,6 +993,7 @@ var/list/rank_prefix = list(\
 			if(feet_blood_DNA && feet_blood_DNA.len)
 				feet_blood_color = null
 				feet_blood_DNA.Cut()
+				feet_blood_DNA = null
 				update_inv_shoes()
 
 	return
@@ -1022,6 +1041,13 @@ var/list/rank_prefix = list(\
 						src.adjustHalLoss(3)
 						src.adjustToxLoss(1)
 
+
+/mob/living/carbon/human/verb/Toggle_Title()
+	set name = "Toggle Title"
+	set desc = "Shows or hides your title."
+	set category = "IC"
+	show_title = !show_title
+	to_chat(usr, "You change your mind about showing your title.")
 
 /mob/living/carbon/human/verb/check_pulse()
 	set category = "Object"
@@ -1151,7 +1177,7 @@ var/list/rank_prefix = list(\
 			C.removed()
 			organs_to_readd += C
 
-	var/obj/item/weapon/implant/core_implant/CI = get_core_implant()
+	var/obj/item/implant/core_implant/CI = get_core_implant()
 	var/checkprefcruciform = FALSE	// To reset the cruciform to original form
 	if(CI)
 		checkprefcruciform = TRUE
@@ -1200,13 +1226,26 @@ var/list/rank_prefix = list(\
 		var/datum/category_item/setup_option/core_implant/I = Pref.get_option("Core implant")
 		if(I)
 			if(I.implant_type)
-				var/obj/item/weapon/implant/core_implant/C = new I.implant_type
+				var/obj/item/implant/core_implant/C = new I.implant_type
 				C.install(src)
 				C.activate()
 				if(mind)
 					C.install_default_modules_by_job(mind.assigned_job)
 					C.access.Add(mind.assigned_job.cruciform_access)
 					C.install_default_modules_by_path(mind.assigned_job)
+					C.security_clearance = mind.assigned_job.security_clearance
+
+			switch(I.implant_organ_type)
+				if("psionic tumor")
+					src.make_psion()
+				if("cultured tumor")
+					src.make_psion_psych()
+				if("nanogate")
+					src.give_nanogate("Standard")
+				if("artificer nanogate")
+					src.give_nanogate("Artificer")
+				if("opifex nanogate")
+					src.give_nanogate("Opifex")
 
 	else
 		var/organ_type
@@ -1229,12 +1268,13 @@ var/list/rank_prefix = list(\
 			if(client)
 				var/datum/category_item/setup_option/core_implant/I = client.prefs.get_option("Core implant")
 				if(I.implant_type && (!mind || mind.assigned_role != "Robot"))
-					var/obj/item/weapon/implant/core_implant/C = new I.implant_type
+					var/obj/item/implant/core_implant/C = new I.implant_type
 					C.install(src)
 					C.activate()
 					C.install_default_modules_by_job(mind.assigned_job)
 					C.access.Add(mind.assigned_job.cruciform_access)
 					C.install_default_modules_by_path(mind.assigned_job)
+					C.security_clearance = mind.assigned_job.security_clearance
 
 	for(var/obj/item/organ/internal/carrion/C in organs_to_readd)
 		C.replaced(get_organ(C.parent_organ_base))
@@ -1376,6 +1416,18 @@ var/list/rank_prefix = list(\
 		return 0
 	..(slipped_on,stun_duration)
 
+/mob/living/carbon/human/trip(tripped_on, stun_duration)
+	if(buckled)
+		return FALSE
+	if(lying)
+		return FALSE // No tripping while crawling
+	stop_pulling()
+	if (tripped_on)
+		playsound(src, 'sound/effects/bang.ogg', 50, 1)
+		to_chat(src, SPAN_WARNING("You tripped over!"))
+	Weaken(stun_duration)
+	return TRUE
+
 /mob/living/carbon/human/proc/undislocate()
 	set category = "Object"
 	set name = "Undislocate Joint"
@@ -1460,7 +1512,7 @@ var/list/rank_prefix = list(\
 
 	if(stat) return
 	pulling_punches = !pulling_punches
-	to_chat(src, "<span class='notice'>You are now [pulling_punches ? "pulling your punches" : "not pulling your punches"].</span>")
+	to_chat(src, "<span class='notice'>You are now [pulling_punches ? "" : "not "]pulling your punches.</span>")
 	return
 
 //generates realistic-ish pulse output based on preset levels
@@ -1614,3 +1666,37 @@ var/list/rank_prefix = list(\
 		return TRUE
 	else
 		return FALSE
+
+/mob/living/carbon/human/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
+	. = ..()
+	if(.)
+		if(species.reagent_tag == IS_SLIME) // Slimes clean the floor. Code stolen from the roombas
+			var/turf/tile = loc
+			var/nutrition_gained = 5 // Up here for ease of modification
+			if(isturf(tile))
+				tile.clean_blood()
+				for(var/A in tile)
+					if(istype(A, /obj/effect))
+						if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
+							qdel(A)
+							src.nutrition += nutrition_gained // Gain some nutrition
+					else if(istype(A, /obj/item))
+						var/obj/item/cleaned_item = A
+						cleaned_item.clean_blood()
+					else if(ishuman(A))
+						var/mob/living/carbon/human/cleaned_human = A
+						if(cleaned_human.lying)
+							if(cleaned_human.head)
+								cleaned_human.head.clean_blood()
+								cleaned_human.update_inv_head(0)
+							if(cleaned_human.wear_suit)
+								cleaned_human.wear_suit.clean_blood()
+								cleaned_human.update_inv_wear_suit(0)
+							else if(cleaned_human.w_uniform)
+								cleaned_human.w_uniform.clean_blood()
+								cleaned_human.update_inv_w_uniform(0)
+							if(cleaned_human.shoes)
+								cleaned_human.shoes.clean_blood()
+								cleaned_human.update_inv_shoes(0)
+							cleaned_human.clean_blood(1)
+							to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))

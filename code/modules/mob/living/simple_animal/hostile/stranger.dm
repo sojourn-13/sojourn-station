@@ -20,18 +20,12 @@
 	melee_damage_upper = 15
 	attacktext = "punched"
 	a_intent = I_HURT
-	min_oxy = 0
-	max_oxy = 0
-	min_tox = 0
-	max_tox = 1
-	min_co2 = 0
-	max_co2 = 0
-	min_n2 = 0
-	max_n2 = 0
+	needs_environment = FALSE
 	unsuitable_atoms_damage = 15
 	status_flags = CANPUSH
 	ranged = TRUE
 	rapid = TRUE
+	armor = list(melee = 25, bullet = 15, energy = 25, bomb = 25, bio = 100, rad = 100) //Were in a space suit thing?
 	projectiletype = /obj/item/projectile/plasma/heavy
 	projectilesound = 'sound/weapons/laser.ogg'
 	faction = "bluespace"
@@ -46,7 +40,7 @@
 
 /mob/living/simple_animal/hostile/stranger/death()
 	. = ..()
-	var/obj/item/weapon/gun/energy/plasma/stranger/S = new (src.loc)
+	var/obj/item/gun/energy/plasma/stranger/S = new (src.loc)
 	S.cell = new S.suitable_cell(S)
 	if(empy_cell)
 		S.cell.use(S.cell.charge)
@@ -120,7 +114,7 @@
 		do_sparks(3, 0, src.loc)
 		do_teleport(src, T)
 
-/obj/item/weapon/gun/energy/plasma/stranger
+/obj/item/gun/energy/plasma/stranger
 	name = "unknown plasma gun"
 	desc = "A plasma gun from unknown origin"
 	icon = 'icons/obj/guns/energy/lancer.dmi'
@@ -132,18 +126,18 @@
 	fire_delay = 5
 	one_hand_penalty = 5
 	twohanded = FALSE
-	suitable_cell = /obj/item/weapon/cell/small
+	suitable_cell = /obj/item/cell/small
 	can_dual = TRUE
 	w_class = ITEM_SIZE_NORMAL
 
 	init_firemodes = list(
-		list(mode_name="burn", burst=1, projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/unknown_spacegun_burn.ogg', fire_delay=5, move_delay=null, charge_cost=3, icon="stun", projectile_color = "#0000FF"),
-		list(mode_name="melt", burst=1, projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/unknown_spacegun_melt.ogg', fire_delay=10, move_delay=null, charge_cost=6, icon="kill", projectile_color = "#FF0000"),
-		list(mode_name="INCINERATE", burst=1, projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/unknown_spacegun_incinerate.ogg', fire_delay=15, move_delay=null, charge_cost=9, icon="destroy", projectile_color = "#FFFFFF"),
-		list(mode_name="VAPORIZE", burst=3, projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/unknown_spacegun_vaporize.ogg', fire_delay=5, move_delay=4, charge_cost=11, icon="vaporize", projectile_color = "#FFFFFF", recoil_buildup=3)
+		list(mode_name="uo4E6SBeGe", mode_desc="c25F2OeGUi", burst=1, projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/unknown_spacegun_burn.ogg',       fire_delay=5,  move_delay=null, charge_cost=3,  icon="stun",     projectile_color = "#0000FF"),
+		list(mode_name="0sXYAJGCv4", mode_desc="yQI241FKDh", burst=1, projectile_type=/obj/item/projectile/plasma,       fire_sound='sound/weapons/unknown_spacegun_melt.ogg',       fire_delay=10, move_delay=null, charge_cost=6,  icon="kill",     projectile_color = "#FF0000"),
+		list(mode_name="XhddhrdJkJ", mode_desc="uDsfMdPQkm", burst=1, projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/unknown_spacegun_incinerate.ogg', fire_delay=15, move_delay=null, charge_cost=9,  icon="destroy",  projectile_color = "#FFFFFF"),
+		list(mode_name="bP6hfnj3Js", mode_desc="AhG8GjobYa", burst=3, projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/unknown_spacegun_vaporize.ogg',   fire_delay=5,  move_delay=4,    charge_cost=11, icon="vaporize", projectile_color = "#FFFFFF", recoil_buildup=3)
 	)
 
-/obj/item/weapon/gun/energy/plasma/stranger/update_icon(ignore_inhands)
+/obj/item/gun/energy/plasma/stranger/update_icon(ignore_inhands)
 	if(charge_meter)
 		var/ratio = 0
 

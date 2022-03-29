@@ -204,7 +204,10 @@
 /obj/item/organ/external/proc/make_bones()
 	if(default_bone_type)
 		var/obj/item/organ/internal/bone/bone
-		if(nature < MODIFICATION_SILICON)
+		if(nature == MODIFICATION_SUPERIOR)
+			bone = new default_bone_type
+			bone.reinforce()
+		else if(nature < MODIFICATION_SILICON)
 			bone = new default_bone_type
 		else
 			var/mecha_bone = text2path("[default_bone_type]/robotic")
@@ -214,7 +217,13 @@
 
 /obj/item/organ/external/proc/make_nerves()
 	var/obj/item/organ/internal/nerve/nerve
-	if(nature < MODIFICATION_SILICON)
+	if(nature == MODIFICATION_SUPERIOR)
+		if(organ_tag != BP_L_LEG && organ_tag != BP_R_LEG)
+			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt
+		else
+			nerve = new /obj/item/organ/internal/nerve/sensitive_nerve/exalt_leg
+		
+	else if(nature < MODIFICATION_SILICON)
 		nerve = new /obj/item/organ/internal/nerve
 	else
 		nerve = new /obj/item/organ/internal/nerve/robotic
@@ -223,27 +232,32 @@
 
 /obj/item/organ/external/proc/make_muscles()
 	var/obj/item/organ/internal/muscle/muscle
-	if(nature < MODIFICATION_SILICON)
+	if(nature == MODIFICATION_SUPERIOR)
+		muscle = new /obj/item/organ/internal/muscle/super_muscle/exalt
+	else if(nature < MODIFICATION_SILICON)
 		muscle = new /obj/item/organ/internal/muscle
 	else
+		muscle = new /obj/item/organ/internal/muscle/robotic
+		muscle?.replaced(src)
 		muscle = new /obj/item/organ/internal/muscle/robotic
 
 	muscle?.replaced(src)
 
 /obj/item/organ/external/proc/make_blood_vessels()
 	var/obj/item/organ/internal/blood_vessel/blood_vessel
-	if(nature < MODIFICATION_SILICON)	//No robotic blood vesseles
+	if(nature == MODIFICATION_SUPERIOR)
+		blood_vessel = new /obj/item/organ/internal/blood_vessel/extensive/exalt
+	else if(nature < MODIFICATION_SILICON)	//No robotic blood vesseles
 		blood_vessel = new /obj/item/organ/internal/blood_vessel
 
 	blood_vessel?.replaced(src)
 
 /obj/item/organ/external/proc/update_limb_efficiency()
-	limb_efficiency = 0
-	limb_efficiency += owner.get_specific_organ_efficiency(OP_NERVE, organ_tag) + owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
-	if(BP_IS_ROBOTIC(src))
-		limb_efficiency = limb_efficiency / 2
-		return
-	limb_efficiency = (limb_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)) / 3
+	var/raw_efficiency = 0
+	raw_efficiency += owner.get_specific_organ_efficiency(OP_NERVE, organ_tag) + owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
+	if(!BP_IS_ROBOTIC(src))
+		raw_efficiency = raw_efficiency + owner.get_specific_organ_efficiency(OP_BLOOD_VESSEL, organ_tag)
+	limb_efficiency = round(((raw_efficiency/(240+((2*raw_efficiency)/10))) * 100)) //Diminishing returns as total limb efficiency increases.
 
 /obj/item/organ/external/proc/update_bionics_hud()
 	switch(organ_tag)
@@ -267,11 +281,11 @@
 		return
 	switch (severity)
 		if (1)
-			take_damage(10)
+			take_damage(20)
 		if (2)
-			take_damage(5)
+			take_damage(15)
 		if (3)
-			take_damage(1)
+			take_damage(5)
 
 /obj/item/organ/external/attack_self(var/mob/user)
 	if(!contents.len)
@@ -325,9 +339,12 @@
 	if(status & ORGAN_SPLINTED)
 		. += 0.5
 
-	var/muscle_eff = owner.get_specific_organ_efficiency(OP_MUSCLE, organ_tag)
-	muscle_eff = muscle_eff - (muscle_eff/(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag)/100)) //Need more nerves to control those new muscles
-	. += max(-(muscle_eff/ 100)/4, MAX_MUSCLE_SPEED)
+
+	var/nerve_eff = max(owner.get_specific_organ_efficiency(OP_NERVE, organ_tag),1)
+	var/limb_eff = owner.get_limb_efficiency()
+	var/leg_eff = (limb_eff/100) - (limb_eff / nerve_eff)//Need more nerves to control those new muscles
+
+	. += max(-(leg_eff/2), MAX_MUSCLE_SPEED)
 
 	. += tally
 
@@ -398,7 +415,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	// remove embedded objects and drop them on the floor
 	for(var/obj/implanted_object in implants)
-		if(!istype(implanted_object,/obj/item/weapon/implant))	// We don't want to remove REAL implants. Just shrapnel etc.
+		if(!istype(implanted_object, /obj/item/implant) && !istype(implanted_object, /obj/item/organ_module))	// We don't want to remove REAL implants. Just shrapnel etc. // Also prevent the removal of augmentation.
 			implanted_object.loc = get_turf(src)
 			implants -= implanted_object
 
@@ -410,16 +427,6 @@ This function completely restores a damaged organ to perfect condition.
 
 	if(damage == 0)
 		return
-
-	//moved this before the open_wound check
-	// so that having many small wounds for example doesn't somehow protect you from taking internal damage
-	// (because of the return)
-	//Possibly trigger an internal wound, too.
-	//var/local_damage = brute_dam + burn_dam + damage
-	//if(damage > 15 && type != BURN && local_damage > 30 && prob(damage) && !BP_IS_ROBOTIC(src))
-		//var/datum/wound/internal_bleeding/I = new (min(damage - 15, 15))
-		//wounds += I
-		//owner.custom_pain("You feel something rip in your [name]!", 1)
 
 	// first check whether we can widen an existing wound
 	if(wounds.len > 0 && prob(max(50+(number_wounds-1)*10,90)))
@@ -557,13 +564,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 		handle_germ_effects()
 
 /obj/item/organ/external/proc/handle_germ_sync()
-	var/antibiotics = owner.reagents.get_reagent_amount("spaceacillin")
+	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 	for(var/datum/wound/W in wounds)
 		//Open wounds can become infected
 		if (owner.germ_level > W.germ_level && W.infection_check())
 			W.germ_level++
 
-	if (antibiotics < 5)
+	if (antibiotics <= 1) //Make Spaceacillin autoinjectors not useless after using 1 unit out of 5 they have.
 		for(var/datum/wound/W in wounds)
 			//Infected wounds raise the organ's germ level
 			if (W.germ_level > germ_level)
@@ -575,7 +582,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(germ_level < INFECTION_LEVEL_TWO)
 		return ..()
 
-	var/antibiotics = owner.reagents.get_reagent_amount("spaceacillin")
+	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
 
 	if(germ_level >= INFECTION_LEVEL_TWO)
 		//spread the infection to internal organs
@@ -612,7 +619,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				if (parent.germ_level < INFECTION_LEVEL_ONE*2 || prob(30))
 					parent.germ_level++
 
-	if(germ_level >= INFECTION_LEVEL_THREE && antibiotics < 30)	//overdosing is necessary to stop severe infections
+	if(germ_level >= INFECTION_LEVEL_THREE && antibiotics <= 15)	// Overdosing shouldn't be how you solve such severe infections
 		if (!(status & ORGAN_DEAD))
 			status |= ORGAN_DEAD
 			to_chat(owner, SPAN_NOTICE("You can't feel your [name] anymore..."))
@@ -887,7 +894,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		owner.visible_message("<span class='danger'>\The [W] sticks in the wound!</span>")
 	implants += W
 
-	if(!istype(W, /obj/item/weapon/material/shard/shrapnel))
+	if(!istype(W, /obj/item/material/shard/shrapnel))
 		embedded += W
 		owner.verbs += /mob/proc/yank_out_object
 
@@ -1042,3 +1049,23 @@ Note that amputating the affected organ does in fact remove the infection from t
 			conditions_list.Add(list(condition))
 
 	return conditions_list
+
+//Legit horrable
+/obj/item/organ/external/attackby(obj/item/A, mob/user, params)
+	if(A.has_quality(QUALITY_CUTTING))
+		if(!(user.a_intent == I_HURT))
+			return ..()
+		user.visible_message(SPAN_WARNING("[user] begins butchering \the [src]"), SPAN_WARNING("You begin butchering \the [src]"), SPAN_NOTICE("You hear meat being cut apart"), 5)
+		if(A.use_tool(user, src, WORKTIME_FAST, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_BIO))
+			on_butcher(A, user, get_turf(src))
+
+/obj/item/organ/external/proc/on_butcher(obj/item/A, mob/living/carbon/human/user, location_meat)
+	for(var/obj/item/organ/internal/muscle/placeholder in internal_organs)
+		var/meat = form?.meat_type // One day someone will make a species with no meat type.
+		if(!meat)
+			break
+		new meat(location_meat)
+		if(user.species == species)
+			user.sanity_damage += 5*((user.nutrition ? user.nutrition : 1)/user.max_nutrition)
+			to_chat(user, SPAN_NOTICE("You feel your [species.name]ity dismantling as you butcher the [src]")) // Human-ity , Monkey-ity , Slime-Ity
+	qdel(src)

@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/straylight
+/obj/item/gun/projectile/automatic/straylight
 	name = "\"Straylight\" auto-pistol"
 	desc = "A select-fire pistol made by H&S as a variant of the Firefly. Compact and flexible, but somewhat underpowered. Custom magwell allows it to feed both from pistol and SMG magazines. Uses .35 rounds."
 	icon = 'icons/obj/guns/projectile/straylight.dmi'
@@ -17,7 +17,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_35, GUN_MAGWELL)
 	damage_multiplier = 0.9
-	recoil_buildup = 3
+	recoil_buildup = 0.75
 	one_hand_penalty = 20
 
 	init_firemodes = list(
@@ -26,7 +26,7 @@
 		BURST_3_ROUND
 		)
 
-/obj/item/weapon/gun/projectile/automatic/straylight/update_icon()
+/obj/item/gun/projectile/automatic/straylight/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -46,6 +46,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/weapon/gun/projectile/automatic/straylight/Initialize()
+/obj/item/gun/projectile/automatic/straylight/Initialize()
 	. = ..()
 	update_icon()

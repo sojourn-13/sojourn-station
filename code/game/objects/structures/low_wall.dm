@@ -46,7 +46,11 @@
 	wall_color = "#FFFFFF"
 	icon_state = "greyson"
 
-
+//Churchlowwall
+/obj/structure/low_wall/church
+	name = "Church low wall"
+	wall_color = "#FFFFFF"
+	icon_state = "church"
 
 
 //Low walls mark the turf they're on as a wall.  This is vital for floor icon updating code
@@ -145,13 +149,9 @@
 
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
 /obj/structure/low_wall/proc/check_cover(obj/item/projectile/P, turf/from)
-	var/turf/cover
-	cover = get_step(loc, get_dir(from, loc))
-	if(!cover)
-		return 1
 	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
-	if (get_turf(P.original) == cover)
+	if (TRUE)
 		var/chance = 20
 		if (ismob(P.original))
 			var/mob/M = P.original
@@ -410,14 +410,17 @@
 					return
 
 	//Turn on harm intent to override this behaviour and instead attack the wall
-	if (!(locate(/obj/structure/window) in loc) && user.a_intent != I_HURT)
+	if (!(locate(/obj/structure/window) in loc) && user.a_intent != I_HURT && user.a_intent != I_HELP)
 		if (user.unEquip(I, src.loc))
 			set_pixel_click_offset(I, params)
 			return
-
-
+	//Gun bracing
+	if(!(locate(/obj/structure/window) in loc) && user.a_intent == I_HELP && istype(I, /obj/item/gun))
+		var/obj/item/gun/G = I
+		G.gun_brace(user, src) //.../modules/projectiles/gun.dm
+		return
 	//Hitting the wall with stuff
-	if(!istype(I,/obj/item/weapon/rcd) && !istype(I, /obj/item/weapon/reagent_containers))
+	if(!istype(I,/obj/item/rcd) && !istype(I, /obj/item/reagent_containers))
 		if(!I.force)
 			return attack_hand(user)
 		var/dam_threshhold = 150 //Integrity of Steel
@@ -471,6 +474,15 @@
 		plant.update_neighbors()
 
 
+/obj/structure/low_wall/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+	if(istype(user))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.do_attack_animation(src)
+		visible_message(SPAN_DANGER("[user] smashes into [src]!"))
+		take_damage(damage)
+		return 1
+
+
 /obj/structure/low_wall/affect_grab(var/mob/living/user, var/mob/living/target, var/state)
 	var/obj/occupied = turf_is_crowded()
 	if(occupied)
@@ -490,6 +502,7 @@
 	else
 		target.forceMove(loc)
 		target.Weaken(5)
+		add_fingerprint(target) //We are all over this so are prints are added
 		visible_message(SPAN_DANGER("[user] puts [target] on \the [src]."))
 		target.attack_log += "\[[time_stamp()]\] <font color='orange'>Has been put on \the [src] by [user.name] ([user.ckey] )</font>"
 		user.attack_log += "\[[time_stamp()]\] <font color='red'>Puts [target.name] ([target.ckey] on \the [src])</font>"

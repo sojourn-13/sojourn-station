@@ -1,17 +1,59 @@
 /turf/simulated/wall/r_wall
 	icon_state = "rgeneric"
+
 /turf/simulated/wall/r_wall/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
 
 /turf/simulated/wall/cult
 	icon_state = "cult"
+
 /turf/simulated/wall/cult/New(var/newloc)
 	..(newloc,"cult","cult2")
+
 /turf/unsimulated/wall/cult
 	name = "cult wall"
 	desc = "Hideous images dance beneath the surface."
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "cult"
+
+/turf/simulated/wall/tomb_king
+	name = "strange wall"
+	desc = "A reinforced wall painted obsidian and gold, glyphs and strange depictions of unknown tales told in images decorate the base."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "Nashef_standard"
+	icon_base = "Nashef_standard"
+	icon_base_override = "Nashef_standard"
+	icon_base_reinf = "Nashef_reinforced"
+
+/turf/simulated/wall/tomb_king/New(var/newloc)
+	..(newloc, MATERIAL_STEEL)
+
+/turf/simulated/wall/church
+	name = "church wall"
+	desc = "A reinforced wall with golden triming, latin and with faithful depictions of tales told in images decorate the base."
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "church_standard"
+	icon_base = "church_standard"
+	icon_base_override = "church_standard"
+	icon_base_reinf = "church_reinforced"
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
+
+/turf/simulated/wall/church/New(var/newloc)
+	..(newloc, MATERIAL_STEEL)
+
+/turf/simulated/wall/church_reinforced
+	name = "church wall"
+	desc = "A reinforced wall with golden triming, latin and with faithful depictions of tales told in images decorate the base."
+	icon_state = "church_reinforced"
+	icon_base_override = "church_standard"
+	icon_base_reinf_override = "church_reinforced"
+	icon = 'icons/turf/wall_masks.dmi'
+	base_color_override = "#FFFFFF"
+	reinf_color_override = "#FFFFFF"
+
+/turf/simulated/wall/church_reinforced/New(var/newloc)
+	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL) //3strong
 
 /turf/simulated/wall/rock
 	name = "rock wall"
@@ -142,7 +184,7 @@
 	icon_state = "cargoshwall1"
 
 /obj/structure/shuttle_part/escpod
-	name = "Escape Pod"
+	name = "Shuttle Pod"
 	icon = 'icons/turf/shuttleescpod.dmi'
 	icon_state = "escpodwall1"
 
@@ -194,6 +236,18 @@
 	icon_state = "oldwood"
 	icon_base_override = "oldwood"
 
+/turf/simulated/wall/wood_barrel
+	icon_state = "woodenwall"
+	icon_base_override = "woodenwall"
+
+/turf/simulated/wall/wood_barrel/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
+
+/turf/simulated/wall/wood/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
+
+/turf/simulated/wall/wood_old/New(var/newloc)
+	..(newloc, MATERIAL_WOOD)
 
 // Kind of wondering if this is going to bite me in the butt.
 /turf/simulated/wall/voxshuttle/New(var/newloc)

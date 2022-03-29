@@ -42,6 +42,16 @@
 	icon_state = "dirt"
 	mouse_opacity = 0
 
+/obj/effect/decal/cleanable/dirt/Initialize(mapload, ...)
+	. = ..()
+	if(prob(66)) //66% to just delete areself to help against effect/decal lag
+		qdel(src)
+
+/obj/effect/decal/cleanable/dirt/snow
+	name = "snow"
+	desc = "A low dusting of the dark blue snow."
+	icon_state = "snow"
+
 /obj/effect/decal/cleanable/reagents
 	desc = "Someone should clean that up."
 	gender = PLURAL
@@ -77,6 +87,14 @@
 	if(reagents)
 		alpha = min(reagents.total_volume * 30, 255)
 		START_PROCESSING(SSobj, src)
+
+/obj/effect/decal/cleanable/clean_blood(var/ignore = 0)
+	..()
+	STOP_PROCESSING(SSobj, src) //Were cleaned
+
+/obj/effect/decal/cleanable/reagents/splashed/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
 
 /obj/effect/decal/cleanable/reagents/splashed/add_reagents(var/datum/reagents/reagents_to_add)
 	..()
@@ -200,8 +218,6 @@
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mfloor1"
 	random_icon_states = list("mfloor1", "mfloor2", "mfloor3", "mfloor4", "mfloor5", "mfloor6", "mfloor7")
-
-
 
 /obj/effect/decal/cleanable/rubble
 	name = "rubble"

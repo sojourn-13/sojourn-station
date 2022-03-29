@@ -14,7 +14,7 @@
 	var/dos_failure = 0			// Set to 1 if the relay failed due to (D)DoS attack
 	var/list/dos_sources = list()	// Backwards reference for qdel() stuff
 
-	circuit = /obj/item/weapon/circuitboard/ntnet_relay
+	circuit = /obj/item/circuitboard/ntnet_relay
 
 	// Denial of Service attack variables
 	var/dos_overload = 0		// Amount of DoS "packets" in this relay's buffer
@@ -59,7 +59,7 @@
 		ntnet_global.add_log("Quantum relay switched from overload recovery mode to normal operation mode.")
 	..()
 
-/obj/machinery/ntnet_relay/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/obj/machinery/ntnet_relay/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = list()
 	data["enabled"] = enabled
 	data["dos_capacity"] = dos_capacity
@@ -74,7 +74,7 @@
 		ui.set_auto_update(1)
 
 /obj/machinery/ntnet_relay/attack_hand(var/mob/living/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/ntnet_relay/Topic(href, href_list)
 	if(..())

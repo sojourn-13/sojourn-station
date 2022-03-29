@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/energy/decloner
+/obj/item/gun/energy/decloner
 	name = "Prototype: Biological Demolecularizer"
 	desc = "A gun that discharges high amounts of controlled radiation to slowly break a target into component elements. Despite the fancy technology used to produce this weapon, overselling by the Lonestar has made it so common it is now worth less than the metal required to make it."
 	icon = 'icons/obj/guns/energy/decloner.dmi'
@@ -10,4 +10,4 @@
 	projectile_type = /obj/item/projectile/energy/declone
 	charge_cost = 100
 	matter = list(MATERIAL_STEEL = 20)
-	price_tag = 50
+	price_tag = 100

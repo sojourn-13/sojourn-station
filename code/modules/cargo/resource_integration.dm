@@ -4,28 +4,28 @@
 
 /datum/supply_pack/eva
 	name = "EVA Suit Control Module Crate"
-	contains = list(/obj/item/weapon/rig/eva)
+	contains = list(/obj/item/rig/eva)
 	cost = 400
 	crate_name = "EVA Suit Control Module Crate"
 	group = "Resource Integration Gear"
 
 /datum/supply_pack/hazard
 	name = "Hazard Hardsuit Control Module Crate"
-	contains = list(/obj/item/weapon/rig/hazard)
+	contains = list(/obj/item/rig/hazard)
 	cost = 600
 	crate_name = "Hazard Hardsuit Control Module Crate"
 	group = "Resource Integration Gear"
 
 /datum/supply_pack/industrial
 	name = "Industrial Hardsuit Control Module Crate"
-	contains = list(/obj/item/weapon/rig/industrial)
+	contains = list(/obj/item/rig/industrial)
 	cost = 500
 	crate_name = "Industrial Hardsuit Control Module Crate"
 	group = "Resource Integration Gear"
 
 /datum/supply_pack/light_rig
 	name = "Light Hardsuit Control Module Crate"
-	contains = list(/obj/item/weapon/rig/light)
+	contains = list(/obj/item/rig/light)
 	cost = 300
 	crate_name = "Light Hardsuit Control Module Crate"
 	group = "Resource Integration Gear"
@@ -61,14 +61,14 @@
 /datum/supply_pack/orescanner
 	name = "Hardsuit Mounted Ore Scanner Crate"
 	contains = list(/obj/item/rig_module/device/orescanner)
-	cost = 100
+	cost = 200
 	crate_name = "Hardsuit Mounted Ore Scanner Crate"
 	group = "Resource Integration Gear"
 
 /datum/supply_pack/healthscanner
 	name = "Hardsuit Mounted Health Scanner Crate"
 	contains = list(/obj/item/rig_module/device/healthscanner)
-	cost = 100
+	cost = 200
 	crate_name = "Hardsuit Mounted Health Scanner Crate"
 	group = "Resource Integration Gear"
 
@@ -103,7 +103,7 @@
 /datum/supply_pack/sechud
 	name = "Hardsuit Security Hud Crate"
 	contains = list(/obj/item/rig_module/vision/sechud)
-	cost = 100
+	cost = 200
 	crate_name = "Hardsuit Security Hud Crate"
 	group = "Resource Integration Gear"
 

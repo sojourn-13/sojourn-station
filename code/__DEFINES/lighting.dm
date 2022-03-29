@@ -3,6 +3,12 @@
 	GLOB.dview_mob.see_invisible = invis_flags; \
 	for(type in view(range, GLOB.dview_mob))
 
+#define DVIEW(output, range, center, invis_flags) \
+	GLOB.dview_mob.loc = center; \
+	GLOB.dview_mob.see_invisible = invis_flags; \
+	output = view(range, GLOB.dview_mob); \
+	GLOB.dview_mob.loc = null;
+
 #define END_FOR_DVIEW GLOB.dview_mob.loc = null
 
 #define LIGHTING_FALLOFF 1 // type of falloff to use for lighting; 1 for circular, 2 for square
@@ -82,4 +88,4 @@
 #define LIGHT_COLOR_INCANDESCENT_FLASHLIGHT "#FFCC66"
 
 //Fake ambient occlusion filter
-#define AMBIENT_OCCLUSION filter(type="drop_shadow", x=0, y=-2, size=4, color="#04080FAA")
+//#define AMBIENT_OCCLUSION filter(type="drop_shadow", x=0, y=-2, size=4, color="#04080FAA")

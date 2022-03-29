@@ -1,4 +1,4 @@
-/obj/item/weapon/material/harpoon
+/obj/item/material/harpoon
 	name = "harpoon"
 	sharp = 1
 	edge = 1

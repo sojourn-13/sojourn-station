@@ -12,7 +12,7 @@
 	var/blood_mask = 'icons/mob/human_races/masks/blood_human.dmi'
 
 	// Death vars.
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 	var/gibber_type = /obj/effect/gibspawner/human
 	var/single_gib_type = /obj/effect/decal/cleanable/blood/gibs
 	var/remains_type = /obj/item/remains/xeno
@@ -84,7 +84,7 @@
 		return TRUE
 	if(!variantof || variantof == name || name == start_form)
 		return FALSE
-	return GLOB.all_species_form_list[variantof]?.has_ancestor(ancestor_form, start_form ? start_form : name)
+	return GLOB.all_species_form_list[variantof]?:has_ancestor(ancestor_form, start_form ? start_form : name)
 
 /datum/species_form/proc/get_mob_icon(var/slot, var/icon_state)
 	var/icon/I

@@ -2,6 +2,7 @@
 	STOP_PROCESSING(SSmobs, src)
 	GLOB.dead_mob_list -= src
 	GLOB.living_mob_list -= src
+	GLOB.mob_list -= src
 	unset_machine()
 	qdel(hud_used)
 	if(client)
@@ -28,6 +29,7 @@
 		GLOB.dead_mob_list += src
 	else
 		GLOB.living_mob_list += src
+	GLOB.mob_list += src
 	move_intent = decls_repository.get_decl(move_intent)
 	. = ..()
 
@@ -104,6 +106,37 @@
 		if (M.real_name == text("[]", msg))
 			return M
 	return 0
+
+// Show a message to all mobs and objects in earshot of this one
+// This would be for audible actions by the src mob
+// message is the message output to anyone who can hear.
+// self_message (optional) is what the src mob hears.
+// deaf_message (optional) is what deaf people will see.
+// hearing_distance (optional) is the range, how many tiles away the message can be heard.
+/mob/audible_message(var/message, var/deaf_message, var/hearing_distance, var/self_message)
+
+	var/range = world.view
+	if(hearing_distance)
+		range = hearing_distance
+
+	var/turf/T = get_turf(src)
+
+	var/list/mobs = list()
+	var/list/objs = list()
+	get_mobs_and_objs_in_view_fast(T, range, mobs, objs)
+
+
+	for(var/m in mobs)
+		var/mob/M = m
+		if(self_message && M==src)
+			M.show_message(self_message,2,deaf_message,1)
+			continue
+
+		M.show_message(message,2,deaf_message,1)
+
+	for(var/o in objs)
+		var/obj/O = o
+		O.show_message(message,2,deaf_message,1)
 
 /mob/proc/movement_delay()
 	. = 0
@@ -228,9 +261,24 @@
 	face_atom(A)
 	return 1
 
+/mob/verb/haul_all_objects(turf/T as turf in oview(1))
+	set name = "Haul"
+	set category = "Object"
+
+	if(!src || !isturf(src.loc) || !(T in oview(1, src.loc)))
+		return 0
+
+	if(ismouse(usr))
+		return
+	if(!usr || !isturf(usr.loc))
+		return
+	if(usr.stat || usr.restrained())
+		return
+
+	T.UnloadSlide(get_dir(T, src), src, 1)
 
 /mob/proc/ret_grab(obj/effect/list_container/mobl/L as obj, flag)
-	if(!istype(l_hand, /obj/item/weapon/grab) && !istype(r_hand, /obj/item/weapon/grab))
+	if(!istype(l_hand, /obj/item/grab) && !istype(r_hand, /obj/item/grab))
 		if (!L)
 			return null
 		else
@@ -240,14 +288,14 @@
 			L = new /obj/effect/list_container/mobl(null)
 			L.container += src
 			L.master = src
-		if(istype(l_hand, /obj/item/weapon/grab))
-			var/obj/item/weapon/grab/G = l_hand
+		if(istype(l_hand, /obj/item/grab))
+			var/obj/item/grab/G = l_hand
 			if (!L.container.Find(G.affecting))
 				L.container += G.affecting
 				if (G.affecting)
 					G.affecting.ret_grab(L, 1)
-		if(istype(r_hand, /obj/item/weapon/grab))
-			var/obj/item/weapon/grab/G = r_hand
+		if(istype(r_hand, /obj/item/grab))
+			var/obj/item/grab/G = r_hand
 			if (!L.container.Find(G.affecting))
 				L.container += G.affecting
 				if (G.affecting)
@@ -396,7 +444,7 @@
 	for(var/obj/O in world)				//EWWWWWWWWWWWWWWWWWWWWWWWW ~needs to be optimised
 		if(!O.loc)
 			continue
-		if(istype(O, /obj/item/weapon/disk/nuclear))
+		if(istype(O, /obj/item/disk/nuclear))
 			var/name = "Nuclear Disk"
 			if (names.Find(name))
 				namecounts[name]++
@@ -604,9 +652,6 @@
 /mob/proc/is_ready()
 	return client && !!mind
 
-/mob/get_gender()
-	return gender
-
 /mob/proc/see(message)
 	if(!is_active())
 		return 0
@@ -626,6 +671,7 @@
 			stat("Storyteller", "[master_storyteller]")
 			stat("Colony Time", stationtime2text())
 			stat("Round Duration", roundduration2text())
+			stat("Round End Timer", rounddurationcountdown2text())
 
 		if(client.holder)
 			if(statpanel("Status"))
@@ -717,7 +763,7 @@ All Canmove setting in this proc is temporary. This var should not be set from h
 		set_density(initial(density))
 	reset_layer()
 
-	for(var/obj/item/weapon/grab/G in grabbed_by)
+	for(var/obj/item/grab/G in grabbed_by)
 		if(G.force_stand())
 			lying = 0
 
@@ -931,7 +977,7 @@ mob/proc/yank_out_object()
 			to_chat(U, "[src] has nothing stuck in their wounds that is large enough to remove.")
 		return
 
-	var/obj/item/weapon/selection = input("What do you want to yank out?", "Embedded objects") in valid_objects
+	var/obj/item/selection = input("What do you want to yank out?", "Embedded objects") in valid_objects
 
 	if(self)
 		to_chat(src, "<span class='warning'>You attempt to get a good grip on [selection] in your body.</span>")
@@ -967,11 +1013,6 @@ mob/proc/yank_out_object()
 			H.shock_stage+=20
 		affected.take_damage((selection.w_class * 3), 0, 0, 1, "Embedded object extraction")
 
-		//if(prob(selection.w_class * 5)) //I'M SO ANEMIC I COULD JUST -DIE-.
-			//var/datum/wound/internal_bleeding/I = new (min(selection.w_class * 5, 15))
-			//affected.wounds += I
-			//H.custom_pain("Something tears wetly in your [affected] as [selection] is pulled free!", 1)
-
 		if (ishuman(U))
 			var/mob/living/carbon/human/human_user = U
 			human_user.bloody_hands(H)
@@ -989,7 +1030,7 @@ mob/proc/yank_out_object()
 	if(!(U.l_hand && U.r_hand))
 		U.put_in_hands(selection)
 
-	for(var/obj/item/weapon/O in pinned)
+	for(var/obj/item/O in pinned)
 		if(O == selection)
 			pinned -= O
 		if(!pinned.len)
@@ -1003,6 +1044,7 @@ mob/proc/yank_out_object()
 	handle_silent()
 	handle_drugged()
 	handle_slurring()
+	handle_slowdown()
 
 /mob/living/proc/handle_stunned()
 	if(stunned)
@@ -1039,6 +1081,11 @@ mob/proc/yank_out_object()
 		AdjustParalysis(-1)
 	return paralysis
 
+/mob/living/proc/handle_slowdown()
+	if(slowdown)
+		slowdown = max(slowdown-1, 0)
+	return slowdown
+
 //Check for brain worms in head.
 /mob/proc/has_brain_worms()
 
@@ -1046,7 +1093,7 @@ mob/proc/yank_out_object()
 		if(istype(I,/mob/living/simple_animal/borer))
 			return I
 
-	return 0
+	return FALSE
 
 /mob/proc/updateicon()
 	return
@@ -1064,13 +1111,26 @@ mob/proc/yank_out_object()
 	else
 		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
 
+/*mob/verb/check_playtime()
+	set name = "Check Playtime"
+	set category = "IC"
+	set src = usr
+	for(var/department in GLOB.all_departments)
+		todofixmeplease
+		if(src.client.prefs.playtime[departmentplaytime])
+			to_chat(src, "You have spent [src.client.prefs.playtime[departmentplaytime]] minutes playing in [departmentplaytime].")
+*/
+
 /mob/verb/browse_mine_stats()
 	set name		= "Show stats and perks"
 	set desc		= "Browse your character stats and perks."
 	set category	= "IC"
 	set src			= usr
 
-	browse_src_stats(src)
+	if(iscarbon(usr) || issilicon(usr))
+		browse_src_stats(src)
+	else
+		to_chat(usr, "You do not have the capability to have stats or perks!")
 
 /mob/proc/browse_src_stats(mob/user)
 	var/additionalcss = {"
@@ -1103,20 +1163,26 @@ mob/proc/yank_out_object()
 	"}
 	// Perks
 	var/list/Plist = list()
+	var/column = 1
 	for(var/perk in stats.perks)
 		var/datum/perk/P = perk
 		//var/filename = sanitizeFileName("[P.type].png")
 		//var/asset = asset_cache.cache[filename] // this is definitely a hack, but getAtomCacheFilename accepts only atoms for no fucking reason whatsoever.
 		//if(asset)
-		Plist += "<td valign='middle'></td><td><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
+		if( column == 1)
+			Plist += "<td valign='middle'><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
+			column = 2
+		else
+			Plist += "<td valign='middle'><span style='text-align:center'>[P.name]<br>[P.desc]</span></td><tr></tr>"
+			column = 1
 	data += {"
 		<table width=80%>
 			<th colspan=2>Perks</th>
-			<tr>[Plist.Join("</tr><tr>")]</tr>
+			<tr>[Plist.Join()]</tr>
 		</table>
 	"}
 
-	var/datum/browser/B = new(src, "StatsBrowser","[user == src ? "Your stats:" : "[name]'s stats"]", 1000, 345)
+	var/datum/browser/B = new(src, "StatsBrowser","[user == src ? "Your stats:" : "[name]'s stats"]", 1000, 400)
 	B.set_content(data)
 	B.set_window_options("can_minimize=0")
 	B.open()
@@ -1163,6 +1229,14 @@ mob/proc/yank_out_object()
 /mob/verb/westfaceperm()
 	set hidden = 1
 	set_face_dir(client.client_dir(WEST))
+
+/mob/verb/change_move_intent()
+	set name = "Change moving intent"
+	set category = "IC"
+	set src = usr
+
+	if(HUDneed["move intent"])
+		HUDneed["move intent"]:Click()  // Yep , this is all.
 
 /mob/proc/adjustEarDamage()
 	return
@@ -1272,3 +1346,14 @@ mob/proc/yank_out_object()
 /mob/proc/set_stat(var/new_stat)
 	. = stat != new_stat
 	stat = new_stat
+
+/client/verb/showplaytime()
+	set name = "Show All Playtime"
+	set category = "IC"
+	var/timeinjob = 0
+	log_debug("[src.ckey] just looked at his playtime.")
+	for(var/job in GLOB.joblist)
+		var/datum/job/J = GLOB.joblist[job]
+		timeinjob = SSjob.JobTimeCheck(usr.ckey, "[J.type]")
+		if(timeinjob > 0)
+			to_chat(src, "You have spent [timeinjob] minutes playing as [J.title].")

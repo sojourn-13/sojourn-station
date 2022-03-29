@@ -1,7 +1,7 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // To make a design unprotect use -1
 // Technomancers
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/components
+/obj/item/computer_hardware/hard_drive/portable/design/components
 	disk_name = "Artificer's ARK-034 Components"
 	icon_state = "technomancers"
 	license = 20
@@ -13,6 +13,7 @@
 		/datum/design/research/item/part/micro_mani,
 		/datum/design/research/item/part/basic_micro_laser,
 		/datum/design/research/item/part/basic_matter_bin,
+		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/device/camera,
 		/datum/design/autolathe/device/camerafilm,
 		/datum/design/autolathe/part/igniter,
@@ -23,9 +24,11 @@
 		/datum/design/autolathe/part/sensor_prox,
 		/datum/design/autolathe/part/camera_assembly,
 		/datum/design/autolathe/part/laserguide,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/adv_tools
+/obj/item/computer_hardware/hard_drive/portable/design/adv_tools
 	disk_name = "Artificer's IJIRO-451 Advanced Tools"
 	icon_state = "technomancers"
 	license = 10
@@ -39,6 +42,7 @@
 		/datum/design/autolathe/tool/shovel/power,
 		/datum/design/autolathe/tool/circularsaw,
 		/datum/design/autolathe/tool/powered_hammer,
+		/datum/design/autolathe/tool/deadblow_hammer,
 		/datum/design/autolathe/tool/chainsaw,
 		/datum/design/autolathe/tool/hypersaw,
 		/datum/design/autolathe/tool/rcd,
@@ -51,9 +55,12 @@
 		/datum/design/autolathe/part/diamondblade,
 		/datum/design/autolathe/tool/ducttape/fiber,
 		/datum/design/autolathe/tool/ducttape/glue,
+		/datum/design/autolathe/part/cable_coil = 0,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/parttoolpack
+/obj/item/computer_hardware/hard_drive/portable/design/parttoolpack
 	name = "Artificer's PAK-103 Tool Mods"
 	icon_state = "technomancers"
 	license = 10
@@ -66,7 +73,6 @@
 		/datum/design/autolathe/part/heatsink,
 		/datum/design/autolathe/part/ergonomic_grip,
 		/datum/design/autolathe/part/ratchet,
-		/datum/design/autolathe/part/red_paint,
 		/datum/design/autolathe/part/whetstone,
 		/datum/design/autolathe/part/magbit,
 		/datum/design/autolathe/part/red_paint,
@@ -87,7 +93,7 @@
 		/datum/design/research/item/weapon/toolmod/plasmablock,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/circuits
+/obj/item/computer_hardware/hard_drive/portable/design/circuits
 	disk_name = "Artificer's ESPO-830 Circuits"
 	icon_state = "technomancers"
 	license = 10
@@ -110,9 +116,14 @@
 		/datum/design/autolathe/circuit/reagentgrinder,
 		/datum/design/research/circuit/pacman = 2,
 		/datum/design/research/circuit/diesel = 3,
+		/datum/design/autolathe/circuit/trade_beacon_receiving = 5,
+		/datum/design/autolathe/circuit/trade_beacon_sending = 5,
+		/datum/design/autolathe/part/cable_coil,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/logistics
+/obj/item/computer_hardware/hard_drive/portable/design/logistics
 	disk_name = "Artificer's LAT-018 Logistics"
 	icon_state = "technomancers"
 
@@ -122,11 +133,16 @@
 		/datum/design/autolathe/conveyor_switch = 0,
 		///datum/design/autolathe/circuit/smelter = 3, //Balance, no more rnd/guild abuse
 		/datum/design/autolathe/circuit/sorter = 3,
-		/datum/design/autolathe/circuit/recycler = 1,
-		/datum/design/autolathe/circuit/pile_ripper = 1,
+		/datum/design/autolathe/circuit/recycler,
+		/datum/design/autolathe/circuit/pile_ripper,
+		/datum/design/autolathe/circuit/trade_beacon_receiving,
+		/datum/design/autolathe/circuit/trade_beacon_sending,
+		/datum/design/autolathe/part/cable_coil,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/engineering
+/obj/item/computer_hardware/hard_drive/portable/design/engineering
 	disk_name = "Artificer's Supply Factory"
 	icon_state = "technomancers"
 	license = -1 //Should make this disk infinite.
@@ -139,6 +155,7 @@
 		/datum/design/research/item/part/micro_mani,
 		/datum/design/research/item/part/basic_micro_laser,
 		/datum/design/research/item/part/basic_matter_bin,
+		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/part/igniter,
 		/datum/design/autolathe/part/signaler,
 		/datum/design/autolathe/part/sensor_infra,
@@ -146,6 +163,8 @@
 		/datum/design/autolathe/part/sensor_prox,
 		/datum/design/autolathe/part/camera_assembly,
 		/datum/design/autolathe/part/laserguide,
+		/datum/design/autolathe/container/hcase_parts,
+		/datum/design/autolathe/container/hcase_engi,
 		// From Tools
 		/datum/design/autolathe/tool/big_wrench,
 		/datum/design/autolathe/tool/pneumatic_crowbar,
@@ -156,6 +175,7 @@
 		/datum/design/autolathe/tool/shovel/power,
 		/datum/design/autolathe/tool/circularsaw,
 		/datum/design/autolathe/tool/powered_hammer,
+		/datum/design/autolathe/tool/deadblow_hammer,
 		/datum/design/autolathe/tool/chainsaw,
 		/datum/design/autolathe/tool/hypersaw,
 		/datum/design/autolathe/tool/rcd,
@@ -166,7 +186,6 @@
 		/datum/design/autolathe/tool/multitool/advanced,
 		/datum/design/autolathe/tool/ducttape/fiber,
 		/datum/design/autolathe/tool/ducttape/glue,
-		/datum/design/autolathe/tool/rcd_ammo,
 		// From Circuits
 		/datum/design/autolathe/circuit/airlockmodule,
 		/datum/design/autolathe/circuit/airalarm,
@@ -186,6 +205,8 @@
 		/datum/design/autolathe/circuit/sorter,
 		/datum/design/autolathe/circuit/recycler,
 		/datum/design/autolathe/circuit/pile_ripper,
+		/datum/design/autolathe/circuit/trade_beacon_receiving,
+		/datum/design/autolathe/circuit/trade_beacon_sending,
 		// From tool mods
 		/datum/design/autolathe/part/laserguide,
 		/datum/design/autolathe/part/diamondblade,
@@ -195,7 +216,6 @@
 		/datum/design/autolathe/part/heatsink,
 		/datum/design/autolathe/part/ergonomic_grip,
 		/datum/design/autolathe/part/ratchet,
-		/datum/design/autolathe/part/red_paint,
 		/datum/design/autolathe/part/whetstone,
 		/datum/design/autolathe/part/magbit,
 		/datum/design/autolathe/part/red_paint,
@@ -214,9 +234,16 @@
 		/datum/design/research/item/weapon/toolmod/hydraulic,
 		/datum/design/research/item/weapon/toolmod/injector,
 		/datum/design/research/item/weapon/toolmod/plasmablock,
+		// From Light
+		/datum/design/autolathe/misc/tube,
+		/datum/design/autolathe/misc/tube_large,
+		/datum/design/autolathe/misc/tube_powersaver,
+		/datum/design/autolathe/misc/bulb,
+		/datum/design/autolathe/misc/bulb_spot,
+		/datum/design/autolathe/misc/bulb_powersaver,
 		)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork
+/obj/item/computer_hardware/hard_drive/portable/design/powerwork
 	disk_name = "Artificer's KW-841 Power Setters"
 	icon_state = "technomancers"
 
@@ -231,6 +258,7 @@
 	/datum/design/research/circuit/pacman,
 	/datum/design/research/circuit/diesel,
 	/datum/design/research/circuit/pacman/scrap = 0,
+	/datum/design/research/circuit/hydrogen_gen = 10,
 	/datum/design/research/structure/solar,
 	/datum/design/research/circuit/smes_cell,
 	/datum/design/research/circuit/batteryrack,
@@ -241,14 +269,21 @@
 	/datum/design/research/item/part/smes_coil/super_capacity = 2,
 	/datum/design/autolathe/tool/multitool = 5,
 	/datum/design/autolathe/tool/multitool/advanced = 10,
+	/datum/design/autolathe/part/cable_coil,
+	/datum/design/autolathe/misc/tube,
+	/datum/design/autolathe/misc/tube_large,
+	/datum/design/autolathe/misc/tube_powersaver,
+	/datum/design/autolathe/misc/bulb,
+	/datum/design/autolathe/misc/bulb_spot,
+	/datum/design/autolathe/misc/bulb_powersaver,
 	)
 
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/powerwork/factory
+/obj/item/computer_hardware/hard_drive/portable/design/powerwork/factory
 	disk_name = "Artificer's MW-841 Power Setters"
 	license = -1
 
 //This disk will never be in game as its used as a dummy disk for the nano forge
-/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforge
+/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
 	name = "Nano-Forge Data Disk"
 	disk_name = "Artificer Data Collection"
 	designs = list(
@@ -283,6 +318,7 @@
 	/datum/design/autolathe/tool/shovel/power,
 	/datum/design/autolathe/tool/circularsaw,
 	/datum/design/autolathe/tool/powered_hammer,
+	/datum/design/autolathe/tool/deadblow_hammer,
 	/datum/design/autolathe/tool/chainsaw,
 	/datum/design/autolathe/tool/hypersaw,
 	/datum/design/autolathe/tool/electric_screwdriver,
@@ -291,8 +327,8 @@
 	/datum/design/autolathe/tool/weldingtool/advanced,
 	/datum/design/autolathe/tool/multitool/advanced,
 	/datum/design/autolathe/tool/rcd,
-	/datum/design/autolathe/tool/rcd_ammo,
 	/datum/design/autolathe/tool/surgicaldrill/adv,
+	/datum/design/autolathe/tool/hatton_ammo,
 	//Tool Mods
 	/datum/design/autolathe/part/laserguide,
 	/datum/design/autolathe/part/diamondblade,
@@ -302,7 +338,6 @@
 	/datum/design/autolathe/part/heatsink,
 	/datum/design/autolathe/part/ergonomic_grip,
 	/datum/design/autolathe/part/ratchet,
-	/datum/design/autolathe/part/red_paint,
 	/datum/design/autolathe/part/whetstone,
 	/datum/design/autolathe/part/magbit,
 	/datum/design/autolathe/part/red_paint,
@@ -340,19 +375,24 @@
 	/datum/design/research/circuit/pacman,
 	/datum/design/research/circuit/diesel,
 	/datum/design/research/circuit/pacman/scrap,
+	/datum/design/research/circuit/hydrogen_gen,
 	/datum/design/research/structure/solar,
 	/datum/design/research/circuit/smes_cell,
 	/datum/design/research/circuit/batteryrack,
 	/datum/design/research/circuit/breakerbox,
 	/datum/design/autolathe/circuit/recycler,
 	/datum/design/autolathe/circuit/pile_ripper,
+	/datum/design/autolathe/circuit/trade_beacon_receiving,
+	/datum/design/autolathe/circuit/trade_beacon_sending,
 	//Stock Parts, and SMES coils
+	/datum/design/autolathe/container/hcase_parts,
+	/datum/design/autolathe/container/hcase_engi,
 	/datum/design/autolathe/part/consolescreen,
-	/datum/design/research/item/part/basic_capacitor,
-	/datum/design/research/item/part/basic_sensor,
-	/datum/design/research/item/part/micro_mani,
-	/datum/design/research/item/part/basic_micro_laser,
-	/datum/design/research/item/part/basic_matter_bin,
+	/datum/design/autolathe/part/guild_capa,
+	/datum/design/autolathe/part/guild_scanning,
+	/datum/design/autolathe/part/guild_manip,
+	/datum/design/autolathe/part/guild_laser,
+	/datum/design/autolathe/part/guild_bin,
 	/datum/design/autolathe/part/igniter,
 	/datum/design/autolathe/part/signaler,
 	/datum/design/autolathe/part/sensor_infra,
@@ -363,11 +403,16 @@
 	/datum/design/research/item/part/smes_coil/weak,
 	/datum/design/research/item/part/smes_coil/super_io,
 	/datum/design/research/item/part/smes_coil/super_capacity,
+	/datum/design/autolathe/part/cable_coil,
 	//misc
 	/datum/design/autolathe/misc/extinguisher,
 	/datum/design/autolathe/conveyor,
 	/datum/design/autolathe/conveyor_switch,
 	/datum/design/autolathe/misc/floor_light,
 	/datum/design/autolathe/misc/tube,
+	/datum/design/autolathe/misc/tube_large,
+	/datum/design/autolathe/misc/tube_powersaver,
 	/datum/design/autolathe/misc/bulb,
+	/datum/design/autolathe/misc/bulb_spot,
+	/datum/design/autolathe/misc/bulb_powersaver,
 	)

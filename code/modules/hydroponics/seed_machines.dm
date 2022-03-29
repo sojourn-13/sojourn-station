@@ -1,4 +1,4 @@
-/obj/item/weapon/disk/botany
+/obj/item/disk/botany
 	name = "flora data disk"
 	desc = "A small disk used for carrying data on plant genetics."
 	icon_state = "green"
@@ -6,12 +6,12 @@
 	var/list/genes = list()
 	var/genesource = "unknown"
 
-/obj/item/weapon/disk/botany/New()
+/obj/item/disk/botany/New()
 	..()
 	pixel_x = rand(-5,5)
 	pixel_y = rand(-5,5)
 
-/obj/item/weapon/disk/botany/attack_self(var/mob/user as mob)
+/obj/item/disk/botany/attack_self(var/mob/user as mob)
 	if(genes.len)
 		var/choice = alert(user, "Are you sure you want to wipe the disk?", "Xenobotany Data", "No", "Yes")
 		if(src && user && genes && choice && choice == "Yes" && user.Adjacent(get_turf(src)))
@@ -21,13 +21,13 @@
 			genes = list()
 			genesource = "unknown"
 
-/obj/item/weapon/storage/box/botanydisk
+/obj/item/storage/box/botanydisk
 	name = "flora disk box"
 	desc = "A box of flora data disks, apparently."
 
-/obj/item/weapon/storage/box/botanydisk/populate_contents()
+/obj/item/storage/box/botanydisk/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/weapon/disk/botany(src)
+		new /obj/item/disk/botany(src)
 
 /obj/machinery/botany
 	icon = 'icons/obj/hydroponics_machines.dmi'
@@ -37,7 +37,7 @@
 	use_power = IDLE_POWER_USE
 
 	var/obj/item/seeds/seed // Currently loaded seed packet.
-	var/obj/item/weapon/disk/botany/loaded_disk //Currently loaded data disk.
+	var/obj/item/disk/botany/loaded_disk //Currently loaded data disk.
 
 	var/active = 0
 	var/action_time = 5
@@ -55,7 +55,7 @@
 		finished_task()
 
 /obj/machinery/botany/attack_hand(mob/user as mob)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/botany/proc/finished_task()
 	active = 0
@@ -94,12 +94,12 @@
 			to_chat(user, "You load [I] into [src].")
 		return
 
-	if(istype(I,/obj/item/weapon/disk/botany))
+	if(istype(I,/obj/item/disk/botany))
 		if(loaded_disk)
 			to_chat(user, "There is already a data disk loaded.")
 			return
 		else
-			var/obj/item/weapon/disk/botany/B = I
+			var/obj/item/disk/botany/B = I
 
 			if(B.genes && B.genes.len)
 				if(!disk_needs_genes)
@@ -123,10 +123,12 @@
 	name = "lysis-isolation centrifuge"
 	icon_state = "traitcopier"
 
+	circuit = /obj/item/circuitboard/extractor
+
 	var/datum/seed/genetics // Currently scanned seed genetic structure.
 	var/degradation = 0     // Increments with each scan, stops allowing gene mods after a certain point.
 
-/obj/machinery/botany/extractor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_panel_open = NANOUI_FOCUS)
+/obj/machinery/botany/extractor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_panel_open = NANOUI_FOCUS)
 
 	if(!user)
 		return
@@ -250,7 +252,9 @@
 	icon_state = "traitgun"
 	disk_needs_genes = 1
 
-/obj/machinery/botany/editor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_panel_open = NANOUI_FOCUS)
+	circuit = /obj/item/circuitboard/editor
+
+/obj/machinery/botany/editor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_panel_open = NANOUI_FOCUS)
 
 	if(!user)
 		return

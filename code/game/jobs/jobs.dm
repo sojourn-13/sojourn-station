@@ -1,3 +1,10 @@
+GLOBAL_LIST_INIT(department_command, list(DEPARTMENT_COMMAND))
+GLOBAL_LIST_INIT(department_security, list(DEPARTMENT_SECURITY))
+GLOBAL_LIST_INIT(department_moebius, list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL))
+GLOBAL_LIST_INIT(department_engineering, list(DEPARTMENT_ENGINEERING))
+GLOBAL_LIST_INIT(department_guild, list(DEPARTMENT_LSS))
+GLOBAL_LIST_INIT(department_church, list(DEPARTMENT_CHURCH))
+
 var/const/ENGINEERING       =(1<<0)
 var/const/SECURITY        	=(1<<1)
 var/const/MEDICAL           =(1<<2)
@@ -32,12 +39,11 @@ var/const/MEDSCI			=(1<<1)
 
 var/const/CRO				=(1<<0)
 var/const/SCIENTIST			=(1<<1)
-var/const/ORDERLY			=(1<<2)
+var/const/TRAUMATEAM		=(1<<2)
 var/const/CBO				=(1<<3)
 var/const/DOCTOR			=(1<<4)
 var/const/PSYCHIATRIST		=(1<<5)
 var/const/ROBOTICIST		=(1<<6)
-var/const/PARAMEDIC			=(1<<7)
 
 
 var/const/STEWARD			=(1<<0)
@@ -61,6 +67,8 @@ var/const/ACOLYTE			=(1<<1)
 
 var/const/HUNTMASTER		=(1<<0)
 var/const/LODGEHUNTER		=(1<<1)
+var/const/OUTSIDER			=(1<<2)
+var/const/LODGEHERBALIST	=(1<<3)
 
 var/list/assistant_occupations = list()
 

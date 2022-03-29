@@ -5,7 +5,7 @@
 
 /obj/machinery/matter_nanoforge
 	name = "Matter NanoForge"
-	desc = "It consumes items and produces compressed matter."
+	desc = "It consumes items and produces compressed matter. Objects produced by it are made up of compressed matter that can not be broken back down for their material value."
 	icon = 'icons/obj/machines/matterforge.dmi'
 	icon_state = "techprint"
 	density = TRUE
@@ -13,7 +13,7 @@
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
 
-	circuit = /obj/item/weapon/circuitboard/matter_nanoforge
+	circuit = /obj/item/circuitboard/matter_nanoforge
 
 	var/list/stored_material = list()
 	var/obj/power_source
@@ -33,7 +33,7 @@
 	var/queue_max = 8
 
 	var/list/disk_list = list(
-	/obj/item/weapon/computer_hardware/hard_drive/portable/design/nanoforge
+	/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
 	)
 	var/list/design_list = list()
 	var/speed = 2
@@ -62,7 +62,7 @@
 
 /obj/machinery/matter_nanoforge/proc/find_files_by_disk(typepath)
 	var/list/files = list()
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/design/c = new typepath
+	var/obj/item/computer_hardware/hard_drive/portable/design/c = new typepath
 	for(var/f in c.designs)
 		var/datum/design/design_object = new f
 		design_object.AssembleDesignInfo()
@@ -153,7 +153,7 @@
 
 	return data
 
-/obj/machinery/matter_nanoforge/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/matter_nanoforge/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/list/data = ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -182,7 +182,7 @@
 	user.set_machine(src)
 	if(!design_list?.len)
 		get_designs()
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/matter_nanoforge/Topic(href, href_list)
 	if(..())
@@ -334,7 +334,6 @@
 				if(istype(O, /obj/item/stack/material/compressed_matter))
 					to_chat(user, SPAN_NOTICE("You deposit [total_material] compressed matter into \the [src]."))
 					stored_material[MATERIAL_COMPRESSED_MATTER] += total_material
-					update_desc(stored_material[MATERIAL_COMPRESSED_MATTER])
 					qdel(eating)
 					return
 				total_material_gained[material] += total_material
@@ -348,8 +347,6 @@
 			added_mats = storage_capacity - stored_material[MATERIAL_COMPRESSED_MATTER]
 		var/leftover_mats = (added_mats + stored_material[MATERIAL_COMPRESSED_MATTER]) - storage_capacity
 		stored_material[MATERIAL_COMPRESSED_MATTER] += added_mats
-		update_desc(stored_material[MATERIAL_COMPRESSED_MATTER])
-		gained_mats += added_mats
 		if(leftover_mats == 0)
 			used_sheets = (added_mats / artifact.get_power()) / lst[mat]
 		else
@@ -477,7 +474,7 @@
 
 	//And if there's any remainder, we eject that as a shard
 	if (remainder)
-		new /obj/item/weapon/material/shard(drop_location(), MATERIAL_COMPRESSED_MATTER, _amount = remainder)
+		new /obj/item/material/shard(drop_location(), MATERIAL_COMPRESSED_MATTER, _amount = remainder)
 
 	//The stored material gets the amount (whole+remainder) subtracted
 	stored_material[MATERIAL_COMPRESSED_MATTER] -= amount
@@ -496,7 +493,7 @@
 
 /obj/machinery/matter_nanoforge/proc/fabricate_design(datum/design/design)
 	consume_materials(design)
-	design.Fabricate(drop_location(), mat_efficiency, src)
+	design.Fabricate(drop_location(), 0, src)
 
 	working = FALSE
 	current_design = null
@@ -504,7 +501,7 @@
 	next_file()
 
 /obj/machinery/matter_nanoforge/proc/consume_materials(datum/design/design)
-	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - design.materials[MATERIAL_COMPRESSED_MATTER])
+	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - (design.materials[MATERIAL_COMPRESSED_MATTER] * mat_efficiency))
 	return TRUE
 
 #undef ERR_OK
@@ -512,9 +509,6 @@
 #undef ERR_NOMATERIAL
 #undef SANITIZE_LATHE_COST
 #undef ERR_PAUSED
-
-/obj/machinery/matter_nanoforge/proc/update_desc(var/stored_mats)
-	desc = "It consumes items and produces compressed matter. It has [stored_mats] Compressed Matter stored."
 
 /obj/machinery/matter_nanoforge/ex_act(severity)
 	return 0
@@ -560,7 +554,7 @@
 	..()
 	var/mb_rating = 0
 	var/mb_amount = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
 		mb_rating += MB.rating
 		mb_amount++
 
@@ -568,14 +562,14 @@
 
 	var/man_rating = 0
 	var/man_amount = 0
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		man_rating += M.rating
 		man_amount++
 	man_rating -= man_amount
 
 	var/las_rating = 0
 	var/las_amount = 0
-	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
 		las_rating += M.rating
 		las_amount++
 	las_rating -= las_amount
@@ -625,8 +619,10 @@
 	lst[MATERIAL_CLOTH] = 0.10
 	lst[MATERIAL_SILK] = 0.05
 	lst[MATERIAL_CARDBOARD] = 0.10
-	lst[MATERIAL_LEATHER] = 0.10
+	lst[MATERIAL_LEATHER] = 0.70
+	lst[MATERIAL_BONE] = 0.70
 	lst[MATERIAL_TITANIUM] = 0.70
+	lst[MATERIAL_COMPRESSED_MATTER] = 1 //we make this!
 
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)
 	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))

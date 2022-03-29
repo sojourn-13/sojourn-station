@@ -4,8 +4,8 @@
 	anchored = 1
 	icon = 'icons/obj/virology.dmi'
 	icon_state = "incubator"
-	var/obj/item/weapon/virusdish/dish
-	var/obj/item/weapon/reagent_containers/glass/beaker = null
+	var/obj/item/virusdish/dish
+	var/obj/item/reagent_containers/glass/beaker = null
 	var/radiation = 0
 
 	var/on = 0
@@ -15,7 +15,7 @@
 	var/toxins = 0
 
 /obj/machinery/disease2/incubator/attackby(var/obj/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/weapon/reagent_containers/glass) || istype(O,/obj/item/weapon/reagent_containers/syringe))
+	if(istype(O, /obj/item/reagent_containers/glass) || istype(O,/obj/item/reagent_containers/syringe))
 
 		if(beaker)
 			to_chat(user, "\The [src] is already loaded.")
@@ -31,7 +31,7 @@
 		src.attack_hand(user)
 		return
 
-	if(istype(O, /obj/item/weapon/virusdish))
+	if(istype(O, /obj/item/virusdish))
 
 		if(dish)
 			to_chat(user, "The dish tray is aleady full!")
@@ -48,9 +48,9 @@
 
 /obj/machinery/disease2/incubator/attack_hand(mob/user as mob)
 	if(stat & (NOPOWER|BROKEN)) return
-	ui_interact(user)
+	nano_ui_interact(user)
 
-/obj/machinery/disease2/incubator/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/disease2/incubator/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	user.set_machine(src)
 
 	var/data[0]
@@ -90,8 +90,8 @@
 
 /obj/machinery/disease2/incubator/Process()
 	if(dish && on && dish.virus2)
-		use_power(50,EQUIP)
-		if(!powered(EQUIP))
+		use_power(50,STATIC_EQUIP)
+		if(!powered(STATIC_EQUIP))
 			on = 0
 			icon_state = "incubator"
 
@@ -104,14 +104,14 @@
 			SSnano.update_uis(src)
 
 		if(radiation)
-			if(radiation > 50 & prob(5))
+			if(radiation > 50 & prob(5+max(radiation,50)))
 				dish.virus2.majormutate()
 				if(dish.info)
 					dish.info = "OUTDATED : [dish.info]"
 					dish.basic_info = "OUTDATED: [dish.basic_info]"
 					dish.analysed = 0
 				ping("\The [src] pings, \"Mutant viral strain detected.\"")
-			else if(prob(5))
+			else if(radiation < 50 & prob(5+max(radiation,50)))
 				dish.virus2.minormutate()
 			radiation -= 1
 			SSnano.update_uis(src)
@@ -128,12 +128,9 @@
 		SSnano.update_uis(src)
 
 	if(beaker)
-		if(foodsupply < 100 && beaker.reagents.remove_reagent("virusfood",5))
-			if(foodsupply + 10 <= 100)
-				foodsupply += 10
-			else
-				beaker.reagents.add_reagent("virusfood",(100 - foodsupply)/2)
-				foodsupply = 100
+		if(foodsupply < 100 && (foodsupply + 5) <= 100 && (beaker.reagents.has_reagent("virusfood", 1)))
+			beaker.reagents.remove_reagent("virusfood", 1)
+			foodsupply += 5
 			SSnano.update_uis(src)
 
 		if (locate(/datum/reagent/toxin) in beaker.reagents.reagent_list && toxins < 100)

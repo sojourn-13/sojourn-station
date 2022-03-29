@@ -15,6 +15,8 @@
 	maxHealth = 2500
 	break_stuff_probability = 95
 
+	var/hive_ender = FALSE // Basiclly a single check if we kill all of hivemind with are death
+
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	megafauna_min_cooldown = 50
@@ -26,12 +28,23 @@
 	var/health_marker_1 = 0//1700
 	var/health_marker_2 = 0//900
 	var/health_marker_3 = 0//100
-
+	mob_classification = CLASSIFICATION_SYNTHETIC
 	projectiletype = /obj/item/projectile/goo
+
+/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/emp_act(severity)
+	..()
+	switch(severity)
+		if(1)
+			adjustFireLoss(rand(500,700))
+		if(2)
+			adjustFireLoss(rand(250,500))
+		if(3)
+			adjustFireLoss(rand(125,250))
 
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/death()
 	..()
-	delhivetech()
+	if(hive_ender)
+		delhivetech()
 	walk(src, 0)
 
 /mob/living/simple_animal/hostile/megafauna/hivemind_tyrant/proc/telenode()

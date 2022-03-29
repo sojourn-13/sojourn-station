@@ -25,8 +25,8 @@
 	..(user, distance, infix, suffix)
 	if(get_dist(user, src) <= 2)
 		if (corporation)
-			if (corporation in global.global_corporations)
-				var/datum/corporation/C = global_corporations[corporation]
+			if (corporation in GLOB.global_corporations)
+				var/datum/corporation/C = GLOB.global_corporations[corporation]
 				to_chat(user, "<font color='[C.textcolor]'>You think this [src.name] create a \
 				<IMG CLASS=icon SRC=\ref[C.icon] ICONSTATE='[C.icon_state]'>\
 				[C.name]. [C.about]</font>")
@@ -148,7 +148,7 @@
 			in_use = 0
 
 /obj/attack_ghost(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 	..()
 
 /obj/proc/interact(mob/user)
@@ -225,7 +225,8 @@
 
 //Drops the materials in matter list on into target location
 //Use for deconstrction
-/obj/proc/drop_materials(target_loc)
+// Dropper is whoever is handling these materials if any , causes them to leave fingerprints on the sheets.
+/obj/proc/drop_materials(target_loc, mob/living/dropper)
 	var/list/materials = get_matter()
 
 	for(var/mat_name in materials)
@@ -233,7 +234,7 @@
 		if(!material)
 			continue
 
-		material.place_material(target_loc, materials[mat_name])
+		material.place_material(target_loc, materials[mat_name], dropper)
 
 //To be called from things that spill objects on the floor.
 //Makes an object move around randomly for a couple of tiles
@@ -248,13 +249,15 @@
 
 
 //Intended for gun projectiles, but defined at this level for various things that aren't of projectile type
-/obj/proc/multiply_projectile_damage(var/newmult)
+/obj/proc/multiply_projectile_damage(newmult)
 	throwforce = initial(throwforce) * newmult
 
 //Same for AP
-/obj/proc/multiply_projectile_penetration(var/newmult)
+/obj/proc/multiply_projectile_penetration(newmult)
 	armor_penetration = initial(armor_penetration) * newmult
 
-/obj/proc/multiply_pierce_penetration(var/newmult)
+/obj/proc/multiply_pierce_penetration(newmult)
 
-/obj/proc/multiply_projectile_step_delay(var/newmult)
+/obj/proc/multiply_projectile_step_delay(newmult)
+
+/obj/proc/multiply_projectile_agony(newmult)

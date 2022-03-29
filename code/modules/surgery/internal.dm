@@ -47,7 +47,7 @@
 /obj/item/organ/external/proc/get_total_occupied_volume()
 	. = 0
 	for(var/obj/item/item in implants)
-		if(istype(item, /obj/item/weapon/implant) || istype(item, /obj/item/organ_module))
+		if(istype(item, /obj/item/implant) || istype(item, /obj/item/organ_module))
 			continue
 
 		. += item.w_class
@@ -72,8 +72,8 @@
 		return TRUE
 
 	// Implants
-	if(istype(I, /obj/item/weapon/implant))
-		var/obj/item/weapon/implant/implant = I
+	if(istype(I, /obj/item/implant))
+		var/obj/item/implant/implant = I
 
 		// Technical limitation
 		// TODO: fix this
@@ -164,8 +164,8 @@
 		organ_module.install(src)
 
 	// Implants
-	else if(istype(I, /obj/item/weapon/implant))
-		var/obj/item/weapon/implant/implant = I
+	else if(istype(I, /obj/item/implant))
+		var/obj/item/implant/implant = I
 		implant.install(owner, organ_tag)
 		owner.update_implants()
 
@@ -231,26 +231,33 @@
 	if(I in implants)
 		implants -= I
 		embedded -= I
+		var/isremoved = 0 //Did we already remove the item?
 		if(isitem(I))
 			var/obj/item/item = I
 			item.on_embed_removal(owner)
 
-		if(istype(I, /obj/item/weapon/implant))
-			var/obj/item/weapon/implant/implant = I
+		if(istype(I, /obj/item/implant))
+			var/obj/item/implant/implant = I
 			if(implant.wearer)
 				implant.uninstall()
+				isremoved = 1
 			else
 				I.forceMove(drop_location())
+				isremoved = 1
 
 		if(istype(I, /obj/item/organ_module))
 			if(I == module)
 				var/obj/item/organ_module/M = I
 				M.remove(src)
+				isremoved = 1
 			else
 				I.forceMove(drop_location())
+				isremoved = 1
 
 		if(owner)
 			owner.update_implants()
+		if(isremoved == 0)
+			I.forceMove(drop_location())
 
 	if(I in internal_organs)
 		var/obj/item/organ/organ = I

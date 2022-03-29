@@ -66,7 +66,7 @@
 		var/datum/job/job_access = jobdatum
 		if(corpseidaccess)
 			job_access = SSjob.GetJob(corpseidaccess)
-		var/obj/item/weapon/card/id/W = new(M)
+		var/obj/item/card/id/W = new(M)
 		if(job_access)
 			W.access = job_access.get_access()
 		else
@@ -83,8 +83,8 @@
 	corpseshoes = /obj/item/clothing/shoes/costume/job/clown
 	corpseradio = /obj/item/device/radio/headset
 	corpsemask = /obj/item/clothing/mask/costume/job/clown
-	corpsepocket1 = /obj/item/weapon/bikehorn
-	corpseback = /obj/item/weapon/storage/backpack/clown
+	corpsepocket1 = /obj/item/bikehorn
+	corpseback = /obj/item/storage/backpack/clown
 	corpseid = 1
 	corpseidjob = "Clown"
 
@@ -113,7 +113,7 @@
 	corpseradio = /obj/item/device/radio/headset
 	corpsemask = /obj/item/clothing/mask/gas
 	corpsehelmet = /obj/item/clothing/head/helmet/swat
-	corpseback = /obj/item/weapon/storage/backpack
+	corpseback = /obj/item/storage/backpack
 	corpseid = 1
 	corpseidjob = "Syndicate Operative"
 	corpseidaccess = "Syndicate"
@@ -127,8 +127,8 @@
 	corpseradio = /obj/item/device/radio/headset
 	corpsemask = /obj/item/clothing/mask/gas/tactical
 	corpsehelmet = /obj/item/clothing/head/helmet/space/void/merc
-	corpseback = /obj/item/weapon/tank/jetpack/oxygen
-	corpsepocket1 = /obj/item/weapon/tank/emergency_oxygen
+	corpseback = /obj/item/tank/jetpack/oxygen
+	corpsepocket1 = /obj/item/tank/emergency_oxygen
 	corpseid = 1
 	corpseidjob = "Syndicate Commando"
 	corpseidaccess = "Syndicate"

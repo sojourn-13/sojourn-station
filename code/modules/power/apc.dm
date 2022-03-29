@@ -50,7 +50,7 @@
 	start_charge = 100
 
 /obj/machinery/power/apc/super
-	cell_type = /obj/item/weapon/cell/large/super
+	cell_type = /obj/item/cell/large/super
 
 /obj/machinery/power/apc/super/critical
 	is_critical = 1
@@ -59,7 +59,7 @@
 	lighting = 0
 	equipment = 0
 	environ = 0
-	cell_type = /obj/item/weapon/cell/large/hyper
+	cell_type = /obj/item/cell/large/hyper
 
 /obj/machinery/power/apc/hyper/critical
 	is_critical = 1
@@ -74,32 +74,31 @@
 	req_access = list(access_engine_equip)
 	var/need_sound
 	var/area/area
-	var/areastring = null
-	var/obj/item/weapon/cell/large/cell
+	var/areastring
+	var/obj/item/cell/large/cell
 	var/chargelevel = 0.0005  // Cap for how fast APC cells charge, as a percentage-per-tick (0.01 means cellcharge is capped to 1% per second)
 	var/start_charge = 90				// initial cell charge %
-	var/cell_type = /obj/item/weapon/cell/large/high
+	var/cell_type = /obj/item/cell/large/high
 	var/opened = 0 //0=closed, 1=opened, 2=cover removed
 	var/shorted = 0
 	var/lighting = 3
 	var/equipment = 3
 	var/environ = 3
-	var/operating = 1
+	var/operating = TRUE
 	var/charging = 0
 	var/chargemode = 1
-	var/chargecount = 0
 	var/locked = 1
 	var/coverlocked = 1
 	var/aidisabled = 0
 	var/tdir = null
-	var/obj/machinery/power/terminal/terminal = null
+	var/obj/machinery/power/terminal/terminal
 	var/lastused_light = 0
 	var/lastused_equip = 0
 	var/lastused_environ = 0
 	var/lastused_charging = 0
 	var/lastused_total = 0
 	var/main_status = 0
-	var/mob/living/silicon/ai/hacker = null // Malfunction var. If set AI hacked the APC and has full control.
+	var/mob/living/silicon/ai/hacker // Malfunction var. If set AI hacked the APC and has full control.
 	var/wiresexposed = 0
 	powernet = 0		// set so that APCs aren't found as powernet nodes //Hackish, Horrible, was like this before I changed it :(
 	var/debug= 0
@@ -107,7 +106,7 @@
 	var/has_electronics = 0 // 0 - none, 1 - plugged in, 2 - secured by screwdriver
 	var/beenhit = 0 // used for counting how many times it has been hit, used for Aliens at the moment
 	var/longtermpower = 10
-	var/datum/wires/apc/wires = null
+	var/datum/wires/apc/wires
 	var/update_state = -1
 	var/update_overlay = -1
 	var/is_critical = 0
@@ -168,6 +167,8 @@
 	..()
 	wires = new(src)
 
+	GLOB.apc_list += src
+
 	// offset 28 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
@@ -183,7 +184,7 @@
 		area = get_area(src)
 		area.apc = src
 		opened = 1
-		operating = 0
+		operating = FALSE
 		name = "[area.name] APC"
 		stat |= MAINT
 		src.update_icon()
@@ -206,6 +207,8 @@
 	// Malf AI, removes the APC from AI's hacked APCs list.
 	if((hacker) && (hacker.hacked_apcs) && (src in hacker.hacked_apcs))
 		hacker.hacked_apcs -= src
+
+	GLOB.apc_list -= src
 
 	return ..()
 
@@ -349,12 +352,12 @@
 			set_light(0)
 
 	if(!(update_state & UPDATE_ALLGOOD))
-		if(get_overlays().len)
+		if(overlays.len)
 			cut_overlays()
 			return
 
 	if(update > 1)
-		if(get_overlays().len)
+		if(overlays.len)
 			cut_overlays()
 		if(!(stat & (BROKEN|MAINT)) && update_state & UPDATE_ALLGOOD)
 			add_overlay(status_overlays_lock[locked+1])
@@ -481,7 +484,7 @@
 							user.visible_message(\
 								SPAN_WARNING("[user.name] has removed the power control board from [src.name]!"),\
 								SPAN_NOTICE("You remove the power control board."))
-							new /obj/item/weapon/circuitboard/apc(loc)
+							new /obj/item/circuitboard/apc(loc)
 						return
 			if(opened!=2) //cover isn't removed
 				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
@@ -564,8 +567,8 @@
 
 		if(ABORT_CHECK)
 			return
-	if (istype(I, /obj/item/weapon/gripper))//Gripper can extract cell
-		var/obj/item/weapon/gripper/Gri = I
+	if (istype(I, /obj/item/gripper))//Gripper can extract cell
+		var/obj/item/gripper/Gri = I
 		if(opened && cell)
 			if (Gri.grip_item(cell, user))
 				cell.add_fingerprint(user)
@@ -577,7 +580,7 @@
 				src.update_icon()
 				return
 
-	if (istype(I, /obj/item/weapon/cell/large) && opened)	// trying to put a cell inside
+	if (istype(I, /obj/item/cell/large) && opened)	// trying to put a cell inside
 		if(cell)
 			to_chat(user, "There is a power cell already installed.")
 			return
@@ -594,10 +597,9 @@
 		user.visible_message(\
 			SPAN_WARNING("[user.name] has inserted the power cell to [src.name]!"),\
 			SPAN_NOTICE("You insert the power cell."))
-		chargecount = 0
 		update_icon()
 
-	else if (istype(I, /obj/item/weapon/card/id)||istype(I, /obj/item/modular_computer))
+	else if (istype(I, /obj/item/card/id)||istype(I, /obj/item/modular_computer))
 		toggle_lock(user)
 
 	else if (istype(I, /obj/item/stack/cable_coil) && !terminal && opened && has_electronics!=2)
@@ -628,7 +630,7 @@
 				make_terminal()
 				terminal.connect_to_network()
 
-	else if (istype(I, /obj/item/weapon/circuitboard/apc) && opened && has_electronics==0 && !((stat & BROKEN)))
+	else if (istype(I, /obj/item/circuitboard/apc) && opened && has_electronics==0 && !((stat & BROKEN)))
 		user.visible_message(SPAN_WARNING("[user.name] inserts the power control board into [src]."), \
 							"You start to insert the power control board into the frame...")
 		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
@@ -638,7 +640,7 @@
 				to_chat(user, SPAN_NOTICE("You place the power control board inside the frame."))
 				qdel(I)
 
-	else if (istype(I, /obj/item/weapon/circuitboard/apc) && opened && has_electronics==0 && ((stat & BROKEN)))
+	else if (istype(I, /obj/item/circuitboard/apc) && opened && has_electronics==0 && ((stat & BROKEN)))
 		to_chat(user, SPAN_WARNING("You cannot put the board inside, the frame is damaged."))
 		return
 
@@ -775,7 +777,7 @@
 	if(wiresexposed && !isAI(user))
 		wires.Interact(user)
 
-	return ui_interact(user)
+	return nano_ui_interact(user)
 
 /obj/machinery/power/apc/proc/toggle_lock(mob/user)
 	if(emagged)
@@ -804,7 +806,7 @@
 	else
 		toggle_lock(user)
 
-/obj/machinery/power/apc/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/power/apc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(!user)
 		return
 
@@ -891,7 +893,7 @@
 	return wires.IsIndexCut(wireIndex)
 
 
-/obj/machinery/power/apc/proc/can_use(mob/user as mob, var/loud = 0) //used by attack_hand() and Topic()
+/obj/machinery/power/apc/proc/can_use(mob/user, var/loud = 0) //used by attack_hand() and Topic()
 	if (user.stat)
 		to_chat(user, SPAN_WARNING("You must be conscious to use [src]!"))
 		return 0
@@ -1029,7 +1031,7 @@
 
 //Returns 1 if the APC should attempt to charge
 /obj/machinery/power/apc/proc/attempt_charging()
-	return (chargemode && charging == 1 && operating)
+	return (chargemode && operating)
 
 
 /obj/machinery/power/apc/draw_power(var/amount)
@@ -1044,7 +1046,7 @@
 		return 0
 
 /obj/machinery/power/apc/Process()
-
+	SEND_SIGNAL(area, COMSIG_AREA_APC_OPERATING, operating)
 	if(stat & (BROKEN|MAINT))
 		return
 	if(!area.requires_power)
@@ -1056,9 +1058,9 @@
 		force_update = 1
 		return
 
-	lastused_light = area.usage(LIGHT)
-	lastused_equip = area.usage(EQUIP)
-	lastused_environ = area.usage(ENVIRON)
+	lastused_light = area.usage(STATIC_LIGHT)
+	lastused_equip = area.usage(STATIC_EQUIP)
+	lastused_environ = area.usage(STATIC_ENVIRON)
 	area.clear_usage()
 
 	lastused_total = lastused_light + lastused_equip + lastused_environ
@@ -1089,71 +1091,39 @@
 		log_debug("Status: [main_status] - Excess: [excess] - Last Equip: [lastused_equip] - Last Light: [lastused_light] - Longterm: [longtermpower]")
 
 	if(cell && !shorted)
-		// draw power from cell as before to power the area
-		var/cellused = min(cell.charge, CELLRATE * lastused_total)	// clamp deduction to a max, amount left in cell
-		cell.use(cellused)
+		//How much power is desired?
+		var/needed_power = lastused_total
+		//How much power would we need for charging.
+		//Unless it's disabled, in which case 0
+		var/charging_power = src.attempt_charging() ? cell.maxcharge*chargelevel/CELLRATE : 0
 
-		if(excess > lastused_total)		// if power excess recharge the cell
-										// by the same amount just used
-			var/draw = draw_power(cellused/CELLRATE) // draw the power needed to charge this cell
-			cell.give(draw * CELLRATE)
-		else		// no excess, and not enough per-apc
-			if( (cell.charge/CELLRATE + excess) >= lastused_total)		// can we draw enough from cell+grid to cover last usage?
-				var/draw = draw_power(excess)
-				cell.charge = min(cell.maxcharge, cell.charge + CELLRATE * draw)	//recharge with what we can
-				charging = 0
-			else	// not enough power available to run the last tick!
-				charging = 0
-				chargecount = 0
-				// This turns everything off in the case that there is still a charge left on the battery, just not enough to run the room.
-				equipment = autoset(equipment, 0)
-				lighting = autoset(lighting, 0)
-				environ = autoset(environ, 0)
-				autoflag = 0
+		needed_power -= draw_power(needed_power + charging_power) // draw the power needed to charge this cell
+		if(needed_power >= 0) charging = 0 //The cell needs to be drained.
+		var/charge_rate = -cell.checked_transfer(-needed_power*CELLRATE)/CELLRATE //Drain (or charge) the cell, and modify with the charged amount.
+		needed_power -= charge_rate
+		if(needed_power > 0)	// The cell could not supply enough power.
+			// This turns everything off in the case that there is still a charge left on the battery, just not enough to run the room.
+			equipment = autoset(equipment, 0)
+			lighting = autoset(lighting, 0)
+			environ = autoset(environ, 0)
+			autoflag = 0
 
+		lastused_charging = 0 //Not as branchy as an else.
+		if(charge_rate < 0) //We charged!
+			lastused_charging = -charge_rate*CELLRATE
+			lastused_total += lastused_charging
+			charging = 1
 
 		// Set channels depending on how much charge we have left
 		update_channels()
-
-		// now trickle-charge the cell
-		lastused_charging = 0 // Clear the variable for new use.
-		if(src.attempt_charging())
-			if(excess > 0)		// check to make sure we have enough to charge
-				// Max charge is capped to % per second constant
-				var/ch = min(excess*CELLRATE, cell.maxcharge*chargelevel)
-
-				ch = draw_power(ch/CELLRATE) // Removes the power we're taking from the grid
-				cell.give(ch*CELLRATE) // actually recharge the cell
-				lastused_charging = ch
-				lastused_total += ch // Sensors need this to stop reporting APC charging as "Other" load
-			else
-				charging = 0		// stop charging
-				chargecount = 0
 
 		// show cell as fully charged if so
 		if(cell.charge >= cell.maxcharge)
 			cell.charge = cell.maxcharge
 			charging = 2
 
-		if(chargemode)
-			if(!charging)
-				if(excess > cell.maxcharge*chargelevel)
-					chargecount++
-				else
-					chargecount = 0
-
-				if(chargecount >= 10)
-
-					chargecount = 0
-					charging = 1
-
-		else // chargemode off
-			charging = 0
-			chargecount = 0
-
 	else // no cell, switch everything off
 		charging = 0
-		chargecount = 0
 		equipment = autoset(equipment, 0)
 		lighting = autoset(lighting, 0)
 		environ = autoset(environ, 0)

@@ -149,10 +149,15 @@
 
 /obj/item/device/radio/headset/heads/rd
 	name = "research overseer's headset"
-	desc = "Headset of the researching God."
+	desc = "Headset of the researching overseer, a headset belonging to hopefully the most logical person on the colony... Automatically translates binary channels."
 	icon_state = "com_headset"
 	item_state = "headset"
+	translate_binary = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/moebius
+
+/obj/item/device/radio/headset/heads/rd/recalculateChannels(var/setDescription = FALSE)
+	..(setDescription)
+	translate_binary = TRUE
 
 /obj/item/device/radio/headset/heads/hos
 	name = "warrant officer headset"
@@ -222,7 +227,7 @@
 /obj/item/device/radio/headset/headset_pro
 	name = "prospector radio headset"
 	desc = "A headset used by the prospector thugs. This has a small symbol denoting its built in back-up transmitter."
-	icon_state = "cargo_headset"
+	icon_state = "pro_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_pro
@@ -230,7 +235,7 @@
 /obj/item/device/radio/headset/heads/foreman
 	name = "foreman radio headset"
 	desc = "A headset used by the krumpiest git. This has a small symbol denoting its built in back-up transmitter."
-	icon_state = "cargo_headset"
+	icon_state = "pro_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/foreman
@@ -270,13 +275,13 @@
 	ks2type = /obj/item/device/encryptionkey/headset_greenteam
 
 
-/obj/item/device/radio/headset/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/device/radio/headset/attackby(obj/item/W as obj, mob/user as mob)
 //	..()
 	user.set_machine(src)
-	if (!( istype(W, /obj/item/weapon/tool/screwdriver) || (istype(W, /obj/item/device/encryptionkey/ ))))
+	if (!( istype(W, /obj/item/tool/screwdriver) || (istype(W, /obj/item/device/encryptionkey/ ))))
 		return
 
-	if(istype(W, /obj/item/weapon/tool/screwdriver))
+	if(istype(W, /obj/item/tool/screwdriver))
 		if(keyslot1 || keyslot2)
 
 
@@ -298,8 +303,6 @@
 				if(T)
 					keyslot2.loc = T
 					keyslot2 = null
-
-			recalculateChannels()
 			to_chat(user, "You pop out the encryption keys in the headset!")
 
 		else
@@ -321,7 +324,7 @@
 			keyslot2 = W
 
 
-		recalculateChannels()
+	recalculateChannels()
 
 	return
 

@@ -63,7 +63,7 @@
 		else
 
 			to_chat(user, SPAN_NOTICE("You start connecting [R.name] to [src.name] ..."))
-			if(do_after(user,50, src))
+			if(do_after(user,5, src))
 				if(R.use(2))
 					src.alpha = 0
 				new /obj/structure/catwalk(src.loc)

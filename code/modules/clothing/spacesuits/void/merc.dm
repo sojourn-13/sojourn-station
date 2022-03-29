@@ -3,7 +3,7 @@
 	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet."
 	icon_state = "scaf"
 	item_state = "scaf"
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 55,
 		energy = 50,
@@ -15,6 +15,7 @@
 	species_restricted = list("Human")
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_green"
+	obscuration = MEDIUM_OBSCURATION
 
 /obj/item/clothing/suit/space/void/SCAF
 	name = "SCAF suit"
@@ -23,7 +24,7 @@
 	item_state = "scaf"
 	slowdown = 1.3
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor = list(
+	armor_list = list(
 		melee = 60,
 		bullet = 55,
 		energy = 50,
@@ -34,6 +35,21 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF
+	price_tag = 950
+	stiffness = MEDIUM_STIFFNESS
+
+/obj/item/clothing/suit/space/void/SCAF/voidwolf
+	name = "REAVER-SCAF suit"
+	desc = "A bulky antique suit of refurbished infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. This one has a void wolf paint job with intimidating red colors."
+	icon_state = "scaf_wolf"
+	item_state = "scaf_wolf"
+	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
+
+/obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
+	name = "REAVER-SCAF helmet"
+	desc = "A thick airtight helmet designed for planetside warfare retrofitted with seals to act like normal space suit helmet. This one has a void wolf paint job with intimidating red colors."
+	icon_state = "scaf_wolf"
+	item_state = "scaf_wolf"
 
 /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 	name = "blackshield SCAF helmet"
@@ -56,7 +72,7 @@
 	desc = "An advanced helmet designed for work in special operations. This version is additionally reinforced against melee attacks."
 	icon_state = "syndiehelm"
 	item_state = "syndiehelm"
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 30,
@@ -68,6 +84,7 @@
 	species_restricted = list("Human")
 	camera_networks = list(NETWORK_MERCENARY)
 	light_overlay = "helmet_light_ihs"
+	obscuration = 0
 
 /obj/item/clothing/head/helmet/space/void/merc/update_icon()
 	..()
@@ -82,7 +99,7 @@
 	name = "blood-red voidsuit"
 	desc = "An advanced suit that protects against injuries during special operations. This version is additionally reinforced against melee attacks."
 	item_state = "syndie_voidsuit"
-	armor = list(
+	armor_list = list(
 		melee = 50,
 		bullet = 40,
 		energy = 30,
@@ -93,13 +110,14 @@
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
 	helmet = /obj/item/clothing/head/helmet/space/void/merc
+	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/space/void/merc/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/merc/boxed
-	tank = /obj/item/weapon/tank/emergency_oxygen/double
+	tank = /obj/item/tank/emergency_oxygen/double
 
 /obj/item/clothing/head/helmet/space/void/merc/xanorath
 	name = "xanorath voidsuit helmet"
@@ -118,7 +136,7 @@
 	desc = "An armored helmet with a built in light system allowing you to shine heavens grace on heretics before you purge them."
 	icon_state = "inqarmor_hood"
 	item_state = "inqarmor_hood"
-	armor = list(
+	armor_list = list(
 		melee = 65,
 		bullet = 65,
 		energy = 65,
@@ -138,7 +156,7 @@
 	item_state = "inqarmor"
 	slowdown = 0
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor = list(
+	armor_list = list(
 		melee = 65,
 		bullet = 65,
 		energy = 65,
@@ -156,7 +174,7 @@
 	It might be air-tight and fitted for space but god knows how well it actually protects the wearer.."
 	icon_state = "peking"
 	item_state = "peking"
-	armor = list(
+	armor_list = list(
 		melee = 45,
 		bullet = 40,
 		energy = 40,
@@ -177,7 +195,7 @@
 	item_state = "peking"
 	slowdown = 0.35
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
-	armor = list(
+	armor_list = list(
 		melee = 55,
 		bullet = 45,
 		energy = 40,
@@ -194,7 +212,7 @@
 	desc = "An advanced helmet designed specifically to shrug off blunt force blows, blades and even conventional projectiles with its domed armor design."
 	icon_state = "ronin"
 	item_state = "ronin"
-	armor = list(
+	armor_list = list(
 		melee = 66,
 		bullet = 60,
 		energy = 45,
@@ -216,7 +234,7 @@
 	item_state = "ronin"
 	slowdown = 0.45
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDESHOES
-	armor = list(
+	armor_list = list(
 		melee = 66,
 		bullet = 60,
 		energy = 45,
@@ -230,7 +248,7 @@
 
 /obj/item/clothing/suit/space/void/ronin/equipped
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 
 /obj/item/clothing/suit/space/void/ronin/boxed
-	tank = /obj/item/weapon/tank/emergency_oxygen/double
+	tank = /obj/item/tank/emergency_oxygen/double

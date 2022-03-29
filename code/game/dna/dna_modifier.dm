@@ -47,10 +47,10 @@
 	idle_power_usage = 50
 	active_power_usage = 300
 	interact_offline = 1
-	circuit = /obj/item/weapon/circuitboard/clonescanner
+	circuit = /obj/item/circuitboard/clonescanner
 	var/locked = 0
 	var/mob/living/carbon/occupant = null
-	var/obj/item/weapon/reagent_containers/glass/beaker = null
+	var/obj/item/reagent_containers/glass/beaker = null
 	var/opened = 0
 
 /obj/machinery/dna_scannernew/relaymove(mob/user as mob)
@@ -75,7 +75,7 @@
 /obj/machinery/dna_scannernew/proc/eject_occupant()
 	src.go_out()
 	for(var/obj/O in src)
-		if((!istype(O,/obj/item/weapon/reagent_containers)) && (!istype(O,/obj/item/weapon/circuitboard/clonescanner)) && (!istype(O,/obj/item/weapon/stock_parts)) && (!istype(O,/obj/item/stack/cable_coil)))
+		if((!istype(O,/obj/item/reagent_containers)) && (!istype(O,/obj/item/circuitboard/clonescanner)) && (!istype(O,/obj/item/stock_parts)) && (!istype(O,/obj/item/stack/cable_coil)))
 			O.loc = get_turf(src)//Ejects items that manage to get in there (exluding the components)
 	if(!occupant)
 		for(var/mob/M in src)//Failsafe so you can get mobs out
@@ -114,8 +114,8 @@
 	return TRUE
 
 
-/obj/machinery/dna_scannernew/attackby(var/obj/item/weapon/item as obj, var/mob/user as mob)
-	if(istype(item, /obj/item/weapon/reagent_containers/glass))
+/obj/machinery/dna_scannernew/attackby(var/obj/item/item as obj, var/mob/user as mob)
+	if(istype(item, /obj/item/reagent_containers/glass))
 		if(beaker)
 			to_chat(user, SPAN_WARNING("A beaker is already loaded into the machine."))
 			return
@@ -195,7 +195,7 @@
 	icon_keyboard = "med_key"
 	icon_screen = "dna"
 	density = 1
-	circuit = /obj/item/weapon/circuitboard/scan_consolenew
+	circuit = /obj/item/circuitboard/scan_consolenew
 	var/selected_ui_block = 1.0
 	var/selected_ui_subblock = 1.0
 	var/selected_se_block = 1.0
@@ -208,7 +208,7 @@
 	var/irradiating = 0
 	var/injector_ready = 0	//Quick fix for issue 286 (screwdriver the screen twice to restore injector)	-Pete
 	var/obj/machinery/dna_scannernew/connected = null
-	var/obj/item/weapon/disk/data/disk = null
+	var/obj/item/disk/data/disk = null
 	var/selected_menu_key = null
 	anchored = 1
 	use_power = IDLE_POWER_USE
@@ -217,7 +217,10 @@
 	var/waiting_for_user_input=0 // Fix for #274 (Mash create block injector without answering dialog to make unlimited injectors) - N3X
 
 /obj/machinery/computer/scan_consolenew/attackby(obj/item/I as obj, mob/user as mob)
-	if (istype(I, /obj/item/weapon/disk/data)) //INSERT SOME diskS
+	if(!user.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80)) //Outdated tech
+		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		return
+	if (istype(I, /obj/item/disk/data)) //INSERT SOME diskS
 		if (!src.disk)
 			user.drop_from_inventory(I)
 			I.forceMove(src)
@@ -264,7 +267,7 @@
 		arr += "[i]:[EncodeDNABlock(buffer[i])]"
 	return arr
 
-/obj/machinery/computer/scan_consolenew/proc/setInjectorBlock(var/obj/item/weapon/dnainjector/I, var/blk, var/datum/dna2/record/buffer)
+/obj/machinery/computer/scan_consolenew/proc/setInjectorBlock(var/obj/item/dnainjector/I, var/blk, var/datum/dna2/record/buffer)
 	var/pos = findtext(blk,":")
 	if(!pos) return 0
 	var/id = text2num(copytext(blk,1,pos))
@@ -284,16 +287,19 @@
 
 /obj/machinery/computer/scan_consolenew/attack_ai(user as mob)
 	src.add_hiddenprint(user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/computer/scan_consolenew/attack_hand(user as mob)
+	if(!usr.stats?.getPerk(PERK_SI_SCI) && !usr.stat_check(STAT_COG, 80)) //Again outdated tech
+		to_chat(usr, SPAN_WARNING("This is a bit beyond your cognitive understanding."))
+		return
 	if(!..())
-		ui_interact(user)
+		nano_ui_interact(user)
 
  /**
-  * The ui_interact proc is used to open and update Nano UIs
-  * If ui_interact is not used then the UI will not update correctly
-  * ui_interact is currently defined for /atom/movable (which is inherited by /obj and /mob)
+  * The nano_ui_interact proc is used to open and update Nano UIs
+  * If nano_ui_interact is not used then the UI will not update correctly
+  * nano_ui_interact is currently defined for /atom/movable (which is inherited by /obj and /mob)
   *
   * @param user /mob The mob who is interacting with this ui
   * @param ui_key string A string key to use for this ui. Allows for multiple unique uis on one obj/mob (defaut value "main")
@@ -301,7 +307,7 @@
   *
   * @return nothing
   */
-/obj/machinery/computer/scan_consolenew/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/computer/scan_consolenew/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 
 	if(user == connected.occupant || user.stat)
 		return
@@ -614,7 +620,7 @@
 
 	if(href_list["ejectBeaker"])
 		if(connected.beaker)
-			var/obj/item/weapon/reagent_containers/glass/B = connected.beaker
+			var/obj/item/reagent_containers/glass/B = connected.beaker
 			B.loc = connected.loc
 			connected.beaker = null
 		return 1
@@ -729,7 +735,7 @@
 			if (src.injector_ready || waiting_for_user_input)
 
 				var/success = 1
-				var/obj/item/weapon/dnainjector/I = new /obj/item/weapon/dnainjector
+				var/obj/item/dnainjector/I = new /obj/item/dnainjector
 				var/datum/dna2/record/buf = src.buffers[bufferId]
 				if(href_list["createBlockInjector"])
 					waiting_for_user_input=1

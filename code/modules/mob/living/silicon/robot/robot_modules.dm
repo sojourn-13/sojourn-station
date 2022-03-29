@@ -1,27 +1,27 @@
 var/global/list/robot_modules = list(
-	"Standard"					= /obj/item/weapon/robot_module/standard,
-	"Service" 					= /obj/item/weapon/robot_module/service,
-	"Research" 					= /obj/item/weapon/robot_module/research,
-	"Miner" 					= /obj/item/weapon/robot_module/miner,
-	"Rescue" 					= /obj/item/weapon/robot_module/medical/rescue,
-	"Medical" 					= /obj/item/weapon/robot_module/medical/general,
-	"Security" 					= /obj/item/weapon/robot_module/security/general,
-	"Engineering"					= /obj/item/weapon/robot_module/engineering/general,
-	"Construction"					= /obj/item/weapon/robot_module/engineering/construction,
-	"Custodial" 					= /obj/item/weapon/robot_module/custodial,
-	"Soteria Medihound"				= /obj/item/weapon/robot_module/robot/medihound,
-	"Security K9 Unit"				= /obj/item/weapon/robot_module/robot/knine,
-	"Custodial Hound"				= /obj/item/weapon/robot_module/robot/scrubpup,
-	"Soteria Scihound"				= /obj/item/weapon/robot_module/robot/science,
-	"Guild Engihound"				= /obj/item/weapon/robot_module/robot/engiedog,
-	//"Combat" 					= /obj/item/weapon/robot_module/combat,
+	"Standard"					= /obj/item/robot_module/standard,
+	"Service" 					= /obj/item/robot_module/service,
+	"Research" 					= /obj/item/robot_module/research,
+	"Miner" 					= /obj/item/robot_module/miner,
+//	"Rescue" 					= /obj/item/robot_module/medical/rescue, Removed and condenced to medical verson - todo, admin only
+	"Medical" 					= /obj/item/robot_module/medical/general,
+	"Security" 					= /obj/item/robot_module/security/general,
+	"Engineering"					= /obj/item/robot_module/engineering/general,
+//	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condenced into contruction - todo, admin only
+	"Custodial" 					= /obj/item/robot_module/custodial,
+	"Soteria Medical Creature Module"		= /obj/item/robot_module/robot/medihound,
+	"Security Creature-Class Module"		= /obj/item/robot_module/robot/knine,
+	"Custodial Creature"				= /obj/item/robot_module/robot/scrubpup,
+	"Soteria Science Creature Module"		= /obj/item/robot_module/robot/science,
+	"Guild Creature Module"				= /obj/item/robot_module/robot/engiedog,
+	//"Combat" 					= /obj/item/robot_module/combat,
 	)
 
-/obj/item/weapon/robot_module
+/obj/item/robot_module
 	name = "robot module"
 	icon = 'icons/obj/module.dmi'
 	icon_state = "std_module"
-	w_class = 100.0
+	w_class = 100
 	item_state = "electronic"
 	flags = CONDUCT
 	var/hide_on_manifest = FALSE
@@ -41,7 +41,7 @@ var/global/list/robot_modules = list(
 	var/no_slip = 0
 	var/list/modules = list()
 	var/list/datum/matter_synth/synths = list()
-	var/obj/item/emag = null
+	var/list/emag = list()
 	var/obj/item/malfAImodule = null
 	var/obj/item/borg/upgrade/jetpack = null
 	var/list/subsystems = list()
@@ -53,21 +53,21 @@ var/global/list/robot_modules = list(
 
 	//Module stats, these are applied to the robot
 	health = 200 //Max health. Apparently this is already defined in item.dm
-	var/speed_factor = 1.0 //Speed factor, applied as a divisor on movement delay
+	var/speed_factor = 1.3 //Speed factor, applied as a divisor on movement delay
 	var/power_efficiency = 1.0 //Power efficiency, applied as a divisor on power taken from the internal cell
 
 	//Stat modifiers for skillchecks
 	var/list/stat_modifiers = list(
 		STAT_BIO = 25,
-		STAT_COG = 25,
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_MEC = 5
+		STAT_COG = 120,
+		STAT_MEC = 35, //weldering cracks
+		STAT_ROB = 15,
+		STAT_TGH = 15,
 	)
 
 	desc = "This is a robot module parent class. You shouldn't see this description"
 
-/obj/item/weapon/robot_module/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/New(var/mob/living/silicon/robot/R)
 	..()
 	if (!istype(R))
 		return
@@ -75,6 +75,7 @@ var/global/list/robot_modules = list(
 	R.module = src
 
 	add_camera_networks(R)
+	remove_languages(R) //So we dont stack languages
 	add_languages(R)
 	add_subsystems(R)
 	apply_status_flags(R)
@@ -87,8 +88,12 @@ var/global/list/robot_modules = list(
 	R.maxHealth = health
 	R.health = R.maxHealth * healthpercent
 
+	R.handle_regular_hud_updates()
+
 	R.speed_factor = speed_factor + R.vtech_added_speed
 	R.power_efficiency = power_efficiency
+	for(var/obj/item/I in emag)
+		I.canremove = 0
 
 	for(var/name in stat_modifiers)
 		R.stats.changeStat(name, stat_modifiers[name])
@@ -99,25 +104,26 @@ var/global/list/robot_modules = list(
 		R.choose_icon() //Choose icon recurses and blocks new from completing, so spawn it off
 
 
-/obj/item/weapon/robot_module/Initialize()
+/obj/item/robot_module/Initialize()
 	. = ..()
 	for(var/obj/item/I in modules)
 		I.canremove = 0
 		I.set_plane(ABOVE_HUD_PLANE)
 		I.layer = ABOVE_HUD_LAYER
 
-	for(var/obj/item/weapon/tool/T in modules)
+	for(var/obj/item/tool/T in modules)
 		T.degradation = 0 //We don't want robot tools breaking
 
 	for (var/obj/item/I in modules)
-		for (var/obj/item/weapon/cell/C in I)
+		for (var/obj/item/cell/C in I)
 			C.charge = 999999999 //A quick hack to stop robot modules running out of power
 			//Later they'll be wired to the robot's central battery once we code functionality for that
 			//Setting it to infinity causes errors, so just a high number is fine
 
-/obj/item/weapon/robot_module/proc/Reset(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/Reset(var/mob/living/silicon/robot/R)
 	remove_camera_networks(R)
 	remove_languages(R)
+	add_languages(R) //So we dont lose common and are normal languages of being basic
 	remove_subsystems(R)
 	remove_status_flags(R)
 
@@ -130,6 +136,13 @@ var/global/list/robot_modules = list(
 	if(R.radio)
 		R.radio.recalculateChannels()
 
+	R.handle_regular_hud_updates()
+	R.emagged_items_given = TRUE
+	R.stats.removeAllPerks() //Dont stack perks fix 1
+	R.stats.perks =  list() //READ BELOW COMMENT
+	R.stats.perk_stats =  list() //EMERGENCY BACKUP INCASE THE NEW FIX BREAKS DUE TO BUS - GENERALLY DO NOT DO THIS PLEASE.
+
+
 	R.pixel_x = initial(pixel_x)
 	R.pixel_y = initial(pixel_y)
 	R.icon = icon('icons/mob/robots.dmi')
@@ -139,30 +152,30 @@ var/global/list/robot_modules = list(
 	R.icon_selected = 0
 	R.choose_icon()
 
-/obj/item/weapon/robot_module/Destroy()
-	QDEL_NULL_LIST(modules)
-	QDEL_NULL_LIST(synths)
-	qdel(emag)
+/obj/item/robot_module/Destroy()
+	QDEL_LIST(modules)
+	QDEL_LIST(synths)
+	QDEL_LIST(emag)
 	qdel(jetpack)
 	qdel(malfAImodule)
-	emag = null
 	malfAImodule = null
 	jetpack = null
 	return ..()
 
-/obj/item/weapon/robot_module/emp_act(severity)
+/obj/item/robot_module/emp_act(severity)
 	if(modules)
 		for(var/obj/O in modules)
 			O.emp_act(severity)
 	if(emag)
-		emag.emp_act(severity)
+		for(var/obj/O in emag)
+			O.emp_act(severity)
 	if(synths)
 		for(var/datum/matter_synth/S in synths)
 			S.emp_act(severity)
 	..()
 	return
 
-/obj/item/weapon/robot_module/proc/respawn_consumable(var/mob/living/silicon/robot/R, var/rate)
+/obj/item/robot_module/proc/respawn_consumable(var/mob/living/silicon/robot/R, var/rate)
 	var/obj/item/device/flash/F = locate() in src.modules
 	if(F)
 		if(F.broken)
@@ -178,14 +191,14 @@ var/global/list/robot_modules = list(
 	for(var/datum/matter_synth/T in synths)
 		T.add_charge(T.recharge_rate * rate)
 
-/obj/item/weapon/robot_module/proc/rebuild()//Rebuilds the list so it's possible to add/remove items from the module
+/obj/item/robot_module/proc/rebuild()//Rebuilds the list so it's possible to add/remove items from the module
 	var/list/temp_list = modules
 	modules = list()
 	for(var/obj/O in temp_list)
 		if(O)
 			modules += O
 
-/obj/item/weapon/robot_module/proc/add_languages(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/add_languages(var/mob/living/silicon/robot/R)
 	// Stores the languages as they were before receiving the module, and whether they could be synthezized.
 	for(var/datum/language/language_datum in R.languages)
 		original_languages[language_datum] = (language_datum in R.speech_synthesizer_langs)
@@ -193,7 +206,7 @@ var/global/list/robot_modules = list(
 	for(var/language in languages)
 		R.add_language(language, languages[language])
 
-/obj/item/weapon/robot_module/proc/remove_languages(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/remove_languages(var/mob/living/silicon/robot/R)
 	// Clear all added languages, whether or not we originally had them.
 	for(var/language in languages)
 		R.remove_language(language)
@@ -203,36 +216,36 @@ var/global/list/robot_modules = list(
 		R.add_language(original_language, original_languages[original_language])
 	original_languages.Cut()
 
-/obj/item/weapon/robot_module/proc/add_camera_networks(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/add_camera_networks(var/mob/living/silicon/robot/R)
 	if(R.camera && (NETWORK_ROBOTS in R.camera.network))
 		for(var/network in networks)
 			if(!(network in R.camera.network))
 				R.camera.add_network(network)
 				added_networks |= network
 
-/obj/item/weapon/robot_module/proc/remove_camera_networks(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/remove_camera_networks(var/mob/living/silicon/robot/R)
 	if(R.camera)
 		R.camera.remove_networks(added_networks)
 	added_networks.Cut()
 
-/obj/item/weapon/robot_module/proc/add_subsystems(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/add_subsystems(var/mob/living/silicon/robot/R)
 	for(var/subsystem_type in subsystems)
 		R.init_subsystem(subsystem_type)
 
-/obj/item/weapon/robot_module/proc/remove_subsystems(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/remove_subsystems(var/mob/living/silicon/robot/R)
 	for(var/subsystem_type in subsystems)
 		R.remove_subsystem(subsystem_type)
 
-/obj/item/weapon/robot_module/proc/apply_status_flags(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/apply_status_flags(var/mob/living/silicon/robot/R)
 	if(!can_be_pushed)
 		R.status_flags &= ~CANPUSH
 
-/obj/item/weapon/robot_module/proc/remove_status_flags(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/proc/remove_status_flags(var/mob/living/silicon/robot/R)
 	if(!can_be_pushed)
 		R.status_flags |= CANPUSH
 
 //The generic robot, a good choice for any situation. Moderately good at everything
-/obj/item/weapon/robot_module/standard
+/obj/item/robot_module/standard
 	name = "standard robot module"
 	sprites = list(	"Basic" = "robot",
 					"Android" = "droid",
@@ -246,28 +259,29 @@ var/global/list/robot_modules = list(
 	desc = "The baseline, jack of all trades. Can do a little of everything. Some DIY, some healing, some combat."
 	stat_modifiers = list(
 		STAT_BIO = 30,
-		STAT_COG = 30,
+		STAT_COG = 120,
 		STAT_ROB = 30,
 		STAT_TGH = 30,
 		STAT_MEC = 30
 	)
 
-/obj/item/weapon/robot_module/standard/New(var/mob/living/silicon/robot/R)
-
+/obj/item/robot_module/standard/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/weapon/melee/baton(src)
-	src.modules += new /obj/item/weapon/extinguisher(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair ect
+	src.modules += new /obj/item/device/scanner/price(src)
+	src.modules += new /obj/item/tool/baton/robot(src)
+	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/tool/robotic_omni_standard(src)
+	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
+	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //hardsuits.
 	src.modules += new /obj/item/device/scanner/health(src)
-	src.modules += new /obj/item/weapon/gripper(src)
+	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/melee/energy/sword(src)
+	src.emag += new /obj/item/melee/energy/sword(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -283,9 +297,23 @@ var/global/list/robot_modules = list(
 	O.synths = list(medicine)
 	src.modules += B
 	src.modules += O
+
+	//We are stronk so we get less no knockdowns
+	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
+	//So we cant be escaped as quickly
+	R.stats.addPerk(PERK_PARKOUR)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
-/obj/item/weapon/robot_module/medical
+/obj/item/robot_module/standard/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	..()
+
+	var/obj/item/tool/baton/robot/B = locate() in src.modules
+	if(B && B.cell)
+		B.cell.give(amount)
+
+/obj/item/robot_module/medical
 	name = "medical robot module"
 	channels = list("Medical" = 1)
 	networks = list(NETWORK_MEDICAL)
@@ -312,46 +340,45 @@ var/global/list/robot_modules = list(
 	 The medical module is essentially shackled to the medbay and can't afford to stray too far. \
 	 Its low power efficiency means it needs to charge regularly"
 
-/obj/item/weapon/robot_module/medical/general
+/obj/item/robot_module/medical/general
 	name = "medical robot module"
-	health = 140 //Fragile
-	speed_factor = 0.8 //Kinda slow
-	power_efficiency = 0.7 //Very poor, shackled to a charger
-	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack)
+	health = 180 //bit weaker
+	speed_factor = 1.3 //normal speed
+	power_efficiency = 0.9 //Very poor, shackled to a charger
+	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,
+							  /obj/item/borg/upgrade/jetpack)
 
 	stat_modifiers = list(
 		STAT_BIO = 60,
-		STAT_COG = 30
+		STAT_COG = 120,
+		STAT_MEC = 35, //weldering cracks
 	)
 
-/obj/item/weapon/robot_module/medical/general/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+/obj/item/robot_module/medical/general/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/tool/crowbar/robotic(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/hud/med(src)
 	src.modules += new /obj/item/device/scanner/health(src)
-	src.modules += new /obj/item/weapon/reagent_containers/borghypo/medical(src)
-	src.modules += new /obj/item/weapon/tool/scalpel(src)
-	src.modules += new /obj/item/weapon/tool/hemostat(src)
-	src.modules += new /obj/item/weapon/tool/retractor(src)
-	src.modules += new /obj/item/weapon/tool/cautery(src)
-	src.modules += new /obj/item/weapon/tool/bonesetter(src)
-	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/tool/tape_roll/bonegel(src)
-	src.modules += new /obj/item/weapon/gripper/chemistry(src)
-	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
-	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/reagent_containers/borghypo/medical(src)
+	src.modules += new /obj/item/tool/robotic_omni_surgery(src)
+	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //hardsuits.
+	src.modules += new /obj/item/gripper/chemistry(src)
+	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
+	src.modules += new /obj/item/reagent_containers/syringe(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src) //Two beakers
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
-	src.modules += new /obj/item/weapon/autopsy_scanner(src) // an autopsy scanner
-	src.modules += new /obj/item/weapon/reagent_containers/spray/sterilizine(src)
+	src.modules += new /obj/item/autopsy_scanner(src) // an autopsy scanner
+	src.modules += new /obj/item/reagent_containers/spray/sterilizine(src)
+	src.modules += new /obj/item/shockpaddles/robot(src)
 	src.modules += new /obj/item/roller_holder(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
-	src.emag.reagents.add_reagent("pacid", 250)
-	src.emag.name = "Polyacid spray"
+	src.emag += new /obj/item/reagent_containers/spray/acid(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -378,10 +405,16 @@ var/global/list/robot_modules = list(
 	S.synths = list(medicine)
 	src.modules += S
 
+	//We know medical care and have all the data on it
+	R.stats.addPerk(PERK_MEDICAL_EXPERT)
+	R.stats.addPerk(PERK_SURGICAL_MASTER)
+	R.stats.addPerk(PERK_ADVANCED_MEDICAL)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
-/obj/item/weapon/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
-	var/obj/item/weapon/reagent_containers/syringe/S = locate() in src.modules
+/obj/item/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	var/obj/item/reagent_containers/syringe/S = locate() in src.modules
 	if(S.mode == 2)
 		S.reagents.clear_reagents()
 		S.mode = initial(S.mode)
@@ -389,103 +422,22 @@ var/global/list/robot_modules = list(
 		S.update_icon()
 
 	if(src.modules)
-		var/obj/item/weapon/reagent_containers/spray/sterilizine/ST = locate() in src.modules //ST for STerilizine
+		var/obj/item/reagent_containers/spray/sterilizine/ST = locate() in src.modules //ST for STerilizine
 		ST.reagents.add_reagent("sterilizine", 2 * amount)
 	..()
 
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/PS = src.emag
+		var/obj/item/reagent_containers/spray/acid/PS = locate() in src.emag
 		PS.reagents.add_reagent("pacid", 2 * amount)
 	..()
 
-/obj/item/weapon/robot_module/medical/rescue
-	name = "rescue robot module"
-	sprites = list(
-			"Basic" = "robotmedi",
-			"Classic" = "medbot",
-			"Standard" = "surgeon",
-			"Advanced Droid" = "droid-rescue",
-			"Sleek" = "sleekrescue",
-			"Needles" = "medicalrobot",
-			"Drone" = "drone-medical",
-			"Heavy" = "heavymed",
-			"Miss" = "missm_med",
-			"Medical Junkbot" = "qualified_doctor"
-			)
-
-	//Rescue module has built in crew monitor
-	//General medical does not, they're expected to stay in medbay and use the computers
-	subsystems = list(/datum/nano_module/crew_monitor)
-	supported_upgrades = list(/obj/item/borg/upgrade/hypospray/medical,/obj/item/borg/upgrade/jetpack)
-	health = 270 //Tough
-	speed_factor = 1.3 //Turbospeed!
-	power_efficiency = 1.2 //Good for long journeys
-
-	stat_modifiers = list(
-		STAT_BIO = 40,
-		STAT_ROB = 30,
-		STAT_TGH = 30,
-		STAT_COG = 30
-	)
-
-	desc = "The rescue borg fills the role of paramedic. \
-	Fearlessly venturing out into danger in order to pick up the wounded, stabilise them and bring \
-	them home. It has a relatively small toolset, mostly gear for getting where it needs to go and \
-	finding its way around. This streamlined design allows it to be the fastest of all droid modules."
-
-//TODO: Give the rescue module some kind of powerful melee weapon to use as a breaching tool.
-//Possibly a robot equivilant of the fire axe
-/obj/item/weapon/robot_module/medical/rescue/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/borg/sight/hud/med(src)
-	src.modules += new /obj/item/device/scanner/health(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/roller_holder(src)
-	src.modules += new /obj/item/weapon/hatton/robot(src)
-	src.modules += new /obj/item/weapon/reagent_containers/borghypo/rescue(src)
-	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
-	src.modules += new /obj/item/weapon/extinguisher/mini(src)
-	src.modules += new /obj/item/weapon/inflatable_dispenser(src) // Allows usage of inflatables. Since they are basically robotic alternative to EMTs, they should probably have them.
-	src.modules += new /obj/item/device/gps(src) // for coordinating with medical suit health sensors console
-	src.modules += new /obj/item/weapon/tool/scalpel(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
-	src.emag.reagents.add_reagent("pacid", 250)
-	src.emag.name = "Polyacid spray"
-
-	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(15000)
-	synths += medicine
-
-	var/obj/item/stack/medical/splint/S = new /obj/item/stack/medical/splint(src)
-	S.uses_charge = 1
-	S.charge_costs = list(1000)
-	S.synths = list(medicine)
-	src.modules += S
-
-	..(R)
-
-/obj/item/weapon/robot_module/medical/rescue/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
-	var/obj/item/weapon/reagent_containers/syringe/S = locate() in src.modules
-	if(S.mode == 2)
-		S.reagents.clear_reagents()
-		S.mode = initial(S.mode)
-		S.desc = initial(S.desc)
-		S.update_icon()
-
-	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/PS = src.emag
-		PS.reagents.add_reagent("pacid", 2 * amount)
-
-	..()
-
-/obj/item/weapon/robot_module/engineering
+/obj/item/robot_module/engineering
 	name = "engineering robot module"
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
-	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
+	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,
+							  /obj/item/borg/upgrade/rcd,
+							  /obj/item/borg/upgrade/jetpack)
 	subsystems = list(/datum/nano_module/power_monitor)
 	sprites = list(
 					"Basic" = "robotengi",
@@ -502,7 +454,7 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_eng"
 					)
 	health = 240 //Slightly above average
-	speed_factor = 1.1 //Slightly above average
+	speed_factor = 1.4 //Slightly above average
 	power_efficiency = 0.9 //Slightly below average
 
 	desc = "The engineering module is designed for setting up and maintaining core colony systems, \
@@ -510,142 +462,43 @@ var/global/list/robot_modules = list(
 	engineering tasks."
 
 	stat_modifiers = list(
-		STAT_COG = 40,
+		STAT_COG = 120,
 		STAT_MEC = 40,
 		STAT_BIO = 25
 	)
 
-/obj/item/weapon/robot_module/engineering/construction
-	name = "construction robot module"
-	no_slip = 1
-	health = 270 //tough
-	speed_factor = 0.65 //Very slow!
-	power_efficiency = 1.3 //Good for the long haul
-
-	supported_upgrades = list(/obj/item/borg/upgrade/arc_welder,/obj/item/borg/upgrade/rcd,/obj/item/borg/upgrade/jetpack)
-
-
-	desc = "The construction module is a ponderous, overgeared monstrosity, huge and bulky. \
-	Designed for constructing new sections or repairing major damage, it is equipped for long \
-	journeys through maintenance or around the colony. The heavy chassis and power system comes at a great \
-	toll in speed though."
-
-/obj/item/weapon/robot_module/engineering/construction/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/engineering/general/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
-	src.modules += new /obj/item/weapon/extinguisher(src)
-	src.modules += new /obj/item/weapon/rcd/borg(src)
-	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //Borrows
-	src.modules += new /obj/item/weapon/tool/saw(src)
-	src.modules += new /obj/item/weapon/tool/knife(src)
-	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
+	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/tool/weldingtool/robotic(src)
+	src.modules += new /obj/item/tool/multitool/robotic(src)
+	src.modules += new /obj/item/tool/robotic_omni_engi(src)
+	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
+	//src.modules += new /obj/item/hatton/robot(src)
+	src.modules += new /obj/item/device/t_scanner(src)
+	src.modules += new /obj/item/device/scanner/gas(src)
+	src.modules += new /obj/item/taperoll/engineering(src)
+	src.modules += new /obj/item/gripper(src)
+	src.modules += new /obj/item/gripper/no_use/loader(src)
+	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
-	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
-	src.modules += new /obj/item/weapon/gripper(src)
-	src.modules += new /obj/item/device/t_scanner(src) // to check underfloor wiring
-	src.modules += new /obj/item/device/scanner/gas(src) // to check air pressure in the area
-	src.modules += new /obj/item/device/lightreplacer(src) // to install lightning in the area
-	src.modules += new /obj/item/device/floor_painter(src)// to make america great again (c)
-	src.modules += new /obj/item/weapon/inflatable_dispenser(src) // to stop those pesky human beings entering the zone
-	src.modules += new /obj/item/weapon/tool/pickaxe/drill(src)
-	src.modules += new /obj/item/weapon/hatton/robot(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
-	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
+	src.modules += new /obj/item/device/floor_painter(src)
+	src.modules += new /obj/item/inflatable_dispenser(src)
+	src.modules += new /obj/item/reagent_containers/glass/bucket(src)
+	src.modules += new /obj/item/reagent_containers/spray/krag_b_gone(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/tool/saw/hyper(src)
-
-	//src.emag = new /obj/item/weapon/gun/energy/plasmacutter/mounted(src)
-	//src.malfAImodule += new /obj/item/weapon/rtf(src) //We don't have these features
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.emag += new /obj/item/tool/baton/robot(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
 	var/datum/matter_synth/plasteel = new /datum/matter_synth/plasteel(40000)
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass(60000)
 	var/datum/matter_synth/wire = new /datum/matter_synth/wire(60)
-	synths += metal
-	synths += plasteel
-	synths += glass
-	synths += wire
-
-	var/obj/item/stack/material/cyborg/steel/M = new (src)
-	M.synths = list(metal)
-	src.modules += M
-
-	var/obj/item/stack/material/cyborg/glass/G = new (src)
-	G.synths = list(glass)
-	src.modules += G
-
-	var/obj/item/stack/rods/cyborg/Ro = new /obj/item/stack/rods/cyborg(src)
-	Ro.synths = list(metal)
-	src.modules += Ro
-
-	var/obj/item/stack/material/cyborg/plasteel/S = new (src)
-	S.synths = list(plasteel)
-	src.modules += S
-
-	var/obj/item/stack/material/cyborg/glass/reinforced/RG = new (src)
-	RG.synths = list(metal, glass)
-	src.modules += RG
-
-	var/obj/item/stack/tile/floor/cyborg/FT = new /obj/item/stack/tile/floor/cyborg(src) // to add floor over the metal rods lattice
-	FT.synths = list(metal)
-	src.modules += FT
-
-	var/obj/item/stack/cable_coil/cyborg/C = new /obj/item/stack/cable_coil/cyborg(src) // Let there be light electric said and after that did cut the wire
-	C.synths = list(wire)
-	src.modules += C
-
-	..(R)
-
-/obj/item/weapon/robot_module/engineering/construction/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
-	if(src.modules)
-		var/obj/item/weapon/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
-		KBG.reagents.add_reagent("silicate", 2 * amount)
-	..()
-
-/obj/item/weapon/robot_module/engineering/general/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/borg/sight/meson(src)
-	src.modules += new /obj/item/weapon/extinguisher(src)
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //Borrows
-	src.modules += new /obj/item/weapon/tool/saw(src)
-	src.modules += new /obj/item/weapon/tool/knife(src)
-	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
-	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/device/scanner/gas(src)
-	src.modules += new /obj/item/taperoll/engineering(src)
-	src.modules += new /obj/item/weapon/gripper(src)
-	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
-	src.modules += new /obj/item/device/lightreplacer(src)
-	src.modules += new /obj/item/device/pipe_painter(src)
-	src.modules += new /obj/item/device/floor_painter(src)
-	src.modules += new /obj/item/weapon/inflatable_dispenser(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
-	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
-	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/melee/baton(src)
-
-	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)
-	var/datum/matter_synth/glass = new /datum/matter_synth/glass(40000)
-	var/datum/matter_synth/plasteel = new /datum/matter_synth/plasteel(20000)
-	var/datum/matter_synth/wire = new /datum/matter_synth/wire(45)
 	var/datum/matter_synth/wood = new /datum/matter_synth/wood(20000)
 	var/datum/matter_synth/plastic = new /datum/matter_synth/plastic(15000)
 	synths += metal
@@ -655,7 +508,7 @@ var/global/list/robot_modules = list(
 	synths += wood
 	synths += plastic
 
-	var/obj/item/weapon/matter_decompiler/MD = new /obj/item/weapon/matter_decompiler(src)
+	var/obj/item/matter_decompiler/MD = new /obj/item/matter_decompiler(src)
 	MD.metal = metal
 	MD.glass = glass
 	src.modules += MD
@@ -700,14 +553,24 @@ var/global/list/robot_modules = list(
 	FWT.synths = list(wood)
 	src.modules += FWT
 
+	//We know guild work and robotics.
+	R.stats.addPerk(PERK_HANDYMAN)
+	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 
-/obj/item/weapon/robot_module/engineering/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/engineering/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	if(src.modules)
-		var/obj/item/weapon/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
+		var/obj/item/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
 		KBG.reagents.add_reagent("silicate", 2 * amount)
 	..()
+
+	if(R.emagged)
+		var/obj/item/tool/baton/robot/B = locate() in src.modules
+		if(B && B.cell)
+			B.cell.give(amount)
 
 	//TODO: Insert appropriate tiles here
 	//var/obj/item/stack/tile/floor_white/cyborg/FTW = new (src)
@@ -723,15 +586,17 @@ var/global/list/robot_modules = list(
 	//src.modules += FTD
 
 //Possible todo: Discuss giving security module some kind of lethal ranged weapon
-/obj/item/weapon/robot_module/security
+/obj/item/robot_module/security
 	name = "security robot module"
 	channels = list("Marshal" = 1, "Blackshield" = 1)
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
-	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/bigknife)
+	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,
+							 /obj/item/borg/upgrade/jetpack,
+							 /obj/item/borg/upgrade/bigknife)
 
-	health = 300 //Very tanky!
-	speed_factor = 0.85 //Kinda slow
+	health = 320 //Very tanky!
+	speed_factor = 1.15 //Kinda slow
 	power_efficiency = 1.55 //Decent, we are meant to be going out and learing spiders
 
 	desc = "Focused on keeping the peace and fighting off threats to the colony, the security module is a \
@@ -741,10 +606,11 @@ var/global/list/robot_modules = list(
 		STAT_ROB = 60,
 		STAT_TGH = 60,
 		STAT_BIO = 25,
-		STAT_COG = 25
+		STAT_COG = 120,
+		STAT_MEC = 35 //weldering cracks
 	)
 
-/obj/item/weapon/robot_module/security/general
+/obj/item/robot_module/security/general
 	sprites = list(
 					"Basic" = "robotsecy",
 					"Sleek" = "sleeksecurity",
@@ -758,38 +624,58 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_security"
 				)
 
-/obj/item/weapon/robot_module/security/general/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+/obj/item/robot_module/security/general/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
-	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
-	src.modules += new /obj/item/weapon/melee/baton/robot(src)
-	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
+	src.modules += new /obj/item/handcuffs/cyborg(src)
+	src.modules += new /obj/item/tool/baton/robot(src)
+	src.modules += new /obj/item/gun/energy/taser/mounted/cyborg(src)
+	src.modules += new /obj/item/tool/robotic_omni_sec(src) //borrows and the like.
+	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //cracks and the like.
+	src.modules += new /obj/item/tool/knife/tacknife(src)
 	src.modules += new /obj/item/taperoll/police(src)
-	src.modules += new /obj/item/weapon/tool/knife/tacknife(src) //To deal with bodies and cutting down webs
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //Borrows
+	src.modules += new /obj/item/gun/projectile/automatic/riot_autoshotgun/robo(src)
+	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
 	//src.modules += new /obj/item/device/holowarrant(src)
-	//src.modules += new /obj/item/weapon/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
-	src.emag = new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
+	//src.modules += new /obj/item/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
+	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
+
+	//We are stronk so we get less no knockdowns
+	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
+	//So we cant be escaped as quickly
+	R.stats.addPerk(PERK_PARKOUR)
+
+	R.stats.addPerk(PERK_SI_SCI)
 	..(R)
 
-/obj/item/weapon/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
-	var/obj/item/weapon/gun/energy/taser/mounted/cyborg/T = locate() in src.modules
+	var/obj/item/gun/energy/taser/mounted/cyborg/T = locate() in src.modules
 	if(T.cell.charge < T.cell.maxcharge)
 		T.cell.give(T.charge_cost * amount)
 		T.update_icon()
 	else
 		T.charge_tick = 0
-	var/obj/item/weapon/melee/baton/robot/B = locate() in src.modules
+
+	if(R.emagged)
+		var/obj/item/gun/energy/laser/mounted/cyborg/L = locate() in src.modules
+		if(L.cell.charge < L.cell.maxcharge)
+			L.cell.give(T.charge_cost * amount)
+			L.update_icon()
+		else
+			L.charge_tick = 0
+
+	var/obj/item/tool/baton/robot/B = locate() in src.modules
 	if(B && B.cell)
 		B.cell.give(amount)
 
-/obj/item/weapon/robot_module/custodial
+/obj/item/robot_module/custodial
 	name = "custodial robot module"
 	channels = list("Service" = 1)
 	sprites = list(
@@ -804,55 +690,59 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_janitor"
 					)
 	health = 250 //Bulky
-	speed_factor = 1.15 //Fast
+	speed_factor = 1.45 //Fast
 	power_efficiency = 0.8 //Poor
 
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
+							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 
 	stat_modifiers = list(
 		STAT_ROB = 25,
 		STAT_TGH = 25,
 		STAT_BIO = 30,
-		STAT_COG = 25
+		STAT_COG = 120,
+		STAT_MEC = 35 //weldering cracks
 	)
 
 	desc = "A vast machine designed for cleaning up trash and scrubbing floors. A fairly specialised task, \
 	but requiring a large capacity. The huge chassis consequentially grants it a degree of toughness, \
 	without compromising its speed."
 
-/obj/item/weapon/robot_module/custodial/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+/obj/item/robot_module/custodial/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/weapon/gripper/service(src)
-	src.modules += new /obj/item/weapon/soap/deluxe(src)
-	src.modules += new /obj/item/weapon/storage/bag/robotic/trash/(src)
-	src.modules += new /obj/item/weapon/mop(src)
+	src.modules += new /obj/item/device/scanner/price(src)
+	src.modules += new /obj/item/gripper/service(src)
+	src.modules += new /obj/item/soap/deluxe(src)
+	src.modules += new /obj/item/storage/bag/robotic/trash/(src)
+	src.modules += new /obj/item/mop(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src) // a hydroponist's bucket
-	src.modules += new /obj/item/weapon/matter_decompiler(src) // free drone remains for all
+	src.modules += new /obj/item/reagent_containers/glass/bucket(src) // a hydroponist's bucket
+	src.modules += new /obj/item/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic/sec(src) //Borrows
+	src.modules += new /obj/item/tool/robotic_omni_cleaner(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
-	src.emag.reagents.add_reagent("lube", 250)
-	src.emag.name = "Lube spray"
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.emag += new /obj/item/reagent_containers/spray/lube(src)
+
+	//Silent cleaners
+	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
+	R.stats.addPerk(PERK_SI_SCI)
 
 	..(R)
 
-/obj/item/weapon/robot_module/custodial/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/custodial/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 	var/obj/item/device/lightreplacer/LR = locate() in src.modules
 	LR.Charge(R, amount)
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/spray/S = src.emag
+		var/obj/item/reagent_containers/spray/lube/S = locate() in src.emag
 		S.reagents.add_reagent("lube", 2 * amount)
 
-/obj/item/weapon/robot_module/service
+/obj/item/robot_module/service
 	name = "service robot module"
 	channels = list("Service" = 1)
 	languages = list(
@@ -877,8 +767,8 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_service"
 				  	)
 
-	health = 80 //Ultra fragile
-	speed_factor = 1.2 //Quick
+	health = 130 //fragile
+	speed_factor = 1.5 //Quick
 	power_efficiency = 1 //Base line
 
 	desc = "A lightweight unit designed to serve humans directly, in housekeeping, cooking, bartending, \
@@ -887,72 +777,73 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_BIO = 30,
-		STAT_COG = 30,
+		STAT_COG = 120,
 		STAT_ROB = 30,
 		STAT_TGH = 30,
 		STAT_MEC = 30
 	)
 	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
-/obj/item/weapon/robot_module/service/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
+/obj/item/robot_module/service/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/tool/robotic_omni_standard(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/weapon/gripper/service(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src)
-	src.modules += new /obj/item/weapon/tool/minihoe(src)
-	src.modules += new /obj/item/weapon/tool/hatchet(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro
+	src.modules += new /obj/item/gripper/service(src)
+	src.modules += new /obj/item/reagent_containers/glass/bucket(src)
+	src.modules += new /obj/item/tool/minihoe(src)
+	src.modules += new /obj/item/tool/hatchet(src)
+	src.modules += new /obj/item/tool/multitool/robotic(src) //hydro
 	src.modules += new /obj/item/device/scanner/plant(src)
-	src.modules += new /obj/item/weapon/storage/bag/robotic/produce(src)
-	src.modules += new /obj/item/weapon/robot_harvester(src)
-	src.modules += new /obj/item/weapon/material/kitchen/rollingpin(src)
-	src.modules += new /obj/item/weapon/tool/knife(src)
-	src.modules += new /obj/item/weapon/reagent_containers/food/condiment/enzyme(src)
-	src.modules += new /obj/item/weapon/soap(src) // a cheap bar of soap
-	src.modules += new /obj/item/weapon/reagent_containers/glass/rag(src) // a rag for.. yeah.. the primary tool of bartender
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.modules += new /obj/item/weapon/hand_labeler(src)
-	src.modules += new /obj/item/weapon/tool/tape_roll(src) //allows it to place flyers
-	src.modules += new /obj/item/weapon/stamp/denied(src) //why was this even a emagged item before smh
+	src.modules += new /obj/item/storage/bag/robotic/produce(src)
+	src.modules += new /obj/item/robot_harvester(src)
+	src.modules += new /obj/item/material/kitchen/rollingpin(src)
+	src.modules += new /obj/item/reagent_containers/food/condiment/enzyme(src)
+	src.modules += new /obj/item/flame/lighter/zippo(src)
+	src.modules += new /obj/item/soap(src) // a cheap bar of soap
+	src.modules += new /obj/item/reagent_containers/glass/rag(src) // a rag for.. yeah.. the primary tool of bartender
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/hand_labeler(src)
+	src.modules += new /obj/item/tool/tape_roll(src) //allows it to place flyers
+	src.modules += new /obj/item/stamp/denied(src) //why was this even a emagged item before smh
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/device/synthesized_instrument/synthesizer
-	src.emag = new /obj/item/weapon/stamp/chameleon(src)
-	src.emag = new /obj/item/weapon/pen/chameleon(src)
+	src.modules += new /obj/item/device/synthesized_instrument/synthesizer(src)
+	src.emag += new /obj/item/stamp/chameleon(src)
+	src.emag += new /obj/item/pen/chameleon(src)
 	..(R)
 
-	var/obj/item/weapon/rsf/M = new /obj/item/weapon/rsf(src)
+	var/obj/item/rsf/M = new /obj/item/rsf(src)
 	M.stored_matter = 30
 	src.modules += M
 
-	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
+	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
 
-	var/obj/item/weapon/flame/lighter/zippo/L = new /obj/item/weapon/flame/lighter/zippo(src)
+	var/obj/item/flame/lighter/zippo/L = new /obj/item/flame/lighter/zippo(src)
 	L.lit = 1
 	src.modules += L
 
-	src.modules += new /obj/item/weapon/tray/robotray(src)
-	src.modules += new /obj/item/weapon/reagent_containers/borghypo/service(src)
-	src.emag = new /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer(src)
+	src.modules += new /obj/item/tray/robotray(src)
+	src.modules += new /obj/item/reagent_containers/borghypo/service(src)
+	src.emag += new /obj/item/reagent_containers/food/drinks/bottle/small/beer_two(src)
 
-	var/datum/reagents/Re = new/datum/reagents(50)
-	src.emag.reagents = Re
-	Re.my_atom = src.emag
-	Re.add_reagent("beer2", 50)
-	src.emag.name = "Mickey Finn's Special Brew"
+	//Seller and cleaner mix, so quite and knowing the deal!
+	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
+	R.stats.addPerk(PERK_MARKET_PROF)
+	R.stats.addPerk(PERK_SI_SCI)
 
 	..(R)
 
-/obj/item/weapon/robot_module/service/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/service/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
-	var/obj/item/weapon/reagent_containers/food/condiment/enzyme/E = locate() in src.modules
+	var/obj/item/reagent_containers/food/condiment/enzyme/E = locate() in src.modules
 	E.reagents.add_reagent("enzyme", 2 * amount)
 	if(src.emag)
-		var/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer/B = src.emag
+		var/obj/item/reagent_containers/food/drinks/bottle/small/beer_two/B = locate() in src.emag
 		B.reagents.add_reagent("beer2", 2 * amount)
 
-/obj/item/weapon/robot_module/miner
+/obj/item/robot_module/miner
 	name = "miner robot module"
 	channels = list("Supply" = 1)
 	networks = list(NETWORK_MINE)
@@ -968,46 +859,52 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_miner"
 				)
 	health = 250 //Pretty tough
-	speed_factor = 0.9 //meh
+	speed_factor = 1.2 //meh
 	power_efficiency = 1.5 //Best efficiency
 
 	stat_modifiers = list(
 		STAT_ROB = 60,
 		STAT_TGH = 50,
 		STAT_BIO = 25,
-		STAT_COG = 25,
-		STAT_MEC = 30 //Drills
+		STAT_COG = 120,
+		STAT_MEC = 50 //Drills
 	)
-	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,/obj/item/borg/upgrade/satchel_of_holding_for_borgs)
+	supported_upgrades = list(/obj/item/borg/upgrade/jetpack,
+							  /obj/item/borg/upgrade/satchel_of_holding_for_borgs)
 
 	desc = "Built for digging anywhere, excavating the ores and materials to keep the colony running, \
 	this is heavy and powerful unit with a fairly singleminded purpose. It needs to withstand impacts \
 	from falling boulders, and exist for long periodsanwhere, often far from a charging \
 	port. It is built with these purposes in mind."
 
-/obj/item/weapon/robot_module/miner/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src)
+/obj/item/robot_module/miner/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/tool/robotic_omni_miner(src)
+	src.modules += new /obj/item/tool/pickaxe(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/material(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
-	src.modules += new /obj/item/weapon/storage/bag/robotic/ore(src)
-	src.modules += new /obj/item/weapon/tool/pickaxe/diamonddrill(src)
-	src.modules += new /obj/item/weapon/storage/bag/robotic/sheetsnatcher(src)
-	src.modules += new /obj/item/weapon/gripper/miner(src)
+	src.modules += new /obj/item/storage/bag/robotic/ore(src)
+	src.modules += new /obj/item/tool/pickaxe/diamonddrill(src)
+	src.modules += new /obj/item/storage/bag/robotic/sheetsnatcher(src)
+	src.modules += new /obj/item/gripper/miner(src)
 	src.modules += new /obj/item/device/scanner/mining(src)
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/weapon/tool/hammer(src) //slag and ore
-	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
+	src.modules += new /obj/item/gun/projectile/automatic/riot_autoshotgun/robo/single_shot(src)
+	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
+
+	//Seller so quite and knowing the deal!
+	R.stats.addPerk(PERK_MARKET_PROF)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
-/obj/item/weapon/robot_module/research
+/obj/item/robot_module/research
 	name = "research module"
 	channels = list("Science" = 1)
 	networks = list(NETWORK_RESEARCH)
@@ -1021,7 +918,7 @@ var/global/list/robot_modules = list(
 					)
 
 	health = 160 //Weak
-	speed_factor = 1.0 //Average
+	speed_factor = 1.3 //Average
 	power_efficiency = 0.75 //Poor efficiency
 
 	desc = "Built for working in a well-equipped lab, and designed to handle a wide variety of research \
@@ -1031,41 +928,37 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_BIO = 40,
-		STAT_COG = 40,
+		STAT_COG = 120,
 		STAT_MEC = 30
 	)
 
-/obj/item/weapon/robot_module/research/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/research/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/weapon/portable_destructive_analyzer(src)
-	src.modules += new /obj/item/weapon/gripper/research(src)
-	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
+//	src.modules += new /obj/item/portable_destructive_analyzer(src) dosnt work
+	src.modules += new /obj/item/gripper/research(src)
+	src.modules += new /obj/item/gripper/no_use/loader(src)
 	src.modules += new /obj/item/device/robotanalyzer(src)
-	src.modules += new /obj/item/weapon/card/robot(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/scalpel(src)
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src) //For robotic repair/mech stuff
-	src.modules += new /obj/item/weapon/tool/saw/circular(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src) //hydro
-	src.modules += new /obj/item/weapon/robot_harvester(src)
-	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
-	src.modules += new /obj/item/weapon/gripper/chemistry(src)
-	src.modules += new /obj/item/weapon/reagent_containers/dropper/industrial(src)
-	src.modules += new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/card/robot(src)
+	src.modules += new /obj/item/tool/robotic_omni_sci(src)
+	src.modules += new /obj/item/tool/multitool/robotic(src) //hydro checks for tool rather then use
+	src.modules += new /obj/item/tool/weldingtool/robotic(src)
+	src.modules += new /obj/item/robot_harvester(src)
+	src.modules += new /obj/item/reagent_containers/syringe(src)
+	src.modules += new /obj/item/gripper/chemistry(src)
+	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
-	src.modules += new /obj/item/weapon/extinguisher/mini(src)
-	src.modules += new /obj/item/weapon/extinguisher(src)
-	src.modules += new /obj/item/weapon/storage/bag/robotic/produce(src)
+	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/storage/bag/robotic/produce(src)
 	src.modules += new /obj/item/device/science_tool(src)
-	src.modules += new /obj/item/weapon/pen/robopen(src)
-	src.modules += new /obj/item/weapon/form_printer(src)
-	src.modules += new /obj/item/weapon/gripper/paperwork(src)
-	src.modules += new /obj/item/weapon/storage/part_replacer/mini(src)
+	src.modules += new /obj/item/device/scanner/price(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/storage/part_replacer(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/hand_tele(src) //Why
-	src.emag = new /obj/item/weapon/tool/pickaxe/onestar/cyborg(src)
+	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
 	synths += nanite
@@ -1075,112 +968,52 @@ var/global/list/robot_modules = list(
 	N.charge_costs = list(1000)
 	N.synths = list(nanite)
 	src.modules += N
-	..(R)
 
-//Syndicate borg is intended for summoning by traitors. Not currently implemented
-/obj/item/weapon/robot_module/syndicate
-	name = "syndicate robot module"
-	hide_on_manifest = TRUE
-	languages = list(
-					LANGUAGE_COMMON = 1,
-					LANGUAGE_SERBIAN = 1,
-					LANGUAGE_CYRILLIC = 1,
-					LANGUAGE_JIVE = 0
-					)
-
-	sprites = list(
-					"Bloodhound" = "syndie_bloodhound",
-					"Treadhound" = "syndie_treadhound",
-					"Precision" = "syndi-medi",
-					"Heavy" = "syndi-heavy",
-					"Artillery" = "spidersyndi",
-					"Miss" = "missm_syndie"
-					)
-
-	stat_modifiers = list(
-		STAT_BIO = 60,
-		STAT_COG = 60,
-		STAT_ROB = 60,
-		STAT_TGH = 60,
-		STAT_MEC = 60
-	)
-
-/obj/item/weapon/robot_module/syndicate/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/borg/sight/thermal(src)
-	src.modules += new /obj/item/weapon/melee/energy/sword(src)
-	//Todo, replace these with suitable weapons from eris
-	//src.modules += new /obj/item/weapon/gun/energy/mountedsmg(src)
-	//src.modules += new /obj/item/weapon/gun/energy/net/mounted(src)
-	//src.modules += new /obj/item/weapon/gun/launcher/grenade/cyborg(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/device/gps(src)
-	//src.modules += new /obj/item/weapon/robot_emag(src)
+	//We know medical and robotics, were a mix.
+	R.stats.addPerk(PERK_MEDICAL_EXPERT)
+	R.stats.addPerk(PERK_SURGICAL_MASTER)
+	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
+	R.stats.addPerk(PERK_SI_SCI)
 
 	..(R)
 
-//Combat module is a high grade security borg for use in emergencies.
-//They have lethal weapons and shielding
-//Not currently implemented, needs discussion
-/obj/item/weapon/robot_module/combat
-	name = "combat robot module"
-	hide_on_manifest = TRUE
-	channels = list("Security" = 1)
-	networks = list(NETWORK_SECURITY)
-	subsystems = list(/datum/nano_module/crew_monitor)
-	sprites = list("Roller" = "droid-combat")
-	can_be_pushed = 0
 
-/obj/item/weapon/robot_module/combat/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/borg/sight/hud/sec(src)
-	src.modules += new /obj/item/weapon/gun/energy/laser/mounted/cyborg(src)
-	//src.modules += new /obj/item/weapon/melee/hammer/powered(src)
-	src.modules += new /obj/item/borg/combat/shield(src)
-	src.modules += new /obj/item/borg/combat/mobility(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/device/gps(src)
-	src.emag = new /obj/item/weapon/gun/energy/lasercannon/mounted(src)
-	..(R)
-
-/obj/item/weapon/robot_module/drone
+/obj/item/robot_module/drone
 	name = "drone module"
 	hide_on_manifest = TRUE
 	no_slip = 1
 	networks = list(NETWORK_ENGINEERING)
 	channels = list("Engineering" = 1, "Common" = 1)
+	health = 35 //Basic colony drones and the like should have 35 health as they are not meant for combat
 	stat_modifiers = list(
-		STAT_COG = 25,
+		STAT_COG = 120,
 		STAT_MEC = 40
 	) //so we can use rnd consoles for parts ect
 
-/obj/item/weapon/robot_module/drone/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/saw(src)
-	src.modules += new /obj/item/weapon/tool/hammer(src)
-	src.modules += new /obj/item/weapon/tool/knife(src) //Bodies of roaches and spiders
-	src.modules += new /obj/item/weapon/tool/pickaxe/robotic(src) //borrows and the like.
-	src.modules += new /obj/item/weapon/tool/tape_roll/fiber(src) //Window repair
+/obj/item/robot_module/drone/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/tool/weldingtool/robotic(src)
+	src.modules += new /obj/item/tool/multitool/robotic(src)
+	src.modules += new /obj/item/tool/robotic_omni_engi(src)
+	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
-	src.modules += new /obj/item/weapon/gripper(src)
-	src.modules += new /obj/item/weapon/soap(src)
-	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
-	src.modules += new /obj/item/weapon/gripper/chemistry(src)// For refilling autolathens with sillicon
-	src.modules += new /obj/item/weapon/storage/part_replacer/mini(src)
-	src.modules += new /obj/item/weapon/extinguisher(src)
+	src.modules += new /obj/item/gripper(src)
+	src.modules += new /obj/item/soap(src)
+	src.modules += new /obj/item/gripper/no_use/loader(src)
+	src.modules += new /obj/item/gripper/chemistry(src)// For refilling autolathens with sillicon
+	src.modules += new /obj/item/storage/part_replacer/mini(src)
+	src.modules += new /obj/item/extinguisher(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/borg/sight/meson(src)
-	src.modules += new /obj/item/weapon/reagent_containers/spray/krag_b_gone(src)
+	src.modules += new /obj/item/reagent_containers/spray/krag_b_gone(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 
-	//src.emag = new /obj/item/weapon/gun/energy/plasmacutter/mounted(src)
+	//src.emag += new /obj/item/gun/energy/plasmacutter/mounted(src)
 	//src.emag.name = "Plasma Cutter"
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(25000)
@@ -1194,7 +1027,7 @@ var/global/list/robot_modules = list(
 	synths += plastic
 	synths += wire
 
-	var/obj/item/weapon/matter_decompiler/MD = new /obj/item/weapon/matter_decompiler(src)
+	var/obj/item/matter_decompiler/MD = new /obj/item/matter_decompiler(src)
 	MD.metal = metal
 	MD.glass = glass
 	MD.wood = wood
@@ -1236,59 +1069,33 @@ var/global/list/robot_modules = list(
 	var/obj/item/stack/material/cyborg/plastic/P = new (src)
 	P.synths = list(plastic)
 	src.modules += P
+
+	//We know guild work and robotics.
+	R.stats.addPerk(PERK_HANDYMAN)
+	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
+	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
-/obj/item/weapon/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	if(src.modules)
-		var/obj/item/weapon/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
-		KBG.reagents.add_reagent("silicate", 2 * amount)
+		var/obj/item/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
+		if(KBG)
+			KBG.reagents.add_reagent("silicate", 2 * amount)
+
+		var/obj/item/device/lightreplacer/LR = locate() in src.modules
+		if(LR)
+			LR.Charge(R, amount)
+
 	..()
 
-/obj/item/weapon/robot_module/drone/construction
+/obj/item/robot_module/drone/construction
 	name = "construction drone module"
 	channels = list("Engineering" = 1)
+	health = 75 //These spawn in high combat areas and zones, 1 shot by a random person mob isnt fun
 	languages = list()
 
-/obj/item/weapon/robot_module/drone/construction/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/weapon/rcd/borg(src)
+/obj/item/robot_module/drone/construction/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/rcd/borg(src)
 	..(R)
 
-/obj/item/weapon/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
-	var/obj/item/device/lightreplacer/LR = locate() in src.modules
-	LR.Charge(R, amount)
-	..()
-	return
-
-//A borg intended to serve as an antag in itself, though generally reserved for adminspawning
-//Sort of like a robot ninja
-//Not currently implemented
-/obj/item/weapon/robot_module/hunter_seeker
-	name = "hunter seeker robot module"
-	languages = list(
-					LANGUAGE_COMMON = 1,
-					LANGUAGE_SERBIAN = 1,
-					LANGUAGE_CYRILLIC = 1,
-					LANGUAGE_JIVE = 0
-					//LANGUAGE_TERMINATOR = 1 this is not real
-					)
-
-	sprites = list(
-					"Hunter Seeker" = "hunter_seeker"
-					)
-
-/obj/item/weapon/robot_module/hunter_seeker/New(var/mob/living/silicon/robot/R)
-	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/weapon/tool/pickaxe/drill(src)
-	src.modules += new /obj/item/borg/sight/thermal(src)
-	//src.modules += new /obj/item/weapon/gun/energy/net/mounted(src)
-	//src.modules += new /obj/item/weapon/gun/energy/mountedcannon(src)
-	//src.modules += new /obj/item/weapon/melee/energy/glaive(src)
-	src.modules += new /obj/item/weapon/tool/crowbar/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wrench/robotic(src)
-	src.modules += new /obj/item/weapon/tool/screwdriver/robotic(src)
-	src.modules += new /obj/item/weapon/tool/multitool/robotic(src)
-	src.modules += new /obj/item/weapon/tool/wirecutters/robotic(src)
-	src.modules += new /obj/item/weapon/tool/weldingtool/robotic(src)
-	src.modules += new /obj/item/device/gps(src)
-
-	..(R)

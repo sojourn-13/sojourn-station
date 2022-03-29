@@ -34,8 +34,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "j" = (
-/obj/structure/low_wall,
-/obj/effect/window_lwall_spawn,
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "k" = (
@@ -45,10 +44,6 @@
 /obj/structure/closet/onestar/tier1,
 /obj/random/medical,
 /turf/simulated/floor/tiled/dark/golden,
-/area/crawler)
-"m" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/white,
 /area/crawler)
 "n" = (
 /obj/structure/morgue,
@@ -75,10 +70,6 @@
 "q" = (
 /obj/structure/morgue,
 /turf/simulated/floor/tiled/white,
-/area/crawler)
-"r" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "s" = (
 /obj/machinery/light/floor,
@@ -177,9 +168,9 @@ a
 a
 j
 a
-r
 k
-r
+k
+k
 a
 j
 b
@@ -221,9 +212,9 @@ b
 a
 j
 a
-r
 k
-r
+k
+k
 a
 j
 b
@@ -241,13 +232,13 @@ a
 "}
 (11,1,1) = {"
 a
-m
+c
 y
 k
 i
 k
 o
-m
+c
 a
 "}
 (12,1,1) = {"

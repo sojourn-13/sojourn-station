@@ -2,11 +2,12 @@
 	name = "linear combat shield"
 	desc = "A shield generator that forms a rectangular, unidirectionally projectile-blocking wall in front of the exosuit."
 	icon_state = "shield_droid"
-	origin_tech = list(TECH_PHORON = 3, TECH_MAGNET = 6, TECH_ILLEGAL = 4)
+	origin_tech = list(TECH_PLASMA = 3, TECH_MAGNET = 6, TECH_ILLEGAL = 4)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_GOLD = 6, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 4, MATERIAL_PLATINUM = 4, MATERIAL_DIAMOND = 2)
 	equip_cooldown = 5
 	energy_drain = 20
 	range = 0
+	price_tag = 2000
 
 	var/obj/item/shield_projector/line/exosuit/my_shield = null
 	var/my_shield_type = /obj/item/shield_projector/line/exosuit
@@ -25,14 +26,18 @@
 	return
 
 /obj/item/mecha_parts/mecha_equipment/combat_shield/Destroy()
-	chassis.overlays -= drone_overlay
-	my_shield.forceMove(src)
-	my_shield.destroy_shields()
-	my_shield.my_tool = null
-	my_shield.my_mecha = null
-	qdel(my_shield)
-	my_shield = null
-	..()
+	if (chassis)
+		chassis.overlays -= drone_overlay
+		my_shield.forceMove(src)
+		my_shield.destroy_shields()
+		my_shield.my_tool = null
+		my_shield.my_mecha = null
+		qdel(my_shield)
+		my_shield = null
+	if(my_shield)
+		qdel(my_shield)
+		my_shield = null
+	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/combat_shield/attach(obj/mecha/M as obj)
 	..()
@@ -63,7 +68,7 @@
 	return
 
 /obj/item/mecha_parts/mecha_equipment/combat_shield/proc/toggle_shield()
-	..()
+	//..()
 	if(chassis)
 		my_shield.attack_self(chassis.occupant)
 		if(my_shield.active)
@@ -159,7 +164,7 @@
 			return TRUE
 
 		var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
-		if(check_shield_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
+		if(check_parry_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
 			return FALSE
 		else
 			return TRUE
@@ -234,7 +239,7 @@
 	active = FALSE
 
 /obj/item/shield_projector/proc/update_shield_positions()
-	if (istype(src.loc,/obj/item/weapon/storage) || istype(src.loc,/obj/structure/closet || istype(src.loc,/obj/item/clothing/suit/storage)))	//no point in finding spot for light if flashlight is inside container
+	if (istype(src.loc,/obj/item/storage) || istype(src.loc,/obj/structure/closet || istype(src.loc,/obj/item/clothing/suit/storage)))	//no point in finding spot for light if flashlight is inside container
 		destroy_shields()
 		return
 	for(var/obj/effect/directional_shield/S in active_shields)
@@ -294,12 +299,14 @@
 	visible_message("<span class='notice'>\The [user] [!active ? "de":""]activates \the [src].</span>")
 
 /obj/item/shield_projector/Process()
-	if(shield_health < max_shield_health && ( (last_damaged_time + shield_regen_delay) < world.time) )
-		adjust_health(shield_regen_amount)
-		if(always_on && !active) // Make shields as soon as possible if this is set.
-			create_shields()
-		if(shield_health == max_shield_health)
-			playsound(get_turf(src), 'sound/machines/defib_ready.ogg', 75, 0)
+	if(always_on && !active) // Make shields as soon as possible if this is set.
+		create_shields()
+	if(shield_health < max_shield_health)
+		if( (last_damaged_time + shield_regen_delay) < world.time)
+			if(always_on || !active)
+				adjust_health(shield_regen_amount)
+			if(shield_health == max_shield_health)
+				playsound(get_turf(src), 'sound/machines/defib_ready.ogg', 75, 0)
 		else
 			playsound(get_turf(src), 'sound/machines/defib_safetyOff.ogg', 75, 0)
 

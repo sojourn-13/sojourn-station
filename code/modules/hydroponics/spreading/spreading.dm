@@ -54,6 +54,8 @@
 		plant_controller.remove_plant(src)
 	for(var/obj/effect/plant/neighbor in range(1,src))
 		plant_controller.add_plant(neighbor)
+	if(seed.type == /datum/seed/mushroom/maintshroom)
+		GLOB.all_maintshrooms -= src
 	. = ..()
 
 /obj/effect/plant/single
@@ -92,6 +94,7 @@
 		if(seed.type == /datum/seed/mushroom/maintshroom)
 			growth_type = 0 // this is maintshroom
 			density = FALSE
+			GLOB.all_maintshrooms += src
 		else if(seed.get_trait(TRAIT_CARNIVOROUS) == 2)
 			growth_type = 1 // WOOOORMS.
 		else if(!(seed.seed_noun in list("seeds","pits")))
@@ -120,7 +123,7 @@
 	spread_distance = ((growth_type>0) ? round(spread_chance*1.0) : round(spread_chance*0.5))
 	update_icon()
 
-	if(seed.get_trait(TRAIT_CHEMS) > 0)
+	if(seed.get_trait(TRAIT_CHEMS)?:len)
 		src.create_reagents(5*(seed.chems.len))
 		for (var/reagent in seed.chems)
 			src.reagents.add_reagent(reagent, 5)
@@ -164,6 +167,10 @@
 		set_light(0)
 
 /obj/effect/plant/proc/refresh_icon()
+	if (growth_threshold == 0)
+		error("growth_threshold is somehow 0, probably never got redefined. Qdeling to prevent repeat logs")
+		qdel(src)
+		return
 	var/growth = max(1,min(max_growth,round(health/growth_threshold)))
 	var/at_fringe = dist3D(src,parent)
 	if(spread_distance > 5)

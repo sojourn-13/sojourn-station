@@ -2,7 +2,7 @@
 
 /datum/design/research/item/mechfab/ripley
 	category = "Ripley"
-	starts_unlocked = TRUE
+	starts_unlocked = FALSE
 
 /datum/design/research/item/mechfab/ripley/chassis
 	build_path = /obj/item/mecha_parts/chassis/ripley
@@ -24,6 +24,31 @@
 
 /datum/design/research/item/mechfab/ripley/right_leg
 	build_path = /obj/item/mecha_parts/part/ripley_right_leg
+
+
+//Ivan ====================================
+
+/datum/design/research/item/mechfab/ivan
+	category = "Ivan"
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mechfab/ivan/chassis
+	build_path = /obj/item/mecha_parts/chassis/ivan
+
+/datum/design/research/item/mechfab/ivan/torso
+	build_path = /obj/item/mecha_parts/part/ivan_torso
+
+/datum/design/research/item/mechfab/ivan/left_arm
+	build_path = /obj/item/mecha_parts/part/ivan_left_arm
+
+/datum/design/research/item/mechfab/ivan/right_arm
+	build_path = /obj/item/mecha_parts/part/ivan_right_arm
+
+/datum/design/research/item/mechfab/ivan/left_leg
+	build_path = /obj/item/mecha_parts/part/ivan_left_leg
+
+/datum/design/research/item/mechfab/ivan/right_leg
+	build_path = /obj/item/mecha_parts/part/ivan_right_leg
 
 
 //Odysseus =====================================================
@@ -152,13 +177,13 @@
 		desc = "Allows for the construction of \a [item_name]."
 
 /datum/design/research/circuit/mecha/main
-	build_path = /obj/item/weapon/circuitboard/mecha/main
+	build_path = /obj/item/circuitboard/mecha/main
 	sort_string = "NAAAA"
 
 /datum/design/research/circuit/mecha/peripherals
-	build_path = /obj/item/weapon/circuitboard/mecha/peripherals
+	build_path = /obj/item/circuitboard/mecha/peripherals
 	sort_string = "NAAAB"
 
 /datum/design/research/circuit/mecha/targeting
-	build_path = /obj/item/weapon/circuitboard/mecha/targeting
+	build_path = /obj/item/circuitboard/mecha/targeting
 	sort_string = "NAAAÑ"

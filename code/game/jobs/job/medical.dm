@@ -18,11 +18,13 @@
 		access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
 		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
-		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits
+		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits,
+		access_robotics, access_xenobiology
 	)
 
 	ideal_character_age = 40
 	minimum_character_age = 30
+	playtimerequired = 1200
 
 	stat_modifiers = list(
 		STAT_BIO = 50,
@@ -30,7 +32,7 @@
 		STAT_COG = 25
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci, /datum/perk/chemist)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -69,12 +71,13 @@
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-
+	alt_titles = list("Soteria Nurse", "Soteria Emergency Physician", "Soteria Surgeon", "Soteria Medical Intern")
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
+	department_account_access = TRUE
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
-		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits
+		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology
 	)
 
 	stat_modifiers = list(
@@ -82,7 +85,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical)
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/chemist)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							/datum/computer_file/program/chem_catalog,
@@ -103,20 +106,22 @@
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
 
-/datum/job/orderly
-	title = "Soteria Orderly"
-	flag = ORDERLY
+/datum/job/trauma_team
+	title = "Soteria Trauma Team"
+	flag = TRAUMATEAM
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
+	alt_titles = (null)
+	outfit_type = /decl/hierarchy/outfit/job/medical/trauma_team
 
-	outfit_type = /decl/hierarchy/outfit/job/medical/orderly
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/chemist) // Can treat people well but can't do surgery or chemistry as good as a doctor.
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits,
@@ -133,22 +138,28 @@
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog,
 							/datum/computer_file/program/scanner)
 
-	description = "The Orderly is not a man of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
-	Your primary role is that of a thug for medical. You make sure that medical remains safe by ensuring people don't trespass or steal items and remove those who shouldn't be there, by force if necessary.<br>\
+	description = "Members of the trauma team are not men of science nor medicine, they are strictly in charge of enforcing the chief biolabs orders and sometimes the chief research overseer's orders.<br>\
+	Your primary role is that of an armed thug for medical. You make sure that medical remains safe by ensuring people don't trespass or steal items and remove those who shouldn't be there, by force if necessary.<br>\
 	Your secondary responsibility is that of an soteria enforcer. Actions that require in house enforcement such as aiding doctors and security with violent patients in medical, securing the virology lab during an outbreak, and aiding in the destruction of escape slimes or kudzu from science.<br>\
-	Your third duty is to aid medical doctors and paramedics in fixing patients, this can include retrieving chemicals, doing basic triage, and accompanying paramedics to aid them in getting injured patients.<br>\
-	You are fully licensed to sell any and all chemicals to all colonists. If someone isn't an employee of Soteria Institute, charge them for their chemicals.<br>\
+	Your third duty is to aid medical doctors and act as a paramedic in fixing patients and collecting patients, this can include retrieving chemicals, doing basic triage, and going out to recover injured patients.<br>\
+	You are fully licensed to enforce the will of the overseer and to protect the soteria, its staff, and your patients with your personal weapons and armor.<br>\
 	It's worth noting that you function heavily as a nurse when not acting as muscle and treatment of patients should be priority, in particular when assisting doctors."
 
 	duties = "Act as a guard for medical, ensuring unneeded colonist leave and nothing is stolen.<br>\
-		Aid medical doctors and paramedics in any way you can.<br>\
+		Aid medical doctors in any way you can.<br>\
 		Act as a nurse for minor injuries, treating patients that a doctor needn't bother with.<br>\
 		Ensure that any outbreaks are contained, such as slimes, infected monkeys, or kudzu."
 
 /obj/landmark/join/start/chemist //This says chemist so I didn't have to edit the map shit when I changed this. Fix later.
-	name = "Soteria Orderly"
+	name = "Soteria Trauma Team"
 	icon_state = "player-green"
-	join_tag = /datum/job/orderly
+	join_tag = /datum/job/trauma_team
+
+/obj/landmark/join/start/paramedic // Same thing as above tbh.
+	name = "Soteria Trauma Team"
+	icon_state = "player-green"
+	join_tag = /datum/job/trauma_team
+
 
 /datum/job/psychiatrist
 	title = "Soteria Psychiatrist"
@@ -162,16 +173,17 @@
 	supervisors = "the Soteria Biolab Overseer"
 	difficulty = "Soul Crushing."
 	selection_color = "#a8b69a"
-
+	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
-
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
 	)
 
+	perks = list(/datum/perk/medicalexpertise, /datum/perk/psi_psychology, /datum/perk/chemist) //Your trained for this.
+
 	stat_modifiers = list(
 		STAT_BIO = 25,
-		STAT_COG = 15,
+		STAT_COG = 20,
 		STAT_VIG = 5
 	)
 
@@ -182,63 +194,16 @@
 	description = "The Psychiatrist is a mental specialist that works to help colonists through their various issues and concerns.<br>\
 	In some ways you are a professional conversationalist. Despite knowing advanced therapy techniques, sometimes a mere chat can work wonders.<br>\
 	More eventful days may involve you having particularly unstable colonists sectioned, or interviewing criminals in coordination with Security.<br>\
-	Remember that patient confidentiality is highly important in your profession. Keep sensitive information between you and the patient."
+	Remember that patient confidentiality is highly important in your profession. Keep sensitive information between you and the patient.<br>\
+	Soteria psychs are also one of the most psionically adept members of the colony, with an innate understanding of how the mind works.<br>\
+	If you become a psion, you have a greater variety of beneficial powers which you can use to aid the colony."
 
 	duties = "Speak with anyone who desires help, no matter their rank or relation.<br>\
 		Prescribe medicine and offer therapy courses for those who need it.<br>\
-		Determine if individuals are fit for work or not. Help those who are proven unfit."
+		Determine if individuals are fit for work or not. Help those who are proven unfit.<br>\
+		Use your psionic gifts to assist the colony."
 
 /obj/landmark/join/start/psychiatrist
 	name = "Soteria Psychiatrist"
 	icon_state = "player-green"
 	join_tag = /datum/job/psychiatrist
-
-
-/datum/job/paramedic
-	title = "Soteria Paramedic"
-	flag = PARAMEDIC
-	department = DEPARTMENT_MEDICAL
-	department_flag = MEDICAL
-	faction = MAP_FACTION
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "the Soteria Biolab Overseer"
-	difficulty = "Underappreciated."
-	selection_color = "#a8b69a"
-	wage = WAGE_LABOUR_HAZARD
-
-	outfit_type = /decl/hierarchy/outfit/job/medical/paramedic
-	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_surgery, access_paramedic,
-		access_eva, access_maint_tunnels, access_external_airlocks, access_chemistry, access_medical_suits
-	)
-
-	stat_modifiers = list(
-		STAT_BIO = 25,
-		STAT_TGH = 10,
-		STAT_VIG = 10,
-	)
-
-	perks = list(/datum/perk/medicalexpertise)
-
-	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
-							/datum/computer_file/program/chem_catalog,
-							 /datum/computer_file/program/camera_monitor)
-
-	description = "The Paramedic provides medical assistance on the field, while other doctors are busy in their department.<br>\
-	You are trained but lack seniority. Follow the guidance of other doctors - and transport patients back for specialist treatments.<br>\
-	Remember that you must often respond to emergencies. Pack your gear carefully and bring a breaching tool - be ready to run at short notice.<br>\
-	Your other duties include transporting patients between rooms, running errands, and generally saving time for other doctors.<br>\
-	Corpse recovery may also fall within your duties. If the body is in a dangerous location, enlist the help of the Blackshield."
-
-	duties = "Respond to distress calls and extract wounded people from dangerous situations.<br>\
-	Watch the crew monitor for signs of injuries or deaths and respond accordingly.<br>\
-	Tour around departments checking up on the health of the crew. Administer first aid on scene as required.<br>\
-	During quieter times, retrieve the corpses of the dead.<br>\
-	Run errands for the medbay staff, act as their hands outside of the medbay."
-
-/obj/landmark/join/start/paramedic
-	name = "Soteria Paramedic"
-	icon_state = "player-green"
-	join_tag = /datum/job/paramedic
-

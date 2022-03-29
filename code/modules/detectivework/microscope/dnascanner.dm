@@ -7,7 +7,7 @@
 	anchored = 1
 	density = 1
 
-	var/obj/item/weapon/forensics/swab/bloodsamp = null
+	var/obj/item/forensics/swab/bloodsamp = null
 	var/closed = 0
 	var/scanning = 0
 	var/scanner_progress = 0
@@ -25,7 +25,7 @@
 		to_chat(user, SPAN_WARNING("Open the cover before inserting the sample."))
 		return
 
-	var/obj/item/weapon/forensics/swab/swab = W
+	var/obj/item/forensics/swab/swab = W
 	if(istype(swab) && swab.is_used())
 		user.unEquip(W)
 		src.bloodsamp = swab
@@ -35,7 +35,7 @@
 		to_chat(user, SPAN_WARNING("\The [src] only accepts used swabs."))
 		return
 
-/obj/machinery/dnaforensics/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
+/obj/machinery/dnaforensics/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(stat & (NOPOWER)) return
 	if(user.stat || user.restrained()) return
 	var/list/data = list()
@@ -102,7 +102,7 @@
 	src.visible_message(SPAN_NOTICE("\icon[src] makes an insistent chime."), 2)
 	update_icon()
 	if(bloodsamp)
-		var/obj/item/weapon/paper/P = new(src)
+		var/obj/item/paper/P = new(src)
 		P.name = "[src] report #[++report_num]: [bloodsamp.name]"
 		P.copy_overlays(list("paper_stamped"), TRUE)
 		//dna data itself
@@ -122,7 +122,7 @@
 	return
 
 /obj/machinery/dnaforensics/attack_hand(mob/user)
-	ui_interact(user)
+	nano_ui_interact(user)
 
 /obj/machinery/dnaforensics/verb/toggle_lid()
 	set category = "Object"

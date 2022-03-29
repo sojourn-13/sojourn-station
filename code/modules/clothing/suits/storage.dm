@@ -1,13 +1,15 @@
 /obj/item/clothing/suit/storage
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
-	var/obj/item/weapon/storage/internal/pockets
+	var/obj/item/storage/internal/pockets
+	var/cant_hold = list(/obj/item/clothing/accessory)
 
 /obj/item/clothing/suit/storage/New()
 	..()
-	pockets = new/obj/item/weapon/storage/internal(src)
+	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 2	//two slots
 	pockets.max_w_class = ITEM_SIZE_SMALL		//fit only pocket sized items
 	pockets.max_storage_space = 4
+	pockets.cant_hold |= extra_allowed
 
 /obj/item/clothing/suit/storage/Destroy()
 	qdel(pockets)
@@ -36,8 +38,75 @@
 /obj/item/clothing/suit/storage/toggle
 	var/icon_open
 	var/icon_closed
-	verb/toggle()
-		set name = "Toggle Coat Buttons"
+	var/icon_drape
+
+/obj/item/clothing/suit/storage/toggle/New()
+	..()
+	check_coat_verbs()
+
+
+//Updates the verb list to accomodate with the jacket's current state
+/obj/item/clothing/suit/storage/toggle/proc/check_coat_verbs()
+	if(icon_state == icon_open)
+		src.verbs -= /obj/item/clothing/suit/storage/toggle/verb/unbutton
+		if(icon_closed)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/button
+		if(icon_drape)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/drape
+	else if(icon_state == icon_closed)
+		src.verbs -= /obj/item/clothing/suit/storage/toggle/verb/button
+		if(icon_drape)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/drape
+		if(icon_open)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/unbutton
+	else if(icon_state == icon_drape)
+		src.verbs -= /obj/item/clothing/suit/storage/toggle/verb/drape
+		if(icon_closed)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/button
+		if(icon_open)
+			src.verbs |= /obj/item/clothing/suit/storage/toggle/verb/unbutton
+
+
+/obj/item/clothing/suit/storage/toggle/verb/button()
+	set name = "Button Coat"
+	set category = "Object"
+	set src in usr
+	//Can't do it sometimes
+	if(!usr.canmove || usr.stat || usr.restrained())
+		return 0
+	icon_state = icon_closed
+	to_chat(usr, "You button the coat.")
+	check_coat_verbs()
+	update_wear_icon()
+
+
+/obj/item/clothing/suit/storage/toggle/verb/unbutton()
+	set name = "Unbutton Coat"
+	set category = "Object"
+	set src in usr
+	//Can't do it sometimes
+	if(!usr.canmove || usr.stat || usr.restrained())
+		return 0
+	icon_state = icon_open
+	to_chat(usr, "You unbutton the coat.")
+	check_coat_verbs()
+	update_wear_icon()
+
+/obj/item/clothing/suit/storage/toggle/verb/drape() //COAT CAPES
+	set name = "Drape Coat"
+	set category = "Object"
+	set src in usr
+	//Can't do it sometimes
+	if(!usr.canmove || usr.stat || usr.restrained())
+		return 0
+	icon_state = icon_drape
+	to_chat(usr, "You drape the coat over your shoulders.")
+	check_coat_verbs()
+	update_wear_icon()
+
+/*
+/obj/item/clothing/suit/storage/toggle/verb/toggle()
+		set name = "Unbutton Coat Buttons"
 		set category = "Object"
 		set src in usr
 		if(!usr.canmove || usr.stat || usr.restrained())
@@ -53,11 +122,18 @@
 			to_chat(usr, "This coat cannot be opened or closed.")
 			return
 		update_wear_icon()	//so our over-lays update
-
+*/
 
 /obj/item/clothing/suit/storage/vest/merc/New()
 	..()
-	pockets = new/obj/item/weapon/storage/internal(src)
+	pockets = new/obj/item/storage/internal(src)
+	pockets.storage_slots = 4
+	pockets.max_w_class = ITEM_SIZE_SMALL
+	pockets.max_storage_space = 8
+
+/obj/item/clothing/suit/storage/vest/ironhammer/New()
+	..()
+	pockets = new/obj/item/storage/internal(src)
 	pockets.storage_slots = 4
 	pockets.max_w_class = ITEM_SIZE_SMALL
 	pockets.max_storage_space = 8
@@ -76,6 +152,23 @@
 	icon_state = "puffervest"
 	item_state = "puffervest"
 
+/obj/item/clothing/suit/storage/puffer/purple
+	name = "purple puffer jacket"
+	desc = "A comfortable purple puffer vest."
+	icon_state = "puffycoatpurple"
+	item_state = "puffycoatpurple"
+
+/obj/item/clothing/suit/storage/puffer/blue
+	name = "blue puffer jacket"
+	desc = "A comfortable blue puffer vest."
+	icon_state = "puffycoatblue"
+	item_state = "puffycoatblue"
+
+/obj/item/clothing/suit/storage/puffer/red
+	name = "red puffer jacket"
+	desc = "A comfortable red puffer vest."
+	icon_state = "puffycoatred"
+	item_state = "puffycoatred"
 /*Dusters*/
 
 /obj/item/clothing/suit/storage/duster/brown
@@ -163,6 +256,19 @@
 	icon_state = "bladerunner_coat"
 	item_state = "bladerunner_coat"
 
+/obj/item/clothing/suit/storage/duster/donte
+	name = "exterminators jacket"
+	desc = "Your prom date won't know what to say when you show up wearing this stylish leather coat."
+	icon_state = "dante"
+	item_state = "dante"
+
+/obj/item/clothing/suit/storage/duster/denton
+	name = "futuristic coat"
+	desc = "whether hopping into action, or reading your coworkers emails, you'll be ready for any hostage situations"
+	icon_state = "denton"
+	item_state = "denton"
+
+
 /*Military Jackets*/
 
 /obj/item/clothing/suit/storage/miljacket/field
@@ -222,8 +328,8 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
-	armor = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
-	allowed = list (/obj/item/device/flash, /obj/item/weapon/pen, /obj/item/weapon/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/weapon/tank/emergency_oxygen, /obj/item/weapon/storage/fancy/cigarettes, /obj/item/weapon/storage/box/matches, /obj/item/weapon/reagent_containers/food/drinks/flask)
+	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	allowed = list (/obj/item/device/flash, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 
 /obj/item/clothing/suit/storage/snowsuit/command
 	name = "command snowsuit"
@@ -436,12 +542,62 @@
 	desc = "A sturdy grey jacket made out of synthetic leather."
 	icon_state = "leather_jacket"
 	item_state = "leather_jacket"
-	armor = list(melee = 20, bullet = 5, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 	price_tag = 80
+
+/obj/item/clothing/suit/storage/toggle/leather/midriff
+	name = "Midriff leather jacket"
+	desc = "A not so sturdy jacket made of synthetic leather. Some hooligan has devestated this one by cutting it the midrif and sewing zippers into the sleeves. Hardly covers anything."
+	icon_state = "midriff_leather"
+	item_state = "midriff_leather"
+	icon_open = "midriff_leather_open"
+	icon_closed = "midriff_leather"
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/leather/bikermidriff
+	name = "midriff bikers jacket"
+	desc = "A stylish, midriff jacket made of synthetic leather. Red inner padding and thick layers, it'd be a great jacket for cruising down the road; If not for the length"
+	icon_state = "bikermidriff"
+	item_state = "bikermidriff"
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/leather/bikermidriff/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Sleeves down, open"] = "bikermidriff"
+	options["Sleeves down, closed"] = "bikermidriff_closed_s"
+	options["Sleeves up, open"] = "bikermidriff_r_s"
+	options["Sleeves up, closed"] = "bikermidriff_r_closed_s"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
+/obj/item/clothing/suit/storage/texan
+	name = "ivory texan jacket"
+	desc = "A jacket fit for a Plasma magnate of southern origin. Yeehaw!" // Now you only need a comically large white top hat.
+	icon_state = "texan_jacket"
+	item_state = "texan_jacket"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /*Flannel Shirts*/
 
@@ -537,6 +693,21 @@
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 
+/obj/item/clothing/suit/storage/toggle/absolutehoodie
+	name = "absolutist hoodie"
+	desc = "A cotton black hoodie that's just a size too big. Very comfy."
+	icon_state = "absolutehoodie"
+	item_state = "absolutehoodie"
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 100,
+		rad = 0)
+	min_cold_protection_temperature = T0C - 20
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
 /*Peacoat*/
 
 obj/item/clothing/suit/storage/toggle/peacoat
@@ -556,6 +727,13 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	item_state_slots = list(slot_r_hand_str = "brown_jacket", slot_l_hand_str = "brown_jacket")
 	icon_open = "pilot_bomber_open"
 	icon_closed = "pilot_bomber"
+
+/obj/item/clothing/suit/storage/toggle/bomber/classic
+	name = "classic bomber jacket"
+	desc = "A thick leather bomber jacket. this one appears to have zippers on the sleeves, allowing them to be rolled up"
+	icon_state = "nu_bomber"
+	icon_open = "nu_bomber_open"
+	icon_closed = "nu_bomber"
 
 /obj/item/clothing/suit/storage/toggle/bomber/navigator
 	name = "navigator bomber jacket"
@@ -616,6 +794,37 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/storage/aerostatic_bomber_jacket
+	name = "red bomber jacket"
+	desc = "A red bomber jacket that looks like its seen better days."
+	icon_state = "aerostatic_bomber_jacket"
+	item_state = "aerostatic_bomber_jacket"
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 0,
+		bomb = 5,
+		bio = 30,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/storage/jamrock_blazer
+	name = "jamrock blazer"
+	desc = "A green blazer that looks perfect for a disco party."
+	icon_state = "jamrock_blazer"
+	item_state = "jamrock_blazer"
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 0,
+		bomb = 5,
+		bio = 30,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+	siemens_coefficient = 0.7
 
 /*Waistcoat*/
 /obj/item/clothing/suit/storage/wcoat/black
@@ -666,8 +875,8 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "sweatervest_red"
 	item_state = "sweatervest_red"
 	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
-	allowed = list(/obj/item/weapon/gun/projectile, /obj/item/weapon/gun/energy, /obj/item/weapon/pen, /obj/item/weapon/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/weapon/tank/emergency_oxygen, /obj/item/weapon/storage/fancy/cigarettes, /obj/item/weapon/storage/box/matches, /obj/item/weapon/reagent_containers/food/drinks/flask)
-	armor = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_OCLOTHING
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	siemens_coefficient = 0.9
@@ -724,24 +933,24 @@ obj/item/clothing/suit/sweater/blue
 //Makeshift chest rig.
 /obj/item/clothing/suit/storage/vest/chestrig
 	name = "makeshift chest rig"
-	desc = "A makeshift chest rig made for carrying some stuff. Can carry four small items. Has little protective value.."
+	desc = "A makeshift chest rig made for carrying some stuff. Can carry eight small items. Has little protective value."
 	icon_state = "mchestrig"
 	item_state = "mchestrig"
-	armor = list(
+	armor_list = list(
 		melee = 10,
 		bullet = 5,
 		energy = 5,
 		bomb = 5,
-		bio = 0,
+		bio = 5,
 		rad = 0
 	)
 
 /obj/item/clothing/suit/storage/vest/chestrig/New()
 	..()
-	pockets = new/obj/item/weapon/storage/internal(src)
-	pockets.storage_slots = 4
+	pockets = new/obj/item/storage/internal(src)
+	pockets.storage_slots = 8
 	pockets.max_w_class = ITEM_SIZE_SMALL
-	pockets.max_storage_space = 8
+	pockets.max_storage_space = 16
 
 /*Suit Jackets*/
 /obj/item/clothing/suit/storage/suitjacket/black
@@ -797,4 +1006,13 @@ obj/item/clothing/suit/sweater/blue
 	desc = "A snappy tan suit jacket."
 	icon_state = "tan_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
-	allowed = list(/obj/item/weapon/gun/projectile, /obj/item/weapon/gun/energy, /obj/item/weapon/pen, /obj/item/weapon/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/weapon/tank/emergency_oxygen, /obj/item/weapon/storage/fancy/cigarettes, /obj/item/weapon/storage/box/matches, /obj/item/weapon/reagent_containers/food/drinks/flask)
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+
+/obj/item/clothing/suit/storage/suitjacket/scav
+	name = "frontier jacket"
+	desc = "A rough make jacket, patched together from a variety of tough cloth, \
+	the fabric holds up well against wear and tear. Made first by several sewing inclined \
+	Prospectors in order to avoid cuts and scraps while out in the field, \
+	the design soon found itself spread throughout the colony."
+	icon_state = "scav_jacket"
+	item_state = "scav_jacket"

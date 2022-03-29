@@ -36,6 +36,8 @@
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird."
 	icon_state = "penguin"
 	icon_dead = "penguin_dead_blood"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 2
 	maxHealth = 20
 	health = 20
 	turns_per_move = 5
@@ -47,12 +49,15 @@
 	melee_damage_upper = 15
 	attacktext = list("pecked")
 	colony_friend = TRUE
+	friendly_to_colony = TRUE
 
 /mob/living/simple_animal/penguin/baby
 	name = "penguin chick"
 	desc = "An ungainly, waddling, cute, and VERY well-dressed bird. This one is just a baby."
 	icon_state = "penguin_baby"
 	icon_dead = "penguin_baby_dead_blood"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 1 // Why would you? You monster.
 	maxHealth = 10
 	health = 10
 	harm_intent_damage = 10
@@ -64,6 +69,8 @@
 	desc = "A long-necked waterbird."
 	icon_state = "goose"
 	icon_dead = "goose_dead"
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken
+	meat_amount = 2
 	maxHealth = 20
 	health = 20
 	turns_per_move = 5
@@ -74,6 +81,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = list("pecked")
+	inherent_mutations = list(MUTATION_HONK, MUTATION_IMBECILE, MUTATION_DEAF, MUTATION_NEARSIGHTED)
 	faction = "pond"
 	colony_friend = TRUE
 
@@ -121,7 +129,9 @@
 				"Ararrrararr.")
 	emote_hear = list("screEEEEeeches!","chirps.")
 	emote_see = list("earflicks","sniffs at the ground")
+	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_IMBECILE, MUTATION_TOURETTES)
 	colony_friend = TRUE
+	faction = "pond"
 
 /mob/living/simple_animal/fennec/fennix
 	name = "fennix"

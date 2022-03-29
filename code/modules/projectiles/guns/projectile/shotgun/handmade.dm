@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/shotgun/slidebarrel
+/obj/item/gun/projectile/shotgun/slidebarrel
 	name = "slide barrel shotgun"
 	desc = "Made out of trash, but rather special on its design"
 	icon = 'icons/obj/guns/projectile/slideshotgun.dmi'
