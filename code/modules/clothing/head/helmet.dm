@@ -67,8 +67,6 @@
 
 /obj/item/clothing/head/helmet/ballistic/militia/bulletproof
 	name = "blackshield bulletproof helmet"
-	desc = "Standard military gear. Protects the head from impacts and shrapnel.\
-			This one bears the IFF stripes of the Blackshield."
 	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles\
 	This one bears the IFF stripes of the blackshield."
 	armor_list = list(
