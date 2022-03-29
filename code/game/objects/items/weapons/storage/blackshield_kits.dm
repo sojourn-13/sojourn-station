@@ -52,6 +52,20 @@
 		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/duty
+	name = "\improper Duty Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a Duty heavy carbine, a locally made rifle with a sharp knife at the end, good for just about any trooper. Can even be speed loaded to quickly reload the mag inside."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/duty(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/light_rifle_257_short(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+
 /obj/item/storage/box/bs_kit/sts
 	name = "\improper STS Primary Kit"
 	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."

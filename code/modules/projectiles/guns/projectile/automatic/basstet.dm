@@ -11,7 +11,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	recoil_buildup = 2
 	caliber = CAL_LRIFLE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_STANMAG
 	one_hand_penalty = 12 //automatic rifle level
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)

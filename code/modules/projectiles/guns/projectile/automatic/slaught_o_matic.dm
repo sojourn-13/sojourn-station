@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_SMALL
 	can_dual = TRUE
 	caliber = CAL_PISTOL
-	max_shells = 0
+	max_shells = 1
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	ammo_type = "/obj/item/ammo_casing/pistol"
