@@ -77,11 +77,11 @@
 //Kriosan treats
 
 obj/item/storage/fancy/dogtreats
-	icon_state = "dogtreats"
+	icon_state = "dogtreat"
 	name = "\improper packet of Kriosan treats"
 	desc = "A small purple packet with a handful of Kriosan treats, a hardy snack well beloved by Kriosans the galaxy over."
 	storage_slots = 4
-	icon_type = "dogtreats"
+	icon_type = "dogtreat"
 	can_hold = list(
 		/obj/item/reagent_containers/food/snacks/dogtreats
 		)
@@ -89,6 +89,7 @@ obj/item/storage/fancy/dogtreats
 obj/item/storage/fancy/dogtreats/populate_contents()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/reagent_containers/food/snacks/dogtreats(src)
+	update_icon()
 
 /obj/item/storage/fancy/dogtreats/update_icon()
 	icon_state = "[initial(icon_state)][contents.len]"
