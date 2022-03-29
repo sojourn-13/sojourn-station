@@ -56,3 +56,15 @@
 /mob/living/carbon/superior_animal/ameridian_golem/update_icon()
 	transform = initial(transform)
 	transform *= size_factor // So the crystal is at 20% size at growth 1, 40% at growth 2, e.t.c.
+
+/mob/living/carbon/superior_animal/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)
+	if(istype(P, /obj/item/projectile/sonic_bolt))
+		var/obj/item/projectile/sonic_bolt/SB = P
+		SB.multiply_projectile_damage(SB.golem_damage_bonus)
+		drop_amount = 0 // No loot
+
+	..()
+
+	spawn(10) // Wait 0.1 seconds to see if we died
+		if(stat != DEAD) // We're still alive!
+			drop_amount = initial(drop_amount) // So we still have loot
