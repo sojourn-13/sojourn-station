@@ -3192,7 +3192,6 @@
 #include "maps\submaps\junk_field\j25_25\onestar\onestar.dm"
 #include "maps\submaps\junk_field\j25_25\serbian\serbian.dm"
 #include "maps\submaps\junk_field\j5_5\neutral\neutral.dm"
-#include "maps\testmap\test_map.dmm"
 #include "modular_sojourn\area_blurbs.dm"
 #include "modular_sojourn\lamp.dm"
 #include "modular_sojourn\pixelshift.dm"
