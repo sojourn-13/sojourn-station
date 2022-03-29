@@ -304,17 +304,17 @@
 /obj/item/clothing/accessory/cape/blackshield/green
 	name = "green Blackshield cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a fetching green."
-	icon_state = "blackshieldcloak_grp"
+	icon_state = "blackshieldcloak_green"
 
 /obj/item/clothing/accessory/cape/blackshield/tan
 	name = "tan Blackshield cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a light tan."
-	icon_state = "blackshieldcloak_tp"
+	icon_state = "blackshieldcloak_tan"
 
 /obj/item/clothing/accessory/cape/blackshield/camo
 	name = "camo Blackshield cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern"
-	icon_state = "blackshieldcloak_cp"
+	icon_state = "blackshieldcloak_camo"
 
 /obj/item/clothing/accessory/cape/blackedge
 	name = "heavy black cloak"
