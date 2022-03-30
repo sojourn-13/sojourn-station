@@ -587,6 +587,16 @@
 	affective_damage_range = 10
 	affective_ap_range = 10
 
+/obj/item/projectile/bullet/shotgun/railgun/gauss
+	name = "gauss"
+	icon_state = "gauss"
+	hitscan = TRUE
+	can_ricochet = FALSE
+	affective_damage_range = 12
+	affective_ap_range = 12
+	damage_types = list(BRUTE = 45, BURN = 30)
+	armor_penetration = 50
+
 /obj/item/projectile/bullet/kurtz_50/railgun
 	nocap_structures = TRUE
 	hitscan = TRUE

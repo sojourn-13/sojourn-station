@@ -156,3 +156,44 @@
 		list(mode_name="Beanbag", mode_desc="Fires a beanbag synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, charge_cost=25, icon="stun"),
 		list(mode_name="Blast", mode_desc="Fires a slug synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=null, icon="destroy"),
 	)
+
+
+//Gauss-rifle type
+/obj/item/gun/energy/laser/railgun/gauss
+	name = "\"Liberator\" gauss rifle"
+	desc = "A rather heavy rifle sporting a cell-loading mount, a adjustable recoil-compensating stock, a hand-crank to manually chamber the next round and a series of coils lining its front. \
+	Placing one's hand towards the heavy-duty coils at the front of the gun is not recomended, but one can simply feel the energy going through the weapon when charged up. \
+	At the stock a large script-styled 'M' appears to be engraved into it, a form of signature from its designer along with an artificer Guild logo."
+	icon_state = "gauss"
+	item_state = "gauss"
+	w_class = ITEM_SIZE_HUGE
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 15, MATERIAL_SILVER = 10, MATERIAL_GOLD = 6)
+	charge_cost = 1000
+	fire_delay = 20
+	recoil_buildup = 40
+	one_hand_penalty = 80
+	zoom_factor = 1.8
+	extra_damage_mult_scoped = 0.2
+	damage_multiplier = 1.6
+	penetration_multiplier = 4.0
+	twohanded = TRUE
+	slowdown_hold = 1.5
+	brace_penalty = 30
+	init_firemodes = list(
+		list(mode_name="powered-rod", mode_desc="fires a metal rod at light speeds", /obj/item/projectile/bullet/shotgun/railgun/gauss, icon="kill"),
+		list(mode_name="fragmented scrap", mode_desc="fires a brittle, sharp piece of scrap-metal", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
+	)
+	consume_cell = FALSE
+	price_tag = 6000
+
+/obj/item/gun/energy/laser/railgun/gauss/update_icon()
+	cut_overlays()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(wielded)
+		itemstring += "_doble"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
