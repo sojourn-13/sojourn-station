@@ -12,6 +12,9 @@
 		// If we have the right perk or standing close - GetVoice() again, but skip mask check
 		if((get_dist(src, H) < 2) || stats?.getPerk(PERK_EAR_OF_QUICKSILVER))
 			speaker_name = H.rank_prefix_name(H.GetVoice(FALSE))
+		//If the person is a ghost/spectator - you should be able to get the voice of the person.
+		if(isghost(src))
+			speaker_name = H.rank_prefix_name(H.GetVoice(FALSE))
 
 	if(speech_volume)
 		message = "<FONT size='[speech_volume]'>[message]</FONT>"
