@@ -9,8 +9,7 @@
 	)
 
 /obj/item/circuitboard/ameridianshieldwallgen
-	name = "circuit board ameridian sonic fence generator"
-	build_name = ""
+	build_name = "sonic fence generator"
 	board_type = "machine"
 	build_path = /obj/machinery/shieldwallgen/ameridian
 	origin_tech = list(TECH_BLUESPACE = 3, TECH_MAGNET = 3)
