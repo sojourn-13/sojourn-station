@@ -14,11 +14,12 @@
 
 /obj/machinery/shieldwall/ameridian/New()
 	..()
-	for(var/obj/structure/ameridian_crystal/AC in loc)
-		if(istype(AC, /obj/structure/ameridian_crystal/spire)) // Don't destroy spires.
-			continue
-		AC.visible_message("[AC] shatters.")
-		Destroy()
+	spawn(1)
+		for(var/obj/structure/ameridian_crystal/AC in get_turf(src))
+			if(istype(AC, /obj/structure/ameridian_crystal/spire)) // Don't destroy spires.
+				continue
+			AC.visible_message("[AC] shatters.")
+			AC.Destroy()
 
 /obj/machinery/shieldwall/ameridian/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	return TRUE // Everything can go through, it's a sound barrier, not a physical thing
