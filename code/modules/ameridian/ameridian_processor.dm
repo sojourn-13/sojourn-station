@@ -18,7 +18,12 @@
 	var/build_eff = 1
 	var/eat_eff = 1
 
-	// Keep in mind the points are affected by components
+	/* Keep in mind the points are affected by components tier.
+		T5 = 20% of the initial price.
+		T4 = 25% of the initial price.
+		T3 = 33% of the initial price.
+		T2 = 50% of the initial price.
+	*/
 	var/list/recipes = list(
 		"Steel",
 			list(name="Steel (1)", cost=100, path=/obj/item/stack/material/steel),
