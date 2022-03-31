@@ -84,7 +84,6 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
-					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"STS Kit" = /obj/item/storage/box/bs_kit/sts,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Grease Gun Kit" = /obj/item/storage/box/bs_kit/greasegun,

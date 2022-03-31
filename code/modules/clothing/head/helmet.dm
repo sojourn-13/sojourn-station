@@ -66,17 +66,31 @@
 		return 1
 
 /obj/item/clothing/head/helmet/ballistic/militia/bulletproof
-	name = "blackshield bulletproof helmet"
+	name = "Blackshield bulletproof helmet"
+	icon_state = "bulletproof_bs"
 	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles\
 	This one bears the IFF stripes of the blackshield."
-	armor_list = list(
-		melee = 25,
-		bullet = 60,
-		energy = 25,
-		bomb = 10,
-		bio = 0,
-		rad = 0
-	)
+	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	armor_list = list(melee = 25, bullet = 60, energy = 25, bomb = 10, bio = 0, rad = 0)
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+	light_overlay = "bs_bulletproof"
+
+
+/obj/item/clothing/head/helmet/laserproof/militia
+	name = "Blackshield ablative helmet"
+	icon_state = "ablative_bs"
+	desc = "An outdated, energy resistant helmet in a distinctive style. Loved by politicians, loathed by taxpayers and tollerated by the \
+	local forces so often put within it."
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	armor_list = list(melee = 15, bullet = 15, energy = 60, bomb = 0, bio = 0, rad = 0)
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 4
+	light_overlay = "bs_ablative"
+
+
 
 /obj/item/clothing/head/helmet/ballistic/green
 	name = "green ballistic helmet"
@@ -250,6 +264,7 @@
 	options["tangent ridge helmet open"] = "tangent_ridge_helmet"
 	options["greater heart helmet"] = "greater_heart"
 	options["tessellate helmet"] = "tessellate_helmet"
+	options["factorial armor"] = "factorial_helmet"
 	options["lemniscate helmet"] = "lemniscate_helmet"
 	options["divisor helmet"] = "divisor_helmet"
 	options["monomial helmet"] = "monomial_helmet"
