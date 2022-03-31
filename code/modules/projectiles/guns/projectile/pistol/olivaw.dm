@@ -8,7 +8,7 @@
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	can_dual = TRUE
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6)
 	price_tag = 450

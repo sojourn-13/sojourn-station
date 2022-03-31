@@ -11,7 +11,7 @@
 	slot_flags = 0
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_BOX
 	caliber = CAL_RIFLE
 	tac_reloads = FALSE

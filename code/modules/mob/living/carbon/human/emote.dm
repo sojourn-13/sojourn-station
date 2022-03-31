@@ -916,7 +916,11 @@
 		if ("moo")
 			m_type = 2
 			message = "moos."
-			playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1)
+			playsound(loc, 'sound/voice/moo1.ogg', 50, 1, -1) //credit to minecraft for the sound effect!
+		if ("bleat")
+			m_type = 2
+			message = "bleats."
+			playsound(loc, 'sound/voice/bleat.ogg', 50, 1, -1) //credit to bigsoundbank for the effect.
 		if ("warble")
 			m_type = 2
 			message = "warbles."

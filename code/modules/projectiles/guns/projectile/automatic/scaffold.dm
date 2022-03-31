@@ -10,7 +10,7 @@
 	caliber = "10x24"
 	origin_tech = list(TECH_COMBAT = 12, TECH_MATERIAL = 10)
 	slot_flags = SLOT_BELT|SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PULSE
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_PLASTIC = 35, MATERIAL_PLATINUM = 20)

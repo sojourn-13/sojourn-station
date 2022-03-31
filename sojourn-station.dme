@@ -2695,6 +2695,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\chaingun.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\dp.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\drozd.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\duty.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\greasegun.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\lmg.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\luger.dm"
