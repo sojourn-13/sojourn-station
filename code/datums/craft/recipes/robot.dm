@@ -178,6 +178,7 @@
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
 	)
 
+/* Commented out until balanced.
 // Hydrogen Knight Rig recipe
 /datum/craft_recipe/robotic/hydrogen_knight
 	name = "Hydrogen Knight Rigsuit"
@@ -228,4 +229,4 @@
 		list(/obj/item/robot_parts/robot_component/ion_jaunt, 1, "time" = 30),
 		list(QUALITY_HAMMERING, 30, "time" = 90),
 		list(QUALITY_WELDING, 60, "time" = WORKTIME_EXTREMELY_LONG)
-	)
+	)*/
