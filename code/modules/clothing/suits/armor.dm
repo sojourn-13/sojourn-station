@@ -170,6 +170,7 @@
 		rad = 0
 	)
 
+
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
 	desc = "Every rose has its thorns."
@@ -225,6 +226,7 @@
 	options["tangent plate armor"] = "tangent_plate_armor"
 	options["greater heart armor"] = "greater_heart"
 	options["lemniscate armor"] = "lemniscate_armor"
+	options["factorial armor"] = "factorial_armor"
 	options["monomial armor"] = "monomial_armor"
 	options["divisor armor"] = "divisor_armor"
 	options["tessellate armor"] = "tessellate_armor"
@@ -388,7 +390,7 @@
 	item_state = "bulletproof_fullbody"
 
 /obj/item/clothing/suit/armor/laserproof
-	name = "ablative armor vest"
+	name = "reflective armor vest"
 	desc = "A vest that excels in protecting the wearer against energy projectiles."
 	icon_state = "ablative"
 	item_state = "ablative"
@@ -426,7 +428,7 @@
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
 /obj/item/clothing/suit/armor/laserproof/rnd
-	name = "soteria ablative armor vest"
+	name = "soteria reflective armor vest"
 	desc = "A Soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
@@ -749,6 +751,22 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/suit/armor/bulletproof/ironhammer/militia
+	name = "Blackshield bulletproof suit"
+	desc = "A set of vest, shoulder guards and leg guards that excel at protecting against high-velocity, solid projectiles. \
+	This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in\
+	blackshield colors and given their I.F.F markings."
+	icon_state = "bulletproof_bs"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+/obj/item/clothing/suit/armor/vest/ablative/militia
+	name = "Blackshield ablative plate"
+	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors.\
+	A distinctive set of equipment, the MK-II 'Energy Defense Gear' sold more for its distinctive, and some would say 'flashy'\
+	appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink it serves as a fairly adequate piece of gear."
+	icon_state = "ablative_bs"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/suit/armor/platecarrier/green
 	name = "green plate carrier"

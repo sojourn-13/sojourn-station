@@ -242,6 +242,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/ram
+	name = "Ram Horns"
+	desc = ""
+	icon_state = "ram-horns"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/mousehc
 	name = "Mouse Ears"
 	desc = ""
