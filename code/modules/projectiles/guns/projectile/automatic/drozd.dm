@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_PISTOL
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 3)
 	price_tag = 1000

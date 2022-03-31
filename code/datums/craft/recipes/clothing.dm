@@ -389,6 +389,18 @@
 		list(QUALITY_WELDING, 15, 30),
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
+/datum/craft_recipe/clothing/woplate
+	name = "Warrant Officer's full advanced plate carrier"
+	result =  /obj/item/clothing/suit/armor/platecarrier/hos/full
+	steps = list(
+		list(/obj/item/clothing/suit/armor/platecarrier/hos, 1, "time" = 30),
+		list(/obj/item/clothing/under, 1),
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL), // In accordance to flak vests
+		list(QUALITY_WELDING, 15, 30),
+		list(QUALITY_ADHESIVE, 15, 30)
+	)
 
 /***********************
 * 	Outsider crafts

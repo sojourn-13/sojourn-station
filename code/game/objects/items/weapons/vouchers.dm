@@ -20,7 +20,7 @@
 	voucher_type = "Primary"
 
 /obj/item/voucher/blackshield/sargprimary
-	name = "\improper sergeant armor voucher"
+	name = "\improper sergeant weapon voucher"
 	desc = "A token to redeem sergeant equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "SargPrimary"

@@ -47,6 +47,14 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/blackshield
+	display_name = "cloak, blackshield"
+	path = /obj/item/clothing/accessory/cape/blackshield
+	allowed_roles = list("Militia Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_wear_suit
+	flags = GEAR_HAS_TYPE_SELECTION
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/capfield
 	display_name = "cap, field"
 	path = /obj/item/clothing/head/soft/sec2soft
@@ -91,6 +99,13 @@
 /datum/gear/factionsecurity/turtleneck
 	display_name = "Marshal turtleneck"
 	path = /obj/item/clothing/under/rank/security/turtleneck
+	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
+	slot = slot_w_uniform
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/juniormarshal
+	display_name = "Junior Marshals uniform"
+	path = /obj/item/clothing/under/rank/security/cadet
 	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"

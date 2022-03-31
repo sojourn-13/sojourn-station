@@ -26,6 +26,7 @@
 	var/drawChargeMeter = TRUE
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 	fire_animatio = TRUE
+	allow_racking = FALSE
 
 /obj/item/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin revolver"

@@ -304,7 +304,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257/lethal
 	name = "carbine magazine (hollow-point)"
-	icon_state = "lrifle_long_r"
+	icon_state = "lrifle_long_l"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
 /obj/item/ammo_magazine/light_rifle_257/scrap

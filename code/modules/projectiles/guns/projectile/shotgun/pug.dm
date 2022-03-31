@@ -9,7 +9,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1750

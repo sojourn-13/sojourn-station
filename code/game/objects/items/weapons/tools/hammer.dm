@@ -143,7 +143,7 @@
 
 /obj/item/tool/hammer/ironhammer/attack()
 	..()
-	usr.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+	usr.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2.2)
 
 /obj/item/tool/hammer/mace
 	name = "mace"

@@ -56,7 +56,7 @@
 	name = "Heavy Roomba Plating"
 	result = /obj/item/bot_part/roomba/roomba_plating/heavy
 	steps = list(
-		list(/obj/item/bot_part/roomba/roomba_plating, 10, "time" = 60),
+		list(/obj/item/bot_part/roomba/roomba_plating, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_WELDING, 10, "time" = 60)
 	)

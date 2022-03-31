@@ -212,6 +212,9 @@
 	icon_state = "ballisticmed"
 	item_state = "ballisticmed"
 
+/obj/item/clothing/glasses/ballistic/med/process_hud(var/mob/M)
+	process_med_hud(M, 1)
+
 /obj/item/clothing/glasses/ballistic/perscription
 	name = "perscription ballistic goggles"
 	desc = "Protects the eyes from sudden flash, debris, and light shrapnel, and astigmatism."

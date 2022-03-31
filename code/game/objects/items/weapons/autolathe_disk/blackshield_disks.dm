@@ -23,6 +23,7 @@
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
+		/datum/design/autolathe/gun/duty = 6,
 		//machinegun
 		/datum/design/autolathe/gun/saw = 4,
 		/datum/design/autolathe/gun/ppv = 5,
@@ -155,6 +156,46 @@
 		/datum/design/autolathe/ammo/hpistol_lethal = 2,
 		)
 
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
+	disk_name = "Blackshield .35 Auto \"Semyonovich\""
+	icon_state = "blackshield"
+	license = 8
+
+	designs = list(
+		/datum/design/autolathe/gun/ppv = 3,
+		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
+		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_35_drum/lethal = 2
+		)
+
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun
+	disk_name = "Blackshield - .35 Auto \"Grease Gun\""
+	icon_state = "blackshield"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/greasegun = 3,
+		/datum/design/autolathe/ammo/smg_practice = 0,
+		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg,
+		/datum/design/autolathe/ammo/smg_lethal = 2
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler
+	disk_name = "Blackshield - .35 Buckler SMG"
+	icon_state = "blackshield"
+
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/buckler = 3,
+		/datum/design/autolathe/ammo/smg_practice = 0,
+		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg,
+		/datum/design/autolathe/ammo/smg_lethal = 2
+	)
+
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki
 	disk_name = "NM - 7.5mm \"Strelki\""
 	icon_state = "blackshield"
@@ -165,11 +206,11 @@
 		/datum/design/autolathe/ammo/rifle,
 		/datum/design/autolathe/ammo/rifle_rubber,
 		/datum/design/autolathe/ammo/rifle_practice = 0,
-		/datum/design/autolathe/ammo/rifle_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_lethal = 2
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower
-	disk_name = "NM - 7.5mm \"Strelki\""
+	disk_name = "NM - 7.5mm \"Watchtower\""
 	icon_state = "blackshield"
 	license = 8
 
@@ -178,7 +219,7 @@
 		/datum/design/autolathe/ammo/rifle,
 		/datum/design/autolathe/ammo/rifle_rubber,
 		/datum/design/autolathe/ammo/rifle_practice = 0,
-		/datum/design/autolathe/ammo/rifle_lethal = 2,
+		/datum/design/autolathe/ammo/rifle_lethal = 2
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor
@@ -192,20 +233,7 @@
 		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber = 2,
 		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 3,
-		/datum/design/autolathe/ammo/sl_rifle = 2,
-		)
-
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
-	disk_name = "Blackshield .35 Auto \"Semyonovich\""
-	icon_state = "blackshield"
-	license = 8
-
-	designs = list(
-		/datum/design/autolathe/gun/ppv = 3,
-		/datum/design/autolathe/ammo/pistol_35_drum,
-		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
-		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
-		/datum/design/autolathe/ammo/pistol_35_drum/lethal = 2,
+		/datum/design/autolathe/ammo/sl_rifle = 2
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp
@@ -215,33 +243,26 @@
 
 	designs = list(
 		/datum/design/autolathe/gun/dp = 3,
-		/datum/design/autolathe/ammo/maxim = 1,
+		/datum/design/autolathe/ammo/maxim = 1
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/greasegun
-	disk_name = "Blackshield - .35 Auto \"Grease Gun\""
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty
+	disk_name = "NM - .257 Duty Rifle"
 	icon_state = "blackshield"
 
-	license = 8
+	license = 16
 	designs = list(
-		/datum/design/autolathe/gun/greasegun = 3,
-		/datum/design/autolathe/ammo/smg_practice = 0,
-		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 2,
-	)
+		/datum/design/autolathe/gun/duty = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+		/datum/design/autolathe/ammo/lrifle_speed_loader
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler
-	disk_name = "Blackshield - .35 Buckler SMG"
-	icon_state = "blackshield"
-
-	license = 12
-	designs = list(
-		/datum/design/autolathe/gun/buckler = 3,
-		/datum/design/autolathe/ammo/smg_practice = 0,
-		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg,
-		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/basstet
@@ -258,7 +279,20 @@
 		/datum/design/autolathe/ammo/lrifle_practice = 1,
 		/datum/design/autolathe/ammo/lrifle_rubber = 2,
 		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4
+	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/blackguard
+	disk_name = "NM - .408 Blackguard Omni Rifle"
+	icon_state = "blackshield"
+
+	license = 8 //RARE GUN REALLY RARE REALLY GOOD
+	designs = list(
+		/datum/design/autolathe/gun/blackguard = 6,
+		/datum/design/autolathe/ammo/hrifle_practice = 0,
+		/datum/design/autolathe/ammo/hrifle_rubber,
+		/datum/design/autolathe/ammo/hrifle,
+		/datum/design/autolathe/ammo/hrifle_lethal = 2
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/rushingbull
@@ -270,5 +304,5 @@
 		/datum/design/autolathe/gun/rushing_bull = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_illumination,
+		/datum/design/autolathe/ammo/shotgun_illumination
 		)

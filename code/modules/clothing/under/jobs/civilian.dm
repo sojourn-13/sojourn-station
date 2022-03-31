@@ -130,7 +130,7 @@
 	desc = "A snappy Lonestar jumpsuit complete with sturdy mining overalls."
 	name = "lonestar miner's jumpsuit"
 	icon_state = "miner"
-	item_state = "lb_suit"
+	item_state = "miner"
 
 /obj/item/clothing/under/outcast
 	name = "tactical baggy rags"
@@ -139,3 +139,8 @@
 	item_state = "tactical_rags"
 	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 5)
 
+/obj/item/clothing/under/rank/lonestar_gorka
+	name = "lonestar gorka jumpsuit"
+	desc = "A gorka suit painted over with Lonestar orange and black."
+	icon_state = "ls_gorka"
+	item_state = "ls_gorka"

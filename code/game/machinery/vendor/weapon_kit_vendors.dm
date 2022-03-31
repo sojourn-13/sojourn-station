@@ -6,6 +6,7 @@
 	icon_state = "trashvend"
 	products = list( // 5 in stock for the default blackshield kit, 3 for the rest
 		/obj/item/storage/box/bs_kit/mosin = 5,
+		/obj/item/storage/box/bs_kit/duty = 2,
 		/obj/item/storage/box/bs_kit/sts = 3,
 		/obj/item/storage/box/bs_kit/sts_para = 2,
 		/obj/item/storage/box/bs_kit/rds_omnicarbine = 2,
@@ -32,6 +33,7 @@
 		)
 	prices = list( // 500$ for default Blackshield stuff, 750 for the rest
 		/obj/item/storage/box/bs_kit/mosin = 500,
+		/obj/item/storage/box/bs_kit/duty = 800,
 		/obj/item/storage/box/bs_kit/sts = 750,
 		/obj/item/storage/box/bs_kit/sts_para = 1200,
 		/obj/item/storage/box/bs_kit/rds_omnicarbine = 1200,
@@ -102,6 +104,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemSargPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
+					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"Buckler SMG Kit" = /obj/item/storage/box/bs_kit/buckler,
 					"STS Para Kit" = /obj/item/storage/box/bs_kit/sts_para,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
@@ -171,6 +174,7 @@
 	icon_state = "trashvend"
 	products = list(
 		/obj/item/storage/box/m_kit/thompson = 5,
+		/obj/item/storage/box/m_kit/breacher = 5,
 		/obj/item/storage/box/m_kit/state_auto = 5,
 		/obj/item/storage/box/m_kit/bulldog = 5,
 		/obj/item/storage/box/m_kit/gear_lasgun = 5,
@@ -187,6 +191,7 @@
 		)
 	prices = list( // 500$ for default marshal stuff, 750 for the rest
 		/obj/item/storage/box/m_kit/thompson = 750,
+		/obj/item/storage/box/m_kit/breacher = 750,
 		/obj/item/storage/box/m_kit/state_auto = 750,
 		/obj/item/storage/box/m_kit/bulldog = 750,
 		/obj/item/storage/box/m_kit/gear_lasgun = 750,
@@ -225,6 +230,7 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Thompson Kit" = /obj/item/storage/box/m_kit/thompson,
+					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Bulldog Kit" = /obj/item/storage/box/m_kit/bulldog,
 					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun)

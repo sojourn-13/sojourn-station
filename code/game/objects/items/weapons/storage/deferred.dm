@@ -315,7 +315,6 @@
 	/obj/item/clothing/under/excelsior = 1,
 	/obj/item/gun/matter/launcher/reclaimer = 1,
 	/obj/item/storage/toolbox/syndicate = 1,
-	/obj/item/device/radio/headset/uplink = 1,
 	/obj/item/storage/toolbox/electrical = 1,
 	/obj/item/clothing/shoes/combat = 1,
 	/obj/item/clothing/gloves/thick/combat = 1,

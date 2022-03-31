@@ -10,7 +10,7 @@
 	caliber = CAL_RIFLE //needs a new caliber type?
 	origin_tech = list(TECH_COMBAT = 6, TECH_ILLEGAL = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
+	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE //need a new magwell type?
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 5)
 	price_tag = 2000
