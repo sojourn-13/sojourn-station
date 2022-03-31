@@ -31,6 +31,9 @@
 /obj/structure/ameridian_crystal/spire/ex_act(severitiy)
 	return
 
+/obj/structure/ameridian_crystal/spire/bullet_act(var/obj/item/projectile/Proj)
+	return
+
 // Spires always spawn a golem each
 /obj/structure/ameridian_crystal/spire/handle_golems()
 	handle_golem_distance() // So that someone doesn't grab the golem and kidnap it to render the spire harmless
