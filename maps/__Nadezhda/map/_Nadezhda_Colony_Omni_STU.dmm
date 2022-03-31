@@ -3065,7 +3065,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security{
 	name = "Sergeant Office";
-	req_access = list(1)
+	req_access = list(3)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/tactical_blackshield)
@@ -34908,6 +34908,11 @@
 /obj/structure/flora/small/trailrockb2,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"hUy" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/nadezhda/crew_quarters/hydroponics)
 "hUB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spider/stickyweb,
@@ -94278,6 +94283,7 @@
 	dir = 1;
 	pixel_y = -28
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "vfv" = (
@@ -127538,7 +127544,7 @@ cwr
 jVE
 rCj
 gra
-gWX
+hUy
 mlp
 coC
 ebZ

@@ -253,7 +253,8 @@
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/tank/emergency_nitgen,
 		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare
+		/obj/item/ammo_casing/flare,
+		/obj/item/ammo_casing/shotgun
 		)
 
 /obj/item/storage/pouch/tubular/vial

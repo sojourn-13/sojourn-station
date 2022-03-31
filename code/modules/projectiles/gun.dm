@@ -928,7 +928,9 @@
 /obj/item/gun/zoom(tileoffset, viewsize)
 	..()
 	if(zoom)
+		refresh_upgrades() //Lets not allow some silly stacking exploits
 		init_offset -= scoped_offset_reduction
+		damage_multiplier += extra_damage_mult_scoped
 	else
 		refresh_upgrades()
 
