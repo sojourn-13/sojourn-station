@@ -202,6 +202,12 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
 
+	ram_horns
+		name = "Ram Horns"
+		icon_state = "ram-horns"
+		blend = ICON_MULTIPLY
+		body_parts = list(BP_HEAD)
+
 	demon_horns2
 		name = "Demon Horns"
 		icon_state = "demon-horns2"
@@ -975,7 +981,7 @@
 		icon_state = "bandage"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_ARM)
-		
+
 //Left Hand
 
 	bandage_l_hand
@@ -1007,7 +1013,7 @@
 		icon_state = "bandage"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_ARM)
-		
+
 //Right Hand
 
 	bandage_r_hand

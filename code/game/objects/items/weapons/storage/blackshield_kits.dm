@@ -298,21 +298,21 @@
 
 /obj/item/storage/box/bs_kit/bullet_armor
 	name = "\improper Bullet Armor Kit"
-	desc = "An armor kit containing a kevlar reinforced vest and ballistic helmet."
+	desc = "An armor kit containing a kevlar reinforced suit and ballistic helmet."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/bulletproof(src)
+		new /obj/item/clothing/suit/armor/bulletproof/ironhammer/militia(src)
 		new /obj/item/clothing/head/helmet/ballistic/militia/bulletproof(src)
+		new /obj/item/clothing/gloves/thick/swat/militia(src)
 
 /obj/item/storage/box/bs_kit/laser_armor
 	name = "\improper Ablative Armor Kit"
 	desc = "An armor kit containing an ablative full body suit designed to counter laser weaponry."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/vest/ablative(src)
-		new /obj/item/clothing/head/helmet/laserproof(src)
-		new /obj/item/clothing/gloves/thick/ablasive(src)
-		new /obj/item/clothing/shoes/ablasive(src)
+		new /obj/item/clothing/suit/armor/vest/ablative/militia(src)
+		new /obj/item/clothing/head/helmet/laserproof/militia(src)
+		new /obj/item/clothing/gloves/thick/ablasive/militia(src)
 
 /obj/item/storage/box/bs_kit/standard_armor_corpsman
 	name = "\improper Standard Corpsman Armor Kit"

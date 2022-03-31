@@ -23,6 +23,7 @@
 		/datum/design/autolathe/gun/strelki = 2,
 		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/rushing_bull = 4,
+		/datum/design/autolathe/gun/duty = 6,
 		//machinegun
 		/datum/design/autolathe/gun/saw = 4,
 		/datum/design/autolathe/gun/ppv = 5,
