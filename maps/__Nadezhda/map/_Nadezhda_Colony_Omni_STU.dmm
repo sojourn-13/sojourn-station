@@ -78394,9 +78394,6 @@
 	})
 "rCq" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter{
-	pixel_x = 8
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
@@ -78410,6 +78407,9 @@
 	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
+	},
+/obj/item/computer_hardware/hard_drive/portable/design/nt/bioprinter{
+	pixel_x = 7
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
