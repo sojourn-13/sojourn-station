@@ -7,8 +7,11 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/crawler)
 "c" = (
-/obj/structure/closet/secure_closet/personal,
-/turf/simulated/floor/tiled/derelict,
+/obj/structure/table/onestar,
+/obj/item/storage/hcases/ammo/blackmarket/has_items_spawn,
+/obj/item/storage/hcases/ammo/blackmarket/has_items_spawn,
+/obj/item/storage/hcases/ammo/blackmarket/has_items_spawn,
+/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "d" = (
 /obj/structure/closet/onestar/tier3/special,
@@ -26,6 +29,9 @@
 /area/crawler)
 "h" = (
 /obj/structure/table/onestar,
+/obj/item/storage/hcases/ammo/excel/has_items_spawn,
+/obj/item/storage/hcases/ammo/excel/has_items_spawn,
+/obj/item/storage/hcases/ammo/excel/has_items_spawn,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "k" = (
@@ -124,7 +130,7 @@ a
 "}
 (2,1,1) = {"
 a
-c
+d
 g
 y
 g
@@ -135,7 +141,7 @@ a
 "}
 (3,1,1) = {"
 a
-c
+d
 g
 g
 g
@@ -146,7 +152,7 @@ a
 "}
 (4,1,1) = {"
 a
-c
+d
 g
 g
 g
@@ -203,7 +209,7 @@ b
 a
 f
 a
-h
+c
 m
 h
 a
