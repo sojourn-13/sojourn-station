@@ -93,9 +93,7 @@
 		to_chat(M, "<span class='info'>The writings of the rune are correct.</span>")
 		var/able_to_cast = FALSE
 		for(var/datum/language/L in M.languages)
-			if(L.name == LANGUAGE_CULT)
-				able_to_cast = TRUE // We can cast
-			if(L.name == LANGUAGE_OCCULT)
+			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
 				able_to_cast = TRUE // We can cast
 
 		var/datum/reagent/organic/blood/B = M.get_blood()
