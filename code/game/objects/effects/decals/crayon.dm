@@ -38,7 +38,7 @@
 		if(M.disabilities&NEARSIGHTED && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
 
 			//Anti-Death check
-			if(M.maxHealth >= 30)
+			if(M.maxHealth <= 30)
 				to_chat(M, "<span class='info'>You try to do as the book wrights but the failing body prevents you form even mubbling a single more word.</span>")
 				return
 
@@ -54,8 +54,8 @@
 					B.remove_self(15)
 					to_chat(M, "<span class='info'>Something lights a candle.</span>")
 				candle_amount += 1
-			if(spell)
-				if(spell.message == "Bable." && candle_amount >= 3)
+			for(spell in oview(3)) //Dont forget to clear your old work
+				if(spell.message == "Babel." && candle_amount >= 3)
 					M.add_language(LANGUAGE_CULT)
 					to_chat(M, "<span class='info'>Your head feels heavy with unknown knowlage and your heart strats to rase with shock of blood loss.</span>")
 					M.maxHealth -= 20
@@ -70,7 +70,7 @@
 				if(spell.message == "Life." && candle_amount >= 5)
 					var/mob/living/simple_animal/lesser
 					var/mob/living/carbon/superior_animal/greater
-					for(greater in  oview(0) && M.maxHealth >= 30)
+					for(greater in  oview(1) && M.maxHealth >= 30)
 						to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
 						greater.revive()
 						greater.colony_friend = TRUE
@@ -80,7 +80,7 @@
 						M.maxHealth -= 30
 						M.health -= 30
 						B.remove_self(70)
-					for(lesser in  oview(0) && M.maxHealth >= 30)
+					for(lesser in  oview(1) && M.maxHealth >= 30)
 						to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
 						lesser.revive()
 						lesser.colony_friend = TRUE
@@ -93,7 +93,7 @@
 				if(spell.message == "Life." && candle_amount >= 5)
 					var/mob/living/simple_animal/lesser
 					var/mob/living/carbon/superior_animal/greater
-					for(greater in  oview(0) && M.maxHealth >= 30)
+					for(greater in  oview(1) && M.maxHealth >= 30)
 						if(greater.stat == DEAD)
 							to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
 							greater.revive()
@@ -106,7 +106,8 @@
 							M.maxHealth -= 30
 							M.health -= 30
 							B.remove_self(70)
-					for(lesser in  oview(0) && M.maxHealth >= 30)
+							return
+					for(lesser in  oview(1) && M.maxHealth >= 30)
 						if(lesser.stat == DEAD)
 							to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
 							lesser.revive()
@@ -116,8 +117,10 @@
 							lesser.maxHealth = lesser.maxHealth * 0.5
 							lesser.health =  lesser.maxHealth * 0.5
 							M.maxHealth -= 30
-							M.health -= 25
+							M.health -= 30
 							B.remove_self(50)
+							return
+						return
 				if((spell.message == "Madness." || spell.message == "Sanity.") && candle_amount >= 3)
 					to_chat(M, "<span class='info'>Your blood grows thin but your mind exspands into unknown wounders?</span>")
 					M.maxHealth -= 5
@@ -149,9 +152,10 @@
 		if(M.disabilities&NEARSIGHTED && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
 
 			//Anti-Death check
-			if(M.maxHealth >= 30)
+			if(M.maxHealth <= 30)
 				to_chat(M, "<span class='info'>Your hand shakes to much as your body fails you to do anything of value here.</span>")
 				return
+		to_chat(M, "<span class='info'>The wrightings of the rune are correct.</span>")
 		var/able_to_cast = FALSE
 		for(var/datum/language/L in M.languages)
 			if(L.name == LANGUAGE_CULT)
@@ -163,7 +167,6 @@
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/obj/effect/decal/cleanable/blood/writing/spell
 			var/candle_amount = 0
-			to_chat(M, "<span class='info'>The wrightings of the rune are correct.</span>")
 			for(mage_candle in oview(3))
 				if(!mage_candle.lit)
 					mage_candle.light(flavor_text = SPAN_NOTICE("\The [name] lights up."))
@@ -172,7 +175,7 @@
 					to_chat(M, "<span class='info'>Something lights a candle.</span>")
 				candle_amount += 1
 
-			if(spell)
+			for(spell in oview(3)) //Dont forget to clear your old work
 				if(spell.message == "Voice." && candle_amount >= 3)
 					M.add_language(LANGUAGE_OCCULT)
 					to_chat(M, "<span class='info'>Your head feels heavy with unknown knowlage and your heart strats to rase with shock of blood loss.</span>")
@@ -183,7 +186,7 @@
 				if(spell.message == "Drain." && candle_amount >= 5)
 					var/mob/living/simple_animal/lesser
 					var/mob/living/carbon/superior_animal/greater
-					for(greater in  oview(0) && M.maxHealth >= 30)
+					for(greater in  oview(1) && M.maxHealth >= 30)
 						to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
 						if(able_to_cast)
 							M.maxHealth += 1
@@ -191,7 +194,8 @@
 							M.unnatural_mutations.total_instability += 1 //A soft cap
 						B.remove_self(70)
 						greater.dust()
-					for(lesser in  oview(0) && M.maxHealth >= 30)
+						return
+					for(lesser in  oview(1) && M.maxHealth >= 30)
 						to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
 						if(able_to_cast)
 							M.maxHealth += 1
@@ -199,3 +203,5 @@
 							M.unnatural_mutations.total_instability += 1 //A soft cap
 						B.remove_self(70)
 						lesser.dust()
+						return
+					return
