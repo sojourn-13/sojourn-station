@@ -125,7 +125,6 @@
 	M.maxHealth -= 20
 	M.health -= 20
 	B.remove_self(50)
-	M.add_language(LANGUAGE_CULT)
 	M.unnatural_mutations.total_instability += 15
 	return
 
@@ -202,13 +201,17 @@
 
 /obj/effect/decal/cleanable/crayon/proc/end_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	M.psi_blocking_additive = 50
 	to_chat(M, "<span class='info'>The back of your eyes burn. The body feels better. Why?</span>")
 	M.maxHealth += 5
 	M.health += 5
 	M.disabilities &= ~NEARSIGHTED
 	B.remove_self(150)
 	M.sanity.breakdown(TRUE)
+	for(var/datum/language/L in M.languages)
+		if(L.name == LANGUAGE_CULT)
+			M.remove_language(LANGUAGE_CULT)
+		if(L.name == LANGUAGE_OCCULT)
+			M.remove_language(LANGUAGE_CULT)
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(var/mob/living/carbon/human/M)
