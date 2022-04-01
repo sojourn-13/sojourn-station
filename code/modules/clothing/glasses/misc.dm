@@ -174,6 +174,7 @@
 	desc = "Protects the eyes from sudden flashes, debris, and light shrapnel."
 	icon_state = "ballistic"
 	item_state = "ballistic"
+	prescription = TRUE
 	action_button_name = "Switch Polarization"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 2)
 	flash_protection = FLASH_PROTECTION_MODERATE

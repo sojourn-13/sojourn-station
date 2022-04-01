@@ -302,7 +302,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/bulletproof/ironhammer/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/militia/bulletproof(src)
+		new /obj/item/clothing/head/helmet/ballistic/bulletproof/militia(src)
 		new /obj/item/clothing/gloves/thick/swat/militia(src)
 
 /obj/item/storage/box/bs_kit/laser_armor

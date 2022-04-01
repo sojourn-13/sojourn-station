@@ -87,6 +87,7 @@
 	desc = "A thick pair of gloves that excels in protecting the wearer against energy projectiles."
 	armor_list = list(melee = 10, bullet = 10, energy = 60, bomb = 10, bio = 0, rad = 0)
 	icon_state = "bs_ablative"
+	item_state = "ihscombat"
 
 /obj/item/clothing/gloves/thick/ablasive/iron_lock_security
 	name = "outdated gloves"
@@ -96,6 +97,7 @@
 	name = "militia bulletproof gloves"
 	desc = "A pair of heavy duty gauntlets designed with high-grade bulletproof materials."
 	icon_state = "bs_bulletproof"
+	item_state = "ihscombat"
 	armor_list = list(melee = 10, bullet = 60, energy = 10, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/gloves/thick/combat //Combined effect of SWAT gloves and insulated gloves
