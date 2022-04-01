@@ -71,7 +71,7 @@
 					M.health -= 5
 					B.remove_self(50)
 				if(spell.message == "Life." && candle_amount >= 5)
-					for(greater in  oview(1))
+					for(greater in oview(1))
 						if(greater.stat == DEAD)
 							if(M.maxHealth >= 30)
 								to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
