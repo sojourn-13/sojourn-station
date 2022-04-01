@@ -128,6 +128,8 @@
 					M.disabilities &= ~NEARSIGHTED
 					B.remove_self(150)
 					M.sanity.breakdown(TRUE)
+				return
+			return
 
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
 		if(M.disabilities&NEARSIGHTED && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
@@ -186,3 +188,4 @@
 						lesser.dust()
 						return
 					return
+				return
