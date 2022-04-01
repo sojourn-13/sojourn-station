@@ -1319,6 +1319,10 @@ assassination method if you time it right*/
 		to_chat(user, SPAN_WARNING("You can't climb into the exosuit while buckled!"))
 		return
 
+	if(istype(user.get_equipped_item(slot_back), /obj/item/rig/hydrogen_knight))
+		to_chat(user, SPAN_WARNING("Your armor is too bulky to fit in the exosuit!"))
+		return
+
 	src.log_message("[user] tries to move in.")
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user

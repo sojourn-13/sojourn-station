@@ -72,7 +72,6 @@
 	starts_unlocked = FALSE
 
 
-
 // Robot updates
 /datum/design/research/item/robot_upgrade
 	build_type = AUTOLATHE | MECHFAB

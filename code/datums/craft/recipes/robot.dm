@@ -177,3 +177,56 @@
 		list(QUALITY_BOLT_TURNING, 10, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 10, "time" = 90)
 	)
+
+/* Commented out until balanced.
+// Hydrogen Knight Rig recipe
+/datum/craft_recipe/robotic/hydrogen_knight
+	name = "Hydrogen Knight Rigsuit"
+	result = /obj/item/rig/hydrogen_knight
+	icon_state = "device"
+	steps = list(
+		list(/obj/item/rig, 1, "time" = 20), // Any rig as base
+		list(/obj/item/clothing, 1, "time" = 30),
+		list(/obj/item/storage/belt, 1, "time" = 30),
+		list(/obj/item/clothing/suit/armor/vest/soteriasuit, 1, "time" = 30),
+		list(/obj/item/clothing/head/helmet/soteriasuit, 1, "time" = 30),
+		list(/obj/item/stock_parts/scanning_module/phasic, 1, "time" = 30),
+		list(/obj/item/robot_parts/robot_component/camera, 1, "time" = 30),
+		list(/obj/item/robot_parts/robot_component/diagnosis_unit, 1, "time" = 30),
+		list(/obj/item/computer_hardware/processor_unit/super, 1, "time" = 30),
+		list(/obj/item/stack/cable_coil, 10, "time" = 30),
+		list(QUALITY_WIRE_CUTTING, 20, "time" = 60),
+		list(CRAFT_MATERIAL, 60, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 45, "time" = 60),
+		list(QUALITY_DRILLING, 45, "time" = 60),
+		list(QUALITY_CUTTING, 45, "time" = 60),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASMAGLASS, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 45, "time" = 60),
+		list(/obj/item/stack/cable_coil, 30, "time" = 60),
+		list(QUALITY_WIRE_CUTTING, 20, "time" = 60),
+		list(CRAFT_MATERIAL, 30, MATERIAL_PLASTEEL, "time" = 60),
+		list(/obj/item/tool_upgrade/productivity/motor, 1, "time" = 30),
+		list(/obj/item/stock_parts/capacitor/super, 1, "time" = 30),
+		list(/obj/item/tool_upgrade/productivity/booster, 1, "time" = 30),
+		list(/obj/item/stock_parts/matter_bin/super, 1, "time" = 30),
+		list(/obj/item/hydrogen_fuel_cell, 1, "time" = 30),
+		list(/obj/item/stock_parts/manipulator/pico, 2, "time" = 30),
+		list(/obj/item/gun_upgrade/mechanism/battery_shunt, 1, "time" = 30),
+		list(/obj/item/rocket_engine, 1, "time" = 30),
+		list(/obj/item/tool_upgrade/reinforcement/guard, 3, "time" = 30),
+		list(/obj/item/cell/large/moebius/omega, 1, "time" = 30),
+		list(QUALITY_PULSING, 10, "time" = 60),
+		list(/obj/item/borg/upgrade/vtec, 1, "time" = 30),
+		list(/obj/item/mecha_parts/part/durand_head, 1, "time" = 30),
+		list(/obj/item/mecha_parts/part/durand_torso, 1, "time" = 30),
+		list(/obj/item/mecha_parts/part/ripley_left_arm, 1, "time" = 30),
+		list(/obj/item/mecha_parts/part/ripley_right_arm, 1, "time" = 30),
+		list(/obj/item/mecha_parts/part/gygax_left_leg, 1, "time" = 30),
+		list(/obj/item/mecha_parts/part/gygax_right_leg, 1, "time" = 30),
+		list(/obj/item/clothing/shoes/magboots, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 5, MATERIAL_OSMIUM, "time" = 30),
+		list(/obj/item/tool_upgrade/augment/hydraulic, 2, "time" = 30),
+		list(/obj/item/robot_parts/robot_component/ion_jaunt, 1, "time" = 30),
+		list(QUALITY_HAMMERING, 30, "time" = 90),
+		list(QUALITY_WELDING, 60, "time" = WORKTIME_EXTREMELY_LONG)
+	)*/
