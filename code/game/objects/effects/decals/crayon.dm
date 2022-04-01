@@ -65,7 +65,7 @@
 				if(spell.message == "Life." && candle_amount >= 5)
 					life_spell(M)
 					continue
-        
+
 				if((spell.message == "Madness." || spell.message == "Sanity.") && candle_amount >= 3)
 					madness_spell(M)
 					continue
@@ -81,6 +81,7 @@
 				if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
 					end_spell(M)
 					continue
+			return
 
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
 		if(M.disabilities&NEARSIGHTED && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
@@ -115,6 +116,9 @@
 			if(spell.message == "Drain." && candle_amount >= 5)
 				drain_spell(M, able_to_cast)
 				continue
+			return
+		return
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/babel_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
@@ -125,6 +129,7 @@
 	B.remove_self(50)
 	M.add_language(LANGUAGE_CULT)
 	M.unnatural_mutations.total_instability += 15
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/ignorance_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
@@ -133,11 +138,12 @@
 	M.maxHealth -= 5
 	M.health -= 5
 	B.remove_self(50)
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/life_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	for(var/mob/living/carbon/superior_animal/greater in  view(0)) // Must be on the spell circle
-		if(M.maxHealth >= 30)
+	for(var/mob/living/carbon/superior_animal/greater in oview(1)) // Must be on the spell circle
+		if(M.maxHealth > 30)
 			to_chat(M, "<span class='info'>To raise the dead one must use the self, and in the self we draw closer to death...</span>")
 			greater.revive()
 			greater.colony_friend = TRUE
@@ -146,12 +152,14 @@
 			greater.faction = "Living Dead"
 			greater.maxHealth *= 0.5
 			greater.health *= 0.5
-			M.maxHealth -= 30
-			M.health -= 30
+			M.maxHealth -= 25
+			M.health -= 25
 			B.remove_self(70)
+			return
+		return
 
-	for(var/mob/living/simple_animal/lesser in  view(0)) // Must be on the spell circle
-		if(M.maxHealth >= 30)
+	for(var/mob/living/simple_animal/lesser in oview(1)) // Must be on the spell circle
+		if(M.maxHealth > 30)
 			to_chat(M, "<span class='info'>To raise the dead one must use the self, and in the self we draw closer to death...</span>")
 			lesser.revive()
 			lesser.colony_friend = TRUE
@@ -163,6 +171,9 @@
 			M.maxHealth -= 25
 			M.health -= 25
 			B.remove_self(50)
+			return
+		return
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/madness_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
@@ -171,22 +182,25 @@
 	M.health -= 5
 	B.remove_self(20)
 	M.sanity.breakdown(TRUE)
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/sight_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='info'>Your book says not to use this...</span>")
 	M.disabilities &= ~NEARSIGHTED
 	B.remove_self(150)
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/paradox_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='info'>The air to you grows hot, your heart races from not only blood-loss but the feeling of dread over you. You hear a whisper in the back of your ear \"What bottom?\"</span>")
-	M.maxHealth -= 30
-	M.health -= 30
+	M.maxHealth -= 25
+	M.health -= 25
 	B.remove_self(100)
 	M.sanity.breakdown(TRUE)
 	sleep(30)
 	explosion(loc, 3, 5, 7, 5)
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/end_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
@@ -197,6 +211,7 @@
 	M.disabilities &= ~NEARSIGHTED
 	B.remove_self(150)
 	M.sanity.breakdown(TRUE)
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(var/mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
@@ -206,10 +221,11 @@
 	M.health -= 20
 	B.remove_self(50)
 	M.unnatural_mutations.total_instability += 15
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/drain_spell(var/mob/living/carbon/human/M, var/able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	for(var/mob/living/carbon/superior_animal/greater in  oview(1))
+	for(var/mob/living/carbon/superior_animal/greater in oview(1))
 		to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
 		if(able_to_cast)
 			M.maxHealth += 1
@@ -219,7 +235,7 @@
 		greater.dust()
 		return
 
-	for(var/mob/living/simple_animal/lesser in  oview(1))
+	for(var/mob/living/simple_animal/lesser in oview(1))
 		to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
 		if(able_to_cast)
 			M.maxHealth += 1
@@ -228,3 +244,4 @@
 		B.remove_self(70)
 		lesser.dust()
 		return
+	return
