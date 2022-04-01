@@ -65,7 +65,7 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/head/helmet/ballistic/militia/bulletproof
+/obj/item/clothing/head/helmet/ballistic/bulletproof/militia
 	name = "Blackshield bulletproof helmet"
 	icon_state = "bulletproof_bs"
 	desc = "Standard military gear. Protects exceptionally well from high-velocity solid projectiles\
