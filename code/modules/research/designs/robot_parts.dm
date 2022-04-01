@@ -71,12 +71,6 @@
 	build_path = /obj/item/robot_parts/robot_component/jetpack
 	starts_unlocked = FALSE
 
-/datum/design/research/item/mechfab/robot/component/ion_jaunt
-	name = "Ion Jaunter"
-	desc = "A special device designed to reduce the impact of EMPs on electrical systems."
-	build_path = /obj/item/robot_parts/robot_component/ion_jaunt
-	starts_unlocked = FALSE
-
 
 // Robot updates
 /datum/design/research/item/robot_upgrade

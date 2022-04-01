@@ -319,5 +319,4 @@
 							/datum/design/research/item/mecha/weapon/hydrogen,
 							/datum/design/research/item/weapon/hydrogen_welder,
 							/datum/design/research/item/weapon/hydrogrenade,
-							/datum/design/research/item/ammo/hydroflaskette,
-							/datum/design/research/item/mechfab/robot/component/ion_jaunt)
+							/datum/design/research/item/ammo/hydroflaskette)
