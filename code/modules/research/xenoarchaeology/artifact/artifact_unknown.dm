@@ -120,7 +120,7 @@
 
 /obj/machinery/artifact/examine(mob/user)
 	..()
-	if(psi_text && user.stats.getPerk(PERK_PSION)) // Are we a psion and is there something to see?
+	if(psi_text && user.stats?.getPerk(PERK_PSION)) // Are we a psion and is there something to see?
 		to_chat(user, psi_text)
 
 /obj/machinery/artifact/Process()
