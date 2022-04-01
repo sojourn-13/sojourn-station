@@ -65,7 +65,7 @@
 				if(spell.message == "Life." && candle_amount >= 5)
 					life_spell(M)
 					continue
-
+        
 				if((spell.message == "Madness." || spell.message == "Sanity.") && candle_amount >= 3)
 					madness_spell(M)
 					continue
