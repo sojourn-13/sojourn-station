@@ -102,7 +102,6 @@
 								B.remove_self(50)
 							return
 						return
-					return
 				if((spell.message == "Madness." || spell.message == "Sanity.") && candle_amount >= 3)
 					to_chat(M, "<span class='info'>Your blood grows thin but your mind exspands into unknown wounders?</span>")
 					M.maxHealth -= 5
