@@ -45,6 +45,8 @@
 			var/obj/item/flame/candle/mage_candle
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/obj/effect/decal/cleanable/blood/writing/spell
+			var/mob/living/simple_animal/lesser
+			var/mob/living/carbon/superior_animal/greater
 			var/candle_amount = 0
 			to_chat(M, "<span class='info'>The wrightings inside the book and the rune drawn match up.</span>")
 			for(mage_candle in oview(3))
@@ -61,6 +63,7 @@
 					M.maxHealth -= 20
 					M.health -= 20
 					B.remove_self(50)
+					M.unnatural_mutations.total_instability += 15
 				if(spell.message == "Ingorance." && candle_amount >= 1)
 					M.psi_blocking_additive = 50
 					to_chat(M, "<span class='info'>The top of your head acks in pain and feels heavy as your blood runs thin.</span>")
@@ -68,59 +71,38 @@
 					M.health -= 5
 					B.remove_self(50)
 				if(spell.message == "Life." && candle_amount >= 5)
-					var/mob/living/simple_animal/lesser
-					var/mob/living/carbon/superior_animal/greater
-					for(greater in  oview(1) && M.maxHealth >= 30)
-						to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
-						greater.revive()
-						greater.colony_friend = TRUE
-						greater.friendly_to_colony = TRUE
-						greater.friends += M
-						greater.faction = "Living Dead"
-						M.maxHealth -= 30
-						M.health -= 30
-						B.remove_self(70)
-					for(lesser in  oview(1) && M.maxHealth >= 30)
-						to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
-						lesser.revive()
-						lesser.colony_friend = TRUE
-						lesser.friendly_to_colony = TRUE
-						lesser.faction = "Living Dead"
-						M.maxHealth -= 30
-						M.maxHealth -= 25
-						M.health -= 25
-						B.remove_self(50)
-				if(spell.message == "Life." && candle_amount >= 5)
-					var/mob/living/simple_animal/lesser
-					var/mob/living/carbon/superior_animal/greater
-					for(greater in  oview(1) && M.maxHealth >= 30)
+					for(greater in  oview(1))
 						if(greater.stat == DEAD)
-							to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
-							greater.revive()
-							greater.colony_friend = TRUE
-							greater.friendly_to_colony = TRUE
-							greater.friends += M
-							greater.faction = "Living Dead"
-							greater.maxHealth = greater.maxHealth * 0.5
-							greater.health = greater.health * 0.5
-							M.maxHealth -= 30
-							M.health -= 30
-							B.remove_self(70)
+							if(M.maxHealth >= 30)
+								to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
+								greater.revive()
+								greater.colony_friend = TRUE
+								greater.friendly_to_colony = TRUE
+								greater.friends += M
+								greater.faction = "Living Dead"
+								greater.maxHealth = greater.maxHealth * 0.5
+								greater.health = greater.health * 0.5
+								M.maxHealth -= 30
+								M.health -= 30
+								B.remove_self(70)
+								return
 							return
 					for(lesser in  oview(1) && M.maxHealth >= 30)
-						if(lesser.stat == DEAD)
-							to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
-							lesser.revive()
-							lesser.colony_friend = TRUE
-							lesser.friendly_to_colony = TRUE
-							lesser.faction = "Living Dead"
-							lesser.maxHealth = lesser.maxHealth * 0.5
-							lesser.health =  lesser.maxHealth * 0.5
-							M.maxHealth -= 30
-							M.health -= 30
-							B.remove_self(50)
+						if(M.maxHealth >= 30)
+							if(lesser.stat == DEAD)
+								to_chat(M, "<span class='info'>To raise the dead one must use self, and in self we draw closer to death...</span>")
+								lesser.revive()
+								lesser.colony_friend = TRUE
+								lesser.friendly_to_colony = TRUE
+								lesser.faction = "Living Dead"
+								lesser.maxHealth = lesser.maxHealth * 0.5
+								lesser.health =  lesser.maxHealth * 0.5
+								M.maxHealth -= 30
+								M.health -= 30
+								B.remove_self(50)
 							return
 						return
+					return
 				if((spell.message == "Madness." || spell.message == "Sanity.") && candle_amount >= 3)
 					to_chat(M, "<span class='info'>Your blood grows thin but your mind exspands into unknown wounders?</span>")
 					M.maxHealth -= 5
@@ -166,6 +148,8 @@
 			var/obj/item/flame/candle/mage_candle
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/obj/effect/decal/cleanable/blood/writing/spell
+			var/mob/living/simple_animal/lesser
+			var/mob/living/carbon/superior_animal/greater
 			var/candle_amount = 0
 			for(mage_candle in oview(3))
 				if(!mage_candle.lit)
@@ -184,9 +168,7 @@
 					B.remove_self(50)
 					M.unnatural_mutations.total_instability += 15
 				if(spell.message == "Drain." && candle_amount >= 5)
-					var/mob/living/simple_animal/lesser
-					var/mob/living/carbon/superior_animal/greater
-					for(greater in  oview(1) && M.maxHealth >= 30)
+					for(greater in  oview(1))
 						to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
 						if(able_to_cast)
 							M.maxHealth += 1
@@ -195,7 +177,7 @@
 						B.remove_self(70)
 						greater.dust()
 						return
-					for(lesser in  oview(1) && M.maxHealth >= 30)
+					for(lesser in  oview(1))
 						to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
 						if(able_to_cast)
 							M.maxHealth += 1
