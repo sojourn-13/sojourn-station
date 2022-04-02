@@ -164,7 +164,6 @@
 			lesser.faction = "Living Dead"
 			lesser.maxHealth *= 0.5
 			lesser.health *= 0.5
-			M.maxHealth -= 30
 			M.maxHealth -= 25
 			M.health -= 25
 			B.remove_self(50)
