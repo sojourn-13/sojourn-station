@@ -65,6 +65,7 @@
 	cell = null    // Used for firing superheated rods.
 	var/current_user                        // Used to check if the crossbow has changed hands since being drawn.
 	var/draw_time = 20							// How long it takes to increase the draw on the bow by one "tension"
+	var/stationary_draw = FALSE
 
 /obj/item/gun/launcher/crossbow/update_release_force()
 	release_force = tension*release_speed
@@ -110,7 +111,7 @@
 	tension = 1
 
 	while(bolt && tension && loc == current_user)
-		if(!do_after(user, draw_time, src)) //crossbow strings don't just magically pull back on their own.
+		if(!do_after(user, draw_time, src, immobile = stationary_draw)) //crossbow strings don't just magically pull back on their own.
 			user.visible_message("[usr] stops drawing and relaxes the string of [src].",SPAN_WARNING("You stop drawing back and relax the string of [src]."))
 			tension = 0
 			update_icon()
