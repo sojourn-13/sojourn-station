@@ -158,7 +158,7 @@
 	)
 
 
-//Gauss-rifle type, snowflake magnetic rifle code from Bay mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
+//Gauss-rifle type, snowflake launcher mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
 /obj/item/gun/energy/laser/railgun/gauss
 	name = "\"Bat'ko\" gauss rifle"
 	desc = "A rather heavy rifle sporting a cell-loading mount, a adjustable recoil-compensating stock, a hand-crank to manually chamber the next round and a series of coils lining its front. \
@@ -181,78 +181,40 @@
 	slowdown_hold = 1.5
 	brace_penalty = 30
 	init_firemodes = list(
-		list(mode_name="powered-rod", mode_desc="fires a metal rod at light speeds", /obj/item/projectile/bullet/shotgun/railgun/gauss, icon="kill"),
+		list(mode_name="powered-rod", mode_desc="fires a metal rod at light speeds", projectile_type=/obj/item/projectile/plasma/gauss, icon="kill"),
 		list(mode_name="fragmented scrap", mode_desc="fires a brittle, sharp piece of scrap-metal", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
 	)
 	consume_cell = FALSE
 	price_tag = 6000
 
-	var/obj/item/loaded												// Currently loaded object, for retrieval/unloading.
-	var/load_type = /obj/item/stack/sheet/refined_scrap				// Type of stack to load with.
-	var/load_sheet_max = 4									 		//Ammo capacity
+	var/max_stored_matter = 4
+	var/stored_matter = 0
+	var/matter_type = MATERIAL_RSCRAP
 
-/obj/item/gun/energy/laser/railgun/gauss/attackby(var/obj/item/thing, var/mob/user)
+	var/projectile_cost = 1
 
-	if(istype(thing, load_type))
+/obj/item/gun/energy/laser/railgun/gauss/attackby(obj/item/I, mob/user)
 
-		// This is not strictly necessary for the magnetic gun but something using
-		// specific ammo types may exist down the track.
-		var/obj/item/stack/ammo = thing
-		if(!istype(ammo))
-			if(loaded)
-				to_chat(user, "<span class='warning'>\The [src] already has \a [loaded] loaded.</span>")
-				return
-			if(!user.unEquip(thing, src))
-				return
-
-			loaded = thing
-		else if(load_sheet_max > 4)
-			var ammo_count = 0
-			var/obj/item/stack/loaded_ammo = loaded
-			if(!istype(loaded_ammo))
-				ammo_count = min(load_sheet_max,ammo.amount)
-				loaded = new load_type(src, ammo_count)
-			else
-				ammo_count = min(load_sheet_max-loaded_ammo.amount,ammo.amount)
-				loaded_ammo.amount += ammo_count
-			if(ammo_count <= 0)
-				// This will also display when someone tries to insert a stack of 0, but that shouldn't ever happen anyway.
-				to_chat(user, "<span class='warning'>\The [src] is already fully loaded.</span>")
-				return
-			ammo.use(ammo_count)
-		else
-			if(loaded)
-				to_chat(user, "<span class='warning'>\The [src] already has \a [loaded] loaded.</span>")
-				return
-			loaded = new load_type(src, 1)
-			ammo.use(1)
-
-		user.visible_message("<span class='notice'>\The [user] loads \the [src] with \the [loaded].</span>")
-		playsound(loc, 'sound/weapons/flipblade.ogg', 50, 1)
-		update_icon()
-		return
-	. = ..()
-
-/obj/item/gun/energy/laser/railgun/gauss/proc/check_ammo()
-	return loaded
-
-/obj/item/gun/energy/laser/railgun/gauss/proc/use_ammo()
-	qdel(loaded)
-	loaded = null
+	var/obj/item/stack/sheet/M = I
+	if(istype(M) && M.name == matter_type)
+		var/amount = min(M.get_amount(), round(max_stored_matter - stored_matter))
+		if(M.use(amount))
+			stored_matter += amount
+		to_chat(user, "<span class='notice'>You load [amount] [matter_type] into \the [src].</span>")
+	else
+		..()
 
 /obj/item/gun/energy/laser/railgun/gauss/consume_next_projectile()
-
-	if(!check_ammo() || !cell || cell.charge < charge_cost)
-		return
-
-	use_ammo()
-	cell.use(charge_cost)
+	if(stored_matter < projectile_cost) return null
+	if(!cell) return null
+	if(!ispath(projectile_type)) return null
+	if(!cell.checked_use(charge_cost)) return null
+	stored_matter -= projectile_cost
 	return new projectile_type(src)
 
-/obj/item/gun/energy/laser/railgun/gauss/proc/show_ammo(var/mob/user)
-	if(loaded)
-		to_chat(user, "<span class='notice'>It has \a [loaded] loaded.</span>")
-
+/obj/item/gun/energy/laser/railgun/gauss/examine(user)
+	. = ..()
+	to_chat(user, "It holds [stored_matter]/[max_stored_matter] [matter_type].")
 
 /obj/item/gun/energy/laser/railgun/gauss/update_icon()
 	cut_overlays()
