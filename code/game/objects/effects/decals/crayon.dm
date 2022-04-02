@@ -75,7 +75,7 @@
 					continue
 
 				if(spell.message == "Paradox." && candle_amount >= 7)
-					paradox_spell()
+					paradox_spell(M)
 					continue
 
 				if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
