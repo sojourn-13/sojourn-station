@@ -158,12 +158,13 @@
 	)
 
 
-//Gauss-rifle type
+//Gauss-rifle type, snowflake magnetic rifle code from Bay mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
 /obj/item/gun/energy/laser/railgun/gauss
-	name = "\"Liberator\" gauss rifle"
+	name = "\"Bat'ko\" gauss rifle"
 	desc = "A rather heavy rifle sporting a cell-loading mount, a adjustable recoil-compensating stock, a hand-crank to manually chamber the next round and a series of coils lining its front. \
 	Placing one's hand towards the heavy-duty coils at the front of the gun is not recomended, but one can simply feel the energy going through the weapon when charged up. \
 	At the stock a large script-styled 'M' appears to be engraved into it, a form of signature from its designer along with an artificer Guild logo."
+	icon = 'icons/obj/guns/energy/gauss.dmi'
 	icon_state = "gauss"
 	item_state = "gauss"
 	w_class = ITEM_SIZE_HUGE
@@ -185,6 +186,73 @@
 	)
 	consume_cell = FALSE
 	price_tag = 6000
+
+	var/obj/item/loaded												// Currently loaded object, for retrieval/unloading.
+	var/load_type = /obj/item/stack/sheet/refined_scrap				// Type of stack to load with.
+	var/load_sheet_max = 4									 		//Ammo capacity
+
+/obj/item/gun/energy/laser/railgun/gauss/attackby(var/obj/item/thing, var/mob/user)
+
+	if(istype(thing, load_type))
+
+		// This is not strictly necessary for the magnetic gun but something using
+		// specific ammo types may exist down the track.
+		var/obj/item/stack/ammo = thing
+		if(!istype(ammo))
+			if(loaded)
+				to_chat(user, "<span class='warning'>\The [src] already has \a [loaded] loaded.</span>")
+				return
+			if(!user.unEquip(thing, src))
+				return
+
+			loaded = thing
+		else if(load_sheet_max > 4)
+			var ammo_count = 0
+			var/obj/item/stack/loaded_ammo = loaded
+			if(!istype(loaded_ammo))
+				ammo_count = min(load_sheet_max,ammo.amount)
+				loaded = new load_type(src, ammo_count)
+			else
+				ammo_count = min(load_sheet_max-loaded_ammo.amount,ammo.amount)
+				loaded_ammo.amount += ammo_count
+			if(ammo_count <= 0)
+				// This will also display when someone tries to insert a stack of 0, but that shouldn't ever happen anyway.
+				to_chat(user, "<span class='warning'>\The [src] is already fully loaded.</span>")
+				return
+			ammo.use(ammo_count)
+		else
+			if(loaded)
+				to_chat(user, "<span class='warning'>\The [src] already has \a [loaded] loaded.</span>")
+				return
+			loaded = new load_type(src, 1)
+			ammo.use(1)
+
+		user.visible_message("<span class='notice'>\The [user] loads \the [src] with \the [loaded].</span>")
+		playsound(loc, 'sound/weapons/flipblade.ogg', 50, 1)
+		update_icon()
+		return
+	. = ..()
+
+/obj/item/gun/energy/laser/railgun/gauss/proc/check_ammo()
+	return loaded
+
+/obj/item/gun/energy/laser/railgun/gauss/proc/use_ammo()
+	qdel(loaded)
+	loaded = null
+
+/obj/item/gun/energy/laser/railgun/gauss/consume_next_projectile()
+
+	if(!check_ammo() || !cell || cell.charge < charge_cost)
+		return
+
+	use_ammo()
+	cell.use(charge_cost)
+	return new projectile_type(src)
+
+/obj/item/gun/energy/laser/railgun/gauss/proc/show_ammo(var/mob/user)
+	if(loaded)
+		to_chat(user, "<span class='notice'>It has \a [loaded] loaded.</span>")
+
 
 /obj/item/gun/energy/laser/railgun/gauss/update_icon()
 	cut_overlays()
