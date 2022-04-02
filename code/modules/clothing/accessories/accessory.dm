@@ -441,7 +441,7 @@
 	desc = "A stylish dark blue scarf."
 	icon_state = "darkbluescarf"
 
-obj/item/clothing/accessory/scarf/green
+/obj/item/clothing/accessory/scarf/green
 	name = "green scarf"
 	desc = "A stylish green scarf."
 	icon_state = "greenscarf"
@@ -596,30 +596,12 @@ obj/item/clothing/accessory/scarf/green
 	siemens_coefficient = 0
 
 /*One-Off Stuff*/
-/obj/item/clothing/accessory/necklace
-	name = "metal necklace"
-	desc = "A shiny steel chain with a vague metallic object dangling off it."
-	icon_state = "tronket"
-	item_state = "tronket"
 
 /obj/item/clothing/accessory/dropstraps
 	name = "drop straps"
 	desc = "White suspenders worn over the shoulders."
 	icon_state = "flops"
 	item_state = "flops"
-
-/obj/item/clothing/accessory/dogtags
-	name = "dog tags"
-	desc = "A pair of engraved metal identification tags."
-	icon_state = "tags"
-	item_state = "tags"
-
-/obj/item/clothing/accessory/fractalrosary
-	name = "Fractal Rosary"
-	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
-			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
-	icon_state = "fractal_rosary"
-	item_state = "fractal_rosary"
 
 /obj/item/clothing/accessory/legbrace
 	name = "leg brace"
@@ -762,3 +744,107 @@ obj/item/clothing/accessory/scarf/green
 	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
 	icon_state = "bs_brigadier"
 	item_state = "bs_brigadier"
+
+/* Tacticool Shirts / UBACs */
+
+/obj/item/clothing/accessory/tacticool
+	name = "black UBAC shirt."
+	desc = "A tactical shirt meant to be worn under armor to protect from unpleasant chaffing. Original solfed design in black."
+	icon_state = "ubacblack"
+	item_state = "ubacblack"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticool/navy
+	name = "navy blue UBAC shirt."
+	desc = "A tactical shirt meant to be worn under armor to protect from unpleasant chaffing. Original solfed design in navy blue."
+	icon_state = "ubacblue"
+	item_state = "ubacblue"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticool/tan
+	name = "tan UBAC shirt."
+	desc = "A tactical shirt meant to be worn under armor to protect from unpleasant chaffing. Original solfed design in tan."
+	icon_state = "ubactan"
+	item_state = "ubactan"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/tacticool/green
+	name = "green UBAC shirt."
+	desc = "A tactical shirt meant to be worn under armor to protect from unpleasant chaffing. Original solfed design in green."
+	icon_state = "ubacgreen"
+	item_state = "ubacgreen"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/* Necklaces and ....chokers (I blame Moon) */
+
+/obj/item/clothing/accessory/necklace
+	name = "metal necklace"
+	desc = "A shiny steel chain with a vague metallic object dangling off it."
+	icon_state = "tronket"
+	item_state = "tronket"
+	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/necklace/dogtags
+	name = "dog tags"
+	desc = "A pair of engraved metal identification tags."
+	icon_state = "tags"
+	item_state = "tags"
+
+/obj/item/clothing/accessory/necklace/fractalrosary
+	name = "Fractal Rosary"
+	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
+			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
+	icon_state = "fractal_rosary"
+	item_state = "fractal_rosary"
+
+/obj/item/clothing/accessory/choker
+	name = "blue choker"
+	desc = "A small blue band tied around your neck. You probably don't want to be wearing this if you want to be taken seriously."
+	icon_state = "choker"
+	item_state = "choker"
+	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/choker/red
+	name = "red choker"
+	desc = "A small red band tied around your neck. You probably don't want to be wearing this if you want to be taken seriously."
+	icon_state = "choker_red"
+	item_state = "choker_red"
+
+/obj/item/clothing/accessory/choker/goth
+	name = "gothic choker"
+	desc = "A small black band tied around your neck. Makes you look like you either worship satan or just hate your life."
+	icon_state = "choker_goth"
+	item_state = "choker_goth"
+
+/* Bracelets and watches */
+
+/obj/item/clothing/accessory/bracelet
+	name = "bracelet"
+	desc = "A simple red band wrapped around your wrist. Snazzy."
+	icon_state = "bracelet"
+	item_state = "bracelet"
+	slot_flags = SLOT_GLOVES | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/bracelet/watch
+	name = "fancy watch"
+	desc = "An expensive watch with a red band wrapped around your wrist. Snazzy."
+	icon_state = "wristwatch_fancy"
+	item_state = "wristwatch_fancy"
+
+/obj/item/clothing/accessory/bracelet/watch
+	name = "fancy watch"
+	desc = "An expensive watch with a red band wrapped around your wrist. Snazzy."
+	icon_state = "wristwatch_fancy"
+	item_state = "wristwatch_fancy"
+
+/obj/item/clothing/accessory/bracelet/watch/leather
+	name = "fancy leather watch"
+	desc = "An expensive watch with a leather brown band wrapped around your wrist. Snazzy."
+	icon_state = "wristwatch_leather"
+	item_state = "wristwatch_leather"
+
+/obj/item/clothing/accessory/bracelet/watch/black
+	name = "fancy black watch"
+	desc = "An expensive watch with a black band wrapped around your wrist. Snazzy."
+	icon_state = "wristwatch_black"
+	item_state = "wristwatch_black"

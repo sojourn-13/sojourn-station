@@ -4994,7 +4994,7 @@
 /area/nadezhda/rnd/lab)
 "bgY" = (
 /obj/structure/table/woodentable,
-/obj/item/clothing/accessory/dogtags{
+/obj/item/clothing/accessory/necklace/dogtags{
 	desc = "Never forget their name. Never.";
 	oldified = 1
 	},
@@ -30982,7 +30982,7 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "gWp" = (
 /obj/structure/table/steel,
-/obj/item/clothing/accessory/dogtags,
+/obj/item/clothing/accessory/necklace/dogtags,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gWu" = (
