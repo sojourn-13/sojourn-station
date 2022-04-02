@@ -156,3 +156,68 @@
 		list(mode_name="Beanbag", mode_desc="Fires a beanbag synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, charge_cost=25, icon="stun"),
 		list(mode_name="Blast", mode_desc="Fires a slug synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=null, icon="destroy"),
 	)
+
+/obj/item/gun/energy/material_railgun
+	name = "\"Black Arrow\" railgun"
+	desc = "\"Artificer's Guild\" brand rail gun. A \'true\' railgun, utilizing solid projectiles flash-forged from compressed matter or via a manual load mechanism alongside energy to propel it at varying velocities."
+	icon = 'icons/obj/guns/energy/railgun.dmi'
+	icon_state = "railgun"
+	item_state = "railgun"
+	fire_sound = 'sound/weapons/rail.ogg'
+	item_charge_meter = TRUE
+	w_class = ITEM_SIZE_BULKY
+	force = WEAPON_FORCE_PAINFUL
+	twohanded = TRUE
+	flags = CONDUCT
+	slot_flags = SLOT_BACK
+	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 7, TECH_ENGINEERING = 6)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
+	charge_cost = 500
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	suitable_cell = /obj/item/cell/large
+	one_hand_penalty = 15
+	fire_delay = 12
+	recoil_buildup = 1 //Negligible recoil, it's a railgun
+	damage_multiplier = 1 //we don't care about this as it has its own projectiles
+	init_firemodes = list(
+		list(mode_name="low-velocity", mode_desc="fires a metal rod at moderate speed", projectile_type=/obj/item/projectile/bullet/rail/lv, charge_cost=400, silenced = TRUE, icon="kill"), //todo silemced sound, icons
+		list(mode_name="high-velocity", mode_desc="fires a metal rod at high speed", projectile_type=/obj/item/projectile/bullet/rail/hv, charge_cost= 500, silenced = FALSE, icon="stun"),
+		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/rail/uhv, charge_cost=2000, silenced = FALSE, icon="grenade")
+	)
+	var/material_storage = 0
+	var/material_max = 100
+	var/mat_per_fire = 1
+	price_tag = 2250
+
+/obj/item/gun/energy/material_railgun/examine(mob/user)
+	..()
+	to_chat(user,SPAN_NOTICE("It has [material_storage] out of [material_max] matter left."))
+
+/obj/item/gun/energy/material_railgun/consume_next_projectile()
+	if(!material_storage || material_storage < mat_per_fire || !..())
+		return null
+	material_storage -= mat_per_fire
+	return ..()
+
+/obj/item/gun/energy/material_railgun/attackby(obj/item/W, mob/user)
+	if(!istype(W,/obj/item/stack))
+		return ..	()
+	var/obj/item/stack/S = W
+	if(istype(S,/obj/item/stack/rods))
+		while(material_max >= material_storage)
+			if(R.use(1) && do_after(user, 5, src))
+				material_storage += 1
+				playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+				to_chat(user, "<span class='notice'>You load a rod into \the [src].</span>. The [src] now holds [material_storage]/[material_max] rods.")
+	if(!istype(W, /obj/item/stack/material))
+		return ..()
+	var/obj/item/stack/material/M = S
+	if(istype(M) && M.material.name == MATERIAL_COMPRESSED_MATTER)
+		var/amount = min(M.get_amount(), round(material_storage - material_max))
+		if(M.use(amount) && material_storage < material_max)
+			material_storage += amount
+			playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+			to_chat(user, "<span class='notice'>You load [amount] compressed matter into \the [src].</span>. The [src] now holds [material_storage]/[material_max] rods.")
+			update_icon()	//Updates the ammo counter
+		else
+			to_chat(user, "<span class='notice'>The [src] is full.")
