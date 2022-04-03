@@ -1,6 +1,6 @@
 /obj/item/gun/energy/laser/railgun
-	name = "\"Reductor\" rail rifle"
-	desc = "\"Artificer's Guild\" brand rail gun. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
+	name = "\"Reductor\" MEC rail rifle"
+	desc = "\"Artificer's Guild\" brand mass-energy-converting railgun. Automatically generates ammuniton using cell charge. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
 	consuming the cell within for an extra bullet or a powerful explosive round."
 	icon = 'icons/obj/guns/energy/railgun.dmi'
 	icon_state = "railgun"
@@ -58,8 +58,8 @@
 
 
 /obj/item/gun/energy/laser/railgun/pistol
-	name = "\"Myrmidon\" rail pistol"
-	desc = "\"Artificer's Guild\" brand rail pistol. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
+	name = "\"Myrmidon\" MEC rail pistol"
+	desc = "\"Artificer's Guild\" brand mass-energy-converting rail-pistol. Automatically generates ammuniton using cell charge. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
 	consuming the cell within for an extra bullet or a powerful explosive round. For the law abiding engineer because rifles are too hard to hide."
 	icon = 'icons/obj/guns/energy/railpistol.dmi'
 	icon_state = "railpistol"
@@ -159,11 +159,12 @@
 
 /obj/item/gun/energy/material_railgun
 	name = "\"Black Arrow\" railgun"
-	desc = "\"Artificer's Guild\" brand rail gun. A \'true\' railgun, utilizing solid projectiles flash-forged from compressed matter or via a manual load mechanism alongside energy to propel it at varying velocities."
-	icon = 'icons/obj/guns/energy/railgun.dmi'
-	icon_state = "railgun"
-	item_state = "railgun"
-	fire_sound = 'sound/weapons/rail.ogg'
+	desc = "\"Artificer's Guild\" brand rail gun. A \'true\' railgun, utilizing the Lorentz effect and a pair of long conductors to propel solid projectiles."
+	icon = 'icons/obj/guns/energy/blackarrow.dmi'
+	icon_state = "blackarrow"
+	item_state = "blackarrow"
+	fire_sound = 'sound/weapons/blackarrow.ogg'
+	fire_sound_silenced = 'sound/weapons/blackarrow_silenced.ogg'
 	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_PAINFUL
@@ -171,21 +172,23 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 7, TECH_ENGINEERING = 6)
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
-	charge_cost = 500
-	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 12, MATERIAL_URANIUM = 4)
+	charge_cost = 400
+	gun_tags = list(GUN_AMR, GUN_PROJECTILE, GUN_LASER, GUN_ENERGY) //gun_AMR does nothing at the moment
 	suitable_cell = /obj/item/cell/large
-	one_hand_penalty = 15
-	fire_delay = 12
-	recoil_buildup = 1 //Negligible recoil, it's a railgun
+	zoom_factor = 2.0
+	extra_damage_mult_scoped = 0.25
+	one_hand_penalty = 80
+	fire_delay = 15
+	recoil_buildup = 6 //Light recoil, it's a railgun
 	damage_multiplier = 1 //we don't care about this as it has its own projectiles
 	init_firemodes = list(
-		list(mode_name="low-velocity", mode_desc="fires a metal rod at moderate speed", projectile_type=/obj/item/projectile/bullet/rail/lv, charge_cost=400, silenced = TRUE, icon="kill"), //todo silemced sound, icons
-		list(mode_name="high-velocity", mode_desc="fires a metal rod at high speed", projectile_type=/obj/item/projectile/bullet/rail/hv, charge_cost= 500, silenced = FALSE, icon="stun"),
-		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/rail/uhv, charge_cost=2000, silenced = FALSE, icon="grenade")
+		list(mode_name="low-velocity", mode_desc="fires a metal rod at subsonic speed", projectile_type=/obj/item/projectile/bullet/rail/lv, charge_cost=400, silenced = TRUE, icon="charge"),
+		list(mode_name="high-velocity", mode_desc="fires a metal rod at high speed", projectile_type=/obj/item/projectile/bullet/rail/hv, charge_cost= 500, silenced = FALSE, icon="kill"),
+		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/rail/uhv, charge_cost=2000, silenced = FALSE, icon="destroy")
 	)
 	var/material_storage = 0
-	var/material_max = 100
+	var/material_max = 30
 	var/mat_per_fire = 1
 	price_tag = 2250
 
@@ -206,18 +209,6 @@
 	if(istype(S,/obj/item/stack/rods))
 		while(material_max >= material_storage)
 			if(R.use(1) && do_after(user, 5, src))
-				material_storage += 1
+				material_storage += 2
 				playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 				to_chat(user, "<span class='notice'>You load a rod into \the [src].</span>. The [src] now holds [material_storage]/[material_max] rods.")
-	if(!istype(W, /obj/item/stack/material))
-		return ..()
-	var/obj/item/stack/material/M = S
-	if(istype(M) && M.material.name == MATERIAL_COMPRESSED_MATTER)
-		var/amount = min(M.get_amount(), round(material_storage - material_max))
-		if(M.use(amount) && material_storage < material_max)
-			material_storage += amount
-			playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-			to_chat(user, "<span class='notice'>You load [amount] compressed matter into \the [src].</span>. The [src] now holds [material_storage]/[material_max] rods.")
-			update_icon()	//Updates the ammo counter
-		else
-			to_chat(user, "<span class='notice'>The [src] is full.")

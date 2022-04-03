@@ -729,3 +729,30 @@
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors
 
+/obj/item/projectile/bullet/rail
+	name = "rod"
+	icon_state = "rail"
+	damage_types = list(BRUTE = 75)
+	armor_penetration = 30
+	can_ricochet = FALSE
+	affective_damage_range = 30
+	affective_ap_range = 30
+	hitscan = TRUE
+
+
+/obj/item/projectile/bullet/rail/lv
+	damage_types = list(BRUTE = 70) //reductor tier damage
+	armor_penetration = 20 //but much less AP
+	step_delay = 0.4
+	affective_damage_range = 10
+	affective_ap_range = 10
+	hitscan = FALSE //subsonic
+
+/obj/item/projectile/bullet/rail/hv
+	hitscan = TRUE
+
+/obj/item/projectile/bullet/rail/uhv
+	damage_types = list(BRUTE = 75)
+	armor_penetration = 30
+	affective_damage_range = 7 //much shorter range, as the projectile starts breaking up mid-air
+	affective_ap_range = 7
