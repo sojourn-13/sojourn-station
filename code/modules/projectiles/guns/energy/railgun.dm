@@ -179,13 +179,14 @@
 	zoom_factor = 2.0
 	extra_damage_mult_scoped = 0.25
 	one_hand_penalty = 80
-	fire_delay = 15
+	fire_delay = 10
 	recoil_buildup = 6 //Light recoil, it's a railgun
 	damage_multiplier = 1 //we don't care about this as it has its own projectiles
+	slowdown_hold = 0.25
 	init_firemodes = list(
-		list(mode_name="low-velocity", mode_desc="fires a metal rod at subsonic speed", projectile_type=/obj/item/projectile/bullet/rail/lv, charge_cost=400, silenced = TRUE, icon="charge"),
-		list(mode_name="high-velocity", mode_desc="fires a metal rod at high speed", projectile_type=/obj/item/projectile/bullet/rail/hv, charge_cost= 500, silenced = FALSE, icon="kill"),
-		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/rail/uhv, charge_cost=2000, silenced = FALSE, icon="destroy")
+		list(mode_name="low-velocity", mode_desc="fires a metal rod at subsonic speed", projectile_type=/obj/item/projectile/bullet/rail/lv, charge_cost=400, silenced = TRUE, fire_delay = 12, icon="charge"),
+		list(mode_name="high-velocity", mode_desc="fires a metal rod at high speed", projectile_type=/obj/item/projectile/bullet/rail/hv, charge_cost= 500, silenced = FALSE, fire_delay = 15, icon="kill"),
+		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/rail/uhv, charge_cost=2000, silenced = FALSE, fire_delay = 18, icon="destroy")
 	)
 	var/material_storage = 0
 	var/material_max = 30
