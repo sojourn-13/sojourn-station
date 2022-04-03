@@ -750,7 +750,6 @@
 	hitscan = FALSE //subsonic
 
 /obj/item/projectile/bullet/rail/hv
-	hitscan = TRUE
 
 /obj/item/projectile/bullet/rail/uhv
 	damage_types = list(BRUTE = 82.5)

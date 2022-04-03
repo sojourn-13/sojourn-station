@@ -226,7 +226,7 @@
 		list(CRAFT_MATERIAL, 12, MATERIAL_SILVER, "time" = 20),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 20),
 		list(CRAFT_MATERIAL, 4, MATERIAL_URANIUM, "time" = 60),
-		list(QUALITY_WELDING, 40, "time" = 60)
+		list(QUALITY_WELDING, 40, "time" = 60),
 		list(QUALITY_CUTTING, 40, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(/obj/item/stack/cable_coil, 30, "time" = 20),

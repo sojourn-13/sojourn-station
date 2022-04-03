@@ -186,7 +186,7 @@
 	init_firemodes = list(
 		list(mode_name="low-velocity", mode_desc="fires a metal rod at subsonic speed", projectile_type=/obj/item/projectile/bullet/rail/lv, charge_cost=400, silenced = TRUE, fire_delay = 12, icon="charge"),
 		list(mode_name="high-velocity", mode_desc="fires a metal rod at high speed", projectile_type=/obj/item/projectile/bullet/rail/hv, charge_cost= 500, silenced = FALSE, fire_delay = 15, icon="kill"),
-		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/rail/uhv, charge_cost=2000, silenced = FALSE, fire_delay = 18, icon="destroy")
+		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/bullet/rail/uhv, charge_cost=2000, silenced = FALSE, fire_delay = 18, icon="destroy")
 	)
 	var/material_storage = 0
 	var/material_max = 30
@@ -209,7 +209,7 @@
 	var/obj/item/stack/S = W
 	if(istype(S,/obj/item/stack/rods))
 		while(material_max >= material_storage)
-			if(R.use(1) && do_after(user, 5, src))
+			if(S.use(1) && do_after(user, 5, src))
 				material_storage += 2
 				playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 				to_chat(user, "<span class='notice'>You load a rod into \the [src].</span>. The [src] now holds [material_storage]/[material_max] rods.")
