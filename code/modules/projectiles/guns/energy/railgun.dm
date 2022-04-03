@@ -167,6 +167,7 @@
 	icon = 'icons/obj/guns/energy/gauss.dmi'
 	icon_state = "gauss"
 	item_state = "gauss"
+	fire_sound = 'sound/weapons/guns/fire/gaussrifle.ogg'
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_STEEL = 15, MATERIAL_SILVER = 10, MATERIAL_GOLD = 6)
 	charge_cost = 1000
