@@ -214,6 +214,13 @@
 		if(dose >= MTR(effect_multiplier, CHEM_TOUCH))
 			S.visible_message(SPAN_WARNING("[S]'s flesh sizzles where the water touches it!"), SPAN_DANGER("Your flesh burns in the water!"))
 
+/datum/reagent/water/deuterium
+	name = "Heavy water"
+	id = "deuterium"
+	description = "Safe to drink in small quantities, and a component in nuclear fusion reactors. Tastes slightly sweeter than normal water."
+	taste_description = "sweet water"
+	overdose = 30
+
 /datum/reagent/toxin/fuel
 	name = "Welding fuel"
 	id = "fuel"

@@ -28,7 +28,8 @@
 		/obj/item/stack/material/plasma = "plasma",
 		/obj/item/stack/material/gold = "gold",
 		/obj/item/stack/material/silver = "silver",
-		/obj/item/stack/material/mhydrogen = "hydrogen",
+		/obj/item/stack/material/mhydrogen = "mhydrogen",
+		/obj/item/stack/material/tritium = "tritium"
 	)
 
 /obj/machinery/reagentgrinder/RefreshParts()

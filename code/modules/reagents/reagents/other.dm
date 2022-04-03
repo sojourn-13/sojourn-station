@@ -220,6 +220,22 @@
 	color = "#F7C430"
 	common = TRUE //People know what gold is at a glance.
 
+/datum/reagent/metal/platinum
+	name = "Platinum"
+	id = "platinum"
+	description = "Platinum is rarer and denser than gold, and was widely used in Greyson Positronics products."
+	taste_description = "extremely expensive metal"
+	reagent_state = SOLID
+	color = "#F7C430"
+
+/datum/reagent/metal/osmium
+	name = "Osmium"
+	id = "osmium"
+	description = "Osmium is extracted from platinum ore, and is commonly used in the manufacture of mech components."
+	taste_description = "ion resistant metal"
+	reagent_state = SOLID
+	color = "#D0D0D0"
+
 /datum/reagent/metal/silver
 	name = "Silver"
 	id = "silver"
@@ -251,6 +267,29 @@
 			return TRUE
 	return TRUE
 
+/datum/reagent/metal/tritium
+	name = "Tritium"
+	id = "tritium"
+	description = "A radioactive isotope of hydrogen used as a component in fusion reactors."
+	taste_description = "the inside of a fusion reactor"
+	reagent_state = SOLID
+	color = "#B8B8C0"
+
+/datum/reagent/metal/tritium/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	affect_ingest(M, alien, effect_multiplier)
+
+/datum/reagent/metal/tritium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.apply_effect(effect_multiplier * 0.0015, IRRADIATE, 0)
+
+/datum/reagent/acid/mhydrogen
+	name = "Metallic hydrogen"
+	id = "mhydrogen"
+	description = "A radioactive isotope of hydrogen used as a component in fusion reactors. Will kill you to death hardcore if you drink it."
+	taste_description = "fiery death"
+	reagent_state = SOLID
+	power = 20
+	meltdose = 1
+	color = "#222233"
 
 /datum/reagent/adrenaline
 	name = "Adrenaline"
@@ -529,6 +568,14 @@
 	taste_description = "nothing"
 	reagent_state = LIQUID
 	color = "#bbc5f0"
+
+/datum/reagent/other/helium
+	name = "Helium"
+	id = "helium"
+	description = "A normally gaseous element produced when tritium decays. When inhaled as such, it has an amusing effect on one's voice, raising its pitch."
+	taste_description = "nothing"
+	color = "#C7FFFF"
+	reagent_state = LIQUID
 
 /*
 /datum/reagent/vomitol

@@ -662,7 +662,9 @@
 	seed_name = "plastellium"
 	display_name = "plastellium"
 	mutants = null
-	chems = list("plasticide" = list(1,10))
+	evolutions = list("platinellium" = list("gold", "silver"))
+	chems = list("plasticide" = list(1,5))
+
 
 /datum/seed/mushroom/plastic/New()
 	..()
@@ -674,6 +676,32 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#E6E6E6")
 	set_trait(TRAIT_PLANT_COLOUR,"#E6E6E6")
 	set_trait(TRAIT_PLANT_ICON,"mushroom10")
+
+/datum/seed/mushroom/plastic/platinum
+	name = "platinellium"
+	seed_name = "platinellium"
+	display_name = "Platinellium"
+	chems = list("platinum" = list(1,25))
+	evolutions = list("osminellium" = list("thermite"))
+	origin_tech = list(TECH_MATERIAL = 3, TECH_PLASMA = 2)
+
+/datum/seed/mushroom/plastic/platinum/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#A3A7C2")
+	set_trait(TRAIT_PLANT_COLOUR,  "#686F99")
+
+/datum/seed/mushroom/plastic/platinum/osmium
+	name = "osminellium"
+	seed_name = "osminellium"
+	display_name = "Osminellium"
+	chems = list("osmium" = list(1,5))
+	evolutions = null
+	origin_tech = list(TECH_MATERIAL = 5, TECH_PLASMA = 5)
+
+/datum/seed/mushroom/plastic/platinum/osmium/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#778298")
+	set_trait(TRAIT_PLANT_COLOUR,  "#465073")
 
 
 /datum/seed/mushroom/maintshroom
@@ -876,6 +904,7 @@
 	name = "peanut"
 	seed_name = "peanut"
 	display_name = "peanut vines"
+	greatMutants = list("lithiumnut")
 	chems = list("nutriment" = list(1,10))
 
 /datum/seed/peanuts/New()
@@ -889,6 +918,26 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#C4AE7A")
 	set_trait(TRAIT_PLANT_ICON,"bush2")
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
+
+/datum/seed/peanuts/lithium
+	name = "lithiumnut"
+	seed_name = "lithiumnut"
+	display_name = "lithium nut vines"
+	mutants = null
+	evolutions = list("tritiumnut" = list("uranium", "lithium")) //most tritium is produced by irradiating lithium-6.
+	chems = list("nutriment" = list(1,10),"lithium" = list(1,5))
+
+/datum/seed/peanuts/lithium/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#4D4D4D")
+	set_trait(TRAIT_PLANT_COLOUR,"#969696")
+
+/datum/seed/peanuts/lithium/tritium
+	name = "tritiumnut"
+	seed_name = "tritiumnut"
+	display_name = "tritium nut vines"
+	evolutions = null
+	chems = list("nutriment" = list(1,10), "helium" = list(1,50), "tritium" = list(1,5)) //Another snowflake chem in the form of helium, trace amounts from tritium's radioactive decay)
 
 /datum/seed/cabbage
 	name = "cabbage"
@@ -1123,10 +1172,11 @@
 	name = "watermelon"
 	seed_name = "watermelon"
 	display_name = "watermelon vine"
+	greatMutants = list("deuteriumelon")
 	chems = list("nutriment" = list(1,6), "watermelonjuice" = list(10,6))
 
 /datum/seed/watermelon/New()
-	..()
+
 	set_trait(TRAIT_HARVEST_REPEAT,1)
 	set_trait(TRAIT_JUICY,1)
 	set_trait(TRAIT_MATURATION,6)
@@ -1141,6 +1191,27 @@
 	set_trait(TRAIT_IDEAL_HEAT, 298)
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+
+/datum/seed/watermelon/deuterium
+	name = "heavywatermelon"
+	seed_name = "heavywatermelon"
+	display_name = "heavy water melon vine"
+	greatMutants = null
+	evolutions = list("metallicmelon" = list("tritium", "thermite"))
+	chems = list("nutriment" = list(1,6), "deuterium" = list(5,6)) //Made a snowflake chem just for this
+
+/datum/seed/watermelon/deuteriumelon/New()
+	..()
+	set_trait(TRAIT_PRODUCT_COLOUR,"#326B30")
+	set_trait(TRAIT_PLANT_COLOUR,"#257522")
+	set_trait(TRAIT_FLESH_COLOUR,"#F22C2C")
+
+/datum/seed/watermelon/deuterium/mhydrogen
+	name = "metallicmelon"
+	seed_name = "metallicmelon"
+	display_name = "metallic melon vine"
+	evolutions = null
+	chems = list("nutriment" = list(1,6), "mhydrogen" = list(1,5))
 
 /datum/seed/pumpkin
 	name = "pumpkin"
