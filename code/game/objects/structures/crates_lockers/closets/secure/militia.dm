@@ -129,7 +129,7 @@
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/box/trooperuniform(src)
 	new /obj/item/storage/hcases/ammo/serb(src)
-	new /obj/item/clothing/accessory/cape/corpsmans_cape(src)
+	new /obj/item/clothing/accessory/job/cape/blackshield/corpsmans_cape(src)
 	if(prob(50))
 		new /obj/item/storage/firstaid/blackshield/large(src)
 	if(prob(50))

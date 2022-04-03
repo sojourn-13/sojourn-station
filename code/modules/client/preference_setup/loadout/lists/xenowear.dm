@@ -70,8 +70,8 @@
 	cost = 1
 
 /datum/gear/xenowear/castellancapes
-	display_name = "castellan cape selection"
-	path = /obj/item/clothing/accessory/ccape
+	display_name = "kriosan cape selection"
+	path = /obj/item/clothing/accessory/kricape
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
 	cost = 1
