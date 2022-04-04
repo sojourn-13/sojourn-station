@@ -188,6 +188,7 @@
 		list(mode_name="high-velocity", mode_desc="fires a metal rod at high speed", projectile_type=/obj/item/projectile/bullet/rail/hv, charge_cost= 500, silenced = FALSE, fire_delay = 15, icon="kill"),
 		list(mode_name="ultrahigh-velocity", mode_desc="fires a metal rod at hypersonic speed", projectile_type=/obj/item/projectile/bullet/rail/uhv, charge_cost=2000, silenced = FALSE, fire_delay = 18, icon="destroy")
 	)
+	var/obj/item/stack/stack_used = /obj/item/stack/rods
 	var/material_storage = 0
 	var/material_max = 30
 	var/mat_per_fire = 1
@@ -195,7 +196,7 @@
 
 /obj/item/gun/energy/material_railgun/examine(mob/user)
 	..()
-	to_chat(user,SPAN_NOTICE("It has [material_storage] out of [material_max] matter left."))
+	to_chat(user,SPAN_NOTICE("It has [material_storage] out of [material_max] rods left."))
 
 /obj/item/gun/energy/material_railgun/consume_next_projectile()
 	if(!material_storage || material_storage < mat_per_fire || !..())
@@ -207,7 +208,7 @@
 	if(!istype(W,/obj/item/stack))
 		return ..	()
 	var/obj/item/stack/S = W
-	if(istype(S,/obj/item/stack/rods))
+	if(istype(S,stack_used))
 		while((S.amount && S) && (material_max > material_storage))
 			if(S.use(1) && do_after(user, 5, src))
 				material_storage += 2

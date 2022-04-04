@@ -750,9 +750,11 @@
 	hitscan = FALSE //subsonic
 
 /obj/item/projectile/bullet/rail/hv
+	penetrating = 1
 
 /obj/item/projectile/bullet/rail/uhv
 	damage_types = list(BRUTE = 82.5)
-	armor_penetration = 45
+	armor_penetration = 60
 	affective_damage_range = 7 //much shorter range, as the projectile starts breaking up mid-air
 	affective_ap_range = 7
+	penetrating = 3
