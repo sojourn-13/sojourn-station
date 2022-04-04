@@ -116,9 +116,10 @@ var/global/list/robot_modules = list(
 
 	for (var/obj/item/I in modules)
 		for (var/obj/item/cell/C in I)
-			C.charge = 999999999 //A quick hack to stop robot modules running out of power
+			C.autorecharging = TRUE //A quick hack to stop robot modules running out of power
 			//Later they'll be wired to the robot's central battery once we code functionality for that
 			//Setting it to infinity causes errors, so just a high number is fine
+			//Setting this to be infinity power isnt as good of a fix do to guns that cost power getting endless free shots, so auto charging is better - Trilby
 
 /obj/item/robot_module/proc/Reset(var/mob/living/silicon/robot/R)
 	remove_camera_networks(R)

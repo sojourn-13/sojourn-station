@@ -125,6 +125,7 @@
 	toggleable = FALSE
 	disruptive = FALSE
 
+	price_tag = 2250
 	engage_string = "Inject"
 
 	interface_name = "integrated injector"
@@ -147,6 +148,13 @@
 			var/obj/item/reagent_containers/beaker = new btype(src)
 			beaker.reagents.add_reagent(bdata[2], bdata[3])
 			accepts_item(beaker, null , TRUE)
+	//Just to update us
+	rebuild_charges()
+
+/obj/item/rig_module/modular_injector/New()
+	..()
+	//Just to update us
+	rebuild_charges()
 
 // Rebuilds charges , sad but necesarry due to how rig UI's get its data
 /obj/item/rig_module/modular_injector/proc/rebuild_charges()
@@ -246,6 +254,7 @@
 /obj/item/rig_module/modular_injector/combat
 	name = "mounted combat injector"
 	desc = "A specialized system for inserting chemicals meant for combat"
+	price_tag = 7250
 	max_injection_amount = 30
 	max_beakers = 6
 	initial_beakers = list(
@@ -258,6 +267,7 @@
 /obj/item/rig_module/modular_injector/medical
 	name = "mounted medical injector"
 	desc = "A specialized system for inserting chemicals to pacients"
+	price_tag = 3750
 	max_injection_amount = 60
 	max_beakers = 6
 	initial_beakers = list(
