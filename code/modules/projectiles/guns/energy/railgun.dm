@@ -172,7 +172,7 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 7, TECH_ENGINEERING = 6)
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 12, MATERIAL_URANIUM = 4)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 8, MATERIAL_URANIUM = 4)
 	charge_cost = 400
 	gun_tags = list(GUN_AMR, GUN_PROJECTILE, GUN_LASER, GUN_ENERGY) //gun_AMR does nothing at the moment
 	suitable_cell = /obj/item/cell/large
