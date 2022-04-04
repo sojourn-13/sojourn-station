@@ -188,6 +188,49 @@
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
 
+//CEO Rig
+/obj/item/clothing/head/helmet/space/void/goldilocks
+	name = "Goldilocks Gilded Helmet"
+	desc = "A helmet designed to look good while watching people you paid to do your work for you. Not the best for personal protection."
+
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 6 //luminosity when on
+	icon_state = "goldilocks_helmet"
+	item_state = "goldilocks_helmet"
+	item_state_slots = list(
+		slot_l_hand_str = "goldilocks_helm",
+		slot_r_hand_str = "goldilocks_helm",
+		)
+	armor_list = list(
+		melee = 20,
+		bullet = 20,
+		energy = 10,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	light_overlay = "helmet_light_dual"
+	siemens_coefficient = 2 //Guess what gold conducts?
+
+/obj/item/clothing/suit/space/void/goldilocks
+	name = "Goldilocks Gilded Voidsuit"
+	desc = "Grandeur incarnated in a padded suit of armor, fitting for a CEO that would like to boast their wealth at the expense personal safety."
+	item_state = "goldilocks_suit"
+	icon_state = "goldilocks_suit"
+	slowdown = 0.35
+	armor_list = list(
+		melee = 20,
+		bullet = 20,
+		energy = 10,
+		bomb = 25,
+		bio = 100,
+		rad = 75
+	)
+	helmet = /obj/item/clothing/head/helmet/space/void/goldilocks
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/tank/jetpack/void/cope
+	siemens_coefficient = 2 //Guess what gold conducts?
+
 //Medical Rig
 /obj/item/clothing/head/helmet/space/void/medical
 	name = "medical voidsuit helmet"
