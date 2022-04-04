@@ -223,7 +223,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 25, MATERIAL_PLASTEEL, "time" = 60),
 		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL, "time" = 20),
-		list(CRAFT_MATERIAL, 12, MATERIAL_SILVER, "time" = 20),
+		list(CRAFT_MATERIAL, 8, MATERIAL_SILVER, "time" = 20),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 20),
 		list(CRAFT_MATERIAL, 4, MATERIAL_URANIUM, "time" = 60),
 		list(QUALITY_WELDING, 40, "time" = 60),
