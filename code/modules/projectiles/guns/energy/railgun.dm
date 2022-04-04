@@ -159,7 +159,7 @@
 
 /obj/item/gun/energy/material_railgun
 	name = "\"Black Arrow\" railgun"
-	desc = "\"Artificer's Guild\" brand rail gun. A \'true\' railgun, utilizing the Lorentz effect and a pair of long conductors to propel solid projectiles."
+	desc = "\"Artificer's Guild\"-designed railgun. A \'true\' railgun, utilizing the Lorentz effect and a pair of long conductors to propel solid projectiles. This one is a RG93-E, with integrated scope and variable firing modes."
 	icon = 'icons/obj/guns/energy/blackarrow.dmi'
 	icon_state = "blackarrow"
 	item_state = "blackarrow"
@@ -179,7 +179,7 @@
 	zoom_factor = 2.0
 	extra_damage_mult_scoped = 0.25
 	one_hand_penalty = 80
-	fire_delay = 10
+	fire_delay = 12
 	recoil_buildup = 6 //Light recoil, it's a railgun
 	damage_multiplier = 1 //we don't care about this as it has its own projectiles
 	slowdown_hold = 0.25
@@ -208,8 +208,8 @@
 		return ..	()
 	var/obj/item/stack/S = W
 	if(istype(S,/obj/item/stack/rods))
-		while(material_max >= material_storage)
+		while((S.amount && S) && (material_max > material_storage))
 			if(S.use(1) && do_after(user, 5, src))
 				material_storage += 2
 				playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-				to_chat(user, "<span class='notice'>You load a rod into \the [src].</span>. The [src] now holds [material_storage]/[material_max] rods.")
+				to_chat(user, "<span class='notice'>You load a rod into \the [src]. The [src] now holds [material_storage]/[material_max] rods.</span>")
