@@ -739,8 +739,8 @@
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		new /obj/item/clothing/accessory/ranks/trooper(src)
-		new /obj/item/clothing/accessory/ranks/corpsman(src)
+		new /obj/item/clothing/accessory/armband/militia(src)
+		new /obj/item/clothing/accessory/armband/corpsman(src)
 
 /obj/item/storage/box/sergeantuniform
 	name = "Sergeant Service and Dress Kit"
@@ -755,10 +755,6 @@
 		new /obj/item/clothing/head/rank/trooperdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		new /obj/item/clothing/accessory/ranks/sergeant(src)
-		new /obj/item/clothing/accessory/ranks/sergeantmajor(src)
-		new /obj/item/clothing/accessory/patches/blackshield_sergeant(src)
-		new /obj/item/clothing/accessory/patches/blackshield_sergeantmajor(src)
 
 /obj/item/storage/box/commanderuniform
 	name = "Commander Service and Dress Kit"
@@ -773,12 +769,6 @@
 		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
-		new /obj/item/clothing/accessory/ranks/commander(src)
-		new /obj/item/clothing/accessory/ranks/major(src)
-		new /obj/item/clothing/accessory/ranks/brigadier(src)
-		new /obj/item/clothing/accessory/patches/blackshield_commander(src)
-		new /obj/item/clothing/accessory/patches/blackshield_major(src)
-		new /obj/item/clothing/accessory/patches/blackshield_brigadier(src)
 
 /obj/item/storage/box/blankranks
 	name = "Box of Blank Ranks"
