@@ -183,8 +183,12 @@
 	build_path = /obj/item/gun/projectile/automatic/vector
 
 /datum/design/autolathe/gun/thompson
-	name = "Unbraded .40 Magnum \"Chicago Typewriter\""
+	name = "SA .40 Magnum \"Chicago Typewriter\""
 	build_path = /obj/item/gun/projectile/automatic/thompson
+
+/datum/design/autolathe/gun/triage
+	name = "BR .40 Magnum \"Triage\""
+	build_path = /obj/item/gun/projectile/automatic/triage
 
 //S H O T G U N S
 

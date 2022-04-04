@@ -318,7 +318,6 @@
 	materials = list(MATERIAL_PLASTIC = 9)
 	chemicals = list("condensedcapsaicin" = 150)
 
-
 /datum/design/autolathe/ammo/magnum_ammobox_practice
 	name = "ammunition box (.40 Auto-Mag practice)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/practice

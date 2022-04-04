@@ -463,8 +463,8 @@
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/thompson
-	disk_name = "Unbranded - .40 Thompson SMG"
-	icon_state = "blackshield"
+	disk_name = "SA - .40 Thompson SMG"
+	icon_state = "sa"
 
 	license = 12
 	designs = list(
